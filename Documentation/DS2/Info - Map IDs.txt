@@ -1,0 +1,30 @@
+m10_02_00_00 Things Betwixt
+m10_04_00_00 Majula
+m10_10_00_00 Forest of Fallen Giants
+m10_14_00_00 Brightstone Cove Tseldora
+m10_15_00_00 Aldia's Keep
+m10_16_00_00 Lost Bastille
+m10_17_00_00 Earthen Peak / Harvest Valley
+m10_18_00_00 No-man's Wharf
+m10_19_00_00 Iron Keep
+m10_23_00_00 Huntman's Copse
+m10_25_00_00 The Gutter
+m10_27_00_00 Dragon Aerie
+m10_29_00_00 Path to the Shaded Woods
+m10_30_00_00 Unseen Path to Heide's
+m10_31_00_00 Heide's Tower of Flame
+m10_32_00_00 Shaded Woods
+m10_33_00_00 Doors of Pharros
+m10_34_00_00 Grave of Saints
+m20_10_00_00 Memories of the Giants
+m20_11_00_00 Shrine of Amana
+m20_21_00_00 Drangleic Castle
+m20_24_00_00 Undead Crypt
+m20_26_00_00 Dragon Memories
+m40_03_00_00 Chaos of the Abyss
+m50_35_00_00 Shulva
+m50_36_00_00 Brume Tower
+m50_37_00_00 Eleum Loyce
+m50_38_00_00 Memory of the King
+
+Wiki="Defines parameters

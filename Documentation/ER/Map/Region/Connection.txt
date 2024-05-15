@@ -1,0 +1,10 @@
+﻿#----------------------------------------
+# Connection
+#----------------------------------------
+Used to define a connection between two maps.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+MapID2:                 Map ID (XX) to connect to.
+

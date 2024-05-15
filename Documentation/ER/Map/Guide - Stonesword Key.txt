@@ -1,0 +1,42 @@
+﻿#----------------------------------------
+# Overview
+#----------------------------------------
+XX means the first set of 2 digits of the map
+YY means the second set of 2 digits of the map
+ZZ means the third set of 2 digits of the map
+
+For m60_ maps, the XX is 10
+
+#----------------------------------------
+# Adding a Stonesword Key interaction
+#----------------------------------------
+Base ID: <unique id>
+
+# Asset: Statue
+ModelName:      AEG027_078
+EntityID:       <base id>           # 18000570
+
+# Asset: Key 1
+ModelName:      AEG027_216
+EntityID:       <base id + 1>       # 18001571
+Positioned in the top head of the statue
+
+# Asset: Key 2
+ModelName:      AEG027_216
+EntityID:       <base id + 2>       # 18001572
+Positioned in the bottom head of the statue
+
+#-----------
+# EMEVD
+#-----------
+# InitializeCommonEvent(0, 90005620, 18000570, 18001570, 18001571, 18001572, 18002570, 18002571, 18002572);
+    0, 
+    90005620, 
+    18000570,   # Interaction Flag - This is the 'trigger' flag to use for the fogwall, enemy, etc.
+    18001570,   # Statue - Entity ID
+    18001571,   # Key 1 - Entity ID
+    18001572,   # Key 2 - Entity ID
+    18002570,   # Dialog Flag - Left
+    18002571,   # Dialog Flag - Right
+    18002572    # Dialog Flag - Cancel
+    

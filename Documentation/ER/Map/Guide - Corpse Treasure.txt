@@ -1,0 +1,33 @@
+﻿#----------------------------------------
+# Overview
+#----------------------------------------
+XX means the first set of 2 digits of the map
+YY means the second set of 2 digits of the map
+ZZ means the third set of 2 digits of the map
+
+For m60_ maps, the XX is 10
+
+#----------------------------------------
+# Adding a Corpse Treasure
+#----------------------------------------
+Requirements:
+- Asset: a target asset to hold the treasure, normally AEG099_610, which is the corpse model
+- Treasure: setup the treasure
+
+# Treasure properties
+EventID:            Needs to be unique
+PartName:           Name of the collision or map piece the corpse is on
+TreasurePartName:   Name of the corpse asset, e.g. AEG099_610_9000
+ItemLotID:          the ItemLotParam_map row id to use
+InChest:            0
+
+# Asset properties
+UnkPartNames[]      Name of the collision that the asset sits on
+UnkT58:             Sets the idle pose animation
+                    - 1, 2, 3, 12, 20, 21, 31, 32
+                    - 101000, 101001, 101002, 101003, 
+                    - 101011, 101012
+                    - 101020, 101022
+                    - 101031, 101032
+                    - 201001, 201002, 201021
+                    

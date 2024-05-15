@@ -1,0 +1,20 @@
+﻿#----------------------------------------
+# Collision
+#----------------------------------------
+Used to setup connect collison.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+CollisionName:          The collision to connect on
+MapID[]                 The map ID (in sets of 2 digits) to connect to
+UnkT08:                 ?
+UnkT09:                 ?
+UnkT0A:                 ?
+UnkT0B:                 ?
+
+#-------------------------
+# Structs
+#-------------------------
+UnkStruct8
+UnkStruct11

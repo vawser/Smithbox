@@ -1,0 +1,22 @@
+﻿#----------------------------------------
+# EnvironmentMapPoint
+#----------------------------------------
+Used to setup the environmental effect for the map.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+UnkT00:             ?
+UnkT04:             ?
+UnkT0D:             Bool
+UnkT0E:             Bool
+UnkT0F:             Bool
+UnkT10:             ?
+UnkT14:             ?
+MapID2:             ?
+UnkT20:             ?
+UnkT24:             ?
+UnkT28:             ?
+UnkT2C:             ?
+UnkT2D:             ?
+

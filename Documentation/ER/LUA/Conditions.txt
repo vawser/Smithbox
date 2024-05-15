@@ -1,0 +1,257 @@
+﻿#------------------------------------------------------------------
+# Conditions
+#------------------------------------------------------------------
+#---------------------------------
+# General Conditions
+#---------------------------------
+# IsSearchTarget( <TARGET> )
+Return true if target is current search target
+
+# GetNpcThinkParamID()
+Return Think ID in use
+
+# IsInsideTarget( <TARGET>, <AI_DIR_TYPE>, <value> )
+Return true if inside target
+
+# IsInsideTargetCustom( <TARGET>, <TARGET>, <AI_DIR_TYPE>, <radius>, <radius>, <height> )
+Return true if inside target
+
+# IsInsideTargetRegion( <TARGET>, <msb event id> )
+Return true if target is in msb event region
+
+# IsInsideTargetEx( <TARGET>, <2nd target>, <AI_DIR_TYPE>, <value>, <value> )
+?
+
+# IsTargetGuard( <TARGET> )
+Return true if target is guarding
+
+# IsFinishTimer( <value> )
+Return true if timer is finished
+
+# IsBothHandMode( <TARGET> )
+Return true if target is two-handing weapon
+
+# GetDist( <TARGET> )
+Return distance from target
+
+# GetRandam_Int( <min>, <max> )
+Return random integer between min and max
+
+# GetRandam_Float( <min>, <max> )
+Return random float between min and max
+
+# GetHpRate( <TARGET> )
+Return HP decimal of specified target.
+
+# GetMp( <TARGET> )
+Return FP of specified target.
+
+# GetSp( <TARGET> )
+Return stamina of specified target.
+
+# GetExcelParam( <AI_EXCEL_THINK_PARAM_TYPE> )
+Return param field value.
+
+# GetEventRequest()
+Return event request ID
+
+# IsEventFlag( <flag> )
+Return true if event flag is set ON
+
+# GetNumber( <key> )
+Return the value for the specified key.
+
+# IsChangeState()
+Return true if in Change state.
+
+# IsSearchHighState()
+Return true if in Search High state.
+
+# IsSearchLowState()
+Return true if in Search Low state.
+
+# IsCautionState()
+Return true if in Caution state.
+
+# IsFindState()
+Return true if in Find state.
+
+# IsBattleState()
+Return true if in Battle state.
+
+# IsMemoryState()
+Return true if in Memory state.
+
+# IsRiding( <TARGET> )
+Return true if target is riding mount.
+
+# IsUseFlyRoute()
+Return true if a fly route is used.
+
+# GetFlyRouteState()
+Return fly route state. Compare against AI_FLY_ROUTE_STATE.
+
+# GetTimer( <key> )
+Return timer value.
+
+# IsInterupt( <interrupt enum> )
+Return true if Interrupt value is present.
+
+# GetTeamRecordCount( <coordinate type>, <TARGET>, <value> )
+?
+
+# GetAreaMinute()
+Return current tile time: minute part.
+
+# GetAreaHour()
+Return current tile time: hour part.
+
+# GetMapHitRadius( <TARGET> )
+Return map hit radius for target.
+
+# GetToTargetAngle( <TARGET> )
+Return 'get to target' angle for current entity against specified target.
+
+# GetAttackPassedTime( <anim> )
+Return attack passed time for specified anim.
+
+# RegistAttackTimeInterval( <anim>, <cool time> )
+Return registered cool time interval for specified anim.
+
+# GetSubGoalNum()
+Return sub goal number.
+
+# GetCurrTargetType()
+Return current target type. Compare against AI_TARGET_STATE.
+
+# GetPrevTargetState()
+Return previous target state. Compare against AI_TARGET_STATE.
+
+# GetBehaviorStateId( <plan index enum )
+Return behavior state id.
+
+# GetSpecialEffectActivateInterruptId( <SpEffect> )
+Return interrupt id for specified SpEffect.
+
+# GetExistMeshOnLineDistSpecifyAngle( <TARGET>, <angle>, <angle>, <AI_DIR_TYPE> )
+Return line distance from line trace from target's initial angle and specified angle.
+
+# CheckDoesExistPath( <TARGET>, <AI_DIR_TYPE>, <value> )
+Return true if target is hit by line trace.
+
+# HasSpecialEffectId( <TARGET>, <SpEffect ID> )
+Return true if target has specified speffect
+
+# HasSpecialEffectCategory( <TARGET>, <category> )
+Return true if target has SpEffect with specified category.
+
+# HasSpecialEffectAttribute( <TARGET>, <SP_EFFECT_TYPE> )
+Return true if target has SpEffect with specified attribute.
+
+# GetTeamOrder( <order type> )
+REturn the team order used by the entity.
+
+# GetMovePointNumber()
+Return move point number.
+
+# GetMovePointEffectRange()
+Return move point effect range.
+
+# IsLadderAct( <TARGET> )
+Return true if Act is considered a ladder act.
+
+# IsAiJumping()
+Return true if AI is jumping.
+
+# GetLatestSoundTargetRank()
+Return latest sound target rank. Compare against AI_SOUND_RANK.
+
+# GetLatestSoundBehaviorID()
+Return latest sound behavior ID.
+
+#---------------------------------
+# Player NPC Conditions
+#---------------------------------
+# GetNPCActProb( <npc act> )
+Return probability for specified NPC act.
+
+# GetArtsID( <arm> )
+Return the weapon arts Id for the specified arm.
+
+# GetWepCategoryNo( <arm> )
+Return the weapon category number for the specified arm.
+
+# GetWepSpAtkCategoryNo( arm )
+Return the weapon special attack category for the specified arm.
+
+# GetEquipWeaponIndex( <arm> )
+Return the equip weapon index for the specified arm.
+
+# GetCurrentEquipWeaponId( <TARGET>, <arm> )
+Return the current equip weapon id for the specified target and the specified arm.
+
+# GetEquipWeaponId( <TARGET>, <arm>, <equip slot> )
+Return the equip weapon id in the specified arm for the specified equip slot.
+
+# GetWeaponBehaviorVarID( <equip weapon id> )
+Return weapon behavior variation id.
+
+# GetWeightType( <TARGET> )
+Return weight type.
+
+# GetSpellType( <>, <>, <equip magic id> )
+Return spell type based on equip magic id.
+
+# GetEquipMagicId( <TARGET>, <slot> )
+Return equip magic id for specified target in the specified slot.
+
+# CanShootMagicByType( <>, <magic category> )
+Return true if magic type can be used.
+
+# GetMagicCategory( <magic id> )
+Return magic cateogry for X.
+
+# GetAIUsageParam( <>, <magic id> )
+Return ai usage param for specified magic id.
+
+# CanWeaponEnhance( <equip weapon id>, <arm> )
+Return true if specified equipped weapon in specified arm can be enhanced.
+
+# GetEquipItemId( <TARGET>, <slot>, <slot type> )
+Return equipped item id for specified target in specified slot/slot type.
+
+# GetEquipArrowBoltId( <TARGET>, <slot>, <slot type>)
+Return equipped ammo id for specified target in specified slot/slot type.
+
+#---------------------------------
+# Platoon Conditions
+#---------------------------------
+# IsValidPlatoon()
+Return true if entity belongs to a valid platoon.
+
+# GetMemberAI( <index> )
+Return entity as specified index.
+
+# GetMemberNum()
+Return number of members in platoon.
+
+# GetTeamDefeatEntityId()
+Return team defeat entity id.
+
+# IsExistTargetTeamDefeat()
+Return true if team defeat target exists.
+
+# GetPlatoonCommand()
+Return current platoon command.
+
+# GetCommandNo()
+Return current platoon command number.
+
+#---------------------------------
+# Misc Conditions
+#---------------------------------
+# DbgAutoRemo_IsWaitCommand
+Is wait command for cutscene?
+
+# IsOmissionLevel30()
+Return true if Omission Level is 30

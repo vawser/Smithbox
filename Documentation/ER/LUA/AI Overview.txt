@@ -1,0 +1,35 @@
+﻿#------------------------------------------------------------------
+# Overview
+#------------------------------------------------------------------
+Add new goals to goal_list.lua. This is required for the new AI to function.
+
+#------------------------------------------------------------------
+# Example: Wyvern450000_logic
+#------------------------------------------------------------------
+This example goes over the general logic flow of the AI Logic lua, 
+ignoring any specifics that change between enemies.
+
+<name> is the unique string given for this AI.
+arg0 is the AI state machine.
+
+# 1. Init function for Logic
+function <name>_Logic(arg0)
+
+# 2. Initialize logic AI
+COMMON_Initialize(arg0) # common_logic_func
+    -> COMMON_SoundBehavior_FlagInitialize # common_sound_behavior
+    -> COMMON_PatrolBehavior_FlagInitialize # common_patrol_behavior
+    
+COMMON_EasySetup_Initial(arg0) # common_logic_func
+
+COMMON_EasySetup3 # common_logic_func
+    -> COMMON_EzSetup # common_logic_func
+        -> _COMMON_SetBuddyBattleActLogic # common_logic_func (for buddy)
+        -> _COMMON_SetBattleActLogic # common_logic_func (for normal)
+     
+# Init function for Interrupt
+function <name>_Interupt(arg0, arg1)
+
+#------------------------------------------------------------------
+# Example: Wyvern450000_battle
+#------------------------------------------------------------------

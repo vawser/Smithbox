@@ -1,0 +1,9 @@
+﻿#----------------------------------------
+# HorseProhibition
+#----------------------------------------
+Used to setup an area that disables Torrent.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+UnkT00:                     ?

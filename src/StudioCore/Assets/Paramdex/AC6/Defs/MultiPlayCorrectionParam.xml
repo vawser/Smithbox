@@ -6,13 +6,11 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 UnkInt0x00"></Field>
-    <Field Def="s32 UnkInt0x04"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
-    <Field Def="s32 UnkInt0x0C"></Field>
-    <Field Def="s32 UnkInt0x10"></Field>
-    <Field Def="s32 UnkInt0x14"></Field>
-    <Field Def="s32 UnkInt0x18"></Field>
-    <Field Def="s32 UnkInt0x1C"></Field>
+    <Field Def="s32 startPad"></Field>
+    <Field Def="s32 client1SpEffectId"></Field>
+    <Field Def="s32 client2SpEffectId"></Field>
+    <Field Def="s32 client3SpEffectId"></Field>
+    <Field Def="u8 bOverrideSpEffect"></Field>
+    <Field Def="dummy8 endPad[15]"></Field>
   </Fields>
 </PARAMDEF>

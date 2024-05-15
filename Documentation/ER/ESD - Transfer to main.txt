@@ -1,0 +1,182 @@
+﻿#-----------------------------------
+# CheckSpecificPersonMenuIsOpen( x, y )
+#-----------------------------------
+x: 
+ 1  - Talk List
+ 2  -
+ 3  - OpenRepository
+ 4  - 
+ 5  - OpenRegularShop
+ 6  - OpenSellShop
+ 7  - OpenEquipmentChangeOfPurposeShop
+ 8  - 
+ 9  - OpenEnhanceShop(0)
+ 10 - OpenSoul
+ 11 - OpenMagicEquip
+ 12 - OpenConversationChoicesMenu
+ 13 - OpenChooseQuantityDialog
+ 14 - OpenEstusAllotMenu
+ 15 - 
+ 16 - OpenCharaMakeMenu(0)
+ 17 - 
+ 18 - OpenTranspositionShop
+ 19 - ReallocateAttributes
+ 20 - 
+ 21 - OpenPhysickMenu
+ 22 - OpenDragonCommunionShop
+ 23 - c1_136() 
+ 24 - c1_137()
+ 25 - OpenEnhanceShop(1)
+ 26 - OpenTailoringShop
+ 27 - OpenAshOfWarShop
+ 28 - OpenPuppetShop
+ 29 - ?
+ 30 - OpenCharaMakeMenu(1)
+ 31 - OpenDupeShop(0)
+ 32 - OpenDupeShop(1)
+ 33 - OpenChampionsEquipmentShop
+ 
+#-----------------------------------
+# Flags
+#-----------------------------------
+# Used with OpenEnhanceShop
+CombineMenuFlagAndEventFlag(6001, 232)
+CombineMenuFlagAndEventFlag(6001, 233)
+CombineMenuFlagAndEventFlag(6001, 234) 
+CombineMenuFlagAndEventFlag(6001, 235)
+ 
+#-----------------------------------
+# Gameplay Actions 
+#-----------------------------------
+# Spell Equip
+OpenMagicEquip(-1, -1)
+
+# Level Up
+OpenSoul()                      
+
+# Repository    
+OpenRepository()                    
+
+# Affinity
+OpenEquipmentChangeOfPurposeShop()  
+
+# Reinforcement
+OpenEnhanceShop( <type> )
+ Type:
+  0 - Standard
+  1 - Limited to +3
+            
+# Tailoring
+OpenTailoringShop( <id>, <id> )
+ 
+# Transposition
+OpenTranspositionShop( <id>, <id> )
+ 
+# Champion's Equipment
+OpenChampionsEquipmentShop( <id>, <id> )
+ 
+# Ash of War
+OpenAshOfWarShop( <id>, <id> )
+ 
+# Sell
+OpenSellShop( -1, -1 )
+ 
+# Regular Shop
+OpenRegularShop( <id>, <id> )
+ 
+# Dupe Shop
+OpenDupeShop( <type>, <id>, <id> )
+ Type:
+  0 - Patches
+  1 - 
+ 
+# Puppet Shop
+OpenPuppetShop( <id>, <id> )
+ 
+# Dragon Communion
+OpenDragonCommunionShop( <id>, <id> )
+
+# Conversation Choice
+OpenConversationChoicesMenu(0)
+
+# Choose Quantity
+OpenChooseQuantityDialog( <item>, <msg id> )
+
+# Estus Allot
+OpenEstusAllotMenu()
+
+# Character Make
+OpenCharaMakeMenu( <type> )
+ Type:
+  0 - Body
+  1 - Cosmetics
+
+# Add Gesture
+AcquireGesture( <gesture index> )
+
+# Reallocate Attributes
+ReallocateAttributes()
+
+# Open Wonderous Flask of Physick assignment menu
+OpenPhysickMenu()
+
+# Open Spirit Tuning reinforcement menu
+c1_136()
+
+# Open Great Rune assignment menu
+c1_137()
+
+#-----------------------------------
+# Menu Actions
+#-----------------------------------
+# Clear talk action state
+ClearTalkActionState()
+
+# Get Talk List entry result
+GetTalkListEntryResult()
+
+# Trigger if action is taken in menu
+DidYouDoSomethingInTheMenu(0)
+
+#-----------------------------------
+# General Actions
+#-----------------------------------
+# Get Event Flag state
+GetEventFlag( <flag> )
+
+# Set Event Flag state
+SetEventFlag( <flag>, <state> )
+
+# Apply SpEffect to Player
+GiveSpEffectToPlayer( <id> )
+
+# Does entity have SpEffect
+DoesSelfHaveSpEffect( <id> )
+
+# Turn Character to face Entity
+TurnCharacterToFaceEntity(-1, <anim>, -1, -1)
+
+# Get elapsed frames for current state
+GetCurrentStateElapsedFrames()
+
+# Check whether Chr Event Animation has ended
+GetWhetherChrEventAnimHasEnded( <anim> )
+
+# Get entity distance to player
+GetDistanceToPlayer()
+
+# Get status of hostility
+IsAttackedBySomeone()
+
+#-----------------------------------
+# Flow Control
+#-----------------------------------
+# Apply inner scope while in paused state, i.e. menu
+def WhilePaused():
+ <actions>
+ 
+# Spawn new function, await call return
+call = func()
+
+if call.Done():
+ <actions>

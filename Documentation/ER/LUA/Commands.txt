@@ -1,0 +1,103 @@
+﻿#------------------------------------------------------------------
+# Commands
+#------------------------------------------------------------------
+#---------------------------------
+# General Commands
+#---------------------------------
+# Mod( <x>, <y> )
+Return the modulo of x and y.
+
+# AddTopGoal( <GOAL>, <value>, <point>, <AI_DIR_TYPE>, <value>, <TARGET>, <bool> )
+Add a top goal to the enemy.
+
+# AddSubGoal( <GOAL>, <value>, <anim id>, <TARGET>, <value>, <AI_DIR_TYPE>, <value> )
+Add a sub goal to the current order for the enemy.
+
+# ClearSubGoal()
+Clear a sub goal from the current order.
+
+# Replaning()
+Execute replanning.
+
+# SetStringIndexedNumber( <string>, <value> )
+Set variable strings to a value.
+
+# SetNumber( <key>, <value> )
+Set a key-value.
+
+# SetTimer( <key>, <duration> )
+Set a timer.
+
+# TimingSetNumber( <key>, <value>, <timing enum> )
+Set the timing for a timer.
+
+# StartDash()
+Start dash?
+
+# AddObserveSpecialEffectAttribute( <TARGET>, <SpEffect> )
+Add specified SpEffect to target.
+
+# DeleteObserveSpecialEffectAttribute( <TARGET>, <SpEffect> )
+Delete specified SpEffect from target.
+
+# AddObserveArea( <index>, <observe target>, <self target>, <AI_DIR_TYPE>, <radius>, <radius> )
+Add an observe area that triggers if the specified target enters.
+
+# AddObserveAreaCustom( <index>, <observe target>, <self target>, <AI_DIR_TYPE>, <radius>, <radius>, <height> )
+Add an observe area that triggers if the specified target enters.
+
+# DeleteObserve( <index> )
+Delete observe area at specified index.
+
+# SetAIFixedMoveTargetSpecifyAngle( <TARGET>, <value>, <value>, <AI_DIR_TYPE> )
+Set fixed move target with specified angle.
+
+# SetEnableUsePath( <bool> )
+Set enable use path.
+
+# SetLifeEndSuccess( <bool>
+?
+
+#---------------------------------
+# Player NPC Commands
+#---------------------------------
+# AddNPCActProb( <npc act> )
+Add specified NPC Act to the probailities list.
+
+# ResetNPCActProb()
+Reset NPC Act probabilities.
+
+# ChangeEquipItem( <equip item id>, <slot type> )
+Change equipped item.
+
+# ChangeEquipMagicByMagicParamId( <magic id> )
+Change equipped magic.
+
+#---------------------------------
+# Platoon Commands
+#---------------------------------
+# SetEnablePlatoonMove( <bool> )
+Enables platoon movement
+
+# SetFormationType( <unk>, <unk> )
+Set formation type
+ 
+# SetFormationParam( <index>, <x>, <y> )    
+Sets the platoon position of the enemy at the index [idx] based on the enemy at index [0]
+
+Used to make the enemies walk in a specific formation
+
+# SetBaseMoveRate( <index>, <float> )
+Set the animation speed multiplier to a value for enemy at index [idx].
+
+# SendCommandAll( <command enum> )
+Send platoon command.
+
+#---------------------------------
+# Misc Commands
+#---------------------------------
+# DbgAutoRemo_ResetWaitCommand()
+Reset wait command for cutscene?
+
+# ClearMoveToSomewhereSmoothMemory()
+Clear MoveToSomewhere points to free memory

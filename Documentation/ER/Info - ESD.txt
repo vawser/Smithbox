@@ -1,0 +1,1021 @@
+﻿#------------------------------------
+# Syntax
+#------------------------------------
+Mostly inherited from python.
+
+def <string>( <args> ):
+    Defines a function, with optional arguments that are passed into the function.
+    
+def ExitPause()
+    Used to detect exit from menu
+   
+assert <function>
+    Execute function, halts current function while active
+    
+return <value>
+    Returns to the former function, passes the value.
+    
+while <condition>:
+    Loop while condition is true.
+    
+if <condition>:
+    Execute scope only if condition is true
+    
+elif <condition>:
+    Follows if statement, execute scope only if condition is true
+    
+else:
+    Follows if statement, executes when if condition is false
+    
+#-----------------------------------------------------------------
+# Commands
+#-----------------------------------------------------------------
+These are ESD-specific commands used by the game.
+
+#-----------------------------
+# TalkToPlayer
+#-----------------------------
+args( TEXT_ID, UNK, UNK, FLAG )
+    TEXT_ID: text id from the EventTextforTalk FMG file.
+    UNK: ?
+    UNK: ?
+    FLAG: event flag to set to ON when this occurs.
+
+Play text to the player.
+
+#-----------------------------
+# RemoveMyAggro
+#-----------------------------
+args()
+
+Removes all aggression towards the player.
+
+#-----------------------------
+# ForceEndTalk
+#-----------------------------
+args( VALUE )
+    VALUE: always 0 
+    
+Forces current talk to end.
+    
+#-----------------------------
+# ClearTalkProgressData
+#-----------------------------
+args()
+    
+Clears the current talk progress data. These are 
+
+#-----------------------------
+# ShowShopMessage
+#-----------------------------
+args( TYPE )
+    TYPE: 
+        0 is used for scroll give
+        1 is used in all other instances
+        
+Show the shop message to the player.
+
+#-----------------------------
+# CloseShopMessage
+#-----------------------------
+args()
+
+Close the shop message.
+
+#-----------------------------
+# SetEventFlag
+#-----------------------------
+args( FLAG, STATE )
+    FLAG: the event flag to change
+    STATE: 0 or 1, meaning FALSE or TRUE respectively
+    
+Set a specified event flag to a specified state.
+
+#-----------------------------
+# SetEventFlagIf
+#-----------------------------
+args( CONDITION, FLAG, STATE )
+    CONDITION: the condition to check for
+    FLAG: the event flag to change
+    STATE: 0 or 1, meaning FALSE or TRUE respectively
+    
+Set a specified event flag to a specified state, if the condition is true.
+
+#-----------------------------
+# OpenGenericDialog
+#-----------------------------
+args( TYPE, TEXT, RESULT, STYLE, UNK )
+    TYPE:
+        1: Full Screen Dim - Center Box
+        2: Full Screen Dim - Center Box
+        7: Lower Screen Box
+        8: Lower Screen Box
+
+    TEXT: the text to display
+    
+    RESULT:
+        0: Cancel
+        1: Left
+        2: Right
+        3: Leave
+
+    STYLE:
+        0: Ornate, no options
+        1: Dialog, options
+        2: Ornate, options
+        3: Orante, YES option
+
+    UNK: 
+    
+Display text to the player witin a dialog box.
+    
+#-----------------------------
+# ForceCloseGenericDialog
+#-----------------------------
+args()
+
+Force close the generic dialog box.
+
+#-----------------------------
+# AddTalkListData
+#-----------------------------
+args( SLOT, TEXT, UNK )
+    SLOT: the talk list slot ID to fill
+    TEXT: the text id to use for the option text
+    UNK: ?
+
+Adds an option to the talk list table.
+
+#-----------------------------
+# AddTalkListDataIf
+#-----------------------------
+args( CONDITION, SLOT, TEXT, UNK )
+    CONDITION: check commands, can be combined with || (OR) and && (AND)
+    SLOT: the talk list slot ID to fill
+    TEXT: the text id to use for the option text
+    UNK: ?
+
+Adds an option to the talk list table, if the condition is met.
+
+#-----------------------------
+# ClearTalkListData
+#-----------------------------
+args()
+
+Clear the current options in the talk list table.
+
+#-----------------------------
+# OpenRegularShop
+#-----------------------------
+args( START_ID, END_ID )
+    START_ID: starting ShopLineupParam row ID
+    END_ID: starting ShopLineupParam row ID
+
+Opens a normal shop, items will cost runes.
+
+#-----------------------------
+# OpenTailoringShop
+#-----------------------------
+args( START_ID, END_ID )
+    START_ID: starting ShopLineupParam row ID
+    END_ID: starting ShopLineupParam row ID
+
+Opens the tailoring shop. 
+
+#-----------------------------
+# OpenTranspositionShop
+#-----------------------------
+args( START_ID, END_ID )
+    START_ID: starting ShopLineupParam row ID
+    END_ID: starting ShopLineupParam row ID
+
+Opens the Rememberance shop.
+
+#-----------------------------
+# OpenChampionsEquipmentShop
+#-----------------------------
+args( START_ID, END_ID )
+    START_ID: starting ShopLineupParam row ID
+    END_ID: starting ShopLineupParam row ID
+
+Opens the Boss Equipment shop.
+
+#-----------------------------
+# OpenAshOfWarShop
+#-----------------------------
+args( START_ID, END_ID )
+    START_ID: starting ShopLineupParam row ID
+    END_ID: starting ShopLineupParam row ID
+
+Opens the Ash of War duplication shop
+
+#-----------------------------
+# OpenPuppetShop
+#-----------------------------
+args( START_ID, END_ID )
+    START_ID: starting ShopLineupParam row ID
+    END_ID: starting ShopLineupParam row ID
+
+Opens the Puppet shop, items will cost Starlight Shards
+
+#-----------------------------
+# OpenDupeShop
+#-----------------------------
+args( START_ID, END_ID )
+    START_ID: starting ShopLineupParam row ID
+    END_ID: starting ShopLineupParam row ID
+
+Opens the Rememberance duplication shop
+
+#-----------------------------
+# OpenDragonCommunionShop
+#-----------------------------
+args( START_ID, END_ID )
+    START_ID: starting ShopLineupParam row ID
+    END_ID: starting ShopLineupParam row ID
+
+Opens the Dragon Communion shop, items will cost Dragon Hearts.
+
+#-----------------------------
+# OpenEquipmentChangeOfPurposeShop
+#-----------------------------
+args()
+
+Open the Ash of War selection menu.
+
+#-----------------------------
+# OpenRepairShop
+#-----------------------------
+args()
+
+UNUSED
+
+#-----------------------------
+# OpenEnhanceShop
+#-----------------------------
+args( TYPE )
+    TYPE:
+        0: Full reinforcement range
+        1: Limited reinforcement range (+3)
+        
+Open the reinforcement menu.
+
+#-----------------------------
+# OpenSellShop
+#-----------------------------
+args( START_ID, END_ID )
+    START_ID: always -1
+    END_ID: always -1
+
+Opens the sell shop, where items can be sold.
+
+#-----------------------------
+# OpenMagicShop
+#-----------------------------
+args()
+
+UNUSED
+
+#-----------------------------
+# OpenMiracleShop
+#-----------------------------
+args()
+
+UNUSED
+
+#-----------------------------
+# OpenMagicEquip
+#-----------------------------
+args( START_ID, END_ID )
+    START_ID: always -1
+    END_ID: always -1
+
+Opens the Attunement menu.
+
+#-----------------------------
+# OpenMiracleEquip
+#-----------------------------
+args()
+
+UNUSED
+
+#-----------------------------
+# OpenHumanityMenu
+#-----------------------------
+args()
+
+UNUSED
+
+#-----------------------------
+# OpenRepository
+#-----------------------------
+args()
+
+Opens the Item Storage menu.
+
+#-----------------------------
+# OpenDepository
+#-----------------------------
+args()
+
+UNUSED
+
+#-----------------------------
+# OpenSoul
+#-----------------------------
+args()
+
+Opens the Leveling menu.
+
+#-----------------------------
+# SetEventFlagRange
+#-----------------------------
+args( FLAG_A, FLAG_B )
+    FLAG_A
+    FLAG_B
+    
+UNUSED
+ 
+#-----------------------------
+# ClearTalkActionState
+#-----------------------------
+args()
+
+Clears current talk action state.
+
+#-----------------------------
+# ClearTalkDisabledState
+#-----------------------------
+args()
+
+UNUSED
+
+#-----------------------------
+# SetTalkDisableStateMaxDuration
+#-----------------------------
+args()
+
+UNUSED
+
+#-----------------------------
+# SetUpdateDistance
+#-----------------------------
+args( DISTANCE )
+    DISTANCE: distance in units at which to update
+    
+Sets update distance for talk prompt
+
+#-----------------------------
+# ClearPlayerDamageInfo
+#-----------------------------
+args()
+
+Clears the player's current damage info.
+
+#-----------------------------
+# OfferHumanity
+#-----------------------------
+args()
+
+UNUSED
+
+#-----------------------------
+# StartWarpMenuInit
+#-----------------------------
+args( BONEFIRE_WARP_ID )
+    BONEFIRE_WARP_ID: the warp id of the bonfire
+    
+UNUSED
+
+In Elden Ring: opens the map.
+
+#-----------------------------
+# StartBonfireAnimLoop
+#-----------------------------
+args( UNK, UNK, UNK, UNK, UNK, UNK )
+    UNK:
+    UNK:
+    UNK:
+    UNK:
+    UNK:
+    UNK:
+    
+Starts the sitting animation loop used by bonfires/graces.
+
+#-----------------------------
+# EndBonfireKindleAnimLoop
+#-----------------------------
+args( UNK )
+    UNK: 
+    
+Ends the bonfire animation loop.
+
+#-----------------------------
+# CombineMenuFlagAndEventFlag
+#-----------------------------
+args( MENU_FLAG, EVENT_FLAG )
+    MENU_FLAG: the menu flag to set
+    EVENT_FLAG: the event flag to set
+    
+Used to configure the reinforcement menu, toggling the visibility of certain categories.
+
+Flags used by ER:
+ 6001, 232
+ 6001, 233
+ 6001, 234
+ 6001, 235
+    
+#-----------------------------
+# RequestSave
+#-----------------------------
+args( VALUE )
+    VALUE:
+    
+Requests the game to save.
+
+#-----------------------------
+#
+#-----------------------------
+ChangeMotionOffsetID( <unk> )
+
+#-----------------------------
+#
+#-----------------------------
+PlayerEquipmentQuantityChange( <type>, <item id>, <value> )
+<type>
+    0:Weapon
+    1:Protector
+    2:Accessory
+    3:Goods
+    
+#-----------------------------
+#
+#-----------------------------
+RequestUnlockTrophy( <id> )
+
+#-----------------------------
+#
+#-----------------------------
+EnterBonfireEventRange()
+
+#-----------------------------
+#
+#-----------------------------
+SetAquittalCostMessageTag( <cost>, <unk> )
+
+#-----------------------------
+#
+#-----------------------------
+SubtractAcquittalCostFromPlayerSouls( <cost>, <unk> )
+
+#-----------------------------
+#
+#-----------------------------
+ShuffleRNGSeed( <unk> )
+
+#-----------------------------
+#
+#-----------------------------
+SetRNGSeed()
+
+#-----------------------------
+#
+#-----------------------------
+ReplaceTool( <item id>, <item id>, <value> )
+
+#-----------------------------
+#
+#-----------------------------
+BreakCovenantPledge()
+
+#-----------------------------
+#
+#-----------------------------
+PlayerRespawn()
+
+#-----------------------------
+#
+#-----------------------------
+GiveSpEffectToPlayer( <SpEffect> )
+
+#-----------------------------
+#
+#-----------------------------
+ShowGrandioseTextPresentation( <unk> )
+
+#-----------------------------
+#
+#-----------------------------
+AddIzalithRankingPoints()
+
+#-----------------------------
+#
+#-----------------------------
+OpenItemAcquisitionMenu( <type>, <item id>, <value> )
+<type>
+    0:Weapon
+    1:Protector
+    2:Accessory
+    3:Goods
+    
+#-----------------------------
+#
+#-----------------------------
+AcquireGesture( <gesture id> )
+
+#-----------------------------
+#
+#-----------------------------
+ForceCloseMenu()
+
+#-----------------------------
+#
+#-----------------------------
+SetTalkTime( <time> )
+
+#-----------------------------
+#
+#-----------------------------
+CollectJustPyromancyFlame()
+
+#-----------------------------
+#
+#-----------------------------
+OpenArenaRanking()
+
+#-----------------------------
+#
+#-----------------------------
+ReportConversationEndToHavokBehavior()
+
+#-----------------------------
+#
+#-----------------------------
+OpenConversationChoicesMenu( <unk> )
+
+#-----------------------------
+#
+#-----------------------------
+StopEventAnimWithoutForcingConversationEnd( <unk> 
+
+#-----------------------------
+#
+#-----------------------------
+OpenCharaMakeMenu() # Character Edit Menu
+
+#-----------------------------
+#
+#-----------------------------
+OpenChooseQuantityDialog( <item id>, <value> )
+
+#-----------------------------
+#
+#-----------------------------
+ClearQuantityValueOfChooseQuantityDialog()
+
+#-----------------------------
+#
+#-----------------------------
+SetWorkValue( <unk>, <value> )
+
+#-----------------------------
+#
+#-----------------------------
+UpdatePlayerRespawnPoint()
+
+#-----------------------------
+#
+#-----------------------------
+SetMessageTagValue( <unk>, <value>, *<value> )
+
+#-----------------------------
+#
+#-----------------------------
+TurnCharacterToFaceEntity( <unk>, <player>, <unk> )
+
+#-----------------------------
+#
+#-----------------------------
+GetItemFromItemLot( <itemlot id> )
+
+#-----------------------------
+#
+#-----------------------------
+OpenEstusAllotMenu()
+
+#-----------------------------
+#
+#-----------------------------
+AddRankingPoints( <type>, <value> )
+<type>
+    5:
+
+#-----------------------------
+#
+#-----------------------------
+OpenHollowLevelUpMenu()
+        
+#-----------------------------
+#
+#-----------------------------
+c1108( <value>, <type> ) # Set Estus Flask Count
+    0:Full
+    1:Drained
+        
+#-----------------------------
+#
+#-----------------------------
+c1109( <value> ) # Set Estus Flask Strength
+        
+#-----------------------------
+#
+#-----------------------------
+c1110() # Show Talk Options
+        
+#-----------------------------
+#
+#-----------------------------
+c1111( <start shop id>, <end shop id> ) # Transposition Menu
+
+#-----------------------------
+#
+#-----------------------------
+c1112( <talk id> ) # Fire Keeper during the End of Fire ending 
+
+#-----------------------------
+#
+#-----------------------------
+c1113() # Rebirth Menu
+
+#-----------------------------
+#
+#-----------------------------
+c1114() # Undead Match Menu
+
+#-----------------------------
+#
+#-----------------------------
+c1_140 # Pause Time?
+
+#-----------------------------
+#
+#-----------------------------
+c1_110 # Open Time Menu
+
+#-----------------------------
+#
+#-----------------------------
+OpenPhysickMenu()
+
+#-----------------------------
+#
+#-----------------------------
+c1_137 # Great Runes Menu
+
+#-----------------------------
+#
+#-----------------------------
+ChangePlayerStats( <stat>, <change type>, <value>)
+<change type>
+    0: Addition
+    1: Subtraction
+    5: Set
+    
+<stat>
+    0: Vitality
+    1: Attunement
+    2: Endurance
+    3: Strength
+    4: Dexterity
+    5: Magic
+    6: Faith
+    7: Luck
+    8: Soul
+    9: Total Get Soul
+    10: Humanity
+    11: Covenant Type
+    12: Gender
+    13: Unk1
+    14: Unk2
+    15: Equipped Covenant Points
+    16: Equipped Covenant Points - Covenant Level 
+    17: Blade Of Darkmoon Points
+    18: Warrior of Sunlight Points
+    19: Mound-makers Points
+    20: Spears of the Church Points
+    21: Rosaria's Fingers Points
+    22: Watchdogs of Farron Points
+    23: Aldrich Faithful Points
+    24: Blade Of Darkmoon Points - Covenant Level
+    25: Warrior of Sunlight Points - Covenant Level
+    26: Mound-makers Points - Covenant Level
+    27: Spears of the Church Points - Covenant Level
+    28: Rosaria's Fingers Points - Covenant Level
+    29: Watchdogs of Farron Points - Covenant Level
+    30: Aldrich Faithful Points - Covenant Level
+    31: Hollowing Level (Yoel)
+    32: Previous Soul Level
+    33: Soul Level
+    34: Free Yoel Level Ups Remaining
+    35: Way of Blue Points
+    36: Way of Blue Points - Covenant Level
+    37: Blue Sentinels Points
+    38: Blue Sentinels Points - Covenant Level
+
+#------------------------------------
+# Misc Reference
+#------------------------------------
+108:EstusAllocationUpdate
+109:BonfireActivation
+110:FirelinkBonfireMenuFlag
+111:SoulsTransposition
+112:SetBonfireMenuData
+113:ReallocateAttributes
+114:UndeadMatch
+
+c1108( f109(0) + 1, 0 ) # Likely "Increase Estus Flask Count"
+f109(0) # Likely "Get Estus Flask Count"
+SetAquittalCostMessageTag(z7, z8)
+ComparePlayerAcquittalPrice(z7, z8, 2) == 1
+SubtractAcquittalCostFromPlayerSouls(z7, z8)
+
+#------------------------------------
+# Checks
+#------------------------------------
+GetDistanceToPlayer()
+
+HasTalkEnded()
+
+CheckSelfDeath()
+
+IsPlayerTalkingToMe()
+
+IsAttackedBySomeone()
+
+GetSelfHP()
+
+GetRelativeAngleBetweenPlayerAndSelf()
+
+IsPlayerAttacking()
+
+GetShopCondition()
+
+GetOneLineHelpStatus() # Check if client player
+
+IsClientPlayer() # Check if client player
+
+IsGenericDialogOpen()
+
+GetGenericDialogButtonResult() 
+
+GetTalkListEntryResult() # Get talk option result
+
+IsCharacterDisabled()
+
+IsPlayerDead()
+
+IsTalkingToSomeoneElse()
+
+HasDisableTalkPeriodElapsed()
+
+GetPlayerYDistance()
+
+HasPlayerBeenAttacked()
+
+GetPlayerChrType()
+
+WasWarpMenuDestinationSelected()
+
+IsMultiplayerInProgress()
+
+GetValueFromNumberSelectDialog()
+
+GetCurrentStateElapsedFrames()
+
+GetCurrentStateElapsedTime()
+
+GetWorkValue( <unk> )
+
+GetEventState( <flag> ) # Check event flag
+
+GetItemHeldNumLimit( <item type>, <item ID>, <value> )
+IsEquipmentIDEquipped( <item type>, <item ID> ) # Check if item is equipped
+IsEquipmentIDObtained( <item type>, <item ID> ) # Check if item is obtained
+    0:Weapon
+    1:Protector
+    2:Accessory
+    3:Goods
+    
+ComparePlayerInventoryNumber( <item type>, <item ID, <compare type>, <value>, <count storage?> )
+    0: ==
+    1: !=
+    2: >
+    3: <
+    4: >=
+    5: <=
+    
+IsMenuOpen( <menu ID> )
+DidYouDoSomethingInTheMenu( <menu ID> )
+    11: Talk Menu
+    12: Repair Menu
+    13: Reinforcement Menu
+    23: Level Up Menu
+    25: Attunement Menu
+    26: Storage Menu
+    30: Character Edit Menu
+    31: Covenant Material Menu
+    36: Warp Menu
+    63: Bonfire Menu
+    
+CompareBonfireState( <state> )
+    0:
+    1:
+    
+CompareBonfireLevel( <unk>, <unk> )
+    0:
+    2:
+    5:
+    
+ComparePlayerStatus( <stat>, <compare type>, <value> )
+    0: ==
+    1: !=
+    2: >
+    3: <
+    4: >=
+    5: <=
+    
+GetPlayerStatus( <stat> )
+GetStatus( <stat> )
+    0: Vitality
+    1: Attunement
+    2: Endurance
+    3: Strength
+    4: Dexterity
+    5: Intelligence
+    6: Faith
+    7: Luck
+    8: Souls Collected
+    9: Total Get Soul
+    10: Humanity
+    11: Covenant Type
+    12: Gender
+    13: 
+    14: 
+    
+    15: Equipped Covenant Points
+    16: Equipped Covenant Points - Covenant Level 
+    17: Blade Of Darkmoon Points
+    18: Warrior of Sunlight Points
+    19: Mound-makers Points
+    20: Spears of the Church Points
+    21: Rosaria's Fingers Points
+    22: Watchdogs of Farron Points
+    23: Aldrich Faithful Points
+    24: Blade Of Darkmoon Points - Covenant Level
+    25: Warrior of Sunlight Points - Covenant Level
+    26: Mound-makers Points - Covenant Level
+    27: Spears of the Church Points - Covenant Level
+    28: Rosaria's Fingers Points - Covenant Level
+    29: Watchdogs of Farron Points - Covenant Level
+    30: Aldrich Faithful Points - Covenant Level
+    
+    31: Hollowing
+    32: Hollowing Level - Covenant Level
+    33: Soul Level
+    34: Free Yoel Level Ups Remaining
+    
+    35: Way of Blue Points
+    36: Way of Blue Points - Covenant Level
+    37: Blue Sentinels Points
+    38: Blue Sentinels Points - Covenant Level
+    
+    39:
+    40:
+    41:
+    42:
+    43:
+   
+GetEstusAllocation (c109)
+    0: HP Estus
+    1: FP Estus
+
+ComparePlayerAcquittalPrice( <price>, <unk>, <unk> )
+    
+CompareRNGValue( <unk>, <unk> )
+    
+CheckActionButtonArea( <action ID> )
+
+CheckSpecificPersonTalkHasEnded( <unk> )
+
+CheckSpecificPersonGenericDialogIsOpen( <unk> )
+
+#-----------------------------
+# CheckSpecificPersonMenuIsOpen
+#-----------------------------
+args( MENU_ID, UNK )
+    MENU_ID: menu ID to check for
+    UNK: 
+
+    MENU_ID:
+    -1  None
+    1   TalkList
+    2   
+    3   OpenRepository
+    4   
+    5   OpenRegularShop
+    6   OpenSellShop
+    7   OpenEquipmentChangeOfPurposeShop
+    8   
+    9   OpenEnhanceShop(0)  # Full
+    10  OpenSoul
+    11  OpenMagicEquip
+    12  OpenConversationChoicesMenu
+    13  OpenChooseQuantityDialog
+    14  OpenEstusAllotMenu
+    15  
+    16  OpenCharaMakeMenu(0) # Full
+    17
+    18  OpenTranspositionShop
+    19  ReallocateAttributes
+    20  
+    21  OpenPhysickMenu
+    22  OpenDragonCommunionShop
+    23  c1_136 # Spirit Tuning
+    24  c1_137 # Great Runes
+    25  OpenEnhanceShop(1)  # Limited to +3
+    26  OpenTailoringShop
+    27  OpenAshOfWarShop
+    28  OpenPuppetShop
+    29
+    30 OpenCharaMakeMenu(1) # Limited to cosmetics
+    31 OpenDupeShop(0)
+    32 OpenDupeShop(1)
+    33 OpenChampionsEquipmentShop
+    34
+    35
+    36 
+
+DoesSelfHaveSpEffect( <SpEffect> )
+    
+DoesPlayerHaveSpEffect( <SpEffect> ) 
+
+GetEventFlagValue( <flag>, <value> )
+
+GetLevelUpSoulCost( <previous level>, <level> )
+
+GetWhetherEnemiesAreNearby()
+
+GetRelativeAngleBetweenSelfAndPlayer()
+
+IsTalkInProgress()
+
+GetDistanceFromEnemy()
+
+GetTalkInterruptReason()
+
+IsFightingAlone()
+
+IsCampMenuOpen()
+
+IsMoviePlaying()
+
+IsPlayerMovingACertainDistance()
+
+CanIGoToNextTalkBlock()
+
+CompareParentBonfire()
+
+BonfireRegistration0()
+
+BonfireRegistration1()
+
+BonfireRegistration2()
+
+BonfireRegistration3()
+
+BonfireRegistration4()
+
+RelativeAngleBetweenTwoPlayers_SpecifyAxis()
+
+IsPlayerCurrentWeaponDamaged()
+
+IsTalkExclusiveMenuOpen()
+
+IsRankingMenuOpen()
+
+GetPlayerRemainingHP()
+
+GetWhetherChrTurnAnimHasEnded()
+
+GetWhetherChrEventAnimHasEnded()
+
+f109(<type>) # Get Estus Flask Count
+    0:Full
+    1:Drained
+    
+f110() # Get Undead Bone Shard count
+
+f111() # Used during Bonfire check
+
+f112() # Used during Bonfire check negatively
+

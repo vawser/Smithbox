@@ -1,0 +1,350 @@
+<?arg> means the argument is optional.
+
+#----------------------------------------------------------
+# General
+#----------------------------------------------------------
+# PrintText
+# <string>
+arg0:PrintText(f38_local1 .. f38_local2 .. arg2)
+
+# DbgDrawText
+# <string>
+arg0:DbgDrawText("Boost_Route")
+
+# DbgSetDrawTextHeightOffset
+# <offset>
+arg0:DbgSetDrawTextHeightOffset(10)
+    
+# GetNumber
+# <id>
+# Returns the value of the <id> ID
+f27_local1:GetNumber(f27_local0)
+
+# SetNumber
+# <id>, <value>
+# Sets the number with the <id> ID to the <value> value.
+f3_local11:SetNumber(f3_local1, 1)
+
+# SetTimer
+# <id>, <seconds>
+# Starts a timer with the <id> ID, lasting the <seconds> number of seconds.
+arg0:SetTimer(0, 1)
+
+# GetRandam_Int
+# <min>, <max>
+# Returns a integer between <min> and <max>
+arg0:GetRandam_Int(0, 1)
+
+# GetRandam_Float
+# <min>, <max>
+# Returns a float between <min> and <max>
+actor:GetRandam_Float(2, 4)
+
+# GetExcelParam
+# <thinkParamEnum>
+# Returns the value from the <thinkParamEnum> associated field from the NpcThinkParam row.
+arg0:GetExcelParam(AI_EXCEL_THINK_PARAM_TYPE__fixedCannonReleaseDistByDist)
+
+# GetGeneralAiThinkParam
+arg0:GetGeneralAiThinkParam(f0_local8._Dist_ShootEvAsset_SelectPoint)
+
+# GetAiChrEntityId
+arg0:GetAiChrEntityId()
+
+# GetIdTimer
+arg0:GetIdTimer(IDTIMER_OP_SET_TIMER)
+
+# StartIdTimer
+arg0:StartIdTimer(IDTIMER_OP_SET_TIMER)
+
+# IsFinishTimer
+arg0:IsFinishTimer(TIMER_ID_STATE_CTRL)
+
+#----------------------------------------------------------
+# Chr State
+#----------------------------------------------------------
+# HasSpecialEffectId
+f3_local5:HasSpecialEffectId(TARGET_SELF, 9999060)
+
+# GetSpecialEffectActivateInterruptId
+arg0:GetSpecialEffectActivateInterruptId(f0_local3)
+
+# GetHp
+arg0:GetHp(TARGET_ENE_0)
+
+# GetHpRate
+f27_local1:GetHpRate(TARGET_SELF)
+
+# GetShieldHpRate
+arg0:GetShieldHpRate(TARGET_SELF, AI_SHIELD_PHYSICS)
+
+# GetAttachCarrierEntityId
+f3_local11:GetAttachCarrierEntityId()
+
+# GetHeightFromGround
+f11_local1:GetHeightFromGround(TARGET_SELF)
+
+# IsLanding
+arg0:IsLanding()
+
+# IsHitWallCheckRay
+arg0:IsHitWallCheckRay()
+
+# GetBehaviorActionType
+actor:GetBehaviorActionType(TARGET_SELF)
+
+# IsInterupt
+arg0:IsInterupt(INTERUPT_ActivateSpecialEffect)
+
+# GetBattleState
+arg0:GetBattleState()
+
+# GetDangerousBulletParamId
+arg0:GetDangerousBulletParamId(arg1)
+
+# GetDangerousBulletAngleFromSelf
+arg0:GetDangerousBulletAngleFromSelf(0)
+
+# SetLockonTargetType
+arg0:SetLockonTargetType(TARGET_ENE_0)
+
+# GetMagazineBulletNum
+arg0:GetMagazineBulletNum(TARGET_SELF, f0_local15)
+
+# GetMovementSpeed
+arg0:GetMovementSpeed(AI_SPEED_REF_Horizontal, false)
+
+# SetInterruptParam_HorizontalAngle
+arg0:SetInterruptParam_HorizontalAngle(arg4, TARGET_ENE_0, f9_local5, f9_local6)
+
+# GetEnRate
+# <target>
+arg0:GetEnRate(TARGET_SELF)
+
+# IsTargetInsideCamera
+actor:IsTargetInsideCamera()
+
+# GetChrBehaviorControlType
+actor:GetChrBehaviorControlType()
+
+# SetJumpEdgeCostRate
+arg0:SetJumpEdgeCostRate(10)
+
+# SetJumpEdgeFixedCost
+arg0:SetJumpEdgeFixedCost(1000)
+    
+#----------------------------------------------------------
+# Navigation
+#----------------------------------------------------------
+# GetDist
+actor:GetDist(TARGET_ENE_0)
+
+# GetDistXZ
+f27_local1:GetDistXZ(TARGET_ENE_0)
+
+# GetOriginDist
+arg0:GetOriginDist(TARGET_ENE_0)
+
+# GetToTargetAngle
+f27_local1:GetToTargetAngle(TARGET_ENE_0)
+
+# GetTargetForwardAngle
+arg0:GetTargetForwardAngle(TARGET_SELF)
+
+# GetRelativeFrontAngleAtoB
+arg0:GetRelativeFrontAngleAtoB(f1_local1, TARGET_SELF)
+
+# GetInitialPointTurnAngle
+arg0:GetInitialPointTurnAngle()
+
+# NextInitialPointTurnAngle
+arg0:NextInitialPointTurnAngle()
+
+# GetDistAtoB
+arg0:GetDistAtoB(f13_local0, f13_local1)
+
+# CheckDoesExistPath
+arg0:CheckDoesExistPath(arg1, 0, 0)
+
+# IsInsideTargetRegion
+arg0:IsInsideTargetRegion(arg1, f13_local9)
+
+# GetDistYSigned
+arg0:GetDistYSigned(arg1)
+
+# GetAngleAtoB
+arg0:GetAngleAtoB(arg1, TARGET_ENE_0)
+
+# IsInsideSquareArea
+arg0:IsInsideSquareArea(AI_TARGET_TYPE_SUBSET, arg1, f13_local6, f13_local10, f13_local3, f13_local11)
+
+# SetNaviRouteSearchType
+actor:SetNaviRouteSearchType(AI_NAVIGATE_SEARCH_TYPE_MESH)
+
+# GetTurnTargetMode
+arg0:GetTurnTargetMode()
+
+# SetTurnTargetMode
+arg0:SetTurnTargetMode(AI_TURN_TARGET_TYPE_TARGET_DIRECTION)
+
+# IsExistMeshOnLine
+arg0:IsExistMeshOnLine(TARGET_SELF, AI_DIR_TYPE_ToB, f2_local10)
+
+#----------------------------------------------------------
+# Points
+#----------------------------------------------------------
+# SearchAiDestinationPoint
+arg0:SearchAiDestinationPoint(AIDestPoint_Type_Snipe, f22_local0)
+
+# UnreserveAiDestinationPoint
+arg0:UnreserveAiDestinationPoint()
+
+# ReserveAiDestinationPoint
+arg0:ReserveAiDestinationPoint(i[1])
+
+# IsAiDestinationPointReserved
+arg0:IsAiDestinationPointReserved()
+
+# ReserveDefencePoint
+arg0:ReserveDefencePoint(arg1)
+
+# IsDefencePointReserved
+arg0:IsDefencePointReserved()
+
+# UnreserveDefencePoint
+arg0:UnreserveDefencePoint()
+
+#----------------------------------------------------------
+# Platoons
+#----------------------------------------------------------
+# SetFormationType
+arg0:SetFormationType(1, 3)
+
+# GetMemberAI
+arg0:GetMemberAI(f3_local1)
+
+# GetInitialPointPos
+f3_local5:GetInitialPointPos(0)
+
+# SetFormationParam
+arg0:SetFormationParam(f3_local1, f3_local2, f3_local3, f3_local4)
+
+# SetBaseMoveRate
+arg0:SetBaseMoveRate(0, 1)
+
+# SetEnablePlatoonMove
+arg0:SetEnablePlatoonMove(false)
+
+# StepNextMovePoint
+arg0:StepNextMovePoint()
+
+# SetMovePointType
+arg0:SetMovePointType(arg1)
+
+# GetMovePointNumber
+arg0:GetMovePointNumber()
+
+# IsValidPlatoon
+arg0:IsValidPlatoon()
+
+# IsPlatoonLeader
+arg0:IsPlatoonLeader()
+
+# GetPlatoonCommand
+actor:GetPlatoonCommand()
+
+# GetCommandNo
+f9_local2:GetCommandNo()
+
+# GetDist_Point
+actor:GetDist_Point(TARGET_TEAM_FORMATION)
+
+#----------------------------------------------------------
+# Operations
+#----------------------------------------------------------
+# RegistOperationLayer
+arg0:RegistOperationLayer(REG0, 9, "LayerCommonFunc", "0")
+
+# SetupOperation
+arg0:SetupOperation(arg1, AI_OPERATION_Weapon_Ver102, arg2[2], arg2[3], arg2[4], arg2[1], arg2[5], arg2[6], arg2[7], arg2[8], arg2[9], arg2[10], arg2[11], arg2[12])
+
+# RegistOperationCallbackLocal
+arg0:RegistOperationCallbackLocal(INTERUPT_HitWallCheckRay)
+
+# SetupOperationLocal
+arg0:SetupOperationLocal(AI_OPERATION_KeepDistance, 0, POINT_AutoWalkAroundTest, 0, 20, 0, 10)
+
+# RequestCallOperation
+arg0:RequestCallOperation(LAYER_ID_OP_LOT_CTRL)
+
+# GetOpsetPastTime
+GetOpsetPastTime(arg0, arg2)
+
+# SetSubsetTarget
+# <target>, <bool>, <target>, <bool>
+arg0:SetSubsetTarget(f13_local0, true, f13_local1, true)
+
+# SetOperationUpdateIntervalLocal
+arg0:SetOperationUpdateIntervalLocal(f5_local3)
+
+#----------------------------------------------------------
+# Camera
+#----------------------------------------------------------
+# SetCameraEmuSwingSpeedH
+arg0:SetCameraEmuSwingSpeedH(100)
+
+# SetCameraEmuSwingSpeedV
+arg0:SetCameraEmuSwingSpeedV(30)
+
+# SetCameraTargetPastTime
+arg0:SetCameraTargetPastTime(0.2)
+
+# SetCameraTargetSampleTime
+arg0:SetCameraTargetSampleTime(0.2)
+
+# SetCameraTargetPredictionTime
+arg0:SetCameraTargetPredictionTime(0.2)
+
+#----------------------------------------------------------
+# Misc
+#----------------------------------------------------------
+# SetMinStickHorizontalVelocity
+arg0:SetMinStickHorizontalVelocity(0.498)
+
+# SetMaxStickHorizontalVelocity
+arg0:SetMaxStickHorizontalVelocity(0.498)
+
+# SetWallCheckRayDistance
+arg0:SetWallCheckRayDistance(18)
+
+# GetActionScheduleNum
+arg0:GetActionScheduleNum()
+
+# AddActionSchedule
+arg0:AddActionSchedule(0.1, 0.5, 0)
+
+# CallActionExec
+# <ai call act enum>, <?float>
+arg0:CallActionExec(AI_CALLACT_EXEC_MoveReset, 0.5)
+
+# GetLocalLayerId
+arg0:GetLocalLayerId()
+
+#----------------------------------------------------------
+# AI Common
+#----------------------------------------------------------
+# EZOP_LayerSetup
+# <actor>, <goal id>
+EZOP_LayerSetup(actor, 81450000)
+
+# EZOP_SetUpInterruptFunc
+# <actor>, <function>
+EZOP_SetUpInterruptFunc(actor, InterrunptCallBack_81450000)
+
+# EZOP_UseInterrupt
+# <actor>, <interrupt type enum>, <?target>, <?speffect>, <?arg4>, <?arg5>, <?arg6>, <?arg7>, <?arg8>, <?arg9>
+EZOP_UseInterrupt(arg0, INTERUPT_ActivateSpecialEffect, TARGET_SELF, 4850)
+
+# EZOP_MakeActLotTable
+# <act table>
+EZOP_MakeActLotTable(f2_local0)

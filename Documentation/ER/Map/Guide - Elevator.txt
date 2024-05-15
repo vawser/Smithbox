@@ -1,0 +1,86 @@
+﻿#----------------------------------------
+# Overview
+#----------------------------------------
+XX means the first set of 2 digits of the map
+YY means the second set of 2 digits of the map
+ZZ means the third set of 2 digits of the map
+
+For m60_ maps, the XX is 10
+
+#----------------------------------------
+# Adding an Elevator
+#----------------------------------------
+Base flag is the Lift EntityID.
+
+# Asset: Lower Lever
+ModelName:              <model id>          # AEG219_010
+EntityID:               <base flag + 2>     # 10001512
+
+# Asset: Upper Lever
+ModelName:              <model id>          # AEG219_010
+EntityID:               <base flag + 1d>     # 10001511
+
+# Asset: Lift
+ModelName:              <model id>          # AEG219_020
+EntityID:               <valid id>          # 10001510
+
+# Region: Upper Activation Area
+Position:               Lift Button Position at the top
+Shape:                  <any>               # Box
+EntityID:               <base flag + 1001>  # 10002511
+
+# Region: Lower Activation Area
+Position:               Lift Button Position at the bottom
+Shape:                  <any>               # Box
+EntityID:               <base flag + 1002>  # 10002512
+
+# ObjAct: Lower Lever
+EventID:                <unique id>
+EntityID:               0
+Unk14:                  0
+MapID:                  -1
+UnkE0C:                 255
+UnkS04:                 0
+UnkS08:                 0
+UnkS0C:                 -1
+ObjActEntityID:         <base flag + 2002>  # 10003512
+ObjActPartName:         <model id>          # Asset: Lower Lever name
+ObjActID:               219010
+StateType:              0
+EventFlagID:            0
+
+# ObjAct: Upper Lever
+EventID:                <unique id>
+EntityID:               0
+Unk14:                  0
+MapID:                  -1
+UnkE0C:                 255
+UnkS04:                 0
+UnkS08:                 0
+UnkS0C:                 -1
+ObjActEntityID:         <base flag + 2001>  # 10003511
+ObjActPartName:         <model id>      # Asset: Upper Lever name
+ObjActID:               219010
+StateType:              0
+EventFlagID:            0
+
+# EMEVD:
+# InitializeCommonEvent(0, 90005500, 10000510, 10000511, 0, 10001510, 10001511, 10003511, 10001512, 10003512, 10002511, 10002512, 10000512, 10000513, 10000514);
+    
+InitializeCommonEvent(
+    0,        
+    90005500, 
+    10000510, # Unique Flag (base flag - 1000)
+    10000511, # Unique Flag (base flag - 999)
+    0,        # Animation Offset (1 to 10)
+    10001510, # Lift EntityID
+    10001511, # Upper Lever EntityID
+    10003511, # Upper Lever ObjAct EntityID
+    10001512, # Lower Lever EntityID
+    10003512, # Lower Lever ObjAct EntityID
+    10002511, # Region: Upper Activation Area
+    10002512, # Region: Lower Activation Area
+    10000512, # Unique Flag (base flag - 998)
+    10000513, # Unique Flag (base flag - 997)
+    10000514  # Unique Flag (base flag - 996)
+);

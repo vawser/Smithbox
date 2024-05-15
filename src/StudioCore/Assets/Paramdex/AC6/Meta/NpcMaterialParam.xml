@@ -9,6 +9,7 @@
     </ColorEditor>
   </ColorEdit>
   <Field>
+    <Unk0x00 IsHidden="" />
     <materialExParamId AltName="Material Ex Param ID" Refs="MaterialExParam"/>
     <colorRed AltName="Color: Red" />
     <colorGreen AltName="Color: Green" />

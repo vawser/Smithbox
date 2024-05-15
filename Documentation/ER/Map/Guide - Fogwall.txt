@@ -1,0 +1,36 @@
+﻿#----------------------------------------
+# Overview
+#----------------------------------------
+XX means the first set of 2 digits of the map
+YY means the second set of 2 digits of the map
+ZZ means the third set of 2 digits of the map
+
+For m60_ maps, the XX is 10
+
+#----------------------------------------
+# Adding a Fogwall
+#----------------------------------------
+Base ID: <unique id>
+
+# Asset: Fogwall
+ModelName:      AEG099_271
+EntityID:       <base id>           # 18001570
+
+#-----------
+# EMEVD
+#-----------
+# X0_4 - Trigger flag
+# X4_4 - Fogwall Entity ID
+$Event(<function id>, Default, function(X0_4, X4_4) {
+    if (EventFlag(X0_4)) {
+        DisableAsset(X4_4);
+        EndEvent();
+    }
+L0:
+    CreateAssetfollowingSFX(X4_4, 101, 806043); // Fogwall VFX
+    WaitFor(EventFlag(X0_4));
+    DeleteAssetfollowingSFX(X4_4, true);
+    PlaySE(X4_4, SoundType.SFX, 90011); // Sound on removal
+    WaitFixedTimeSeconds(0.5);
+    DisableAsset(X4_4);
+});

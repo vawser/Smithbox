@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using static SoapstoneLib.SoulsObject;
@@ -21,19 +22,6 @@ public static class DebugActions
     public static List<MSB_AC6> maps = new List<MSB_AC6>();
     public static List<ResourceDescriptor> resMaps = new List<ResourceDescriptor>();
     private static MapPropertyCache _propCache;
-
-    public static void LogValueDistribution(string targetProperty)
-    {
-        foreach (var map in maps)
-        {
-            TaskLogs.AddLog($"{map.ToString()}");
-
-        }
-    }
-    public static void FindValueInstances(string targetValue)
-    {
-
-    }
 
     public static void LoadMsbData()
     {
@@ -56,6 +44,23 @@ public static class DebugActions
         {
             var msb = MSB_AC6.Read(res.AssetPath);
             maps.Add(msb);
+        }
+    }
+
+    public static void SearchInMsbForValue(int searchValue)
+    {
+        foreach(var map in maps)
+        {
+            var enemies = map.Parts.Enemies;
+            foreach(var ene in enemies)
+            {
+                var prop = ene.GetType();
+                PropertyInfo[] properties = prop.GetProperties();
+                foreach(var field in properties)
+                {
+                    TaskLogs.AddLog($"{field.Name}");
+                }
+            }
         }
     }
 
@@ -110,17 +115,21 @@ public static class DebugActions
 
     public static void DumpUncompressedFiles()
     {
-        string sourcePath = "F:\\SteamLibrary\\steamapps\\common\\ARMORED CORE VI FIRES OF RUBICON\\Game\\map\\msld";
+        string sourcePath = "F:\\SteamLibrary\\steamapps\\common\\ARMORED CORE VI FIRES OF RUBICON\\Game\\script";
         string destPath = "C:\\Users\\benja\\Programming\\C#\\Smithbox\\Dump";
-        string ext = $"*.msld.dcx";
+        string ext = $"*.luabnd.dcx";
 
         foreach (string path in Directory.GetFiles(sourcePath, ext))
         {
             TaskLogs.AddLog($"{path}");
-            string name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
 
             var bnd = BND4.Read(path);
-            bnd.Files.Where(f => f.Name.EndsWith(".msld")).ToList().ForEach(f => File.WriteAllBytes($@"{destPath}\\msld\\{name}", f.Bytes.ToArray()));
+            foreach(var file in bnd.Files)
+            {
+                var name = Path.GetFileName(Path.GetFileName(file.Name));
+
+                File.WriteAllBytes($@"{destPath}\\lua\\{name}", file.Bytes.ToArray());
+            }
         }
     }
 

@@ -1,0 +1,45 @@
+﻿#----------------------------------------
+# Overview
+#----------------------------------------
+XX means the first set of 2 digits of the map
+YY means the second set of 2 digits of the map
+ZZ means the third set of 2 digits of the map
+
+For m60_ maps, the XX is 10
+
+#----------------------------------------
+# Adding a Spiritspring
+#----------------------------------------
+Requirements:
+- MountJump: adds the ability to jump high
+- MountJumpFall: adds the invulnerability on falling
+- Asset: from the AEG099_090 range
+    
+# MountJump properties:
+Shape:      Sphere
+-> Radius:  5.0
+Unk2C:      27
+Unk40:      0
+UnkE08:     255
+MapID:      -1
+UnkS04:     0
+UnkS0C:     -1
+UnkT00:     70.0
+UnkT04:     -1
+  
+# MountJumpFall properties:
+Shape:      Cylinder
+-> Radius:  12.0
+-> Height:  74.0
+Unk2C:      35
+Unk40:      0
+UnkE08:     255
+MapID:      -1
+UnkS04:     0
+UnkS0C:     -1
+EntityID:   <XXYYZZ>500
+  
+# Asset properties:
+EntityID:  <XXYYZZ>1250
+UnkPartNames[4]: should match Name
+UnkPartNames[5]: should match Name

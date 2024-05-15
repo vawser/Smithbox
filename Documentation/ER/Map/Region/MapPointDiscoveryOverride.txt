@@ -1,0 +1,8 @@
+﻿#----------------------------------------
+# MapPointDiscoveryOverride
+#----------------------------------------
+Used to setup a map point discovery override.
+
+#-------------------------
+# Unique Properties
+#-------------------------

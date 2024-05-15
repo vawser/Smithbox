@@ -1,0 +1,17 @@
+﻿#----------------------------------------
+# ObjAct
+#----------------------------------------
+Used to control the interactions of assets.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+ObjActEntityId:             Entity ID used by this ObjAct entity.
+ObjActPartName:             Part type entity associated with this ObjAct.
+ObjActID:                   ObjAct row id from ObjActParam.
+StateType:                  The state type used by this ObjAct:
+                            - 0: lever
+                            - 1: one-way door
+                            - 4: door
+                            - 5: chest
+EventFlagID:                Event flag to set when this ObjAct occurs.

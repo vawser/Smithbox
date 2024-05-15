@@ -1,0 +1,50 @@
+﻿#----------------------------------------
+# Overview
+#----------------------------------------
+XX means the first set of 2 digits of the map
+YY means the second set of 2 digits of the map
+ZZ means the third set of 2 digits of the map
+
+For m60_ maps, the XX is 10
+
+#----------------------------------------
+# Adding a Statue of Marika
+#----------------------------------------
+Requirements:
+- RetryPoint: setup for the retry mechanic
+- Other: composite region to cover boss arena
+    - Other: sub-regions should be boxes
+- Asset: AEG099_501_9000
+- Player: define the spawn point of the statue
+
+# RetryPoint properties
+EventID:            <valid id>
+PartName:           <blank>
+RegionName:         <blank>
+EntityID:           0
+Unk14:              0
+MapID:              -1
+UnkE0C:             255
+UnkS04:             0
+UnkS08:             0
+UnkS0C:             -1
+Name:               <valid name>
+RetryPartName:      AEG099_501_9000
+EventFlagID:        6001
+UnkT08:             -1
+RetryRegionName:    <valid name>
+
+# Asset properties:
+EntityID:           <XXYY>1940
+
+# Region properties
+The regions need no specific property changes.
+
+# Player properties
+LodParamID:             0
+UnkE09:                 0
+IsPointLightShadowSrc:  0
+UnkE0B:                 0
+EntityID:               <XXYY>1940 - 970 
+
+If you do not need a composite region to cover the boss arena, use a box region directly.

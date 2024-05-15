@@ -1,0 +1,10 @@
+﻿#----------------------------------------
+# Mount
+#----------------------------------------
+Used to setup a mount association between rider and mount characters.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+RiderPartName:              The rider Enemy to use.
+MountPartName:              The mount Enemy to use.

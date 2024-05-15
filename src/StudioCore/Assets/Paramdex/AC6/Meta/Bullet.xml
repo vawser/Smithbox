@@ -281,7 +281,7 @@
     <cartridgeBehaviorParamId AltName="Cartridge Behavior Param ID" Refs="CartridgeBehaviorParam" />
     <padRumbleParamId AltName="Pad Rumble ID" Refs="PadRumble" />
     
-    <UnkInt0x1E0 AltName="Unknown FFX ID" ParticleAlias=""/>
+    <sfxId_Casing AltName="Casing FFX ID" ParticleAlias=""/>
     
     <unkSpeedModifier AltName="Speed Modifier" />
     <childProjectileDist AltName="Child Projectile Range" />

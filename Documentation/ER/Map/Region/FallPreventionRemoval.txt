@@ -1,0 +1,8 @@
+﻿#----------------------------------------
+# FallPreventionRemoval
+#----------------------------------------
+Used to setup an area that removes fall damage prevention.
+
+#-------------------------
+# Unique Properties
+#-------------------------

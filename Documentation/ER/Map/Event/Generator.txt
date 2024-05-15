@@ -1,0 +1,25 @@
+﻿#----------------------------------------
+# Generator
+#----------------------------------------
+Used to setup an enemy generator, used to create respawning enemies.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+MaxNum:                     ?
+                            - 3: used for Silver Tear spawner
+GenType:                    ?
+                            - 3: used for Silver Tear spawner
+LimitNum:                   ?
+                            - 3: used for Silver Tear spawner
+MinGenNum:                  ?
+                            - 3: used for Silver Tear spawner
+MaxGenNum:                  ?
+                            - 3: used for Silver Tear spawner
+MinInterval:                ?
+MaxInterval:                ?
+InitialSpawnCount:          ?
+UnkT14:                     ?
+UnkT18:                     ?
+SpawnRegionNames[]          The names of the regions used for spawning
+SpawnPartNames[]            The names of the enemies to spawn

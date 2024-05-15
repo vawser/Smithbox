@@ -1,0 +1,19 @@
+﻿#------------------------------------
+# Hit Filter IDs
+#------------------------------------
+0 - no hi-hit, no feet ik (solid)
+1-7 - no hi-hit (solid)
+8 - normal (solid)
+9 - water (blue) (permeable)
+11 - block npc (blue) (permeable for player)
+13 - death cam (white) (permeable)
+14 - lethal fall (red) (permeable)
+15 - death plane (black) (permeable)
+16 - water (dark-blue) (permeable)
+17 - group switch (turquoise) (permeable) in elevator shafts
+19 - block npc (turquoise) (permeable for player)
+20 - ?? (purple) (permeable) at level exits
+21 - slide (yellow)
+22 - "fall protection" (permeable for projectiles)
+23 - ?? (glowing turquoise) (permeable) at level exits
+24 - Normal (solid)

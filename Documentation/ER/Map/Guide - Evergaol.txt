@@ -1,0 +1,158 @@
+﻿#----------------------------------------
+# Overview
+#----------------------------------------
+XX means the first set of 2 digits of the map
+YY means the second set of 2 digits of the map
+ZZ means the third set of 2 digits of the map
+
+For m60_ maps, the XX is 10
+
+#----------------------------------------
+# Adding a Evergaol
+#----------------------------------------
+Evergaols also add a statue of marika, that is covered in its own guide.
+
+# Asset: Evergaol
+ModelName: AEG001_169_1000
+
+# MapPoint: 
+Shape:      Sphere
+Radius:     12.461  # Cover the Evergaol circle
+Unk2C:      78
+Unk40:      0
+UnkE08:     255
+MapID:      -1
+UnkS04:     0
+UnkS0C:     -1
+UnktT00:    <WorldMapPointParam id>
+UnkT04:     -1
+UnkT08:     15
+UnkT0C:     15
+UnkT14:     50
+UnkT18:     50
+
+# Param - WorldMapPointParam:
+eventFlagID:    <unique id>
+areaNo:         <map XX>
+gridXNo:        <map YY>
+gridZNo:        <map ZZ>
+textId1:        <text id>   
+
+Find appropriate coordinates by reloading the param vis DSMS 
+(0, 0, 0 is the center fo the map tile)
+
+#-------
+# Evergaol
+#-------
+# SpawnPoint: Warp into Evergaol
+Unk2C:          25
+EntityID:       <XX_YY_ZZ_2805>    # 1042372805
+
+# SpawnPoint: Summon Warp
+Unk2C:          20
+EntityID:       <XX_YY_ZZ_2806>    # 1042372806
+
+# SpawnPoint: Invade Warp
+Unk2C:          21
+EntityID:       <XX_YY_ZZ_2807>    # 1042372807
+
+# Other: Invade Challenge
+Unk2C:          39
+EntityID:       <XX_YY_ZZ_2808>    # 1042372808
+
+# Other: Challenge Evergaol area
+Unk2C:          28
+EntityID:       <XX_YY_ZZ_2809>    # 1042372809
+
+# Other: Evergoal Bounds
+Unk2C:          16
+EntityID:       <XX_YY_ZZ_2800>     # 1042372800
+
+# Other: Bullet Producer
+Shape:          Point
+Unk2C:          38
+EntityID:       <XX_YY_ZZ_2810>     # 1042372810
+
+# Enemy: Boss
+EntityID:       <XX_YY_ZZ_0800>     # 1042370800
+
+# Enemy: Talk Dummy
+ModelName:      c0100
+Unk44:          2
+EntityID:       <XX_YY_ZZ_0810>     # 1042370810
+ThinkParamID:   1
+NPCParamID:     10003000
+
+# Asset: 
+Position:       Placed at center of Evergoal
+ModelName:      AEG099_120
+EntityID:       <XX_YY_ZZ_1800>     # 1042371800
+
+# Asset: 
+Position:       Placed at center of Evergoal
+ModelName:      AEG099_090
+
+#-------
+# EMEVD
+#-------
+# --- Player End Battle
+# InitializeCommonEvent(0, 90005880, 1042370800, 1042370805, 1042372800, 1042370800, 30120, 2435644, 1042372805);
+    0, 
+    90005880, 
+    1042370800,     # Boss - Entity ID (For state)
+    1042370805,     # Boss Progress - Flag (Boss EntityID + 5)
+    1042372800,     # Evergoal Bounds region - Entity ID
+    1042370800,     # Boss - Entity ID (for character effects)
+    30120,          # Reward Itemlot ID
+    2435644,        # <XXYYZZ00> (packed bytes)
+    1042372805      # Warp into Evergaol - Entity ID
+
+# --- Player Start Battle
+# InitializeCommonEvent(0, 90005881, 1042370800, 1042370805, 1042372801, 1042372802, 20300, 1042371805, 2435644, 1042372805);
+    0, 
+    90005881, 
+    1042370800,     # Boss - Entity ID
+    1042370805,     # Boss Progress - Flag (Boss EntityID + 5)
+    1042372801,     # Boss Dialog Flag
+    1042372802,     # Boss Dialog Response Flag
+    20300,          # Prompt Text (EventTextForMap.fmg)
+    1042371805,     # Boss - Entity ID + 1005
+    2435644,        # <XXYYZZ00> (packed bytes)
+    1042372805      # Warp into Evergaol - Entity ID
+
+# --- Boss Battle Setup
+# InitializeCommonEvent(0, 90005882, 1042370800, 1042370805, 1042372800, 1042370800, 1042372806, 1042375810, 1042371800, 1042370810, 1042372810, 902500520, -1, 20000);
+    0, 
+    90005882, 
+    1042370800,     # Boss - Entity ID (For state)
+    1042370805,     # Boss Progress - Flag (Boss EntityID + 5)
+    1042372800,     # Evergoal Bounds region - Entity ID
+    1042370800,     # Boss - Entity ID (for character effects)
+    1042372806,     # SpawnPoint: Summon Warp - Entity ID
+    1042375810,     # ? - Entity ID
+    1042371800,     # Evergoal Invisible Asset - Entity ID
+    1042370810,     # Talk Dummy - Entity ID (Used to emit bullet with SFX)
+    1042372810,     # Bullet Producer - Entity ID
+    902500520,      # Name ID (Characters fmg)
+    -1,             # Start Animation ID for Boss
+    20000           # Battle Start Animation ID for Boss
+
+# --- Play Animation on Secondary Entity
+# InitializeCommonEvent(0, 90005883, 1042370800, 1042370805, 1042371805);
+    0, 
+    90005883, 
+    1042370800,     # Boss - Entity ID
+    1042370805,     # Boss Progress - Flag (Boss EntityID + 5)
+    1042371805      # Boss - Entity ID + 1005
+
+# --- Setup Boss BGM
+# InitializeCommonEvent(0, 90005885, 1042370800, 0, 1042372806, 1042372807, 0, 1);
+    0,              
+    90005885, 
+    1042370800,     # Boss - Entity ID
+    0,              # 0 gets Boss BGM, 1 uses default BGM
+    1042372806,     # SpawnPoint: Summon Warp - Entity ID
+    1042372807,     # SpawnPoint: Invade Warp - Entity ID
+    0,              # 0 gets Boss Heatup BGM, 1 uses default Heatup BGM
+    1               # 0 gets Boss Stop BGM, 1 uses default Stop BGM
+    

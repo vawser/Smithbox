@@ -1,0 +1,654 @@
+﻿Row ID,Row Name,Icon ID - Male,Icon ID - Female
+1000,Type 1,0,0
+1100,Type 2,0,0
+1200,Type 3,0,0
+1300,Type 4,0,0
+1400,Type 5,0,0
+1500,Type 6,0,0
+1600,Type 7,0,0
+1700,Type 8,0,0
+1800,Type 9,0,0
+1900,Type 10,0,0
+2000,Type 11,0,0
+2100,Type 12,0,0
+2200,Type 13,0,0
+2300,Type 14,0,0
+2400,Type 15,0,0
+2500,Type 16,0,0
+2600,Type 17,0,0
+2700,Type 18,0,0
+2800,Type 19,0,0
+2900,Type 20,0,0
+3000,Type 1,0,0
+3100,Type 2,0,0
+3200,Type 3,0,0
+3300,Type 4,0,0
+3400,Type 5,0,0
+3500,Type 6,0,0
+3600,Type 7,0,0
+3700,Type 8,0,0
+3800,Type 9,0,0
+3900,Type 10,0,0
+4000,Type 11,0,0
+4100,Type 12,0,0
+4200,Type 13,0,0
+4300,Type 14,0,0
+4400,Type 15,0,0
+4500,Type 16,0,0
+4600,Type 17,0,0
+4700,Type 18,0,0
+4800,Type 19,0,0
+4900,Type 20,0,0
+5000,Travel Hairstyle,0,0
+10000,Head,1097,1101
+10100,Body,1098,1102
+10200,Arms,1099,1103
+10300,Legs,1100,1104
+40000,Iron Helmet,13000,13000
+40100,Scale Armor,13001,13001
+40200,Iron Gauntlets,13002,13002
+40300,Leather Trousers,13003,13003
+50000,Kaiden Helm,13010,13010
+50100,Kaiden Armor,13011,13011
+50200,Kaiden Gauntlets,13012,13012
+50300,Kaiden Trousers,13013,13013
+60000,Drake Knight Helm,13020,13020
+60100,Drake Knight Armor,13021,13021
+60200,Drake Knight Gauntlets,13022,13022
+60300,Drake Knight Greaves,13023,13023
+61000,Drake Knight Helm (Altered),13030,13030
+61100,Drake Knight Armor (Altered),13031,13031
+80000,Scaled Helm,13040,13040
+80100,Scaled Armor,13041,13041
+80200,Scaled Gauntlets,13042,13042
+80300,Scaled Greaves,13043,13043
+81100,Scaled Armor (Altered),13051,13051
+90000,Perfumer Hood,13060,13060
+90100,Perfumer Robe,13061,13061
+90200,Perfumer Gloves,13062,13062
+90300,Perfumer Sarong,13063,13063
+91100,Perfumer Robe (Altered),13065,13065
+100000,Traveler's Hat,13070,13070
+100100,Perfumer's Traveling Garb,13071,13071
+100200,Traveler's Gloves,13072,13072
+100300,Traveler's Slops,13073,13073
+101100,Perfumer's Traveling Garb (Altered),13081,13081
+120000,Alberich's Pointed Hat,13090,13090
+120100,Alberich's Robe,13091,13091
+120200,Alberich's Bracers,13092,13092
+120300,Alberich's Trousers,13093,13093
+121000,Alberich's Pointed Hat (Altered),13100,13100
+121100,Alberich's Robe (Altered),13101,13101
+130000,Spellblade's Pointed Hat,13110,13110
+130100,Spellblade's Traveling Attire,13111,13111
+130200,Spellblade's Gloves,13112,13112
+130300,Spellblade's Trousers,13113,13113
+131100,Spellblade's Traveling Attire (Altered),13121,13121
+140000,Bull-Goat Helm,13130,13130
+140100,Bull-Goat Armor,13131,13131
+140200,Bull-Goat Gauntlets,13132,13132
+140300,Bull-Goat Greaves,13133,13133
+150000,Iron Kasa,13140,13140
+150100,Ronin's Armor,13141,13141
+150200,Ronin's Gauntlets,13142,13142
+150300,Ronin's Greaves,13143,13143
+151100,Ronin's Armor (Altered),13151,13151
+160000,Guilty Hood,13160,13160
+160100,Cloth Garb,13161,13161
+160300,Cloth Trousers,13163,13163
+170000,Black Wolf Mask,13170,13170
+170100,Blaidd's Armor,13171,13171
+170200,Blaidd's Gauntlets,13172,13172
+170300,Blaidd's Greaves,13173,13173
+171100,Blaidd's Armor (Altered),13181,13181
+180000,Black Knife Hood,13190,13190
+180100,Black Knife Armor,13191,13191
+180200,Black Knife Gauntlets,13192,13192
+180300,Black Knife Greaves,13193,13193
+181100,Black Knife Armor (Altered),13201,13201
+190000,Exile Hood,13210,13210
+190100,Exile Armor,13211,13211
+190200,Exile Gauntlets,13212,13212
+190300,Exile Greaves,13213,13213
+200000,Banished Knight Helm,13220,13220
+200100,Banished Knight Armor,13221,13221
+200200,Banished Knight Gauntlets,13222,13222
+200300,Banished Knight Greaves,13223,13223
+201000,Banished Knight Helm (Altered),13230,13230
+201100,Banished Knight Armor (Altered),13231,13231
+202100,,13221,13221
+210000,Briar Helm,13240,13240
+210100,Briar Armor,13241,13241
+210200,Briar Gauntlets,13242,13242
+210300,Briar Greaves,13243,13243
+211100,Briar Armor (Altered),13251,13251
+220000,Page Hood,13260,13260
+220100,Page Garb,13261,13261
+220300,Page Trousers,13263,13263
+221100,Page Garb (Altered),13271,13271
+230000,Night's Cavalry Helm,13280,13280
+230100,Night's Cavalry Armor,13281,13281
+230200,Night's Cavalry Gauntlets,13282,13282
+230300,Night's Cavalry Greaves,13283,13283
+231000,Night's Cavalry Helm (Altered),13290,13290
+231100,Night's Cavalry Armor (Altered),13291,13291
+240000,Blue Silver Mail Hood,13300,13300
+240100,Blue Silver Mail Armor,13301,13301
+240200,Blue Silver Bracelets,13302,13302
+240300,Blue Silver Mail Skirt,13303,13303
+241100,Blue Silver Mail Armor (Altered),13311,13311
+250000,Nomadic Merchant's Chapeau,13320,13320
+250100,Nomadic Merchant's Finery,13321,13321
+250300,Nomadic Merchant's Trousers,13323,13323
+251100,Nomadic Merchant's Finery (Altered),13331,13331
+260000,Malformed Dragon Helm,13340,13340
+260100,Malformed Dragon Armor,13341,13341
+260200,Malformed Dragon Gauntlets,13342,13342
+260300,Malformed Dragon Greaves,13343,13343
+270000,Tree Sentinel Helm,13350,13350
+270100,Tree Sentinel Armor,13351,13351
+270200,Tree Sentinel Gauntlets,13352,13352
+270300,Tree Sentinel Greaves,13353,13353
+271100,Tree Sentinel Armor (Altered),13361,13361
+280000,Royal Knight Helm,13370,13370
+280100,Royal Knight Armor,13371,13371
+280200,Royal Knight Gauntlets,13372,13372
+280300,Royal Knight Greaves,13373,13373
+281100,Royal Knight Armor (Altered),13381,13381
+290000,Nox Monk Hood,13390,13390
+290100,Nox Monk Armor,13391,13391
+290200,Nox Monk Bracelets,13392,13392
+290300,Nox Monk Greaves,13393,13393
+291000,Nox Monk Hood (Altered),13400,13400
+291100,Nox Monk Armor (Altered),13401,13401
+292000,Nox Swordstress Crown,13410,13410
+292100,Nox Swordstress Armor,13411,13411
+293000,Night Maiden Twin Crown,15460,15460
+293100,Night Maiden Armor,15461,15461
+294000,Nox Swordstress Crown (Altered),15470,15470
+294100,Nox Swordstress Armor (Altered),15471,15471
+300000,Great Horned Headband,13420,13420
+300100,Fur Raiment,13421,13421
+300300,Fur Leggings,13423,13423
+301000,Shining Horned Headband,13425,13425
+301100,Shaman Furs,13426,13426
+301300,Shaman Leggings,13428,13428
+310000,Duelist Helm,13430,13430
+310100,Gravekeeper Cloak,13431,13431
+310300,Duelist Greaves,13433,13433
+311100,Gravekeeper Cloak (Altered),13441,13441
+320000,Sanguine Noble Hood,13450,13450
+320100,Sanguine Noble Robe,13451,13451
+320300,Sanguine Noble Waistcloth,13453,13453
+330000,Guardian Mask,13460,13460
+330100,Guardian Garb (Full Bloom),13461,13461
+330200,Guardian Bracers,13462,13462
+330300,Guardian Greaves,13463,13463
+331100,Guardian Garb,13471,13471
+340000,Cleanrot Helm,13480,13480
+340100,Cleanrot Armor,13481,13481
+340200,Cleanrot Gauntlets,13482,13482
+340300,Cleanrot Greaves,13483,13483
+341000,Cleanrot Helm (Altered),13490,13490
+341100,Cleanrot Armor (Altered),13491,13491
+350000,Fire Monk Hood,13500,13500
+350100,Fire Monk Armor,13501,13501
+350200,Fire Monk Gauntlets,13502,13502
+350300,Fire Monk Greaves,13503,13503
+351000,Blackflame Monk Hood,13510,13510
+351100,Blackflame Monk Armor,13511,13511
+351200,Blackflame Monk Gauntlets,13512,13512
+351300,Blackflame Monk Greaves,13513,13513
+360000,Fire Prelate Helm,13520,13520
+360100,Fire Prelate Armor,13521,13521
+360200,Fire Prelate Gauntlets,13522,13522
+360300,Fire Prelate Greaves,13523,13523
+361100,Fire Prelate Armor (Altered),13531,13531
+370000,Aristocrat Headband,13540,13540
+370100,Aristocrat Garb,13541,13541
+370300,Aristocrat Boots,13543,13543
+371100,Aristocrat Garb (Altered),13551,13551
+380000,Aristocrat Hat,13560,13560
+380100,Aristocrat Coat,13561,13561
+390000,Old Aristocrat Cowl,13570,13570
+390100,Old Aristocrat Gown,13571,13571
+390300,Old Aristocrat Shoes,13573,13573
+420000,Vulgar Militia Helm,13600,13600
+420100,Vulgar Militia Armor,13601,13601
+420200,Vulgar Militia Gauntlets,13602,13602
+420300,Vulgar Militia Greaves,13603,13603
+430000,Sage Hood,13610,13610
+430100,Sage Robe,13611,13611
+430300,Sage Trousers,13613,13613
+440000,Pumpkin Helm,13620,13620
+460000,Elden Lord Crown,13650,13650
+460100,Elden Lord Armor,13651,13651
+460200,Elden Lord Bracers,13652,13652
+460300,Elden Lord Greaves,13653,13653
+461100,Elden Lord Armor (Altered),13661,13661
+470000,Radahn's Redmane Helm,13670,13670
+470100,Radahn's Lion Armor,13671,13671
+470200,Radahn's Gauntlets,13672,13672
+470300,Radahn's Greaves,13673,13673
+471100,Radahn's Lion Armor (Altered),14701,14701
+480100,Lord of Blood's Robe,13681,13681
+481100,Lord of Blood's Robe (Altered),14711,14711
+510000,Queen's Crescent Crown,13710,13710
+510100,Queen's Robe,13711,13711
+510200,Queen's Bracelets,13712,13712
+510300,Queen's Leggings,13713,13713
+520000,Godskin Apostle Hood,13720,13720
+520100,Godskin Apostle Robe,13721,13721
+520200,Godskin Apostle Bracelets,13722,13722
+520300,Godskin Apostle Trousers,13723,13723
+530000,Godskin Noble Hood,13730,13730
+530100,Godskin Noble Robe,13731,13731
+530200,Godskin Noble Bracelets,13732,13732
+530300,Godskin Noble Trousers,13733,13733
+540000,Depraved Perfumer Headscarf,13740,13740
+540100,Depraved Perfumer Robe,13741,13741
+540200,Depraved Perfumer Gloves,13742,13742
+540300,Depraved Perfumer Trousers,13743,13743
+541100,Depraved Perfumer Robe (Altered),13751,13751
+570000,Crucible Axe Helm,13800,13800
+570100,Crucible Axe Armor,13801,13801
+570200,Crucible Gauntlets,13802,13802
+570300,Crucible Greaves,13803,13803
+571000,Crucible Tree Helm,13810,13810
+571100,Crucible Tree Armor,13811,13811
+572100,Crucible Axe Armor (Altered),13821,13821
+573100,Crucible Tree Armor (Altered),13831,13831
+580000,Lusat's Glintstone Crown,13840,13840
+580100,Lusat's Robe,13841,13841
+580200,Lusat's Manchettes,13842,13842
+580300,Old Sorcerer's Legwraps,13843,13843
+581000,Azur's Glintstone Crown,13850,13850
+581100,Azur's Glintstone Robe,13851,13851
+581200,Azur's Manchettes,13852,13852
+590000,All-Knowing Helm,13860,13860
+590100,All-Knowing Armor,13861,13861
+590200,All-Knowing Gauntlets,13862,13862
+590300,All-Knowing Greaves,13863,13863
+591100,All-Knowing Armor (Altered),13871,13871
+600000,Twinned Helm,13880,13880
+600100,Twinned Armor,13881,13881
+600200,Twinned Gauntlets,13882,13882
+600300,Twinned Greaves,13883,13883
+601100,Twinned Armor (Altered),13891,13891
+610000,Ragged Hat,13900,13900
+610100,Ragged Armor,13901,13901
+610200,Ragged Gloves,13902,13902
+610300,Ragged Loincloth,13903,13903
+611000,Ragged Hat (Altered),13910,13910
+611100,Ragged Armor (Altered),13911,13911
+620000,Prophet Blindfold,13920,13920
+620100,Corhyn's Robe,13921,13921
+620300,Prophet Trousers,13923,13923
+621100,Prophet Robe (Altered),13931,13931
+622100,Prophet Robe,13941,13941
+630000,Astrologer Hood,13950,13950
+630100,Astrologer Robe,13951,13951
+630200,Astrologer Gloves,13952,13952
+630300,Astrologer Trousers,13953,13953
+631100,Astrologer Robe (Altered),13961,13961
+640000,Lionel's Helm,13970,13970
+640100,Lionel's Armor,13971,13971
+640200,Lionel's Gauntlets,13972,13972
+640300,Lionel's Greaves,13973,13973
+641100,Lionel's Armor (Altered),13981,13981
+650000,Hoslow's Helm,13990,13990
+650100,Hoslow's Armor,13991,13991
+650200,Hoslow's Gauntlets,13992,13992
+650300,Hoslow's Greaves,13993,13993
+651000,Diallos's Mask,14000,14000
+652100,Hoslow's Armor (Altered),14001,14001
+660000,Vagabond Knight Helm,14010,14010
+660100,Vagabond Knight Armor,14011,14011
+660200,Vagabond Knight Gauntlets,14012,14012
+660300,Vagabond Knight Greaves,14013,14013
+661100,Vagabond Knight Armor (Altered),14021,14021
+670000,Blue Cloth Cowl,14030,14030
+670100,Blue Cloth Vest,14031,14031
+670200,Warrior Gauntlets,14032,14032
+670300,Warrior Greaves,14033,14033
+680000,White Mask,14040,14040
+680100,War Surgeon Gown,14041,14041
+680200,War Surgeon Gloves,14042,14042
+680300,War Surgeon Trousers,14043,14043
+681100,War Surgeon Gown (Altered),14051,14051
+690000,Royal Remains Helm,14060,14060
+690100,Royal Remains Armor,14061,14061
+690200,Royal Remains Gauntlets,14062,14062
+690300,Royal Remains Greaves,14063,14063
+700000,Brave's Cord Circlet,14070,14070
+700100,Brave's Battlewear,14071,14071
+700200,Brave's Bracer,14072,14072
+700300,Brave's Legwraps,14073,14073
+701000,Brave's Leather Helm,14090,14090
+702000,Brave's Battlewear (Altered),14081,14081
+720000,Beast Champion Helm,14100,14100
+720100,Beast Champion Armor,14101,14101
+720200,Beast Champion Gauntlets,14102,14102
+720300,Beast Champion Greaves,14103,14103
+721100,Beast Champion Armor (Altered),14111,14111
+730000,Champion Headband,14120,14120
+730100,Champion Pauldron,14121,14121
+730200,Champion Bracers,14122,14122
+730300,Champion Gaiters,14123,14123
+740000,Crimson Hood,14130,14130
+740100,Noble's Traveling Garb,14131,14131
+740200,Noble's Gloves,14132,14132
+740300,Noble's Trousers,14133,14133
+741000,Navy Hood,14140,14140
+742000,,14130,14130
+760000,Maliketh's Helm,14150,14150
+760100,Maliketh's Armor,14151,14151
+760200,Maliketh's Gauntlets,14152,14152
+760300,Maliketh's Greaves,14153,14153
+761100,Maliketh's Armor (Altered),14161,14161
+770000,Malenia's Winged Helm,14170,14170
+770100,Malenia's Armor,14171,14171
+770200,Malenia's Gauntlet,14172,14172
+770300,Malenia's Greaves,14173,14173
+771100,Malenia's Armor (Altered),14181,14181
+780000,Veteran's Helm,14190,14190
+780100,Veteran's Armor,14191,14191
+780200,Veteran's Gauntlets,14192,14192
+780300,Veteran's Greaves,14193,14193
+781100,Veteran's Armor (Altered),14201,14201
+790000,Bloodhound Knight Helm,14210,14210
+790100,Bloodhound Knight Armor,14211,14211
+790200,Bloodhound Knight Gauntlets,14212,14212
+790300,Bloodhound Knight Greaves,14213,14213
+791100,Bloodhound Knight Armor (Altered),14221,14221
+800000,Festive Hood,14230,14230
+800100,Festive Garb,14231,14231
+801000,Festive Hood (Altered),14240,14240
+801100,Festive Garb (Altered),14241,14241
+802000,Blue Festive Hood,14250,14250
+802100,Blue Festive Garb,14251,14251
+810000,Commoner's Headband,14260,14260
+810100,Commoner's Garb,14261,14261
+810300,Commoner's Shoes,14263,14263
+811000,Commoner's Headband (Altered),14270,14270
+811100,Commoner's Garb (Altered),14271,14271
+812000,Commoner's Simple Garb,14281,14281
+812100,Commoner's Simple Garb (Altered),14291,14291
+820000,Envoy Crown,14300,14300
+830000,Twinsage Glintstone Crown,14310,14310
+830100,Raya Lucarian Robe,14311,14311
+830200,Sorcerer Manchettes,14312,14312
+830300,Sorcerer Leggings,14313,14313
+831000,Olivinus Glintstone Crown,14320,14320
+832000,Lazuli Glintstone Crown,14330,14330
+833000,Karolos Glintstone Crown,14340,14340
+834000,Witch's Glintstone Crown,14720,14720
+834100,,14730,14730
+835000,,14730,14730
+835100,,14311,14311
+835200,,14312,14312
+835300,,14313,14313
+836000,,14720,14720
+840000,Marionette Soldier Helm,14350,14350
+840100,Marionette Soldier Armor,14351,14351
+850000,Marionette Soldier Birdhelm,14360,14360
+860000,Raging Wolf Helm,14370,14370
+860100,Raging Wolf Armor,14371,14371
+860200,Raging Wolf Gauntlets,14372,14372
+860300,Raging Wolf Greaves,14373,14373
+861100,Raging Wolf Armor (Altered),14381,14381
+870000,Land of Reeds Helm,14390,14390
+870100,Land of Reeds Armor,14391,14391
+870200,Land of Reeds Gauntlets,14392,14392
+870300,Land of Reeds Greaves,14393,14393
+871100,Land of Reeds Armor (Altered),14401,14401
+872000,Okina Mask,14410,14410
+872100,White Reed Armor,14411,14411
+872200,White Reed Gauntlets,14412,14412
+872300,White Reed Greaves,14413,14413
+873000,,14410,14410
+880000,Confessor Hood,14420,14420
+880100,Confessor Armor,14421,14421
+880200,Confessor Gloves,14422,14422
+880300,Confessor Boots,14423,14423
+881000,Confessor Hood (Altered),14430,14430
+881100,Confessor Armor (Altered),14431,14431
+890000,Prisoner Iron Mask,14440,14440
+890100,Prisoner Clothing,14441,14441
+890300,Prisoner Trousers,14443,14443
+891000,Blackguard's Iron Mask,14450,14450
+892100,,14441,14441
+900000,Traveling Maiden Hood,14460,14460
+900100,Traveling Maiden Robe,14461,14461
+900200,Traveling Maiden Gloves,14462,14462
+900300,Traveling Maiden Boots,14463,14463
+901100,Traveling Maiden Robe (Altered),14471,14471
+901200,,3141,3141
+901600,,3141,3141
+902000,Finger Maiden Fillet,14480,14480
+902100,Finger Maiden Robe,14481,14481
+902300,Finger Maiden Shoes,14482,14482
+903100,Finger Maiden Robe (Altered),14491,14491
+904100,,14481,14481
+910000,Preceptor's Big Hat,14500,14500
+910100,Preceptor's Long Gown,14501,14501
+910200,Preceptor's Gloves,14502,14502
+910300,Preceptor's Trousers,14503,14503
+911000,Mask of Confidence,14510,14510
+911100,Preceptor's Long Gown (Altered),14511,14511
+912000,,14500,14500
+912100,,14501,14501
+912200,,14502,14502
+912300,,14503,14503
+913000,,14500,14500
+920000,Grass Hair Ornament,14520,14520
+930000,Skeletal Mask,14530,14530
+930100,Raptor's Black Feathers,14531,14531
+930200,Bandit Manchettes,14532,14532
+930300,Bandit Boots,14533,14533
+931100,Bandit Garb,14541,14541
+940000,Eccentric's Hood,14550,14550
+940100,Eccentric's Armor,14551,14551
+940200,Eccentric's Manchettes,14552,14552
+940300,Eccentric's Breeches,14553,14553
+941000,Eccentric's Hood (Altered),14560,14560
+950000,Fingerprint Helm,14570,14570
+950100,Fingerprint Armor,14571,14571
+950200,Fingerprint Gauntlets,14572,14572
+950300,Fingerprint Greaves,14573,14573
+951100,Fingerprint Armor (Altered),14581,14581
+960000,Consort's Mask,14590,14590
+960100,Consort's Robe,14591,14591
+960300,Consort's Trousers,14593,14593
+961000,Ruler's Mask,14610,14610
+961100,Ruler's Robe,14611,14611
+962100,Upper-Class Robe,14621,14621
+963000,Marais Mask,14600,14600
+963100,Marais Robe,14601,14601
+963200,Bloodsoaked Manchettes,14613,14613
+964000,Bloodsoaked Mask,14620,14620
+964100,Official's Attire,14603,14603
+965000,,14590,14590
+965100,,14591,14591
+965300,,14593,14593
+966000,,14610,14610
+967000,,14600,14600
+970000,Omen Helm,14630,14630
+970100,Omen Armor,14631,14631
+970200,Omen Gauntlets,14632,14632
+970300,Omen Greaves,14633,14633
+980000,Carian Knight Helm,14640,14640
+980100,Carian Knight Armor,14641,14641
+980200,Carian Knight Gauntlets,14642,14642
+980300,Carian Knight Greaves,14643,14643
+981100,Carian Knight Armor (Altered),14651,14651
+990000,Hierodas Glintstone Crown,14660,14660
+990100,Errant Sorcerer Robe,14661,14661
+990200,Errant Sorcerer Manchettes,14662,14662
+990300,Errant Sorcerer Boots,14663,14663
+991100,Errant Sorcerer Robe (Altered),14671,14671
+992000,,14660,14660
+1000000,Haima Glintstone Crown,14680,14680
+1000100,Battlemage Robe,14681,14681
+1000200,Battlemage Manchettes,14682,14682
+1000300,Battlemage Legwraps,14683,14683
+1010000,Snow Witch Hat,14740,14740
+1010100,Snow Witch Robe,14741,14741
+1010300,Snow Witch Skirt,14743,14743
+1011100,Snow Witch Robe (Altered),14751,14751
+1020100,Traveler's Clothes,14761,14761
+1020200,Traveler's Manchettes,14762,14762
+1020300,Traveler's Boots,14763,14763
+1030000,Juvenile Scholar Cap,14770,14770
+1030100,Juvenile Scholar Robe,14771,14771
+1040000,Radiant Gold Mask,14780,14780
+1040100,Goldmask's Rags,14781,14781
+1040200,Gold Bracelets,14782,14782
+1040300,Gold Waistwrap,14783,14783
+1050100,Fell Omen Cloak,14791,14791
+1060000,Albinauric Mask,14800,14800
+1060100,Dirty Chainmail,14801,14801
+1070000,Zamor Mask,14810,14810
+1070100,Zamor Armor,14811,14811
+1070200,Zamor Bracelets,14812,14812
+1070300,Zamor Legwraps,14813,14813
+1080000,Imp Head (Cat),14820,14820
+1081000,Imp Head (Fanged),14830,14830
+1082000,Imp Head (Long-Tongued),14840,14840
+1083000,Imp Head (Corpse),14850,14850
+1084000,Imp Head (Wolf),14860,14860
+1085000,Imp Head (Elder),14870,14870
+1090000,Silver Tear Mask,14880,14880
+1100000,Chain Coif,14890,14895
+1100100,Chain Armor,14891,14896
+1100200,Chain Gauntlets,14892,14897
+1100300,Chain Leggings,14893,14893
+1101000,Greathelm,14900,14900
+1101100,Eye Surcoat,14901,14901
+1102100,Tree Surcoat,14911,14911
+1110000,Octopus Head,14920,14920
+1120000,Jar,14930,14930
+1130000,Mushroom Head,14940,14940
+1130100,Mushroom Body,14941,14941
+1130200,Mushroom Arms,14942,14942
+1130300,Mushroom Legs,14943,14943
+1300000,Nox Mirrorhelm,14950,14950
+1301000,Iji's Mirrorhelm,14960,14960
+1400000,Black Hood,14970,14970
+1400100,Leather Armor,14971,14976
+1400200,Leather Gloves,14972,14972
+1400300,Leather Boots,14973,14973
+1401000,Bandit Mask,14980,14980
+1500000,Knight Helm,14990,14990
+1500100,Knight Armor,14991,14991
+1500200,Knight Gauntlets,14992,14992
+1500300,Knight Greaves,14993,14993
+1600000,Greathood,15000,15000
+1610000,,15000,15000
+1700000,Godrick Soldier Helm,15010,15010
+1700100,Tree-and-Beast Surcoat,15011,15011
+1700200,Godrick Soldier Gauntlets,15012,15012
+1700300,Godrick Soldier Greaves,15013,15013
+1710000,Raya Lucarian Helm,15020,15020
+1710100,Cuckoo Surcoat,15021,15021
+1710200,Raya Lucarian Gauntlets,15022,15022
+1710300,Raya Lucarian Greaves,15023,15023
+1720000,Leyndell Soldier Helm,15030,15030
+1720100,Erdtree Surcoat,15031,15031
+1720200,Leyndell Soldier Gauntlets,15032,15032
+1720300,Leyndell Soldier Greaves,15033,15033
+1730000,Radahn Soldier Helm,15040,15040
+1730100,Redmane Surcoat,15041,15041
+1730200,Radahn Soldier Gauntlets,15042,15042
+1730300,Radahn Soldier Greaves,15043,15043
+1740100,Mausoleum Surcoat,15051,15051
+1740200,Mausoleum Gauntlets,15052,15052
+1740300,Mausoleum Greaves,15053,15053
+1750000,Haligtree Helm,15060,15060
+1750100,Haligtree Crest Surcoat,15061,15061
+1750200,Haligtree Gauntlets,15062,15062
+1750300,Haligtree Greaves,15063,15063
+1760000,Gelmir Knight Helm,15070,15070
+1760100,Gelmir Knight Armor,15071,15071
+1760200,Gelmir Knight Gauntlets,15072,15072
+1760300,Gelmir Knight Greaves,15073,15073
+1761100,Gelmir Knight Armor (Altered),15081,15081
+1770000,Godrick Knight Helm,15090,15090
+1770100,Godrick Knight Armor,15091,15091
+1770200,Godrick Knight Gauntlets,15092,15092
+1770300,Godrick Knight Greaves,15093,15093
+1771100,Godrick Knight Armor (Altered),15101,15101
+1780000,Cuckoo Knight Helm,15110,15110
+1780100,Cuckoo Knight Armor,15111,15111
+1780200,Cuckoo Knight Gauntlets,15112,15112
+1780300,Cuckoo Knight Greaves,15113,15113
+1781100,Cuckoo Knight Armor (Altered),15121,15121
+1790000,Leyndell Knight Helm,15130,15130
+1790100,Leyndell Knight Armor,15131,15131
+1790200,Leyndell Knight Gauntlets,15132,15132
+1790300,Leyndell Knight Greaves,15133,15133
+1791100,Leyndell Knight Armor (Altered),15141,15141
+1800000,Redmane Knight Helm,15150,15150
+1800100,Redmane Knight Armor,15151,15151
+1800200,Redmane Knight Gauntlets,15152,15152
+1800300,Redmane Knight Greaves,15153,15153
+1801100,Redmane Knight Armor (Altered),15161,15161
+1810100,Mausoleum Knight Armor,15171,15171
+1810200,Mausoleum Knight Gauntlets,15172,15172
+1810300,Mausoleum Knight Greaves,15173,15173
+1811100,Mausoleum Knight Armor (Altered),15181,15181
+1820000,Haligtree Knight Helm,15190,15190
+1820100,Haligtree Knight Armor,15191,15191
+1820200,Haligtree Knight Gauntlets,15192,15192
+1820300,Haligtree Knight Greaves,15193,15193
+1821100,Haligtree Knight Armor (Altered),15201,15201
+1830000,Foot Soldier Cap,15210,15210
+1830100,Chain-Draped Tabard,15211,15211
+1830200,Foot Soldier Gauntlets,15212,15212
+1830300,Foot Soldier Greaves,15213,15213
+1840000,Foot Soldier Helmet,15220,15220
+1840100,Foot Soldier Tabard,15221,15221
+1850000,Gilded Foot Soldier Cap,15230,15230
+1850100,Leather-Draped Tabard,15231,15231
+1860000,Foot Soldier Helm,15240,15240
+1860100,Scarlet Tabard,15241,15241
+1870100,Bloodsoaked Tabard,15251,15251
+1880000,Sacred Crown Helm,15260,15260
+1880100,Ivory-Draped Tabard,15261,15261
+1890000,Omensmirk Mask,15270,15270
+1890100,Omenkiller Robe,15271,15271
+1890200,Omenkiller Long Gloves,15272,15272
+1890300,Omenkiller Boots,15273,15273
+1900000,Ash-of-War Scarab,15280,15280
+1901000,Incantation Scarab,15290,15290
+1902000,Glintstone Scarab,15300,15300
+1910000,Crimson Tear Scarab,15310,15310
+1920000,Cerulean Tear Scarab,15320,15320
+1930100,Deathbed Dress,15331,15331
+1930300,Deathbed Smalls,15333,15333
+1932100,,15331,15331
+1940000,Fia's Hood,15340,15340
+1940100,Fia's Robe,15341,15341
+1941100,Fia's Robe (Altered),15351,15351
+1950100,Millicent's Robe,15361,15361
+1950200,Millicent's Gloves,15362,15362
+1950300,Millicent's Boots,15363,15363
+1960100,,3142,3142
+1960200,,3142,3142
+1970100,Millicent's Tunic,15371,15371
+1970200,Golden Prosthetic,15372,15372
+1971100,,3142,3142
+1971200,,3142,3142
+1980000,Highwayman Hood,15380,15380
+1980100,Highwayman Cloth Armor,15381,15381
+1980200,Highwayman Gauntlets,15382,15382
+1990000,High Page Hood,15390,15390
+1990100,High Page Clothes,15391,15391
+1991100,High Page Clothes (Altered),15401,15401
+2000000,Rotten Duelist Helm,15410,15410
+2000100,Rotten Gravekeeper Cloak,15411,15411
+2000300,Rotten Duelist Greaves,15413,15413
+2001100,Rotten Gravekeeper Cloak (Altered),15421,15421
+2010000,Mushroom Crown,15430,15430
+2020000,Black Dumpling,15440,15440
+2030000,Lazuli Robe,15451,15451

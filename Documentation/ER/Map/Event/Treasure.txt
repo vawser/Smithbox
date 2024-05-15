@@ -1,0 +1,18 @@
+﻿#----------------------------------------
+# Treasure
+#----------------------------------------
+Used to setup a treasure point.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+TreasurePartName:               The asset associated with this treasure point.
+ItemLotID:                      ItemLotParam_map row ID to use when dispensing the treasure
+ActionButtonID:                 ActionButtonParam row ID to use when composing the interaction prompt
+PickupAnimID:                   The player animation to use for pickup.
+InChest:                        Whether the treasure is considered to be in a chest
+                                - 0: is not Chest
+                                - 2: is Chest
+StartDisabled:                  Whether the treasure starts disabled by default.
+                                - 0: is not disabled
+                                - 1: is disabled

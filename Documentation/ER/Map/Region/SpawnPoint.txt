@@ -1,0 +1,10 @@
+﻿#----------------------------------------
+# SpawnPoint
+#----------------------------------------
+Used to setup a spawnpoint. 
+
+These tend to used when the player does not have a grace point set when they die.
+
+#-------------------------
+# Unique Properties
+#-------------------------

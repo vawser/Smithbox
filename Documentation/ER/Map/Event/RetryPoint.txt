@@ -1,0 +1,12 @@
+﻿#----------------------------------------
+# RetryPoint
+#----------------------------------------
+Used to setup a retry point, e.g. a Statue of Marika
+
+#-------------------------
+# Unique Properties
+#-------------------------
+RetryPartName:              The asset to associate with the retry point.
+UnkT04:                     ?
+UnkT08:                     ?
+RetryRegionName:            The region to associate with the retry point.

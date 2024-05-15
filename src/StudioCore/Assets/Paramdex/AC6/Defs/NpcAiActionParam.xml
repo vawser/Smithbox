@@ -6,6 +6,7 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
+    <Field Def="dummy8 startPad[4]"></Field>
     <Field Def="u8 moveDir"></Field>
     <Field Def="u8 key1"></Field>
     <Field Def="u8 key2"></Field>
@@ -16,6 +17,6 @@
     <Field Def="u8 bKeyHold3"></Field>
     <Field Def="s32 gestureId"></Field>
     <Field Def="u8 bLifeEndSuccess"></Field>
-    <Field Def="dummy8 pad1[7]"></Field>
+    <Field Def="dummy8 endPad[3]"></Field>
   </Fields>
 </PARAMDEF>

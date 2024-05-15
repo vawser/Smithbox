@@ -13,7 +13,11 @@
       <Option Value="1" Name="Item Display" />
     </Enum>
     <Enum Name="NPC_DRAW_TYPE" type="s8">
-      <Option Value="0" Name="Type 0" />
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="White Phantom" />
+      <Option Value="2" Name="Black Phantom" />
+      <Option Value="3" Name="Intruder" />
+      <Option Value="3" Name="Ghoul Body" />
     </Enum>
     <Enum Name="NPC_TYPE" type="u8">
       <Option Value="0" Name="Standard" />
@@ -65,17 +69,17 @@
       <Option Value="66" Name="Unknown" />
     </Enum>
     <Enum Name="NPC_MOVE_TYPE" type="u8">
-      <Option Value="0" Name="Immobile Character" />
-      <Option Value="1" Name="Lumbering" />
-      <Option Value="2" Name="Tree Spirit" />
-      <Option Value="3" Name="Humanoid" />
-      <Option Value="4" Name="Beast" />
-      <Option Value="6" Name="Immobile Object" />
-      <Option Value="8" Name="Floating" />
-      <Option Value="9" Name="Ancient Dragon" />
-      <Option Value="11" Name="Wandering" />
-      <Option Value="12" Name="Still" />
-      <Option Value="13" Name="Swift" />
+      <Option Value="0" Name="Immobile" />
+      <Option Value="1" Name="All Directions" />
+      <Option Value="2" Name="Forward and Backwards Only" />
+      <Option Value="3" Name="Biped" />
+      <Option Value="4" Name="Quadruped" />
+      <Option Value="5" Name="Flight" />
+      <Option Value="6" Name="Hover" />
+      <Option Value="7" Name="Hover + Biped" />
+      <Option Value="8" Name="Flight + Biped" />
+      <Option Value="9" Name="Boss Biped" />
+      <Option Value="10" Name="Attach" />
     </Enum>
     <Enum Name="WEP_MATERIAL_DEF" type="u16">
         <Option Value="0" Name="Type 0" />
@@ -194,26 +198,30 @@
         <Option Value="0" Name="Type 0" />
     </Enum>
     <Enum Name="NPC_BURN_TYPE" type="u8">
-      <Option Value="0" Name="Type 0" />
-      <Option Value="1" Name="Type 1" />
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Corpse" />
     </Enum>
     <Enum Name="NPC_SFX_SIZE" type="u8">
-        <Option Value="0" Name="Size 0" />
-        <Option Value="1" Name="Size 1" />
-        <Option Value="2" Name="Size 2" />
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Large" />
+        <Option Value="2" Name="Medium" />
     </Enum>
     <Enum Name="NPC_HITSTOP_TYPE" type="u8">
       <Option Value="0" Name="No Hit Stop" />
+      <Option Value="1" Name="Partial Hit Stop" />
       <Option Value="2" Name="Hit Stop" />
     </Enum>
     <Enum Name="NPC_SPECIAL_TURN_TYPE" type="u8">
         <Option Value="0" Name="Type 0" />
     </Enum>
     <Enum Name="NPC_WEIGHT_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+        <Option Value="0" Name="Light" />
+        <Option Value="1" Name="Medium" />
+        <Option Value="2" Name="Normal" />
+        <Option Value="3" Name="Overweight" />
+        <Option Value="4" Name="Ultralight" />
     </Enum>
+
     <Enum Name="NPC_NAVIMESH_FLAG" type="u8">
         <Option Value="0" Name="Flag 0" />
         <Option Value="2" Name="Flag 2" />

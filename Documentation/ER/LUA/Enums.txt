@@ -1,0 +1,1862 @@
+﻿#------------------------------------------------------------------
+# GOAL_COMMON
+# 
+#------------------------------------------------------------------
+GOAL_COMMON_TopGoal = 100
+GOAL_COMMON_UndefinedGoalNotification = 0
+GOAL_COMMON_Normal = 1
+GOAL_COMMON_Stay = 2
+GOAL_COMMON_WalkAround = 3
+GOAL_COMMON_BackToHome = 4
+GOAL_COMMON_NonBattleAct = 5
+GOAL_COMMON_If = 1000
+GOAL_COMMON_WaitCancelTiming = 1100
+GOAL_Nanimosinai11000_Battle = 11000
+GOAL_DS2PGTest14000_Battle = 14000
+GOAL_ishijunTest10000_Battle = 10000
+GOAL_ishijunTest10000_AfterAttackAct = 10001
+GOAL_Template010010_Battle = 10010
+GOAL_Template010010_AfterAttackAct = 10011
+GOAL_Template010020_Battle = 10020
+GOAL_Template010020_AfterAttackAct = 10021
+GOAL_CatapultDummy12000_Battle = 12000
+GOAL_CatapultDummy12000_AfterAttackAct = 12001
+GOAL_CatapultDummyEvileye12010_Battle = 12010
+GOAL_CatapultDummyEvileye12010_AfterAttackAct = 12011
+GOAL_JumpTest20000_Battle = 20000
+GOAL_NPCAITest21000_Battle = 21000
+GOAL_CommonNPCTest29999_Battle = 29999
+GOAL_WolfHeadWarrior201000_Battle = 201000
+GOAL_WolfHeadWarrior201000_AfterAttackAct = 201001
+GOAL_ProlificRenala203000_Battle = 203000
+GOAL_ProlificRenala203000_AfterAttackAct = 203001
+GOAL_ProlificRenala203100_Battle = 203100
+GOAL_ProlificRenala203100_AfterAttackAct = 203101
+GOAL_RenalaChildren204000_Battle = 204000
+GOAL_RenalaChildren204000_AfterAttackAct = 204001
+GOAL_RottenLarva204100_Battle = 204100
+GOAL_RottenLarva204100_AfterAttackAct = 204101
+GOAL_BlackSword210000_Battle = 210000
+GOAL_BlackSword210000_AfterAttackAct = 210001
+GOAL_BlackSwordMariques211000_Battle = 211000
+GOAL_BlackSwordMariques211000_AfterAttackAct = 211001
+GOAL_BlackSwordMariques211010_Battle = 211010
+GOAL_BlackSwordMariques211010_AfterAttackAct = 211011
+GOAL_Marenia212000_Battle = 212000
+GOAL_Marenia212000_AfterAttackAct = 212001
+GOAL_Malenia212010_Battle = 212010
+GOAL_Malenia212010_AfterAttackAct = 212011
+GOAL_Morgott213000_Battle = 213000
+GOAL_Morgott213000_AfterAttackAct = 213001
+GOAL_Morgott213005_Battle = 213005
+GOAL_Morgott213005_AfterAttackAct = 213006
+GOAL_ShunnedChildSword214000_Battle = 214000
+GOAL_ShunnedChildSword214000_AfterAttackAct = 214001
+GOAL_ShunnedChildAxa214010_Battle = 214010
+GOAL_ShunnedChildAxa214010_AfterAttackAct = 214011
+GOAL_Wisp215000_Battle = 215000
+GOAL_Wisp215000_AfterAttackAct = 215001
+GOAL_MaricaOfDaughter_218000_Battle = 218000
+GOAL_MaricaOfDaughter_218000_AfterAttackAct = 218001
+GOAL_MaricaOfDistorted_219000_Battle = 219000
+GOAL_MaricaOfDistorted_219000_AfterAttackAct = 219001
+GOAL_NebulaDragon_220000_Battle = 220000
+GOAL_NebulaDragon_220000_AfterAttackAct = 220001
+GOAL_CrabBig227000_Battle = 227000
+GOAL_CrabBig227000_AfterAttackAct = 227001
+GOAL_CrabMini227100_Battle = 227100
+GOAL_CrabMini227100_AfterAttackAct = 227101
+GOAL_RuneKnightsSwordTail250000_Battle = 250000
+GOAL_RuneKnightsSwordTail250000_AfterAttackAct = 250001
+GOAL_RuneKnightsSwordThroatbag250010_Battle = 250010
+GOAL_RuneKnightsSwordThroatbag250010_AfterAttackAct = 250011
+GOAL_RuneKnightsHalberdArmHorn250020_Battle = 250020
+GOAL_RuneKnightsHalberdArmHorn250020_AfterAttackAct = 250021
+GOAL_RuneKnightsHalberdShoulderHorn250030_Battle = 250030
+GOAL_RuneKnightsHalberdShoulderHorn250030_AfterAttackAct = 250031
+GOAL_LossRaceSoldierEngineer300000_Battle = 300000
+GOAL_LossRaceSoldierEngineer300001_AfterAttackAct = 300001
+GOAL_LossRaceSoldierSword300010_Battle = 300010
+GOAL_LossRaceSoldierSword300011_AfterAttackAct = 300011
+GOAL_LossRaceSoldierSpear300020_Battle = 300020
+GOAL_LossRaceSoldierSpear300021_AfterAttackAct = 300021
+GOAL_LossRaceSoldierWatchman300030_Battle = 300030
+GOAL_LossRaceSoldierWatchman300031_AfterAttackAct = 300031
+GOAL_LostKnight_SwordShield_301000_Battle = 301000
+GOAL_LostKnight_SwordShield_301000_AfterAttackAct = 301001
+GOAL_LostKnight_DualSword_301010_Battle = 301010
+GOAL_LostKnight_DualSword_301010_AfterAttackAct = 301011
+GOAL_LostKnight_Halberd_301020_Battle = 301020
+GOAL_LostKnight_Halberd_301020_AfterAttackAct = 301021
+GOAL_LossRaceSoldierLargeAxe302000_Battle = 302000
+GOAL_LossRaceSoldierLargeAxe302001_AfterAttackAct = 302001
+GOAL_OldGeneral_305000_Battle = 305000
+GOAL_OldGeneral_305000_AfterAttackAct = 305001
+GOAL_DosouSkeleton_Axe_306000_Battle = 306000
+GOAL_DosouSkeleton_Axe_306000_AfterAttackAct = 306001
+GOAL_DosouSkeleton_PoleSword_306010_Battle = 306010
+GOAL_DosouSkeleton_PoleSword_306010_AfterAttackAct = 306011
+GOAL_DosouSkeleton_Wizard_306020_Battle = 306020
+GOAL_DosouSkeleton_Wizard_306020_AfterAttackAct = 306021
+GOAL_EaterAnOldWoman_Nata_307000_Battle = 307000
+GOAL_EaterAnOldWoman_Nata_307000_AfterAttackAct = 307001
+GOAL_EaterAnOldWoman_lanthanum_307010_Battle = 307010
+GOAL_EaterAnOldWoman_lanthanum_307010_AfterAttackAct = 307011
+GOAL_EaterAnOldWoman_Sickle_307020_Battle = 307020
+GOAL_EaterAnOldWoman_Sickle_307020_AfterAttackAct = 307021
+GOAL_EaterAnOldWoman_Hammer_307030_Battle = 307030
+GOAL_EaterAnOldWoman_Hammer_307030_AfterAttackAct = 307031
+GOAL_EaterAnOldWoman_Mulberry_307040_Battle = 307040
+GOAL_EaterAnOldWoman_Mulberry_307040_AfterAttackAct = 307041
+GOAL_InsectGolem_308000_Battle = 308000
+GOAL_InsectGolem_308000_AfterAttackAct = 308001
+GOAL_InsectGolem_308010_Battle = 308010
+GOAL_InsectGolem_308010_AfterAttackAct = 308011
+GOAL_InsectGolem_308020_Battle = 308020
+GOAL_InsectGolem_308020_AfterAttackAct = 308021
+GOAL_hagetakakishi310000_Battle = 310000
+GOAL_hagetakakishi310001_AfterAttackAct = 310001
+GOAL_RuneHunterKnightAxe315000_Battle = 315000
+GOAL_RuneHunterKnightAxe315001_AfterAttackAct = 315001
+GOAL_RuneHunterKnightMonightstar315010_Battle = 315010
+GOAL_RuneHunterKnightMonightstar315011_AfterAttackAct = 315011
+GOAL_RuneHunterKnightHorse316000_Battle = 316000
+GOAL_RuneHunterKnightHorse316000_AfterAttackAct = 316001
+GOAL_WolfRider317000_Battle = 317000
+GOAL_WolfRider317000_AfterAttackAct = 317001
+GOAL_WolfRiderWolf318000_Battle = 318000
+GOAL_WolfRiderWolf318000_AfterAttackAct = 318001
+GOAL_RuneWolf318100_Battle = 318100
+GOAL_RuneWolf318100_AfterAttackAct = 318101
+GOAL_RedEyeGypsy320000_Battle = 320000
+GOAL_RedEyeGypsy320000_AfterAttackAct = 320001
+GOAL_RedEyeGypsyDonkey321000_Battle = 321000
+GOAL_RedEyeGypsyDonkey321000_AfterAttackAct = 321001
+GOAL_TreeGuardVariant325000_Battle = 325000
+GOAL_TreeGuardVariant325000_AfterAttackAct = 325001
+GOAL_TreeGuardHead325100_Battle = 325100
+GOAL_TreeGuardHead325100_AfterAttackAct = 325101
+GOAL_TreeGuardHeadTorch325110_Battle = 325110
+GOAL_TreeGuardHeadTorch325110_AfterAttackAct = 325111
+GOAL_TreeGuardMagic325200_Battle = 325200
+GOAL_TreeGuardMagic325200_AfterAttackAct = 325201
+GOAL_TreeGuardMagicPhantom325210_Battle = 325210
+GOAL_TreeGuardMagicPhantom325210_AfterAttackAct = 325211
+GOAL_MarikaLineageMan330000_Battle = 330000
+GOAL_MarikaLineageMan330000_AfterAttackAct = 330001
+GOAL_MarikaLineageWomanSword331000_Battle = 331000
+GOAL_MarikaLineageWomanSword331000_AfterAttackAct = 331001
+GOAL_MarikaLineageWomanDagger331010_Battle = 331010
+GOAL_MarikaLineageWomanDagger331010_AfterAttackAct = 331011
+GOAL_MarikaLineageSlime332000_Battle = 332000
+GOAL_MarikaLineageSlime332000_AfterAttackAct = 332001
+GOAL_MotherSlime333000_Battle = 333000
+GOAL_MotherSlime333000_AfterAttackAct = 333001
+GOAL_CrystalTribeChakram335000_Battle = 335000
+GOAL_CrystalTribeChakram335000_AfterAttackAct = 335001
+GOAL_CrystalTribeSpear335010_Battle = 335010
+GOAL_CrystalTribeSpear335010_AfterAttackAct = 335011
+GOAL_CrystalTribeStick335020_Battle = 335020
+GOAL_CrystalTribeStick335020_AfterAttackAct = 335021
+GOAL_AncestorBelieverAx336000_Battle = 336000
+GOAL_AncestorBelieverAx336000_AfterAttackAct = 336001
+GOAL_AncestorBelieverHammer336010_Battle = 336010
+GOAL_AncestorBelieverHammer336010_AfterAttackAct = 336011
+GOAL_AncestorBelieverSpecial336020_Battle = 336020
+GOAL_AncestorBelieverSpecial336020_AfterAttackAct = 336021
+GOAL_AncestorBelieverFemale337000_Battle = 337000
+GOAL_AncestorBelieverFemale337000_AfterAttackAct = 337001
+GOAL_GladiatorLargeAxe340000_Battle = 340000
+GOAL_GladiatorLargeAxe340000_AfterAttackAct = 340001
+GOAL_GladiatorDoubleHammer340010_Battle = 340010
+GOAL_GladiatorDoubleHammer340010_AfterAttackAct = 340011
+GOAL_ChimeraJsBasetype345000_Battle = 345000
+GOAL_ChimeraJsBasetype345000_AfterAttackAct = 345001
+GOAL_ChimeraJsWingtype345010_Battle = 345010
+GOAL_ChimeraJsWingtype345010_AfterAttackAct = 345011
+GOAL_ChimeraJsScaletype345100_Battle = 345100
+GOAL_ChimeraJsScaletype345100_AfterAttackAct = 345101
+GOAL_ChimeraJsLeotype346000_Battle = 346000
+GOAL_ChimeraJsLeotype346000_AfterAttackAct = 346001
+GOAL_FrogHuman_347000_Battle = 347000
+GOAL_FrogHuman_347000_AfterAttackAct = 347001
+GOAL_FrogHuman_347005_Battle = 347005
+GOAL_FrogHuman_347005_AfterAttackAct = 347006
+GOAL_FrogHuman_347010_Battle = 347010
+GOAL_FrogHuman_347010_AfterAttackAct = 347011
+GOAL_FrogHuman_347015_Battle = 347015
+GOAL_FrogHuman_347015_AfterAttackAct = 347016
+GOAL_FrogHuman_347020_Battle = 347020
+GOAL_FrogHuman_347020_AfterAttackAct = 347021
+GOAL_FrogHuman_347025_Battle = 347025
+GOAL_FrogHuman_347025_AfterAttackAct = 347026
+GOAL_FrogHuman_347030_Battle = 347030
+GOAL_FrogHuman_347030_AfterAttackAct = 347031
+GOAL_FrogHuman_347040_Battle = 347040
+GOAL_FrogHuman_347040_AfterAttackAct = 347041
+GOAL_FrogHuman_347050_Battle = 347050
+GOAL_FrogHuman_347050_AfterAttackAct = 347051
+GOAL_DosouSkeletonSpear350000_Battle = 350000
+GOAL_DosouSkeletonSpear350000_AfterAttackAct = 350001
+GOAL_DosouSkeletonCrossbow350010_Battle = 350010
+GOAL_DosouSkeletonCrossbow350010_AfterAttackAct = 350011
+GOAL_DosouSkeletonSickle350020_Battle = 350020
+GOAL_DosouSkeletonSickle350020_AfterAttackAct = 350021
+GOAL_DosouSkeletonSwordShield350030_Battle = 350030
+GOAL_DosouSkeletonSwordShield350030_AfterAttackAct = 350031
+GOAL_DosouSkeletonTwinSword350040_Battle = 350040
+GOAL_DosouSkeletonTwinSword350040_AfterAttackAct = 350041
+GOAL_Skeleton_351000_Battle = 351000
+GOAL_Skeleton_351001_Battle = 351001
+GOAL_Skeleton_351002_Battle = 351002
+GOAL_Skeleton_351003_Battle = 351003
+GOAL_Skeleton_351004_Battle = 351004
+GOAL_Skeleton_351005_Battle = 351005
+GOAL_Skeleton_351006_Battle = 351006
+GOAL_Skeleton_351007_Battle = 351007
+GOAL_Skeleton_351008_Battle = 351008
+GOAL_Skeleton_351009_Battle = 351009
+GOAL_Skeleton_351010_Battle = 351010
+GOAL_Skeleton_351000_AfterAttackAct = 351080
+GOAL_Skeleton_351001_AfterAttackAct = 351081
+GOAL_Skeleton_351002_AfterAttackAct = 351082
+GOAL_Skeleton_351003_AfterAttackAct = 351083
+GOAL_Skeleton_351004_AfterAttackAct = 351084
+GOAL_Skeleton_351005_AfterAttackAct = 351085
+GOAL_Skeleton_351006_AfterAttackAct = 351086
+GOAL_Skeleton_351007_AfterAttackAct = 351087
+GOAL_Skeleton_351008_AfterAttackAct = 351088
+GOAL_Skeleton_351009_AfterAttackAct = 351089
+GOAL_Skeleton_351010_AfterAttackAct = 351090
+GOAL_DaemonBloodLaity355000_Battle = 355000
+GOAL_DaemonBloodLaity355000_AfterAttackAct = 355001
+GOAL_GodSkinFatherSlim356000_Battle = 356000
+GOAL_GodSkinFatherSlim356000_AfterAttackAct = 356001
+GOAL_GodSkinFatherFat357000_Battle = 357000
+GOAL_GodSkinFatherFat357000_AfterAttackAct = 357001
+GOAL_LightWalker360000_Battle = 360000
+GOAL_LightWalker360000_AfterAttackAct = 360001
+GOAL_darkWalker360010_Battle = 360010
+GOAL_darkWalker360010_AfterAttackAct = 360011
+GOAL_MoonServant_tibi_361000_Battle = 361000
+GOAL_MoonServant_tibi_361000_AfterAttackAct = 361001
+GOAL_MoonServant_noppo_362000_Battle = 362000
+GOAL_MoonServant_noppo_362000_AfterAttackAct = 362001
+GOAL_MoonServant_debu_363000_Battle = 363000
+GOAL_MoonServant_debu_363000_AfterAttackAct = 363001
+GOAL_MoonServant_baby_364000_Battle = 364000
+GOAL_MoonServant_baby_364000_AfterAttackAct = 364001
+GOAL_BugsEater_365000_Battle = 365000
+GOAL_BugsEater_365000_AfterAttackAct = 365001
+GOAL_RuneSlaveSword_366000_Battle = 366000
+GOAL_RuneSlaveSword_366000_AfterAttackAct = 366001
+GOAL_RuneSlaveSpear_366010_Battle = 366010
+GOAL_RuneSlaveSpear_366010_AfterAttackAct = 366011
+GOAL_RuneSlaveTorch_366020_Battle = 366020
+GOAL_RuneSlaveTorch_366020_AfterAttackAct = 366021
+GOAL_RottenDead_366100_Battle = 366100
+GOAL_RottenDead_366100_AfterAttackAct = 366101
+GOAL_TombShadow_366400_Battle = 366400
+GOAL_TombShadow_366400_AfterAttackAct = 366401
+GOAL_Gatekeeper_366500_Battle = 366500
+GOAL_Gatekeeper_366500_AfterAttackAct = 366501
+GOAL_WitheredLeg_BareHands_367000_Battle = 367000
+GOAL_WitheredLeg_BareHands_367000_AfterAttackAct = 367001
+GOAL_WitheredLeg_BlackCloak_367010_Battle = 367010
+GOAL_WitheredLeg_BlackCloak_367010_AfterAttackAct = 367011
+GOAL_WitheredLeg_Restraint_367020_Battle = 367020
+GOAL_WitheredLeg_Restraint_367020_AfterAttackAct = 367021
+GOAL_WitheredLeg_PrisonerBeggar_367030_Battle = 367030
+GOAL_WitheredLeg_PrisonerBeggar_367030_AfterAttackAct = 367031
+GOAL_WitheredLeg_PoisonClaws_367040_Battle = 367040
+GOAL_WitheredLeg_PoisonClaws_367040_AfterAttackAct = 367041
+GOAL_PerfumerCourt_370000_Battle = 370000
+GOAL_PerfumerCourt_370000_AfterAttackAct = 370001
+GOAL_PerfumerDepravity_370010_Battle = 370010
+GOAL_PerfumerDepravity_370010_AfterAttackAct = 370011
+GOAL_PyroxeneMagician_370200_Battle = 370200
+GOAL_PyroxeneMagician_370200_AfterAttackAct = 370201
+GOAL_FootPage_370300_Battle = 370300
+GOAL_FootPage_370300_AfterAttackAct = 370301
+GOAL_MagicMercenary_370400_Battle = 370400
+GOAL_MagicMercenary_370400_AfterAttackAct = 370401
+GOAL_CrystalMagician_371000_Battle = 371000
+GOAL_CrystalMagician_371000_AfterAttackAct = 371001
+GOAL_Magicianball_373000_Battle = 373000
+GOAL_Magicianball_373000_AfterAttackAct = 373001
+GOAL_RuneEater_375000_Battle = 375000
+GOAL_RuneEater_375000_AfterAttackAct = 375001
+GOAL_RuneEater_375010_Battle = 375010
+GOAL_RuneEater_375010_AfterAttackAct = 375011
+GOAL_RuneEater_375020_Battle = 375020
+GOAL_RuneEater_375020_AfterAttackAct = 375021
+GOAL_KnightofNoblerot_Sp380000_Battle = 380000
+GOAL_KnightofNoblerot_Sp380000_AfterAttackAct = 380001
+GOAL_KnightofNoblerot_Sc380010_Battle = 380010
+GOAL_KnightofNoblerot_Sc380010_AfterAttackAct = 380011
+GOAL_RottenKin381000_Battle = 381000
+GOAL_RottenKin381000_AfterAttackAct = 381001
+GOAL_RottenKin381010_Battle = 381010
+GOAL_RottenKin381010_AfterAttackAct = 381011
+GOAL_BalloonDoll_385000_Battle = 385000
+GOAL_BalloonDoll_385000_AfterAttackAct = 385001
+GOAL_BalloonDoll_385010_Battle = 385010
+GOAL_BalloonDoll_385010_AfterAttackAct = 385011
+GOAL_BalloonDoll_385020_Battle = 385020
+GOAL_BalloonDoll_385020_AfterAttackAct = 385021
+GOAL_WingDoll_DS_386000_Battle = 386000
+GOAL_WingDoll_DS_386000_AfterAttackAct = 386001
+GOAL_WingDoll_Sc_386010_Battle = 386010
+GOAL_WingDoll_Sc_386010_AfterAttackAct = 386011
+GOAL_FirePriestSoldierMace390000_Battle = 390000
+GOAL_FirePriestSoldierMace390000_AfterAttackAct = 390001
+GOAL_FirePriestSoldierSword390010_Battle = 390010
+GOAL_FirePriestSoldierSword390010_AfterAttackAct = 390011
+GOAL_HeavypriestofGiantsfire_h391000_Battle = 391000
+GOAL_HeavypriestofGiantsfire_h391000_AfterAttackAct = 391001
+GOAL_HeavypriestofGiantsfire_w391010_Battle = 391010
+GOAL_HeavypriestofGiantsfire_w391010_AfterAttackAct = 391011
+GOAL_HeavypriestofGiantsfire_h391020_Battle = 391020
+GOAL_HeavypriestofGiantsfire_h391020_AfterAttackAct = 391021
+GOAL_HeavypriestofGiantsfire_w391030_Battle = 391030
+GOAL_HeavypriestofGiantsfire_w391030_AfterAttackAct = 391031
+GOAL_GhoulChildrenWhip395000_Battle = 395000
+GOAL_GhoulChildrenWhip395000_AfterAttackAct = 395001
+GOAL_GhoulChildrenSword395010_Battle = 395010
+GOAL_GhoulChildrenSword395010_AfterAttackAct = 395011
+GOAL_GhoulChildrenScepter395020_Battle = 395020
+GOAL_GhoulChildrenScepter395020_AfterAttackAct = 395021
+GOAL_BeastProgenyStandard397000_Battle = 397000
+GOAL_BeastProgenyStandard397000_AfterAttackAct = 397001
+GOAL_BeastProgenyLarge397010_Battle = 397010
+GOAL_BeastProgenyLarge397010_AfterAttackAct = 397011
+GOAL_BeastProgenyThrow397020_Battle = 397020
+GOAL_BeastProgenyThrow397020_AfterAttackAct = 397021
+GOAL_HorriblenessVarlet400000_Battle = 400000
+GOAL_HorriblenessVarlet400000_AfterAttackAct = 400001
+GOAL_HorriblenessGrub402000_Battle = 402000
+GOAL_HorriblenessGrub402000_AfterAttackAct = 402001
+GOAL_Namekuji404000_Battle = 404000
+GOAL_Namekuji404000_AfterAttackAct = 404001
+GOAL_WarKingWarrior405000_Battle = 405000
+GOAL_WarKingWarrior405000_AfterAttackAct = 405001
+GOAL_WarKingWarriorHorse406000_Battle = 406000
+GOAL_WarKingWarriorHorse406000_AfterAttackAct = 406001
+GOAL_Wolf407000_Battle = 407000
+GOAL_Wolf407000_AfterAttackAct = 407001
+GOAL_FeralRat_408000_Battle = 408000
+GOAL_FeralRat_408000_AfterAttackAct = 408001
+GOAL_FeralRatlarge_409000_Battle = 409000
+GOAL_FeralRatlarge_409000_AfterAttackAct = 409001
+GOAL_DemiHuman_SongsswordShield_410000_Battle = 410000
+GOAL_DemiHuman_SongsswordShield_410000_AfterAttackAct = 410001
+GOAL_DemiHuman_Songssword_410010_Battle = 410010
+GOAL_DemiHuman_Songssword_410010_AfterAttackAct = 410011
+GOAL_DemiHuman_Club_410020_Battle = 410020
+GOAL_DemiHuman_Club_410020_AfterAttackAct = 410021
+GOAL_DemiHuman_SongsswordShield_410090_Battle = 410090
+GOAL_DemiHuman_SongsswordShield_410090_AfterAttackAct = 410091
+GOAL_DemiHuman_Elite_410100_Battle = 410100
+GOAL_DemiHuman_Elite_410100_AfterAttackAct = 410101
+GOAL_DemiHumanRunt_411000_Battle = 411000
+GOAL_DemiHumanRunt_411000_AfterAttackAct = 411001
+GOAL_DemiHumanBerserk412000_Battle = 412000
+GOAL_DemiHumanBerserk412000_AfterAttackAct = 412001
+GOAL_DemiHumanKing413000_Battle = 413000
+GOAL_DemiHumanKing413000_AfterAttackAct = 413001
+GOAL_DemiHumanKing413010_Battle = 413010
+GOAL_DemiHumanKing413010_AfterAttackAct = 413011
+GOAL_SnakeSnail_414000_Battle = 414000
+GOAL_SnakeSnail_414000_AfterAttackAct = 414001
+GOAL_SnakeSnail_poison_414010_Battle = 414010
+GOAL_SnakeSnail_poison_414010_AfterAttackAct = 414011
+GOAL_SnakeSnail_white_414020_Battle = 414020
+GOAL_SnakeSnail_white_414020_AfterAttackAct = 414021
+GOAL_SnakeSnail_skeleton_414030_Battle = 414030
+GOAL_SnakeSnail_skeleton_414030_AfterAttackAct = 414031
+GOAL_Basilisk_415000_Battle = 415000
+GOAL_Basilisk_415000_AfterAttackAct = 415001
+GOAL_FeralDog_416000_Battle = 416000
+GOAL_FeralDog_416000_AfterAttackAct = 416001
+GOAL_FeralDogSmall_416100_Battle = 416100
+GOAL_FeralDogSmall_416100_AfterAttackAct = 416101
+GOAL_WriggleCarrion_417000_Battle = 417000
+GOAL_WriggleCarrion_417000_AfterAttackAct = 417001
+GOAL_Reikurage418000_Battle = 418000
+GOAL_Reikurage418000_AfterAttackAct = 418001
+GOAL_ScarabLarge419000_Battle = 419000
+GOAL_ScarabLarge419000_AfterAttackAct = 419001
+GOAL_Scarab419100_Battle = 419100
+GOAL_Scarab419100_AfterAttackAct = 419101
+GOAL_ScarabExtraLarge419200_Battle = 419200
+GOAL_ScarabExtraLarge419200_AfterAttackAct = 419201
+GOAL_Bat420000_Battle = 420000
+GOAL_Bat420000_AfterAttackAct = 420001
+GOAL_OldwomanBat420100_Battle = 420100
+GOAL_OldwomanBat420100_AfterAttackAct = 420101
+GOAL_StormHawk421000_Battle = 421000
+GOAL_StormHawk421000_AfterAttackAct = 421001
+GOAL_GroundTaco422000_Battle = 422000
+GOAL_GroundTaco422000_AfterAttackAct = 422001
+GOAL_GroundTacoJr423000_Battle = 423000
+GOAL_GroundTacoJr423000_AfterAttackAct = 423001
+GOAL_FingerSpider424000_Battle = 424000
+GOAL_FingerSpider424000_AfterAttackAct = 424001
+GOAL_FingerSpiderJr425000_Battle = 425000
+GOAL_FingerSpiderJr425000_AfterAttackAct = 425001
+GOAL_WatchdogSword426000_Battle = 426000
+GOAL_WatchdogSword426000_AfterAttackAct = 426001
+GOAL_WatchdogMace426010_Battle = 426010
+GOAL_WatchdogMace426010_AfterAttackAct = 426011
+GOAL_OldLionOfArena427000_Battle = 427000
+GOAL_OldLionOfArena427000_AfterAttackAct = 427001
+GOAL_PodAnt428000_Battle = 428000
+GOAL_PodAnt428000_AfterAttackAct = 428001
+GOAL_HoundDog_429000_Battle = 429000
+GOAL_HoundDog_429000_AfterAttackAct = 429001
+GOAL_HoundDogTorchType_429010_Battle = 429010
+GOAL_HoundDogTorchType_429010_AfterAttackAct = 429011
+GOAL_UncoverTombNobleManSword430000_Battle = 430000
+GOAL_UncoverTombNobleManSword430000_AfterAttackAct = 430001
+GOAL_UncoverTombNobleManRapier430010_Battle = 430010
+GOAL_UncoverTombNobleManRapier430011_AfterAttackAct = 430011
+GOAL_UncoverTombNobleManMagic430020_Battle = 430020
+GOAL_UncoverTombNobleManMagic430021_AfterAttackAct = 430021
+GOAL_UncoverTombNobleManFlag430030_Battle = 430030
+GOAL_UncoverTombNobleManFlag430031_AfterAttackAct = 430031
+GOAL_UncoverTombNobleManBox430040_Battle = 430040
+GOAL_UncoverTombNobleManBox430041_AfterAttackAct = 430041
+GOAL_UncoverTombNobleManTorch430050_Battle = 430050
+GOAL_UncoverTombNobleManTorch430051_AfterAttackAct = 430051
+GOAL_UncoverTombNobleManKnuckle430060_Battle = 430060
+GOAL_UncoverTombNobleManKnuckle430061_AfterAttackAct = 430061
+GOAL_RoamArmyOneHandsSword431000_Battle = 431000
+GOAL_RoamArmyOneHandsSword431000_AfterAttackAct = 431001
+GOAL_RoamArmyHunmmer431010_Battle = 431010
+GOAL_RoamArmyHunmmer431010_AfterAttackAct = 431011
+GOAL_RoamArmyBothHandsSword431020_Battle = 431020
+GOAL_RoamArmyBothHandsSword431020_AfterAttackAct = 431021
+GOAL_RoamArmySpearmen431030_Battle = 431030
+GOAL_RoamArmySpearmen431030_AfterAttackAct = 431031
+GOAL_RoamArmyUseHolne431040_Battle = 431040
+GOAL_RoamArmyUseHolne431040_AfterAttackAct = 431041
+GOAL_RoamLowSoldierHatchet432000_Battle = 432000
+GOAL_RoamLowSoldierHatchet432000_AfterAttackAct = 432001
+GOAL_RoamLowSoldierShotel432010_Battle = 432010
+GOAL_RoamLowSoldierShotel432010_AfterAttackAct = 432011
+GOAL_RoamLowSoldierChainSickle432020_Battle = 432020
+GOAL_RoamLowSoldierChainSickle432020_AfterAttackAct = 432021
+GOAL_RoamLowSoldierChildHatchet432100_Battle = 432100
+GOAL_RoamLowSoldierChildHatchet432100_AfterAttackAct = 432101
+GOAL_RoamLowSoldierChildShotel432110_Battle = 432110
+GOAL_RoamLowSoldierChildShotel432110_AfterAttackAct = 432111
+GOAL_RoamLowSoldierChildChainSickle432120_Battle = 432120
+GOAL_RoamLowSoldierChildChainSickle432120_AfterAttackAct = 432121
+GOAL_PumpkinHead4Frail434000_Battle = 434000
+GOAL_PumpkinHead4Frail434000_AfterAttackAct = 434001
+GOAL_PumpkinHead4Hummer434010_Battle = 434010
+GOAL_PumpkinHead4Hummer434010_AfterAttackAct = 434011
+GOAL_PumpkinHead4Frail434100_Battle = 434100
+GOAL_PumpkinHead4Frail434100_AfterAttackAct = 434101
+GOAL_PumpkinHead4Hummer434110_Battle = 434110
+GOAL_PumpkinHead4Hummer434110_AfterAttackAct = 434111
+GOAL_RoamKnightLongswordEZ435100_Battle = 435100
+GOAL_RoamKnightLongswordEZ435100_AfterAttackAct = 435101
+GOAL_RoamKnightLanceEZ435110_Battle = 435110
+GOAL_RoamKnightLanceEZ435110_AfterAttackAct = 435111
+GOAL_RoamKnightLongswordMS435200_Battle = 435200
+GOAL_RoamKnightLongswordMS435200_AfterAttackAct = 435201
+GOAL_RoamKnightLanceMS435210_Battle = 435210
+GOAL_RoamKnightLanceMS435210_AfterAttackAct = 435211
+GOAL_RoamKnightLongswordRC435300_Battle = 435300
+GOAL_RoamKnightLongswordRC435300_AfterAttackAct = 435301
+GOAL_RoamKnightLanceRC435310_Battle = 435310
+GOAL_RoamKnightLanceRC435310_AfterAttackAct = 435311
+GOAL_RoamKnightLongswordPL435400_Battle = 435400
+GOAL_RoamKnightLongswordPL435400_AfterAttackAct = 435401
+GOAL_RoamKnightLancePL435410_Battle = 435410
+GOAL_RoamKnightLancePL435410_AfterAttackAct = 435411
+GOAL_RoamKnightLongswordPLGhost435420_Battle = 435420
+GOAL_RoamKnightLongswordPLGhost435420_AfterAttackAct = 435421
+GOAL_RoamKnightLancePLGhost435430_Battle = 435430
+GOAL_RoamKnightLancePLGhost435430_AfterAttackAct = 435431
+GOAL_RoamKnightLongswordMP435500_Battle = 435500
+GOAL_RoamKnightLongswordMP435500_AfterAttackAct = 435501
+GOAL_RoamKnightLanceMP435510_Battle = 435510
+GOAL_RoamKnightLanceMP435510_AfterAttackAct = 435511
+GOAL_RoamKnightLongswordMI435600_Battle = 435600
+GOAL_RoamKnightLongswordMI435600_AfterAttackAct = 435601
+GOAL_RoamKnightLanceMI435610_Battle = 435610
+GOAL_RoamKnightLanceMI435610_AfterAttackAct = 435611
+GOAL_RoamKnightLongswordIN435800_Battle = 435800
+GOAL_RoamKnightLongswordIN435800_AfterAttackAct = 435801
+GOAL_RoamKnightLanceIN435810_Battle = 435810
+GOAL_RoamKnightLanceIN435810_AfterAttackAct = 435811
+GOAL_RoamHorseEZ436100_Battle = 436100
+GOAL_RoamHorseEZ436100_AfterAttackAct = 436101
+GOAL_RoamCommonSoldiersOneHand437000_Battle = 437000
+GOAL_RoamCommonSoldiersOneHand437000_AfterAttackAct = 437001
+GOAL_RoamCommonSoldiersTwoHand437010_Battle = 437010
+GOAL_RoamCommonSoldiersTwoHand437010_AfterAttackAct = 437011
+GOAL_Destructionsinto_438000_Battle = 438000
+GOAL_Destructionsinto_438000_AfterAttackAct = 438001
+GOAL_DestructionsintoFire_438100_Battle = 438100
+GOAL_DestructionsintoFire_438100_AfterAttackAct = 438101
+GOAL_DestructionsintoFireWeak_438110_Battle = 438110
+GOAL_DestructionsintoFireWeak_438110_AfterAttackAct = 438111
+GOAL_DeadMinerOreDigging_438200_Battle = 438200
+GOAL_DeadMinerOreDigging_438200_AfterAttackAct = 438201
+GOAL_DeadMinerOreDiggingBackluggageNormalstone_438210_Battle = 438210
+GOAL_DeadMinerOreDiggingBackluggageNormalstone_438210_AfterAttackAct = 438211
+GOAL_DeadMinerOreDiggingBackluggageExplosivestone_438220_Battle = 438220
+GOAL_DeadMinerOreDiggingBackluggageExplosivestone_438220_AfterAttackAct = 438221
+GOAL_DeadMinerOreDiggingFlamethrower_438230_Battle = 438230
+GOAL_DeadMinerOreDiggingFlamethrower_438230_AfterAttackAct = 438231
+GOAL_DeadMinerOreDiggingBackluggagePoisonstone_438240_Battle = 438240
+GOAL_DeadMinerOreDiggingBackluggagePoisonstone_438240_AfterAttackAct = 438241
+GOAL_DeadMinerOreDiggingBackluggageRarestone_438250_Battle = 438250
+GOAL_DeadMinerOreDiggingBackluggageRarestone_438250_AfterAttackAct = 438251
+GOAL_DeadMinerOreDiggingFlamethrower_BackluggageRarestone_438260_Battle = 438260
+GOAL_DeadMinerOreDiggingFlamethrower_BackluggageRarestone_438260_AfterAttackAct = 438261
+GOAL_DeadMinerJewelryCarving_438300_Battle = 438300
+GOAL_DeadMinerJewelryCarving_438300_AfterAttackAct = 438301
+GOAL_DeadMinerJewelryCarvingWatchman_438310_Battle = 438310
+GOAL_DeadMinerJewelryCarvingWatchman_438310_AfterAttackAct = 438311
+GOAL_DeadMinerJewelryCarvingBig_438400_Battle = 438400
+GOAL_DeadMinerJewelryCarvingBig_438400_AfterAttackAct = 438401
+GOAL_DestructionsintoPoison_438500_Battle = 438500
+GOAL_DestructionsintoPoison_438500_AfterAttackAct = 438501
+GOAL_HorseGiant441000_Battle = 441000
+GOAL_HorseGiant441000_AfterAttackAct = 441001
+GOAL_Zarigani_442000_Battle = 442000
+GOAL_Zarigani_442000_AfterAttackAct = 442001
+GOAL_ZariganiHasEggs_442010_Battle = 442010
+GOAL_ZariganiHasEggs_442010_AfterAttackAct = 442011
+GOAL_AliveStone_443000_Battle = 443000
+GOAL_AliveStone_443000_AfterAttackAct = 443001
+GOAL_Rikuhoya_444000_Battle = 444000
+GOAL_Rikuhoya_444000_AfterAttackAct = 444001
+GOAL_RikuhoyaBig_444100_Battle = 444100
+GOAL_RikuhoyaBig_444100_AfterAttackAct = 444101
+GOAL_WalkShrine445000_Battle = 445000
+GOAL_WalkShrine445000_AfterAttackAct = 445001
+GOAL_Ganmen446000_Battle = 446000
+GOAL_Ganmen446000_AfterAttackAct = 446001
+GOAL_KidnapMachineP447000_Battle = 447000
+GOAL_KidnapMachineP447000_AfterAttackAct = 447001
+GOAL_KidnapMachineW447010_Battle = 447010
+GOAL_KidnapMachineW447010_AfterAttackAct = 447011
+GOAL_KidnapMachineH447020_Battle = 447020
+GOAL_KidnapMachineH447020_AfterAttackAct = 447021
+GOAL_RuneFlowerBig448000_Battle = 448000
+GOAL_RuneFlowerBig448000_AfterAttackAct = 448001
+GOAL_RuneFlowerLittle448100_Battle = 448100
+GOAL_RuneFlowerLittle448100_AfterAttackAct = 448101
+GOAL_AlivePot_449000_Battle = 449000
+GOAL_AlivePot_449000_AfterAttackAct = 449001
+GOAL_AlivePotSmall_449100_Battle = 449100
+GOAL_AlivePotSmall_449100_AfterAttackAct = 449101
+GOAL_AlivePotExtraLarge_449200_Battle = 449200
+GOAL_AlivePotExtraLarge_449200_AfterAttackAct = 449201
+GOAL_Wyvern450000_Battle = 450000
+GOAL_Wyvern450000_AfterAttackAct = 450001
+GOAL_Wyvern450010_Battle = 450010
+GOAL_Wyvern450010_AfterAttackAct = 450011
+GOAL_Wyvern450050_Battle = 450050
+GOAL_Wyvern450050_AfterAttackAct = 450051
+GOAL_RotWyvern450100_Battle = 450100
+GOAL_RotWyvern450100_AfterAttackAct = 450101
+GOAL_MagicWyvern450200_Battle = 450200
+GOAL_MagicWyvern450200_AfterAttackAct = 450201
+GOAL_IceWyvern450300_Battle = 450300
+GOAL_IceWyvern450300_AfterAttackAct = 450301
+GOAL_WyvernLesser450500_Battle = 450500
+GOAL_WyvernLesser450500_AfterAttackAct = 450501
+GOAL_GuardianDescendant451000_Battle = 451000
+GOAL_GuardianDescendant451000_AfterAttackAct = 451001
+GOAL_ElderDragon452000_Battle = 452000
+GOAL_ElderDragon452000_AfterAttackAct = 452001
+GOAL_TyrannoDog455000_Battle = 455000
+GOAL_TyrannoDog455000_AfterAttackAct = 455001
+GOAL_TyrannoRaven456000_Battle = 456000
+GOAL_TyrannoRaven456000_AfterAttackAct = 456001
+GOAL_Deracine_Male457000_Battle = 457000
+GOAL_Deracine_Male457000_AfterAttackAct = 457001
+GOAL_Deracine_Female458000_Battle = 458000
+GOAL_Deracine_Female458000_AfterAttackAct = 458001
+GOAL_Troll460000_Battle = 460000
+GOAL_Troll460000_AfterAttackAct = 460001
+GOAL_Troll_Carriage_460010_Battle = 460010
+GOAL_Troll_Carriage_460010_AfterAttackAct = 460011
+GOAL_Troll_Woman_460020_Battle = 460020
+GOAL_Troll_Woman_460020_AfterAttackAct = 460021
+GOAL_Troll_RoyalKnight_460100_Battle = 460100
+GOAL_Troll_RoyalKnight_460100_AfterAttackAct = 460101
+GOAL_Troll_Yeti_460200_Battle = 460200
+GOAL_Troll_Yeti_460200_AfterAttackAct = 460201
+GOAL_Troll_Mine_460300_Battle = 460300
+GOAL_Troll_Mine_460300_AfterAttackAct = 460301
+GOAL_Umibozu461000_Battle = 461000
+GOAL_Umibozu461000_AfterAttackAct = 461001
+GOAL_Astile462000_Battle = 462000
+GOAL_Astile462000_AfterAttackAct = 462001
+GOAL_Astile462010_Battle = 462010
+GOAL_Astile462010_AfterAttackAct = 462011
+GOAL_RuneBear463000_Battle = 463000
+GOAL_RuneBear463000_AfterAttackAct = 463001
+GOAL_SnakeSoul464000_Battle = 464000
+GOAL_SnakeSoul464000_AfterAttackAct = 464001
+GOAL_Devastationer465000_Battle = 465000
+GOAL_Devastationer465000_AfterAttackAct = 465001
+GOAL_Devastationer465010_Battle = 465010
+GOAL_Devastationer465010_AfterAttackAct = 465011
+GOAL_DevastationerSummoner465020_Battle = 465020
+GOAL_DevastationerSummoner465020_AfterAttackAct = 465021
+GOAL_Guardian_466000_Battle = 466000
+GOAL_Guardian_466000_AfterAttackAct = 466001
+GOAL_Ancestor467000_Battle = 467000
+GOAL_Ancestor467000_AfterAttackAct = 467001
+GOAL_MeteoriteBeast_468000_Battle = 468000
+GOAL_MeteoriteBeast_468000_AfterAttackAct = 468001
+GOAL_GraftSpider_469000_Battle = 469000
+GOAL_GraftSpider_469000_AfterAttackAct = 469001
+GOAL_KingGhoul_471000_Battle = 471000
+GOAL_KingGhoul_471000_AfterAttackAct = 471001
+GOAL_GodFrey472000_Battle = 472000
+GOAL_GodFrey472000_AfterAttackAct = 472001
+GOAL_GodFrey472100_Battle = 472100
+GOAL_GodFrey472100_AfterAttackAct = 472101
+GOAL_RadarnAndLeonard473000_Battle = 473000
+GOAL_RadarnAndLeonard473000_AfterAttackAct = 473001
+GOAL_GraftKing475000_Battle = 475000
+GOAL_GraftKing475000_AfterAttackAct = 475001
+GOAL_Giant476000_Battle = 476000
+GOAL_Giant476000_AfterAttackAct = 476001
+GOAL_CastleGargoyle477000_Battle = 477000
+GOAL_CastleGargoyle477000_AfterAttackAct = 477001
+GOAL_GreaterDemon480000_Battle = 480000
+GOAL_GreaterDemon480000_AfterAttackAct = 480001
+GOAL_WorldTreeDemon481000_Battle = 481000
+GOAL_WorldTreeDemon481000_AfterAttackAct = 481001
+GOAL_Slaughter482000_Battle = 482000
+GOAL_Slaughter482000_AfterAttackAct = 482001
+GOAL_king_grounddragon491000_Battle = 491000
+GOAL_king_grounddragon491000_AfterAttackAct = 491001
+GOAL_Nightking_Kennzoku495000_Battle = 495000
+GOAL_Nightking_Kennzoku495000_AfterAttackAct = 495001
+GOAL_Nightking_Kennzoku495100_Battle = 495100
+GOAL_Nightking_Kennzoku495100_AfterAttackAct = 495101
+GOAL_Nightking_Kennzoku_Skeleton496000_Battle = 496000
+GOAL_Nightking_Kennzoku_Skeleton496000_AfterAttackAct = 496001
+GOAL_BirdoftheDeath498000_Battle = 498000
+GOAL_BirdoftheDeath498000_AfterAttackAct = 498001
+GOAL_Bird600000_Battle = 600000
+GOAL_Bird600000_AfterAttackAct = 600001
+GOAL_Deer601000_Battle = 601000
+GOAL_Deer601000_AfterAttackAct = 601001
+GOAL_WildHorse602000_Battle = 602000
+GOAL_WildHorse602000_AfterAttackAct = 602001
+GOAL_Bear603000_Battle = 603000
+GOAL_Bear603000_AfterAttackAct = 603001
+GOAL_Wildowl604000_Battle = 604000
+GOAL_Wildowl604000_AfterAttackAct = 604001
+GOAL_Wildboar605000_Battle = 605000
+GOAL_Wildboar605000_AfterAttackAct = 605001
+GOAL_Wildsheep606000_Battle = 606000
+GOAL_Wildsheep606000_AfterAttackAct = 606001
+GOAL_Wildguillemots607000_Battle = 607000
+GOAL_Wildguillemots607000_AfterAttackAct = 607001
+GOAL_CarrierPigeon607100_Battle = 607100
+GOAL_CarrierPigeon607100_AfterAttackAct = 607101
+GOAL_Wilddragonfly608000_Battle = 608000
+GOAL_Wilddragonfly608000_AfterAttackAct = 608001
+GOAL_Tortoises609000_Battle = 609000
+GOAL_Tortoises609000_AfterAttackAct = 609001
+GOAL_Springhare610000_Battle = 610000
+GOAL_Springhare610000_AfterAttackAct = 610001
+GOAL_BuddyStandardSpear700000_Battle = 700000
+GOAL_BuddyStandardSpear700000_AfterAttackAct = 700001
+GOAL_BuddyStandardShield700010_Battle = 700010
+GOAL_BuddyStandardShield700010_AfterAttackAct = 700011
+GOAL_BuddyStandardBow700020_Battle = 700020
+GOAL_BuddyStandardBow700020_AfterAttackAct = 700021
+GOAL_BuddyStandardSword700030_Battle = 700030
+GOAL_BuddyStandardSword700030_AfterAttackAct = 700031
+GOAL_BuddyUnique710000_Battle = 710000
+GOAL_BuddyUnique710000_AfterAttackAct = 710001
+GOAL_RedEyeGypsyBuddy710090_Battle = 710090
+GOAL_RedEyeGypsyBuddy710090_AfterAttackAct = 710091
+GOAL_VaristorTest900900_Battle = 900900
+GOAL_VaristorTest900900_AfterAttackAct = 900901
+GOAL_Skeleton_910000_Battle = 910000
+GOAL_Skeleton_910001_Battle = 910001
+GOAL_Skeleton_910002_Battle = 910002
+GOAL_Skeleton_910003_Battle = 910003
+GOAL_Skeleton_910004_Battle = 910004
+GOAL_Skeleton_910005_Battle = 910005
+GOAL_Skeleton_910006_Battle = 910006
+GOAL_Skeleton_910007_Battle = 910007
+GOAL_Skeleton_910008_Battle = 910008
+GOAL_Skeleton_910009_Battle = 910009
+GOAL_Skeleton_910010_Battle = 910010
+GOAL_Skeleton_910000_AfterAttackAct = 910080
+GOAL_Skeleton_910001_AfterAttackAct = 910081
+GOAL_Skeleton_910002_AfterAttackAct = 910082
+GOAL_Skeleton_910003_AfterAttackAct = 910083
+GOAL_Skeleton_910004_AfterAttackAct = 910084
+GOAL_Skeleton_910005_AfterAttackAct = 910085
+GOAL_Skeleton_910006_AfterAttackAct = 910086
+GOAL_Skeleton_910007_AfterAttackAct = 910087
+GOAL_Skeleton_910008_AfterAttackAct = 910088
+GOAL_Skeleton_910009_AfterAttackAct = 910089
+GOAL_Skeleton_910010_AfterAttackAct = 910090
+GOAL_GHOST_920090_Battle = 920090
+GOAL_PierreTest905555_Battle = 905555
+GOAL_PierreTest905555_AfterAttackAct = 905556
+GOAL_katotTest980000_Battle = 980000
+GOAL_katotTest980000_AfterAttackAct = 980001
+GOAL_sawatTest980100_Battle = 980100
+GOAL_sawatTest980100_AfterAttackAct = 980101
+GOAL_COMMON_Wait = 2000
+GOAL_COMMON_Turn = 2001
+GOAL_COMMON_TurnAround = 2002
+GOAL_COMMON_WaitWithAnime = 2005
+GOAL_COMMON_MoveToSomewhereSmoothFly = 2010
+GOAL_COMMON_MoveToSomewhereSmoothFly_Circling = 2011
+GOAL_COMMON_MoveToSomewhereSmooth = 2013
+GOAL_COMMON_ApproachTarget_LifeSuccess = 2014
+GOAL_COMMON_ApproachTarget = 2015
+GOAL_COMMON_LeaveTarget = 2016
+GOAL_COMMON_SidewayMove = 2017
+GOAL_COMMON_SidewayMoveAngle = 2030
+GOAL_COMMON_SidewayMoveAvoidChr = 2036
+GOAL_COMMON_KeepDist = 2018
+GOAL_COMMON_MoveToSomewhere = 2019
+GOAL_COMMON_SpinStep = 2020
+GOAL_COMMON_Fall = 2021
+GOAL_COMMON_MoveToMovePointAir = 2022
+GOAL_COMMON_MoveTargetRelationPos = 2023
+GOAL_COMMON_MoveFollowPathSpecifyPos = 2024
+GOAL_COMMON_MoveToSomewhere_RouteMove = 2025
+GOAL_COMMON_MoveToSomewhere_SwitchRouteMove = 2026
+GOAL_COMMON_MoveToSomewhere_SpecifyMove = 2027
+GOAL_COMMON_MoveFreeSpace = 2028
+GOAL_COMMON_MoveGetwellSpace = 2029
+GOAL_COMMON_TeamCommand = 2031
+GOAL_COMMON_TeamCommandManager = 2032
+GOAL_COMMON_ActivateNoSubGoal = 2033
+GOAL_COMMON_ExecAction = 2034
+GOAL_COMMON_FollowPathExecAction = 2035
+GOAL_COMMON_ToTargetWarp = 2037
+GOAL_COMMON_ApproachTargetAllDirection = 2038
+GOAL_COMMON_SideWay_On_FailedPath = 2039
+GOAL_COMMON_ApproachTarget_ParallelMov = 2040
+GOAL_COMMON_FlexibleSideWayMove = 2041
+GOAL_COMMON_MoveToMultiPoint = 2042
+GOAL_COMMON_MoveToPossibleDirection = 2043
+GOAL_COMMON_SideWay_For_Fear_Of_Fire = 2044
+GOAL_COMMON_ApproachTarget_OnUnfavorableAttack = 2045
+GOAL_COMMON_ApproachForBuddy = 2046
+GOAL_COMMON_SideWay_On_FailedPath_WhiteGhost = 2047
+GOAL_COMMON_LiftOff = 2050
+GOAL_COMMON_Landing = 2051
+GOAL_COMMON_Landing_Move = 2052
+GOAL_COMMON_Landing_Landing = 2053
+GOAL_COMMON_ComeDown = 2054
+GOAL_COMMON_KeepDistYAxis = 2057
+GOAL_COMMON_ApproachSettingDirection = 2060
+GOAL_COMMON_ApproachAround = 2061
+GOAL_COMMON_LadderAct = 2055
+GOAL_COMMON_DoorAct = 2056
+GOAL_COMMON_LadderWait = 2058
+GOAL_COMMON_AIJump = 2059
+GOAL_COMMON_LadderMove = 2062
+GOAL_COMMON_HoverAdjust = 2063
+GOAL_COMMON_FadeWarpToInitPos = 2071
+GOAL_COMMON_WalkAround_Anywhere = 2080
+GOAL_COMMON_Attack = 2100
+GOAL_COMMON_Guard = 2101
+GOAL_COMMON_ComboAttack = 2102
+GOAL_COMMON_GuardBreakAttack = 2103
+GOAL_COMMON_NonspinningAttack = 2104
+GOAL_COMMON_ContinueAttack = 2105
+GOAL_COMMON_ApproachStep = 2107
+GOAL_COMMON_UseItem = 2108
+GOAL_COMMON_DashAttack = 2109
+GOAL_COMMON_DashAttack_Attack = 2110
+GOAL_COMMON_DashTarget = 2111
+GOAL_COMMON_NPCStepAttack = 2112
+GOAL_COMMON_Parry = 2113
+GOAL_COMMON_SpecialTurn = 2114
+GOAL_COMMON_ObjActTest = 2115
+GOAL_COMMON_TeamCallHelp = 2116
+GOAL_COMMON_TeamReplyHelp = 2117
+GOAL_COMMON_NpcComboAttack_WithMove = 2118
+GOAL_COMMON_NpcStanceAttack_WithMove = 2119
+GOAL_COMMON_CommonAttack = 2200
+GOAL_COMMON_ComboRepeat = 2210
+GOAL_COMMON_ComboFinal = 2211
+GOAL_COMMON_AttackTunableSpin = 2220
+GOAL_COMMON_ComboAttackTunableSpin = 2221
+GOAL_COMMON_ComboAttack_SuccessAngle180 = 2230
+GOAL_COMMON_ComboRepeat_SuccessAngle180 = 2231
+GOAL_COMMON_Pursuit = 2240
+GOAL_COMMON_NonspinningComboAttack = 2250
+GOAL_COMMON_NonspinningComboRepeat = 2251
+GOAL_COMMON_NonspinningComboFinal = 2252
+GOAL_COMMON_ComboTunable_SuccessAngle180 = 2253
+GOAL_COMMON_GuardBreakTunable = 2254
+GOAL_COMMON_EXEC_STATE = 2255
+GOAL_COMMON_AttackNonCancel = 2260
+GOAL_COMMON_CautionStateApproachTarget = 2500
+GOAL_COMMON_CautionStateApproachTarget_WalkAround = 2502
+GOAL_COMMON_CautionStateApproachTarget_WAEA = 2503
+GOAL_COMMON_TargetStateBehavior = 2504
+GOAL_COMMON_WeaponChange = 2600
+GOAL_COMMON_StepSafety = 2602
+GOAL_COMMON_Wait_On_FailedPath = 2700
+GOAL_COMMON_Approach_On_FailedPath = 2701
+GOAL_COMMON_WalkAround_On_FailedPath = 2702
+GOAL_COMMON_BackToHome_On_FailedPath = 2703
+GOAL_COMMON_Guard_On_FailedPath = 2704
+GOAL_COMMON_MoveToWaitandSee = 2710
+GOAL_COMMON_WaypointAct = 2800
+GOAL_COMMON_WaypointAnimTrial = 2801
+GOAL_COMMON_AfterAttackAct = 3000
+GOAL_COMMON_ContinueKeepDist = 3100
+GOAL_COMMON_GuardBreakCombo = 3200
+GOAL_COMMON_Mount = 3300
+GOAL_COMMON_Dismount = 3301
+GOAL_COMMON_MountSub = 3302
+GOAL_COMMON_JumpEndWait = 3400
+GOAL_COMMON_SetTimerRealtime = 4000
+GOAL_COMMON_SetNumberRealtime = 4010
+GOAL_NPC_WhiteGhost_Battle = 5000
+GOAL_COMMON_Fall_Asleep = 5001
+GOAL_COMMON_LeaveTargetToPathEnd = 5002
+GOAL_COMMON_LeaveTarget_Continuous = 5003
+GOAL_COMMON_LeaveTarget_Escape = 5004
+GOAL_COMMON_ErrorNotification = 6000
+
+#------------------------------------------------------------------
+# GOAL_RESULT
+# 
+#------------------------------------------------------------------
+GOAL_RESULT_Failed = -1
+GOAL_RESULT_Continue = 0
+GOAL_RESULT_Success = 1
+
+#------------------------------------------------------------------
+# AI_DIR_TYPE
+# 
+#------------------------------------------------------------------
+AI_DIR_TYPE_CENTER = 0
+AI_DIR_TYPE_F = 1
+AI_DIR_TYPE_B = 2
+AI_DIR_TYPE_L = 3
+AI_DIR_TYPE_R = 4
+AI_DIR_TYPE_FL = 10
+AI_DIR_TYPE_FR = 11
+AI_DIR_TYPE_BL = 12
+AI_DIR_TYPE_BR = 13
+AI_DIR_TYPE_ToF = 5
+AI_DIR_TYPE_ToB = 6
+AI_DIR_TYPE_ToL = 7
+AI_DIR_TYPE_ToR = 8
+AI_DIR_TYPE_Top = 9
+AI_DIR_TYPE_ToFL = 14
+AI_DIR_TYPE_ToFR = 15
+AI_DIR_TYPE_ToBL = 16
+AI_DIR_TYPE_ToBR = 17
+
+#------------------------------------------------------------------
+# AI_SPA_DIR_TYPE
+# 
+#------------------------------------------------------------------
+AI_SPA_DIR_TYPE_TargetF = 0
+AI_SPA_DIR_TYPE_ToTarget = 1
+AI_SPA_DIR_TYPE_Absolute = 2
+
+#------------------------------------------------------------------
+# DIST
+# 
+#------------------------------------------------------------------
+DIST_Near = -1
+DIST_Middle = -2
+DIST_Far = -3
+DIST_Out = -4
+DIST_None = -5
+
+#------------------------------------------------------------------
+# TARGET
+# 
+#------------------------------------------------------------------
+TARGET_NONE = -2
+TARGET_SELF = -1
+TARGET_ENE_0 = 0
+TARGET_FRI_0 = 10
+TARGET_EVENT = 20
+TARGET_LOCALPLAYER = 21
+TARGET_LowHp_Friend = 22
+TARGET_INTERMEDIATE_POINT = 23
+TARGET_TEAM_FORMATION = 24
+TARGET_TEAM_LEADER = 25
+TARGET_MEMORIED_RELATIVE_TARGET = 26
+TARGET_ENEMY_AVATOR_HOME = 50
+TARGET_PERSONAL_AVATOR_HOME = 51
+TARGET_TYPE_BOIDS_COMMAND = 60
+TARGET_RIDE_0 = 70
+TARGET_SEARCH = 80
+TARGET_SOUND = 81
+TARGET_HOSTPLAYER = 82
+
+#------------------------------------------------------------------
+# POINT
+# 
+#------------------------------------------------------------------
+POINT_INITIAL = 100
+POINT_SNIPE = 101
+POINT_EVENT = 102
+POINT_MOVE_POINT = 103
+POINT_NEAR_NAVIMESH = 104
+POINT_FAR_NAVIGATE = 105
+POINT_NEAR_NAVIGATE = 106
+POINT_AI_FIXED_POS = 107
+POINT_FAR_LANDING = 108
+POINT_NEAR_LANDING = 109
+POINT_2ndNEAR_LANDING = 110
+POINT_INIT_POSE = 111
+POINT_HitObstacle = 112
+POINT_CurrRequestPosition = 114
+POINT_NearMovePoint = 115
+POINT_NEAR_OBJ_ACT_POINT = 116
+POINT_2ndNEAR_OBJ_ACT_POINT = 117
+POINT_LastSightPosition = 118
+POINT_NearCorpsePosition = 119
+POINT_AutoWalkAroundTest = 120
+POINT_WalkAroundPosition_Home = 121
+POINT_UnstableFloor_CausePos = 122
+POINT_WalkAroundPosition_Free = 123
+POINT_AIPredictionTargetPos = 124
+POINT_HorseRouteTarget = 125
+POINT_HorseRouteTarget_Test_StartDirPoint = 126
+POINT_FlyRoute_CruiseBoundary = 129
+POINT_AIJumpTargetPos_PathMove = 130
+POINT_WaitAndSee = 131
+POINT_TeamDefeat = 132
+POINT_StragglerAfterDefeat = 133
+
+#------------------------------------------------------------------
+# EVENT_TARGET
+# 
+#------------------------------------------------------------------
+EVENT_TARGET_0 = 1000
+EVENT_TARGET_1 = 1001
+EVENT_TARGET_2 = 1002
+EVENT_TARGET_3 = 1003
+EVENT_TARGET_4 = 1004
+EVENT_TARGET_5 = 1005
+EVENT_TARGET_6 = 1006
+EVENT_TARGET_7 = 1007
+EVENT_TARGET_8 = 1008
+EVENT_TARGET_9 = 1009
+EVENT_TARGET_10 = 1010
+
+#------------------------------------------------------------------
+# TARGET_TEAM_MEMBER
+# 
+#------------------------------------------------------------------
+TARGET_TEAM_MEMBER_1 = 1101
+TARGET_TEAM_MEMBER_2 = 1102
+TARGET_TEAM_MEMBER_3 = 1103
+TARGET_TEAM_MEMBER_4 = 1104
+TARGET_TEAM_MEMBER_5 = 1105
+TARGET_TEAM_MEMBER_6 = 1106
+TARGET_TEAM_MEMBER_7 = 1107
+TARGET_TEAM_MEMBER_8 = 1108
+TARGET_TEAM_MEMBER_9 = 1109
+TARGET_TEAM_MEMBER_10 = 1110
+TARGET_TEAM_MEMBER_11 = 1111
+TARGET_TEAM_MEMBER_12 = 1112
+TARGET_TEAM_MEMBER_13 = 1113
+TARGET_TEAM_MEMBER_14 = 1114
+TARGET_TEAM_MEMBER_15 = 1115
+TARGET_TEAM_MEMBER_16 = 1116
+TARGET_TEAM_MEMBER_17 = 1117
+TARGET_TEAM_MEMBER_18 = 1118
+TARGET_TEAM_MEMBER_19 = 1119
+TARGET_TEAM_MEMBER_20 = 1120
+TARGET_TEAM_MEMBER_21 = 1121
+TARGET_TEAM_MEMBER_22 = 1122
+TARGET_TEAM_MEMBER_23 = 1123
+TARGET_TEAM_MEMBER_24 = 1124
+TARGET_TEAM_MEMBER_25 = 1125
+TARGET_TEAM_MEMBER_26 = 1126
+TARGET_TEAM_MEMBER_27 = 1127
+TARGET_TEAM_MEMBER_28 = 1128
+TARGET_TEAM_MEMBER_29 = 1129
+TARGET_TEAM_MEMBER_30 = 1130
+TARGET_TEAM_MEMBER_31 = 1131
+
+#------------------------------------------------------------------
+# INTERUPT
+# 
+#------------------------------------------------------------------
+INTERUPT_First = 0
+INTERUPT_FindEnemy = 0
+INTERUPT_FindAttack = 1
+INTERUPT_Damaged = 2
+INTERUPT_Damaged_Stranger = 3
+INTERUPT_FindMissile = 4
+INTERUPT_SuccessGuard = 5
+INTERUPT_MissSwing = 6
+INTERUPT_GuardBegin = 7
+INTERUPT_GuardFinish = 8
+INTERUPT_GuardBreak = 9
+INTERUPT_Shoot = 10
+INTERUPT_ShootReady = 11
+INTERUPT_UseItem = 12
+INTERUPT_EnterBattleArea = 13
+INTERUPT_LeaveBattleArea = 14
+INTERUPT_CANNOT_MOVE = 15
+INTERUPT_Inside_ObserveArea = 16
+INTERUPT_ReboundByOpponentGuard = 17
+INTERUPT_ForgetTarget = 18
+INTERUPT_FriendRequestSupport = 19
+INTERUPT_TargetIsGuard = 20
+INTERUPT_HitEnemyWall = 21
+INTERUPT_SuccessParry = 22
+INTERUPT_CANNOT_MOVE_DisableInterupt = 23
+INTERUPT_ParryTiming = 24
+INTERUPT_RideNode_LadderBottom = 25
+INTERUPT_FLAG_RideNode_Door = 26
+INTERUPT_StraightByPath = 27
+INTERUPT_ChangedAnimIdOffset = 28
+INTERUPT_SuccessThrow = 29
+INTERUPT_LookedTarget = 30
+INTERUPT_LoseSightTarget = 31
+INTERUPT_RideNode_InsideWall = 32
+INTERUPT_MissSwingSelf = 33
+INTERUPT_GuardBreakBlow = 34
+INTERUPT_TargetOutOfRange = 35
+INTERUPT_UnstableFloor = 36
+INTERUPT_BreakFloor = 37
+INTERUPT_BreakObserveObj = 38
+INTERUPT_EventRequest = 39
+INTERUPT_Outside_ObserveArea = 40
+INTERUPT_TargetOutOfAngle = 41
+INTERUPT_PlatoonAiOrder = 42
+INTERUPT_ActivateSpecialEffect = 43
+INTERUPT_DeActivateSpecialEffect = 44
+INTERUPT_MovedEnd_OnFailedPath = 45
+INTERUPT_ChangeSoundTarget = 46
+INTERUPT_OnCreateDamage = 47
+INTERUPT_InvadeTriggerRegion = 48
+INTERUPT_LeaveTriggerRegion = 49
+INTERUPT_AIGuardBroken = 50
+INTERUPT_AIReboundByOpponentGuard = 51
+INTERUPT_BackstabRisk = 52
+INTERUPT_LadderWait = 53
+INTERUPT_AIJump = 54
+INTERUPT_FindUnfavorableFailedPoint = 55
+INTERUPT_UnfavorableAttack = 56
+INTERUPT_Last = 56
+
+#------------------------------------------------------------------
+# PLATOON_STATE
+# 
+#------------------------------------------------------------------
+PLATOON_STATE_None = 0
+PLATOON_STATE_Caution = 1
+PLATOON_STATE_Find = 2
+PLATOON_STATE_ReplyHelp = 3
+PLATOON_STATE_Battle = 4
+
+#------------------------------------------------------------------
+# CARAVAN_ROLE
+# 
+#------------------------------------------------------------------
+CARAVAN_ROLE_Attack = 0
+CARAVAN_ROLE_Guard = 1
+CARAVAN_ROLE_Master = 2
+
+#------------------------------------------------------------------
+# COORDINATE_TYPE
+# 
+#------------------------------------------------------------------
+COORDINATE_TYPE_None = -1
+COORDINATE_TYPE_Attack = 0
+COORDINATE_TYPE_SideWalk_L = 1
+COORDINATE_TYPE_SideWalk_R = 2
+COORDINATE_TYPE_AttackOrder = 3
+COORDINATE_TYPE_Support = 4
+COORDINATE_TYPE_KIMERAbite = 100
+COORDINATE_TYPE_UROKOIwaSupport = 110
+
+#------------------------------------------------------------------
+# ORDER_TYPE
+# 
+#------------------------------------------------------------------
+ORDER_TYPE_Role = 0
+ORDER_TYPE_CallHelp = 1
+
+#------------------------------------------------------------------
+# ROLE_TYPE
+# 
+#------------------------------------------------------------------
+ROLE_TYPE_None = -1
+ROLE_TYPE_Attack = 0
+ROLE_TYPE_Torimaki = 1
+ROLE_TYPE_Kankyaku = 2
+
+#------------------------------------------------------------------
+# NPC_ATK
+# 
+#------------------------------------------------------------------
+NPC_ATK_R1 = 0
+NPC_ATK_R1Hold = 1
+NPC_ATK_R2 = 2
+NPC_ATK_R2Hold = 3
+NPC_ATK_L1 = 4
+NPC_ATK_L1Hold = 6
+NPC_ATK_L2 = 7
+NPC_ATK_L2Hold = 8
+NPC_ATK_L3 = 9
+NPC_ATK_Kick = 10
+NPC_ATK_JumpAttackOld = 11
+NPC_ATK_ChangeStyleR = 12
+NPC_ATK_ButtonSquare = 13
+NPC_ATK_ButtonCircle = 14
+NPC_ATK_ButtonXmark = 15
+NPC_ATK_ArrowKeyLeft = 16
+NPC_ATK_ArrowKeyRight = 17
+NPC_ATK_Up = 18
+NPC_ATK_UpLeft = 19
+NPC_ATK_UpRight = 20
+NPC_ATK_Left = 21
+NPC_ATK_Right = 22
+NPC_ATK_Down = 23
+NPC_ATK_DownLeft = 24
+NPC_ATK_DownRight = 25
+NPC_ATK_Up_L1Hold = 26
+NPC_ATK_UpLeft_L1Hold = 27
+NPC_ATK_UpRight_L1Hold = 28
+NPC_ATK_Left_L1Hold = 29
+NPC_ATK_Right_L1Hold = 30
+NPC_ATK_Down_L1Hold = 31
+NPC_ATK_DownLeft_L1Hold = 32
+NPC_ATK_DownRight_L1Hold = 33
+NPC_ATK_UpHold_ButtonXmarkHold = 34
+NPC_ATK_UpHold_ButtonXmarkHold_L2Hold = 35
+NPC_ATK_Up_ButtonXmark = 36
+NPC_ATK_UpLeft_ButtonXmark = 37
+NPC_ATK_UpRight_ButtonXmark = 38
+NPC_ATK_Left_ButtonXmark = 39
+NPC_ATK_Right_ButtonXmark = 40
+NPC_ATK_Down_ButtonXmark = 41
+NPC_ATK_DownLeft_ButtonXmark = 42
+NPC_ATK_DownRight_ButtonXmark = 43
+NPC_ATK_L2Hold_R1 = 48
+NPC_ATK_L2Hold_R2 = 49
+NPC_ATK_Up_L2 = 50
+NPC_ATK_UpLeft_L2 = 51
+NPC_ATK_UpRight_L2 = 52
+NPC_ATK_Left_L2 = 53
+NPC_ATK_Right_L2 = 54
+NPC_ATK_Down_L2 = 55
+NPC_ATK_DownLeft_L2 = 56
+NPC_ATK_DownRight_L2 = 57
+NPC_ATK_UpHold_L2Hold = 58
+NPC_ATK_UpLeftHold_L2Hold = 59
+NPC_ATK_UpRightHold_L2Hold = 60
+NPC_ATK_LeftHold_L2Hold = 61
+NPC_ATK_RightHold_L2Hold = 62
+NPC_ATK_DownHold_L2Hold = 63
+NPC_ATK_DownLeftHold_L2Hold = 64
+NPC_ATK_DownRightHold_L2Hold = 65
+NPC_ATK_UpHold_L2Hold_R1 = 66
+NPC_ATK_UpLeftHold_L2Hold_R1 = 67
+NPC_ATK_UpRightHold_L2Hold_R1 = 68
+NPC_ATK_LeftHold_L2Hold_R1 = 69
+NPC_ATK_RightHold_L2Hold_R1 = 70
+NPC_ATK_DownHold_L2Hold_R1 = 71
+NPC_ATK_DownLeftHold_L2Hold_R1 = 72
+NPC_ATK_DownRightHold_L2Hold_R1 = 73
+NPC_ATK_UpHold_L2Hold_R2 = 74
+NPC_ATK_UpLeftHold_L2Hold_R2 = 75
+NPC_ATK_UpRightHold_L2Hold_R2 = 76
+NPC_ATK_LeftHold_L2Hold_R2 = 77
+NPC_ATK_RightHold_L2Hold_R2 = 78
+NPC_ATK_DownHold_L2Hold_R2 = 79
+NPC_ATK_DownLeftHold_L2Hold_R2 = 80
+NPC_ATK_DownRightHold_L2Hold_R2 = 81
+NPC_ATK_L1Hold_R1 = 82
+NPC_ATK_L1Hold_R2 = 83
+NPC_ATK_DashR1 = 84
+NPC_ATK_DashR2 = 85
+NPC_ATK_DashL1 = 86
+NPC_ATK_LadderUp = 90
+NPC_ATK_LadderDown = 91
+NPC_ATK_ChangeStyleL = 92
+NPC_ATK_RideMount = 93
+NPC_ATK_RideDismount = 94
+NPC_ATK_Squat = 96
+NPC_ATK_DashHold = 98
+NPC_ATK_BuddyReturn = 99
+NPC_ATK_Jump = 100
+NPC_ATK_Up_Jump = 101
+NPC_ATK_UpLeft_Jump = 102
+NPC_ATK_UpRight_Jump = 103
+NPC_ATK_Left_Jump = 104
+NPC_ATK_Right_Jump = 105
+NPC_ATK_Down_Jump = 106
+NPC_ATK_DownLeft_Jump = 107
+NPC_ATK_DownRight_Jump = 108
+NPC_ATK_Dash_Jump = 109
+NPC_ATK_Up_R1 = 121
+NPC_ATK_UpLeft_R1 = 122
+NPC_ATK_UpRight_R1 = 123
+NPC_ATK_Left_R1 = 124
+NPC_ATK_Right_R1 = 125
+NPC_ATK_Down_R1 = 126
+NPC_ATK_DownLeft_R1 = 127
+NPC_ATK_DownRight_R1 = 128
+NPC_ATK_Up_L1 = 131
+NPC_ATK_UpLeft_L1 = 132
+NPC_ATK_UpRight_L1 = 133
+NPC_ATK_Left_L1 = 134
+NPC_ATK_Right_L1 = 135
+NPC_ATK_Down_L1 = 136
+NPC_ATK_DownLeft_L1 = 137
+NPC_ATK_DownRight_L1 = 138
+NPC_ATK_Up_R1Hold = 141
+NPC_ATK_UpLeft_R1Hold = 142
+NPC_ATK_UpRight_R1Hold = 143
+NPC_ATK_Left_R1Hold = 144
+NPC_ATK_Right_R1Hold = 145
+NPC_ATK_Down_R1Hold = 146
+NPC_ATK_DownLeft_R1Hold = 147
+NPC_ATK_DownRight_R1Hold = 148
+NPC_ATK_Up_L1Hold = 151
+NPC_ATK_UpLeft_L1Hold = 152
+NPC_ATK_UpRight_L1Hold = 153
+NPC_ATK_Left_L1Hold = 154
+NPC_ATK_Right_L1Hold = 155
+NPC_ATK_Down_L1Hold = 156
+NPC_ATK_DownLeft_L1Hold = 157
+NPC_ATK_DownRight_L1Hold = 158
+NPC_ATK_Gesture00 = 1000
+NPC_ATK_Gesture01 = 1001
+NPC_ATK_Gesture02 = 1002
+NPC_ATK_Gesture03 = 1003
+NPC_ATK_Gesture04 = 1004
+NPC_ATK_Gesture05 = 1005
+NPC_ATK_Gesture06 = 1006
+NPC_ATK_Gesture07 = 1007
+NPC_ATK_Gesture08 = 1008
+NPC_ATK_Gesture09 = 1009
+NPC_ATK_Gesture10 = 1010
+NPC_ATK_Gesture11 = 1011
+NPC_ATK_Gesture12 = 1012
+NPC_ATK_Gesture13 = 1013
+NPC_ATK_Gesture14 = 1014
+NPC_ATK_Gesture15 = 1015
+NPC_ATK_Gesture16 = 1016
+NPC_ATK_Gesture17 = 1017
+NPC_ATK_Gesture18 = 1018
+NPC_ATK_Gesture19 = 1019
+NPC_ATK_Gesture20 = 1020
+NPC_ATK_Gesture21 = 1021
+NPC_ATK_Gesture22 = 1022
+NPC_ATK_Gesture23 = 1023
+NPC_ATK_Gesture24 = 1024
+NPC_ATK_Gesture25 = 1025
+NPC_ATK_Gesture26 = 1026
+NPC_ATK_Gesture27 = 1027
+NPC_ATK_Gesture28 = 1028
+NPC_ATK_Gesture29 = 1029
+NPC_ATK_Gesture30 = 1030
+NPC_ATK_Gesture31 = 1031
+NPC_ATK_Gesture32 = 1032
+NPC_ATK_Gesture33 = 1033
+NPC_ATK_Gesture34 = 1034
+NPC_ATK_Gesture35 = 1035
+NPC_ATK_Gesture36 = 1036
+NPC_ATK_Gesture37 = 1037
+NPC_ATK_Gesture38 = 1038
+NPC_ATK_Gesture39 = 1039
+NPC_ATK_Gesture40 = 1040
+NPC_ATK_NONE = 9999
+NPC_ATK_NormalR = NPC_ATK_R1
+NPC_ATK_LargeR = NPC_ATK_R2
+NPC_ATK_PushR = NPC_ATK_Up_R1
+NPC_ATK_NormalL = NPC_ATK_L1
+NPC_ATK_GuardL = NPC_ATK_L1Hold
+NPC_ATK_Parry = NPC_ATK_L2
+NPC_ATK_Magic = NPC_ATK_R1
+NPC_ATK_MagicL = NPC_ATK_L1
+NPC_ATK_Item = NPC_ATK_ButtonSquare
+NPC_ATK_StepF = NPC_ATK_Up_ButtonXmark
+NPC_ATK_StepB = NPC_ATK_Down_ButtonXmark
+NPC_ATK_StepL = NPC_ATK_Left_ButtonXmark
+NPC_ATK_StepR = NPC_ATK_Right_ButtonXmark
+NPC_ATK_ChangeWep_R1 = NPC_ATK_ArrowKeyRight
+NPC_ATK_ChangeWep_R2 = NPC_ATK_ArrowKeyRight
+NPC_ATK_ChangeWep_L1 = NPC_ATK_ArrowKeyLeft
+NPC_ATK_ChangeWep_L2 = NPC_ATK_ArrowKeyLeft
+NPC_ATK_BackstepF = NPC_ATK_Up_L2
+NPC_ATK_BackstepB = NPC_ATK_Down_L2
+NPC_ATK_BackstepL = NPC_ATK_Left_L2
+NPC_ATK_BackstepR = NPC_ATK_Right_L2
+NPC_ATK_MagicR = NPC_ATK_R1
+NPC_ATK_Ladder_10 = NPC_ATK_LadderUp
+NPC_ATK_Ladder_11 = NPC_ATK_LadderDown
+
+#------------------------------------------------------------------
+# AI_EXCEL_THINK_PARAM_TYPE
+# 
+#------------------------------------------------------------------
+AI_EXCEL_THINK_PARAM_TYPE__NONE = 0
+AI_EXCEL_THINK_PARAM_TYPE__maxBackhomeDist = 1
+AI_EXCEL_THINK_PARAM_TYPE__backhomeDist = 2
+AI_EXCEL_THINK_PARAM_TYPE__backhomeBattleDist = 3
+AI_EXCEL_THINK_PARAM_TYPE__nonBattleActLife = 4
+AI_EXCEL_THINK_PARAM_TYPE__BattleStartDist = 5
+AI_EXCEL_THINK_PARAM_TYPE__bMoveOnHearSound = 6
+AI_EXCEL_THINK_PARAM_TYPE__CannotMoveAction = 7
+AI_EXCEL_THINK_PARAM_TYPE__battleGoalID = 8
+AI_EXCEL_THINK_PARAM_TYPE__BackHome_LookTargetTime = 9
+AI_EXCEL_THINK_PARAM_TYPE__BackHome_LookTargetDist = 10
+AI_EXCEL_THINK_PARAM_TYPE__BackHomeLife_OnHitEnemyWall = 11
+AI_EXCEL_THINK_PARAM_TYPE__callHelp_IsCall = 12
+AI_EXCEL_THINK_PARAM_TYPE__callHelp_IsReply = 13
+AI_EXCEL_THINK_PARAM_TYPE__callHelp_MyPeerId = 14
+AI_EXCEL_THINK_PARAM_TYPE__callHelp_CallPeerId = 15
+AI_EXCEL_THINK_PARAM_TYPE__callHelp_DelayTime = 16
+AI_EXCEL_THINK_PARAM_TYPE__callHelp_CallActionId = 17
+AI_EXCEL_THINK_PARAM_TYPE__callHelp_ReplyBehaviorType = 18
+AI_EXCEL_THINK_PARAM_TYPE__callHelp_ForgetTimeByArrival = 19
+AI_EXCEL_THINK_PARAM_TYPE__callHelp_MinWaitTime = 20
+AI_EXCEL_THINK_PARAM_TYPE__callHelp_MaxWaitTime = 21
+AI_EXCEL_THINK_PARAM_TYPE__callHelp_ReplyActionId = 22
+AI_EXCEL_THINK_PARAM_TYPE__thinkAttr_doAdmirer = 23
+AI_EXCEL_THINK_PARAM_TYPE__goalAction_ToDisappear = 24
+AI_EXCEL_THINK_PARAM_TYPE__goalAction_ToCaution = 25
+AI_EXCEL_THINK_PARAM_TYPE__goalAction_ToCautionImportant = 26
+AI_EXCEL_THINK_PARAM_TYPE__changeStateAction_ToNormal = 27
+AI_EXCEL_THINK_PARAM_TYPE__caravanRole = 28
+AI_EXCEL_THINK_PARAM_TYPE__goalAction_ToSearchLv1 = 29
+AI_EXCEL_THINK_PARAM_TYPE__goalAction_ToSearchLv2 = 30
+AI_EXCEL_THINK_PARAM_TYPE__rangedAttackId = 31
+AI_EXCEL_THINK_PARAM_TYPE__IsGuard_Act = 32
+AI_EXCEL_THINK_PARAM_TYPE__spEffectId_RangedAttack = 33
+AI_EXCEL_THINK_PARAM_TYPE__shiftAnimeId_RangedAttack = 34
+AI_EXCEL_THINK_PARAM_TYPE__enableWeaponOnOff = 35
+AI_EXCEL_THINK_PARAM_TYPE__weaponOffSpecialEffectId = 36
+AI_EXCEL_THINK_PARAM_TYPE__weaponOnSpecialEffectId = 37
+AI_EXCEL_THINK_PARAM_TYPE__weaponOffAnimId = 38
+AI_EXCEL_THINK_PARAM_TYPE__weaponOnAnimId = 39
+AI_EXCEL_THINK_PARAM_TYPE__surpriseAnimId = 40
+AI_EXCEL_THINK_PARAM_TYPE__backToHomeStuckAct = 41
+
+#------------------------------------------------------------------
+# POINT_MOVE_TYPE
+# 
+#------------------------------------------------------------------
+POINT_MOVE_TYPE_Patrol = 0
+POINT_MOVE_TYPE_RoundTrip = 1
+POINT_MOVE_TYPE_Randum = 2
+POINT_MOVE_TYPE_Gargoyle_Air_Patrol = 3
+POINT_MOVE_TYPE_Gargoyle_Landing = 4
+POINT_MOVE_TYPE_OneWayPatrol = 5
+POINT_MOVE_TYPE_WalkAround = 6
+POINT_MOVE_TYPE_GRFlyEnemy = 7
+
+#------------------------------------------------------------------
+# ARM
+# 
+#------------------------------------------------------------------
+ARM_L = 0
+ARM_R = 1
+
+#------------------------------------------------------------------
+# WEP
+# 
+#------------------------------------------------------------------
+WEP_Primary = 0
+WEP_Secondary = 1
+WEP_Tertiary = 2
+
+#------------------------------------------------------------------
+# ARROW_OR_BOLT
+# 
+#------------------------------------------------------------------
+ARROW_OR_BOLT_Arrow = 0
+ARROW_OR_BOLT_Bolt = 1
+
+#------------------------------------------------------------------
+# AI_TARGET_WEIGHT_TYPE
+# 
+#------------------------------------------------------------------
+AI_TARGET_WEIGHT_TYPE_SuperLight = 0
+AI_TARGET_WEIGHT_TYPE_Light = 1
+AI_TARGET_WEIGHT_TYPE_Normal = 2
+AI_TARGET_WEIGHT_TYPE_Heavy = 3
+AI_TARGET_WEIGHT_TYPE_WeightOver = 4
+
+#------------------------------------------------------------------
+# ITEM_SLOTTYPE
+# 
+#------------------------------------------------------------------
+ITEM_SLOTTYPE_SHORTCUT = 0
+ITEM_SLOTTYPE_TOOLBOX = 1
+
+#------------------------------------------------------------------
+# PARTS_DMG
+# 
+#------------------------------------------------------------------
+PARTS_DMG_NONE = 0
+PARTS_DMG_LV1 = 1
+PARTS_DMG_LV2 = 2
+PARTS_DMG_LV3 = 3
+PARTS_DMG_FINAL = 20
+
+#------------------------------------------------------------------
+# AI_FLY_ROUTE_STATE
+# 
+#------------------------------------------------------------------
+AI_FLY_ROUTE_STATE_NOT_USE_FLY_ROUTE = -1
+AI_FLY_ROUTE_STATE_NOMAL_CRUISE = 0
+AI_FLY_ROUTE_STATE_NOMAL_CRUISE_LAND_REQUESTED = 1
+AI_FLY_ROUTE_STATE_NOMAL_CRUISE_TO_DESCENT = 10
+AI_FLY_ROUTE_STATE_DESCENR = 11
+AI_FLY_ROUTE_STATE_ON_GROUND = 20
+AI_FLY_ROUTE_STATE_ON_GROUND_TAKEOFF_REQUESTED = 21
+AI_FLY_ROUTE_STATE_CLIMB = 30
+AI_FLY_ROUTE_STATE_CLIMB_TO_NOMAL_CRUISE = 31
+
+#------------------------------------------------------------------
+# SP_EFFECT_TYPE
+# 
+#------------------------------------------------------------------
+SP_EFFECT_TYPE_NONE = 0
+SP_EFFECT_TYPE_FIRE = 1
+SP_EFFECT_TYPE_POIZON = 2
+SP_EFFECT_TYPE_LEECH = 3
+SP_EFFECT_TYPE_SPOIL = 4
+SP_EFFECT_TYPE_ILLNESS = 5
+SP_EFFECT_TYPE_BLOOD = 6
+SP_EFFECT_TYPE_CAMOUFLAGE = 7
+SP_EFFECT_TYPE_HIDDEN = 8
+SP_EFFECT_TYPE_MASOCHIST = 9
+SP_EFFECT_TYPE_RECOVER_POZON = 10
+SP_EFFECT_TYPE_RECOVER_ILLNESS = 11
+SP_EFFECT_TYPE_RECOVER_BLOOD = 12
+SP_EFFECT_TYPE_RECOVER_ALL = 13
+SP_EFFECT_TYPE_SOUL_STEAL = 14
+SP_EFFECT_TYPE_ZOOM = 15
+SP_EFFECT_TYPE_WARP = 16
+SP_EFFECT_TYPE_DEMONS_SOUL = 17
+SP_EFFECT_TYPE_BLACK_DISPERSE = 18
+SP_EFFECT_TYPE_TOUGH_GHOST = 19
+SP_EFFECT_TYPE_WHITE_REQUEST = 20
+SP_EFFECT_TYPE_BLACK_REQUEST = 21
+SP_EFFECT_TYPE_CHANGE_BLACK = 22
+SP_EFFECT_TYPE_REVIVE = 23
+SP_EFFECT_TYPE_FORBID_USEMAGIC = 24
+SP_EFFECT_TYPE_MIRACLE_DIRAY = 25
+SP_EFFECT_TYPE_WHETSTONE = 26
+SP_EFFECT_TYPE_SUSPENDED_REVIVE = 27
+SP_EFFECT_TYPE_ENCHANT_WEAPON = 28
+SP_EFFECT_TYPE_ENCHANT_ARMOR = 29
+SP_EFFECT_TYPE_WIRE_WRAPED = 30
+SP_EFFECT_TYPE_GHOST_PARAM_CHANGE = 31
+SP_EFFECT_TYPE_PARALYSIS = 32
+SP_EFFECT_TYPE_FLY_CROWD = 33
+SP_EFFECT_TYPE_FIREMAN_STAGE_1 = 34
+SP_EFFECT_TYPE_FIREMAN_STAGE_2 = 35
+SP_EFFECT_TYPE_FIREMAN_STAGE_3 = 36
+SP_EFFECT_TYPE_FIREMAN_STAGE_4 = 37
+SP_EFFECT_TYPE_HALLUCINATION = 38
+SP_EFFECT_TYPE_SOULCOIN = 39
+SP_EFFECT_TYPE_TOUGH_SHIELD = 40
+SP_EFFECT_TYPE_ANTIFIRE_SHIELD = 41
+SP_EFFECT_TYPE_HP_RECOVERY = 42
+SP_EFFECT_TYPE_FORCE_GHOST_STAGE1 = 43
+SP_EFFECT_TYPE_FORCE_GHOST_STAGE2 = 44
+SP_EFFECT_TYPE_FORCE_GHOST_STAGE3 = 45
+SP_EFFECT_TYPE_PHEROMONE = 46
+SP_EFFECT_TYPE_CAT_LANDING = 47
+SP_EFFECT_TYPE_PINCH_ATTACKPOWER_UP = 48
+SP_EFFECT_TYPE_PINCH_DEFENSIBILITY_UP = 49
+SP_EFFECT_TYPE_REGENERATE = 50
+SP_EFFECT_TYPE_TORCH = 51
+SP_EFFECT_TYPE_WEAK_REGENERATE = 52
+SP_EFFECT_TYPE_WEAK_CAMOUFLAGE = 53
+SP_EFFECT_TYPE_WEAK_HIDDEN = 54
+SP_EFFECT_TYPE_HINT_BLOOD_SIGN = 55
+SP_EFFECT_TYPE_LEECH_FOOT = 56
+SP_EFFECT_TYPE_YELLOW_CLOAK = 57
+SP_EFFECT_TYPE_POINT_LIGHT = 58
+SP_EFFECT_TYPE_BLOOD_SIGN_ESTIMATION = 59
+SP_EFFECT_TYPE_ENCHANT_WEAPON_REGULAR = 60
+SP_EFFECT_TYPE_ENCHANT_WEAPON_LARGE = 61
+SP_EFFECT_TYPE_ENCHANT_WEAPON_FIRE = 62
+SP_EFFECT_TYPE_ENCHANT_WEAPON_FIRE_LARGE = 63
+SP_EFFECT_TYPE_ENCHANT_WEAPON_MAGIC = 64
+SP_EFFECT_TYPE_CHIMERA_POWER_UP = 65
+SP_EFFECT_TYPE_ITEM_DROP_RATE = 66
+SP_EFFECT_TYPE_TARGET_DOWN = 259
+SP_EFFECT_TYPE_BEAST_REPELLENT = 390
+SP_EFFECT_TYPE_ENABLE_BEAST_REPELLENT = 391
+SP_EFFECT_TYPE_SLEEP = 436
+
+#------------------------------------------------------------------
+# OBJ_ACT_TYPE
+# 
+#------------------------------------------------------------------
+OBJ_ACT_TYPE_LEVER = 0
+OBJ_ACT_TYPE_DOOR = 1
+
+#------------------------------------------------------------------
+# TEAM_TYPE
+# 
+#------------------------------------------------------------------
+TEAM_TYPE_None = 0
+TEAM_TYPE_Live = 1
+TEAM_TYPE_WhiteGhost = 2
+TEAM_TYPE_BlackGhost = 3
+TEAM_TYPE_GlayGhost = 4
+TEAM_TYPE_WanderGhost = 5
+TEAM_TYPE_Enemy = 6
+TEAM_TYPE_Boss = 7
+TEAM_TYPE_Friend = 8
+TEAM_TYPE_AngryFriend = 9
+TEAM_TYPE_Decoy = 10
+TEAM_TYPE_DecoyLike = 11
+TEAM_TYPE_BattleFriend = 12
+TEAM_TYPE_Intruder = 13
+TEAM_TYPE_Neutral = 14
+TEAM_TYPE_Charm = 15
+
+#------------------------------------------------------------------
+# GUARD_GOAL_DESIRE_RET
+# 
+#------------------------------------------------------------------
+GUARD_GOAL_DESIRE_RET_Success = 1
+GUARD_GOAL_DESIRE_RET_Continue = 2
+GUARD_GOAL_DESIRE_RET_Failed = 3
+
+#------------------------------------------------------------------
+# WEP_CATE
+# 
+#------------------------------------------------------------------
+WEP_CATE_None = 0
+WEP_CATE_Shield = 1
+WEP_CATE_Bow = 2
+WEP_CATE_Crossbow = 3
+WEP_CATE_Wand = 4
+
+#------------------------------------------------------------------
+# AI_LIST_ROW_TYPE
+# 
+#------------------------------------------------------------------
+AI_LIST_ROW_TYPE__NEAR_TARGET = 0
+
+#------------------------------------------------------------------
+# AI_AREAOBSERVE_INTERRUPT
+# 
+#------------------------------------------------------------------
+AI_AREAOBSERVE_INTERRUPT__NOCHANGE = 0
+AI_AREAOBSERVE_INTERRUPT__INSIDE = 1
+AI_AREAOBSERVE_INTERRUPT__OUTSIDE = 2
+
+#------------------------------------------------------------------
+# AI_GOAL_FAILED_END_OPT
+# 
+#------------------------------------------------------------------
+AI_GOAL_FAILED_END_OPT__REPLANING = 0
+AI_GOAL_FAILED_END_OPT__PARENT_NEXT_SUB_GOAL = 1
+
+#------------------------------------------------------------------
+# TARGET_ANGLE
+# 
+#------------------------------------------------------------------
+TARGET_ANGLE_FRONT = 0
+TARGET_ANGLE_RIGHT = 1
+TARGET_ANGLE_LEFT = 2
+TARGET_ANGLE_BACK = 3
+
+#------------------------------------------------------------------
+# WEAPON_CHANGE
+# 
+#------------------------------------------------------------------
+WEAPON_CHANGE_1 = 0
+WEAPON_CHANGE_2 = 1
+WEAPON_CHANGE_3 = 2
+WEAPON_CHANGE_4 = 3
+
+#------------------------------------------------------------------
+# GET_MESH_HEIGHT
+# 
+#------------------------------------------------------------------
+GET_MESH_HEIGHT_ERROR = 99999
+
+#------------------------------------------------------------------
+# AI_ATTACK_PARAM_TYPE
+# 
+#------------------------------------------------------------------
+AI_ATTACK_PARAM_TYPE__SUCCESS_DISTANCE = 0
+AI_ATTACK_PARAM_TYPE__TURN_TIME_BEFORE_ATTACK = 1
+AI_ATTACK_PARAM_TYPE__FRONT_ANGLE_RANGE = 2
+AI_ATTACK_PARAM_TYPE__UP_ANGLE_THRESHOLD = 3
+AI_ATTACK_PARAM_TYPE__DOWN_ANGLE_THRESHOLD = 4
+AI_ATTACK_PARAM_TYPE__MIN_OPTIMAL_DISTANCE = 5
+AI_ATTACK_PARAM_TYPE__MAX_OPTIMAL_DISTANCE = 6
+AI_ATTACK_PARAM_TYPE__BASE_DIR_FOR_OPTIMAL_ANGLE_1 = 7
+AI_ATTACK_PARAM_TYPE__OPTIMAL_ATTACK_ANGLE_RANGE_1 = 8
+AI_ATTACK_PARAM_TYPE__BASE_DIR_FOR_OPTIMAL_ANGLE_2 = 9
+AI_ATTACK_PARAM_TYPE__OPTIMAL_ATTACK_ANGLE_RANGE_2 = 10
+AI_ATTACK_PARAM_TYPE__INTERVAL_EXEC = 11
+AI_ATTACK_PARAM_TYPE__SELECTION_TENDENCY = 12
+AI_ATTACK_PARAM_TYPE__IS_FIRST_ATTACK = 13
+AI_ATTACK_PARAM_TYPE__SHORT_RANGE_TENDENCY = 14
+AI_ATTACK_PARAM_TYPE__MIDDLE_RANGE_TENDENCY = 15
+AI_ATTACK_PARAM_TYPE__FAR_RANGE_TENDENCY = 16
+AI_ATTACK_PARAM_TYPE__OUT_RANGE_TENDENCY = 17
+AI_ATTACK_PARAM_TYPE__DOES_SELECT_ON_OUT_RANGE = 18
+AI_ATTACK_PARAM_TYPE__MIN_GOAL_LIFE = 19
+AI_ATTACK_PARAM_TYPE__MAX_GOAL_LIFE = 20
+AI_ATTACK_PARAM_TYPE__DOES_SELECT_ON_INNER_RANGE = 21
+AI_ATTACK_PARAM_TYPE__IS_SELECTABLE_ON_BATTLE_START = 22
+AI_ATTACK_PARAM_TYPE__DOES_SELECT_ON_TARGET_DOWN = 23
+AI_ATTACK_PARAM_TYPE__MIN_ARRIVE_DISTANCE = 24
+AI_ATTACK_PARAM_TYPE__MAX_ARRIVE_DISTANCE = 25
+AI_ATTACK_PARAM_TYPE__COMBO_EXEC_DISTANCE = 26
+AI_ATTACK_PARAM_TYPE__COMBO_EXEC_RANGE = 27
+
+#------------------------------------------------------------------
+# AI_SOUND_RANK
+# 
+#------------------------------------------------------------------
+AI_SOUND_RANK__NORMAL = 0
+AI_SOUND_RANK__IMPORTANT = 1
+AI_SOUND_RANK__HALLUCINATION = 2
+AI_SOUND_RANK__SOUL_COIN = 3
+AI_SOUND_RANK__SOUL_COIN_UNDEAD = 4
+AI_SOUND_RANK__SOUL_COIN_BEAST = 5
+AI_SOUND_RANK__SOUL_COIN_WEAK = 6
+AI_SOUND_RANK__BEHAVIOR = 7
+
+#------------------------------------------------------------------
+# AI_ATK_DIR
+# 
+#------------------------------------------------------------------
+AI_ATK_DIR_FRONT = 0
+AI_ATK_DIR_UP = 1
+AI_ATK_DIR_DOWN = 2
+AI_ATK_DIR_LEFT = 3
+AI_ATK_DIR_RIGHT = 4
+
+#------------------------------------------------------------------
+# AI_CALC_DIST_TYPE
+# 
+#------------------------------------------------------------------
+AI_CALC_DIST_TYPE__XYZ = 0
+AI_CALC_DIST_TYPE__XZ = 1
+
+#------------------------------------------------------------------
+# AI_TIMING_SET
+# 
+#------------------------------------------------------------------
+AI_TIMING_SET__ACTIVATE = 0
+AI_TIMING_SET__UPDATE_SUCCESS = 1
+
+#------------------------------------------------------------------
+# AI_TARGET_STATE
+# 
+#------------------------------------------------------------------
+AI_TARGET_STATE__NONE = 0
+AI_TARGET_STATE__MEMORY = 1
+AI_TARGET_STATE__AWARE = 2
+AI_TARGET_STATE__SEARCH = 3
+AI_TARGET_STATE__SEARCH2 = 4
+AI_TARGET_STATE__CAUTION = 5
+AI_TARGET_STATE__BATTLE = 6
+
+#------------------------------------------------------------------
+# AI_TARGET_TYPE
+# 
+#------------------------------------------------------------------
+AI_TARGET_TYPE__NONE = 0
+AI_TARGET_TYPE__SOUL_COIN = 1
+AI_TARGET_TYPE__HALLUCINATION = 2
+AI_TARGET_TYPE__NORMAL_ENEMY = 3
+AI_TARGET_TYPE__SOUND = 4
+AI_TARGET_TYPE__MEMORY_ENEMY = 5
+
+#------------------------------------------------------------------
+# AI_FAILED_PATH_NONBTL_ACT_TYPE
+# 
+#------------------------------------------------------------------
+AI_FAILED_PATH_NONBTL_ACT_TYPE__STAY = 0
+AI_FAILED_PATH_NONBTL_ACT_TYPE__WALK_AROUND = 1
+
+#------------------------------------------------------------------
+# PLAN_TIME_TYPE
+# 
+#------------------------------------------------------------------
+PLAN_TIME_TYPE_MORNING = 0
+PLAN_TIME_TYPE_DAYTIME = 1
+PLAN_TIME_TYPE_EVENING = 2
+PLAN_TIME_TYPE_NIGHT = 3
+PLAN_TIME_TYPE_MIDNIGHT = 4
+
+#------------------------------------------------------------------
+# PLAN_SP_EFFECT
+# Refers to SpEffectParam.
+#------------------------------------------------------------------
+PLAN_SP_EFFECT_FALL_FROM_HORSE_START = 79
+PLAN_SP_EFFECT_FALL_FROM_HORSE = 83
+PLAN_SP_EFFECT_BUDDY_DECLARE = 297000
+PLAN_SP_EFFECT_BUDDY_ORDER_GO = 210
+PLAN_SP_EFFECT_BUDDY_ORDER_COME = 211
+PLAN_SP_EFFECT_BUDDY_ORDER_UNSUMMON = 212
+PLAN_SP_EFFECT_BUDDY_ORDER_TRIGGER = 220
+PLAN_SP_EFFECT_BUDDY_AGGRESSIVE = 3381
+PLAN_SP_EFFECT_BUDDY_AGGRESSIVE_DEMIHUMAN = 10535
+PLAN_SP_EFFECT_BUDDY_WALK_FOLLOW = 297100
+PLAN_SP_EFFECT_BUDDY_REAR_FOLLOW = 297101
+PLAN_SP_EFFECT_BUDDY_FLY_FOLLOW = 297102
+PLAN_SP_EFFECT_BUDDY_NO_FOLLOW = 297103
+PLAN_SP_EFFECT_BUDDY_INTERCEPT_LONGRANGE = 297200
+PLAN_SP_EFFECT_NATURAL_SLEEP = 5070
+PLAN_SP_EFFECT_NATURAL_SLEEP_MORNING = 5071
+PLAN_SP_EFFECT_NATURAL_SLEEP_DAYTIME = 5072
+PLAN_SP_EFFECT_NATURAL_SLEEP_GUARD = 5079
+PLAN_SP_EFFECT_INITIAL_STANDBY = 5081
+PLAN_SP_EFFECT_RETURN_INITIAL_STANDBY = 5085
+PLAN_SP_EFFECT_RETURN_INITIAL_STANDBY_WITHANIM = 5090
+PLAN_SP_EFFECT_ANIME_SLEEPING = 5110
+PLAN_SP_EFFECT_ANIME_COLLECTSLEEPING = 5111
+PLAN_SP_EFFECT_PATROL_ANIME = 5020
+PLAN_SP_EFFECT_TRUNK_COLLAPSE = 6992
+PLAN_SP_EFFECT_DETECT_ANIM_COOLTIME = 5190
+PLAN_SP_EFFECT_FINDSHOOT_STEP_ON_FAILED_PATHGOAL = 5195
+PLAN_SP_EFFECT_HORSE_RIDE = 5010
+PLAN_SP_EFFECT_FACILITY_RIDE = 5012
+PLAN_SP_EFFECT_BARISTA_RIDE = 5230
+PLAN_SP_EFFECT_L_BARISTA_RIDE = 5231
+PLAN_SP_EFFECT_FLAMETHROWER_RIDE = 5232
+PLAN_SP_EFFECT_STRAGGLER_DEACT = 8970
+PLAN_SP_EFFECT_STRAGGLER_ACT = 8971
+PLAN_SP_EFFECT_STRAGGLER_ACT_HOSTILE = 8972
+PLAN_SP_EFFECT_BEAST_REPELLENT_UNDAMAGED = 5130
+PLAN_SP_EFFECT_SPIRIT_CANDLE = 4460
+
+#------------------------------------------------------------------
+# PLAN_ANIMEID
+# 
+#------------------------------------------------------------------
+PLAN_ANIMEID_RETURN_INITIAL_STANBY = 1750
+PLAN_ANIMEID_SLEEP_START = 12001
+PLAN_ANIMEID_SLEEP_END = 12002
+
+#------------------------------------------------------------------
+# PLAN_PLATOON_COMMAND
+# 
+#------------------------------------------------------------------
+PLAN_PLATOON_COMMAND__INIT = 0
+PLAN_PLATOON_COMMAND__MOVE = 5
+PLAN_PLATOON_COMMAND__SCOUT_MOVE = 6
+PLAN_PLATOON_COMMAND__ATK = 10
+PLAN_PLATOON_COMMAND__DEF = 11
+PLAN_PLATOON_COMMAND__STOP = 12
+PLAN_PLATOON_COMMAND__CONFLUENCE = 13
+PLAN_PLATOON_COMMAND__RUN = 14
+PLAN_PLATOON_COMMAND__WAIT = 15
+PLAN_PLATOON_COMMAND__PATROLEND = 16
+PLAN_PLATOON_COMMAND__PATROLEND_WITHWALKAROUND = 17
+PLAN_PLATOON_COMMAND__STOPEND = 18
+PLAN_PLATOON_COMMAND__STOPEND_WITHWALKAROUND = 19
+PLAN_PLATOON_COMMAND__PATROL_BEHAVIOR = 20
+PLAN_PLATOON_COMMAND__PATROL_BEHAVIOR_RESET = 21
+PLAN_PLATOON_COMMAND__BUDDY_RETURN = 100
+PLAN_PLATOON_COMMAND__BUDDY_BATTLE = 101
+
+#------------------------------------------------------------------
+# PLAN_SIDEWAYTYPE
+# 
+#------------------------------------------------------------------
+PLAN_SIDEWAYTYPE__NONE = -1
+PLAN_SIDEWAYTYPE__DEFAULT = 0
+PLAN_SIDEWAYTYPE__GUARD = 1
+PLAN_SIDEWAYTYPE__PARRY = 2
+
+#------------------------------------------------------------------
+# PLAN_BUDDYFOLLOWTYPE
+# 
+#------------------------------------------------------------------
+PLAN_BUDDYFOLLOWTYPE_FOLLOW = 0
+PLAN_BUDDYFOLLOWTYPE_NOFOLLOW_WALKAROUND = 1
+PLAN_BUDDYFOLLOWTYPE_NOFOLLOW_WAIT = 2
+
+#------------------------------------------------------------------
+# PLAN_WEAPON_CATEGORY
+# 
+#------------------------------------------------------------------
+PLAN_WEAPON_CATEGORY_SHORT_SWORD = 20
+PLAN_WEAPON_CATEGORY_TORCH = 21
+PLAN_WEAPON_CATEGORY_CLAW = 22
+PLAN_WEAPON_CATEGORY_STRAIGHT_SWORD = 23
+PLAN_WEAPON_CATEGORY_TWINBLADE = 24
+PLAN_WEAPON_CATEGORY_LARGE_SWORD = 25
+PLAN_WEAPON_CATEGORY_EXTRALARGE_SWORD = 26
+PLAN_WEAPON_CATEGORY_RAPIER = 27
+PLAN_WEAPON_CATEGORY_CURVEDSWORD = 28
+PLAN_WEAPON_CATEGORY_KATANA = 29
+PLAN_WEAPON_CATEGORY_AX = 30
+PLAN_WEAPON_CATEGORY_EXTRALARGE_AXHAMMER = 31
+PLAN_WEAPON_CATEGORY_LARGE_AX = 32
+PLAN_WEAPON_CATEGORY_HAMMER = 33
+PLAN_WEAPON_CATEGORY_FLAIL = 34
+PLAN_WEAPON_CATEGORY_LARGE_HAMMER = 35
+PLAN_WEAPON_CATEGORY_SPEAR = 36
+PLAN_WEAPON_CATEGORY_LARGE_SPEAR = 37
+PLAN_WEAPON_CATEGORY_HALBERD = 38
+PLAN_WEAPON_CATEGORY_LARGE_RAPIER = 39
+PLAN_WEAPON_CATEGORY_LARGE_CURVEDSWORD = 40
+PLAN_WEAPON_CATEGORY_STAFF = 41
+PLAN_WEAPON_CATEGORY_FIST = 42
+PLAN_WEAPON_CATEGORY_WHIP = 43
+PLAN_WEAPON_CATEGORY_ARROW = 44
+PLAN_WEAPON_CATEGORY_LARGE_ARROW = 45
+PLAN_WEAPON_CATEGORY_CROSSBOW = 46
+PLAN_WEAPON_CATEGORY_LARGE_SHIELD = 47
+PLAN_WEAPON_CATEGORY_SMALL_SHIELD = 48
+PLAN_WEAPON_CATEGORY_MIDDLE_SHIELD = 49
+PLAN_WEAPON_CATEGORY_LARGE_SCYTHE = 50
+PLAN_WEAPON_CATEGORY_SMALL_ARROW = 51
+PLAN_WEAPON_CATEGORY_BALLISTA = 52
+
+#------------------------------------------------------------------
+# PLAN_IDX_AINOTE
+# 
+#------------------------------------------------------------------
+PLAN_IDX_AINOTE_STYLE = 0
+PLAN_IDX_AINOTE_STATETYPE = 1
+
+#------------------------------------------------------------------
+# PLAN_STYLE
+# 
+#------------------------------------------------------------------
+PLAN_STYLE_DEFAULT = 0
+PLAN_STYLE_GUARD = 1
+PLAN_STYLE_PARRY = 2
+
+#------------------------------------------------------------------
+# PLAN_STATETYP
+# 
+#------------------------------------------------------------------
+PLAN_STATETYPE_CHARGEMAGIC = 1
+PLAN_STATETYPE_JUMP_NONATTACK = 2

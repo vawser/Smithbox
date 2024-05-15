@@ -1,0 +1,16 @@
+﻿#----------------------------------------
+# PseudoMultiplayer
+#----------------------------------------
+Used to setup pseudo multiplayer.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+HostEntityID:               ?
+EventFlagID:                ?
+ActivateGoodsID:            ?
+UnkT0C:                     ?
+UnkT10:                     ?
+UnkT14:                     ?
+UnkT18:                     ?
+UnkT1C:                     ?

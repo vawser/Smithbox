@@ -40,8 +40,8 @@
     <Field Def="s8 isShadowOnly"></Field>
     <Field Def="s8 drawByReflectCam"></Field>
     <Field Def="s8 drawOnlyReflectCam"></Field>
-    <Field Def="s8 IncludeLodMapLv"></Field>
-    <Field Def="u8 isNoFarClipDraw"></Field>
+    <Field Def="s8 0x6a"></Field>
+    <Field Def="u8 drawLodType"></Field>
     <Field Def="f32 DistantViewModel_BorderDist"></Field>
     <Field Def="f32 DistantViewModel_PlayDist"></Field>
     <Field Def="f32 LimtedActivate_BorderDist_forGrid"></Field>

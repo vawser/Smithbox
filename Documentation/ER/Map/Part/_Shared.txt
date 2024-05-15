@@ -1,0 +1,92 @@
+﻿#----------------------------------------
+# Shared
+#----------------------------------------
+These properties are shared by all Part type entities.
+
+#-------------------------
+# Shared Properties
+#-------------------------
+Name:                       Name of the entity
+ModelName:                  Name of the chr used
+Unk08:                      Should match the postfix ID
+SibPath:                    Path for the .sib file used
+Position:                   Position of the entity
+Rotation:                   Rotation of the entity
+Scale:                      Scale of the entity. 
+                            - Note collision does not scale to match.
+Unk44:                      ?
+MapStudioLayer:             Layer the entity is on
+EntityID:                   ID of the entity
+UnkE04:                     ?
+LodParamID:                 Lod Param ID to use for this entity
+UnkE09:                     ?
+IsPointLightShadowSrc:      Is point light shadow source
+UnkE0B:                     ?
+IsShadowSrc:                Is shadow source
+IsStaticShadowSrc:          Is static shadow source
+IsCascade3ShadowSrc:        Is cascade shadow source
+UnkE0F:                     ?
+UnkE10:                     ?
+IsShadowDest:               Is shadow destination
+IsShadowOnly:               Is only visible for shadow calculations
+DrawByReflectCam:           Is drawn during reflection camera calculations
+DrawOnlyReflectCam:         Is only drawn during reflection camera calculations
+EnableOnAboveShadow:        ?
+DisablePointLightEffect:    ?
+UnkE17:                     ?
+UnkE18:                     ?
+EntityGroupIDs[]:           Entity Group IDs used by this entity
+UnkE3C:                     ?
+UnkE3E:                     ?
+
+#-------------------------
+# Structs
+#-------------------------
+# UnkStruct1
+DisplayGroups[]:        Display groups this entity belongs to
+DrawGroups[]:           Draw groups this entity belongs to
+CollisionMask[]:        Collision mask groups this entity belongs to
+Condition1:             ?
+Condition2:             ?
+UnkC2:                  ?
+UnkC3:                  ?
+UnkC4:                  ?
+UnkC6:                  ?
+
+# UnkStruct2
+Condition:              ?
+DispGroups[]            The Display groups this entity belongs to
+Unk24:                  ?
+Unk26:                  ?
+
+# Gparam
+LightSetID:             ?
+FogParamID:             ?
+LightScatteringID:      ?
+EnvMapID:               ?
+
+# UnkStruct7
+Unk00:                  ?
+Unk04:                  ?
+Unk08:                  ?
+Unk0C:                  ?
+Unk10:                  ?
+Unk14:                  ?
+Unk18:                  ?
+
+# UnkStruct8
+Unk00:                  ?
+
+# UnkStruct9
+Unk00:                  ?
+
+# UnkStruct10
+MapID:                  ?
+Unk04:                  ?
+Unk0C:                  ?
+Unk10:                  ?
+Unk14:                  ?
+
+# UnkStruc11
+Unk00:                  ?
+Unk04:                  ?

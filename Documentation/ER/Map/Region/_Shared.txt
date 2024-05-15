@@ -1,0 +1,30 @@
+﻿#----------------------------------------
+# Shared
+#----------------------------------------
+These properties are shared by all Region type entities.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+Name:                   Name of the entity
+Shape:                  Type of capsule
+                            - Point
+                            - Sphere
+                            - Cylinder
+                            - Box
+                            - Composite
+-> Radius:              Radius of the capsule
+-> Depth:               Depth of the capsule
+-> Height:              Height of the capsule
+Position:               Position of the entity
+Rotation:               Rotation of the entity
+Unk2C:                  Slot ID
+                        - Should be different for each entity within its subgroup
+Unk40                   ?
+MapStudioLayer:         Layer the entity is on
+UnkE08:                 ?
+MapID:                  ?
+UnkS04:                 ?
+UnkS0C:                 ?
+ActivationPartName:     ?
+EntityID:               ID of the entity

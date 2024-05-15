@@ -1,0 +1,14 @@
+﻿#----------------------------------------
+# MufflingBox
+#----------------------------------------
+Used to setup a muffling box for sound.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+UnkT00:                     ?
+UnkT24:                     ?
+UnkT34:                     ?
+UnkT3C:                     ?
+UnkT40:                     ?
+UnkT44:                     ?

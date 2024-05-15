@@ -96,37 +96,19 @@ public class DebugWindow
     }
 
     private string msbPropertyToFind = "";
-    private string msbValueToFind = "";
+    private int msbValueToFind = 0;
 
     private void DisplayActions()
     {
-        if (ImGui.Button("Focus Gparam Editor"))
-        {
-            EditorCommandQueue.AddCommand($@"gparam/view/m00_00_0000/LightSet ParamEditor/Directional Light DiffColor0/100");
-        }
-
-        if (ImGui.Button("Focus Texture Viewer"))
-        {
-            EditorCommandQueue.AddCommand($@"texture/view/01_common/SB_GarageTop_04");
-        }
-
-        if (ImGui.Button("Load MSB Data"))
+        if (ImGui.Button("Load MSB Files"))
         {
             DebugActions.LoadMsbData();
         }
 
-        ImGui.InputText("##valueDistribution", ref msbPropertyToFind, 255);
-        ImGui.SameLine();
-        if (ImGui.Button("Log Value Distribution"))
+        ImGui.InputInt("##searchVale", ref msbValueToFind);
+        if (ImGui.Button("Search for Value"))
         {
-            DebugActions.LogValueDistribution(msbPropertyToFind);
-        }
-
-        ImGui.InputText("##valueSearch", ref msbValueToFind, 255);
-        ImGui.SameLine();
-        if (ImGui.Button("Find Value Instances"))
-        {
-            DebugActions.FindValueInstances(msbValueToFind);
+            DebugActions.SearchInMsbForValue(msbValueToFind);
         }
     }
 

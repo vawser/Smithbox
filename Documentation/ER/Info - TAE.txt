@@ -1,0 +1,18 @@
+﻿# Commands that allow conditional checks via State Info
+JumpTable
+ ArgE is StateInfo
+    
+InvokeAttackBehavior
+InvokeBulletBehavior
+
+AddSpEffect_Multiplayer
+AddSpEffect
+ Indirectly, via invocationConditionsStateChange1 (Trigger on State Info [1])
+ TAE sets the SpEffect, the SpEffect only triggers if the specified State Info is present.
+ 
+SpawnOneShotFFX_Ember
+SpawnOneShotFFX
+
+Wwise_PlaySound_ByStateInfo
+
+ActivateJumpTableEarly

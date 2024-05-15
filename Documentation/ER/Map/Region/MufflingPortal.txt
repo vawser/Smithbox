@@ -1,0 +1,11 @@
+﻿#----------------------------------------
+# MufflingPortal
+#----------------------------------------
+Used to setup a muffling portal for sound.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+UnkA[0]                     ?
+UnkB[]                      ?
+UnkT00:                     ?

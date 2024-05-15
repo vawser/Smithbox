@@ -1,0 +1,16 @@
+﻿#----------------------------------------
+# MapPoint
+#----------------------------------------
+Used to setup a map point for the player in-game map.
+
+Likely controls the trigger area to unlock the linked grace.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+UnkT00:             BonfireWarpParam ID
+UnkT04:             ?
+UnkT08:             ?
+UnkT0C:             ?
+UnkT14:             ?
+UnkT18:             ?

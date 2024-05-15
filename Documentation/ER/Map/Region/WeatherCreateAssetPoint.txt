@@ -1,0 +1,8 @@
+﻿#----------------------------------------
+# WeatherCreateAssetPoint
+#----------------------------------------
+Used to setup a weather create asset point.
+
+#-------------------------
+# Unique Properties
+#-------------------------

@@ -1,0 +1,35 @@
+﻿#----------------------------------------
+# Enemy
+#----------------------------------------
+Used to setup an enemy, character or interface for talk.
+
+DummyEnemy is the same as this.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+ThinkParamID:           The NpcThinkParam row id to use for this entity.
+NPCParamID:             The NPCParam row id to use for this entity.
+TalkID:                 The esd file to use for this entity.
+UnkT15:                 Bool
+PlatoonID:              The platoon ID to use for this entity.
+CharaInitID:            The CharaInitParam row id to use for this entity.
+CollisionPartName:      ?
+WalkRouteName:          The PatrolInfo to use for this entity.
+UnkT24:                 ?
+UnkT28:                 ?
+ChrActivateCondParamID: The ChrActivateCondParam row id to use for this entity.
+UnkT34:                 ?
+BackupEventAnimID:      ?
+UnkT3C:                 ?
+UnkT40:                 ?
+UnkT44:                 ?
+UnkT48:                 ?
+UnkT4C:                 ?
+UnkT84:                 ?
+
+#-------------------------
+# Structs
+#-------------------------
+Gparam
+UnkStruct8

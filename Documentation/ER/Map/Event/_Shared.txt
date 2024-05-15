@@ -1,0 +1,19 @@
+﻿#----------------------------------------
+# Shared
+#----------------------------------------
+These properties are shared by all Event type entities.
+
+#-------------------------
+# Shared Properties
+#-------------------------
+EventID:                Event ID to use for this entity.
+PartName:               Part type entity to associate with this entity.
+Region:                 Region type entity to associate with this entity.
+EntityID:               Entity ID used by this entity.
+Unk14:                  ?
+MapID:                  ?
+UnkE0C:                 ?
+UnkS04:                 ?
+UnkS08:                 ?
+UnkS0C:                 ?
+Name:                   Name used by this entity

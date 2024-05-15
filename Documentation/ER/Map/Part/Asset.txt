@@ -1,0 +1,81 @@
+﻿#----------------------------------------
+# Asset
+#----------------------------------------
+Objects used for various purposes. 
+
+DummyAsset is the same as this.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+UnkT02:                     ?
+UnkT10:                     ?
+UnkT11:                     Bool
+UnkT12:                     ?
+AssetSfxParamRelativeID:    Sets the VFX to spawn with the asset (i.e. Torch fire)
+UnkT1E:                     ?
+UnkT24:                     ?
+UnkT28:                     ?
+UnkT30:                     ?
+UnkT34:                     ?
+UnkPartNames[]:             The collision names the asset sits on
+UnkT50:                     Bool
+UnkT51:                     ?
+UnkT53:                     ?
+UnkT54:                     ?
+UnkT58:                     Idle Pose (e.g. animation)
+UnkT5C:                     ?
+UnkT60:                     ?
+UnkT64:                     ?
+
+#-------------------------
+# Structs
+#-------------------------
+UnkStruct2
+GparamUnkStruct7
+UnkStruct8
+UnkStruct9
+UnkStruc11
+
+# AssetUnkStruct1
+Unk00:                  ?
+Unk04:                  Affects behavior on touch: 
+                        0 is normal, 
+                        1 is used by the breakable barriers,
+                        256 causes dismount/horse prohibition
+Unk1C:                  ?
+Unk24:                  ?
+Unk26:                  ?
+Unk28:                  ?
+Unk2C:                  ?
+
+# AssetUnkStruct2
+Unk00:                  ?
+Unk04:                  ?
+Unk14:                  ?
+Unk1C:                  ?
+Unk1D:                  ?
+Unk1E:                  ?
+Unk1F:                  ?
+
+# AssetUnkStruct3
+Unk00:                  ?
+Unk04:                  ?
+Unk09:                  ?
+Unk0A:                  ?
+Unk0B:                  ?
+Unk0C:                  ?
+Unk0E:                  ?
+Unk10:                  ?
+Unk14:                  ?
+Unk18:                  ?
+Unk1C:                  ?
+Unk20:                  ?
+Unk24:                  ?
+Unk25:                  ?
+
+# AssetUnkStruct4
+Unk00:                  Bool
+Unk01:                  ?
+Unk02:                  ?
+Unk03:                  Bool

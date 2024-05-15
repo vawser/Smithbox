@@ -1,0 +1,11 @@
+﻿#----------------------------------------
+# WindSFX
+#----------------------------------------
+Used to setup a wind visual.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+EffectID:                   The FFX ID to play 
+WindAreaName:               The name of the area
+UnkT08:                     ?

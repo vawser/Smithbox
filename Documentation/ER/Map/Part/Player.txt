@@ -1,0 +1,20 @@
+﻿#----------------------------------------
+# Player
+#----------------------------------------
+Used to setup a player point. 
+
+EntityID = 0 tends to mean the player point is considered the 'base' player point for the map.
+EntityID = <flag> tends to mean the player point is linked to a grace.
+
+EntityID range used for grace player points: 10<YYZZ>900 -> 10<YYZZ>999
+
+#-------------------------
+# Unique Properties
+#-------------------------
+Unk00:                  ?
+
+#-------------------------
+# Structs
+#-------------------------
+UnkStruct9
+

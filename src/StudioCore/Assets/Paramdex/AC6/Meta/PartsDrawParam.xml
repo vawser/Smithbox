@@ -2,17 +2,17 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
     <Enum Name="PARTS_DRAW_LOD_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
-        <Option Value="3" Name="Type 3" />
-        <Option Value="4" Name="Type 4" />
-        <Option Value="5" Name="Type 5" />
-        <Option Value="6" Name="Type 6" />
-        <Option Value="7" Name="Type 7" />
-        <Option Value="8" Name="Type 8" />
-        <Option Value="9" Name="Type 9" />
-        <Option Value="10" Name="Type 10" />
+        <Option Value="0" Name="Small Map Object" />
+        <Option Value="1" Name="Medium Map Object" />
+        <Option Value="2" Name="Large Map Object" />
+        <Option Value="3" Name="Giant Map Object" />
+        <Option Value="4" Name="Small Character" />
+        <Option Value="5" Name="Medium Character" />
+        <Option Value="6" Name="Large Character" />
+        <Option Value="7" Name="Giant Character" />
+        <Option Value="8" Name="Local Player" />
+        <Option Value="9" Name="Remote Player" />
+        <Option Value="10" Name="Phantom" />
     </Enum>
     <Enum Name="PARTS_DRAW_FOWARD_DRAW_ENVMAP_BLEND_TYPE" type="u8">
         <Option Value="0" Name="Type 0" />
@@ -43,9 +43,9 @@
     <isShadowOnly AltName="Is Shadow Only" Wiki="Shadow drawing only" />
     <drawByReflectCam AltName="Drawn by Reflection Camera" Wiki="Reflected" />
     <drawOnlyReflectCam AltName="Drawn only by Reflection Camera" Wiki="Reflection drawing only" />
-    <IncludeLodMapLv AltName="Include LOD Map Level" Wiki="What level of LodMap to include" />
-    <isNoFarClipDraw AltName="Disable Far Clip Draw" Wiki="Disable fur clips and always draw at the innermost depth of the clip space. Mainly for celestial sphere" />
-    <lodType AltName="LOD Type" Wiki="Type and size of LOD target" Enum="PARTS_DRAW_LOD_TYPE" />
+    
+    <drawLodType AltName="Draw LOD Type" Enum="PARTS_DRAW_LOD_TYPE" />
+    
     <shadowDrawLodOffset AltName="Shadow Draw LOD Offset" Wiki="LOD level offset value when drawing shadows" />
     <isTraceCameraXZ AltName="Follow Camera on XZ Plane" Wiki="Follow the camera on the XZ plane (GR SEQ09242)" />
     <isSkydomeDrawPhase AltName="Is Celestial Sphere Draw Phase" Wiki="Set the drawing phase to the celestial sphere (GR SEQ09242)" />

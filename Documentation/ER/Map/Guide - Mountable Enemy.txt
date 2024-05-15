@@ -1,0 +1,16 @@
+﻿#----------------------------------------
+# Mountable Enemy
+#----------------------------------------
+# Mount
+EventID:                    <unique id>
+EntityID:                   0
+Unk14:                      0
+MapID:                      -1
+UnkE0C:                     255
+UnkS04:                     0
+UnkS08:                     0
+UnkS0C:                     -1
+RiderPartName:              <name>
+MountPartName:              <name>
+
+Used to allow enemies to use ballistas.

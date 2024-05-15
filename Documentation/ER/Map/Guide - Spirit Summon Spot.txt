@@ -1,0 +1,30 @@
+﻿#----------------------------------------
+# Overview
+#----------------------------------------
+XX means the first set of 2 digits of the map
+YY means the second set of 2 digits of the map
+ZZ means the third set of 2 digits of the map
+
+For m60_ maps, the XX is 10
+
+#----------------------------------------
+# Adding a Spirit Summon Spot
+#----------------------------------------
+Requirements:
+- Enemy
+- Param
+
+# Asset
+AEG099_053 
+EntityID:               <XXYYZZ>1100
+
+# Enemy properties
+ModelName:              c1000
+NPCParamID:             10001000
+TalkID:                 2000
+EntityID:               <XXYYZZ>0100
+
+# Param: BuddyStoneParam
+talkChrEntityId:                    <XXYYZZ>0100
+eliminateTargetEntityId:            <XXYYZZ>5100
+summonedEventFlagId:                <XXYYZZ>2100

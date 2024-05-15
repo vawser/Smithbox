@@ -1,0 +1,15 @@
+﻿#----------------------------------------
+# PlayArea
+#----------------------------------------
+Used to setup a play area.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+Shape:
+Children[]:                 The sub-regions
+    RegionName:             The name of the sub-region
+    Unk04:                  ?
+    
+UnkT00:                     PlayRegionParam row id to use.
+UnkT04:                     ?

@@ -1,0 +1,216 @@
+c1000 - Forest Grotesque
+c1010 - Kobold
+c1020 - Hollow Soldier
+c1021 - Royal Soldier
+c1030 - Hollow Infantry
+c1031 - Drangleic Infantry
+c1050 - Amana Shrine Maiden
+c1060 - Hollow Priest
+c1062 - Hollow Priestess
+c1070 - Parasitized Undead
+c1080 - Hollow Rogue
+c1130 - Varangian Sailor
+c1150 - Undead Traveler
+c1170 - Stone Soldier
+c1180 - Black Hollow Mage
+c1182 - White Hollow Mage
+c1190 - Lion Clan Mage
+c1210 - Giant
+c1230 - Suspicious Shadow
+c1240 - Manikin
+c1250 - Rupturing Hollow
+c1270 - Captive Undead
+c1271 - Captive Undead
+c1290 - Forest Spirit
+c1292 - Forest Spirit
+c1310 - Lindelt Cleric
+c1320 - Skeleton
+c1340 - Gyrm
+c1350 - Gyrm Warrior
+c1370 - Prowling Magus
+c1380 - Torturer
+c1390 - Artificial Undead
+c1410 - Undead Aberration
+c1460 - Lord Tseldora
+c1470 - Undead Supplicant
+c1480 - Undead Peasant
+c1490 - Undead Steelworker
+c1500 - Stone Knight
+c1510 - Ironclad Soldier
+c1512 - Ironclad Soldier
+c1520 - Royal Soldier
+c1530 - Syan Knight
+c1540 - Skeleton Lord
+c1550 - Amana Aberration
+c1560 - UNKNOWN
+c1570 - Dual-wielding Skeleton
+c2011 - Small Boar
+c2021 - Undead Boar
+c2030 - Parasite Spider
+c2040 - Poison Moth
+c2050 - Poison Horn Beetle
+c2051 - Acid Horn Beetle
+c2060 - Razorback Nightcrawler
+c2090 - Hunting Dog
+c2100 - Basilisk
+c2120 - Guardian Dragon
+c2130 - Crystal Lizard
+c2131 - Red Crystal Lizard
+c2140 - Giant Undead Boar
+c2160 - Wall Ghost
+c2170 - Dark Stalker
+c2200 - Giant Acid Horn Beetle
+c2220 - Giant Basilisk
+c2230 - Mongrel Rat
+c2240 - Darksucker
+c2260 - Corpse Rat
+c2261 - Corpse Rat
+c2262 - Corpse Rat
+c2270 - Stray Dog
+c2271 - Stray Dog
+c3000 - Ogre
+c3010 - Heide Knight
+c3020 - Undead Jailer
+c3033 - Flexile Sentry
+c3040 - Milfanito
+c3050 - Smelter Demon
+c3052 - Blue Smelter Demon
+c3060 - Alonne Captain
+c3070 - Headless Vengarl
+c3071 - Vengarl
+c3080 - Lion Clan Warrior
+c3090 - Forgotten Giant
+c3096 - Last Giant
+c3097 - Giant Lord
+c3110 - Mounted Overseer
+c3120 - Grave Warden
+c3130 - Hollow Falconer
+c3140 - Hollow Primal Knight
+c3150 - Primal Knight
+c3160 - Desert Sorceress
+c3170 - Dragon Acolyte
+c3180 - The Pursuer
+c3190 - Alonne Knight
+c3210 - Mimic
+c3240 - Belfry Gargoyle
+c3250 - Ruin Sentinel
+c3260 - The Rotten
+c3270 - Dragon Skeleton
+c3300 - Old Knight
+c3310 - Drakekeeper
+c3320 - Throne Defender
+c3330 - Velstadt
+c3340 - Throne Watcher
+c3370 - Captive Undead
+c5000 - Covetous Demon
+c5010 - Mytha
+c5020 - Manscorpion Tark
+c5030 - Scorpioness Najka
+c5040 - Looking Glass Knight
+c5061 - Darklurker
+c5062 - UNKNOWN
+c5065 - Grave Warden Agdayne
+c5090 - Leydia Witch
+c5110 - Imperious Knight
+c5120 - Leydia Pyromancer
+c5146 - Vendrick (hollow)
+c6000 - Ancient Dragon
+c6010 - Flame Lizard
+c6020 - Demon of Song
+c6030 - The Duke's Dear Freja
+c6031 - The Duke's Dear Freja - Encounter
+c6070 - Old Iron King
+c6080 - Corrosive Ant Queen
+c6110 - Dragonrider (Heide)
+c6115 - Dragonrider (Drangleic)
+c6191 - Executioner's Chariot
+c6250 - Old Dragonslayer
+c6260 - The Lost Sinner
+c6270 - Nashandra
+c6280 - Royal Rat Authority
+c6500 - Iron Warrior
+c6510 - Fume Sorcerer
+c6530 - Ashen Warrior
+c6540 - Ashen Crawler
+c6560 - Possessed Armor
+c6570 - Barrel Carrier
+c6580 - Retainer
+c6590 - Rampart Golem
+c6600 - Crystal Golem
+c6610 - Frozen Reindeer
+c6620 - Rampart Hedgehog
+c6630 - Rampart Spearman
+c6650 - Sanctum Knight
+c6660 - Sanctum Soldier
+c6700 - Sanctum Priestess
+c6710 - Poison Statue Cluster
+c6711 - Poison Statue Cluster (petrify)
+c6720 - Corrosive Ant
+c6740 - Pagan Tree
+c6750 - Fume Knight
+c6770 - Retainer Sorcerer
+c6780 - Ice Golem
+c6790 - Aava
+c6791 - Lud - Zallen
+c6800 - Sir Alonne
+c6810 - Sinh
+c6820 - Elana
+c6830 - Imperfect
+c6840 - Vendrick
+c6850 - Skeleton (Elana)
+c6860 - Small Undead Boar (Elana)
+c6870 - Velstadt (Elana)
+c6880 - Loyce Knight
+c6890 - Charred Loyce Knight
+c6900 - Burnt Ivory King
+c6920 - Aldia
+c6940 - Forlorn (Greatsword)
+c6950 - Forlorn (Scythe)
+c6960 - Invisible Hollow
+c7005 - Emerald Herald
+c7015 - Emerald Herald
+c7036 - Nashandra (human)
+c7045 - Laddersmith Gilligan
+c7050 - Strowen
+c7051 - Morrel
+c7053 - Griant
+c7055 - Strowen
+c7056 - Morrel
+c7058 - Griant
+c7211 - Chancellor Wellager
+c7230 - Milibeth
+c7240 - Captain Drummond
+c7250 - Darkdiver Grandahl
+c7260 - Lonesome Gavlan
+c7300 - Looking Glass Phantom (Faraam)
+c7310 - Looking Glass Phantom (Knight)
+c7320 - Lost Sinner Pyromancer
+c7330 - Lost Sinner Pyromancer
+c7410 - Crestfallen Saulden
+c7420 - Creighton the Wanderer
+c7430 - Benhart of Jugo
+c7440 - Mild Mannered Pate
+c7510 - Cartographer Cale
+c7520 - Lucatiel of Mirrah
+c7530 - Bell Keeper
+c7540 - Merchant Hag Melentia
+c7600 - Milfanito 1
+c7601 - Milfanito 2
+c7602 - Imprisoned Milfanito
+c7610 - Maughlin the Armourer
+c7620 - Stone Trader Chloanne
+c7630 - Rosabeth of Melfia
+c7640 - Blacksmith Lenigrast
+c7643 - Steady Hand McDuff
+c7660 - Carhillion of the Fold
+c7680 - Straid of Olaphis
+c7690 - Licia of Lindeldt
+c7700 - Felkin the Outcast
+c7710 - Royal Sorcerer Navlaan
+c7720 - Magerold of Lanafir
+c7760 - Weaponsmith Ornifex
+c7770 - Sweet Shalquoir
+c7830 - Titchy Gren
+c7840 - Cromwell the Pardoner
+c7850 - Blue Sentinel Targray
+c7860 - Dyna & Tillo

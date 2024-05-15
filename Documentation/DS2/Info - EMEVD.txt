@@ -1,0 +1,1251 @@
+#----------------------------------
+# Command Reference
+#----------------------------------
+# Character
+Modify Stat Additively
+Modify Stat Multiplicatively
+Apply Chameleon Disguise
+Set State Info
+Modify Jump
+Replace Fists With Alternate Weapon
+Modify Bow Properties
+Play SE When Enemies Nearby Player
+Modify Property
+Randomly Spawn Bullet After Taking Damage - Durability-Based Randomness
+Spawn Unveil Orb
+Apply Random SpEffect
+Randomly Spawn Bullet After Taking Damage - Flat Randomnes
+Apply Soul Scaling To Weapon
+Apply Special Scaling To Weapon
+Unknown Command 1000[16]
+Apply NG Scaling To Weapon
+Apply Equip Load-Based Flat Damage To Weapon
+Modify Attribute Based On Current Value
+Unknown Command 1000[20]
+Unknown Command 1000[21]
+
+# Estus
+Modify Estus Usage
+
+# Spells and SpEffects
+Scale SpEffect By Attribute
+Spawn SFX
+ <sfxID>
+ <unknown1> # DmyPoly ID
+    1 -  
+    3 - 
+    5 - 
+    6 - 
+    7 - 
+    8 - 
+    9 - 
+    20 - 
+    21 - 
+    30 - 
+    100 - 
+    150 - 
+    151 - 
+    152 - 
+    153 - 
+    200 - 
+    201 - 
+    202 - 
+    203 - 
+    204 - 
+    205 - 
+    206 - 
+    207 - 
+    220 - Centre of Body
+    249 - 
+    
+ <unknown2> # Spawn Once
+    0 - Loop
+    1 - Spawn Once
+  
+ <unknown3>
+    0 -
+    4 -
+    5 -
+    6 -
+    7 -
+    9 -
+    10 -
+    20 -
+    23 -
+    25 -
+    30 -
+    40 -
+    45 -
+    50 -
+    60 -
+ <unknown4>
+    0 -
+    1 -
+    2 - 
+ <unknown5>
+    0 -
+    2 -
+    30 -
+ 
+Unknown Command 100040[02]
+Unknown Command 100040[04]
+Unknown Command 100040[05]
+Unknown Command 100040[06]
+Modify Spell Effect Length
+Apply ChrFullBodySFX
+
+# Healing
+Call Must Sub Event 85x
+Call Must Sub Event 85X + Unknown 100050[01]
+Restore Humanity
+Apply SpEffect To Friendly Host
+Spell Usage
+Status Effect Controller
+
+# Character Combat Properties I
+Unknown Command 100080[00]
+Increase Damage Multiplicatively
+
+# Character Combat Properties II
+Modify Stamina Recovery
+Modify Damage (Flat To Base AR)
+Buff Defense
+Nerf Defense
+Unknown Command 100090[06]
+Unknown Command 100090[07]
+Unknown Command 100090[08]
+Buff Damage (Unknown)
+
+# Character Items
+Force Armor
+Force Unequip Armor
+Unknown Command 100110[02]
+Unknown Command 100110[03]
+Force Weapon
+
+# Bullets
+Create Bullet
+Unknown Command 100120[01]
+Throw Prism Stone
+Apply SpEffect Based On Intelligence
+Batch Create Bullets
+Create Bullet Based On Attribute
+
+# Events
+Warp Player
+Call Must Sub Event 93X
+Unknown Command 100130[02]
+Unknown Command 100130[03]
+Unknown Command 100130[04]
+Unknown Command 100130[05]
+Add Spell Deflect Chance
+Apply SpEffect And End Event If Event Flag
+Apply SpEffect On Enemy Kill Based On Enemy Gender
+
+# Death
+Set Character Immortality
+Apply SpEffect When Character Dies
+
+# Character Self-Attack
+Self-Damage Character And Nearby Enemies (Periodic)
+Self-Damage Character (One-off)
+
+# Multiplayer
+Initiate Client-Mediated Multiplayer Item
+Initiate Server-Mediated Multiplayer Item
+Initiate Passive Server-Mediated Multiplayer Item
+Request Multiplayer Separation
+Reset Invasion Cooldown Timer
+Display Champion Rankings
+Request Multiplayer Penalty Erasure
+
+# SpEffect Meta
+Unknown Command 100700[02]
+Unknown Command 100700[03]
+Set SpEffect Length
+
+# Heal Over Time
+Heal Flat Amount Over Time
+Heal Percentage Amount Over Time
+Unknown Command 101050[02]
+
+# Status Effect
+Prevent Status Effect
+Clear Status Effect
+Apply Status Effect
+
+# Souls
+Modify Player Souls Additively
+Modify Player Souls Multiplicatively
+
+#----------------------------------
+# SpEffect -> Item
+#----------------------------------
+1140000;Blue Dagger
+1830000;Majestic Greatsword
+1900000;Ruler's Sword
+1997000;Greatsword of the Forlorn
+2500000;Handmaid's Ladle
+2680000;Dragon Tooth
+2855000;Yorgh's Spear
+3080000;Scythe of the Forlorn
+3440000;Work Hook
+3810000;Staff of Amana
+3930000;Azal's Staff
+4110000;Disc Chime
+4120000;Chime of Screams
+4200000;Short Bow
+4210000;Long Bow
+4220000;Composite Bow
+4230000;Sea Bow
+4240000;Dragonrider Bow
+4270000;Bell Keeper Bow
+4280000;Bow of Want
+4290000;Hunter's Blackbow
+4400000;Alonne Greatbow
+4420000;Dragonslayer Greatbow
+4600000;Light Crossbow
+4610000;Heavy Crossbow
+4630000;Shield Crossbow
+4660000;Avelyn
+5050000;Curved Nil Greatsword
+5295000;Lost Sinner's Sword
+5400000;Pyromancy Flame
+5410000;Dark Pyromancy Flame
+5600000;Longsword
+5610000;Murakumo
+5620000;Blacksteel Katana
+5630000;Rapier
+5640000;Greataxe
+5650000;Great Club
+5660000;Caestus
+11290000;Loyce Shield
+11295000;Charred Loyce Shield
+11320000;Vessel Shield
+11330000;Shield of the Insolent
+11390000;Slumbering Dragon Shield
+11640000;Drakekeeper's Greatshield
+11720000;Watchdragon Parma
+11730000;Blossom Kite Shield
+11750000;Wicked Eye Greatshield
+21140100;Traveling Merchant Hat
+21210100;Jester's Cap
+21210101;Jester's Robes
+21210102;Jester's Gloves
+21210103;Jester's Tights
+21230100;Moon Hat
+21360100;Helm of Aurous
+21360101;Armor of Aurous
+21360102;Gauntlets of Aurous
+21360103;Leggings of Aurous
+21430100;Durgo's Hat
+21440102;Engraved Gauntlets
+21460103;Flying Feline Boots
+21470100;Moon Butterfly Hat
+21470101;Moon Butterfly Wings
+21470102;Moon Butterfly Cuffs
+21470103;Moon Butterfly Skirt
+21501100;Black Witch Hat
+21502100;Black Witch Domino Mask
+21610100;Northwarder Hood
+21610101;Northwarder Robe
+21610102;Northwarder Manchettes
+21610103;Northwarder Trousers
+21630100;Crown of the Old Iron King
+21640100;Crown of the Ivory King
+21650100;Crown of the Sunken King
+21660100;Old Bell Helm
+21670100;Hollow Skin
+21680100;Pharros Mask
+21690103;Flower Skirt
+21710100;Symbol of Avarice
+22060100;White Priest Headpiece
+22062100;Priestess Headpiece
+22180100;Black Hollow Mage Hood
+22182100;White Hollow Mage Hood
+22190101;Lion Mage Robe
+22190102;Lion Mage Cuffs
+22190103;Lion Mage Skirt
+22230102;Shadow Gauntlets
+22270100;Prisoner's Hood
+22270101;Prisoner's Tatters
+22271100;Prisoner's Hood
+22271101;Prisoner's Tatters
+22310100;Archdrake Helm
+22360100;Dark Mask
+22370100;Warlock Mask
+22460100;Tseldora Cap
+22460101;Tseldora Robe
+22460102;Tseldora Manchettes
+22460103;Tseldora Trousers
+22480100;Peasant Hat
+22480101;Peasant Attire
+22480102;Peasant Long Gloves
+22480103;Peasant Trousers
+22510100;Ironclad Helm
+22510101;Ironclad Armor
+22512100;Old Ironclad Helm
+22512101;Old Ironclad Armor
+23070100;Vengarl's Helm
+23080101;Lion Warrior Cape
+23080102;Lion Warrior Cuffs
+23080103;Lion Warrior Skirt
+23081100;Lion Warrior Helm
+23081101;Red Lion Warrior Cape
+23160100;Desert Sorceress Hood
+23171100;Dragon Sage Hood
+23330100;Velstadt's Helm
+25040100;Looking Glass Mask
+25060102;Agdayne's Cuffs
+25090100;Leydia Black Hood
+25100100;Insolent Helm
+25130100;King's Crown
+26260100;Penal Mask
+26260102;Penal Handcuffs
+26650103;Sanctum Knight Leggings
+26660102;Sanctum Soldier Gauntlet
+26700100;Sanctum Priestess Tiara
+26880100;Loyce Helm
+26880101;Loyce Armor
+26880102;Loyce Gauntlets
+26880103;Loyce Leggings
+26890100;Charred Loyce Helm
+26890101;Charred Loyce Armor
+26890102;Charred Loyce Gauntlets
+26890103;Charred Loyce Leggings
+26900100;Ivory King Helm
+26900101;Ivory King Armor
+26900102;Ivory King Gauntlets
+26900103;Ivory King Leggings
+27510100;Cale's Helm
+27550100;Mad Warrior Mask
+27680100;Black Hood
+27690100;Saint's Hood
+27700100;Hexer's Hood
+27710100;Chaos Hood
+27830100;Nahr Alma Hood
+27830101;Nahr Alma Robes
+40010000;Life Ring
+40010001;Life Ring+1
+40010002;Life Ring+2
+40010003;Life Ring+3
+40020000;Chloranthy Ring
+40020001;Chloranthy Ring+1
+40020002;Chloranthy Ring+2
+40030000;Royal Soldier's Ring
+40030001;Royal Soldier's Ring+1
+40030002;Royal Soldier's Ring+2
+40040000;First Dragon Ring
+40040001;Second Dragon Ring
+40040002;Third Dragon Ring
+40050000;Ring of Steel Protection
+40050001;Ring of Steel Protection+1
+40050002;Ring of Steel Protection+2
+40060000;Spell Quartz Ring
+40060001;Spell Quartz Ring+1
+40060002;Spell Quartz Ring+2
+40060003;Spell Quartz Ring+3
+40070000;Flame Quartz Ring
+40070001;Flame Quartz Ring+1
+40070002;Flame Quartz Ring+2
+40070003;Flame Quartz Ring+3
+40080000;Thunder Quartz Ring
+40080001;Thunder Quartz Ring+1
+40080002;Thunder Quartz Ring+2
+40080003;Thunder Quartz Ring+3
+40090000;Dark Quartz Ring
+40090001;Dark Quartz Ring+1
+40090002;Dark Quartz Ring+2
+40090003;Dark Quartz Ring+3
+40100000;Poisonbite Ring
+40100001;Poisonbite Ring+1
+40110000;Bloodbite Ring
+40110001;Bloodbite Ring+1
+40120000;Bracing Knuckle Ring
+40120001;Bracing Knuckle Ring+1
+40120002;Bracing Knuckle Ring+2
+40130000;Cursebite Ring
+40135000;Ash Knuckle Ring
+40140000;Dispelling Ring
+40140001;Dispelling Ring+1
+40150000;Ring of Resistance
+40150001;Ring of Resistance+1
+40160000;Ring of Blades
+40160001;Ring of Blades+1
+40160002;Ring of Blades+2
+40210000;Ring of Knowledge
+40220000;Ring of Prayer
+40230000;Stone Ring
+40260000;Red Tearstone Ring
+40280000;Blue Tearstone Ring
+40290000;Ring of Giants
+40290001;Ring of Giants+1
+40290002;Ring of Giants+2
+40295000;Old Leo Ring
+40300000;Ring of Soul Protection
+40310000;Ring of Life Protection
+40320000;Lingering Dragoncrest Ring
+40320001;Lingering Dragoncrest Ring+1
+40320002;Lingering Dragoncrest Ring+2
+40330000;Clear Bluestone Ring
+40330001;Clear Bluestone Ring+1
+40330002;Clear Bluestone Ring+2
+40340000;Northern Ritual Band
+40340001;Northern Ritual Band+1
+40340002;Northern Ritual Band+2
+40350000;Southern Ritual Band
+40350001;Southern Ritual Band+1
+40350002;Southern Ritual Band+2
+40360000;Covetous Gold Serpent Ring
+40360001;Covetous Gold Serpent Ring+1
+40360002;Covetous Gold Serpent Ring+2
+40370000;Covetous Silver Serpent Ring
+40370001;Covetous Silver Serpent Ring+1
+40370002;Covetous Silver Serpent Ring+2
+40390000;Ring of the Evil Eye
+40390001;Ring of the Evil Eye+1
+40390002;Ring of the Evil Eye+2
+40400000;Ring of Restoration
+40410000;Ring of Binding
+40420000;Silvercat Ring
+40430000;Redeye Ring
+40440000;Gower's Ring of Protection
+40450000;Name-engraved Ring
+40460000;Slumbering Dragoncrest Ring
+40470000;Hawk Ring
+40480000;Old Sun Ring
+40500000;Illusory Ring of a Conqueror
+40510000;King's Ring
+40520000;Ring of the Dead
+40530000;Ring of Thorns
+40530001;Ring of Thorns+1
+40530002;Ring of Thorns+2
+40540000;Delicate String
+40550000;White Ring
+40610000;Ring of Whispers
+40620000;Illusory Ring of the Exalted
+40700000;Crest of the Rat
+40710000;Bell Keeper's Seal
+40720000;Guardian's Seal
+40730000;Crest of Blood
+40740000;Blue Seal
+40750000;Abyss Seal
+40760000;Vanquisher's Seal
+40770000;Sun Seal
+40780000;Ancient Dragon Seal
+41000000;Simpleton's Ring
+41010000;Strength Ring
+41020000;Dexterity Ring
+41030000;Ivory Warrior Ring
+41040000;Sorcery Clutch Ring
+41050000;Lightning Clutch Ring
+41060000;Fire Clutch Ring
+41070000;Dark Clutch Ring
+41090000;Baneful Bird Ring
+41100000;Flynn's Ring
+41110000;Ring of the Embedded
+41120000;Ring of the Living
+41130000;Yorgh's Ring
+42000000;Agape Ring
+50600000;Soldier Key
+50610000;Key to King's Passage
+50800000;Bastille Key
+50810000;Iron Key
+50820000;Forgotten Key
+50830000;Brightstone Key
+50840000;Antiquated Key
+50850000;Fang Key
+50860000;House Key
+50870000;Lenigrast's Key
+50880000;Smooth & Silky Stone
+50885000;Small Smooth & Silky Stone
+50890000;Rotunda Lockstone
+50900000;Giant's Kinship
+50910000;Ashen Mist Heart
+50920000;Soul of a Giant
+50930000;Tseldora Den Key
+50940000;Champion's Tablet
+50950000;Ladder Miniature
+50960000;Soul Vessel
+50970000;Undead Lockaway Key
+50990000;Dull Ember
+51000000;Crushed Eye Orb
+51010000;Simpleton's Spice
+51020000;Skeptic's Spice
+51030000;Aldia Key
+52000000;Dragon Talon
+52100000;Heavy Iron Key
+52200000;Frozen Flower
+52300000;Eternal Sanctum Key
+52400000;Tower Key
+52500000;Garrison Ward Key
+52650000;Dragon Stone
+53100000;Scorching Iron Scepter
+53200000;Smelter Wedge
+53300000;Soul of Nadalia- Bride of Ash
+53600000;Eye of the Priestess
+60010000;Lifegem
+60020000;Radiant Lifegem
+60030000;Old Radiant Lifegem
+60035000;Elizabeth Mushroom
+60036000;Dried Root
+60040000;Amber Herb
+60050000;Twilight Herb
+60060000;Wilted Dusk Herb
+60070000;Poison Moss
+60090000;Monastery Charm
+60100000;Dragon Charm
+60105000;Divine Blessing
+60110000;Rouge Water
+60120000;Crimson Water
+60151000;Human Effigy
+60155010;Estus Flask
+60155020;Estus Flask
+60155030;Estus Flask
+60160000;Small Blue Burr
+60170000;Small Yellow Burr
+60180000;Small Orange Burr
+60190000;Dark Troches
+60200000;Common Fruit
+60210000;Red Leech Troches
+60230000;Triclops Snake Troches
+60235000;Old Growth Balm
+60236000;Vine Balm
+60237000;Blackweed Balm
+60238000;Goldenfruit Balm
+60239000;Brightbug
+60240000;Aromatic Ooze
+60250000;Gold Pine Resin
+60260000;Charcoal Pine Resin
+60270000;Dark Pine Resin
+60280000;Rotten Pine Resin
+60290000;Bleeding Serum
+60310000;Green Blossom
+60320000;Rusted Coin
+60350000;Homeward Bone
+60355000;Aged Feather
+60360000;Darksign
+60370000;Silver Talisman
+60375000;UNKNOWN
+60405000;Dragon Head Stone
+60405010;Dragon Head Stone
+60406000;Dragon Torso Stone
+60406010;Dragon Torso Stone
+60410000;Repair Powder
+60420000;Torch
+60430000;Flame Butterfly
+60450000;Prism Stone
+60470000;Hello Carving
+60480000;Thank You Carving
+60490000;I'm Sorry Carving
+60500000;Very Good! Carving
+60510000;Rubbish
+60511000;Petrified Something
+60525000;Estus Flask Shard
+60526000;Sublime Bone Dust
+60527000;Bonfire Ascetic
+60530000;Alluring Skull
+60531000;Lloyd's Talisman
+60536000;Pharros' Lockstone
+60537000;Fragrant Branch of Yore
+60538000;Fire Seed
+60540000;Throwing Knife
+60550000;Witching Urn
+60560000;Lightning Urn
+60570000;Firebomb
+60575000;Black Firebomb
+60580000;Hexing Urn
+60590000;Poison Throwing Knife
+60595000;Dung Pie
+60600000;Lacerating Knife
+60610000;Corrosive Urn
+60620000;Holy Water Urn
+60625000;Fading Soul
+60630000;Soul of a Lost Undead
+60640000;Large Soul of a Lost Undead
+60650000;Soul of a Nameless Soldier
+60660000;Large Soul of a Nameless Soldier
+60670000;Soul of a Proud Knight
+60680000;Large Soul of a Proud Knight
+60690000;Soul of a Brave Warrior
+60700000;Large Soul of a Brave Warrior
+60710000;Soul of a Hero
+60720000;Soul of a Great Hero
+60760000;Wood Arrow
+60770000;Iron Arrow
+60780000;Magic Arrow
+60790000;Lightning Arrow
+60800000;Fire Arrow
+60810000;Dark Arrow
+60820000;Poison Arrow
+60830000;Lacerating Arrow
+60850000;Iron Greatarrow
+60870000;Lightning Greatarrow
+60880000;Fire Greatarrow
+60900000;Destructive Greatarrow
+60910000;Wood Bolt
+60920000;Heavy Bolt
+60930000;Magic Bolt
+60940000;Lightning Bolt
+60950000;Fire Bolt
+60960000;Dark Bolt
+60970000;Titanite Shard
+60975000;Large Titanite Shard
+60980000;Titanite Chunk
+60990000;Titanite Slab
+61000000;Twinkling Titanite
+61030000;Petrified Dragon Bone
+61060000;Faintstone
+61070000;Boltstone
+61080000;Firedrake Stone
+61090000;Darknight Stone
+61100000;Poison Stone
+61110000;Bleed Stone
+61130000;Raw Stone
+61140000;Magic Stone
+61150000;Old Mundane Stone
+61160000;Palestone
+62000000;Dried Fingers
+62020000;Bone of Order
+62030000;White Sign Soapstone
+62040000;Small White Sign Soapstone
+62045000;Red Sign Soapstone
+62050000;Cracked Blue Eye Orb
+62060000;Cracked Red Eye Orb
+62070000;Dragon Eye
+62100000;Token of Fidelity
+62110000;Token of Spite
+62120000;Sunlight Medal
+62130000;Dragon Scale
+62140000;Rat Tail
+62150000;Awestone
+62160000;Black Separation Crystal
+62170000;Seed of a Tree of Giants
+62190000;Petrified Egg
+63000000;"Point" Gesture
+63001000;"I won't bite" Gesture
+63003000;"Bow" Gesture
+63004000;"Welcome" Gesture
+63005000;"Duel bow" Gesture
+63006000;"Wave" Gesture
+63007000;"Pumped up" Gesture
+63008000;"Joy" Gesture
+63009000;"Warcry" Gesture
+63010000;"Warmup" Gesture
+63011000;"Hurrah!" Gesture
+63012000;"Righty-ho!" Gesture
+63013000;"No way" Gesture
+63014000;"This one's me" Gesture
+63015000;"Have mercy!" Gesture
+63016000;"Prostration" Gesture
+63017000;"Decapitate" Gesture
+63018000;"Fist pump" Gesture
+63019000;"Mock" Gesture
+63021000;"Praise the Sun" Gesture
+64000000;Soul of the Pursuer
+64010000;Soul of the Last Giant
+64020000;Dragonrider Soul
+64030000;Old Dragonslayer Soul
+64040000;Flexile Sentry Soul
+64050000;Ruin Sentinel Soul
+64060000;Soul of the Lost Sinner
+64070000;Executioner's Chariot Soul
+64080000;Skeleton Lord's Soul
+64090000;Covetous Demon Soul
+64100000;Mytha- the Baneful Queen Soul
+64110000;Smelter Demon Soul
+64120000;Old Iron King Soul
+64130000;Royal Rat Vanguard Soul
+64140000;Soul of the Rotten
+64150000;Scorpioness Najka Soul
+64160000;Royal Rat Authority Soul
+64170000;Soul of the Duke's Dear Freja
+64180000;Looking Glass Knight Soul
+64190000;Demon of Song Soul
+64200000;Soul of Velstadt
+64210000;Soul of the King
+64220000;Guardian Dragon Soul
+64230000;Ancient Dragon Soul
+64240000;Giant Lord Soul
+64250000;Soul of Nashandra
+64260000;Throne Defender Soul
+64270000;Throne Watcher Soul
+64280000;Darklurker Soul
+64290000;Belfry Gargoyle Soul
+64300000;Old Witch Soul
+64310000;Old King Soul
+64320000;Old Dead One Soul
+64330000;Old Paledrake Soul
+64500000;Soul of Sinh- the Slumbering Dragon
+64510000;Soul of the Fume Knight
+64520000;Soul of Aava- the King's Pet
+64530000;Soul of Elana- Squalid Queen
+64540000;Soul of Nadalia- Bride of Ash
+64550000;Soul of Alsanna- Silent Oracle
+64560000;Soul of Sir Alonne
+64580000;Soul of the Ivory King
+64590000;Soul of Zallen- the King's Pet
+64600000;Loyce Soul
+64610000;Soul of Lud- the King's Pet
+65240000;UNKNOWN
+65250000;UNKNOWN
+65260000;UNKNOWN
+65270000;UNKNOWN
+65280000;UNKNOWN
+65290000;UNKNOWN
+
+#----------------------------------
+# SpEffect -> Bullet
+#----------------------------------
+20;
+20039900;
+20083300;
+20083400;
+20083500;
+20083600;
+20083700;
+20083800;
+20083900;
+20084100;
+20084200;
+20084400;
+20084500;
+20084600;
+20084700;
+20084800;
+20084900;
+20085200;
+20085300;
+20085400;
+20085700;
+20085800;
+20085900;
+20086000;
+20090000;
+20090100;
+20232210;
+20232310;
+20232410;
+20232510;
+20232610;
+20232710;
+21013011;
+22013011;
+23013011;
+31010000;Soul Arrow
+31020000;Great Soul Arrow
+31030000;Heavy Soul Arrow
+31040000;Great Heavy Soul Arrow
+31050010;Homing Soul Arrow [Child]
+31060010;Heavy Homing Soul Arrow [Child]
+31070000;Homing Soulmass
+31070060;Homing Soulmass
+31080000;Homing Crystal Soulmass
+31080060;Homing Crystal Soulmass
+31090000;Soul Spear
+31100000;Crystal Soul Spear
+31110000;Shockwave
+31120000;Soul Spear Barrage
+31130000;Soul Shower
+31140000;Soul Greatsword
+31150000;Soul Vortex
+31151000;Soul Vortex
+31160000;Soul Bolt
+31170000;Soul Geyser
+31220000;Yearn
+31230000;Hush
+31240000;Fall Control
+31250000;Hidden Weapon
+31251000;Hidden Weapon
+31260000;Repair
+31270000;Cast Light
+31280000;Chameleon
+31290000;Unleash Magic
+31300000;Soul Flash
+31310000;Focus Souls
+32010000;Heal
+32020000;Med Heal
+32030000;Great Heal Excerpt
+32040000;Great Heal
+32050000;Soothing Sunlight
+32060000;Replenishment
+32070000;Resplendent Life
+32080000;Bountiful Sunlight
+32090000;Caressing Prayer
+32100000;Force
+32110000;Wrath of the Gods
+32120000;Emit Force
+32140000;Lightning Spear
+32150000;Great Lightning Spear
+32160000;Sunlight Spear
+32170000;Soul Appease
+32180000;Blinding Bolt
+32190000;Magic Barrier
+32200000;Great Magic Barrier
+32210000;Homeward
+32220000;Guidance
+32230000;Sacred Oath
+32240000;Unveil
+32250000;Perseverance
+32300000;Denial
+32310000;Splintering Lightning Spear
+33110000;Poison Mist
+33120000;Toxic Mist
+33130000;Acid Surge
+33140000;Lingering Flame
+33150000;Flame Swathe
+33160000;Forbidden Sun
+33180000;Flash Sweat
+33190000;Iron Flesh
+33200000;Warmth
+33210000;Immolation
+33310000;Dance of Fire
+33311000;Dance of Fire [Child]
+34010000;Dark Orb
+34020000;Dark Hail
+34030000;Dark Fog
+34040000;Affinity
+34040060;Affinity
+34050000;Dead Again
+34070010;Whisper of Despair
+34070011;Whisper of Despair
+34070012;Whisper of Despair
+34070013;Whisper of Despair
+34070014;Whisper of Despair
+34100000;Numbness
+34300000;Dark Greatsword
+34310011;Recollection [Child]
+35010000;Scraps of Life
+35020000;Darkstorm
+35030000;Resonant Soul
+35030001;Resonant Soul
+35030002;Resonant Soul
+35030003;Resonant Soul
+35030004;Resonant Soul
+35040000;Great Resonant Soul
+35040001;Great Resonant Soul
+35040002;Great Resonant Soul
+35040003;Great Resonant Soul
+35040004;Great Resonant Soul
+35050000;Climax
+35050001;Climax
+35050002;Climax
+35050003;Climax
+35050004;Climax
+35060000;Resonant Flesh
+35060001;Resonant Flesh
+35060002;Resonant Flesh
+35060003;Resonant Flesh
+35060004;Resonant Flesh
+35080000;Lifedrain Patch
+35080010;Lifedrain Patch [Child]
+35080020;Lifedrain Patch [Child]
+35080030;Lifedrain Patch [Child]
+35080040;Lifedrain Patch [Child]
+35090000;Profound Still
+35300000;Promised Walk of Peace
+35310000;Dark Dance
+35310100;Dark Dance [Child]
+35310200;Dark Dance [Child]
+35310300;Dark Dance [Child]
+35310400;Dark Dance [Child]
+71010000;[NPC] Soul Arrow
+71020000;[NPC] Great Soul Arrow
+71030000;[NPC] Heavy Soul Arrow
+71040000;[NPC] Great Heavy Soul Arrow
+71050010;[NPC] Homing Soul Arrow [Child]
+71060010;[NPC] Heavy Homing Soul Arrow [Child]
+71090000;[NPC] Soul Spear
+71100000;[NPC] Crystal Soul Spear
+71140000;[NPC] Soul Greatsword
+71150000;[NPC] Soul Vortex
+71151000;[NPC] Soul Vortex
+71270000;[NPC] Cast Light
+71300000;[NPC] Soul Flash
+71310000;[NPC] Focus Souls
+72010000;[NPC] Heal
+72020000;[NPC] Med Heal
+72030000;[NPC] Great Heal Excerpt
+72040000;[NPC] Great Heal
+72050000;[NPC] Soothing Sunlight
+72060000;[NPC] Replenishment
+72070000;[NPC] Resplendent Life
+72080000;[NPC] Bountiful Sunlight
+72090000;[NPC] Caressing Prayer
+72100000;[NPC] Force
+72110000;[NPC] Wrath of the Gods
+72120000;[NPC] Emit Force
+72140000;[NPC] Lightning Spear
+72150000;[NPC] Great Lightning Spear
+72160000;[NPC] Sunlight Spear
+72170000;[NPC] Soul Appease
+72180000;[NPC] Blinding Bolt
+72190000;[NPC] Magic Barrier
+72200000;[NPC] Great Magic Barrier
+72210000;[NPC] Homeward
+72220000;[NPC] Guidance
+72230000;[NPC] Sacred Oath
+72230010;[NPC] Sacred Oath
+72240000;[NPC] Unveil
+72250000;[NPC] Perseverance
+72310000;[NPC] Splintering Lightning Spear
+73150000;[NPC] Flame Swathe
+73160000;[NPC] Forbidden Sun
+74010000;[NPC] Dark Orb
+74020000;[NPC] Dark Hail
+75010000;[NPC] Scraps of Life
+75030000;[NPC] Resonant Soul
+75030001;[NPC] Resonant Soul
+75030002;[NPC] Resonant Soul
+75030003;[NPC] Resonant Soul
+75030004;[NPC] Resonant Soul
+75310000;[NPC] Dark Dance
+
+#----------------------------------
+# SpEffect -> Enemy Damage
+#----------------------------------
+ID;Name
+110500110;[Amana Shrine Maiden - Bullet]
+110600210;[Hollow Priest - Bullet]
+110600310;[Hollow Priest]
+110600410;[Hollow Priest - Bullet]
+110700510;[Parasitized Undead - Bullet]
+111801110;[Hollow Mage - Bullet]
+111900310;[Lion Clan Mage - Bullet]
+112701300;[Captive Undead - Bullet]
+112900310;[Forest Spirit - Bullet]
+112901310;[Forest Spirit - Bullet]
+112901410;[Forest Spirit - Bullet]
+113101010;[Lindelt Cleric - Bullet]
+113101210;[Lindelt Cleric - Bullet]
+120300610;[Parasite Spider - Bullet]
+133200001;[Throne Defender]
+133400002;[Throne Watcher]
+150000020;[Covetous Demon]
+150109000;[Mytha- the Baneful Queen]
+150900512;[Leydia Witch - Bullet]
+151200610;[Leydia Pyromancer - Bullet]
+160301610;[The Duke's Dear Freja - Bullet]
+160301710;[The Duke's Dear Freja - Bullet]
+160310510;[The Duke's Dear Freja (map) - Bullet]
+160800010;[Rotten Vermin - Bullet]
+160800020;[Rotten Vermin]
+160800030;[Rotten Vermin]
+160800040;[Rotten Vermin]
+160800050;[Rotten Vermin]
+160800060;[Rotten Vermin]
+160800070;[Rotten Vermin]
+160800080;[Rotten Vermin]
+160800090;[Rotten Vermin]
+160800100;[Rotten Vermin]
+160800110;[Rotten Vermin]
+160800120;[Rotten Vermin]
+160800130;[Rotten Vermin]
+160800140;[Rotten Vermin]
+160800150;[Rotten Vermin]
+160800160;[Rotten Vermin]
+162701112;[Nashandra - Bullet]
+167200000;[Rotten Vermin - Bullet]
+167200001;[Rotten Vermin - Bullet]
+167400010;[Pagan Tree - Bullet]
+167500000;[Fume Knight]
+167800820;[Facsimile Giant]
+167900610;[Aava- the King's Pet - Bullet]
+168000000;[Sir Alonne]
+168803311;[Loyce Knight - Bullet]
+169900000;UNKNOWN
+176901010;[Licia of Lindeldt - Bullet]
+177001331;[Felkin the Outcast - Bullet]
+178501010;[Blue Sentinel Targray - Bullet]
+178501110;[Blue Sentinel Targray - Bullet]
+185501500;UNKNOWN
+185501600;UNKNOWN
+185501700;UNKNOWN
+185501800;UNKNOWN
+191270001;UNKNOWN
+192010001;UNKNOWN
+192020001;UNKNOWN
+192030001;UNKNOWN
+192040001;UNKNOWN
+192050001;UNKNOWN
+192060001;UNKNOWN
+192070001;UNKNOWN
+192080001;UNKNOWN
+192090001;UNKNOWN
+192190001;UNKNOWN
+192200001;UNKNOWN
+192210000;UNKNOWN
+192220001;UNKNOWN
+192230001;UNKNOWN
+192230010;UNKNOWN
+192230011;UNKNOWN
+192240000;UNKNOWN
+192250001;UNKNOWN
+192260000;UNKNOWN
+192261000;UNKNOWN
+
+#----------------------------------
+# SpEffect -> Player Damage
+#----------------------------------
+ID;Name
+9000;Abnormal state - reduced effect time -- ????-??????
+9020;Bleeding -- ??
+10050;Ladder - Downhill Collision (Special Effects) -- ???-??????(????)
+1960010;1960: Queen Knight A: Sword of Light: For Endurance Wear and Tear -- 1960:?????A:???:?????
+1970010;1970: Queen Knight C: Sword of Light in the Dark Moon: For Endurance Wear and Tear -- 1970:?????C:??????:?????
+1990010;2890: Evangelist's Trigeminal Spear: Power-up (Effect) -- 2890:???????:??????(??)
+20013600;Torch_One Hand Proximity_Strong 1_02 -- ??_????_?1_02
+20013700;Torch_One Hand Proximity_Strong 2_02 -- ??_????_?2_02
+20014100;Pine light_one-handed proximity_fall -- ??_????_??
+20014200;Torch_One Hand Proximity_Jump -- ??_????_????
+20014600;Torch_Both Hands Proximity_Weak 1_02 -- ??_????_?1_02
+20014700;Torch_Both Hands Proximity_Weak 2_02 -- ??_????_?2_02
+20014800;Torch_Both Hands Proximity_Strong 1_02 -- ??_????_?1_02
+20014900;Torch_Both Hands Proximity_Strong 2_02 -- ??_????_?2_02
+20015000;Torch_Both Hands Proximity_Dash_02 -- ??_????_????_02
+20015100;Torch_Both Hands Proximity_Rolling_02 -- ??_????_?????_02
+20024100;Spider Thread_One Hand Proximity_Strong 1 -- ????_????_?1
+20024200;Spider Thread_One Hand Proximity_Strong 2 -- ????_????_?2
+20024300;Spider Thread_Both Hands Proximity_Strong 1 -- ????_????_?1
+20024400;Spider Thread_Two-Handed Proximity_Strong 2 -- ????_????_?2
+20024500;Youyato_One-handed proximity_weak 1 -- ??_????_?1
+20024600;Youyto_One-handed Proximity_Weak 2 -- ??_????_?2
+20024700;Yousword_One-handed Proximity_Strong 1 -- ??_????_?1
+20024800;Yousword_One Hand Proximity_Strong 1_02 -- ??_????_?1_02
+20024900;Yousword_One Hand Dash -- ??_??????
+20025000;One hand rolling -- ??_???????
+20025200;One-handed jump -- ??_??????
+20025300;One hand fall -- ??_????
+20025400;Yousword_One-handed jump fall -- ??_????????
+20025500;One-handed chase -- ??_?????
+20025700;Youyto_Both-Handed Proximity_Weak 1 -- ??_????_?1
+20025800;Youyto_Two-Handed Proximity_Weak 2 -- ??_????_?2
+20025900;Youyto_Two-Handed Proximity_Strong 1 -- ??_????_?1
+20026000;Youyto_Two-Handed Proximity_Strong 2 -- ??_????_?2
+20026100;Youyato_Double-handed Dash -- ??_??????
+20026200;Youyasword_Both Hands Rolling -- ??_???????
+20026900;Youyto_Two-sword style two-handed both-handed proximity_weak 1 -- ??_???????_?1
+20027000;Youyto_Two-sword style two-handed two-handed proximity_weak 2 -- ??_???????_?2
+20027100;Yousword_Two-sword style two-handed two-handed proximity_strong 1 -- ??_???????_?1
+20030900;Large kitchen knife_one-handed proximity_weak one -- ???_????_?1
+20030910;
+20031000;Large kitchen knife_one-handed proximity_weak 2 -- ???_????_?2
+20031100;Large kitchen knife_one-handed proximity_strong one -- ???_????_?1
+20031200;Large kitchen knife_one-handed proximity_strong_02 -- ???_????_?1_02
+20031300;Large kitchen knife _ one hand dash -- ???_??????
+20031400;Large kitchen knife _one hand rolling -- ???_???????
+20031600;Large kitchen knife_one-handed jump -- ???_??????
+20031700;Large kitchen knife _ one hand fall -- ???_????
+20031800;Large kitchen knife _ one hand jump fall -- ???_????????
+20031900;Large kitchen knife_one-handed chase -- ???_?????
+20032100;Large kitchen knife _both hands proximity_weak one -- ???_????_?1
+20032200;Large kitchen knife _both hands proximity_weak 2 -- ???_????_?2
+20032300;Large kitchen knife _both hands proximity_strong 1 -- ???_????_?1
+20032400;Large kitchen knife_both hands proximity_strong_02 -- ???_????_?1_02
+20032500;Large kitchen knife _ two-handed dash -- ???_??????
+20032600;Large kitchen knife_rolling hands -- ???_???????
+20033300;Large kitchen knife_two-sword style both hands proximity_weak 1 -- ???_???????_?1
+20033400;Large kitchen knife_two-sword style both hands proximity_weak 2 -- ???_???????_?2
+20033500;Large kitchen knife_two-sword style both hands proximity_strong 1 -- ???_???????_?1
+20072100;sinner's sword_one-handed proximity_weak one -- ????_????_?1
+20072200;Sinner's Sword_ One Hand Proximity_ Weak 2 -- ????_????_?2
+20072300;sinner's sword_one-handed proximity_strong one -- ????_????_?1
+20072400;Sinner's Sword_One Hand Proximity_Strong 2 -- ????_????_?2
+20072500;Sinner's Sword_ One Hand Dash -- ????_??????
+20072600;Sinner's Sword_ One Hand Rolling -- ????_???????
+20072800;Sinner's Sword_ One Hand Jump -- ????_??????
+20072900;Sinner's Sword_ One Hand Fall -- ????_????
+20073000;Sinner's Sword_ One Hand Jump Fall -- ????_????????
+20073100;Sinner's Sword_ One-handed Chase -- ????_?????
+20073300;sinner's sword_both hands proximity_weak one -- ????_????_?1
+20073400;Sinner's Sword_ Two Hands Proximity_ Weak 2 -- ????_????_?2
+20073500;Sinner's Sword_Two-Handed Proximity_Strong 1 -- ????_????_?1
+20073600;Sinner's Sword_Two-Handed Proximity_Strong 2 -- ????_????_?2
+20073700;Sinner's Sword_ Two-Handed Dash -- ????_??????
+20073800;Sinner's Sword_ Rolling Hands -- ????_???????
+20074000;Sinner's Sword_ Both Hands Jump -- ????_??????
+20074100;Sinner's Sword_ Falling Both Hands -- ????_????
+20074200;Sinner's Sword_ Both Hands Jump Fall -- ????_????????
+20074300;Sinner's Sword_ Two-Handed Chase -- ????_?????
+20074500;Sinner's Sword_ Two-Sword Style Both Hands Proximity_ Weak 1 -- ????_???????_?1
+20074600;Sinner's Sword_ Two-Sword Style Both Hands Proximity_ Weak 2 -- ????_???????_?2
+20074700;Sinner's Sword_Two-Sword Style Two-Handed Two-Handed Proximity_Strong 1 -- ????_???????_?1
+20088720;
+20088730;
+20088915;
+20088920;Incut sword_both-handed proximity_strong 1 (pull out) -- ???_????_?1(????)
+20089010;Recovery Song Sword_One Hand Proximity_Strong 1 (for Recovery) -- ????_????_?1(???)
+20089012;
+20089110;Recovery Song Sword_Both Hands Proximity_Strong 1 (for Recovery) -- ????_????_?1(???)
+20089112;
+20097100;
+20097110;
+20229000;
+20232210;
+20232310;
+20232410;
+20232510;
+20232610;
+20232710;
+21011010;Throw - Youkai - Backstab -- ??-??-??????
+22011010;Throw - Youkai - Guard Break Stub -- ??-??-??????????
+23011000;Throw - Sword - Pari break stub -- ??-?-??????????
+31070000;Magic: Floating Chunks of Soul (Special Effects) -- ??:?????????(????)
+31080000;Magic: Floating Soul Crystal Mass (Special Effects) -- ??:???????????(????)
+31180001;Magic: Magic Weapon: Right Hand -- ??:?????:???
+31181001;Magic: Magic Weapon: Left Hand -- ??:?????:???
+31190001;Magic: Strong Magic Weapon: Right Hand -- ??:???????:???
+31191001;Magic: Strong Magic Weapon: Left Hand -- ??:???????:???
+31200001;Magic: Crystal Magic Weapon: Right Hand -- ??:???????:???
+31201001;Magic: Crystal Magic Weapon: Left Hand -- ??:???????:???
+31210001;Magic: Strong Magic Shield: Right Hand -- ??:??????:???
+31211001;Magic: Strong Magic Shield: Left Hand -- ??:??????:???
+31230000;Magic: No Sound -- ??:???
+31240000;Magic: Fall Control -- ??:????
+31250001;Magic: Invisible Weapon: Right Hand (Directing) -- ??:??????:???(??)
+31250002;Magic: Invisible Weapon: Right Hand (Annihilation) -- ??:??????:???(??)
+31251001;Magic: Invisible Weapon: Right Hand (Directing) -- ??:??????:???(??)
+31251002;Magic: Invisible Weapon: Right Hand (Annihilation) -- ??:??????:???(??)
+31260000;Magic: Restoration -- ??:??
+31270001;Magic: Illuminating Light -- ??:????(?)
+31280000;Magic: Mimicry (directing) -- ??:??(??)
+31280010;Magic: Mimicry (Makeover) -- ??:??(??)
+31290000;Magic: Magic Open (Muzzle Flash) -- ??:????(????????)
+31290001;Magic: Magic Open -- ??:????
+32010000;Miracle: Recovery (Muzzle Flash) -- ??:??(????????)
+32010010;
+32010011;
+32010012;
+32010013;
+32010014;
+32020000;Miracle: Medium Recovery (Muzzle Flash) -- ??:???(????????)
+32020010;
+32020011;
+32020012;
+32020013;
+32020014;
+32030001;Miracles: Limited Great Recovery -- ??:???????
+32040000;Miracle: The Great Recovery (Muzzle Flash) -- ??:???(????????)
+32040010;
+32040011;
+32040012;
+32040013;
+32040014;
+32050000;Miracle: The Healing of the Sun's Light (Muzzle Flash) -- ??:???????(????????)
+32050010;
+32050011;
+32050012;
+32050013;
+32050014;
+32060000;Miracle: Life Springing (Muzzle Flash) -- ??:????(????????)
+32060001;Miracles: Springing of Life -- ??:????
+32070000;Miracle: Automatic Medium Recovery (Muzzle Flash) -- ??:?????(????????)
+32070001;Miracles: Automatic Medium Recovery -- ??:?????
+32080000;Miracle: The Grace of Sunshine (Muzzle Flash) -- ??:???????(????????)
+32080010;
+32080011;
+32080012;
+32080013;
+32080014;
+32080050;
+32090001;Miracle: Poison Recovery -- ??:???
+32170011;Miracle: Immortal Annihilation: For Damage -- ??:?????:?????
+32190000;Miracles: Magic Protection (Muzzle Flash) -- ??:????(????????)
+32190010;
+32190011;
+32190012;
+32190013;
+32190014;
+32200000;Miracle: Great Magic Protection (Muzzle Flash) -- ??:?????(????????)
+32200001;Miracle: Great Magic Protection (Bullet) -- ??:?????(?)
+32210000;Miracle: Home Journey -- ??:??
+32220001;Miracle: Seeking Advice (Bullet) -- ??:????(?)
+32230000;Miracle: Jihad (Muzzle Flash) -- ??:???(????????)
+32230010;
+32230011;
+32230012;
+32230013;
+32230014;
+32230050;
+32240000;Miracle: Dark Spirit Detection (Muzzle Flash) -- ??:????(????????)
+32250000;Miracle: Increased resistance (muzzle flash) -- ??:?????(????????)
+32250001;Miracle: Increased resistance (bullet) -- ??:?????(?)
+32260000;Miracle: Sword of Sunshine: Right Hand -- ??:??????:???
+32261000;Miracle: Sword of Sunshine: Left Hand -- ??:??????:???
+32300000;DLC: One-time Resurrection -- DLC:???????
+32300005;
+33050003;Magic: Storm of Fire (Light Source) -- ??:???(??)
+33060003;Magic: The Great Storm of Fire (Light Source) -- ??:????(??)
+33070003;Magic: Storm of Chaos (Light Source) -- ??:????(??)
+33170000;Magic: Weapon of Fire: Right Hand -- ??:????:???
+33171000;Magic: Weapon of Fire: Left Hand -- ??:????:???
+33180000;Magic: Intense Sweating -- ??:?????
+33180010;
+33190000;Magic: The Iron Body -- ??:???
+33190010;
+33200000;Magic: The Recovery Soul -- ??:???
+33210000;Magic: Burnt (parent) -- ??:??(?)
+33210005;
+33210010;Magic: Burn (Barrett Trigger) -- ??:??(????????)
+33320003;
+34040000;Dark Art - The Devil: The Mourners (Special Effects) -- ??-?:?????(????)
+34050001;Dark Art - Demon: Range Corpse Bombing (Body Search) -- ??-?:??????(????)
+34060000;Dark Art - The Devil: Weapon of Darkness: Right Hand -- ??-?:????:???
+34061000;Dark Art - The Devil: Weapon of Darkness: Left Hand -- ??-?:????:???
+34070000;Dark Art - The Devil: The Whisper of Darkness -- ??-?:??????
+34070010;
+34070011;
+34070012;
+34070013;
+34070014;
+34080000;Dark Art - The Devil: The Space of Nothingness -- ??-?:????
+34090000;Dark Art - The Devil: The Spellparibarrier -- ??-?:????????
+34100000;Dark Art - The Devil: Darkness -- ??-?:?
+34100010;
+34300022;
+35060000;The Art of Darkness - Bizarre: The Body of Seoul: The Greatest -- ??-?:??????:??
+35060001;The Art of Darkness - Bizarre: The Body of Seoul: Large -- ??-?:??????:?
+35060002;The Art of Darkness - Bizarre: The Body of Seoul: Inside -- ??-?:??????:?
+35060003;The Art of Darkness - Bizarre: The Body of Seoul: Small -- ??-?:??????:?
+35060004;The Art of Darkness - Bizarre: The Body of Seoul: Tiny -- ??-?:??????:??
+35060010;
+35060011;
+35060012;
+35060013;
+35060014;
+35070000;Dark Art - Bizarre: The Sword of Soul: Right Hand Lv.5 -- ??-?:?????:???Lv.5
+35070001;Dark Art - Bizarre: The Sword of Soul: Right Hand Lv.4 -- ??-?:?????:???Lv.4
+35070002;Dark Art - Bizarre: The Sword of Soul: Right Hand Lv.3 -- ??-?:?????:???Lv.3
+35070003;Dark Art - Bizarre: The Sword of Soul: Right Hand Lv.2 -- ??-?:?????:???Lv.2
+35070004;Dark Art - Bizarre: The Sword of Soul: Right Hand Lv.1 -- ??-?:?????:???Lv.1
+35071000;Dark Art - Bizarre: The Sword of Soul: Left Hand Lv.5 -- ??-?:?????:???Lv.5
+35071001;Dark Art - Bizarre: The Sword of Soul: Left Hand Lv.4 -- ??-?:?????:???Lv.4
+35071002;Dark Art - Bizarre: The Sword of Soul: Left Hand Lv.3 -- ??-?:?????:???Lv.3
+35071003;Dark Art - Bizarre: The Sword of Soul: Left Hand Lv.2 -- ??-?:?????:???Lv.2
+35071004;Dark Art - Bizarre: The Sword of Soul: Left Hand Lv.1 -- ??-?:?????:???Lv.1
+35090000;Dark Art - Bizarre: Multi-Target Spell Seal (Muzzle Flash) -- ??-?:?????????????(????????)
+35090010;
+35090011;
+35090012;
+35090013;
+35090014;
+35300000;DLC: The Walk of Gentle Peace: Lv.5 (Muzzle Flash) -- DLC:?????????:Lv.5(????????)
+35300010;DLC: The Walk of Gradual Peace: Lv.5 -- DLC:?????????:Lv.5
+35300011;DLC: The Walk of Gradual Peace: Lv.4 -- DLC:?????????:Lv.4
+35300012;DLC: The Walk of Gradual Peace: Lv.3 -- DLC:?????????:Lv.3
+35300013;DLC: The Walk of Gradual Peace: Lv.2 -- DLC:?????????:Lv.2
+35300014;DLC: The Walk of Gradual Peace: Lv.1 -- DLC:?????????:Lv.1
+50000000;Butterfly Armor: Poison Limpun (for Generation) -- ???:?????(???)
+50000010;Butterfly Armor: Poison Limpun (for Damage) -- ???:?????(?????)
+51000000;
+51010000;
+51010001;
+51010002;
+51020000;
+60405001;Dragon Head Stone (Transformation) -- ???(??)
+60406001;Dragon Body Stone (Transformation) -- ???(??)
+60406011;Dragon stone (dragon roar: stamina consumption) -- ???(????:??????)
+60430000;Fire Butterfly (Ignition Stone) -- ???(???)
+60531010;Lloyd's Amulet (Landing) -- ??????(??)
+60610010;Weapon Destruction Bottle Small - Explosion -- ????? ?-??
+62100010;Proof of good intentions (host HP recovery) -- ????(???HP??)

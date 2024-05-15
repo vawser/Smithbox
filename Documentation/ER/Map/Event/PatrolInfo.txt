@@ -1,0 +1,14 @@
+﻿#----------------------------------------
+# PatrolInfo
+#----------------------------------------
+Used to setup a list of walk routes for use in a patrol.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+PatrolType:                 The type of patrol to do
+                            - 0: 
+                            - 1: 
+                            - 4: 
+                            - 5: used by rats
+WalkRegionNames[]           The names of WalkRoute entities to compose this patrol route.

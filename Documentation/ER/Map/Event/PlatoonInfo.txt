@@ -1,0 +1,11 @@
+﻿#----------------------------------------
+# PlatoonInfo
+#----------------------------------------
+Used to setup a platoon group.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+PlatoonIDScriptActivate:        ?
+State:                          ?
+GroupPartsNames[]               The Enemies to include in the platoon

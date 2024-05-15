@@ -1,0 +1,12 @@
+﻿#----------------------------------------
+# Sound
+#----------------------------------------
+Used to setup a specific sound emitter
+
+#-------------------------
+# Unique Properties
+#-------------------------
+SoundType:          The type of sound emitted
+SoundID:            The sound ID to play
+ChildRegionNames[]  The sub-regions to child to this region
+UnkT49:             Bool

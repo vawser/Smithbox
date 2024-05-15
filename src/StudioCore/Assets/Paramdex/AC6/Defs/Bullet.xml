@@ -192,7 +192,7 @@
     <Field Def="s32 Unk0x1D4"></Field>
     <Field Def="s32 sfxId_Muzzle"></Field>
     <Field Def="s32 UnkInt0x1DC"></Field>
-    <Field Def="s32 UnkInt0x1E0"></Field>
+    <Field Def="s32 sfxId_Casing"></Field>
     <Field Def="s32 UnkInt0x1E4"></Field>
     <Field Def="f32 Unk0x1E8"></Field>
     <Field Def="f32 UnkFloat0x1EC"></Field>

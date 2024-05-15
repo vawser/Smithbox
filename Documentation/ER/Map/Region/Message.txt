@@ -1,0 +1,18 @@
+﻿#----------------------------------------
+# Message
+#----------------------------------------
+Used to setup a pre-defined message.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+UnkT00:             The text ID of the message
+UnkT04:             ?
+Hidden:             Whether it is hidden by default (revealed via development message toggle)
+UnkT08:             ?
+UnkT0C:             ?
+EnableEventFlag:    Event flag that enables the message
+CharacterModelName: Character model to display
+NPCParamID:         NPC Param to use for display
+AnimationID:        Animation to use for display
+CharaInitParamID:   NPC Init to use for display

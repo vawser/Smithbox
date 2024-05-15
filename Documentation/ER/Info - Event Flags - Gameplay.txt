@@ -1,0 +1,591 @@
+﻿#-----------------------------------
+# Game Progression
+#-----------------------------------
+# Great Rune
+171 Godrick's Great Rune
+172 Radahn's Great Rune
+173 Morgott's Great Rune
+174 Rykard's Great Rune
+175 Mohg's Great Rune
+176 Malenia's Great Rune
+197 Great Rune of the Unborn
+
+HandleBossDefeat
+
+# Bosses
+9100 Godrick the Grafted - Stormveil Castle
+9101 Margit, the Fell Omen - Stormveil Castle
+9103 Grafted Scion - Chapel of Anticipation
+9104 Morgott, the Omen King - Leyndell
+9105 Godfrey, First Elden Lord - Leyndell
+9106 Sir Gideon Ofnir, the All-Knowing - Leyndell
+9107 Hoarah Loux - Leyndell
+9108 Astel, Naturalborn of the Void - Lake of Rot
+9109 Dragonkin Soldier of Nokstella - Ainsel River
+9111 Lichdragon Fortissax
+9112 Mohg
+9115 Dragonlord Placidusax
+9116 Maliketh
+9118 Rennala
+9119 Loretta
+9120 Malenia
+9122 Rykard, Lord of Blasphemy
+9123 Elden Beast
+9130 Starscourge Radahn
+9131 Fire Giant
+9133 Regal Ancestor Spirit
+9134 Dragonkin Soldier - Lake of Rot
+9135 Fia's Champion - Deeproot Depths
+9182 Elemer of the Briar
+9184 Commander Niall
+
+# Mending Rune
+9500 Mending Rune of Perfect Order
+9502 Mending Rune of the Death-Prince
+9504 Mending Rune of the Fell Curse
+
+# Mechanics
+60000 Flask of Crimson Tears
+60020 Flask of Wondrous Physick
+60100 Spectral Steed Whistle
+60110 Spirit Calling Bell
+60120 Crafting Kit
+60130 Whetstone Knife
+60140 Tailoring Tools
+60150 Golden Tailoring Tools
+60210 Tarnished's Wizened Finger
+60220 Tarnished's Furled Finger
+60230 Small Golden Effigy
+60240 Duelist's Furled Finger
+60250 Small Red Effigy
+60270 Bloody Finger
+60280 White Cipher Ring
+60290 Blue Cipher Ring
+60300 Taunter's Tongue
+60310 Finger Severer
+
+# Memory Stone
+60400 Source - World
+60410 Source - World
+60420 Source - World
+60430 Source - World
+60440 Source - Red Wolf of Radagon
+60450 Source - Demi-Human Queen Maggie
+60460 Source - World
+60470 Source - Twin Maiden Husks
+
+# Talisman Pouch
+60500 Finger Reader Enia - Godfrey
+60510 Margit Kill
+60520 Finger Reader Enia - 2 Great Runes
+
+# Maps
+62010 Map: Limgrave, West
+62011 Map: Weeping Peninsula
+62012 Map: Limgrave, East
+62020 Map: Liurnia, East
+62021 Map: Liurnia, North
+62022 Map: Liurnia, West
+62030 Map: Altus Plateau
+62031 Map: Leyndell, Royal Capital
+62032 Map: Mt. Gelmir
+62040 Map: Caelid
+62041 Map: Dragonbarrow
+62050 Map: Mountaintops of the Giants, West
+62051 Map: Mountaintops of the Giants, East
+62060 Map: Ainsel River
+62061 Map: Lake of Rot
+62063 Map: Siofra River
+62062 Map: Mohgwyn Palace
+62064 Map: Deeproot Depths
+62052 Map: Consecrated Snowfield
+
+# Crystal Tear
+65000 Crimsonspill Crystal Tear
+65010 Greenspill Crystal Tear
+65020 Crimson Crystal Tear
+65030 Crimson Crystal Tear
+65040 Cerulean Crystal Tear
+65050 Cerulean Crystal Tear
+65060 Speckled Hardtear
+65070 Crimson Bubbletear
+65080 Opaline Bubbletear
+65090 Crimsonburst Crystal Tear
+65100 Greenburst Crystal Tear
+65110 Opaline Hardtear
+65120 Winged Crystal Tear
+65130 Thorny Cracked Tear
+65140 Spiked Cracked Tear
+65150 Windy Crystal Tear
+65160 Ruptured Crystal Tear
+65170 Ruptured Crystal Tear
+65180 Leaden Hardtear
+65190 Twiggy Cracked Tear
+65200 Crimsonwhorl Bubbletear
+65210 Strength-knot Crystal Tear
+65220 Dexterity-knot Crystal Tear
+65230 Intelligence-knot Crystal Tear
+65240 Faith-knot Crystal Tear
+65250 Cerulean Hidden Tear
+65260 Stonebarb Cracked Tear
+65270 Purifying Crystal Tear
+65280 Flame-Shrouding Cracked Tear
+65290 Magic-Shrouding Cracked Tear
+65300 Lightning-Shrouding Cracked Tear
+65310 Holy-Shrouding Cracked Tear
+
+# Whetblade
+65610 Iron Whetblade
+65640 Red-Hot Whetblade
+65660 Sanctified Whetblade
+65680 Glintstone Whetblade
+65720 Black Whetblade
+
+
+# Ash of War
+65810 Ash of War: Impaling Thrust 
+65811 Ash of War: Piercing Fang 
+65812 Ash of War: Spinning Slash 
+65813 Ash of War: Repeating Thrust 
+65814 Ash of War: Double Slash 
+65815 Ash of War: Unsheathe 
+65816 Ash of War: Sword Dance 
+65818 Ash of War: Quickstep 
+65819 Ash of War: Bloodhound's Step 
+65820 Ash of War: Lion's Claw 
+65821 Ash of War: Stamp (Upward Cut) 
+65822 Ash of War: Stamp (Sweep) 
+65823 Ash of War: Wild Strikes 
+65824 Ash of War: Earthshaker 
+65825 Ash of War: Kick 
+65826 Ash of War: Ground Slam 
+65827 Ash of War: Hoarah Loux's Earthshaker 
+65828 Ash of War: Barbaric Roar 
+65829 Ash of War: War Cry 
+65830 Ash of War: Troll's Roar 
+65831 Ash of War: Braggart's Roar 
+65832 Ash of War: Endure 
+65833 Ash of War: Charge Forth 
+65834 Ash of War: Square Off 
+65835 Ash of War: Giant Hunt 
+65836 Ash of War: Spinning Strikes 
+65837 Ash of War: Storm Assault 
+65838 Ash of War: Stormcaller 
+65839 Ash of War: Storm Blade 
+65840 Ash of War: Vacuum Slice 
+65841 Ash of War: Storm Stomp 
+65842 Ash of War: Determination 
+65843 Ash of War: Royal Knight's Resolve 
+65844 Ash of War: Prelate's Charge 
+65845 Ash of War: Eruption 
+65846 Ash of War: Flaming Strike 
+65847 Ash of War: Black Flame Tornado 
+65848 Ash of War: Flame of the Redmanes 
+65849 Ash of War: Thunderbolt 
+65850 Ash of War: Lightning Slash 
+65851 Ash of War: Lightning Ram 
+65852 Ash of War: Loretta's Slash 
+65853 Ash of War: Spinning Weapon 
+65854 Ash of War: Glintblade Phalanx 
+65855 Ash of War: Glintstone Pebble 
+65856 Ash of War: Gravitas 
+65857 Ash of War: Carian Grandeur 
+65858 Ash of War: Carian Greatsword 
+65859 Ash of War: Waves of Darkness 
+65860 Ash of War: Cragblade 
+65861 Ash of War: Sacred Blade 
+65862 Ash of War: Prayerful Strike 
+65863 Ash of War: Golden Land 
+65864 Ash of War: Sacred Ring of Light 
+65865 Ash of War: Golden Slam 
+65866 Ash of War: Golden Vow 
+65867 Ash of War: Sacred Order 
+65868 Ash of War: Shared Order 
+65869 Ash of War: Beast's Roar 
+65870 Ash of War: Phantom Slash 
+65871 Ash of War: Spectral Lance 
+65872 Ash of War: Raptor of the Mists 
+65873 Ash of War: White Shadow's Lure 
+65874 Ash of War: Poison Moth Flight 
+65875 Ash of War: Poisonous Mist 
+65876 Ash of War: Blood Tax 
+65877 Ash of War: Bloody Slash 
+65878 Ash of War: Lifesteal Fist 
+65879 Ash of War: Blood Blade 
+65880 Ash of War: Assassin's Gambit 
+65881 Ash of War: Seppuku 
+65882 Ash of War: Ice Spear 
+65883 Ash of War: Chilling Mist 
+65884 Ash of War: Hoarfrost Stomp 
+65885 Ash of War: No Skill 
+65886 Ash of War: Shield Bash 
+65887 Ash of War: Shield Crash 
+65888 Ash of War: Barricade Shield 
+65889 Ash of War: Parry 
+65890 Ash of War: Carian Retaliation 
+65891 Ash of War: Storm Wall 
+65892 Ash of War: Golden Parry 
+65893 Ash of War: Thops's Barrier 
+65894 Ash of War: Holy Ground 
+65895 Ash of War: Vow of the Indomitable 
+65896 Ash of War: Barrage 
+65897 Ash of War: Mighty Shot 
+65898 Ash of War: Sky Shot 
+65899 Ash of War: Through and Through 
+65900 Ash of War: Enchanted Shot 
+65901 Ash of War: Rain of Arrows 
+
+# Cracked Pot
+66000
+66010
+66020
+66030
+66040
+66050
+66060
+66070
+66080
+66090
+66100
+66110
+66120
+66130
+66140 
+66150
+66160
+66170
+66180
+66190
+
+# Ritual Pot
+66400
+66410
+66420
+66430
+66440
+66450
+66460
+66470
+66480
+66490
+
+# Perfume Bottle
+66700
+66710
+66720
+66730
+66740
+66750
+66760
+66770
+66780
+66790
+
+# Cookbooks
+67000 Nomadic Warrior's Cookbook [1]
+67110 Nomadic Warrior's Cookbook [2]
+67010 Nomadic Warrior's Cookbook [3]
+67800 Nomadic Warrior's Cookbook [4]
+67830 Nomadic Warrior's Cookbook [5]
+67020 Nomadic Warrior's Cookbook [6]
+67050 Nomadic Warrior's Cookbook [7]
+67880 Nomadic Warrior's Cookbook [8]
+67430 Nomadic Warrior's Cookbook [9]
+67030 Nomadic Warrior's Cookbook [10]
+67220 Nomadic Warrior's Cookbook [11]
+67060 Nomadic Warrior's Cookbook [12]
+67080 Nomadic Warrior's Cookbook [13]
+67870 Nomadic Warrior's Cookbook [14]
+67900 Nomadic Warrior's Cookbook [15]
+67290 Nomadic Warrior's Cookbook [16]
+67100 Nomadic Warrior's Cookbook [17]
+67270 Nomadic Warrior's Cookbook [18]
+67070 Nomadic Warrior's Cookbook [19]
+67230 Nomadic Warrior's Cookbook [20]
+67120 Nomadic Warrior's Cookbook [21]
+67890 Nomadic Warrior's Cookbook [22]
+67090 Nomadic Warrior's Cookbook [23]
+67910 Nomadic Warrior's Cookbook [24]
+
+67200 Armorer's Cookbook [1]
+67210 Armorer's Cookbook [2]
+67280 Armorer's Cookbook [3]
+67260 Armorer's Cookbook [4]
+67310 Armorer's Cookbook [5]
+67300 Armorer's Cookbook [6]
+67250 Armorer's Cookbook [7]
+
+67410 Glintstone Craftsman's Cookbook [1]
+67450 Glintstone Craftsman's Cookbook [2]
+67480 Glintstone Craftsman's Cookbook [3]
+67400 Glintstone Craftsman's Cookbook [4]
+67420 Glintstone Craftsman's Cookbook [5]
+67460 Glintstone Craftsman's Cookbook [6]
+67470 Glintstone Craftsman's Cookbook [7]
+67440 Glintstone Craftsman's Cookbook [8]
+
+67610 Missionary's Cookbook [1]
+67600 Missionary's Cookbook [2]
+67650 Missionary's Cookbook [3]
+67640 Missionary's Cookbook [4]
+67630 Missionary's Cookbook [5]
+67130 Missionary's Cookbook [6]
+68230 Missionary's Cookbook [7]
+
+68000 Ancient Dragon Apostle's Cookbook [1]
+68010 Ancient Dragon Apostle's Cookbook [2]
+68030 Ancient Dragon Apostle's Cookbook [3]
+68020 Ancient Dragon Apostle's Cookbook [4]
+
+67840 Perfumer's Cookbook [1]
+67850 Perfumer's Cookbook [2]
+67860 Perfumer's Cookbook [3]
+67920 Perfumer's Cookbook [4]
+
+68200 Fevor's Cookbook [1]
+68220 Fevor's Cookbook [2]
+68210 Fevor's Cookbook [3]
+
+68400 Frenzied's Cookbook [1]
+68410 Frenzied's Cookbook [2]
+
+82001 Underground Map
+
+# Rememberance
+270750 Remembrance of the Grafted
+270760 Remembrance of the Starscourge
+270770 Remembrance of the Omen King
+270780 Remembrance of the Blasphemous
+270790 Remembrance of the Rot Goddess
+270800 Remembrance of the Full Moon Queen
+270810 Remembrance of the Blood Lord
+270850 Remembrance of the Black Blade
+270860 Remembrance of Hoarah Loux
+270870 Remembrance of the Dragonlord
+270880 Remembrance of the Lichdragon
+270890 Remembrance of the Fire Giant
+270900 Remembrance of the Regal Ancestor
+270910 Elden Remembrance
+270920 Remembrance of the Naturalborn
+
+# Boss Items
+290000 Axe of Godrick
+290010 Grafted Dragon
+290020 Starscourge Greatsword
+290030 Lion Greatbow
+290040 Morgott's Cursed Sword
+290050 Regal Omen Bairn
+290060 Blasphemous Blade
+290070 Rykard's Rancor
+290080 Hand of Malenia
+290090 Scarlet Aeonia
+290100 Mohgwyn's Sacred Spear
+290110 Bloodboon
+290120 Maliketh's Black Blade
+290130 Black Blade
+290140 Axe of Godfrey
+290150 Ash of War: Hoarah Loux's Earthshaker
+290160 Dragon King's Cragblade
+290170 Placidusax's Ruin
+290180 Carian Regal Scepter
+290190 Rennala's Full Moon
+290200 Fortissax's Lightning Spear
+290210 Death Lightning
+290220 Giant's Red Braid
+290230 Burn
+290240 Winged Greathorn
+290250 Ancestral Spirit's Horn
+290260 Marika's Hammer
+290270 Sacred Relic Sword
+290280 Bastard's Stars
+290290 Ash of War: Waves of Darkness
+
+# Dragon Communion
+290500 Dragonfire
+290510 Dragonice
+290520 Glintstone Breath
+290530 Rotten Breath
+290540 Agheel's Flame
+290550 Borealis's Mist
+290560 Smarag's Glintstone Breath
+290570 Ekzykes's Decay
+
+290750 Dragonclaw
+290760 Dragonmaw
+290770 Magma Breath
+290780 Theodorix's Magma
+290790 Greyoll's Roar
+
+# Bell Bearings
+11109745 Bone Peddler's Bell Bearing
+11109746 Meat Peddler's Bell Bearing
+11109747 Medicine Peddler's Bell Bearing
+11109748 Gravity Stone Peddler's Bell Bearing
+11109751 Smithing-Stone Miner's Bell Bearing [1]
+11109752 Smithing-Stone Miner's Bell Bearing [2]
+11109753 Smithing-Stone Miner's Bell Bearing [3]
+11109754 Smithing-Stone Miner's Bell Bearing [4]
+11109755 Somberstone Miner's Bell Bearing [1]
+11109756 Somberstone Miner's Bell Bearing [2]
+11109757 Somberstone Miner's Bell Bearing [3]
+11109758 Somberstone Miner's Bell Bearing [4]
+11109759 Somberstone Miner's Bell Bearing [5]
+11109760 Glovewort Picker's Bell Bearing [1]
+11109761 Glovewort Picker's Bell Bearing [2]
+11109762 Glovewort Picker's Bell Bearing [3]
+11109763 Ghost-Glovewort Picker's Bell Bearing [1]
+11109764 Ghost-Glovewort Picker's Bell Bearing [2]
+11109765 Ghost-Glovewort Picker's Bell Bearing [3]
+
+# Default
+30000 Furlcalling Finger Remedy - Default
+30100 Fire Pot - Default
+30200 Rowa Raisin - Default
+30600 Bone Dart - Default
+30700 Rainbow Stone - Default
+
+#---------------------------------------------------
+# Recipes
+#---------------------------------------------------
+# Nomadic Warrior's Cookbook
+30105 Fetid Pot - Nomadic Warrior's Cookbook [4]
+30106 Swarm Pot - Nomadic Warrior's Cookbook [24]
+30110 Poison Pot - Nomadic Warrior's Cookbook [14]
+30111 Oil Pot - Nomadic Warrior's Cookbook [17]
+30112 Alluring Pot - Nomadic Warrior's Cookbook [21]
+30113 Beastlure Pot - Nomadic Warrior's Cookbook [5]
+30114 Roped Fire Pot - Nomadic Warrior's Cookbook [7]
+30116 Roped Fetid Pot - Nomadic Warrior's Cookbook [4]
+30117 Roped Poison Pot - Nomadic Warrior's Cookbook [14]
+30118 Roped Oil Pot - Nomadic Warrior's Cookbook [17]
+30120 Roped Fly Pot - Nomadic Warrior's Cookbook [24]
+30122 Roped Volcano Pot - Nomadic Warrior's Cookbook [20]
+30124 Volcano Pot - Nomadic Warrior's Cookbook [20]
+30126 Cursed-Blood Pot - Nomadic Warrior's Cookbook [12]
+30128 Rancor Pot - Nomadic Warrior's Cookbook [9]
+30131 Rot Pot - Nomadic Warrior's Cookbook [22]
+30301 Stanching Boluses - Nomadic Warrior's Cookbook [7]
+30302 Thawfrost Boluses - Nomadic Warrior's Cookbook [16]
+30303 Stimulating Boluses - Nomadic Warrior's Cookbook [16]
+30400 Pickled Turtle Neck - Nomadic Warrior's Cookbook [3]
+30402 Invigorating Cured Meat - Nomadic Warrior's Cookbook [2]
+30403 Clarifying Cured Meat - Nomadic Warrior's Cookbook [23]
+30404 Dappled Cured Meat - Nomadic Warrior's Cookbook [18]
+30405 Spellproof Dried Liver - Nomadic Warrior's Cookbook [11]
+30414 Invigorating White Cured Meat - Nomadic Warrior's Cookbook [2]
+30415 Clarifying White Cured Meat - Nomadic Warrior's Cookbook [23]
+30416 Dappled White Cured Meat - Nomadic Warrior's Cookbook [18]
+30504 Blood Grease - Nomadic Warrior's Cookbook [6]
+30506 Poison Grease - Nomadic Warrior's Cookbook [8]
+30509 Rot Grease - Nomadic Warrior's Cookbook [22]
+30514 Drawstring Blood Grease - Nomadic Warrior's Cookbook [6]
+30516 Drawstring Poison Grease - Nomadeic Warrior's Cookbook [8]
+30518 Drawstring Rot Grease - Nomadic Warrior's Cookbook [22]
+30201 Sweet Raisin - Nomadic Warrior's Cookbook [19]
+30202 Frozen Raisin - Nomadic Warrior's Cookbook [23]
+30601 Poisonbone Dart - Nomadic Warrior's Cookbook [14]
+30602 Crystal Dart - Nomadic Warrior's Cookbook [11]
+30701 Glowstone - Nomadic Warrior's Cookbook [2]
+30703 Soft Cotton - Nomadic Warrior's Cookbook [7]
+30704 Soap - Nomadic Warrior's Cookbook [17]
+30801 Warming Stone - Nomadic Warrior's Cookbook [19]
+32000 Bone Arrow (Fletched) - Nomadic Warrior's Cookbook [1]
+32001 Bone Arrow - Nomadic Warrior's Cookbook [1]
+32004 Poisonbone Arrow (Fletched) - Nomadic Warrior's Cookbook [3]
+32005 Poisonbone Arrow - Nomadic Warrior's Cookbook [3]
+32008 Stormwing Bone Arrow - Nomadic Warrior's Cookbook [10]
+32011 Rainbow Stone Arrow - Nomadic Warrior's Cookbook [7]
+32012 Shattershard Arrow - Nomadic Warrior's Cookbook [11]
+32017 Bloodbone Arrow (Fletched) - Nomadic Warrior's Cookbook [6]
+32018 Bloodbone Arrow - Nomadic Warrior's Cookbook [6]
+32021 Rotbone Arrow (Fletched) - Nomadic Warrior's Cookbook [15]
+32022 Rotbone Arrow - Nomadic Warrior's Cookbook [15]
+32100 Bone Great Arrow (Fletched) - Nomadic Warrior's Cookbook [1]
+32101 Bone Great Arrow - Nomadic Warrior's Cookbook [1]
+32200 Bone Bolt - Nomadic Warrior's Cookbook [1]
+32205 Poisonbone Bolt - Nomadic Warrior's Cookbook [3]
+32206 Bloodbone Bolt - Nomadic Warrior's Cookbook [6]
+32208 Rotbone Bolt - Nomadic Warrior's Cookbook [15]
+32300 Bone Ballista Bolt - Nomadic Warrior's Cookbook [13]
+
+# Armorer's Cookbook
+30101 Redmane Fire Pot - Armorer's Cookbook [4]
+30102 Giantsflame Fire Pot - Armorer's Cookbook [7]
+30300 Neutralizing Boluses - Armorer's Cookbook [2]
+30304 Preserving Boluses - Armorer's Cookbook [6]
+30401 Immunizing Cured Meat - Armorer's Cookbook [5]
+30406 Fireproof Dried Liver - Armorer's Cookbook [1]
+30411 Exalted Flesh - Armorer's Cookbook [3]
+30413 Immunizing White Cured Meat - Armorer's Cookbook [5]
+30500 Fire Grease - Armorer's Cookbook [1]
+30510 Drawstring Fire Grease - Armorer's Cookbook [1]
+32002 Firebone Arrow (Fletched) - Armorer's Cookbook [2]
+32003 Firebone Arrow - Armorer's Cookbook [2]
+32201 Firebone Bolt - Armorer's Cookbook [2]
+
+# Ancient Dragon Apostle's Cookbook
+30103 Lightning Pot - Ancient Dragon Apostle's Cookbook [2]
+30104 Ancient Dragonbolt Pot - Ancient Dragon Apostle's Cookbook [4]
+30115 Roped Lightning Pot - Ancient Dragon Apostle's Cookbook [2]
+30407 Lightningproof Dried Liver - Ancient Dragon Apostle's Cookbook [4]
+30501 Lightning Grease - Ancient Dragon Apostle's Cookbook [1]
+30508 Dragonwound Grease - Ancient Dragon Apostle's Cookbook [3]
+30511 Drawstring Lightning Grease - Ancient Dragon Apostle's Cookbook [1]
+32009 Lightningbone Arrow (Fletched) - Ancient Dragon Apostle's Cookbook [1]
+32010 Lightningbone Arrow - Ancient Dragon Apostle's Cookbook [1]
+32202 Lightningbone Bolt - Ancient Dragon Apostle's Cookbook [1]
+
+#  Missionary's Cookbook [1]
+30107 Holy Water Pot - Missionary's Cookbook [1]
+30108 Sacred Order Pot - Missionary's Cookbook [5]
+30123 Roped Holy Water Pot - Missionary's Cookbook [1]
+30305 Rejuvenating Boluses - Missionary's Cookbook [7]
+30408 Holyproof Dried Liver - Missionary's Cookbook [6]
+30409 Silver-Pickled Fowl Foot - Missionary's Cookbook [3]
+30410 Gold-Pickled Fowl Foot - Missionary's Cookbook [2]
+30503 Holy Grease - Missionary's Cookbook [4]
+30513 Drawstring Holy Grease - Missionary's Cookbook [4]
+30702 Grace Mimic - Missionary's Cookbook [2]
+30803 Scriptstone - Missionary's Cookbook [2]
+32015 Haligbone Arrow (Fletched) - Missionary's Cookbook [4]
+32016 Haligbone Arrow - Missionary's Cookbook [4]
+32204 Haligbone Bolt - Missionary's Cookbook [4]
+
+# Glintstone Craftsman's Cookbook [6]
+30109 Freezing Pot - Glintstone Craftsman's Cookbook [6]
+30119 Roped Magic Pot - Glintstone Craftsman's Cookbook [4]
+30125 Albinauric Pot - Glintstone Craftsman's Cookbook [3]
+30129 Magic Pot - Glintstone Craftsman's Cookbook [4]
+30130 Academy Magic Pot - Glintstone Craftsman's Cookbook [8]
+30502 Magic Grease - Glintstone Craftsman's Cookbook [5]
+30507 Freezing Grease - Glintstone Craftsman's Cookbook [2]
+30512 Drawstring Magic Grease - Glintstone Craftsman's Cookbook [5]
+30519 Shield Grease - Glintstone Craftsman's Cookbook [4]
+30800 Cuckoo Glintstone - Glintstone Craftsman's Cookbook [1]
+32013 Magicbone Arrow (Fletched) - Glintstone Craftsman's Cookbook [5]
+32014 Magicbone Arrow - Glintstone Craftsman's Cookbook [5]
+32019 Coldbone Arrow (Fletched) - Glintstone Craftsman's Cookbook [7]
+32020 Coldbone Arrow - Glintstone Craftsman's Cookbook [7]
+32203 Magicbone Bolt - Glintstone Craftsman's Cookbook [5]
+32207 Coldbone Bolt - Glintstone Craftsman's Cookbook [7]
+
+# Fevor's Cookbook
+30127 Sleep Pot - Fevor's Cookbook [1]
+30505 Soporific Grease - Fevor's Cookbook [2]
+30515 Drawstring Soporific Grease - Fevor's Cookbook [2]
+30804 Bewitching Branch - Fevor's Cookbook [3]
+32006 Sleepbone Arrow (Fletched) - Fevor's Cookbook [2]
+32007 Sleepbone Arrow - Fevor's Cookbook [2]
+32209 Sleepbone Bolt -  Fevor's Cookbook [2]
+
+# Frenzied's Cookbook
+30306 Clarifying Boluses - Frenzied's Cookbook [1]
+30802 Frenzyflame Stone - Frenzied’s Cookbook [2]
+
+# Perfumer's Cookbook
+30900 Uplifting Aromatic - Perfumer's Cookbook [1]
+30901 Spark Aromatic - Perfumer's Cookbook [1]
+30902 Ironjar Aromatic - Perfumer's Cookbook [3]
+30903 Bloodboil Aromatic - Perfumer's Cookbook [2]
+30904 Poison Spraymist - Perfumer's Cookbook [2]
+30905 Acid Spraymist - Perfumer's Cookbook [4]

@@ -1,0 +1,10 @@
+﻿#----------------------------------------
+# SignPool
+#----------------------------------------
+Used to setup a sign pool.
+
+#-------------------------
+# Unique Properties
+#-------------------------
+SignPartName:               The asset associated with this sign pool entity.
+UnkT04:                     Sign Pool event flag (unconfirmed)
