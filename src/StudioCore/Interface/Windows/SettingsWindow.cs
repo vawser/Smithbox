@@ -735,8 +735,8 @@ public class SettingsWindow
                 ImGui.DragFloat("##imagePreviewScale", ref CFG.Current.Param_FieldContextMenu_ImagePreviewScale, 0.1f, 0.1f, 10.0f);
                 ImguiUtils.ShowHoverTooltip("Scale of the previewed image.");
 
-                ImGui.Checkbox("Display image preview in field content menu", ref CFG.Current.Param_FieldContextMenu_ImagePreview_ContentMenu);
-                ImguiUtils.ShowHoverTooltip("Display image preview of any image index fields if possible within the field content menu.");
+                ImGui.Checkbox("Display image preview in field context menu", ref CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu);
+                ImguiUtils.ShowHoverTooltip("Display image preview of any image index fields if possible within the field context menu.");
 
                 ImGui.Checkbox("Display image preview in field column", ref CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn);
                 ImguiUtils.ShowHoverTooltip("Display image preview of any image index fields if possible at the bottom of the field column.");

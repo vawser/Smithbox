@@ -943,7 +943,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         return null;
     }
 
-    public bool ShowImagePreview(Param.Row context, TexRef textureRef)
+    public bool ShowImagePreview(Param.Row context, TexRef textureRef, bool displayImage = true)
     {
         // Display the texture
         LoadTextureContainer(textureRef.TextureContainer);
@@ -990,8 +990,17 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 var UV0 = new Vector2(left, top);
                 var UV1 = new Vector2(right, bottom);
 
+                if (CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu)
+                {
+                    displayImage = true;
+                }
+
                 // Display image
-                ImGui.Image(handle, size, UV0, UV1);
+                if (displayImage)
+                {
+                    ImGui.Image(handle, size, UV0, UV1);
+                }
+
                 return true;
             }
         }

@@ -813,15 +813,9 @@ public class EditorDecorations
     {
         var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
 
-        // TODO: lookup the ID match early here to cull the source image selectable if it is not an actual valid source for Meta entries that use multiple TexRefs (e.g. ER icons)
         foreach(var textureRef in reftypes)
         {
-            bool displayedImage = false;
-
-            if (CFG.Current.Param_FieldContextMenu_ImagePreview_ContentMenu)
-            {
-                displayedImage = EditorContainer.TextureViewer.ShowImagePreview(context, textureRef);
-            }
+            bool displayedImage = EditorContainer.TextureViewer.ShowImagePreview(context, textureRef, false);
 
             if (displayedImage)
             {
