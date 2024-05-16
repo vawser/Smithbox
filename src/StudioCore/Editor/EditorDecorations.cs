@@ -171,26 +171,9 @@ public class EditorDecorations
         {
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
             ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-            ImGui.TextUnformatted(@"   [");
 
-            var first = true;
-            foreach (TexRef r in textureRef)
-            {
-                if (first)
-                {
-                    ImGui.SameLine();
-                    ImGui.TextUnformatted(r.getStringForm());
-                }
-                else
-                {
-                    ImGui.TextUnformatted("    " + r.getStringForm());
-                }
+            ImGui.TextUnformatted(@"   [Image]");
 
-                first = false;
-            }
-
-            ImGui.SameLine();
-            ImGui.TextUnformatted("]");
             ImGui.PopStyleColor();
             ImGui.PopStyleVar();
         }
@@ -401,29 +384,9 @@ public class EditorDecorations
     public static void TextureRefSelectable(EditorScreen ownerScreen, List<TexRef> texRefs, Param.Row context,
         dynamic oldval)
     {
-        List<string> textsToPrint = UICache.GetCached(ownerScreen, (int)oldval, "PARAM META TEXREF", () =>
-        {
-            var fileNames = new List<string>();
-            foreach(var texRef in texRefs)
-            {
-                fileNames.Add(texRef.TextureFile);
-            }
-
-            return fileNames;
-        });
-
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_FmgRef_Text);
-        foreach (var text in textsToPrint)
-        {
-            if (string.IsNullOrWhiteSpace(text))
-            {
-                ImGui.TextUnformatted("%null%");
-            }
-            else
-            {
-                ImGui.TextUnformatted(text);
-            }
-        }
+
+        ImGui.TextUnformatted("View Source Image");
 
         foreach (var texRef in texRefs)
         {
@@ -850,16 +813,22 @@ public class EditorDecorations
     {
         var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
 
+        // TODO: lookup the ID match early here to cull the source image selectable if it is not an actual valid source for Meta entries that use multiple TexRefs (e.g. ER icons)
         foreach(var textureRef in reftypes)
         {
-            if (ImGui.Selectable($@"View {textureRef.TextureFile}"))
+            bool displayedImage = false;
+
+            if (CFG.Current.Param_FieldContextMenu_ImagePreview_ContentMenu)
             {
-                EditorCommandQueue.AddCommand($@"texture/view/{textureRef.TextureContainer}/{textureRef.TextureFile}");
+                displayedImage = EditorContainer.TextureViewer.ShowImagePreview(context, textureRef);
             }
 
-            if(CFG.Current.Param_FieldContextMenu_ImagePreview_ContentMenu)
+            if (displayedImage)
             {
-                EditorContainer.TextureViewer.ShowImagePreview(context, textureRef);
+                if (ImGui.Selectable($@"View {textureRef.TextureFile}"))
+                {
+                    EditorCommandQueue.AddCommand($@"texture/view/{textureRef.TextureContainer}/{textureRef.TextureFile}");
+                }
             }
 
             if (context == null || executor == null)

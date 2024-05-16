@@ -68,6 +68,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     private static Dictionary<string, string> ContainerNameCache = new Dictionary<string, string>();
 
+    private SubTexture _cachedPreviewSubtexture;
 
     public TextureViewerScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -942,7 +943,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         return null;
     }
 
-    public void ShowImagePreview(Param.Row context, TexRef textureRef)
+    public bool ShowImagePreview(Param.Row context, TexRef textureRef)
     {
         // Display the texture
         LoadTextureContainer(textureRef.TextureContainer);
@@ -960,84 +961,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             // Get the SubTexture that matches the current field value
             if (_cachedPreviewSubtexture == null)
             {
-                // Guard clauses checking the validity of the TextureRef
-                if (context[textureRef.TargetField].Value.Value == null)
-                {
-                    return;
-                }
-
-                var imageIdx = $"{context[textureRef.TargetField].Value.Value}";
-
-                SubTexture subTex = null;
-
-                // Dynamic lookup based on meta information
-                if (textureRef.LookupType == "Direct")
-                {
-                    subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, textureRef.SubTexturePrefix);
-                }
-
-                // Hardcoded logic for AC6
-                if (Project.Type == ProjectType.AC6)
-                {
-                    if (textureRef.LookupType == "Booster")
-                    {
-                        subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, "BS_A_");
-                    }
-                    if (textureRef.LookupType == "Weapon")
-                    {
-                        // Check for WP_A_ match
-                        subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, "WP_A_");
-
-                        // If failed, check for WP_R_ match
-                        if (subTex == null)
-                        {
-                            subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, "WP_R_");
-                        }
-
-                        // If failed, check for WP_L_ match
-                        if (subTex == null)
-                        {
-                            subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, "WP_L_");
-                        }
-                    }
-                    if (textureRef.LookupType == "Armor")
-                    {
-                        var prefix = "";
-
-                        var headEquip = context["headEquip"].Value.Value.ToString();
-                        var bodyEquip = context["bodyEquip"].Value.Value.ToString();
-                        var armEquip = context["armEquip"].Value.Value.ToString();
-                        var legEquip = context["legEquip"].Value.Value.ToString();
-
-                        if(headEquip == "1")
-                        {
-                            prefix = "HD_M_";
-                        }
-                        if (bodyEquip == "1")
-                        {
-                            prefix = "BD_M_";
-                        }
-                        if (armEquip == "1")
-                        {
-                            prefix = "AM_M_";
-                        }
-                        if (legEquip == "1")
-                        {
-                            prefix = "LG_M_";
-                        }
-
-                        // Check for match
-                        subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, prefix);
-                    }
-                }
-
-                // Hardcoded logic for ER
-                if (Project.Type == ProjectType.ER)
-                {
-
-                }
-
-                _cachedPreviewSubtexture = subTex;
+                _cachedPreviewSubtexture = GetPreviewSubTexture(context, textureRef);
             }
 
             if (texRes != null && _cachedPreviewSubtexture != null)
@@ -1068,9 +992,92 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
                 // Display image
                 ImGui.Image(handle, size, UV0, UV1);
+                return true;
             }
         }
+
+        return false;
     }
 
-    private SubTexture _cachedPreviewSubtexture;
+    private SubTexture GetPreviewSubTexture(Param.Row context, TexRef textureRef)
+    {
+        // Guard clauses checking the validity of the TextureRef
+        if (context[textureRef.TargetField] == null)
+        {
+            return null;
+        }
+
+        var imageIdx = $"{context[textureRef.TargetField].Value.Value}";
+
+        SubTexture subTex = null;
+
+        // Dynamic lookup based on meta information
+        if (textureRef.LookupType == "Direct")
+        {
+            subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, textureRef.SubTexturePrefix);
+        }
+
+        // Hardcoded logic for AC6
+        if (Project.Type == ProjectType.AC6)
+        {
+            if (textureRef.LookupType == "Booster")
+            {
+                subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, "BS_A_");
+            }
+            if (textureRef.LookupType == "Weapon")
+            {
+                // Check for WP_A_ match
+                subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, "WP_A_");
+
+                // If failed, check for WP_R_ match
+                if (subTex == null)
+                {
+                    subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, "WP_R_");
+                }
+
+                // If failed, check for WP_L_ match
+                if (subTex == null)
+                {
+                    subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, "WP_L_");
+                }
+            }
+            if (textureRef.LookupType == "Armor")
+            {
+                var prefix = "";
+
+                var headEquip = context["headEquip"].Value.Value.ToString();
+                var bodyEquip = context["bodyEquip"].Value.Value.ToString();
+                var armEquip = context["armEquip"].Value.Value.ToString();
+                var legEquip = context["legEquip"].Value.Value.ToString();
+
+                if (headEquip == "1")
+                {
+                    prefix = "HD_M_";
+                }
+                if (bodyEquip == "1")
+                {
+                    prefix = "BD_M_";
+                }
+                if (armEquip == "1")
+                {
+                    prefix = "AM_M_";
+                }
+                if (legEquip == "1")
+                {
+                    prefix = "LG_M_";
+                }
+
+                // Check for match
+                subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, prefix);
+            }
+        }
+
+        // Hardcoded logic for ER
+        if (Project.Type == ProjectType.ER)
+        {
+
+        }
+
+        return subTex;
+    }
 }
