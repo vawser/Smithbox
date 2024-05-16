@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <startPad IsHidden="" />
+    <textId AltName="Message Text ID" FmgRef="TalkMsg" />
+    
+    <endPad IsHidden="" />
+  </Field>
   <Self />
 </PARAMMETA>

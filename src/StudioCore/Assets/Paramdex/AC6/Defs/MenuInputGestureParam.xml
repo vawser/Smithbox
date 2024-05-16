@@ -6,7 +6,7 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="u16 UnkUshort0x00"></Field>
+    <Field Def="s16 UnkUshort0x00"></Field>
     <Field Def="u16 UnkUshort0x02"></Field>
     <Field Def="dummy8 Unk0x04[3]"></Field>
     <Field Def="s8 UnkSbyte0x07"></Field>

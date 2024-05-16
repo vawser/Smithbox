@@ -1,4 +1,5 @@
 "MENU_PROPERTY_DISPLAY_CONDITION_TYPE"
 "u16"
-"なし","0"
-"ブースターのみ","1023"
+"None","0"
+"Booster only","1023"
+

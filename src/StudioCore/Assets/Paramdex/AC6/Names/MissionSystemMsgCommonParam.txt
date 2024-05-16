@@ -1,0 +1,21 @@
+130 AP at 30%.
+150 AP at 50%.
+200 Left hand ammunition depleted.
+210 Left hand ammunition at 10%.
+230 Left hand ammunition at 30%.
+250 Left hand ammunition at 50%.
+300 Right hand ammunition depleted.
+310 Right hand ammunition at 10%.
+330 Right hand ammunition at 30%.
+350 Right hand ammunition at 50%.
+400 Left shoulder ammunition depleted.
+410 Left shoulder ammunition at 10%.
+430 Left shoulder ammunition at 30%.
+450 Left shoulder ammunition at 50%.
+500 Right shoulder ammunition depleted.
+510 Right shoulder ammunition at 10%.
+530 Right shoulder ammunition at 30%.
+550 Right shoulder ammunition at 50%.
+1200 No repair kits remaining.
+1201 One repair kits remaining.
+1202 Two repair kits remaining.

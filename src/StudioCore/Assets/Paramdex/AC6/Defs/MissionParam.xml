@@ -6,19 +6,16 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="dummy8 startPad[4]"></Field>
     <Field Def="u16 overlayMapId"></Field>
     <Field Def="u16 missionObjectiveTextId"></Field>
     <Field Def="s32 baseMapId"></Field>
-    <Field Def="s32 UnkInt0x0C"></Field>
+    <Field Def="dummy8 pad1[4]"></Field>
     <Field Def="s8 unkSkyLighting"></Field>
-    <Field Def="u8 Unk0x11"></Field>
-    <Field Def="u16 UnkUshort0x12"></Field>
+    <Field Def="dummy8 pad2[3]"></Field>
     <Field Def="s8 missionType"></Field>
     <Field Def="u8 missionAltType"></Field>
-    <Field Def="u8 Unk0x16"></Field>
-    <Field Def="u8 Unk0x17"></Field>
-    <Field Def="s32 UnkInt0x18"></Field>
+    <Field Def="dummy8 pad3[6]"></Field>
     <Field Def="f32 UnkFloat0x1C"></Field>
     <Field Def="u8 UnkByte0x20"></Field>
     <Field Def="u8 Unk0x21"></Field>
@@ -26,11 +23,7 @@
     <Field Def="s32 UnkInt0x24"></Field>
     <Field Def="s32 missionBriefingMovieId"></Field>
     <Field Def="s32 currencyReward"></Field>
-    <Field Def="s32 Unk0x30"></Field>
-    <Field Def="s32 Unk0x34"></Field>
-    <Field Def="s32 Unk0x38"></Field>
-    <Field Def="s32 Unk0x3C"></Field>
-    <Field Def="s32 Unk0x40"></Field>
+    <Field Def="dummy8 pad4[20]"></Field>
     <Field Def="u8 UnkByte0x44"></Field>
     <Field Def="u8 UnkByte0x45"></Field>
     <Field Def="u8 UnkByte0x46"></Field>
@@ -55,22 +48,22 @@
     <Field Def="f32 ammoScoreMultiplier"></Field>
     <Field Def="f32 pointsScoreMultiplier"></Field>
     <Field Def="f32 timeScoreMultiplier"></Field>
-    <Field Def="f32 UnkFloat0x98"></Field>
+    <Field Def="f32 timeScoreMin"></Field>
     <Field Def="f32 timeScoreMax"></Field>
-    <Field Def="s32 sRankMaxScore"></Field>
-    <Field Def="s32 aRankMaxScore"></Field>
-    <Field Def="s32 bRankMaxScore"></Field>
-    <Field Def="s32 cRankMaxScore"></Field>
-    <Field Def="s32 Unk0xB0"></Field>
-    <Field Def="s32 Unk0xB4"></Field>
-    <Field Def="s32 Unk0xB8"></Field>
-    <Field Def="s32 Unk0xBC"></Field>
-    <Field Def="s32 Unk0xC0"></Field>
-    <Field Def="s32 Unk0xC4"></Field>
-    <Field Def="s32 Unk0xC8"></Field>
-    <Field Def="s32 Unk0xCC"></Field>
-    <Field Def="s32 Unk0xD0"></Field>
-    <Field Def="s32 Unk0xD4"></Field>
+    <Field Def="u32 sRankMaxScore"></Field>
+    <Field Def="u32 aRankMaxScore"></Field>
+    <Field Def="u32 bRankMaxScore"></Field>
+    <Field Def="u32 cRankMaxScore"></Field>
+    <Field Def="s32 eventObjectiveMsgId5"></Field>
+    <Field Def="s32 eventObjectiveReward5"></Field>
+    <Field Def="s32 eventObjectiveMsgId6"></Field>
+    <Field Def="s32 eventObjectiveReward6"></Field>
+    <Field Def="s32 eventObjectiveMsgId7"></Field>
+    <Field Def="s32 eventObjectiveReward7"></Field>
+    <Field Def="s32 eventObjectiveMsgId8"></Field>
+    <Field Def="s32 eventObjectiveReward8"></Field>
+    <Field Def="s32 eventObjectiveMsgId9"></Field>
+    <Field Def="s32 eventObjectiveReward9"></Field>
     <Field Def="s32 enemyObjectiveMsgId0"></Field>
     <Field Def="s32 enemyObjectiveReward0"></Field>
     <Field Def="s32 enemyObjectiveMsgId1"></Field>
@@ -106,7 +99,6 @@
     <Field Def="s16 UnkShort0x14E"></Field>
     <Field Def="f32 Unk0x150"></Field>
     <Field Def="f32 Unk0x154"></Field>
-    <Field Def="s32 Unk0x158"></Field>
-    <Field Def="s32 Unk0x15C"></Field>
+    <Field Def="dummy8 endPad[8]"></Field>
   </Fields>
 </PARAMDEF>

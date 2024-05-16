@@ -10,9 +10,9 @@
     <Field Def="s8 UnkSbyte0x02"></Field>
     <Field Def="u8 Unk0x03"></Field>
     <Field Def="s32 UnkInt0x04"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
+    <Field Def="s32 UnkInt0x08"></Field> <!-- Might be messageBoxAutoNaviControlType -->
     <Field Def="s32 UnkInt0x0C"></Field>
-    <Field Def="s32 UnkInt0x10"></Field>
+    <Field Def="s32 messageBoxAutoNaviControlType"></Field>
     <Field Def="s32 UnkInt0x14"></Field>
   </Fields>
 </PARAMDEF>

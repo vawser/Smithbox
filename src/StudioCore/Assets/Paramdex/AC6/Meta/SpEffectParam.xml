@@ -432,12 +432,12 @@
     <registStatus_Plasma AltName="Status Inflict +: Plasma" Wiki="A value to be added to the target's Plasma resistance when it hits\nRequires State Info 6" />
     <registStatus_ElecDischargeType2 AltName="Status Inflict +: Electric Discharge (Type 2)" Wiki="A number to be added to the target Unknown resistance when hit\nRequires State Info 116" />
     <fallDamageRate AltName="Fall Damage %" Wiki="Multiply the damage calculation when falling" />
-    <soulRate AltName="COAM Gain %" Wiki="The amount of soul acquired when defeating an enemy is added by the specified multiple.\nRequires State Info 76" />
+    <soulRate AltName="Mission Score Gain %" Wiki="The amount of soul acquired when defeating an enemy is added by the specified multiple.\nRequires State Info 76" />
     <equipWeightChangeRate AltName="Max Equip Load %" Wiki="Multiply the maximum equipment weight by the set magnification" />
     <allItemWeightChangeRate AltName="Item Weight %" Wiki="Multiply the maximum weight you have by the set magnification" />
-    <soul AltName="COAM Gain +" Wiki="Add the set value to the possessed soul" />
+    <soul AltName="Mission Score Gain +" Wiki="Add the set value to the possessed soul" />
     <animIdOffset AltName="Anim ID Offset" Wiki="Anime ID offset (invalid-1)" />
-    <haveSoulRate AltName="COAM Possession Amount %" Wiki="For enemy lap effect. It is applied when the soul goes out from the set character." />
+    <haveSoulRate AltName="Mission Score Amount %" Wiki="For enemy lap effect. It is applied when the soul goes out from the set character." />
     <targetPriority AltName="Target Priority" Wiki="Chance for an enemy to switch aggro targets to/away the effect's owner. Values range from -1 to 1. +1 = 100% chance to target owner instead of current target, -1 = 100% chance to target somebody else instead of current target (effect owner)." />
     <sightSearchEnemyCut AltName="Enemy Vision Adjustment" Wiki="Correct the ease of finding by a magnification" />
     <hearingSearchEnemyCut AltName="Enemy Listen Adjustment" Wiki="Correct the loudness of the AI sound emitted by the magnification" />
@@ -506,7 +506,7 @@
     <bGameClearBonus AltName="Enable for Game Clear" Wiki="Whether it is for the game clear lap bonus." IsBool="" />
     <magParamChange AltName="Affects Sorcery" Wiki="Set whether or not it is effective against magic" IsBool="" />
     <miracleParamChange AltName="Affects Incantation" Wiki="Set whether or not it is effective against miracles" IsBool="" />
-    <clearSoul AltName="Clear Held COAM" Wiki="Possession soul becomes 0." IsBool="" />
+    <clearSoul AltName="Clear Mission Score" Wiki="Possession soul becomes 0." IsBool="" />
     <requestSos AltName="Request: Friendly Phantom Summon" Wiki="If checked, issue an SOS sign request when activated" IsBool="" />
     <requestBlackSos AltName="Request: Hostile Phantom Summon" Wiki="If checked, issue a black SOS sign request when activated" IsBool="" />
     <requestForceJoinBlackSos AltName="Request: Invasion" Wiki="If checked, issue an intrusion_A request when activated" IsBool="" />

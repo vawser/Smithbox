@@ -1,6 +1,7 @@
 "MENU_PROPERTY_EDIT_TYPE"
 "u8"
 "----","0"
-"リスト選択","1"
-"スライダ-","2"
-"ボタン","3"
+"List selection","1"
+"Slider-","2"
+"Button","3"
+

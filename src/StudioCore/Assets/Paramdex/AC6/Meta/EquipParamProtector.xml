@@ -195,9 +195,9 @@
     <legsPartBoosterParamId AltName="Leg Part Booster Param ID" Refs="EquipParamBooster" />
     <movementAcTypeParamId AltName="Movement Type Param ID" Refs="MovementAcTypeParam" />
     <chrActTurnParamId AltName="Character Act Turn Param ID" Refs="ChrActTurnParam" />
-    <antiKineticDefense AltName="Defense: Anti-Kinetic" />
-    <antiEnergyDefense AltName="Defense: Anti-Energy" />
-    <antiExplosiveDefense AltName="Defense: Anti-Explosive" />
+    <antiKineticDefense AltName="Defense: Anti-Kinetic" Wiki="This value is multiplied by the constant value defined for the piece in MenuPropertySpecParam.\nHead: 3050\nCore: 3060\nArms: 3070\nLegs: 3080\n\nConstant value is 10 by default." />
+    <antiEnergyDefense AltName="Defense: Anti-Energy" Wiki="This value is multiplied by the constant value defined for the piece in MenuPropertySpecParam.\nHead: 3051\nCore: 3061\nArms: 3071\nLegs: 3081\n\nConstant value is 10 by default." />
+    <antiExplosiveDefense AltName="Defense: Anti-Explosive" Wiki="This value is multiplied by the constant value defined for the piece in MenuPropertySpecParam.\nHead: 3052\nCore: 3062\nArms: 3072\nLegs: 3082\n\nConstant value is 10 by default." />
     <antiCoralDefense AltName="Defense: Anti-Coral" />
     <antiDarkDefense AltName="Defense: Anti-Dark" />
     <systemRecovery AltName="System Recovery" Wiki="Actual effects of System Recovery stat, which increases resistance to status effects." />

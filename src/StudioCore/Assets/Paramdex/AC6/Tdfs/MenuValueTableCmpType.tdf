@@ -1,6 +1,7 @@
 "MENU_VALUE_TABLE_CMP_TYPE"
 "s8"
-"テーブル値と等しい","0"
-"テーブル値以上","1"
-"常に一致","2"
-"定義数","3"
+"Equal to table value","0"
+"Greater than or equal to table value","1"
+"Always match","2"
+"Number of definitions","3"
+

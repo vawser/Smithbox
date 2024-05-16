@@ -206,7 +206,7 @@
     <hitYOffset AltName="Display Position - Height Offset" Wiki="Offset of the model display position in the Y (height) direction. It can be floated from the hit position." />
     <hp AltName="Base AP" Wiki="Death grace." />
     <mp AltName="Base FP" Wiki="Magic usage." />
-    <getSoul AltName="Base COAM" Wiki="The amount of COAM currency that a character can get at the time of death." />
+    <getSoul AltName="Base Mission Score" Wiki="The amount of Misson Score that a character gives at the time of death." />
     <ItemLotId1 AltName="Itemlot ID [1]" Wiki="Specify the itemlot ID given at the time of death. Please set only one of them." Refs="ItemLotParam"/>
     <ItemLotId2 AltName="Itemlot ID [2]" Wiki="Specify the itemlot ID given at the time of death. Please set only one of them." Refs="ItemLotParam"/>
     <ItemLotId3 AltName="Itemlot ID [3]" Wiki="Specify the itemlot ID given at the time of death. Please set only one of them." Refs="ItemLotParam"/>
