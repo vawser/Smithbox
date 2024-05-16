@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <equipModelId AltName="Equip Model ID" />
+    <equipModelId AltName="Equip Model ID" TextureRef="Booster/01_common/SB_PartsThumbnails/equipModelId/" />
     <weight AltName="Weight" Wiki="Weight of the part." />
     <energyLoad AltName="Energy Load" Wiki="EN load of the part." />
     <boostModeEnergyCost_Grounded AltName="Boost Mode Energy Cost - Grounded" />
@@ -42,7 +42,7 @@
     <assaultBoostDodgeVelocity_During AltName="Assault Boost Dodge: Continuous Velocity" />
     <assaultBoostDodgeDuration AltName="Assault Boost Dodge Duration" />
     <assaultBoostDodgeEnergyCost AltName="Assault Boost Dodge: Energy Cost" />
-    <corporationTextureId AltName="Corporation Texture ID" TextureRef="01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" />
+    <corporationTextureId AltName="Corporation Texture ID" TextureRef="Direct/01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" />
     <upwardThrustMomentum AltName="Boost Mode - Upwards Thrust - Momentum" Wiki="Determines the distance you will continue to rise after the end of upwards boosting." />
   </Field>
   <Self />

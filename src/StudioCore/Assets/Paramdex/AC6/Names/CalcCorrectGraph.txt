@@ -28,7 +28,7 @@
 280 WEIGHT - Kick Damage Adjustment
 281 WEIGHT - Unknown Weight Bonus
 282 WEIGHT - Tetrapod: Hover Speed
-283 WEIGHT - Unknown Boost Component
+283 WEIGHT - Tetrapod: Hover Velocity
 310 ANGLE OF MOVEMENT INTERTIA VS DIRECTION - Boost Mode Speed
 320 ARM LOAD - Quick Boost Recovery Time
 321 ARM LOAD - Quick Boost EN Cost

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <menuModelId AltName="Menu Model ID" />
-    <corporationTextureId AltName="Corporation Texture ID" TextureRef="01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" />
+    <menuModelId AltName="Menu Model ID" TextureRef="Weapon/01_common/SB_PartsThumbnails/menuModelId/" />
+    <corporationTextureId AltName="Corporation Texture ID" TextureRef="Direct/01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" />
     <sortId AltName="Sort ID" />
     <weight AltName="Weight" />
     <energyCapacity AltName="Energy Capacity" />

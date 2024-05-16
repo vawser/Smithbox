@@ -79,7 +79,7 @@
     <vagrantItemLotId AltName="Vagrant: Item Lot ID" />
     <vagrantBonusEneDropItemLotId AltName="Vagrant Bonus Enemy: Item Lot ID" />
     <vagrantItemEneDropItemLotId AltName="Vagrant Item Enemy: Item Lot ID" />
-    <equipModelId AltName="Equip Model ID" Wiki="Equipment model number." />
+    <equipModelId AltName="Equip Model ID" Wiki="Equipment model number." TextureRef="Weapon/01_common/SB_PartsThumbnails/equipModelId/" />
     <durability AltName="Durability" Wiki="Initial durability." />
     <durabilityMax AltName="Max Durability" Wiki="New durability." />
     <attackThrowEscape AltName="Throw Escape Damage" Wiki="Basic value of throw-through attack power" />
@@ -292,7 +292,7 @@
     <unkIsSpecializationType_7 AltName="Specialization Type: Unknown" IsBool="" />
     <unkIsSpecializationType_8 AltName="Specialization Type: Unknown" IsBool="" />
     <chargeTime_Level2 AltName="Charge Time (Level 2)" Wiki="Amount of time (in seconds) it takes to fully charge to level 2, for when weapon permits charging past level 1." />
-    <corporationTextureId AltName="Corporation Texture ID" TextureRef="01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" Wiki="Determines which corporation icon is used for the weapon." />
+    <corporationTextureId AltName="Corporation Texture ID" TextureRef="Direct/01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" Wiki="Determines which corporation icon is used for the weapon." />
     <equipmentMenuManageCategoryParamId AltName="Equipment Menu Category" Refs="EquipmentMenuManageCategoryParam" Wiki="References the EquipmentMenuManageCategoryParam" />
     <initialGuardDuration AltName="Initial Guard: Duration" Wiki="Duration of the Initial Guard damage mitigation window." />
     <initialGuardImpactDampening AltName="Initial Guard: Impact Dampening" Wiki="Ability to mitigate ACS strain whileperforming an Initial Guard." />

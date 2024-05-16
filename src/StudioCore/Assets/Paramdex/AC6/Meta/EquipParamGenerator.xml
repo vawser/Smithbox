@@ -9,7 +9,7 @@
     </Enum>
   </Enums>
   <Field>
-    <menuModelId AltName="Menu Model ID" />
+    <menuModelId AltName="Menu Model ID" TextureRef="Weapon/01_common/SB_PartsThumbnails/menuModelId/" />
     <weight AltName="Weight" />
     <energyCapacity AltName="Energy Capacity" />
     <energyOutput AltName="Energy Output" />
@@ -18,7 +18,7 @@
     <supplyRecovery AltName="Energy Supply Recovery" />
     <postRecoveryEnSupply AltName="Post Recovery Energy Supply" />
     <energyFirearmSpec AltName="Energy Firearm Specialization" />
-    <corporationTextureId AltName="Corporation Texture ID" TextureRef="01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" />
+    <corporationTextureId AltName="Corporation Texture ID" TextureRef="Direct/01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" />
     <colorSfxType AltName="Color SFX Type" Enum="GeneratorColorSfxTypeEnum" Wiki="Determines SFX used by boosters. Coral also affects core expansion SFX."/> 
   </Field>
   <Self />

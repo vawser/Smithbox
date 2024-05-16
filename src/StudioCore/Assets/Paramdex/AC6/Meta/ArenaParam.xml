@@ -11,7 +11,7 @@
     <repeatCoamReward AltName="Repeat COAM Reward" Wiki="Money granted on repeat completions." />
     <introCutsceneId AltName="Intro Cutscene ID" Wiki="Cutscene ID to play at the start of the mission." CutsceneAlias="" />
     <bgmSoundId AltName="BGM Sound ID" Wiki="Background music to play during the mission." SoundAlias="" />
-    <rankTextureId AltName="Rank Texture ID" Wiki="Texture ID defined in the SB_ArenaRank layout." TextureRef="01_common/SB_ArenaRank/rankTextureId/ArenaRank_" />
+    <rankTextureId AltName="Rank Texture ID" Wiki="Texture ID defined in the SB_ArenaRank layout." TextureRef="Direct/01_common/SB_ArenaRank/rankTextureId/ArenaRank_" />
     <outroCutsceneId AltName="Outro Cutscene ID" Wiki="Cutscene ID to play at the end of the mission." CutsceneAlias="" />
     <pad08 AltName="" IsHidden=""/>
     <pad24 AltName="" IsHidden=""/>

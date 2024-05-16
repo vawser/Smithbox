@@ -58,7 +58,7 @@
     <faceScaleF_MaxX AltName="Facescale - Female - Max X" Wiki="" />
     <faceScaleF_MaxZ AltName="Facescale - Female - Max Z" Wiki="" />
     <qwcId AltName="QWC ID" Wiki="QWC parameter ID" />
-    <equipModelId AltName="Equip Model ID" Wiki="Equipment model number." />
+    <equipModelId AltName="Equip Model ID" Wiki="Equipment model number." TextureRef="Armor/01_common/SB_PartsThumbnails/equipModelId/" />
     <iconIdM AltName="Icon ID - Male" Wiki="Men's menu icon ID." ExtRefs="hi,menu\hi\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds;low,menu\low\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds" />
     <iconIdF AltName="Icon ID - Female" Wiki="Women's menu icon ID." ExtRefs="hi,menu\hi\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds;low,menu\low\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds" />
     <knockBack AltName="Knockback" Wiki="Knockback reduction value." />
@@ -184,7 +184,7 @@
     <recoilControl AltName="Arms: Recoil Control" Wiki="Affects how quickly weapon spread grows and shrinks while firing." />
     <tetrapodHoverDrainRate AltName="Tetrapod: Hover Drain Rate" />
     <tetrapodHoverQuickBoostVelocity AltName="Tetrapod: Hover Quick Boost Velocity" />
-    <corporationTextureId AltName="Corporation Texture ID" TextureRef="01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" />
+    <corporationTextureId AltName="Corporation Texture ID" TextureRef="Direct/01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" />
     <equipmentMenuManageCategoryParamId AltName="Equipment Menu Management Category" Refs="EquipmentMenuManageCategoryParam" />
     <demonstrationVideoBinkId AltName="Demonstration Video Bink ID" Wiki="Refers to the video filename in Game/movie/" MovieAlias="" />
     <recoilKnockbackVelocityCorrection_Grounded AltName="Recoil Knockback % (Grounded)" Wiki="Multiplier of backwards velocity applied to the shooter when using a weapon on the ground.\nApplies conditionally, such as not applying when AC has tank legs."/>

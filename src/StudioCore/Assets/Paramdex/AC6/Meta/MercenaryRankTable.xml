@@ -2,7 +2,7 @@
 <PARAMMETA XmlVersion="0">
   <Field>
     <UnkInt0x00 IsHidden="" />
-    <mercenaryRankIcon AltName="Hunter Class Icon ID" TextureRef="01_common/SB_MercenaryRank/mercenaryRankIcon/MercenaryRank_" />
+    <mercenaryRankIcon AltName="Hunter Class Icon ID" TextureRef="Direct/01_common/SB_MercenaryRank/mercenaryRankIcon/MercenaryRank_" />
     
     <Unk0x0A IsHidden="" />
     <UnkInt0x0C IsHidden="" />

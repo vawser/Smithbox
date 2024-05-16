@@ -398,29 +398,15 @@ public class EditorDecorations
         ImGui.PopStyleColor();
     }
 
-    private static List<(string, string, string, string)> resolveTextureRefs(List<TexRef> textureRefs, Param.Row context)
-    {
-        List<(string, string, string, string)> newTextureRefs = new();
-
-        foreach (var entry in textureRefs)
-        {
-            newTextureRefs.Add((entry.textureContainer, entry.textureFile, entry.field, entry.namePrepend));
-        }
-
-        return newTextureRefs;
-    }
-
     public static void TextureRefSelectable(EditorScreen ownerScreen, List<TexRef> texRefs, Param.Row context,
         dynamic oldval)
     {
         List<string> textsToPrint = UICache.GetCached(ownerScreen, (int)oldval, "PARAM META TEXREF", () =>
         {
-            List<(string, string, string, string)> refs = resolveTextureRefs(texRefs, context);
-
             var fileNames = new List<string>();
-            foreach(var (container, file, field, prepend) in refs)
+            foreach(var texRef in texRefs)
             {
-                fileNames.Add(file);
+                fileNames.Add(texRef.TextureFile);
             }
 
             return fileNames;
@@ -439,15 +425,11 @@ public class EditorDecorations
             }
         }
 
-        List<(string, string, string, string)> refs = resolveTextureRefs(texRefs, context);
-        foreach (var (container, file, field, prepend) in refs)
+        foreach (var texRef in texRefs)
         {
             if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
             {
-                if (field != "" && context[field].Value.Value != null)
-                {
-                    EditorContainer.TextureViewer.ShowImagePreview(container, file, $"{context[field].Value.Value}", prepend);
-                }
+                EditorContainer.TextureViewer.ShowImagePreview(context, texRef);
             }
         }
 
@@ -665,9 +647,9 @@ public class EditorDecorations
             else if (textureRefs != null)
             {
                 TexRef primaryRef = textureRefs.FirstOrDefault();
-                if (primaryRef?.textureContainer != null && primaryRef?.textureFile != null)
+                if (primaryRef?.TextureContainer != null && primaryRef?.TextureFile != null)
                 {
-                    EditorCommandQueue.AddCommand($@"texture/view/{primaryRef?.textureContainer}/{primaryRef?.textureFile}");
+                    EditorCommandQueue.AddCommand($@"texture/view/{primaryRef?.TextureContainer}/{primaryRef?.TextureFile}");
                 }
             }
         }
@@ -866,23 +848,18 @@ public class EditorDecorations
 
     public static void PropertyRowTextureRefsContextItems(List<TexRef> reftypes, Param.Row context, ActionManager executor)
     {
-        // Add Goto statements
-        List<(string, string, string, string)> refs = resolveTextureRefs(reftypes, context);
-
         var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
-        foreach(var (container, file, field, prepend) in refs)
+
+        foreach(var textureRef in reftypes)
         {
-            if (ImGui.Selectable($@"View {file}"))
+            if (ImGui.Selectable($@"View {textureRef.TextureFile}"))
             {
-                EditorCommandQueue.AddCommand($@"texture/view/{container}/{file}");
+                EditorCommandQueue.AddCommand($@"texture/view/{textureRef.TextureContainer}/{textureRef.TextureFile}");
             }
 
             if(CFG.Current.Param_FieldContextMenu_ImagePreview_ContentMenu)
             {
-                if (field != "" && context[field].Value.Value != null)
-                {
-                    EditorContainer.TextureViewer.ShowImagePreview(container, file, $"{context[field].Value.Value}", prepend);
-                }
+                EditorContainer.TextureViewer.ShowImagePreview(context, textureRef);
             }
 
             if (context == null || executor == null)
