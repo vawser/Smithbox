@@ -240,6 +240,7 @@
     <None Update="Assets\Themes\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\EMEVD\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Shoebox\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Thumbnails\**" CopyToOutputDirectory="PreserveNewest" />
     
   </ItemGroup>
 

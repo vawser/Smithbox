@@ -1,0 +1,29 @@
+{
+    "assets": [
+        {
+            "id": "aeg000_520",
+            "name": "Dummy",
+            "tags": [
+                "dummy"
+            ]
+        }
+    ],
+    "characters": [
+        {
+            "id": "c3260",
+            "name": "Dummy",
+            "tags": [
+                "dummy"
+            ]
+        }
+    ],
+    "parts": [
+        {
+            "id": "am_m_6010",
+            "name": "Dummy",
+            "tags": [
+                "dummy"
+            ]
+        }
+    ]
+}
