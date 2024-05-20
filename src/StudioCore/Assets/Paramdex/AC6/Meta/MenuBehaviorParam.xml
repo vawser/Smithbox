@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <textId FmgRef="TutorialBody2023" />
+    <textId AltName="Text ID" FmgRef="TutorialBody2023" />
+    <endPadding IsHidden="" />
   </Field>
   <Self />
 </PARAMMETA>

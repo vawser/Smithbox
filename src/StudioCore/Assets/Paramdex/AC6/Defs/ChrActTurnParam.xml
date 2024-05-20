@@ -7,14 +7,14 @@
   <FormatVersion>203</FormatVersion>
   <Fields>
     <Field Def="s32 Unk0x00"></Field>
-    <Field Def="f32 UnkFloat0x04"></Field>
+    <Field Def="f32 UnkFloat0x04"></Field> <!-- Turn limiter -->
     <Field Def="u16 UnkUshort0x08"></Field>
     <Field Def="u16 UnkUshort0x0A"></Field>
-    <Field Def="f32 UnkFloat0x0C"></Field>
-    <Field Def="f32 UnkFloat0x10"></Field>
+    <Field Def="f32 UnkFloat0x0C"></Field> <!-- Basic turn -->
+    <Field Def="f32 UnkFloat0x10"></Field> <!-- Quick turn -->
     <Field Def="f32 UnkFloat0x14"></Field>
-    <Field Def="f32 UnkFloat0x18"></Field>
-    <Field Def="f32 UnkFloat0x1C"></Field>
+    <Field Def="f32 UnkFloat0x18"></Field> <!-- Basic turn conditioned arm boosters -->
+    <Field Def="f32 UnkFloat0x1C"></Field> <!-- Quick turn conditioned arm boosters -->
     <Field Def="f32 UnkFloat0x20"></Field>
     <Field Def="f32 UnkFloat0x24"></Field>
     <Field Def="f32 UnkFloat0x28"></Field>
@@ -28,12 +28,12 @@
     <Field Def="f32 UnkFloat0x40"></Field>
     <Field Def="f32 UnkFloat0x44"></Field>
     <Field Def="f32 UnkFloat0x48"></Field>
-    <Field Def="f32 UnkFloat0x4C"></Field>
+    <Field Def="f32 UnkFloat0x4C"></Field> <!-- Turning limiter -->
     <Field Def="f32 UnkFloat0x50"></Field>
     <Field Def="f32 UnkFloat0x54"></Field>
     <Field Def="f32 UnkFloat0x58"></Field>
-    <Field Def="f32 UnkFloat0x5C"></Field>
-    <Field Def="f32 UnkFloat0x60"></Field>
+    <Field Def="f32 UnkFloat0x5C"></Field> <!-- Arm boosters conditioned turning  -->
+    <Field Def="f32 UnkFloat0x60"></Field> <!-- Arm boosters conditioned turning  -->
     <Field Def="f32 UnkFloat0x64"></Field>
     <Field Def="f32 UnkFloat0x68"></Field>
     <Field Def="f32 UnkFloat0x6C"></Field>

@@ -3,8 +3,27 @@
   <Field>
     <concurrentEnergyUseMinimumTime AltName="Concurrent Energy Use - Minimum Time" />
     <concurrentEnergyUseNoConsumeTime AltName="Concurrent Energy Use - No Consumption Time" />
-    <fallingEnergyRecoveryRate AltName="Energy Recovery Rate - Falling" />
-    <boostFallingEnergyRecoveryRate AltName="Energy Recovery Rate - Boost Falling" />
+    
+    <midairEnergyRecoveryRate AltName="Mid-air: Energy Recovery Rate" Wiki="The energy recovery rate during this action.\nAffects jumping and falling." />
+    <midairEnergyCapacityMax AltName="Mid-air: Energy Capacity Maximum" Wiki="The maximum energy capacity during this action.\nAffects jumping and falling." />
+    <midairEnergyCapacitySetAfterAction AltName="Mid-air: Energy Capacity Set after Action" Wiki="The energy capacity set after the action has occured.\nAffects jumping and falling." />
+    
+    <boostEnergyRecoveryRate AltName="Ground Boost: Energy Recovery Rate" Wiki="The energy recovery rate during this action." />
+    <boostEnergyCapacityMax AltName="Ground Boost: Energy Capacity Maximum" Wiki="The maximum energy capacity during this action." />
+    <boostEnergyCapacitySetAfterAction AltName="Ground Boost: Energy Capacity Set after Action" Wiki="The energy capacity set after the action has occured." />
+    
+    <aerialBoostEnergyRecoveryRate AltName="Mid-air Boost: Energy Recovery Rate" Wiki="The energy recovery rate during this action." />
+    <aerialBoostEnergyCapacityMax AltName="Mid-air Boost: Energy Capacity Maximum" Wiki="The maximum energy capacity during this action." />
+    <aerialBoostEnergyCapacitySetAfterAction AltName="Mid-air Boost: Energy Capacity Set after Action" Wiki="The energy capacity set after the action has occured." />
+    
+    <tankDriftEnergyRecoveryRate AltName="Tank Drift: Energy Recovery Rate" Wiki="The energy recovery rate during this action." />
+    <tankDriftEnergyCapacityMax AltName="Tank Drift: Energy Capacity Maximum" Wiki="The maximum energy capacity during this action." />
+    <tankDriftEnergyCapacitySetAfterAction AltName="Tank Drift: Energy Capacity Set after Action" Wiki="The energy capacity set after the action has occured." />
+    
+    <stanceFireEnergyRecoveryRate AltName="Weapon Stance: Energy Recovery Rate" Wiki="The energy recovery rate during this action.\nOccurs when firing a stanced weapon." />
+    <stanceFireEnergyCapacityMax AltName="Weapon Stance: Energy Capacity Maximum" Wiki="The maximum energy capacity during this action.\nOccurs when firing a stanced weapon." />
+    <stanceFireEnergyCapacitySetAfterAction AltName="Weapon Stance: Energy Capacity Set after Action" Wiki="The energy capacity set after the action has occured.\nOccurs when firing a stanced weapon." />
+    
   </Field>
   <Self />
 </PARAMMETA>

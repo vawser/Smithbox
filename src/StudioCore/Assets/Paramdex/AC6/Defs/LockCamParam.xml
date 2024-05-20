@@ -41,8 +41,8 @@
     <Field Def="u8 Unk0x7B"></Field>
     <Field Def="f32 UnkFloat0x7C"></Field>
     <Field Def="f32 UnkFloat0x80"></Field>
-    <Field Def="f32 UnkFloat0x84"></Field>
-    <Field Def="f32 UnkFloat0x88"></Field>
+    <Field Def="f32 horizontalTurnLimit_Left"></Field>
+    <Field Def="f32 horizontalTurnLimit_Right"></Field>
     <Field Def="f32 UnkFloat0x8C"></Field>
     <Field Def="f32 UnkFloat0x90"></Field>
     <Field Def="f32 UnkFloat0x94"></Field>
@@ -94,13 +94,6 @@
     <Field Def="f32 UnkFloat0x14C"></Field>
     <Field Def="f32 UnkFloat0x150"></Field>
     <Field Def="f32 UnkFloat0x154"></Field>
-    <Field Def="f32 Unk0x158"></Field>
-    <Field Def="f32 Unk0x15C"></Field>
-    <Field Def="f32 Unk0x160"></Field>
-    <Field Def="f32 Unk0x164"></Field>
-    <Field Def="f32 Unk0x168"></Field>
-    <Field Def="f32 Unk0x16C"></Field>
-    <Field Def="f32 Unk0x170"></Field>
-    <Field Def="f32 Unk0x174"></Field>
+    <Field Def="dummy8 endPadding[32]"></Field>
   </Fields>
 </PARAMDEF>
