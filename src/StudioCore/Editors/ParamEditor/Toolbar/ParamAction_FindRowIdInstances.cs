@@ -64,7 +64,13 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
                     if (_paramResults.Count > 0)
                     {
+                        var Size = ImGui.GetWindowSize();
+                        float EditX = (Size.X / 100) * 95;
+                        float EditY = (Size.Y / 100) * 75;
+
+                        ImGui.BeginChild("##resultSection", new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
                         ImguiUtils.WrappedText($"ID {_cachedSearchID}: {_paramResults.Count} matches");
+
                         foreach (var paramName in _paramResults)
                         {
                             if (ImGui.Selectable($"{paramName}##RowSearcher"))
@@ -72,6 +78,8 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                                 EditorCommandQueue.AddCommand($@"param/select/-1/{paramName}/{_cachedSearchID}");
                             }
                         }
+
+                        ImGui.EndChild();
                     }
 
                     ImguiUtils.WrappedText("");

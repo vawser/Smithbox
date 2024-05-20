@@ -450,6 +450,8 @@ public class CFG
 
     public int Param_Toolbar_Duplicate_Amount = 1;
 
+    public bool Param_Toolbar_FindValueInstances_InitialMatchOnly = false;
+
     //****************************
     // Settings: Text Editor
     //****************************

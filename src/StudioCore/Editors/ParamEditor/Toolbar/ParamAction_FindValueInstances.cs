@@ -21,6 +21,10 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using SoulsFormats;
+using Microsoft.AspNetCore.Components.Forms;
+using StudioCore.BanksMain;
+using Google.Protobuf.WellKnownTypes;
+using StudioCore.Banks.AliasBank;
 
 namespace StudioCore.Editors.ParamEditor.Toolbar
 {
@@ -29,9 +33,8 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         private static string _searchValue = "";
         private static string _cachedSearchValue = "";
 
-        private static List<int> _rowIdResults = new();
-        private static List<string> _paramResults = new();
-        private static List<string> _fieldNameResults = new();
+        private static List<ParamValueResult> ParamResults = new();
+        private static List<AliasValueResult> AliasResults = new();
 
         public static void Select()
         {
@@ -65,24 +68,57 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                     ImGui.InputText("##searchValue", ref _searchValue, 255);
                     ImguiUtils.ShowHoverTooltip("The value to search for.");
 
+                    ImGui.Checkbox("Initial Match Only", ref CFG.Current.Param_Toolbar_FindValueInstances_InitialMatchOnly);
+                    ImguiUtils.ShowHoverTooltip("Only display the first match within a param, instead of all matches.");
                     ImguiUtils.WrappedText("");
 
-                    if (_paramResults.Count > 0)
+                    var Size = ImGui.GetWindowSize();
+
+                    float mult = 2;
+                    if(AliasResults.Count > 0)
                     {
-                        ImguiUtils.WrappedText($"Value {_cachedSearchValue}: {_paramResults.Count} matches");
+                        mult = 1;
+                    }
+                    float EditX = (Size.X / 100) * 95;
+                    float EditY = (Size.Y / 100) * (35 * mult);
 
-                        for(int i = 0; i < _paramResults.Count; i++)
+                    if (ParamResults.Count > 0)
+                    {
+                        ImguiUtils.WrappedText("Params:");
+                        ImGui.BeginChild("##paramResultSection", new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
+
+                        // Param Results
+                        ImguiUtils.WrappedText($"Value {_cachedSearchValue}: {ParamResults.Count} matches");
+
+                        foreach (var result in ParamResults)
                         {
-                            var paramName = _paramResults[i];
-                            var rowId = _rowIdResults[i];
-                            var fieldName = _fieldNameResults[i];
-
-                            if (ImGui.Selectable($"{paramName}: {fieldName}##ValueSearcher"))
+                            if (ImGui.Selectable($"{result.Param}: {result.Row}: {result.Field}##ValueSearcher"))
                             {
-                                EditorCommandQueue.AddCommand($@"param/select/-1/{paramName}/{rowId}/{fieldName}");
+                                EditorCommandQueue.AddCommand($@"param/select/-1/{result.Param}/{result.Row}/{result.Field}");
                             }
                         }
+                        ImGui.EndChild();
                     }
+
+                    // Alias Results
+                    if (AliasResults.Count > 0)
+                    {
+                        ImguiUtils.WrappedText("");
+                        ImguiUtils.WrappedText("Aliases:");
+                        ImGui.BeginChild("##aliasResultSection", new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
+
+                        ImguiUtils.WrappedText($"Value {_cachedSearchValue}: {AliasResults.Count} matches");
+
+                        foreach (var result in AliasResults)
+                        {
+                            if (ImGui.Selectable($"{result.Alias}: {result.ID}: {result.Name}##AliasValueSearcher"))
+                            {
+                                
+                            }
+                        }
+                        ImGui.EndChild();
+                    }
+
 
                     ImguiUtils.WrappedText("");
                 }
@@ -95,17 +131,81 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             {
                 if (ImGui.Button("Apply##action_Selection_FindValueInstances", new Vector2(200, 32)))
                 {
-                    _paramResults = new();
-                    _rowIdResults = new();
-                    _fieldNameResults = new();
+                    ParamResults = new();
+                    AliasResults = new();
 
-                    SearchValue();
+                    SearchParamValue();
+                    SearchAliasValue();
                 }
-
             }
         }
 
-        public static void SearchValue()
+        public static void SearchAliasValue()
+        {
+            _cachedSearchValue = _searchValue;
+
+            // Cutscene
+            foreach (var entry in CutsceneAliasBank.Bank.AliasNames.GetEntries("Cutscenes"))
+            {
+                AddAliasResult(entry, _searchValue, "Cutscene");
+            }
+
+            // Flag
+            foreach (var entry in FlagAliasBank.Bank.AliasNames.GetEntries("Flags"))
+            {
+                AddAliasResult(entry, _searchValue, "Event Flag");
+            }
+
+            // Models
+            foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
+            {
+                AddAliasResult(entry, _searchValue, "Character");
+            }
+            foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Objects"))
+            {
+                AddAliasResult(entry, _searchValue, "Object");
+            }
+            foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Parts"))
+            {
+                AddAliasResult(entry, _searchValue, "Part");
+            }
+            foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"))
+            {
+                AddAliasResult(entry, _searchValue, "Map Piece");
+            }
+
+            // Movies
+            foreach (var entry in MovieAliasBank.Bank.AliasNames.GetEntries("Movies"))
+            {
+                AddAliasResult(entry, _searchValue, "Movie");
+            }
+
+            // Particles
+            foreach (var entry in ParticleAliasBank.Bank.AliasNames.GetEntries("Particles"))
+            {
+                AddAliasResult(entry, _searchValue, "Particle");
+            }
+
+            // Sounds
+            foreach (var entry in SoundAliasBank.Bank.AliasNames.GetEntries("Sounds"))
+            {
+                AddAliasResult(entry, _searchValue, "Sound");
+            }
+        }
+
+        public static void AddAliasResult(AliasReference entry, string value, string aliasName)
+        {
+            if (entry.id == value)
+            {
+                AliasValueResult valueResult = new AliasValueResult();
+                valueResult.Alias = aliasName;
+                valueResult.ID = entry.id;
+                valueResult.Name = entry.name;
+                AliasResults.Add(valueResult);
+            }
+        }
+
+        public static void SearchParamValue()
         {
             var selectedParam = ParamEditorScreen._activeView._selection;
 
@@ -114,14 +214,14 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 if (ParamBank.PrimaryBank.Params != null)
                 {
                     _cachedSearchValue = _searchValue;
-                    (_rowIdResults, _paramResults, _fieldNameResults) = GetParamsWithValue(_searchValue);
+                    GetParamsWithValue(_searchValue);
 
-                    if (_paramResults.Count > 0)
+                    if (ParamResults.Count > 0)
                     {
                         var message = $"Found value {_searchValue} in the following params:\n";
-                        foreach (var line in _paramResults)
+                        foreach (var result in ParamResults)
                         {
-                            message += $"  {line}\n";
+                            message += $"  {result.Param}\n";
                             TaskLogs.AddLog(message,
                                 LogLevel.Information, TaskLogs.LogPriority.Low);
                         }
@@ -135,12 +235,8 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             }
         }
 
-        public static (List<int>, List<string>, List<string>) GetParamsWithValue(string value)
+        public static void GetParamsWithValue(string value)
         {
-            List<int> rowIdOutput = new();
-            List<string> valueOutput = new();
-            List<string> fieldOutput = new();
-
             foreach (var p in ParamBank.PrimaryBank.Params)
             {
                 for (var i = 0; i < p.Value.Rows.Count; i++)
@@ -268,15 +364,38 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
                     if (isMatch)
                     {
-                        rowIdOutput.Add(id);
-                        valueOutput.Add(p.Key);
-                        fieldOutput.Add(fieldName);
-                        break;
+                        ParamValueResult paramValueResult = new ParamValueResult();
+                        paramValueResult.Row = id.ToString();
+                        paramValueResult.Param = p.Key;
+                        paramValueResult.Field = fieldName;
+                        ParamResults.Add(paramValueResult);
+
+                        // Skip matching more if this is enabled
+                        if(CFG.Current.Param_Toolbar_FindValueInstances_InitialMatchOnly)
+                        {
+                            break;
+                        }
                     }
                 }
             }
-
-            return (rowIdOutput, valueOutput, fieldOutput);
         }
+    }
+
+    public class ParamValueResult
+    {
+        public string Param;
+        public string Row;
+        public string Field;
+
+        public ParamValueResult() { }
+    }
+
+    public class AliasValueResult
+    {
+        public string Alias;
+        public string ID;
+        public string Name;
+
+        public AliasValueResult() { }
     }
 }
