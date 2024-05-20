@@ -6,8 +6,6 @@
 /// </summary>
 public static class FeatureFlags
 {
-    public static bool DebugMenu = true;
-
     public static bool StrictResourceChecking = true;
 
     // Feature Toggles
@@ -21,4 +19,10 @@ public static class FeatureFlags
     public static bool EnableEditor_EventScript = false;
     public static bool EnableEditor_TalkScript = false;
     public static bool EnableEditor_BehaviorEditor = false;
+
+#if DEBUG
+    public static bool DebugMenu = true;
+#else
+    public static bool DebugMenu = false;
+#endif
 }

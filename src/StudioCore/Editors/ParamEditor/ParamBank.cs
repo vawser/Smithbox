@@ -552,7 +552,7 @@ public class ParamBank
         }
         catch
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -621,7 +621,7 @@ public class ParamBank
         }
         catch
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -689,7 +689,7 @@ public class ParamBank
         }
         catch
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -728,7 +728,7 @@ public class ParamBank
         }
         catch
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -823,7 +823,7 @@ public class ParamBank
             }
             catch
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         else
@@ -834,7 +834,7 @@ public class ParamBank
             }
             catch
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -946,19 +946,25 @@ public class ParamBank
 
     private void LoadVParamsDS3()
     {
-        LoadParamsDS3FromFile($@"{Project.GameRootDirectory}\Data0.bdt");
+        LoadParamsDS3FromFile($@"{Project.GameRootDirectory}\Data0.bdt", true);
     }
 
-    private void LoadParamsDS3FromFile(string path)
+    private void LoadParamsDS3FromFile(string path, bool isVanillaLoad = false)
     {
+        var tryLooseParams = Project.Config.UseLooseParams;
+        if(isVanillaLoad)
+        {
+            tryLooseParams = false;
+        }
+
         try
         {
-            using BND4 lparamBnd = Project.Config.UseLooseParams ? BND4.Read(path) : SFUtil.DecryptDS3Regulation(path);
+            using BND4 lparamBnd = tryLooseParams ? BND4.Read(path) : SFUtil.DecryptDS3Regulation(path);
             LoadParamFromBinder(lparamBnd, ref _params, out _paramVersion);
         }
         catch
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -1066,7 +1072,7 @@ public class ParamBank
             }
             catch
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         else
@@ -1078,7 +1084,7 @@ public class ParamBank
             }
             catch
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
@@ -1167,7 +1173,7 @@ public class ParamBank
             }
             catch
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         else
@@ -1179,7 +1185,7 @@ public class ParamBank
             }
             catch
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
