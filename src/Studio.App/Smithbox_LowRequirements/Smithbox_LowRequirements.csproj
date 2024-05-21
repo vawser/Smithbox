@@ -36,6 +36,15 @@
     </PropertyGroup>
 
     <ItemGroup>
+    <Content Include="imgui.default">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="imgui.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  
+    <ItemGroup>
         <ProjectReference Include="..\..\StudioCore\StudioCore.csproj" />
         <ProjectReference Include="..\..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
     </ItemGroup>
