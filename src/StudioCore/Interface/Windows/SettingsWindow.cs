@@ -159,8 +159,8 @@ public class SettingsWindow
                 ImGui.Checkbox("Enable model texturing", ref CFG.Current.Viewport_Enable_Texturing);
                 ImguiUtils.ShowHoverTooltip("Enabling this option will allow DSMS to render the textures of models within the viewport.\n\nNote, this feature is in an alpha state.");
 
-                ImGui.Checkbox("Enable frustrum culling", ref CFG.Current.Viewport_Frustum_Culling);
-                ImguiUtils.ShowHoverTooltip("Enabling this option will cause entities outside of the camera frustrum to be culled.");
+                ImGui.Checkbox("Enable frustum culling", ref CFG.Current.Viewport_Frustum_Culling);
+                ImguiUtils.ShowHoverTooltip("Enabling this option will cause entities outside of the camera frustum to be culled.");
 
                 //ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_BackgroundColor);
                 //ImguiUtils.ShowHoverTooltip("Change the background color in the viewport. Requires a restart of Smithbox to take effect.");
@@ -227,17 +227,17 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("Set the maximum distance at which entities will be rendered within the DSMS viewport.");
 
                 if (ImGui.SliderFloat("Map camera speed (slow)",
-                        ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow, 0.1f, 999.0f))
+                        ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow, 0.1f, 9999.0f))
                     CFG.Current.Viewport_Camera_MoveSpeed_Slow = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
                 ImguiUtils.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
 
                 if (ImGui.SliderFloat("Map camera speed (normal)",
-                        ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal, 0.1f, 999.0f))
+                        ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal, 0.1f, 9999.0f))
                     CFG.Current.Viewport_Camera_MoveSpeed_Normal = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
                 ImguiUtils.ShowHoverTooltip("Set the speed at which the camera will move whilst moving normally.");
 
                 if (ImGui.SliderFloat("Map camera speed (fast)",
-                        ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast, 0.1f, 999.0f))
+                        ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast, 0.1f, 9999.0f))
                     CFG.Current.Viewport_Camera_MoveSpeed_Fast = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
                 ImguiUtils.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
             }
