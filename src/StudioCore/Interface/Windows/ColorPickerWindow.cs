@@ -10,6 +10,7 @@ using StudioCore.Platform;
 using StudioCore.Settings;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -54,6 +55,18 @@ public class ColorPickerWindow
         if (ImGui.Begin("Color Picker##ColorPickerWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
             ImGui.ColorPicker4("##colorPicker", ref currentColor);
+
+            if(ImGui.Button("Copy RGB Color"))
+            {
+                var rgbColor = $"<{Math.Round(currentColor.X * 255)}, {Math.Round(currentColor.Y * 255)}, {Math.Round(currentColor.Z * 255)}>";
+
+                PlatformUtils.Instance.SetClipboardText(rgbColor);
+            }
+            ImGui.SameLine();
+            if (ImGui.Button("Copy Decimal Color"))
+            {
+                PlatformUtils.Instance.SetClipboardText(currentColor.ToString());
+            }
         }
 
         ImGui.End();

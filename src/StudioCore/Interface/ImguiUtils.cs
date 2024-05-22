@@ -102,6 +102,17 @@ public static class ImguiUtils
         ImGui.PopTextWrapPos();
     }
 
+    public static void WrappedTextColored(Vector4 color, string text)
+    {
+        var size = ImGui.GetWindowSize();
+
+        ImGui.PushTextWrapPos(size.X);
+        ImGui.PushStyleColor(ImGuiCol.Text, color);
+        ImGui.TextUnformatted(text);
+        ImGui.PopStyleColor();
+        ImGui.PopTextWrapPos();
+    }
+
     public static void ShowWideHoverTooltip(string desc)
     {
         if (CFG.Current.System_Show_UI_Tooltips)
