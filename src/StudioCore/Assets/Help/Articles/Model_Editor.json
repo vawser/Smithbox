@@ -1,12 +1,14 @@
 {
-    "Title": "Model Editor",
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Model Editor",
     "Tags": [
         "Feature"
     ],
     "Contents": [
+        "[Header]Information",
         "The Model Editor allows you to view the models used by the game.",
-        "Specifically, it covers Characters, Assets or Objects, Parts and MapPieces.",
-        "",
-        "Note, the Model Editor does NOT allow you to save changes to the models."
+        "Specifically, it covers Characters, Assets or Objects, Parts and MapPieces."
     ]
 }

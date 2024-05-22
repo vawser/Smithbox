@@ -1,10 +1,14 @@
 {   
-    "Title": "Tips and Tricks",
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Tips and Tricks",
     "Tags": [
         "Tip", "Hint"
     ],
     "Contents": [
-        "Usage of many features is assisted through the symbol (?).",
+        "[Header]Information",
+        "Usage of many features is assisted through the symbol (?) or by hovering over the interface element.",
         "In many cases, right clicking items will provide further information and options."
     ]
 }

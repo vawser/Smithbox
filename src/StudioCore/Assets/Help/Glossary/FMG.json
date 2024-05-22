@@ -1,5 +1,8 @@
 {
-    "Title": "FMG",
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "FMG",
     "Tags": [
         "Format",
         "Text",
@@ -7,6 +10,7 @@
         "Localisation"
     ],
     "Contents": [
+        "[Header]Meaning",
         "A localisation format with strings keyed by integer ids.",
         "This is used for all text which appears within the game."
     ]

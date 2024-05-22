@@ -102,6 +102,13 @@ public static class ImguiUtils
         ImGui.PopTextWrapPos();
     }
 
+    public static void HelpTextColored(Vector4 color, string text)
+    {
+        ImGui.PushStyleColor(ImGuiCol.Text, color);
+        ImGui.TextUnformatted(text);
+        ImGui.PopStyleColor();
+    }
+
     public static void WrappedTextColored(Vector4 color, string text)
     {
         var size = ImGui.GetWindowSize();

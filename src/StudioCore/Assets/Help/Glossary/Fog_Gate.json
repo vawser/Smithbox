@@ -1,5 +1,8 @@
 {
-    "Title": "Fog Gate",
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Fog Gate",
     "Tags": [
         "Format",
         "Boss",
@@ -7,6 +10,7 @@
         "Wall"
     ],
     "Contents": [
+        "[Header]Meaning",
         "An object in maps which is solid and has corresponding opaque visual effect.",
         "For the most part, these are all managed by EMEVD and have entity ids.",
         "",

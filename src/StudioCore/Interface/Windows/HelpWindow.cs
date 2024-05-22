@@ -3,10 +3,12 @@ using StudioCore.Banks.HelpBank;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Help;
+using StudioCore.UserProject;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
+using System.Text.RegularExpressions;
 
 namespace StudioCore.Interface.Windows;
 
@@ -15,20 +17,21 @@ public class HelpWindow
     private readonly HelpBank _helpBank;
 
     // Article
-    private readonly string _inputStr_Article = "";
+    private string _inputStr_Article = "";
 
     // Glossary
-    private readonly string _inputStr_Glossary = "";
+    private string _inputStr_Glossary = "";
 
     // Tutorial
-    private readonly string _inputStr_Tutorial = "";
-    private readonly string _inputStrCache_Article = "";
-    private readonly string _inputStrCache_Glossary = "";
-    private readonly string _inputStrCache_Tutorial = "";
-    private readonly int textSectionForceSplitCharCount = 2760;
+    private string _inputStr_Tutorial = "";
+    private string _inputStrCache_Article = "";
+    private string _inputStrCache_Glossary = "";
+    private string _inputStrCache_Tutorial = "";
+    private int textSectionForceSplitCharCount = 2760;
 
-    private readonly string textSectionSplitter = "[-----]";
+    private string textSectionSplitter = "[-----]";
     private string _id;
+
     private HelpEntry _selectedEntry_Article;
     private HelpEntry _selectedEntry_Glossary;
     private HelpEntry _selectedEntry_Tutorial;
@@ -68,12 +71,9 @@ public class HelpWindow
             ImGui.PushStyleColor(ImGuiCol.Header, CFG.Current.Imgui_Moveable_Header);
             ImGui.PushItemWidth(300f);
 
-            DisplayHelpSection("Article", _helpBank.GetArticles(), _inputStr_Article, _inputStrCache_Article,
-                "Articles", "No title.", "No article selected.");
-            DisplayHelpSection("Tutorial", _helpBank.GetTutorials(), _inputStr_Tutorial, _inputStrCache_Tutorial,
-                "Tutorials", "No title.", "No tutorial selected.");
-            DisplayHelpSection("Glossary", _helpBank.GetGlossaryEntries(), _inputStr_Glossary,
-                _inputStrCache_Glossary, "Glossary", "No title.", "No term selected.");
+            DisplayArticles();
+            DisplayTutorials();
+            DisplayGlossary();
 
             if (ImGui.BeginTabItem("Mass Edit"))
             {
@@ -102,80 +102,85 @@ public class HelpWindow
         ImGui.PopStyleColor(5);
     }
 
-    private void DisplayHelpSection(string sectionType, List<HelpEntry> entries, string inputStr,
-        string inputStrCache, string title, string noSelection_Title, string noSelection_Body)
+    private bool MatchEntry(HelpEntry entry, string inputStr)
     {
-        if (entries.Count < 1)
+        bool isMatch = false;
+
+        var lowercaseInput = inputStr.ToLower();
+
+        var sectionName = entry.Title;
+        List<string> contents = entry.Contents;
+        List<string> tags = entry.Tags;
+
+        // Section Title Segments
+        List<string> sectionNameSegments = new();
+
+        foreach (var segment in sectionName.Split(" ").ToList())
+        {
+            var segmentParts = segment.Split(" ").ToList();
+            foreach (var part in segmentParts)
+                sectionNameSegments.Add(part.ToLower());
+        }
+
+        // Content Segments
+        List<string> coreSegments = new();
+
+        foreach (var segment in contents)
+        {
+            var segmentParts = segment.Split(" ").ToList();
+            foreach (var part in segmentParts)
+                coreSegments.Add(part.ToLower());
+        }
+
+        // Tags
+        List<string> tagList = new();
+
+        foreach (var segment in tags)
+        {
+            tagList.Add(segment.ToLower());
+        }
+
+        // Only show if input matches any title or content segments, or if it is blank
+        if (lowercaseInput.ToLower() == "" || sectionNameSegments.Contains(lowercaseInput) || coreSegments.Contains(lowercaseInput) || tagList.Contains(lowercaseInput))
+        {
+            isMatch = true;
+        }
+
+        return isMatch;
+    }
+
+    /// <summary>
+    /// Articles
+    /// </summary>
+    private void DisplayArticles()
+    {
+        if (_helpBank.GetArticles().Count < 1)
             return;
 
-        if (ImGui.BeginTabItem(title))
+        if (ImGui.BeginTabItem("Articles"))
         {
             ImGui.Columns(2);
 
             // Search Area
-            ImGui.InputText("Search", ref inputStr, 255);
+            ImGui.InputText("Search", ref _inputStr_Article, 255);
 
             // Selection Area
-            ImGui.BeginChild($"{title}SectionList");
+            ImGui.BeginChild($"ArticleSectionList");
 
-            if (inputStr.ToLower() != inputStrCache.ToLower())
-                inputStrCache = inputStr.ToLower();
+            if (_inputStr_Article.ToLower() != _inputStrCache_Article.ToLower())
+                _inputStrCache_Article = _inputStr_Article.ToLower();
 
-            var lowercaseInput = _inputStr_Article.ToLower();
-
-            foreach (HelpEntry entry in entries)
+            foreach (HelpEntry entry in _helpBank.GetArticles())
             {
                 var sectionName = entry.Title;
-                List<string> contents = entry.Contents;
-                List<string> tags = entry.Tags;
 
-                // Section Title Segments
-                List<string> sectionNameSegments = new();
-
-                foreach (var segment in sectionName.Split(" ").ToList())
+                if (entry.ProjectType == (int)Project.Type || entry.ProjectType == 0)
                 {
-                    var segmentParts = segment.Split(" ").ToList();
-                    foreach (var part in segmentParts)
-                        sectionNameSegments.Add(part.ToLower());
-                }
-
-                // Content Segments
-                List<string> coreSegments = new();
-
-                foreach (var segment in contents)
-                {
-                    var segmentParts = segment.Split(" ").ToList();
-                    foreach (var part in segmentParts)
-                        coreSegments.Add(part.ToLower());
-                }
-
-                // Tags
-                List<string> tagList = new();
-
-                foreach (var segment in tags)
-                    tagList.Add(segment.ToLower());
-
-                // Only show if input matches any title or content segments, or if it is blank
-                if (lowercaseInput.ToLower() == "" || sectionNameSegments.Contains(lowercaseInput) ||
-                    coreSegments.Contains(lowercaseInput) || tagList.Contains(lowercaseInput))
-                {
-                    if (ImGui.Selectable(sectionName))
+                    if (MatchEntry(entry, _inputStr_Article))
                     {
-                    }
-
-                    if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
-                    {
-                        switch (sectionType)
+                        if (ImGui.Selectable(sectionName, _selectedEntry_Article == entry))
                         {
-                            case "Article":
-                                _selectedEntry_Article = entry;
-                                break;
-                            case "Tutorial":
-                                _selectedEntry_Tutorial = entry;
-                                break;
-                            case "Glossary":
-                                _selectedEntry_Glossary = entry;
-                                break;
+                            _selectedEntry_Article = entry;
                         }
                     }
                 }
@@ -185,19 +190,28 @@ public class HelpWindow
 
             ImGui.NextColumn();
 
-            ImGui.BeginChild($"{title}SectionView");
+            ImGui.BeginChild($"ArticleSectionView");
 
-            switch (sectionType)
+            foreach (HelpEntry entry in _helpBank.GetArticles())
             {
-                case "Article":
-                    DisplayHelpSection(_selectedEntry_Article, noSelection_Title, noSelection_Body);
-                    break;
-                case "Tutorial":
-                    DisplayHelpSection(_selectedEntry_Tutorial, noSelection_Title, noSelection_Body);
-                    break;
-                case "Glossary":
-                    DisplayHelpSection(_selectedEntry_Glossary, noSelection_Title, noSelection_Body);
-                    break;
+                if (_selectedEntry_Article == entry)
+                {
+                    // No selection
+                    if (entry == null)
+                    {
+                        ImguiUtils.WrappedText("No article selected");
+                        ImGui.Separator();
+                        ImguiUtils.WrappedText("");
+                    }
+                    // Selection
+                    else
+                    {
+                        foreach (var textSection in entry.Contents)
+                        {
+                            ProcessText(entry, textSection);
+                        }
+                    }
+                }
             }
 
             ImGui.EndChild();
@@ -207,6 +221,208 @@ public class HelpWindow
             ImGui.EndTabItem();
         }
     }
+
+    /// <summary>
+    /// Tutorials
+    /// </summary>
+    private void DisplayTutorials()
+    {
+        if (_helpBank.GetArticles().Count < 1)
+            return;
+
+        if (ImGui.BeginTabItem("Tutorials"))
+        {
+            ImGui.Columns(2);
+
+            // Search Area
+            ImGui.InputText("Search", ref _inputStr_Tutorial, 255);
+
+            // Selection Area
+            ImGui.BeginChild($"TutorialSectionList");
+
+            if (_inputStr_Tutorial.ToLower() != _inputStrCache_Tutorial.ToLower())
+                _inputStrCache_Tutorial = _inputStr_Tutorial.ToLower();
+
+            foreach (HelpEntry entry in _helpBank.GetTutorials())
+            {
+                var sectionName = entry.Title;
+
+                if (entry.ProjectType == (int)Project.Type || entry.ProjectType == 0)
+                {
+                    if (MatchEntry(entry, _inputStr_Tutorial))
+                    {
+                        if (ImGui.Selectable(sectionName, _selectedEntry_Tutorial == entry))
+                        {
+                            _selectedEntry_Tutorial = entry;
+                        }
+                    }
+                }
+            }
+
+            ImGui.EndChild();
+
+            ImGui.NextColumn();
+
+            ImGui.BeginChild($"TutorialSectionView");
+
+            foreach (HelpEntry entry in _helpBank.GetTutorials())
+            {
+                if (_selectedEntry_Tutorial == entry)
+                {
+                    // No selection
+                    if (entry == null)
+                    {
+                        ImguiUtils.WrappedText("No tutorial selected");
+                        ImGui.Separator();
+                        ImguiUtils.WrappedText("");
+                    }
+                    // Selection
+                    else
+                    {
+                        foreach (var textSection in entry.Contents)
+                        {
+                            ProcessText(entry, textSection);
+                        }
+                    }
+                }
+            }
+
+            ImGui.EndChild();
+
+            ImGui.Columns(1);
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    /// <summary>
+    /// Glossary
+    /// </summary>
+    private void DisplayGlossary()
+    {
+        if (_helpBank.GetGlossaryEntries().Count < 1)
+            return;
+
+        if (ImGui.BeginTabItem("Glossary"))
+        {
+            ImGui.Columns(2);
+
+            // Search Area
+            ImGui.InputText("Search", ref _inputStr_Glossary, 255);
+
+            // Selection Area
+            ImGui.BeginChild($"GlossarySectionList");
+
+            if (_inputStr_Glossary.ToLower() != _inputStrCache_Glossary.ToLower())
+                _inputStrCache_Glossary = _inputStr_Glossary.ToLower();
+
+            foreach (HelpEntry entry in _helpBank.GetGlossaryEntries())
+            {
+                var sectionName = entry.Title;
+
+                if (entry.ProjectType == (int)Project.Type || entry.ProjectType == 0)
+                {
+                    if (MatchEntry(entry, _inputStr_Glossary))
+                    {
+                        if (ImGui.Selectable(sectionName, _selectedEntry_Glossary == entry))
+                        {
+                            _selectedEntry_Glossary = entry;
+                        }
+                    }
+                }
+            }
+
+            ImGui.EndChild();
+
+            ImGui.NextColumn();
+
+            ImGui.BeginChild($"GlossarySectionView");
+
+            foreach (HelpEntry entry in _helpBank.GetGlossaryEntries())
+            {
+                if (_selectedEntry_Glossary == entry)
+                {
+                    // No selection
+                    if (entry == null)
+                    {
+                        ImguiUtils.WrappedText("No glossary entry selected");
+                        ImGui.Separator();
+                        ImguiUtils.WrappedText("");
+                    }
+                    // Selection
+                    else
+                    {
+                        foreach (var textSection in entry.Contents)
+                        {
+                            ProcessText(entry, textSection);
+                        }
+                    }
+                }
+            }
+
+            ImGui.EndChild();
+
+            ImGui.Columns(1);
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void ProcessText(HelpEntry entry, string textLine)
+    {
+        var outputLine = textLine;
+
+        if(textLine.Contains("[Header]"))
+        {
+            outputLine = textLine.Replace("[Header]", "");
+            ImGui.Separator();
+
+            if (entry.HeaderColor != null)
+            {
+                Vector4 color = new Vector4(entry.HeaderColor[0], entry.HeaderColor[1], entry.HeaderColor[2], entry.HeaderColor[3]);
+                ImguiUtils.WrappedTextColored(color, outputLine);
+            }
+            else
+            {
+                ImguiUtils.WrappedText(outputLine);
+            }
+
+            ImGui.Separator();
+        }
+        else if(textLine.Contains("[Highlight@"))
+        {
+            var pattern = $@"\[Highlight\@(.*)\](.*)";
+            var match = Regex.Match(textLine, pattern);
+
+            if(match.Success && match.Groups.Count >= 2)
+            {
+                string highlightText = match.Groups[1].Value;
+                string otherText = match.Groups[2].Value;
+
+                if (entry.HighlightColor != null)
+                {
+                    Vector4 color = new Vector4(entry.HighlightColor[0], entry.HighlightColor[1], entry.HighlightColor[2], entry.HighlightColor[3]);
+                    ImguiUtils.WrappedTextColored(color, highlightText);
+
+                    var offset = highlightText.Length * 8.0f;
+                    ImGui.SameLine(offset);
+                    ImguiUtils.WrappedText(otherText);
+                }
+                else
+                {
+                    ImguiUtils.WrappedText(highlightText);
+                    ImGui.SameLine();
+                    ImguiUtils.WrappedText(otherText);
+                }
+            }
+        }
+        else
+        {
+
+            ImguiUtils.WrappedText(textLine);
+        }
+    }
+
     public void QuickAdd(string text)
     {
         if (ImGui.Button($"Add##{text}"))
@@ -241,11 +457,6 @@ public class HelpWindow
             var topic = MassEditTopics[i];
 
             if (ImGui.Selectable(topic))
-            {
-
-            }
-
-            if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
             {
                 currentMassEditTopic = i;
             }
@@ -715,11 +926,6 @@ public class HelpWindow
 
             if (ImGui.Selectable(topic))
             {
-
-            }
-
-            if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
-            {
                 currentRegexTopic = i;
             }
         }
@@ -891,72 +1097,15 @@ public class HelpWindow
 
             ImGui.BeginChild($"CreditsList");
 
-            ImguiUtils.WrappedText(GetDisplayText(_helpBank.GetCredits().Text));
+            foreach (var textSection in _helpBank.GetCredits().Text)
+            {
+                ImguiUtils.WrappedText(textSection);
+            }
 
             ImGui.EndChild();
 
             ImGui.Unindent();
             ImGui.EndTabItem();
         }
-    }
-
-    private void DisplayHelpSection(HelpEntry entry, string noSelection_Title, string noSelection_Body)
-    {
-        // No selection
-        if (entry == null)
-        {
-            ImguiUtils.WrappedText(noSelection_Title);
-            ImGui.Separator();
-            ImguiUtils.WrappedText(noSelection_Body);
-        }
-        // Selection
-        else
-        {
-            ImguiUtils.WrappedText(entry.Title);
-            ImGui.Separator();
-            foreach (var textSection in GetDisplayTextSections(entry.Contents))
-            {
-                TaskLogs.AddLog($"{textSection}");
-                ImguiUtils.WrappedText(textSection);
-            }
-        }
-    }
-    private List<string> GetDisplayTextSections(List<string> stringList)
-    {
-        var displayTextFull = GetDisplayText(stringList);
-
-        var displayTextSegments = displayTextFull.Split(textSectionSplitter).ToList();
-
-        return displayTextSegments;
-    }
-
-    private string GetDisplayText(List<string> stringList)
-    {
-        var charCount = 0;
-
-        var displayText = "";
-        foreach (var str in stringList)
-        {
-            displayText = displayText + str + "\n";
-            charCount = charCount + str.Length;
-
-            // Force seperator if text length is close to the Imgui.Text character limit.
-            if (charCount >= textSectionForceSplitCharCount)
-            {
-                charCount = 0;
-                displayText = displayText + textSectionSplitter + "";
-            }
-            else
-            {
-                // If the current str already includes a separator, reset the count
-                // As GetDisplayTextSections will handle the separator instead
-                if (str.Contains(textSectionSplitter))
-                {
-                    charCount = 0;
-                }
-            }
-        }
-
-        return displayText;
     }
 }
