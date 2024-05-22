@@ -6,6 +6,7 @@ using StudioCore.Platform;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -88,6 +89,13 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                     }
                 }
 
+                ImGui.SameLine();
+                if(ImGui.Button("Open Project Folder##action_Selection_OpenExportFolder", new Vector2(200, 32)))
+                {
+                    var dir = $"{Project.GameModDirectory}\\.smithbox\\Assets\\Paramdex\\{Project.GetGameIDForDir()}\\Names";
+                    Process.Start("explorer.exe", dir);
+                }
+                ImguiUtils.ShowHoverTooltip("Opens the project-specific Names folder that contains the exported Names.");
             }
         }
 
