@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <proximityAttackDist AltName="Proximity Attack Distance" Wiki="If within this proximity of locked-on enemy, attack" />
+  </Field>
   <Self />
 </PARAMMETA>

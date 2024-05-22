@@ -6,6 +6,9 @@
       <Option Value="1" Name="Correct for model orientation" />
     </Enum>
   </Enums>
-  <Field></Field>
+  <Field>
+    <upwardVerticalTracking AltName="Upward Vertical Tracking" />
+    <downwardVerticalTracking AltName="Downward Vertical Tracking" />
+  </Field>
   <Self />
 </PARAMMETA>

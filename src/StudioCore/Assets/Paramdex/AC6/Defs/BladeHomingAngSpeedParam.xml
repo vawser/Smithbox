@@ -14,8 +14,8 @@
     <Field Def="f32 UnkFloat0x08"></Field>
     <Field Def="f32 UnkFloat0x0C"></Field>
     <Field Def="f32 UnkFloat0x10"></Field>
-    <Field Def="f32 UnkFloat0x14"></Field>
-    <Field Def="f32 UnkFloat0x18"></Field>
+    <Field Def="f32 upwardVerticalTracking"></Field>
+    <Field Def="f32 downwardVerticalTracking"></Field>
     <Field Def="f32 UnkFloat0x1C"></Field>
     <Field Def="dummy8 Unk0x20[32]"></Field>
   </Fields>

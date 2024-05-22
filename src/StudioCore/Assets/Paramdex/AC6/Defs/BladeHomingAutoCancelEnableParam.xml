@@ -10,7 +10,7 @@
     <Field Def="f32 UnkFloat0x04"></Field>
     <Field Def="f32 UnkFloat0x08"></Field>
     <Field Def="f32 UnkFloat0x0C"></Field>
-    <Field Def="f32 UnkFloat0x10"></Field>
+    <Field Def="f32 proximityAttackDist"></Field>
     <Field Def="f32 UnkFloat0x14"></Field>
     <Field Def="f32 UnkFloat0x18"></Field>
     <Field Def="dummy8 Unk0x1C[32]"></Field>
