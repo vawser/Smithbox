@@ -1,0 +1,15 @@
+{
+    "ProjectType": 9,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Tool: Design Dump",
+    "Tags": [
+        ""
+    ],
+    "Contents": [
+        "[Header]Link",
+        "[Link@https:/drive.google.com/drive/folders/1rnjAJp184rImuXLYyRHUH83FKG82dfjl@Design Dump]",
+        "[Header]Description",
+        "A barebones CLI tool for dumping AC designs from Armored Core VI save files."
+    ]
+}

@@ -9,23 +9,23 @@ namespace StudioCore.Banks.HelpBank;
 
 public class HelpBank
 {
-    private readonly TextEntry _credits;
-    private readonly List<HelpEntry> _helpArticles;
-    private readonly List<HelpEntry> _helpGlossary;
-    private readonly List<HelpEntry> _helpTutorials;
-    private readonly LinkEntries _links;
+    private List<HelpEntry> _helpArticles;
+    private List<HelpEntry> _helpGlossary;
+    private List<HelpEntry> _helpTutorials;
+    private List<HelpEntry> _helpLinks;
+    private List<HelpEntry> _helpCredits;
+    private List<HelpEntry> _helpMassEdit;
+    private List<HelpEntry> _helpRegex;
 
     public HelpBank()
     {
         _helpArticles = LoadHelpResource("Articles");
         _helpTutorials = LoadHelpResource("Tutorials");
         _helpGlossary = LoadHelpResource("Glossary");
-        _links = JsonSerializer.Deserialize(
-            File.OpenRead(AppContext.BaseDirectory + @"\Assets\Help\Links.json"),
-            LinkEntriesSerializerContext.Default.LinkEntries);
-        _credits = JsonSerializer.Deserialize(
-            File.OpenRead(AppContext.BaseDirectory + @"\Assets\Help\Credits.json"),
-            TextEntrySerializerContext.Default.TextEntry);
+        _helpMassEdit = LoadHelpResource("MassEdit");
+        _helpRegex = LoadHelpResource("Regex");
+        _helpLinks = LoadHelpResource("Links");
+        _helpCredits = LoadHelpResource("Credits");
     }
 
     private List<HelpEntry> LoadHelpResource(string directory)
@@ -73,13 +73,23 @@ public class HelpBank
         return _helpGlossary;
     }
 
-    public List<LinkEntry> GetLinks()
+    public List<HelpEntry> GetLinks()
     {
-        return _links.Links;
+        return _helpLinks;
     }
 
-    public TextEntry GetCredits()
+    public List<HelpEntry> GetCredits()
     {
-        return _credits;
+        return _helpCredits;
+    }
+
+    public List<HelpEntry> GetMassEditHelp()
+    {
+        return _helpMassEdit;
+    }
+
+    public List<HelpEntry> GetRegexHelp()
+    {
+        return _helpRegex;
     }
 }

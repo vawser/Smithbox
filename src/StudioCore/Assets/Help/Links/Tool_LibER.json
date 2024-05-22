@@ -1,0 +1,17 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Tool: libER ELDEN RING API library",
+    "Tags": [
+        ""
+    ],
+    "Contents": [
+        "[Header]Link",
+        "[Link@https:/github.com/Dasaav-dsv/libER@lib ER]",
+        "[Header]Description",
+        "libER is an ELDEN RING Application Programming Interface (API) library that aims to provide a safe C++ interface for the game by leveraging binary compatibility between different versions of the Microsoft Visual Compiler.",
+        "The ELDEN RING executable has been built with Visual Studio 2015, which also happens to be the earliest Microsoft guarantees binary compatibility for all future compiler and standard library versions onwards. For libER, this means the C++ standard library features can be used wherever they are used in ELDEN RING, as long as libER is compiled with MSVC or another compatible compiler.",
+        "Being able to use the STL provides the safety and guarantees of the standard library and greatly simplifies reversing and documenting efforts. Settling on the MSVC standard library (even if only because ELDEN RING uses it) means a stable ABI and API for the game. This choice is somewhat limiting, but also defines a common standard for projects that use libER."
+    ]
+}

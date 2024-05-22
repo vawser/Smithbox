@@ -1,0 +1,35 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Field Operations",
+    "Tags": [
+        ""
+    ],
+    "Contents": [
+        "[Header]= <value>",
+        "Assigns the given value to the selected values. Will attempt conversion to the value's data type.",
+        "[Header]+ <value>",
+        "Adds the number to the selected values, or appends text if that is the data type of the values.",
+        "[Header]- <value>",
+        "Subtracts the number from the selected values.",
+        "[Header]* <value>",
+        "Multiplies selected values by the number.",
+        "[Header]/ <value>",
+        "Divides the selected values by the number",
+        "[Header]% <value>",
+        "Gives the remainder when the selected values are divided by the number.",
+        "[Header]scale <factor> <center>",
+        "Multiplies the difference between the selected values and the center number by the factor number.",
+        "[Header]replace <search string> <replace string>",
+        "Interprets the selected values as text and replaces all occurances of the text to replace with the new text",
+        "[Header]replacex <search string> <replace string>",
+        "Interprets the selected values as text and replaces all occurances of the given regex with the replacement, supporting regex groups",
+        "[Header]max <value>",
+        "Returns the larger of the current value and number.",
+        "[Header]min <value>",
+        "Returns the smaller of the current value and number.",
+        ""
+        
+    ]
+}
