@@ -195,10 +195,10 @@ public class HelpWindow
                         switch(sectionType)
                         {
                             case HelpSectionType.Article:
-                            if (ImGui.Selectable(sectionName, _selectedEntry_Article == entry))
-                            {
-                                _selectedEntry_Article = entry;
-                            }
+                                if (ImGui.Selectable(sectionName, _selectedEntry_Article == entry))
+                                {
+                                    _selectedEntry_Article = entry;
+                                }
                                 break;
                             case HelpSectionType.Tutorial:
                                 if (ImGui.Selectable(sectionName, _selectedEntry_Tutorial == entry))
