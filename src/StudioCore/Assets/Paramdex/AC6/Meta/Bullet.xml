@@ -156,6 +156,13 @@
       <Option Value="1" Name="Point Specification" />
       <Option Value="2" Name="Shooter" />
     </Enum>
+    <Enum Name="BULLET_RICOCHET_HIT_SFX_SIZE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Small" />
+      <Option Value="2" Name="Medium" />
+      <Option Value="3" Name="Large" />
+      <Option Value="3" Name="Giant" />
+    </Enum>
   </Enums>
   <Field>
     <atkId_Bullet AltName="AtkParam ID" Wiki="References AtkParam. Used to apply the damage characteristics to a project." Refs="AtkParam_Pc,AtkParam_Npc" />
@@ -287,6 +294,21 @@
     <childProjectileDist AltName="Child Projectile Range" />
     <bulletMomentum AltName="Projectile Momentum" Wiki="How long" />
     <bulletCircularOffset AltName="Projectile Circular Offset" Wiki="Offsets the bullets out from the centre" />
+    
+    <bulletRicochetHitSfxSize AltName="Ricochet Hit SFX Size" Enum="BULLET_RICOCHET_HIT_SFX_SIZE" />
+    <bulletRicochetBounceTimeLimit AltName="Ricochet Bounce Time Limit" />
+    <bulletRicochetBounceDistance AltName="Ricochet Bounce Distance" />
+    
+    <UnkFloat0x138 AltName="Unknown: Ghost Bullet?" Wiki="Values above 0 cause bullet to pass through target." />
+    
+    <bulletEmitVerticalAngle AltName="Emitted Bullet: Vertical Angle" />
+    <useRicochetAdjustment AltName="Use Ricochet Adjustments" Wiki="0 causes damage adjustments due to Ricochet to be ignored." />
+    <ricochetBounceTimeDuration AltName="Ricochet Bounce Time Duration" />
+    
+    <bulletFlightHeightAdjustment0 AltName="Flight Height Adjustment [0]" Wiki="When not in attack activation range will descend or ascend depending on field number.\nPositive values will ascend, negative values will descend" />
+    <bulletFlightHeightAdjustment1 AltName="Flight Height Adjustment [1]" Wiki="When not in attack activation range will descend or ascend depending on field number.\nPositive values will ascend, negative values will descend" />
+    <bulletFlightHeightAdjustment2 AltName="Flight Height Adjustment [2]" Wiki="When not in attack activation range will descend or ascend depending on field number.\nPositive values will ascend, negative values will descend" />
+    <bulletFlightHeightAdjustment3 AltName="Flight Height Adjustment [3]" Wiki="When not in attack activation range will descend or ascend depending on field number.\nPositive values will ascend, negative values will descend" />
   </Field>
   <Self />
 </PARAMMETA>

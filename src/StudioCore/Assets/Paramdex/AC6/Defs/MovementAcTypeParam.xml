@@ -217,9 +217,9 @@
     <Field Def="s32 UnkInt0x340"></Field>
     <Field Def="f32 UnkFloat0x344"></Field>
     <Field Def="s32 UnkInt0x348"></Field>
-    <Field Def="f32 UnkFloat0x34C"></Field>
-    <Field Def="f32 UnkFloat0x350"></Field>
-    <Field Def="f32 UnkFloat0x354"></Field>
+    <Field Def="f32 tankDrift_cancelInputAngleThreshold"></Field>
+    <Field Def="f32 tankDrift_skidSpeed"></Field>
+    <Field Def="f32 tankDrift_skidTurnRadius"></Field>
     <Field Def="s32 UnkInt0x358"></Field>
     <Field Def="s32 UnkInt0x35C"></Field>
     <Field Def="s32 UnkInt0x360"></Field>
@@ -236,7 +236,7 @@
     <Field Def="f32 UnkFloat0x38C"></Field>
     <Field Def="f32 UnkFloat0x390"></Field>
     <Field Def="f32 UnkFloat0x394"></Field>
-    <Field Def="f32 UnkFloat0x398"></Field>
+    <Field Def="f32 tankDrift_initInputAngleThreshold"></Field>
     <Field Def="s32 UnkInt0x39C"></Field>
     <Field Def="f32 UnkFloat0x3A0"></Field>
     <Field Def="s32 UnkInt0x3A4"></Field>
