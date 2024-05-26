@@ -50,6 +50,7 @@ A personal version of DSMapStudio, which is a standalone integrated modding tool
 * Use [UXM Selective Unpack](https://github.com/Nordgaren/UXM-Selective-Unpack) to extract the game files.
 
 # Links
+[Smithbox Discord](https://discord.gg/5p9bRKkK4J)
 [DSMapStudio repository](https://github.com/soulsmods/DSMapStudio)
 
 ## Credits (DSMapStudio)
