@@ -51,6 +51,7 @@ A personal version of DSMapStudio, which is a standalone integrated modding tool
 
 # Links
 [Smithbox Discord](https://discord.gg/5p9bRKkK4J)
+
 [DSMapStudio repository](https://github.com/soulsmods/DSMapStudio)
 
 ## Credits (DSMapStudio)
