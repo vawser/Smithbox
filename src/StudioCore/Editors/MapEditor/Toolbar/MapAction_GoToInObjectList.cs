@@ -28,7 +28,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Go_to_in_Object_List)
             {
-                ImguiUtils.WrappedText("Move the camera to the current selection (first if multiple are selected).");
+                ImguiUtils.WrappedText("Select the associated map object in the map object list based upon our viewport selection (first if multiple are selected).");
                 ImguiUtils.WrappedText("");
             }
         }

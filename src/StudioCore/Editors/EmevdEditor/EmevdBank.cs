@@ -154,14 +154,7 @@ public static class EmevdBank
         EventScriptInfo eventInfo = new EventScriptInfo(name, path);
         EMEVD eventScript = new EMEVD();
 
-        if (Project.Type == ProjectType.DS2S)
-        {
-            eventScript = EMEVD.Read(path);
-        }
-        else
-        {
-            eventScript = EMEVD.Read(DCX.Decompress(path));
-        }
+        eventScript = EMEVD.Read(DCX.Decompress(path));
 
         ScriptBank.Add(eventInfo, eventScript);
     }

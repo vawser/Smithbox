@@ -437,21 +437,6 @@ public class ModelPropertyEditor
         return (isChanged, isDeactivatedAfterEdit);
     }
 
-    private void UpdateProperty(object prop, Entity selection, object obj, object newval,
-        bool changed, bool committed, int arrayindex = -1)
-    {
-        // TODO2: strip this out in favor of other ChangeProperty
-        if (changed)
-        {
-            ChangeProperty(prop, selection, obj, newval, ref committed, arrayindex);
-        }
-
-        if (committed)
-        {
-            CommitProperty(selection, false);
-        }
-    }
-
     private void ChangeProperty(object prop, Entity selection, object obj, object newval,
         ref bool committed, int arrayindex = -1)
     {
@@ -488,49 +473,6 @@ public class ModelPropertyEditor
             _changingObject = selection != null ? selection.WrappedObject : obj;
         }
     }
-
-    private void CommitProperty(Entity selection, bool destroyRenderModel)
-    {
-        // Invalidate name cache
-        if (selection != null)
-        {
-            selection.Name = null;
-        }
-
-        // Undo and redo the last action with a rendering update
-        if (_lastUncommittedAction != null && ContextActionManager.PeekUndoAction() == _lastUncommittedAction)
-        {
-            if (_lastUncommittedAction is MapEditor.PropertiesChangedAction a)
-            {
-                // Kinda a hack to prevent a jumping glitch
-                a.SetPostExecutionAction(null);
-                ContextActionManager.UndoAction();
-                if (selection != null)
-                {
-                    a.SetPostExecutionAction(undo =>
-                    {
-                        if (destroyRenderModel)
-                        {
-                            if (selection.RenderSceneMesh != null)
-                            {
-                                selection.RenderSceneMesh.Dispose();
-                                selection.RenderSceneMesh = null;
-                            }
-                        }
-
-                        selection.UpdateRenderModel();
-                    });
-                }
-
-                ContextActionManager.ExecuteAction(a);
-            }
-        }
-
-        _lastUncommittedAction = null;
-        _changingPropery = null;
-        _changingObject = null;
-    }
-
 
     /// <summary>
     ///     Handles changing a property's value for any number of entities.
@@ -858,130 +800,6 @@ public class ModelPropertyEditor
                             ImGui.NextColumn();
                             ImGui.PopID();
                         }
-                    }
-
-                    ImGui.PopID();
-                }
-                else if (typ.IsClass && typ == typeof(MSB.Shape))
-                {
-                    var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
-                    ShowFieldHint(type, prop, selection);
-                    ImGui.NextColumn();
-                    ImGui.SetNextItemWidth(-1);
-                    var o = prop.GetValue(obj);
-                    var shapetype = Enum.Parse<RegionShape>(o.GetType().Name);
-                    var shap = (int)shapetype;
-
-                    if (entSelection.Count == 1)
-                    {
-                        if (ImGui.Combo("##shapecombo", ref shap, _regionShapes, _regionShapes.Length))
-                        {
-                            MSB.Shape newshape;
-                            switch ((RegionShape)shap)
-                            {
-                                case RegionShape.Box:
-                                    newshape = new MSB.Shape.Box();
-                                    break;
-                                case RegionShape.Point:
-                                    newshape = new MSB.Shape.Point();
-                                    break;
-                                case RegionShape.Cylinder:
-                                    newshape = new MSB.Shape.Cylinder();
-                                    break;
-                                case RegionShape.Sphere:
-                                    newshape = new MSB.Shape.Sphere();
-                                    break;
-                                case RegionShape.Composite:
-                                    newshape = new MSB.Shape.Composite();
-                                    break;
-                                case RegionShape.Rectangle:
-                                    newshape = new MSB.Shape.Rectangle();
-                                    break;
-                                case RegionShape.Circle:
-                                    newshape = new MSB.Shape.Circle();
-                                    break;
-                                default:
-                                    throw new Exception("Invalid shape");
-                            }
-
-                            MapEditor.PropertiesChangedAction action = new(prop, obj, newshape);
-                            action.SetPostExecutionAction(undo =>
-                            {
-                                var selected = false;
-                                if (firstEnt.RenderSceneMesh != null)
-                                {
-                                    selected = firstEnt.RenderSceneMesh.RenderSelectionOutline;
-                                    firstEnt.RenderSceneMesh.Dispose();
-                                    firstEnt.RenderSceneMesh = null;
-                                }
-
-                                firstEnt.UpdateRenderModel();
-                                firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
-                            });
-                            ContextActionManager.ExecuteAction(action);
-                        }
-                    }
-
-                    ImGui.NextColumn();
-                    if (open)
-                    {
-                        PropEditorGeneric(selection, entSelection, o, false);
-                        ImGui.TreePop();
-                    }
-
-                    ImGui.PopID();
-                }
-                else if (typ == typeof(BTL.LightType))
-                {
-                    var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
-                    ShowFieldHint(type, prop, selection);
-                    ImGui.NextColumn();
-                    ImGui.SetNextItemWidth(-1);
-                    var o = prop.GetValue(obj);
-                    var enumTypes = Enum.Parse<LightType>(o.ToString());
-                    var thisType = (int)enumTypes;
-                    if (ImGui.Combo("##lightTypecombo", ref thisType, _lightTypes, _lightTypes.Length))
-                    {
-                        BTL.LightType newLight;
-                        switch ((LightType)thisType)
-                        {
-                            case LightType.Directional:
-                                newLight = BTL.LightType.Directional;
-                                break;
-                            case LightType.Point:
-                                newLight = BTL.LightType.Point;
-                                break;
-                            case LightType.Spot:
-                                newLight = BTL.LightType.Spot;
-                                break;
-                            default:
-                                throw new Exception("Invalid BTL LightType");
-                        }
-
-                        MapEditor.PropertiesChangedAction action = new(prop, obj, newLight);
-                        action.SetPostExecutionAction(undo =>
-                        {
-                            var selected = false;
-                            if (firstEnt.RenderSceneMesh != null)
-                            {
-                                selected = firstEnt.RenderSceneMesh.RenderSelectionOutline;
-                                firstEnt.RenderSceneMesh.Dispose();
-                                firstEnt.RenderSceneMesh = null;
-                            }
-
-                            firstEnt.UpdateRenderModel();
-                            firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
-                        });
-                        ContextActionManager.ExecuteAction(action);
-
-                        ContextActionManager.ExecuteAction(action);
-                    }
-
-                    ImGui.NextColumn();
-                    if (open)
-                    {
-                        PropEditorGeneric(selection, entSelection, o, false);
-                        ImGui.TreePop();
                     }
 
                     ImGui.PopID();
