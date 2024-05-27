@@ -317,7 +317,7 @@
     <Field Def="s32 Unk0x2FC"></Field>
     <Field Def="s32 Unk0x300"></Field>
     <Field Def="s32 Unk0x304"></Field>
-    <Field Def="s16 unkAttackAnimation"></Field>
+    <Field Def="s16 weaponMotionCategory"></Field>
     <Field Def="s16 Unk0x30A"></Field>
     <Field Def="s16 Unk0x30C"></Field>
     <Field Def="s16 Unk0x30E"></Field>

@@ -229,6 +229,8 @@
     <isSoulParamIdChange_model3 AltName="Apply Weapon VFX Parameters [3]" Wiki="Whether the vfx parameter Soul Param ID for Weapon Enchantment and Invisible Weapon for Weapon Enchantment settings are applied" IsBool="" />
     <wepSeIdOffset AltName="Weapon SE ID Offset" Wiki="SEID offset value" />
     <baseChangePrice AltName="Affinity Price" Wiki="Evolution price" />
+    
+    
   </Field>
   <Self />
 </PARAMMETA>

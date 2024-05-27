@@ -309,6 +309,10 @@
     <bulletFlightHeightAdjustment1 AltName="Flight Height Adjustment [1]" Wiki="When not in attack activation range will descend or ascend depending on field number.\nPositive values will ascend, negative values will descend" />
     <bulletFlightHeightAdjustment2 AltName="Flight Height Adjustment [2]" Wiki="When not in attack activation range will descend or ascend depending on field number.\nPositive values will ascend, negative values will descend" />
     <bulletFlightHeightAdjustment3 AltName="Flight Height Adjustment [3]" Wiki="When not in attack activation range will descend or ascend depending on field number.\nPositive values will ascend, negative values will descend" />
+    
+    <proximityHorizontalHitbox AltName="Proximity: Horizontal Capsule" />
+    <proximityVerticalHitbox AltName="Proximity: Vertical Capsule" />
+    
   </Field>
   <Self />
 </PARAMMETA>

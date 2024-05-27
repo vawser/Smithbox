@@ -31,6 +31,58 @@
         <Option Value="100" Name="Full Charge" />
         <Option Value="110" Name="Full Charge (Two-Stage)" />
     </Enum>
+    <Enum Name="TAE_MOTION_CATEGORIES" type="s16">
+        <Option Value="0" Name="None" />
+        <Option Value="200" Name="BURST RIFLE / LINEAR RIFLE" />
+        <Option Value="201" Name="BURST ASSAULT RIFLE / ASSAULT RIFLE / HEAVY MACHINE GUN" />
+        <Option Value="202" Name="BURST MACHINE GUN / MACHINE GUN" />
+        <Option Value="203" Name="GATLING GUN" />
+        <Option Value="204" Name="BAZOOKA" />
+        <Option Value="205" Name="SHOTGUN" />
+        <Option Value="206" Name="GRENADE LAUNCHER" />
+        <Option Value="207" Name="NEEDLE GUN / BURST HANDGUN / BOMB LAUNCHER / STUN GUN" />
+        <Option Value="208" Name="HANDGUN" />
+        <Option Value="209" Name="MISSILE LAUNCHER / SIEGE MISSILE LAUNCHER" />
+        <Option Value="210" Name="SPLIT MISSILE LAUNCHER / PULSE MISSILE LAUNCHER" />
+        <Option Value="211" Name="LASER HANDGUN / CORAL RIFLE / LASER RIFLE / MULTI ENERGY RIFLE" />
+        <Option Value="212" Name="PLASMA RIFLE / CORAL RIFLE" />
+        <Option Value="213" Name="PULSE GUN" />
+        <Option Value="214" Name="FLAMETHROWER" />
+        <Option Value="215" Name="LASER SHOTGUN" />
+        <Option Value="216" Name="UNKNOWN" />
+        <Option Value="217" Name="UNKNOWN" />
+        <Option Value="218" Name="UNKNOWN" />
+        <Option Value="219" Name="UNKNOWN" />
+        <Option Value="220" Name="UNKNOWN" />
+        <Option Value="221" Name="UNKNOWN" />
+        <Option Value="222" Name="UNKNOWN" />
+        <Option Value="223" Name="UNKNOWN" />
+        <Option Value="224" Name="UNKNOWN" />
+        <Option Value="250" Name="LIGHT WAVE BLADE / CORAL OSCILLATOR" />
+        <Option Value="251" Name="CORAL OSCILLATOR" />
+        <Option Value="252" Name="PLASMA THROWER" />
+        <Option Value="253" Name="PILE BUNKER" />
+        <Option Value="254" Name="PULSE BLADE" />
+        <Option Value="255" Name="LASER BLADE" />
+        <Option Value="256" Name="LASER SLICER" />
+        <Option Value="257" Name="LASER DAGGER" />
+        <Option Value="258" Name="LASER LANCE" />
+        <Option Value="259" Name="CHAINSAW" />
+        <Option Value="260" Name="STUN BATON" />
+        <Option Value="261" Name="EXPLOSIVE THROWER" />
+        <Option Value="262" Name="FISTS" />
+        <Option Value="280" Name="UNKNOWN" />
+        <Option Value="281" Name="UNKNOWN" />
+        <Option Value="300" Name="UNKNOWN" />
+        <Option Value="301" Name="UNKNOWN" />
+        <Option Value="302" Name="UNKNOWN" />
+        <Option Value="303" Name="UNKNOWN" />
+        <Option Value="304" Name="UNKNOWN" />
+        <Option Value="305" Name="UNKNOWN" />
+        <Option Value="306" Name="UNKNOWN" />
+        <Option Value="330" Name="UNKNOWN" />
+        <Option Value="331" Name="UNKNOWN" />
+    </Enum>
   </Enums>
   <Field>
     <variationId AltName="Behavior Variation ID" Wiki="Used to link weapon with BehaviorParam, and from there projectiles/attacks. Corresponds with variationId in BehaviorParam." />
@@ -356,6 +408,8 @@
     <menuSecondaryChargedAccumulativeImpact AltName="Assembly Menu: Show Secondary Charged Accumulative Impact" Wiki="Determines if a weapon reports Charged Accumulative Impact from secondary bullets, such as on-impact explosions. No gameplay effect." />
     <menuBurstFire AltName="Assembly Menu: Show Burst Fire" Wiki="Determines if a weapon's standard fire reports its burst fire count to the menu, causing its displayed Attack Power, Impact, and Accumulative Impact to display said burst fire count. No gameplay effect." />
     <menuChargedBurstFire AltName="Assembly Menu: Show Charged Burst Fire" Wiki="Determines if a weapon's charge fire reports its burst fire to the menu, causing its displayed Chg Attack Power, Chg Impact, and Chg Accum Impact to display said burst fire count. No gameplay effect." />
+    
+    <weaponMotionCategory AltName="Weapon Motion Category" Wiki="Refers to the TAE used by this weapon." Enum="TAE_MOTION_CATEGORIES" />
     
   </Field>
   <Self />

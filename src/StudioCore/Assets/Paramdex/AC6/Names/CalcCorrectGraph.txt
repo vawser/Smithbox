@@ -5,7 +5,7 @@
 224 WEIGHT - Tank (FORTALEZA): Grounded Boost Max Speed
 225 WEIGHT - Tank (FORTALEZA): Inertia Change Ability
 226 WEIGHT - Tank (FORTALEZA): Drift Speed
-227 WEIGHT - Unknown
+227 WEIGHT - Tank (FORTALEZA): Drift Traction
 260 WEIGHT - Grounded Boost Speed
 261 WEIGHT - Aerial Boost Speed
 262 WEIGHT - Upwards Boost Max Speed (Boosting)
@@ -23,26 +23,37 @@
 274 WEIGHT - Tank: Grounded Boost Max Speed
 275 WEIGHT - Tank: Inertia Change Ability
 276 WEIGHT - Tank: Drift Speed
-277 WEIGHT - Unknown
+277 WEIGHT - Tank: Drift Traction
 278 WEIGHT - Accumulative Attitude Recovery Drain Time
 280 WEIGHT - Kick Damage Adjustment
 281 WEIGHT - Unknown Weight Bonus
 282 WEIGHT - Tetrapod: Hover Speed
 283 WEIGHT - Tetrapod: Hover Velocity
+290 BOOSTER - Quick + Boost Performance
+291 BOOSTER - Upwards Performance
+292 BOOSTER - Quickboost Duration
+293 TETRAPOD - Quickboost Performance
+295 TETRAPOD - Hover EN Consumption
+296 TETRAPOD - Hover Speed
+297 TETRAPOD - Hover Change Inertia
 310 ANGLE OF MOVEMENT INTERTIA VS DIRECTION - Boost Mode Speed
 320 ARM LOAD - Quick Boost Recovery Time
 321 ARM LOAD - Quick Boost EN Cost
 322 ARM LOAD - Quick Boost Duration
-323 UNKNOWN - EN Load
-324 ARM LOAD LIMIT - EN Recovery Delay
-325 ARM LOAD LIMIT - EN Depleted Recovery Delay
+323 OVERWEIGHT LOAD - EN Load
+324 OVERWEIGHT LOAD - EN Recovery Delay
+325 OVERWEIGHT LOAD - EN Depleted Recovery Delay
 982 MELEE SPECIALIZATION - Melee Weapon Damage
-600 QB EN Consumption
-610 EN Output
-620 EN Recharge Delay
+600 GENERATOR - EN Output
+610 GENERATOR - EN Output
+620 GENERATOR - EN Recharge Delay
+621 GENERATOR - EN Post Recovery
 700 FCS - Softlock Strength
 701 FCS - Target Tracking (Arms)
 702 FCS - Hardlock Strength
 703 FCS - White Lock Strength (0 is 100%)
+970 FIREARM SPECIALIZATION - Target Tracing Multiplier
+971 FIREARM SPECIALIZATION - Unknown Penalty
 991 ENERGY FIREARM SPECIALIZATION - Weapon Charge Speed
 992 ENERGY FIREARM SPECIALIZATION - Energy Weapon Damage
+1003 DAMAGE TYPE - Plasma Scaling
