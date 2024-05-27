@@ -420,7 +420,8 @@ namespace SoulsFormats
             private protected abstract EventType Type { get; }
             private protected abstract bool HasTypeData { get; }
 
-            public int LocalIndex { get; set; }
+            // Index among events of the same type
+            public int TypeIndex { get; set; }
 
             /// Event: EventCommon
             [MSBReference(ReferenceType = typeof(Part))]
@@ -461,7 +462,7 @@ namespace SoulsFormats
                 long nameOffset = br.ReadInt64();
                 EventID = br.ReadInt32();
                 br.AssertInt32((int)Type);
-                LocalIndex = br.ReadInt32();
+                TypeIndex = br.ReadInt32();
                 br.AssertInt32(new int[1]);
 
                 long commonOffset = br.ReadInt64();
@@ -498,7 +499,7 @@ namespace SoulsFormats
                 bw.ReserveInt64("NameOffset");
                 bw.WriteInt32(EventID);
                 bw.WriteInt32((int)Type);
-                bw.WriteInt32(LocalIndex);
+                bw.WriteInt32(TypeIndex);
                 bw.WriteInt32(0);
 
                 bw.ReserveInt64("CommonOffset");
@@ -1667,25 +1668,25 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MSBReference(ReferenceType = typeof(Part))]
-                public string[] GroupPartsNames { get; private set; }
-                private short[] GroupPartsIndices;
+                [MSBReference(ReferenceType = typeof(Region))]
+                public string[] GroupRegionNames { get; private set; }
+                private short[] GroupRegionIndices;
 
                 /// <summary>
                 /// Creates a PatrolRoute with default values.
                 /// </summary>
                 public PatrolRoute() : base($"{nameof(Event)}: {nameof(PatrolRoute)}")
                 {
-                    GroupPartsIndices = new short[24];
-                    Array.Fill<short>(GroupPartsIndices, -1);
-                    GroupPartsNames = new string[24];
-                    Array.Fill<string>(GroupPartsNames, "");
+                    GroupRegionIndices = new short[24];
+                    Array.Fill<short>(GroupRegionIndices, -1);
+                    GroupRegionNames = new string[24];
+                    Array.Fill<string>(GroupRegionNames, "");
                 }
 
                 private protected override void DeepCopyTo(Event evnt)
                 {
                     var patrolRoute = (PatrolRoute)evnt;
-                    patrolRoute.GroupPartsNames = (string[])GroupPartsNames.Clone();
+                    patrolRoute.GroupRegionNames = (string[])GroupRegionNames.Clone();
                 }
 
                 internal PatrolRoute(BinaryReaderEx br) : base(br) { }
@@ -1696,7 +1697,7 @@ namespace SoulsFormats
                     br.AssertInt32(-1);
                     Unk08 = br.ReadInt32();
                     Unk0C = br.ReadInt32();
-                    GroupPartsIndices = br.ReadInt16s(24);
+                    GroupRegionIndices = br.ReadInt16s(24);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -1705,19 +1706,19 @@ namespace SoulsFormats
                     bw.WriteInt32(-1);
                     bw.WriteInt32(Unk08);
                     bw.WriteInt32(Unk0C);
-                    bw.WriteInt16s(GroupPartsIndices);
+                    bw.WriteInt16s(GroupRegionIndices);
                 }
 
                 internal override void GetNames(MSB_AC6 msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
-                    GroupPartsNames = MSB.FindNames(entries.Parts, GroupPartsIndices);
+                    GroupRegionNames = MSB.FindNames(entries.Regions, GroupRegionIndices);
                 }
 
                 internal override void GetIndices(MSB_AC6 msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
-                    GroupPartsIndices = MSB.FindShortIndices(this, entries.Parts, GroupPartsNames);
+                    GroupRegionIndices = MSB.FindShortIndices(this, entries.Regions, GroupRegionNames);
                 }
             }
 

@@ -849,7 +849,8 @@ namespace SoulsFormats
             private protected abstract RegionType Type { get; }
             private protected abstract bool HasTypeData { get; }
 
-            public int LocalIndex { get; set; }
+            // Index among points of the same type
+            public int TypeIndex { get; set; }
 
             /// <summary>
             /// The shape of the region.
@@ -876,12 +877,12 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            private long IndexListOffset30 { get; set; }
+            private long parentListOffset { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            private long IndexListOffset38 { get; set; }
+            private long childListOffset { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -896,12 +897,12 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<short> PointIndices30 { get; set; }
+            public List<short> ParentListIndices { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<short> PointIndices38 { get; set; }
+            public List<short> ChildListIndices { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -969,8 +970,8 @@ namespace SoulsFormats
                 Name = name;
                 Shape = new MSB.Shape.Point();
                 Unk2C = -1;
-                PointIndices30 = new List<short>();
-                PointIndices38 = new List<short>();
+                ParentListIndices = new List<short>();
+                ChildListIndices = new List<short>();
                 Unk78 = -1;
                 Unk7C = -1;
             }
@@ -994,15 +995,15 @@ namespace SoulsFormats
                 long start = br.Position;
                 NameOffset = br.ReadInt64();
                 br.AssertInt32((int)Type);
-                LocalIndex = br.ReadInt32();
+                TypeIndex = br.ReadInt32();
                 MSB.ShapeType shapeType = br.ReadEnum32<MSB.ShapeType>();
                 Shape = MSB.Shape.Create(shapeType);
                 Position = br.ReadVector3();
                 Rotation = br.ReadVector3();
                 Unk2C = br.ReadInt32();
 
-                IndexListOffset30 = br.ReadInt64();
-                IndexListOffset38 = br.ReadInt64();
+                parentListOffset = br.ReadInt64();
+                childListOffset = br.ReadInt64();
 
                 Unk78 = br.ReadInt32();
                 Unk7C = br.ReadInt32();
@@ -1016,14 +1017,14 @@ namespace SoulsFormats
                 Name = br.GetUTF16(start + NameOffset);
 
                 // Point Indices 30
-                br.Position = start + IndexListOffset30;
+                br.Position = start + parentListOffset;
                 short countA = br.ReadInt16();
-                PointIndices30 = new List<short>(br.ReadInt16s(countA));
+                ParentListIndices = new List<short>(br.ReadInt16s(countA));
 
                 // Point Indices 38
-                br.Position = start + IndexListOffset38;
+                br.Position = start + childListOffset;
                 short countB = br.ReadInt16();
-                PointIndices38 = new List<short>(br.ReadInt16s(countB));
+                ChildListIndices = new List<short>(br.ReadInt16s(countB));
 
                 // Shape
                 if (Shape.HasShapeData && FormOffset != 0L)
@@ -1081,7 +1082,7 @@ namespace SoulsFormats
 
                 bw.ReserveInt64("NameOffset");
                 bw.WriteInt32((int) Type);
-                bw.WriteInt32(LocalIndex);
+                bw.WriteInt32(TypeIndex);
                 bw.WriteUInt32((uint)Shape.Type);
                 bw.WriteVector3(Position);
                 bw.WriteVector3(Rotation);
@@ -1103,13 +1104,13 @@ namespace SoulsFormats
                 bw.Pad(4);
 
                 bw.FillInt64("IndexListOffset30", bw.Position - start);
-                bw.WriteInt16((short)PointIndices30.Count);
-                bw.WriteInt16s(PointIndices30);
+                bw.WriteInt16((short)ParentListIndices.Count);
+                bw.WriteInt16s(ParentListIndices);
                 bw.Pad(4);
 
                 bw.FillInt64("IndexListOffset38", bw.Position - start);
-                bw.WriteInt16((short)PointIndices38.Count);
-                bw.WriteInt16s(PointIndices38);
+                bw.WriteInt16((short)ChildListIndices.Count);
+                bw.WriteInt16s(ChildListIndices);
                 bw.Pad(8);
 
                 if (Shape.HasShapeData && FormOffset != 0L)

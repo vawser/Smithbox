@@ -416,13 +416,13 @@ namespace StudioCore.Editors.MapEditor
                         }
                     }
 
-                    var newInstanceID = msbPart.LocalIndex;
-                    while (mapPartEntities[m].FirstOrDefault(e => ((MSB_AC6.Part)e.WrappedObject).LocalIndex == newInstanceID) != null)
+                    var newInstanceID = msbPart.TypeIndex;
+                    while (mapPartEntities[m].FirstOrDefault(e => ((MSB_AC6.Part)e.WrappedObject).TypeIndex == newInstanceID) != null)
                     {
                         newInstanceID++;
                     }
 
-                    msbPart.LocalIndex = newInstanceID;
+                    msbPart.TypeIndex = newInstanceID;
                     mapPartEntities[m].Add(ent);
                 }
             }

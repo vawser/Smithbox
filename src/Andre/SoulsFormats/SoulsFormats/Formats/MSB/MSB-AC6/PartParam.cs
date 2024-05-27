@@ -260,15 +260,16 @@ namespace SoulsFormats
             private protected abstract PartType Type { get; }
             private protected abstract bool HasUnkOffsetT50 { get; }
             private protected abstract bool HasUnkOffsetT58 { get; }
-            private protected abstract bool HasUnkOffsetT70 { get; } // Gparam
-            private protected abstract bool HasUnkOffsetT78 { get; } // SceneGparam
-            private protected abstract bool HasUnkOffsetT80 { get; } // Grass
+            private protected abstract bool HasOffsetGparam { get; } // Gparam
+            private protected abstract bool HasOffsetSceneGparam { get; } // SceneGparam
+            private protected abstract bool HasOffsetGrass { get; } // Grass
             private protected abstract bool HasUnkOffsetT88 { get; }
             private protected abstract bool HasUnkOffsetT90 { get; }
             private protected abstract bool HasUnkOffsetT98 { get; } // Tile Load
             private protected abstract bool HasUnkOffsetTA0 { get; }
 
-            public int LocalIndex { get; set; }
+            // Index among parts of the same type
+            public int TypeIndex { get; set; }
 
             public string ModelName { get; set; }
             private int ModelIndex;
@@ -480,7 +481,7 @@ namespace SoulsFormats
                 // MAIN
                 long nameOffset = br.ReadInt64();
                 br.AssertUInt32((uint)Type);
-                LocalIndex = br.ReadInt32();
+                TypeIndex = br.ReadInt32();
                 ModelIndex = br.ReadInt32();
                 br.AssertInt32(new int[1]);
                 long sourceOffset = br.ReadInt64();
@@ -494,9 +495,9 @@ namespace SoulsFormats
                 long unkOffsetT58 = br.ReadInt64();
                 long commonOffset = br.ReadInt64();
                 long typeDataOffset = br.ReadInt64();
-                long unkOffsetT70 = br.ReadInt64();
-                long unkOffsetT78 = br.ReadInt64();
-                long unkOffsetT80 = br.ReadInt64();
+                long gparamOffset = br.ReadInt64();
+                long sceneGparamOffset = br.ReadInt64();
+                long grassOffset = br.ReadInt64();
                 long unkOffsetT88 = br.ReadInt64();
                 long unkOffsetT90 = br.ReadInt64();
                 long unkOffsetT98 = br.ReadInt64();
@@ -526,22 +527,22 @@ namespace SoulsFormats
                 br.Position = start + typeDataOffset;
                 ReadTypeData(br);
 
-                if (HasUnkOffsetT70 && unkOffsetT70 != 0L)
+                if (HasOffsetGparam && gparamOffset != 0L)
                 {
-                    br.Position = start + unkOffsetT70;
-                    ReadUnkOffsetT70(br);
+                    br.Position = start + gparamOffset;
+                    ReadGparamStruct(br);
                 }
 
-                if (HasUnkOffsetT78 && unkOffsetT78 != 0L)
+                if (HasOffsetSceneGparam && sceneGparamOffset != 0L)
                 {
-                    br.Position = start + unkOffsetT78;
-                    ReadUnkOffsetT78(br);
+                    br.Position = start + sceneGparamOffset;
+                    ReadSceneGparamStruct(br);
                 }
 
-                if (HasUnkOffsetT80 && unkOffsetT80 != 0L)
+                if (HasOffsetGrass && grassOffset != 0L)
                 {
-                    br.Position = start + unkOffsetT80;
-                    ReadUnkOffsetT80(br);
+                    br.Position = start + grassOffset;
+                    ReadGrassStruct(br);
                 }
 
                 if (HasUnkOffsetT88)
@@ -606,14 +607,14 @@ namespace SoulsFormats
             private protected virtual void ReadUnkOffsetT58(BinaryReaderEx br)
                 => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadUnkOffsetT58)}.");
 
-            private protected virtual void ReadUnkOffsetT70(BinaryReaderEx br)
-                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadUnkOffsetT70)}.");
+            private protected virtual void ReadGparamStruct(BinaryReaderEx br)
+                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadGparamStruct)}.");
 
-            private protected virtual void ReadUnkOffsetT78(BinaryReaderEx br)
-                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadUnkOffsetT78)}.");
+            private protected virtual void ReadSceneGparamStruct(BinaryReaderEx br)
+                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadSceneGparamStruct)}.");
 
-            private protected virtual void ReadUnkOffsetT80(BinaryReaderEx br)
-                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadUnkOffsetT80)}.");
+            private protected virtual void ReadGrassStruct(BinaryReaderEx br)
+                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadGrassStruct)}.");
 
             private protected virtual void ReadUnkOffsetT88(BinaryReaderEx br)
                 => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadUnkOffsetT88)}.");
@@ -634,7 +635,7 @@ namespace SoulsFormats
                 bw.ReserveInt64("NameOffset");
 
                 bw.WriteUInt32((uint)Type);
-                bw.WriteInt32(LocalIndex);
+                bw.WriteInt32(TypeIndex);
                 bw.WriteInt32(ModelIndex);
                 bw.WriteInt32(0);
                 bw.ReserveInt64("SourceOffset");
@@ -648,9 +649,9 @@ namespace SoulsFormats
                 bw.ReserveInt64("UnkOffsetT58");
                 bw.ReserveInt64("CommonOffset");
                 bw.ReserveInt64("TypeDataOffset");
-                bw.ReserveInt64("UnkOffsetT70");
-                bw.ReserveInt64("UnkOffsetT78");
-                bw.ReserveInt64("UnkOffsetT80");
+                bw.ReserveInt64("GparamOffset");
+                bw.ReserveInt64("SceneGparamOffset");
+                bw.ReserveInt64("GrassOffset");
                 bw.ReserveInt64("UnkOffsetT88");
                 bw.ReserveInt64("UnkOffsetT90");
                 bw.ReserveInt64("UnkOffsetT98");
@@ -698,37 +699,34 @@ namespace SoulsFormats
                 bw.FillInt64("TypeDataOffset", bw.Position - start);
                 WriteTypeData(bw);
 
-                // Struct70
-                if (HasUnkOffsetT70)
+                if (HasOffsetGparam)
                 {
-                    bw.FillInt64("UnkOffsetT70", bw.Position - start);
-                    WriteUnkOffsetT70(bw);
+                    bw.FillInt64("GparamOffset", bw.Position - start);
+                    WriteGparamStruct(bw);
                 }
                 else
                 {
-                    bw.FillInt64("UnkOffsetT70", 0);
+                    bw.FillInt64("GparamOffset", 0);
                 }
 
-                // Struct78
-                if (HasUnkOffsetT78)
+                if (HasOffsetSceneGparam)
                 {
-                    bw.FillInt64("UnkOffsetT78", bw.Position - start);
-                    WriteUnkOffsetT78(bw);
+                    bw.FillInt64("SceneGparamOffset", bw.Position - start);
+                    WriteSceneGparamStruct(bw);
                 }
                 else
                 {
-                    bw.FillInt64("UnkOffsetT78", 0);
+                    bw.FillInt64("SceneGparamOffset", 0);
                 }
 
-                // Struct80
-                if (HasUnkOffsetT80)
+                if (HasOffsetGrass)
                 {
-                    bw.FillInt64("UnkOffsetT80", bw.Position - start);
-                    WriteUnkOffsetT80(bw);
+                    bw.FillInt64("GrassOffset", bw.Position - start);
+                    WriteGrassStruct(bw);
                 }
                 else
                 {
-                    bw.FillInt64("UnkOffsetT80", 0);
+                    bw.FillInt64("GrassOffset", 0);
                 }
 
                 // Struct88
@@ -813,14 +811,14 @@ namespace SoulsFormats
             private protected virtual void WriteUnkOffsetT58(BinaryWriterEx bw)
                 => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(WriteUnkOffsetT58)}.");
 
-            private protected virtual void WriteUnkOffsetT70(BinaryWriterEx bw)
-                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(WriteUnkOffsetT70)}.");
+            private protected virtual void WriteGparamStruct(BinaryWriterEx bw)
+                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(WriteGparamStruct)}.");
 
-            private protected virtual void WriteUnkOffsetT78(BinaryWriterEx bw)
-                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(WriteUnkOffsetT78)}.");
+            private protected virtual void WriteSceneGparamStruct(BinaryWriterEx bw)
+                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(WriteSceneGparamStruct)}.");
 
-            private protected virtual void WriteUnkOffsetT80(BinaryWriterEx bw)
-                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(WriteUnkOffsetT80)}.");
+            private protected virtual void WriteGrassStruct(BinaryWriterEx bw)
+                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(WriteGrassStruct)}.");
 
             private protected virtual void WriteUnkOffsetT88(BinaryWriterEx bw)
                 => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(WriteUnkOffsetT88)}.");
@@ -1003,41 +1001,39 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown. Is Gparam struct in Elden Ring.
             /// </summary>
-            public class UnkStruct70
+            public class StructGparam
             {
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
-                public int Unk00 { get; set; }
+                public int LightId { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
-                public int Unk04 { get; set; }
+                public int FogId { get; set; }
 
                 /// <summary>
                 /// Creates a UnkStruct70 with default values.
                 /// </summary>
-                public UnkStruct70() 
+                public StructGparam() 
                 {
-                    Unk00 = -1;
-                    Unk04 = -1;
+                    LightId = -1;
+                    FogId = -1;
                 }
 
                 /// <summary>
                 /// Creates a deep copy of UnkStruct70.
                 /// </summary>
-                public UnkStruct70 DeepCopy()
+                public StructGparam DeepCopy()
                 {
-                    return (UnkStruct70)MemberwiseClone();
+                    return (StructGparam)MemberwiseClone();
                 }
 
-                internal UnkStruct70(BinaryReaderEx br)
+                internal StructGparam(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
-                    Unk04 = br.ReadInt32();
+                    LightId = br.ReadInt32();
+                    FogId = br.ReadInt32();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
@@ -1048,8 +1044,8 @@ namespace SoulsFormats
 
                 internal void Write(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
-                    bw.WriteInt32(Unk04);
+                    bw.WriteInt32(LightId);
+                    bw.WriteInt32(FogId);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -1063,14 +1059,14 @@ namespace SoulsFormats
                 /// </summary>
                 public override string ToString()
                 {
-                    return $"{Unk00}, {Unk04}";
+                    return $"{LightId}, {FogId}";
                 }
             }
 
             /// <summary>
             /// Unknown; Is SceneGparam in Elden Ring.
             /// </summary>
-            public class UnkStruct78
+            public class StructSceneGparam
             {
                 /// <summary>
                 /// Unknown.
@@ -1095,7 +1091,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Creates a UnkStruct78 with default values.
                 /// </summary>
-                public UnkStruct78()
+                public StructSceneGparam()
                 {
                     TransitionTime = -1f;
                     GparamSubID_Base = (sbyte)-1;
@@ -1106,13 +1102,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// Creates a deep copy of the struct.
                 /// </summary>
-                public UnkStruct78 DeepCopy()
+                public StructSceneGparam DeepCopy()
                 {
-                    var config = (UnkStruct78)MemberwiseClone();
+                    var config = (StructSceneGparam)MemberwiseClone();
                     return config;
                 }
 
-                internal UnkStruct78(BinaryReaderEx br)
+                internal StructSceneGparam(BinaryReaderEx br)
                 {
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
@@ -1170,77 +1166,37 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown. 
             /// </summary>
-            public class UnkStruct80
+            public class StructGrass
             {
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
-                public int Unk00 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [IgnoreProperty]
-                public int Unk04 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [IgnoreProperty]
-                public int Unk08 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [IgnoreProperty]
-                public int Unk0C { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [IgnoreProperty]
-                public int Unk10 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [IgnoreProperty]
-                public int Unk14 { get; set; }
+                [MSBParamReference(ParamName ="GrassTypeParam")]
+                public int[] GrassTypeParamIds { get; set; }
 
                 /// <summary>
                 /// Creates an UnkStruct80 with default values.
                 /// </summary>
-                public UnkStruct80() { }
+                public StructGrass() { }
 
                 /// <summary>
                 /// Creates a deep copy of the struct.
                 /// </summary>
-                public UnkStruct80 DeepCopy()
+                public StructGrass DeepCopy()
                 {
-                    return (UnkStruct80)MemberwiseClone();
+                    return (StructGrass)MemberwiseClone();
                 }
 
-                internal UnkStruct80(BinaryReaderEx br)
+                internal StructGrass(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
-                    Unk04 = br.ReadInt32();
-                    Unk08 = br.ReadInt32();
-                    Unk0C = br.ReadInt32();
-                    Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadInt32();
+                    GrassTypeParamIds = br.ReadInt32s(6);
                     br.AssertInt32(-1);
                     br.AssertInt32(new int[1]);
                 }
 
                 internal void Write(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
-                    bw.WriteInt32(Unk04);
-                    bw.WriteInt32(Unk08);
-                    bw.WriteInt32(Unk0C);
-                    bw.WriteInt32(Unk10);
-                    bw.WriteInt32(Unk14);
+                    bw.WriteInt32s(GrassTypeParamIds);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(0);
                 }
@@ -1450,9 +1406,9 @@ namespace SoulsFormats
                 private protected override PartType Type => PartType.MapPiece;
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => false;
-                private protected override bool HasUnkOffsetT70 => true;
-                private protected override bool HasUnkOffsetT78 => false;
-                private protected override bool HasUnkOffsetT80 => true;
+                private protected override bool HasOffsetGparam => true;
+                private protected override bool HasOffsetSceneGparam => false;
+                private protected override bool HasOffsetGrass => true;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => true;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -1466,12 +1422,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct70 UnkStruct70 { get; set; }
+                public StructGparam PartStructGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct80 UnkStruct80 { get; set; }
+                public StructGrass PartStructGrass { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1499,8 +1455,8 @@ namespace SoulsFormats
                 public MapPiece() : base("mXXXXXX_XXXX")
                 {
                     UnkStruct50 = new UnkStruct50();
-                    UnkStruct70 = new UnkStruct70();
-                    UnkStruct80 = new UnkStruct80();
+                    PartStructGparam = new StructGparam();
+                    PartStructGrass = new StructGrass();
                     UnkStruct88 = new UnkStruct88();
                     UnkStruct90 = new UnkStruct90();
                     UnkStruct98 = new UnkStruct98();
@@ -1511,8 +1467,8 @@ namespace SoulsFormats
                 {
                     var piece = (MapPiece)part;
                     piece.UnkStruct50 = UnkStruct50.DeepCopy();
-                    piece.UnkStruct70 = UnkStruct70.DeepCopy();
-                    piece.UnkStruct80 = UnkStruct80.DeepCopy();
+                    piece.PartStructGparam = PartStructGparam.DeepCopy();
+                    piece.PartStructGrass = PartStructGrass.DeepCopy();
                     piece.UnkStruct88 = UnkStruct88.DeepCopy();
                     piece.UnkStruct90 = UnkStruct90.DeepCopy();
                     piece.UnkStruct98 = UnkStruct98.DeepCopy();
@@ -1528,8 +1484,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void ReadUnkOffsetT50(BinaryReaderEx br) => UnkStruct50 = new UnkStruct50(br);
-                private protected override void ReadUnkOffsetT70(BinaryReaderEx br) => UnkStruct70 = new UnkStruct70(br);
-                private protected override void ReadUnkOffsetT80(BinaryReaderEx br) => UnkStruct80 = new UnkStruct80(br);
+                private protected override void ReadGparamStruct(BinaryReaderEx br) => PartStructGparam = new StructGparam(br);
+                private protected override void ReadGrassStruct(BinaryReaderEx br) => PartStructGrass = new StructGrass(br);
                 private protected override void ReadUnkOffsetT88(BinaryReaderEx br) => UnkStruct88 = new UnkStruct88(br);
                 private protected override void ReadUnkOffsetT90(BinaryReaderEx br) => UnkStruct90 = new UnkStruct90(br);
                 private protected override void ReadUnkOffsetT98(BinaryReaderEx br) => UnkStruct98 = new UnkStruct98(br);
@@ -1542,8 +1498,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void WriteUnkOffsetT50(BinaryWriterEx bw) => UnkStruct50.Write(bw);
-                private protected override void WriteUnkOffsetT70(BinaryWriterEx bw) => UnkStruct70.Write(bw);
-                private protected override void WriteUnkOffsetT80(BinaryWriterEx bw) => UnkStruct80.Write(bw);
+                private protected override void WriteGparamStruct(BinaryWriterEx bw) => PartStructGparam.Write(bw);
+                private protected override void WriteGrassStruct(BinaryWriterEx bw) => PartStructGrass.Write(bw);
                 private protected override void WriteUnkOffsetT88(BinaryWriterEx bw) => UnkStruct88.Write(bw);
                 private protected override void WriteUnkOffsetT90(BinaryWriterEx bw) => UnkStruct90.Write(bw);
                 private protected override void WriteUnkOffsetT98(BinaryWriterEx bw) => UnkStruct98.Write(bw);
@@ -1557,9 +1513,9 @@ namespace SoulsFormats
             {
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => false;
-                private protected override bool HasUnkOffsetT70 => true;
-                private protected override bool HasUnkOffsetT78 => false;
-                private protected override bool HasUnkOffsetT80 => false;
+                private protected override bool HasOffsetGparam => true;
+                private protected override bool HasOffsetSceneGparam => false;
+                private protected override bool HasOffsetGrass => false;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => false;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -1573,7 +1529,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct70 UnkStruct70 { get; set; }
+                public StructGparam PartStructGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1855,7 +1811,7 @@ namespace SoulsFormats
                 private protected EnemyBase() : base("cXXXX_XXXX")
                 {
                     UnkStruct50 = new UnkStruct50();
-                    UnkStruct70 = new UnkStruct70();
+                    PartStructGparam = new StructGparam();
                     UnkStruct88 = new UnkStruct88();
                     UnkStruct98 = new UnkStruct98();
 
@@ -1879,7 +1835,7 @@ namespace SoulsFormats
                 {
                     var enemy = (EnemyBase)part;
                     enemy.UnkStruct50 = UnkStruct50.DeepCopy();
-                    enemy.UnkStruct70 = UnkStruct70.DeepCopy();
+                    enemy.PartStructGparam = PartStructGparam.DeepCopy();
                     enemy.UnkStruct88 = UnkStruct88.DeepCopy();
                     enemy.UnkStruct98 = UnkStruct98.DeepCopy();
 
@@ -1939,7 +1895,7 @@ namespace SoulsFormats
                 }
 
                 private protected override void ReadUnkOffsetT50(BinaryReaderEx br) => UnkStruct50 = new UnkStruct50(br);
-                private protected override void ReadUnkOffsetT70(BinaryReaderEx br) => UnkStruct70 = new UnkStruct70(br);
+                private protected override void ReadGparamStruct(BinaryReaderEx br) => PartStructGparam = new StructGparam(br);
                 private protected override void ReadUnkOffsetT88(BinaryReaderEx br) => UnkStruct88 = new UnkStruct88(br);
                 private protected override void ReadUnkOffsetT98(BinaryReaderEx br) => UnkStruct98 = new UnkStruct98(br);
 
@@ -1999,7 +1955,7 @@ namespace SoulsFormats
                 }
 
                 private protected override void WriteUnkOffsetT50(BinaryWriterEx bw) => UnkStruct50.Write(bw);
-                private protected override void WriteUnkOffsetT70(BinaryWriterEx bw) => UnkStruct70.Write(bw);
+                private protected override void WriteGparamStruct(BinaryWriterEx bw) => PartStructGparam.Write(bw);
                 private protected override void WriteUnkOffsetT88(BinaryWriterEx bw) => UnkStruct88.Write(bw);
                 private protected override void WriteUnkOffsetT98(BinaryWriterEx bw) => UnkStruct98.Write(bw);
 
@@ -2041,9 +1997,9 @@ namespace SoulsFormats
                 private protected override PartType Type => PartType.Player;
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => false;
-                private protected override bool HasUnkOffsetT70 => false;
-                private protected override bool HasUnkOffsetT78 => false;
-                private protected override bool HasUnkOffsetT80 => false;
+                private protected override bool HasOffsetGparam => false;
+                private protected override bool HasOffsetSceneGparam => false;
+                private protected override bool HasOffsetGrass => false;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => false;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -2140,9 +2096,9 @@ namespace SoulsFormats
                 private protected override PartType Type => PartType.Collision;
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => true;
-                private protected override bool HasUnkOffsetT70 => true;
-                private protected override bool HasUnkOffsetT78 => true;
-                private protected override bool HasUnkOffsetT80 => false;
+                private protected override bool HasOffsetGparam => true;
+                private protected override bool HasOffsetSceneGparam => true;
+                private protected override bool HasOffsetGrass => false;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => false;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -2161,12 +2117,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct70 UnkStruct70 { get; set; }
+                public StructGparam PartStructGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct78 UnkStruct78 { get; set; }
+                public StructSceneGparam PartStructSceneGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2231,8 +2187,8 @@ namespace SoulsFormats
                 {
                     UnkStruct50 = new UnkStruct50();
                     UnkStruct58 = new UnkStruct58();
-                    UnkStruct70 = new UnkStruct70();
-                    UnkStruct78 = new UnkStruct78();
+                    PartStructGparam = new StructGparam();
+                    PartStructSceneGparam = new StructSceneGparam();
                     UnkStruct88 = new UnkStruct88();
                     UnkStruct98 = new UnkStruct98();
                     UnkStructA0 = new UnkStructA0();
@@ -2243,8 +2199,8 @@ namespace SoulsFormats
                     var collision = (Collision)part;
                     collision.UnkStruct50 = UnkStruct50.DeepCopy();
                     collision.UnkStruct58 = UnkStruct58.DeepCopy();
-                    collision.UnkStruct70 = UnkStruct70.DeepCopy();
-                    collision.UnkStruct78 = UnkStruct78.DeepCopy();
+                    collision.PartStructGparam = PartStructGparam.DeepCopy();
+                    collision.PartStructSceneGparam = PartStructSceneGparam.DeepCopy();
                     collision.UnkStruct88 = UnkStruct88.DeepCopy();
                     collision.UnkStruct98 = UnkStruct98.DeepCopy();
                     collision.UnkStructA0 = UnkStructA0.DeepCopy();
@@ -2286,8 +2242,8 @@ namespace SoulsFormats
 
                 private protected override void ReadUnkOffsetT50(BinaryReaderEx br) => UnkStruct50 = new UnkStruct50(br);
                 private protected override void ReadUnkOffsetT58(BinaryReaderEx br) => UnkStruct58 = new UnkStruct58(br);
-                private protected override void ReadUnkOffsetT70(BinaryReaderEx br) => UnkStruct70 = new UnkStruct70(br);
-                private protected override void ReadUnkOffsetT78(BinaryReaderEx br) => UnkStruct78 = new UnkStruct78(br);
+                private protected override void ReadGparamStruct(BinaryReaderEx br) => PartStructGparam = new StructGparam(br);
+                private protected override void ReadSceneGparamStruct(BinaryReaderEx br) => PartStructSceneGparam = new StructSceneGparam(br);
                 private protected override void ReadUnkOffsetT88(BinaryReaderEx br) => UnkStruct88 = new UnkStruct88(br);
                 private protected override void ReadUnkOffsetT98(BinaryReaderEx br) => UnkStruct98 = new UnkStruct98(br);
                 private protected override void ReadUnkOffsetTA0(BinaryReaderEx br) => UnkStructA0 = new UnkStructA0(br);
@@ -2325,8 +2281,8 @@ namespace SoulsFormats
                 }
                 private protected override void WriteUnkOffsetT50(BinaryWriterEx bw) => UnkStruct50.Write(bw);
                 private protected override void WriteUnkOffsetT58(BinaryWriterEx bw) => UnkStruct58.Write(bw);
-                private protected override void WriteUnkOffsetT70(BinaryWriterEx bw) => UnkStruct70.Write(bw);
-                private protected override void WriteUnkOffsetT78(BinaryWriterEx bw) => UnkStruct78.Write(bw);
+                private protected override void WriteGparamStruct(BinaryWriterEx bw) => PartStructGparam.Write(bw);
+                private protected override void WriteSceneGparamStruct(BinaryWriterEx bw) => PartStructSceneGparam.Write(bw);
                 private protected override void WriteUnkOffsetT88(BinaryWriterEx bw) => UnkStruct88.Write(bw);
                 private protected override void WriteUnkOffsetT98(BinaryWriterEx bw) => UnkStruct98.Write(bw);
                 private protected override void WriteUnkOffsetTA0(BinaryWriterEx bw) => UnkStructA0.Write(bw);
@@ -2340,9 +2296,9 @@ namespace SoulsFormats
                 private protected override PartType Type => PartType.DummyAsset;
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => false;
-                private protected override bool HasUnkOffsetT70 => true;
-                private protected override bool HasUnkOffsetT78 => false;
-                private protected override bool HasUnkOffsetT80 => false;
+                private protected override bool HasOffsetGparam => true;
+                private protected override bool HasOffsetSceneGparam => false;
+                private protected override bool HasOffsetGrass => false;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => false;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -2356,7 +2312,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct70 UnkStruct70 { get; set; }
+                public StructGparam PartStructGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2374,7 +2330,7 @@ namespace SoulsFormats
                 public DummyAsset() : base("AEGxxx_xxx_xxxx")
                 {
                     UnkStruct50 = new UnkStruct50();
-                    UnkStruct70 = new UnkStruct70();
+                    PartStructGparam = new StructGparam();
                     UnkStruct88 = new UnkStruct88();
                     UnkStruct98 = new UnkStruct98();
                 }
@@ -2383,7 +2339,7 @@ namespace SoulsFormats
                 {
                     var asset = (DummyAsset)part;
                     asset.UnkStruct50 = UnkStruct50.DeepCopy();
-                    asset.UnkStruct70 = UnkStruct70.DeepCopy();
+                    asset.PartStructGparam = PartStructGparam.DeepCopy();
                     asset.UnkStruct88 = UnkStruct88.DeepCopy();
                     asset.UnkStruct98 = UnkStruct98.DeepCopy();
                 }
@@ -2403,7 +2359,7 @@ namespace SoulsFormats
                 }
 
                 private protected override void ReadUnkOffsetT50(BinaryReaderEx br) => UnkStruct50 = new UnkStruct50(br);
-                private protected override void ReadUnkOffsetT70(BinaryReaderEx br) => UnkStruct70 = new UnkStruct70(br);
+                private protected override void ReadGparamStruct(BinaryReaderEx br) => PartStructGparam = new StructGparam(br);
                 private protected override void ReadUnkOffsetT88(BinaryReaderEx br) => UnkStruct88 = new UnkStruct88(br);
                 private protected override void ReadUnkOffsetT98(BinaryReaderEx br) => UnkStruct98 = new UnkStruct98(br);
 
@@ -2419,7 +2375,7 @@ namespace SoulsFormats
                     bw.WriteInt32(-1);
                 }
                 private protected override void WriteUnkOffsetT50(BinaryWriterEx bw) => UnkStruct50.Write(bw);
-                private protected override void WriteUnkOffsetT70(BinaryWriterEx bw) => UnkStruct70.Write(bw);
+                private protected override void WriteGparamStruct(BinaryWriterEx bw) => PartStructGparam.Write(bw);
                 private protected override void WriteUnkOffsetT88(BinaryWriterEx bw) => UnkStruct88.Write(bw);
                 private protected override void WriteUnkOffsetT98(BinaryWriterEx bw) => UnkStruct98.Write(bw);
             }
@@ -2447,9 +2403,9 @@ namespace SoulsFormats
                 private protected override PartType Type => PartType.ConnectCollision;
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => true;
-                private protected override bool HasUnkOffsetT70 => false;
-                private protected override bool HasUnkOffsetT78 => false;
-                private protected override bool HasUnkOffsetT80 => false;
+                private protected override bool HasOffsetGparam => false;
+                private protected override bool HasOffsetSceneGparam => false;
+                private protected override bool HasOffsetGrass => false;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => false;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -2569,9 +2525,9 @@ namespace SoulsFormats
                 private protected override PartType Type => PartType.Asset;
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => true;
-                private protected override bool HasUnkOffsetT70 => true;
-                private protected override bool HasUnkOffsetT78 => false;
-                private protected override bool HasUnkOffsetT80 => true;
+                private protected override bool HasOffsetGparam => true;
+                private protected override bool HasOffsetSceneGparam => false;
+                private protected override bool HasOffsetGrass => true;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => true;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -2590,12 +2546,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct70 UnkStruct70 { get; set; }
+                public StructGparam PartStructGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct80 UnkStruct80 { get; set; }
+                public StructGrass PartStructGrass { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3116,8 +3072,8 @@ namespace SoulsFormats
                 {
                     UnkStruct50 = new UnkStruct50();
                     UnkStruct58 = new UnkStruct58();
-                    UnkStruct70 = new UnkStruct70();
-                    UnkStruct80 = new UnkStruct80();
+                    PartStructGparam = new StructGparam();
+                    PartStructGrass = new StructGrass();
                     UnkStruct88 = new UnkStruct88();
                     UnkStruct90 = new UnkStruct90();
                     UnkStruct98 = new UnkStruct98();
@@ -3151,8 +3107,8 @@ namespace SoulsFormats
                     var asset = (Asset)part;
                     asset.UnkStruct50 = UnkStruct50.DeepCopy();
                     asset.UnkStruct58 = UnkStruct58.DeepCopy();
-                    asset.UnkStruct70 = UnkStruct70.DeepCopy();
-                    asset.UnkStruct80 = UnkStruct80.DeepCopy();
+                    asset.PartStructGparam = PartStructGparam.DeepCopy();
+                    asset.PartStructGrass = PartStructGrass.DeepCopy();
                     asset.UnkStruct88 = UnkStruct88.DeepCopy();
                     asset.UnkStruct90 = UnkStruct90.DeepCopy();
                     asset.UnkStruct98 = UnkStruct98.DeepCopy();
@@ -3246,8 +3202,8 @@ namespace SoulsFormats
                 }
                 private protected override void ReadUnkOffsetT50(BinaryReaderEx br) => UnkStruct50 = new UnkStruct50(br);
                 private protected override void ReadUnkOffsetT58(BinaryReaderEx br) => UnkStruct58 = new UnkStruct58(br);
-                private protected override void ReadUnkOffsetT70(BinaryReaderEx br) => UnkStruct70 = new UnkStruct70(br);
-                private protected override void ReadUnkOffsetT80(BinaryReaderEx br) => UnkStruct80 = new UnkStruct80(br);
+                private protected override void ReadGparamStruct(BinaryReaderEx br) => PartStructGparam = new StructGparam(br);
+                private protected override void ReadGrassStruct(BinaryReaderEx br) => PartStructGrass = new StructGrass(br);
                 private protected override void ReadUnkOffsetT88(BinaryReaderEx br) => UnkStruct88 = new UnkStruct88(br);
                 private protected override void ReadUnkOffsetT90(BinaryReaderEx br) => UnkStruct90 = new UnkStruct90(br);
                 private protected override void ReadUnkOffsetT98(BinaryReaderEx br) => UnkStruct98 = new UnkStruct98(br);
@@ -3328,8 +3284,8 @@ namespace SoulsFormats
                 }
                 private protected override void WriteUnkOffsetT50(BinaryWriterEx bw) => UnkStruct50.Write(bw);
                 private protected override void WriteUnkOffsetT58(BinaryWriterEx bw) => UnkStruct58.Write(bw);
-                private protected override void WriteUnkOffsetT70(BinaryWriterEx bw) => UnkStruct70.Write(bw);
-                private protected override void WriteUnkOffsetT80(BinaryWriterEx bw) => UnkStruct80.Write(bw);
+                private protected override void WriteGparamStruct(BinaryWriterEx bw) => PartStructGparam.Write(bw);
+                private protected override void WriteGrassStruct(BinaryWriterEx bw) => PartStructGrass.Write(bw);
                 private protected override void WriteUnkOffsetT88(BinaryWriterEx bw) => UnkStruct88.Write(bw);
                 private protected override void WriteUnkOffsetT90(BinaryWriterEx bw) => UnkStruct90.Write(bw);
                 private protected override void WriteUnkOffsetT98(BinaryWriterEx bw) => UnkStruct98.Write(bw);
@@ -3355,9 +3311,9 @@ namespace SoulsFormats
                 private protected override PartType Type => PartType.Object;
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => false;
-                private protected override bool HasUnkOffsetT70 => true;
-                private protected override bool HasUnkOffsetT78 => false;
-                private protected override bool HasUnkOffsetT80 => true;
+                private protected override bool HasOffsetGparam => true;
+                private protected override bool HasOffsetSceneGparam => false;
+                private protected override bool HasOffsetGrass => true;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => true;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -3371,12 +3327,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct70 UnkStruct70 { get; set; }
+                public StructGparam PartStructGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct80 UnkStruct80 { get; set; }
+                public StructGrass PartStructGrass { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3406,8 +3362,8 @@ namespace SoulsFormats
                 public Object() : base("")
                 {
                     UnkStruct50 = new UnkStruct50();
-                    UnkStruct70 = new UnkStruct70();
-                    UnkStruct80 = new UnkStruct80();
+                    PartStructGparam = new StructGparam();
+                    PartStructGrass = new StructGrass();
                     UnkStruct88 = new UnkStruct88();
                     UnkStruct90 = new UnkStruct90();
                     UnkStruct98 = new UnkStruct98();
@@ -3420,8 +3376,8 @@ namespace SoulsFormats
                 {
                     var piece = (Object)part;
                     piece.UnkStruct50 = UnkStruct50.DeepCopy();
-                    piece.UnkStruct70 = UnkStruct70.DeepCopy();
-                    piece.UnkStruct80 = UnkStruct80.DeepCopy();
+                    piece.PartStructGparam = PartStructGparam.DeepCopy();
+                    piece.PartStructGrass = PartStructGrass.DeepCopy();
                     piece.UnkStruct88 = UnkStruct88.DeepCopy();
                     piece.UnkStruct90 = UnkStruct90.DeepCopy();
                     piece.UnkStruct98 = UnkStruct98.DeepCopy();
@@ -3444,8 +3400,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void ReadUnkOffsetT50(BinaryReaderEx br) => UnkStruct50 = new UnkStruct50(br);
-                private protected override void ReadUnkOffsetT70(BinaryReaderEx br) => UnkStruct70 = new UnkStruct70(br);
-                private protected override void ReadUnkOffsetT80(BinaryReaderEx br) => UnkStruct80 = new UnkStruct80(br);
+                private protected override void ReadGparamStruct(BinaryReaderEx br) => PartStructGparam = new StructGparam(br);
+                private protected override void ReadGrassStruct(BinaryReaderEx br) => PartStructGrass = new StructGrass(br);
                 private protected override void ReadUnkOffsetT88(BinaryReaderEx br) => UnkStruct88 = new UnkStruct88(br);
                 private protected override void ReadUnkOffsetT90(BinaryReaderEx br) => UnkStruct90 = new UnkStruct90(br);
                 private protected override void ReadUnkOffsetT98(BinaryReaderEx br) => UnkStruct98 = new UnkStruct98(br);
@@ -3456,8 +3412,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void WriteUnkOffsetT50(BinaryWriterEx bw) => UnkStruct50.Write(bw);
-                private protected override void WriteUnkOffsetT70(BinaryWriterEx bw) => UnkStruct70.Write(bw);
-                private protected override void WriteUnkOffsetT80(BinaryWriterEx bw) => UnkStruct80.Write(bw);
+                private protected override void WriteGparamStruct(BinaryWriterEx bw) => PartStructGparam.Write(bw);
+                private protected override void WriteGrassStruct(BinaryWriterEx bw) => PartStructGrass.Write(bw);
                 private protected override void WriteUnkOffsetT88(BinaryWriterEx bw) => UnkStruct88.Write(bw);
                 private protected override void WriteUnkOffsetT90(BinaryWriterEx bw) => UnkStruct90.Write(bw);
                 private protected override void WriteUnkOffsetT98(BinaryWriterEx bw) => UnkStruct98.Write(bw);
@@ -3472,9 +3428,9 @@ namespace SoulsFormats
                 private protected override PartType Type => PartType.Item;
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => false;
-                private protected override bool HasUnkOffsetT70 => true;
-                private protected override bool HasUnkOffsetT78 => false;
-                private protected override bool HasUnkOffsetT80 => true;
+                private protected override bool HasOffsetGparam => true;
+                private protected override bool HasOffsetSceneGparam => false;
+                private protected override bool HasOffsetGrass => true;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => true;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -3488,12 +3444,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct70 UnkStruct70 { get; set; }
+                public StructGparam PartStructGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct80 UnkStruct80 { get; set; }
+                public StructGrass PartStructGrass { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3523,8 +3479,8 @@ namespace SoulsFormats
                 public Item() : base("")
                 {
                     UnkStruct50 = new UnkStruct50();
-                    UnkStruct70 = new UnkStruct70();
-                    UnkStruct80 = new UnkStruct80();
+                    PartStructGparam = new StructGparam();
+                    PartStructGrass = new StructGrass();
                     UnkStruct88 = new UnkStruct88();
                     UnkStruct90 = new UnkStruct90();
                     UnkStruct98 = new UnkStruct98();
@@ -3537,8 +3493,8 @@ namespace SoulsFormats
                 {
                     var piece = (Item)part;
                     piece.UnkStruct50 = UnkStruct50.DeepCopy();
-                    piece.UnkStruct70 = UnkStruct70.DeepCopy();
-                    piece.UnkStruct80 = UnkStruct80.DeepCopy();
+                    piece.PartStructGparam = PartStructGparam.DeepCopy();
+                    piece.PartStructGrass = PartStructGrass.DeepCopy();
                     piece.UnkStruct88 = UnkStruct88.DeepCopy();
                     piece.UnkStruct90 = UnkStruct90.DeepCopy();
                     piece.UnkStruct98 = UnkStruct98.DeepCopy();
@@ -3561,8 +3517,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void ReadUnkOffsetT50(BinaryReaderEx br) => UnkStruct50 = new UnkStruct50(br);
-                private protected override void ReadUnkOffsetT70(BinaryReaderEx br) => UnkStruct70 = new UnkStruct70(br);
-                private protected override void ReadUnkOffsetT80(BinaryReaderEx br) => UnkStruct80 = new UnkStruct80(br);
+                private protected override void ReadGparamStruct(BinaryReaderEx br) => PartStructGparam = new StructGparam(br);
+                private protected override void ReadGrassStruct(BinaryReaderEx br) => PartStructGrass = new StructGrass(br);
                 private protected override void ReadUnkOffsetT88(BinaryReaderEx br) => UnkStruct88 = new UnkStruct88(br);
                 private protected override void ReadUnkOffsetT90(BinaryReaderEx br) => UnkStruct90 = new UnkStruct90(br);
                 private protected override void ReadUnkOffsetT98(BinaryReaderEx br) => UnkStruct98 = new UnkStruct98(br);
@@ -3573,8 +3529,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void WriteUnkOffsetT50(BinaryWriterEx bw) => UnkStruct50.Write(bw);
-                private protected override void WriteUnkOffsetT70(BinaryWriterEx bw) => UnkStruct70.Write(bw);
-                private protected override void WriteUnkOffsetT80(BinaryWriterEx bw) => UnkStruct80.Write(bw);
+                private protected override void WriteGparamStruct(BinaryWriterEx bw) => PartStructGparam.Write(bw);
+                private protected override void WriteGrassStruct(BinaryWriterEx bw) => PartStructGrass.Write(bw);
                 private protected override void WriteUnkOffsetT88(BinaryWriterEx bw) => UnkStruct88.Write(bw);
                 private protected override void WriteUnkOffsetT90(BinaryWriterEx bw) => UnkStruct90.Write(bw);
                 private protected override void WriteUnkOffsetT98(BinaryWriterEx bw) => UnkStruct98.Write(bw);
@@ -3589,9 +3545,9 @@ namespace SoulsFormats
                 private protected override PartType Type => PartType.NPCWander;
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => false;
-                private protected override bool HasUnkOffsetT70 => true;
-                private protected override bool HasUnkOffsetT78 => false;
-                private protected override bool HasUnkOffsetT80 => true;
+                private protected override bool HasOffsetGparam => true;
+                private protected override bool HasOffsetSceneGparam => false;
+                private protected override bool HasOffsetGrass => true;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => true;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -3605,12 +3561,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct70 UnkStruct70 { get; set; }
+                public StructGparam PartStructGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct80 UnkStruct80 { get; set; }
+                public StructGrass PartStructGrass { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3640,8 +3596,8 @@ namespace SoulsFormats
                 public NPCWander() : base("")
                 {
                     UnkStruct50 = new UnkStruct50();
-                    UnkStruct70 = new UnkStruct70();
-                    UnkStruct80 = new UnkStruct80();
+                    PartStructGparam = new StructGparam();
+                    PartStructGrass = new StructGrass();
                     UnkStruct88 = new UnkStruct88();
                     UnkStruct90 = new UnkStruct90();
                     UnkStruct98 = new UnkStruct98();
@@ -3654,8 +3610,8 @@ namespace SoulsFormats
                 {
                     var piece = (NPCWander)part;
                     piece.UnkStruct50 = UnkStruct50.DeepCopy();
-                    piece.UnkStruct70 = UnkStruct70.DeepCopy();
-                    piece.UnkStruct80 = UnkStruct80.DeepCopy();
+                    piece.PartStructGparam = PartStructGparam.DeepCopy();
+                    piece.PartStructGrass = PartStructGrass.DeepCopy();
                     piece.UnkStruct88 = UnkStruct88.DeepCopy();
                     piece.UnkStruct90 = UnkStruct90.DeepCopy();
                     piece.UnkStruct98 = UnkStruct98.DeepCopy();
@@ -3678,8 +3634,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void ReadUnkOffsetT50(BinaryReaderEx br) => UnkStruct50 = new UnkStruct50(br);
-                private protected override void ReadUnkOffsetT70(BinaryReaderEx br) => UnkStruct70 = new UnkStruct70(br);
-                private protected override void ReadUnkOffsetT80(BinaryReaderEx br) => UnkStruct80 = new UnkStruct80(br);
+                private protected override void ReadGparamStruct(BinaryReaderEx br) => PartStructGparam = new StructGparam(br);
+                private protected override void ReadGrassStruct(BinaryReaderEx br) => PartStructGrass = new StructGrass(br);
                 private protected override void ReadUnkOffsetT88(BinaryReaderEx br) => UnkStruct88 = new UnkStruct88(br);
                 private protected override void ReadUnkOffsetT90(BinaryReaderEx br) => UnkStruct90 = new UnkStruct90(br);
                 private protected override void ReadUnkOffsetT98(BinaryReaderEx br) => UnkStruct98 = new UnkStruct98(br);
@@ -3690,8 +3646,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void WriteUnkOffsetT50(BinaryWriterEx bw) => UnkStruct50.Write(bw);
-                private protected override void WriteUnkOffsetT70(BinaryWriterEx bw) => UnkStruct70.Write(bw);
-                private protected override void WriteUnkOffsetT80(BinaryWriterEx bw) => UnkStruct80.Write(bw);
+                private protected override void WriteGparamStruct(BinaryWriterEx bw) => PartStructGparam.Write(bw);
+                private protected override void WriteGrassStruct(BinaryWriterEx bw) => PartStructGrass.Write(bw);
                 private protected override void WriteUnkOffsetT88(BinaryWriterEx bw) => UnkStruct88.Write(bw);
                 private protected override void WriteUnkOffsetT90(BinaryWriterEx bw) => UnkStruct90.Write(bw);
                 private protected override void WriteUnkOffsetT98(BinaryWriterEx bw) => UnkStruct98.Write(bw);
@@ -3706,9 +3662,9 @@ namespace SoulsFormats
                 private protected override PartType Type => PartType.Protoboss;
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => false;
-                private protected override bool HasUnkOffsetT70 => true;
-                private protected override bool HasUnkOffsetT78 => false;
-                private protected override bool HasUnkOffsetT80 => true;
+                private protected override bool HasOffsetGparam => true;
+                private protected override bool HasOffsetSceneGparam => false;
+                private protected override bool HasOffsetGrass => true;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => true;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -3722,12 +3678,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct70 UnkStruct70 { get; set; }
+                public StructGparam PartStructGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct80 UnkStruct80 { get; set; }
+                public StructGrass PartStructGrass { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3757,8 +3713,8 @@ namespace SoulsFormats
                 public Protoboss() : base("")
                 {
                     UnkStruct50 = new UnkStruct50();
-                    UnkStruct70 = new UnkStruct70();
-                    UnkStruct80 = new UnkStruct80();
+                    PartStructGparam = new StructGparam();
+                    PartStructGrass = new StructGrass();
                     UnkStruct88 = new UnkStruct88();
                     UnkStruct90 = new UnkStruct90();
                     UnkStruct98 = new UnkStruct98();
@@ -3771,8 +3727,8 @@ namespace SoulsFormats
                 {
                     var piece = (Protoboss)part;
                     piece.UnkStruct50 = UnkStruct50.DeepCopy();
-                    piece.UnkStruct70 = UnkStruct70.DeepCopy();
-                    piece.UnkStruct80 = UnkStruct80.DeepCopy();
+                    piece.PartStructGparam = PartStructGparam.DeepCopy();
+                    piece.PartStructGrass = PartStructGrass.DeepCopy();
                     piece.UnkStruct88 = UnkStruct88.DeepCopy();
                     piece.UnkStruct90 = UnkStruct90.DeepCopy();
                     piece.UnkStruct98 = UnkStruct98.DeepCopy();
@@ -3795,8 +3751,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void ReadUnkOffsetT50(BinaryReaderEx br) => UnkStruct50 = new UnkStruct50(br);
-                private protected override void ReadUnkOffsetT70(BinaryReaderEx br) => UnkStruct70 = new UnkStruct70(br);
-                private protected override void ReadUnkOffsetT80(BinaryReaderEx br) => UnkStruct80 = new UnkStruct80(br);
+                private protected override void ReadGparamStruct(BinaryReaderEx br) => PartStructGparam = new StructGparam(br);
+                private protected override void ReadGrassStruct(BinaryReaderEx br) => PartStructGrass = new StructGrass(br);
                 private protected override void ReadUnkOffsetT88(BinaryReaderEx br) => UnkStruct88 = new UnkStruct88(br);
                 private protected override void ReadUnkOffsetT90(BinaryReaderEx br) => UnkStruct90 = new UnkStruct90(br);
                 private protected override void ReadUnkOffsetT98(BinaryReaderEx br) => UnkStruct98 = new UnkStruct98(br);
@@ -3807,8 +3763,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void WriteUnkOffsetT50(BinaryWriterEx bw) => UnkStruct50.Write(bw);
-                private protected override void WriteUnkOffsetT70(BinaryWriterEx bw) => UnkStruct70.Write(bw);
-                private protected override void WriteUnkOffsetT80(BinaryWriterEx bw) => UnkStruct80.Write(bw);
+                private protected override void WriteGparamStruct(BinaryWriterEx bw) => PartStructGparam.Write(bw);
+                private protected override void WriteGrassStruct(BinaryWriterEx bw) => PartStructGrass.Write(bw);
                 private protected override void WriteUnkOffsetT88(BinaryWriterEx bw) => UnkStruct88.Write(bw);
                 private protected override void WriteUnkOffsetT90(BinaryWriterEx bw) => UnkStruct90.Write(bw);
                 private protected override void WriteUnkOffsetT98(BinaryWriterEx bw) => UnkStruct98.Write(bw);
@@ -3823,9 +3779,9 @@ namespace SoulsFormats
                 private protected override PartType Type => PartType.Navmesh;
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => false;
-                private protected override bool HasUnkOffsetT70 => true;
-                private protected override bool HasUnkOffsetT78 => false;
-                private protected override bool HasUnkOffsetT80 => true;
+                private protected override bool HasOffsetGparam => true;
+                private protected override bool HasOffsetSceneGparam => false;
+                private protected override bool HasOffsetGrass => true;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => true;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -3839,12 +3795,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct70 UnkStruct70 { get; set; }
+                public StructGparam PartStructGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct80 UnkStruct80 { get; set; }
+                public StructGrass PartStructGrass { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3874,8 +3830,8 @@ namespace SoulsFormats
                 public Navmesh() : base("")
                 {
                     UnkStruct50 = new UnkStruct50();
-                    UnkStruct70 = new UnkStruct70();
-                    UnkStruct80 = new UnkStruct80();
+                    PartStructGparam = new StructGparam();
+                    PartStructGrass = new StructGrass();
                     UnkStruct88 = new UnkStruct88();
                     UnkStruct90 = new UnkStruct90();
                     UnkStruct98 = new UnkStruct98();
@@ -3888,8 +3844,8 @@ namespace SoulsFormats
                 {
                     var piece = (Navmesh)part;
                     piece.UnkStruct50 = UnkStruct50.DeepCopy();
-                    piece.UnkStruct70 = UnkStruct70.DeepCopy();
-                    piece.UnkStruct80 = UnkStruct80.DeepCopy();
+                    piece.PartStructGparam = PartStructGparam.DeepCopy();
+                    piece.PartStructGrass = PartStructGrass.DeepCopy();
                     piece.UnkStruct88 = UnkStruct88.DeepCopy();
                     piece.UnkStruct90 = UnkStruct90.DeepCopy();
                     piece.UnkStruct98 = UnkStruct98.DeepCopy();
@@ -3912,8 +3868,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void ReadUnkOffsetT50(BinaryReaderEx br) => UnkStruct50 = new UnkStruct50(br);
-                private protected override void ReadUnkOffsetT70(BinaryReaderEx br) => UnkStruct70 = new UnkStruct70(br);
-                private protected override void ReadUnkOffsetT80(BinaryReaderEx br) => UnkStruct80 = new UnkStruct80(br);
+                private protected override void ReadGparamStruct(BinaryReaderEx br) => PartStructGparam = new StructGparam(br);
+                private protected override void ReadGrassStruct(BinaryReaderEx br) => PartStructGrass = new StructGrass(br);
                 private protected override void ReadUnkOffsetT88(BinaryReaderEx br) => UnkStruct88 = new UnkStruct88(br);
                 private protected override void ReadUnkOffsetT90(BinaryReaderEx br) => UnkStruct90 = new UnkStruct90(br);
                 private protected override void ReadUnkOffsetT98(BinaryReaderEx br) => UnkStruct98 = new UnkStruct98(br);
@@ -3924,8 +3880,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void WriteUnkOffsetT50(BinaryWriterEx bw) => UnkStruct50.Write(bw);
-                private protected override void WriteUnkOffsetT70(BinaryWriterEx bw) => UnkStruct70.Write(bw);
-                private protected override void WriteUnkOffsetT80(BinaryWriterEx bw) => UnkStruct80.Write(bw);
+                private protected override void WriteGparamStruct(BinaryWriterEx bw) => PartStructGparam.Write(bw);
+                private protected override void WriteGrassStruct(BinaryWriterEx bw) => PartStructGrass.Write(bw);
                 private protected override void WriteUnkOffsetT88(BinaryWriterEx bw) => UnkStruct88.Write(bw);
                 private protected override void WriteUnkOffsetT90(BinaryWriterEx bw) => UnkStruct90.Write(bw);
                 private protected override void WriteUnkOffsetT98(BinaryWriterEx bw) => UnkStruct98.Write(bw);
@@ -3940,9 +3896,9 @@ namespace SoulsFormats
                 private protected override PartType Type => PartType.Invalid;
                 private protected override bool HasUnkOffsetT50 => true;
                 private protected override bool HasUnkOffsetT58 => false;
-                private protected override bool HasUnkOffsetT70 => true;
-                private protected override bool HasUnkOffsetT78 => false;
-                private protected override bool HasUnkOffsetT80 => true;
+                private protected override bool HasOffsetGparam => true;
+                private protected override bool HasOffsetSceneGparam => false;
+                private protected override bool HasOffsetGrass => true;
                 private protected override bool HasUnkOffsetT88 => true;
                 private protected override bool HasUnkOffsetT90 => true;
                 private protected override bool HasUnkOffsetT98 => true;
@@ -3956,12 +3912,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct70 UnkStruct70 { get; set; }
+                public StructGparam PartStructGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public UnkStruct80 UnkStruct80 { get; set; }
+                public StructGrass PartStructGrass { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3991,8 +3947,8 @@ namespace SoulsFormats
                 public Invalid() : base("")
                 {
                     UnkStruct50 = new UnkStruct50();
-                    UnkStruct70 = new UnkStruct70();
-                    UnkStruct80 = new UnkStruct80();
+                    PartStructGparam = new StructGparam();
+                    PartStructGrass = new StructGrass();
                     UnkStruct88 = new UnkStruct88();
                     UnkStruct90 = new UnkStruct90();
                     UnkStruct98 = new UnkStruct98();
@@ -4005,8 +3961,8 @@ namespace SoulsFormats
                 {
                     var piece = (Invalid)part;
                     piece.UnkStruct50 = UnkStruct50.DeepCopy();
-                    piece.UnkStruct70 = UnkStruct70.DeepCopy();
-                    piece.UnkStruct80 = UnkStruct80.DeepCopy();
+                    piece.PartStructGparam = PartStructGparam.DeepCopy();
+                    piece.PartStructGrass = PartStructGrass.DeepCopy();
                     piece.UnkStruct88 = UnkStruct88.DeepCopy();
                     piece.UnkStruct90 = UnkStruct90.DeepCopy();
                     piece.UnkStruct98 = UnkStruct98.DeepCopy();
@@ -4029,8 +3985,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void ReadUnkOffsetT50(BinaryReaderEx br) => UnkStruct50 = new UnkStruct50(br);
-                private protected override void ReadUnkOffsetT70(BinaryReaderEx br) => UnkStruct70 = new UnkStruct70(br);
-                private protected override void ReadUnkOffsetT80(BinaryReaderEx br) => UnkStruct80 = new UnkStruct80(br);
+                private protected override void ReadGparamStruct(BinaryReaderEx br) => PartStructGparam = new StructGparam(br);
+                private protected override void ReadGrassStruct(BinaryReaderEx br) => PartStructGrass = new StructGrass(br);
                 private protected override void ReadUnkOffsetT88(BinaryReaderEx br) => UnkStruct88 = new UnkStruct88(br);
                 private protected override void ReadUnkOffsetT90(BinaryReaderEx br) => UnkStruct90 = new UnkStruct90(br);
                 private protected override void ReadUnkOffsetT98(BinaryReaderEx br) => UnkStruct98 = new UnkStruct98(br);
@@ -4041,8 +3997,8 @@ namespace SoulsFormats
                 }
 
                 private protected override void WriteUnkOffsetT50(BinaryWriterEx bw) => UnkStruct50.Write(bw);
-                private protected override void WriteUnkOffsetT70(BinaryWriterEx bw) => UnkStruct70.Write(bw);
-                private protected override void WriteUnkOffsetT80(BinaryWriterEx bw) => UnkStruct80.Write(bw);
+                private protected override void WriteGparamStruct(BinaryWriterEx bw) => PartStructGparam.Write(bw);
+                private protected override void WriteGrassStruct(BinaryWriterEx bw) => PartStructGrass.Write(bw);
                 private protected override void WriteUnkOffsetT88(BinaryWriterEx bw) => UnkStruct88.Write(bw);
                 private protected override void WriteUnkOffsetT90(BinaryWriterEx bw) => UnkStruct90.Write(bw);
                 private protected override void WriteUnkOffsetT98(BinaryWriterEx bw) => UnkStruct98.Write(bw);

@@ -145,7 +145,8 @@ namespace SoulsFormats
             // Main
             public string Name { get; set; }
 
-            public int LocalIndex { get; set; }
+            // Index among models of the same type
+            public int TypeIndex { get; set; }
 
             private protected abstract ModelType Type { get; }
 
@@ -174,7 +175,7 @@ namespace SoulsFormats
 
                 long nameOffset = br.ReadInt64();
                 br.AssertUInt32((uint)Type);
-                LocalIndex = br.ReadInt32();
+                TypeIndex = br.ReadInt32();
                 long sourceOffset = br.ReadInt64();
                 InstanceCount = br.ReadInt32();
                 br.AssertInt32(new int[1]);
@@ -193,7 +194,7 @@ namespace SoulsFormats
                 long start = bw.Position;
                 bw.ReserveInt64("NameOffset");
                 bw.WriteUInt32((uint)Type);
-                bw.WriteInt32(LocalIndex);
+                bw.WriteInt32(TypeIndex);
                 bw.ReserveInt64("SourceOffset");
                 bw.WriteInt32(InstanceCount);
                 bw.WriteInt32(0);
