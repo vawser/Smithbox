@@ -87,7 +87,7 @@ public class FormatContainer
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            //TaskLogs.AddLog($"{baseResourcePath} does not exist!");
         }
 
         return baseResource;
@@ -116,7 +116,7 @@ public class FormatContainer
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            //TaskLogs.AddLog($"{baseResourcePath} does not exist!");
         }
 
         return baseResource;

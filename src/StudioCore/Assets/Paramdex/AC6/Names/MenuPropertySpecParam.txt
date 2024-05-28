@@ -207,8 +207,10 @@
 11000 UNKNOWN
 20000 PILOT NAME
 20001 COAM (Current Amount)
-20007 AC Specs - Total Load
+20005 AC Specs - Total Weight
 20006 AC Specs - Load Limit
+20007 AC Specs - Total Load
+20010 AC Specs - Boost Speed
 20011 AC Specs - Total EN Load
 20012 AC Specs - EN Output
 20013 AC Specs - AP

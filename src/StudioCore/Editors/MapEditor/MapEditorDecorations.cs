@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Banks.FormatBank;
 using StudioCore.BanksMain;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,101 @@ namespace StudioCore.Editors.MapEditor
 {
     public static class MapEditorDecorations
     {
+        public static bool GenericEnumRow(PropertyInfo propinfo, object val, ref object newVal)
+        {
+            if(propinfo.GetCustomAttribute<MSBEnum>() == null)
+            {
+                return false;
+            }
+
+            List<MSBEnum> attributes = propinfo.GetCustomAttributes<MSBEnum>().ToList();
+            if (attributes.Any())
+            {
+                var enumName = attributes[0].EnumType;
+                var options = MsbFormatBank.Bank.Enums.list.Where(x => x.id == enumName).ToList()[0].members;
+
+                if (options == null)
+                {
+                    return false;
+                }
+
+                ImGui.NextColumn();
+
+                ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+                ImGui.TextUnformatted(@$"   <{enumName}>");
+                ImGui.PopStyleColor();
+                ImGui.PopStyleVar();
+
+                ImGui.NextColumn();
+
+                string currentEntry = "___";
+
+                var match = options.Where(x => x.id == val.ToString()).FirstOrDefault();
+
+                ImGui.BeginGroup();
+
+                if (match != null)
+                {
+                    currentEntry = match.name;
+                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRef_Text);
+                    ImGui.TextUnformatted(currentEntry);
+                    ImGui.PopStyleColor();
+                }
+                else
+                {
+                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRefMissing_Text);
+                    ImGui.TextUnformatted(currentEntry);
+                    ImGui.PopStyleColor();
+                }
+
+                ImGui.EndGroup();
+
+                if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
+                {
+                    var opened = MsbEnumContextMenu(propinfo, val, ref newVal, options);
+                    ImGui.EndPopup();
+                    return opened;
+                }
+            }
+
+            return false;
+        }
+
+        private static string enumSearchStr = "";
+
+        public static bool MsbEnumContextMenu(PropertyInfo propinfo, object val, ref object newVal, List<FormatEnumMember> options)
+        {
+            ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+
+            if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, options.Count))))
+            {
+                try
+                {
+                    foreach (var entry in options)
+                    {
+                        if (SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.id, " ")
+                            || SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.name, " ")
+                            || enumSearchStr == "")
+                        {
+                            if (ImGui.Selectable($"{entry.id}: {entry.name}"))
+                            {
+                                newVal = Convert.ChangeType(entry.id, val.GetType());
+                                ImGui.EndChild();
+                                return true;
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                }
+            }
+
+            ImGui.EndChild();
+            return false;
+        }
+
         // Elden Ring Asset Mask and Anim property
         public static bool EldenRingAssetMaskAndAnimRow(PropertyInfo propinfo, object oldValue, ref object newValue, ViewportSelection selection)
         {

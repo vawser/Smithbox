@@ -58,13 +58,6 @@ public static class PatrolDrawManager
     {
         Clear();
 
-        if (universe.GameType is ProjectType.AC6)
-        {
-            TaskLogs.AddLog("Unsupported game type for this tool.",
-                LogLevel.Information, TaskLogs.LogPriority.High);
-            return;
-        }
-
         var loadedMaps = universe.LoadedObjectContainers.Values.Where(x => x != null);
         foreach (var map in loadedMaps)
         {
@@ -189,6 +182,33 @@ public static class PatrolDrawManager
 
                         bool endAtStart = MSBE_Patrol.PatrolType == 0;
                         bool moveRandomly = MSBE_Patrol.PatrolType == 2;
+                        var chain = universe.GetPatrolLineDrawable(patrolEntity, drawEntity,
+                            points, enemies, endAtStart, moveRandomly);
+
+                        drawEntity.RenderSceneMesh = chain;
+                    }
+                }
+                else if (patrolEntity.WrappedObject is MSB_AC6.Event.PatrolRoute MSBAC6_Patrol)
+                {
+                    if (GetPoints(MSBAC6_Patrol.GroupRegionNames, map, out List<Vector3> points))
+                    {
+                        Entity drawEntity = GetDrawEntity(map);
+                        List<Vector3> enemies = new();
+                        foreach (var ent in map.Objects)
+                        {
+                            if (ent.WrappedObject is MSB_AC6.Part.EnemyBase ene)
+                            {
+                                if (ene.WalkRouteName != patrolEntity.Name)
+                                    continue;
+
+                                var pos = ent.GetRootLocalTransform().Position;
+                                pos.Y += _verticalOffset;
+                                enemies.Add(pos);
+                            }
+                        }
+
+                        bool endAtStart = MSBAC6_Patrol.PatrolType == 0;
+                        bool moveRandomly = MSBAC6_Patrol.PatrolType == 2;
                         var chain = universe.GetPatrolLineDrawable(patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 

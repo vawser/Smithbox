@@ -990,7 +990,8 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown; probably some kind of route type.
                 /// </summary>
-                public int UnkT00 { get; set; }
+                [MSBEnum(EnumType = "PatrolType_AC6")]
+                public int PatrolType { get; set; }
 
                 /// <summary>
                 /// List of points in the route.
@@ -1020,7 +1021,7 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
+                    PatrolType = br.ReadInt32();
                     br.AssertInt32(-1);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
@@ -1029,7 +1030,7 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
+                    bw.WriteInt32(PatrolType);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -1661,7 +1662,8 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int Unk00 { get; set; }
+                [MSBEnum(EnumType = "PATROL_TYPE")]
+                public int PatrolType { get; set; }
                 private int Unk08 { get; set; }
                 private int Unk0C { get; set; }
 
@@ -1693,7 +1695,7 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
+                    PatrolType = br.ReadInt32();
                     br.AssertInt32(-1);
                     Unk08 = br.ReadInt32();
                     Unk0C = br.ReadInt32();
@@ -1702,7 +1704,7 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(PatrolType);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(Unk08);
                     bw.WriteInt32(Unk0C);
