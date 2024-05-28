@@ -183,13 +183,7 @@ public class GparamEditorScreen : EditorScreen
         {
             if (!GparamParamBank.IsLoaded)
             {
-                if (!CFG.Current.AutoLoadBank_Gparam)
-                {
-                    if (ImGui.Button("Load Gparam Editor"))
-                    {
-                        GparamParamBank.LoadGraphicsParams();
-                    }
-                }
+                GparamParamBank.LoadGraphicsParams();
             }
 
             // Commands
@@ -985,8 +979,7 @@ public class GparamEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
-        if (CFG.Current.AutoLoadBank_Gparam)
-            GparamParamBank.LoadGraphicsParams();
+        GparamParamBank.LoadGraphicsParams();
 
         ResetActionManager();
     }

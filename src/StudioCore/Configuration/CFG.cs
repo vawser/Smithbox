@@ -238,7 +238,6 @@ public class CFG
     // Resource Banks
     public bool AutoLoadBank_TimeAct = false;
     public bool AutoLoadBank_Cutscene = false;
-    public bool AutoLoadBank_Gparam = true;
     public bool AutoLoadBank_Material = false;
     public bool AutoLoadBank_Particle = true;
     public bool AutoLoadBank_EventScript = false;
