@@ -187,7 +187,7 @@ namespace SoulsFormats
                 Generators = new List<Event.Generator>();
                 MapOffsets = new List<Event.MapOffset>();
                 PlatoonInfo = new List<Event.PlatoonInfo>();
-                PatrolInfo = new List<Event.PatrolInfo>();
+                PatrolRoutes = new List<Event.PatrolRoute>();
                 MapGimmicks = new List<Event.MapGimmick>();
                 Others = new List<Event.Other>();
 
@@ -206,7 +206,7 @@ namespace SoulsFormats
                 Unknown_17s = new List<Event.Unknown_17>();
                 Unknown_18s = new List<Event.Unknown_18>();
                 Unknown_19s = new List<Event.Unknown_19>();
-                PatrolRoutes = new List<Event.PatrolRoute>();
+                PatrolInfo = new List<Event.PatrolInfo>();
                 Ridings = new List<Event.Riding>();
                 StrategyRoutes = new List<Event.StrategyRoute>();
                 PatrolRoutePermanents = new List<Event.PatrolRoutePermanent>();
@@ -980,7 +980,7 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// A simple list of points defining a path for enemies to take.
+            /// NOT USED IN AC6
             /// </summary>
             public class PatrolInfo : Event
             {
@@ -990,7 +990,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown; probably some kind of route type.
                 /// </summary>
-                [MSBEnum(EnumType = "PatrolType_AC6")]
                 public int PatrolType { get; set; }
 
                 /// <summary>

@@ -93,10 +93,14 @@ namespace SoulsFormats
             if (br.Position != 0)
                 throw new InvalidDataException("The next param offset of the final param should be 0, but it wasn't.");
 
-            MSB.DisambiguateNames(entries.Models);
-            MSB.DisambiguateNames(entries.Events);
-            MSB.DisambiguateNames(entries.Regions);
-            MSB.DisambiguateNames(entries.Parts);
+            // Added className prefix for AC6 since by default the maps
+            // do not contain names for non-Part entries.
+            // This fixes an issue where the Reference Map wouldn't find the right
+            // map object since Event and Region would share the same disambugated name (e.g. {1}).
+            MSB.DisambiguateNames(entries.Models, "Model");
+            MSB.DisambiguateNames(entries.Events, "Event");
+            MSB.DisambiguateNames(entries.Regions, "Region");
+            MSB.DisambiguateNames(entries.Parts, "Part");
 
             foreach (Event evt in entries.Events)
                 evt.GetNames(this, entries);

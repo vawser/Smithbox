@@ -44,7 +44,7 @@ namespace SoulsFormats
             bw.WriteByte(0xFF);
         }
 
-        internal static void DisambiguateNames<T>(List<T> entries) where T : IMsbEntry
+        internal static void DisambiguateNames<T>(List<T> entries, string className = "") where T : IMsbEntry
         {
             bool ambiguous;
             do
@@ -67,7 +67,7 @@ namespace SoulsFormats
                     {
                         ambiguous = true;
                         nameCounts[name]++;
-                        entry.Name = $"{name} {{{nameCounts[name]}}}";
+                        entry.Name = $"{className}{name} {{{nameCounts[name]}}}";
                     }
                 }
             }

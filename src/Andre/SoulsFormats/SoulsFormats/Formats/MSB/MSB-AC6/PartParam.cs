@@ -1592,7 +1592,7 @@ namespace SoulsFormats
                 /// Walk route followed by this enemy.
                 /// </summary>
                 [EnemyProperty]
-                [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
+                [MSBReference(ReferenceType = typeof(Event.PatrolRoute))]
                 public string WalkRouteName { get; set; }
                 public short WalkRouteIndex;
 
@@ -1659,7 +1659,7 @@ namespace SoulsFormats
                 /// Unknown. Maybe PartsTokenParam?
                 /// </summary>
                 [EnemyProperty]
-                [MSBParamReference(ParamName = "PartsTokenParam")] // CONFIRM
+                [MSBParamReference(ParamName = "PartsTokenParam")]
                 public int PartsTokenParamID { get; set; }
 
                 /// <summary>
@@ -1963,14 +1963,14 @@ namespace SoulsFormats
                 {
                     base.GetNames(msb, entries);
                     CollisionPartName = MSB.FindName(entries.Parts, CollisionPartIndex);
-                    WalkRouteName = MSB.FindName(msb.Events.PatrolInfo, WalkRouteIndex);
+                    WalkRouteName = MSB.FindName(msb.Events.PatrolRoutes, WalkRouteIndex);
                 }
 
                 internal override void GetIndices(MSB_AC6 msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     CollisionPartIndex = MSB.FindIndex(this, entries.Parts, CollisionPartName);
-                    WalkRouteIndex = (short)MSB.FindIndex(this, msb.Events.PatrolInfo, WalkRouteName);
+                    WalkRouteIndex = (short)MSB.FindIndex(this, msb.Events.PatrolRoutes, WalkRouteName);
                 }
             }
 
