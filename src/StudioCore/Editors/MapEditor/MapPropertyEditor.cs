@@ -1199,6 +1199,12 @@ public class MapPropertyEditor
                         committed = true;
                     }
 
+                    if (MapEditorDecorations.AliasEnumRow(prop, oldval, ref newval))
+                    {
+                        changed = true;
+                        committed = true;
+                    }
+
                     if (prop.GetCustomAttribute<EldenRingAssetMask>() != null)
                     {
                         if (MapEditorDecorations.EldenRingAssetMaskAndAnimRow(prop, oldval, ref newval, selection))

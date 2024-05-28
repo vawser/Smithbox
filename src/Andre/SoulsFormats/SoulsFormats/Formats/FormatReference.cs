@@ -30,6 +30,12 @@ namespace SoulsFormats
         public string EnumType;
     }
 
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class MSBAliasEnum : Attribute
+    {
+        public string AliasEnumType;
+    }
+
     [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
     public class EldenRingAssetMask : Attribute
     {

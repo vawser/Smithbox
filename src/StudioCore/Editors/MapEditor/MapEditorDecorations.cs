@@ -2,6 +2,7 @@
 using ImGuiNET;
 using Octokit;
 using SoulsFormats;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.BanksMain;
 using StudioCore.Editors.ParamEditor;
@@ -82,6 +83,145 @@ namespace StudioCore.Editors.MapEditor
         private static string enumSearchStr = "";
 
         public static bool MsbEnumContextMenu(PropertyInfo propinfo, object val, ref object newVal, List<FormatEnumMember> options)
+        {
+            ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+
+            if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, options.Count))))
+            {
+                try
+                {
+                    foreach (var entry in options)
+                    {
+                        if (SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.id, " ")
+                            || SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.name, " ")
+                            || enumSearchStr == "")
+                        {
+                            if (ImGui.Selectable($"{entry.id}: {entry.name}"))
+                            {
+                                newVal = Convert.ChangeType(entry.id, val.GetType());
+                                ImGui.EndChild();
+                                return true;
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                }
+            }
+
+            ImGui.EndChild();
+            return false;
+        }
+
+        public static bool AliasEnumRow(PropertyInfo propinfo, object val, ref object newVal)
+        {
+            if (propinfo.GetCustomAttribute<MSBAliasEnum>() == null)
+            {
+                return false;
+            }
+
+            List<MSBAliasEnum> attributes = propinfo.GetCustomAttributes<MSBAliasEnum>().ToList();
+            if (attributes.Any())
+            {
+                var enumName = attributes[0].AliasEnumType;
+                List<AliasReference> options = null;
+
+                // Particles
+                if (enumName == "PARTICLES")
+                {
+                    if(!ParticleAliasBank.Bank.IsLoadingAliases)
+                    {
+                        options = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
+                    }
+                }
+                // Flags
+                if (enumName == "FLAGS")
+                {
+                    if (!FlagAliasBank.Bank.IsLoadingAliases)
+                    {
+                        options = FlagAliasBank.Bank.AliasNames.GetEntries("Flags");
+                    }
+                }
+                // Sounds
+                if (enumName == "SOUNDS")
+                {
+                    if (!SoundAliasBank.Bank.IsLoadingAliases)
+                    {
+                        options = SoundAliasBank.Bank.AliasNames.GetEntries("Sounds");
+                    }
+                }
+                // Cutscenes
+                if (enumName == "CUTSCENES")
+                {
+                    if (!CutsceneAliasBank.Bank.IsLoadingAliases)
+                    {
+                        options = CutsceneAliasBank.Bank.AliasNames.GetEntries("Cutscenes");
+                    }
+                }
+                // Movies
+                if (enumName == "MOVIES")
+                {
+                    if (!MovieAliasBank.Bank.IsLoadingAliases)
+                    {
+                        options = MovieAliasBank.Bank.AliasNames.GetEntries("Movies");
+                    }
+                }
+
+                if (options == null)
+                {
+                    return false;
+                }
+
+                ImGui.NextColumn();
+
+                ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+                ImGui.TextUnformatted(@$"   <{enumName}>");
+                ImGui.PopStyleColor();
+                ImGui.PopStyleVar();
+
+                ImGui.NextColumn();
+
+                string currentEntry = "___";
+
+                var match = options.Where(x => x.id == val.ToString()).FirstOrDefault();
+
+                ImGui.BeginGroup();
+
+                if (match != null)
+                {
+                    currentEntry = match.name;
+
+                    // Revert if the stored name is empty
+                    if(currentEntry == "")
+                        currentEntry = "___";
+
+                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRef_Text);
+                    ImGui.TextUnformatted(currentEntry);
+                    ImGui.PopStyleColor();
+                }
+                else
+                {
+                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRefMissing_Text);
+                    ImGui.TextUnformatted(currentEntry);
+                    ImGui.PopStyleColor();
+                }
+
+                ImGui.EndGroup();
+
+                if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
+                {
+                    var opened = MsbAliasEnumContextMenu(propinfo, val, ref newVal, options);
+                    ImGui.EndPopup();
+                    return opened;
+                }
+            }
+
+            return false;
+        }
+
+        public static bool MsbAliasEnumContextMenu(PropertyInfo propinfo, object val, ref object newVal, List<AliasReference> options)
         {
             ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 

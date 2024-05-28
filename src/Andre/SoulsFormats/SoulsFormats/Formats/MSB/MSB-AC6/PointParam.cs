@@ -1428,6 +1428,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// The ID of the particle effect FFX.
                 /// </summary>
+                [MSBAliasEnum(AliasEnumType = "PARTICLES")]
                 public int EffectID { get; set; }
 
                 /// <summary>
