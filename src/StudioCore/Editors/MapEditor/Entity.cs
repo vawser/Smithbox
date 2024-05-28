@@ -650,7 +650,6 @@ public class Entity : ISelectable, IDisposable
                                 {
                                     if (!References.ContainsKey(sref))
                                     {
-                                        TaskLogs.AddLog($"RefMap: {sref} - {obj}");
                                         References.Add(sref, new[] { obj });
                                     }
                                 }
@@ -673,7 +672,6 @@ public class Entity : ISelectable, IDisposable
                                 // Add the entity to the reference map
                                 if (!References.ContainsKey(sref))
                                 {
-                                    TaskLogs.AddLog($"RefMap: {sref} - {obj}");
                                     References.Add(sref, new[] { obj });
                                 }
                             }

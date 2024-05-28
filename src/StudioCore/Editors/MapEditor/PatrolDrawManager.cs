@@ -190,7 +190,7 @@ public static class PatrolDrawManager
                 }
                 else if (patrolEntity.WrappedObject is MSB_AC6.Event.PatrolRoute MSBAC6_Patrol)
                 {
-                    if (GetPoints(MSBAC6_Patrol.GroupRegionNames, map, out List<Vector3> points))
+                    if (GetPoints(MSBAC6_Patrol.WalkRegionNames, map, out List<Vector3> points))
                     {
                         Entity drawEntity = GetDrawEntity(map);
                         List<Vector3> enemies = new();

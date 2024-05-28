@@ -1670,24 +1670,24 @@ namespace SoulsFormats
                 /// Unknown.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
-                public string[] GroupRegionNames { get; private set; }
-                private short[] GroupRegionIndices;
+                public string[] WalkRegionNames { get; private set; }
+                private short[] WalkRegionIndices;
 
                 /// <summary>
                 /// Creates a PatrolRoute with default values.
                 /// </summary>
                 public PatrolRoute() : base($"{nameof(Event)}: {nameof(PatrolRoute)}")
                 {
-                    GroupRegionIndices = new short[24];
-                    Array.Fill<short>(GroupRegionIndices, -1);
-                    GroupRegionNames = new string[24];
-                    Array.Fill<string>(GroupRegionNames, "");
+                    WalkRegionIndices = new short[24];
+                    Array.Fill<short>(WalkRegionIndices, -1);
+                    WalkRegionNames = new string[24];
+                    Array.Fill<string>(WalkRegionNames, "");
                 }
 
                 private protected override void DeepCopyTo(Event evnt)
                 {
                     var patrolRoute = (PatrolRoute)evnt;
-                    patrolRoute.GroupRegionNames = (string[])GroupRegionNames.Clone();
+                    patrolRoute.WalkRegionNames = (string[])WalkRegionNames.Clone();
                 }
 
                 internal PatrolRoute(BinaryReaderEx br) : base(br) { }
@@ -1698,7 +1698,7 @@ namespace SoulsFormats
                     br.AssertInt32(-1);
                     Unk08 = br.ReadInt32();
                     Unk0C = br.ReadInt32();
-                    GroupRegionIndices = br.ReadInt16s(24);
+                    WalkRegionIndices = br.ReadInt16s(24);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -1707,19 +1707,19 @@ namespace SoulsFormats
                     bw.WriteInt32(-1);
                     bw.WriteInt32(Unk08);
                     bw.WriteInt32(Unk0C);
-                    bw.WriteInt16s(GroupRegionIndices);
+                    bw.WriteInt16s(WalkRegionIndices);
                 }
 
                 internal override void GetNames(MSB_AC6 msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
-                    GroupRegionNames = MSB.FindNames(entries.Regions, GroupRegionIndices);
+                    WalkRegionNames = MSB.FindNames(entries.Regions, WalkRegionIndices);
                 }
 
                 internal override void GetIndices(MSB_AC6 msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
-                    GroupRegionIndices = MSB.FindShortIndices(this, entries.Regions, GroupRegionNames);
+                    WalkRegionIndices = MSB.FindShortIndices(this, entries.Regions, WalkRegionNames);
                 }
             }
 

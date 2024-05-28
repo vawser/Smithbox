@@ -1467,6 +1467,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// ID of the effect FFX.
                 /// </summary>
+                [MSBAliasEnum(AliasEnumType = "PARTICLES")]
                 public int EffectID { get; set; }
 
                 /// <summary>
@@ -1563,7 +1564,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Affects lighting with other fields when true. Possibly normalizes light when false.
                 /// </summary>
-                public byte UnkT2E { get; set; }
+                public byte IsModifyLight { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1587,7 +1588,7 @@ namespace SoulsFormats
                 {
                     SpecularLightMult = 1f;
                     PointLightMult = 1f;
-                    UnkT2E = (byte)1;
+                    IsModifyLight = (byte)1;
                     UnkT30 = (short)-1;
                     UnkT32 = (short)-1;
                 }
@@ -1611,7 +1612,7 @@ namespace SoulsFormats
                     SpecularLightMult = br.ReadSingle();
                     PointLightMult = br.ReadSingle();
                     UnkT2C = br.ReadInt16();
-                    UnkT2E = br.ReadByte();
+                    IsModifyLight = br.ReadByte();
                     UnkT2F = br.ReadByte();
                     UnkT30 = br.ReadInt16();
                     UnkT32 = br.ReadInt16();
@@ -1636,7 +1637,7 @@ namespace SoulsFormats
                     bw.WriteSingle(SpecularLightMult);
                     bw.WriteSingle(PointLightMult);
                     bw.WriteInt16(UnkT2C);
-                    bw.WriteByte(UnkT2E);
+                    bw.WriteByte(IsModifyLight);
                     bw.WriteByte(UnkT2F);
                     bw.WriteInt16(UnkT30);
                     bw.WriteInt16(UnkT32);
@@ -2080,7 +2081,7 @@ namespace SoulsFormats
                 public byte UnkT00 { get; set; }
 
                 /// <summary>
-                /// Unknown. May be: WwiseValuetoStrParam_RuntimeReflectTextTyre or WwiseValuetoStrParam_Material
+                /// Unknown. May be: WwiseValuetoStrParam_RuntimeReflectTextType or WwiseValuetoStrParam_Material
                 /// </summary>
                 public byte UnkT01 { get; set; }
 
@@ -2248,11 +2249,11 @@ namespace SoulsFormats
             /// </summary>
             public class ArenaAppearance : Region
             {
-                private protected override RegionType Type => RegionType.WwiseEnvironmentSound;
+                private protected override RegionType Type => RegionType.ArenaAppearance;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Creates an WwiseEnvironmentSound with default values.
+                /// Creates an ArenaAppearance with default values.
                 /// </summary>
                 public ArenaAppearance() : base($"{nameof(Region)}: {nameof(ArenaAppearance)}") { }
 
