@@ -274,3 +274,127 @@
 50501 OS TUNING - Pulse Armor
 50502 OS TUNING - Pulse Protection
 50503 OS TUNING - Terminal Armor
+60050 Purchase Total
+79001 RANK
+79002 SUBJECT NAME
+79003 AC NAME
+79004 NOTES
+79005 COAM
+79006 OST CHIPS
+79007 SUBJECT NAME
+79008 AC NAME
+79900 TIME
+79901 REWARD
+80001 Base Pay
+80003 Bonus Pay
+80004 Penalties
+80019 Paid In
+80020 Repair Costs
+80021 Ammunition Costs
+80039 Expenses
+80090 Income
+90000 Maintain Target Assist
+90002 Boost Control
+90003 Assault Boost Control
+90004 Core Expansion Control
+90005 Automatically Purge Weapon
+90010 Camera Y-Axis
+90011 Camera X-Axis
+90012 Reset Camera Y-Axis
+90013 Camera Speed
+90020 Display Subtitles
+90024 HDR
+90025 Adjust Brightness
+90026 Adjust Image Quality
+90030 Music Volume
+90031 Sound Effect Volume
+90032 Voice Volume
+90033 Master Volume
+90040 Adjust Brightness
+90050 Adjust Brightness
+90051 Maximum Brightness
+90052 Adjust Saturation
+90090 Control Assignments
+90091 Control Assignments (Detailed)
+90100 Device for On-Screen Prompts
+90101 Mouse Sensitivity
+90102 Mouse X-Axis
+90103 Mouse Y-Axis
+90104 Key Bindings
+90130 Matchmaking Region
+90131 Voice Chat
+90132 Display Player Names
+90133 Launch Setting
+90134 Data Usage Agreement
+90135 Software Usage Agreement
+90136 Privacy Policy
+90150 Text
+90151 Voice
+90200 Screen Mode
+90201 Resolution
+90202 Auto-Detect Best Rendering Settings
+90203 Quality Settings
+90204 Quality Settings (Detailed)
+90205 Perfomance Settings
+90206 Ray Tracing
+90207 Limit Frame Rate
+90208 V-Sync
+90210 Texture Quality
+90211 Antialiasing
+90212 SSAO
+90213 Depth of Field
+90214 Motion Blur
+90215 Shadow Quality
+90216 Lighting Quality
+90217 Effects Quality
+90218 Volumetric Fog Quality
+90219 Reflection Quality
+90220 Water Surface Quality
+90221 Shader Quality
+90222 Ray Tracing Quality
+92000 DAMAGE CONTROL
+92001 CORE EXPANSIONS
+92002 SYSTEM UNLOCKS
+92004 ALL
+100000 Aperture Angle
+100001 Tilt
+100004 Focal Length
+100005 f-Number
+100007 Exposure
+100008 Hue
+100009 Brightness
+100010 Saturation
+100011 Contrast
+100015 R
+100016 G
+100017 B
+100019 Smoothness
+100020 Intensity
+100021 Camera Blur ON/OFF
+100022 Camera Blur Intensity
+100023 Camera Blur Range
+100024 Horizontal Camera Blur
+100025 Vertical Camera Blur
+100026 Camera Blur Depth
+100027 Brightness
+100028 Threshold
+100029 Saturation
+100030 Smoothness
+110000 Craft
+110001 AI
+120000 Capacity
+120001 Match Format
+120002 Time Limit
+120003 Map
+120004 Member Rotation
+120005 Access
+120006 Keywords
+120090 Create
+120091 Search
+120092 Change
+180000 Match Mode
+180001 Match Rules
+180002 Match Date/Time
+190000 Item to Report
+190001 Reason for Report
+190010 Report
