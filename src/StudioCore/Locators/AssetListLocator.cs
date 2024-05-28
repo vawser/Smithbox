@@ -203,81 +203,60 @@ public static class AssetListLocator
 
     public static List<string> GetObjModels(bool useProject = false)
     {
-        try
+        HashSet<string> objs = new();
+        List<string> ret = new();
+
+        var modelDir = @"\obj";
+        var modelExt = @".objbnd.dcx";
+
+        if (Project.Type == ProjectType.DS1)
         {
-            HashSet<string> objs = new();
-            List<string> ret = new();
+            modelExt = ".objbnd";
+        }
+        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        {
+            modelDir = @"\model\obj";
+            modelExt = ".bnd";
+        }
+        else if (Project.Type == ProjectType.ER)
+        {
+            // AEGs are objs in my heart :(
+            modelDir = @"\asset\aeg";
+            modelExt = ".geombnd.dcx";
+        }
+        else if (Project.Type == ProjectType.AC6)
+        {
+            // AEGs are objs in my heart :(
+            modelDir = @"\asset\environment\geometry";
+            modelExt = ".geombnd.dcx";
+        }
 
-            var modelDir = @"\obj";
-            var modelExt = @".objbnd.dcx";
+        var rootDir = Project.GameRootDirectory + modelDir;
+        var modDir = Project.GameModDirectory + modelDir;
 
-            if (Project.Type == ProjectType.DS1)
-                modelExt = ".objbnd";
-            else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
-            {
-                modelDir = @"\model\obj";
-                modelExt = ".bnd";
-            }
-            else if (Project.Type == ProjectType.ER)
-            {
-                // AEGs are objs in my heart :(
-                modelDir = @"\asset\aeg";
-                modelExt = ".geombnd.dcx";
-            }
-            else if (Project.Type == ProjectType.AC6)
-            {
-                // AEGs are objs in my heart :(
-                modelDir = @"\asset\environment\geometry";
-                modelExt = ".geombnd.dcx";
-            }
+        if(!Directory.Exists(rootDir))
+        {
+            return ret;
+        }
 
-            var rootDir = Project.GameRootDirectory + modelDir;
-            var modDir = Project.GameModDirectory + modelDir;
+        foreach (var f in Directory.GetFileSystemEntries(rootDir, $@"*{modelExt}").ToList())
+        {
+            var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+            ret.Add(name);
+            objs.Add(name);
+        }
 
-            foreach (var f in Directory.GetFileSystemEntries(rootDir, $@"*{modelExt}").ToList())
+        if (Project.Type == ProjectType.ER)
+        {
+            foreach (var folder in Directory.GetDirectories(rootDir).ToList())
             {
-                var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
-                ret.Add(name);
-                objs.Add(name);
-            }
-
-            if (Project.Type == ProjectType.ER)
-            {
-                foreach (var folder in Directory.GetDirectories(rootDir).ToList())
+                if (Directory.Exists(folder))
                 {
                     var tempRootDir = $@"{rootDir}\{folder.Substring(folder.Length - 6)}";
 
-                    foreach (var f in Directory.GetFileSystemEntries(tempRootDir, $@"*{modelExt}").ToList())
+                    if (Directory.Exists(tempRootDir))
                     {
-                        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
-                        if (!objs.Contains(name))
-                        {
-                            ret.Add(name);
-                            objs.Add(name);
-                        }
-                    }
-                }
-            }
-
-            if (Project.GameModDirectory != null && Directory.Exists(modDir))
-            {
-                foreach (var f in Directory.GetFileSystemEntries(modDir, $@"*{modelExt}").ToList())
-                {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
-                    if (!objs.Contains(name))
-                    {
-                        ret.Add(name);
-                        objs.Add(name);
-                    }
-                }
-
-                if (Project.Type == ProjectType.ER)
-                {
-                    foreach (var folder in Directory.GetDirectories(modDir).ToList())
-                    {
-                        var tempModDir = $@"{modDir}\{folder.Substring(folder.Length - 6)}";
-
-                        foreach (var f in Directory.GetFileSystemEntries(tempModDir, $@"*{modelExt}").ToList())
+                        foreach (var f in Directory.GetFileSystemEntries(tempRootDir, $@"*{modelExt}").ToList())
                         {
                             var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
                             if (!objs.Contains(name))
@@ -289,16 +268,48 @@ public static class AssetListLocator
                     }
                 }
             }
-
-            ret.Sort();
-
-            return ret;
         }
-        catch (DirectoryNotFoundException e)
+
+        if (Project.GameModDirectory != null && Directory.Exists(modDir))
         {
-            // Game likely isn't UXM unpacked
-            return new List<string>();
+            foreach (var f in Directory.GetFileSystemEntries(modDir, $@"*{modelExt}").ToList())
+            {
+                var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+                if (!objs.Contains(name))
+                {
+                    ret.Add(name);
+                    objs.Add(name);
+                }
+            }
+
+            if (Project.Type == ProjectType.ER)
+            {
+                foreach (var folder in Directory.GetDirectories(modDir).ToList())
+                {
+                    if (Directory.Exists(folder))
+                    {
+                        var tempModDir = $@"{modDir}\{folder.Substring(folder.Length - 6)}";
+
+                        if (Directory.Exists(tempModDir))
+                        {
+                            foreach (var f in Directory.GetFileSystemEntries(tempModDir, $@"*{modelExt}").ToList())
+                            {
+                                var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+                                if (!objs.Contains(name))
+                                {
+                                    ret.Add(name);
+                                    objs.Add(name);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
+
+        ret.Sort();
+
+        return ret;
     }
 
     public static List<string> GetPartsModels()
