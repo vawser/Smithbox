@@ -16,6 +16,13 @@ public static class EmevdBank
     public static bool IsLoading { get; private set; }
 
     public static Dictionary<EventScriptInfo, EMEVD> ScriptBank { get; private set; } = new();
+    public static EMEDF InfoBank { get; private set; } = new();
+
+    public static void LoadEMEDF()
+    {
+        var path = $"{AppDomain.CurrentDomain.BaseDirectory}//Assets//EMEVD//ac6-common.emedf.json";
+        InfoBank = EMEDF.ReadFile(path);
+    }
 
     public static void SaveEventScripts()
     {
@@ -154,9 +161,15 @@ public static class EmevdBank
         EventScriptInfo eventInfo = new EventScriptInfo(name, path);
         EMEVD eventScript = new EMEVD();
 
-        eventScript = EMEVD.Read(DCX.Decompress(path));
-
-        ScriptBank.Add(eventInfo, eventScript);
+        try
+        {
+            eventScript = EMEVD.Read(DCX.Decompress(path));
+            ScriptBank.Add(eventInfo, eventScript);
+        }
+        catch (Exception ex)
+        {
+            TaskLogs.AddLog($"Failed to read {path}");
+        }
     }
 
     public class EventScriptInfo

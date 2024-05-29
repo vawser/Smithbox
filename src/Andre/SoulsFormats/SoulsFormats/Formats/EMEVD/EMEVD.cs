@@ -286,7 +286,7 @@ namespace SoulsFormats
             /// <summary>
             /// Sekiro on all platforms.
             /// </summary>
-            Sekiro,
+            Sekiro
         }
 
         internal struct Offsets

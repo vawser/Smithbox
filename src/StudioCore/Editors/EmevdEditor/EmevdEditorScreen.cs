@@ -1,15 +1,19 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.BanksMain;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.GraphicsEditor;
+using StudioCore.Interface;
 using StudioCore.Settings;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
+using System.Net;
 using System.Numerics;
 using System.Reflection;
 using Veldrid;
@@ -67,7 +71,8 @@ public class EmevdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_EventScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (false)
+        // Only support AC6
+        if (Project.Type != ProjectType.AC6)
         {
             ImGui.Begin("Editor##InvalidEventScriptEditor");
 
@@ -80,6 +85,7 @@ public class EmevdEditorScreen : EditorScreen
             if (!EmevdBank.IsLoaded)
             {
                 EmevdBank.LoadEventScripts();
+                EmevdBank.LoadEMEDF();
             }
 
             if (EmevdBank.IsLoaded)
@@ -105,7 +111,15 @@ public class EmevdEditorScreen : EditorScreen
 
         foreach (var (info, binder) in EmevdBank.ScriptBank)
         {
-            if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedScriptKey))
+            var displayName = $"{info.Name}";
+            var mapName = MapAliasBank.GetMapName(info.Name);
+
+            if(mapName != "")
+            {
+                displayName = $"{info.Name} <{mapName}>";
+            }
+
+            if (ImGui.Selectable(displayName, info.Name == _selectedScriptKey))
             {
                 _selectedScriptKey = info.Name;
                 _selectedFileInfo = info;
@@ -134,33 +148,250 @@ public class EmevdEditorScreen : EditorScreen
         ImGui.End();
     }
 
+    Vector4 insColor = new Vector4(1.0f, 0.5f, 0.5f, 1.0f);
+
     private void EventScriptEventInstructionView()
     {
         ImGui.Begin("Event Instructions##EventInstructionView");
 
         if(_selectedEvent != null)
         {
+            ImGui.Columns(2);
             foreach (var ins in _selectedEvent.Instructions)
             {
-                var eventStr = $"{ins.Bank}[{ins.ID}]";
-
-                var eventArgs = "";
-
-                for (int i = 0; i < ins.ArgData.Length; i++)
-                {
-                    eventArgs = eventArgs + $"{ins.ArgData[i]} ";
-                }
-
-                ImGui.Text($"{eventStr} ({eventArgs})");
+                ShowRawDisplay(ins);
             }
+
+            ImGui.NextColumn();
+
+            foreach (var ins in _selectedEvent.Instructions)
+            {
+                ShowSimpleDisplay(ins);
+            }
+
+            ImGui.Columns(1);
         }
 
         ImGui.End();
     }
 
+    Dictionary<long, string> InstructionTypes = new Dictionary<long, string>()
+    {
+        [0] = "byte",
+        [1] = "ushort",
+        [2] = "uint",
+        [3] = "sbyte",
+        [4] = "short",
+        [5] = "int",
+        [6] = "float"
+    };
+
+    private void ShowRawDisplay(EMEVD.Instruction ins)
+    {
+        var eventStr = $"{ins.Bank}[{ins.ID}]";
+        var eventArgs = "";
+        int argIndex = 0;
+
+        foreach (var classEntry in EmevdBank.InfoBank.Classes)
+        {
+            if (ins.Bank == classEntry.Index)
+            {
+                foreach (var insEntry in classEntry.Instructions)
+                {
+                    if (ins.ID == insEntry.Index)
+                    {
+                        // This formats the args byte array into the right primitive types for display
+                        for(int i = 0; i < insEntry.Arguments.Length; i++)
+                        {
+                            var argEntry = insEntry.Arguments[i];
+                            string separator = ", ";
+
+                            if(i == insEntry.Arguments.Length - 1)
+                            {
+                                separator = "";
+                            }
+
+                            // TODO: peek and check we don't exceed the length of the arguments
+                            if (InstructionTypes.ContainsKey(argEntry.Type))
+                            {
+                                switch (argEntry.Type)
+                                {
+                                    // byte
+                                    case 0:
+                                        if (argIndex + 1 <= ins.ArgData.Length)
+                                        {
+                                            var byteVal = ins.ArgData[argIndex];
+                                            eventArgs = eventArgs + $"{byteVal}{separator}";
+                                            argIndex += 1;
+                                        }
+                                        else
+                                        {
+                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
+                                        }
+                                        break;
+                                    // ushort
+                                    case 1:
+                                        if (argIndex + 2 <= ins.ArgData.Length)
+                                        {
+                                            var ushortVal = BitConverter.ToUInt16(ins.ArgData, argIndex);
+                                            eventArgs = eventArgs + $"{ushortVal}{separator}";
+                                            argIndex += 2;
+                                        }
+                                        else
+                                        {
+                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
+                                        }
+                                        break;
+                                    // uint
+                                    case 2:
+                                        if (argIndex + 4 <= ins.ArgData.Length)
+                                        {
+                                            var uintVal = BitConverter.ToUInt32(ins.ArgData, argIndex);
+                                            eventArgs = eventArgs + $"{uintVal}{separator}";
+                                            argIndex += 4;
+                                        }
+                                        else
+                                        {
+                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
+                                        }
+                                        break;
+                                    // sbyte
+                                    case 3:
+                                        if (argIndex + 1 <= ins.ArgData.Length)
+                                        {
+                                            var sbyteVal = (sbyte)ins.ArgData[argIndex];
+                                            eventArgs = eventArgs + $"{sbyteVal}{separator}";
+                                            argIndex += 1;
+                                        }
+                                        else
+                                        {
+                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
+                                        }
+                                        break;
+                                    // short
+                                    case 4:
+                                        if (argIndex + 2 <= ins.ArgData.Length)
+                                        {
+                                            var shortVal = BitConverter.ToInt16(ins.ArgData, argIndex);
+                                            eventArgs = eventArgs + $"{shortVal}{separator}";
+                                            argIndex += 2;
+                                        }
+                                        else
+                                        {
+                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
+                                        }
+                                        break;
+                                    // int
+                                    case 5:
+                                        if (argIndex + 4 <= ins.ArgData.Length)
+                                        {
+                                            var intVal = BitConverter.ToInt32(ins.ArgData, argIndex);
+                                            eventArgs = eventArgs + $"{intVal}{separator}";
+                                            argIndex += 4;
+                                        }
+                                        else
+                                        {
+                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
+                                        }
+                                        break;
+                                    // float
+                                    case 6:
+                                        if (argIndex + 4 <= ins.ArgData.Length)
+                                        {
+                                            var floatVal = BitConverter.ToSingle(ins.ArgData, argIndex);
+                                            eventArgs = eventArgs + $"{floatVal}{separator}";
+                                            argIndex += 4;
+                                        }
+                                        else
+                                        {
+                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
+                                        }
+                                        break;
+                                    // uint
+                                    case 8:
+                                        if (argIndex + 4 <= ins.ArgData.Length)
+                                        {
+                                            var uintVal2 = BitConverter.ToUInt32(ins.ArgData, argIndex);
+                                            eventArgs = eventArgs + $"{uintVal2}{separator}";
+                                            argIndex += 4;
+                                        }
+                                        else
+                                        {
+                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
+                                        }
+                                        break;
+                                    // unk
+                                    default: break;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        ImguiUtils.WrappedText($"{eventStr}");
+        ImGui.SameLine();
+        ImguiUtils.WrappedTextColored(insColor, $"({eventArgs})");
+    }
+
+    private void ShowSimpleDisplay(EMEVD.Instruction ins)
+    {
+        var classStr = "Unknown";
+        var insStr = "Unknown";
+        var argsStr = "";
+
+        foreach (var classEntry in EmevdBank.InfoBank.Classes)
+        {
+            if (ins.Bank == classEntry.Index)
+            {
+                classStr = classEntry.Name;
+
+                foreach (var insEntry in classEntry.Instructions)
+                {
+                    if(ins.ID == insEntry.Index)
+                    {
+                        insStr = insEntry.Name;
+
+                        for (int i = 0; i < insEntry.Arguments.Length; i++)
+                        {
+                            var argEntry = insEntry.Arguments[i];
+                            string separator = ", ";
+
+                            if (i == insEntry.Arguments.Length - 1)
+                            {
+                                separator = "";
+                            }
+
+                            argsStr = $"{argsStr}{argEntry.Name}{separator}";
+                        }
+                    }
+                }
+
+            }
+        }
+
+        if (argsStr == "")
+            argsStr = "Unknown";
+
+        ImguiUtils.WrappedText($"{classStr} [{insStr}]");
+        ImGui.SameLine();
+        ImguiUtils.WrappedTextColored(insColor, $"({argsStr})");
+    }
+
+    // Read EMEDF to get English words for arg data
+    private string GetArgumentDisplay(int classIndex, long index, byte[] argData)
+    {
+        string argDoc = "Unknown";
+
+
+        return argDoc;
+    }
+
     private void EventScriptEventParameterView()
     {
-        ImGui.Begin("Event Paramters##EventParameterView");
+        ImGui.Begin("Event Parameters##EventParameterView");
 
         if (_selectedEvent != null)
         {
@@ -180,6 +411,7 @@ public class EmevdEditorScreen : EditorScreen
     public void OnProjectChanged()
     {
         EmevdBank.LoadEventScripts();
+        EmevdBank.LoadEMEDF();
 
         ResetActionManager();
     }
