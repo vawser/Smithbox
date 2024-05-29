@@ -1175,16 +1175,21 @@ namespace SoulsFormats
                 public int[] GrassTypeParamIds { get; set; }
 
                 /// <summary>
-                /// Creates an UnkStruct80 with default values.
+                /// Creates an StructGrass with default values.
                 /// </summary>
-                public StructGrass() { }
+                public StructGrass() 
+                {
+                    GrassTypeParamIds = new int[6];
+                }
 
                 /// <summary>
                 /// Creates a deep copy of the struct.
                 /// </summary>
                 public StructGrass DeepCopy()
                 {
-                    return (StructGrass)MemberwiseClone();
+                    var grass = (StructGrass)MemberwiseClone();
+                    grass.GrassTypeParamIds = (int[])GrassTypeParamIds.Clone();
+                    return grass;
                 }
 
                 internal StructGrass(BinaryReaderEx br)
