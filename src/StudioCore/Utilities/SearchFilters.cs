@@ -192,6 +192,57 @@ public static class SearchFilters
         return match;
     }
 
+    public static bool IsSelectionSearchMatch(string rawInput, string checkInput, List<string> tags)
+    {
+        bool match = false;
+
+        string cleanRawInput = rawInput.Trim().ToLower();
+        string cleanCheckInput = checkInput.Trim().ToLower();
+
+        if (cleanRawInput.Equals(""))
+        {
+            match = true; // If input is empty, show all
+            return match;
+        }
+
+        string[] inputParts = cleanRawInput.Split("+");
+        bool[] partTruth = new bool[inputParts.Length];
+
+        for (int i = 0; i < partTruth.Length; i++)
+        {
+            string entry = inputParts[i];
+
+            if (entry == cleanCheckInput)
+                partTruth[i] = true;
+
+            var refParts = cleanCheckInput.Split($"_");
+            foreach (var refPart in refParts)
+            {
+                if (entry == refPart)
+                {
+                    partTruth[i] = true;
+                }
+            }
+
+            // Match: Tags
+            foreach (string tagStr in tags)
+            {
+                if (entry == tagStr.ToLower())
+                    partTruth[i] = true;
+            }
+        }
+
+        match = true;
+
+        foreach (bool entry in partTruth)
+        {
+            if (!entry)
+                match = false;
+        }
+
+        return match;
+    }
+
     public static bool IsIdSearchMatch(string rawInput, string checkInput)
     {
         bool match = false;

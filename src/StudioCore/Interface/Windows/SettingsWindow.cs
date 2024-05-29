@@ -513,6 +513,25 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
             }
 
+            // Selection Groups
+            if (ImGui.CollapsingHeader("Selection Groups", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Frame selection group on select", ref CFG.Current.MapEditor_SelectionGroup_FrameSelection);
+                ImguiUtils.ShowHoverTooltip("Frame the selection group entities automatically in the viewport when selecting a group.");
+
+                ImGui.Checkbox("Enable group auto-creation", ref CFG.Current.MapEditor_SelectionGroup_AutoCreation);
+                ImguiUtils.ShowHoverTooltip("The selection group will be given the name of the first entity within the selection as the group name and no tags, bypassing the creation prompt.");
+
+                ImGui.Checkbox("Enable group deletion prompt", ref CFG.Current.MapEditor_SelectionGroup_ConfirmDelete);
+                ImguiUtils.ShowHoverTooltip("Display the confirmation dialog when deleting a group.");
+
+                ImGui.Checkbox("Show keybind in selection group name", ref CFG.Current.MapEditor_SelectionGroup_ShowKeybind);
+                ImguiUtils.ShowHoverTooltip("Append the keybind hint to the selection group name.");
+
+                ImGui.Checkbox("Show tags in selection group name", ref CFG.Current.MapEditor_SelectionGroup_ShowTags);
+                ImguiUtils.ShowHoverTooltip("Append the tags to the selection group name.");
+            }
+
             ImGui.Unindent();
             ImGui.EndTabItem();
         }

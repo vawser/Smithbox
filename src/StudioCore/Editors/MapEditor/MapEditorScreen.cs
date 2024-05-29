@@ -26,6 +26,7 @@ using StudioCore.Interface;
 using StudioCore.Editors.MapEditor.AssetBrowser;
 using StudioCore.Editors.MapEditor.EntryFileList;
 using StudioCore.Locators;
+using StudioCore.Editors.MapEditor.SelectionGroup;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -63,6 +64,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public DisplayGroupEditor DispGroupEditor;
     public MapAssetBrowser AssetBrowser;
     public EntryFileListEditor EntryFileListViewer;
+    public SelectionGroupView SelectionGroupEditor;
 
     public MapToolbar _mapToolbar;
     public MapToolbar_ActionList _mapToolbar_ActionList;
@@ -114,6 +116,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
         PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport);
         EntryFileListViewer = new EntryFileListEditor(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
+
+        SelectionGroupEditor = new SelectionGroupView(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
 
         _mapToolbar = new MapToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _comboTargetMap);
         _mapToolbar_ActionList = new MapToolbar_ActionList();
@@ -917,6 +921,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         DispGroupEditor.OnGui(Universe._dispGroupCount);
         AssetBrowser.OnGui();
         EntryFileListViewer.OnGui();
+        SelectionGroupEditor.OnGui();
 
         if (CFG.Current.Interface_MapEditor_Toolbar)
         {

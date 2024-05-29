@@ -28,5 +28,21 @@ namespace StudioCore.Interface
 
             return tagListStr;
         }
+
+        public static List<String> GetTagList(string tags)
+        {
+            var list = new List<string>();
+
+            if(tags.Contains(","))
+            {
+                list = tags.Split(',').ToList();
+            }
+            else
+            {
+                list.Add(tags);
+            }
+
+            return list;
+        }
     }
 }

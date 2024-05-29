@@ -65,6 +65,21 @@ public class Universe
 
     public ProjectType GameType => Project.Type;
 
+    public List<MapContainer> GetLoadedMaps()
+    {
+        List<MapContainer> maps = new List<MapContainer>();
+
+        foreach(var entry in LoadedObjectContainers)
+        {
+            if(entry.Value is MapContainer m)
+            {
+                maps.Add(m);
+            }
+        }
+
+        return maps;
+    }
+
     public MapContainer GetLoadedMap(string id)
     {
         if (id != null)

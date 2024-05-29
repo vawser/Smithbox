@@ -152,6 +152,20 @@ public class KeyBindings
         public KeyBind Map_RenderGroup_ShowAll = new("Render Group: Show All", KeybindCategory.MapEditor, Key.R, true);
         public KeyBind Map_RenderGroup_SelectHighlights = new("Render Group: Select Highlights", KeybindCategory.MapEditor);
 
+        public KeyBind Map_CreateSelectionGroup = new("Create Selection Group", KeybindCategory.MapEditor, Key.L, false, true);
+
+        public KeyBind Map_QuickSelect_SelectionGroup_0 = new("Select Selection Group 0", KeybindCategory.MapEditor, Key.Keypad0, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_1 = new("Select Selection Group 1", KeybindCategory.MapEditor, Key.Keypad1, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_2 = new("Select Selection Group 2", KeybindCategory.MapEditor, Key.Keypad2, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_3 = new("Select Selection Group 3", KeybindCategory.MapEditor, Key.Keypad3, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_4 = new("Select Selection Group 4", KeybindCategory.MapEditor, Key.Keypad4, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_5 = new("Select Selection Group 5", KeybindCategory.MapEditor, Key.Keypad5, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_6 = new("Select Selection Group 6", KeybindCategory.MapEditor, Key.Keypad6, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_7 = new("Select Selection Group 7", KeybindCategory.MapEditor, Key.Keypad7, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_8 = new("Select Selection Group 9", KeybindCategory.MapEditor, Key.Keypad8, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_9 = new("Select Selection Group 0", KeybindCategory.MapEditor, Key.Keypad9, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_10 = new("Select Selection Group 10", KeybindCategory.MapEditor, Key.KeypadAdd, false, false);
+
         // Model Editor
         public KeyBind ModelEditor_LoadCurrentSelection = new("Load Asset Selection", KeybindCategory.ModelEditor, Key.L, true);
 

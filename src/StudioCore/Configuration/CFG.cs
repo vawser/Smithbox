@@ -362,6 +362,12 @@ public class CFG
     public bool MapEditor_Substitute_PseudoPlayer_Model = false;
     public string MapEditor_Substitute_PseudoPlayer_ChrID = "c0000";
 
+    public bool MapEditor_SelectionGroup_FrameSelection = true;
+    public bool MapEditor_SelectionGroup_AutoCreation = false;
+    public bool MapEditor_SelectionGroup_ConfirmDelete = true;
+    public bool MapEditor_SelectionGroup_ShowKeybind = true;
+    public bool MapEditor_SelectionGroup_ShowTags = false;
+
     // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;
     public RenderFilterPreset SceneFilter_Preset_01 { get; set; } = new("Map", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
