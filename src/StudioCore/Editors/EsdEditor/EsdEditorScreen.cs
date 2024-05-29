@@ -1,21 +1,14 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Configuration;
 using StudioCore.Editor;
-using StudioCore.Editors.CutsceneEditor;
-using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.TalkEditor;
-using StudioCore.Editors.TimeActEditor;
-using StudioCore.Settings;
+using StudioCore.Interface;
 using StudioCore.UserProject;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
-using static StudioCore.Editors.CutsceneEditor.CutsceneBank;
-using static StudioCore.Editors.EmevdEditor.EmevdBank;
+using static SoulsFormats.ESD;
 using static StudioCore.Editors.TalkEditor.EsdBank;
 
 namespace StudioCore.TalkEditor;
@@ -24,23 +17,24 @@ public class EsdEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
-    private readonly PropertyEditor _propEditor;
-
     public ActionManager EditorActionManager = new();
 
-    private TalkScriptInfo _selectedFileInfo;
+    private EsdScriptInfo _selectedFileInfo;
     private IBinder _selectedBinder;
     private string _selectedBinderKey;
 
-    private ESD _selectedTalkScript;
-    private int _selectedTalkScriptKey;
+    private ESD _selectedEsdScript;
+    private int _selectedEsdScriptKey;
+    private long _selectedStateGroupKey;
+    private long _selectedStateGroupSubKey;
+    private Dictionary<long, State> _selectedStateGroups;
+    private State _selectedStateNode;
 
     public EsdEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => "Talk Script Editor##TalkScriptEditor";
+    public string EditorName => "ESD Editor##TalkScriptEditor";
     public string CommandEndpoint => "esd";
     public string SaveType => "ESD";
 
@@ -69,7 +63,8 @@ public class EsdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TalkScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (false)
+        // Only support AC6
+        if (Project.Type != ProjectType.AC6)
         {
             ImGui.Begin("Editor##InvalidTalkEditor");
 
@@ -81,12 +76,15 @@ public class EsdEditorScreen : EditorScreen
         {
             if (!EsdBank.IsLoaded)
             {
-                EsdBank.LoadTalkScripts();
+                EsdBank.LoadEsdScripts();
             }
 
             if (EsdBank.IsLoaded)
             {
-                TalkScriptFileView();
+                EsdFileView();
+                EsdStateGroupSelectView();
+                EsdStateNodeSelectView();
+                EsdStateNodeView();
             }
         }
 
@@ -94,7 +92,7 @@ public class EsdEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
     }
 
-    public void TalkScriptFileView()
+    public void EsdFileView()
     {
         // File List
         ImGui.Begin("Files##TalkFileList");
@@ -106,7 +104,7 @@ public class EsdEditorScreen : EditorScreen
         {
             if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedBinderKey))
             {
-                _selectedTalkScriptKey = -1; // Clear talk key if file is changed
+                _selectedEsdScriptKey = -1; // Clear talk key if file is changed
 
                 _selectedBinderKey = info.Name;
                 _selectedFileInfo = info;
@@ -116,10 +114,9 @@ public class EsdEditorScreen : EditorScreen
 
         ImGui.End();
 
-        // File List
         ImGui.Begin("Scripts##EsdScriptList");
 
-        if (_selectedFileInfo.EsdFiles != null)
+        if (_selectedFileInfo != null)
         {
             ImGui.Text($"Scripts");
             ImGui.Separator();
@@ -128,10 +125,10 @@ public class EsdEditorScreen : EditorScreen
             {
                 ESD entry = _selectedFileInfo.EsdFiles[i];
 
-                if (ImGui.Selectable($@" {entry.Name}", i == _selectedTalkScriptKey))
+                if (ImGui.Selectable($@" {entry.Name}", i == _selectedEsdScriptKey))
                 {
-                    _selectedTalkScriptKey = i;
-                    _selectedTalkScript = entry;
+                    _selectedEsdScriptKey = i;
+                    _selectedEsdScript = entry;
                 }
             }
         }
@@ -139,9 +136,69 @@ public class EsdEditorScreen : EditorScreen
         ImGui.End();
     }
 
+    public void EsdStateGroupSelectView()
+    {
+        ImGui.Begin("State Group Selection##EsdStateGroupSelectView");
+
+        if (_selectedEsdScript != null)
+        {
+            foreach (var entry in _selectedEsdScript.StateGroups)
+            {
+                var stateId = entry.Key;
+                var stateGroups = entry.Value;
+
+                if (ImGui.Selectable($@" {stateId}", _selectedStateGroupKey == stateId))
+                {
+                    _selectedStateGroupKey = stateId;
+                    _selectedStateGroups = stateGroups;
+                }
+            }
+        }
+
+        ImGui.End();
+    }
+
+    public void EsdStateNodeSelectView()
+    {
+        // File List
+        ImGui.Begin("State Node Selection##EsdStateNodeSelectView");
+
+        if (_selectedStateGroups != null)
+        {
+            foreach(var (key, entry) in _selectedStateGroups)
+            {
+                if (ImGui.Selectable($@" {key}", key == _selectedStateGroupSubKey))
+                {
+                    _selectedStateGroupSubKey = key;
+                    _selectedStateNode = entry;
+                }
+            }
+        }
+
+        ImGui.End();
+    }
+
+    // TODO: add ESD node stuff
+    public void EsdStateNodeView()
+    {
+        // File List
+        ImGui.Begin("State Node##EsdStateNodeView");
+
+        if (_selectedStateNode != null)
+        {
+            ImGui.Columns(2);
+
+            ImGui.NextColumn();
+
+            ImGui.Columns(1);
+        }
+
+        ImGui.End();
+    }
+
     public void OnProjectChanged()
     {
-        EsdBank.LoadTalkScripts();
+        EsdBank.LoadEsdScripts();
 
         ResetActionManager();
     }
@@ -149,13 +206,13 @@ public class EsdEditorScreen : EditorScreen
     public void Save()
     {
         if (EsdBank.IsLoaded)
-            EsdBank.SaveTalkScript(_selectedFileInfo, _selectedBinder);
+            EsdBank.SaveEsdScript(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
         if (EsdBank.IsLoaded)
-            EsdBank.SaveTalkScripts();
+            EsdBank.SaveEsdScripts();
     }
 
     private void ResetActionManager()

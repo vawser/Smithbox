@@ -15,17 +15,17 @@ public static class EsdBank
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
 
-    public static Dictionary<TalkScriptInfo, IBinder> TalkBank { get; private set; } = new();
+    public static Dictionary<EsdScriptInfo, IBinder> TalkBank { get; private set; } = new();
 
-    public static void SaveTalkScripts()
+    public static void SaveEsdScripts()
     {
         foreach (var (info, binder) in TalkBank)
         {
-            SaveTalkScript(info, binder);
+            SaveEsdScript(info, binder);
         }
     }
 
-    public static void SaveTalkScript(TalkScriptInfo info, IBinder binder)
+    public static void SaveEsdScript(EsdScriptInfo info, IBinder binder)
     {
         if (binder == null)
             return;
@@ -64,7 +64,7 @@ public static class EsdBank
                 fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveTalkScript");
+                TaskLogs.AddLog($"Invalid ProjectType during SaveESDScript");
                 return;
         }
 
@@ -87,7 +87,7 @@ public static class EsdBank
         }
     }
 
-    public static void LoadTalkScripts()
+    public static void LoadEsdScripts()
     {
         if (Project.Type == ProjectType.Undefined)
         {
@@ -110,12 +110,12 @@ public static class EsdBank
 
             if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
             {
-                LoadTalkScript($"{Project.GameModDirectory}\\{filePath}");
+                LoadEsdScript($"{Project.GameModDirectory}\\{filePath}");
                 //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
-                LoadTalkScript($"{Project.GameRootDirectory}\\{filePath}");
+                LoadEsdScript($"{Project.GameRootDirectory}\\{filePath}");
                 //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }
@@ -123,26 +123,26 @@ public static class EsdBank
         IsLoaded = true;
         IsLoading = false;
 
-        TaskLogs.AddLog($"Talk Script Bank - Load Complete");
+        TaskLogs.AddLog($"ESD Script Bank - Load Complete");
     }
 
-    private static void LoadTalkScript(string path)
+    private static void LoadEsdScript(string path)
     {
         if (path == null)
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading TalkESD file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading ESD file.",
                     LogLevel.Warning);
             return;
         }
         if (path == "")
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading TalkESD file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading ESD file.",
                     LogLevel.Warning);
             return;
         }
 
         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        TalkScriptInfo talkInfo = new TalkScriptInfo(name, path);
+        EsdScriptInfo talkInfo = new EsdScriptInfo(name, path);
 
         IBinder binder = BND4.Read(DCX.Decompress(path));
 
@@ -165,9 +165,9 @@ public static class EsdBank
         TalkBank.Add(talkInfo, binder);
     }
 
-    public class TalkScriptInfo
+    public class EsdScriptInfo
     {
-        public TalkScriptInfo(string name, string path)
+        public EsdScriptInfo(string name, string path)
         {
             Name = name;
             Path = path;

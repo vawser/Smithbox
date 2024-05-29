@@ -27,8 +27,6 @@ public class EmevdEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
-    private readonly PropertyEditor _propEditor;
-
     public ActionManager EditorActionManager = new();
 
     private EventScriptInfo _selectedFileInfo;
@@ -39,7 +37,6 @@ public class EmevdEditorScreen : EditorScreen
 
     public EmevdEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        _propEditor = new PropertyEditor(EditorActionManager);
     }
 
     public string EditorName => "EMEVD Editor##EventScriptEditor";
@@ -378,15 +375,6 @@ public class EmevdEditorScreen : EditorScreen
         ImguiUtils.WrappedText($"{classStr} [{insStr}]");
         ImGui.SameLine();
         ImguiUtils.WrappedTextColored(insColor, $"({argsStr})");
-    }
-
-    // Read EMEDF to get English words for arg data
-    private string GetArgumentDisplay(int classIndex, long index, byte[] argData)
-    {
-        string argDoc = "Unknown";
-
-
-        return argDoc;
     }
 
     private void EventScriptEventParameterView()

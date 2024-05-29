@@ -3,11 +3,11 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <Authors>Katalash</Authors>
-    <Version>1.0.9.1</Version>
+    <Authors>Katalash, Vawser</Authors>
+    <Version>1.0.10</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
-    <PackageVersion>1.0.9.1</PackageVersion>
-    <AssemblyVersion>1.0.9.1</AssemblyVersion>
+    <PackageVersion>1.0.10</PackageVersion>
+    <AssemblyVersion>1.0.10</AssemblyVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>

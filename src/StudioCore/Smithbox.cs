@@ -177,12 +177,12 @@ public class Smithbox
 
         _editors.Add(EditorContainer.GparamEditor);
 
-        if (FeatureFlags.EnableEditor_EventScript)
+        if (FeatureFlags.EnableEditor_Evemd)
         {
             _editors.Add(EditorContainer.ScriptEditor);
         }
 
-        if (FeatureFlags.EnableEditor_TalkScript)
+        if (FeatureFlags.EnableEditor_Esd)
         {
             _editors.Add(EditorContainer.TalkEditor);
         }
