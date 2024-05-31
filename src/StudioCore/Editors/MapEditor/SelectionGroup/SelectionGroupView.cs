@@ -380,7 +380,7 @@ public class SelectionGroupView
             {
                 if (selectedResourceContents.Contains(mapObj.Name))
                 {
-                    TaskLogs.AddLog(mapObj.Name);
+                    //TaskLogs.AddLog(mapObj.Name);
                     entities.Add(mapObj);
                 }
             }
@@ -389,10 +389,13 @@ public class SelectionGroupView
         foreach (var entry in entities)
         {
             _selection.AddSelection(entry);
-            if (CFG.Current.MapEditor_SelectionGroup_FrameSelection)
-            {
-                MapAction_FrameInViewport.Act(_selection);
-            }
+        }
+
+        if (CFG.Current.MapEditor_SelectionGroup_FrameSelection)
+        {
+            ViewportSelection firstSel = (ViewportSelection)_selection.GetSelection().First();
+            MapAction_FrameInViewport.Act(firstSel);
+            MapAction_GoToInObjectList.Act(firstSel);
         }
     }
 

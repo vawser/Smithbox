@@ -24,6 +24,7 @@ using StudioCore.Editors.MapEditor.MapGroup;
 using StudioCore.Interface;
 using StudioCore.Editor;
 using StudioCore.Locators;
+using Silk.NET.OpenGL;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -125,107 +126,412 @@ public class MapSceneTree : IActionEventHandler
         _mapPieceAliasCache = null;
     }
 
-    public void OnActionEvent(ActionEvent evt)
+
+    public void OnGui()
     {
-        if (evt.HasFlag(ActionEvent.ObjectAddedRemoved))
-        {
-            _cachedTypeView = null;
-        }
-    }
+        var scale = Smithbox.GetUIScale();
 
+        if (!CFG.Current.Interface_MapEditor_MapObjectList)
+            return;
 
-    private void RebuildTypeViewCache(MapContainer map)
-    {
-        if (_cachedTypeView == null)
-        {
-            _cachedTypeView =
-                new Dictionary<string, Dictionary<MsbEntity.MsbEntityType, Dictionary<Type, List<MsbEntity>>>>();
-        }
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.ImGui_ChildBg);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
-        Dictionary<MsbEntity.MsbEntityType, Dictionary<Type, List<MsbEntity>>> mapcache = new();
-        mapcache.Add(MsbEntity.MsbEntityType.Part, new Dictionary<Type, List<MsbEntity>>());
-        mapcache.Add(MsbEntity.MsbEntityType.Region, new Dictionary<Type, List<MsbEntity>>());
-        mapcache.Add(MsbEntity.MsbEntityType.Event, new Dictionary<Type, List<MsbEntity>>());
-        if (Project.Type is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
-            or ProjectType.ER or ProjectType.AC6)
+        if (ImGui.Begin($@"Map Object List##{_id}"))
         {
-            mapcache.Add(MsbEntity.MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
-        }
-        else if (Project.Type is ProjectType.DS2S || Project.Type is ProjectType.DS2)
-        {
-            mapcache.Add(MsbEntity.MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
-            mapcache.Add(MsbEntity.MsbEntityType.DS2Event, new Dictionary<Type, List<MsbEntity>>());
-            mapcache.Add(MsbEntity.MsbEntityType.DS2EventLocation, new Dictionary<Type, List<MsbEntity>>());
-            mapcache.Add(MsbEntity.MsbEntityType.DS2Generator, new Dictionary<Type, List<MsbEntity>>());
-            mapcache.Add(MsbEntity.MsbEntityType.DS2GeneratorRegist, new Dictionary<Type, List<MsbEntity>>());
-        }
+            ImGui.PopStyleVar();
 
-        foreach (Entity obj in map.Objects)
-        {
-            if (obj is MsbEntity e && mapcache.ContainsKey(e.Type))
+            if (_initiatedDragDrop)
             {
-                Type typ = e.WrappedObject.GetType();
-                if (!mapcache[e.Type].ContainsKey(typ))
+                _initiatedDragDrop = false;
+                _pendingDragDrop = true;
+            }
+
+            if (_pendingDragDrop && ImGui.IsMouseReleased(ImGuiMouseButton.Left))
+            {
+                _pendingDragDrop = false;
+            }
+
+            if (Project.Type is ProjectType.DS2S || Project.Type is ProjectType.DS2)
+            {
+                if (ParamBank.PrimaryBank.IsLoadingParams)
                 {
-                    mapcache[e.Type].Add(typ, new List<MsbEntity>());
+                    ImGui.NewLine();
+                    ImGui.Text("  Please wait for params to finish loading.");
+                    ImGui.End();
+                    ImGui.PopStyleColor();
+                    return;
                 }
-
-                mapcache[e.Type][typ].Add(e);
-            }
-        }
-
-        if (!_cachedTypeView.ContainsKey(map.Name))
-        {
-            _cachedTypeView.Add(map.Name, mapcache);
-        }
-        else
-        {
-            _cachedTypeView[map.Name] = mapcache;
-        }
-    }
-
-    private void ChaliceDungeonImportButton()
-    {
-        ImGui.Selectable($@"   {ForkAwesome.PlusCircle} Load Chalice Dungeon...", false);
-        if (ImGui.BeginPopupContextItem("chalice", 0))
-        {
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("Chalice ID (m29_xx_xx_xx): ");
-            ImGui.SameLine();
-            var pname = _chaliceMapID;
-            ImGui.SetNextItemWidth(100);
-            if (_chaliceLoadError)
-            {
-                ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_ErrorInput_Background);
             }
 
-            if (ImGui.InputText("##chalicename", ref pname, 12))
-            {
-                _chaliceMapID = pname;
-            }
+            ImGui.Spacing();
+            ImGui.Indent(30 * scale);
 
-            if (_chaliceLoadError)
+            // List Sorting Style
+            if (CFG.Current.MapEditor_MapObjectList_ShowListSortingType)
             {
-                ImGui.PopStyleColor();
-            }
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("List Sorting Style:");
+                ImGui.SameLine();
+                ImGui.SetNextItemWidth(-1);
 
-            ImGui.SameLine();
-            if (ImGui.Button("Load"))
-            {
-                if (!_universe.LoadMap(_chaliceMapID))
+                var mode = (int)_viewMode;
+                if (ImGui.Combo("##typecombo", ref mode, _viewModeStrings, _viewModeStrings.Length))
                 {
-                    _chaliceLoadError = true;
+                    _viewMode = (ViewMode)mode;
+                }
+            }
+
+            // Map Groups
+            if (CFG.Current.Interface_DisplayMapGroups)
+            {
+                DisplayMapGroups();
+            }
+
+            // Map ID Search
+            if (CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch)
+            {
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Map ID Search:");
+                ImGui.SameLine();
+                ImGui.SetNextItemWidth(-1);
+                ImGui.InputText("##treeSearch", ref _mapObjectListSearchInput, 99);
+                ImguiUtils.ShowHoverTooltip("Filter the map list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
+            }
+
+            ImGui.Unindent(30 * scale);
+
+            DisplayMapObjectList();
+
+            if (_dragDropSources.Count > 0)
+            {
+                if (_dragDropDestObjects.Count > 0)
+                {
+                    ChangeEntityHierarchyAction action = new(_universe, _dragDropSources, _dragDropDestObjects,
+                        _dragDropDests, false);
+                    _editorActionManager.ExecuteAction(action);
+                    _dragDropSources.Clear();
+                    _dragDropDests.Clear();
+                    _dragDropDestObjects.Clear();
                 }
                 else
                 {
-                    ImGui.CloseCurrentPopup();
-                    _chaliceLoadError = false;
-                    _chaliceMapID = "m29_";
+                    ReorderContainerObjectsAction action = new(_universe, _dragDropSources, _dragDropDests, false);
+                    _editorActionManager.ExecuteAction(action);
+                    _dragDropSources.Clear();
+                    _dragDropDests.Clear();
+                }
+            }
+        }
+        else
+        {
+            ImGui.PopStyleVar();
+        }
+
+        ImGui.End();
+        ImGui.PopStyleColor();
+        _selection.ClearGotoTarget();
+    }
+
+    private void DisplayMapObjectList()
+    {
+        var scale = Smithbox.GetUIScale();
+
+        ImGui.BeginChild("listtree");
+
+        if (_universe.LoadedObjectContainers.Count == 0)
+        {
+            if (_universe.GameType == ProjectType.Undefined)
+            {
+                ImGui.Text("No project loaded. File -> New Project");
+            }
+            else
+            {
+                ImGui.Text("This Editor requires unpacked game files. Use UXM");
+            }
+        }
+
+
+        IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = _universe.LoadedObjectContainers.OrderBy(k => k.Key);
+
+        _mapEnt_ImGuiID = 0;
+
+        foreach (KeyValuePair<string, ObjectContainer> lm in orderedMaps)
+        {
+            ObjectContainer CurrentObjectContainer = lm.Value;
+            var CurrentMapID = lm.Key;
+
+            if (CurrentMapID == null)
+            {
+                continue;
+            }
+
+            var aliasName = "";
+            aliasName = MapAliasBank.GetMapName(CurrentMapID);
+
+            // Map name search filter
+            if (_mapObjectListSearchInput != ""
+                && (!CFG.Current.MapEditor_Always_List_Loaded_Maps || CurrentObjectContainer == null)
+                && !lm.Key.Contains(_mapObjectListSearchInput, StringComparison.CurrentCultureIgnoreCase)
+                && !aliasName.Contains(_mapObjectListSearchInput, StringComparison.CurrentCultureIgnoreCase))
+            {
+                continue;
+            }
+
+            // Map Groups
+            if (currentMapGroup != null)
+            {
+                if (currentMapGroup.members.Count > 0)
+                {
+                    var display = false;
+
+                    foreach (var entry in currentMapGroup.members)
+                    {
+                        if (entry.id == CurrentMapID)
+                        {
+                            display = true;
+                        }
+                    }
+
+                    if (!display)
+                    {
+                        continue;
+                    }
                 }
             }
 
-            ImGui.EndPopup();
+            Entity mapRoot = CurrentObjectContainer?.RootObject;
+            ObjectContainerReference mapRef = new(CurrentMapID, _universe);
+            ISelectable selectTarget = (ISelectable)mapRoot ?? mapRef;
+
+            ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
+
+            var selected = _selection.GetSelection().Contains(mapRoot) || _selection.GetSelection().Contains(mapRef);
+            if (selected)
+            {
+                treeflags |= ImGuiTreeNodeFlags.Selected;
+            }
+
+            var nodeopen = false;
+            var unsaved = CurrentObjectContainer != null && CurrentObjectContainer.HasUnsavedChanges ? "*" : "";
+
+            ImGui.BeginGroup();
+
+            string treeNodeName = $@"{ForkAwesome.Cube} {CurrentMapID}";
+            string treeNodeNameFormat = $@"{ForkAwesome.Cube} {CurrentMapID}{unsaved}";
+
+            // Loaded Map
+            if (CurrentObjectContainer != null)
+            {
+                nodeopen = ImGui.TreeNodeEx(treeNodeName, treeflags, treeNodeNameFormat);
+            }
+            // Unloaded Map
+            else
+            {
+                if (ImGui.Selectable($@"   {treeNodeName}", selected, ImGuiSelectableFlags.AllowDoubleClick))
+                {
+                    if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                    {
+                        if (CFG.Current.MapEditor_Enable_Map_Load_on_Double_Click)
+                        {
+                            if (selected)
+                            {
+                                _selection.ClearSelection();
+                            }
+
+                            _universe.LoadMap(CurrentMapID, selected);
+                        }
+                    }
+                }
+            }
+
+            DisplayMapAlias(aliasName);
+
+            ImGui.EndGroup();
+
+            if (_selection.ShouldGoto(mapRoot) || _selection.ShouldGoto(mapRef))
+            {
+                ImGui.SetScrollHereY();
+                _selection.ClearGotoTarget();
+            }
+
+            if (nodeopen)
+            {
+                ImGui.Indent(); //TreeNodeEx fails to indent as it is inside a group / indentation is reset
+            }
+
+            // Right click context menu
+            if (ImGui.BeginPopupContextItem($@"mapcontext_{CurrentMapID}"))
+            {
+                if (CurrentObjectContainer == null)
+                {
+                    if (ImGui.Selectable("Load Map"))
+                    {
+                        if (selected)
+                        {
+                            _selection.ClearSelection();
+                        }
+
+                        _universe.LoadMap(CurrentMapID, selected);
+                    }
+                }
+                else if (CurrentObjectContainer is MapContainer m)
+                {
+                    if (ImGui.Selectable("Save Map"))
+                    {
+                        try
+                        {
+                            _universe.SaveMap(m);
+                        }
+                        catch (SavingFailedException e)
+                        {
+                            ((MapEditorScreen)_handler).HandleSaveException(e);
+                        }
+                    }
+
+                    if (ImGui.Selectable("Unload Map"))
+                    {
+                        _selection.ClearSelection();
+                        _editorActionManager.Clear();
+                        _universe.UnloadContainer(m);
+                        GC.Collect();
+                        GC.WaitForPendingFinalizers();
+                        GC.Collect();
+                    }
+                }
+
+                if (_universe.GameType is ProjectType.ER)
+                {
+                    if (CurrentMapID.StartsWith("m60"))
+                    {
+                        if (ImGui.Selectable("Load Related Maps"))
+                        {
+                            if (selected)
+                            {
+                                _selection.ClearSelection();
+                            }
+
+                            _universe.LoadMap(CurrentMapID);
+                            _universe.LoadRelatedMapsER(CurrentMapID, _universe.LoadedObjectContainers);
+                        }
+                    }
+                }
+
+                if (_universe.GetLoadedMapCount() > 1)
+                {
+                    if (ImGui.Selectable("Unload All Maps"))
+                    {
+                        DialogResult result = PlatformUtils.Instance.MessageBox("Unload all maps?", "Confirm",
+                            MessageBoxButtons.YesNo);
+                        if (result == DialogResult.Yes)
+                        {
+                            _selection.ClearSelection();
+                            _editorActionManager.Clear();
+                            _universe.UnloadAllMaps();
+                            GC.Collect();
+                            GC.WaitForPendingFinalizers();
+                            GC.Collect();
+                        }
+                    }
+                }
+
+                ImGui.EndPopup();
+            }
+
+            if (ImGui.IsItemClicked())
+            {
+                _pendingClick = selectTarget;
+            }
+
+            if (ImGui.IsMouseDoubleClicked(0) && _pendingClick != null && mapRoot == _pendingClick)
+            {
+                _viewport.FramePosition(mapRoot.GetLocalTransform().Position, 10f);
+            }
+
+            if ((_pendingClick == mapRoot || mapRef.Equals(_pendingClick)) && ImGui.IsMouseReleased(ImGuiMouseButton.Left))
+            {
+                if (ImGui.IsItemHovered())
+                {
+                    // Only select if a node is not currently being opened/closed
+                    if (mapRoot == null || nodeopen && _treeOpenEntities.Contains(mapRoot) || !nodeopen && !_treeOpenEntities.Contains(mapRoot))
+                    {
+                        if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
+                        {
+                            // Toggle Selection
+                            if (_selection.GetSelection().Contains(selectTarget))
+                            {
+                                _selection.RemoveSelection(selectTarget);
+                            }
+                            else
+                            {
+                                _selection.AddSelection(selectTarget);
+                            }
+                        }
+                        else
+                        {
+                            _selection.ClearSelection();
+                            _selection.AddSelection(selectTarget);
+                        }
+                    }
+
+                    // Update the open/closed state
+                    if (mapRoot != null)
+                    {
+                        if (nodeopen && !_treeOpenEntities.Contains(mapRoot))
+                        {
+                            _treeOpenEntities.Add(mapRoot);
+                        }
+                        else if (!nodeopen && _treeOpenEntities.Contains(mapRoot))
+                        {
+                            _treeOpenEntities.Remove(mapRoot);
+                        }
+                    }
+                }
+
+                _pendingClick = null;
+            }
+
+            if (nodeopen)
+            {
+                if (_pendingDragDrop)
+                {
+                    ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 0.0f) * scale);
+                }
+                else
+                {
+                    ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 3.0f) * scale);
+                }
+
+                if (_viewMode == ViewMode.Hierarchy)
+                {
+                    HierarchyView(CurrentObjectContainer.RootObject);
+                }
+                else if (_viewMode == ViewMode.Flat)
+                {
+                    FlatView((MapContainer)CurrentObjectContainer);
+                }
+                else if (_viewMode == ViewMode.ObjectType)
+                {
+                    TypeView((MapContainer)CurrentObjectContainer);
+                }
+
+                ImGui.PopStyleVar();
+                ImGui.TreePop();
+            }
+
+            // Update type cache when a map is no longer loaded
+            if (_cachedTypeView != null && CurrentObjectContainer == null && _cachedTypeView.ContainsKey(CurrentMapID))
+            {
+                _cachedTypeView.Remove(CurrentMapID);
+            }
         }
+
+        if (Project.Type == ProjectType.BB && _configuration == Configuration.MapEditor)
+        {
+            ChaliceDungeonImportButton();
+        }
+
+        ImGui.EndChild();
     }
 
     private unsafe void MapObjectSelectable(Entity e, bool visicon, bool hierarchial = false)
@@ -526,7 +832,9 @@ public class MapSceneTree : IActionEventHandler
         {
             if (cats.Value.Count > 0)
             {
-                if (ImGui.TreeNodeEx(cats.Key.ToString(), ImGuiTreeNodeFlags.OpenOnArrow))
+                ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow;
+
+                if (ImGui.TreeNodeEx(cats.Key.ToString(), treeflags))
                 {
                     foreach (KeyValuePair<Type, List<MsbEntity>> typ in cats.Value.OrderBy(q => q.Key.Name))
                     {
@@ -550,7 +858,7 @@ public class MapSceneTree : IActionEventHandler
                                 {
                                     var parentAD = (ResourceDescriptor)parent.WrappedObject;
                                     if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentAD.AssetName}",
-                                            ImGuiTreeNodeFlags.OpenOnArrow))
+                                            treeflags))
                                     {
                                         ImGui.SetItemAllowOverlap();
                                         var visible = parent.EditorVisible;
@@ -595,7 +903,7 @@ public class MapSceneTree : IActionEventHandler
                                     }
                                 }
                             }
-                            else if (ImGui.TreeNodeEx(typ.Key.Name, ImGuiTreeNodeFlags.OpenOnArrow))
+                            else if (ImGui.TreeNodeEx(typ.Key.Name, treeflags))
                             {
                                 foreach (MsbEntity obj in typ.Value)
                                 {
@@ -619,131 +927,6 @@ public class MapSceneTree : IActionEventHandler
                 ImGui.Text($@"   {cats.Key.ToString()}");
             }
         }
-    }
-
-    public void OnGui()
-    {
-        var scale = Smithbox.GetUIScale();
-
-        if (!CFG.Current.Interface_MapEditor_MapObjectList)
-            return;
-
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.ImGui_ChildBg);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
-
-        if (ImGui.Begin($@"Map Object List##{_id}"))
-        {
-            if (_initiatedDragDrop)
-            {
-                _initiatedDragDrop = false;
-                _pendingDragDrop = true;
-            }
-
-            if (_pendingDragDrop && ImGui.IsMouseReleased(ImGuiMouseButton.Left))
-            {
-                _pendingDragDrop = false;
-            }
-
-            ImGui.PopStyleVar();
-
-            if (Project.Type is ProjectType.DS2S || Project.Type is ProjectType.DS2)
-            {
-                if (ParamBank.PrimaryBank.IsLoadingParams)
-                {
-                    ImGui.NewLine();
-                    ImGui.Text("  Please wait for params to finish loading.");
-                    ImGui.End();
-                    ImGui.PopStyleColor();
-                    return;
-                }
-            }
-
-            ImGui.Spacing();
-            ImGui.Indent(30 * scale);
-
-            if (CFG.Current.MapEditor_MapObjectList_ShowListSortingType)
-            {
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("List Sorting Style:");
-                ImGui.SameLine();
-                ImGui.SetNextItemWidth(-1);
-
-                var mode = (int)_viewMode;
-                if (ImGui.Combo("##typecombo", ref mode, _viewModeStrings, _viewModeStrings.Length))
-                {
-                    _viewMode = (ViewMode)mode;
-                }
-            }
-
-            if (CFG.Current.Interface_DisplayMapGroups)
-            {
-                DisplayMapGroups();
-            }
-
-            if (CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch)
-            {
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Map ID Search:");
-                ImGui.SameLine();
-                ImGui.SetNextItemWidth(-1);
-                ImGui.InputText("##treeSearch", ref _mapObjectListSearchInput, 99);
-                ImguiUtils.ShowHoverTooltip("Filter the map list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
-            }
-
-            ImGui.Unindent(30 * scale);
-
-            // Map Object List
-            ImGui.BeginChild("listtree");
-
-            if (_universe.LoadedObjectContainers.Count == 0)
-            {
-                if (_universe.GameType == ProjectType.Undefined)
-                {
-                    ImGui.Text("No project loaded. File -> New Project");
-                }
-                else
-                {
-                    ImGui.Text("This Editor requires unpacked game files. Use UXM");
-                }
-            }
-
-            DisplayMapTreeList();
-
-            if (Project.Type == ProjectType.BB && _configuration == Configuration.MapEditor)
-            {
-                ChaliceDungeonImportButton();
-            }
-
-            ImGui.EndChild();
-
-            if (_dragDropSources.Count > 0)
-            {
-                if (_dragDropDestObjects.Count > 0)
-                {
-                    ChangeEntityHierarchyAction action = new(_universe, _dragDropSources, _dragDropDestObjects,
-                        _dragDropDests, false);
-                    _editorActionManager.ExecuteAction(action);
-                    _dragDropSources.Clear();
-                    _dragDropDests.Clear();
-                    _dragDropDestObjects.Clear();
-                }
-                else
-                {
-                    ReorderContainerObjectsAction action = new(_universe, _dragDropSources, _dragDropDests, false);
-                    _editorActionManager.ExecuteAction(action);
-                    _dragDropSources.Clear();
-                    _dragDropDests.Clear();
-                }
-            }
-        }
-        else
-        {
-            ImGui.PopStyleVar();
-        }
-
-        ImGui.End();
-        ImGui.PopStyleColor();
-        _selection.ClearGotoTarget();
     }
 
     private string currentMapGroupCategory = "All";
@@ -838,298 +1021,126 @@ public class MapSceneTree : IActionEventHandler
         }
         ImguiUtils.ShowHoverTooltip($"Filters map list by selected map group.\n\n{currentMapGroup.description}");
     }
-
-    public void DisplayMapTreeList()
+    public void OnActionEvent(ActionEvent evt)
     {
-        var scale = Smithbox.GetUIScale();
-
-        IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = _universe.LoadedObjectContainers.OrderBy(k => k.Key);
-
-        _mapEnt_ImGuiID = 0;
-
-        foreach (KeyValuePair<string, ObjectContainer> lm in orderedMaps)
+        if (evt.HasFlag(ActionEvent.ObjectAddedRemoved))
         {
-            var metaName = "";
-            ObjectContainer map = lm.Value;
-            var mapid = lm.Key;
-            if (mapid == null)
-            {
-                continue;
-            }
+            _cachedTypeView = null;
+        }
+    }
 
-            metaName = MapAliasBank.GetMapName(mapid);
+    private void RebuildTypeViewCache(MapContainer map)
+    {
+        if (_cachedTypeView == null)
+        {
+            _cachedTypeView =
+                new Dictionary<string, Dictionary<MsbEntity.MsbEntityType, Dictionary<Type, List<MsbEntity>>>>();
+        }
 
-            // Map name search filter
-            if (_mapObjectListSearchInput != ""
-                && (!CFG.Current.MapEditor_Always_List_Loaded_Maps || map == null)
-                && !lm.Key.Contains(_mapObjectListSearchInput, StringComparison.CurrentCultureIgnoreCase)
-                && !metaName.Contains(_mapObjectListSearchInput, StringComparison.CurrentCultureIgnoreCase))
-            {
-                continue;
-            }
+        Dictionary<MsbEntity.MsbEntityType, Dictionary<Type, List<MsbEntity>>> mapcache = new();
+        mapcache.Add(MsbEntity.MsbEntityType.Part, new Dictionary<Type, List<MsbEntity>>());
+        mapcache.Add(MsbEntity.MsbEntityType.Region, new Dictionary<Type, List<MsbEntity>>());
+        mapcache.Add(MsbEntity.MsbEntityType.Event, new Dictionary<Type, List<MsbEntity>>());
+        if (Project.Type is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
+            or ProjectType.ER or ProjectType.AC6)
+        {
+            mapcache.Add(MsbEntity.MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
+        }
+        else if (Project.Type is ProjectType.DS2S || Project.Type is ProjectType.DS2)
+        {
+            mapcache.Add(MsbEntity.MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
+            mapcache.Add(MsbEntity.MsbEntityType.DS2Event, new Dictionary<Type, List<MsbEntity>>());
+            mapcache.Add(MsbEntity.MsbEntityType.DS2EventLocation, new Dictionary<Type, List<MsbEntity>>());
+            mapcache.Add(MsbEntity.MsbEntityType.DS2Generator, new Dictionary<Type, List<MsbEntity>>());
+            mapcache.Add(MsbEntity.MsbEntityType.DS2GeneratorRegist, new Dictionary<Type, List<MsbEntity>>());
+        }
 
-            // Map Groups
-            if (currentMapGroup != null)
+        foreach (Entity obj in map.Objects)
+        {
+            if (obj is MsbEntity e && mapcache.ContainsKey(e.Type))
             {
-                if (currentMapGroup.members.Count > 0)
+                Type typ = e.WrappedObject.GetType();
+                if (!mapcache[e.Type].ContainsKey(typ))
                 {
-                    var display = false;
-
-                    foreach (var entry in currentMapGroup.members)
-                    {
-                        if (entry.id == mapid)
-                        {
-                            display = true;
-                        }
-                    }
-
-                    if (!display)
-                    {
-                        continue;
-                    }
-                }
-            }
-
-            Entity mapRoot = map?.RootObject;
-            ObjectContainerReference mapRef = new(mapid, _universe);
-            ISelectable selectTarget = (ISelectable)mapRoot ?? mapRef;
-
-            ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
-            var selected = _selection.GetSelection().Contains(mapRoot) ||
-                           _selection.GetSelection().Contains(mapRef);
-            if (selected)
-            {
-                treeflags |= ImGuiTreeNodeFlags.Selected;
-            }
-
-            var nodeopen = false;
-            var unsaved = map != null && map.HasUnsavedChanges ? "*" : "";
-            ImGui.BeginGroup();
-            if (map != null)
-            {
-                nodeopen = ImGui.TreeNodeEx($@"{ForkAwesome.Cube} {mapid}", treeflags,
-                    $@"{ForkAwesome.Cube} {mapid}{unsaved}");
-            }
-            else
-            {
-                if(ImGui.Selectable($@"   {ForkAwesome.Cube} {mapid}", selected, ImGuiSelectableFlags.AllowDoubleClick))
-                {
-                    if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                    {
-                        if (CFG.Current.MapEditor_Enable_Map_Load_on_Double_Click)
-                        {
-                            if (selected)
-                            {
-                                _selection.ClearSelection();
-                            }
-
-                            _universe.LoadMap(mapid, selected);
-                        }
-                    }
-                }
-            }
-
-            if (CFG.Current.Interface_Display_Alias_for_Msb)
-            {
-                if (metaName != "")
-                {
-                    ImGui.SameLine();
-                    ImGui.PushTextWrapPos();
-                    if (metaName.StartsWith("--")) // Marked as normally unused (use red text)
-                    {
-                        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{metaName.Replace("--", "")}");
-                    }
-                    else
-                    {
-                        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{metaName}");
-                    }
-
-                    ImGui.PopTextWrapPos();
-                }
-            }
-
-            ImGui.EndGroup();
-            if (_selection.ShouldGoto(mapRoot) || _selection.ShouldGoto(mapRef))
-            {
-                ImGui.SetScrollHereY();
-                _selection.ClearGotoTarget();
-            }
-
-            if (nodeopen)
-            {
-                ImGui.Indent(); //TreeNodeEx fails to indent as it is inside a group / indentation is reset
-            }
-
-            // Right click context menu
-            if (ImGui.BeginPopupContextItem($@"mapcontext_{mapid}"))
-            {
-                if (map == null)
-                {
-                    if (ImGui.Selectable("Load Map"))
-                    {
-                        if (selected)
-                        {
-                            _selection.ClearSelection();
-                        }
-
-                        _universe.LoadMap(mapid, selected);
-                    }
-                }
-                else if (map is MapContainer m)
-                {
-                    if (ImGui.Selectable("Save Map"))
-                    {
-                        try
-                        {
-                            _universe.SaveMap(m);
-                        }
-                        catch (SavingFailedException e)
-                        {
-                            ((MapEditorScreen)_handler).HandleSaveException(e);
-                        }
-                    }
-
-                    if (ImGui.Selectable("Unload Map"))
-                    {
-                        _selection.ClearSelection();
-                        _editorActionManager.Clear();
-                        _universe.UnloadContainer(m);
-                        GC.Collect();
-                        GC.WaitForPendingFinalizers();
-                        GC.Collect();
-                    }
+                    mapcache[e.Type].Add(typ, new List<MsbEntity>());
                 }
 
-                if (_universe.GameType is ProjectType.ER)
-                {
-                    if (mapid.StartsWith("m60"))
-                    {
-                        if (ImGui.Selectable("Load Related Maps"))
-                        {
-                            if (selected)
-                            {
-                                _selection.ClearSelection();
-                            }
+                mapcache[e.Type][typ].Add(e);
+            }
+        }
 
-                            _universe.LoadMap(mapid);
-                            _universe.LoadRelatedMapsER(mapid, _universe.LoadedObjectContainers);
-                        }
-                    }
-                }
-                else if (_universe.GameType is ProjectType.AC6)
-                {
-                    //TODO AC6
-                }
+        if (!_cachedTypeView.ContainsKey(map.Name))
+        {
+            _cachedTypeView.Add(map.Name, mapcache);
+        }
+        else
+        {
+            _cachedTypeView[map.Name] = mapcache;
+        }
+    }
 
-                if (_universe.GetLoadedMapCount() > 1)
-                {
-                    if (ImGui.Selectable("Unload All Maps"))
-                    {
-                        DialogResult result = PlatformUtils.Instance.MessageBox("Unload all maps?", "Confirm",
-                            MessageBoxButtons.YesNo);
-                        if (result == DialogResult.Yes)
-                        {
-                            _selection.ClearSelection();
-                            _editorActionManager.Clear();
-                            _universe.UnloadAllMaps();
-                            GC.Collect();
-                            GC.WaitForPendingFinalizers();
-                            GC.Collect();
-                        }
-                    }
-                }
-
-                ImGui.EndPopup();
+    private void ChaliceDungeonImportButton()
+    {
+        ImGui.Selectable($@"   {ForkAwesome.PlusCircle} Load Chalice Dungeon...", false);
+        if (ImGui.BeginPopupContextItem("chalice", 0))
+        {
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Chalice ID (m29_xx_xx_xx): ");
+            ImGui.SameLine();
+            var pname = _chaliceMapID;
+            ImGui.SetNextItemWidth(100);
+            if (_chaliceLoadError)
+            {
+                ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_ErrorInput_Background);
             }
 
-            if (ImGui.IsItemClicked())
+            if (ImGui.InputText("##chalicename", ref pname, 12))
             {
-                _pendingClick = selectTarget;
+                _chaliceMapID = pname;
             }
 
-            if (ImGui.IsMouseDoubleClicked(0) && _pendingClick != null && mapRoot == _pendingClick)
+            if (_chaliceLoadError)
             {
-                _viewport.FramePosition(mapRoot.GetLocalTransform().Position, 10f);
+                ImGui.PopStyleColor();
             }
 
-            if ((_pendingClick == mapRoot || mapRef.Equals(_pendingClick)) &&
-                ImGui.IsMouseReleased(ImGuiMouseButton.Left))
+            ImGui.SameLine();
+            if (ImGui.Button("Load"))
             {
-                if (ImGui.IsItemHovered())
+                if (!_universe.LoadMap(_chaliceMapID))
                 {
-                    // Only select if a node is not currently being opened/closed
-                    if (mapRoot == null ||
-                        nodeopen && _treeOpenEntities.Contains(mapRoot) ||
-                        !nodeopen && !_treeOpenEntities.Contains(mapRoot))
-                    {
-                        if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
-                        {
-                            // Toggle Selection
-                            if (_selection.GetSelection().Contains(selectTarget))
-                            {
-                                _selection.RemoveSelection(selectTarget);
-                            }
-                            else
-                            {
-                                _selection.AddSelection(selectTarget);
-                            }
-                        }
-                        else
-                        {
-                            _selection.ClearSelection();
-                            _selection.AddSelection(selectTarget);
-                        }
-                    }
-
-                    // Update the open/closed state
-                    if (mapRoot != null)
-                    {
-                        if (nodeopen && !_treeOpenEntities.Contains(mapRoot))
-                        {
-                            _treeOpenEntities.Add(mapRoot);
-                        }
-                        else if (!nodeopen && _treeOpenEntities.Contains(mapRoot))
-                        {
-                            _treeOpenEntities.Remove(mapRoot);
-                        }
-                    }
-                }
-
-                _pendingClick = null;
-            }
-
-            if (nodeopen)
-            {
-                if (_pendingDragDrop)
-                {
-                    ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 0.0f) * scale);
+                    _chaliceLoadError = true;
                 }
                 else
                 {
-                    ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 3.0f) * scale);
+                    ImGui.CloseCurrentPopup();
+                    _chaliceLoadError = false;
+                    _chaliceMapID = "m29_";
                 }
-
-                if (_viewMode == ViewMode.Hierarchy)
-                {
-                    HierarchyView(map.RootObject);
-                }
-                else if (_viewMode == ViewMode.Flat)
-                {
-                    FlatView((MapContainer)map);
-                }
-                else if (_viewMode == ViewMode.ObjectType)
-                {
-                    TypeView((MapContainer)map);
-                }
-
-                ImGui.PopStyleVar();
-                ImGui.TreePop();
             }
 
-            // Update type cache when a map is no longer loaded
-            if (_cachedTypeView != null && map == null && _cachedTypeView.ContainsKey(mapid))
+            ImGui.EndPopup();
+        }
+    }
+
+    private void DisplayMapAlias(string aliasName)
+    {
+        if (CFG.Current.Interface_Display_Alias_for_Msb)
+        {
+            if (aliasName != "")
             {
-                _cachedTypeView.Remove(mapid);
+                ImGui.SameLine();
+                ImGui.PushTextWrapPos();
+                if (aliasName.StartsWith("--")) // Marked as normally unused (use red text)
+                {
+                    ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName.Replace("--", "")}");
+                }
+                else
+                {
+                    ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName}");
+                }
+
+                ImGui.PopTextWrapPos();
             }
         }
     }
