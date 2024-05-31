@@ -342,9 +342,18 @@ public class ParamEditorView
     {
         ParamView_ParamList_Header(isActiveView);
 
-        ParamView_ParamList_Pinned(scale);
+        if(CFG.Current.Param_PinnedRowsStayVisible)
+        {
+            ParamView_ParamList_Pinned(scale);
+        }
 
         ImGui.BeginChild("paramTypes");
+
+        if (!CFG.Current.Param_PinnedRowsStayVisible)
+        {
+            ParamView_ParamList_Pinned(scale);
+        }
+
         ParamView_ParamList_Main(doFocus, scale, scrollTo);
         ImGui.EndChild();
     }
@@ -460,7 +469,10 @@ public class ParamEditorView
                 if (compareCol != null)
                 {
                     ImGui.TableSetupColumn("rowCol2", ImGuiTableColumnFlags.None, 0.4f);
-                    ImGui.TableSetupScrollFreeze(2, 1 + pinnedRowList.Count);
+                    if (CFG.Current.Param_PinnedRowsStayVisible)
+                    {
+                        ImGui.TableSetupScrollFreeze(2, 1 + pinnedRowList.Count);
+                    }
                     if (ImGui.TableNextColumn())
                     {
                         ImGui.Text("ID\t\tName");
@@ -472,7 +484,12 @@ public class ParamEditorView
                     }
                 }
                 else
-                    ImGui.TableSetupScrollFreeze(1, pinnedRowList.Count);
+                {
+                    if (CFG.Current.Param_PinnedRowsStayVisible)
+                    {
+                        ImGui.TableSetupScrollFreeze(1, pinnedRowList.Count);
+                    }
+                }
 
                 ImGui.PushID("pinned");
 

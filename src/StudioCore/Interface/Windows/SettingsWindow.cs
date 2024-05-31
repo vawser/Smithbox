@@ -658,6 +658,9 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Show advanced options in massedit popup", ref CFG.Current.Param_AdvancedMassedit);
                 ImguiUtils.ShowHoverTooltip("Show additional options for advanced users within the massedit popup.");
+
+                ImGui.Checkbox("Pinned rows stay visible", ref CFG.Current.Param_PinnedRowsStayVisible);
+                ImguiUtils.ShowHoverTooltip("Pinned rows will stay visible when you scroll instead of only being pinned to the top of the list.");
             }
 
             // Params

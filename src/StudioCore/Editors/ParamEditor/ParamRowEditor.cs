@@ -183,7 +183,7 @@ public class ParamRowEditor
     private void PropEditorParamRow_MainFields(ParamMetaData meta, ParamBank bank, Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, List<(PseudoColumn, Param.Column)> cols,
         List<(PseudoColumn, Param.Column)> vcols, List<List<(PseudoColumn, Param.Column)>> auxCols, ref int imguiId,
-        string activeParam, ParamEditorSelectionState selection)
+        string activeParam, ParamEditorSelectionState selection, List<string> pinnedFields)
     {
         List<string> fieldOrder = meta != null && meta.AlternateOrder != null && CFG.Current.Param_AllowFieldReorder
             ? meta.AlternateOrder
@@ -197,9 +197,25 @@ public class ParamRowEditor
             }
         }
 
+        var firstRow = true;
         var lastRowExists = false;
         foreach (var field in fieldOrder)
         {
+            if(firstRow)
+            {
+                firstRow = false;
+
+                if (!CFG.Current.Param_PinnedRowsStayVisible)
+                {
+                    if (pinnedFields?.Count > 0)
+                    {
+                        PropEditorParamRow_PinnedFields(pinnedFields, bank, row, vrow, auxRows, crow, cols, vcols, auxCols,
+                            ref imguiId, activeParam, selection);
+                        EditorDecorations.ImguiTableSeparator();
+                    }
+                }
+            }
+
             if (field.Equals("-") && lastRowExists)
             {
                 EditorDecorations.ImguiTableSeparator();
@@ -265,7 +281,11 @@ public class ParamRowEditor
             List<string> pinnedFields =
                 Project.Config.PinnedFields.GetValueOrDefault(activeParam, null);
 
-            ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + (1 + pinnedFields?.Count ?? 0));
+            if (CFG.Current.Param_PinnedRowsStayVisible)
+            {
+                ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + (1 + pinnedFields?.Count ?? 0));
+            }
+
             if (showParamCompare)
             {
                 ImGui.TableNextColumn();
@@ -302,12 +322,14 @@ public class ParamRowEditor
             List<List<(PseudoColumn, Param.Column)>> auxCols = UICache.GetCached(_paramEditor, auxRows,
                 "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(ParamBank.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
 
-
-            if (pinnedFields?.Count > 0)
+            if (CFG.Current.Param_PinnedRowsStayVisible)
             {
-                PropEditorParamRow_PinnedFields(pinnedFields, bank, row, vrow, auxRows, crow, cols, vcols, auxCols,
-                    ref imguiId, activeParam, selection);
-                EditorDecorations.ImguiTableSeparator();
+                if (pinnedFields?.Count > 0)
+                {
+                    PropEditorParamRow_PinnedFields(pinnedFields, bank, row, vrow, auxRows, crow, cols, vcols, auxCols,
+                        ref imguiId, activeParam, selection);
+                    EditorDecorations.ImguiTableSeparator();
+                }
             }
 
             if (CFG.Current.Param_ShowColorPreview)
@@ -316,7 +338,7 @@ public class ParamRowEditor
             }
 
             PropEditorParamRow_MainFields(meta, bank, row, vrow, auxRows, crow, cols, vcols, auxCols, ref imguiId,
-                activeParam, selection);
+                activeParam, selection, pinnedFields);
 
             if (CFG.Current.Param_ShowGraphVisualisation)
             {
