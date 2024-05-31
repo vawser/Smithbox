@@ -35,6 +35,11 @@ public class Entity : ISelectable, IDisposable
     private string CachedName;
 
     /// <summary>
+    /// Cached name for the entity.
+    /// </summary>
+    public string CachedAliasName;
+
+    /// <summary>
     /// Current model string for the entity.
     /// </summary>
     protected string CurrentModel = "";
@@ -1206,6 +1211,90 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBE.Part.Enemy ||
             WrappedObject is MSBS.Part.Enemy ||
             WrappedObject is MSB_AC6.Part.Enemy ? true : false;
+    }
+
+    /// <summary>
+    /// Returns true if this entity is an DummyEnemy
+    /// </summary>
+    public bool IsPartDummyEnemy()
+    {
+        return WrappedObject is MSB1.Part.DummyEnemy ||
+            WrappedObject is MSB3.Part.DummyEnemy ||
+            WrappedObject is MSBB.Part.DummyEnemy ||
+            WrappedObject is MSBD.Part.DummyEnemy ||
+            WrappedObject is MSBE.Part.DummyEnemy ||
+            WrappedObject is MSBS.Part.DummyEnemy ||
+            WrappedObject is MSB_AC6.Part.DummyEnemy ? true : false;
+    }
+
+    /// <summary>
+    /// Returns true if this entity is an Asset
+    /// </summary>
+    public bool IsPartAsset()
+    {
+        return WrappedObject is MSB1.Part.Object ||
+            WrappedObject is MSB3.Part.Object ||
+            WrappedObject is MSBB.Part.Object ||
+            WrappedObject is MSBD.Part.Object ||
+            WrappedObject is MSBE.Part.Asset ||
+            WrappedObject is MSBS.Part.Object ||
+            WrappedObject is MSB_AC6.Part.Asset ? true : false;
+    }
+
+    /// <summary>
+    /// Returns true if this entity is an DummyAsset
+    /// </summary>
+    public bool IsPartDummyAsset()
+    {
+        return WrappedObject is MSB1.Part.DummyObject ||
+            WrappedObject is MSB3.Part.DummyObject ||
+            WrappedObject is MSBB.Part.DummyObject ||
+            WrappedObject is MSBD.Part.DummyObject ||
+            WrappedObject is MSBE.Part.DummyAsset ||
+            WrappedObject is MSBS.Part.DummyObject ||
+            WrappedObject is MSB_AC6.Part.DummyAsset ? true : false;
+    }
+
+    /// <summary>
+    /// Returns true if this entity is an MapPiece
+    /// </summary>
+    public bool IsPartMapPiece()
+    {
+        return WrappedObject is MSB1.Part.MapPiece ||
+            WrappedObject is MSB3.Part.MapPiece ||
+            WrappedObject is MSBB.Part.MapPiece ||
+            WrappedObject is MSBD.Part.MapPiece ||
+            WrappedObject is MSBE.Part.MapPiece ||
+            WrappedObject is MSBS.Part.MapPiece ||
+            WrappedObject is MSB_AC6.Part.MapPiece ? true : false;
+    }
+
+    /// <summary>
+    /// Returns true if this entity is an Collision
+    /// </summary>
+    public bool IsPartCollision()
+    {
+        return WrappedObject is MSB1.Part.Collision ||
+            WrappedObject is MSB3.Part.Collision ||
+            WrappedObject is MSBB.Part.Collision ||
+            WrappedObject is MSBD.Part.Collision ||
+            WrappedObject is MSBE.Part.Collision ||
+            WrappedObject is MSBS.Part.Collision ||
+            WrappedObject is MSB_AC6.Part.Collision ? true : false;
+    }
+
+    /// <summary>
+    /// Returns true if this entity is an Treasure
+    /// </summary>
+    public bool IsEventTreasure()
+    {
+        return WrappedObject is MSB1.Event.Treasure ||
+            WrappedObject is MSB3.Event.Treasure ||
+            WrappedObject is MSBB.Event.Treasure ||
+            WrappedObject is MSBD.Event.Treasure ||
+            WrappedObject is MSBE.Event.Treasure ||
+            WrappedObject is MSBS.Event.Treasure ||
+            WrappedObject is MSB_AC6.Event.Treasure ? true : false;
     }
 
     /// <summary>

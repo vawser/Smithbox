@@ -739,11 +739,18 @@ public class AssetBrowserScreen
 
             if (assetType == AssetCategoryType.MapPiece)
             {
-                var mapName = s.Parent.Name;
-                if (mapName != assetMapId)
+                if (s.Parent != null)
                 {
-                    PlatformUtils.Instance.MessageBox($"Map Pieces are specific to each map.\nYou cannot change a Map Piece in {mapName} to a Map Piece from {assetMapId}.", "Object Browser", MessageBoxButtons.OK);
+                    var mapName = s.Parent.Name;
+                    if (mapName != assetMapId)
+                    {
+                        PlatformUtils.Instance.MessageBox($"Map Pieces are specific to each map.\nYou cannot change a Map Piece in {mapName} to a Map Piece from {assetMapId}.", "Object Browser", MessageBoxButtons.OK);
 
+                        isValidObjectType = false;
+                    }
+                }
+                else
+                {
                     isValidObjectType = false;
                 }
             }

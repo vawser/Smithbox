@@ -346,7 +346,7 @@ public class CFG
     // Settings: Map Editor
     //****************************
     public bool Interface_DisplayMapGroups = true;
-    public bool Interface_Display_Alias_for_Msb = true;
+    public bool MapEditor_MapObjectList_ShowMapNames = true;
 
     public bool MapEditor_Always_List_Loaded_Maps = true;
 
@@ -358,7 +358,13 @@ public class CFG
 
     public bool MapEditor_MapObjectList_ShowListSortingType = true;
     public bool MapEditor_MapObjectList_ShowMapIdSearch = true;
-    public bool MapEditor_MapObjectList_ShowChrNames = true;
+
+    public bool MapEditor_MapObjectList_ShowCharacterNames = true;
+    public bool MapEditor_MapObjectList_ShowAssetNames = true;
+    public bool MapEditor_MapObjectList_ShowMapPieceNames = true;
+    public bool MapEditor_MapObjectList_ShowPlayerCharacterNames = true;
+    public bool MapEditor_MapObjectList_ShowSystemCharacterNames = true;
+    public bool MapEditor_MapObjectList_ShowTreasureNames = true;
 
     public bool MapEditor_Substitute_PseudoPlayer_Model = false;
     public string MapEditor_Substitute_PseudoPlayer_ChrID = "c0000";

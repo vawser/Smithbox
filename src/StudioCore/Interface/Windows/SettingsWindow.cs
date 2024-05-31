@@ -467,8 +467,20 @@ public class SettingsWindow
                 ImGui.Checkbox("Display map object list search", ref CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch);
                 ImguiUtils.ShowHoverTooltip("Display the map object list search text box.");
 
-                ImGui.Checkbox("Display character names", ref CFG.Current.MapEditor_MapObjectList_ShowChrNames);
+                ImGui.Checkbox("Display map names", ref CFG.Current.MapEditor_MapObjectList_ShowMapNames);
                 ImguiUtils.ShowHoverTooltip("Characters names will be displayed within the scene view list.");
+
+                ImGui.Checkbox("Display character names", ref CFG.Current.MapEditor_MapObjectList_ShowCharacterNames);
+                ImguiUtils.ShowHoverTooltip("Characters names will be displayed within the scene view list.");
+
+                ImGui.Checkbox("Display asset names", ref CFG.Current.MapEditor_MapObjectList_ShowAssetNames);
+                ImguiUtils.ShowHoverTooltip("Asset/object names will be displayed within the scene view list.");
+
+                ImGui.Checkbox("Display map piece names", ref CFG.Current.MapEditor_MapObjectList_ShowMapPieceNames);
+                ImguiUtils.ShowHoverTooltip("Map piece names will be displayed within the scene view list.");
+
+                ImGui.Checkbox("Display treasure names", ref CFG.Current.MapEditor_MapObjectList_ShowTreasureNames);
+                ImguiUtils.ShowHoverTooltip("Treasure itemlot names will be displayed within the scene view list.");
             }
 
             // Property View

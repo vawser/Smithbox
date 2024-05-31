@@ -986,6 +986,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         if (Project.Type != ProjectType.Undefined)
         {
             MapAssetBrowser.OnProjectChanged();
+            SceneTree.OnProjectChanged();
         }
 
         _mapToolbar.OnProjectChanged();

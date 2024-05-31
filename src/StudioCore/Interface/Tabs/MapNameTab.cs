@@ -57,10 +57,6 @@ public class MapNameTab
             }
         }
 
-        ImGui.SameLine();
-        ImGui.Checkbox("Toggle Display in Editor", ref CFG.Current.Interface_Display_Alias_for_Msb);
-        ImguiUtils.ShowHoverTooltip("Toggle the display of the Map Name aliases in the Map Editor.");
-
         ImGui.Separator();
 
         if (ShowMapNameAddSection)

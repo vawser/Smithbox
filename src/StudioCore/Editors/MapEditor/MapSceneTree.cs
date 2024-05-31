@@ -25,6 +25,12 @@ using StudioCore.Interface;
 using StudioCore.Editor;
 using StudioCore.Locators;
 using Silk.NET.OpenGL;
+using StudioCore.Editors.AssetBrowser;
+using System.Security.Cryptography.Xml;
+using Andre.Formats;
+using StudioCore.TextEditor;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using static SoulsFormats.MSB_AC6.Part.Collision;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -101,11 +107,6 @@ public class MapSceneTree : IActionEventHandler
 
     private ViewMode _viewMode = ViewMode.ObjectType;
 
-    private Dictionary<string, string> _chrAliasCache;
-    private Dictionary<string, string> _objAliasCache;
-    private Dictionary<string, string> _mapPieceAliasCache;
-
-
     public MapSceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe, ViewportSelection sel, ViewportActionManager aman, IViewport vp)
     {
         _handler = handler;
@@ -120,12 +121,15 @@ public class MapSceneTree : IActionEventHandler
         {
             _viewMode = ViewMode.Hierarchy;
         }
-
-        _chrAliasCache = null;
-        _objAliasCache = null;
-        _mapPieceAliasCache = null;
     }
 
+    public void OnProjectChanged()
+    {
+        if (Project.Type != ProjectType.Undefined)
+        {
+            
+        }
+    }
 
     public void OnGui()
     {
@@ -581,45 +585,7 @@ public class MapSceneTree : IActionEventHandler
         {
             _mapEnt_ImGuiID++;
 
-            string name = e.PrettyName;
-            string aliasedName = name;
-            var modelName = e.GetPropertyValue<string>("ModelName");
-
-            if (modelName == null)
-                modelName = "";
-
-            if (CFG.Current.MapEditor_MapObjectList_ShowChrNames)
-            {
-                if (e.IsPartEnemy())
-                {
-                    if (_chrAliasCache != null && _chrAliasCache.ContainsKey(modelName))
-                    {
-                        aliasedName = $"{name} {_chrAliasCache[modelName]}";
-                    }
-                    else if(ModelAliasBank.Bank.AliasNames != null)
-                    {
-                        foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
-                        {
-                            if (modelName == entry.id)
-                            {
-                                aliasedName = $" {{ {entry.name} }}";
-
-                                if (_chrAliasCache == null)
-                                {
-                                    _chrAliasCache = new Dictionary<string, string>();
-                                }
-
-                                if (!_chrAliasCache.ContainsKey(entry.id))
-                                {
-                                    _chrAliasCache.Add(modelName, aliasedName);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (ImGui.Selectable(padding + aliasedName + "##" + _mapEnt_ImGuiID,
+            if (ImGui.Selectable(padding + e.PrettyName + "##" + _mapEnt_ImGuiID,
                     _selection.GetSelection().Contains(e),
                     ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowItemOverlap))
             {
@@ -632,6 +598,9 @@ public class MapSceneTree : IActionEventHandler
                     }
                 }
             }
+
+            string aliasedName = GetEntityAliasName(e);
+            DisplayMapObjectAlias(aliasedName);
         }
 
         if (ImGui.IsItemClicked(0))
@@ -1125,7 +1094,7 @@ public class MapSceneTree : IActionEventHandler
 
     private void DisplayMapAlias(string aliasName)
     {
-        if (CFG.Current.Interface_Display_Alias_for_Msb)
+        if (CFG.Current.MapEditor_MapObjectList_ShowMapNames)
         {
             if (aliasName != "")
             {
@@ -1143,5 +1112,226 @@ public class MapSceneTree : IActionEventHandler
                 ImGui.PopTextWrapPos();
             }
         }
+    }
+
+    private void DisplayMapObjectAlias(string aliasName)
+    {
+        if (aliasName != "")
+        {
+            ImGui.SameLine();
+            ImGui.PushTextWrapPos();
+            if (aliasName.StartsWith("--")) // Marked as normally unused (use red text)
+            {
+                ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName.Replace("--", "")}");
+            }
+            else
+            {
+                ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName}");
+            }
+
+            ImGui.PopTextWrapPos();
+        }
+    }
+
+    private string GetEntityAliasName(Entity e)
+    {
+        var aliasName = "";
+        var modelName = "";
+
+        // Early returns if the show X vars are disabled
+        if (!CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
+            return aliasName;
+
+        if (!CFG.Current.MapEditor_MapObjectList_ShowAssetNames && (e.IsPartAsset() || e.IsPartDummyAsset()))
+            return aliasName;
+
+        if (!CFG.Current.MapEditor_MapObjectList_ShowMapPieceNames && e.IsPartMapPiece())
+            return aliasName;
+
+        if (!CFG.Current.MapEditor_MapObjectList_ShowTreasureNames && e.IsEventTreasure())
+            return aliasName;
+
+        if (e.IsPart())
+        {
+            modelName = e.GetPropertyValue<string>("ModelName");
+            if (modelName == null)
+            {
+                return "";
+            }
+
+            modelName = modelName.ToLower();
+        }
+
+        // Only grab the alias once, then refer to the cachedName within the entity
+        if (e.CachedAliasName == null)
+        {
+            if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
+            {
+                aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
+                aliasName = $"{aliasName}";
+            }
+
+            if (CFG.Current.MapEditor_MapObjectList_ShowAssetNames && (e.IsPartAsset() || e.IsPartDummyAsset()))
+            {
+                aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+                aliasName = $"{aliasName}";
+            }
+
+            if (CFG.Current.MapEditor_MapObjectList_ShowMapPieceNames && e.IsPartMapPiece())
+            {
+                aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
+                aliasName = $"{aliasName}";
+            }
+            
+            // Player/System Characters: peek in param/fmg for name
+            if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
+            {
+                if (modelName == "c0000")
+                {
+                    aliasName = FindPlayerCharacterName(e, modelName);
+                }
+
+                if (modelName == "c0100" || modelName == "c0110" || modelName == "c0120" || modelName == "c1000")
+                {
+                    aliasName = FindSystemCharacterName(e, modelName);
+                }
+            }
+
+            // Treasure: show itemlot row name
+            if (CFG.Current.MapEditor_MapObjectList_ShowTreasureNames && e.IsEventTreasure())
+            {
+                aliasName = FindTreasureName(e);
+            }
+
+            e.CachedAliasName = aliasName;
+        }
+        else
+        {
+            aliasName = e.CachedAliasName;
+        }
+
+        return aliasName;
+    }
+
+    private string GetAliasFromCache(string name, List<AliasReference> referenceList)
+    {
+        foreach (var alias in referenceList)
+        {
+            if(name == alias.id)
+            {
+                return alias.name;
+            }
+        }
+
+        return "";
+    }
+
+    private string FindPlayerCharacterName(Entity e, string modelName)
+    {
+        var aliasName = "";
+
+        int npcId = e.GetPropertyValue<int>("NPCParamID");
+        try
+        {
+            var param = ParamBank.PrimaryBank.GetParamFromName("NpcParam");
+            if (param != null)
+            {
+                Param.Row row = param[npcId];
+
+                if (row != null)
+                {
+                    bool nameSucces = false;
+
+                    // Try Name ID first
+                    Param.Cell? cq = row["nameId"];
+                    if (cq != null)
+                    {
+                        Param.Cell c = cq.Value;
+                        var term = c.Value.ToParamEditorString();
+                        var result = term;
+
+                        if (FMGBank.IsLoaded)
+                        {
+                            var matchingFmgInfo = FMGBank.FmgInfoBank.Find(x => x.Name.Contains("Character"));
+
+                            if (matchingFmgInfo != null)
+                            {
+                                foreach (var entry in matchingFmgInfo.Fmg.Entries)
+                                {
+                                    if (entry.ID == int.Parse(term))
+                                    {
+                                        result = entry.Text;
+                                        nameSucces = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        aliasName = $"{result}";
+                    }
+
+                    // Try Row Name instead if Name ID is not used
+                    if (!nameSucces)
+                    {
+                        aliasName = $"{row.Name}";
+                    }
+                }
+            }
+        }
+        catch { }
+
+        return aliasName;
+    }
+
+    private string FindSystemCharacterName(Entity e, string modelName)
+    {
+        var aliasName = "";
+
+        int npcId = e.GetPropertyValue<int>("NPCParamID");
+        try
+        {
+            var param = ParamBank.PrimaryBank.GetParamFromName("NpcParam");
+            if (param != null)
+            {
+                Param.Row row = param[npcId];
+
+                aliasName = $"{row.Name}";
+            }
+        }
+        catch { }
+
+        return aliasName;
+    }
+
+    private string FindTreasureName(Entity e)
+    {
+        var aliasName = "";
+
+        int itemlotId = e.GetPropertyValue<int>("ItemLotID");
+
+        try
+        {
+            var paramName = "ItemLotParam";
+
+            if(Project.Type == ProjectType.ER)
+            {
+                paramName = "ItemLotParam_map";
+            }
+
+            var param = ParamBank.PrimaryBank.GetParamFromName(paramName);
+            if (param != null)
+            {
+                Param.Row row = param[itemlotId];
+
+                if (row != null)
+                {
+                    aliasName = $"{row.Name}";
+                }
+            }
+        }
+        catch { }
+
+        return aliasName;
     }
 }
