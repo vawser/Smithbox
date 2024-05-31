@@ -100,14 +100,12 @@ Texture Viewer:
  - Add ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
 
-#--------------------------------------
-# Notes
-#-------------------------------------- 
 Selection Groups:
  - Add json field to tie the group to a specific map ID (if desired)
- - Fix issue with Keybind(ed) groups if editing them (the check for duplicate keybinds is returning true)
  - Add "Update Selection" button in "Edit Group" that will update the selection list
  - Add help article for it
  - Add auto-open for the MapSceneTree nodes when a selection occurs (currently they remain un-expanded
- - Add "Selection Groups" to the View drop-down
  
+#--------------------------------------
+# Notes
+#-------------------------------------- 

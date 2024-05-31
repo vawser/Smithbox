@@ -94,6 +94,10 @@ public class SelectionGroupContainer
         else if (keybindIndex != -1 && Data.Resources.Any(x => x.SelectionGroupKeybind == keybindIndex))
         {
             var group = Data.Resources.Where(x => x.SelectionGroupKeybind == keybindIndex).First();
+            if (isEdit)
+            {
+                group = Data.Resources.Where(x => (x.SelectionGroupKeybind == keybindIndex) && (x.Name != name)).First();
+            }
             PlatformUtils.Instance.MessageBox($"Keybind already assigned to another selection group: {group.Name}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }

@@ -302,6 +302,13 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_ResourceList);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Selection Groups"))
+            {
+                CFG.Current.Interface_MapEditor_Selection_Groups = !CFG.Current.Interface_MapEditor_Selection_Groups;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Selection_Groups);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Viewport Grid"))
             {
                 CFG.Current.Interface_MapEditor_Viewport_Grid = !CFG.Current.Interface_MapEditor_Viewport_Grid;
@@ -921,7 +928,11 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         DispGroupEditor.OnGui(Universe._dispGroupCount);
         MapAssetBrowser.OnGui();
         EntryFileListViewer.OnGui();
-        SelectionGroupEditor.OnGui();
+
+        if (CFG.Current.Interface_MapEditor_Selection_Groups)
+        {
+            SelectionGroupEditor.OnGui();
+        }
 
         if (CFG.Current.Interface_MapEditor_Toolbar)
         {
