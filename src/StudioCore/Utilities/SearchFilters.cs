@@ -148,6 +148,109 @@ public static class SearchFilters
         return match;
     }
 
+    public static bool IsAssetBrowserSearchMatch(string rawInput, string rawRefId, string rawRefName, List<string> rawRefTags)
+    {
+        bool match = false;
+
+        string input = rawInput.Trim().ToLower();
+        string refId = rawRefId.ToLower();
+        string refName = rawRefName.ToLower();
+
+        if (rawRefTags == null)
+        {
+            rawRefTags = new List<string>() { "" };
+        }
+
+        if (input.Equals(""))
+        {
+            match = true; // If input is empty, show all
+            return match;
+        }
+
+        string[] inputParts = input.Split("+");
+        bool[] partTruth = new bool[inputParts.Length];
+
+        for (int i = 0; i < partTruth.Length; i++)
+        {
+            string entry = inputParts[i];
+
+            // Match: ID
+            if (entry == refId)
+                partTruth[i] = true;
+
+            var refIdParts = refId.Split("_");
+            foreach (var refIdPart in refIdParts)
+            {
+                if (entry == refIdPart)
+                {
+                    partTruth[i] = true;
+                }
+            }
+
+            // Match: Name
+            if (entry == refName)
+                partTruth[i] = true;
+
+            var refParts = refName.Split("_");
+            foreach (var refPart in refParts)
+            {
+                if (entry == refPart)
+                {
+                    partTruth[i] = true;
+                }
+            }
+
+            // Match: Reference Segments
+            string[] refSegments = refName.Split(" ");
+            foreach (string refStr in refSegments)
+            {
+                string curString = refStr;
+
+                // Remove common brackets so the match ignores them
+                if (curString.Contains('('))
+                    curString = curString.Replace("(", "");
+
+                if (curString.Contains(')'))
+                    curString = curString.Replace(")", "");
+
+                if (curString.Contains('{'))
+                    curString = curString.Replace("{", "");
+
+                if (curString.Contains('}'))
+                    curString = curString.Replace("}", "");
+
+                if (curString.Contains('('))
+                    curString = curString.Replace("(", "");
+
+                if (curString.Contains('['))
+                    curString = curString.Replace("[", "");
+
+                if (curString.Contains(']'))
+                    curString = curString.Replace("]", "");
+
+                if (entry == curString.Trim())
+                    partTruth[i] = true;
+            }
+
+            // Match: Tags
+            foreach (string tagStr in rawRefTags)
+            {
+                if (entry == tagStr.ToLower())
+                    partTruth[i] = true;
+            }
+        }
+
+        match = true;
+
+        foreach (bool entry in partTruth)
+        {
+            if (!entry)
+                match = false;
+        }
+
+        return match;
+    }
+
     public static bool IsEditorSearchMatch(string rawInput, string checkInput, string delimiter)
     {
         bool match = false;

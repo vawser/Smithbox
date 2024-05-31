@@ -149,6 +149,24 @@ public class SettingsWindow
         }
     }
 
+    private void DisplaySettings_AssetBrowser()
+    {
+        if (ImGui.BeginTabItem("Asset Browser"))
+        {
+            // General
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Display tags in browser list", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
+                ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
+
+                ImGui.Checkbox("Display low-detail parts in browser list", ref CFG.Current.AssetBrowser_ShowLowDetailParts);
+                ImguiUtils.ShowHoverTooltip("Show the _l (low-detail) part entries in the Model Editor instance of the Asset Browser.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
     private void DisplaySettings_Viewport()
     {
         if (ImGui.BeginTabItem("Viewport"))
@@ -1059,6 +1077,7 @@ public class SettingsWindow
             // Settings Order
             DisplaySettings_System();
             DisplaySettings_Viewport();
+            DisplaySettings_AssetBrowser();
             DisplaySettings_MapEditor();
             DisplaySettings_ModelEditor();
             DisplaySettings_ParamEditor();

@@ -1,41 +1,65 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using ImGuiNET;
-using StudioCore.Gui;
-using StudioCore.Scene;
-using StudioCore.Utilities;
-using System;
+﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Platform;
-using StudioCore.MsbEditor;
-using Action = StudioCore.Editors.MapEditor.ViewportAction;
-using StudioCore.Interface;
 using StudioCore.Banks.AliasBank;
-using StudioCore.UserProject;
-using StudioCore.Banks;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
-using static SoulsFormats.ACB;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor;
+using StudioCore.Gui;
+using StudioCore.Interface;
 using StudioCore.Locators;
+using StudioCore.MsbEditor;
+using StudioCore.Platform;
+using StudioCore.Scene;
+using StudioCore.UserProject;
+using StudioCore.Utilities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
+using System.Reflection.Metadata;
+using System.Text;
+using System.Threading.Tasks;
+using CompoundAction = StudioCore.Editors.MapEditor.CompoundAction;
 
-namespace StudioCore.Editors.MapEditor.AssetBrowser;
+namespace StudioCore.Editors.AssetBrowser;
 
-public class MapAssetBrowser
+public enum AssetBrowserSource
 {
-    private readonly ViewportActionManager _actionManager;
+    MapEditor,
+    ModelEditor
+}
 
-    private readonly RenderScene _scene;
-    private readonly ViewportSelection _selection;
+public enum AssetCategoryType
+{
+    None,
+    Character,
+    Asset,
+    Part,
+    MapPiece
+}
 
-    private MapEditorScreen _msbEditor;
+public class AssetBrowserScreen
+{
+    private AssetCategoryType _selectedAssetType = AssetCategoryType.None;
+    private AssetCategoryType _selectedAssetTypeCache = AssetCategoryType.None;
+
+    private AssetBrowserSource SourceType;
+    private MapEditorScreen MapEditor;
+    private ModelEditorScreen ModelEditor;
+    private ViewportActionManager _actionManager;
+    private RenderScene _scene;
+    private ViewportSelection _selection;
+    private IViewport _viewport;
+    private Universe _universe;
+
+    private List<string> _characterNameCache = new List<string>();
+    private List<string> _objectNameCache = new List<string>();
+    private List<string> _partNameCache = new List<string>();
+    private Dictionary<string, List<string>> _mapPieceNameCache = new Dictionary<string, List<string>>();
 
     private List<string> _loadedMaps = new List<string>();
-    private List<string> _modelNameCache = new List<string>();
     private Dictionary<string, List<string>> _mapModelNameCache = new Dictionary<string, List<string>>();
-
-    private string _selectedAssetType = null;
-    private string _selectedAssetTypeCache = null;
 
     private string _selectedAssetMapId = "";
     private string _selectedAssetMapIdCache = null;
@@ -47,31 +71,82 @@ public class MapAssetBrowser
     private string _refUpdateName = "";
     private string _refUpdateTags = "";
 
-    private IViewport _viewport;
-
     private string _selectedName;
 
     private bool updateScrollPosition = false;
     private float _currentScrollY;
 
-    private Universe _universe;
-
-    public MapAssetBrowser(Universe universe, RenderScene scene, ViewportSelection sel, ViewportActionManager manager, MapEditorScreen editor, IViewport viewport)
+    public AssetBrowserScreen(AssetBrowserSource sourceType, Universe universe, RenderScene scene, ViewportSelection sel, ViewportActionManager manager, EditorScreen editor, IViewport viewport)
     {
+        SourceType = sourceType;
+
+        MapEditor = null;
+        ModelEditor = null;
+
+        if (sourceType == AssetBrowserSource.MapEditor)
+        {
+            MapEditor = (MapEditorScreen)editor;
+        }
+        if (sourceType == AssetBrowserSource.ModelEditor)
+        {
+            ModelEditor = (ModelEditorScreen)editor;
+        }
+
         _scene = scene;
         _selection = sel;
         _actionManager = manager;
         _universe = universe;
 
-        _msbEditor = editor;
         _viewport = viewport;
 
         _selectedName = null;
     }
 
-    /// <summary>
-    /// Display the Asset Browser window.
-    /// </summary>
+    public void OnProjectChanged()
+    {
+        if (Project.Type != ProjectType.Undefined)
+        {
+            _characterNameCache = AssetListLocator.GetChrModels();
+            _objectNameCache = AssetListLocator.GetObjModels();
+            _partNameCache = AssetListLocator.GetPartsModels();
+            _mapPieceNameCache = new Dictionary<string, List<string>>();
+
+            _selectedAssetMapId = "";
+            _selectedAssetMapIdCache = null;
+            _selectedAssetType = AssetCategoryType.None;
+            _selectedAssetTypeCache = AssetCategoryType.None;
+
+            List<string> mapList = ResourceMapLocator.GetFullMapList();
+
+            foreach (var mapId in mapList)
+            {
+                var assetMapId = ResourceMapLocator.GetAssetMapID(mapId);
+
+                List<ResourceDescriptor> modelList = new List<ResourceDescriptor>();
+
+                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                {
+                    modelList = AssetListLocator.GetMapModelsFromBXF(mapId);
+                }
+                else
+                {
+                    modelList = AssetListLocator.GetMapModels(mapId);
+                }
+
+                var cache = new List<string>();
+                foreach (var model in modelList)
+                {
+                    cache.Add(model.AssetName);
+                }
+
+                if (!_mapPieceNameCache.ContainsKey(assetMapId))
+                {
+                    _mapPieceNameCache.Add(assetMapId, cache);
+                }
+            }
+        }
+    }
+
     public void OnGui()
     {
         var scale = Smithbox.GetUIScale();
@@ -79,8 +154,16 @@ public class MapAssetBrowser
         if (Project.Type == ProjectType.Undefined)
             return;
 
-        if (!CFG.Current.Interface_MapEditor_AssetBrowser)
-            return;
+        if (SourceType == AssetBrowserSource.MapEditor)
+        {
+            if (!CFG.Current.Interface_MapEditor_AssetBrowser)
+                return;
+        }
+        if (SourceType == AssetBrowserSource.ModelEditor)
+        {
+            if (!CFG.Current.Interface_ModelEditor_AssetBrowser)
+                return;
+        }
 
         if (ModelAliasBank.Bank.IsLoadingAliases)
             return;
@@ -88,10 +171,8 @@ public class MapAssetBrowser
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
-        if (ImGui.Begin($@"Asset Browser: Category##MapEditor_AssetBrowser_CategoryList"))
+        if (ImGui.Begin($@"Asset Browser: Category##{SourceType}AssetBrowser_CategoryList"))
         {
-            DisplayTopSection();
-
             ImGui.Separator();
             ImguiUtils.WrappedText("Categories:");
             ImGui.Separator();
@@ -105,15 +186,18 @@ public class MapAssetBrowser
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
-        if (ImGui.Begin($@"Asset Browser: Contents##MapEditor_AssetBrowser_ContentList"))
+        if (ImGui.Begin($@"Asset Browser: Contents##{SourceType}AssetBrowser_ContentList"))
         {
+            DisplayTopSection();
+
             ImGui.Separator();
             ImguiUtils.WrappedText("Assets:");
             ImGui.Separator();
 
-            DisplayCategoryContentsList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
-            DisplayCategoryContentsList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
-            DisplayMapPieceContentsList("MapPiece", ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
+            DisplayBrowserList(AssetCategoryType.Character, ModelAliasBank.Bank.AliasNames.GetEntries("Characters"), _characterNameCache);
+            DisplayBrowserList(AssetCategoryType.Asset, ModelAliasBank.Bank.AliasNames.GetEntries("Objects"), _objectNameCache);
+            DisplayBrowserList(AssetCategoryType.Part, ModelAliasBank.Bank.AliasNames.GetEntries("Parts"), _partNameCache);
+            DisplayBrowserList_MapPiece(AssetCategoryType.MapPiece, ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
         }
 
         ImGui.End();
@@ -122,7 +206,7 @@ public class MapAssetBrowser
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
-        if (ImGui.Begin($@"Asset Browser: Actions##MapEditor_AssetBrowser_CategoryList"))
+        if (ImGui.Begin($@"Asset Browser: Actions##{SourceType}AssetBrowser_CategoryList"))
         {
             ImGui.Indent(10.0f);
 
@@ -130,9 +214,17 @@ public class MapAssetBrowser
             ImguiUtils.WrappedText("Actions:");
             ImGui.Separator();
 
-            DisplayActionSection();
+            if (SourceType == AssetBrowserSource.MapEditor)
+            {
+                DisplayActions_MapEditor();
+            }
+            if (SourceType == AssetBrowserSource.ModelEditor)
+            {
+                DisplayActions_ModelEditor();
+            }
+
         }
-        
+
         ImGui.End();
         ImGui.PopStyleColor(1);
 
@@ -148,134 +240,51 @@ public class MapAssetBrowser
         ImGui.Separator();
         ImGui.InputText($"Search", ref _searchInput, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
-        ImGui.SameLine();
-
-        ImGui.Checkbox("Display Tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
-        ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
-
-        ImGui.Separator();
     }
 
-    private void DisplayActionSection()
-    {
-        if (_selectedName == null || _selectedName == "")
-            return;
-
-        ImguiUtils.WrappedText("Apply the selected asset attributes to your current object selection.");
-        ImguiUtils.WrappedText("");
-
-        ImGui.Checkbox("Update Name of Selected Object", ref CFG.Current.AssetBrowser_UpdateName);
-        ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
-
-        if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
-        {
-            ImGui.Checkbox("Update Instance ID of Selected Object", ref CFG.Current.AssetBrowser_UpdateInstanceID);
-            ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
-            ImguiUtils.WrappedText("");
-        }
-
-        if (ImGui.Button("Apply##action_Asset_Apply", new Vector2(200, 32)))
-        {
-            ApplyAssetSelection();
-        }
-        ImguiUtils.WrappedText("");
-
-        ImGui.Separator();
-        ImguiUtils.WrappedText("Alias:");
-        ImGui.Separator();
-
-        ImguiUtils.WrappedText("Update the stored name and tag list for the selected asset here.");
-        ImguiUtils.WrappedText("");
-
-        ImguiUtils.WrappedText("Name:");
-        ImGui.InputText($"##Name", ref _refUpdateName, 255);
-        ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
-        ImguiUtils.WrappedText("");
-
-        ImguiUtils.WrappedText("Tags:");
-        ImGui.InputText($"##Tags", ref _refUpdateTags, 255);
-        ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
-        ImguiUtils.WrappedText("");
-
-        if (ImGui.Button("Update##action_AssetAlias_Update", new Vector2(200, 32)))
-        {
-            UpdateAssetAlias();
-        }
-        ImGui.SameLine();
-        if (ImGui.Button("Restore Default##action_AssetAlias_Restore", new Vector2(200, 32)))
-        {
-            RestoreAssetAlias();
-        }
-    }
-
-    /// <summary>
-    /// Display the asset category type selection list: Chr, Obj/AEG, Part and each map id for Map Pieces.
-    /// </summary>
     private void DisplayCategoryList()
     {
-        var objLabel = "Obj";
+        var assetLabel = "Objects";
 
         if (Project.Type is ProjectType.ER or ProjectType.AC6)
         {
-            objLabel = "AEG";
+            assetLabel = "Assets";
         }
 
-        if (ImGui.Selectable("Chr", _selectedAssetType == "Chr"))
+        if (ImGui.Selectable("Characters", _selectedAssetType == AssetCategoryType.Character))
         {
-            _modelNameCache = AssetListLocator.GetChrModels();
-            _selectedAssetType = "Chr";
+            _selectedAssetType = AssetCategoryType.Character;
             _selectedAssetMapId = "";
         }
-        if (ImGui.Selectable(objLabel, _selectedAssetType == "Obj"))
+        if (ImGui.Selectable(assetLabel, _selectedAssetType == AssetCategoryType.Asset))
         {
-            _modelNameCache = AssetListLocator.GetObjModels();
-            _selectedAssetType = "Obj";
+            _selectedAssetType = AssetCategoryType.Asset;
             _selectedAssetMapId = "";
         }
 
-        _loadedMaps.Clear();
-
-        // Map-specific MapPieces
-        foreach (var mapId in _mapModelNameCache.Keys)
+        // Only display in Model Editor since Parts aren't used anywhere in Map Editor.
+        if (SourceType == AssetBrowserSource.ModelEditor)
         {
-            foreach (var obj in _msbEditor.Universe.LoadedObjectContainers)
+            if (ImGui.Selectable("Parts", _selectedAssetType == AssetCategoryType.Part))
             {
-                if (obj.Value != null)
-                {
-                    _loadedMaps.Add(obj.Key);
-                }
+                _selectedAssetType = AssetCategoryType.Part;
+                _selectedAssetMapId = "";
             }
+        }
 
-            if (_loadedMaps.Contains(mapId))
+        foreach (var mapId in _mapPieceNameCache.Keys)
+        {
+            var labelName = MapAliasBank.GetFormattedMapName(mapId, mapId);
+
+            if (ImGui.Selectable($"MapPieces: {labelName}", _selectedAssetMapId == mapId))
             {
-                var labelName = MapAliasBank.GetFormattedMapName(mapId, mapId);
-
-                if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
-                {
-                    if (_mapModelNameCache[mapId] == null)
-                    {
-                        List<ResourceDescriptor> modelList = AssetListLocator.GetMapModels(mapId);
-                        var cache = new List<string>();
-
-                        foreach (ResourceDescriptor model in modelList)
-                        {
-                            cache.Add(model.AssetName);
-                        }
-
-                        _mapModelNameCache[mapId] = cache;
-                    }
-
-                    _selectedAssetMapId = mapId;
-                    _selectedAssetType = "MapPiece";
-                }
+                _selectedAssetMapId = mapId;
+                _selectedAssetType = AssetCategoryType.MapPiece;
             }
         }
     }
 
-    /// <summary>
-    /// Display the asset selection list for Chr, Obj/AEG and Parts.
-    /// </summary>
-    private void DisplayCategoryContentsList(string assetType, List<AliasReference> referenceList)
+    private void DisplayBrowserList(AssetCategoryType assetType, List<AliasReference> referenceList, List<string> nameCache)
     {
         if (updateScrollPosition)
         {
@@ -301,7 +310,7 @@ public class MapAssetBrowser
                 _selectedAssetTypeCache = _selectedAssetType;
             }
 
-            foreach (var name in _modelNameCache)
+            foreach (var name in nameCache)
             {
                 var displayedName = $"{name}";
                 var lowerName = name.ToLower();
@@ -327,7 +336,18 @@ public class MapAssetBrowser
                     refTagList = referenceDict[lowerName].tags;
                 }
 
-                if (SearchFilters.IsSearchMatch(_searchInput, lowerName, refName, refTagList, true))
+                if (!CFG.Current.AssetBrowser_ShowLowDetailParts)
+                {
+                    if (_selectedAssetType == AssetCategoryType.Part)
+                    {
+                        if (name.Substring(name.Length - 2) == "_l")
+                        {
+                            continue; // Skip this entry if it is a low detail entry
+                        }
+                    }
+                }
+
+                if (SearchFilters.IsAssetBrowserSearchMatch(_searchInput, lowerName, refName, refTagList))
                 {
                     if (ImGui.Selectable(displayedName, _selectedName == name))
                     {
@@ -343,10 +363,7 @@ public class MapAssetBrowser
         }
     }
 
-    /// <summary>
-    /// Display the asset selection list for Map Pieces.
-    /// </summary>
-    private void DisplayMapPieceContentsList(string assetType, List<AliasReference> referenceList)
+    private void DisplayBrowserList_MapPiece(AssetCategoryType assetType, List<AliasReference> referenceList)
     {
         var referenceDict = new Dictionary<string, AliasReference>();
 
@@ -360,7 +377,7 @@ public class MapAssetBrowser
 
         if (_selectedAssetType == assetType)
         {
-            if (_mapModelNameCache.ContainsKey(_selectedAssetMapId))
+            if (_mapPieceNameCache.ContainsKey(_selectedAssetMapId))
             {
                 if (_searchInput != _searchInputCache || _selectedAssetType != _selectedAssetTypeCache || _selectedAssetMapId != _selectedAssetMapIdCache)
                 {
@@ -369,7 +386,7 @@ public class MapAssetBrowser
                     _selectedAssetMapIdCache = _selectedAssetMapId;
                 }
 
-                foreach (var name in _mapModelNameCache[_selectedAssetMapId])
+                foreach (var name in _mapPieceNameCache[_selectedAssetMapId])
                 {
                     var modelName = name.Replace($"{_selectedAssetMapId}_", "m");
 
@@ -417,24 +434,129 @@ public class MapAssetBrowser
         }
     }
 
+    private void DisplayActions_MapEditor()
+    {
+        if (_selectedName == null || _selectedName == "")
+            return;
+
+        ImguiUtils.WrappedText("Apply the selected asset attributes to your current object selection.");
+        ImguiUtils.WrappedText("");
+
+        ImGui.Checkbox("Update Name of Selected Object", ref CFG.Current.AssetBrowser_UpdateName);
+        ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
+
+        if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
+        {
+            ImGui.Checkbox("Update Instance ID of Selected Object", ref CFG.Current.AssetBrowser_UpdateInstanceID);
+            ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
+            ImguiUtils.WrappedText("");
+        }
+
+        if (ImGui.Button("Apply##action_Asset_Apply", new Vector2(200, 32)))
+        {
+            ApplyMapAssetSelection();
+        }
+        ImguiUtils.WrappedText("");
+
+        ImGui.Separator();
+        ImguiUtils.WrappedText("Alias:");
+        ImGui.Separator();
+
+        ImguiUtils.WrappedText("Update the stored name and tag list for the selected asset here.");
+        ImguiUtils.WrappedText("");
+
+        ImguiUtils.WrappedText("Name:");
+        ImGui.InputText($"##Name", ref _refUpdateName, 255);
+        ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
+        ImguiUtils.WrappedText("");
+
+        ImguiUtils.WrappedText("Tags:");
+        ImGui.InputText($"##Tags", ref _refUpdateTags, 255);
+        ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
+        ImguiUtils.WrappedText("");
+
+        if (ImGui.Button("Update##action_AssetAlias_Update", new Vector2(200, 32)))
+        {
+            UpdateAssetAlias();
+        }
+        ImGui.SameLine();
+        if (ImGui.Button("Restore Default##action_AssetAlias_Restore", new Vector2(200, 32)))
+        {
+            RestoreAssetAlias();
+        }
+    }
+
+    private void DisplayActions_ModelEditor()
+    {
+        if (_selectedName == null || _selectedName == "")
+            return;
+
+        ImguiUtils.WrappedText("Load the selected asset.");
+        ImguiUtils.WrappedText("");
+
+        if (ImGui.Button("Load##action_Asset_Load", new Vector2(200, 32)))
+        {
+            LoadModelAssetSelection();
+        }
+        ImguiUtils.WrappedText("");
+
+        ImGui.Separator();
+        ImguiUtils.WrappedText("Alias:");
+        ImGui.Separator();
+
+        ImguiUtils.WrappedText("Update the stored name and tag list for the selected asset here.");
+        ImguiUtils.WrappedText("");
+
+        ImguiUtils.WrappedText("Name:");
+        ImGui.InputText($"##Name", ref _refUpdateName, 255);
+        ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
+        ImguiUtils.WrappedText("");
+
+        ImguiUtils.WrappedText("Tags:");
+        ImGui.InputText($"##Tags", ref _refUpdateTags, 255);
+        ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
+        ImguiUtils.WrappedText("");
+
+        if (ImGui.Button("Update##action_AssetAlias_Update", new Vector2(200, 32)))
+        {
+            UpdateAssetAlias();
+        }
+        ImGui.SameLine();
+        if (ImGui.Button("Restore Default##action_AssetAlias_Restore", new Vector2(200, 32)))
+        {
+            RestoreAssetAlias();
+        }
+    }
+
     private void UpdateAssetAlias()
     {
-        var assetType = _selectedAssetType;
-
-        ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+        ModelAliasBank.Bank.AddToLocalAliasBank(GetSelectedAssetTypeString(), _refUpdateId, _refUpdateName, _refUpdateTags);
         ImGui.CloseCurrentPopup();
         ModelAliasBank.Bank.CanReloadBank = true;
     }
 
     private void RestoreAssetAlias()
     {
-        var assetType = _selectedAssetType;
-
-        ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
+        ModelAliasBank.Bank.RemoveFromLocalAliasBank(GetSelectedAssetTypeString(), _refUpdateId);
         ModelAliasBank.Bank.CanReloadBank = true;
     }
 
-    private void ApplyAssetSelection()
+    private string GetSelectedAssetTypeString()
+    {
+        var assetType = "";
+        switch (_selectedAssetType)
+        {
+            case AssetCategoryType.Character: assetType = "Chr"; break;
+            case AssetCategoryType.Asset: assetType = "Obj"; break;
+            case AssetCategoryType.Part: assetType = "Part"; break;
+            case AssetCategoryType.MapPiece: assetType = "MapPiece"; break;
+            default: break;
+        }
+
+        return assetType;
+    }
+
+    public void ApplyMapAssetSelection()
     {
         var modelName = _selectedName;
         var assetType = _selectedAssetType;
@@ -444,7 +566,7 @@ public class MapAssetBrowser
             modelName = modelName.Replace("aeg", "AEG");
         }
 
-        if (assetType == "MapPiece")
+        if (assetType == AssetCategoryType.MapPiece)
         {
             SetObjectModelForSelection(modelName, assetType, _selectedAssetMapId);
         }
@@ -454,7 +576,33 @@ public class MapAssetBrowser
         }
     }
 
-    public void SetObjectModelForSelection(string modelName, string assetType, string assetMapId)
+    public void LoadModelAssetSelection()
+    {
+        var modelName = _selectedName;
+        var assetType = _selectedAssetType;
+
+        if (assetType == AssetCategoryType.Character)
+        {
+            ModelEditor.OnInstantiateChr(modelName);
+        }
+
+        if (assetType == AssetCategoryType.Asset)
+        {
+            ModelEditor.OnInstantiateObj(modelName);
+        }
+
+        if (assetType == AssetCategoryType.Part)
+        {
+            ModelEditor.OnInstantiateParts(modelName);
+        }
+
+        if (assetType == AssetCategoryType.MapPiece)
+        {
+            ModelEditor.OnInstantiateMapPiece(_selectedAssetMapId, modelName);
+        }
+    }
+
+    public void SetObjectModelForSelection(string modelName, AssetCategoryType assetType, string assetMapId)
     {
         var actlist = new List<ViewportAction>();
 
@@ -464,7 +612,7 @@ public class MapAssetBrowser
         {
             var isValidObjectType = false;
 
-            if (assetType == "Chr")
+            if (assetType == AssetCategoryType.Character)
             {
                 switch (Project.Type)
                 {
@@ -504,7 +652,7 @@ public class MapAssetBrowser
                         throw new ArgumentException("Selected entity type must be Enemy");
                 }
             }
-            if (assetType == "Obj")
+            if (assetType == AssetCategoryType.Asset)
             {
                 switch (Project.Type)
                 {
@@ -546,7 +694,7 @@ public class MapAssetBrowser
                         throw new ArgumentException("Selected entity type must be Object/Asset");
                 }
             }
-            if (assetType == "MapPiece")
+            if (assetType == AssetCategoryType.MapPiece)
             {
                 switch (Project.Type)
                 {
@@ -589,7 +737,7 @@ public class MapAssetBrowser
                 }
             }
 
-            if (assetType == "MapPiece")
+            if (assetType == AssetCategoryType.MapPiece)
             {
                 var mapName = s.Parent.Name;
                 if (mapName != assetMapId)
@@ -602,6 +750,13 @@ public class MapAssetBrowser
 
             if (isValidObjectType)
             {
+                if (assetType == AssetCategoryType.MapPiece)
+                {
+                    // Adjust modelName for mappieces, since by default they are mXX_YY_ZZ_AA_<id>
+                    string newName = modelName.Replace($"{_selectedAssetMapId}_", "m");
+                    modelName = newName;
+                }
+
                 // ModelName
                 actlist.Add(s.ChangeObjectProperty("ModelName", modelName));
 

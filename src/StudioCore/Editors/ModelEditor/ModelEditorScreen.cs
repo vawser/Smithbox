@@ -34,14 +34,15 @@ using StudioCore.BanksMain;
 using static SoulsFormats.MSB_AC6;
 using ModelCore.Editors.ModelEditor.Toolbar;
 using StudioCore.Locators;
+using StudioCore.Editors.AssetBrowser;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResourceEventListener
+public class ModelEditorScreen : EditorScreen, IResourceEventListener
 {
     public bool FirstFrame { get; set; }
 
-    private ModelAssetBrowser _assetBrowser;
+    private AssetBrowserScreen ModelAssetBrowser;
 
     private readonly ModelPropertyEditor _propEditor;
     private readonly ModelPropertyCache _propCache = new();
@@ -92,7 +93,8 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
         _sceneTree = new ModelSceneTree(this, "modeledittree", _universe, _selection, EditorActionManager, Viewport);
         _propEditor = new ModelPropertyEditor(EditorActionManager, _propCache, Viewport, null);
-        _assetBrowser = new ModelAssetBrowser(this);
+
+        ModelAssetBrowser = new AssetBrowserScreen(AssetBrowserSource.ModelEditor, _universe, RenderScene, _selection, EditorActionManager, this, Viewport);
 
         _modelToolbar = new ModelToolbar(EditorActionManager, this);
         _modelToolbar_ActionList = new ModelToolbar_ActionList();
@@ -225,7 +227,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
             if (ImGui.MenuItem("Load Asset Selection", KeyBindings.Current.ModelEditor_LoadCurrentSelection.HintText, true))
             {
-                _assetBrowser.LoadAssetSelection();
+                ModelAssetBrowser.LoadModelAssetSelection();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.WindowClose}");
@@ -430,7 +432,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.ModelEditor_LoadCurrentSelection))
         {
-            _assetBrowser.LoadAssetSelection();
+            ModelAssetBrowser.LoadModelAssetSelection();
         }
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.ModelEditor_UnloadCurrentSelection))
@@ -519,7 +521,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         //ImGui.Text(string.Format("Application average {0:F3} ms/frame ({1:F1} FPS)", 1000f / ImGui.GetIO().Framerate, ImGui.GetIO().Framerate));
 
         Viewport.OnGui();
-        _assetBrowser.OnGui();
+        ModelAssetBrowser.OnGui();
         _sceneTree.OnGui();
         _propEditor.OnGui(_selection, "modeleditprop", Viewport.Width, Viewport.Height);
 
@@ -547,7 +549,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
     {
         if (Project.Type != ProjectType.Undefined)
         {
-            _assetBrowser.OnProjectChanged();
+            ModelAssetBrowser.OnProjectChanged();
         }
 
         CurrentModelInfo = null;

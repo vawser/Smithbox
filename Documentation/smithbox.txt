@@ -1,0 +1,113 @@
+#--------------------------------------
+# FMG REFs
+#--------------------------------------
+DescriptionArchive
+DescriptionBooster
+DescriptionFCS
+DescriptionGenerator
+DescriptionMission
+Event
+MenuContext
+MissionLocation
+Modern_Dialogues
+Modern_KeyGuide
+Modern_LineHelp
+Modern_MenuText
+Modern_SystemMessage_win64
+MovieSubtitle
+RankerProfile
+SummaryArmor
+SummaryMission
+SummaryWeapons
+TalkMsg
+TextEmbeddedImageNames
+TitleArchive
+TitleArmor
+TitleBooster
+TitleCharacters
+TitleFCS
+TitleGenerator
+TitleGoods
+TitleMission
+TitleWeapons
+TutorialBody
+TutorialBody2023
+TutorialTitle
+TutorialTitle2023
+
+#--------------------------------------
+# TO ADD
+#--------------------------------------
+# Reminder
+Push 'Release' builds to github releases, not the 'Debug' builds
+Update imgui.default
+
+Misc:
+ - Document AC6 FXR
+
+Additions:
+ - ESD Editor
+ - EMEVD Editor
+ - TAE Editor
+ - FXR Editor
+ - MTD (Material) Editor
+ - Cutscene (MQB) Editor
+ - Merge Tool: user-focused merging of current project + target project
+ 
+General:
+ - Add format json support for the other MSB types.
+ - Add shortcuts for Param/Model/Gparam/Texture Viewer toolbar actions
+ - Remove the fixed nature of the Editor menu bar windows
+ - Look into thumbnail generation for Chr/Asset/Parts
+ - Add articles covering all of the features and common use-cases in Smithbox
+ 
+Map Editor: 
+ - Add .BTAB support
+ - Add .GRASS support
+ - Add .ENTRYFILELIST support
+ - Add 'flat' editor view: similar to Param Editor, where you can edit the MSB stuff without the viewport overhead.
+ - Add enum support for the DS3 corpse poses
+ - Add "Data Export" action for MSB data: output the MSB information as JSON
+ - Add ER map select with map image.
+ 
+Model Editor:
+ - Add "Copy As" action for top-level node that lets the user duplicate the entire "chr" set: anibnd, chrbnd, etc
+ - Add floating text for dummy poly ref IDs
+ - Add floating text for co-ordinate direction (X, Y, Z)
+ - Add dummy poly forward/upwards representation
+ - FBX Export of Loaded Model
+
+Param Editor:
+ - Add option to place param editor pins in the main Field section, instead of the header section.
+ - Add proper support for ColorEdit section so it appears properly with compare col 
+ - Remove the gray outer padding around the Param Editor window
+ - Add stayparam support for DS3 (requires 'blob' editor with manual definitions)
+ - Able to sort row order manually
+ 
+Text Editor:
+ - Add generator tool for quickly adding entires, e.g. weapon entries: start ID, step amount, end ID, default title, default desc
+ 
+Gparam Editor:
+ - Add mass edit power to Quick Edit: Allow edits to affect all files
+ - Add gparam reference support (e.g. jump to map param, and if it is offset, that value entry offset)
+ - Add command: random:[{<x>}] {} contain the min and max (needed to support the vector splits)
+ - Add command: restore - Restores the value to the value from Game Root version (if it exists).
+
+Texture Viewer: 
+ - Add support for 'custom' Shoebox Layouts for non-Shoebox Layout games
+  - Smithbox will instead read from a Shoebox folder in .smithbox for these games.
+ - Add ability to edit Shoebox Layouts (subwindow)
+ - Add ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
+ - Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
+
+#--------------------------------------
+# Notes
+#-------------------------------------- 
+Selection Groups:
+ - Add json field to tie the group to a specific map ID (if desired)
+ - Fix issue with Keybind(ed) groups if editing them (the check for duplicate keybinds is returning true)
+ - Add "Update Selection" button in "Edit Group" that will update the selection list
+ - Add help article for it
+ - Add auto-open for the MapSceneTree nodes when a selection occurs (currently they remain un-expanded
+ - Add "Selection Groups" to the View drop-down
+ 

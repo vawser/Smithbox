@@ -23,10 +23,10 @@ using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Utilities;
 using StudioCore.Interface;
-using StudioCore.Editors.MapEditor.AssetBrowser;
 using StudioCore.Editors.MapEditor.EntryFileList;
 using StudioCore.Locators;
 using StudioCore.Editors.MapEditor.SelectionGroup;
+using StudioCore.Editors.AssetBrowser;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -62,7 +62,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public ViewportActionManager EditorActionManager = new();
 
     public DisplayGroupEditor DispGroupEditor;
-    public MapAssetBrowser AssetBrowser;
+    public AssetBrowserScreen MapAssetBrowser;
     public EntryFileListEditor EntryFileListViewer;
     public SelectionGroupView SelectionGroupEditor;
 
@@ -113,7 +113,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         DispGroupEditor = new DisplayGroupEditor(RenderScene, _selection, EditorActionManager);
         PropSearch = new MapSearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(RenderScene, _selection);
-        AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
+        MapAssetBrowser = new AssetBrowserScreen(AssetBrowserSource.MapEditor, Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
         PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport);
         EntryFileListViewer = new EntryFileListEditor(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
 
@@ -919,7 +919,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         }
 
         DispGroupEditor.OnGui(Universe._dispGroupCount);
-        AssetBrowser.OnGui();
+        MapAssetBrowser.OnGui();
         EntryFileListViewer.OnGui();
         SelectionGroupEditor.OnGui();
 
@@ -971,6 +971,11 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     {
         _selection.ClearSelection();
         EditorActionManager.Clear();
+
+        if (Project.Type != ProjectType.Undefined)
+        {
+            MapAssetBrowser.OnProjectChanged();
+        }
 
         _mapToolbar.OnProjectChanged();
 
