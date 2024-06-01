@@ -30,7 +30,7 @@
     <Field Def="f32 upwardThrustEnergyCost"></Field>
     <Field Def="s32 quickBoostEnergyCost"></Field>
     <Field Def="f32 quickBoostVelocity"></Field>
-    <Field Def="f32 boostModeDuration"></Field>
+    <Field Def="f32 quickBoostModeDuration"></Field>
     <Field Def="f32 boostModeMovementVelocity"></Field>
     <Field Def="f32 boostModeJumpVelocity"></Field>
     <Field Def="f32 displayQuickBoostThrust"></Field>

@@ -36,7 +36,7 @@
     <upwardThrustEnergyCost AltName="Energy Cost - Upwards Thrust" Wiki="EN consumed by ascending boost movement."/>
     <quickBoostEnergyCost AltName="Energy Cost - Quick Boost" Wiki="EN consumed by Quick Boost." />
     <quickBoostVelocity AltName="Quick Boost Velocity" Wiki="Velocity upon using Quick Boost." />
-    <boostModeDuration AltName="Boost Mode Duration" />
+    <quickBoostModeDuration AltName="Quick Boost Mode Duration" />
     <boostModeMovementVelocity AltName="Boost Mode - Movement Velocity" Wiki="Movement velocity when boosting. Also used for tank leg High Speed Performance" />
     <boostModeJumpVelocity AltName="Boost Mode - Jump Velocity" Wiki="Velocity upon jumping with boost movement." />
     <displayQuickBoostThrust AltName="Quick Boost Thrust - Display Only" Wiki="Only affects value in UI." />

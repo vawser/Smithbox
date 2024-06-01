@@ -78,9 +78,7 @@ Model Editor:
  - FBX Export of Loaded Model
 
 Param Editor:
- - Add option to place param editor pins in the main Field section, instead of the header section.
  - Add proper support for ColorEdit section so it appears properly with compare col 
- - Remove the gray outer padding around the Param Editor window
  - Add stayparam support for DS3 (requires 'blob' editor with manual definitions)
  - Able to sort row order manually
  
