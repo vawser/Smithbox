@@ -30,6 +30,7 @@ namespace StudioCore.Editors.MapEditor
         Selection_Rotate,
         Selection_Scramble,
         Selection_Replicate,
+        Selection_Order,
 
         // Global
         Selection_Assign_Entity_Group_ID,

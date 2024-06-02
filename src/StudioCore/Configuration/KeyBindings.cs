@@ -166,6 +166,9 @@ public class KeyBindings
         public KeyBind Map_QuickSelect_SelectionGroup_9 = new("Select Selection Group 0", KeybindCategory.MapEditor, Key.Keypad9, false, false);
         public KeyBind Map_QuickSelect_SelectionGroup_10 = new("Select Selection Group 10", KeybindCategory.MapEditor, Key.KeypadAdd, false, false);
 
+        public KeyBind MapEditor_MoveOrderUp = new("Move Map Object Up in List", KeybindCategory.MapEditor, Key.U, true, false);
+        public KeyBind MapEditor_MoveOrderDown = new("Move Map Object Down in List", KeybindCategory.MapEditor, Key.J, true, false);
+
         // Model Editor
         public KeyBind ModelEditor_LoadCurrentSelection = new("Load Asset Selection", KeybindCategory.ModelEditor, Key.L, true);
 

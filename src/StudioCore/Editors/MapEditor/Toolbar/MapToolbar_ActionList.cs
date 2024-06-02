@@ -79,6 +79,7 @@ public class MapToolbar_ActionList
         MapAction_Rotate.Select(_selection);
         MapAction_Scramble.Select(_selection);
         MapAction_Replicate.Select(_selection);
+        MapAction_Order.Select(_selection);
 
         // Global
         MapAction_Create.Select(_selection);

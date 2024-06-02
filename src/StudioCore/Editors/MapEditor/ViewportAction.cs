@@ -16,6 +16,7 @@ using System.Text.RegularExpressions;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Editor;
+using StudioCore.Platform;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -1783,6 +1784,150 @@ public class ReplicateMapObjectsAction : ViewportAction
                 Clones[i].RenderSceneMesh.AutoRegister = false;
                 Clones[i].RenderSceneMesh.UnregisterWithScene();
             }
+        }
+
+        return ActionEvent.ObjectAddedRemoved;
+    }
+}
+
+public enum OrderMoveDir
+{
+    Up,
+    Down
+}
+
+public class OrderMapObjectsAction : ViewportAction
+{
+    private List<MsbEntity> selection = new();
+    private List<Entity> storedObjectOrder = new();
+
+    private Universe Universe;
+    private RenderScene Scene;
+
+    private OrderMoveDir MoveSelectionDir;
+
+    public OrderMapObjectsAction(Universe univ, RenderScene scene, List<MsbEntity> objects, OrderMoveDir moveDir)
+    {
+        Universe = univ;
+        Scene = scene;
+        selection.AddRange(objects);
+
+        MoveSelectionDir = moveDir;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        if (selection.Count > 1)
+        {
+            PlatformUtils.Instance.MessageBox("You can only order one map object at a time.", "Smithbox", MessageBoxButtons.OK);
+        }
+        else
+        {
+            if (selection.Count > 0)
+            {
+                // Only support re-ordering one selection for now
+                var curSel = selection.First();
+                var ent = (Entity)curSel;
+
+                MapContainer mapRoot = Universe.GetLoadedMap(curSel.MapID);
+                foreach(var entry in mapRoot.Objects)
+                {
+                    storedObjectOrder.Add(entry);
+                }
+
+                var classType = ent.WrappedObject.GetType();
+
+                if (mapRoot != null)
+                {
+                    int indexStart = -1;
+                    int indexEnd = -1;
+                    bool isStart = false;
+                    bool foundEnd = false;
+
+                    for (int i = 0; i < mapRoot.Objects.Count; i++)
+                    {
+                        var curChild = mapRoot.Objects[i];
+
+                        if (!foundEnd && isStart && curChild.WrappedObject.GetType() != classType)
+                        {
+                            foundEnd = true;
+                            indexEnd = i - 1;
+                        }
+
+                        if (curChild.WrappedObject.GetType() == classType)
+                        {
+                            if (!isStart)
+                            {
+                                isStart = true;
+                                indexStart = i;
+                            }
+                        }
+                    }
+
+                    // If we escape the previous loop without setting the indexEnd,
+                    // then it must be the final index
+                    if (indexEnd == -1)
+                    {
+                        indexEnd = mapRoot.Objects.Count - 1;
+                    }
+
+                    // Move
+                    if (MoveSelectionDir == OrderMoveDir.Up)
+                    {
+                        for (int i = indexStart; i <= indexEnd; i++)
+                        {
+                            if (curSel == mapRoot.Objects[i])
+                            {
+                                if (i == indexStart)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    var prevEntry = mapRoot.Objects[i - 1];
+                                    mapRoot.Objects[i - 1] = curSel;
+                                    mapRoot.Objects[i] = prevEntry;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    if (MoveSelectionDir == OrderMoveDir.Down)
+                    {
+                        for (int i = indexStart; i <= indexEnd; i++)
+                        {
+                            if (curSel == mapRoot.Objects[i])
+                            {
+                                if (i == indexEnd)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    var nextEntry = mapRoot.Objects[i + 1];
+                                    mapRoot.Objects[i + 1] = curSel;
+                                    mapRoot.Objects[i] = nextEntry;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return ActionEvent.ObjectAddedRemoved;
+    }
+
+    public override ActionEvent Undo()
+    {
+        if (selection.Count > 0)
+        {
+            var curSel = selection.First();
+
+            MapContainer mapRoot = Universe.GetLoadedMap(curSel.MapID);
+            mapRoot.Objects = storedObjectOrder;
         }
 
         return ActionEvent.ObjectAddedRemoved;

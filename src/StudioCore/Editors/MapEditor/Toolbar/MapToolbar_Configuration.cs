@@ -51,6 +51,7 @@ public class MapToolbar_Configuration
         MapAction_Rotate.Shortcuts();
         MapAction_Scramble.Shortcuts();
         MapAction_Replicate.Shortcuts();
+        MapAction_Order.Shortcuts();
 
         // Prefabs
         //MapAction_EditPrefab.Shortcuts();
@@ -80,6 +81,7 @@ public class MapToolbar_Configuration
         MapAction_Rotate.Configure(_selection);
         MapAction_Scramble.Configure(_selection);
         MapAction_Replicate.Configure(_selection);
+        MapAction_Order.Configure(_selection);
 
         // Prefabs
         //MapAction_EditPrefab.Configure(_selection);
@@ -107,6 +109,7 @@ public class MapToolbar_Configuration
         MapAction_Rotate.Act(_selection);
         MapAction_Scramble.Act(_selection);
         MapAction_Replicate.Act(_selection);
+        MapAction_Order.Act(_selection);
 
         // Act: Global
         MapAction_Create.Act(_selection);

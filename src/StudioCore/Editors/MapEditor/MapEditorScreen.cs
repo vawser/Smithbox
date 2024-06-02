@@ -783,6 +783,15 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 }
             }
 
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MapEditor_MoveOrderUp) && _selection.IsSelection())
+            {
+                MapAction_Order.MoveSelection(_selection, OrderMoveDir.Up);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MapEditor_MoveOrderDown) && _selection.IsSelection())
+            {
+                MapAction_Order.MoveSelection(_selection, OrderMoveDir.Down);
+            }
+
             // Render settings
             if (RenderScene != null)
             {
