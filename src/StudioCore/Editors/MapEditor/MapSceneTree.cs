@@ -65,11 +65,7 @@ public class MapSceneTree : IActionEventHandler
     }
 
     private readonly Configuration _configuration;
-    private readonly List<Entity> _dragDropDestObjects = new();
-    private readonly List<int> _dragDropDests = new();
-    private readonly Dictionary<int, DragDropPayload> _dragDropPayloads = new();
 
-    private readonly List<Entity> _dragDropSources = new();
     private readonly ViewportActionManager _editorActionManager;
 
     private readonly SceneTreeEventHandler _handler;
@@ -91,9 +87,6 @@ public class MapSceneTree : IActionEventHandler
     private bool _chaliceLoadError;
 
     private string _chaliceMapID = "m29_";
-    private int _dragDropPayloadCounter;
-
-    private bool _initiatedDragDrop;
 
     private ulong
         _mapEnt_ImGuiID; // Needed to avoid issue with identical IDs during keyboard navigation. May be unecessary when ImGUI is updated.
@@ -101,7 +94,6 @@ public class MapSceneTree : IActionEventHandler
     private string _mapObjectListSearchInput = "";
 
     private ISelectable _pendingClick;
-    private bool _pendingDragDrop;
 
     private bool _setNextFocus;
 
@@ -144,17 +136,6 @@ public class MapSceneTree : IActionEventHandler
         if (ImGui.Begin($@"Map Object List##{_id}"))
         {
             ImGui.PopStyleVar();
-
-            if (_initiatedDragDrop)
-            {
-                _initiatedDragDrop = false;
-                _pendingDragDrop = true;
-            }
-
-            if (_pendingDragDrop && ImGui.IsMouseReleased(ImGuiMouseButton.Left))
-            {
-                _pendingDragDrop = false;
-            }
 
             if (Project.Type is ProjectType.DS2S || Project.Type is ProjectType.DS2)
             {
@@ -206,26 +187,6 @@ public class MapSceneTree : IActionEventHandler
             ImGui.Unindent(30 * scale);
 
             DisplayMapObjectList();
-
-            if (_dragDropSources.Count > 0)
-            {
-                if (_dragDropDestObjects.Count > 0)
-                {
-                    ChangeEntityHierarchyAction action = new(_universe, _dragDropSources, _dragDropDestObjects,
-                        _dragDropDests, false);
-                    _editorActionManager.ExecuteAction(action);
-                    _dragDropSources.Clear();
-                    _dragDropDests.Clear();
-                    _dragDropDestObjects.Clear();
-                }
-                else
-                {
-                    ReorderContainerObjectsAction action = new(_universe, _dragDropSources, _dragDropDests, false);
-                    _editorActionManager.ExecuteAction(action);
-                    _dragDropSources.Clear();
-                    _dragDropDests.Clear();
-                }
-            }
         }
         else
         {
@@ -497,14 +458,7 @@ public class MapSceneTree : IActionEventHandler
 
             if (nodeopen)
             {
-                if (_pendingDragDrop)
-                {
-                    ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 0.0f) * scale);
-                }
-                else
-                {
-                    ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 3.0f) * scale);
-                }
+                ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 3.0f) * scale);
 
                 if (_viewMode == ViewMode.Hierarchy)
                 {
@@ -584,10 +538,9 @@ public class MapSceneTree : IActionEventHandler
         else
         {
             _mapEnt_ImGuiID++;
+            var selectableFlags = ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowItemOverlap;
 
-            if (ImGui.Selectable(padding + e.PrettyName + "##" + _mapEnt_ImGuiID,
-                    _selection.GetSelection().Contains(e),
-                    ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowItemOverlap))
+            if (ImGui.Selectable($"{padding}{e.PrettyName}##{_mapEnt_ImGuiID}", _selection.GetSelection().Contains(e), selectableFlags))
             {
                 // If double clicked frame the selection in the viewport
                 if (ImGui.IsMouseDoubleClicked(0))
@@ -652,43 +605,10 @@ public class MapSceneTree : IActionEventHandler
             _selection.ClearGotoTarget();
         }
 
-        if (ImGui.BeginPopupContextItem())
+        if (ImGui.BeginPopupContextItem($"EntityContextMenu{_mapEnt_ImGuiID}"))
         {
             _handler.OnEntityContextMenu(e);
             ImGui.EndPopup();
-        }
-
-        if (ImGui.BeginDragDropSource())
-        {
-            ImGui.Text(e.PrettyName);
-            // Kinda meme
-            DragDropPayload p = new();
-            p.Entity = e;
-            _dragDropPayloads.Add(_dragDropPayloadCounter, p);
-            DragDropPayloadReference r = new();
-            r.Index = _dragDropPayloadCounter;
-            _dragDropPayloadCounter++;
-            GCHandle handle = GCHandle.Alloc(r, GCHandleType.Pinned);
-            ImGui.SetDragDropPayload("entity", handle.AddrOfPinnedObject(), (uint)sizeof(DragDropPayloadReference));
-            ImGui.EndDragDropSource();
-            handle.Free();
-            _initiatedDragDrop = true;
-        }
-
-        if (hierarchial && ImGui.BeginDragDropTarget())
-        {
-            ImGuiPayloadPtr payload = ImGui.AcceptDragDropPayload("entity");
-            if (payload.NativePtr != null)
-            {
-                var h = (DragDropPayloadReference*)payload.Data;
-                DragDropPayload pload = _dragDropPayloads[h->Index];
-                _dragDropPayloads.Remove(h->Index);
-                _dragDropSources.Add(pload.Entity);
-                _dragDropDestObjects.Add(e);
-                _dragDropDests.Add(e.Children.Count);
-            }
-
-            ImGui.EndDragDropTarget();
         }
 
         // Visibility icon
@@ -712,50 +632,6 @@ public class MapSceneTree : IActionEventHandler
 
         // If the visibility icon wasn't clicked, perform the selection
         Utils.EntitySelectionHandler(_selection, e, doSelect, arrowKeySelect);
-
-        // Invisible item to be a drag drop target between nodes
-        if (_pendingDragDrop)
-        {
-            if (e is MsbEntity me2)
-            {
-                ImGui.SetItemAllowOverlap();
-                ImGui.InvisibleButton(me2.Type + e.Name, new Vector2(-1, 3.0f) * scale);
-            }
-            else
-            {
-                ImGui.SetItemAllowOverlap();
-                ImGui.InvisibleButton(e.Name, new Vector2(-1, 3.0f) * scale);
-            }
-
-            if (ImGui.IsItemFocused())
-            {
-                _setNextFocus = true;
-            }
-
-            if (ImGui.BeginDragDropTarget())
-            {
-                ImGuiPayloadPtr payload = ImGui.AcceptDragDropPayload("entity");
-                if (payload.NativePtr != null) //todo: never passes
-                {
-                    var h = (DragDropPayloadReference*)payload.Data;
-                    DragDropPayload pload = _dragDropPayloads[h->Index];
-                    _dragDropPayloads.Remove(h->Index);
-                    if (hierarchial)
-                    {
-                        _dragDropSources.Add(pload.Entity);
-                        _dragDropDestObjects.Add(e.Parent);
-                        _dragDropDests.Add(e.Parent.ChildIndex(e) + 1);
-                    }
-                    else
-                    {
-                        _dragDropSources.Add(pload.Entity);
-                        _dragDropDests.Add(pload.Entity.Container.Objects.IndexOf(e) + 1);
-                    }
-                }
-
-                ImGui.EndDragDropTarget();
-            }
-        }
 
         // If there's children then draw them
         if (nodeopen)
@@ -1120,14 +996,8 @@ public class MapSceneTree : IActionEventHandler
         {
             ImGui.SameLine();
             ImGui.PushTextWrapPos();
-            if (aliasName.StartsWith("--")) // Marked as normally unused (use red text)
-            {
-                ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName.Replace("--", "")}");
-            }
-            else
-            {
-                ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName}");
-            }
+
+            ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName}");
 
             ImGui.PopTextWrapPos();
         }
