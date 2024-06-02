@@ -162,7 +162,10 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
                 _universe.LoadFlverInModelEditor(r.Flver, _renderMesh, CurrentModelInfo.ModelName);
             }
 
-            _universe.ScheduleTextureRefresh();
+            if (CFG.Current.Viewport_Enable_Texturing)
+            {
+                _universe.ScheduleTextureRefresh();
+            }
         }
 
         if (_loadingTask != null && _loadingTask.IsCompleted)
@@ -739,7 +742,10 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             }
         }
 
-        _universe.ScheduleTextureRefresh();
+        if (CFG.Current.Viewport_Enable_Texturing)
+        {
+            _universe.ScheduleTextureRefresh();
+        }
     }
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
@@ -805,13 +811,16 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
             if (Universe.IsRendering)
             {
-                if (textureAsset.AssetArchiveVirtualPath != null)
+                if (CFG.Current.Viewport_Enable_Texturing)
                 {
-                    job.AddLoadArchiveTask(textureAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
-                }
-                else if (textureAsset.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(textureAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                    if (textureAsset.AssetArchiveVirtualPath != null)
+                    {
+                        job.AddLoadArchiveTask(textureAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
+                    }
+                    else if (textureAsset.AssetVirtualPath != null)
+                    {
+                        job.AddLoadFileTask(textureAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                    }
                 }
             }
 

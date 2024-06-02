@@ -573,10 +573,14 @@ public class Universe
                     generatorObjs[row.ID].RenderSceneMesh = model;
                     model.SetSelectable(generatorObjs[row.ID]);
                     chrsToLoad.Add(asset);
-                    ResourceDescriptor tasset = ResourceTextureLocator.GetChrTextures($@"c{chrid}");
-                    if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
+
+                    if (CFG.Current.Viewport_Enable_Texturing)
                     {
-                        chrsToLoad.Add(tasset);
+                        ResourceDescriptor tasset = ResourceTextureLocator.GetChrTextures($@"c{chrid}");
+                        if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
+                        {
+                            chrsToLoad.Add(tasset);
+                        }
                     }
                 }
             }
@@ -823,11 +827,15 @@ public class Universe
                 // Add substitution model to the chrsToLoad set
                 ResourceDescriptor subAsset = ResourceModelLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
                 chrsToLoad.Add(subAsset);
-                ResourceDescriptor tSubAsset = ResourceTextureLocator.GetChrTextures(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
 
-                if (tSubAsset.AssetVirtualPath != null || tSubAsset.AssetArchiveVirtualPath != null)
+                if (CFG.Current.Viewport_Enable_Texturing)
                 {
-                    chrsToLoad.Add(tSubAsset);
+                    ResourceDescriptor tSubAsset = ResourceTextureLocator.GetChrTextures(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
+
+                    if (tSubAsset.AssetVirtualPath != null || tSubAsset.AssetArchiveVirtualPath != null)
+                    {
+                        chrsToLoad.Add(tSubAsset);
+                    }
                 }
 
                 foreach (IMsbModel model in msb.Models.GetEntries())
@@ -843,20 +851,28 @@ public class Universe
                     {
                         asset = ResourceModelLocator.GetChrModel(model.Name);
                         chrsToLoad.Add(asset);
-                        ResourceDescriptor tasset = ResourceTextureLocator.GetChrTextures(model.Name);
-                        if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
+
+                        if (CFG.Current.Viewport_Enable_Texturing)
                         {
-                            chrsToLoad.Add(tasset);
+                            ResourceDescriptor tasset = ResourceTextureLocator.GetChrTextures(model.Name);
+                            if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
+                            {
+                                chrsToLoad.Add(tasset);
+                            }
                         }
                     }
                     else if (model.Name.StartsWith("o"))
                     {
                         asset = ResourceModelLocator.GetObjModel(model.Name);
                         objsToLoad.Add(asset);
-                        ResourceDescriptor tasset = ResourceTextureLocator.GetObjTextureContainer(model.Name);
-                        if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
+
+                        if (CFG.Current.Viewport_Enable_Texturing)
                         {
-                            objsToLoad.Add(tasset);
+                            ResourceDescriptor tasset = ResourceTextureLocator.GetObjTextureContainer(model.Name);
+                            if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
+                            {
+                                objsToLoad.Add(tasset);
+                            }
                         }
                     }
                     else if (model.Name.StartsWith("AEG"))

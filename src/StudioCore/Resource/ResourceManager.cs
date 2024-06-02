@@ -84,12 +84,6 @@ public static class ResourceManager
     {
         Tracy.___tracy_c_zone_context ctx =
             Tracy.TracyCZoneN(1, $@"LoadTPFResourcesTask::Run {action._virtpathbase}");
-        if (!CFG.Current.Viewport_Enable_Texturing)
-        {
-            action._tpf = null;
-            Tracy.TracyCZoneEnd(ctx);
-            return new LoadTPFTextureResourceRequest[] { };
-        }
 
         // If tpf is null this is a loose file load.
         if (action._tpf == null)
