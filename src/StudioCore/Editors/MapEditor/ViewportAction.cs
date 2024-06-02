@@ -1948,7 +1948,10 @@ public class OrderMapObjectsAction : ViewportAction
                         // For all entries above it, move them down
                         for (int i = rootIndex; i >= indexStart; i--)
                         {
-                            mapRoot.Objects[i] = mapRoot.Objects[i-1];
+                            if (i > 0)
+                            {
+                                mapRoot.Objects[i] = mapRoot.Objects[i - 1];
+                            }
                         }
                         // Set top index to selection
                         mapRoot.Objects[indexStart] = curSel;
