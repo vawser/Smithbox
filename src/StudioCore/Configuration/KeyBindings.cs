@@ -168,6 +168,8 @@ public class KeyBindings
 
         public KeyBind MapEditor_MoveOrderUp = new("Move Map Object Up in List", KeybindCategory.MapEditor, Key.U, true, false);
         public KeyBind MapEditor_MoveOrderDown = new("Move Map Object Down in List", KeybindCategory.MapEditor, Key.J, true, false);
+        public KeyBind MapEditor_MoveOrderTop = new("Move Map Object to Top in List", KeybindCategory.MapEditor, Key.U, true, true);
+        public KeyBind MapEditor_MoveOrderBottom = new("Move Map Object to Bottom in List", KeybindCategory.MapEditor, Key.J, true, true);
 
         // Model Editor
         public KeyBind ModelEditor_LoadCurrentSelection = new("Load Asset Selection", KeybindCategory.ModelEditor, Key.L, true);

@@ -1793,7 +1793,9 @@ public class ReplicateMapObjectsAction : ViewportAction
 public enum OrderMoveDir
 {
     Up,
-    Down
+    Down,
+    Top,
+    Bottom
 }
 
 public class OrderMapObjectsAction : ViewportAction
@@ -1817,24 +1819,35 @@ public class OrderMapObjectsAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
+        // TODO: allow this to work with multi-selections
+        // Will require more rigorous validation of the indices
         if (selection.Count > 1)
         {
             PlatformUtils.Instance.MessageBox("You can only order one map object at a time.", "Smithbox", MessageBoxButtons.OK);
         }
         else
         {
+            // Ignore if no selection is present
             if (selection.Count > 0)
             {
-                // Only support re-ordering one selection for now
                 var curSel = selection.First();
                 var ent = (Entity)curSel;
 
                 MapContainer mapRoot = Universe.GetLoadedMap(curSel.MapID);
+
+                // Ignore usage if the selection is the map root itself
+                if(mapRoot == null)
+                {
+                    return ActionEvent.ObjectAddedRemoved;
+                }
+
+                // Store previous object order for undo if needed
                 foreach(var entry in mapRoot.Objects)
                 {
                     storedObjectOrder.Add(entry);
                 }
 
+                // Get the 'sub-category' for this map object
                 var classType = ent.WrappedObject.GetType();
 
                 if (mapRoot != null)
@@ -1844,16 +1857,19 @@ public class OrderMapObjectsAction : ViewportAction
                     bool isStart = false;
                     bool foundEnd = false;
 
+                    // Find the sub-category start and end indices
                     for (int i = 0; i < mapRoot.Objects.Count; i++)
                     {
                         var curChild = mapRoot.Objects[i];
 
+                        // Grab the end index for this sub-category (if start has already been found)
                         if (!foundEnd && isStart && curChild.WrappedObject.GetType() != classType)
                         {
                             foundEnd = true;
                             indexEnd = i - 1;
                         }
 
+                        // Grab the start index for this sub-category
                         if (curChild.WrappedObject.GetType() == classType)
                         {
                             if (!isStart)
@@ -1871,7 +1887,7 @@ public class OrderMapObjectsAction : ViewportAction
                         indexEnd = mapRoot.Objects.Count - 1;
                     }
 
-                    // Move
+                    // Move Up
                     if (MoveSelectionDir == OrderMoveDir.Up)
                     {
                         for (int i = indexStart; i <= indexEnd; i++)
@@ -1893,6 +1909,7 @@ public class OrderMapObjectsAction : ViewportAction
                         }
                     }
 
+                    // Move Down
                     if (MoveSelectionDir == OrderMoveDir.Down)
                     {
                         for (int i = indexStart; i <= indexEnd; i++)
@@ -1912,6 +1929,52 @@ public class OrderMapObjectsAction : ViewportAction
                                 }
                             }
                         }
+                    }
+
+                    // Move to Top
+                    if (MoveSelectionDir == OrderMoveDir.Top)
+                    {
+                        int rootIndex = 0;
+
+                        // Find the index for the moved selection
+                        for (int i = indexStart; i <= indexEnd; i++)
+                        {
+                            if(mapRoot.Objects[i] == curSel)
+                            {
+                                rootIndex = i;
+                            }
+                        }
+
+                        // For all entries above it, move them down
+                        for (int i = rootIndex; i >= indexStart; i--)
+                        {
+                            mapRoot.Objects[i] = mapRoot.Objects[i-1];
+                        }
+                        // Set top index to selection
+                        mapRoot.Objects[indexStart] = curSel;
+                    }
+
+                    // Move to Bottom
+                    if (MoveSelectionDir == OrderMoveDir.Bottom)
+                    {
+                        int rootIndex = 0;
+
+                        // Find the index for the moved selection
+                        for (int i = indexStart; i <= indexEnd; i++)
+                        {
+                            if (mapRoot.Objects[i] == curSel)
+                            {
+                                rootIndex = i;
+                            }
+                        }
+
+                        // For all entries below it, move them up
+                        for (int i = rootIndex; i <= indexEnd; i++)
+                        {
+                            mapRoot.Objects[i] = mapRoot.Objects[i + 1];
+                        }
+                        // Set top index to selection
+                        mapRoot.Objects[indexEnd] = curSel;
                     }
                 }
             }
