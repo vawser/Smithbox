@@ -63,29 +63,17 @@ public class EsdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TalkScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        // Only support AC6
-        if (Project.Type != ProjectType.AC6)
+        if (!EsdBank.IsLoaded)
         {
-            ImGui.Begin("Editor##InvalidTalkEditor");
-
-            ImGui.Text($"This editor does not support {Project.Type}.");
-
-            ImGui.End();
+            EsdBank.LoadEsdScripts();
         }
-        else
-        {
-            if (!EsdBank.IsLoaded)
-            {
-                EsdBank.LoadEsdScripts();
-            }
 
-            if (EsdBank.IsLoaded)
-            {
-                EsdFileView();
-                EsdStateGroupSelectView();
-                EsdStateNodeSelectView();
-                EsdStateNodeView();
-            }
+        if (EsdBank.IsLoaded)
+        {
+            EsdFileView();
+            EsdStateGroupSelectView();
+            EsdStateNodeSelectView();
+            EsdStateNodeView();
         }
 
         ImGui.PopStyleVar();

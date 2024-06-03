@@ -100,6 +100,5 @@ Texture Viewer:
 
 #--------------------------------------
 # Notes
-#-------------------------------------- 
-Look into issue with SoapstoneServer connection between Smithbox and DarkScript3, currently cross-ref doesn't work
+#-------------------------------------- =
 Check alias name 'instances' to make sure the cached name is invalidated when the source alias is updated

@@ -501,10 +501,7 @@ public class Smithbox
     {
         Project.SaveProjectJson();
 
-        foreach (EditorScreen editor in _editors)
-        {
-            editor.SaveAll();
-        }
+        _focusedEditor.SaveAll();
     }
 
     private void SaveFocusedEditor()

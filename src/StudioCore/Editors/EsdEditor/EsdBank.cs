@@ -30,6 +30,11 @@ public static class EsdBank
         if (binder == null)
             return;
 
+        // Ignore loaded scripts that have not been modified
+        // This is to prevent mass-transfer to project folder on Save-All
+        if (!info.IsModified)
+            return;
+
         //TaskLogs.AddLog($"SaveTalkScript: {info.Path}");
 
         var fileDir = @"\script\talk";
@@ -169,6 +174,7 @@ public static class EsdBank
     {
         public EsdScriptInfo(string name, string path)
         {
+            IsModified = false;
             Name = name;
             Path = path;
             EsdFiles = new List<ESD>();
@@ -176,6 +182,7 @@ public static class EsdBank
 
         public string Name { get; set; }
         public string Path { get; set; }
+        public bool IsModified { get; set; }
 
         public List<ESD> EsdFiles { get; set; }
     }

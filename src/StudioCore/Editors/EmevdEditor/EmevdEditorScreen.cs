@@ -68,30 +68,18 @@ public class EmevdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_EventScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        // Only support AC6
-        if (Project.Type != ProjectType.AC6)
+        if (!EmevdBank.IsLoaded)
         {
-            ImGui.Begin("Editor##InvalidEventScriptEditor");
-
-            ImGui.Text($"This editor does not support {Project.Type}.");
-
-            ImGui.End();
+            EmevdBank.LoadEventScripts();
+            EmevdBank.LoadEMEDF();
         }
-        else
-        {
-            if (!EmevdBank.IsLoaded)
-            {
-                EmevdBank.LoadEventScripts();
-                EmevdBank.LoadEMEDF();
-            }
 
-            if (EmevdBank.IsLoaded)
-            {
-                EventScriptFileView();
-                EventScriptEventListView();
-                EventScriptEventInstructionView();
-                EventScriptEventParameterView();
-            }
+        if (EmevdBank.IsLoaded)
+        {
+            EventScriptFileView();
+            EventScriptEventListView();
+            EventScriptEventInstructionView();
+            EventScriptEventParameterView();
         }
 
         ImGui.PopStyleVar();

@@ -37,6 +37,11 @@ public static class EmevdBank
         if (script == null)
             return;
 
+        // Ignore loaded scripts that have not been modified
+        // This is to prevent mass-transfer to project folder on Save-All
+        if(!info.IsModified)
+            return;
+
         //TaskLogs.AddLog($"SaveEventScript: {info.Path}");
 
         byte[] fileBytes = null;
@@ -178,9 +183,11 @@ public static class EmevdBank
         {
             Name = name;
             Path = path;
+            IsModified = false;
         }
 
         public string Name { get; set; }
         public string Path { get; set; }
+        public bool IsModified { get; set; }
     }
 }
