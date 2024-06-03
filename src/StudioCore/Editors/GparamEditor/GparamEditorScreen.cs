@@ -353,30 +353,8 @@ public class GparamEditorScreen : EditorScreen
 
                 if (CFG.Current.Interface_Display_Alias_for_Gparam)
                 {
-                    if (GparamAliasBank.Bank.AliasNames != null)
-                    {
-                        var prettyName = "";
-
-                        var entries = GparamAliasBank.Bank.AliasNames.GetEntries("Gparams");
-                        foreach (var entry in entries)
-                        {
-                            if (name == entry.id)
-                            {
-                                prettyName = entry.name;
-                                break;
-                            }
-                        }
-
-                        if (prettyName != "")
-                        {
-                            ImGui.SameLine();
-                            ImGui.PushTextWrapPos();
-
-                            ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"<{prettyName}>");
-
-                            ImGui.PopTextWrapPos();
-                        }
-                    }
+                    var aliasName = AliasUtils.GetGparamAliasName(info.Name);
+                    AliasUtils.DisplayAlias(aliasName);
                 }
 
                 ImGui.EndGroup();

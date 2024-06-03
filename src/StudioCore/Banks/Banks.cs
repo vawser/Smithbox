@@ -146,18 +146,6 @@ public static class MapAliasBank
 
         return $"";
     }
-    public static string GetFormattedMapName(string mapId, string baseName)
-    {
-        if (MapNames == null)
-            return baseName;
-
-        if (MapNames.ContainsKey(mapId))
-        {
-            return $"{baseName} <{MapNames[mapId]}>";
-        }
-
-        return $"{baseName}";
-    }
 
     public static string GetMapNameFromFilename(string filename)
     {

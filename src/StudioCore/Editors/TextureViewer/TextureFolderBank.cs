@@ -356,11 +356,13 @@ public static class TextureFolderBank
             Name = name;
             Path = path;
             WasModified = false;
+            CachedName = null;
         }
 
         public TextureViewCategory Category { get; set; }
 
         public string Name { get; set; }
+        public string CachedName { get; set; }
         public string Path { get; set; }
 
         public bool IsModFile { get; set; }

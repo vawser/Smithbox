@@ -194,10 +194,10 @@ public class AssetBrowserScreen
             ImguiUtils.WrappedText("Assets:");
             ImGui.Separator();
 
-            DisplayBrowserList(AssetCategoryType.Character, ModelAliasBank.Bank.AliasNames.GetEntries("Characters"), _characterNameCache);
-            DisplayBrowserList(AssetCategoryType.Asset, ModelAliasBank.Bank.AliasNames.GetEntries("Objects"), _objectNameCache);
-            DisplayBrowserList(AssetCategoryType.Part, ModelAliasBank.Bank.AliasNames.GetEntries("Parts"), _partNameCache);
-            DisplayBrowserList_MapPiece(AssetCategoryType.MapPiece, ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
+            DisplayBrowserList(AssetCategoryType.Character, _characterNameCache);
+            DisplayBrowserList(AssetCategoryType.Asset, _objectNameCache);
+            DisplayBrowserList(AssetCategoryType.Part, _partNameCache);
+            DisplayBrowserList_MapPiece(AssetCategoryType.MapPiece);
         }
 
         ImGui.End();
@@ -274,18 +274,24 @@ public class AssetBrowserScreen
 
         foreach (var mapId in _mapPieceNameCache.Keys)
         {
-            var labelName = MapAliasBank.GetFormattedMapName(mapId, mapId);
-
-            if (ImGui.Selectable($"MapPieces: {labelName}", _selectedAssetMapId == mapId))
+            if (ImGui.Selectable($"MapPieces: {mapId}", _selectedAssetMapId == mapId))
             {
                 _selectedAssetMapId = mapId;
                 _selectedAssetType = AssetCategoryType.MapPiece;
             }
+
+            if (CFG.Current.AssetBrowser_ShowAliasesInBrowser)
+            {
+                var labelName = AliasUtils.GetMapNameAlias(mapId);
+                AliasUtils.DisplayAlias(labelName);
+            }
         }
     }
 
-    private void DisplayBrowserList(AssetCategoryType assetType, List<AliasReference> referenceList, List<string> nameCache)
+    private void DisplayBrowserList(AssetCategoryType assetType, List<string> nameCache)
     {
+        var referenceList = AliasUtils.GetAliasReferenceList(assetType);
+
         if (updateScrollPosition)
         {
             updateScrollPosition = false;
@@ -319,18 +325,8 @@ public class AssetBrowserScreen
                 var refName = "";
                 var refTagList = new List<string>();
 
-                // Alias contains name
                 if (referenceDict.ContainsKey(lowerName))
                 {
-                    displayedName = displayedName + $" <{referenceDict[lowerName].name}>";
-
-                    // Append tags to to displayed name
-                    if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
-                    {
-                        var tagString = string.Join(" ", referenceDict[lowerName].tags);
-                        displayedName = $"{displayedName} {{ {tagString} }}";
-                    }
-
                     refID = referenceDict[lowerName].id;
                     refName = referenceDict[lowerName].name;
                     refTagList = referenceDict[lowerName].tags;
@@ -358,13 +354,32 @@ public class AssetBrowserScreen
                         _refUpdateName = refName;
                         _refUpdateTags = PresentationUtils.GetTagListString(refTagList);
                     }
+
+                    // Alias
+                    if (referenceDict.ContainsKey(lowerName))
+                    {
+                        if (CFG.Current.AssetBrowser_ShowAliasesInBrowser)
+                        {
+                            var aliasName = referenceDict[lowerName].name;
+                            AliasUtils.DisplayAlias(aliasName);
+                        }
+
+                        // Tags
+                        if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
+                        {
+                            var tagString = string.Join(" ", referenceDict[lowerName].tags);
+                            AliasUtils.DisplayTagAlias(tagString);
+                        }
+                    }
                 }
             }
         }
     }
 
-    private void DisplayBrowserList_MapPiece(AssetCategoryType assetType, List<AliasReference> referenceList)
+    private void DisplayBrowserList_MapPiece(AssetCategoryType assetType)
     {
+        var referenceList = AliasUtils.GetAliasReferenceList(assetType);
+
         var referenceDict = new Dictionary<string, AliasReference>();
 
         foreach (AliasReference v in referenceList)
@@ -405,14 +420,6 @@ public class AssetBrowserScreen
 
                     if (referenceDict.ContainsKey(lowerName))
                     {
-                        displayedName = displayedName + $" <{referenceDict[lowerName].name}>";
-
-                        if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
-                        {
-                            var tagString = string.Join(" ", referenceDict[lowerName].tags);
-                            displayedName = $"{displayedName} {{ {tagString} }}";
-                        }
-
                         refID = referenceDict[lowerName].id;
                         refName = referenceDict[lowerName].name;
                         refTagList = referenceDict[lowerName].tags;
@@ -427,6 +434,23 @@ public class AssetBrowserScreen
                             _refUpdateId = refID;
                             _refUpdateName = refName;
                             _refUpdateTags = PresentationUtils.GetTagListString(refTagList);
+                        }
+
+                        // Alias
+                        if (referenceDict.ContainsKey(lowerName))
+                        {
+                            if (CFG.Current.AssetBrowser_ShowAliasesInBrowser)
+                            {
+                                var aliasName = referenceDict[lowerName].name;
+                                AliasUtils.DisplayAlias(aliasName);
+                            }
+
+                            // Tags
+                            if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
+                            {
+                                var tagString = string.Join(" ", referenceDict[lowerName].tags);
+                                AliasUtils.DisplayTagAlias(tagString);
+                            }
                         }
                     }
                 }

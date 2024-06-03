@@ -521,12 +521,16 @@ public class CFG
     //****************************
     public bool Interface_Display_Alias_for_Particles = true;
 
-
     //****************************
     // Settings: Texture Viewer
     //****************************
-    public bool TextureViewer_FileList_ShowAliasName = true;
-    public bool TextureViewer_TextureList_ShowAliasName = false;
+    public bool TextureViewer_FileList_ShowLowDetail_Entries = true;
+
+    public bool TextureViewer_FileList_ShowAliasName_Characters = true;
+    public bool TextureViewer_FileList_ShowAliasName_Assets = true;
+    public bool TextureViewer_FileList_ShowAliasName_Parts = true;
+
+    public bool TextureViewer_TextureList_ShowAliasName_Particles = true;
 
     public string TextureViewerToolbar_ExportTextureLocation = "";
     public bool TextureViewerToolbar_ExportTexture_IncludeFolder = true;
@@ -538,6 +542,7 @@ public class CFG
     //****************************
     public bool AliasBank_EditorMode = false;
 
+    public bool AssetBrowser_ShowAliasesInBrowser = true;
     public bool AssetBrowser_ShowTagsInBrowser = true;
     public bool AssetBrowser_ShowLowDetailParts = false;
     public bool AssetBrowser_UpdateName = true;

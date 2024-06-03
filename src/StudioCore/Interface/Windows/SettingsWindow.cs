@@ -156,6 +156,9 @@ public class SettingsWindow
             // General
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                ImGui.Checkbox("Display aliases in browser list", ref CFG.Current.AssetBrowser_ShowAliasesInBrowser);
+                ImguiUtils.ShowHoverTooltip("Show the aliases for each entry within the browser list as part of their displayed name.");
+
                 ImGui.Checkbox("Display tags in browser list", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
                 ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
 
@@ -824,6 +827,12 @@ public class SettingsWindow
     {
         if (ImGui.BeginTabItem("Gparam Editor"))
         {
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Display aliases in file list", ref CFG.Current.Interface_Display_Alias_for_Gparam);
+                ImguiUtils.ShowHoverTooltip("Toggle the display of the aliases in the file list.");
+            }
+
             if (ImGui.CollapsingHeader("Groups", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Show add button for missing groups", ref CFG.Current.Gparam_DisplayAddGroups);
@@ -922,10 +931,25 @@ public class SettingsWindow
     {
         if (ImGui.BeginTabItem("Texture Viewer"))
         {
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("File List", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Show alias name in file list", ref CFG.Current.TextureViewer_FileList_ShowAliasName);
-                ImguiUtils.ShowHoverTooltip("Show matching alias names along side the texture container in the file list if possible.");
+                ImGui.Checkbox("Show character names", ref CFG.Current.TextureViewer_FileList_ShowAliasName_Characters);
+                ImguiUtils.ShowHoverTooltip("Show matching character aliases within the file list.");
+
+                ImGui.Checkbox("Show asset names", ref CFG.Current.TextureViewer_FileList_ShowAliasName_Assets);
+                ImguiUtils.ShowHoverTooltip("Show matching asset/object aliases within the file list.");
+
+                ImGui.Checkbox("Show part names", ref CFG.Current.TextureViewer_FileList_ShowAliasName_Parts);
+                ImguiUtils.ShowHoverTooltip("Show matching part aliases within the file list.");
+
+                ImGui.Checkbox("Show low detail entries", ref CFG.Current.TextureViewer_FileList_ShowLowDetail_Entries);
+                ImguiUtils.ShowHoverTooltip("Show the low-detail texture containers.");
+            }
+
+            if (ImGui.CollapsingHeader("Texture List", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Show particle names", ref CFG.Current.TextureViewer_TextureList_ShowAliasName_Particles);
+                ImguiUtils.ShowHoverTooltip("Show matching particle aliases within the texture list.");
             }
 
             ImGui.EndTabItem();

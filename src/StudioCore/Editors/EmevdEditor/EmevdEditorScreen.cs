@@ -97,12 +97,6 @@ public class EmevdEditorScreen : EditorScreen
         foreach (var (info, binder) in EmevdBank.ScriptBank)
         {
             var displayName = $"{info.Name}";
-            var mapName = MapAliasBank.GetMapName(info.Name);
-
-            if(mapName != "")
-            {
-                displayName = $"{info.Name} <{mapName}>";
-            }
 
             if (ImGui.Selectable(displayName, info.Name == _selectedScriptKey))
             {
@@ -110,6 +104,8 @@ public class EmevdEditorScreen : EditorScreen
                 _selectedFileInfo = info;
                 _selectedScript = binder;
             }
+            var aliasName = AliasUtils.GetMapNameAlias(info.Name);
+            AliasUtils.DisplayAlias(aliasName);
         }
 
         ImGui.End();

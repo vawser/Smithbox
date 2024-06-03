@@ -58,10 +58,6 @@ public class GparamNameTab
             }
         }
 
-        ImGui.SameLine();
-        ImGui.Checkbox("Toggle Display in Editor", ref CFG.Current.Interface_Display_Alias_for_Gparam);
-        ImguiUtils.ShowHoverTooltip("Toggle the display of the File aliases in the Gparam Editor.");
-
         ImGui.Separator();
 
         if (ShowNameAddSection)

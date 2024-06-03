@@ -22,826 +22,140 @@
       ]
     },
     {
-      "id": "m30_00_0000",
+      "id": "m30_00",
       "name": "High Wall of Lothric",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m30_00_0010",
-      "name": "High Wall of Lothric",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m30_00_0020",
-      "name": "High Wall of Lothric",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m30_00_0050",
-      "name": "High Wall of Lothric",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m30_00_0100",
-      "name": "High Wall of Lothric",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m30_00_0110",
-      "name": "High Wall of Lothric",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m30_00_0200",
-      "name": "High Wall of Lothric",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m30_01_0000",
+      "id": "m30_01",
       "name": "Lothric Castle",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m30_01_0010",
-      "name": "Lothric Castle",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m30_01_0050",
-      "name": "Lothric Castle",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m30_01_0100",
-      "name": "Lothric Castle",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m30_01_0110",
-      "name": "Lothric Castle",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m30_01_0210",
-      "name": "Lothric Castle",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m31_00_0000",
+      "id": "m31_00",
       "name": "Undead Settlement",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m31_00_0010",
-      "name": "Undead Settlement",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m31_00_0020",
-      "name": "Undead Settlement",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m31_00_0030",
-      "name": "Undead Settlement",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m31_00_0050",
-      "name": "Undead Settlement",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m31_00_0100",
-      "name": "Undead Settlement",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m31_00_0110",
-      "name": "Undead Settlement",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m32_00_0000",
+      "id": "m32_00",
       "name": "Archdragon Peak",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m32_00_0010",
-      "name": "Archdragon Peak",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m32_00_0050",
-      "name": "Archdragon Peak",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m32_00_0060",
-      "name": "Archdragon Peak",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m32_00_0100",
-      "name": "Archdragon Peak",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m32_00_0110",
-      "name": "Archdragon Peak",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0000",
+      "id": "m33_00",
       "name": "Farron Keep",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m33_00_0010",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0050",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0100",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0110",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0200",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0210",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0300",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0310",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0400",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0410",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0500",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0510",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0600",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m33_00_0700",
-      "name": "Farron Keep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m34_01_0000",
+      "id": "m34_01",
       "name": "Grand Archives",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m34_01_0010",
-      "name": "Grand Archives",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m34_01_0050",
-      "name": "Grand Archives",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m34_01_0110",
-      "name": "Grand Archives",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m35_00_00_00",
+      "id": "m35_00",
       "name": "Cathedral of the Deep",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m35_00_0000",
-      "name": "Cathedral of the Deep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m35_00_0001",
-      "name": "Cathedral of the Deep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m35_00_0010",
-      "name": "Cathedral of the Deep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m35_00_0050",
-      "name": "Cathedral of the Deep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m35_00_0100",
-      "name": "Cathedral of the Deep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m35_00_0110",
-      "name": "Cathedral of the Deep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m35_00_0200",
-      "name": "Cathedral of the Deep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m35_00_0210",
-      "name": "Cathedral of the Deep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m35_00_0300",
-      "name": "Cathedral of the Deep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m35_00_0310",
-      "name": "Cathedral of the Deep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m35_00_0500",
-      "name": "Cathedral of the Deep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m35_00_0510",
-      "name": "Cathedral of the Deep",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m37_00_0000",
+      "id": "m37_00",
       "name": "Irithyll of the Boreal Valley",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m37_00_0010",
-      "name": "Irithyll of the Boreal Valley",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m37_00_0050",
-      "name": "Irithyll of the Boreal Valley",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m37_00_0100",
-      "name": "Irithyll of the Boreal Valley",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m37_00_0110",
-      "name": "Irithyll of the Boreal Valley",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m37_00_0200",
-      "name": "Irithyll of the Boreal Valley",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m37_00_0210",
-      "name": "Irithyll of the Boreal Valley",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m37_00_0300",
-      "name": "Irithyll of the Boreal Valley",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m37_00_0310",
-      "name": "Irithyll of the Boreal Valley",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m37_00_0400",
-      "name": "Irithyll of the Boreal Valley",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m37_00_0410",
-      "name": "Irithyll of the Boreal Valley",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m37_00_0500",
-      "name": "Irithyll of the Boreal Valley",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m37_00_0510",
-      "name": "Irithyll of the Boreal Valley",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m38_00_0000",
+      "id": "m38_00",
       "name": "Catacombs of Carthus",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m38_00_0002",
-      "name": "Catacombs of Carthus",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m38_00_0050",
-      "name": "Catacombs of Carthus",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m38_00_0100",
-      "name": "Catacombs of Carthus",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m38_00_0200",
-      "name": "Catacombs of Carthus",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m38_00_0600",
-      "name": "Catacombs of Carthus",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m39_00_0000",
+      "id": "m39_00",
       "name": "Irithyll Dungeon",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m39_00_0050",
-      "name": "Irithyll Dungeon",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m39_00_0100",
-      "name": "Irithyll Dungeon",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m39_00_0200",
-      "name": "Irithyll Dungeon",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m39_00_0300",
-      "name": "Irithyll Dungeon",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m39_00_0500",
-      "name": "Irithyll Dungeon",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m40_00_0000",
+      "id": "m40_00",
       "name": "Cemetery of Ash",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m40_00_0010",
-      "name": "Untended Graves",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m40_00_0510",
-      "name": "Cemetery of Ash",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m41_00_0000",
+      "id": "m41_00",
       "name": "Kiln of Flame",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m41_00_0100",
-      "name": "Kiln of Flame",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m41_00_0200",
-      "name": "Kiln of Flame",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m41_00_0800",
-      "name": "Kiln of Flame",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m41_00_0900",
-      "name": "Kiln of Flame",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m45_00_0000",
+      "id": "m45_00",
       "name": "Ariandel",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m45_00_0100",
-      "name": "Ariandel",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m45_00_0200",
-      "name": "Ariandel",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m45_00_0300",
-      "name": "Ariandel",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m45_00_0400",
-      "name": "Ariandel",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m45_00_0500",
-      "name": "Ariandel",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m45_00_0600",
-      "name": "Ariandel",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m45_00_0700",
-      "name": "Ariandel",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m45_00_0800",
-      "name": "Ariandel",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m45_00_0900",
-      "name": "Ariandel",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m46_00_0000",
+      "id": "m46_00",
       "name": "Arena - Grand Roof",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m47_00_0000",
+      "id": "m47_00",
       "name": "Arena - Kiln of Flame",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m47_00_0100",
-      "name": "Arena - Kiln of Flame",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m47_00_0200",
-      "name": "Arena - Kiln of Flame",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m47_00_0800",
-      "name": "Arena - Kiln of Flame",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m47_00_0900",
-      "name": "Arena - Kiln of Flame",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m50_00_0000",
+      "id": "m50_00",
       "name": "Dreg Heap",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m50_00_0100",
-      "name": "Dreg Heap",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m50_00_0200",
-      "name": "Dreg Heap",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m50_00_0300",
-      "name": "Dreg Heap",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m51_00_0000",
+      "id": "m51_00",
       "name": "Ringed City",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m51_00_0100",
-      "name": "Ringed City",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m51_00_0200",
-      "name": "Ringed City",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m51_01_0000",
+      "id": "m51_01",
       "name": "Filianore\u0027s Rest",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m51_01_0005",
-      "name": "Filianore\u0027s Rest",
-      "tags": [
-        ""
-      ]
-    },
-    {
-      "id": "m53_00_0000",
+      "id": "m53_00",
       "name": "Arena - Dragon Ruins",
       "tags": [
         ""
       ]
     },
     {
-      "id": "m54_00_0000",
+      "id": "m54_00",
       "name": "Arena - Round Plaza",
       "tags": [
         ""

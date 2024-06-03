@@ -123,6 +123,7 @@ namespace SoulsFormats
             /// The name of the texture; should not include a path or extension.
             /// </summary>
             public string Name { get; set; }
+            public string CachedName { get; set; }
 
             /// <summary>
             /// Indicates format of the texture.
@@ -164,6 +165,7 @@ namespace SoulsFormats
             /// </summary>
             public Texture()
             {
+                CachedName = null;
                 Name = "Unnamed";
                 Bytes = new byte[0];
             }
@@ -173,6 +175,7 @@ namespace SoulsFormats
             /// </summary>
             public Texture(string name, byte format, byte flags1, byte[] bytes)
             {
+                CachedName = null;
                 Name = name;
                 Format = format;
                 Flags1 = flags1;
@@ -190,6 +193,8 @@ namespace SoulsFormats
 
             internal Texture(BinaryReaderEx br, TPFPlatform platform, byte flag2, byte encoding)
             {
+                CachedName = null;
+
                 uint fileOffset = br.ReadUInt32();
                 int fileSize = br.ReadInt32();
 

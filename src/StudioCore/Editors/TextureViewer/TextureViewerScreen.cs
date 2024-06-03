@@ -23,6 +23,7 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -66,8 +67,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public TextureToolbar_ActionList _textureToolbar_ActionList;
     public TextureToolbar_Configuration _textureToolbar_Configuration;
 
-    private static Dictionary<string, string> ContainerNameCache = new Dictionary<string, string>();
-
     private SubTexture _cachedPreviewSubtexture;
 
     public TextureViewerScreen(Sdl2Window window, GraphicsDevice device)
@@ -85,21 +84,10 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     {
 
     }
-
-    private List<AliasReference> _chrNameCache = new List<AliasReference>();
-    private List<AliasReference> _objNameCache = new List<AliasReference>();
-    private List<AliasReference> _partNameCache = new List<AliasReference>();
-    private List<AliasReference> _sfxNameCache = new List<AliasReference>();
-
     private ShoeboxLayoutContainer shoeboxContainer = null;
 
     public void OnProjectChanged()
     {
-        _chrNameCache = ModelAliasBank.Bank.AliasNames.GetEntries("Characters");
-        _objNameCache = ModelAliasBank.Bank.AliasNames.GetEntries("Objects");
-        _partNameCache = ModelAliasBank.Bank.AliasNames.GetEntries("Parts");
-        _sfxNameCache = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
-
         if (Project.Type is ProjectType.ER or ProjectType.AC6)
         {
             string sourcePath = $@"menu\hi\01_common.sblytbnd.dcx";
@@ -148,8 +136,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         _selectedTextureKey = "";
         _selectedTexture = null;
-
-        ContainerNameCache = new Dictionary<string, string>();
     }
 
     public void DrawEditorMenu()
@@ -343,93 +329,32 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             {
                 if (info.Category == displayCategory)
                 {
-                    if (SearchFilters.IsEditorSearchMatch(_fileSearchInput, info.Name, "_"))
+                    if (SearchFilters.IsTextureSearchMatch(_fileSearchInput, info.Name, "_", info.CachedName))
                     {
+                        if(!CFG.Current.TextureViewer_FileList_ShowLowDetail_Entries)
+                        {
+                            if(info.Name.Contains("_l"))
+                            {
+                                continue;
+                            }
+                        }
+
                         ImGui.BeginGroup();
 
                         var displayName = info.Name;
-
-                        if (CFG.Current.TextureViewer_FileList_ShowAliasName)
-                        {
-                            if (ContainerNameCache.ContainsKey(info.Name))
-                            {
-                                displayName = ContainerNameCache[info.Name];
-                            }
-                            else
-                            {
-                                displayName = GetContainerDisplayName(info.Name, displayCategory);
-                                ContainerNameCache.Add(info.Name, displayName);
-                            }
-                        }
 
                         if (ImGui.Selectable($@" {displayName}", info.Name == _selectedTextureContainerKey))
                         {
                             SelectTextureContainer(info);
                         }
+                        var alias = AliasUtils.GetTextureContainerAliasName(info);
+                        AliasUtils.DisplayAlias(alias);
 
                         ImGui.EndGroup();
                     }
                 }
             }
-
         }
-    }
-
-    private string GetContainerDisplayName(string containerName, TextureViewCategory displayCategory)
-    {
-        List<string> _nameCache = null;
-        string newName = containerName;
-
-        // Characters
-        if (displayCategory == TextureViewCategory.Character)
-        {
-            newName = AppendAliasToName(newName, _chrNameCache, displayCategory);
-        }
-
-        // Object
-        if (displayCategory == TextureViewCategory.Asset || displayCategory == TextureViewCategory.Object)
-        {
-            newName = AppendAliasToName(newName, _objNameCache, displayCategory);
-        }
-
-        // Parts
-        if (displayCategory == TextureViewCategory.Part)
-        {
-            newName = AppendAliasToName(newName, _partNameCache, displayCategory);
-        }
-
-        // Particles
-        if (displayCategory == TextureViewCategory.Particle)
-        {
-            newName = AppendAliasToName(newName, _sfxNameCache, displayCategory);
-        }
-
-        // MapPieces
-        // Not supported yet
-
-        return newName;
-    }
-
-    private string AppendAliasToName(string name, List<AliasReference> nameCache, TextureViewCategory displayCategory)
-    {
-        var displayedName = $"{name}";
-
-        foreach (var entry in nameCache)
-        {
-            // Convert the texture usage of aet to aeg to match with the stored aliases.
-            if(displayCategory == TextureViewCategory.Asset)
-            {
-                name = name.Replace("aet", "aeg");
-            }
-
-            if (name.Contains(entry.id))
-            {
-                displayedName = displayedName + $" {{ {entry.name} }}";
-                break;
-            }
-        }
-
-        return displayedName;
     }
 
     private void SelectTextureContainer(TextureViewInfo info)

@@ -100,5 +100,4 @@ Texture Viewer:
 
 #--------------------------------------
 # Notes
-#-------------------------------------- =
-Check alias name 'instances' to make sure the cached name is invalidated when the source alias is updated
+#-------------------------------------- 
