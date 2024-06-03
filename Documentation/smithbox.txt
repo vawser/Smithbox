@@ -61,6 +61,8 @@ General:
  - Look into thumbnail generation for Chr/Asset/Parts
  - Add articles covering all of the features and common use-cases in Smithbox
  
+ - Check alias name 'instances' to make sure the cached name is invalidated when the source alias is updated
+ 
 Map Editor: 
  - Add .BTAB support
  - Add .GRASS support
@@ -101,4 +103,4 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #-------------------------------------- 
-Param pinned rows (not visible) will not allow you to select the non-pinned version (probably applies to rows/fields too)
+Param pinned rows need to use unique imgui key, otherwise they conflict with actual param row

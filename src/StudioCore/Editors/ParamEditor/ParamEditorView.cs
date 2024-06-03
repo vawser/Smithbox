@@ -156,7 +156,7 @@ public class ParamEditorView
                 }
 
                 ImGui.Indent(15.0f * scale);
-                if (ImGui.Selectable(paramKey, paramKey == _selection.GetActiveParam()))
+                if (ImGui.Selectable($"{paramKey}##pin{paramKey}", paramKey == _selection.GetActiveParam()))
                 {
                     EditorCommandQueue.AddCommand($@"param/view/{_viewIndex}/{paramKey}");
                 }
