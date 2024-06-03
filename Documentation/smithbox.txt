@@ -101,3 +101,4 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #-------------------------------------- 
+Param pinned rows (not visible) will not allow you to select the non-pinned version (probably applies to rows/fields too)

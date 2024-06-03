@@ -112,8 +112,15 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 sourcePath = $@"{Project.GameRootDirectory}\{sourcePath}";
             }
 
-            shoeboxContainer = new ShoeboxLayoutContainer(sourcePath);
-            shoeboxContainer.BuildTextureDictionary();
+            if (File.Exists(sourcePath))
+            {
+                shoeboxContainer = new ShoeboxLayoutContainer(sourcePath);
+                shoeboxContainer.BuildTextureDictionary();
+            }
+            else
+            {
+                TaskLogs.AddLog($"Failed to load Shoebox Layout: {sourcePath}");
+            }
         }
         else
         {
