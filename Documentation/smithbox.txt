@@ -61,8 +61,6 @@ General:
  - Look into thumbnail generation for Chr/Asset/Parts
  - Add articles covering all of the features and common use-cases in Smithbox
  
- - Check alias name 'instances' to make sure the cached name is invalidated when the source alias is updated
- 
 Map Editor: 
  - Add .BTAB support
  - Add .GRASS support
@@ -103,4 +101,5 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #-------------------------------------- 
-Param pinned rows need to use unique imgui key, otherwise they conflict with actual param row
+Look into issue with SoapstoneServer connection between Smithbox and DarkScript3, currently cross-ref doesn't work
+Check alias name 'instances' to make sure the cached name is invalidated when the source alias is updated

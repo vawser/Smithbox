@@ -357,7 +357,7 @@ public class Smithbox
         {
             TaskManager.RunPassiveTask(new TaskManager.LiveTask("Soapstone Server",
                 TaskManager.RequeueType.None, true,
-                () => SoapstoneServer.RunAsync(KnownServer.DSMapStudio, _soapstoneService).Wait()));
+                () => SoapstoneServer.RunAsync(KnownServer.Smithbox, _soapstoneService).Wait()));
         }
 
         if (CFG.Current.System_Check_Program_Update)

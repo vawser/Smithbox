@@ -19,6 +19,11 @@ namespace SoapstoneLib
         public static readonly KnownServer DSMapStudio = new KnownServer(22720, "DSMapStudio");
 
         /// <summary>
+        /// Standard server info for Smithbox.
+        /// </summary>
+        public static readonly KnownServer Smithbox = new KnownServer(22721, "Smithbox");
+
+        /// <summary>
         /// Expected local process name of this server. This usually matches the exe name.
         /// </summary>
         public string ProcessName { get; }
