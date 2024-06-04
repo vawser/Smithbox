@@ -499,7 +499,6 @@ public class CFG
     public bool Gparam_DisplayAddGroups = true;
     public bool Gparam_DisplayAddFields = true;
 
-
     public bool Gparam_ColorEdit_RGB = true;
     public bool Gparam_ColorEdit_Decimal = false;
     public bool Gparam_ColorEdit_HSV = false;

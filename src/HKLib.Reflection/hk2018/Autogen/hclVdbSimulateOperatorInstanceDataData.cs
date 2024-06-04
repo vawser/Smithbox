@@ -1,0 +1,101 @@
+// Automatically Generated
+
+using System.Diagnostics.CodeAnalysis;
+using HKLib.hk2018;
+
+namespace HKLib.Reflection.hk2018;
+
+internal class hclVdbSimulateOperatorInstanceDataData : HavokData<hclVdbSimulateOperatorInstanceData> 
+{
+    public hclVdbSimulateOperatorInstanceDataData(HavokType type, hclVdbSimulateOperatorInstanceData instance) : base(type, instance) {}
+
+    public override bool TryGetField<TGet>(string fieldName, [MaybeNull] out TGet value)
+    {
+        value = default;
+        switch (fieldName)
+        {
+            case "m_propertyBag":
+            case "propertyBag":
+            {
+                if (instance.m_propertyBag is not TGet castValue) return false;
+                value = castValue;
+                return true;
+            }
+            case "m_stateId":
+            case "stateId":
+            {
+                if (instance.m_stateId is not TGet castValue) return false;
+                value = castValue;
+                return true;
+            }
+            case "m_configIndex":
+            case "configIndex":
+            {
+                if (instance.m_configIndex is not TGet castValue) return false;
+                value = castValue;
+                return true;
+            }
+            case "m_overriddenSubSteps":
+            case "overriddenSubSteps":
+            {
+                if (instance.m_overriddenSubSteps is not TGet castValue) return false;
+                value = castValue;
+                return true;
+            }
+            case "m_overridden":
+            case "overridden":
+            {
+                if (instance.m_overridden is not TGet castValue) return false;
+                value = castValue;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+    public override bool TrySetField<TSet>(string fieldName, TSet value)
+    {
+        switch (fieldName)
+        {
+            case "m_propertyBag":
+            case "propertyBag":
+            {
+                if (value is not hkPropertyBag castValue) return false;
+                instance.m_propertyBag = castValue;
+                return true;
+            }
+            case "m_stateId":
+            case "stateId":
+            {
+                if (value is not uint castValue) return false;
+                instance.m_stateId = castValue;
+                return true;
+            }
+            case "m_configIndex":
+            case "configIndex":
+            {
+                if (value is not uint castValue) return false;
+                instance.m_configIndex = castValue;
+                return true;
+            }
+            case "m_overriddenSubSteps":
+            case "overriddenSubSteps":
+            {
+                if (value is not uint castValue) return false;
+                instance.m_overriddenSubSteps = castValue;
+                return true;
+            }
+            case "m_overridden":
+            case "overridden":
+            {
+                if (value is not bool castValue) return false;
+                instance.m_overridden = castValue;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+}

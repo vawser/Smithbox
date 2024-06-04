@@ -9,8 +9,9 @@ using System.Numerics;
 using System.Reflection;
 using Veldrid;
 using Veldrid.Sdl2;
-using static SoulsFormats.HKX;
 using static StudioCore.Editors.BehaviorEditor.BehaviorBank;
+using HKLib.Serialization.hk2018.Binary;
+using HKLib.Serialization.hk2018.Xml;
 
 namespace StudioCore.BehaviorEditor;
 
@@ -63,7 +64,7 @@ public class BehaviorEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_BehaviorEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Project.Type != ProjectType.DS3)
+        if (Project.Type != ProjectType.ER)
         {
             ImGui.Begin("Editor##InvalidBehaviorEditor");
 
@@ -119,7 +120,7 @@ public class BehaviorEditorScreen : EditorScreen
     public void BehaviorHkxSelectView()
     {
         // HKX
-        ImGui.Begin("HKX##HkxFileList");
+        ImGui.Begin("HKX##BehaviorHkxFileList");
 
         if (_selectedFileInfo != null)
         {
@@ -142,16 +143,10 @@ public class BehaviorEditorScreen : EditorScreen
     public void BehaviorHkxTreeView()
     {
         // Class
-        ImGui.Begin("Tree##HkxTree");
+        ImGui.Begin("Data##BehaviorHkxTree");
 
         if(_selectedHkxFileInfo != null)
         {
-            HKXSection section = _selectedHkxFileInfo.Entry.DataSection;
-
-            // Class Section
-            ImGui.Text($"{section.SectionID}");
-            ImGui.Text($"{section.SectionTag}");
-
 
         }
 

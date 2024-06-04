@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+        <Platforms>AnyCPU;x64</Platforms>
+        <LangVersion>11</LangVersion>
+        <TargetFramework>net7.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="hk2018\Autogen\UnitTest\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="hk2018\Autogen\UnitTest\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="hk2018\Autogen\UnitTest\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="hk2018\Manual\hk" />
+    </ItemGroup>
+
+</Project>

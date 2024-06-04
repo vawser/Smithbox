@@ -19,7 +19,7 @@ namespace SoulsFormats
         public static bool IsFlexible { get; set; }
 
         private Stack<long> _steps;
-        private Memory<byte> _memory;
+        public Memory<byte> _memory;
 
         /// <summary>
         /// Interpret values as big-endian if set, or little-endian if not.

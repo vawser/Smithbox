@@ -1,0 +1,20 @@
+// Automatically Generated
+
+namespace HKLib.hk2018.hkReflect.Type;
+
+public enum FlagBits : int
+{
+    TYPE_NOT_SERIALIZABLE = 1,
+    TYPE_ABSTRACT = 2,
+    TYPE_DECORATOR_HACK = 4,
+    TYPE_PROPERTY = 8,
+    TYPE_INTERFACE = 16,
+    TYPE_DYNAMIC = 32,
+    TYPE_POINTER_WEAK = 64,
+    TYPE_OWN_VTABLE = 128,
+    TYPE_IS_ATTRIBUTE = 256,
+    TYPE_NOT_RETARGETABLE = 512,
+    TYPE_SYNTHETIC = 1024,
+    TYPE_FOREIGN = 2048,
+    TYPE_TEMPORARY = 4096
+}

@@ -264,6 +264,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HKLib.Reflection\HKLib.Reflection.csproj" />
+    <ProjectReference Include="..\HKLib.Serialization\HKLib.Serialization.csproj" />
+    <ProjectReference Include="..\HKLib\HKLib.csproj" />
     <ProjectReference Include="..\SoapstoneLib\SoapstoneLib\SoapstoneLib.csproj" />
     <ProjectReference Include="..\Andre\Andre.Formats\Andre.Formats.csproj" />
     <ProjectReference Include="..\HKX2\HKX2\HKX2.csproj" />

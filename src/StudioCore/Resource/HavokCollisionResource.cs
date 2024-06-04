@@ -8,6 +8,10 @@ using System.Linq;
 using System.Numerics;
 using Veldrid.Utilities;
 using Vortice.Vulkan;
+using HKLib;
+using HKLib.Serialization;
+using System.IO;
+using HKLib.Serialization.hk2018.Binary;
 
 namespace StudioCore.Resource;
 
@@ -23,18 +27,26 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool _Load(Memory<byte> bytes, AccessLevel al)
     {
-        if (Project.Type == ProjectType.BB)
+        // HKLib - ER
+        if (Project.Type == ProjectType.ER)
         {
-            Hkx = HKX.Read(bytes, HKX.HKXVariation.HKXBloodBorne);
+
         }
+        // HKX2 - DS3
         else if (Project.Type == ProjectType.DS3)
         {
             DCX.Type t;
             Memory<byte> decomp = DCX.Decompress(bytes, out t);
             var br = new BinaryReaderEx(false, decomp);
-            var des = new PackFileDeserializer();
-            Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
+            var des = new HKX2.PackFileDeserializer();
+            Hkx2 = (HKX2.hkRootLevelContainer)des.Deserialize(br);
         }
+        // HKX - BB
+        if (Project.Type == ProjectType.BB)
+        {
+            Hkx = HKX.Read(bytes, HKX.HKXVariation.HKXBloodBorne);
+        }
+        // HKX - DS2 / DS1
         else
         {
             Hkx = HKX.Read(bytes);
@@ -49,29 +61,42 @@ public class HavokCollisionResource : IResource, IDisposable
             FrontFace = VkFrontFace.CounterClockwise;
         }
 
+        if (Project.Type == ProjectType.ER)
+        {
+            return LoadInternal_ER(al);
+        }
+
         if (Project.Type == ProjectType.DS3)
         {
-            return LoadInternalNew(al);
+            return LoadInternal_DS3(al);
         }
 
 
-        return LoadInternal(al);
+        return LoadInternal_HKX(al);
     }
 
     public bool _Load(string file, AccessLevel al)
     {
-        if (Project.Type == ProjectType.BB)
+        // HKLib - ER
+        if (Project.Type == ProjectType.ER)
         {
-            Hkx = HKX.Read(file, HKX.HKXVariation.HKXBloodBorne);
+            
         }
+        // HKX2 - DS3
         else if (Project.Type == ProjectType.DS3)
         {
             DCX.Type t;
             Memory<byte> decomp = DCX.Decompress(file, out t);
             var br = new BinaryReaderEx(false, decomp);
-            var des = new PackFileDeserializer();
-            Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
+            var des = new HKX2.PackFileDeserializer();
+            Hkx2 = (HKX2.hkRootLevelContainer)des.Deserialize(br);
         }
+        // HKX - BB
+        else if (Project.Type == ProjectType.BB)
+        {
+            Hkx = HKX.Read(file, HKX.HKXVariation.HKXBloodBorne);
+        }
+        // HKX - DS2 / DS1
         else
         {
             Hkx = HKX.Read(file);
@@ -86,12 +111,17 @@ public class HavokCollisionResource : IResource, IDisposable
             FrontFace = VkFrontFace.CounterClockwise;
         }
 
-        if (Project.Type == ProjectType.DS3)
+        if (Project.Type == ProjectType.ER)
         {
-            return LoadInternalNew(al);
+            return LoadInternal_ER(al);
         }
 
-        return LoadInternal(al);
+        if (Project.Type == ProjectType.DS3)
+        {
+            return LoadInternal_DS3(al);
+        }
+
+        return LoadInternal_HKX(al);
     }
 
     private unsafe void ProcessMesh(HKX.HKPStorageExtendedMeshShapeMeshSubpartStorage mesh, CollisionSubmesh dest)
@@ -396,18 +426,19 @@ public class HavokCollisionResource : IResource, IDisposable
         }
     }
 
-    private unsafe void ProcessMesh(fsnpCustomParamCompressedMeshShape mesh, hknpBodyCinfo bodyinfo,
+    // HKX2
+    private unsafe void ProcessMesh(HKX2.fsnpCustomParamCompressedMeshShape mesh, HKX2.hknpBodyCinfo bodyinfo,
         CollisionSubmesh dest)
     {
         var verts = new List<Vector3>();
         var indices = new List<int>();
 
-        hknpCompressedMeshShapeData coldata = mesh.m_data;
-        foreach (hkcdStaticMeshTreeBaseSection section in coldata.m_meshTree.m_sections)
+        HKX2.hknpCompressedMeshShapeData coldata = mesh.m_data;
+        foreach (HKX2.hkcdStaticMeshTreeBaseSection section in coldata.m_meshTree.m_sections)
         {
             for (var i = 0; i < (section.m_primitives.m_data & 0xFF); i++)
             {
-                hkcdStaticMeshTreeBasePrimitive tri =
+                HKX2.hkcdStaticMeshTreeBasePrimitive tri =
                     coldata.m_meshTree.m_primitives[i + (int)(section.m_primitives.m_data >> 8)];
                 //if (tri.Idx2 == tri.Idx3 && tri.Idx1 != tri.Idx2)
                 //{
@@ -589,7 +620,7 @@ public class HavokCollisionResource : IResource, IDisposable
         }
     }
 
-    private bool LoadInternal(AccessLevel al)
+    private bool LoadInternal_HKX(AccessLevel al)
     {
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
@@ -672,7 +703,8 @@ public class HavokCollisionResource : IResource, IDisposable
         return true;
     }
 
-    private bool LoadInternalNew(AccessLevel al)
+    // HKX2
+    private bool LoadInternal_DS3(AccessLevel al)
     {
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
@@ -685,11 +717,11 @@ public class HavokCollisionResource : IResource, IDisposable
                 return false;
             }
 
-            var physicsscene = (hknpPhysicsSceneData)Hkx2.m_namedVariants[0].m_variant;
+            var physicsscene = (HKX2.hknpPhysicsSceneData)Hkx2.m_namedVariants[0].m_variant;
 
-            foreach (hknpBodyCinfo bodyInfo in physicsscene.m_systemDatas[0].m_bodyCinfos)
+            foreach (HKX2.hknpBodyCinfo bodyInfo in physicsscene.m_systemDatas[0].m_bodyCinfos)
             {
-                if (bodyInfo.m_shape is not fsnpCustomParamCompressedMeshShape ncol)
+                if (bodyInfo.m_shape is not HKX2.fsnpCustomParamCompressedMeshShape ncol)
                 {
                     continue;
                 }
@@ -725,6 +757,12 @@ public class HavokCollisionResource : IResource, IDisposable
         }
 
         return true;
+    }
+
+    // HKLib
+    private bool LoadInternal_ER(AccessLevel al)
+    {
+        return false;
     }
 
     public bool RayCast(Ray ray, Matrix4x4 transform, Utils.RayCastCull cull, out float dist)

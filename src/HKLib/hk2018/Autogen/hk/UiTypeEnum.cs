@@ -1,0 +1,27 @@
+// Automatically Generated
+
+namespace HKLib.hk2018.hk;
+
+public enum UiTypeEnum : int
+{
+    UI_NONE = 0,
+    UI_VECTOR2 = 1,
+    UI_VECTOR3 = 2,
+    UI_VECTOR4 = 3,
+    UI_EXPANDABLE_LINK = 4,
+    UI_IMPL_CHOOSER = 5,
+    UI_COLLAPSIBLE_PANEL = 6,
+    UI_CURVE = 7,
+    UI_COLOR_PICKER = 8,
+    UI_COLOR_PICKER_ALPHA = 9,
+    UI_SLIDER = 10,
+    UI_SLIDER_WITHOUT_VALUE = 11,
+    UI_TAGLIST = 12,
+    UI_RADIOBUTTON = 13,
+    UI_CHECKBOX = 14,
+    UI_MULTILINE_TEXT = 15,
+    UI_LARGER_LINK = 16,
+    UI_ARRAY_OF_DERIVED_TYPES = 17,
+    UI_COMBOBOX = 18,
+    UI_TYPE_ENUM_SIZE = 19
+}

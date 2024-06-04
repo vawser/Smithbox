@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using HKLib.Serialization.hk2018;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Locators;
 using StudioCore.UserProject;
@@ -31,6 +32,9 @@ public static class BehaviorBank
         if (binder == null)
             return;
 
+        if (!info.IsModified)
+            return;
+
         TaskLogs.AddLog($"SaveBehavior: {info.Path}");
 
         var fileDir = @"\chr";
@@ -52,6 +56,9 @@ public static class BehaviorBank
 
         switch (Project.Type)
         {
+            case ProjectType.ER:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                break;
             case ProjectType.DS3:
                 fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
                 break;
@@ -181,6 +188,7 @@ public static class BehaviorBank
     {
         public BehaviorFileInfo(string name, string path)
         {
+            IsModified = false;
             Name = name;
             Path = path;
             HkxFiles = new List<HkxFileInfo>();
@@ -189,6 +197,7 @@ public static class BehaviorBank
 
         public string Name { get; set; }
         public string Path { get; set; }
+        public bool IsModified { get; set; }
 
         public List<HkxFileInfo> HkxFiles { get; set; }
 
@@ -197,13 +206,13 @@ public static class BehaviorBank
 
     public class HkxFileInfo
     {
-        public HkxFileInfo(string name, HKX hkx)
+        public HkxFileInfo(string name, HavokSerializer hkx)
         {
             Name = name;
             Entry = hkx;
         }
 
         public string Name { get; set; }
-        public HKX Entry { get; set; }
+        public HKLib.Serialization.hk2018.HavokSerializer Entry { get; set; }
     }
 }
