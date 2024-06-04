@@ -352,7 +352,7 @@ public class AssetBrowserScreen
                         _selectedName = refID;
                         _refUpdateId = refID;
                         _refUpdateName = refName;
-                        _refUpdateTags = PresentationUtils.GetTagListString(refTagList);
+                        _refUpdateTags = AliasUtils.GetTagListString(refTagList);
                     }
 
                     // Alias
@@ -433,7 +433,7 @@ public class AssetBrowserScreen
 
                             _refUpdateId = refID;
                             _refUpdateName = refName;
-                            _refUpdateTags = PresentationUtils.GetTagListString(refTagList);
+                            _refUpdateTags = AliasUtils.GetTagListString(refTagList);
                         }
 
                         // Alias

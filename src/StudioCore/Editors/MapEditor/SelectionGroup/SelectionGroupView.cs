@@ -152,7 +152,7 @@ public class SelectionGroupView
 
                         editPromptOldGroupName = entry.Name;
                         editPromptGroupName = entry.Name;
-                        editPromptTags = PresentationUtils.GetTagListString(entry.Tags);
+                        editPromptTags = AliasUtils.GetTagListString(entry.Tags);
                         editPromptKeybind = entry.SelectionGroupKeybind;
 
                         if(ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
@@ -401,7 +401,7 @@ public class SelectionGroupView
 
     private void AmendSelectionGroupBank(bool isEdit = false)
     {
-        List<string> tagList = PresentationUtils.GetTagList(createPromptTags);
+        List<string> tagList = AliasUtils.GetTagList(createPromptTags);
         List<string> selectionList = new List<string>();
 
         if (isEdit)
