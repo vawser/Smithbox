@@ -1,4 +1,6 @@
 ﻿using HKLib.Serialization.hk2018;
+using HKLib.Serialization.hk2018.Binary;
+using HKLib.Serialization.hk2018.Binary.Util;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Locators;
@@ -27,6 +29,15 @@ public static class BehaviorBank
         }
     }
 
+    public static byte[] ReadFully(Stream input)
+    {
+        using (MemoryStream ms = new MemoryStream())
+        {
+            input.CopyTo(ms);
+            return ms.ToArray();
+        }
+    }
+
     public static void SaveBehavior(BehaviorFileInfo info, IBinder binder)
     {
         if (binder == null)
@@ -44,7 +55,8 @@ public static class BehaviorBank
         {
             foreach (var hkxInfo in info.HkxFiles)
             {
-                file.Bytes = hkxInfo.Entry.Write();
+                // TODO
+                //file.Bytes = ReadFully(hkxInfo.Data);
             }
         }
 
@@ -163,15 +175,18 @@ public static class BehaviorBank
                 var filePath = file.Name;
                 var fileName = Path.GetFileNameWithoutExtension(file.Name);
 
+                // TODO
+                /*
                 if (filePath.Contains(".hkx") && filePath.Contains("Behaviors"))
                 {
+                    TaskLogs.AddLog(filePath);
                     try
                     {
-                        HKX cFile = HKX.Read(file.Bytes);
+                        BND4 bnd = BND4.Read(file.Bytes);
+                        byte[] data = bnd.Files.Single(x => x.Name == filePath).Bytes.ToArray();
 
-                        HkxFileInfo hkxInfoEntry = new HkxFileInfo(fileName, cFile);
+                        HkxFileInfo hkxInfoEntry = new HkxFileInfo(fileName, new MemoryStream(data));
                         info.HkxFiles.Add(hkxInfoEntry);
-
 
                         TaskLogs.AddLog($"Added entry: {fileName}");
                     }
@@ -180,6 +195,7 @@ public static class BehaviorBank
                         TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}");
                     }
                 }
+                */
             }
         }
     }
@@ -206,13 +222,14 @@ public static class BehaviorBank
 
     public class HkxFileInfo
     {
-        public HkxFileInfo(string name, HavokSerializer hkx)
+        public HkxFileInfo(string name, Stream data)
         {
             Name = name;
-            Entry = hkx;
+            Data = data;
         }
 
         public string Name { get; set; }
-        public HKLib.Serialization.hk2018.HavokSerializer Entry { get; set; }
+
+        public Stream Data { get; set; }
     }
 }

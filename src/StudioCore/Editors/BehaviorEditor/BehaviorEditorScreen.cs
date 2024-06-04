@@ -76,13 +76,7 @@ public class BehaviorEditorScreen : EditorScreen
         {
             if (!BehaviorBank.IsLoaded)
             {
-                if (!CFG.Current.AutoLoadBank_Behavior)
-                {
-                    if (ImGui.Button("Load Behavior Editor"))
-                    {
-                        BehaviorBank.LoadBehaviors();
-                    }
-                }
+                BehaviorBank.LoadBehaviors();
             }
 
             if (BehaviorBank.IsLoaded)
