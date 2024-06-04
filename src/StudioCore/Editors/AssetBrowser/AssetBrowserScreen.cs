@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Reflection.Metadata;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using CompoundAction = StudioCore.Editors.MapEditor.CompoundAction;
@@ -76,6 +77,11 @@ public class AssetBrowserScreen
     private bool updateScrollPosition = false;
     private float _currentScrollY;
 
+    Dictionary<string, AliasReference> chrReferenceDict = new Dictionary<string, AliasReference>();
+    Dictionary<string, AliasReference> assetReferenceDict = new Dictionary<string, AliasReference>();
+    Dictionary<string, AliasReference> partReferenceDict = new Dictionary<string, AliasReference>();
+    Dictionary<string, AliasReference> mapPieceReferenceDict = new Dictionary<string, AliasReference>();
+
     public AssetBrowserScreen(AssetBrowserSource sourceType, Universe universe, RenderScene scene, ViewportSelection sel, ViewportActionManager manager, EditorScreen editor, IViewport viewport)
     {
         SourceType = sourceType;
@@ -110,6 +116,35 @@ public class AssetBrowserScreen
             _objectNameCache = AssetListLocator.GetObjModels();
             _partNameCache = AssetListLocator.GetPartsModels();
             _mapPieceNameCache = new Dictionary<string, List<string>>();
+
+            foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
+            {
+                if (!chrReferenceDict.ContainsKey(v.id))
+                {
+                    chrReferenceDict.Add(v.id, v);
+                }
+            }
+            foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("Objects"))
+            {
+                if (!assetReferenceDict.ContainsKey(v.id))
+                {
+                    assetReferenceDict.Add(v.id, v);
+                }
+            }
+            foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("Parts"))
+            {
+                if (!partReferenceDict.ContainsKey(v.id))
+                {
+                    partReferenceDict.Add(v.id, v);
+                }
+            }
+            foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"))
+            {
+                if (!mapPieceReferenceDict.ContainsKey(v.id))
+                {
+                    mapPieceReferenceDict.Add(v.id, v);
+                }
+            }
 
             _selectedAssetMapId = "";
             _selectedAssetMapIdCache = null;
@@ -194,10 +229,10 @@ public class AssetBrowserScreen
             ImguiUtils.WrappedText("Assets:");
             ImGui.Separator();
 
-            DisplayBrowserList(AssetCategoryType.Character, _characterNameCache);
-            DisplayBrowserList(AssetCategoryType.Asset, _objectNameCache);
-            DisplayBrowserList(AssetCategoryType.Part, _partNameCache);
-            DisplayBrowserList_MapPiece(AssetCategoryType.MapPiece);
+            DisplayBrowserList(AssetCategoryType.Character, _characterNameCache, chrReferenceDict);
+            DisplayBrowserList(AssetCategoryType.Asset, _objectNameCache, assetReferenceDict);
+            DisplayBrowserList(AssetCategoryType.Part, _partNameCache, partReferenceDict);
+            DisplayBrowserList_MapPiece(AssetCategoryType.MapPiece, mapPieceReferenceDict);
         }
 
         ImGui.End();
@@ -288,24 +323,12 @@ public class AssetBrowserScreen
         }
     }
 
-    private void DisplayBrowserList(AssetCategoryType assetType, List<string> nameCache)
+    private void DisplayBrowserList(AssetCategoryType assetType, List<string> nameCache, Dictionary<string, AliasReference> referenceDict)
     {
-        var referenceList = AliasUtils.GetAliasReferenceList(assetType);
-
         if (updateScrollPosition)
         {
             updateScrollPosition = false;
             ImGui.SetScrollY(_currentScrollY);
-        }
-
-        var referenceDict = new Dictionary<string, AliasReference>();
-
-        foreach (AliasReference v in referenceList)
-        {
-            if (!referenceDict.ContainsKey(v.id))
-            {
-                referenceDict.Add(v.id, v);
-            }
         }
 
         if (_selectedAssetType == assetType)
@@ -376,20 +399,8 @@ public class AssetBrowserScreen
         }
     }
 
-    private void DisplayBrowserList_MapPiece(AssetCategoryType assetType)
+    private void DisplayBrowserList_MapPiece(AssetCategoryType assetType, Dictionary<string, AliasReference> referenceDict)
     {
-        var referenceList = AliasUtils.GetAliasReferenceList(assetType);
-
-        var referenceDict = new Dictionary<string, AliasReference>();
-
-        foreach (AliasReference v in referenceList)
-        {
-            if (!referenceDict.ContainsKey(v.id))
-            {
-                referenceDict.Add(v.id, v);
-            }
-        }
-
         if (_selectedAssetType == assetType)
         {
             if (_mapPieceNameCache.ContainsKey(_selectedAssetMapId))
