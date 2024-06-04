@@ -499,8 +499,6 @@ public class MapSceneTree : IActionEventHandler
     {
         var scale = Smithbox.GetUIScale();
 
-        string tName = e.PrettyName;
-
         // Main selectable
         if (e is MsbEntity me)
         {
@@ -545,8 +543,10 @@ public class MapSceneTree : IActionEventHandler
 
             if (ImGui.Selectable($"{padding}{e.PrettyName}##{_mapEnt_ImGuiID}", _selection.GetSelection().Contains(e), selectableFlags))
             {
+                doSelect = true;
+
                 // If double clicked frame the selection in the viewport
-                if (ImGui.IsMouseDoubleClicked(0))
+                if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                 {
                     if (e.RenderSceneMesh != null)
                     {
@@ -554,7 +554,6 @@ public class MapSceneTree : IActionEventHandler
                     }
                 }
             }
-
             var alias = AliasUtils.GetEntityAliasName(e);
             AliasUtils.DisplayAlias(alias);
         }
@@ -594,6 +593,7 @@ public class MapSceneTree : IActionEventHandler
             if (nodeopen && !_treeOpenEntities.Contains(e))
             {
                 _treeOpenEntities.Add(e);
+
             }
             else if (!nodeopen && _treeOpenEntities.Contains(e))
             {

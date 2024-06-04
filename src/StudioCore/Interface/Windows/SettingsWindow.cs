@@ -516,7 +516,7 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("Display the map object list search text box.");
 
                 ImGui.Checkbox("Display map names", ref CFG.Current.MapEditor_MapObjectList_ShowMapNames);
-                ImguiUtils.ShowHoverTooltip("Characters names will be displayed within the scene view list.");
+                ImguiUtils.ShowHoverTooltip("Map names will be displayed within the scene view list.");
 
                 ImGui.Checkbox("Display character names", ref CFG.Current.MapEditor_MapObjectList_ShowCharacterNames);
                 ImguiUtils.ShowHoverTooltip("Characters names will be displayed within the scene view list.");
