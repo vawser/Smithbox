@@ -3,6 +3,7 @@
   <Field>
     <menuLayout AltName="Menu Layout" Refs="MenuPropertyLayoutParam" Wiki="" />
     <textId AltName="Text ID" FmgRef="Modern_MenuText" />
+    <sortId AltName="Sort ID" Wiki="Determines the order of this entry within the menu. 0 is top." />
   </Field>
   <Self />
 </PARAMMETA>

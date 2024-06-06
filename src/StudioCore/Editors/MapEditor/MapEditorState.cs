@@ -38,6 +38,7 @@ namespace StudioCore.Editors.MapEditor
         Selection_Render_Patrol_Routes,
         Selection_Check_for_Errors,
         Selection_Generate_Navigation_Data,
+        Selection_Search_MSB,
 
         // Prefabs
         EditPrefab,

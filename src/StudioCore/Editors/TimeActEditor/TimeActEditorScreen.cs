@@ -73,13 +73,7 @@ public class TimeActEditorScreen : EditorScreen
 
             if (!AnimationBank.IsLoaded)
             {
-                if (!CFG.Current.AutoLoadBank_TimeAct)
-                {
-                    if (ImGui.Button("Load Time Act Editor"))
-                    {
-                        AnimationBank.LoadTimeActs();
-                    }
-                }
+                AnimationBank.LoadTimeActs();
             }
 
             if (AnimationBank.IsLoaded)
@@ -117,7 +111,7 @@ public class TimeActEditorScreen : EditorScreen
         // File List
         ImGui.Begin("TimeActs##TimeActList");
 
-        if (_selectedFileInfo.TimeActFiles != null)
+        if (_selectedFileInfo != null)
         {
             ImGui.Text($"TimeActs");
             ImGui.Separator();

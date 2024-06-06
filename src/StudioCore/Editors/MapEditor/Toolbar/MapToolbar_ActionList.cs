@@ -81,6 +81,11 @@ public class MapToolbar_ActionList
         MapAction_Replicate.Select(_selection);
         MapAction_Order.Select(_selection);
 
+        // Prefabs
+        //MapAction_EditPrefab.Select(_selection);
+        MapAction_ImportPrefab.Select(_selection);
+        MapAction_ExportPrefab.Select(_selection);
+
         // Global
         MapAction_Create.Select(_selection);
         MapAction_AssignEntityGroupID.Select(_selection);
@@ -88,10 +93,6 @@ public class MapToolbar_ActionList
         MapAction_TogglePatrolRoutes.Select(_selection);
         MapAction_CheckForErrors.Select(_selection);
         MapAction_GenerateNavigationData.Select(_selection);
-
-        // Prefabs
-        //MapAction_EditPrefab.Select(_selection);
-        MapAction_ImportPrefab.Select(_selection);
-        MapAction_ExportPrefab.Select(_selection);
+        MapAction_Search_MSB.Select(_selection);
     }
 }

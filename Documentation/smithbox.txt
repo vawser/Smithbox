@@ -42,9 +42,9 @@ TutorialTitle2023
 Push 'Release' builds to github releases, not the 'Debug' builds
 Update imgui.default
 
-Misc:
- - Document AC6 FXR
-
+Fix:
+ - New assets only on the project-side don't load in Map/Model Editor properly.
+ 
 Additions:
  - ESD Editor
  - EMEVD Editor
@@ -69,6 +69,7 @@ Map Editor:
  - Add enum support for the DS3 corpse poses
  - Add "Data Export" action for MSB data: output the MSB information as JSON
  - Add ER map select with map image.
+ - Implement ER collision (using HKLib)
  
 Model Editor:
  - Add "Copy As" action for top-level node that lets the user duplicate the entire "chr" set: anibnd, chrbnd, etc
@@ -100,4 +101,5 @@ Texture Viewer:
 
 #--------------------------------------
 # Notes
-#-------------------------------------- 
+#--------------------------------------
+Add "Find Value Instances" for MSB values

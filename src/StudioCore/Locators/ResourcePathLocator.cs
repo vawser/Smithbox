@@ -264,8 +264,10 @@ public static class ResourcePathLocator
                 {
                     // Derive subfolder path from model name (all vanilla AEG are within subfolders)
                     if (objid.Length >= 6)
-                        return ResourceLocatorUtils.GetOverridenFilePath($@"asset\aeg\{objid.Substring(0, 6)}\{objid}.geombnd.dcx");
-
+                    {
+                        var path = ResourceLocatorUtils.GetOverridenFilePath($@"asset\aeg\{objid.Substring(0, 6)}\{objid}.geombnd.dcx");
+                        return path;
+                    }
                     return null;
                 }
 

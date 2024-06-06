@@ -65,6 +65,7 @@ public class MapToolbar_Configuration
         MapAction_TogglePatrolRoutes.Shortcuts();
         MapAction_CheckForErrors.Shortcuts();
         MapAction_GenerateNavigationData.Shortcuts();
+        MapAction_Search_MSB.Shortcuts();
 
         var _selection = MapToolbar._selection;
 
@@ -95,6 +96,7 @@ public class MapToolbar_Configuration
         MapAction_TogglePatrolRoutes.Configure(_selection);
         MapAction_CheckForErrors.Configure(_selection);
         MapAction_GenerateNavigationData.Configure(_selection);
+        MapAction_Search_MSB.Configure(_selection);
 
         // Act: Contextual
         MapAction_GoToInObjectList.Act(_selection);
@@ -118,6 +120,7 @@ public class MapToolbar_Configuration
         MapAction_TogglePatrolRoutes.Act(_selection);
         MapAction_CheckForErrors.Act(_selection);
         MapAction_GenerateNavigationData.Act(_selection);
+        MapAction_Search_MSB.Act(_selection);
 
         // Prefabs
         //MapAction_EditPrefab.Act(_selection);

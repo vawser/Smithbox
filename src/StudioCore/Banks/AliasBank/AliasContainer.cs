@@ -168,7 +168,7 @@ public class AliasContainer
     {
         var ret = new List<AliasReference>();
 
-        if(aliasMap[name].list != null)
+        if(aliasMap != null)
         {
             ret = aliasMap[name].list;
         }
