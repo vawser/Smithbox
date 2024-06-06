@@ -35,6 +35,7 @@ using static SoulsFormats.MSB_AC6;
 using ModelCore.Editors.ModelEditor.Toolbar;
 using StudioCore.Locators;
 using StudioCore.Editors.AssetBrowser;
+using StudioCore.Settings;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -561,28 +562,31 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
     public void Save()
     {
-        if (CurrentModelInfo != null)
+        if (FeatureFlags.EnableModelEditorSave)
         {
-            // Copy the binder to the mod directory if it does not already exist.
-
-            var exists = CurrentModelInfo.CopyBinderToMod();
-
-            if (exists)
+            if (CurrentModelInfo != null)
             {
-                if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
+                // Copy the binder to the mod directory if it does not already exist.
+
+                var exists = CurrentModelInfo.CopyBinderToMod();
+
+                if (exists)
                 {
-                    if (CurrentModelInfo.Type == ModelEditorModelType.MapPiece)
+                    if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
                     {
-                        WriteModelFlver(); // DS1 doesn't wrap the mappiece flver within a container
+                        if (CurrentModelInfo.Type == ModelEditorModelType.MapPiece)
+                        {
+                            WriteModelFlver(); // DS1 doesn't wrap the mappiece flver within a container
+                        }
+                        else
+                        {
+                            WriteModelBinderBND3();
+                        }
                     }
                     else
                     {
-                        WriteModelBinderBND3();
+                        WriteModelBinderBND4();
                     }
-                }
-                else
-                {
-                    WriteModelBinderBND4();
                 }
             }
         }
