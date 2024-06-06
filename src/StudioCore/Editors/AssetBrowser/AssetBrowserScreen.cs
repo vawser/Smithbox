@@ -112,72 +112,82 @@ public class AssetBrowserScreen
     {
         if (Project.Type != ProjectType.Undefined)
         {
-            _characterNameCache = AssetListLocator.GetChrModels();
-            _objectNameCache = AssetListLocator.GetObjModels();
-            _partNameCache = AssetListLocator.GetPartsModels();
-            _mapPieceNameCache = new Dictionary<string, List<string>>();
-
-            foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
-            {
-                if (!chrReferenceDict.ContainsKey(v.id))
-                {
-                    chrReferenceDict.Add(v.id, v);
-                }
-            }
-            foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("Objects"))
-            {
-                if (!assetReferenceDict.ContainsKey(v.id))
-                {
-                    assetReferenceDict.Add(v.id, v);
-                }
-            }
-            foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("Parts"))
-            {
-                if (!partReferenceDict.ContainsKey(v.id))
-                {
-                    partReferenceDict.Add(v.id, v);
-                }
-            }
-            foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"))
-            {
-                if (!mapPieceReferenceDict.ContainsKey(v.id))
-                {
-                    mapPieceReferenceDict.Add(v.id, v);
-                }
-            }
-
             _selectedAssetMapId = "";
             _selectedAssetMapIdCache = null;
             _selectedAssetType = AssetCategoryType.None;
             _selectedAssetTypeCache = AssetCategoryType.None;
 
-            List<string> mapList = ResourceMapLocator.GetFullMapList();
+            InvalidateNameCaches();
+        }
+    }
 
-            foreach (var mapId in mapList)
+    private void InvalidateNameCaches()
+    {
+        chrReferenceDict = new Dictionary<string, AliasReference>();
+        assetReferenceDict = new Dictionary<string, AliasReference>();
+        partReferenceDict = new Dictionary<string, AliasReference>();
+        mapPieceReferenceDict = new Dictionary<string, AliasReference>();
+
+        _characterNameCache = AssetListLocator.GetChrModels();
+        _objectNameCache = AssetListLocator.GetObjModels();
+        _partNameCache = AssetListLocator.GetPartsModels();
+        _mapPieceNameCache = new Dictionary<string, List<string>>();
+
+        foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
+        {
+            if (!chrReferenceDict.ContainsKey(v.id))
             {
-                var assetMapId = ResourceMapLocator.GetAssetMapID(mapId);
+                chrReferenceDict.Add(v.id, v);
+            }
+        }
+        foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("Objects"))
+        {
+            if (!assetReferenceDict.ContainsKey(v.id))
+            {
+                assetReferenceDict.Add(v.id, v);
+            }
+        }
+        foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("Parts"))
+        {
+            if (!partReferenceDict.ContainsKey(v.id))
+            {
+                partReferenceDict.Add(v.id, v);
+            }
+        }
+        foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"))
+        {
+            if (!mapPieceReferenceDict.ContainsKey(v.id))
+            {
+                mapPieceReferenceDict.Add(v.id, v);
+            }
+        }
 
-                List<ResourceDescriptor> modelList = new List<ResourceDescriptor>();
+        List<string> mapList = ResourceMapLocator.GetFullMapList();
 
-                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
-                {
-                    modelList = AssetListLocator.GetMapModelsFromBXF(mapId);
-                }
-                else
-                {
-                    modelList = AssetListLocator.GetMapModels(mapId);
-                }
+        foreach (var mapId in mapList)
+        {
+            var assetMapId = ResourceMapLocator.GetAssetMapID(mapId);
 
-                var cache = new List<string>();
-                foreach (var model in modelList)
-                {
-                    cache.Add(model.AssetName);
-                }
+            List<ResourceDescriptor> modelList = new List<ResourceDescriptor>();
 
-                if (!_mapPieceNameCache.ContainsKey(assetMapId))
-                {
-                    _mapPieceNameCache.Add(assetMapId, cache);
-                }
+            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            {
+                modelList = AssetListLocator.GetMapModelsFromBXF(mapId);
+            }
+            else
+            {
+                modelList = AssetListLocator.GetMapModels(mapId);
+            }
+
+            var cache = new List<string>();
+            foreach (var model in modelList)
+            {
+                cache.Add(model.AssetName);
+            }
+
+            if (!_mapPieceNameCache.ContainsKey(assetMapId))
+            {
+                _mapPieceNameCache.Add(assetMapId, cache);
             }
         }
     }
@@ -267,6 +277,7 @@ public class AssetBrowserScreen
         {
             ModelAliasBank.Bank.CanReloadBank = false;
             ModelAliasBank.Bank.ReloadAliasBank();
+            InvalidateNameCaches();
         }
     }
 
