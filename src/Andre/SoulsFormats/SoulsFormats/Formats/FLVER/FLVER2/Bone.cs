@@ -82,6 +82,11 @@ namespace SoulsFormats
                 Scale = Vector3.One;
             }
 
+            public FLVER2.Bone Clone()
+            {
+                return (FLVER2.Bone)MemberwiseClone();
+            }
+
             internal Bone(BinaryReaderEx br, FLVER2Header header)
             {
                 Position = br.ReadVector3();

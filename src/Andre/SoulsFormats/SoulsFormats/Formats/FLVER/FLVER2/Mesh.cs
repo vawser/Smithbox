@@ -69,7 +69,10 @@ namespace SoulsFormats
                 VertexBuffers = new List<VertexBuffer>();
                 Vertices = null;
             }
-
+            public Mesh Clone()
+            {
+                return (Mesh)MemberwiseClone();
+            }
             internal Mesh(BinaryReaderEx br, FLVER2Header header)
             {
                 Dynamic = br.AssertByte([0, 1]);

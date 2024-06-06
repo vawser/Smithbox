@@ -1,4 +1,5 @@
 ﻿using System;
+using static SoulsFormats.FLVER;
 
 namespace SoulsFormats
 {
@@ -80,6 +81,11 @@ namespace SoulsFormats
                 Type = type;
                 Semantic = semantic;
                 Index = index;
+            }
+
+            public LayoutMember Clone()
+            {
+                return (LayoutMember)MemberwiseClone();
             }
 
             internal LayoutMember(BinaryReaderEx br, int structOffset)

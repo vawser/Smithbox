@@ -22,6 +22,11 @@ namespace SoulsFormats
             /// </summary>
             public BufferLayout() : base() { }
 
+            public BufferLayout Clone()
+            {
+                return (BufferLayout)MemberwiseClone();
+            }
+
             internal BufferLayout(BinaryReaderEx br) : base()
             {
                 int memberCount = br.ReadInt32();

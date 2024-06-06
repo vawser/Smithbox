@@ -73,6 +73,11 @@ namespace SoulsFormats
             BufferLayouts = new List<BufferLayout>();
         }
 
+        public FLVER2 Clone()
+        {
+            return (FLVER2)MemberwiseClone();
+        }
+
         /// <summary>
         /// Creates a FLVER with a preset cache
         /// </summary>

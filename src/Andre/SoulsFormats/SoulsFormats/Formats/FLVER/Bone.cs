@@ -79,6 +79,11 @@ namespace SoulsFormats
                 Scale = Vector3.One;
             }
 
+            public FLVER.Bone Clone()
+            {
+                return (FLVER.Bone)MemberwiseClone();
+            }
+
             /// <summary>
             /// Creates a transformation matrix from the scale, rotation, and translation of the bone.
             /// </summary>

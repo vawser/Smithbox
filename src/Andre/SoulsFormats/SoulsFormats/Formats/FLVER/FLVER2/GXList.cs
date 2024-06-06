@@ -27,7 +27,10 @@ namespace SoulsFormats
             {
                 TerminatorID = int.MaxValue;
             }
-
+            public GXList Clone()
+            {
+                return (GXList)MemberwiseClone();
+            }
             internal GXList(BinaryReaderEx br, FLVER2Header header) : base()
             {
                 if (header.Version < 0x20010)
@@ -94,6 +97,10 @@ namespace SoulsFormats
                 ID = "0";
                 Unk04 = 100;
                 Data = new byte[0];
+            }
+            public GXItem Clone()
+            {
+                return (GXItem)MemberwiseClone();
             }
 
             /// <summary>

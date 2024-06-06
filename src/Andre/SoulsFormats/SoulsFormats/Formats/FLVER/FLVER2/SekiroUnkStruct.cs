@@ -27,7 +27,10 @@ namespace SoulsFormats
                 Members1 = new List<Member>();
                 Members2 = new List<Member>();
             }
-
+            public SekiroUnkStruct Clone()
+            {
+                return (SekiroUnkStruct)MemberwiseClone();
+            }
             internal SekiroUnkStruct(BinaryReaderEx br)
             {
                 short count1 = br.ReadInt16();

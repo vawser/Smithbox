@@ -30,6 +30,7 @@ Map Editor:
  - Add "Data Export" action for MSB data: output the MSB information as JSON
  - Add ER map select with map image.
  - Implement ER collision (using HKLib)
+ - Add "Find Value Instances" for MSB values
  
 Model Editor:
  - Add "Copy As" action for top-level node that lets the user duplicate the entire "chr" set: anibnd, chrbnd, etc
@@ -62,4 +63,11 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #--------------------------------------
-Add "Find Value Instances" for MSB values
+
+
+DCX.Type t;
+Memory<byte> decomp = DCX.Decompress(bytes, out t);
+var hvk = new HavokBinarySerializer();
+MemoryStream hvkStream = new MemoryStream(decomp.ToArray());
+
+hkRootLevelContainer rootObj = (hkRootLevelContainer)hvk.ReadAllObjects(hvkStream);

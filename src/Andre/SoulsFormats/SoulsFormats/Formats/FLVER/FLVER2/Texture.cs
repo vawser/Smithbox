@@ -58,6 +58,10 @@ namespace SoulsFormats
                 Path = "";
                 Scale = Vector2.One;
             }
+            public Texture Clone()
+            {
+                return (Texture)MemberwiseClone();
+            }
 
             /// <summary>
             /// Creates a new Texture with the specified values.

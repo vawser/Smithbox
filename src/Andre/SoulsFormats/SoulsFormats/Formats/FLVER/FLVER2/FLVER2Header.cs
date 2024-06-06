@@ -71,5 +71,10 @@ namespace SoulsFormats
             Version = 0x20014;
             Unicode = true;
         }
+
+        public FLVER2Header Clone()
+        {
+            return (FLVER2Header)MemberwiseClone();
+        }
     }
 }

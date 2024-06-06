@@ -54,6 +54,11 @@ namespace SoulsFormats
                 GXIndex = -1;
             }
 
+            public Material Clone()
+            {
+                return (Material)MemberwiseClone();
+            }
+
             /// <summary>
             /// Creates a new Material with the given values and an empty texture list.
             /// </summary>

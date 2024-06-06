@@ -29,7 +29,10 @@ namespace SoulsFormats
             {
                 LayoutIndex = layoutIndex;
             }
-
+            public VertexBuffer Clone()
+            {
+                return (VertexBuffer)MemberwiseClone();
+            }
             internal VertexBuffer(BinaryReaderEx br)
             {
                 BufferIndex = br.ReadInt32();

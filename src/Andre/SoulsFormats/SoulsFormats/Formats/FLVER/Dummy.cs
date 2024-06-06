@@ -74,6 +74,11 @@ namespace SoulsFormats
                 AttachBoneIndex = -1;
             }
 
+            public FLVER.Dummy Clone()
+            {
+                return (FLVER.Dummy)MemberwiseClone();
+            }
+
             /// <summary>
             /// Returns a string representation of the dummy.
             /// </summary>

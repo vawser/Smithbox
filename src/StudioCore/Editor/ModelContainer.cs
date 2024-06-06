@@ -181,8 +181,9 @@ public class ModelContainer : ObjectContainer
     {
         if (selected.WrappedObject.GetType() == typeof(FLVER2.Mesh))
         {
-            FLVER2.Mesh newMesh = (FLVER2.Mesh)selected.WrappedObject;
-            for(int i = 0; i < CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount; i++)
+            var existingMesh = (FLVER2.Mesh)selected.WrappedObject;
+            FLVER2.Mesh newMesh = existingMesh.Clone();
+            for (int i = 0; i < CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount; i++)
             {
                 r.Flver.Meshes.Add(newMesh);
             }
@@ -194,7 +195,8 @@ public class ModelContainer : ObjectContainer
     {
         if (selected.WrappedObject.GetType() == typeof(FLVER2.Material))
         {
-            FLVER2.Material newMaterial = (FLVER2.Material)selected.WrappedObject;
+            var existingMaterial = (FLVER2.Material)selected.WrappedObject;
+            FLVER2.Material newMaterial = existingMaterial.Clone();
             for (int i = 0; i < CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount; i++)
             {
                 r.Flver.Materials.Add(newMaterial);
@@ -207,7 +209,9 @@ public class ModelContainer : ObjectContainer
     {
         if (selected.WrappedObject.GetType() == typeof(FLVER2.BufferLayout))
         {
-            FLVER2.BufferLayout newLayout = (FLVER2.BufferLayout)selected.WrappedObject;
+            var existingLayout = (FLVER2.BufferLayout)selected.WrappedObject;
+            FLVER2.BufferLayout newLayout = existingLayout.Clone();
+
             for (int i = 0; i < CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount; i++)
             {
                 r.Flver.BufferLayouts.Add(newLayout);
@@ -220,7 +224,8 @@ public class ModelContainer : ObjectContainer
     {
         if (selected.WrappedObject.GetType() == typeof(FLVER.Bone))
         {
-            FLVER.Bone newBone = (FLVER.Bone)selected.WrappedObject;
+            var existingBone = (FLVER.Bone)selected.WrappedObject;
+            FLVER.Bone newBone = existingBone.Clone();
             for (int i = 0; i < CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount; i++)
             {
                 r.Flver.Bones.Add(newBone);
@@ -233,7 +238,8 @@ public class ModelContainer : ObjectContainer
     {
         if (selected.WrappedObject.GetType() == typeof(FLVER.Dummy))
         {
-            FLVER.Dummy newDummy = (FLVER.Dummy)selected.WrappedObject;
+            var existingDummy = (FLVER.Dummy)selected.WrappedObject;
+            FLVER.Dummy newDummy = existingDummy.Clone();
             for (int i = 0; i < CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount; i++)
             {
                 r.Flver.Dummies.Add(newDummy);

@@ -74,6 +74,11 @@ namespace SoulsFormats
                 AttachBoneIndex = -1;
             }
 
+            public FLVER2.Dummy Clone()
+            {
+                return (FLVER2.Dummy)MemberwiseClone();
+            }
+
             internal Dummy(BinaryReaderEx br, FLVER2Header header)
             {
                 Position = br.ReadVector3();

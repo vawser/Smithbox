@@ -84,6 +84,11 @@ namespace SoulsFormats
                 Indices = null;
             }
 
+            public FaceSet Clone()
+            {
+                return (FaceSet)MemberwiseClone();
+            }
+
             /// <summary>
             /// Creates a new FaceSet with the specified values.
             /// </summary>
