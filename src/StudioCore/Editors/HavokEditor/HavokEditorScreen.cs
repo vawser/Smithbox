@@ -9,17 +9,15 @@ using System.Numerics;
 using System.Reflection;
 using Veldrid;
 using Veldrid.Sdl2;
-using static StudioCore.Editors.BehaviorEditor.BehaviorBank;
+using static StudioCore.Editors.BehaviorEditor.HavokBehaviorBank;
 using HKLib.Serialization.hk2018.Binary;
 using HKLib.Serialization.hk2018.Xml;
 
 namespace StudioCore.BehaviorEditor;
 
-public class BehaviorEditorScreen : EditorScreen
+public class HavokEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
-
-    private readonly PropertyEditor _propEditor;
 
     public ActionManager EditorActionManager = new();
 
@@ -30,14 +28,14 @@ public class BehaviorEditorScreen : EditorScreen
     private string _selectedHkxKey;
     private HkxFileInfo _selectedHkxFileInfo;
 
-    public BehaviorEditorScreen(Sdl2Window window, GraphicsDevice device)
+    public HavokEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        _propEditor = new PropertyEditor(EditorActionManager);
+
     }
 
-    public string EditorName => "Behavior Editor##BehaviorEditor";
-    public string CommandEndpoint => "behavior";
-    public string SaveType => "Behavior";
+    public string EditorName => "Havok Editor##HavokEditor";
+    public string CommandEndpoint => "havok";
+    public string SaveType => "Havok";
 
     public void Init()
     {
@@ -66,7 +64,7 @@ public class BehaviorEditorScreen : EditorScreen
 
         if (Project.Type != ProjectType.ER)
         {
-            ImGui.Begin("Editor##InvalidBehaviorEditor");
+            ImGui.Begin("Editor##InvalidHavokEditor");
 
             ImGui.Text($"This editor does not support {Project.Type}.");
 
@@ -74,16 +72,16 @@ public class BehaviorEditorScreen : EditorScreen
         }
         else
         {
-            if (!BehaviorBank.IsLoaded)
+            if (!HavokBehaviorBank.IsLoaded)
             {
-                BehaviorBank.LoadBehaviors();
+                HavokBehaviorBank.LoadBehaviors();
             }
 
-            if (BehaviorBank.IsLoaded)
+            if (HavokBehaviorBank.IsLoaded)
             {
-                BehaviorFileView();
-                BehaviorHkxSelectView();
-                BehaviorHkxTreeView();
+                HavokBehaviorFileView();
+                HavokBehaviorSelectView();
+                HavokBehaviorTreeView();
             }
         }
 
@@ -91,12 +89,12 @@ public class BehaviorEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
     }
 
-    public void BehaviorFileView()
+    public void HavokBehaviorFileView()
     {
         // File List
         ImGui.Begin("Files##BehaviorFileList");
 
-        foreach (var (info, binder) in BehaviorBank.FileBank)
+        foreach (var (info, binder) in HavokBehaviorBank.FileBank)
         {
             if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedBinderKey))
             {
@@ -104,17 +102,17 @@ public class BehaviorEditorScreen : EditorScreen
                 _selectedFileInfo = info;
                 _selectedBinder = binder;
 
-                BehaviorBank.LoadSelectedHkxFiles(info, binder);
+                HavokBehaviorBank.LoadSelectedHavokBehaviorFiles(info, binder);
             }
         }
 
         ImGui.End();
     }
 
-    public void BehaviorHkxSelectView()
+    public void HavokBehaviorSelectView()
     {
         // HKX
-        ImGui.Begin("HKX##BehaviorHkxFileList");
+        ImGui.Begin("Havok Behavior##HavokBehaviorFileList");
 
         if (_selectedFileInfo != null)
         {
@@ -134,10 +132,10 @@ public class BehaviorEditorScreen : EditorScreen
         ImGui.End();
     }
 
-    public void BehaviorHkxTreeView()
+    public void HavokBehaviorTreeView()
     {
         // Class
-        ImGui.Begin("Data##BehaviorHkxTree");
+        ImGui.Begin("Data##HavokBehaviorTree");
 
         if(_selectedHkxFileInfo != null)
         {
@@ -150,21 +148,21 @@ public class BehaviorEditorScreen : EditorScreen
     public void OnProjectChanged()
     {
         if (CFG.Current.AutoLoadBank_Behavior)
-            BehaviorBank.LoadBehaviors();
+            HavokBehaviorBank.LoadBehaviors();
 
         ResetActionManager();
     }
 
     public void Save()
     {
-        if (BehaviorBank.IsLoaded)
-            BehaviorBank.SaveBehavior(_selectedFileInfo, _selectedBinder);
+        if (HavokBehaviorBank.IsLoaded)
+            HavokBehaviorBank.SaveBehavior(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
-        if (BehaviorBank.IsLoaded)
-            BehaviorBank.SaveBehaviors();
+        if (HavokBehaviorBank.IsLoaded)
+            HavokBehaviorBank.SaveBehaviors();
     }
 
     private void ResetActionManager()

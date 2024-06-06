@@ -145,7 +145,7 @@ public class Smithbox
         EditorContainer.ScriptEditor = new EmevdEditorScreen(_context.Window, _context.Device);
         EditorContainer.TalkEditor = new EsdEditorScreen(_context.Window, _context.Device);
         EditorContainer.TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
-        EditorContainer.BehaviorEditor = new BehaviorEditorScreen(_context.Window, _context.Device);
+        EditorContainer.BehaviorEditor = new HavokEditorScreen(_context.Window, _context.Device);
 
         WindowContainer.MemoryWindow._activeView = ParamEditorScreen._activeView;
 
@@ -189,7 +189,7 @@ public class Smithbox
 
         _editors.Add(EditorContainer.TextureViewer);
 
-        if (FeatureFlags.EnableEditor_BehaviorEditor)
+        if (FeatureFlags.EnableEditor_HavokBehavior)
         {
             _editors.Add(EditorContainer.BehaviorEditor);
         }

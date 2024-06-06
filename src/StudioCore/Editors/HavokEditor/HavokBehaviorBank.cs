@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.BehaviorEditor;
-public static class BehaviorBank
+public static class HavokBehaviorBank
 {
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
@@ -161,7 +161,7 @@ public static class BehaviorBank
     }
 
     // Done separately from the default load so we populate the BehaviorFiles of only the target .behbnd
-    public static void LoadSelectedHkxFiles(BehaviorFileInfo info, IBinder binder)
+    public static void LoadSelectedHavokBehaviorFiles(BehaviorFileInfo info, IBinder binder)
     {
         TaskLogs.AddLog($"LoadSelectedHkxFiles");
 
@@ -175,8 +175,6 @@ public static class BehaviorBank
                 var filePath = file.Name;
                 var fileName = Path.GetFileNameWithoutExtension(file.Name);
 
-                // TODO
-                /*
                 if (filePath.Contains(".hkx") && filePath.Contains("Behaviors"))
                 {
                     TaskLogs.AddLog(filePath);
@@ -195,7 +193,6 @@ public static class BehaviorBank
                         TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}");
                     }
                 }
-                */
             }
         }
     }

@@ -33,5 +33,5 @@ public static class EditorContainer
     public static EmevdEditorScreen ScriptEditor { get; set; }
     public static EsdEditorScreen TalkEditor { get; set; }
     public static TextureViewerScreen TextureViewer { get; set; }
-    public static BehaviorEditorScreen BehaviorEditor { get; set; }
+    public static HavokEditorScreen BehaviorEditor { get; set; }
 }

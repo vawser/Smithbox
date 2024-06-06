@@ -12,6 +12,7 @@ using HKLib;
 using HKLib.Serialization;
 using System.IO;
 using HKLib.Serialization.hk2018.Binary;
+using HKLib.Serialization.hk2018.Xml;
 
 namespace StudioCore.Resource;
 
@@ -30,7 +31,6 @@ public class HavokCollisionResource : IResource, IDisposable
         // HKLib - ER
         if (Project.Type == ProjectType.ER)
         {
-
         }
         // HKX2 - DS3
         else if (Project.Type == ProjectType.DS3)
