@@ -38,8 +38,6 @@ public class AliasWindow
     // Special-case tabs
     private MapGroupTab MapGroupTab;
 
-
-
     public AliasWindow()
     {
         MapAliasTab = new AliasTab(MapAliasBank.Bank, "Maps", ref CFG.Current.MapAtlas_ShowTags);

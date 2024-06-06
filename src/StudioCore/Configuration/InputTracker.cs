@@ -201,6 +201,14 @@ public static class InputTracker
         return null;
     }
 
+    public static KeyBind GetEmptyKeyBind(string name, KeybindCategory keyCategory)
+    {
+        Key newkey = Key.Unknown;
+        _newKeysThisFrame.Clear(); // Clear to prevent hotkeys from triggering
+
+        return new KeyBind(name, keyCategory, newkey, false, false, false);
+    }
+
     public static Key GetNextKey()
     {
         return _newKeysThisFrame.FirstOrDefault(e =>

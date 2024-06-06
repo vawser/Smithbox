@@ -113,7 +113,7 @@ public class KeybindWindow
 
         if (!fixedKey)
         {
-            if (keyText == "")
+            if (bindVal.PrimaryKey == Key.Unknown)
                 keyText = "[None]";
 
             if (_currentKeyBind == bindVal)
@@ -121,7 +121,8 @@ public class KeybindWindow
                 ImGui.Button("Press Key <Esc - Clear>");
                 if (InputTracker.GetKeyDown(Key.Escape))
                 {
-                    bind.SetValue(KeyBindings.Current, new KeyBind());
+                    KeyBind newkey = InputTracker.GetEmptyKeyBind(bindVal.PresentationName, bindVal.KeyCategory);
+                    bind.SetValue(KeyBindings.Current, newkey);
                     _currentKeyBind = null;
                 }
                 else
