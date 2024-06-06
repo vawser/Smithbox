@@ -1657,8 +1657,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
-                public sbyte Unk56 { get; set; }
+                public sbyte KillPayoutClassification { get; set; }
 
                 /// <summary>
                 /// Unknown. Maybe PartsTokenParam?
@@ -1829,7 +1828,7 @@ namespace SoulsFormats
                     Unk3C = -1;
                     Unk44 = -1;
                     Unk50 = -1;
-                    Unk56 = (sbyte)-1;
+                    KillPayoutClassification = (sbyte)-1;
                     PartsTokenParamID = -1;
 
                     UnkEnemyStruct70 = new EnemyUnkStruct70();
@@ -1879,7 +1878,7 @@ namespace SoulsFormats
                     Unk50 = br.ReadInt32();
                     Unk54 = br.ReadByte();
                     Unk55 = br.ReadByte();
-                    Unk56 = br.ReadSByte();
+                    KillPayoutClassification = br.ReadSByte();
                     br.AssertByte(new byte[1]);
                     PartsTokenParamID = br.ReadInt32();
                     br.AssertInt32(new int[1]);
@@ -1933,7 +1932,7 @@ namespace SoulsFormats
                     bw.WriteInt32(Unk50);
                     bw.WriteByte(Unk54);
                     bw.WriteByte(Unk55);
-                    bw.WriteSByte(Unk56);
+                    bw.WriteSByte(KillPayoutClassification);
                     bw.WriteByte((byte)0);
                     bw.WriteInt32(PartsTokenParamID);
                     bw.WriteInt32(0);
