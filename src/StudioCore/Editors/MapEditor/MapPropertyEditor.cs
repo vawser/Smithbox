@@ -533,6 +533,11 @@ public class MapPropertyEditor
     private void UpdateProperty(object prop, HashSet<Entity> selection, object newval,
         bool changed, bool committed, int arrayindex, int classIndex)
     {
+        foreach(var ent in selection)
+        {
+            ent.CachedAliasName = null;
+        }
+
         if (changed)
         {
             ChangePropertyMultiple(prop, selection, newval, ref committed, arrayindex, classIndex);
