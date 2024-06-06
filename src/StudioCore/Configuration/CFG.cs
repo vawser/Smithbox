@@ -547,6 +547,11 @@ public class CFG
     public bool AssetBrowser_UpdateName = true;
     public bool AssetBrowser_UpdateInstanceID = true;
 
+    public bool MapAtlas_ShowTags = true;
+    public bool CharacterAtlas_ShowTags = true;
+    public bool AssetAtlas_ShowTags = true;
+    public bool PartAtlas_ShowTags = true;
+    public bool MapPieceAtlas_ShowTags = true;
     public bool EventFlagAtlas_ShowTags = true;
     public bool ParticleAtlas_ShowTags = true;
     public bool MapNameAtlas_ShowUnused = false;

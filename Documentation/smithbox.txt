@@ -1,50 +1,10 @@
 #--------------------------------------
-# FMG REFs
-#--------------------------------------
-DescriptionArchive
-DescriptionBooster
-DescriptionFCS
-DescriptionGenerator
-DescriptionMission
-Event
-MenuContext
-MissionLocation
-Modern_Dialogues
-Modern_KeyGuide
-Modern_LineHelp
-Modern_MenuText
-Modern_SystemMessage_win64
-MovieSubtitle
-RankerProfile
-SummaryArmor
-SummaryMission
-SummaryWeapons
-TalkMsg
-TextEmbeddedImageNames
-TitleArchive
-TitleArmor
-TitleBooster
-TitleCharacters
-TitleFCS
-TitleGenerator
-TitleGoods
-TitleMission
-TitleWeapons
-TutorialBody
-TutorialBody2023
-TutorialTitle
-TutorialTitle2023
-
-#--------------------------------------
 # TO ADD
 #--------------------------------------
 # Reminder
 Push 'Release' builds to github releases, not the 'Debug' builds
 Update imgui.default
 
-Fix:
- - New assets only on the project-side don't load in Map/Model Editor properly.
- 
 Additions:
  - ESD Editor
  - EMEVD Editor

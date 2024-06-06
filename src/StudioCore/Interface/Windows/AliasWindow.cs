@@ -22,25 +22,40 @@ public class AliasWindow
 {
     private bool MenuOpenState;
 
+    // Alias tabs
+    private AliasTab CharacterAliasTab;
+    private AliasTab AssetAliasTab;
+    private AliasTab PartAliasTab;
+    private AliasTab MapPieceAliasTab;
+    private AliasTab CutsceneAliasTab;
+    private AliasTab GparamAliasTab;
+    private AliasTab EventFlagAliasTab;
+    private AliasTab SoundAliasTab;
+    private AliasTab ParticleAliasTab;
+    private AliasTab MovieAliasTab;
+    private AliasTab MapAliasTab;
+
+    // Special-case tabs
     private MapGroupTab MapGroupTab;
-    private ParticleTab ParticleAliasTab;
-    private EventFlagTab EventFlagAliasTab;
-    private MapNameTab MapAliasTab;
-    private GparamNameTab GparamAliasTab;
-    private SoundTab SoundAliasTab;
-    private CutsceneTab CutsceneAliasTab;
-    private MovieTab MovieAliasTab;
+
+
 
     public AliasWindow()
     {
+        MapAliasTab = new AliasTab(MapAliasBank.Bank, "Maps", ref CFG.Current.MapAtlas_ShowTags);
+        CharacterAliasTab = new AliasTab(ModelAliasBank.Bank, "Characters", ref CFG.Current.CharacterAtlas_ShowTags);
+        AssetAliasTab = new AliasTab(ModelAliasBank.Bank, "Objects", ref CFG.Current.AssetAtlas_ShowTags);
+        PartAliasTab = new AliasTab(ModelAliasBank.Bank, "Parts", ref CFG.Current.PartAtlas_ShowTags);
+        MapPieceAliasTab = new AliasTab(ModelAliasBank.Bank, "MapPieces", ref CFG.Current.MapPieceAtlas_ShowTags);
+        GparamAliasTab = new AliasTab(GparamAliasBank.Bank, "Gparams", ref CFG.Current.GparamNameAtlas_ShowTags);
+        CutsceneAliasTab = new AliasTab(CutsceneAliasBank.Bank, "Cutscenes", ref CFG.Current.CutsceneAtlas_ShowTags);
+        EventFlagAliasTab = new AliasTab(FlagAliasBank.Bank, "Flags", ref CFG.Current.EventFlagAtlas_ShowTags);
+        SoundAliasTab = new AliasTab(SoundAliasBank.Bank, "Sounds", ref CFG.Current.SoundAtlas_ShowTags, true);
+        ParticleAliasTab = new AliasTab(ParticleAliasBank.Bank, "Particles", ref CFG.Current.ParticleAtlas_ShowTags);
+        MovieAliasTab = new AliasTab(MovieAliasBank.Bank, "Movies", ref CFG.Current.MovieAtlas_ShowTags);
+
         MapGroupTab = new MapGroupTab();
-        ParticleAliasTab = new ParticleTab();
-        EventFlagAliasTab = new EventFlagTab();
-        MapAliasTab = new MapNameTab();
-        GparamAliasTab = new GparamNameTab();
-        SoundAliasTab = new SoundTab();
-        CutsceneAliasTab = new CutsceneTab();
-        MovieAliasTab = new MovieTab();
+
     }
 
     public void ToggleMenuVisibility()
@@ -69,14 +84,19 @@ public class AliasWindow
         {
             ImGui.BeginTabBar("##AliasTabs");
 
+            DisplayAliasTab(CharacterAliasTab, "Characters");
+            DisplayAliasTab(AssetAliasTab, "Assets");
+            DisplayAliasTab(PartAliasTab, "Parts");
+            DisplayAliasTab(MapPieceAliasTab, "Map Pieces");
+            DisplayAliasTab(GparamAliasTab, "Gparams");
+            DisplayAliasTab(EventFlagAliasTab, "Event Flags");
+            DisplayAliasTab(ParticleAliasTab, "Particles");
+            DisplayAliasTab(CutsceneAliasTab, "Cutscenes");
+            DisplayAliasTab(MovieAliasTab, "Movies");
+            DisplayAliasTab(SoundAliasTab, "Sounds");
+            DisplayAliasTab(MapAliasTab, "Map Names");
+
             DisplayMapGroupTab();
-            DisplayEventFlagTab();
-            DisplayParticleTab();
-            DisplaySoundTab();
-            DisplayCutsceneTab();
-            DisplayMovieTab();
-            DisplayMapNameTab();
-            DisplayGparamNameTab();
 
             ImGui.EndTabBar();
         }
@@ -87,71 +107,11 @@ public class AliasWindow
         ImGui.PopStyleColor(5);
     }
 
-    public void DisplayEventFlagTab()
+    public void DisplayAliasTab(AliasTab tab, string name)
     {
-        if (ImGui.BeginTabItem("Event Flags"))
+        if (ImGui.BeginTabItem(name))
         {
-            EventFlagAliasTab.Display();
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void DisplayMapNameTab()
-    {
-        if (ImGui.BeginTabItem("Maps"))
-        {
-            MapAliasTab.Display();
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void DisplayGparamNameTab()
-    {
-        if (ImGui.BeginTabItem("Gparams"))
-        {
-            GparamAliasTab.Display();
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void DisplayParticleTab()
-    {
-        if (ImGui.BeginTabItem("Particles"))
-        {
-            ParticleAliasTab.Display();
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void DisplaySoundTab()
-    {
-        if (ImGui.BeginTabItem("Sounds"))
-        {
-            SoundAliasTab.Display();
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void DisplayCutsceneTab()
-    {
-        if (ImGui.BeginTabItem("Cutscenes"))
-        {
-            CutsceneAliasTab.Display();
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void DisplayMovieTab()
-    {
-        if (ImGui.BeginTabItem("Movies"))
-        {
-            MovieAliasTab.Display();
+            tab.Display();
 
             ImGui.EndTabItem();
         }
