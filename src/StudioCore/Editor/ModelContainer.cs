@@ -138,7 +138,7 @@ public class ModelContainer : ObjectContainer
         var boneEntList = new List<TransformableNamedEntity>();
         for (var i = 0; i < flver.Bones.Count; i++)
         {
-            var boneNode = new TransformableNamedEntity(this, flver.Bones[i], flver.Bones[i].Name, i);
+            var boneNode = new TransformableNamedEntity(this, flver.Bones[i], $"Bone {i} {{ {flver.Bones[i].Name} }}", i);
 
             if (CFG.Current.Model_ViewBones)
             {
