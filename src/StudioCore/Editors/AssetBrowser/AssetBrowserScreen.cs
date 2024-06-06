@@ -123,6 +123,8 @@ public class AssetBrowserScreen
 
     private void InvalidateNameCaches()
     {
+        EditorContainer.TextureViewer.InvalidateCachedName = true;
+
         chrReferenceDict = new Dictionary<string, AliasReference>();
         assetReferenceDict = new Dictionary<string, AliasReference>();
         partReferenceDict = new Dictionary<string, AliasReference>();

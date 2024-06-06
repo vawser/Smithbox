@@ -321,12 +321,19 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         ImGui.End();
     }
 
+    public bool InvalidateCachedName = false;
+
     private void DisplayFileSection(string title, TextureViewCategory displayCategory)
     {
         if (ImGui.CollapsingHeader($"{title}"))
         {
             foreach (var (name, info) in TextureFolderBank.FolderBank)
             {
+                if(InvalidateCachedName)
+                {
+                    info.CachedName = null;
+                }
+
                 if (info.Category == displayCategory)
                 {
                     if (SearchFilters.IsTextureSearchMatch(_fileSearchInput, info.Name, "_", info.CachedName))
