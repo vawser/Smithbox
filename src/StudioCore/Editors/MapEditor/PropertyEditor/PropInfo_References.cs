@@ -58,7 +58,7 @@ public static class PropInfo_References
                     }
 
                     // Change Selection to Reference
-                    var displayName = $"{e.PrettyName}";
+                    var displayName = $"{e.WrappedObject.GetType().Name}: {e.Name}";
                     var modelName = e.GetPropertyValue<string>("ModelName");
                     var aliasName = "";
 
