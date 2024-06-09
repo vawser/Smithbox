@@ -1296,6 +1296,14 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBS.Event.Treasure ||
             WrappedObject is MSB_AC6.Event.Treasure ? true : false;
     }
+    /// <summary>
+    /// Returns true if this entity is an Connection
+    /// </summary>
+    public bool IsRegionConnection()
+    {
+        return WrappedObject is MSBE.Region.Connection ||
+            WrappedObject is MSB_AC6.Region.Connection ? true : false;
+    }
 
     /// <summary>
     /// Dipose of this entity.

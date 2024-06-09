@@ -657,6 +657,18 @@
                     "name": "Grass Type Param: [5]",
                     "description": "The grass type param to use with this asset.",
                     "attributes": ""
+                },
+                {
+                    "id": "MapID",
+                    "name": "Map ID",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "RegionID",
+                    "name": "Region ID",
+                    "description": "",
+                    "attributes": ""
                 }
             ]
         },

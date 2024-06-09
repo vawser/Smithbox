@@ -834,8 +834,20 @@ public class MapPropertyEditor
 
         if (decorate)
         {
-            ImGui.Indent(5.0f);
+            ImGui.Separator();
+            ImGui.Text("Properties");
+            ImGui.Separator();
+
+            ImGui.Columns(2);
+
+            ImGui.Text("Object Type");
+            ImGui.Text("Property Filter");
+
+            ImGui.NextColumn();
+
+            ImGui.Text(type.Name);
             // MSB Property Filter list
+            ImGui.SetNextItemWidth(-1);
             if (ImGui.BeginCombo("##PropertyFilterList", SelectedMsbPropertyFilter))
             {
                 foreach (var filter in MsbPropertyFilters)
@@ -851,11 +863,6 @@ public class MapPropertyEditor
             }
             ImguiUtils.ShowHoverTooltip("Filter the property view, narrowing down what is visible.");
 
-            ImGui.Columns(2);
-            ImGui.Separator();
-            ImGui.Text("Object Type");
-            ImGui.NextColumn();
-            ImGui.Text(type.Name);
             ImGui.NextColumn();
         }
 
@@ -1233,112 +1240,14 @@ public class MapPropertyEditor
         if (decorate && entSelection.Count == 1)
         {
             ImGui.Columns(1);
+
             if (firstEnt.References != null)
             {
-                ImGui.NewLine();
-                ImGui.Text("References: ");
-                ImGui.Indent(10 * scale);
-                foreach (KeyValuePair<string, object[]> m in firstEnt.References)
-                {
-                    foreach (var n in m.Value)
-                    {
-                        if (n is Entity e)
-                        {
-                            // View Reference in Viewport
-                            if (ImGui.Button(ForkAwesome.Binoculars + "##MSBRefBy" + refID))
-                            {
-                                BoundingBox box = new();
+                PropInfo_Region_Connection.Display(firstEnt);
 
-                                if (e.RenderSceneMesh != null)
-                                {
-                                    box = e.RenderSceneMesh.GetBounds();
-                                }
-                                else if (e.Container.RootObject == e)
-                                {
-                                    // Selection is transform node
-                                    Vector3 nodeOffset = new(10.0f, 10.0f, 10.0f);
-                                    Vector3 pos = e.GetLocalTransform().Position;
-                                    BoundingBox nodeBox = new(pos - nodeOffset, pos + nodeOffset);
-                                    box = nodeBox;
-                                }
-
-                                _viewport.FrameBox(box);
-                            }
-
-                            // Change Selection to Reference
-                            ImGui.SameLine();
-                            var nameWithType = e.PrettyName.Insert(2, e.WrappedObject.GetType().Name + " - ");
-                            if (ImGui.Button(nameWithType + "##MSBRefTo" + refID))
-                            {
-                                selection.ClearSelection();
-                                selection.AddSelection(e);
-                            }
-                        }
-                        else if (n is ObjectContainerReference r)
-                        {
-                            // Try to select the map's RootObject if it is loaded, and the reference otherwise.
-                            // It's not the end of the world if we choose the wrong one, as SceneTree can use either,
-                            // but only the RootObject has the TransformNode and Viewport integration.
-                            var mapid = r.Name;
-                            var prettyName = $"{ForkAwesome.Cube} {mapid}";
-                            prettyName = $"{prettyName} {MapAliasBank.GetMapName(mapid)}";
-
-                            if (ImGui.Button(prettyName + "##MSBRefTo" + refID))
-                            {
-                                ISelectable rootTarget = r.GetSelectionTarget();
-                                selection.ClearSelection();
-                                selection.AddSelection(rootTarget);
-                                // For this type of connection, jump to the object in the list to actually load the map
-                                // (is this desirable in other cases?). It could be possible to have a Load context menu
-                                // here, but that should be shared with SceneTree.
-                                selection.GotoTreeTarget = rootTarget;
-                            }
-
-                            if (ImGui.BeginPopupContextItem())
-                            {
-                                MapContainer map = firstEnt.Universe.GetLoadedMap(mapid);
-                                if (map == null)
-                                {
-                                    if (ImGui.Selectable("Load Map"))
-                                    {
-                                        firstEnt.Universe.LoadMap(mapid);
-                                    }
-                                }
-                                else
-                                {
-                                    if (ImGui.Selectable("Unload Map"))
-                                    {
-                                        firstEnt.Universe.UnloadContainer(map);
-                                    }
-                                }
-
-                                ImGui.EndPopup();
-                            }
-                        }
-
-                        refID++;
-                    }
-                }
+                PropInfo_References.Display(firstEnt, _viewport, ref selection, ref refID);
+                PropInfo_ReferencedBy.Display(firstEnt, ref selection, ref refID);
             }
-
-            ImGui.Unindent(10 * scale);
-            ImGui.NewLine();
-            ImGui.Text("Objects referencing this object:");
-            ImGui.Indent(10 * scale);
-            foreach (Entity m in firstEnt.GetReferencingObjects())
-            {
-                var nameWithType = m.PrettyName.Insert(2, m.WrappedObject.GetType().Name + " - ");
-                // Change Selection to Reference
-                if (ImGui.Button(nameWithType + "##MSBRefBy" + refID))
-                {
-                    selection.ClearSelection();
-                    selection.AddSelection(m);
-                }
-
-                refID++;
-            }
-
-            ImGui.Unindent(10 * scale);
         }
     }
 
