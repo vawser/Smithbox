@@ -1364,6 +1364,10 @@ public class MapPropertyEditor
             {
                 name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Event");
             }
+            if (_selected.IsLight())
+            {
+                name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Light");
+            }
         }
 
         return name;
@@ -1378,6 +1382,23 @@ public class MapPropertyEditor
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
             var desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name);
+
+            if (_selected.IsPart())
+            {
+                desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Part");
+            }
+            if (_selected.IsRegion())
+            {
+                desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Region");
+            }
+            if (_selected.IsEvent())
+            {
+                desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Event");
+            }
+            if (_selected.IsLight())
+            {
+                desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Light");
+            }
 
             if (desc != "")
             {

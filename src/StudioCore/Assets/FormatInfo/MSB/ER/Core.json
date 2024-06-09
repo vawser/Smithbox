@@ -615,6 +615,48 @@
                     "name": "Map ID",
                     "description": "The four ID parts of the map that this map object belongs to. Used in overworld map tiles to link the map object to a specific overworld tile. Order is reverse of map ID string.",
                     "attributes": ""
+                },
+                {
+                    "id": "CullingHeightBehavior",
+                    "name": "Culling Height Behavior",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "GrassParamId0",
+                    "name": "Grass Type Param: [0]",
+                    "description": "The grass type param to use with this asset.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GrassParamId1",
+                    "name": "Grass Type Param: [1]",
+                    "description": "The grass type param to use with this asset.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GrassParamId2",
+                    "name": "Grass Type Param: [2]",
+                    "description": "The grass type param to use with this asset.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GrassParamId3",
+                    "name": "Grass Type Param: [3]",
+                    "description": "The grass type param to use with this asset.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GrassParamId4",
+                    "name": "Grass Type Param: [4]",
+                    "description": "The grass type param to use with this asset.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GrassParamId5",
+                    "name": "Grass Type Param: [5]",
+                    "description": "The grass type param to use with this asset.",
+                    "attributes": ""
                 }
             ]
         },
