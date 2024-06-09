@@ -144,34 +144,41 @@ public static class GparamParamBank
 
     private static void LoadGraphicsParam(string path, bool isModFile)
     {
-        if(path == null)
+        try
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading GraphicsParam file.",
-                    LogLevel.Warning);
-            return;
-        }
-        if (path == "")
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading GraphicsParam file.",
-                    LogLevel.Warning);
-            return;
-        }
+            if (path == null)
+            {
+                TaskLogs.AddLog($"Could not locate {path} when loading GraphicsParam file.",
+                        LogLevel.Warning);
+                return;
+            }
+            if (path == "")
+            {
+                TaskLogs.AddLog($"Could not locate {path} when loading GraphicsParam file.",
+                        LogLevel.Warning);
+                return;
+            }
 
-        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        GparamInfo gStruct = new GparamInfo(name, path);
-        gStruct.Gparam = new GPARAM();
-        gStruct.IsModFile = isModFile;
+            var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
+            GparamInfo gStruct = new GparamInfo(name, path);
+            gStruct.Gparam = new GPARAM();
+            gStruct.IsModFile = isModFile;
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
-        {
-            gStruct.Gparam = GPARAM.Read(path);
-        }
-        else
-        {
-            gStruct.Gparam = GPARAM.Read(DCX.Decompress(path));
-        }
+            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            {
+                gStruct.Gparam = GPARAM.Read(path);
+            }
+            else
+            {
+                gStruct.Gparam = GPARAM.Read(DCX.Decompress(path));
+            }
 
-        ParamBank.Add(name, gStruct);
+            ParamBank.Add(name, gStruct);
+        }
+        catch(Exception e) 
+        {
+            TaskLogs.AddLog($"Failed to load {path}: {e.Message}");
+        }
     }
 
     public static List<string> GetGparamFileNames()

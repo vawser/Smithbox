@@ -1,397 +1,9 @@
 {
     "list": [
         {
-            "id": "Event",
-            "name": "Event",
-            "description": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "EventID",
-                    "name": "Event ID",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "PartName",
-                    "name": "Part Name",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "RegionName",
-                    "name": "Region Name",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "EntityID",
-                    "name": "Entity ID",
-                    "description": "Identifies the Event in event scripts.",
-                    "attributes": ""
-                },
-                {
-                    "id": "Unk14",
-                    "name": "Unk14",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "MapID",
-                    "name": "Map ID",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "UnkE0C",
-                    "name": "UnkE0C",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "UnkS04",
-                    "name": "UnkS04",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "UnkS08",
-                    "name": "UnkS08",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "UnkS0C",
-                    "name": "UnkS0C",
-                    "description": "",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "Treasure",
-            "name": "Treasure",
-            "description": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "TreasurePartName",
-                    "name": "Attached Part Name",
-                    "description": "The part that the treasure is attached to.",
-                    "attributes": ""
-                },
-                {
-                    "id": "ItemLotID",
-                    "name": "Item Lot ID",
-                    "description": "The item lot to be given.",
-                    "attributes": ""
-                },
-                {
-                    "id": "ActionButtonID",
-                    "name": "Action Button ID",
-                    "description": "If not -1, uses an entry from ActionButtonParam for the pickup prompt.",
-                    "attributes": ""
-                },
-                {
-                    "id": "PickupAnimID",
-                    "name": "Pickup Anim ID",
-                    "description": "Animation to play when taking this treasure.",
-                    "attributes": ""
-                },
-                {
-                    "id": "InChest",
-                    "name": "Is in Chest",
-                    "description": "Changes the text of the pickup prompt.",
-                    "attributes": "IsBool"
-                },
-                {
-                    "id": "StartDisabled",
-                    "name": "Starts Disabled",
-                    "description": "Whether the treasure should be hidden by default.",
-                    "attributes": "IsBool"
-                }
-            ]
-        },
-        {
-            "id": "Generator",
-            "name": "Generator",
-            "description": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "MaxNum",
-                    "name": "Maximum Generated Count",
-                    "description": "The maximum number of enemies that this generator can generate in total.",
-                    "attributes": ""
-                },
-                {
-                    "id": "GenType",
-                    "name": "Generator Type",
-                    "description": "The spawn location behavior to use upon a generation interval.",
-                    "attributes": ""
-                },
-                {
-                    "id": "LimitNum",
-                    "name": "Maximum Spawn Count",
-                    "description": "The maximum number of enemies that this generator can generate upon a generation interval.",
-                    "attributes": ""
-                },
-                {
-                    "id": "MinGenNum",
-                    "name": "Random Spawn Count: Minimum",
-                    "description": "The minimum number to use when determining the amount of enemies to generate within a generation interval.",
-                    "attributes": ""
-                },
-                {
-                    "id": "MaxGenNum",
-                    "name": "Random Spawn Count: Maximum",
-                    "description": "The maximum number to use when determining the amount of enemies to generate within a generation interval.",
-                    "attributes": ""
-                },
-                {
-                    "id": "MinInterval",
-                    "name": "Generation Interval: Minimum",
-                    "description": "The minimum time interval (in seconds) between each generation interval.",
-                    "attributes": ""
-                },
-                {
-                    "id": "MaxInterval",
-                    "name": "Generation Interval: Maximum",
-                    "description": "The maximum time interval (in seconds) between each generation interval.",
-                    "attributes": ""
-                },
-                {
-                    "id": "InitialSpawnCount",
-                    "name": "Initial Spawn Count",
-                    "description": "The initial number of enemies to spawn upon initialization of the generator.",
-                    "attributes": ""
-                },
-                {
-                    "id": "UnkT14",
-                    "name": "UnkT14",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "UnkT18",
-                    "name": "UnkT18",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "SpawnRegionNames",
-                    "name": "Spawn Region Names",
-                    "description": "Regions where parts will spawn from.",
-                    "attributes": ""
-                },
-                {
-                    "id": "SpawnPartNames",
-                    "name": "Spawn Part Names",
-                    "description": "Parts that will be respawned.",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "ObjAct",
-            "name": "Obj Act",
-            "description": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "ObjActEntityID",
-                    "name": "ObjAct Entity ID",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "ObjActPartName",
-                    "name": "ObjAct Part Name",
-                    "description": "The part to be interacted with.",
-                    "attributes": ""
-                },
-                {
-                    "id": "ObjActID",
-                    "name": "ObjAct ID",
-                    "description": "A row in ObjActParam.",
-                    "attributes": ""
-                },
-                {
-                    "id": "StateType",
-                    "name": "State Type",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "EventFlagID",
-                    "name": "Event Flag ID",
-                    "description": "",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "Navmesh",
-            "name": "Navmesh",
-            "description": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "NavmeshRegionName",
-                    "name": "Region Name",
-                    "description": "",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "PseudoMultiplayer",
-            "name": "Pseudo Multiplayer",
-            "description": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "HostEntityID",
-                    "name": "Host Entity ID",
-                    "description": "The NPC whose world you're entering.",
-                    "attributes": ""
-                },
-                {
-                    "id": "EventFlagID",
-                    "name": "Event Flag ID",
-                    "description": "Set when inside the event's region, unset when outside it.",
-                    "attributes": ""
-                },
-                {
-                    "id": "ActivateGoodsID",
-                    "name": "Activation Goods ID",
-                    "description": "ID of a goods item that is used to trigger the event.",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "PlatoonInfo",
-            "name": "PlatoonInfo",
-            "description": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "PlatoonIDScriptActivate",
-                    "name": "Platoon Script ID",
-                    "description": "The platoon script to apply when activated.",
-                    "attributes": ""
-                },
-                {
-                    "id": "State",
-                    "name": "State",
-                    "description": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "GroupPartsNames",
-                    "name": "Group Part Names",
-                    "description": "The parts that belong to this platoon.",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "PatrolInfo",
-            "name": "PatrolInfo",
-            "description": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "PatrolType",
-                    "name": "Patrol Type",
-                    "description": "Determines patrol behavior. 0 = return to first region on loop, 1 = go through list backwards on loop, etc.",
-                    "attributes": ""
-                },
-                {
-                    "id": "WalkRegionNames",
-                    "name": "Walk Region Names",
-                    "description": "The regions that belong to this patrol.",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "Mount",
-            "name": "Mount",
-            "description": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "RiderPartName",
-                    "name": "Rider Part Name",
-                    "description": "The rider Part that may ride the mount Part.",
-                    "attributes": ""
-                },
-                {
-                    "id": "MountPartName",
-                    "name": "Mount Part Name",
-                    "description": "The mount Part.",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "SignPool",
-            "name": "Sign Pool",
-            "description": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "SignPartName",
-                    "name": "Sign Part Name",
-                    "description": "The Part that the signpool is associated with.",
-                    "attributes": ""
-                },
-                {
-                    "id": "SignPuddleParamID",
-                    "name": "Sign Puddle Param ID",
-                    "description": "The ID of the SignPuddleParam row to use for this signpool.",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "RetryPoint",
-            "name": "Retry Point",
-            "description": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "RetryPartName",
-                    "name": "Retry Part Name",
-                    "description": "The Part that is associated with this retry point.",
-                    "attributes": ""
-                },
-                {
-                    "id": "TriggerEventFlagID",
-                    "name": "Trigger Event Flag ID",
-                    "description": "Flag that must be set for retry point to be available.",
-                    "attributes": ""
-                },
-                {
-                    "id": "RetryDistance",
-                    "name": "Retry Distance",
-                    "description": "The distance at which the retry point is active (only used if no retry region is set).",
-                    "attributes": ""
-                },
-                {
-                    "id": "RetryRegionName",
-                    "name": "Retry Region Name",
-                    "description": "The Region that this retry point covers.",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
             "id": "Part",
             "name": "Part",
-            "description": "",
+            "description": "This map object represents a part within the map.",
             "attributes": "",
             "members": [
                 {
@@ -675,7 +287,7 @@
         {
             "id": "Enemy",
             "name": "Enemy",
-            "description": "",
+            "description": "This map object represents an in-game entity, used for enemies, characters and interaction points that make use of the Talk system.",
             "attributes": "",
             "members": [
                 {
@@ -743,7 +355,7 @@
         {
             "id": "Collision",
             "name": "Collision",
-            "description": "",
+            "description": "This map object represents a form of collision. Typically used to block player or enemy movement, but also used for detection such as for kill planes, or the generation of special footstep visual effects, such as in water or lava.",
             "attributes": "",
             "members": [
                 {
@@ -775,7 +387,7 @@
         {
             "id": "ConnectCollision",
             "name": "ConnectCollision",
-            "description": "",
+            "description": "This map object represents a form of collision used to connect different maps together. When the player steps on a ConnectCollision, the specified map(s) will be loaded.",
             "attributes": "",
             "members": [
                 {
@@ -795,7 +407,7 @@
         {
             "id": "Asset",
             "name": "Asset",
-            "description": "",
+            "description": "This map object represents an in-game object of varying sizes, from clutter to cliffs. Supports in-built collision, however not all assets use it.",
             "attributes": "",
             "members": [
                 {
@@ -825,9 +437,453 @@
             ]
         },
         {
+            "id": "Player",
+            "name": "Player",
+            "description": "This map object represents a player point, which is used to place the player when warping between maps, or on map reset.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "MapPiece",
+            "name": "Map Piece",
+            "description": "This map object represents a map piece, which is used to form the base structure of a map.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "DummyAsset",
+            "name": "Dummy Asset",
+            "description": "This map object represents a dummied-out form of an Asset.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "DummyEnemy",
+            "name": "Dummy Enemy",
+            "description": "This map object represents a dummied-out form of an Enemy.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Event",
+            "name": "Event",
+            "description": "This map object represents an event within the map.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "EventID",
+                    "name": "Event ID",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "PartName",
+                    "name": "Part Name",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "RegionName",
+                    "name": "Region Name",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "EntityID",
+                    "name": "Entity ID",
+                    "description": "Identifies the Event in event scripts.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk14",
+                    "name": "Unk14",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "MapID",
+                    "name": "Map ID",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "UnkE0C",
+                    "name": "UnkE0C",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "UnkS04",
+                    "name": "UnkS04",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "UnkS08",
+                    "name": "UnkS08",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "UnkS0C",
+                    "name": "UnkS0C",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Treasure",
+            "name": "Treasure",
+            "description": "This map object is used to configure an item pick-up, defining a relationshop between an asset and an itemlot.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "TreasurePartName",
+                    "name": "Attached Part Name",
+                    "description": "The part that the treasure is attached to.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ItemLotID",
+                    "name": "Item Lot ID",
+                    "description": "The item lot to be given.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ActionButtonID",
+                    "name": "Action Button ID",
+                    "description": "If not -1, uses an entry from ActionButtonParam for the pickup prompt.",
+                    "attributes": ""
+                },
+                {
+                    "id": "PickupAnimID",
+                    "name": "Pickup Anim ID",
+                    "description": "Animation to play when taking this treasure.",
+                    "attributes": ""
+                },
+                {
+                    "id": "InChest",
+                    "name": "Is in Chest",
+                    "description": "Changes the text of the pickup prompt.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "StartDisabled",
+                    "name": "Starts Disabled",
+                    "description": "Whether the treasure should be hidden by default.",
+                    "attributes": "IsBool"
+                }
+            ]
+        },
+        {
+            "id": "Generator",
+            "name": "Generator",
+            "description": "This map object is used to configure a generator, which is a group of attributes that determine the respawn state of a set of linked Enemies at a set of linked SpawnPoints.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "MaxNum",
+                    "name": "Maximum Generated Count",
+                    "description": "The maximum number of enemies that this generator can generate in total.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GenType",
+                    "name": "Generator Type",
+                    "description": "The spawn location behavior to use upon a generation interval.",
+                    "attributes": ""
+                },
+                {
+                    "id": "LimitNum",
+                    "name": "Maximum Spawn Count",
+                    "description": "The maximum number of enemies that this generator can generate upon a generation interval.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MinGenNum",
+                    "name": "Random Spawn Count: Minimum",
+                    "description": "The minimum number to use when determining the amount of enemies to generate within a generation interval.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MaxGenNum",
+                    "name": "Random Spawn Count: Maximum",
+                    "description": "The maximum number to use when determining the amount of enemies to generate within a generation interval.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MinInterval",
+                    "name": "Generation Interval: Minimum",
+                    "description": "The minimum time interval (in seconds) between each generation interval.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MaxInterval",
+                    "name": "Generation Interval: Maximum",
+                    "description": "The maximum time interval (in seconds) between each generation interval.",
+                    "attributes": ""
+                },
+                {
+                    "id": "InitialSpawnCount",
+                    "name": "Initial Spawn Count",
+                    "description": "The initial number of enemies to spawn upon initialization of the generator.",
+                    "attributes": ""
+                },
+                {
+                    "id": "UnkT14",
+                    "name": "UnkT14",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "UnkT18",
+                    "name": "UnkT18",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "SpawnRegionNames",
+                    "name": "Spawn Region Names",
+                    "description": "Regions where parts will spawn from.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SpawnPartNames",
+                    "name": "Spawn Part Names",
+                    "description": "Parts that will be respawned.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "ObjAct",
+            "name": "Obj Act",
+            "description": "This map object is used to configure the interaction state of an Asset.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "ObjActEntityID",
+                    "name": "ObjAct Entity ID",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "ObjActPartName",
+                    "name": "ObjAct Part Name",
+                    "description": "The part to be interacted with.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ObjActID",
+                    "name": "ObjAct ID",
+                    "description": "A row in ObjActParam.",
+                    "attributes": ""
+                },
+                {
+                    "id": "StateType",
+                    "name": "State Type",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "EventFlagID",
+                    "name": "Event Flag ID",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Navmesh",
+            "name": "Navmesh",
+            "description": "Unknown.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "NavmeshRegionName",
+                    "name": "Region Name",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "PseudoMultiplayer",
+            "name": "Pseudo Multiplayer",
+            "description": "This map object is used to configure a NPC Enemy that emulates the online invasion mechanic.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "HostEntityID",
+                    "name": "Host Entity ID",
+                    "description": "The NPC whose world you're entering.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EventFlagID",
+                    "name": "Event Flag ID",
+                    "description": "Set when inside the event's region, unset when outside it.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ActivateGoodsID",
+                    "name": "Activation Goods ID",
+                    "description": "ID of a goods item that is used to trigger the event.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "PlatoonInfo",
+            "name": "PlatoonInfo",
+            "description": "This map object is used to configure a set of enemies into a platoon group, which can take on specific formations and speeds.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "PlatoonIDScriptActivate",
+                    "name": "Platoon Script ID",
+                    "description": "The platoon script to apply when activated.",
+                    "attributes": ""
+                },
+                {
+                    "id": "State",
+                    "name": "State",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "GroupPartsNames",
+                    "name": "Group Part Names",
+                    "description": "The parts that belong to this platoon.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "PatrolInfo",
+            "name": "PatrolInfo",
+            "description": "This map object is used to configure a set of enemies into a patrol group, which will follow a set of patrol nodes.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "PatrolType",
+                    "name": "Patrol Type",
+                    "description": "Determines patrol behavior. 0 = return to first region on loop, 1 = go through list backwards on loop, etc.",
+                    "attributes": ""
+                },
+                {
+                    "id": "WalkRegionNames",
+                    "name": "Walk Region Names",
+                    "description": "The regions that belong to this patrol.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Mount",
+            "name": "Mount",
+            "description": "This map object is used to define the association between two Enemies, allowing one to mount the other as a horse.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "RiderPartName",
+                    "name": "Rider Part Name",
+                    "description": "The rider Part that may ride the mount Part.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MountPartName",
+                    "name": "Mount Part Name",
+                    "description": "The mount Part.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "SignPool",
+            "name": "Sign Pool",
+            "description": "This map object is used to define the association between an Asset and a Summoning Pool region.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "SignPartName",
+                    "name": "Sign Part Name",
+                    "description": "The Part that the signpool is associated with.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SignPuddleParamID",
+                    "name": "Sign Puddle Param ID",
+                    "description": "The ID of the SignPuddleParam row to use for this signpool.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "RetryPoint",
+            "name": "Retry Point",
+            "description": "This map object is used to define a Stake of Marika.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "RetryPartName",
+                    "name": "Retry Part Name",
+                    "description": "The Part that is associated with this retry point.",
+                    "attributes": ""
+                },
+                {
+                    "id": "TriggerEventFlagID",
+                    "name": "Trigger Event Flag ID",
+                    "description": "Flag that must be set for retry point to be available.",
+                    "attributes": ""
+                },
+                {
+                    "id": "RetryDistance",
+                    "name": "Retry Distance",
+                    "description": "The distance at which the retry point is active (only used if no retry region is set).",
+                    "attributes": ""
+                },
+                {
+                    "id": "RetryRegionName",
+                    "name": "Retry Region Name",
+                    "description": "The Region that this retry point covers.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
             "id": "Region",
             "name": "Region",
-            "description": "",
+            "description": "This map object represents a region within the map.",
             "attributes": "",
             "members": [
                 {
@@ -869,81 +925,269 @@
             ]
         },
         {
-            "id": "InvasionPoint",
-            "name": "InvasionPoint",
-            "description": "",
+            "id": "AutoDrawGroupPoint",
+            "name": "Auto Draw Group Point",
+            "description": "Unknown.",
             "attributes": "",
             "members": [
                 {
-                    "id": "Priority",
-                    "name": "Priority",
+                    "id": "Blank",
+                    "name": "",
                     "description": "",
                     "attributes": ""
                 }
             ]
         },
         {
-            "id": "Sound",
-            "name": "Sound",
-            "description": "",
+            "id": "BuddySummonPoint",
+            "name": "Buddy Summon Point",
+            "description": "This map object was part of a prototype Buddy Summon implementation, but is no longer used.",
             "attributes": "",
             "members": [
                 {
-                    "id": "SoundType",
-                    "name": "Sound Type",
-                    "description": "The category of the sound.",
-                    "attributes": ""
-                },
-                {
-                    "id": "SoundID",
-                    "name": "Sound ID",
-                    "description": "The ID of the sound.",
-                    "attributes": ""
-                },
-                {
-                    "id": "ChildRegionNames",
-                    "name": "Child Region Names",
-                    "description": "References to other regions used to build a composite shape.",
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
                     "attributes": ""
                 }
             ]
         },
         {
-            "id": "SFX",
-            "name": "SFX",
-            "description": "",
+            "id": "Connection",
+            "name": "Connection",
+            "description": "This map object is used to define the positional offset of another map in relation to the current map.",
             "attributes": "",
             "members": [
                 {
-                    "id": "EffectID",
-                    "name": "Effect ID",
-                    "description": "The ID of the particle effect FFX.",
-                    "attributes": ""
-                },
-                {
-                    "id": "StartDisabled",
-                    "name": "Start Disabled",
-                    "description": "If true, the effect is off by default until enabled by event scripts.",
+                    "id": "TargetMapID",
+                    "name": "Target Map ID",
+                    "description": "Map ID this connection targets.",
                     "attributes": ""
                 }
             ]
         },
         {
-            "id": "WindSFX",
-            "name": "Wind SFX",
-            "description": "",
+            "id": "Dummy",
+            "name": "Dummy",
+            "description": "Unknown.",
             "attributes": "",
             "members": [
                 {
-                    "id": "EffectID",
-                    "name": "Effect ID",
-                    "description": "ID of the effect FFX.",
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "EnvironmentMapEffectBox",
+            "name": "Environment Map Effect Box",
+            "description": "This map object is used to define the Global Illumination configuration for a specific region.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "EnableDist",
+                    "name": "Enable Distance",
+                    "description": "Distance from camera required before enabling envmap. 0 = always enabled.",
                     "attributes": ""
                 },
                 {
-                    "id": "WindAreaName",
-                    "name": "Wind Area Name",
-                    "description": "Reference to a WindArea region.",
+                    "id": "TransitionDist",
+                    "name": "Transition Distance",
+                    "description": "Distance it takes for an envmap to fully transition into view.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SpecularLightMult",
+                    "name": "Specular Light Multiplier",
+                    "description": "Strength of specular light in region.",
+                    "attributes": ""
+                },
+                {
+                    "id": "PointLightMult",
+                    "name": "Point Light Multiplier",
+                    "description": "Strength of direct light emitting from EnvironmentMapPoint.",
+                    "attributes": ""
+                },
+                {
+                    "id": "IsModifyLight",
+                    "name": "Modify Light",
+                    "description": "Affects lighting with other fields when true. Possibly normalizes light when false.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "EnvironmentMapPoint",
+            "name": "Environment Map Point",
+            "description": "This map object is used to define the Global Illumination configuration.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "EnvironmentMapOutput",
+            "name": "Environment Map Output",
+            "description": "This map object is used to define the Global Illumination configuration.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "FallPreventionRemoval",
+            "name": "Fall Prevention Removal",
+            "description": "Unknown.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "FastTravelRestriction",
+            "name": "Fast Travel Restriction",
+            "description": "",
+            "attributes": "This map object is used to define a region where fast travel via the player's map is disabled.",
+            "members": [
+                {
+                    "id": "EventFlagID",
+                    "name": "Event Flag ID",
+                    "description": "Disables fast travel when flag is OFF.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "GroupDefeatReward",
+            "name": "Group Defeat Reward",
+            "description": "This map object is used to configure a group that rewards the player flasks after all of the group members are dead.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "PartNames",
+                    "name": "Part Names",
+                    "description": "References to enemies to defeat to receive the reward.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EstusFlaskRecoveryID",
+                    "name": "Estus Flask Recovery ID",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "HorseRideOverride",
+            "name": "Horse Ride Override",
+            "description": "This map object is used to configure a region where the player's ability to ride Torrent is either enabled or disabled, ignoring the collision or asset's flag for this.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "OverrideType",
+                    "name": "Override Type",
+                    "description": "1 = Forbid riding torrent, 2 = Permit riding torrent",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Hitset",
+            "name": "Hitset",
+            "description": "Unknown.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "InvasionPoint",
+            "name": "Invasion Point",
+            "description": "This map object is used to configure points where an invader may appear.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Priority",
+                    "name": "Selection Priority",
+                    "description": "The priority this point has over others during the selection process.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "MapPoint",
+            "name": "Map Point",
+            "description": "This map object is used to define a map point that appears on the player's map.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "WorldMapPointParamID",
+                    "name": "World Map Point ID",
+                    "description": "Determines which WorldMapPointParam to use.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "MapPointDiscoveryOverride",
+            "name": "Map Point Discovery Override",
+            "description": "This map object is used to configure a region that overrides the default parameters for discovering a specified map point.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "MapPointParticipationOverride",
+            "name": "Map Point Participation Override",
+            "description": "Unknown.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "MapNameOverride",
+            "name": "Map Name Override",
+            "description": "This map object is used to configure a region where the area name prompt is replaced with another name.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
                     "attributes": ""
                 }
             ]
@@ -951,18 +1195,18 @@
         {
             "id": "Message",
             "name": "Message",
-            "description": "",
+            "description": "This map object is used to configure a point where a pre-defined message should appear, and the contents of the message.",
             "attributes": "",
             "members": [
                 {
                     "id": "MessageID",
                     "name": "Message ID",
-                    "description": "ID of the message's text in the FMGs.",
+                    "description": "ID of this message's text in the FMGs.",
                     "attributes": ""
                 },
                 {
                     "id": "Hidden",
-                    "name": "Hidden",
+                    "name": "Is Hidden",
                     "description": "Whether the message requires Seek Guidance to appear.",
                     "attributes": ""
                 },
@@ -1005,67 +1249,229 @@
             ]
         },
         {
-            "id": "EnvironmentMapEffectBox",
-            "name": "Environment Map Effect Box",
-            "description": "",
+            "id": "MountJump",
+            "name": "Mount Jump",
+            "description": "This map object is used to define a region where a Spiritspring is located.",
             "attributes": "",
             "members": [
                 {
-                    "id": "EnableDist",
-                    "name": "Enable Distance",
-                    "description": "Distance from camera required before enabling envmap. 0 = always enabled.",
-                    "attributes": ""
-                },
-                {
-                    "id": "TransitionDist",
-                    "name": "Transition Distance",
-                    "description": "Distance it takes for an envmap to fully transition into view.",
-                    "attributes": ""
-                },
-                {
-                    "id": "SpecularLightMult",
-                    "name": "Specular Light Multiplier",
-                    "description": "Strength of specular light in region.",
-                    "attributes": ""
-                },
-                {
-                    "id": "PointLightMult",
-                    "name": "Point Light Multiplier",
-                    "description": "Strength of direct light emitting from EnvironmentMapPoint.",
-                    "attributes": ""
-                },
-                {
-                    "id": "IsModifyLight",
-                    "name": "Modify Light",
-                    "description": "Affects lighting with other fields when true. Possibly normalizes light when false.",
+                    "id": "JumpHeight",
+                    "name": "Jump Height",
+                    "description": "Height the player will move upwards when activating the spiritspring.",
                     "attributes": ""
                 }
             ]
         },
         {
-            "id": "Connection",
-            "name": "Connection",
-            "description": "The Connection map object determines how the specified map, as defined by Target Map ID, is placed in relation to the current map.",
+            "id": "MountJumpFall",
+            "name": "Mount Jump Fall",
+            "description": "This map object is used to define a region where a Spiritspring landing may occur. This type of landing prevents all fall damage.",
             "attributes": "",
             "members": [
                 {
-                    "id": "TargetMapID",
-                    "name": "Target Map ID",
-                    "description": "Map ID this connection targets.",
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
                     "attributes": ""
                 }
             ]
         },
         {
-            "id": "MapPoint",
-            "name": "Map Point",
-            "description": "",
+            "id": "MufflingBox",
+            "name": "Muffling Box",
+            "description": "This map object is used to define a region where sound is muffled in accordance with the specified parameters.",
             "attributes": "",
             "members": [
                 {
-                    "id": "WorldMapPointParamID",
-                    "name": "World Map Point ID",
-                    "description": "Determines which WorldMapPointParam to use.",
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "MufflingPlane",
+            "name": "Muffling Plane",
+            "description": "This map object is used to define a flat region where sound is muffled in accordance with the specified parameters.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "MufflingPortal",
+            "name": "Muffling Portal",
+            "description": "This map object is used to define a region where sound is muffled in accordance with the specified parameters.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "NavmeshCutting",
+            "name": "Navmesh Cutting",
+            "description": "This map object is used to define a region where the navigation mesh can be 'cut'.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "NPCArea",
+            "name": "NPC Area",
+            "description": "Unknown.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Other",
+            "name": "Other",
+            "description": "This map object is used to define a 'trigger' region used for various forms of detection and placement.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "PatrolRoute",
+            "name": "Patrol Route",
+            "description": "This map object is used to define a patrol point that is used within a Patrol Info map object.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "PlayArea",
+            "name": "Play Area",
+            "description": "This map object is used to define an area used to setup a Play Region within a map. Play Regions control various multiplayer parameters.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "SFX",
+            "name": "SFX",
+            "description": "This map object is used to define a SFX that appears within a map.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "EffectID",
+                    "name": "Effect ID",
+                    "description": "The ID of the particle effect FFX.",
+                    "attributes": ""
+                },
+                {
+                    "id": "StartDisabled",
+                    "name": "Start Disabled",
+                    "description": "If true, the effect is off by default until enabled by an event script.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Sound",
+            "name": "Sound",
+            "description": "This map object is used to define a Sound that occurs within a map.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "SoundType",
+                    "name": "Sound Type",
+                    "description": "The category of the sound.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SoundID",
+                    "name": "Sound ID",
+                    "description": "The ID of the sound.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ChildRegionNames",
+                    "name": "Child Region Names",
+                    "description": "References to other regions used to build a composite shape.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "SoundRegion",
+            "name": "Sound Region",
+            "description": "This map object is used to define a region within a map that emits sound.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "SpawnPoint",
+            "name": "Spawn Point",
+            "description": "This map object is used to define a point that is used for player respawning.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "WeatherCreateAssetPoint",
+            "name": "Weather Create Asset Point",
+            "description": "Unknown.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
+                    "description": "",
                     "attributes": ""
                 }
             ]
@@ -1073,7 +1479,7 @@
         {
             "id": "WeatherOverride",
             "name": "Weather Override",
-            "description": "",
+            "description": "This map object is used to define a region that overrides the default weather for the map.",
             "attributes": "",
             "members": [
                 {
@@ -1085,63 +1491,35 @@
             ]
         },
         {
-            "id": "GroupDefeatReward",
-            "name": "Group Defeat Reward",
-            "description": "",
+            "id": "WindArea",
+            "name": "Wind Area",
+            "description": "This map object is used to define a region that applies wind physics to any cloth-enabled models.",
             "attributes": "",
             "members": [
                 {
-                    "id": "PartNames",
-                    "name": "Part Names",
-                    "description": "References to enemies to defeat to receive the reward.",
-                    "attributes": ""
-                },
-                {
-                    "id": "EstusFlaskRecoveryID",
-                    "name": "Estus Flask Recovery ID",
+                    "id": "Blank",
+                    "name": "",
                     "description": "",
                     "attributes": ""
                 }
             ]
         },
         {
-            "id": "FastTravelRestriction",
-            "name": "Fast Travel Restriction",
-            "description": "",
+            "id": "WindSFX",
+            "name": "Wind SFX",
+            "description": "This map object is used to define a region that displays wind visuals.",
             "attributes": "",
             "members": [
                 {
-                    "id": "EventFlagID",
-                    "name": "Event Flag ID",
-                    "description": "Disables fast travel when flag is OFF.",
+                    "id": "EffectID",
+                    "name": "Effect ID",
+                    "description": "ID of the effect FFX.",
                     "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "MountJump",
-            "name": "Mount Jump",
-            "description": "",
-            "attributes": "",
-            "members": [
+                },
                 {
-                    "id": "JumpHeight",
-                    "name": "Jump Height",
-                    "description": "Height the player will move upwards when activating a MountJump.",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "HorseRideOverride",
-            "name": "Horse Ride Override",
-            "description": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "OverrideType",
-                    "name": "Override Type",
-                    "description": "1 = Forbid riding torrent, 2 = Permit riding torrent",
+                    "id": "WindAreaName",
+                    "name": "Wind Area Name",
+                    "description": "Reference to a WindArea region.",
                     "attributes": ""
                 }
             ]
@@ -1149,7 +1527,7 @@
         {
             "id": "Light",
             "name": "Light",
-            "description": "",
+            "description": "This map object represents a light emitter within a map.",
             "attributes": "",
             "members": [
                 {
@@ -1293,20 +1671,6 @@
                 {
                     "id": "VolumeDensity",
                     "name": "Volume Density",
-                    "description": "",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "BuddySummonPoint",
-            "name": "Buddy Summon Point",
-            "description": "The BuddySummonPoint map object was part of a prototype Buddy Summon implementation, but is no longer used.",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "Blank",
-                    "name": "",
                     "description": "",
                     "attributes": ""
                 }

@@ -30,12 +30,15 @@ namespace StudioCore.Editors.MapEditor
             if (attributes.Any())
             {
                 var enumName = attributes[0].EnumType;
-                var options = MsbFormatBank.Bank.Enums.list.Where(x => x.id == enumName).ToList()[0].members;
+                var temp = MsbFormatBank.Bank.Enums.list.Where(x => x.id == enumName).ToList()[0];
 
-                if (options == null)
+                if (temp == null)
                 {
                     return false;
                 }
+
+                var options = temp.members;
+
 
                 ImGui.NextColumn();
 

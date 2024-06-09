@@ -1296,6 +1296,28 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBS.Event.Treasure ||
             WrappedObject is MSB_AC6.Event.Treasure ? true : false;
     }
+
+    /// <summary>
+    /// Returns true if this entity is an ObjAct
+    /// </summary>
+    public bool IsEventObjAct()
+    {
+        return WrappedObject is MSB1.Event.ObjAct ||
+            WrappedObject is MSB3.Event.ObjAct ||
+            WrappedObject is MSBB.Event.ObjAct ||
+            WrappedObject is MSBE.Event.ObjAct ||
+            WrappedObject is MSBS.Event.ObjAct ||
+            WrappedObject is MSB_AC6.Event.ObjAct ? true : false;
+    }
+
+    /// <summary>
+    /// Returns true if this entity is an Mount
+    /// </summary>
+    public bool IsEventMount()
+    {
+        return WrappedObject is MSBE.Event.Mount ? true : false;
+    }
+
     /// <summary>
     /// Returns true if this entity is an Connection
     /// </summary>
