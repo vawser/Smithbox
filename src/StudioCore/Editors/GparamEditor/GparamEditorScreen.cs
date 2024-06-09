@@ -787,7 +787,7 @@ public class GparamEditorScreen : EditorScreen
     {
         ImGui.AlignTextToFramePadding();
 
-        string desc = GparamFormatBank.Bank.GetReferenceDescription(_selectedParamField.Key);
+        string desc = GparamFormatBank.Bank.GetReferenceDescription(_selectedParamGroup.Key, _selectedParamField.Key);
 
         // Skip if empty
         if (desc != "")

@@ -1174,7 +1174,7 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// The asset name that the stake is represented by.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string RetryPartName { get; set; }
@@ -1184,15 +1184,15 @@ namespace SoulsFormats
                 /// <summary>
                 /// Flag that must be set for stake to be available.
                 /// </summary>
-                public uint EventFlagID { get; set; }
+                public uint TriggerEventFlagID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The distance at which the retry point is active (only used if no retry region is set).
                 /// </summary>
-                public float UnkT08 { get; set; }
+                public float RetryDistance { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The region in which the retry point is active.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string RetryRegionName { get; set; }
@@ -1200,7 +1200,7 @@ namespace SoulsFormats
                 public short RetryRegionIndex { get; set; }
 
                 /// <summary>
-                /// Creates a SignPool with default values.
+                /// Creates a RetryPoint with default values.
                 /// </summary>
                 public RetryPoint() : base($"{nameof(Event)}: {nameof(RetryPoint)}") { }
 
@@ -1209,8 +1209,8 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     RetryPartIndex = br.ReadInt32();
-                    EventFlagID = br.ReadUInt32();
-                    UnkT08 = br.ReadSingle();
+                    TriggerEventFlagID = br.ReadUInt32();
+                    RetryDistance = br.ReadSingle();
                     RetryRegionIndex = br.ReadInt16();
                     br.AssertInt16(0);
                 }
@@ -1218,8 +1218,8 @@ namespace SoulsFormats
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(RetryPartIndex);
-                    bw.WriteUInt32(EventFlagID);
-                    bw.WriteSingle(UnkT08);
+                    bw.WriteUInt32(TriggerEventFlagID);
+                    bw.WriteSingle(RetryDistance);
                     bw.WriteInt16(RetryRegionIndex);
                     bw.WriteInt16(0);
                 }

@@ -369,9 +369,15 @@
                     "attributes": ""
                 },
                 {
-                    "id": "EventFlagID",
-                    "name": "Event Flag ID",
+                    "id": "TriggerEventFlagID",
+                    "name": "Trigger Event Flag ID",
                     "description": "Flag that must be set for retry point to be available.",
+                    "attributes": ""
+                },
+                {
+                    "id": "RetryDistance",
+                    "name": "Retry Distance",
+                    "description": "The distance at which the retry point is active (only used if no retry region is set).",
                     "attributes": ""
                 },
                 {

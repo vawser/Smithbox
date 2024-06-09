@@ -33,6 +33,7 @@ Map Editor:
  - Add "Find Value Instances" for MSB values
  
 Model Editor:
+ - Fix the Model Editor so it saves the FLVERs correctly
  - Add "Copy As" action for top-level node that lets the user duplicate the entire "chr" set: anibnd, chrbnd, etc
  - Add floating text for dummy poly ref IDs
  - Add floating text for co-ordinate direction (X, Y, Z)
@@ -63,8 +64,6 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #--------------------------------------
-
-
 DCX.Type t;
 Memory<byte> decomp = DCX.Decompress(bytes, out t);
 var hvk = new HavokBinarySerializer();

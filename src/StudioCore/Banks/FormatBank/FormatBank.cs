@@ -115,25 +115,23 @@ public class FormatBank
         }));
     }
 
-    public string GetReferenceName(string key, string name)
+    public string GetReferenceName(string classKey, string name, string sharedTypeName = "")
     {
         if (_FormatBank.Data.list == null)
-            return key;
+            return name;
 
         // Top
         foreach (FormatReference entry in _FormatBank.Data.list)
         {
-            if (entry.id == key)
+            if (entry.id == classKey || entry.id == sharedTypeName)
             {
-                name = entry.name;
-            }
-
-            // Members
-            foreach (FormatMember member in entry.members)
-            {
-                if (member.id == key)
+                // Members
+                foreach (FormatMember member in entry.members)
                 {
-                    name = member.name;
+                    if (member.id == name)
+                    {
+                        name = member.name;
+                    }
                 }
             }
         }
@@ -141,7 +139,7 @@ public class FormatBank
         return name;
     }
 
-    public string GetReferenceDescription(string key)
+    public string GetReferenceDescription(string classKey, string key, string sharedTypeName = "")
     {
         var desc = "";
 
@@ -151,17 +149,15 @@ public class FormatBank
         // Top
         foreach (FormatReference entry in _FormatBank.Data.list)
         {
-            if (entry.id == key)
+            if (entry.id == classKey || entry.id == sharedTypeName)
             {
-                desc = entry.description;
-            }
-
-            // Members
-            foreach (FormatMember member in entry.members)
-            {
-                if (member.id == key)
+                // Members
+                foreach (FormatMember member in entry.members)
                 {
-                    desc = member.description;
+                    if (member.id == key)
+                    {
+                        desc = member.description;
+                    }
                 }
             }
         }

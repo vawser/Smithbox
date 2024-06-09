@@ -874,7 +874,7 @@ public class ModelPropertyEditor
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            name = FlverFormatBank.Bank.GetReferenceName(name, name);
+            name = FlverFormatBank.Bank.GetReferenceName(classType.Name, name);
         }
 
         return name;
@@ -888,7 +888,7 @@ public class ModelPropertyEditor
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            var desc = FlverFormatBank.Bank.GetReferenceDescription(name);
+            var desc = FlverFormatBank.Bank.GetReferenceDescription(classType.Name, name);
 
             ImguiUtils.ShowHoverTooltip(desc);
         }

@@ -1350,7 +1350,20 @@ public class MapPropertyEditor
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            name = MsbFormatBank.Bank.GetReferenceName(name, name);
+            name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name);
+
+            if (_selected.IsPart())
+            {
+                name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Part");
+            }
+            if (_selected.IsRegion())
+            {
+                name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Region");
+            }
+            if (_selected.IsEvent())
+            {
+                name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Event");
+            }
         }
 
         return name;
@@ -1364,7 +1377,7 @@ public class MapPropertyEditor
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            var desc = MsbFormatBank.Bank.GetReferenceDescription(name);
+            var desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name);
 
             if (desc != "")
             {
