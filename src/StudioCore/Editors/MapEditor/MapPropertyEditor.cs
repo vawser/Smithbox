@@ -832,309 +832,277 @@ public class MapPropertyEditor
 
         PropertyInfo[] properties = _propCache.GetCachedProperties(type);
 
+        var refID = 0; // ID for ImGui distinction
+
+        // Top Decoration
         if (decorate)
         {
+            if (entSelection.Count == 1)
+            {
+                if (firstEnt.References != null)
+                {
+                    if (CFG.Current.MapEditor_Enable_Property_Property_Class_Info)
+                    {
+                        // Display info on the map object class (e.g. Part.Enemy, Region.RetryPoint, etc)
+                        PropInfo_MapObjectType.Display(firstEnt);
+
+                        // Display class-specific additional info
+                        PropInfo_Region_Connection.Display(firstEnt);
+                    }
+
+                    if (CFG.Current.MapEditor_Enable_Property_Property_References)
+                    {
+                        // Display references
+                        PropInfo_References.Display(firstEnt, _viewport, ref selection, ref refID);
+                        PropInfo_ReferencedBy.Display(firstEnt, ref selection, ref refID);
+                    }
+                }
+            }
+
             ImGui.Separator();
             ImGui.Text("Properties");
             ImGui.Separator();
 
+            ImGui.Text($"Map: {firstEnt.Container.Name}");
+
             ImGui.Columns(2);
 
             ImGui.Text("Object Type");
-            ImGui.Text("Property Filter");
+
+            if (CFG.Current.MapEditor_Enable_Property_Filter)
+            {
+                ImGui.Text("Property Filter");
+            }
 
             ImGui.NextColumn();
 
             ImGui.Text(type.Name);
-            // MSB Property Filter list
-            ImGui.SetNextItemWidth(-1);
-            if (ImGui.BeginCombo("##PropertyFilterList", SelectedMsbPropertyFilter))
-            {
-                foreach (var filter in MsbPropertyFilters)
-                {
-                    if (ImGui.Selectable(filter, filter == SelectedMsbPropertyFilter))
-                    {
-                        SelectedMsbPropertyFilter = filter;
-                        break;
-                    }
-                }
 
-                ImGui.EndCombo();
+            if (CFG.Current.MapEditor_Enable_Property_Filter)
+            {
+                // MSB Property Filter list
+                ImGui.SetNextItemWidth(-1);
+                if (ImGui.BeginCombo("##PropertyFilterList", SelectedMsbPropertyFilter))
+                {
+                    foreach (var filter in MsbPropertyFilters)
+                    {
+                        if (ImGui.Selectable(filter, filter == SelectedMsbPropertyFilter))
+                        {
+                            SelectedMsbPropertyFilter = filter;
+                            break;
+                        }
+                    }
+
+                    ImGui.EndCombo();
+                }
+                ImguiUtils.ShowHoverTooltip("Filter the property view, narrowing down what is visible.");
             }
-            ImguiUtils.ShowHoverTooltip("Filter the property view, narrowing down what is visible.");
 
             ImGui.NextColumn();
         }
 
-        // Custom editors
-        if (type == typeof(FLVER2.BufferLayout))
+        // Properties
+        var id = 0;
+        foreach (PropertyInfo prop in properties)
         {
-            if (entSelection.Count() == 1)
+            if (!prop.CanWrite && !prop.PropertyType.IsArray)
             {
-                PropEditorFlverLayout(firstEnt, (FLVER2.BufferLayout)obj);
+                continue;
             }
-            else
+
+            // Index Properties are hidden by default
+            if (prop.GetCustomAttribute<IndexProperty>() != null)
             {
-                ImGui.Text("Cannot edit multiples of this object at once.");
+                continue;
             }
-        }
-        else
-        {
-            var id = 0;
-            foreach (PropertyInfo prop in properties)
+
+            if (SelectedMsbPropertyFilter == "Vital")
             {
-                if (!prop.CanWrite && !prop.PropertyType.IsArray)
+                // Filter: Vital Properties
+                if (prop.GetCustomAttribute<IgnoreProperty>() != null)
                 {
                     continue;
                 }
-
-                // Index Properties are hidden by default
-                if (prop.GetCustomAttribute<IndexProperty>() != null)
+            }
+            if (SelectedMsbPropertyFilter == "Enemy")
+            {
+                // Filter: Vital Properties
+                if (prop.GetCustomAttribute<EnemyProperty>() == null)
                 {
                     continue;
                 }
+            }
 
-                if (SelectedMsbPropertyFilter == "Vital")
+            ImGui.PushID(id);
+            ImGui.AlignTextToFramePadding();
+            Type typ = prop.PropertyType;
+
+            if (typ.IsArray)
+            {
+                var a = (Array)prop.GetValue(obj);
+                for (var i = 0; i < a.Length; i++)
                 {
-                    // Filter: Vital Properties
-                    if (prop.GetCustomAttribute<IgnoreProperty>() != null)
+                    ImGui.PushID(i);
+
+                    Type arrtyp = typ.GetElementType();
+                    if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                     {
-                        continue;
+                        var open = ImGui.TreeNodeEx($@"{GetFieldName(type, prop, selection)}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
+                        ShowFieldHint(type, prop, selection);
+                        ImGui.NextColumn();
+                        ImGui.SetNextItemWidth(-1);
+                        var o = a.GetValue(i);
+                        ImGui.Text(o.GetType().Name);
+                        ImGui.NextColumn();
+                        if (open)
+                        {
+                            PropEditorGeneric(selection, entSelection, o, false, i);
+                            ImGui.TreePop();
+                        }
+
+                        ImGui.PopID();
+                    }
+                    else
+                    {
+                        PropContextRowOpener();
+                        ImGui.Text($@"{GetFieldName(type, prop, selection)}[{i}]");
+                        ShowFieldHint(type, prop, selection);
+                        ImGui.NextColumn();
+                        ImGui.SetNextItemWidth(-1);
+                        var oldval = a.GetValue(i);
+                        object newval = null;
+
+                        // Property Editor UI
+                        (bool, bool) propEditResults =
+                            PropertyRow(typ.GetElementType(), oldval, out newval, prop);
+                        var changed = propEditResults.Item1;
+                        var committed = propEditResults.Item2;
+                        DisplayPropContextMenu(selection, prop, obj);
+                        if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
+                        {
+                            ImGui.SetItemDefaultFocus();
+                        }
+
+                        if (ParamRefRow(prop, oldval, ref newval))
+                        {
+                            changed = true;
+                            committed = true;
+                        }
+
+                        UpdateProperty(prop, entSelection, newval, changed, committed, i, classIndex);
+
+                        ImGui.NextColumn();
+                        ImGui.PopID();
                     }
                 }
-                if (SelectedMsbPropertyFilter == "Enemy")
+
+                ImGui.PopID();
+            }
+            else if (typ.IsGenericType && typ.GetGenericTypeDefinition() == typeof(List<>))
+            {
+                var l = prop.GetValue(obj);
+                PropertyInfo itemprop = l.GetType().GetProperty("Item");
+                var count = (int)l.GetType().GetProperty("Count").GetValue(l);
+                for (var i = 0; i < count; i++)
                 {
-                    // Filter: Vital Properties
-                    if (prop.GetCustomAttribute<EnemyProperty>() == null)
+                    ImGui.PushID(i);
+
+                    Type arrtyp = typ.GetGenericArguments()[0];
+                    if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                     {
-                        continue;
+                        var open = ImGui.TreeNodeEx($@"{GetFieldName(type, prop, selection)}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
+                        ShowFieldHint(type, prop, selection);
+                        ImGui.NextColumn();
+                        ImGui.SetNextItemWidth(-1);
+                        var o = itemprop.GetValue(l, new object[] { i });
+                        ImGui.Text(o.GetType().Name);
+                        ImGui.NextColumn();
+                        if (open)
+                        {
+                            PropEditorGeneric(selection, entSelection, o, false);
+                            ImGui.TreePop();
+                        }
+
+                        ImGui.PopID();
+                    }
+                    else
+                    {
+                        PropContextRowOpener();
+                        ImGui.Text($@"{GetFieldName(type, prop, selection)}[{i}]");
+                        ShowFieldHint(type, prop, selection);
+                        ImGui.NextColumn();
+                        ImGui.SetNextItemWidth(-1);
+                        var oldval = itemprop.GetValue(l, new object[] { i });
+                        object newval = null;
+
+                        // Property Editor UI
+                        (bool, bool) propEditResults = PropertyRow(arrtyp, oldval, out newval, prop);
+                        var changed = propEditResults.Item1;
+                        var committed = propEditResults.Item2;
+                        DisplayPropContextMenu(selection, prop, obj);
+                        if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
+                        {
+                            ImGui.SetItemDefaultFocus();
+                        }
+
+                        if (ParamRefRow(prop, oldval, ref newval))
+                        {
+                            changed = true;
+                            committed = true;
+                        }
+
+                        UpdateProperty(prop, entSelection, newval, changed, committed, i, classIndex);
+
+                        ImGui.NextColumn();
+                        ImGui.PopID();
                     }
                 }
 
-                ImGui.PushID(id);
-                ImGui.AlignTextToFramePadding();
-                Type typ = prop.PropertyType;
+                ImGui.PopID();
+            }
+            else if (typ.IsClass && typ == typeof(MSB.Shape))
+            {
+                var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
+                ShowFieldHint(type, prop, selection);
+                ImGui.NextColumn();
+                ImGui.SetNextItemWidth(-1);
+                var o = prop.GetValue(obj);
+                var shapetype = Enum.Parse<RegionShape>(o.GetType().Name);
+                var shap = (int)shapetype;
 
-                if (typ.IsArray)
+                if (entSelection.Count == 1)
                 {
-                    var a = (Array)prop.GetValue(obj);
-                    for (var i = 0; i < a.Length; i++)
+                    if (ImGui.Combo("##shapecombo", ref shap, _regionShapes, _regionShapes.Length))
                     {
-                        ImGui.PushID(i);
-
-                        Type arrtyp = typ.GetElementType();
-                        if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
+                        MSB.Shape newshape;
+                        switch ((RegionShape)shap)
                         {
-                            var open = ImGui.TreeNodeEx($@"{GetFieldName(type, prop, selection)}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
-                            ShowFieldHint(type, prop, selection);
-                            ImGui.NextColumn();
-                            ImGui.SetNextItemWidth(-1);
-                            var o = a.GetValue(i);
-                            ImGui.Text(o.GetType().Name);
-                            ImGui.NextColumn();
-                            if (open)
-                            {
-                                PropEditorGeneric(selection, entSelection, o, false, i);
-                                ImGui.TreePop();
-                            }
-
-                            ImGui.PopID();
-                        }
-                        else
-                        {
-                            PropContextRowOpener();
-                            ImGui.Text($@"{GetFieldName(type, prop, selection)}[{i}]");
-                            ShowFieldHint(type, prop, selection);
-                            ImGui.NextColumn();
-                            ImGui.SetNextItemWidth(-1);
-                            var oldval = a.GetValue(i);
-                            object newval = null;
-
-                            // Property Editor UI
-                            (bool, bool) propEditResults =
-                                PropertyRow(typ.GetElementType(), oldval, out newval, prop);
-                            var changed = propEditResults.Item1;
-                            var committed = propEditResults.Item2;
-                            DisplayPropContextMenu(selection, prop, obj);
-                            if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
-                            {
-                                ImGui.SetItemDefaultFocus();
-                            }
-
-                            if (ParamRefRow(prop, oldval, ref newval))
-                            {
-                                changed = true;
-                                committed = true;
-                            }
-
-                            UpdateProperty(prop, entSelection, newval, changed, committed, i, classIndex);
-
-                            ImGui.NextColumn();
-                            ImGui.PopID();
-                        }
-                    }
-
-                    ImGui.PopID();
-                }
-                else if (typ.IsGenericType && typ.GetGenericTypeDefinition() == typeof(List<>))
-                {
-                    var l = prop.GetValue(obj);
-                    PropertyInfo itemprop = l.GetType().GetProperty("Item");
-                    var count = (int)l.GetType().GetProperty("Count").GetValue(l);
-                    for (var i = 0; i < count; i++)
-                    {
-                        ImGui.PushID(i);
-
-                        Type arrtyp = typ.GetGenericArguments()[0];
-                        if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
-                        {
-                            var open = ImGui.TreeNodeEx($@"{GetFieldName(type, prop, selection)}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
-                            ShowFieldHint(type, prop, selection);
-                            ImGui.NextColumn();
-                            ImGui.SetNextItemWidth(-1);
-                            var o = itemprop.GetValue(l, new object[] { i });
-                            ImGui.Text(o.GetType().Name);
-                            ImGui.NextColumn();
-                            if (open)
-                            {
-                                PropEditorGeneric(selection, entSelection, o, false);
-                                ImGui.TreePop();
-                            }
-
-                            ImGui.PopID();
-                        }
-                        else
-                        {
-                            PropContextRowOpener();
-                            ImGui.Text($@"{GetFieldName(type, prop, selection)}[{i}]");
-                            ShowFieldHint(type, prop, selection);
-                            ImGui.NextColumn();
-                            ImGui.SetNextItemWidth(-1);
-                            var oldval = itemprop.GetValue(l, new object[] { i });
-                            object newval = null;
-
-                            // Property Editor UI
-                            (bool, bool) propEditResults = PropertyRow(arrtyp, oldval, out newval, prop);
-                            var changed = propEditResults.Item1;
-                            var committed = propEditResults.Item2;
-                            DisplayPropContextMenu(selection, prop, obj);
-                            if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
-                            {
-                                ImGui.SetItemDefaultFocus();
-                            }
-
-                            if (ParamRefRow(prop, oldval, ref newval))
-                            {
-                                changed = true;
-                                committed = true;
-                            }
-
-                            UpdateProperty(prop, entSelection, newval, changed, committed, i, classIndex);
-
-                            ImGui.NextColumn();
-                            ImGui.PopID();
-                        }
-                    }
-
-                    ImGui.PopID();
-                }
-                else if (typ.IsClass && typ == typeof(MSB.Shape))
-                {
-                    var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
-                    ShowFieldHint(type, prop, selection);
-                    ImGui.NextColumn();
-                    ImGui.SetNextItemWidth(-1);
-                    var o = prop.GetValue(obj);
-                    var shapetype = Enum.Parse<RegionShape>(o.GetType().Name);
-                    var shap = (int)shapetype;
-
-                    if (entSelection.Count == 1)
-                    {
-                        if (ImGui.Combo("##shapecombo", ref shap, _regionShapes, _regionShapes.Length))
-                        {
-                            MSB.Shape newshape;
-                            switch ((RegionShape)shap)
-                            {
-                                case RegionShape.Box:
-                                    newshape = new MSB.Shape.Box();
-                                    break;
-                                case RegionShape.Point:
-                                    newshape = new MSB.Shape.Point();
-                                    break;
-                                case RegionShape.Cylinder:
-                                    newshape = new MSB.Shape.Cylinder();
-                                    break;
-                                case RegionShape.Sphere:
-                                    newshape = new MSB.Shape.Sphere();
-                                    break;
-                                case RegionShape.Composite:
-                                    newshape = new MSB.Shape.Composite();
-                                    break;
-                                case RegionShape.Rectangle:
-                                    newshape = new MSB.Shape.Rectangle();
-                                    break;
-                                case RegionShape.Circle:
-                                    newshape = new MSB.Shape.Circle();
-                                    break;
-                                default:
-                                    throw new Exception("Invalid shape");
-                            }
-
-                            PropertiesChangedAction action = new(prop, obj, newshape);
-                            action.SetPostExecutionAction(undo =>
-                            {
-                                var selected = false;
-                                if (firstEnt.RenderSceneMesh != null)
-                                {
-                                    selected = firstEnt.RenderSceneMesh.RenderSelectionOutline;
-                                    firstEnt.RenderSceneMesh.Dispose();
-                                    firstEnt.RenderSceneMesh = null;
-                                }
-
-                                firstEnt.UpdateRenderModel();
-                                firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
-                            });
-                            ContextActionManager.ExecuteAction(action);
-                        }
-                    }
-
-                    ImGui.NextColumn();
-                    if (open)
-                    {
-                        PropEditorGeneric(selection, entSelection, o, false);
-                        ImGui.TreePop();
-                    }
-
-                    ImGui.PopID();
-                }
-                else if (typ == typeof(BTL.LightType))
-                {
-                    var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
-                    ShowFieldHint(type, prop, selection);
-                    ImGui.NextColumn();
-                    ImGui.SetNextItemWidth(-1);
-                    var o = prop.GetValue(obj);
-                    var enumTypes = Enum.Parse<LightType>(o.ToString());
-                    var thisType = (int)enumTypes;
-                    if (ImGui.Combo("##lightTypecombo", ref thisType, _lightTypes, _lightTypes.Length))
-                    {
-                        BTL.LightType newLight;
-                        switch ((LightType)thisType)
-                        {
-                            case LightType.Directional:
-                                newLight = BTL.LightType.Directional;
+                            case RegionShape.Box:
+                                newshape = new MSB.Shape.Box();
                                 break;
-                            case LightType.Point:
-                                newLight = BTL.LightType.Point;
+                            case RegionShape.Point:
+                                newshape = new MSB.Shape.Point();
                                 break;
-                            case LightType.Spot:
-                                newLight = BTL.LightType.Spot;
+                            case RegionShape.Cylinder:
+                                newshape = new MSB.Shape.Cylinder();
+                                break;
+                            case RegionShape.Sphere:
+                                newshape = new MSB.Shape.Sphere();
+                                break;
+                            case RegionShape.Composite:
+                                newshape = new MSB.Shape.Composite();
+                                break;
+                            case RegionShape.Rectangle:
+                                newshape = new MSB.Shape.Rectangle();
+                                break;
+                            case RegionShape.Circle:
+                                newshape = new MSB.Shape.Circle();
                                 break;
                             default:
-                                throw new Exception("Invalid BTL LightType");
+                                throw new Exception("Invalid shape");
                         }
 
-                        PropertiesChangedAction action = new(prop, obj, newLight);
+                        PropertiesChangedAction action = new(prop, obj, newshape);
                         action.SetPostExecutionAction(undo =>
                         {
                             var selected = false;
@@ -1149,105 +1117,144 @@ public class MapPropertyEditor
                             firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
                         });
                         ContextActionManager.ExecuteAction(action);
-
-                        ContextActionManager.ExecuteAction(action);
                     }
-
-                    ImGui.NextColumn();
-                    if (open)
-                    {
-                        PropEditorGeneric(selection, entSelection, o, false);
-                        ImGui.TreePop();
-                    }
-
-                    ImGui.PopID();
                 }
-                else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
+
+                ImGui.NextColumn();
+                if (open)
                 {
-                    var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
-                    ShowFieldHint(type, prop, selection);
-                    ImGui.NextColumn();
-                    ImGui.SetNextItemWidth(-1);
-                    var o = prop.GetValue(obj);
-                    ImGui.Text(o.GetType().Name);
-                    ImGui.NextColumn();
-                    if (open)
-                    {
-                        PropEditorGeneric(selection, entSelection, o, false);
-                        ImGui.TreePop();
-                    }
-
-                    ImGui.PopID();
-                }
-                else
-                {
-                    PropContextRowOpener();
-                    ImGui.Text(GetFieldName(type, prop, selection));
-                    ShowFieldHint(type, prop, selection);
-                    ImGui.NextColumn();
-                    ImGui.SetNextItemWidth(-1);
-                    var oldval = prop.GetValue(obj);
-                    object newval = null;
-
-                    // Property Editor UI
-                    (bool, bool) propEditResults = PropertyRow(typ, oldval, out newval, prop);
-                    var changed = propEditResults.Item1;
-                    var committed = propEditResults.Item2;
-                    DisplayPropContextMenu(selection, prop, obj);
-                    if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
-                    {
-                        ImGui.SetItemDefaultFocus();
-                    }
-
-                    if (ParamRefRow(prop, oldval, ref newval))
-                    {
-                        changed = true;
-                        committed = true;
-                    }
-
-                    if (MapEditorDecorations.GenericEnumRow(prop, oldval, ref newval))
-                    {
-                        changed = true;
-                        committed = true;
-                    }
-
-                    if (MapEditorDecorations.AliasEnumRow(prop, oldval, ref newval))
-                    {
-                        changed = true;
-                        committed = true;
-                    }
-
-                    if (prop.GetCustomAttribute<EldenRingAssetMask>() != null)
-                    {
-                        if (MapEditorDecorations.EldenRingAssetMaskAndAnimRow(prop, oldval, ref newval, selection))
-                        {
-                            changed = true;
-                            committed = true;
-                        }
-                    }
-
-                    UpdateProperty(prop, entSelection, newval, changed, committed, -1, classIndex);
-
-                    ImGui.NextColumn();
-                    ImGui.PopID();
+                    PropEditorGeneric(selection, entSelection, o, false);
+                    ImGui.TreePop();
                 }
 
-                id++;
+                ImGui.PopID();
             }
-        }
-
-        var refID = 0; // ID for ImGui distinction
-        if (decorate && entSelection.Count == 1)
-        {
-            ImGui.Columns(1);
-
-            if (firstEnt.References != null)
+            else if (typ == typeof(BTL.LightType))
             {
-                PropInfo_Region_Connection.Display(firstEnt);
+                var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
+                ShowFieldHint(type, prop, selection);
+                ImGui.NextColumn();
+                ImGui.SetNextItemWidth(-1);
+                var o = prop.GetValue(obj);
+                var enumTypes = Enum.Parse<LightType>(o.ToString());
+                var thisType = (int)enumTypes;
+                if (ImGui.Combo("##lightTypecombo", ref thisType, _lightTypes, _lightTypes.Length))
+                {
+                    BTL.LightType newLight;
+                    switch ((LightType)thisType)
+                    {
+                        case LightType.Directional:
+                            newLight = BTL.LightType.Directional;
+                            break;
+                        case LightType.Point:
+                            newLight = BTL.LightType.Point;
+                            break;
+                        case LightType.Spot:
+                            newLight = BTL.LightType.Spot;
+                            break;
+                        default:
+                            throw new Exception("Invalid BTL LightType");
+                    }
 
-                PropInfo_References.Display(firstEnt, _viewport, ref selection, ref refID);
-                PropInfo_ReferencedBy.Display(firstEnt, ref selection, ref refID);
+                    PropertiesChangedAction action = new(prop, obj, newLight);
+                    action.SetPostExecutionAction(undo =>
+                    {
+                        var selected = false;
+                        if (firstEnt.RenderSceneMesh != null)
+                        {
+                            selected = firstEnt.RenderSceneMesh.RenderSelectionOutline;
+                            firstEnt.RenderSceneMesh.Dispose();
+                            firstEnt.RenderSceneMesh = null;
+                        }
+
+                        firstEnt.UpdateRenderModel();
+                        firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
+                    });
+                    ContextActionManager.ExecuteAction(action);
+
+                    ContextActionManager.ExecuteAction(action);
+                }
+
+                ImGui.NextColumn();
+                if (open)
+                {
+                    PropEditorGeneric(selection, entSelection, o, false);
+                    ImGui.TreePop();
+                }
+
+                ImGui.PopID();
             }
+            else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
+            {
+                var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
+                ShowFieldHint(type, prop, selection);
+                ImGui.NextColumn();
+                ImGui.SetNextItemWidth(-1);
+                var o = prop.GetValue(obj);
+                ImGui.Text(o.GetType().Name);
+                ImGui.NextColumn();
+                if (open)
+                {
+                    PropEditorGeneric(selection, entSelection, o, false);
+                    ImGui.TreePop();
+                }
+
+                ImGui.PopID();
+            }
+            else
+            {
+                PropContextRowOpener();
+                ImGui.Text(GetFieldName(type, prop, selection));
+                ShowFieldHint(type, prop, selection);
+                ImGui.NextColumn();
+                ImGui.SetNextItemWidth(-1);
+                var oldval = prop.GetValue(obj);
+                object newval = null;
+
+                // Property Editor UI
+                (bool, bool) propEditResults = PropertyRow(typ, oldval, out newval, prop);
+                var changed = propEditResults.Item1;
+                var committed = propEditResults.Item2;
+                DisplayPropContextMenu(selection, prop, obj);
+                if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
+                {
+                    ImGui.SetItemDefaultFocus();
+                }
+
+                if (ParamRefRow(prop, oldval, ref newval))
+                {
+                    changed = true;
+                    committed = true;
+                }
+
+                if (MapEditorDecorations.GenericEnumRow(prop, oldval, ref newval))
+                {
+                    changed = true;
+                    committed = true;
+                }
+
+                if (MapEditorDecorations.AliasEnumRow(prop, oldval, ref newval))
+                {
+                    changed = true;
+                    committed = true;
+                }
+
+                if (prop.GetCustomAttribute<EldenRingAssetMask>() != null)
+                {
+                    if (MapEditorDecorations.EldenRingAssetMaskAndAnimRow(prop, oldval, ref newval, selection))
+                    {
+                        changed = true;
+                        committed = true;
+                    }
+                }
+
+                UpdateProperty(prop, entSelection, newval, changed, committed, -1, classIndex);
+
+                ImGui.NextColumn();
+                ImGui.PopID();
+            }
+
+            id++;
         }
     }
 
@@ -1366,7 +1373,7 @@ public class MapPropertyEditor
         else if (entSelection.Any())
         {
             Entity firstEnt = entSelection.First();
-            ImGui.Text($" Map: {firstEnt.Container.Name}");
+            //ImGui.Text($" Map: {firstEnt.Container.Name}");
             if (firstEnt.WrappedObject == null)
             {
                 ImGui.Text("Select a map object to edit its properties.");

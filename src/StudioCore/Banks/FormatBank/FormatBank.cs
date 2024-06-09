@@ -115,6 +115,44 @@ public class FormatBank
         }));
     }
 
+    public string GetClassReferenceName(string classKey)
+    {
+        var name = "";
+
+        if (_FormatBank.Data.list == null)
+            return name;
+
+        // Top
+        foreach (FormatReference entry in _FormatBank.Data.list)
+        {
+            if (entry.id == classKey)
+            {
+                name = entry.name;
+            }
+        }
+
+        return name;
+    }
+
+    public string GetClassReferenceDescription(string classKey)
+    {
+        var desc = "";
+
+        if (_FormatBank.Data.list == null)
+            return desc;
+
+        // Top
+        foreach (FormatReference entry in _FormatBank.Data.list)
+        {
+            if (entry.id == classKey)
+            {
+                desc = entry.description;
+            }
+        }
+
+        return desc;
+    }
+
     public string GetReferenceName(string classKey, string name, string sharedTypeName = "")
     {
         if (_FormatBank.Data.list == null)

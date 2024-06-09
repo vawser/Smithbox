@@ -354,7 +354,9 @@ public class CFG
     public bool MapEditor_Enable_Commmunity_Hints = true;
     public bool MapEditor_Enable_Property_Info = false;
     public bool MapEditor_Enable_Map_Load_on_Double_Click = false;
-    public bool MapEditor_Show_Only_Important_Properties = false;
+    public bool MapEditor_Enable_Property_Property_Class_Info = true;
+    public bool MapEditor_Enable_Property_Property_References = true;
+    public bool MapEditor_Enable_Property_Filter = true;
 
     public bool MapEditor_MapObjectList_ShowListSortingType = true;
     public bool MapEditor_MapObjectList_ShowMapIdSearch = true;

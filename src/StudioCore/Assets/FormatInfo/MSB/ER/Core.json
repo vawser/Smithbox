@@ -1045,7 +1045,7 @@
         {
             "id": "Connection",
             "name": "Connection",
-            "description": "",
+            "description": "The Connection map object determines how the specified map, as defined by Target Map ID, is placed in relation to the current map.",
             "attributes": "",
             "members": [
                 {
@@ -1293,6 +1293,20 @@
                 {
                     "id": "VolumeDensity",
                     "name": "Volume Density",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "BuddySummonPoint",
+            "name": "Buddy Summon Point",
+            "description": "The BuddySummonPoint map object was part of a prototype Buddy Summon implementation, but is no longer used.",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Blank",
+                    "name": "",
                     "description": "",
                     "attributes": ""
                 }

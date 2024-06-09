@@ -23,7 +23,7 @@ public static class PropInfo_References
             return;
 
         ImGui.Separator();
-        ImGui.Text("References");
+        ImGui.Text("References:");
         ImGui.Separator();
         ImguiUtils.ShowHoverTooltip("The current selection references these map objects.");
         foreach (KeyValuePair<string, object[]> m in firstEnt.References)

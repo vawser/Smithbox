@@ -542,6 +542,15 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Display property info", ref CFG.Current.MapEditor_Enable_Property_Info);
                 ImguiUtils.ShowHoverTooltip("The MSB property fields show the property info, such as minimum and maximum values, when right-clicked.");
+
+                ImGui.Checkbox("Display property class info", ref CFG.Current.MapEditor_Enable_Property_Property_Class_Info);
+                ImguiUtils.ShowHoverTooltip("The MSB property view will display information relating to the map object's class.");
+
+                ImGui.Checkbox("Display property references", ref CFG.Current.MapEditor_Enable_Property_Property_References);
+                ImguiUtils.ShowHoverTooltip("The MSB property view will display references by and for the selected map object.");
+
+                ImGui.Checkbox("Display property filter", ref CFG.Current.MapEditor_Enable_Property_Filter);
+                ImguiUtils.ShowHoverTooltip("The MSB property filter combo-box will be visible.");
             }
 
             // Substitutions

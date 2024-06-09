@@ -16,12 +16,6 @@ public static class PropInfo_Region_Connection
     {
         if (firstEnt.IsRegionConnection())
         {
-            ImGui.Separator();
-            ImGui.Text($"Connection:");
-            ImGui.Separator();
-            ImguiUtils.WrappedText($"The Connection map object itself defines the position offset between the map it is in and the specified map in the properties.");
-            ImGui.Text("");
-
             sbyte[] mapIds = (sbyte[])PropFinderUtil.FindPropertyValue("TargetMapID", firstEnt.WrappedObject);
 
             string mapString = "m";
@@ -54,6 +48,7 @@ public static class PropInfo_Region_Connection
 
             ImGui.Text(mapString);
             AliasUtils.DisplayAlias(MapAliasBank.GetMapName(mapString));
+            ImGui.Text("");
         }
     }
 }
