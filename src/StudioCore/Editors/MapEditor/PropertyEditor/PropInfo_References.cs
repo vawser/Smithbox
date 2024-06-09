@@ -26,6 +26,9 @@ public static class PropInfo_References
         ImGui.Text("References:");
         ImGui.Separator();
         ImguiUtils.ShowHoverTooltip("The current selection references these map objects.");
+
+        var width = (ImGui.GetWindowWidth() / 100);
+
         foreach (KeyValuePair<string, object[]> m in firstEnt.References)
         {
             foreach (var n in m.Value)
@@ -33,7 +36,7 @@ public static class PropInfo_References
                 if (n is Entity e)
                 {
                     // View Reference in Viewport
-                    if (ImGui.Button(ForkAwesome.Binoculars + "##MSBRefBy" + refID))
+                    if (ImGui.Button(ForkAwesome.Binoculars + "##MSBRefBy" + refID, new Vector2(width * 5, 20)))
                     {
                         BoundingBox box = new();
 
@@ -56,7 +59,8 @@ public static class PropInfo_References
                     // Change Selection to Reference
                     ImGui.SameLine();
                     var nameWithType = e.PrettyName.Insert(2, e.WrappedObject.GetType().Name + " - ");
-                    if (ImGui.Button(nameWithType + "##MSBRefTo" + refID))
+                    ImGui.SetNextItemWidth(-1);
+                    if (ImGui.Button(nameWithType + "##MSBRefTo" + refID, new Vector2(width * 94, 20)))
                     {
                         selection.ClearSelection();
                         selection.AddSelection(e);
@@ -71,7 +75,8 @@ public static class PropInfo_References
                     var prettyName = $"{ForkAwesome.Cube} {mapid}";
                     prettyName = $"{prettyName} {MapAliasBank.GetMapName(mapid)}";
 
-                    if (ImGui.Button(prettyName + "##MSBRefTo" + refID))
+                    ImGui.SetNextItemWidth(-1);
+                    if (ImGui.Button(prettyName + "##MSBRefTo" + refID, new Vector2(width * 94, 20)))
                     {
                         ISelectable rootTarget = r.GetSelectionTarget();
                         selection.ClearSelection();

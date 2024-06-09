@@ -854,7 +854,7 @@ public class MapPropertyEditor
                     {
                         // Display references
                         PropInfo_References.Display(firstEnt, _viewport, ref selection, ref refID);
-                        PropInfo_ReferencedBy.Display(firstEnt, ref selection, ref refID);
+                        PropInfo_ReferencedBy.Display(firstEnt, _viewport, ref selection, ref refID);
                     }
                 }
             }

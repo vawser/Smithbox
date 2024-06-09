@@ -28,8 +28,12 @@ public static class PropInfo_MapObjectType
             ImGui.Separator();
             ImGui.Text($"{name}:");
             ImGui.Separator();
-            ImguiUtils.WrappedText($"{desc}");
-            ImGui.Text("");
+
+            if (desc != "")
+            {
+                ImguiUtils.WrappedText($"{desc}");
+                ImGui.Text("");
+            }
         }
     }
 }
