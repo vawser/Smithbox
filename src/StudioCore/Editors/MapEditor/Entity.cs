@@ -1284,6 +1284,20 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
+    /// Returns true if this entity is an ConnectCollision
+    /// </summary>
+    public bool IsPartConnectCollision()
+    {
+        return WrappedObject is MSB1.Part.ConnectCollision ||
+            WrappedObject is MSB3.Part.ConnectCollision ||
+            WrappedObject is MSBB.Part.ConnectCollision ||
+            WrappedObject is MSBD.Part.ConnectCollision ||
+            WrappedObject is MSBE.Part.ConnectCollision ||
+            WrappedObject is MSBS.Part.ConnectCollision ||
+            WrappedObject is MSB_AC6.Part.ConnectCollision ? true : false;
+    }
+
+    /// <summary>
     /// Returns true if this entity is an Treasure
     /// </summary>
     public bool IsEventTreasure()

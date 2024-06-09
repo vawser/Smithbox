@@ -848,6 +848,7 @@ public class MapPropertyEditor
 
                         // Display class-specific additional info
                         PropInfo_Region_Connection.Display(firstEnt);
+                        PropInfo_Part_ConnectCollision.Display(firstEnt);
                     }
 
                     if (CFG.Current.MapEditor_Enable_Property_Property_References)
