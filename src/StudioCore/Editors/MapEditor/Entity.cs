@@ -1311,6 +1311,18 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
+    /// Returns true if this entity is an PatrolInfo
+    /// </summary>
+    public bool IsEventPatrolInfo()
+    {
+        return WrappedObject is MSB3.Event.PatrolInfo ||
+            WrappedObject is MSBB.Event.PatrolInfo ||
+            WrappedObject is MSBE.Event.PatrolInfo ||
+            WrappedObject is MSBS.Event.PatrolInfo ||
+            WrappedObject is MSB_AC6.Event.PatrolInfo ? true : false;
+    }
+
+    /// <summary>
     /// Returns true if this entity is an Mount
     /// </summary>
     public bool IsEventMount()

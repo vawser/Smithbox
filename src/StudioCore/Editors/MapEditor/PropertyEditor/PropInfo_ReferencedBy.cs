@@ -1,4 +1,6 @@
 ﻿using ImGuiNET;
+using StudioCore.Banks.AliasBank;
+using StudioCore.BanksMain;
 using StudioCore.Gui;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -48,13 +50,39 @@ public static class PropInfo_ReferencedBy
 
                 _viewport.FrameBox(box);
             }
-            ImGui.SameLine();
 
-            var nameWithType = m.PrettyName.Insert(2, m.WrappedObject.GetType().Name + " - ");
-
-            ImGui.SetNextItemWidth(-1);
             // Change Selection to Reference
-            if (ImGui.Button(nameWithType + "##MSBRefBy" + refID, new Vector2(width * 94, 20)))
+            var displayName = $"{m.PrettyName}";
+            var modelName = m.GetPropertyValue<string>("ModelName");
+            var aliasName = "";
+
+            if (modelName != null)
+            {
+                modelName = modelName.ToLower();
+
+                if (m.IsPartEnemy() || m.IsPartDummyEnemy())
+                {
+                    aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
+                }
+                if (m.IsPartAsset() || m.IsPartDummyAsset())
+                {
+                    aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+                }
+                if (m.IsPartMapPiece())
+                {
+                    aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
+                }
+
+                if (aliasName != "")
+                {
+                    displayName = displayName + " - " + aliasName;
+                }
+            }
+
+            ImGui.SameLine();
+            ImGui.SetNextItemWidth(-1);
+
+            if (ImGui.Button(displayName + "##MSBRefBy" + refID, new Vector2(width * 94, 20)))
             {
                 selection.ClearSelection();
                 selection.AddSelection(m);
@@ -62,6 +90,19 @@ public static class PropInfo_ReferencedBy
 
             refID++;
         }
+    }
+
+    public static string GetAliasFromCache(string name, List<AliasReference> referenceList)
+    {
+        foreach (var alias in referenceList)
+        {
+            if (name == alias.id)
+            {
+                return alias.name;
+            }
+        }
+
+        return "";
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Banks.AliasBank;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
 using StudioCore.Gui;
@@ -57,10 +58,36 @@ public static class PropInfo_References
                     }
 
                     // Change Selection to Reference
+                    var displayName = $"{e.PrettyName}";
+                    var modelName = e.GetPropertyValue<string>("ModelName");
+                    var aliasName = "";
+
+                    if (modelName != null)
+                    {
+                        modelName = modelName.ToLower();
+
+                        if (e.IsPartEnemy() || e.IsPartDummyEnemy())
+                        {
+                            aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
+                        }
+                        if (e.IsPartAsset() || e.IsPartDummyAsset())
+                        {
+                            aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+                        }
+                        if (e.IsPartMapPiece())
+                        {
+                            aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
+                        }
+
+                        if (aliasName != "")
+                        {
+                            displayName = displayName + " - " + aliasName;
+                        }
+                    }
+
                     ImGui.SameLine();
-                    var nameWithType = e.PrettyName.Insert(2, e.WrappedObject.GetType().Name + " - ");
                     ImGui.SetNextItemWidth(-1);
-                    if (ImGui.Button(nameWithType + "##MSBRefTo" + refID, new Vector2(width * 94, 20)))
+                    if (ImGui.Button(displayName + "##MSBRefTo" + refID, new Vector2(width * 94, 20)))
                     {
                         selection.ClearSelection();
                         selection.AddSelection(e);
@@ -112,6 +139,18 @@ public static class PropInfo_References
                 refID++;
             }
         }
+    }
+    public static string GetAliasFromCache(string name, List<AliasReference> referenceList)
+    {
+        foreach (var alias in referenceList)
+        {
+            if (name == alias.id)
+            {
+                return alias.name;
+            }
+        }
+
+        return "";
     }
 }
 
