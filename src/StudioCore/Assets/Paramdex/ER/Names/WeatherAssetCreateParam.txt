@@ -1,0 +1,4 @@
+0 Rainbow
+1 Rainbow
+1000 Aurora Borealis (Blue-Green)
+1001 Aurora Borealis (Blue-Green)

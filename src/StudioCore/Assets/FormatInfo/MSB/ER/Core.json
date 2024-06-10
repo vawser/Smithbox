@@ -921,6 +921,12 @@
                     "name": "Entity ID",
                     "description": "Identifies the region in event scripts.",
                     "attributes": ""
+                },
+                {
+                    "id": "RegionID",
+                    "name": "Region ID",
+                    "description": "",
+                    "attributes": ""
                 }
             ]
         },
@@ -1063,8 +1069,8 @@
         {
             "id": "FastTravelRestriction",
             "name": "Fast Travel Restriction",
-            "description": "",
-            "attributes": "This map object is used to define a region where fast travel via the player's map is disabled.",
+            "description": "This map object is used to define a region where fast travel via the player's map is disabled.",
+            "attributes": "",
             "members": [
                 {
                     "id": "EventFlagID",
@@ -1185,9 +1191,9 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "Blank",
-                    "name": "",
-                    "description": "",
+                    "id": "TextID",
+                    "name": "Text ID",
+                    "description": "The FMG ID of the Location Name to show. Ignores the negative sign during lookup.",
                     "attributes": ""
                 }
             ]
@@ -1279,7 +1285,7 @@
         {
             "id": "MufflingBox",
             "name": "Muffling Box",
-            "description": "This map object is used to define a region where sound is muffled in accordance with the specified parameters.",
+            "description": "This map object is used to define a region where environmental sound is muffled in accordance with the specified parameters.",
             "attributes": "",
             "members": [
                 {
@@ -1293,7 +1299,7 @@
         {
             "id": "MufflingPlane",
             "name": "Muffling Plane",
-            "description": "This map object is used to define a flat region where sound is muffled in accordance with the specified parameters.",
+            "description": "This map object is used to define a flat region where environmental sound is muffled in accordance with the specified parameters.",
             "attributes": "",
             "members": [
                 {
@@ -1307,7 +1313,7 @@
         {
             "id": "MufflingPortal",
             "name": "Muffling Portal",
-            "description": "This map object is used to define a region where sound is muffled in accordance with the specified parameters.",
+            "description": "This map object is used to define a region where environmental sound is muffled in accordance with the specified parameters.",
             "attributes": "",
             "members": [
                 {

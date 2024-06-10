@@ -2181,7 +2181,8 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT00 { get; set; }
+                [MSBParamReference(ParamName = "PlayRegionParam")]
+                public int PlayRegionID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2197,13 +2198,13 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
+                    PlayRegionID = br.ReadInt32();
                     UnkT04 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
+                    bw.WriteInt32(PlayRegionID);
                     bw.WriteInt32(UnkT04);
                 }
             }
