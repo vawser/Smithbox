@@ -105,6 +105,8 @@ public class ParamEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
+    public bool ShowSaveOption { get; set; }
+
     public static bool EditorMode;
 
     /// <summary>
@@ -187,7 +189,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void Init()
     {
-
+        ShowSaveOption = true;
     }
     public void DrawEditorMenu()
     {

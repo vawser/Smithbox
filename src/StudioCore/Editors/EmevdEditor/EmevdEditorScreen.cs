@@ -27,6 +27,8 @@ public class EmevdEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
+    public bool ShowSaveOption { get; set; }
+
     public ActionManager EditorActionManager = new();
 
     private EventScriptInfo _selectedFileInfo;
@@ -45,7 +47,7 @@ public class EmevdEditorScreen : EditorScreen
 
     public void Init()
     {
-
+        ShowSaveOption = false;
     }
     public void DrawEditorMenu()
     {

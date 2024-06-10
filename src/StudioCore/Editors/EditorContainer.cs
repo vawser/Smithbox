@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.BehaviorEditor;
+using StudioCore.MergeTool;
 
 namespace StudioCore.Editors;
 public static class EditorContainer
@@ -34,4 +35,5 @@ public static class EditorContainer
     public static EsdEditorScreen TalkEditor { get; set; }
     public static TextureViewerScreen TextureViewer { get; set; }
     public static HavokEditorScreen BehaviorEditor { get; set; }
+    public static MergeToolScreen MergeTool { get; set; }
 }

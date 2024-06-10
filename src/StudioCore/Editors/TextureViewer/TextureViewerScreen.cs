@@ -42,6 +42,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 {
     public bool FirstFrame { get; set; }
 
+    public bool ShowSaveOption { get; set; }
+
     public ActionManager EditorActionManager = new();
 
     private static string _fileSearchInput = "";
@@ -82,8 +84,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void Init()
     {
-
+        ShowSaveOption = false;
     }
+
     private ShoeboxLayoutContainer shoeboxContainer = null;
 
     public void OnProjectChanged()

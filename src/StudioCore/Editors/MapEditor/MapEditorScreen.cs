@@ -41,6 +41,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     private static readonly object _lock_PauseUpdate = new();
     public bool FirstFrame { get; set; }
 
+    public bool ShowSaveOption { get; set; }
+
     /// <summary>
     /// Current entity selection within the viewport.
     /// </summary>
@@ -150,7 +152,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void Init()
     {
-
+        ShowSaveOption = true;
     }
 
     public void Update(float dt)

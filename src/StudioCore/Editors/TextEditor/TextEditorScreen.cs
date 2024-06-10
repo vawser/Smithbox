@@ -22,6 +22,8 @@ public class TextEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
+    public bool ShowSaveOption { get; set; }
+
     private readonly PropertyEditor _propEditor;
 
     public static FMGBank.EntryGroup _activeEntryGroup;
@@ -60,6 +62,7 @@ public class TextEditorScreen : EditorScreen
 
     public void Init()
     {
+        ShowSaveOption = true;
     }
 
     public void DrawEditorMenu()

@@ -44,14 +44,14 @@
         },
         {
             "id": "m12_01_00_00",
-            "name": "Ainsel River",
+            "name": "Ainsel River / Lake of Rot",
             "tags": [
                 ""
             ]
         },
         {
             "id": "m12_02_00_00",
-            "name": "Siofra River",
+            "name": "Siofra River / Nokron",
             "tags": [
                 ""
             ]
@@ -65,7 +65,7 @@
         },
         {
             "id": "m12_04_00_00",
-            "name": "Ainsel River - Boss",
+            "name": "Lake of Rot - Astel's Chamber",
             "tags": [
                 ""
             ]
@@ -79,21 +79,21 @@
         },
         {
             "id": "m12_07_00_00",
-            "name": "Siofra River Start",
+            "name": "Nokron - Start",
             "tags": [
                 ""
             ]
         },
         {
             "id": "m12_08_00_00",
-            "name": "Siofra River - Boss",
+            "name": "Siofra River - Ancestor Spirit Chamber",
             "tags": [
                 ""
             ]
         },
         {
             "id": "m12_09_00_00",
-            "name": "Nokron, Eternal City - Boss",
+            "name": "Nokron - Regal Ancestor Spirit Chamber",
             "tags": [
                 ""
             ]
@@ -3324,6 +3324,174 @@
             "tags": [
                 ""
             ]
+        },
+        {
+          "id": "m10_00_00_99",
+          "name": "Stormveil Castle: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m10_01_00_99",
+          "name": "Chapel of Anticipation: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m11_00_00_99",
+          "name": "Leyndell, Royal Capital: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m11_05_00_99",
+          "name": "Leyndell, Ashen Capital: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m11_10_00_99",
+          "name": "Roundtable Hold: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m11_71_00_99",
+          "name": "Ending Cutscenes: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m12_01_00_99",
+          "name": "Ainsel River / Lake of Rot: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m12_02_00_99",
+          "name": "Siofra River / Nokron: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m12_03_00_99",
+          "name": "Deeproot Depths: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m13_00_00_99",
+          "name": "Crumbling Farum Azula: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m14_00_00_99",
+          "name": "Academy of Raya Lucaria: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m15_00_00_99",
+          "name": "Miquella\u0027s Haligtree: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m16_00_00_99",
+          "name": "Volcano Manor: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m19_00_00_99",
+          "name": "Stone Platform: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m34_10_00_99",
+          "name": "Divine Tower of Limgrave: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m34_11_00_99",
+          "name": "Divine Tower of Liurnia: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m34_12_00_99",
+          "name": "Divine Tower of West Altus: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m34_13_00_99",
+          "name": "Divine Tower of Caelid: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m34_14_00_99",
+          "name": "Divine Tower of East Altus: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m34_15_00_99",
+          "name": "Isolated Divine Tower: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m39_20_00_99",
+          "name": "Ruin-Strewn Precipice: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m45_00_00_99",
+          "name": "Royal Colosseum: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m45_01_00_99",
+          "name": "Caelid Colosseum: Overworld",
+          "tags": [
+            ""
+          ]
+        },
+        {
+          "id": "m45_02_00_99",
+          "name": "Limgrave Colosseum: Overworld",
+          "tags": [
+            ""
+          ]
         }
     ]
 }

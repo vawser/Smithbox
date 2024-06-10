@@ -43,6 +43,8 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 {
     public bool FirstFrame { get; set; }
 
+    public bool ShowSaveOption { get; set; }
+
     private AssetBrowserScreen ModelAssetBrowser;
 
     private readonly ModelPropertyEditor _propEditor;
@@ -104,7 +106,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
     public void Init()
     {
-
+        ShowSaveOption = false;
     }
 
     public void UpdateLoadedModelInfo(string modelName, string mapID = "")
@@ -562,31 +564,28 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
     public void Save()
     {
-        if (FeatureFlags.EnableModelEditorSave)
+        if (CurrentModelInfo != null)
         {
-            if (CurrentModelInfo != null)
+            // Copy the binder to the mod directory if it does not already exist.
+
+            var exists = CurrentModelInfo.CopyBinderToMod();
+
+            if (exists)
             {
-                // Copy the binder to the mod directory if it does not already exist.
-
-                var exists = CurrentModelInfo.CopyBinderToMod();
-
-                if (exists)
+                if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
                 {
-                    if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
+                    if (CurrentModelInfo.Type == ModelEditorModelType.MapPiece)
                     {
-                        if (CurrentModelInfo.Type == ModelEditorModelType.MapPiece)
-                        {
-                            WriteModelFlver(); // DS1 doesn't wrap the mappiece flver within a container
-                        }
-                        else
-                        {
-                            WriteModelBinderBND3();
-                        }
+                        WriteModelFlver(); // DS1 doesn't wrap the mappiece flver within a container
                     }
                     else
                     {
-                        WriteModelBinderBND4();
+                        WriteModelBinderBND3();
                     }
+                }
+                else
+                {
+                    WriteModelBinderBND4();
                 }
             }
         }

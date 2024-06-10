@@ -23,6 +23,8 @@ public interface EditorScreen
 
     public bool FirstFrame { get; set; }
 
+    public bool ShowSaveOption { get; set; }
+
     /// <summary>
     ///     Init function for setting up the editor
     /// </summary>

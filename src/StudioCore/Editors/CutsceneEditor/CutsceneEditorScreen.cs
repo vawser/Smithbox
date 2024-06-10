@@ -15,6 +15,8 @@ namespace StudioCore.CutsceneEditor;
 public class CutsceneEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
+    
+    public bool ShowSaveOption { get; set; }
 
     private readonly PropertyEditor _propEditor;
 
@@ -71,7 +73,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void Init()
     {
-
+        ShowSaveOption = true;
     }
     public void DrawEditorMenu()
     {

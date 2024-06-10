@@ -19,6 +19,8 @@ public class HavokEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
+    public bool ShowSaveOption { get; set; }
+
     public ActionManager EditorActionManager = new();
 
     private BehaviorFileInfo _selectedFileInfo;
@@ -39,8 +41,9 @@ public class HavokEditorScreen : EditorScreen
 
     public void Init()
     {
-
+        ShowSaveOption = false;
     }
+
     public void DrawEditorMenu()
     {
     }

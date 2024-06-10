@@ -102,7 +102,7 @@ public class KeyBindings
         public KeyBind Core_Delete = new("Delete", KeybindCategory.Core, Key.Delete);
         public KeyBind Core_Duplicate = new("Duplicate", KeybindCategory.Core, Key.D, true);
         public KeyBind Core_Redo = new("Redo", KeybindCategory.Core, Key.Y, true);
-        public KeyBind Core_SaveAllEditors = new("Save All", KeybindCategory.Core);
+        public KeyBind Core_SaveAllCurrentEditor = new("Save All", KeybindCategory.Core);
         public KeyBind Core_SaveCurrentEditor = new("Save", KeybindCategory.Core, Key.S, true);
         public KeyBind Core_Undo = new("Undo", KeybindCategory.Core, Key.Z, true);
 

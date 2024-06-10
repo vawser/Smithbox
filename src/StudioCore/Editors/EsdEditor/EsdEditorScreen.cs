@@ -17,6 +17,8 @@ public class EsdEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
+    public bool ShowSaveOption { get; set; }
+
     public ActionManager EditorActionManager = new();
 
     private EsdScriptInfo _selectedFileInfo;
@@ -40,8 +42,9 @@ public class EsdEditorScreen : EditorScreen
 
     public void Init()
     {
-
+        ShowSaveOption = false;
     }
+
     public void DrawEditorMenu()
     {
     }

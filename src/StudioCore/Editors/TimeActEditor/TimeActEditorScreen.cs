@@ -15,6 +15,8 @@ public class TimeActEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
+    public bool ShowSaveOption { get; set; }
+
     private readonly PropertyEditor _propEditor;
 
     public ActionManager EditorActionManager = new();
@@ -37,8 +39,9 @@ public class TimeActEditorScreen : EditorScreen
 
     public void Init()
     {
-
+        ShowSaveOption = false;
     }
+
     public void DrawEditorMenu()
     {
     }

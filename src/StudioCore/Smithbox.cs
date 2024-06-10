@@ -48,6 +48,7 @@ using StudioCore.Editors.MaterialEditor;
 using StudioCore.BanksMain;
 using static SoulsFormats.MCP;
 using static SoulsFormats.DRB.Control;
+using StudioCore.MergeTool;
 
 namespace StudioCore;
 
@@ -146,6 +147,7 @@ public class Smithbox
         EditorContainer.TalkEditor = new EsdEditorScreen(_context.Window, _context.Device);
         EditorContainer.TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
         EditorContainer.BehaviorEditor = new HavokEditorScreen(_context.Window, _context.Device);
+        EditorContainer.MergeTool = new MergeToolScreen(_context.Window, _context.Device);
 
         WindowContainer.MemoryWindow._activeView = ParamEditorScreen._activeView;
 
@@ -192,6 +194,11 @@ public class Smithbox
         if (FeatureFlags.EnableEditor_HavokBehavior)
         {
             _editors.Add(EditorContainer.BehaviorEditor);
+        }
+
+        if (FeatureFlags.EnableEditor_MergeTool)
+        {
+            _editors.Add(EditorContainer.MergeTool);
         }
 
         _editors.Add(EditorContainer.TextEditor);
@@ -501,14 +508,20 @@ public class Smithbox
     {
         Project.SaveProjectJson();
 
-        _focusedEditor.SaveAll();
+        if (_focusedEditor.ShowSaveOption)
+        {
+            _focusedEditor.SaveAll();
+        }
     }
 
     private void SaveFocusedEditor()
     {
         Project.SaveProjectJson();
 
-        _focusedEditor.Save();
+        if (_focusedEditor.ShowSaveOption)
+        {
+            _focusedEditor.Save();
+        }
     }
 
     /// <summary>
@@ -677,18 +690,21 @@ public class Smithbox
                 }
 
                 // Save
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
-                if (ImGui.MenuItem($"Save Selected {_focusedEditor.SaveType}",
-                        KeyBindings.Current.Core_SaveCurrentEditor.HintText))
+                if (_focusedEditor.ShowSaveOption)
                 {
-                    SaveFocusedEditor();
-                }
+                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
+                    if (ImGui.MenuItem($"Save Selected {_focusedEditor.SaveType}",
+                            KeyBindings.Current.Core_SaveCurrentEditor.HintText))
+                    {
+                        SaveFocusedEditor();
+                    }
 
-                // Save All
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
-                if (ImGui.MenuItem($"Save All Modified {_focusedEditor.SaveType}", KeyBindings.Current.Core_SaveAllEditors.HintText))
-                {
-                    SaveAll();
+                    // Save All
+                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
+                    if (ImGui.MenuItem($"Save All Modified {_focusedEditor.SaveType}", KeyBindings.Current.Core_SaveAllCurrentEditor.HintText))
+                    {
+                        SaveAll();
+                    }
                 }
 
                 ImGui.EndMenu();
@@ -877,14 +893,17 @@ public class Smithbox
         // Global shortcut keys
         if (!_focusedEditor.InputCaptured())
         {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Core_SaveCurrentEditor))
+            if (_focusedEditor.ShowSaveOption)
             {
-                SaveFocusedEditor();
-            }
+                if (InputTracker.GetKeyDown(KeyBindings.Current.Core_SaveCurrentEditor))
+                {
+                    SaveFocusedEditor();
+                }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Core_SaveAllEditors))
-            {
-                SaveAll();
+                if (InputTracker.GetKeyDown(KeyBindings.Current.Core_SaveAllCurrentEditor))
+                {
+                    SaveAll();
+                }
             }
 
             // Shortcut: Open Project Window

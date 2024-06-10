@@ -35,6 +35,8 @@ public class GparamEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
+    public bool ShowSaveOption { get; set; }
+
     public static ActionManager EditorActionManager = new();
 
     private GparamParamBank.GparamInfo _selectedGparamInfo;
@@ -85,7 +87,7 @@ public class GparamEditorScreen : EditorScreen
 
     public void Init()
     {
-        
+        ShowSaveOption = true;
     }
 
     public void DrawEditorMenu()

@@ -24,6 +24,8 @@ public class ParticleEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
+    public bool ShowSaveOption { get; set; }
+
     public PropertyEditor _propEditor;
 
     public ActionManager EditorActionManager = new();
@@ -67,7 +69,7 @@ public class ParticleEditorScreen : EditorScreen
 
     public void Init()
     {
-
+        ShowSaveOption = false;
     }
 
     public void DrawEditorMenu()
