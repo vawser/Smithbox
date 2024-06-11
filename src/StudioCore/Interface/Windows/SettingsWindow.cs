@@ -92,18 +92,6 @@ public class SettingsWindow
                     ref CFG.Current.System_Check_Program_Update);
                 ImguiUtils.ShowHoverTooltip("When enabled Smithbox will automatically check for new versions upon program start.");
 
-                ImGui.Checkbox("Show UI tooltips", ref CFG.Current.System_Show_UI_Tooltips);
-                ImguiUtils.ShowHoverTooltip("This is a tooltip.");
-
-                ImGui.SliderFloat("UI scale", ref CFG.Current.System_UI_Scale, 0.5f, 4.0f);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    // Round to 0.05
-                    CFG.Current.System_UI_Scale = (float)Math.Round(CFG.Current.System_UI_Scale * 20) / 20;
-                    Smithbox.FontRebuildRequest = true;
-                }
-                ImguiUtils.ShowHoverTooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
-
                 ImGui.SliderFloat("Frame Rate", ref CFG.Current.System_Frame_Rate, 20.0f, 240.0f);
                 ImguiUtils.ShowHoverTooltip("Adjusts the frame rate of the viewport.");
 
@@ -134,30 +122,6 @@ public class SettingsWindow
                 ImGui.Text(
                     $"The server is {running}.\nIt is not accessible over the network, only to other programs on this computer.\nPlease restart the program for changes to take effect.");
                 ImGui.Checkbox("Enable cross-editor features", ref CFG.Current.System_Enable_Soapstone_Server);
-            }
-
-            // Additional Language Fonts
-            if (ImGui.CollapsingHeader("Additional Language Fonts"))
-            {
-                if (ImGui.Checkbox("Chinese", ref CFG.Current.System_Font_Chinese))
-                    Smithbox.FontRebuildRequest = true;
-                ImguiUtils.ShowHoverTooltip("Include Chinese font.\nAdditional fonts take more VRAM and increase startup time.");
-
-                if (ImGui.Checkbox("Korean", ref CFG.Current.System_Font_Korean))
-                    Smithbox.FontRebuildRequest = true;
-                ImguiUtils.ShowHoverTooltip("Include Korean font.\nAdditional fonts take more VRAM and increase startup time.");
-
-                if (ImGui.Checkbox("Thai", ref CFG.Current.System_Font_Thai))
-                    Smithbox.FontRebuildRequest = true;
-                ImguiUtils.ShowHoverTooltip("Include Thai font.\nAdditional fonts take more VRAM and increase startup time.");
-
-                if (ImGui.Checkbox("Vietnamese", ref CFG.Current.System_Font_Vietnamese))
-                    Smithbox.FontRebuildRequest = true;
-                ImguiUtils.ShowHoverTooltip("Include Vietnamese font.\nAdditional fonts take more VRAM and increase startup time.");
-
-                if (ImGui.Checkbox("Cyrillic", ref CFG.Current.System_Font_Cyrillic))
-                    Smithbox.FontRebuildRequest = true;
-                ImguiUtils.ShowHoverTooltip("Include Cyrillic font.\nAdditional fonts take more VRAM and increase startup time.");
             }
 
             if(ImGui.CollapsingHeader("Resources"))
@@ -1018,7 +982,45 @@ public class SettingsWindow
             {
                 ImGui.Checkbox("Wrap alias text", ref CFG.Current.System_WrapAliasDisplay);
                 ImguiUtils.ShowHoverTooltip("Makes the alias text display wrap instead of being cut off.");
+
+                ImGui.Checkbox("Show tooltips", ref CFG.Current.System_Show_UI_Tooltips);
+                ImguiUtils.ShowHoverTooltip("This is a tooltip.");
+
+                ImGui.SliderFloat("UI scale", ref CFG.Current.System_UI_Scale, 0.5f, 4.0f);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    // Round to 0.05
+                    CFG.Current.System_UI_Scale = (float)Math.Round(CFG.Current.System_UI_Scale * 20) / 20;
+                    Smithbox.FontRebuildRequest = true;
+                }
+                ImguiUtils.ShowHoverTooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
+
             }
+
+            // Additional Language Fonts
+            if (ImGui.CollapsingHeader("Additional Language Fonts"))
+            {
+                if (ImGui.Checkbox("Chinese", ref CFG.Current.System_Font_Chinese))
+                    Smithbox.FontRebuildRequest = true;
+                ImguiUtils.ShowHoverTooltip("Include Chinese font.\nAdditional fonts take more VRAM and increase startup time.");
+
+                if (ImGui.Checkbox("Korean", ref CFG.Current.System_Font_Korean))
+                    Smithbox.FontRebuildRequest = true;
+                ImguiUtils.ShowHoverTooltip("Include Korean font.\nAdditional fonts take more VRAM and increase startup time.");
+
+                if (ImGui.Checkbox("Thai", ref CFG.Current.System_Font_Thai))
+                    Smithbox.FontRebuildRequest = true;
+                ImguiUtils.ShowHoverTooltip("Include Thai font.\nAdditional fonts take more VRAM and increase startup time.");
+
+                if (ImGui.Checkbox("Vietnamese", ref CFG.Current.System_Font_Vietnamese))
+                    Smithbox.FontRebuildRequest = true;
+                ImguiUtils.ShowHoverTooltip("Include Vietnamese font.\nAdditional fonts take more VRAM and increase startup time.");
+
+                if (ImGui.Checkbox("Cyrillic", ref CFG.Current.System_Font_Cyrillic))
+                    Smithbox.FontRebuildRequest = true;
+                ImguiUtils.ShowHoverTooltip("Include Cyrillic font.\nAdditional fonts take more VRAM and increase startup time.");
+            }
+
 
             if (ImGui.CollapsingHeader("Theme", ImGuiTreeNodeFlags.DefaultOpen))
             {
