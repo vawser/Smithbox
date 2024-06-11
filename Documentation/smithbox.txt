@@ -53,6 +53,7 @@ Gparam Editor:
  - Add gparam reference support (e.g. jump to map param, and if it is offset, that value entry offset)
  - Add command: random:[{<x>}] {} contain the min and max (needed to support the vector splits)
  - Add command: restore - Restores the value to the value from Game Root version (if it exists).
+ - Work out why AC6 Bloom field can't be added
 
 Texture Viewer: 
  - Add support for 'custom' Shoebox Layouts for non-Shoebox Layout games

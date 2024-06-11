@@ -1267,23 +1267,26 @@ public class MapPropertyEditor
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name);
+            if(_selected != null)
+            {
+                name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name);
 
-            if (_selected.IsPart())
-            {
-                name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Part");
-            }
-            if (_selected.IsRegion())
-            {
-                name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Region");
-            }
-            if (_selected.IsEvent())
-            {
-                name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Event");
-            }
-            if (_selected.IsLight())
-            {
-                name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Light");
+                if (_selected.IsPart())
+                {
+                    name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Part");
+                }
+                if (_selected.IsRegion())
+                {
+                    name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Region");
+                }
+                if (_selected.IsEvent())
+                {
+                    name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Event");
+                }
+                if (_selected.IsLight())
+                {
+                    name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Light");
+                }
             }
         }
 
@@ -1298,29 +1301,34 @@ public class MapPropertyEditor
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            var desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name);
+            var desc = "";
 
-            if (_selected.IsPart())
+            if (_selected != null)
             {
-                desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Part");
-            }
-            if (_selected.IsRegion())
-            {
-                desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Region");
-            }
-            if (_selected.IsEvent())
-            {
-                desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Event");
-            }
-            if (_selected.IsLight())
-            {
-                desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Light");
+                desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name);
+
+                if (_selected.IsPart())
+                {
+                    desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Part");
+                }
+                if (_selected.IsRegion())
+                {
+                    desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Region");
+                }
+                if (_selected.IsEvent())
+                {
+                    desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Event");
+                }
+                if (_selected.IsLight())
+                {
+                    desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Light");
+                }
             }
 
             if (desc != "")
             {
                 ImguiUtils.ShowHoverTooltip(desc);
-            }
+            }        
         }
     }
 
