@@ -29,9 +29,16 @@ public static class AliasUtils
         if (aliasName != "")
         {
             ImGui.SameLine();
-            ImGui.PushTextWrapPos();
-            ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName}");
-            ImGui.PopTextWrapPos();
+            if (CFG.Current.System_WrapAliasDisplay)
+            {
+                ImGui.PushTextWrapPos();
+                ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName}");
+                ImGui.PopTextWrapPos();
+            }
+            else
+            {
+                ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName}");
+            }
         }
     }
     public static void DisplayTagAlias(string aliasName)
@@ -39,10 +46,17 @@ public static class AliasUtils
         if (aliasName != "")
         {
             ImGui.SameLine();
-            ImGui.PushTextWrapPos();
-            // TODO: should probably add "ImGui_TagAliasName_Text" instead of using this one
-            ImGui.TextColored(CFG.Current.ImGui_Benefit_Text_Color, @$"[{aliasName}]");
-            ImGui.PopTextWrapPos();
+
+            if (CFG.Current.System_WrapAliasDisplay)
+            {
+                ImGui.PushTextWrapPos();
+                ImGui.TextColored(CFG.Current.ImGui_Benefit_Text_Color, @$"[{aliasName}]");
+                ImGui.PopTextWrapPos();
+            }
+            else
+            {
+                ImGui.TextColored(CFG.Current.ImGui_Benefit_Text_Color, @$"[{aliasName}]");
+            }
         }
     }
 
