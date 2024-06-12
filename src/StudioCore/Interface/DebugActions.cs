@@ -245,17 +245,19 @@ public static class DebugActions
         return entries;
     }
 
-    // Small Tiles
+    // Small Tiles - Row IDs
     public static List<int> smallRows = new List<int>()
     {
         32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59
     };
 
+    // Small Tiles - Col IDs
     public static List<int> smallCols = new List<int>()
     {
         63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30
     };
 
+    // Small Tiles - Truth Table for when to add a layout entry
     public static Dictionary<int, List<int>> smallTileDict = new Dictionary<int, List<int>>()
     {
         {  1, new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }},

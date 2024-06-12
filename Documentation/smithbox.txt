@@ -28,7 +28,6 @@ Map Editor:
  - Add 'flat' editor view: similar to Param Editor, where you can edit the MSB stuff without the viewport overhead.
  - Add enum support for the DS3 corpse poses
  - Add "Data Export" action for MSB data: output the MSB information as JSON
- - Add ER map select with map image.
  - Implement ER collision (using HKLib)
  - Add "Find Value Instances" for MSB values
  

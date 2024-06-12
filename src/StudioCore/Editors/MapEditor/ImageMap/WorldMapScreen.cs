@@ -37,6 +37,13 @@ public class WorldMapScreen : IResourceEventListener
     private Vector2 TextureViewWindowPosition = new Vector2(0, 0);
     private Vector2 TextureViewScrollPosition = new Vector2(0, 0);
 
+    private Vector2 trueSize = new Vector2();
+    private Vector2 size = new Vector2();
+    private Vector2 relativePos = new Vector2();
+    private Vector2 relativePosSansScroll = new Vector2();
+
+    List<string> currentHoverMaps = new List<string>();
+
     public WorldMapScreen()
     {
         WorldMapOpen = false;
@@ -89,11 +96,6 @@ public class WorldMapScreen : IResourceEventListener
         }
     }
 
-    private Vector2 trueSize = new Vector2();
-    private Vector2 size = new Vector2();
-    private Vector2 relativePos = new Vector2();
-    private Vector2 relativePosSansScroll = new Vector2();
-
     public void DisplayWorldMap()
     {
         if (Project.Type != ProjectType.ER)
@@ -138,7 +140,7 @@ public class WorldMapScreen : IResourceEventListener
         //ImGui.Text($"Relative (Sans Scroll) Position: {relativePosSansScroll}");
         //ImGui.Text($"Size: {trueSize}");
 
-        List<string> currentHoverMaps = GetMatchingMaps(relativePos);
+        currentHoverMaps = GetMatchingMaps(relativePos);
 
         ImGui.Separator();
         ImGui.Text($"Preview Maps:");
@@ -183,8 +185,6 @@ public class WorldMapScreen : IResourceEventListener
             }
         }
     }
-
-    List<string> currentHoverMaps = new List<string>();
 
     private void LoadWorldMapTexture() 
     {
