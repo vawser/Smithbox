@@ -100,15 +100,9 @@ public class DebugWindow
 
     private void DisplayActions()
     {
-        if (ImGui.Button("Load MSB Files"))
+        if (ImGui.Button("World Map Layout"))
         {
-            DebugActions.LoadMsbData();
-        }
-
-        ImGui.InputInt("##searchVale", ref msbValueToFind);
-        if (ImGui.Button("Search for Value"))
-        {
-            DebugActions.SearchInMsbForValue(msbValueToFind);
+            DebugActions.CalcWorldMapLayout();
         }
     }
 

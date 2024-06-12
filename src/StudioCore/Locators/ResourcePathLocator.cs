@@ -423,6 +423,18 @@ public static class ResourcePathLocator
                 return ResourceTextureLocator.GetMenuTextureContainerPath(containerName);
             }
         }
+        // SMITHBOX
+        else if (pathElements[i].Equals("smithbox"))
+        {
+            bndpath = "";
+
+            i++;
+
+            if (pathElements[i].Equals("worldmap"))
+            {
+                return $"{AppContext.BaseDirectory}/Assets/WorldMap/world_map.tpf.dcx";
+            }
+        }
         // ASSET
         else if (pathElements[i].Equals("aet"))
         {

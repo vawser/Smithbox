@@ -76,6 +76,22 @@ public class ShoeboxLayout
             TextureAtlases.Add(new TextureAtlas(node));
         }
     }
+
+    public ShoeboxLayout(string filepath)
+    {
+        FileName = Path.GetFileNameWithoutExtension(filepath);
+        byte[] data = File.ReadAllBytes(filepath);
+
+        XmlDocument xmlDocument = new();
+        Stream stream = new MemoryStream(data);
+        xmlDocument.Load(stream);
+
+        // TextureAltas
+        foreach (XmlNode node in xmlDocument.ChildNodes)
+        {
+            TextureAtlases.Add(new TextureAtlas(node));
+        }
+    }
 }
 
 public class TextureAtlas

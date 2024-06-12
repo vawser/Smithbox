@@ -1,22 +1,15 @@
 ﻿using ImGuiNET;
-using Microsoft.Extensions.Logging;
-using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Banks.AliasBank;
 using StudioCore.Gui;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Scene;
-using StudioCore.Settings;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Runtime.InteropServices;
 using Veldrid;
-using StudioCore.Banks;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.MsbEditor;
 using StudioCore.BanksMain;
@@ -24,13 +17,7 @@ using StudioCore.Editors.MapEditor.MapGroup;
 using StudioCore.Interface;
 using StudioCore.Editor;
 using StudioCore.Locators;
-using Silk.NET.OpenGL;
-using StudioCore.Editors.AssetBrowser;
-using System.Security.Cryptography.Xml;
-using Andre.Formats;
-using StudioCore.TextEditor;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using static SoulsFormats.MSB_AC6.Part.Collision;
+using StudioCore.Editors.MapEditor.WorldMap;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -99,6 +86,8 @@ public class MapSceneTree : IActionEventHandler
 
     private ViewMode _viewMode = ViewMode.ObjectType;
 
+    private WorldMapScreen _worldMapScreen;
+
     public MapSceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe, ViewportSelection sel, ViewportActionManager aman, IViewport vp)
     {
         _handler = handler;
@@ -113,10 +102,14 @@ public class MapSceneTree : IActionEventHandler
         {
             _viewMode = ViewMode.Hierarchy;
         }
+
+        _worldMapScreen = new WorldMapScreen();
     }
 
     public void OnProjectChanged()
     {
+        _worldMapScreen.OnProjectChanged();
+
         if (Project.Type != ProjectType.Undefined)
         {
             
@@ -126,6 +119,8 @@ public class MapSceneTree : IActionEventHandler
     public void OnGui()
     {
         var scale = Smithbox.GetUIScale();
+
+        _worldMapScreen.Shortcuts();
 
         if (!CFG.Current.Interface_MapEditor_MapObjectList)
             return;
@@ -150,7 +145,11 @@ public class MapSceneTree : IActionEventHandler
             }
 
             ImGui.Spacing();
-            ImGui.Indent(30 * scale);
+            ImGui.Indent(5 * scale);
+
+            // World Map
+            _worldMapScreen.DisplayWorldMapButton();
+            _worldMapScreen.DisplayWorldMap();
 
             // List Sorting Style
             if (CFG.Current.MapEditor_MapObjectList_ShowListSortingType)
@@ -184,7 +183,7 @@ public class MapSceneTree : IActionEventHandler
                 ImguiUtils.ShowHoverTooltip("Filter the map list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
             }
 
-            ImGui.Unindent(30 * scale);
+            ImGui.Unindent(5 * scale);
 
             DisplayMapObjectList();
         }
@@ -241,6 +240,21 @@ public class MapSceneTree : IActionEventHandler
                 && !aliasName.Contains(_mapObjectListSearchInput, StringComparison.CurrentCultureIgnoreCase))
             {
                 continue;
+            }
+
+            // Hide other maps if World Map click has occured
+            if (Project.Type == ProjectType.ER)
+            {
+                if (EditorContainer.MsbEditor.WorldMap_ClickedMapZone != null)
+                {
+                    if (EditorContainer.MsbEditor.WorldMap_ClickedMapZone.Count > 0)
+                    {
+                        if (!EditorContainer.MsbEditor.WorldMap_ClickedMapZone.Contains(CurrentMapID))
+                        {
+                            continue;
+                        }
+                    }
+                }
             }
 
             // Map Groups

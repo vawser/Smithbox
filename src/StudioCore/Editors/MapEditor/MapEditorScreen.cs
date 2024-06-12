@@ -93,6 +93,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     private Sdl2Window Window;
 
+    public List<string> WorldMap_ClickedMapZone = new List<string>();
+
     public MapEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         Rect = window.Bounds;

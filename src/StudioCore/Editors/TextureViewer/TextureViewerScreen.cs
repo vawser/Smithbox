@@ -701,7 +701,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         var fixedY = 24;
         var cursorPos = ImGui.GetMousePos();
 
-        // Account for window positiona and scroll
+        // Account for window position and scroll
         relativePos.X = cursorPos.X - ((windowPos.X + fixedX) - scrollPos.X);
         relativePos.Y = cursorPos.Y - ((windowPos.Y + fixedY) - scrollPos.Y);
 

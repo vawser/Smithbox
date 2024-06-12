@@ -71,3 +71,4 @@ var hvk = new HavokBinarySerializer();
 MemoryStream hvkStream = new MemoryStream(decomp.ToArray());
 
 hkRootLevelContainer rootObj = (hkRootLevelContainer)hvk.ReadAllObjects(hvkStream);
+
