@@ -30,7 +30,7 @@ public class WorldMapScreen : IResourceEventListener
     private static List<TPF.Texture> WorldMapTextures;
     private ShoeboxLayout WorldMapLayout = null;
 
-    private Vector2 zoomFactor = new Vector2(0.2f, 0.2f);
+    private Vector2 zoomFactor;
 
     private float zoomFactorStep = 0.1f;
 
@@ -48,6 +48,11 @@ public class WorldMapScreen : IResourceEventListener
     {
         WorldMapOpen = false;
         LoadedWorldMapTexture = false;
+        zoomFactor = GetDefaultZoomLevel();
+        Smithbox.UIScaleChanged += (_, _) =>
+        {
+            zoomFactor = GetDefaultZoomLevel();
+        };
     }
 
     public void OnProjectChanged()
@@ -68,7 +73,7 @@ public class WorldMapScreen : IResourceEventListener
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.TextureViewer_ZoomReset))
         {
-            ZoomReset();
+            zoomFactor = GetDefaultZoomLevel();
         }
     }
 
@@ -77,18 +82,20 @@ public class WorldMapScreen : IResourceEventListener
         if (Project.Type != ProjectType.ER)
             return;
 
+        var scale = Smithbox.GetUIScale();
+
         var width = ImGui.GetWindowWidth() / 100;
 
         if (LoadedWorldMapTexture)
         {
-            if (ImGui.Button("Open World Map", new Vector2(width * 60, 20)))
+            if (ImGui.Button("Open World Map", new Vector2(width * 60, 20 * scale)))
             {
                 WorldMapOpen = !WorldMapOpen;
             }
             ImguiUtils.ShowHoverTooltip("Open a world map for Elden Ring. Allows you to easily select open-world tiles.");
 
             ImGui.SameLine();
-            if (ImGui.Button("Clear", new Vector2(width * 34, 20)))
+            if (ImGui.Button("Clear", new Vector2(width * 34, 20 * scale)))
             {
                 EditorContainer.MsbEditor.WorldMap_ClickedMapZone = null;
             }
@@ -98,6 +105,8 @@ public class WorldMapScreen : IResourceEventListener
 
     public void DisplayWorldMap()
     {
+        var scale = Smithbox.GetUIScale();
+
         if (Project.Type != ProjectType.ER)
             return;
 
@@ -254,10 +263,12 @@ public class WorldMapScreen : IResourceEventListener
 
     private Vector2 GetRelativePositionSansScroll(Vector2 imageSize, Vector2 windowPos, Vector2 scrollPos)
     {
+        var scale = Smithbox.GetUIScale();
+
         Vector2 relativePos = new Vector2(0, 0);
 
-        var fixedX = 3;
-        var fixedY = 24;
+        var fixedX = 3 * scale;
+        var fixedY = 24 * scale;
         var cursorPos = ImGui.GetMousePos();
 
         // Account for window position and scroll
@@ -280,9 +291,9 @@ public class WorldMapScreen : IResourceEventListener
         var success = false;
 
         float Xmin = float.Parse(entry.X);
-        float Xmax = (Xmin + float.Parse(entry.Width));
+        float Xmax = Xmin + float.Parse(entry.Width);
         float Ymin = float.Parse(entry.Y);
-        float Ymax = (Ymin + float.Parse(entry.Height));
+        float Ymax = Ymin + float.Parse(entry.Height);
 
         if (cursorPos.X > Xmin && cursorPos.X < Xmax && cursorPos.Y > Ymin && cursorPos.Y < Ymax)
         {
@@ -373,18 +384,21 @@ public class WorldMapScreen : IResourceEventListener
             zoomFactor.Y = 0.1f;
         }
     }
-    private void ZoomReset()
+    private Vector2 GetDefaultZoomLevel()
     {
-        zoomFactor = new Vector2(0.2f, 0.2f);
+        var scale = Smithbox.GetUIScale();
+        return new Vector2(float.Round(0.2f * scale, 1), float.Round(0.2f * scale, 1));
     }
 
     private Vector2 GetRelativePosition(Vector2 imageSize, Vector2 windowPos, Vector2 scrollPos)
     {
+        var scale = Smithbox.GetUIScale();
+
         Vector2 relativePos = new Vector2(0, 0);
 
         // Offsets to account for imgui spacing between window and image texture
-        var fixedX = 8;
-        var fixedY = 29;
+        var fixedX = 8 * scale;
+        var fixedY = 29 * scale;
         var cursorPos = ImGui.GetMousePos();
 
         // Account for window position and scroll

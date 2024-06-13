@@ -11,6 +11,7 @@ using StudioCore.MsbEditor;
 using StudioCore.UserProject;
 using Veldrid;
 using StudioCore.Editors.TextEditor.Toolbar;
+using System.Runtime.CompilerServices;
 using static StudioCore.Editors.TextureViewer.Toolbar.TexAction_ExportTexture;
 
 namespace StudioCore;
@@ -216,6 +217,7 @@ public class CFG
     public bool System_Show_UI_Tooltips = true;
     public bool System_WrapAliasDisplay = true;
     public float System_UI_Scale = 1.0f;
+
     public bool System_Enable_Soapstone_Server = true;
     public bool System_Font_Chinese = false;
     public bool System_Font_Cyrillic = false;
@@ -782,6 +784,7 @@ public class CFG
                 SaveConfig();
             }
         }
+        Smithbox.UIScaleChanged?.Invoke(null, EventArgs.Empty);
     }
 
     private static void LoadKeybinds()

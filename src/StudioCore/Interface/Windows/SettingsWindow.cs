@@ -991,6 +991,7 @@ public class SettingsWindow
                 {
                     // Round to 0.05
                     CFG.Current.System_UI_Scale = (float)Math.Round(CFG.Current.System_UI_Scale * 20) / 20;
+                    Smithbox.UIScaleChanged?.Invoke(null, EventArgs.Empty);
                     Smithbox.FontRebuildRequest = true;
                 }
                 ImguiUtils.ShowHoverTooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
