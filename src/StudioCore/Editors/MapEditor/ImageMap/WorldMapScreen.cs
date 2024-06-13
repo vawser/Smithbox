@@ -136,9 +136,9 @@ public class WorldMapScreen : IResourceEventListener
         ImguiUtils.WrappedText($"Press {KeyBindings.Current.TextureViewer_ZoomReset.HintText} to reset zoom level to 100%.");
         ImguiUtils.WrappedText($"");
 
-        //ImGui.Text($"Relative Position: {relativePos}");
-        //ImGui.Text($"Relative (Sans Scroll) Position: {relativePosSansScroll}");
-        //ImGui.Text($"Size: {trueSize}");
+        ImGui.Text($"Relative Position: {relativePos}");
+        ImGui.Text($"Relative (Sans Scroll) Position: {relativePosSansScroll}");
+        ImGui.Text($"Size: {trueSize}");
 
         currentHoverMaps = GetMatchingMaps(relativePos);
 

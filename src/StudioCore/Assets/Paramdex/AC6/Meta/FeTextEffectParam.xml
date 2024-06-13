@@ -1,8 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
+    <resId AltName="Resource ID" />
     <textId1 AltName="Text ID [1]" FmgRef="Event" />
+    <seId AltName="Sound ID" SoundAlias=""/>
     <textId2 AltName="Text ID [2]" FmgRef="Event" />
+    <textId3 AltName="Text ID [3]" FmgRef="Event" />
+    <slot AltName="Slot" />
+    <movieId AltName="Movie ID" MovieAlias="" />
   </Field>
   <Self />
 </PARAMMETA>

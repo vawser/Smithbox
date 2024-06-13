@@ -96,6 +96,16 @@
     
     <mapBoundryBottom AltName="Map Boundry Bottom" />
     
+    <playSortieScene AltName="Play Sortie Scene ID" />
+    <playSortieTalk AltName="Play Sortie Talk ID" />
+    
+    <chapter AltName="Chapter" />
+    <decisionGroup AltName="Decision Group" />
+    <sortId AltName="Sort ID" />
+    
+    <menuWorldMapTexture AltName="Menu World Map Texture ID" />
+    <menuWorldInfoTexture AltNAme="Menu World Info Texture ID" />
+    
     <endPad IsHidden="" />
   </Field>
   <Self />

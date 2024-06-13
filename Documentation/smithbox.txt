@@ -75,5 +75,5 @@ Texture Viewer:
 #--------------------------------------
 Fix the right-hand issue with the World Map select
 Add the dungeon icons, add layout for the non-open world maps
-Clean up the .layout file (generation seems to have duplicated the entries)
-Fix the Alias window for Chr/Asset/Part/MapPiece: not currently actually updating the file with the new name/tags
+
+Fix name cache race condition in the Asset Browser (randomly on program start the names will not be properly read)
