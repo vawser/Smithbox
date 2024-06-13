@@ -7,12 +7,7 @@ using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Drawing;
-using StudioCore.MsbEditor;
 using StudioCore.UserProject;
-using Veldrid;
-using StudioCore.Editors.TextEditor.Toolbar;
-using System.Runtime.CompilerServices;
-using static StudioCore.Editors.TextureViewer.Toolbar.TexAction_ExportTexture;
 
 namespace StudioCore;
 
