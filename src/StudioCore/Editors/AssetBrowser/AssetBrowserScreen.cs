@@ -121,7 +121,7 @@ public class AssetBrowserScreen
         }
     }
 
-    private void InvalidateNameCaches()
+    public void InvalidateNameCaches()
     {
         EditorContainer.TextureViewer.InvalidateCachedName = true;
 

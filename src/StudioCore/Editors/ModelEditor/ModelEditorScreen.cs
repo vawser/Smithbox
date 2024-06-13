@@ -45,7 +45,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
     public bool ShowSaveOption { get; set; }
 
-    private AssetBrowserScreen ModelAssetBrowser;
+    public AssetBrowserScreen ModelAssetBrowser;
 
     private readonly ModelPropertyEditor _propEditor;
     private readonly ModelPropertyCache _propCache = new();

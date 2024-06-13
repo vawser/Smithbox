@@ -4,6 +4,7 @@ using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
+using StudioCore.Editors.AssetBrowser;
 using StudioCore.Help;
 using StudioCore.Interface.Tabs;
 using StudioCore.Platform;
@@ -41,10 +42,10 @@ public class AliasWindow
     public AliasWindow()
     {
         MapAliasTab = new AliasTab(MapAliasBank.Bank, "Maps", ref CFG.Current.MapAtlas_ShowTags);
-        CharacterAliasTab = new AliasTab(ModelAliasBank.Bank, "Characters", ref CFG.Current.CharacterAtlas_ShowTags);
-        AssetAliasTab = new AliasTab(ModelAliasBank.Bank, "Objects", ref CFG.Current.AssetAtlas_ShowTags);
-        PartAliasTab = new AliasTab(ModelAliasBank.Bank, "Parts", ref CFG.Current.PartAtlas_ShowTags);
-        MapPieceAliasTab = new AliasTab(ModelAliasBank.Bank, "MapPieces", ref CFG.Current.MapPieceAtlas_ShowTags);
+        CharacterAliasTab = new AliasTab(ModelAliasBank.Bank, "Characters", ref CFG.Current.CharacterAtlas_ShowTags, false, false, AssetCategoryType.Character);
+        AssetAliasTab = new AliasTab(ModelAliasBank.Bank, "Objects", ref CFG.Current.AssetAtlas_ShowTags, false, false, AssetCategoryType.Asset);
+        PartAliasTab = new AliasTab(ModelAliasBank.Bank, "Parts", ref CFG.Current.PartAtlas_ShowTags, false, false, AssetCategoryType.Part);
+        MapPieceAliasTab = new AliasTab(ModelAliasBank.Bank, "MapPieces", ref CFG.Current.MapPieceAtlas_ShowTags, false, false, AssetCategoryType.MapPiece);
         GparamAliasTab = new AliasTab(GparamAliasBank.Bank, "Gparams", ref CFG.Current.GparamNameAtlas_ShowTags);
         CutsceneAliasTab = new AliasTab(CutsceneAliasBank.Bank, "Cutscenes", ref CFG.Current.CutsceneAtlas_ShowTags);
         EventFlagAliasTab = new AliasTab(FlagAliasBank.Bank, "Flags", ref CFG.Current.EventFlagAtlas_ShowTags);

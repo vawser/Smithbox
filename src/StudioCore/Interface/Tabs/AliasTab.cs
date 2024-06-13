@@ -3,6 +3,8 @@ using Microsoft.Extensions.Logging;
 using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
 using StudioCore.BanksMain;
+using StudioCore.Editors;
+using StudioCore.Editors.AssetBrowser;
 using StudioCore.Help;
 using StudioCore.Platform;
 using StudioCore.UserProject;
@@ -37,13 +39,16 @@ public class AliasTab
     private bool IsNumericID;
     private bool IsMapID;
 
-    public AliasTab(AliasBank bank, string name, ref bool tagBool, bool isNumericId = false, bool isMapId = false) 
+    private AssetCategoryType AssetType;
+
+    public AliasTab(AliasBank bank, string name, ref bool tagBool, bool isNumericId = false, bool isMapId = false, AssetCategoryType assetType = AssetCategoryType.None) 
     {
         Bank = bank;
         EntryName = name;
         TagBool = tagBool;
         IsNumericID = isNumericId;
         IsMapID = isMapId;
+        AssetType = assetType;
     }
 
     public void Display()
@@ -60,6 +65,10 @@ public class AliasTab
         {
             Bank.CanReloadBank = false;
             Bank.ReloadAliasBank();
+
+            // Invalidate these so the name updates there
+            EditorContainer.MsbEditor.MapAssetBrowser.InvalidateNameCaches();
+            EditorContainer.ModelEditor.ModelAssetBrowser.InvalidateNameCaches();
         }
     }
 
@@ -175,14 +184,58 @@ public class AliasTab
 
             if (ImGui.Button("Update", buttonSize))
             {
-                Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
+                if (AssetType == AssetCategoryType.None)
+                {
+                    Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
+                }
+                else
+                {
+                    switch (AssetType)
+                    {
+                        case AssetCategoryType.Character:
+                            Bank.AddToLocalAliasBank("Chr", _refUpdateId, _refUpdateName, _refUpdateTags);
+                            break;
+                        case AssetCategoryType.Asset:
+                            Bank.AddToLocalAliasBank("Obj", _refUpdateId, _refUpdateName, _refUpdateTags);
+                            break;
+                        case AssetCategoryType.Part:
+                            Bank.AddToLocalAliasBank("Part", _refUpdateId, _refUpdateName, _refUpdateTags);
+                            break;
+                        case AssetCategoryType.MapPiece:
+                            Bank.AddToLocalAliasBank("MapPiece", _refUpdateId, _refUpdateName, _refUpdateTags);
+                            break;
+                    }
+                }
+
                 ImGui.CloseCurrentPopup();
                 Bank.CanReloadBank = true;
             }
 
             if (ImGui.Button("Restore Default", buttonSize))
             {
-                Bank.RemoveFromLocalAliasBank("", _refUpdateId);
+                if (AssetType == AssetCategoryType.None)
+                {
+                    Bank.RemoveFromLocalAliasBank("", _refUpdateId);
+                }
+                else
+                {
+                    switch (AssetType)
+                    {
+                        case AssetCategoryType.Character:
+                            Bank.RemoveFromLocalAliasBank("Chr", _refUpdateId);
+                            break;
+                        case AssetCategoryType.Asset:
+                            Bank.RemoveFromLocalAliasBank("Obj", _refUpdateId);
+                            break;
+                        case AssetCategoryType.Part:
+                            Bank.RemoveFromLocalAliasBank("Part", _refUpdateId);
+                            break;
+                        case AssetCategoryType.MapPiece:
+                            Bank.RemoveFromLocalAliasBank("MapPiece", _refUpdateId);
+                            break;
+                    }
+                }
+
                 ImGui.CloseCurrentPopup();
                 Bank.CanReloadBank = true;
             }
@@ -245,7 +298,30 @@ public class AliasTab
 
             if (isValid)
             {
-                Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
+                if (AssetType == AssetCategoryType.None)
+                {
+                    Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
+                }
+                else
+                { 
+                    switch(AssetType)
+                    {
+                        case AssetCategoryType.Character:
+                            Bank.AddToLocalAliasBank("Chr", _newRefId, _newRefName, _newRefTags);
+                            break;
+                        case AssetCategoryType.Asset:
+                            Bank.AddToLocalAliasBank("Obj", _newRefId, _newRefName, _newRefTags);
+                            break;
+                        case AssetCategoryType.Part:
+                            Bank.AddToLocalAliasBank("Part", _newRefId, _newRefName, _newRefTags);
+                            break;
+                        case AssetCategoryType.MapPiece:
+                            Bank.AddToLocalAliasBank("MapPiece", _newRefId, _newRefName, _newRefTags);
+                            break;
+                    }
+                }
+
+
                 ImGui.CloseCurrentPopup();
                 Bank.CanReloadBank = true;
             }
@@ -255,5 +331,4 @@ public class AliasTab
             }
         }
     }
-
 }
