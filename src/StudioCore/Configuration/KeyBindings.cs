@@ -171,6 +171,9 @@ public class KeyBindings
         public KeyBind MapEditor_MoveOrderTop = new("Move Map Object to Top in List", KeybindCategory.MapEditor, Key.U, true, true);
         public KeyBind MapEditor_MoveOrderBottom = new("Move Map Object to Bottom in List", KeybindCategory.MapEditor, Key.J, true, true);
 
+        public KeyBind Map_WorldMap_Toggle = new("Toggle World Map", KeybindCategory.MapEditor, Key.M, true, false, false);
+        public KeyBind Map_WorldMap_ClearSelection = new("Clear World Map Selection", KeybindCategory.MapEditor, Key.X, true, false, false);
+
         // Model Editor
         public KeyBind ModelEditor_LoadCurrentSelection = new("Load Asset Selection", KeybindCategory.ModelEditor, Key.L, true);
 

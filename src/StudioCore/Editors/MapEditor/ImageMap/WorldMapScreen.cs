@@ -66,6 +66,15 @@ public class WorldMapScreen : IResourceEventListener
 
     public void Shortcuts()
     {
+        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_Toggle))
+        {
+            WorldMapOpen = !WorldMapOpen;
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_ClearSelection))
+        {
+            EditorContainer.MsbEditor.WorldMap_ClickedMapZone = null;
+        }
+
         if (InputTracker.GetKey(Key.LControl))
         {
             HandleZoom();
@@ -94,14 +103,14 @@ public class WorldMapScreen : IResourceEventListener
             {
                 WorldMapOpen = !WorldMapOpen;
             }
-            ImguiUtils.ShowHoverTooltip("Open a world map for Elden Ring. Allows you to easily select open-world tiles.");
+            ImguiUtils.ShowHoverTooltip($"Open a world map for Elden Ring. Allows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.Map_WorldMap_Toggle.HintText}");
 
             ImGui.SameLine();
             if (ImGui.Button("Clear", new Vector2(widthUnit * 34, 20 * scale)))
             {
                 EditorContainer.MsbEditor.WorldMap_ClickedMapZone = null;
             }
-            ImguiUtils.ShowHoverTooltip("Clear the current world map selection (if any).");
+            ImguiUtils.ShowHoverTooltip($"Clear the current world map selection (if any).\nShortcut: {KeyBindings.Current.Map_WorldMap_ClearSelection.HintText}");
         }
     }
 
@@ -146,6 +155,7 @@ public class WorldMapScreen : IResourceEventListener
         ImGui.Begin("Properties##WorldMapProperties");
 
         ImguiUtils.WrappedText($"Press Left Mouse button to select an area of the map to filter the map object list by.");
+        ImguiUtils.WrappedText($"");
         ImguiUtils.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
         ImguiUtils.WrappedText($"Press {KeyBindings.Current.TextureViewer_ZoomReset.HintText} to reset zoom level to 100%.");
         ImguiUtils.WrappedText($"");
@@ -159,7 +169,8 @@ public class WorldMapScreen : IResourceEventListener
         currentHoverMaps = GetMatchingMaps(relativePos);
 
         ImGui.Separator();
-        ImGui.Text($"Preview Maps:");
+        ImGui.Text($"Maps in Tile:");
+        ImguiUtils.ShowHoverTooltip("These are the maps that are within the tile you are currently hovering over within the world map.");
         ImGui.Separator();
 
         // Hover Maps
@@ -173,7 +184,8 @@ public class WorldMapScreen : IResourceEventListener
         }
 
         ImGui.Separator();
-        ImGui.Text($"Displayed Maps:");
+        ImGui.Text($"Selection:");
+        ImguiUtils.ShowHoverTooltip("These are the maps that the map object list will be filtered to.");
         ImGui.Separator();
 
         // Stored Click Maps

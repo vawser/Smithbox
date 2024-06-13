@@ -192,6 +192,8 @@ public class AssetBrowserScreen
                 _mapPieceNameCache.Add(assetMapId, cache);
             }
         }
+
+        //TaskLogs.AddLog("InvalidateNameCaches");
     }
 
     public void OnGui()
