@@ -212,7 +212,6 @@ public class CFG
     public bool System_Show_UI_Tooltips = true;
     public bool System_WrapAliasDisplay = true;
     public float System_UI_Scale = 1.0f;
-
     public bool System_Enable_Soapstone_Server = true;
     public bool System_Font_Chinese = false;
     public bool System_Font_Cyrillic = false;
