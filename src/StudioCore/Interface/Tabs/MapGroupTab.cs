@@ -86,6 +86,8 @@ public class MapGroupTab
 
     public void DisplayMapGroupAddSection()
     {
+        var scale = Smithbox.GetUIScale();
+
         ImGui.Text("ID");
         ImGui.InputText($"##ID", ref _newRefId, 255);
         ImguiUtils.ShowHoverTooltip("The numeric ID of the map group to add.");
@@ -95,7 +97,7 @@ public class MapGroupTab
         ImguiUtils.ShowHoverTooltip("The name of the map group to add.");
 
         ImGui.Text("Description");
-        ImGui.InputTextMultiline($"##Description", ref _newRefDescription, 255, new Vector2(255, 200));
+        ImGui.InputTextMultiline($"##Description", ref _newRefDescription, 255, new Vector2(255, 200 * scale));
         ImguiUtils.ShowHoverTooltip("The description of this map group.");
 
         ImGui.Text("Category");
@@ -248,6 +250,8 @@ public class MapGroupTab
 
     private void DisplayEditWindow()
     {
+        var scale = Smithbox.GetUIScale();
+
         if (_selectedEntry != null)
         {
             ImGui.Text($"Alias for {_selectedEntry.id}");
@@ -256,7 +260,7 @@ public class MapGroupTab
             ImGui.InputText($"##Name", ref _refUpdateName, 255);
 
             ImGui.Text("Description");
-            ImGui.InputTextMultiline($"##Description", ref _refUpdateDesc, 255, new Vector2(255, 200));
+            ImGui.InputTextMultiline($"##Description", ref _refUpdateDesc, 255, new Vector2(255, 200 * scale));
 
             ImGui.Text("Category");
             ImGui.InputText($"##Category", ref _refUpdateCategory, 255);

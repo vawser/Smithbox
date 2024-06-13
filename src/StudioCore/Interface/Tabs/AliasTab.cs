@@ -14,6 +14,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
+using static SoulsFormats.DRB;
 using static SoulsFormats.MSB_AC6.Part;
 
 namespace StudioCore.Interface.Tabs;
@@ -166,9 +167,10 @@ public class AliasTab
 
     private void DisplayEditWindow()
     {
+        var scale = Smithbox.GetUIScale();
         var width = ImGui.GetWindowWidth();
-        var inputSize = new Vector2(width, 20);
-        var buttonSize = new Vector2(width, 24);
+        var inputSize = new Vector2(width, 20 * scale);
+        var buttonSize = new Vector2(width, 24 * scale);
 
         if (_selectedEntry != null)
         {
@@ -252,9 +254,10 @@ public class AliasTab
     }
     public void DisplayNameAddSection()
     {
+        var scale = Smithbox.GetUIScale();
         var width = ImGui.GetWindowWidth();
-        var inputSize = new Vector2(width, 20);
-        var buttonSize = new Vector2(width, 24);
+        var inputSize = new Vector2(width, 20 * scale);
+        var buttonSize = new Vector2(width, 24 * scale);
 
         ImGui.Text("ID");
         ImGui.InputTextMultiline($"##AddID_{EntryName}", ref _newRefId, 255, inputSize);

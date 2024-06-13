@@ -23,6 +23,8 @@ public static class PropInfo_References
         if (firstEnt.References.Count == 0)
             return;
 
+        var scale = Smithbox.GetUIScale();
+
         ImGui.Separator();
         ImGui.Text("References:");
         ImGui.Separator();
@@ -37,7 +39,7 @@ public static class PropInfo_References
                 if (n is Entity e)
                 {
                     // View Reference in Viewport
-                    if (ImGui.Button(ForkAwesome.Binoculars + "##MSBRefBy" + refID, new Vector2(width * 5, 20)))
+                    if (ImGui.Button(ForkAwesome.Binoculars + "##MSBRefBy" + refID, new Vector2((width * 5), 20 * scale)))
                     {
                         BoundingBox box = new();
 
@@ -87,7 +89,7 @@ public static class PropInfo_References
 
                     ImGui.SameLine();
                     ImGui.SetNextItemWidth(-1);
-                    if (ImGui.Button(displayName + "##MSBRefTo" + refID, new Vector2(width * 94, 20)))
+                    if (ImGui.Button(displayName + "##MSBRefTo" + refID, new Vector2((width * 94), 20 * scale)))
                     {
                         selection.ClearSelection();
                         selection.AddSelection(e);
@@ -103,7 +105,7 @@ public static class PropInfo_References
                     prettyName = $"{prettyName} {MapAliasBank.GetMapName(mapid)}";
 
                     ImGui.SetNextItemWidth(-1);
-                    if (ImGui.Button(prettyName + "##MSBRefTo" + refID, new Vector2(width * 94, 20)))
+                    if (ImGui.Button(prettyName + "##MSBRefTo" + refID, new Vector2((width * 94), 20 * scale)))
                     {
                         ISelectable rootTarget = r.GetSelectionTarget();
                         selection.ClearSelection();

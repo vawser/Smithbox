@@ -21,6 +21,8 @@ public static class PropInfo_ReferencedBy
         if (firstEnt.GetReferencingObjects().Count == 0)
             return;
 
+        var scale = Smithbox.GetUIScale();
+
         ImGui.Separator();
         ImGui.Text("Referenced By:");
         ImGui.Separator();
@@ -31,7 +33,7 @@ public static class PropInfo_ReferencedBy
         foreach (Entity m in firstEnt.GetReferencingObjects())
         {
             // View Reference in Viewport
-            if (ImGui.Button(ForkAwesome.Binoculars + "##MSBRefBy" + refID, new Vector2(width * 5, 20)))
+            if (ImGui.Button(ForkAwesome.Binoculars + "##MSBRefBy" + refID, new Vector2((width * 5), 20 * scale)))
             {
                 BoundingBox box = new();
 
@@ -82,7 +84,7 @@ public static class PropInfo_ReferencedBy
             ImGui.SameLine();
             ImGui.SetNextItemWidth(-1);
 
-            if (ImGui.Button(displayName + "##MSBRefBy" + refID, new Vector2(width * 94, 20)))
+            if (ImGui.Button(displayName + "##MSBRefBy" + refID, new Vector2((width * 94), 20 * scale)))
             {
                 selection.ClearSelection();
                 selection.AddSelection(m);
