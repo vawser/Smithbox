@@ -95,6 +95,8 @@ public class Smithbox
     private bool _showImGuiMetricsWindow;
     private bool _showImGuiStackToolWindow;
 
+    public static EventHandler UIScaleChanged;
+
     public unsafe Smithbox(IGraphicsContext context, string version)
     {
         _version = version;
@@ -987,9 +989,12 @@ public class Smithbox
         get => _dpi;
         set
         {
+            if (Math.Abs(_dpi - value) < 0.0001f) return; // Skip doing anything if no difference
+
             if (Math.Abs(value - _dpi) > 0.9f)
                 FontRebuildRequest = true;
             _dpi = value;
+            UIScaleChanged?.Invoke(null, EventArgs.Empty);
         }
     }
 

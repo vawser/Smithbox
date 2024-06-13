@@ -7,11 +7,7 @@ using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Drawing;
-using StudioCore.MsbEditor;
 using StudioCore.UserProject;
-using Veldrid;
-using StudioCore.Editors.TextEditor.Toolbar;
-using static StudioCore.Editors.TextureViewer.Toolbar.TexAction_ExportTexture;
 
 namespace StudioCore;
 
@@ -782,6 +778,7 @@ public class CFG
                 SaveConfig();
             }
         }
+        Smithbox.UIScaleChanged?.Invoke(null, EventArgs.Empty);
     }
 
     private static void LoadKeybinds()
