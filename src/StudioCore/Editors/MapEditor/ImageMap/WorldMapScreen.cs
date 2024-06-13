@@ -105,8 +105,6 @@ public class WorldMapScreen : IResourceEventListener
 
     public void DisplayWorldMap()
     {
-        var scale = Smithbox.GetUIScale();
-
         if (Project.Type != ProjectType.ER)
             return;
 

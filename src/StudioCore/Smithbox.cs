@@ -989,7 +989,8 @@ public class Smithbox
         get => _dpi;
         set
         {
-            if (Math.Abs(_dpi - value) < 0.0001f) return;
+            if (Math.Abs(_dpi - value) < 0.0001f) return; // Skip doing anything if no difference
+
             if (Math.Abs(value - _dpi) > 0.9f)
                 FontRebuildRequest = true;
             _dpi = value;
