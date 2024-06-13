@@ -40,7 +40,7 @@ public class WorldMapScreen : IResourceEventListener
     private Vector2 trueSize = new Vector2();
     private Vector2 size = new Vector2();
     private Vector2 relativePos = new Vector2();
-    private Vector2 relativePosSansScroll = new Vector2();
+    private Vector2 relativePosWindowPosition = new Vector2();
 
     List<string> currentHoverMaps = new List<string>();
 
@@ -84,18 +84,20 @@ public class WorldMapScreen : IResourceEventListener
 
         var scale = Smithbox.GetUIScale();
 
-        var width = ImGui.GetWindowWidth() / 100;
+        var windowHeight = ImGui.GetWindowHeight();
+        var windowWidth = ImGui.GetWindowWidth();
+        var widthUnit = windowWidth / 100;
 
         if (LoadedWorldMapTexture)
         {
-            if (ImGui.Button("Open World Map", new Vector2(width * 60, 20 * scale)))
+            if (ImGui.Button("Open World Map", new Vector2(widthUnit * 60, 20 * scale)))
             {
                 WorldMapOpen = !WorldMapOpen;
             }
             ImguiUtils.ShowHoverTooltip("Open a world map for Elden Ring. Allows you to easily select open-world tiles.");
 
             ImGui.SameLine();
-            if (ImGui.Button("Clear", new Vector2(width * 34, 20 * scale)))
+            if (ImGui.Button("Clear", new Vector2(widthUnit * 34, 20 * scale)))
             {
                 EditorContainer.MsbEditor.WorldMap_ClickedMapZone = null;
             }
@@ -113,6 +115,10 @@ public class WorldMapScreen : IResourceEventListener
 
         ImGui.Begin("World Map##WorldMapImage", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
 
+        var windowHeight = ImGui.GetWindowHeight();
+        var windowWidth = ImGui.GetWindowWidth();
+        var mousePos = ImGui.GetMousePos();
+
         TextureViewWindowPosition = ImGui.GetWindowPos();
         TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());
 
@@ -126,8 +132,8 @@ public class WorldMapScreen : IResourceEventListener
             {
                 trueSize = GetImageSize(texRes, false);
                 size = GetImageSize(texRes, true);
-                relativePos = GetRelativePosition(size, TextureViewWindowPosition, TextureViewScrollPosition);
-                relativePosSansScroll = GetRelativePositionSansScroll(size, TextureViewWindowPosition, TextureViewScrollPosition);
+                relativePos = GetRelativePosition(TextureViewWindowPosition, TextureViewScrollPosition);
+                relativePosWindowPosition = GetRelativePositionWindowOnly(TextureViewWindowPosition);
 
                 IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
 
@@ -139,13 +145,16 @@ public class WorldMapScreen : IResourceEventListener
 
         ImGui.Begin("Properties##WorldMapProperties");
 
+        ImguiUtils.WrappedText($"Press Left Mouse button to select an area of the map to filter the map object list by.");
         ImguiUtils.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
         ImguiUtils.WrappedText($"Press {KeyBindings.Current.TextureViewer_ZoomReset.HintText} to reset zoom level to 100%.");
         ImguiUtils.WrappedText($"");
 
-        ImGui.Text($"Relative Position: {relativePos}");
-        ImGui.Text($"Relative (Sans Scroll) Position: {relativePosSansScroll}");
-        ImGui.Text($"Size: {trueSize}");
+        //ImGui.Text($"Relative Position: {relativePos}");
+        //ImGui.Text($"Relative (Sans Scroll) Position: {relativePosWindowPosition}");
+        //ImGui.Text($"mousePos: {mousePos}");
+        //ImGui.Text($"windowHeight: {windowHeight}");
+        //ImGui.Text($"windowWidth: {windowWidth}");
 
         currentHoverMaps = GetMatchingMaps(relativePos);
 
@@ -181,9 +190,7 @@ public class WorldMapScreen : IResourceEventListener
 
         if (InputTracker.GetMouseButtonDown(MouseButton.Left))
         {
-            // Seems to allow out-of-bounds selection on the right-side only (fine for now since users will mostly select the left)
-            // Occurs if zoomed in and scrolled
-            if (relativePosSansScroll.X > 0 && relativePosSansScroll.X < trueSize.X && relativePosSansScroll.Y > 0 && relativePosSansScroll.Y < trueSize.Y)
+            if (relativePosWindowPosition.X > 0 && relativePosWindowPosition.X < windowWidth && relativePosWindowPosition.Y > 0 && relativePosWindowPosition.Y < windowHeight)
             {
                 if (currentHoverMaps != null && currentHoverMaps.Count > 0)
                 {
@@ -259,7 +266,7 @@ public class WorldMapScreen : IResourceEventListener
     {
     }
 
-    private Vector2 GetRelativePositionSansScroll(Vector2 imageSize, Vector2 windowPos, Vector2 scrollPos)
+    private Vector2 GetRelativePositionWindowOnly(Vector2 windowPos)
     {
         var scale = Smithbox.GetUIScale();
 
@@ -269,13 +276,9 @@ public class WorldMapScreen : IResourceEventListener
         var fixedY = 24 * scale;
         var cursorPos = ImGui.GetMousePos();
 
-        // Account for window position and scroll
+        // Account for window position
         relativePos.X = cursorPos.X - ((windowPos.X + fixedX));
         relativePos.Y = cursorPos.Y - ((windowPos.Y + fixedY));
-
-        // Account for zoom
-        relativePos.X = relativePos.X / zoomFactor.X;
-        relativePos.Y = relativePos.Y / zoomFactor.Y;
 
         return relativePos;
     }
@@ -388,7 +391,7 @@ public class WorldMapScreen : IResourceEventListener
         return new Vector2(float.Round(0.2f * scale, 1), float.Round(0.2f * scale, 1));
     }
 
-    private Vector2 GetRelativePosition(Vector2 imageSize, Vector2 windowPos, Vector2 scrollPos)
+    private Vector2 GetRelativePosition(Vector2 windowPos, Vector2 scrollPos)
     {
         var scale = Smithbox.GetUIScale();
 
