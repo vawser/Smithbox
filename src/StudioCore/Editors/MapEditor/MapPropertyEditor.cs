@@ -856,6 +856,7 @@ public class MapPropertyEditor
                         // Display references
                         PropInfo_References.Display(firstEnt, _viewport, ref selection, ref refID);
                         PropInfo_ReferencedBy.Display(firstEnt, _viewport, ref selection, ref refID);
+                        PropInfo_ParamJumps.Display(firstEnt, _viewport, ref selection, ref refID);
                     }
                 }
             }
@@ -1263,7 +1264,7 @@ public class MapPropertyEditor
     {
         string name = prop.Name;
 
-        if (CFG.Current.MapEditor_Enable_Commmunity_Names)
+        if (CFG.Current.MapEditor_Enable_Commmunity_Names && sel != null)
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
@@ -1297,7 +1298,7 @@ public class MapPropertyEditor
     {
         string name = prop.Name;
 
-        if (CFG.Current.MapEditor_Enable_Commmunity_Hints)
+        if (CFG.Current.MapEditor_Enable_Commmunity_Hints && sel != null)
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 

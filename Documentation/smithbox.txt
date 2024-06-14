@@ -107,6 +107,3 @@ World Map:
 # Notes
 #--------------------------------------
 Map Properties: quick-link to Asset Browser fo ref link
-
-Fix name cache race condition in the Asset Browser (randomly on program start the names will not be properly read)
- Likely due to the InvalidateNameCaches func

@@ -1242,6 +1242,15 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
+    /// Returns true if this entity is an actual Asset
+    /// </summary>
+    public bool IsPartPureAsset()
+    {
+        return WrappedObject is MSBE.Part.Asset ||
+            WrappedObject is MSB_AC6.Part.Asset ? true : false;
+    }
+
+    /// <summary>
     /// Returns true if this entity is an DummyAsset
     /// </summary>
     public bool IsPartDummyAsset()
