@@ -1,3 +1,4 @@
+# Behavior
 DCX.Type t;
 Memory<byte> decomp = DCX.Decompress(bytes, out t);
 var hvk = new HavokBinarySerializer();
@@ -5,7 +6,34 @@ MemoryStream hvkStream = new MemoryStream(decomp.ToArray());
 
 hkRootLevelContainer rootObj = (hkRootLevelContainer)hvk.ReadAllObjects(hvkStream);
 
+# Map
+private unsafe void ComposeMap()
+{
+    ResourceHandle<TextureResource> mapHandle = GetImageTextureHandle("smithbox/worldmap/world_map_default");
+    ResourceHandle<TextureResource> largeTileHandle = GetImageTextureHandle("smithbox/worldmap/large_tile");
 
+    if (mapHandle != null && largeTileHandle != null)
+    {
+        TextureResource mapTex = mapHandle.Get();
+        TextureResource largeTileTex = largeTileHandle.Get();
+
+        if (mapTex != null && largeTileTex != null)
+        {
+            IntPtr mapPtr = (nint)mapTex.GPUTexture.TexHandle;
+            IntPtr lrgTilePtr = (nint)largeTileTex.GPUTexture.TexHandle;
+
+            size = GetImageSize(mapTex, true);
+
+            var windowPos = ImGui.GetWindowPos();
+
+            ImDrawListPtr drawListPtr = ImGui.GetWindowDrawList();
+            drawListPtr.AddImage(mapPtr, windowPos, size + windowPos);
+            drawListPtr.AddImage(lrgTilePtr, new Vector2(windowPos.X + 0, windowPos.Y + 0), new Vector2(windowPos.X + 496, windowPos.Y + 496));
+
+            //ImGui.Image((nint)drawListPtr.NativePtr, size);
+        }
+    }
+}
 
 #--------------------------------------
 # TO ADD
@@ -70,9 +98,15 @@ Texture Viewer:
  - Add ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
 
+World Map:
+ - Add the dungeon icons, add icon radius for the non-open world maps
+ - Add support for large/medium/small tile overlays
+ - World Map TPF may be unloaded by the map/model editor stuff (add exception for it)
+ 
 #--------------------------------------
 # Notes
 #--------------------------------------
-Add the dungeon icons, add layout for the non-open world maps
+Map Properties: quick-link to Asset Browser fo ref link
 
 Fix name cache race condition in the Asset Browser (randomly on program start the names will not be properly read)
+ Likely due to the InvalidateNameCaches func
