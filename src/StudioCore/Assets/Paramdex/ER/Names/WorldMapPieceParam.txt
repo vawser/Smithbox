@@ -1,0 +1,18 @@
+0 Limgrave West
+1 Weeping Peninsula
+2 Limgrave East
+3 Liurnia East
+4 Liurnia North
+5 Liurnia West
+6 Altus Plateau
+7 Leyndell Royal Capital
+8 Mt. Gelmir
+9 Caelid
+10 Dragonbarrow
+11 Mountaintops of the Giants West
+12 Mountaintops of the Giants East
+13 Consecrated Snowfield
+100 Ainsel River
+101 Lake of Rot
+102 Mohgwyn Palace
+103 Siofra River

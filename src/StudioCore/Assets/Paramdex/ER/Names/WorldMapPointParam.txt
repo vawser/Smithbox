@@ -65,6 +65,10 @@
 341500 Isolated Divine Tower
 350000 Subterranean Shunning-Grounds
 392000 Ruin-Strewn Precipice
+450000 Royal Colosseum
+450100 Limgrave Colosseum
+450200 Caelid Colosseum
+61453600 Starfall Crater
 61413200 Isolated Merchant's Shack
 61413300 Fourth Church of Marika
 61413301 Witchbane Ruins

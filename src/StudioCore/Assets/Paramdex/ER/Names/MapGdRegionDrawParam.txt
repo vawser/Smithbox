@@ -1,0 +1,64 @@
+1000 Stormveil Castle
+1001 Chapel of Anticipation
+1100 Leyndell- Royal Capital
+1105 Leyndell- Ashen Capital
+1110 Roundtable Hold
+1201 Ainsel River
+1202 Siofra River
+1203 Deeproot Depths
+1204 Ainsel River Boss
+1300 Crumbling Farum Azula
+1400 Academy of Raya Lucaria
+1500 Miquella's Haligtree
+1600 Volcano Manor
+1800 Stranded Graveyard
+1900 Stone Platform
+3000 Tombsward Catacombs
+3001 Impaler's Catacombs
+3002 Stormfoot Catacombs
+3003 Road's End Catacombs
+3004 Murkwater Catacombs
+3005 Black Knife Catacombs
+3006 Cliffbottom Catacombs
+3007 Wyndham Catacombs
+3008 Sainted Hero's Grave
+3009 Gelmir Hero's Grave
+3010 Auriza's Hero Grave
+3011 Deathtouched Catacombs
+3012 Unsightly Catacombs
+3013 Auriza Side Tomb
+3014 Minor Erdtree Catacombs
+3015 Caelid Catacombs
+3016 War-Dead Catacombs
+3017 Giant-Conquering Hero's Grave
+3018 Giants' Mountaintops Catacombs
+3100 Murkwater Cave
+3101 Earthbore Cave
+3102 Tombsward Cave
+3103 Groveside Cave
+3104 Stillwater Cave
+3105 Lakeside Crystal Cave
+3106 Academy Crystal Cave
+3107 Seethewater Cave
+3109 Volcano Cave
+3110 Dragonbarrow Cave
+3111 Sellia Hideaway
+3112 Cave of the Forlorn
+3115 Coastal Cave
+3117 High Road Cave
+3200 Morne Tunnel
+3201 Limgrave Tunnels
+3202 Raya Lucaria Crystal Tunnel
+3204 Old Altus Tunnel
+3205 Altus Tunnel
+3207 Gael Tunnel
+3208 Sellia Crystal Tunnel
+3211 Yelough Anix Tunnel
+3410 Divine Tower of Limgrave
+3411 Divine Tower of Liurnia (Carian Study Hall)
+3412 Divine Tower of West Altus (Sealed Tunnel)
+3413 Divine Tower of Caelid
+3414 Divine Tower of East Altus
+3415 Isolated Divine Tower
+3500 Subterranean Shunning-Grounds
+3920 Ruin-Strewn Precipice

@@ -9,6 +9,7 @@
 2070 The Three Fingers
 2100 Black Knife Assassin
 2110 Beast Clergyman
+2120 Malenia
 2130 Morgott
 2131 Morgott (Dead)
 2140 Omen

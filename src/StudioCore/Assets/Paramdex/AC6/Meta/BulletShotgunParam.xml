@@ -2,6 +2,81 @@
 <PARAMMETA XmlVersion="0">
   <Field>
     <unkSpreadMultiplier AltName="Spread Multiplier" />
+    
+    <bulletHorizontalSpread1 AltName="Horizontal Spread [1]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread2 AltName="Horizontal Spread [2]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread3 AltName="Horizontal Spread [3]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread4 AltName="Horizontal Spread [4]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread5 AltName="Horizontal Spread [5]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread6 AltName="Horizontal Spread [6]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread7 AltName="Horizontal Spread [7]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread8 AltName="Horizontal Spread [8]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread9 AltName="Horizontal Spread [9]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread10 AltName="Horizontal Spread [10]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread11 AltName="Horizontal Spread [11]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread12 AltName="Horizontal Spread [12]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread13 AltName="Horizontal Spread [13]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread14 AltName="Horizontal Spread [14]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread15 AltName="Horizontal Spread [15]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread16 AltName="Horizontal Spread [16]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread17 AltName="Horizontal Spread [17]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread18 AltName="Horizontal Spread [18]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread19 AltName="Horizontal Spread [19]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread20 AltName="Horizontal Spread [20]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread21 AltName="Horizontal Spread [21]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread22 AltName="Horizontal Spread [22]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread23 AltName="Horizontal Spread [23]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread24 AltName="Horizontal Spread [24]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread25 AltName="Horizontal Spread [25]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread26 AltName="Horizontal Spread [26]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread27 AltName="Horizontal Spread [27]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread28 AltName="Horizontal Spread [28]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread29 AltName="Horizontal Spread [29]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread30 AltName="Horizontal Spread [30]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread31 AltName="Horizontal Spread [31]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread32 AltName="Horizontal Spread [32]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread33 AltName="Horizontal Spread [33]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread34 AltName="Horizontal Spread [34]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread35 AltName="Horizontal Spread [35]" Wiki="Positive is right, negative is left" />
+    <bulletHorizontalSpread36 AltName="Horizontal Spread [36]" Wiki="Positive is right, negative is left" />
+    
+    <bulletVerticalSpread1 AltName="Vertical Spread [1]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread2 AltName="Vertical Spread [2]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread3 AltName="Vertical Spread [3]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread4 AltName="Vertical Spread [4]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread5 AltName="Vertical Spread [5]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread6 AltName="Vertical Spread [6]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread7 AltName="Vertical Spread [7]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread8 AltName="Vertical Spread [8]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread9 AltName="Vertical Spread [9]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread10 AltName="Vertical Spread [10]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread11 AltName="Vertical Spread [11]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread12 AltName="Vertical Spread [12]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread13 AltName="Vertical Spread [13]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread14 AltName="Vertical Spread [14]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread15 AltName="Vertical Spread [15]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread16 AltName="Vertical Spread [16]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread17 AltName="Vertical Spread [17]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread18 AltName="Vertical Spread [18]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread19 AltName="Vertical Spread [19]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread20 AltName="Vertical Spread [20]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread21 AltName="Vertical Spread [21]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread22 AltName="Vertical Spread [22]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread23 AltName="Vertical Spread [23]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread24 AltName="Vertical Spread [24]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread25 AltName="Vertical Spread [25]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread26 AltName="Vertical Spread [26]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread27 AltName="Vertical Spread [27]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread28 AltName="Vertical Spread [28]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread29 AltName="Vertical Spread [29]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread30 AltName="Vertical Spread [30]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread31 AltName="Vertical Spread [31]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread32 AltName="Vertical Spread [32]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread33 AltName="Vertical Spread [33]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread34 AltName="Vertical Spread [34]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread35 AltName="Vertical Spread [35]" Wiki="Positive is up, negative is down" />
+    <bulletVerticalSpread36 AltName="Vertical Spread [36]" Wiki="Positive is up, negative is down" />
+    
   </Field>
   <Self />
 </PARAMMETA>

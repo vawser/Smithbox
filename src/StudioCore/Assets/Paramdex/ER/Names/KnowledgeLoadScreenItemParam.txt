@@ -1,0 +1,67 @@
+1 Crouching
+2 Guarding
+3 Guard Counters
+4 Two-Handing Armaments
+5 Charge and Jump Attacks
+6 Skill
+7 Parrying
+8 Setting a Target
+9 Precision Aiming
+10 Equipping Armaments
+11 Using Items
+12 Using Torches
+13 Critical Hits
+14 Gestures
+15 The Map
+16 Spiritspring Jumping
+50 Dying and Dropping Runes
+52 Summoning Spirits
+53 Resting at Sites of Grace
+54 Finding Sites of Grace
+55 Guidance of Grace
+56 Sacred Flasks
+57 Fast Travel to Sites of Grace
+58 Mounted Attacks
+59 No-Riding Areas
+60 Item Crafting
+61 Container Items
+62 Armament Customization
+64 Reviving After Dying
+65 Equip Load
+66 While in Combat
+67 Strengthening Spirits
+68 Leveling Up
+70 Status: Poison
+71 Status: Scarlet Rot
+72 Status: Blood Loss
+73 Status: Frost/Frostbite
+74 Status: Sleep
+75 Status: Madness
+76 Status: Death
+77 Poise
+100 Cooperator's Objective (Furled Finger)
+101 Adversary's Objective (Duelist)
+102 Multipler Maximums
+103 Seeing Summon Signs
+104 Leaving Co-op Signs
+105 Leaving Hostile Signs
+106 Invasion
+107 Requesting Support
+108 Supporting
+109 Summoning Pools
+110 Group Passwords
+111 Multiplayer Passwords
+112 Messages
+113 Multiplayer Movement Limits
+114 Phantoms
+115 Bloodstains
+116 Support Objective (Hunter)
+117 Summon Signs
+118 Advanced Messages
+120 Colosseums
+121 Colosseum Ranking
+150 Limits of Guarding
+151 Stance-Breaking
+152 Knowcking Down Mounted Enemies
+153 Hardened Foes
+200 Teardrop Scarabs
