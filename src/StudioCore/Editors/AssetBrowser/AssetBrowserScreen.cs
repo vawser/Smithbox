@@ -77,6 +77,9 @@ public class AssetBrowserScreen
     private bool updateScrollPosition = false;
     private float _currentScrollY;
 
+    private bool NamesInvalidated = false;
+
+
     Dictionary<string, AliasReference> chrReferenceDict = new Dictionary<string, AliasReference>();
     Dictionary<string, AliasReference> assetReferenceDict = new Dictionary<string, AliasReference>();
     Dictionary<string, AliasReference> partReferenceDict = new Dictionary<string, AliasReference>();
@@ -117,13 +120,20 @@ public class AssetBrowserScreen
             _selectedAssetType = AssetCategoryType.None;
             _selectedAssetTypeCache = AssetCategoryType.None;
 
-            InvalidateNameCaches();
+            UpdateNameCaches();
         }
     }
 
-    public void InvalidateNameCaches()
+    public void UpdateNameCaches()
+    {
+        TaskManager.Run(new TaskManager.LiveTask("Asset Browser - Update Name Caches", TaskManager.RequeueType.Repeat, true,
+            () => InvalidateNameCaches()));
+    }
+
+    private void InvalidateNameCaches()
     {
         EditorContainer.TextureViewer.InvalidateCachedName = true;
+        NamesInvalidated = true;
 
         chrReferenceDict = new Dictionary<string, AliasReference>();
         assetReferenceDict = new Dictionary<string, AliasReference>();
@@ -193,7 +203,7 @@ public class AssetBrowserScreen
             }
         }
 
-        //TaskLogs.AddLog("InvalidateNameCaches");
+        NamesInvalidated = false;
     }
 
     public void OnGui()
@@ -215,6 +225,9 @@ public class AssetBrowserScreen
         }
 
         if (ModelAliasBank.Bank.IsLoadingAliases)
+            return;
+
+        if (NamesInvalidated)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
@@ -281,7 +294,7 @@ public class AssetBrowserScreen
         {
             ModelAliasBank.Bank.CanReloadBank = false;
             ModelAliasBank.Bank.ReloadAliasBank();
-            InvalidateNameCaches();
+            UpdateNameCaches();
         }
     }
 
