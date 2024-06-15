@@ -177,22 +177,22 @@
     <selectMinZoomStep AltName="Selection - Min Zoom Step" Wiki="Zoom step where map points can be selected (0 when zoomed out most, +1 for each zoom). Selectable when Selectable zoom step  Current enlargement stage. Default is 0 (always selectable)" />
     <entryFEType AltName="Entry FE Type" Wiki="Admission display format. Map points to be displayed at the time of admission Types of admission FE" Enum="WORLD_MAP_ENTRY_FE_TYPE" />
     <pad4 AltName="" IsHidden=""/>
-    <unkC0 AltName="unkC0" Wiki="" />
-    <unkC4 AltName="unkC4" Wiki="" />
-    <unkC8 AltName="unkC8" Wiki="" />
-    <unkCC AltName="unkCC" Wiki="" />
-    <unkD0 AltName="unkD0" Wiki="" />
-    <unkD4 AltName="unkD4" Wiki="" />
-    <unkD8 AltName="unkD8" Wiki="" />
-    <unkDC AltName="unkDC" Wiki="" />
-    <unkE0 AltName="unkE0" Wiki="" />
-    <unkE4 AltName="unkE4" Wiki="" />
-    <unkE8 AltName="unkE8" Wiki="" />
-    <unkEC AltName="unkEC" Wiki="" />
-    <unkF0 AltName="unkF0" Wiki="" />
-    <unkF4 AltName="unkF4" Wiki="" />
-    <unkF8 AltName="unkF8" Wiki="" />
-    <unkFC AltName="unkFC" Wiki="" />
+    <textEnableFlag2Id1 AltName="Text Enable Flag ID 2 [1]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." />
+    <textEnableFlag2Id2 AltName="Text Enable Flag ID 2 [2]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." />
+    <textEnableFlag2Id3 AltName="Text Enable Flag ID 2 [3]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." />
+    <textEnableFlag2Id4 AltName="Text Enable Flag ID 2 [4]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." />
+    <textEnableFlag2Id5 AltName="Text Enable Flag ID 2 [5]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." />
+    <textEnableFlag2Id6 AltName="Text Enable Flag ID 2 [6]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." />
+    <textEnableFlag2Id7 AltName="Text Enable Flag ID 2 [7]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." />
+    <textEnableFlag2Id8 AltName="Text Enable Flag ID 2 [8]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." />
+    <textDisableFlag2Id1 AltName="Text Disable Flag ID 2 [1]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." />
+    <textDisableFlag2Id2 AltName="Text Disable Flag ID 2 [2]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." />
+    <textDisableFlag2Id3 AltName="Text Disable Flag ID 2 [3]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." />
+    <textDisableFlag2Id4 AltName="Text Disable Flag ID 2 [4]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." />
+    <textDisableFlag2Id5 AltName="Text Disable Flag ID 2 [5]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." />
+    <textDisableFlag2Id6 AltName="Text Disable Flag ID 2 [6]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." />
+    <textDisableFlag2Id7 AltName="Text Disable Flag ID 2 [7]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." />
+    <textDisableFlag2Id8 AltName="Text Disable Flag ID 2 [8]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." />
   </Field>
   <Self />
 </PARAMMETA>
