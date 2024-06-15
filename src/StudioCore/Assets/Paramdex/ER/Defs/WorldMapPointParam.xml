@@ -536,21 +536,21 @@
       <Description>pad3</Description>
       <SortID>2907</SortID>
     </Field>
-    <Field Def="s32 unkC0" FirstVersion="10310059" />
-    <Field Def="s32 unkC4" FirstVersion="10310059" />
-    <Field Def="s32 unkC8" FirstVersion="10310059" />
-    <Field Def="s32 unkCC" FirstVersion="10310059" />
-    <Field Def="s32 unkD0" FirstVersion="10310059" />
-    <Field Def="s32 unkD4" FirstVersion="10310059" />
-    <Field Def="s32 unkD8" FirstVersion="10310059" />
-    <Field Def="s32 unkDC" FirstVersion="10310059" />
-    <Field Def="s32 unkE0" FirstVersion="10310059" />
-    <Field Def="s32 unkE4" FirstVersion="10310059" />
-    <Field Def="s32 unkE8" FirstVersion="10310059" />
-    <Field Def="s32 unkEC" FirstVersion="10310059" />
-    <Field Def="s32 unkF0" FirstVersion="10310059" />
-    <Field Def="s32 unkF4" FirstVersion="10310059" />
-    <Field Def="s32 unkF8" FirstVersion="10310059" />
-    <Field Def="s32 unkFC" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id1" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id2" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id3" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id4" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id5" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id6" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id7" FirstVersion="10310059" />
+    <Field Def="s32 textEnableFlag2Id8" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id1" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id2" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id3" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id4" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id5" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id6" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id7" FirstVersion="10310059" />
+    <Field Def="s32 textDisableFlag2Id8" FirstVersion="10310059" />
   </Fields>
 </PARAMDEF>
