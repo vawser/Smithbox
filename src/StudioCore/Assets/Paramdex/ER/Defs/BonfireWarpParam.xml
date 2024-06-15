@@ -462,6 +462,6 @@
     <Field Def="s32 textDisableFlag2Id7" FirstVersion="10310059" />
     <Field Def="s32 textDisableFlag2Id8" FirstVersion="10310059" />
     <Field Def="u16 altIconId" FirstVersion="10310059" />
-    <Field Def="u16 prohibitedIconId" FirstVersion="10310059" />
+    <Field Def="u16 altForbiddenIconId" FirstVersion="10310059" />
   </Fields>
 </PARAMDEF>
