@@ -155,7 +155,7 @@
     <textDisableFlag2Id7 AltName="Text Disable Flag ID 2 [7]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." />
     <textDisableFlag2Id8 AltName="Text Disable Flag ID 2 [8]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." />
     <altIconId AltName="Alternate Icon ID" Wiki="Icon ID that applies when certain conditions are met" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
-    <prohibitedIconId AltName="Alternate Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited, when certain conditions are met" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
+    <altForbiddenIconId AltName="Alternate Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited, when certain conditions are met" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
     <pad5 AltName="" IsHidden=""/>
   </Field>
   <Self />
