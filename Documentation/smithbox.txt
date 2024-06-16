@@ -106,7 +106,4 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
-Add CFG toggle for the param quick links
 Perhaps in-line the param quicklinks within the property view instead of the current Ref style
-
-Fix Asset Browser name cache issue

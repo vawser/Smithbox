@@ -27,6 +27,9 @@ public static class PropInfo_ParamJumps
         if (firstEnt.References.Count == 0)
             return;
 
+        if (!CFG.Current.MapEditor_Enable_Param_Quick_Links)
+            return;
+
         // Only relevant to assets
         if ( (Project.Type is ProjectType.ER or ProjectType.AC6 ) && firstEnt.IsPartPureAsset())
         {
@@ -83,7 +86,6 @@ public static class PropInfo_ParamJumps
 
                 if (ImGui.Button(displayName + "##AssetEnvironmentGeometryParam_ParamJump" + refID, new Vector2((width * 94), 20 * scale)))
                 {
-                    TaskLogs.AddLog(assetRowId);
                     EditorCommandQueue.AddCommand($@"param/select/-1/AssetEnvironmentGeometryParam/{assetRowId}");
                 }
             }
@@ -146,7 +148,6 @@ public static class PropInfo_ParamJumps
 
                 if (ImGui.Button(displayName + "##ChrModelParam_ParamJump" + refID, new Vector2((width * 94), 20 * scale)))
                 {
-                    TaskLogs.AddLog(modelRowId);
                     EditorCommandQueue.AddCommand($@"param/select/-1/ChrModelParam/{modelRowId}");
                 }
             }

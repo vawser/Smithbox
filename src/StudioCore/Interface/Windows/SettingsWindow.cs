@@ -515,6 +515,9 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Display property filter", ref CFG.Current.MapEditor_Enable_Property_Filter);
                 ImguiUtils.ShowHoverTooltip("The MSB property filter combo-box will be visible.");
+
+                ImGui.Checkbox("Display param quick links", ref CFG.Current.MapEditor_Enable_Param_Quick_Links);
+                ImguiUtils.ShowHoverTooltip("The param quick links at the top of the MSB property view will be visible.");
             }
 
             // Substitutions
