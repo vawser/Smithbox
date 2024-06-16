@@ -20,6 +20,7 @@ using System.Numerics;
 using System.Reflection.Metadata;
 using System.Security.Cryptography.Xml;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using CompoundAction = StudioCore.Editors.MapEditor.CompoundAction;
 
@@ -126,6 +127,12 @@ public class AssetBrowserScreen
 
     public void UpdateNameCaches()
     {
+        // Fix to allow InvalidateNameCaches to complete properly
+        while (ModelAliasBank.Bank.IsLoadingAliases)
+        {
+            Thread.Sleep(50);
+        }
+
         TaskManager.Run(new TaskManager.LiveTask("Asset Browser - Update Name Caches", TaskManager.RequeueType.Repeat, true,
             () => InvalidateNameCaches()));
     }
