@@ -55,14 +55,6 @@ public class AssetBrowserScreen
     private IViewport _viewport;
     private Universe _universe;
 
-    private List<string> _characterNameCache = new List<string>();
-    private List<string> _objectNameCache = new List<string>();
-    private List<string> _partNameCache = new List<string>();
-    private Dictionary<string, List<string>> _mapPieceNameCache = new Dictionary<string, List<string>>();
-
-    private List<string> _loadedMaps = new List<string>();
-    private Dictionary<string, List<string>> _mapModelNameCache = new Dictionary<string, List<string>>();
-
     private string _selectedAssetMapId = "";
     private string _selectedAssetMapIdCache = null;
 
@@ -77,14 +69,6 @@ public class AssetBrowserScreen
 
     private bool updateScrollPosition = false;
     private float _currentScrollY;
-
-    private bool NamesInvalidated = false;
-
-
-    Dictionary<string, AliasReference> chrReferenceDict = new Dictionary<string, AliasReference>();
-    Dictionary<string, AliasReference> assetReferenceDict = new Dictionary<string, AliasReference>();
-    Dictionary<string, AliasReference> partReferenceDict = new Dictionary<string, AliasReference>();
-    Dictionary<string, AliasReference> mapPieceReferenceDict = new Dictionary<string, AliasReference>();
 
     public AssetBrowserScreen(AssetBrowserSource sourceType, Universe universe, RenderScene scene, ViewportSelection sel, ViewportActionManager manager, EditorScreen editor, IViewport viewport)
     {
@@ -120,97 +104,7 @@ public class AssetBrowserScreen
             _selectedAssetMapIdCache = null;
             _selectedAssetType = AssetCategoryType.None;
             _selectedAssetTypeCache = AssetCategoryType.None;
-
-            UpdateNameCaches();
         }
-    }
-
-    public void UpdateNameCaches()
-    {
-        // Fix to allow InvalidateNameCaches to complete properly
-        while (ModelAliasBank.Bank.IsLoadingAliases)
-        {
-            Thread.Sleep(50);
-        }
-
-        TaskManager.Run(new TaskManager.LiveTask("Asset Browser - Update Name Caches", TaskManager.RequeueType.Repeat, true,
-            () => InvalidateNameCaches()));
-    }
-
-    private void InvalidateNameCaches()
-    {
-        EditorContainer.TextureViewer.InvalidateCachedName = true;
-        NamesInvalidated = true;
-
-        chrReferenceDict = new Dictionary<string, AliasReference>();
-        assetReferenceDict = new Dictionary<string, AliasReference>();
-        partReferenceDict = new Dictionary<string, AliasReference>();
-        mapPieceReferenceDict = new Dictionary<string, AliasReference>();
-
-        _characterNameCache = AssetListLocator.GetChrModels();
-        _objectNameCache = AssetListLocator.GetObjModels();
-        _partNameCache = AssetListLocator.GetPartsModels();
-        _mapPieceNameCache = new Dictionary<string, List<string>>();
-
-        foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
-        {
-            if (!chrReferenceDict.ContainsKey(v.id))
-            {
-                chrReferenceDict.Add(v.id, v);
-            }
-        }
-        foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("Objects"))
-        {
-            if (!assetReferenceDict.ContainsKey(v.id))
-            {
-                assetReferenceDict.Add(v.id, v);
-            }
-        }
-        foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("Parts"))
-        {
-            if (!partReferenceDict.ContainsKey(v.id))
-            {
-                partReferenceDict.Add(v.id, v);
-            }
-        }
-        foreach (AliasReference v in ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"))
-        {
-            if (!mapPieceReferenceDict.ContainsKey(v.id))
-            {
-                mapPieceReferenceDict.Add(v.id, v);
-            }
-        }
-
-        List<string> mapList = ResourceMapLocator.GetFullMapList();
-
-        foreach (var mapId in mapList)
-        {
-            var assetMapId = ResourceMapLocator.GetAssetMapID(mapId);
-
-            List<ResourceDescriptor> modelList = new List<ResourceDescriptor>();
-
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
-            {
-                modelList = AssetListLocator.GetMapModelsFromBXF(mapId);
-            }
-            else
-            {
-                modelList = AssetListLocator.GetMapModels(mapId);
-            }
-
-            var cache = new List<string>();
-            foreach (var model in modelList)
-            {
-                cache.Add(model.AssetName);
-            }
-
-            if (!_mapPieceNameCache.ContainsKey(assetMapId))
-            {
-                _mapPieceNameCache.Add(assetMapId, cache);
-            }
-        }
-
-        NamesInvalidated = false;
     }
 
     public void OnGui()
@@ -234,7 +128,7 @@ public class AssetBrowserScreen
         if (ModelAliasBank.Bank.IsLoadingAliases)
             return;
 
-        if (NamesInvalidated)
+        if(!AssetBrowserCache.UpdateCacheComplete)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
@@ -263,10 +157,10 @@ public class AssetBrowserScreen
             ImguiUtils.WrappedText("Assets:");
             ImGui.Separator();
 
-            DisplayBrowserList(AssetCategoryType.Character, _characterNameCache, chrReferenceDict);
-            DisplayBrowserList(AssetCategoryType.Asset, _objectNameCache, assetReferenceDict);
-            DisplayBrowserList(AssetCategoryType.Part, _partNameCache, partReferenceDict);
-            DisplayBrowserList_MapPiece(AssetCategoryType.MapPiece, mapPieceReferenceDict);
+            DisplayBrowserList(AssetCategoryType.Character, AssetBrowserCache.CharacterList, AssetBrowserCache.Characters);
+            DisplayBrowserList(AssetCategoryType.Asset, AssetBrowserCache.AssetList, AssetBrowserCache.Assets);
+            DisplayBrowserList(AssetCategoryType.Part, AssetBrowserCache.PartList, AssetBrowserCache.Parts);
+            DisplayBrowserList_MapPiece(AssetCategoryType.MapPiece, AssetBrowserCache.MapPieces);
         }
 
         ImGui.End();
@@ -301,7 +195,7 @@ public class AssetBrowserScreen
         {
             ModelAliasBank.Bank.CanReloadBank = false;
             ModelAliasBank.Bank.ReloadAliasBank();
-            UpdateNameCaches();
+            AssetBrowserCache.UpdateCache();
         }
     }
 
@@ -342,7 +236,7 @@ public class AssetBrowserScreen
             }
         }
 
-        foreach (var mapId in _mapPieceNameCache.Keys)
+        foreach (var mapId in AssetBrowserCache.MapPieceDict.Keys)
         {
             if (ImGui.Selectable($"MapPieces: {mapId}", _selectedAssetMapId == mapId))
             {
@@ -419,6 +313,7 @@ public class AssetBrowserScreen
                         if (CFG.Current.AssetBrowser_ShowAliasesInBrowser)
                         {
                             var aliasName = referenceDict[lowerName].name;
+
                             AliasUtils.DisplayAlias(aliasName);
                         }
 
@@ -438,7 +333,7 @@ public class AssetBrowserScreen
     {
         if (_selectedAssetType == assetType)
         {
-            if (_mapPieceNameCache.ContainsKey(_selectedAssetMapId))
+            if (AssetBrowserCache.MapPieceDict.ContainsKey(_selectedAssetMapId))
             {
                 if (_searchInput != _searchInputCache || _selectedAssetType != _selectedAssetTypeCache || _selectedAssetMapId != _selectedAssetMapIdCache)
                 {
@@ -447,7 +342,7 @@ public class AssetBrowserScreen
                     _selectedAssetMapIdCache = _selectedAssetMapId;
                 }
 
-                foreach (var name in _mapPieceNameCache[_selectedAssetMapId])
+                foreach (var name in AssetBrowserCache.MapPieceDict[_selectedAssetMapId])
                 {
                     var modelName = name.Replace($"{_selectedAssetMapId}_", "m");
 

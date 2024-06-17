@@ -1,5 +1,4 @@
 ﻿using ImGuiNET;
-using Microsoft.Extensions.Logging;
 using Silk.NET.SDL;
 using SoapstoneLib;
 using SoulsFormats;
@@ -10,14 +9,12 @@ using StudioCore.Editors;
 using StudioCore.Graphics;
 using StudioCore.GraphicsEditor;
 using StudioCore.MaterialEditor;
-using StudioCore.MsbEditor;
 using StudioCore.ParticleEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
 using StudioCore.EmevdEditor;
 using StudioCore.Settings;
 using StudioCore.TalkEditor;
-using StudioCore.Tests;
 using StudioCore.TextEditor;
 using StudioCore.TextureViewer;
 using StudioCore.UserProject;
@@ -35,20 +32,16 @@ using Veldrid.Sdl2;
 using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
-using StudioCore.Banks;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface.Windows;
 using StudioCore.Interface;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
-using StudioCore.Editors.BehaviorEditor;
 using StudioCore.BehaviorEditor;
-using StudioCore.Editors.MaterialEditor;
 using StudioCore.BanksMain;
-using static SoulsFormats.MCP;
-using static SoulsFormats.DRB.Control;
 using StudioCore.MergeTool;
+using StudioCore.Editors.AssetBrowser;
 
 namespace StudioCore;
 
@@ -224,6 +217,11 @@ public class Smithbox
         Project.CheckForLastProject();
 
         Project.UpdateTimer();
+
+        if(Project.Type != ProjectType.Undefined)
+        {
+            AssetBrowserCache.UpdateCache();
+        }
     }
 
     public static void SetProgramTitle(string projectName)

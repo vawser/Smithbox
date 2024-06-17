@@ -59,8 +59,6 @@ public static class TextureFolderBank
 
         IsLoaded = true;
         IsLoading = false;
-
-        TaskLogs.AddLog($"Texture Folder Bank - Load Complete");
     }
 
     private static void ScanMenuFolder(TextureViewCategory category)

@@ -68,8 +68,7 @@ public class AliasTab
             Bank.ReloadAliasBank();
 
             // Invalidate these so the name updates there
-            EditorContainer.MsbEditor.MapAssetBrowser.UpdateNameCaches();
-            EditorContainer.ModelEditor.ModelAssetBrowser.UpdateNameCaches();
+            AssetBrowserCache.UpdateCache();
         }
     }
 
