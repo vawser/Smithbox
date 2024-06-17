@@ -226,15 +226,15 @@ public class SettingsWindow
 
                     CFG.Current.Viewport_RenderDistance_Max = CFG.Default.Viewport_RenderDistance_Max;
 
-                    EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
-                    CFG.Current.Viewport_Camera_MoveSpeed_Slow = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
+                    Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
+                    CFG.Current.Viewport_Camera_MoveSpeed_Slow = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
                     CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
 
-                    EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
-                    CFG.Current.Viewport_Camera_MoveSpeed_Normal = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
+                    Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
+                    CFG.Current.Viewport_Camera_MoveSpeed_Normal = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
 
-                    EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
-                    CFG.Current.Viewport_Camera_MoveSpeed_Fast = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
+                    Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
+                    CFG.Current.Viewport_Camera_MoveSpeed_Fast = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
                 }
                 ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
 
@@ -257,18 +257,18 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("Set the maximum distance at which entities will be rendered within the DSMS viewport.");
 
                 if (ImGui.SliderFloat("Map camera speed (slow)",
-                        ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow, 0.1f, 9999.0f))
-                    CFG.Current.Viewport_Camera_MoveSpeed_Slow = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
+                        ref Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Slow, 0.1f, 9999.0f))
+                    CFG.Current.Viewport_Camera_MoveSpeed_Slow = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
                 ImguiUtils.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
 
                 if (ImGui.SliderFloat("Map camera speed (normal)",
-                        ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal, 0.1f, 9999.0f))
-                    CFG.Current.Viewport_Camera_MoveSpeed_Normal = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
+                        ref Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Normal, 0.1f, 9999.0f))
+                    CFG.Current.Viewport_Camera_MoveSpeed_Normal = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
                 ImguiUtils.ShowHoverTooltip("Set the speed at which the camera will move whilst moving normally.");
 
                 if (ImGui.SliderFloat("Map camera speed (fast)",
-                        ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast, 0.1f, 9999.0f))
-                    CFG.Current.Viewport_Camera_MoveSpeed_Fast = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
+                        ref Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast, 0.1f, 9999.0f))
+                    CFG.Current.Viewport_Camera_MoveSpeed_Fast = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
                 ImguiUtils.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
             }
 
@@ -832,11 +832,11 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("Show the original FMG file names within the Text Editor file list.");
 
                 if (ImGui.Checkbox("Separate related FMGs and entries", ref CFG.Current.FMG_NoGroupedFmgEntries))
-                    EditorContainer.TextEditor.OnProjectChanged();
+                    Smithbox.EditorHandler.TextEditor.OnProjectChanged();
                 ImguiUtils.ShowHoverTooltip("If enabled then FMG entries will not be grouped automatically.");
 
                 if (ImGui.Checkbox("Separate patch FMGs", ref CFG.Current.FMG_NoFmgPatching))
-                    EditorContainer.TextEditor.OnProjectChanged();
+                    Smithbox.EditorHandler.TextEditor.OnProjectChanged();
                 ImguiUtils.ShowHoverTooltip("If enabled then FMG files added from DLCs will not be grouped with vanilla FMG files.");
             }
 

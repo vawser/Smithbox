@@ -41,7 +41,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 ImguiUtils.WrappedText("Trim Carriage Return (\\r) characters from row names\nfor the currently selected param, or for all params.");
                 ImguiUtils.WrappedText("");
 
-                if (!ParamEditorScreen._activeView._selection.ActiveParamExists())
+                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
                 {
                     ImguiUtils.WrappedText("You must select a param before you can use this action.");
                     ImguiUtils.WrappedText("");
@@ -93,7 +93,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void ApplyRowNameTrim()
         {
-            var selectedParam = ParamEditorScreen._activeView._selection;
+            var selectedParam =  Smithbox.EditorHandler.ParamEditor._activeView._selection;
 
             if (selectedParam.ActiveParamExists())
             {

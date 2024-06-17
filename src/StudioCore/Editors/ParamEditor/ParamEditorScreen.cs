@@ -115,7 +115,7 @@ public class ParamEditorScreen : EditorScreen
     /// </summary>
     public readonly List<ProjectType> ParamUpgrade_SupportedGames = new() { ProjectType.ER, ProjectType.AC6 };
 
-    public static ParamEditorView _activeView;
+    public ParamEditorView _activeView;
 
     private string[] _autoFillArgsCop = Enumerable
         .Repeat("", MEValueOperation.valueOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();

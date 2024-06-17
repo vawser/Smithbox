@@ -55,7 +55,7 @@ public class ModelViewGrid
             Regenerate();
         }
 
-        if (CFG.Current.Interface_ModelEditor_Viewport_Grid && Smithbox._focusedEditor is ModelEditorScreen)
+        if (CFG.Current.Interface_ModelEditor_Viewport_Grid && Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
         {
             ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.ModelEditor_Viewport_Grid_Color);
             ViewportGrid.Visible = true;

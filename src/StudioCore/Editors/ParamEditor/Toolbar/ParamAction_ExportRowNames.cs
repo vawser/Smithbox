@@ -42,7 +42,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 ImguiUtils.WrappedText("Export row names for the currently selected param, or for all params.");
                 ImguiUtils.WrappedText("");
 
-                if (!ParamEditorScreen._activeView._selection.ActiveParamExists())
+                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
                 {
                     ImguiUtils.WrappedText("You must select a param before you can use this action.");
                     ImguiUtils.WrappedText("");
@@ -101,7 +101,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void ApplyRowNamesExport()
         {
-            var selectedParam = ParamEditorScreen._activeView._selection;
+            var selectedParam =  Smithbox.EditorHandler.ParamEditor._activeView._selection;
 
             if (selectedParam.ActiveParamExists())
             {
@@ -114,7 +114,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         private static void ExportRowNames()
         {
-            var selectedParam = ParamEditorScreen._activeView._selection;
+            var selectedParam =  Smithbox.EditorHandler.ParamEditor._activeView._selection;
 
             if (CurrentTargetCategory == "Selected Param")
             {

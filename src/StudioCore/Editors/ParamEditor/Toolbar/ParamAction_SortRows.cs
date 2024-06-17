@@ -34,7 +34,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 ImguiUtils.WrappedText("Sort the rows for the currently selected param by their ID.");
                 ImguiUtils.WrappedText("");
 
-                if (!ParamEditorScreen._activeView._selection.ActiveParamExists())
+                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
                 {
                     ImguiUtils.WrappedText("You must select a param before you can use this action.");
                     ImguiUtils.WrappedText("");
@@ -68,9 +68,9 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void ApplySortRows()
         {
-            if (ParamEditorScreen._activeView._selection.ActiveParamExists())
+            if ( Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
             {
-                ParamToolbar.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(ParamBank.PrimaryBank, ParamEditorScreen._activeView._selection.GetActiveParam()));
+                ParamToolbar.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(ParamBank.PrimaryBank,  Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam()));
             }
         }
     }

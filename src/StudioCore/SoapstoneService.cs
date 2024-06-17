@@ -57,7 +57,7 @@ public class SoapstoneService : SoapstoneServiceV1
     public SoapstoneService(string version)
     {
         this.version = version;
-        this.msbEditor = EditorContainer.MsbEditor;
+        this.msbEditor = Smithbox.EditorHandler.MapEditor;
     }
 
     public override async Task<ServerInfoResponse> GetServerInfo(ServerCallContext context)

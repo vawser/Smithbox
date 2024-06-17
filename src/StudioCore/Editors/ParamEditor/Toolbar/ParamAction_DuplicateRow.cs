@@ -39,7 +39,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 ImguiUtils.WrappedText("Duplicate the selected rows.");
                 ImguiUtils.WrappedText("");
 
-                if (!ParamEditorScreen._activeView._selection.RowSelectionExists())
+                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.RowSelectionExists())
                 {
                     ImguiUtils.WrappedText("You must select a row before you can use this action.");
                     ImguiUtils.WrappedText("");
@@ -66,12 +66,12 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
                         if (result == DialogResult.Yes)
                         {
-                            DuplicateSelection(ParamEditorScreen._activeView._selection);
+                            DuplicateSelection( Smithbox.EditorHandler.ParamEditor._activeView._selection);
                         }
                     }
                     else
                     {
-                        DuplicateSelection(ParamEditorScreen._activeView._selection);
+                        DuplicateSelection( Smithbox.EditorHandler.ParamEditor._activeView._selection);
                     }
                 }
             }

@@ -56,7 +56,7 @@ public class MapViewGrid
             Regenerate();
         }
 
-        if (CFG.Current.Interface_MapEditor_Viewport_Grid && Smithbox._focusedEditor is MapEditorScreen)
+        if (CFG.Current.Interface_MapEditor_Viewport_Grid && Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
         {
             ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.MapEditor_Viewport_Grid_Color);
             ViewportGrid.Visible = true;

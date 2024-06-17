@@ -1135,7 +1135,7 @@ public class ParamRowEditor
                 {
                     MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
                         $"selection && !added: {Regex.Escape(internalName)}: = vanilla;",
-                        ParamEditorScreen._activeView._selection);
+                         Smithbox.EditorHandler.ParamEditor._activeView._selection);
                 }
             }
             else

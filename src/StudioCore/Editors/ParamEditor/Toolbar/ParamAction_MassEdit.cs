@@ -92,9 +92,9 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void ExecuteMassEdit()
         {
-            ParamEditorScreen._activeView._selection.SortSelection();
+             Smithbox.EditorHandler.ParamEditor._activeView._selection.SortSelection();
             (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
-                _currentMEditRegexInput, ParamEditorScreen._activeView._selection);
+                _currentMEditRegexInput,  Smithbox.EditorHandler.ParamEditor._activeView._selection);
 
             if (child != null)
             {

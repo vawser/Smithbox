@@ -45,7 +45,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 ImguiUtils.WrappedText("Display all instances of a specificed row ID.");
                 ImguiUtils.WrappedText("");
 
-                if (!ParamEditorScreen._activeView._selection.ActiveParamExists())
+                if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
                 {
                     ImguiUtils.WrappedText("You must select a param before you can use this action.");
                     ImguiUtils.WrappedText("");
@@ -101,7 +101,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void SearchRowID()
         {
-            var selectedParam = ParamEditorScreen._activeView._selection;
+            var selectedParam =  Smithbox.EditorHandler.ParamEditor._activeView._selection;
 
             if (selectedParam.ActiveParamExists())
             {

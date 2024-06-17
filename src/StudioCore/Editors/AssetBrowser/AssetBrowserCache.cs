@@ -31,7 +31,7 @@ public static class AssetBrowserCache
         () =>
         {
             UpdateCacheComplete = false;
-            EditorContainer.TextureViewer.InvalidateCachedName = true;
+            Smithbox.EditorHandler.TextureViewer.InvalidateCachedName = true;
 
             Characters = new Dictionary<string, AliasReference>();
             Assets = new Dictionary<string, AliasReference>();

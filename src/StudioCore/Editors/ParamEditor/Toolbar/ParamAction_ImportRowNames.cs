@@ -36,7 +36,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Configure()
         {
-            var selectedParam = ParamEditorScreen._activeView._selection;
+            var selectedParam =  Smithbox.EditorHandler.ParamEditor._activeView._selection;
 
             if (ParamToolbar.SelectedAction == ParamToolbarAction.ImportRowNames)
             {
@@ -125,7 +125,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void ImportRowNames()
         {
-            var selectedParam = ParamEditorScreen._activeView._selection;
+            var selectedParam =  Smithbox.EditorHandler.ParamEditor._activeView._selection;
 
             if (selectedParam.ActiveParamExists())
             {

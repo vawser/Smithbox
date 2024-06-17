@@ -168,7 +168,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             if (proceed)
             {
                 // Save current and then unload
-                EditorContainer.MsbEditor.Save();
+                Smithbox.EditorHandler.MapEditor.Save();
                 MapEditorState.Universe.UnloadAll();
 
                 if (SelectedMapFilter == "All")

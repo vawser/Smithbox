@@ -106,27 +106,27 @@ public static class Project
 
                 if (CFG.Current.System_EnableAutoSave_MapEditor)
                 {
-                    EditorContainer.MsbEditor.SaveAll();
+                    Smithbox.EditorHandler.MapEditor.SaveAll();
                 }
 
                 if (CFG.Current.System_EnableAutoSave_ModelEditor)
                 {
-                    EditorContainer.ModelEditor.SaveAll();
+                    Smithbox.EditorHandler.ModelEditor.SaveAll();
                 }
 
                 if (CFG.Current.System_EnableAutoSave_ParamEditor)
                 {
-                    EditorContainer.ParamEditor.SaveAll();
+                    Smithbox.EditorHandler.ParamEditor.SaveAll();
                 }
 
                 if (CFG.Current.System_EnableAutoSave_TextEditor)
                 {
-                    EditorContainer.TextEditor.SaveAll();
+                    Smithbox.EditorHandler.TextEditor.SaveAll();
                 }
 
                 if (CFG.Current.System_EnableAutoSave_GparamEditor)
                 {
-                    EditorContainer.GparamEditor.SaveAll();
+                    Smithbox.EditorHandler.GparamEditor.SaveAll();
                 }
 
                 TaskLogs.AddLog($"Automatic Save occured at {e.SignalTime}");
@@ -314,10 +314,7 @@ public static class Project
 
             BankUtils.ReloadBanks();
 
-            foreach (EditorScreen editor in Smithbox._editors)
-            {
-                editor.OnProjectChanged();
-            }
+            Smithbox.EditorHandler.UpdateEditorsOnProjectChange();
 
             Smithbox.SetProgramTitle(Config.ProjectName);
 

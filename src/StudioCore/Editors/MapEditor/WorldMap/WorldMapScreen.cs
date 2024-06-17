@@ -72,7 +72,7 @@ public class WorldMapScreen : IResourceEventListener
         }
         if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_ClearSelection))
         {
-            EditorContainer.MsbEditor.WorldMap_ClickedMapZone = null;
+            Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;
         }
 
         if (InputTracker.GetKey(Key.LControl))
@@ -108,7 +108,7 @@ public class WorldMapScreen : IResourceEventListener
             ImGui.SameLine();
             if (ImGui.Button("Clear", new Vector2(widthUnit * 34, 20 * scale)))
             {
-                EditorContainer.MsbEditor.WorldMap_ClickedMapZone = null;
+                Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;
             }
             ImguiUtils.ShowHoverTooltip($"Clear the current world map selection (if any).\nShortcut: {KeyBindings.Current.Map_WorldMap_ClearSelection.HintText}");
         }
@@ -122,7 +122,7 @@ public class WorldMapScreen : IResourceEventListener
         if (!WorldMapOpen)
             return;
 
-        ImGui.Begin("World Map##WorldMapImage", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar | ImGuiWindowFlags.NoDocking);
+        ImGui.Begin("World Map##WorldMapImage", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
 
         var windowHeight = ImGui.GetWindowHeight();
         var windowWidth = ImGui.GetWindowWidth();
@@ -189,9 +189,9 @@ public class WorldMapScreen : IResourceEventListener
         ImGui.Separator();
 
         // Stored Click Maps
-        if (EditorContainer.MsbEditor.WorldMap_ClickedMapZone != null && EditorContainer.MsbEditor.WorldMap_ClickedMapZone.Count > 0)
+        if (Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone != null && Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone.Count > 0)
         {
-            foreach (var match in EditorContainer.MsbEditor.WorldMap_ClickedMapZone)
+            foreach (var match in Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone)
             {
                 ImGui.Text($"{match}");
                 AliasUtils.DisplayAlias(MapAliasBank.GetMapName(match));
@@ -206,7 +206,7 @@ public class WorldMapScreen : IResourceEventListener
             {
                 if (currentHoverMaps != null && currentHoverMaps.Count > 0)
                 {
-                    EditorContainer.MsbEditor.WorldMap_ClickedMapZone = currentHoverMaps;
+                    Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = currentHoverMaps;
                 }
             }
         }

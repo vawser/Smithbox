@@ -245,11 +245,11 @@ public class MapSceneTree : IActionEventHandler
             // Hide other maps if World Map click has occured
             if (Project.Type == ProjectType.ER)
             {
-                if (EditorContainer.MsbEditor.WorldMap_ClickedMapZone != null)
+                if (Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone != null)
                 {
-                    if (EditorContainer.MsbEditor.WorldMap_ClickedMapZone.Count > 0)
+                    if (Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone.Count > 0)
                     {
-                        if (!EditorContainer.MsbEditor.WorldMap_ClickedMapZone.Contains(CurrentMapID))
+                        if (!Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone.Contains(CurrentMapID))
                         {
                             continue;
                         }
