@@ -403,33 +403,42 @@ public class TexturePool
             Height = height;
 
             VkFormat format;
-            if (dds.header10 != null)
-            {
-                format = GetPixelFormatFromDXGI(dds.header10.dxgiFormat);
 
-                //TaskLogs.AddLog($"header10 - {name}: {format}");
-            }
-            else
+            try
             {
-                if (dds.ddspf.dwFlags == (DDS.DDPF.RGB | DDS.DDPF.ALPHAPIXELS) &&
-                    dds.ddspf.dwRGBBitCount == 32)
+                if (dds.header10 != null)
                 {
-                    format = VkFormat.R8G8B8A8Srgb;
-                }
-                else if (dds.ddspf.dwFlags == DDS.DDPF.RGB && dds.ddspf.dwRGBBitCount == 24)
-                {
-                    format = VkFormat.R8G8B8A8Srgb;
-                    // 24-bit formats are annoying for now
-                    return;
+                    format = GetPixelFormatFromDXGI(dds.header10.dxgiFormat);
+
+                    //TaskLogs.AddLog($"header10 - {name}: {format}");
                 }
                 else
                 {
-                    format = GetPixelFormatFromFourCC(dds.ddspf.dwFourCC);
-                }
+                    if (dds.ddspf.dwFlags == (DDS.DDPF.RGB | DDS.DDPF.ALPHAPIXELS) &&
+                        dds.ddspf.dwRGBBitCount == 32)
+                    {
+                        format = VkFormat.R8G8B8A8Srgb;
+                    }
+                    else if (dds.ddspf.dwFlags == DDS.DDPF.RGB && dds.ddspf.dwRGBBitCount == 24)
+                    {
+                        format = VkFormat.R8G8B8A8Srgb;
+                        // 24-bit formats are annoying for now
+                        return;
+                    }
+                    else
+                    {
+                        format = GetPixelFormatFromFourCC(dds.ddspf.dwFourCC);
+                    }
 
-                //TaskLogs.AddLog($"{name}: {format}");
+                    //TaskLogs.AddLog($"{name}: {format}");
+                }
             }
-            
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($@"Error loading texture: {e.Message}");
+                return;
+            }
+
             Format = format;
 
             if (!Utils.IsPowerTwo(width) || !Utils.IsPowerTwo(height))

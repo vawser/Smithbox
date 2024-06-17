@@ -78,6 +78,8 @@
         <Option Value="1" Name="Strike" />
         <Option Value="2" Name="Thrust" />
         <Option Value="3" Name="Standard" />
+        <Option Value="253" Name="Weapon atkAttribute2" />
+        <Option Value="254" Name="Weapon atkAttribute1" />
     </Enum>
     <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
         <Option Value="0" Name="None" />
