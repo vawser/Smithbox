@@ -2,7 +2,6 @@
 using StudioCore.Configuration;
 using StudioCore.Gui;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
@@ -12,12 +11,12 @@ using System.Numerics;
 using Veldrid;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.MsbEditor;
-using StudioCore.BanksMain;
-using StudioCore.Editors.MapEditor.MapGroup;
 using StudioCore.Interface;
 using StudioCore.Editor;
 using StudioCore.Locators;
 using StudioCore.Editors.MapEditor.WorldMap;
+using StudioCore.Banks.MapGroupBank;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -110,7 +109,7 @@ public class MapSceneTree : IActionEventHandler
     {
         _worldMapScreen.OnProjectChanged();
 
-        if (Project.Type != ProjectType.Undefined)
+        if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             
         }
@@ -132,7 +131,7 @@ public class MapSceneTree : IActionEventHandler
         {
             ImGui.PopStyleVar();
 
-            if (Project.Type is ProjectType.DS2S || Project.Type is ProjectType.DS2)
+            if (Smithbox.ProjectType is ProjectType.DS2S || Smithbox.ProjectType is ProjectType.DS2)
             {
                 if (ParamBank.PrimaryBank.IsLoadingParams)
                 {
@@ -231,7 +230,7 @@ public class MapSceneTree : IActionEventHandler
             }
 
             var aliasName = "";
-            aliasName = MapAliasBank.GetMapName(CurrentMapID);
+            aliasName = Smithbox.NameCacheHandler.MapNameCache.GetMapName(CurrentMapID);
 
             // Map name search filter
             if (_mapObjectListSearchInput != ""
@@ -243,7 +242,7 @@ public class MapSceneTree : IActionEventHandler
             }
 
             // Hide other maps if World Map click has occured
-            if (Project.Type == ProjectType.ER)
+            if (Smithbox.ProjectType == ProjectType.ER)
             {
                 if (Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone != null)
                 {
@@ -501,7 +500,7 @@ public class MapSceneTree : IActionEventHandler
             }
         }
 
-        if (Project.Type == ProjectType.BB && _configuration == Configuration.MapEditor)
+        if (Smithbox.ProjectType == ProjectType.BB && _configuration == Configuration.MapEditor)
         {
             ChaliceDungeonImportButton();
         }
@@ -704,7 +703,7 @@ public class MapSceneTree : IActionEventHandler
                         {
                             // Regions don't have multiple types in certain games
                             if (cats.Key == MsbEntity.MsbEntityType.Region &&
-                                Project.Type is ProjectType.DES
+                                Smithbox.ProjectType is ProjectType.DES
                                     or ProjectType.DS1
                                     or ProjectType.DS1R
                                     or ProjectType.BB)
@@ -798,20 +797,24 @@ public class MapSceneTree : IActionEventHandler
     {
         var scale = Smithbox.GetUIScale();
 
-        if(Project.Type == ProjectType.Undefined)
+        if(Smithbox.ProjectType == ProjectType.Undefined)
         {
             return;
         }
 
         // If there are no entries, don't display anything
-        if(MapGroupsBank.Bank.Entries.list == null)
+        if(Smithbox.BankHandler.MapGroups.GetEntries() != null)
+        {
+            return;
+        }
+        else if(Smithbox.BankHandler.MapGroups.GetEntries().Count < 1)
         {
             return;
         }
 
         if(currentMapGroup == null)
         {
-            currentMapGroup = MapGroupsBank.Bank.Entries.list.First();
+            currentMapGroup = Smithbox.BankHandler.MapGroups.GetEntries().First();
         }
 
         // Map Group Category
@@ -826,7 +829,7 @@ public class MapSceneTree : IActionEventHandler
             List<string> categoryOptions = new List<string>() { "All" };
 
             // Add the map group category options
-            foreach (var entry in MapGroupsBank.Bank.Entries.list)
+            foreach (var entry in Smithbox.BankHandler.MapGroups.GetEntries())
             {
                 if(!categoryOptions.Contains(entry.category))
                 {
@@ -863,7 +866,7 @@ public class MapSceneTree : IActionEventHandler
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##mapGroupCombo", currentMapGroup.name))
         {
-            foreach(var entry in MapGroupsBank.Bank.Entries.list)
+            foreach(var entry in Smithbox.BankHandler.MapGroups.GetEntries())
             {
                 if (entry.category == currentMapGroupCategory || currentMapGroupCategory == "All")
                 {
@@ -903,12 +906,12 @@ public class MapSceneTree : IActionEventHandler
         mapcache.Add(MsbEntity.MsbEntityType.Part, new Dictionary<Type, List<MsbEntity>>());
         mapcache.Add(MsbEntity.MsbEntityType.Region, new Dictionary<Type, List<MsbEntity>>());
         mapcache.Add(MsbEntity.MsbEntityType.Event, new Dictionary<Type, List<MsbEntity>>());
-        if (Project.Type is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
+        if (Smithbox.ProjectType is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
             or ProjectType.ER or ProjectType.AC6)
         {
             mapcache.Add(MsbEntity.MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
         }
-        else if (Project.Type is ProjectType.DS2S || Project.Type is ProjectType.DS2)
+        else if (Smithbox.ProjectType is ProjectType.DS2S || Smithbox.ProjectType is ProjectType.DS2)
         {
             mapcache.Add(MsbEntity.MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
             mapcache.Add(MsbEntity.MsbEntityType.DS2Event, new Dictionary<Type, List<MsbEntity>>());

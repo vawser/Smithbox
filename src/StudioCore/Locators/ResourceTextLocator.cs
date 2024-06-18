@@ -1,4 +1,4 @@
-﻿using StudioCore.UserProject;
+﻿using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,19 +19,19 @@ public static class ResourceTextLocator
         List<string> folders = new();
         try
         {
-            if (Project.Type == ProjectType.DES)
+            if (Smithbox.ProjectType == ProjectType.DES)
             {
-                folders = Directory.GetDirectories(Project.GameRootDirectory + @"\msg").ToList();
+                folders = Directory.GetDirectories(Smithbox.GameRoot + @"\msg").ToList();
                 // Japanese uses root directory
-                if (File.Exists(Project.GameRootDirectory + @"\msg\menu.msgbnd.dcx") ||
-                    File.Exists(Project.GameRootDirectory + @"\msg\item.msgbnd.dcx"))
+                if (File.Exists(Smithbox.GameRoot + @"\msg\menu.msgbnd.dcx") ||
+                    File.Exists(Smithbox.GameRoot + @"\msg\item.msgbnd.dcx"))
                     dict.Add("Japanese", "");
             }
-            else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
-                folders = Directory.GetDirectories(Project.GameRootDirectory + @"\menu\text").ToList();
+            else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+                folders = Directory.GetDirectories(Smithbox.GameRoot + @"\menu\text").ToList();
             else
                 // Exclude folders that don't have typical msgbnds
-                folders = Directory.GetDirectories(Project.GameRootDirectory + @"\msg")
+                folders = Directory.GetDirectories(Smithbox.GameRoot + @"\msg")
                     .Where(x => !"common,as,eu,jp,na,uk,japanese".Contains(x.Split("\\").Last())).ToList();
 
             foreach (var path in folders)
@@ -64,27 +64,27 @@ public static class ResourceTextLocator
     {
         ResourceDescriptor ad = new();
         var path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
-        if (Project.Type == ProjectType.DES)
+        if (Smithbox.ProjectType == ProjectType.DES)
         {
             path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
             // Demon's Souls has msgbnds directly in the msg folder
-            if (!File.Exists($@"{Project.GameRootDirectory}\{path}"))
+            if (!File.Exists($@"{Smithbox.GameRoot}\{path}"))
                 path = $@"msg\{msgBndType}.msgbnd.dcx";
         }
-        else if (Project.Type == ProjectType.DS1)
+        else if (Smithbox.ProjectType == ProjectType.DS1)
             path = $@"msg\{langFolder}\{msgBndType}.msgbnd";
-        else if (Project.Type == ProjectType.DS1R)
+        else if (Smithbox.ProjectType == ProjectType.DS1R)
             path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
-        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             // DS2 does not have an msgbnd but loose fmg files instead
             path = $@"menu\text\{langFolder}";
             ResourceDescriptor ad2 = new();
-            ad2.AssetPath = writemode ? path : $@"{Project.GameRootDirectory}\{path}";
+            ad2.AssetPath = writemode ? path : $@"{Smithbox.GameRoot}\{path}";
             //TODO: doesn't support project files
             return ad2;
         }
-        else if (Project.Type == ProjectType.DS3)
+        else if (Smithbox.ProjectType == ProjectType.DS3)
             path = $@"msg\{langFolder}\{msgBndType}_dlc2.msgbnd.dcx";
 
         if (writemode)
@@ -93,11 +93,11 @@ public static class ResourceTextLocator
             return ad;
         }
 
-        if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}") ||
-            writemode && Project.GameModDirectory != null)
-            ad.AssetPath = $@"{Project.GameModDirectory}\{path}";
-        else if (File.Exists($@"{Project.GameRootDirectory}\{path}"))
-            ad.AssetPath = $@"{Project.GameRootDirectory}\{path}";
+        if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}") ||
+            writemode && Smithbox.ProjectRoot != null)
+            ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}";
+        else if (File.Exists($@"{Smithbox.GameRoot}\{path}"))
+            ad.AssetPath = $@"{Smithbox.GameRoot}\{path}";
 
         return ad;
     }

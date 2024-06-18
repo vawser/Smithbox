@@ -2,9 +2,9 @@
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.UserProject;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -36,7 +36,7 @@ internal class ParamReloader
 
     public static bool CanReloadMemoryParams(ParamBank bank)
     {
-        if (GameIsSupported(Project.Type) && bank.IsLoadingParams == false)
+        if (GameIsSupported(Smithbox.ProjectType) && bank.IsLoadingParams == false)
         {
             return true;
         }
@@ -508,7 +508,7 @@ internal class ParamReloader
 
     public static GameOffsetsEntry GetGameOffsets()
     {
-        ProjectType game = Project.Type;
+        ProjectType game = Smithbox.ProjectType;
         if (!GameOffsetsEntry.GameOffsetBank.ContainsKey(game))
         {
             try

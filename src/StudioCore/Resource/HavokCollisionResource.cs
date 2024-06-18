@@ -1,6 +1,5 @@
 ﻿using HKX2;
 using SoulsFormats;
-using StudioCore.UserProject;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
@@ -13,6 +12,7 @@ using HKLib.Serialization;
 using System.IO;
 using HKLib.Serialization.hk2018.Binary;
 using HKLib.Serialization.hk2018.Xml;
+using StudioCore.Core;
 
 namespace StudioCore.Resource;
 
@@ -29,11 +29,11 @@ public class HavokCollisionResource : IResource, IDisposable
     public bool _Load(Memory<byte> bytes, AccessLevel al)
     {
         // HKLib - ER
-        if (Project.Type == ProjectType.ER)
+        if (Smithbox.ProjectType == ProjectType.ER)
         {
         }
         // HKX2 - DS3
-        else if (Project.Type == ProjectType.DS3)
+        else if (Smithbox.ProjectType == ProjectType.DS3)
         {
             DCX.Type t;
             Memory<byte> decomp = DCX.Decompress(bytes, out t);
@@ -42,7 +42,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx2 = (HKX2.hkRootLevelContainer)des.Deserialize(br);
         }
         // HKX - BB
-        if (Project.Type == ProjectType.BB)
+        if (Smithbox.ProjectType == ProjectType.BB)
         {
             Hkx = HKX.Read(bytes, HKX.HKXVariation.HKXBloodBorne);
         }
@@ -52,7 +52,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx = HKX.Read(bytes);
         }
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2 || Project.Type == ProjectType.DS3 || Project.Type == ProjectType.BB)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2 || Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.BB)
         {
             FrontFace = VkFrontFace.Clockwise;
         }
@@ -61,12 +61,12 @@ public class HavokCollisionResource : IResource, IDisposable
             FrontFace = VkFrontFace.CounterClockwise;
         }
 
-        if (Project.Type == ProjectType.ER)
+        if (Smithbox.ProjectType == ProjectType.ER)
         {
             return LoadInternal_ER(al);
         }
 
-        if (Project.Type == ProjectType.DS3)
+        if (Smithbox.ProjectType == ProjectType.DS3)
         {
             return LoadInternal_DS3(al);
         }
@@ -78,12 +78,12 @@ public class HavokCollisionResource : IResource, IDisposable
     public bool _Load(string file, AccessLevel al)
     {
         // HKLib - ER
-        if (Project.Type == ProjectType.ER)
+        if (Smithbox.ProjectType == ProjectType.ER)
         {
             
         }
         // HKX2 - DS3
-        else if (Project.Type == ProjectType.DS3)
+        else if (Smithbox.ProjectType == ProjectType.DS3)
         {
             DCX.Type t;
             Memory<byte> decomp = DCX.Decompress(file, out t);
@@ -92,7 +92,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx2 = (HKX2.hkRootLevelContainer)des.Deserialize(br);
         }
         // HKX - BB
-        else if (Project.Type == ProjectType.BB)
+        else if (Smithbox.ProjectType == ProjectType.BB)
         {
             Hkx = HKX.Read(file, HKX.HKXVariation.HKXBloodBorne);
         }
@@ -102,7 +102,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx = HKX.Read(file);
         }
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2 || Project.Type == ProjectType.DS3 || Project.Type == ProjectType.BB)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2 || Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.BB)
         {
             FrontFace = VkFrontFace.Clockwise;
         }
@@ -111,12 +111,12 @@ public class HavokCollisionResource : IResource, IDisposable
             FrontFace = VkFrontFace.CounterClockwise;
         }
 
-        if (Project.Type == ProjectType.ER)
+        if (Smithbox.ProjectType == ProjectType.ER)
         {
             return LoadInternal_ER(al);
         }
 
-        if (Project.Type == ProjectType.DS3)
+        if (Smithbox.ProjectType == ProjectType.DS3)
         {
             return LoadInternal_DS3(al);
         }

@@ -4,7 +4,6 @@ using Org.BouncyCastle.Utilities;
 using Silk.NET.SDL;
 using SoulsFormats;
 using SoulsFormats.Util;
-using StudioCore.UserProject;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
@@ -17,6 +16,7 @@ using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Editor;
 using StudioCore.Platform;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -1694,7 +1694,7 @@ public class ReplicateMapObjectsAction : ViewportAction
         newTransform.Rotation = newRot;
         newTransform.Scale = newScale;
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             if (sel.Type == MsbEntity.MsbEntityType.DS2Generator &&
                 sel.WrappedObject is MergedParamRow mp)
@@ -1720,7 +1720,7 @@ public class ReplicateMapObjectsAction : ViewportAction
         {
             Transform scrambledTransform = MapAction_Scramble.GetScrambledTransform(newobj);
 
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
                 if (newobj.Type == MsbEntity.MsbEntityType.DS2Generator &&
                 newobj.WrappedObject is MergedParamRow mp)

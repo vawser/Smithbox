@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using StudioCore.Banks.AliasBank;
-using StudioCore.BanksMain;
 using StudioCore.Gui;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -64,15 +63,15 @@ public static class PropInfo_ReferencedBy
 
                 if (m.IsPartEnemy() || m.IsPartDummyEnemy())
                 {
-                    aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
+                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
                 }
                 if (m.IsPartAsset() || m.IsPartDummyAsset())
                 {
-                    aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.AssetAliases.Aliases.list);
                 }
                 if (m.IsPartMapPiece())
                 {
-                    aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
+                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.MapPieceAliases.Aliases.list);
                 }
 
                 if (aliasName != "")

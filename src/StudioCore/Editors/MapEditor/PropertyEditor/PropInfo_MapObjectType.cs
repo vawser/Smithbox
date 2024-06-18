@@ -1,5 +1,4 @@
 ﻿using ImGuiNET;
-using StudioCore.BanksMain;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
@@ -20,8 +19,8 @@ public static class PropInfo_MapObjectType
         var name = "";
         var desc = "";
 
-        name = MsbFormatBank.Bank.GetClassReferenceName(typ.Name);
-        desc = MsbFormatBank.Bank.GetClassReferenceDescription(typ.Name);
+        name = Smithbox.BankHandler.MSB_Info.GetClassReferenceName(typ.Name);
+        desc = Smithbox.BankHandler.MSB_Info.GetClassReferenceDescription(typ.Name);
 
         if (name != "")
         {

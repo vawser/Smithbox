@@ -507,7 +507,7 @@
     <diseaseGuardResist AltName="Guard Resist: Scarlet Rot" Wiki="How much to cut the attack power (set as a special effect parameter) to make it a plague" />
     <bloodGuardResist AltName="Guard Resist: Hemorrhage" Wiki="How much to cut the attack power (set as a special effect parameter) to make bleeding" />
     <curseGuardResist AltName="Guard Resist: Blight" Wiki="How much to cut the attack power (set as a special effect parameter) to curse" />
-    <atkAttribute AltName="Attack Attribute" Wiki="Physical attribute 1" Enum="ATKPARAM_ATKATTR_TYPE" />
+    <atkAttribute AltName="Attack Attribute [1]" Wiki="Physical attribute 1" Enum="ATKPARAM_ATKATTR_TYPE" />
     <rightHandEquipable AltName="Can wield in Right Hand" Wiki="Is it possible to equip it with the right hand?" IsBool="" />
     <leftHandEquipable AltName="Can wield in Left Hand" Wiki="Is it possible to equip it with the left hand?" IsBool="" />
     <bothHandEquipable AltName="Can wield in Both Hands" Wiki="Is it possible to equip with both hands?" IsBool="" />
@@ -591,7 +591,7 @@
     <correctType_Dark AltName="Correction Type: Holy" Wiki="Determine the type of darkness attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
     <correctType_Poison AltName="Correction Type: Poison" Wiki="Determining the type of poison attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
     <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." Enum="DISPLAY_CATEGORY_ID" />
-    <atkAttribute2 AltName="Attack Attribute [2]" Wiki="Physical attribute 2" Enum="ATKPARAM_ATKATTR_TYPE" />
+    <atkAttribute2 AltName="Attack Attribute [2]" Wiki="Physical attribute referred to in the AtkParam" Enum="ATKPARAM_ATKATTR_TYPE" />
     <sleepGuardResist AltName="Guard Resist: Sleep" Wiki="How much to cut the attack power (set as a special effect parameter) to sleep" />
     <madnessGuardResist AltName="Guard Resist: Madness" Wiki="How much to cut the attack power (set to the special effect parameter) that makes you go mad" />
     <correctType_Blood AltName="Correction Type: Hemorrhage" Wiki="Determine the type of bleeding attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />

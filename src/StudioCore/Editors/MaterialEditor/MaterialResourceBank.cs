@@ -1,6 +1,6 @@
 ﻿using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -46,7 +46,7 @@ public class MaterialResourceBank
     {
         _matbins = new Dictionary<string, MaterialInfo>();
 
-        var modPath = $"{Project.GameModDirectory}//material//";
+        var modPath = $"{Smithbox.ProjectRoot}//material//";
         if (Directory.Exists(modPath))
         {
             var modFiles = Directory.GetFiles(modPath);
@@ -58,7 +58,7 @@ public class MaterialResourceBank
             }
         }
 
-        var rootPath = $"{Project.GameRootDirectory}//material//";
+        var rootPath = $"{Smithbox.GameRoot}//material//";
         if (Directory.Exists(rootPath))
         {
             var rootFiles = Directory.GetFiles(rootPath);
@@ -98,7 +98,7 @@ public class MaterialResourceBank
     {
         _mtds = new Dictionary<string, MaterialInfo>();
 
-        var modPath = $"{Project.GameModDirectory}//mtd//";
+        var modPath = $"{Smithbox.ProjectRoot}//mtd//";
         if (Directory.Exists(modPath))
         {
             var modFiles = Directory.GetFiles(modPath);
@@ -110,7 +110,7 @@ public class MaterialResourceBank
             }
         }
 
-        var rootPath = $"{Project.GameRootDirectory}//mtd//";
+        var rootPath = $"{Smithbox.GameRoot}//mtd//";
         if (Directory.Exists(rootPath))
         {
             var rootFiles = Directory.GetFiles(rootPath);
@@ -148,7 +148,7 @@ public class MaterialResourceBank
 
     public static void Setup()
     {
-        if (Project.Type == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
         LoadMaterials();

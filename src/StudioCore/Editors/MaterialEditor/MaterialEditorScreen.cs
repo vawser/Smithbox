@@ -1,13 +1,13 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ParticleEditor;
 using StudioCore.Settings;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,11 +70,11 @@ public class MaterialEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_MaterialEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Project.Type is ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
         {
             ImGui.Begin("Editor##InvalidMaterialEditor");
 
-            ImGui.Text($"This editor does not support {Project.Type}.");
+            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }

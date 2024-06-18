@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using StudioCore.Banks.AliasBank;
-using StudioCore.BanksMain;
 using StudioCore.Editor;
 using StudioCore.Gui;
 using StudioCore.Interface;
@@ -70,15 +69,15 @@ public static class PropInfo_References
 
                         if (e.IsPartEnemy() || e.IsPartDummyEnemy())
                         {
-                            aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
+                            aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
                         }
                         if (e.IsPartAsset() || e.IsPartDummyAsset())
                         {
-                            aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+                            aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.AssetAliases.Aliases.list);
                         }
                         if (e.IsPartMapPiece())
                         {
-                            aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
+                            aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.MapPieceAliases.Aliases.list);
                         }
 
                         if (aliasName != "")
@@ -102,7 +101,7 @@ public static class PropInfo_References
                     // but only the RootObject has the TransformNode and Viewport integration.
                     var mapid = r.Name;
                     var prettyName = $"{ForkAwesome.Cube} {mapid}";
-                    prettyName = $"{prettyName} {MapAliasBank.GetMapName(mapid)}";
+                    prettyName = $"{prettyName} {Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapid)}";
 
                     ImGui.SetNextItemWidth(-1);
                     if (ImGui.Button(prettyName + "##MSBRefTo" + refID, new Vector2((width * 94), 20 * scale)))

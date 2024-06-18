@@ -1,22 +1,8 @@
 ﻿using ImGuiNET;
-using SoulsFormats;
-using StudioCore.BanksMain;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Platform;
-using StudioCore.Resource;
 using StudioCore.Tests;
-using StudioCore.UserProject;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Numerics;
-using Veldrid;
 using System.Threading.Tasks;
-using System.Xml;
-using System.Collections;
-using StudioCore.Formats;
 
 namespace StudioCore.Interface.Windows;
 

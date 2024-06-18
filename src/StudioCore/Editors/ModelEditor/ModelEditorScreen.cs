@@ -12,30 +12,17 @@ using Veldrid.Sdl2;
 using Veldrid.Utilities;
 using Viewport = StudioCore.Gui.Viewport;
 using StudioCore.Configuration;
-using Microsoft.Extensions.Logging;
 using System.IO;
 using SoulsFormats;
-using StudioCore.Banks.AliasBank;
-using StudioCore.UserProject;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
-using System.Linq;
-using Org.BouncyCastle.Utilities;
-using static SoulsFormats.BTPB;
-using static SoulsFormats.MSB_AC6.Region;
-using DotNext.Collections.Generic;
-using System.Xml;
 using StudioCore.Interface;
 using StudioCore.Utilities;
-using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Editors.ModelEditor.Toolbar;
-using System.Security.Cryptography;
-using StudioCore.BanksMain;
-using static SoulsFormats.MSB_AC6;
 using ModelCore.Editors.ModelEditor.Toolbar;
 using StudioCore.Locators;
 using StudioCore.Editors.AssetBrowser;
-using StudioCore.Settings;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -553,7 +540,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
     public void OnProjectChanged()
     {
-        if (Project.Type != ProjectType.Undefined)
+        if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             ModelAssetBrowser.OnProjectChanged();
         }
@@ -572,7 +559,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
             if (exists)
             {
-                if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
+                if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
                 {
                     if (CurrentModelInfo.Type == ModelEditorModelType.MapPiece)
                     {
@@ -620,7 +607,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             // Then write those bytes to file
             BND4 writeBinder = binder as BND4;
 
-            switch (Project.Type)
+            switch (Smithbox.ProjectType)
             {
                 case ProjectType.DS3:
                     fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
@@ -675,7 +662,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             // Then write those bytes to file
             BND3 writeBinder = binder as BND3;
 
-            switch (Project.Type)
+            switch (Smithbox.ProjectType)
             {
                 case ProjectType.DS1:
                 case ProjectType.DS1R:
@@ -775,9 +762,9 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
         LoadModelInternal(modelid, modelType, mapid);
 
         // If model ID has additional textures associated with it, load them
-        if (AdditionalTextures.Bank.HasAdditionalTextures(modelid))
+        if (Smithbox.BankHandler.AdditionalTextureInfo.HasAdditionalTextures(modelid))
         {
-            foreach (var entry in AdditionalTextures.Bank.GetAdditionalTextures(modelid))
+            foreach (var entry in Smithbox.BankHandler.AdditionalTextureInfo.GetAdditionalTextures(modelid))
             {
                 LoadModelInternal(entry, modelType, mapid, true);
             }

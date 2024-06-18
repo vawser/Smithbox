@@ -2,12 +2,11 @@
 using Newtonsoft.Json.Linq;
 using SoulsFormats;
 using StudioCore.Banks;
-using StudioCore.BanksMain;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Scene;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -1405,35 +1404,17 @@ namespace StudioCore.Editors.MapEditor.Prefabs
 
             if (ent.WrappedObject is MSB3.Part.MapPiece mapPiece)
             {
-                foreach (var entry in ModelAliasBank.Bank._loadedAliasBank.GetEntries("MapPieces"))
-                {
-                    if (modelName == entry.id)
-                    {
-                        fullname = $"{modelName} <{entry.name}>";
-                    }
-                }
+                fullname = PrefabUtils.GetMapPieceAliasName(modelName);
             }
 
             if (ent.WrappedObject is MSB3.Part.Enemy enemy || ent.WrappedObject is MSB3.Part.DummyEnemy dummyEnemy)
             {
-                foreach (var entry in ModelAliasBank.Bank._loadedAliasBank.GetEntries("Characters"))
-                {
-                    if (modelName == entry.id)
-                    {
-                        fullname = $"{modelName} <{entry.name}>";
-                    }
-                }
+                fullname = PrefabUtils.GetCharacterAliasName(modelName);
             }
 
             if (ent.WrappedObject is MSB3.Part.Object mapObject || ent.WrappedObject is MSB3.Part.DummyObject dummyObject)
             {
-                foreach (var entry in ModelAliasBank.Bank._loadedAliasBank.GetEntries("Objects"))
-                {
-                    if (modelName == entry.id)
-                    {
-                        fullname = $"{modelName} <{entry.name}>";
-                    }
-                }
+                fullname = PrefabUtils.GetAssetAliasName(modelName);
             }
 
             return fullname;

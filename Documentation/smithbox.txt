@@ -106,4 +106,8 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
+to fix: ReloadParams seems to be able to import default row names via NewProjectOpts.loadDefaultNames somehow
+
 Perhaps in-line the param quicklinks within the property view instead of the current Ref style
+
+Finish project rewrite

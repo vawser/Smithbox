@@ -1,9 +1,9 @@
 ﻿using DotNext.Collections.Generic;
 using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
-using StudioCore.UserProject;
 using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
@@ -96,11 +96,11 @@ public class CutsceneEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_CutsceneEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
         {
             ImGui.Begin("Editor##InvalidCutsceneEditor");
 
-            ImGui.Text($"This editor does not support {Project.Type}.");
+            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }

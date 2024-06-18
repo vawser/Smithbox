@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using SoapstoneLib;
 using StudioCore.Editor;
-using StudioCore.UserProject;
 using StudioCore.Scene;
 using System;
 using System.Diagnostics;
@@ -17,6 +16,7 @@ using StudioCore.Editors.TextureViewer;
 using StudioCore.TextureViewer;
 using System.IO;
 using StudioCore.Platform;
+using StudioCore.Core;
 
 namespace StudioCore.Interface.Windows;
 
@@ -460,9 +460,9 @@ public class SettingsWindow
                 ImGui.Checkbox("Exclude loaded maps from search filter", ref CFG.Current.MapEditor_Always_List_Loaded_Maps);
                 ImguiUtils.ShowHoverTooltip("This option will cause loaded maps to always be visible within the map list, ignoring the search filter.");
 
-                if (Project.Config != null)
+                if (Smithbox.ProjectHandler.CurrentProject.Config != null)
                 {
-                    if (Project.Type is ProjectType.ER)
+                    if (Smithbox.ProjectType is ProjectType.ER)
                     {
                         ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Viewport_Enable_ER_Auto_Map_Offset);
                         ImguiUtils.ShowHoverTooltip("");

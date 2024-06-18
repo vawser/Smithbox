@@ -4,7 +4,6 @@ using Octokit;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
-using StudioCore.BanksMain;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
 using System;
@@ -30,7 +29,7 @@ namespace StudioCore.Editors.MapEditor
             if (attributes.Any())
             {
                 var enumName = attributes[0].EnumType;
-                var temp = MsbFormatBank.Bank.Enums.list.Where(x => x.id == enumName).ToList()[0];
+                var temp = Smithbox.BankHandler.MSB_Info.Enums.list.Where(x => x.id == enumName).ToList()[0];
 
                 if (temp == null)
                 {
@@ -133,41 +132,41 @@ namespace StudioCore.Editors.MapEditor
                 // Particles
                 if (enumName == "PARTICLES")
                 {
-                    if(!ParticleAliasBank.Bank.IsLoadingAliases)
+                    if(Smithbox.BankHandler.ParticleAliases.Aliases != null)
                     {
-                        options = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
+                        options = Smithbox.BankHandler.ParticleAliases.Aliases.list;
                     }
                 }
                 // Flags
                 if (enumName == "FLAGS")
                 {
-                    if (!FlagAliasBank.Bank.IsLoadingAliases)
+                    if (Smithbox.BankHandler.EventFlagAliases.Aliases != null)
                     {
-                        options = FlagAliasBank.Bank.AliasNames.GetEntries("Flags");
+                        options = Smithbox.BankHandler.EventFlagAliases.Aliases.list;
                     }
                 }
                 // Sounds
                 if (enumName == "SOUNDS")
                 {
-                    if (!SoundAliasBank.Bank.IsLoadingAliases)
+                    if (Smithbox.BankHandler.SoundAliases.Aliases != null)
                     {
-                        options = SoundAliasBank.Bank.AliasNames.GetEntries("Sounds");
+                        options = Smithbox.BankHandler.SoundAliases.Aliases.list;
                     }
                 }
                 // Cutscenes
                 if (enumName == "CUTSCENES")
                 {
-                    if (!CutsceneAliasBank.Bank.IsLoadingAliases)
+                    if (Smithbox.BankHandler.CutsceneAliases.Aliases != null)
                     {
-                        options = CutsceneAliasBank.Bank.AliasNames.GetEntries("Cutscenes");
+                        options = Smithbox.BankHandler.CutsceneAliases.Aliases.list;
                     }
                 }
                 // Movies
                 if (enumName == "MOVIES")
                 {
-                    if (!MovieAliasBank.Bank.IsLoadingAliases)
+                    if (Smithbox.BankHandler.MovieAliases.Aliases != null)
                     {
-                        options = MovieAliasBank.Bank.AliasNames.GetEntries("Movies");
+                        options = Smithbox.BankHandler.MovieAliases.Aliases.list;
                     }
                 }
 
@@ -259,7 +258,7 @@ namespace StudioCore.Editors.MapEditor
         // Elden Ring Asset Mask and Anim property
         public static bool EldenRingAssetMaskAndAnimRow(PropertyInfo propinfo, object oldValue, ref object newValue, ViewportSelection selection)
         {
-            if(MsbFormatBank.Bank.Masks.list == null)
+            if(Smithbox.BankHandler.MSB_Info.Masks.list == null)
             {
                 return false;
             }
@@ -273,7 +272,7 @@ namespace StudioCore.Editors.MapEditor
                 FormatMaskEntry targetEntry = null;
 
                 // Get the entry for the current model
-                foreach(var entry in MsbFormatBank.Bank.Masks.list)
+                foreach(var entry in Smithbox.BankHandler.MSB_Info.Masks.list)
                 {
                     if(assetEnt.ModelName == entry.model)
                     {

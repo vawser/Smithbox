@@ -13,8 +13,9 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using static SoulsFormats.HKXPWV;
 using static StudioCore.TextEditor.FMGBank;
-using StudioCore.UserProject;
 using StudioCore.Locators;
+using StudioCore.Core;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -56,7 +57,7 @@ public static partial class FMGBank
         {
             Dictionary<FmgIDType, FMG> fmgs = new();
             IBinder fmgBinder;
-            if (Project.Type is ProjectType.DES or ProjectType.DS1
+            if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1
                 or ProjectType.DS1R)
             {
                 fmgBinder = BND3.Read(msgBndPath);
@@ -86,7 +87,7 @@ public static partial class FMGBank
                 return;
             }
 
-            if (moddedOnly && Project.GameModDirectory == Project.GameRootDirectory)
+            if (moddedOnly && Smithbox.ProjectRoot == Smithbox.GameRoot)
             {
                 TaskLogs.AddLog("Error: Game directory is identical to mod directory. Cannot export modded files without vanilla FMGs to compare to.",
                     LogLevel.Warning, TaskLogs.LogPriority.High);
@@ -95,8 +96,8 @@ public static partial class FMGBank
 
             var itemPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder).AssetPath;
             var menuPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder).AssetPath;
-            var itemPath_Vanilla = itemPath.Replace(Project.GameModDirectory, Project.GameRootDirectory);
-            var menuPath_Vanilla = menuPath.Replace(Project.GameModDirectory, Project.GameRootDirectory);
+            var itemPath_Vanilla = itemPath.Replace(Smithbox.ProjectRoot, Smithbox.GameRoot);
+            var menuPath_Vanilla = menuPath.Replace(Smithbox.ProjectRoot, Smithbox.GameRoot);
 
             Dictionary<FmgIDType, FMG> fmgs_vanilla = new();
             fmgs_vanilla.AddAll(GetFmgs(itemPath_Vanilla));
@@ -216,7 +217,7 @@ public static partial class FMGBank
             }
 
             var filecount = 0;
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
                 Directory.CreateDirectory(path);
 

@@ -3,8 +3,8 @@ using HKLib.Serialization.hk2018.Binary;
 using HKLib.Serialization.hk2018.Binary.Util;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Locators;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -63,10 +63,10 @@ public static class HavokBehaviorBank
         BND4 writeBinder = binder as BND4;
         byte[] fileBytes = null;
 
-        var assetRoot = $@"{Project.GameRootDirectory}\{fileDir}\{info.Name}{fileExt}";
-        var assetMod = $@"{Project.GameModDirectory}\{fileDir}\{info.Name}{fileExt}";
+        var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
+        var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
 
-        switch (Project.Type)
+        switch (Smithbox.ProjectType)
         {
             case ProjectType.ER:
                 fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
@@ -80,13 +80,13 @@ public static class HavokBehaviorBank
         }
 
         // Add folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Project.GameModDirectory}\\{fileDir}\\"))
+        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{fileDir}\\"))
         {
-            Directory.CreateDirectory($"{Project.GameModDirectory}\\{fileDir}\\");
+            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{fileDir}\\");
         }
 
         // Make a backup of the original file if a mod path doesn't exist
-        if (Project.GameModDirectory == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
         {
             File.Copy(assetRoot, $@"{assetRoot}.bak", true);
         }
@@ -100,7 +100,7 @@ public static class HavokBehaviorBank
 
     public static void LoadBehaviors()
     {
-        if (Project.Type == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
         {
             return;
         }
@@ -119,14 +119,14 @@ public static class HavokBehaviorBank
         {
             var filePath = $"{fileDir}\\{name}{fileExt}";
 
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
             {
-                LoadBehavior($"{Project.GameModDirectory}\\{filePath}");
+                LoadBehavior($"{Smithbox.ProjectRoot}\\{filePath}");
                 TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
-                LoadBehavior($"{Project.GameRootDirectory}\\{filePath}");
+                LoadBehavior($"{Smithbox.GameRoot}\\{filePath}");
                 TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }

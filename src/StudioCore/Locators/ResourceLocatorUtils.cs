@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -85,7 +85,7 @@ public static class ResourceLocatorUtils
             HashSet<string> fileList = new();
             List<string> ret = new();
 
-            var paramFiles = Directory.GetFileSystemEntries(Project.GameRootDirectory + paramDir, $@"*{paramExt}")
+            var paramFiles = Directory.GetFileSystemEntries(Smithbox.GameRoot + paramDir, $@"*{paramExt}")
                 .ToList();
             foreach (var f in paramFiles)
             {
@@ -94,9 +94,9 @@ public static class ResourceLocatorUtils
                 fileList.Add(name);
             }
 
-            if (Project.GameModDirectory != null && Directory.Exists(Project.GameModDirectory + paramDir))
+            if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + paramDir))
             {
-                paramFiles = Directory.GetFileSystemEntries(Project.GameModDirectory + paramDir, $@"*{paramExt}").ToList();
+                paramFiles = Directory.GetFileSystemEntries(Smithbox.ProjectRoot + paramDir, $@"*{paramExt}").ToList();
                 foreach (var f in paramFiles)
                 {
                     var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
@@ -119,14 +119,14 @@ public static class ResourceLocatorUtils
 
     public static string GetAssetPath(string relpath)
     {
-        if (Project.GameModDirectory != null)
+        if (Smithbox.ProjectRoot != null)
         {
-            var modpath = $@"{Project.GameModDirectory}\{relpath}";
+            var modpath = $@"{Smithbox.ProjectRoot}\{relpath}";
             if (File.Exists(modpath))
                 return modpath;
         }
 
-        return $@"{Project.GameRootDirectory}\{relpath}";
+        return $@"{Smithbox.GameRoot}\{relpath}";
     }
 
     public static bool CheckFilesExpanded(string gamepath, ProjectType game)
@@ -163,10 +163,10 @@ public static class ResourceLocatorUtils
 
     public static bool FileExists(string relpath)
     {
-        if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{relpath}"))
+        if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{relpath}"))
             return true;
 
-        if (File.Exists($@"{Project.GameRootDirectory}\{relpath}"))
+        if (File.Exists($@"{Smithbox.GameRoot}\{relpath}"))
             return true;
 
         return false;
@@ -174,10 +174,10 @@ public static class ResourceLocatorUtils
 
     public static string GetOverridenFilePath(string relpath)
     {
-        var rootPath = $@"{Project.GameRootDirectory}\{relpath}";
-        var modPath = $@"{Project.GameModDirectory}\{relpath}";
+        var rootPath = $@"{Smithbox.GameRoot}\{relpath}";
+        var modPath = $@"{Smithbox.ProjectRoot}\{relpath}";
 
-        if (Project.GameModDirectory != null && File.Exists(modPath))
+        if (Smithbox.ProjectRoot != null && File.Exists(modPath))
             return modPath;
 
         if (File.Exists($@"{rootPath}"))

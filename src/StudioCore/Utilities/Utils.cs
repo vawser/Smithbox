@@ -4,9 +4,9 @@ using ImGuiNET;
 using Microsoft.Win32;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -292,14 +292,14 @@ public static class Utils
 
     public static string GetLocalAssetPath(string assetPath)
     {
-        if (assetPath.StartsWith(Project.GameModDirectory))
+        if (assetPath.StartsWith(Smithbox.ProjectRoot))
         {
-            return assetPath.Replace(Project.GameModDirectory, "");
+            return assetPath.Replace(Smithbox.ProjectRoot, "");
         }
 
-        if (assetPath.StartsWith(Project.GameRootDirectory))
+        if (assetPath.StartsWith(Smithbox.GameRoot))
         {
-            return assetPath.Replace(Project.GameRootDirectory, "");
+            return assetPath.Replace(Smithbox.GameRoot, "");
         }
 
         throw new DirectoryNotFoundException(
@@ -309,8 +309,8 @@ public static class Utils
     public static void WriteWithBackup<T>(string assetPath, T item,
         params object[] writeparms) where T : SoulsFile<T>, new()
     {
-        WriteWithBackup(Project.GameRootDirectory, Project.GameModDirectory, assetPath, item,
-            Project.Type, writeparms);
+        WriteWithBackup(Smithbox.GameRoot, Smithbox.ProjectRoot, assetPath, item,
+            Smithbox.ProjectType, writeparms);
     }
 
     public static void WriteWithBackup<T>(string gamedir, string moddir, string assetpath, T item,

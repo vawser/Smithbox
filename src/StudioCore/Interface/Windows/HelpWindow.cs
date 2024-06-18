@@ -1,9 +1,9 @@
 ﻿using ImGuiNET;
 using StudioCore.Banks.HelpBank;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Help;
-using StudioCore.UserProject;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -188,7 +188,7 @@ public class HelpWindow
             {
                 var sectionName = entry.Title;
 
-                if (entry.ProjectType == (int)Project.Type || entry.ProjectType == 0)
+                if (entry.ProjectType == (int)Smithbox.ProjectType || entry.ProjectType == 0)
                 {
                     if (MatchEntry(entry, checkedInput))
                     {

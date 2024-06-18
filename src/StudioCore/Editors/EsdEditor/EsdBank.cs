@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Locators;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -51,10 +51,10 @@ public static class EsdBank
         BND4 writeBinder = binder as BND4;
         byte[] fileBytes = null;
 
-        var assetRoot = $@"{Project.GameRootDirectory}\{fileDir}\{info.Name}{fileExt}";
-        var assetMod = $@"{Project.GameModDirectory}\{fileDir}\{info.Name}{fileExt}";
+        var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
+        var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
 
-        switch (Project.Type)
+        switch (Smithbox.ProjectType)
         {
             case ProjectType.DS3:
                 fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
@@ -74,13 +74,13 @@ public static class EsdBank
         }
 
         // Add folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Project.GameModDirectory}\\{fileDir}\\"))
+        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{fileDir}\\"))
         {
-            Directory.CreateDirectory($"{Project.GameModDirectory}\\{fileDir}\\");
+            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{fileDir}\\");
         }
 
         // Make a backup of the original file if a mod path doesn't exist
-        if (Project.GameModDirectory == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
         {
             File.Copy(assetRoot, $@"{assetRoot}.bak", true);
         }
@@ -94,7 +94,7 @@ public static class EsdBank
 
     public static void LoadEsdScripts()
     {
-        if (Project.Type == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
         {
             return;
         }
@@ -113,14 +113,14 @@ public static class EsdBank
         {
             var filePath = $"{fileDir}\\{name}{fileExt}";
 
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
             {
-                LoadEsdScript($"{Project.GameModDirectory}\\{filePath}");
+                LoadEsdScript($"{Smithbox.ProjectRoot}\\{filePath}");
                 //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
-                LoadEsdScript($"{Project.GameRootDirectory}\\{filePath}");
+                LoadEsdScript($"{Smithbox.GameRoot}\\{filePath}");
                 //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }

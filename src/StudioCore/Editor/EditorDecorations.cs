@@ -3,8 +3,6 @@ using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.UserProject;
-using StudioCore.Settings;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -16,9 +14,7 @@ using System.Reflection;
 using Veldrid;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
-using StudioCore.BanksMain;
-using StudioCore.Editors;
-using System.ComponentModel;
+using StudioCore.Core;
 
 namespace StudioCore.Editor;
 
@@ -516,10 +512,10 @@ public class EditorDecorations
             {
                 List<string> matchedExtRefPath =
                     currentRef.paths.Select(x => string.Format(x, searchValue)).ToList();
-                ExtRefItem(context, fieldName, $"modded {currentRef.name}", matchedExtRefPath, Project.GameModDirectory,
+                ExtRefItem(context, fieldName, $"modded {currentRef.name}", matchedExtRefPath, Smithbox.ProjectRoot,
                     cacheOwner);
                 ExtRefItem(context, fieldName, $"vanilla {currentRef.name}", matchedExtRefPath,
-                    Project.GameRootDirectory, cacheOwner);
+                    Smithbox.GameRoot, cacheOwner);
             }
         }
     }
@@ -643,27 +639,27 @@ public class EditorDecorations
 
         if (showParticleEnum)
         {
-            result |= PropertyRowAliasEnumContextItems(ParticleAliasBank.Bank.GetEnumDictionary(), oldval, ref newval);
+            result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.ParticleAliases.GetEnumDictionary(), oldval, ref newval);
         }
 
         if (showSoundEnum)
         {
-            result |= PropertyRowAliasEnumContextItems(SoundAliasBank.Bank.GetEnumDictionary(), oldval, ref newval);
+            result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.SoundAliases.GetEnumDictionary(), oldval, ref newval);
         }
 
         if (showFlagEnum)
         {
-            result |= PropertyRowAliasEnumContextItems(FlagAliasBank.Bank.GetEnumDictionary(), oldval, ref newval);
+            result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.EventFlagAliases.GetEnumDictionary(), oldval, ref newval);
         }
 
         if (showCutsceneEnum)
         {
-            result |= PropertyRowAliasEnumContextItems(CutsceneAliasBank.Bank.GetEnumDictionary(), oldval, ref newval);
+            result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.CutsceneAliases.GetEnumDictionary(), oldval, ref newval);
         }
 
         if (showMovieEnum)
         {
-            result |= PropertyRowAliasEnumContextItems(MovieAliasBank.Bank.GetEnumDictionary(), oldval, ref newval);
+            result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.MovieAliases.GetEnumDictionary(), oldval, ref newval);
         }
 
         return result;

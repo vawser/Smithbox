@@ -1,11 +1,10 @@
 ﻿using ImGuiNET;
 using StudioCore.Banks.AliasBank;
-using StudioCore.BanksMain;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Gui;
 using StudioCore.Interface;
 using StudioCore.Scene;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -31,7 +30,7 @@ public static class PropInfo_ParamJumps
             return;
 
         // Only relevant to assets
-        if ( (Project.Type is ProjectType.ER or ProjectType.AC6 ) && firstEnt.IsPartPureAsset())
+        if ( (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6 ) && firstEnt.IsPartPureAsset())
         {
             ImGui.Separator();
             ImGui.Text("Params:");
@@ -72,7 +71,7 @@ public static class PropInfo_ParamJumps
 
                     if (e.IsPartAsset() || e.IsPartDummyAsset())
                     {
-                        aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+                        aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.PartAliases.Aliases.list);
                     }
 
                     if (aliasName != "")
@@ -92,7 +91,7 @@ public static class PropInfo_ParamJumps
         }
 
         // Only relevant to characters
-        if ((Project.Type is ProjectType.ER or ProjectType.AC6) 
+        if ((Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6) 
             && (firstEnt.IsPartEnemy() || firstEnt.IsPartDummyEnemy() ) )
         {
             ImGui.Separator();
@@ -134,7 +133,7 @@ public static class PropInfo_ParamJumps
 
                     if (e.IsPartEnemy() || e.IsPartDummyEnemy())
                     {
-                        aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
+                        aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
                     }
 
                     if (aliasName != "")
@@ -168,6 +167,9 @@ public static class PropInfo_ParamJumps
 
     public static string GetAliasFromCache(string name, List<AliasReference> referenceList)
     {
+        if(referenceList == null)
+            return "";
+
         foreach (var alias in referenceList)
         {
             if (name == alias.id)

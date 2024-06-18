@@ -20,7 +20,6 @@ using StudioCore.Settings;
 using StudioCore.TalkEditor;
 using StudioCore.TextEditor;
 using StudioCore.TextureViewer;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -112,7 +111,7 @@ public class EditorHandler
         }
     }
 
-    public void UpdateEditorsOnProjectChange()
+    public void UpdateEditors()
     {
         foreach (EditorScreen editor in EditorList)
         {
@@ -142,13 +141,13 @@ public class EditorHandler
         {
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_SaveCurrentEditor))
             {
-                Project.SaveProjectJson();
+                Smithbox.ProjectHandler.WriteProjectConfig();
                 SaveFocusedEditor();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_SaveAllCurrentEditor))
             {
-                Project.SaveProjectJson();
+                Smithbox.ProjectHandler.WriteProjectConfig();
                 SaveAllFocusedEditor();
             }
         }
@@ -170,7 +169,14 @@ public class EditorHandler
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Folder}");
             if (ImGui.MenuItem("Open Project", "", false, !TaskManager.AnyActiveTasks()))
             {
-                Project.OpenProjectDialog();
+                Smithbox.ProjectHandler.OpenProjectDialog();
+            }
+
+            // Close Project
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Folder}");
+            if (ImGui.MenuItem("Close Project", "", false, !TaskManager.AnyActiveTasks()))
+            {
+                Smithbox.ProjectHandler.ClearProject();
             }
 
             // Recent Projects
@@ -178,7 +184,7 @@ public class EditorHandler
             if (ImGui.BeginMenu("Recent Projects",
                     !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
             {
-                Project.DisplayRecentProjects();
+                Smithbox.ProjectHandler.DisplayRecentProjects();
 
                 ImGui.EndMenu();
             }
@@ -190,13 +196,13 @@ public class EditorHandler
             {
                 if (ImGui.MenuItem("Project Folder", "", false, !TaskManager.AnyActiveTasks()))
                 {
-                    var projectPath = Project.GameModDirectory;
+                    var projectPath = Smithbox.ProjectRoot;
                     Process.Start("explorer.exe", projectPath);
                 }
 
                 if (ImGui.MenuItem("Game Folder", "", false, !TaskManager.AnyActiveTasks()))
                 {
-                    var gamePath = Project.GameRootDirectory;
+                    var gamePath = Smithbox.GameRoot;
                     Process.Start("explorer.exe", gamePath);
                 }
 
@@ -216,7 +222,7 @@ public class EditorHandler
                 if (ImGui.MenuItem($"Save Selected {FocusedEditor.SaveType}",
                         KeyBindings.Current.Core_SaveCurrentEditor.HintText))
                 {
-                    Project.SaveProjectJson();
+                    Smithbox.ProjectHandler.WriteProjectConfig();
                     SaveFocusedEditor();
                 }
 
@@ -224,7 +230,7 @@ public class EditorHandler
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
                 if (ImGui.MenuItem($"Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.Core_SaveAllCurrentEditor.HintText))
                 {
-                    Project.SaveProjectJson();
+                    Smithbox.ProjectHandler.WriteProjectConfig();
                     SaveAllFocusedEditor();
                 }
             }

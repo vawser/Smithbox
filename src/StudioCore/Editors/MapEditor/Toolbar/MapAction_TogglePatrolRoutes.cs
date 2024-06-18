@@ -1,7 +1,7 @@
 ﻿using ImGuiNET;
+using StudioCore.Core;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
+            if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
             {
                 if (ImGui.RadioButton("Toggle Patrol Route Visibility##tool_Selection_Render_Patrol_Routes", MapEditorState.SelectedAction == MapEditorAction.Selection_Render_Patrol_Routes))
                 {
@@ -42,7 +42,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Render_Patrol_Routes)
             {
-                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
+                if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
                 {
                     if (ImGui.Button("Apply##action_Selection_Render_Patrol_Routes", new Vector2(200, 32)))
                     {

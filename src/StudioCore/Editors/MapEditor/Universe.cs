@@ -14,12 +14,12 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Numerics;
-using StudioCore.UserProject;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors;
 using StudioCore.Editor;
 using StudioCore.Locators;
+using StudioCore.Core;
 
 namespace StudioCore.MsbEditor;
 
@@ -63,7 +63,7 @@ public class Universe
 
     public List<string> EnvMapTextures { get; private set; } = new();
 
-    public ProjectType GameType => Project.Type;
+    public ProjectType GameType => Smithbox.ProjectType;
 
     public List<MapContainer> GetLoadedMaps()
     {
@@ -418,7 +418,7 @@ public class Universe
             return mesh;
         }
 
-        if (loadnav && Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
+        if (loadnav && Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
         {
             var mesh = MeshRenderableProxy.MeshRenderableFromNVMResource(
                 _renderScene, asset.AssetVirtualPath, modelMarkerType);
@@ -674,7 +674,7 @@ public class Universe
 
     public bool LoadMap(string mapid, bool selectOnLoad = false)
     {
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2S)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2S)
         {
             if (ParamBank.PrimaryBank.Params == null)
             {
@@ -703,7 +703,7 @@ public class Universe
         {
             BTL btl;
 
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
                 using var bdt = BXF4.Read(ad.AssetPath, ad.AssetPath[..^3] + "bdt");
                 BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
@@ -753,7 +753,7 @@ public class Universe
             HashSet<ResourceDescriptor> navsToLoad = new();
 
             //drawgroup count
-            switch (Project.Type)
+            switch (Smithbox.ProjectType)
             {
                 // imgui checkbox click seems to break at some point after 8 (8*32) checkboxes, so let's just hope that never happens, yeah?
                 case ProjectType.DES:
@@ -773,7 +773,7 @@ public class Universe
                     _dispGroupCount = 8; //?
                     break;
                 default:
-                    throw new Exception($"Error: Did not expect Gametype {Project.Type}");
+                    throw new Exception($"Error: Did not expect Gametype {Smithbox.ProjectType}");
                     //break;
             }
 
@@ -784,31 +784,31 @@ public class Universe
             }
 
             IMsb msb;
-            if (Project.Type == ProjectType.DS3)
+            if (Smithbox.ProjectType == ProjectType.DS3)
             {
                 msb = MSB3.Read(ad.AssetPath);
             }
-            else if (Project.Type == ProjectType.SDT)
+            else if (Smithbox.ProjectType == ProjectType.SDT)
             {
                 msb = MSBS.Read(ad.AssetPath);
             }
-            else if (Project.Type == ProjectType.ER)
+            else if (Smithbox.ProjectType == ProjectType.ER)
             {
                 msb = MSBE.Read(ad.AssetPath);
             }
-            else if (Project.Type == ProjectType.AC6)
+            else if (Smithbox.ProjectType == ProjectType.AC6)
             {
                 msb = MSB_AC6.Read(ad.AssetPath);
             }
-            else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
                 msb = MSB2.Read(ad.AssetPath);
             }
-            else if (Project.Type == ProjectType.BB)
+            else if (Smithbox.ProjectType == ProjectType.BB)
             {
                 msb = MSBB.Read(ad.AssetPath);
             }
-            else if (Project.Type == ProjectType.DES)
+            else if (Smithbox.ProjectType == ProjectType.DES)
             {
                 msb = MSBD.Read(ad.AssetPath);
             }
@@ -886,7 +886,7 @@ public class Universe
                             ResourceModelLocator.MapModelNameToAssetName(amapid, model.Name), false);
                         colsToLoad.Add(asset);
                     }
-                    else if (model.Name.StartsWith("n") && Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2 && Project.Type != ProjectType.BB)
+                    else if (model.Name.StartsWith("n") && Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2 && Smithbox.ProjectType != ProjectType.BB)
                     {
                         asset = ResourceModelLocator.GetMapNVMModel(amapid,
                             ResourceModelLocator.MapModelNameToAssetName(amapid, model.Name));
@@ -917,7 +917,7 @@ public class Universe
 
             if (IsRendering)
             {
-                if (Project.Type == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
+                if (Smithbox.ProjectType == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
                 {
                     if (SpecialMapConnections.GetEldenMapTransform(mapid, LoadedObjectContainers) is Transform
                         loadTransform)
@@ -947,7 +947,7 @@ public class Universe
                 }
             }
 
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
                 LoadDS2Generators(amapid, map);
             }
@@ -955,7 +955,7 @@ public class Universe
             if (IsRendering)
             {
                 // Temporary DS3 navmesh loading
-                if (Project.Type == ProjectType.DS3)
+                if (Smithbox.ProjectType == ProjectType.DS3)
                 {
                     ResourceDescriptor nvaasset = ResourceMapLocator.GetMapNVA(amapid);
                     if (nvaasset.AssetPath != null)
@@ -1078,7 +1078,7 @@ public class Universe
                 tasks.Add(task);
 
                 job = ResourceManager.CreateNewJob(@"Loading Navmeshes");
-                if (Project.Type == ProjectType.DS3)
+                if (Smithbox.ProjectType == ProjectType.DS3)
                 {
                     ResourceDescriptor nav = ResourceModelLocator.GetHavokNavmeshes(amapid);
                     job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
@@ -1408,33 +1408,33 @@ public class Universe
 
     private DCX.Type GetCompressionType()
     {
-        if (Project.Type == ProjectType.DS3)
+        if (Smithbox.ProjectType == ProjectType.DS3)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
 
-        if (Project.Type == ProjectType.ER)
+        if (Smithbox.ProjectType == ProjectType.ER)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
 
-        if (Project.Type == ProjectType.AC6)
+        if (Smithbox.ProjectType == ProjectType.AC6)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             return DCX.Type.None;
         }
-        else if (Project.Type == ProjectType.SDT)
+        else if (Smithbox.ProjectType == ProjectType.SDT)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (Project.Type == ProjectType.BB)
+        else if (Smithbox.ProjectType == ProjectType.BB)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (Project.Type == ProjectType.DES)
+        else if (Smithbox.ProjectType == ProjectType.DES)
         {
             return DCX.Type.None;
         }
@@ -1450,7 +1450,7 @@ public class Universe
         List<ResourceDescriptor> BTLs = ResourceMapLocator.GetMapBTLs(map.Name);
         List<ResourceDescriptor> BTLs_w = ResourceMapLocator.GetMapBTLs(map.Name, true);
         DCX.Type compressionType = GetCompressionType();
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             for (var i = 0; i < BTLs.Count; i++)
             {
@@ -1506,7 +1506,7 @@ public class Universe
             ResourceDescriptor adw = ResourceMapLocator.GetMapMSB(map.Name, true);
             IMsb msb;
             DCX.Type compressionType = GetCompressionType();
-            if (Project.Type == ProjectType.DS3)
+            if (Smithbox.ProjectType == ProjectType.DS3)
             {
                 var prev = MSB3.Read(ad.AssetPath);
                 MSB3 n = new();
@@ -1515,7 +1515,7 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (Project.Type == ProjectType.ER)
+            else if (Smithbox.ProjectType == ProjectType.ER)
             {
                 var prev = MSBE.Read(ad.AssetPath);
                 MSBE n = new();
@@ -1523,7 +1523,7 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (Project.Type == ProjectType.AC6)
+            else if (Smithbox.ProjectType == ProjectType.AC6)
             {
                 var prev = MSB_AC6.Read(ad.AssetPath);
                 MSB_AC6 n = new();
@@ -1531,14 +1531,14 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
                 var prev = MSB2.Read(ad.AssetPath);
                 MSB2 n = new();
                 n.PartPoses = prev.PartPoses;
                 msb = n;
             }
-            else if (Project.Type == ProjectType.SDT)
+            else if (Smithbox.ProjectType == ProjectType.SDT)
             {
                 var prev = MSBS.Read(ad.AssetPath);
                 MSBS n = new();
@@ -1547,11 +1547,11 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (Project.Type == ProjectType.BB)
+            else if (Smithbox.ProjectType == ProjectType.BB)
             {
                 msb = new MSBB();
             }
-            else if (Project.Type == ProjectType.DES)
+            else if (Smithbox.ProjectType == ProjectType.DES)
             {
                 var prev = MSBD.Read(ad.AssetPath);
                 MSBD n = new();
@@ -1565,7 +1565,7 @@ public class Universe
                 //((MSB1)msb).Models = t.Models;
             }
 
-            map.SerializeToMSB(msb, Project.Type);
+            map.SerializeToMSB(msb, Smithbox.ProjectType);
 
             // Create the map directory if it doesn't exist
             if (!Directory.Exists(Path.GetDirectoryName(adw.AssetPath)))
@@ -1607,7 +1607,7 @@ public class Universe
 
             File.Move(mapPath + ".temp", mapPath);
 
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
                 SaveDS2Generators(map);
             }

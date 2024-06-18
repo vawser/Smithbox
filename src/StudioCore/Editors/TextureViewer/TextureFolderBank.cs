@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.UserProject;
+using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -66,14 +66,14 @@ public static class TextureFolderBank
         var folderDir = @"\menu";
         var fileExt = @".tpf.dcx";
 
-        if (Project.Type is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
+        if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
         {
             folderDir = @"\menu\hi";
         }
 
         FindTextureFolder(folderDir, fileExt, category);
 
-        if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             folderDir = @"\menu\tex\icon";
             fileExt = @".tpf";
@@ -116,24 +116,24 @@ public static class TextureFolderBank
         var folderDir = @"";
         var fileExt = @".tpf.dcx";
 
-        if (Project.Type is ProjectType.AC6)
+        if (Smithbox.ProjectType is ProjectType.AC6)
         {
             folderDir = @"\asset\environment\texture";
 
             FindTextureFolder(folderDir, fileExt, category);
         }
 
-        if (Project.Type is ProjectType.ER)
+        if (Smithbox.ProjectType is ProjectType.ER)
         {
             var searchFolderDir = $@"\asset\aet\";
 
-            if(Directory.Exists($"{Project.GameModDirectory}\\{searchFolderDir}"))
+            if(Directory.Exists($"{Smithbox.ProjectRoot}\\{searchFolderDir}"))
             {
-                searchFolderDir = $"{Project.GameModDirectory}\\{searchFolderDir}";
+                searchFolderDir = $"{Smithbox.ProjectRoot}\\{searchFolderDir}";
             }
             else
             {
-                searchFolderDir = $"{Project.GameRootDirectory}\\{searchFolderDir}";
+                searchFolderDir = $"{Smithbox.GameRoot}\\{searchFolderDir}";
             }
 
             if(Directory.Exists(searchFolderDir))
@@ -155,12 +155,12 @@ public static class TextureFolderBank
         var folderDir = @"\obj";
         var fileExt = @".objbnd.dcx";
 
-        if (Project.Type == ProjectType.DS1)
+        if (Smithbox.ProjectType == ProjectType.DS1)
         {
             fileExt = @".objbnd";
         }
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             folderDir = @"\model\obj";
             fileExt = @".bnd";
@@ -174,12 +174,12 @@ public static class TextureFolderBank
         var folderDir = @"\chr";
         var fileExt = ".texbnd.dcx";
 
-        if (Project.Type is ProjectType.DES or ProjectType.DS1)
+        if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1)
         {
             fileExt = ".tpf";
         }
 
-        if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             folderDir = @"\model\chr\";
             fileExt = ".texbnd";
@@ -193,14 +193,14 @@ public static class TextureFolderBank
         var folderDir = @"\parts";
         var fileExt = @".partsbnd.dcx";
 
-        if (Project.Type == ProjectType.DS1)
+        if (Smithbox.ProjectType == ProjectType.DS1)
         {
             fileExt = @".partsbnd";
         }
 
         FindTextureFolder(folderDir, fileExt, category);
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             folderDir = @"\model\parts";
             fileExt = @".commonbnd.dcx";
@@ -252,7 +252,7 @@ public static class TextureFolderBank
         var folderDir = @"\sfx";
         var fileExt = @".ffxbnd.dcx";
 
-        if(Project.Type is ProjectType.DS2S or ProjectType.DS2)
+        if(Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             fileExt = @".ffxbnd";
         }
@@ -275,13 +275,13 @@ public static class TextureFolderBank
         {
             var filePath = $"{folderDir}\\{name}{fileExt}";
 
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
             {
-                AddTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
+                AddTextureFolder($"{Smithbox.ProjectRoot}\\{filePath}", category, true);
             }
             else
             {
-                AddTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
+                AddTextureFolder($"{Smithbox.GameRoot}\\{filePath}", category, false);
             }
         }
     }
@@ -315,10 +315,10 @@ public static class TextureFolderBank
         HashSet<string> fileNames = new();
         List<string> ret = new();
 
-        if (Directory.Exists(Project.GameRootDirectory + fileDir))
+        if (Directory.Exists(Smithbox.GameRoot + fileDir))
         {
             // ROOT
-            var paramFiles = Directory.GetFileSystemEntries(Project.GameRootDirectory + fileDir, $@"*{fileExt}").ToList();
+            var paramFiles = Directory.GetFileSystemEntries(Smithbox.GameRoot + fileDir, $@"*{fileExt}").ToList();
             foreach (var f in paramFiles)
             {
                 var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
@@ -327,9 +327,9 @@ public static class TextureFolderBank
             }
 
             // MOD
-            if (Project.GameModDirectory != null && Directory.Exists(Project.GameModDirectory + fileDir))
+            if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + fileDir))
             {
-                paramFiles = Directory.GetFileSystemEntries(Project.GameModDirectory + fileDir, $@"*{fileExt}").ToList();
+                paramFiles = Directory.GetFileSystemEntries(Smithbox.ProjectRoot + fileDir, $@"*{fileExt}").ToList();
 
                 foreach (var f in paramFiles)
                 {

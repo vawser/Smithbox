@@ -1,15 +1,14 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.BanksMain;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor.Toolbar;
 using StudioCore.Editors.ParticleEditor;
 using StudioCore.Editors.ParticleEditor.Toolbar;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.IO;
@@ -148,11 +147,11 @@ public class ParticleEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_ParticleEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
         {
             ImGui.Begin("Editor##InvalidParticleEditor");
 
-            ImGui.Text($"This editor does not support {Project.Type}.");
+            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }
@@ -377,7 +376,7 @@ public class ParticleEditorScreen : EditorScreen
     public void OnProjectChanged()
     {
         // Only support FXR3 for now
-        if(Project.Type is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        if(Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
         {
             if (CFG.Current.AutoLoadBank_Particle)
                 ParticleBank.LoadParticles();
@@ -410,12 +409,11 @@ public class ParticleEditorScreen : EditorScreen
     {
         if (CFG.Current.Interface_Display_Alias_for_Particles)
         {
-            if (ParticleAliasBank.Bank.AliasNames != null)
+            if (Smithbox.BankHandler.ParticleAliases.Aliases != null)
             {
                 var prettyName = "";
 
-                var entries = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
-                foreach (var entry in entries)
+                foreach (var entry in Smithbox.BankHandler.ParticleAliases.Aliases.list)
                 {
                     if (name == entry.id)
                     {

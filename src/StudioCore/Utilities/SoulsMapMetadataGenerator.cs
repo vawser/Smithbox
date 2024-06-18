@@ -1,5 +1,5 @@
 ﻿using SoulsFormats;
-using StudioCore.UserProject;
+using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -47,8 +47,8 @@ public static class SoulsMapMetadataGenerator
 
     public static void GenerateMCGMCP(List<string> directories, bool toBigEndian = true)
     {
-        string baseDirectory = Project.GameRootDirectory;
-        string modDirectory = Project.GameModDirectory;
+        string baseDirectory = Smithbox.GameRoot;
+        string modDirectory = Smithbox.ProjectRoot;
         Dictionary<string, MCCombo> mcCombos = new Dictionary<string, MCCombo>();
 
         //Gather NVM files and filter by MSB 
@@ -63,14 +63,14 @@ public static class SoulsMapMetadataGenerator
             List<string> msbNavmeshNames = new List<string>();
             if (File.Exists(msbPath))
             {
-                if(Project.Type == ProjectType.DES)
+                if(Smithbox.ProjectType == ProjectType.DES)
                 {
                     var msb = SoulsFile<MSBD>.Read(msbPath);
                     foreach (var navMesh in msb.Parts.Navmeshes)
                     {
                         msbNavmeshNames.Add(navMesh.ModelName.ToLower());
                     }
-                } else if (Project.Type is ProjectType.DS1 or ProjectType.DS1R)
+                } else if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
                 {
                     var msb = SoulsFile<MSB1>.Read(msbPath);
                     foreach (var navMesh in msb.Parts.Navmeshes)
@@ -89,7 +89,7 @@ public static class SoulsMapMetadataGenerator
                 foreach (var nvmFile in nvmBndFile.Files)
                 {
                     var fname = Path.GetFileNameWithoutExtension(nvmFile.Name).ToLower();
-                    if(Project.Type is ProjectType.DS1R or ProjectType.DS1)
+                    if(Smithbox.ProjectType is ProjectType.DS1R or ProjectType.DS1)
                     {
                         fname = fname.Substring(0, 7);
                     }

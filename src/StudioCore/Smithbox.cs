@@ -3,24 +3,12 @@ using Silk.NET.SDL;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.CutsceneEditor;
 using StudioCore.Editor;
-using StudioCore.Editors;
 using StudioCore.Graphics;
-using StudioCore.GraphicsEditor;
-using StudioCore.MaterialEditor;
-using StudioCore.ParticleEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
-using StudioCore.EmevdEditor;
-using StudioCore.Settings;
-using StudioCore.TalkEditor;
-using StudioCore.TextEditor;
-using StudioCore.TextureViewer;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -32,15 +20,7 @@ using Veldrid.Sdl2;
 using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Interface.Windows;
 using StudioCore.Interface;
-using StudioCore.Editors.TimeActEditor;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.ModelEditor;
-using StudioCore.BehaviorEditor;
-using StudioCore.BanksMain;
-using StudioCore.MergeTool;
 using StudioCore.Editors.AssetBrowser;
 using StudioCore.Core;
 
@@ -50,6 +30,14 @@ public class Smithbox
 {
     public static EditorHandler EditorHandler;
     public static WindowHandler WindowHandler;
+    public static BankHandler BankHandler;
+    public static NameCacheHandler NameCacheHandler;
+    public static ProjectHandler ProjectHandler;
+
+    public static ProjectType ProjectType = ProjectType.Undefined;
+    public static string GameRoot = "";
+    public static string ProjectRoot = "";
+    public static string SmithboxDataRoot = "";
 
     private static double _desiredFrameLengthSeconds = 1.0 / 20.0f;
     private static readonly bool _limitFrameRate = true;
@@ -87,7 +75,7 @@ public class Smithbox
     public unsafe Smithbox(IGraphicsContext context, string version)
     {
         _version = version;
-        _programTitle = $"Smithbox - Version {_version}";
+        _programTitle = $"Version {_version}";
 
         ImguiUtils.RestoreImguiIfMissing();
 
@@ -110,12 +98,35 @@ public class Smithbox
         // SoulsFormats toggles
         BinaryReaderEx.IsFlexible = CFG.Current.System_FlexibleUnpack;
 
-        BankUtils.SetupBanks();
+        // Project
+        ProjectHandler = new ProjectHandler();
+        ProjectHandler.LoadLastProject();
+        ProjectHandler.UpdateProjectVariables();
 
+        // Banks
+        BankHandler = new BankHandler();
+        BankHandler.UpdateBanks();
+        BankHandler.SelectionGroups.CreateSelectionGroups();
+
+        // Name Caches
+        NameCacheHandler = new NameCacheHandler();
+        NameCacheHandler.UpdateCaches();
+
+        // Editors
         EditorHandler = new EditorHandler(_context);
+
+        // Windows
         WindowHandler = new WindowHandler(_context);
 
+        // Soapstone Service
         _soapstoneService = new SoapstoneService(_version);
+
+        // Load CurrentProject Project
+        ProjectHandler.LoadProject(ProjectHandler.CurrentProject.ProjectJsonPath);
+        if (ProjectType != ProjectType.Undefined)
+        {
+            ProjectHandler.UpdateTimer();
+        }
 
         ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
         SetupFonts();
@@ -124,13 +135,6 @@ public class Smithbox
         ImGuiStylePtr style = ImGui.GetStyle();
         style.TabBorderSize = 0;
 
-        Project.CheckForLastProject();
-        Project.UpdateTimer();
-
-        if(Project.Type != ProjectType.Undefined)
-        {
-            AssetBrowserCache.UpdateCache();
-        }
     }
 
     public static void SetProgramTitle(string projectName)
@@ -449,13 +453,13 @@ public class Smithbox
 
         if (CFG.Current.System_EnableRecoveryFolder)
         {
-            var success = Project.CreateRecoveryProject();
+            var success = ProjectHandler.CreateRecoveryProject();
             if (success)
             {
                 EditorHandler.SaveAllFocusedEditor();
 
                 PlatformUtils.Instance.MessageBox(
-                    $"Attempted to save project files to {Project.GameModDirectory} for manual recovery.\n" +
+                    $"Attempted to save project files to {ProjectRoot} for manual recovery.\n" +
                     "You must manually replace your project files with these recovery files should you wish to restore them.\n" +
                     "Given the program has crashed, these files may be corrupt and you should backup your last good saved\n" +
                     "files before attempting to use these.",
@@ -472,6 +476,9 @@ public class Smithbox
 
         UpdateDpi();
         var scale = GetUIScale();
+
+        BankHandler.OnGui();
+        NameCacheHandler.OnGui();
 
         if (FontRebuildRequest)
         {
@@ -594,7 +601,7 @@ public class Smithbox
 
         if (ImGui.BeginPopupModal("New Project", ref open, ImGuiWindowFlags.AlwaysAutoResize))
         {
-            Project.CreateNewProjectModal();
+            ProjectHandler.NewProjectModal.CreateNewProjectModal();
 
             ImGui.EndPopup();
         }

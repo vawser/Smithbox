@@ -1,7 +1,7 @@
 ﻿using Andre.Formats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -92,7 +92,7 @@ internal class SpecialMapConnections
             return relations;
         }
 
-        if (Project.Type == ProjectType.ER && parts[0] == 60 && parts[1] > 0 && parts[2] > 0)
+        if (Smithbox.ProjectType == ProjectType.ER && parts[0] == 60 && parts[1] > 0 && parts[2] > 0)
         {
             var scale = parts[3] % 10;
             if (scale < 2)
@@ -156,7 +156,7 @@ internal class SpecialMapConnections
                 }
             }
         }
-        else if (Project.Type == ProjectType.AC6)
+        else if (Smithbox.ProjectType == ProjectType.AC6)
         {
             //TODO AC6
         }
@@ -200,17 +200,17 @@ internal class SpecialMapConnections
             }
 
             // Avoid putting in tons of maps. These types of cols are not used in the vanilla game.
-            if (Project.Type == ProjectType.ER && connectParts[0] == 60 && firstWildcard < 3)
+            if (Smithbox.ProjectType == ProjectType.ER && connectParts[0] == 60 && firstWildcard < 3)
             {
                 continue;
             }
 
-            if (Project.Type == ProjectType.BB && connectParts[0] == 29)
+            if (Smithbox.ProjectType == ProjectType.BB && connectParts[0] == 29)
             {
                 continue;
             }
 
-            if (Project.Type == ProjectType.AC6)
+            if (Smithbox.ProjectType == ProjectType.AC6)
             {
                 //TODO AC6
             }

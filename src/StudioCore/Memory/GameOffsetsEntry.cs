@@ -1,5 +1,4 @@
-﻿using StudioCore.BanksMain;
-using StudioCore.UserProject;
+﻿using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,12 +33,12 @@ public class GameOffsetsEntry
 
     internal GameOffsetsEntry(ProjectType type)
     {
-        var data = GameOffsetsBank.Bank.Entries.list[CFG.Current.SelectedGameOffsetData];
+        var data = Smithbox.BankHandler.GameOffsets.Offsets.list[CFG.Current.SelectedGameOffsetData];
 
         paramOffsets = new();
         itemGibOffsets = new();
 
-        exeName = GameOffsetsBank.Bank.Entries.exeName;
+        exeName = Smithbox.BankHandler.GameOffsets.Offsets.exeName;
 
         if (data.paramBase != "" || data.paramBase == null)
         {
@@ -91,7 +90,7 @@ public class GameOffsetsEntry
             rowHeaderSize = Utils.ParseHexFromString(data.rowHeaderSize);
         }
 
-        foreach(var entry in data.paramOffsets)
+        foreach (var entry in data.paramOffsets)
         {
             var name = entry.Split(':')[0];
             var address = entry.Split(':')[1];

@@ -1,24 +1,10 @@
 ﻿using ImGuiNET;
-using Microsoft.Extensions.Logging;
-using SoulsFormats;
-using StudioCore.Banks;
-using StudioCore.Banks.AliasBank;
-using StudioCore.BanksMain;
-using StudioCore.Editor;
+using StudioCore.Banks.GameOffsetBank;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Help;
 using StudioCore.Memory;
-using StudioCore.Platform;
-using StudioCore.Resource;
-using StudioCore.Tests;
-using StudioCore.UserProject;
-using StudioCore.Utilities;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Text.RegularExpressions;
 
 namespace StudioCore.Interface.Windows;
 
@@ -80,7 +66,7 @@ public class MemoryWindow
     {
         if (ImGui.BeginTabItem("Param Reloader"))
         {
-            if (!ParamReloader.GameIsSupported(Project.Type))
+            if (!ParamReloader.GameIsSupported(Smithbox.ProjectType))
             {
                 ImGui.Text("This project type does not support this feature.");
                 ImGui.EndTabItem();
@@ -134,7 +120,7 @@ public class MemoryWindow
     {
         if (ImGui.BeginTabItem("Item Gib"))
         {
-            if (Project.Type != ProjectType.DS3)
+            if (Smithbox.ProjectType != ProjectType.DS3)
             {
                 ImGui.Text("This project type does not support this feature.");
                 ImGui.EndTabItem();
@@ -146,7 +132,7 @@ public class MemoryWindow
             ImGui.Separator();
 
             var activeParam = _activeView._selection.GetActiveParam();
-            if (activeParam != null && Project.Type == ProjectType.DS3)
+            if (activeParam != null && Smithbox.ProjectType == ProjectType.DS3)
             {
                 ParamReloader.GiveItemMenu(_activeView._selection.GetSelectedRows(), _activeView._selection.GetActiveParam());
             }
@@ -165,7 +151,7 @@ public class MemoryWindow
                 ImguiUtils.ShowHoverTooltip("This should match the executable version you wish to target, otherwise the memory offsets will be incorrect.");
 
                 var index = CFG.Current.SelectedGameOffsetData;
-                string[] options = GameOffsetsBank.Bank.Entries.list.Select(entry => entry.exeVersion).ToArray();
+                string[] options = Smithbox.BankHandler.GameOffsets.Offsets.list.Select(entry => entry.exeVersion).ToArray();
 
                 if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
                 {
@@ -177,9 +163,9 @@ public class MemoryWindow
         }
         else
         {
-            if (Project.Type != ProjectType.Undefined)
+            if (Smithbox.ProjectType != ProjectType.Undefined)
             {
-                SelectedGameOffsetData = GameOffsetsBank.Bank.Entries;
+                SelectedGameOffsetData = Smithbox.BankHandler.GameOffsets.Offsets;
             }
         }
     }

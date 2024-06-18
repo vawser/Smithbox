@@ -1,5 +1,6 @@
 ﻿using DotNext.Collections.Generic;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
@@ -7,7 +8,6 @@ using StudioCore.Editors.ModelEditor.Toolbar;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -52,7 +52,7 @@ public class ModelContainer : ObjectContainer
         RootObject.AddChild(Mesh_RootNode);
         RootObject.AddChild(MTD_RootNode);
 
-        if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
+        if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
         {
             RootObject.AddChild(Matbin_RootNode);
         }
@@ -101,7 +101,7 @@ public class ModelContainer : ObjectContainer
         }
 
         // Matbins
-        if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
+        if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
         {
             for (var i = 0; i < flver.Materials.Count; i++)
             {

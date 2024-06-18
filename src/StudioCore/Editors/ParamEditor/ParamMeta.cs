@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml;
-using StudioCore.BanksMain;
 
 namespace StudioCore.Editors.ParamEditor;
 

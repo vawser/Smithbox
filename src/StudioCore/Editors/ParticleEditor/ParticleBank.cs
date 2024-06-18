@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using Org.BouncyCastle.Utilities;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Locators;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -64,7 +64,7 @@ public static class ParticleBank
 
     public static void LoadParticles()
     {
-        if (Project.Type == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
         {
             return;
         }
@@ -85,13 +85,13 @@ public static class ParticleBank
 
             var realPath = "";
 
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
             {
-                realPath = $"{Project.GameModDirectory}\\{filePath}";
+                realPath = $"{Smithbox.ProjectRoot}\\{filePath}";
             }
             else
             {
-                realPath = $"{Project.GameRootDirectory}\\{filePath}";
+                realPath = $"{Smithbox.GameRoot}\\{filePath}";
             }
 
             if (realPath != "")
@@ -204,10 +204,10 @@ public static class ParticleBank
         BND4 writeBinder = parent.Binder as BND4;
         byte[] fileBytes = null;
 
-        var assetRoot = $@"{Project.GameRootDirectory}\{fileDir}\{info.Name}{fileExt}";
-        var assetMod = $@"{Project.GameModDirectory}\{fileDir}\{info.Name}{fileExt}";
+        var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
+        var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
 
-        switch (Project.Type)
+        switch (Smithbox.ProjectType)
         {
             case ProjectType.DS3:
                 fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
@@ -227,13 +227,13 @@ public static class ParticleBank
         }
 
         // Add folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Project.GameModDirectory}\\{fileDir}\\"))
+        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{fileDir}\\"))
         {
-            Directory.CreateDirectory($"{Project.GameModDirectory}\\{fileDir}\\");
+            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{fileDir}\\");
         }
 
         // Make a backup of the original file if a mod path doesn't exist
-        if (Project.GameModDirectory == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
         {
             File.Copy(assetRoot, $@"{assetRoot}.bak", true);
         }
@@ -269,10 +269,10 @@ public static class ParticleBank
         BND4 writeBinder = parent.Binder as BND4;
         byte[] fileBytes = null;
 
-        var assetRoot = $@"{Project.GameRootDirectory}\{fileDir}\{info.Name}{fileExt}";
-        var assetMod = $@"{Project.GameModDirectory}\{fileDir}\{info.Name}{fileExt}";
+        var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
+        var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
 
-        switch (Project.Type)
+        switch (Smithbox.ProjectType)
         {
             case ProjectType.DS3:
                 fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
@@ -292,13 +292,13 @@ public static class ParticleBank
         }
 
         // Add folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Project.GameModDirectory}\\{fileDir}\\"))
+        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{fileDir}\\"))
         {
-            Directory.CreateDirectory($"{Project.GameModDirectory}\\{fileDir}\\");
+            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{fileDir}\\");
         }
 
         // Make a backup of the original file if a mod path doesn't exist
-        if (Project.GameModDirectory == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
         {
             File.Copy(assetRoot, $@"{assetRoot}.bak", true);
         }

@@ -5,7 +5,6 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -25,6 +24,7 @@ using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Utilities;
 using StudioCore.Memory;
 using StudioCore.Locators;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -526,7 +526,7 @@ public class ParamEditorScreen : EditorScreen
 
                 try
                 {
-                    if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
+                    if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
                     {
                         if (PlatformUtils.Instance.OpenFileDialog("Select file containing params", allParamTypes, out var path))
                         {
@@ -710,7 +710,7 @@ public class ParamEditorScreen : EditorScreen
             }
         }
 
-        if (Project.Config == null)
+        if (Smithbox.ProjectHandler.CurrentProject == null)
         {
             ImGui.Text("No project loaded. File -> New Project");
             return;
@@ -1090,7 +1090,7 @@ public class ParamEditorScreen : EditorScreen
         if (ParamBank.IsDefsLoaded
             && ParamBank.PrimaryBank.Params != null
             && ParamBank.VanillaBank.Params != null
-            && ParamUpgrade_SupportedGames.Contains(Project.Type)
+            && ParamUpgrade_SupportedGames.Contains(Smithbox.ProjectType)
             && !ParamBank.PrimaryBank.IsLoadingParams
             && !ParamBank.VanillaBank.IsLoadingParams
             && ParamBank.PrimaryBank.ParamVersion < ParamBank.VanillaBank.ParamVersion)
@@ -1196,7 +1196,7 @@ public class ParamEditorScreen : EditorScreen
         if (result == ParamBank.ParamUpgradeResult.RowConflictsFound)
         {
             // If there's row conflicts write a conflict log
-            var logPath = $@"{Project.GameModDirectory}\regulationUpgradeLog.txt";
+            var logPath = $@"{Smithbox.ProjectRoot}\regulationUpgradeLog.txt";
             if (File.Exists(logPath))
             {
                 File.Delete(logPath);

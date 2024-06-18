@@ -1,9 +1,9 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +41,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Select(ViewportSelection _selection)
         {
-            if (Project.Type == ProjectType.AC6 || Project.Type == ProjectType.ER || Project.Type == ProjectType.SDT || Project.Type == ProjectType.DS3)
+            if (Smithbox.ProjectType == ProjectType.AC6 || Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.SDT || Smithbox.ProjectType == ProjectType.DS3)
             {
                 if (ImGui.RadioButton("Mass Entity Group ID Assignment##tool_Selection_Assign_Entity_Group_ID", MapEditorState.SelectedAction == MapEditorAction.Selection_Assign_Entity_Group_ID))
                 {
@@ -189,10 +189,10 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void ApplyEntityGroupIdChange(string mapid)
         {
-            var filepath = $"{Project.GameModDirectory}\\map\\MapStudio\\{mapid}.msb.dcx";
+            var filepath = $"{Smithbox.ProjectRoot}\\map\\MapStudio\\{mapid}.msb.dcx";
 
             // Armored Core
-            if (Project.Type == ProjectType.AC6)
+            if (Smithbox.ProjectType == ProjectType.AC6)
             {
                 MSB_AC6 map = MSB_AC6.Read(filepath);
 
@@ -252,7 +252,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             }
 
             // Elden Ring
-            if (Project.Type == ProjectType.ER)
+            if (Smithbox.ProjectType == ProjectType.ER)
             {
                 MSBE map = MSBE.Read(filepath);
 
@@ -312,7 +312,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             }
 
             // Sekiro
-            if (Project.Type == ProjectType.SDT)
+            if (Smithbox.ProjectType == ProjectType.SDT)
             {
                 MSBS map = MSBS.Read(filepath);
 
@@ -372,7 +372,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             }
 
             // DS3
-            if (Project.Type == ProjectType.DS3)
+            if (Smithbox.ProjectType == ProjectType.DS3)
             {
                 MSB3 map = MSB3.Read(filepath);
 

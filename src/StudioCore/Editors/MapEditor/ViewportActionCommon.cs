@@ -1,7 +1,7 @@
 ﻿using Silk.NET.SDL;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -18,14 +18,14 @@ namespace StudioCore.Editors.MapEditor
     {
         public static void SetUniqueEntityID(MsbEntity sel, MapContainer map)
         {
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                 return;
 
-            if (Project.Type == ProjectType.AC6)
+            if (Smithbox.ProjectType == ProjectType.AC6)
             {
                 SetUniqueEntityID_AC6(sel, map);
             }
-            else if (Project.Type == ProjectType.ER)
+            else if (Smithbox.ProjectType == ProjectType.ER)
             {
                 SetUniqueEntityID_ER(sel, map);
             }
@@ -274,7 +274,7 @@ namespace StudioCore.Editors.MapEditor
                         hasMatch = true;
 
                         // This is to ignore the 4 digit Entity IDs used in some DS1 maps
-                        if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
+                        if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
                         {
                             if (newID < 10000)
                             {
@@ -300,7 +300,7 @@ namespace StudioCore.Editors.MapEditor
 
         public static void SetSelfPartNames(MsbEntity sel, MapContainer map)
         {
-            if (Project.Type == ProjectType.ER)
+            if (Smithbox.ProjectType == ProjectType.ER)
             {
                 if (sel.WrappedObject is MSBE.Part.Asset)
                 {
@@ -333,7 +333,7 @@ namespace StudioCore.Editors.MapEditor
                 }
             }
 
-            if (Project.Type == ProjectType.AC6)
+            if (Smithbox.ProjectType == ProjectType.AC6)
             {
                 if (sel.WrappedObject is MSB_AC6.Part.Asset)
                 {
@@ -369,7 +369,7 @@ namespace StudioCore.Editors.MapEditor
 
         public static void SetUniqueInstanceID(MsbEntity ent, MapContainer m)
         {
-            if (Project.Type == ProjectType.ER)
+            if (Smithbox.ProjectType == ProjectType.ER)
             {
                 Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
@@ -399,7 +399,7 @@ namespace StudioCore.Editors.MapEditor
                 }
             }
 
-            if (Project.Type == ProjectType.AC6)
+            if (Smithbox.ProjectType == ProjectType.AC6)
             {
                 Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
@@ -430,7 +430,7 @@ namespace StudioCore.Editors.MapEditor
 
         public static void SetSpecificEntityGroupID(MsbEntity ent, MapContainer m)
         {
-            if (Project.Type == ProjectType.AC6)
+            if (Smithbox.ProjectType == ProjectType.AC6)
             {
                 var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
                 var added = false;
@@ -452,7 +452,7 @@ namespace StudioCore.Editors.MapEditor
 
                 part.EntityGroupIDs = newEntityGroupIDs;
             }
-            else if (Project.Type == ProjectType.ER)
+            else if (Smithbox.ProjectType == ProjectType.ER)
             {
                 var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
                 var added = false;
@@ -474,7 +474,7 @@ namespace StudioCore.Editors.MapEditor
 
                 part.EntityGroupIDs = newEntityGroupIDs;
             }
-            else if(Project.Type == ProjectType.DS3)
+            else if(Smithbox.ProjectType == ProjectType.DS3)
             {
                 var newID = CFG.Current.Prefab_SpecificEntityGroupID;
                 var added = false;
@@ -496,7 +496,7 @@ namespace StudioCore.Editors.MapEditor
 
                 part.EntityGroups = newEntityGroupIDs;
             }
-            else if (Project.Type == ProjectType.SDT)
+            else if (Smithbox.ProjectType == ProjectType.SDT)
             {
                 var newID = CFG.Current.Prefab_SpecificEntityGroupID;
                 var added = false;
@@ -522,10 +522,10 @@ namespace StudioCore.Editors.MapEditor
 
         public static void ClearEntityID(MsbEntity sel, MapContainer map)
         {
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                 return;
 
-            if (Project.Type is ProjectType.AC6 or ProjectType.ER)
+            if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.ER)
             {
                 ClearEntityID_UINT(sel, map);
             }
@@ -547,10 +547,10 @@ namespace StudioCore.Editors.MapEditor
 
         public static void ClearEntityGroupID(MsbEntity ent, MapContainer map)
         {
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                 return;
 
-            if (Project.Type == ProjectType.AC6)
+            if (Smithbox.ProjectType == ProjectType.AC6)
             {
                 var part = ent.WrappedObject as MSB_AC6.Part;
 
@@ -564,7 +564,7 @@ namespace StudioCore.Editors.MapEditor
 
                 part.EntityGroupIDs = newEntityGroupIDs;
             }
-            else if (Project.Type == ProjectType.ER)
+            else if (Smithbox.ProjectType == ProjectType.ER)
             {
                 var part = ent.WrappedObject as MSBE.Part;
 
@@ -578,7 +578,7 @@ namespace StudioCore.Editors.MapEditor
 
                 part.EntityGroupIDs = newEntityGroupIDs;
             }
-            else if (Project.Type == ProjectType.DS3)
+            else if (Smithbox.ProjectType == ProjectType.DS3)
             {
                 var part = ent.WrappedObject as MSB3.Part;
 
@@ -592,7 +592,7 @@ namespace StudioCore.Editors.MapEditor
 
                 part.EntityGroups = newEntityGroupIDs;
             }
-            else if (Project.Type == ProjectType.SDT)
+            else if (Smithbox.ProjectType == ProjectType.SDT)
             {
                 var part = ent.WrappedObject as MSBS.Part;
 

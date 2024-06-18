@@ -1,29 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Andre.Formats;
+﻿using System.Collections.Generic;
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
-using StudioCore.Platform;
-using StudioCore.UserProject;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using SoulsFormats;
-using Microsoft.AspNetCore.Components.Forms;
-using StudioCore.BanksMain;
-using Google.Protobuf.WellKnownTypes;
 using StudioCore.Banks.AliasBank;
 
 namespace StudioCore.Editors.ParamEditor.Toolbar
@@ -145,51 +126,84 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             _cachedSearchValue = _searchValue;
 
             // Cutscene
-            foreach (var entry in CutsceneAliasBank.Bank.AliasNames.GetEntries("Cutscenes"))
+            if (Smithbox.BankHandler.CutsceneAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Cutscene");
+                foreach (var entry in Smithbox.BankHandler.CutsceneAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Cutscene");
+                }
             }
 
             // Flag
-            foreach (var entry in FlagAliasBank.Bank.AliasNames.GetEntries("Flags"))
+            if (Smithbox.BankHandler.EventFlagAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Event Flag");
+                foreach (var entry in Smithbox.BankHandler.EventFlagAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Event Flag");
+                }
             }
 
-            // Models
-            foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
+            // Characters
+            if (Smithbox.BankHandler.CharacterAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Character");
+                foreach (var entry in Smithbox.BankHandler.CharacterAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Character");
+                }
             }
-            foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Objects"))
+
+            // Assets
+            if (Smithbox.BankHandler.AssetAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Object");
+                foreach (var entry in Smithbox.BankHandler.AssetAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Object");
+                }
             }
-            foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Parts"))
+
+            // Parts
+            if (Smithbox.BankHandler.AssetAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Part");
+                foreach (var entry in Smithbox.BankHandler.PartAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Part");
+                }
             }
-            foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"))
+
+            // MapPieces
+            if (Smithbox.BankHandler.AssetAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Map Piece");
+                foreach (var entry in Smithbox.BankHandler.MapAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Map Piece");
+                }
             }
 
             // Movies
-            foreach (var entry in MovieAliasBank.Bank.AliasNames.GetEntries("Movies"))
+            if (Smithbox.BankHandler.MovieAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Movie");
+                foreach (var entry in Smithbox.BankHandler.MovieAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Movie");
+                }
             }
 
             // Particles
-            foreach (var entry in ParticleAliasBank.Bank.AliasNames.GetEntries("Particles"))
+            if (Smithbox.BankHandler.ParticleAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Particle");
+                foreach (var entry in Smithbox.BankHandler.ParticleAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Particle");
+                }
             }
 
             // Sounds
-            foreach (var entry in SoundAliasBank.Bank.AliasNames.GetEntries("Sounds"))
+            if (Smithbox.BankHandler.SoundAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Sound");
+                foreach (var entry in Smithbox.BankHandler.SoundAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Sound");
+                }
             }
         }
 

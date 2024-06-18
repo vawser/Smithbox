@@ -4,7 +4,6 @@ using StudioCore.Editor;
 using StudioCore.Editors.BehaviorEditor;
 using StudioCore.Editors.ParticleEditor;
 using StudioCore.Editors.TalkEditor;
-using StudioCore.UserProject;
 using System.Numerics;
 using System.Reflection;
 using Veldrid;
@@ -12,6 +11,7 @@ using Veldrid.Sdl2;
 using static StudioCore.Editors.BehaviorEditor.HavokBehaviorBank;
 using HKLib.Serialization.hk2018.Binary;
 using HKLib.Serialization.hk2018.Xml;
+using StudioCore.Core;
 
 namespace StudioCore.BehaviorEditor;
 
@@ -65,11 +65,11 @@ public class HavokEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_BehaviorEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Project.Type != ProjectType.ER)
+        if (Smithbox.ProjectType != ProjectType.ER)
         {
             ImGui.Begin("Editor##InvalidHavokEditor");
 
-            ImGui.Text($"This editor does not support {Project.Type}.");
+            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }

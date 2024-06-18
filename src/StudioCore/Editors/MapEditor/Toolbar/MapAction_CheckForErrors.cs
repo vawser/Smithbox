@@ -1,10 +1,10 @@
 ﻿using HKX2;
 using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -137,7 +137,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 // Entity Group ID
                 foreach (var e in loadedMap?.Objects)
                 {
-                    if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
+                    if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                     {
                         if (e.WrappedObject is MSBE.Part)
                         {
@@ -166,7 +166,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                             }
                         }
                     }
-                    if (Project.Type == ProjectType.SDT)
+                    if (Smithbox.ProjectType == ProjectType.SDT)
                     {
                         if (e.WrappedObject is MSBS.Part)
                         {
@@ -195,7 +195,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                             }
                         }
                     }
-                    if (Project.Type == ProjectType.DS3)
+                    if (Smithbox.ProjectType == ProjectType.DS3)
                     {
                         if (e.WrappedObject is MSB3.Part)
                         {

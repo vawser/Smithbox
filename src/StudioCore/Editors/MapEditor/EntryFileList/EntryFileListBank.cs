@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.UserProject;
+using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -45,17 +45,17 @@ public static class EntryFileListBank
         var paramDir = $@"\map\entryfilelist\{info.FolderName}\";
         var paramExt = @".entryfilelist";
 
-        var assetRoot = $@"{Project.GameRootDirectory}\{paramDir}\{info.Name}{paramExt}";
-        var assetMod = $@"{Project.GameModDirectory}\{paramDir}\{info.Name}{paramExt}";
+        var assetRoot = $@"{Smithbox.GameRoot}\{paramDir}\{info.Name}{paramExt}";
+        var assetMod = $@"{Smithbox.ProjectRoot}\{paramDir}\{info.Name}{paramExt}";
 
         // Add folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Project.GameModDirectory}\\{paramDir}\\"))
+        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{paramDir}\\"))
         {
-            Directory.CreateDirectory($"{Project.GameModDirectory}\\{paramDir}\\");
+            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{paramDir}\\");
         }
 
         // Make a backup of the original file if a mod path doesn't exist
-        if (Project.GameModDirectory == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
         {
             File.Copy(assetRoot, $@"{assetRoot}.bak", true);
         }
@@ -88,14 +88,14 @@ public static class EntryFileListBank
             {
                 var filePath = $"{paramDir}\\{cFolder}\\{name}{paramExt}";
 
-                if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+                if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
                 {
-                    LoadEntryFileList($"{Project.GameModDirectory}\\{filePath}", true, cFolder);
+                    LoadEntryFileList($"{Smithbox.ProjectRoot}\\{filePath}", true, cFolder);
                     //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
                 }
                 else
                 {
-                    LoadEntryFileList($"{Project.GameRootDirectory}\\{filePath}", false, cFolder);
+                    LoadEntryFileList($"{Smithbox.GameRoot}\\{filePath}", false, cFolder);
                     //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
                 }
             }
@@ -142,10 +142,10 @@ public static class EntryFileListBank
         HashSet<string> folderNames = new();
         List<string> ret = new();
 
-        TaskLogs.AddLog($"{Project.GameRootDirectory + paramDir}");
+        TaskLogs.AddLog($"{Smithbox.GameRoot + paramDir}");
 
         // ROOT
-        var fNames = Directory.GetDirectories(Project.GameRootDirectory + paramDir).ToList();
+        var fNames = Directory.GetDirectories(Smithbox.GameRoot + paramDir).ToList();
         foreach (var f in fNames)
         {
             var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
@@ -154,9 +154,9 @@ public static class EntryFileListBank
         }
 
         // MOD
-        if (Project.GameModDirectory != null && Directory.Exists(Project.GameModDirectory + paramDir))
+        if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + paramDir))
         {
-            fNames = Directory.GetDirectories(Project.GameModDirectory + paramDir).ToList();
+            fNames = Directory.GetDirectories(Smithbox.ProjectRoot + paramDir).ToList();
 
             foreach (var f in fNames)
             {
@@ -182,7 +182,7 @@ public static class EntryFileListBank
         List<string> ret = new();
 
         // ROOT
-        var fNames = Directory.GetFileSystemEntries(Project.GameRootDirectory + paramDir, $@"*{paramExt}").ToList();
+        var fNames = Directory.GetFileSystemEntries(Smithbox.GameRoot + paramDir, $@"*{paramExt}").ToList();
         foreach (var f in fNames)
         {
             var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
@@ -191,9 +191,9 @@ public static class EntryFileListBank
         }
 
         // MOD
-        if (Project.GameModDirectory != null && Directory.Exists(Project.GameModDirectory + paramDir))
+        if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + paramDir))
         {
-            fNames = Directory.GetFileSystemEntries(Project.GameModDirectory + paramDir, $@"*{paramExt}").ToList();
+            fNames = Directory.GetFileSystemEntries(Smithbox.ProjectRoot + paramDir, $@"*{paramExt}").ToList();
 
             foreach (var f in fNames)
             {

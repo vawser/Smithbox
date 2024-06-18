@@ -1,20 +1,8 @@
 ﻿using ImGuiNET;
-using Microsoft.Extensions.Logging;
-using StudioCore.Banks;
-using StudioCore.Banks.AliasBank;
-using StudioCore.BanksMain;
+using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Help;
-using StudioCore.Interface.Tabs;
-using StudioCore.Platform;
-using StudioCore.Settings;
-using StudioCore.UserProject;
-using StudioCore.Utilities;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Numerics;
-using System.Text.RegularExpressions;
 
 namespace StudioCore.Interface.Windows;
 
@@ -67,7 +55,7 @@ public class ProjectWindow
     {
         if (ImGui.BeginTabItem("General"))
         {
-            if (Project.Config == null || Project.Config.ProjectName == null)
+            if (Smithbox.ProjectHandler.CurrentProject == null)
             {
                 ImGui.Text("No project loaded");
                 ImguiUtils.ShowHoverTooltip("No project has been loaded yet.");
@@ -79,10 +67,10 @@ public class ProjectWindow
             }
             else
             {
-                ImGui.Text($"Project Name: {Project.Config.ProjectName}");
-                ImGui.Text($"Project Type: {Project.Type}");
-                ImGui.Text($"Project Root Directory: {Project.GameRootDirectory}");
-                ImGui.Text($"Project Mod Directory: {Project.GameModDirectory}");
+                ImGui.Text($"Project Name: {Smithbox.ProjectHandler.CurrentProject.Config.ProjectName}");
+                ImGui.Text($"Project Type: {Smithbox.ProjectType}");
+                ImGui.Text($"Project Root Directory: {Smithbox.GameRoot}");
+                ImGui.Text($"Project Mod Directory: {Smithbox.ProjectRoot}");
 
                 ImGui.Separator();
 
@@ -94,11 +82,11 @@ public class ProjectWindow
 
                 ImGui.Separator();
 
-                var useLoose = Project.Config.UseLooseParams;
-                if (Project.Config.GameType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3)
+                var useLoose = Smithbox.ProjectHandler.CurrentProject.Config.UseLooseParams;
+                if (Smithbox.ProjectHandler.CurrentProject.Config.GameType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3)
                 {
                     if (ImGui.Checkbox("Use loose params", ref useLoose))
-                        Project.Config.UseLooseParams = useLoose;
+                        Smithbox.ProjectHandler.CurrentProject.Config.UseLooseParams = useLoose;
                     ImguiUtils.ShowHoverTooltip("Loose params means the .PARAM files will be saved outside of the regulation.bin file.\n\nFor Dark Souls II: Scholar of the First Sin, it is recommended that you enable this if add any additional rows.");
                 }
             }
@@ -126,7 +114,7 @@ public class ProjectWindow
                     CFG.Current.System_AutoSaveIntervalSeconds = 10;
                 }
 
-                Project.UpdateTimer();
+                Smithbox.ProjectHandler.UpdateTimer();
             }
 
             ImGui.Text("Automatically Save:");

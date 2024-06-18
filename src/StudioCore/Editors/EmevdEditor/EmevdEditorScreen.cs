@@ -1,24 +1,13 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.BanksMain;
-using StudioCore.Configuration;
 using StudioCore.Editor;
-using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.EmevdEditor;
-using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Interface;
-using StudioCore.Settings;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Linq;
-using System.Net;
 using System.Numerics;
-using System.Reflection;
 using Veldrid;
 using Veldrid.Sdl2;
-using static StudioCore.Editors.CutsceneEditor.CutsceneBank;
 using static StudioCore.Editors.EmevdEditor.EmevdBank;
 
 namespace StudioCore.EmevdEditor;
@@ -106,7 +95,7 @@ public class EmevdEditorScreen : EditorScreen
                 _selectedFileInfo = info;
                 _selectedScript = binder;
             }
-            var aliasName = AliasUtils.GetMapNameAlias(info.Name);
+            var aliasName = Smithbox.NameCacheHandler.MapNameCache.GetMapName(info.Name);
             AliasUtils.DisplayAlias(aliasName);
         }
 

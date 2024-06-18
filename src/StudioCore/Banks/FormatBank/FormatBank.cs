@@ -1,13 +1,7 @@
 ﻿using StudioCore.Editor;
 using System;
-using StudioCore.UserProject;
-using Veldrid;
 using System.Text.RegularExpressions;
-using Org.BouncyCastle.Asn1.Cms;
-using System.Linq;
-using DotNext.Collections.Generic;
 using System.Collections.Generic;
-using StudioCore.BanksMain;
 
 namespace StudioCore.Banks.FormatBank;
 
@@ -17,113 +11,82 @@ namespace StudioCore.Banks.FormatBank;
 /// </summary>
 public class FormatBank
 {
-    public FormatContainer _FormatBank { get; set; }
-
-    public bool IsFormatBankLoading { get; set; }
-    public bool CanReloadFormatBank { get; set; }
-
-    private string FormatInfoName = "";
-
-    private FormatBankType FormatBankType;
+    public FormatResource Information { get; set; }
+    public FormatEnum Enums { get; set; }
+    public FormatMask Masks { get; set; }
 
     private bool IsGameSpecific;
 
-    public FormatBank(FormatBankType formatBankType, bool isGameSpecific)
+    private string FormatTitle = "";
+
+    public FormatBank(string title, bool isGameSpecific)
     {
         IsGameSpecific = isGameSpecific;
-        CanReloadFormatBank = false;
-        FormatBankType = formatBankType;
 
-        if (FormatBankType is FormatBankType.MSB)
-        {
-            FormatInfoName = "MSB";
-        }
-
-        if (FormatBankType is FormatBankType.FLVER)
-        {
-            FormatInfoName = "FLVER";
-        }
-
-        if (FormatBankType is FormatBankType.GPARAM)
-        {
-            FormatInfoName = "GPARAM";
-        }
+        FormatTitle = title;
     }
 
-    public FormatResource Entries
+    public void LoadBank()
     {
-        get
+        try
         {
-            if (IsFormatBankLoading)
-            {
-                return new FormatResource();
-            }
-
-            return _FormatBank.Data;
+            Information = BankUtils.LoadFormatResourceJSON(FormatTitle, IsGameSpecific);
+            Enums = BankUtils.LoadFormatEnumJSON(FormatTitle, IsGameSpecific);
+            Masks = BankUtils.LoadFormatMaskJSON(FormatTitle, IsGameSpecific);
         }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"Failed to load Format Bank {FormatTitle}: {e.Message}");
+        }
+
+        TaskLogs.AddLog($"Format Bank: Loaded {FormatTitle} Bank");
     }
 
-    public FormatEnum Enums
+    public Dictionary<string, FormatReference> GetInformationEntries()
     {
-        get
-        {
-            if (IsFormatBankLoading)
-            {
-                return new FormatEnum();
-            }
+        Dictionary<string, FormatReference> Entries = new Dictionary<string, FormatReference>();
 
-            return _FormatBank.Enums;
+        foreach (var entry in Information.list)
+        {
+            Entries.Add(entry.id, entry);
         }
+
+        return Entries;
     }
 
-    public FormatMask Masks
+    public Dictionary<string, FormatEnumEntry> GetEnumEntries()
     {
-        get
-        {
-            if (IsFormatBankLoading)
-            {
-                return new FormatMask();
-            }
+        Dictionary<string, FormatEnumEntry> Entries = new Dictionary<string, FormatEnumEntry>();
 
-            return _FormatBank.Masks;
+        foreach (var entry in Enums.list)
+        {
+            Entries.Add(entry.id, entry);
         }
+
+        return Entries;
     }
 
-    public void ReloadFormatBank()
+    public Dictionary<string, FormatMaskEntry> GetMaskEntries()
     {
-        TaskManager.Run(new TaskManager.LiveTask($"Format Info - Load {FormatInfoName}", TaskManager.RequeueType.None, false,
-        () =>
+        Dictionary<string, FormatMaskEntry> Entries = new Dictionary<string, FormatMaskEntry>();
+
+        foreach (var entry in Masks.list)
         {
-            _FormatBank = new FormatContainer();
-            IsFormatBankLoading = true;
+            Entries.Add(entry.model, entry);
+        }
 
-            if (Project.Type != ProjectType.Undefined)
-            {
-                try
-                {
-                    _FormatBank = new FormatContainer(FormatBankType, IsGameSpecific);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"FAILED LOAD: {e.Message}");
-                }
-
-                IsFormatBankLoading = false;
-            }
-            else
-                IsFormatBankLoading = false;
-        }));
+        return Entries;
     }
 
     public string GetClassReferenceName(string classKey)
     {
         var name = "";
 
-        if (_FormatBank.Data.list == null)
+        if (Information.list == null)
             return name;
 
         // Top
-        foreach (FormatReference entry in _FormatBank.Data.list)
+        foreach (FormatReference entry in Information.list)
         {
             if (entry.id == classKey)
             {
@@ -138,11 +101,11 @@ public class FormatBank
     {
         var desc = "";
 
-        if (_FormatBank.Data.list == null)
+        if (Information.list == null)
             return desc;
 
         // Top
-        foreach (FormatReference entry in _FormatBank.Data.list)
+        foreach (FormatReference entry in Information.list)
         {
             if (entry.id == classKey)
             {
@@ -155,11 +118,11 @@ public class FormatBank
 
     public string GetReferenceName(string classKey, string name, string sharedTypeName = "")
     {
-        if (_FormatBank.Data.list == null)
+        if (Information.list == null)
             return name;
 
         // Top
-        foreach (FormatReference entry in _FormatBank.Data.list)
+        foreach (FormatReference entry in Information.list)
         {
             if (entry.id == classKey || entry.id == sharedTypeName)
             {
@@ -181,11 +144,11 @@ public class FormatBank
     {
         var desc = "";
 
-        if (_FormatBank.Data.list == null)
+        if (Information.list == null)
             return desc;
 
         // Top
-        foreach (FormatReference entry in _FormatBank.Data.list)
+        foreach (FormatReference entry in Information.list)
         {
             if (entry.id == classKey || entry.id == sharedTypeName)
             {
@@ -207,7 +170,7 @@ public class FormatBank
     {
         string typeName = "";
 
-        foreach (var entry in GparamFormatBank.Bank.Entries.list)
+        foreach (var entry in Information.list)
         {
             foreach (var subentry in entry.members)
             {
@@ -226,7 +189,7 @@ public class FormatBank
         FormatEnumEntry formatEnum = null;
         string enumName = "";
 
-        foreach(var entry in GparamFormatBank.Bank.Entries.list)
+        foreach(var entry in Information.list)
         {
             foreach(var subentry in entry.members)
             {
@@ -239,7 +202,7 @@ public class FormatBank
 
         if(enumName != "")
         {
-            formatEnum = GparamFormatBank.Bank.Enums.list.Find(x => x.id == enumName);
+            formatEnum = Enums.list.Find(x => x.id == enumName);
         }
 
         return formatEnum;
@@ -280,11 +243,11 @@ public class FormatBank
 
     public bool IsSpecifiedProperty(string key, string attribute)
     {
-        if (_FormatBank.Data.list == null)
+        if (Information.list == null)
             return false;
 
         // Top
-        foreach (FormatReference entry in _FormatBank.Data.list)
+        foreach (FormatReference entry in Information.list)
         {
             if (entry.id == key)
             {

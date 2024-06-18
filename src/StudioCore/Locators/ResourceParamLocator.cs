@@ -1,5 +1,5 @@
 ﻿using SoulsFormats;
-using StudioCore.UserProject;
+using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,13 +15,13 @@ public static class ResourceParamLocator
         ResourceDescriptor ad = new();
         var path = $@"Param\{paramStr}_{mapid}";
 
-        if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}.param") || writemode && Project.GameModDirectory != null)
+        if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}.param") || writemode && Smithbox.ProjectRoot != null)
         {
-            ad.AssetPath = $@"{Project.GameModDirectory}\{path}.param";
+            ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}.param";
         }
-        else if (File.Exists($@"{Project.GameRootDirectory}\{path}.param"))
+        else if (File.Exists($@"{Smithbox.GameRoot}\{path}.param"))
         {
-            ad.AssetPath = $@"{Project.GameRootDirectory}\{path}.param";
+            ad.AssetPath = $@"{Smithbox.GameRoot}\{path}.param";
         }
 
         ad.AssetName = mapid + $"_{appendStr}";
@@ -73,12 +73,12 @@ public static class ResourceParamLocator
 
     public static string GetGameOffsetsAssetsDir()
     {
-        return $@"Assets\GameOffsets\{Project.GetGameIDForDir()}";
+        return $@"Assets\GameOffsets\{ResourceMiscLocator.GetGameIDForDir()}";
     }
 
     public static string GetParamAssetsDir()
     {
-        return $@"Assets\Paramdex\{Project.GetGameIDForDir()}";
+        return $@"Assets\Paramdex\{ResourceMiscLocator.GetGameIDForDir()}";
     }
 
     public static string GetParamdefDir()
@@ -119,7 +119,7 @@ public static class ResourceParamLocator
 
     public static string GetStrippedRowNamesPath(string paramName)
     {
-        var dir = $@"{Project.ProjectDataDir}\Stripped Row Names";
+        var dir = $@"{Smithbox.SmithboxDataRoot}\Stripped Row Names";
         return $@"{dir}\{paramName}.txt";
     }
 
@@ -130,6 +130,6 @@ public static class ResourceParamLocator
 
     public static string GetMassEditScriptGameDir()
     {
-        return $@"Assets\MassEditScripts\{Project.GetGameIDForDir()}";
+        return $@"Assets\MassEditScripts\{ResourceMiscLocator.GetGameIDForDir()}";
     }
 }

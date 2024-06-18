@@ -2,7 +2,6 @@
 using HKX2;
 using ImGuiNET;
 using SoulsFormats;
-using StudioCore.BanksMain;
 using StudioCore.Editor;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;

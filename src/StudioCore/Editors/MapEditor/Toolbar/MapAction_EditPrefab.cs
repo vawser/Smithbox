@@ -1,8 +1,8 @@
 ﻿using ImGuiNET;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Prefabs;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -151,7 +151,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             if (prefabInfo != null)
             {
-                switch (Project.Type)
+                switch (Smithbox.ProjectType)
                 {
                     case ProjectType.AC6:
                         MapToolbar._selectedPrefabObjectNames = Prefab_AC6.GetSelectedPrefabObjects(prefabInfo, comboMap);

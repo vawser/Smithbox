@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using StudioCore.UserProject;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using StudioCore.Platform;
@@ -12,7 +11,7 @@ using StudioCore.Scene;
 using System.Linq;
 using StudioCore.Banks;
 using System.Reflection;
-using StudioCore.BanksMain;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.MapEditor.Prefabs;
 
@@ -2026,35 +2025,17 @@ public class Prefab_ER
 
         if (ent.WrappedObject is MSBE.Part.MapPiece mapPiece)
         {
-            foreach (var entry in ModelAliasBank.Bank._loadedAliasBank.GetEntries("MapPieces"))
-            {
-                if (modelName == entry.id)
-                {
-                    fullname = $"{modelName} <{entry.name}>";
-                }
-            }
+            fullname = PrefabUtils.GetMapPieceAliasName(modelName);
         }
 
         if (ent.WrappedObject is MSBE.Part.Enemy enemy || ent.WrappedObject is MSBE.Part.DummyEnemy dummyEnemy)
         {
-            foreach (var entry in ModelAliasBank.Bank._loadedAliasBank.GetEntries("Characters"))
-            {
-                if (modelName == entry.id)
-                {
-                    fullname = $"{modelName} <{entry.name}>";
-                }
-            }
+            fullname = PrefabUtils.GetCharacterAliasName(modelName);
         }
 
         if (ent.WrappedObject is MSBE.Part.Asset asset || ent.WrappedObject is MSBE.Part.DummyAsset dummyAsset)
         {
-            foreach (var entry in ModelAliasBank.Bank._loadedAliasBank.GetEntries("Objects"))
-            {
-                if (modelName == entry.id)
-                {
-                    fullname = $"{modelName} <{entry.name}>";
-                }
-            }
+            fullname = PrefabUtils.GetAssetAliasName(modelName);
         }
 
         return fullname;

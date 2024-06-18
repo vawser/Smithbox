@@ -13,15 +13,15 @@ using Veldrid.Utilities;
 using SoulsFormats;
 using StudioCore.Interface;
 using System.Reflection;
-using StudioCore.UserProject;
 using StudioCore.Banks;
 using StudioCore.MsbEditor;
-using StudioCore.BanksMain;
 using StudioCore.Platform;
 using StudioCore.Editors.MapEditor.Prefabs;
 using System.Text.Json.Serialization.Metadata;
 using System.Text.Json;
 using StudioCore.Editor;
+using StudioCore.Core;
+using StudioCore.Locators;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
@@ -75,7 +75,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static bool IsSupportedProjectTypeForPrefabs()
         {
-            if (!(Project.Type is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT or ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS1 or ProjectType.DS1R or ProjectType.AC6))
+            if (!(Smithbox.ProjectType is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT or ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS1 or ProjectType.DS1R or ProjectType.AC6))
                 return false;
 
             return true;
@@ -91,7 +91,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             _newPrefabName = "";
             _prefabTags = "";
 
-            _prefabDir = $"{Project.GameModDirectory}\\.smithbox\\{Project.GetGameIDForDir()}\\prefabs\\";
+            _prefabDir = $"{Smithbox.ProjectRoot}\\.smithbox\\{ResourceMiscLocator.GetGameIDForDir()}\\prefabs\\";
 
             if (!Directory.Exists(_prefabDir))
             {
@@ -131,7 +131,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             List<string> tags = new List<string>();
 
-            switch (Project.Type)
+            switch (Smithbox.ProjectType)
             {
                 case ProjectType.AC6:
                     var prefab_AC6 = new Prefab_AC6();

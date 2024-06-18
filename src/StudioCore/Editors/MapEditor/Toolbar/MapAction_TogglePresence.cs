@@ -1,9 +1,9 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,7 +61,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 else
                     ImguiUtils.ShowHoverTooltip("Enable the current selection, allow them to be loaded in-game.");
 
-                if (Project.Type == ProjectType.ER)
+                if (Smithbox.ProjectType == ProjectType.ER)
                 {
                     ImGui.Checkbox("Use Game Edition Disable", ref CFG.Current.Toolbar_Presence_Dummy_Type_ER);
                     ImguiUtils.ShowHoverTooltip("Use the GameEditionDisable property to disable entities instead of the Dummy entity system.");
@@ -123,7 +123,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             List<MsbEntity> sourceList = _selection.GetFilteredSelection<MsbEntity>().ToList();
             foreach (MsbEntity s in sourceList)
             {
-                if (Project.Type == ProjectType.ER)
+                if (Smithbox.ProjectType == ProjectType.ER)
                 {
                     s.SetPropertyValue("GameEditionDisable", 1);
                 }
@@ -135,7 +135,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             List<MsbEntity> sourceList = _selection.GetFilteredSelection<MsbEntity>().ToList();
             foreach (MsbEntity s in sourceList)
             {
-                if (Project.Type == ProjectType.ER)
+                if (Smithbox.ProjectType == ProjectType.ER)
                 {
                     s.SetPropertyValue("GameEditionDisable", 0);
                 }
@@ -159,7 +159,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         private static void DummyUndummySelection(ViewportSelection _selection, string[] sourceTypes, string[] targetTypes)
         {
             Type msbclass;
-            switch (Project.Type)
+            switch (Smithbox.ProjectType)
             {
                 case ProjectType.DES:
                     msbclass = typeof(MSBD);

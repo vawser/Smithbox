@@ -2,7 +2,6 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
-using StudioCore.UserProject;
 using StudioCore.Settings;
 using System;
 using System.Collections.Generic;
@@ -15,6 +14,7 @@ using static StudioCore.Editors.TextEditor.FMGBank;
 using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Utilities;
 using StudioCore.Locators;
+using StudioCore.Core;
 
 namespace StudioCore.TextEditor;
 
@@ -242,11 +242,11 @@ public class TextEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TextEntries");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Project.Type == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
         {
             ImGui.Begin("Editor##InvalidTextEditor");
 
-            ImGui.Text($"This editor does not support {Project.Type}.");
+            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }
@@ -356,7 +356,7 @@ public class TextEditorScreen : EditorScreen
         _filteredFmgInfo.Clear();
         ClearTextEditorCache();
         ResetActionManager();
-        FMGBank.ReloadFMGs(Project.Config.LastFmgLanguageUsed);
+        FMGBank.ReloadFMGs(Smithbox.ProjectHandler.CurrentProject.Config.LastFmgLanguageUsed);
     }
 
     public void Save()
@@ -559,7 +559,7 @@ public class TextEditorScreen : EditorScreen
 
         if (!FMGBank.IsLoaded)
         {
-            if (Project.Config == null)
+            if (Smithbox.ProjectHandler.CurrentProject.Config == null)
             {
                 ImGui.Text("No project loaded. File -> New Project");
             }
@@ -834,7 +834,7 @@ public class TextEditorScreen : EditorScreen
 
     private void ChangeLanguage(string path)
     {
-        Project.Config.LastFmgLanguageUsed = path;
+        Smithbox.ProjectHandler.CurrentProject.Config.LastFmgLanguageUsed = path;
         _fmgSearchAllString = "";
         _filteredFmgInfo.Clear();
         ClearTextEditorCache();

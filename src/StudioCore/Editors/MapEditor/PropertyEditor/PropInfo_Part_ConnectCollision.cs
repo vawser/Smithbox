@@ -1,5 +1,4 @@
 ﻿using ImGuiNET;
-using StudioCore.BanksMain;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
@@ -53,7 +52,7 @@ public static class PropInfo_Part_ConnectCollision
             }
 
             ImGui.Text(mapString);
-            AliasUtils.DisplayAlias(MapAliasBank.GetMapName(mapString));
+            AliasUtils.DisplayAlias(Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapString));
             ImGui.Text("");
         }
     }

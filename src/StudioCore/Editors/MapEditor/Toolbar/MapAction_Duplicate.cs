@@ -1,9 +1,9 @@
 ﻿using ImGuiNET;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +35,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImguiUtils.WrappedText("Duplicate the current selection.");
                 ImguiUtils.WrappedText("");
 
-                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
+                if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
                 {
                     if(ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID))
                     {
@@ -47,19 +47,19 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImguiUtils.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Entity ID.");
                 }
 
-                if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
+                if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Toolbar_Duplicate_Increment_InstanceID);
                     ImguiUtils.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
                 }
 
-                if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
+                if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Increment UnkPartNames for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames);
                     ImguiUtils.ShowHoverTooltip("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
                 }
 
-                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
+                if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
                 {
                     if(ImGui.Checkbox("Clear Entity ID", ref CFG.Current.Toolbar_Duplicate_Clear_Entity_ID))
                     {
@@ -74,7 +74,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImguiUtils.ShowHoverTooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
                 }
 
-                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
+                if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
                 {
                     ImguiUtils.WrappedText("");
                 }

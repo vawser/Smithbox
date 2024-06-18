@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Locators;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -46,7 +46,7 @@ public static class EmevdBank
 
         byte[] fileBytes = null;
 
-        switch (Project.Type)
+        switch (Smithbox.ProjectType)
         {
             case ProjectType.DS1:
                 fileBytes = script.Write(DCX.Type.DCX_DFLT_10000_24_9);
@@ -78,23 +78,23 @@ public static class EmevdBank
         var paramDir = @"\event\";
         var paramExt = @".emevd.dcx";
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             paramDir = @"\param";
             paramExt = @".emevd";
         }
 
-        var assetRoot = $@"{Project.GameRootDirectory}\{paramDir}\{info.Name}{paramExt}";
-        var assetMod = $@"{Project.GameModDirectory}\{paramDir}\{info.Name}{paramExt}";
+        var assetRoot = $@"{Smithbox.GameRoot}\{paramDir}\{info.Name}{paramExt}";
+        var assetMod = $@"{Smithbox.ProjectRoot}\{paramDir}\{info.Name}{paramExt}";
 
         // Add drawparam folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Project.GameModDirectory}\\{paramDir}\\"))
+        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{paramDir}\\"))
         {
-            Directory.CreateDirectory($"{Project.GameModDirectory}\\{paramDir}\\");
+            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{paramDir}\\");
         }
 
         // Make a backup of the original file if a mod path doesn't exist
-        if (Project.GameModDirectory == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
         {
             File.Copy(assetRoot, $@"{assetRoot}.bak", true);
         }
@@ -117,7 +117,7 @@ public static class EmevdBank
         var paramDir = @"\event";
         var paramExt = @".emevd.dcx";
 
-        if (Project.Type == ProjectType.DS2S)
+        if (Smithbox.ProjectType == ProjectType.DS2S)
         {
             paramDir = @"\param";
             paramExt = @".emevd";
@@ -129,14 +129,14 @@ public static class EmevdBank
         {
             var filePath = $"{paramDir}\\{name}{paramExt}";
 
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
             {
-                LoadEventScript($"{Project.GameModDirectory}\\{filePath}");
+                LoadEventScript($"{Smithbox.ProjectRoot}\\{filePath}");
                 //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
-                LoadEventScript($"{Project.GameRootDirectory}\\{filePath}");
+                LoadEventScript($"{Smithbox.GameRoot}\\{filePath}");
                 //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }

@@ -1,21 +1,7 @@
 ﻿using ImGuiNET;
-using Microsoft.Extensions.Logging;
-using StudioCore.Banks;
-using StudioCore.Banks.AliasBank;
-using StudioCore.BanksMain;
-using StudioCore.Editor;
 using StudioCore.Editors.AssetBrowser;
-using StudioCore.Help;
 using StudioCore.Interface.Tabs;
-using StudioCore.Platform;
-using StudioCore.Settings;
-using StudioCore.UserProject;
-using StudioCore.Utilities;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Numerics;
-using System.Text.RegularExpressions;
 
 namespace StudioCore.Interface.Windows;
 
@@ -41,17 +27,17 @@ public class AliasWindow
 
     public AliasWindow()
     {
-        MapAliasTab = new AliasTab(MapAliasBank.Bank, "Maps", ref CFG.Current.MapAtlas_ShowTags);
-        CharacterAliasTab = new AliasTab(ModelAliasBank.Bank, "Characters", ref CFG.Current.CharacterAtlas_ShowTags, false, false, AssetCategoryType.Character);
-        AssetAliasTab = new AliasTab(ModelAliasBank.Bank, "Objects", ref CFG.Current.AssetAtlas_ShowTags, false, false, AssetCategoryType.Asset);
-        PartAliasTab = new AliasTab(ModelAliasBank.Bank, "Parts", ref CFG.Current.PartAtlas_ShowTags, false, false, AssetCategoryType.Part);
-        MapPieceAliasTab = new AliasTab(ModelAliasBank.Bank, "MapPieces", ref CFG.Current.MapPieceAtlas_ShowTags, false, false, AssetCategoryType.MapPiece);
-        GparamAliasTab = new AliasTab(GparamAliasBank.Bank, "Gparams", ref CFG.Current.GparamNameAtlas_ShowTags);
-        CutsceneAliasTab = new AliasTab(CutsceneAliasBank.Bank, "Cutscenes", ref CFG.Current.CutsceneAtlas_ShowTags);
-        EventFlagAliasTab = new AliasTab(FlagAliasBank.Bank, "Flags", ref CFG.Current.EventFlagAtlas_ShowTags);
-        SoundAliasTab = new AliasTab(SoundAliasBank.Bank, "Sounds", ref CFG.Current.SoundAtlas_ShowTags, true);
-        ParticleAliasTab = new AliasTab(ParticleAliasBank.Bank, "Particles", ref CFG.Current.ParticleAtlas_ShowTags);
-        MovieAliasTab = new AliasTab(MovieAliasBank.Bank, "Movies", ref CFG.Current.MovieAtlas_ShowTags);
+        MapAliasTab = new AliasTab(Smithbox.BankHandler.MapAliases, "Maps", ref CFG.Current.MapAtlas_ShowTags);
+        CharacterAliasTab = new AliasTab(Smithbox.BankHandler.CharacterAliases, "Characters", ref CFG.Current.CharacterAtlas_ShowTags, false, false);
+        AssetAliasTab = new AliasTab(Smithbox.BankHandler.AssetAliases, "Assets", ref CFG.Current.AssetAtlas_ShowTags, false, false);
+        PartAliasTab = new AliasTab(Smithbox.BankHandler.PartAliases, "Parts", ref CFG.Current.PartAtlas_ShowTags, false, false);
+        MapPieceAliasTab = new AliasTab(Smithbox.BankHandler.MapPieceAliases, "MapPieces", ref CFG.Current.MapPieceAtlas_ShowTags, false, false);
+        GparamAliasTab = new AliasTab(Smithbox.BankHandler.GparamAliases, "Gparams", ref CFG.Current.GparamNameAtlas_ShowTags);
+        CutsceneAliasTab = new AliasTab(Smithbox.BankHandler.CutsceneAliases, "Cutscenes", ref CFG.Current.CutsceneAtlas_ShowTags);
+        EventFlagAliasTab = new AliasTab(Smithbox.BankHandler.EventFlagAliases, "Event Flags", ref CFG.Current.EventFlagAtlas_ShowTags);
+        SoundAliasTab = new AliasTab(Smithbox.BankHandler.SoundAliases, "Sounds", ref CFG.Current.SoundAtlas_ShowTags, true);
+        ParticleAliasTab = new AliasTab(Smithbox.BankHandler.ParticleAliases, "Particles", ref CFG.Current.ParticleAtlas_ShowTags);
+        MovieAliasTab = new AliasTab(Smithbox.BankHandler.MovieAliases, "Movies", ref CFG.Current.MovieAtlas_ShowTags);
 
         MapGroupTab = new MapGroupTab();
 

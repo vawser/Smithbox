@@ -3,13 +3,13 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using StudioCore.Locators;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -223,7 +223,7 @@ public class ParamBank
     {
         var metaDir = ResourceParamLocator.GetParammetaDir();
         var rootDir = Path.Combine(AppContext.BaseDirectory, metaDir);
-        var projectDir = $"{Project.GameModDirectory}\\.smithbox\\{metaDir}";
+        var projectDir = $"{Smithbox.ProjectRoot}\\.smithbox\\{metaDir}";
 
         if (!Directory.Exists(projectDir))
         {
@@ -258,7 +258,7 @@ public class ParamBank
             if (CFG.Current.Param_UseProjectMeta)
             {
                 var metaDir = ResourceParamLocator.GetParammetaDir();
-                var projectDir = $"{Project.GameModDirectory}\\.smithbox\\{metaDir}";
+                var projectDir = $"{Smithbox.ProjectRoot}\\.smithbox\\{metaDir}";
                 ParamMetaData.XmlDeserialize($@"{projectDir}\{fName}", pdef);
             }
             else
@@ -274,7 +274,7 @@ public class ParamBank
 
         if (useProjectNames)
         {
-            dir = $"{Project.GameModDirectory}\\.smithbox\\Assets\\Paramdex\\{Project.GetGameIDForDir()}\\Names";
+            dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Names";
         }
 
         var files = param == null
@@ -348,7 +348,7 @@ public class ParamBank
 
             Param p;
 
-            if (Project.Type == ProjectType.AC6)
+            if (Smithbox.ProjectType == ProjectType.AC6)
             {
                 _usedTentativeParamTypes = new Dictionary<string, string>();
                 p = Param.ReadIgnoreCompression(f.Bytes);
@@ -406,7 +406,7 @@ public class ParamBank
 
             // Try to fixup Elden Ring ChrModelParam for ER 1.06 because many have been saving botched params and
             // it's an easy fixup
-            if (Project.Type == ProjectType.ER &&
+            if (Smithbox.ProjectType == ProjectType.ER &&
                 p.ParamType == "CHR_MODEL_PARAM_ST" &&
                 version == 10601000)
             {
@@ -429,7 +429,7 @@ public class ParamBank
                 var name = f.Name.Split("\\").Last();
                 var message = $"Could not apply ParamDef for {name}";
 
-                if (Project.Type == ProjectType.DS1R &&
+                if (Smithbox.ProjectType == ProjectType.DS1R &&
                     name is "m99_ToneMapBank.param" or "m99_ToneCorrectBank.param"
                         or "default_ToneCorrectBank.param")
                 {
@@ -481,8 +481,8 @@ public class ParamBank
 
     private void LoadParamsDES()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         var paramBinderName = GetDesGameparamName(mod);
         if (paramBinderName == "")
@@ -499,7 +499,7 @@ public class ParamBank
 
         if (!File.Exists(param))
         {
-            throw CreateParamMissingException(Project.Type);
+            throw CreateParamMissingException(Smithbox.ProjectType);
         }
 
         LoadParamsDESFromFile(param);
@@ -530,13 +530,13 @@ public class ParamBank
 
     private void LoadVParamsDES()
     {
-        var paramBinderName = GetDesGameparamName(Project.GameRootDirectory);
+        var paramBinderName = GetDesGameparamName(Smithbox.GameRoot);
 
-        LoadParamsDESFromFile($@"{Project.GameRootDirectory}\param\gameparam\{paramBinderName}");
+        LoadParamsDESFromFile($@"{Smithbox.GameRoot}\param\gameparam\{paramBinderName}");
 
-        if (Directory.Exists($@"{Project.GameRootDirectory}\param\drawparam"))
+        if (Directory.Exists($@"{Smithbox.GameRoot}\param\drawparam"))
         {
-            foreach (var p in Directory.GetFiles($@"{Project.GameRootDirectory}\param\drawparam", "*.parambnd.dcx"))
+            foreach (var p in Directory.GetFiles($@"{Smithbox.GameRoot}\param\drawparam", "*.parambnd.dcx"))
             {
                 LoadParamsDS1FromFile(p);
             }
@@ -558,12 +558,12 @@ public class ParamBank
 
     private void LoadParamsDS1()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         if (!File.Exists($@"{dir}\\param\GameParam\GameParam.parambnd"))
         {
-            throw CreateParamMissingException(Project.Type);
+            throw CreateParamMissingException(Smithbox.ProjectType);
         }
 
         // Load params
@@ -601,11 +601,11 @@ public class ParamBank
 
     private void LoadVParamsDS1()
     {
-        LoadParamsDS1FromFile($@"{Project.GameRootDirectory}\param\GameParam\GameParam.parambnd");
+        LoadParamsDS1FromFile($@"{Smithbox.GameRoot}\param\GameParam\GameParam.parambnd");
 
-        if (Directory.Exists($@"{Project.GameRootDirectory}\param\DrawParam"))
+        if (Directory.Exists($@"{Smithbox.GameRoot}\param\DrawParam"))
         {
-            foreach (var p in Directory.GetFiles($@"{Project.GameRootDirectory}\param\DrawParam", "*.parambnd"))
+            foreach (var p in Directory.GetFiles($@"{Smithbox.GameRoot}\param\DrawParam", "*.parambnd"))
             {
                 LoadParamsDS1FromFile(p);
             }
@@ -627,11 +627,11 @@ public class ParamBank
 
     private void LoadParamsDS1R()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
         if (!File.Exists($@"{dir}\\param\GameParam\GameParam.parambnd.dcx"))
         {
-            throw CreateParamMissingException(Project.Type);
+            throw CreateParamMissingException(Smithbox.ProjectType);
         }
 
         // Load params
@@ -669,11 +669,11 @@ public class ParamBank
 
     private void LoadVParamsDS1R()
     {
-        LoadParamsDS1RFromFile($@"{Project.GameRootDirectory}\param\GameParam\GameParam.parambnd.dcx");
+        LoadParamsDS1RFromFile($@"{Smithbox.GameRoot}\param\GameParam\GameParam.parambnd.dcx");
 
-        if (Directory.Exists($@"{Project.GameRootDirectory}\param\DrawParam"))
+        if (Directory.Exists($@"{Smithbox.GameRoot}\param\DrawParam"))
         {
-            foreach (var p in Directory.GetFiles($@"{Project.GameRootDirectory}\param\DrawParam", "*.parambnd.dcx"))
+            foreach (var p in Directory.GetFiles($@"{Smithbox.GameRoot}\param\DrawParam", "*.parambnd.dcx"))
             {
                 LoadParamsDS1FromFile(p);
             }
@@ -695,12 +695,12 @@ public class ParamBank
 
     private void LoadParamsBBSekiro()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         if (!File.Exists($@"{dir}\\param\gameparam\gameparam.parambnd.dcx"))
         {
-            throw CreateParamMissingException(Project.Type);
+            throw CreateParamMissingException(Smithbox.ProjectType);
         }
 
         // Load params
@@ -716,7 +716,7 @@ public class ParamBank
 
     private void LoadVParamsBBSekiro()
     {
-        LoadParamsBBSekiroFromFile($@"{Project.GameRootDirectory}\param\gameparam\gameparam.parambnd.dcx");
+        LoadParamsBBSekiroFromFile($@"{Smithbox.GameRoot}\param\gameparam\gameparam.parambnd.dcx");
     }
 
     private void LoadParamsBBSekiroFromFile(string path)
@@ -746,12 +746,12 @@ public class ParamBank
 
     private void LoadParamsDS2()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         if (!File.Exists($@"{dir}\enc_regulation.bnd.dcx"))
         {
-            throw CreateParamMissingException(Project.Type);
+            throw CreateParamMissingException(Smithbox.ProjectType);
         }
 
         if (!BND4.Is($@"{dir}\enc_regulation.bnd.dcx"))
@@ -795,21 +795,21 @@ public class ParamBank
 
     private void LoadVParamsDS2()
     {
-        if (!File.Exists($@"{Project.GameRootDirectory}\enc_regulation.bnd.dcx"))
+        if (!File.Exists($@"{Smithbox.GameRoot}\enc_regulation.bnd.dcx"))
         {
-            throw CreateParamMissingException(Project.Type);
+            throw CreateParamMissingException(Smithbox.ProjectType);
         }
 
-        if (!BND4.Is($@"{Project.GameRootDirectory}\enc_regulation.bnd.dcx"))
+        if (!BND4.Is($@"{Smithbox.GameRoot}\enc_regulation.bnd.dcx"))
         {
             
         }
 
         // Load loose params
-        List<string> looseParams = GetLooseParamsInDir(Project.GameRootDirectory);
+        List<string> looseParams = GetLooseParamsInDir(Smithbox.GameRoot);
 
-        LoadParamsDS2FromFile(looseParams, $@"{Project.GameRootDirectory}\enc_regulation.bnd.dcx",
-            $@"{Project.GameRootDirectory}\Param\EnemyParam.param");
+        LoadParamsDS2FromFile(looseParams, $@"{Smithbox.GameRoot}\enc_regulation.bnd.dcx",
+            $@"{Smithbox.GameRoot}\Param\EnemyParam.param");
     }
 
     private void LoadParamsDS2FromFile(List<string> looseParams, string path, string enemypath)
@@ -874,7 +874,7 @@ public class ParamBank
 
             try
             {
-                if (Project.Config.UseLooseParams)
+                if (Smithbox.ProjectHandler.CurrentProject.Config.UseLooseParams)
                 {
                     // Loose params: override params already loaded via regulation
                     PARAMDEF def = _paramdefs[lp.ParamType];
@@ -895,7 +895,7 @@ public class ParamBank
             catch (Exception e)
             {
                 var message = $"Could not apply ParamDef for {fname}";
-                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                 {
                     if (fname is "GENERATOR_DBG_LOCATION_PARAM")
                     {
@@ -917,17 +917,17 @@ public class ParamBank
 
     private void LoadParamsDS3()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         if (!File.Exists($@"{dir}\Data0.bdt"))
         {
-            throw CreateParamMissingException(Project.Type);
+            throw CreateParamMissingException(Smithbox.ProjectType);
         }
 
         var vparam = $@"{dir}\Data0.bdt";
         // Load loose params if they exist
-        if (Project.Config.UseLooseParams && File.Exists($@"{mod}\\param\gameparam\gameparam_dlc2.parambnd.dcx"))
+        if (Smithbox.ProjectHandler.CurrentProject.Config.UseLooseParams && File.Exists($@"{mod}\\param\gameparam\gameparam_dlc2.parambnd.dcx"))
         {
             LoadParamsDS3FromFile($@"{mod}\param\gameparam\gameparam_dlc2.parambnd.dcx");
         }
@@ -946,12 +946,12 @@ public class ParamBank
 
     private void LoadVParamsDS3()
     {
-        LoadParamsDS3FromFile($@"{Project.GameRootDirectory}\Data0.bdt", true);
+        LoadParamsDS3FromFile($@"{Smithbox.GameRoot}\Data0.bdt", true);
     }
 
     private void LoadParamsDS3FromFile(string path, bool isVanillaLoad = false)
     {
-        var tryLooseParams = Project.Config.UseLooseParams;
+        var tryLooseParams = Smithbox.ProjectHandler.CurrentProject.Config.UseLooseParams;
         if(isVanillaLoad)
         {
             tryLooseParams = false;
@@ -970,18 +970,18 @@ public class ParamBank
 
     private void LoadParamsER()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         if (!File.Exists($@"{dir}\\regulation.bin"))
         {
-            throw CreateParamMissingException(Project.Type);
+            throw CreateParamMissingException(Smithbox.ProjectType);
         }
 
         // Load params
         var param = $@"{mod}\regulation.bin";
 
-        if (!File.Exists(param) || Project.Config.PartialParams)
+        if (!File.Exists(param) || Smithbox.ProjectHandler.CurrentProject.Config.PartialParams)
         {
             param = $@"{dir}\regulation.bin";
         }
@@ -990,7 +990,7 @@ public class ParamBank
 
         param = $@"{mod}\regulation.bin";
 
-        if (Project.Config.PartialParams && File.Exists(param))
+        if (Smithbox.ProjectHandler.CurrentProject.Config.PartialParams && File.Exists(param))
         {
             using BND4 pParamBnd = SFUtil.DecryptERRegulation(param);
             Dictionary<string, Param> cParamBank = new();
@@ -1046,15 +1046,15 @@ public class ParamBank
 
     private void LoadVParamsER()
     {
-        LoadParamsERFromFile($@"{Project.GameRootDirectory}\regulation.bin");
+        LoadParamsERFromFile($@"{Smithbox.GameRoot}\regulation.bin");
 
-        var sysParam = $@"{Project.GameRootDirectory}\param\systemparam\systemparam.parambnd.dcx";
+        var sysParam = $@"{Smithbox.GameRoot}\param\systemparam\systemparam.parambnd.dcx";
         if (File.Exists(sysParam))
         {
             LoadParamsERFromFile(sysParam, false);
         }
 
-        var eventParam = $@"{Project.GameRootDirectory}\param\eventparam\eventparam.parambnd.dcx";
+        var eventParam = $@"{Smithbox.GameRoot}\param\eventparam\eventparam.parambnd.dcx";
         if (File.Exists(eventParam))
         {
             LoadParamsERFromFile(eventParam, false);
@@ -1091,12 +1091,12 @@ public class ParamBank
 
     private void LoadParamsAC6()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         if (!File.Exists($@"{dir}\\regulation.bin"))
         {
-            throw CreateParamMissingException(Project.Type);
+            throw CreateParamMissingException(Smithbox.ProjectType);
         }
 
         // Load params
@@ -1141,21 +1141,21 @@ public class ParamBank
 
     private void LoadVParamsAC6()
     {
-        LoadParamsAC6FromFile($@"{Project.GameRootDirectory}\regulation.bin");
+        LoadParamsAC6FromFile($@"{Smithbox.GameRoot}\regulation.bin");
 
-        var sysParam = $@"{Project.GameRootDirectory}\param\systemparam\systemparam.parambnd.dcx";
+        var sysParam = $@"{Smithbox.GameRoot}\param\systemparam\systemparam.parambnd.dcx";
         if (File.Exists(sysParam))
         {
             LoadParamsAC6FromFile(sysParam, false);
         }
 
-        var graphicsConfigParam = $@"{Project.GameRootDirectory}\param\graphicsconfig\graphicsconfig.parambnd.dcx";
+        var graphicsConfigParam = $@"{Smithbox.GameRoot}\param\graphicsconfig\graphicsconfig.parambnd.dcx";
         if (File.Exists(graphicsConfigParam))
         {
             LoadParamsAC6FromFile(graphicsConfigParam, false);
         }
 
-        var eventParam = $@"{Project.GameRootDirectory}\param\eventparam\eventparam.parambnd.dcx";
+        var eventParam = $@"{Smithbox.GameRoot}\param\eventparam\eventparam.parambnd.dcx";
         if (File.Exists(eventParam))
         {
             LoadParamsAC6FromFile(eventParam, false);
@@ -1207,7 +1207,7 @@ public class ParamBank
         TaskManager.Run(new TaskManager.LiveTask("Param - Load Params", TaskManager.RequeueType.WaitThenRequeue,
             false, () =>
             {
-                if (Project.Type != ProjectType.Undefined)
+                if (Smithbox.ProjectType != ProjectType.Undefined)
                 {
                     List<(string, PARAMDEF)> defPairs = LoadParamdefs();
                     IsDefsLoaded = true;
@@ -1219,42 +1219,42 @@ public class ParamBank
                         }));
                 }
 
-                if (Project.Type == ProjectType.DES)
+                if (Smithbox.ProjectType == ProjectType.DES)
                 {
                     PrimaryBank.LoadParamsDES();
                 }
 
-                if (Project.Type == ProjectType.DS1)
+                if (Smithbox.ProjectType == ProjectType.DS1)
                 {
                     PrimaryBank.LoadParamsDS1();
                 }
 
-                if (Project.Type == ProjectType.DS1R)
+                if (Smithbox.ProjectType == ProjectType.DS1R)
                 {
                     PrimaryBank.LoadParamsDS1R();
                 }
 
-                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                 {
                     PrimaryBank.LoadParamsDS2();
                 }
 
-                if (Project.Type == ProjectType.DS3)
+                if (Smithbox.ProjectType == ProjectType.DS3)
                 {
                     PrimaryBank.LoadParamsDS3();
                 }
 
-                if (Project.Type == ProjectType.BB || Project.Type == ProjectType.SDT)
+                if (Smithbox.ProjectType == ProjectType.BB || Smithbox.ProjectType == ProjectType.SDT)
                 {
                     PrimaryBank.LoadParamsBBSekiro();
                 }
 
-                if (Project.Type == ProjectType.ER)
+                if (Smithbox.ProjectType == ProjectType.ER)
                 {
                     PrimaryBank.LoadParamsER();
                 }
 
-                if (Project.Type == ProjectType.AC6)
+                if (Smithbox.ProjectType == ProjectType.AC6)
                 {
                     PrimaryBank.LoadParamsAC6();
                 }
@@ -1267,42 +1267,42 @@ public class ParamBank
                 TaskManager.Run(new TaskManager.LiveTask("Param - Load Vanilla Params",
                     TaskManager.RequeueType.WaitThenRequeue, false, () =>
                     {
-                        if (Project.Type == ProjectType.DES)
+                        if (Smithbox.ProjectType == ProjectType.DES)
                         {
                             VanillaBank.LoadVParamsDES();
                         }
 
-                        if (Project.Type == ProjectType.DS1)
+                        if (Smithbox.ProjectType == ProjectType.DS1)
                         {
                             VanillaBank.LoadVParamsDS1();
                         }
 
-                        if (Project.Type == ProjectType.DS1R)
+                        if (Smithbox.ProjectType == ProjectType.DS1R)
                         {
                             VanillaBank.LoadVParamsDS1R();
                         }
 
-                        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                         {
                             VanillaBank.LoadVParamsDS2();
                         }
 
-                        if (Project.Type == ProjectType.DS3)
+                        if (Smithbox.ProjectType == ProjectType.DS3)
                         {
                             VanillaBank.LoadVParamsDS3();
                         }
 
-                        if (Project.Type == ProjectType.BB || Project.Type == ProjectType.SDT)
+                        if (Smithbox.ProjectType == ProjectType.BB || Smithbox.ProjectType == ProjectType.SDT)
                         {
                             VanillaBank.LoadVParamsBBSekiro();
                         }
 
-                        if (Project.Type == ProjectType.ER)
+                        if (Smithbox.ProjectType == ProjectType.ER)
                         {
                             VanillaBank.LoadVParamsER();
                         }
 
-                        if (Project.Type == ProjectType.AC6)
+                        if (Smithbox.ProjectType == ProjectType.AC6)
                         {
                             VanillaBank.LoadVParamsAC6();
                         }
@@ -1314,9 +1314,9 @@ public class ParamBank
                             () => RefreshAllParamDiffCaches(true)));
                     }));
 
-                if (Project.NewProjectOpts != null)
+                if (Smithbox.ProjectHandler.NewProjectModal.NewProjectOpts != null)
                 {
-                    if (Project.NewProjectOpts.loadDefaultNames)
+                    if (Smithbox.ProjectHandler.NewProjectModal.NewProjectOpts.loadDefaultNames)
                     {
                         try
                         {
@@ -1339,40 +1339,40 @@ public class ParamBank
         newBank._params = new Dictionary<string, Param>();
         newBank.IsLoadingParams = true;
 
-        if (Project.Type == ProjectType.AC6)
+        if (Smithbox.ProjectType == ProjectType.AC6)
         {
             newBank.LoadParamsAC6FromFile(path);
         }
-        else if (Project.Type == ProjectType.ER)
+        else if (Smithbox.ProjectType == ProjectType.ER)
         {
             newBank.LoadParamsERFromFile(path);
         }
-        else if (Project.Type == ProjectType.SDT)
+        else if (Smithbox.ProjectType == ProjectType.SDT)
         {
             newBank.LoadParamsBBSekiroFromFile(path);
         }
-        else if (Project.Type == ProjectType.DS3)
+        else if (Smithbox.ProjectType == ProjectType.DS3)
         {
             newBank.LoadParamsDS3FromFile(path);
         }
-        else if (Project.Type == ProjectType.BB)
+        else if (Smithbox.ProjectType == ProjectType.BB)
         {
             newBank.LoadParamsBBSekiroFromFile(path);
         }
-        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             List<string> looseParams = GetLooseParamsInDir(looseDir);
             newBank.LoadParamsDS2FromFile(looseParams, path, enemyPath);
         }
-        else if (Project.Type == ProjectType.DS1R)
+        else if (Smithbox.ProjectType == ProjectType.DS1R)
         {
             newBank.LoadParamsDS1RFromFile(path);
         }
-        else if (Project.Type == ProjectType.DS1)
+        else if (Smithbox.ProjectType == ProjectType.DS1)
         {
             newBank.LoadParamsDS1FromFile(path);
         }
-        else if (Project.Type == ProjectType.DES)
+        else if (Smithbox.ProjectType == ProjectType.DES)
         {
             newBank.LoadParamsDESFromFile(path);
         }
@@ -1554,8 +1554,8 @@ public class ParamBank
 
     private void SaveParamsDS1()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         if (!File.Exists($@"{dir}\\param\GameParam\GameParam.parambnd"))
         {
@@ -1586,9 +1586,9 @@ public class ParamBank
         Utils.WriteWithBackup(dir, mod, @"param\GameParam\GameParam.parambnd", paramBnd);
 
         // Drawparam
-        if (Directory.Exists($@"{Project.GameRootDirectory}\param\DrawParam"))
+        if (Directory.Exists($@"{Smithbox.GameRoot}\param\DrawParam"))
         {
-            foreach (var bnd in Directory.GetFiles($@"{Project.GameRootDirectory}\param\DrawParam", "*.parambnd"))
+            foreach (var bnd in Directory.GetFiles($@"{Smithbox.GameRoot}\param\DrawParam", "*.parambnd"))
             {
                 using var drawParamBnd = BND3.Read(bnd);
                 foreach (BinderFile p in drawParamBnd.Files)
@@ -1606,8 +1606,8 @@ public class ParamBank
 
     private void SaveParamsDS1R()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         if (!File.Exists($@"{dir}\\param\GameParam\GameParam.parambnd.dcx"))
         {
@@ -1637,9 +1637,9 @@ public class ParamBank
         Utils.WriteWithBackup(dir, mod, @"param\GameParam\GameParam.parambnd.dcx", paramBnd);
 
         // Drawparam
-        if (Directory.Exists($@"{Project.GameRootDirectory}\param\DrawParam"))
+        if (Directory.Exists($@"{Smithbox.GameRoot}\param\DrawParam"))
         {
-            foreach (var bnd in Directory.GetFiles($@"{Project.GameRootDirectory}\param\DrawParam", "*.parambnd.dcx"))
+            foreach (var bnd in Directory.GetFiles($@"{Smithbox.GameRoot}\param\DrawParam", "*.parambnd.dcx"))
             {
                 using var drawParamBnd = BND3.Read(bnd);
 
@@ -1658,8 +1658,8 @@ public class ParamBank
 
     private void SaveParamsDS2()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         if (!File.Exists($@"{dir}\enc_regulation.bnd.dcx"))
         {
@@ -1700,7 +1700,7 @@ public class ParamBank
             paramBnd = BND4.Read(param);
         }
 
-        if (!Project.Config.UseLooseParams)
+        if (!Smithbox.ProjectHandler.CurrentProject.Config.UseLooseParams)
         {
             // Save params non-loosely: Replace params regulation and write remaining params loosely.
 
@@ -1803,8 +1803,8 @@ public class ParamBank
 
     private void SaveParamsDS3()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         if (!File.Exists($@"{dir}\Data0.bdt"))
         {
@@ -1832,7 +1832,7 @@ public class ParamBank
         }
 
         // If not loose write out the new regulation
-        if (!Project.Config.UseLooseParams)
+        if (!Smithbox.ProjectHandler.CurrentProject.Config.UseLooseParams)
         {
             Utils.WriteWithBackup(dir, mod, @"Data0.bdt", paramBnd, ProjectType.DS3);
         }
@@ -1871,8 +1871,8 @@ public class ParamBank
 
     private void SaveParamsBBSekiro()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         if (!File.Exists($@"{dir}\\param\gameparam\gameparam.parambnd.dcx"))
         {
@@ -1904,8 +1904,8 @@ public class ParamBank
 
     private void SaveParamsDES()
     {
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         var paramBinderName = GetDesGameparamName(mod);
         if (paramBinderName == "")
@@ -1959,15 +1959,15 @@ public class ParamBank
 
         // Drawparam
         List<string> drawParambndPaths = new();
-        if (Directory.Exists($@"{Project.GameRootDirectory}\param\drawparam"))
+        if (Directory.Exists($@"{Smithbox.GameRoot}\param\drawparam"))
         {
-            foreach (var bnd in Directory.GetFiles($@"{Project.GameRootDirectory}\param\drawparam", "*.parambnd.dcx"))
+            foreach (var bnd in Directory.GetFiles($@"{Smithbox.GameRoot}\param\drawparam", "*.parambnd.dcx"))
             {
                 drawParambndPaths.Add(bnd);
             }
 
             // Also save decompressed parambnds because DeS debug uses them.
-            foreach (var bnd in Directory.GetFiles($@"{Project.GameRootDirectory}\param\drawparam", "*.parambnd"))
+            foreach (var bnd in Directory.GetFiles($@"{Smithbox.GameRoot}\param\drawparam", "*.parambnd"))
             {
                 drawParambndPaths.Add(bnd);
             }
@@ -2002,7 +2002,7 @@ public class ParamBank
                     IReadOnlyList<Param.Row> backup = paramFile.Rows;
                     List<Param.Row> changed = new();
 
-                    if (Project.Config.PartialParams)
+                    if (Smithbox.ProjectHandler.CurrentProject.Config.PartialParams)
                     {
                         TaskManager.WaitAll(); //wait on dirtycache update
                         HashSet<int> dirtyCache = _vanillaDiffCache[Path.GetFileNameWithoutExtension(p.Name)];
@@ -2023,8 +2023,8 @@ public class ParamBank
             }
         }
 
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
 
         if (!File.Exists($@"{dir}\\regulation.bin"))
         {
@@ -2074,7 +2074,7 @@ public class ParamBank
                 if (_params.TryGetValue(paramName, out Param paramFile))
                 {
                     IReadOnlyList<Param.Row> backup = paramFile.Rows;
-                    if (Project.Type is ProjectType.AC6)
+                    if (Smithbox.ProjectType is ProjectType.AC6)
                     {
                         if (_usedTentativeParamTypes.TryGetValue(paramName, out var oldParamType))
                         {
@@ -2096,8 +2096,8 @@ public class ParamBank
             }
         }
 
-        var dir = Project.GameRootDirectory;
-        var mod = Project.GameModDirectory;
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
         if (!File.Exists($@"{dir}\\regulation.bin"))
         {
             TaskLogs.AddLog("Cannot locate param files. Save failed.",
@@ -2150,42 +2150,42 @@ public class ParamBank
             return;
         }
 
-        if (Project.Type == ProjectType.DS1)
+        if (Smithbox.ProjectType == ProjectType.DS1)
         {
             SaveParamsDS1();
         }
 
-        if (Project.Type == ProjectType.DS1R)
+        if (Smithbox.ProjectType == ProjectType.DS1R)
         {
             SaveParamsDS1R();
         }
 
-        if (Project.Type == ProjectType.DES)
+        if (Smithbox.ProjectType == ProjectType.DES)
         {
             SaveParamsDES();
         }
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             SaveParamsDS2();
         }
 
-        if (Project.Type == ProjectType.DS3)
+        if (Smithbox.ProjectType == ProjectType.DS3)
         {
             SaveParamsDS3();
         }
 
-        if (Project.Type == ProjectType.BB || Project.Type == ProjectType.SDT)
+        if (Smithbox.ProjectType == ProjectType.BB || Smithbox.ProjectType == ProjectType.SDT)
         {
             SaveParamsBBSekiro();
         }
 
-        if (Project.Type == ProjectType.ER)
+        if (Smithbox.ProjectType == ProjectType.ER)
         {
             SaveParamsER();
         }
 
-        if (Project.Type == ProjectType.AC6)
+        if (Smithbox.ProjectType == ProjectType.AC6)
         {
             SaveParamsAC6();
         }
@@ -2460,23 +2460,23 @@ public class ParamBank
         }
 
         // Backup modded params
-        var modRegulationPath = $@"{Project.GameModDirectory}\regulation.bin";
+        var modRegulationPath = $@"{Smithbox.ProjectRoot}\regulation.bin";
         File.Copy(modRegulationPath, $@"{modRegulationPath}.upgrade.bak", true);
 
         // Load old vanilla regulation
         BND4 oldVanillaParamBnd;
-        if (Project.Type == ProjectType.ER)
+        if (Smithbox.ProjectType == ProjectType.ER)
         {
             oldVanillaParamBnd = SFUtil.DecryptERRegulation(oldVanillaParamPath);
         }
-        else if (Project.Type == ProjectType.AC6)
+        else if (Smithbox.ProjectType == ProjectType.AC6)
         {
             oldVanillaParamBnd = SFUtil.DecryptAC6Regulation(oldVanillaParamPath);
         }
         else
         {
             throw new NotImplementedException(
-                $"Param upgrading for game type {Project.Type} is not supported.");
+                $"Param upgrading for game type {Smithbox.ProjectType} is not supported.");
         }
 
         Dictionary<string, Param> oldVanillaParams = new();

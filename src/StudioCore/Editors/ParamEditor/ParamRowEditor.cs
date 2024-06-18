@@ -1,13 +1,12 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
 using SoulsFormats;
-using StudioCore.BanksMain;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Settings;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -279,7 +278,7 @@ public class ParamRowEditor
         if (EditorDecorations.ImGuiTableStdColumns("ParamFieldsT", columnCount, false))
         {
             List<string> pinnedFields =
-                Project.Config.PinnedFields.GetValueOrDefault(activeParam, null);
+                Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields.GetValueOrDefault(activeParam, null);
 
             if (CFG.Current.Param_PinnedRowsStayVisible)
             {
@@ -648,27 +647,27 @@ public class ParamRowEditor
 
                 if (showParticleEnum)
                 {
-                    EditorDecorations.AliasEnumValueText(ParticleAliasBank.Bank.GetEnumDictionary(), oldval.ToString());
+                    EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.ParticleAliases.GetEnumDictionary(), oldval.ToString());
                 }
 
                 if (showSoundEnum)
                 {
-                    EditorDecorations.AliasEnumValueText(SoundAliasBank.Bank.GetEnumDictionary(), oldval.ToString());
+                    EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.SoundAliases.GetEnumDictionary(), oldval.ToString());
                 }
 
                 if (showFlagEnum)
                 {
-                    EditorDecorations.ConditionalAliasEnumValueText(FlagAliasBank.Bank.GetEnumDictionary(), oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+                    EditorDecorations.ConditionalAliasEnumValueText(Smithbox.BankHandler.EventFlagAliases.GetEnumDictionary(), oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
                 }
 
                 if (showCutsceneEnum)
                 {
-                    EditorDecorations.AliasEnumValueText(CutsceneAliasBank.Bank.GetEnumDictionary(), oldval.ToString());
+                    EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.CutsceneAliases.GetEnumDictionary(), oldval.ToString());
                 }
 
                 if (showMovieEnum)
                 {
-                    EditorDecorations.ConditionalAliasEnumValueText(MovieAliasBank.Bank.GetEnumDictionary(), oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                    EditorDecorations.ConditionalAliasEnumValueText(Smithbox.BankHandler.MovieAliases.GetEnumDictionary(), oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
                 }
 
                 ImGui.EndGroup();
@@ -981,12 +980,12 @@ public class ParamRowEditor
         {
             if (ImGui.MenuItem(isPinned ? "Unpin " : "Pin " + internalName))
             {
-                if (!Project.Config.PinnedFields.ContainsKey(activeParam))
+                if (!Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields.ContainsKey(activeParam))
                 {
-                    Project.Config.PinnedFields.Add(activeParam, new List<string>());
+                    Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields.Add(activeParam, new List<string>());
                 }
 
-                List<string> pinned = Project.Config.PinnedFields[activeParam];
+                List<string> pinned = Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields[activeParam];
 
                 if (isPinned)
                 {
@@ -1000,13 +999,13 @@ public class ParamRowEditor
 
             if (isPinned)
             {
-                EditorDecorations.PinListReorderOptions(Project.Config.PinnedFields[activeParam],
+                EditorDecorations.PinListReorderOptions(Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields[activeParam],
                     internalName);
             }
 
             if (ImGui.Selectable("Unpin all"))
             {
-                Project.Config.PinnedFields.Clear();
+                Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields.Clear();
             }
 
             ImGui.Separator();

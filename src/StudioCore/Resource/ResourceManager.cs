@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.UserProject;
 using StudioCore.Scene;
 using StudioCore.Tasks;
 using System;
@@ -14,10 +13,8 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
-using StudioCore.Settings;
-using StudioCore.BanksMain;
-using HKX2;
 using StudioCore.Locators;
+using StudioCore.Core;
 
 namespace StudioCore.Resource;
 
@@ -616,7 +613,7 @@ public static class ResourceManager
                 string o;
                 var absoluteBinderPath = ResourcePathLocator.VirtualToRealPath(BinderVirtualPath, out o);
 
-                Binder = InstantiateBinderReaderForFile(absoluteBinderPath, Project.Type);
+                Binder = InstantiateBinderReaderForFile(absoluteBinderPath, Smithbox.ProjectType);
                 if (Binder == null)
                 {
                     return;
@@ -721,7 +718,7 @@ public static class ResourceManager
                 }
             }
 
-            if(ResourceMask.HasFlag(ResourceType.CollisionHKX) || Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if(ResourceMask.HasFlag(ResourceType.CollisionHKX) || Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
                 // Ignore dispose if the resource is a Collision, or we are working with DS2
             }
@@ -1020,7 +1017,7 @@ public static class ResourceManager
                     string path = null;
                     if (texpath.StartsWith("map/tex"))
                     {
-                        path = $@"{Project.GameRootDirectory}\map\tx\{Path.GetFileName(texpath)}.tpf";
+                        path = $@"{Smithbox.GameRoot}\map\tx\{Path.GetFileName(texpath)}.tpf";
                     }
 
                     if (path != null && File.Exists(path))
@@ -1045,7 +1042,7 @@ public static class ResourceManager
                 {
                     var texpath = r.Key;
                     string path = null;
-                    if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
+                    if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                     {
                         if (texpath.StartsWith("aet/"))
                         {
@@ -1086,7 +1083,7 @@ public static class ResourceManager
                         }
                     }
 
-                    if (Project.Type == ProjectType.AC6 || Project.Type == ProjectType.ER || Project.Type == ProjectType.SDT || Project.Type == ProjectType.DS3)
+                    if (Smithbox.ProjectType == ProjectType.AC6 || Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.SDT || Smithbox.ProjectType == ProjectType.DS3)
                     {
                         // Systex
                         if (texpath.Contains("systex"))

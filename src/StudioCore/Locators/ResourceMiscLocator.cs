@@ -1,14 +1,48 @@
-﻿using StudioCore.UserProject;
+﻿using StudioCore.Core;
+using System;
 using System.Collections.Generic;
 
 namespace StudioCore.Locators;
 public static class ResourceMiscLocator
 {
+    public static string GetGameIDForDir()
+    {
+        var gametype = Smithbox.ProjectHandler.CurrentProject.Config.GameType;
+
+        switch (gametype)
+        {
+            case ProjectType.Undefined:
+                return "UNDEFINED";
+            case ProjectType.DES:
+                return "DES";
+            case ProjectType.DS1:
+                return "DS1";
+            case ProjectType.DS1R:
+                return "DS1R";
+            case ProjectType.DS2:
+                return "DS2";
+            case ProjectType.DS2S:
+                return "DS2S";
+            case ProjectType.BB:
+                return "BB";
+            case ProjectType.DS3:
+                return "DS3";
+            case ProjectType.SDT:
+                return "SDT";
+            case ProjectType.ER:
+                return "ER";
+            case ProjectType.AC6:
+                return "AC6";
+            default:
+                throw new Exception("Game type not set");
+        }
+    }
+
     // TAE
     public static List<string> GetAnimationBinders()
     {
         // Not supported
-        if (Project.Type is ProjectType.DS2S
+        if (Smithbox.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
@@ -28,7 +62,7 @@ public static class ResourceMiscLocator
     public static List<string> GetBehaviorBinders()
     {
         // Not supported
-        if (Project.Type is ProjectType.DS1
+        if (Smithbox.ProjectType is ProjectType.DS1
             or ProjectType.DS1R
             or ProjectType.DS2S
             or ProjectType.DS2
@@ -50,7 +84,7 @@ public static class ResourceMiscLocator
     public static List<string> GetCharacterBinders()
     {
         // Not supported
-        if (Project.Type is ProjectType.DS2S
+        if (Smithbox.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
@@ -71,7 +105,7 @@ public static class ResourceMiscLocator
     public static List<string> GetCutsceneBinders()
     {
         // Not supported
-        if (Project.Type is ProjectType.DS2S
+        if (Smithbox.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
@@ -84,7 +118,7 @@ public static class ResourceMiscLocator
         var paramExt = @".remobnd.dcx";
 
         // Sekiro + ER + AC6
-        if (Project.Type is ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        if (Smithbox.ProjectType is ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
         {
             paramDir = @"\cutscene";
             paramExt = @".cutscenebnd.dcx";
@@ -99,7 +133,7 @@ public static class ResourceMiscLocator
     public static List<string> GetMaterialBinders()
     {
         // Not supported
-        if (Project.Type is ProjectType.DS2S
+        if (Smithbox.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
@@ -111,7 +145,7 @@ public static class ResourceMiscLocator
         var paramDir = @"\mtd";
         var paramExt = @".mtdbnd.dcx";
 
-        if (Project.Type is ProjectType.ER or ProjectType.AC6)
+        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             paramDir = @"\material";
             paramExt = @".matbinbnd.dcx";
@@ -127,7 +161,7 @@ public static class ResourceMiscLocator
     public static List<string> GetParticleBinders()
     {
         // Not supported
-        if (Project.Type is ProjectType.DS2S
+        if (Smithbox.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
@@ -148,7 +182,7 @@ public static class ResourceMiscLocator
     public static List<string> GetEventBinders()
     {
         // Not supported
-        if (Project.Type is ProjectType.DS2S
+        if (Smithbox.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
@@ -169,7 +203,7 @@ public static class ResourceMiscLocator
     public static List<string> GetTalkBinders()
     {
         // Not supported + Sekiro
-        if (Project.Type is ProjectType.DS2S
+        if (Smithbox.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)

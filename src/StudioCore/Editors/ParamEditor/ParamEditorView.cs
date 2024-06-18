@@ -1,11 +1,11 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -98,7 +98,7 @@ public class ParamEditorView
             lastParamSearch = _selection.currentParamSearchString;
         }
 
-        if (Project.Type is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+        if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
         {
             // This game has DrawParams, add UI element to toggle viewing DrawParam and GameParams.
             if (ImGui.Checkbox("Edit Drawparams", ref _mapParamView))
@@ -106,7 +106,7 @@ public class ParamEditorView
                 UICache.ClearCaches();
             }
         }
-        else if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
+        else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             // DS2 has map params, add UI element to toggle viewing map params and GameParams.
             if (ImGui.Checkbox("Edit Map Params", ref _mapParamView))
@@ -114,7 +114,7 @@ public class ParamEditorView
                 UICache.ClearCaches();
             }
         }
-        else if (Project.Type is ProjectType.ER || Project.Type is ProjectType.AC6)
+        else if (Smithbox.ProjectType is ProjectType.ER || Smithbox.ProjectType is ProjectType.AC6)
         {
             if (ImGui.Checkbox("Edit Event Params", ref _eventParamView))
             {
@@ -133,7 +133,7 @@ public class ParamEditorView
 
     private void ParamView_ParamList_Pinned(float scale)
     {
-        List<string> pinnedParamKeyList = new(Project.Config.PinnedParams);
+        List<string> pinnedParamKeyList = new(Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams);
 
         if (pinnedParamKeyList.Count > 0)
         {
@@ -165,14 +165,14 @@ public class ParamEditorView
                 {
                     if (ImGui.Selectable("Unpin " + paramKey))
                     {
-                        Project.Config.PinnedParams.Remove(paramKey);
+                        Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Remove(paramKey);
                     }
 
-                    EditorDecorations.PinListReorderOptions(Project.Config.PinnedParams, paramKey);
+                    EditorDecorations.PinListReorderOptions(Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams, paramKey);
 
                     if (ImGui.Selectable("Unpin all"))
                     {
-                        Project.Config.PinnedParams.RemoveAll(x => true);
+                        Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.RemoveAll(x => true);
                     }
 
                     ImGui.EndPopup();
@@ -196,7 +196,7 @@ public class ParamEditorView
             var keyList = list.Where(param => param.Item1 == ParamBank.PrimaryBank)
                 .Select(param => ParamBank.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
 
-            if (Project.Type is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+            if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
             {
                 if (_mapParamView)
                 {
@@ -207,7 +207,7 @@ public class ParamEditorView
                     keyList = keyList.FindAll(p => !p.EndsWith("Bank"));
                 }
             }
-            else if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
+            else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             {
                 if (_mapParamView)
                 {
@@ -218,7 +218,7 @@ public class ParamEditorView
                     keyList = keyList.FindAll(p => !ParamBank.DS2MapParamlist.Contains(p.Split('_')[0]));
                 }
             }
-            else if (Project.Type is ProjectType.ER || Project.Type is ProjectType.AC6)
+            else if (Smithbox.ProjectType is ProjectType.ER || Smithbox.ProjectType is ProjectType.AC6)
             {
                 if (_eventParamView)
                 {
@@ -231,7 +231,7 @@ public class ParamEditorView
 
                 if (_gConfigParamView)
                 {
-                    if(Project.Type == ProjectType.AC6)
+                    if(Smithbox.ProjectType == ProjectType.AC6)
                     {
                         keyList = keyList.FindAll(p => p.StartsWith("GraphicsConfig"));
                     }
@@ -242,7 +242,7 @@ public class ParamEditorView
                 }
                 else
                 {
-                    if (Project.Type == ProjectType.AC6)
+                    if (Smithbox.ProjectType == ProjectType.AC6)
                     {
                         keyList = keyList.FindAll(p => !p.StartsWith("GraphicsConfig"));
                     }
@@ -306,9 +306,9 @@ public class ParamEditorView
             if (ImGui.BeginPopupContextItem())
             {
                 if (ImGui.Selectable("Pin " + paramKey) &&
-                    !Project.Config.PinnedParams.Contains(paramKey))
+                    !Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Contains(paramKey))
                 {
-                    Project.Config.PinnedParams.Add(paramKey);
+                    Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Add(paramKey);
                 }
 
                 if (ParamEditorScreen.EditorMode && p != null)
@@ -462,7 +462,7 @@ public class ParamEditorView
             //ImGui.BeginChild("rows" + activeParam);
             if (EditorDecorations.ImGuiTableStdColumns("rowList", compareCol == null ? 1 : 2, false))
             {
-                var pinnedRowList = Project.Config.PinnedRows
+                var pinnedRowList = Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows
                     .GetValueOrDefault(activeParam, new List<int>()).Select(id => para[id]).ToList();
 
                 ImGui.TableSetupColumn("rowCol", ImGuiTableColumnFlags.None, 1f);
@@ -834,12 +834,12 @@ public class ParamEditorView
             {
                 if (ImGui.Selectable((isPinned ? "Unpin " : "Pin ") + r.ID))
                 {
-                    if (!Project.Config.PinnedRows.ContainsKey(activeParam))
+                    if (!Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.ContainsKey(activeParam))
                     {
-                        Project.Config.PinnedRows.Add(activeParam, new List<int>());
+                        Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.Add(activeParam, new List<int>());
                     }
 
-                    List<int> pinned = Project.Config.PinnedRows[activeParam];
+                    List<int> pinned = Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows[activeParam];
 
                     if (isPinned)
                     {
@@ -853,12 +853,12 @@ public class ParamEditorView
 
                 if (isPinned)
                 {
-                    EditorDecorations.PinListReorderOptions(Project.Config.PinnedRows[activeParam], r.ID);
+                    EditorDecorations.PinListReorderOptions(Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows[activeParam], r.ID);
                 }
 
                 if (ImGui.Selectable("Unpin all"))
                 {
-                    Project.Config.PinnedRows.Clear();
+                    Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.Clear();
                 }
 
                 ImGui.Separator();

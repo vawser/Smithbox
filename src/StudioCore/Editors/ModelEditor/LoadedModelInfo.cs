@@ -1,4 +1,4 @@
-﻿using StudioCore.UserProject;
+﻿using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,9 +34,9 @@ namespace StudioCore.Editors.ModelEditor
             BinderDirectory = GetBinderDirectory();
             BinderExtension = GetBinderExtension();
             BinderPath = $"{BinderDirectory}{ModelName}{BinderExtension}";
-            RootBinderPath = $"{Project.GameRootDirectory}{BinderPath}";
-            ModBinderPath = $"{Project.GameModDirectory}{BinderPath}";
-            ModBinderDirectory = $"{Project.GameModDirectory}{BinderDirectory}";
+            RootBinderPath = $"{Smithbox.GameRoot}{BinderPath}";
+            ModBinderPath = $"{Smithbox.ProjectRoot}{BinderPath}";
+            ModBinderDirectory = $"{Smithbox.ProjectRoot}{BinderDirectory}";
 
             FlverFileExtension = GetFlverExtension();
             FlverFileName = $"{ModelName}{FlverFileExtension}";
@@ -74,7 +74,7 @@ namespace StudioCore.Editors.ModelEditor
         {
             string ext = ".flver";
 
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
                 ext = ".flv";
             }
@@ -89,7 +89,7 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.Character:
                     string chrDir = @"\chr\";
 
-                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                    if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                     {
                         chrDir = @"\model\chr\";
                     }
@@ -98,16 +98,16 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.Object:
                     string objDir = @"\obj\";
 
-                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                    if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                     {
                         objDir = @"\model\obj\";
                     }
-                    else if (Project.Type == ProjectType.ER)
+                    else if (Smithbox.ProjectType == ProjectType.ER)
                     {
                         var category = ModelName.Split("_")[0];
                         objDir = $@"\asset\aeg\{category}\";
                     }
-                    else if (Project.Type == ProjectType.AC6)
+                    else if (Smithbox.ProjectType == ProjectType.AC6)
                     {
                         objDir = @"\asset\environment\geometry\";
                     }
@@ -116,7 +116,7 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.Parts:
                     string partDir = @"\parts\";
 
-                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                    if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                     {
                         partDir = @"\model\parts\";
                     }
@@ -125,13 +125,13 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.MapPiece:
                     string mapPieceDir = $@"\map\{MapID}\";
 
-                    if (Project.Type == ProjectType.ER)
+                    if (Smithbox.ProjectType == ProjectType.ER)
                     {
                         string shortMapId = MapID.Split("_")[0];
                         mapPieceDir = $@"\map\{shortMapId}\{MapID}\";
                     }
 
-                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                    if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                     {
                         mapPieceDir = $@"\model\map\";
                     }
@@ -150,11 +150,11 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.Character:
                     string chrExt = @".chrbnd.dcx";
 
-                    if (Project.Type == ProjectType.DS1)
+                    if (Smithbox.ProjectType == ProjectType.DS1)
                     {
                         chrExt = ".chrbnd";
                     }
-                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                    if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                     {
                         chrExt = ".bnd";
                     }
@@ -163,19 +163,19 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.Object:
                     string objExt = @".objbnd.dcx";
 
-                    if (Project.Type == ProjectType.DS1)
+                    if (Smithbox.ProjectType == ProjectType.DS1)
                     {
                         objExt = ".objbnd";
                     }
-                    else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                    else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                     {
                         objExt = ".bnd";
                     }
-                    else if (Project.Type == ProjectType.ER)
+                    else if (Smithbox.ProjectType == ProjectType.ER)
                     {
                         objExt = ".geombnd.dcx";
                     }
-                    else if (Project.Type == ProjectType.AC6)
+                    else if (Smithbox.ProjectType == ProjectType.AC6)
                     {
                         objExt = ".geombnd.dcx";
                     }
@@ -184,11 +184,11 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.Parts:
                     string partExt = @".partsbnd.dcx";
 
-                    if (Project.Type == ProjectType.DS1)
+                    if (Smithbox.ProjectType == ProjectType.DS1)
                     {
                         partExt = ".partsbnd";
                     }
-                    else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                    else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                     {
                         partExt = ".bnd";
                     }
@@ -197,11 +197,11 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.MapPiece:
                     string mapPieceExt = ".mapbnd.dcx";
 
-                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                    if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                     {
                         mapPieceExt = ".mapbdt";
                     }
-                    else if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
+                    else if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
                     {
                         mapPieceExt = ".flver.dcx";
                     }

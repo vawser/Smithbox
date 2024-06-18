@@ -1,20 +1,14 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using SoulsFormats;
 using StudioCore.Banks.AliasBank;
-using StudioCore.BanksMain;
+using StudioCore.Core;
 using StudioCore.Editors.AssetBrowser;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.TextEditor;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
 namespace StudioCore.Interface;
@@ -123,15 +117,15 @@ public static class AliasUtils
             sPrefix = gparamName.Substring(0, 6).Replace("s", "m"); // Cutscene
         }
 
-        if (GparamAliasBank.Bank.AliasNames == null)
-            return "";
-
-        foreach(var entry in GparamAliasBank.Bank.AliasNames.GetEntries("Gparams"))
+        if (Smithbox.BankHandler.GparamAliases.Aliases != null)
         {
-            // Check for normal entries, and for mXX_XX prefix or sXX_XX prefix
-            if(entry.id == gparamName || entry.id == mPrefix || entry.id == sPrefix)
+            foreach (var entry in Smithbox.BankHandler.GparamAliases.Aliases.list)
             {
-                return entry.name;
+                // Check for normal entries, and for mXX_XX prefix or sXX_XX prefix
+                if (entry.id == gparamName || entry.id == mPrefix || entry.id == sPrefix)
+                {
+                    return entry.name;
+                }
             }
         }
 
@@ -144,13 +138,13 @@ public static class AliasUtils
         switch(category)
         {
             case AssetCategoryType.Character:
-                return ModelAliasBank.Bank.AliasNames.GetEntries("Characters");
+                return Smithbox.BankHandler.CharacterAliases.Aliases.list;
             case AssetCategoryType.Asset:
-                return ModelAliasBank.Bank.AliasNames.GetEntries("Objects");
+                return Smithbox.BankHandler.AssetAliases.Aliases.list;
             case AssetCategoryType.Part:
-                return ModelAliasBank.Bank.AliasNames.GetEntries("Parts");
+                return Smithbox.BankHandler.PartAliases.Aliases.list;
             case AssetCategoryType.MapPiece:
-                return ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces");
+                return Smithbox.BankHandler.MapPieceAliases.Aliases.list;
         }
 
         return null;
@@ -161,19 +155,6 @@ public static class AliasUtils
         var aliasName = rawName;
 
         return aliasName;
-    }
-
-    public static string GetMapNameAlias(string mapId)
-    {
-        if (MapAliasBank.MapNames == null)
-            return "";
-
-        if (MapAliasBank.MapNames.ContainsKey(mapId))
-        {
-            return MapAliasBank.MapNames[mapId];
-        }
-
-        return "";
     }
 
     // Texture Viewer
@@ -218,7 +199,10 @@ public static class AliasUtils
                     usedName = rawName.Replace("_l", "");
                 }
 
-                aliasName = GetAliasFromCache(usedName, ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
+                if(Smithbox.BankHandler.CharacterAliases.Aliases != null)
+                {
+                    aliasName = GetAliasFromCache(usedName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
+                }
             }
 
             if (info.Category == TextureViewCategory.Asset || info.Category == TextureViewCategory.Object)
@@ -234,7 +218,10 @@ public static class AliasUtils
                     usedName = usedName.Replace("aet", "aeg");
                 }
 
-                aliasName = GetAliasFromCache(usedName, ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+                if (Smithbox.BankHandler.AssetAliases.Aliases != null)
+                {
+                    aliasName = GetAliasFromCache(usedName, Smithbox.BankHandler.AssetAliases.Aliases.list);
+                }
             }
 
             if (info.Category == TextureViewCategory.Part)
@@ -244,7 +231,10 @@ public static class AliasUtils
                     usedName = rawName.Replace("_l", "");
                 }
 
-                aliasName = GetAliasFromCache(usedName, ModelAliasBank.Bank.AliasNames.GetEntries("Parts"));
+                if (Smithbox.BankHandler.PartAliases.Aliases != null)
+                {
+                    aliasName = GetAliasFromCache(usedName, Smithbox.BankHandler.PartAliases.Aliases.list);
+                }
             }
 
             /*
@@ -300,20 +290,29 @@ public static class AliasUtils
         {
             if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
             {
-                aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
-                aliasName = $"{aliasName}";
+                if(Smithbox.BankHandler.CharacterAliases.Aliases != null)
+                {
+                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
+                    aliasName = $"{aliasName}";
+                }
             }
 
             if (CFG.Current.MapEditor_MapObjectList_ShowAssetNames && (e.IsPartAsset() || e.IsPartDummyAsset()))
             {
-                aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
-                aliasName = $"{aliasName}";
+                if (Smithbox.BankHandler.AssetAliases.Aliases != null)
+                {
+                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.AssetAliases.Aliases.list);
+                    aliasName = $"{aliasName}";
+                }
             }
 
             if (CFG.Current.MapEditor_MapObjectList_ShowMapPieceNames && e.IsPartMapPiece())
             {
-                aliasName = GetAliasFromCache(modelName, ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
-                aliasName = $"{aliasName}";
+                if (Smithbox.BankHandler.MapPieceAliases.Aliases != null)
+                {
+                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.MapPieceAliases.Aliases.list);
+                    aliasName = $"{aliasName}";
+                };
             }
 
             // Player/System Characters: peek in param/fmg for name
@@ -434,7 +433,7 @@ public static class AliasUtils
         {
             var paramName = "ItemLotParam";
 
-            if (Project.Type == ProjectType.ER)
+            if (Smithbox.ProjectType == ProjectType.ER)
             {
                 paramName = "ItemLotParam_map";
             }

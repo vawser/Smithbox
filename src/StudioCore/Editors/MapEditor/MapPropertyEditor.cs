@@ -2,8 +2,6 @@
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Banks;
-using StudioCore.BanksMain;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.MapEditor.Toolbar;
@@ -74,7 +72,7 @@ public class MapPropertyEditor
         {
             var val = (int)oldval;
 
-            if (MsbFormatBank.Bank.IsBooleanProperty(prop.Name))
+            if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -106,7 +104,7 @@ public class MapPropertyEditor
             var val = (uint)oldval;
             var strval = $@"{val}";
 
-            if (MsbFormatBank.Bank.IsBooleanProperty(prop.Name))
+            if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -141,7 +139,7 @@ public class MapPropertyEditor
         {
             int val = (short)oldval;
             
-            if (MsbFormatBank.Bank.IsBooleanProperty(prop.Name))
+            if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -173,7 +171,7 @@ public class MapPropertyEditor
             var val = (ushort)oldval;
             var strval = $@"{val}";
 
-            if (MsbFormatBank.Bank.IsBooleanProperty(prop.Name))
+            if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -208,7 +206,7 @@ public class MapPropertyEditor
         {
             int val = (sbyte)oldval;
 
-            if (MsbFormatBank.Bank.IsBooleanProperty(prop.Name))
+            if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -240,7 +238,7 @@ public class MapPropertyEditor
             var val = (byte)oldval;
             var strval = $@"{val}";
 
-            if (MsbFormatBank.Bank.IsBooleanProperty(prop.Name))
+            if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -1270,23 +1268,23 @@ public class MapPropertyEditor
 
             if(_selected != null)
             {
-                name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name);
+                name = Smithbox.BankHandler.MSB_Info.GetReferenceName(classType.Name, name);
 
                 if (_selected.IsPart())
                 {
-                    name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Part");
+                    name = Smithbox.BankHandler.MSB_Info.GetReferenceName(classType.Name, name, "Part");
                 }
                 if (_selected.IsRegion())
                 {
-                    name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Region");
+                    name = Smithbox.BankHandler.MSB_Info.GetReferenceName(classType.Name, name, "Region");
                 }
                 if (_selected.IsEvent())
                 {
-                    name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Event");
+                    name = Smithbox.BankHandler.MSB_Info.GetReferenceName(classType.Name, name, "Event");
                 }
                 if (_selected.IsLight())
                 {
-                    name = MsbFormatBank.Bank.GetReferenceName(classType.Name, name, "Light");
+                    name = Smithbox.BankHandler.MSB_Info.GetReferenceName(classType.Name, name, "Light");
                 }
             }
         }
@@ -1306,23 +1304,23 @@ public class MapPropertyEditor
 
             if (_selected != null)
             {
-                desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name);
+                desc = Smithbox.BankHandler.MSB_Info.GetReferenceDescription(classType.Name, name);
 
                 if (_selected.IsPart())
                 {
-                    desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Part");
+                    desc = Smithbox.BankHandler.MSB_Info.GetReferenceDescription(classType.Name, name, "Part");
                 }
                 if (_selected.IsRegion())
                 {
-                    desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Region");
+                    desc = Smithbox.BankHandler.MSB_Info.GetReferenceDescription(classType.Name, name, "Region");
                 }
                 if (_selected.IsEvent())
                 {
-                    desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Event");
+                    desc = Smithbox.BankHandler.MSB_Info.GetReferenceDescription(classType.Name, name, "Event");
                 }
                 if (_selected.IsLight())
                 {
-                    desc = MsbFormatBank.Bank.GetReferenceDescription(classType.Name, name, "Light");
+                    desc = Smithbox.BankHandler.MSB_Info.GetReferenceDescription(classType.Name, name, "Light");
                 }
             }
 

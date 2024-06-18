@@ -1,7 +1,6 @@
 ﻿#nullable enable
 using DotNext.IO.MemoryMappedFiles;
 using SoulsFormats;
-using StudioCore.UserProject;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
@@ -14,11 +13,9 @@ using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Utilities;
 using StudioCore.Editors.MaterialEditor;
-using StudioCore.BanksMain;
-using StudioCore.Editors.ModelEditor;
-using StudioCore.Banks.BlockedTextureBank;
 using StudioCore.MsbEditor;
 using StudioCore.Locators;
+using StudioCore.Core;
 
 namespace StudioCore.Resource;
 
@@ -82,15 +79,15 @@ public class FlverResource : IResource, IDisposable
     public bool _Load(Memory<byte> bytes, AccessLevel al)
     {
         bool ret;
-        if (Project.Type is ProjectType.DES)
+        if (Smithbox.ProjectType is ProjectType.DES)
         {
             FlverDeS = FLVER0.Read(bytes);
             ret = LoadInternalDeS(al);
         }
         else
         {
-            if (al == AccessLevel.AccessGPUOptimizedOnly && Project.Type != ProjectType.DS1R &&
-                Project.Type != ProjectType.DS1)
+            if (al == AccessLevel.AccessGPUOptimizedOnly && Smithbox.ProjectType != ProjectType.DS1R &&
+                Smithbox.ProjectType != ProjectType.DS1)
             {
                 BinaryReaderEx br = new(false, bytes);
                 DCX.Type ctype;
@@ -112,15 +109,15 @@ public class FlverResource : IResource, IDisposable
     public bool _Load(string path, AccessLevel al)
     {
         bool ret;
-        if (Project.Type is ProjectType.DES)
+        if (Smithbox.ProjectType is ProjectType.DES)
         {
             FlverDeS = FLVER0.Read(path);
             ret = LoadInternalDeS(al);
         }
         else
         {
-            if (al == AccessLevel.AccessGPUOptimizedOnly && Project.Type != ProjectType.DS1R &&
-                Project.Type != ProjectType.DS1)
+            if (al == AccessLevel.AccessGPUOptimizedOnly && Smithbox.ProjectType != ProjectType.DS1R &&
+                Smithbox.ProjectType != ProjectType.DS1)
             {
                 using var file =
                     MemoryMappedFile.CreateFromFile(path, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);
@@ -216,7 +213,7 @@ public class FlverResource : IResource, IDisposable
             string virtualPath = ResourcePathLocator.TexturePathToVirtual(path.ToLower());
 
             // Correct path if it is malformed (as game itself ignores this)
-            virtualPath = CorrectedTextures.Bank.CorrectTexturePath(virtualPath);
+            virtualPath = Smithbox.BankHandler.CorrectedTextureInfo.CorrectTexturePath(virtualPath);
 
             ResourceManager.AddResourceListener<TextureResource>(virtualPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;
@@ -269,7 +266,7 @@ public class FlverResource : IResource, IDisposable
         else if (paramNameCheck == "G_SPECULARTEXTURE2" || paramNameCheck == "G_SPECULAR2" ||
                  paramNameCheck.Contains("SPECULAR_2"))
         {
-            if (Project.Type is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
+            if (Smithbox.ProjectType is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
             {
                 LookupTexture(FlverMaterial.TextureType.ShininessTextureResource2, dest, texType, mpath, mtd);
                 blend = true;
@@ -285,7 +282,7 @@ public class FlverResource : IResource, IDisposable
         else if (paramNameCheck == "G_SPECULARTEXTURE" || paramNameCheck == "G_SPECULAR" ||
                  paramNameCheck.Contains("SPECULAR"))
         {
-            if (Project.Type is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
+            if (Smithbox.ProjectType is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
             {
                 LookupTexture(FlverMaterial.TextureType.ShininessTextureResource, dest, texType, mpath, mtd);
             }
@@ -320,7 +317,7 @@ public class FlverResource : IResource, IDisposable
         dest.MaterialData = new Material();
 
         //FLVER0 stores layouts directly in the material
-        if (Project.Type == ProjectType.DES)
+        if (Smithbox.ProjectType == ProjectType.DES)
         {
             var desMat = (FLVER0.Material)mat;
             var foundBoneIndices = false;
@@ -395,7 +392,7 @@ public class FlverResource : IResource, IDisposable
         }
 
         List<SpecializationConstant> specConstants = new();
-        specConstants.Add(new SpecializationConstant(0, (uint)Project.Type));
+        specConstants.Add(new SpecializationConstant(0, (uint)Smithbox.ProjectType));
         if (blend || blendMask)
         {
             specConstants.Add(new SpecializationConstant(1, hasNormal2));
@@ -458,7 +455,7 @@ public class FlverResource : IResource, IDisposable
         }
 
         List<SpecializationConstant> specConstants = new();
-        specConstants.Add(new SpecializationConstant(0, (uint)Project.Type));
+        specConstants.Add(new SpecializationConstant(0, (uint)Smithbox.ProjectType));
         if (blend || blendMask)
         {
             specConstants.Add(new SpecializationConstant(1, hasNormal2));

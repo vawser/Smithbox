@@ -1,21 +1,7 @@
 ﻿using ImGuiNET;
-using Microsoft.Extensions.Logging;
-using StudioCore.Banks;
-using StudioCore.Banks.AliasBank;
-using StudioCore.BanksMain;
-using StudioCore.Editor;
-using StudioCore.Help;
-using StudioCore.Interface.Tabs;
 using StudioCore.Platform;
-using StudioCore.Settings;
-using StudioCore.UserProject;
-using StudioCore.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Numerics;
-using System.Text.RegularExpressions;
 
 namespace StudioCore.Interface.Windows;
 

@@ -1,9 +1,9 @@
 ﻿using ImGuiNET;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Select(ViewportSelection _selection)
         {
-            if (Project.Type is ProjectType.DES || Project.Type is ProjectType.DS1 || Project.Type is ProjectType.DS1R)
+            if (Smithbox.ProjectType is ProjectType.DES || Smithbox.ProjectType is ProjectType.DS1 || Smithbox.ProjectType is ProjectType.DS1R)
             {
                 if (ImGui.RadioButton("Navigation Data##tool_Selection_Generate_Navigation_Data", MapEditorState.SelectedAction == MapEditorAction.Selection_Generate_Navigation_Data))
                 {
@@ -84,7 +84,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 string mapid = map.Key;
 
-                if (Project.Type is ProjectType.DES)
+                if (Smithbox.ProjectType is ProjectType.DES)
                 {
                     if (mapid != "m03_01_00_99" && !mapid.StartsWith("m99"))
                     {
@@ -98,20 +98,20 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                         {
                             if (orderMap.Key.StartsWith(areaId) && orderMap.Key != "m03_01_00_99")
                             {
-                                areaDirectories.Add(Path.Combine(Project.GameRootDirectory, "map", orderMap.Key));
+                                areaDirectories.Add(Path.Combine(Smithbox.GameRoot, "map", orderMap.Key));
                             }
                         }
                         SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: true);
                     }
                     else
                     {
-                        var areaDirectories = new List<string> { Path.Combine(Project.GameRootDirectory, "map", mapid) };
+                        var areaDirectories = new List<string> { Path.Combine(Smithbox.GameRoot, "map", mapid) };
                         SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: true);
                     }
                 }
-                else if (Project.Type is ProjectType.DS1 or ProjectType.DS1R)
+                else if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
                 {
-                    var areaDirectories = new List<string> { Path.Combine(Project.GameRootDirectory, "map", mapid) };
+                    var areaDirectories = new List<string> { Path.Combine(Smithbox.GameRoot, "map", mapid) };
 
                     SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: false);
                 }

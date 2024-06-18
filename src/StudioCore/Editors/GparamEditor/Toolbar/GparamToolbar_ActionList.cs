@@ -1,8 +1,8 @@
 ﻿using ImGuiNET;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ public class GparamToolbar_ActionList
 
     public void OnGui()
     {
-        if (Project.Type == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);

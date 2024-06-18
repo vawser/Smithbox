@@ -1,9 +1,7 @@
 ﻿using ImGuiNET;
-using StudioCore.Banks.AliasBank;
-using StudioCore.BanksMain;
-using StudioCore.Editors.MapEditor.MapGroup;
+using StudioCore.Banks.MapGroupBank;
+using StudioCore.Core;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -40,11 +38,13 @@ public class MapGroupTab
 
     public void Display()
     {
-        if (Project.Type == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        if (MapGroupsBank.Bank.IsMapGroupBankLoading)
+        if(Smithbox.BankHandler.MapGroups.GetEntries() == null)
+        {
             return;
+        }
 
         if (ShowMapGroupAddSection)
         {
@@ -75,12 +75,6 @@ public class MapGroupTab
         else
         {
             DisplayMapGroupList();
-        }
-
-        if (MapGroupsBank.Bank.CanReloadMapGroupBank)
-        {
-            MapGroupsBank.Bank.CanReloadMapGroupBank = false;
-            MapGroupsBank.Bank.ReloadMapGroupBank();
         }
     }
 
@@ -119,7 +113,7 @@ public class MapGroupTab
                 {
                     var isValid = true;
 
-                    var entries = MapGroupsBank.Bank.Entries.list;
+                    var entries = Smithbox.BankHandler.MapGroups.GetEntries();
 
                     foreach (var entry in entries)
                     {
@@ -154,9 +148,9 @@ public class MapGroupTab
                             }
                         }
 
-                        MapGroupsBank.Bank.AddToLocalBank(_newRefId, _newRefName, _newRefDescription, _newRefCategory, mapGroupMembers);
+                        Smithbox.BankHandler.MapGroups.AddToLocalBank(_newRefId, _newRefName, _newRefDescription, _newRefCategory, mapGroupMembers);
                         ImGui.CloseCurrentPopup();
-                        MapGroupsBank.Bank.CanReloadMapGroupBank = true;
+
                     }
                     else
                     {
@@ -185,7 +179,10 @@ public class MapGroupTab
 
         ImGui.BeginChild("MapGroupList");
 
-        DisplaySelectionList(MapGroupsBank.Bank.Entries.list);
+        if(Smithbox.BankHandler.MapGroups.GetEntries() != null )
+        {
+            DisplaySelectionList(Smithbox.BankHandler.MapGroups.GetEntries());
+        }
 
         ImGui.EndChild();
 
@@ -293,26 +290,23 @@ public class MapGroupTab
                     }
                 }
 
-                MapGroupsBank.Bank.AddToLocalBank(_refUpdateId, _refUpdateName, _refUpdateDesc, _refUpdateCategory, mapGroupMembers);
-                MapGroupsBank.Bank.CanReloadMapGroupBank = true;
+                Smithbox.BankHandler.MapGroups.AddToLocalBank(_refUpdateId, _refUpdateName, _refUpdateDesc, _refUpdateCategory, mapGroupMembers);
             }
             ImguiUtils.ShowHoverTooltip("Edit this map group.");
 
             ImGui.SameLine();
 
             // Is from base, delete local instance to restore base read
-            if (!MapGroupsBank.Bank.IsLocalMapGroup(_refUpdateId) && ImGui.Button("Restore Default"))
+            if (!Smithbox.BankHandler.MapGroups.IsLocalMapGroup(_refUpdateId) && ImGui.Button("Restore Default"))
             {
-                MapGroupsBank.Bank.RemoveFromLocalBank(_refUpdateId);
-                MapGroupsBank.Bank.CanReloadMapGroupBank = true;
+                Smithbox.BankHandler.MapGroups.RemoveFromLocalBank(_refUpdateId);
             }
             ImguiUtils.ShowHoverTooltip("Restore this map group to its default values.");
 
             // Is local only, this will delete it
-            if (MapGroupsBank.Bank.IsLocalMapGroup(_refUpdateId) && ImGui.Button("Delete"))
+            if (Smithbox.BankHandler.MapGroups.IsLocalMapGroup(_refUpdateId) && ImGui.Button("Delete"))
             {
-                MapGroupsBank.Bank.RemoveFromLocalBank(_refUpdateId);
-                MapGroupsBank.Bank.CanReloadMapGroupBank = true;
+                Smithbox.BankHandler.MapGroups.RemoveFromLocalBank(_refUpdateId);
             }
             ImguiUtils.ShowHoverTooltip("Delete this map group.");
         }

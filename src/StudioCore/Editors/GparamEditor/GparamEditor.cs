@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Logging;
 using Octokit;
 using SoulsFormats;
-using StudioCore.BanksMain;
 using StudioCore.Editor;
 using StudioCore.GraphicsEditor;
 using System.Collections.Generic;
@@ -48,7 +47,7 @@ public class GparamEditor
             int intInput = fieldValue;
             oldValue = fieldValue;
 
-            if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
+            if (Smithbox.BankHandler.GPARAM_Info.IsBooleanProperty(field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -92,7 +91,7 @@ public class GparamEditor
 
             var strval = $@"{uintInput}";
 
-            if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
+            if (Smithbox.BankHandler.GPARAM_Info.IsBooleanProperty(field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -136,7 +135,7 @@ public class GparamEditor
             int shortInput = fieldValue;
             oldValue = fieldValue;
 
-            if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
+            if (Smithbox.BankHandler.GPARAM_Info.IsBooleanProperty(field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -175,7 +174,7 @@ public class GparamEditor
             int sbyteInput = fieldValue;
             oldValue = fieldValue;
 
-            if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
+            if (Smithbox.BankHandler.GPARAM_Info.IsBooleanProperty(field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -216,7 +215,7 @@ public class GparamEditor
 
             var strval = $@"{byteInput}";
 
-            if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
+            if (Smithbox.BankHandler.GPARAM_Info.IsBooleanProperty(field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)

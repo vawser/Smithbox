@@ -1,10 +1,10 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -261,7 +261,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         public static void PopulateClassNames()
         {
             Type msbclass;
-            switch (Project.Type)
+            switch (Smithbox.ProjectType)
             {
                 case ProjectType.DES:
                     msbclass = typeof(MSBD);

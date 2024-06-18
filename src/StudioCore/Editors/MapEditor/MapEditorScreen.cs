@@ -5,7 +5,6 @@ using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Gui;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.Settings;
@@ -25,8 +24,8 @@ using StudioCore.Utilities;
 using StudioCore.Interface;
 using StudioCore.Editors.MapEditor.EntryFileList;
 using StudioCore.Locators;
-using StudioCore.Editors.MapEditor.SelectionGroup;
 using StudioCore.Editors.AssetBrowser;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -1005,7 +1004,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         _selection.ClearSelection();
         EditorActionManager.Clear();
 
-        if (Project.Type != ProjectType.Undefined)
+        if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             MapAssetBrowser.OnProjectChanged();
             SceneTree.OnProjectChanged();
@@ -1123,7 +1122,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         GC.Collect();
         Universe.PopulateMapList();
 
-        if (Project.Type != ProjectType.Undefined)
+        if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             MapAction_Create.PopulateClassNames();
         }

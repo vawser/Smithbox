@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.GraphicsEditor;
@@ -10,7 +11,6 @@ using StudioCore.Editors.ParticleEditor;
 using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Settings;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,7 +66,7 @@ public class MergeToolScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_MergeTool");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if(Project.Type == ProjectType.ER)
+        if(Smithbox.ProjectType == ProjectType.ER)
         {
             MergeToolView();
         }
@@ -74,7 +74,7 @@ public class MergeToolScreen : EditorScreen
         {
             ImGui.Begin("Tool##InvalidMergeTool");
 
-            ImGui.Text($"This tool does not support {Project.Type}.");
+            ImGui.Text($"This tool does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }
@@ -98,7 +98,7 @@ public class MergeToolScreen : EditorScreen
 
     public void MergeConfigurationView()
     {
-        RootProjectPath = Project.GameModDirectory;
+        RootProjectPath = Smithbox.ProjectRoot;
 
         ImGui.Begin("Configuration##MergeConfiguration");
 
@@ -116,7 +116,7 @@ public class MergeToolScreen : EditorScreen
 
         if (ImGui.Button("Select Game Root as External Project"))
         {
-            TargetProjectPath = Project.GameRootDirectory;
+            TargetProjectPath = Smithbox.GameRoot;
         }
 
         ImGui.End();

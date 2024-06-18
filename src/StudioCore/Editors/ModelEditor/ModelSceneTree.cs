@@ -10,7 +10,6 @@ using System.Numerics;
 using Veldrid;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
-using StudioCore.BanksMain;
 using StudioCore.Editor;
 
 namespace StudioCore.Editors.ModelEditor;
@@ -454,10 +453,9 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
     {
         var metaName = "";
 
-        if (!ModelAliasBank.Bank.IsLoadingAliases && ModelAliasBank.Bank.AliasNames != null)
+        if (Smithbox.BankHandler.CharacterAliases.Aliases != null)
         {
-            var list = ModelAliasBank.Bank.AliasNames.GetEntries("Characters");
-            foreach (var entry in list)
+            foreach (var entry in Smithbox.BankHandler.CharacterAliases.Aliases.list)
             {
                 if (entry.id == assetName)
                 {
@@ -465,10 +463,9 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
                 }
             }
         }
-        if (!ModelAliasBank.Bank.IsLoadingAliases && ModelAliasBank.Bank.AliasNames != null)
+        if (Smithbox.BankHandler.AssetAliases.Aliases != null)
         {
-            var list = ModelAliasBank.Bank.AliasNames.GetEntries("Objects");
-            foreach (var entry in list)
+            foreach (var entry in Smithbox.BankHandler.AssetAliases.Aliases.list)
             {
                 if (entry.id == assetName)
                 {
@@ -476,10 +473,9 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
                 }
             }
         }
-        if (!ModelAliasBank.Bank.IsLoadingAliases && ModelAliasBank.Bank.AliasNames != null)
+        if (Smithbox.BankHandler.PartAliases.Aliases != null)
         {
-            var list = ModelAliasBank.Bank.AliasNames.GetEntries("Parts");
-            foreach (var entry in list)
+            foreach (var entry in Smithbox.BankHandler.PartAliases.Aliases.list)
             {
                 if (entry.id == assetName)
                 {
@@ -487,10 +483,9 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
                 }
             }
         }
-        if (!ModelAliasBank.Bank.IsLoadingAliases && ModelAliasBank.Bank.AliasNames != null)
+        if (Smithbox.BankHandler.MapPieceAliases.Aliases != null)
         {
-            var list = ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces");
-            foreach (var entry in list)
+            foreach (var entry in Smithbox.BankHandler.MapPieceAliases.Aliases.list)
             {
                 if (entry.id == assetName)
                 {

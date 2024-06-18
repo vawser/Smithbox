@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.UserProject;
+using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -41,7 +41,7 @@ public static class GparamParamBank
 
         byte[] fileBytes = null;
 
-        switch (Project.Type)
+        switch (Smithbox.ProjectType)
         {
             case ProjectType.DS2:
             case ProjectType.DS2S:
@@ -67,23 +67,23 @@ public static class GparamParamBank
         var paramDir = @"\param\drawparam";
         var paramExt = @".gparam.dcx";
 
-        if (Project.Type == ProjectType.DS2S)
+        if (Smithbox.ProjectType == ProjectType.DS2S)
         {
             paramDir = @"\filter";
             paramExt = @".fltparam";
         }
 
-        var assetRoot = $@"{Project.GameRootDirectory}\{paramDir}\{info.Name}{paramExt}";
-        var assetMod = $@"{Project.GameModDirectory}\{paramDir}\{info.Name}{paramExt}";
+        var assetRoot = $@"{Smithbox.GameRoot}\{paramDir}\{info.Name}{paramExt}";
+        var assetMod = $@"{Smithbox.ProjectRoot}\{paramDir}\{info.Name}{paramExt}";
 
         // Add drawparam folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Project.GameModDirectory}\\{paramDir}\\"))
+        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{paramDir}\\"))
         {
-            Directory.CreateDirectory($"{Project.GameModDirectory}\\{paramDir}\\");
+            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{paramDir}\\");
         }
 
         // Make a backup of the original file if a mod path doesn't exist
-        if (Project.GameModDirectory == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
         {
             File.Copy(assetRoot, $@"{assetRoot}.bak", true);
         }
@@ -108,14 +108,14 @@ public static class GparamParamBank
         var paramDir = @"\param\drawparam";
         var paramExt = @".gparam.dcx";
 
-        if(Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if(Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             paramDir = @"\filter";
             paramExt = @".fltparam";
         }
 
         // TODO: add support for DS2
-        if(Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if(Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             return;
         }
@@ -124,14 +124,14 @@ public static class GparamParamBank
         {
             var filePath = $"{paramDir}\\{name}{paramExt}";
 
-            if(File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            if(File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
             {
-                LoadGraphicsParam($"{Project.GameModDirectory}\\{filePath}", true);
+                LoadGraphicsParam($"{Smithbox.ProjectRoot}\\{filePath}", true);
                 //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
-                LoadGraphicsParam($"{Project.GameRootDirectory}\\{filePath}", false);
+                LoadGraphicsParam($"{Smithbox.GameRoot}\\{filePath}", false);
                 //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }
@@ -164,7 +164,7 @@ public static class GparamParamBank
             gStruct.Gparam = new GPARAM();
             gStruct.IsModFile = isModFile;
 
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
                 gStruct.Gparam = GPARAM.Read(path);
             }
@@ -186,7 +186,7 @@ public static class GparamParamBank
         var paramDir = @"\param\drawparam";
         var paramExt = @".gparam.dcx";
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             paramDir = @"\filter";
             paramExt = @".fltparam";
@@ -195,10 +195,10 @@ public static class GparamParamBank
         HashSet<string> paramNames = new();
         List<string> ret = new();
 
-        if (Directory.Exists(Project.GameRootDirectory + paramDir))
+        if (Directory.Exists(Smithbox.GameRoot + paramDir))
         {
             // ROOT
-            var paramFiles = Directory.GetFileSystemEntries(Project.GameRootDirectory + paramDir, $@"*{paramExt}").ToList();
+            var paramFiles = Directory.GetFileSystemEntries(Smithbox.GameRoot + paramDir, $@"*{paramExt}").ToList();
             foreach (var f in paramFiles)
             {
                 var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
@@ -207,9 +207,9 @@ public static class GparamParamBank
             }
 
             // MOD
-            if (Project.GameModDirectory != null && Directory.Exists(Project.GameModDirectory + paramDir))
+            if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + paramDir))
             {
-                paramFiles = Directory.GetFileSystemEntries(Project.GameModDirectory + paramDir, $@"*{paramExt}").ToList();
+                paramFiles = Directory.GetFileSystemEntries(Smithbox.ProjectRoot + paramDir, $@"*{paramExt}").ToList();
 
                 foreach (var f in paramFiles)
                 {

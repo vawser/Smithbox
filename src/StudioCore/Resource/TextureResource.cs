@@ -1,9 +1,7 @@
 ﻿using SoulsFormats;
-using StudioCore.UserProject;
 using StudioCore.Scene;
 using StudioCore.Settings;
 using System;
-using StudioCore.BanksMain;
 
 namespace StudioCore.Resource;
 
@@ -57,7 +55,7 @@ public class TextureResource : IResource, IDisposable
                 }
 
                 // Intercept unsupported DDS textures here
-                if (!BlockedTextures.Bank.IsBlockedTexture(Texture.Textures[TPFIndex].Name))
+                if (!Smithbox.BankHandler.BlockedTextureInfo.IsBlockedTexture(Texture.Textures[TPFIndex].Name))
                 {
                     GPUTexture.FillWithTPF(d, cl, Texture.Platform, Texture.Textures[TPFIndex], Texture.Textures[TPFIndex].Name);
                 }

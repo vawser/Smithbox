@@ -1,4 +1,4 @@
-﻿using StudioCore.UserProject;
+﻿using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,45 +29,45 @@ public static class ResourceMapLocator
         string backupPath = "";
 
         // SOFTS
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             preferredPath = $@"map\{mapid}\{mapid}.msb";
             backupPath = $@"map\{mapid}\{mapid}.msb";
         }
         // BB chalice maps
-        else if (Project.Type == ProjectType.BB && mapid.StartsWith("m29"))
+        else if (Smithbox.ProjectType == ProjectType.BB && mapid.StartsWith("m29"))
         {
             preferredPath = $@"\map\MapStudio\{mapid.Substring(0, 9)}_00\{mapid}.msb.dcx";
             backupPath = $@"\map\MapStudio\{mapid.Substring(0, 9)}_00\{mapid}.msb";
         }
         // DeS, DS1, DS1R
-        else if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R || Project.Type == ProjectType.DES)
+        else if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R || Smithbox.ProjectType == ProjectType.DES)
         {
             preferredPath = $@"\map\MapStudio\{mapid}.msb";
             backupPath = $@"\map\MapStudio\{mapid}.msb.dcx";
         }
         // BB, DS3, ER, SDT, AC6
-        else if (Project.Type is ProjectType.BB or ProjectType.DS3 or ProjectType.ER or ProjectType.SDT or ProjectType.AC6)
+        else if (Smithbox.ProjectType is ProjectType.BB or ProjectType.DS3 or ProjectType.ER or ProjectType.SDT or ProjectType.AC6)
         {
             preferredPath = $@"\map\MapStudio\{mapid}.msb.dcx";
             backupPath = $@"\map\MapStudio\{mapid}.msb";
         }
 
-        if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{preferredPath}") || writemode && Project.GameModDirectory != null)
+        if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{preferredPath}") || writemode && Smithbox.ProjectRoot != null)
         {
-            ad.AssetPath = $@"{Project.GameModDirectory}\{preferredPath}";
+            ad.AssetPath = $@"{Smithbox.ProjectRoot}\{preferredPath}";
         }
-        else if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{backupPath}") || writemode && Project.GameModDirectory != null)
+        else if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{backupPath}") || writemode && Smithbox.ProjectRoot != null)
         {
-            ad.AssetPath = $@"{Project.GameModDirectory}\{backupPath}";
+            ad.AssetPath = $@"{Smithbox.ProjectRoot}\{backupPath}";
         }
-        else if (File.Exists($@"{Project.GameRootDirectory}\{preferredPath}"))
+        else if (File.Exists($@"{Smithbox.GameRoot}\{preferredPath}"))
         {
-            ad.AssetPath = $@"{Project.GameRootDirectory}\{preferredPath}";
+            ad.AssetPath = $@"{Smithbox.GameRoot}\{preferredPath}";
         }
-        else if (File.Exists($@"{Project.GameRootDirectory}\{backupPath}"))
+        else if (File.Exists($@"{Smithbox.GameRoot}\{backupPath}"))
         {
-            ad.AssetPath = $@"{Project.GameRootDirectory}\{backupPath}";
+            ad.AssetPath = $@"{Smithbox.GameRoot}\{backupPath}";
         }
 
         ad.AssetName = mapid;
@@ -86,19 +86,19 @@ public static class ResourceMapLocator
         if (mapid.Length != 12)
             return adList;
 
-        if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             // DS2 BTL is located inside map's .gibdt file
             ResourceDescriptor ad = new();
             var path = $@"model\map\g{mapid[1..]}.gibhd";
 
-            if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}") || writemode && Project.GameModDirectory != null)
+            if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}") || writemode && Smithbox.ProjectRoot != null)
             {
-                ad.AssetPath = $@"{Project.GameModDirectory}\{path}";
+                ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}";
             }
-            else if (File.Exists($@"{Project.GameRootDirectory}\{path}"))
+            else if (File.Exists($@"{Smithbox.GameRoot}\{path}"))
             {
-                ad.AssetPath = $@"{Project.GameRootDirectory}\{path}";
+                ad.AssetPath = $@"{Smithbox.GameRoot}\{path}";
             }
 
             if (ad.AssetPath != null)
@@ -111,13 +111,13 @@ public static class ResourceMapLocator
             ResourceDescriptor ad2 = new();
             path = $@"model_lq\map\g{mapid[1..]}.gibhd";
 
-            if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}") || writemode && Project.GameModDirectory != null)
+            if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}") || writemode && Smithbox.ProjectRoot != null)
             {
-                ad2.AssetPath = $@"{Project.GameModDirectory}\{path}";
+                ad2.AssetPath = $@"{Smithbox.ProjectRoot}\{path}";
             }
-            else if (File.Exists($@"{Project.GameRootDirectory}\{path}"))
+            else if (File.Exists($@"{Smithbox.GameRoot}\{path}"))
             {
-                ad2.AssetPath = $@"{Project.GameRootDirectory}\{path}";
+                ad2.AssetPath = $@"{Smithbox.GameRoot}\{path}";
             }
 
             if (ad2.AssetPath != null)
@@ -127,10 +127,10 @@ public static class ResourceMapLocator
                 adList.Add(ad2);
             }
         }
-        else if (Project.Type is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        else if (Smithbox.ProjectType is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
         {
             string path;
-            if (Project.Type is ProjectType.ER or ProjectType.AC6)
+            if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
             {
                 path = $@"map\{mapid[..3]}\{mapid}";
             }
@@ -141,17 +141,17 @@ public static class ResourceMapLocator
 
             List<string> files = new();
 
-            if (Directory.Exists($@"{Project.GameRootDirectory}\{path}"))
+            if (Directory.Exists($@"{Smithbox.GameRoot}\{path}"))
             {
-                files.AddRange(Directory.GetFiles($@"{Project.GameRootDirectory}\{path}", "*.btl").ToList());
-                files.AddRange(Directory.GetFiles($@"{Project.GameRootDirectory}\{path}", "*.btl.dcx").ToList());
+                files.AddRange(Directory.GetFiles($@"{Smithbox.GameRoot}\{path}", "*.btl").ToList());
+                files.AddRange(Directory.GetFiles($@"{Smithbox.GameRoot}\{path}", "*.btl.dcx").ToList());
             }
 
-            if (Directory.Exists($@"{Project.GameModDirectory}\{path}"))
+            if (Directory.Exists($@"{Smithbox.ProjectRoot}\{path}"))
             {
                 // Check for additional BTLs the user has created.
-                files.AddRange(Directory.GetFiles($@"{Project.GameModDirectory}\{path}", "*.btl").ToList());
-                files.AddRange(Directory.GetFiles($@"{Project.GameModDirectory}\{path}", "*.btl.dcx").ToList());
+                files.AddRange(Directory.GetFiles($@"{Smithbox.ProjectRoot}\{path}", "*.btl").ToList());
+                files.AddRange(Directory.GetFiles($@"{Smithbox.ProjectRoot}\{path}", "*.btl.dcx").ToList());
                 files = files.DistinctBy(f => f.Split("\\").Last()).ToList();
             }
 
@@ -160,13 +160,13 @@ public static class ResourceMapLocator
                 ResourceDescriptor ad = new();
                 var fileName = file.Split("\\").Last();
 
-                if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}\{fileName}") || writemode && Project.GameModDirectory != null)
+                if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}\{fileName}") || writemode && Smithbox.ProjectRoot != null)
                 {
-                    ad.AssetPath = $@"{Project.GameModDirectory}\{path}\{fileName}";
+                    ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}\{fileName}";
                 }
-                else if (File.Exists($@"{Project.GameRootDirectory}\{path}\{fileName}"))
+                else if (File.Exists($@"{Smithbox.GameRoot}\{path}\{fileName}"))
                 {
-                    ad.AssetPath = $@"{Project.GameRootDirectory}\{path}\{fileName}";
+                    ad.AssetPath = $@"{Smithbox.GameRoot}\{path}\{fileName}";
                 }
 
                 if (ad.AssetPath != null)
@@ -194,38 +194,38 @@ public static class ResourceMapLocator
         if (mapid.Length != 12)
             return ad;
 
-        if (Project.Type == ProjectType.BB && mapid.StartsWith("m29"))
+        if (Smithbox.ProjectType == ProjectType.BB && mapid.StartsWith("m29"))
         {
             var path = $@"\map\{mapid.Substring(0, 9)}_00\{mapid}";
 
-            if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}.nva.dcx") || writemode && Project.GameModDirectory != null && Project.Type != ProjectType.DS1)
+            if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}.nva.dcx") || writemode && Smithbox.ProjectRoot != null && Smithbox.ProjectType != ProjectType.DS1)
             {
-                ad.AssetPath = $@"{Project.GameModDirectory}\{path}.nva.dcx";
+                ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}.nva.dcx";
             }
-            else if (File.Exists($@"{Project.GameRootDirectory}\{path}.nva.dcx"))
+            else if (File.Exists($@"{Smithbox.GameRoot}\{path}.nva.dcx"))
             {
-                ad.AssetPath = $@"{Project.GameRootDirectory}\{path}.nva.dcx";
+                ad.AssetPath = $@"{Smithbox.GameRoot}\{path}.nva.dcx";
             }
         }
         else
         {
             var path = $@"\map\{mapid}\{mapid}";
 
-            if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}.nva.dcx") || writemode && Project.GameModDirectory != null && Project.Type != ProjectType.DS1)
+            if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}.nva.dcx") || writemode && Smithbox.ProjectRoot != null && Smithbox.ProjectType != ProjectType.DS1)
             {
-                ad.AssetPath = $@"{Project.GameModDirectory}\{path}.nva.dcx";
+                ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}.nva.dcx";
             }
-            else if (File.Exists($@"{Project.GameRootDirectory}\{path}.nva.dcx"))
+            else if (File.Exists($@"{Smithbox.GameRoot}\{path}.nva.dcx"))
             {
-                ad.AssetPath = $@"{Project.GameRootDirectory}\{path}.nva.dcx";
+                ad.AssetPath = $@"{Smithbox.GameRoot}\{path}.nva.dcx";
             }
-            else if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}.nva") || writemode && Project.GameModDirectory != null)
+            else if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}.nva") || writemode && Smithbox.ProjectRoot != null)
             {
-                ad.AssetPath = $@"{Project.GameModDirectory}\{path}.nva";
+                ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}.nva";
             }
-            else if (File.Exists($@"{Project.GameRootDirectory}\{path}.nva"))
+            else if (File.Exists($@"{Smithbox.GameRoot}\{path}.nva"))
             {
-                ad.AssetPath = $@"{Project.GameRootDirectory}\{path}.nva";
+                ad.AssetPath = $@"{Smithbox.GameRoot}\{path}.nva";
             }
         }
 
@@ -240,7 +240,7 @@ public static class ResourceMapLocator
     /// <returns></returns>
     public static List<string> GetFullMapList()
     {
-        if (Project.GameRootDirectory == null)
+        if (Smithbox.GameRoot == null)
             return null;
 
         if (FullMapList != null)
@@ -251,15 +251,15 @@ public static class ResourceMapLocator
             HashSet<string> mapSet = new();
 
             // DS2 has its own structure for msbs, where they are all inside individual folders
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
-                var maps = Directory.GetFileSystemEntries(Project.GameRootDirectory + @"\map", @"m*").ToList();
+                var maps = Directory.GetFileSystemEntries(Smithbox.GameRoot + @"\map", @"m*").ToList();
 
-                if (Project.GameModDirectory != null)
+                if (Smithbox.ProjectRoot != null)
                 {
-                    if (Directory.Exists(Project.GameModDirectory + @"\map"))
+                    if (Directory.Exists(Smithbox.ProjectRoot + @"\map"))
                     {
-                        maps.AddRange(Directory.GetFileSystemEntries(Project.GameModDirectory + @"\map", @"m*").ToList());
+                        maps.AddRange(Directory.GetFileSystemEntries(Smithbox.ProjectRoot + @"\map", @"m*").ToList());
                     }
                 }
 
@@ -269,21 +269,21 @@ public static class ResourceMapLocator
             else
             {
                 var msbFiles = Directory
-                    .GetFileSystemEntries(Project.GameRootDirectory + @"\map\MapStudio\", @"*.msb")
+                    .GetFileSystemEntries(Smithbox.GameRoot + @"\map\MapStudio\", @"*.msb")
                     .Select(Path.GetFileNameWithoutExtension).ToList();
 
                 msbFiles.AddRange(Directory
-                    .GetFileSystemEntries(Project.GameRootDirectory + @"\map\MapStudio\", @"*.msb.dcx")
+                    .GetFileSystemEntries(Smithbox.GameRoot + @"\map\MapStudio\", @"*.msb.dcx")
                     .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension).ToList());
 
-                if (Project.GameModDirectory != null && Directory.Exists(Project.GameModDirectory + @"\map\MapStudio\"))
+                if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + @"\map\MapStudio\"))
                 {
                     msbFiles.AddRange(Directory
-                        .GetFileSystemEntries(Project.GameModDirectory + @"\map\MapStudio\", @"*.msb")
+                        .GetFileSystemEntries(Smithbox.ProjectRoot + @"\map\MapStudio\", @"*.msb")
                         .Select(Path.GetFileNameWithoutExtension).ToList());
 
                     msbFiles.AddRange(Directory
-                        .GetFileSystemEntries(Project.GameModDirectory + @"\map\MapStudio\", @"*.msb.dcx")
+                        .GetFileSystemEntries(Smithbox.ProjectRoot + @"\map\MapStudio\", @"*.msb.dcx")
                         .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension)
                         .ToList());
                 }
@@ -314,10 +314,10 @@ public static class ResourceMapLocator
     /// <returns>The map ID for the purpose of asset storage</returns>
     public static string GetAssetMapID(string mapid)
     {
-        if (Project.Type is ProjectType.ER or ProjectType.AC6)
+        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
             return mapid;
 
-        if (Project.Type is ProjectType.DS1R)
+        if (Smithbox.ProjectType is ProjectType.DS1R)
         {
             if (mapid.StartsWith("m99"))
             {
@@ -325,11 +325,11 @@ public static class ResourceMapLocator
                 return mapid;
             }
         }
-        else if (Project.Type is ProjectType.DES)
+        else if (Smithbox.ProjectType is ProjectType.DES)
         {
             return mapid;
         }
-        else if (Project.Type is ProjectType.BB)
+        else if (Smithbox.ProjectType is ProjectType.BB)
         {
             if (mapid.StartsWith("m29"))
             {

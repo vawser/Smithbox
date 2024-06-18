@@ -1,21 +1,13 @@
 ﻿using ImGuiNET;
-using Microsoft.Extensions.Logging;
-using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
-using StudioCore.BanksMain;
-using StudioCore.Editors;
+using StudioCore.Core;
 using StudioCore.Editors.AssetBrowser;
-using StudioCore.Help;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
-using static SoulsFormats.DRB;
-using static SoulsFormats.MSB_AC6.Part;
 
 namespace StudioCore.Interface.Tabs;
 
@@ -40,36 +32,21 @@ public class AliasTab
     private bool IsNumericID;
     private bool IsMapID;
 
-    private AssetCategoryType AssetType;
-
-    public AliasTab(AliasBank bank, string name, ref bool tagBool, bool isNumericId = false, bool isMapId = false, AssetCategoryType assetType = AssetCategoryType.None) 
+    public AliasTab(AliasBank bank, string name, ref bool tagBool, bool isNumericId = false, bool isMapId = false) 
     {
         Bank = bank;
         EntryName = name;
         TagBool = tagBool;
         IsNumericID = isNumericId;
         IsMapID = isMapId;
-        AssetType = assetType;
     }
 
     public void Display()
     {
-        if (Project.Type == ProjectType.Undefined)
-            return;
-
-        if (Bank.IsLoadingAliases)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
         DisplayNameGroupList();
-
-        if (Bank.CanReloadBank)
-        {
-            Bank.CanReloadBank = false;
-            Bank.ReloadAliasBank();
-
-            // Invalidate these so the name updates there
-            AssetBrowserCache.UpdateCache();
-        }
     }
 
     public void DisplayNameGroupList()
@@ -87,7 +64,10 @@ public class AliasTab
 
         ImGui.BeginChild($"AliasSelectionList_{EntryName}");
 
-        DisplaySelectionList(Bank.AliasNames.GetEntries(EntryName));
+        if(Bank.Aliases != null)
+        {
+            DisplaySelectionList(Bank.Aliases.list);
+        }
 
         ImGui.EndChild();
 
@@ -122,9 +102,7 @@ public class AliasTab
             _searchInputCache = _searchInput;
         }
 
-        var entries = Bank.AliasNames.GetEntries(EntryName);
-
-        foreach (var entry in entries)
+        foreach (var entry in Bank.Aliases.list)
         {
             var displayedName = $"{entry.id} - {entry.name}";
 
@@ -185,60 +163,20 @@ public class AliasTab
 
             if (ImGui.Button("Update", buttonSize))
             {
-                if (AssetType == AssetCategoryType.None)
-                {
-                    Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
-                }
-                else
-                {
-                    switch (AssetType)
-                    {
-                        case AssetCategoryType.Character:
-                            Bank.AddToLocalAliasBank("Chr", _refUpdateId, _refUpdateName, _refUpdateTags);
-                            break;
-                        case AssetCategoryType.Asset:
-                            Bank.AddToLocalAliasBank("Obj", _refUpdateId, _refUpdateName, _refUpdateTags);
-                            break;
-                        case AssetCategoryType.Part:
-                            Bank.AddToLocalAliasBank("Part", _refUpdateId, _refUpdateName, _refUpdateTags);
-                            break;
-                        case AssetCategoryType.MapPiece:
-                            Bank.AddToLocalAliasBank("MapPiece", _refUpdateId, _refUpdateName, _refUpdateTags);
-                            break;
-                    }
-                }
+                Bank.AddToLocalAliasBank(_refUpdateId, _refUpdateName, _refUpdateTags);
+
+                Smithbox.NameCacheHandler.ReloadNameCaches = true;
 
                 ImGui.CloseCurrentPopup();
-                Bank.CanReloadBank = true;
             }
 
             if (ImGui.Button("Restore Default", buttonSize))
             {
-                if (AssetType == AssetCategoryType.None)
-                {
-                    Bank.RemoveFromLocalAliasBank("", _refUpdateId);
-                }
-                else
-                {
-                    switch (AssetType)
-                    {
-                        case AssetCategoryType.Character:
-                            Bank.RemoveFromLocalAliasBank("Chr", _refUpdateId);
-                            break;
-                        case AssetCategoryType.Asset:
-                            Bank.RemoveFromLocalAliasBank("Obj", _refUpdateId);
-                            break;
-                        case AssetCategoryType.Part:
-                            Bank.RemoveFromLocalAliasBank("Part", _refUpdateId);
-                            break;
-                        case AssetCategoryType.MapPiece:
-                            Bank.RemoveFromLocalAliasBank("MapPiece", _refUpdateId);
-                            break;
-                    }
-                }
+                Bank.RemoveFromLocalAliasBank(_refUpdateId);
+
+                Smithbox.NameCacheHandler.ReloadNameCaches = true;
 
                 ImGui.CloseCurrentPopup();
-                Bank.CanReloadBank = true;
             }
 
             if (ImGui.Button("Copy ID to Clipboard", buttonSize))
@@ -290,9 +228,7 @@ public class AliasTab
                 }
             }
 
-            var entries = Bank.AliasNames.GetEntries(EntryName);
-
-            foreach (var entry in entries)
+            foreach (var entry in Bank.Aliases.list)
             {
                 if (_newRefId == entry.id)
                     isValid = false;
@@ -300,32 +236,11 @@ public class AliasTab
 
             if (isValid)
             {
-                if (AssetType == AssetCategoryType.None)
-                {
-                    Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
-                }
-                else
-                { 
-                    switch(AssetType)
-                    {
-                        case AssetCategoryType.Character:
-                            Bank.AddToLocalAliasBank("Chr", _newRefId, _newRefName, _newRefTags);
-                            break;
-                        case AssetCategoryType.Asset:
-                            Bank.AddToLocalAliasBank("Obj", _newRefId, _newRefName, _newRefTags);
-                            break;
-                        case AssetCategoryType.Part:
-                            Bank.AddToLocalAliasBank("Part", _newRefId, _newRefName, _newRefTags);
-                            break;
-                        case AssetCategoryType.MapPiece:
-                            Bank.AddToLocalAliasBank("MapPiece", _newRefId, _newRefName, _newRefTags);
-                            break;
-                    }
-                }
+                Bank.AddToLocalAliasBank(_newRefId, _newRefName, _newRefTags);
 
+                Smithbox.NameCacheHandler.ReloadNameCaches = true;
 
                 ImGui.CloseCurrentPopup();
-                Bank.CanReloadBank = true;
             }
             else
             {

@@ -1,21 +1,15 @@
-﻿using HKLib.hk2018.hkAsyncThreadPool;
-using ImGuiNET;
+﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.BanksMain;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Formats;
 using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Resource;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Veldrid;
 
@@ -57,7 +51,7 @@ public class WorldMapScreen : IResourceEventListener
 
     public void OnProjectChanged()
     {
-        if (Project.Type is ProjectType.ER)
+        if (Smithbox.ProjectType is ProjectType.ER)
         {
             LoadWorldMapTexture();
             LoadWorldMapLayout();
@@ -88,7 +82,7 @@ public class WorldMapScreen : IResourceEventListener
 
     public void DisplayWorldMapButton()
     {
-        if (Project.Type != ProjectType.ER)
+        if (Smithbox.ProjectType != ProjectType.ER)
             return;
 
         var scale = Smithbox.GetUIScale();
@@ -116,7 +110,7 @@ public class WorldMapScreen : IResourceEventListener
 
     public void DisplayWorldMap()
     {
-        if (Project.Type != ProjectType.ER)
+        if (Smithbox.ProjectType != ProjectType.ER)
             return;
 
         if (!WorldMapOpen)
@@ -179,7 +173,7 @@ public class WorldMapScreen : IResourceEventListener
             foreach(var match in currentHoverMaps)
             {
                 ImGui.Text($"{match}");
-                AliasUtils.DisplayAlias(MapAliasBank.GetMapName(match));
+                AliasUtils.DisplayAlias(Smithbox.NameCacheHandler.MapNameCache.GetMapName(match));
             }
         }
 
@@ -194,7 +188,7 @@ public class WorldMapScreen : IResourceEventListener
             foreach (var match in Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone)
             {
                 ImGui.Text($"{match}");
-                AliasUtils.DisplayAlias(MapAliasBank.GetMapName(match));
+                AliasUtils.DisplayAlias(Smithbox.NameCacheHandler.MapNameCache.GetMapName(match));
             }
         }
 

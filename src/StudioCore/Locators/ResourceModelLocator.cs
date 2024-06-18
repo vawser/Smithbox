@@ -1,6 +1,6 @@
 ﻿
 using SoulsFormats.KF4;
-using StudioCore.UserProject;
+using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,13 +23,13 @@ public static class ResourceModelLocator
 
     public static string MapModelNameToAssetName(string mapid, string modelname)
     {
-        if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
+        if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
             return $@"{modelname}A{mapid.Substring(1, 2)}";
 
-        if (Project.Type == ProjectType.DES)
+        if (Smithbox.ProjectType == ProjectType.DES)
             return $@"{modelname}";
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             return modelname;
 
         return $@"{mapid}_{modelname.Substring(1)}";
@@ -38,28 +38,28 @@ public static class ResourceModelLocator
     public static ResourceDescriptor GetMapModel(string mapid, string model)
     {
         ResourceDescriptor ret = new();
-        if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.BB || Project.Type == ProjectType.DES)
+        if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.BB || Smithbox.ProjectType == ProjectType.DES)
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.flver");
-        else if (Project.Type == ProjectType.DS1R)
+        else if (Smithbox.ProjectType == ProjectType.DS1R)
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.flver.dcx");
-        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"model\map\{mapid}.mapbhd");
-        else if (Project.Type == ProjectType.ER)
+        else if (Smithbox.ProjectType == ProjectType.ER)
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{model}.mapbnd.dcx");
-        else if (Project.Type == ProjectType.AC6)
+        else if (Smithbox.ProjectType == ProjectType.AC6)
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{model}.mapbnd.dcx");
         else
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.mapbnd.dcx");
 
         ret.AssetName = model;
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/model/";
             ret.AssetVirtualPath = $@"map/{mapid}/model/{model}.flv.dcx";
         }
         else
         {
-            if (Project.Type is not ProjectType.DES
+            if (Smithbox.ProjectType is not ProjectType.DES
                 and not ProjectType.DS1
                 and not ProjectType.DS1R
                 and not ProjectType.BB)
@@ -74,7 +74,7 @@ public static class ResourceModelLocator
     public static ResourceDescriptor GetMapCollisionModel(string mapid, string model, bool hi = true)
     {
         ResourceDescriptor ret = new();
-        if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DES)
+        if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DES)
         {
             if (hi)
             {
@@ -89,14 +89,14 @@ public static class ResourceModelLocator
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx";
             }
         }
-        else if (Project.Type == ProjectType.DS2S)
+        else if (Smithbox.ProjectType == ProjectType.DS2S)
         {
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"model\map\h{mapid.Substring(1)}.hkxbhd");
             ret.AssetName = model;
             ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/{model}.hkx.dcx";
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/hi";
         }
-        else if (Project.Type == ProjectType.DS3 || Project.Type == ProjectType.BB)
+        else if (Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.BB)
         {
             if (hi)
             {
@@ -123,7 +123,7 @@ public static class ResourceModelLocator
     public static ResourceDescriptor GetMapNVMModel(string mapid, string model)
     {
         ResourceDescriptor ret = new();
-        if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R || Project.Type == ProjectType.DES)
+        if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R || Smithbox.ProjectType == ProjectType.DES)
         {
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.nvm");
             ret.AssetName = model;
@@ -161,7 +161,7 @@ public static class ResourceModelLocator
         ResourceDescriptor ret = new();
         ret.AssetName = chr;
         ret.AssetArchiveVirtualPath = $@"chr/{chr}/model";
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             ret.AssetVirtualPath = $@"chr/{chr}/model/{chr}.flv";
         else
             ret.AssetVirtualPath = $@"chr/{chr}/model/{chr}.flver";
@@ -175,9 +175,9 @@ public static class ResourceModelLocator
         ret.AssetName = obj;
         ret.AssetArchiveVirtualPath = $@"obj/{obj}/model";
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             ret.AssetVirtualPath = $@"obj/{obj}/model/{obj}.flv";
-        else if (Project.Type is ProjectType.ER or ProjectType.AC6)
+        else if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
             ret.AssetVirtualPath = $@"obj/{obj}/model/{obj.ToUpper()}.flver";
         else
             ret.AssetVirtualPath = $@"obj/{obj}/model/{obj}.flver";
@@ -191,11 +191,11 @@ public static class ResourceModelLocator
         ret.AssetName = part;
         ret.AssetArchiveVirtualPath = $@"parts/{part}/model";
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             ret.AssetVirtualPath = $@"parts/{part}/model/{part}.flv";
         }
-        else if (Project.Type is ProjectType.DS1)
+        else if (Smithbox.ProjectType is ProjectType.DS1)
         {
             ret.AssetVirtualPath = $@"parts/{part}/model/{part.ToUpper()}.flver";
         }

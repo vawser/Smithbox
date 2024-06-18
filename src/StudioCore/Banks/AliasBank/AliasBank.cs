@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Text;
-using StudioCore.UserProject;
-using StudioCore.BanksMain;
+using StudioCore.Core;
+using StudioCore.Locators;
 
 namespace StudioCore.Banks.AliasBank;
 
@@ -16,141 +16,50 @@ namespace StudioCore.Banks.AliasBank;
 /// </summary>
 public class AliasBank
 {
-    public AliasContainer _loadedAliasBank { get; set; }
-
-    public bool IsLoadingAliases { get; set; }
-    public bool CanReloadBank { get; set; }
+    public AliasResource Aliases { get; set; }
 
     private string TemplateName = "Template.json";
 
     private string AliasDirectory = "";
 
-    private string FileName = "";
+    private string AliasFileName = "";
 
-    private bool IsAssetFileType = false;
+    private string AliasTitle = "";
 
-    private string AliasName = "";
-
-    public AliasBankType aliasType;
-
-    public Dictionary<string, string> enumDict;
-
-    public AliasBank(AliasBankType _aliasType)
+    public AliasBank(string fileName, string path, string title)
     {
-        CanReloadBank = false;
-
-        aliasType = _aliasType;
-
-        if (aliasType is AliasBankType.Model)
-        {
-            AliasName = "Models";
-            AliasDirectory = "Models";
-            FileName = "";
-            IsAssetFileType = true;
-        }
-
-        if (aliasType is AliasBankType.EventFlag)
-        {
-            AliasName = "Flags";
-            AliasDirectory = "Flags";
-            FileName = "EventFlag";
-            IsAssetFileType = false;
-        }
-
-        if (aliasType is AliasBankType.Particle)
-        {
-            AliasName = "Particles";
-            AliasDirectory = "Particles";
-            FileName = "Fxr";
-            IsAssetFileType = false;
-        }
-
-        if (aliasType is AliasBankType.Map)
-        {
-            AliasName = "Maps";
-            AliasDirectory = "Maps";
-            FileName = "Maps";
-            IsAssetFileType = false;
-        }
-
-        if (aliasType is AliasBankType.Gparam)
-        {
-            AliasName = "Gparams";
-            AliasDirectory = "Gparams";
-            FileName = "Gparams";
-            IsAssetFileType = false;
-        }
-
-        if (aliasType is AliasBankType.Sound)
-        {
-            AliasName = "Sounds";
-            AliasDirectory = "Sounds";
-            FileName = "Sound";
-            IsAssetFileType = false;
-        }
-
-        if (aliasType is AliasBankType.Cutscene)
-        {
-            AliasName = "Cutscenes";
-            AliasDirectory = "Cutscenes";
-            FileName = "Cutscene";
-            IsAssetFileType = false;
-        }
-
-        if (aliasType is AliasBankType.Movie)
-        {
-            AliasName = "Movies";
-            AliasDirectory = "Movies";
-            FileName = "Movie";
-            IsAssetFileType = false;
-        }
+        AliasDirectory = path;
+        AliasFileName = fileName;
+        AliasTitle = title;
     }
 
-    public AliasContainer AliasNames
+    public void LoadBank()
     {
-        get
+        try
         {
-            if (IsLoadingAliases)
-                return new AliasContainer();
-
-            return _loadedAliasBank;
+            Aliases = BankUtils.LoadAliasJSON(AliasFileName, AliasDirectory);
         }
-    }
-
-    public void ReloadAliasBank()
-    {
-        TaskManager.Run(new TaskManager.LiveTask($"Alias Bank - Load {AliasName}", TaskManager.RequeueType.None, false,
-        () =>
+        catch (Exception e)
         {
-            _loadedAliasBank = new AliasContainer();
-            IsLoadingAliases = true;
+            TaskLogs.AddLog($"Failed to load: {AliasTitle} Bank: {e.Message}");
+        }
 
-            if (Project.Type != ProjectType.Undefined)
-            {
-                try
-                {
-                    _loadedAliasBank = new AliasContainer(aliasType);
-
-                    if (aliasType == AliasBankType.Map)
-                    {
-                        MapAliasBank.ReloadMapNames();
-                    }
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"FAILED LOAD: {e.Message}");
-                }
-
-                IsLoadingAliases = false;
-            }
-            else
-            {
-                IsLoadingAliases = false;
-            }
-        }));
+        TaskLogs.AddLog($"Alias Bank: Loaded {AliasTitle} Bank");
     }
 
-    public AliasResource LoadTargetAliasBank(string path)
+    public Dictionary<string, AliasReference> GetEntries()
+    {
+        Dictionary<string, AliasReference> Entries = new Dictionary<string, AliasReference>();
+
+        foreach(var entry in Aliases.list)
+        {
+            Entries.Add(entry.id, entry);
+        }
+
+        return Entries;
+    }
+
+    public AliasResource LoadAliasResource(string path)
     {
         var newResource = new AliasResource();
 
@@ -165,21 +74,16 @@ public class AliasBank
         return newResource;
     }
 
-    public void WriteTargetAliasBank(AliasResource targetBank, string assetType)
+    public void WriteAliasResource(AliasResource targetBank)
     {
-        var resourcePath =  $"{Project.ProjectDataDir}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+        var resourcePath =  $"{Smithbox.SmithboxDataRoot}\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
 
         if(CFG.Current.AliasBank_EditorMode)
         {
-            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
         }
 
-        var resourceFilePath = $"{resourcePath}\\{FileName}.json";
-
-        if (IsAssetFileType)
-        {
-            resourceFilePath = $"{resourcePath}\\{assetType}.json";
-        }
+        var resourceFilePath = $"{resourcePath}\\{AliasFileName}.json";
 
         if (File.Exists(resourceFilePath))
         {
@@ -200,23 +104,18 @@ public class AliasBank
         }
     }
 
-    public void AddToLocalAliasBank(string assetType, string refID, string refName, string refTags)
+    public void AddToLocalAliasBank(string refID, string refName, string refTags)
     {
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{TemplateName}";
 
-        var resourcePath = $"{Project.ProjectDataDir}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+        var resourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
 
         if (CFG.Current.AliasBank_EditorMode)
         {
-            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
         }
 
-        var resourceFilePath = $"{resourcePath}\\{FileName}.json";
-
-        if (IsAssetFileType)
-        {
-            resourceFilePath = $"{resourcePath}\\{assetType}.json";
-        }
+        var resourceFilePath = $"{resourcePath}\\{AliasFileName}.json";
 
         // Create directory/file if they don't exist
         if (!Directory.Exists(resourcePath))
@@ -232,7 +131,7 @@ public class AliasBank
         if (File.Exists(resourceFilePath))
         {
             // Load up the target local model alias bank.
-            var targetResource = LoadTargetAliasBank(resourceFilePath);
+            var targetResource = LoadAliasResource(resourceFilePath);
 
             var doesExist = false;
 
@@ -282,33 +181,31 @@ public class AliasBank
                 targetResource.list.Add(entry);
             }
 
-            WriteTargetAliasBank(targetResource, assetType);
+            WriteAliasResource(targetResource);
         }
+
+        LoadBank();
     }
 
     /// <summary>
     /// Removes specified reference from local model alias bank.
     /// </summary>
-    public void RemoveFromLocalAliasBank(string assetType, string refID)
+    public void RemoveFromLocalAliasBank(string refID)
     {
-        var resourcePath = $"{Project.ProjectDataDir}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+        var resourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
 
         if (CFG.Current.AliasBank_EditorMode)
         {
-            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
         }
 
-        var resourceFilePath = $"{resourcePath}\\{FileName}.json";
+        var resourceFilePath = $"{resourcePath}\\{AliasFileName}.json";
 
-        if (IsAssetFileType)
-        {
-            resourceFilePath = $"{resourcePath}\\{assetType}.json";
-        }
 
         if (File.Exists(resourceFilePath))
         {
             // Load up the target local model alias bank. 
-            var targetResource = LoadTargetAliasBank(resourceFilePath);
+            var targetResource = LoadAliasResource(resourceFilePath);
 
             // Remove the specified reference from the local model alias bank.
             for (var i = 0; i <= targetResource.list.Count - 1; i++)
@@ -321,17 +218,20 @@ public class AliasBank
                 }
             }
 
-            WriteTargetAliasBank(targetResource, assetType);
+            WriteAliasResource(targetResource);
         }
+
+        LoadBank();
     }
+
+    private Dictionary<string, string> enumDict;
 
     public Dictionary<string, string> GetEnumDictionary()
     {
         if (enumDict == null)
         {
             enumDict = new Dictionary<string, string>();
-            var entries = AliasNames.GetEntries(AliasName);
-            foreach (var entry in entries)
+            foreach (var entry in Aliases.list)
             {
                 var name = entry.name;
                 if(name == "")

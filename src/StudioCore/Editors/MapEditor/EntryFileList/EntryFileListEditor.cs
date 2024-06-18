@@ -1,9 +1,9 @@
 ﻿using ImGuiNET;
+using StudioCore.Core;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Gui;
 using StudioCore.MsbEditor;
 using StudioCore.Scene;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,10 +54,10 @@ public class EntryFileListEditor
         // -> Struct1 and Struct2 need to be changed in-line with the String
         return;
 
-        if (Project.Type == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        if (Project.Type != ProjectType.AC6)
+        if (Smithbox.ProjectType != ProjectType.AC6)
             return;
 
         if (!EntryFileListBank.IsLoaded)

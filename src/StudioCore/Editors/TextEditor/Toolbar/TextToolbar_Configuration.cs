@@ -1,6 +1,6 @@
 ﻿using ImGuiNET;
+using StudioCore.Core;
 using StudioCore.Interface;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ public class TextToolbar_Configuration
 
     public void OnGui()
     {
-        if (Project.Type == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);

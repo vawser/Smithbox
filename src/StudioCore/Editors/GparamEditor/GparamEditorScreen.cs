@@ -1,29 +1,17 @@
-﻿using DotNext.Collections.Generic;
-using Google.Protobuf.WellKnownTypes;
-using ImGuiNET;
+﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Banks;
 using StudioCore.Banks.FormatBank;
-using StudioCore.BanksMain;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.GparamEditor.Toolbar;
 using StudioCore.Editors.GraphicsEditor;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.ModelEditor.Toolbar;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
-using StudioCore.Platform;
-using StudioCore.Scene;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Numerics;
-using System.Reflection;
 using System.Text.RegularExpressions;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -173,11 +161,19 @@ public class GparamEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_GparamEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
         {
             ImGui.Begin("Editor##InvalidGparamEditor");
 
-            ImGui.Text($"This editor does not support {Project.Type}.");
+            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
+
+            ImGui.End();
+        }
+        else if(Smithbox.ProjectHandler.CurrentProject == null)
+        {
+            ImGui.Begin("Editor##InvalidGparamEditor");
+
+            ImGui.Text("No project loaded. File -> New Project");
 
             ImGui.End();
         }
@@ -399,7 +395,7 @@ public class GparamEditorScreen : EditorScreen
             {
                 GPARAM.Param entry = data.Params[i];
 
-                var name = GparamFormatBank.Bank.GetReferenceName(entry.Key, entry.Name);
+                var name = Smithbox.BankHandler.GPARAM_Info.GetReferenceName(entry.Key, entry.Name);
 
                 var display = false;
 
@@ -457,7 +453,7 @@ public class GparamEditorScreen : EditorScreen
         List<FormatReference> missingGroups = new List<FormatReference>();
 
         // Get source Format Reference
-        foreach (var entry in GparamFormatBank.Bank.Entries.list)
+        foreach (var entry in Smithbox.BankHandler.GPARAM_Info.Information.list)
         {
             bool isPresent = false;
 
@@ -517,7 +513,7 @@ public class GparamEditorScreen : EditorScreen
             {
                 GPARAM.IField entry = data.Fields[i];
 
-                var name = GparamFormatBank.Bank.GetReferenceName(entry.Key, entry.Name);
+                var name = Smithbox.BankHandler.GPARAM_Info.GetReferenceName(entry.Key, entry.Name);
 
                 if (SearchFilters.IsEditorSearchMatch(_paramFieldSearchInput, entry.Name, " "))
                 {
@@ -555,7 +551,7 @@ public class GparamEditorScreen : EditorScreen
         List<FormatMember> missingFields = new List<FormatMember>();
 
         // Get source Format Reference
-        foreach(var entry in GparamFormatBank.Bank.Entries.list)
+        foreach(var entry in Smithbox.BankHandler.GPARAM_Info.Information.list)
         {
             if (entry.id == _selectedParamGroup.Key)
             {
@@ -789,7 +785,7 @@ public class GparamEditorScreen : EditorScreen
     {
         ImGui.AlignTextToFramePadding();
 
-        string desc = GparamFormatBank.Bank.GetReferenceDescription(_selectedParamGroup.Key, _selectedParamField.Key);
+        string desc = Smithbox.BankHandler.GPARAM_Info.GetReferenceDescription(_selectedParamGroup.Key, _selectedParamField.Key);
 
         // Skip if empty
         if (desc != "")
@@ -798,7 +794,7 @@ public class GparamEditorScreen : EditorScreen
         }
 
         // Show enum list if they exist
-        var propertyEnum = GparamFormatBank.Bank.GetEnumForProperty(field.Key);
+        var propertyEnum = Smithbox.BankHandler.GPARAM_Info.GetEnumForProperty(field.Key);
         if (propertyEnum != null)
         {
             foreach (var entry in propertyEnum.members)
@@ -820,7 +816,7 @@ public class GparamEditorScreen : EditorScreen
             if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
             {
                 // Only show if the file exists in the project directory
-                if (info.Path.Contains(Project.GameModDirectory))
+                if (info.Path.Contains(Smithbox.ProjectRoot))
                 {
                     if (ImGui.Selectable("Remove"))
                     {
@@ -1023,7 +1019,7 @@ public class GparamEditorScreen : EditorScreen
         string filePath = info.Path;
         string baseFileName = info.Name;
 
-        filePath = filePath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
+        filePath = filePath.Replace($"{Smithbox.GameRoot}", $"{Smithbox.ProjectRoot}");
 
         if (File.Exists(filePath))
         {
@@ -1051,7 +1047,7 @@ public class GparamEditorScreen : EditorScreen
         string newFilePath = filePath.Replace(baseFileName, tryFileName);
 
         // If the original is in the root dir, change the path to mod
-        newFilePath = newFilePath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
+        newFilePath = newFilePath.Replace($"{Smithbox.GameRoot}", $"{Smithbox.ProjectRoot}");
 
         if (!File.Exists(newFilePath))
         {
@@ -1081,7 +1077,7 @@ public class GparamEditorScreen : EditorScreen
             string newFilePath = filePath.Replace(baseFileName, currentfileName);
 
             // If the original is in the root dir, change the path to mod
-            newFilePath = newFilePath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
+            newFilePath = newFilePath.Replace($"{Smithbox.GameRoot}", $"{Smithbox.ProjectRoot}");
 
             if (!File.Exists(newFilePath))
             {
@@ -1195,7 +1191,7 @@ public class GparamEditorScreen : EditorScreen
     /// <param name="missingField"></param>
     public void AddMissingField(Param targetParam, FormatMember missingField)
     {
-        var typeName = GparamFormatBank.Bank.GetTypeForProperty(missingField.id);
+        var typeName = Smithbox.BankHandler.GPARAM_Info.GetTypeForProperty(missingField.id);
 
         if (typeName == "Byte")
         {

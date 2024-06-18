@@ -1,11 +1,11 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -103,7 +103,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 ImguiUtils.WrappedText("");
 
                 ImGui.Checkbox("Is Common Script", ref _newScriptIsCommon);
-                ImguiUtils.ShowHoverTooltip($"Save the script as a common script for all project types.\nIf not, then the script will only appear for {Project.Type} projects.");
+                ImguiUtils.ShowHoverTooltip($"Save the script as a common script for all project types.\nIf not, then the script will only appear for {Smithbox.ProjectType} projects.");
                 ImguiUtils.WrappedText("");
 
                 var Size = ImGui.GetWindowSize();

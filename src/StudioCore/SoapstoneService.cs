@@ -4,7 +4,6 @@ using SoapstoneLib;
 using SoapstoneLib.Proto;
 using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.UserProject;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -15,6 +14,7 @@ using System.Threading.Tasks;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Core;
 
 #pragma warning disable CS1998 // Async method lacks 'await'. Return without Task is convenient, though
 
@@ -67,13 +67,13 @@ public class SoapstoneService : SoapstoneServiceV1
             Id = "DSMapStudio", Version = version, ServerPath = Process.GetCurrentProcess().MainModule?.FileName
         };
 
-        if (Project.GameModDirectory != null
-            && gameMapping.TryGetValue(Project.Type, out FromSoftGame gameType))
+        if (Smithbox.ProjectRoot != null
+            && gameMapping.TryGetValue(Smithbox.ProjectType, out FromSoftGame gameType))
         {
             EditorResource projectResource = new()
             {
                 Type = EditorResourceType.Project,
-                ProjectJsonPath = Path.Combine(Project.GameModDirectory, "project.json"),
+                ProjectJsonPath = Path.Combine(Smithbox.ProjectRoot, "project.json"),
                 Game = gameType
             };
             response.Resources.Add(projectResource);
@@ -273,7 +273,7 @@ public class SoapstoneService : SoapstoneServiceV1
         RequestedProperties properties)
     {
         List<SoulsObject> results = new();
-        if (!gameMapping.TryGetValue(Project.Type, out FromSoftGame game) || resource.Game != game)
+        if (!gameMapping.TryGetValue(Smithbox.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return results;
         }
@@ -399,7 +399,7 @@ public class SoapstoneService : SoapstoneServiceV1
         SearchOptions options)
     {
         List<SoulsObject> results = new();
-        if (!gameMapping.TryGetValue(Project.Type, out FromSoftGame game) || resource.Game != game)
+        if (!gameMapping.TryGetValue(Smithbox.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return results;
         }
@@ -573,7 +573,7 @@ public class SoapstoneService : SoapstoneServiceV1
     {
         // At the moment, only loading maps is supported.
         // This could be extended to switching FMG language, or adding a param view, or opening a model to view.
-        if (!gameMapping.TryGetValue(Project.Type, out FromSoftGame game) || resource.Game != game)
+        if (!gameMapping.TryGetValue(Smithbox.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return;
         }
@@ -590,7 +590,7 @@ public class SoapstoneService : SoapstoneServiceV1
         EditorResource resource,
         SoulsKey key)
     {
-        if (!gameMapping.TryGetValue(Project.Type, out FromSoftGame game) || resource.Game != game)
+        if (!gameMapping.TryGetValue(Smithbox.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return;
         }
@@ -657,7 +657,7 @@ public class SoapstoneService : SoapstoneServiceV1
     {
         // At the moment, just map properties, since there are some multi-keyed things like entity groups
         // Params are also possible; FMG might require a new command
-        if (!gameMapping.TryGetValue(Project.Type, out FromSoftGame game) || resource.Game != game)
+        if (!gameMapping.TryGetValue(Smithbox.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return;
         }

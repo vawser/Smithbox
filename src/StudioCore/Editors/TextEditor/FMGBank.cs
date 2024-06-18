@@ -2,13 +2,13 @@
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Locators;
+using StudioCore.Core;
 
 namespace StudioCore.TextEditor;
 
@@ -662,8 +662,8 @@ public static partial class FMGBank
         }
 
         IBinder fmgBinder;
-        if (Project.Type == ProjectType.DES || Project.Type == ProjectType.DS1 ||
-            Project.Type == ProjectType.DS1R)
+        if (Smithbox.ProjectType == ProjectType.DES || Smithbox.ProjectType == ProjectType.DS1 ||
+            Smithbox.ProjectType == ProjectType.DS1R)
         {
             fmgBinder = BND3.Read(path);
         }
@@ -697,12 +697,12 @@ public static partial class FMGBank
                     ActiveUITypes.Add((FmgUICategory)e, false);
                 }
 
-                if (Project.Type == ProjectType.Undefined)
+                if (Smithbox.ProjectType == ProjectType.Undefined)
                 {
                     return;
                 }
 
-                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                 {
                     if (ReloadDS2FMGs())
                     {
@@ -756,12 +756,12 @@ public static partial class FMGBank
         }
 
         List<string> files = Directory
-            .GetFileSystemEntries($@"{Project.GameRootDirectory}\{desc.AssetPath}", @"*.fmg").ToList();
+            .GetFileSystemEntries($@"{Smithbox.GameRoot}\{desc.AssetPath}", @"*.fmg").ToList();
         FmgInfoBank = new List<FMGInfo>();
         foreach (var file in files)
         {
-            var modfile = $@"{Project.GameModDirectory}\{desc.AssetPath}\{Path.GetFileName(file)}";
-            if (Project.GameModDirectory != null && File.Exists(modfile))
+            var modfile = $@"{Smithbox.ProjectRoot}\{desc.AssetPath}\{Path.GetFileName(file)}";
+            if (Smithbox.ProjectRoot != null && File.Exists(modfile))
             {
                 var fmg = FMG.Read(modfile);
                 SetFMGInfoDS2(modfile);
@@ -820,7 +820,7 @@ public static partial class FMGBank
     /// </summary>
     private static void ApplyGameDifferences(FMGInfo info)
     {
-        ProjectType gameType = Project.Type;
+        ProjectType gameType = Smithbox.ProjectType;
         switch (info.FmgID)
         {
             case FmgIDType.ReusedFMG_32:
@@ -1151,7 +1151,7 @@ public static partial class FMGBank
     {
         foreach (FMGInfo info in FmgInfoBank)
         {
-            Utils.WriteWithBackup(Project.GameRootDirectory, Project.GameModDirectory,
+            Utils.WriteWithBackup(Smithbox.GameRoot, Smithbox.ProjectRoot,
                 $@"menu\text\{LanguageFolder}\{info.Name}.fmg", info.Fmg);
         }
     }
@@ -1165,12 +1165,12 @@ public static partial class FMGBank
                 return;
             }
 
-            if (Project.Type == ProjectType.Undefined)
+            if (Smithbox.ProjectType == ProjectType.Undefined)
             {
                 return;
             }
 
-            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
                 SaveFMGsDS2();
                 TaskLogs.AddLog("Saved FMG text");
@@ -1182,8 +1182,8 @@ public static partial class FMGBank
             IBinder fmgBinderMenu;
             ResourceDescriptor itemMsgPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder);
             ResourceDescriptor menuMsgPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder);
-            if (Project.Type == ProjectType.DES || Project.Type == ProjectType.DS1 ||
-                Project.Type == ProjectType.DS1R)
+            if (Smithbox.ProjectType == ProjectType.DES || Smithbox.ProjectType == ProjectType.DS1 ||
+                Smithbox.ProjectType == ProjectType.DS1R)
             {
                 fmgBinderItem = BND3.Read(itemMsgPath.AssetPath);
                 fmgBinderMenu = BND3.Read(menuMsgPath.AssetPath);
@@ -1216,27 +1216,27 @@ public static partial class FMGBank
             ResourceDescriptor menuMsgPathDest = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, true);
             if (fmgBinderItem is BND3 bnd3)
             {
-                Utils.WriteWithBackup(Project.GameRootDirectory,
-                    Project.GameModDirectory, itemMsgPathDest.AssetPath, bnd3);
-                Utils.WriteWithBackup(Project.GameRootDirectory,
-                    Project.GameModDirectory, menuMsgPathDest.AssetPath, (BND3)fmgBinderMenu);
+                Utils.WriteWithBackup(Smithbox.GameRoot,
+                    Smithbox.ProjectRoot, itemMsgPathDest.AssetPath, bnd3);
+                Utils.WriteWithBackup(Smithbox.GameRoot,
+                    Smithbox.ProjectRoot, menuMsgPathDest.AssetPath, (BND3)fmgBinderMenu);
 
-                if (Project.Type is ProjectType.DES)
+                if (Smithbox.ProjectType is ProjectType.DES)
                 {
                     bnd3.Compression = DCX.Type.None;
                     ((BND3)fmgBinderMenu).Compression = DCX.Type.None;
-                    Utils.WriteWithBackup(Project.GameRootDirectory,
-                        Project.GameModDirectory, itemMsgPathDest.AssetPath[..^4], bnd3);
-                    Utils.WriteWithBackup(Project.GameRootDirectory,
-                        Project.GameModDirectory, menuMsgPathDest.AssetPath[..^4], (BND3)fmgBinderMenu);
+                    Utils.WriteWithBackup(Smithbox.GameRoot,
+                        Smithbox.ProjectRoot, itemMsgPathDest.AssetPath[..^4], bnd3);
+                    Utils.WriteWithBackup(Smithbox.GameRoot,
+                        Smithbox.ProjectRoot, menuMsgPathDest.AssetPath[..^4], (BND3)fmgBinderMenu);
                 }
             }
             else if (fmgBinderItem is BND4 bnd4)
             {
-                Utils.WriteWithBackup(Project.GameRootDirectory,
-                    Project.GameModDirectory, itemMsgPathDest.AssetPath, bnd4);
-                Utils.WriteWithBackup(Project.GameRootDirectory,
-                    Project.GameModDirectory, menuMsgPathDest.AssetPath, (BND4)fmgBinderMenu);
+                Utils.WriteWithBackup(Smithbox.GameRoot,
+                    Smithbox.ProjectRoot, itemMsgPathDest.AssetPath, bnd4);
+                Utils.WriteWithBackup(Smithbox.GameRoot,
+                    Smithbox.ProjectRoot, menuMsgPathDest.AssetPath, (BND4)fmgBinderMenu);
             }
 
             fmgBinderItem.Dispose();

@@ -1,7 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
-using StudioCore.BanksMain;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
@@ -11,7 +11,6 @@ using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Scene;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -98,7 +97,7 @@ public class AssetBrowserScreen
 
     public void OnProjectChanged()
     {
-        if (Project.Type != ProjectType.Undefined)
+        if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             _selectedAssetMapId = "";
             _selectedAssetMapIdCache = null;
@@ -111,7 +110,7 @@ public class AssetBrowserScreen
     {
         var scale = Smithbox.GetUIScale();
 
-        if (Project.Type == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
         if (SourceType == AssetBrowserSource.MapEditor)
@@ -125,10 +124,19 @@ public class AssetBrowserScreen
                 return;
         }
 
-        if (ModelAliasBank.Bank.IsLoadingAliases)
+        if (Smithbox.BankHandler.CharacterAliases.Aliases == null)
             return;
 
-        if(!AssetBrowserCache.UpdateCacheComplete)
+        if (Smithbox.BankHandler.AssetAliases.Aliases == null)
+            return;
+
+        if (Smithbox.BankHandler.PartAliases.Aliases == null)
+            return;
+
+        if (Smithbox.BankHandler.MapPieceAliases.Aliases == null)
+            return;
+
+        if (!Smithbox.NameCacheHandler.AssetBrowserNameCache.UpdateCacheComplete)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
@@ -157,10 +165,10 @@ public class AssetBrowserScreen
             ImguiUtils.WrappedText("Assets:");
             ImGui.Separator();
 
-            DisplayBrowserList(AssetCategoryType.Character, AssetBrowserCache.CharacterList, AssetBrowserCache.Characters);
-            DisplayBrowserList(AssetCategoryType.Asset, AssetBrowserCache.AssetList, AssetBrowserCache.Assets);
-            DisplayBrowserList(AssetCategoryType.Part, AssetBrowserCache.PartList, AssetBrowserCache.Parts);
-            DisplayBrowserList_MapPiece(AssetCategoryType.MapPiece, AssetBrowserCache.MapPieces);
+            DisplayBrowserList(AssetCategoryType.Character, Smithbox.NameCacheHandler.AssetBrowserNameCache.CharacterList, Smithbox.NameCacheHandler.AssetBrowserNameCache.Characters);
+            DisplayBrowserList(AssetCategoryType.Asset, Smithbox.NameCacheHandler.AssetBrowserNameCache.AssetList, Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets);
+            DisplayBrowserList(AssetCategoryType.Part, Smithbox.NameCacheHandler.AssetBrowserNameCache.PartList, Smithbox.NameCacheHandler.AssetBrowserNameCache.Parts);
+            DisplayBrowserList_MapPiece(AssetCategoryType.MapPiece, Smithbox.NameCacheHandler.AssetBrowserNameCache.MapPieces);
         }
 
         ImGui.End();
@@ -191,12 +199,7 @@ public class AssetBrowserScreen
         ImGui.End();
         ImGui.PopStyleColor(1);
 
-        if (ModelAliasBank.Bank.CanReloadBank)
-        {
-            ModelAliasBank.Bank.CanReloadBank = false;
-            ModelAliasBank.Bank.ReloadAliasBank();
-            AssetBrowserCache.UpdateCache();
-        }
+        // AssetBrowserCache.UpdateCache();
     }
 
     private void DisplayTopSection()
@@ -210,7 +213,7 @@ public class AssetBrowserScreen
     {
         var assetLabel = "Objects";
 
-        if (Project.Type is ProjectType.ER or ProjectType.AC6)
+        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             assetLabel = "Assets";
         }
@@ -236,7 +239,7 @@ public class AssetBrowserScreen
             }
         }
 
-        foreach (var mapId in AssetBrowserCache.MapPieceDict.Keys)
+        foreach (var mapId in Smithbox.NameCacheHandler.AssetBrowserNameCache.MapPieceDict.Keys)
         {
             if (ImGui.Selectable($"MapPieces: {mapId}", _selectedAssetMapId == mapId))
             {
@@ -246,7 +249,7 @@ public class AssetBrowserScreen
 
             if (CFG.Current.AssetBrowser_ShowAliasesInBrowser)
             {
-                var labelName = AliasUtils.GetMapNameAlias(mapId);
+                var labelName = Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapId);
                 AliasUtils.DisplayAlias(labelName);
             }
         }
@@ -333,7 +336,7 @@ public class AssetBrowserScreen
     {
         if (_selectedAssetType == assetType)
         {
-            if (AssetBrowserCache.MapPieceDict.ContainsKey(_selectedAssetMapId))
+            if (Smithbox.NameCacheHandler.AssetBrowserNameCache.MapPieceDict.ContainsKey(_selectedAssetMapId))
             {
                 if (_searchInput != _searchInputCache || _selectedAssetType != _selectedAssetTypeCache || _selectedAssetMapId != _selectedAssetMapIdCache)
                 {
@@ -342,7 +345,7 @@ public class AssetBrowserScreen
                     _selectedAssetMapIdCache = _selectedAssetMapId;
                 }
 
-                foreach (var name in AssetBrowserCache.MapPieceDict[_selectedAssetMapId])
+                foreach (var name in Smithbox.NameCacheHandler.AssetBrowserNameCache.MapPieceDict[_selectedAssetMapId])
                 {
                     var modelName = name.Replace($"{_selectedAssetMapId}_", "m");
 
@@ -354,7 +357,7 @@ public class AssetBrowserScreen
                     var refTagList = new List<string>();
 
                     // Adjust the name to remove the A{mapId} section.
-                    if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
+                    if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
                     {
                         displayedName = displayedName.Replace($"A{_selectedAssetMapId.Substring(1, 2)}", "");
                     }
@@ -410,7 +413,7 @@ public class AssetBrowserScreen
         ImGui.Checkbox("Update Name of Selected Object", ref CFG.Current.AssetBrowser_UpdateName);
         ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
 
-        if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
+        if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
         {
             ImGui.Checkbox("Update Instance ID of Selected Object", ref CFG.Current.AssetBrowser_UpdateInstanceID);
             ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
@@ -495,30 +498,44 @@ public class AssetBrowserScreen
 
     private void UpdateAssetAlias()
     {
-        ModelAliasBank.Bank.AddToLocalAliasBank(GetSelectedAssetTypeString(), _refUpdateId, _refUpdateName, _refUpdateTags);
-        ImGui.CloseCurrentPopup();
-        ModelAliasBank.Bank.CanReloadBank = true;
+        switch(_selectedAssetType)
+        {
+            case AssetCategoryType.Character:
+                Smithbox.BankHandler.CharacterAliases.AddToLocalAliasBank(_refUpdateId, _refUpdateName, _refUpdateTags);
+                break;
+            case AssetCategoryType.Asset:
+                Smithbox.BankHandler.AssetAliases.AddToLocalAliasBank(_refUpdateId, _refUpdateName, _refUpdateTags);
+                break;
+            case AssetCategoryType.Part:
+                Smithbox.BankHandler.PartAliases.AddToLocalAliasBank(_refUpdateId, _refUpdateName, _refUpdateTags);
+                break;
+            case AssetCategoryType.MapPiece:
+                Smithbox.BankHandler.MapPieceAliases.AddToLocalAliasBank(_refUpdateId, _refUpdateName, _refUpdateTags);
+                break;
+        }
+
+        Smithbox.NameCacheHandler.ReloadNameCaches = true;
     }
 
     private void RestoreAssetAlias()
     {
-        ModelAliasBank.Bank.RemoveFromLocalAliasBank(GetSelectedAssetTypeString(), _refUpdateId);
-        ModelAliasBank.Bank.CanReloadBank = true;
-    }
-
-    private string GetSelectedAssetTypeString()
-    {
-        var assetType = "";
         switch (_selectedAssetType)
         {
-            case AssetCategoryType.Character: assetType = "Chr"; break;
-            case AssetCategoryType.Asset: assetType = "Obj"; break;
-            case AssetCategoryType.Part: assetType = "Part"; break;
-            case AssetCategoryType.MapPiece: assetType = "MapPiece"; break;
-            default: break;
+            case AssetCategoryType.Character:
+                Smithbox.BankHandler.CharacterAliases.RemoveFromLocalAliasBank(_refUpdateId);
+                break;
+            case AssetCategoryType.Asset:
+                Smithbox.BankHandler.AssetAliases.RemoveFromLocalAliasBank(_refUpdateId);
+                break;
+            case AssetCategoryType.Part:
+                Smithbox.BankHandler.PartAliases.RemoveFromLocalAliasBank(_refUpdateId);
+                break;
+            case AssetCategoryType.MapPiece:
+                Smithbox.BankHandler.MapPieceAliases.RemoveFromLocalAliasBank(_refUpdateId);
+                break;
         }
 
-        return assetType;
+        Smithbox.NameCacheHandler.ReloadNameCaches = true;
     }
 
     public void ApplyMapAssetSelection()
@@ -579,7 +596,7 @@ public class AssetBrowserScreen
 
             if (assetType == AssetCategoryType.Character)
             {
-                switch (Project.Type)
+                switch (Smithbox.ProjectType)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.Enemy)
@@ -619,7 +636,7 @@ public class AssetBrowserScreen
             }
             if (assetType == AssetCategoryType.Asset)
             {
-                switch (Project.Type)
+                switch (Smithbox.ProjectType)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.Object)
@@ -661,7 +678,7 @@ public class AssetBrowserScreen
             }
             if (assetType == AssetCategoryType.MapPiece)
             {
-                switch (Project.Type)
+                switch (Smithbox.ProjectType)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.MapPiece)

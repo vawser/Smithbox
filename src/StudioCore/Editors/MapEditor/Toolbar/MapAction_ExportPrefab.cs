@@ -2,7 +2,6 @@
 using StudioCore.Editors.MapEditor.Prefabs;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +11,7 @@ using System.Text;
 using System.Text.Json.Serialization.Metadata;
 using System.Text.Json;
 using System.Threading.Tasks;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
@@ -128,7 +128,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             var filepath = $"{MapToolbar._prefabDir}{MapToolbar._prefabName}{MapToolbar._prefabExt}";
 
-            switch (Project.Type)
+            switch (Smithbox.ProjectType)
             {
                 case ProjectType.AC6:
                     Prefab_AC6.ExportSelection(filepath, _selection, MapToolbar._prefabTags);

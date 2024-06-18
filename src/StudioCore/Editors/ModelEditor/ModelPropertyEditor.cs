@@ -1,29 +1,17 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
-using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Banks;
-using StudioCore.Banks.FormatBank;
-using StudioCore.BanksMain;
-using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Gui;
 using StudioCore.Interface;
-using StudioCore.Scene;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Veldrid;
-using Veldrid.Utilities;
-using static StudioCore.Editors.MapEditor.MapPropertyEditor;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -83,7 +71,7 @@ public class ModelPropertyEditor
         {
             var val = (int)oldval;
 
-            if (FlverFormatBank.Bank.IsBooleanProperty(prop.Name))
+            if (Smithbox.BankHandler.FLVER_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -115,7 +103,7 @@ public class ModelPropertyEditor
             var val = (uint)oldval;
             var strval = $@"{val}";
 
-            if (FlverFormatBank.Bank.IsBooleanProperty(prop.Name))
+            if (Smithbox.BankHandler.FLVER_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -150,7 +138,7 @@ public class ModelPropertyEditor
         {
             int val = (short)oldval;
 
-            if (FlverFormatBank.Bank.IsBooleanProperty(prop.Name))
+            if (Smithbox.BankHandler.FLVER_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -182,7 +170,7 @@ public class ModelPropertyEditor
             var val = (ushort)oldval;
             var strval = $@"{val}";
 
-            if (FlverFormatBank.Bank.IsBooleanProperty(prop.Name))
+            if (Smithbox.BankHandler.FLVER_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -217,7 +205,7 @@ public class ModelPropertyEditor
         {
             int val = (sbyte)oldval;
 
-            if (FlverFormatBank.Bank.IsBooleanProperty(prop.Name))
+            if (Smithbox.BankHandler.FLVER_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -249,7 +237,7 @@ public class ModelPropertyEditor
             var val = (byte)oldval;
             var strval = $@"{val}";
 
-            if (FlverFormatBank.Bank.IsBooleanProperty(prop.Name))
+            if (Smithbox.BankHandler.FLVER_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -672,7 +660,7 @@ public class ModelPropertyEditor
                 }
 
                 // Is Hidden
-                if (FlverFormatBank.Bank.IsHiddenProperty(prop.Name))
+                if (Smithbox.BankHandler.FLVER_Info.IsHiddenProperty(prop.Name))
                 {
                     continue;
                 }
@@ -874,7 +862,7 @@ public class ModelPropertyEditor
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            name = FlverFormatBank.Bank.GetReferenceName(classType.Name, name);
+            name = Smithbox.BankHandler.FLVER_Info.GetReferenceName(classType.Name, name);
         }
 
         return name;
@@ -888,7 +876,7 @@ public class ModelPropertyEditor
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            var desc = FlverFormatBank.Bank.GetReferenceDescription(classType.Name, name);
+            var desc = Smithbox.BankHandler.FLVER_Info.GetReferenceDescription(classType.Name, name);
 
             ImguiUtils.ShowHoverTooltip(desc);
         }

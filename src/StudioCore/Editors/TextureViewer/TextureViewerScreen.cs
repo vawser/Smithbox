@@ -1,15 +1,9 @@
 ﻿using Andre.Formats;
-using DotNext;
 using ImGuiNET;
-using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using SoulsFormats;
-using StudioCore.Banks.AliasBank;
-using StudioCore.BanksMain;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors;
-using StudioCore.Editors.GparamEditor.Toolbar;
-using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TextureViewer.Toolbar;
@@ -17,23 +11,15 @@ using StudioCore.Formats;
 using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Resource;
-using StudioCore.Settings;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Security.Cryptography.Xml;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Sdl2;
-using static Octokit.Caching.CachedResponse;
 using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
 namespace StudioCore.TextureViewer;
@@ -91,16 +77,16 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void OnProjectChanged()
     {
-        if (Project.Type is ProjectType.ER or ProjectType.AC6)
+        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             string sourcePath = $@"menu\hi\01_common.sblytbnd.dcx";
-            if(File.Exists($@"{Project.GameModDirectory}\{sourcePath}"))
+            if(File.Exists($@"{Smithbox.ProjectRoot}\{sourcePath}"))
             {
-                sourcePath = $@"{Project.GameModDirectory}\{sourcePath}";
+                sourcePath = $@"{Smithbox.ProjectRoot}\{sourcePath}";
             }
             else
             {
-                sourcePath = $@"{Project.GameRootDirectory}\{sourcePath}";
+                sourcePath = $@"{Smithbox.GameRoot}\{sourcePath}";
             }
 
             if (File.Exists(sourcePath))
@@ -208,6 +194,20 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         var dsid = ImGui.GetID("DockSpace_TextureViewer");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
+        if (Smithbox.ProjectHandler.CurrentProject == null)
+        {
+            ImGui.Begin("Viewer##InvalidTextureViewer");
+
+            ImGui.Text("No project loaded. File -> New Project");
+
+            ImGui.End();
+
+            ImGui.PopStyleVar();
+            ImGui.PopStyleColor(1);
+
+            return;
+        }
+
         if (!TextureFolderBank.IsLoaded)
         {
             TextureFolderBank.LoadTextureFolders();
@@ -294,7 +294,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             _fileSearchInputCache = _fileSearchInput;
         }
 
-        if (Project.Type is ProjectType.AC6 or ProjectType.ER)
+        if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.ER)
         {
             DisplayFileSection("Asset", TextureViewCategory.Asset);
         }
@@ -306,7 +306,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         DisplayFileSection("Characters", TextureViewCategory.Character);
 
         // AC6 needs some adjustments to support its parts properly
-        if (Project.Type != ProjectType.AC6)
+        if (Smithbox.ProjectType != ProjectType.AC6)
         {
             DisplayFileSection("Parts", TextureViewCategory.Part);
         }
@@ -316,7 +316,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         DisplayFileSection("Menu", TextureViewCategory.Menu);
 
         // DS2S doesn't have an other folder
-        if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
+        if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
         {
             DisplayFileSection("Other", TextureViewCategory.Other);
         }
@@ -432,7 +432,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 isLowDetail = true;
             }
 
-            if (Project.Type is ProjectType.ER)
+            if (Smithbox.ProjectType is ProjectType.ER)
             {
                 chrId = chrId.Substring(0, chrId.Length - 2); // remove the _h
             }
@@ -492,7 +492,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             return textures;
         }
 
-        var reader = ResourceManager.InstantiateBinderReaderForFile(path, Project.Type);
+        var reader = ResourceManager.InstantiateBinderReaderForFile(path, Smithbox.ProjectType);
         if (reader != null)
         {
             foreach (var file in reader.Files)
@@ -969,7 +969,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         }
 
         // Hardcoded logic for AC6
-        if (Project.Type == ProjectType.AC6)
+        if (Smithbox.ProjectType == ProjectType.AC6)
         {
             if (textureRef.LookupType == "Booster")
             {
@@ -1024,7 +1024,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         }
 
         // Hardcoded logic for ER
-        if (Project.Type == ProjectType.ER)
+        if (Smithbox.ProjectType == ProjectType.ER)
         {
 
         }

@@ -1,9 +1,9 @@
 ﻿using ImGuiNET;
 using StudioCore;
+using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ public class ModelToolbar_ActionList
 
     public void OnGui()
     {
-        if (Project.Type == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);

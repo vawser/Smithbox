@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Locators;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -37,7 +37,7 @@ public static class CutsceneBank
         var fileExt = @".remobnd.dcx";
 
         // Sekiro + ER + AC6
-        if (Project.Type is ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        if (Smithbox.ProjectType is ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
         {
             fileDir = @"\cutscene";
             fileExt = @".cutscenebnd.dcx";
@@ -58,10 +58,10 @@ public static class CutsceneBank
         BND4 writeBinder = binder as BND4;
         byte[] fileBytes = null;
 
-        var assetRoot = $@"{Project.GameRootDirectory}\{fileDir}\{info.Name}{fileExt}";
-        var assetMod = $@"{Project.GameModDirectory}\{fileDir}\{info.Name}{fileExt}";
+        var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
+        var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
 
-        switch (Project.Type)
+        switch (Smithbox.ProjectType)
         {
             case ProjectType.DS3:
                 fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
@@ -81,13 +81,13 @@ public static class CutsceneBank
         }
 
         // Add folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Project.GameModDirectory}\\{fileDir}\\"))
+        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{fileDir}\\"))
         {
-            Directory.CreateDirectory($"{Project.GameModDirectory}\\{fileDir}\\");
+            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{fileDir}\\");
         }
 
         // Make a backup of the original file if a mod path doesn't exist
-        if (Project.GameModDirectory == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
         {
             File.Copy(assetRoot, $@"{assetRoot}.bak", true);
         }
@@ -101,7 +101,7 @@ public static class CutsceneBank
 
     public static void LoadCutscenes()
     {
-        if (Project.Type == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
         {
             return;
         }
@@ -115,7 +115,7 @@ public static class CutsceneBank
         var fileExt = @".remobnd.dcx";
 
         // Sekiro + ER + AC6
-        if (Project.Type is ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        if (Smithbox.ProjectType is ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
         {
             fileDir = @"\cutscene";
             fileExt = @".cutscenebnd.dcx";
@@ -127,14 +127,14 @@ public static class CutsceneBank
         {
             var filePath = $"{fileDir}\\{name}{fileExt}";
 
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
             {
-                LoadCutscene($"{Project.GameModDirectory}\\{filePath}");
+                LoadCutscene($"{Smithbox.ProjectRoot}\\{filePath}");
                 //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
-                LoadCutscene($"{Project.GameRootDirectory}\\{filePath}");
+                LoadCutscene($"{Smithbox.GameRoot}\\{filePath}");
                 //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }

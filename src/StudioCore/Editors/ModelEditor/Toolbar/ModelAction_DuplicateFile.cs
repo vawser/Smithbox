@@ -1,10 +1,10 @@
 ﻿using ImGuiNET;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextEditor;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +57,7 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
 
         public static void DuplicateSelectedAsset()
         {
-            switch(Project.Type)
+            switch(Smithbox.ProjectType)
             {
                 case ProjectType.AC6:
                     DuplicateAsset_AC6();

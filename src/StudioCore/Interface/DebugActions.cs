@@ -1,12 +1,12 @@
 ﻿using DotNext.IO;
 using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Formats;
 using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.Resource;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,7 +26,7 @@ public static class DebugActions
 
     public static void LoadMsbData()
     {
-        var mapDir = $"{Project.GameRootDirectory}/map/mapstudio/";
+        var mapDir = $"{Smithbox.GameRoot}/map/mapstudio/";
 
         foreach(var entry in Directory.EnumerateFiles(mapDir))
         {
@@ -158,10 +158,10 @@ public static class DebugActions
         {
             List<string> sourcePaths = new List<string>
             {
-                $"{Project.GameRootDirectory}\\map\\{sourceMap}\\{sourceMap}_0000-tpfbhd",
-                $"{Project.GameRootDirectory}\\map\\{sourceMap}\\{sourceMap}_0001-tpfbhd",
-                $"{Project.GameRootDirectory}\\map\\{sourceMap}\\{sourceMap}_0002-tpfbhd",
-                $"{Project.GameRootDirectory}\\map\\{sourceMap}\\{sourceMap}_0003-tpfbhd"
+                $"{Smithbox.GameRoot}\\map\\{sourceMap}\\{sourceMap}_0000-tpfbhd",
+                $"{Smithbox.GameRoot}\\map\\{sourceMap}\\{sourceMap}_0001-tpfbhd",
+                $"{Smithbox.GameRoot}\\map\\{sourceMap}\\{sourceMap}_0002-tpfbhd",
+                $"{Smithbox.GameRoot}\\map\\{sourceMap}\\{sourceMap}_0003-tpfbhd"
             };
 
             List<string> witchyEntries = new List<string>();

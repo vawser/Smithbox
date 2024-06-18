@@ -1,9 +1,9 @@
 ﻿using ImGuiNET;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Prefabs;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
-using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -106,7 +106,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImGui.Checkbox("Apply Unique Entity ID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
                 ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given unique Entity IDs.");
 
-                if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
+                if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Apply Unique Instance ID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
                     ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given unique Instance IDs.");
@@ -115,7 +115,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImguiUtils.ShowHoverTooltip("Spawned prefab objects that are Assets will be given UnkPartNames matching themselves.");
                 }
 
-                if (Project.Type == ProjectType.DS3 || Project.Type == ProjectType.SDT || Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
+                if (Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.SDT || Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Apply Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
                     ImguiUtils.WrappedText("");
@@ -164,7 +164,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             var scene = MapToolbar._scene;
             var actionManager = MapToolbar._actionManager;
 
-            switch (Project.Type)
+            switch (Smithbox.ProjectType)
             {
                 case ProjectType.AC6:
                     Prefab_AC6.ImportSelectedPrefab(info, comboMap, universe, scene, actionManager);
@@ -218,7 +218,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             if (prefabInfo != null)
             {
-                switch (Project.Type)
+                switch (Smithbox.ProjectType)
                 {
                     case ProjectType.AC6:
                         MapToolbar._selectedPrefabObjectNames = Prefab_AC6.GetSelectedPrefabObjects(prefabInfo, comboMap);
