@@ -97,7 +97,7 @@ Texture Viewer:
  - Add ability to edit Shoebox Layouts (subwindow)
  - Add ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
-
+ 
 World Map:
  - Add the dungeon icons, add icon radius for the non-open world maps
  - Add support for large/medium/small tile overlays
@@ -106,6 +106,7 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
-to fix: ReloadParams seems to be able to import default row names via NewProjectOpts.loadDefaultNames somehow
-
 Perhaps in-line the param quicklinks within the property view instead of the current Ref style
+
+- Add ability to inject custom icon lookup into the Param META without requiring the user to add it into the project-local param META
+Direct/01_common/SB_Icon_00/iconId/MENU_ItemIcon_
