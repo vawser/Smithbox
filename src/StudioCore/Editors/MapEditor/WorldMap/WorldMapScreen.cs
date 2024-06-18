@@ -21,8 +21,8 @@ public class WorldMapScreen : IResourceEventListener
     private bool LoadedWorldMapTexture { get; set; }
     private bool WorldMapOpen { get; set; }
 
-    private static List<TPF.Texture> WorldMapTextures;
-    private ShoeboxLayout WorldMapLayout = null;
+    private ShoeboxLayout WorldMapLayout_Vanilla = null;
+    private ShoeboxLayout WorldMapLayout_SOTE = null;
 
     private Vector2 zoomFactor;
 
@@ -37,6 +37,8 @@ public class WorldMapScreen : IResourceEventListener
     private Vector2 relativePosWindowPosition = new Vector2();
 
     List<string> currentHoverMaps = new List<string>();
+
+    private bool IsViewingSOTEMap = false;
 
     public WorldMapScreen()
     {
@@ -54,16 +56,32 @@ public class WorldMapScreen : IResourceEventListener
         if (Smithbox.ProjectType is ProjectType.ER)
         {
             LoadWorldMapTexture();
-            LoadWorldMapLayout();
+            LoadWorldMapLayout_Vanilla();
+            LoadWorldMapLayout_SOTE();
         }
     }
 
     public void Shortcuts()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_Toggle))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_Vanilla))
         {
             WorldMapOpen = !WorldMapOpen;
+            if (IsViewingSOTEMap)
+            {
+                IsViewingSOTEMap = false;
+                WorldMapOpen = true;
+            };
         }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_SOTE))
+        {
+            WorldMapOpen = !WorldMapOpen;
+            if (!IsViewingSOTEMap)
+            {
+                IsViewingSOTEMap = true;
+                WorldMapOpen = true;
+            };
+        }
+
         if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_ClearSelection))
         {
             Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;
@@ -93,14 +111,31 @@ public class WorldMapScreen : IResourceEventListener
 
         if (LoadedWorldMapTexture)
         {
-            if (ImGui.Button("Open World Map", new Vector2(widthUnit * 60, 20 * scale)))
+            if (ImGui.Button("Lands Between", new Vector2(widthUnit * 40, 20 * scale)))
             {
                 WorldMapOpen = !WorldMapOpen;
+                if(IsViewingSOTEMap)
+                {
+                    IsViewingSOTEMap = false;
+                    WorldMapOpen = true;
+                };
             }
-            ImguiUtils.ShowHoverTooltip($"Open a world map for Elden Ring. Allows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.Map_WorldMap_Toggle.HintText}");
+            ImguiUtils.ShowHoverTooltip($"Open the Lands Between world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.Map_WorldMap_Vanilla.HintText}");
 
             ImGui.SameLine();
-            if (ImGui.Button("Clear", new Vector2(widthUnit * 34, 20 * scale)))
+            if (ImGui.Button("Shadow of the Erdtree", new Vector2(widthUnit * 40, 20 * scale)))
+            {
+                WorldMapOpen = !WorldMapOpen;
+                if (!IsViewingSOTEMap)
+                {
+                    IsViewingSOTEMap = true;
+                    WorldMapOpen = true;
+                };
+            }
+            ImguiUtils.ShowHoverTooltip($"Open the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.Map_WorldMap_SOTE.HintText}");
+
+            ImGui.SameLine();
+            if (ImGui.Button("Clear", new Vector2(widthUnit * 15, 20 * scale)))
             {
                 Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;
             }
@@ -125,7 +160,12 @@ public class WorldMapScreen : IResourceEventListener
         TextureViewWindowPosition = ImGui.GetWindowPos();
         TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());
 
-        ResourceHandle<TextureResource> resHandle = GetImageTextureHandle("smithbox/worldmap/world_map");
+        ResourceHandle<TextureResource> resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_vanilla");
+
+        if(IsViewingSOTEMap)
+        {
+            resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_sote");
+        }
 
         if (resHandle != null)
         {
@@ -208,7 +248,7 @@ public class WorldMapScreen : IResourceEventListener
 
     private void LoadWorldMapTexture() 
     {
-        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob($@"Loading World Map texture");
+        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob($@"Loading World Map textures");
         ResourceDescriptor ad = new ResourceDescriptor();
         ad.AssetVirtualPath = "smithbox/worldmap";
 
@@ -227,13 +267,27 @@ public class WorldMapScreen : IResourceEventListener
         LoadedWorldMapTexture = true;
     }
 
-    private void LoadWorldMapLayout()
+    private void LoadWorldMapLayout_Vanilla()
     {
-        string sourcePath = $@"{AppContext.BaseDirectory}\Assets\WorldMap\ER_WorldMap.layout";
+        string sourcePath = $@"{AppContext.BaseDirectory}\Assets\WorldMap\ER_WorldMap_Vanilla.layout";
 
         if (File.Exists(sourcePath))
         {
-            WorldMapLayout = new ShoeboxLayout(sourcePath);
+            WorldMapLayout_Vanilla = new ShoeboxLayout(sourcePath);
+        }
+        else
+        {
+            TaskLogs.AddLog($"Failed to load Shoebox Layout: {sourcePath}");
+        }
+    }
+
+    private void LoadWorldMapLayout_SOTE()
+    {
+        string sourcePath = $@"{AppContext.BaseDirectory}\Assets\WorldMap\ER_WorldMap_SOTE.layout";
+
+        if (File.Exists(sourcePath))
+        {
+            WorldMapLayout_SOTE = new ShoeboxLayout(sourcePath);
         }
         else
         {
@@ -245,7 +299,14 @@ public class WorldMapScreen : IResourceEventListener
     {
         List<string> matches =  new List<string>();
 
-        foreach(var entry in WorldMapLayout.TextureAtlases)
+        var atlases = WorldMapLayout_Vanilla.TextureAtlases;
+
+        if (IsViewingSOTEMap)
+        {
+            atlases = WorldMapLayout_SOTE.TextureAtlases;
+        }
+
+        foreach(var entry in atlases)
         {
             foreach(var sub in entry.SubTextures)
             {
