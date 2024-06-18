@@ -239,12 +239,15 @@ public class NewProjectModal
 
             if (validated)
             {
-                Smithbox.ProjectHandler.CurrentProject.Config.GameRoot = gameroot;
+                // Remove previous CurrentProject entries for these variables
+                Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams = new();
+                Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows = new();
+                Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields = new();
 
+                Smithbox.ProjectHandler.CurrentProject.Config.GameRoot = gameroot;
                 Smithbox.ProjectHandler.CurrentProject.ProjectJsonPath = $@"{NewProjectOpts.directory}\project.json";
 
                 Smithbox.ProjectHandler.WriteProjectConfig();
-
                 Smithbox.ProjectHandler.LoadProject(Smithbox.ProjectHandler.CurrentProject.ProjectJsonPath);
 
                 ImGui.CloseCurrentPopup();
@@ -315,7 +318,7 @@ public class NewProjectModal
 public class NewProjectOptions
 {
     public string directory = "";
-    public bool loadDefaultNames = true;
+    public bool loadDefaultNames = false;
 
     public NewProjectOptions()
     {
