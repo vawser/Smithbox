@@ -12,6 +12,7 @@ Smithbox is a modding tool for Elden Ring, Armored Core VI, Dark Souls 3, Dark S
 
 # Links
 [Smithbox Discord](https://discord.gg/5p9bRKkK4J)
+
 [DSMapStudio repository](https://github.com/soulsmods/DSMapStudio)
 
 ## Requirements
