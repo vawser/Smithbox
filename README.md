@@ -1,5 +1,5 @@
 # Smithbox
-Smithbox is a modding tool for Elden Ring, Armored Core VI, Dark Souls 3, Dark Souls 2, Dark Souls, Bloodborne and Demon's Souls.
+Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3, Dark Souls 2, Dark Souls, Bloodborne and Demon's Souls.
 
 ## Key Features
 - Map Editor: a visual editor for editing maps.
