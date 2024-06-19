@@ -1,17 +1,18 @@
 # Smithbox
-A personal version of DSMapStudio, which is a standalone integrated modding tool for modern FromSoft games, which include Demon's Souls (PS3), the Dark Souls series, Bloodborne, Sekiro, Elden Ring and Armored Core VI. It currently includes a map editor, a game param editor, and a text editor for editing in game text.
+Smithbox is a modding tool for Elden Ring, Armored Core VI, Dark Souls 3, Dark Souls 2, Dark Souls, Bloodborne and Demon's Souls.
 
 ## Key Features
+- Map Editor: a visual editor for editing maps.
+- Param Editor: a table editor for editing parameters, which contain most of the data that defines each game.
+- Model Editor: a visual viewer of looking at models.
+- Text Editor: an editor for editing text localization.
 - Gparam Editor: a editor for quickly creating and editing GPARAM files.
-- Map Asset Browser: view a list of all assets available for the current project type. Double-click to change current selection to chosen asset.
-- Viewport Grid: support for a wireframe grid for use within the Map and Model Editor.
-- Action Toolbar: support for quickly configuring various Map Editor actions.
-- Replicate: powerful new Map Editor action for replicating map objects in a patterned way.
-- Scramble: powerful new Map Editor action for randomising map object position, rotation and scale.
-- Prefabs: support for saving groups of map objects. Supports all game types and all map object types.
-- Model Editor: now supports saving edited models.
-- Param Editor: improvements to the actions of renaming and duplicating rows.
-- Text Editor: improvements to the action of duplicating rows.
+- Texture Viewer: a simple to use viewer for looking and extracting textures.
+- Asset Browser: a menu to browse through all of the assets used within each of the games.
+
+# Links
+[Smithbox Discord](https://discord.gg/5p9bRKkK4J)
+[DSMapStudio repository](https://github.com/soulsmods/DSMapStudio)
 
 ## Requirements
 * Windows 7/8/8.1/10/11 (64-bit only)
@@ -48,11 +49,6 @@ A personal version of DSMapStudio, which is a standalone integrated modding tool
 
 #### Elden Ring
 * Use [UXM Selective Unpack](https://github.com/Nordgaren/UXM-Selective-Unpack) to extract the game files.
-
-# Links
-[Smithbox Discord](https://discord.gg/5p9bRKkK4J)
-
-[DSMapStudio repository](https://github.com/soulsmods/DSMapStudio)
 
 ## Credits (DSMapStudio)
 * Katalash
