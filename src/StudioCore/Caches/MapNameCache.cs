@@ -10,6 +10,7 @@ namespace StudioCore.Caches;
 public class MapNameCache
 {
     Dictionary<string, string> MapNames = new Dictionary<string, string>();
+    Dictionary<string, List<string>> MapTags = new Dictionary<string, List<string>>();
 
     public MapNameCache()
     {
@@ -20,19 +21,18 @@ public class MapNameCache
         if (Smithbox.BankHandler.MapAliases.Aliases != null)
         {
             MapNames = new Dictionary<string, string>();
+            MapTags = new Dictionary<string, List<string>>();
 
             foreach (var entry in Smithbox.BankHandler.MapAliases.Aliases.list)
             {
-                if (!CFG.Current.MapNameAtlas_ShowUnused)
+                if (!MapNames.ContainsKey(entry.id))
                 {
-                    if (entry.tags[0] != "unused")
-                    {
-                        MapNames.Add(entry.id, entry.name);
-                    }
-                    else
-                    {
-                        MapNames.Add(entry.id, entry.name);
-                    }
+                    MapNames.Add(entry.id, entry.name);
+                }
+
+                if (!MapTags.ContainsKey(entry.id))
+                {
+                    MapTags.Add(entry.id, entry.tags);
                 }
             }
         }
@@ -51,6 +51,19 @@ public class MapNameCache
         }
 
         return $"";
+    }
+
+    public List<string> GetMapTags(string mapId)
+    {
+        if (MapTags == null)
+            return new List<string>();
+
+        if (MapTags.ContainsKey(mapId))
+        {
+            return MapTags[mapId];
+        }
+
+        return new List<string>();
     }
 }
 

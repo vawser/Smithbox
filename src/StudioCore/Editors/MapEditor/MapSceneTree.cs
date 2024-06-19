@@ -166,7 +166,7 @@ public class MapSceneTree : IActionEventHandler
             }
 
             // Map Groups
-            if (CFG.Current.Interface_DisplayMapGroups)
+            if (CFG.Current.MapEditor_ShowMapGroups)
             {
                 DisplayMapGroups();
             }
@@ -175,7 +175,7 @@ public class MapSceneTree : IActionEventHandler
             if (CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch)
             {
                 ImGui.AlignTextToFramePadding();
-                ImGui.Text("Map ID Search:");
+                ImGui.Text("Map Filter:");
                 ImGui.SameLine();
                 ImGui.SetNextItemWidth(-1);
                 ImGui.InputText("##treeSearch", ref _mapObjectListSearchInput, 99);
@@ -231,14 +231,22 @@ public class MapSceneTree : IActionEventHandler
 
             var aliasName = "";
             aliasName = Smithbox.NameCacheHandler.MapNameCache.GetMapName(CurrentMapID);
+            List<string> mapTags = Smithbox.NameCacheHandler.MapNameCache.GetMapTags(CurrentMapID);
 
             // Map name search filter
-            if (_mapObjectListSearchInput != ""
-                && (!CFG.Current.MapEditor_Always_List_Loaded_Maps || CurrentObjectContainer == null)
-                && !lm.Key.Contains(_mapObjectListSearchInput, StringComparison.CurrentCultureIgnoreCase)
-                && !aliasName.Contains(_mapObjectListSearchInput, StringComparison.CurrentCultureIgnoreCase))
+            if(!SearchFilters.IsMapSearchMatch(_mapObjectListSearchInput, CurrentMapID, aliasName, mapTags))
             {
-                continue;
+                if (CFG.Current.MapEditor_Always_List_Loaded_Maps)
+                {
+                    if(CurrentObjectContainer == null)
+                    {
+                        continue;
+                    }
+                }
+                else
+                {
+                    continue;
+                }
             }
 
             // Hide other maps if World Map click has occured
@@ -383,7 +391,7 @@ public class MapSceneTree : IActionEventHandler
 
                 if (_universe.GameType is ProjectType.ER)
                 {
-                    if (CurrentMapID.StartsWith("m60"))
+                    if (CurrentMapID.StartsWith("m60") || CurrentMapID.StartsWith("m61"))
                     {
                         if (ImGui.Selectable("Load Related Maps"))
                         {
@@ -803,33 +811,32 @@ public class MapSceneTree : IActionEventHandler
         }
 
         // If there are no entries, don't display anything
-        if(Smithbox.BankHandler.MapGroups.GetEntries() != null)
+        if(Smithbox.BankHandler.MapGroups.Groups == null)
         {
             return;
         }
-        else if(Smithbox.BankHandler.MapGroups.GetEntries().Count < 1)
+        else if(Smithbox.BankHandler.MapGroups.Groups.list.Count < 1)
         {
             return;
         }
 
         if(currentMapGroup == null)
         {
-            currentMapGroup = Smithbox.BankHandler.MapGroups.GetEntries().First();
+            currentMapGroup = Smithbox.BankHandler.MapGroups.Groups.list.First();
         }
 
+        var widthUnit = ImGui.GetWindowWidth() / 100;
+
+        ImGui.Indent(2f);
+
         // Map Group Category
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("Map Group Category:");
-
-        ImGui.SameLine();
-
-        ImGui.SetNextItemWidth(-1);
+        ImGui.SetNextItemWidth(widthUnit * 40);
         if (ImGui.BeginCombo("##mapGroupCatCombo", currentMapGroupCategory))
         {
             List<string> categoryOptions = new List<string>() { "All" };
 
             // Add the map group category options
-            foreach (var entry in Smithbox.BankHandler.MapGroups.GetEntries())
+            foreach (var entry in Smithbox.BankHandler.MapGroups.Groups.list)
             {
                 if(!categoryOptions.Contains(entry.category))
                 {
@@ -858,15 +865,11 @@ public class MapSceneTree : IActionEventHandler
         ImguiUtils.ShowHoverTooltip($"Filters the map group selection by location.");
 
         // Map Group Selection
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("Map Group:");
-
         ImGui.SameLine();
-
-        ImGui.SetNextItemWidth(-1);
+        ImGui.SetNextItemWidth(widthUnit * 40);
         if (ImGui.BeginCombo("##mapGroupCombo", currentMapGroup.name))
         {
-            foreach(var entry in Smithbox.BankHandler.MapGroups.GetEntries())
+            foreach(var entry in Smithbox.BankHandler.MapGroups.Groups.list)
             {
                 if (entry.category == currentMapGroupCategory || currentMapGroupCategory == "All")
                 {
@@ -885,6 +888,15 @@ public class MapSceneTree : IActionEventHandler
             ImGui.EndCombo();
         }
         ImguiUtils.ShowHoverTooltip($"Filters map list by selected map group.\n\n{currentMapGroup.description}");
+
+        ImGui.SameLine();
+        if(ImGui.Button("Clear##MapGroupClear", new Vector2(widthUnit * 15, 20 * Smithbox.GetUIScale())))
+        {
+            currentMapGroupCategory = "All";
+            currentMapGroup = Smithbox.BankHandler.MapGroups.Groups.list.First();
+        }
+
+        ImGui.Unindent(2f);
     }
     public void OnActionEvent(ActionEvent evt)
     {

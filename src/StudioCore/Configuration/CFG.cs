@@ -342,7 +342,8 @@ public class CFG
     //****************************
     // Settings: Map Editor
     //****************************
-    public bool Interface_DisplayMapGroups = true;
+    public bool MapEditor_ShowMapGroups = true;
+    public bool MapEditor_ShowWorldMapButtons = true;
     public bool MapEditor_MapObjectList_ShowMapNames = true;
 
     public bool MapEditor_Always_List_Loaded_Maps = true;
@@ -554,7 +555,6 @@ public class CFG
     public bool MapPieceAtlas_ShowTags = true;
     public bool EventFlagAtlas_ShowTags = true;
     public bool ParticleAtlas_ShowTags = true;
-    public bool MapNameAtlas_ShowUnused = false;
     public bool MapNameAtlas_ShowTags = true;
     public bool GparamNameAtlas_ShowTags = true;
     public bool SoundAtlas_ShowTags = true;

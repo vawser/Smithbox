@@ -435,4 +435,75 @@ public static class SearchFilters
 
         return match;
     }
+
+    public static bool IsMapSearchMatch(string rawInput, string mapId, string mapAlias, List<string> mapTags)
+    {
+        bool match = false;
+
+        List<string> MapTags = mapTags;
+        string input = rawInput.Trim().ToLower();
+        string MapID = mapId.ToLower();
+        string MapName = mapAlias.ToLower();
+
+        if (input.Equals(""))
+        {
+            match = true; // If input is empty, show all
+            return match;
+        }
+
+        string[] inputParts = input.Split("+");
+        bool[] partTruth = new bool[inputParts.Length];
+
+        for (int i = 0; i < partTruth.Length; i++)
+        {
+            string entry = inputParts[i];
+
+            // Match: Map ID
+            if (entry == MapID)
+                partTruth[i] = true;
+
+            // Match: Map ID parts
+            var MapIDParts = MapID.Split("_");
+            foreach (var refPart in MapIDParts)
+            {
+                var part = refPart.Replace("m", "");
+
+                if (entry == refPart)
+                {
+                    partTruth[i] = true;
+                }
+            }
+
+            // Match: Alias Name
+            if (entry == MapName)
+                partTruth[i] = true;
+
+            // Match: Alias Name parts
+            var MapNameParts = MapName.Split(" ");
+            foreach (var refPart in MapNameParts)
+            {
+                if (entry == refPart)
+                {
+                    partTruth[i] = true;
+                }
+            }
+
+            // Match: Tags
+            foreach (string tagStr in MapTags)
+            {
+                if (entry == tagStr.ToLower())
+                    partTruth[i] = true;
+            }
+        }
+
+        match = true;
+
+        foreach (bool entry in partTruth)
+        {
+            if (!entry)
+                match = false;
+        }
+
+        return match;
+    }
 }

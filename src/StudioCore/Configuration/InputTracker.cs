@@ -161,13 +161,13 @@ public static class InputTracker
         }
     }
 
-    private static void MouseUp(MouseButton mouseButton)
+    public static void MouseUp(MouseButton mouseButton)
     {
         _currentlyPressedMouseButtons.Remove(mouseButton);
         _newMouseButtonsThisFrame.Remove(mouseButton);
     }
 
-    private static void MouseDown(MouseButton mouseButton)
+    public static void MouseDown(MouseButton mouseButton)
     {
         if (_currentlyPressedMouseButtons.Add(mouseButton))
             _newMouseButtonsThisFrame.Add(mouseButton);

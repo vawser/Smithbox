@@ -109,7 +109,7 @@ public class WorldMapScreen : IResourceEventListener
         var windowWidth = ImGui.GetWindowWidth();
         var widthUnit = windowWidth / 100;
 
-        if (LoadedWorldMapTexture)
+        if (LoadedWorldMapTexture && CFG.Current.MapEditor_ShowWorldMapButtons)
         {
             if (ImGui.Button("Lands Between", new Vector2(widthUnit * 40, 20 * scale)))
             {
@@ -199,6 +199,10 @@ public class WorldMapScreen : IResourceEventListener
         //ImGui.Text($"mousePos: {mousePos}");
         //ImGui.Text($"windowHeight: {windowHeight}");
         //ImGui.Text($"windowWidth: {windowWidth}");
+        if (InputTracker.GetMouseButtonDown(MouseButton.Middle))
+        {
+            ImGui.Text($"MouseDelta: {InputTracker.MouseDelta}");
+        }
 
         currentHoverMaps = GetMatchingMaps(relativePos);
 

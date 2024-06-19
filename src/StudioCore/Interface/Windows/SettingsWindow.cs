@@ -479,6 +479,14 @@ public class SettingsWindow
                 ImGui.Checkbox("Display map object list search", ref CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch);
                 ImguiUtils.ShowHoverTooltip("Display the map object list search text box.");
 
+                ImGui.Checkbox("Display map groups interface", ref CFG.Current.MapEditor_ShowMapGroups);
+                ImguiUtils.ShowHoverTooltip("Display the map group drop-downs.");
+
+                ImGui.Checkbox("Display world map interface", ref CFG.Current.MapEditor_ShowWorldMapButtons);
+                ImguiUtils.ShowHoverTooltip("Display the world map buttons.");
+
+                ImGui.Separator();
+                
                 ImGui.Checkbox("Display map names", ref CFG.Current.MapEditor_MapObjectList_ShowMapNames);
                 ImguiUtils.ShowHoverTooltip("Map names will be displayed within the scene view list.");
 
