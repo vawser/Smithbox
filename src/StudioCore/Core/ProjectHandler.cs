@@ -80,7 +80,9 @@ public class ProjectHandler
         Smithbox.SmithboxDataRoot = $"{Smithbox.ProjectRoot}\\.smithbox";
         CurrentProject.ProjectJsonPath = path;
 
-        if(update)
+        Smithbox.SetProgramTitle($"Smithbox - {CurrentProject.Config.ProjectName}");
+
+        if (update)
         {
             ResourceMapLocator.FullMapList = null;
             Smithbox.BankHandler.UpdateBanks();
