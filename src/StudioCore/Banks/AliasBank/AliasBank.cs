@@ -53,7 +53,10 @@ public class AliasBank
 
         foreach(var entry in Aliases.list)
         {
-            Entries.Add(entry.id, entry);
+            if (!Entries.ContainsKey(entry.id))
+            {
+                Entries.Add(entry.id, entry);
+            }
         }
 
         return Entries;

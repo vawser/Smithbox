@@ -104,18 +104,17 @@ public class AliasTab
 
         foreach (var entry in Bank.Aliases.list)
         {
-            var displayedName = $"{entry.id} - {entry.name}";
+            // Skip these entries
+            if(entry.id == "dummy" || entry.id == "default")
+            {
+                continue;
+            }
+
+            var displayedName = $"{entry.id}";
 
             var refID = $"{entry.id}";
             var refName = $"{entry.name}";
             var refTagList = entry.tags;
-
-            // Append tags to to displayed name
-            if (TagBool)
-            {
-                var tagString = string.Join(" ", refTagList);
-                displayedName = $"{displayedName} {{ {tagString} }}";
-            }
 
             if (SearchFilters.IsSearchMatch(_searchInput, refID, refName, refTagList))
             {
@@ -137,6 +136,19 @@ public class AliasTab
                     }
                     else
                         _refUpdateTags = "";
+                }
+
+                // Display name alias
+                if (entry.name != "")
+                {
+                    AliasUtils.DisplayAlias(entry.name);
+                }
+
+                // Display tags
+                if (TagBool)
+                {
+                    var tagString = string.Join(" ", refTagList);
+                    AliasUtils.DisplayTagAlias(tagString);
                 }
             }
         }
