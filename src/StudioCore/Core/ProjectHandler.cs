@@ -46,6 +46,7 @@ public class ProjectHandler
             return;
 
         var lastProjectPath = CFG.Current.LastProjectFile;
+        TaskLogs.AddLog(lastProjectPath);
 
         // Fill CurrentProject.Config with contents
         CurrentProject.Config = ReadProjectConfig(lastProjectPath);
@@ -79,6 +80,9 @@ public class ProjectHandler
         Smithbox.ProjectRoot = Path.GetDirectoryName(path);
         Smithbox.SmithboxDataRoot = $"{Smithbox.ProjectRoot}\\.smithbox";
         CurrentProject.ProjectJsonPath = path;
+        CFG.Current.LastProjectFile = path;
+        CFG.Save();
+        TaskLogs.AddLog(CFG.Current.LastProjectFile);
 
         Smithbox.SetProgramTitle($"Smithbox - {CurrentProject.Config.ProjectName}");
 
