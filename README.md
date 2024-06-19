@@ -1,6 +1,10 @@
 # Smithbox
 Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3, Dark Souls 2, Dark Souls, Bloodborne and Demon's Souls.
 
+[![GitHub release](https://img.shields.io/github/release/vawser/Smithbox.svg)](https://github.com/vawser/Smithbox/releases/latest)
+[![Github All Releases](https://img.shields.io/github/downloads/vawser/Smithbox/total.svg)](https://github.com/vawser/Smithbox/releases/latest)
+[![Smithbox Discord](https://img.shields.io/badge/Discord%20-%237289DA.svg?&logo=discord&logoColor=white)](https://discord.gg/5p9bRKkK4J)
+
 ## Key Features
 - Map Editor: a visual editor for editing maps.
 - Param Editor: a table editor for editing parameters, which contain most of the data that defines each game.
@@ -9,11 +13,6 @@ Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3
 - Gparam Editor: a editor for quickly creating and editing GPARAM files.
 - Texture Viewer: a simple to use viewer for looking and extracting textures.
 - Asset Browser: a menu to browse through all of the assets used within each of the games.
-
-# Links
-[Smithbox Discord](https://discord.gg/5p9bRKkK4J)
-
-[DSMapStudio repository](https://github.com/soulsmods/DSMapStudio)
 
 ## Requirements
 * Windows 7/8/8.1/10/11 (64-bit only)
@@ -50,6 +49,9 @@ Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3
 
 #### Elden Ring
 * Use [UXM Selective Unpack](https://github.com/Nordgaren/UXM-Selective-Unpack) to extract the game files.
+
+## Links
+Smithbox is a fork of the [DSMapStudio repository](https://github.com/soulsmods/DSMapStudio)
 
 ## Credits (DSMapStudio)
 * Katalash
