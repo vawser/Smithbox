@@ -1,1 +1,4 @@
+10000 Standard
+10001 Standard - Physical: STR + DEX + ARC
+10002 Standard - Magic: INT + FTH
 10100 Arcane - Split Scaling

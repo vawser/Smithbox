@@ -1,3 +1,5 @@
+6800 Gravesite Plain
+6900 Scadu Altus
 10000 Stormveil Castle
 10010 Chapel of Anticipation
 11000 Leyndell, Royal Capital
@@ -17,6 +19,8 @@
 16000 Volcano Manor
 18000 Stranded Graveyard
 19000 Stone Platform
+20000 Land of the Tower
+21000 Shadow Keep
 35000 Subterranean Shunning-Grounds
 39200 Ruin-Strewn Precipice
 61000 Limgrave

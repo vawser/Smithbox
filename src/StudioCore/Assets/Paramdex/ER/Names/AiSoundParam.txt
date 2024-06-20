@@ -1,0 +1,11 @@
+1000 Slow Walk
+1010 Normal Walk
+1020 Running/Torrent Dash
+1030 Roll
+2000 Attack Appear 
+2020 Spell Hit
+2010 Weapon Hit
+2030 Spell Hit
+2090 Shattershard Arrow Hit
+2100 Attack Hit
+2200 Arrow Hit

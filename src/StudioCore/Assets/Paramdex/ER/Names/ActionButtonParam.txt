@@ -239,3 +239,115 @@
 10000 Traverse the mist
 10001 Traverse the mist
 10010 Traverse the mist
+210000 Traverse the mist
+206000 Talk
+206020 Touch cross
+206021 Touch cross
+206022 Touch cross
+206023 Touch cross
+206030 Examine puppet
+206040 Examine
+206050 Talk
+206060 Examine altar
+207800 Acquire materials
+207810 Acquire materials
+207811 Acquire materials
+207812 Acquire materials
+207813 Acquire materials
+207814 Acquire materials
+207815 Acquire materials
+207816 Acquire materials
+207817 Acquire materials
+207818 Acquire materials
+207819 Acquire materials
+207820 Acquire materials
+207821 Acquire materials
+207822 Acquire materials
+207823 Acquire materials
+207824 Acquire materials
+207825 Acquire materials
+207826 Acquire materials
+207827 Acquire materials
+207828 Acquire materials
+207829 Acquire materials
+207830 Acquire materials
+207831 Acquire materials
+207832 Acquire materials
+207833 Acquire materials
+207834 Acquire materials
+207835 Acquire materials
+207836 Acquire materials
+207837 Acquire materials
+207838 Acquire materials
+207839 Acquire materials
+207840 Acquire materials
+207841 Acquire materials
+207842 Acquire materials
+207843 Acquire materials
+207844 Acquire materials
+207850 Acquire materials
+207860 Acquire materials
+207861 Acquire materials
+207862 Acquire materials
+207863 Acquire materials
+207864 Acquire materials
+207865 Acquire materials
+207866 Acquire materials
+207867 Acquire materials
+207868 Acquire materials
+207869 Acquire materials
+207870 Acquire materials
+207871 Acquire materials
+207872 Acquire materials
+207873 Acquire materials
+207874 Acquire materials
+207875 Acquire materials
+207876 Acquire materials
+207877 Acquire materials
+207878 Acquire materials
+207879 Acquire materials
+207880 Acquire materials
+207881 Acquire materials
+207882 Acquire materials
+207883 Acquire materials
+207884 Acquire materials
+207885 Acquire materials
+207886 Acquire materials
+207887 Acquire materials
+207888 Acquire materials
+207889 Acquire materials
+207890 Acquire materials
+207891 Acquire materials
+207892 Acquire materials
+207893 Acquire materials
+207894 Acquire materials
+208310 Pull lever
+208405 Push lever
+208700 Sound hanging bell
+208701 Sound hanging bell
+208702 Sound hanging bell
+208710 Examine
+209051 Be summoned to assist Needle Knight Leda
+209052 Be summoned to assist Sir Ansbach
+209053 Be summoned to assist Needle Knight Leda
+209054 Be summoned to assist Hornsent
+209055 Be summoned to challenge Needle Knight Leda and her allies
+209060 Touch gold summon sign
+209200 Examine altar
+209210 Pick up item
+209500 Touch withered arm
+209502 Examine
+209504 Examine seal
+209520 Touch gold summon sign
+209522 Touch gold summon sign
+209523 Examine
+209524 Pick up item
+209525 Examine altar
+209526 Examine altar
+209529 Examine monument
+209530 Touch gold summon sign
+209531 Touch gold summon sign
+209532 Touch gold summon sign
+209600 Touch memory
+209610 Examine sealing tree
+209620 Rest in coffin

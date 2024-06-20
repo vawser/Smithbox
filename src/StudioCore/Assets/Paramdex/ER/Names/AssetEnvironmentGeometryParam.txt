@@ -1,1 +1,111 @@
 96201 Aurora Borealis (Blue-Green)
+99004 Imp Statue (holding book)
+99008 Imp Statue (holding hatchet)
+99007 Imp Statue (holding hatchet)
+99009 Broken Imp Statue (with book)
+99010 Winged Man Statue 
+99012 Bear Trap
+99013 Wooden Chest
+99015 Summoning Effigy
+99026 Metal Lever
+99036 Bloodrose
+99635 Maiden Statue
+99650 Poisonbloom
+99651 Trina's Lily
+99653 Miquella's Lily
+99654 Grave Violet
+99656 Trina's Lily
+99657 Miquella's Lily
+99660 Faded Erdleaf Flower
+99680 Erdleaf Flower
+99681 Altus Bloom
+99682 Fire Blossom
+99683 Golden Sunflower
+99684 Fulgerbloom
+99685 Tarnished Golden Sunflower
+99687 Fulgerbloom
+99690 Herba
+99691 Arteria Leaf
+99696 Arteria Leaf
+99710 Dewkissed Herba
+99720 Rowa Fruit
+99722 Rimed Rowa
+99721 Golden Rowa
+99723 Bloodrose
+99730 Rowa Fruit
+99740 Eye of Yelough
+99750 Crystal Bud
+99751 Rimed Crystal Bud
+99753 Sacramental Bud
+99760 Mushroom
+99761 Melted Mushroom
+99770 Toxic Mushroom
+99775 Root Resin
+99780 Cracked Crystal
+99795 Sanctuary Stone
+99796 Ruin Fragment
+99800 Nascent Butterfly
+99801 Aeonian Butterfly
+99802 Smoldering Butterfly
+99810 Silver Firefly
+99811 Gold Firefly
+99812 Glintstone Firefly
+99820 Golden Centipede
+99825 Silver Tear Husk
+99830 Gold-tinged Excrement
+99831 Blood-tainted Excrement
+99840 Cave Moss
+99841 Budding Cave Moss
+99842 Crystal Cave Moss
+99845 Yellow Ember
+99850 Volcanic Stone
+99852 Formic Rock
+99855 Gravel Stone
+99860 Smithing Stone [1]
+99861 Smithing Stone [2]
+99862 Smithing Stone [3]
+99863 Smithing Stone [4]
+99864 Smithing Stone [5]
+99865 Smithing Stone [6]
+99866 Smithing Stone [7]
+99867 Smithing Stone [8]
+99868 Ancient Dragon Smithing Stone
+99870 Somber Smithing Stone [1]
+99871 Somber Smithing Stone [2]
+99872 Somber Smithing Stone [3]
+99873 Somber Smithing Stone [4]
+99874 Somber Smithing Stone [5]
+99875 Somber Smithing Stone [6]
+99876 Somber Smithing Stone [7]
+99877 Somber Smithing Stone [8]
+99878 Somber Ancient Dragon Smithing Stone
+99879 Somber Smithing Stone [9]
+99920 Fledgling Glovewort
+99921 Grave Glovewort [2]
+99922 Grave Glovewort [3]
+99923 Grave Glovewort [4]
+99924 Grave Glovewort [5]
+99925 Grave Glovewort [6]
+99926 Grave Glovewort [7]
+99927 Grave Glovewort [8]
+99928 Grave Glovewort [9]
+99929 Great Grave Glovewort
+99930 Ghost Glovewort [1]
+99931 Ghost Glovewort [2]
+99932 Ghost Glovewort [3]
+99933 Ghost Glovewort [4]
+99934 Ghost Glovewort [5]
+99935 Ghost Glovewort [6]
+99936 Ghost Glovewort [7]
+99937 Ghost Glovewort [8]
+99938 Ghost Glovewort [9]
+99939 Great Ghost Glovewort
+100100 Caravan Wagon [Destructible]
+100101 Caravan Chest
+100102 Caravan Wagon
+100103 Broken Caravan Wagon
+100104 Caravan Wagon - No Wheels
+100106 Broken Caravan Wheel Base
+100107 Broken Caravan Wheels
+100120 Caravan Wagon [Destructible]
+219000 Door

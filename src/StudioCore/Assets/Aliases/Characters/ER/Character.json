@@ -2067,13 +2067,13 @@
         
         		{
 			"id": "c5000",
-			"name": "",
+			"name": "Commander Gaius",
 
 			"tags": [ ]
 		},
 		{
 			"id": "c5010",
-			"name": "",
+			"name": "Golden Hippopotamus",
 
 			"tags": [ ]
 		},
@@ -2085,19 +2085,31 @@
 		},
 		{
 			"id": "c5020",
-			"name": "",
+			"name": "Putrescent Knight",
 
 			"tags": [ ]
 		},
 		{
 			"id": "c5030",
-			"name": "",
+			"name": "Romina, Saint of the Bud",
+
+			"tags": [ ]
+		},
+		{
+			"id": "c5040",
+			"name": "Curseblade Labirith",
 
 			"tags": [ ]
 		},
 		{
 			"id": "c5050",
 			"name": "",
+
+			"tags": [ ]
+		},
+		{
+			"id": "c5050",
+			"name": "Midra, Lord of Frenzied Flame",
 
 			"tags": [ ]
 		},
@@ -2121,13 +2133,13 @@
 		},
 		{
 			"id": "c5070",
-			"name": "",
+			"name": "Death Knight",
 
 			"tags": [ ]
 		},
 		{
 			"id": "c5081",
-			"name": "",
+			"name": "Chief Bloodfiend",
 
 			"tags": [ ]
 		},
@@ -2139,13 +2151,13 @@
 		},
 		{
 			"id": "c5120",
-			"name": "",
+			"name": "Bayle the Dread",
 
 			"tags": [ ]
 		},
 		{
 			"id": "c5130",
-			"name": "",
+			"name": "Messmer the Impaler",
 
 			"tags": [ ]
 		},
@@ -2205,19 +2217,19 @@
 		},
 		{
 			"id": "c5200",
-			"name": "",
+			"name": "Metyr, Mother of Fingers",
 
 			"tags": [ ]
 		},
 		{
 			"id": "c5210",
-			"name": "",
+			"name": "Divine Beast Dancing Lion",
 
 			"tags": [ ]
 		},
 		{
 			"id": "c5220",
-			"name": "",
+			"name": "Promised Consort Radahn",
 
 			"tags": [ ]
 		},
@@ -2229,7 +2241,7 @@
 		},
 		{
 			"id": "c5230",
-			"name": "",
+			"name": "Scadutree Avatar",
 
 			"tags": [ ]
 		},
@@ -2277,7 +2289,7 @@
 		},
 		{
 			"id": "c5300",
-			"name": "",
+			"name": "Rellana, Twin Moon Knight",
 
 			"tags": [ ]
 		},
@@ -2289,7 +2301,7 @@
 		},
 		{
 			"id": "c5320",
-			"name": "",
+			"name": "Jori, Elder Inquisitor",
 
 			"tags": [ ]
 		},
@@ -2319,13 +2331,13 @@
 		},
 		{
 			"id": "c5370",
-			"name": "",
+			"name": "Ancient Dragon Senessax",
 
 			"tags": [ ]
 		},
 		{
 			"id": "c5380",
-			"name": "",
+			"name": "Jagged Peak Drake",
 
 			"tags": [ ]
 		},
@@ -2661,7 +2673,7 @@
 		},
 		{
 			"id": "c5730",
-			"name": "",
+			"name": "Demi-Human Queen Marigga",
 
 			"tags": [ ]
 		},
@@ -2714,8 +2726,20 @@
 			"tags": [ ]
 		},
 		{
+			"id": "c5810",
+			"name": "Demi-Human Swordmaster Onze",
+
+			"tags": [ ]
+		},
+		{
 			"id": "c5820",
-			"name": "",
+			"name": "Great Red Bear",
+
+			"tags": [ ]
+		},
+		{
+			"id": "c5840",
+			"name": "Black Knight",
 
 			"tags": [ ]
 		},
@@ -2727,7 +2751,7 @@
 		},
 		{
 			"id": "c5860",
-			"name": "",
+			"name": "Ghostflame Dragon",
 
 			"tags": [ ]
 		},
@@ -2980,13 +3004,13 @@
 		},
 		{
 			"id": "c6251",
-			"name": "",
+			"name": "Tree Sentinel (SOTE)",
 
 			"tags": [ ]
 		},
 		{
 			"id": "c6260",
-			"name": "",
+			"name": "Death Rite Bird (SOTE)",
 
 			"tags": [ ]
 		},
@@ -3016,7 +3040,7 @@
 		},
 		{
 			"id": "c6310",
-			"name": "",
+			"name": "Fallingstar Beast (SOTE)",
 
 			"tags": [ ]
 		},
