@@ -236,7 +236,6 @@
 60515200 Mountaintops of the Giants - Giants' Gravepost South Cliffside
 60515300 Mountaintops of the Giants - Southwest Giants' Gravepost
 60515400 Mountaintops of the Giants - Northwest Giants' Gravepost
-@ -301,13 +148,9 @@
 60515600 Mountaintops of the Giants - Ancient Snow Valley Ruins, Stargazers' Ruins
 60515700 Mountaintops of the Giants - South Castle Sol, Snow Valley Ruins Overlook
 60515800 Mountaintops of the Giants - North Castle Sol

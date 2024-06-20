@@ -1,4 +1,3 @@
-@ -1,123 +1,108 @@
 0 NPC_ATK_R1 
 1 NPC_ATK_R1_Hold 
 2 NPC_ATK_R2 

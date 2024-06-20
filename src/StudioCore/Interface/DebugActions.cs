@@ -96,6 +96,8 @@ public static class DebugActions
                 TaskLogs.AddLog(message,
                         LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
             }
+
+            TaskLogs.AddLog($"{paramName} validated");
         }
     }
 
