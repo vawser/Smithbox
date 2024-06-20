@@ -1489,6 +1489,7 @@ namespace SoulsFormats
                 {
                     base.GetNames(msb, entries);
                     CollisionPartName = MSB.FindName(entries.Parts, CollisionPartIndex);
+                    WalkRouteName = MSB.FindName(entries.Events, WalkRouteIndex);
                 }
 
                 internal override void GetIndices(MSBS msb, Entries entries)
