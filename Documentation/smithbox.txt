@@ -114,11 +114,3 @@ Direct/01_common/SB_Icon_00/iconId/MENU_ItemIcon_
 
 GoodsDialog = 41
 GoodsDialog_SOTE = 330
-
-GemEffect_SOTE = 334
-
-DescriptionSwordArts_SOTE = 332
-
-[16:15] Couldn't find patch parent for FMG "GoodsDialog_SOTE" with ID GoodsDialog_SOTE
-[16:15] Couldn't find patch parent for FMG "GemEffect_SOTE" with ID GemEffect_SOTE
-[16:15] Couldn't find patch parent for FMG "DescriptionSwordArts_SOTE" with ID DescriptionSwordArts_SOTE

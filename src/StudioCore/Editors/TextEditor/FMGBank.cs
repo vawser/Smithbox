@@ -236,7 +236,7 @@ public enum FmgIDType
     TitleCharacters_SOTE = 328,
     TitleLocations_SOTE = 329,
 
-    GoodsDialog_SOTE = 330,
+    GoodsDialog = 330,
     TitleSwordArts_SOTE = 331,
     SummarySwordArts_SOTE = 332,
     WeaponEffect_SOTE = 333,
@@ -334,7 +334,7 @@ public static partial class FMGBank
     /// <summary>
     ///     List of strings to compare with "FmgIDType" name to identify patch FMGs.
     /// </summary>
-    private static readonly List<string> patchStrings = new() { "_Patch", "_DLC1", "_DLC2", "_SOTE"};
+    private static readonly List<string> patchStrings = new() { "_Patch", "_DLC1", "_DLC2", "_SOTE" };
 
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
@@ -896,10 +896,14 @@ public static partial class FMGBank
 
     private static void SetFMGInfoPatchParent(FMGInfo info)
     {
+        TaskLogs.AddLog($"info.Name: {info.Name}");
+
         var strippedName = RemovePatchStrings(info.Name);
 
         if (strippedName != info.Name)
         {
+            TaskLogs.AddLog($"strippedName: {strippedName}");
+
             // This is a patch FMG, try to find parent FMG.
             foreach (FMGInfo parentInfo in FmgInfoBank)
             {
