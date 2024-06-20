@@ -2520,15 +2520,15 @@
 	  <Enum>SP_EFFECT_BOOL</Enum>
 	  <Maximum>1</Maximum>
 	</Field>
-	<Field Def="u8 0x354_unk5:1">
+	<Field Def="u8 0x354_unk5:1" FirstVersion="11210015">
 	  <Enum>SP_EFFECT_BOOL</Enum>
 	  <Maximum>1</Maximum>
 	</Field>
-	<Field Def="u8 0x354_unk6:1">
+	<Field Def="u8 0x354_unk6:1" FirstVersion="11210015">
 	  <Enum>SP_EFFECT_BOOL</Enum>
 	  <Maximum>1</Maximum>
 	</Field>
-	<Field Def="u8 0x354_unk7:1">
+	<Field Def="u8 0x354_unk7:1" FirstVersion="11210015">
 	  <Enum>SP_EFFECT_BOOL</Enum>
 	  <Maximum>1</Maximum>
 	</Field>
