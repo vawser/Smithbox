@@ -110,6 +110,14 @@ public class ProjectHandler
         if (CurrentProject == null)
             return;
 
+        //
+        if (CurrentProject.Config == null)
+        {
+            CurrentProject.Config = new ProjectConfiguration();
+            CFG.Current.LastProjectFile = "";
+            return;
+        }
+
         Smithbox.SetProgramTitle($"Smithbox - {CurrentProject.Config.ProjectName}");
         Smithbox.ProjectType = CurrentProject.Config.GameType;
         Smithbox.GameRoot = CurrentProject.Config.GameRoot;

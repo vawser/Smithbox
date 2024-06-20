@@ -1,4 +1,5 @@
-﻿using SoulsFormats.Util;
+﻿using Org.BouncyCastle.Asn1.Cms;
+using SoulsFormats.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
+using ZstdNet;
 
 namespace SoulsFormats
 {
@@ -320,6 +322,27 @@ namespace SoulsFormats
             {
                 using (var compressedStream = new MemoryStream(compressed))
                 using (var deflateStream = new DeflateStream(compressedStream, CompressionMode.Decompress, true))
+                {
+                    deflateStream.CopyTo(decompressedStream);
+                }
+                return decompressedStream.ToArray();
+            }
+        }
+
+        public static byte[] WriteZstd(BinaryWriterEx bw, byte compressionLevel, Span<byte> input)
+        {
+            using var compressor = new Compressor(new CompressionOptions(compressionLevel));
+            return compressor.Wrap(input).ToArray();
+        }
+
+        public static byte[] ReadZstd(BinaryReaderEx br, int compressedSize)
+        {
+            byte[] compressed = br.ReadBytes(compressedSize);
+
+            using (var decompressedStream = new MemoryStream())
+            {
+                using (var compressedStream = new MemoryStream(compressed))
+                using (var deflateStream = new DecompressionStream(compressedStream))
                 {
                     deflateStream.CopyTo(decompressedStream);
                 }

@@ -37,5 +37,10 @@
       <EditFlags>Wrap</EditFlags>
       <SortID>1003</SortID>
     </Field>
+    <Field Def="s32 Unknown0" />
+    <Field Def="s32 Unknown1" />
+    <Field Def="s32 Unknown2" />
+    <Field Def="s32 Unknown3" />
+
   </Fields>
 </PARAMDEF>

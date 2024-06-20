@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>MAP_GRID_CREATE_HEIGHT_LIMIT_DETAIL_INFO_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unknown0" />
+    <Field Def="s32 Unknown1" />
+    <Field Def="s32 Unknown2" />
+    <Field Def="s32 Unknown3" />
+    <Field Def="s32 Unknown4" />
+    <Field Def="s32 Unknown5" />
+    <Field Def="s32 Unknown6" />
+    <Field Def="s32 Unknown7" />
+    <Field Def="s32 Unknown8" />
+    <Field Def="s32 Unknown9" />
+    <Field Def="s32 Unknown10" />
+    <Field Def="s32 Unknown11" />
+    <Field Def="s32 Unknown12" />
+    <Field Def="s32 Unknown13" />
+    <Field Def="s32 Unknown14" />
+    <Field Def="s32 Unknown15" />
+
+  </Fields>
+</PARAMDEF>

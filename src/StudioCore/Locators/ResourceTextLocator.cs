@@ -85,7 +85,13 @@ public static class ResourceTextLocator
             return ad2;
         }
         else if (Smithbox.ProjectType == ProjectType.DS3)
+        {
             path = $@"msg\{langFolder}\{msgBndType}_dlc2.msgbnd.dcx";
+        }
+        else if (Smithbox.ProjectType == ProjectType.ER)
+        {
+            path = $@"msg\{langFolder}\{msgBndType}_dlc01.msgbnd.dcx";
+        }
 
         if (writemode)
         {

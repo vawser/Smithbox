@@ -1070,9 +1070,9 @@ public class ParamBank
                 using BND4 bnd = SFUtil.DecryptERRegulation(path);
                 LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
             }
-            catch
+            catch(Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         else
@@ -2182,7 +2182,7 @@ public class ParamBank
 
         if (Smithbox.ProjectType == ProjectType.ER)
         {
-            SaveParamsER();
+            //SaveParamsER();
         }
 
         if (Smithbox.ProjectType == ProjectType.AC6)

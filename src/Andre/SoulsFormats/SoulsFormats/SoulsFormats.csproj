@@ -24,5 +24,6 @@
     <PackageReference Include="DotNext.Unsafe" Version="4.14.0" />
     <PackageReference Include="Microsoft.Toolkit.HighPerformance" Version="7.1.2" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
+    <PackageReference Include="ZstdNet" Version="1.4.5" />
   </ItemGroup>
 </Project>

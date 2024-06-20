@@ -3,6 +3,8 @@ using System.IO;
 using System.IO.Compression;
 using System.IO.MemoryMappedFiles;
 using DotNext.IO.MemoryMappedFiles;
+using Org.BouncyCastle.Asn1.Cms;
+using ZstdNet;
 
 namespace SoulsFormats
 {
@@ -94,6 +96,10 @@ namespace SoulsFormats
                 {
                     type = Type.DCP_EDGE;
                 }
+                else if (format == "ZSTD")
+                {
+                    type = Type.ZSTD;
+                }
             }
             else if (magic == "DCX\0")
             {
@@ -129,6 +135,10 @@ namespace SoulsFormats
                     int compressionLevel = br.GetByte(0x30);
                     type = compressionLevel == 9 ? Type.DCX_KRAK_MAX : Type.DCX_KRAK;
                 }
+                else if (format == "ZSTD")
+                {
+                    type = Type.ZSTD;
+                }
             }
             else
             {
@@ -147,6 +157,8 @@ namespace SoulsFormats
                 return DecompressDCPEDGE(br);
             else if (type == Type.DCP_DFLT)
                 return DecompressDCPDFLT(br);
+            else if (type == Type.ZSTD)
+                return DecompressDCPZSTD(br);
             else if (type == Type.DCX_EDGE)
                 return DecompressDCXEDGE(br);
             else if (type == Type.DCX_DFLT_10000_24_9
@@ -161,6 +173,42 @@ namespace SoulsFormats
                 return DecompressDCXKRAK(br, 9);
             else
                 throw new FormatException("Unknown DCX format.");
+        }
+
+        private static byte[] DecompressDCPZSTD(BinaryReaderEx br)
+        {
+            br.AssertASCII("DCX\0");
+            br.AssertInt32(0x11000);
+            br.AssertInt32(0x18);
+            br.AssertInt32(0x24);
+            br.AssertInt32(0x44);
+            br.AssertInt32(0x4C);
+
+            br.AssertASCII("DCS\0");
+            int uncompressedSize = br.ReadInt32();
+            int compressedSize = br.ReadInt32();
+
+            br.AssertASCII("DCP\0");
+            br.AssertASCII("ZSTD");
+            br.AssertInt32(0x20);
+            br.AssertByte(0x15);
+            br.AssertByte(0);
+            br.AssertByte(0);
+            br.AssertByte(0);
+            br.AssertInt32(0x0);
+            br.AssertByte(0);
+            br.AssertByte(0);
+            br.AssertByte(0);
+            br.AssertByte(0);
+            br.AssertInt32(0x0);
+            br.AssertInt32(0x010100);
+
+            br.AssertASCII("DCA\0");
+            br.AssertInt32(8);
+
+            byte[] decompressed = SFUtil.ReadZstd(br, compressedSize);
+
+            return decompressed;
         }
 
         private static byte[] DecompressDCPDFLT(BinaryReaderEx br)
@@ -419,6 +467,10 @@ namespace SoulsFormats
             bw.BigEndian = true;
             if (type == Type.Zlib)
                 SFUtil.WriteZlib(bw, 0xDA, data);
+            else if (type == Type.ZSTD)
+            {
+                SFUtil.WriteZstd(bw, 21, data);
+            }
             else if (type == Type.DCP_DFLT)
                 CompressDCPDFLT(data, bw);
             else if (type == Type.DCX_EDGE)
@@ -678,6 +730,11 @@ namespace SoulsFormats
             /// DCP header, deflate compression. Used in DeS test maps.
             /// </summary>
             DCP_DFLT,
+
+            /// <summary>
+            /// DCP header, deflate compression. Used in SOTE Elden Ring regulation.bin
+            /// </summary>
+            ZSTD,
 
             /// <summary>
             /// DCX header, chunked deflate compression. Primarily used in DeS.

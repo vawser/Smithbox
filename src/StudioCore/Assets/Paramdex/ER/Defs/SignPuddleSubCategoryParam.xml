@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>SIGN_PUDDLE_SUB_CATEGORY_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unknown0" />
+    <Field Def="s32 Unknown1" />
+    <Field Def="s32 Unknown2" />
+    <Field Def="s32 Unknown3" />
+
+  </Fields>
+</PARAMDEF>

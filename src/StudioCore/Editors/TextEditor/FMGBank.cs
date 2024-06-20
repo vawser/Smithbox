@@ -198,14 +198,14 @@ public enum FmgIDType
     // SDT
     Skills = 40,
 
-    // ER
+    // ER - Item
     DescriptionGem = 37,
     SummarySwordArts = 43,
     WeaponEffect = 44,
     ERUnk45 = 45,
     GoodsInfo2 = 46,
 
-    //
+    // ER - Menu
     TalkMsg_FemalePC_Alt = 4,
     NetworkMessage = 31,
     EventTextForTalk = 33,
@@ -214,11 +214,58 @@ public enum FmgIDType
     TutorialBody = 208,
     TextEmbedImageName_win64 = 209,
 
-    // AC6
+    // ER - Item: SOTE
+    TitleWeapons_SOTE = 310,
+    SummaryWeapons_SOTE = 311,
+    DescriptionWeapons_SOTE = 312,
+    TitleArmor_SOTE = 313,
+    SummaryArmor_SOTE = 314,
+    DescriptionArmor_SOTE = 315,
+    TitleGoods_SOTE = 319,
+    SummaryGoods_SOTE = 320,
+    DescriptionGoods_SOTE = 321,
+    TitleRings_SOTE = 316,
+    SummaryRings_SOTE = 317,
+    DescriptionRings_SOTE = 318,
+    TitleAshOfWar_SOTE = 322,
+    SummaryAshOfWar_SOTE = 323,
+    DescriptionAshOfWar_SOTE = 324,
+    TitleSpells_SOTE = 325,
+    SummarySpells_SOTE = 326,
+    DescriptionSpells_SOTE = 327,
+    TitleCharacters_SOTE = 328,
+    TitleLocations_SOTE = 329,
+
+    GoodsDialog_SOTE = 330,
+    TitleSwordArts_SOTE = 331,
+    DescriptionSwordArts_SOTE = 332,
+    WeaponEffect_SOTE = 333,
+    GemEffect_SOTE = 334,
+    GoodsInfo2_SOTE = 335,
+
+    // ER - Menu: SOTE
+    TalkMsg_SOTE = 360,
+    BloodMsg_SOTE = 361,
+    MovieSubtitle_SOTE = 362,
+    NetworkMessage_SOTE = 364,
+    ActionButtonText_SOTE = 365,
+    EventTextForTalk_SOTE = 366,
+    EventTextForMap_SOTE = 367,
+    MenuText_SOTE = 368,
+    LineHelp_SOTE = 369,
+    KeyGuide_SOTE = 370,
+    SystemMessage_SOTE = 371,
+    Dialogues_SOTE = 372,
+    LoadingTitle_SOTE = 373,
+    LoadingText_SOTE = 374,
+    TutorialTitle_SOTE = 375,
+    TutorialBody_SOTE = 376,
+
+    // AC6 - Item
     TitleBooster = 38,
     DescriptionBooster = 39,
 
-    //
+    // AC6 - Menu
     RankerProfile = 50,
     TitleMission = 60,
     SummaryMission = 61,
@@ -286,7 +333,7 @@ public static partial class FMGBank
     /// <summary>
     ///     List of strings to compare with "FmgIDType" name to identify patch FMGs.
     /// </summary>
-    private static readonly List<string> patchStrings = new() { "_Patch", "_DLC1", "_DLC2" };
+    private static readonly List<string> patchStrings = new() { "_Patch", "_DLC1", "_DLC2"};
 
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
@@ -321,6 +368,9 @@ public static partial class FMGBank
             case FmgIDType.TitleGoods_Patch:
             case FmgIDType.TitleGoods_DLC2:
             case FmgIDType.GoodsInfo2:
+            case FmgIDType.TitleGoods_SOTE:
+            case FmgIDType.SummaryGoods_SOTE:
+            case FmgIDType.DescriptionGoods_SOTE:
                 return FmgEntryCategory.Goods;
 
             case FmgIDType.DescriptionWeapons:
@@ -333,6 +383,11 @@ public static partial class FMGBank
             case FmgIDType.DescriptionWeapons_Patch:
             case FmgIDType.SummaryWeapons_Patch:
             case FmgIDType.TitleWeapons_Patch:
+            case FmgIDType.TitleWeapons_SOTE:
+            case FmgIDType.SummaryWeapons_SOTE:
+            case FmgIDType.DescriptionWeapons_SOTE:
+            case FmgIDType.WeaponEffect:
+            case FmgIDType.WeaponEffect_SOTE:
                 return FmgEntryCategory.Weapons;
 
             case FmgIDType.DescriptionArmor:
@@ -345,6 +400,9 @@ public static partial class FMGBank
             case FmgIDType.DescriptionArmor_Patch:
             case FmgIDType.SummaryArmor_Patch:
             case FmgIDType.TitleArmor_Patch:
+            case FmgIDType.TitleArmor_SOTE:
+            case FmgIDType.SummaryArmor_SOTE:
+            case FmgIDType.DescriptionArmor_SOTE:
                 return FmgEntryCategory.Armor;
 
             case FmgIDType.DescriptionRings:
@@ -359,6 +417,9 @@ public static partial class FMGBank
             case FmgIDType.DescriptionRings_Patch:
             case FmgIDType.SummaryRings_Patch:
             case FmgIDType.TitleRings_Patch:
+            case FmgIDType.TitleRings_SOTE:
+            case FmgIDType.SummaryRings_SOTE:
+            case FmgIDType.DescriptionRings_SOTE:
                 return FmgEntryCategory.Rings;
 
             case FmgIDType.DescriptionSpells:
@@ -372,23 +433,33 @@ public static partial class FMGBank
             case FmgIDType.TitleSpells_DLC2:
             case FmgIDType.DescriptionSpells_Patch:
             case FmgIDType.TitleSpells_Patch:
+            case FmgIDType.TitleSpells_SOTE:
+            case FmgIDType.SummarySpells_SOTE:
+            case FmgIDType.DescriptionSpells_SOTE:
                 return FmgEntryCategory.Spells;
 
             case FmgIDType.TitleCharacters:
             case FmgIDType.TitleCharacters_DLC1:
             case FmgIDType.TitleCharacters_DLC2:
             case FmgIDType.TitleCharacters_Patch:
+            case FmgIDType.TitleCharacters_SOTE:
                 return FmgEntryCategory.Characters;
 
             case FmgIDType.TitleLocations:
             case FmgIDType.TitleLocations_DLC1:
             case FmgIDType.TitleLocations_DLC2:
             case FmgIDType.TitleLocations_Patch:
+            case FmgIDType.TitleLocations_SOTE:
                 return FmgEntryCategory.Locations;
 
             case FmgIDType.DescriptionGem:
+            case FmgIDType.TitleAshOfWar_SOTE:
+            case FmgIDType.SummaryAshOfWar_SOTE:
+            case FmgIDType.DescriptionAshOfWar_SOTE:
                 return FmgEntryCategory.Gem;
 
+            case FmgIDType.TitleSwordArts_SOTE:
+            case FmgIDType.DescriptionSwordArts_SOTE:
             case FmgIDType.SummarySwordArts:
                 return FmgEntryCategory.SwordArts;
 
@@ -396,10 +467,11 @@ public static partial class FMGBank
             case FmgIDType.TutorialBody:
             case FmgIDType.TutorialTitle2023:
             case FmgIDType.TutorialBody2023:
+            case FmgIDType.TutorialTitle_SOTE:
+            case FmgIDType.TutorialBody_SOTE:
                 return FmgEntryCategory.Tutorial;
 
-            case FmgIDType.WeaponEffect:
-                return FmgEntryCategory.ItemFmgDummy;
+            //return FmgEntryCategory.ItemFmgDummy;
 
             case FmgIDType.TitleMission:
             case FmgIDType.SummaryMission:
@@ -452,6 +524,13 @@ public static partial class FMGBank
             case FmgIDType.DescriptionBooster:
             case FmgIDType.DescriptionMission:
             case FmgIDType.DescriptionArchive:
+            case FmgIDType.DescriptionWeapons_SOTE:
+            case FmgIDType.DescriptionArmor_SOTE:
+            case FmgIDType.DescriptionGoods_SOTE:
+            case FmgIDType.DescriptionRings_SOTE:
+            case FmgIDType.DescriptionAshOfWar_SOTE:
+            case FmgIDType.DescriptionSpells_SOTE:
+            case FmgIDType.DescriptionSwordArts_SOTE:
                 return FmgEntryTextType.Description;
 
             case FmgIDType.SummaryGoods:
@@ -472,6 +551,13 @@ public static partial class FMGBank
             case FmgIDType.SummaryMission:
             case FmgIDType.TutorialTitle: // Include as summary (not all TutorialBody's have a title)
             case FmgIDType.TutorialTitle2023:
+            case FmgIDType.SummaryWeapons_SOTE:
+            case FmgIDType.SummaryArmor_SOTE:
+            case FmgIDType.SummaryGoods_SOTE:
+            case FmgIDType.SummaryRings_SOTE:
+            case FmgIDType.SummaryAshOfWar_SOTE:
+            case FmgIDType.SummarySpells_SOTE:
+            case FmgIDType.TutorialTitle_SOTE:
                 return FmgEntryTextType.Summary;
 
             case FmgIDType.TitleGoods:
@@ -507,15 +593,27 @@ public static partial class FMGBank
             case FmgIDType.TitleBooster:
             case FmgIDType.TitleMission:
             case FmgIDType.TitleArchive:
+            case FmgIDType.TitleWeapons_SOTE:
+            case FmgIDType.TitleArmor_SOTE:
+            case FmgIDType.TitleGoods_SOTE:
+            case FmgIDType.TitleRings_SOTE:
+            case FmgIDType.TitleAshOfWar_SOTE:
+            case FmgIDType.TitleSpells_SOTE:
+            case FmgIDType.TitleCharacters_SOTE:
+            case FmgIDType.TitleLocations_SOTE:
+            case FmgIDType.TitleSwordArts_SOTE:
                 return FmgEntryTextType.Title;
 
             case FmgIDType.GoodsInfo2:
+            case FmgIDType.GoodsInfo2_SOTE:
             case FmgIDType.MissionLocation:
                 return FmgEntryTextType.ExtraText;
 
             case FmgIDType.WeaponEffect:
+            case FmgIDType.WeaponEffect_SOTE:
             case FmgIDType.TutorialBody: // Include as TextBody to make it display foremost.
             case FmgIDType.TutorialBody2023:
+            case FmgIDType.TutorialBody_SOTE:
                 return FmgEntryTextType.TextBody;
 
             default:

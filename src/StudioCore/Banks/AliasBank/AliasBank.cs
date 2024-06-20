@@ -51,11 +51,14 @@ public class AliasBank
     {
         Dictionary<string, AliasReference> Entries = new Dictionary<string, AliasReference>();
 
-        foreach(var entry in Aliases.list)
+        if(Aliases.list != null)
         {
-            if (!Entries.ContainsKey(entry.id))
+            foreach (var entry in Aliases.list)
             {
-                Entries.Add(entry.id, entry);
+                if (!Entries.ContainsKey(entry.id))
+                {
+                    Entries.Add(entry.id, entry);
+                }
             }
         }
 
