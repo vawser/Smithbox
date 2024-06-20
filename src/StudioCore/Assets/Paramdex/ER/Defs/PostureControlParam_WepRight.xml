@@ -443,14 +443,14 @@
       <EditFlags>Wrap</EditFlags>
       <SortID>56</SortID>
     </Field>
-    <Field Def="s32 Unknown0" />
-    <Field Def="s32 Unknown1" />
-    <Field Def="s32 Unknown2" />
-    <Field Def="s32 Unknown3" />
-    <Field Def="s32 Unknown4" />
-    <Field Def="s32 Unknown5" />
-    <Field Def="s32 Unknown6" />
-    <Field Def="s32 Unknown7" />
+    <Field Def="s32 Unknown0" FirstVersion="11210015"/>
+    <Field Def="s32 Unknown1" FirstVersion="11210015"/>
+    <Field Def="s32 Unknown2" FirstVersion="11210015"/>
+    <Field Def="s32 Unknown3" FirstVersion="11210015"/>
+    <Field Def="s32 Unknown4" FirstVersion="11210015"/>
+    <Field Def="s32 Unknown5" FirstVersion="11210015"/>
+    <Field Def="s32 Unknown6" FirstVersion="11210015"/>
+    <Field Def="s32 Unknown7" FirstVersion="11210015"/>
 
   </Fields>
 </PARAMDEF>
