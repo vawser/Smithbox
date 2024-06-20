@@ -1,8 +1,10 @@
 ﻿using DotNext.IO;
 using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Formats;
 using StudioCore.Locators;
 using StudioCore.Platform;
@@ -15,11 +17,88 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using static SoapstoneLib.SoulsObject;
+using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Interface;
 
 public static class DebugActions
 {
+    private static Dictionary<string, PARAMDEF> _paramdefs = new Dictionary<string, PARAMDEF>();
+    private static Dictionary<string, Param> _params = new Dictionary<string, Param>();
+    private static ulong _paramVersion;
+
+    public static void ValidateParamdef()
+    {
+        // Read params from regulation.bin via SF PARAM impl
+        _paramdefs = ParamBank._paramdefs;
+
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
+
+        var param = $@"{mod}\regulation.bin";
+
+        try
+        {
+            using BND4 bnd = SFUtil.DecryptERRegulation(param);
+            LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
+        }
+        catch (Exception e)
+        {
+            PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+    }
+
+    private static void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version,
+        bool checkVersion = false)
+    {
+        var success = ulong.TryParse(parambnd.Version, out version);
+        if (checkVersion && !success)
+        {
+            throw new Exception(@"Failed to get regulation version. Params might be corrupt.");
+        }
+
+        // Load every param in the regulation
+        foreach (BinderFile f in parambnd.Files)
+        {
+            var paramName = Path.GetFileNameWithoutExtension(f.Name);
+
+            if (!f.Name.ToUpper().EndsWith(".PARAM"))
+            {
+                continue;
+            }
+
+            PARAM p;
+
+            p = PARAM.ReadIgnoreCompression(f.Bytes);
+            if (!_paramdefs.ContainsKey(p.ParamType ?? ""))
+            {
+                TaskLogs.AddLog(
+                    $"Couldn't find ParamDef for param {paramName} with ParamType \"{p.ParamType}\".",
+                    LogLevel.Warning);
+                continue;
+            }
+
+            if (p.ParamType == null)
+            {
+                throw new Exception("Param type is unexpectedly null");
+            }
+
+            PARAMDEF def = _paramdefs[p.ParamType];
+            try
+            {
+                p.ApplyParamdef(def);
+            }
+            catch (Exception e)
+            {
+                var name = f.Name.Split("\\").Last();
+                var message = $"Could not apply ParamDef for {name}";
+
+                TaskLogs.AddLog(message,
+                        LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+            }
+        }
+    }
+
     public static List<MSB_AC6> maps = new List<MSB_AC6>();
     public static List<ResourceDescriptor> resMaps = new List<ResourceDescriptor>();
     private static MapPropertyCache _propCache;

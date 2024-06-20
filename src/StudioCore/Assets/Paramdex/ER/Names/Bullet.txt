@@ -6135,3 +6135,28 @@
 210069015 Hefty Red Lightning Pot [Hit]
 210069016 Hefty Red Lightning Pot [Hit]
 210069017 Hefty Red Lightning Pot [Hit]
+210070000 Red Lightning Pot
+210070001 Red Lightning Pot [Hit]
+210070002 Red Lightning Pot [Hit]
+210070010 Red Lightning Pot [Hit]
+210070011 Red Lightning Pot [Hit]
+210070012 Red Lightning Pot [Hit]
+210070013 Red Lightning Pot [Hit]
+210070014 Red Lightning Pot [Hit]
+210070015 Red Lightning Pot [Hit]
+210071000 Frenzied Flame Pot
+210071001 Frenzied Flame Pot [Hit]
+210074000 Eternal Sleep Pot
+210074001 Eternal Sleep Pot [Hit]
+210076000 Roped Frenzied Flame Pot
+210076001 Roped Frenzied Flame Pot [Hit]
+210080000 Spirit Raisin
+210170000 Innard Meat
+210171000 Dragon Communion Harpoon
+210172000 Dragon Communion Harpoon
+210172001 Dragon Communion Harpoon [Hit]
+210172002 Dragon Communion Harpoon
+210200000 Polter Stone
+210200001 Polter Stone [Hit - Emitter]
+210200005 Polter Stone [Emitted]
+210203000 Lamenter's Mask

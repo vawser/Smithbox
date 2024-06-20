@@ -5010,6 +5010,19 @@
 210069000 Hefty Red Lightning Pot
 210069001 Hefty Red Lightning Pot
 210069002 Hefty Red Lightning Pot
+210070000 Red Lightning Pot [Hit]
+210070001 Red Lightning Pot [Hit]
+210070002 Red Lightning Pot
+210071000 Frenzied Flame Pot
+210071001 Frenzied Flame Pot [Hit]
+210074000 Eternal Sleep Pot
+210074001 Eternal Sleep Pot [Hit]
+210170000 Innard Meat
+210171000 Dragon Communion Harpoon
+210172000 Dragon Communion Harpoon
+210172001 Dragon Communion Harpoon
+210172002 Dragon Communion Harpoon
+210203000 Lamenter's Mask
 300000010 [AOW] Impaling Thrust
 300000011 [AOW] Impaling Thrust
 300000025 [AOW] Lifesteal Fist

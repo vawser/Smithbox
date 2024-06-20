@@ -45,7 +45,7 @@ public class ParamBank
     /// <summary>
     ///     Mapping from ParamType -> PARAMDEF.
     /// </summary>
-    private static Dictionary<string, PARAMDEF> _paramdefs;
+    public static Dictionary<string, PARAMDEF> _paramdefs;
 
     /// <summary>
     ///     Mapping from Param filename -> Manual ParamType.

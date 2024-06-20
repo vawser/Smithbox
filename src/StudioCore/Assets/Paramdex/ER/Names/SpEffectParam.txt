@@ -949,6 +949,7 @@
 18454 Malenia - Bullet
 18699 Unknown FFX
 18731 Melina - HP Recovery
+19981 Priestess Heart
 19985 Verdigris Discus
 19990 Sharpshot Talisman
 20000 NPC: Poison
@@ -1259,8 +1260,14 @@
 100901 HKS - Torrent - Unk Can Dash
 100902 HKS - Torrent - Is Jumping
 100903 HKS - Torrent - Is Galloping
-102314 Eternal Sleep Grease
-102316 Drawstring Eternal Sleep Grease
+102310 Eternal Sleep Grease - Right
+102311 Eternal Sleep Grease - Right [Attack]
+102312 Drawstring Eternal Sleep Grease - Right
+102313 Drawstring Eternal Sleep Grease - Right [Attack]
+102314 Eternal Sleep Grease - Left
+102315 Eternal Sleep Grease - Left [Attack]
+102316 Drawstring Eternal Sleep Grease - Left
+102317 Drawstring Eternal Sleep Grease - Left [Attack]
 105000 Hemorrhage - Low - Addition +0
 105001 Hemorrhage - Low - Addition +1
 105002 Hemorrhage - Low - Addition +2
@@ -3743,13 +3750,75 @@
 20500680 Hefty Furnace Pot
 20500681 Hefty Fire Pot
 20500690 Hefty Red Lightning Pot
-20501402 Messmerfire Grease
-20501403 Drawstring Messmerfire Grease
-20501412 Dragonbolt Grease
-20501413 Drawstring Dragonbolt Grease
-20501422 Royal Magic Grease
-20501423 Drawstring Royal Magic Grease
-20501432 Golden Grease
-20501433 Drawstring Golden Grease
-20501481 Dragon Communion Grease
-20501622 Festive Grease
+20500691 Hefty Red Lightning Pot [Chain]
+20500700 Red Lightning Pot
+20500701 Red Lightning Pot [Chain]
+20500710 Frenzied Flame Pot
+20500740 Eternal Sleep Pot
+20500800 Spirit Raisin
+20500801 Spirit Raisin
+20500900 Blessing of Marika
+20500901 Blessing of Marika
+20500902 Blessing of Marika
+20500903 Blessing of Marika
+20500904 Blessing of Marika
+20500905 Blessing of Marika
+20500906 Blessing of Marika
+20500907 Blessing of Marika
+20500908 Blessing of Marika
+20500910 Lulling Branch
+20500911 Lulling Branch
+20500912 Lulling Branch
+20500913 Lulling Branch
+20500914 Lulling Branch
+20500915 Lulling Branch
+20500916 Lulling Branch
+20500917 Lulling Branch
+20500918 Lulling Branch
+20501100 Dragon Communion Flesh
+20501101 Dragon Communion Flesh
+20501102 Dragon Communion Flesh
+20501103 Dragon Communion Flesh
+20501105 Dragonscale Flesh
+20501106 Dragonscale Flesh
+20501110 Fingerprint Nostrum
+20501111 Fingerprint Nostrum
+20501112 Fingerprint Nostrum
+20501120 Spellproof Pickled Liver
+20501130 Fireproof Pickled Liver
+20501140 Lightningproof Pickled Liver
+20501150 Holyproof Pickled Liver
+20501160 Opaline Pickled Liver
+20501170 Well-Pickled Turtle Neck
+20501200 Scorpion Stew
+20501201 Scorpion Stew
+20501202 Scorpion Stew
+20501205 Gourmet Scorpion Stew
+20501206 Gourmet Scorpion Stew
+20501207 Gourmet Scorpion Stew
+20501210 Sacred Bloody Flesh
+20501211 Sacred Bloody Flesh
+20501212 Sacred Bloody Flesh
+20501213 Sacred Bloody Flesh
+20501220 Silver Horn Tender
+20501230 Golden Horn Tender
+20501400 Messmerfire Grease - Right
+20501401 Drawstring Messmerfire Grease - Right
+20501402 Messmerfire Grease - Left
+20501403 Drawstring Messmerfire Grease - Left
+20501410 Dragonbolt Grease - Right
+20501411 Drawstring Dragonbolt Grease - Right
+20501412 Dragonbolt Grease - Left
+20501413 Drawstring Dragonbolt Grease - Left
+20501420 Royal Magic Grease - Right
+20501421 Drawstring Royal Magic Grease - Right
+20501422 Royal Magic Grease - Left
+20501423 Drawstring Royal Magic Grease - Left
+20501430 Golden Grease - Right
+20501431 Drawstring Golden Grease - Right
+20501432 Golden Grease - Left
+20501433 Drawstring Golden Grease - Left
+20501480 Dragon Communion Grease - Right
+20501481 Dragon Communion Grease - Left
+20501620 Festive Grease - Right
+20501622 Festive Grease - Left

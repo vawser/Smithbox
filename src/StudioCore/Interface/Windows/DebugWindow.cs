@@ -90,6 +90,10 @@ public class DebugWindow
         {
             DebugActions.CalcWorldMapLayout();
         }
+        if (ImGui.Button("Paramdef Validation"))
+        {
+            DebugActions.ValidateParamdef();
+        }
     }
 
     private void DisplayImGuiDemo()
