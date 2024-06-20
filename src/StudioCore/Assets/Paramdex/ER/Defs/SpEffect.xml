@@ -2520,6 +2520,18 @@
 	  <Enum>SP_EFFECT_BOOL</Enum>
 	  <Maximum>1</Maximum>
 	</Field>
+	<Field Def="u8 0x354_unk5:1">
+	  <Enum>SP_EFFECT_BOOL</Enum>
+	  <Maximum>1</Maximum>
+	</Field>
+	<Field Def="u8 0x354_unk6:1">
+	  <Enum>SP_EFFECT_BOOL</Enum>
+	  <Maximum>1</Maximum>
+	</Field>
+	<Field Def="u8 0x354_unk7:1">
+	  <Enum>SP_EFFECT_BOOL</Enum>
+	  <Maximum>1</Maximum>
+	</Field>
     <Field Def="dummy8 pad2[1]">
       <DisplayName>pad</DisplayName>
       <SortID>470001</SortID>

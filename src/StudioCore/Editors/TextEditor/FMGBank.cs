@@ -896,14 +896,10 @@ public static partial class FMGBank
 
     private static void SetFMGInfoPatchParent(FMGInfo info)
     {
-        TaskLogs.AddLog($"info.Name: {info.Name}");
-
         var strippedName = RemovePatchStrings(info.Name);
 
         if (strippedName != info.Name)
         {
-            TaskLogs.AddLog($"strippedName: {strippedName}");
-
             // This is a patch FMG, try to find parent FMG.
             foreach (FMGInfo parentInfo in FmgInfoBank)
             {
