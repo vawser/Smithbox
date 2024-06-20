@@ -179,7 +179,6 @@
 21910000 Radagon - Crucified (Unscaled)
 22000000 Elden Beast
 22000078 Elden Beast
-22000178 Elden Beast
 22700000 Giant Crab
 22700010 Giant Crab
 22700012 Giant Crab
@@ -277,7 +276,6 @@
 30000814 Exile Soldier (Stormveil Castle)
 30000834 Exile Soldier (Leyndell- Royal Capital)
 30001000 Exile Soldier
-30001010 Exile Soldier
 30001014 Exile Soldier (Stormveil Castle)
 30001034 Exile Soldier (Leyndell- Royal Capital)
 30001100 Exile Soldier
@@ -296,7 +294,6 @@
 30003214 Exile Soldier (Stormveil Castle)
 30003500 Exile Soldier
 30003514 Exile Soldier (Stormveil Castle)
-30003914 Exile Soldier
 30004000 Mausoleum Exile Soldier
 30004007 Mausoleum Exile Soldier
 30004051 Mausoleum Exile Soldier
@@ -462,19 +459,16 @@
 30806042 Imp
 30806050 Imp
 30806052 Imp
-30806110 Imp
 30807000 Imp
 30808000 Imp
 31000000 Elemer of the Briar
 31000010 Bell Bearing Hunter (Limgrave)
-31000014 Bell Bearing Hunter
 31000020 Bell Bearing Hunter
 31000033 Bell Bearing Hunter
 31000042 Bell Bearing Hunter
 31000931 Elemer of the Briar (Shaded Castle)
 31500000 Night's Cavalry
 31500010 Night's Cavalry (Limgrave Boss)
-31500012 Night's Cavalry
 31500020 Night's Cavalry
 31500032 Night's Cavalry
 31500040 Night's Cavalry
@@ -485,7 +479,6 @@
 31501012 Night's Cavalry (Weeping Peninsula Boss)
 31501030 Night's Cavalry
 31501040 Night's Cavalry
-31501042 Night's Cavalry
 31501052 Night's Cavalry (Flail)
 31600000 Funeral Steed
 31600010 Funeral Steed (Limgrave)
@@ -629,23 +622,19 @@
 32520100 Loretta Tree Sentinel (Unscaled)
 32520921 Royal Knight Loretta
 33000000 Nox Swordstress (Unscaled)
-33000061 Nox Swordstress
 33000062 Nox Swordstress
 33000820 Nox Swordstress
 33000900 Nox Swordstress
 33000940 Nox Swordstress (Boss)
 33001000 Nox Monk (Unscaled)
-33001061 Nox Monk
 33001062 Nox Monk
 33001065 Nox Monk
 33001100 Nox Monk
 33001940 Nox Monk (Boss)
 33002000 Nox Nightmaiden
-33002061 Nox Nightmaiden
 33002062 Nox Nightmaiden
 33002065 Nox Nightmaiden
 33200000 Silver Tear (Unscaled)
-33200061 Silver Tear
 33200062 Silver Tear
 33200100 Silver Tear
 33200162 Silver Tear
@@ -654,7 +643,6 @@
 33200265 Silver Tear
 33201000 Silver Tear (Unscaled)
 33201052 Silver Tear
-33201061 Silver Tear
 33201062 Silver Tear
 33201065 Silver Tear
 33201100 Silver Tear
@@ -663,14 +651,12 @@
 33202062 Electrified Silver Tear
 33202100 Electrified Silver Tear
 33202200 Electrified Silver Tear
-33202261 Electrified Silver Tear
 33202262 Electrified Silver Tear
 33209000 Asimi, Silver Tear
 33209010 Asimi, Silver Tear
 33300000 Giant Silver Tear (Unscaled)
 33300040 Giant Silver Tear
 33300042 Giant Silver Tear
-33300061 Giant Silver Tear
 33300062 Giant Silver Tear
 33300065 Giant Silver Tear
 33300100 Giant Silver Tear (Unscaled)
@@ -685,7 +671,6 @@
 33300862 Giant Silver Tear
 33500000 Crystalian
 33500022 Crystalian
-33500054 Crystalian
 33500154 Crystalian (Spirit)
 33500500 Putrid Crystalian
 33500556 Putrid Crystalian
@@ -695,8 +680,6 @@
 33501000 Crystalian
 33501020 Crystalian
 33501022 Crystalian
-33501054 Crystalian
-33501056 Crystalian
 33501154 Crystalian
 33501500 Putrid Crystalian
 33501556 Putrid Crystalian
@@ -829,7 +812,6 @@
 34500034 Misbegotten (Leyndell- Royal Capital)
 34500054 Misbegotten
 34500100 Misbegotten
-34500112 Misbegotten
 34501000 Winged Misbegotten
 34501012 Winged Misbegotten
 34501013 Winged Misbegotten
@@ -839,7 +821,6 @@
 34501052 Winged Misbegotten
 34501054 Winged Misbegotten
 34501100 Winged Misbegotten
-34501112 Winged Misbegotten
 34501354 Winged Misbegotten
 34502000 Misbegotten
 34502012 Misbegotten
@@ -859,7 +840,6 @@
 34510100 Smithing Master Hewg
 34510179 Smithing Master Hewg
 34510200 Scaly Misbegotten
-34510212 Scaly Misbegotten
 34510354 Scaly Misbegotten
 34510912 Scaly Misbegotten (Morne Tunnel Boss)
 34519000 Scaly Misbegotten
@@ -921,7 +901,6 @@
 34704300 Albinauric
 34704352 Albinauric
 34715000 Large Albinauric
-34715068 Large Albinauric
 34715100 Large Albinauric
 34715120 Large Albinauric
 34715200 Large Bloodbane Albinauric (Unscaled)
@@ -1129,7 +1108,6 @@
 36600100 Commoner
 36600110 Commoner
 36600114 Commoner
-36600314 Commoner
 36600600 Frenzied Commoner
 36600612 Frenzied Commoner
 36600620 Frenzied Commoner
@@ -1289,7 +1267,6 @@
 36701200 Pidia, Carian Servant
 36702000 Imprisoned Elder Albinauric
 36702038 Imprisoned Elder Albinauric
-36702039 Imprisoned Elder Albinauric
 36702051 Imprisoned Elder Albinauric
 36702100 Imprisoned Elder Albinauric
 36702138 Imprisoned Elder Albinauric
@@ -1392,13 +1369,11 @@
 37301024 Sorceress Sellen
 37500000 Clayman - Spear
 37500060 Clayman (Ainsel River)
-37500061 Clayman
 37500062 Clayman (Lake of Rot)
 37500064 Clayman (Siofra River)
 37500065 Clayman
 37501000 Clayman - Dagger
 37501060 Clayman (Ainsel River)
-37501061 Clayman
 37501062 Clayman (Lake of Rot)
 37502000 Clayman
 37502060 Clayman (Ainsel River)
@@ -1427,7 +1402,6 @@
 38001940 Cleanrot Knight (Boss)
 38100000 Kindred of Rot
 38100040 Kindred of Rot (Sellia Tunnel)
-38100054 Kindred of Rot
 38100056 Kindred of Rot
 38100062 Kindred of Rot
 38100932 Kindred of Rot (Boss)
@@ -1519,7 +1493,6 @@
 39101050 Fire Prelate
 39101100 Fire Prelate
 39101150 Fire Prelate
-39102050 Fire Prelate
 39500000 Man-Serpent - Whip Cool
 39500038 Man-Serpent
 39500100 Man-Serpent
@@ -1748,7 +1721,6 @@
 41000040 Demi-Human
 41000042 Demi-Human
 41000050 Demi-Human
-41000110 Demi-Human
 41000200 Demi-Human
 41000212 Demi-Human
 41000910 Demi-Human
@@ -1774,7 +1746,6 @@
 41002040 Demi-Human
 41002042 Demi-Human
 41002050 Demi-Human
-41002110 Demi-Human
 41002200 Demi-Human
 41002212 Demi-Human
 41002910 Demi-Human
@@ -1809,7 +1780,6 @@
 41109170 Boc the Seamster
 41200000 Demi-Human Chief
 41200009 Demi-Human Chief
-41200010 Demi-Human Chief
 41200012 Demi-Human Chief
 41200020 Demi-Human Chief
 41200030 Demi-Human Chief
@@ -1817,14 +1787,11 @@
 41200040 Demi-Human Chief
 41200042 Demi-Human Chief
 41200050 Demi-Human Chief
-41200090 Demi-Human Chief
 41200100 Demi-Human Chief
-41200110 Demi-Human Chief
 41200910 Demi-Human Chief (Duo Boss)
 41300000 Demi-Human Queen
 41300012 Demi-Human Queen
 41300032 Demi-Human Queen Maggie
-41300042 Demi-Human Queen
 41301000 Demi-Human Queen
 41301030 Demi-Human Queen Gilika
 41301932 Demi-Human Queen Margot
@@ -1871,12 +1838,10 @@
 41600000 Large Stray
 41600014 Large Stray (Stormveil Castle)
 41600024 Large Stray
-41600030 Large Stray
 41600031 Large Stray (Shaded Castle)
 41600032 Large Stray
 41600034 Large Stray (Leyndell- Royal Capital)
 41600035 Large Stray
-41600100 Large Stray
 41601000 Large Stray
 41601010 Large Stray
 41601020 Large Stray
@@ -1899,7 +1864,6 @@
 41610041 Stray
 41610050 Stray
 41610064 Stray (Siofra River)
-41610140 Stray
 41610200 Stray
 41610210 Stray
 41610212 Stray
@@ -1928,7 +1892,6 @@
 41670040 Rotten Stray
 41700000 Putrid Flesh
 41700010 Putrid Flesh
-41700012 Putrid Flesh
 41700013 Putrid Flesh
 41700020 Putrid Flesh
 41700030 Putrid Flesh
@@ -1976,7 +1939,6 @@
 41900000 Large Crimson Tear Scarab
 41900050 Large Crimson Tear Scarab
 41900052 Large Crimson Tear Scarab
-41900220 Large Crimson Tear Scarab
 41901000 Large Cerulean Tear Scarab
 41901050 Large Cerulean Tear Scarab
 41901052 Large Cerulean Tear Scarab
@@ -2027,7 +1989,6 @@
 41910030 Crimson Tear Scarab
 41910032 Crimson Tear Scarab
 41910035 Crimson Tear Scarab
-41910038 Crimson Tear Scarab
 41910040 Crimson Tear Scarab
 41910041 Crimson Tear Scarab
 41910050 Crimson Tear Scarab
@@ -2040,10 +2001,6 @@
 41910065 Crimson Tear Scarab
 41910066 Crimson Tear Scarab
 41910068 Crimson Tear Scarab
-41910110 Crimson Tear Scarab
-41910162 Crimson Tear Scarab
-41910164 Crimson Tear Scarab
-41910310 Crimson Tear Scarab
 41911000 Cerulean Tear Scarab
 41911010 Cerulean Tear Scarab
 41911020 Cerulean Tear Scarab
@@ -2060,13 +2017,11 @@
 41911065 Cerulean Tear Scarab
 41911066 Cerulean Tear Scarab
 41911068 Cerulean Tear Scarab
-41911120 Cerulean Tear Scarab
 41912000 Ash of War Scarab
 41912010 Ash of War Scarab
 41912012 Ash of War Scarab
 41912014 Ash of War Scarab
 41912020 Ash of War Scarab
-41912022 Ash of War Scarab
 41912024 Ash of War Scarab
 41912030 Ash of War Scarab
 41912032 Ash of War Scarab
@@ -2111,7 +2066,6 @@
 41913000 Glintstone Scarab
 41913014 Glintstone Scarab
 41913020 Glintstone Scarab
-41913022 Glintstone Scarab
 41913024 Glintstone Scarab
 41913032 Glintstone Scarab
 41913035 Glintstone Scarab
@@ -2148,7 +2102,6 @@
 41914012 Incantation Scarab
 41914014 Incantation Scarab
 41914020 Incantation Scarab
-41914022 Incantation Scarab
 41914030 Incantation Scarab
 41914032 Incantation Scarab
 41914034 Incantation Scarab
@@ -2234,7 +2187,6 @@
 41919068 Scarab
 41919140 Scarab
 41920000 Giant Crimson Tear Scarab
-41920020 Giant Crimson Tear Scarab
 41920040 Giant Crimson Tear Scarab
 41920042 Giant Crimson Tear Scarab
 41921000 Giant Cerulean Tear Scarab
@@ -2527,7 +2479,6 @@
 42800054 Giant Ant
 42800056 Giant Ant
 42800060 Giant Ant (Ainsel River)
-42800061 Giant Ant
 42800062 Giant Ant
 42800066 Giant Ant
 42800100 Giant Ant (Stinger)
@@ -2594,9 +2545,7 @@
 43000240 Wandering Noble
 43000252 Wandering Noble
 43000300 Wandering Noble (Puppet)
-43000310 Wandering Noble (Puppet)
 43000320 Wandering Noble (Puppet)
-43000324 Wandering Noble (Puppet)
 43000410 Wandering Noble
 43000600 Wandering Noble
 43000800 Wandering Noble
@@ -2617,7 +2566,6 @@
 43001120 Wandering Noble
 43001128 Wandering Noble
 43001200 Wandering Noble
-43001210 Wandering Noble
 43001230 Wandering Noble
 43001240 Wandering Noble
 43001528 Wandering Noble
@@ -2657,7 +2605,6 @@
 43003033 Wandering Noble (Banner)
 43003040 Wandering Noble (Banner)
 43003052 Wandering Noble (Banner)
-43003100 Wandering Noble (Banner)
 43003800 Wandering Noble (Banner)
 43003900 Wandering Noble (Banner)
 43004000 Wandering Noble (Chest)
@@ -2760,9 +2707,6 @@
 43009350 Wandering Noble (Stranded Soul)
 43009352 Wandering Noble (Stranded Soul)
 43009366 Wandering Noble (Stranded Soul)
-43100040 Lordsworn Soldier
-43100340 Lordsworn Soldier
-43101040 Lordsworn Soldier
 43110000 Godrick Soldier
 43110009 Godrick Soldier
 43110010 Godrick Soldier
@@ -2955,15 +2899,12 @@
 43153052 Mausoleum Soldier
 43153066 Mausoleum Soldier
 43160000 Haligtree Soldier
-43160054 Haligtree Soldier
 43160056 Haligtree Soldier
 43160100 Haligtree Soldier
 43160156 Haligtree Soldier
 43160200 Haligtree Soldier
-43160254 Haligtree Soldier
 43160256 Haligtree Soldier
 43160300 Haligtree Soldier
-43160354 Haligtree Soldier
 43160356 Haligtree Soldier
 43160556 Haligtree Soldier
 43160656 Haligtree Soldier
@@ -3046,7 +2987,6 @@
 43401940 Mad Pumpkin Head (Hammer)
 43410000 Thin Mad Pumpkin Head
 43411000 Thin Mad Pumpkin Head
-43501140 Lordsworn Knight
 43510000 Godrick Knight
 43510010 Godrick Knight
 43510100 Godrick Knight
@@ -3140,7 +3080,6 @@
 43562000 Haligtree Knight
 43562056 Haligtree Knight
 43562556 Haligtree Knight
-43600040 Lordsworn Knight's Horse
 43610000 Godrick Knight's Horse
 43610010 Godrick Knight's Horse
 43610012 Godrick Knight's Horse
@@ -3158,8 +3097,6 @@
 43650000 Mausoleum Knight's Horse
 43650052 Mausoleum Knight's Horse
 43650066 Mausoleum Knight's Horse
-43700040 Foot Soldier
-43701510 Foot Soldier
 43710000 Godrick Foot Soldier
 43710010 Godrick Foot Soldier
 43710012 Godrick Foot Soldier
@@ -3293,14 +3230,12 @@
 43741000 Radahn Foot Soldier
 43741040 Radahn Foot Soldier
 43741400 Radahn Foot Soldier
-43741440 Radahn Foot Soldier
 43741441 Radahn Foot Soldier
 43741500 Radahn Foot Soldier
 43741541 Radahn Foot Soldier
 43741600 Radahn Foot Soldier
 43741700 Radahn Foot Soldier
 43741800 Radahn Foot Soldier
-43741840 Radahn Foot Soldier
 43741841 Radahn Foot Soldier
 43742000 Radahn Foot Soldier
 43742040 Radahn Foot Soldier
@@ -3392,7 +3327,6 @@
 43820026 Stonedigger
 43820030 Stonedigger
 43820033 Stonedigger
-43820039 Stonedigger
 43820052 Stonedigger
 43820100 Stonedigger
 43820140 Stonedigger
@@ -3413,13 +3347,11 @@
 43823000 Stonedigger
 43823010 Stonedigger
 43823012 Stonedigger
-43823026 Stonedigger
 43823030 Stonedigger
 43823033 Stonedigger
 43823040 Stonedigger
 43823100 Stonedigger
 43824000 Stonedigger
-43824026 Stonedigger
 43824100 Stonedigger
 43825000 Stonedigger
 43825026 Stonedigger
@@ -3746,11 +3678,9 @@
 44920100 Greatjar
 45000000 Flying Dragon (Unscaled)
 45000010 Flying Dragon Agheel (Limgrave)
-45000040 Flying Dragon
 45000042 Flying Dragon Greyll (Caelid)
 45000072 Flying Dragon
 45001000 Flying Dragon (Unscaled)
-45001042 Flying Dragon
 45001072 Flying Dragon
 45008000 Flying Dragon (Unscaled)
 45008024 Flying Dragon (Rennala)
@@ -3901,7 +3831,6 @@
 46300030 Runebear
 46300032 Runebear
 46300033 Runebear
-46300040 Runebear
 46300042 Runebear
 46300052 Runebear
 46300066 Runebear
@@ -3966,7 +3895,6 @@
 46603000 Guardian Golem
 46603100 Guardian Golem
 46604000 Guardian Golem
-46604012 Guardian Golem
 46604100 Guardian Golem
 46604142 Guardian Golem
 46605000 Guardian Golem
@@ -4073,10 +4001,8 @@
 48110052 Putrid Erdtree Avatar (Snowfield)
 48110054 Putrid Erdtree Avatar
 48110056 Putrid Erdtree Avatar
-48110154 Putrid Avatar
 48200000 Omenkiller
 48200100 Omenkiller
-48200120 Omenkiller
 48200130 Omenkiller
 48200134 Omenkiller (Leyndell- Royal Capital)
 48200138 Omenkiller
@@ -4108,7 +4034,6 @@
 49600100 Giant Skeleton Torso
 49600168 Giant Skeleton Torso
 49800000 Death Bird
-49800001 Death Rite Bird
 49800010 Death Bird (Limgrave)
 49800012 Death Bird (Weeping Peninsula)
 49800020 Death Bird (Liurnia)
@@ -4119,8 +4044,6 @@
 49801040 Death Rite Bird
 49801050 Death Rite Bird
 49801052 Death Rite Bird
-52306000 Human
-60000000 Eagle
 60010000 Eagle
 60010010 Eagle
 60010012 Eagle
@@ -4152,7 +4075,6 @@
 60100064 Deer
 60100065 Deer
 60100900 Deer
-60100964 Deer
 60100965 Deer
 60101000 Deer
 60310000 Bear
@@ -4185,7 +4107,6 @@
 60500052 Boar
 60500064 Boar
 60500900 Boar
-60500964 Boar
 60500965 Boar
 60501000 Boar
 60501010 Boar
@@ -4209,7 +4130,6 @@
 60600064 Goat
 60600065 Goat
 60600900 Goat
-60600964 Goat
 60600965 Goat
 60601000 Goat
 60601010 Goat
@@ -4309,7 +4229,6 @@
 61000100 Springhare
 61000150 Springhare
 61000900 Springhare
-61000964 Springhare
 61000965 Springhare
 70000000 Fallen Hawks Soldier
 70000065 Fallen Hawks Soldier
@@ -4321,12 +4240,6 @@
 70003000 Fallen Hawks Soldier
 70003100 Fallen Hawks Soldier
 70003165 Fallen Hawks Soldier
-70005000 Fallen Hawks Soldier
-70005065 Fallen Hawks Soldier
-70006000 Fallen Hawks Soldier
-70007000 Fallen Hawks Soldier
-70007065 Fallen Hawks Soldier
-70008100 Fallen Hawks Soldier
 71000000 Ancient Hero of Zamor
 71000012 Ancient Hero of Zamor (Weeping Peninsula Boss)
 71000030 Ancient Hero of Zamor (Boss)
@@ -4340,7 +4253,6 @@
 81000012 Ballista
 81000014 Ballista (Stormveil Castle)
 81000030 Ballista
-81000040 Ballista
 81000041 Ballista
 81000051 Ballista
 81000056 Ballista
@@ -4353,7 +4265,6 @@
 81100000 Dragon-faced Flamethrower
 81100014 Dragon-Faced Flamethrower
 81100020 Dragon-Faced Flamethrower
-81100040 Dragon-Faced Flamethrower
 81100041 Dragon-Faced Flamethrower
 81100050 Dragon-faced Flamethrower
 81200000 Merciless Chariot
@@ -4500,10 +4411,8 @@
 523010168 White Mask Varré
 523030000 Guilbert
 523040000 Festering Fingerprint Vyke
-523040012 Roundtable Knight Vyke
 523040020 Festering Fingerprint Vyke
 523040050 Roundtable Knight Vyke
-523040100 Roundtable Knight Vyke
 523070000 Preceptor Seluvis
 523070020 Preceptor Seluvis
 523070120 Preceptor Seluvis
@@ -4758,9 +4667,7 @@
 523910000 Magnus the Beast Claw
 523910030 Magnus the Beast Claw
 526100052 Stray Mimic Tear
-526100065 Human
 526100965 Mimic Tear
-526400000 Human
 527900010 Human
 533040100 Roundtable Knight Vyke
 533090000 Patches

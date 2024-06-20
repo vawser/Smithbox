@@ -239,7 +239,6 @@
 10000 Traverse the mist
 10001 Traverse the mist
 10010 Traverse the mist
-210000 Traverse the mist
 206000 Talk
 206020 Touch cross
 206021 Touch cross
@@ -351,3 +350,4 @@
 209600 Touch memory
 209610 Examine sealing tree
 209620 Rest in coffin
+210000 Traverse the mist

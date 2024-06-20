@@ -1,13 +1,12 @@
-2230 Colosseum Menu
 1000 Keybind: Camera Controls
 1010 Keybind: Using Items
 1020 Sites of Grace
-1030 Keybind: 
-1040 Keybind: 
-1050 Keybind: 
+1030 Keybind:
+1040 Keybind:
+1050 Keybind:
 1060 Sorceries and Incantations
 1070 Guarding
-1080 Keybind: 
+1080 Keybind:
 1090 Keybind: Dashing
 1100 Wielding Armaments
 1110 Keybind: Lock-on Target Change
@@ -76,3 +75,4 @@
 2200 Remnant Crafting Menu
 2210 Map Menu
 2220 Smithing Menu
+2230 Colosseum Menu

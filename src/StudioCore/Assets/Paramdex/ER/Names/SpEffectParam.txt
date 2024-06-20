@@ -12,7 +12,6 @@
 70 Blight Effect
 79 PLAN_SP_EFFECT_FALL_FROM_HORSE_START
 81 Spectral Steed Whistle
-83 PLAN_SP_EFFECT_FALL_FROM_HORSE
 89 HKS - Unk Toughness Increase
 98 HKS - Unk Is Jump Attacking
 100 Grace - Restore HP
@@ -950,6 +949,8 @@
 18454 Malenia - Bullet
 18699 Unknown FFX
 18731 Melina - HP Recovery
+19985 Verdigris Discus
+19990 Sharpshot Talisman
 20000 NPC: Poison
 20001 NPC: Poison
 20002 NPC: Poison
@@ -1238,7 +1239,6 @@
 100500 HKS - Sword Arts - Raptor Dodge
 100530 HKS - Sword Arts - Unk Charge or Right 90 Attack
 100540 HKS - Sword Arts - 180 Attack
-100550 HKS - Sword Arts - Left 90 Attack
 100600 HKS - Magic - Right Combo Window 1
 100601 HKS - Magic - Right Combo Window 2
 100605 HKS - Magic - Left Combo Window 1
@@ -1259,6 +1259,8 @@
 100901 HKS - Torrent - Unk Can Dash
 100902 HKS - Torrent - Is Jumping
 100903 HKS - Torrent - Is Galloping
+102314 Eternal Sleep Grease
+102316 Drawstring Eternal Sleep Grease
 105000 Hemorrhage - Low - Addition +0
 105001 Hemorrhage - Low - Addition +1
 105002 Hemorrhage - Low - Addition +2
@@ -3070,6 +3072,7 @@
 321701 Kindred of Rot's Exultation [Cycle]
 321800 Claw Talisman
 321900 Roar Medallion
+321901 Roar Medallion
 322000 Curved Sword Talisman
 322100 Companion Jar
 322200 Perfumer's Talisman
@@ -3628,3 +3631,125 @@
 6201001 Mushroom Crown
 6202000 Black Dumpling
 6202001 Black Dumpling
+20370000 Crimson Amber Medallion +3
+20370100 Cerulean Amber Medallion +3
+20370200 Viridian Amber Medallion +3
+20370300 Two-Headed Turtle Talisman
+20370400 Stalwart Horn Charm +2
+20370500 Immunizing Horn Charm +2
+20370600 Clarifying Horn Charm +2
+20370800 Mottled Necklace +2
+20370900 Spelldrake Talisman +3
+20371000 Flamedrake Talisman +3
+20371100 Boltdrake Talisman +3
+20371200 Golden Braid
+20371300 Pearldrake Talisman +3
+20371400 Crimson Seed Talisman +1
+20371500 Cerulean Seed Talisman +1
+20380000 Blessed Blue Dew Talisman
+20380100 Fine Crucible Feather Talisman
+20380200 Outer God Heirloom
+20380300 Shattered Stone Talisman
+20380400 Two-Handed Sword Talisman
+20380500 Crusade Insignia
+20380501 Crusade Insignia - On Kill
+20380600 Aged One's Exultation
+20380601 Aged One's Exultation - On Kill
+20380700 Arrow's Soaring Sting Talisman
+20380701 Arrow's Soaring Sting Talisman - On Kill
+20380900 Pearl Shield Talisman
+20380901 Pearl Shield Talisman [Cycle]
+20380902 Pearl Shield Talisman [Cycle]
+20381000 Dried Bouquet
+20381001 Dried Bouquet
+20381100 Smithing Talisman
+20381200 Ailment Talisman
+20381201 Ailment Talisman
+20381202 Ailment Talisman
+20381203 Ailment Talisman
+20381204 Ailment Talisman
+20381205 Ailment Talisman
+20381206 Ailment Talisman
+20381207 Ailment Talisman
+20381211 Ailment Talisman
+20381212 Ailment Talisman
+20381213 Ailment Talisman
+20381214 Ailment Talisman
+20381215 Ailment Talisman
+20381216 Ailment Talisman
+20381221 Ailment Talisman
+20381222 Ailment Talisman
+20381223 Ailment Talisman
+20381224 Ailment Talisman
+20381225 Ailment Talisman
+20381226 Ailment Talisman
+20381231 Ailment Talisman
+20381232 Ailment Talisman
+20381233 Ailment Talisman
+20381234 Ailment Talisman
+20381235 Ailment Talisman
+20381236 Ailment Talisman
+20381241 Ailment Talisman
+20381242 Ailment Talisman
+20381243 Ailment Talisman
+20381244 Ailment Talisman
+20381245 Ailment Talisman
+20381246 Ailment Talisman
+20381251 Ailment Talisman
+20381252 Ailment Talisman
+20381253 Ailment Talisman
+20381254 Ailment Talisman
+20381255 Ailment Talisman
+20381256 Ailment Talisman
+20381300 Retaliatory Crossed-Tree
+20381400 Lacerating Crossed-Tree
+20381600 St. Trina's Smile
+20381601 St. Trina's Smile
+20381700 Talisman of the Dread
+20381800 Enraged Divine Beast
+20381900 Beloved Stardust
+20381901 Beloved Stardust
+20382000 Talisman of Lord's Bestowal
+20382003 Talisman of Lord's Bestowal
+20382004 Talisman of Lord's Bestowal
+20382010 Talisman of Lord's Bestowal
+20382011 Talisman of Lord's Bestowal
+20382015 Talisman of Lord's Bestowal
+20382016 Talisman of Lord's Bestowal
+20382200 Rellana's Cameo
+20382201 Rellana's Cameo
+20382202 Rellana's Cameo
+20382203 Rellana's Cameo
+20382204 Rellana's Cameo
+20382205 Rellana's Cameo
+20382206 Rellana's Cameo
+20382300 Blade of Mercy
+20382301 Blade of Mercy
+20382302 Blade of Mercy
+20382400 Talisman of All Crucibles
+20382401 Talisman of All Crucibles
+20382402 Talisman of All Crucibles
+20382403 Talisman of All Crucibles
+20382404 Talisman of All Crucibles
+20382405 Fine Crucible Feather Talisman [Cycle]
+20383000 Companion Jar
+20500330 Poison: Hefty Fetid Pot
+20500331 Poison: Hefty Fetid Pot [Shooter]
+20500360 Frost: Hefty Freezing Pot
+20500370 Poison: Hefty Poison Pot
+20500380 Oil: Hefty Oil Pot
+20500620 Madness: Hefty Frenzied Flame Pot
+20500670 Scarlet Rot: Hefty Rot Pot
+20500680 Hefty Furnace Pot
+20500681 Hefty Fire Pot
+20500690 Hefty Red Lightning Pot
+20501402 Messmerfire Grease
+20501403 Drawstring Messmerfire Grease
+20501412 Dragonbolt Grease
+20501413 Drawstring Dragonbolt Grease
+20501422 Royal Magic Grease
+20501423 Drawstring Royal Magic Grease
+20501432 Golden Grease
+20501433 Drawstring Golden Grease
+20501481 Dragon Communion Grease
+20501622 Festive Grease

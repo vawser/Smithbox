@@ -1,4 +1,7 @@
-0 Grafted Blade Greatsword
+0 Impact: Oppose
+1 Impact: No Target
+2 Impact: Oppose and Self
+3 Impact: Oppose and Friendly
 1010 Impact
 40000 Glintstone Pebble
 40010 Great Glintstone Shard
@@ -4975,6 +4978,38 @@
 30300864 [AOW] Hoarfrost Stomp
 30300870 [AOW] Storm Stomp
 30300871 [AOW] Storm Stomp
+210030000 Hefty Fire Pot
+210030001 Hefty Fire Pot [Hit]
+210031000 Hefty Rock Pot
+210031001 Hefty Rock Pot
+210032000 Hefty Lightning Pot
+210032001 Hefty Lightning Pot [Hit]
+210033000 Hefty Fetid Pot
+210033001 Hefty Fetid Pot [Hit]
+210034000 Hefty Fly Pot
+210034001 Hefty Fly Pot [Hit]
+210034002 Hefty Fly Pot [Hit]
+210036000 Hefty Freezing Pot
+210036001 Hefty Freezing Pot [Hit]
+210037000 Hefty Poison Pot
+210037001 Hefty Poison Pot [Hit]
+210038000 Hefty Oil Pot
+210038001 Hefty Oil Pot [Hit]
+210060000 Hefty Volcano Pot
+210060001 Hefty Volcano Pot [Hit]
+210062000 Hefty Frenzied Flame Pot
+210062001 Hefty Frenzied Flame Pot [Hit]
+210065000 Hefty Rancor Pot
+210065001 Hefty Rancor Pot [Hit]
+210066000 Hefty Magic Pot
+210066001 Hefty Magic Pot [Hit]
+210067000 Hefty Rot Pot
+210067001 Hefty Rot Pot [Hit]
+210068000 Hefty Furnace Pot
+210068001 Hefty Furnace Pot [Hit]
+210069000 Hefty Red Lightning Pot
+210069001 Hefty Red Lightning Pot
+210069002 Hefty Red Lightning Pot
 300000010 [AOW] Impaling Thrust
 300000011 [AOW] Impaling Thrust
 300000025 [AOW] Lifesteal Fist

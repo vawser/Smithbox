@@ -94,7 +94,6 @@
 151100 Ronin's Armor (Altered)
 160000 Guilty Hood
 160100 Cloth Garb
-160200 Tarnished Wrap
 160300 Cloth Trousers
 170000 Black Wolf Mask
 170100 Blaidd's Armor
@@ -274,7 +273,6 @@
 600200 Twinned Gauntlets
 600300 Twinned Greaves
 601100 Twinned Armor (Altered)
-601300 Twinned Greaves (Altered)
 610000 Ragged Hat
 610100 Ragged Armor
 610200 Ragged Gloves

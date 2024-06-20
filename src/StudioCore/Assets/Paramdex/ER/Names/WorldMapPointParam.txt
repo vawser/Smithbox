@@ -68,7 +68,6 @@
 450000 Royal Colosseum
 450100 Limgrave Colosseum
 450200 Caelid Colosseum
-61453600 Starfall Crater
 61413200 Isolated Merchant's Shack
 61413300 Fourth Church of Marika
 61413301 Witchbane Ruins
@@ -95,6 +94,7 @@
 61443600 Waypoint Ruins
 61443800 Artist's Shack
 61453300 Oridys's Rise
+61453600 Starfall Crater
 61453700 Siofra River Well
 61453701 Mistwood Ruins
 61453702 Minor Erdtree

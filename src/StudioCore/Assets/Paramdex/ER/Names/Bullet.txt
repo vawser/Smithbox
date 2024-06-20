@@ -6084,3 +6084,54 @@
 20009211 Explosive Greatbolt
 20009300 Bone Ballista Bolt
 20009310 Bone Ballista Bolt
+210030000 Hefty Fire Pot
+210030001 Hefty Fire Pot [Hit]
+210030002 Hefty Fire Pot [Hit]
+210030003 Hefty Fire Pot [Hit]
+210031000 Hefty Rock Pot
+210031001 Hefty Rock Pot [Hit]
+210032000 Hefty Lightning Pot
+210032001 Hefty Lightning Pot [Hit]
+210032010 Hefty Lightning Pot [Hit - Emitter]
+210032011 Hefty Lightning Pot [Emitted - Hit]
+210032012 Hefty Lightning Pot [Emitted - Hit]
+210032013 Hefty Lightning Pot [Emitted - Hit]
+210032014 Hefty Lightning Pot [Emitted - Hit]
+210032015 Hefty Lightning Pot [Emitted - Hit]
+210033000 Hefty Fetid Pot
+210033001 Hefty Fetid Pot [Hit]
+210034000 Hefty Fly Pot
+210034001 Hefty Fly Pot [Hit]
+210034002 Hefty Fly Pot [Hit]
+210034003 Hefty Fly Pot [Hit]
+210036000 Hefty Freezing Pot
+210036001 Hefty Freezing Pot [Hit]
+210037000 Hefty Poison Pot
+210037001 Hefty Poison Pot [Hit]
+210038000 Hefty Oil Pot
+210038001 Hefty Oil Pot [Hit]
+210060000 Hefty Volcano Pot
+210060001 Hefty Volcano Pot [Hit]
+210062000 Hefty Frenzied Flame Pot
+210062001 Hefty Frenzied Flame Pot [Hit]
+210065000 Hefty Rancor Pot
+210065001 Hefty Rancor Pot [Hit]
+210065002 Hefty Rancor Pot [Hit]
+210065003 Hefty Rancor Pot [Hit]
+210066000 Hefty Magic Pot
+210066001 Hefty Magic Pot [Hit]
+210067000 Hefty Rot Pot
+210067001 Hefty Rot Pot [Hit]
+210068000 Hefty Furnace Pot
+210068001 Hefty Furnace Pot [Hit]
+210069000 Hefty Red Lightning Pot
+210069001 Hefty Red Lightning Pot [Hit]
+210069002 Hefty Red Lightning Pot [Hit]
+210069010 Hefty Red Lightning Pot [Hit]
+210069011 Hefty Red Lightning Pot [Hit]
+210069012 Hefty Red Lightning Pot [Hit]
+210069013 Hefty Red Lightning Pot [Hit]
+210069014 Hefty Red Lightning Pot [Hit]
+210069015 Hefty Red Lightning Pot [Hit]
+210069016 Hefty Red Lightning Pot [Hit]
+210069017 Hefty Red Lightning Pot [Hit]

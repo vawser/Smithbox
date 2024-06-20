@@ -3536,7 +3536,6 @@
 30917003 Cough up your coin, all of it!
 30917100 Hm? Wait, don't tell me, is that you?
 30917101 Oh, cripes, please, wait!
-30917102 I surrender! I surrender, I swear!
 30917200 Do you even hear me? I said "surrender", loud and clear!
 30917201 No one likes a bull-headed brute!
 30917202 You'd clobber your old mate, then, would you?

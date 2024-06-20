@@ -2311,7 +2311,7 @@
 101503305 Crescent Moon Axe
 101503310 Crescent Moon Axe
 101503315 Crescent Moon Axe
-101504100 Axe of Godrick 
+101504100 Axe of Godrick
 101504105 Axe of Godrick
 101504110 Axe of Godrick
 101504115 Axe of Godrick
@@ -6689,10 +6689,10 @@
 301600442 Spear Category [AOW] Loretta's Slash
 301600443 Spear Category [AOW] Loretta's Slash
 301600444 Spear Category [AOW] Loretta's Slash
-301600731 Spear Category [AOW] 
-301600732 Spear Category [AOW] 
-301600735 Spear Category [AOW] 
-301600736 Spear Category [AOW] 
+301600731 Spear Category [AOW]
+301600732 Spear Category [AOW]
+301600735 Spear Category [AOW]
+301600736 Spear Category [AOW]
 301600950 Spear Category [AOW] Spinning Wheel
 301600951 Spear Category [AOW] Spinning Wheel
 301600952 Spear Category [AOW] Spinning Wheel

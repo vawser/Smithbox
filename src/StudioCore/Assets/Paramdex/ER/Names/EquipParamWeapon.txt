@@ -23,6 +23,17 @@
 351000 Spark Aromatic
 358000 Poison Spraymist
 361000 Acid Spraymist
+470000 Innard Meat
+471000 Dragon Communion Harpoon
+502000 Lamenter's Mask
+600000 Spritestone
+613000 Horned Bairn
+614000 Perfumed Oil of Ranah
+615000 Call of Tibia
+616000 Surging Frenzied Flame
+618000 Fire Coil
+619000 Fire Spritestone
+620000 Glinting Nail
 830000 Fire Pot
 830100 Redmane Fire Pot
 830200 Giantsflame Fire Pot
@@ -42,10 +53,25 @@
 849000 Roped Volcano Pot
 851000 Roped Holy Water Pot
 860000 Volcano Pot
-864000 Sleep Pot
+864000 Sleep Pot / Eternal Sleep Pot
 865000 Rancor Pot
 866000 Magic Pot
 866100 Academy Magic Pot
+930000 Hefty Fire Pot
+931000 Hefty Rock Pot
+932000 Hefty Lightning Pot
+933000 Hefty Fetid Pot
+934000 Hefty Fly Pot
+937000 Hefty Poison Pot
+960000 Hefty Volcano Pot
+962000 Hefty Frenzied Flame Pot
+965000 Hefty Rancor Pot
+966000 Hefty Magic Pot
+968000 Hefty Furnace Pot
+969000 Hefty Red Lightning Pot
+970000 Red Lightning Pot
+971000 Frenzied Flame Pot
+976000 Roped Frenzied Flame Pot
 1000000 Dagger
 1000100 Heavy Dagger
 1000200 Keen Dagger
@@ -158,6 +184,32 @@
 1151100 Blood Erdsteel Dagger
 1151200 Occult Erdsteel Dagger
 1160000 Blade of Calling
+1500000 Main-gauche
+1500100 Heavy Main-gauche
+1500200 Keen Main-gauche
+1500300 Quality Main-gauche
+1500400 Fire Main-gauche
+1500500 Flame Art Main-gauche
+1500600 Lightning Main-gauche
+1500700 Sacred Main-gauche
+1500800 Magic Main-gauche
+1500900 Cold Main-gauche
+1501000 Poison Main-gauche
+1501100 Blood Main-gauche
+1501200 Occult Main-gauche
+1510000 Fire Knight's Shortsword
+1510100 Fire Knight's Heavy Shortsword
+1510200 Fire Knight's Keen Shortsword
+1510300 Fire Knight's Quality Shortsword
+1510400 Fire Knight's Fire Shortsword
+1510500 Fire Knight's Flame Art Shortsword
+1510600 Fire Knight's Lightning Shortsword
+1510700 Fire Knight's Sacred Shortsword
+1510800 Fire Knight's Magic Shortsword
+1510900 Fire Knight's Cold Shortsword
+1511000 Fire Knight's Poison Shortsword
+1511100 Fire Knight's Blood Shortsword
+1511200 Fire Knight's Occult Shortsword
 2000000 Longsword
 2000100 Heavy Longsword
 2000200 Keen Longsword
@@ -275,6 +327,12 @@
 2241200 Warhawk's Occult Talon
 2250000 Lazuli Glintstone Sword
 2260000 Rotten Crystal Sword
+2510000 Velvet Sword of St. Trina
+2520000 Star-Lined Sword
+2530000 Carian Sorcery Sword
+2540000 Stone-Sheathed Sword
+2550000 Sword of Light
+2560000 Sword of Darkness
 3000000 Bastard Sword
 3000100 Heavy Bastard Sword
 3000200 Keen Bastard Sword
@@ -403,6 +461,34 @@
 3191200 Gargoyle's Occult Greatsword
 3200000 Death's Poker
 3210000 Gargoyle's Blackblade
+3500000 Sword Lance
+3500100 Heavy Sword Lance
+3500200 Keen Sword Lance
+3500300 Quality Sword Lance
+3500400 Fire Sword Lance
+3500500 Flame Art Sword Lance
+3500600 Lightning Sword Lance
+3500700 Sacred Sword Lance
+3500800 Magic Sword Lance
+3500900 Cold Sword Lance
+3501000 Poison Sword Lance
+3501100 Blood Sword Lance
+3501200 Occult Sword Lance
+3510000 Greatsword of Damnation
+3520000 Lizard Greatsword
+3520100 Heavy Lizard Greatsword
+3520200 Keen Lizard Greatsword
+3520300 Quality Lizard Greatsword
+3520400 Fire Lizard Greatsword
+3520500 Flame Art Lizard Greatsword
+3520600 Lightning Lizard Greatsword
+3520700 Sacred Lizard Greatsword
+3520800 Magic Lizard Greatsword
+3520900 Cold Lizard Greatsword
+3521000 Poison Lizard Greatsword
+3521100 Blood Lizard Greatsword
+3521200 Occult Lizard Greatsword
+3550000 Greatsword of Solitude
 4000000 Greatsword
 4000100 Heavy Greatsword
 4000200 Keen Greatsword
@@ -462,6 +548,23 @@
 4080000 Ruins Greatsword
 4100000 Grafted Blade Greatsword
 4110000 Troll Knight's Sword
+4500000 Ancient Meteoric Ore Greatsword
+4520000 Fire Knight's Greatsword
+4520100 Fire Knight's Heavy Greatsword
+4520200 Fire Knight's Keen Greatsword
+4520300 Fire Knight's Quality Greatsword
+4520400 Fire Knight's Fire Greatsword
+4520500 Fire Knight's Flame Art Greatsword
+4520600 Fire Knight's Lightning Greatsword
+4520700 Fire Knight's Sacred Greatsword
+4520800 Fire Knight's Magic Greatsword
+4520900 Fire Knight's Cold Greatsword
+4521000 Fire Knight's Poison Greatsword
+4521100 Fire Knight's Blood Greatsword
+4521200 Fire Knight's Occult Greatsword
+4530000 Greatsword of Radahn (Lord)
+4540000 Moonrithyll's Knight Sword
+4550000 Greatsword of Radahn (Light)
 5000000 Estoc
 5000100 Heavy Estoc
 5000200 Keen Estoc
@@ -569,6 +672,19 @@
 6021100 Blood Great epee
 6021200 Occult Great epee
 6040000 Dragon King's Cragblade
+6500000 Queelign's Greatsword
+6500100 Queelign's Heavy Greatsword
+6500200 Queelign's Keen Greatsword
+6500300 Queelign's Quality Greatsword
+6500400 Queelign's Fire Greatsword
+6500500 Queelign's Flame Art Greatsword
+6500600 Queelign's Lightning Greatsword
+6500700 Queelign's Sacred Greatsword
+6500800 Queelign's Magic Greatsword
+6500900 Queelign's Cold Greatsword
+6501000 Queelign's Poison Greatsword
+6501100 Queelign's Blood Greatsword
+6501200 Queelign's Occult Greatsword
 7000000 Falchion
 7000100 Heavy Falchion
 7000200 Keen Falchion
@@ -715,6 +831,10 @@
 7151000 Poison Grossmesser
 7151100 Blood Grossmesser
 7151200 Occult Grossmesser
+7500000 Spirit Sword
+7510000 Falx
+7520000 Dancing Blade of Ranah
+7530000 Horned Warrior's Sword
 8010000 Onyx Lord's Greatsword
 8020000 Dismounter
 8020100 Heavy Dismounter
@@ -772,6 +892,21 @@
 8081100 Beastman's Blood Cleaver
 8081200 Beastman's Occult Cleaver
 8100000 Morgott's Cursed Sword
+8500000 Putrescence Cleaver
+8510000 Freyja's Greatsword
+8510100 Freyja's Heavy Greatsword
+8510200 Freyja's Keen Greatsword
+8510300 Freyja's Quality Greatsword
+8510400 Freyja's Fire Greatsword
+8510500 Freyja's Flame Art Greatsword
+8510600 Freyja's Lightning Greatsword
+8510700 Freyja's Sacred Greatsword
+8510800 Freyja's Magic Greatsword
+8510900 Freyja's Cold Greatsword
+8511000 Freyja's Poison Greatsword
+8511100 Freyja's Blood Greatsword
+8511200 Freyja's Occult Greatsword
+8520000 Horned Warrior's Greatsword
 9000000 Uchigatana
 9000100 Heavy Uchigatana
 9000200 Keen Uchigatana
@@ -816,6 +951,7 @@
 9081000 Poison Serpentbone Blade
 9081100 Blood Serpentbone Blade
 9081200 Occult Serpentbone Blade
+9500000 Sword of Night
 10000000 Twinblade
 10000100 Heavy Twinblade
 10000200 Keen Twinblade
@@ -870,6 +1006,20 @@
 10081100 Gargoyle's Blood Twinblade
 10081200 Gargoyle's Occult Twinblade
 10090000 Gargoyle's Black Blades
+10500000 Euporia
+10510000 Black Steel Twinblade
+10510100 Heavy Black Steel Twinblade
+10510200 Keen Black Steel Twinblade
+10510300 Quality Black Steel Twinblade
+10510400 Fire Black Steel Twinblade
+10510500 Flame Art Black Steel Twinblade
+10510600 Lightning Black Steel Twinblade
+10510700 Sacred Black Steel Twinblade
+10510800 Magic Black Steel Twinblade
+10510900 Cold Black Steel Twinblade
+10511000 Poison Black Steel Twinblade
+10511100 Blood Black Steel Twinblade
+10511200 Occult Black Steel Twinblade
 11000000 Mace
 11000100 Heavy Mace
 11000200 Keen Mace
@@ -993,6 +1143,7 @@
 11141100 Blood Stone Club
 11141200 Occult Stone Club
 11150000 Marika's Hammer
+11500000 Flowerstone Gavel
 12000000 Large Club
 12000100 Heavy Large Club
 12000200 Keen Large Club
@@ -1127,6 +1278,46 @@
 12211000 Poison Rotten Battle Hammer
 12211100 Blood Rotten Battle Hammer
 12211200 Occult Rotten Battle Hammer
+12500000 Smithscript Greathammer
+12500100 Heavy Smithscript Greathammer
+12500200 Keen Smithscript Greathammer
+12500300 Quality Smithscript Greathammer
+12500400 Fire Smithscript Greathammer
+12500500 Flame Art Smithscript Greathammer
+12500600 Lightning Smithscript Greathammer
+12500700 Sacred Smithscript Greathammer
+12500800 Magic Smithscript Greathammer
+12500900 Cold Smithscript Greathammer
+12501000 Poison Smithscript Greathammer
+12501100 Blood Smithscript Greathammer
+12501200 Occult Smithscript Greathammer
+12510000 Anvil Hammer
+12520000 Black Steel Greathammer
+12520100 Heavy Black Steel Greathammer
+12520200 Keen Black Steel Greathammer
+12520300 Quality Black Steel Greathammer
+12520400 Fire Black Steel Greathammer
+12520500 Flame Art Black Steel Greathammer
+12520600 Lightning Black Steel Greathammer
+12520700 Sacred Black Steel Greathammer
+12520800 Magic Black Steel Greathammer
+12520900 Cold Black Steel Greathammer
+12521000 Poison Black Steel Greathammer
+12521100 Blood Black Steel Greathammer
+12521200 Occult Black Steel Greathammer
+12530000 Bloodfiend's Arm
+12530100 Bloodfiend's Heavy Arm
+12530200 Bloodfiend's Keen Arm
+12530300 Bloodfiend's Quality Arm
+12530400 Bloodfiend's Fire Arm
+12530500 Bloodfiend's Flame Art Arm
+12530600 Bloodfiend's Lightning Arm
+12530700 Bloodfiend's Sacred Arm
+12530800 Bloodfiend's Magic Arm
+12530900 Bloodfiend's Cold Arm
+12531000 Bloodfiend's Poison Arm
+12531100 Bloodfiend's Blood Arm
+12531200 Bloodfiend's Occult Arm
 13000000 Nightrider Flail
 13000100 Heavy Nightrider Flail
 13000200 Keen Nightrider Flail
@@ -1168,6 +1359,7 @@
 13041000 Poison Chainlink Flail
 13041100 Blood Chainlink Flail
 13041200 Occult Chainlink Flail
+13500000 Serpent Flail
 14000000 Battle Axe
 14000100 Heavy Battle Axe
 14000200 Keen Battle Axe
@@ -1276,6 +1468,34 @@
 14111200 Occult Sacrificial Axe
 14120000 Rosus' Axe
 14140000 Stormhawk Axe
+14500000 Smithscript Axe
+14500100 Heavy Smithscript Axe
+14500200 Keen Smithscript Axe
+14500300 Quality Smithscript Axe
+14500400 Fire Smithscript Axe
+14500500 Flame Art Smithscript Axe
+14500600 Lightning Smithscript Axe
+14500700 Sacred Smithscript Axe
+14500800 Magic Smithscript Axe
+14500900 Cold Smithscript Axe
+14501000 Poison Smithscript Axe
+14501100 Blood Smithscript Axe
+14501200 Occult Smithscript Axe
+14510000 Death Knight's Twin Axes
+14520000 Messmer Soldier's Axe
+14520100 Messmer Soldier's Heavy Axe
+14520200 Messmer Soldier's Keen Axe
+14520300 Messmer Soldier's Quality Axe
+14520400 Messmer Soldier's Fire Axe
+14520500 Messmer Soldier's Flame Art Axe
+14520600 Messmer Soldier's Lightning Axe
+14520700 Messmer Soldier's Sacred Axe
+14520800 Messmer Soldier's Magic Axe
+14520900 Messmer Soldier's Cold Axe
+14521000 Messmer Soldier's Poison Axe
+14521100 Messmer Soldier's Blood Axe
+14521200 Messmer Soldier's Occult Axe
+14540000 Forked-Tongue Hatchet
 15000000 Greataxe
 15000100 Heavy Greataxe
 15000200 Keen Greataxe
@@ -1396,6 +1616,8 @@
 15131100 Gargoyle's Blood Great Axe
 15131200 Gargoyle's Occult Great Axe
 15140000 Gargoyle's Black Axe
+15500000 Death Knight's Longhaft Axe
+15510000 Bonny Butchering Knife
 16000000 Short Spear
 16000100 Heavy Short Spear
 16000200 Keen Short Spear
@@ -1520,6 +1742,46 @@
 16151100 Blood Iron Spear
 16151200 Occult Iron Spear
 16160000 Rotten Crystal Spear
+16500000 Smithscript Spear
+16500100 Heavy Smithscript Spear
+16500200 Keen Smithscript Spear
+16500300 Quality Smithscript Spear
+16500400 Fire Smithscript Spear
+16500500 Flame Art Smithscript Spear
+16500600 Lightning Smithscript Spear
+16500700 Sacred Smithscript Spear
+16500800 Magic Smithscript Spear
+16500900 Cold Smithscript Spear
+16501000 Poison Smithscript Spear
+16501100 Blood Smithscript Spear
+16501200 Occult Smithscript Spear
+16520000 Swift Spear
+16520100 Heavy Swift Spear
+16520200 Keen Swift Spear
+16520300 Quality Swift Spear
+16520400 Fire Swift Spear
+16520500 Flame Art Swift Spear
+16520600 Lightning Swift Spear
+16520700 Sacred Swift Spear
+16520800 Magic Swift Spear
+16520900 Cold Swift Spear
+16521000 Poison Swift Spear
+16521100 Blood Swift Spear
+16521200 Occult Swift Spear
+16540000 Bloodfiend's Fork
+16540100 Bloodfiend's Heavy Fork
+16540200 Bloodfiend's Keen Fork
+16540300 Bloodfiend's Quality Fork
+16540400 Bloodfiend's Fire Fork
+16540500 Bloodfiend's Flame Art Fork
+16540600 Bloodfiend's Lightning Fork
+16540700 Bloodfiend's Sacred Fork
+16540800 Bloodfiend's Magic Fork
+16540900 Bloodfiend's Cold Fork
+16541000 Bloodfiend's Poison Fork
+16541100 Bloodfiend's Blood Fork
+16541200 Bloodfiend's Occult Fork
+16550000 Bloodfiend's Sacred Spear
 17010000 Mohgwyn's Sacred Spear
 17020000 Siluria's Tree
 17030000 Serpent-Hunter
@@ -1550,6 +1812,21 @@
 17071000 Poison Treespear
 17071100 Blood Treespear
 17071200 Occult Treespear
+17500000 Spear of the Impaler
+17510000 Messmer Soldier's Spear
+17510100 Messmer Soldier's Heavy Spear
+17510200 Messmer Soldier's Keen Spear
+17510300 Messmer Soldier's Quality Spear
+17510400 Messmer Soldier's Fire Spear
+17510500 Messmer Soldier's Flame Art Spear
+17510600 Messmer Soldier's Lightning Spear
+17510700 Messmer Soldier's Sacred Spear
+17510800 Messmer Soldier's Magic Spear
+17510900 Messmer Soldier's Cold Spear
+17511000 Messmer Soldier's Poison Spear
+17511100 Messmer Soldier's Blood Spear
+17511200 Messmer Soldier's Occult Spear
+17520000 Barbed Staff-Spear
 18000000 Halberd
 18000100 Heavy Halberd
 18000200 Keen Halberd
@@ -1686,6 +1963,8 @@
 18151100 Gargoyle's Blood Halberd
 18151200 Gargoyle's Occult Halberd
 18160000 Gargoyle's Black Halberd
+18500000 Spirit Glaive
+18510000 Poleblade of the Bud
 19000000 Scythe
 19000100 Heavy Scythe
 19000200 Keen Scythe
@@ -1714,6 +1993,7 @@
 19011200 Occult Grave Scythe
 19020000 Halo Scythe
 19060000 Winged Scythe
+19500000 Obsidian Lamina
 20000000 Whip
 20000100 Heavy Whip
 20000200 Keen Whip
@@ -1768,6 +2048,7 @@
 20071000 Poison Urumi
 20071100 Blood Urumi
 20071200 Occult Urumi
+20500000 Tooth Whip
 21000000 Caestus
 21000100 Heavy Caestus
 21000200 Keen Caestus
@@ -1837,6 +2118,36 @@
 21110000 Clinging Bone
 21120000 Veteran's Prosthesis
 21130000 Cipher Pata
+21500000 Thiollier's Hidden Needle
+21510000 Pata
+21510100 Heavy Pata
+21510200 Keen Pata
+21510300 Quality Pata
+21510400 Fire Pata
+21510500 Flame Art Pata
+21510600 Lightning Pata
+21510700 Sacred Pata
+21510800 Magic Pata
+21510900 Cold Pata
+21511000 Poison Pata
+21511100 Blood Pata
+21511200 Occult Pata
+21520000 Poisoned Hand
+21530000 Madding Hand
+21540000 Golem Fist
+21540100 Heavy Golem Fist
+21540200 Keen Golem Fist
+21540300 Quality Golem Fist
+21540400 Fire Golem Fist
+21540500 Flame Art Golem Fist
+21540600 Lightning Golem Fist
+21540700 Sacred Golem Fist
+21540800 Magic Golem Fist
+21540900 Cold Golem Fist
+21541000 Poison Golem Fist
+21541100 Blood Golem Fist
+21541200 Occult Golem Fist
+21550000 Shield of Night
 22000000 Hookclaws
 22000100 Heavy Hookclaws
 22000200 Keen Hookclaws
@@ -1889,6 +2200,7 @@
 22031000 Poison Raptor Talons
 22031100 Blood Raptor Talons
 22031200 Occult Raptor Talons
+22500000 Claws of Night
 23000000 Prelate's Inferno Crozier
 23000100 Prelate's Heavy Inferno Crozier
 23000200 Prelate's Keen Inferno Crozier
@@ -1988,12 +2300,17 @@
 23151000 Poison Rotten Greataxe
 23151100 Blood Rotten Greataxe
 23151200 Occult Rotten Greataxe
+23500000 Devonia's Hammer
+23510000 Shadow Sunflower Blossom
+23520000 Gazing Finger
 24000000 Torch
 24020000 Steel-Wire Torch
 24040000 St. Trina's Torch
 24050000 Ghostflame Torch
 24060000 Beast-Repellent Torch
 24070000 Sentry's Torch
+24500000 Nanaya's Torch
+24510000 Lamenting Visage
 30000000 Buckler
 30000100 Heavy Buckler
 30000200 Keen Buckler
@@ -2191,6 +2508,7 @@
 30191100 Blood Spiralhorn Shield
 30191200 Occult Spiralhorn Shield
 30200000 Coil Shield
+30510000 Smithscript Shield
 31000000 Kite Shield
 31000100 Heavy Kite Shield
 31000200 Keen Kite Shield
@@ -2530,6 +2848,46 @@
 31341000 Poison Black Leather Shield
 31341100 Blood Black Leather Shield
 31341200 Occult Black Leather Shield
+31500000 Messmer Soldier Shield
+31500100 Heavy Messmer Soldier Shield
+31500200 Keen Messmer Soldier Shield
+31500300 Quality Messmer Soldier Shield
+31500400 Fire Messmer Soldier Shield
+31500500 Flame Art Messmer Soldier Shield
+31500600 Lightning Messmer Soldier Shield
+31500700 Sacred Messmer Soldier Shield
+31500800 Magic Messmer Soldier Shield
+31500900 Cold Messmer Soldier Shield
+31501000 Poison Messmer Soldier Shield
+31501100 Blood Messmer Soldier Shield
+31501200 Occult Messmer Soldier Shield
+31510000 Wolf Crest Shield
+31510100 Heavy Wolf Crest Shield
+31510200 Keen Wolf Crest Shield
+31510300 Quality Wolf Crest Shield
+31510400 Fire Wolf Crest Shield
+31510500 Flame Art Wolf Crest Shield
+31510600 Lightning Wolf Crest Shield
+31510700 Sacred Wolf Crest Shield
+31510800 Magic Wolf Crest Shield
+31510900 Cold Wolf Crest Shield
+31511000 Poison Wolf Crest Shield
+31511100 Blood Wolf Crest Shield
+31511200 Occult Wolf Crest Shield
+31520000 Serpent Crest Shield
+31520100 Heavy Serpent Crest Shield
+31520200 Keen Serpent Crest Shield
+31520300 Quality Serpent Crest Shield
+31520400 Fire Serpent Crest Shield
+31520500 Flame Art Serpent Crest Shield
+31520600 Lightning Serpent Crest Shield
+31520700 Sacred Serpent Crest Shield
+31520800 Magic Serpent Crest Shield
+31520900 Cold Serpent Crest Shield
+31521000 Poison Serpent Crest Shield
+31521100 Blood Serpent Crest Shield
+31521200 Occult Serpent Crest Shield
+31530000 Golden Lion Shield
 32000000 Dragon Towershield
 32000100 Heavy Dragon Towershield
 32000200 Keen Dragon Towershield
@@ -2759,6 +3117,20 @@
 32301000 Poison Lordsworn's Shield
 32301100 Blood Lordsworn's Shield
 32301200 Occult Lordsworn's Shield
+32500000 Black Steel Greatshield
+32500100 Heavy Black Steel Greatshield
+32500200 Keen Black Steel Greatshield
+32500300 Quality Black Steel Greatshield
+32500400 Fire Black Steel Greatshield
+32500500 Flame Art Black Steel Greatshield
+32500600 Lightning Black Steel Greatshield
+32500700 Sacred Black Steel Greatshield
+32500800 Magic Black Steel Greatshield
+32500900 Cold Black Steel Greatshield
+32501000 Poison Black Steel Greatshield
+32501100 Blood Black Steel Greatshield
+32501200 Occult Black Steel Greatshield
+32520000 Verdigris Greatshield
 33000000 Glintstone Staff
 33040000 Crystal Staff
 33050000 Gelmir Glintstone Staff
@@ -2777,6 +3149,8 @@
 33260000 Staff of the Guilty
 33270000 Rotten Crystal Staff
 33280000 Staff of Loss
+33510000 Staff of the Great Beyond
+33520000 Maternal Staff
 34000000 Finger Seal
 34010000 Godslayer's Seal
 34020000 Giant's Seal
@@ -2786,11 +3160,15 @@
 34070000 Erdtree Seal
 34080000 Dragon Communion Seal
 34090000 Frenzied Flame Seal
+34500000 Dryleaf Seal
+34510000 Fire Knight's Seal
+34520000 Spiraltree Seal
 40000000 Shortbow
 40010000 Misbegotten Shortbow
 40020000 Red Branch Shortbow
 40030000 Harp Bow
 40050000 Composite Bow
+40500000 Bone Bow
 41000000 Longbow
 41010000 Albinauric Bow
 41020000 Horn Bow
@@ -2798,10 +3176,12 @@
 41040000 Serpent Bow
 41060000 Pulley Bow
 41070000 Black Bow
+41510000 Ansbach's Longbow
 42000000 Lion Greatbow
 42010000 Golem Greatbow
 42030000 Erdtree Greatbow
 42040000 Greatbow
+42500000 Igon's Greatbow
 43000000 Soldier's Crossbow
 43020000 Light Crossbow
 43030000 Heavy Crossbow
@@ -2809,8 +3189,11 @@
 43060000 Full Moon Crossbow
 43080000 Arbalest
 43110000 Crepus's Black-Key Crossbow
+43500000 Repeating Crossbow
+43510000 Spread Crossbow
 44000000 Hand Ballista
 44010000 Jar Cannon
+44500000 Rabbath's Cannon
 50000000 Arrow
 50010000 Fire Arrow
 50020000 Serpent Arrow
@@ -2843,6 +3226,8 @@
 50330000 Coldbone Arrow
 50340000 Rotbone Arrow (Fletched)
 50350000 Rotbone Arrow
+50540000 Piquebone Arrow (Fletched)
+50550000 Piquebone Arrow
 51000000 Great Arrow
 51010000 Golem's Great Arrow
 51020000 Golden Great Arrow
@@ -2850,6 +3235,7 @@
 51040000 Radahn's Spear
 51050000 Bone Great Arrow (Fletched)
 51060000 Bone Great Arrow
+51500000 Igon's Harpoon
 52000000 Bolt
 52010000 Lightning Bolt
 52020000 Perfumer's Bolt
@@ -2870,510 +3256,150 @@
 52170000 Rotbone Bolt
 52180000 Sleepbone Bolt
 52190000 Flaming Bolt
+52520000 Piquebone Bolt
 53000000 Ballista Bolt
 53010000 Lightning Greatbolt
 53020000 Explosive Greatbolt
 53030000 Bone Ballista Bolt
-1500000 Main-gauche 
-1500100 Heavy Main-gauche 
-1500200 Keen Main-gauche 
-1500300 Quality Main-gauche 
-1500400 Fire Main-gauche 
-1500500 Flame Art Main-gauche 
-1500600 Lightning Main-gauche 
-1500700 Sacred Main-gauche 
-1500800 Magic Main-gauche 
-1500900 Cold Main-gauche 
-1501000 Poison Main-gauche 
-1501100 Blood Main-gauche 
-1501200 Occult Main-gauche 
-1510000 Fire Knight's Shortsword 
-1510100 Fire Knight's Heavy Shortsword 
-1510200 Fire Knight's Keen Shortsword 
-1510300 Fire Knight's Quality Shortsword 
-1510400 Fire Knight's Fire Shortsword 
-1510500 Fire Knight's Flame Art Shortsword 
-1510600 Fire Knight's Lightning Shortsword 
-1510700 Fire Knight's Sacred Shortsword 
-1510800 Fire Knight's Magic Shortsword 
-1510900 Fire Knight's Cold Shortsword 
-1511000 Fire Knight's Poison Shortsword 
-1511100 Fire Knight's Blood Shortsword 
-1511200 Fire Knight's Occult Shortsword 
-2510000 Velvet Sword of St. Trina 
-2520000 Star-Lined Sword 
-2530000 Carian Sorcery Sword 
-2540000 Stone-Sheathed Sword 
-2550000 Sword of Light 
-2560000 Sword of Darkness 
-3500000 Sword Lance 
-3500100 Heavy Sword Lance 
-3500200 Keen Sword Lance 
-3500300 Quality Sword Lance 
-3500400 Fire Sword Lance 
-3500500 Flame Art Sword Lance 
-3500600 Lightning Sword Lance 
-3500700 Sacred Sword Lance 
-3500800 Magic Sword Lance 
-3500900 Cold Sword Lance 
-3501000 Poison Sword Lance 
-3501100 Blood Sword Lance 
-3501200 Occult Sword Lance 
-3510000 Greatsword of Damnation 
-3520000 Lizard Greatsword 
-3520100 Heavy Lizard Greatsword 
-3520200 Keen Lizard Greatsword 
-3520300 Quality Lizard Greatsword 
-3520400 Fire Lizard Greatsword 
-3520500 Flame Art Lizard Greatsword 
-3520600 Lightning Lizard Greatsword 
-3520700 Sacred Lizard Greatsword 
-3520800 Magic Lizard Greatsword 
-3520900 Cold Lizard Greatsword 
-3521000 Poison Lizard Greatsword 
-3521100 Blood Lizard Greatsword 
-3521200 Occult Lizard Greatsword 
-3550000 Greatsword of Solitude 
-4500000 Ancient Meteoric Ore Greatsword 
-4520000 Fire Knight's Greatsword 
-4520100 Fire Knight's Heavy Greatsword 
-4520200 Fire Knight's Keen Greatsword 
-4520300 Fire Knight's Quality Greatsword 
-4520400 Fire Knight's Fire Greatsword 
-4520500 Fire Knight's Flame Art Greatsword 
-4520600 Fire Knight's Lightning Greatsword 
-4520700 Fire Knight's Sacred Greatsword 
-4520800 Fire Knight's Magic Greatsword 
-4520900 Fire Knight's Cold Greatsword 
-4521000 Fire Knight's Poison Greatsword 
-4521100 Fire Knight's Blood Greatsword 
-4521200 Fire Knight's Occult Greatsword 
-4530000 Greatsword of Radahn (Lord) 
-4540000 Moonrithyll's Knight Sword 
-4550000 Greatsword of Radahn (Light) 
-6500000 Queelign's Greatsword 
-6500100 Queelign's Heavy Greatsword 
-6500200 Queelign's Keen Greatsword 
-6500300 Queelign's Quality Greatsword 
-6500400 Queelign's Fire Greatsword 
-6500500 Queelign's Flame Art Greatsword 
-6500600 Queelign's Lightning Greatsword 
-6500700 Queelign's Sacred Greatsword 
-6500800 Queelign's Magic Greatsword 
-6500900 Queelign's Cold Greatsword 
-6501000 Queelign's Poison Greatsword 
-6501100 Queelign's Blood Greatsword 
-6501200 Queelign's Occult Greatsword 
-7500000 Spirit Sword 
-7510000 Falx 
-7520000 Dancing Blade of Ranah 
-7530000 Horned Warrior's Sword 
-8500000 Putrescence Cleaver 
-8510000 Freyja's Greatsword 
-8510100 Freyja's Heavy Greatsword 
-8510200 Freyja's Keen Greatsword 
-8510300 Freyja's Quality Greatsword 
-8510400 Freyja's Fire Greatsword 
-8510500 Freyja's Flame Art Greatsword 
-8510600 Freyja's Lightning Greatsword 
-8510700 Freyja's Sacred Greatsword 
-8510800 Freyja's Magic Greatsword 
-8510900 Freyja's Cold Greatsword 
-8511000 Freyja's Poison Greatsword 
-8511100 Freyja's Blood Greatsword 
-8511200 Freyja's Occult Greatsword 
-8520000 Horned Warrior's Greatsword 
-9500000 Sword of Night 
-10500000 Euporia 
-10510000 Black Steel Twinblade 
-10510100 Heavy Black Steel Twinblade 
-10510200 Keen Black Steel Twinblade 
-10510300 Quality Black Steel Twinblade 
-10510400 Fire Black Steel Twinblade 
-10510500 Flame Art Black Steel Twinblade 
-10510600 Lightning Black Steel Twinblade 
-10510700 Sacred Black Steel Twinblade 
-10510800 Magic Black Steel Twinblade 
-10510900 Cold Black Steel Twinblade 
-10511000 Poison Black Steel Twinblade 
-10511100 Blood Black Steel Twinblade 
-10511200 Occult Black Steel Twinblade 
-11500000 Flowerstone Gavel 
-12500000 Smithscript Greathammer 
-12500100 Heavy Smithscript Greathammer 
-12500200 Keen Smithscript Greathammer 
-12500300 Quality Smithscript Greathammer 
-12500400 Fire Smithscript Greathammer 
-12500500 Flame Art Smithscript Greathammer 
-12500600 Lightning Smithscript Greathammer 
-12500700 Sacred Smithscript Greathammer 
-12500800 Magic Smithscript Greathammer 
-12500900 Cold Smithscript Greathammer 
-12501000 Poison Smithscript Greathammer 
-12501100 Blood Smithscript Greathammer 
-12501200 Occult Smithscript Greathammer 
-12510000 Anvil Hammer 
-12520000 Black Steel Greathammer 
-12520100 Heavy Black Steel Greathammer 
-12520200 Keen Black Steel Greathammer 
-12520300 Quality Black Steel Greathammer 
-12520400 Fire Black Steel Greathammer 
-12520500 Flame Art Black Steel Greathammer 
-12520600 Lightning Black Steel Greathammer 
-12520700 Sacred Black Steel Greathammer 
-12520800 Magic Black Steel Greathammer 
-12520900 Cold Black Steel Greathammer 
-12521000 Poison Black Steel Greathammer 
-12521100 Blood Black Steel Greathammer 
-12521200 Occult Black Steel Greathammer 
-12530000 Bloodfiend's Arm 
-12530100 Bloodfiend's Heavy Arm 
-12530200 Bloodfiend's Keen Arm 
-12530300 Bloodfiend's Quality Arm 
-12530400 Bloodfiend's Fire Arm 
-12530500 Bloodfiend's Flame Art Arm 
-12530600 Bloodfiend's Lightning Arm 
-12530700 Bloodfiend's Sacred Arm 
-12530800 Bloodfiend's Magic Arm 
-12530900 Bloodfiend's Cold Arm 
-12531000 Bloodfiend's Poison Arm 
-12531100 Bloodfiend's Blood Arm 
-12531200 Bloodfiend's Occult Arm 
-13500000 Serpent Flail 
-14500000 Smithscript Axe 
-14500100 Heavy Smithscript Axe 
-14500200 Keen Smithscript Axe 
-14500300 Quality Smithscript Axe 
-14500400 Fire Smithscript Axe 
-14500500 Flame Art Smithscript Axe 
-14500600 Lightning Smithscript Axe 
-14500700 Sacred Smithscript Axe 
-14500800 Magic Smithscript Axe 
-14500900 Cold Smithscript Axe 
-14501000 Poison Smithscript Axe 
-14501100 Blood Smithscript Axe 
-14501200 Occult Smithscript Axe 
-14510000 Death Knight's Twin Axes 
-14520000 Messmer Soldier's Axe 
-14520100 Messmer Soldier's Heavy Axe 
-14520200 Messmer Soldier's Keen Axe 
-14520300 Messmer Soldier's Quality Axe 
-14520400 Messmer Soldier's Fire Axe 
-14520500 Messmer Soldier's Flame Art Axe 
-14520600 Messmer Soldier's Lightning Axe 
-14520700 Messmer Soldier's Sacred Axe 
-14520800 Messmer Soldier's Magic Axe 
-14520900 Messmer Soldier's Cold Axe 
-14521000 Messmer Soldier's Poison Axe 
-14521100 Messmer Soldier's Blood Axe 
-14521200 Messmer Soldier's Occult Axe 
-14540000 Forked-Tongue Hatchet 
-15500000 Death Knight's Longhaft Axe 
-15510000 Bonny Butchering Knife 
-16500000 Smithscript Spear 
-16500100 Heavy Smithscript Spear 
-16500200 Keen Smithscript Spear 
-16500300 Quality Smithscript Spear 
-16500400 Fire Smithscript Spear 
-16500500 Flame Art Smithscript Spear 
-16500600 Lightning Smithscript Spear 
-16500700 Sacred Smithscript Spear 
-16500800 Magic Smithscript Spear 
-16500900 Cold Smithscript Spear 
-16501000 Poison Smithscript Spear 
-16501100 Blood Smithscript Spear 
-16501200 Occult Smithscript Spear 
-16520000 Swift Spear 
-16520100 Heavy Swift Spear 
-16520200 Keen Swift Spear 
-16520300 Quality Swift Spear 
-16520400 Fire Swift Spear 
-16520500 Flame Art Swift Spear 
-16520600 Lightning Swift Spear 
-16520700 Sacred Swift Spear 
-16520800 Magic Swift Spear 
-16520900 Cold Swift Spear 
-16521000 Poison Swift Spear 
-16521100 Blood Swift Spear 
-16521200 Occult Swift Spear 
-16540000 Bloodfiend's Fork 
-16540100 Bloodfiend's Heavy Fork 
-16540200 Bloodfiend's Keen Fork 
-16540300 Bloodfiend's Quality Fork 
-16540400 Bloodfiend's Fire Fork 
-16540500 Bloodfiend's Flame Art Fork 
-16540600 Bloodfiend's Lightning Fork 
-16540700 Bloodfiend's Sacred Fork 
-16540800 Bloodfiend's Magic Fork 
-16540900 Bloodfiend's Cold Fork 
-16541000 Bloodfiend's Poison Fork 
-16541100 Bloodfiend's Blood Fork 
-16541200 Bloodfiend's Occult Fork 
-16550000 Bloodfiend's Sacred Spear 
-17500000 Spear of the Impaler 
-17510000 Messmer Soldier's Spear 
-17510100 Messmer Soldier's Heavy Spear 
-17510200 Messmer Soldier's Keen Spear 
-17510300 Messmer Soldier's Quality Spear 
-17510400 Messmer Soldier's Fire Spear 
-17510500 Messmer Soldier's Flame Art Spear 
-17510600 Messmer Soldier's Lightning Spear 
-17510700 Messmer Soldier's Sacred Spear 
-17510800 Messmer Soldier's Magic Spear 
-17510900 Messmer Soldier's Cold Spear 
-17511000 Messmer Soldier's Poison Spear 
-17511100 Messmer Soldier's Blood Spear 
-17511200 Messmer Soldier's Occult Spear 
-17520000 Barbed Staff-Spear 
-18500000 Spirit Glaive 
-18510000 Poleblade of the Bud 
-19500000 Obsidian Lamina 
-20500000 Tooth Whip 
-21500000 Thiollier's Hidden Needle 
-21510000 Pata 
-21510100 Heavy Pata 
-21510200 Keen Pata 
-21510300 Quality Pata 
-21510400 Fire Pata 
-21510500 Flame Art Pata 
-21510600 Lightning Pata 
-21510700 Sacred Pata 
-21510800 Magic Pata 
-21510900 Cold Pata 
-21511000 Poison Pata 
-21511100 Blood Pata 
-21511200 Occult Pata 
-21520000 Poisoned Hand 
-21530000 Madding Hand 
-21540000 Golem Fist 
-21540100 Heavy Golem Fist 
-21540200 Keen Golem Fist 
-21540300 Quality Golem Fist 
-21540400 Fire Golem Fist 
-21540500 Flame Art Golem Fist 
-21540600 Lightning Golem Fist 
-21540700 Sacred Golem Fist 
-21540800 Magic Golem Fist 
-21540900 Cold Golem Fist 
-21541000 Poison Golem Fist 
-21541100 Blood Golem Fist 
-21541200 Occult Golem Fist 
-21550000 Shield of Night 
-22500000 Claws of Night 
-23500000 Devonia's Hammer 
-23510000 Shadow Sunflower Blossom 
-23520000 Gazing Finger 
-24500000 Nanaya's Torch 
-24510000 Lamenting Visage 
-30510000 Smithscript Shield 
-31500000 Messmer Soldier Shield 
-31500100 Heavy Messmer Soldier Shield 
-31500200 Keen Messmer Soldier Shield 
-31500300 Quality Messmer Soldier Shield 
-31500400 Fire Messmer Soldier Shield 
-31500500 Flame Art Messmer Soldier Shield 
-31500600 Lightning Messmer Soldier Shield 
-31500700 Sacred Messmer Soldier Shield 
-31500800 Magic Messmer Soldier Shield 
-31500900 Cold Messmer Soldier Shield 
-31501000 Poison Messmer Soldier Shield 
-31501100 Blood Messmer Soldier Shield 
-31501200 Occult Messmer Soldier Shield 
-31510000 Wolf Crest Shield 
-31510100 Heavy Wolf Crest Shield 
-31510200 Keen Wolf Crest Shield 
-31510300 Quality Wolf Crest Shield 
-31510400 Fire Wolf Crest Shield 
-31510500 Flame Art Wolf Crest Shield 
-31510600 Lightning Wolf Crest Shield 
-31510700 Sacred Wolf Crest Shield 
-31510800 Magic Wolf Crest Shield 
-31510900 Cold Wolf Crest Shield 
-31511000 Poison Wolf Crest Shield 
-31511100 Blood Wolf Crest Shield 
-31511200 Occult Wolf Crest Shield 
-31520000 Serpent Crest Shield 
-31520100 Heavy Serpent Crest Shield 
-31520200 Keen Serpent Crest Shield 
-31520300 Quality Serpent Crest Shield 
-31520400 Fire Serpent Crest Shield 
-31520500 Flame Art Serpent Crest Shield 
-31520600 Lightning Serpent Crest Shield 
-31520700 Sacred Serpent Crest Shield 
-31520800 Magic Serpent Crest Shield 
-31520900 Cold Serpent Crest Shield 
-31521000 Poison Serpent Crest Shield 
-31521100 Blood Serpent Crest Shield 
-31521200 Occult Serpent Crest Shield 
-31530000 Golden Lion Shield 
-32500000 Black Steel Greatshield 
-32500100 Heavy Black Steel Greatshield 
-32500200 Keen Black Steel Greatshield 
-32500300 Quality Black Steel Greatshield 
-32500400 Fire Black Steel Greatshield 
-32500500 Flame Art Black Steel Greatshield 
-32500600 Lightning Black Steel Greatshield 
-32500700 Sacred Black Steel Greatshield 
-32500800 Magic Black Steel Greatshield 
-32500900 Cold Black Steel Greatshield 
-32501000 Poison Black Steel Greatshield 
-32501100 Blood Black Steel Greatshield 
-32501200 Occult Black Steel Greatshield 
-32520000 Verdigris Greatshield 
-33510000 Staff of the Great Beyond 
-33520000 Maternal Staff 
-34500000 Dryleaf Seal 
-34510000 Fire Knight's Seal 
-34520000 Spiraltree Seal 
-40500000 Bone Bow 
-41510000 Ansbach's Longbow 
-42500000 Igon's Greatbow 
-43500000 Repeating Crossbow 
-43510000 Spread Crossbow 
-44500000 Rabbath's Cannon 
-50540000 Piquebone Arrow (Fletched) 
-50550000 Piquebone Arrow 
-51500000 Igon's Harpoon 
-52520000 Piquebone Bolt 
-53500000 Rabbath's Greatbolt 
-60500000 Dryleaf Arts 
-60500100 Heavy Dryleaf Arts 
-60500200 Keen Dryleaf Arts 
-60500300 Quality Dryleaf Arts 
-60500400 Fire Dryleaf Arts 
-60500500 Flame Art Dryleaf Arts 
-60500600 Lightning Dryleaf Arts 
-60500700 Sacred Dryleaf Arts 
-60500800 Magic Dryleaf Arts 
-60500900 Cold Dryleaf Arts 
-60501000 Poison Dryleaf Arts 
-60501100 Blood Dryleaf Arts 
-60501200 Occult Dryleaf Arts 
-60510000 Dane's Footwork 
-60510100 Dane's Heavy Footwork 
-60510200 Dane's Keen Footwork 
-60510300 Dane's Quality Footwork 
-60510400 Dane's Fire Footwork 
-60510500 Dane's Flame Art Footwork 
-60510600 Dane's Lightning Footwork 
-60510700 Dane's Sacred Footwork 
-60510800 Dane's Magic Footwork 
-60510900 Dane's Cold Footwork 
-60511000 Dane's Poison Footwork 
-60511100 Dane's Blood Footwork 
-60511200 Dane's Occult Footwork 
-61500000 Firespark Perfume Bottle 
-61510000 Chilling Perfume Bottle 
-61520000 Frenzyflame Perfume Bottle 
-61530000 Lightning Perfume Bottle 
-61540000 Deadly Poison Perfume Bottle 
-62500000 Dueling Shield 
-62500100 Heavy Dueling Shield 
-62500200 Keen Dueling Shield 
-62500300 Quality Dueling Shield 
-62500400 Fire Dueling Shield 
-62500500 Flame Art Dueling Shield 
-62500600 Lightning Dueling Shield 
-62500700 Sacred Dueling Shield 
-62500800 Magic Dueling Shield 
-62500900 Cold Dueling Shield 
-62501000 Poison Dueling Shield 
-62501100 Blood Dueling Shield 
-62501200 Occult Dueling Shield 
-62510000 Carian Thrusting Shield 
-62510100 Heavy Carian Thrusting Shield 
-62510200 Keen Carian Thrusting Shield 
-62510300 Quality Carian Thrusting Shield 
-62510400 Fire Carian Thrusting Shield 
-62510500 Flame Art Carian Thrusting Shield 
-62510600 Lightning Carian Thrusting Shield 
-62510700 Sacred Carian Thrusting Shield 
-62510800 Magic Carian Thrusting Shield 
-62510900 Cold Carian Thrusting Shield 
-62511000 Poison Carian Thrusting Shield 
-62511100 Blood Carian Thrusting Shield 
-62511200 Occult Carian Thrusting Shield 
-63500000 Smithscript Dagger 
-63500100 Heavy Smithscript Dagger 
-63500200 Keen Smithscript Dagger 
-63500300 Quality Smithscript Dagger 
-63500400 Fire Smithscript Dagger 
-63500500 Flame Art Smithscript Dagger 
-63500600 Lightning Smithscript Dagger 
-63500700 Sacred Smithscript Dagger 
-63500800 Magic Smithscript Dagger 
-63500900 Cold Smithscript Dagger 
-63501000 Poison Smithscript Dagger 
-63501100 Blood Smithscript Dagger 
-63501200 Occult Smithscript Dagger 
-64500000 Backhand Blade 
-64500100 Heavy Backhand Blade 
-64500200 Keen Backhand Blade 
-64500300 Quality Backhand Blade 
-64500400 Fire Backhand Blade 
-64500500 Flame Art Backhand Blade 
-64500600 Lightning Backhand Blade 
-64500700 Sacred Backhand Blade 
-64500800 Magic Backhand Blade 
-64500900 Cold Backhand Blade 
-64501000 Poison Backhand Blade 
-64501100 Blood Backhand Blade 
-64501200 Occult Backhand Blade 
-64510000 Smithscript Cirque 
-64510100 Heavy Smithscript Cirque 
-64510200 Keen Smithscript Cirque 
-64510300 Quality Smithscript Cirque 
-64510400 Fire Smithscript Cirque 
-64510500 Flame Art Smithscript Cirque 
-64510600 Lightning Smithscript Cirque 
-64510700 Sacred Smithscript Cirque 
-64510800 Magic Smithscript Cirque 
-64510900 Cold Smithscript Cirque 
-64511000 Poison Smithscript Cirque 
-64511100 Blood Smithscript Cirque 
-64511200 Occult Smithscript Cirque 
-64520000 Curseblade's Cirque 
-66500000 Great Katana 
-66500100 Heavy Great Katana 
-66500200 Keen Great Katana 
-66500300 Quality Great Katana 
-66500400 Fire Great Katana 
-66500500 Flame Art Great Katana 
-66500600 Lightning Great Katana 
-66500700 Sacred Great Katana 
-66500800 Magic Great Katana 
-66500900 Cold Great Katana 
-66501000 Poison Great Katana 
-66501100 Blood Great Katana 
-66501200 Occult Great Katana 
-66510000 Dragon-Hunter's Great Katana 
-66520000 Rakshasa's Great Katana 
-67500000 Milady 
-67500100 Heavy Milady 
-67500200 Keen Milady 
-67500300 Quality Milady 
-67500400 Fire Milady 
-67500500 Flame Art Milady 
-67500600 Lightning Milady 
-67500700 Sacred Milady 
-67500800 Magic Milady 
-67500900 Cold Milady 
-67501000 Poison Milady 
-67501100 Blood Milady 
-67501200 Occult Milady 
-67510000 Leda's Sword 
-67520000 Rellana's Twin Blades 
-68500000 Beast Claw 
-68500100 Heavy Beast Claw 
-68500200 Keen Beast Claw 
-68500300 Quality Beast Claw 
-68500400 Fire Beast Claw 
-68500500 Flame Art Beast Claw 
-68500600 Lightning Beast Claw 
-68500700 Sacred Beast Claw 
-68500800 Magic Beast Claw 
-68500900 Cold Beast Claw 
-68501000 Poison Beast Claw 
-68501100 Blood Beast Claw 
-68501200 Occult Beast Claw 
-68510000 Red Bear's Claw 
+53500000 Rabbath's Greatbolt
+60500000 Dryleaf Arts
+60500100 Heavy Dryleaf Arts
+60500200 Keen Dryleaf Arts
+60500300 Quality Dryleaf Arts
+60500400 Fire Dryleaf Arts
+60500500 Flame Art Dryleaf Arts
+60500600 Lightning Dryleaf Arts
+60500700 Sacred Dryleaf Arts
+60500800 Magic Dryleaf Arts
+60500900 Cold Dryleaf Arts
+60501000 Poison Dryleaf Arts
+60501100 Blood Dryleaf Arts
+60501200 Occult Dryleaf Arts
+60510000 Dane's Footwork
+60510100 Dane's Heavy Footwork
+60510200 Dane's Keen Footwork
+60510300 Dane's Quality Footwork
+60510400 Dane's Fire Footwork
+60510500 Dane's Flame Art Footwork
+60510600 Dane's Lightning Footwork
+60510700 Dane's Sacred Footwork
+60510800 Dane's Magic Footwork
+60510900 Dane's Cold Footwork
+60511000 Dane's Poison Footwork
+60511100 Dane's Blood Footwork
+60511200 Dane's Occult Footwork
+61500000 Firespark Perfume Bottle
+61510000 Chilling Perfume Bottle
+61520000 Frenzyflame Perfume Bottle
+61530000 Lightning Perfume Bottle
+61540000 Deadly Poison Perfume Bottle
+62500000 Dueling Shield
+62500100 Heavy Dueling Shield
+62500200 Keen Dueling Shield
+62500300 Quality Dueling Shield
+62500400 Fire Dueling Shield
+62500500 Flame Art Dueling Shield
+62500600 Lightning Dueling Shield
+62500700 Sacred Dueling Shield
+62500800 Magic Dueling Shield
+62500900 Cold Dueling Shield
+62501000 Poison Dueling Shield
+62501100 Blood Dueling Shield
+62501200 Occult Dueling Shield
+62510000 Carian Thrusting Shield
+62510100 Heavy Carian Thrusting Shield
+62510200 Keen Carian Thrusting Shield
+62510300 Quality Carian Thrusting Shield
+62510400 Fire Carian Thrusting Shield
+62510500 Flame Art Carian Thrusting Shield
+62510600 Lightning Carian Thrusting Shield
+62510700 Sacred Carian Thrusting Shield
+62510800 Magic Carian Thrusting Shield
+62510900 Cold Carian Thrusting Shield
+62511000 Poison Carian Thrusting Shield
+62511100 Blood Carian Thrusting Shield
+62511200 Occult Carian Thrusting Shield
+63500000 Smithscript Dagger
+63500100 Heavy Smithscript Dagger
+63500200 Keen Smithscript Dagger
+63500300 Quality Smithscript Dagger
+63500400 Fire Smithscript Dagger
+63500500 Flame Art Smithscript Dagger
+63500600 Lightning Smithscript Dagger
+63500700 Sacred Smithscript Dagger
+63500800 Magic Smithscript Dagger
+63500900 Cold Smithscript Dagger
+63501000 Poison Smithscript Dagger
+63501100 Blood Smithscript Dagger
+63501200 Occult Smithscript Dagger
+64500000 Backhand Blade
+64500100 Heavy Backhand Blade
+64500200 Keen Backhand Blade
+64500300 Quality Backhand Blade
+64500400 Fire Backhand Blade
+64500500 Flame Art Backhand Blade
+64500600 Lightning Backhand Blade
+64500700 Sacred Backhand Blade
+64500800 Magic Backhand Blade
+64500900 Cold Backhand Blade
+64501000 Poison Backhand Blade
+64501100 Blood Backhand Blade
+64501200 Occult Backhand Blade
+64510000 Smithscript Cirque
+64510100 Heavy Smithscript Cirque
+64510200 Keen Smithscript Cirque
+64510300 Quality Smithscript Cirque
+64510400 Fire Smithscript Cirque
+64510500 Flame Art Smithscript Cirque
+64510600 Lightning Smithscript Cirque
+64510700 Sacred Smithscript Cirque
+64510800 Magic Smithscript Cirque
+64510900 Cold Smithscript Cirque
+64511000 Poison Smithscript Cirque
+64511100 Blood Smithscript Cirque
+64511200 Occult Smithscript Cirque
+64520000 Curseblade's Cirque
+66500000 Great Katana
+66500100 Heavy Great Katana
+66500200 Keen Great Katana
+66500300 Quality Great Katana
+66500400 Fire Great Katana
+66500500 Flame Art Great Katana
+66500600 Lightning Great Katana
+66500700 Sacred Great Katana
+66500800 Magic Great Katana
+66500900 Cold Great Katana
+66501000 Poison Great Katana
+66501100 Blood Great Katana
+66501200 Occult Great Katana
+66510000 Dragon-Hunter's Great Katana
+66520000 Rakshasa's Great Katana
+67500000 Milady
+67500100 Heavy Milady
+67500200 Keen Milady
+67500300 Quality Milady
+67500400 Fire Milady
+67500500 Flame Art Milady
+67500600 Lightning Milady
+67500700 Sacred Milady
+67500800 Magic Milady
+67500900 Cold Milady
+67501000 Poison Milady
+67501100 Blood Milady
+67501200 Occult Milady
+67510000 Leda's Sword
+67520000 Rellana's Twin Blades
+68500000 Beast Claw
+68500100 Heavy Beast Claw
+68500200 Keen Beast Claw
+68500300 Quality Beast Claw
+68500400 Fire Beast Claw
+68500500 Flame Art Beast Claw
+68500600 Lightning Beast Claw
+68500700 Sacred Beast Claw
+68500800 Magic Beast Claw
+68500900 Cold Beast Claw
+68501000 Poison Beast Claw
+68501100 Blood Beast Claw
+68501200 Occult Beast Claw
+68510000 Red Bear's Claw

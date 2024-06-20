@@ -160,7 +160,7 @@
 7220 [Incantation] Poison Mist
 7230 [Incantation] Poison Armament
 7240 [Incantation] Scarlet Aeonia
-7300 [Incantation] Inescapable Frenzy 
+7300 [Incantation] Inescapable Frenzy
 7310 [Incantation] The Flame Of Frenzy
 7311 [Incantation] Unendurable Frenzy
 7320 [Incantation] Frenzied Burst
@@ -239,7 +239,7 @@
 53802 [NPC: Sorcery] Ambush Shard 1
 53803 [NPC: Sorcery] Night Comet 1
 53804 [NPC: Sorcery] Ambush Shard 2
-53805 [NPC: Sorcery] Night Comet 2 
+53805 [NPC: Sorcery] Night Comet 2
 53820 [NPC: Incantation] Catch Flame
 53821 [NPC: Incantation] Burn O' Flame!
 53822 [NPC: Incantation] Surge O' Flame!

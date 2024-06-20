@@ -1,0 +1,3 @@
+10 ダメージ音(ダイナミックダイアログ)のSEID
+100 Enemy屋外(PC屋内)時のAuxSendBusID【GR】SEQ15746 【サウンド】敵・NPCの現在位置によるリバーブ変更
+101 Enemy屋内(PC屋内)時のAuxSendBusID【GR】SEQ15746 【サウンド】敵・NPCの現在位置によるリバーブ変更

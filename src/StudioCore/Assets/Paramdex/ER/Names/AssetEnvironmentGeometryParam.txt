@@ -1,9 +1,9 @@
 96201 Aurora Borealis (Blue-Green)
 99004 Imp Statue (holding book)
-99008 Imp Statue (holding hatchet)
 99007 Imp Statue (holding hatchet)
+99008 Imp Statue (holding hatchet)
 99009 Broken Imp Statue (with book)
-99010 Winged Man Statue 
+99010 Winged Man Statue
 99012 Bear Trap
 99013 Wooden Chest
 99015 Summoning Effigy
@@ -29,8 +29,8 @@
 99696 Arteria Leaf
 99710 Dewkissed Herba
 99720 Rowa Fruit
-99722 Rimed Rowa
 99721 Golden Rowa
+99722 Rimed Rowa
 99723 Bloodrose
 99730 Rowa Fruit
 99740 Eye of Yelough

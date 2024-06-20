@@ -1,0 +1,5 @@
+0 Disable
+1 Low
+2 Middle
+3 High
+4 Ultra
