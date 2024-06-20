@@ -426,6 +426,11 @@ public class ProjectHandler
     {
         var success = PlatformUtils.Instance.OpenFileDialog("Choose the project json file", new[] { FilterStrings.ProjectJsonFilter }, out var projectJsonPath);
 
+        if(CurrentProject == null)
+        {
+            CurrentProject = new Project();
+        }
+
         // Fill CurrentProject.Config with contents
         CurrentProject.Config = ReadProjectConfig(projectJsonPath);
 

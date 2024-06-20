@@ -33,6 +33,11 @@ public class NewProjectModal
             NewProjectOpts = new NewProjectOptions();
         }
 
+        if (Smithbox.ProjectHandler.CurrentProject == null)
+        {
+            Smithbox.ProjectHandler.CurrentProject = new Project();
+        }
+
         if (Smithbox.ProjectHandler.CurrentProject.Config == null)
         {
             Smithbox.ProjectHandler.CurrentProject.Config = new ProjectConfiguration();
@@ -138,6 +143,7 @@ public class NewProjectModal
         //
 
         ImGui.Separator();
+
         if (Smithbox.ProjectHandler.CurrentProject.Config.GameType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3)
         {
             ImGui.NewLine();
@@ -167,96 +173,95 @@ public class NewProjectModal
         ImGui.Checkbox("##loadDefaultNames", ref NewProjectOpts.loadDefaultNames);
         ImGui.NewLine();
 
-        if (Smithbox.ProjectHandler.CurrentProject.Config.GameType == ProjectType.Undefined)
-        {
-            ImGui.BeginDisabled();
-        }
-
         if (ImGui.Button("Create", new Vector2(120, 0) * Smithbox.GetUIScale()))
         {
-            var validated = true;
-            if (Smithbox.ProjectHandler.CurrentProject.Config.GameRoot == null ||
-                !Directory.Exists(Smithbox.ProjectHandler.CurrentProject.Config.GameRoot))
+            if (Smithbox.ProjectHandler.CurrentProject.Config.GameType != ProjectType.Undefined)
+            {
+                var validated = true;
+                if (Smithbox.ProjectHandler.CurrentProject.Config.GameRoot == null ||
+                    !Directory.Exists(Smithbox.ProjectHandler.CurrentProject.Config.GameRoot))
+                {
+                    PlatformUtils.Instance.MessageBox(
+                        "Your game executable path does not exist. Please select a valid executable.", "Error",
+                        MessageBoxButtons.OK);
+                    validated = false;
+                }
+
+                if (validated && Smithbox.ProjectHandler.CurrentProject.Config.GameType == ProjectType.Undefined)
+                {
+                    PlatformUtils.Instance.MessageBox("Your game executable is not a valid supported game.",
+                        "Error",
+                        MessageBoxButtons.OK);
+                    validated = false;
+                }
+
+                if (validated && (NewProjectOpts.directory == null ||
+                                  !Directory.Exists(NewProjectOpts.directory)))
+                {
+                    PlatformUtils.Instance.MessageBox("Your selected project directory is not valid.", "Error",
+                        MessageBoxButtons.OK);
+                    validated = false;
+                }
+
+                if (validated && File.Exists($@"{NewProjectOpts.directory}\project.json"))
+                {
+                    DialogResult message = PlatformUtils.Instance.MessageBox(
+                        "Your selected project directory already contains a project.json. Would you like to replace it?",
+                        "Error",
+                        MessageBoxButtons.YesNo);
+                    if (message == DialogResult.No)
+                    {
+                        validated = false;
+                    }
+                }
+
+                if (validated && Smithbox.ProjectHandler.CurrentProject.Config.GameRoot == NewProjectOpts.directory)
+                {
+                    DialogResult message = PlatformUtils.Instance.MessageBox(
+                        "Project Directory is the same as Game Directory, which allows game files to be overwritten directly.\n\n" +
+                        "It's highly recommended you use the Mod Engine mod folder as your project folder instead (if possible).\n\n" +
+                        "Continue and create project anyway?", "Caution",
+                        MessageBoxButtons.OKCancel);
+                    if (message != DialogResult.OK)
+                    {
+                        validated = false;
+                    }
+                }
+
+                if (validated && (Smithbox.ProjectHandler.CurrentProject.Config.ProjectName == null ||
+                                   Smithbox.ProjectHandler.CurrentProject.Config.ProjectName == ""))
+                {
+                    PlatformUtils.Instance.MessageBox("You must specify a project name.", "Error",
+                        MessageBoxButtons.OK);
+                    validated = false;
+                }
+
+                var gameroot = Smithbox.ProjectHandler.CurrentProject.Config.GameRoot;
+
+                Smithbox.ProjectHandler.CheckUnpackedState();
+
+                if (validated)
+                {
+                    // Remove previous CurrentProject entries for these variables
+                    Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams = new();
+                    Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows = new();
+                    Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields = new();
+
+                    Smithbox.ProjectHandler.CurrentProject.Config.GameRoot = gameroot;
+                    Smithbox.ProjectHandler.CurrentProject.ProjectJsonPath = $@"{NewProjectOpts.directory}\project.json";
+
+                    Smithbox.ProjectHandler.WriteProjectConfig();
+                    Smithbox.ProjectHandler.LoadProject(Smithbox.ProjectHandler.CurrentProject.ProjectJsonPath);
+
+                    ImGui.CloseCurrentPopup();
+                }
+            }
+            else
             {
                 PlatformUtils.Instance.MessageBox(
-                    "Your game executable path does not exist. Please select a valid executable.", "Error",
-                    MessageBoxButtons.OK);
-                validated = false;
+                        "No valid game has been detected. Please select a valid executable.", "Error",
+                        MessageBoxButtons.OK);
             }
-
-            if (validated && Smithbox.ProjectHandler.CurrentProject.Config.GameType == ProjectType.Undefined)
-            {
-                PlatformUtils.Instance.MessageBox("Your game executable is not a valid supported game.",
-                    "Error",
-                    MessageBoxButtons.OK);
-                validated = false;
-            }
-
-            if (validated && (NewProjectOpts.directory == null ||
-                              !Directory.Exists(NewProjectOpts.directory)))
-            {
-                PlatformUtils.Instance.MessageBox("Your selected project directory is not valid.", "Error",
-                    MessageBoxButtons.OK);
-                validated = false;
-            }
-
-            if (validated && File.Exists($@"{NewProjectOpts.directory}\project.json"))
-            {
-                DialogResult message = PlatformUtils.Instance.MessageBox(
-                    "Your selected project directory already contains a project.json. Would you like to replace it?",
-                    "Error",
-                    MessageBoxButtons.YesNo);
-                if (message == DialogResult.No)
-                {
-                    validated = false;
-                }
-            }
-
-            if (validated && Smithbox.ProjectHandler.CurrentProject.Config.GameRoot == NewProjectOpts.directory)
-            {
-                DialogResult message = PlatformUtils.Instance.MessageBox(
-                    "Project Directory is the same as Game Directory, which allows game files to be overwritten directly.\n\n" +
-                    "It's highly recommended you use the Mod Engine mod folder as your project folder instead (if possible).\n\n" +
-                    "Continue and create project anyway?", "Caution",
-                    MessageBoxButtons.OKCancel);
-                if (message != DialogResult.OK)
-                {
-                    validated = false;
-                }
-            }
-
-            if (validated && (Smithbox.ProjectHandler.CurrentProject.Config.ProjectName == null ||
-                               Smithbox.ProjectHandler.CurrentProject.Config.ProjectName == ""))
-            {
-                PlatformUtils.Instance.MessageBox("You must specify a project name.", "Error",
-                    MessageBoxButtons.OK);
-                validated = false;
-            }
-
-            var gameroot = Smithbox.ProjectHandler.CurrentProject.Config.GameRoot;
-
-            Smithbox.ProjectHandler.CheckUnpackedState();
-
-            if (validated)
-            {
-                // Remove previous CurrentProject entries for these variables
-                Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams = new();
-                Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows = new();
-                Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields = new();
-
-                Smithbox.ProjectHandler.CurrentProject.Config.GameRoot = gameroot;
-                Smithbox.ProjectHandler.CurrentProject.ProjectJsonPath = $@"{NewProjectOpts.directory}\project.json";
-
-                Smithbox.ProjectHandler.WriteProjectConfig();
-                Smithbox.ProjectHandler.LoadProject(Smithbox.ProjectHandler.CurrentProject.ProjectJsonPath);
-
-                ImGui.CloseCurrentPopup();
-            }
-        }
-
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-        {
-            ImGui.EndDisabled();
         }
 
         ImGui.SameLine();
