@@ -58,12 +58,12 @@ public class FMGItemParamDecorator : IParamDecorator
     }
 
 
-
     public void DecorateParam(Param.Row row)
     {
         PopulateDecorator();
         FMG.Entry entry = null;
         _entryCache.TryGetValue(row.ID, out entry);
+
 
         if (entry != null)
         {
@@ -90,6 +90,7 @@ public class FMGItemParamDecorator : IParamDecorator
 
     private void PopulateDecorator()
     {
+        // FMG Name decoration on row 
         if (_entryCache.Count == 0 && FMGBank.IsLoaded)
         {
             List<FMG.Entry> fmgEntries = FMGBank.GetFmgEntriesByCategory(_category, false);

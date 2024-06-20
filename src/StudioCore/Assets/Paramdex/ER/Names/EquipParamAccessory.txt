@@ -113,4 +113,43 @@
 6080 Furled Finger's Trick-Mirror
 6090 Host's Trick-Mirror
 6100 Entwining Umbilical Cord
-6110 Ancestral Spirit's Horn
+6110 Ancestral Spirit's Horne
+7000 Crimson Amber Medallion +3
+7010 Cerulean Amber Medallion +3
+7020 Viridian Amber Medallion +3
+7030 Two-Headed Turtle Talisman
+7040 Stalwart Horn Charm +2
+7050 Immunizing Horn Charm +2
+7060 Clarifying Horn Charm +2
+7080 Mottled Necklace +2
+7090 Spelldrake Talisman +3
+7100 Flamedrake Talisman +3
+7110 Boltdrake Talisman +3
+7120 Golden Braid
+7130 Pearldrake Talisman +3
+7140 Crimson Seed Talisman +1
+7150 Cerulean Seed Talisman +1
+8000 Blessed Blue Dew Talisman
+8010 Fine Crucible Feather Talisman
+8020 Outer God Heirloom
+8030 Shattered Stone Talisman
+8040 Two-Handed Sword Talisman
+8050 Crusade Insignia
+8060 Aged One's Exultation
+8070 Arrow's Soaring Sting Talisman
+8090 Pearl Shield Talisman
+8100 Dried Bouquet
+8110 Smithing Talisman
+8120 Ailment Talisman
+8130 Retaliatory Crossed-Tree
+8140 Lacerating Crossed-Tree
+8150 Sharpshot Talisman
+8160 St. Trina's Smile
+8170 Talisman of the Dread
+8180 Enraged Divine Beast
+8190 Beloved Stardust
+8200 Talisman of Lord's Bestowal
+8210 Verdigris Discus
+8220 Rellana's Cameo
+8230 Blade of Mercy
+8240 Talisman of All Crucibles

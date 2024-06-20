@@ -329,12 +329,14 @@ namespace SoulsFormats
             }
         }
 
+        // TODO: actually implement this properly
         public static byte[] WriteZstd(BinaryWriterEx bw, byte compressionLevel, Span<byte> input)
         {
             using var compressor = new Compressor(new CompressionOptions(compressionLevel));
             return compressor.Wrap(input).ToArray();
         }
 
+        // TODO: actually implement this properly
         public static byte[] ReadZstd(BinaryReaderEx br, int compressedSize)
         {
             byte[] compressed = br.ReadBytes(compressedSize);

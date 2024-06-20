@@ -623,3 +623,148 @@
 2010000 Mushroom Crown
 2020000 Black Dumpling
 2030000 Lazuli Robe
+3000000 Dane's Hat
+3000100 Dryleaf Robe
+3000200 Dryleaf Arm Wraps
+3000300 Dryleaf Cuissardes
+3001100 Dryleaf Robe (Altered)
+3010000 Gaius's Helm
+3010100 Gaius's Armor
+3010200 Gaius's Gauntlets
+3010300 Gaius's Greaves
+5000000 Oathseeker Knight Helm
+5000100 Leda's Armor
+5000200 Oathseeker Knight Gauntlets
+5000300 Oathseeker Knight Greaves
+5002100 Oathseeker Knight Armor
+5010000 Verdigris Helm
+5010100 Verdigris Armor
+5010200 Verdigris Gauntlets
+5010300 Verdigris Greaves
+5020000 Pelt of Ralva
+5020100 Iron Rivet Armor
+5020200 Iron Rivet Gauntlets
+5020300 Iron Rivet Greaves
+5021000 Fang Helm
+5030000 Thiollier's Mask
+5030100 Thiollier's Garb
+5030200 Thiollier's Gloves
+5030300 Thiollier's Trousers
+5031100 Thiollier's Garb (Altered)
+5060000 High Priest Hat
+5060100 High Priest Robe
+5060200 High Priest Gloves
+5060300 High Priest Undergarments
+5062100 Finger Robe
+5070000 Caterpillar Mask
+5070100 Braided Cord Robe
+5070200 Braided Arm Wraps
+5070300 Soiled Loincloth
+5080000 Dancer's Hood
+5080100 Dancer's Dress
+5080200 Dancer's Bracer
+5080300 Dancer's Trousers
+5081100 Dancer's Dress (Altered)
+5090000 Helm of Night
+5090100 Armor of Night
+5090200 Gauntlets of Night
+5090300 Greaves of Night
+5100000 Igon's Helm
+5100100 Igon's Armor
+5100200 Igon's Gauntlets
+5100300 Igon's Loincloth
+5101000 Igon's Helm (Altered)
+5101100 Igon's Armor (Altered)
+5110000 Wise Man's Mask
+5110100 Ansbach's Attire
+5110200 Ansbach's Manchettes
+5110300 Ansbach's Boots
+5111100 Ansbach's Attire (Altered)
+5120000 Freyja's Helm
+5120100 Freyja's Armor
+5120200 Freyja's Gauntlets
+5120300 Freyja's Greaves
+5121100 Freyja's Armor (Altered)
+5130000 Helm of Solitude
+5130100 Armor of Solitude
+5130200 Gauntlets of Solitude
+5130300 Greaves of Solitude
+5131100 Armor of Solitude (Altered)
+5140000 Messmer Soldier Helm
+5140100 Messmer Soldier Armor
+5140200 Messmer Soldier Gauntlets
+5140300 Messmer Soldier Greaves
+5141100 Messmer Soldier Armor (Altered)
+5150000 Black Knight Helm
+5150100 Black Knight Armor
+5150200 Black Knight Gauntlets
+5150300 Black Knight Greaves
+5160000 Rakshasa Helm
+5160100 Rakshasa Armor
+5160200 Rakshasa Gauntlets
+5160300 Rakshasa Greaves
+5180000 Fire Knight Helm
+5180100 Fire Knight Armor
+5180200 Fire Knight Gauntlets
+5180300 Fire Knight Greaves
+5181100 Fire Knight Armor (Altered)
+5182000 Death Mask Helm
+5183000 Winged Serpent Helm
+5184000 Salza's Hood
+5190000 Leather Headband
+5190100 Gloried Attire
+5190200 Leather Arm Wraps
+5190300 Leather Leg Wraps
+5191000 Leather Crown
+5191100 Highland Attire
+5200000 Death Knight Helm
+5200100 Death Knight Armor
+5200200 Death Knight Gauntlets
+5200300 Death Knight Greaves
+5210000 Curseblade Mask
+5210100 Ascetic's Loincloth
+5210200 Ascetic's Wrist Guards
+5210300 Ascetic's Ankle Guards
+5220000 Messmer's Helm
+5220100 Messmer's Armor
+5220200 Messmer's Gauntlets
+5220300 Messmer's Greaves
+5221000 Messmer's Helm (Altered)
+5230000 Gravebird Helm
+5230100 Gravebird's Blackquill Armor
+5230200 Gravebird Bracelets
+5230300 Gravebird Anklets
+5231100 Gravebird Armor
+5240000 Common Soldier Helm
+5240100 Common Soldier Cloth Armor
+5240200 Common Soldier Gauntlets
+5240300 Common Soldier Greaves
+5250000 Horned Warrior Helm
+5250100 Horned Warrior Armor
+5250200 Horned Warrior Gauntlets
+5250300 Horned Warrior Greaves
+5252000 Divine Beast Helm
+5252100 Divine Beast Warrior Armor
+5253000 Divine Bird Helm
+5253100 Divine Bird Warrior Armor
+5253200 Divine Bird Warrior Gauntlets
+5253300 Divine Bird Warrior Greaves
+5260000 Rellana's Helm
+5260100 Rellana's Armor
+5260200 Rellana's Gloves
+5260300 Rellana's Greaves
+5270000 Young Lion's Helm
+5270100 Young Lion's Armor
+5270200 Young Lion's Gauntlets
+5270300 Young Lion's Greaves
+5271100 Young Lion's Armor (Altered)
+5272000 Circlet of Light
+5280000 Shadow Militiaman Helm
+5280100 Shadow Militiaman Armor
+5280200 Shadow Militiaman Gauntlets
+5280300 Shadow Militiaman Greaves
+5290000 Divine Beast Head
+5300000 St. Trina's Blossom
+5310000 Crucible Hammer-Helm
+5320000 Greatjar
+5330000 Imp Head (Lion)

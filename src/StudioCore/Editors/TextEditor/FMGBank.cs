@@ -227,9 +227,9 @@ public enum FmgIDType
     TitleRings_SOTE = 316,
     SummaryRings_SOTE = 317,
     DescriptionRings_SOTE = 318,
-    TitleAshOfWar_SOTE = 322,
-    SummaryAshOfWar_SOTE = 323,
-    DescriptionAshOfWar_SOTE = 324,
+    TitleGem_SOTE = 322,
+    SummaryGem_SOTE = 323,
+    DescriptionGem_SOTE = 324,
     TitleSpells_SOTE = 325,
     SummarySpells_SOTE = 326,
     DescriptionSpells_SOTE = 327,
@@ -238,9 +238,9 @@ public enum FmgIDType
 
     GoodsDialog_SOTE = 330,
     TitleSwordArts_SOTE = 331,
-    DescriptionSwordArts_SOTE = 332,
+    SummarySwordArts_SOTE = 332,
     WeaponEffect_SOTE = 333,
-    GemEffect_SOTE = 334,
+    ERUnk45_SOTE = 334,
     GoodsInfo2_SOTE = 335,
 
     // ER - Menu: SOTE
@@ -251,11 +251,11 @@ public enum FmgIDType
     ActionButtonText_SOTE = 365,
     EventTextForTalk_SOTE = 366,
     EventTextForMap_SOTE = 367,
-    MenuText_SOTE = 368,
-    LineHelp_SOTE = 369,
-    KeyGuide_SOTE = 370,
-    SystemMessage_SOTE = 371,
-    Dialogues_SOTE = 372,
+    Modern_MenuText_SOTE = 368,
+    Modern_LineHelp_SOTE = 369,
+    Modern_KeyGuide_SOTE = 370,
+    Modern_SystemMessage_win64_SOTE = 371,
+    Modern_Dialogues_SOTE = 372,
     LoadingTitle_SOTE = 373,
     LoadingText_SOTE = 374,
     TutorialTitle_SOTE = 375,
@@ -277,7 +277,8 @@ public enum FmgIDType
     TutorialBody2023 = 74,
 
     // Multiple use cases. Differences are applied in ApplyGameDifferences();
-    ReusedFMG_32 = 32,
+    // ER: ActionButtonText
+    ReusedFMG_32 = 32, 
 
     // FMG 32
     // BB:  GemExtraInfo
@@ -333,7 +334,7 @@ public static partial class FMGBank
     /// <summary>
     ///     List of strings to compare with "FmgIDType" name to identify patch FMGs.
     /// </summary>
-    private static readonly List<string> patchStrings = new() { "_Patch", "_DLC1", "_DLC2"};
+    private static readonly List<string> patchStrings = new() { "_Patch", "_DLC1", "_DLC2", "_SOTE"};
 
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
@@ -453,13 +454,13 @@ public static partial class FMGBank
                 return FmgEntryCategory.Locations;
 
             case FmgIDType.DescriptionGem:
-            case FmgIDType.TitleAshOfWar_SOTE:
-            case FmgIDType.SummaryAshOfWar_SOTE:
-            case FmgIDType.DescriptionAshOfWar_SOTE:
+            case FmgIDType.TitleGem_SOTE:
+            case FmgIDType.SummaryGem_SOTE:
+            case FmgIDType.DescriptionGem_SOTE:
                 return FmgEntryCategory.Gem;
 
             case FmgIDType.TitleSwordArts_SOTE:
-            case FmgIDType.DescriptionSwordArts_SOTE:
+            case FmgIDType.SummarySwordArts_SOTE:
             case FmgIDType.SummarySwordArts:
                 return FmgEntryCategory.SwordArts;
 
@@ -528,9 +529,9 @@ public static partial class FMGBank
             case FmgIDType.DescriptionArmor_SOTE:
             case FmgIDType.DescriptionGoods_SOTE:
             case FmgIDType.DescriptionRings_SOTE:
-            case FmgIDType.DescriptionAshOfWar_SOTE:
+            case FmgIDType.DescriptionGem_SOTE:
             case FmgIDType.DescriptionSpells_SOTE:
-            case FmgIDType.DescriptionSwordArts_SOTE:
+            case FmgIDType.SummarySwordArts_SOTE:
                 return FmgEntryTextType.Description;
 
             case FmgIDType.SummaryGoods:
@@ -555,7 +556,7 @@ public static partial class FMGBank
             case FmgIDType.SummaryArmor_SOTE:
             case FmgIDType.SummaryGoods_SOTE:
             case FmgIDType.SummaryRings_SOTE:
-            case FmgIDType.SummaryAshOfWar_SOTE:
+            case FmgIDType.SummaryGem_SOTE:
             case FmgIDType.SummarySpells_SOTE:
             case FmgIDType.TutorialTitle_SOTE:
                 return FmgEntryTextType.Summary;
@@ -597,7 +598,7 @@ public static partial class FMGBank
             case FmgIDType.TitleArmor_SOTE:
             case FmgIDType.TitleGoods_SOTE:
             case FmgIDType.TitleRings_SOTE:
-            case FmgIDType.TitleAshOfWar_SOTE:
+            case FmgIDType.TitleGem_SOTE:
             case FmgIDType.TitleSpells_SOTE:
             case FmgIDType.TitleCharacters_SOTE:
             case FmgIDType.TitleLocations_SOTE:
@@ -896,6 +897,7 @@ public static partial class FMGBank
     private static void SetFMGInfoPatchParent(FMGInfo info)
     {
         var strippedName = RemovePatchStrings(info.Name);
+
         if (strippedName != info.Name)
         {
             // This is a patch FMG, try to find parent FMG.
