@@ -47,7 +47,7 @@ public class Project
         GameRootDirectory = "";
         GameModDirectory = "";
         ProjectJsonPath = "";
-        Config = null;
+        Config = new ProjectConfiguration();
     }
 }
 

@@ -70,8 +70,6 @@ public class Smithbox
 
     public static EventHandler UIScaleChanged;
 
-    public static bool ShowNewProjectModal = false;
-
     public unsafe Smithbox(IGraphicsContext context, string version)
     {
         _version = version;
@@ -100,8 +98,7 @@ public class Smithbox
 
         // Project
         ProjectHandler = new ProjectHandler();
-        ProjectHandler.LoadLastProject();
-        ProjectHandler.UpdateProjectVariables();
+        ProjectHandler.HandleProjectSelection();
 
         // Banks
         BankHandler = new BankHandler();
@@ -121,10 +118,10 @@ public class Smithbox
         // Soapstone Service
         _soapstoneService = new SoapstoneService(_version);
 
-        // Load CurrentProject Project
-        ProjectHandler.LoadProject(ProjectHandler.CurrentProject.ProjectJsonPath);
-        if (ProjectType != ProjectType.Undefined)
+        // Load previous project properly now
+        if (!ProjectHandler.IsInitialLoad)
         {
+            ProjectHandler.LoadProject(ProjectHandler.CurrentProject.ProjectJsonPath);
             ProjectHandler.UpdateTimer();
         }
 
@@ -528,7 +525,6 @@ public class Smithbox
         Tracy.TracyCZoneEnd(ctx);
 
         ctx = Tracy.TracyCZoneN(1, "Menu");
-        ShowNewProjectModal = false;
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 0.0f);
 
         if (ImGui.BeginMainMenuBar())
@@ -562,12 +558,12 @@ public class Smithbox
             ImGui.EndMainMenuBar();
         }
 
+        ProjectHandler.OnGui();
         WindowHandler.OnGui();
 
         ImGui.PopStyleVar();
         Tracy.TracyCZoneEnd(ctx);
 
-        var open = true;
         ImGui.PushStyleVar(ImGuiStyleVar.WindowRounding, 7.0f);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 1.0f);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(14.0f, 8.0f) * scale);
@@ -591,19 +587,6 @@ public class Smithbox
         if (WindowHandler.DebugWindow._showImGuiStackToolWindow)
         {
             ImGui.ShowStackToolWindow(ref WindowHandler.DebugWindow._showImGuiStackToolWindow);
-        }
-
-        // New project modal
-        if (ShowNewProjectModal)
-        {
-            ImGui.OpenPopup("New Project");
-        }
-
-        if (ImGui.BeginPopupModal("New Project", ref open, ImGuiWindowFlags.AlwaysAutoResize))
-        {
-            ProjectHandler.NewProjectModal.CreateNewProjectModal();
-
-            ImGui.EndPopup();
         }
 
         ImGui.PopStyleVar(3);

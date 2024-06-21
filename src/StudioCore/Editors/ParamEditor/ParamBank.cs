@@ -1314,20 +1314,17 @@ public class ParamBank
                             () => RefreshAllParamDiffCaches(true)));
                     }));
 
-                if (Smithbox.ProjectHandler.NewProjectModal.NewProjectOpts != null)
+                if (Smithbox.ProjectHandler.NewProjectModal.loadDefaultRowNamesOnCreation)
                 {
-                    if (Smithbox.ProjectHandler.NewProjectModal.NewProjectOpts.loadDefaultNames)
+                    try
                     {
-                        try
-                        {
-                            new ActionManager().ExecuteAction(PrimaryBank.LoadParamDefaultNames());
-                            PrimaryBank.SaveParams();
-                        }
-                        catch
-                        {
-                            TaskLogs.AddLog("Could not locate or apply name files",
-                                LogLevel.Warning);
-                        }
+                        new ActionManager().ExecuteAction(PrimaryBank.LoadParamDefaultNames());
+                        PrimaryBank.SaveParams();
+                    }
+                    catch
+                    {
+                        TaskLogs.AddLog("Could not locate or apply name files",
+                            LogLevel.Warning);
                     }
                 }
             }));

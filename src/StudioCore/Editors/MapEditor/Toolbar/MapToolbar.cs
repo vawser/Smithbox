@@ -95,7 +95,11 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             if (!Directory.Exists(_prefabDir))
             {
-                Directory.CreateDirectory(_prefabDir);
+                try
+                {
+                    Directory.CreateDirectory(_prefabDir);
+                }
+                catch { }
             }
 
             RefreshPrefabList();

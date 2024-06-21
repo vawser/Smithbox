@@ -141,13 +141,13 @@ public class EditorHandler
         {
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_SaveCurrentEditor))
             {
-                Smithbox.ProjectHandler.WriteProjectConfig();
+                Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                 SaveFocusedEditor();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_SaveAllCurrentEditor))
             {
-                Smithbox.ProjectHandler.WriteProjectConfig();
+                Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                 SaveAllFocusedEditor();
             }
         }
@@ -162,7 +162,8 @@ public class EditorHandler
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.File}");
             if (ImGui.MenuItem("New Project", "", false, !TaskManager.AnyActiveTasks()))
             {
-                Smithbox.ShowNewProjectModal = true;
+                Smithbox.ProjectHandler.ClearProject();
+                Smithbox.ProjectHandler.IsInitialLoad = true;
             }
 
             // Open Project
@@ -222,7 +223,7 @@ public class EditorHandler
                 if (ImGui.MenuItem($"Save Selected {FocusedEditor.SaveType}",
                         KeyBindings.Current.Core_SaveCurrentEditor.HintText))
                 {
-                    Smithbox.ProjectHandler.WriteProjectConfig();
+                    Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                     SaveFocusedEditor();
                 }
 
@@ -230,7 +231,7 @@ public class EditorHandler
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
                 if (ImGui.MenuItem($"Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.Core_SaveAllCurrentEditor.HintText))
                 {
-                    Smithbox.ProjectHandler.WriteProjectConfig();
+                    Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                     SaveAllFocusedEditor();
                 }
             }

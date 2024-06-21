@@ -1,5 +1,7 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
+using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using StudioCore.Interface.Modals;
 using StudioCore.Locators;
@@ -7,6 +9,7 @@ using StudioCore.Platform;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -28,36 +31,34 @@ public class ProjectHandler
 
     public CFG.RecentProject RecentProject;
 
+    public bool IsInitialLoad = false;
+    public bool ShowProjectLoadSelection = true;
+
     public ProjectHandler()
     {
         CurrentProject = new Project();
         NewProjectModal = new NewProjectModal();
     }
 
-    public void LoadLastProject()
+    public void HandleProjectSelection()
     {
-        if (CFG.Current.LastProjectFile == null)
-            return;
-
-        if (CFG.Current.LastProjectFile == "")
-            return;
-
-        if (!File.Exists(CFG.Current.LastProjectFile))
-            return;
-
-        var lastProjectPath = CFG.Current.LastProjectFile;
-
-        // Fill CurrentProject.Config with contents
-        CurrentProject.Config = ReadProjectConfig(lastProjectPath);
-
-        if (CurrentProject.Config == null)
+        // Load previous project if it exists
+        if (CFG.Current.LastProjectFile != null && CFG.Current.LastProjectFile != "" && File.Exists(CFG.Current.LastProjectFile))
         {
-            CFG.Current.LastProjectFile = "";
-            CFG.Save();
-            return;
-        }
+            var lastProjectPath = CFG.Current.LastProjectFile;
 
-        LoadProject(lastProjectPath, false);
+            CurrentProject.Config = ReadProjectConfig(lastProjectPath);
+            
+            UpdateProjectVariables();
+
+            LoadProject(lastProjectPath, false);
+        }
+        // Otherwise display new project window
+        else
+        {
+            IsInitialLoad = true;
+            UpdateProjectVariables();
+        }
     }
 
     public void LoadProject(string path, bool update = true)
@@ -70,16 +71,16 @@ public class ProjectHandler
             return;
         }
 
-        SetGameRootPrompt();
-        CheckUnpackedState();
-        CheckDecompressionDLLs();
+        SetGameRootPrompt(CurrentProject);
+        CheckUnpackedState(CurrentProject);
+        CheckDecompressionDLLs(CurrentProject);
 
         Smithbox.ProjectType = CurrentProject.Config.GameType;
         Smithbox.GameRoot = CurrentProject.Config.GameRoot;
         Smithbox.ProjectRoot = Path.GetDirectoryName(path);
         Smithbox.SmithboxDataRoot = $"{Smithbox.ProjectRoot}\\.smithbox";
-        CurrentProject.ProjectJsonPath = path;
-        CFG.Current.LastProjectFile = path;
+
+        CFG.Current.LastProjectFile = Smithbox.ProjectRoot;
         CFG.Save();
 
         Smithbox.SetProgramTitle($"Smithbox - {CurrentProject.Config.ProjectName}");
@@ -93,6 +94,24 @@ public class ProjectHandler
         }
 
         AddProjectToRecentList();
+    }
+
+    public void LoadProjectFromJSON(string jsonPath)
+    {
+        if (CurrentProject == null)
+        {
+            CurrentProject = new Project();
+        }
+
+        // Fill CurrentProject.Config with contents
+        CurrentProject.Config = ReadProjectConfig(jsonPath);
+
+        if (CurrentProject.Config == null)
+        {
+            return;
+        }
+
+        LoadProject(jsonPath);
     }
 
     public void ClearProject()
@@ -109,22 +128,24 @@ public class ProjectHandler
 
     public void UpdateProjectVariables()
     {
-        if (CurrentProject == null)
-            return;
-
-        //
-        if (CurrentProject.Config == null)
-        {
-            CurrentProject.Config = new ProjectConfiguration();
-            CFG.Current.LastProjectFile = "";
-            return;
-        }
-
         Smithbox.SetProgramTitle($"Smithbox - {CurrentProject.Config.ProjectName}");
         Smithbox.ProjectType = CurrentProject.Config.GameType;
         Smithbox.GameRoot = CurrentProject.Config.GameRoot;
         Smithbox.ProjectRoot = Path.GetDirectoryName(CurrentProject.ProjectJsonPath);
         Smithbox.SmithboxDataRoot = $"{Smithbox.ProjectRoot}\\.smithbox";
+    }
+    public void OnGui()
+    {
+        if (IsInitialLoad)
+        {
+            ImGui.OpenPopup("Project Creation");
+        }
+        if (ImGui.BeginPopupModal("Project Creation", ref IsInitialLoad, ImGuiWindowFlags.AlwaysAutoResize))
+        {
+            NewProjectModal.DisplayProjectSelection();
+
+            ImGui.EndPopup();
+        }
     }
 
     public void AddProjectToRecentList()
@@ -154,13 +175,13 @@ public class ProjectHandler
         return config;
     }
 
-    public void WriteProjectConfig()
+    public void WriteProjectConfig(Project targetProject)
     {
-        if(CurrentProject == null) 
+        if(targetProject == null) 
             return;
 
-        var config = CurrentProject.Config;
-        var writePath = CurrentProject.ProjectJsonPath;
+        var config = targetProject.Config;
+        var writePath = targetProject.ProjectJsonPath;
 
         if (writePath != "")
         {
@@ -181,38 +202,38 @@ public class ProjectHandler
         }
     }
 
-    public void SetGameRootPrompt()
+    public void SetGameRootPrompt(Project targetProject)
     {
-        if (CurrentProject == null)
+        if (targetProject == null)
             return;
 
-        if (!Directory.Exists(CurrentProject.Config.GameRoot))
+        if (!Directory.Exists(targetProject.Config.GameRoot))
         {
             PlatformUtils.Instance.MessageBox(
-                $@"Could not find game data directory for {CurrentProject.Config.GameType}. Please select the game executable.",
+                $@"Could not find game data directory for {targetProject.Config.GameType}. Please select the game executable.",
                 "Error",
                 MessageBoxButtons.OK);
 
             while (true)
             {
                 if (PlatformUtils.Instance.OpenFileDialog(
-                        $"Select executable for {CurrentProject.Config.GameType}...",
+                        $"Select executable for {targetProject.Config.GameType}...",
                         new[] { FilterStrings.GameExecutableFilter },
                         out var path))
                 {
-                    CurrentProject.Config.GameRoot = path;
-                    ProjectType gametype = GetProjectTypeFromExecutable(CurrentProject.Config.GameRoot);
+                    targetProject.Config.GameRoot = path;
+                    ProjectType gametype = GetProjectTypeFromExecutable(targetProject.Config.GameRoot);
 
-                    if (gametype == CurrentProject.Config.GameType)
+                    if (gametype == targetProject.Config.GameType)
                     {
-                        CurrentProject.Config.GameRoot = Path.GetDirectoryName(CurrentProject.Config.GameRoot);
+                        targetProject.Config.GameRoot = Path.GetDirectoryName(targetProject.Config.GameRoot);
 
-                        if (CurrentProject.Config.GameType == ProjectType.BB)
+                        if (targetProject.Config.GameType == ProjectType.BB)
                         {
-                            CurrentProject.Config.GameRoot += @"\dvdroot_ps4";
+                            targetProject.Config.GameRoot += @"\dvdroot_ps4";
                         }
 
-                        WriteProjectConfig();
+                        WriteProjectConfig(targetProject);
 
                         break;
                     }
@@ -230,55 +251,55 @@ public class ProjectHandler
         }
     }
 
-    public void CheckUnpackedState()
+    public void CheckUnpackedState(Project targetProject)
     {
-        if (CurrentProject == null)
+        if (targetProject == null)
             return;
 
-        if (!ResourceLocatorUtils.CheckFilesExpanded(CurrentProject.Config.GameRoot, CurrentProject.Config.GameType))
+        if (!ResourceLocatorUtils.CheckFilesExpanded(targetProject.Config.GameRoot, targetProject.Config.GameType))
         {
-            if (CurrentProject.Config.GameType is ProjectType.DS1 or ProjectType.DS2S or ProjectType.DS2)
+            if (targetProject.Config.GameType is ProjectType.DS1 or ProjectType.DS2S or ProjectType.DS2)
             {
                 TaskLogs.AddLog(
-                    $"The files for {CurrentProject.Config.GameType} do not appear to be unpacked. Please use UDSFM for DS1:PTDE and UXM for DS2 to unpack game files",
+                    $"The files for {targetProject.Config.GameType} do not appear to be unpacked. Please use UDSFM for DS1:PTDE and UXM for DS2 to unpack game files",
                     LogLevel.Error, TaskLogs.LogPriority.High);
             }
 
             TaskLogs.AddLog(
-                $"The files for {CurrentProject.Config.GameType} do not appear to be fully unpacked. Functionality will be limited. Please use UXM selective unpacker to unpack game files",
+                $"The files for {targetProject.Config.GameType} do not appear to be fully unpacked. Functionality will be limited. Please use UXM selective unpacker to unpack game files",
                 LogLevel.Warning);
         }
     }
 
-    public void CheckDecompressionDLLs()
+    public void CheckDecompressionDLLs(Project targetProject)
     {
-        if (CurrentProject == null)
+        if (targetProject == null)
             return;
 
-        if (CurrentProject.Config.GameType == ProjectType.SDT || CurrentProject.Config.GameType == ProjectType.ER)
+        if (targetProject.Config.GameType == ProjectType.SDT || targetProject.Config.GameType == ProjectType.ER)
         {
-            StealGameDllIfMissing("oo2core_6_win64");
+            StealGameDllIfMissing(targetProject, "oo2core_6_win64");
         }
-        else if (CurrentProject.Config.GameType == ProjectType.AC6)
+        else if (targetProject.Config.GameType == ProjectType.AC6)
         {
-            StealGameDllIfMissing("oo2core_8_win64");
+            StealGameDllIfMissing(targetProject, "oo2core_8_win64");
         }
     }
 
-    public void StealGameDllIfMissing(string dllName)
+    public void StealGameDllIfMissing(Project targetProject, string dllName)
     {
-        if (CurrentProject == null)
+        if (targetProject == null)
             return;
 
         dllName = dllName + ".dll";
 
-        var rootDllPath = Path.Join(CurrentProject.Config.GameRoot, dllName);
+        var rootDllPath = Path.Join(targetProject.Config.GameRoot, dllName);
         var projectDllPath = Path.Join(Path.GetFullPath("."), dllName);
 
         if (!File.Exists(rootDllPath))
         {
             PlatformUtils.Instance.MessageBox(
-                $"Could not find file \"{dllName}\" in \"{CurrentProject.Config.GameRoot}\", which should be included by default.\n\nTry verifying or reinstalling the game.",
+                $"Could not find file \"{dllName}\" in \"{targetProject.Config.GameRoot}\", which should be included by default.\n\nTry verifying or reinstalling the game.",
                 "Error",
                 MessageBoxButtons.OK);
         }
@@ -367,7 +388,7 @@ public class ProjectHandler
             {
                 if (CFG.Current.System_EnableAutoSave_Project)
                 {
-                    WriteProjectConfig();
+                    WriteProjectConfig(CurrentProject);
                 }
 
                 if (CFG.Current.System_EnableAutoSave_MapEditor)
@@ -428,20 +449,8 @@ public class ProjectHandler
     {
         var success = PlatformUtils.Instance.OpenFileDialog("Choose the project json file", new[] { FilterStrings.ProjectJsonFilter }, out var projectJsonPath);
 
-        if(CurrentProject == null)
-        {
-            CurrentProject = new Project();
-        }
-
-        // Fill CurrentProject.Config with contents
-        CurrentProject.Config = ReadProjectConfig(projectJsonPath);
-
-        if (CurrentProject.Config == null)
-        {
-            return;
-        }
-
-        LoadProject(projectJsonPath);
+        LoadProjectFromJSON(projectJsonPath);
+        Smithbox.ProjectHandler.IsInitialLoad = false;
     }
 
     public void DisplayRecentProjects()
@@ -559,20 +568,8 @@ public class ProjectHandler
             {
                 var path = p.ProjectFile;
 
-                if(CurrentProject == null)
-                {
-                    CurrentProject = new Project();
-                }
-
-                // Fill CurrentProject.Config with contents
-                CurrentProject.Config = ReadProjectConfig(path);
-
-                if (CurrentProject.Config == null)
-                {
-                    return;
-                }
-
-                LoadProject(path);
+                LoadProjectFromJSON(path);
+                Smithbox.ProjectHandler.IsInitialLoad = false;
             }
             else
             {
