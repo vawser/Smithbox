@@ -90,7 +90,7 @@ public static class ResourceTextLocator
         }
         else if (Smithbox.ProjectType == ProjectType.ER)
         {
-            path = $@"msg\{langFolder}\{msgBndType}_dlc01.msgbnd.dcx";
+            path = $@"msg\{langFolder}\{msgBndType}_dlc02.msgbnd.dcx";
         }
 
         if (writemode)

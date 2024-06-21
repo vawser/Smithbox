@@ -1,14 +1,14 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Locators;
 using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Locators;
-using StudioCore.Core;
 
 namespace StudioCore.TextEditor;
 
@@ -214,7 +214,7 @@ public enum FmgIDType
     TutorialBody = 208,
     TextEmbedImageName_win64 = 209,
 
-    // ER - Item: SOTE
+    // ER - Item: SOTE - DLC1
     TitleWeapons_SOTE = 310,
     SummaryWeapons_SOTE = 311,
     DescriptionWeapons_SOTE = 312,
@@ -243,7 +243,7 @@ public enum FmgIDType
     ERUnk45_SOTE = 334,
     GoodsInfo2_SOTE = 335,
 
-    // ER - Menu: SOTE
+    // ER - Menu: SOTE - DLC1
     TalkMsg_SOTE = 360,
     BloodMsg_SOTE = 361,
     MovieSubtitle_SOTE = 362,
@@ -260,6 +260,53 @@ public enum FmgIDType
     LoadingText_SOTE = 374,
     TutorialTitle_SOTE = 375,
     TutorialBody_SOTE = 376,
+
+    // ER - Item: SOTE - DLC2
+    TitleWeapons_SOTE_DLC2 = 410,
+    SummaryWeapons_SOTE_DLC2 = 411,
+    DescriptionWeapons_SOTE_DLC2 = 412,
+    TitleArmor_SOTE_DLC2 = 413,
+    SummaryArmor_SOTE_DLC2 = 414,
+    DescriptionArmor_SOTE_DLC2 = 415,
+    TitleGoods_SOTE_DLC2 = 419,
+    SummaryGoods_SOTE_DLC2 = 420,
+    DescriptionGoods_SOTE_DLC2 = 421,
+    TitleRings_SOTE_DLC2 = 416,
+    SummaryRings_SOTE_DLC2 = 417,
+    DescriptionRings_SOTE_DLC2 = 418,
+    TitleGem_SOTE_DLC2 = 422,
+    SummaryGem_SOTE_DLC2 = 423,
+    DescriptionGem_SOTE_DLC2 = 424,
+    TitleSpells_SOTE_DLC2 = 425,
+    SummarySpells_SOTE_DLC2 = 426,
+    DescriptionSpells_SOTE_DLC2 = 427,
+    TitleCharacters_SOTE_DLC2 = 428,
+    TitleLocations_SOTE_DLC2 = 429,
+
+    GoodsDialog_SOTE_DLC2 = 430,
+    TitleSwordArts_SOTE_DLC2 = 431,
+    SummarySwordArts_SOTE_DLC2 = 432,
+    WeaponEffect_SOTE_DLC2 = 433,
+    ERUnk45_SOTE_DLC2 = 434,
+    GoodsInfo2_SOTE_DLC2 = 435,
+
+    // ER - Menu: SOTE - DLC2
+    TalkMsg_SOTE_DLC2 = 460,
+    BloodMsg_SOTE_DLC2 = 461,
+    MovieSubtitle_SOTE_DLC2 = 462,
+    NetworkMessage_SOTE_DLC2 = 464,
+    ActionButtonText_SOTE_DLC2 = 465,
+    EventTextForTalk_SOTE_DLC2 = 466,
+    EventTextForMap_SOTE_DLC2 = 467,
+    Modern_MenuText_SOTE_DLC2 = 468,
+    Modern_LineHelp_SOTE_DLC2 = 469,
+    Modern_KeyGuide_SOTE_DLC2 = 470,
+    Modern_SystemMessage_win64_SOTE_DLC2 = 471,
+    Modern_Dialogues_SOTE_DLC2 = 472,
+    LoadingTitle_SOTE_DLC2 = 473,
+    LoadingText_SOTE_DLC2 = 474,
+    TutorialTitle_SOTE_DLC2 = 475,
+    TutorialBody_SOTE_DLC2 = 476,
 
     // AC6 - Item
     TitleBooster = 38,
@@ -334,7 +381,7 @@ public static partial class FMGBank
     /// <summary>
     ///     List of strings to compare with "FmgIDType" name to identify patch FMGs.
     /// </summary>
-    private static readonly List<string> patchStrings = new() { "_Patch", "_DLC1", "_DLC2", "_SOTE" };
+    private static readonly List<string> patchStrings = new() { "_Patch", "_DLC1", "_DLC2", "_SOTE", "_SOTE_DLC2" };
 
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
