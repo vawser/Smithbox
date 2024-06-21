@@ -500,6 +500,8 @@
       <SortID>7400</SortID>
     </Field>
     
+    <Field Def="dummy8 reserved41_old[52]" RemovedVersion="11210015" />
+    
     <Field Def="s32 unknown_0xcc" FirstVersion="11210015" />
     <Field Def="s32 unknown_0xd0" FirstVersion="11210015" />
     <Field Def="s32 unknown_0xd4" FirstVersion="11210015" />
@@ -507,7 +509,7 @@
     <Field Def="s32 unknown_0xdc" FirstVersion="11210015" />
     <Field Def="s32 unknown_0xe0" FirstVersion="11210015" />
     
-    <Field Def="dummy8 reserved41[28]">
+    <Field Def="dummy8 reserved41[28]" FirstVersion="11210015" >
       <DisplayName>予約</DisplayName>
       <Description>(dummy8)</Description>
       <SortID>8037</SortID>

@@ -111,9 +111,11 @@
       <SortID>13</SortID>
     </Field>
     
+    <Field Def="dummy8 m_dummy[3]" RemovedVersion="11210015" />
+    
     <Field Def="u8 m_RayTracingQuality" FirstVersion="11210015" />
     
-    <Field Def="dummy8 m_dummy[2]">
+    <Field Def="dummy8 m_dummy[2]" FirstVersion="11210015" >
       <DisplayName>dmy</DisplayName>
       <DisplayFormat>%u</DisplayFormat>
       <EditFlags>Wrap</EditFlags>

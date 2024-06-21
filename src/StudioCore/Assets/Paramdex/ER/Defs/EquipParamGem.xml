@@ -371,14 +371,17 @@
       <Maximum>23</Maximum>
       <SortID>390</SortID>
     </Field>
-    <Field Def="u8 unknown_0x36" FirstVersion="11210015" />
     
-    <Field Def="dummy8 pad2[1]">
+    <Field Def="dummy8 pad2_old[2]" RemovedVersion="11210015" />
+    
+    <Field Def="u8 unknown_0x36" FirstVersion="11210015" />
+    <Field Def="dummy8 pad2[1]" FirstVersion="11210015" >
       <Description>pad2</Description>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
       <SortID>6304</SortID>
     </Field>
+    
     <Field Def="u8 canMountWep_Dagger:1">
       <DisplayName>短剣</DisplayName>
       <Enum>EQUIP_BOOL</Enum>
@@ -674,24 +677,24 @@
       <SortID>6305</SortID>
     </Field>
     
-    
     <Field Def="u8 canMountWep_HandToHand:1" FirstVersion="11210015" />
     <Field Def="u8 canMountWep_PerfumeBottle:1" FirstVersion="11210015" />
     <Field Def="u8 canMountWep_ThrustingShield:1" FirstVersion="11210015" />
     <Field Def="u8 canMountWep_ThrowingWeapon:1" FirstVersion="11210015" />
     
+    <Field Def="dummy8 reserved2_canMountWep_old[3]" RemovedVersion="11210015" />
+    
     <Field Def="u8 canMountWep_ReverseHandSword:1" FirstVersion="11210015" />
     <Field Def="u8 canMountWep_LightGreatsword:1" FirstVersion="11210015" />
     <Field Def="u8 canMountWep_GreatKatana:1" FirstVersion="11210015" />
     <Field Def="u8 canMountWep_BeastClaw:1" FirstVersion="11210015" />
-    
     <Field Def="dummy8 reserved_canMountWep_0x3d_4:4" FirstVersion="11210015" />
-    
-    <Field Def="dummy8 reserved2_canMountWep[2]">
+    <Field Def="dummy8 reserved2_canMountWep[2]" FirstVersion="11210015" >
       <DisplayName>予約領域（装着可能な武器種別か）</DisplayName>
       <Description>装着可能な武器種別かの予約領域（全部で64bit分確保）</Description>
       <SortID>6306</SortID>
     </Field>
+    
     <Field Def="s32 spEffectMsgId0 = -1">
       <DisplayName>効果テキストID00</DisplayName>
       <Description>効果テキストID00(Gem_Effect)。ステータスに表示する魔石の効果テキスト</Description>

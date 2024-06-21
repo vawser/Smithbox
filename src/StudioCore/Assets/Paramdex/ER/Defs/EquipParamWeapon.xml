@@ -1944,9 +1944,11 @@
       <SortID>7830</SortID>
     </Field>
     
+    <Field Def="dummy8 pad_old[8]" RemovedVersion="11210015" />
+    
     <Field Def="u8 unknown_0x290" FirstVersion="11210015" />
     
-    <Field Def="dummy8 pad[7]">
+    <Field Def="dummy8 pad[7]" FirstVersion="11210015">
       <Description>pad</Description>
       <SortID>30104</SortID>
     </Field>

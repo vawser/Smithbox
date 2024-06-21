@@ -255,6 +255,7 @@ public class ParamBank
         foreach ((var f, PARAMDEF pdef) in defPairs)
         {
             var fName = f.Substring(f.LastIndexOf('\\') + 1);
+
             if (CFG.Current.Param_UseProjectMeta)
             {
                 var metaDir = ResourceParamLocator.GetParammetaDir();

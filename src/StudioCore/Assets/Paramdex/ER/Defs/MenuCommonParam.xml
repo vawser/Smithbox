@@ -583,6 +583,8 @@
       <UnkC8>PC馬HPゲージ</UnkC8>
     </Field>
     
+    <Field Def="dummy8 reserved33_old[32]" RemovedVersion="11210015" />
+    
     <Field Def="u8 unknown_0xe0" FirstVersion="11210015" />
     <Field Def="u8 unknown_0xe1" FirstVersion="11210015" />
     <Field Def="u8 unknown_0xe2" FirstVersion="11210015" />
@@ -599,7 +601,7 @@
     <Field Def="u8 unknown_0xed" FirstVersion="11210015" />
     <Field Def="u8 unknown_0xee" FirstVersion="11210015" />
     
-    <Field Def="dummy8 reserved33[17]">
+    <Field Def="dummy8 reserved33[17]" FirstVersion="11210015" >
       <DisplayName>予約</DisplayName>
       <Description>(dummy8)</Description>
       <SortID>13002</SortID>

@@ -150,16 +150,18 @@
       <SortID>3100</SortID>
     </Field>
     
+    <Field Def="dummy8 pad8_old[4]" RemovedVersion="11210015" />
+    
     <Field Def="u8 unknown_0x50" FirstVersion="11210015" />
     <Field Def="u8 unknown_0x51" FirstVersion="11210015" />
-    
-    <Field Def="dummy8 pad8[2]">
+    <Field Def="dummy8 pad8[2]" FirstVersion="11210015" >
       <DisplayName>pad</DisplayName>
       <Description>pad</Description>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
       <SortID>10001</SortID>
     </Field>
+    
     <Field Def="s32 elixir_material00 = -1">
       <DisplayName>エリクサー用素材ID1</DisplayName>
       <Description>エリクサー用素材ID1</Description>

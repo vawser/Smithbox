@@ -79,11 +79,13 @@
       <UnkC8>a003</UnkC8>
     </Field>
     
+    <Field Def="dummy8 pad_old[14]" RemovedVersion="11210015" />
+    
     <Field Def="s16 unknown_0x12" FirstVersion="11210015" />
     <Field Def="s16 unknown_0x14" FirstVersion="11210015" />
     <Field Def="s16 unknown_0x16" FirstVersion="11210015" />
     
-    <Field Def="dummy8 pad[8]">
+    <Field Def="dummy8 pad[8]" FirstVersion="11210015" >
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
       <SortID>11</SortID>

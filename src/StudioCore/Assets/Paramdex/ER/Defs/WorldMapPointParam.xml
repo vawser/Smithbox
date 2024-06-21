@@ -126,9 +126,10 @@
       <SortID>810</SortID>
     </Field>
     
-    <Field Def="u8 dispMask02:1" FirstVersion="11210015"/>
+    <Field Def="dummy8 pad2_0:6" RemovedVersion="11210015"/>
     
-    <Field Def="dummy8 pad2_0:5">
+    <Field Def="u8 dispMask02:1" FirstVersion="11210015"/>
+    <Field Def="dummy8 pad2_0:5" FirstVersion="11210015" >
       <DisplayName>パッド</DisplayName>
       <Description>pad2_0</Description>
       <SortID>2904</SortID>
@@ -536,11 +537,13 @@
       <UnkC8>FE</UnkC8>
     </Field>
     
+    <Field Def="dummy8 pad4_old[9]" RemovedVersion="11210015" />
+    
     <Field Def="u8 unknown_0xb7" FirstVersion="11210015" />
     <Field Def="u8 unknown_0xb8" FirstVersion="11210015" />
     <Field Def="u8 unknown_0xb9" FirstVersion="11210015" />
     
-    <Field Def="dummy8 pad4[6]">
+    <Field Def="dummy8 pad4[6]" FirstVersion="11210015" >
       <DisplayName>パッド</DisplayName>
       <Description>pad3</Description>
       <SortID>2907</SortID>

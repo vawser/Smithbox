@@ -599,16 +599,18 @@
       <SortID>2240</SortID>
     </Field>
     
+    <Field Def="dummy8 pad1_old:7" RemovedVersion="11210015" />
+    
     <Field Def="u8 unknown_0x73_1:1" FirstVersion="11210015" />
     <Field Def="u8 unknown_0x73_2:1" FirstVersion="11210015" />
-    
-    <Field Def="dummy8 pad1:5">
+    <Field Def="dummy8 pad1:5" FirstVersion="11210015" >
       <DisplayName>pad</DisplayName>
       <Description>（旧ログ用アイコン）</Description>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
       <SortID>100005</SortID>
     </Field>
+    
     <Field Def="s32 saleValue = -1">
       <DisplayName>販売価格</DisplayName>
       <Description>販売価格</Description>

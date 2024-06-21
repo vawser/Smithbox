@@ -306,13 +306,15 @@
       <SortID>1030</SortID>
     </Field>
     
+    <Field Def="dummy8 pad2[28]" RemovedVersion="11210015" />
+    
     <Field Def="s32 unknown_0xa4" FirstVersion="11210015" />
     <Field Def="s32 unknown_0xa8" FirstVersion="11210015" />
     <Field Def="s32 unknown_0xac" FirstVersion="11210015" />
     <Field Def="s32 unknown_0xb0" FirstVersion="11210015" />
     <Field Def="s32 unknown_0xb4" FirstVersion="11210015" />
     
-    <Field Def="dummy8 pad2[8]">
+    <Field Def="dummy8 pad2[8]" FirstVersion="11210015" >
       <DisplayName>予約</DisplayName>
       <Description>予約</Description>
       <SortID>2002</SortID>

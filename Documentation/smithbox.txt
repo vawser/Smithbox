@@ -116,3 +116,5 @@ MSB Changes:
 
 Rework how the Text Editor patching system works, currently it is fragile and awkward due to bnd ID map sharing across multiple games
  Just map the BND ids explicitly (e.g. 412 -> 312 -> 12)
+
+FirstVersion="11210015"

@@ -143,6 +143,8 @@
       <SortID>13000</SortID>
     </Field>
     
+    <Field Def="dummy8 pad2_old[40]" RemovedVersion="11210015" />
+    
     <Field Def="u8 unknown_0x38" FirstVersion="11210015" />
     <Field Def="u8 unknown_0x3c" FirstVersion="11210015" />
     <Field Def="u8 unknown_0x40" FirstVersion="11210015" />
@@ -150,7 +152,7 @@
     <Field Def="u8 unknown_0x48" FirstVersion="11210015" />
     <Field Def="u8 unknown_0x4c" FirstVersion="11210015" />
     
-    <Field Def="dummy8 pad2[34]">
+    <Field Def="dummy8 pad2[34]" FirstVersion="11210015" >
       <SortID>13002</SortID>
     </Field>
   </Fields>

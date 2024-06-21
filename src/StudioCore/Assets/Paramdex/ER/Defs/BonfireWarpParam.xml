@@ -105,13 +105,15 @@
       <SortID>810</SortID>
     </Field>
     
-    <Field Def="u8 dispMask02:1" FirstVersion="11210015" />
+    <Field Def="dummy8 pad1_old:6" RemovedVersion="11210015" />
     
-    <Field Def="dummy8 pad1:5">
+    <Field Def="u8 dispMask02:1" FirstVersion="11210015" />
+    <Field Def="dummy8 pad1:5" FirstVersion="11210015" >
       <DisplayName>パッド</DisplayName>
       <Description>pad1:6</Description>
       <SortID>1707</SortID>
     </Field>
+    
     <Field Def="dummy8 pad2[1]">
       <DisplayName>パッド</DisplayName>
       <Description>pad2</Description>
@@ -448,6 +450,7 @@
       <Maximum>999999999</Maximum>
       <SortID>1703</SortID>
     </Field>
+    
     <Field Def="s32 textEnableFlag2Id1" FirstVersion="10310059" />
     <Field Def="s32 textEnableFlag2Id2" FirstVersion="10310059" />
     <Field Def="s32 textEnableFlag2Id3" FirstVersion="10310059" />

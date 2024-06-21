@@ -310,9 +310,10 @@
       <UnkC8>乱入</UnkC8>
     </Field>
     
-    <Field Def="u8 unknown_0x7c" />
+    <Field Def="dummy8 pad_1_old[4]" RemovedVersion="11210015" />
     
-    <Field Def="dummy8 pad_1[3]">
+    <Field Def="u8 unknown_0x7c" FirstVersion="11210015" />
+    <Field Def="dummy8 pad_1[3]" FirstVersion="11210015" >
       <DisplayName>予約</DisplayName>
       <DisplayFormat>%f</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
@@ -321,6 +322,7 @@
       <UnkC0>NET_BREAKIN_PARAM</UnkC0>
       <UnkC8>乱入</UnkC8>
     </Field>
+    
     <Field Def="f32 keyGuideRange = 1">
       <DisplayName>キーガイド水平範囲[m]</DisplayName>
       <Minimum>0</Minimum>
