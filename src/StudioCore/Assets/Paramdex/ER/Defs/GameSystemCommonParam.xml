@@ -1499,12 +1499,16 @@
       <Maximum>1</Maximum>
       <SortID>20500</SortID>
     </Field>
-    <Field Def="dummy8 reserve4_2[4]">
+    
+     <Field Def="dummy8 reserve4_2[4]" RemovedVersion="11210015">
       <DisplayName>リザーブ</DisplayName>
       <Description>(dummy8)</Description>
       <DisplayFormat>%f</DisplayFormat>
       <SortID>70001</SortID>
     </Field>
+    
+    <Field Def="s32 unknown_0x230" FirstVersion="11210015" />
+    
     <Field Def="f32 aiSightRate_sunloss_light = 1">
       <DisplayName>AI視界倍率_太陽が見えない場所(明るい)</DisplayName>
       <Description>AI視界倍率_太陽が見えない場所(明るい)</Description>
@@ -2193,82 +2197,67 @@
       <Increment>0.1</Increment>
       <SortID>40001</SortID>
     </Field>
+    
     <Field Def="dummy8 reserved_124[48]" RemovedVersion="10701000">
       <DisplayName>予約</DisplayName>
       <Description>(dummy8)</Description>
       <SortID>70003</SortID>
     </Field>
-    <Field Def="dummy8 reserved_124[32]" FirstVersion="10701000">
+    
+    <Field Def="dummy8 reserved_124[32]" FirstVersion="10701000" RemovedVersion="11210015">
       <DisplayName>予約</DisplayName>
       <Description>(dummy8)</Description>
       <SortID>70003</SortID>
     </Field>
-    <Field Def="f32 unkR00" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR04" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR08" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR12" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR16" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR20" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR24" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR28" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR32" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR36" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR40" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR44" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR48" FirstVersion="10701000">
-    </Field>
-    <Field Def="f32 unkR52" FirstVersion="10701000">
-    </Field>
-    <Field Def="dummy8 reserved_124_2[40]" FirstVersion="10701000">
-    </Field>
-    <Field Def="s32 Unknown0" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown1" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown2" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown3" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown4" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown5" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown6" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown7" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown8" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown9" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown10" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown11" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown12" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown13" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown14" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown15" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown16" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown17" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown18" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown19" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown20" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown21" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown22" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown23" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown24" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown25" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown26" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown27" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown28" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown29" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown30" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown31" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown32" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown33" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown34" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown35" FirstVersion="11210015"/>
+    
+    <Field Def="s32 unknown_0x2f0" FirstVersion="11210015" />
+    <Field Def="s32 unknown_0x2f4" FirstVersion="11210015" />
+    <Field Def="s32 unknown_0x2f8" FirstVersion="11210015" />
+    <Field Def="s32 unknown_0x2fc" FirstVersion="11210015" />
+    <Field Def="s32 unknown_0x300" FirstVersion="11210015" />
+    <Field Def="s32 unknown_0x304" FirstVersion="11210015" />
+    <Field Def="s32 unknown_0x308" FirstVersion="11210015" />
+    <Field Def="s32 unknown_0x30c" FirstVersion="11210015" />
+    
+    <Field Def="f32 unknown_0x310" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x314" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x318" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x31c" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x320" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x324" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x328" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x32c" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x330" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x334" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x338" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x33c" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x340" FirstVersion="10701000" />
+    <Field Def="f32 unknown_0x344" FirstVersion="10701000" />
+    
+    <Field Def="dummy8 pad_0x348[40]" FirstVersion="10701000" RemovedVersion="11210015"/>
+    
+    <Field Def="s32 unknown_0x34c" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x350" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x354" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x358" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x35c" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x360" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x364" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x368" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x36c" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x370" FirstVersion="11210015"/>
+    
+    <Field Def="s32 unknown_0x374" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x378" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x37c" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x380" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x384" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x388" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x38c" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x390" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x394" FirstVersion="11210015"/>
+    
+    <Field Def="dummy8 endPad[108]" FirstVersion="11210015"/>
 
   </Fields>
 </PARAMDEF>

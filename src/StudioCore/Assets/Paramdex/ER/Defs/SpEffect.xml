@@ -2520,22 +2520,31 @@
 	  <Enum>SP_EFFECT_BOOL</Enum>
 	  <Maximum>1</Maximum>
 	</Field>
-	<Field Def="u8 0x354_unk5:1" FirstVersion="11210015">
+	<Field Def="u8 isHpBurnEffect:1" FirstVersion="11210015">
 	  <Enum>SP_EFFECT_BOOL</Enum>
 	  <Maximum>1</Maximum>
 	</Field>
-	<Field Def="u8 0x354_unk6:1" FirstVersion="11210015">
+	<Field Def="u8 unknown_0x352_6:1" FirstVersion="11210015">
 	  <Enum>SP_EFFECT_BOOL</Enum>
 	  <Maximum>1</Maximum>
 	</Field>
-	<Field Def="u8 0x354_unk7:1" FirstVersion="11210015">
+	<Field Def="u8 unknown_0x352_7:1" FirstVersion="11210015">
 	  <Enum>SP_EFFECT_BOOL</Enum>
 	  <Maximum>1</Maximum>
 	</Field>
-    <Field Def="dummy8 pad2[1]">
+    
+    <Field Def="u8 unknown_0x353_0:1" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x353_1:1" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x353_2:1" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x353_3:1" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x353_4:1" FirstVersion="11210015" />
+    <Field Def="dummy8 unknown_0x353_5:3" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 pad2[1]" RemovedVersion="11210015" >
       <DisplayName>pad</DisplayName>
       <SortID>470001</SortID>
     </Field>
+    
     <Field Def="f32 changeSuperArmorPoint">
       <DisplayName>最大SA加算値[point]</DisplayName>
       <Description>スーパーアーマー値に加算する値</Description>
@@ -2650,7 +2659,10 @@
       <EditFlags>Wrap</EditFlags>
       <SortID>470002</SortID>
     </Field>
-    <Field Def="dummy8 unk3[4]">
+    
+    <Field Def="s32 spiritDeathSpEffectId" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 unk3[4]" RemovedVersion="11210015" >
       <DisplayName>pad</DisplayName>
       <DisplayFormat>%f</DisplayFormat>
       <EditFlags>Wrap</EditFlags>

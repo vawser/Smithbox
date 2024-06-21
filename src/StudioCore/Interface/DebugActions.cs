@@ -29,9 +29,25 @@ public static class DebugActions
     private static Dictionary<string, Param> _params = new Dictionary<string, Param>();
     private static ulong _paramVersion;
 
-    public static void ValidatePadding()
+    public static void ValidatePadding(bool allParams = false)
     {
-        var selectedParamName = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
+        if(allParams)
+        {
+            foreach(var entry in ParamBank.VanillaBank.Params)
+            {
+                var selectedParamName = entry.Key;
+                ValidatePaddingForParam(selectedParamName);
+            }
+        }
+        else
+        {
+            var selectedParamName = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
+            ValidatePaddingForParam(selectedParamName);
+        }
+    }
+
+    public static void ValidatePaddingForParam(string selectedParamName)
+    {
         var currentParam = ParamBank.VanillaBank.Params[selectedParamName];
         var currentRow = 0;
 

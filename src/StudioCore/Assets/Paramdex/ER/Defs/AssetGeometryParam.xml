@@ -198,7 +198,7 @@
       <Maximum>1</Maximum>
       <SortID>2501</SortID>
     </Field>
-    <Field Def="dummy8 Reserve_2:1">
+    <Field Def="u8 unknown_0x3b_7:1">
       <DisplayName>リザーブ2</DisplayName>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
@@ -855,7 +855,15 @@
       <Description>レガシー_PS4除外割合【GR】SEQ25310</Description>
       <SortID>3</SortID>
     </Field>
-    <Field Def="dummy8 Reserve_0[32]">
+    
+    <Field Def="u8 unknown_0x120" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x121" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x122" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x123" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x124" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x125" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 Reserve_0[26]">
       <DisplayName>リザーブ0</DisplayName>
       <Description>リザーブ0</Description>
       <SortID>99999</SortID>

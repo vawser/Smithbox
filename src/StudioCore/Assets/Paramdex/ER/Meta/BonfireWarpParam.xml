@@ -93,6 +93,7 @@
     <iconId AltName="Icon ID" Wiki="Icon ID" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_" />
     <dispMask00 AltName="Display Setting M00" Wiki="Whether to display with M00" IsBool="" />
     <dispMask01 AltName="Display Setting M01" Wiki="Whether to display with M01" IsBool="" />
+    <dispMask02 AltName="Display Setting M02" Wiki="Whether to display with M02" IsBool="" />
     <pad1 AltName="" IsHidden=""/>
     <pad2 AltName="" IsHidden=""/>
     <areaNo AltName="Map Area" Wiki="AA part of mAA_BB_CC_DD" />

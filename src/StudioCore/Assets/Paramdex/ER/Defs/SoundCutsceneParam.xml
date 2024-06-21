@@ -77,7 +77,13 @@
       <Increment>0.1</Increment>
       <SortID>14</SortID>
     </Field>
-    <Field Def="dummy8 reserved[8]">
+    
+    <Field Def="u8 unknown_0x18" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x19" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x1a" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x1b" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 reserved[4]">
       <DisplayName>リザーブ</DisplayName>
       <Description>リザーブ</Description>
       <SortID>10002</SortID>

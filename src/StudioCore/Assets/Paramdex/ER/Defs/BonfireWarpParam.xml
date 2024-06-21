@@ -104,7 +104,10 @@
       <Maximum>1</Maximum>
       <SortID>810</SortID>
     </Field>
-    <Field Def="dummy8 pad1:6">
+    
+    <Field Def="u8 dispMask02:1" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 pad1:5">
       <DisplayName>パッド</DisplayName>
       <Description>pad1:6</Description>
       <SortID>1707</SortID>

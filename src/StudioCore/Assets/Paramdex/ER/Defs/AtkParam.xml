@@ -1397,7 +1397,11 @@
     </Field>
     <Field Def="s32 finalDamageRateId">
     </Field>
-    <Field Def="dummy8 pad7[12]">
-    </Field>
+    
+    <Field Def="u8 unknown_0x1bc" FirstVersion="11210015"/>
+    <Field Def="u8 unknown_0x1bd" FirstVersion="11210015"/>
+    
+    <Field Def="dummy8 pad7[10]" />
+    
   </Fields>
 </PARAMDEF>

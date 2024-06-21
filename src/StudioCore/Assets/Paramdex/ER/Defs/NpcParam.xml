@@ -1610,12 +1610,16 @@
       <Maximum>100</Maximum>
       <SortID>63400</SortID>
     </Field>
-    <Field Def="dummy8 pad1[1]">
+    
+    <Field Def="u8 unknown_0x1e3" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 pad1[1]" RemovedVersion="11210015">
       <DisplayName>pad</DisplayName>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
       <SortID>2000003</SortID>
     </Field>
+    
     <Field Def="s32 lockCameraParamId = -1">
       <DisplayName>ロックカメラパラメータID</DisplayName>
       <Description>ロックオンされた際にカメラに適用させるロックカメラパラメータのID。最も優先度が高い。-1なら未使用</Description>
@@ -1971,12 +1975,16 @@
       <Maximum>3</Maximum>
       <SortID>470010</SortID>
     </Field>
-    <Field Def="dummy8 pad7[1]">
+    
+    <Field Def="u8 unknown_0x26a" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 pad7[1]" RemovedVersion="11210015">
       <DisplayName>pad</DisplayName>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
       <SortID>2000004</SortID>
     </Field>
+    
     <Field Def="u8 wheelRotType">
       <DisplayName>車輪制御タイプ</DisplayName>
       <Enum>NPC_WHEEL_ROT_TYPE</Enum>
@@ -2191,7 +2199,10 @@
       <Increment>0.1</Increment>
       <SortID>461000</SortID>
     </Field>
-    <Field Def="dummy8 pad12[8]">
+    
+    <Field Def="s32 unknown_0x2d8" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 pad12[4]">
       <DisplayName>パディング12</DisplayName>
       <SortID>2000005</SortID>
     </Field>

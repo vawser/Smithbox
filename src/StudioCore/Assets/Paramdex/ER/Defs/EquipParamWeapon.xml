@@ -1229,12 +1229,18 @@
       <Maximum>1</Maximum>
       <SortID>2530</SortID>
     </Field>
-    <Field Def="dummy8 unk1:3">
+    
+    <Field Def="dummy8 unk1:3" RemovedVersion="11210015">
       <DisplayName>pad</DisplayName>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
       <SortID>30103</SortID>
     </Field>
+    
+    <Field Def="u8 unknown_0x17c_5:1" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x17c_6:1" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x17c_7:1" FirstVersion="11210015" />
+    
     <Field Def="u8 correctType_Magic">
       <DisplayName>補正タイプ（魔法攻撃力）</DisplayName>
       <Enum>WEP_CORRECT_TYPE</Enum>
@@ -1937,7 +1943,10 @@
       <Increment>0.001</Increment>
       <SortID>7830</SortID>
     </Field>
-    <Field Def="dummy8 pad[8]">
+    
+    <Field Def="u8 unknown_0x290" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 pad[7]">
       <Description>pad</Description>
       <SortID>30104</SortID>
     </Field>

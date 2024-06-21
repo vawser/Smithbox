@@ -149,11 +149,15 @@
     </Field>
     <Field Def="u8 swordArtsTypeNew" FirstVersion="10701000">
     </Field>
-    <Field Def="dummy8 pad[1]">
+    
+    <Field Def="u8 unknown_0x19" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 pad[1]" RemovedVersion="11210015" >
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
       <SortID>1104</SortID>
     </Field>
+    
     <Field Def="u16 iconId">
       <DisplayName>アイコンID</DisplayName>
       <Description>FEなどで表示するアイコンのID</Description>

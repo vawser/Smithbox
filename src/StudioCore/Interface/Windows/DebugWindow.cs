@@ -90,13 +90,20 @@ public class DebugWindow
         {
             DebugActions.CalcWorldMapLayout();
         }
-        if (ImGui.Button("Paramdef Validation"))
+
+        if (ImGui.Button("Validate Paramdef"))
         {
             DebugActions.ValidateParamdef();
         }
-        if (ImGui.Button("Padding Validation"))
+
+        if (ImGui.Button("Validate Param Padding (Selected)"))
         {
             DebugActions.ValidatePadding();
+        }
+
+        if (ImGui.Button("Validate Param Padding (All)"))
+        {
+            DebugActions.ValidatePadding(true);
         }
     }
 

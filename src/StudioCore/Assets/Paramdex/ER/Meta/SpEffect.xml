@@ -522,6 +522,7 @@
         <Option Value="467" Name="Hemorrhage Behavior" />
         <Option Value="468" Name="Unknown" />
         <Option Value="469" Name="Unknown" />
+        <Option Value="475" Name="Apply Spirit Summon Death Effect" />
         <Option Value="1000" Name="SkipSpCategoryCheck1" />
         <Option Value="1001" Name="SkipSpCategoryCheck2" />
     </Enum>
@@ -975,6 +976,8 @@ Requires State Info 66" />
     <fakeTargetIgnoreMirageArts AltName="Ignore Fake Target - Phantom" Wiki="You will not be caught by the fake target of the phantom arts system that occurred" IsBool="" />
     <requestForceJoinBlackSOS_B AltName="Force Invasion" Wiki="If checked, issue an intrusion_B request when activated" IsBool="" />
     <isDestinedDeathHpMult AltName="Is Destined Death HP Mult" Wiki="Makes portion of HP bar in UI black when used with max HP multipliers." IsBool="" />
+    <isHpBurnEffect AltName="Is Destined Death HP Effect" Wiki="Determines whether this effect applies Destined Death HP Burn." IsBool="" />
+    
     <pad2 AltName="" IsHidden=""/>
     <changeSuperArmorPoint AltName="Poise +" Wiki="Value to add to the super armor value" />
     <changeSaPoint AltName="Apply Poise Damage +" Wiki="Set how many points to subtract (or add) with one activation" />
@@ -992,6 +995,9 @@ Requires State Info 66" />
     <overwrite_BackHome_LookTargetDist AltName="Override - Look Target Distance" Wiki="When returning home: Distance to see the target [m] _ Overwrite" />
     <goodsConsumptionRate AltName="Item FP Consumption %" Wiki="Item consumption MP multiplier" />
     <guardStaminaMult AltName="Guard Stamina Multiplier" Wiki="Multiplies stamina lost when blocking an attack"/>
+    
+    <spiritDeathSpEffectId AltName="Spirit Summon Death SpEffect ID" Wiki="Special effect ID added at the end of life of spirit summon (-1 is ignored)" Refs="SpEffectParam"/>
+    
   </Field>
   <Self Wiki="Defines various effects that can be applied to the player and to enemies.\nCan define passive, activated, single-use and repeated or continuous application effects with indefinite duration.\nSuccessful application may depend on spCategory or invocationConditions." Row0Dummy="" AlternativeOrder="iconId,-,
   
@@ -1002,7 +1008,7 @@ stateInfo,waitForTriggerStateInfo,invocationConditionsStateChange1,invocationCon
 
 accumuOverFireId,accumuOverVal,accumuUnderFireId,accumuUnderVal,accumuVal,-,
 
-replaceSpEffectId,cycleOccurrenceSpEffectId,atkOccurrenceSpEffectId,applyIdOnGetSoul,-,
+replaceSpEffectId,cycleOccurrenceSpEffectId,atkOccurrenceSpEffectId,spiritDeathSpEffectId,applyIdOnGetSoul,-,
 
 atkAttribute,spAttribute,spAttributeVariationValue,wepParamChange,moveType,throwCondition,deleteCriteriaDamage,-,
 

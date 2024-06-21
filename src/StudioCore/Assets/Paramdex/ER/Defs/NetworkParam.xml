@@ -309,7 +309,10 @@
       <UnkC0>NET_BREAKIN_PARAM</UnkC0>
       <UnkC8>乱入</UnkC8>
     </Field>
-    <Field Def="dummy8 pad_1[4]">
+    
+    <Field Def="u8 unknown_0x7c" />
+    
+    <Field Def="dummy8 pad_1[3]">
       <DisplayName>予約</DisplayName>
       <DisplayFormat>%f</DisplayFormat>
       <EditFlags>Wrap</EditFlags>

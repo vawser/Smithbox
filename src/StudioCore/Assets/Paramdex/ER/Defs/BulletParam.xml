@@ -381,7 +381,10 @@
       <Maximum>1</Maximum>
       <SortID>19100</SortID>
     </Field>
-    <Field Def="dummy8 pad:6">
+    
+    <Field Def="u8 unknown_0x98_3:1" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 pad:5">
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
       <SortID>99202</SortID>
@@ -650,7 +653,7 @@
       <Maximum>1</Maximum>
       <SortID>20100</SortID>
     </Field>
-    <Field Def="dummy8 pad1:1">
+    <Field Def="u8 unknown_0xc3_5:1">
       <DisplayName>pad</DisplayName>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>

@@ -3,7 +3,6 @@
         {
             "id": "default",
             "name": "Default",
-            
             "tags": [
                 "default"
             ]
@@ -11,7 +10,6 @@
         {
             "id": "c0000",
             "name": "Player",
-            
             "tags": [
                 "player",
                 "human"
@@ -20,7 +18,6 @@
         {
             "id": "c2010",
             "name": "Blaidd",
-            
             "tags": [
                 "creature"
             ]
@@ -28,7 +25,6 @@
         {
             "id": "c2030",
             "name": "Rennala",
-            
             "tags": [
                 "creature"
             ]
@@ -36,7 +32,6 @@
         {
             "id": "c2031",
             "name": "Rennala",
-            
             "tags": [
                 "creature"
             ]
@@ -44,7 +39,6 @@
         {
             "id": "c2040",
             "name": "Juvenile Scholar",
-            
             "tags": [
                 "creature"
             ]
@@ -52,7 +46,6 @@
         {
             "id": "c2041",
             "name": "Larva of Rot",
-            
             "tags": [
                 "creature"
             ]
@@ -60,7 +53,6 @@
         {
             "id": "c2050",
             "name": "Ranni the Witch",
-            
             "tags": [
                 "creature"
             ]
@@ -68,7 +60,6 @@
         {
             "id": "c2051",
             "name": "Ranni the Witch",
-            
             "tags": [
                 "creature"
             ]
@@ -76,7 +67,6 @@
         {
             "id": "c2060",
             "name": "The Two Fingers",
-            
             "tags": [
                 "creature"
             ]
@@ -84,7 +74,6 @@
         {
             "id": "c2070",
             "name": "The Three Fingers",
-            
             "tags": [
                 "creature"
             ]
@@ -92,7 +81,6 @@
         {
             "id": "c2100",
             "name": "Black Knife Assassin",
-            
             "tags": [
                 "creature"
             ]
@@ -100,7 +88,6 @@
         {
             "id": "c2110",
             "name": "Beast Clergyman",
-            
             "tags": [
                 "creature"
             ]
@@ -108,7 +95,6 @@
         {
             "id": "c2120",
             "name": "Malenia, Blade of Miquella",
-            
             "tags": [
                 "creature"
             ]
@@ -116,7 +102,6 @@
         {
             "id": "c2130",
             "name": "Morgott",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -125,7 +110,6 @@
         {
             "id": "c2131",
             "name": "Morgott (Dead)",
-            
             "tags": [
                 "creature"
             ]
@@ -133,7 +117,6 @@
         {
             "id": "c2140",
             "name": "Omen",
-            
             "tags": [
                 "creature"
             ]
@@ -141,7 +124,6 @@
         {
             "id": "c2150",
             "name": "Lightning Ball",
-            
             "tags": [
                 "creature"
             ]
@@ -149,7 +131,6 @@
         {
             "id": "c2160",
             "name": "Finger Reader Crone",
-            
             "tags": [
                 "creature"
             ]
@@ -157,7 +138,6 @@
         {
             "id": "c2170",
             "name": "Finger Reader Crone",
-            
             "tags": [
                 "creature"
             ]
@@ -165,7 +145,6 @@
         {
             "id": "c2180",
             "name": "Melina",
-            
             "tags": [
                 "creature"
             ]
@@ -173,7 +152,6 @@
         {
             "id": "c2190",
             "name": "Radagon",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -182,7 +160,6 @@
         {
             "id": "c2191",
             "name": "Radagon (Crucified)",
-            
             "tags": [
                 "creature"
             ]
@@ -190,7 +167,6 @@
         {
             "id": "c2200",
             "name": "Elden Beast",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -199,7 +175,6 @@
         {
             "id": "c2270",
             "name": "Giant Crab",
-            
             "tags": [
                 "creature"
             ]
@@ -207,7 +182,6 @@
         {
             "id": "c2271",
             "name": "Crab",
-            
             "tags": [
                 "creature"
             ]
@@ -215,7 +189,6 @@
         {
             "id": "c2272",
             "name": "Giant Black Crab",
-            
             "tags": [
                 "creature"
             ]
@@ -223,7 +196,6 @@
         {
             "id": "c2273",
             "name": "Black Crab",
-            
             "tags": [
                 "creature"
             ]
@@ -231,7 +203,6 @@
         {
             "id": "c2274",
             "name": "Giant Albinauric Crab",
-            
             "tags": [
                 "creature"
             ]
@@ -239,7 +210,6 @@
         {
             "id": "c2275",
             "name": "Albinauric Crab",
-            
             "tags": [
                 "creature"
             ]
@@ -247,7 +217,6 @@
         {
             "id": "c2276",
             "name": "Giant Death Crab",
-            
             "tags": [
                 "creature"
             ]
@@ -255,7 +224,6 @@
         {
             "id": "c2277",
             "name": "Death Crab",
-            
             "tags": [
                 "creature"
             ]
@@ -263,7 +231,6 @@
         {
             "id": "c2500",
             "name": "Crucible Knight",
-            
             "tags": [
                 "creature"
             ]
@@ -271,7 +238,6 @@
         {
             "id": "c3000",
             "name": "Exile Soldier",
-            
             "tags": [
                 "creature"
             ]
@@ -279,7 +245,6 @@
         {
             "id": "c3010",
             "name": "Banished Knight",
-            
             "tags": [
                 "creature"
             ]
@@ -287,7 +252,6 @@
         {
             "id": "c3020",
             "name": "Exile Soldier (Large)",
-            
             "tags": [
                 "creature"
             ]
@@ -295,7 +259,6 @@
         {
             "id": "c3050",
             "name": "Commander Niall/O'Neill",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -304,7 +267,6 @@
         {
             "id": "c3060",
             "name": "Giant Skeleton",
-            
             "tags": [
                 "creature"
             ]
@@ -312,7 +274,6 @@
         {
             "id": "c3061",
             "name": "Giant Beast Skeleton",
-            
             "tags": [
                 "creature"
             ]
@@ -320,7 +281,6 @@
         {
             "id": "c3070",
             "name": "Dominula Celebrant",
-            
             "tags": [
                 "creature"
             ]
@@ -328,7 +288,6 @@
         {
             "id": "c3080",
             "name": "Imp",
-            
             "tags": [
                 "creature"
             ]
@@ -336,7 +295,6 @@
         {
             "id": "c3100",
             "name": "Elemer of the Briar",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -345,7 +303,6 @@
         {
             "id": "c3150",
             "name": "Night's Cavalry",
-            
             "tags": [
                 "creature"
             ]
@@ -353,7 +310,6 @@
         {
             "id": "c3160",
             "name": "Funeral Steed",
-            
             "tags": [
                 "creature",
                 "horse"
@@ -362,7 +318,6 @@
         {
             "id": "c3170",
             "name": "Albinauric Archer",
-            
             "tags": [
                 "creature"
             ]
@@ -370,7 +325,6 @@
         {
             "id": "c3171",
             "name": "Phillia, Towering Little Sister",
-            
             "tags": [
                 "creature"
             ]
@@ -378,7 +332,6 @@
         {
             "id": "c3180",
             "name": "Albinauric Archer's Wolf",
-            
             "tags": [
                 "creature"
             ]
@@ -386,7 +339,6 @@
         {
             "id": "c3181",
             "name": "Red Wolf of Radagon",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -395,7 +347,6 @@
         {
             "id": "c3200",
             "name": "Nomadic Merchant",
-            
             "tags": [
                 "creature"
             ]
@@ -403,7 +354,6 @@
         {
             "id": "c3201",
             "name": "Frenzied Nomad",
-            
             "tags": [
                 "creature"
             ]
@@ -411,7 +361,6 @@
         {
             "id": "c3202",
             "name": "Nomadic Merchant",
-            
             "tags": [
                 "creature"
             ]
@@ -419,7 +368,6 @@
         {
             "id": "c3210",
             "name": "Nomadic Merchant's Donkey",
-            
             "tags": [
                 "creature",
                 "horse"
@@ -428,7 +376,6 @@
         {
             "id": "c3250",
             "name": "Draconic Tree Sentinel",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -437,7 +384,6 @@
         {
             "id": "c3251",
             "name": "Tree Sentinel",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -446,7 +392,6 @@
         {
             "id": "c3252",
             "name": "Loretta",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -455,7 +400,6 @@
         {
             "id": "c3300",
             "name": "Nox Swordstress/Monk/Nightmaiden",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -464,7 +408,6 @@
         {
             "id": "c3320",
             "name": "Silver Tear",
-            
             "tags": [
                 "creature"
             ]
@@ -472,7 +415,6 @@
         {
             "id": "c3330",
             "name": "Giant Silver Tear",
-            
             "tags": [
                 "creature"
             ]
@@ -480,7 +422,6 @@
         {
             "id": "c3350",
             "name": "Crystalian",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -489,7 +430,6 @@
         {
             "id": "c3360",
             "name": "Ancestral Follower",
-            
             "tags": [
                 "creature"
             ]
@@ -497,7 +437,6 @@
         {
             "id": "c3361",
             "name": "Putrid Ancestral Follower",
-            
             "tags": [
                 "creature"
             ]
@@ -505,7 +444,6 @@
         {
             "id": "c3370",
             "name": "Ancestral Follower Shaman",
-            
             "tags": [
                 "creature"
             ]
@@ -513,7 +451,6 @@
         {
             "id": "c3371",
             "name": "Putrid Ancestral Follower Shaman",
-            
             "tags": [
                 "creature"
             ]
@@ -521,7 +458,6 @@
         {
             "id": "c3400",
             "name": "Grave Warden Duelist",
-            
             "tags": [
                 "creature"
             ]
@@ -529,7 +465,6 @@
         {
             "id": "c3450",
             "name": "Misbegotten",
-            
             "tags": [
                 "creature"
             ]
@@ -537,7 +472,6 @@
         {
             "id": "c3451",
             "name": "Scaly Misbegotten",
-            
             "tags": [
                 "creature"
             ]
@@ -545,7 +479,6 @@
         {
             "id": "c3460",
             "name": "Leonine Misbegotten",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -554,7 +487,6 @@
         {
             "id": "c3470",
             "name": "Albinauric",
-            
             "tags": [
                 "creature"
             ]
@@ -562,7 +494,6 @@
         {
             "id": "c3471",
             "name": "Large Albinauric",
-            
             "tags": [
                 "creature"
             ]
@@ -570,7 +501,6 @@
         {
             "id": "c3500",
             "name": "Skeletal Militiaman/Bandit/Knight/Grave Warden",
-            
             "tags": [
                 "creature"
             ]
@@ -578,7 +508,6 @@
         {
             "id": "c3510",
             "name": "Catacomb Skeleton",
-            
             "tags": [
                 "creature"
             ]
@@ -586,7 +515,6 @@
         {
             "id": "c3550",
             "name": "Sanguine Noble",
-            
             "tags": [
                 "creature"
             ]
@@ -594,7 +522,6 @@
         {
             "id": "c3560",
             "name": "Godskin Apostle",
-            
             "tags": [
                 "creature"
             ]
@@ -602,7 +529,6 @@
         {
             "id": "c3570",
             "name": "Godskin Noble",
-            
             "tags": [
                 "creature"
             ]
@@ -610,7 +536,6 @@
         {
             "id": "c3600",
             "name": "Alabaster Lord",
-            
             "tags": [
                 "creature"
             ]
@@ -618,7 +543,6 @@
         {
             "id": "c3610",
             "name": "Oracle Envoy",
-            
             "tags": [
                 "creature"
             ]
@@ -626,7 +550,6 @@
         {
             "id": "c3620",
             "name": "Oracle Envoy (Large)",
-            
             "tags": [
                 "creature"
             ]
@@ -634,7 +557,6 @@
         {
             "id": "c3630",
             "name": "Oracle Envoy (Giant)",
-            
             "tags": [
                 "creature"
             ]
@@ -642,7 +564,6 @@
         {
             "id": "c3650",
             "name": "Erdtree Guardian",
-            
             "tags": [
                 "creature"
             ]
@@ -650,7 +571,6 @@
         {
             "id": "c3660",
             "name": "Commoner",
-            
             "tags": [
                 "creature"
             ]
@@ -658,7 +578,6 @@
         {
             "id": "c3661",
             "name": "Putrid Corpse",
-            
             "tags": [
                 "creature"
             ]
@@ -666,7 +585,6 @@
         {
             "id": "c3662",
             "name": "Putrid Corpse (Large)",
-            
             "tags": [
                 "creature"
             ]
@@ -674,7 +592,6 @@
         {
             "id": "c3664",
             "name": "Cemetery Shade",
-            
             "tags": [
                 "creature"
             ]
@@ -682,7 +599,6 @@
         {
             "id": "c3665",
             "name": "Gostoc",
-            
             "tags": [
                 "creature"
             ]
@@ -690,7 +606,6 @@
         {
             "id": "c3666",
             "name": "The Noble Goldmask",
-            
             "tags": [
                 "creature"
             ]
@@ -698,7 +613,6 @@
         {
             "id": "c3670",
             "name": "Elder Albinauric",
-            
             "tags": [
                 "creature"
             ]
@@ -706,7 +620,6 @@
         {
             "id": "c3700",
             "name": "Depraved Perfumer",
-            
             "tags": [
                 "creature"
             ]
@@ -714,7 +627,6 @@
         {
             "id": "c3701",
             "name": "Perfumer",
-            
             "tags": [
                 "creature"
             ]
@@ -722,7 +634,6 @@
         {
             "id": "c3702",
             "name": "Glintstone Sorcerer",
-            
             "tags": [
                 "creature"
             ]
@@ -730,7 +641,6 @@
         {
             "id": "c3703",
             "name": "Page",
-            
             "tags": [
                 "creature"
             ]
@@ -738,7 +648,6 @@
         {
             "id": "c3704",
             "name": "Battlemage",
-            
             "tags": [
                 "creature"
             ]
@@ -746,7 +655,6 @@
         {
             "id": "c3710",
             "name": "Azur",
-            
             "tags": [
                 "creature"
             ]
@@ -754,7 +662,6 @@
         {
             "id": "c3720",
             "name": "Lusat",
-            
             "tags": [
                 "creature"
             ]
@@ -762,7 +669,6 @@
         {
             "id": "c3730",
             "name": "Graven School",
-            
             "tags": [
                 "creature"
             ]
@@ -770,7 +676,6 @@
         {
             "id": "c3750",
             "name": "Clayman",
-            
             "tags": [
                 "creature"
             ]
@@ -778,7 +683,6 @@
         {
             "id": "c3800",
             "name": "Cleanrot Knight",
-            
             "tags": [
                 "creature"
             ]
@@ -786,7 +690,6 @@
         {
             "id": "c3810",
             "name": "Kindred of Rot",
-            
             "tags": [
                 "creature"
             ]
@@ -794,7 +697,6 @@
         {
             "id": "c3850",
             "name": "Marionette Soldier",
-            
             "tags": [
                 "creature"
             ]
@@ -802,7 +704,6 @@
         {
             "id": "c3860",
             "name": "Avionette Soldier",
-            
             "tags": [
                 "creature"
             ]
@@ -810,7 +711,6 @@
         {
             "id": "c3900",
             "name": "Fire Monk",
-            
             "tags": [
                 "creature"
             ]
@@ -818,7 +718,6 @@
         {
             "id": "c3901",
             "name": "Blackflame Monk",
-            
             "tags": [
                 "creature"
             ]
@@ -826,7 +725,6 @@
         {
             "id": "c3910",
             "name": "Fire Prelate",
-            
             "tags": [
                 "creature"
             ]
@@ -834,7 +732,6 @@
         {
             "id": "c3950",
             "name": "Man-Serpent",
-            
             "tags": [
                 "creature"
             ]
@@ -842,7 +739,6 @@
         {
             "id": "c3970",
             "name": "Azula Beastman",
-            
             "tags": [
                 "creature"
             ]
@@ -850,7 +746,6 @@
         {
             "id": "c4000",
             "name": "Revenant Follower",
-            
             "tags": [
                 "creature"
             ]
@@ -858,7 +753,6 @@
         {
             "id": "c4020",
             "name": "Royal Revenant",
-            
             "tags": [
                 "creature"
             ]
@@ -866,7 +760,6 @@
         {
             "id": "c4040",
             "name": "Slug",
-            
             "tags": [
                 "creature"
             ]
@@ -874,7 +767,6 @@
         {
             "id": "c4050",
             "name": "Kaiden Sellsword",
-            
             "tags": [
                 "creature"
             ]
@@ -882,7 +774,6 @@
         {
             "id": "c4060",
             "name": "Kaiden Sellsword's Horse",
-            
             "tags": [
                 "creature",
                 "horse"
@@ -891,7 +782,6 @@
         {
             "id": "c4070",
             "name": "Wolf",
-            
             "tags": [
                 "creature"
             ]
@@ -899,7 +789,6 @@
         {
             "id": "c4071",
             "name": "White Wolf",
-            
             "tags": [
                 "creature"
             ]
@@ -907,7 +796,6 @@
         {
             "id": "c4080",
             "name": "Rat",
-            
             "tags": [
                 "creature"
             ]
@@ -915,7 +803,6 @@
         {
             "id": "c4090",
             "name": "Giant Rat",
-            
             "tags": [
                 "creature"
             ]
@@ -923,7 +810,6 @@
         {
             "id": "c4100",
             "name": "Demi-Human",
-            
             "tags": [
                 "creature"
             ]
@@ -931,7 +817,6 @@
         {
             "id": "c4101",
             "name": "Demi-Human (Large)",
-            
             "tags": [
                 "creature"
             ]
@@ -939,7 +824,6 @@
         {
             "id": "c4110",
             "name": "Demi-Human Shaman",
-            
             "tags": [
                 "creature"
             ]
@@ -947,7 +831,6 @@
         {
             "id": "c4120",
             "name": "Demi-Human Chief",
-            
             "tags": [
                 "creature"
             ]
@@ -955,7 +838,6 @@
         {
             "id": "c4130",
             "name": "Demi-Human Queen",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -964,7 +846,6 @@
         {
             "id": "c4140",
             "name": "Snail",
-            
             "tags": [
                 "creature"
             ]
@@ -972,7 +853,6 @@
         {
             "id": "c4150",
             "name": "Basilisk",
-            
             "tags": [
                 "creature"
             ]
@@ -980,7 +860,6 @@
         {
             "id": "c4160",
             "name": "Stray (Large)",
-            
             "tags": [
                 "creature"
             ]
@@ -988,7 +867,6 @@
         {
             "id": "c4161",
             "name": "Stray",
-            
             "tags": [
                 "creature"
             ]
@@ -996,7 +874,6 @@
         {
             "id": "c4162",
             "name": "Farum Azula Stray (Large)",
-            
             "tags": [
                 "creature"
             ]
@@ -1004,7 +881,6 @@
         {
             "id": "c4163",
             "name": "Farum Azula Stray",
-            
             "tags": [
                 "creature"
             ]
@@ -1012,7 +888,6 @@
         {
             "id": "c4164",
             "name": "Bloodbane Stray (Large)",
-            
             "tags": [
                 "creature"
             ]
@@ -1020,7 +895,6 @@
         {
             "id": "c4165",
             "name": "Bloodbane Stray",
-            
             "tags": [
                 "creature"
             ]
@@ -1028,7 +902,6 @@
         {
             "id": "c4166",
             "name": "Rotten Stray (Large)",
-            
             "tags": [
                 "creature"
             ]
@@ -1036,7 +909,6 @@
         {
             "id": "c4167",
             "name": "Rotten Stray",
-            
             "tags": [
                 "creature"
             ]
@@ -1044,7 +916,6 @@
         {
             "id": "c4170",
             "name": "Putrid Flesh",
-            
             "tags": [
                 "creature"
             ]
@@ -1052,7 +923,6 @@
         {
             "id": "c4171",
             "name": "Putrid Flesh (Large)",
-            
             "tags": [
                 "creature"
             ]
@@ -1060,7 +930,6 @@
         {
             "id": "c4180",
             "name": "Spirit Jellyfish",
-            
             "tags": [
                 "creature"
             ]
@@ -1068,7 +937,6 @@
         {
             "id": "c4190",
             "name": "Large Scarab",
-            
             "tags": [
                 "creature",
                 "scarab"
@@ -1077,7 +945,6 @@
         {
             "id": "c4191",
             "name": "Scarab",
-            
             "tags": [
                 "creature",
                 "scarab"
@@ -1086,7 +953,6 @@
         {
             "id": "c4192",
             "name": "Giant Scarab",
-            
             "tags": [
                 "creature",
                 "scarab"
@@ -1095,7 +961,6 @@
         {
             "id": "c4200",
             "name": "Man-Bat",
-            
             "tags": [
                 "creature"
             ]
@@ -1103,7 +968,6 @@
         {
             "id": "c4201",
             "name": "Operatic Bat",
-            
             "tags": [
                 "creature"
             ]
@@ -1111,7 +975,6 @@
         {
             "id": "c4210",
             "name": "Warhawk",
-            
             "tags": [
                 "creature",
                 "bird"
@@ -1120,7 +983,6 @@
         {
             "id": "c4220",
             "name": "Land Octopus (Large)",
-            
             "tags": [
                 "creature"
             ]
@@ -1128,7 +990,6 @@
         {
             "id": "c4230",
             "name": "Land Octopus (Small)",
-            
             "tags": [
                 "creature"
             ]
@@ -1136,7 +997,6 @@
         {
             "id": "c4240",
             "name": "Fingercreeper",
-            
             "tags": [
                 "creature"
             ]
@@ -1144,7 +1004,6 @@
         {
             "id": "c4241",
             "name": "Fingercreeper (Large)",
-            
             "tags": [
                 "creature"
             ]
@@ -1152,7 +1011,6 @@
         {
             "id": "c4250",
             "name": "Fingercreeper (Small)",
-            
             "tags": [
                 "creature"
             ]
@@ -1160,7 +1018,6 @@
         {
             "id": "c4260",
             "name": "Erdtree Burial Watchdog",
-            
             "tags": [
                 "creature"
             ]
@@ -1168,7 +1025,6 @@
         {
             "id": "c4270",
             "name": "Elder Lion",
-            
             "tags": [
                 "creature"
             ]
@@ -1176,7 +1032,6 @@
         {
             "id": "c4280",
             "name": "Giant Ant",
-            
             "tags": [
                 "creature"
             ]
@@ -1184,7 +1039,6 @@
         {
             "id": "c4281",
             "name": "Giant Ant (Skull Plate)",
-            
             "tags": [
                 "creature"
             ]
@@ -1192,7 +1046,6 @@
         {
             "id": "c4290",
             "name": "Bloodhound Knight",
-            
             "tags": [
                 "creature"
             ]
@@ -1200,7 +1053,6 @@
         {
             "id": "c4300",
             "name": "Wandering Noble",
-            
             "tags": [
                 "creature"
             ]
@@ -1208,7 +1060,6 @@
         {
             "id": "c4310",
             "name": "Lordsworn Soldier",
-            
             "tags": [
                 "creature",
                 "knight"
@@ -1217,7 +1068,6 @@
         {
             "id": "c4311",
             "name": "Godrick Soldier",
-            
             "tags": [
                 "creature",
                 "godrick"
@@ -1226,7 +1076,6 @@
         {
             "id": "c4312",
             "name": "Raya Lucaria Soldier",
-            
             "tags": [
                 "creature",
                 "cuckoo"
@@ -1235,7 +1084,6 @@
         {
             "id": "c4313",
             "name": "Leyndell Soldier",
-            
             "tags": [
                 "creature",
                 "leyndell"
@@ -1244,7 +1092,6 @@
         {
             "id": "c4314",
             "name": "Radahn Soldier",
-            
             "tags": [
                 "creature",
                 "redmane"
@@ -1253,7 +1100,6 @@
         {
             "id": "c4315",
             "name": "Mausoleum Soldier",
-            
             "tags": [
                 "creature",
                 "mausoleum"
@@ -1262,7 +1108,6 @@
         {
             "id": "c4316",
             "name": "Haligtree Soldier",
-            
             "tags": [
                 "creature",
                 "haligtree"
@@ -1271,7 +1116,6 @@
         {
             "id": "c4321",
             "name": "Vulgar Militia",
-            
             "tags": [
                 "creature"
             ]
@@ -1279,7 +1123,6 @@
         {
             "id": "c4340",
             "name": "Mad Pumpkin Head",
-            
             "tags": [
                 "creature"
             ]
@@ -1287,7 +1130,6 @@
         {
             "id": "c4341",
             "name": "Mad Pumpkin Head (Thin)",
-            
             "tags": [
                 "creature"
             ]
@@ -1295,7 +1137,6 @@
         {
             "id": "c4350",
             "name": "Lordsworn Knight",
-            
             "tags": [
                 "creature",
                 "knight"
@@ -1304,7 +1145,6 @@
         {
             "id": "c4351",
             "name": "Godrick Knight",
-            
             "tags": [
                 "creature",
                 "godrick"
@@ -1313,7 +1153,6 @@
         {
             "id": "c4352",
             "name": "Cuckoo Knight",
-            
             "tags": [
                 "creature",
                 "cuckoo"
@@ -1322,7 +1161,6 @@
         {
             "id": "c4353",
             "name": "Leyndell Knight",
-            
             "tags": [
                 "creature",
                 "leyndell"
@@ -1331,7 +1169,6 @@
         {
             "id": "c4354",
             "name": "Redmane Knight",
-            
             "tags": [
                 "creature",
                 "redmane"
@@ -1340,7 +1177,6 @@
         {
             "id": "c4355",
             "name": "Mausoleum Knight",
-            
             "tags": [
                 "creature",
                 "mausoleum"
@@ -1349,7 +1185,6 @@
         {
             "id": "c4356",
             "name": "Haligtree Knight",
-            
             "tags": [
                 "creature",
                 "haligtree"
@@ -1358,7 +1193,6 @@
         {
             "id": "c4360",
             "name": "Lordsworn Knight's Horse",
-            
             "tags": [
                 "creature",
                 "knight"
@@ -1367,7 +1201,6 @@
         {
             "id": "c4361",
             "name": "Godrick Knight's Horse",
-            
             "tags": [
                 "creature",
                 "horse",
@@ -1377,7 +1210,6 @@
         {
             "id": "c4362",
             "name": "Cuckoo Knight's Horse",
-            
             "tags": [
                 "creature",
                 "horse",
@@ -1387,7 +1219,6 @@
         {
             "id": "c4363",
             "name": "Leyndell Knight's Horse",
-            
             "tags": [
                 "creature",
                 "horse",
@@ -1397,7 +1228,6 @@
         {
             "id": "c4364",
             "name": "Redmane Knight's Horse",
-            
             "tags": [
                 "creature",
                 "horse",
@@ -1407,7 +1237,6 @@
         {
             "id": "c4365",
             "name": "Mausoleum Knight's Horse",
-            
             "tags": [
                 "creature",
                 "horse",
@@ -1417,7 +1246,6 @@
         {
             "id": "c4370",
             "name": "Foot Soldier",
-            
             "tags": [
                 "creature",
                 "knight"
@@ -1426,7 +1254,6 @@
         {
             "id": "c4371",
             "name": "Godrick Foot Soldier",
-            
             "tags": [
                 "creature",
                 "godrick"
@@ -1435,7 +1262,6 @@
         {
             "id": "c4372",
             "name": "Raya Lucaria Foot Soldier",
-            
             "tags": [
                 "creature",
                 "cuckoo"
@@ -1444,7 +1270,6 @@
         {
             "id": "c4373",
             "name": "Leyndell Foot Soldier",
-            
             "tags": [
                 "creature",
                 "leyndell"
@@ -1453,7 +1278,6 @@
         {
             "id": "c4374",
             "name": "Radahn Foot Soldier",
-            
             "tags": [
                 "creature",
                 "redmane"
@@ -1462,7 +1286,6 @@
         {
             "id": "c4375",
             "name": "Mausoleum Foot Soldier",
-            
             "tags": [
                 "creature",
                 "mausoleum"
@@ -1471,7 +1294,6 @@
         {
             "id": "c4376",
             "name": "Haligtree Foot Soldier",
-            
             "tags": [
                 "creature",
                 "haligtree"
@@ -1480,7 +1302,6 @@
         {
             "id": "c4377",
             "name": "Highwayman",
-            
             "tags": [
                 "creature"
             ]
@@ -1488,7 +1309,6 @@
         {
             "id": "c4380",
             "name": "Starcaller",
-            
             "tags": [
                 "creature"
             ]
@@ -1496,7 +1316,6 @@
         {
             "id": "c4381",
             "name": "Guilty",
-            
             "tags": [
                 "creature"
             ]
@@ -1504,7 +1323,6 @@
         {
             "id": "c4382",
             "name": "Stonedigger",
-            
             "tags": [
                 "creature"
             ]
@@ -1512,7 +1330,6 @@
         {
             "id": "c4383",
             "name": "Glintstone Digger",
-            
             "tags": [
                 "creature"
             ]
@@ -1520,7 +1337,6 @@
         {
             "id": "c4384",
             "name": "Glintstone Digger (Small Sack)",
-            
             "tags": [
                 "creature"
             ]
@@ -1528,7 +1344,6 @@
         {
             "id": "c4385",
             "name": "Disciple of Rot",
-            
             "tags": [
                 "creature"
             ]
@@ -1536,7 +1351,6 @@
         {
             "id": "c4420",
             "name": "Giant Crayfish",
-            
             "tags": [
                 "creature"
             ]
@@ -1544,7 +1358,6 @@
         {
             "id": "c4421",
             "name": "Giant Crayfish",
-            
             "tags": [
                 "creature"
             ]
@@ -1552,7 +1365,6 @@
         {
             "id": "c4430",
             "name": "Watcher Stones",
-            
             "tags": [
                 "creature"
             ]
@@ -1560,7 +1372,6 @@
         {
             "id": "c4440",
             "name": "Land Squirt",
-            
             "tags": [
                 "creature"
             ]
@@ -1568,7 +1379,6 @@
         {
             "id": "c4441",
             "name": "Giant Land Squirt",
-            
             "tags": [
                 "creature"
             ]
@@ -1576,7 +1386,6 @@
         {
             "id": "c4442",
             "name": "Giant Rotten Land Squirt",
-            
             "tags": [
                 "creature"
             ]
@@ -1584,7 +1393,6 @@
         {
             "id": "c4450",
             "name": "Walking Mausoleum",
-            
             "tags": [
                 "creature"
             ]
@@ -1592,7 +1400,6 @@
         {
             "id": "c4460",
             "name": "Flame Chariot",
-            
             "tags": [
                 "creature"
             ]
@@ -1600,7 +1407,6 @@
         {
             "id": "c4470",
             "name": "Abductor Virgin",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1609,7 +1415,6 @@
         {
             "id": "c4480",
             "name": "Miranda Blossom",
-            
             "tags": [
                 "creature"
             ]
@@ -1617,7 +1422,6 @@
         {
             "id": "c4481",
             "name": "Miranda Sprout",
-            
             "tags": [
                 "creature"
             ]
@@ -1625,7 +1429,6 @@
         {
             "id": "c4482",
             "name": "Rotten Miranda Blossom",
-            
             "tags": [
                 "creature"
             ]
@@ -1633,7 +1436,6 @@
         {
             "id": "c4483",
             "name": "Rotten Miranda Sprout",
-            
             "tags": [
                 "creature"
             ]
@@ -1641,7 +1443,6 @@
         {
             "id": "c4490",
             "name": "Living Jar Warrior",
-            
             "tags": [
                 "creature"
             ]
@@ -1649,7 +1450,6 @@
         {
             "id": "c4491",
             "name": "Living Jar",
-            
             "tags": [
                 "creature"
             ]
@@ -1657,7 +1457,6 @@
         {
             "id": "c4492",
             "name": "Greatjar",
-            
             "tags": [
                 "creature"
             ]
@@ -1665,7 +1464,6 @@
         {
             "id": "c4500",
             "name": "Flying Dragon",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1674,7 +1472,6 @@
         {
             "id": "c4501",
             "name": "Decaying Ekzykes",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1683,7 +1480,6 @@
         {
             "id": "c4502",
             "name": "Glintstone Dragon",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1692,7 +1488,6 @@
         {
             "id": "c4503",
             "name": "Borealis the Freezing Fog",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1701,7 +1496,6 @@
         {
             "id": "c4504",
             "name": "Elder Dragon Greyoll",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1710,7 +1504,6 @@
         {
             "id": "c4505",
             "name": "Flying Dragon (Small)",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1719,7 +1512,6 @@
         {
             "id": "c4510",
             "name": "Ancient Dragon",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1728,7 +1520,6 @@
         {
             "id": "c4511",
             "name": "Lichdragon Fortissax",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1737,7 +1528,6 @@
         {
             "id": "c4520",
             "name": "Dragonlord Placidusax",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1746,7 +1536,6 @@
         {
             "id": "c4550",
             "name": "Giant Dog",
-            
             "tags": [
                 "creature"
             ]
@@ -1754,7 +1543,6 @@
         {
             "id": "c4560",
             "name": "Giant Crow",
-            
             "tags": [
                 "creature"
             ]
@@ -1762,7 +1550,6 @@
         {
             "id": "c4561",
             "name": "Giant Crow (Rotten)",
-            
             "tags": [
                 "creature"
             ]
@@ -1770,7 +1557,6 @@
         {
             "id": "c4570",
             "name": "Wormface",
-            
             "tags": [
                 "creature"
             ]
@@ -1778,7 +1564,6 @@
         {
             "id": "c4580",
             "name": "Large Wormface",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1787,7 +1572,6 @@
         {
             "id": "c4600",
             "name": "Troll",
-            
             "tags": [
                 "creature"
             ]
@@ -1795,7 +1579,6 @@
         {
             "id": "c4601",
             "name": "Troll Knight (Carian Blade)",
-            
             "tags": [
                 "creature"
             ]
@@ -1803,7 +1586,6 @@
         {
             "id": "c4602",
             "name": "Snowfield Troll",
-            
             "tags": [
                 "creature"
             ]
@@ -1811,7 +1593,6 @@
         {
             "id": "c4603",
             "name": "Stonedigger Troll",
-            
             "tags": [
                 "creature"
             ]
@@ -1819,7 +1600,6 @@
         {
             "id": "c4604",
             "name": "War Counselor Iji",
-            
             "tags": [
                 "creature"
             ]
@@ -1827,7 +1607,6 @@
         {
             "id": "c4620",
             "name": "Astel, Naturalborn of the Void",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1836,7 +1615,6 @@
         {
             "id": "c4630",
             "name": "Runebear",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1845,7 +1623,6 @@
         {
             "id": "c4640",
             "name": "Ulcerated Tree Spirit",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1854,7 +1631,6 @@
         {
             "id": "c4650",
             "name": "Dragonkin Soldier",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1863,7 +1639,6 @@
         {
             "id": "c4660",
             "name": "Guardian Golem",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1872,7 +1647,6 @@
         {
             "id": "c4670",
             "name": "Ancestor Spirit",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1881,7 +1655,6 @@
         {
             "id": "c4680",
             "name": "Falling-star Beast",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1890,7 +1663,6 @@
         {
             "id": "c4690",
             "name": "Grafted Scion",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1899,7 +1671,6 @@
         {
             "id": "c4710",
             "name": "God-Devouring Serpent / Rykard, Lord of Blasphemy",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1908,7 +1679,6 @@
         {
             "id": "c4711",
             "name": "Rykard's Corpse",
-            
             "tags": [
                 "creature"
             ]
@@ -1916,7 +1686,6 @@
         {
             "id": "c4720",
             "name": "Godfrey, First Elden Lord",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1925,7 +1694,6 @@
         {
             "id": "c4721",
             "name": "Hoarah Loux, Warrior",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1934,7 +1702,6 @@
         {
             "id": "c4730",
             "name": "Starscourge Radahn",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1943,7 +1710,6 @@
         {
             "id": "c4750",
             "name": "Godrick the Grafted",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1952,7 +1718,6 @@
         {
             "id": "c4751",
             "name": "Godrick's Corpse",
-            
             "tags": [
                 "creature"
             ]
@@ -1960,7 +1725,6 @@
         {
             "id": "c4760",
             "name": "Fire Giant",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1969,7 +1733,6 @@
         {
             "id": "c4770",
             "name": "Valiant Gargoyle",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1978,7 +1741,6 @@
         {
             "id": "c4800",
             "name": "Mohg, Lord of Blood",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1987,7 +1749,6 @@
         {
             "id": "c4801",
             "name": "Mohg, Lord of Blood (Unknown)",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -1996,7 +1757,6 @@
         {
             "id": "c4810",
             "name": "Erdtree Avatar",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -2005,7 +1765,6 @@
         {
             "id": "c4811",
             "name": "Putrid Avatar",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -2014,7 +1773,6 @@
         {
             "id": "c4820",
             "name": "Omenkiller",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -2023,7 +1781,6 @@
         {
             "id": "c4910",
             "name": "Magma Wyrm",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -2032,7 +1789,6 @@
         {
             "id": "c4911",
             "name": "Great Wyrm Theodorix",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -2041,7 +1797,6 @@
         {
             "id": "c4950",
             "name": "Tibia Mariner",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -2050,7 +1805,6 @@
         {
             "id": "c4960",
             "name": "Giant Skeleton Torso",
-            
             "tags": [
                 "creature"
             ]
@@ -2058,791 +1812,659 @@
         {
             "id": "c4980",
             "name": "Death Rite Bird",
-            
             "tags": [
                 "creature",
                 "boss"
             ]
         },
-        
-        		{
-			"id": "c5000",
-			"name": "Commander Gaius",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5010",
-			"name": "Golden Hippopotamus",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5011",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5020",
-			"name": "Putrescent Knight",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5030",
-			"name": "Romina, Saint of the Bud",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5040",
-			"name": "Curseblade Labirith",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5050",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5050",
-			"name": "Midra, Lord of Frenzied Flame",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5051",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5060",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5061",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5070",
-			"name": "Death Knight",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5081",
-			"name": "Chief Bloodfiend",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5110",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5120",
-			"name": "Bayle the Dread",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5130",
-			"name": "Messmer the Impaler",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5131",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5132",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5140",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5141",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5170",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5180",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5181",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5192",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5193",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5200",
-			"name": "Metyr, Mother of Fingers",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5210",
-			"name": "Divine Beast Dancing Lion",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5220",
-			"name": "Promised Consort Radahn",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5221",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5230",
-			"name": "Scadutree Avatar",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5240",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5241",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5251",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5260",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5270",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5271",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5280",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5300",
-			"name": "Rellana, Twin Moon Knight",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5312",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5320",
-			"name": "Jori, Elder Inquisitor",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5330",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5340",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5350",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5360",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5370",
-			"name": "Ancient Dragon Senessax",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5380",
-			"name": "Jagged Peak Drake",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5381",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5390",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5391",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5400",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5401",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5410",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5420",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5421",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5430",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5440",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5450",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5460",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5470",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5471",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5472",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5480",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5490",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5500",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5501",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5510",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5511",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5512",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5513",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5520",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5521",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5522",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5523",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5524",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5525",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5526",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5527",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5530",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5540",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5541",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5550",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5551",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5570",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5580",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5590",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5591",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5600",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5620",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5630",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5640",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5641",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5650",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5651",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5660",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5661",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5680",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5690",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5700",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5701",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5710",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5720",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5730",
-			"name": "Demi-Human Queen Marigga",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5740",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5750",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5751",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5760",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5761",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5780",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5790",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5800",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5810",
-			"name": "Demi-Human Swordmaster Onze",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5820",
-			"name": "Great Red Bear",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5840",
-			"name": "Black Knight",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5850",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5860",
-			"name": "Ghostflame Dragon",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5871",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5872",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5880",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5890",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5910",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5920",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5930",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5931",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5940",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5950",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5960",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5970",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5980",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c5990",
-			"name": "",
-
-			"tags": [ ]
-		},
+        {
+            "id": "c5000",
+            "name": "Commander Gaius",
+            "tags": []
+        },
+        {
+            "id": "c5010",
+            "name": "Golden Hippopotamus",
+            "tags": []
+        },
+        {
+            "id": "c5011",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5020",
+            "name": "Putrescent Knight",
+            "tags": []
+        },
+        {
+            "id": "c5030",
+            "name": "Romina, Saint of the Bud",
+            "tags": []
+        },
+        {
+            "id": "c5040",
+            "name": "Curseblade Labirith",
+            "tags": []
+        },
+        {
+            "id": "c5050",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5050",
+            "name": "Midra, Lord of Frenzied Flame",
+            "tags": []
+        },
+        {
+            "id": "c5051",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5060",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5061",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5070",
+            "name": "Death Knight",
+            "tags": []
+        },
+        {
+            "id": "c5081",
+            "name": "Chief Bloodfiend",
+            "tags": []
+        },
+        {
+            "id": "c5110",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5120",
+            "name": "Bayle the Dread",
+            "tags": []
+        },
+        {
+            "id": "c5130",
+            "name": "Messmer the Impaler",
+            "tags": []
+        },
+        {
+            "id": "c5131",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5132",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5140",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5141",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5170",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5180",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5181",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5192",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5193",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5200",
+            "name": "Metyr, Mother of Fingers",
+            "tags": []
+        },
+        {
+            "id": "c5210",
+            "name": "Divine Beast Dancing Lion",
+            "tags": []
+        },
+        {
+            "id": "c5220",
+            "name": "Promised Consort Radahn",
+            "tags": []
+        },
+        {
+            "id": "c5221",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5230",
+            "name": "Scadutree Avatar",
+            "tags": []
+        },
+        {
+            "id": "c5240",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5241",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5251",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5260",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5270",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5271",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5280",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5300",
+            "name": "Rellana, Twin Moon Knight",
+            "tags": []
+        },
+        {
+            "id": "c5312",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5320",
+            "name": "Jori, Elder Inquisitor",
+            "tags": []
+        },
+        {
+            "id": "c5330",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5340",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5350",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5360",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5370",
+            "name": "Ancient Dragon Senessax",
+            "tags": []
+        },
+        {
+            "id": "c5380",
+            "name": "Jagged Peak Drake",
+            "tags": []
+        },
+        {
+            "id": "c5381",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5390",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5391",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5400",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5401",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5410",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5420",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5421",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5430",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5440",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5450",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5460",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5470",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5471",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5472",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5480",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5490",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5500",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5501",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5510",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5511",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5512",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5513",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5520",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5521",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5522",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5523",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5524",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5525",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5526",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5527",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5530",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5540",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5541",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5550",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5551",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5570",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5580",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5590",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5591",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5600",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5620",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5630",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5640",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5641",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5650",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5651",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5660",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5661",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5680",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5690",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5700",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5701",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5710",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5720",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5730",
+            "name": "Demi-Human Queen Marigga",
+            "tags": []
+        },
+        {
+            "id": "c5740",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5750",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5751",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5760",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5761",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5780",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5790",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5800",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5810",
+            "name": "Demi-Human Swordmaster Onze",
+            "tags": []
+        },
+        {
+            "id": "c5820",
+            "name": "Great Red Bear",
+            "tags": []
+        },
+        {
+            "id": "c5840",
+            "name": "Black Knight",
+            "tags": []
+        },
+        {
+            "id": "c5850",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5860",
+            "name": "Ghostflame Dragon",
+            "tags": []
+        },
+        {
+            "id": "c5871",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5872",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5880",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5890",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5910",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5920",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5930",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5931",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5940",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5950",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5960",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5970",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5980",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c5990",
+            "name": "",
+            "tags": []
+        },
         {
             "id": "c6001",
             "name": "Eagle",
-            
             "tags": [
                 "fauna",
                 "bird"
@@ -2851,7 +2473,6 @@
         {
             "id": "c6010",
             "name": "Deer",
-            
             "tags": [
                 "fauna"
             ]
@@ -2859,7 +2480,6 @@
         {
             "id": "c6031",
             "name": "Bear",
-            
             "tags": [
                 "fauna"
             ]
@@ -2867,7 +2487,6 @@
         {
             "id": "c6040",
             "name": "Owl",
-            
             "tags": [
                 "fauna"
             ]
@@ -2875,7 +2494,6 @@
         {
             "id": "c6050",
             "name": "Boar",
-            
             "tags": [
                 "fauna"
             ]
@@ -2883,7 +2501,6 @@
         {
             "id": "c6060",
             "name": "Goat",
-            
             "tags": [
                 "fauna"
             ]
@@ -2891,7 +2508,6 @@
         {
             "id": "c6070",
             "name": "Murre",
-            
             "tags": [
                 "fauna",
                 "bird"
@@ -2900,7 +2516,6 @@
         {
             "id": "c6072",
             "name": "Carrier Pigeon",
-            
             "tags": [
                 "fauna",
                 "bird"
@@ -2909,7 +2524,6 @@
         {
             "id": "c6080",
             "name": "Dragonfly",
-            
             "tags": [
                 "fauna"
             ]
@@ -2917,7 +2531,6 @@
         {
             "id": "c6081",
             "name": "Yellow Dragonfly",
-            
             "tags": [
                 "fauna"
             ]
@@ -2925,7 +2538,6 @@
         {
             "id": "c6082",
             "name": "Great Dragonfly",
-            
             "tags": [
                 "fauna"
             ]
@@ -2933,7 +2545,6 @@
         {
             "id": "c6090",
             "name": "Turtle",
-            
             "tags": [
                 "fauna"
             ]
@@ -2941,7 +2552,6 @@
         {
             "id": "c6091",
             "name": "Miriel, Pastor of Vows",
-            
             "tags": [
                 "creature"
             ]
@@ -2949,111 +2559,93 @@
         {
             "id": "c6100",
             "name": "Springhare",
-            
             "tags": [
                 "fauna"
             ]
         },
-		{
-			"id": "c6200",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6201",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6210",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6220",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6231",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6232",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6233",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6240",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6251",
-			"name": "Tree Sentinel (SOTE)",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6260",
-			"name": "Death Rite Bird (SOTE)",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6270",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6290",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6291",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6300",
-			"name": "",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6310",
-			"name": "Fallingstar Beast (SOTE)",
-
-			"tags": [ ]
-		},
-		{
-			"id": "c6320",
-			"name": "",
-
-			"tags": [ ]
-		},
+        {
+            "id": "c6200",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c6201",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c6210",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c6220",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c6231",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c6232",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c6233",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c6240",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c6251",
+            "name": "Tree Sentinel (SOTE)",
+            "tags": []
+        },
+        {
+            "id": "c6260",
+            "name": "Death Rite Bird (SOTE)",
+            "tags": []
+        },
+        {
+            "id": "c6270",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c6290",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c6291",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c6300",
+            "name": "",
+            "tags": []
+        },
+        {
+            "id": "c6310",
+            "name": "Fallingstar Beast (SOTE)",
+            "tags": []
+        },
+        {
+            "id": "c6320",
+            "name": "",
+            "tags": []
+        },
         {
             "id": "c7000",
             "name": "Fallen Hawks Soldier",
-            
             "tags": [
                 "creature"
             ]
@@ -3061,7 +2653,6 @@
         {
             "id": "c7100",
             "name": "Ancient Hero",
-            
             "tags": [
                 "creature"
             ]
@@ -3069,7 +2660,6 @@
         {
             "id": "c8000",
             "name": "Torrent",
-            
             "tags": [
                 "horse"
             ]
@@ -3077,7 +2667,6 @@
         {
             "id": "c8100",
             "name": "Ballista",
-            
             "tags": [
                 "trap"
             ]
@@ -3085,7 +2674,6 @@
         {
             "id": "c8101",
             "name": "Trebuchet",
-            
             "tags": [
                 "trap"
             ]
@@ -3093,7 +2681,6 @@
         {
             "id": "c8110",
             "name": "Dragon-faced Flamethrower",
-            
             "tags": [
                 "trap"
             ]
@@ -3101,7 +2688,6 @@
         {
             "id": "c8120",
             "name": "Merciless Chariot",
-            
             "tags": [
                 "trap"
             ]
@@ -3109,7 +2695,6 @@
         {
             "id": "c8900",
             "name": "Malenia, Blade of Miquella",
-            
             "tags": [
                 "humanoid",
                 "boss"
@@ -3118,22 +2703,19 @@
         {
             "id": "c8901",
             "name": "Beast Clergyman",
-            
             "tags": [
                 "creature",
                 "boss"
             ]
         },
-		{
-			"id": "c8902",
-			"name": "",
-
-			"tags": [ ]
-		},
+        {
+            "id": "c8902",
+            "name": "",
+            "tags": []
+        },
         {
             "id": "c8903",
             "name": "Rennala, Queen of the Full Moon",
-            
             "tags": [
                 "humanoid",
                 "boss",
@@ -3143,7 +2725,6 @@
         {
             "id": "c8904",
             "name": "Giant Aged Man with Ornate Cape",
-            
             "tags": [
                 "creature",
                 "humanoid"
@@ -3152,7 +2733,6 @@
         {
             "id": "c8905",
             "name": "Mohg, Lord of Blood",
-            
             "tags": [
                 "creature",
                 "boss"
@@ -3161,7 +2741,6 @@
         {
             "id": "c8906",
             "name": "Melina",
-            
             "tags": [
                 "humanoid"
             ]
@@ -3169,7 +2748,6 @@
         {
             "id": "c8907",
             "name": "Malformed Melina",
-            
             "tags": [
                 "humanoid"
             ]

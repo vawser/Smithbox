@@ -69,7 +69,10 @@
       <Maximum>999999</Maximum>
       <SortID>102</SortID>
     </Field>
-    <Field Def="dummy8 reserved_2[12]">
+    
+    <Field Def="s32 unknown_0x18" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 reserved_2[8]">
       <DisplayName>予備</DisplayName>
       <SortID>10000</SortID>
     </Field>

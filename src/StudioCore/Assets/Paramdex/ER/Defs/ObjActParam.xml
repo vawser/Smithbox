@@ -142,7 +142,15 @@
       <Maximum>999999999</Maximum>
       <SortID>13000</SortID>
     </Field>
-    <Field Def="dummy8 pad2[40]">
+    
+    <Field Def="u8 unknown_0x38" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x3c" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x40" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x44" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x48" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x4c" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 pad2[34]">
       <SortID>13002</SortID>
     </Field>
   </Fields>

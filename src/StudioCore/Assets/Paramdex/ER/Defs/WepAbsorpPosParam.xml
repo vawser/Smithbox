@@ -378,7 +378,13 @@
       <Description>モデル3_左手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
       <SortID>1411</SortID>
     </Field>
-    <Field Def="dummy8 reserve[12]">
+    
+    <Field Def="s8 unknown_0x54" FirstVersion="11210015" />
+    <Field Def="s8 unknown_0x55" FirstVersion="11210015" />
+    <Field Def="s8 unknown_0x56" FirstVersion="11210015" />
+    <Field Def="s8 unknown_0x57" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 reserve[8]">
       <DisplayName>予約領域</DisplayName>
       <SortID>1504</SortID>
     </Field>

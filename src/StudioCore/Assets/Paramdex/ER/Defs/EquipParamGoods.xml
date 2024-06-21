@@ -188,12 +188,16 @@
 </Description>
       <SortID>600</SortID>
     </Field>
-    <Field Def="dummy8 pad3[1]">
+    
+    <Field Def="dummy8 pad3[1]" RemovedVersion="11210015">
       <DisplayName>pad</DisplayName>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
       <SortID>100003</SortID>
     </Field>
+    
+    <Field Def="u8 unknown_0x40" FirstVersion="11210015" />
+    
     <Field Def="u8 goodsUseAnim">
       <DisplayName>道具使用時アニメ</DisplayName>
       <Enum>GOODS_USE_ANIM</Enum>
@@ -594,7 +598,11 @@
       <Maximum>1</Maximum>
       <SortID>2240</SortID>
     </Field>
-    <Field Def="dummy8 pad1:7">
+    
+    <Field Def="u8 unknown_0x73_1:1" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x73_2:1" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 pad1:5">
       <DisplayName>pad</DisplayName>
       <Description>（旧ログ用アイコン）</Description>
       <DisplayFormat>%d</DisplayFormat>

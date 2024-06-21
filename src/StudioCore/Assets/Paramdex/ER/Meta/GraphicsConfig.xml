@@ -22,6 +22,7 @@
     <m_waterQuality AltName="Water Quality" Wiki="Water quality (default High)" Enum="GX_QUALITY_LEVEL_ENUM" />
     <m_shaderQuality AltName="Shader Quality" Wiki="Shader quality (default High)" Enum="GX_QUALITY_LEVEL_ENUM" />
     <m_volumetricEffectQuality AltName="Volumetric Effect Quality" Wiki="Volumetric effect quality (default High)" Enum="GX_QUALITY_LEVEL_ENUM" />
+    <m_RayTracingQuality AltName="Raytracing Quality" Wiki="Raytracing quality (default High)" Enum="GX_QUALITY_LEVEL_ENUM" />
     <m_dummy AltName=""/>
   </Field>
   <Self />

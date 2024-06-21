@@ -31,10 +31,12 @@
     <useMagicPoint_R1 AltName="FP Consumption - R1" Wiki="MP consumed when issuing arts by R1" />
     <useMagicPoint_R2 AltName="FP Consumption - R2" Wiki="MP consumed when issuing arts by R2" />
     <shieldIconType AltName="Shield Icon Type" Wiki="If you do not overwrite it, the icon will be displayed based on the swashbuckler ID of the weapon para." Enum="SWORD_ARTS_SHIELD_ICON_TYPE" />
-    <pad AltName="" IsHidden=""/>
+    
+    <swordArtsTypeNew AltName="Sword Arts Type" Wiki="Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler" />
+    <unknown_0x19 AltName="Is DLC Sword Arts" Wiki="Not confirmed, but appears to be used like this." IsBool="" />
+    
     <iconId AltName="Icon ID" Wiki="ID of the icon displayed in FE etc." />
     <aiUsageId AltName="AI Usage Judgment ID" Wiki="AI usage judgment ID" />
-    <swordArtsTypeNew AltName="Sword Arts Type" Wiki="Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler" />
     
   </Field>
   <Self Wiki="Defines Ashes of War, including unique AoW. Determines AoW animation.\nBehaviour data remains in BehaviourParam. Unique AoW data is with the weapon and not with other AoW data." AlternativeOrder="textId,iconId,shieldIconType,-,

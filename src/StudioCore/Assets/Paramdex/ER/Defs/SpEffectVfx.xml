@@ -221,7 +221,7 @@
       <Maximum>1</Maximum>
       <SortID>350</SortID>
     </Field>
-    <Field Def="dummy8 pad_1:1">
+    <Field Def="u8 unknown_0x2f_7:1">
       <DisplayName>パディング</DisplayName>
       <Description>パディング</Description>
       <DisplayFormat>%d</DisplayFormat>
@@ -447,7 +447,14 @@
       <Maximum>999</Maximum>
       <SortID>7000</SortID>
     </Field>
-    <Field Def="dummy8 pad[14]">
+    
+    <Field Def="u8 unknown_0x96" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x97" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x98" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x99" FirstVersion="11210015" />
+    <Field Def="u8 unknown_0x9a" FirstVersion="11210015" />
+    
+    <Field Def="dummy8 pad[9]">
       <DisplayName>パディング</DisplayName>
       <Description>パディング</Description>
       <DisplayFormat>%d</DisplayFormat>

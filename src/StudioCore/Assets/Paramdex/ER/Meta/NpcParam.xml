@@ -553,6 +553,9 @@
     <stepDispInterpolateTriggerValue AltName="Step Display Interpolation Trigger Value" Wiki="Step crossing display activation judgment value" />
     <lockScoreOffset AltName="Lock Score Offset" Wiki="Lock score correction value" />
     <pad12 AltName="" IsHidden=""/>
+    
+    <unknown_0x26a AltName="Is Considered Undead" IsBool="" Wiki="Appears to determine whether an NPC is affected by anti-Undead effects." />
+    
   </Field>
   <Self Wiki="Defines the stats for a given enemy or group of enemies. Does not determine model or location.\nStats are often affected greatly by attached SpEffects." AlternativeOrder="behaviorVariationId,AiThinkId,-,
   
