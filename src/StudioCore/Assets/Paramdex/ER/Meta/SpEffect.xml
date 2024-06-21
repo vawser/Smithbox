@@ -627,7 +627,7 @@
     </Enum>
   </Enums>
   <Field>
-    <iconId AltName="Icon ID" Wiki="Icon ID (When -1, no icon is required)" TextureRef="Direct/01_common/SB_Status_00/iconId/MENU_StatusIcon_" />
+    <iconId AltName="Icon ID" Wiki="Icon ID (When -1, no icon is required)" TextureRef="Direct/01_common/SB_Status_00/iconId/MENU_StatusIcon_,Direct/01_common/SB_Status_01_dlc/iconId/MENU_StatusIcon_" />
     <conditionHp AltName="Trigger at HP Below %" Wiki="Set what percentage of maxHP the remaining HP will be activated" />
     <effectEndurance AltName="Duration" Wiki="Change duration / -1 for permanent / 0 for one moment only" />
     <motionInterval AltName="Trigger Interval" Wiki="Set how many seconds it occurs" />

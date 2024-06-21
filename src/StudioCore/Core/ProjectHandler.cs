@@ -80,9 +80,6 @@ public class ProjectHandler
         Smithbox.ProjectRoot = Path.GetDirectoryName(path);
         Smithbox.SmithboxDataRoot = $"{Smithbox.ProjectRoot}\\.smithbox";
 
-        CFG.Current.LastProjectFile = Smithbox.ProjectRoot;
-        CFG.Save();
-
         Smithbox.SetProgramTitle($"Smithbox - {CurrentProject.Config.ProjectName}");
 
         if (update)
@@ -91,6 +88,11 @@ public class ProjectHandler
             Smithbox.BankHandler.UpdateBanks();
             Smithbox.EditorHandler.UpdateEditors();
             Smithbox.NameCacheHandler.UpdateCaches();
+
+            CFG.Current.LastProjectFile = path;
+            CFG.Save();
+
+            TaskLogs.AddLog(CFG.Current.LastProjectFile);
         }
 
         AddProjectToRecentList();

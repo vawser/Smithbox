@@ -163,7 +163,6 @@ public class NewProjectModal
                 Smithbox.ProjectHandler.CheckUnpackedState(newProject);
 
                 Smithbox.ProjectHandler.WriteProjectConfig(newProject);
-                CFG.Save();
 
                 Smithbox.ProjectHandler.CurrentProject = newProject;
                 Smithbox.ProjectHandler.LoadProject(newProject.ProjectJsonPath);

@@ -86,6 +86,7 @@ Param Editor:
 Text Editor:
  - Add generator tool for quickly adding entires, e.g. weapon entries: start ID, step amount, end ID, default title, default desc
  
+ 
 Gparam Editor:
  - Add mass edit power to Quick Edit: Allow edits to affect all files
  - Add gparam reference support (e.g. jump to map param, and if it is offset, that value entry offset)
@@ -99,6 +100,7 @@ Texture Viewer:
  - Add ability to edit Shoebox Layouts (subwindow)
  - Add ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
+- Change image preview lookup to instead look more generally for icons, change icon field TextureRefs to "{gametype}Lookup", retain the explicit matching though for other usage
 
 World Map:
  - Add the dungeon icons, add icon radius for the non-open world maps
@@ -108,16 +110,13 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
-- Change image preview lookup to instead look more generally for icons, change icon field TextureRefs to "{gametype}Lookup", retain the explicit matching though for other usage
-
-Check Text Editor saves text properly for the new DLC setup in ER
-
 MSB Changes:
  Parts:
   - Collision: UnkT4C can be 2
  Events:
   - New Event Type: 25
 
+Rework how the Text Editor patching system works, currently it is fragile and awkward due to bnd ID map sharing across multiple games
+ Just map the BND ids explicitly (e.g. 412 -> 312 -> 12)
 
- 
- 
+TODO: fix LastProjectFile issue since it seems not to save
