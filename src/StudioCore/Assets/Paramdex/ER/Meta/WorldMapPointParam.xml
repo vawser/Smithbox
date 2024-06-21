@@ -111,7 +111,7 @@
     <disableParamReserve2 AltName="" IsHidden=""/>
     <eventFlagId AltName="Open - Event Flag ID" Wiki="Event flag ID of open condition" />
     <distViewEventFlagId AltName="Distant View - Event Flag ID" Wiki="Event flag ID to be set when found on the distant view" />
-    <iconId AltName="Icon ID" Wiki="Icon ID" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_" />
+    <iconId AltName="Icon ID" Wiki="Icon ID" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_03_dlc/iconId/MENU_MAP_" />
     <bgmPlaceType AltName="BGM Location Type" Wiki="Bgm location type" Enum="SOUND_BGM_MAP_PLACE_TYPE" />
     <isAreaIcon AltName="Is Area Icon" Wiki="Is it an icon that represents a range? Same size as the map" IsBool="" />
     <isOverrideDistViewMarkPos AltName="Overwrite Coordinates when Distant View Marker" Wiki="Whether to overwrite the coordinates when using it as a distant view marker" IsBool="" />
