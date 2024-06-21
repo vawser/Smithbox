@@ -388,7 +388,7 @@ public class EditorDecorations
         {
             if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
             {
-                Smithbox.EditorHandler.TextureViewer.ShowImagePreview(context, texRef);
+                Smithbox.EditorHandler.TextureViewer.ImagePreview.ShowImagePreview(context, texRef);
             }
         }
 
@@ -811,7 +811,7 @@ public class EditorDecorations
 
         foreach(var textureRef in reftypes)
         {
-            bool displayedImage = Smithbox.EditorHandler.TextureViewer.ShowImagePreview(context, textureRef, false);
+            bool displayedImage = Smithbox.EditorHandler.TextureViewer.ImagePreview.ShowImagePreview(context, textureRef, false);
 
             if (displayedImage)
             {

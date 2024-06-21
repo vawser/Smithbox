@@ -57,11 +57,15 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     private SubTexture _cachedPreviewSubtexture;
 
+    public TextureImagePreview ImagePreview;
+
     public TextureViewerScreen(Sdl2Window window, GraphicsDevice device)
     {
         _textureToolbar = new TextureToolbar();
         _textureToolbar_ActionList = new TextureToolbar_ActionList();
         _textureToolbar_Configuration = new TextureToolbar_Configuration();
+
+        ImagePreview = new TextureImagePreview();
     }
 
     public string EditorName => "Texture Viewer##TextureViewerEditor";
@@ -77,6 +81,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void OnProjectChanged()
     {
+        ImagePreview.OnProjectChanged();
+
         if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             string sourcePath = $@"menu\hi\01_common.sblytbnd.dcx";
@@ -883,152 +889,5 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         }
 
         return null;
-    }
-
-    public bool ShowImagePreview(Param.Row context, TexRef textureRef, bool displayImage = true)
-    {
-        // Display the texture
-        LoadTextureContainer(textureRef.TextureContainer);
-        LoadTextureFile(textureRef.TextureFile);
-        ResourceHandle<TextureResource> resHandle = GetImageTextureHandle(_selectedTextureKey, _selectedTexture, _selectedAssetDescription);
-
-        // Display Image
-        if (resHandle != null)
-        {
-            TextureResource texRes = resHandle.Get();
-
-            CurrentTextureInView = texRes;
-            CurrentTextureName = _selectedTextureKey;
-
-            // Get the SubTexture that matches the current field value
-            if (_cachedPreviewSubtexture == null)
-            {
-                _cachedPreviewSubtexture = GetPreviewSubTexture(context, textureRef);
-            }
-
-            if (texRes != null && _cachedPreviewSubtexture != null)
-            {
-                IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
-
-                // Get scaled image size vector
-                var scale = CFG.Current.Param_FieldContextMenu_ImagePreviewScale;
-
-                // Get crop bounds
-                float Xmin = float.Parse(_cachedPreviewSubtexture.X);
-                float Xmax = Xmin + float.Parse(_cachedPreviewSubtexture.Width);
-                float Ymin = float.Parse(_cachedPreviewSubtexture.Y);
-                float Ymax = Ymin + float.Parse(_cachedPreviewSubtexture.Height);
-
-                // Image size should be based on cropped image
-                Vector2 size = new Vector2(Xmax-Xmin, Ymax-Ymin) * scale;
-
-                // Get UV coordinates based on full image
-                float left = (Xmin) / texRes.GPUTexture.Width; 
-                float top = (Ymin) / texRes.GPUTexture.Height; 
-                float right = (Xmax) / texRes.GPUTexture.Width; 
-                float bottom = (Ymax) / texRes.GPUTexture.Height; 
-
-                // Build UV coordinates
-                var UV0 = new Vector2(left, top);
-                var UV1 = new Vector2(right, bottom);
-
-                if (CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu)
-                {
-                    displayImage = true;
-                }
-
-                // Display image
-                if (displayImage)
-                {
-                    ImGui.Image(handle, size, UV0, UV1);
-                }
-
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private SubTexture GetPreviewSubTexture(Param.Row context, TexRef textureRef)
-    {
-        // Guard clauses checking the validity of the TextureRef
-        if (context[textureRef.TargetField] == null)
-        {
-            return null;
-        }
-
-        var imageIdx = $"{context[textureRef.TargetField].Value.Value}";
-
-        SubTexture subTex = null;
-
-        // Dynamic lookup based on meta information
-        if (textureRef.LookupType == "Direct")
-        {
-            subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, textureRef.SubTexturePrefix);
-        }
-
-        // Hardcoded logic for AC6
-        if (Smithbox.ProjectType == ProjectType.AC6)
-        {
-            if (textureRef.LookupType == "Booster")
-            {
-                subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, "BS_A_");
-            }
-            if (textureRef.LookupType == "Weapon")
-            {
-                // Check for WP_A_ match
-                subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, "WP_A_");
-
-                // If failed, check for WP_R_ match
-                if (subTex == null)
-                {
-                    subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, "WP_R_");
-                }
-
-                // If failed, check for WP_L_ match
-                if (subTex == null)
-                {
-                    subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, "WP_L_");
-                }
-            }
-            if (textureRef.LookupType == "Armor")
-            {
-                var prefix = "";
-
-                var headEquip = context["headEquip"].Value.Value.ToString();
-                var bodyEquip = context["bodyEquip"].Value.Value.ToString();
-                var armEquip = context["armEquip"].Value.Value.ToString();
-                var legEquip = context["legEquip"].Value.Value.ToString();
-
-                if (headEquip == "1")
-                {
-                    prefix = "HD_M_";
-                }
-                if (bodyEquip == "1")
-                {
-                    prefix = "BD_M_";
-                }
-                if (armEquip == "1")
-                {
-                    prefix = "AM_M_";
-                }
-                if (legEquip == "1")
-                {
-                    prefix = "LG_M_";
-                }
-
-                // Check for match
-                subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, prefix);
-            }
-        }
-
-        // Hardcoded logic for ER
-        if (Smithbox.ProjectType == ProjectType.ER)
-        {
-
-        }
-
-        return subTex;
     }
 }

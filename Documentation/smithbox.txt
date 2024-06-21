@@ -99,7 +99,6 @@ Texture Viewer:
  - Add ability to edit Shoebox Layouts (subwindow)
  - Add ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
- - Add ability to inject custom icon lookup into the Param META without requiring the user to add it into the project-local param META
 
 World Map:
  - Add the dungeon icons, add icon radius for the non-open world maps
@@ -109,3 +108,4 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
+- Add ability to inject custom icon lookup into the Param META without requiring the user to add it into the project-local param META
