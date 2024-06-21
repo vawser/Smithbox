@@ -760,6 +760,7 @@ public class CFG
                 var options = new JsonSerializerOptions();
                 Current = JsonSerializer.Deserialize(File.ReadAllText(GetConfigFilePath()),
                     CfgSerializerContext.Default.CFG);
+
                 if (Current == null)
                 {
                     throw new Exception("JsonConvert returned null");
@@ -819,6 +820,7 @@ public class CFG
     {
         var json = JsonSerializer.Serialize(
             Current, CfgSerializerContext.Default.CFG);
+
         File.WriteAllText(GetConfigFilePath(), json);
     }
 

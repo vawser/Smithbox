@@ -71,6 +71,8 @@ public class ProjectHandler
             return;
         }
 
+        CurrentProject.ProjectJsonPath = path;
+
         SetGameRootPrompt(CurrentProject);
         CheckUnpackedState(CurrentProject);
         CheckDecompressionDLLs(CurrentProject);
@@ -92,10 +94,8 @@ public class ProjectHandler
             CFG.Current.LastProjectFile = path;
             CFG.Save();
 
-            TaskLogs.AddLog(CFG.Current.LastProjectFile);
+            AddProjectToRecentList(CurrentProject);
         }
-
-        AddProjectToRecentList();
     }
 
     public void LoadProjectFromJSON(string jsonPath)
@@ -150,14 +150,14 @@ public class ProjectHandler
         }
     }
 
-    public void AddProjectToRecentList()
+    public void AddProjectToRecentList(Project targetProject)
     {
         // Add to recent project list
         CFG.RecentProject recent = new()
         {
-            Name = CurrentProject.Config.ProjectName,
-            GameType = CurrentProject.Config.GameType,
-            ProjectFile = CurrentProject.ProjectJsonPath
+            Name = targetProject.Config.ProjectName,
+            GameType = targetProject.Config.GameType,
+            ProjectFile = targetProject.ProjectJsonPath
         };
         CFG.AddMostRecentProject(recent);
     }
