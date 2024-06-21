@@ -2182,7 +2182,7 @@ public class ParamBank
 
         if (Smithbox.ProjectType == ProjectType.ER)
         {
-            //SaveParamsER();
+            SaveParamsER();
         }
 
         if (Smithbox.ProjectType == ProjectType.AC6)

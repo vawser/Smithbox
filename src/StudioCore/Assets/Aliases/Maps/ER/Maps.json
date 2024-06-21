@@ -3495,189 +3495,182 @@
         },
         {
 			"id": "m20_00_00_00",
-			"name": "UNKNOWN",
+			"name": "Belurat, Tower Settlement",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m20_00_00_99",
-			"name": "UNKNOWN",
+			"name": "Belurat, Tower Settlement: Overworld",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m20_01_00_00",
-			"name": "UNKNOWN",
+			"name": "Enir-Ilim",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m20_01_00_99",
-			"name": "UNKNOWN",
+			"name": "Enir-Ilim: Overworld",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m21_00_00_00",
-			"name": "UNKNOWN",
+			"name": "Shadow Keep",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m21_00_00_99",
-			"name": "UNKNOWN",
+			"name": "Shadow Keep: Overworld",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m21_01_00_00",
-			"name": "UNKNOWN",
+			"name": "Specimen Storehouse",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m21_01_00_99",
-			"name": "UNKNOWN",
+			"name": "Specimen Storehouse: Overworld",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m21_02_00_00",
-			"name": "UNKNOWN",
+			"name": "Specimen Storehouse (West Rampart)",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m21_02_00_99",
-			"name": "UNKNOWN",
+			"name": "Specimen Storehouse (West Rampart): Overworld",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m22_00_00_00",
-			"name": "UNKNOWN",
+			"name": "Stone Coffin Fissure",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m25_00_00_00",
-			"name": "UNKNOWN",
+			"name": "Scadu Altus",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m28_00_00_00",
-			"name": "UNKNOWN",
+			"name": "Midra's Manse",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m28_00_00_99",
-			"name": "UNKNOWN",
+			"name": "Midra's Manse: Overworld",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m40_00_00_00",
-			"name": "UNKNOWN",
+			"name": "Fog Rift Catacombs",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m40_01_00_00",
-			"name": "UNKNOWN",
+			"name": "Scorpion River Catacombs",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m40_02_00_00",
-			"name": "UNKNOWN",
+			"name": "Darklight Catacombs",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m41_00_00_00",
-			"name": "UNKNOWN",
+			"name": "Belurat Gaol",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m41_01_00_00",
-			"name": "UNKNOWN",
+			"name": "Bonny Gaol",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m41_02_00_00",
-			"name": "UNKNOWN",
+			"name": "Lamenter's Gaol",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m42_00_00_00",
-			"name": "UNKNOWN",
-			"tags": [
-				""
-			]
-		},
-		{
-			"id": "m42_01_00_00",
-			"name": "UNKNOWN",
+			"name": "Ruined Forge Lava Intake",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m42_02_00_00",
-			"name": "UNKNOWN",
+			"name": "Ruined Forge of Starfall Past",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m42_03_00_00",
-			"name": "UNKNOWN",
+			"name": "Taylew's Ruined Forge",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m43_00_00_00",
-			"name": "UNKNOWN",
+			"name": "Rivermouth Cave",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m43_01_00_00",
-			"name": "UNKNOWN",
+			"name": "Dragon's Pit",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m61_00_00_99",
-			"name": "UNKNOWN",
+			"name": "Shadow of the Erdtree: Super Overworld",
 			"tags": [
 				""
 			]
@@ -4433,21 +4426,21 @@
 		},
 		{
 			"id": "m61_44_45_00",
-			"name": "UNKNOWN",
+			"name": "Ancient Ruins of Rauh - Ancient Ruins, Grand Stairway",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m61_44_45_10",
-			"name": "UNKNOWN",
+			"name": "Ancient Ruins of Rauh - Church of the Bud",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m61_44_46_00",
-			"name": "UNKNOWN",
+			"name": "Ancient Ruins of Rauh - Church of the Bud, Main Entrance",
 			"tags": [
 				""
 			]
@@ -4580,7 +4573,7 @@
 		},
 		{
 			"id": "m61_45_45_00",
-			"name": "UNKNOWN",
+			"name": "Ancient Ruins of Rauh - Rauh Ancient Ruins, West",
 			"tags": [
 				""
 			]
@@ -4594,7 +4587,7 @@
 		},
 		{
 			"id": "m61_45_46_00",
-			"name": "UNKNOWN",
+			"name": "Rauh Base - Temple Town Ruins",
 			"tags": [
 				""
 			]
@@ -4608,7 +4601,7 @@
 		},
 		{
 			"id": "m61_45_47_00",
-			"name": "UNKNOWN",
+			"name": "Rauh Base - Ravine North",
 			"tags": [
 				""
 			]
@@ -4706,7 +4699,7 @@
 		},
 		{
 			"id": "m61_46_39_00",
-			"name": "UNKNOWN",
+			"name": "Cerulean Coast - Cerulean Coast West",
 			"tags": [
 				""
 			]
@@ -4783,7 +4776,7 @@
 		},
 		{
 			"id": "m61_46_47_00",
-			"name": "UNKNOWN",
+			"name": "Ancient Ruins of Rauh - Rauh Ancient Ruins, East",
 			"tags": [
 				""
 			]
@@ -4853,7 +4846,7 @@
 		},
 		{
 			"id": "m61_47_35_00",
-			"name": "UNKNOWN",
+			"name": "Cerulean Coast - The Fissure",
 			"tags": [
 				""
 			]
@@ -4895,7 +4888,7 @@
 		},
 		{
 			"id": "m61_47_41_00",
-			"name": "UNKNOWN",
+			"name": "Gravesite Plain - Ellac River Downstream",
 			"tags": [
 				""
 			]
@@ -4930,7 +4923,7 @@
 		},
 		{
 			"id": "m61_47_45_00",
-			"name": "UNKNOWN",
+			"name": "Scadu Altus - Scadu Altus, West",
 			"tags": [
 				""
 			]
@@ -4958,7 +4951,7 @@
 		},
 		{
 			"id": "m61_47_47_00",
-			"name": "UNKNOWN",
+			"name": "Ancient Ruins of Rauh - Viaduct Minor Tower",
 			"tags": [
 				""
 			]
@@ -5035,7 +5028,7 @@
 		},
 		{
 			"id": "m61_48_37_00",
-			"name": "UNKNOWN",
+			"name": "Cerulean Coast - Cerulean Coast Cross",
 			"tags": [
 				""
 			]
@@ -5049,7 +5042,7 @@
 		},
 		{
 			"id": "m61_48_39_00",
-			"name": "UNKNOWN",
+			"name": "Cerulean Coast - Cerulean Coast / Charo's Hidden Grave",
 			"tags": [
 				""
 			]
@@ -5077,7 +5070,7 @@
 		},
 		{
 			"id": "m61_48_43_00",
-			"name": "UNKNOWN",
+			"name": "Abyssal Woods - Divided Falls",
 			"tags": [
 				""
 			]
@@ -5091,7 +5084,7 @@
 		},
 		{
 			"id": "m61_48_45_00",
-			"name": "UNKNOWN",
+			"name": "Scadu Altus - Highroad Cross",
 			"tags": [
 				""
 			]
@@ -5105,7 +5098,7 @@
 		},
 		{
 			"id": "m61_48_47_00",
-			"name": "UNKNOWN",
+			"name": "Rauh Base - Ancient Ruins Base",
 			"tags": [
 				""
 			]
@@ -5189,7 +5182,7 @@
 		},
 		{
 			"id": "m61_49_39_00",
-			"name": "UNKNOWN",
+			"name": "Foot of the Jagged Peak - Grand Altar of Dragon Communion",
 			"tags": [
 				""
 			]
@@ -5217,14 +5210,14 @@
 		},
 		{
 			"id": "m61_49_43_00",
-			"name": "UNKNOWN",
+			"name": "Scadu Altus - Moorth Highway, South / Fort of Reprimand / Behind the Fort of Reprimand",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m61_49_44_00",
-			"name": "UNKNOWN",
+			"name": "Scadu Altus - Moorth Ruins / Bonny Village",
 			"tags": [
 				""
 			]
@@ -5245,14 +5238,14 @@
 		},
 		{
 			"id": "m61_49_47_00",
-			"name": "UNKNOWN",
+			"name": "Scadu Altus - Castle Watering Hole",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m61_49_48_00",
-			"name": "UNKNOWN",
+			"name": "Scaduview - Scaduview / Shadow Keep, Back Gate",
 			"tags": [
 				""
 			]
@@ -5322,7 +5315,7 @@
 		},
 		{
 			"id": "m61_50_38_00",
-			"name": "UNKNOWN",
+			"name": "Cerulean Coast - Finger Ruins of Rhia",
 			"tags": [
 				""
 			]
@@ -5350,28 +5343,28 @@
 		},
 		{
 			"id": "m61_50_42_00",
-			"name": "UNKNOWN",
+			"name": "Abyssal Woods - Abyssal Woods",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m61_50_43_00",
-			"name": "UNKNOWN",
+			"name": "Scadu Altus - Scaduview Cross",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m61_50_44_00",
-			"name": "UNKNOWN",
+			"name": "Scadu Altus - Recluses' River Downstream",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m61_50_45_00",
-			"name": "UNKNOWN",
+			"name": "Scadu Altus - Recluses' River Upstream",
 			"tags": [
 				""
 			]
@@ -5392,7 +5385,7 @@
 		},
 		{
 			"id": "m61_50_48_00",
-			"name": "UNKNOWN",
+			"name": "Scaduview - Hinterland / Scadutree Base",
 			"tags": [
 				""
 			]
@@ -5490,7 +5483,7 @@
 		},
 		{
 			"id": "m61_51_42_00",
-			"name": "UNKNOWN",
+			"name": "Abyssal Woods - Woodland Trail",
 			"tags": [
 				""
 			]
@@ -5504,14 +5497,14 @@
 		},
 		{
 			"id": "m61_51_44_00",
-			"name": "UNKNOWN",
+			"name": "Scadu Altus - Bridge Leading to the Village",
 			"tags": [
 				""
 			]
 		},
 		{
 			"id": "m61_51_45_00",
-			"name": "UNKNOWN",
+			"name": "Scadu Altus - Cathedral of Manus Metyr",
 			"tags": [
 				""
 			]
@@ -5525,7 +5518,7 @@
 		},
 		{
 			"id": "m61_51_47_00",
-			"name": "UNKNOWN",
+			"name": "Scadu Altus - Church District Highroad",
 			"tags": [
 				""
 			]
@@ -5533,7 +5526,7 @@
 
 		{
 			"id": "m61_51_48_00",
-			"name": "UNKNOWN",
+			"name": "Scaduview - Fingerstone Hill / Hinterland Bridge",
 			"tags": [
 				""
 			]
@@ -5603,7 +5596,7 @@
 		},
 		{
 			"id": "m61_52_40_00",
-			"name": "UNKNOWN",
+			"name": "Foot of the Jagged Peak - Foot of the Jagged Peak",
 			"tags": [
 				""
 			]
@@ -5624,7 +5617,7 @@
 		},
 		{
 			"id": "m61_52_43_00",
-			"name": "UNKNOWN",
+			"name": "Abyssal Woods - Forsaken Graveyard",
 			"tags": [
 				""
 			]
@@ -5722,7 +5715,7 @@
 		},
 		{
 			"id": "m61_53_39_00",
-			"name": "UNKNOWN",
+			"name": "Jagged Peak - Jagged Peak Mountainside",
 			"tags": [
 				""
 			]
@@ -5736,7 +5729,7 @@
 		},
 		{
 			"id": "m61_53_41_00",
-			"name": "UNKNOWN",
+			"name": "Abyssal Woods - Church Ruins",
 			"tags": [
 				""
 			]
@@ -5848,7 +5841,7 @@
 		},
 		{
 			"id": "m61_54_39_00",
-			"name": "UNKNOWN",
+			"name": "Jagged Peak - Jagged Peak Summit",
 			"tags": [
 				""
 			]
@@ -5974,7 +5967,7 @@
 		},
 		{
 			"id": "m61_55_39_00",
-			"name": "UNKNOWN",
+			"name": "Jagged Peak - Rest of the Dread Dragon",
 			"tags": [
 				""
 			]

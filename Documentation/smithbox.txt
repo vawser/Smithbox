@@ -109,4 +109,3 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
-Add validation action in Param Editor that runs the current param through the old Param implementation to validate the paramdef.

@@ -91,6 +91,8 @@ public class ProjectHandler
             Smithbox.EditorHandler.UpdateEditors();
             Smithbox.NameCacheHandler.UpdateCaches();
         }
+
+        AddProjectToRecentList();
     }
 
     public void ClearProject()

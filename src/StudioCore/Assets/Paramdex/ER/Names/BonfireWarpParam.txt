@@ -92,12 +92,12 @@
 200001 [Belurat, Tower Settlement] Belurat, Tower Settlement
 200002 [Belurat, Tower Settlement] Small Private Altar
 200003 [Belurat, Tower Settlement] Stagefront
-200100 [Enir,Ilim] Gate of Divinity
-200102 [Enir,Ilim] Enir,Ilim: Outer Wall
-200103 [Enir,Ilim] First Rise
-200104 [Enir,Ilim] Spiral Rise
-200105 [Enir,Ilim] Cleansing Chamber Anteroom
-200106 [Enir,Ilim] Divine Gate Front Staircase
+200100 [Enir-Ilim] Gate of Divinity
+200102 [Enir-Ilim] Enir-Ilim: Outer Wall
+200103 [Enir-Ilim] First Rise
+200104 [Enir-Ilim] Spiral Rise
+200105 [Enir-Ilim] Cleansing Chamber Anteroom
+200106 [Enir-Ilim] Divine Gate Front Staircase
 210001 [Shadow Keep] Main Gate Plaza
 210002 [Shadow Keep] Shadow Keep Main Gate
 210006 [Shadow Keep, Church District] Church District Entrance
