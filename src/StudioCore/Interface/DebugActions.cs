@@ -33,12 +33,15 @@ public static class DebugActions
     {
         var selectedParamName = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
         var currentParam = ParamBank.VanillaBank.Params[selectedParamName];
+        var currentRow = 0;
 
-        TaskManager.Run(new TaskManager.LiveTask($"Validate {currentParam.ParamType} Padding", TaskManager.RequeueType.None, false,
+        TaskManager.Run(new TaskManager.LiveTask($"Validate {selectedParamName} Padding", TaskManager.RequeueType.None, false,
         () =>
         {
             foreach (var row in currentParam.Rows)
             {
+                currentRow = row.ID;
+
                 foreach (var cell in row.Cells)
                 {
                     if (cell.Def.InternalType == "dummy8")
@@ -54,7 +57,7 @@ public static class DebugActions
                             {
                                 if (b != 0)
                                 {
-                                    TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName} contains non-zero values");
+                                    TaskLogs.AddLog($"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
                                 }
                             }
                         }
@@ -65,7 +68,7 @@ public static class DebugActions
                             byte b = (byte)cell.Value;
                             if (b != 0)
                             {
-                                TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName} contains non-zero values");
+                                TaskLogs.AddLog($"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
                             }
                         }
                     }
