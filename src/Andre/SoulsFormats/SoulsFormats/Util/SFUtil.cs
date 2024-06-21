@@ -330,10 +330,20 @@ namespace SoulsFormats
         }
 
         // TODO: actually implement this properly
-        public static byte[] WriteZstd(BinaryWriterEx bw, byte compressionLevel, Span<byte> input)
+        public static int WriteZstd(BinaryWriterEx bw, byte compressionLevel, Span<byte> input)
         {
+            long start = bw.Position;
+
             using var compressor = new Compressor(new CompressionOptions(compressionLevel));
-            return compressor.Wrap(input).ToArray();
+            var compressedData = compressor.Wrap(input);
+
+            var data = input.ToArray();
+            using (var deflateStream = new DeflateStream(bw.Stream, CompressionMode.Compress, true))
+            {
+                deflateStream.Write(data, 0, input.Length);
+            }
+
+            return (int)(bw.Position - start);
         }
 
         // TODO: actually implement this properly

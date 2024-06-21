@@ -469,7 +469,8 @@ namespace SoulsFormats
                 SFUtil.WriteZlib(bw, 0xDA, data);
             else if (type == Type.ZSTD)
             {
-                SFUtil.WriteZstd(bw, 21, data);
+                CompressDCPDFLT(data, bw);
+                //CompressDCXZSTD(data, bw);
             }
             else if (type == Type.DCP_DFLT)
                 CompressDCPDFLT(data, bw);
@@ -489,6 +490,28 @@ namespace SoulsFormats
                 throw new ArgumentException("You cannot compress a DCX with an unknown type.");
             else
                 throw new NotImplementedException("Compression for the given type is not implemented.");
+        }
+
+        private static void CompressDCXZSTD(Span<byte> data, BinaryWriterEx bw)
+        {
+            bw.WriteASCII("DCX\0");
+            bw.WriteASCII("ZSTD");
+            bw.WriteInt32(0x20);
+            bw.WriteInt32(0x9000000);
+            bw.WriteInt32(0);
+            bw.WriteInt32(0);
+            bw.WriteInt32(0);
+            bw.WriteInt32(0x00010100);
+
+            bw.WriteASCII("DCS\0");
+            bw.WriteInt32(data.Length);
+            bw.ReserveInt32("CompressedSize");
+
+            int compressedSize = SFUtil.WriteZstd(bw, 3, data);
+            bw.FillInt32("CompressedSize", compressedSize);
+
+            bw.WriteASCII("DCA\0");
+            bw.WriteInt32(8);
         }
 
         private static void CompressDCPDFLT(Span<byte> data, BinaryWriterEx bw)
