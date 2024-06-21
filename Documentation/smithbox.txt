@@ -108,4 +108,11 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
-- Add ability to inject custom icon lookup into the Param META without requiring the user to add it into the project-local param META
+- Change image preview lookup to instead look more generally for icons, change icon field TextureRefs to "{gametype}Lookup", retain the explicit matching though for other usage
+
+MSB Changes:
+ Parts:
+  - Collision: UnkT4C can be 2
+ Events:
+  - New Event Type: 25
+

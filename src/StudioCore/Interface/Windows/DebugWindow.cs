@@ -94,6 +94,10 @@ public class DebugWindow
         {
             DebugActions.ValidateParamdef();
         }
+        if (ImGui.Button("Padding Validation"))
+        {
+            DebugActions.ValidatePadding();
+        }
     }
 
     private void DisplayImGuiDemo()

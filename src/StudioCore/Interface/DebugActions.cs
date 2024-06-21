@@ -1,8 +1,10 @@
 ﻿using DotNext.IO;
+using HKLib.hk2018.TypeRegistryTest;
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Formats;
@@ -27,6 +29,51 @@ public static class DebugActions
     private static Dictionary<string, Param> _params = new Dictionary<string, Param>();
     private static ulong _paramVersion;
 
+    public static void ValidatePadding()
+    {
+        var selectedParamName = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
+        var currentParam = ParamBank.VanillaBank.Params[selectedParamName];
+
+        TaskManager.Run(new TaskManager.LiveTask($"Validate {currentParam.ParamType} Padding", TaskManager.RequeueType.None, false,
+        () =>
+        {
+            foreach (var row in currentParam.Rows)
+            {
+                foreach (var cell in row.Cells)
+                {
+                    if (cell.Def.InternalType == "dummy8")
+                    {
+                        //TaskLogs.AddLog(cell.Value.GetType().Name);
+
+                        if (cell.Value.GetType() == typeof(byte[]))
+                        {
+                           // TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName}");
+
+                            byte[] bytes = (byte[])cell.Value;
+                            foreach (var b in bytes)
+                            {
+                                if (b != 0)
+                                {
+                                    TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName} contains non-zero values");
+                                }
+                            }
+                        }
+                        else if(cell.Value.GetType() == typeof(byte))
+                        {
+                            //TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName}");
+
+                            byte b = (byte)cell.Value;
+                            if (b != 0)
+                            {
+                                TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName} contains non-zero values");
+                            }
+                        }
+                    }
+                }
+            }
+        }));
+    }
+
     public static void ValidateParamdef()
     {
         // Read params from regulation.bin via SF PARAM impl
@@ -49,7 +96,7 @@ public static class DebugActions
     }
 
     private static void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version,
-        bool checkVersion = false)
+        bool checkVersion = false, bool validatePadding = false)
     {
         var success = ulong.TryParse(parambnd.Version, out version);
         if (checkVersion && !success)
