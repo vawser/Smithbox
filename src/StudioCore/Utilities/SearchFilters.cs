@@ -178,26 +178,35 @@ public static class SearchFilters
             if (entry == refId)
                 partTruth[i] = true;
 
+            // Contains: ID
+            if (refId.Contains(entry))
+                partTruth[i] = true;
+
             var refIdParts = refId.Split("_");
             foreach (var refIdPart in refIdParts)
             {
                 if (entry == refIdPart)
-                {
                     partTruth[i] = true;
-                }
+
+                if (refIdPart.Contains(entry))
+                    partTruth[i] = true;
             }
 
             // Match: Name
             if (entry == refName)
                 partTruth[i] = true;
 
+            if (refName.Contains(entry))
+                partTruth[i] = true;
+
             var refParts = refName.Split("_");
             foreach (var refPart in refParts)
             {
                 if (entry == refPart)
-                {
                     partTruth[i] = true;
-                }
+
+                if (refPart.Contains(entry))
+                    partTruth[i] = true;
             }
 
             // Match: Reference Segments
@@ -235,6 +244,9 @@ public static class SearchFilters
             // Match: Tags
             foreach (string tagStr in rawRefTags)
             {
+                if (tagStr.ToLower().Contains(entry))
+                    partTruth[i] = true;
+
                 if (entry == tagStr.ToLower())
                     partTruth[i] = true;
             }
@@ -462,6 +474,10 @@ public static class SearchFilters
             if (entry == MapID)
                 partTruth[i] = true;
 
+            // Contains: Map ID
+            if (MapID.Contains(entry))
+                partTruth[i] = true;
+
             // Match: Map ID parts
             var MapIDParts = MapID.Split("_");
             foreach (var refPart in MapIDParts)
@@ -469,13 +485,18 @@ public static class SearchFilters
                 var part = refPart.Replace("m", "");
 
                 if (entry == refPart)
-                {
                     partTruth[i] = true;
-                }
+
+                if (refPart.Contains(entry))
+                    partTruth[i] = true;
             }
 
             // Match: Alias Name
             if (entry == MapName)
+                partTruth[i] = true;
+
+            // Contains: Map ID
+            if (MapName.Contains(entry))
                 partTruth[i] = true;
 
             // Match: Alias Name parts
@@ -483,14 +504,18 @@ public static class SearchFilters
             foreach (var refPart in MapNameParts)
             {
                 if (entry == refPart)
-                {
                     partTruth[i] = true;
-                }
+
+                if (refPart.Contains(entry))
+                    partTruth[i] = true;
             }
 
             // Match: Tags
             foreach (string tagStr in MapTags)
             {
+                if (tagStr.ToLower().Contains(entry))
+                    partTruth[i] = true;
+
                 if (entry == tagStr.ToLower())
                     partTruth[i] = true;
             }
