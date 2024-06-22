@@ -109,8 +109,8 @@ public class EditorDecorations
             foreach (FMGRef r in fmgRef)
             {
                 Param.Cell? c = context?[r.conditionField];
-                var inactiveRef = context != null && c != null &&
-                                  Convert.ToInt32(c.Value.Value) != r.conditionValue;
+                var inactiveRef = context != null && c != null && Convert.ToInt32(c.Value.Value) != r.conditionValue;
+
                 if (inactiveRef)
                 {
                     inactiveRefs.Add(r.fmg);

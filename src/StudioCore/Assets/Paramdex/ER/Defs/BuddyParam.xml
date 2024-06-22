@@ -227,22 +227,22 @@
       <Description>リザーブ２</Description>
       <SortID>1114</SortID>
     </Field>
-    <Field Def="u32 Unk1" FirstVersion="10801000" />
-    <Field Def="u32 Unk2" FirstVersion="10801000" />
-    <Field Def="s32 Unk3" FirstVersion="10801000" />
-    <Field Def="s32 Unk4" FirstVersion="10801000" />
-    <Field Def="s32 Unk5" FirstVersion="10801000" />
-    <Field Def="s32 Unk6" FirstVersion="10801000" />
-    <Field Def="s32 Unk7" FirstVersion="10801000" />
-    <Field Def="s32 Unk8" FirstVersion="10801000" />
-    <Field Def="s32 Unk9" FirstVersion="10801000" />
-    <Field Def="s32 Unk10" FirstVersion="10801000" />
-    <Field Def="u32 Unk11" FirstVersion="10801000" />
-    <Field Def="s32 Unk12" FirstVersion="10801000" />
-    <Field Def="s32 Unk13" FirstVersion="10801000" />
-    <Field Def="s32 Unk14" FirstVersion="10801000" />
-    <Field Def="s32 Unk15" FirstVersion="10801000" />
-    <Field Def="s32 Unk16" FirstVersion="10801000" />
-    <Field Def="u32 Unk17" FirstVersion="10801000" />
+    <Field Def="u32 unknown_0x5c" FirstVersion="10801000" />
+    <Field Def="u32 unknown_0x60" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x64" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x68" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x6c" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x70" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x74" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x78" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x7c" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x80" FirstVersion="10801000" />
+    <Field Def="u32 unknown_0x84" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x88" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x8c" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x90" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x94" FirstVersion="10801000" />
+    <Field Def="s32 unknown_0x98" FirstVersion="10801000" />
+    <Field Def="u32 unknown_0x9c" FirstVersion="10801000" />
   </Fields>
 </PARAMDEF>

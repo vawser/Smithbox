@@ -117,7 +117,7 @@ public static class AliasUtils
             sPrefix = gparamName.Substring(0, 6).Replace("s", "m"); // Cutscene
         }
 
-        if (Smithbox.BankHandler.GparamAliases.Aliases != null)
+        if (Smithbox.BankHandler.GparamAliases.Aliases.list != null)
         {
             foreach (var entry in Smithbox.BankHandler.GparamAliases.Aliases.list)
             {
@@ -290,7 +290,7 @@ public static class AliasUtils
         {
             if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
             {
-                if(Smithbox.BankHandler.CharacterAliases.Aliases != null)
+                if(Smithbox.BankHandler.CharacterAliases.Aliases.list != null)
                 {
                     aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
                     aliasName = $"{aliasName}";
@@ -299,7 +299,7 @@ public static class AliasUtils
 
             if (CFG.Current.MapEditor_MapObjectList_ShowAssetNames && (e.IsPartAsset() || e.IsPartDummyAsset()))
             {
-                if (Smithbox.BankHandler.AssetAliases.Aliases != null)
+                if (Smithbox.BankHandler.AssetAliases.Aliases.list != null)
                 {
                     aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.AssetAliases.Aliases.list);
                     aliasName = $"{aliasName}";
@@ -308,7 +308,7 @@ public static class AliasUtils
 
             if (CFG.Current.MapEditor_MapObjectList_ShowMapPieceNames && e.IsPartMapPiece())
             {
-                if (Smithbox.BankHandler.MapPieceAliases.Aliases != null)
+                if (Smithbox.BankHandler.MapPieceAliases.Aliases.list != null)
                 {
                     aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.MapPieceAliases.Aliases.list);
                     aliasName = $"{aliasName}";
