@@ -1820,667 +1820,1076 @@
         {
             "id": "c5000",
             "name": "Commander Gaius",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5010",
             "name": "Golden Hippopotamus",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5011",
             "name": "Golden Hippopotamus (Golden Wings)",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5020",
             "name": "Putrescent Knight",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5030",
             "name": "Romina, Saint of the Bud",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5040",
             "name": "Curseblade Labirith",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5050",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5050",
             "name": "Midra, Lord of Frenzied Flame",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5051",
-            "name": "",
-            "tags": []
+            "name": "Midra, Lord of Frenzied Flame",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5060",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5061",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5070",
             "name": "Death Knight",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5080",
             "name": "Bloodfiend",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5081",
             "name": "Chief Bloodfiend",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5090",
             "name": "Gravebird",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5110",
-            "name": "Squiggle",
-            "tags": []
+            "name": "Ghostly Worm",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5120",
             "name": "Bayle the Dread",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5130",
             "name": "Messmer the Impaler",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5131",
             "name": "Messmer the Impaler",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5132",
             "name": "Messmer the Impaler",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5140",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5141",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
+            "id": "c5160",
+            "name": "Fire Knight",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5170",
             "name": "Furnace Golem",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5180",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5181",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5190",
             "name": "Spider Scorpion",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5192",
             "name": "Spider Scorpion",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5193",
             "name": "Spider Scorpion (Small)",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5194",
             "name": "Spider Scorpion (Small)",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5200",
             "name": "Metyr, Mother of Fingers",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5210",
             "name": "Divine Beast Dancing Lion",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5220",
             "name": "Promised Consort Radahn",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5221",
             "name": "Miquella's Arms",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5230",
             "name": "Scadutree Avatar",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5240",
-            "name": "",
-            "tags": []
+            "name": "Commoner (Pot)",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5241",
-            "name": "",
-            "tags": []
+            "name": "Commoner",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5251",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5260",
-            "name": "",
-            "tags": []
+            "name": "Smith Golem",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
+            "id": "c5261",
+            "name": "Smith Golem",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5270",
-            "name": "",
-            "tags": []
+            "name": "Jar Innards",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5271",
-            "name": "",
-            "tags": []
+            "name": "Jar Innards",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5280",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5300",
             "name": "Rellana, Twin Moon Knight",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
+            "id": "c5311",
+            "name": "",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5312",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5320",
             "name": "Jori, Elder Inquisitor",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5330",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5340",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5350",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5360",
-            "name": "",
-            "tags": []
+            "name": "Decaying Beast Skeleton",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5370",
             "name": "Ancient Dragon Senessax",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5380",
-            "name": "Jagged Peak Drake",
-            "tags": []
+            "name": "Miranda Blossom",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5381",
-            "name": "",
-            "tags": []
+            "name": "Miranda Sprout",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5390",
-            "name": "",
-            "tags": []
+            "name": "Troll",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5391",
-            "name": "",
-            "tags": []
-        },
-        {
-            "id": "c5400",
-            "name": "",
-            "tags": []
+            "name": "Troll Knight",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5401",
-            "name": "",
-            "tags": []
+            "name": "Eagle",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5410",
-            "name": "",
-            "tags": []
-        },
-        {
-            "id": "c5420",
-            "name": "",
-            "tags": []
+            "name": "Deer",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5421",
-            "name": "",
-            "tags": []
+            "name": "Red Bear",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5430",
-            "name": "",
-            "tags": []
+            "name": "Owl",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5440",
-            "name": "",
-            "tags": []
+            "name": "Boar",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5450",
-            "name": "",
-            "tags": []
+            "name": "Ram",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5460",
-            "name": "",
-            "tags": []
+            "name": "Murre",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5470",
-            "name": "",
-            "tags": []
+            "name": "Dragonfly",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5471",
-            "name": "",
-            "tags": []
+            "name": "Yellow Dragonfly",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5472",
-            "name": "",
-            "tags": []
+            "name": "Great Dragonfly",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5480",
-            "name": "",
-            "tags": []
+            "name": "Turtle",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5490",
-            "name": "",
-            "tags": []
+            "name": "Springhare",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5500",
-            "name": "",
-            "tags": []
-        },
-        {
-            "id": "c5501",
-            "name": "",
-            "tags": []
-        },
-        {
-            "id": "c5510",
-            "name": "",
-            "tags": []
+            "name": "Living Magma",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5511",
-            "name": "",
-            "tags": []
+            "name": "Shade",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5512",
-            "name": "",
-            "tags": []
+            "name": "Shade",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5513",
-            "name": "",
-            "tags": []
+            "name": "Cemetary Shade",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5520",
-            "name": "",
-            "tags": []
+            "name": "Stray",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5521",
-            "name": "",
-            "tags": []
+            "name": "Stray",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5522",
-            "name": "",
-            "tags": []
+            "name": "Stray",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5523",
-            "name": "",
-            "tags": []
+            "name": "Stray",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5524",
-            "name": "",
-            "tags": []
+            "name": "Braided Stray",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5525",
-            "name": "",
-            "tags": []
+            "name": "Braided Stray",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5526",
-            "name": "",
-            "tags": []
+            "name": "Bloodbane Stray",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5527",
-            "name": "",
-            "tags": []
+            "name": "Bloodbane Stray",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5530",
-            "name": "",
-            "tags": []
+            "name": "Man-Bat",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5540",
-            "name": "",
-            "tags": []
+            "name": "Wolf",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5541",
-            "name": "",
-            "tags": []
+            "name": "Wolf",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5550",
-            "name": "",
-            "tags": []
+            "name": "Fingercreeper",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5551",
-            "name": "",
-            "tags": []
+            "name": "Fingercreeper (Large)",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
+            "id": "c5560",
+            "name": "Fingercreeper (Small)",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5570",
-            "name": "",
-            "tags": []
+            "name": "Marionette Soldier",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5580",
-            "name": "",
-            "tags": []
+            "name": "Flying Dragon",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5590",
-            "name": "",
-            "tags": []
+            "name": "Putrid Flesh",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5591",
-            "name": "",
-            "tags": []
+            "name": "Putrid Flesh (Large)",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5600",
-            "name": "",
-            "tags": []
+            "name": "Catacomb Skeleton",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5620",
-            "name": "",
-            "tags": []
+            "name": "Tibia Mariner",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5630",
-            "name": "",
-            "tags": []
+            "name": "Giant Crayfish",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5640",
-            "name": "",
-            "tags": []
+            "name": "Giant Crab",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5641",
-            "name": "",
-            "tags": []
-        },
-        {
-            "id": "c5650",
-            "name": "",
-            "tags": []
+            "name": "Crab",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5651",
-            "name": "",
-            "tags": []
-        },
-        {
-            "id": "c5660",
-            "name": "",
-            "tags": []
+            "name": "Messmer Foot Soldier",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5661",
-            "name": "",
-            "tags": []
+            "name": "Shadow Militia",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5680",
-            "name": "",
-            "tags": []
+            "name": "Wheeled Ballista",
+            "tags": [
+                "trap",
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5690",
-            "name": "",
-            "tags": []
+            "name": "Dragon-faced Flamethrower",
+            "tags": [
+                "trap",
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5700",
-            "name": "",
-            "tags": []
+            "name": "Demi-Human",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5701",
-            "name": "",
-            "tags": []
+            "name": "Demi-Human (Large)",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5710",
-            "name": "",
-            "tags": []
+            "name": "Demi-Human Shaman",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5720",
-            "name": "",
-            "tags": []
+            "name": "Demi-Human Chief",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5730",
-            "name": "Demi-Human Queen Marigga",
-            "tags": []
+            "name": "Demi-Human Queen",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5740",
-            "name": "",
-            "tags": []
+            "name": "Kindred of Rot",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5750",
-            "name": "",
-            "tags": []
+            "name": "Living Jar Warrior",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5751",
-            "name": "",
-            "tags": []
+            "name": "Living Jar",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5760",
-            "name": "",
-            "tags": []
+            "name": "Rat",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5761",
-            "name": "",
-            "tags": []
+            "name": "Giant Rat",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5780",
-            "name": "",
-            "tags": []
+            "name": "Runebear",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5790",
-            "name": "",
-            "tags": []
+            "name": "Guardian Golem",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5800",
-            "name": "",
-            "tags": []
+            "name": "Crucible Knight Centaur (TEMP NAME)",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5810",
             "name": "Demi-Human Swordmaster Onze",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5820",
             "name": "Great Red Bear",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
+            "id": "c5830",
+            "name": "Messmer Soldier",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5840",
             "name": "Black Knight",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5850",
-            "name": "",
-            "tags": []
+            "name": "Giant Ram",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5860",
             "name": "Ghostflame Dragon",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
+            "id": "c5870",
+            "name": "Imp (Lion Head)",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5871",
-            "name": "",
-            "tags": []
+            "name": "Imp (Dragon Head)",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5872",
-            "name": "",
-            "tags": []
+            "name": "Imp (Dragon Head)",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5880",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5890",
-            "name": "",
-            "tags": []
+            "name": "Black Knight Horse",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
+            "id": "c5900",
+            "name": "Man-Fly",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5910",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5920",
-            "name": "",
-            "tags": []
+            "name": "Magma Wyrm",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5930",
-            "name": "",
-            "tags": []
+            "name": "Giant Skeleton",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5931",
-            "name": "",
-            "tags": []
+            "name": "Giant Beast Skeleton",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5940",
-            "name": "",
-            "tags": []
+            "name": "Watcher Stones",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5950",
-            "name": "",
-            "tags": []
+            "name": "Leonine Misbegotten",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5960",
-            "name": "",
-            "tags": []
+            "name": "Ulcerated Tree Spirit",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5970",
-            "name": "",
-            "tags": []
+            "name": "Abductor Virgin",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5980",
-            "name": "",
-            "tags": []
+            "name": "Omenkiller",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5990",
-            "name": "",
-            "tags": []
+            "name": "Basilisk",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6001",
@@ -2584,84 +2993,124 @@
             ]
         },
         {
-            "id": "c6200",
-            "name": "",
-            "tags": []
-        },
-        {
             "id": "c6201",
-            "name": "",
-            "tags": []
+            "name": "Scarab",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6210",
-            "name": "",
-            "tags": []
+            "name": "Albinauric Archer",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6220",
-            "name": "",
-            "tags": []
+            "name": "Wolf",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6231",
-            "name": "",
-            "tags": []
+            "name": "Perfumer",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6232",
-            "name": "",
-            "tags": []
+            "name": "Glintstone Sorcerer",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6233",
-            "name": "",
-            "tags": []
+            "name": "Page",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6240",
             "name": "",
-            "tags": []
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6251",
-            "name": "Tree Sentinel (SOTE)",
-            "tags": []
+            "name": "Tree Sentinel",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6260",
-            "name": "Death Rite Bird (SOTE)",
-            "tags": []
+            "name": "Death Rite Bird",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6270",
-            "name": "",
-            "tags": []
+            "name": "Royal Revenant",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6290",
-            "name": "",
-            "tags": []
+            "name": "Misbegotten",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6291",
-            "name": "",
-            "tags": []
+            "name": "Scaly Misbegotten",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6300",
-            "name": "",
-            "tags": []
+            "name": "Snail",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6310",
-            "name": "Fallingstar Beast (SOTE)",
-            "tags": []
+            "name": "Fallingstar Beast",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c6320",
-            "name": "",
-            "tags": []
+            "name": "Wandering Noble",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c7000",
@@ -2693,7 +3142,7 @@
         },
         {
             "id": "c8101",
-            "name": "Trebuchet",
+            "name": "Wheeled Ballista",
             "tags": [
                 "trap"
             ]
@@ -2730,8 +3179,11 @@
         },
         {
             "id": "c8902",
-            "name": "",
-            "tags": []
+            "name": "Miquella",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c8903",
@@ -2744,7 +3196,7 @@
         },
         {
             "id": "c8904",
-            "name": "Giant Aged Man with Ornate Cape",
+            "name": "Morgott",
             "tags": [
                 "creature",
                 "humanoid"
@@ -2767,9 +3219,16 @@
         },
         {
             "id": "c8907",
-            "name": "Malformed Melina",
+            "name": "Ranni Doll",
             "tags": [
                 "humanoid"
+            ]
+        },
+        {
+            "id": "c9001",
+            "name": "FLVER Test",
+            "tags": [
+                "debug"
             ]
         }
     ]
