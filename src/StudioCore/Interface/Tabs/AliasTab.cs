@@ -76,6 +76,12 @@ public class AliasTab
         ImGui.BeginChild($"EditAliasWindow_{EntryName}");
 
         ImGui.Separator();
+        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Alias Actions");
+        ImGui.Separator();
+
+        DisplayActionsWindow();
+
+        ImGui.Separator();
         ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Edit Selected Alias");
         ImGui.Separator();
 
@@ -152,6 +158,30 @@ public class AliasTab
                 }
             }
         }
+    }
+
+    private void DisplayActionsWindow()
+    {
+        var scale = Smithbox.GetUIScale();
+        var width = ImGui.GetWindowWidth();
+        var inputSize = new Vector2(width, 20 * scale);
+        var buttonSize = new Vector2(width, 24 * scale);
+
+        if (ImGui.Button("Copy Aliases", buttonSize))
+        {
+            var aliasList = "";
+            foreach(var entry in Bank.GetEntries())
+            {
+                if (entry.Key == "dummy" || entry.Key == "default")
+                    continue;
+
+                var line = $"{entry.Key} {entry.Value.name}\n";
+                aliasList = aliasList + line;
+            }
+
+            PlatformUtils.Instance.SetClipboardText(aliasList);
+        }
+        ImguiUtils.ShowHoverTooltip("Copy the aliases into a list: <ID> <Name>, saving to your clipboard.");
     }
 
     private void DisplayEditWindow()

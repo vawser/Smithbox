@@ -51,6 +51,9 @@ Additions:
  - Cutscene (MQB) Editor
  - Merge Tool: user-focused merging of current project + target project
  
+Hacks:
+- Remove hack with PostureControlParam_WepRight and SignPuddleParam for param upgrader
+ 
 General:
  - Add format json support for the other MSB types.
  - Add shortcuts for Param/Model/Gparam/Texture Viewer toolbar actions
@@ -111,9 +114,6 @@ World Map:
 # Notes
 #--------------------------------------
 # Issues
-TalkParam is choking on view due to FmgRef lookup
 Prefab create throw error on new project creation (for a user)
 
-Param Upgrade is causing PostureControlParam_WepRight and SignPuddleParam to become invalid to the paramdef
-
-
+TalkParam is lagging heavily with Imgui interaction once properties are visible
