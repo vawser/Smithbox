@@ -147,10 +147,10 @@
       <Maximum>128</Maximum>
       <SortID>990</SortID>
     </Field>
-    <Field Def="u8 swordArtsTypeNew" FirstVersion="10701000">
-    </Field>
     
-    <Field Def="u8 unknown_0x19" FirstVersion="11210015" />
+    <Field Def="u8 swordArtsTypeNew_old" FirstVersion="10701000" RemovedVersion="11210015" />
+    
+    <Field Def="u16 swordArtsTypeNew" FirstVersion="11210015" />
     
     <Field Def="dummy8 pad[1]" RemovedVersion="11210015" >
       <DisplayFormat>%d</DisplayFormat>
