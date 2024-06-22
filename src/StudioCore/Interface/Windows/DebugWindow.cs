@@ -86,25 +86,11 @@ public class DebugWindow
 
     private void DisplayActions()
     {
-        if (ImGui.Button("World Map Layout"))
+        if (ImGui.Button("Dump FLVER Layouts"))
         {
-            DebugActions.CalcWorldMapLayout();
+            DebugActions.DumpFlverLayouts();
         }
 
-        if (ImGui.Button("Validate Paramdef"))
-        {
-            DebugActions.ValidateParamdef();
-        }
-
-        if (ImGui.Button("Validate Param Padding (Selected)"))
-        {
-            DebugActions.ValidatePadding();
-        }
-
-        if (ImGui.Button("Validate Param Padding (All)"))
-        {
-            DebugActions.ValidatePadding(true);
-        }
     }
 
     private void DisplayImGuiDemo()

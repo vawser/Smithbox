@@ -42,6 +42,8 @@ public class CFG
     //**************
     public bool Debug_FireOnce = false;
 
+    public bool ShowDeveloperTools = false;
+
     //**************
     // Actions
     //**************

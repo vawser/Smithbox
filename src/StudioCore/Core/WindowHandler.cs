@@ -26,7 +26,7 @@ public class WindowHandler
     public DebugWindow DebugWindow;
     public KeybindWindow KeybindWindow;
     public MemoryWindow MemoryWindow;
-    public ColorPickerWindow ColorPickerWindow;
+    public ToolWindow ToolWindow;
 
     public WindowHandler(IGraphicsContext _context)
     {
@@ -37,7 +37,7 @@ public class WindowHandler
         DebugWindow = new DebugWindow();
         KeybindWindow = new KeybindWindow();
         MemoryWindow = new MemoryWindow();
-        ColorPickerWindow = new ColorPickerWindow();
+        ToolWindow = new ToolWindow();
 
         MemoryWindow._activeView = Smithbox.EditorHandler.ParamEditor._activeView;
     }
@@ -51,7 +51,7 @@ public class WindowHandler
         DebugWindow.Display();
         KeybindWindow.Display();
         MemoryWindow.Display();
-        ColorPickerWindow.Display();
+        ToolWindow.Display();
     }
 
     public void HandleWindowShortcuts()
@@ -93,9 +93,9 @@ public class WindowHandler
         }
 
         // Shortcut: Open Color Picker Window
-        if (InputTracker.GetKeyDown(KeyBindings.Current.ToggleWindow_ColorPicker))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.ToggleWindow_QuickTools))
         {
-            ColorPickerWindow.ToggleMenuVisibility();
+            ToolWindow.ToggleMenuVisibility();
         }
 
         // Shortcut: Open Debug Window
@@ -156,11 +156,11 @@ public class WindowHandler
         }
         ImguiUtils.ShowHoverTooltip($"Memory\n{KeyBindings.Current.ToggleWindow_Memory.HintText}");
 
-        if (ImGui.Button($"{ForkAwesome.PaintBrush}##ColorPickerWindow"))
+        if (ImGui.Button($"{ForkAwesome.Briefcase}##QuickToolWindow"))
         {
-            ColorPickerWindow.ToggleMenuVisibility();
+            ToolWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"Color Picker\n{KeyBindings.Current.ToggleWindow_ColorPicker.HintText}");
+        ImguiUtils.ShowHoverTooltip($"Tools\n{KeyBindings.Current.ToggleWindow_QuickTools.HintText}");
 
     }
 }
