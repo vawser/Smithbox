@@ -434,7 +434,7 @@ typedef struct {
     float unk40; // reflectPlaneHeight?
     int unk44; Assert(unk44 == 0);
     int unk48;
-    short unk4C; Assert(IsBool(unk4C));
+    short unk4C;
     short unk4E;
 } PartCollision;
 

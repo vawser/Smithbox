@@ -1947,6 +1947,7 @@ namespace SoulsFormats
                     Unk17 = 17,
                     Unk19 = 19,
                     Unk20 = 20,
+                    Unk21 = 21,
                     Unk22 = 22,
                     Unk23 = 23,
                     Unk24 = 24,
@@ -2179,7 +2180,7 @@ namespace SoulsFormats
                     UnkT40 = br.ReadSingle();
                     br.AssertInt32(0);
                     EnableFastTravelEventFlagID = br.ReadUInt32();
-                    UnkT4C = br.AssertInt16([0, 1]);
+                    UnkT4C = br.AssertInt16([0, 1, 2]);
                     UnkT4E = br.ReadInt16();
                 }
 
