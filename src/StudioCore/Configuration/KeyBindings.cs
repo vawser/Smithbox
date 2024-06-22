@@ -113,7 +113,7 @@ public class KeyBindings
         public KeyBind ToggleWindow_Memory = new("Toggle Memory Window", KeybindCategory.Window, Key.F4);
         public KeyBind ToggleWindow_Settings = new("Toggle Settings Window", KeybindCategory.Window, Key.F6);
         public KeyBind ToggleWindow_Alias = new("Toggle Alias Window", KeybindCategory.Window, Key.F7);
-        public KeyBind ToggleWindow_ColorPicker = new("Toggle Color Picker Window", KeybindCategory.Window, Key.F8);
+        public KeyBind ToggleWindow_QuickTools = new("Toggle Color Picker Window", KeybindCategory.Window, Key.F8);
         public KeyBind ToggleWindow_Debug = new("Toggle Debug Window", KeybindCategory.Window, Key.F9);
 
         // Map Toolbar
@@ -174,6 +174,7 @@ public class KeyBindings
         public KeyBind Map_WorldMap_Vanilla = new("Toggle Lands Between Map", KeybindCategory.MapEditor, Key.M, true, false, false);
         public KeyBind Map_WorldMap_SOTE = new("Toggle Shadow of the Erdtree Map", KeybindCategory.MapEditor, Key.M, true, true, false);
         public KeyBind Map_WorldMap_ClearSelection = new("Clear World Map Selection", KeybindCategory.MapEditor, Key.X, true, false, false);
+        public KeyBind Map_WorldMap_DragMap = new("Drag Map", KeybindCategory.MapEditor, Key.C, false, false, false);
 
         // Model Editor
         public KeyBind ModelEditor_LoadCurrentSelection = new("Load Asset Selection", KeybindCategory.ModelEditor, Key.L, true);
