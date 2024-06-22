@@ -1,0 +1,130 @@
+//------------------------------------------------
+//--- 010 Editor v11.0.1 Binary Template
+//
+//      File: COMPENDIUM.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Don't use this
+//  Category: Havok
+// File Mask: *.compendium
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+
+BigEndian();
+
+//------------------------------------------------
+
+typedef struct (string assertName) {
+    local quad start <format=hex> = FTell();
+    short unk00;
+    short length <format=hex>;
+    char name[4]; Assert(name == assertName);
+    local quad end <format=hex> = start + length;
+} Block <read=ReadBlock, bgcolor=cBlack, fgcolor=cWhite>;
+
+string ReadBlock(Block& block) {
+    string str;
+    return SPrintf(str, "%4s %4Xh %4Xh",
+        block.name, block.unk00, block.length);
+}
+
+
+struct TCM0;
+struct TCID;
+struct TYPE;
+struct TPTR;
+struct TSTR;
+struct TNA1;
+struct FSTR;
+struct TBDY;
+struct THSH;
+struct TPAD;
+
+//------------------------------------------------
+
+typedef struct {
+    Block block("TCM0");
+    TCID tcid;
+    TYPE type <open=true>;
+    Assert(FTell() == block.end);
+} TCM0;
+
+
+typedef struct {
+    Block block("TCID");
+    FSeek(block.end);
+} TCID;
+
+
+typedef struct {
+    Block block("TYPE");
+    TPTR tptr;
+    TSTR tstr;
+    TNA1 tna1;
+    FSTR fstr;
+    TBDY tbdy;
+    THSH thsh;
+    TPAD tpad;
+    Assert(FTell() == block.end);
+} TYPE;
+
+
+typedef struct {
+    Block block("TPTR");
+    FSeek(block.end);
+} TPTR;
+
+
+typedef struct {
+    Block block("TSTR");
+    struct {
+        do {
+            WrappedString strings;
+        } while (strings.str != "\0");
+    } strings;
+    Align(4);
+    Assert(FTell() == block.end);
+} TSTR <bgcolor=cLtGreen>;
+
+
+typedef struct {
+    Block block("TNA1");
+    FSeek(block.end);
+} TNA1;
+
+
+typedef struct {
+    Block block("FSTR");
+    struct {
+        do {
+            WrappedString strings;
+        } while (strings.str != "\0");
+    } strings;
+    Align(4);
+    Assert(FTell() == block.end);
+} FSTR <bgcolor=cGreen>;
+
+
+typedef struct {
+    Block block("TBDY");
+    FSeek(block.end);
+} TBDY;
+
+
+typedef struct {
+    Block block("THSH");
+    FSeek(block.end);
+} THSH;
+
+
+typedef struct {
+    Block block("TPAD");
+    Assert(FTell() == block.end);
+} TPAD;
+
+//------------------------------------------------
+
+TCM0 tcm0 <open=true>;

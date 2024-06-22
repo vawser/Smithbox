@@ -1,0 +1,65 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB1\Point.bt
+//   Authors: Meowmaritus, TKGP
+//   Version: 
+//   Purpose: DS1 MSB regions
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    int nameOffset <format=hex>;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int id;
+    ShapeType shapeType;
+    Vector3 position;
+    Vector3 rotation;
+    int shortsAOffset <format=hex>;
+    int shortsBOffset <format=hex>;
+    int shapeDataOffset <format=hex>;
+    int entityDataOffset <format=hex>;
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+    
+    Assert(nameOffset > 0);
+    FSeek(start + nameOffset);
+    string name;
+    
+    Assert(shortsAOffset > 0);
+    FSeek(start + shortsAOffset);
+    short shortCountA <hidden=true>; Assert(shortCountA == 0);
+    
+    Assert(shortsBOffset > 0);
+    FSeek(start + shortsBOffset);
+    short shortCountB <hidden=true>; Assert(shortCountB == 0);
+    
+    Assert(entityDataOffset > 0);
+    FSeek(start + entityDataOffset);
+    int entityID;
+    
+    if (shapeType == ShapeTypePoint) {
+        Assert(shapeDataOffset == 0);
+    } else {
+        Assert(shapeDataOffset > 0);
+        FSeek(start + shapeDataOffset);
+        switch (shapeType) {
+            case ShapeTypeCircle: ShapeCircle circle; break;
+            case ShapeTypeSphere: ShapeSphere sphere; break;
+            case ShapeTypeCylinder: ShapeCylinder cylinder; break;
+            case ShapeTypeRect: ShapeRect rect; break;
+            case ShapeTypeBox: ShapeBox box; break;
+            default: Assert(false);
+        }
+    }
+} Point <read=ReadPoint>;
+
+wstring ReadPoint(Point& point) {
+    string str;
+    SPrintf(str, "%2i ", point.shapeType);
+    return str + StringToWString(point.name, CHARSET_JAPANESE);
+}

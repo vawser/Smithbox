@@ -1,0 +1,361 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: USER_DATA000_DS3.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DS3 character slot save data
+//  Category: Dark Souls
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    int dataLength; Assert(dataLength == 0xC0000);
+    int unk04; Assert(unk04 == 0x5C || unk04 == 0x62); // Version differences?
+    int unk08;
+    int playtime;
+    int unk10; Assert(unk10 == 0x5C || unk10 == 0x6C);
+    int unk14;
+    int unk18; Assert(unk18 == 0x5C || unk18 == 0x6C);
+    int unk1C;
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2C; Assert(unk2C == 0x8E);
+    int unk30;
+    int unk34; Assert(unk34 == 8);
+    int unk38;
+    int unk3C; Assert(unk3C == 0x33E01);
+    int unk40;
+    int unk44;
+    int unk48;
+    int unk4C; Assert(unk4C == 0x50);
+    int unk50;
+    int unk54; Assert(unk54 == 0x20004);
+    int unk58;
+    int unk5C; Assert(unk5C == 0x5B);
+    //int unk60; // These are here when unk10 etc is 6C
+    //int unk64;
+    //int unk68;
+    //int unk6C;
+} Header;
+
+
+typedef struct {
+    int unk00;
+    int unk04;
+    if (unk00 != 0 || unk04 != -1) {
+        int unk08[13];
+    }
+} ItemThing <bgcolor=cRed, optimize=false>;
+
+
+typedef struct {
+    short unk00;
+    short unk02;
+    int unk04;
+    
+    if (unk00 != 0) {
+        int unk08;
+        int unk0C;
+        int unk10; Assert(unk10 == 1);
+        float unk14; Assert(unk14 == 0);
+        int unk18; Assert(unk18 == 0);
+        float unk1C; Assert(unk1C == 0);
+        int unk20; Assert(unk20 == 0);
+        float unk24; Assert(unk24 == 0);
+        int unk28; Assert(unk28 == 0);
+        float unk2C; Assert(unk2C == 0);
+        int unk30; Assert(unk30 == 0);
+        float unk34; Assert(unk34 == 0);
+        int unk38; Assert(unk38 == 0);
+    }
+} Unk1 <optimize=false>;
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+    int unk04; Assert(unk04 == 0);
+    int health;
+    int baseMaxHealth;
+    int maxHealth;
+    int mana;
+    int baseMaxMana;
+    int maxMana;
+    int unk20; Assert(unk20 == 0);
+    int stamina;
+    int baseMaxStamina;
+    int maxStamina;
+    int unk30; Assert(unk30 == 0);
+    int vigor;
+    int attunement;
+    int endurance;
+    int strength;
+    int dexterity;
+    int intelligence;
+    int faith;
+    int luck;
+    int unk54; Assert(unk54 == 0);
+    int humanity;
+    int vitality;
+    int soulLevel;
+    int souls;
+    int soulMemory;
+    int unk6C; Assert(unk6C == 0);
+    int unk70; Assert(unk70 == 0);
+    int getItemFlag;
+    wchar_t name[0x10];
+    short unk98; Assert(unk98 == 0);
+    byte gender;
+    byte voice;
+    byte unk9C;
+    byte body;
+    byte class;
+    byte appearance;
+    byte gift;
+    byte blueSentinelPoints;
+    byte networkPenalty; // WoW Circlet
+    byte maxWeaponReinforcement;
+    int unkA4; // Anticheat related?
+    int unkA8; // ""
+    int unkAC; Assert(unkAC == 0);
+    int unkB0; Assert(unkB0 == 0);
+    int unkB4; Assert(unkB4 == 0);
+    int unkB8; Assert(unkB8 == 0);
+    byte unkBC; Assert(unkBC == 0);
+    byte darkmoonPoints;
+    byte sunlightPoints;
+    byte moundmakerPoints;
+    byte spearsPoints;
+    byte fingersPoints;
+    byte watchdogsPoints;
+    byte aldrichPoints;
+    int unkC4; Assert(unkC4 == 0);
+    int unkC8; Assert(unkC8 == 0);
+    int unkCC; Assert(unkCC == 0);
+    int poisonResist;
+    int bleedResist;
+    int poisonResist2;
+    int curseResist;
+    int frostResist;
+    int unkE4;
+    int unkE8;
+    short unkEC; Assert(unkEC == 0);
+    short deceaseLevel;
+    byte embered;
+    byte unkF1;
+    byte estusAllocation;
+    byte ashenEstusAllocation;
+    int unkF4; Assert(unkF4 == 0);
+    int unkF8;
+    byte hollow;
+    byte unkFD;
+    byte unkFE;
+    byte yoelLevelUpsRemaining;
+    int charID;
+    byte wayOfBluePoints;
+    byte netPenaltyChecking;
+    byte netPenaltyPoint;
+    byte unk107;
+    float netPenaltyForgiveItemTime;
+    int unk10C; Assert(unk10C == 0);
+    int unk110; Assert(unk110 == 0);
+    int unk114;
+    int unk118;
+    int unk11C;
+    int unk120;
+    int unk124; Assert(unk124 == 0);
+    int unk128; Assert(unk128 == 0);
+    int unk12C; Assert(unk12C == 0);
+    int unk130; Assert(unk130 == 0);
+    int unk134; Assert(unk134 == 0);
+    int unk138; Assert(unk138 == 0);
+    int unk13C; Assert(unk13C == 0);
+    
+    struct {
+        int unk00; Assert(unk00 == -1);
+        int unk04; Assert(unk04 == 0);
+        int unk08; Assert(unk08 == 0);
+        int unk0C; Assert(unk0C == 0);
+    } unk1s[11] <optimize=false>;
+} Stats;
+
+typedef struct {
+    int unk00;
+    int idAndCategory;
+    int quantity;
+    int unk0C;
+} Item;
+
+typedef struct {
+    int leftWeapon1Index;
+    int rightWeapon1Index;
+    int leftWeapon2Index;
+    int rightWeapon2Index;
+    int leftWeapon3Index;
+    int rightWeapon3Index;
+    int arrow1Index;
+    int bolt1Index;
+    int arrow2Index;
+    int bolt2Index;
+    int unk28; Assert(unk28 == -1);
+    int unk2C; Assert(unk2C == -1);
+    int headIndex;
+    int chestIndex;
+    int armsIndex;
+    int legsIndex;
+    int unk40; Assert(unk40 == -1);
+    int ring1Index;
+    int ring2Index;
+    int ring3Index;
+    int ring4Index;
+    int covenantIndex;
+    int stance;
+    int unk5C;
+    int unk60;
+    int unk64;
+    int unk68;
+    int unk6C;
+    int unk70;
+    int leftWeapon1ID;
+    int rightWeapon1ID;
+    int leftWeapon2ID;
+    int rightWeapon2ID;
+    int leftWeapon3ID;
+    int rightWeapon3ID;
+    int arrow1ID;
+    int bolt1ID;
+    int arrow2ID;
+    int bolt2ID;
+    int unk9C; Assert(unk9C == -1);
+    int unkA0; Assert(unkA0 == -1);
+    int headID;
+    int chestID;
+    int armsID;
+    int legsID;
+    int unkB4; Assert(unkB4 == -1);
+    int ring1ID;
+    int ring2ID;
+    int ring3ID;
+    int ring4ID;
+    int covenantID;
+    int unkCC;
+    int unkD0;
+    int unkD4;
+    int unkD8;
+    int unkDC;
+    int unkE0;
+    int unkE4;
+    int unkE8;
+    int unkEC;
+    int unkF0;
+    int unkF4; Assert(unkF4 == 0);
+    int unkF8; Assert(unkF8 == 0);
+    int unkFC;
+    int unk100;
+    int unk104;
+    int unk108;
+    int unk10C; Assert(unk10C == 0);
+    int unk110;
+    int unk114;
+    int unk118;
+    int unk11C;
+    int unk120;
+    int unk124; Assert(unk124 == 0);
+
+    int itemCount1;
+    Item inventory[0x780];
+    int itemCount2;
+    Item keys[0x80];
+    int itemCount3;
+    Item unkItems3[0x80];
+
+    struct {
+        int unk00;
+        int unk04;
+    } unkSomethings[15];
+    
+    int item1ID;
+    int item1Index;
+    int item2ID;
+    int item2Index;
+    int item3ID;
+    int item3Index;
+    int item4ID;
+    int item4Index;
+    int item5ID;
+    int item5Index;
+    int item6ID;
+    int item6Index;
+    int item7ID;
+    int item7Index;
+    int item8ID;
+    int item8Index;
+    int item9ID;
+    int item9Index;
+    int item10ID;
+    int item10Index;
+    int unk9D4;
+    int startItem1ID;
+    int startItem1Index;
+    int startItem2ID;
+    int startItem2Index;
+    int startItem3ID;
+    int startItem3Index;
+    int startItem4ID;
+    int startItem4Index;
+    int startItem5ID;
+    int startItem5Index;
+    int unkA00; Assert(unkA00 == 0);
+    int unkA04; Assert(unkA04 == -1);
+    int unkA08;
+    int unkA0C;
+    int unkA10;
+    int unkA14;
+    int unkA18;
+    int unkA1C;
+    int unkA20;
+    int unkA24;
+    int unkCount;
+    
+    if (unkCount > 0) {
+        struct {
+            int id;
+            int unk04;
+        } unkSomethings2[unkCount];
+    }
+    
+    int leftWeapon1ID2;
+    int rightWeapon1ID2;
+    int leftWeapon2ID2;
+    int rightWeapon2ID2;
+    int leftWeapon3ID2;
+    int rightWeapon3ID2;
+    int arrow1ID2;
+    int bolt1ID2;
+    int arrow2ID2;
+    int bolt2ID2;
+    int unkB28; Assert(unkB28 == -1);
+    int unkB2C; Assert(unkB2C == -1);
+    int headID2;
+    int chestID2;
+    int armsID2;
+    int legsID2;
+    int unkB40; Assert(unkB40 == -1);
+} Items;
+
+
+typedef struct {
+    FSeek(FTell() + 0x6F);
+    int steamID3;
+} Footer <bgcolor=cLtRed>;
+
+
+Header header <bgcolor=cLtRed>;
+FSeek(header.unk10 + 4);
+struct { ItemThing itemThings[6144]; } itemThings;
+Stats stats <bgcolor=cLtGreen>;
+Items items <bgcolor=cGreen>;
+FSeek(header.unk58); // +4?
+Footer footer;

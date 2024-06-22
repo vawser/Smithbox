@@ -1,0 +1,48 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB2\PartsPose.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DS2 MSB parts poses
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    int boneNamesIndex;
+    Vector3 translation;
+    Vector3 rotation;
+    Vector3 scale;
+} Bone <read=ReadBone>;
+
+string ReadBone(Bone& bone) {
+    string str;
+    SPrintf(str, "%3i %s %s %s", bone.boneNamesIndex,
+        ReadVector3(bone.translation), ReadVector3(bone.rotation), ReadVector3(bone.scale));
+    return str;
+}
+
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+
+    short partsIndex;
+    short boneCount;
+    if (VARINT_LONG) {
+        int unk04 <hidden=true>; Assert(unk04 == 0);
+    }
+    Varint bonesOffset;
+    
+    Assert(bonesOffset.val > 0);
+    FSeek(start + bonesOffset.val);
+    Bone bones[boneCount];
+} PartsPose <read=ReadPartsPose>;
+
+string ReadPartsPose(PartsPose& pose) {
+    string str;
+    SPrintf(str, "%4i [%2i]", pose.partsIndex, pose.boneCount);
+    return str;
+}

@@ -1,0 +1,244 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSBB\Part.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: BB MSB parts
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> PartType {
+    PartTypeMapPiece = 0,
+    PartTypeObject = 1,
+    PartTypeEnemy = 2,
+    PartTypePlayer = 4,
+    PartTypeCollision = 5,
+    PartTypeNavmesh = 8,
+    PartTypeDummyObject = 9,
+    PartTypeDummyEnemy = 10,
+    PartTypeConnectCollision = 11,
+    PartTypeOther = -1,
+};
+
+struct PartEntity;
+
+struct PartMapPiece;
+struct PartObject;
+struct PartEnemy;
+struct PartPlayer;
+struct PartCollision;
+struct PartNavmesh;
+struct PartConnectCollision;
+
+struct PartGparam;
+struct PartSceneGparam;
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+
+    quad descriptionOffset <format=hex>;
+    quad nameOffset <format=hex>;
+    int instanceID;
+    PartType type;
+    int id;
+    int modelIndex;
+    quad sibOffset <format=hex>;
+    Vector3 position;
+    Vector3 rotation;
+    Vector3 scale;
+    uint drawGroups[8];
+    uint dispGroups[8];
+    uint backreadGroups[8];
+    int unkA4 <hidden=true>; Assert(unkA4 == 0);
+    quad entityDataOffset <format=hex>;
+    quad typeDataOffset <format=hex>;
+    quad gparamOffset <format=hex>;
+    quad sceneGparamOffset <format=hex>;
+    
+    Assert(descriptionOffset > 0);
+    FSeek(start + descriptionOffset);
+    wstring description;
+    
+    Assert(nameOffset > 0);
+    FSeek(start + nameOffset);
+    wstring name;
+    
+    Assert(sibOffset > 0);
+    FSeek(start + sibOffset);
+    wstring sibPath;
+    
+    Assert(entityDataOffset > 0);
+    FSeek(start + entityDataOffset);
+    PartEntity entity;
+    
+    if (type == PartTypeOther) {
+        Assert(typeDataOffset == 0);
+    } else {
+        Assert(typeDataOffset > 0);
+        FSeek(start + typeDataOffset);
+        switch (type) {
+            case PartTypeMapPiece: PartMapPiece mapPiece; break;
+            case PartTypeObject:
+            case PartTypeDummyObject: PartObject object; break;
+            case PartTypeEnemy:
+            case PartTypeDummyEnemy: PartEnemy enemy; break;
+            case PartTypePlayer: PartPlayer player; break;
+            case PartTypeCollision: PartCollision collision; break;
+            case PartTypeNavmesh: PartNavmesh navmesh; break;
+            case PartTypeConnectCollision: PartConnectCollision connectCollision; break;
+            default: Assert(false);
+        }
+    }
+    
+    if (type == PartTypePlayer || type == PartTypeNavmesh
+        || type == PartTypeConnectCollision || type == PartTypeOther) {
+        Assert(gparamOffset == 0);
+    } else {
+        Assert(gparamOffset > 0);
+        FSeek(start + gparamOffset);
+        PartGparam gparam;
+    }
+    
+    if (type != PartTypeCollision) {
+        Assert(sceneGparamOffset == 0);
+    } else {
+        Assert(sceneGparamOffset > 0);
+        FSeek(start + sceneGparamOffset);
+        PartSceneGparam sceneGparam;
+    }
+} Part <read=ReadPart>;
+
+wstring ReadPart(Part& part) {
+    string str;
+    SPrintf(str, "%2i ", part.type);
+    return str + part.name + " " + part.description;
+}
+
+
+typedef struct {
+    int entityID;
+    byte unk04;
+    byte unk05;
+    byte unk06;
+    byte unk07;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    byte lanternID;
+    byte lodParamID;
+    byte unk0E;
+    byte unk0F;
+} PartEntity;
+
+
+typedef struct {
+    int unk00 <hidden=true>; Assert(unk00 == 0);
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+} PartMapPiece;
+
+
+typedef struct {
+    int unk00 <hidden=true>; Assert(unk00 == 0);
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int collisionPartIndex;
+    byte breakTerm;
+    byte netSyncType;
+    byte collisionFilter;
+    byte setMainObjStructureBooleans;
+    short animIDs[4];
+    short modelSfxParamRelativeIDs[4];
+} PartObject;
+
+
+typedef struct {
+    int unk00 <hidden=true>; Assert(unk00 == 0);
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int thinkParamID;
+    int npcParamID;
+    int talkID;
+    int charaInitID;
+    int unk18;
+    int collisionPartIndex;
+    short unk20;
+    short unk22 <hidden=true>; Assert(unk22 == 0);
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+    short movePointIndices[8];
+    int initAnimID;
+    int damageAnimID;
+} PartEnemy;
+
+
+typedef struct {
+    int unk00 <hidden=true>; Assert(unk00 == 0);
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} PartPlayer;
+
+
+typedef struct {
+    byte hitFilterID;
+    byte soundSpaceType;
+    short envLightMapSpotIndex;
+    float reflectPlaneHeight;
+    short mapNameID;
+    short disableStart;
+    int disableBonfireEntityID;
+    int playRegionID;
+    short lockCamID1;
+    short lockCamID2;
+} PartCollision;
+
+
+typedef struct {
+    int unk00 <hidden=true>; Assert(unk00 == 0);
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+} PartNavmesh;
+
+
+typedef struct {
+    int collisionIndex;
+    byte mapID[4];
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} PartConnectCollision;
+
+
+typedef struct {
+    int lightSetID;
+    int fogParamID;
+    int lightScatteringID;
+    int envMapID;
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} PartGparam;
+
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0C;
+    int unk10;
+    int unk14;
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+    int unk28 <hidden=true>; Assert(unk28 == 0);
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+    int unk30 <hidden=true>; Assert(unk30 == 0);
+    int unk34 <hidden=true>; Assert(unk34 == 0);
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+    byte eventIDs[4];
+    float unk40;
+    int unk44 <hidden=true>; Assert(unk44 == 0);
+    int unk48 <hidden=true>; Assert(unk48 == 0);
+    int unk4C <hidden=true>; Assert(unk4C == 0);
+} PartSceneGparam;

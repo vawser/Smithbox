@@ -1,0 +1,342 @@
+//------------------------------------------------
+//--- 010 Editor v7.0.2 Binary Template
+//
+//      File: NVA.bt
+//   Authors: katalash, TKGP
+//   Version: 
+//   Purpose: BB/DS3/SDT navmesh configuration
+//  Category: Dantelion
+// File Mask: *.nva
+//  ID Bytes: 4E 56 4D 41
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+
+LittleEndian();
+
+typedef struct {
+    char magic[4]; Assert(magic == "NVMA");
+    int version; //Assert(version == 4 || version == 5);
+    int fileSize <format=hex>;
+    int sectionCount; Assert(sectionCount == 8 || sectionCount == 9);
+} Header <read=ReadHeader>;
+
+string ReadHeader(Header& header) {
+    string str;
+    SPrintf(str, "%s %X", header.magic, header.fileSize);
+    return str;
+}
+
+
+typedef struct (int assertIndex) {
+    int index; Assert(index == assertIndex);
+    int version;
+    int sectionSize <format=hex>;
+    int entryCount;
+    local quad start <format=hex> = FTell();
+} SectionHeader <read=ReadSectionHeader>;
+
+string ReadSectionHeader(SectionHeader& header) {
+    string str;
+    SPrintf(str, "%i[%5i] %i %5X",
+        header.index, header.entryCount, header.version, header.sectionSize);
+    return str;
+}
+
+
+typedef struct (SectionHeader& header) {
+    Vector3 position; // Usually 0,0,0
+    float unk0C; Assert(unk0C == 1);
+    int unk10; // These are not floats
+    int unk14;
+    int unk18;
+    int unk1C; Assert(unk1C == 0);
+    float unk20; Assert(unk20 == 1);
+    float unk24; // The only file where these two aren't 1 is m50_00,
+    float unk28; // where a couple entries have 1.000001 or 1.000002 like lel
+    int unk2C; Assert(unk2C == 0);
+    int nvaNameID; // i.e. 350000110 in int form
+    int navimeshModelID;
+    int unk38;
+    int unk3C; Assert(unk3C == 0);
+    int condition;
+    int count44;
+    short unk48;
+    short count4A;
+    int unk4C;
+    
+    // Each array entry seems to either be a section reference or -1
+    if (header.version == 2 || header.version == 3) {
+        if (count44 > 0) {
+            int mapSectionArray[count44];
+        }
+
+        local int i <hidden=true>;
+        for (i = 0; i < 16 - count44; i++) {
+            int null <fgcolor=cRed, hidden=true>; Assert(null == -1);
+        }
+    } else {
+        int unkOffset <format=hex>;
+        int unk54; Assert(unk54 == 0);
+        int unk58; Assert(unk54 == 0);
+        int unk5C; Assert(unk54 == 0);
+        
+        if (count44 > 0) {
+            local quad pos <hidden=true> = FTell();
+            FSeek(unkOffset);
+            int mapSectionArray[count44];
+            FSeek(pos);
+        }
+    }
+} Entry0 <read=ReadEntry0>;
+
+string ReadEntry0(Entry0& entry) {
+    string str;
+    SPrintf(str, "");
+    return str;
+}
+
+typedef struct {
+    SectionHeader header(0);
+    if (header.entryCount > 0) {
+        Entry0 entries(header)[header.entryCount] <optimize=false>;
+    }
+    FSeek(header.start + header.sectionSize);
+} Section0 <read=ReadSection0>;
+
+string ReadSection0(Section0& section) {
+    return ReadSectionHeader(section.header);
+}
+
+
+typedef struct {
+    int unk00 <fgcolor=cDkYellow>;
+    int unk04 <fgcolor=cDkYellow>; Assert(unk04 == 0);
+} Entry1 <read=ReadEntry1>;
+
+string ReadEntry1(Entry1& entry) {
+    string str;
+    SPrintf(str, "%i %i", entry.unk00, entry.unk04);
+    return str;
+}
+
+typedef struct {
+    SectionHeader header(1);
+    if (header.entryCount > 0) {
+        Entry1 entries[header.entryCount] <optimize=false>;
+    }
+    
+    if (FTell() % 0x10 != 0) {
+        int pad1; Assert(pad1 == -1);
+        int pad2; Assert(pad2 == -1);
+    }
+} Section1 <read=ReadSection1>;
+
+string ReadSection1(Section1& section) {
+    return ReadSectionHeader(section.header);
+}
+
+
+typedef struct {
+    int someIndex; // Smallish ints
+    int mapSectionID; // map section in int form
+} MapSectionReference;
+
+typedef struct {
+    int unk00; // Seems to increment for each entry
+    int referenceCount;
+    int unk08; // Another map number-y thing, always -1 in DS3, not always in BB
+    int unk0C; Assert(unk0C == 0);
+    MapSectionReference mapSect[referenceCount];
+    
+    local int i;
+    for (i = 0; i < 64 - referenceCount; i++) {
+        quad zero <fgcolor=cYellow, hidden=true>; Assert(zero == 0);
+    }
+} Entry2 <read=ReadEntry2>;
+
+string ReadEntry2(Entry2& entry) {
+    string str;
+    SPrintf(str, "");
+    return str;
+}
+
+typedef struct {
+    SectionHeader header(2);
+    if (header.entryCount > 0) {
+        Entry2 entries[header.entryCount] <optimize=false>;
+    }
+} Section2 <read=ReadSection2>;
+
+string ReadSection2(Section2& section) {
+    return ReadSectionHeader(section.header);
+}
+
+
+typedef struct {
+    SectionHeader header(3);
+    Assert(header.entryCount == 0);
+} Section3 <read=ReadSection3>;
+
+string ReadSection3(Section3& section) {
+    return ReadSectionHeader(section.header);
+}
+
+
+typedef struct {
+    int nvaModelNameMain;
+    int nvaModelNameConnectedPiece;
+    int section4Index;
+    int selfCompareCondition;
+    int section5Index;
+    int unk14; Assert(unk14 == 0);
+    int section6Index;
+    int unk1C; Assert(unk1C == 0);
+} Connector <read=ReadEntry4>;
+
+string ReadEntry4(Connector& entry) {
+    string str;
+    SPrintf(str, "");
+    return str;
+}
+
+typedef struct {
+    SectionHeader header(4);
+    if (header.entryCount > 0) {
+        Connector entries[header.entryCount] <optimize=false>;
+    }
+} Section4 <read=ReadSection4>;
+
+string ReadSection4(Section4& section) {
+    return ReadSectionHeader(section.header);
+}
+
+
+typedef struct {
+    int unk00; // Too big to index anything besides Section1, but not big enough to be likely
+    int unk04;
+    int unk08;
+    int unk0C;
+} ConnectPoint <read=ReadEntry5>;
+
+string ReadEntry5(ConnectPoint& entry) {
+    string str;
+    SPrintf(str, "%4i %4i %4i %4i", entry.unk00, entry.unk04, entry.unk08, entry.unk0C);
+    return str;
+}
+
+typedef struct {
+    SectionHeader header(5);
+    if (header.entryCount > 0) {
+        ConnectPoint entries[header.entryCount] <optimize=false>;
+    }
+} Section5 <read=ReadSection5>;
+
+string ReadSection5(Section5& section) {
+    return ReadSectionHeader(section.header);
+}
+
+
+typedef struct {
+    int unk00; // Not Section0, 2, 3, or 7 indices
+    int unk04;
+} Entry6 <read=ReadEntry6>;
+
+string ReadEntry6(Entry6& entry) {
+    string str;
+    SPrintf(str, "%3i %3i", entry.unk00, entry.unk04);
+    return str;
+}
+
+typedef struct {
+    SectionHeader header(6);
+    if (header.entryCount > 0) {
+        Entry6 entries[header.entryCount] <optimize=false>;
+    }
+} Section6 <read=ReadSection6>;
+
+string ReadSection6(Section6& section) {
+    return ReadSectionHeader(section.header);
+}
+
+
+typedef struct {
+    Vector3 unk00;
+    float unk0C; Assert(unk0C == 1);
+    int mapSectionID;
+    int unk14; Assert(unk14 == 0);
+    int unk18;
+    int unk1C; Assert(unk1C == 0);
+} Entry7 <read=ReadEntry7>;
+
+string ReadEntry7(Entry7& entry) {
+    string str;
+    SPrintf(str, "");
+    return str;
+}
+
+typedef struct {
+    SectionHeader header(7);
+    if (header.entryCount > 0) {
+        Entry7 entries[header.entryCount] <optimize=false>;
+    }
+} Section7 <read=ReadSection7>;
+
+string ReadSection7(Section7& section) {
+    return ReadSectionHeader(section.header);
+}
+
+
+typedef struct (SectionHeader& header) {
+    Vector3 position;
+    short section0Index;
+    short mainID;
+    
+    if (header.version == 1) {
+        short subIDs[16];
+    } else if (header.version == 2) {
+        int subIDCount;
+        int unk14; Assert(unk14 == -1);
+        int subIDsOffset <format=hex>;
+        int unk1C; Assert(unk1C == 0);
+        
+        if (subIDCount > 0) {
+            local quad pos <hidden=true> = FTell();
+            FSeek(subIDsOffset);
+            short subIDs[subIDCount];
+            FSeek(pos);
+        }
+    }
+} Entry8 <read=ReadEntry8>;
+
+string ReadEntry8(Entry8& entry) {
+    string str;
+    SPrintf(str, "%s %3i %2i",
+        ReadVector3(entry.position), entry.section0Index, entry.mainID);
+    return str;
+}
+
+typedef struct {
+    SectionHeader header(8);
+    if (header.entryCount > 0) {
+        Entry8 entries(header)[header.entryCount] <optimize=false>;
+    }
+} Section8 <read=ReadSection8>;
+
+string ReadSection8(Section8& section) {
+    return ReadSectionHeader(section.header);
+}
+
+
+Header header <bgcolor=cLtRed>;
+Section0 section0 <bgcolor=cRed>;
+Section1 section1 <bgcolor=cDkYellow>;
+Section2 section2 <bgcolor=cYellow>;
+Section3 section3 <bgcolor=cLtGreen>;
+Section4 section4 <bgcolor=cGreen>;
+Section5 section5 <bgcolor=cDkGreen>;
+Section6 section6 <bgcolor=cAqua>;
+Section7 section7 <bgcolor=cLtBlue>;
+if (header.sectionCount == 9)
+Section8 section8 <bgcolor=cLtPurple>;

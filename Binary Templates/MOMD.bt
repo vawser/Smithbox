@@ -1,0 +1,120 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: MOMD.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Demon's Souls mixer data files
+//  Category: Dantelion
+// File Mask: *.momd
+//  ID Bytes: 4D 4F 4D 44
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "MOMD");
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int count1;
+    int count2;
+    int count3;
+    int offset1 <format=hex>;
+    int offset2 <format=hex>;
+    int offset3 <format=hex>;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    byte unk00;
+    byte unk01;
+    byte dataCount;
+    byte unk03 <hidden=true>; Assert(unk03 == 0);
+    int dataOffset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(dataOffset);
+    short data[dataCount] <bgcolor=cGreen>;
+    FSeek(pos);
+} Struct1 <bgcolor=cLtGreen, optimize=false>;
+
+
+typedef struct {
+    short id;
+    byte type;
+    byte unk03 <hidden=true>; Assert(unk03 == 0);
+    switch (type) {
+        case 0: float value; break;
+        case 1: int value; break;
+        default: Assert(false);
+    }
+} Struct2Data <bgcolor=cDkAqua, optimize=false>;
+
+typedef struct {
+    OffsetString name(0, 0);
+    int dataCount;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int dataOffset <format=hex>;
+    
+    if (dataCount > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(dataOffset);
+        Struct2Data data[dataCount];
+        FSeek(pos);
+    }
+} Struct2 <read=ReadStruct2, bgcolor=cAqua, optimize=false>;
+
+string ReadStruct2(Struct2& s2) {
+    return s2.name.str;
+}
+
+
+typedef struct {
+    byte unk00;
+    byte unk01;
+    short unk02 <hidden=true>; Assert(unk02 == 0);
+    float unk04;
+} Struct3DataData <bgcolor=cDkYellow, optimize=false>;
+
+typedef struct {
+    byte unk00;
+    byte dataCount;
+    short unk02 <hidden=true>; Assert(unk02 == 0);
+    int dataOffset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(dataOffset);
+    Struct3DataData data[dataCount];
+    FSeek(pos);
+} Struct3Data <bgcolor=cYellow, optimize=false>;
+
+typedef struct {
+    byte unk00;
+    byte dataCount;
+    short unk02 <hidden=true>; Assert(unk02 == 0);
+    int dataOffset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(dataOffset);
+    Struct3Data data[dataCount];
+    FSeek(pos);
+} Struct3 <bgcolor=cLtYellow, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+if (header.count1 > 0) {
+    FSeek(header.offset1);
+    struct { Struct1 struct1s[header.count1]; } struct1s;
+}
+if (header.count2 > 0) {
+    FSeek(header.offset2);
+    struct { Struct2 struct2s[header.count2]; } struct2s;
+}
+if (header.count3 > 0) {
+    FSeek(header.offset3);
+    struct { Struct3 struct3s[header.count3]; } struct3s;
+}

@@ -1,0 +1,64 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSBE\Model.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Elden Ring MSB models
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> ModelType {
+    ModelTypeMapPiece = 0,
+    //ModelTypeObject = 1,
+    ModelTypeEnemy = 2,
+    //ModelTypeItem = 3,
+    ModelTypePlayer = 4,
+    ModelTypeCollision = 5,
+    //ModelTypeNavmesh = 6,
+    //ModelTypeDummyObject = 7,
+    //ModelTypeDummyEnemy = 8
+    ModelTypeAsset = 10,
+};
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+
+    quad nameOffset <format=hex>;
+    ModelType type;
+    int id;
+    quad sibOffset <format=hex>;
+    int instanceCount;
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    quad typeDataOffset <format=hex, hidden=true>;
+    
+    Assert(nameOffset > 0);
+    FSeek(start + nameOffset);
+    wstring name;
+
+    Assert(sibOffset > 0);
+    FSeek(start + sibOffset);
+    wstring sibPath;
+    
+    Assert(typeDataOffset == 0);
+    switch (type) {
+        case ModelTypeMapPiece:
+        case ModelTypeEnemy:
+        case ModelTypePlayer:
+        case ModelTypeCollision:
+        case ModelTypeAsset: break;
+        
+        default: Assert(false);
+    }
+} Model <read=ReadModel>;
+
+wstring ReadModel(Model& model) {
+    string str;
+    SPrintf(str, "%2i ", model.type);
+    return str + model.name;
+}

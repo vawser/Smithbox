@@ -1,0 +1,64 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSBD\Model.bt
+//   Authors: horkrux, TKGP
+//   Version: 
+//   Purpose: DeS MSB models
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> ModelType {
+    ModelTypeMapPiece = 0,
+    ModelTypeObject = 1,
+    ModelTypeEnemy = 2,
+    ModelTypePlayer = 4,
+    ModelTypeCollision = 5,
+    ModelTypeNavmesh = 6,
+    ModelTypeDummyObject = 7,
+    ModelTypeDummyEnemy = 8,
+};
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+
+    int nameOffset <format=hex>;
+    ModelType type;
+    int id;
+    int sibOffset <format=hex>;
+    int instanceCount;
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    
+    Assert(nameOffset > 0);
+    FSeek(start + nameOffset);
+    string name;
+
+    Assert(sibOffset > 0);
+    FSeek(start + sibOffset);
+    string sibPath;
+    
+    switch (type) {
+        case ModelTypeMapPiece:
+        case ModelTypeObject:
+        case ModelTypeEnemy:
+        case ModelTypePlayer:
+        case ModelTypeCollision:
+        case ModelTypeNavmesh:
+        case ModelTypeDummyObject:
+        case ModelTypeDummyEnemy: break;
+        default: Assert(false);
+    }
+} Model <read=ReadModel>;
+
+wstring ReadModel(Model& model) {
+    string str;
+    SPrintf(str, "%2i ", model.type);
+    return str + StringToWString(model.name, CHARSET_JAPANESE);
+}

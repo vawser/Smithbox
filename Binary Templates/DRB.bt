@@ -1,0 +1,803 @@
+//------------------------------------------------
+//--- 010 Editor v7.0.2 Binary Template
+//
+//      File: DRB.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DeS/DS1 UI configuration
+//  Category: Dantelion
+// File Mask: *.drb
+//  ID Bytes: [+4] 00 00 00 00 00 00 00 00 00 00 00 00 [+12] 00 00 00 00
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+if (ReadInt() == 0x44524200) {
+    BigEndian();
+}
+
+// There is no sensible way to distinguish versions automatically,
+// so you must choose one manually.
+enum VERSION { VERSION_DS1, VERSION_DSR };
+local VERSION version = VERSION_DS1;
+
+enum <ubyte> BLENDMODE { BLEND_OPAQUE, BLEND_ALPHA, BLEND_ADD, BLEND_SUBTRACT };
+
+int FourCCToInt(string fourCC) {
+    return fourCC[0] | ((int)fourCC[1] << 8) | ((int)fourCC[2] << 16) | ((int)fourCC[3] << 24);
+}
+
+string IntToFourCC(int value) {
+    string str;
+    return SPrintf(str, "%c%c%c%c",
+        value & 0xff, value >> 8 & 0xff, value >> 16 & 0xff, value >> 24 & 0xff);
+}
+
+typedef struct (string assertFourCC) {
+    int fourCC <format=hex>; Assert(fourCC == FourCCToInt(assertFourCC));
+    int size <hidden=true>; Assert(size == 0);
+    int count <hidden=true>; Assert(size == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} NullHeader <read=ReadNullHeader>;
+
+wstring ReadNullHeader(NullHeader& header) {
+    string str;
+    return SPrintf(str, "%s", IntToFourCC(header.fourCC));
+}
+
+typedef struct (string assertFourCC) {
+    int fourCC <format=hex>; Assert(fourCC == FourCCToInt(assertFourCC));
+    int size <format=hex>;
+    int count <hidden=true>; Assert(count == 1);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    local quad start <format=hex> = FTell();
+} BlobHeader <read=ReadBlobHeader>;
+
+wstring ReadBlobHeader(BlobHeader& header) {
+    string str;
+    return SPrintf(str, "%-4s        %5Xh", IntToFourCC(header.fourCC), header.size);
+}
+
+typedef struct (string assertFourCC) {
+    int fourCC <format=hex>; Assert(fourCC == FourCCToInt(assertFourCC));
+    int size <format=hex>;
+    int count;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    local quad start <format=hex> = FTell();
+} BlockHeader <read=ReadBlockHeader>;
+
+wstring ReadBlockHeader(BlockHeader& header) {
+    string str;
+    return SPrintf(str, "%-4s [%4i] %5Xh", IntToFourCC(header.fourCC), header.count, header.size);
+}
+
+typedef struct {
+    local quad str <format=hex>;
+    local quad texi <format=hex>;
+    local quad shpr <format=hex>;
+    local quad ctpr <format=hex>;
+    local quad anip <format=hex>;
+    local quad intp <format=hex>;
+    local quad scdp <format=hex>;
+    local quad shap <format=hex>;
+    local quad ctrl <format=hex>;
+    local quad anik <format=hex>;
+    local quad anio <format=hex>;
+    local quad anim <format=hex>;
+    local quad scdk <format=hex>;
+    local quad scdo <format=hex>;
+    local quad scdl <format=hex>;
+    local quad dlgo <format=hex>;
+    local quad dlg <format=hex>;
+} BlockOffsets;
+
+//------------------------------------------------
+
+typedef struct {
+    wstring str;
+} STREntry <read=ReadSTREntry, optimize=false>;
+
+wstring ReadSTREntry(STREntry& entry) {
+    return entry.str;
+}
+
+typedef struct {
+    BlockHeader header("STR\0");
+    //STREntry entries[header.count];
+} STR <read=ReadSTR>;
+
+wstring ReadSTR(STR& str) {
+    return ReadBlockHeader(str.header);
+}
+
+
+typedef struct {
+    int nameOffset <format=hex, hidden=true>;
+    int pathOffset <format=hex, hidden=true>;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offsets.str + nameOffset);
+    wstring name;
+
+    FSeek(offsets.str + pathOffset);
+    wstring path;
+    FSeek(pos);
+} TEXIEntry <read=ReadTEXIEntry, optimize=false>;
+
+wstring ReadTEXIEntry(TEXIEntry& entry) {
+    string str;
+    SPrintf(str, "%s - %s", entry.name, entry.path);
+    return str;
+}
+
+typedef struct {
+    BlockHeader header("TEXI");
+    if (header.count > 0) {
+        TEXIEntry entries[header.count];
+    }
+} TEXI <read=ReadTEXI>;
+
+wstring ReadTEXI(TEXI& texi) {
+    return ReadBlockHeader(texi.header);
+}
+
+
+typedef struct {
+    int typeOffset <format=hex, hidden=true>;
+    int dataOffset <format=hex, hidden=true>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offsets.str + typeOffset);
+    wstring type;
+
+    FSeek(offsets.shpr + dataOffset);
+    short leftEdge;
+    FSkip(-2);
+    byte mark <hidden=true, bgcolor=cBlack, fgcolor=cWhite>;
+    FSkip(1);
+    short topEdge;
+    short rightEdge; Assert(rightEdge > leftEdge);
+    short bottomEdge; Assert(bottomEdge > topEdge);
+    if (version == VERSION_DSR && type != "Null") {
+        short scalingOriginX;
+        short scalingOriginY;
+        // Flags maybe? If so, there are a lot of them.
+        short scalingMode; Assert(scalingMode >= 0 && scalingMode <= 128);
+        short pad0E <hidden=true>; Assert(pad0E == 0); // From disassembly
+    }
+    
+    // Colors are in ABGR order for LE, RGBA order for BE
+    if (type == "Dialog") {
+        short dlgIndex;
+        byte unk02; Assert(unk02 == 0 || unk02 == 1);
+        byte unk03; Assert(unk03 == 0 || unk03 == 1);
+        int paletteColor;
+        ubyte customColor[4];
+        byte unk0C; Assert(unk0C == 0);
+        byte unk0D <hidden=true>; Assert(unk0D == 0);
+        byte unk0E <hidden=true>; Assert(unk0E == 0);
+        byte unk0F <hidden=true>; Assert(unk0F == 0);
+        // This was determined from disassembly; there are no examples that I'm aware of.
+        // It is only used if unk03 is on.
+        if (unk0C == 1) {
+            short unk10;
+            short unk12;
+            int unk14;
+        }
+    } else if (type == "GouraudFrame" || type == "GouraudRect") {
+        byte blendMode;
+        byte unk01 <hidden=true>; Assert(unk01 == 0);
+        byte unk02 <hidden=true>; Assert(unk02 == 0);
+        byte thickness; if (type == "GouraudRect") Assert(thickness == 0);
+        ubyte topLeftColor[4];
+        ubyte topRightColor[4];
+        ubyte bottomRightColor[4];
+        ubyte bottomLeftColor[4];
+    } else if (type == "GouraudSprite" || type == "Sprite") {
+        short texLeftEdge;
+        short texTopEdge;
+        short texRightEdge;
+        short texBottomEdge;
+        short textureIndex;
+        // 1-8 - confirmed nothing
+        //  10 - rotate 90 degrees clockwise
+        //  20 - rotate 180 degrees
+        //  40 - flip vertical
+        //  80 - flip horizontal
+        ubyte flags <format=hex>;
+        BLENDMODE blendMode; Assert(blendMode >= BLEND_OPAQUE && blendMode <= BLEND_SUBTRACT);
+        
+        if (type == "GouraudSprite") {
+            ubyte topLeftColor[4];
+            ubyte topRightColor[4];
+            ubyte bottomRightColor[4];
+            ubyte bottomLeftColor[4];
+        } else if (type == "Sprite") {
+            int paletteColor;
+            ubyte customColor[4];
+        }
+    } else if (type == "Mask") {
+        int dlgoNameOffset <format=hex>;
+        byte unk04; Assert(unk04 == 1);
+        int unk05; Assert(unk05 == 0);
+        int unk09; Assert(unk09 == 0);
+        short unk0D; Assert(unk0D == 0);
+        
+        FSeek(offsets.str + dlgoNameOffset);
+        wstring dlgoName;
+    } else if (type == "MonoFrame" || type == "MonoRect") {
+        BLENDMODE blendMode; Assert(blendMode >= BLEND_OPAQUE && blendMode <= BLEND_SUBTRACT);
+        byte unk01 <hidden=true>; Assert(unk01 == 0);
+        byte unk02 <hidden=true>; Assert(unk02 == 0);
+        byte thickness; if (type == "MonoRect") Assert(thickness == 0);
+        int paletteColor;
+        ubyte customColor[4];
+    } else if (type == "Null") {
+    } else if (type == "ScrollText" || type == "Text") {
+        // Some of these don't really work properly but I assume it's the same thing
+        BLENDMODE blendMode; Assert(blendMode >= BLEND_OPAQUE && blendMode <= BLEND_SUBTRACT);
+        byte unk01; Assert(unk01 == 1);
+        short lineSpacing;
+        int palletteColor;
+        ubyte customColor[4];
+        // 0-11: different sizes of menu font
+        // 12: talk font
+        short fontSize;
+        // 0 - top left
+        // 1 - right
+        // 2 - hcenter
+        // 4 - bottom
+        // 8 - vcenter
+        byte alignment;
+        byte textType; Assert(textType >= 0 && textType <= 2);
+        int unk10; Assert(unk10 == 0x1C);
+        // Literal
+        if (textType == 0) {
+            int stringOffset <format=hex>;
+        // FMG
+        } else if (textType == 1) {
+            int charLength;
+            int textID;
+        // Dynamic
+        } else if (textType == 2) {
+            int charLength;
+        }
+
+        if (type == "ScrollText") {
+            short unkX00; Assert(unkX00 == 0 || unkX00 == 0x60);
+            short unkX02; Assert(unkX02 == 0 || unkX02 == 6);
+            short unkX04; Assert(unkX04 == 0 || unkX04 == 0x60);
+            short unkX06; Assert(unkX06 == 0 || unkX06 == 6);
+            short scrollSpeed;
+            short unkX0A;
+        }
+        
+        if (unk01 != 0) {
+            int unkY00; Assert(unkY00 == 0);
+            short unkY04; Assert(unkY04 == 0 || unkY04 == 1);
+            if (unkY04 == 1) { // Only used in Shadow Assault Tenchu
+                int unkY06; Assert(unkY06 == 0);
+                short unkY0A; Assert(unkY0A == 0xFF);
+                short unkY0C; Assert(unkY0C == 0 || unkY0C == 2);
+                short unkY0E; Assert(unkY0E == 0 || unkY0E == 2);
+            }
+        }
+        
+        if (textType == 0) {
+            FSeek(offsets.str + stringOffset);
+            wstring str;
+        }
+    } else {
+        Assert(false);
+    }
+    FSeek(pos);
+} SHAPEntry <read=ReadSHAPEntry, optimize=false>;
+
+string FormatColor(ubyte color[]) {
+    string str;
+    return SPrintf(str, "[%3i,%3i,%3i,%3i]",
+        color[0], color[1], color[2], color[3]);
+}
+
+wstring ReadSHAPEntry(SHAPEntry& entry) {
+    string str;
+    if (entry.type == "GouraudRect") {
+        SPrintf(str, "%s - %i %s%s%s%s",
+            entry.type, entry.blendMode,
+            FormatColor(entry.topLeftColor), FormatColor(entry.topRightColor),
+            FormatColor(entry.bottomLeftColor), FormatColor(entry.bottomRightColor));
+    } else if (entry.type == "GouraudSprite") {
+        SPrintf(str, "%s", entry.type);
+    } else if (entry.type == "Mask") {
+        SPrintf(str, "%s", entry.type);
+    } else if (entry.type == "MonoFrame") {
+        SPrintf(str, "%s - %i %i %i %s",
+            entry.type, entry.blendMode, entry.thickness, entry.paletteColor,
+            FormatColor(entry.customColor));
+    } else if (entry.type == "MonoRect") {
+        SPrintf(str, "%s - %i %s", entry.type, entry.paletteColor, 
+            FormatColor(entry.customColor));
+    } else if (entry.type == "Text") {
+        if (entry.textType == 0) {
+            return SPrintf(str, "%s - ", entry.type) + entry.str;
+        } else {
+            str = entry.type;
+        }
+    } else {
+        str = entry.type;
+    }
+    return str;
+}
+
+typedef struct {
+    BlockHeader header("SHAP");
+    //SHAPEntry entries[header.count];
+} SHAP <read=ReadSHAP>;
+
+wstring ReadSHAP(SHAP& shap) {
+    return ReadBlockHeader(shap.header);
+}
+
+
+typedef struct {
+    int typeOffset <format=hex, hidden=true>;
+    int ctprOffset <format=hex, hidden=true>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offsets.str + typeOffset);
+    wstring type;
+
+    FSeek(offsets.ctpr + ctprOffset);
+    if (type == "DmeCtrlScrollText") {
+        int unk00 <hidden=true>; Assert(unk00 == 0);
+    } else if (type == "FrpgMenuDlgObjContentsHelpItem") {
+        // Always the same for all the ctrls in a group
+        int unk00;
+        // These 5 seem like indices, they're never above like 70
+        int unk04;
+        int unk08;
+        int unk0C;
+        int unk10;
+        int unk14;
+        int textID;
+    } else if (type == "Static") {
+        int unk00 <hidden=true>; Assert(unk00 == 0);
+    } else {
+        Assert(false);
+    }
+    FSeek(pos);
+} CTRLEntry <read=ReadCTRLEntry, optimize=false>;
+
+wstring ReadCTRLEntry(CTRLEntry& entry) {
+    string str;
+    if (entry.type == "FrpgMenuDlgObjContentsHelpItem") {
+        SPrintf(str, "%s %2i %2i %2i %2i %2i %2i %6i", entry.type,
+            entry.unk00, entry.unk04, entry.unk08, entry.unk0C, entry.unk10, entry.unk14, entry.textID);
+    } else {
+        str = entry.type;
+    }
+    return str;
+}
+
+typedef struct {
+    BlockHeader header("CTRL");
+    //CTRLEntry entries[header.count];
+} CTRL <read=ReadCTRL>;
+
+wstring ReadCTRL(CTRL& ctrl) {
+    return ReadBlockHeader(ctrl.header);
+}
+
+
+typedef struct (int anioIndex) {
+    int nameOffset <format=hex, hidden=true>;
+    int unk04; // Frame count?
+    byte unk08; Assert(unk08 >= 0 && unk08 <= 1);
+    byte unk09; Assert(unk09 >= 1 && unk09 <= 2);
+    short unk0A <hidden=true>; Assert(unk0A == 0);
+    int intpOffset;
+    int anipOffset;
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offsets.str + nameOffset);
+    wstring name;
+
+    if (unk09 == 2) {
+        FSeek(offsets.intp + intpOffset);
+        float intp00;
+        float intp04;
+        float intp08;
+        float intp0C;
+    }
+
+    FSeek(offsets.anip + anipOffset);
+    /*if (anioIndex == 0) {
+        int anio00;
+    } else if (anioIndex == 1) {
+        short anio00;
+        short anio02;
+    } else if (anioIndex == 2) {
+        int anio00; Assert(anio00 == 0 || anio00 == 2);
+        if (anio00 == 2) {
+            int anio04;
+        } else {
+            byte anio04;
+        }
+    } else {
+        int anio00; Assert(anio00 == 0);
+        float anio04;
+    }*/
+    FSeek(pos);
+} ANIKEntry <read=ReadANIKEntry, optimize=false>;
+
+wstring ReadANIKEntry(ANIKEntry& entry) {
+    string str;
+    SPrintf(str, "%3i %i %i %s %4X %4X",
+        entry.unk04, entry.unk08, entry.unk09, entry.name, entry.intpOffset, entry.anipOffset);
+    return str;
+}
+
+typedef struct {
+    BlockHeader header("ANIK");
+    if (header.count > 0) {
+        //ANIKEntry entries[header.count];
+    }
+} ANIK <read=ReadANIK>;
+
+wstring ReadANIK(ANIK& anik) {
+    return ReadBlockHeader(anik.header);
+}
+
+
+typedef struct {
+    int unk00; Assert(unk00 >= 0 && unk00 <= 3); // Index?
+    int anikCount;
+    int anikOffset <format=hex>;
+    int unk0C; // Frame count?
+
+    if (anikCount > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(offsets.anik + anikOffset);
+        ANIKEntry anikEntries(unk00)[anikCount] <bgcolor=cLtGray, optimize=false>;
+        FSeek(pos);
+    }
+} ANIOEntry <read=ReadANIOEntry, optimize=false>;
+
+wstring ReadANIOEntry(ANIOEntry& entry) {
+    string str;
+    SPrintf(str, "%i %i %3i", entry.unk00, entry.anikCount, entry.unk0C);
+    return str;
+}
+
+typedef struct {
+    BlockHeader header("ANIO");
+    if (header.count > 0) {
+        //ANIOEntry entries[header.count];
+    }
+} ANIO <read=ReadANIO>;
+
+wstring ReadANIO(ANIO& anio) {
+    return ReadBlockHeader(anio.header);
+}
+
+
+typedef struct {
+    int nameOffset <format=hex>;
+    int anioCount; Assert(anioCount == 4);
+    int anioOffset <format=hex>;
+    int unk0C; // Frame count?
+    int unk10; Assert(unk10 >= 0 && unk10 <= 5);
+    int unk14; Assert(unk14 >= 0 && unk14 <= 4);
+    int unk18; Assert(unk18 == 4);
+    byte unk1C; Assert(unk1C == 1);
+    byte unk1D; Assert(unk1D == 0);
+    byte unk1E; Assert(unk1E == 0);
+    byte unk1F; Assert(unk1F == 0);
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+    int unk28 <hidden=true>; Assert(unk28 == 0);
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+
+    local quad pos <hidden=true> = FTell();
+    FSeek(offsets.str + nameOffset);
+    wstring name;
+
+    FSeek(offsets.anio + anioOffset);
+    ANIOEntry anioEntries[anioCount] <bgcolor=cSilver, optimize=false>;
+    FSeek(pos);
+} ANIMEntry <read=ReadANIMEntry, optimize=false>;
+
+wstring ReadANIMEntry(ANIMEntry& entry) {
+    string str;
+    SPrintf(str, "%3i %s", entry.unk0C, entry.name);
+    return str;
+}
+
+typedef struct {
+    BlockHeader header("ANIM");
+    if (header.count > 0) {
+        ANIMEntry entries[header.count];
+    }
+} ANIM <read=ReadANIM>;
+
+wstring ReadANIM(ANIM& anim) {
+    return ReadBlockHeader(anim.header);
+}
+
+
+typedef struct {
+    int nameOffset <format=hex, hidden=true>;
+    int unk04;
+    int unk08; Assert(unk08 == 1);
+    int unk0C; Assert(unk0C == 0 || unk0C == 1);
+    int scdpOffset <format=hex, hidden=true>;
+    int unk14;
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offsets.str + nameOffset);
+    wstring name;
+
+    FSeek(offsets.scdp + scdpOffset);
+    int animIndex;
+    int scdp04; Assert(scdp04 == 0 || scdp04 == 1);
+    FSeek(pos);
+} SCDKEntry <read=ReadSCDKEntry, optimize=false>;
+
+wstring ReadSCDKEntry(SCDKEntry& entry) {
+    string str;
+    SPrintf(str, "%s %3i %i %i %4X %3i %3i %i", entry.name,
+        entry.unk04, entry.unk08, entry.unk0C, entry.scdpOffset, entry.unk14, entry.animIndex, entry.scdp04);
+    return str;
+}
+
+typedef struct {
+    BlockHeader header("SCDK");
+    if (header.count > 0) {
+        //SCDKEntry entries[header.count];
+    }
+} SCDK <read=ReadSCDK>;
+
+wstring ReadSCDK(SCDK& scdk) {
+    return ReadBlockHeader(scdk.header);
+}
+
+
+typedef struct {
+    int nameOffset <format=hex, hidden=true>;
+    int scdkCount <hidden=true>;
+    int scdkOffset <format=hex, hidden=true>;
+    int unk0C;
+
+    local quad pos <hidden=true> = FTell();
+    FSeek(offsets.str + nameOffset);
+    wstring name;
+
+    if (scdkCount > 0) {
+        FSeek(offsets.scdk + scdkOffset);
+        SCDKEntry scdkEntries[scdkCount] <bgcolor=cLtGreen, optimize=false>;
+    }
+    FSeek(pos);
+} SCDOEntry <read=ReadSCDOEntry, optimize=false>;
+
+wstring ReadSCDOEntry(SCDOEntry& entry) {
+    string str;
+    SPrintf(str, "%3i %s", entry.unk0C, entry.name);
+    return str;
+}
+
+typedef struct {
+    BlockHeader header("SCDO");
+    if (header.count > 0) {
+        //SCDOEntry entries[header.count];
+    }
+} SCDO <read=ReadSCDO>;
+
+wstring ReadSCDO(SCDO& scdo) {
+    return ReadBlockHeader(scdo.header);
+}
+
+
+typedef struct {
+    int nameOffset <format=hex, hidden=true>;
+    int scdoCount <hidden=true>;
+    int scdoOffset <format=hex, hidden=true>;
+    int unk0C;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offsets.str + nameOffset);
+    wstring name;
+
+    if (scdoCount > 0) {
+        FSeek(offsets.scdo + scdoOffset);
+        SCDOEntry scdoEntries[scdoCount] <bgcolor=cGreen, optimize=false>;
+    }
+    FSeek(pos);
+} SCDLEntry <read=ReadSCDLEntry, optimize=false>;
+
+wstring ReadSCDLEntry(SCDLEntry& entry) {
+    string str;
+    SPrintf(str, "%3i %s", entry.unk0C, entry.name);
+    return str;
+}
+
+typedef struct {
+    BlockHeader header("SCDL");
+    if (header.count > 0) {
+        SCDLEntry entries[header.count];
+    }
+} SCDL <read=ReadSCDL>;
+
+wstring ReadSCDL(SCDL& scdl) {
+    return ReadBlockHeader(scdl.header);
+}
+
+
+typedef struct {
+    int nameOffset <format=hex, hidden=true>;
+    int shapOffset <format=hex, hidden=true>;
+    int ctrlOffset <format=hex, hidden=true>;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offsets.str + nameOffset);
+    wstring name;
+
+    FSeek(offsets.shap + shapOffset);
+    SHAPEntry shapEntry <bgcolor=cLtBlue>;
+
+    FSeek(offsets.ctrl + ctrlOffset);
+    CTRLEntry ctrlEntry <bgcolor=cAqua>;
+    FSeek(pos);
+} DLGOEntry <read=ReadDLGOEntry, optimize=false>;
+
+wstring ReadDLGOEntry(DLGOEntry& entry) {
+    return entry.name;
+}
+
+typedef struct {
+    BlockHeader header("DLGO");
+    if (header.count > 0) {
+        //DLGOEntry entries[header.count];
+    }
+} DLGO <read=ReadDLGO>;
+
+wstring ReadDLGO(DLGO& dlgo) {
+    return ReadBlockHeader(dlgo.header);
+}
+
+
+typedef struct {
+    int nameOffset <format=hex, hidden=true>;
+    int shapOffset <format=hex, hidden=true>;
+    int ctrlOffset <format=hex, hidden=true>; Assert(ctrlOffset == shapOffset);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    int dlgoCount <hidden=true>;
+    int dlgoOffset <format=hex, hidden=true>;
+    short leftEdge;
+    short topEdge;
+    short rightEdge;
+    short bottomEdge;
+    short unk30[5];
+    short unk3A <hidden=true>; Assert(unk3A == 0);
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offsets.str + nameOffset);
+    wstring name;
+
+    FSeek(offsets.shap + shapOffset);
+    SHAPEntry shapEntry <bgcolor=cLtBlue>;
+
+    FSeek(offsets.ctrl + ctrlOffset);
+    CTRLEntry ctrlEntry <bgcolor=cAqua>;
+
+    if (dlgoCount > 0) {
+        FSeek(offsets.dlgo + dlgoOffset);
+        DLGOEntry dlgoEntries[dlgoCount] <bgcolor=cLtRed, optimize=false>;
+    }
+    FSeek(pos);
+} DLGEntry <read=ReadDLGEntry, optimize=false>;
+
+wstring ReadDLGEntry(DLGEntry& entry) {
+    return entry.name;
+}
+
+typedef struct {
+    BlockHeader header("DLG\0");
+    DLGEntry entries[header.count];
+} DLG <read=ReadDLG>;
+
+wstring ReadDLG(DLG& dlg) {
+    return ReadBlockHeader(dlg.header);
+}
+
+//------------------------------------------------
+
+BlockOffsets offsets;
+
+NullHeader drb("DRB\0") <bgcolor=cBlack, fgcolor=cWhite>;
+
+STR str <bgcolor=cLtPurple>;
+FSeek(str.header.start + str.header.size);
+offsets.str = str.header.start;
+
+TEXI texi <bgcolor=cPurple>;
+FSeek(texi.header.start + texi.header.size);
+offsets.texi = texi.header.start;
+
+BlobHeader shpr("SHPR") <bgcolor=cLtBlue>;
+FSeek(shpr.start + shpr.size);
+offsets.shpr = shpr.start;
+
+BlobHeader ctpr("CTPR") <bgcolor=cAqua>;
+FSeek(ctpr.start + ctpr.size);
+offsets.ctpr = ctpr.start;
+
+BlobHeader anip("ANIP") <bgcolor=cLtGray>;
+FSeek(anip.start + anip.size);
+offsets.anip = anip.start;
+
+BlobHeader intp("INTP") <bgcolor=cLtGray>;
+FSeek(intp.start + intp.size);
+offsets.intp = intp.start;
+
+BlobHeader scdp("SCDP") <bgcolor=cLtGreen>;
+FSeek(scdp.start + scdp.size);
+offsets.scdp = scdp.start;
+
+SHAP shap <bgcolor=cLtBlue>;
+FSeek(shap.header.start + shap.header.size);
+offsets.shap = shap.header.start;
+
+CTRL ctrl <bgcolor=cAqua>;
+FSeek(ctrl.header.start + ctrl.header.size);
+offsets.ctrl = ctrl.header.start;
+
+ANIK anik <bgcolor=cLtGray>;
+FSeek(anik.header.start + anik.header.size);
+offsets.anik = anik.header.start;
+
+ANIO anio <bgcolor=cSilver>;
+FSeek(anio.header.start + anio.header.size);
+offsets.anio = anio.header.start;
+
+ANIM anim <bgcolor=cGray>;
+FSeek(anim.header.start + anim.header.size);
+offsets.anim = anim.header.start;
+
+SCDK scdk <bgcolor=cLtGreen>;
+FSeek(scdk.header.start + scdk.header.size);
+offsets.scdk = scdk.header.start;
+
+SCDO scdo <bgcolor=cGreen>;
+FSeek(scdo.header.start + scdo.header.size);
+offsets.scdo = scdo.header.start;
+
+SCDL scdl <bgcolor=cDkGreen>;
+FSeek(scdl.header.start + scdl.header.size);
+offsets.scdl = scdl.header.start;
+
+DLGO dlgo <bgcolor=cLtRed>;
+FSeek(dlgo.header.start + dlgo.header.size);
+offsets.dlgo = dlgo.header.start;
+
+DLG dlg <bgcolor=cRed>;
+FSeek(dlg.header.start + dlg.header.size);
+offsets.dlg = dlg.header.start;
+
+NullHeader end("END\0") <bgcolor=cBlack, fgcolor=cWhite>;

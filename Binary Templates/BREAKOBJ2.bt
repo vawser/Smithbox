@@ -1,0 +1,48 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: BREAKOBJ2.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DS2 breakobjs
+//  Category: Dantelion
+// File Mask: *.breakobj
+//  ID Bytes: 4F 42 4A 42 01 00 00 00
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "OBJB");
+    int unk04; Assert(unk04 == 1);
+    int objectCount;
+} Header <bgcolor=cLtRed>;
+
+typedef struct {
+    int unk00;
+    int unk04;
+} Member <bgcolor=cAqua>;
+
+typedef struct {
+    int id;
+    int unk04; Assert(unk04 == 0);
+    int unk08;
+    int memberCount;
+    Member members[memberCount];
+} Object <read=ReadObject, bgcolor=cLtGreen, optimize=false>;
+
+string ReadObject(Object& obj) {
+    string str;
+    SPrintf(str, "%8i %i [%2i]", obj.id, obj.unk08, obj.memberCount); 
+    return str;
+}
+
+//------------------------------------------------
+
+Header header;
+if (header.objectCount > 0) {
+    Object objects[header.objectCount];
+}

@@ -1,0 +1,163 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: Util.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Utility types and functions for SoulsTemplates
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#ifndef _SOULSTEMPLATES_UTIL
+    #define _SOULSTEMPLATES_UTIL
+
+void Align(int align) {
+    if (FTell() % align > 0) {
+        FSkip(align - (FTell() % align));
+    }
+}
+
+void AlignRelative(int base, int align) {
+    local int offset = (FTell() - base) % align;
+    if (offset) {
+        FSkip(align - offset);
+    }
+}
+
+int IsBool(int value) {
+    return value == 0 || value == 1;
+}
+
+ubyte ReverseBits(ubyte value) {
+    return
+        ((value & 0b00000001) << 7) |
+        ((value & 0b00000010) << 5) |
+        ((value & 0b00000100) << 3) |
+        ((value & 0b00001000) << 1) |
+        ((value & 0b00010000) >> 1) |
+        ((value & 0b00100000) >> 3) |
+        ((value & 0b01000000) >> 5) |
+        ((value & 0b10000000) >> 7);
+}
+
+typedef struct {
+    float x;
+    float y;
+} Vector2 <read=ReadVector2>;
+
+string ReadVector2(Vector2& vec) {
+    string str;
+    SPrintf(str, "<%7.2f, %7.2f>", vec.x, vec.y);
+    return str;
+}
+
+string ReadVector2Fmt(Vector2& vec, int width, int precision) {
+    string fmt;
+    SPrintf(fmt, "<%%%d.%df, %%%d.%df>",
+        width, precision, width, precision);
+    
+    string str;
+    return SPrintf(str, fmt, vec.x, vec.y);
+}
+
+
+typedef struct {
+    float x;
+    float y;
+    float z;
+} Vector3 <read=ReadVector3>;
+
+string ReadVector3(Vector3& vec) {
+    string str;
+    SPrintf(str, "<%7.2f, %7.2f, %7.2f>", vec.x, vec.y, vec.z);
+    return str;
+}
+
+string ReadVector3Fmt(Vector3& vec, int width, int precision) {
+    string fmt;
+    SPrintf(fmt, "<%%%d.%df, %%%d.%df, %%%d.%df>",
+        width, precision, width, precision, width, precision);
+    
+    string str;
+    return SPrintf(str, fmt, vec.x, vec.y, vec.z);
+}
+
+
+typedef struct {
+    float x;
+    float y;
+    float z;
+    float w;
+} Vector4 <read=ReadVector4>;
+
+string ReadVector4(Vector4& vec) {
+    string str;
+    SPrintf(str, "<%7.2f, %7.2f, %7.2f, %7.2f>", vec.x, vec.y, vec.z, vec.w);
+    return str;
+}
+
+string ReadVector4Fmt(Vector4& vec, int width, int precision) {
+    string fmt;
+    SPrintf(fmt, "<%%%d.%df, %%%d.%df, %%%d.%df, %%%d.%df>",
+        width, precision, width, precision, width, precision, width, precision);
+    
+    string str;
+    return SPrintf(str, fmt, vec.x, vec.y, vec.z, vec.w);
+}
+
+
+typedef struct (int longOffset, int unicode) {
+    if (longOffset)
+        quad offset <format=hex>;
+    else
+        uint offset <format=hex>;
+
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset);
+    if (unicode)
+        wstring str;
+    else
+        string str;
+    FSeek(pos);
+} OffsetString <read=ReadOffsetString>;
+
+wstring ReadOffsetString(OffsetString& os) {
+    return os.str;
+}
+
+
+typedef struct {
+    string str;
+} WrappedString <read=ReadWrappedString>;
+
+string ReadWrappedString(WrappedString& ws) {
+    return ws.str;
+}
+
+
+typedef struct {
+    wstring str;
+} WrappedWString <read=ReadWrappedWString>;
+
+wstring ReadWrappedWString(WrappedWString& wws) {
+    return wws.str;
+}
+
+
+typedef struct {
+    if (VARINT_LONG)
+        quad val;
+    else
+        int val;
+} Varint <read=ReadVarint>;
+
+string ReadVarint(Varint& v) {
+    string s;
+    SPrintf(s, "%Xh | %d", v.val, v.val);
+    return s;
+}
+
+#endif

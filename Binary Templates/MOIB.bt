@@ -1,0 +1,54 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: MOIB.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Demon's Souls .moib files
+//  Category: Dantelion
+// File Mask: *.moib
+//  ID Bytes: 4D 4F 53 49
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "MOSI");
+    short unk04; Assert(unk04 == 2);
+    short unk06; Assert(unk06 == 3);
+    int entryCount;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int id; // Or just index from what I've seen
+    byte unk04;
+    byte unk05;
+    byte unk06;
+    byte unk07;
+    byte unk08; // Count of something? Matches number of unk09-unk0B which are not FF
+    byte unk09;
+    byte unk0A;
+    byte unk0B;
+    float unk0C;
+    float unk10;
+    byte unk14;
+    byte unk15;
+    short unk16 <hidden=true>; Assert(unk16 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+} Entry <read=ReadEntry, bgcolor=cLtGreen, optimize=false>;
+
+string ReadEntry(Entry& entry) {
+    string str;
+    return SPrintf(str, "%4i", entry.id);
+}
+
+//------------------------------------------------
+
+Header header;
+struct { Entry entries[header.entryCount]; } entries <open=true>;

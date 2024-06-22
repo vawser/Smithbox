@@ -1,0 +1,172 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: MGS.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Demon's Souls .mgs/.rpc files
+//  Category: Dantelion
+// File Mask: *.mgs,*.rpc
+//  ID Bytes: 4D 4F 47 53
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "MOGS");
+    short unk04; Assert(unk04 == 2);
+    short unk06; Assert(unk06 == 0);
+    int offset1 <format=hex>;
+    int offset2 <format=hex>;
+    int offset3 <format=hex>;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int unk00;
+    float unk04;
+    float unk08;
+    float unk0C;
+    OffsetString name(0, 0);
+} Struct1Child <read=ReadStruct1Child, bgcolor=cGreen, optimize=false>;
+
+string ReadStruct1Child(Struct1Child& child) {
+    return child.name.str;
+}
+
+typedef struct {
+    int childCount1;
+    int childCount2;
+    int childrenOffset1 <format=hex>;
+    int childrenOffset2 <format=hex>;
+    
+    if (childCount1 > 0) {
+        FSeek(childrenOffset1);
+        Struct1Child children1[childCount1];
+    }
+    if (childCount2 > 0) {
+        FSeek(childrenOffset2);
+        Struct1Child children2[childCount2];
+    }
+} Struct1 <bgcolor=cLtGreen>;
+
+
+typedef struct {
+    float unk00;
+    float unk04;
+    float unk08;
+    float unk0C; // Last field in each of these structs looks kinda funky. Not float?
+} Struct2GrandChildData2 <bgcolor=cDkBlue>;
+
+typedef struct {
+    float unk00; // Guess, always 0
+    float unk04;
+    float unk08;
+    float unk0C;
+    float unk10;
+    float unk14;
+} Struct2GrandChildData3 <bgcolor=cDkBlue>;
+
+typedef struct {
+    float unk00; // Guess, always 0
+    float unk04;
+    float unk08;
+    float unk0C;
+    float unk10;
+    float unk14;
+    float unk18;
+    float unk1C;
+} Struct2GrandChildData4 <bgcolor=cDkBlue>;
+
+typedef struct {
+    float unk00; // Guess, always 0
+    float unk04;
+    float unk08;
+    float unk0C;
+    float unk10;
+    float unk14;
+    float unk18;
+    float unk1C;
+    float unk20;
+    float unk24;
+} Struct2GrandChildData5 <bgcolor=cDkBlue>;
+
+typedef struct {
+    int id;
+    int dataType;
+    int dataOffset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(dataOffset);
+    switch (dataType) {
+        case 2: Struct2GrandChildData2 data; break;
+        case 3: Struct2GrandChildData3 data; break;
+        case 4: Struct2GrandChildData4 data; break;
+        case 5: Struct2GrandChildData5 data; break;
+        default: Assert(false);
+    }
+    FSeek(pos);
+} Struct2GrandChild <bgcolor=cBlue, optimize=false>;
+
+typedef struct {
+    int childCount;
+    int childrenOffset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(childrenOffset);
+    Struct2GrandChild children[childCount];
+    FSeek(pos);
+} Struct2Child <bgcolor=cDkAqua, optimize=false>;
+
+typedef struct {
+    int childCount;
+    int childrenOffset <format=hex>;
+    
+    FSeek(childrenOffset);
+    Struct2Child children[childCount];
+} Struct2 <bgcolor=cAqua>;
+
+
+typedef struct {
+    char name[0x10];
+    float unk10;
+    int unk14;
+    int unk18; Assert(unk18 == 0);
+    byte unk1C; Assert(unk1C == 0);
+    byte unk1D; Assert(unk1D == -1);
+    short unk1E <hidden=true>; Assert(unk1E == 0);
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+} Struct3Child <read=ReadStruct3Child, bgcolor=cYellow, optimize=false>;
+
+string ReadStruct3Child(Struct3Child& child) {
+    return child.name;
+}
+
+typedef struct {
+    int childCount;
+    int childrenOffset <format=hex>;
+    
+    FSeek(childrenOffset);
+    Struct3Child children[childCount];
+} Struct3 <bgcolor=cLtYellow>;
+
+//------------------------------------------------
+
+Header header;
+if (header.offset1 != 0) {
+    FSeek(header.offset1);
+    Struct1 struct1;
+}
+if (header.offset2 != 0) {
+    FSeek(header.offset2);
+    Struct2 struct2;
+}
+if (header.offset3 != 0) {
+    FSeek(header.offset3);
+    Struct3 struct3;
+}

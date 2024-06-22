@@ -1,0 +1,274 @@
+//------------------------------------------------
+//--- 010 Editor v7.0.2 Binary Template
+//
+//      File: FLVER0.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: FromSoft models from AC: 4A to DeS (0x0XXXX) and ACE: R (0x1XXXX)
+//  Category: Dantelion
+// File Mask: *.flver
+//  ID Bytes: 46 4C 56 45 52 00
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt";
+
+LittleEndian();
+if (ReadString(6, 1) == "B")
+    BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[6]; Assert(magic == "FLVER\0");
+    char endian[2]; Assert(endian == "L\0" || endian == "B\0");
+    int version <format=hex>; Assert(version >= 0 && version < 0x20000);
+    int dataOffset <format=hex>;
+    int dataSize <format=hex>;
+    int dummyCount;
+    int materialCount;
+    int boneCount;
+    int meshCount;
+    int vertexBufferCount;
+    Vector3 boundingBoxMin;
+    Vector3 boundingBoxMax;
+    int trueFaceCount;
+    int totalFaceCount;
+    byte vertexIndexSize; Assert(vertexIndexSize == 16 || vertexIndexSize == 32);
+    byte unicode;
+    byte unk4A;
+    byte unk4B;
+    int primitiveRestartConstant <format=hex>;
+    int unk50 <hidden=true>; Assert(unk50 == 0);
+    int unk54 <hidden=true>; Assert(unk54 == 0);
+    int unk58 <hidden=true>; Assert(unk58 == 0);
+    byte unk5C; // Only non-0 in ACER
+    byte unk5D <hidden=true>; Assert(unk5D == 0);
+    byte unk5E <hidden=true>; Assert(unk5E == 0);
+    byte unk5F <hidden=true>; Assert(unk5F == 0);
+    int unk60 <hidden=true>; Assert(unk60 == 0);
+    int unk64 <hidden=true>; Assert(unk64 == 0);
+    int unk68 <hidden=true>; Assert(unk68 == 0);
+    int unk6C <hidden=true>; Assert(unk6C == 0);
+    int unk70 <hidden=true>; Assert(unk70 == 0);
+    int unk74 <hidden=true>; Assert(unk74 == 0);
+    int unk78 <hidden=true>; Assert(unk78 == 0);
+    int unk7C <hidden=true>; Assert(unk7C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    Vector3 position;
+    ubyte color[4];
+    Vector3 forward;
+    short referenceID;
+    short dummyBoneIndex;
+    Vector3 upward;
+    short attachBoneIndex;
+    byte flag1;
+    byte flag2;
+    int unk30 <hidden=true>; Assert(unk30 == 0);
+    int unk34 <hidden=true>; Assert(unk34 == 0);
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+} Dummy <read=ReadDummy, bgcolor=cLtGreen, optimize=true>;
+
+string ReadDummy(Dummy& dummy) {
+    string str;
+    SPrintf(str, "%i %s", dummy.referenceID, ReadVector3(dummy.position));
+    return str;
+}
+
+
+typedef struct {
+    OffsetString path(0, header.unicode);
+    OffsetString type(0, header.unicode);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} Texture <read=ReadTexture, optimize=false>;
+
+wstring ReadTexture(Texture& tex) {
+    return tex.type.str + " | " + tex.path.str;
+}
+
+typedef struct {
+    byte textureCount;
+    byte unk01 <hidden=true>; Assert(unk01 == 0);
+    byte unk02 <hidden=true>; Assert(unk02 == 0);
+    byte unk03 <hidden=true>; Assert(unk03 == 0);
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    struct { Texture textures[textureCount]; } textures;
+} Textures <bgcolor=cDkBlue>;
+
+
+typedef struct {
+    int unk00 <hidden=true>; Assert(unk00 == 0);
+    int structOffset;
+    int type;
+    int semantic;
+    int index;
+} BufferMember <optimize=false>;
+
+typedef struct {
+    short memberCount;
+    short structSize;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    struct { BufferMember members[memberCount]; } members;
+} BufferLayout <optimize=false>;
+
+typedef struct {
+    int layoutCount;
+    int layoutOffsetsOffset;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+
+    local quad pos <hidden=true> = FTell();
+    FSeek(layoutOffsetsOffset);
+    int layoutOffsets[layoutCount] <format=hex>;
+    
+    struct {
+        local int i <hidden=true>;
+        for (i = 0; i < layoutCount; i++) {
+            FSeek(layoutOffsets[i]);
+            BufferLayout bufferLayouts;
+        }
+    } bufferLayouts;
+    FSeek(pos);
+} BufferLayouts <bgcolor=cBlue>;
+
+
+typedef struct {
+    OffsetString name(0, header.unicode);
+    OffsetString mtd(0, header.unicode);
+    int texturesOffset <format=hex>;
+    int bufferLayoutOffset <format=hex>;
+    int dataLength <format=hex>; // From name offset to end of buffer layouts
+    int bufferLayoutHeaderOffset <format=hex>;
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+
+    local quad pos <hidden=true> = FTell();
+    FSeek(texturesOffset);
+    Textures textures;
+
+    if (bufferLayoutHeaderOffset != 0) {
+        FSeek(bufferLayoutHeaderOffset);
+        BufferLayouts bufferLayouts;
+    }
+    FSeek(pos);
+} Material <read=ReadMaterial, bgcolor=cGreen, optimize=false>;
+
+wstring ReadMaterial(Material& mat) {
+    return mat.name.str + " | " + mat.mtd.str;
+}
+
+
+typedef struct {
+    Vector3 translation;
+    OffsetString name(0, header.unicode);
+    Vector3 rotation;
+    short parentIndex;
+    short childIndex;
+    Vector3 scale;
+    short nextSiblingIndex;
+    short previousSiblingIndex;
+    Vector3 boundingBoxMin;
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+    Vector3 boundingBoxMax;
+    
+    local int i <hidden=true>;
+    for (i = 0; i < 13; i++) {
+        int unk4C <hidden=true>; Assert(unk4C == 0);
+    }
+} Bone <read=ReadBone, bgcolor=cDkGreen, optimize=false>;
+
+wstring ReadBone(Bone& bone) {
+    return bone.name.str;
+}
+
+
+typedef struct {
+    int layoutIndex;
+    int bufferLength <format=hex>;
+    int bufferOffset <format=hex>;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    
+    if (bufferLength > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(header.dataOffset + bufferOffset);
+        ubyte buffer[bufferLength];
+        FSeek(pos);
+    }
+} VertexBuffer <optimize=false>;
+
+typedef struct {
+    int bufferCount;
+    int buffersOffset <format=hex>;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    
+    if (bufferCount > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(buffersOffset);
+        VertexBuffer buffers[bufferCount];
+        FSeek(pos);
+    }
+} VertexBuffers <bgcolor=cLtBlue, optimize=false>;
+
+
+typedef struct {
+    byte dynamic;
+    byte materialIndex;
+    byte unk02;
+    byte unk03;
+    int vertexIndexCount;
+    int vertexCount;
+    short defaultBoneIndex;
+    short boneIndices[28];
+    short unk46; // Only non-0 in ACER
+    int vertexIndicesLength <format=hex>;
+    int vertexIndicesOffset <format=hex>;
+    int vertexBuffersLength <format=hex>;
+    int vertexBuffersOffset <format=hex>;
+    int vertexBuffersHeaderOffset1 <format=hex>;
+    int vertexBuffersHeaderOffset2 <format=hex>; // Only non-0 in ACER
+    int unk60 <hidden=true>; Assert(unk60 == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(header.dataOffset + vertexIndicesOffset);
+    if (header.vertexIndexSize == 16)
+        ushort vertexIndices[vertexIndexCount] <bgcolor=cYellow>;
+    else if (header.vertexIndexSize == 32)
+        int vertexIndices[vertexIndexCount] <bgcolor=cYellow>;
+    
+    if (vertexBuffersHeaderOffset1 != 0) {
+        FSeek(vertexBuffersHeaderOffset1);
+        VertexBuffers vertexBuffers1;
+    }
+    
+    if (vertexBuffersHeaderOffset2 != 0) {
+        FSeek(vertexBuffersHeaderOffset2);
+        VertexBuffers vertexBuffers2;
+    }
+    FSeek(pos);
+} Mesh <bgcolor=cAqua, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+if (header.dummyCount > 0) {
+    struct { Dummy dummies[header.dummyCount]; } dummies;
+}
+if (header.materialCount > 0) {
+    struct { Material materials[header.materialCount]; } materials;
+}
+if (header.boneCount > 0) {
+    struct { Bone bones[header.boneCount]; } bones;
+}
+if (header.meshCount > 0) {
+    struct { Mesh meshes[header.meshCount]; } meshes;
+}

@@ -1,0 +1,175 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: ESD-DLSE.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DeS ESD
+//  Category: Dantelion
+// File Mask: *.esd
+//  ID Bytes: 44 4C 53 45 00 02 00
+//   History: 
+//------------------------------------------------
+
+// !!!
+// THIS TEMPLATE IS EXTREMELY UNFINISHED AND USELESS
+// It is also only even remotely valid for version 0 at the moment.
+// !!!
+
+BigEndian();
+
+local int pointers[1024];
+local int pointerCount = 0;
+
+//------------------------------------------------
+
+typedef struct {
+    int length;
+    char str[length];
+} PrefixString <read=ReadPrefixString, optimize=false>;
+
+string ReadPrefixString(PrefixString& ps) {
+    return ps.str;
+}
+
+
+typedef struct (string assertType) {
+    short type; Assert(classNames.classNames[type - 1].str == assertType);
+    int version;
+} Block <read=ReadBlock, bgcolor=cBlack, fgcolor=cWhite>;
+
+string ReadBlock(Block& block) {
+    string str;
+    SPrintf(str, "%i %i", block.type, block.version);
+    return str;
+}
+
+
+typedef struct {
+    short type; Assert(classNames.classNames[type - 1].str
+        == (header.version >= 3 ? "buffer" : "DLVector"));
+    int length <format=hex>;
+    ubyte data[length] <format=hex>;
+} Buffer <bgcolor=cWhite, fgcolor=cBlack, optimize=false>;
+
+
+typedef struct {
+    char magic[4]; Assert(magic == "DLSE");
+    short unk04; Assert(unk04 == 2);
+    short version; Assert(version == 0 || version == 1 || version == 3);
+    if (version == 3) {
+        int unk08;
+        int unk0C;
+        int unk10;
+    }
+    short classCount;
+} Header <bgcolor=cLtRed>;
+
+
+struct DLVector;
+struct Pointer;
+
+
+typedef struct {
+    Block block("EzStateMapState");
+    int unk00;
+    DLVector transitions("EzStateTransition");
+    DLVector externalEvents("EzStateExternalEvent");
+    DLVector unknown("EzStateMapState?");
+} EzStateMapState <bgcolor=cGreen>;
+
+
+typedef struct {
+    Block block("EzStateMap");
+    int unk00;
+    Pointer root("EzStateMapState");
+} EzStateMap <bgcolor=cLtGreen>;
+
+
+typedef struct {
+    Block block("EzStateProject");
+    DLVector stateMaps("EzStateMap");
+} EzStateProject <bgcolor=cAqua>;
+
+
+typedef struct {
+    Block block("EzStateTransition");
+    Pointer condition("EzState::detail::EzStateCondition");
+    Pointer state("EzStateMapState");
+    DLVector externalEvents(header.version == 3 ? "EzStateExternalEventT<ES_EVENT_PARAM_NUM_6>" : "EzStateExternalEvent");
+} EzStateTransition <bgcolor=cYellow>;
+
+
+typedef struct {
+    Block block("EzStateEvaluator");
+    Buffer buffer;
+} EzStateEvaluator <bgcolor=cDkYellow, optimize=false>;
+
+typedef struct {
+    Block block("EzState::detail::EzStateCondition");
+    EzStateEvaluator evaluator;
+} EzStateCondition <bgcolor=cDkGreen>;
+
+
+typedef struct {
+    Block block(header.version == 3 ? "EzStateExternalEventT<ES_EVENT_PARAM_NUM_6>" : "EzStateExternalEvent");
+    int unk00;
+    int unk04;
+    EzStateEvaluator evaluators[unk04 - 1];
+    //int id;
+    //Buffer buffers[unk04 - 1];
+} EzStateExternalEvent <bgcolor=cLtYellow>;
+
+
+int isReference(int id) {
+    local int i;
+    for (i = 0; i < pointerCount; i++) {
+        if (pointers[i] == id) {
+            return 1;
+        }
+    }
+    
+    if (pointerCount >= 1024) Assert(false);
+    pointers[pointerCount] = id;
+    pointerCount++;
+    return 0;
+}
+
+
+typedef struct (string itemType) {
+    short type; Assert(classNames.classNames[type - 1].str == itemType, itemType);
+    int id;
+    
+    if (isReference(id)) {
+        FSkip(-4);
+        int id2 <hidden=true, bgcolor=cPurple>;
+        local int ref = 1;
+    } else {
+        if (itemType == "EzStateMap") {
+            EzStateMap stateMap;
+        } else if (itemType == "EzStateMapState") {
+            EzStateMapState state;
+        } else if (itemType == "EzStateTransition") {
+            EzStateTransition transition;
+        } else if (itemType == "EzState::detail::EzStateCondition") {
+            EzStateCondition condition;
+        } else if (itemType == (header.version == 3 ? "EzStateExternalEventT<ES_EVENT_PARAM_NUM_6>" : "EzStateExternalEvent")) {
+            EzStateExternalEvent externalEvent;
+        } else {
+            Assert(false);
+        }
+    }
+} Pointer <bgcolor=cLtPurple, optimize=false>;
+
+
+typedef struct (string itemType) {
+    short type; Assert(classNames.classNames[type - 1].str == "DLVector");
+    int count;
+    Pointer items(itemType)[count];
+} DLVector;
+
+//------------------------------------------------
+
+Header header;
+struct { PrefixString classNames[header.classCount]; } classNames <bgcolor=cRed>;
+EzStateProject project;

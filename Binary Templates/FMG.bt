@@ -1,0 +1,73 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: FMG.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Dantelion text banks
+//  Category: Dantelion
+// File Mask: *.fmg
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+if (ReadByte(1))
+    BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    byte unk00 <hidden=true>; Assert(unk00 == 0);
+    byte bigEndian; Assert(bigEndian == 0 || bigEndian == 1);
+    byte version; Assert(version == 1); // Just DS1 right now
+    byte unk03 <hidden=true>; Assert(unk03 == 0);
+    int fileSize <format=hex>;
+    byte unk08; Assert(unk08 == 1);
+    byte unk09 <hidden=true>; Assert(unk09 == 0);
+    byte unk0A <hidden=true>; Assert(unk0A == 0);
+    byte unk0B <hidden=true>; Assert(unk0B == 0);
+    int groupCount;
+    int stringCount;
+    int stringOffsetsOffset <format=hex>;
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int startIndex;
+    int startID;
+    int endID;
+} Group <read=ReadGroup, bgcolor=cAqua>;
+
+string ReadGroup(Group &group) {
+    string str;
+    return SPrintf(str, "[%5i] %9i - %9i", group.startIndex, group.startID, group.endID);
+}
+
+
+typedef struct {
+    int offset <format=hex>;
+    
+    if (offset != 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(offset);
+        wstring str;
+        FSeek(pos);
+    }
+} OffsetString <read=ReadOffsetString, bgcolor=cLtGreen, optimize=false>;
+
+wstring ReadOffsetString(OffsetString &os) {
+    if (exists(os.str)) {
+        return os.str;
+    } else {
+        return "<null>";
+    }
+}
+
+//------------------------------------------------
+
+Header header;
+Group groups[header.groupCount];
+FSeek(header.stringOffsetsOffset);
+struct { OffsetString strings[header.stringCount]; } strings;

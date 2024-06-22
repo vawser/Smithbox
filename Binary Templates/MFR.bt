@@ -1,0 +1,71 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: MFR.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: Dantelion
+// File Mask: *.mfr
+//  ID Bytes: 4D 46 52 46
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "MFRF");
+    int unk04;
+    int unk08;
+    float unk0C;
+    float unk10;
+    float unk14;
+    float unk18;
+    int fileSize <format=hex>;
+    int count20;
+    int unk24; Assert(unk24 == 0);
+    int unk28; Assert(unk28 == 0x4A);
+    int unk2C; Assert(unk2C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int unk00;
+    byte unk04; Assert(unk04 == 1 || unk04 == 2); // Usually 1
+    byte unk05; Assert(unk05 == 0 || unk05 == -1); // Usually 0
+    byte unk06; Assert(unk06 == 0 || unk06 == -1);
+    byte unk07; Assert(unk07 == 0 || unk07 == -1);
+    int unk08; Assert(unk08 == 0);
+    int unk0C; Assert(unk0C == 0);
+    // Almost certainly Vector3s
+    float unk10;
+    float unk14;
+    float unk18;
+    float unk1C; // Usually 0
+    float unk20;
+    float unk24;
+    float unk28;
+    int unk2C; Assert(unk2C == 0);
+    float unk30;
+    float unk34;
+    float unk38;
+    int unk3C; Assert(unk3C == 0);
+    float unk40;
+    float unk44;
+    float unk48;
+    int unk4C; Assert(unk4C == 0);
+    float unk50;
+    float unk54;
+    float unk58;
+    float unk5C; Assert(unk5C == 1);
+} StructA <bgcolor=cLtGreen, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+if (header.count20) {
+    struct { StructA structAs[header.count20]; } structAs <open=true>;
+}

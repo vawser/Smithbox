@@ -1,0 +1,52 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: F2TR.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: Dark Souls
+// File Mask: *.flver2tri
+//  ID Bytes: 46 32 54 52
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+
+LittleEndian();
+if (ReadByte(4) == -1)
+    BigEndian();
+
+typedef struct {
+    char magic[4]; Assert(magic == "F2TR");
+    byte endian; Assert(endian == 0 || endian == -1);
+    byte unk05; Assert(unk05 == 0);
+    short unk06; Assert(unk06 == 1);
+    short unk08; Assert(unk08 == 0);
+    // These are pretty much guesses since there's only one file to go off of
+    short headerSize; Assert(headerSize == 0x10);
+    short entryCount;
+    short entrySize; Assert(entrySize == 0xC);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    OffsetString name(0, 1);
+    int indicesOffset;
+    short indexCount; // Confirmed short from BE file
+    short unk0A; Assert(unk0A == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(indicesOffset);
+    short indices[indexCount] <bgcolor=cAqua>;
+    FSeek(pos);
+} Entry <read=ReadEntry, bgcolor=cLtGreen, optimize=false>;
+
+wstring ReadEntry(Entry& entry) {
+    string str;
+    SPrintf(str, "[%3i] ", entry.indexCount);
+    return str + entry.name.str;
+}
+
+Header header;
+Entry entries[header.entryCount];

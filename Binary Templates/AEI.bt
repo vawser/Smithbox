@@ -1,0 +1,45 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: AEI.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: Dantelion
+// File Mask: *.moaei
+//  ID Bytes: 41 45 49 00
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "AEI\0");
+    short unk04; Assert(unk04 == 0);
+    short unk06; Assert(unk06 == 1);
+    int count08;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int unk00;
+    float unk04;
+    quad offset08 <format=hex>;
+    int unk10; Assert(unk10 == 1);
+    float unk14;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset08);
+    OffsetString str1(1, 0) <bgcolor=cGreen>;
+    OffsetString str2(1, 0) <bgcolor=cDkGreen>;
+    FSeek(pos);
+} StructA <bgcolor=cLtGreen, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+struct { StructA structAs[header.count08]; } structAs;

@@ -1,0 +1,20 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB2\BoneName.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DS2 MSB bone names
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    wstring name;
+} BoneName <read=ReadBoneName>;
+
+wstring ReadBoneName(BoneName& boneName) {
+    return boneName.name;
+}

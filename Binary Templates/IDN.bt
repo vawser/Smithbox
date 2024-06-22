@@ -1,0 +1,44 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: IDN.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: *.idn
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int unk00 <format=hex>; Assert(unk00 == 0x2710);
+    int unk04 <format=hex>; Assert(unk04 == 0x3D4);
+    int unk08 <format=hex>; Assert(unk08 == 0x3D4);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int offset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(0x3D4 + offset);
+    string name <bgcolor=cAqua>;
+    FSeek(pos);
+} Name <read=ReadName, bgcolor=cLtGreen, optimize=false>;
+
+wstring ReadName(Name &name) {
+    return StringToWString(name.name, CHARSET_JAPANESE);
+}
+
+//------------------------------------------------
+
+Header header;
+Name names[240];

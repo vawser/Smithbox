@@ -1,0 +1,22 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: BDF3.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Data file for corresponding BHF3 header
+//  Category: Dantelion
+// File Mask: *.*bdt
+//  ID Bytes: 42 44 46 33
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "BDF3");
+    char version[8];
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} Header <bgcolor=cLtRed>;
+
+//------------------------------------------------
+
+Header header <open=true>;

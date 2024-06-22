@@ -1,0 +1,90 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: EVD.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Old event scripts from ACE:R and GUC
+//  Category: Dantelion
+// File Mask: *.evd
+//  ID Bytes: 45 56 44 00 00 00 00 65
+//   History: 
+//------------------------------------------------
+
+BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "EVD\0");
+    int version; Assert(version == 0x65);
+    int fileSize;
+    int eventCount;
+    int eventsOffset;
+    int instructionsOffset;
+    int offset3;
+    int offset4;
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+    int unk28 <hidden=true>; Assert(unk28 == 0);
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0C;
+    
+    local quad pos <hidden=true> = FTell();
+    if (unk08 != -1) {
+        FSeek(header.offset4 + unk08);
+        byte b;
+    }
+    FSeek(pos);
+} Struct3 <bgcolor=cPurple, optimize=false>;
+
+
+typedef struct {
+    int bank; // Not verified
+    int command; // ""
+    int unk08;
+    int struct3Count;
+    int struct3sOffset;
+    byte unk14;
+    byte unk15;
+    byte unk16;
+    byte unk17;
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    if (unk08 != -1) {
+        FSeek(header.offset4 + unk08);
+        byte b;
+    }
+    if (struct3Count > 0) {
+        FSeek(header.offset3 + struct3sOffset);
+        struct { Struct3 struct3s[struct3Count]; } struct3s;
+    }
+    FSeek(pos);
+} Instruction <bgcolor=cAqua, optimize=false>;
+
+
+typedef struct {
+    int id;
+    int instructionCount;
+    int instructionsOffset;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(header.instructionsOffset + instructionsOffset);
+    struct { Instruction instructions[instructionCount]; } instructions;
+    FSeek(pos);
+} Event <bgcolor=cLtGreen, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+struct { Event events[header.eventCount]; } events;

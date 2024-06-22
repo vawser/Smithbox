@@ -1,0 +1,76 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: BREAKGEOM.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Elden Ring .breakgeom files
+//  Category: Dantelion
+// File Mask: *.breakgeom
+//  ID Bytes: 42 4F 45 47
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+struct Child;
+struct Item;
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "BOEG");
+    int unk04 <format=hex>; Assert(unk04 == 0x19071000);
+    int count;
+    uint mapID <format=hex>;
+} Header <read=ReadHeader, bgcolor=cLtRed>;
+
+string ReadHeader(Header& header) {
+    string str;
+    return SPrintf(str, "%02i %02i %02i %02i [%3i]",
+        header.mapID >> 24, header.mapID << 8 >> 24, header.mapID << 16 >> 24, header.mapID << 24 >> 24, header.count);
+}
+
+
+typedef struct {
+    byte unk00; Assert(unk00 == 1);
+    ubyte unk01; Assert(unk01 == 0 || unk01 == 0x80);
+    short unk02;
+    int unk04; // Dubious
+    quad offset08 <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset08);
+    Child child;
+    FSeek(pos);
+} Parent <read=ReadParent, bgcolor=cLtGreen, optimize=false>;
+
+string ReadParent(Parent& parent) {
+    string str;
+    return SPrintf(str, "%4i %8i", parent.unk02, parent.unk04);
+}
+
+
+typedef struct {
+    ubyte unk00; Assert(unk00 == 1 || unk00 == 9 || unk00 == 17 || unk00 == 25);
+    ubyte unk01;
+    ubyte count02;
+    
+    // Why?
+    local int dataLength <hidden=true> = (unk00 - 1) * 0x20 + unk01;
+    Assert(dataLength == count02 * 8 + 3);
+    Item items[count02];
+} Child <bgcolor=cAqua>;
+
+
+typedef struct {
+    ubyte data[8]; // Not sure how to subdivide this
+} Item <bgcolor=cDkAqua>;
+
+//------------------------------------------------
+
+Header header;
+if (header.count > 0) {
+    struct { Parent parents[header.count]; } parents;
+}

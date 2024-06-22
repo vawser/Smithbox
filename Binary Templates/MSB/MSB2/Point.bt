@@ -1,0 +1,219 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB2\Point.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DS2 MSB regions
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <byte> PointType {
+    PointType0 = 0, // Maybe general, names always seem to be about enemies though
+    PointTypeLight = 3,
+    PointTypeStartPoint = 5,
+    PointTypeSound = 7,
+    PointTypeSFX = 9,
+    PointTypeWind = 13,
+    PointTypeEnvLight = 14,
+    PointTypeFog = 15,
+};
+
+struct PointLight;
+struct PointStartPoint;
+struct PointSound;
+struct PointSFX;
+struct PointWind;
+struct PointEnvLight;
+struct PointFog;
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    Varint nameOffset;
+    short unk08;
+    PointType pointType;
+    byte shapeType;
+    short id;
+    short unk0E;
+    Vector3 position;
+    Vector3 rotation;
+    Varint shortsAOffset;
+    Varint shortsBOffset;
+    int unk38; Assert(unk38 == -1);
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+    int unk40 <hidden=true>; Assert(unk40 == 0);
+    int unk44 <hidden=true>; Assert(unk44 == 0);
+    int unk48 <hidden=true>; Assert(unk48 == 0);
+    int unk4C <hidden=true>; Assert(unk4C == 0);
+    int unk50 <hidden=true>; Assert(unk50 == 0);
+    int unk54 <hidden=true>; Assert(unk54 == 0);
+    int unk58 <hidden=true>; Assert(unk58 == 0);
+    int unk5C <hidden=true>; Assert(unk5C == 0);
+    Varint shapeDataOffset;
+    Varint typeDataOffset;
+    quad unk70 <hidden=true>; Assert(unk70 == 0);
+    quad unk78 <hidden=true>; Assert(unk78 == 0);
+    if (!VARINT_LONG) {
+        quad pad1 <hidden=true>; Assert(pad1 == 0);
+        quad pad2 <hidden=true>; Assert(pad2 == 0);
+        int pad3 <hidden=true>; Assert(pad3 == 0);
+    }
+    // Total size 0x80 either way
+    
+    Assert(nameOffset.val > 0);
+    FSeek(start + nameOffset.val);
+    wstring name;
+    // Pad to 4
+    
+    Assert(shortsAOffset.val > 0);
+    FSeek(start + shortsAOffset.val);
+    short shortCountA; Assert(shortCountA == 0);
+    // Pad to 4
+    
+    Assert(shortsBOffset.val > 0);
+    FSeek(start + shortsBOffset.val);
+    short shortCountB; Assert(shortCountB == 0);
+    // Pad to 8
+    
+    if (shapeType == ShapeTypePoint) {
+        Assert(shapeDataOffset.val == 0);
+    } else {
+        Assert(shapeDataOffset.val > 0);
+        FSeek(start + shapeDataOffset.val);
+        switch (shapeType) {
+            case ShapeTypeCircle: ShapeCircle circle; break;
+            case ShapeTypeSphere: ShapeSphere sphere; break;
+            case ShapeTypeCylinder: ShapeCylinder cylinder; break;
+            case ShapeTypeRect: ShapeRect rect; break;
+            case ShapeTypeBox: ShapeBox box; break;
+            default: Assert(false);
+        }
+    }
+    
+    if (pointType == PointType0 || pointType == PointTypeStartPoint) {
+        Assert(typeDataOffset.val == 0);
+    } else {
+        Assert(typeDataOffset.val > 0);
+        FSeek(start + typeDataOffset.val);
+        switch (pointType) {
+            case PointTypeLight: PointLight light; break;
+            case PointTypeSound: PointSound sound; break;
+            case PointTypeSFX: PointSFX sfx; break;
+            case PointTypeWind: PointWind wind; break;
+            case PointTypeEnvLight: PointEnvLight envLight; break;
+            case PointTypeFog: PointFog fog; break;
+            default: Assert(false);
+        }
+    }
+} Point <read=ReadPoint>;
+
+wstring ReadPoint(Point& point) {
+    string str;
+    if (point.pointType == PointTypeLight) {
+        SPrintf(str, "%2i %Xh ", point.pointType, point.light.unk00);
+    } else if (point.pointType == PointTypeSound) {
+        SPrintf(str, "%2i %i %9i %5i ", point.pointType, point.sound.unk00, point.sound.soundID, point.sound.unk08);
+    } else if (point.pointType == PointTypeSFX) {
+        SPrintf(str, "%2i %4i %9i ", point.pointType, point.sfx.effectID, point.sfx.unk04);
+    } else if (point.pointType == PointTypeWind) {
+        SPrintf(str, "%2i %i %i ", point.pointType, point.wind.unk00, point.wind.unk01);
+    } else if (point.pointType == PointTypeEnvLight) {
+        SPrintf(str, "%2i %i ", point.pointType, point.envLight.unk00);
+    } else if (point.pointType == PointTypeFog) {
+        SPrintf(str, "%2i %2i %i ", point.pointType, point.fog.unk00, point.fog.unk04);
+    } else {
+        SPrintf(str, "%2i ", point.pointType);
+    }
+    return str + point.name;
+}
+
+
+typedef struct {
+    byte unk00 <hidden=true>; Assert(unk00 == 0);
+    byte unk01; // Always 1
+    short unk02 <hidden=true>; Assert(unk02 == 0);
+    ubyte color04[4];
+    ubyte color08[4];
+    float unk0C;
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    if (VARINT_LONG) {
+        int unk20 <hidden=true>; Assert(unk20 == 0);
+    }
+} PointLight;
+
+
+typedef struct {
+    int unk00; // 0 or 1?
+    int soundID;
+    int unk08; // When not 0, typically 101, 102 etc
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} PointSound;
+
+
+typedef struct {
+    int effectID;
+    int unk04;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} PointSFX;
+
+
+typedef struct {
+    byte unk00;
+    byte unk01;
+    short unk02 <hidden=true>; Assert(unk02 == 0);
+    float unk04;
+    float unk08;
+    float unk0C;
+    float unk10;
+    float unk14;
+    float unk18;
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} PointWind;
+
+
+typedef struct {
+    int unk00; // Seems to just count up from 0
+    float unk04;
+    float unk08;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} PointEnvLight;
+
+
+typedef struct {
+    int unk00;
+    byte unk04;
+    byte unk05 <hidden=true>; Assert(unk05 == 0);
+    byte unk06 <hidden=true>; Assert(unk06 == 0);
+    byte unk07 <hidden=true>; Assert(unk07 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    if (VARINT_LONG) {
+        int unk1C <hidden=true>; Assert(unk1C == 0);
+    }
+} PointFog;

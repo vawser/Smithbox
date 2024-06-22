@@ -1,0 +1,30 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSBD\Tree.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DeS MSB trees
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    float unk00;
+    float unk04;
+    float unk08;
+    int unk0C;
+    float unk10;
+    float unk14;
+    float unk18;
+    int unk1C;
+    float unk20;
+    float unk24;
+    float unk28;
+    int unk2C;
+    float unk30;
+    int count34;
+    if (count34 > 0) short array36[count34];
+} Tree;

@@ -1,0 +1,34 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB3\Route.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DS3 MSB routes
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad nameOffset <format=hex>;
+    int unk08;
+    int unk0C;
+    int type; Assert(type == 4);
+    int id;
+    
+    local int i <hidden=true>;
+    for (i = 0; i < 26; i++) {
+        int unk18 <hidden=true>; Assert(unk18 == 0);
+    }
+    
+    FSeek(start + nameOffset);
+    wstring name;
+} Route <read=ReadRoute>;
+
+wstring ReadRoute(Route& route) {
+    return route.name;
+}

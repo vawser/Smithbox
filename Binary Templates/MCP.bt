@@ -1,0 +1,57 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: MCP.bt
+//   Authors: Meowmaritus, TKGP
+//   Version: 
+//   Purpose: 
+//  Category: Dantelion
+// File Mask: *.mcp
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+
+LittleEndian();
+if (ReadInt() == 0x2000000)
+    BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int unk00; Assert(unk00 == 2);
+    int unk04 <format=hex>;
+    int roomCount;
+    int roomsOffset <format=hex>;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    uint mapID <format=hex>; // It really is an int, the bytes are backwards on LE
+    int index;
+    int indexCount;
+    int indicesOffset;
+    Vector3 boundingBoxMin;
+    Vector3 boundingBoxMax;
+    
+    if (indexCount > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(indicesOffset);
+        int roomIndices[indexCount] <bgcolor=cAqua>;
+        FSeek(pos);
+    }
+} Room <read=ReadRoom, bgcolor=cLtGreen, optimize=false>;
+
+string ReadRoom(Room& room) {
+    string str;
+    SPrintf(str, "%3i %s %s", room.index,
+        ReadVector3(room.boundingBoxMin), ReadVector3(room.boundingBoxMax));
+    return str;
+}
+
+//------------------------------------------------
+
+Header header;
+FSeek(header.roomsOffset);
+struct { Room rooms[header.roomCount]; } rooms <open=true>;

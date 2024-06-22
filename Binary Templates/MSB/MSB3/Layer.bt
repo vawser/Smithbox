@@ -1,0 +1,28 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB3\Layer.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DS3 MSB layers
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad nameOffset <format=hex>;
+    int unk08;
+    int unk0C;
+    int unk10;
+    
+    FSeek(start + nameOffset);
+    wstring name;
+} Layer <read=ReadLayer>;
+
+wstring ReadLayer(Layer& layer) {
+    return layer.name;
+}

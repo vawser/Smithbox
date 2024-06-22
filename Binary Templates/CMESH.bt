@@ -1,0 +1,159 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: CMESH.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: *.cmesh
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+
+LittleEndian();
+if (ReadUInt() == 0xDD04B42)
+    BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    uint magic <format=hex>; Assert(magic == 0x424BD00D);
+    short unk04; Assert(unk04 == 0x21);
+    short unk06; Assert(unk06 == 0);
+    int unk08; Assert(unk08 == 0);
+    short textureCount;
+    short unk0E; Assert(unk0E == 0);
+    int unk10; Assert(unk10 == 0);
+    float unk14;
+    float unk18;
+    float unk1C;
+    float unk20;
+    short count24;
+    short unk26; Assert(unk26 == 0);
+    int unk28; Assert(unk28 == 0);
+    int unk2C; Assert(unk2C == 2);
+    int unk30; Assert(unk30 == 0);
+    int unk34; Assert(unk34 == 0);
+    int unk38; Assert(unk38 == 0);
+    int unk3C; Assert(unk3C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    byte unk00;
+    byte unk01;
+    byte unk02;
+    byte unk03;
+} TextureBytes <bgcolor=cLtGreen>;
+
+typedef struct {
+    string name;
+} TextureName <read=ReadTextureName, bgcolor=cGreen, optimize=false>;
+
+string ReadTextureName(TextureName& tn) {
+    return tn.name;
+}
+
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    short unk0C;
+    short unk0E;
+    byte unk10;
+    byte unk11;
+    byte unk12;
+    byte unk13;
+    int unk14;
+    
+    if (unk0C > 0) {
+        struct {
+            short unk00;
+            short unk02;
+            short unk04;
+            short unk06;
+        } help[unk0C];
+        Align(4);
+    }
+} Struct4ItemA <bgcolor=cYellow, optimize=false>;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0C;
+} Struct4ItemB <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00[16];
+} Struct4ItemD <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    short unk08;
+    short unk0A;
+    int unk0C;
+} Struct4ItemE <bgcolor=cYellow>;
+
+typedef struct {
+    int count00;
+    int unk04; Assert(unk04 == 0);
+    int unk08; Assert(unk08 == 0);
+    int unk0C; Assert(unk0C == 0);
+    int count10;
+    int unk14; Assert(unk14 == 0);
+    int unk18; Assert(unk18 == 0);
+    int count1C;
+    int unk20; Assert(unk20 == 0);
+    
+    struct { Struct4ItemA itemsA[count00]; } itemsA;
+    Struct4ItemB itemsB[count00];
+    Align(0x10);
+    float itemsC[count10] <bgcolor=cYellow>;
+    Struct4ItemD itemsD[count00];
+    Struct4ItemE itemsE[count1C];
+    
+    local int stupidCount = 0;
+    local int idiotCount = 0;
+    local int i <hidden=true> = 0;
+    for (i = 0; i < count1C; i++) {
+        stupidCount += itemsE[i].unk08;
+        idiotCount += itemsE[i].unk0A;
+    }
+    int itemsF[stupidCount] <bgcolor=cDkYellow>;
+} Struct4 <bgcolor=cLtYellow>;
+
+
+typedef struct {
+    Vector3 boundingBoxMin;
+    Vector3 boundingBoxMax;
+    int unk18; Assert(unk18 == 0);
+    int unk1C; //Assert(unk1C == 1);
+    int unk20; Assert(unk20 == -1);
+    int unk24;
+    int unk28;
+    int unk2C; Assert(unk2C == -1);
+    int unk30;
+    int unk34; Assert(unk34 == -1);
+    int unk38;
+    Align(0x10);
+    
+    
+} Struct5 <bgcolor=cAqua>;
+
+//------------------------------------------------
+
+Header header;
+TextureBytes textureBytes[header.textureCount];
+Align(0x10);
+byte pad <hidden=true>; Assert(pad == 0);
+struct { TextureName textureNames[header.textureCount]; } textureNames;
+Align(0x10);
+int coolArray[header.count24] <bgcolor=cBlack>;
+Struct4 struct4;
+Struct5 struct5;

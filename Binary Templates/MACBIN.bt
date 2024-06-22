@@ -1,0 +1,180 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: MACBIN.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: MSB documentation, only confirmed to exist for DS2
+//  Category: Katana
+// File Mask: *.macbin
+//  ID Bytes: 6D 61 63 62
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+BigEndian();
+
+struct Field;
+struct EnumMember;
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "macb");
+    short unk04; Assert(unk04 == -1);
+    short unk06; Assert(unk06 == 0);
+    byte unk08; Assert(unk08 == 1);
+    byte unk09; Assert(unk09 == 0);
+    byte unk0a; Assert(unk0a == 0);
+    byte unk0b; Assert(unk0b == 0);
+    int headerSize <format=hex>; Assert(headerSize == 0x20); // Or paramsOffset if you prefer
+    int paramSize <format=hex>; Assert(paramSize == 0xc);
+    int fieldSize <format=hex>; Assert(fieldSize == 0x38);
+    int unk18 <format=hex>; Assert(unk18 == 8); // Enum member size? Except sometimes they're only 4.
+    int paramCount;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int nameOffset <format=hex>;
+    int fieldsOffset <format=hex>;
+    int fieldCount;
+
+    local quad pos <hidden=true> = FTell();
+    FSeek(nameOffset);
+    string name;
+
+    if (fieldCount) {
+        FSeek(fieldsOffset);
+        struct { Field fields[fieldCount]; } fields <open=true>;
+    }
+    FSeek(pos);
+} Param <read=ReadParam, bgcolor=cLtGreen, optimize=false>;
+
+string ReadParam(Param &param) {
+    return param.name;
+}
+
+
+typedef struct (string type) {
+    local string type <hidden=true> = type;
+    switch (type) {
+        case "STRING":
+        case "UNION": int pad; Assert(!pad); break;
+    }
+    
+    switch (type) {
+        case "SINT8": // Yes, these are whole ints too
+        case "UINT8":
+        case "SINT16":
+        case "UINT16":
+        case "SINT32": int value; break;
+        case "UINT32": uint value; break;
+        case "FLOAT": float value; break;
+        case "STRING":
+        case "UNION": break;
+        default: Assert(false);
+    }
+} FieldValue <read=ReadFieldValue, optimize=false>;
+
+string ReadFieldValue(FieldValue &fv) {
+    if (exists(fv.value)) {
+        string str;
+        if (fv.type == "FLOAT") {
+            return SPrintf(str, "%f", fv.value);
+        } else if (fv.type == "UINT32") {
+            return SPrintf(str, "%u", fv.value);
+        } else {
+            return SPrintf(str, "%d", fv.value);
+        }
+    } else {
+        return "";
+    }
+}
+
+typedef struct {
+    int nameOffset <format=hex>;
+    int identifierOffset <format=hex>;
+    int typeOffset <format=hex>;
+    byte unk0c;
+    byte bitCount;
+    byte unk0e; 
+    byte valueCount; Assert(valueCount >= 1 && valueCount <= 4);
+    int enumMembersOffset <format=hex>;
+    int enumMemberCount;
+    
+    // Duplicated below just so the variables are in the correct order,
+    // do not @ me.
+    local quad pos <hidden=true> = FTell();
+    FSeek(typeOffset);
+    string fvType <hidden=true>;
+    FSeek(pos);
+
+    FieldValue minimum(fvType)[4];
+    FieldValue maximum(fvType)[4];
+    
+    pos = FTell();
+    if (nameOffset) {
+        FSeek(nameOffset);
+        string name;
+    }
+
+    if (identifierOffset) {
+        FSeek(identifierOffset);
+        string identifier;
+    }
+
+    FSeek(typeOffset);
+    string type;
+    
+    if (enumMemberCount) {
+        FSeek(enumMembersOffset);
+        struct { EnumMember enumMembers(unk0e)[enumMemberCount]; } enumMembers;
+    }
+    FSeek(pos);
+} Field <read=ReadField, bgcolor=cAqua, optimize=false>;
+
+wstring ReadField(Field &field) {
+    wstring str = field.type;
+    if (field.valueCount != 1) {
+        string arr;
+        str += SPrintf(arr, "[%d]", field.valueCount);
+    }
+    if (exists(field.identifier)) {
+        str += " " + field.identifier;
+    }
+    if (exists(field.name)) {
+        str += " " + StringToWString(field.name, CHARSET_JAPANESE);
+    }
+    return str;
+}
+
+
+typedef struct (int unk0e) {
+    Assert(unk0e == 0xd || unk0e == 0x13);
+    if (unk0e == 0x13) {
+        int nameOffset;
+    }
+    int value;
+    
+    if (unk0e == 0x13) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(nameOffset);
+        string name;
+        FSeek(pos);
+    }
+} EnumMember <read=ReadEnumMember, bgcolor=cYellow, optimize=false>;
+
+wstring ReadEnumMember(EnumMember &member) {
+    string str;
+    if (exists(member.name)) {
+        return SPrintf(str, "%d: ", member.value) + StringToWString(member.name, CHARSET_JAPANESE);
+    } else {
+        return SPrintf(str, "%d", member.value);
+    }
+}
+
+//------------------------------------------------
+
+Header header;
+struct { Param params[header.paramCount]; } params <open=true>;

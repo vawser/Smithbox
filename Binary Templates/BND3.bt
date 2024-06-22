@@ -1,0 +1,90 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: BND3.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: FromSoft Binder3 containers
+//  Category: Dantelion
+// File Mask: *.*bnd
+//  ID Bytes: 42 4E 44 33
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "BND3");
+    char version[8];
+    ubyte rawFormat <format=binary>;
+    byte bigEndian; Assert(bigEndian == 0 || bigEndian == 1);
+    byte bitBigEndian; Assert(bitBigEndian == 0 || bitBigEndian == 1);
+    byte unk0F <hidden=true>; Assert(unk0F == 0);
+    
+    local ubyte format <format=binary>
+        = (bitBigEndian || (rawFormat & 1) && !(rawFormat & 0b10000000)) ? rawFormat : ReverseBits(rawFormat);
+    if (bigEndian || (format & 0b00000001))
+        BigEndian();
+    else
+        LittleEndian();
+    
+    int fileCount;
+    int fileHeadersEnd <format=hex>; // Does not include padding before data starts
+    int unk18;
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    ubyte rawFlags <format=hex>;
+    byte unk01 <hidden=true>; Assert(unk01 == 0);
+    byte unk02 <hidden=true>; Assert(unk02 == 0);
+    byte unk03 <hidden=true>; Assert(unk03 == 0);
+    
+    local ubyte flags <format=binary> = header.bitBigEndian ? rawFlags : ReverseBits(rawFlags);
+
+    int compressedSize <format=hex>;
+    uint dataOffset <format=hex>;
+
+    if (header.format & 0b00000010)
+        int id;
+
+    if (header.format & 0b00000100 | header.format & 0b00001000)
+        int nameOffset <format=hex>;
+
+    if (header.format & 0b00100000)
+        int uncompressedSize <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    if (exists(nameOffset)) {
+        FSeek(nameOffset);
+        string name <bgcolor=cGreen>;
+    }
+    if (compressedSize > 0) {
+        FSeek(dataOffset);
+        ubyte bytes[compressedSize] <bgcolor=cAqua>;
+    }
+    FSeek(pos);
+} File <read=ReadFile, bgcolor=cLtGreen, optimize=false>;
+
+string ReadFile(File& file) {
+    string str;
+    if (exists(file.id) && exists(file.name))
+        SPrintf(str, "%10i %s", file.id, file.name);
+    else if (exists(file.id))
+        SPrintf(str, "%10i", file.id);
+    else if (exists(file.name))
+        SPrintf(str, "%s", file.name);
+    else
+        SPrintf(str, "@%8Xh", file.dataOffset);
+    return str;
+}
+
+//------------------------------------------------
+
+Header header;
+if (header.fileCount > 0) {
+    struct { File files[header.fileCount]; } files <open=true>;
+}

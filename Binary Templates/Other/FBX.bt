@@ -1,0 +1,118 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+typedef struct {
+    char magic[0x15];
+    short unk15; Assert(unk15 == 0x1A);
+    uint version;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    char type;
+    switch (type) {
+        case 'Y':
+            short value; break;
+        case 'C':
+            byte value; Assert(value == 0 || value == 1); break;
+        case 'I':
+            int value; break;
+        case 'F':
+            float value; break;
+        case 'D':
+            double value; break;
+        case 'L':
+            quad value; break;
+        case 'S':
+        case 'R':
+            uint length;
+            if (length > 0) {
+                if (type == 'S') {
+                    char value[length];
+                } else if (type == 'R') {
+                    ubyte value[length];
+                }
+            }
+            break;
+        case 'f':
+        case 'd':
+        case 'l':
+        case 'i':
+        case 'b':
+            uint count;
+            uint encoding; Assert(encoding == 0 || encoding == 1);
+            uint compressedLength <format=hex>;
+            if (encoding == 1) {
+                ubyte values[compressedLength];
+            } else if (count > 0) {
+                if (type == 'f') {
+                    float values[count];
+                } else if (type == 'd') {
+                    double values[count];
+                } else if (type == 'l') {
+                    quad values[count];
+                } else if (type == 'i') {
+                    int values[count];
+                } else if (type == 'b') {
+                    byte values[count];
+                }
+            }
+            break;
+        
+        default:
+            Printf("%s\n", type);
+            Assert(false);
+    }
+} Property <bgcolor=cAqua, optimize=false>;
+
+
+struct Node;
+typedef struct {
+    uint endOffset <format=hex>;
+    int propertyCount;
+    int propertiesLength <format=hex>;
+    byte nameLength <format=hex>;
+    if (nameLength > 0) {
+        char name[nameLength];
+    }
+    if (propertyCount > 0) {
+        struct { Property properties[propertyCount]; } properties;
+    }
+    
+    if (endOffset != 0) {
+        while (FTell() != endOffset) {
+            Node children;
+        }
+    }
+} Node <read=ReadNode, bgcolor=cLtGreen, optimize=false>;
+
+string ReadNode(Node& node) {
+    if (node.endOffset == 0) {
+        return "<NULL>";
+    } else if (node.nameLength > 0) {
+        return node.name;
+    } else {
+        return "";
+    }
+}
+
+
+Header header;
+while (1) {
+    Node nodes;
+    if (nodes.endOffset == 0) {
+        break;
+    }
+}

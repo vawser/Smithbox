@@ -1,0 +1,50 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    int charCount;
+    char str[charCount];
+} Label <optimize=false>;
+
+
+typedef struct {
+    char magic[8]; Assert(magic == "FRCTL001");
+    int geometryBasisVersion;
+    int textureBasisVersion;
+    int geometrySymmetricBasisSize;
+    int geometryAsymmetricBasisSize;
+    int textureSymmetricBasisSize;
+    int textureAsymmetricBasisSize;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct (int floatCount) {
+    float floats[floatCount];
+    Label label;
+} LinCtrl <read=ReadLinCtrl, optimize=false>;
+
+string ReadLinCtrl(LinCtrl& ctrl) {
+    return ctrl.label.str;
+}
+
+
+typedef struct (int floatCount) {
+    int controlCount;
+    LinCtrl controls(floatCount)[controlCount];
+} LinCtrlSet <bgcolor=cLtGreen>;
+
+Header header;
+LinCtrlSet gsLinearControls(header.geometrySymmetricBasisSize);
+LinCtrlSet gaLinearControls(header.geometryAsymmetricBasisSize);
+LinCtrlSet tsLinearControls(header.textureSymmetricBasisSize);
+LinCtrlSet taLinearControls(header.textureAsymmetricBasisSize);

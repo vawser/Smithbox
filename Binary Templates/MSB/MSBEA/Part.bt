@@ -1,0 +1,254 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSBEA\Part.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Enchanted Arms MSB parts
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> PartType {
+    PartTypeMapPiece = 0,
+    PartTypeCollision = 1,
+    PartTypeObject = 2,
+    PartTypeEnemy = 3,
+};
+
+struct PartCollision;
+struct PartMapPiece;
+struct PartEnemy;
+struct PartObject;
+struct PartCommon;
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+
+    int nameOffset <format=hex>;
+    PartType type;
+    int id;
+    int modelIndex;
+    int sibOffset <format=hex>;
+    Vector3 position;
+    Vector3 rotation;
+    Vector3 scale;
+    int unk38;
+    int unk3C;
+    int unk40;
+    int unk44;
+    int unk48;
+    int unk4C;
+    int unk50;
+    int unk54;
+    int unk58;
+    int collisionOffset <format=hex>;
+    int mapPieceOffset <format=hex>;
+    int unk64 <hidden=true>; Assert(unk64 == 0);
+    int enemyOffset <format=hex>;
+    int objectOffset <format=hex>;
+    int commonOffset <format=hex>;
+    int unk74 <hidden=true>; Assert(unk74 == 0);
+    int unk78 <hidden=true>; Assert(unk78 == 0);
+    int unk7C <hidden=true>; Assert(unk7C == 0);
+    
+    FSeek(start + nameOffset);
+    string name;
+    FSeek(start + sibOffset);
+    string sibPath;
+    
+    if (type == PartTypeMapPiece) {
+        Assert(collisionOffset == 0 && mapPieceOffset != 0
+            && enemyOffset == 0 && objectOffset == 0 && commonOffset != 0);
+    } else if (type == PartTypeCollision) {
+        Assert(collisionOffset != 0 && mapPieceOffset == 0
+            && enemyOffset == 0 && objectOffset == 0 && commonOffset == 0);
+    } else if (type == PartTypeObject) {
+        Assert(collisionOffset == 0 && mapPieceOffset == 0
+            && enemyOffset == 0 && objectOffset != 0 && commonOffset != 0);
+    } else if (type == PartTypeEnemy) {
+        Assert(collisionOffset == 0 && mapPieceOffset == 0
+            && enemyOffset != 0 && objectOffset == 0 && commonOffset != 0);
+    }
+    
+    if (collisionOffset != 0) {
+        FSeek(start + collisionOffset);
+        PartCollision collision;
+    }
+    if (mapPieceOffset != 0) {
+        FSeek(start + mapPieceOffset);
+        PartMapPiece mapPiece;
+    }
+    if (enemyOffset != 0) {
+        FSeek(start + enemyOffset);
+        PartEnemy enemy;
+    }
+    if (objectOffset != 0) {
+        FSeek(start + objectOffset);
+        PartObject object;
+    }
+    if (commonOffset != 0) {
+        Assert(FTell() == start + commonOffset);
+        FSeek(start + commonOffset);
+        PartCommon common;
+    }
+} Part <read=ReadPart>;
+
+wstring ReadPart(Part& part) {
+    string str;
+    SPrintf(str, "%i ", part.type);
+    return str + part.name;
+}
+
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10;
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18;
+    int unk1C;
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24;
+    int unk28;
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+    int unk30 <hidden=true>; Assert(unk30 == 0);
+    int unk34 <hidden=true>; Assert(unk34 == 0);
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+} PartCollision;
+
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int offset14 <format=hex>; Assert(offset14 != 0);
+    int offset18 <format=hex>; Assert(offset18 != 0);
+    int offset1C <format=hex>; Assert(offset1C != 0);
+    int offset20 <format=hex>; Assert(offset20 != 0);
+    int offset24 <format=hex>; Assert(offset24 != 0);
+    int offset28 <format=hex>; Assert(offset28 != 0);
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+    int unk30 <hidden=true>; Assert(unk30 == 0);
+    int unk34 <hidden=true>; Assert(unk34 == 0);
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+    
+    FSeek(start + offset14);
+    ubyte block14[0x20];
+
+    FSeek(start + offset18);
+    ubyte block18[0x80];
+
+    FSeek(start + offset1C);
+    ubyte block1C[0x40];
+
+    FSeek(start + offset20);
+    ubyte block20[0x40];
+
+    FSeek(start + offset24);
+    ubyte block24[0x40];
+
+    FSeek(start + offset28);
+    ubyte block28[0x40];
+} PartMapPiece;
+
+
+typedef struct {
+    int unk00;
+    float unk04;
+    int unk08;
+    float unk0C;
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} PartEnemy;
+
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+
+    int offset00 <format=hex>; Assert(offset00 != 0);
+    int offset04 <format=hex>; Assert(offset04 != 0);
+    int offset08 <format=hex>; Assert(offset08 != 0);
+    int offset0C <format=hex>; Assert(offset0C != 0);
+    int offset10 <format=hex>; Assert(offset10 != 0);
+    int offset14 <format=hex>; Assert(offset14 != 0);
+    int offset18 <format=hex>; Assert(offset18 != 0);
+    int offset1C <format=hex>; Assert(offset1C != 0);
+    int offset20 <format=hex>; Assert(offset20 != 0);
+    int offset24 <format=hex>; Assert(offset24 != 0);
+    int offset28 <format=hex>;
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+    int unk30 <hidden=true>; Assert(unk30 == 0);
+    int unk34 <hidden=true>; Assert(unk34 == 0);
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+    
+    FSeek(start + offset00);
+    ubyte block00[0x40];
+    
+    FSeek(start + offset04);
+    ubyte block04[0x10];
+
+    FSeek(start + offset08);
+    ubyte block08[0x80];
+
+    FSeek(start + offset0C);
+    ubyte block0C[0x10];
+
+    FSeek(start + offset10);
+    ubyte block10[0x10];
+
+    FSeek(start + offset14);
+    ubyte block14[0x10];
+
+    FSeek(start + offset18);
+    ubyte block18[0x10];
+
+    FSeek(start + offset1C);
+    ubyte block1C[0x10];
+
+    FSeek(start + offset20);
+    ubyte block20[0x20];
+
+    FSeek(start + offset24);
+    ubyte block24[0x30];
+
+    if (offset28 != 0) {
+        FSeek(start + offset28);
+        ubyte block28[0x10];
+    }
+} PartObject;
+
+
+typedef struct {
+    int unk00;
+    float unk04;
+    float unk08;
+    int unk0C;
+    float unk10;
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+    int unk28 <hidden=true>; Assert(unk28 == 0);
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+    int unk30 <hidden=true>; Assert(unk30 == 0);
+    int unk34 <hidden=true>; Assert(unk34 == 0);
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+} PartCommon;

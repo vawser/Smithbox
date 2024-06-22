@@ -1,0 +1,85 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: BHF3.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Header file for split file archives before DS2
+//  Category: Dantelion
+// File Mask: *.*bhd
+//  ID Bytes: 42 48 46 33
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "BHF3");
+    char version[8];
+    ubyte rawFormat <format=hex>;
+    byte bigEndian; Assert(bigEndian == 0 || bigEndian == 1);
+    byte unk0E; Assert(unk0E == 0 || unk0E == 1);
+    byte unk0F <hidden=true>; Assert(unk0F == 0);
+    
+    local ubyte format <format=binary> = bigEndian ? rawFormat : ReverseBits(rawFormat);
+    if (bigEndian || (format & 0b00000001))
+        BigEndian();
+    else
+        LittleEndian();
+    
+    int fileCount;
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    ubyte rawFlags <format=hex>;
+    byte unk01 <hidden=true>; Assert(unk01 == 0);
+    byte unk02 <hidden=true>; Assert(unk02 == 0);
+    byte unk03 <hidden=true>; Assert(unk03 == 0);
+    
+    local ubyte flags <format=binary> = header.bigEndian ? rawFlags : ReverseBits(rawFlags);
+    
+    int compressedSize <format=hex>;
+    uint dataOffset <format=hex>;
+
+    if (header.format & 0b00000010)
+        int id;
+
+    if (header.format & 0b00000100)
+        int nameOffset;
+
+    if (header.format & 0b00100000)
+        int uncompressedSize <format=hex>;
+    
+    if (exists(nameOffset)) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(nameOffset);
+        string name <bgcolor=cGreen>;
+        FSeek(pos);
+    }
+} File <read=ReadFile, bgcolor=cLtGreen, optimize=false>;
+
+string ReadFile(File& file) {
+    string str;
+    if (exists(file.id) && exists(file.name))
+        SPrintf(str, "@%8Xh %10i %s", file.dataOffset, file.id, file.name);
+    else if (exists(file.id))
+        SPrintf(str, "%10i", file.id);
+    else if (exists(file.name))
+        SPrintf(str, "%s", file.name);
+    else
+        SPrintf(str, "@%8Xh", file.dataOffset);
+    return str;
+}
+
+//------------------------------------------------
+
+Header header;
+if (header.fileCount > 0) {
+    struct { File files[header.fileCount]; } files <open=true>;
+}

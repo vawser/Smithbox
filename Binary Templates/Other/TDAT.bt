@@ -1,0 +1,50 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: TDAT.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Texture container used in Metal Wolf Chaos
+//  Category: 
+// File Mask: *.dat
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "..\Util.bt"
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int fileSize <format=hex>;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int textureCount;
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C; // Seen: 0, 2
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int dataLength <format=hex>;
+    int dataOffset <format=hex>;
+    OffsetString name(0, 0); // Shift-JIS
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(dataOffset);
+    ubyte data[dataLength] <bgcolor=cAqua>;
+    FSeek(pos);
+} Texture <read=ReadTexture, bgcolor=cLtGreen, optimize=false>;
+
+string ReadTexture(Texture& tex) {
+    return tex.name.str;
+}
+
+//------------------------------------------------
+
+Header header;
+struct { Texture textures[header.textureCount]; } textures;

@@ -1,0 +1,405 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: FLVER2.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: FromSoft models since DS1
+//  Category: Dantelion
+// File Mask: *.flv*
+//  ID Bytes: 46 4C 56 45 52 00
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+
+LittleEndian();
+if (ReadString(6, 1) == "B")
+    BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[6]; Assert(magic == "FLVER\0");
+    char endian[2]; Assert(endian == "B\0" || endian == "L\0");
+    uint version <format=hex>; Assert(version >= 0x20000 && version < 0x30000);
+    uint dataOffset <format=hex>;
+    uint dataLength <format=hex>;
+    int dummyCount;
+    int materialCount;
+    int boneCount;
+    int meshCount;
+    int vertexBufferCount;
+    Vector3 boundingBoxMin;
+    Vector3 boundingBoxMax;
+    int trueFaceCount; // Does not include shadow meshes or degenerate faces
+    int totalFaceCount;
+    byte vertexIndexSize;
+    byte unicode;
+    byte unk4A;
+    byte unk4B; // Only non-0 in Steel Battalion
+    int primitiveRestartConstant; // Educated guess, hard to confirm
+    int faceSetCount;
+    int bufferLayoutCount;
+    int textureCount;
+    byte unk5C;
+    byte unk5D;
+    byte unk5E <hidden=true>; Assert(unk5E == 0);
+    byte unk5F <hidden=true>; Assert(unk5F == 0);
+    int unk60; // Only non-0 in Steel Battalion
+    int unk64; // Only non-0 in Steel Battalion
+    int unk68;
+    int unk6C <hidden=true>; Assert(unk6C == 0);
+    int unk70 <hidden=true>; Assert(unk70 == 0);
+    int unk74 <hidden=true>; Assert(unk74 == 0);
+    int unk78 <hidden=true>; Assert(unk78 == 0);
+    int unk7C <hidden=true>; Assert(unk7C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    Vector3 position;
+    ubyte color[4];
+    Vector3 forward;
+    short referenceID;
+    short dummyBoneIndex;
+    Vector3 upward;
+    short attachBoneIndex;
+    byte unk2E;
+    byte useUpwardVector;
+    int unk30;
+    int unk34;
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+} Dummy <read=ReadDummy, bgcolor=cLtGreen, optimize=false>;
+
+string ReadDummy(Dummy& dummy) {
+    string str;
+    SPrintf(str, "%i", dummy.referenceID);
+    return str;
+}
+
+
+typedef struct {
+    uint id <format=hex>;
+    int unk04 <format=hex>;
+    int length <format=hex>;
+    
+    if (length > 0xC) {
+        ubyte data[length - 0xC];
+    }
+} GXItem <optimize=false>;
+
+typedef struct {
+    OffsetString name(0, header.unicode);
+    OffsetString mtd(0, header.unicode);
+    int textureCount;
+    int textureIndex;
+    uint flags;
+    uint gxOffset <format=hex>;
+    int unk18;
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    
+    if (gxOffset != 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(gxOffset);
+        struct {
+            do {
+                GXItem gxItem;
+            // 7F used in most games, FF used in Steel Battalion
+            } while(header.version >= 0x20010 && gxItem.id != 0x7FFFFFFF && gxItem.id != 0xFFFFFFFF);
+        } gxItems;
+        FSeek(pos);
+    }
+} Material <read=ReadMaterial, bgcolor=cGreen, optimize=false>;
+
+wstring ReadMaterial(Material& mat) {
+    return mat.name.str + " | " + mat.mtd.str;
+}
+
+
+typedef struct {
+    Vector3 translation;
+    OffsetString name(0, header.unicode);
+    Vector3 rotation;
+    short parentIndex;
+    short childIndex;
+    Vector3 scale;
+    short nextSiblingIndex;
+    short previousSiblingIndex;
+    Vector3 boundingBoxMin;
+    int unk3C;
+    Vector3 boundingBoxMax;
+    
+    local int i <hidden=true>;
+    for (i = 0; i < 13; i++) {
+        int unk4C <hidden=true>; Assert(unk4C == 0);
+    }
+} Bone <read=ReadBone, bgcolor=cDkGreen, optimize=false>;
+
+wstring ReadBone(Bone& bone) {
+    return bone.name.str;
+}
+
+
+typedef struct {
+    byte dynamic; Assert(dynamic == 0 || dynamic == 1);
+    byte unk01 <hidden=true>; Assert(unk01 == 0);
+    byte unk02 <hidden=true>; Assert(unk02 == 0);
+    byte unk03 <hidden=true>; Assert(unk03 == 0);
+    int materialIndex;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int defaultBoneIndex;
+    int boneCount;
+    uint boundingBoxOffset <format=hex>;
+    uint boneIndicesOffset <format=hex>;
+    int faceSetCount;
+    uint faceSetIndicesOffset <format=hex>;
+    int vertexBufferCount;
+    uint vertexBufferIndicesOffset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    if (boundingBoxOffset != 0) {
+        FSeek(boundingBoxOffset);
+        Vector3 boundingBoxMin;
+        Vector3 boundingBoxMax;
+        if (header.version >= 0x2001A)
+            Vector3 boundingBoxUnk;
+    }
+    if (boneCount > 0) {
+        FSeek(boneIndicesOffset);
+        int boneIndices[boneCount];
+    }
+    FSeek(faceSetIndicesOffset);
+    int faceSetIndices[faceSetCount];
+    FSeek(vertexBufferIndicesOffset);
+    int vertexBufferIndices[vertexBufferCount];
+    FSeek(pos);
+} Mesh <bgcolor=cAqua, optimize=false>;
+
+
+typedef struct (quad start) {
+    int dataLength <format=hex>;
+    int dataOffset <format=hex>;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    short unk10 <format=hex>;
+    short unk12 <format=hex>;
+    short baseIndex;
+    short unk16 <format=hex>;
+    int unk18 <format=hex>;
+    int unk1C <format=hex>;
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+    int unk28 <hidden=true>; Assert(unk28 == 0);
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+    
+    // EdgeGeomSpuConfigInfo?
+    short unk30 <format=hex>;
+    short unk32 <format=hex>;
+    short unk34 <format=hex>;
+    short unk36 <format=hex>;
+    short unk38 <format=hex>;
+    short indexCount;
+    int unk3C; Assert(unk3C == -1);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(start + dataOffset);
+    ubyte data[dataLength];
+    FSeek(pos);
+} AnnoyingMember <optimize=false>;
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    short memberCount;
+    short unk02;
+    int unk04 <format=hex>;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <format=hex>;
+    AnnoyingMember members(start)[memberCount];
+} EdgeIndices;
+
+typedef struct {
+    uint flags <format=hex>;
+    byte triangleStrip;
+    byte cullBackFaces;
+    byte unk06;
+    byte unk07;
+    int vertexIndexCount;
+    uint vertexIndicesOffset <format=hex>;
+    
+    // As of ACV
+    if (header.version >= 0x20009) {
+        int vertexIndicesLength <format=hex>;
+        int unk14 <hidden=true>; Assert(unk14 == 0);
+        int vertexIndexSize;
+        int unk1C <hidden=true>; Assert(unk1C == 0);
+    }
+    
+    local int actualVertexIndexSize = header.vertexIndexSize;
+    if (actualVertexIndexSize == 0) {
+        actualVertexIndexSize = vertexIndexSize;
+    }
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(header.dataOffset + vertexIndicesOffset);
+    if (actualVertexIndexSize == 8) {
+        // Often used in PS3/360 models
+        EdgeIndices vertexIndices;
+    } else if (actualVertexIndexSize == 16) {
+        ushort vertexIndices[vertexIndexCount];
+    } else if (actualVertexIndexSize == 32) {
+        uint vertexIndices[vertexIndexCount];
+    }
+    FSeek(pos);
+} FaceSet <read=ReadFaceSet, bgcolor=cDkAqua, optimize=false>;
+
+string ReadFaceSet(FaceSet& fs) {
+    string str;
+    SPrintf(str, "Flags %8X", fs.flags);
+    return str;
+}
+
+
+typedef struct (int size) {
+    ubyte data[size];
+} Vertex <optimize=false>;
+
+typedef struct {
+    int bufferIndex; // In Steel Battalion this looks like byte, byte, short
+    int layoutIndex;
+    int vertexSize;
+    int vertexCount;
+    int unk10; // These two 0 everywhere except Steel Battalion
+    int unk14;
+    uint verticesLength <format=hex>; // 0 in version 20005, non-0 in 20008
+    uint bufferOffset <format=hex>;
+    
+    // When this is not the case, verticesLength and bufferOffset look
+    // like something completely different
+    if (unk10 == 0 && unk14 == 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(header.dataOffset + bufferOffset);
+        struct { Vertex vertices(vertexSize)[vertexCount]; } vertices;
+        FSeek(pos);
+    }
+} VertexBuffer <bgcolor=cLtBlue, optimize=false>;
+
+
+typedef struct {
+    int unk00;
+    int structOffset <format=hex>;
+    uint type;
+    uint semantic;
+    int index;
+} LayoutMember <read=ReadLayoutMember>;
+
+string ReadLayoutMember(LayoutMember& member) {
+    string str;
+    SPrintf(str, "Type %2Xh, Semantic %2Xh", member.type, member.semantic);
+    return str;
+}
+
+typedef struct {
+    int memberCount;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    uint membersOffset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(membersOffset);
+    LayoutMember members[memberCount];
+    FSeek(pos);
+} BufferLayout <bgcolor=cBlue, optimize=false>;
+
+
+typedef struct {
+    OffsetString path(0, header.unicode);
+    OffsetString type(0, header.unicode);
+    Vector2 scale;
+    byte unk10;
+    byte unk11;
+    short unk12 <hidden=true>; Assert(unk12 == 0);
+    float unk14;
+    float unk18;
+    float unk1C;
+} Texture <read=ReadTexture, bgcolor=cDkBlue, optimize=false>;
+
+wstring ReadTexture(Texture& tex) {
+    return tex.type.str + " | " + tex.path.str;
+}
+
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+    int unk04; Assert(unk04 == 0);
+    int unk08; Assert(unk08 == 0);
+    int unk0C; Assert(unk0C == 0);
+    float unk10; // First 3 maybe not floats
+    float unk14;
+    float unk18;
+    float unk1C;
+    float unk20;
+    float unk24;
+    float unk28;
+    int unk2C; Assert(unk2C == 0);
+} SteelBattalionUnk1 <bgcolor=cLtPurple, optimize=false>;
+
+
+typedef struct {
+    short unk00;
+    short unk04;
+} SteelBattalionUnk2 <bgcolor=cPurple>;
+
+
+typedef struct {
+    short unk00[4];
+    int index;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} SekiroUnkMember <optimize=false>;
+
+typedef struct {
+    short count1;
+    short count2;
+    uint offset1 <format=hex>;
+    uint offset2 <format=hex>;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset1);
+    struct { SekiroUnkMember members1[count1]; } members1;
+    FSeek(offset2);
+    struct { SekiroUnkMember members2[count2]; } members2;
+    FSeek(pos);
+} SekiroUnk <bgcolor=cDkPurple, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+if (header.dummyCount > 0)
+    struct { Dummy dummies[header.dummyCount]; } dummies;
+if (header.materialCount > 0)
+    struct { Material materials[header.materialCount]; } materials;
+if (header.boneCount > 0)
+    struct { Bone bones[header.boneCount]; } bones;
+if (header.meshCount > 0)
+    struct { Mesh meshes[header.meshCount]; } meshes;
+if (header.faceSetCount > 0)
+    struct { FaceSet faceSets[header.faceSetCount]; } faceSets;
+if (header.vertexBufferCount > 0)
+    struct { VertexBuffer vertexBuffers[header.vertexBufferCount]; } vertexBuffers;
+if (header.bufferLayoutCount > 0)
+    struct { BufferLayout bufferLayouts[header.bufferLayoutCount]; } bufferLayouts;
+if (header.textureCount > 0)
+    struct { Texture textures[header.textureCount]; } textures;
+if (header.unk60 > 0)
+    struct { SteelBattalionUnk1 steelBattalionUnk1s[header.unk60]; } steelBattalionUnk1s;
+if (header.unk64 > 0)
+    SteelBattalionUnk2 steelBattalionUnk2s[header.unk64];
+if (header.version >= 0x2001A)
+    SekiroUnk sekiroUnk;

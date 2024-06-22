@@ -1,0 +1,205 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: Otogi1MDL.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Model file used in the original Otogi
+//  Category: 
+// File Mask: *.mdl
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "..\Util.bt"
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int fileSize <format=hex>;
+    int unk04;
+    int unk08;
+    int faceCount;
+
+    int boneCount;
+    int indexCount;
+    int vertexCountA;
+    int vertexCountB;
+    int vertexCountC;
+    int count6;
+    int materialCount;
+    int textureCount;
+
+    int bonesOffset <format=hex>;
+    int indicesOffset <format=hex>;
+    int verticesOffsetA <format=hex>;
+    int verticesOffsetB <format=hex>;
+    int verticesOffsetC <format=hex>;
+    int offset6 <format=hex>;
+    int materialsOffset <format=hex>;
+    int texturesOffset <format=hex>;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    byte materialIndex;
+    byte unk01;
+    short vertexCount;
+    int indexCount;
+    int startVertex;
+    int startIndex;
+} Mesh <bgcolor=cDkYellow>;
+
+typedef struct {
+    short meshCount;
+    byte unk02;
+    byte unk03;
+    short boneIndices[4];
+    int meshesOffset <format=hex>;
+    
+    if (meshCount > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(meshesOffset);
+        Mesh meshes[meshCount];
+        FSeek(pos);
+    }
+} MeshGroup <bgcolor=cYellow, optimize=false>;
+
+typedef struct {
+    Vector3 translation;
+    Vector3 rotation;
+    Vector3 scale;
+    int parentIndex;
+    int childIndex;
+    int nextSiblingIndex;
+    int previousSiblingIndex;
+    int meshCountA;
+    int meshCountB;
+    int meshCountC;
+    int meshesOffsetA <format=hex>;
+    int meshesOffsetB <format=hex>;
+    int meshesOffsetC <format=hex>;
+    int unk4C; // 0, 1, 3, ...?
+    
+    local quad pos <hidden=true> = FTell();
+    if (meshCountA > 0) {
+        FSeek(meshesOffsetA);
+        Mesh meshesA[meshCountA];
+    }
+    if (meshCountB > 0) {
+        FSeek(meshesOffsetB);
+        Mesh meshesB[meshCountB];
+    }
+    if (meshCountC > 0) {
+        FSeek(meshesOffsetC);
+        struct { MeshGroup meshesC[meshCountC]; } meshesC;
+    }
+    FSeek(pos);
+} Bone <bgcolor=cLtYellow, optimize=false>;
+
+
+typedef struct {
+    Vector3 position;
+    int normal;
+    ubyte color[4];
+    Vector2 uvs[2];
+} VertexA <bgcolor=cAqua>;
+
+typedef struct {
+    Vector3 position;
+    int normal;
+    ubyte color[4];
+    Vector2 uvs[2];
+    short unkShortA;
+    short unkShortB;
+} VertexB <bgcolor=cAqua>;
+
+typedef struct {
+    Vector3 position;
+    int normal;
+    ubyte color[4];
+    Vector2 uvs[2];
+    short unkShortA;
+    short unkShortB;
+    float unkFloatA;
+    float unkFloatB;
+} VertexC <bgcolor=cAqua>;
+
+
+// I think this is a dummy point equivalent
+typedef struct {
+    Vector3 position;
+    Vector3 rotation;
+    int boneIndex; // Guess
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} Struct6 <bgcolor=cPurple, optimize=false>;
+
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+    int unk04;
+    int unk08;
+    int unk0C;
+    int diffuseMapIndex;
+    int reflectionMaskIndex;
+    int reflectionMapIndex;
+    int unk1C; Assert(unk1C == -1);
+    Vector4 unk20; // RGBA, probably
+    Vector4 unk30;
+    Vector4 unk40;
+    int unk50 <hidden=true>; Assert(unk50 == 0); // Unused color?
+    int unk54 <hidden=true>; Assert(unk54 == 0);
+    int unk58 <hidden=true>; Assert(unk58 == 0);
+    int unk5C <hidden=true>; Assert(unk5C == 0);
+    float unk60;
+    float unk64;
+    float unk68;
+    int unk6C;
+} Material <bgcolor=cLtGreen, optimize=false>;
+
+
+typedef struct {
+    string name;
+} Texture <read=ReadTexture, bgcolor=cGreen, optimize=false>;
+
+string ReadTexture(Texture& tex) {
+    return tex.name;
+}
+
+//------------------------------------------------
+
+Header header;
+if (header.boneCount > 0) {
+    FSeek(header.bonesOffset);
+    struct { Bone bones[header.boneCount]; } bones;
+}
+if (header.indexCount > 0) {
+    FSeek(header.indicesOffset);
+    ushort indices[header.indexCount] <bgcolor=cLtAqua>;
+}
+if (header.vertexCountA > 0) {
+    FSeek(header.verticesOffsetA);
+    VertexA verticesA[header.vertexCountA];
+}
+if (header.vertexCountB > 0) {
+    FSeek(header.verticesOffsetB);
+    VertexB verticesB[header.vertexCountB];
+}
+if (header.vertexCountC > 0) {
+    FSeek(header.verticesOffsetC);
+    VertexC verticesC[header.vertexCountC];
+}
+if (header.count6 > 0) {
+    FSeek(header.offset6);
+    struct { Struct6 struct6s[header.count6]; } struct6s;
+}
+if (header.materialCount > 0) {
+    FSeek(header.materialsOffset);
+    struct { Material materials[header.materialCount]; } materials;
+}
+if (header.textureCount > 0) {
+    FSeek(header.texturesOffset);
+    struct { Texture textures[header.textureCount]; } textures;
+}

@@ -1,0 +1,29 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int count;
+    int unk04 <format=hex>; Assert(unk04 == 0x10);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} Header <bgcolor=cLtRed>;
+
+//------------------------------------------------
+
+Header header;
+OffsetString strings(0, 0)[header.count] <optimize=false>;

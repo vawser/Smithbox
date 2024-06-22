@@ -1,0 +1,36 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: NOJUMPWALL.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Sekiro .nojumpwall files
+//  Category: Dantelion
+// File Mask: *.nojumpwall
+//  ID Bytes: 01 00 00 00
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int unk00; Assert(unk00 == 1);
+    int count04; Assert(count04 == 1);
+    quad offset08 <format=hex>; Assert(offset08 == 0x10);
+    quad offset10 <format=hex>; Assert(offset10 == 0x20);
+    int count18;
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} Header <bgcolor=cLtRed>;
+
+typedef struct {
+    short unk00; Assert(unk00 == -1);
+    short unk02; // Bytes?
+} Entry <bgcolor=cLtGreen, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+struct { Entry entries[header.count18]; } entries;

@@ -1,0 +1,66 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB2\Model.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DS2 MSB models
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <byte> ModelType {
+    ModelTypeMapPiece = 0,
+    ModelTypeObject = 1,
+    ModelTypeCollision = 3,
+    ModelTypeNavmesh = 4,
+};
+
+struct ModelObject;
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    Varint nameOffset;
+    ModelType type;
+    byte unk09 <hidden=true>; Assert(unk09 == 0);
+    short id;
+    if (VARINT_LONG) {
+        int unk0C <hidden=true>; Assert(unk0C == 0);
+    }
+    Varint typeDataOffset;
+    Varint unk18 <hidden=true>; Assert(unk18.val == 0);
+    
+    Assert(nameOffset.val > 0);
+    FSeek(start + nameOffset.val);
+    wstring name;
+
+    if (type == ModelTypeObject) {
+        Assert(typeDataOffset.val > 0);
+        FSeek(start + typeDataOffset.val);
+        ModelObject object;
+    } else {
+        Assert(typeDataOffset.val == 0);
+        switch (type) {
+            case ModelTypeMapPiece:
+            case ModelTypeCollision:
+            case ModelTypeNavmesh: break;
+            default: Assert(false);
+        }
+    }
+} Model <read=ReadModel>;
+
+wstring ReadModel(Model& model) {
+    string str;
+    SPrintf(str, "%2i ", model.type);
+    return str + model.name;
+}
+
+
+typedef struct {
+    Varint unkX00 <hidden=true>; Assert(unkX00.val == 0);
+} ModelObject;

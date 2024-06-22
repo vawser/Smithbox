@@ -1,0 +1,475 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: FFX-DLSE.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Dark Souls 2 SFX definitions
+//  Category: Dantelion
+// File Mask: *.ffx
+//  ID Bytes: 44 4C 73 45 [+23] 46 58 53 65 72 69 61 6C 69 7A 61 62 6C 65 45 66 66 65 63 74
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "DLsE");
+    byte unk04; Assert(unk04 == 1);
+    byte unk05; Assert(unk05 == 3);
+    byte unk06; Assert(unk06 == 0);
+    byte unk07; Assert(unk07 == 0);
+    int unk08; Assert(unk08 == 0);
+    int unk0C; Assert(unk0C == 0);
+    byte unk10; Assert(unk10 == 0); // These types aren't exactly right I'm sure
+    int unk11; Assert(unk11 == 1);
+    short classCount;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int length;
+    char str[length];
+} PrefixString <read=ReadPrefixString, optimize=false>;
+
+string ReadPrefixString(PrefixString& ps) {
+    return ps.str;
+}
+
+
+typedef struct (string assertType) {
+    local quad start <format=hex> = FTell();
+    short type; Assert(classes.classes[type - 1].str == assertType);
+    int version;
+    int length <format=hex>;
+    local quad end <format=hex> = start + length;
+} Block <read=ReadBlock, bgcolor=cBlack, fgcolor=cWhite>;
+
+string ReadBlock(Block& block) {
+    string str;
+    SPrintf(str, "%i %i %Xh", block.type, block.version, block.length);
+    return str;
+}
+
+
+typedef struct {
+    short type; Assert(classes.classes[type - 1].str == "DLVector");
+    int count;
+    if (count > 0) {
+        int values[count];
+    }
+} DLVector <read=ReadDLVector, bgcolor=cLtPurple, optimize=false>;
+
+string ReadDLVector(DLVector& vec) {
+    string str;
+    SPrintf(str, "[%i]", vec.count);
+    return str;
+}
+
+
+typedef struct {
+    Block block("FXSerializablePrimitive<dl_int32>");
+
+    int value;
+
+    Assert(FTell() == block.end);
+} FXSerializablePrimitiveInt <read=ReadPrimitiveInt, bgcolor=cDkGreen, optimize=false>;
+
+string ReadPrimitiveInt(FXSerializablePrimitiveInt& primInt) {
+    string str;
+    SPrintf(str, "%i", primInt.value);
+    return str;
+}
+
+
+typedef struct {
+    Block block("FXSerializablePrimitive<dl_float32>");
+
+    float value;
+
+    Assert(FTell() == block.end);
+} FXSerializablePrimitiveFloat <read=ReadPrimitiveFloat, bgcolor=cDkGreen, optimize=false>;
+
+string ReadPrimitiveFloat(FXSerializablePrimitiveFloat& primFloat) {
+    string str;
+    SPrintf(str, "%f", primFloat.value);
+    return str;
+}
+
+
+typedef struct {
+    Block block("FXSerializablePrimitive<FXTick>");
+    
+    float value;
+    
+    Assert(FTell() == block.end);
+} FXSerializablePrimitiveTick <read=ReadPrimitiveTick, bgcolor=cDkGreen, optimize=false>;
+
+string ReadPrimitiveTick(FXSerializablePrimitiveTick& tick) {
+    string str;
+    SPrintf(str, "%f", tick.unk00);
+    return str;
+}
+
+
+typedef struct {
+    Block block("FXSerializablePrimitive<FXColorRGBA>");
+    
+    float r;
+    float g;
+    float b;
+    float a;
+    
+    Assert(FTell() == block.end);
+} FXSerializablePrimitiveColor <read=ReadPrimitiveColor, bgcolor=cDkGreen, optimize=false>;
+
+string ReadPrimitiveColor(FXSerializablePrimitiveColor& color) {
+    string str;
+    SPrintf(str, "%f, %f, %f, %f", color.r, color.g, color.b, color.a);
+    return str;
+}
+
+
+struct FXSerializableParam;
+struct FXSerializableParamList;
+
+typedef struct {
+    Block block("FXSerializableParam");
+
+    int type;
+    if (type == 1) {
+        FXSerializablePrimitiveInt primInt;
+    } else if (type == 2) {
+        int count;
+        struct {
+            FXSerializablePrimitiveInt primInts[count];
+        } primInts;
+    } else if (type == 5) {
+        int count;
+        struct {
+            FXSerializablePrimitiveTick tick;
+            FXSerializablePrimitiveInt primInt;
+        } tickInts[count] <optimize=false>;
+    } else if (type == 6) {
+        int count;
+        struct {
+            FXSerializablePrimitiveTick tick;
+            FXSerializablePrimitiveInt primInt;
+        } tickInts[count] <optimize=false>;
+    } else if (type == 7) { // Texture scale? Light flicker?
+        FXSerializablePrimitiveFloat primFloat;
+    } else if (type == 9) {
+        int unk04;
+        FXSerializablePrimitiveTick tick;
+        FXSerializablePrimitiveFloat primFloat;
+    } else if (type == 11) { // Size
+        int count;
+        struct {
+            FXSerializablePrimitiveTick tick;
+            FXSerializablePrimitiveFloat primFloat;
+        } tickFloats[count] <optimize=false>;
+    } else if (type == 12) {
+        int count;
+        struct {
+            FXSerializablePrimitiveTick tick;
+            FXSerializablePrimitiveFloat primFloat;
+        } tickFloats[count] <optimize=false>;
+    } else if (type == 13) { // Movement
+        int count;
+        struct {
+            FXSerializablePrimitiveTick tick;
+            FXSerializablePrimitiveFloat primFloat1;
+            FXSerializablePrimitiveFloat primFloat2;
+            FXSerializablePrimitiveFloat primFloat3;
+        } tickFloat3s[count] <optimize=false>;
+    } else if (type == 15) { // Texture color
+        FXSerializablePrimitiveColor color;
+    } else if (type == 17) { // Texture color
+        int count;
+        struct {
+            FXSerializablePrimitiveTick tick;
+            FXSerializablePrimitiveColor color;
+        } tickColors[count] <optimize=false>;
+    } else if (type == 18) {
+        int unk04;
+        FXSerializablePrimitiveTick tick;
+        FXSerializablePrimitiveColor color;
+    } else if (type == 19) { // Light color
+        int count;
+        struct {
+            FXSerializablePrimitiveTick tick;
+            FXSerializablePrimitiveColor color;
+        } tickColors[count] <optimize=false>;
+    } else if (type == 20) { // Texture color
+        int count;
+        struct {
+            FXSerializablePrimitiveTick tick;
+            FXSerializablePrimitiveColor color;
+        } tickColors[count] <optimize=false>;
+    } else if (type == 21) {
+        int count;
+        struct {
+            FXSerializablePrimitiveTick tick;
+            FXSerializablePrimitiveColor color1;
+            FXSerializablePrimitiveColor color2;
+            FXSerializablePrimitiveColor color3;
+        } tickColor3s[count] <optimize=false>;
+    } else if (type == 37) {
+        int unk04;
+        FXSerializableParamList paramList;
+    } else if (type == 38) {
+        int unk04;
+        FXSerializableParamList paramList;
+    } else if (type == 40) {
+        int unk04;
+    } else if (type == 41) {
+        int unk04;
+    } else if (type == 44) {
+        int unk04;
+        int unk08;
+    } else if (type == 45) {
+        int unk04;
+        int unk08;
+    } else if (type == 46) {
+        int unk04;
+        int unk08;
+    } else if (type == 47) {
+        int unk04;
+        int unk08;
+    } else if (type == 59) {
+        int unk04;
+        int unk08;
+    } else if (type == 60) {
+        int unk04;
+        int unk08;
+    } else if (type == 66) {
+        int unk04;
+        int unk08;
+    } else if (type == 68) {
+        int unk04;
+    } else if (type == 69) {
+        int unk04;
+    } else if (type == 70) {
+        FXSerializablePrimitiveTick tick;
+    } else if (type == 71) {
+        int unk04;
+        int unk08;
+    } else if (type == 79) {
+        FXSerializablePrimitiveInt primInt1;
+        FXSerializablePrimitiveInt primInt2;
+    } else if (type == 81) { // Rotation?
+        FXSerializablePrimitiveFloat primFloat1;
+        FXSerializablePrimitiveFloat primFloat2;
+    } else if (type == 82) {
+        FXSerializableParam param;
+        FXSerializablePrimitiveFloat primFloat;
+    } else if (type == 83) {
+        FXSerializablePrimitiveColor color1;
+        FXSerializablePrimitiveColor color2;
+    } else if (type == 84) {
+        FXSerializableParam param;
+        FXSerializablePrimitiveColor color;
+    } else if (type == 85) {
+        FXSerializablePrimitiveTick tick1;
+        FXSerializablePrimitiveTick tick2;
+    } else if (type == 87) {
+        int unk04;
+        int unk08;
+    } else {
+        Assert(false, "Unknown param type");
+    }
+
+    Assert(FTell() == block.end);
+} FXSerializableParam <bgcolor=cGreen, optimize=false>;
+
+
+typedef struct {
+    Block block("FXSerializableParamList");
+
+    int count;
+    int unk04; // Usually count, not always
+    if (count > 0) {
+        struct { FXSerializableParam params[count]; } params;
+    }
+
+    Assert(FTell() == block.end);
+} FXSerializableParamList <bgcolor=cLtGreen, optimize=false>;
+
+
+typedef struct {
+    Block block("FXSerializableAction");
+
+    int actionID;
+    FXSerializableParamList paramList;
+
+    Assert(FTell() == block.end);
+} FXSerializableAction <optimize=false>;
+
+
+struct FXSerializableEvaluatableInt;
+
+typedef struct {
+    Block block("FXSerializableEvaluatable<dl_int32>");
+
+    int operator;
+    int type; // 1 int, 2 float, 3 bool
+    if (operator == 1) { // int literal
+        int value;
+    } else if (operator == 2) { // ???
+        int unk08;
+        int unk0C;
+    } else if (operator == 3) { // ???
+        int unk08;
+        int unk0C;
+    } else if (operator == 8 // &&
+        || operator == 9 // ||
+        || operator == 10 // >=
+        || operator == 11 // >
+        || operator == 12 // <=
+        || operator == 13 // <
+        || operator == 14 // ==
+        || operator == 15 // !=
+        ) {
+        FXSerializableEvaluatableInt left;
+        FXSerializableEvaluatableInt right;
+    } else if (operator == 20 // !
+        ) {
+        FXSerializableEvaluatableInt operand;
+    } else if (operator == 4 // Current tick
+        || operator == 5 // Total tick
+        || operator == 21 // Child exists
+        || operator == 22 // Parent exists
+        || operator == 23 // ???
+        || operator == 24 // Emitters stopped
+        ) {
+        // Nullary lul
+    } else {
+        Assert(false, "Unknown operator");
+    }
+
+    Assert(FTell() == block.end);
+} FXSerializableEvaluatableInt <read=ReadEvaluatableInt, optimize=false>;
+
+string ReadEvaluatableInt(FXSerializableEvaluatableInt& eval) {
+    string str;
+    if (eval.operator == 1) {
+        SPrintf(str, "%i", eval.value);
+    } else if (eval.operator == 2) {
+        SPrintf(str, "{2: %i, %i}", eval.unk08, eval.unk0C);
+    } else if (eval.operator == 3) {
+        SPrintf(str, "{3: %i, %i}", eval.unk08, eval.unk0C);
+    } else if (eval.operator == 4) {
+        str = "CurrentTick";
+    } else if (eval.operator == 5) {
+        str = "TotalTick";
+    } else if (eval.operator == 8) {
+        SPrintf(str, "(%s) && (%s)", ReadEvaluatableInt(eval.left), ReadEvaluatableInt(eval.right));
+    } else if (eval.operator == 9) {
+        SPrintf(str, "(%s) || (%s)", ReadEvaluatableInt(eval.left), ReadEvaluatableInt(eval.right));
+    } else if (eval.operator == 10) {
+        SPrintf(str, "(%s) >= (%s)", ReadEvaluatableInt(eval.left), ReadEvaluatableInt(eval.right));
+    } else if (eval.operator == 11) {
+        SPrintf(str, "(%s) > (%s)", ReadEvaluatableInt(eval.left), ReadEvaluatableInt(eval.right));
+    } else if (eval.operator == 12) {
+        SPrintf(str, "(%s) <= (%s)", ReadEvaluatableInt(eval.left), ReadEvaluatableInt(eval.right));
+    } else if (eval.operator == 13) {
+        SPrintf(str, "(%s) < (%s)", ReadEvaluatableInt(eval.left), ReadEvaluatableInt(eval.right));
+    } else if (eval.operator == 14) {
+        SPrintf(str, "(%s) == (%s)", ReadEvaluatableInt(eval.left), ReadEvaluatableInt(eval.right));
+    } else if (eval.operator == 15) {
+        SPrintf(str, "(%s) != (%s)", ReadEvaluatableInt(eval.left), ReadEvaluatableInt(eval.right));
+    } else if (eval.operator == 20) {
+        SPrintf(str, "!(%s)", ReadEvaluatableInt(eval.operand));
+    } else if (eval.operator == 21) {
+        str = "ChildExists";
+    } else if (eval.operator == 22) {
+        str = "ParentExists";
+    } else if (eval.operator == 23) {
+        str = "{23}";
+    } else if (eval.operator == 24) {
+        str = "EmittersStopped";
+    }
+    return str;
+}
+
+
+typedef struct {
+    Block block("FXSerializableTrigger");
+
+    int destinationState;
+    FXSerializableEvaluatableInt evaluatableInt;
+
+    Assert(FTell() == block.end);
+} FXSerializableTrigger <read=ReadTrigger, bgcolor=cDkYellow, optimize=false>;
+
+string ReadTrigger(FXSerializableTrigger& trigger) {
+    string str;
+    SPrintf(str, "goto %i when %s", trigger.destinationState, ReadEvaluatableInt(trigger.evaluatableInt));
+    return str;
+}
+
+
+typedef struct {
+    Block block("FXSerializableState");
+
+    int actionCount;
+    int triggerCount;
+    if (actionCount > 0) {
+        FXSerializableAction actions[actionCount];
+    }
+    if (triggerCount > 0) {
+        FXSerializableTrigger triggers[triggerCount];
+    }
+
+    Assert(FTell() == block.end);
+} FXSerializableState <bgcolor=cYellow, optimize=false>;
+
+
+typedef struct {
+    Block block("FXSerializableStateMap");
+
+    int stateCount;
+    FXSerializableState states[stateCount];
+
+    Assert(FTell() == block.end);
+} FXSerializableStateMap <bgcolor=cLtYellow, optimize=false>;
+
+
+typedef struct {
+    Block block("FXResourceSet");
+
+    DLVector vector1;
+    DLVector vector2;
+    DLVector vector3;
+    DLVector vector4;
+    DLVector vector5;
+
+    Assert(FTell() == block.end);
+} FXResourceSet <bgcolor=cPurple, optimize=false>;
+
+
+typedef struct {
+    Block block("FXSerializableEffect");
+
+    int unk00; Assert(unk00 == 0);
+    int effectID;
+    int unk08; Assert(unk08 == 0);
+    int unk0C; Assert(unk0C == 0);
+    int count10;
+    short unk14; Assert(unk14 == 0);
+    DLVector vector; Assert(vector.count == 0); // This is a bit of a guess based on class name order
+    struct { FXSerializableParamList paramLists[count10]; } paramLists;
+    FXSerializableStateMap stateMap;
+    FXResourceSet resourceSet;
+    byte terminator; Assert(terminator == 0);
+
+    Assert(FTell() == block.end);
+} FXSerializableEffect <bgcolor=cAqua, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+struct { PrefixString classes[header.classCount]; } classes <bgcolor=cRed>;
+FXSerializableEffect effect;

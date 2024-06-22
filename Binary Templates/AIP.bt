@@ -1,0 +1,40 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: AIP.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Elden Ring AutoInvadePoint files
+//  Category: Dantelion
+// File Mask: *.aip
+//  ID Bytes: 46 50 49 41
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "FPIA");
+    int unk04; Assert(unk04 == 1);
+    byte mapID[4];
+    int pointCount;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    Vector3 position;
+    float unk0C;
+} Point <read=ReadPoint, bgcolor=cLtGreen>;
+
+string ReadPoint(Point& point) {
+    string str;
+    return SPrintf(str, "%.2f %s", point.unk0C, ReadVector3(point.position));
+}
+
+//------------------------------------------------
+
+Header header;
+Point points[header.pointCount];

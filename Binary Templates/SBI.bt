@@ -1,0 +1,68 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: SBI.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: Dantelion
+// File Mask: *.mobnkinfo
+//  ID Bytes: 53 42 49 00
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+struct StructB;
+struct StructC;
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "SBI\0");
+    short unk04; Assert(unk04 == 0);
+    short unk06; Assert(unk06 == 1);
+    quad offset08 <format=hex>; Assert(offset08 == 0x18);
+    int count10; Assert(count10 == 2);
+    int unk14; Assert(unk14 == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    ubyte unk00[16];
+    int count10;
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    quad offset18 <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset18);
+    struct { StructB structBs[count10]; } structBs;
+    FSeek(pos);
+} StructA <bgcolor=cLtGreen, optimize=false>;
+
+
+typedef struct {
+    int unk00;
+    int count04;
+    quad offset08 <format=hex>;
+    
+    if (count04 > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(offset08);
+        struct { StructC structCs[count04]; } structCs;
+        FSeek(pos);
+    }
+} StructB <bgcolor=cAqua, optimize=false>;
+
+
+typedef struct {
+    int unk00;
+    int unk04; Assert(unk04 == 0 || unk04 == 1);
+} StructC <bgcolor=cYellow, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+Assert(FTell() == header.offset08);
+StructA structAs[header.count10];

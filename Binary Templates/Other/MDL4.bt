@@ -1,0 +1,261 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MDL4.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Dantelion models before FLVER
+//  Category: Dantelion
+// File Mask: *.mdl
+//  ID Bytes: 4D 44 4C 34
+//   History: 
+//------------------------------------------------
+
+#include "..\Util.bt"
+
+BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "MDL4");
+    int version <format=hex>; Assert(version >= 0x40000 && version < 0x50000);
+    int dataStart <format=hex>;
+    int dataLength <format=hex>;
+    int dummyCount;
+    int materialCount;
+    int boneCount;
+    int meshCount;
+    int unk20;
+    Vector3 boundingBoxMin;
+    Vector3 boundingBoxMax;
+    int trueFaceCount;
+    int totalFaceCount;
+
+    local int i <hidden=true>;
+    for (i = 0; i < 15; i++) {
+        int unk44 <hidden=true>; Assert(unk44 == 0);
+    }
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    Vector3 forward;
+    Vector3 upward;
+    ubyte color[4] <format=hex>;
+    short id;
+    short unk1E;
+    short unk20;
+    short unk22; // Maybe 2 bytes
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+    int unk28 <hidden=true>; Assert(unk28 == 0);
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+} Dummy <read=ReadDummy, bgcolor=cLtGreen, optimize=false>;
+
+string ReadDummy(Dummy& dummy) {
+    string str;
+    SPrintf(str, "%2i %3i %3i %4Xh", dummy.id, dummy.unk1E, dummy.unk20, dummy.unk22);
+    return str;
+}
+
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    byte type;
+    char name[0x1F];
+    switch (type) {
+        case 0:
+            int value;
+            break;
+        case 1:
+            float value;
+            break;
+        case 4:
+            float value[4];
+            break;
+        case 5:
+            string value;
+            break;
+        default:
+            Assert(false, "Unknown param type.");
+            break;
+    }
+    Assert(ReadInt() == 0, "Data after param value end.");
+    FSeek(start + 0x40);
+} Param <read=ReadParam, bgcolor=cDkAqua, optimize=false>;
+
+string ReadParam(Param& param) {
+    string str;
+    SPrintf(str, "%i %s", param.type, param.name);
+    return str;
+}
+
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    char name[0x1F];
+    char shader[0x1D];
+    byte unk3C;
+    byte unk3D;
+    byte unk3E; // 0, 1
+    byte paramCount;
+    struct { Param params[paramCount]; } params;
+    FSeek(start + 0x840);
+} Material <read=ReadMaterial, bgcolor=cAqua, optimize=false>;
+
+string ReadMaterial(Material& mat) {
+    string str;
+    SPrintf(str, "%s | %s", mat.name, mat.shader);
+    return str;
+}
+
+
+typedef struct {
+    char name[0x20];
+    Vector3 translation;
+    Vector3 rotation;
+    Vector3 scale;
+    Vector3 boundingBoxMin;
+    Vector3 boundingBoxMax;
+    short parentIndex;
+    short childIndex;
+    short nextSiblingIndex;
+    short previousSiblingIndex;
+    int unk64 <hidden=true>; Assert(unk64 == 0);
+    int unk68 <hidden=true>; Assert(unk68 == 0);
+    int unk6C <hidden=true>; Assert(unk6C == 0);
+    short unk70[16]; // In Enchanted Arms c0010, these are indices to bones for facial expressions
+} Bone <read=ReadBone, bgcolor=cLtBlue, optimize=false>;
+
+string ReadBone(Bone& bone) {
+    string str;
+    SPrintf(str, "%s", bone.name);
+    return str;
+}
+
+
+typedef struct {
+    Vector3 position;
+    int normal; // xyzw 10 10 10 2 low-high
+    int tangent;
+    int bitangent;
+    ubyte color[4];
+    Vector2 uvs[4];
+    int unk3C; // Two shorts?
+} Vertex1_0 <read=ReadVertex1_0, bgcolor=cPurple>;
+
+string ReadVertex1_0(Vertex1_0& vert) {
+    string str;
+    SPrintf(str, "%8Xh", vert.unk3C);
+    return str;
+}
+
+typedef struct {
+    Vector3 position;
+    int normal; // xyzw 10 10 10 2 low-high
+    int tangent;
+    int bitangent;
+    ubyte color[4];
+    Vector2 uvs[4];
+    short boneIndices[4];
+    float boneWeights[4];
+} Vertex1_1 <bgcolor=cPurple>;
+
+typedef struct {
+    ubyte color[4];
+    Vector2 uvs[4];
+    short boneIndices[4];
+    float boneWeights[4];
+} Vertex1_2 <bgcolor=cPurple>;
+
+
+typedef struct {
+    Vector3 position;
+    int unk0C <format=hex>;
+    int unk10 <format=hex>;
+    ubyte color[4];
+    short uvs[8];
+} Vertex2_0 <bgcolor=cPurple>;
+
+
+typedef struct {
+    int length <format=hex>;
+    int offset <format=hex>;
+    
+    if (length > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(header.dataStart + offset);
+        ubyte block[length] <format=hex>;
+        FSeek(pos);
+    }
+} UnkBlock <optimize=false>;
+
+
+typedef struct {
+    byte vertexFormat; Assert(vertexFormat >= 0 && vertexFormat <= 2);
+    byte materialIndex;
+    byte unk02;
+    byte unk03;
+    ushort vertexIndexCount;
+    short unk08;
+    short boneIndices[28];
+    int vertexIndicesSize <format=hex>;
+    int vertexIndicesOffset <format=hex>;
+    int bufferLength <format=hex>;
+    int bufferOffset <format=hex>;
+    
+    if (vertexFormat == 2) {
+        struct { UnkBlock unkBlocks[16]; } unkBlocks;
+    }
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(header.dataStart + vertexIndicesOffset);
+    short vertexIndices[vertexIndexCount];
+    
+    local int vertexSize <hidden=true>;
+    if (header.version == 0x40001) {
+        if (vertexFormat == 0)
+            vertexSize = 0x40;
+        else if (vertexFormat == 1)
+            vertexSize = 0x54;
+        else if (vertexFormat == 2)
+            vertexSize = 0x3C;
+        else
+            Assert(false);
+    } else if (header.version == 0x40002) {
+        if (vertexFormat == 0)
+            vertexSize = 0x28;
+        else
+            Assert(false);
+    } else {
+        Assert(false);
+    }
+    Assert(bufferLength % vertexSize == 0);
+    local int vertexCount <hidden=true> = bufferLength / vertexSize;
+
+    FSeek(header.dataStart + bufferOffset);
+    if (header.version == 0x40001) {
+        if (vertexFormat == 0)
+            Vertex1_0 vertices[vertexCount];
+        else if (vertexFormat == 1)
+            Vertex1_1 vertices[vertexCount];
+        else if (vertexFormat == 2)
+            Vertex1_2 vertices[vertexCount];
+    } else if (header.version == 0x40002) {
+        if (vertexFormat == 0)
+            Vertex2_0 vertices[vertexCount];
+    }
+    FSeek(pos);
+} Mesh <bgcolor=cBlue, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+if (header.dummyCount > 0)
+    struct { Dummy dummies[header.dummyCount]; } dummies;
+if (header.materialCount > 0)
+    struct { Material materials[header.materialCount]; } materials;
+if (header.boneCount > 0)
+    struct { Bone bones[header.boneCount]; } bones;
+if (header.meshCount > 0)
+    struct { Mesh meshes[header.meshCount]; } meshes;

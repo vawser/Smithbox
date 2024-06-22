@@ -1,0 +1,54 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int fileCount;
+    int unk04 <format=hex>; Assert(unk04 == 0x10);
+    int unk08 <format=hex>; Assert(unk08 == 0x10);
+    int maxFileSize <format=hex>; Assert(maxFileSize == 0x800000); // 8 MB
+
+    local int i <hidden=true>;
+    for (i = 0; i < 16; i++) {
+        int unk10 <hidden=true>; Assert(unk10 == 0);
+    }
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    char name[0x40];
+    // If 0, data is in the header file (.000); if 1, in the .001, etc
+    int containerIndex;
+    int fileOffset <format=hex>; // Multiply by 0x10
+    int paddedSize <format=hex>; // Multiply by 0x10
+    int fileSize <format=hex>; // Don't multiply
+    
+    if (containerIndex == 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(fileOffset * 0x10);
+        ubyte data[fileSize] <format=hex, bgcolor=cAqua>;
+        FSeek(pos);
+    }
+} File <read=ReadFile, bgcolor=cLtGreen, optimize=false>;
+
+string ReadFile(File& file) {
+    return file.name;
+}
+
+//------------------------------------------------
+
+Header header;
+File files[header.fileCount];

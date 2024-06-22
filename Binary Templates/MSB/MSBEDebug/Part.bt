@@ -1,0 +1,57 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSBEDebug\Part.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Elden Ring msb debug parts
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    quad offset00 <format=hex>; Assert(offset00);
+    quad offset08 <format=hex>; Assert(offset08);
+    quad offset10 <format=hex>; Assert(offset10);
+    quad offset18 <format=hex>; Assert(offset18);
+    quad offset20 <format=hex>;
+    quad offset28 <format=hex>; Assert(offset28);
+    quad offset30 <format=hex>; Assert(offset30);
+    quad offset38 <format=hex>;
+    quad offset40 <format=hex>;
+    quad offset48 <format=hex>;
+    quad offset50 <format=hex>; Assert(offset50);
+    quad offset58 <format=hex>;
+    quad offset60 <format=hex>; Assert(offset60);
+    quad offset68 <format=hex>;
+    quad unk70 <hidden=true>; Assert(!unk70);
+    quad unk78 <hidden=true>; Assert(!unk78);
+    quad unk80 <hidden=true>; Assert(!unk80);
+    quad unk88 <hidden=true>; Assert(!unk88);
+    quad unk90 <hidden=true>; Assert(!unk90);
+    quad unk98 <hidden=true>; Assert(!unk98);
+    quad unkA0 <hidden=true>; Assert(!unkA0);
+    quad unkA8 <hidden=true>; Assert(!unkA8);
+    quad unkB0 <hidden=true>; Assert(!unkB0);
+    quad unkB8 <hidden=true>; Assert(!unkB8);
+    
+    FSeek(start + offset00);
+    wstring str00;
+    
+    FSeek(start + offset08);
+    wstring str08;
+    
+    FSeek(start + offset10);
+    wstring str10;
+} Part <read=ReadPart>;
+
+wstring ReadPart(Part& part) {
+    return part.str00 + " - " + part.str08 + " - " + part.str10;
+}
+
+//------------------------------------------------

@@ -1,0 +1,75 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: ITL.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: Dark Souls
+// File Mask: *.itl
+//  ID Bytes: [+12] 49 54 4C 49 4D 49 54 45 52 5F 49 4E 46 4F
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+typedef struct {
+    int fileSize <format=hex>;
+    short unk04; Assert(unk04 == 0);
+    short unk06; Assert(unk06 == 0 || unk06 == 1);
+    short unk08; Assert(unk08 == 1 || unk08 == 2);
+    short entryCount;
+    char magic[0x20]; Assert(magic == "ITLIMITER_INFO");
+    short unk2C; Assert(unk2C == 0x300);
+    short unk2E; Assert(unk2E == 0 || unk2E == 1);
+    int dataStart <format=hex>;
+    int unk34; Assert(unk34 == 0);
+    int unk38; Assert(unk38 == 0);
+    int unk3C; Assert(unk3C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct (Header& header) {
+    float unk00;
+    int unk04;
+    char name[0xC];
+    int unk14; Assert(unk14 == 0);
+    int unk18; Assert(unk18 == 0);
+    int unk1C; Assert(unk1C == 0);
+    
+    if (header.unk08 == 2) {
+        short unk20; Assert(unk20 == -1 || unk20 == 0);
+        short unk22; Assert(unk22 == -1 || unk22 == 0);
+        int unk24; Assert(unk24 >= 0 && unk24 <= 2);
+    }
+} EntryData <read=ReadEntryData, bgcolor=cAqua, optimize=false>;
+
+string ReadEntryData(EntryData& data) {
+    string str;
+    SPrintf(str, "%-10s %3.0f %i",
+        data.name, data.unk00, data.unk04);
+    return str;
+}
+
+
+typedef struct (Header& header) {
+    int id;
+    quad offset;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset);
+    EntryData data(header);
+    FSeek(pos);
+} Entry <read=ReadEntry, bgcolor=cLtGreen, optimize=false>;
+
+string ReadEntry(Entry& entry) {
+    string str;
+    SPrintf(str, "%6i [%s]", entry.id, ReadEntryData(entry.data));
+    return str;
+}
+
+
+Header header;
+struct {
+    Entry entries(header)[header.entryCount];
+} entries;

@@ -1,0 +1,40 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: BDF4.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Data file for corresponding BHF4 header
+//  Category: Dantelion
+// File Mask: *.*bdt
+//  ID Bytes: 42 44 46 34
+//   History: 
+//------------------------------------------------
+
+if (ReadByte(9))
+    BigEndian();
+else
+    LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "BDF4");
+    byte unk04; Assert(unk04 == 0 || unk04 == 1);
+    byte unk05; Assert(unk05 == 0 || unk05 == 1);
+    byte unk06 <hidden=true>; Assert(unk06 == 0);
+    byte unk07 <hidden=true>; Assert(unk07 == 0);
+    byte unk08 <hidden=true>; Assert(unk08 == 0);
+    byte bigEndian;
+    byte unk0A; Assert(unk0A == 0 || unk0A == 1);
+    byte unk0B <hidden=true>; Assert(unk0B == 0);
+    int fileCount <hidden=true>; Assert(fileCount == 0);
+    quad headerSize <format=hex>; Assert(headerSize == 0x30 || headerSize == 0x40);
+    char version[8];
+    quad fileHeaderSize <format=hex, hidden=true>; Assert(fileHeaderSize == 0);
+    quad fileHeadersEnd <format=hex, hidden=true>; Assert(fileHeadersEnd == 0);
+} Header <bgcolor=cLtRed>;
+
+//------------------------------------------------
+
+Header header <open=true>;

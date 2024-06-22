@@ -1,0 +1,338 @@
+//------------------------------------------------
+//--- 010 Editor v7.0.2 Binary Template
+//
+//      File: FXR3.bt
+//   Authors: TKGP
+//   Version: 1.01
+//   Purpose: DS3 sfx definition files
+//  Category: Dark Souls
+// File Mask: *.fxr
+//  ID Bytes: 46 58 52 00
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+typedef struct {
+    char magic[4]; Assert(magic == "FXR\0");
+    short unk04; Assert(unk04 == 0);
+    short version; Assert(version == 4 || version == 5);
+    int unk08; Assert(unk08 == 1);
+    int ffxID;
+    
+    int section1Offset <format=hex>;
+    int section1Count; Assert(section1Count == 1);
+    int section2Offset <format=hex>;
+    int section2Count;
+    int section3Offset <format=hex>;
+    int section3Count;
+    int section4Offset <format=hex>;
+    int section4Count;
+    int section5Offset <format=hex>;
+    int section5Count;
+    int section6Offset <format=hex>;
+    int section6Count;
+    int section7Offset <format=hex>;
+    int section7Count;
+    int section8Offset <format=hex>;
+    int section8Count;
+    int section9Offset <format=hex>;
+    int section9Count;
+    int section10Offset <format=hex>;
+    int section10Count;
+    int section11Offset <format=hex>;
+    int section11Count;
+    int unk68; Assert(unk68 == 1);
+    int unk70; Assert(unk70 == 0);
+    
+    if (version == 5) {
+        int section12Offset <format=hex>;
+        int section12Count; Assert(section12Count <= 2); // If these fail please tell me
+        int section13Offset <format=hex>;
+        int section13Count; Assert(section13Count <= 2);
+        int section14Offset <format=hex>;
+        int section14Count; Assert(section14Count == 0);
+        int unk88; Assert(unk88 == 0);
+        int unk8C; Assert(unk8C == 0);
+    }
+} Header <bgcolor=cSilver>;
+
+
+struct Section1;
+struct Section2;
+struct Section3;
+struct Section4;
+struct Section5;
+struct Section6;
+struct Section7;
+struct Section8;
+struct Section9;
+struct Section10;
+
+
+typedef struct {
+    int unk00 <fgcolor=cLtRed, hidden=true>; Assert(unk00 == 0);
+    int section2Count <hidden=true>;
+    int section2Offset <format=hex, hidden=true>;
+    int unk0C <fgcolor=cLtRed, hidden=true>; Assert(unk0C == 0);
+    
+    if (section2Count > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(section2Offset);
+        Section2 section2s[section2Count];
+        FSeek(pos);
+    }
+} Section1 <bgcolor=cLtRed, optimize=false>;
+
+
+typedef struct {
+    int unk00 <fgcolor=cRed, hidden=true>; Assert(unk00 == 0);
+    int section3Count <hidden=true>;
+    int section3Offset <format=hex, hidden=true>;
+    int unk0C <fgcolor=cRed, hidden=true>; Assert(unk0C == 0);
+    
+    if (section3Count > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(section3Offset);
+        Section3 section3s[section3Count];
+        FSeek(pos);
+    }
+} Section2 <bgcolor=cRed, optimize=false>;
+
+
+typedef struct {
+    short unk00; Assert(unk00 == 11);
+    byte unk01; Assert(unk01 == 0);
+    byte unk02; Assert(unk02 == 1);
+    int unk04 <fgcolor=cLtYellow, hidden=true>; Assert(unk04 == 0);
+    int unk08;
+    int unk0C <fgcolor=cLtYellow, hidden=true>; Assert(unk0C == 0);
+
+    int unk10 <format=hex>;
+    int unk14 <fgcolor=cLtYellow, hidden=true>; Assert(unk14 == 0);
+    int unk18; Assert(unk18 == 1);
+    int unk1C <fgcolor=cLtYellow, hidden=true>; Assert(unk1C == 0);
+    int section11Offset1 <format=hex>;
+    int unk24 <fgcolor=cLtYellow, hidden=true>; Assert(unk24 == 0);
+    int unk28 <fgcolor=cLtYellow, hidden=true>; Assert(unk28 == 0);
+    int unk2C <fgcolor=cLtYellow, hidden=true>; Assert(unk2C == 0);
+    int unk30 <fgcolor=cLtYellow, hidden=true>; Assert(unk30 == 0);
+    int unk34 <fgcolor=cLtYellow, hidden=true>; Assert(unk34 == 0);
+
+    int unk38 <format=hex>; Assert(unk38 == 0x100FFFC || unk38 == 0x100FFFD || unk38 == 0x100FFFF);
+    int unk3C <fgcolor=cLtYellow, hidden=true>; Assert(unk3C == 0);
+    int unk40; Assert(unk40 == 0 || unk40 == 1);
+    int unk44 <fgcolor=cLtYellow, hidden=true>; Assert(unk44 == 0);
+    int section11Offset2 <format=hex>;
+    int unk4C <fgcolor=cLtYellow, hidden=true>; Assert(unk4C == 0);
+    int unk50 <fgcolor=cLtYellow, hidden=true>; Assert(unk50 == 0);
+    int unk54 <fgcolor=cLtYellow, hidden=true>; Assert(unk54 == 0);
+    int unk58 <fgcolor=cLtYellow, hidden=true>; Assert(unk58 == 0);
+    int unk5C <fgcolor=cLtYellow, hidden=true>; Assert(unk5C == 0);
+
+    local quad pos <hidden=true> = FTell();
+    // Usually (but not always) a float
+    FSeek(section11Offset1);
+    int section11Data1 <format=hex>;
+    // Usually (but not always) an int
+    FSeek(section11Offset2);
+    int section11Data2 <format=hex>;
+    FSeek(pos);
+} Section3 <bgcolor=cLtYellow, optimize=false>;
+
+
+typedef struct {
+    short unk00;
+    byte unk02;
+    byte unk03;
+    int unk04 <fgcolor=cLtGreen, hidden=true>; Assert(unk04 == 0);
+    int section5Count <hidden=true>;
+    int section6Count <hidden=true>;
+    int section4Count <hidden=true>;
+    int unk14 <fgcolor=cLtGreen, hidden=true>; Assert(unk14 == 0);
+    int section5Offset <format=hex, hidden=true>;
+    int unk1C <fgcolor=cLtGreen, hidden=true>; Assert(unk1C == 0);
+    int section6Offset <format=hex, hidden=true>;
+    int unk24 <fgcolor=cLtGreen, hidden=true>; Assert(unk24 == 0);
+    int section4Offset <format=hex, hidden=true>;
+    int unk2C <fgcolor=cLtGreen, hidden=true>; Assert(unk2C == 0);
+
+    local quad pos <hidden=true> = FTell();
+    if (section4Count > 0) {
+        FSeek(section4Offset);
+        Section4 section4s[section4Count];
+    }
+    if (section5Count > 0) {
+        FSeek(section5Offset);
+        Section5 section5s[section5Count];
+    }
+    if (section6Count > 0) {
+        FSeek(section6Offset);
+        Section6 section6s[section6Count];
+    }
+    FSeek(pos);
+} Section4 <bgcolor=cLtGreen, optimize=false>;
+
+
+typedef struct {
+    short unk00;
+    byte unk02;
+    byte unk03;
+    int unk04 <fgcolor=cGreen, hidden=true>; Assert(unk04 == 0);
+    int unk08 <fgcolor=cGreen, hidden=true>; Assert(unk08 == 0);
+    int section6Count <hidden=true>;
+    int unk10 <fgcolor=cGreen, hidden=true>; Assert(unk10 == 0);
+    int unk14 <fgcolor=cGreen, hidden=true>; Assert(unk14 == 0);
+    int section6Offset <format=hex, hidden=true>;
+    int unk1C <fgcolor=cGreen, hidden=true>; Assert(unk1C == 0);
+    
+    if (section6Count > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(section6Offset);
+        Section6 section6s[section6Count];
+        FSeek(pos);
+    }
+} Section5 <bgcolor=cGreen, optimize=false>;
+
+
+typedef struct {
+    short unk00;
+    byte unk02;
+    byte unk03;
+    int unk04;
+    int section11Count1 <hidden=true>;
+    int section10Count <hidden=true>;
+    int section7Count1 <hidden=true>;
+    int section11Count2 <hidden=true>; //Assert(section11Count2 == 0 || section11Count2 == 43);
+    int unk18 <fgcolor=cAqua, hidden=true>; Assert(unk18 == 0);
+    int section7Count2 <hidden=true>;
+    int section11Offset <format=hex, hidden=true>;
+    int unk24 <fgcolor=cAqua, hidden=true>; Assert(unk24 == 0);
+    int section10Offset <format=hex, hidden=true>;
+    int unk2C <fgcolor=cAqua, hidden=true>; Assert(unk2C == 0);
+    int section7Offset <format=hex, hidden=true>;
+    int unk34 <fgcolor=cAqua, hidden=true>; Assert(unk34 == 0);
+    int unk38 <fgcolor=cAqua, hidden=true>; Assert(unk38 == 0);
+    int unk3C <fgcolor=cAqua, hidden=true>; Assert(unk3C == 0);
+
+    local quad pos <hidden=true> = FTell();
+    FSeek(section7Offset);
+    if (section7Count1 > 0)
+        Section7 section7s1[section7Count1];
+    if (section7Count2 > 0)
+        Section7 section7s2[section7Count2];
+
+    if (section10Count > 0) {
+        FSeek(section10Offset);
+        Section10 section10s[section10Count];
+    }
+
+    FSeek(section11Offset);
+    if (section11Count1 > 0)
+        int section11Data1[section11Count1];
+    if (section11Count2 > 0)
+        int section11Data2[section11Count2];
+    FSeek(pos);
+} Section6 <bgcolor=cAqua, optimize=false>;
+
+
+typedef struct {
+    int unk00 <format=hex>;
+    int unk04;
+    int section11Count <hidden=true>;
+    int unk0C <fgcolor=cLtBlue, hidden=true>; Assert(unk0C == 0);
+    int section11Offset <format=hex, hidden=true>;
+    int unk14 <fgcolor=cLtBlue, hidden=true>; Assert(unk14 == 0);
+    int section8Offset <format=hex, hidden=true>;
+    int unk1C <fgcolor=cLtBlue, hidden=true>; Assert(unk1C == 0);
+    int section8Count <hidden=true>;
+    int unk24 <fgcolor=cLtBlue, hidden=true>; Assert(unk24 == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    if (section8Count > 0) {
+        FSeek(section8Offset);
+        Section8 section8s[section8Count];
+    }
+    if (section11Count > 0) {
+        FSeek(section11Offset);
+        // Lifetime?
+        int section11Data[section11Count];
+    }
+    FSeek(pos);
+} Section7 <bgcolor=cLtBlue, optimize=false>;
+
+
+typedef struct {
+    byte unk00;
+    byte unk01;
+    byte unk02;
+    byte unk03;
+    int unk04;
+    int section11Count <hidden=true>;
+    int section9Count <hidden=true>;
+    int section11Offset <format=hex, hidden=true>;
+    int unk14 <fgcolor=cPurple, hidden=true>; Assert(unk14 == 0);
+    int section9Offset <format=hex, hidden=true>;
+    int unk1C <fgcolor=cPurple, hidden=true>; Assert(unk1C == 0);
+
+    local quad pos <hidden=true> = FTell();
+    if (section9Count > 0) {
+        FSeek(section9Offset);
+        Section9 section9s[section9Count];
+    }
+    if (section11Count > 0) {
+        FSeek(section11Offset);
+        int section11Data[section11Count];
+    }
+    FSeek(pos);
+} Section8 <bgcolor=cPurple, optimize=false>;
+
+
+typedef struct {
+    int unk00 <format=hex>;
+    int unk04;
+    int section11Count <hidden=true>;
+    int unk0C <fgcolor=cBlack, hidden=true>; Assert(unk18 == 0);
+    int section11Offset <format=hex, hidden=true>;
+    int unk14 <fgcolor=cBlack, hidden=true>; Assert(unk18 == 0);
+
+    if (section11Count > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(section11Offset);
+        int section11Data[section11Count];
+        FSeek(pos);
+    }
+} Section9 <bgcolor=cBlack, fgcolor=cWhite, optimize=false>;
+
+
+typedef struct {
+    int section11Offset <format=hex, hidden=true>;
+    int unk04 <fgcolor=cGray, hidden=true>; Assert(unk04 == 0);
+    int section11Count <hidden=true>;
+    int unk0C <fgcolor=cGray, hidden=true>; Assert(unk0C == 0);
+
+    if (section11Count > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(section11Offset);
+        int section11Data[section11Count];
+        FSeek(pos);
+    }
+} Section10 <bgcolor=cGray, optimize=false>;
+
+
+Header header;
+FSeek(header.section1Offset);
+Section1 section1Tree;
+FSeek(header.section4Offset);
+Section4 section4Tree;
+
+if (header.version == 5) {
+    if (header.section12Count > 0) {
+        FSeek(header.section12Offset);
+        int section12s[header.section12Count];
+    }
+    if (header.section13Count > 0) {
+        FSeek(header.section13Offset);
+        int section13s[header.section13Count];
+    }
+}

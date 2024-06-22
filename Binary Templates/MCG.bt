@@ -1,0 +1,82 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: MCG.bt
+//   Authors: Meowmaritus, TKGP
+//   Version: 
+//   Purpose: 
+//  Category: Dantelion
+// File Mask: *.mcg
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+
+LittleEndian();
+if (ReadInt() == 0x1000000)
+    BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int unk00; Assert(unk00 == 1);
+    int unk04; // unk04, unk18, unk1C may just be uninitialized memory in DeS
+    int nodeCount;
+    int nodesOffset <format=hex>;
+    int edgeCount;
+    int edgesOffset <format=hex>;
+    int unk18;
+    int unk1C;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int indexCount;
+    Vector3 position;
+    int nodeIndicesOffset <format=hex>;
+    int edgeIndicesOffset <format=hex>;
+    int unk18;
+    int unk1C;
+    
+    if (indexCount > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(nodeIndicesOffset);
+        int nodeIndices[indexCount] <bgcolor=cGreen>;
+        FSeek(edgeIndicesOffset);
+        int edgeIndices[indexCount] <bgcolor=cGreen>;
+        FSeek(pos);
+    }
+} Node <bgcolor=cLtGreen, optimize=false>;
+
+
+typedef struct {
+    int endpointIndexA;
+    int indexCountA;
+    int indicesOffsetA;
+    int endpointIndexB;
+    int indexCountB;
+    int indicesOffsetB;
+    int mcpRoomIndex;
+    uint mapID <format=hex>;
+    float unk20;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(indicesOffsetA);
+    int indicesA[indexCountA] <bgcolor=cDkAqua>;
+    FSeek(indicesOffsetB);
+    int indicesB[indexCountB] <bgcolor=cDkAqua>;
+    FSeek(pos);
+} Edge <bgcolor=cAqua, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+if (header.nodeCount > 0) {
+    FSeek(header.nodesOffset);
+    struct { Node nodes[header.nodeCount]; } nodes;
+}
+if (header.edgeCount > 0) {
+    FSeek(header.edgesOffset);
+    struct { Edge edges[header.edgeCount]; } edges;
+}

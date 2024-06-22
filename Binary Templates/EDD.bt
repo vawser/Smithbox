@@ -1,0 +1,236 @@
+//------------------------------------------------
+//--- 010 Editor v7.0.2 Binary Template
+//
+//      File: EDD.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DS2 EDD
+//  Category: Dantelion
+// File Mask: *.edd
+//  ID Bytes: 66 [+1] 53 4C 01 00 00 00 01 00 00 00 01 00 00 00 7C 00 00 00
+//   History: 
+//------------------------------------------------
+
+local int VARINT_LONG = 0;
+#include "Util.bt"
+
+LittleEndian();
+
+void RelativeAlign(quad start, int align, int should) {
+    if (should) {
+        local quad rel = FTell() - start;
+        if (rel % align > 0) {
+            FSkip(align - rel % align);
+        }
+    }
+}
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "fsSL" || magic == "fSSL");
+    VARINT_LONG = magic == "fsSL";
+
+    int unk04; Assert(unk04 == 1);
+    int unk08; Assert(unk08 == 1 || unk08 == 2);
+    int unk0C; Assert(unk0C == 1 || unk0C == 2);
+    int unk10 <format=hex>; Assert(unk10 == 0x7C);
+    int dataSize <format=hex>;
+    int blockCount; Assert(blockCount == 11);
+
+    int dataHeaderSize <format=hex>; Assert(dataHeaderSize == (VARINT_LONG ? 0x58 : 0x34));
+    int dataHeaderCount; Assert(dataHeaderCount == 1);
+    int stringHeaderSize <format=hex>; Assert(stringHeaderSize == (VARINT_LONG ? 0x10 : 8));
+    int stringCount;
+    int block3Size <format=hex>; Assert(block3Size == 4);
+    int block3Count; Assert(block3Count == 0);
+    int block4Size <format=hex>; Assert(block4Size == 8);
+    int block4Count;
+    int conditionSize <format=hex>; Assert(conditionSize == (VARINT_LONG ? 0x10 : 8));
+    int conditionCount;
+    int block6Size <format=hex>; Assert(block6Size == (VARINT_LONG ? 0x10 : 8));
+    int block6Count; Assert(block6Count == 0);
+    int block7Size <format=hex>; Assert(block7Size == (VARINT_LONG ? 0x18 : 0x10));
+    int block7Count;
+    int commandSize <format=hex>; Assert(commandSize == 4);
+    int commandCount;
+    int block9Size <format=hex>; Assert(block9Size == (VARINT_LONG ? 0x10 : 8));
+    int block9Count;
+    int stateSize <format=hex>; Assert(stateSize == (VARINT_LONG ? 0x78 : 0x3C));
+    int stateCount;
+    int machineSize <format=hex>; Assert(machineSize == (VARINT_LONG ? 0x48 : 0x30));
+    int machineCount;
+
+    int stringsOffset1 <format=hex>;
+    int unk78; Assert(unk78 == 0);
+    int stringsOffset2 <format=hex>; Assert(stringsOffset2 == stringsOffset1);
+    int unk80; // Size of strings block / 2
+    int offset84 <format=hex>; Assert(offset84 == dataSize);
+    int unk88; Assert(unk88 == 0);
+    int offset8C <format=hex>; Assert(offset8C == dataSize);
+    int unk90; Assert(unk90 == 0);
+} Header <bgcolor=cRed>;
+
+
+typedef struct {
+    Varint unk94; Assert(unk94.val == 0);
+    Varint block7Offset;
+    Varint block7Count; Assert(block7Count.val == header.block7Count);
+    Varint block4Offset;
+    Varint block4Count; Assert(block4Count.val == header.block4Count);
+    Varint machinesOffset;
+    int machineCount; Assert(machineCount == header.machineCount);
+    int unkB0[4] <format=hex, bgcolor=cBlack, fgcolor=cWhite>;
+    if (VARINT_LONG) {
+        int unk98; Assert(unk98 == 0);
+    }
+    Varint stringHeadersOffset; Assert(stringHeadersOffset.val == (VARINT_LONG ? 0x58 : 0x34));
+    Varint stringCount; Assert(stringCount.val == header.stringCount);
+} DataHeader <bgcolor=cLtRed>;
+
+
+typedef struct {
+    Varint stringOffset;
+    Varint charCount;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(dataStart + stringOffset.val);
+    wstring str;
+    FSeek(pos);
+} StringHeader <read=ReadStringHeader, bgcolor=cLtGreen, optimize=false>;
+
+wstring ReadStringHeader(StringHeader& stringHeader) {
+    return stringHeader.str;
+}
+
+typedef struct {
+    StringHeader strings[header.stringCount];
+} Strings <bgcolor=cLtGreen>;
+
+
+typedef struct {
+    int unk00;
+    short nameIndex;
+    byte unk06;
+    byte unk07;
+    
+    local wstring name = strings.strings[nameIndex].str;
+} Block4 <read=ReadBlock4, bgcolor=cGreen, optimize=false>;
+
+wstring ReadBlock4(Block4& block) {
+    return block.name;
+}
+
+
+typedef struct {
+    Varint unk00; Assert(unk00.val == -1);
+    Varint unk04; Assert(unk04.val == 0);
+} Condition <bgcolor=cDkGreen, optimize=false>;
+
+
+typedef struct {
+    Varint unk00;
+    Varint unk04; Assert(unk04.val == -1);
+    int unk08; Assert(unk08 == 0);
+    short unk0C;
+    short unk0E;
+} Block7 <bgcolor=cAqua, optimize=false>;
+
+
+typedef struct {
+    short nameIndex;
+    byte unk02; Assert(unk02 == 1);
+    byte unk03; Assert(unk03 == -1);
+    
+    local wstring name = strings.strings[nameIndex].str;
+} Command <read=ReadCommand, bgcolor=cDkAqua, optimize=false>;
+
+wstring ReadCommand(Command& command) {
+    return command.name;
+}
+
+
+typedef struct {
+    int commandsOffset <format=hex>;
+    int commandCount;
+} Block9 <bgcolor=cLtBlue, optimize=false>;
+
+
+typedef struct {
+    Varint id;
+    Varint nameIndexOffset;
+    Varint nameCount; Assert(nameCount.val == 1);
+    Varint entryCommandsOffset;
+    Varint entryCommandCount;
+    Varint exitCommandsOffset;
+    Varint exitCommandCount;
+    Varint whileCommandsOffset;
+    Varint whileCommandCount;
+    Varint block9Offset;
+    Varint block9Count;
+    Varint conditionsOffset;
+    Varint conditionCount;
+    Varint unk34; Assert(unk34.val == -1);
+    Varint unk38; Assert(unk38.val == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(dataStart + nameIndexOffset.val);
+    short nameIndex;
+    local wstring name = strings.strings[nameIndex].str;
+    FSeek(pos);
+} State <read=ReadState, bgcolor=cPurple, optimize=false>;
+
+wstring ReadState(State& state) {
+    return state.name;
+}
+
+
+typedef struct {
+    int id;
+    short nameIndex;
+    short unk06;
+    // More string indices, I think. -1 for none
+    short unk08[8];
+    Varint unk18; Assert(unk18.val == -1);
+    Varint unk1C; Assert(unk1C.val == 0);
+    Varint unk20; Assert(unk20.val == -1);
+    Varint unk24; Assert(unk24.val == 0);
+    Varint statesOffset;
+    Varint stateCount;
+    
+    local wstring name = strings.strings[nameIndex].str;
+} Machine <read=ReadMachine, bgcolor=cDkPurple, optimize=false>;
+
+wstring ReadMachine(Machine& machine) {
+    return machine.name;
+}
+
+//------------------------------------------------
+
+Header header;
+local quad dataStart <hidden=true> = FTell();
+DataHeader dataHeader;
+Strings strings;
+
+if (header.block4Count > 0) {
+    struct { Block4 block4s[header.block4Count]; } block4Group;
+}
+if (header.conditionCount > 0) {
+    struct { Condition conditions[header.conditionCount]; } conditions;
+}
+if (header.block7Count > 0) {
+    struct { Block7 block7s[header.block7Count]; } block7Group;
+}
+if (header.commandCount > 0) {
+    struct { Command commands[header.commandCount]; } commands;
+    RelativeAlign(dataStart, 8, VARINT_LONG);
+}
+if (header.block9Count > 0) {
+    struct { Block9 block9s[header.block9Count]; } block9Group;
+}
+if (header.stateCount > 0) {
+    struct { State states[header.stateCount]; } states;
+}
+if (header.machineCount > 0) {
+    struct { Machine machines[header.machineCount]; } machines;
+}

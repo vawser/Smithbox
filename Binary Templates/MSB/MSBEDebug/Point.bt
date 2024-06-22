@@ -1,0 +1,74 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSBEDebug\Point.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Elden Ring msb debug regions
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+struct Struct08;
+struct Struct10;
+struct Struct18;
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad unk00; Assert(unk00 == 0);
+    quad offset08 <format=hex>; Assert(offset08);
+    quad offset10 <format=hex>;
+    quad offset18 <format=hex>; Assert(offset18);
+    quad unk20 <hidden=true>; Assert(!unk20);
+    quad unk28 <hidden=true>; Assert(!unk28);
+    quad unk30 <hidden=true>; Assert(!unk30);
+    quad unk38 <hidden=true>; Assert(!unk38);
+    quad unk40 <hidden=true>; Assert(!unk40);
+    quad unk48 <hidden=true>; Assert(!unk48);
+    quad unk50 <hidden=true>; Assert(!unk50);
+    quad unk58 <hidden=true>; Assert(!unk58);
+    quad unk60 <hidden=true>; Assert(!unk60);
+
+    FSeek(start + offset08);
+    Struct08 struct08;
+    
+    if (offset10) {
+        FSeek(start + offset10);
+        Struct10 struct10;
+    }
+
+    FSeek(start + offset18);
+    Struct18 struct18;
+} Point <read=ReadPoint>;
+
+wstring ReadPoint(Point& point) {
+    return "";
+}
+
+//------------------------------------------------
+
+typedef struct {
+    quad unk00; Assert(unk00 == 0);
+    quad unk08; Assert(unk08 == 0);
+} Struct08;
+
+
+typedef struct {
+    quad unk00;
+    // The contents of this struct are probably determined by the region type,
+    // which isn't available in the .msbdebug
+    // Sometimes +0 is a string offset, but sometimes it's definitely not
+} Struct10;
+
+
+typedef struct {
+    quad unk00; Assert(unk00 == 0);
+    quad unk08; Assert(unk08 == 0);
+    quad unk10; Assert(unk10 == 0);
+    quad unk18; Assert(unk18 == 0);
+} Struct18;

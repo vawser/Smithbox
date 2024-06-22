@@ -1,0 +1,68 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: BHDRINFO.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Bloodborne .bhdrinfo files
+//  Category: Dantelion
+// File Mask: *.bhdrinfo
+//  ID Bytes: 01 00 00 00 [+16] 18 01 00 00
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int unk00; Assert(unk00 == 1); // Version?
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int entryCount;
+    int stringsLength <format=hex>;
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int entrySize <format=hex>; Assert(entrySize == 0x118);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+    int unk28 <hidden=true>; Assert(unk28 == 0);
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+    int unk30 <hidden=true>; Assert(unk30 == 0);
+    int unk34 <hidden=true>; Assert(unk34 == 0);
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int nameOffset <format=hex>;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    Vector3 unk08;
+    
+    local int i <hidden=true>;
+    for (i = 0; i < 64; i++) {
+        int unused <hidden=true>; Assert(unused == 0);
+    }
+    
+    int unk114;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(0x3C + nameOffset);
+    wstring name <bgcolor=cLtGreen>;
+    FSeek(pos);
+} Entry <read=ReadEntry, bgcolor=cAqua, optimize=false>;
+
+wstring ReadEntry(Entry& entry) {
+    string str;
+    SPrintf(str, "%2d %s ", entry.unk114, ReadVector3Fmt(entry.unk08, 4, 2));
+    return  str + entry.name;
+}
+
+//------------------------------------------------
+
+Header header;
+FSkip(header.stringsLength);
+if (header.entryCount > 0) {
+    struct { Entry entries[header.entryCount]; } entries;
+}

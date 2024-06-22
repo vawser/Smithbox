@@ -1,0 +1,52 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: ARM.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: King's Field IV .arm containers
+//  Category: KFIV
+// File Mask: *.arm
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#define OM2_LIBRARY
+#include "OM2.bt"
+#define TX2_LIBRARY
+#include "TX2.bt"
+#define MIX_LIBRARY
+#include "MIX.bt"
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int tx2Length <format=hex>;
+    int om2Length <format=hex>;
+    int mixLength <format=hex>;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int tx2Offset <format=hex>; Assert(tx2Offset == 0x40);
+    int om2Offset <format=hex>;
+    int mixOffset <format=hex>;
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+    int unk28 <hidden=true>; Assert(unk28 == 0);
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+    int unk30 <hidden=true>; Assert(unk30 == 0);
+    int unk34 <hidden=true>; Assert(unk34 == 0);
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+} Header <bgcolor=cLtRed>;
+
+//------------------------------------------------
+
+Header header;
+FSeek(header.tx2Offset);
+TX2 tx2;
+FSeek(header.om2Offset);
+OM2 om2;
+FSeek(header.mixOffset);
+MIX mix;

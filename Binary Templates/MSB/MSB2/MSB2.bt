@@ -1,0 +1,154 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB2\MSB2.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Dark Souls 2 map layouts
+//  Category: Katana
+// File Mask: *.msb
+//  ID Bytes: 4D 53 42 20 01 00 00 00 10 00 00 00 00 00 01 FF 05 00 00 00
+//   History: 
+//------------------------------------------------
+
+#include "..\..\Util.bt"
+#include "..\MSB.bt"
+#include "Model.bt"
+#include "Event.bt"
+#include "Point.bt"
+#include "Part.bt"
+#include "PartsPose.bt"
+#include "BoneName.bt"
+
+LittleEndian();
+local int VARINT_LONG = 0;
+if (ReadString(0, 4) == "MSB ") {
+    VARINT_LONG = 1;
+} else if (ReadUInt() > 0xFFFF) {
+    BigEndian();
+}
+
+//------------------------------------------------
+
+typedef struct {
+    Param param(-1, "MODEL_PARAM_ST", 1);
+    local int i <hidden=true>;
+    for (i = 0; i < param.count - 1; i++) {
+        FSeek(param.offsets[i].val);
+        Model models;
+    }
+    FSeek(param.nextParamOffset.val);
+} ModelParam <read=ReadModelParam, bgcolor=cLtGreen>;
+
+string ReadModelParam(ModelParam& modelParam) {
+    return ReadParam(modelParam.param);
+}
+
+
+typedef struct {
+    Param param(-1, "EVENT_PARAM_ST", 1);
+    local int i <hidden=true>;
+    for (i = 0; i < param.count - 1; i++) {
+        FSeek(param.offsets[i].val);
+        Event events;
+    }
+    FSeek(param.nextParamOffset.val);
+} EventParam <read=ReadEventParam, bgcolor=cYellow>;
+
+string ReadEventParam(EventParam& eventParam) {
+    return ReadParam(eventParam.param);
+}
+
+
+typedef struct {
+    Param param(-1, "POINT_PARAM_ST", 1);
+    local int i <hidden=true>;
+    for (i = 0; i < param.count - 1; i++) {
+        FSeek(param.offsets[i].val);
+        Point points;
+    }
+    FSeek(param.nextParamOffset.val);
+} PointParam <read=ReadPointParam, bgcolor=cAqua>;
+
+string ReadPointParam(PointParam& pointParam) {
+    return ReadParam(pointParam.param);
+}
+
+
+typedef struct {
+    Param param(-1, "ROUTE_PARAM_ST", 1);
+    Assert(param.count == 1);
+    FSeek(param.nextParamOffset.val);
+} RouteParam <read=ReadRouteParam, bgcolor=cLtGray, fgcolor=cBlack>;
+
+string ReadRouteParam(RouteParam& routeParam) {
+    return ReadParam(routeParam.param);
+}
+
+
+typedef struct {
+    Param param(-1, "LAYER_PARAM_ST", 1);
+    Assert(param.count == 1);
+    FSeek(param.nextParamOffset.val);
+} LayerParam <read=ReadLayerParam, bgcolor=cLtGray, fgcolor=cBlack>;
+
+string ReadLayerParam(LayerParam& layerParam) {
+    return ReadParam(layerParam.param);
+}
+
+
+typedef struct {
+    Param param(-1, "PARTS_PARAM_ST", 1);
+    local int i <hidden=true>;
+    for (i = 0; i < param.count - 1; i++) {
+        FSeek(param.offsets[i].val);
+        Part parts(param.version);
+    }
+    FSeek(param.nextParamOffset.val);
+} PartsParam <read=ReadPartsParam, bgcolor=cLtBlue>;
+
+string ReadPartsParam(PartsParam& partsParam) {
+    return ReadParam(partsParam.param);
+}
+
+
+typedef struct {
+    Param param(0, "MAPSTUDIO_PARTS_POSE_ST", 1);
+    local int i <hidden=true>;
+    for (i = 0; i < param.count - 1; i++) {
+        FSeek(param.offsets[i].val);
+        PartsPose partsPoses;
+    }
+    FSeek(param.nextParamOffset.val);
+} MapstudioPartsPose <read=ReadMapstudioPartsPose, bgcolor=cDkGreen>;
+
+string ReadMapstudioPartsPose(MapstudioPartsPose& partsPose) {
+    return ReadParam(partsPose.param);
+}
+
+
+typedef struct {
+    Param param(0, "MAPSTUDIO_BONE_NAME_STRING", 1);
+    local int i <hidden=true>;
+    for (i = 0; i < param.count - 1; i++) {
+        FSeek(param.offsets[i].val);
+        BoneName boneNames;
+    }
+    Assert(param.nextParamOffset.val == 0);
+} MapstudioBoneName <read=ReadMapstudioBoneName, bgcolor=cGreen>;
+
+string ReadMapstudioBoneName(MapstudioBoneName& boneName) {
+    return ReadParam(boneName.param);
+}
+
+//------------------------------------------------
+
+if (VARINT_LONG) Header header <bgcolor=cLtRed>;
+ModelParam models;
+EventParam events;
+PointParam points;
+RouteParam routes;
+LayerParam layers;
+PartsParam parts;
+MapstudioPartsPose partsPoses;
+MapstudioBoneName boneNames;

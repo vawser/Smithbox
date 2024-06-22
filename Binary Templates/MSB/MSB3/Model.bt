@@ -1,0 +1,73 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB3\Model.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DS3 MSB models
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> ModelType {
+    ModelTypeMapPiece = 0,
+    ModelTypeObject = 1,
+    ModelTypeEnemy = 2,
+    ModelTypePlayer = 4,
+    ModelTypeCollision = 5,
+};
+
+struct ModelExtra;
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+
+    quad nameOffset <format=hex, hidden=true>;
+    ModelType type;
+    int id;
+    quad sibOffset <format=hex, hidden=true>;
+    int instanceCount;
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    quad typeDataOffset <format=hex>;
+    
+    FSeek(start + nameOffset);
+    wstring name;
+    FSeek(start + sibOffset);
+    wstring sibPath;
+    
+    if (type == ModelTypeMapPiece || type == ModelTypeObject) {
+        Assert(typeDataOffset != 0);
+        FSeek(start + typeDataOffset);
+        // This sure /looks/ the same for map pieces and objects, but is it?
+        ModelExtra extra;
+    } else {
+        Assert(typeDataOffset == 0);
+    }
+} Model <read=ReadModel>;
+
+wstring ReadModel(Model& model) {
+    string str;
+    SPrintf(str, "%i ", model.type);
+    return str + model.name;
+}
+
+
+typedef struct {
+    byte unk00;
+    byte unk01;
+    byte unk02;
+    byte unk03;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} ModelExtra <read=ReadModelExtra>;
+
+string ReadModelExtra(ModelExtra &extra) {
+    string str;
+    return SPrintf(str, "%i %i %i %i",
+        extra.unk00, extra.unk01, extra.unk02, extra.unk03);
+}

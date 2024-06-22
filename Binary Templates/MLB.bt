@@ -1,0 +1,147 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: MLB.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Unknown DS2 format, only present for armor 9320
+//  Category: Dantelion
+// File Mask: *.mlb
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int entriesOffset; Assert(entriesOffset == 0x10);
+    int entryCount;
+    int type; // 0 - texture, 3 - model
+    int unk0C; Assert(unk0C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    local quad start = FTell();
+    int strOffset; Assert(strOffset == 4);
+
+    FSeek(start + strOffset);
+    wstring str;
+} Entry0 <read=ReadEntry0, bgcolor=cLtGreen, optimize=false>;
+
+wstring ReadEntry0(Entry0& entry) {
+    return entry.str;
+}
+
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+    int unk04; Assert(unk04 == 0);
+    int unk08; Assert(unk08 == 0);
+    int unk0C; Assert(unk0C == 0);
+    int unk10; Assert(unk10 == 0);
+    int unk14; Assert(unk14 == 0);
+    int unk18; Assert(unk18 == 0);
+    int unk1C; Assert(unk1C == 0);
+    int unk20; Assert(unk20 == 0);
+    int unk24; Assert(unk24 == 0);
+    int unk28; Assert(unk28 == 0);
+    int unk2C; Assert(unk2C == 0);
+} Entry3Unk20;
+
+
+typedef struct {
+    local quad start = FTell();
+    int nameOffset <format=hex>; Assert(nameOffset == 0x20);
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    
+    FSeek(start + nameOffset);
+    wstring name;
+} Entry3Member <read=ReadEntry3Member, bgcolor=cAqua, optimize=false>;
+
+wstring ReadEntry3Member(Entry3Member& member) {
+    return member.name;
+}
+
+
+typedef struct {
+    local quad start = FTell();
+    int absolutePathOffset <format=hex>; Assert(absolutePathOffset == 0x40);
+    int relativePathOffset <format=hex>;
+    int meshOffsetsOffset <format=hex>;
+    int meshCount;
+    int unk10; Assert(unk10 == 0);
+    int unk14; Assert(unk14 == 0);
+    int boneOffsetsOffset <format=hex>;
+    int boneCount;
+    int offset20;
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+    int unk28 <hidden=true>; Assert(unk28 == 0);
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+    int unk30 <hidden=true>; Assert(unk30 == 0);
+    int unk34 <hidden=true>; Assert(unk34 == 0);
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+    
+    FSeek(start + absolutePathOffset);
+    wstring absolutePath;
+
+    FSeek(start + relativePathOffset);
+    wstring relativePath;
+    
+    FSeek(meshOffsetsOffset);
+    int meshOffsets[meshCount];
+    
+    local int i <hidden=true>;
+    struct {
+        for (i = 0; i < meshCount; i++) {
+            FSeek(meshOffsets[i]);
+            Entry3Member meshes;
+        }
+    } meshes;
+    
+    FSeek(boneOffsetsOffset);
+    int boneOffsets[boneCount];
+    
+    struct {
+        for (i = 0; i < boneCount; i++) {
+            FSeek(boneOffsets[i]);
+            Entry3Member bones;
+        }
+    } bones;
+    
+    FSeek(start + offset20);
+    Entry3Unk20 unk20;
+} Entry3 <read=ReadEntry3, bgcolor=cLtGreen, optimize=false>;
+
+wstring ReadEntry3(Entry3& entry) {
+    return entry.absolutePath + " | " + entry.relativePath;
+}
+
+//------------------------------------------------
+
+Header header;
+
+if (header.entryCount > 0) {
+    int entryOffsets[header.entryCount] <bgcolor=cLtGreen>;
+    
+    local int i <hidden=true>;
+    struct {
+        for (i = 0; i < header.entryCount; i++) {
+            FSeek(entryOffsets[i]);
+            if (header.type == 0) {
+                Entry0 entries;
+            } else if (header.type == 3) {
+                Entry3 entries;
+            }
+        }
+    } entries;
+}

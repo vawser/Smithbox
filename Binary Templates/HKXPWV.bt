@@ -1,0 +1,57 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: HKXPWV.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: Dantelion
+// File Mask: *.hkxpwv
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int unk00; Assert(unk00 == 1);
+    short unk04; Assert(unk04 == 0);
+    short count06;
+    short count08;
+    short count0A;
+    int unk0C;
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk10 == 0);
+    int unk18 <hidden=true>; Assert(unk10 == 0);
+    int unk1C <hidden=true>; Assert(unk10 == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    short unk00; Assert(unk00 == -1);
+    short unk02;
+} StructA <bgcolor=cLtGreen, optimize=false>;
+
+
+typedef struct {
+    short unk00; Assert(unk00 == -1);
+    short unk02; Assert(unk02 == 0);
+    int unk04; Assert(unk04 == 0);
+} StructB <bgcolor=cAqua, optimize=false>;
+
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08; Assert(unk08 == 0);
+    int unk0C; Assert(unk0C == 0);
+} StructC <bgcolor=cLtPurple, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+struct { StructA structAs[header.count06]; } structAs;
+struct { StructB structBs[header.count08]; } structBs;
+struct { StructC structCs[header.count0A]; } structCs;

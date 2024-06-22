@@ -1,0 +1,70 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: EMELD.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Event script names file
+//  Category: Dantelion
+// File Mask: *.emeld
+//  ID Bytes: 45 4C 44 00
+//   History: 
+//------------------------------------------------
+
+local int VARINT_LONG = ReadByte(5) == -1;
+#include "Util.bt";
+
+if (ReadByte(4))
+    BigEndian();
+else
+    LittleEndian();
+
+typedef struct {
+    char magic[4]; Assert(magic == "ELD\0");
+    byte bigEndian; Assert(bigEndian == 0 || bigEndian == 1);
+    byte is64Bit; Assert(is64Bit == 0 || is64Bit == -1);
+    byte unk06; Assert(unk06 == 0);
+    byte unk07; Assert(unk07 == 0);
+    short unk08; Assert(unk08 == 0x65);
+    short unk0A; Assert(unk0A == 0xCC);
+    int fileSize;
+
+    Varint eventCount;
+    Varint eventsOffset;
+    Varint count2; Assert(count2.val == 0);
+    Varint offset2;
+    Varint count3; Assert(count3.val == 0);
+    Varint offset3;
+    Varint stringsLength;
+    Varint stringsOffset;
+
+    if (!is64Bit) {
+        int unk30; Assert(unk30 == 0);
+        int unk34; Assert(unk34 == 0);
+    }
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    Varint id;
+    Varint nameOffset;
+    if (!header.is64Bit) {
+        int unk04 <hidden=true>; Assert(unk04 == 0);
+    }
+
+    local quad pos <hidden=true> = FTell();
+    FSeek(header.stringsOffset.val + nameOffset.val);
+    wstring name <bgcolor=cAqua>;
+    FSeek(pos);
+} Event <read=ReadEvent, bgcolor=cLtGreen, optimize=false>;
+
+wstring ReadEvent(Event& event) {
+    string str;
+    SPrintf(str, "%10i ", event.id.val);
+    return str + event.name;
+}
+
+
+Header header;
+struct { Event events[header.eventCount.val]; } events <open=true>;
+// Strings padded to 0x10 relative to start

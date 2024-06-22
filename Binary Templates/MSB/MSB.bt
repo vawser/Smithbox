@@ -1,0 +1,87 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Common structs for MSB formats
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "MSB ");
+    int unk04; Assert(unk04 == 1);
+    int headerSize; Assert(headerSize == 0x10);
+    byte isBigEndian; Assert(isBigEndian == 0);
+    byte isBitBigEndian; Assert(isBitBigEndian == 0);
+    byte textEncoding; Assert(textEncoding == 1);
+    byte is64BitOffset; Assert(is64BitOffset == -1);
+} Header;
+
+
+typedef struct (int assertVersion, string assertName, int encoding) {
+    int version; if (assertVersion != -1) Assert(version == assertVersion);
+    if (VARINT_LONG) {
+        int count;
+        OffsetString name(1, encoding); Assert(name.str == assertName);
+    } else {
+        OffsetString name(0, encoding); Assert(name.str == assertName);
+        int count;
+    }
+    if (count > 1) {
+        Varint offsets[count - 1] <optimize=true>;
+    }
+    Varint nextParamOffset;
+} Param <read=ReadParam>;
+
+string ReadParam(Param &param) {
+    string str;
+    SPrintf(str, "[%5i] %2i %s", param.count - 1, param.version, param.name.str);
+    return str;
+}
+
+
+enum <int> ShapeType {
+    ShapeTypeNone = -1,
+    ShapeTypePoint = 0,
+    ShapeTypeCircle = 1,
+    ShapeTypeSphere = 2,
+    ShapeTypeCylinder = 3,
+    ShapeTypeRect = 4,
+    ShapeTypeBox = 5,
+    ShapeTypeComposite = 6
+};
+
+typedef struct {
+    float radius;
+} ShapeCircle;
+
+typedef struct {
+    float radius;
+} ShapeSphere;
+
+typedef struct {
+    float radius;
+    float height;
+} ShapeCylinder;
+
+typedef struct {
+    float width;
+    float depth;
+} ShapeRect;
+
+typedef struct {
+    float width;
+    float depth;
+    float height;
+} ShapeBox;
+
+typedef struct {
+    struct {
+        int pointIndex;
+        int unk04;
+    } pointIndices[8] <optimize=false>;
+} ShapeComposite;

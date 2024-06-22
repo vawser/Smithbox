@@ -1,0 +1,20 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: IVINFO.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Elden Ring .ivinfo files
+//  Category: Dantelion
+// File Mask: *.ivinfo
+//  ID Bytes: 01 00 00 00 00 00 00 00
+//   History: 
+//------------------------------------------------
+
+int unk00; Assert(unk00 == 1);
+int unk04; Assert(unk04 == 0);
+float unk08;
+float unk0C;
+float unk10;
+float unk14;
+float unk18; Assert(unk18 == 1);

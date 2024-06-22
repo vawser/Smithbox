@@ -1,0 +1,108 @@
+//------------------------------------------------
+//--- 010 Editor v10.0 Binary Template
+//
+//      File: PARAM.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: A general-purpose configuration format
+//  Category: Dantelion
+// File Mask: *.param
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+if (ReadByte(0x2C) == -1)
+    BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    uint stringsOffset <format=hex>;
+    ushort shortDataOffset <format=hex>;
+    short unk06;
+    short paramdefDataVersion;
+    ushort rowCount;
+
+    // Aligning to 8 and filling up the size of the fixed string
+    if (ReadByte(0x2D) & 0x80) {
+        int typePad1 <hidden=true>; Assert(typePad1 == 0);
+        OffsetString paramType(1, 0);
+        quad typePad2 <hidden=true>; Assert(typePad2 == 0);
+        quad typePad3 <hidden=true>; Assert(typePad3 == 0);
+        int typePad4 <hidden=true>; Assert(typePad4 == 0);
+    } else {
+        char paramType[0x20];
+    }
+
+    byte bigEndian; Assert(bigEndian == 0 || bigEndian == -1);
+    // All uses of these two values below are highly speculative
+    byte format2D;
+    byte format2E;
+    // Matches the paramdef version for paramdef version 101, otherwise 0 or -1
+    byte paramdefFormatVersion;
+    
+    // format2D of 1 and 2 don't have this but 3 does. I really don't know.
+    if ((format2D & 1) && (format2D & 2)) {
+        int dataOffset <format=hex>;
+        int pad1 <hidden=true>; Assert(pad1 == 0);
+        quad pad2 <hidden=true>; Assert(pad2 == 0);
+    } else if (format2D & 4) {
+        quad dataOffset <format=hex>;
+        quad pad2 <hidden=true>; Assert(pad2 == 0);
+    }
+} Header <read=ReadHeader, bgcolor=cLtRed>;
+
+string ReadHeader(Header& header) {
+    string str;
+    return SPrintf(str, "[%4i] %s", header.rowCount,
+        header.format2D & 0x80 ? header.paramType.str : header.paramType);
+}
+
+
+typedef struct {
+    if (header.format2D & 4) {
+        int id;
+        int pad <hidden=true>; // No assert - contains garbage in some SotFS params
+        quad dataOffset <format=hex>;
+        quad nameOffset <format=hex>;
+    } else {
+        int id;
+        uint dataOffset <format=hex>;
+        uint nameOffset <format=hex>;
+    }
+    
+    local quad pos <hidden=true> = FTell();
+    if (nameOffset != 0) {
+        FSeek(nameOffset);
+        if (header.format2E & 1) {
+            wstring name;
+        } else {
+            string name;
+        }
+    }
+
+    FSeek(dataOffset);
+    ubyte data <bgcolor=cBlack, fgcolor=cWhite>;
+    FSeek(pos);
+} Row <read=ReadRow, bgcolor=cLtGreen, optimize=false>;
+
+wstring ReadRow(Row& row) {
+    string str;
+    SPrintf(str, "%10i ", row.id);
+    if (exists(row.name)) {
+        if (header.format2E & 1) {
+            return str + row.name;
+        } else {
+            return str + StringToWString(row.name, CHARSET_JAPANESE);
+        }
+    } else {
+        return str;
+    }
+}
+
+//------------------------------------------------
+
+Header header;
+struct { Row rows[header.rowCount]; } rows <open=true>;

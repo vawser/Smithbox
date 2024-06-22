@@ -1,0 +1,47 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    byte tag; Assert(tag == 0x10);
+    byte version; Assert(version == 0);
+    short pad  <hidden=true>;
+    byte flags;
+    byte pad <hidden=true>;
+    short pad <hidden=true>;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int length;
+    short x;
+    short y;
+    short width;
+    short height;
+    short colors[width * height];
+} CLUT <bgcolor=cLtGreen>;
+
+
+typedef struct {
+    int length;
+    short x;
+    short y;
+    short width;
+    short height;
+    ubyte pixels[width * height * 2];
+} Image <bgcolor=cAqua>;
+
+
+Header header;
+if (header.flags & 8)
+    CLUT clut;
+Image image;

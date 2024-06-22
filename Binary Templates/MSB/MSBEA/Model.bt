@@ -1,0 +1,40 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSBEA\Model.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Enchanted Arms MSB models
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> ModelType {
+    ModelTypeMapPiece = 0,
+    ModelTypeCollision = 1,
+    ModelTypeObject = 2,
+    ModelTypeEnemy = 3,
+};
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+
+    int nameOffset <format=hex>;
+    ModelType type;
+    int id;
+    int sibOffset <format=hex>;
+    int instanceCount;
+    
+    FSeek(start + nameOffset);
+    string name;
+    FSeek(start + sibOffset);
+    string sibPath;
+} Model <read=ReadModel>;
+
+wstring ReadModel(Model& model) {
+    string str;
+    SPrintf(str, "%i ", model.type);
+    return str + model.name;
+}

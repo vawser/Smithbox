@@ -1,0 +1,118 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: BTL.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Dynamic light sources from DS2 onwards
+//  Category: Dantelion
+// File Mask: *.btl
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+#include "Util.bt"
+
+//------------------------------------------------
+
+// Note to self:
+// Strings are padded to 0x10 /relative to the start of the string block/
+// That's why there's all that garbage in there.
+
+typedef struct {
+    int unk00; Assert(unk00 == 2);
+    int version; Assert(version == 1 || version == 2 || version == 5 || version == 6
+        || version == 16 || version == 18);
+    int lightCount;
+    int namesLength <format=hex>;
+    int unk10; Assert(unk10 == 0);
+    int lightSize <format=hex>; Assert(lightSize == 0xC0 || lightSize == 0xC8 || lightSize == 0xE8);
+    
+    local int i <hidden=true>;
+    for (i = 0; i < 9; i++) {
+        int unk14 <hidden=true>; Assert(unk14 == 0);
+    }
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    ubyte unk00[16];
+    if (header.lightSize == 0xC0) {
+        int nameOffset <format=hex>;
+    } else {
+        quad nameOffset <format=hex>;
+    }
+    int unk18;
+    byte unk1C;
+    byte diffuseRGB[3];
+    float diffusePower;
+    byte specularRGB[3];
+    byte unk27;
+    float specularPower;
+    float coneAngle;
+    float unk30;
+    float unk34;
+    Vector3 position;
+    Vector3 rotation;
+    int unk50;
+    float unk54;
+    float radius;
+    int unk5C;
+    int unk60; Assert(unk60 == 0);
+    byte unk64[4];
+    float unk68;
+    byte unk6C[4];
+    float unk70;
+    float unk74;
+    float unk78;
+    float unk7C;
+    int unk80;
+    byte unk84[4];
+    float unk88;
+    int unk8C; Assert(unk8C == 0);
+    float unk90;
+    int unk94; Assert(unk94 == 0);
+    float unk98;
+    float unk9C;
+    byte unkA0[4];
+    float unkA4;
+    int unkA8; Assert(unkA8 == 0);
+    float unkAC;
+    if (header.lightSize == 0xC0) {
+        int unkB0; Assert(unkB0 == 0);
+    } else {
+        quad unkB0; Assert(unkB0 == 0);
+    }
+    float width;
+    float unkBC;
+    byte unkC0[4];
+    float unkC4;
+    
+    if (header.lightSize > 0xC8) {
+        float unkC8;
+        float unkCC;
+        float unkD0;
+        float unkD4;
+        float unkD8;
+        int unkDC;
+        int unkE0; Assert(unkE0 == 0);
+        int unkE4;
+    }
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(namesStart + nameOffset);
+    wstring name <bgcolor=cLtGreen>;
+    FSeek(pos);
+} Light <read=ReadLight, bgcolor=cAqua, optimize=false>;
+
+wstring ReadLight(Light& light) {
+    return light.name;
+}
+
+//------------------------------------------------
+
+Header header;
+local quad namesStart <hidden=true> = FTell();
+FSkip(header.namesLength);
+Light lights[header.lightCount];

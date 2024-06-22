@@ -1,0 +1,249 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int dataLength <format=hex>; Assert(dataLength == 0x60000);
+    int unk04; // Perhaps byte settingsLength?
+    int steamID3;
+    int unk0C;
+    byte cameraSpeed;
+    byte controllerVibration;
+    byte brightness;
+    byte unk13;
+    byte musicVolume;
+    byte soundEffectsVolume;
+    byte voiceVolume;
+    byte blood;
+    byte subtitles;
+    byte hud;
+    byte cameraXAxis;
+    byte cameraYAxis;
+    byte autoLockOn;
+    byte cameraAutoWallRecovery;
+    byte unk1E;
+    byte unk1F;
+    byte resetCameraYAxis;
+    byte cinematicEffects;
+    byte unk22;
+    byte crossRegionPlay;
+    byte voiceChat;
+    byte unk25;
+    byte manualAttackAiming;
+    byte autoTarget;
+    byte launchSetting;
+    byte summonSignVisibility;
+    byte unk2A;
+    byte unk2B;
+    int unk2C;
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3C; // Two shorts?
+    int unk40;
+    
+    local int i <hidden=true>;
+    struct {
+        for (i = 0; i < 20; i++) {
+            int unk44; Assert(unk44 == 0);
+        }
+    } unk44;
+    
+    int unk94; Assert(unk94 == 0x1000);
+    int unk98; Assert(unk98 == 0xFACE);
+    int unk9C; Assert(unk9C == 0xF3C);
+    
+    struct {
+        for (i = 0; i < 0x3CF; i++) {
+            int unkA0; // Pretty sure this is garbage memory
+        }
+    } unkA0;
+    
+    int unkFDC;
+    int unkFE0;
+    int unkFE4;
+    int unkFE8;
+    int unkFEC;
+    int unkFF0;
+    int unkFF4;
+    int unkFF8;
+    int unkFFC;
+    int unk1000;
+    int unk1004;
+    int unk1008;
+    int unk100C;
+    int unk1010;
+    int unk1014;
+    int unk1018;
+    int unk101C;
+    int unk1020;
+    int unk1024;
+    short unk1028;
+    short unk102A;
+    
+    struct {
+        for (i = 0; i < 27; i++) {
+            int unk102C; Assert(unk102C == 0);
+        }
+    } unk102C;
+    
+    byte occupiedSlots[10];
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    wchar_t name[0x10];
+    short unk20; Assert(unk20 == 0); // Null terminator?
+    int soulLevel;
+    int playtime; // Full seconds
+    int soulMemory;
+    int unk2E;
+    int unk32;
+    int unk36;
+    char face[4]; Assert(face == "FACE");
+    int unk3E;
+    int unk42;
+    int unk46;
+    int unk4A;
+    int unk4E;
+    int unk52;
+    int unk56;
+    int unk5A;
+    int unk5E;
+    int unk62;
+    int unk66;
+    int unk6A; // 9-12 RGBA colors?
+    int unk6E;
+    int unk72;
+    int unk76;
+    int unk7A;
+    int unk7E;
+    int unk82;
+    int unk86;
+    int unk8A;
+    int unk8E;
+    int unk92;
+    int unk96;
+    int unk9A;
+    int unk9E;
+    int unkA2;
+    int unkA6;
+    int unkAA;
+    int unkAE;
+    int unkB2;
+    int unkB6;
+    int unkBA;
+    int unkBE;
+    int unkC2;
+    int unkC6;
+    int unkCA;
+    int unkCE;
+    int unkD2;
+    int unkD6;
+    int unkDA;
+    int unkDE;
+    int unkE2;
+    int unkE6;
+    int unkEA;
+    int unkEE;
+    int unkF2;
+    int unkF6;
+    int unkFA;
+    int unkFE;
+    int unk102;
+    int unk106;
+    int unk10A;
+    int unk10E;
+    int unk112;
+    int unk116;
+    int unk11A;
+    int unk11E;
+    int unk122;
+    int unk126;
+    int unk12A;
+    int unk12E;
+    int unk132;
+    int unk136;
+    int unk13A;
+    int unk13E; Assert(unk13E == 0);
+    int unk142; Assert(unk142 == 0);
+    int unk146; Assert(unk146 == 0);
+    int unk14A; Assert(unk14A == 0);
+    int unk14E; Assert(unk14E == 0);
+    int unk152 <format=hex>; // Same order as equipment IDs below but they're weird
+    int unk156 <format=hex>;
+    int unk15A <format=hex>;
+    int unk15E <format=hex>;
+    int unk162 <format=hex>;
+    int unk166 <format=hex>;
+    int unk16A <format=hex>;
+    int unk16E <format=hex>;
+    int unk172 <format=hex>;
+    int unk176 <format=hex>;
+    int unk17A <format=hex>; Assert(unk17A == 0);
+    int unk17E <format=hex>; Assert(unk17E == 0);
+    int unk182 <format=hex>;
+    int unk186 <format=hex>;
+    int unk18A <format=hex>;
+    int unk18E <format=hex>;
+    int unk192 <format=hex>; Assert(unk192 == 0);
+    int unk196 <format=hex>;
+    int unk19A <format=hex>;
+    int unk19E <format=hex>;
+    int unk1A2 <format=hex>;
+    int unk1A6 <format=hex>;
+    int leftWeapon1ID;
+    int rightWeapon1ID;
+    int leftWeapon2ID;
+    int rightWeapon2ID;
+    int leftWeapon3ID;
+    int rightWeapon3ID;
+    int arrow1ID;
+    int bolt1ID;
+    int arrow2ID;
+    int bolt2ID;
+    int unk1D2; Assert(unk1D2 == -1);
+    int unk1D6; Assert(unk1D6 == -1);
+    int headID;
+    int bodyID;
+    int armsID;
+    int legsID;
+    int unk1EA; Assert(unk1EA == -1);
+    int ring1ID;
+    int ring2ID;
+    int ring3ID;
+    int ring4ID;
+    int covenantID;
+    int unk202; Assert(unk202 == -1);
+    int unk206; Assert(unk206 == -1);
+    int unk20A; Assert(unk20A == 0);
+    int unk20E; Assert(unk20E == 0);
+    int unk212; Assert(unk212 == 0);
+    int unk216; Assert(unk216 == 0);
+    int unk21A; Assert(unk21A == 0);
+    int unk21E;
+    int unk222;
+    int unk226;
+} Slot <read=ReadSlot, bgcolor=cAqua, optimize=false>;
+
+wstring ReadSlot(Slot& slot) {
+    return slot.name;
+}
+
+//------------------------------------------------
+
+Header header;
+struct { Slot slots[10]; } slots;

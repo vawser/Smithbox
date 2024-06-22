@@ -1,0 +1,71 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: BHD5.bt
+//   Authors: HotPocketRemix, TKGP
+//   Version: 
+//   Purpose: DS1 dvdbnd headers
+//  Category: Dark Souls
+// File Mask: *.bhd5
+//  ID Bytes: 42 48 44 35 FF 00 00 00 01 00 00 00
+//   History: 
+//------------------------------------------------
+
+if (ReadByte(4) == 0)
+    BigEndian();
+else
+    LittleEndian();
+
+typedef struct {
+    char magic[4]; Assert(magic == "BHD5");
+    // 0 for PS3, -1 for PC
+    byte unk04; Assert(unk04 == 0 || unk04 == -1);
+    byte unk05; Assert(unk05 == 0);
+    byte unk06; Assert(unk06 == 0);
+    byte unk07; Assert(unk07 == 0);
+    int unk08; Assert(unk08 == 1);
+    int fileSize <format=hex>;
+    int bucketCount;
+    int bucketsOffset <format=hex>; Assert(bucketsOffset == 0x18);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct (Header& header) {
+    int fileNameHash <format=hex>;
+    int fileSize <format=hex>;
+    quad fileOffset <format=hex>;
+} FileHeader <read=ReadFileHeader, bgcolor=cAqua, optimize=false>;
+
+string ReadFileHeader(FileHeader& header) {
+    string str;
+    SPrintf(str, "%08X : %8X+%X",
+        header.fileNameHash, header.fileOffset, header.fileSize);
+    return str;
+}
+
+
+typedef struct (Header& header) {
+    int fileHeaderCount;
+    int fileHeadersOffset <format=hex>;
+    
+    if (fileHeaderCount > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(fileHeadersOffset);
+        struct {
+            FileHeader fileHeaders(header)[fileHeaderCount];
+        } fileHeaders;
+        FSeek(pos);
+    }
+} Bucket <read=ReadBucket, bgcolor=cLtGreen, optimize=false>;
+
+string ReadBucket(Bucket& bucket) {
+    string str;
+    SPrintf(str, "[%2i]", bucket.fileHeaderCount);
+    return str;
+}
+
+
+Header header;
+struct {
+    Bucket buckets(header)[header.bucketCount];
+} buckets;

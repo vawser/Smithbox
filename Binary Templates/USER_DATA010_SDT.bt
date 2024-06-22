@@ -1,0 +1,70 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    ubyte md5[16];
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1C;
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2C;
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3C;
+    int unk40;
+    int unk44;
+    int unk48;
+    int unk4C;
+    int unk50;
+    int unk54;
+    int unk58;
+    int unk5C;
+    int unk60;
+    int unk64;
+    
+    local int i <hidden=true>;
+    for (i = 0; i < 23; i++) {
+        int unk68; Assert(unk68 == 0);
+    }
+    
+    int unkC4;
+    int unkC8;
+    int unkCC;
+    int unkD0;
+    int unkD4;
+    int unkD8;
+    int unkDC;
+    int unkE0;
+    byte occupiedSlots[10];
+    short unkEE; Assert(unkEE == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    ubyte unk00[0x210];
+    int vitality;
+    int attackPower;
+} Slot <bgcolor=cLtGreen>;
+
+//------------------------------------------------
+
+Header header;
+Slot slots[10];

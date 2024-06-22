@@ -1,0 +1,221 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB3\Event.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DS3 MSB events
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> EventType {
+    //EventTypeLight = 0,
+    //EventTypeSound = 1,
+    //EventTypeSFX = 2,
+    //EventTypeWind = 3,
+    EventTypeTreasure = 4,
+    EventTypeGenerator = 5,
+    //EventTypeMessage = 6,
+    EventTypeObjAct = 7,
+    //EventTypeSpawnPoint = 8,
+    EventTypeMapOffset = 9,
+    //EventTypeNavmesh = 10,
+    //EventTypeEnvironment = 11,
+    EventTypePseudoMultiplayer = 12,
+    //EventTypeWindSFX = 13,
+    EventTypePatrolInfo = 14,
+    EventTypePlatoonInfo = 15,
+    //EventTypeDarkSight = 16,
+    EventTypeOther = -1,
+};
+
+struct EventTreasure;
+struct EventGenerator;
+struct EventObjAct;
+struct EventMapOffset;
+struct EventPseudoMultiplayer;
+struct EventPatrolInfo;
+struct EventPlatoonInfo;
+struct EventOther;
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad nameOffset <format=hex, hidden=true>;
+    int eventID;
+    EventType type;
+    int id;
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    quad entityDataOffset <format=hex>;
+    quad typeDataOffset <format=hex>;
+    
+    Assert(nameOffset > 0);
+    FSeek(start + nameOffset);
+    wstring name;
+    
+    Assert(entityDataOffset > 0);
+    FSeek(start + entityDataOffset);
+    int partIndex;
+    int pointIndex;
+    int entityID;
+    int unkB0C <hidden=true>; Assert(unkB0C == 0);
+    
+    Assert(typeDataOffset > 0);
+    FSeek(start + typeDataOffset);
+    switch (type) {
+        case EventTypeTreasure: EventTreasure treasure; break;
+        case EventTypeGenerator: EventGenerator generator; break;
+        case EventTypeObjAct: EventObjAct objAct; break;
+        case EventTypeMapOffset: EventMapOffset mapOffset; break;
+        case EventTypePseudoMultiplayer: EventPseudoMultiplayer pseudoMultiplayer; break;
+        case EventTypePatrolInfo: EventPatrolInfo patrolInfo; break;
+        case EventTypePlatoonInfo: EventPlatoonInfo platoonInfo; break;
+        case EventTypeOther: EventOther other; break;
+        default: Assert(false);
+    }
+} Event <read=ReadEvent>;
+
+wstring ReadEvent(Event& event) {
+    string str;
+    SPrintf(str, "%2i ", event.type);
+    return str + event.name;
+}
+
+
+typedef struct {
+    int unk00 <hidden=true>; Assert(unk00 == 0);
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int partIndex;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int itemLot1;
+    int itemLot2;
+    int unk18;
+    int unk1C <hidden=true>; Assert(unk1C == -1);
+    int unk20 <hidden=true>; Assert(unk20 == -1);
+    int unk24 <hidden=true>; Assert(unk24 == -1);
+    int unk28 <hidden=true>; Assert(unk28 == -1);
+    int unk2C <hidden=true>; Assert(unk2C == -1);
+    int unk30 <hidden=true>; Assert(unk30 == -1);
+    int unk34 <hidden=true>; Assert(unk34 == -1);
+    int actionButtonParamID;
+    int pickupAnimID;
+    byte inChest;
+    byte startDisabled;
+    short unk42 <hidden=true>; Assert(unk42 == 0);
+    int unk44 <hidden=true>; Assert(unk44 == 0);
+    int unk48 <hidden=true>; Assert(unk48 == 0);
+    int unk4C <hidden=true>; Assert(unk4C == 0);
+} EventTreasure;
+
+
+typedef struct {
+    byte maxNum;
+    byte genType;
+    short limitNum;
+    short minGenNum;
+    short maxGenNum;
+    float minInterval;
+    float maxInterval;
+    byte initialSpawnCount;
+    byte unk11 <hidden=true>; Assert(unk11 == 0);
+    byte unk12 <hidden=true>; Assert(unk12 == 0);
+    byte unk13 <hidden=true>; Assert(unk13 == 0);
+    float unk14;
+    float unk18;
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+    int unk28 <hidden=true>; Assert(unk28 == 0);
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+    int spawnPointIndices[8];
+    int unk50 <hidden=true>; Assert(unk50 == 0);
+    int unk54 <hidden=true>; Assert(unk54 == 0);
+    int unk58 <hidden=true>; Assert(unk58 == 0);
+    int unk5C <hidden=true>; Assert(unk5C == 0);
+    int spawnPartIndices[32];
+    int unkE0 <hidden=true>; Assert(unkE0 == 0);
+    int unkE4 <hidden=true>; Assert(unkE4 == 0);
+    int unkE8 <hidden=true>; Assert(unkE8 == 0);
+    int unkEC <hidden=true>; Assert(unkEC == 0);
+    int unkF0 <hidden=true>; Assert(unkF0 == 0);
+    int unkF4 <hidden=true>; Assert(unkF4 == 0);
+    int unkF8 <hidden=true>; Assert(unkF8 == 0);
+    int unkFC <hidden=true>; Assert(unkFC == 0);
+} EventGenerator;
+
+
+typedef struct {
+    int entityID;
+    int partIndex;
+    int objActParamID;
+    byte stateType;
+    byte unk0D <hidden=true>; Assert(unk0D == 0);
+    short unk0E <hidden=true>; Assert(unk0E == 0);
+    int eventFlagID;
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} EventObjAct;
+
+
+typedef struct {
+    Vector3 position;
+    float degree;
+} EventMapOffset;
+
+
+typedef struct {
+    int hostEntityID;
+    int eventFlagID;
+    int activateGoodsID;
+    int unk0C; // Sound ID?
+    int unk10; // Map event ID?
+    int unk14; // Flags?
+    int unk18;
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} EventPseudoMultiplayer;
+
+
+typedef struct {
+    int unk00;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    short walkPointIndices[32];
+} EventPatrolInfo;
+
+
+typedef struct {
+    int platoonIDScriptActive;
+    int state;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int groupPartIndices[32];
+} EventPlatoonInfo;
+
+
+typedef struct {
+    int unk00; // Sound type?
+    int unk04; // Sound ID?
+    int unk08; Assert(unk08 == -1);
+    int unk0C; Assert(unk0C == -1);
+    int unk10; Assert(unk10 == -1);
+    int unk14; Assert(unk14 == -1);
+    int unk18; Assert(unk18 == -1);
+    int unk1C; Assert(unk1C == -1);
+    int unk20; Assert(unk20 == -1);
+    int unk24; Assert(unk24 == -1);
+    int unk28; Assert(unk28 == -1);
+    int unk2C; Assert(unk2C == -1);
+    int unk30; Assert(unk30 == -1);
+    int unk34; Assert(unk34 == -1);
+    int unk38; Assert(unk38 == -1);
+    int unk3C; Assert(unk3C == -1);
+    int unk40; Assert(unk40 == -1);
+    int unk44; Assert(unk44 == -1);
+} EventOther;

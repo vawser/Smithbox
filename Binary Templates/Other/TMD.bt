@@ -1,0 +1,73 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+typedef struct {
+    int version; Assert(version == 0x41);
+    uint flags;
+    int objCount;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    short x;
+    short y;
+    short z;
+    short pad;
+} ShortVector3 <read=ReadShortVector3>;
+
+string ReadShortVector3(ShortVector3& vec) {
+    string str;
+    SPrintf(str, "<%5i, %5i, %5i> (%i)", vec.x, vec.y, vec.z, vec.pad);
+    return str;
+}
+
+
+typedef struct {
+    ubyte olen;
+    ubyte ilen;
+    ubyte flag;
+    ubyte mode;
+    FSkip(ilen * 4);
+} Primitive <read=ReadPrimitive, bgcolor=cPurple, optimize=false>;
+
+string ReadPrimitive(Primitive& prim) {
+    string str;
+    SPrintf(str, "%X", prim.mode);
+    return str;
+}
+
+
+typedef struct {
+    uint verticesOffset;
+    int vertexCount;
+    uint normalsOffset;
+    int normalCount;
+    uint primitivesOffset;
+    int primitiveCount;
+    int scale; Assert(scale == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(verticesOffset + 0xC);
+    ShortVector3 vertices[vertexCount] <bgcolor=cAqua>;
+    FSeek(normalsOffset + 0xC);
+    ShortVector3 normals[normalCount] <bgcolor=cLtBlue>;
+    FSeek(primitivesOffset + 0xC);
+    struct { Primitive primitives[primitiveCount]; } primitives;
+    FSeek(pos);
+} Object <bgcolor=cLtGreen, optimize=false>;
+
+
+Header header;
+struct { Object objects[header.objCount]; } objects;

@@ -1,0 +1,47 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: TMC.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: King's Field IV .tmx containers
+//  Category: KFIV
+// File Mask: *.tmx
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#define TM2_LIBRARY
+#include "TM2.bt"
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int fileSize <format=hex>;
+    int tm2Count;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int offset <format=hex>;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} TM2Offset <bgcolor=cRed, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+struct { TM2Offset offsets[header.tm2Count]; } offsets;
+
+struct {
+    local int i <hidden=true>;
+    for (i = 0; i < header.tm2Count; i++) {
+        FSeek(offsets.offsets[i].offset);
+        TM2 tm2s;
+    }
+} tm2s;

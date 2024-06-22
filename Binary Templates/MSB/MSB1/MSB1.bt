@@ -1,0 +1,92 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB1\MSB1.bt
+//   Authors: Meowmaritus, TKGP
+//   Version: 
+//   Purpose: Dark Souls 1 map layouts
+//  Category: Dantelion
+// File Mask: *.msb
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "..\..\Util.bt"
+#include "..\MSB.bt"
+#include "Model.bt"
+#include "Event.bt"
+#include "Point.bt"
+#include "Part.bt"
+
+LittleEndian();
+if (ReadUInt(4) > 0xFFFF)
+    BigEndian();
+local int VARINT_LONG <hidden=true> = 0;
+
+//------------------------------------------------
+
+typedef struct {
+    Param param(0, "MODEL_PARAM_ST", 0);
+    local int i <hidden=true>;
+    for (i = 0; i < param.count - 1; i++) {
+        FSeek(param.offsets[i].val);
+        Model model;
+    }
+    FSeek(param.nextParamOffset.val);
+} ModelParam <read=ReadModelParam, bgcolor=cLtGreen>;
+
+string ReadModelParam(ModelParam& modelParam) {
+    return ReadParam(modelParam.param);
+}
+
+
+typedef struct {
+    Param param(0, "EVENT_PARAM_ST", 0);
+    local int i <hidden=true>;
+    for (i = 0; i < param.count - 1; i++) {
+        FSeek(param.offsets[i].val);
+        Event event;
+    }
+    FSeek(param.nextParamOffset.val);
+} EventParam <read=ReadEventParam, bgcolor=cYellow>;
+
+string ReadEventParam(EventParam& eventParam) {
+    return ReadParam(eventParam.param);
+}
+
+
+typedef struct {
+    Param param(0, "POINT_PARAM_ST", 0);
+    local int i <hidden=true>;
+    for (i = 0; i < param.count - 1; i++) {
+        FSeek(param.offsets[i].val);
+        Point point;
+    }
+    FSeek(param.nextParamOffset.val);
+} PointParam <read=ReadPointParam, bgcolor=cAqua>;
+
+string ReadPointParam(PointParam& pointParam) {
+    return ReadParam(pointParam.param);
+}
+
+
+typedef struct {
+    Param param(0, "PARTS_PARAM_ST", 0);
+    local int i <hidden=true>;
+    for (i = 0; i < param.count - 1; i++) {
+        FSeek(param.offsets[i].val);
+        Part part;
+    }
+    Assert(param.nextParamOffset.val == 0);
+} PartsParam <read=ReadPartsParam, bgcolor=cLtBlue>;
+
+string ReadPartsParam(PartsParam& partsParam) {
+    return ReadParam(partsParam.param);
+}
+
+//------------------------------------------------
+
+ModelParam models;
+EventParam events;
+PointParam points;
+PartsParam parts;

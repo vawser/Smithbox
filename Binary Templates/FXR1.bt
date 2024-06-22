@@ -1,0 +1,921 @@
+//------------------------------------------------
+//--- 010 Editor v11.0.1 Binary Template
+//
+//      File: FXR1.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: Dantelion
+// File Mask: *.ffx
+//  ID Bytes: 46 58 52 00 00 00 01 00
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+typedef int OFFSET <format=hex, fgcolor=cYellow>;
+typedef int ELEMENT_TYPE <fgcolor=cGreen>;
+
+#define PARAM_ELEMENTS \
+    case 1: struct Element1 element1; break; \
+    case 2: struct Element2 element2; break; \
+    case 5: struct Element5 element5; break; \
+    case 7: struct Element7 element7; break; \
+    case 9: struct Element9 element9; break; \
+    case 11: struct Element11 element11; break; \
+    case 19: struct Element19 element19; break; \
+    case 37: struct Element37 element37; break; \
+    case 38: struct Element38 element38; break; \
+    case 44: struct Element44 element44; break; \
+    case 46: struct Element46 element46; break; \
+    case 59: struct Element59 element59; break; \
+    case 60: struct Element60 element60; break; \
+    case 68: struct Element68 element68; break; \
+    case 70: struct Element70 element70; break; \
+    case 71: struct Element71 element71; break; \
+    case 79: struct Element79 element79; break; \
+    case 81: struct Element81 element81; break; \
+    case 85: struct Element85 element85; break; \
+    case 89: struct Element89 element89; break; \
+
+#define EVALUATABLE_ELEMENTS \
+    case 111: struct Element111 element111; break; \
+	case 112: struct Element112 element112; break; \
+	case 113: struct Element113 element113; break; \
+	case 114: struct Element114 element114; break; \
+	case 115: struct Element115 element115; break; \
+	case 120: struct Element120 element120; break; \
+	case 122: struct Element122 element122; break; \
+	case 124: struct Element124 element124; break; \
+	case 126: struct Element126 element126; break; \
+	case 127: struct Element127 element127; break; \
+	case 128: struct Element128 element128; break; \
+	case 129: struct Element129 element129; break; \
+	case 130: struct Element130 element130; break; \
+	case 132: struct Element132 element132; break; \
+    case 136: struct Element136 element136; break; \
+    case 137: struct Element137 element137; break; \
+    case 138: struct Element138 element138; break; \
+
+#define ROOT_ELEMENTS \
+    case 133: struct Element133 element133; break; \
+    case 134: struct Element134 element134; break; \
+
+#define PARAM_SWITCH \
+switch (ReadInt()) { \
+    PARAM_ELEMENTS \
+    default: int element <bgcolor=cWhite, fgcolor=cBlack>; Assert(false); break; \
+}
+
+#define EVALUATABLE_SWITCH \
+switch (ReadInt()) { \
+	EVALUATABLE_ELEMENTS \
+    default: int element <bgcolor=cWhite, fgcolor=cBlack>; Assert(false); break; \
+}
+#define ROOT_SWITCH \
+switch (ReadInt()) { \
+    ROOT_ELEMENTS \
+    default: int element <bgcolor=cWhite, fgcolor=cBlack>; Assert(false); break; \
+}
+
+#define ELEMENT_SWITCH \
+switch (ReadInt()) { \
+    PARAM_ELEMENTS \
+	EVALUATABLE_ELEMENTS \
+    ROOT_ELEMENTS \
+    default: int element <bgcolor=cWhite, fgcolor=cBlack>; Assert(false); break; \
+}
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "FXR\0");
+    short unk04; Assert(unk04 == 0);
+    short version; Assert(version == 1);
+    OFFSET rootOffset; Assert(rootOffset == 0x20);
+    int indexOffset <format=hex>;
+    int offsetCount;
+    int elementCount;
+    int unk18; Assert(unk18 == 1);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 1);
+    int unk04;
+} Element1 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 2);
+    OFFSET offset04;
+    int count08;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset04);
+    int values[count08];
+    FSeek(pos);
+} Element2 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 5);
+    OFFSET offset04;
+    OFFSET offset08;
+    int count0C;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset04);
+    float ticks[count0C] <bgcolor=cLtPurple>;
+    FSeek(offset08);
+    int values[count0C] <bgcolor=cLtPurple>;
+    FSeek(pos);
+} Element5 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 7);
+    float unk04;
+} Element7 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 9);
+    OFFSET offset04;
+    OFFSET offset08;
+    int count0C; Assert(count0C == 1);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset04);
+    float ticks[count0C] <bgcolor=cLtPurple>;
+    FSeek(offset08);
+    float values[count0C] <bgcolor=cLtPurple>;
+    FSeek(pos);
+} Element9 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 11);
+    OFFSET offset04;
+    OFFSET offset08;
+    int count0C;
+
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset04);
+    float ticks[count0C] <bgcolor=cLtPurple>;
+    FSeek(offset08);
+    float values[count0C] <bgcolor=cLtPurple>;
+    FSeek(pos);
+} Element11 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 19);
+    OFFSET offset04;
+    OFFSET offset08;
+    int count0C;
+
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset04);
+    float ticks[count0C] <bgcolor=cLtPurple>;
+    FSeek(offset08);
+    Vector4 values[count0C] <bgcolor=cLtPurple>;
+    FSeek(pos);
+} Element19 <bgcolor=cDkPurple>;
+
+typedef struct {
+    int type <bgcolor=cAqua>;
+    switch (type) {
+        case 2: 
+    float unk04;
+    float unk08;
+    int unk0C;
+    float unk10;
+    byte unk14; Assert(unk14 == 0 || unk14 == 1);
+    byte unk15; Assert(unk15 == 0 || unk15 == 1);
+    short unk16; Assert(unk16 == 0);
+            break;
+        case 3:
+    float unk04;
+    int unk08;
+    float unk0C;
+    byte unk10; Assert(unk10 == 0 || unk10 == 1);
+    byte unk11; Assert(unk11 == 0 || unk11 == 1);
+    short unk12; Assert(unk12 == 0);
+            break;
+        case 4:
+    byte unk04; Assert(unk04 == 1);
+    byte unk05; Assert(unk05 == 1);
+    short unk06; Assert(unk06 == 0);
+            break;
+        case 5:
+    byte unk04; Assert(unk04 == 0 || unk04 == 1);
+    byte unk05; Assert(unk05 == 0 || unk05 == 1);
+    short unk06; Assert(unk06 == 0);
+            break;
+        case 6:
+    float unk04;
+    int unk08; Assert(unk08 == 0 || unk08 == 1);
+            break;
+        default: Assert(false);
+    }
+} Element37AData14 <bgcolor=cBlack>;
+
+typedef struct {
+    OFFSET offset00;
+    int count04; Assert(count04 > 0);
+    int count08; Assert(count08 == count04);
+    byte unk0C; Assert(unk0C == 0 || unk0C == 1);
+    byte unk0D; Assert(unk0D == 0 || unk0D == 1);
+    short unk0E; Assert(unk0E == 1);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    OFFSET offset14;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset00);
+    struct {
+        OFFSET subOffsets[count04];
+        local quad subPos <hidden=true> = FTell();
+        local int i <hidden=true>;
+        for (i = 0; i < count04; i++) {
+            FSeek(subOffsets[i]);
+            PARAM_SWITCH
+        }
+        FSeek(subPos);
+    } subElements;
+    
+    if (offset14 != 0) {
+        FSeek(offset14);
+        Element37AData14 data14;
+    }
+    FSeek(pos);
+} Element37A;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 37);
+    int unk04;
+    OFFSET offset08;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    
+    if (offset08 != 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(offset08);
+        Element37A struct37A;
+        FSeek(pos);
+    }
+} Element37 <bgcolor=cDkPurple>;
+
+
+typedef struct {
+    int type <bgcolor=cBlack, fgcolor=cLtGray>;
+    OFFSET offset <bgcolor=cBlack>;
+    
+    if (type != 28) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(offset);
+        switch (type) {
+            case 0:
+    int unk00; Assert(unk00 == 2);
+    int unk04; Assert(unk04 == 0);
+    float unk08;
+    float unk0C;
+    float unk10;
+                break;
+            case 4:
+    int count00;
+    float unkA[count00];
+    float unkB[count00];
+                break;
+            case 6:
+    int count00; Assert(count00 == 2 || count00 == 3);
+    float unkA[count00];
+    float unkB[count00];
+    int unkX0; Assert(unkX0 >= 0 || unkX0 <= 2);
+                break;
+            case 12:
+    int unk00; Assert(unk00 == 4);
+    int unk04; Assert(unk04 == 0);
+    float unk08;
+    float unk0C;
+    float unk10;
+    float unk14;
+    float unk18;
+    float unk1C;
+    float unk20;
+                break;
+            case 16:
+    int count00; Assert(count00 == 2 || count00 == 5);
+    float unkA[count00];
+    float unkB[count00];
+                break;
+            case 17:
+    int count00; Assert(count00 == 5);
+    float unkA[count00];
+    float unkB[count00];
+    float unkX0;
+    float unkX4;
+                break;
+            case 24:
+    float unk00;
+                break;
+            case 25:
+    float unk00;
+    float unk04;
+    float unk08;
+                break;
+            case 26:
+    float unk00;
+    int unk04; Assert(unk04 == 0 || unk04 == 2);
+                break;
+            case 27:
+    float unk00;
+    float unk04;
+    float unk08;
+    int unk0C; Assert(unk0C == 0);
+                break;
+            default: Assert(false);
+        }
+        FSeek(pos);
+    }
+} Element38AData10Value <bgcolor=cLtGray, fgcolor=cBlack, optimize=false>;
+
+typedef struct (int parentOffset) {
+    int type <bgcolor=cLtBlue>;
+    int size <format=hex>;
+    int count08;
+    OFFSET offset0C;
+    OFFSET offset10;
+    OFFSET offset14; Assert(offset14 == parentOffset);
+    
+    if (count08 > 0) {
+        local quad pos <hidden=true> = FTell();
+        struct {
+            FSeek(offset0C);
+            int unkA[count08];
+            FSeek(offset10);
+            Element38AData10Value unkB[count08];
+            
+            local int i <hidden=true>;
+            for (i = 0; i < count08; i++) {
+                Assert(unkA[i] == 1 && unkB[i].type == 4 && unkB[i].count00 == 2);
+            }
+        } unkCommon;
+        FSeek(pos);
+    }
+
+    switch (type) {
+        case 28:
+    Element38AData10Value value18;
+    Element38AData10Value value20;
+    Element38AData10Value value28;
+    int unk30;
+            break;
+        case 30:
+    Element38AData10Value value18;
+    Element38AData10Value value20;
+    Element38AData10Value value28;
+    Element38AData10Value value30;
+    float unk38;
+    int unk3C; Assert(unk3C == 0 || unk3C == 1);
+    int unk40; Assert(unk40 == 0 || unk40 == 1);
+            break;
+        case 31:
+    Element38AData10Value value18;
+    Element38AData10Value value20;
+    Element38AData10Value value28;
+    Element38AData10Value value30;
+    int unk38; Assert(unk38 == 0 || unk38 == 1);
+    int unk40; Assert(unk40 == 0 || unk40 == 1);
+            break;
+        case 55:
+    Element38AData10Value value18;
+    Element38AData10Value value20;
+    Element38AData10Value value28;
+    int unk30; Assert(unk30 == 0);
+    float unk34;
+            break;
+        case 84:
+    Element38AData10Value value18;
+    Element38AData10Value value20;
+    Element38AData10Value value28;
+    int unk30; Assert(unk30 == 0);
+    float unk34;
+    Element38AData10Value value38;
+    int unk40;
+            break;
+        case 105:
+    Element38AData10Value value18;
+    Element38AData10Value value20;
+    Element38AData10Value value28;
+    int unk30; Assert(unk30 == 0);
+    float unk34;
+    Element38AData10Value value38;
+    int unk40;
+    Element38AData10Value value44;
+            break;
+        case 107:
+    int unk18; Assert(unk18 == 0);
+    int unk1C; Assert(unk1C == 0);
+    int unk20;
+    int unk24; Assert(unk24 == 2);
+    Element38AData10Value value28;
+    Element38AData10Value value30;
+    Element38AData10Value value38;
+    Element38AData10Value value40;
+    Element38AData10Value value48;
+    Element38AData10Value value50;
+    Element38AData10Value value58;
+            break;
+        case 108:
+    float unk18;
+    float unk1C;
+    int unk20; Assert(unk20 == 0);
+    int unk24; Assert(unk24 == 0 || unk24 == 1);
+    int unk28; Assert(unk28 == 0);
+    int unk2C;
+    int unk30;
+    int unk34;
+    int unk38; Assert(unk38 == 0);
+    int unk3C; Assert(unk3C == 0);
+    Element38AData10Value value40;
+    Element38AData10Value value48;
+    Element38AData10Value value50;
+    Element38AData10Value value58;
+    Element38AData10Value value60;
+    Element38AData10Value value68;
+    Element38AData10Value value70;
+    Element38AData10Value value78;
+    Element38AData10Value value80;
+    Element38AData10Value value88;
+    Element38AData10Value value90;
+    Element38AData10Value value98;
+    int unkA0;
+    int unkA4;
+    Element38AData10Value valueA8;
+    Element38AData10Value valueB0;
+    Element38AData10Value valueB8;
+    Element38AData10Value valueC0;
+    Element38AData10Value valueC8;
+    Element38AData10Value valueD0;
+    Element38AData10Value valueD8;
+    Element38AData10Value valueE0;
+    Element38AData10Value valueE8;
+    Element38AData10Value valueF0;
+    Element38AData10Value valueF8;
+    Element38AData10Value value100;
+    Element38AData10Value value108;
+    Element38AData10Value value110;
+    int unk118; Assert(unk118 == -1 || unk118 == -2);
+    int unk11C; Assert(unk11C == -1 || unk11C == -2);
+    int unk120; Assert(unk120 == -1);
+    int unk124; Assert(unk124 == 0);
+    int unk128; Assert(unk128 == 0 || unk128 == 1);
+            break;
+        default: //Assert(false);
+    }
+} Element38AData10 <bgcolor=cBlack>;
+
+typedef struct {
+    int type <bgcolor=cBlue>;
+    switch (type) {
+        case 0:
+    int unk04;
+            break;
+        case 1:
+    byte unk04; Assert(unk04 == 0 || unk04 == 1);
+    byte unk05; Assert(unk05 == 0 || unk05 == 1);
+    short unk06; Assert(unk06 == 0);
+    int unk08; Assert(unk08 == 0);
+    int unk0C; Assert(unk0C == 0);
+    float unk10; Assert(unk10 == 0);
+    float unk14;
+    float unk18;
+    int unk1C; Assert(unk1C == 0);
+    float unk20;
+    float unk24;
+    int unk28; Assert(unk28 == 0);
+    float unk2C;
+            break;
+        default: Assert(false);
+    }
+} Element38AData14 <bgcolor=cBlack>;
+
+typedef struct {
+    local int thisOffset <hidden=true> = FTell();
+    OFFSET offset00;
+    int count04;
+    int count08; Assert(count08 == count04);
+    short unk0C; Assert(unk0C == 0);
+    short unk0E; Assert(unk0E == 1);
+    OFFSET offset10;
+    OFFSET offset14;
+    
+    local quad pos <hidden=true> = FTell();
+    if (count04 > 0) {
+        FSeek(offset00);
+        struct {
+            OFFSET subOffsets[count04];
+            local quad subPos <hidden=true> = FTell();
+            local int i <hidden=true>;
+            for (i = 0; i < count04; i++) {
+                FSeek(subOffsets[i]);
+                PARAM_SWITCH
+            }
+            FSeek(subPos);
+        } subElements;
+    }
+    
+    if (offset10 != 0) {
+        FSeek(offset10);
+        Element38AData10 data10(thisOffset);
+    }
+    
+    if (offset14 != 0) {
+        FSeek(offset14);
+        Element38AData14 data14;
+    }
+    FSeek(pos);
+} Element38A;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 38);
+    int unk04;
+    OFFSET offset08;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    
+    if (offset08 != 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(offset08);
+        Element38A struct38A;
+        FSeek(pos);
+    }
+} Element38 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 44);
+    short unk04;
+    short unk06;
+} Element44 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 46);
+    short unk04;
+    short unk06;
+} Element46 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 59);
+    int unk04;
+} Element59 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 60);
+    short unk04;
+    short unk06;
+} Element60 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 68);
+    int unk04;
+} Element68 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 70);
+    float unk04;
+} Element70 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 71);
+    short unk04;
+    short unk06;
+} Element71 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 79);
+    int unk04;
+    int unk08;
+} Element79 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 81);
+    float unk04;
+    float unk08;
+} Element81 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 85);
+    float unk04;
+    float unk08;
+} Element85 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 89);
+    OFFSET offset04;
+    OFFSET offset08;
+    int count0C;
+    int unk10; Assert(unk10 == 1);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset04);
+    float ticks[count0C] <bgcolor=cLtPurple>;
+    FSeek(offset08);
+    int values[count0C] <bgcolor=cLtPurple>;
+    FSeek(pos);
+} Element89 <bgcolor=cDkPurple>;
+
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 111);
+    int unk04;
+} Element111 <bgcolor=cRed>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 112);
+} Element112 <bgcolor=cRed>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 113);
+} Element113 <bgcolor=cRed>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 114);
+    short unk04;
+    short unk06;
+} Element114 <bgcolor=cRed>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 115);
+    short unk04;
+    short unk06;
+} Element115 <bgcolor=cRed>;
+
+typedef struct { // AND?
+    ELEMENT_TYPE type; Assert(type == 120);
+    OFFSET leftOffset;
+    OFFSET rightOffset;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(leftOffset);
+    struct { EVALUATABLE_SWITCH } left;
+    FSeek(rightOffset);
+    struct { EVALUATABLE_SWITCH } right;
+    FSeek(pos);
+} Element120 <bgcolor=cRed>;
+
+// OR?
+
+typedef struct { // GE?
+    ELEMENT_TYPE type; Assert(type == 122);
+    OFFSET leftOffset;
+    OFFSET rightOffset;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(leftOffset);
+    struct { EVALUATABLE_SWITCH } left;
+    FSeek(rightOffset);
+    struct { EVALUATABLE_SWITCH } right;
+    FSeek(pos);
+} Element122 <bgcolor=cRed>;
+
+// GT?
+
+typedef struct { // LE?
+    ELEMENT_TYPE type; Assert(type == 124);
+    OFFSET leftOffset;
+    OFFSET rightOffset;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(leftOffset);
+    struct { EVALUATABLE_SWITCH } left;
+    FSeek(rightOffset);
+    struct { EVALUATABLE_SWITCH } right;
+    FSeek(pos);
+} Element124 <bgcolor=cRed>;
+
+// LT?
+
+typedef struct { // EQ?
+    ELEMENT_TYPE type; Assert(type == 126);
+    OFFSET leftOffset;
+    OFFSET rightOffset;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(leftOffset);
+    struct { EVALUATABLE_SWITCH } left;
+    FSeek(rightOffset);
+    struct { EVALUATABLE_SWITCH } right;
+    FSeek(pos);
+} Element126 <bgcolor=cRed>;
+
+typedef struct { // NE?
+    ELEMENT_TYPE type; Assert(type == 127);
+    OFFSET leftOffset;
+    OFFSET rightOffset;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(leftOffset);
+    struct { EVALUATABLE_SWITCH } left;
+    FSeek(rightOffset);
+    struct { EVALUATABLE_SWITCH } right;
+    FSeek(pos);
+} Element127 <bgcolor=cRed>;
+
+typedef struct { // NOT?
+    ELEMENT_TYPE type; Assert(type == 128);
+    OFFSET operandOffset;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(operandOffset);
+    struct { EVALUATABLE_SWITCH } operand;
+    FSeek(pos);
+} Element128 <bgcolor=cRed>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 129);
+} Element129 <bgcolor=cRed>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 130);
+} Element130 <bgcolor=cRed>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 132);
+} Element132 <bgcolor=cRed>;
+
+
+typedef struct {
+    OFFSET stateOffset;
+    OFFSET evaluatableOffset;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(evaluatableOffset);
+    struct { EVALUATABLE_SWITCH } evaluatable;
+    FSeek(pos);
+} Trigger <optimize=false>;
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+    int unk04;
+} ActionA <bgcolor=cLtGreen>;
+
+typedef struct {
+    int actionID;
+    OFFSET offset04;
+    int count08;
+    int count0C; Assert(count0C == count08);
+    short unk10; Assert(unk10 == 0);
+    short unk12; Assert(unk12 == 1);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    OFFSET offset18;
+    
+    local quad pos <hidden=true> = FTell();
+    if (count08 > 0) {
+        FSeek(offset04);
+        struct {
+            OFFSET offsets[count08];
+            local quad subPos <hidden=true> = FTell();
+            local int i <hidden=true>;
+            for (i = 0; i < count08; i++) {
+                FSeek(offsets[i]);
+                PARAM_SWITCH
+            }
+            FSeek(subPos);
+        } elements;
+    }
+    if (offset18 != 0) {
+        FSeek(offset18);
+        ActionA actionA;
+    }
+    FSeek(pos);
+} Action <optimize=false>;
+
+typedef struct {
+    OFFSET triggersOffset;
+    OFFSET actionsOffset;
+    int triggerCount;
+    int actionCount;
+    
+    local quad pos <hidden=true> = FTell();
+    if (triggerCount > 0) {
+        FSeek(triggersOffset);
+        struct { Trigger triggers[triggerCount]; } triggers;
+    }
+    if (actionCount > 0) {
+        FSeek(actionsOffset);
+        struct { Action actions[actionCount]; } actions;
+    }
+    FSeek(pos);
+} State <bgcolor=cGreen, optimize=false>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 133);
+    int effectID;   
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24 <hidden=true>; Assert(unk24 == 8);
+    OFFSET offset28;
+    int unk2C; Assert(unk2C == 0 || unk2C == 1);
+    int unk30; Assert(unk30 == unk2C);
+    short unk34; Assert(unk34 == 0);
+    short unk36; Assert(unk36 == 1);
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+    OFFSET offset40;
+    int unk44; Assert(unk44 == 0 || unk44 == 1);
+    int unk48; Assert(unk48 == unk44);
+    short unk4C; Assert(unk4C == 0);
+    short unk4E; Assert(unk4E == 1);
+    int unk50 <hidden=true>; Assert(unk50 == 0);
+    int unk54 <hidden=true>; Assert(unk54 == 0);
+    OFFSET statesOffset;
+    int stateCount;
+    
+    local quad pos <hidden=true> = FTell();
+    if (unk2C == 1) {
+        FSeek(offset28);
+        OFFSET paramOffsetA;
+        FSeek(paramOffsetA);
+        struct { PARAM_SWITCH } paramA;
+    }
+    if (unk44 == 1) {
+        FSeek(offset40);
+        OFFSET paramOffsetB;
+        FSeek(paramOffsetB);
+        struct { PARAM_SWITCH } paramB;
+    }
+    FSeek(statesOffset);
+    struct { State states[stateCount]; } states;
+    FSeek(pos);
+} Element133 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 134);
+    int effectID;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    OFFSET offset0C;
+    int count10;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset0C);
+    struct {
+        local int i <hidden=true>;
+        for (i = 0; i < count10; i++) {
+            struct {
+                int subOffset;
+                
+                local quad subPos <hidden=true> = FTell();
+                FSeek(subOffset);
+                Element133 subEffect;
+                FSeek(subPos);
+            } subEffect;
+        }
+    } subEffects;
+    FSeek(pos);
+} Element134 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 136);
+} Element136 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 137);
+    int unk04;
+    int unk08;
+    int unk0C;
+} Element137 <bgcolor=cDkPurple>;
+
+typedef struct {
+    ELEMENT_TYPE type; Assert(type == 138);
+    int unk04;
+} Element138 <bgcolor=cDkPurple>;
+
+//------------------------------------------------
+
+Header header;
+
+// Padded to 0x10?
+FSeek(header.indexOffset);
+int offsetIndex[header.offsetCount] <format=hex, bgcolor=cLtGreen>;
+int elementIndex[header.elementCount] <format=hex, bgcolor=cAqua>;
+
+local int i <hidden=true>;
+for (i = 0; i < header.offsetCount; i++) {
+    FSeek(offsetIndex[i]);
+    int offset <hidden=true, bgcolor=cYellow>;
+}
+for (i = 0; i <header.offsetCount; i++) {
+    FSeek(offset[i]);
+    short s <hidden=true, bgcolor=cSilver>;
+}
+struct {
+    for (i = 0; i < header.elementCount; i++) {
+        FSeek(elementIndex[i]);
+        ELEMENT_SWITCH
+    }
+    FSeek(FileSize()); // Just to avoid 010 error
+} elements;
+
+FSeek(header.rootOffset);
+struct { ROOT_SWITCH } root;

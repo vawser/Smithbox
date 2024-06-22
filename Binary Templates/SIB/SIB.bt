@@ -1,0 +1,297 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: SIB.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Source quality model format; only one example (c9990 in DeS) known to exist
+//  Category: Dantelion
+// File Mask: *.sib
+//  ID Bytes: [+40] 53 49 42 20
+//   History: 
+//------------------------------------------------
+
+#include "..\Util.bt"
+#include "Util.bt"
+#include "Motion.bt"
+#include "Material.bt"
+#include "Entity.bt"
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    Block block(1, 7, 0x34);
+    char magic[4]; Assert(magic == "SIB ");
+    int unk04;
+    int unk08;
+    int unk0C;
+    MarkedString path1(0xA3);
+    MarkedString path2(0xA3);
+    MarkedString name1(0xA3);
+    MarkedString name2(0xA3);
+    PrefixString version;
+} Header;
+
+
+typedef struct {
+    Block block(5, 2, 0x34);
+    int unk00;
+    int unk04;
+    int unk08;
+} Footer;
+
+
+typedef struct {
+    Block block(0, 6, 0x01);
+    Header header;
+    Marker endHeader(0x01);
+    Motion motion;
+    Marker endMotion(0x01);
+    Materials materials;
+    Marker endMaterials(0x01);
+    Entities entities;
+    Marker endEntities(0x01);
+    Footer footer;
+    Marker end(0x04);
+    int unkE04;
+} File <bgcolor=cLtRed>;
+
+//------------------------------------------------
+
+File file;
+
+//------------------------------------------------
+
+// Dead struct storage
+/*
+typedef struct {
+    Align(4);
+    Block block;
+    int unk08;
+    int unk0C;
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1C;
+    int unk20;
+    int unk24;
+    MarkedString name;
+    MarkedString type;
+    int unkX00;
+    
+    if (type.str == "BITMAP") {
+        Block valueBlock;
+        byte valueBytes[valueBlock.length];
+    } else if (type.str == "BOOL") {
+        Block stringBlock;
+        byte stringBytes[stringBlock.length];
+        int unkY00;
+        int unkY04;
+        Block valueBlock;
+        byte valueBytes[valueBlock.length];
+    } else if (type.str == "FLOAT") {
+        Block stringBlock;
+        byte stringBytes[stringBlock.length];
+        int unkY00;
+        int unkY04;
+        Block valueBlock;
+        byte valueBytes[valueBlock.length];
+    } else if (type.str == "INT") {
+        Block stringBlock;
+        byte stringBytes[stringBlock.length];
+        int unkY00;
+        int unkY04;
+        Block valueBlock;
+        byte valueBytes[valueBlock.length];
+    } else if (type.str == "NORMALBUMP") {
+        Block valueBlock;
+        byte valueBytes[valueBlock.length];
+    } else if (type.str == "RGB") {
+        Block stringBlock;
+        byte stringBytes[stringBlock.length];
+        int unkY00;
+        int unkY04;
+        Block valueBlock;
+        byte valueBytes[valueBlock.length];
+    } else if (type.str == "STRING") {
+        Block stringBlock;
+        byte stringBytes[stringBlock.length];
+        int unkY00;
+        int unkY04;
+        Block valueBlock;
+        byte valueBytes[valueBlock.length];
+    } else if (type.str == "TEXMAP") {
+        Block stringBlock;
+        byte stringBytes[stringBlock.length];
+        int unkY00;
+        int unkY04;
+        Block valueBlock;
+        byte valueBytes[valueBlock.length];
+    } else {
+        Printf(type.str);
+        Assert(false);
+    }
+} Param <read=ReadParam, bgcolor=cAqua, optimize=false>;
+
+string ReadParam(Param& param) {
+    string str;
+    SPrintf(str, "%s %s", param.type.str, param.name.str);
+    return str;
+}
+
+
+typedef struct {
+    Align(4);
+    Block blockA;
+    int unk08;
+    int unk0C;
+    int unk10;
+    Block blockB;
+    int unkB08;
+    int unkB0C;
+    int unkB10;
+    MarkedString name;
+    int unkC00;
+    int unkC04;
+    int unkC08;
+    Param params[unkC00];
+} ParamGroupA <read=ReadParamGroupA, bgcolor=cLtBlue, optimize=false>;
+
+string ReadParamGroupA(ParamGroupA& group) {
+    return group.name.str;
+}
+
+
+typedef struct {
+    Block block;
+    int unk08;
+    int unk0C;
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1C;
+    int unk20;
+    int unk24;
+    MarkedString name1;
+    int unkB00;
+    int unkB04;
+    int unkB08;
+    int unkB0C;
+    int unkB10;
+    int unkB14;
+    int unkB18;
+    int unkB1C;
+    int unkB20;
+    int unkB24;
+    int unkB28;
+    int unkB2C;
+    MarkedString name2;
+    int unkC00;
+    int unkC04;
+    int unkC08;
+    Param params[unkC00];
+    Marker marker;
+    int unkD04;
+} ParamGroupB <read=ReadParamGroupB, bgcolor=cLtBlue, optimize=false>;
+
+string ReadParamGroupB(ParamGroupB& group) {
+    return group.name.str;
+}
+
+
+typedef struct {
+    Block block;
+    int unk08;
+    int unk0C;
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1C;
+    ParamGroupB paramGroupBs[unk14];
+} MaterialParams;
+
+
+typedef struct {
+    Block block;
+    int unk08;
+    int unk0C;
+    int unk10;
+    MarkedString type;
+    int unkX00;
+    int unkX04;
+    Param param;
+    Align(4);
+} Texture <read=ReadTexture, bgcolor=cDkAqua, optimize=false>;
+
+string ReadTexture(Texture& tex) {
+    return tex.type.str;
+}
+
+
+typedef struct {
+    Block block;
+    int unk08;
+    int unk0C;
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1C;
+    Texture textures[unk14];
+} Textures <bgcolor=cBlack, fgcolor=cWhite>;
+
+
+typedef struct {
+    Block block;
+    int unk08;
+    int unk0C;
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1C;
+    int unk20;
+    int unk24;
+    AlignString shading;
+    int unkB[33];
+    Textures textures;
+    ParamGroupA paramGroupAs[2];
+} Shader <bgcolor=cLtAqua>;
+
+
+typedef struct {
+    Block block;
+    int unk08;
+    int unk0C;
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1C;
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2C;
+    MarkedString type;
+    MarkedString name;
+    int unkC00;
+    Shader shader;
+    MaterialParams params;
+    int unkD[10];
+} Material <read=ReadMaterial, bgcolor=cBlue, optimize=false>;
+
+string ReadMaterial(Material& mat) {
+    return "mat";
+}
+
+
+typedef struct {
+    int unk00;
+    int length;
+    int unk08;
+    int unk0C;
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1C;
+    Material materials[unk14];
+} Materials <bgcolor=cBlack, fgcolor=cWhite>;
+*/

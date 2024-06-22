@@ -1,0 +1,153 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: MOSB.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Demon's Souls .mosb files
+//  Category: Dantelion
+// File Mask: *.mosb
+//  ID Bytes: 4D 4F 53 42
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+BigEndian();
+
+struct Struct4;
+struct Struct5;
+struct Struct6;
+struct Struct10;
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "MOSB");
+    short unk04; Assert(unk04 == 2);
+    short unk06; Assert(unk06 == 0);
+    int count1;
+    int count2;
+    char name[0x20]; // Longest name in practice is 0xC so this is a bit of a guess
+    int offset1 <format=hex>;
+    int offset2 <format=hex>;
+    int offset3 <format=hex>;
+    int offset4 <format=hex>;
+    int offset5 <format=hex>;
+    int offset6 <format=hex>;
+    int offset7 <format=hex>;
+    int offset8 <format=hex>;
+    int offset9 <format=hex>;
+    int offset10 <format=hex>;
+    int offset11 <format=hex>;
+    int offset12 <format=hex>;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    float unk00;
+    float unk04;
+    byte unk08;
+    byte unk09 <hidden=true>; Assert(unk09 == 0);
+    byte struct3Count;
+    byte struct4Count;
+    int struct3Offset <format=hex>;
+    int struct4Offset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    if (struct3Count > 0) {
+        FSeek(header.offset3 + struct3Offset);
+        short struct3s[struct3Count] <bgcolor=cGreen>;
+    }
+    FSeek(header.offset4 + struct4Offset);
+    Struct4 struct4s[struct4Count];
+    FSeek(pos);
+} Struct1 <bgcolor=cLtGreen, optimize=false>;
+
+
+typedef struct {
+    int nameOffset <format=hex>;
+    byte struct10Count;
+    byte unk05 <hidden=true>; Assert(unk05 == 0);
+    byte unk06 <hidden=true>; Assert(unk06 == 0);
+    byte unk07 <hidden=true>; Assert(unk07 == 0);
+    byte unk08;
+    byte unk09;
+    short unk0A <hidden=true>; Assert(unk0A == 0);
+    short unk0C; Assert(!(unk0C & 0xFF00)); // Byte or short?
+    short unk0E <hidden=true>; Assert(unk0E == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int struct10Offset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(header.offset12 + nameOffset);
+    string name;
+    FSeek(header.offset10 + struct10Offset);
+    Struct10 struct10s[struct10Count];
+    FSeek(pos);
+} Struct2 <read=ReadStruct2, bgcolor=cDkYellow, optimize=false>;
+
+string ReadStruct2(Struct2& s2) {
+    return s2.name;
+}
+
+
+typedef struct {
+    float unk00;
+    byte struct5Count; Assert(struct5Count == 1);
+    byte unk05 <hidden=true>; Assert(unk05 == 0);
+    byte unk06 <hidden=true>; Assert(unk06 == 0);
+    byte unk07 <hidden=true>; Assert(unk07 == 0);
+    int struct5Offset <format=hex>;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(header.offset5 + struct5Offset);
+    Struct5 struct5[struct5Count];
+    FSeek(pos);
+} Struct4 <bgcolor=cDkGreen, optimize=false>;
+
+
+typedef struct {
+    short unk00;
+    short struct6Count;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int struct6Offset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(header.offset6 + struct6Offset);
+    Struct6 struct6s[struct6Count];
+    FSeek(pos);
+} Struct5 <bgcolor=cLtYellow, optimize=false>;
+
+
+typedef struct {
+    int unk00;
+    int unk04;
+} Struct6 <bgcolor=cYellow>;
+
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+} Struct10 <bgcolor=cAqua>;
+
+//------------------------------------------------
+
+Header header;
+FSeek(header.offset1);
+struct { Struct1 struct1s[header.count1]; } struct1s;
+if (header.count2 > 0) {
+    FSeek(header.offset2);
+    struct { Struct2 struct2s[header.count2]; } struct2s;
+}
+FSeek(header.offset11);
+// This is probably referenced somewhere but since the offsets are relative
+// and there's only ever one string, I don't know where
+string fileNameAgain <bgcolor=cRed>; Assert(fileNameAgain == header.name);

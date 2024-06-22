@@ -1,0 +1,55 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MOD.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: King's Field IV .mod containers
+//  Category: KFIV
+// File Mask: *.mod
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#define MOD1_LIBRARY
+#include "MOD1.bt"
+#define TM2_LIBRARY
+#include "TM2.bt"
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int length1 <format=hex>;
+    int offset1 <format=hex>; Assert(offset1 == 0x10);
+    int tm2Length <format=hex>;
+    int tm2Offset <format=hex>;
+} MODHeader <bgcolor=cRed>;
+
+
+typedef struct {
+    local quad fileStart <hidden=true> = FTell();
+    
+    MODHeader header;
+    FSeek(fileStart + header.offset1);
+    MOD1 mod1;
+    FSeek(fileStart + header.tm2Offset);
+    TM2 tm2;
+} MOD <optimize=false>;
+
+//------------------------------------------------
+
+typedef struct {
+    int modCount;
+    int fileSize <format=hex>;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} Header <bgcolor=cLtRed>;
+
+if (ReadInt(4) == FileSize()) {
+    Header header;
+    MOD mods[header.modCount];
+} else {
+    MOD mod;
+}

@@ -1,0 +1,51 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: BBLF.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Binary BLF
+//  Category: Dantelion
+// File Mask: *.bin
+//  ID Bytes: 42 42 4C 46
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+
+BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "BBLF");
+    byte unk04; Assert(unk04 == 1);
+    byte unk05; Assert(unk05 == 0);
+    byte unk06; Assert(unk06 == 0);
+    byte unk07; Assert(unk07 == 0);
+    int fileSize <format=hex>;
+    int headerSize <format=hex>; Assert(headerSize == 0x20);
+    int entryCount;
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int id;
+    int fileCount;
+    OffsetString path(0, 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} Entry <read=ReadEntry, bgcolor=cLtGreen, optimize=false>;
+
+string ReadEntry(Entry& entry) {
+    string str;
+    SPrintf(str, "%6i [%4i] ", entry.id, entry.fileCount);
+    return str + entry.path.str;
+}
+
+//------------------------------------------------
+
+Header header;
+struct { Entry entries[header.entryCount]; } entries <open=true>;

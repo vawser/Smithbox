@@ -1,0 +1,110 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSB1\Point.bt
+//   Authors: Meowmaritus, TKGP
+//   Version: 
+//   Purpose: DS1 map layout regions
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    int nameOffset <format=hex>;
+    int unk04;
+    int id;
+    ShapeType shapeType;
+    Vector3 position;
+    Vector3 rotation;
+    int baseDataOffset1 <format=hex>;
+    int baseDataOffset2 <format=hex>;
+    int unk30;
+    int shapeDataOffset <format=hex>;
+    int offset5 <format=hex>;
+    int offset6 <format=hex>;
+    int offset7 <format=hex>;
+    int offset8 <format=hex>;
+    int unk48 <hidden=true>; Assert(unk48 == 0);
+    int unk4C <hidden=true>; Assert(unk4C == 0);
+    int unk50 <hidden=true>; Assert(unk50 == 0);
+    int unk54 <hidden=true>; Assert(unk54 == 0);
+    int unk58 <hidden=true>; Assert(unk58 == 0);
+    int unk5C <hidden=true>; Assert(unk5C == 0);
+    int unk60 <hidden=true>; Assert(unk60 == 0);
+    int unk64 <hidden=true>; Assert(unk64 == 0);
+    int unk68 <hidden=true>; Assert(unk68 == 0);
+    int unk6C <hidden=true>; Assert(unk6C == 0);
+    int unk70 <hidden=true>; Assert(unk70 == 0);
+    int unk74 <hidden=true>; Assert(unk74 == 0);
+    int unk78 <hidden=true>; Assert(unk78 == 0);
+    int unk7C <hidden=true>; Assert(unk7C == 0);
+    
+    FSeek(start + nameOffset);
+    string name;
+    
+    FSeek(start + baseDataOffset1);
+    short unkCountA;
+    if (unkCountA > 0) short unkArrayA[unkCountA];
+    
+    FSeek(start + baseDataOffset2);
+    short unkCountB;
+    if (unkCountB > 0) short unkArrayB[unkCountB];
+    
+    if (shapeType == ShapeTypeNone || shapeType == ShapeTypePoint) {
+        Assert(shapeDataOffset == 0);
+    } else {
+        Assert(shapeDataOffset > 0);
+        FSeek(start + shapeDataOffset);
+        switch (shapeType) {
+            case ShapeTypeCircle: ShapeCircle circle; break;
+            case ShapeTypeSphere: ShapeSphere sphere; break;
+            case ShapeTypeCylinder: ShapeCylinder cylinder; break;
+            case ShapeTypeRect: ShapeRect rect; break;
+            case ShapeTypeBox: ShapeBox box; break;
+            default: Assert(false);
+        }
+    }
+    
+    if (offset5 != 0) {
+        FSeek(start + offset5);
+        int unkE00;
+        int unkE04 <hidden=true>; Assert(unkE04 == 0);
+        int unkE08;
+        int unkE0C <hidden=true>; Assert(unkE0C == 0);
+    }
+    
+    // A map ID, judging by m26_00_00.msb
+    if (offset6 != 0) {
+        FSeek(start + offset6);
+        int unkF00;
+        int unkF04;
+        int unkF08;
+        int unkF0C;
+    }
+    
+    if (offset7 != 0) {
+        FSeek(start + offset7);
+        int unkG00;
+        int unkG04;
+        int unkG08;
+        int unkG0C <hidden=true>; Assert(unkG0C == 0);
+    }
+    
+    if (offset8 != 0) {
+        FSeek(start + offset8);
+        int unkH00;
+        int unkH04;
+        int unkH08 <hidden=true>; Assert(unkH08 == 0);
+        int unkH0C <hidden=true>; Assert(unkH0C == 0);
+    }
+} Point <read=ReadPoint>;
+
+wstring ReadPoint(Point& point) {
+    string str;
+    SPrintf(str, "%2i ", point.shapeType);
+    return str + StringToWString(point.name, CHARSET_JAPANESE);
+}

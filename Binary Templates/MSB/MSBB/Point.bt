@@ -1,0 +1,71 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSBB\Point.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: BB MSB regions
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad nameOffset <format=hex>;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int id;
+    ShapeType shapeType;
+    Vector3 position;
+    Vector3 rotation;
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+    quad shortsAOffset <format=hex>;
+    quad shortsBOffset <format=hex>;
+    quad shapeDataOffset <format=hex>;
+    quad entityDataOffset <format=hex>;
+    
+    Assert(nameOffset > 0);
+    FSeek(start + nameOffset);
+    wstring name;
+    
+    Assert(shortsAOffset > 0);
+    FSeek(start + shortsAOffset);
+    short shortCountA <hidden=true>; Assert(shortCountA == 0);
+    // Pad to 4
+    
+    Assert(shortsBOffset > 0);
+    FSeek(start + shortsBOffset);
+    short shortCountB <hidden=true>; Assert(shortCountB == 0);
+    // Pad to 8
+    
+    if (shapeType == ShapeTypePoint) {
+        Assert(shapeDataOffset == 0);
+    } else {
+        Assert(shapeDataOffset != 0);
+    }
+    
+    if (shapeDataOffset != 0) {
+        FSeek(start + shapeDataOffset);
+        switch (shapeType) {
+            case ShapeTypeCircle: ShapeCircle circle; break;
+            case ShapeTypeSphere: ShapeSphere sphere; break;
+            case ShapeTypeCylinder: ShapeCylinder cylinder; break;
+            case ShapeTypeRect: ShapeRect rect; break;
+            case ShapeTypeBox: ShapeBox box; break;
+            default: Assert(false);
+        }
+    }
+    
+    Assert(entityDataOffset > 0);
+    FSeek(start + entityDataOffset);
+    int entityID;
+    // Pad to 8
+} Point <read=ReadPoint>;
+
+wstring ReadPoint(Point& point) {
+    string str;
+    SPrintf(str, "%2i ", point.shapeType);
+    return str + point.name;
+}

@@ -1,0 +1,83 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: FVB.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: Dantelion
+// File Mask: *.fvb
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+struct StructB;
+
+//------------------------------------------------
+
+typedef struct {
+    int unk00; Assert(unk00 == 1);
+    int unk04; Assert(unk04 == 1);
+    int count08;
+    quad dataLength <format=hex>;
+    quad structASize <format=hex>; Assert(structASize == 0x60);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+    int unk28 <hidden=true>; Assert(unk28 == 0);
+    int unk2C <hidden=true>; Assert(unk2C == 0);
+    int unk30 <hidden=true>; Assert(unk30 == 0);
+    int unk34 <hidden=true>; Assert(unk34 == 0);
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    ubyte unk00[16];
+    quad offset10 <format=hex>;
+    int unk18; Assert(unk18 == 0);
+    int unk1C; Assert(unk1C == 1);
+    int unk20;
+    int unk24; Assert(unk24 == 0);
+    quad offset28 <format=hex>;
+    Vector3 unk30;
+    Vector3 unk3C;
+    Vector3 unk48;
+    int unk54; Assert(unk54 == 1);
+    quad offset58 <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(dataStart + offset10);
+    wstring str10 <bgcolor=cLtGreen>;
+    if (offset28) {
+        FSeek(dataStart + offset28);
+        wstring str28 <bgcolor=cLtGreen>;
+    }
+    FSeek(dataStart + offset58);
+    StructB structB;
+    FSeek(pos);
+} StructA <read=ReadStructA, bgcolor=cAqua, optimize=false>;
+
+wstring ReadStructA(StructA& structA) {
+    return structA.str10;
+}
+
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+    int unk04; Assert(unk04 == 0);
+    quad offset08;
+    
+    FSeek(dataStart + offset08);
+    int unkA00 <bgcolor=cYellow>; // -1 outside of m60_00_00_99
+} StructB <bgcolor=cGreen, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+local quad dataStart <hidden=true> = FTell();
+FSkip(header.dataLength);
+struct { StructA structAs[header.count08]; } structAs <open=true>;

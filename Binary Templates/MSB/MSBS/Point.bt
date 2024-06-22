@@ -1,0 +1,274 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSBS\Point.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Sekiro MSB regions
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> PointType {
+    PointTypeInvasionPoint = 1,
+    PointTypeEnvironmentMapPoint = 2,
+    //PointTypeRegion3 = 3,
+    PointTypeSound = 4,
+    PointTypeSFX = 5,
+    PointTypeWindSFX = 6,
+    //PointTypeRegion7 = 7,
+    PointTypeSpawnPoint = 8,
+    //PointTypeMessage = 9,
+    //PointTypePseudoMultiplayer = 10,
+    PointTypePatrolRoute = 11,
+    //PointTypeMovementPoint = 12,
+    PointTypeWarpPoint = 13,
+    PointTypeActivationArea = 14,
+    PointTypeEvent = 15,
+    PointTypeLogic = 0,
+    PointTypeEnvironmentMapEffectBox = 17,
+    PointTypeWindArea = 18,
+    //PointTypeRegion19 = 19,
+    PointTypeMufflingBox = 20,
+    PointTypeMufflingPortal = 21,
+    //PointTypeDrawGroupArea = 22,
+    PointTypeSoundSpaceOverride = 23,
+    PointTypeMufflingPlane = 24,
+    PointTypePartsGroupArea = 25,
+    PointTypeAutoDrawGroupPoint = 26,
+    PointTypeOther = -1,
+};
+
+struct PointInvasionPoint;
+struct PointEnvironmentMapPoint;
+struct PointSound;
+struct PointSFX;
+struct PointWindSFX;
+struct PointSpawnPoint;
+struct PointEnvironmentMapEffectBox;
+struct PointMufflingBox;
+struct PointMufflingPortal;
+struct PointSoundSpaceOverride;
+struct PointPartsGroupArea;
+struct PointAutoDrawGroupPoint;
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad nameOffset <format=hex>;
+    PointType pointType;
+    int id;
+    ShapeType shapeType;
+    Vector3 position;
+    Vector3 rotation;
+    int unk2C;
+    quad shortsAOffset <format=hex>;
+    quad shortsBOffset <format=hex>;
+    int unk40; Assert(unk40 == -1);
+    int mapStudioLayer;
+    quad shapeDataOffset <format=hex>;
+    quad entityDataOffset <format=hex>;
+    quad typeDataOffset <format=hex>;
+    
+    Assert(nameOffset > 0);
+    FSeek(start + nameOffset);
+    wstring name;
+    
+    Assert(shortsAOffset > 0);
+    FSeek(start + shortsAOffset);
+    short shortCountA;
+    if (shortCountA > 0) {
+        short shortsA[shortCountA];
+    }
+    // Pad to 4
+    
+    Assert(shortsBOffset > 0);
+    FSeek(start + shortsBOffset);
+    short shortCountB;
+    if (shortCountB > 0) {
+        short shortsB[shortCountB];
+    }
+    // Pad to 8
+    
+    Assert(entityDataOffset > 0);
+    FSeek(start + entityDataOffset);
+    int activationPartIndex;
+    int entityID;
+    // Pad to 8
+    
+    if (shapeType == ShapeTypePoint) {
+        Assert(shapeDataOffset == 0);
+    } else {
+        Assert(shapeDataOffset > 0);
+        FSeek(start + shapeDataOffset);
+        switch (shapeType) {
+            case ShapeTypeCircle: ShapeCircle circle; break;
+            case ShapeTypeSphere: ShapeSphere sphere; break;
+            case ShapeTypeCylinder: ShapeCylinder cylinder; break;
+            case ShapeTypeRect: ShapeRect rect; break;
+            case ShapeTypeBox: ShapeBox box; break;
+            case ShapeTypeComposite: ShapeComposite composite; break;
+            default: Assert(false);
+        }
+    }
+    
+    if (pointType == PointTypePatrolRoute || pointType == PointTypeWarpPoint
+        || pointType == PointTypeActivationArea || pointType == PointTypeEvent
+        || pointType == PointTypeLogic || pointType == PointTypeWindArea
+        || pointType == PointTypeMufflingPlane || pointType == PointTypeOther) {
+        Assert(typeDataOffset == 0);
+    } else {
+        Assert(typeDataOffset > 0);
+        FSeek(start + typeDataOffset);
+        switch (pointType) {
+            case PointTypeInvasionPoint: PointInvasionPoint invasionPoint; break;
+            case PointTypeEnvironmentMapPoint: PointEnvironmentMapPoint environmentMapPoint; break;
+            case PointTypeSound: PointSound sound; break;
+            case PointTypeSFX: PointSFX sfx; break;
+            case PointTypeWindSFX: PointWindSFX windSFX; break;
+            case PointTypeSpawnPoint: PointSpawnPoint spawnPoint; break;
+            case PointTypeEnvironmentMapEffectBox: PointEnvironmentMapEffectBox environmentMapEffectBox; break;
+            case PointTypeMufflingBox: PointMufflingBox mufflingBox; break;
+            case PointTypeMufflingPortal: PointMufflingPortal mufflingPortal; break;
+            case PointTypeSoundSpaceOverride: PointSoundSpaceOverride soundSpaceOverride; break;
+            case PointTypePartsGroupArea: PointPartsGroupArea partsGroupArea; break;
+            case PointTypeAutoDrawGroupPoint: PointAutoDrawGroupPoint autoDrawGroupPoint; break;
+            default: Assert(false);
+        }
+    }
+} Point <read=ReadPoint>;
+
+wstring ReadPoint(Point& point) {
+    string str;
+    SPrintf(str, "%i %i ", point.pointType, point.shapeType);
+    return str + point.name;
+}
+
+
+typedef struct {
+    int priority;
+} PointInvasionPoint;
+
+
+typedef struct {
+    float unk00;
+    int unk04;
+    int unk08; Assert(unk08 == -1);
+    int unk0C;
+    float unk10;
+    float unk14;
+    int unk18;
+    int unk1C;
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2C; Assert(unk2C == -1);
+    int unk30 <hidden=true>; Assert(unk30 == 0);
+    int unk34 <hidden=true>; Assert(unk34 == 0);
+    int unk38 <hidden=true>; Assert(unk38 == 0);
+    int unk3C <hidden=true>; Assert(unk3C == 0);
+} PointEnvironmentMapPoint;
+
+
+typedef struct {
+    int soundType;
+    int soundID;
+    int childPointIndices[16];
+    int unk48;
+} PointSound;
+
+
+typedef struct {
+    int effectID;
+    int unk04;
+    int unk08; Assert(unk08 == -1);
+    int unk0C; Assert(unk0C == -1);
+    int unk10; Assert(unk10 == -1);
+    int startDisabled;
+} PointSFX;
+
+
+typedef struct {
+    int effectID;
+    int unk04; Assert(unk04 == -1);
+    int unk08; Assert(unk08 == -1);
+    int unk0C; Assert(unk0C == -1);
+    int unk10; Assert(unk10 == -1);
+    int windAreaIndex;
+    float unk18;
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} PointWindSFX;
+
+
+typedef struct {
+    int unk00; Assert(unk00 == -1);
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} PointSpawnPoint;
+
+
+typedef struct {
+    float unk00;
+    float compare;
+    byte unk08;
+    byte unk09;
+    short unk0A;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    int unk24;
+    float unk28;
+    float unk2C;
+    int unk30 <hidden=true>; Assert(unk30 == 0);
+} PointEnvironmentMapEffectBox;
+
+
+typedef struct {
+    int unk00;
+} PointMufflingBox;
+
+
+typedef struct {
+    int unk00;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+} PointMufflingPortal;
+
+
+typedef struct {
+    byte unk00;
+    byte unk01;
+    short unk02 <hidden=true>; Assert(unk02 == 0);
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} PointSoundSpaceOverride;
+
+
+typedef struct {
+    int unk00;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+} PointPartsGroupArea;
+
+
+typedef struct {
+    int unk00;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} PointAutoDrawGroupPoint;

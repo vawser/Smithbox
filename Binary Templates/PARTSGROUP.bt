@@ -1,0 +1,145 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: PARTSGROUP.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Sekiro .partsgroup files
+//  Category: Dantelion
+// File Mask: *.partsgroup
+//  ID Bytes: 50 54 47 50
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+// Set to read items in separate lists
+const int DECOMPOSED = 0;
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "PTGP");
+    int unk04; Assert(unk04 == 1);
+    quad offset1 <format=hex>; Assert(offset1 == 0x48);
+    quad offset2 <format=hex>;
+    quad offset3 <format=hex>;
+    quad offset4 <format=hex>;
+    quad offset5 <format=hex>;
+    int count1;
+    int count2;
+    int count3;
+    int count4;
+    int count5;
+    int unk24 <hidden=true>; Assert(unk24 == 0);
+} Header <bgcolor=cLtRed>;
+
+
+struct Struct1;
+struct Struct2;
+struct Struct3;
+struct Struct4;
+struct Struct5;
+
+
+typedef struct {
+    OffsetString name(1, 1);
+    quad struct2sOffset <format=hex>;
+    quad struct3sOffset <format=hex>;
+    int id; // Matches index
+    int struct2Count;
+    int struct3Count;
+    int unk24;
+    
+    if (!DECOMPOSED) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(struct2sOffset);
+        struct { Struct2 struct2s[struct2Count]; } struct2s;
+        FSeek(struct3sOffset);
+        struct { Struct3 struct3s[struct3Count]; } struct3s;
+        FSeek(pos);
+    }
+} Struct1 <read=ReadStruct1, bgcolor=cLtGreen, optimize=false>;
+
+wstring ReadStruct1(Struct1 &s1) {
+    string str;
+    SPrintf(str, "[%2i] ", s1.id);
+    return str + s1.name.str;
+}
+
+
+typedef struct {
+    OffsetString name(1, 1);
+    int id; // Usually matches index, sometimes out of order
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} Struct2 <read=ReadStruct2, bgcolor=cAqua, optimize=false>;
+
+wstring ReadStruct2(Struct2 &s2) {
+    string str;
+    SPrintf(str, "[%2i] ", s2.id);
+    return str + s2.name.str;
+}
+
+
+typedef struct {
+    quad indicesOffset <format=hex>;
+    int indexCount;
+    int partType; Assert(partType == 0 || partType == 1);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(indicesOffset);
+    int struct4Indices[indexCount];
+    FSeek(pos);
+} Struct3 <bgcolor=cYellow, optimize=false>;
+
+
+typedef struct {
+    OffsetString name(1, 1);
+    quad struct5Offset <format=hex>; // Shared
+    int partType; Assert(partType == 0 || partType == 1);
+    int msbIndex; // Index of the part in the msb; relative to sublist
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+} Struct4 <read=ReadStruct4, bgcolor=cLtPurple, optimize=false>;
+
+wstring ReadStruct4(Struct4 &s4) {
+    return s4.name.str;
+}
+
+
+typedef struct {
+    OffsetString name(1, 1);
+    Vector3 unk08;
+    Vector3 unk14;
+} Struct5 <read=ReadStruct5, bgcolor=cBlue, optimize=false>;
+
+wstring ReadStruct5(Struct5 &s5) {
+    string str;
+    SPrintf(str, " %s %s", ReadVector3(s5.unk08), ReadVector3(s5.unk14));
+    return s5.name.str + str;
+}
+
+//------------------------------------------------
+
+Header header;
+if (header.count1 > 0) {
+    FSeek(header.offset1);
+    struct { Struct1 struct1s[header.count1]; } struct1s;
+}
+if (DECOMPOSED && header.count2 > 0) {
+    FSeek(header.offset2);
+    struct { Struct2 struct2s[header.count2]; } struct2s;
+}
+if (DECOMPOSED && header.count3 > 0) {
+    FSeek(header.offset3);
+    struct { Struct3 struct3s[header.count3]; } struct3s;
+}
+if (header.count4 > 0) {
+    FSeek(header.offset4);
+    struct { Struct4 struct4s[header.count4]; } struct4s;
+}
+if (header.count5 > 0) {
+    FSeek(header.offset5);
+    struct { Struct5 struct5s[header.count5]; } struct5s;
+}

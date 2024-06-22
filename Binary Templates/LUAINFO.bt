@@ -1,0 +1,76 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: LUAINFO.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: DS1/BB/DS3 script goal info
+//  Category: Dark Souls
+// File Mask: *.luainfo
+//  ID Bytes: 4C 55 41 49 [+8] 00 00 00 00
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+if (ReadInt(4) != 1)
+    BigEndian();
+
+local int VARINT_LONG = ReadInt(0x24) == 0;
+#include "Util.bt"
+
+typedef struct {
+    char magic[4]; Assert(magic == "LUAI");
+    int unk04; Assert(unk04 == 1);
+    int goalCount;
+    int unk0C; Assert(unk0C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int id;
+    if (VARINT_LONG) {
+        byte isBattleInterrupt;
+        byte isLogicInterrupt;
+        short zero <hidden=true>; Assert(zero == 0);
+    }
+    Varint nameOffset;
+    Varint interruptNameOffset;
+    if (!VARINT_LONG) {
+        byte isBattleInterrupt;
+        byte isLogicInterrupt;
+        short zero <hidden=true>; Assert(zero == 0);
+    }
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(nameOffset.val);
+    if (VARINT_LONG)
+        wstring name <bgcolor=cGreen>;
+    else
+        string name <bgcolor=cGreen>;
+
+    if (interruptNameOffset.val != 0) {
+        FSeek(interruptNameOffset.val);
+        if (VARINT_LONG)
+            wstring interruptName <bgcolor=cGreen>;
+        else
+            string interruptName <bgcolor=cGreen>;
+    }
+    FSeek(pos);
+} Goal <read=ReadGoal, bgcolor=cLtGreen, optimize=false>;
+
+wstring ReadGoal(Goal& goal) {
+    string str;
+    if (goal.interruptNameOffset.val == 0)
+        SPrintf(str, "%i %i %6i %s", goal.isBattleInterrupt, goal.isLogicInterrupt,
+            goal.id, goal.name);
+    else
+        SPrintf(str, "%i %i %6i %s | %s", goal.isBattleInterrupt, goal.isLogicInterrupt,
+            goal.id, goal.name, goal.interruptName);
+    return str;
+}
+
+
+Header header;
+struct {
+    Goal goals[header.goalCount];
+} goals;

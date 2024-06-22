@@ -1,0 +1,73 @@
+//------------------------------------------------
+//--- 010 Editor v11.0.1 Binary Template
+//
+//      File: RMB.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Pad rumble files
+//  Category: Dantelion
+// File Mask: *.rmb
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+if (ReadInt(4) == 0x10000000)
+    BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    short rumbleCount;
+    short unk02 <hidden=true>; Assert(unk02 == 0);
+    int unk04 <format=hex>; Assert(unk04 == 0x10); // Rumble size?
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    short start;
+    short duration;
+    ubyte beginStrength;
+    ubyte endStrength;
+    short unk06 <hidden=true>; Assert(unk06 == 0);
+} State <read=ReadState, bgcolor=cAqua, optimize=false>;
+
+string ReadState(State& state) {
+    string str;
+    return SPrintf(str, "%3i %3i %2Xh %2Xh",
+        state.start, state.duration, state.beginStrength, state.endStrength);
+}
+
+
+typedef struct {
+    short heavyCount;
+    short lightCount;
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int heavyOffset <format=hex>;
+    int lightOffset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    if (heavyCount > 0) {
+        FSeek(heavyOffset);
+        struct { State heavyStates[heavyCount]; } heavyStates;
+    }
+    if (lightCount > 0) {
+        FSeek(lightOffset);
+        struct { State lightStates[lightCount]; } lightStates;
+    }
+    FSeek(pos);
+} Rumble <read=ReadRumble, bgcolor=cLtGreen, optimize=false>;
+
+string ReadRumble(Rumble& rumble) {
+    string str;
+    return SPrintf(str, "[%2i] [%2i]",
+        rumble.heavyCount, rumble.lightCount);
+}
+
+//------------------------------------------------
+
+Header header;
+struct { Rumble rumbles[header.rumbleCount]; } rumbles <open=true>;

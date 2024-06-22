@@ -1,0 +1,99 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: CLMP.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Cloth-related .clm files
+//  Category: Katana
+// File Mask: *.clm
+//  ID Bytes: 43 4C 4D 50
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+if (ReadInt(8) == 0x24000000)
+    BigEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "CLMP");
+    byte unk04; Assert(unk04 == 3);
+    byte unk05; Assert(unk05 == 2);
+    short unk06; Assert(unk06 == 0);
+    int unk08; Assert(unk08 == 0x24);
+    int struct1Size <format=hex>; Assert(struct1Size == 0x10);
+    int struct1Count;
+    int struct2Size <format=hex>; Assert(struct2Size == 0x24);
+    int struct2Count;
+    int struct3Size <format=hex>; Assert(struct3Size == 0x10);
+    int struct3Count;
+} Header <bgcolor=cLtRed>;
+
+
+// One per FLVER mesh
+typedef struct {
+    short unk00;
+    short unk02; Assert(unk02 == (unk00 == -1 ? -1 : 0));
+    int dataOffset1 <format=hex>;
+    int dataOffset2 <format=hex>;
+    int dataCount; // Matches vertex count
+    
+    if (dataCount > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(dataOffset1);
+        short data1[dataCount] <bgcolor=cGreen>;
+        FSeek(dataOffset2);
+        byte data2[dataCount] <bgcolor=cDkGreen>;
+        FSeek(pos);
+    }
+} Struct1 <bgcolor=cLtGreen, optimize=false>;
+
+
+typedef struct {
+    OffsetString name(0, 0);
+    int offset04 <format=hex>;
+    int offset08 <format=hex>;
+    int offset0C <format=hex>;
+    int offset10 <format=hex>;
+    int offset14 <format=hex>;
+    int count18;
+    int unk1C;
+    int unk20 <hidden=true>; Assert(unk20 == 0);
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(offset04);
+    Vector4 itemsA[count18] <bgcolor=cYellow>;
+    FSeek(offset08);
+    Vector4 itemsB[count18] <bgcolor=cYellow>;
+    FSeek(offset0C);
+    Vector4 itemsC[count18] <bgcolor=cYellow>;
+    FSeek(offset10);
+    Vector4 itemsD[count18] <bgcolor=cYellow>;
+    FSeek(offset14);
+    short itemsE[count18] <bgcolor=cDkYellow>;
+    FSeek(pos);
+} Struct2 <read=ReadStruct2, bgcolor=cLtYellow, optimize=false>;
+
+string ReadStruct2(Struct2 &s2) {
+    return s2.name.str;
+}
+
+
+typedef struct {
+    byte unk00;
+    byte unk01;
+    byte unk02;
+    byte unk03 <hidden=true>; Assert(unk03 == 0);
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    quad unk08; // Verified via endianness
+} Struct3 <bgcolor=cAqua, optimize=false>;
+
+//------------------------------------------------
+
+Header header;
+struct { Struct1 struct1s[header.struct1Count]; } struct1s;
+struct { Struct2 struct2s[header.struct2Count]; } struct2s;
+struct { Struct3 struct3s[header.struct3Count]; } struct3s;

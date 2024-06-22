@@ -1,0 +1,76 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: CCM1.bt
+//   Authors: Jed "Nyxojaele" Lang, TKGP
+//   Version: 
+//   Purpose: DeS/DS1 font layouts
+//  Category: Dark Souls
+// File Mask: *.ccm
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+local int des = 0;
+LittleEndian();
+if (ReadShort() == 0x100) {
+    des = 1;
+    BigEndian();
+}
+
+typedef struct {
+    short unk00; Assert(unk00 == 1);
+    short unk02; Assert(unk02 == (des ? 0 : 1));
+    int fileSize <format=hex>;
+    short unk08;
+    short textureWidth;
+    short textureHeight;
+    short unk0E; // Always 0 or 0x20
+    short codeGroupCount;
+    short glyphCount;
+    int unk14; Assert(unk14 == 0x20);
+    int glyphOffset <format=hex>;
+    byte unk1C; // 1 in DeS, 1 or 4 in DS1
+    byte unk1D; // 1 in DeS, 0 in DS1
+    byte textureCount;
+    byte unk1F; Assert(unk1F == 0);
+} Header;
+
+
+typedef struct {
+    int startCode;
+    int endCode;
+    int glyphIndex;
+} CodeGroup <read=ReadCodeGroup>;
+
+wstring ReadCodeGroup(CodeGroup& group) {
+    string str;
+    SPrintf(str, "%5i - %5i : %4i",
+        group.startCode, group.endCode, group.glyphIndex);
+    return str;
+}
+
+
+typedef struct {
+    float u1;
+    float v1;
+    float u2;
+    float v2;
+    short preSpace;
+    short width;
+    short advance;
+    short textureIndex;
+} Glyph <read=ReadGlyph>;
+
+wstring ReadGlyph(Glyph& glyph) {
+    string str;
+    SPrintf(str, "%2i %2i %2i %2i",
+        glyph.preSpace, glyph.width, glyph.advance, glyph.textureIndex);
+    return str;
+}
+
+
+Header header <bgcolor=cLtRed>;
+CodeGroup codeGroups[header.codeGroupCount] <bgcolor=cLtGreen>;
+Glyph glyphs[header.glyphCount] <bgcolor=cLtBlue>;
+Assert(FTell() == header.fileSize);

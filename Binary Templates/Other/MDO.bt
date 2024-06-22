@@ -1,0 +1,77 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MDO.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+
+typedef struct {
+    int textureCount;
+    struct {
+        string texture;
+    } textures[textureCount] <optimize=false>;
+    if (FTell() % 4 != 0)
+        FSkip(4 - FTell() % 4);
+
+    int unkCount;
+    float unkFloats[unkCount * 8];
+    
+    local int i <hidden=true>;
+    for (i = 0; i < 12; i++) {
+        int unk24 <hidden=true>; Assert(unk24 == 0);
+    }
+    
+    int meshCount;
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    Vector3 position;
+    Vector3 normal;
+    Vector2 uv;
+} Vertex <read=ReadVertex, bgcolor=cPurple>;
+
+string ReadVertex(Vertex& vert) {
+    string str;
+    SPrintf(str, "%s %s %s",
+        ReadVector3(vert.position), ReadVector3(vert.normal), ReadVector2(vert.uv));
+    return str;
+}
+
+
+typedef struct {
+    int unk00; // Shader or transparency or something; usually 0, 1 for MLGS blade
+    short textureIndex;
+    short unk06;
+    short indexCount;
+    short vertexCount;
+    int indicesOffset <format=hex>;
+    int verticesOffset <format=hex>;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(indicesOffset);
+    ushort indices[indexCount] <bgcolor=cAqua>;
+    FSeek(verticesOffset);
+    Vertex vertices[vertexCount];
+    FSeek(pos);
+} Mesh <read=ReadMesh, bgcolor=cLtGreen, optimize=false>;
+
+string ReadMesh(Mesh& mesh) {
+    string str;
+    SPrintf(str, "%i %i %i", mesh.unk00, mesh.textureIndex, mesh.unk06);
+    return str;
+}
+
+
+Header header;
+struct {
+    Mesh meshes[header.meshCount];
+} meshes;

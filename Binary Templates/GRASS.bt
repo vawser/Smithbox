@@ -1,0 +1,80 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: GRASS.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Sekiro grass files, don't know what they do
+//  Category: Dantelion
+// File Mask: *.grass
+//  ID Bytes: 01 00 00 00 28 00 00 00 14 00 00 00 [+4] 24 00 00 00 [+4] 18 00 00 00 [+4] 18 00 00 00
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int unk00; Assert(unk00 == 1); // Version?
+    int headerSize; Assert(headerSize == 0x28);
+
+    int size1; Assert(size1 == 0x14);
+    int count1;
+    int size2; Assert(size2 == 0x24);
+    int count2;
+    int size3; Assert(size3 == 0x18);
+    int count3;
+    int size4; Assert(size4 == 0x18);
+    int count4; Assert(count4 == count1);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int unk00;
+    int unk04;
+    int unk08;
+    int unk0C;
+    int unk10;
+} Struct1 <bgcolor=cLtGreen>;
+
+
+typedef struct {
+    float unk00; // Vector3 position, probably
+    float unk04;
+    float unk08;
+    float unk0C;
+    float unk10;
+    float unk14;
+    float unk18;
+    float unk1C;
+    float unk20;
+} Struct2 <bgcolor=cAqua>;
+
+
+typedef struct {
+    float unk00;
+    float unk04;
+    float unk08;
+    int unk0C;
+    int unk10;
+    int unk14;
+} Struct3 <bgcolor=cLtBlue>;
+
+
+typedef struct {
+    float unk00;
+    float unk04;
+    float unk08;
+    float unk0C;
+    float unk10;
+    float unk14;
+} Struct4 <bgcolor=cLtPurple>;
+
+//------------------------------------------------
+
+Header header;
+Struct1 struct1s[header.count1];
+Struct2 struct2s[header.count2];
+Struct3 struct3s[header.count3];
+Struct4 struct4s[header.count4];

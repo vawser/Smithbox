@@ -1,0 +1,177 @@
+//------------------------------------------------
+//--- 010 Editor v10.0.1 Binary Template
+//
+//      File: NSA.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: Dantelion
+// File Mask: *.nsa
+//  ID Bytes: 00 00 00 00
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+if (ReadInt(8) != 0x10)
+    BigEndian();
+
+typedef struct {
+    short count;
+    if (count > 0)
+        short values[count];
+} ShortPrefixedShorts;
+
+//------------------------------------------------
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+    int offset04 <format=hex>;
+    int unk08 <format=hex>; Assert(unk08 == 0x10);
+    byte unk0C; Assert(unk0C == 2);
+    byte unk0D[3] <hidden=true>; Assert((unk0D[0] | unk0D[1] | unk0D[2]) == 0);
+
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    float unk18;
+    float unk1C;
+    int unk20;
+    int count24;
+    int unk28;
+    int unk2C;
+    int offset30 <format=hex>; Assert(offset30 == 0x88);
+    int offset34 <format=hex>;
+    int offset38 <format=hex>;
+    int offset3C <format=hex>; Assert(offset3C == offset38 + 4 * unk28);
+    float unk40;
+    float unk44;
+    float unk48;
+    float unk4C;
+    float unk50;
+    float unk54;
+    int unk58;
+    int count5C;
+    int offset60 <format=hex>;
+    int offset64 <format=hex>; Assert(offset60 == 0 || offset64 == offset60 + 0x18);
+    int offset68 <format=hex>;
+    int unk6C <format=hex>; // Not an offset
+    int offset70 <format=hex>; Assert(offset70 == offset64 + 0x18 * count5C);
+    int offset74 <format=hex>; Assert(offset74 == 0 || offset74 == offset70 + 4 + 4 * count24);
+    int offset78 <format=hex>; Assert(offset78 == offset74 + 4 * count24);
+    Assert(offset78 == 0 || offset68 == offset78 + 4 * count24);
+    int offset7C <format=hex>;
+    int unk80 <hidden=true>; Assert(unk80 == 0);
+    int unk84 <hidden=true>; Assert(unk84 == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    int offset00;
+    
+    FSeek(offset00);
+    ShortPrefixedShorts struct00 <bgcolor=cLtGreen>;
+} Struct38 <bgcolor=cDkGreen>;
+
+
+typedef struct {
+    int offset00;
+    
+    FSeek(offset00);
+    ShortPrefixedShorts struct00 <bgcolor=cGreen>;
+} Struct3C <bgcolor=cDkGreen>;
+
+
+typedef struct {
+    float unk00;
+    float unk04;
+    float unk08;
+    float unk0C;
+    float unk10;
+    float unk14;
+} Struct60 <bgcolor=cAqua>;
+
+
+typedef struct {
+    float unk00;
+    float unk04;
+    float unk08;
+    float unk0C;
+    float unk10;
+    float unk14;
+} Struct64 <bgcolor=cLtPurple>;
+
+
+typedef struct {
+    int unk00;
+} Struct68 <bgcolor=cBlack, fgcolor=cWhite>; // TODO
+
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+    int unk04[header.count24];
+} Struct70 <bgcolor=cPurple>;
+
+
+typedef struct {
+    int unk00[header.count24];
+} Struct74 <bgcolor=cDkPurple>;
+
+
+typedef struct {
+    int unk00[header.count24];
+} Struct78 <bgcolor=cBlue>;
+
+
+typedef struct {
+    int unk00; Assert(unk00 == 2);
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    int unk08 <format=hex>;
+    int unk0C <format=hex>; Assert(unk0C == 0x10);
+    
+} Struct7C <bgcolor=cBlack, fgcolor=cWhite>; // TODO
+
+//------------------------------------------------
+
+Header header;
+
+FSeek(header.offset30);
+ShortPrefixedShorts struct30 <bgcolor=cLtGreen>;
+
+FSeek(header.offset34);
+ShortPrefixedShorts struct34 <bgcolor=cGreen>;
+
+if (header.offset38 != 0) {
+    FSeek(header.offset38);
+    Struct38 struct38;
+}
+if (header.offset3C != 0) {
+    FSeek(header.offset3C);
+    Struct3C struct3C;
+}
+if (header.offset60 != 0) {
+    FSeek(header.offset60);
+    Struct60 struct60;
+}
+if (header.offset64 != 0) {
+    FSeek(header.offset64);
+    Struct64 struct64s[header.count5C];
+}
+
+FSeek(header.offset68);
+Struct68 struct68;
+
+if (header.offset70 != 0) {
+    FSeek(header.offset70);
+    Struct70 struct70;
+}
+if (header.offset74 != 0) {
+    FSeek(header.offset74);
+    Struct74 struct74;
+}
+if (header.offset78 != 0) {
+    FSeek(header.offset78);
+    Struct78 struct78;
+}
+
+FSeek(header.offset7C);
+Struct7C struct7C;

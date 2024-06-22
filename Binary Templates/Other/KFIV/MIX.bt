@@ -1,0 +1,38 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: MIX.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: King's Field IV .mix files
+//  Category: KFIV
+// File Mask: *.mix
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+// To use this template from another template, define MIX_LIBRARY before including,
+// then instantiate type MIX.
+
+// This template is just a stub to fill out container formats.
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int fileSize <format=hex>;
+} MIXHeader <bgcolor=cLtRed>;
+
+//------------------------------------------------
+
+#ifdef MIX_LIBRARY
+typedef struct {
+#endif
+
+MIXHeader header;
+ubyte data[header.fileSize - 4] <format=hex, bgcolor=cBlack, fgcolor=cSilver>;
+
+#ifdef MIX_LIBRARY
+} MIX <optimize=false>;
+#endif

@@ -1,0 +1,84 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: HD.bt
+//   Authors: TKGP, dece
+//   Version: 
+//   Purpose: King's Field IV .hd files
+//  Category: KFIV
+// File Mask: *.hd
+//  ID Bytes: 
+//   History: 
+//
+// This file is part of the 3-uple HD/SQ/BD that defines
+// music playable by a PS2 tracker. They can be analysed
+// and exported to modern sound banks using VGMTrans.
+//------------------------------------------------
+
+// To use this template from another template, define HD_LIBRARY before including,
+// then instantiate type HD.
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[8]; Assert(magic == "IECSsreV"); // "VersSCEI"
+    unsigned int length;
+    unsigned byte unk00;
+    unsigned byte unk01;
+    unsigned byte unk02;
+    unsigned byte unk03;
+} HDVersion;
+
+typedef struct {
+    char magic[8]; Assert(magic == "IECSdaeH"); // "HeadSCEI"
+    unsigned int length;
+    unsigned int fileSize;
+    int unk04;
+    unsigned int ofsProg <format=hex>;
+    unsigned int ofsSset <format=hex>;
+    unsigned int ofsSmpl <format=hex>;
+    unsigned int ofsVagi <format=hex>;
+} HDHeader <bgcolor=cLtRed>;
+
+typedef struct {
+    char magic[8]; Assert(magic == "IECSigaV"); // "VagiSCEI"
+    unsigned int length;
+} HDVagi <bgcolor=cLtGreen>;
+
+typedef struct {
+    char magic[8]; Assert(magic == "IECSlpmS"); // "SmplSCEI"
+    unsigned int length;
+} HDSamples <bgcolor=cLtBlue>;
+
+typedef struct {
+    char magic[8]; Assert(magic == "IECStesS"); // "SsetSCEI"
+    unsigned int length;
+} HDSset <bgcolor=cLtYellow>;
+
+typedef struct {
+    char magic[8]; Assert(magic == "IECSgorP"); // "ProgSCEI"
+    unsigned int length;
+} HDProg <bgcolor=cLtGray>;
+
+//------------------------------------------------
+
+#ifdef HD_LIBRARY
+typedef struct {
+#endif
+
+HDVersion version_chunk;
+HDHeader header_chunk;
+FSeek(header_chunk.ofsVagi);
+HDVagi vagi_chunk;
+FSeek(header_chunk.ofsSmpl);
+HDSamples samples_chunk;
+FSeek(header_chunk.ofsSset);
+HDSset sset_chunk;
+FSeek(header_chunk.ofsProg);
+HDProg prog_chunk;
+
+#ifdef HD_LIBRARY
+} HD <optimize=false>;
+#endif

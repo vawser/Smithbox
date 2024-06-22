@@ -1,0 +1,134 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: BHF4.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Header file for split file archives since DS2
+//  Category: Dantelion
+// File Mask: *.*bhd
+//  ID Bytes: 42 48 46 34
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+
+if (ReadByte(9))
+    BigEndian();
+else
+    LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "BHF4");
+    byte unk04; Assert(unk04 == 0 || unk04 == 1);
+    byte unk05; Assert(unk05 == 0 || unk05 == 1);
+    byte unk06 <hidden=true>; Assert(unk06 == 0);
+    byte unk07 <hidden=true>; Assert(unk07 == 0);
+    byte unk08 <hidden=true>; Assert(unk08 == 0);
+    byte bigEndian;
+    byte unk0A; Assert(unk0A == 0 || unk0A == 1);
+    byte unk0B <hidden=true>; Assert(unk0B == 0);
+    int fileCount;
+    quad headerSize <format=hex>; Assert(headerSize == 0x40);
+    char version[8];
+    quad fileHeaderSize <format=hex>;
+    quad fileHeadersEnd <format=hex>; Assert(fileHeadersEnd == 0);
+    byte unicode; Assert(unicode == 0 || unicode == 1);
+    ubyte rawFormat <format=binary>;
+    byte extended; Assert(extended == 0 || extended == 4);
+    byte unk33 <hidden=true>; Assert(unk33 == 0);
+    int unk34 <hidden=true>; Assert(unk34 == 0);
+    quad bucketsOffset <format=hex>;
+    
+    local ubyte format <format=binary> = bigEndian ? rawFormat : ReverseBits(rawFormat);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    ubyte rawFlags <format=hex>;
+    byte unk01 <hidden=true>; Assert(unk01 == 0);
+    byte unk02 <hidden=true>; Assert(unk02 == 0);
+    byte unk03 <hidden=true>; Assert(unk03 == 0);
+    
+    local ubyte flags <format=binary> = header.bigEndian ? rawFlags : ReverseBits(rawFlags);
+    
+    int unk04 <hidden=true>; Assert(unk04 == -1);
+    quad compressedSize <format=hex>;
+    
+    if (header.format & 0b00100000)
+        quad uncompressedSize <format=hex>;
+    
+    if (header.format & 0b00010000)
+        quad dataOffset <format=hex>;
+    else
+        uint dataOffset <format=hex>;
+
+    if (header.format & 0b00000010)
+        int id;
+
+    if (header.format & 0b00000100)
+        int nameOffset <format=hex>;
+    
+    if (header.format & 0b01000000) {
+        quad zero <hidden=true>; Assert(zero == 0);
+    }
+    
+    if (exists(nameOffset)) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(nameOffset);
+        if (header.unicode)
+            wstring name <bgcolor=cGreen>;
+        else
+            string name <bgcolor=cGreen>;
+        FSeek(pos);
+    }
+} File <read=ReadFile, bgcolor=cLtGreen, optimize=false>;
+
+wstring ReadFile(File& file) {
+    string str;
+    if (exists(file.id) && exists(file.name)) {
+        SPrintf(str, "@%8Xh %10i %s", file.dataOffset, file.id, file.name);
+    } else if (exists(file.id)) {
+        SPrintf(str, "@%8Xh %10i", file.dataOffset, file.id);
+    } else if (exists(file.name)) {
+        SPrintf(str, "@%8Xh %s", file.dataOffset, file.name);
+    } else {
+        SPrintf(str, "@%8Xh", file.dataOffset);
+    }
+    return str;
+}
+
+
+typedef struct {
+    int count;
+    int index;
+} Bucket <bgcolor=cPurple>;
+
+typedef struct {
+    uint hash <format=hex>;
+    int index;
+} Hash <bgcolor=cDkPurple>;
+
+typedef struct {
+    quad hashesOffset <format=hex>;
+    int bucketCount;
+    byte bucketsHeaderSize; Assert(bucketsHeaderSize == 0x10);
+    byte bucketSize; Assert(bucketSize == 8);
+    byte hashSize; Assert(hashSize == 8);
+    byte unk0F <hidden=true>; Assert(unk0F == 0);
+    Bucket buckets[bucketCount];
+    
+    FSeek(hashesOffset);
+    Hash hashes[header.fileCount];
+} Buckets <bgcolor=cLtPurple>;
+
+//------------------------------------------------
+
+Header header;
+struct { File file[header.fileCount]; } files <open=true>;
+if (header.bucketsOffset != 0) {
+    FSeek(header.bucketsOffset);
+    Buckets buckets;
+}

@@ -1,0 +1,53 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: MSBS\Route.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Sekiro MSB routes
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> RouteType {
+    //RouteTypeA = 0,
+    //RouteTypeB = 1,
+    //RouteTypeC = 2,
+    RouteTypeMufflingPortalLink = 3,
+    RouteTypeMufflingBoxLink = 4,
+};
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad nameOffset <format=hex, hidden=true>;
+    int unk08;
+    int unk0C;
+    int type;
+    int id;
+    
+    local int i <hidden=true>;
+    for (i = 0; i < 26; i++) {
+        int unk18 <hidden=true>; Assert(unk18 == 0);
+    }
+    
+    Assert(nameOffset > 0);
+    FSeek(start + nameOffset);
+    wstring name;
+    
+    switch (type) {
+        case RouteTypeMufflingPortalLink:
+        case RouteTypeMufflingBoxLink: break;
+        default: Assert(false);
+    }
+} Route <read=ReadRoute>;
+
+wstring ReadRoute(Route& route) {
+    string str;
+    SPrintf(str, "%2i ", route.type);
+    return str + route.name;
+}

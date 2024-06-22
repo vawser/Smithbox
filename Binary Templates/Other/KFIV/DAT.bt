@@ -1,0 +1,34 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: DAT.bt
+//   Authors: dece
+//   Version: 
+//   Purpose: King's Field IV .dat containers
+//  Category: KFIV
+// File Mask: *.dat
+//  ID Bytes: 
+//   History: 2020-05-23: template from SoulsFormats
+//------------------------------------------------
+LittleEndian();
+
+typedef struct {
+    int unk00 <format=hex>; Assert(unk00 == 0x1E048000);
+    unsigned int numFiles;
+} Header <bgcolor=cLtRed>;
+
+typedef struct {
+    char name[0x34];
+    unsigned int size;
+    unsigned int paddedSize;
+    unsigned int offset;
+
+    local unsigned long pos = FTell();
+    FSeek(offset);
+    char data[size];
+    FSeek(pos);
+} FileEntry <bgcolor=cLtGreen>;
+
+Header header;
+FSeek(0x40);
+struct { FileEntry files[header.numFiles]; } files;

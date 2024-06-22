@@ -1,0 +1,104 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: TPF.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Container for multiple textures
+//  Category: Dantelion
+// File Mask: *.tpf
+//  ID Bytes: 54 50 46 00
+//   History: 
+//------------------------------------------------
+
+enum <byte> PLATFORM { PC = 0, X360 = 1, PS3 = 2, PS4 = 4, Xbone = 5 };
+
+if (ReadByte(0xC) == 1 || ReadByte(0xC) == 2)
+    BigEndian();
+else
+    LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "TPF\0");
+    int dataSize <format=hex>;
+    int textureCount;
+    PLATFORM platform;
+    byte unk0D;
+    byte encoding;
+    byte unk0F <hidden=true>; Assert(unk0F == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    uint dataOffset <format=hex>;
+    int dataSize <format=hex>;
+    byte format;
+    byte cubemap;
+    byte mipmaps;
+    byte unk0B;
+    
+    if (header.platform == PC) {
+        uint nameOffset <format=hex>;
+        int unk10;
+    } else {
+        short width;
+        short height;
+
+        if (header.platform == X360) {
+            int unk10; Assert(unk10 == 0);
+            uint nameOffset <format=hex>;
+            int unk18; Assert(unk18 == 0);
+        } else if (header.platform == PS3) {
+            int unk10;
+            int unk14;
+            uint nameOffset <format=hex>;
+            int unk1C;
+            if (unk1C == 1) {
+                int unk20;
+                int unk24;
+                float unk28;
+            }
+        } else if (header.platform == PS4 || header.platform == Xbone) {
+            int imageCount;
+            int unk14;
+            uint nameOffset <format=hex>;
+            int unk1C;
+            int dxgiFormat;
+        }
+    }
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(dataOffset);
+    ubyte bytes[dataSize] <bgcolor=cAqua>;
+    FSeek(nameOffset);
+    if (header.encoding == 1) {
+        wstring name;
+    } else {
+        string name;
+    }
+    FSeek(pos);
+} Texture <read=ReadTexture, bgcolor=cLtGreen, optimize=false>;
+
+wstring ReadTexture(Texture& tex) {
+    string str;
+    SPrintf(str, "%3i ", tex.format);
+    return str + tex.name;
+}
+
+typedef struct (int count) {
+    local int count <hidden=true> = count;
+    Texture textures[count];
+} Textures <read=ReadTextures>;
+
+string ReadTextures(Textures& textures) {
+    string str;
+    SPrintf(str, "[%i]", textures.count);
+    return str;
+}
+
+//------------------------------------------------
+
+Header header;
+Textures textures(header.textureCount) <open=true>;

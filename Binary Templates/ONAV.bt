@@ -1,0 +1,143 @@
+//------------------------------------------------
+//--- 010 Editor v10.0 Binary Template
+//
+//      File: ONAV.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: BB/DS3 onav files
+//  Category: Dantelion
+// File Mask: *.onav
+//  ID Bytes: 4F 4E 41 56 30 31 32 30
+//   History: 
+//------------------------------------------------
+
+#include "Util.bt"
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    char magic[4]; Assert(magic == "ONAV");
+    char version[4]; Assert(version == "0120");
+    int unk08; Assert(unk08 == 0);
+    short count0C;
+    short count0E;
+    int unk10; Assert(unk10 == 0);
+    int unk14; Assert(unk14 == 0xC);
+    quad offset18 <format=hex>;
+    quad offset20 <format=hex>;
+    quad offset28 <format=hex>;
+    quad unk30 <hidden=true>; Assert(unk30 == 0);
+} Header <bgcolor=cLtRed>;
+
+
+typedef struct {
+    quad count;
+    quad offsets[count] <format=hex>;
+} OffsetIndex <bgcolor=cBlack>;
+
+
+typedef struct {
+    short unk00;
+    short unk02;
+    short unk04;
+    short unk06;
+    int count08;
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    quad offset10 <format=hex>;
+    
+    if (count08 > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(offset10);
+        short data[count08] <bgcolor=cDkAqua>;
+        FSeek(pos);
+    }
+} Struct1A <bgcolor=cAqua, optimize=false>;
+
+typedef struct {
+    short unk00;
+    byte count02;
+    byte unk03; // Perhaps total count of data shorts in Struct1As?
+    int unk04 <hidden=true>; Assert(unk04 == 0);
+    quad offset08 <format=hex>; Assert(FTell() == offset08);
+    
+    if (count02 > 0) {
+        FSeek(offset08);
+        struct { Struct1A struct1As[count02]; } struct1As;
+    }
+} Struct1 <bgcolor=cLtAqua>;
+
+
+typedef struct {
+    short unk00;
+    short unk02;
+    Vector3 unk04; // Not 100% sure these are Vector3s
+    Vector3 unk10;
+    Vector3 unk1C; // Not 100% sure these are even floats
+    short count28;
+    short unk2A;
+    int unk2C;
+    int unk30;
+    int unk34;
+    quad offset38 <format=hex>;
+    
+    if (count28 > 0) {
+        local quad pos <hidden=true> = FTell();
+        FSeek(offset38);
+        int data[count28] <bgcolor=cDkGreen>;
+        FSeek(pos);
+    }
+} Struct2A <bgcolor=cGreen, optimize=false>;
+
+// Align to 8 when writing because of Struct2A data
+typedef struct {
+    short unk00;
+    short count02;
+    int unk04;
+    int unk08 <hidden=true>; Assert(unk08 == 0);
+    int unk0C <hidden=true>; Assert(unk0C == 0);
+    int unk10 <hidden=true>; Assert(unk10 == 0);
+    int unk14 <hidden=true>; Assert(unk14 == 0);
+    int unk18 <hidden=true>; Assert(unk18 == 0);
+    int unk1C <hidden=true>; Assert(unk1C == 0);
+    quad offset20 <format=hex>;
+    Vector3 unk28; // Bounding box?
+    Vector3 unk34;
+    
+    if (count02 > 0) {
+        FSeek(offset20);
+        struct { Struct2A struct2As[count02]; } struct2As;
+    }
+} Struct2 <bgcolor=cLtGreen>;
+
+//------------------------------------------------
+
+Header header;
+Assert(FTell() == header.offset18);
+OffsetIndex offsetIndex;
+Assert(FTell() == header.offset20);
+if (header.count0C > 0)
+    quad struct1Offsets[header.count0C] <format=hex, bgcolor=cLtAqua>;
+Assert(FTell() == header.offset28);
+if (header.count0E > 0)
+    quad struct2Offsets[header.count0E] <format=hex, bgcolor=cLtGreen>;
+
+if (header.count0C > 0) {
+    struct {
+        local int i <hidden=true>;
+        for (i = 0; i < header.count0C; i++) {
+            FSeek(struct1Offsets[i]);
+            Struct1 struct1s;
+        }
+    } struct1s;
+}
+
+if (header.count0E > 0) {
+    struct {
+        local int i <hidden=true>;
+        for (i = 0; i < header.count0E; i++) {
+            FSeek(struct2Offsets[i]);
+            Struct2 struct2s;
+        }
+    } struct2s;
+}

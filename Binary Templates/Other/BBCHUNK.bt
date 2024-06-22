@@ -1,0 +1,30 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+BigEndian();
+
+typedef struct {
+    int unk00; Assert(unk00 == 0xBBCACA12);
+    int unk04; Assert(unk04 == 0x52);
+    int unk08; Assert(unk08 == 0xE);
+    int unk0C; Assert(unk0C == 0);
+} Header <bgcolor=cLtRed>;
+
+
+Header header;
+FSeek(0x400);
+struct {
+    int count;
+    int whatever[count];
+    struct { string str; } strings[count] <optimize=false>;
+} something <bgcolor=cLtGreen>;
