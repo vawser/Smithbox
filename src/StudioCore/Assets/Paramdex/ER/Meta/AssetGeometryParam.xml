@@ -195,7 +195,7 @@
     <navimeshFlagApply AltName="Navmesh Flag Apply Type" Wiki="Where to apply the navigation mesh flag set from the asset" Enum="ASSET_NAVIMESH_FLAG_APPLY_TYPE" />
     <navimeshFlagApply_after AltName="Navmesh Flag Apply Type - Destroyed" Wiki="Where to apply the navigation mesh flag set from the destroyed asset" Enum="ASSET_NAVIMESH_FLAG_APPLY_TYPE" />
     <autoDrawGroupPassPixelNum AltName="Auto Draw Group: Pass Pixel Number" Wiki="Automatic drawing group_Pass pixel (set to 0.0-1.0 to enlarge at the time of shooting)" />
-    <pickUpReplacementEventFlag AltName="Pickup Replacement - Event Flag" Wiki="When this event flag is ON, use the ID of the subsequent replacement 0: Do not always replace" />
+    <pickUpReplacementEventFlag AltName="Pickup Replacement - Event Flag" Wiki="When this event flag is ON, use the ID of the subsequent replacement 0: Do not always replace" FlagAlias="" />
     <pickUpReplacementAnimIdOffset AltName="Pickup Replacement - Anim ID Offset" Wiki="When Collecting_replacement flag condition is ON, play the uncollected / collected animation with the animation ID offset by this value." />
     <pickUpReplacementActionButtonParamId AltName="Pickup Replacement - Action Button Param ID" Wiki="This action button ID is used when Collecting_replacement flag condition is ON." Refs="ActionButtonParam" />
     <pickUpReplacementItemLotParamId AltName="Pickup Replacement - Item Lot Param ID" Wiki="When Collecting_replacement flag condition is ON, this item lottery ID_map is used." Refs="ItemLotParam_map" />

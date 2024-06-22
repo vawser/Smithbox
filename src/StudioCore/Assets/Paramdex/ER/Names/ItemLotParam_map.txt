@@ -86,6 +86,7 @@
 10340 [Nokron - Mimic Tear] Larval Tear
 10341 [Nokron - Mimic Tear] Silver Tear Mask
 10350 [Deeproot Depths - Fia's Champions] Fia's Mist
+10441 Scadutree Fragment
 10730 [Mountaintops - Sanguine Noble] Sanguine Noble Hood
 10731 [Mountaintops - Sanguine Noble] Sanguine Noble Robe
 10732 [Mountaintops - Sanguine Noble] Sanguine Noble Bracelets
@@ -1966,6 +1967,23 @@
 18000081 [LD - Stranded Graveyard] Finger Severer
 18000900 [LD - Stranded Graveyard] Erdtree Greatbow
 18000901 [LD - Stranded Graveyard] Great Arrow
+20000170 Revered Spirit Ash
+20000620 Scadutree Fragment
+20000700 Revered Spirit Ash
+20000800 Revered Spirit Ash
+20000820 Scadutree Fragment
+20010200 Revered Spirit Ash
+20010350 Scadutree Fragment
+20010400 Revered Spirit Ash
+20010470 Scadutree Fragment
+20010550 Scadutree Fragment
+21000400 Scadutree Fragment
+21010020 Revered Spirit Ash
+21010200 Scadutree Fragment
+21010460 Revered Spirit Ash
+21010500 Scadutree Fragment
+22000000 Scadutree Fragment
+28000110 Revered Spirit Ash
 30000010 [Weeping Peninsula - Tombsward Catacombs] Human Bone Shard
 30000020 [Weeping Peninsula - Tombsward Catacombs] Golden Rune [2]
 30000030 [Weeping Peninsula - Tombsward Catacombs] Nomadic Warrior's Cookbook [9]
@@ -3698,3 +3716,45 @@
 1054550000 Somber Smithing Stone [7]
 1054550310 Somberstone Miner's Bell Bearing [3]
 1054550800 Sacred Tear
+2044450000 Scadutree Fragment
+2044460000 Revered Spirit Ash
+2045410700 Revered Spirit Ash
+2045420700 Scadutree Fragment
+2046420700 Scadutree Fragment
+2046440700 Revered Spirit Ash
+2046450040 Scadutree Fragment
+2046450720 Revered Spirit Ash
+2046460000 Scadutree Fragment
+2046470750 Scadutree Fragment
+2047390070 Scadutree Fragment
+2047400100 Scadutree Fragment
+2047410700 Revered Spirit Ash
+2047430700 Revered Spirit Ash
+2047440720 Scadutree Fragment
+2047440750 Scadutree Fragment
+2047460500 Scadutree Fragment
+2048370050 Scadutree Fragment
+2048410700 Scadutree Fragment
+2048430700 Scadutree Fragment
+2048440500 Scadutree Fragment
+2048450520 Scadutree Fragment
+2048460510 Scadutree Fragment
+2049440500 Revered Spirit Ash
+2049440530 Scadutree Fragment
+2049450510 Scadutree Fragment
+2049480000 Scadutree Fragment
+2049490500 Scadutree Fragment
+2049490520 Scadutree Fragment
+2049490530 Scadutree Fragment
+2049490540 Scadutree Fragment
+2049490550 Scadutree Fragment
+2050430010 Scadutree Fragment
+2050430500 Scadutree Fragment
+2050430720 Revered Spirit Ash
+2050440500 Revered Spirit Ash
+2050450730 Scadutree Fragment
+2050460700 Revered Spirit Ash
+2051440500 Scadutree Fragment
+2051440510 Scadutree Fragment
+2053390020 Scadutree Fragment
+2053410500 Scadutree Fragment

@@ -606,10 +606,13 @@ public class TextEditorScreen : EditorScreen
                             {
                                 if (info.EntryType is not FmgEntryTextType.Title and not FmgEntryTextType.TextBody)
                                 {
-                                    // Bugfix for AC6
-                                    if (info.FmgID is not FmgIDType.TutorialTitle2023)
+                                    if (Smithbox.ProjectType == ProjectType.AC6)
                                     {
-                                        _filteredFmgInfo.Add(info.GetTitleFmgInfo());
+                                        // Bugfix for AC6
+                                        if (info.FmgID is not FmgIDType.TutorialTitle2023)
+                                        {
+                                            _filteredFmgInfo.Add(info.GetTitleFmgInfo());
+                                        }
                                     }
                                 }
                                 else

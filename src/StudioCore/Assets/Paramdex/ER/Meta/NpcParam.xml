@@ -548,7 +548,7 @@
     <resistCorrectId_freeze AltName="Resist Correction - Frostbite" Wiki="When the abnormal condition is activated, the maximum value is temporarily changed by using the setting value of the abnormal condition resistance correction parameter." Refs="ResistCorrectParam"/>
     <resistCorrectId_sleep AltName="Resist Correction - Sleep" Wiki="When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter." Refs="ResistCorrectParam"/>
     <resistCorrectId_madness AltName="Resist Correction - Madness" Wiki="When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter." Refs="ResistCorrectParam"/>
-    <chrDeadTutorialFlagId AltName="Chr Dead Tutorial Flag ID" Wiki="Event flag ID for the tutorial when the character is defeated for the first time. Flag ON when the character dies." />
+    <chrDeadTutorialFlagId AltName="Chr Dead Tutorial Flag ID" Wiki="Event flag ID for the tutorial when the character is defeated for the first time. Flag ON when the character dies." FlagAlias="" />
     <stepDispInterpolateTime AltName="Step Display Interpolation Time" Wiki="Step crossing display interpolation time" />
     <stepDispInterpolateTriggerValue AltName="Step Display Interpolation Trigger Value" Wiki="Step crossing display activation judgment value" />
     <lockScoreOffset AltName="Lock Score Offset" Wiki="Lock score correction value" />

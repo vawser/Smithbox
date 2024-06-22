@@ -642,7 +642,7 @@
     <useLevel_vowType15 AltName="Use Level - Vow Level [15]" Wiki="Pledge 15 usage level" />
     <useLevel AltName="Use Level" Wiki="Appropriate level of use" />
     <reserve5 AltName="" IsHidden=""/>
-    <itemGetTutorialFlagId AltName="Item Get Tutorial Flag ID" Wiki="Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained." />
+    <itemGetTutorialFlagId AltName="Item Get Tutorial Flag ID" Wiki="Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained." FlagAlias="" />
     <reserve3 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Defines an item, both consumable and key items.\nNote that many key items are placebo and the item's effect is granted through scripting. Passive effects from ownership are not defined here." 

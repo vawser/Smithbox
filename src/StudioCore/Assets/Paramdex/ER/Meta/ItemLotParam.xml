@@ -44,15 +44,15 @@
     <cumulateLotPoint06 AltName="6 - Item Accumulate Chance" Wiki="Appearance point at maximum cumulative" />
     <cumulateLotPoint07 AltName="7 - Item Accumulate Chance" Wiki="Appearance point at maximum cumulative" />
     <cumulateLotPoint08 AltName="8 - Item Accumulate Chance" Wiki="Appearance point at maximum cumulative" />
-    <getItemFlagId01 AltName="1 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
-    <getItemFlagId02 AltName="2 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
-    <getItemFlagId03 AltName="3 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
-    <getItemFlagId04 AltName="4 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
-    <getItemFlagId05 AltName="5 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
-    <getItemFlagId06 AltName="6 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
-    <getItemFlagId07 AltName="7 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
-    <getItemFlagId08 AltName="8 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
-    <getItemFlagId AltName="Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: flag invalid)" />
+    <getItemFlagId01 AltName="1 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" FlagAlias="" />
+    <getItemFlagId02 AltName="2 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" FlagAlias="" />
+    <getItemFlagId03 AltName="3 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" FlagAlias="" />
+    <getItemFlagId04 AltName="4 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" FlagAlias="" />
+    <getItemFlagId05 AltName="5 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" FlagAlias="" />
+    <getItemFlagId06 AltName="6 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" FlagAlias="" />
+    <getItemFlagId07 AltName="7 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" FlagAlias="" />
+    <getItemFlagId08 AltName="8 - Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" FlagAlias="" />
+    <getItemFlagId AltName="Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: flag invalid)" FlagAlias="" />
     <cumulateNumFlagId AltName="Item Accumulate Flag" Wiki="For saving the number of lottery (* 8 flag serial number used)" />
     <cumulateNumMax AltName="Item Accumulate Max" Wiki="Maximum number of lottery cumulative (0: no cumulative)" />
     <lotItem_Rarity AltName="Item Rarity" Wiki="Specify how valuable items are in the treasure chest. When -1, use the rarity of the equipment para without overwriting" />

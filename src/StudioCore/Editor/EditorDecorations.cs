@@ -456,7 +456,14 @@ public class EditorDecorations
             if (!inactiveEnum)
             {
                 ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
-                ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
+                if (value == "0" || value == "-1")
+                {
+                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "None"));
+                }
+                else
+                {
+                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
+                }
                 ImGui.PopStyleColor();
             }
         }
@@ -476,7 +483,14 @@ public class EditorDecorations
             if (!inactiveEnum)
             {
                 ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
-                ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
+                if(value == "0" || value == "-1")
+                {
+                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "None"));
+                }
+                else
+                {
+                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
+                }
                 ImGui.PopStyleColor();
             }
         }

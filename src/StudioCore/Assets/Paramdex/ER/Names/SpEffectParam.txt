@@ -1260,6 +1260,16 @@
 100901 HKS - Torrent - Unk Can Dash
 100902 HKS - Torrent - Is Jumping
 100903 HKS - Torrent - Is Galloping
+102000 Deflecting Hardtear
+102001 Deflecting Hardtear
+102002 Deflecting Hardtear
+102003 Deflecting Hardtear
+102004 Deflecting Hardtear
+102005 Deflecting Hardtear
+102006 Deflecting Hardtear
+102007 Deflecting Hardtear
+102008 Deflecting Hardtear
+102009 Deflecting Hardtear
 102310 Eternal Sleep Grease - Right
 102311 Eternal Sleep Grease - Right [Attack]
 102312 Drawstring Eternal Sleep Grease - Right
@@ -1268,6 +1278,16 @@
 102315 Eternal Sleep Grease - Left [Attack]
 102316 Drawstring Eternal Sleep Grease - Left
 102317 Drawstring Eternal Sleep Grease - Left [Attack]
+102360 Viridian Hidden Tear
+102361 Viridian Hidden Tear
+102362 Viridian Hidden Tear
+102363 Viridian Hidden Tear
+102364 Viridian Hidden Tear
+102365 Viridian Hidden Tear
+102366 Viridian Hidden Tear
+102367 Viridian Hidden Tear
+102368 Viridian Hidden Tear
+102369 Viridian Hidden Tear
 105000 Hemorrhage - Low - Addition +0
 105001 Hemorrhage - Low - Addition +1
 105002 Hemorrhage - Low - Addition +2
@@ -3638,70 +3658,102 @@
 6201001 Mushroom Crown
 6202000 Black Dumpling
 6202001 Black Dumpling
-20007000 SOTE - Level Scaling: 
-20007010 SOTE - Level Scaling: 
-20007020 SOTE - Level Scaling: 
-20007030 SOTE - Level Scaling: 
-20007040 SOTE - Level Scaling: 
-20007050 SOTE - Level Scaling: 
-20007060 SOTE - Level Scaling: 
-20007070 SOTE - Level Scaling: 
-20007080 SOTE - Level Scaling: 
-20007090 SOTE - Level Scaling: 
-20007100 SOTE - Level Scaling: 
-20007110 SOTE - Level Scaling: 
-20007120 SOTE - Level Scaling: 
-20007130 SOTE - Level Scaling: 
-20007140 SOTE - Level Scaling: 
-20007150 SOTE - Level Scaling: 
-20007200 SOTE - Human-NPC Level Scaling: 
-20007210 SOTE - Human-NPC Level Scaling: 
-20007220 SOTE - Human-NPC Level Scaling: 
-20007230 SOTE - Human-NPC Level Scaling: 
-20007240 SOTE - Human-NPC Level Scaling: 
-20007250 SOTE - Human-NPC Level Scaling: 
-20007260 SOTE - Human-NPC Level Scaling: 
-20007270 SOTE - Human-NPC Level Scaling: 
-20007280 SOTE - Human-NPC Level Scaling: 
-20007290 SOTE - Human-NPC Level Scaling: 
-20007300 SOTE - Human-NPC Level Scaling: 
-20007310 SOTE - Human-NPC Level Scaling: 
-20007320 SOTE - Human-NPC Level Scaling: 
-20007330 SOTE - Human-NPC Level Scaling: 
-20007340 SOTE - Human-NPC Level Scaling: 
-20007350 SOTE - Human-NPC Level Scaling: 
-20007400 SOTE - NG+ Scaling: 
-20007410 SOTE - NG+ Scaling: 
-20007420 SOTE - NG+ Scaling: 
-20007430 SOTE - NG+ Scaling: 
-20007440 SOTE - NG+ Scaling: 
-20007450 SOTE - NG+ Scaling: 
-20007460 SOTE - NG+ Scaling: 
-20007470 SOTE - NG+ Scaling: 
-20007480 SOTE - NG+ Scaling: 
-20007490 SOTE - NG+ Scaling: 
-20007500 SOTE - NG+ Scaling: 
-20007510 SOTE - NG+ Scaling: 
-20007520 SOTE - NG+ Scaling: 
-20007530 SOTE - NG+ Scaling: 
-20007540 SOTE - NG+ Scaling: 
-20007550 SOTE - NG+ Scaling: 
-20007600 SOTE - Human-NPC NG+ Scaling: 
-20007610 SOTE - Human-NPC NG+ Scaling: 
-20007620 SOTE - Human-NPC NG+ Scaling: 
-20007630 SOTE - Human-NPC NG+ Scaling: 
-20007640 SOTE - Human-NPC NG+ Scaling: 
-20007650 SOTE - Human-NPC NG+ Scaling: 
-20007660 SOTE - Human-NPC NG+ Scaling: 
-20007670 SOTE - Human-NPC NG+ Scaling: 
-20007680 SOTE - Human-NPC NG+ Scaling: 
-20007690 SOTE - Human-NPC NG+ Scaling: 
-20007700 SOTE - Human-NPC NG+ Scaling: 
-20007710 SOTE - Human-NPC NG+ Scaling: 
-20007720 SOTE - Human-NPC NG+ Scaling: 
-20007730 SOTE - Human-NPC NG+ Scaling: 
-20007740 SOTE - Human-NPC NG+ Scaling: 
-20007750 SOTE - Human-NPC NG+ Scaling: 
+20000100 Scadutree Fragment: 0
+20000101 Scadutree Fragment: 1
+20000102 Scadutree Fragment: 2
+20000103 Scadutree Fragment: 3
+20000104 Scadutree Fragment: 4
+20000105 Scadutree Fragment: 5
+20000106 Scadutree Fragment: 6
+20000107 Scadutree Fragment: 7
+20000108 Scadutree Fragment: 8
+20000109 Scadutree Fragment: 9
+20000110 Scadutree Fragment: 10
+20000111 Scadutree Fragment: 11
+20000112 Scadutree Fragment: 12
+20000113 Scadutree Fragment: 13
+20000114 Scadutree Fragment: 14
+20000115 Scadutree Fragment: 15
+20000116 Scadutree Fragment: 16
+20000117 Scadutree Fragment: 17
+20000118 Scadutree Fragment: 18
+20000119 Scadutree Fragment: 19
+20000120 Scadutree Fragment: 20
+20000200 Revered Spirit Ash: 0
+20000201 Revered Spirit Ash: 1
+20000202 Revered Spirit Ash: 2
+20000203 Revered Spirit Ash: 3
+20000204 Revered Spirit Ash: 4
+20000205 Revered Spirit Ash: 5
+20000206 Revered Spirit Ash: 6
+20000207 Revered Spirit Ash: 7
+20000208 Revered Spirit Ash: 8
+20000209 Revered Spirit Ash: 9
+20000210 Revered Spirit Ash: 10
+20007000 SOTE - Level Scaling:
+20007010 SOTE - Level Scaling:
+20007020 SOTE - Level Scaling:
+20007030 SOTE - Level Scaling:
+20007040 SOTE - Level Scaling:
+20007050 SOTE - Level Scaling:
+20007060 SOTE - Level Scaling:
+20007070 SOTE - Level Scaling:
+20007080 SOTE - Level Scaling:
+20007090 SOTE - Level Scaling:
+20007100 SOTE - Level Scaling:
+20007110 SOTE - Level Scaling:
+20007120 SOTE - Level Scaling:
+20007130 SOTE - Level Scaling:
+20007140 SOTE - Level Scaling:
+20007150 SOTE - Level Scaling:
+20007200 SOTE - Human-NPC Level Scaling:
+20007210 SOTE - Human-NPC Level Scaling:
+20007220 SOTE - Human-NPC Level Scaling:
+20007230 SOTE - Human-NPC Level Scaling:
+20007240 SOTE - Human-NPC Level Scaling:
+20007250 SOTE - Human-NPC Level Scaling:
+20007260 SOTE - Human-NPC Level Scaling:
+20007270 SOTE - Human-NPC Level Scaling:
+20007280 SOTE - Human-NPC Level Scaling:
+20007290 SOTE - Human-NPC Level Scaling:
+20007300 SOTE - Human-NPC Level Scaling:
+20007310 SOTE - Human-NPC Level Scaling:
+20007320 SOTE - Human-NPC Level Scaling:
+20007330 SOTE - Human-NPC Level Scaling:
+20007340 SOTE - Human-NPC Level Scaling:
+20007350 SOTE - Human-NPC Level Scaling:
+20007400 SOTE - NG+ Scaling:
+20007410 SOTE - NG+ Scaling:
+20007420 SOTE - NG+ Scaling:
+20007430 SOTE - NG+ Scaling:
+20007440 SOTE - NG+ Scaling:
+20007450 SOTE - NG+ Scaling:
+20007460 SOTE - NG+ Scaling:
+20007470 SOTE - NG+ Scaling:
+20007480 SOTE - NG+ Scaling:
+20007490 SOTE - NG+ Scaling:
+20007500 SOTE - NG+ Scaling:
+20007510 SOTE - NG+ Scaling:
+20007520 SOTE - NG+ Scaling:
+20007530 SOTE - NG+ Scaling:
+20007540 SOTE - NG+ Scaling:
+20007550 SOTE - NG+ Scaling:
+20007600 SOTE - Human-NPC NG+ Scaling:
+20007610 SOTE - Human-NPC NG+ Scaling:
+20007620 SOTE - Human-NPC NG+ Scaling:
+20007630 SOTE - Human-NPC NG+ Scaling:
+20007640 SOTE - Human-NPC NG+ Scaling:
+20007650 SOTE - Human-NPC NG+ Scaling:
+20007660 SOTE - Human-NPC NG+ Scaling:
+20007670 SOTE - Human-NPC NG+ Scaling:
+20007680 SOTE - Human-NPC NG+ Scaling:
+20007690 SOTE - Human-NPC NG+ Scaling:
+20007700 SOTE - Human-NPC NG+ Scaling:
+20007710 SOTE - Human-NPC NG+ Scaling:
+20007720 SOTE - Human-NPC NG+ Scaling:
+20007730 SOTE - Human-NPC NG+ Scaling:
+20007740 SOTE - Human-NPC NG+ Scaling:
+20007750 SOTE - Human-NPC NG+ Scaling:
 20200000 Curseblade Meera
 20200001 Curseblade Meera +1
 20200002 Curseblade Meera +2
@@ -3746,6 +3798,182 @@
 20203008 Fire Knight Hilde +8
 20203009 Fire Knight Hilde +9
 20203010 Fire Knight Hilde +10
+20204000 Spider Scorpion Ashes
+20204001 Spider Scorpion Ashes +1
+20204002 Spider Scorpion Ashes +2
+20204003 Spider Scorpion Ashes +3
+20204004 Spider Scorpion Ashes +4
+20204005 Spider Scorpion Ashes +5
+20204006 Spider Scorpion Ashes +6
+20204007 Spider Scorpion Ashes +7
+20204008 Spider Scorpion Ashes +8
+20204009 Spider Scorpion Ashes +9
+20204010 Spider Scorpion Ashes +10
+20205000 Inquisitor Ashes
+20205001 Inquisitor Ashes +1
+20205002 Inquisitor Ashes +2
+20205003 Inquisitor Ashes +3
+20205004 Inquisitor Ashes +4
+20205005 Inquisitor Ashes +5
+20205006 Inquisitor Ashes +6
+20205007 Inquisitor Ashes +7
+20205008 Inquisitor Ashes +8
+20205009 Inquisitor Ashes +9
+20205010 Inquisitor Ashes +10
+20206000 Demi-Human Swordsman Yosh
+20206001 Demi-Human Swordsman Yosh +1
+20206002 Demi-Human Swordsman Yosh +2
+20206003 Demi-Human Swordsman Yosh +3
+20206004 Demi-Human Swordsman Yosh +4
+20206005 Demi-Human Swordsman Yosh +5
+20206006 Demi-Human Swordsman Yosh +6
+20206007 Demi-Human Swordsman Yosh +7
+20206008 Demi-Human Swordsman Yosh +8
+20206009 Demi-Human Swordsman Yosh +9
+20206010 Demi-Human Swordsman Yosh +10
+20207000 Messmer Soldier Ashes
+20207001 Messmer Soldier Ashes +1
+20207002 Messmer Soldier Ashes +2
+20207003 Messmer Soldier Ashes +3
+20207004 Messmer Soldier Ashes +4
+20207005 Messmer Soldier Ashes +5
+20207006 Messmer Soldier Ashes +6
+20207007 Messmer Soldier Ashes +7
+20207008 Messmer Soldier Ashes +8
+20207009 Messmer Soldier Ashes +9
+20207010 Messmer Soldier Ashes +10
+20208000 Black Knight Commander Andreas
+20208001 Black Knight Commander Andreas +1
+20208002 Black Knight Commander Andreas +2
+20208003 Black Knight Commander Andreas +3
+20208004 Black Knight Commander Andreas +4
+20208005 Black Knight Commander Andreas +5
+20208006 Black Knight Commander Andreas +6
+20208007 Black Knight Commander Andreas +7
+20208008 Black Knight Commander Andreas +8
+20208009 Black Knight Commander Andreas +9
+20208010 Black Knight Commander Andreas +10
+20209000 Black Knight Captain Huw
+20209001 Black Knight Captain Huw +1
+20209002 Black Knight Captain Huw +2
+20209003 Black Knight Captain Huw +3
+20209004 Black Knight Captain Huw +4
+20209005 Black Knight Captain Huw +5
+20209006 Black Knight Captain Huw +6
+20209007 Black Knight Captain Huw +7
+20209008 Black Knight Captain Huw +8
+20209009 Black Knight Captain Huw +9
+20209010 Black Knight Captain Huw +10
+20210000 Bigmouth Imp Ashes
+20210001 Bigmouth Imp Ashes +1
+20210002 Bigmouth Imp Ashes +2
+20210003 Bigmouth Imp Ashes +3
+20210004 Bigmouth Imp Ashes +4
+20210005 Bigmouth Imp Ashes +5
+20210006 Bigmouth Imp Ashes +6
+20210007 Bigmouth Imp Ashes +7
+20210008 Bigmouth Imp Ashes +8
+20210009 Bigmouth Imp Ashes +9
+20210010 Bigmouth Imp Ashes +10
+20211000 Man-Fly Ashes
+20211001 Man-Fly Ashes +1
+20211002 Man-Fly Ashes +2
+20211003 Man-Fly Ashes +3
+20211004 Man-Fly Ashes +4
+20211005 Man-Fly Ashes +5
+20211006 Man-Fly Ashes +6
+20211007 Man-Fly Ashes +7
+20211008 Man-Fly Ashes +8
+20211009 Man-Fly Ashes +9
+20211010 Man-Fly Ashes +10
+20212000 Taylew the Golem Smith
+20212001 Taylew the Golem Smith +1
+20212002 Taylew the Golem Smith +2
+20212003 Taylew the Golem Smith +3
+20212004 Taylew the Golem Smith +4
+20212005 Taylew the Golem Smith +5
+20212006 Taylew the Golem Smith +6
+20212007 Taylew the Golem Smith +7
+20212008 Taylew the Golem Smith +8
+20212009 Taylew the Golem Smith +9
+20212010 Taylew the Golem Smith +10
+20213000 Divine Bird Warrior Ornis
+20213001 Divine Bird Warrior Ornis +1
+20213002 Divine Bird Warrior Ornis +2
+20213003 Divine Bird Warrior Ornis +3
+20213004 Divine Bird Warrior Ornis +4
+20213005 Divine Bird Warrior Ornis +5
+20213006 Divine Bird Warrior Ornis +6
+20213007 Divine Bird Warrior Ornis +7
+20213008 Divine Bird Warrior Ornis +8
+20213009 Divine Bird Warrior Ornis +9
+20213010 Divine Bird Warrior Ornis +10
+20214000 Horned Warrior Ashes
+20214001 Horned Warrior Ashes +1
+20214002 Horned Warrior Ashes +2
+20214003 Horned Warrior Ashes +3
+20214004 Horned Warrior Ashes +4
+20214005 Horned Warrior Ashes +5
+20214006 Horned Warrior Ashes +6
+20214007 Horned Warrior Ashes +7
+20214008 Horned Warrior Ashes +8
+20214009 Horned Warrior Ashes +9
+20214010 Horned Warrior Ashes +10
+20215000 Ancient Dragon Florissax
+20215001 Ancient Dragon Florissax +1
+20215002 Ancient Dragon Florissax +2
+20215003 Ancient Dragon Florissax +3
+20215004 Ancient Dragon Florissax +4
+20215005 Ancient Dragon Florissax +5
+20215006 Ancient Dragon Florissax +6
+20215007 Ancient Dragon Florissax +7
+20215008 Ancient Dragon Florissax +8
+20215009 Ancient Dragon Florissax +9
+20215010 Ancient Dragon Florissax +10
+20217000 Fingercreeper Ashes
+20217001 Fingercreeper Ashes +1
+20217002 Fingercreeper Ashes +2
+20217003 Fingercreeper Ashes +3
+20217004 Fingercreeper Ashes +4
+20217005 Fingercreeper Ashes +5
+20217006 Fingercreeper Ashes +6
+20217007 Fingercreeper Ashes +7
+20217008 Fingercreeper Ashes +8
+20217009 Fingercreeper Ashes +9
+20217010 Fingercreeper Ashes +10
+20218000 Fire Knight Queelign
+20218001 Fire Knight Queelign +1
+20218002 Fire Knight Queelign +2
+20218003 Fire Knight Queelign +3
+20218004 Fire Knight Queelign +4
+20218005 Fire Knight Queelign +5
+20218006 Fire Knight Queelign +6
+20218007 Fire Knight Queelign +7
+20218008 Fire Knight Queelign +8
+20218009 Fire Knight Queelign +9
+20218010 Fire Knight Queelign +10
+20219000 Swordhand of Night Jolán
+20219001 Swordhand of Night Jolán +1
+20219002 Swordhand of Night Jolán +2
+20219003 Swordhand of Night Jolán +3
+20219004 Swordhand of Night Jolán +4
+20219005 Swordhand of Night Jolán +5
+20219006 Swordhand of Night Jolán +6
+20219007 Swordhand of Night Jolán +7
+20219008 Swordhand of Night Jolán +8
+20219009 Swordhand of Night Jolán +9
+20219010 Swordhand of Night Jolán +10
+20220000 Jolán and Anna
+20220001 Jolán and Anna +1
+20220002 Jolán and Anna +2
+20220003 Jolán and Anna +3
+20220004 Jolán and Anna +4
+20220005 Jolán and Anna +5
+20220006 Jolán and Anna +6
+20220007 Jolán and Anna +7
+20220008 Jolán and Anna +8
+20220009 Jolán and Anna +9
+20220010 Jolán and Anna +10
 20370000 Crimson Amber Medallion +3
 20370100 Cerulean Amber Medallion +3
 20370200 Viridian Amber Medallion +3
@@ -3930,3 +4158,21 @@
 20501481 Dragon Communion Grease - Left
 20501620 Festive Grease - Right
 20501622 Festive Grease - Left
+20511010 Crimsonburst Dried Tear
+20511011 Crimsonburst Dried Tear
+20511012 Crimsonburst Dried Tear
+20511020 Crimson-Sapping Cracked Tear
+20511021 Crimson-Sapping Cracked Tear
+20511022 Crimson-Sapping Cracked Tear
+20511023 Crimson-Sapping Cracked Tear
+20511030 Cerulean-Sapping Cracked Tear
+20511031 Cerulean-Sapping Cracked Tear
+20511032 Cerulean-Sapping Cracked Tear
+20511033 Cerulean-Sapping Cracked Tear
+20511040 Oil-Soaked Tear
+20511041 Oil-Soaked Tear
+20511042 Oil-Soaked Tear
+20511050 Bloodsucking Cracked Tear
+20511051 Bloodsucking Cracked Tear
+20511060 Glovewort Crystal Tear
+20511061 Glovewort Crystal Tear

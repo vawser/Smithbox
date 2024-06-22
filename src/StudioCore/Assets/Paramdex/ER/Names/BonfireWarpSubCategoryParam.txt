@@ -32,9 +32,9 @@
 20010 Enir-Ilim
 21000 Shadow Keep
 21001 Shadow Keep, Church District
+21010 Specimen Storehouse
 22000 Stone Coffin Fissure
 28000 Midra's Manse
-21010 Specimen Storehouse
 35000 Subterranean Shunning-Grounds
 39200 Ruin-Strewn Precipice
 61000 Limgrave

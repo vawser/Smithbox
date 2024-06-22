@@ -46,7 +46,7 @@
     <refFaceParamId AltName="Reference Face Param ID" Wiki="Face param ID of the matching destination for matching to XX" Enum="FACE_PARAM" />
     <refTextId AltName="Reference Text ID" Wiki="Display text ID for fit to XX" FmgRef="Modern_MenuText" />
     <helpTextId AltName="Help Text ID" Wiki="1-line help text ID (-1: Get 1-line help with item text ID). Basically, item text ID = 1 line help text ID, but if you want to overwrite part of it, specify it with this parameter." FmgRef="Modern_LineHelp" />
-    <unlockEventFlagId AltName="Unlock Event Flag ID" Wiki="Event flag to unlock this item (0: invalid value). Invalid value will always be unlocked" />
+    <unlockEventFlagId AltName="Unlock Event Flag ID" Wiki="Event flag to unlock this item (0: invalid value). Invalid value will always be unlocked" FlagAlias="" />
     <reserved AltName="" IsHidden=""/>
   </Field>
   <Self />

@@ -77,10 +77,10 @@
     <afterEndingReturnPointEntityId AltName="After Ending Return Point Entity ID" Wiki="Entity ID of return point on hold" />
     <enemyDetectionSpEffect_BulletId_byCoopRing_RedHunter AltName="Enemy Detection - Bullet ID (Co-op/Anti-Invader)" Wiki="Bullet ID to fly depending on enemy power / type (also used for multi-automatic firing)" />
     <enemyDetectionSpEffect_BulletId_byInvadeOrb_None AltName="Enemy Detection - Bullet ID (Invader)" Wiki="Bullet ID to fly depending on enemy power / type (also used for multi-automatic firing)" />
-    <tutorialFlagOnAccessDistView AltName="Tutorial Flag Accessing Birdseye Telescope" Wiki="For tutorial judgment Event flag to turn on when accessing the distant view" />
-    <tutorialFlagOnAccessRetryPoint AltName="Tutorial Flag Accessing Marika Stake" Wiki="For tutorial judgment Event flag to turn on when accessing the retry point" />
-    <tutorialFlagOnGetGroupReward AltName="Tutorial Flag Enemy Group Flask Restoration" Wiki="For tutorial judgment Event flag to turn on when group reward is entered after defeating a group" />
-    <tutorialFlagOnEnterRideJumpRegion AltName="Tutorial Flag Entering Spiritspring Jump" Wiki="For tutorial judgment Event flag to turn on when entering the riding big jump point" />
+    <tutorialFlagOnAccessDistView AltName="Tutorial Flag Accessing Birdseye Telescope" Wiki="For tutorial judgment Event flag to turn on when accessing the distant view" FlagAlias="" />
+    <tutorialFlagOnAccessRetryPoint AltName="Tutorial Flag Accessing Marika Stake" Wiki="For tutorial judgment Event flag to turn on when accessing the retry point" FlagAlias="" />
+    <tutorialFlagOnGetGroupReward AltName="Tutorial Flag Enemy Group Flask Restoration" Wiki="For tutorial judgment Event flag to turn on when group reward is entered after defeating a group" FlagAlias="" />
+    <tutorialFlagOnEnterRideJumpRegion AltName="Tutorial Flag Entering Spiritspring Jump" Wiki="For tutorial judgment Event flag to turn on when entering the riding big jump point" FlagAlias="" />
     <tutorialCheckRideJumpRegionExpandRange AltName="Tutorial Check Spiritspring Jump Region Range" Wiki="For tutorial judgment The riding large jump point is expanded by  [m] to judge inside and outside.  Set the value of [m] here." />
     <retryPointActivatedPcAnimId AltName="Activated Marika Stake Player Animation ID" Wiki="PC animation ID when retry point is started. If it is -1, it will not be played." />
     <retryPointActivatedDialogDelayTime AltName="Activated Marika Stake Dialog Display Delay" Wiki="Delay time of dialog display when retry point is started [seconds]" />
@@ -277,8 +277,8 @@
     <rideJumpoff_SfxHeightOffset AltName="Spiritspring SFX Height Offset" Wiki="Big jump to get off_SFX base point offset in the sky" />
     <rideJumpoff_SpEffectId AltName="Spiritspring SpEffect ID (Horse)" Wiki="In the big jump area to get off _ Special effect ID for PC horse" Refs="SpEffectParam" />
     <rideJumpoff_SpEffectIdPc AltName="Spiritspring SpEffect ID (Player)" Wiki="Special effect ID for _PC in the big jump area to get off" Refs="SpEffectParam" />
-    <unlockExchangeMenuEventFlagId AltName="Unlock Exchange Menu - Event Flag ID" Wiki="Main menu  Event flag to unlock the item creation menu" />
-    <unlockMessageMenuEventFlagId AltName="Unlock Message Menu - Event Flag ID" Wiki="Main menu  Event flag to unlock the message menu" />
+    <unlockExchangeMenuEventFlagId AltName="Unlock Exchange Menu - Event Flag ID" Wiki="Main menu  Event flag to unlock the item creation menu" FlagAlias="" />
+    <unlockMessageMenuEventFlagId AltName="Unlock Message Menu - Event Flag ID" Wiki="Main menu  Event flag to unlock the message menu" FlagAlias="" />
     <breakInOnce_A_rebreakInGoodsNum AltName="Phantom Bloody Finger - Count" Wiki="Number of re-invasion items to be given at the time of intrusion Intrusion item_Greater disposable (ID111)" />
     <breakIn_B_rebreakInGoodsNum AltName="Phantom Recusant Finger - Count" Wiki="Number of re-invasion items to be given at the time of invasion Invasion item_Volcano building system (ID112)" />
     <breakInOnce_A_rebreakInGoodsId AltName="Phantom Bloody Finger - Goods ID" Wiki="Tool item ID of re-invasion item given at the time of intrusion Invasion item_Greater disposable (ID111)" />

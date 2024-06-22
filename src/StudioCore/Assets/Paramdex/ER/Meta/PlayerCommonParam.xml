@@ -14,13 +14,13 @@
     <flareOverrideHomingAngle AltName="Flare Overwrite Homing Angle" Wiki="Flare overwrite guidance performance deg / s (-1 no overwrite)" />
     <flareOverrideHomingStopRange AltName="Flare Overwrite Homing Stop Range" Wiki="Flare overwrite guidance stop distance m (-1 no overwrite)" />
     <animeID_SleepCollectorItemPick AltName="Sleep Collector Item Pick-up - Animation ID" Wiki="Animation ID when acquiring Nemuri item" />
-    <unlockEventFlagBaseId_forWepAttr AltName="Weapon Affinity Unlock - Base Event Flag ID" Wiki="Weapon attribute ban event flag base ID" />
+    <unlockEventFlagBaseId_forWepAttr AltName="Weapon Affinity Unlock - Base Event Flag ID" Wiki="Weapon attribute ban event flag base ID" FlagAlias="" />
     <systemEnchant_BigRune AltName="Great Rune Activation - SpEffect ID" Wiki="Special effect Id to call when a large rune is activated from the system" />
     <lowStatus_AtkPowDown AltName="Insufficient Stats - Attack Power Reduction" Wiki="Insufficient status Basic attack power reduction" />
     <lowStatus_ConsumeStaminaRate AltName="Insufficient Stats - Stamina Consumption" Wiki="Insufficient status Stamina consumption ratio" />
     <lowStatus_AtkGuardBreak AltName="Insufficient Stats - Stamina Damage Reduction" Wiki="Insufficient status Playing attack power" />
     <guardStatusCorrect_MaxStatusVal AltName="Guard Boost Correction - Max Value" Wiki="Maximum status value to increase performance used when calculating the status correction value of shield performance" />
-    <unlockEventFlagStepNum_forWepAttr AltName="Weapon Affinity Unlock - Event Flag Step Offset" Wiki="How much space is left for each weapon attribute ID from the base ID. Weapon attribute ban event flag ID = Weapon attribute ban event flag base ID + Weapon attribute ID x Weapon attribute ban event flag number of steps" />
+    <unlockEventFlagStepNum_forWepAttr AltName="Weapon Affinity Unlock - Event Flag Step Offset" Wiki="How much space is left for each weapon attribute ID from the base ID. Weapon attribute ban event flag ID = Weapon attribute ban event flag base ID + Weapon attribute ID x Weapon attribute ban event flag number of steps" FlagAlias="" />
     <retributionMagic_damageCountNum AltName="Retribution Magic - Damage Trigger Count" Wiki="Causal Retribution_Number of Damages Before Counterattack" />
     <retributionMagic_damageCountRemainTime AltName="Retribution Magic - Damage Trigger Duration" Wiki="Causal response_Number of damages until counterattack Duration s" />
     <retributionMagic_burstDmypolyId AltName="Retribution Magic - Explosion Dummy Poly ID" Wiki="Causal Retribution_Counterattack Magic Damipoli ID" />

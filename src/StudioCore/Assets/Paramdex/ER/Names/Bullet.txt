@@ -6153,7 +6153,7 @@
 210080000 Spirit Raisin
 210170000 Innard Meat
 210171000 Dragon Communion Harpoon
-210172000 Dragon Communion Harpoon
+210172000 Dragon Communion Harpoon / Roundrock
 210172001 Dragon Communion Harpoon [Hit]
 210172002 Dragon Communion Harpoon
 210200000 Polter Stone

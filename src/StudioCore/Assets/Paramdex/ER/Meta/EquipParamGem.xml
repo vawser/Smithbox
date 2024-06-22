@@ -35,7 +35,7 @@
     <spEffectId0 AltName="SpEffect ID [0]" Wiki="Special effect ID00" Refs="SpEffectParam" />
     <spEffectId1 AltName="SpEffect ID [1]" Wiki="Special effect ID01" Refs="SpEffectParam"/>
     <spEffectId2 AltName="SpEffect ID [2]" Wiki="Special effect ID02" Refs="SpEffectParam"/>
-    <itemGetTutorialFlagId AltName="Item Get Tutorial Flag ID" Wiki="Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained." />
+    <itemGetTutorialFlagId AltName="Item Get Tutorial Flag ID" Wiki="Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained." FlagAlias="" />
     <swordArtsParamId AltName="Sword Arts ID" Wiki="ID of the destination arts parameter" Refs="SwordArtsParam" />
     <mountValue AltName="Application Cost" Wiki="Installation price" />
     <sellValue AltName="Sell Value" Wiki="Sale price" />

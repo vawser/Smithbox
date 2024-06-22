@@ -130,3 +130,4 @@
 30100000 Bloodfiend Hexer
 30200000 Gravebird Ashes
 30300000 Fire Knight Hilde
+30400000 Spider Scorpion

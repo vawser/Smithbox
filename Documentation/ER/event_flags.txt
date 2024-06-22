@@ -509,58 +509,58 @@ ID,Name
 9997,デバッグフラグ07
 9998,デバッグフラグ08
 9999,デバッグフラグ09
-60000,エスト瓶所持（HP / FP）
-60010,エスト瓶所持（FP）
-60020,エリクサー瓶所持
-60100,機能解禁：ウマ
-60110,機能解禁：バディ
-60120,機能解禁：クラフト
-60130,機能解禁：魔石付け替え
-60140,機能解禁：軽装防具交換
-60150,機能解禁：軽装防具交換（上位）
-60200,マルチ機能解禁：ホスト化
-60210,マルチ機能解禁：メッセージ
-60220,マルチ機能解禁：白サイン
-60230,マルチ機能解禁：白サイン溜まり
-60240,マルチ機能解禁：赤サイン
-60250,マルチ機能解禁：赤サイン溜まり
-60260,マルチ機能解禁：侵入アイテムA
-60270,マルチ機能解禁：侵入アイテムB
-60280,マルチ機能解禁：救援契機（ホスト）
-60290,マルチ機能解禁：救援契機（ゲスト）
-60300,マルチ機能解禁：侵入クールタイムなし
-60310,マルチ機能解禁：決別
-60400,成長解禁：記憶スロット0
-60410,成長解禁：記憶スロット1
-60420,成長解禁：記憶スロット2
-60430,成長解禁：記憶スロット3
-60440,成長解禁：記憶スロット4
-60450,成長解禁：記憶スロット5
-60460,成長解禁：記憶スロット6
-60470,成長解禁：記憶スロット7
-60480,成長解禁：記憶スロット8（予備）
-60490,成長解禁：記憶スロット9（予備）
-60500,成長解禁：タリスマン装備0
-60510,成長解禁：タリスマン装備1
-60520,成長解禁：タリスマン装備2
-60530,成長解禁：タリスマン装備3（予備）
-60540,成長解禁：タリスマン装備4（予備）
-60550,成長解禁：タリスマン装備5（予備）
-60560,成長解禁：タリスマン装備6（予備）
-60570,成長解禁：タリスマン装備7（予備）
-60580,成長解禁：タリスマン装備8（予備）
-60590,成長解禁：タリスマン装備9（予備）
-60800,機能解禁：ジェスチャー 一礼
-60801,機能解禁：ジェスチャー 丁寧 / 貴族の一礼
-60802,機能解禁：ジェスチャー 宗教の一礼
-60803,機能解禁：ジェスチャー 女性の一礼
-60804,機能解禁：ジェスチャー 開戦の一礼
-60805,機能解禁：ジェスチャー 跪く一礼
-60806,機能解禁：ジェスチャー 歓迎
-60807,機能解禁：ジェスチャー 手をふる
-60808,機能解禁：ジェスチャー 「よっ！」（手を上げる）
-60809,機能解禁：ジェスチャー ぐっ！（冒険者の一礼）
-60810,機能解禁：ジェスチャー 女性の丁寧な一礼
+60000, Est bottle possession (HP/FP)
+60010, Est bottle possession (FP)
+60020, Elixir bottle possession
+60100, Function unlocked: Horse
+60110, Function unlocked: Buddy
+60120, Function unlocked: Craft
+60130, Function unlocked: Magic stone replacement
+60140, Function unlocked: Light armor exchange
+60150, Function unlocked: Light armor exchange (upper)
+60200, Multi-function release: Hosting
+60210, Multi-function unlocked: Message
+60220, Multi-function unlocked: White sign
+60230, Multi-function unlocked: White sign collection
+60240, Multi-function unlocked: Red sign
+60250, Multi-function unlocked: Red sign accumulation
+60260, Multi-function unlocked: Intrusion item A
+60270, Multi-function unlocked: Intrusion item B
+60280, Multi-function release: Rescue opportunity (host)
+60290, Multi-function unlocked: Rescue opportunity (guest)
+60300, Multi-function unlocked: No intrusion cooldown
+60310, Multi-function release: Farewell
+60400, Growth unlocked: Memory slot 0
+60410, Growth unlocked: Memory slot 1
+60420, Growth unlocked: Memory slot 2
+60430, Growth unlocked: Memory slot 3
+60440, Growth unlocked: Memory slot 4
+60450, Growth unlocked: Memory slot 5
+60460, Growth unlocked: Memory slot 6
+60470, Growth unlocked: Memory slot 7
+60480, Growth unlocked: Memory slot 8 (spare)
+60490, Growth unlocked: Memory slot 9 (spare)
+60500, Growth unlocked: Talisman equipment 0
+60510, Growth unlocked: Talisman equipment 1
+60520, Growth unlocked: Talisman equipment 2
+60530, Growth unlocked: Talisman equipment 3 (spare)
+60540, Growth unlocked: Talisman equipment 4 (spare)
+60550, Growth unlocked: Talisman equipment 5 (spare)
+60560, Growth unlocked: Talisman equipment 6 (spare)
+60570, Growth unlocked: Talisman equipment 7 (spare)
+60580, Growth unlocked: Talisman equipment 8 (spare)
+60590, Growth unlocked: Talisman equipment 9 (spare)
+60800, Function unlocked: Gesture bow
+60801, Function unlocked: Gesture polite / Noble's bow
+60802, Function unlocked: Gesture Religious Bow
+60803, Function unlocked: Gesture female bow
+60804, Function unlocked: Gesture opening bow
+60805, Function unlocked: Gesture kneeling bow
+60806,Function unlocked: Gesture welcome
+60807,Function unlocked: Gesture waving hands
+60808, Function unlocked: Gesture "Yo!" (raises hand)
+60809,Function unlocked: Gesture! (Adventurer's bow)
+60810, Function unlocked: Gesture: A polite bow for women
 60811,機能解禁：ジェスチャー 前を指さす
 60812,機能解禁：ジェスチャー 上を指差す
 60813,機能解禁：ジェスチャー 下を指差す

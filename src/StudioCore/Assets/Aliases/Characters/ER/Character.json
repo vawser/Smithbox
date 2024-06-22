@@ -1829,7 +1829,7 @@
         },
         {
             "id": "c5011",
-            "name": "",
+            "name": "Golden Hippopotamus (Golden Wings)",
             "tags": []
         },
         {
@@ -1878,13 +1878,23 @@
             "tags": []
         },
         {
+            "id": "c5080",
+            "name": "Bloodfiend",
+            "tags": []
+        },
+        {
             "id": "c5081",
             "name": "Chief Bloodfiend",
             "tags": []
         },
         {
+            "id": "c5090",
+            "name": "Gravebird",
+            "tags": []
+        },
+        {
             "id": "c5110",
-            "name": "",
+            "name": "Squiggle",
             "tags": []
         },
         {
@@ -1899,12 +1909,12 @@
         },
         {
             "id": "c5131",
-            "name": "",
+            "name": "Messmer the Impaler",
             "tags": []
         },
         {
             "id": "c5132",
-            "name": "",
+            "name": "Messmer the Impaler",
             "tags": []
         },
         {
@@ -1919,7 +1929,7 @@
         },
         {
             "id": "c5170",
-            "name": "",
+            "name": "Furnace Golem",
             "tags": []
         },
         {
@@ -1933,13 +1943,23 @@
             "tags": []
         },
         {
+            "id": "c5190",
+            "name": "Spider Scorpion",
+            "tags": []
+        },
+        {
             "id": "c5192",
-            "name": "",
+            "name": "Spider Scorpion",
             "tags": []
         },
         {
             "id": "c5193",
-            "name": "",
+            "name": "Spider Scorpion (Small)",
+            "tags": []
+        },
+        {
+            "id": "c5194",
+            "name": "Spider Scorpion (Small)",
             "tags": []
         },
         {
@@ -1959,7 +1979,7 @@
         },
         {
             "id": "c5221",
-            "name": "",
+            "name": "Miquella's Arms",
             "tags": []
         },
         {

@@ -8,7 +8,7 @@
     <disableParamReserve2 AltName="" IsHidden=""/>
     <talkChrEntityId AltName="Talk Character Entity ID" Wiki="Used as a foreign key when referencing from a conversation." />
     <eliminateTargetEntityId AltName="Defeat Target List Entity ID" Wiki="Entity ID of the character / group to be defeated by the buddy when summoned from this stele" />
-    <summonedEventFlagId AltName="Summoned Event Flag ID" Wiki="Flag ID that stands when summoned from a stone monument. When this flag is set, the stone monument cannot be summoned." />
+    <summonedEventFlagId AltName="Summoned Event Flag ID" Wiki="Flag ID that stands when summoned from a stone monument. When this flag is set, the stone monument cannot be summoned." FlagAlias="" />
     <isSpecial AltName="Is Special Monument" Wiki="Is the stone monument an SP stone monument or a general-purpose stone monument? A bool that distinguishes." IsBool="" />
     <pad1 AltName="" IsHidden=""/>
     <pad2 AltName="" IsHidden=""/>
