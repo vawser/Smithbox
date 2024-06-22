@@ -221,6 +221,8 @@
   <ItemGroup>
     <None Update="Assets\**" CopyToOutputDirectory="PreserveNewest" />
     
+    <None Update="Assets\Regulations\**" CopyToOutputDirectory="PreserveNewest" />
+    
     <None Update="Assets\Aliases\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Aliases\Assets\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Aliases\Characters\**" CopyToOutputDirectory="PreserveNewest" />

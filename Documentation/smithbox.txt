@@ -113,6 +113,7 @@ World Map:
 # Issues
 TalkParam is choking on view due to FmgRef lookup
 Prefab create throw error on new project creation (for a user)
+
 Param Upgrade is causing PostureControlParam_WepRight and SignPuddleParam to become invalid to the paramdef
 
 

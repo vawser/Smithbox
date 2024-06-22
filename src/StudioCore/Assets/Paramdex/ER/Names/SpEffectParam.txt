@@ -3638,6 +3638,114 @@
 6201001 Mushroom Crown
 6202000 Black Dumpling
 6202001 Black Dumpling
+20007000 SOTE - Level Scaling: 
+20007010 SOTE - Level Scaling: 
+20007020 SOTE - Level Scaling: 
+20007030 SOTE - Level Scaling: 
+20007040 SOTE - Level Scaling: 
+20007050 SOTE - Level Scaling: 
+20007060 SOTE - Level Scaling: 
+20007070 SOTE - Level Scaling: 
+20007080 SOTE - Level Scaling: 
+20007090 SOTE - Level Scaling: 
+20007100 SOTE - Level Scaling: 
+20007110 SOTE - Level Scaling: 
+20007120 SOTE - Level Scaling: 
+20007130 SOTE - Level Scaling: 
+20007140 SOTE - Level Scaling: 
+20007150 SOTE - Level Scaling: 
+20007200 SOTE - Human-NPC Level Scaling: 
+20007210 SOTE - Human-NPC Level Scaling: 
+20007220 SOTE - Human-NPC Level Scaling: 
+20007230 SOTE - Human-NPC Level Scaling: 
+20007240 SOTE - Human-NPC Level Scaling: 
+20007250 SOTE - Human-NPC Level Scaling: 
+20007260 SOTE - Human-NPC Level Scaling: 
+20007270 SOTE - Human-NPC Level Scaling: 
+20007280 SOTE - Human-NPC Level Scaling: 
+20007290 SOTE - Human-NPC Level Scaling: 
+20007300 SOTE - Human-NPC Level Scaling: 
+20007310 SOTE - Human-NPC Level Scaling: 
+20007320 SOTE - Human-NPC Level Scaling: 
+20007330 SOTE - Human-NPC Level Scaling: 
+20007340 SOTE - Human-NPC Level Scaling: 
+20007350 SOTE - Human-NPC Level Scaling: 
+20007400 SOTE - NG+ Scaling: 
+20007410 SOTE - NG+ Scaling: 
+20007420 SOTE - NG+ Scaling: 
+20007430 SOTE - NG+ Scaling: 
+20007440 SOTE - NG+ Scaling: 
+20007450 SOTE - NG+ Scaling: 
+20007460 SOTE - NG+ Scaling: 
+20007470 SOTE - NG+ Scaling: 
+20007480 SOTE - NG+ Scaling: 
+20007490 SOTE - NG+ Scaling: 
+20007500 SOTE - NG+ Scaling: 
+20007510 SOTE - NG+ Scaling: 
+20007520 SOTE - NG+ Scaling: 
+20007530 SOTE - NG+ Scaling: 
+20007540 SOTE - NG+ Scaling: 
+20007550 SOTE - NG+ Scaling: 
+20007600 SOTE - Human-NPC NG+ Scaling: 
+20007610 SOTE - Human-NPC NG+ Scaling: 
+20007620 SOTE - Human-NPC NG+ Scaling: 
+20007630 SOTE - Human-NPC NG+ Scaling: 
+20007640 SOTE - Human-NPC NG+ Scaling: 
+20007650 SOTE - Human-NPC NG+ Scaling: 
+20007660 SOTE - Human-NPC NG+ Scaling: 
+20007670 SOTE - Human-NPC NG+ Scaling: 
+20007680 SOTE - Human-NPC NG+ Scaling: 
+20007690 SOTE - Human-NPC NG+ Scaling: 
+20007700 SOTE - Human-NPC NG+ Scaling: 
+20007710 SOTE - Human-NPC NG+ Scaling: 
+20007720 SOTE - Human-NPC NG+ Scaling: 
+20007730 SOTE - Human-NPC NG+ Scaling: 
+20007740 SOTE - Human-NPC NG+ Scaling: 
+20007750 SOTE - Human-NPC NG+ Scaling: 
+20200000 Curseblade Meera
+20200001 Curseblade Meera +1
+20200002 Curseblade Meera +2
+20200003 Curseblade Meera +3
+20200004 Curseblade Meera +4
+20200005 Curseblade Meera +5
+20200006 Curseblade Meera +6
+20200007 Curseblade Meera +7
+20200008 Curseblade Meera +8
+20200009 Curseblade Meera +9
+20200010 Curseblade Meera +10
+20201000 Bloodfiend Hexer's Ashes
+20201001 Bloodfiend Hexer's Ashes +1
+20201002 Bloodfiend Hexer's Ashes +2
+20201003 Bloodfiend Hexer's Ashes +3
+20201004 Bloodfiend Hexer's Ashes +4
+20201005 Bloodfiend Hexer's Ashes +5
+20201006 Bloodfiend Hexer's Ashes +6
+20201007 Bloodfiend Hexer's Ashes +7
+20201008 Bloodfiend Hexer's Ashes +8
+20201009 Bloodfiend Hexer's Ashes +9
+20201010 Bloodfiend Hexer's Ashes +10
+20202000 Gravebird Ashes
+20202001 Gravebird Ashes +1
+20202002 Gravebird Ashes +2
+20202003 Gravebird Ashes +3
+20202004 Gravebird Ashes +4
+20202005 Gravebird Ashes +5
+20202006 Gravebird Ashes +6
+20202007 Gravebird Ashes +7
+20202008 Gravebird Ashes +8
+20202009 Gravebird Ashes +9
+20202010 Gravebird Ashes +10
+20203000 Fire Knight Hilde
+20203001 Fire Knight Hilde +1
+20203002 Fire Knight Hilde +2
+20203003 Fire Knight Hilde +3
+20203004 Fire Knight Hilde +4
+20203005 Fire Knight Hilde +5
+20203006 Fire Knight Hilde +6
+20203007 Fire Knight Hilde +7
+20203008 Fire Knight Hilde +8
+20203009 Fire Knight Hilde +9
+20203010 Fire Knight Hilde +10
 20370000 Crimson Amber Medallion +3
 20370100 Cerulean Amber Medallion +3
 20370200 Viridian Amber Medallion +3

@@ -4352,6 +4352,10 @@
 144810000 [Spirit Summon] Miranda Sprout
 144910200 [Spirit Summon] Soldjars of Fortune
 148200000 [Spirit Summon] Omenkiller
+150400000 [Spirit Summon] Curseblade Meera
+150800000 [Spirit Summon] Bloodfiend Hexer
+150900000 [Spirit Summon] Gravebird
+151600000 [Spirit Summon] Fire Knight Hilde
 170001000 [Spirit Summon] Fallen Hawks Greatshield Soldier
 170002000 [Spirit Summon] Fallen Hawks Archer
 500000010 Stormhill Colosseum Silent Spirit
@@ -4399,6 +4403,10 @@
 506030066 Wandering Mausoleum Corpse
 506070078 Talk Dummy
 506080079 Clouded Mirror Stand
+506300084 Grand Altar of Dragon Communion
+506310083 Wandering Mausoleum Corpse
+506310090 Wandering Mausoleum Corpse
+506310093 Wandering Mausoleum Corpse
 520000000 Human
 523000000 Tanith, Volcano Manor Proprietress
 523000038 Tanith, Volcano Manor Proprietress
@@ -4666,6 +4674,96 @@
 523900056 Polyanna, Youngest Sister
 523910000 Magnus the Beast Claw
 523910030 Magnus the Beast Claw
+524030000 Igon
+524030081 Igon
+524030085 Igon
+524060000 Dragon Communion Priestess
+524060084 Dragon Communion Priestess
+524070000 Ancient Dragon-Man
+524070001 Ancient Dragon-Man
+524070081 Ancient Dragon-Man
+524090000 Swordhand of Night Jolan
+524090090 Swordhand of Night Jolan
+524090100 Swordhand of Night Jolan
+524090190 Swordhand of Night Jolan
+524090290 Swordhand of Night Jolan
+524120000 Swordhand of Night Anna
+524120090 Swordhand of Night Anna
+524130000 Fire Knight Queelign
+524130098 Fire Knight Queelign
+524140000 Hornsent
+524140080 Hornsent
+524140089 Hornsent
+524140090 Hornsent
+524140099 Hornsent
+524140189 Hornsent
+524140198 Hornsent
+524140289 Hornsent
+524150000 Moore
+524150080 Moore
+524150089 Moore
+524150090 Moore
+524150189 Moore
+524150289 Moore
+524160000 Sir Ansbach
+524160080 Sir Ansbach
+524160089 Sir Ansbach
+524160099 Sir Ansbach
+524160199 Sir Ansbach
+524160289 Pureblood Knight Ansbach
+524170000 Redmane Freyja
+524170080 Redmane Freyja
+524170089 Redmane Freyja
+524170099 Redmane Freyja
+524170189 Redmane Freyja
+524170289 Redmane Freyja
+524180000 Needle Knight Leda
+524180068 Needle Knight Leda
+524180089 Needle Knight Leda
+524180090 Needle Knight Leda
+524180189 Needle Knight Leda
+524180198 Needle Knight Leda
+524180199 Needle Knight Leda
+524180289 Needle Knight Leda
+524190000 Thiollier
+524190081 Thiollier
+524190087 Thiollier
+524190089 Thiollier
+524190189 Thiollier
+524200000 Count Ymir, High Priest
+524200090 Count Ymir, High Priest
+524200190 Count Ymir, Mother of Fingers
+524210000 Red Bear
+524210001 Red Bear
+524210090 Red Bear
+524210095 Red Bear
+524220000 Dancer of Ranah
+524220001 Dancer of Ranah
+524220083 Dancer of Ranah
+524230000 Rakshasa
+524230090 Rakshasa
+524230091 Rakshasa
+524240000 Knight of the Solitary Gaol
+524240080 Knight of the Solitary Gaol
+524250000 Dryleaf Dane
+524250001 Dryleaf Dane
+524250002 Dryleaf Dane
+524250089 Dryleaf Dane
+524250090 Dryleaf Dane
+524250189 Dryleaf Dane
+524250190 Dryleaf Dane
+524250289 Dryleaf Dane
+524270000 Lamenter
+524270001 Lamenter
+524270084 Lamenter
+524280000 Greater Potentate
+524280090 Greater Potentate
+524290000 Madding Hand
+524290086 Madding Hand
+524310000 Logur, the Beast Claw
+524310080 Logur, the Beast Claw
+524320000 Moonrithyll, Carian Knight
+524320082 Moonrithyll, Carian Knight
 526100052 Stray Mimic Tear
 526100965 Mimic Tear
 527900010 Human
@@ -4736,6 +4834,43 @@
 533900000 Polyanna, Youngest Sister
 533900040 Polyanna, Adopted Daughter
 533900056 Polyanna, Youngest Sister
+534031000 Igon
+534031085 Drake Warrior Igon
+534090000 Swordhand of Night Jolan
+534090083 Swordhand of Night Jolan
+534090093 Swordhand of Night Jolan
+534090099 Swordhand of Night Jolan
+534140000 Hornsent
+534140098 Hornsent
+534140099 Hornsent
+534140198 Hornsent
+534160000 Sir Ansbach
+534160089 Pureblood Knight Ansbach
+534160099 Sir Ansbach
+534160189 Pureblood Knight Ansbach
+534160289 Pureblood Knight Ansbach
+534170000 Redmane Freyja
+534170088 Redmane Freyja
+534170090 Redmane Freyja
+534170098 Redmane Freyja
+534180000 Needle Knight Leda
+534180082 Needle Knight Leda
+534180094 Needle Knight Leda
+534180098 Needle Knight Leda
+534180099 Needle Knight Leda
+534181000 Needle Knight Leda
+534190000 Thiollier
+534190087 Thiollier
+534190089 Thiollier
+534190189 Thiollier
+534190289 Thiollier
+534200000 Count Ymir, Hight Priest
+534250000 Dryleaf Dane
+534250082 Dryleaf Dane
+534250094 Dryleaf Dane
+534260000 Sanguine Noble Nataan
+534260089 Sanguine Noble Nataan
+534260189 Sanguine Noble Nataan
 543110000 Edgar the Revenger
 543110020 Edgar the Revenger
 543260000 Knight Bernahl
@@ -4754,3 +4889,30 @@
 543690010 Recusant Henricus
 543850000 Mad Tongue Alberich
 543850079 Mad Tongue Alberich
+544070000 Ancient-Dragon-Man
+544070081 Ancient-Dragon-Man
+544090000 Swordhand of Night Jolan
+544120000 Swordhand of Night Anna
+544120090 Swordhand of Night Anna
+544130000 Fire Knight Queelign
+544130088 Fire Knight Queelign
+544130090 Fire Knight Queelign
+544130188 Fire Knight Queelign
+544130190 Fire Knight Queelign
+544140000 Hornsent
+544140094 Hornsent
+544150000 Moore
+544150080 Moore
+544150081 Moore
+544150083 Moore
+544150090 Moore
+544150180 Moore
+544150181 Moore
+544150183 Moore
+544150190 Moore
+544160000 Sir Ansbach
+544170000 Redmane Freyja
+544180000 Needle Knight Leda
+544190000 Thiollier
+544190087 Thiollier
+544250000 Dryleaf Dane

@@ -2148,44 +2148,41 @@ public class ParamBank
             return;
         }
 
-        if (Smithbox.ProjectType == ProjectType.DS1)
+        switch(Smithbox.ProjectType)
         {
-            SaveParamsDS1();
-        }
+            case ProjectType.DS1: 
+                SaveParamsDS1(); 
+                break;
 
-        if (Smithbox.ProjectType == ProjectType.DS1R)
-        {
-            SaveParamsDS1R();
-        }
+            case ProjectType.DS1R: 
+                SaveParamsDS1R(); 
+                break;
 
-        if (Smithbox.ProjectType == ProjectType.DES)
-        {
-            SaveParamsDES();
-        }
+            case ProjectType.DES: 
+                SaveParamsDES(); 
+                break;
 
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-        {
-            SaveParamsDS2();
-        }
+            case ProjectType.DS2:
+            case ProjectType.DS2S: 
+                SaveParamsDS2(); 
+                break;
 
-        if (Smithbox.ProjectType == ProjectType.DS3)
-        {
-            SaveParamsDS3();
-        }
+            case ProjectType.DS3:
+                SaveParamsDS3(); 
+                break;
 
-        if (Smithbox.ProjectType == ProjectType.BB || Smithbox.ProjectType == ProjectType.SDT)
-        {
-            SaveParamsBBSekiro();
-        }
+            case ProjectType.BB:
+            case ProjectType.SDT:
+                SaveParamsBBSekiro(); 
+                break;
 
-        if (Smithbox.ProjectType == ProjectType.ER)
-        {
-            SaveParamsER();
-        }
+            case ProjectType.ER: 
+                SaveParamsER(); 
+                break;
 
-        if (Smithbox.ProjectType == ProjectType.AC6)
-        {
-            SaveParamsAC6();
+            case ProjectType.AC6:
+                SaveParamsAC6(); 
+                break;
         }
     }
 
@@ -2490,6 +2487,14 @@ public class ParamBank
         var anyUpgrades = false;
         foreach (var k in vanillaBank.Params.Keys)
         {
+            // Added for ER SOTE due to an issue where upgrading would cause these two params to then not be read correctly post-upgrade
+            // Need to discover actual cause, but for now copy them directly from the vanilla bank
+            if (k == "SignPuddleParam" || k == "PostureControlParam_WepRight")
+            {
+                updatedParams.Add(k, vanillaBank.Params[k]);
+                continue;
+            }
+
             // If the param is completely new, just take it
             if (!oldVanillaParams.ContainsKey(k) || !Params.ContainsKey(k))
             {

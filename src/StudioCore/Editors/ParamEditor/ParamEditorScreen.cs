@@ -1119,6 +1119,19 @@ public class ParamEditorScreen : EditorScreen
                 {
                     var oldVersionString = Utils.ParseRegulationVersion(ParamBank.PrimaryBank.ParamVersion);
                     var newVersionString = Utils.ParseRegulationVersion(ParamBank.VanillaBank.ParamVersion);
+
+                    var oldRegulationPath = GetOldRegulationPath(oldVersionString);
+
+                    if(oldRegulationPath == "")
+                    {
+                        PlatformUtils.Instance.MessageBox("Could not find old regulation.bin for upgrade. Param upgrade cancelled.", "Param Upgrader", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        UpgradeRegulation(ParamBank.PrimaryBank, ParamBank.VanillaBank, oldRegulationPath);
+                    }
+
+                    /*
                     var message = PlatformUtils.Instance.MessageBox(
                             $"Project regulation.bin version appears to be out of date vs game folder regulation. Upgrading is recommended since the game will typically not load out of date regulation." +
                             $"\n\nUpgrading requires you to select a VANILLA REGULATION.BIN WITH THE SAME VERSION AS YOUR MOD ({oldVersionString})" +
@@ -1137,6 +1150,7 @@ public class ParamEditorScreen : EditorScreen
                             UpgradeRegulation(ParamBank.PrimaryBank, ParamBank.VanillaBank, path);
                         }
                     }
+                    */
                 }
 
                 ImGui.PopStyleColor();
@@ -1155,6 +1169,59 @@ public class ParamEditorScreen : EditorScreen
                     ImGui.PopStyleColor();
             }
         }
+    }
+
+    private string GetOldRegulationPath(string versionString)
+    {
+        var oldRegulationPath = "";
+        var regulationFolder = "";
+        var storedRegulationDirectory = AppContext.BaseDirectory + $"\\Assets\\Regulations\\{ResourceMiscLocator.GetGameIDForDir()}\\";
+
+        if (Smithbox.ProjectType == ProjectType.ER)
+        {
+            switch (versionString)
+            {
+                case "1.02.1.0038": regulationFolder = "1.02.1 (10210038)"; break;
+                case "1.03.1.0059": regulationFolder = "1.03.1 (10310059)"; break;
+                case "1.03.2.0064": regulationFolder = "1.03.2 (10320064)"; break;
+                case "1.03.3.0078": regulationFolder = "1.03.3 (10330078)"; break;
+                case "1.04.1.0090": regulationFolder = "1.04.1 (10410090)"; break;
+                case "1.04.2.0097": regulationFolder = "1.04.2 (10420097)"; break;
+                case "1.05.0.1000": regulationFolder = "1.05 (10501000)"; break;
+                case "1.06.0.1000": regulationFolder = "1.06 (10601000)"; break;
+                case "1.07.0.1000": regulationFolder = "1.07 (10701000)"; break;
+                case "1.07.1.0188": regulationFolder = "1.07.1 (10710188)"; break;
+                case "1.08.0.1000": regulationFolder = "1.08 (10801000)"; break;
+                case "1.08.1.1000": regulationFolder = "1.08.1 (10811000)"; break;
+                case "1.09.0.1000": regulationFolder = "1.09 (10901000)"; break;
+                case "1.09.1.1000": regulationFolder = "1.09.1 (10911000)"; break;
+                case "1.10.0.1000": regulationFolder = "1.10 (11001000)"; break;
+                case "1.12.1.0015": regulationFolder = "1.12.1 (11210015)"; break;
+            }
+        }
+
+        if (Smithbox.ProjectType == ProjectType.AC6)
+        {
+            switch (versionString)
+            {
+                case "1.01.0.0129": regulationFolder = "1.01 (10100129)"; break;
+                case "1.02.1.0005": regulationFolder = "1.02.1 (10210005)"; break;
+                case "1.03.0.0151": regulationFolder = "1.03 (10300151)"; break;
+                case "1.03.1.0185": regulationFolder = "1.03.1 (10310185)"; break;
+                case "1.04.0.0193": regulationFolder = "1.04 (10400193)"; break;
+                case "1.04.1.0243": regulationFolder = "1.04.1 (10410243)"; break;
+                case "1.05.0.0262": regulationFolder = "1.05 (10500262)"; break;
+                case "1.06.0.0278": regulationFolder = "1.06 (10600278)"; break;
+                case "1.06.1.0279": regulationFolder = "1.06.1 (10610279)"; break;
+            }
+        }
+
+        if (regulationFolder != "")
+        {
+            oldRegulationPath = $"{storedRegulationDirectory}\\{regulationFolder}\\regulation.bin";
+        }
+
+        return oldRegulationPath;
     }
 
     public void UpgradeRegulation(ParamBank bank, ParamBank vanillaBank, string oldRegulation)
@@ -1246,41 +1313,26 @@ public class ParamEditorScreen : EditorScreen
 
         if (result == ParamBank.ParamUpgradeResult.Success)
         {
-            DialogResult msgUpgradeEdits = PlatformUtils.Instance.MessageBox(
-                @"MapStudio can automatically perform several edits to keep your params consistent with updates to vanilla params. " +
-                "Would you like to perform these edits?", "Regulation upgrade edits",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Information);
+            (List<string> success, List<string> fail) = RunUpgradeEdits(oldVersion, newVersion);
 
-            if (msgUpgradeEdits == DialogResult.Yes)
+            if (success.Count > 0 || fail.Count > 0)
             {
-                (List<string> success, List<string> fail) = RunUpgradeEdits(oldVersion, newVersion);
-
-                if (success.Count > 0 || fail.Count > 0)
-                {
-                    PlatformUtils.Instance.MessageBox(
-                        (success.Count > 0
-                            ? "Successfully performed the following edits:\n" + string.Join('\n', success)
-                            : "") +
-                        (success.Count > 0 && fail.Count > 0 ? "\n" : "") +
-                        (fail.Count > 0
-                            ? "Unable to perform the following edits:\n" + string.Join('\n', fail)
-                            : ""),
-                        "Regulation upgrade edits",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                    );
-                }
-
-                UICache.ClearCaches();
-                ParamBank.RefreshAllParamDiffCaches(false);
+                PlatformUtils.Instance.MessageBox(
+                    (success.Count > 0
+                        ? "Successfully performed the following edits:\n" + string.Join('\n', success)
+                        : "") +
+                    (success.Count > 0 && fail.Count > 0 ? "\n" : "") +
+                    (fail.Count > 0
+                        ? "Unable to perform the following edits:\n" + string.Join('\n', fail)
+                        : ""),
+                    "Regulation upgrade edits",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
             }
 
-            DialogResult msgRes = PlatformUtils.Instance.MessageBox(
-                "Upgrade successful",
-                "Success",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            UICache.ClearCaches();
+            ParamBank.RefreshAllParamDiffCaches(false);
         }
 
         EditorActionManager.Clear();
