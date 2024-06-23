@@ -361,6 +361,7 @@ public class EditorDecorations
                     return toPrint.TrimStart();
                 }).ToList();
         });
+
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_FmgRef_Text);
         foreach (var text in textsToPrint)
         {

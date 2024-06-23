@@ -191,24 +191,27 @@ public class ToolWindow
 
     private void DisplayTool_WorldMapLayoutGenerator()
     {
-        if (ImGui.BeginTabItem("World Map Layout Generator"))
+        if (Smithbox.ProjectType == ProjectType.ER)
         {
-            ImGui.Text("This tool will generate the .layout file used by the World Map feature.");
-
-            ImGui.Text("Export Path: " + WorldMapLayoutGenerator.exportPath);
-
-            if (ImGui.Button("Select Layout Export Directory"))
+            if (ImGui.BeginTabItem("World Map Layout Generator"))
             {
-                WorldMapLayoutGenerator.SelectExportDirectory();
-            }
-            ImguiUtils.ShowHoverTooltip("Select the directory that the world map layout file will be placed in.");
+                ImGui.Text("This tool will generate the .layout file used by the World Map feature.");
 
-            if (ImGui.Button("Generate Layout"))
-            {
-                WorldMapLayoutGenerator.CalcWorldMapLayout();
-            }
+                ImGui.Text("Export Path: " + WorldMapLayoutGenerator.exportPath);
 
-            ImGui.EndTabItem();
+                if (ImGui.Button("Select Layout Export Directory"))
+                {
+                    WorldMapLayoutGenerator.SelectExportDirectory();
+                }
+                ImguiUtils.ShowHoverTooltip("Select the directory that the world map layout file will be placed in.");
+
+                if (ImGui.Button("Generate Layout"))
+                {
+                    WorldMapLayoutGenerator.CalcWorldMapLayout();
+                }
+
+                ImGui.EndTabItem();
+            }
         }
     }
 }
