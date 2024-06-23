@@ -241,11 +241,13 @@ namespace SoulsFormats
         /// <summary>
         /// A generic entry in an MSB param.
         /// </summary>
+        [DataContract]
         public abstract class Entry : IMsbEntry
         {
             /// <summary>
             /// The name of this entry.
             /// </summary>
+            [DataMember]
             public string Name { get; set; }
 
             internal abstract void Write(BinaryWriterEx bw, int id);

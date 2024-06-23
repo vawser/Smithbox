@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Numerics;
 
 namespace SoulsFormats
 {
@@ -580,14 +579,14 @@ namespace SoulsFormats
                 /// Regions where parts will spawn from.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
-                public string[] SpawnRegionNames { get; private set; }
+                public string[] SpawnRegionNames { get; set; }
                 public int[] SpawnRegionIndices;
 
                 /// <summary>
                 /// Parts that will be respawned.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
-                public string[] SpawnPartNames { get; private set; }
+                public string[] SpawnPartNames { get; set; }
                 public int[] SpawnPartIndices;
 
                 /// <summary>
@@ -923,7 +922,7 @@ namespace SoulsFormats
                 /// Unknown.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
-                public string[] GroupPartsNames { get; private set; }
+                public string[] GroupPartsNames { get; set; }
                 public int[] GroupPartsIndices;
 
                 /// <summary>
