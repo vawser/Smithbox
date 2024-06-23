@@ -1895,22 +1895,10 @@ namespace SoulsFormats
                 [MSBParamReference(ParamName = "WeatherLotParam")]
                 public int WeatherLotParamID { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT08 { get; set; }
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT09 { get; set; }
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT10 { get; set; }
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT11 { get; set; }
+                public sbyte UnkT08 { get; set; }
+                public sbyte UnkT09 { get; set; }
+                public sbyte UnkT0a { get; set; }
+                public sbyte UnkT0b { get; set; }
 
                 /// <summary>
                 /// Creates a WeatherOverride with default values.
@@ -1923,10 +1911,10 @@ namespace SoulsFormats
                 {
                     WeatherLotParamID = br.ReadInt32();
                     br.AssertInt32(-1);
-                    UnkT08 = br.ReadByte();
-                    UnkT09 = br.ReadByte();
-                    UnkT10 = br.ReadByte();
-                    UnkT11 = br.ReadByte();
+                    UnkT08 = br.ReadSByte();
+                    UnkT09 = br.ReadSByte();
+                    UnkT0a = br.ReadSByte();
+                    UnkT0b = br.ReadSByte();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -1938,10 +1926,10 @@ namespace SoulsFormats
                 {
                     bw.WriteInt32(WeatherLotParamID);
                     bw.WriteInt32(-1);
-                    bw.WriteByte(UnkT08);
-                    bw.WriteByte(UnkT09);
-                    bw.WriteByte(UnkT10);
-                    bw.WriteByte(UnkT11);
+                    bw.WriteSByte(UnkT08);
+                    bw.WriteSByte(UnkT09);
+                    bw.WriteSByte(UnkT0a);
+                    bw.WriteSByte(UnkT0b);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);

@@ -1883,7 +1883,7 @@
         },
         {
             "id": "c5060",
-            "name": "",
+            "name": "Lamprey",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -1891,7 +1891,7 @@
         },
         {
             "id": "c5061",
-            "name": "",
+            "name": "Lamprey (Large)",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -1931,7 +1931,7 @@
         },
         {
             "id": "c5110",
-            "name": "Ghostly Worm",
+            "name": "Ghostly Worm (TEMP NAME)",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -1971,7 +1971,7 @@
         },
         {
             "id": "c5140",
-            "name": "",
+            "name": "Messmer: Base Serpent",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -1979,7 +1979,7 @@
         },
         {
             "id": "c5141",
-            "name": "",
+            "name": "Messmer: Base Serpent",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2003,7 +2003,7 @@
         },
         {
             "id": "c5180",
-            "name": "",
+            "name": "Dummy Entity (TEMP NAME)",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2011,7 +2011,7 @@
         },
         {
             "id": "c5181",
-            "name": "",
+            "name": "Dummy Entity (TEMP NAME)",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2106,8 +2106,16 @@
             ]
         },
         {
+            "id": "c5250",
+            "name": "Horned Warrior",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
             "id": "c5251",
-            "name": "",
+            "name": "Horned Shaman",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2147,7 +2155,7 @@
         },
         {
             "id": "c5280",
-            "name": "",
+            "name": "Houzuki (TEMP NAME)",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2163,7 +2171,7 @@
         },
         {
             "id": "c5311",
-            "name": "",
+            "name": "Inquisitor (Candles)",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2171,7 +2179,7 @@
         },
         {
             "id": "c5312",
-            "name": "",
+            "name": "Inquisitor (Staff)",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2187,7 +2195,7 @@
         },
         {
             "id": "c5330",
-            "name": "",
+            "name": "St. Trina",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2195,7 +2203,7 @@
         },
         {
             "id": "c5340",
-            "name": "",
+            "name": "Dummy Entity (TEMP NAME)",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2203,7 +2211,7 @@
         },
         {
             "id": "c5350",
-            "name": "",
+            "name": "Basilisk Eyes",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2211,7 +2219,7 @@
         },
         {
             "id": "c5360",
-            "name": "Decaying Beast Skeleton",
+            "name": "Giant Beast Skeleton",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2701,7 +2709,7 @@
         },
         {
             "id": "c5800",
-            "name": "Crucible Knight Centaur (TEMP NAME)",
+            "name": "Crucible Knight Devonia",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2781,7 +2789,7 @@
         },
         {
             "id": "c5880",
-            "name": "",
+            "name": "Putrescence Sorcerer",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2805,7 +2813,7 @@
         },
         {
             "id": "c5910",
-            "name": "",
+            "name": "Hornsent Grandam",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
