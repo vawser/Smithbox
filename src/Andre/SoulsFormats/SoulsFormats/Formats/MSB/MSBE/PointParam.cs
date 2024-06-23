@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using System.Xml.Serialization;
 using static SoulsFormats.MSBE.Region;
 
 namespace SoulsFormats
@@ -573,8 +574,10 @@ namespace SoulsFormats
             /// </summary>
             [MSBReference(ReferenceType = typeof(Part))]
             public string ActivationPartName { get; set; }
+
             [IndexProperty]
-            public int ActivationPartIndex { get; set; }
+            [XmlIgnore]
+            private int ActivationPartIndex { get; set; }
 
             /// <summary>
             /// Identifies the region in event scripts.
@@ -986,7 +989,10 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] ChildRegionNames { get; set; }
-                public int[] ChildRegionIndices;
+
+                [IndexProperty]
+                [XmlIgnore]
+                private int[] ChildRegionIndices { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1100,8 +1106,10 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string WindAreaName { get; set; }
+
                 [IndexProperty]
-                public int WindAreaIndex { get; set; }
+                [XmlIgnore]
+                private int WindAreaIndex { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1897,8 +1905,8 @@ namespace SoulsFormats
 
                 public sbyte UnkT08 { get; set; }
                 public sbyte UnkT09 { get; set; }
-                public sbyte UnkT0a { get; set; }
-                public sbyte UnkT0b { get; set; }
+                public sbyte UnkT0A { get; set; }
+                public sbyte UnkT0B { get; set; }
 
                 /// <summary>
                 /// Creates a WeatherOverride with default values.
@@ -1913,8 +1921,8 @@ namespace SoulsFormats
                     br.AssertInt32(-1);
                     UnkT08 = br.ReadSByte();
                     UnkT09 = br.ReadSByte();
-                    UnkT0a = br.ReadSByte();
-                    UnkT0b = br.ReadSByte();
+                    UnkT0A = br.ReadSByte();
+                    UnkT0B = br.ReadSByte();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -1928,8 +1936,8 @@ namespace SoulsFormats
                     bw.WriteInt32(-1);
                     bw.WriteSByte(UnkT08);
                     bw.WriteSByte(UnkT09);
-                    bw.WriteSByte(UnkT0a);
-                    bw.WriteSByte(UnkT0b);
+                    bw.WriteSByte(UnkT0A);
+                    bw.WriteSByte(UnkT0B);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -2011,7 +2019,10 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] PartNames { get; set; }
-                public int[] PartIndices;
+
+                [IndexProperty]
+                [XmlIgnore]
+                private int[] PartIndices { get; set; }
 
                 /// <summary>
                 /// Unknown.

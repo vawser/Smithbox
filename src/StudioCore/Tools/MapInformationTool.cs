@@ -76,8 +76,8 @@ namespace StudioCore.Tools
                         {
                             TaskLogs.AddLog($"{part.UnkT08}");
                             TaskLogs.AddLog($"{part.UnkT09}");
-                            TaskLogs.AddLog($"{part.UnkT0a}");
-                            TaskLogs.AddLog($"{part.UnkT0b}");
+                            TaskLogs.AddLog($"{part.UnkT0A}");
+                            TaskLogs.AddLog($"{part.UnkT0B}");
                         }
                     }
                 }

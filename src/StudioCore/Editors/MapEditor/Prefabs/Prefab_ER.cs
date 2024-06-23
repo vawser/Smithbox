@@ -321,9 +321,7 @@ public class Prefab_ER
             Parent = parent;
 
             MSBE.Part.Enemy temp = InnerObject as MSBE.Part.Enemy;
-            temp.CollisionPartIndex = -1;
             temp.CollisionPartName = "";
-            temp.WalkRouteIndex = -1;
             temp.WalkRouteName = "";
 
             if (!CFG.Current.Prefab_IncludeEntityID)
@@ -393,9 +391,7 @@ public class Prefab_ER
             Parent = parent;
 
             MSBE.Part.DummyEnemy temp = InnerObject as MSBE.Part.DummyEnemy;
-            temp.CollisionPartIndex = -1;
             temp.CollisionPartName = "";
-            temp.WalkRouteIndex = -1;
             temp.WalkRouteName = "";
 
             if (!CFG.Current.Prefab_IncludeEntityID)
@@ -415,7 +411,6 @@ public class Prefab_ER
 
             MSBE.Part.ConnectCollision temp = InnerObject as MSBE.Part.ConnectCollision;
             temp.CollisionName = "";
-            temp.CollisionIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -454,7 +449,6 @@ public class Prefab_ER
 
             MSBE.Region.InvasionPoint temp = InnerObject as MSBE.Region.InvasionPoint;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -469,7 +463,6 @@ public class Prefab_ER
 
             MSBE.Region.EnvironmentMapPoint temp = InnerObject as MSBE.Region.EnvironmentMapPoint;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -484,9 +477,7 @@ public class Prefab_ER
 
             MSBE.Region.Sound temp = InnerObject as MSBE.Region.Sound;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
             Array.Clear(temp.ChildRegionNames);
-            Array.Clear(temp.ChildRegionIndices);
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -501,7 +492,6 @@ public class Prefab_ER
 
             MSBE.Region.SFX temp = InnerObject as MSBE.Region.SFX;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -516,9 +506,7 @@ public class Prefab_ER
 
             MSBE.Region.WindSFX temp = InnerObject as MSBE.Region.WindSFX;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
             temp.WindAreaName = "";
-            temp.WindAreaIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -533,7 +521,6 @@ public class Prefab_ER
 
             MSBE.Region.SpawnPoint temp = InnerObject as MSBE.Region.SpawnPoint;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -548,7 +535,6 @@ public class Prefab_ER
 
             MSBE.Region.Message temp = InnerObject as MSBE.Region.Message;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -563,7 +549,6 @@ public class Prefab_ER
 
             MSBE.Region.EnvironmentMapEffectBox temp = InnerObject as MSBE.Region.EnvironmentMapEffectBox;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -578,7 +563,6 @@ public class Prefab_ER
 
             MSBE.Region.WindArea temp = InnerObject as MSBE.Region.WindArea;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -593,7 +577,6 @@ public class Prefab_ER
 
             MSBE.Region.Connection temp = InnerObject as MSBE.Region.Connection;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -608,7 +591,6 @@ public class Prefab_ER
 
             MSBE.Region.PatrolRoute22 temp = InnerObject as MSBE.Region.PatrolRoute22;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -623,7 +605,6 @@ public class Prefab_ER
 
             MSBE.Region.BuddySummonPoint temp = InnerObject as MSBE.Region.BuddySummonPoint;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -638,7 +619,6 @@ public class Prefab_ER
 
             MSBE.Region.MufflingBox temp = InnerObject as MSBE.Region.MufflingBox;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -653,7 +633,6 @@ public class Prefab_ER
 
             MSBE.Region.MufflingPortal temp = InnerObject as MSBE.Region.MufflingPortal;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -668,7 +647,6 @@ public class Prefab_ER
 
             MSBE.Region.SoundRegion temp = InnerObject as MSBE.Region.SoundRegion;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -683,7 +661,6 @@ public class Prefab_ER
 
             MSBE.Region.MufflingPlane temp = InnerObject as MSBE.Region.MufflingPlane;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -698,7 +675,6 @@ public class Prefab_ER
 
             MSBE.Region.PatrolRoute temp = InnerObject as MSBE.Region.PatrolRoute;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -713,7 +689,6 @@ public class Prefab_ER
 
             MSBE.Region.MapPoint temp = InnerObject as MSBE.Region.MapPoint;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -728,7 +703,6 @@ public class Prefab_ER
 
             MSBE.Region.WeatherOverride temp = InnerObject as MSBE.Region.WeatherOverride;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -743,7 +717,6 @@ public class Prefab_ER
 
             MSBE.Region.AutoDrawGroupPoint temp = InnerObject as MSBE.Region.AutoDrawGroupPoint;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -758,9 +731,7 @@ public class Prefab_ER
 
             MSBE.Region.GroupDefeatReward temp = InnerObject as MSBE.Region.GroupDefeatReward;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
             Array.Clear(temp.PartNames);
-            Array.Clear(temp.PartIndices);
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -775,7 +746,6 @@ public class Prefab_ER
 
             MSBE.Region.MapPointDiscoveryOverride temp = InnerObject as MSBE.Region.MapPointDiscoveryOverride;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -790,7 +760,6 @@ public class Prefab_ER
 
             MSBE.Region.MapPointParticipationOverride temp = InnerObject as MSBE.Region.MapPointParticipationOverride;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -805,7 +774,6 @@ public class Prefab_ER
 
             MSBE.Region.Hitset temp = InnerObject as MSBE.Region.Hitset;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -820,7 +788,6 @@ public class Prefab_ER
 
             MSBE.Region.FastTravelRestriction temp = InnerObject as MSBE.Region.FastTravelRestriction;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -835,7 +802,6 @@ public class Prefab_ER
 
             MSBE.Region.WeatherCreateAssetPoint temp = InnerObject as MSBE.Region.WeatherCreateAssetPoint;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -850,7 +816,6 @@ public class Prefab_ER
 
             MSBE.Region.PlayArea temp = InnerObject as MSBE.Region.PlayArea;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -865,7 +830,6 @@ public class Prefab_ER
 
             MSBE.Region.EnvironmentMapOutput temp = InnerObject as MSBE.Region.EnvironmentMapOutput;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -880,7 +844,6 @@ public class Prefab_ER
 
             MSBE.Region.MountJump temp = InnerObject as MSBE.Region.MountJump;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -895,7 +858,6 @@ public class Prefab_ER
 
             MSBE.Region.Dummy temp = InnerObject as MSBE.Region.Dummy;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -910,7 +872,6 @@ public class Prefab_ER
 
             MSBE.Region.FallPreventionRemoval temp = InnerObject as MSBE.Region.FallPreventionRemoval;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -925,7 +886,6 @@ public class Prefab_ER
 
             MSBE.Region.NavmeshCutting temp = InnerObject as MSBE.Region.NavmeshCutting;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -940,7 +900,6 @@ public class Prefab_ER
 
             MSBE.Region.MapNameOverride temp = InnerObject as MSBE.Region.MapNameOverride;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -955,7 +914,6 @@ public class Prefab_ER
 
             MSBE.Region.MountJumpFall temp = InnerObject as MSBE.Region.MountJumpFall;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -970,7 +928,6 @@ public class Prefab_ER
 
             MSBE.Region.HorseRideOverride temp = InnerObject as MSBE.Region.HorseRideOverride;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -985,7 +942,6 @@ public class Prefab_ER
 
             MSBE.Region.Other temp = InnerObject as MSBE.Region.Other;
             temp.ActivationPartName = "";
-            temp.ActivationPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -1002,11 +958,8 @@ public class Prefab_ER
 
             MSBE.Event.Treasure temp = InnerObject as MSBE.Event.Treasure;
             temp.PartName = "";
-            temp.PartIndex = -1;
             temp.RegionName = "";
-            temp.RegionIndex = -1;
             temp.TreasurePartName = "";
-            temp.TreasurePartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -1021,13 +974,9 @@ public class Prefab_ER
 
             MSBE.Event.Generator temp = InnerObject as MSBE.Event.Generator;
             temp.PartName = "";
-            temp.PartIndex = -1;
             temp.RegionName = "";
-            temp.RegionIndex = -1;
             Array.Clear(temp.SpawnRegionNames);
-            Array.Clear(temp.SpawnRegionIndices);
             Array.Clear(temp.SpawnPartNames);
-            Array.Clear(temp.SpawnPartIndices);
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -1042,11 +991,8 @@ public class Prefab_ER
 
             MSBE.Event.ObjAct temp = InnerObject as MSBE.Event.ObjAct;
             temp.PartName = "";
-            temp.PartIndex = -1;
             temp.RegionName = "";
-            temp.RegionIndex = -1;
             temp.ObjActPartName = "";
-            temp.ObjActPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -1061,11 +1007,8 @@ public class Prefab_ER
 
             MSBE.Event.Navmesh temp = InnerObject as MSBE.Event.Navmesh;
             temp.PartName = "";
-            temp.PartIndex = -1;
             temp.RegionName = "";
-            temp.RegionIndex = -1;
             temp.NavmeshRegionName = "";
-            temp.NavmeshRegionIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -1080,9 +1023,7 @@ public class Prefab_ER
 
             MSBE.Event.PseudoMultiplayer temp = InnerObject as MSBE.Event.PseudoMultiplayer;
             temp.PartName = "";
-            temp.PartIndex = -1;
             temp.RegionName = "";
-            temp.RegionIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -1097,11 +1038,8 @@ public class Prefab_ER
 
             MSBE.Event.PlatoonInfo temp = InnerObject as MSBE.Event.PlatoonInfo;
             temp.PartName = "";
-            temp.PartIndex = -1;
             temp.RegionName = "";
-            temp.RegionIndex = -1;
             Array.Clear(temp.GroupPartsNames);
-            Array.Clear(temp.GroupPartsIndices);
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -1116,11 +1054,8 @@ public class Prefab_ER
 
             MSBE.Event.PatrolInfo temp = InnerObject as MSBE.Event.PatrolInfo;
             temp.PartName = "";
-            temp.PartIndex = -1;
             temp.RegionName = "";
-            temp.RegionIndex = -1;
             Array.Clear(temp.WalkRegionNames);
-            Array.Clear(temp.WalkRegionIndices);
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -1135,13 +1070,9 @@ public class Prefab_ER
 
             MSBE.Event.Mount temp = InnerObject as MSBE.Event.Mount;
             temp.PartName = "";
-            temp.PartIndex = -1;
             temp.RegionName = "";
-            temp.RegionIndex = -1;
             temp.RiderPartName = "";
-            temp.RiderPartIndex = -1;
             temp.MountPartName = "";
-            temp.MountPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -1156,11 +1087,8 @@ public class Prefab_ER
 
             MSBE.Event.SignPool temp = InnerObject as MSBE.Event.SignPool;
             temp.PartName = "";
-            temp.PartIndex = -1;
             temp.RegionName = "";
-            temp.RegionIndex = -1;
             temp.SignPartName = "";
-            temp.SignPartIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -1175,13 +1103,9 @@ public class Prefab_ER
 
             MSBE.Event.RetryPoint temp = InnerObject as MSBE.Event.RetryPoint;
             temp.PartName = "";
-            temp.PartIndex = -1;
             temp.RegionName = "";
-            temp.RegionIndex = -1;
             temp.RetryPartName = "";
-            temp.RetryPartIndex = -1;
             temp.RetryRegionName = "";
-            temp.RetryRegionIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -1196,9 +1120,7 @@ public class Prefab_ER
 
             MSBE.Event.Other temp = InnerObject as MSBE.Event.Other;
             temp.PartName = "";
-            temp.PartIndex = -1;
             temp.RegionName = "";
-            temp.RegionIndex = -1;
 
             if (!CFG.Current.Prefab_IncludeEntityID)
             {
@@ -1925,7 +1847,7 @@ public class Prefab_ER
     {
         Prefab_ER _selectedAssetPrefab;
 
-        _selectedAssetPrefab = Prefab_ER.ImportJson(info.Path);
+        _selectedAssetPrefab = ImportJson(info.Path);
         MapContainer targetMap = (MapContainer)_comboTargetMap.Item2;
 
         if (targetMap != null)

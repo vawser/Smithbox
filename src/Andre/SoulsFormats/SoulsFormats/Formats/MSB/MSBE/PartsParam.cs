@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using System.Xml.Serialization;
 
 namespace SoulsFormats
 {
@@ -1638,8 +1639,10 @@ namespace SoulsFormats
                 [EnemyProperty]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionPartName { get; set; }
+
                 [IndexProperty]
-                public int CollisionPartIndex { get; set; }
+                [XmlIgnore]
+                private int CollisionPartIndex { get; set; }
 
                 /// <summary>
                 /// Walk route followed by this enemy.
@@ -1647,8 +1650,10 @@ namespace SoulsFormats
                 [EnemyProperty]
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
+
                 [IndexProperty]
-                public short WalkRouteIndex { get; set; }
+                [XmlIgnore]
+                private short WalkRouteIndex { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2400,8 +2405,10 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
+
                 [IndexProperty]
-                public int CollisionIndex { get; set; }
+                [XmlIgnore]
+                private int CollisionIndex { get; set; }
 
                 /// <summary>
                 /// The map to load when on this collision.
@@ -2630,7 +2637,10 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] UnkPartNames { get; set; }
-                private int[] UnkPartIndices;
+
+                [IndexProperty]
+                [XmlIgnore]
+                private int[] UnkPartIndices { get; set; }
 
                 /// <summary>
                 /// Unknown.
