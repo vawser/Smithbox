@@ -114,12 +114,15 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             List<PrefabInfo> infoList = new();
 
-            string[] files = Directory.GetFiles(_prefabDir, "*.json", SearchOption.AllDirectories);
-            foreach (var file in files)
+            if (Directory.Exists(_prefabDir))
             {
-                var name = Path.GetFileNameWithoutExtension(file);
-                PrefabInfo info = new PrefabInfo(name, file, GetPrefabTags(file));
-                infoList.Add(info);
+                string[] files = Directory.GetFiles(_prefabDir, "*.json", SearchOption.AllDirectories);
+                foreach (var file in files)
+                {
+                    var name = Path.GetFileNameWithoutExtension(file);
+                    PrefabInfo info = new PrefabInfo(name, file, GetPrefabTags(file));
+                    infoList.Add(info);
+                }
             }
 
             return infoList;
