@@ -46,36 +46,28 @@ public static class SearchFilters
             if (entry == refId)
                 partTruth[i] = true;
 
-            if(stripParticlePrefix)
-            {
-                // Get the number from the f000000000 string
-                if (refId.Contains("f"))
-                {
-                    refId = refId.Replace("f", "");
-                    try
-                    {
-                        refId = int.Parse(refId).ToString();
-                    }
-                    catch
-                    {
-                        refId = refId.ToLower();
-                    }
-                }
-            }
+            // Contains: Filename/ID
+            if (refId.Contains(entry))
+                partTruth[i] = true;
 
             // Match: Reference Name
             if (entry == refName)
                 partTruth[i] = true;
 
-            if(splitWithDelimiter)
+            // Match: Reference Name
+            if (refName.Contains(entry))
+                partTruth[i] = true;
+
+            if (splitWithDelimiter)
             {
                 var refParts = refName.Split(delimiter);
                 foreach(var refPart in refParts)
                 {
                     if(entry == refPart)
-                    {
                         partTruth[i] = true;
-                    }
+
+                    if (refPart.Contains(entry))
+                        partTruth[i] = true;
                 }
             }
 
@@ -115,6 +107,9 @@ public static class SearchFilters
             foreach (string tagStr in rawRefTags)
             {
                 if (entry == tagStr.ToLower())
+                    partTruth[i] = true;
+
+                if (tagStr.ToLower().Contains(entry))
                     partTruth[i] = true;
             }
 
