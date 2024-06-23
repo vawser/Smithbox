@@ -548,7 +548,7 @@ typedef struct {
         byte unk25; Assert(IsBool(unk25));
         byte unk26; Assert(unk26 == 0);
         byte unk27; Assert(unk27 == 0);
-        int unk28; Assert(unk28 == 0);
+        int unk28;
         int unk2C; Assert(unk2C == 0);
         int unk30; Assert(unk30 == 0);
         int unk34; Assert(unk34 == 0);

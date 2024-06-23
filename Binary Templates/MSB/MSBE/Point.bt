@@ -47,6 +47,8 @@ enum <int> PointType {
     PointTypeMapNameOverride = 51,
     PointTypeMountJumpFall = 52,
     PointTypeHorseProhibition = 53,
+    PointTypeNewRegionType = 54,
+    PointTypeNewRegionType2 = 55,
     PointTypeOther = -1,
 };
 
@@ -83,6 +85,8 @@ struct PointNavmeshCutting;
 struct PointMapNameOverride;
 struct PointMountJumpFall;
 struct PointHorseProhibition;
+struct PointNewRegionType;
+struct PointNewRegionType2;
 
 //------------------------------------------------
 
@@ -195,6 +199,8 @@ typedef struct {
             case PointTypeMapNameOverride: PointMapNameOverride mapNameOverride; break;
             case PointTypeMountJumpFall: PointMountJumpFall mountJumpFall; break;
             case PointTypeHorseProhibition: PointHorseProhibition horseProhibition; break;
+            case PointTypeNewRegionType: PointNewRegionType newRegionType; break;
+            case PointTypeNewRegionType2: PointNewRegionType2 newRegionType2; break;
 
             default: Assert(false);
         }
@@ -539,3 +545,16 @@ typedef struct {
     int unk00;
     int unk04; Assert(unk04 == 0);
 } PointHorseProhibition;
+
+typedef struct {
+    float unk00;
+    int unk04;
+    int unk08;
+    int unk0c; Assert(unk0c == -1);
+} PointNewRegionType;
+
+typedef struct {
+    int unk00; Assert(unk00 == -1);
+    int unk04; Assert(unk04 == 0);
+    int unk08;
+} PointNewRegionType2;

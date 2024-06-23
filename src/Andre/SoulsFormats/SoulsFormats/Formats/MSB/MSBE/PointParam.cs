@@ -44,6 +44,8 @@ namespace SoulsFormats
             MapNameOverride = 51,
             MountJumpFall = 52,
             HorseRideOverride = 53,
+            LockedMountJump = 54,
+            LockedMountJumpFall = 55,
             Other = 0xFFFFFFFF,
         }
 
@@ -229,6 +231,16 @@ namespace SoulsFormats
             public List<Region.HorseRideOverride> HorseRideOverrides { get; set; }
 
             /// <summary>
+            /// Unknown.
+            /// </summary>
+            public List<Region.LockedMountJump> NewRegionTypes { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public List<Region.LockedMountJumpFall> NewRegionType2s { get; set; }
+
+            /// <summary>
             /// Most likely a dumping ground for unused regions.
             /// </summary>
             public List<Region.Other> Others { get; set; }
@@ -273,6 +285,8 @@ namespace SoulsFormats
                 MapNameOverrides = new List<Region.MapNameOverride>();
                 MountJumpFalls = new List<Region.MountJumpFall>();
                 HorseRideOverrides = new List<Region.HorseRideOverride>();
+                NewRegionTypes = new List<Region.LockedMountJump>();
+                NewRegionType2s = new List<Region.LockedMountJumpFall>();
                 Others = new List<Region.Other>();
             }
 
@@ -318,6 +332,8 @@ namespace SoulsFormats
                     case Region.MapNameOverride r: MapNameOverrides.Add(r); break;
                     case Region.MountJumpFall r: MountJumpFalls.Add(r); break;
                     case Region.HorseRideOverride r: HorseRideOverrides.Add(r); break;
+                    case Region.LockedMountJump r: NewRegionTypes.Add(r); break;
+                    case Region.LockedMountJumpFall r: NewRegionType2s.Add(r); break;
                     case Region.Other r: Others.Add(r); break;
 
                     default:
@@ -341,7 +357,7 @@ namespace SoulsFormats
                     MapPointDiscoveryOverrides, MapPointParticipationOverrides, Hitsets,
                     FastTravelRestriction, WeatherCreateAssetPoints, PlayAreas, EnvironmentMapOutputs,
                     MountJumps, Dummies, FallPreventionRemovals, NavmeshCuttings, MapNameOverrides,
-                    MountJumpFalls, HorseRideOverrides, Others);
+                    MountJumpFalls, HorseRideOverrides, NewRegionTypes, NewRegionType2s, Others);
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
 
@@ -454,6 +470,12 @@ namespace SoulsFormats
 
                     case RegionType.HorseRideOverride:
                         return HorseRideOverrides.EchoAdd(new Region.HorseRideOverride(br));
+
+                    case RegionType.LockedMountJump:
+                        return NewRegionTypes.EchoAdd(new Region.LockedMountJump(br));
+
+                    case RegionType.LockedMountJumpFall:
+                        return NewRegionType2s.EchoAdd(new Region.LockedMountJumpFall(br));
 
                     case RegionType.Other:
                         return Others.EchoAdd(new Region.Other(br));
@@ -2457,6 +2479,89 @@ namespace SoulsFormats
                     bw.WriteUInt32((uint)OverrideType);
                     bw.WriteInt32(0);
                 }
+            }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public class LockedMountJump : Region
+            {
+                private protected override RegionType Type => RegionType.LockedMountJump;
+                private protected override bool HasTypeData => true;
+
+                /// <summary>
+                /// Height the player will move upwards when activating a MountJump.
+                /// </summary>
+                public float JumpHeight { get; set; }
+
+                /// <summary>
+                /// Unknown.
+                /// </summary>
+                public int UnkT04 { get; set; }
+
+                /// <summary>
+                /// Probably event flag to enable.
+                /// </summary>
+                public int UnkT08 { get; set; }
+
+                /// <summary>
+                /// Creates a LockedMountJump with default values.
+                /// </summary>
+                public LockedMountJump() : base($"{nameof(Region)}: {nameof(LockedMountJump)}") { }
+
+                internal LockedMountJump(BinaryReaderEx br) : base(br) { }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    JumpHeight = br.ReadSingle();
+                    UnkT04 = br.ReadInt32();
+                    UnkT08 = br.ReadInt32();
+                    br.AssertInt32(-1);
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteSingle(JumpHeight);
+                    bw.WriteInt32(UnkT04);
+                    bw.WriteInt32(UnkT08);
+                    bw.WriteInt32(-1);
+                }
+            }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public class LockedMountJumpFall : Region
+            {
+                private protected override RegionType Type => RegionType.LockedMountJumpFall;
+                private protected override bool HasTypeData => true;
+
+                /// <summary>
+                /// Probably event flag to enable.
+                /// </summary>
+                public int UnkT08 { get; set; }
+
+                /// <summary>
+                /// Creates a LockedMountJumpFall with default values.
+                /// </summary>
+                public LockedMountJumpFall() : base($"{nameof(Region)}: {nameof(LockedMountJumpFall)}") { }
+
+                internal LockedMountJumpFall(BinaryReaderEx br) : base(br) { }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    br.AssertInt32(-1);
+                    br.AssertInt32(0);
+                    UnkT08 = br.ReadInt32();
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteInt32(-1);
+                    bw.WriteInt32(0);
+                    bw.WriteInt32(UnkT08);
+                }
+
             }
 
             /// <summary>
