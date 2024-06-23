@@ -97,7 +97,7 @@
     <Field Def="u8 NpcPlayerSex = 1" />
     <Field Def="u8 vowType" />
     <Field Def="u8 VoiceType" />
-    <Field Def="dummy8 pad1[1]" />
+    <Field Def="u8 unknown_0xe7" />>
     <Field Def="s32 equip_Wep_Right_GenId = -1" />
     <Field Def="s32 equip_Subwep_Right_GenId = -1" />
     <Field Def="s32 equip_Wep_Left_GenId = -1" />

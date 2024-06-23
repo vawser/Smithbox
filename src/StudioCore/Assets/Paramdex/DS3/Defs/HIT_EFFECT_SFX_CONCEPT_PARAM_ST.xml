@@ -86,11 +86,10 @@
       <Maximum>9999</Maximum>
       <SortID>10</SortID>
     </Field>
-    <Field Def="dummy8 pad[4]">
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>15</SortID>
-    </Field>
+    
+    <Field Def="s16 unknown_x14" />
+    <Field Def="s16 unknown_x16" />
+    
     <Field Def="s16 atkNone_1">
       <DisplayName>なし：概念１</DisplayName>
       <Enum>HIT_EFFECT_SFX_CONCEPT_TYPE</Enum>
@@ -107,9 +106,33 @@
       <Maximum>9999</Maximum>
       <SortID>12</SortID>
     </Field>
-    <Field Def="dummy8 reserve[52]">
-      <DisplayName>予約領域</DisplayName>
-      <SortID>16</SortID>
-    </Field>
+    
+    <Field Def="s16 Unknown0" />
+    <Field Def="s16 Unknown1" />
+    <Field Def="s16 Unknown2" />
+    <Field Def="s16 Unknown3" />
+    <Field Def="s16 Unknown4" />
+    <Field Def="s16 Unknown5" />
+    <Field Def="s16 Unknown6" />
+    <Field Def="s16 Unknown7" />
+    <Field Def="s16 Unknown8" />
+    <Field Def="s16 Unknown9" />
+    <Field Def="s16 Unknown10" />
+    <Field Def="s16 Unknown11" />
+    <Field Def="s16 Unknown12" />
+    <Field Def="s16 Unknown13" />
+    <Field Def="s16 Unknown14" />
+    <Field Def="s16 Unknown15" />
+    <Field Def="s16 Unknown16" />
+    <Field Def="s16 Unknown17" />
+    <Field Def="s16 Unknown18" />
+    <Field Def="s16 Unknown19" />
+    <Field Def="s16 Unknown20" />
+    <Field Def="s16 Unknown21" />
+    <Field Def="s16 Unknown22" />
+    <Field Def="s16 Unknown23" />
+    <Field Def="s16 Unknown24" />
+    <Field Def="s16 Unknown25" />
+
   </Fields>
 </PARAMDEF>

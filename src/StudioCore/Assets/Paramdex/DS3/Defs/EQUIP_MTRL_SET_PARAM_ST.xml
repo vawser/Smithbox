@@ -21,6 +21,10 @@
     <Field Def="u8 isDisableDispNum03:1 = 1" />
     <Field Def="u8 isDisableDispNum04:1" />
     <Field Def="u8 isDisableDispNum05:1" />
-    <Field Def="dummy8 pad1[6]" />
+    <Field Def="u8 unknown_0x1a" />
+    <Field Def="u8 unknown_0x1b" />
+    <Field Def="u8 unknown_0x1c" />
+    <Field Def="u8 unknown_0x1d" />
+    <Field Def="dummy8 pad1[2]" />
   </Fields>
 </PARAMDEF>

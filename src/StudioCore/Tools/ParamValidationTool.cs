@@ -132,6 +132,8 @@ namespace StudioCore.Tools
             // DS3
             if (Smithbox.ProjectType == ProjectType.DS3)
             {
+                param = $@"{mod}\Data0.bdt";
+
                 try
                 {
                     using BND4 bnd = SFUtil.DecryptDS3Regulation(param);

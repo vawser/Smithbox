@@ -15,6 +15,7 @@
     <Field Def="u8 IsDisableQuickwarp" />
     <Field Def="s16 CeremonyId = -1" />
     <Field Def="s32 onlineAreaId" />
-    <Field Def="dummy8 pad1[36]" />
+    <Field Def="s32 unknown_0x1c" />
+    <Field Def="dummy8 pad1[32]" />
   </Fields>
 </PARAMDEF>

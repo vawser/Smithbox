@@ -27,6 +27,7 @@
     <Field Def="s32 priority = 3" />
     <Field Def="f32 execInvalidTime" />
     <Field Def="u8 execButtonCircle = 1" />
-    <Field Def="dummy8 pad4[3]" />
+    <Field Def="u8 unknown_0x45" />
+    <Field Def="dummy8 pad4[2]" />
   </Fields>
 </PARAMDEF>

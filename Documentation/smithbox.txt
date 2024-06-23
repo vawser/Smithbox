@@ -117,5 +117,4 @@ Verify param upgrader works properly (e.g. the new params aren't scuffed in-game
  
 Check the gparam editor for SOTE, may have changed
 
-TalkParam is lagging heavily with Imgui interaction once properties are visible
- - 100% Field References causing it
+TalkParam is lagging heavily: due to GenerateEntryGroup
