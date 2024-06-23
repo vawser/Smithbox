@@ -39,6 +39,51 @@ namespace StudioCore.Tools
             }
         }
 
+        public static void GenerateTargetReport()
+        {
+            var mapDir = $"{Smithbox.GameRoot}/map/mapstudio/";
+
+            if (TargetProject)
+            {
+                mapDir = $"{Smithbox.ProjectRoot}/map/mapstudio/";
+            }
+
+            foreach (var entry in Directory.EnumerateFiles(mapDir))
+            {
+                if (entry.Contains(".msb.dcx"))
+                {
+                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
+                    ResourceDescriptor ad = ResourceMapLocator.GetMapMSB(name);
+                    if (ad.AssetPath != null)
+                    {
+                        resMaps.Add(ad);
+                    }
+                }
+            }
+
+            // ER
+            if (Smithbox.ProjectType == ProjectType.ER)
+            {
+                foreach (var res in resMaps)
+                {
+                    var msb = MSBE.Read(res.AssetPath);
+
+                    if (msb.Regions.WeatherOverrides.Count > 0)
+                    {
+                        TaskLogs.AddLog($"{res.AssetName}");
+
+                        foreach (var part in msb.Regions.WeatherOverrides)
+                        {
+                            TaskLogs.AddLog($"{part.UnkT08}");
+                            TaskLogs.AddLog($"{part.UnkT09}");
+                            TaskLogs.AddLog($"{part.UnkT0a}");
+                            TaskLogs.AddLog($"{part.UnkT0b}");
+                        }
+                    }
+                }
+            }
+        }
+
         public static void GenerateReport()
         {
             var mapDir = $"{Smithbox.GameRoot}/map/mapstudio/";

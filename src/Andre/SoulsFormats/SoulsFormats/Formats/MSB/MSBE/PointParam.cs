@@ -1895,7 +1895,10 @@ namespace SoulsFormats
                 [MSBParamReference(ParamName = "WeatherLotParam")]
                 public int WeatherLotParamID { get; set; }
 
-                public int UnkT08 { get; set; }
+                public sbyte UnkT08 { get; set; }
+                public sbyte UnkT09 { get; set; }
+                public sbyte UnkT0a { get; set; }
+                public sbyte UnkT0b { get; set; }
 
                 /// <summary>
                 /// Creates a WeatherOverride with default values.
@@ -1908,7 +1911,10 @@ namespace SoulsFormats
                 {
                     WeatherLotParamID = br.ReadInt32();
                     br.AssertInt32(-1);
-                    UnkT08 = br.ReadInt32();
+                    UnkT08 = br.ReadSByte();
+                    UnkT09 = br.ReadSByte();
+                    UnkT0a = br.ReadSByte();
+                    UnkT0b = br.ReadSByte();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -1920,7 +1926,10 @@ namespace SoulsFormats
                 {
                     bw.WriteInt32(WeatherLotParamID);
                     bw.WriteInt32(-1);
-                    bw.WriteInt32(UnkT08);
+                    bw.WriteSByte(UnkT08);
+                    bw.WriteSByte(UnkT09);
+                    bw.WriteSByte(UnkT0a);
+                    bw.WriteSByte(UnkT0b);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);

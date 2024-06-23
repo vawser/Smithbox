@@ -121,6 +121,11 @@ public class ToolWindow
                     MapInformationTool.GenerateReport();
                 }
 
+                if (ImGui.Button("Target Report"))
+                {
+                    MapInformationTool.GenerateTargetReport();
+                }
+
                 ImGui.Separator();
 
 
