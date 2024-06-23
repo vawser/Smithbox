@@ -441,6 +441,21 @@
 101551 [Enia - Elemer of the Briar] Briar Armor
 101552 [Enia - Elemer of the Briar] Briar Gauntlets
 101553 [Enia - Elemer of the Briar] Briar Greaves
+101555 [Enia - Commander Gaius] Gaius's Helm
+101556 [Enia - Commander Gaius] Gaius's Armor
+101557 [Enia - Commander Gaius] Gaius's Gauntlets
+101558 [Enia - Messmer the Impaler] Messmer's Helm
+101559 [Enia - Messmer the Impaler] Messmer's Armor
+101560 [Enia - Messmer the Impaler] Messmer's Gauntlets
+101561 [Enia - Messmer the Impaler] Messmer's Greaves
+101562 [Enia - Rellana, Twin Moon Knight] Rellana's Helm
+101563 [Enia - Rellana, Twin Moon Knight] Rellana's Armor
+101564 [Enia - Rellana, Twin Moon Knight] Rellana's Gloves
+101565 [Enia - Rellana, Twin Moon Knight] Rellana's Greaves
+101566 [Enia - Radahn, Consort of Miquella] Young Lion's Helm
+101567 [Enia - Radahn, Consort of Miquella] Young Lion's Armor
+101568 [Enia - Radahn, Consort of Miquella] Young Lion's Gauntlets
+101569 [Enia - Radahn, Consort of Miquella] Young Lion's Greaves
 101775 [Enia - Forging] Remembrance of the Grafted
 101776 [Enia - Forging] Remembrance of the Starscourge
 101777 [Enia - Forging] Remembrance of the Omen King
@@ -955,6 +970,31 @@
 112089 Ash of War: Through and Through
 112090 Ash of War: Enchanted Shot
 112091 Ash of War: Rain of Arrows
+112100 Ash of War: Dryleaf Whirlwind
+112101 Ash of War: Aspects of the Crucible: Wings
+112102 Ash of War: Spinning Gravity Thrust
+112103 Ash of War: Palm Blast
+112104 Ash of War: Piercing Throw
+112105 Ash of War: Scattershot Throw
+112106 Ash of War: Wall of Sparks
+112107 Ash of War: Rolling Sparks
+112108 Ash of War: Raging Beast
+112109 Ash of War: Savage Claws
+112110 Ash of War: Blind Spot
+112111 Ash of War: Swift Slash
+112112 Ash of War: Overhead Stance
+112113 Ash of War: Wing Stance
+112114 Ash of War: Blinkbolt
+112115 Ash of War: Flame Skewer
+112116 Ash of War: Savage Lion's Claw
+112117 Ash of War: Divine Beast Frost Stomp
+112118 Ash of War: Flame Spear
+112119 Ash of War: Carian Sovereignty
+112120 Ash of War: Shriek of Sorrow
+112121 Ash of War: Ghostflame Call
+112122 Ash of War: The Poison Flower Blooms Twice
+112123 Ash of War: Igon's Drake Hunt
+112124 Ash of War: Shield Strike
 600000 Dagger
 600001 Longsword
 600002 Short Spear

@@ -3720,6 +3720,8 @@
 2044460000 Revered Spirit Ash
 2045410700 Revered Spirit Ash
 2045420700 Scadutree Fragment
+2045460501 Crimson-Sapping Cracked Tear
+2046390061 Glovewort Crystal Tear
 2046420700 Scadutree Fragment
 2046440700 Revered Spirit Ash
 2046450040 Scadutree Fragment
@@ -3734,11 +3736,13 @@
 2047440750 Scadutree Fragment
 2047460500 Scadutree Fragment
 2048370050 Scadutree Fragment
+2048400021 Viridian Hidden Tear
 2048410700 Scadutree Fragment
 2048430700 Scadutree Fragment
 2048440500 Scadutree Fragment
 2048450520 Scadutree Fragment
 2048460510 Scadutree Fragment
+2048460700 Crimsonburst Dried Tear
 2049440500 Revered Spirit Ash
 2049440530 Scadutree Fragment
 2049450510 Scadutree Fragment
@@ -3753,8 +3757,11 @@
 2050430720 Revered Spirit Ash
 2050440500 Revered Spirit Ash
 2050450730 Scadutree Fragment
+2050460501 Bloodsucking Cracked Tear
+2050460511 Oil-Soaked Tear
 2050460700 Revered Spirit Ash
 2051440500 Scadutree Fragment
 2051440510 Scadutree Fragment
+2051450701 Cerulean-Sapping Cracked Tear
 2053390020 Scadutree Fragment
 2053410500 Scadutree Fragment
