@@ -325,7 +325,9 @@ public class EditorDecorations
     public static void FmgRefSelectable(EditorScreen ownerScreen, List<FMGRef> fmgNames, Param.Row context,
         dynamic oldval)
     {
-        List<string> textsToPrint = UICache.GetCached(ownerScreen, (int)oldval, "PARAM META FMGREF", () =>
+        List<string> textsToPrint = new List<string>();
+
+        textsToPrint = UICache.GetCached(ownerScreen, (int)oldval, "PARAM META FMGREF", () =>
         {
             List<(string, FMGBank.EntryGroup)> refs = resolveFMGRefs(fmgNames, context, oldval);
             return refs.Where(x => x.Item2 != null)

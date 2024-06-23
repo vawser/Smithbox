@@ -1206,6 +1206,9 @@ public static partial class FMGBank
     {
         EntryGroup eGroup = new() { ID = id };
 
+        // TODO: this is causing lag with TalkParam since it is called per frame
+        // Needs to be cached and instead grab cached value after initial generation
+
         if (fmgInfo.EntryCategory == FmgEntryCategory.None || CFG.Current.FMG_NoGroupedFmgEntries)
         {
             List<EntryFMGInfoPair> entryPairs = fmgInfo.GetPatchedEntryFMGPairs();
@@ -1254,6 +1257,7 @@ public static partial class FMGBank
                 }
             }
         }
+
 
         return eGroup;
     }
