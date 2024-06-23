@@ -1339,7 +1339,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT32 { get; set; }
+                public bool UnkT32 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1377,7 +1377,7 @@ namespace SoulsFormats
                     IsModifyLight = br.ReadBoolean();
                     UnkT2F = br.ReadBoolean();
                     UnkT30 = br.ReadInt16();
-                    UnkT32 = br.ReadByte();
+                    UnkT32 = br.ReadBoolean();
                     UnkT33 = br.ReadBoolean();
                     UnkT34 = br.ReadInt16();
                     UnkT36 = br.ReadInt16();
@@ -1398,7 +1398,7 @@ namespace SoulsFormats
                     bw.WriteBoolean(IsModifyLight);
                     bw.WriteBoolean(UnkT2F);
                     bw.WriteInt16(UnkT30);
-                    bw.WriteByte(UnkT32);
+                    bw.WriteBoolean(UnkT32);
                     bw.WriteBoolean(UnkT33);
                     bw.WriteInt16(UnkT34);
                     bw.WriteInt16(UnkT36);
