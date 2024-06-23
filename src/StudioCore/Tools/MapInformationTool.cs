@@ -75,11 +75,13 @@ namespace StudioCore.Tools
         private static void ProcessMap_ER(string mapid, MSBE map)
         {
             ProcessParts_ER(mapid, map);
+            ProcessRegions_ER(mapid, map);
+            ProcessEvents_ER(mapid, map);
         }
 
-        private static void ProcessParts_ER(string mapid, MSBE map)
+        private static void ProcessEvents_ER(string mapid, MSBE map)
         {
-            var mapAlias = Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapid).Replace(" ", "_");
+            var mapAlias = Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapid);
 
             // Assets
             var assetHeader = $"EntityID,Name,NameAlias,ModelID,entityGroupID_1,entityGroupID_2,entityGroupID_3,entityGroupID_4,entityGroupID_5,entityGroupID_6,entityGroupID_7,entityGroupID_8,AssetSfxParamRelativeID,UnkModelMaskAndAnimID\n";
@@ -119,7 +121,99 @@ namespace StudioCore.Tools
                 Output = Output + partLine + "\n";
             }
 
-            File.WriteAllText($"{exportPath}\\{mapid}_Assets.txt", Output);
+            File.WriteAllText($"{exportPath}\\{mapid}_Part_Assets.txt", Output);
+            Output = "";
+        }
+
+        private static void ProcessRegions_ER(string mapid, MSBE map)
+        {
+            var mapAlias = Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapid);
+
+            // Assets
+            var assetHeader = $"EntityID,Name,NameAlias,ModelID,entityGroupID_1,entityGroupID_2,entityGroupID_3,entityGroupID_4,entityGroupID_5,entityGroupID_6,entityGroupID_7,entityGroupID_8,AssetSfxParamRelativeID,UnkModelMaskAndAnimID\n";
+
+            Output = Output + assetHeader;
+
+            foreach (var part in map.Parts.Assets)
+            {
+                var partLine = "";
+
+                var name = part.Name;
+                var modelId = part.ModelName;
+                var aliasName = "";
+
+                if (modelId != null)
+                {
+                    if (Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets.ContainsKey(modelId))
+                        aliasName = Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets[modelId].name;
+                }
+
+                var entityID = part.EntityID;
+                var entityGroupID = part.EntityGroupIDs;
+                var entityGroupID_1 = entityGroupID[0];
+                var entityGroupID_2 = entityGroupID[1];
+                var entityGroupID_3 = entityGroupID[2];
+                var entityGroupID_4 = entityGroupID[3];
+                var entityGroupID_5 = entityGroupID[4];
+                var entityGroupID_6 = entityGroupID[5];
+                var entityGroupID_7 = entityGroupID[6];
+                var entityGroupID_8 = entityGroupID[7];
+
+                var relativesfxid = part.AssetSfxParamRelativeID;
+                var modelmaskanimid = part.UnkModelMaskAndAnimID;
+
+                partLine = $"{entityID},{name},{aliasName},{modelId},{entityGroupID_1},{entityGroupID_2},{entityGroupID_3},{entityGroupID_4},{entityGroupID_5},{entityGroupID_6},{entityGroupID_7},{entityGroupID_8},{relativesfxid},{modelmaskanimid}";
+
+                Output = Output + partLine + "\n";
+            }
+
+            File.WriteAllText($"{exportPath}\\{mapid}_Part_Assets.txt", Output);
+            Output = "";
+        }
+
+        private static void ProcessParts_ER(string mapid, MSBE map)
+        {
+            var mapAlias = Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapid);
+
+            // Assets
+            var assetHeader = $"EntityID,Name,NameAlias,ModelID,entityGroupID_1,entityGroupID_2,entityGroupID_3,entityGroupID_4,entityGroupID_5,entityGroupID_6,entityGroupID_7,entityGroupID_8,AssetSfxParamRelativeID,UnkModelMaskAndAnimID\n";
+
+            Output = Output + assetHeader;
+
+            foreach (var part in map.Parts.Assets)
+            {
+                var partLine = "";
+
+                var name = part.Name;
+                var modelId = part.ModelName;
+                var aliasName = "";
+
+                if (modelId != null)
+                {
+                    if (Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets.ContainsKey(modelId))
+                        aliasName = Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets[modelId].name;
+                }
+
+                var entityID = part.EntityID;
+                var entityGroupID = part.EntityGroupIDs;
+                var entityGroupID_1 = entityGroupID[0];
+                var entityGroupID_2 = entityGroupID[1];
+                var entityGroupID_3 = entityGroupID[2];
+                var entityGroupID_4 = entityGroupID[3];
+                var entityGroupID_5 = entityGroupID[4];
+                var entityGroupID_6 = entityGroupID[5];
+                var entityGroupID_7 = entityGroupID[6];
+                var entityGroupID_8 = entityGroupID[7];
+
+                var relativesfxid = part.AssetSfxParamRelativeID;
+                var modelmaskanimid = part.UnkModelMaskAndAnimID;
+
+                partLine = $"{entityID},{name},{aliasName},{modelId},{entityGroupID_1},{entityGroupID_2},{entityGroupID_3},{entityGroupID_4},{entityGroupID_5},{entityGroupID_6},{entityGroupID_7},{entityGroupID_8},{relativesfxid},{modelmaskanimid}";
+
+                Output = Output + partLine + "\n";
+            }
+
+            File.WriteAllText($"{exportPath}\\{mapid}_Part_Assets.txt", Output);
             Output = "";
 
             // DummyAssets
@@ -157,7 +251,7 @@ namespace StudioCore.Tools
                 Output = Output + partLine + "\n";
             }
 
-            File.WriteAllText($"{exportPath}\\{mapid}_DummyAssets.txt", Output);
+            File.WriteAllText($"{exportPath}\\{mapid}_Part_DummyAssets.txt", Output);
             Output = "";
 
             // Players
@@ -189,7 +283,7 @@ namespace StudioCore.Tools
                 Output = Output + partLine + "\n";
             }
 
-            File.WriteAllText($"{exportPath}\\{mapid}_Players.txt", Output);
+            File.WriteAllText($"{exportPath}\\{mapid}_Part_Players.txt", Output);
             Output = "";
 
             // MapPieces
@@ -227,12 +321,12 @@ namespace StudioCore.Tools
                 Output = Output + partLine + "\n";
             }
 
-            File.WriteAllText($"{exportPath}\\{mapid}_MapPieces.txt", Output);
+            File.WriteAllText($"{exportPath}\\{mapid}_Part_MapPieces.txt", Output);
             Output = "";
 
 
             // Collisions
-            var collisionHeader = $"EntityID,Name,NameAlias,ModelID,entityGroupID_1,entityGroupID_2,entityGroupID_3,entityGroupID_4,entityGroupID_5,entityGroupID_6,entityGroupID_7,entityGroupID_8,HitFilterID,LocationTextID,PlayRegionID\n";
+            var collisionHeader = $"EntityID,Name,NameAlias,ModelID,entityGroupID_1,entityGroupID_2,entityGroupID_3,entityGroupID_4,entityGroupID_5,entityGroupID_6,entityGroupID_7,entityGroupID_8,HitFilterID,HitFilterName,LocationTextID,PlayRegionID\n";
 
             Output = Output + collisionHeader;
 
@@ -255,16 +349,17 @@ namespace StudioCore.Tools
                 var entityGroupID_7 = entityGroupID[6];
                 var entityGroupID_8 = entityGroupID[7];
 
+                int hitFilterTypeID = (int)part.HitFilterID;
                 var hitFilterType = part.HitFilterID;
                 var locationTextId = part.LocationTextID;
                 var playRegionId = part.PlayRegionID;
 
-                partLine = $"{entityID},{name},{aliasName},{modelId},{entityGroupID_1},{entityGroupID_2},{entityGroupID_3},{entityGroupID_4},{entityGroupID_5},{entityGroupID_6},{entityGroupID_7},{entityGroupID_8},{hitFilterType},{locationTextId},{playRegionId}";
+                partLine = $"{entityID},{name},{aliasName},{modelId},{entityGroupID_1},{entityGroupID_2},{entityGroupID_3},{entityGroupID_4},{entityGroupID_5},{entityGroupID_6},{entityGroupID_7},{entityGroupID_8},{hitFilterTypeID},{hitFilterType},{locationTextId},{playRegionId}";
 
                 Output = Output + partLine + "\n";
             }
 
-            File.WriteAllText($"{exportPath}\\{mapid}_Collisions.txt", Output);
+            File.WriteAllText($"{exportPath}\\{mapid}_Part_Collisions.txt", Output);
             Output = "";
 
             // ConnectCollisions
@@ -297,6 +392,9 @@ namespace StudioCore.Tools
                 var mapId_2 = part.MapID[2];
                 var mapId_3 = part.MapID[3];
 
+                if (mapId_3 == 255)
+                    mapId_3 = 0;
+
                 var collisionMapId = $"m{mapId_0}_{mapId_1}_{mapId_2}_{mapId_3}";
                 var collisionMapIdAlias = Smithbox.NameCacheHandler.MapNameCache.GetMapName(collisionMapId);
 
@@ -305,11 +403,11 @@ namespace StudioCore.Tools
                 Output = Output + partLine + "\n";
             }
 
-            File.WriteAllText($"{exportPath}\\{mapid}_ConnectCollisions.txt", Output);
+            File.WriteAllText($"{exportPath}\\{mapid}_Part_ConnectCollisions.txt", Output);
             Output = "";
 
             // Enemies
-            var enemyHeader = $"EntityID,Name,NameAlias,ModelID,entityGroupID_1,entityGroupID_2,entityGroupID_3,entityGroupID_4,entityGroupID_5,entityGroupID_6,entityGroupID_7,entityGroupID_8,NpcParamID,NpcThinkParamID,TalkID,PlatoonID,CharaInitID,CollisionPartName,WalkRouteName,ChrActivateCondParamID,BackupEventAnimID,SpEffectSetParamID\n";
+            var enemyHeader = $"EntityID,Name,NameAlias,ModelID,entityGroupID_1,entityGroupID_2,entityGroupID_3,entityGroupID_4,entityGroupID_5,entityGroupID_6,entityGroupID_7,entityGroupID_8,NpcParamID,NpcThinkParamID,TalkID,PlatoonID,CharaInitID,CollisionPartName,WalkRouteName,ChrActivateCondParamID,BackupEventAnimID,spEffectSetID_1,spEffectSetID_2,spEffectSetID_3,spEffectSetID_4\n";
 
             Output = Output + enemyHeader;
 
@@ -348,17 +446,21 @@ namespace StudioCore.Tools
                 var chrActivateCondition = part.ChrActivateCondParamID;
                 var backupAnimId = part.BackupEventAnimID;
                 var spEffectSetID = part.SpEffectSetParamID;
+                var spEffectSetID_1 = spEffectSetID[0];
+                var spEffectSetID_2 = spEffectSetID[0];
+                var spEffectSetID_3 = spEffectSetID[0];
+                var spEffectSetID_4 = spEffectSetID[0];
 
-                partLine = $"{entityID},{name},{aliasName},{modelId},{entityGroupID_1},{entityGroupID_2},{entityGroupID_3},{entityGroupID_4},{entityGroupID_5},{entityGroupID_6},{entityGroupID_7},{entityGroupID_8},{npcParam},{thinkParam},{talkID},{platoonID},{chrInitId},{colName},{walkName},{chrActivateCondition},{backupAnimId},{spEffectSetID}";
+                partLine = $"{entityID},{name},{aliasName},{modelId},{entityGroupID_1},{entityGroupID_2},{entityGroupID_3},{entityGroupID_4},{entityGroupID_5},{entityGroupID_6},{entityGroupID_7},{entityGroupID_8},{npcParam},{thinkParam},{talkID},{platoonID},{chrInitId},{colName},{walkName},{chrActivateCondition},{backupAnimId},{spEffectSetID_1},{spEffectSetID_2},{spEffectSetID_3},{spEffectSetID_4}";
 
                 Output = Output + partLine + "\n";
             }
 
-            File.WriteAllText($"{exportPath}\\{mapid}_Enemies.txt", Output);
+            File.WriteAllText($"{exportPath}\\{mapid}_Part_Enemies.txt", Output);
             Output = "";
 
             // Dummy Enemies
-            var dummyEnemyHeader = $"EntityID,Name,NameAlias,ModelID,entityGroupID_1,entityGroupID_2,entityGroupID_3,entityGroupID_4,entityGroupID_5,entityGroupID_6,entityGroupID_7,entityGroupID_8,NpcParamID,NpcThinkParamID,TalkID,PlatoonID,CharaInitID,CollisionPartName,WalkRouteName,ChrActivateCondParamID,BackupEventAnimID,SpEffectSetParamID\n";
+            var dummyEnemyHeader = $"EntityID,Name,NameAlias,ModelID,entityGroupID_1,entityGroupID_2,entityGroupID_3,entityGroupID_4,entityGroupID_5,entityGroupID_6,entityGroupID_7,entityGroupID_8,NpcParamID,NpcThinkParamID,TalkID,PlatoonID,CharaInitID,CollisionPartName,WalkRouteName,ChrActivateCondParamID,BackupEventAnimID,spEffectSetID_1,spEffectSetID_2,spEffectSetID_3,spEffectSetID_4\n";
 
             Output = Output + dummyEnemyHeader;
 
@@ -397,13 +499,17 @@ namespace StudioCore.Tools
                 var chrActivateCondition = part.ChrActivateCondParamID;
                 var backupAnimId = part.BackupEventAnimID;
                 var spEffectSetID = part.SpEffectSetParamID;
+                var spEffectSetID_1 = spEffectSetID[0];
+                var spEffectSetID_2 = spEffectSetID[0];
+                var spEffectSetID_3 = spEffectSetID[0];
+                var spEffectSetID_4 = spEffectSetID[0];
 
-                partLine = $"{entityID},{name},{aliasName},{modelId},{entityGroupID_1},{entityGroupID_2},{entityGroupID_3},{entityGroupID_4},{entityGroupID_5},{entityGroupID_6},{entityGroupID_7},{entityGroupID_8},{npcParam},{thinkParam},{talkID},{platoonID},{chrInitId},{colName},{walkName},{chrActivateCondition},{backupAnimId},{spEffectSetID}";
+                partLine = $"{entityID},{name},{aliasName},{modelId},{entityGroupID_1},{entityGroupID_2},{entityGroupID_3},{entityGroupID_4},{entityGroupID_5},{entityGroupID_6},{entityGroupID_7},{entityGroupID_8},{npcParam},{thinkParam},{talkID},{platoonID},{chrInitId},{colName},{walkName},{chrActivateCondition},{backupAnimId},{spEffectSetID_1},{spEffectSetID_2},{spEffectSetID_3},{spEffectSetID_4}";
 
                 Output = Output + partLine + "\n";
             }
 
-            File.WriteAllText($"{exportPath}\\{mapid}_DummyEnemies.txt", Output);
+            File.WriteAllText($"{exportPath}\\{mapid}_Part_DummyEnemies.txt", Output);
             Output = "";
 
             TaskLogs.AddLog($"{mapid} - {mapAlias} complete.");

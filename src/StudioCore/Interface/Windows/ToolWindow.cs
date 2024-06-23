@@ -56,6 +56,7 @@ public class ToolWindow
             if (CFG.Current.ShowDeveloperTools)
             {
                 DisplayTool_ParamValidation();
+                DisplayTool_MapValidation();
                 DisplayTool_WorldMapLayoutGenerator();
             }
 
@@ -105,9 +106,9 @@ public class ToolWindow
                 ImGui.Checkbox("Use project files", ref MapInformationTool.TargetProject);
                 ImguiUtils.ShowHoverTooltip("The report will use the game root files by default, if you want to use your project's specific files, tick this.");
 
-                ImGui.SameLine();
-                ImGui.Checkbox("Export as single file", ref MapInformationTool.OneFile);
-                ImguiUtils.ShowHoverTooltip("The report will be placed in one file, and each MSB will be separated by a header.");
+                //ImGui.SameLine();
+                //ImGui.Checkbox("Export as single file", ref MapInformationTool.OneFile);
+                //ImguiUtils.ShowHoverTooltip("The report will be placed in one file, and each MSB will be separated by a header.");
 
                 if (ImGui.Button("Select Report Export Directory"))
                 {
@@ -152,6 +153,30 @@ public class ToolWindow
                 ParamValidationTool.ValidatePadding(true);
             }
             ImguiUtils.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplayTool_MapValidation()
+    {
+        if (ImGui.BeginTabItem("Map Validation"))
+        {
+            ImGui.Text("This tool will validate the MSB for the current project by loading all MSB files.");
+
+            ImGui.Checkbox("Check project files", ref MapValidationTool.TargetProject);
+            ImguiUtils.ShowHoverTooltip("The check will use the game root files by default, if you want to use your project's specific files, tick this.");
+
+
+            if (ImGui.Button("Validate MSB"))
+            {
+                MapValidationTool.ValidateMSB();
+            }
+
+            if(MapValidationTool.HasFinished)
+            {
+                ImGui.Text("Validation has finished.");
+            }
 
             ImGui.EndTabItem();
         }

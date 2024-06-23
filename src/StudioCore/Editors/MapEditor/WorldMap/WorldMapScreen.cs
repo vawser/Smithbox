@@ -96,6 +96,11 @@ public class WorldMapScreen : IResourceEventListener
         {
             zoomFactor = GetDefaultZoomLevel();
         }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_DragMap))
+        {
+            AdjustScrollNextFrame = true;
+        }
     }
 
     public void DisplayWorldMapButton()
@@ -143,6 +148,17 @@ public class WorldMapScreen : IResourceEventListener
         }
     }
 
+    private float WorldMapScrollX = 0;
+    private float WorldMapScrollY = 0;
+    private float WorldMapScrollXMax = 0;
+    private float WorldMapScrollYMax = 0;
+
+    private bool AdjustScrollNextFrame = false;
+    private float NextFrameAdjustmentX = 0;
+    private float NextFrameAdjustmentY = 0;
+
+    private Vector2 MouseDelta = new Vector2(0, 0);
+
     public void DisplayWorldMap()
     {
         if (Smithbox.ProjectType != ProjectType.ER)
@@ -157,6 +173,22 @@ public class WorldMapScreen : IResourceEventListener
         var windowWidth = ImGui.GetWindowWidth();
         var mousePos = ImGui.GetMousePos();
 
+        // Map Drag
+        /*
+        WorldMapScrollX = ImGui.GetScrollX();
+        WorldMapScrollXMax = ImGui.GetScrollMaxX();
+        WorldMapScrollY = ImGui.GetScrollY();
+        WorldMapScrollYMax = ImGui.GetScrollMaxY();
+        MouseDelta = InputTracker.MouseDelta;
+
+        if (AdjustScrollNextFrame)
+        {
+            AdjustScrollNextFrame = false;
+            ImGui.SetScrollFromPosX(NextFrameAdjustmentX);
+        }
+        */
+
+        // Map
         TextureViewWindowPosition = ImGui.GetWindowPos();
         TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());
 
@@ -186,6 +218,7 @@ public class WorldMapScreen : IResourceEventListener
 
         ImGui.End();
 
+        // Properties
         ImGui.Begin("Properties##WorldMapProperties");
 
         ImguiUtils.WrappedText($"Press Left Mouse button to select an area of the map to filter the map object list by.");
@@ -199,10 +232,13 @@ public class WorldMapScreen : IResourceEventListener
         //ImGui.Text($"mousePos: {mousePos}");
         //ImGui.Text($"windowHeight: {windowHeight}");
         //ImGui.Text($"windowWidth: {windowWidth}");
-        if (InputTracker.GetMouseButtonDown(MouseButton.Middle))
-        {
-            ImGui.Text($"MouseDelta: {InputTracker.MouseDelta}");
-        }
+        /*
+        ImGui.Text($"MouseDelta: {InputTracker.MouseDelta}");
+        ImGui.Text($"scrollPosX: {WorldMapScrollX}");
+        ImGui.Text($"scrollPosXMax: {WorldMapScrollXMax}");
+        ImGui.Text($"scrollPosY: {WorldMapScrollY}");
+        ImGui.Text($"scrollPosYMax: {WorldMapScrollYMax}");
+        */
 
         currentHoverMaps = GetMatchingMaps(relativePos);
 
