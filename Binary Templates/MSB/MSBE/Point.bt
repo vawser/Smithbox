@@ -24,6 +24,7 @@ enum <int> PointType {
     PointTypeConnection = 21,
     PointTypePatrolRoute22 = 22,
     PointTypeBuddySummonPoint = 26,
+    PointTypeNewRegionType = 27,
     PointTypeMufflingBox = 28,
     PointTypeMufflingPortal = 29,
     PointTypeSoundRegion = 30,
@@ -47,8 +48,8 @@ enum <int> PointType {
     PointTypeMapNameOverride = 51,
     PointTypeMountJumpFall = 52,
     PointTypeHorseProhibition = 53,
-    PointTypeNewRegionType = 54,
-    PointTypeNewRegionType2 = 55,
+    PointTypeLockedMountJump = 54,
+    PointTypeLockedMountJumpFall = 55,
     PointTypeOther = -1,
 };
 
@@ -65,6 +66,7 @@ struct PointEnvironmentMapEffectBox;
 struct PointConnection;
 struct PointPatrolRoute22;
 struct PointBuddySummonPoint;
+struct PointNewRegionType;
 struct PointMufflingBox;
 struct PointMufflingPortal;
 struct PointSoundRegion;
@@ -85,8 +87,8 @@ struct PointNavmeshCutting;
 struct PointMapNameOverride;
 struct PointMountJumpFall;
 struct PointHorseProhibition;
-struct PointNewRegionType;
-struct PointNewRegionType2;
+struct PointLockedMountJump;
+struct PointLockedMountJumpFall;
 
 //------------------------------------------------
 
@@ -179,6 +181,7 @@ typedef struct {
             case PointTypeConnection: PointConnection connection; break;
             case PointTypePatrolRoute22: PointPatrolRoute22 patrolRoute22; break;
             case PointTypeBuddySummonPoint: PointBuddySummonPoint buddysummonPoint; break;
+            case PointTypeNewRegionType: PointNewRegionType newRegionType; break;
             case PointTypeMufflingBox: PointMufflingBox mufflingBox; break;
             case PointTypeMufflingPortal: PointMufflingPortal mufflingPortal; break;
             case PointTypeSoundRegion: PointSoundRegion soundRegion; break;
@@ -199,8 +202,8 @@ typedef struct {
             case PointTypeMapNameOverride: PointMapNameOverride mapNameOverride; break;
             case PointTypeMountJumpFall: PointMountJumpFall mountJumpFall; break;
             case PointTypeHorseProhibition: PointHorseProhibition horseProhibition; break;
-            case PointTypeNewRegionType: PointNewRegionType newRegionType; break;
-            case PointTypeNewRegionType2: PointNewRegionType2 newRegionType2; break;
+            case PointTypeLockedMountJump: PointLockedMountJump LockedMountJump; break;
+            case PointTypeLockedMountJumpFall: PointLockedMountJumpFall LockedMountJumpFall; break;
 
             default: Assert(false);
         }
@@ -551,10 +554,16 @@ typedef struct {
     int unk04;
     int unk08;
     int unk0c; Assert(unk0c == -1);
-} PointNewRegionType;
+} PointLockedMountJump;
 
 typedef struct {
     int unk00; Assert(unk00 == -1);
     int unk04; Assert(unk04 == 0);
     int unk08;
-} PointNewRegionType2;
+} PointLockedMountJumpFall;
+
+typedef struct {
+    int unk00; Assert(unk00 == -1);
+    int unk04; Assert(unk00 == 0);
+    int unk08; Assert(unk00 == 0);
+} PointNewRegionType;

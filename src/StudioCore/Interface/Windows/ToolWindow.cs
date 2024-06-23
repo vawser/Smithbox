@@ -94,7 +94,7 @@ public class ToolWindow
 
     private void DisplayTool_MSB_Report()
     {
-        if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
+        if (Smithbox.ProjectType == ProjectType.ER)
         {
             if (ImGui.BeginTabItem("Map Information"))
             {
@@ -102,8 +102,12 @@ public class ToolWindow
 
                 ImGui.Text("Export Path: " + MapInformationTool.exportPath);
 
-                ImGui.Checkbox("Use Project Files", ref MapInformationTool.TargetProject);
+                ImGui.Checkbox("Use project files", ref MapInformationTool.TargetProject);
                 ImguiUtils.ShowHoverTooltip("The report will use the game root files by default, if you want to use your project's specific files, tick this.");
+
+                ImGui.SameLine();
+                ImGui.Checkbox("Export as single file", ref MapInformationTool.OneFile);
+                ImguiUtils.ShowHoverTooltip("The report will be placed in one file, and each MSB will be separated by a header.");
 
                 if (ImGui.Button("Select Report Export Directory"))
                 {
@@ -115,6 +119,10 @@ public class ToolWindow
                 {
                     MapInformationTool.GenerateReport();
                 }
+
+                ImGui.Separator();
+
+
 
                 ImGui.EndTabItem();
             }

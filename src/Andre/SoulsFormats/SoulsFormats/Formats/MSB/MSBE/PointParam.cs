@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using static SoulsFormats.MSBE.Region;
 
 namespace SoulsFormats
 {
@@ -21,6 +22,7 @@ namespace SoulsFormats
             Connection = 21,
             PatrolRoute22 = 22,
             BuddySummonPoint = 26,
+            DisableTumbleweed = 27,
             MufflingBox = 28,
             MufflingPortal = 29,
             SoundRegion = 30,
@@ -113,6 +115,11 @@ namespace SoulsFormats
             /// Unknown.
             /// </summary>
             public List<Region.BuddySummonPoint> BuddySummonPoints { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public List<Region.DisableTumbleweed> DisableTumbleweeds { get; set; }
 
             /// <summary>
             /// Areas where sound is muffled.
@@ -233,12 +240,12 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.LockedMountJump> NewRegionTypes { get; set; }
+            public List<Region.LockedMountJump> LockedMountJumps { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.LockedMountJumpFall> NewRegionType2s { get; set; }
+            public List<Region.LockedMountJumpFall> LockedMountJumpFalls { get; set; }
 
             /// <summary>
             /// Most likely a dumping ground for unused regions.
@@ -262,6 +269,7 @@ namespace SoulsFormats
                 Connections = new List<Region.Connection>();
                 PatrolRoute22s = new List<Region.PatrolRoute22>();
                 BuddySummonPoints = new List<Region.BuddySummonPoint>();
+                DisableTumbleweeds = new List<Region.DisableTumbleweed>();
                 MufflingBoxes = new List<Region.MufflingBox>();
                 MufflingPortals = new List<Region.MufflingPortal>();
                 SoundRegions = new List<Region.SoundRegion>();
@@ -285,8 +293,8 @@ namespace SoulsFormats
                 MapNameOverrides = new List<Region.MapNameOverride>();
                 MountJumpFalls = new List<Region.MountJumpFall>();
                 HorseRideOverrides = new List<Region.HorseRideOverride>();
-                NewRegionTypes = new List<Region.LockedMountJump>();
-                NewRegionType2s = new List<Region.LockedMountJumpFall>();
+                LockedMountJumps = new List<Region.LockedMountJump>();
+                LockedMountJumpFalls = new List<Region.LockedMountJumpFall>();
                 Others = new List<Region.Other>();
             }
 
@@ -332,8 +340,9 @@ namespace SoulsFormats
                     case Region.MapNameOverride r: MapNameOverrides.Add(r); break;
                     case Region.MountJumpFall r: MountJumpFalls.Add(r); break;
                     case Region.HorseRideOverride r: HorseRideOverrides.Add(r); break;
-                    case Region.LockedMountJump r: NewRegionTypes.Add(r); break;
-                    case Region.LockedMountJumpFall r: NewRegionType2s.Add(r); break;
+                    case Region.LockedMountJump r: LockedMountJumps.Add(r); break;
+                    case Region.LockedMountJumpFall r: LockedMountJumpFalls.Add(r); break;
+                    case Region.DisableTumbleweed r: DisableTumbleweeds.Add(r); break;
                     case Region.Other r: Others.Add(r); break;
 
                     default:
@@ -351,13 +360,13 @@ namespace SoulsFormats
                 return SFUtil.ConcatAll<Region>(
                     InvasionPoints, EnvironmentMapPoints, Sounds, SFX, WindSFX,
                     SpawnPoints, Messages, EnvironmentMapEffectBoxes, WindAreas,
-                    Connections, PatrolRoute22s, BuddySummonPoints, MufflingBoxes,
+                    Connections, PatrolRoute22s, BuddySummonPoints, DisableTumbleweeds, MufflingBoxes,
                     MufflingPortals, SoundRegions, MufflingPlanes, PatrolRoutes,
                     MapPoints, WeatherOverrides, AutoDrawGroupPoints, GroupDefeatRewards,
                     MapPointDiscoveryOverrides, MapPointParticipationOverrides, Hitsets,
                     FastTravelRestriction, WeatherCreateAssetPoints, PlayAreas, EnvironmentMapOutputs,
                     MountJumps, Dummies, FallPreventionRemovals, NavmeshCuttings, MapNameOverrides,
-                    MountJumpFalls, HorseRideOverrides, NewRegionTypes, NewRegionType2s, Others);
+                    MountJumpFalls, HorseRideOverrides, LockedMountJumps, LockedMountJumpFalls, Others);
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
 
@@ -401,6 +410,9 @@ namespace SoulsFormats
 
                     case RegionType.BuddySummonPoint:
                         return BuddySummonPoints.EchoAdd(new Region.BuddySummonPoint(br));
+
+                    case RegionType.DisableTumbleweed:
+                        return DisableTumbleweeds.EchoAdd(new Region.DisableTumbleweed(br));
 
                     case RegionType.MufflingBox:
                         return MufflingBoxes.EchoAdd(new Region.MufflingBox(br));
@@ -472,10 +484,10 @@ namespace SoulsFormats
                         return HorseRideOverrides.EchoAdd(new Region.HorseRideOverride(br));
 
                     case RegionType.LockedMountJump:
-                        return NewRegionTypes.EchoAdd(new Region.LockedMountJump(br));
+                        return LockedMountJumps.EchoAdd(new Region.LockedMountJump(br));
 
                     case RegionType.LockedMountJumpFall:
-                        return NewRegionType2s.EchoAdd(new Region.LockedMountJumpFall(br));
+                        return LockedMountJumpFalls.EchoAdd(new Region.LockedMountJumpFall(br));
 
                     case RegionType.Other:
                         return Others.EchoAdd(new Region.Other(br));
@@ -2562,6 +2574,36 @@ namespace SoulsFormats
                     bw.WriteInt32(UnkT08);
                 }
 
+            }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public class DisableTumbleweed : Region
+            {
+                private protected override RegionType Type => RegionType.DisableTumbleweed;
+                private protected override bool HasTypeData => true;
+
+                /// <summary>
+                /// Creates a DisableTumbleweed with default values.
+                /// </summary>
+                public DisableTumbleweed() : base($"{nameof(Region)}: {nameof(DisableTumbleweed)}") { }
+
+                internal DisableTumbleweed(BinaryReaderEx br) : base(br) { }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    br.AssertInt32(-1);
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteInt32(-1);
+                    bw.WriteInt32(0);
+                    bw.WriteInt32(0);
+                }
             }
 
             /// <summary>
