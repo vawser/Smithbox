@@ -222,7 +222,7 @@ public class CFG
     public bool System_Font_Vietnamese = false;
     public float System_Frame_Rate = 60.0f;
 
-    public bool System_FlexibleUnpack = true;
+    public bool System_FlexibleUnpack = false;
 
     public bool System_EnableAutoSave = true;
     public int System_AutoSaveIntervalSeconds = 300;
