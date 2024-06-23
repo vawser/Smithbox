@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <penumbraSize AltName="Penumbra Size" Wiki="Sun source radius" />
+    <renderDistance AltName="Render Distance" />
+  </Field>
+  <Self />
+</PARAMMETA>

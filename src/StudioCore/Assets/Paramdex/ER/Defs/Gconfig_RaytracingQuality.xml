@@ -14,7 +14,7 @@
     <Field Def="s32 Unk0x08"></Field>
     <Field Def="f32 UnkFloat0x0C"></Field>
     <Field Def="s32 Unk0x10"></Field>
-    <Field Def="f32 UnkFloat0x14"></Field>
-    <Field Def="f32 UnkFloat0x18"></Field>
+    <Field Def="f32 penumbraSize"></Field>
+    <Field Def="f32 renderDistance"></Field>
   </Fields>
 </PARAMDEF>

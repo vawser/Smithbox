@@ -51,15 +51,13 @@ Additions:
  - Cutscene (MQB) Editor
  - Merge Tool: user-focused merging of current project + target project
  
-Hacks:
-- Remove hack with PostureControlParam_WepRight and SignPuddleParam for param upgrader
- 
 General:
  - Add format json support for the other MSB types.
  - Add shortcuts for Param/Model/Gparam/Texture Viewer toolbar actions
  - Remove the fixed nature of the Editor menu bar windows
  - Look into thumbnail generation for Chr/Asset/Parts
  - Add articles covering all of the features and common use-cases in Smithbox
+ - Go through non-ER games and run the MSB validation and Param validation to catch any issues within them.
  
 Map Editor: 
  - Add .BTAB support
@@ -115,6 +113,8 @@ World Map:
 #--------------------------------------
 # Issues
 Verify param upgrader works properly (e.g. the new params aren't scuffed in-game)
+- Remove hack with PostureControlParam_WepRight and SignPuddleParam for param upgrader
+ 
 Check the gparam editor for SOTE, may have changed
 
 Prefab create throw error on new project creation (for a user)

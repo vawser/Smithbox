@@ -1,4 +1,5 @@
-﻿using ImGuiNET;
+﻿using HKLib.hk2018.hk;
+using ImGuiNET;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
 using StudioCore.Editors.AssetBrowser;
@@ -176,7 +177,11 @@ public class AliasTab
                     continue;
 
                 var line = $"{entry.Key} {entry.Value.name}\n";
-                aliasList = aliasList + line;
+
+                if (SearchFilters.IsSearchMatch(_searchInput, entry.Value.id, entry.Value.name, entry.Value.tags))
+                {
+                    aliasList = aliasList + line;
+                }
             }
 
             PlatformUtils.Instance.SetClipboardText(aliasList);

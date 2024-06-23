@@ -7601,14 +7601,6 @@
             ]
         },
         {
-            "id": "wp_a_503",
-            "name": "Beastman's Jar-Shield",
-            
-            "tags": [
-                "weapon"
-            ]
-        },
-        {
             "id": "wp_a_6399",
             "name": "Quiver",
             
@@ -7975,6 +7967,362 @@
             "tags": [
                 "weapon"
             ]
-        }
+        },
+        
+        { "id": "hd_a_2700", "name": "Dane's Hat", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2700", "name": "Dryleaf Robe", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2700", "name": "Dryleaf Arm Wraps", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2700", "name": "Dryleaf Cuissardes", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3000", "name": "Gaius's Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3000", "name": "Gaius's Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3000", "name": "Gaius's Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3000", "name": "Gaius's Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2730", "name": "Oathseeker Knight Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2730", "name": "Leda's Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2730", "name": "Oathseeker Knight Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2730", "name": "Oathseeker Knight Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2735", "name": "Oathseeker Knight Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2710", "name": "Verdigris Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2710", "name": "Verdigris Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2710", "name": "Verdigris Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2710", "name": "Verdigris Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2720", "name": "Pelt of Ralva", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2720", "name": "Iron Rivet Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2720", "name": "Iron Rivet Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2720", "name": "Iron Rivet Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "hd_a_2721", "name": "Fang Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2750", "name": "Thiollier's Mask", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2750", "name": "Thiollier's Garb", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2750", "name": "Thiollier's Gloves", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2750", "name": "Thiollier's Trousers", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2751", "name": "Thiollier's Garb (Altered)", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2755", "name": "Unused", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2740", "name": "Unused", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2740", "name": "Unused", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2740", "name": "Unused", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2740", "name": "Unused", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2745", "name": "Unused", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2745", "name": "Unused", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2745", "name": "Unused", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2745", "name": "Unused", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2770", "name": "High Priest Hat", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2770", "name": "High Priest Robe", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2770", "name": "High Priest Gloves", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2770", "name": "High Priest Undergarments", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "bd_a_2775", "name": "Finger Robe", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2790", "name": "Caterpillar Mask", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2790", "name": "Braided Cord Robe", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2790", "name": "Braided Arm Wraps", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2790", "name": "Soiled Loincloth", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2760", "name": "Dancer's Hood", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2760", "name": "Dancer's Dress", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2760", "name": "Dancer's Bracer", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2760", "name": "Dancer's Trousers", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "bd_a_2761", "name": "Dancer's Dress (Altered)", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2780", "name": "Helm of Night", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2780", "name": "Armor of Night", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2780", "name": "Gauntlets of Night", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2780", "name": "Greaves of Night", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2850", "name": "Igon's Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2850", "name": "Igon's Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2850", "name": "Igon's Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2850", "name": "Igon's Loincloth", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2851", "name": "Igon's Helm (Altered)", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2851", "name": "Igon's Armor (Altered)", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "bd_a_2852", "name": "Unused", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2852", "name": "Unused", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2852", "name": "Unused", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2800", "name": "Wise Man's Mask", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2800", "name": "Ansbach's Attire", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2800", "name": "Ansbach's Manchettes", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2800", "name": "Ansbach's Boots", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "bd_a_2001", "name": "Ansbach's Attire (Altered)", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2810", "name": "Freyja's Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2810", "name": "Freyja's Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2810", "name": "Freyja's Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2810", "name": "Freyja's Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "bd_a_2811", "name": "Freyja's Armor (Altered)", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2815", "name": "Unused", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2820", "name": "Helm of Solitude", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2820", "name": "Armor of Solitude", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2820", "name": "Gauntlets of Solitude", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2820", "name": "Greaves of Solitude", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "bd_a_2821", "name": "Armor of Solitude (Altered)", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3050", "name": "Messmer Soldier Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3050", "name": "Messmer Soldier Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3050", "name": "Messmer Soldier Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3050", "name": "Messmer Soldier Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "bd_a_3051", "name": "Messmer Soldier Armor (Altered)", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3060", "name": "Black Knight Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3060", "name": "Black Knight Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3060", "name": "Black Knight Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3060", "name": "Black Knight Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2830", "name": "Rakshasa Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2830", "name": "Rakshasa Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2830", "name": "Rakshasa Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2830", "name": "Rakshasa Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2840", "name": "Unused", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2840", "name": "Unused", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2840", "name": "Unused", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2840", "name": "Unused", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3100", "name": "Fire Knight Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3100", "name": "Fire Knight Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3100", "name": "Fire Knight Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3100", "name": "Fire Knight Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "lg_a_3101", "name": "Fire Knight Armor (Altered)", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3105", "name": "Death Mask Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3106", "name": "Winged Serpent Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3107", "name": "Salza's Hood", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2860", "name": "Leather Headband", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2860", "name": "Gloried Attire", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_2860", "name": "Leather Arm Wraps", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_2860", "name": "Leather Leg Wraps", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2861", "name": "Leather Crown", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_2861", "name": "Highland Attire", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3010", "name": "Death Knight Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3010", "name": "Death Knight Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3010", "name": "Death Knight Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3010", "name": "Death Knight Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3020", "name": "Curseblade Mask", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3020", "name": "Ascetic's Loincloth", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3020", "name": "Ascetic's Wrist Guards", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3020", "name": "Ascetic's Ankle Guards", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3030", "name": "Messmer's Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3030", "name": "Messmer's Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3030", "name": "Messmer's Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3030", "name": "Messmer's Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3040", "name": "Gravebird Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3040", "name": "Gravebird's Blackquill Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3040", "name": "Gravebird Bracelets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3040", "name": "Gravebird Anklets", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "bd_a_3041", "name": "Gravebird Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3070", "name": "Common Soldier Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3070", "name": "Common Soldier Cloth Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3070", "name": "Common Soldier Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3070", "name": "Common Soldier Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3080", "name": "Horned Warrior Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3080", "name": "Horned Warrior Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3080", "name": "Horned Warrior Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3080", "name": "Horned Warrior Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3085", "name": "Divine Beast Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3085", "name": "Divine Beast Warrior Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3086", "name": "Divine Bird Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3086", "name": "Divine Bird Warrior Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3086", "name": "Divine Bird Warrior Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3086", "name": "Divine Bird Warrior Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3090", "name": "Rellana's Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3090", "name": "Rellana's Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3090", "name": "Rellana's Gloves", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3090", "name": "Rellana's Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3110", "name": "Young Lion's Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3110", "name": "Young Lion's Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3110", "name": "Young Lion's Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3110", "name": "Young Lion's Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "bd_a_3111", "name": "Young Lion's Armor (Altered)", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3120", "name": "Circlet of Light", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3130", "name": "Shadow Militiaman Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "bd_a_3130", "name": "Shadow Militiaman Armor", "tags": [ "armor", "chest", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "am_a_3130", "name": "Shadow Militiaman Gauntlets", "tags": [ "armor", "arms", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "lg_a_3130", "name": "Shadow Militiaman Greaves", "tags": [ "armor", "legs", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3140", "name": "Divine Beast Head", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_2870", "name": "St. Trina's Blossom", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3150", "name": "Crucible Hammer-Helm", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3160", "name": "Greatjar", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "hd_a_3170", "name": "Imp Head (Lion)", "tags": [ "armor", "head", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_0125", "name": "Main-gauche", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0127", "name": "Fire Knight's Shortsword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_0275", "name": "Velvet Sword of St. Trina", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0271", "name": "Star-Lined Sword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0270", "name": "Carian Sorcery Sword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0272", "name": "Stone-Sheathed Sword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0273", "name": "Sword of Light", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0274", "name": "Sword of Darkness", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_0634", "name": "Sword Lance", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0637", "name": "Greatsword of Damnation", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0636", "name": "Lizard Greatsword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0639", "name": "Greatsword of Solitude", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_0635", "name": "Ancient Meteoric Ore Greatsword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0640", "name": "Fire Knight's Greatsword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0464", "name": "Greatsword of Radahn (Lord)", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0630", "name": "Moonrithyll's Knight Sword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0464", "name": "Greatsword of Radahn (Light)", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_0306", "name": "Queelign's Greatsword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_0426", "name": "Spirit Sword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0428", "name": "Falx", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0427", "name": "Dancing Blade of Ranah", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0429", "name": "Horned Warrior's Sword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_0461", "name": "Putrescence Cleaver", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0463", "name": "Freyja's Greatsword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0462", "name": "Horned Warrior's Greatsword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_0559", "name": "Sword of Night", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1111", "name": "Euporia", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1112", "name": "Black Steel Twinblade", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_0884", "name": "Flowerstone Gavel", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_0880", "name": "Smithscript Greathammer", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0878", "name": "Anvil Hammer", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0879", "name": "Black Steel Greathammer", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0881", "name": "Bloodfiend's Arm", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1257", "name": "Serpent Flail", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1552", "name": "Smithscript Axe", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0723", "name": "Death Knight's Twin Axes", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0722", "name": "Messmer Soldier's Axe", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0724", "name": "Forked-Tongue Hatchet", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1024", "name": "Death Knight's Longhaft Axe", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0761", "name": "Bonny Butchering Knife", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1551", "name": "Smithscript Spear", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0942", "name": "Swift Spear", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0943", "name": "Bloodfiend's Fork", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_0940", "name": "Spear of the Impaler", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0945", "name": "Barbed Staff-Spear", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1023", "name": "Spirit Glaive", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1025", "name": "Poleblade of the Bud", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1059", "name": "Obsidian Lamina", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1209", "name": "Tooth Whip", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1167", "name": "Thiollier's Hidden Needle", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1650", "name": "Pata", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1168", "name": "Poisoned Hand", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1169", "name": "Madding Hand", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1171", "name": "Golem Fist", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1172", "name": "Shield of Night", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1170", "name": "Claws of Night", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_0877", "name": "Devonia's Hammer", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0882", "name": "Shadow Sunflower Blossom", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0883", "name": "Gazing Finger", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_3009", "name": "Nanaya's Torch", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_3011", "name": "Lamenting Visage", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_2120", "name": "Smithscript Shield", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_2046", "name": "Messmer Soldier Shield", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_2047", "name": "Wolf Crest Shield", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_2048", "name": "Serpent Crest Shield", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_2049", "name": "Golden Lion Shield", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_2229", "name": "Black Steel Greatshield", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_2230", "name": "Verdigris Greatshield", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1338", "name": "Staff of the Great Beyond", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1344", "name": "Maternal Staff", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1337", "name": "Dryleaf Seal", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1343", "name": "Fire Knight's Seal", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1345", "name": "Spiraltree Seal", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1423", "name": "Ansbach's Longbow", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1422", "name": "Igon's Greatbow", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1515", "name": "Repeating Crossbow", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1516", "name": "Spread Crossbow", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1517", "name": "Rabbath's Cannon", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_7000", "name": "Piquebone Arrow", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_7500", "name": "Piquebone Bolt", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_7700", "name": "Rabbath's Greatbolt", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1370", "name": "Dryleaf Arts / Dane's Footwork", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1530", "name": "Firespark Perfume Bottle", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1531", "name": "Chilling Perfume Bottle", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1532", "name": "Frenzyflame Perfume Bottle", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1533", "name": "Lightning Perfume Bottle", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1534", "name": "Deadly Poison Perfume Bottle", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1600", "name": "Dueling Shield", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1601", "name": "Carian Thrusting Shield", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1550", "name": "Smithscript Dagger", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1571", "name": "Backhand Blade", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1572", "name": "Smithscript Cirque", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1570", "name": "Curseblade's Cirque", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1671", "name": "Great Katana", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1670", "name": "Dragon-Hunter's Great Katana", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1672", "name": "Rakshasa's Great Katana", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        
+        { "id": "wp_a_1680", "name": "Milady", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0255", "name": "Leda's Sword", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_0638", "name": "Rellana's Twin Blades", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] },
+        { "id": "wp_a_1631", "name": "Beast Claw", "tags": [ "weapon", "shadow of the erdtree", "sote", "dlc" ] }
+        
     ]
 }
