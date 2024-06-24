@@ -116,3 +116,7 @@ Verify param upgrader works properly (e.g. the new params aren't scuffed in-game
 - Remove hack with PostureControlParam_WepRight and SignPuddleParam for param upgrader
  
 TalkParam is lagging heavily: due to GenerateEntryGroup
+
+Move World Map textures to separate dictionary so they aren't randomly cleared by the normal ResourceDictionary stuff
+
+Finish Map Information action

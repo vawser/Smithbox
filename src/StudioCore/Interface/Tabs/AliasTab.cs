@@ -168,7 +168,19 @@ public class AliasTab
         var inputSize = new Vector2(width, 20 * scale);
         var buttonSize = new Vector2(width, 24 * scale);
 
-        if (ImGui.Button("Copy Aliases", buttonSize))
+        if (ImGui.Button("Copy Selected Alias Name", buttonSize))
+        {
+            PlatformUtils.Instance.SetClipboardText(_selectedEntry.name);
+        }
+        ImguiUtils.ShowHoverTooltip("Copy the currently selected alias name directly to your clipboard.");
+
+        if (ImGui.Button("Copy Selected Alias ID", buttonSize))
+        {
+            PlatformUtils.Instance.SetClipboardText(_selectedEntry.id);
+        }
+        ImguiUtils.ShowHoverTooltip("Copy the currently selected alias id directly to your clipboard.");
+
+        if (ImGui.Button("Copy Alias List", buttonSize))
         {
             var aliasList = "";
             foreach(var entry in Bank.GetEntries())
