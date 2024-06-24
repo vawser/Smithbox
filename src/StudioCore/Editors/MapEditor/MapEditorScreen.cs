@@ -1017,6 +1017,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void Save()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         try
         {
             Universe.SaveAllMaps();
@@ -1029,6 +1032,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void SaveAll()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         try
         {
             Universe.SaveAllMaps();

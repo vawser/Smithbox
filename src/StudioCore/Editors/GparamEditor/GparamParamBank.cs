@@ -32,10 +32,10 @@ public static class GparamParamBank
 
     public static void SaveGraphicsParam(GparamInfo info)
     {
-        GPARAM param = info.Gparam;
-
-        if (param == null)
+        if (info == null)
             return;
+
+        GPARAM param = info.Gparam;
 
         //TaskLogs.AddLog($"SaveGraphicsParams: {info.Path}");
 

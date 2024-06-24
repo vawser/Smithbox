@@ -998,6 +998,9 @@ public class ParamEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         try
         {
             ParamBank.PrimaryBank.SaveParams();
@@ -1017,6 +1020,9 @@ public class ParamEditorScreen : EditorScreen
 
     public void SaveAll()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         try
         {
             ParamBank.PrimaryBank.SaveParams();

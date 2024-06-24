@@ -804,12 +804,18 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (CutsceneBank.IsLoaded)
             CutsceneBank.SaveCutscene(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (CutsceneBank.IsLoaded)
             CutsceneBank.SaveCutscenes();
     }

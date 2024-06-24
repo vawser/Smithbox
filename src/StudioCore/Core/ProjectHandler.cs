@@ -71,6 +71,15 @@ public class ProjectHandler
             return;
         }
 
+        if(path == "")
+        {
+            PlatformUtils.Instance.MessageBox(
+                $"Path parameter was empty: {path}",
+                "Project Load Error", MessageBoxButtons.OK);
+            return;
+        }
+
+
         CurrentProject.ProjectJsonPath = path;
 
         SetGameRootPrompt(CurrentProject);
@@ -81,6 +90,9 @@ public class ProjectHandler
         Smithbox.GameRoot = CurrentProject.Config.GameRoot;
         Smithbox.ProjectRoot = Path.GetDirectoryName(path);
         Smithbox.SmithboxDataRoot = $"{Smithbox.ProjectRoot}\\.smithbox";
+
+        if (Smithbox.ProjectRoot == "")
+            TaskLogs.AddLog("Smithbox.ProjectRoot is empty!");
 
         Smithbox.SetProgramTitle($"Smithbox - {CurrentProject.Config.ProjectName}");
 

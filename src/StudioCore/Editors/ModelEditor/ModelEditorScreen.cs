@@ -551,6 +551,9 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
     public void Save()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (CurrentModelInfo != null)
         {
             // Copy the binder to the mod directory if it does not already exist.
@@ -696,6 +699,9 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
     public void SaveAll()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         Save(); // Just call save.
     }
 

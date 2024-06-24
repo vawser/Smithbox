@@ -43,27 +43,27 @@ public class SelectionGroupBank
 
     public void CreateSelectionGroups()
     {
-        if (Smithbox.SmithboxDataRoot != "")
-        {
-            var SelectionDirectory = $"{Smithbox.SmithboxDataRoot}\\{ResourceMiscLocator.GetGameIDForDir()}\\selections";
-            var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
 
-            if (!Directory.Exists(SelectionDirectory))
+        var SelectionDirectory = $"{Smithbox.SmithboxDataRoot}\\{ResourceMiscLocator.GetGameIDForDir()}\\selections";
+        var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
+
+        if (!Directory.Exists(SelectionDirectory))
+        {
+            Directory.CreateDirectory(SelectionDirectory);
+            string template = "{ \"Resources\": [ ] }";
+            try
             {
-                Directory.CreateDirectory(SelectionDirectory);
-                string template = "{ \"Resources\": [ ] }";
-                try
-                {
-                    var fs = new FileStream(SelectionPath, System.IO.FileMode.Create);
-                    var data = Encoding.ASCII.GetBytes(template);
-                    fs.Write(data, 0, data.Length);
-                    fs.Flush();
-                    fs.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    TaskLogs.AddLog($"{ex}");
-                }
+                var fs = new FileStream(SelectionPath, System.IO.FileMode.Create);
+                var data = Encoding.ASCII.GetBytes(template);
+                fs.Write(data, 0, data.Length);
+                fs.Flush();
+                fs.Dispose();
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"{ex}");
             }
         }
     }
@@ -134,6 +134,9 @@ public class SelectionGroupBank
 
     public bool SaveSelectionGroups()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return false;
+
         var SelectionDirectory = $"{Smithbox.SmithboxDataRoot}\\{ResourceMiscLocator.GetGameIDForDir()}\\selections";
         var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
 

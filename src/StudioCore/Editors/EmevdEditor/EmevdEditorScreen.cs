@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Interface;
@@ -381,11 +382,17 @@ public class EmevdEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         EmevdBank.SaveEventScript(_selectedFileInfo, _selectedScript);
     }
 
     public void SaveAll()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (EmevdBank.IsLoaded)
             EmevdBank.SaveEventScripts();
     }

@@ -962,12 +962,18 @@ public class GparamEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (GparamParamBank.IsLoaded)
             GparamParamBank.SaveGraphicsParam(_selectedGparamInfo);
     }
 
     public void SaveAll()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (GparamParamBank.IsLoaded)
             GparamParamBank.SaveGraphicsParams();
     }

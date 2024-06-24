@@ -82,6 +82,9 @@ public class AliasBank
 
     public void WriteAliasResource(AliasResource targetBank)
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         var resourcePath =  $"{Smithbox.SmithboxDataRoot}\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
 
         if(CFG.Current.AliasBank_EditorMode)

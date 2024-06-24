@@ -387,12 +387,18 @@ public class ParticleEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (ParticleBank.IsLoaded)
             ParticleBank.SaveParticle(_selectedParticleInfo);
     }
 
     public void SaveAll()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (ParticleBank.IsLoaded)
             ParticleBank.SaveParticles();
     }

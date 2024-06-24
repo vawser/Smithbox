@@ -158,12 +158,18 @@ public class HavokEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (HavokBehaviorBank.IsLoaded)
             HavokBehaviorBank.SaveBehavior(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (HavokBehaviorBank.IsLoaded)
             HavokBehaviorBank.SaveBehaviors();
     }

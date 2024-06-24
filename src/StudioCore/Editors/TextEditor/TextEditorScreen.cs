@@ -361,11 +361,17 @@ public class TextEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         FMGBank.SaveFMGs();
     }
 
     public void SaveAll()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         FMGBank.SaveFMGs();
     }
 

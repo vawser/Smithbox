@@ -77,6 +77,9 @@ public class MapGroupBank
 
     public void WriteMapGroupResource(MapGroupResource targetBank)
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         var resourceFilePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\MapGroups\\{ResourceMiscLocator.GetGameIDForDir()}\\{MapGroupFileName}.json";
 
         if (File.Exists(resourceFilePath))

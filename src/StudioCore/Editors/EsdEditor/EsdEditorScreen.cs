@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
@@ -196,12 +197,18 @@ public class EsdEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (EsdBank.IsLoaded)
             EsdBank.SaveEsdScript(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (EsdBank.IsLoaded)
             EsdBank.SaveEsdScripts();
     }

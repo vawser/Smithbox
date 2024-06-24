@@ -144,12 +144,18 @@ public class TimeActEditorScreen : EditorScreen
 
     public void Save()
     {
-        if(AnimationBank.IsLoaded)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
+        if (AnimationBank.IsLoaded)
             AnimationBank.SaveTimeAct(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (AnimationBank.IsLoaded)
             AnimationBank.SaveTimeActs();
     }

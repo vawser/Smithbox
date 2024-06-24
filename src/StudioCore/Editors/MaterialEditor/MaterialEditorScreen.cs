@@ -157,12 +157,18 @@ public class MaterialEditorScreen : EditorScreen
 
     public void Save()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (MaterialBank.IsLoaded)
             MaterialBank.SaveMaterial(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         if (MaterialBank.IsLoaded)
             MaterialBank.SaveMaterials();
     }
