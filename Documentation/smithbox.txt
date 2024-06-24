@@ -115,6 +115,4 @@ World Map:
 Verify param upgrader works properly (e.g. the new params aren't scuffed in-game)
 - Remove hack with PostureControlParam_WepRight and SignPuddleParam for param upgrader
  
-Check the gparam editor for SOTE, may have changed
-
 TalkParam is lagging heavily: due to GenerateEntryGroup
