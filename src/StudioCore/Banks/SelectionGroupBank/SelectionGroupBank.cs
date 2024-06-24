@@ -43,24 +43,27 @@ public class SelectionGroupBank
 
     public void CreateSelectionGroups()
     {
-        var SelectionDirectory = $"{Smithbox.SmithboxDataRoot}\\{ResourceMiscLocator.GetGameIDForDir()}\\selections";
-        var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
-
-        if (!Directory.Exists(SelectionDirectory))
+        if (Smithbox.SmithboxDataRoot != "")
         {
-            Directory.CreateDirectory(SelectionDirectory);
-            string template = "{ \"Resources\": [ ] }";
-            try
+            var SelectionDirectory = $"{Smithbox.SmithboxDataRoot}\\{ResourceMiscLocator.GetGameIDForDir()}\\selections";
+            var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
+
+            if (!Directory.Exists(SelectionDirectory))
             {
-                var fs = new FileStream(SelectionPath, System.IO.FileMode.Create);
-                var data = Encoding.ASCII.GetBytes(template);
-                fs.Write(data, 0, data.Length);
-                fs.Flush();
-                fs.Dispose();
-            }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"{ex}");
+                Directory.CreateDirectory(SelectionDirectory);
+                string template = "{ \"Resources\": [ ] }";
+                try
+                {
+                    var fs = new FileStream(SelectionPath, System.IO.FileMode.Create);
+                    var data = Encoding.ASCII.GetBytes(template);
+                    fs.Write(data, 0, data.Length);
+                    fs.Flush();
+                    fs.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"{ex}");
+                }
             }
         }
     }

@@ -346,7 +346,6 @@ namespace SoulsFormats
             return (int)(bw.Position - start);
         }
 
-        // TODO: actually implement this properly
         public static byte[] ReadZstd(BinaryReaderEx br, int compressedSize)
         {
             byte[] compressed = br.ReadBytes(compressedSize);
