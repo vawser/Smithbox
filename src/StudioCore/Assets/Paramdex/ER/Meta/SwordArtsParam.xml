@@ -33,7 +33,7 @@
     <shieldIconType AltName="Shield Icon Type" Wiki="If you do not overwrite it, the icon will be displayed based on the swashbuckler ID of the weapon para." Enum="SWORD_ARTS_SHIELD_ICON_TYPE" />
     
     <swordArtsTypeNew AltName="Sword Arts Type" Wiki="Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler" />
-    <IsDlcSwordArt AltName="Is DLC Sword Arts" Wiki="Not confirmed, but appears to be used like this. Likely applies offset of X to the swordArtsTypeNew value." IsBool="" />
+    <swordArtsTypeDlc AltName="Sword Arts Type" Wiki="Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler" />
     
     <iconId AltName="Icon ID" Wiki="ID of the icon displayed in FE etc." />
     <aiUsageId AltName="AI Usage Judgment ID" Wiki="AI usage judgment ID" />

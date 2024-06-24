@@ -148,11 +148,10 @@
       <SortID>990</SortID>
     </Field>
     
-    <Field Def="u8 swordArtsTypeNew_old" FirstVersion="10701000" RemovedVersion="11210015" />
+    <Field Def="u8 swordArtsTypeNew" FirstVersion="10701000" RemovedVersion="11210015" />
     <Field Def="dummy8 pad[1]" RemovedVersion="11210015" />
     
-    <Field Def="u8 swordArtsTypeNew" FirstVersion="11210015" />
-    <Field Def="u8 IsDlcSwordArt" FirstVersion="11210015" />
+    <Field Def="u16 swordArtsTypeDlc" FirstVersion="11210015" />
     
     <Field Def="u16 iconId">
       <DisplayName>アイコンID</DisplayName>
