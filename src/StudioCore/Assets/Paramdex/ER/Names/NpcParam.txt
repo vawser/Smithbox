@@ -4352,10 +4352,30 @@
 144810000 [Spirit Summon] Miranda Sprout
 144910200 [Spirit Summon] Soldjars of Fortune
 148200000 [Spirit Summon] Omenkiller
+150000000 [Spirit Summon] Ancient Dragon Florissax
+150000002 [Spirit Summon] Fire Knight Queelign
+150000003 [Spirit Summon] Swordhand of Night Jolan
+150000004 [Spirit Summon] Jolan and Anna
+150000005 [Spirit Summon] Jolan and Anna
 150400000 [Spirit Summon] Curseblade Meera
 150800000 [Spirit Summon] Bloodfiend Hexer
 150900000 [Spirit Summon] Gravebird
 151600000 [Spirit Summon] Fire Knight Hilde
+151940000 [Spirit Summon] Spider Scorpion
+152500000 [Spirit Summon] Divine Bird Warrior Ornis
+152501000 [Spirit Summon] Horned Warrior
+152610000 [Spirit Summon] Golem Smith
+153110000 [Spirit Summon] Inquisitor 1
+153110100 [Spirit Summon] Inquisitor 2
+155600000 [Spirit Summon] Fingercreeper
+158100000 [Spirit Summon] Demi-Human Swordsman Yosh
+158300000 [Spirit Summon] Messmer Soldier 1
+158301000 [Spirit Summon] Messmer Soldier 2
+158400000 [Spirit Summon] Black Knight Commander
+158400500 [Spirit Summon] Black Knight Captain Huw
+158700000 [Spirit Summon] Bigmouth Imp
+159000000 [Spirit Summon] Man-Fly 1/2
+159000100 [Spirit Summon] Man-Fly 3
 170001000 [Spirit Summon] Fallen Hawks Greatshield Soldier
 170002000 [Spirit Summon] Fallen Hawks Archer
 500000010 Stormhill Colosseum Silent Spirit

@@ -26,6 +26,8 @@ public class ProjectEnumBank
     public ProjectEnumBank(string title)
     {
         EnumTitle = title;
+
+
     }
 
     public void LoadBank()

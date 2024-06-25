@@ -6,6 +6,8 @@
         <Option Value="1" Name="Strike" />
         <Option Value="2" Name="Thrust" />
         <Option Value="3" Name="Standard" />
+        <Option Value="253" Name="Refers to EquipParamWeapon atkAttribute2 field" />
+        <Option Value="254" Name="Refers to EquipParamWeapon atkAttribute field" />
     </Enum>
     <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
         <Option Value="0" Name="None" />
@@ -88,9 +90,9 @@
   </Enums>
   <Field>
     <atkId_Bullet AltName="AtkParam ID" Wiki="Register each attack parameter ID.  Attack type / Attack material / Physical attack power / Magic attack power / Stamina attack power / Knockback distance." Refs="AtkParam_Pc,AtkParam_Npc" />
-    <sfxId_Bullet AltName="Projectile SFX ID" Wiki="Enter the SFX ID for [Bullet]. -1 does not occur." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <sfxId_Hit AltName="Impact SFX ID" Wiki="[Impact] Enter the SFX ID. -1 does not occur." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <sfxId_Flick AltName="Repel SFX ID" Wiki="[At the time of repelling] Enter the SFX ID. -1 does not occur." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_Bullet AltName="Projectile SFX ID" Wiki="Enter the SFX ID for [Bullet]. -1 does not occur." ParticleAlias="" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_Hit AltName="Impact SFX ID" Wiki="[Impact] Enter the SFX ID. -1 does not occur." ParticleAlias="" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_Flick AltName="Repel SFX ID" Wiki="[At the time of repelling] Enter the SFX ID. -1 does not occur." ParticleAlias="" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
     <life AltName="Duration" Wiki="Time for missiles to continue to exist (-1 is infinite)." />
     <dist AltName="Attenuation Range" Wiki="Distance at which attenuation begins (not actual flight distance)." />
     <shootInterval AltName="Shoot Interval" Wiki="Specify how many seconds the missile will be fired." />

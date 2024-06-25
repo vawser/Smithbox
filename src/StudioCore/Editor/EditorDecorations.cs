@@ -501,27 +501,43 @@ public class EditorDecorations
         }
     }
 
+    public static bool ProjectEnumsLoaded()
+    {
+        var bank = Smithbox.BankHandler.ProjectEnums;
+
+        if(bank == null)
+            return false;
+
+        if(bank.Enums == null)
+            return false;
+
+        if (bank.Enums.List == null)
+            return false;
+
+        if(bank.Enums.List.Count == 0)
+            return false;
+
+        return true;
+    }
+
     public static void ProjectEnumNameText(string enumType)
     {
         if (CFG.Current.Param_HideEnums == false) //Move preference
         {
             var bank = Smithbox.BankHandler.ProjectEnums;
-            if (bank != null)
+            if (ProjectEnumsLoaded())
             {
-                if (bank.Enums.List.Count > 0)
+                var enumEntry = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
+
+                if (enumEntry != null)
                 {
-                    var enumEntry = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
+                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
+                    ImGui.TextUnformatted($@"   {enumEntry.DisplayName}");
+                    ImGui.PopStyleColor();
 
-                    if (enumEntry != null)
+                    if (enumEntry.Description != "")
                     {
-                        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
-                        ImGui.TextUnformatted($@"   {enumEntry.DisplayName}");
-                        ImGui.PopStyleColor();
-
-                        if (enumEntry.Description != "")
-                        {
-                            ImguiUtils.ShowHoverTooltip($"{enumEntry.Description}");
-                        }
+                        ImguiUtils.ShowHoverTooltip($"{enumEntry.Description}");
                     }
                 }
             }
@@ -534,14 +550,12 @@ public class EditorDecorations
         {
             var bank = Smithbox.BankHandler.ProjectEnums;
 
-            if (bank != null)
+            if (ProjectEnumsLoaded())
             {
-                if (bank.Enums.List.Count > 0)
-                {
-                    var enumEntry = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
+                var enumEntry = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
 
-                    if(enumEntry != null)
-                    {
+                if(enumEntry != null)
+                {
                     var enumValueName = "";
                     var enumValue = enumEntry.Options.Where(e => e.ID == value).FirstOrDefault();
 
@@ -553,7 +567,6 @@ public class EditorDecorations
                     ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
                     ImGui.TextUnformatted(enumValueName);
                     ImGui.PopStyleColor();
-                    }
                 }
             }
         }

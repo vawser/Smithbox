@@ -131,3 +131,23 @@
 30200000 Gravebird Ashes
 30300000 Fire Knight Hilde
 30400000 Spider Scorpion
+30600000 Inquisitor 1
+30600001 Inquisitor 2
+30700000 Demi-Human Swordsman Yosh
+30800000 Messmer Soldier 1
+30800001 Messmer Soldier 2
+30900000 Black Knight Commander Andreas
+31000000 Black Knight Captain Huw
+31100000 Bigmouth Imp
+31200000 Man-Fly 1
+31200001 Man-Fly 2
+31200002 Man-Fly 3
+31300000 Golem Smith
+31400000 Divine Bird Warrior Ornis
+31500000 Horned Warrior
+31600000 Fingercreeper
+31700000 Ancient Dragon Florissax
+31900000 Fire Knight Queelign
+32000000 Swordhand of Night Jolan
+32100000 Jolan and Anna
+32200000 Jolan and Anna

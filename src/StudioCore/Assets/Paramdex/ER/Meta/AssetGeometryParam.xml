@@ -113,7 +113,7 @@
   </Enums>
   <Field>
     <soundBankId AltName="Sound Bank ID" Wiki="Sound bank ID (-1: no bank, other: bank with specified ID)" ExtRefs="bnk,sound\aeg{0:000'_'000}.bnk" />
-    <soundBreakSEId AltName="Sound Break SE ID" Wiki="Destruction sound SEID (9 digits) -1: Generated from assetId" />
+    <soundBreakSEId AltName="Sound Break SE ID" SoundAlias=""  Wiki="Destruction sound SEID (9 digits) -1: Generated from assetId" />
     <refDrawParamId AltName="Draw Param Reference ID" Wiki="Drawing parameter reference ID. The reference ID for the part drawing parameter .xlsm." Refs="PartsDrawParam" />
     <hitCreateType AltName="Hit Create Type" Wiki="Sets the hit build type for static assets. Ignored for dynamic assets." Enum="ASSET_HIT_CREATE_TYPE_ENUM" />
     <behaviorType AltName="Asset Behavior Type" Wiki="Dynamic (all asset features available), static (light assets with limited functionality treated as old maps), partially static (partially destroyed assets)" Enum="ASSET_BEHAVIOR_TYPE" />
@@ -122,9 +122,9 @@
     <hp AltName="HP" Wiki="Durability until destruction (-1: Indestructible)" />
     <defense AltName="Defence" Wiki="Attack power below this value is no damage" />
     <breakStopTime AltName="Destruction Stop Time" Wiki="Time from destruction to forced stop of rigid body (do not force stop at 0)" />
-    <breakSfxId AltName="Destruction SFX ID" Wiki="SFX ID on destruction (-1: default (810030))" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <breakSfxId AltName="Destruction SFX ID" Wiki="SFX ID on destruction (-1: default (810030))" ParticleAlias="" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
     <breakSfxCpId AltName="Destruction SFX Dummy Poly ID" Wiki="SFX generation position at the time of destruction Damipoly ID (-1: placement position)" />
-    <breakLandingSfxId AltName="Destruction Landing SFX ID" Wiki="Object material-dependent SFX identifier that regenerates when first landing after being destroyed (-1: does not occur)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <breakLandingSfxId AltName="Destruction Landing SFX ID" ParticleAlias="" Wiki="Object material-dependent SFX identifier that regenerates when first landing after being destroyed (-1: does not occur)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
     <breakBulletBehaviorId AltName="Destruction Bullet Behavior ID" Wiki="Action parameter of [bullet] at the time of destruction (-1: does not occur). Please note that there is an offset specification due to laps. ([GR] SEQ35556)" />
     <breakBulletCpId AltName="Destruction Bullet Dummy Poly ID" Wiki="Location of [bullet] at the time of destruction Damipoli ID (-1: placement position)" />
     <FragmentInvisibleWaitTime AltName="Hidden Debris - Wait Time" Wiki="Hidden debris Waiting time (seconds)" />
@@ -163,10 +163,10 @@
     <autoCreateOffsetHeight AltName="Automatic Generation Height Offset" Wiki="Height offset of how much it floats from where the raycast hits the map when it is automatically generated [m]" />
     <burnTime AltName="Burn Time" Wiki="Burning time (seconds) (continues to burn at 0)" />
     <burnBraekRate AltName="Burn Destroy Rate" Wiki="Burnup threshold for switching to the ruptured state" />
-    <burnSfxId AltName="Burn SFX ID [0]" Wiki="SFX ID at the time of combustion: 0 (-1: No SFX)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <burnSfxId_1 AltName="Burn SFX ID [1]" Wiki="SFX ID at the time of combustion: 1 (-1: No SFX)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <burnSfxId_2 AltName="Burn SFX ID [2]" Wiki="SFX ID at the time of combustion: 2 (-1: No SFX)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <burnSfxId_3 AltName="Burn SFX ID [3]" Wiki="SFX ID at the time of combustion: 3 (-1: No SFX)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <burnSfxId AltName="Burn SFX ID [0]" Wiki="SFX ID at the time of combustion: 0 (-1: No SFX)" ParticleAlias="" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <burnSfxId_1 AltName="Burn SFX ID [1]" Wiki="SFX ID at the time of combustion: 1 (-1: No SFX)" ParticleAlias="" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <burnSfxId_2 AltName="Burn SFX ID [2]" Wiki="SFX ID at the time of combustion: 2 (-1: No SFX)" ParticleAlias="" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <burnSfxId_3 AltName="Burn SFX ID [3]" Wiki="SFX ID at the time of combustion: 3 (-1: No SFX)" ParticleAlias="" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
     <burnSfxDelayTimeMin AltName="Burn SFX Minimum Delay Time [0]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     <burnSfxDelayTimeMin_1 AltName="Burn SFX Minimum Delay Time [1]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     <burnSfxDelayTimeMin_2 AltName="Burn SFX Minimum Delay Time [2]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
@@ -222,10 +222,10 @@
     <isEnableSignPostBreak AltName="Is Bloodstain/Sign Enabled after Destruction" Wiki="Set whether sign / blood character can be created when on the asset (after destruction) : Possible, : Impossible (Details: SEQ122568)" IsBool="" />
     <Reserve_1 AltName="" IsHidden=""/>
     <generateMultiForbiddenRegion AltName="Multiplayer Forbidden Region Type" Wiki="Summoning prohibited / intrusion prohibited area generation (Damipoli)" Enum="MULTI_FORBIDDEN_REGION_GENERATE_ATTRIBUTE" />
-    <residentSeId0 AltName="Resident SE ID [0]" Wiki="Sound ID 0 (9 digits) to be resident in the asset (-1: No resident)" />
-    <residentSeId1 AltName="Resident SE ID [1]" Wiki="Sound ID 1 (9 digits) to be resident in the asset (-1: No resident)" />
-    <residentSeId2 AltName="Resident SE ID [2]" Wiki="Sound ID 2 (9 digits) to be resident in the asset (-1: No resident)" />
-    <residentSeId3 AltName="Resident SE ID [3]" Wiki="Sound ID 3 (9 digits) to be resident in the asset (-1: not resident)" />
+    <residentSeId0 AltName="Resident SE ID [0]" SoundAlias="" Wiki="Sound ID 0 (9 digits) to be resident in the asset (-1: No resident)" />
+    <residentSeId1 AltName="Resident SE ID [1]" SoundAlias="" Wiki="Sound ID 1 (9 digits) to be resident in the asset (-1: No resident)" />
+    <residentSeId2 AltName="Resident SE ID [2]" SoundAlias="" Wiki="Sound ID 2 (9 digits) to be resident in the asset (-1: No resident)" />
+    <residentSeId3 AltName="Resident SE ID [3]" SoundAlias="" Wiki="Sound ID 3 (9 digits) to be resident in the asset (-1: not resident)" />
     <residentSeDmypolyId0 AltName="Resident SE ID - Dummy Poly [0]" Wiki="Damipoli ID0 to attach resident sound (-1: placement position)" />
     <residentSeDmypolyId1 AltName="Resident SE ID - Dummy Poly [1]" Wiki="Damipoli ID1 to attach resident sound (-1: placement position)" />
     <residentSeDmypolyId2 AltName="Resident SE ID - Dummy Poly [2]" Wiki="Damipoli ID2 to attach resident sound (-1: placement position)" />

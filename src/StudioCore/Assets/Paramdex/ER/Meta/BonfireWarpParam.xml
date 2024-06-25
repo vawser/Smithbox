@@ -5,75 +5,6 @@
         <Option Value="0" Name="Type 0" />
         <Option Value="1" Name="Type 1" />
     </Enum>
-    <Enum Name="WORLD_MAP_ICON_ID" type="u8">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Grace" />
-      <Option Value="2" Name="Blocked Grace" />
-      <Option Value="3" Name="Collapsed Church" />
-      <Option Value="4" Name="Catacombs Entrance" />
-      <Option Value="5" Name="Pillar Ruins" />
-      <Option Value="6" Name="Wooden Shack" />
-      <Option Value="7" Name="Distant Village" />
-      <Option Value="8" Name="Collapsed Tower" />
-      <Option Value="9" Name="Evergaol" />
-      <Option Value="10" Name="Gatehouse" />
-      <Option Value="11" Name="Bridge of Sacrifice" />
-      <Option Value="13" Name="Cave" />
-      <Option Value="14" Name="Tunnel" />
-      <Option Value="15" Name="River Well" />
-      <Option Value="16" Name="Hero's Grave" />
-      <Option Value="17" Name="Mage's Rise" />
-      <Option Value="18" Name="Fort" />
-      <Option Value="19" Name="Windmill" />
-      <Option Value="20" Name="Cathedral of Manus Celes" />
-      <Option Value="21" Name="Grand Lift" />
-      <Option Value="22" Name="Encampment" />
-      <Option Value="23" Name="Divine Tower" />
-      <Option Value="24" Name="Colosseum" />
-      <Option Value="25" Name="Castle Morne" />
-      <Option Value="26" Name="Caria Manor" />
-      <Option Value="27" Name="Shaded Castle" />
-      <Option Value="28" Name="Redmane Castle" />
-      <Option Value="29" Name="Castle Sol" />
-      <Option Value="30" Name="Minor Erdtree" />
-      <Option Value="32" Name="Academy Gate Town" />
-      <Option Value="33" Name="Sellia Town of Sorcery" />
-      <Option Value="34" Name="Ordina Liturgical Town" />
-      <Option Value="35" Name="Frenzied Village" />
-      <Option Value="36" Name="Windmill Village" />
-      <Option Value="37" Name="Ailing Village" />
-      <Option Value="38" Name="Jarburg" />
-      <Option Value="39" Name="Village of the Albinaurics" />
-      <Option Value="40" Name="Hermit Village" />
-      <Option Value="45" Name="Mohgwyn Dynasty Mausoleum" />
-      <Option Value="46" Name="Eternal City" />
-      <Option Value="47" Name="Hallowed Grounds" />
-      <Option Value="50" Name="Stormveil Castle" />
-      <Option Value="51" Name="Academy of Raya Lucaria" />
-      <Option Value="52" Name="The Four Belfries" />
-      <Option Value="53" Name="Ruin-Strewn Precipice" />
-      <Option Value="54" Name="Bestial Sanctum" />
-      <Option Value="55" Name="Miquella's Haligtree" />
-      <Option Value="56" Name="Elphael, Brace of the Haligtree" />
-      <Option Value="57" Name="Forge of the Giants" />
-      <Option Value="58" Name="Volcano Manor" />
-      <Option Value="59" Name="Crumbling Farum Azula" />
-      <Option Value="60" Name="Leyndell, Royal Capital" />
-      <Option Value="61" Name="Subterranean Shunning-Grounds" />
-      <Option Value="62" Name="Leyndell, Ashen Capital" />
-      <Option Value="65" Name="Chapel of Anticipation" />
-      <Option Value="66" Name="Carian Study Hall" />
-      <Option Value="70" Name="White Circle with Figure Within" />
-      <Option Value="80" Name="NPC Marker" />
-      <Option Value="83" Name="Grace Guidance" />
-      <Option Value="84" Name="Starlight Guidance" />
-      <Option Value="85" Name="Catacomb Guidance" />
-      <Option Value="86" Name="NPC Marker (White Fog behind)" />
-      <Option Value="87" Name="Red Invasion Marker" />
-      <Option Value="88" Name="Red Invasion Marker (faded)" />
-      <Option Value="89" Name="Catacomb" />
-      <Option Value="90" Name="Catacomb" />
-    </Enum>
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
@@ -84,13 +15,13 @@
     <pad4 AltName="" IsHidden=""/>
     
     <bonfireSubCategorySortId AltName="Sort ID" Wiki="Bonfire Warp Subcategory Sort ID. Specify the order (ascending order) in the same subcategory" />
-    <forbiddenIconId AltName="Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_" />
+    <forbiddenIconId AltName="Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_" />
     <dispMinZoomStep AltName="Display Zoom Step" Wiki="Zoom step to display the bonfire (0 when zoomed out most, +1 for each zoom). Displayed when Display zoom step  Current zoom step. Default is 0 (always displayed)" />
     <selectMinZoomStep AltName="Selectable Zoom Step" Wiki="A zoom step that allows you to select and snap a bonfire (0 for the most zoomed out state, +1 for each zoom). Can be selected and snapped when Selectable zoom step  current enlargement stage. The default is 0 (always selectable / snappable)" />
     <bonfireSubCategoryId AltName="Subcategory ID" Wiki="Bonfire Warp Subcategory Parameter ID (-1: Invalid). Set which subcategory it belongs to. If it is invalid, it will not be displayed in the bonfire list." Refs="BonfireWarpSubCategoryParam" />
     
     <clearedEventFlagId AltName="Cleared Event Flag ID" Wiki="Cleared event flag ID (0: always treated as cleared)" FlagAlias="" />
-    <iconId AltName="Icon ID" Wiki="Icon ID" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_" />
+    <iconId AltName="Icon ID" Wiki="Icon ID" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_" />
     <dispMask00 AltName="Display Setting M00" Wiki="Whether to display with M00" IsBool="" />
     <dispMask01 AltName="Display Setting M01" Wiki="Whether to display with M01" IsBool="" />
     <dispMask02 AltName="Display Setting M02" Wiki="Whether to display with M02" IsBool="" />
@@ -155,8 +86,8 @@
     <textDisableFlag2Id6 AltName="Text Disable Flag ID 2 [6]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
     <textDisableFlag2Id7 AltName="Text Disable Flag ID 2 [7]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
     <textDisableFlag2Id8 AltName="Text Disable Flag ID 2 [8]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
-    <altIconId AltName="Alternate Icon ID" Wiki="Icon ID that applies when certain conditions are met" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
-    <altForbiddenIconId AltName="Alternate Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited, when certain conditions are met" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
+    <altIconId AltName="Alternate Icon ID" Wiki="Icon ID that applies when certain conditions are met" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
+    <altForbiddenIconId AltName="Alternate Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited, when certain conditions are met" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
     <pad5 AltName="" IsHidden=""/>
   </Field>
   <Self />

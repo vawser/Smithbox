@@ -24,8 +24,8 @@
     <defeatBossFlagId_forSignAimList AltName="Boss Defeat Flag - For Purpose List" Wiki="If this flag is ON, it will not be displayed in the list of purpose settings at the time of hosting. If it is 0, it is always displayed." FlagAlias="" />
     <displayAimFlagId AltName="Display Purpose Flag ID" Wiki="" FlagAlias="" />
     <foundBossFlagId AltName="Discovered Boss Flag ID" Wiki="" FlagAlias="" />
-    <foundBossTextId AltName="Discovered Boss Text ID" Wiki="" />
-    <notFindBossTextId AltName="Undiscovered Boss Text ID" Wiki="" />
+    <foundBossTextId AltName="Discovered Boss Text ID" Wiki="" Refs="Modern_MenuText" />
+    <notFindBossTextId AltName="Undiscovered Boss Text ID" Wiki="" Refs="Modern_MenuText" />
     <bossChallengeFlagId AltName="Boss Challenge Flag ID" Wiki="Boss challengeable flag ID. When selecting the target boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para is , the boss with this flag ON is targeted. If it is 0, it is always the target." FlagAlias="" />
     <defeatBossFlagId AltName="Boss Defeat Flag ID" Wiki="Boss defeat flag ID. When selecting the target boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para is , the boss with this flag OFF is targeted." FlagAlias="" />
     <bossPosX AltName="Boss Coordinate X" Wiki="Boss position_X coordinates (relative coordinates from the specified map). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para." />

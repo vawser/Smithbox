@@ -34,42 +34,6 @@
         <Option Value="13" Name="Unknown" />
         <Option Value="14" Name="Unknown" />
     </Enum>
-    <Enum Name="WEPMOTION_CATEGORY" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="20" Name="Dagger" />
-        <Option Value="21" Name="Torch" />
-        <Option Value="22" Name="Claw" />
-        <Option Value="23" Name="Straight Sword" />
-        <Option Value="24" Name="Twinblade" />
-        <Option Value="25" Name="Greatsword" />
-        <Option Value="26" Name="Colossal Sword" />
-        <Option Value="27" Name="Thrusting Sword" />
-        <Option Value="28" Name="Curved Sword" />
-        <Option Value="29" Name="Katana" />
-        <Option Value="30" Name="Axe" />
-        <Option Value="31" Name="Colossal Weapon" />
-        <Option Value="32" Name="Greataxe" />
-        <Option Value="33" Name="Hammer" />
-        <Option Value="34" Name="Flail" />
-        <Option Value="35" Name="Great Hammer" />
-        <Option Value="36" Name="Spear" />
-        <Option Value="37" Name="Great Spear" />
-        <Option Value="38" Name="Halberd" />
-        <Option Value="39" Name="Heavy Thrusting Sword" />
-        <Option Value="40" Name="Curved Greatsword" />
-        <Option Value="41" Name="Catalyst" />
-        <Option Value="42" Name="Fist" />
-        <Option Value="43" Name="Whip" />
-        <Option Value="44" Name="Bow" />
-        <Option Value="45" Name="Greatbow" />
-        <Option Value="46" Name="Crossbow" />
-        <Option Value="47" Name="Greatshield" />
-        <Option Value="48" Name="Small Shield" />
-        <Option Value="49" Name="Medium Shield" />
-        <Option Value="50" Name="Scythe" />
-        <Option Value="51" Name="Light Bow" />
-        <Option Value="52" Name="Ballista" />
-    </Enum>
     <Enum Name="GUARDMOTION_CATEGORY" type="u8">
         <Option Value="0" Name="Medium Shield" />
         <Option Value="1" Name="Greatshield" />
@@ -152,92 +116,13 @@
       <Option Value="25" Name="Madness" />
       <Option Value="26" Name="Blight" />
     </Enum>
-    <Enum Name="WEPMOTION_OVERRIDE_CATEGORY" type="u16">
-        <Option Value="0" Name="None" />
-        <Option Value="100" Name="Great Knife/Ivory Sickle/Celebrant's Sickle" />
-        <Option Value="101" Name="Misericorde/Scorpion's Stinger/Glintstone Kris" />
-        <Option Value="103" Name="Erdsteel Dagger/Blade of Calling/Black Knife" />
-        <Option Value="104" Name="Wakizashi " />
-        <Option Value="110" Name="Broadsword/Cane Sword " />
-        <Option Value="111" Name="Short Sword" />
-        <Option Value="112" Name="Miquellan Knight's Sword " />
-        <Option Value="113" Name="Carian Knight's Sword/Lazuli Glintstone Sword " />
-        <Option Value="117" Name="Warhawk's Talon " />
-        <Option Value="852" Name="Ornamental Straight Sword " />
-        <Option Value="125" Name="Claymore " />
-        <Option Value="126" Name="Flamberge " />
-        <Option Value="127" Name="Sword of Milos/Death's Poker " />
-        <Option Value="128" Name="Knight's Greatsword/Banished Knight's Greatsword/Inseparable Sword " />
-        <Option Value="129" Name="Dark Moon Greatsword " />
-        <Option Value="130" Name="Marais Executioner's Sword " />
-        <Option Value="135" Name="Zweihander/Troll Knight's Sword " />
-        <Option Value="136" Name="Greatsword " />
-        <Option Value="138" Name="Ruins Greatsword " />
-        <Option Value="137" Name="Godslayer's Greatsword " />
-        <Option Value="832" Name="Starscourge Greatsword " />
-        <Option Value="145" Name="Estoc/Noble's Estoc " />
-        <Option Value="146" Name="Rogier's Rapier " />
-        <Option Value="147" Name="Frozen Needle " />
-        <Option Value="150" Name="Godskin Stitcher " />
-        <Option Value="151" Name="Great Epee " />
-        <Option Value="155" Name="Shotel/Eclipse Shotel /Nox Flowing Sword" />
-        <Option Value="156" Name="Scimitar/Shamshir" />
-        <Option Value="157" Name="Flowing Curved Sword " />
-        <Option Value="158" Name="Mantis Blade " />
-        <Option Value="159" Name="Wing of Astel " />
-        <Option Value="161" Name="Beastman's Curved Sword " />
-        <Option Value="215" Name="Zamor Curved Sword " />
-        <Option Value="216" Name="Omen Cleaver/Magma Wyrm's Scalesword" />
-        <Option Value="165" Name="Serpentbone Blade " />
-        <Option Value="166" Name="Meteoric Ore Blade " />
-        <Option Value="167" Name="Nagakiba " />
-        <Option Value="120" Name="Eleonora's Poleblade" />
-        <Option Value="121" Name="Godskin Peeler " />
-        <Option Value="180" Name="Club/Stone Club " />
-        <Option Value="181" Name="Spiked Club " />
-        <Option Value="182" Name="Morning Star/Scepter of the All-Knowing " />
-        <Option Value="183" Name="Mace " />
-        <Option Value="184" Name="Monk's Flamemace " />
-        <Option Value="170" Name="Hand Axe/Icerind Hatchet/Forked Hatchet" />
-        <Option Value="171" Name="Warped Axe/Ripple Blade" />
-        <Option Value="172" Name="Iron Cleaver/Celebrant's Cleaver " />
-        <Option Value="175" Name="Butchering Knife " />
-        <Option Value="176" Name="Pickaxe " />
-        <Option Value="177" Name="Axe of Godrick/Crescent Moon Axe" />
-        <Option Value="200" Name="Partisan/Spiked Spear/Death Ritual Spear " />
-        <Option Value="201" Name="Pike " />
-        <Option Value="202" Name="Cross-Naginata " />
-        <Option Value="203" Name="Short Spear/Cleanrot Spear " />
-        <Option Value="205" Name="Vyke's War Spear/Siluria's Tree " />
-        <Option Value="206" Name="Treespear " />
-        <Option Value="207" Name="Serpent-Hunter " />
-        <Option Value="210" Name="Halberd/Commander's Standard/Banished Knight's Halberd/Dragon Halberd" />
-        <Option Value="211" Name="Lucerne/Golden Halberd/Nightrider Glaive" />
-        <Option Value="212" Name="Guardian's Swordspear/Loretta's War Sickle" />
-        <Option Value="225" Name="Scythe" />
-        <Option Value="220" Name="Katar/Veteran's Prosthesis " />
-        <Option Value="221" Name="Caestus " />
-        <Option Value="226" Name="Urumi " />
-        <Option Value="227" Name="Raptor Talons " />
-        <Option Value="196" Name="Prelate's Inferno Crozier " />
-        <Option Value="195" Name="Great Club " />
-        <Option Value="197" Name="Giant-Crusher " />
-        <Option Value="198" Name="Golem's Halberd " />
-        <Option Value="831" Name="Axe of Godfrey " />
-        <Option Value="839" Name="Ghiza's Wheel " />
-        <Option Value="250" Name="Ghostflame Torch " />
-        <Option Value="251" Name="St. Trina's Torch " />
-        <Option Value="240" Name="Seal " />
-        <Option Value="230" Name="Albinauric Bow" />
-        <Option Value="232" Name="Harp Bow " />
-        <Option Value="233" Name="Pulley Crossbow " />
-        <Option Value="236" Name="Full Moon Crossbow" />
-    </Enum>
     <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
         <Option Value="0" Name="Slash" />
         <Option Value="1" Name="Strike" />
         <Option Value="2" Name="Thrust" />
         <Option Value="3" Name="Standard" />
+        <Option Value="253" Name="Refers to EquipParamWeapon atkAttribute2 field" />
+        <Option Value="254" Name="Refers to EquipParamWeapon atkAttribute field" />
     </Enum>
     <Enum Name="WEP_BASE_CHANGE_CATEGORY" type="u8">
         <Option Value="0" Name="Category 0" />
@@ -364,6 +249,14 @@
         <Option Value="85" Name="Bolt" />
         <Option Value="86" Name="Ballista Bolt" />
         <Option Value="87" Name="Torch" />
+        <Option Value="88" Name="Hand-to-Hand" />
+        <Option Value="89" Name="Perfume Bottle" />
+        <Option Value="90" Name="Thrusting Shield" />
+        <Option Value="91" Name="Throwing Blade" />
+        <Option Value="92" Name="Reverse-hand Blade" />
+        <Option Value="93" Name="Light Greatsword" />
+        <Option Value="94" Name="Great Katana" />
+        <Option Value="95" Name="Beast Claw" />
     </Enum>
     <Enum Name="REINFORCE_SHOP_CATEGORY" type="u8">
       <Option Value="0" Name="No Reinforcement" />
@@ -377,14 +270,18 @@
     </Enum>
     <Enum Name="DISPLAY_CATEGORY_ID" type="u8">
       <Option Value="10" Name="Dagger - Torch - Shortbow - Arrow" />
+      <Option Value="15" Name="Throwing Blade" />
       <Option Value="20" Name="Straight Sword - Small Shield - Longbow - Great Arrow" />
+      <Option Value="25" Name="Light Greatsword" />
       <Option Value="30" Name="Greatswrod - Medium Shield - Greatbow - Bolt" />
       <Option Value="40" Name="Ultra Greatsword - Greatshield - Crossbow - Greatbolt" />
       <Option Value="50" Name="Thrusting Sword - Ballista" />
       <Option Value="60" Name="Heavy Thrusting Sword - Staff" />
       <Option Value="70" Name="Curved Sword - Seal" />
       <Option Value="80" Name="Curved Greatsword" />
+      <Option Value="85" Name="Reverse-hand Blade" />
       <Option Value="90" Name="Katana" />
+      <Option Value="95" Name="Great Katana" />
       <Option Value="100" Name="Twinblade" />
       <Option Value="110" Name="Axe" />
       <Option Value="120" Name="Greataxe" />
@@ -398,7 +295,10 @@
       <Option Value="200" Name="Scythe" />
       <Option Value="210" Name="Whip" />
       <Option Value="220" Name="Fist Weapon" />
+      <Option Value="225" Name="Hand-to-Hand" />
       <Option Value="230" Name="Claw Weapon" />
+      <Option Value="240" Name="Beast Claw" />
+      <Option Value="250" Name="Perfume Bottle" />
       <Option Value="255" Name="None" />
     </Enum>
     <Enum Name="RARITY" type="u8">
@@ -480,13 +380,13 @@
     <equipModelCategory AltName="Equip Model Category" Wiki="Equipment model type." Enum="EQUIP_MODEL_CATEGORY" />
     <equipModelGender AltName="Equip Model Gender" Wiki="Gender of equipment model." Enum="EQUIP_MODEL_GENDER" />
     <weaponCategory AltName="Weapon Category" Wiki="Weapon category." Enum="WEAPON_CATEGORY" />
-    <wepmotionCategory AltName="Weapon Motion Category" Wiki="Weapon motion category." Enum="WEPMOTION_CATEGORY" />
+    <wepmotionCategory AltName="Weapon Motion Category" Wiki="Weapon motion category." ProjectEnum="WEPMOTION_CATEGORY" />
     <guardmotionCategory AltName="Guard Motion Category" Wiki="Guard motion category" Enum="GUARDMOTION_CATEGORY" />
     <atkMaterial AltName="Attack Material" Wiki="Attack material used from attack para" Enum="WEP_MATERIAL_ATK" />
     <defSeMaterial1 AltName="Defence SE Material [1]" Wiki="Defense SE material used from attack para 1" Enum="WEP_MATERIAL_DEF" />
     <correctType_Physics AltName="Correction Type: Physical" Wiki="Correcting physical attack power by primary parameters Determines the type of graph" Refs="CalcCorrectGraph" />
     <spAttribute AltName="Speical Attribute" Wiki="Weapon special attribute value" Enum="ATKPARAM_SPATTR_TYPE" />
-    <spAtkcategory AltName="Special Motion Category" Wiki="Special attack category (possible from 50 to 999)" Enum="WEPMOTION_OVERRIDE_CATEGORY" />
+    <spAtkcategory AltName="Special Motion Category" Wiki="Special attack category (possible from 50 to 999)" ProjectEnum="WEPMOTION_OVERRIDE_CATEGORY" />
     <wepmotionOneHandId AltName="Weapon Motion Position - 1H" Wiki="Basic motion ID when equipped with one hand." />
     <wepmotionBothHandId AltName="Weapon Motion Position - 2H" Wiki="Basic motion ID when equipped with both hands." />
     <properStrength AltName="Requirement: STR" Wiki="Equipment appropriate value." />

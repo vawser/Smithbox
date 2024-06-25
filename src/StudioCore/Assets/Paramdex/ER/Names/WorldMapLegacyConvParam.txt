@@ -1,0 +1,64 @@
+5 Roundtable Hold -> Unnamed Tile
+10 Crumbling Farum Azula -> Greyoll's Dragonbarrow - Bestial Sanctum
+11 Crumbling Farum Azula -> Greyoll's Dragonbarrow - Bestial Sanctum
+12 Subterranean Shunning-Grounds -> Leyndell, Royal Capital
+14 Leyndell, Ashen Capital -> Stone Platform
+15 Stormveil Castle -> Divine Tower of Limgrave
+16 Isolated Divine Tower -> Unnamed Tile
+17 Crumbling Farum Azula ->
+18 Miquella's Haligtree ->
+100 Stormveil Castle ->
+101 Stormveil Castle ->
+102 Stormveil Castle ->
+103 Stormveil Castle ->
+104 Stormveil Castle ->
+105 Stormveil Castle ->
+106 Stormveil Castle ->
+107 Stormveil Castle ->
+108 Leyndell, Royal Capital ->
+109 Leyndell, Royal Capital ->
+110 Leyndell, Royal Capital ->
+111 Leyndell, Ashen Capital ->
+112 Leyndell, Ashen Capital ->
+113 Leyndell, Ashen Capital ->
+114 Leyndell, Ashen Capital ->
+115 Ainsel River / Lake of Rot ->
+116 Ainsel River / Lake of Rot ->
+117 Ainsel River / Lake of Rot ->
+118 Ainsel River / Lake of Rot ->
+119 Ainsel River / Lake of Rot ->
+120 Siofra River / Nokron ->
+121 Siofra River / Nokron ->
+122 Siofra River / Nokron ->
+123 Siofra River / Nokron ->
+124 Siofra River / Nokron ->
+125 Siofra River / Nokron ->
+126 Siofra River / Nokron ->
+127 Deeproot Depths ->
+128 Lake of Rot - Astel's Chamber ->
+129 Mohgwyn Palace ->
+130 Nokron - Start ->
+131 Nokron - Start ->
+132 Crumbling Farum Azula ->
+133 Academy of Raya Lucaria ->
+134 Academy of Raya Lucaria ->
+135 Academy of Raya Lucaria ->
+136 Miquella's Haligtree ->
+137 Volcano Manor ->
+138 Volcano Manor ->
+139 Volcano Manor ->
+140 Stranded Graveyard ->
+141 Stranded Graveyard ->
+142 Tombsward Catacombs ->
+143 Tombsward Catacombs ->
+144 Impaler's Catacombs ->
+145 Stormfoot Catacombs ->
+146 Road's End Catacombs ->
+147 Murkwater Catacombs ->
+148 Murkwater Catacombs ->
+149 Black Knife Catacombs ->
+150 Cliffbottom Catacombs ->
+151 Wyndham Catacombs ->
+152 Wyndham Catacombs ->
+153 Sainted Hero's Grave ->
+154 Gelmir Hero's Grave ->
