@@ -542,17 +542,17 @@ public class EditorDecorations
 
                     if(enumEntry != null)
                     {
-                        var enumValueName = "";
-                        var enumValue = enumEntry.Options.Where(e => e.ID == value).FirstOrDefault();
+                    var enumValueName = "";
+                    var enumValue = enumEntry.Options.Where(e => e.ID == value).FirstOrDefault();
 
-                        if (enumValue != null)
-                        {
-                            enumValueName = enumValue.Name;
-                        }
+                    if (enumValue != null)
+                    {
+                        enumValueName = enumValue.Name;
+                    }
 
-                        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
-                        ImGui.TextUnformatted(enumValueName);
-                        ImGui.PopStyleColor();
+                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
+                    ImGui.TextUnformatted(enumValueName);
+                    ImGui.PopStyleColor();
                     }
                 }
             }

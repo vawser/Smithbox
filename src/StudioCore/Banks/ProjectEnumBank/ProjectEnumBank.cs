@@ -333,26 +333,37 @@ public class ProjectEnumBank
         LoadBank();
     }
 
-    private Dictionary<string, string> enumDict;
+    private Dictionary<string, Dictionary<string, string>> enumDict;
 
     public Dictionary<string, string> GetEnumDictionary(string enumType)
     {
-        TaskLogs.AddLog(enumType);
-        if (enumDict == null)
+        if(enumDict == null)
         {
-            enumDict = new Dictionary<string, string>();
+            enumDict = new Dictionary<string, Dictionary<string, string>>();
+        }
+
+        if(!enumDict.ContainsKey(enumType))
+        {
+            var innerDict = new Dictionary<string, string>();
             foreach (var entry in Enums.List)
             {
-                if(entry.Name == enumType)
+                if (entry.Name == enumType)
                 {
-                    foreach(var opt in entry.Options)
+                    foreach (var opt in entry.Options)
                     {
-                        enumDict[opt.ID] = opt.Name;
+                        innerDict[opt.ID] = opt.Name;
                     }
                 }
             }
+
+            enumDict.Add(enumType, innerDict);
         }
 
-        return enumDict;
+        if(enumDict.ContainsKey(enumType))
+        {
+            return enumDict[enumType];
+        }
+
+        return new Dictionary<string, string>();
     }
 }

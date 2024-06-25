@@ -49,6 +49,26 @@
                 { "ID": "117", "Name": "Wraith Attack", "Description": "" },
                 { "ID": "118", "Name": "Ammunition On-Hit Attack", "Description": "" }
             ]
+        },
+        {
+            "DisplayName": "Stagger Categories",
+            "Name": "ATKPARAM_REP_DMGTYPE",
+            "Description": "These are categories used to determine the type of stagger the player or enemy takes.",
+            "Options": [
+                { "ID": "0", "Name": "Default", "Description": "" },
+                { "ID": "1", "Name": "No Stagger", "Description": "" },
+                { "ID": "2", "Name": "Short Stagger", "Description": "" },
+                { "ID": "3", "Name": "Long Stagger", "Description": "" },
+                { "ID": "4", "Name": "Stagger to Floor", "Description": "" },
+                { "ID": "5", "Name": "Stagger Backwards", "Description": "" },
+                { "ID": "6", "Name": "Faceplant", "Description": "" },
+                { "ID": "7", "Name": "Stagger to Floor", "Description": "" },
+                { "ID": "8", "Name": "Faceplant", "Description": "" },
+                { "ID": "9", "Name": "Air Juggle Stagger", "Description": "" },
+                { "ID": "10", "Name": "Push", "Description": "" },
+                { "ID": "11", "Name": "Strong Stagger", "Description": "" },
+                { "ID": "12", "Name": "Stagger Backwards", "Description": "" }
+            ]
         }
     ]
 }

@@ -7,21 +7,6 @@
         <Option Value="2" Name="Root" />
         <Option Value="3" Name="Map Collision Detection" />
     </Enum>
-    <Enum Name="ATKPARAM_REP_DMGTYPE_UINT" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="No Stagger" />
-        <Option Value="2" Name="Short Stagger" />
-        <Option Value="3" Name="Long Stagger" />
-        <Option Value="4" Name="Stagger to Floor" />
-        <Option Value="5" Name="Stagger Backwards" />
-        <Option Value="6" Name="Faceplant" />
-        <Option Value="7" Name="Stagger to Floor" />
-        <Option Value="8" Name="Faceplant" />
-        <Option Value="9" Name="Air Juggle Stagger" />
-        <Option Value="10" Name="Push" />
-        <Option Value="11" Name="Strong Stagger" />
-        <Option Value="12" Name="Stagger Backwards" />
-    </Enum>
     <Enum Name="ATK_PARAM_MAP_HIT" type="u8">
         <Option Value="0" Name="Normal" />
         <Option Value="1" Name="Precision" />
@@ -252,21 +237,6 @@
         <Option Value="173" Name="Type 173" />
         <Option Value="255" Name="Type 255" />
     </Enum>
-    <Enum Name="ATKPARAM_REP_DMGTYPE" type="s8">
-        <Option Value="0" Name="Default" />
-        <Option Value="1" Name="No Stagger" />
-        <Option Value="2" Name="Short Stagger" />
-        <Option Value="3" Name="Long Stagger" />
-        <Option Value="4" Name="Stagger to Floor" />
-        <Option Value="5" Name="Stagger Backwards" />
-        <Option Value="6" Name="Faceplant" />
-        <Option Value="7" Name="Stagger to Floor" />
-        <Option Value="8" Name="Faceplant" />
-        <Option Value="9" Name="Air Juggle Stagger" />
-        <Option Value="10" Name="Push" />
-        <Option Value="11" Name="Strong Stagger" />
-        <Option Value="12" Name="Stagger Backwards" />
-    </Enum>
     <Enum Name="ATKPARAM_THROWATTR_TYPE" type="u8">
         <Option Value="0" Name="Type 0" />
         <Option Value="1" Name="Type 1" />
@@ -327,7 +297,7 @@
     <hti1_Priority AltName="Hit 1: Priority" Wiki="priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
     <hti2_Priority AltName="Hit 2: Priority" Wiki="priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
     <hti3_Priority AltName="Hit 3: Priority" Wiki="priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
-    <dmgLevel AltName="Damage Level" Wiki="Which damage motion should be played against the enemy when attacking? To decide." Enum="ATKPARAM_REP_DMGTYPE_UINT" />
+    <dmgLevel AltName="Damage Level" Wiki="Which damage motion should be played against the enemy when attacking? To decide." ProjectEnum="ATKPARAM_REP_DMGTYPE" />
     <mapHitType AltName="Map Hit Type" Wiki="Which map do you see around the attack? The set" Enum="ATK_PARAM_MAP_HIT" />
     <guardCutCancelRate AltName="Guard Absorption Bypass Rate" Wiki="Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become " />
     <atkAttribute AltName="Attack Attribute" Wiki="Physical attributes to set for attacks" Enum="ATKPARAM_ATKATTR_TYPE" />
@@ -461,7 +431,7 @@
     <isDisableBothHandsAtkBonus AltName="Is Disable 2H ATK Bonus" Wiki="Avoid using the 1.5x growth status adaptation with both hands" IsBool="" />
     <isInvalidatedByNoDamageInAir AltName="Is Invalidated by No Damage in Air" Wiki="If Do you want to penetrate invincibility is , this setting will be ignored." IsBool="" />
     <pad2 AltName="" IsHidden=""/>
-    <dmgLevel_vsPlayer AltName="Damage Level - Vs. Player" Wiki="Damage level to the player. If it is 0 (default), it is not used. The meaning of the range other than 0 (default) is the same as Damage level." Enum="ATKPARAM_REP_DMGTYPE" />
+    <dmgLevel_vsPlayer AltName="Damage Level - Vs. Player" Wiki="Damage level to the player. If it is 0 (default), it is not used. The meaning of the range other than 0 (default) is the same as Damage level." ProjectEnum="ATKPARAM_REP_DMGTYPE" />
     <statusAilmentAtkPowerCorrectRate AltName="Status Ailment Correction" Wiki="Magnification correction is performed for the abnormal state attack power of special effects." />
     <spEffectAtkPowerCorrectRate_byPoint AltName="Attack Correction - By SpEffect Point" Wiki="Magnification correction is performed for the special effect ~ ~ attack power [point]." />
     <spEffectAtkPowerCorrectRate_byRate AltName="Attack Correction - By SpEffect Power" Wiki="Magnification is corrected for the special effect's attack power multiplier." />
