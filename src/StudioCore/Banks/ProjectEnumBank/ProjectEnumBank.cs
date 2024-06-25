@@ -176,7 +176,7 @@ public class ProjectEnumBank
 
             foreach (var entry in projectResource.List)
             {
-                var newEntry = new ProjectEnumEntry(); ;
+                var newEntry = new ProjectEnumEntry();
 
                 foreach(var bEntry in baseResource.List)
                 {
@@ -189,20 +189,17 @@ public class ProjectEnumBank
                         // Restore options from base, but retain project-unique ones
                         var newOptions = new List<ProjectEnumOption>();
 
-                        foreach(var opt in currentEntry.Options)
+                        foreach (var bOpt in bEntry.Options)
                         {
-                            var newOpt = new ProjectEnumOption();
-                            newOpt = opt;
+                            newOptions.Add(bOpt);
+                        }
 
-                            foreach (var bOpt in bEntry.Options)
+                        foreach (var opt in currentEntry.Options)
+                        {
+                            if(!bEntry.Options.Any(e => e.ID == opt.ID))
                             {
-                                if(opt.ID == bOpt.ID)
-                                {
-                                    newOpt = bOpt;
-                                }
+                                newOptions.Add(opt);
                             }
-
-                            newOptions.Add(newOpt);
                         }
 
                         newEntry.Options = newOptions;

@@ -510,15 +510,18 @@ public class EditorDecorations
             {
                 if (bank.Enums.List.Count > 0)
                 {
-                    var enumName = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
+                    var enumEntry = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
 
-                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
-                    ImGui.TextUnformatted($@"   {enumName.DisplayName}");
-                    ImGui.PopStyleColor();
-
-                    if (enumName.Description != "")
+                    if (enumEntry != null)
                     {
-                        ImguiUtils.ShowHoverTooltip($"{enumName.Description}");
+                        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
+                        ImGui.TextUnformatted($@"   {enumEntry.DisplayName}");
+                        ImGui.PopStyleColor();
+
+                        if (enumEntry.Description != "")
+                        {
+                            ImguiUtils.ShowHoverTooltip($"{enumEntry.Description}");
+                        }
                     }
                 }
             }
@@ -535,18 +538,22 @@ public class EditorDecorations
             {
                 if (bank.Enums.List.Count > 0)
                 {
-                    var enumName = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
-                    var enumValueName = "";
-                    var enumValue = enumName.Options.Where(e => e.ID == value).FirstOrDefault();
+                    var enumEntry = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
 
-                    if (enumValue != null)
+                    if(enumEntry != null)
                     {
-                        enumValueName = enumValue.Name;
-                    }
+                        var enumValueName = "";
+                        var enumValue = enumEntry.Options.Where(e => e.ID == value).FirstOrDefault();
 
-                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
-                    ImGui.TextUnformatted(enumValueName);
-                    ImGui.PopStyleColor();
+                        if (enumValue != null)
+                        {
+                            enumValueName = enumValue.Name;
+                        }
+
+                        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
+                        ImGui.TextUnformatted(enumValueName);
+                        ImGui.PopStyleColor();
+                    }
                 }
             }
         }

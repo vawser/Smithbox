@@ -219,6 +219,9 @@ public class ProjectWindow
             }
         }
     }
+
+    // TODO: for some reason updating the bank isn't immediately reflected in this presentation-wise,
+    // the entry has to be to re-selected
     public void DisplayProjectEnumOptionList()
     {
         ImGui.Separator();
@@ -354,9 +357,9 @@ public class ProjectWindow
                             ImGui.Text($"Name");
                             ImGui.InputTextMultiline($"##UpdateOptionName", ref _refUpdateOptionName, 255, inputSize);
                             ImguiUtils.ShowHoverTooltip("The display name of the enum option.");
-                            ImGui.Text($"Description");
-                            ImGui.InputTextMultiline($"##UpdateOptionDescription", ref _refUpdateOptionDescription, 255, inputSize);
-                            ImguiUtils.ShowHoverTooltip("A description of what this enum option is.");
+                            //ImGui.Text($"Description");
+                            //ImGui.InputTextMultiline($"##UpdateOptionDescription", ref _refUpdateOptionDescription, 255, inputSize);
+                            //ImguiUtils.ShowHoverTooltip("A description of what this enum option is.");
 
                             if (ImGui.Button("Update Option", buttonSize))
                             {
@@ -385,15 +388,15 @@ public class ProjectWindow
                     ImGui.Text($"Name");
                     ImGui.InputTextMultiline($"##NewOptionName", ref _refNewOptionName, 255, inputSize);
                     ImguiUtils.ShowHoverTooltip("The display name of the enum option.");
-                    ImGui.Text($"Description");
-                    ImGui.InputTextMultiline($"##NewOptionDescription", ref _refNewOptionDescription, 255, inputSize);
-                    ImguiUtils.ShowHoverTooltip("A description of what this enum option is.");
+                    //ImGui.Text($"Description");
+                    //ImGui.InputTextMultiline($"##NewOptionDescription", ref _refNewOptionDescription, 255, inputSize);
+                    //ImguiUtils.ShowHoverTooltip("A description of what this enum option is.");
 
                     if (ImGui.Button("Add Option", buttonSize))
                     {
                         if (_selectedEntry.Options.Where(e => e.ID == _refNewOptionID).Any())
                         {
-                            PlatformUtils.Instance.MessageBox($"Option with {_refUpdateOptionID} already exists for {_selectedEntry.DisplayName}", "Error", MessageBoxButtons.OK);
+                            PlatformUtils.Instance.MessageBox($"Option with {_refNewOptionID} already exists for {_selectedEntry.DisplayName}", "Error", MessageBoxButtons.OK);
                         }
                         else
                         {
