@@ -1,51 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Enums>
-    <Enum Name="ATK_SUB_CATEGORY" type="u8">
-      <Option Value="0" Name="None" />
-      <Option Value="1" Name="Full Moon Sorcery" />
-      <Option Value="2" Name="Carian Sword Sorcery" />
-      <Option Value="3" Name="Glintblade Sorcery" />
-      <Option Value="4" Name="Stonedigger Sorcery" />
-      <Option Value="5" Name="Crystalian Sorcery" />
-      <Option Value="6" Name="Azur Academy Sorcery" />
-      <Option Value="7" Name="Lusat Academy Sorcery" />
-      <Option Value="8" Name="Magma Sorcery" />
-      <Option Value="9" Name="Thorn Sorcery" />
-      <Option Value="10" Name="Death Sorcery" />
-      <Option Value="11" Name="Gravity Sorcery" />
-      <Option Value="12" Name="Night Sorcery" />
-      <Option Value="13" Name="Cold Sorcery" />
-      <Option Value="14" Name="Azur Primeval Sorcery" />
-      <Option Value="15" Name="Lusat Primeval Sorcery" />
-      <Option Value="20" Name="Blackflame Incantation" />
-      <Option Value="21" Name="Giantsflame Incantation" />
-      <Option Value="22" Name="Dragon Cult Incantation" />
-      <Option Value="23" Name="Bestial Incantation" />
-      <Option Value="24" Name="Golden Order Incantation" />
-      <Option Value="25" Name="Dragon Communion Incantation" />
-      <Option Value="26" Name="Frenzied Flame Incantation" />
-      <Option Value="27" Name="Godslayer Incantation" />
-      <Option Value="28" Name="Aspect of the Crucible Incantation" />
-      <Option Value="100" Name="Charged Heavy Attack" />
-      <Option Value="101" Name="Horseback Attack" />
-      <Option Value="102" Name="Jump Attack" />
-      <Option Value="103" Name="Guard Counter Attack" />
-      <Option Value="104" Name="Final Chain Attack" />
-      <Option Value="105" Name="Ammunition Attack" />
-      <Option Value="106" Name="Roar Attack" />
-      <Option Value="107" Name="Breath Attack" />
-      <Option Value="108" Name="Pot Item Attack" />
-      <Option Value="109" Name="Perfume Item Attack" />
-      <Option Value="110" Name="Charged Spell Attack" />
-      <Option Value="111" Name="Charged Skill Attack" />
-      <Option Value="112" Name="Skill Attack" />
-      <Option Value="113" Name="Ranged Skill Attack" />
-      <Option Value="114" Name="Vapor Attack" />
-      <Option Value="116" Name="Shriek of Milos" />
-      <Option Value="117" Name="Wraith Attack" />
-      <Option Value="118" Name="Ammunition On-Hit Attack" />
-    </Enum>
     <Enum Name="ATK_PARAM_HIT_TYPE" type="u8">
         <Option Value="0" Name="Normal (tip)" />
         <Option Value="1" Name="Middle" />
@@ -346,8 +301,10 @@
     <guardAtkRateCorrection AltName="Attack Correction: Guard Attack Rate" Wiki="PC only. 1 only" />
     <guardBreakCorrection AltName="Attack Correction: Guard Break" Wiki="PC only. Multiplying the base value by the repelling of the attack" />
     <atkThrowEscapeCorrection AltName="Attack Correction: Throw Escape" Wiki="Weapon correction value for throw-through attacks" />
-    <subCategory1 AltName="Conditional Category [1]" Wiki="Subcategory 1" Enum="ATK_SUB_CATEGORY" VRef="MagicSubCategory" />
-    <subCategory2 AltName="Conditional Category [2]" Wiki="Subcategory 2" Enum="ATK_SUB_CATEGORY" VRef="MagicSubCategory" />
+    <subCategory1 AltName="Conditional Category [1]" Wiki="Subcategory 1" VRef="MagicSubCategory" ProjectEnum="ATK_SUB_CATEGORY" />
+    <subCategory2 AltName="Conditional Category [2]" Wiki="Subcategory 2" VRef="MagicSubCategory" ProjectEnum="ATK_SUB_CATEGORY" />
+    <subCategory3 AltName="Conditional Category [3]" Wiki="Subcategory 3" VRef="MagicSubCategory" ProjectEnum="ATK_SUB_CATEGORY" />
+    <subCategory4 AltName="Conditional Category [4]" Wiki="Subcategory 4" VRef="MagicSubCategory" ProjectEnum="ATK_SUB_CATEGORY" />
     <atkPhys AltName="Damage: Physical" Wiki="NPCs only. Basic damage of physical attack" />
     <atkMag AltName="Damage: Magic" Wiki="NPCs only. Additional damage from magic attacks" />
     <atkFire AltName="Damage: Fire" Wiki="NPCs only. Additional damage from fire attacks" />

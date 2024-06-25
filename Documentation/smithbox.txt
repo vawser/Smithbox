@@ -119,4 +119,4 @@ TalkParam is lagging heavily: due to GenerateEntryGroup
 
 Move World Map textures to separate dictionary so they aren't randomly cleared by the normal ResourceDictionary stuff
 
-Finish Map Information action
+Fix select via arrow keys in the Map Scene tree (alias seems to stop it working).

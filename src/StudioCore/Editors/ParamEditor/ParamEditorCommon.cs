@@ -265,6 +265,8 @@ public class ParamEditorCommon
                 arrayindex);
         }
 
+        //Smithbox.EditorHandler.TextureViewer.ImagePreview.InvalidatePreviewImage();
+
         return _changedCache && _committedCache;
     }
 

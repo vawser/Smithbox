@@ -458,6 +458,7 @@ public class FieldMetaData
         ShowFlagEnumList = false;
         ShowCutsceneEnumList = false;
         ShowMovieEnumList = false;
+        ShowProjectEnumList = false;
 
         FlagAliasEnum_ConditionalField = "";
         FlagAliasEnum_ConditionalValue = "";
@@ -497,6 +498,13 @@ public class FieldMetaData
         if (Enum != null)
         {
             EnumType = parent.enums.GetValueOrDefault(Enum.InnerText, null);
+        }
+
+        XmlAttribute ProjectEnum = fieldMeta.Attributes["ProjectEnum"];
+        if (ProjectEnum != null)
+        {
+            ShowProjectEnumList = true;
+            ProjectEnumType = ProjectEnum.InnerText;
         }
 
         XmlAttribute AlternateName = fieldMeta.Attributes["AltName"];
@@ -654,6 +662,9 @@ public class FieldMetaData
     public bool ShowMovieEnumList { get; set; }
     public string MovieAliasEnum_ConditionalField { get; set; }
     public string MovieAliasEnum_ConditionalValue { get; set; }
+
+    public bool ShowProjectEnumList { get; set; }
+    public string ProjectEnumType { get; set; }
 
     /// <summary>
     ///     Path (and subpath) filters for files linked by this field.

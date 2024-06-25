@@ -790,8 +790,7 @@ public class MapPropertyEditor
             {
                 EditorDecorations.ImGui_DisplayPropertyInfo(propinfo);
 
-                var opened = EditorDecorations.ParamRefEnumContextMenuItems(ParamBank.PrimaryBank, val, ref newObj,
-                    refs, null, null, null, null, null);
+                var opened = EditorDecorations.ParamRefEnumContextMenuItems(ParamBank.PrimaryBank, null, val, ref newObj, refs, null, null, null, null, null);
                 ImGui.EndPopup();
                 return opened;
             }

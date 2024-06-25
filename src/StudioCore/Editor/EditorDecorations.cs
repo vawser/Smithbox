@@ -15,6 +15,8 @@ using Veldrid;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
 using StudioCore.Core;
+using Google.Protobuf.WellKnownTypes;
+using StudioCore.Interface;
 
 namespace StudioCore.Editor;
 
@@ -499,6 +501,57 @@ public class EditorDecorations
         }
     }
 
+    public static void ProjectEnumNameText(string enumType)
+    {
+        if (CFG.Current.Param_HideEnums == false) //Move preference
+        {
+            var bank = Smithbox.BankHandler.ProjectEnums;
+            if (bank != null)
+            {
+                if (bank.Enums.List.Count > 0)
+                {
+                    var enumName = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
+
+                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
+                    ImGui.TextUnformatted($@"   {enumName.DisplayName}");
+                    ImGui.PopStyleColor();
+
+                    if (enumName.Description != "")
+                    {
+                        ImguiUtils.ShowHoverTooltip($"{enumName.Description}");
+                    }
+                }
+            }
+        }
+    }
+
+    public static void ProjectEnumValueText(string enumType, string value)
+    {
+        if (CFG.Current.Param_HideEnums == false) //Move preference
+        {
+            var bank = Smithbox.BankHandler.ProjectEnums;
+
+            if (bank != null)
+            {
+                if (bank.Enums.List.Count > 0)
+                {
+                    var enumName = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
+                    var enumValueName = "";
+                    var enumValue = enumName.Options.Where(e => e.ID == value).FirstOrDefault();
+
+                    if (enumValue != null)
+                    {
+                        enumValueName = enumValue.Name;
+                    }
+
+                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
+                    ImGui.TextUnformatted(enumValueName);
+                    ImGui.PopStyleColor();
+                }
+            }
+        }
+    }
+
     public static void VirtualParamRefSelectables(ParamBank bank, string virtualRefName, object searchValue,
         Param.Row context, string fieldName, List<ExtRef> ExtRefs, EditorScreen cacheOwner)
     {
@@ -631,7 +684,7 @@ public class EditorDecorations
         }
     }
 
-    public static bool ParamRefEnumContextMenuItems(ParamBank bank, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor, bool showParticleEnum = false, bool showSoundEnum = false, bool showFlagEnum = false, bool showCutsceneEnum = false, bool showMovieEnum = false)
+    public static bool ParamRefEnumContextMenuItems(ParamBank bank, FieldMetaData cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
     {
         var result = false;
         if (RefTypes != null)
@@ -654,29 +707,37 @@ public class EditorDecorations
             result |= PropertyRowEnumContextItems(Enum, oldval, ref newval);
         }
 
-        if (showParticleEnum)
+        if(cellMeta != null)
         {
-            result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.ParticleAliases.GetEnumDictionary(), oldval, ref newval);
-        }
+            if (cellMeta.ShowParticleEnumList)
+            {
+                result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.ParticleAliases.GetEnumDictionary(), oldval, ref newval);
+            }
 
-        if (showSoundEnum)
-        {
-            result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.SoundAliases.GetEnumDictionary(), oldval, ref newval);
-        }
+            if (cellMeta.ShowSoundEnumList)
+            {
+                result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.SoundAliases.GetEnumDictionary(), oldval, ref newval);
+            }
 
-        if (showFlagEnum)
-        {
-            result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.EventFlagAliases.GetEnumDictionary(), oldval, ref newval);
-        }
+            if (cellMeta.ShowFlagEnumList)
+            {
+                result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.EventFlagAliases.GetEnumDictionary(), oldval, ref newval);
+            }
 
-        if (showCutsceneEnum)
-        {
-            result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.CutsceneAliases.GetEnumDictionary(), oldval, ref newval);
-        }
+            if (cellMeta.ShowCutsceneEnumList)
+            {
+                result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.CutsceneAliases.GetEnumDictionary(), oldval, ref newval);
+            }
 
-        if (showMovieEnum)
-        {
-            result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.MovieAliases.GetEnumDictionary(), oldval, ref newval);
+            if (cellMeta.ShowMovieEnumList)
+            {
+                result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.MovieAliases.GetEnumDictionary(), oldval, ref newval);
+            }
+
+            if (cellMeta.ShowProjectEnumList)
+            {
+                result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.ProjectEnums.GetEnumDictionary(cellMeta.ProjectEnumType), oldval, ref newval);
+            }
         }
 
         return result;
@@ -1121,7 +1182,7 @@ public class EditorDecorations
     /// <summary>
     ///     Displays information about the provided property.
     /// </summary>
-    public static void ImGui_DisplayPropertyInfo(Type propType, string fieldName, bool printName, bool printType, string altName = null, int arrayLength = -1, int bitSize = -1)
+    public static void ImGui_DisplayPropertyInfo(System.Type propType, string fieldName, bool printName, bool printType, string altName = null, int arrayLength = -1, int bitSize = -1)
     {
         if (!string.IsNullOrWhiteSpace(altName))
         {

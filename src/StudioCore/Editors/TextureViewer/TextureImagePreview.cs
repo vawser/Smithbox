@@ -36,13 +36,18 @@ public class TextureImagePreview : IResourceEventListener
     private static string _selectedTextureKey = "";
     private static TPF.Texture _selectedTexture;
 
-    private SubTexture _cachedPreviewSubtexture;
+    public SubTexture _cachedPreviewSubtexture;
 
     private ShoeboxLayoutContainer shoeboxContainer = null;
 
     public TextureImagePreview()
     {
 
+    }
+
+    public void InvalidatePreviewImage()
+    {
+        _cachedPreviewSubtexture = null;
     }
 
     public bool ShowImagePreview(Param.Row context, TexRef textureRef, bool displayImage = true)

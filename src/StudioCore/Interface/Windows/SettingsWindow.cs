@@ -801,6 +801,9 @@ public class SettingsWindow
                 ImGui.Checkbox("Display field add options", ref CFG.Current.Param_FieldContextMenu_AddOptions);
                 ImguiUtils.ShowHoverTooltip("Display the field add to searchbar and mass edit options in the context menu.");
 
+                ImGui.Checkbox("Display field references", ref CFG.Current.Param_FieldContextMenu_References);
+                ImguiUtils.ShowHoverTooltip("Display the field references in the context menu.");
+
                 ImGui.Checkbox("Display field reference search", ref CFG.Current.Param_FieldContextMenu_ReferenceSearch);
                 ImguiUtils.ShowHoverTooltip("Display the field reference search in the context menu.");
 

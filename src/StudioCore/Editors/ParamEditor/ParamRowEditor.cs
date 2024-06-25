@@ -430,6 +430,7 @@ public class ParamRowEditor
         bool showFlagEnum = false;
         bool showCutsceneEnum = false;
         bool showMovieEnum = false;
+        bool showProjectEnum = false;
 
         var FlagAliasEnum_ConditionalField = cellMeta?.FlagAliasEnum_ConditionalField;
         var FlagAliasEnum_ConditionalValue = cellMeta?.FlagAliasEnum_ConditionalValue;
@@ -444,6 +445,7 @@ public class ParamRowEditor
             showFlagEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowFlagEnumList;
             showCutsceneEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowCutsceneEnumList;
             showMovieEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowMovieEnumList;
+            showProjectEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowProjectEnumList;
         }
 
         object newval = null;
@@ -491,7 +493,7 @@ public class ParamRowEditor
 
             PropertyRowName(fieldOffset, ref internalName, cellMeta);
 
-            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum)
+            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum)
             {
                 ImGui.BeginGroup();
 
@@ -546,6 +548,12 @@ public class ParamRowEditor
                 if (showMovieEnum)
                 {
                     EditorDecorations.ConditionalAliasEnumNameText("MOVIES", row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                }
+
+                // Project Enum
+                if (showProjectEnum)
+                {
+                    EditorDecorations.ProjectEnumNameText(cellMeta.ProjectEnumType);
                 }
 
                 ImGui.EndGroup();
@@ -618,56 +626,68 @@ public class ParamRowEditor
                 }
             }
 
-            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum)
+            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum)
             {
                 ImGui.BeginGroup();
 
-                // Param Ref
+                // ParamRef
                 if (displayRefTypes)
                 {
                     EditorDecorations.ParamRefsSelectables(bank, RefTypes, row, oldval);
                 }
 
-                // Text Ref
+                // FmgRef
                 if (displayFmgRef)
                 {
                     EditorDecorations.FmgRefSelectable(_paramEditor, FmgRef, row, oldval);
                 }
 
-                // Texture Ref
+                // TextureRef
                 if (displayTextureRef)
                 {
                     EditorDecorations.TextureRefSelectable(_paramEditor, TextureRef, row, oldval);
                 }
 
+                // Enum
                 if (displayEnum)
                 {
                     EditorDecorations.EnumValueText(Enum.values, oldval.ToString());
                 }
 
+                // ParticleAlias
                 if (showParticleEnum)
                 {
                     EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.ParticleAliases.GetEnumDictionary(), oldval.ToString());
                 }
 
+                // SoundAlias
                 if (showSoundEnum)
                 {
                     EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.SoundAliases.GetEnumDictionary(), oldval.ToString());
                 }
 
+                // FlagAlias
                 if (showFlagEnum)
                 {
                     EditorDecorations.ConditionalAliasEnumValueText(Smithbox.BankHandler.EventFlagAliases.GetEnumDictionary(), oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
                 }
 
+                // CutsceneAlias
                 if (showCutsceneEnum)
                 {
                     EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.CutsceneAliases.GetEnumDictionary(), oldval.ToString());
                 }
 
+                // MovieAlias
                 if (showMovieEnum)
                 {
                     EditorDecorations.ConditionalAliasEnumValueText(Smithbox.BankHandler.MovieAliases.GetEnumDictionary(), oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                }
+
+                // ProjectEnum
+                if (showProjectEnum)
+                {
+                    EditorDecorations.ProjectEnumValueText(cellMeta.ProjectEnumType, oldval.ToString());
                 }
 
                 ImGui.EndGroup();
@@ -702,7 +722,7 @@ public class ParamRowEditor
 
         if (CFG.Current.Param_ShowVanillaParams && ImGui.TableNextColumn())
         {
-            AdditionalColumnValue(vanillaval, propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, "vanilla");
+            AdditionalColumnValue(vanillaval, propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, "vanilla", cellMeta);
         }
 
         for (var i = 0; i < auxVals.Count; i++)
@@ -712,7 +732,7 @@ public class ParamRowEditor
                 if (!conflict && diffAuxVanilla[i])
                     ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_Input_AuxVanilla_Background);
 
-                AdditionalColumnValue(auxVals[i], propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, i.ToString());
+                AdditionalColumnValue(auxVals[i], propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, i.ToString(), cellMeta);
                 if (!conflict && diffAuxVanilla[i])
                     ImGui.PopStyleColor();
             }
@@ -730,7 +750,7 @@ public class ParamRowEditor
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_Input_DiffCompare_Background);
             }
 
-            AdditionalColumnValue(compareval, propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, "compRow");
+            AdditionalColumnValue(compareval, propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, "compRow", cellMeta);
 
             if (diffCompare)
             {
@@ -744,8 +764,8 @@ public class ParamRowEditor
         {
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
                 isPinned, col, selection, propType, Wiki, oldval, true);
-            PropertyRowValueContextMenuItems(bank, row, internalName, VirtualRef, ExtRefs, oldval, ref newval,
-                RefTypes, FmgRef, TextureRef, Enum, showParticleEnum, showSoundEnum, showFlagEnum, showCutsceneEnum, showMovieEnum);
+            PropertyRowValueContextMenuItems(bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
+                RefTypes, FmgRef, TextureRef, Enum);
 
             ImGui.EndPopup();
         }
@@ -762,8 +782,8 @@ public class ParamRowEditor
         {
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
                 isPinned, col, selection, propType, Wiki, oldval, false);
-            PropertyRowValueContextMenuItems(bank, row, internalName, VirtualRef, ExtRefs, oldval, ref newval,
-                RefTypes, FmgRef, TextureRef, Enum, showParticleEnum, showSoundEnum, showFlagEnum, showCutsceneEnum, showMovieEnum);
+            PropertyRowValueContextMenuItems(bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
+                RefTypes, FmgRef, TextureRef, Enum);
 
             ImGui.EndPopup();
         }
@@ -778,7 +798,7 @@ public class ParamRowEditor
     }
 
     private void AdditionalColumnValue(object colVal, Type propType, ParamBank bank, List<ParamRef> RefTypes,
-        List<FMGRef> FmgRef, Param.Row context, ParamEnum Enum, List<TexRef> TextureRef, string imguiSuffix)
+        List<FMGRef> FmgRef, Param.Row context, ParamEnum Enum, List<TexRef> TextureRef, string imguiSuffix, FieldMetaData cellMeta)
     {
         if (colVal == null)
         {
@@ -787,6 +807,29 @@ public class ParamRowEditor
         else
         {
             string value;
+
+            bool showParticleEnum = false;
+            bool showSoundEnum = false;
+            bool showFlagEnum = false;
+            bool showCutsceneEnum = false;
+            bool showMovieEnum = false;
+            bool showProjectEnum = false;
+
+            var FlagAliasEnum_ConditionalField = cellMeta?.FlagAliasEnum_ConditionalField;
+            var FlagAliasEnum_ConditionalValue = cellMeta?.FlagAliasEnum_ConditionalValue;
+
+            var MovieAliasEnum_ConditionalField = cellMeta?.MovieAliasEnum_ConditionalField;
+            var MovieAliasEnum_ConditionalValue = cellMeta?.MovieAliasEnum_ConditionalValue;
+
+            if (cellMeta != null)
+            {
+                showParticleEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowParticleEnumList;
+                showSoundEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowSoundEnumList;
+                showFlagEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowFlagEnumList;
+                showCutsceneEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowCutsceneEnumList;
+                showMovieEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowMovieEnumList;
+                showProjectEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowProjectEnumList;
+            }
 
             if (propType == typeof(byte[]))
             {
@@ -819,7 +862,41 @@ public class ParamRowEditor
                 EditorDecorations.EnumValueText(Enum.values, colVal.ToString());
             }
 
-            // TODO: add the new alias-enum stuff here too
+            // ParticleAlias
+            if (showParticleEnum)
+            {
+                EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.ParticleAliases.GetEnumDictionary(), colVal.ToString());
+            }
+
+            // SoundAlias
+            if (showSoundEnum)
+            {
+                EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.SoundAliases.GetEnumDictionary(), colVal.ToString());
+            }
+
+            // FlagAlias
+            if (showFlagEnum)
+            {
+                EditorDecorations.ConditionalAliasEnumValueText(Smithbox.BankHandler.EventFlagAliases.GetEnumDictionary(), colVal.ToString(), context, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+            }
+
+            // CutsceneAlias
+            if (showCutsceneEnum)
+            {
+                EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.CutsceneAliases.GetEnumDictionary(), colVal.ToString());
+            }
+
+            // MovieAlias
+            if (showMovieEnum)
+            {
+                EditorDecorations.ConditionalAliasEnumValueText(Smithbox.BankHandler.MovieAliases.GetEnumDictionary(), colVal.ToString(), context, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+            }
+
+            // ProjectEnum
+            if (showProjectEnum)
+            {
+                EditorDecorations.ProjectEnumValueText(cellMeta.ProjectEnumType, colVal.ToString());
+            }
         }
     }
 
@@ -1089,10 +1166,26 @@ public class ParamRowEditor
         ImGui.PopStyleVar();
     }
 
-    private void PropertyRowValueContextMenuItems(ParamBank bank, Param.Row row, string internalName,
+    private void PropertyRowValueContextMenuItems(ParamBank bank, Param.Row row, FieldMetaData cellMeta, string internalName,
         string VirtualRef, List<ExtRef> ExtRefs, dynamic oldval, ref object newval, List<ParamRef> RefTypes,
-        List<FMGRef> FmgRef, List<TexRef> TextureRef, ParamEnum Enum, bool showParticleEnum, bool showSoundEnum, bool showFlagEnum, bool showCutsceneEnum, bool showMovieEnum)
+        List<FMGRef> FmgRef, List<TexRef> TextureRef, ParamEnum Enum)
     {
+        if (CFG.Current.Param_FieldContextMenu_References)
+        {
+            if (RefTypes != null || FmgRef != null || TextureRef != null || Enum != null || cellMeta != null)
+            {
+                ImGui.Separator();
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Ref_Text);
+
+                if (EditorDecorations.ParamRefEnumContextMenuItems(bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, TextureRef, Enum, ContextActionManager))
+                {
+                    ParamEditorCommon.SetLastPropertyManual(newval);
+                }
+
+                ImGui.PopStyleColor();
+            }
+        }
+
         if (CFG.Current.Param_FieldContextMenu_ReferenceSearch)
         {
             if (VirtualRef != null || ExtRefs != null)
@@ -1101,19 +1194,6 @@ public class ParamRowEditor
                 ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_VirtualRef_Text);
                 EditorDecorations.VirtualParamRefSelectables(bank, VirtualRef, oldval, row, internalName, ExtRefs,
                     _paramEditor);
-                ImGui.PopStyleColor();
-            }
-
-            if (RefTypes != null || FmgRef != null || TextureRef  != null || Enum != null || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum)
-            {
-                ImGui.Separator();
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Ref_Text);
-
-                if (EditorDecorations.ParamRefEnumContextMenuItems(bank, oldval, ref newval, RefTypes, row, FmgRef, TextureRef, Enum, ContextActionManager, showParticleEnum, showSoundEnum, showFlagEnum, showCutsceneEnum, showMovieEnum))
-                {
-                    ParamEditorCommon.SetLastPropertyManual(newval);
-                }
-
                 ImGui.PopStyleColor();
             }
         }

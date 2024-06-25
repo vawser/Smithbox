@@ -458,6 +458,7 @@ public class CFG
     public bool Param_FieldContextMenu_ValueDistribution = true;
     public bool Param_FieldContextMenu_AddOptions = true;
     public bool Param_FieldContextMenu_ReferenceSearch = true;
+    public bool Param_FieldContextMenu_References = true;
     public bool Param_FieldContextMenu_MassEdit = true;
     public bool Param_FieldContextMenu_FullMassEdit = true;
     public bool Param_FieldContextMenu_ImagePreview_ContextMenu = false;

@@ -245,6 +245,8 @@ public class AliasTab
         }
         else
         {
+
+
             ImGui.Text("Select an entry to edit its properties.");
         }
     }

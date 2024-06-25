@@ -2,6 +2,7 @@
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
 using StudioCore.Banks.MapGroupBank;
+using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Banks.SelectionGroupBank;
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
@@ -86,6 +87,35 @@ public static class BankUtils
 
                 if (isUnique)
                     baseResource.list.Add(mEntry);
+            }
+        }
+
+        return baseResource;
+    }
+
+    public static ProjectEnumResource LoadProjectEnumJSON()
+    {
+        var baseResource = new ProjectEnumResource();
+        var modResource = new ProjectEnumResource();
+
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Enums.json";
+
+        if (File.Exists(baseResourcePath))
+        {
+            using (var stream = File.OpenRead(baseResourcePath))
+            {
+                baseResource = JsonSerializer.Deserialize(stream, ProjectEnumResourceSerializationContext.Default.ProjectEnumResource);
+            }
+        }
+
+        var modResourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Enums.json";
+
+        // If project version exists, use it instead
+        if (File.Exists(modResourcePath))
+        {
+            using (var stream = File.OpenRead(modResourcePath))
+            {
+                baseResource = JsonSerializer.Deserialize(stream, ProjectEnumResourceSerializationContext.Default.ProjectEnumResource);
             }
         }
 

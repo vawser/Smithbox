@@ -2,6 +2,7 @@
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
 using StudioCore.Banks.MapGroupBank;
+using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Banks.SelectionGroupBank;
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
@@ -51,6 +52,10 @@ public class BankHandler
     public GameOffsetBank GameOffsets;
     public SelectionGroupBank SelectionGroups;
 
+    public ProjectEnumBank ProjectEnums;
+
+    //public ProjectEnumBank ProjectEnums;
+
     public bool ReloadAliasBanks;
 
     public BankHandler()
@@ -80,6 +85,8 @@ public class BankHandler
         MapGroups = new MapGroupBank();
         GameOffsets = new GameOffsetBank();
         SelectionGroups = new SelectionGroupBank();
+
+        ProjectEnums = new ProjectEnumBank("Project Enums");
 
         // TODO
         MaterialResourceBank.Setup();
@@ -112,6 +119,8 @@ public class BankHandler
         MapGroups.LoadBank();
         GameOffsets.LoadBank();
         SelectionGroups.LoadBank();
+
+        ProjectEnums.LoadBank();
 
         // TODO
         ParamBank.ReloadParams();
