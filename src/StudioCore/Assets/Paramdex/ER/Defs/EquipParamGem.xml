@@ -374,7 +374,7 @@
     
     <Field Def="dummy8 pad2_old[2]" RemovedVersion="11210015" />
     
-    <Field Def="u8 unknown_0x36" FirstVersion="11210015" />
+    <Field Def="u8 isSpecialSwordArt" FirstVersion="11210015" />
     <Field Def="dummy8 pad2[1]" FirstVersion="11210015" >
       <Description>pad2</Description>
       <DisplayFormat>%d</DisplayFormat>

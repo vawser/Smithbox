@@ -1400,8 +1400,8 @@
     
     <Field Def="dummy8 pad7_old[12]" RemovedVersion="11210015"/>
     
-    <Field Def="u8 unknown_0x1bc" FirstVersion="11210015"/>
-    <Field Def="u8 unknown_0x1bd" FirstVersion="11210015"/>
+    <Field Def="u8 subCategory3" FirstVersion="11210015"/>
+    <Field Def="u8 subCategory4" FirstVersion="11210015"/>
     <Field Def="dummy8 pad7[10]" FirstVersion="11210015"/>
     
   </Fields>

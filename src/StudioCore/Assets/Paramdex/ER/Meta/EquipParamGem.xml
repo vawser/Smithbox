@@ -76,6 +76,8 @@
     <showLogCondType AltName="Item Acquisition Show Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
     <pad AltName="" IsHidden=""/>
     <defaultWepAttr AltName="Default Weapon Affinity" Wiki="Default weapon attribute ID. Can be installed even with unopened weapon attributes" />
+    <isSpecialSwordArt AltName="Is Special Ash of War" Wiki="Determines whether this Ash of War is considered 'special'. Weapons with restrictSpecialSwordArt set to 1 will be unable to slot in these ashes of war." />
+    
     <pad2 AltName="" IsHidden=""/>
     <canMountWep_Dagger AltName="Available: Dagger" Wiki="Can it be attached to Weapon type: Dagger? No input becomes x" IsBool="" />
     <canMountWep_SwordNormal AltName="Available: Straight Sword" Wiki="Can it be attached to Weapon type: Straight sword? No input becomes x" IsBool="" />
