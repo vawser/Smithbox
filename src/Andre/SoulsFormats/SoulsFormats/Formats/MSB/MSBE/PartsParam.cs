@@ -2664,8 +2664,11 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
-                public int UnkT54 { get; set; }
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string UnkT54PartName { get; set; }
+                [XmlIgnore]
+                [IndexProperty]
+                private int UnkT54PartIndex { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3258,7 +3261,7 @@ namespace SoulsFormats
                     UnkT51 = br.ReadByte();
                     br.AssertByte(0);
                     UnkT53 = br.ReadByte();
-                    UnkT54 = br.ReadInt32();
+                    UnkT54PartIndex = br.ReadInt32();
                     UnkModelMaskAndAnimID = br.ReadInt32();
                     UnkT5C = br.ReadInt32();
                     UnkT60 = br.ReadInt32();
@@ -3307,11 +3310,11 @@ namespace SoulsFormats
                     bw.WriteInt32(UnkT30);
                     bw.WriteInt32(UnkT34);
                     bw.WriteInt32s(UnkPartIndices);
-                    bw.WriteBoolean(UnkT50);                
+                    bw.WriteBoolean(UnkT50);
                     bw.WriteByte(UnkT51);
                     bw.WriteByte(0);
                     bw.WriteByte(UnkT53);
-                    bw.WriteInt32(UnkT54);
+                    bw.WriteInt32(UnkT54PartIndex);
                     bw.WriteInt32(UnkModelMaskAndAnimID);
                     bw.WriteInt32(UnkT5C);
                     bw.WriteInt32(UnkT60);
@@ -3341,12 +3344,14 @@ namespace SoulsFormats
                 {
                     base.GetNames(msb, entries);
                     UnkPartNames = MSB.FindNames(entries.Parts, UnkPartIndices);
+                    UnkT54PartName = MSB.FindName(entries.Parts, UnkT54PartIndex);
                 }
 
                 internal override void GetIndices(MSBE msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     UnkPartIndices = MSB.FindIndices(this, entries.Parts, UnkPartNames);
+                    UnkT54PartIndex = MSB.FindIndex(entries.Parts, UnkT54PartName);
                 }
             }
         }
