@@ -24,11 +24,10 @@
       <Maximum>1</Maximum>
       <SortID>200</SortID>
     </Field>
-    <Field Def="dummy8 dmy[2]">
-      <Description>dmy</Description>
-      <DisplayFormat>%u</DisplayFormat>
-      <SortID>10000</SortID>
-    </Field>
+    
+    <Field Def="u8 unknown_0x2" />
+    <Field Def="u8 unknown_0x3" />
+
     <Field Def="s32 fogShadowSampleCountBias">
       <DisplayName>シャドウのサンプルカウントオフセット。</DisplayName>
       <Description>シャドウのサンプルカウントオフセット。</Description>

@@ -25,7 +25,7 @@
     <Field Def="u8 PadType"></Field>
     <Field Def="u8 AtkEnableState"></Field>
     <Field Def="u8 throwFollowingType"></Field>
-    <Field Def="dummy8 padding1[1]"></Field>
+    <Field Def="u8 unknown_0x3b"></Field>
     <Field Def="u8 throwType"></Field>
     <Field Def="u8 selfEscCycleCnt"></Field>
     <Field Def="u8 dmyHasChrDirType"></Field>

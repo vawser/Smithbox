@@ -97,7 +97,8 @@
     <Field Def="u8 Unk0x1B2"></Field>
     <Field Def="u8 Unk0x1B3"></Field>
     <Field Def="f32 UnkFloat0x1B4"></Field>
-    <Field Def="dummy8 Unk0x1B8[2]"></Field>
+    <Field Def="u8 Unk0x1B8"></Field>
+    <Field Def="dummy8 Unk0x1B9[1]"></Field>
     <Field Def="u16 UnkUshort0x1BA"></Field>
     <Field Def="f32 Unk0x1BC"></Field>
     <Field Def="f32 Unk0x1C0"></Field>

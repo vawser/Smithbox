@@ -10,6 +10,7 @@
     <Field Def="s32 PropertyID"></Field>
     <Field Def="s32 CaptionTextID"></Field>
     <Field Def="s32 HelpTextID"></Field>
-    <Field Def="dummy8 reserved[4]"></Field>
+    <Field Def="u16 unknown_0x1c"></Field>
+    <Field Def="dummy8 reserved[2]"></Field>
   </Fields>
 </PARAMDEF>

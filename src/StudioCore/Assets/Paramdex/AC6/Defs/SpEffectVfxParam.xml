@@ -73,7 +73,7 @@
     <Field Def="u8 isFinishFullbody:1"></Field>
     <Field Def="u8 isVisibleDeadChr:1"></Field>
     <Field Def="u8 isUseOffsetEnchantSfxSize:1"></Field>
-    <Field Def="dummy8 pad_1:1"></Field>
+    <Field Def="u8 unknown_0x33_7:1"></Field>
     
     
     <Field Def="s32 decalId1"></Field>

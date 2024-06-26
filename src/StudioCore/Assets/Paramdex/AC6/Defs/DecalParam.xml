@@ -45,7 +45,8 @@
     <Field Def="f32 emissiveValueEnd"></Field>
     <Field Def="f32 emissiveTime"></Field>
     <Field Def="u8 bIntpEnable"></Field>
-    <Field Def="dummy8 pad_01[3]"></Field>
+    <Field Def="u8 unknown_0x59"></Field>
+    <Field Def="dummy8 pad_01[2]"></Field>
     <Field Def="f32 intpIntervalDist"></Field>
     <Field Def="s32 beginIntpTextureId"></Field>
     <Field Def="s32 endIntpTextureId"></Field>
@@ -61,7 +62,7 @@
     <Field Def="u8 diffuseColorR"></Field>
     <Field Def="u8 diffuseColorG"></Field>
     <Field Def="u8 diffuseColorB"></Field>
-    <Field Def="dummy8 pad_03[1]"></Field>
+    <Field Def="u8 pad_03"></Field>
     <Field Def="u8 reflecColorR"></Field>
     <Field Def="u8 reflecColorG"></Field>
     <Field Def="u8 reflecColorB"></Field>
@@ -95,6 +96,19 @@
     <Field Def="u8 emissiveColorG"></Field>
     <Field Def="u8 emissiveColorB"></Field>
     <Field Def="f32 maxDecalSfxCreatableSlopeAngleDeg"></Field>
-    <Field Def="dummy8 pad_02[44]"></Field>
+    
+    <Field Def="s32 unknown_0xd0"></Field>
+    
+    <Field Def="dummy8 pad_02[8]"></Field>
+    
+    <Field Def="f32 unknown_0xdc"></Field>
+    <Field Def="f32 unknown_0xe0"></Field>
+    <Field Def="f32 unknown_0xe4"></Field>
+    <Field Def="f32 unknown_0xe8"></Field>
+    <Field Def="s32 unknown_0xec"></Field>
+    <Field Def="s32 unknown_0xf0"></Field>
+    <Field Def="s32 unknown_0xf4"></Field>
+    
+    <Field Def="dummy8 pad_04[4]"></Field>
   </Fields>
 </PARAMDEF>

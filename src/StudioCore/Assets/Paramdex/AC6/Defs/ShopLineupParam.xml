@@ -15,7 +15,7 @@
     <Field Def="dummy8 pad3[1]"></Field>
     <Field Def="u8 equipType"></Field>
     <Field Def="u8 costType"></Field>
-    <Field Def="dummy8 pad1[1]"></Field>
+    <Field Def="u8 unknown_0x19"></Field>
     <Field Def="u16 setNum"></Field>
     <Field Def="s32 value_Add"></Field>
   </Fields>

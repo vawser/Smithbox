@@ -78,7 +78,12 @@
     <Field Def="u8 Material_AttackMaterial"></Field>
     <Field Def="u8 isPenetrateChr:1"></Field>
     <Field Def="u8 isPenetrateObj:1"></Field>
-    <Field Def="dummy8 pad:6"></Field>
+    <Field Def="u8 unknown_0xa8_2:1"></Field>
+    <Field Def="u8 unknown_0xa8_3:1"></Field>
+    <Field Def="u8 unknown_0xa8_4:1"></Field>
+    <Field Def="u8 unknown_0xa8_5:1"></Field>
+    <Field Def="u8 unknown_0xa8_6:1"></Field>
+    <Field Def="u8 unknown_0xa8_7:1"></Field>
     <Field Def="u8 launchConditionType"></Field>
     <Field Def="u8 Unk0xAA_2_3:3"></Field>
     <Field Def="u8 emittePosType:3"></Field>

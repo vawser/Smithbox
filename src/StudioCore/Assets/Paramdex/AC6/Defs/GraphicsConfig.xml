@@ -110,7 +110,11 @@
       <Maximum>4</Maximum>
       <SortID>13</SortID>
     </Field>
-    <Field Def="dummy8 m_dummy[3]">
+    
+    <Field Def="u8 m_RayTracingQuality" />
+    <Field Def="u8 unknown_0xe" />
+    
+    <Field Def="dummy8 m_dummy[1]">
       <DisplayName>dmy</DisplayName>
       <DisplayFormat>%u</DisplayFormat>
       <EditFlags>Wrap</EditFlags>

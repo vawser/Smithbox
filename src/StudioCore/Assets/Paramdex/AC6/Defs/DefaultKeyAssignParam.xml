@@ -261,7 +261,10 @@
       <SortID>31</SortID>
       <UnkC8>下位優先度抑制（高⇔低）</UnkC8>
     </Field>
-    <Field Def="dummy8 dummy1[4]">
+    
+    <Field Def="u8 unknown_0x4" />
+    
+    <Field Def="dummy8 dummy1[3]">
       <DisplayName>ダミー</DisplayName>
       <SortID>1000</SortID>
       <UnkC8>下位優先度抑制（高⇔低）</UnkC8>
@@ -269,7 +272,9 @@
     
     <Field Def="s32 phyisicalKey_0"></Field>
     
-    <Field Def="dummy8 dummy2[4]">
+    <Field Def="u8 unknown_0xc" />
+    
+    <Field Def="dummy8 dummy2[3]">
       <DisplayName>ダミー</DisplayName>
       <SortID>1000</SortID>
       <UnkC8>下位優先度抑制（高⇔低）</UnkC8>

@@ -79,7 +79,7 @@
     <Field Def="u8 Unk0x83"></Field>
     <Field Def="f32 UnkFloat0x84"></Field>
     <Field Def="f32 UnkFloat0x88"></Field>
-    <Field Def="dummy8 Unk0x8C[1]"></Field>
+    <Field Def="u8 Unk0x8C"></Field>
     <Field Def="s8 UnkSbyte0x8D"></Field>
     <Field Def="u16 UnkUshort0x8E"></Field>
     <Field Def="u16 UnkUshort0x90"></Field>
@@ -90,10 +90,12 @@
     <Field Def="s8 UnkSbyte0x99"></Field>
     <Field Def="u8 Unk0x9A"></Field>
     <Field Def="u8 Unk0x9B"></Field>
-    <Field Def="dummy8 Unk0x9C[3]"></Field>
+    <Field Def="u8 Unk0x9C"></Field>
+    <Field Def="u8 Unk0x9D"></Field>
+    <Field Def="u8 Unk0x9E"></Field>
     <Field Def="u8 Unk0x9F"></Field>
     <Field Def="f32 UnkFloat0xA0"></Field>
-    <Field Def="dummy8 Unk0xA4[1]"></Field>
+    <Field Def="u8 Unk0xA4"></Field>
     <Field Def="s8 UnkSbyte0xA5"></Field>
     <Field Def="s8 UnkSbyte0xA6"></Field>
     <Field Def="u8 UnkByte0xA7"></Field>

@@ -26,7 +26,7 @@
     <Field Def="u8 textBoxType"></Field>
     <Field Def="u8 UnkByte0x31"></Field>
     <Field Def="u8 Unk0x32"></Field>
-    <Field Def="dummy8 padding5:1"></Field>
+    <Field Def="u8 unknown0x33_0:1"></Field>
     <Field Def="u8 isInvalidForRide:1"></Field>
     <Field Def="u8 isGrayoutForRide:1"></Field>
     <Field Def="u8 isInvalidForCrouching:1"></Field>
