@@ -110,20 +110,15 @@ World Map:
  - World Map TPF may be unloaded by the map/model editor stuff (add exception for it)
     - Move World Map textures to separate dictionary so they aren't randomly cleared by the normal ResourceDictionary stuff
  
+Project:
+ - Add a 'viewer' mode that the program is in by default: can view X gametype, but no saving of any kind.
+ - Prompt user to either enter 'viewer' mode or load recent project (no more automatic reload without user confirmation)
+ 
 #--------------------------------------
 # Notes
 #--------------------------------------
-# Issues
-Verify param upgrader works properly (e.g. the new params aren't scuffed in-game)
-- Remove hack with PostureControlParam_WepRight and SignPuddleParam for param upgrader
-
 TalkParam is lagging heavily: due to GenerateEntryGroup
 
-PostureControlParam_WepRight
-SignPuddleParam
-
-11210015L
-1.12.1 - (WepAbsorpPosParam) Set unknown_0x56 to Vanilla v1.12.1 values
-param WepAbsorpPosParam: modified && !added: unknown_0x56: = vanillafield unknown_0x56
-
----
+Param Upgrade:
+ Check GetOldRegulationPath, might be supplying the wrong regulation, might explain the issues
+ Change how the edits are displayed, message box isn't suitable anymore
