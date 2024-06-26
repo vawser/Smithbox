@@ -1243,6 +1243,7 @@ namespace SoulsFormats
                     FallDamageImmunity = 22,
                     Unk23 = 23,
                     Unk24 = 24,
+                    Unk25 = 25,
                     Unk29 = 29,
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
                 }
