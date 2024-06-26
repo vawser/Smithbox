@@ -10590,6 +10590,8 @@
 300000715 Shared [AOW] Lightning Ram
 300000716 Shared [AOW] Lightning Ram
 300000760 Shared [AOW] White Shadow's Lure
+300000761 Shared [AOW] White Shadow's Lure
+300000762 Shared [AOW] White Shadow's Lure
 300000770 Shared [AOW] Phantom Slash
 300000771 Shared [AOW] Phantom Slash
 300000772 Shared [AOW] Phantom Slash
@@ -12463,3 +12465,9 @@
 606700100 Light Greatsword - Default
 700000198 Verdigris Greatshield - 
 700000208 Verdigris Greatshield - 
+701320360 Serpent Flail - 
+701320361 Serpent Flail - 
+701320362 Serpent Flail - 
+701320363 Serpent Flail - 
+701320364 Serpent Flail - 
+701320365 Serpent Flail - 
