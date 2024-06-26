@@ -1203,6 +1203,7 @@ public class ParamEditorScreen : EditorScreen
                 case "1.09.1.1000": regulationFolder = "1.09.1 (10911000)"; break;
                 case "1.10.0.1000": regulationFolder = "1.10 (11001000)"; break;
                 case "1.12.1.0015": regulationFolder = "1.12.1 (11210015)"; break;
+                case "1.12.2.0021": regulationFolder = "1.12.2 (11220021)"; break;
             }
         }
 
