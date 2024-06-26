@@ -115,6 +115,9 @@ public class AliasBank
 
     public void AddToLocalAliasBank(string refID, string refName, string refTags)
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{TemplateName}";
 
         var resourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
@@ -201,6 +204,9 @@ public class AliasBank
     /// </summary>
     public void RemoveFromLocalAliasBank(string refID)
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         var resourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
 
         if (CFG.Current.AliasBank_EditorMode)

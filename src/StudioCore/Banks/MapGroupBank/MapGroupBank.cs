@@ -103,6 +103,9 @@ public class MapGroupBank
 
     public void AddToLocalBank(string refID, string refName, string refDesc, string refCategory, List<MapGroupMember> refMembers)
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\MapGroups\\{TemplateName}";
 
         var resourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\MapGroups\\";
@@ -165,6 +168,9 @@ public class MapGroupBank
     /// </summary>
     public void RemoveFromLocalBank(string refID)
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         var resourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\MapGroups\\{ResourceMiscLocator.GetGameIDForDir()}\\{MapGroupFileName}.json";
 
         if (File.Exists(resourcePath))
@@ -189,6 +195,9 @@ public class MapGroupBank
 
     public bool IsLocalMapGroup(string refID)
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return false;
+
         var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\MapGroups\\{ResourceMiscLocator.GetGameIDForDir()}\\{MapGroupFileName}.json";
 
         var resourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\MapGroups\\{ResourceMiscLocator.GetGameIDForDir()}\\{MapGroupFileName}.json";

@@ -49,22 +49,29 @@ public class SelectionGroupBank
         var SelectionDirectory = $"{Smithbox.SmithboxDataRoot}\\{ResourceMiscLocator.GetGameIDForDir()}\\selections";
         var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
 
-        if (!Directory.Exists(SelectionDirectory))
+        if (Uri.IsWellFormedUriString(SelectionDirectory, UriKind.Absolute))
         {
-            Directory.CreateDirectory(SelectionDirectory);
-            string template = "{ \"Resources\": [ ] }";
-            try
+            if (!Directory.Exists(SelectionDirectory))
             {
-                var fs = new FileStream(SelectionPath, System.IO.FileMode.Create);
-                var data = Encoding.ASCII.GetBytes(template);
-                fs.Write(data, 0, data.Length);
-                fs.Flush();
-                fs.Dispose();
+                Directory.CreateDirectory(SelectionDirectory);
+                string template = "{ \"Resources\": [ ] }";
+                try
+                {
+                    var fs = new FileStream(SelectionPath, System.IO.FileMode.Create);
+                    var data = Encoding.ASCII.GetBytes(template);
+                    fs.Write(data, 0, data.Length);
+                    fs.Flush();
+                    fs.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"{ex}");
+                }
             }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"{ex}");
-            }
+        }
+        else
+        {
+            TaskLogs.AddLog($"SelectionDirectory was set to an invalid path: {SelectionDirectory}");
         }
     }
 

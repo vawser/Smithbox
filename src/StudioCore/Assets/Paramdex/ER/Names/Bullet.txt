@@ -3826,7 +3826,7 @@
 10210000 Soft Cotton
 10214000 Margit's Shackle
 10215000 Mohg's Shackle
-10220000 Prattling Pate "Hello"
+10220000 Prattling Pate "Hello" / Prattling Pate "Lamentation"
 10220100 Prattling Pate "Thank you"
 10220200 Prattling Pate "Apologies"
 10220300 Prattling Pate "Wonderful"
@@ -6160,3 +6160,64 @@
 210200001 Polter Stone [Hit - Emitter]
 210200005 Polter Stone [Emitted]
 210203000 Lamenter's Mask
+210300000 Bondstone
+210300100 Spritestone
+210300101 Spritestone [Hit]
+210300102 Spritestone [Hit]
+210313000 Horned Bairn
+210313001 Horned Bairn [Hit]
+210314000 Perfumed Oil of Ranah
+210315000 Call of Tibia
+210315001 Call of Tibia [Hit]
+210315002 Call of Tibia [Hit]
+210315003 Call of Tibia [Emitter]
+210315004 Call of Tibia [Hit]
+210315005 Call of Tibia [Hit]
+210315010 Call of Tibia
+210315011 Call of Tibia [Hit]
+210315012 Call of Tibia [Hit]
+210315013 Call of Tibia [Hit]
+210315014 Call of Tibia [Hit]
+210315015 Call of Tibia [Hit]
+210316000 Surging Frenzied Flame
+210316001 Surging Frenzied Flame [Emitter]
+210316002 Surging Frenzied Flame [Hit]
+210316010 Surging Frenzied Flame [Hit]
+210316015 Surging Frenzied Flame [Emitter]
+210316016 Surging Frenzied Flame [Emitter]
+210316017 Surging Frenzied Flame [Emitter]
+210316018 Surging Frenzied Flame [Emitter]
+210316019 Surging Frenzied Flame
+210316020 Surging Frenzied Flame [Emitted]
+210316021 Surging Frenzied Flame [Hit]
+210316022 Surging Frenzied Flame [Hit]
+210316030 Surging Frenzied Flame
+210316031 Surging Frenzied Flame
+210316032 Surging Frenzied Flame
+210317000 Golden Vow
+210318000 Fire Coil
+210318010 Fire Coil [Hit]
+210318013 Fire Coil [Hit]
+210318014 Fire Coil [Hit]
+210318016 Fire Coil [Hit]
+210319000 Fire Spritestone
+210319001 Fire Spritestone [Hit]
+210319002 Fire Spritestone [Hit]
+210319003 Fire Spritestone [Hit]
+210319004 Fire Spritestone [Hit]
+210319005 Fire Spritestone [Hit]
+210320000 Glinting Nail (Unused)
+210320001 Glinting Nail (Unused)
+210320002 Glinting Nail
+210320003 Glinting Nail [Hit]
+210320004 Glinting Nail [Hit]
+210320005 Glinting Nail [Hit]
+210320006 Glinting Nail [Hit]
+210320007 Glinting Nail [Hit]
+210320008 Glinting Nail [Hit]
+210320009 Glinting Nail [Hit]
+210320010 Glinting Nail [Hit]
+210331000 Sunwarmth Stone
+210331001 Sunwarmth Stone [Hit]
+210335000 Charming Branch
+210335001 Charming Branch [Hit]

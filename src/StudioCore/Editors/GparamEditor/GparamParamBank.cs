@@ -76,26 +76,29 @@ public static class GparamParamBank
         var assetRoot = $@"{Smithbox.GameRoot}\{paramDir}\{info.Name}{paramExt}";
         var assetMod = $@"{Smithbox.ProjectRoot}\{paramDir}\{info.Name}{paramExt}";
 
-        // Add drawparam folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{paramDir}\\"))
+        if (Uri.IsWellFormedUriString($"{Smithbox.ProjectRoot}\\{paramDir}\\", UriKind.Absolute))
         {
-            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{paramDir}\\");
-        }
+            // Add drawparam folder if it does not exist in GameModDirectory
+            if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{paramDir}\\"))
+            {
+                Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{paramDir}\\");
+            }
 
-        // Make a backup of the original file if a mod path doesn't exist
-        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
-        {
-            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
-        }
+            // Make a backup of the original file if a mod path doesn't exist
+            if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+            {
+                File.Copy(assetRoot, $@"{assetRoot}.bak", true);
+            }
 
-        if (fileBytes != null)
-        {
-            // Write to GameModDirectory
-            File.WriteAllBytes(assetMod, fileBytes);
-            //TaskLogs.AddLog($"Saved at: {assetMod}");
-        }
+            if (fileBytes != null)
+            {
+                // Write to GameModDirectory
+                File.WriteAllBytes(assetMod, fileBytes);
+                //TaskLogs.AddLog($"Saved at: {assetMod}");
+            }
 
-        TaskLogs.AddLog($"Saved {info.Name} to {assetMod}");
+            TaskLogs.AddLog($"Saved {info.Name} to {assetMod}");
+        }
     }
 
     public static void LoadGraphicsParams()

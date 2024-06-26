@@ -225,19 +225,22 @@ public class ParamBank
         var rootDir = Path.Combine(AppContext.BaseDirectory, metaDir);
         var projectDir = $"{Smithbox.ProjectRoot}\\.smithbox\\{metaDir}";
 
-        if (!Directory.Exists(projectDir))
+        if (Smithbox.ProjectType != ProjectType.Undefined)
         {
-            Directory.CreateDirectory(projectDir);
-            var files = Directory.GetFileSystemEntries(rootDir);
-
-            foreach (var f in files)
+            if (!Directory.Exists(projectDir))
             {
-                var name = Path.GetFileName(f);
-                var tPath = Path.Combine(rootDir, name);
-                var pPath = Path.Combine(projectDir, name);
-                if (File.Exists(tPath) && !File.Exists(pPath))
+                Directory.CreateDirectory(projectDir);
+                var files = Directory.GetFileSystemEntries(rootDir);
+
+                foreach (var f in files)
                 {
-                    File.Copy(tPath, pPath);
+                    var name = Path.GetFileName(f);
+                    var tPath = Path.Combine(rootDir, name);
+                    var pPath = Path.Combine(projectDir, name);
+                    if (File.Exists(tPath) && !File.Exists(pPath))
+                    {
+                        File.Copy(tPath, pPath);
+                    }
                 }
             }
         }
@@ -256,7 +259,7 @@ public class ParamBank
         {
             var fName = f.Substring(f.LastIndexOf('\\') + 1);
 
-            if (CFG.Current.Param_UseProjectMeta)
+            if (CFG.Current.Param_UseProjectMeta && Smithbox.ProjectType != ProjectType.Undefined)
             {
                 var metaDir = ResourceParamLocator.GetParammetaDir();
                 var projectDir = $"{Smithbox.ProjectRoot}\\.smithbox\\{metaDir}";
@@ -273,7 +276,7 @@ public class ParamBank
     {
         var dir = ResourceParamLocator.GetParamNamesDir();
 
-        if (useProjectNames)
+        if (useProjectNames && Smithbox.ProjectType != ProjectType.Undefined)
         {
             dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Names";
         }

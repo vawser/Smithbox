@@ -126,3 +126,4 @@ SignPuddleParam
 1.12.1 - (WepAbsorpPosParam) Set unknown_0x56 to Vanilla v1.12.1 values
 param WepAbsorpPosParam: modified && !added: unknown_0x56: = vanillafield unknown_0x56
 
+---

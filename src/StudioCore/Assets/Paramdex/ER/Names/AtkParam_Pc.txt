@@ -5023,6 +5023,20 @@
 210172001 Dragon Communion Harpoon
 210172002 Dragon Communion Harpoon
 210203000 Lamenter's Mask
+210300000 Bondstone
+210300100 Spritestone [Hit]
+210300101 Spritestone
+210313000 Horned Bairn
+210314000 Perfumed Oil of Ranah
+210315000 Call of Tibia
+210315001 Call of Tibia
+210316000 Surging Frenzied Flame
+210318000 Fire Coil
+210319000 Fire Spritestone
+210320000 Glinting Nail
+210331000 Sunwarmth Stone [Hit]
+210335000 Charming Branch
+210335001 Charming Branch [Hit]
 300000010 [AOW] Impaling Thrust
 300000011 [AOW] Impaling Thrust
 300000025 [AOW] Lifesteal Fist

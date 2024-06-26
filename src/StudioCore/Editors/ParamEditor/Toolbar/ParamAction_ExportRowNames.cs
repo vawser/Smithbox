@@ -93,8 +93,11 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 ImGui.SameLine();
                 if(ImGui.Button("Open Project Folder##action_Selection_OpenExportFolder", new Vector2(200, 32)))
                 {
-                    var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Names";
-                    Process.Start("explorer.exe", dir);
+                    if (Smithbox.ProjectType != ProjectType.Undefined)
+                    {
+                        var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Names";
+                        Process.Start("explorer.exe", dir);
+                    }
                 }
                 ImguiUtils.ShowHoverTooltip("Opens the project-specific Names folder that contains the exported Names.");
             }
@@ -137,6 +140,9 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         private static void ExportRowNamesForParam(string param)
         {
+            if (Smithbox.ProjectType == ProjectType.Undefined)
+                return;
+
             var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Names";
             var path = Path.Combine(dir, $"{param}.txt");
 

@@ -32,6 +32,11 @@ public class NewProjectModal
         loadDefaultRowNamesOnCreation = false;
     }
 
+    public bool IsLogicalDrive(string path)
+    {
+        return Directory.GetLogicalDrives().Contains(path);
+    }
+
     public void DisplayProjectSelection()
     {
         // Project Name
@@ -62,8 +67,16 @@ public class NewProjectModal
         {
             if (PlatformUtils.Instance.OpenFolderDialog("Select project directory...", out var path))
             {
-                var jsonPath = $"{path}//project.json";
-                newProjectDirectory = path;
+                if (IsLogicalDrive(path))
+                {
+                    DialogResult message = PlatformUtils.Instance.MessageBox(
+                        "Project Directory has been placed in a drive root. This is not allowed. Please select a different location.", "Error",
+                        MessageBoxButtons.OK);
+                }
+                else
+                {
+                    newProjectDirectory = path;
+                }
             }
         }
 
@@ -224,6 +237,14 @@ public class NewProjectModal
                 {
                     validated = false;
                 }
+            }
+
+            if (validated && IsLogicalDrive(newProjectDirectory))
+            {
+                DialogResult message = PlatformUtils.Instance.MessageBox(
+                    "Project Directory has been placed in a drive root. This is not allowed. Please select a different location.", "Error",
+                    MessageBoxButtons.OK);
+                validated = false;
             }
 
             if (validated && (newProject.Config.ProjectName == null || newProject.Config.ProjectName == ""))

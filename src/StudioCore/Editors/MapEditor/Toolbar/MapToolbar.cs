@@ -83,6 +83,9 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public void OnProjectChanged()
         {
+            if (Smithbox.ProjectType == ProjectType.Undefined)
+                return;
+
             _selectedPrefabObjectNames = new List<string>();
             _prefabInfos = new List<PrefabInfo>();
             _selectedPrefabInfo = null;

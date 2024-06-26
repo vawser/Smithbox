@@ -107,6 +107,9 @@ public class ProjectEnumBank
 
     public void CreateProjectEnumFile()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         var enumFileDir = $"\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\";
         var enumFilePath = $"\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Enums.json";
 
@@ -134,6 +137,9 @@ public class ProjectEnumBank
 
     public void UpdateEnumEntry(ProjectEnumEntry newEntry)
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         CreateProjectEnumFile();
 
         var enumFilePath = $"\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Enums.json";
@@ -164,6 +170,9 @@ public class ProjectEnumBank
 
     public void RestoreBaseEnumEntry(ProjectEnumEntry currentEntry)
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         CreateProjectEnumFile();
 
         var enumFilePath = $"\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Enums.json";
@@ -219,6 +228,9 @@ public class ProjectEnumBank
 
     public void UpdateEnumEntryOption(ProjectEnumEntry newEntry, ProjectEnumOption newOption)
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         CreateProjectEnumFile();
 
         var enumFilePath = $"\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Enums.json";
@@ -261,6 +273,9 @@ public class ProjectEnumBank
 
     public void RemoveEnumEntry(ProjectEnumEntry oldEntry)
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         CreateProjectEnumFile();
 
         var enumFilePath = $"\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Enums.json";
@@ -295,6 +310,9 @@ public class ProjectEnumBank
 
     public void RemoveEnumEntryOption(ProjectEnumEntry oldEntry, ProjectEnumOption oldOption)
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         CreateProjectEnumFile();
 
         var enumFilePath = $"\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Enums.json";
