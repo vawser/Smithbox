@@ -49,3 +49,531 @@ param ToughnessParam: modified && !added: unk1: = vanillafield unk1
 11001000L
 1.10 - (ToughnessParam) Set unk2 to Vanilla v1.10 values
 param ToughnessParam: modified && !added: unk2: = vanillafield unk2
+11210015L
+1.12.1 - (WorldMapPointParam) Set dispMask02 to Vanilla v1.12.1 values
+param WorldMapPointParam: modified && !added: dispMask02: = vanillafield dispMask02
+11210015L
+1.12.1 - (WorldMapPointParam) Set pad2_0 to Vanilla v1.12.1 values
+param WorldMapPointParam: modified && !added: pad2_0: = vanillafield pad2_0
+11210015L
+1.12.1 - (WorldMapPointParam) Set unknown_0xb7 to Vanilla v1.12.1 values
+param WorldMapPointParam: modified && !added: unknown_0xb7: = vanillafield unknown_0xb7
+11210015L
+1.12.1 - (WorldMapPointParam) Set unknown_0xb8 to Vanilla v1.12.1 values
+param WorldMapPointParam: modified && !added: unknown_0xb8: = vanillafield unknown_0xb8
+11210015L
+1.12.1 - (WorldMapPointParam) Set unknown_0xb9 to Vanilla v1.12.1 values
+param WorldMapPointParam: modified && !added: unknown_0xb9: = vanillafield unknown_0xb9
+11210015L
+1.12.1 - (WorldMapPointParam) Set pad4 to Vanilla v1.12.1 values
+param WorldMapPointParam: modified && !added: pad4: = vanillafield pad4
+11210015L
+1.12.1 - (WepAbsorpPosParam) Set unknown_0x54 to Vanilla v1.12.1 values
+param WepAbsorpPosParam: modified && !added: unknown_0x54: = vanillafield unknown_0x54
+11210015L
+1.12.1 - (WepAbsorpPosParam) Set unknown_0x55 to Vanilla v1.12.1 values
+param WepAbsorpPosParam: modified && !added: unknown_0x55: = vanillafield unknown_0x55
+11210015L
+1.12.1 - (WepAbsorpPosParam) Set unknown_0x56 to Vanilla v1.12.1 values
+param WepAbsorpPosParam: modified && !added: unknown_0x56: = vanillafield unknown_0x56
+11210015L
+1.12.1 - (WepAbsorpPosParam) Set unknown_0x57 to Vanilla v1.12.1 values
+param WepAbsorpPosParam: modified && !added: unknown_0x57: = vanillafield unknown_0x57
+11210015L
+1.12.1 - (WepAbsorpPosParam) Set reserve to Vanilla v1.12.1 values
+param WepAbsorpPosParam: modified && !added: reserve: = vanillafield reserve
+11210015L
+1.12.1 - (SwordArtsParam) Set swordArtsTypeDlc to Vanilla v1.12.1 values
+param SwordArtsParam: modified && !added: swordArtsTypeDlc: = vanillafield swordArtsTypeDlc
+11210015L
+1.12.1 - (SpEffectVfxParam) Set unknown_0x2f_7 to Vanilla v1.12.1 values
+param SpEffectVfxParam: modified && !added: unknown_0x2f_7: = vanillafield unknown_0x2f_7
+11210015L
+1.12.1 - (SpEffectVfxParam) Set unknown_0x96 to Vanilla v1.12.1 values
+param SpEffectVfxParam: modified && !added: unknown_0x96: = vanillafield unknown_0x96
+11210015L
+1.12.1 - (SpEffectVfxParam) Set unknown_0x97 to Vanilla v1.12.1 values
+param SpEffectVfxParam: modified && !added: unknown_0x97: = vanillafield unknown_0x97
+11210015L
+1.12.1 - (SpEffectVfxParam) Set unknown_0x98 to Vanilla v1.12.1 values
+param SpEffectVfxParam: modified && !added: unknown_0x98: = vanillafield unknown_0x98
+11210015L
+1.12.1 - (SpEffectVfxParam) Set unknown_0x99 to Vanilla v1.12.1 values
+param SpEffectVfxParam: modified && !added: unknown_0x99: = vanillafield unknown_0x99
+11210015L
+1.12.1 - (SpEffectVfxParam) Set unknown_0x9a to Vanilla v1.12.1 values
+param SpEffectVfxParam: modified && !added: unknown_0x9a: = vanillafield unknown_0x9a
+11210015L
+1.12.1 - (SpEffectVfxParam) Set pad to Vanilla v1.12.1 values
+param SpEffectVfxParam: modified && !added: pad: = vanillafield pad
+11210015L
+1.12.1 - (SpEffectParam) Set isHpBurnEffect to Vanilla v1.12.1 values
+param SpEffectParam: modified && !added: isHpBurnEffect: = vanillafield isHpBurnEffect
+11210015L
+1.12.1 - (SpEffectParam) Set unknown_0x352_6 to Vanilla v1.12.1 values
+param SpEffectParam: modified && !added: unknown_0x352_6: = vanillafield unknown_0x352_6
+11210015L
+1.12.1 - (SpEffectParam) Set unknown_0x352_7 to Vanilla v1.12.1 values
+param SpEffectParam: modified && !added: unknown_0x352_7: = vanillafield unknown_0x352_7
+11210015L
+1.12.1 - (SpEffectParam) Set unknown_0x353_0 to Vanilla v1.12.1 values
+param SpEffectParam: modified && !added: unknown_0x353_0: = vanillafield unknown_0x353_0
+11210015L
+1.12.1 - (SpEffectParam) Set unknown_0x353_1 to Vanilla v1.12.1 values
+param SpEffectParam: modified && !added: unknown_0x353_1: = vanillafield unknown_0x353_1
+11210015L
+1.12.1 - (SpEffectParam) Set unknown_0x353_2 to Vanilla v1.12.1 values
+param SpEffectParam: modified && !added: unknown_0x353_2: = vanillafield unknown_0x353_2
+11210015L
+1.12.1 - (SpEffectParam) Set unknown_0x353_3 to Vanilla v1.12.1 values
+param SpEffectParam: modified && !added: unknown_0x353_3: = vanillafield unknown_0x353_3
+11210015L
+1.12.1 - (SpEffectParam) Set unknown_0x353_4 to Vanilla v1.12.1 values
+param SpEffectParam: modified && !added: unknown_0x353_4: = vanillafield unknown_0x353_4
+11210015L
+1.12.1 - (SpEffectParam) Set unknown_0x353_5 to Vanilla v1.12.1 values
+param SpEffectParam: modified && !added: unknown_0x353_5: = vanillafield unknown_0x353_5
+11210015L
+1.12.1 - (SpEffectParam) Set spiritDeathSpEffectId to Vanilla v1.12.1 values
+param SpEffectParam: modified && !added: spiritDeathSpEffectId: = vanillafield spiritDeathSpEffectId
+11210015L
+1.12.1 - (SoundCutsceneParam) Set unknown_0x18 to Vanilla v1.12.1 values
+param SoundCutsceneParam: modified && !added: unknown_0x18: = vanillafield unknown_0x18
+11210015L
+1.12.1 - (SoundCutsceneParam) Set unknown_0x19 to Vanilla v1.12.1 values
+param SoundCutsceneParam: modified && !added: unknown_0x19: = vanillafield unknown_0x19
+11210015L
+1.12.1 - (SoundCutsceneParam) Set unknown_0x1a to Vanilla v1.12.1 values
+param SoundCutsceneParam: modified && !added: unknown_0x1a: = vanillafield unknown_0x1a
+11210015L
+1.12.1 - (SoundCutsceneParam) Set unknown_0x1b to Vanilla v1.12.1 values
+param SoundCutsceneParam: modified && !added: unknown_0x1b: = vanillafield unknown_0x1b
+11210015L
+1.12.1 - (SoundCutsceneParam) Set reserved to Vanilla v1.12.1 values
+param SoundCutsceneParam: modified && !added: reserved: = vanillafield reserved
+11210015L
+1.12.1 - (SoundCutsceneParam) Set reserved2 to Vanilla v1.12.1 values
+param SoundCutsceneParam: modified && !added: reserved2: = vanillafield reserved2
+11210015L
+1.12.1 - (SignPuddleParam) Set unknown_0x20 to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: unknown_0x20: = vanillafield unknown_0x20
+11210015L
+1.12.1 - (SignPuddleParam) Set unknown_0x24 to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: unknown_0x24: = vanillafield unknown_0x24
+11210015L
+1.12.1 - (SignPuddleParam) Set unknown_0x28 to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: unknown_0x28: = vanillafield unknown_0x28
+11210015L
+1.12.1 - (SignPuddleParam) Set unknown_0x2c to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: unknown_0x2c: = vanillafield unknown_0x2c
+11210015L
+1.12.1 - (SignPuddleParam) Set unknown_0x30 to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: unknown_0x30: = vanillafield unknown_0x30
+11210015L
+1.12.1 - (SignPuddleParam) Set unknown_0x34 to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: unknown_0x34: = vanillafield unknown_0x34
+11210015L
+1.12.1 - (SignPuddleParam) Set unknown_0x38 to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: unknown_0x38: = vanillafield unknown_0x38
+11210015L
+1.12.1 - (SignPuddleParam) Set unknown_0x3c to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: unknown_0x3c: = vanillafield unknown_0x3c
+11210015L
+1.12.1 - (SignPuddleParam) Set unknown_0x40 to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: unknown_0x40: = vanillafield unknown_0x40
+11210015L
+1.12.1 - (SignPuddleParam) Set unknown_0x44 to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: unknown_0x44: = vanillafield unknown_0x44
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set Unknown0 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: Unknown0: = vanillafield Unknown0
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set Unknown1 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: Unknown1: = vanillafield Unknown1
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set Unknown2 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: Unknown2: = vanillafield Unknown2
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set Unknown3 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: Unknown3: = vanillafield Unknown3
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set Unknown4 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: Unknown4: = vanillafield Unknown4
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set Unknown5 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: Unknown5: = vanillafield Unknown5
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set Unknown6 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: Unknown6: = vanillafield Unknown6
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set Unknown7 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: Unknown7: = vanillafield Unknown7
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set endPad to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: endPad: = vanillafield endPad
+11210015L
+1.12.1 - (PostureControlParam_WepLeft) Set unknown_0x12 to Vanilla v1.12.1 values
+param PostureControlParam_WepLeft: modified && !added: unknown_0x12: = vanillafield unknown_0x12
+11210015L
+1.12.1 - (PostureControlParam_WepLeft) Set unknown_0x14 to Vanilla v1.12.1 values
+param PostureControlParam_WepLeft: modified && !added: unknown_0x14: = vanillafield unknown_0x14
+11210015L
+1.12.1 - (PostureControlParam_WepLeft) Set unknown_0x16 to Vanilla v1.12.1 values
+param PostureControlParam_WepLeft: modified && !added: unknown_0x16: = vanillafield unknown_0x16
+11210015L
+1.12.1 - (PostureControlParam_WepLeft) Set pad to Vanilla v1.12.1 values
+param PostureControlParam_WepLeft: modified && !added: pad: = vanillafield pad
+11210015L
+1.12.1 - (PlayerCommonParam) Set unknown_0xcc to Vanilla v1.12.1 values
+param PlayerCommonParam: modified && !added: unknown_0xcc: = vanillafield unknown_0xcc
+11210015L
+1.12.1 - (PlayerCommonParam) Set unknown_0xd0 to Vanilla v1.12.1 values
+param PlayerCommonParam: modified && !added: unknown_0xd0: = vanillafield unknown_0xd0
+11210015L
+1.12.1 - (PlayerCommonParam) Set unknown_0xd4 to Vanilla v1.12.1 values
+param PlayerCommonParam: modified && !added: unknown_0xd4: = vanillafield unknown_0xd4
+11210015L
+1.12.1 - (PlayerCommonParam) Set unknown_0xd8 to Vanilla v1.12.1 values
+param PlayerCommonParam: modified && !added: unknown_0xd8: = vanillafield unknown_0xd8
+11210015L
+1.12.1 - (PlayerCommonParam) Set unknown_0xdc to Vanilla v1.12.1 values
+param PlayerCommonParam: modified && !added: unknown_0xdc: = vanillafield unknown_0xdc
+11210015L
+1.12.1 - (PlayerCommonParam) Set unknown_0xe0 to Vanilla v1.12.1 values
+param PlayerCommonParam: modified && !added: unknown_0xe0: = vanillafield unknown_0xe0
+11210015L
+1.12.1 - (PlayerCommonParam) Set reserved41 to Vanilla v1.12.1 values
+param PlayerCommonParam: modified && !added: reserved41: = vanillafield reserved41
+11210015L
+1.12.1 - (PlayRegionParam) Set unknown_0x45_1 to Vanilla v1.12.1 values
+param PlayRegionParam: modified && !added: unknown_0x45_1: = vanillafield unknown_0x45_1
+11210015L
+1.12.1 - (PlayRegionParam) Set pad1 to Vanilla v1.12.1 values
+param PlayRegionParam: modified && !added: pad1: = vanillafield pad1
+11210015L
+1.12.1 - (ObjActParam) Set unknown_0x38 to Vanilla v1.12.1 values
+param ObjActParam: modified && !added: unknown_0x38: = vanillafield unknown_0x38
+11210015L
+1.12.1 - (ObjActParam) Set unknown_0x3c to Vanilla v1.12.1 values
+param ObjActParam: modified && !added: unknown_0x3c: = vanillafield unknown_0x3c
+11210015L
+1.12.1 - (ObjActParam) Set unknown_0x40 to Vanilla v1.12.1 values
+param ObjActParam: modified && !added: unknown_0x40: = vanillafield unknown_0x40
+11210015L
+1.12.1 - (ObjActParam) Set unknown_0x44 to Vanilla v1.12.1 values
+param ObjActParam: modified && !added: unknown_0x44: = vanillafield unknown_0x44
+11210015L
+1.12.1 - (ObjActParam) Set unknown_0x48 to Vanilla v1.12.1 values
+param ObjActParam: modified && !added: unknown_0x48: = vanillafield unknown_0x48
+11210015L
+1.12.1 - (ObjActParam) Set unknown_0x4c to Vanilla v1.12.1 values
+param ObjActParam: modified && !added: unknown_0x4c: = vanillafield unknown_0x4c
+11210015L
+1.12.1 - (ObjActParam) Set pad2 to Vanilla v1.12.1 values
+param ObjActParam: modified && !added: pad2: = vanillafield pad2
+11210015L
+1.12.1 - (NpcParam) Set unknown_0x1e3 to Vanilla v1.12.1 values
+param NpcParam: modified && !added: unknown_0x1e3: = vanillafield unknown_0x1e3
+11210015L
+1.12.1 - (NpcParam) Set unknown_0x26a to Vanilla v1.12.1 values
+param NpcParam: modified && !added: unknown_0x26a: = vanillafield unknown_0x26a
+11210015L
+1.12.1 - (NpcParam) Set unknown_0x2d8 to Vanilla v1.12.1 values
+param NpcParam: modified && !added: unknown_0x2d8: = vanillafield unknown_0x2d8
+11210015L
+1.12.1 - (NpcParam) Set pad12 to Vanilla v1.12.1 values
+param NpcParam: modified && !added: pad12: = vanillafield pad12
+11210015L
+1.12.1 - (NetworkParam) Set unknown_0x7c to Vanilla v1.12.1 values
+param NetworkParam: modified && !added: unknown_0x7c: = vanillafield unknown_0x7c
+11210015L
+1.12.1 - (NetworkParam) Set pad_1 to Vanilla v1.12.1 values
+param NetworkParam: modified && !added: pad_1: = vanillafield pad_1
+11210015L
+1.12.1 - (NetworkMsgParam) Set unknown_0xa4 to Vanilla v1.12.1 values
+param NetworkMsgParam: modified && !added: unknown_0xa4: = vanillafield unknown_0xa4
+11210015L
+1.12.1 - (NetworkMsgParam) Set unknown_0xa8 to Vanilla v1.12.1 values
+param NetworkMsgParam: modified && !added: unknown_0xa8: = vanillafield unknown_0xa8
+11210015L
+1.12.1 - (NetworkMsgParam) Set unknown_0xac to Vanilla v1.12.1 values
+param NetworkMsgParam: modified && !added: unknown_0xac: = vanillafield unknown_0xac
+11210015L
+1.12.1 - (NetworkMsgParam) Set unknown_0xb0 to Vanilla v1.12.1 values
+param NetworkMsgParam: modified && !added: unknown_0xb0: = vanillafield unknown_0xb0
+11210015L
+1.12.1 - (NetworkMsgParam) Set unknown_0xb4 to Vanilla v1.12.1 values
+param NetworkMsgParam: modified && !added: unknown_0xb4: = vanillafield unknown_0xb4
+11210015L
+1.12.1 - (NetworkMsgParam) Set pad2_new to Vanilla v1.12.1 values
+param NetworkMsgParam: modified && !added: pad2_new: = vanillafield pad2_new
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xe0 to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xe0: = vanillafield unknown_0xe0
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xe1 to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xe1: = vanillafield unknown_0xe1
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xe2 to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xe2: = vanillafield unknown_0xe2
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xe3 to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xe3: = vanillafield unknown_0xe3
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xe4 to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xe4: = vanillafield unknown_0xe4
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xe5 to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xe5: = vanillafield unknown_0xe5
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xe6 to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xe6: = vanillafield unknown_0xe6
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xe7 to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xe7: = vanillafield unknown_0xe7
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xe8 to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xe8: = vanillafield unknown_0xe8
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xe9 to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xe9: = vanillafield unknown_0xe9
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xea to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xea: = vanillafield unknown_0xea
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xeb to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xeb: = vanillafield unknown_0xeb
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xec to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xec: = vanillafield unknown_0xec
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xed to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xed: = vanillafield unknown_0xed
+11210015L
+1.12.1 - (MenuCommonParam) Set unknown_0xee to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: unknown_0xee: = vanillafield unknown_0xee
+11210015L
+1.12.1 - (MenuCommonParam) Set reserved33 to Vanilla v1.12.1 values
+param MenuCommonParam: modified && !added: reserved33: = vanillafield reserved33
+11210015L
+1.12.1 - (GraphicsConfig) Set m_RayTracingQuality to Vanilla v1.12.1 values
+param GraphicsConfig: modified && !added: m_RayTracingQuality: = vanillafield m_RayTracingQuality
+11210015L
+1.12.1 - (GraphicsConfig) Set m_dummy to Vanilla v1.12.1 values
+param GraphicsConfig: modified && !added: m_dummy: = vanillafield m_dummy
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x230 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x230: = vanillafield unknown_0x230
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x2f0 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x2f0: = vanillafield unknown_0x2f0
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x2f4 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x2f4: = vanillafield unknown_0x2f4
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x2f8 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x2f8: = vanillafield unknown_0x2f8
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x2fc to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x2fc: = vanillafield unknown_0x2fc
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x300 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x300: = vanillafield unknown_0x300
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x304 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x304: = vanillafield unknown_0x304
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x308 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x308: = vanillafield unknown_0x308
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x30c to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x30c: = vanillafield unknown_0x30c
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x34c to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x34c: = vanillafield unknown_0x34c
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x350 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x350: = vanillafield unknown_0x350
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x354 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x354: = vanillafield unknown_0x354
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x358 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x358: = vanillafield unknown_0x358
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x35c to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x35c: = vanillafield unknown_0x35c
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x360 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x360: = vanillafield unknown_0x360
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x364 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x364: = vanillafield unknown_0x364
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x368 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x368: = vanillafield unknown_0x368
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x36c to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x36c: = vanillafield unknown_0x36c
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x370 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x370: = vanillafield unknown_0x370
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x374 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x374: = vanillafield unknown_0x374
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x378 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x378: = vanillafield unknown_0x378
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x37c to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x37c: = vanillafield unknown_0x37c
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x380 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x380: = vanillafield unknown_0x380
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x384 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x384: = vanillafield unknown_0x384
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x388 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x388: = vanillafield unknown_0x388
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x38c to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x38c: = vanillafield unknown_0x38c
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x390 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x390: = vanillafield unknown_0x390
+11210015L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x394 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknown_0x394: = vanillafield unknown_0x394
+11210015L
+1.12.1 - (GameSystemCommonParam) Set endPad to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: endPad: = vanillafield endPad
+11210015L
+1.12.1 - (EquipParamWeapon) Set unknown_0x17c_5 to Vanilla v1.12.1 values
+param EquipParamWeapon: modified && !added: unknown_0x17c_5: = vanillafield unknown_0x17c_5
+11210015L
+1.12.1 - (EquipParamWeapon) Set unknown_0x17c_6 to Vanilla v1.12.1 values
+param EquipParamWeapon: modified && !added: unknown_0x17c_6: = vanillafield unknown_0x17c_6
+11210015L
+1.12.1 - (EquipParamWeapon) Set unknown_0x17c_7 to Vanilla v1.12.1 values
+param EquipParamWeapon: modified && !added: unknown_0x17c_7: = vanillafield unknown_0x17c_7
+11210015L
+1.12.1 - (EquipParamWeapon) Set restrictSpecialSwordArt to Vanilla v1.12.1 values
+param EquipParamWeapon: modified && !added: restrictSpecialSwordArt: = vanillafield restrictSpecialSwordArt
+11210015L
+1.12.1 - (EquipParamWeapon) Set pad to Vanilla v1.12.1 values
+param EquipParamWeapon: modified && !added: pad: = vanillafield pad
+11210015L
+1.12.1 - (EquipParamGoods) Set unknown_0x40 to Vanilla v1.12.1 values
+param EquipParamGoods: modified && !added: unknown_0x40: = vanillafield unknown_0x40
+11210015L
+1.12.1 - (EquipParamGoods) Set unknown_0x73_1 to Vanilla v1.12.1 values
+param EquipParamGoods: modified && !added: unknown_0x73_1: = vanillafield unknown_0x73_1
+11210015L
+1.12.1 - (EquipParamGoods) Set unknown_0x73_2 to Vanilla v1.12.1 values
+param EquipParamGoods: modified && !added: unknown_0x73_2: = vanillafield unknown_0x73_2
+11210015L
+1.12.1 - (EquipParamGoods) Set pad1 to Vanilla v1.12.1 values
+param EquipParamGoods: modified && !added: pad1: = vanillafield pad1
+11210015L
+1.12.1 - (EquipParamGem) Set isSpecialSwordArt to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: isSpecialSwordArt: = vanillafield isSpecialSwordArt
+11210015L
+1.12.1 - (EquipParamGem) Set pad2 to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: pad2: = vanillafield pad2
+11210015L
+1.12.1 - (EquipParamGem) Set canMountWep_HandToHand to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: canMountWep_HandToHand: = vanillafield canMountWep_HandToHand
+11210015L
+1.12.1 - (EquipParamGem) Set canMountWep_PerfumeBottle to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: canMountWep_PerfumeBottle: = vanillafield canMountWep_PerfumeBottle
+11210015L
+1.12.1 - (EquipParamGem) Set canMountWep_ThrustingShield to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: canMountWep_ThrustingShield: = vanillafield canMountWep_ThrustingShield
+11210015L
+1.12.1 - (EquipParamGem) Set canMountWep_ThrowingWeapon to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: canMountWep_ThrowingWeapon: = vanillafield canMountWep_ThrowingWeapon
+11210015L
+1.12.1 - (EquipParamGem) Set reserved2_canMountWep_old to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: reserved2_canMountWep_old: = vanillafield reserved2_canMountWep_old
+11210015L
+1.12.1 - (EquipParamGem) Set canMountWep_ReverseHandSword to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: canMountWep_ReverseHandSword: = vanillafield canMountWep_ReverseHandSword
+11210015L
+1.12.1 - (EquipParamGem) Set canMountWep_LightGreatsword to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: canMountWep_LightGreatsword: = vanillafield canMountWep_LightGreatsword
+11210015L
+1.12.1 - (EquipParamGem) Set canMountWep_GreatKatana to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: canMountWep_GreatKatana: = vanillafield canMountWep_GreatKatana
+11210015L
+1.12.1 - (EquipParamGem) Set canMountWep_BeastClaw to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: canMountWep_BeastClaw: = vanillafield canMountWep_BeastClaw
+11210015L
+1.12.1 - (EquipParamGem) Set reserved_canMountWep_0x3d_4 to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: reserved_canMountWep_0x3d_4: = vanillafield reserved_canMountWep_0x3d_4
+11210015L
+1.12.1 - (EquipParamGem) Set reserved2_canMountWep to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: reserved2_canMountWep: = vanillafield reserved2_canMountWep
+11210015L
+1.12.1 - (CutsceneMapIdParam) Set unknown_0x18 to Vanilla v1.12.1 values
+param CutsceneMapIdParam: modified && !added: unknown_0x18: = vanillafield unknown_0x18
+11210015L
+1.12.1 - (CutsceneMapIdParam) Set reserved_2 to Vanilla v1.12.1 values
+param CutsceneMapIdParam: modified && !added: reserved_2: = vanillafield reserved_2
+11210015L
+1.12.1 - (CharaInitParam) Set unknown_0x50 to Vanilla v1.12.1 values
+param CharaInitParam: modified && !added: unknown_0x50: = vanillafield unknown_0x50
+11210015L
+1.12.1 - (CharaInitParam) Set unknown_0x51 to Vanilla v1.12.1 values
+param CharaInitParam: modified && !added: unknown_0x51: = vanillafield unknown_0x51
+11210015L
+1.12.1 - (CharaInitParam) Set pad8 to Vanilla v1.12.1 values
+param CharaInitParam: modified && !added: pad8: = vanillafield pad8
+11210015L
+1.12.1 - (BulletParam) Set unknown_0x98_3 to Vanilla v1.12.1 values
+param BulletParam: modified && !added: unknown_0x98_3: = vanillafield unknown_0x98_3
+11210015L
+1.12.1 - (BulletParam) Set pad to Vanilla v1.12.1 values
+param BulletParam: modified && !added: pad: = vanillafield pad
+11210015L
+1.12.1 - (BulletParam) Set unknown_0xc3_5 to Vanilla v1.12.1 values
+param BulletParam: modified && !added: unknown_0xc3_5: = vanillafield unknown_0xc3_5
+11210015L
+1.12.1 - (BonfireWarpParam) Set dispMask02 to Vanilla v1.12.1 values
+param BonfireWarpParam: modified && !added: dispMask02: = vanillafield dispMask02
+11210015L
+1.12.1 - (BonfireWarpParam) Set pad1 to Vanilla v1.12.1 values
+param BonfireWarpParam: modified && !added: pad1: = vanillafield pad1
+11210015L
+1.12.1 - (AtkParam) Set subCategory3 to Vanilla v1.12.1 values
+param AtkParam: modified && !added: subCategory3: = vanillafield subCategory3
+11210015L
+1.12.1 - (AtkParam) Set subCategory4 to Vanilla v1.12.1 values
+param AtkParam: modified && !added: subCategory4: = vanillafield subCategory4
+11210015L
+1.12.1 - (AtkParam) Set pad7 to Vanilla v1.12.1 values
+param AtkParam: modified && !added: pad7: = vanillafield pad7
+11210015L
+1.12.1 - (AssetGeometryParam) Set unknown_0x3b_7 to Vanilla v1.12.1 values
+param AssetGeometryParam: modified && !added: unknown_0x3b_7: = vanillafield unknown_0x3b_7
+11210015L
+1.12.1 - (AssetGeometryParam) Set unknown_0x120 to Vanilla v1.12.1 values
+param AssetGeometryParam: modified && !added: unknown_0x120: = vanillafield unknown_0x120
+11210015L
+1.12.1 - (AssetGeometryParam) Set unknown_0x121 to Vanilla v1.12.1 values
+param AssetGeometryParam: modified && !added: unknown_0x121: = vanillafield unknown_0x121
+11210015L
+1.12.1 - (AssetGeometryParam) Set unknown_0x122 to Vanilla v1.12.1 values
+param AssetGeometryParam: modified && !added: unknown_0x122: = vanillafield unknown_0x122
+11210015L
+1.12.1 - (AssetGeometryParam) Set unknown_0x123 to Vanilla v1.12.1 values
+param AssetGeometryParam: modified && !added: unknown_0x123: = vanillafield unknown_0x123
+11210015L
+1.12.1 - (AssetGeometryParam) Set unknown_0x124 to Vanilla v1.12.1 values
+param AssetGeometryParam: modified && !added: unknown_0x124: = vanillafield unknown_0x124
+11210015L
+1.12.1 - (AssetGeometryParam) Set unknown_0x125 to Vanilla v1.12.1 values
+param AssetGeometryParam: modified && !added: unknown_0x125: = vanillafield unknown_0x125
+11210015L
+1.12.1 - (AssetGeometryParam) Set Reserve_0 to Vanilla v1.12.1 values
+param AssetGeometryParam: modified && !added: Reserve_0: = vanillafield Reserve_0

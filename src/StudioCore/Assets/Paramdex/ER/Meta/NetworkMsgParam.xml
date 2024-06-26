@@ -46,7 +46,7 @@
     <forceJoinBlack_Npc AltName="NPC - Black Phantom - Invasion" Wiki="For intrusion_A_NPCs" FmgRef="NetworkMessage" />
     <forceJoinBlack_B_Npc AltName="NPC - Black Phantom B - Invasion" Wiki="For intrusion_B_NPCs" FmgRef="NetworkMessage" />
     <forceJoinBlack_C_Npc AltName="NPC - Black Phantom C - Invasion" Wiki="For intrusion_C_NPCs" FmgRef="NetworkMessage" />
-    <pad2 AltName="" IsHidden=""/>
+    <pad2_new AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

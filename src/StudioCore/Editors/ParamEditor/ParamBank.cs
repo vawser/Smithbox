@@ -2487,14 +2487,6 @@ public class ParamBank
         var anyUpgrades = false;
         foreach (var k in vanillaBank.Params.Keys)
         {
-            // Added for ER SOTE due to an issue where upgrading would cause these two params to then not be read correctly post-upgrade
-            // Need to discover actual cause, but for now copy them directly from the vanilla bank
-            if (k == "SignPuddleParam" || k == "PostureControlParam_WepRight")
-            {
-                updatedParams.Add(k, vanillaBank.Params[k]);
-                continue;
-            }
-
             // If the param is completely new, just take it
             if (!oldVanillaParams.ContainsKey(k) || !Params.ContainsKey(k))
             {

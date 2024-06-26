@@ -1323,6 +1323,12 @@ public class ParamEditorScreen : EditorScreen
 
             if (success.Count > 0 || fail.Count > 0)
             {
+                if (fail.Count > 0)
+                {
+                    PlatformUtils.Instance.MessageBox("Unable to perform the following edits:\n" + string.Join('\n', fail), "Regulation upgrade edits", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                /*
                 PlatformUtils.Instance.MessageBox(
                     (success.Count > 0
                         ? "Successfully performed the following edits:\n" + string.Join('\n', success)
@@ -1335,6 +1341,7 @@ public class ParamEditorScreen : EditorScreen
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+                */
             }
 
             UICache.ClearCaches();
