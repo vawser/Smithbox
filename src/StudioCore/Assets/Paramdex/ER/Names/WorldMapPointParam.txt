@@ -459,7 +459,7 @@
 86120205 Siofra River / Nokron - D, Beholder of Death
 86120215 Siofra River / Nokron - Abandoned Merchant
 86120500 Mohgwyn Palace - Imprisoned Merchant
-86120520 Mohgwyn Palace - White Mask Varré
+86120520 Mohgwyn Palace - White Mask Varre
 87200000 Belurat - Hornsent Grandam
 87200100 Enir-Ilim - Needle Knight Leda + Hornsent + Dryleaf Dane
 87200101 Enir-Ilim - Pureblood Knight Ansbach

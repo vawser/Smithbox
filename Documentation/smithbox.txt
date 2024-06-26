@@ -68,6 +68,7 @@ Map Editor:
  - Add "Data Export" action for MSB data: output the MSB information as JSON
  - Implement ER collision (using HKLib)
  - Add "Find Value Instances" for MSB values
+ - Fix select via arrow keys in the Map Scene tree (alias seems to stop it working).
  
 Model Editor:
  - Fix the Model Editor so it saves the FLVERs correctly
@@ -107,6 +108,7 @@ World Map:
  - Add the dungeon icons, add icon radius for the non-open world maps
  - Add support for large/medium/small tile overlays
  - World Map TPF may be unloaded by the map/model editor stuff (add exception for it)
+    - Move World Map textures to separate dictionary so they aren't randomly cleared by the normal ResourceDictionary stuff
  
 #--------------------------------------
 # Notes
@@ -114,7 +116,8 @@ World Map:
 # Issues
 Verify param upgrader works properly (e.g. the new params aren't scuffed in-game)
 - Remove hack with PostureControlParam_WepRight and SignPuddleParam for param upgrader
- 
+
 TalkParam is lagging heavily: due to GenerateEntryGroup
-Move World Map textures to separate dictionary so they aren't randomly cleared by the normal ResourceDictionary stuff
-Fix select via arrow keys in the Map Scene tree (alias seems to stop it working).
+
+PostureControlParam_WepRight
+SignPuddleParam
