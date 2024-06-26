@@ -61,7 +61,7 @@
 420 Oil Pot
 425 Slug - Bullet - Slow
 460 Beast-Repellent Torch Effect
-467 Swarm Pot [Cycle]
+467 Swarm Pot (Cycled)
 470 Gravity - Pull towards Caster
 473 Swarm Pot
 474 Heal - HP Regen
@@ -73,9 +73,9 @@
 490 Rune Arc
 491 Rune Arc
 499 Rune Arc
-500 Hemorrhage [Cycle]
+500 Hemorrhage (Cycled)
 501 Hemorrhage - Presence of Blood
-505 Poison/Scarlet Rot [Cycle]
+505 Poison/Scarlet Rot (Cycled)
 506 Poison/Scarlet Rot - Presence of Rot
 530 [Item] Furlcalling Finger Remedy - Reveal Phantom Signs
 531 [Item] White Cipher Ring - Request Aid
@@ -349,43 +349,43 @@
 1934 [Weapon] Lusat's Glintstone Staff - Effect
 1937 [Weapon] Lion Greatbow
 1938 [Weapon] Serpent Bow
-1939 [Weapon] Serpent Bow [Attack]
-1940 [Weapon] Holy Arrow Anti-Undead
+1939 [Weapon] Serpent Bow (On Attack)
+1940 [Weapon] Arrow - Anti-Undead Effect
 3000 [Item] Full Heal
 3050 [Item] Stanching Boluses
-3051 [Item] Stanching Boluses - Remove Hemorrhage [Chain]
+3051 [Item] Stanching Boluses - Remove Hemorrhage (Chained)
 3055 [Item] Stimulating Boluses
-3056 [Item] Stimulating Boluses - Remove Sleep [Chain]
+3056 [Item] Stimulating Boluses - Remove Sleep (Chained)
 3060 [Item] Neutralizing Boluses
-3061 [Item] Neutralizing Boluses - Remove Poison [Chain]
+3061 [Item] Neutralizing Boluses - Remove Poison (Chained)
 3065 [Item] Clarifying Boluses
-3066 [Item] Clarifying Boluses - Remove Madness [Chain]
+3066 [Item] Clarifying Boluses - Remove Madness (Chained)
 3070 [Item] Preserving Boluses
-3071 [Item] Preserving Boluses - Remove Scarlet Rot [Chain]
+3071 [Item] Preserving Boluses - Remove Scarlet Rot (Chained)
 3090 [Item] Rejuvenating Boluses - Remove Blight
-3091 [Item] Rejuvenating Boluses [Chain]
+3091 [Item] Rejuvenating Boluses (Chained)
 3092 [Item] Thawfrost Boluses
-3093 [Item] Thawfrost Boluses - Remove Frostbite [Chain]
+3093 [Item] Thawfrost Boluses - Remove Frostbite (Chained)
 3115 [Item] Kukri
 3120 [Item] Fetid Pot
-3125 [Item] Swarm of Flies - Hemorrhage [Cycle]
+3125 [Item] Swarm of Flies - Hemorrhage (Cycled)
 3126 [Item] Swarm of Flies - Hemorrhage
 3140 [Item] Freezing Grease - Right
-3141 [Item] Freezing Grease - Right [Attack]
+3141 [Item] Freezing Grease - Right (On Attack)
 3142 [Item] Drawstring Freezing Grease - Right
-3143 [Item] Drawstring Freezing Grease - Right [Attack]
+3143 [Item] Drawstring Freezing Grease - Right (On Attack)
 3144 [Item] Freezing Grease - Left
-3145 [Item] Freezing Grease - Left [Attack]
+3145 [Item] Freezing Grease - Left (On Attack)
 3146 [Item] Drawstring Freezing Grease - Left
-3147 [Item] Drawstring Freezing Grease - Left [Attack]
+3147 [Item] Drawstring Freezing Grease - Left (On Attack)
 3150 [Item] Soporific Grease - Right
-3151 [Item] Soporific Grease - Right [Attack]
+3151 [Item] Soporific Grease - Right (On Attack)
 3152 [Item] Drawstring Soporific Grease - Right
-3153 [Item] Drawstring Soporific Grease - Right [Attack]
+3153 [Item] Drawstring Soporific Grease - Right (On Attack)
 3154 [Item] Soporific Grease - Left
-3155 [Item] Soporific Grease - Left [Attack]
+3155 [Item] Soporific Grease - Left (On Attack)
 3156 [Item] Drawstring Soporific Grease - Left
-3157 [Item] Drawstring Soporific Grease - Left [Attack]
+3157 [Item] Drawstring Soporific Grease - Left (On Attack)
 3160 [Item] Fire Grease - Right
 3161 [Item] Drawstring Fire Grease - Right
 3162 [Item] Fire Grease - Left
@@ -399,25 +399,25 @@
 3172 [Item] Magic Grease - Left
 3173 [Item] Drawstring Magic Grease - Left
 3175 [Item] Poison Grease - Right
-3176 [Item] Poison Grease - Right [Attack]
+3176 [Item] Poison Grease - Right (On Attack)
 3177 [Item] Drawstring Poison Grease - Right
-3178 [Item] Drawstring Poison Grease - Right [Attack]
+3178 [Item] Drawstring Poison Grease - Right (On Attack)
 3179 [Item] Poison Grease - Left
-3180 [Item] Poison Grease - Left [Attack]
+3180 [Item] Poison Grease - Left (On Attack)
 3181 [Item] Drawstring Poison Grease - Left
-3182 [Item] Drawstring Poison Grease - Left [Attack]
+3182 [Item] Drawstring Poison Grease - Left (On Attack)
 3185 [Item] Holy Grease - Right
 3186 [Item] Drawstring Holy Grease - Right
 3187 [Item] Holy Grease - Left
 3188 [Item] Drawstring Holy Grease - Left
 3190 [Item] Blood Grease - Right
-3191 [Item] Blood Grease - Right [Attack]
+3191 [Item] Blood Grease - Right (On Attack)
 3192 [Item] Drawstring Blood Grease - Right
-3193 [Item] Drawstring Blood Grease - Right [Attack]
+3193 [Item] Drawstring Blood Grease - Right (On Attack)
 3194 [Item] Blood Grease - Left
-3195 [Item] Blood Grease - Left [Attack]
+3195 [Item] Blood Grease - Left (On Attack)
 3196 [Item] Drawstring Blood Grease - Left
-3197 [Item] Drawstring Blood Grease - Left [Attack]
+3197 [Item] Drawstring Blood Grease - Left (On Attack)
 3200 [Item] Holy Water Pot
 3240 [Item] Telescope
 3245 [Item] Lantern - Right
@@ -445,13 +445,13 @@
 3287 [Item] Hero's Rune [5]
 3288 [Item] Lord's Rune
 3310 [Item] Rot Grease - Right
-3311 [Item] Rot Grease - Right [Attack]
+3311 [Item] Rot Grease - Right (On Attack)
 3312 [Item] Drawstring Rot Grease - Right
-3313 [Item] Drawstring Rot Grease - Right [Attack]
+3313 [Item] Drawstring Rot Grease - Right (On Attack)
 3314 [Item] Rot Grease - Left
-3315 [Item] Rot Grease - Left [Attack]
+3315 [Item] Rot Grease - Left (On Attack)
 3316 [Item] Drawstring Rot Grease - Left
-3317 [Item] Drawstring Rot Grease - Left [Attack]
+3317 [Item] Drawstring Rot Grease - Left (On Attack)
 3360 [Item] Warming Stone
 3375 [Item] Holy Water Grease - Right
 3376 [Item] Holy Water Grease - Left
@@ -467,46 +467,46 @@
 3507 [Tear] Opaline Bubbletear
 3508 [Tear] Opaline Bubbletear
 3512 [Tear] Crimson Bubbletear
-3513 [Tear] Crimson Bubbletear [Chain]
+3513 [Tear] Crimson Bubbletear (Chained)
 3515 [Tear] Strength-knot Crystal Tear
 3516 [Tear] Dexterity-knot Crystal Tear
 3517 [Tear] Intelligence-knot Crystal Tear
 3518 [Tear] Faith-knot Crystal Tear
 3519 [Tear] Leaden Hardtear
 3550 [Tear] Thorny Cracked Tear
-3551 [Tear] Thorny Cracked Tear [Cycle]
-3552 [Tear] Thorny Cracked Tear [Cycle]
-3553 [Tear] Thorny Cracked Tear [Cycle]
-3554 [Tear] Thorny Cracked Tear [Chain]
-3555 [Tear] Thorny Cracked Tear [Chain]
-3556 [Tear] Thorny Cracked Tear [Chain]
-3557 [Tear] Thorny Cracked Tear [Chain]
-3558 [Tear] Thorny Cracked Tear [Triggered]
-3559 [Tear] Thorny Cracked Tear [Triggered]
-3560 [Tear] Thorny Cracked Tear [Triggered]
-3561 [Tear] Thorny Cracked Tear [Triggered]
+3551 [Tear] Thorny Cracked Tear (Cycled)
+3552 [Tear] Thorny Cracked Tear (Cycled)
+3553 [Tear] Thorny Cracked Tear (Cycled)
+3554 [Tear] Thorny Cracked Tear (Chained)
+3555 [Tear] Thorny Cracked Tear (Chained)
+3556 [Tear] Thorny Cracked Tear (Chained)
+3557 [Tear] Thorny Cracked Tear (Chained)
+3558 [Tear] Thorny Cracked Tear (Triggered on State Info)
+3559 [Tear] Thorny Cracked Tear (Triggered on State Info)
+3560 [Tear] Thorny Cracked Tear (Triggered on State Info)
+3561 [Tear] Thorny Cracked Tear (Triggered on State Info)
 3580 [Tear] Crimsonwhorl Bubbletear
-3581 [Tear] Crimsonwhorl Bubbletear [Chain]
-3582 [Tear] Crimsonwhorl Bubbletear [Chain]
-3583 [Tear] Crimsonwhorl Bubbletear [Cycle]
-3584 [Tear] Crimsonwhorl Bubbletear [Chain]
+3581 [Tear] Crimsonwhorl Bubbletear (Chained)
+3582 [Tear] Crimsonwhorl Bubbletear (Chained)
+3583 [Tear] Crimsonwhorl Bubbletear (Cycled)
+3584 [Tear] Crimsonwhorl Bubbletear (Chained)
 3600 [Tear] Lucent Baldachin's Blessing
 3603 [Tear] Speckled Hardtear
-3604 [Tear] Speckled Hardtear [Cycle]
-3605 [Tear] Speckled Hardtear [Chain]
-3606 [Tear] Speckled Hardtear [Chain]
-3607 [Tear] Speckled Hardtear [Chain]
-3608 [Tear] Speckled Hardtear [Chain]
-3609 [Tear] Speckled Hardtear [Chain]
-3610 [Tear] Speckled Hardtear [Chain]
-3611 [Tear] Speckled Hardtear [Chain]
-3612 [Tear] Speckled Hardtear - Remove Hemorrhage [Cycle]
-3613 [Tear] Speckled Hardtear - Remove Sleep [Cycle]
-3614 [Tear] Speckled Hardtear - Remove Poison [Cycle]
-3615 [Tear] Speckled Hardtear - Remove Madness [Cycle]
-3616 [Tear] Speckled Hardtear - Remove Scarlet Rot [Cycle]
-3617 [Tear] Speckled Hardtear - Remove Frostbite [Cycle]
-3618 [Tear] Speckled Hardtear - Remove Blight [Cycle]
+3604 [Tear] Speckled Hardtear (Cycled)
+3605 [Tear] Speckled Hardtear (Chained)
+3606 [Tear] Speckled Hardtear (Chained)
+3607 [Tear] Speckled Hardtear (Chained)
+3608 [Tear] Speckled Hardtear (Chained)
+3609 [Tear] Speckled Hardtear (Chained)
+3610 [Tear] Speckled Hardtear (Chained)
+3611 [Tear] Speckled Hardtear (Chained)
+3612 [Tear] Speckled Hardtear - Remove Hemorrhage (Cycled)
+3613 [Tear] Speckled Hardtear - Remove Sleep (Cycled)
+3614 [Tear] Speckled Hardtear - Remove Poison (Cycled)
+3615 [Tear] Speckled Hardtear - Remove Madness (Cycled)
+3616 [Tear] Speckled Hardtear - Remove Scarlet Rot (Cycled)
+3617 [Tear] Speckled Hardtear - Remove Frostbite (Cycled)
+3618 [Tear] Speckled Hardtear - Remove Blight (Cycled)
 3720 [Item] Remembrance of the Grafted
 3721 [Item] Remembrance of the Starscourge
 3722 [Item] Remembrance of the Omen King
@@ -853,12 +853,12 @@
 10010 Dominula Celebrant - Bullet
 10165 Dragon-faced Flamethrower - Bullet
 10317 Fallen Hawks Soldier - Bullet
-10318 Fallen Hawks Soldier - Bullet [Chain]
+10318 Fallen Hawks Soldier - Bullet (Chained)
 10535 PLAN_SP_EFFECT_BUDDY_AGGRESSIVE_DEMIHUMAN
 10631 Mohg Phase 2 - Animation Offset +1m
 10665 [HKS] Unk Event 6001 Event Action Not Possible
 10690 Mohg - Bullet
-10691 Mohg - Bullet [Cycle]
+10691 Mohg - Bullet (Cycled)
 10700 Animation Offset +1m - Unknown
 10945 Warhawk - Bullet
 11010 Tarnished's Furled Finger
@@ -913,7 +913,7 @@
 14596 Rennala 2 - Bullet Magic DEF Down
 14898 Ancient Dragon - Lich Close Trigger Shock
 15321 Tibia Mariner - Bullet
-15322 Tibia Mariner - Bullet [Chain]
+15322 Tibia Mariner - Bullet (Chained)
 15452 Godskin Apostle - Sleep Awake
 15467 Godskin Apostle - Lifedrain
 15511 Godskin Noble
@@ -947,12 +947,19 @@
 18432 Malenia: Rot 120
 18433 Malenia: Rot 60
 18454 Malenia - Bullet
+18671 [Weapon] Grafted Dragon
 18699 Unknown FFX
 18731 Melina - HP Recovery
 19683 Miquella's Great Rune
-19981 Priestess Heart
-19985 Verdigris Discus
-19990 Sharpshot Talisman
+19870 [Weapon] Euporia
+19871 [Weapon] Euporia
+19874 [Weapon] Euporia (Triggered by Accumulator)
+19875 [Weapon] Euporia (Triggered by Accumulator)
+19975 [Sorcery] Miriam's Vanishing
+19980 [Item] Rock Heart
+19981 [Item] Priestess Heart
+19985 [Talisman] Verdigris Discus
+19990 [Talisman] Sharpshot Talisman
 20000 NPC: Poison
 20001 NPC: Poison
 20002 NPC: Poison
@@ -1272,15 +1279,15 @@
 102008 [Tear] Deflecting Hardtear
 102009 [Tear] Deflecting Hardtear
 102310 [Item] Eternal Sleep Grease - Right
-102311 [Item] Eternal Sleep Grease - Right [Attack]
+102311 [Item] Eternal Sleep Grease - Right (On Attack)
 102312 [Item] Drawstring Eternal Sleep Grease - Right
-102313 [Item] Drawstring Eternal Sleep Grease - Right [Attack]
+102313 [Item] Drawstring Eternal Sleep Grease - Right (On Attack)
 102314 [Item] Eternal Sleep Grease - Left
-102315 [Item] Eternal Sleep Grease - Left [Attack]
+102315 [Item] Eternal Sleep Grease - Left (On Attack)
 102316 [Item] Drawstring Eternal Sleep Grease - Left
-102317 [Item] Drawstring Eternal Sleep Grease - Left [Attack]
+102317 [Item] Drawstring Eternal Sleep Grease - Left (On Attack)
 102350 [Item] Thiollier's Concoction
-102351 [Item] Thiollier's Concoction [Chain]
+102351 [Item] Thiollier's Concoction (Chained)
 102360 [Tear] Viridian Hidden Tear
 102361 [Tear] Viridian Hidden Tear
 102362 [Tear] Viridian Hidden Tear
@@ -3023,14 +3030,14 @@
 310310 [Talisman] Arsenal Charm +1
 310320 [Talisman] Great-Jar's Arsenal
 310400 [Talisman] Erdtree's Favor
-310401 [Talisman] Erdtree's Favor [Cycle]
-310402 [Talisman] Erdtree's Favor [Cycle]
+310401 [Talisman] Erdtree's Favor (Cycled)
+310402 [Talisman] Erdtree's Favor (Cycled)
 310410 [Talisman] Erdtree's Favor +1
-310411 [Talisman] Erdtree's Favor +1 [Talisman] [Cycle]
-310412 [Talisman] Erdtree's Favor +1 [Talisman] [Cycle]
+310411 [Talisman] Erdtree's Favor +1 (Cycled)
+310412 [Talisman] Erdtree's Favor +1 (Cycled)
 310420 [Talisman] Erdtree's Favor +2
-310421 [Talisman] Erdtree's Favor +2 [Talisman] [Cycle]
-310422 [Talisman] Erdtree's Favor +2 [Talisman] [Cycle]
+310421 [Talisman] Erdtree's Favor +2 (Cycled)
+310422 [Talisman] Erdtree's Favor +2 (Cycled)
 310500 [Talisman] Radagon's Scarseal
 310510 [Talisman] Radagon's Soreseal
 310600 [Talisman] Starscourge Heirloom
@@ -3057,10 +3064,10 @@
 312300 [Talisman] Warrior Jar Shard
 312310 [Talisman] Shard of Alexander
 312500 [Talisman] Millicent's Prosthesis
-312501 [Talisman] Millicent's Prosthesis [Conditional]
-312502 [Talisman] Millicent's Prosthesis [Conditional]
-312503 [Talisman] Millicent's Prosthesis [Conditional]
-312504 [Talisman] Millicent's Prosthesis [Conditional]
+312501 [Talisman] Millicent's Prosthesis (Triggered by Accumulator)
+312502 [Talisman] Millicent's Prosthesis (Triggered by Accumulator)
+312503 [Talisman] Millicent's Prosthesis (Triggered by Accumulator)
+312504 [Talisman] Millicent's Prosthesis (Triggered by Accumulator)
 312505 [Talisman] Millicent's Prosthesis - Boost - Stage 1
 312506 [Talisman] Millicent's Prosthesis - Boost - Stage 2
 312507 [Talisman] Millicent's Prosthesis - Boost - Stage 3
@@ -3074,17 +3081,17 @@
 320600 [Talisman] Spear Talisman
 320700 [Talisman] Hammer Talisman
 320800 [Talisman] Winged Sword Insignia
-320801 [Talisman] Winged Sword Insignia [Conditional]
-320802 [Talisman] Winged Sword Insignia [Conditional]
-320803 [Talisman] Winged Sword Insignia [Conditional]
+320801 [Talisman] Winged Sword Insignia (Triggered by Accumulator)
+320802 [Talisman] Winged Sword Insignia (Triggered by Accumulator)
+320803 [Talisman] Winged Sword Insignia (Triggered by Accumulator)
 320804 [Talisman] Winged Sword Insignia - Boost - Stage 1
 320805 [Talisman] Winged Sword Insignia - Boost - Stage 2
 320806 [Talisman] Winged Sword Insignia - Boost - Stage 3
 320807 [Talisman] Winged Sword Insignia - Boost - Stage 4
 320810 [Talisman] Rotten Winged Sword Insignia
-320811 [Talisman] Rotten Winged Sword Insignia [Conditional]
-320812 [Talisman] Rotten Winged Sword Insignia [Conditional]
-320813 [Talisman] Rotten Winged Sword Insignia [Conditional]
+320811 [Talisman] Rotten Winged Sword Insignia (Triggered by Accumulator)
+320812 [Talisman] Rotten Winged Sword Insignia (Triggered by Accumulator)
+320813 [Talisman] Rotten Winged Sword Insignia (Triggered by Accumulator)
 320814 [Talisman] Rotten Winged Sword Insignia - Boost - Stage 1
 320815 [Talisman] Rotten Winged Sword Insignia - Boost - Stage 2
 320816 [Talisman] Rotten Winged Sword Insignia - Boost - Stage 3
@@ -3097,9 +3104,9 @@
 321400 [Talisman] Lance Talisman
 321500 [Talisman] Arrow's Sting Talisman
 321600 [Talisman] Lord of Blood's Exultation
-321601 [Talisman] Lord of Blood's Exultation [Cycle]
+321601 [Talisman] Lord of Blood's Exultation (Cycled)
 321700 [Talisman] Kindred of Rot's Exultation
-321701 [Talisman] Kindred of Rot's Exultation [Cycle]
+321701 [Talisman] Kindred of Rot's Exultation (Cycled)
 321800 [Talisman] Claw Talisman
 321900 [Talisman] Roar Medallion
 321901 [Talisman] Roar Medallion
@@ -3113,7 +3120,7 @@
 330600 [Talisman] Old Lord's Talisman
 330700 [Talisman] Radagon Icon
 330800 [Talisman] Primal Glintstone Blade
-330801 [Talisman] Primal Glintstone Blade [Cycle]
+330801 [Talisman] Primal Glintstone Blade (Cycled)
 330900 [Talisman] Godfrey Icon
 340000 [Talisman] Dragoncrest Shield Talisman
 340010 [Talisman] Dragoncrest Shield Talisman +1
@@ -3136,7 +3143,7 @@
 340520 [Talisman] Pearldrake Talisman +2
 340600 [Talisman] Crucible Scale Talisman
 340700 [Talisman] Crucible Feather Talisman
-340701 [Talisman] Crucible Feather Talisman [Cycle]
+340701 [Talisman] Crucible Feather Talisman (Cycled)
 340800 [Talisman] Blue-Feathered Branchsword
 340900 [Talisman] Ritual Shield Talisman
 341000 [Talisman] Greatshield Talisman
@@ -3145,15 +3152,15 @@
 350100 [Talisman] Cerulean Seed Talisman
 350200 [Talisman] Blessed Dew Talisman
 350300 [Talisman] Taker's Cameo
-350301 [Talisman] Taker's Cameo [Kill]
+350301 [Talisman] Taker's Cameo (On Enemy Kill)
 350400 [Talisman] Godskin Swaddling Cloth
-350401 [Talisman] Godskin Swaddling Cloth [Conditional]
+350401 [Talisman] Godskin Swaddling Cloth (Triggered by Accumulator)
 350500 [Talisman] Assassin's Crimson Dagger
-350501 [Talisman] Assassin's Crimson Dagger [Triggered]
-350502 [Talisman] Assassin's Crimson Dagger [Triggered]
+350501 [Talisman] Assassin's Crimson Dagger (Triggered on State Info)
+350502 [Talisman] Assassin's Crimson Dagger (Triggered on State Info)
 350600 [Talisman] Assassin's Cerulean Dagger
-350601 [Talisman] Assassin's Cerulean Dagger [Triggered]
-350602 [Talisman] Assassin's Cerulean Dagger [Triggered]
+350601 [Talisman] Assassin's Cerulean Dagger (Triggered on State Info)
+350602 [Talisman] Assassin's Cerulean Dagger (Triggered on State Info)
 360000 [Talisman] Crepus's Vial
 360100 [Talisman] Concealing Veil
 360200 [Talisman] Carian Filigreed Crest
@@ -3165,12 +3172,12 @@
 360900 [Talisman] Host's Trick-Mirror
 361000 [Talisman] Entwining Umbilical Cord
 361100 [Talisman] Ancestral Spirit's Horn
-361101 [Talisman] Ancestral Spirit's Horn [Kill]
+361101 [Talisman] Ancestral Spirit's Horn (On Enemy Kill)
 500135 [Item] Phantom Great Rune
 500136 [Item] Phantom Great Rune
-500137 [Item] Phantom Great Rune [Kill]
+500137 [Item] Phantom Great Rune (On Enemy Kill)
 500138 [Item] Phantom Great Rune
-500139 [Item] Phantom Great Rune [Cycle]
+500139 [Item] Phantom Great Rune (Cycled)
 500140 [Item] Phantom Great Rune
 500351 [Item] Sacred Order Pot
 500360 [Item] Freezing Pot
@@ -3202,19 +3209,19 @@
 501010 [Item] Flask of Crimson Tears +10
 501011 [Item] Flask of Crimson Tears +11
 501012 [Item] Flask of Crimson Tears +12
-501025 [Item] Flask of Crimson Tears [Chain]
-501026 [Item] Flask of Crimson Tears +1 [Item] [Chain]
-501027 [Item] Flask of Crimson Tears +2 [Item] [Chain]
-501028 [Item] Flask of Crimson Tears +3 [Item] [Chain]
-501029 [Item] Flask of Crimson Tears +4 [Item] [Chain]
-501030 [Item] Flask of Crimson Tears +5 [Item] [Chain]
-501031 [Item] Flask of Crimson Tears +6 [Item] [Chain]
-501032 [Item] Flask of Crimson Tears +7 [Item] [Chain]
-501033 [Item] Flask of Crimson Tears +8 [Item] [Chain]
-501034 [Item] Flask of Crimson Tears +9 [Item] [Chain]
-501035 [Item] Flask of Crimson Tears +10 [Item] [Chain]
-501036 [Item] Flask of Crimson Tears +11 [Item] [Chain]
-501037 [Item] Flask of Crimson Tears +12 [Item] [Chain]
+501025 [Item] Flask of Crimson Tears (Chained)
+501026 [Item] Flask of Crimson Tears +1 (Chained)
+501027 [Item] Flask of Crimson Tears +2 (Chained)
+501028 [Item] Flask of Crimson Tears +3 (Chained)
+501029 [Item] Flask of Crimson Tears +4 (Chained)
+501030 [Item] Flask of Crimson Tears +5 (Chained)
+501031 [Item] Flask of Crimson Tears +6 (Chained)
+501032 [Item] Flask of Crimson Tears +7 (Chained)
+501033 [Item] Flask of Crimson Tears +8 (Chained)
+501034 [Item] Flask of Crimson Tears +9 (Chained)
+501035 [Item] Flask of Crimson Tears +10 (Chained)
+501036 [Item] Flask of Crimson Tears +11 (Chained)
+501037 [Item] Flask of Crimson Tears +12 (Chained)
 501050 [Item] Flask of Cerulean Tears
 501051 [Item] Flask of Cerulean Tears +1
 501052 [Item] Flask of Cerulean Tears +2
@@ -3229,21 +3236,21 @@
 501061 [Item] Flask of Cerulean Tears +11
 501062 [Item] Flask of Cerulean Tears +12
 501075 [Item] Flask of Crimson Tears - Friendly Heal
-501076 [Item] Flask of Crimson Tears +1 [Item] - Friendly Heal
-501077 [Item] Flask of Crimson Tears +2 [Item] - Friendly Heal
-501078 [Item] Flask of Crimson Tears +3 [Item] - Friendly Heal
-501079 [Item] Flask of Crimson Tears +4 [Item] - Friendly Heal
-501080 [Item] Flask of Crimson Tears +5 [Item] - Friendly Heal
-501081 [Item] Flask of Crimson Tears +6 [Item] - Friendly Heal
-501082 [Item] Flask of Crimson Tears +7 [Item] - Friendly Heal
-501083 [Item] Flask of Crimson Tears +8 [Item] - Friendly Heal
-501084 [Item] Flask of Crimson Tears +9 [Item] - Friendly Heal
-501085 [Item] Flask of Crimson Tears +10 [Item] - Friendly Heal
-501086 [Item] Flask of Crimson Tears +11 [Item] - Friendly Heal
-501087 [Item] Flask of Crimson Tears +12 [Item] - Friendly Heal
+501076 [Item] Flask of Crimson Tears +1 - Friendly Heal
+501077 [Item] Flask of Crimson Tears +2 - Friendly Heal
+501078 [Item] Flask of Crimson Tears +3 - Friendly Heal
+501079 [Item] Flask of Crimson Tears +4 - Friendly Heal
+501080 [Item] Flask of Crimson Tears +5 - Friendly Heal
+501081 [Item] Flask of Crimson Tears +6 - Friendly Heal
+501082 [Item] Flask of Crimson Tears +7 - Friendly Heal
+501083 [Item] Flask of Crimson Tears +8 - Friendly Heal
+501084 [Item] Flask of Crimson Tears +9 - Friendly Heal
+501085 [Item] Flask of Crimson Tears +10 - Friendly Heal
+501086 [Item] Flask of Crimson Tears +11 - Friendly Heal
+501087 [Item] Flask of Crimson Tears +12 - Friendly Heal
 501220 [Item] Deathsbane Jerky
 501235 [Item] Raw Meat Dumpling
-501236 [Item] Raw Meat Dumpling [Chain]
+501236 [Item] Raw Meat Dumpling (Chained)
 501290 [Item] Starlight Shards
 501310 [Item] Immunizing White Cured Meat
 501320 [Item] Invigorating White Cured Meat
@@ -3252,19 +3259,20 @@
 501350 [Item] Deathsbane White Jerky
 501690 [Item] Shield Grease - Right
 501691 [Item] Shield Grease - Left
-501692 [Item] Shield Grease [Cycle]
+501692 [Item] Shield Grease (Cycled)
 501720 [Item] Poisonbone Dart
 501840 [Item] Poisoned Stone
 501841 [Item] Poisoned Stone Clump
 502100 [Item] Soft Cotton
 502102 [Item] Soft Cotton
 502120 [Item] Soap
-502121 [Item] Soap [Chain]
-502122 [Item] Soap [Chain]
-502160 [Item] Pureblood Knight's Medal [Chain]
+502121 [Item] Soap (Chained)
+502122 [Item] Soap (Chained)
+502160 [Item] Pureblood Knight's Medal (Chained)
 502161 [Item] Pureblood Knight's Medal
 502190 [Item] Miquella's Needle
 503040 [Item] Mimic's Veil
+503041 [Item] Mimic's Veil
 503311 [Item] Frenzyflame Stone - Bullet - Heal
 503312 [Item] Frenzyflame Stone - Heal
 503313 [Item] Frenzyflame Stone - Madness Targeting
@@ -3273,18 +3281,18 @@
 503316 [Item] Frenzyflame Stone
 503317 [Item] Frenzyflame Stone - Bullet
 503320 [Item] Scriptstone
-503321 [Item] Scriptstone [Cycle]
+503321 [Item] Scriptstone (Cycled)
 503350 [Item] Bewitching Branch
 503355 [Item] Baldachin's Blessing - Used
-503356 [Item] Baldachin's Blessing - Used [Cycle]
+503356 [Item] Baldachin's Blessing - Used (Cycled)
 503359 [Item] Baldachin's Blessing - Remove Held Debuff
 503360 [Item] Baldachin's Blessing - Held Debuff
 503500 [Item] Uplifting Aromatic
 503501 [Item] Uplifting Aromatic
 503520 [Item] Ironjar Aromatic
-503521 [Item] Ironjar Aromatic [Cycle]
-503522 [Item] Ironjar Aromatic [Cycle]
-503523 [Item] Ironjar Aromatic [Cycle]
+503521 [Item] Ironjar Aromatic (Cycled)
+503522 [Item] Ironjar Aromatic (Cycled)
+503523 [Item] Ironjar Aromatic (Cycled)
 503529 [Item] Ironjar Aromatic
 503580 [Item] Poison Spraymist
 503610 [Item] Acid Spraymist
@@ -3294,7 +3302,7 @@
 511012 [Tear] Winged Crystal Tear
 511014 [Tear] Spiked Cracked Tear
 511015 [Tear] Windy Crystal Tear
-511016 [Tear] Windy Crystal Tear [Cycle]
+511016 [Tear] Windy Crystal Tear (Cycled)
 511019 [Tear] Twiggy Cracked Tear
 511026 [Tear] Stonebarb Cracked Tear
 511027 [Tear] Purifying Crystal Tear
@@ -3303,20 +3311,20 @@
 511030 [Tear] Lightning-Shrouding Cracked Tear
 511031 [Tear] Holy-Shrouding Cracked Tear
 511060 [Tear] Cerulean Hidden Tear
-511061 [Tear] Cerulean Hidden Tear [Cycle]
-511062 [Tear] Cerulean Hidden Tear [Cycle]
+511061 [Tear] Cerulean Hidden Tear (Cycled)
+511062 [Tear] Cerulean Hidden Tear (Cycled)
 511070 [Tear] Ruptured Crystal Tear
-511071 [Tear] Ruptured Crystal Tear [Cycle]
-511072 [Tear] Ruptured Crystal Tear [Chain]
-511073 [Tear] Ruptured Crystal Tear [Chain]
-511074 [Tear] Ruptured Crystal Tear [Chain]
-511075 [Tear] Ruptured Crystal Tear [Chain]
-511076 [Tear] Ruptured Crystal Tear [Chain]
-511077 [Tear] Ruptured Crystal Tear [Chain]
+511071 [Tear] Ruptured Crystal Tear (Cycled)
+511072 [Tear] Ruptured Crystal Tear (Chained)
+511073 [Tear] Ruptured Crystal Tear (Chained)
+511074 [Tear] Ruptured Crystal Tear (Chained)
+511075 [Tear] Ruptured Crystal Tear (Chained)
+511076 [Tear] Ruptured Crystal Tear (Chained)
+511077 [Tear] Ruptured Crystal Tear (Chained)
 511078 [Tear] Ruptured Crystal Tear
-511079 [Tear] Ruptured Crystal Tear [Chain]
-511080 [Tear] Ruptured Crystal Tear [Chain]
-511081 [Tear] Ruptured Crystal Tear [Chain]
+511079 [Tear] Ruptured Crystal Tear (Chained)
+511080 [Tear] Ruptured Crystal Tear (Chained)
+511081 [Tear] Ruptured Crystal Tear (Chained)
 530007 [HKS] Goods Stamina Cost (Throwing Knife, Wraith Calling Bell)
 530012 [HKS] Goods Stamina Cost (Throw, Aromatics, others)
 1413000 [Sorcery] Terra Magicus
@@ -3329,7 +3337,7 @@
 1443101 [Sorcery] Adula's Moonblade
 1446000 [Sorcery] Scholar's Armament
 1447000 [Sorcery] Scholar's Shield
-1447001 [Sorcery] Scholar's Shield [Cycle]
+1447001 [Sorcery] Scholar's Shield (Cycled)
 1448000 [Sorcery] Lucidity
 1448001 [Sorcery] Lucidity
 1448002 [Sorcery] Lucidity
@@ -3369,12 +3377,12 @@
 1627000 [Incantation] Black Flame's Protection
 1627001 [Incantation] Black Flame's Protection
 1630000 [Incantation] Bloodflame Talons (Self)
-1630001 [Incantation] Bloodflame Talons [Cycle]
+1630001 [Incantation] Bloodflame Talons (Cycled)
 1631000 [Incantation] Bloodboon (Self)
-1631001 [Incantation] Bloodboon [Cycle]
+1631001 [Incantation] Bloodboon (Cycled)
 1632000 [Incantation] Bloodflame Blade (Self)
-1632001 [Incantation] Bloodflame Blade [Cycle]
-1632002 [Incantation] Bloodflame Blade [Cycle]
+1632001 [Incantation] Bloodflame Blade (Cycled)
+1632002 [Incantation] Bloodflame Blade (Cycled)
 1633000 [Incantation] Barrier of Gold
 1634000 [Incantation] Protection of the Erdtree
 1640000 [Incantation] Rejection
@@ -3414,12 +3422,12 @@
 1649000 [Incantation] Lord's Divine Fortification
 1650000 [Sorcery] Night Maiden's Mist
 1651000 [Incantation] Assassin's Approach
-1651001 [Incantation] Assassin's Approach [Cycle]
+1651001 [Incantation] Assassin's Approach (Cycled)
 1651002 [Incantation] Assassin's Approach
 1653000 [Incantation] Darkness
-1653001 [Incantation] Darkness [Chain]
+1653001 [Incantation] Darkness (Chained)
 1660000 [Incantation] Golden Vow
-1660001 [Incantation] Golden Vow [Cycle]
+1660001 [Incantation] Golden Vow (Cycled)
 1660002 [Incantation] Golden Vow
 1673000 [Incantation] Law of Regression
 1673001 [Incantation] Law of Regression
@@ -3452,17 +3460,17 @@
 1673033 [Incantation] Law of Regression
 1673034 [Incantation] Law of Regression
 1674000 [Incantation] Immutable Shield
-1674001 [Incantation] Immutable Shield [Cycle]
+1674001 [Incantation] Immutable Shield (Cycled)
 1674002 [Incantation] Immutable Shield
 1675000 [Incantation] Litany of Proper Death
 1676000 [Incantation] Law of Causality
-1676005 [Incantation] Law of Causality [Chain]
-1676006 [Incantation] Law of Causality [Chain]
-1676007 [Incantation] Law of Causality [Chain]
-1676008 [Incantation] Law of Causality [Chain]
-1676009 [Incantation] Law of Causality [Chain]
+1676005 [Incantation] Law of Causality (Chained)
+1676006 [Incantation] Law of Causality (Chained)
+1676007 [Incantation] Law of Causality (Chained)
+1676008 [Incantation] Law of Causality (Chained)
+1676009 [Incantation] Law of Causality (Chained)
 1676010 [Incantation] Law of Causality
-1676011 [Incantation] Law of Causality [Chain]
+1676011 [Incantation] Law of Causality (Chained)
 1677000 [Incantation] Order's Blade
 1678000 [Incantation] Order Healing
 1678001 [Incantation] Order Healing
@@ -3475,9 +3483,9 @@
 1696000 [Incantation] Electrify Armament
 1697000 [Incantation] Vyke's Dragonbolt
 1697001 [Incantation] Vyke's Dragonbolt
-1697002 [Incantation] Vyke's Dragonbolt [Cycle]
+1697002 [Incantation] Vyke's Dragonbolt (Cycled)
 1697100 [Incantation] Dragonbolt Blessing
-1697101 [Incantation] Dragonbolt Blessing [Cycle]
+1697101 [Incantation] Dragonbolt Blessing (Cycled)
 1702000 [Incantation] Dragonice (Self)
 1702100 [Incantation] Borealis's Mist (Self)
 1703000 [Incantation] Rotten Breath (Self)
@@ -3512,20 +3520,20 @@
 5010601 [Weapon] Celebrant's Sickle - Icon
 5011000 [Weapon] Cinquedea - Boost Incantation Power
 5031400 [Weapon] Blasphemous Blade - Restore HP on Kill
-5031401 [Weapon] Blasphemous Blade [Kill]
+5031401 [Weapon] Blasphemous Blade (On Enemy Kill)
 5031600 [Weapon] Sword of Milos - Restore FP on Kill
-5031601 [Weapon] Sword of Milos [Kill]
+5031601 [Weapon] Sword of Milos (On Enemy Kill)
 5071100 [Weapon] Serpent-God's Curved Sword - Restore HP on Kill
-5071101 [Weapon] Serpent-God's Curved Sword [Kill]
+5071101 [Weapon] Serpent-God's Curved Sword (On Enemy Kill)
 5120100 [Weapon] Greathorn Hammer - Restore HP on Kill
-5120101 [Weapon] Greathorn Hammer [Kill]
+5120101 [Weapon] Greathorn Hammer (On Enemy Kill)
 5121300 [Weapon] Celebrant's Skull - Rune Gain on Hit
 5121800 [Weapon] Great Stars - Restore HP on Hit
 5121801 [Weapon] Great Stars - Restore HP on Hit
 5140600 [Weapon] Celebrant's Cleaver - Rune Gain on Hit
 5141000 [Weapon] Highland Axe - Enhance Roar/Breath Attack
 5141100 [Weapon] Sacrificial Axe - Restore FP on Kill
-5141101 [Weapon] Sacrificial Axe [Kill]
+5141101 [Weapon] Sacrificial Axe (On Enemy Kill)
 5151200 [Weapon] Butchering Knife - Restore HP on Hit
 5151201 [Weapon] Butchering Knife - Icon
 5160400 [Weapon] Cleanrot Spear - Raise Immunity
@@ -3540,7 +3548,7 @@
 5301900 [Weapon] Spiralhorn Shield - Raise Immunity Robustness and Focus
 5302000 [Weapon] Coil Shield - Raise Immunity
 5310900 [Weapon] Twinbird Kite Shield - Boost Absorption and Damage at Low HP
-5310901 [Weapon] Twinbird Kite Shield [Cycle]
+5310901 [Weapon] Twinbird Kite Shield (Cycled)
 5311400 [Weapon] Great Turtle Shell - Boost Stamina Recovery
 5311700 [Weapon] Shield of the Guilty - Raise Focus
 5321400 [Weapon] Icon Shield - Grant HP Restoration
@@ -3661,6 +3669,47 @@
 6201001 [Armor] Mushroom Crown
 6202000 [Armor] Black Dumpling
 6202001 [Armor] Black Dumpling
+6500010 [Armor] Leda's Armor
+6500011 [Armor] Leda's Armor (Cycled)
+6502000 [Armor] Pelt of Ralva
+6503000 [Armor] Thiollier's Mask
+6503001 [Armor] Thiollier's Garb
+6506000 [Armor] High Priest Hat
+6506001 [Armor] High Priest Hat (Cycled)
+6506210 [Armor] Finger Robe
+6507000 [Armor] Braided Cord Robe
+6508000 [Armor] Dancer's Armor Piece
+6511000 [Armor] Wise Man's Mask
+6511010 [Armor] Ansbach's Attire/Manchettes/Boots
+6516000 [Armor] Rakshasa Armor Piece
+6516001 [Armor] Rakshasa Armor Piece (Cycled)
+6518000 [Armor] Fire Knight Helm
+6518001 [Armor] Fire Knight Helm (Cycled)
+6518002 [Armor] Fire Knight Armor
+6518010 [Armor] Fire Knight Armor (Cycled)
+6518200 [Armor] Death Mask Helm
+6518300 [Armor] Winged Serpent Helm
+6518400 [Armor] Salza's Hood
+6520000 [Armor] Death Knight Armor Piece
+6520001 [Armor] Death Knight Armor Piece (Cycled)
+6521000 [Armor] Curseblade Mask
+6521001 [Armor] Curseblade Mask (Cycled)
+6522000 [Armor] Messmer's Helm
+6522001 [Armor] Messmer's Helm
+6523000 [Armor] Gravebird Helm
+6523010 [Armor] Gravebird's Blackquill Armor
+6525000 [Armor] Horned Warrior Helm
+6525200 [Armor] Divine Beast Helm
+6525201 [Armor] Divine Beast Helm (Cycled)
+6525300 [Armor] Divine Bird Helm
+6525301 [Armor] Divine Bird Helm (Cycled)
+6525330 [Armor] Divine Bird Warrior Greaves
+6527200 [Armor] Circlet of Light
+6529000 [Armor] Divine Beast Head
+6530000 [Armor] St. Trina's Blossom
+6531000 [Armor] Crucible Hammer-Helm
+6532000 [Armor] Greatjar
+6533000 [Armor] Imp Head (Lion)
 20000100 Scadutree Fragment: 0
 20000101 Scadutree Fragment: 1
 20000102 Scadutree Fragment: 2
@@ -3999,14 +4048,14 @@
 20380300 [Talisman] Shattered Stone Talisman
 20380400 [Talisman] Two-Handed Sword Talisman
 20380500 [Talisman] Crusade Insignia
-20380501 [Talisman] Crusade Insignia - On Kill
+20380501 [Talisman] Crusade Insignia (On Enemy Kill)
 20380600 [Talisman] Aged One's Exultation
-20380601 [Talisman] Aged One's Exultation - On Kill
+20380601 [Talisman] Aged One's Exultation (On Enemy Kill)
 20380700 [Talisman] Arrow's Soaring Sting Talisman
-20380701 [Talisman] Arrow's Soaring Sting Talisman - On Kill
+20380701 [Talisman] Arrow's Soaring Sting Talisman (On Enemy Kill)
 20380900 [Talisman] Pearl Shield Talisman
-20380901 [Talisman] Pearl Shield Talisman [Cycle]
-20380902 [Talisman] Pearl Shield Talisman [Cycle]
+20380901 [Talisman] Pearl Shield Talisman (Cycled)
+20380902 [Talisman] Pearl Shield Talisman (Cycled)
 20381000 [Talisman] Dried Bouquet
 20381001 [Talisman] Dried Bouquet
 20381100 [Talisman] Smithing Talisman
@@ -4079,7 +4128,7 @@
 20382402 [Talisman] Talisman of All Crucibles
 20382403 [Talisman] Talisman of All Crucibles
 20382404 [Talisman] Talisman of All Crucibles
-20382405 [Talisman] Fine Crucible Feather Talisman [Cycle]
+20382405 [Talisman] Fine Crucible Feather Talisman (Cycled)
 20383000 [Talisman] Companion Jar
 20500330 [Item] Hefty Fetid Pot - Poison
 20500331 [Item] Hefty Fetid Pot - Shooter - Poison
@@ -4091,9 +4140,9 @@
 20500680 [Item] Hefty Furnace Pot
 20500681 [Item] Hefty Fire Pot
 20500690 [Item] Hefty Red Lightning Pot
-20500691 [Item] Hefty Red Lightning Pot [Chain]
+20500691 [Item] Hefty Red Lightning Pot (Chained)
 20500700 [Item] Red Lightning Pot
-20500701 [Item] Red Lightning Pot [Chain]
+20500701 [Item] Red Lightning Pot (Chained)
 20500710 [Item] Frenzied Flame Pot
 20500740 [Item] Eternal Sleep Pot
 20500800 [Item] Spirit Raisin
@@ -4163,6 +4212,15 @@
 20501481 [Item] Dragon Communion Grease - Left
 20501620 [Item] Festive Grease - Right
 20501622 [Item] Festive Grease - Left
+20502010 [Item] Rock Heart (Cycled)
+20502011 [Item] Rock Heart (Cycled)
+20502012 [Item] Rock Heart
+20502020 [Item] Priestess Heart (Cycled)
+20502021 [Item] Priestess Heart (Cycled)
+20502022 [Item] Priestess Heart
+20502100 [Item] Ancient Dragon's Blessing
+20502101 [Item] Ancient Dragon's Blessing
+20502102 [Item] Ancient Dragon's Blessing
 20502130 [Item] Iris of Occultation
 20502900 [Item] Remembrance of the Wild Boar Rider
 20502901 [Item] Remembrance of the Impaler
@@ -4207,3 +4265,8 @@
 20511051 [Tear] Bloodsucking Cracked Tear
 20511060 [Tear] Glovewort Crystal Tear
 20511061 [Tear] Glovewort Crystal Tear
+21430000 [Sorcery] Miriam's Vanishing
+21490000 [Sorcery] Mantle of Thorns
+21490001 [Sorcery] Mantle of Thorns
+21490002 [Sorcery] Mantle of Thorns
+21490003 [Sorcery] Mantle of Thorns

@@ -2,6 +2,8 @@
 1 Impact: No Target
 2 Impact: Oppose and Self
 3 Impact: Oppose and Friendly
+6 [Talisman] Talisman of Lord's Bestowal
+820 [Tear] Crimsonburst Dried Tear
 1010 Impact
 40000 Glintstone Pebble
 40010 Great Glintstone Shard
@@ -5037,6 +5039,113 @@
 210331000 Sunwarmth Stone [Hit]
 210335000 Charming Branch
 210335001 Charming Branch [Hit]
+210431000 Glintblade Trio
+210431050 Glintblade Trio
+210432000 Rellana's Twin Moons
+210432001 Rellana's Twin Moons
+210432002 Rellana's Twin Moons
+210450000 Glintstone Nail
+210450050 Glintstone Nail
+210451000 Glintstone Nails
+210451050 Glintstone Nails
+210470000 Blades of Stone
+210470050 Blades of Stone
+210471000 Gravitational Missile
+210471001 Gravitational Missile
+210471002 Gravitational Missile
+210471050 Gravitational Missile
+210471051 Gravitational Missile
+210471052 Gravitational Missile
+210491000 Impenetrable Thorns
+210500000 Rings of Spectral Light
+210500050 Rings of Spectral Light
+210620000 Vortex of Putrescence
+210621000 Mass of Putrescence
+210621001 Mass of Putrescence
+210621050 Mass of Putrescence
+210621051 Mass of Putrescence
+210630000 Furious Blade of Ansbach
+210630001 Furious Blade of Ansbach
+210630010 Furious Blade of Ansbach
+210630050 Furious Blade of Ansbach
+210630051 Furious Blade of Ansbach
+210630060 Furious Blade of Ansbach
+210640000 Heal from Afar
+210640001 Heal from Afar
+210665000 Aspects of the Crucible: Thorns
+210665001 Aspects of the Crucible: Thorns
+210665050 Aspects of the Crucible: Thorns
+210665051 Aspects of the Crucible: Thorns
+210666000 Aspects of the Crucible: Bloom
+210666050 Aspects of the Crucible: Bloom
+210667000 Minor Erdtree
+210668000 Land of Shadow
+210668001 Land of Shadow
+210669000 Wrath from Afar
+210669050 Wrath from Afar
+210670000 Light of Miquella
+210670001 Light of Miquella
+210671000 Multilayered Ring of Light
+210671001 Multilayered Ring of Light
+210671050 Multilayered Ring of Light
+210671051 Multilayered Ring of Light
+210680000 Roar of Rugalea
+210680050 Roar of Rugalea
+210680051 Roar of Rugalea
+210680052 Roar of Rugalea
+210690000 Knight's Lightning Spear
+210690001 Knight's Lightning Spear
+210690050 Knight's Lightning Spear
+210690051 Knight's Lightning Spear
+210691000 Dragonbolt of Florissax
+210691001 Dragonbolt of Florissax
+210692000 Electrocharge
+210692001 Electrocharge
+210692050 Electrocharge
+210692051 Electrocharge
+210700000 Bayle's Tyranny
+210700001 Bayle's Tyranny
+210701000 Bayle's Flame Lightning
+210701001 Bayle's Flame Lightning
+210701002 Bayle's Flame Lightning
+210702000 Ghostflame Breath
+210720000 Rotten Butterflies
+210720001 Rotten Butterflies
+210721000 Pest-Thread Spears
+210721050 Pest-Thread Spears
+210730000 Midra's Flame of Frenzy
+210730010 Midra's Flame of Frenzy
+210741000 Fleeting Microcosm
+210741001 Fleeting Microcosm
+210741050 Fleeting Microcosm
+210741051 Fleeting Microcosm
+210742000 Cherishing Fingers
+210742050 Cherishing Fingers
+210760000 Watchful Spirit
+210770000 Golden Arcs
+210770050 Golden Arcs
+210771000 Giant Golden Arc
+210771050 Giant Golden Arc
+210772000 Spira
+210773000 Divine Beast Tornado
+210773010 Divine Beast Tornado
+210773050 Divine Beast Tornado
+210774000 Divine Bird Feathers
+210774001 Divine Bird Feathers
+210780000 Fire Serpent
+210780050 Fire Serpent
+210781000 Rain of Fire
+210781001 Rain of Fire
+210781050 Rain of Fire
+210781051 Rain of Fire
+210782000 Messmer's Orb
+210782001 Messmer's Orb
+210782002 Messmer's Orb
+210782003 Messmer's Orb
+210782050 Messmer's Orb
+210782051 Messmer's Orb
+210782052 Messmer's Orb
+210782053 Messmer's Orb
 300000010 [AOW] Impaling Thrust
 300000011 [AOW] Impaling Thrust
 300000025 [AOW] Lifesteal Fist

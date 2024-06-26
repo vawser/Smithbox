@@ -126,6 +126,11 @@
 729 Hairstyle - Type 30
 730 Hairstyle - Type 31
 731 Hairstyle - Type 32
+732 Hairstyle - Type 33
+733 Hairstyle - Type 34
+734 Hairstyle - Type 35
+735 Hairstyle - Type 36
+736 Hairstyle - Type 37
 800 Tattoo - Type 1
 801 Tattoo - Type 2
 802 Tattoo - Type 3

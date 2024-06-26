@@ -4925,7 +4925,7 @@
 10790099 Fire's Deadly Sin
 10790300 Golden Lightning Fortification
 10790301 Golden Lightning Fortification
-10999999 Rock Blaster / Death Lightning / Whirl O Flame! / Burn O Flame! / Scouring Black Flame
+10999999 Impact
 20000000 Arrow
 20000001 Arrow
 20000005 Arrow
@@ -6221,3 +6221,413 @@
 210331001 Sunwarmth Stone [Hit]
 210335000 Charming Branch
 210335001 Charming Branch [Hit]
+210431000 Glintblade Trio
+210431001 Glintblade Trio
+210431002 Glintblade Trio
+210431003 Glintblade Trio
+210431004 Glintblade Trio
+210431005 Glintblade Trio
+210431006 Glintblade Trio
+210431050 Glintblade Trio
+210431051 Glintblade Trio
+210431052 Glintblade Trio
+210431053 Glintblade Trio
+210431054 Glintblade Trio
+210431055 Glintblade Trio
+210431056 Glintblade Trio
+210432000 Rellana's Twin Moons
+210432001 Rellana's Twin Moons
+210432002 Rellana's Twin Moons
+210432003 Rellana's Twin Moons
+210432004 Rellana's Twin Moons
+210432005 Rellana's Twin Moons
+210432006 Rellana's Twin Moons
+210450000 Glintstone Nail
+210450001 Glintstone Nail
+210450002 Glintstone Nail
+210450003 Glintstone Nail
+210450004 Glintstone Nail
+210450005 Glintstone Nail
+210450006 Glintstone Nail
+210450007 Glintstone Nail
+210450008 Glintstone Nail
+210450009 Glintstone Nail
+210450010 Glintstone Nail
+210450050 Glintstone Nail
+210450051 Glintstone Nail
+210450052 Glintstone Nail
+210450053 Glintstone Nail
+210450054 Glintstone Nail
+210450055 Glintstone Nail
+210450056 Glintstone Nail
+210450057 Glintstone Nail
+210450058 Glintstone Nail
+210450059 Glintstone Nail
+210450060 Glintstone Nail
+210451000 Glintstone Nails
+210451001 Glintstone Nails
+210451002 Glintstone Nails
+210451003 Glintstone Nails
+210451004 Glintstone Nails
+210451005 Glintstone Nails
+210451006 Glintstone Nails
+210451007 Glintstone Nails
+210451008 Glintstone Nails
+210451009 Glintstone Nails
+210451010 Glintstone Nails
+210451050 Glintstone Nails
+210451051 Glintstone Nails
+210451052 Glintstone Nails
+210451053 Glintstone Nails
+210451054 Glintstone Nails
+210451055 Glintstone Nails
+210451056 Glintstone Nails
+210451057 Glintstone Nails
+210451058 Glintstone Nails
+210451059 Glintstone Nails
+210451060 Glintstone Nails
+210470000 Blades of Stone
+210470001 Blades of Stone
+210470002 Blades of Stone
+210470003 Blades of Stone
+210470004 Blades of Stone
+210470005 Blades of Stone
+210470006 Blades of Stone
+210470007 Blades of Stone
+210470008 Blades of Stone
+210470050 Blades of Stone
+210470051 Blades of Stone
+210470052 Blades of Stone
+210470053 Blades of Stone
+210470054 Blades of Stone
+210470055 Blades of Stone
+210470056 Blades of Stone
+210470057 Blades of Stone
+210470058 Blades of Stone
+210470060 Blades of Stone
+210470061 Blades of Stone
+210470062 Blades of Stone
+210470063 Blades of Stone
+210470064 Blades of Stone
+210470065 Blades of Stone
+210470066 Blades of Stone
+210470067 Blades of Stone
+210470068 Blades of Stone
+210470070 Blades of Stone
+210470071 Blades of Stone
+210470072 Blades of Stone
+210470073 Blades of Stone
+210470074 Blades of Stone
+210470075 Blades of Stone
+210470076 Blades of Stone
+210470077 Blades of Stone
+210470078 Blades of Stone
+210471000 Gravitational Missile
+210471001 Gravitational Missile
+210471002 Gravitational Missile
+210471003 Gravitational Missile
+210471004 Gravitational Missile
+210471005 Gravitational Missile
+210471006 Gravitational Missile
+210471007 Gravitational Missile
+210471050 Gravitational Missile
+210471051 Gravitational Missile
+210471052 Gravitational Missile
+210471053 Gravitational Missile
+210471054 Gravitational Missile
+210471055 Gravitational Missile
+210471056 Gravitational Missile
+210471057 Gravitational Missile
+210471058 Gravitational Missile
+210471059 Gravitational Missile
+210471060 Gravitational Missile
+210491000 Impenetrable Thorns
+210491001 Impenetrable Thorns
+210491002 Impenetrable Thorns
+210491003 Impenetrable Thorns
+210491004 Impenetrable Thorns
+210491005 Impenetrable Thorns
+210491006 Impenetrable Thorns
+210491007 Impenetrable Thorns
+210491008 Impenetrable Thorns
+210500000 Rings of Spectral Light
+210500001 Rings of Spectral Light
+210500002 Rings of Spectral Light
+210500003 Rings of Spectral Light
+210500004 Rings of Spectral Light
+210500005 Rings of Spectral Light
+210500050 Rings of Spectral Light
+210500051 Rings of Spectral Light
+210500052 Rings of Spectral Light
+210500053 Rings of Spectral Light
+210500054 Rings of Spectral Light
+210500055 Rings of Spectral Light
+210620000 Vortex of Putrescence
+210620001 Vortex of Putrescence
+210620002 Vortex of Putrescence
+210620003 Vortex of Putrescence
+210620004 Vortex of Putrescence
+210620005 Vortex of Putrescence
+210620006 Vortex of Putrescence
+210620007 Vortex of Putrescence
+210620010 Vortex of Putrescence
+210620011 Vortex of Putrescence
+210620012 Vortex of Putrescence
+210620013 Vortex of Putrescence
+210621000 Mass of Putrescence
+210621001 Mass of Putrescence
+210621002 Mass of Putrescence
+210621003 Mass of Putrescence
+210621004 Mass of Putrescence
+210621005 Mass of Putrescence
+210621006 Mass of Putrescence
+210621007 Mass of Putrescence
+210621050 Mass of Putrescence
+210621051 Mass of Putrescence
+210621052 Mass of Putrescence
+210621053 Mass of Putrescence
+210621054 Mass of Putrescence
+210621055 Mass of Putrescence
+210621056 Mass of Putrescence
+210621057 Mass of Putrescence
+210621058 Mass of Putrescence
+210621059 Mass of Putrescence
+210621060 Mass of Putrescence
+210630000 Furious Blade of Ansbach
+210630001 Furious Blade of Ansbach
+210630002 Furious Blade of Ansbach
+210630003 Furious Blade of Ansbach
+210630004 Furious Blade of Ansbach
+210630005 Furious Blade of Ansbach
+210630006 Furious Blade of Ansbach
+210630010 Furious Blade of Ansbach
+210630011 Furious Blade of Ansbach
+210630012 Furious Blade of Ansbach
+210630013 Furious Blade of Ansbach
+210630014 Furious Blade of Ansbach
+210630015 Furious Blade of Ansbach
+210630016 Furious Blade of Ansbach
+210630050 Furious Blade of Ansbach
+210630051 Furious Blade of Ansbach
+210630052 Furious Blade of Ansbach
+210630053 Furious Blade of Ansbach
+210630054 Furious Blade of Ansbach
+210630055 Furious Blade of Ansbach
+210630056 Furious Blade of Ansbach
+210630060 Furious Blade of Ansbach
+210630061 Furious Blade of Ansbach
+210630062 Furious Blade of Ansbach
+210630063 Furious Blade of Ansbach
+210630064 Furious Blade of Ansbach
+210630065 Furious Blade of Ansbach
+210630066 Furious Blade of Ansbach
+210640000 Heal from Afar
+210640001 Heal from Afar
+210665000 Aspects of the Crucible: Thorns
+210665001 Aspects of the Crucible: Thorns
+210665002 Aspects of the Crucible: Thorns
+210665003 Aspects of the Crucible: Thorns
+210665004 Aspects of the Crucible: Thorns
+210665005 Aspects of the Crucible: Thorns
+210665006 Aspects of the Crucible: Thorns
+210665007 Aspects of the Crucible: Thorns
+210666000 Aspects of the Crucible: Bloom
+210666001 Aspects of the Crucible: Bloom
+210666002 Aspects of the Crucible: Bloom
+210666003 Aspects of the Crucible: Bloom
+210666004 Aspects of the Crucible: Bloom
+210666005 Aspects of the Crucible: Bloom
+210666050 Aspects of the Crucible: Bloom
+210666051 Aspects of the Crucible: Bloom
+210666052 Aspects of the Crucible: Bloom
+210666053 Aspects of the Crucible: Bloom
+210666054 Aspects of the Crucible: Bloom
+210666055 Aspects of the Crucible: Bloom
+210667000 Minor Erdtree
+210667001 Minor Erdtree
+210668000 Land of Shadow
+210668001 Land of Shadow
+210668002 Land of Shadow
+210668003 Land of Shadow
+210668004 Land of Shadow
+210668005 Land of Shadow
+210668006 Land of Shadow
+210668007 Land of Shadow
+210668008 Land of Shadow
+210668009 Land of Shadow
+210669000 Wrath from Afar
+210669001 Wrath from Afar
+210669050 Wrath from Afar
+210669051 Wrath from Afar
+210670000 Light of Miquella
+210670001 Light of Miquella
+210670002 Light of Miquella
+210670003 Light of Miquella
+210670004 Light of Miquella
+210670005 Light of Miquella
+210670006 Light of Miquella
+210670007 Light of Miquella
+210670008 Light of Miquella
+210671000 Multilayered Ring of Light
+210671001 Multilayered Ring of Light
+210671002 Multilayered Ring of Light
+210671050 Multilayered Ring of Light
+210671051 Multilayered Ring of Light
+210671052 Multilayered Ring of Light
+210680000 Roar of Rugalea
+210680050 Roar of Rugalea
+210690000 Knight's Lightning Spear
+210690001 Knight's Lightning Spear
+210690002 Knight's Lightning Spear
+210690003 Knight's Lightning Spear
+210690004 Knight's Lightning Spear
+210690005 Knight's Lightning Spear
+210690006 Knight's Lightning Spear
+210690007 Knight's Lightning Spear
+210690008 Knight's Lightning Spear
+210690009 Knight's Lightning Spear
+210690010 Knight's Lightning Spear
+210690050 Knight's Lightning Spear
+210690051 Knight's Lightning Spear
+210690052 Knight's Lightning Spear
+210690053 Knight's Lightning Spear
+210690054 Knight's Lightning Spear
+210690055 Knight's Lightning Spear
+210690056 Knight's Lightning Spear
+210690057 Knight's Lightning Spear
+210690058 Knight's Lightning Spear
+210690059 Knight's Lightning Spear
+210690060 Knight's Lightning Spear
+210690061 Knight's Lightning Spear
+210690062 Knight's Lightning Spear
+210690063 Knight's Lightning Spear
+210690064 Knight's Lightning Spear
+210690065 Knight's Lightning Spear
+210691000 Dragonbolt of Florissax
+210691001 Dragonbolt of Florissax
+210692000 Electrocharge
+210692001 Electrocharge
+210692050 Electrocharge
+210692051 Electrocharge
+210700000 Bayle's Tyranny
+210700001 Bayle's Tyranny
+210700002 Bayle's Tyranny
+210700003 Bayle's Tyranny
+210700004 Bayle's Tyranny
+210700005 Bayle's Tyranny
+210701000 Bayle's Flame Lightning
+210701001 Bayle's Flame Lightning
+210701002 Bayle's Flame Lightning
+210701003 Bayle's Flame Lightning
+210702000 Ghostflame Breath
+210702001 Ghostflame Breath
+210702002 Ghostflame Breath
+210702010 Ghostflame Breath
+210702020 Ghostflame Breath
+210702021 Ghostflame Breath
+210702022 Ghostflame Breath
+210720000 Rotten Butterflies
+210720001 Rotten Butterflies
+210720002 Rotten Butterflies
+210720003 Rotten Butterflies
+210720004 Rotten Butterflies
+210720005 Rotten Butterflies
+210721000 Pest-Thread Spears
+210721001 Pest-Thread Spears
+210721050 Pest-Thread Spears
+210721051 Pest-Thread Spears
+210730000 Midra's Flame of Frenzy
+210730001 Midra's Flame of Frenzy
+210730002 Midra's Flame of Frenzy
+210730003 Midra's Flame of Frenzy
+210730004 Midra's Flame of Frenzy
+210730005 Midra's Flame of Frenzy
+210730006 Midra's Flame of Frenzy
+210730007 Midra's Flame of Frenzy
+210730008 Midra's Flame of Frenzy
+210730009 Midra's Flame of Frenzy
+210730010 Midra's Flame of Frenzy
+210730011 Midra's Flame of Frenzy
+210741000 Fleeting Microcosm
+210741001 Fleeting Microcosm
+210741002 Fleeting Microcosm
+210741003 Fleeting Microcosm
+210741004 Fleeting Microcosm
+210741005 Fleeting Microcosm
+210741006 Fleeting Microcosm
+210741050 Fleeting Microcosm
+210741051 Fleeting Microcosm
+210741052 Fleeting Microcosm
+210741053 Fleeting Microcosm
+210741054 Fleeting Microcosm
+210741055 Fleeting Microcosm
+210741056 Fleeting Microcosm
+210742000 Cherishing Fingers
+210742001 Cherishing Fingers
+210742002 Cherishing Fingers
+210742003 Cherishing Fingers
+210742004 Cherishing Fingers
+210742005 Cherishing Fingers
+210742006 Cherishing Fingers
+210742007 Cherishing Fingers
+210742008 Cherishing Fingers
+210742050 Cherishing Fingers
+210742051 Cherishing Fingers
+210742052 Cherishing Fingers
+210742053 Cherishing Fingers
+210742054 Cherishing Fingers
+210742055 Cherishing Fingers
+210742056 Cherishing Fingers
+210742057 Cherishing Fingers
+210742058 Cherishing Fingers
+210760000 Watchful Spirit
+210760001 Watchful Spirit
+210770000 Golden Arcs
+210770050 Golden Arcs
+210771000 Giant Golden Arc
+210771001 Giant Golden Arc
+210771050 Giant Golden Arc
+210771051 Giant Golden Arc
+210772000 Spira
+210772001 Spira
+210772002 Spira
+210772003 Spira
+210772004 Spira
+210773000 Divine Beast Tornado
+210773001 Divine Beast Tornado
+210773010 Divine Beast Tornado
+210773050 Divine Beast Tornado
+210773051 Divine Beast Tornado
+210774000 Divine Bird Feathers
+210780000 Fire Serpent
+210780001 Fire Serpent
+210780002 Fire Serpent
+210780003 Fire Serpent
+210780050 Fire Serpent
+210780051 Fire Serpent
+210780052 Fire Serpent
+210780053 Fire Serpent
+210781000 Rain of Fire
+210781001 Rain of Fire
+210781002 Rain of Fire
+210781003 Rain of Fire
+210781004 Rain of Fire
+210781005 Rain of Fire
+210781006 Rain of Fire
+210781007 Rain of Fire
+210781050 Rain of Fire
+210781051 Rain of Fire
+210781052 Rain of Fire
+210781053 Rain of Fire
+210781054 Rain of Fire
+210781055 Rain of Fire
+210781056 Rain of Fire
+210781057 Rain of Fire
+210782000 Messmer's Orb
+210782001 Messmer's Orb
+210782050 Messmer's Orb
+210782051 Messmer's Orb
+211101000 [Tear] Crimsonburst Dried Tear
+211104000 [Tear] Oil-Soaked Tear
+220820000 [Talisman] Talisman of Lord's Bestowal
+220820001 [Talisman] Talisman of Lord's Bestowal
