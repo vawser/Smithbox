@@ -7,7 +7,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using DotNext.Buffers;
-using Microsoft.Toolkit.HighPerformance;
+using CommunityToolkit.HighPerformance;
 
 namespace SoulsFormats
 {

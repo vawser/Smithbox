@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Numerics;
 using ImGuiNET;
-using Microsoft.Toolkit.HighPerformance;
+using CommunityToolkit.HighPerformance;
 using StudioCore.Gui;
 using StudioCore.Scene;
 using StudioCore.Utilities;
