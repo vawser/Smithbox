@@ -58,7 +58,7 @@ public class ProjectEnumEntry
     }
 }
 
-public class ProjectEnumOption
+public class ProjectEnumOption : IComparable
 {
     public string ID { get; set; }
     public string Name { get; set; }
@@ -79,5 +79,22 @@ public class ProjectEnumOption
     public ProjectEnumOption Clone(ProjectEnumOption entry)
     {
         return (ProjectEnumOption)entry.MemberwiseClone();
+    }
+
+    public int CompareTo(object obj)
+    {
+        ProjectEnumOption option = obj as ProjectEnumOption;
+
+        try
+        {
+            var thisID = int.Parse(ID);
+            var compID = int.Parse(option.ID);
+            return thisID.CompareTo(compID);
+        }
+        catch
+        {
+            // For non-numeric values, compare strings
+            return ID.CompareTo(option.ID);
+        }
     }
 }

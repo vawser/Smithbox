@@ -35,6 +35,10 @@ public class ProjectEnumBank
         try
         {
             Enums = BankUtils.LoadProjectEnumJSON();
+            foreach(var entry in Enums.List)
+            {
+                entry.Options.Sort();
+            }
         }
         catch (Exception e)
         {
