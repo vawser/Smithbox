@@ -3,6 +3,7 @@
 130 Rainbow Stone
 131 Rainbow Stone [Hit]
 132 Rainbow Stone [Hit]
+900 Deathbed Dress - Ally HP Restore
 1000 Hemorrhage - Bullet
 1005 Poison/Scarlet Rot - Bullet
 1500 Flask of Crimson Tears

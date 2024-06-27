@@ -113,11 +113,13 @@ World Map:
 Project:
  - Add a 'viewer' mode that the program is in by default: can view X gametype, but no saving of any kind.
  - Prompt user to either enter 'viewer' mode or load recent project (no more automatic reload without user confirmation)
+ - Fix issue with Project Enum secondary list not immediately updating when changes occur
  
 #--------------------------------------
 # Notes
 #--------------------------------------
 TalkParam is lagging heavily: due to GenerateEntryGroup
+ - TalkMsg FMG itself takes too long too
 
 Param Upgrade:
  Check GetOldRegulationPath, might be supplying the wrong regulation, might explain the issues

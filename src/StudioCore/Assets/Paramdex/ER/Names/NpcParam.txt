@@ -4044,6 +4044,1802 @@
 49801040 Death Rite Bird
 49801050 Death Rite Bird
 49801052 Death Rite Bird
+50000000 Commander Gaius
+50000001 Commander Gaius
+50000092 Commander Gaius
+50100000 Golden Hippopotamus
+50100001 Golden Hippopotamus
+50100098 Golden Hippopotamus
+50110000 Golden Hippopotamus (Golden Wings)
+50110084 Golden Hippopotamus (Golden Wings)
+50110090 Golden Hippopotamus (Golden Wings)
+50110091 Golden Hippopotamus (Golden Wings)
+50110094 Golden Hippopotamus (Golden Wings)
+50200000 Putrescent Knight
+50200001 Putrescent Knight
+50200087 Putrescent Knight
+50200100 Putrescent Knight
+50200101 Putrescent Knight
+50200187 Putrescent Knight
+50300000 Romina, Saint of the Bud
+50300001 Romina, Saint of the Bud
+50300094 Romina, Saint of the Bud
+50400000 Curseblade Labirith
+50400080 Curseblade Labirith
+50400081 Curseblade Labirith
+50400088 Curseblade Labirith
+50400089 Curseblade Labirith
+50400090 Curseblade Labirith
+50400091 Curseblade Labirith
+50400094 Curseblade Labirith
+50400100 Curseblade Labirith
+50400190 Curseblade Labirith
+50400194 Curseblade Labirith
+50400200 Curseblade Labirith
+50400300 Curseblade Labirith
+50400400 Curseblade Labirith
+50400494 Curseblade Labirith
+50400500 Curseblade Labirith
+50400600 Curseblade Labirith
+50400700 Curseblade Labirith
+50500000 Midra, Lord of Frenzied Flame
+50500001 Midra, Lord of Frenzied Flame
+50500086 Midra, Lord of Frenzied Flame
+50510000 Midra, Lord of Frenzied Flame
+50510001 Midra, Lord of Frenzied Flame
+50510086 Midra, Lord of Frenzied Flame
+50600000 Lamprey
+50600001 Lamprey
+50600083 Lamprey
+50600093 Lamprey
+50600100 Lamprey
+50600101 Lamprey
+50600193 Lamprey
+50600200 Lamprey
+50600201 Lamprey
+50600283 Lamprey
+50600293 Lamprey
+50600300 Lamprey
+50600301 Lamprey
+50600383 Lamprey
+50600393 Lamprey
+50600400 Lamprey
+50600493 Lamprey
+50600593 Lamprey
+50600683 Lamprey
+50600793 Lamprey
+50600883 Lamprey
+50610000 Lamprey (Large)
+50610001 Lamprey (Large)
+50610083 Lamprey (Large)
+50610093 Lamprey (Large)
+50610883 Lamprey (Large)
+50610893 Lamprey (Large)
+50700000 Death Knight
+50700081 Death Knight
+50701000 Death Knight
+50701090 Death Knight
+50701095 Death Knight
+50800000 Bloodfiend
+50800001 Bloodfiend
+50800080 Bloodfiend
+50800081 Bloodfiend
+50800087 Bloodfiend
+50800090 Bloodfiend
+50800094 Bloodfiend
+50800095 Bloodfiend
+50800100 Bloodfiend
+50800101 Bloodfiend
+50800180 Bloodfiend
+50800190 Bloodfiend
+50800194 Bloodfiend
+50800200 Bloodfiend
+50800201 Bloodfiend
+50800290 Bloodfiend
+50800300 Bloodfiend
+50800390 Bloodfiend
+50800400 Bloodfiend
+50800490 Bloodfiend
+50801000 Bloodfiend
+50801001 Bloodfiend
+50801080 Bloodfiend
+50801081 Bloodfiend
+50801087 Bloodfiend
+50801090 Bloodfiend
+50801094 Bloodfiend
+50801095 Bloodfiend
+50801100 Bloodfiend
+50801101 Bloodfiend
+50801180 Bloodfiend
+50801187 Bloodfiend
+50801190 Bloodfiend
+50801194 Bloodfiend
+50801195 Bloodfiend
+50801200 Bloodfiend
+50801201 Bloodfiend
+50801300 Bloodfiend
+50801390 Bloodfiend
+50801400 Bloodfiend
+50801490 Bloodfiend
+50802000 Bloodfiend
+50802001 Bloodfiend
+50802080 Bloodfiend
+50802087 Bloodfiend
+50802090 Bloodfiend
+50802094 Bloodfiend
+50802095 Bloodfiend
+50802100 Bloodfiend
+50802190 Bloodfiend
+50803000 Bloodfiend
+50803001 Bloodfiend
+50803087 Bloodfiend
+50804000 Bloodfiend
+50804001 Bloodfiend
+50804087 Bloodfiend
+50807080 Bloodfiend
+50810000 Chief Bloodfiend
+50810001 Chief Bloodfiend
+50810087 Chief Bloodfiend
+50810090 Chief Bloodfiend
+50810094 Chief Bloodfiend
+50810095 Chief Bloodfiend
+50810100 Chief Bloodfiend
+50810194 Chief Bloodfiend
+50810195 Chief Bloodfiend
+50810990 Chief Bloodfiend
+50811000 Chief Bloodfiend
+50811087 Chief Bloodfiend
+50900000 Gravebird
+50900080 Gravebird
+50900081 Gravebird
+50900083 Gravebird
+50900084 Gravebird
+50900087 Gravebird
+50900088 Gravebird
+50900089 Gravebird
+50900090 Gravebird
+50900091 Gravebird
+50900095 Gravebird
+50900100 Gravebird
+50900190 Gravebird
+50900200 Gravebird
+50900280 Gravebird
+50900281 Gravebird
+50900284 Gravebird
+50900288 Gravebird
+50900290 Gravebird
+50900295 Gravebird
+50900300 Gravebird
+50900389 Gravebird
+50900400 Gravebird
+50900487 Gravebird
+50900500 Gravebird
+50900587 Gravebird
+51100000 Ghostly Worm
+51100001 Ghostly Worm
+51100080 Ghostly Worm
+51100081 Ghostly Worm
+51100083 Ghostly Worm
+51100084 Ghostly Worm
+51100090 Ghostly Worm
+51100100 Ghostly Worm
+51100101 Ghostly Worm
+51100181 Ghostly Worm
+51100183 Ghostly Worm
+51100184 Ghostly Worm
+51100190 Ghostly Worm
+51100200 Ghostly Worm
+51100201 Ghostly Worm
+51100283 Ghostly Worm
+51100300 Ghostly Worm
+51100383 Ghostly Worm
+51100384 Ghostly Worm
+51100683 Ghostly Worm
+51100690 Ghostly Worm
+51100693 Ghostly Worm
+51100781 Ghostly Worm
+51100790 Ghostly Worm
+51200000 Bayle the Dread
+51200001 Bayle the Dread
+51200085 Bayle the Dread
+51300000 Messmer the Impaler
+51300001 Messmer the Impaler
+51300099 Messmer the Impaler
+51301000 Messmer the Impaler
+51301099 Messmer the Impaler
+51310000 Messmer the Impaler
+51320000 Messmer the Impaler
+51400000 Messmer: Base Serpent
+51400001 Messmer: Base Serpent
+51400099 Messmer: Base Serpent
+51410000 Messmer: Base Serpent
+51410001 Messmer: Base Serpent
+51410099 Messmer: Base Serpent
+51600000 Fire Knight
+51600001 Fire Knight
+51600098 Fire Knight
+51600099 Fire Knight
+51600100 Fire Knight
+51600101 Fire Knight
+51600198 Fire Knight
+51600199 Fire Knight
+51600200 Fire Knight
+51601000 Fire Knight
+51601001 Fire Knight
+51601099 Fire Knight
+51601100 Fire Knight
+51601190 Fire Knight
+51601198 Fire Knight
+51601199 Fire Knight
+51601200 Fire Knight
+51602000 Fire Knight
+51602001 Fire Knight
+51602099 Fire Knight
+51602100 Fire Knight
+51602198 Fire Knight
+51602199 Fire Knight
+51602200 Fire Knight
+51602299 Fire Knight
+51602300 Fire Knight
+51602398 Fire Knight
+51700000 Furnace Golem
+51700001 Furnace Golem
+51700080 Furnace Golem
+51700083 Furnace Golem
+51700090 Furnace Golem
+51700091 Furnace Golem
+51700094 Furnace Golem
+51701000 Furnace Golem
+51701001 Furnace Golem
+51701084 Furnace Golem
+51701090 Furnace Golem
+51702000 Furnace Golem
+51702001 Furnace Golem
+51702094 Furnace Golem
+51709000 Furnace Golem
+51800000 Dummy Entity
+51800080 Dummy Entity
+51800081 Dummy Entity
+51800090 Dummy Entity
+51810000 Dummy Entity
+51810085 Dummy Entity
+51810089 Dummy Entity
+51810099 Dummy Entity
+51900000 Spider Scorpion
+51900088 Spider Scorpion
+51900090 Spider Scorpion
+51900094 Spider Scorpion
+51900095 Spider Scorpion
+51900100 Spider Scorpion
+51901000 Spider Scorpion
+51901090 Spider Scorpion
+51901094 Spider Scorpion
+51901095 Spider Scorpion
+51902000 Spider Scorpion
+51902090 Spider Scorpion
+51902094 Spider Scorpion
+51903000 Spider Scorpion
+51903088 Spider Scorpion
+51903094 Spider Scorpion
+51903100 Spider Scorpion
+51920000 Spider Scorpion
+51920001 Spider Scorpion
+51920088 Spider Scorpion
+51920090 Spider Scorpion
+51920094 Spider Scorpion
+51930000 Spider Scorpion
+51930001 Spider Scorpion
+51930088 Spider Scorpion
+51930090 Spider Scorpion
+51930094 Spider Scorpion
+52000000 Metyr, Mother of Fingers
+52000001 Metyr, Mother of Fingers
+52000097 Metyr, Mother of Fingers
+52100000 Divine Beast Dancing Lion
+52100001 Divine Beast Dancing Lion
+52100088 Divine Beast Dancing Lion
+52100094 Divine Beast Dancing Lion
+52200000 Promised Consort Radahn
+52200001 Promised Consort Radahn
+52200089 Promised Consort Radahn
+52201000 Promised Consort Radahn
+52201089 Promised Consort Radahn
+52202000 Promised Consort Radahn
+52210000 Miquella's Arms
+52300000 Scadutree Avatar
+52300001 Scadutree Avatar
+52300096 Scadutree Avatar
+52300100 Scadutree Avatar
+52300101 Scadutree Avatar
+52300196 Scadutree Avatar
+52300200 Scadutree Avatar
+52300201 Scadutree Avatar
+52300296 Scadutree Avatar
+52300300 Scadutree Avatar
+52300301 Scadutree Avatar
+52300396 Scadutree Avatar
+52300400 Scadutree Avatar
+52300401 Scadutree Avatar
+52300496 Scadutree Avatar
+52300500 Scadutree Avatar
+52300501 Scadutree Avatar
+52300596 Scadutree Avatar
+52400000 Commoner (Pot)
+52400001 Commoner (Pot)
+52400002 Commoner (Pot)
+52400080 Commoner (Pot)
+52400081 Commoner (Pot)
+52400083 Commoner (Pot)
+52400090 Commoner (Pot)
+52400093 Commoner (Pot)
+52400095 Commoner (Pot)
+52400100 Commoner (Pot)
+52400101 Commoner (Pot)
+52400180 Commoner (Pot)
+52400200 Commoner (Pot)
+52400201 Commoner (Pot)
+52400280 Commoner (Pot)
+52400283 Commoner (Pot)
+52400290 Commoner (Pot)
+52400295 Commoner (Pot)
+52400300 Commoner (Pot)
+52400301 Commoner (Pot)
+52400386 Commoner (Pot)
+52400390 Commoner (Pot)
+52400394 Commoner (Pot)
+52400400 Commoner (Pot)
+52400401 Commoner (Pot)
+52400480 Commoner (Pot)
+52400484 Commoner (Pot)
+52400490 Commoner (Pot)
+52400500 Commoner (Pot)
+52400501 Commoner (Pot)
+52400584 Commoner (Pot)
+52400586 Commoner (Pot)
+52400590 Commoner (Pot)
+52400600 Commoner (Pot)
+52400700 Commoner (Pot)
+52400780 Commoner (Pot)
+52400783 Commoner (Pot)
+52400790 Commoner (Pot)
+52400795 Commoner (Pot)
+52400800 Commoner (Pot)
+52400880 Commoner (Pot)
+52400883 Commoner (Pot)
+52400886 Commoner (Pot)
+52400890 Commoner (Pot)
+52400900 Commoner (Pot)
+52400990 Commoner (Pot)
+52400994 Commoner (Pot)
+52401000 Commoner (Pot)
+52401001 Commoner (Pot)
+52401098 Commoner (Pot)
+52401099 Commoner (Pot)
+52402000 Commoner (Pot)
+52402001 Commoner (Pot)
+52402086 Commoner (Pot)
+52402088 Commoner (Pot)
+52402089 Commoner (Pot)
+52402090 Commoner (Pot)
+52402094 Commoner (Pot)
+52403000 Commoner (Pot)
+52403001 Commoner (Pot)
+52403080 Commoner (Pot)
+52403083 Commoner (Pot)
+52403090 Commoner (Pot)
+52403095 Commoner (Pot)
+52403200 Commoner (Pot)
+52403280 Commoner (Pot)
+52403283 Commoner (Pot)
+52403290 Commoner (Pot)
+52403295 Commoner (Pot)
+52403300 Commoner (Pot)
+52403400 Commoner (Pot)
+52403480 Commoner (Pot)
+52403483 Commoner (Pot)
+52403490 Commoner (Pot)
+52403495 Commoner (Pot)
+52403500 Commoner (Pot)
+52403580 Commoner (Pot)
+52403583 Commoner (Pot)
+52403590 Commoner (Pot)
+52403595 Commoner (Pot)
+52404000 Commoner (Pot)
+52404001 Commoner (Pot)
+52404099 Commoner (Pot)
+52404100 Commoner (Pot)
+52404101 Commoner (Pot)
+52404180 Commoner (Pot)
+52404181 Commoner (Pot)
+52404183 Commoner (Pot)
+52404190 Commoner (Pot)
+52404191 Commoner (Pot)
+52404195 Commoner (Pot)
+52404200 Commoner (Pot)
+52404300 Commoner (Pot)
+52404301 Commoner (Pot)
+52404399 Commoner (Pot)
+52404400 Commoner (Pot)
+52404401 Commoner (Pot)
+52404499 Commoner (Pot)
+52404500 Commoner (Pot)
+52404599 Commoner (Pot)
+52404600 Commoner (Pot)
+52404699 Commoner (Pot)
+52404700 Commoner (Pot)
+52404799 Commoner (Pot)
+52405100 Commoner (Pot)
+52405101 Commoner (Pot)
+52405186 Commoner (Pot)
+52405188 Commoner (Pot)
+52405189 Commoner (Pot)
+52405190 Commoner (Pot)
+52405194 Commoner (Pot)
+52405200 Commoner (Pot)
+52405201 Commoner (Pot)
+52405286 Commoner (Pot)
+52405288 Commoner (Pot)
+52405289 Commoner (Pot)
+52405290 Commoner (Pot)
+52405294 Commoner (Pot)
+52405300 Commoner (Pot)
+52405388 Commoner (Pot)
+52406000 Commoner (Pot)
+52406001 Commoner (Pot)
+52406080 Commoner (Pot)
+52406083 Commoner (Pot)
+52406090 Commoner (Pot)
+52406095 Commoner (Pot)
+52406100 Commoner (Pot)
+52406101 Commoner (Pot)
+52406188 Commoner (Pot)
+52406189 Commoner (Pot)
+52406190 Commoner (Pot)
+52406194 Commoner (Pot)
+52406200 Commoner (Pot)
+52406280 Commoner (Pot)
+52406283 Commoner (Pot)
+52406290 Commoner (Pot)
+52406295 Commoner (Pot)
+52406300 Commoner (Pot)
+52406394 Commoner (Pot)
+52406400 Commoner (Pot)
+52406488 Commoner (Pot)
+52406494 Commoner (Pot)
+52406495 Commoner (Pot)
+52406500 Commoner (Pot)
+52406594 Commoner (Pot)
+52406600 Commoner (Pot)
+52406694 Commoner (Pot)
+52406700 Commoner (Pot)
+52406794 Commoner (Pot)
+52406800 Commoner (Pot)
+52406894 Commoner (Pot)
+52407000 Commoner (Pot)
+52407001 Commoner (Pot)
+52407080 Commoner (Pot)
+52407090 Commoner (Pot)
+52407091 Commoner (Pot)
+52407400 Commoner (Pot)
+52407480 Commoner (Pot)
+52407495 Commoner (Pot)
+52407500 Commoner (Pot)
+52407580 Commoner (Pot)
+52407590 Commoner (Pot)
+52408000 Commoner (Pot)
+52408001 Commoner (Pot)
+52408086 Commoner (Pot)
+52408100 Commoner (Pot)
+52408186 Commoner (Pot)
+52408194 Commoner (Pot)
+52409000 Commoner (Pot)
+52409080 Commoner (Pot)
+52409081 Commoner (Pot)
+52409090 Commoner (Pot)
+52409100 Commoner (Pot)
+52409181 Commoner (Pot)
+52409183 Commoner (Pot)
+52409186 Commoner (Pot)
+52409188 Commoner (Pot)
+52409200 Commoner (Pot)
+52409287 Commoner (Pot)
+52409300 Commoner (Pot)
+52409380 Commoner (Pot)
+52409384 Commoner (Pot)
+52410000 Commoner
+52410086 Commoner
+52410088 Commoner
+52410089 Commoner
+52410090 Commoner
+52410095 Commoner
+52500000 Horned Warrior
+52500001 Horned Warrior
+52500086 Horned Warrior
+52500088 Horned Warrior
+52500090 Horned Warrior
+52500094 Horned Warrior
+52500095 Horned Warrior
+52500100 Horned Warrior
+52500101 Horned Warrior
+52500189 Horned Warrior
+52500194 Horned Warrior
+52500988 Horned Warrior
+52501000 Horned Warrior
+52501001 Horned Warrior
+52501086 Horned Warrior
+52501088 Horned Warrior
+52501090 Horned Warrior
+52501094 Horned Warrior
+52501095 Horned Warrior
+52501100 Horned Warrior
+52501101 Horned Warrior
+52501189 Horned Warrior
+52501200 Horned Warrior
+52501201 Horned Warrior
+52501289 Horned Warrior
+52501300 Horned Warrior
+52501301 Horned Warrior
+52501389 Horned Warrior
+52501400 Horned Warrior
+52501401 Horned Warrior
+52501489 Horned Warrior
+52501989 Horned Warrior
+52502000 Horned Warrior
+52502001 Horned Warrior
+52502089 Horned Warrior
+52510000 Horned Shaman
+52510001 Horned Shaman
+52510089 Horned Shaman
+52519000 Horned Shaman
+52600000 Golem Smith
+52600001 Golem Smith
+52600081 Golem Smith
+52600090 Golem Smith
+52600093 Golem Smith
+52600100 Golem Smith
+52600181 Golem Smith
+52600200 Golem Smith
+52600290 Golem Smith
+52601000 Golem Smith
+52601001 Golem Smith
+52601090 Golem Smith
+52601093 Golem Smith
+52601095 Golem Smith
+52601100 Golem Smith
+52601190 Golem Smith
+52601200 Golem Smith
+52601290 Golem Smith
+52602000 Golem Smith
+52602001 Golem Smith
+52602081 Golem Smith
+52602090 Golem Smith
+52602093 Golem Smith
+52602095 Golem Smith
+52602100 Golem Smith
+52602181 Golem Smith
+52602200 Golem Smith
+52602201 Golem Smith
+52602281 Golem Smith
+52602290 Golem Smith
+52602295 Golem Smith
+52602300 Golem Smith
+52602381 Golem Smith
+52602400 Golem Smith
+52602490 Golem Smith
+52700000 Jar Innards
+52700001 Jar Innards
+52700080 Jar Innards
+52700084 Jar Innards
+52700090 Jar Innards
+52700098 Jar Innards
+52700100 Jar Innards
+52700101 Jar Innards
+52700180 Jar Innards
+52700184 Jar Innards
+52700190 Jar Innards
+52700198 Jar Innards
+52700200 Jar Innards
+52700201 Jar Innards
+52700280 Jar Innards
+52700284 Jar Innards
+52700290 Jar Innards
+52700298 Jar Innards
+52710000 Jar Innards
+52710080 Jar Innards
+52710084 Jar Innards
+52710090 Jar Innards
+52710098 Jar Innards
+52710100 Jar Innards
+52710180 Jar Innards
+52710184 Jar Innards
+52710190 Jar Innards
+52710198 Jar Innards
+52710200 Jar Innards
+52710280 Jar Innards
+52710284 Jar Innards
+52710290 Jar Innards
+52710298 Jar Innards
+52800000 Winter-Lantern
+52800001 Winter-Lantern
+52800086 Winter-Lantern
+53000000 Rellana, Twin Moon Knight
+53000001 Rellana, Twin Moon Knight
+53000082 Rellana, Twin Moon Knight
+53100900 Inquisitor
+53100901 Inquisitor
+53100986 Inquisitor
+53110000 Inquisitor (Candles)
+53110080 Inquisitor (Candles)
+53110086 Inquisitor (Candles)
+53110089 Inquisitor (Candles)
+53110090 Inquisitor (Candles)
+53110094 Inquisitor (Candles)
+53110100 Inquisitor (Candles)
+53110180 Inquisitor (Candles)
+53110186 Inquisitor (Candles)
+53110189 Inquisitor (Candles)
+53110190 Inquisitor (Candles)
+53110200 Inquisitor (Candles)
+53110201 Inquisitor (Candles)
+53110202 Inquisitor (Candles)
+53110286 Inquisitor (Candles)
+53110300 Inquisitor (Candles)
+53110301 Inquisitor (Candles)
+53110386 Inquisitor (Candles)
+53110400 Inquisitor (Candles)
+53110486 Inquisitor (Candles)
+53110500 Inquisitor (Candles)
+53110586 Inquisitor (Candles)
+53110600 Inquisitor (Candles)
+53110686 Inquisitor (Candles)
+53111000 Inquisitor (Candles)
+53111080 Inquisitor (Candles)
+53111086 Inquisitor (Candles)
+53111089 Inquisitor (Candles)
+53111090 Inquisitor (Candles)
+53111100 Inquisitor (Candles)
+53111101 Inquisitor (Candles)
+53111102 Inquisitor (Candles)
+53111186 Inquisitor (Candles)
+53111200 Inquisitor (Candles)
+53111286 Inquisitor (Candles)
+53111300 Inquisitor (Candles)
+53111386 Inquisitor (Candles)
+53120000 Inquisitor (Staff)
+53120001 Inquisitor (Staff)
+53120086 Inquisitor (Staff)
+53120100 Inquisitor (Staff)
+53120189 Inquisitor (Staff)
+53200000 Jori, Elder Inquisitor
+53200086 Jori, Elder Inquisitor
+53200089 Jori, Elder Inquisitor
+53200100 Jori, Elder Inquisitor
+53200101 Jori, Elder Inquisitor
+53200102 Jori, Elder Inquisitor
+53200186 Jori, Elder Inquisitor
+53200200 Jori, Elder Inquisitor
+53200286 Jori, Elder Inquisitor
+53207000 Jori, Elder Inquisitor
+53207086 Jori, Elder Inquisitor
+53207089 Jori, Elder Inquisitor
+53300000 St. Trina
+53300087 St. Trina
+53400000 Dummy Entity
+53500000 Basilisk Eyes
+53500100 Basilisk Eyes
+53600000 Giant Beast Skeleton
+53600083 Giant Beast Skeleton
+53600084 Giant Beast Skeleton
+53600100 Giant Beast Skeleton
+53600181 Giant Beast Skeleton
+53600184 Giant Beast Skeleton
+53600300 Giant Beast Skeleton
+53600400 Giant Beast Skeleton
+53600500 Giant Beast Skeleton
+53600700 Giant Beast Skeleton
+53600790 Giant Beast Skeleton
+53601000 Giant Beast Skeleton
+53601083 Giant Beast Skeleton
+53601084 Giant Beast Skeleton
+53601100 Giant Beast Skeleton
+53601181 Giant Beast Skeleton
+53601184 Giant Beast Skeleton
+53601700 Giant Beast Skeleton
+53601790 Giant Beast Skeleton
+53602000 Giant Beast Skeleton
+53602083 Giant Beast Skeleton
+53602084 Giant Beast Skeleton
+53602100 Giant Beast Skeleton
+53602181 Giant Beast Skeleton
+53602184 Giant Beast Skeleton
+53602700 Giant Beast Skeleton
+53602790 Giant Beast Skeleton
+53603000 Giant Beast Skeleton
+53603083 Giant Beast Skeleton
+53603084 Giant Beast Skeleton
+53603100 Giant Beast Skeleton
+53603181 Giant Beast Skeleton
+53603184 Giant Beast Skeleton
+53603700 Giant Beast Skeleton
+53603790 Giant Beast Skeleton
+53604000 Giant Beast Skeleton
+53604083 Giant Beast Skeleton
+53604084 Giant Beast Skeleton
+53604100 Giant Beast Skeleton
+53604181 Giant Beast Skeleton
+53604184 Giant Beast Skeleton
+53604700 Giant Beast Skeleton
+53604790 Giant Beast Skeleton
+53605000 Giant Beast Skeleton
+53605084 Giant Beast Skeleton
+53606000 Giant Beast Skeleton
+53606084 Giant Beast Skeleton
+53607000 Giant Beast Skeleton
+53607084 Giant Beast Skeleton
+53608000 Giant Beast Skeleton
+53608084 Giant Beast Skeleton
+53609000 Giant Beast Skeleton
+53609084 Giant Beast Skeleton
+53609100 Giant Beast Skeleton
+53609183 Giant Beast Skeleton
+53609200 Giant Beast Skeleton
+53609283 Giant Beast Skeleton
+53609300 Giant Beast Skeleton
+53609383 Giant Beast Skeleton
+53700000 Ancient Dragon Senessax
+53700085 Ancient Dragon Senessax
+53701000 Ancient Dragon Senessax
+53701100 Ancient Dragon Senessax
+53701185 Ancient Dragon Senessax
+53701200 Ancient Dragon Senessax
+53702000 Ancient Dragon Senessax
+53702100 Ancient Dragon Senessax
+53702200 Ancient Dragon Senessax
+53800000 Miranda Blossom
+53800081 Miranda Blossom
+53800084 Miranda Blossom
+53800090 Miranda Blossom
+53800091 Miranda Blossom
+53800094 Miranda Blossom
+53800200 Miranda Blossom
+53800284 Miranda Blossom
+53800300 Miranda Blossom
+53800390 Miranda Blossom
+53810000 Miranda Sprout
+53810081 Miranda Sprout
+53810084 Miranda Sprout
+53810090 Miranda Sprout
+53810091 Miranda Sprout
+53810094 Miranda Sprout
+53810200 Miranda Sprout
+53810284 Miranda Sprout
+53810300 Miranda Sprout
+53810390 Miranda Sprout
+53811000 Miranda Sprout
+53811081 Miranda Sprout
+53811200 Miranda Sprout
+53811300 Miranda Sprout
+53811390 Miranda Sprout
+53900000 Troll
+53900001 Troll
+53900083 Troll
+53900090 Troll
+53900100 Troll
+53901000 Troll
+53903000 Troll
+53904000 Troll
+53904100 Troll
+53908000 Troll
+53910000 Troll Knight
+53910082 Troll Knight
+53910100 Troll Knight
+53910190 Troll Knight
+53910200 Troll Knight
+53918000 Troll Knight
+53920000 Troll - Unknown
+54010000 Eagle
+54010080 Eagle
+54010081 Eagle
+54010082 Eagle
+54010083 Eagle
+54010084 Eagle
+54010085 Eagle
+54010087 Eagle
+54010090 Eagle
+54010091 Eagle
+54010092 Eagle
+54010093 Eagle
+54010094 Eagle
+54010095 Eagle
+54010885 Eagle
+54010888 Eagle
+54011000 Eagle
+54011080 Eagle
+54011081 Eagle
+54011083 Eagle
+54011084 Eagle
+54011085 Eagle
+54011090 Eagle
+54011091 Eagle
+54011093 Eagle
+54011094 Eagle
+54011095 Eagle
+54100000 Deer
+54100009 Deer
+54100080 Deer
+54100081 Deer
+54100082 Deer
+54100083 Deer
+54100084 Deer
+54100085 Deer
+54100087 Deer
+54100090 Deer
+54100091 Deer
+54100092 Deer
+54100093 Deer
+54100094 Deer
+54100095 Deer
+54100880 Deer
+54100881 Deer
+54100885 Deer
+54100900 Deer
+54101000 Deer
+54102000 Deer
+54102080 Deer
+54102081 Deer
+54102083 Deer
+54102084 Deer
+54102085 Deer
+54102090 Deer
+54102091 Deer
+54102093 Deer
+54102094 Deer
+54102095 Deer
+54210000 Red Bear
+54210080 Red Bear
+54210083 Red Bear
+54210084 Red Bear
+54210090 Red Bear
+54210093 Red Bear
+54211000 Red Bear
+54211080 Red Bear
+54211081 Red Bear
+54211083 Red Bear
+54211084 Red Bear
+54211090 Red Bear
+54211093 Red Bear
+54211094 Red Bear
+54300000 Owl
+54300080 Owl
+54300081 Owl
+54300082 Owl
+54300087 Owl
+54300090 Owl
+54300093 Owl
+54300094 Owl
+54300095 Owl
+54301086 Owl
+54302000 Owl
+54302083 Owl
+54302084 Owl
+54302086 Owl
+54302090 Owl
+54302093 Owl
+54302094 Owl
+54302095 Owl
+54400000 Boar
+54400080 Boar
+54400084 Boar
+54400090 Boar
+54400091 Boar
+54400093 Boar
+54400094 Boar
+54400095 Boar
+54400100 Boar
+54400180 Boar
+54400183 Boar
+54400184 Boar
+54400190 Boar
+54400191 Boar
+54400194 Boar
+54400195 Boar
+54400890 Boar
+54401000 Boar
+54401080 Boar
+54401084 Boar
+54401090 Boar
+54401091 Boar
+54401093 Boar
+54401094 Boar
+54401095 Boar
+54401100 Boar
+54401181 Boar
+54401190 Boar
+54401191 Boar
+54401193 Boar
+54401195 Boar
+54500000 Ram
+54500080 Ram
+54500081 Ram
+54500083 Ram
+54500084 Ram
+54500085 Ram
+54500087 Ram
+54500090 Ram
+54500091 Ram
+54500092 Ram
+54500093 Ram
+54500094 Ram
+54500095 Ram
+54500880 Ram
+54500885 Ram
+54500890 Ram
+54500900 Ram
+54501000 Ram
+54501090 Ram
+54501091 Ram
+54501092 Ram
+54501093 Ram
+54501094 Ram
+54501095 Ram
+54502000 Ram
+54502093 Ram
+54503000 Ram
+54503080 Ram
+54503083 Ram
+54503084 Ram
+54503090 Ram
+54504000 Ram
+54504080 Ram
+54504090 Ram
+54505000 Ram
+54506000 Ram
+54506080 Ram
+54506083 Ram
+54506084 Ram
+54506085 Ram
+54506090 Ram
+54506091 Ram
+54506094 Ram
+54506095 Ram
+54506100 Ram
+54506181 Ram
+54506190 Ram
+54506191 Ram
+54506193 Ram
+54506194 Ram
+54506195 Ram
+54507000 Ram
+54507086 Ram
+54507100 Ram
+54507186 Ram
+54600000 Murre
+54600083 Murre
+54600090 Murre
+54600093 Murre
+54600100 Murre
+54600183 Murre
+54700000 Dragonfly
+54700081 Dragonfly
+54700083 Dragonfly
+54700084 Dragonfly
+54700090 Dragonfly
+54700091 Dragonfly
+54700093 Dragonfly
+54700094 Dragonfly
+54700095 Dragonfly
+54710000 Yellow Dragonfly
+54710090 Yellow Dragonfly
+54710091 Yellow Dragonfly
+54710093 Yellow Dragonfly
+54710094 Yellow Dragonfly
+54710095 Yellow Dragonfly
+54720000 Great Dragonfly
+54720090 Great Dragonfly
+54720091 Great Dragonfly
+54720093 Great Dragonfly
+54720095 Great Dragonfly
+54800000 Turtle
+54800080 Turtle
+54800081 Turtle
+54800082 Turtle
+54800083 Turtle
+54800084 Turtle
+54800087 Turtle
+54800090 Turtle
+54800091 Turtle
+54800094 Turtle
+54800095 Turtle
+54800100 Turtle
+54800181 Turtle
+54800183 Turtle
+54800184 Turtle
+54800190 Turtle
+54800191 Turtle
+54800193 Turtle
+54800194 Turtle
+54900000 Springhare
+54900080 Springhare
+54900081 Springhare
+54900082 Springhare
+54900083 Springhare
+54900084 Springhare
+54900085 Springhare
+54900087 Springhare
+54900090 Springhare
+54900091 Springhare
+54900093 Springhare
+54900094 Springhare
+54900095 Springhare
+54900100 Springhare
+54900885 Springhare
+54900900 Springhare
+54901000 Springhare
+54901080 Springhare
+54901081 Springhare
+54901083 Springhare
+54901084 Springhare
+54901090 Springhare
+54901091 Springhare
+54901093 Springhare
+54901094 Springhare
+54901095 Springhare
+55000000 Living Magma
+55000081 Living Magma
+55000090 Living Magma
+55000093 Living Magma
+55000095 Living Magma
+55000100 Living Magma
+55000181 Living Magma
+55000190 Living Magma
+55000193 Living Magma
+55000195 Living Magma
+55000200 Living Magma
+55000281 Living Magma
+55000290 Living Magma
+55000293 Living Magma
+55000295 Living Magma
+55000300 Living Magma
+55000381 Living Magma
+55000390 Living Magma
+55000393 Living Magma
+55000395 Living Magma
+55000400 Living Magma
+55000481 Living Magma
+55000490 Living Magma
+55000493 Living Magma
+55000495 Living Magma
+55000500 Living Magma
+55000581 Living Magma
+55000590 Living Magma
+55000593 Living Magma
+55000595 Living Magma
+55000600 Living Magma
+55000690 Living Magma
+55000700 Living Magma
+55000790 Living Magma
+55000800 Living Magma
+55000890 Living Magma
+55010000 Living Magma
+55010085 Living Magma
+55010100 Living Magma
+55010185 Living Magma
+55010200 Living Magma
+55010285 Living Magma
+55010685 Living Magma
+55010785 Living Magma
+55010885 Living Magma
+55110000 Shade
+55110098 Shade
+55110100 Shade
+55110198 Shade
+55120000 Shade
+55120098 Shade
+55120100 Shade
+55120198 Shade
+55130000 Cemetary Shade
+55130081 Cemetary Shade
+55130083 Cemetary Shade
+55130090 Cemetary Shade
+55200000 Stray
+55200081 Stray
+55200090 Stray
+55200095 Stray
+55210000 Stray
+55210080 Stray
+55210081 Stray
+55210090 Stray
+55220000 Stray
+55220080 Stray
+55220081 Stray
+55220083 Stray
+55220090 Stray
+55220094 Stray
+55220095 Stray
+55230000 Stray
+55230080 Stray
+55230081 Stray
+55230083 Stray
+55230090 Stray
+55230094 Stray
+55230095 Stray
+55240000 Braided Stray
+55240082 Braided Stray
+55240090 Braided Stray
+55240094 Braided Stray
+55250000 Braided Stray
+55250082 Braided Stray
+55250090 Braided Stray
+55250094 Braided Stray
+55250095 Braided Stray
+55260000 Bloodbane Stray
+55260080 Bloodbane Stray
+55260090 Bloodbane Stray
+55260094 Bloodbane Stray
+55270000 Bloodbane Stray
+55270080 Bloodbane Stray
+55270090 Bloodbane Stray
+55270094 Bloodbane Stray
+55270095 Bloodbane Stray
+55300000 Man-Bat
+55300080 Man-Bat
+55300081 Man-Bat
+55300090 Man-Bat
+55300093 Man-Bat
+55300098 Man-Bat
+55300099 Man-Bat
+55300100 Man-Bat
+55300180 Man-Bat
+55300181 Man-Bat
+55300190 Man-Bat
+55300193 Man-Bat
+55300198 Man-Bat
+55300199 Man-Bat
+55300200 Man-Bat
+55300299 Man-Bat
+55301000 Man-Bat
+55301100 Man-Bat
+55301200 Man-Bat
+55400000 Wolf
+55400009 Wolf
+55400084 Wolf
+55400090 Wolf
+55400100 Wolf
+55400900 Wolf
+55401000 Wolf
+55402000 Wolf
+55408000 Wolf
+55409000 Wolf
+55410000 Wolf
+55410009 Wolf
+55410084 Wolf
+55410090 Wolf
+55500000 Fingercreeper
+55500083 Fingercreeper
+55500093 Fingercreeper
+55500100 Fingercreeper
+55500200 Fingercreeper
+55505000 Fingercreeper
+55505100 Fingercreeper
+55505200 Fingercreeper
+55505300 Fingercreeper
+55505400 Fingercreeper
+55505500 Fingercreeper
+55505600 Fingercreeper
+55505700 Fingercreeper
+55505800 Fingercreeper
+55506000 Fingercreeper
+55506100 Fingercreeper
+55506200 Fingercreeper
+55506300 Fingercreeper
+55506400 Fingercreeper
+55507000 Fingercreeper
+55507100 Fingercreeper
+55507200 Fingercreeper
+55507300 Fingercreeper
+55507400 Fingercreeper
+55507500 Fingercreeper
+55507600 Fingercreeper
+55507700 Fingercreeper
+55507800 Fingercreeper
+55508000 Fingercreeper
+55508100 Fingercreeper
+55508200 Fingercreeper
+55508300 Fingercreeper
+55508400 Fingercreeper
+55508500 Fingercreeper
+55508800 Fingercreeper
+55510000 Fingercreeper (Large)
+55510093 Fingercreeper (Large)
+55510100 Fingercreeper (Large)
+55600000 Fingercreeper (Small)
+55600083 Fingercreeper (Small)
+55600093 Fingercreeper (Small)
+55600100 Fingercreeper (Small)
+55600200 Fingercreeper (Small)
+55600297 Fingercreeper (Small)
+55600300 Fingercreeper (Small)
+55600390 Fingercreeper (Small)
+55700000 Marionette Soldier
+55700090 Marionette Soldier
+55701000 Marionette Soldier
+55701090 Marionette Soldier
+55701100 Marionette Soldier
+55701190 Marionette Soldier
+55701200 Marionette Soldier
+55701290 Marionette Soldier
+55702000 Marionette Soldier
+55702090 Marionette Soldier
+55800000 Flying Dragon
+55800084 Flying Dragon
+55800085 Flying Dragon
+55800985 Flying Dragon
+55801000 Flying Dragon
+55808000 Flying Dragon
+55810000 Flying Dragon
+55900000 Putrid Flesh
+55900081 Putrid Flesh
+55900083 Putrid Flesh
+55900087 Putrid Flesh
+55900090 Putrid Flesh
+55900091 Putrid Flesh
+55900100 Putrid Flesh
+55900180 Putrid Flesh
+55900184 Putrid Flesh
+55900190 Putrid Flesh
+55900200 Putrid Flesh
+55900300 Putrid Flesh
+55900400 Putrid Flesh
+55900483 Putrid Flesh
+55900487 Putrid Flesh
+55900500 Putrid Flesh
+55900585 Putrid Flesh
+55910000 Putrid Flesh (Large)
+55910087 Putrid Flesh (Large)
+55910400 Putrid Flesh (Large)
+55910500 Putrid Flesh (Large)
+55910587 Putrid Flesh (Large)
+55917500 Putrid Flesh (Large)
+55917587 Putrid Flesh (Large)
+56000000 Catacomb Skeleton
+56000087 Catacomb Skeleton
+56000100 Catacomb Skeleton
+56000187 Catacomb Skeleton
+56000200 Catacomb Skeleton
+56000287 Catacomb Skeleton
+56001000 Catacomb Skeleton
+56001087 Catacomb Skeleton
+56001100 Catacomb Skeleton
+56001187 Catacomb Skeleton
+56002000 Catacomb Skeleton
+56002087 Catacomb Skeleton
+56002100 Catacomb Skeleton
+56002187 Catacomb Skeleton
+56003000 Catacomb Skeleton
+56003087 Catacomb Skeleton
+56003100 Catacomb Skeleton
+56003187 Catacomb Skeleton
+56003200 Catacomb Skeleton
+56003287 Catacomb Skeleton
+56003300 Catacomb Skeleton
+56004000 Catacomb Skeleton
+56004100 Catacomb Skeleton
+56200000 Tibia Mariner
+56200084 Tibia Mariner
+56300000 Giant Crayfish
+56300083 Giant Crayfish
+56300090 Giant Crayfish
+56301000 Giant Crayfish
+56302000 Giant Crayfish
+56302081 Giant Crayfish
+56307081 Giant Crayfish
+56400000 Giant Crab
+56400081 Giant Crab
+56400083 Giant Crab
+56400098 Giant Crab
+56400100 Giant Crab
+56400183 Giant Crab
+56400198 Giant Crab
+56410000 Crab
+56410081 Crab
+56410083 Crab
+56410094 Crab
+56410098 Crab
+56510000 Messmer Foot Soldier
+56510080 Messmer Foot Soldier
+56510081 Messmer Foot Soldier
+56510082 Messmer Foot Soldier
+56510090 Messmer Foot Soldier
+56510093 Messmer Foot Soldier
+56510095 Messmer Foot Soldier
+56510098 Messmer Foot Soldier
+56510100 Messmer Foot Soldier
+56510500 Messmer Foot Soldier
+56510582 Messmer Foot Soldier
+56510590 Messmer Foot Soldier
+56510598 Messmer Foot Soldier
+56510890 Messmer Foot Soldier
+56511000 Messmer Foot Soldier
+56511400 Messmer Foot Soldier
+56511500 Messmer Foot Soldier
+56511581 Messmer Foot Soldier
+56511593 Messmer Foot Soldier
+56511600 Messmer Foot Soldier
+56511690 Messmer Foot Soldier
+56511700 Messmer Foot Soldier
+56511800 Messmer Foot Soldier
+56511890 Messmer Foot Soldier
+56511900 Messmer Foot Soldier
+56512000 Messmer Foot Soldier
+56512081 Messmer Foot Soldier
+56512082 Messmer Foot Soldier
+56512090 Messmer Foot Soldier
+56512093 Messmer Foot Soldier
+56512095 Messmer Foot Soldier
+56512098 Messmer Foot Soldier
+56512100 Messmer Foot Soldier
+56512500 Messmer Foot Soldier
+56512590 Messmer Foot Soldier
+56512595 Messmer Foot Soldier
+56513000 Messmer Foot Soldier
+56514000 Messmer Foot Soldier
+56514090 Messmer Foot Soldier
+56514095 Messmer Foot Soldier
+56514098 Messmer Foot Soldier
+56516000 Messmer Foot Soldier
+56516081 Messmer Foot Soldier
+56516082 Messmer Foot Soldier
+56516090 Messmer Foot Soldier
+56516093 Messmer Foot Soldier
+56516095 Messmer Foot Soldier
+56516098 Messmer Foot Soldier
+56517000 Messmer Foot Soldier
+56517081 Messmer Foot Soldier
+56517095 Messmer Foot Soldier
+56519000 Messmer Foot Soldier
+56610000 Shadow Militia
+56610081 Shadow Militia
+56610090 Shadow Militia
+56610091 Shadow Militia
+56610095 Shadow Militia
+56610098 Shadow Militia
+56610099 Shadow Militia
+56610100 Shadow Militia
+56611000 Shadow Militia
+56611081 Shadow Militia
+56611090 Shadow Militia
+56611091 Shadow Militia
+56611095 Shadow Militia
+56611098 Shadow Militia
+56611099 Shadow Militia
+56611100 Shadow Militia
+56612000 Shadow Militia
+56612081 Shadow Militia
+56612090 Shadow Militia
+56612091 Shadow Militia
+56612095 Shadow Militia
+56612098 Shadow Militia
+56612099 Shadow Militia
+56612100 Shadow Militia
+56800000 Wheeled Ballista
+56800081 Wheeled Ballista
+56800093 Wheeled Ballista
+56900000 Dragon-faced Flamethrower
+56900090 Dragon-faced Flamethrower
+57000000 Demi-Human
+57000083 Demi-Human
+57000093 Demi-Human
+57000200 Demi-Human
+57001000 Demi-Human
+57001083 Demi-Human
+57001093 Demi-Human
+57001200 Demi-Human
+57002000 Demi-Human
+57002083 Demi-Human
+57002093 Demi-Human
+57002200 Demi-Human
+57009000 Demi-Human
+57009100 Demi-Human
+57009200 Demi-Human
+57010000 Demi-Human (Large)
+57010083 Demi-Human (Large)
+57010093 Demi-Human (Large)
+57100000 Demi-Human Shaman
+57100083 Demi-Human Shaman
+57100093 Demi-Human Shaman
+57109000 Demi-Human Shaman
+57109100 Demi-Human Shaman
+57200000 Demi-Human Chief
+57200083 Demi-Human Chief
+57200093 Demi-Human Chief
+57200100 Demi-Human Chief
+57300000 Demi-Human Queen
+57300083 Demi-Human Queen
+57301000 Demi-Human Queen
+57301993 Demi-Human Queen
+57400000 Kindred of Rot
+57400090 Kindred of Rot
+57400094 Kindred of Rot
+57400095 Kindred of Rot
+57401000 Kindred of Rot
+57401090 Kindred of Rot
+57401094 Kindred of Rot
+57401095 Kindred of Rot
+57402000 Kindred of Rot
+57402090 Kindred of Rot
+57402094 Kindred of Rot
+57402095 Kindred of Rot
+57403000 Kindred of Rot
+57403090 Kindred of Rot
+57403094 Kindred of Rot
+57403095 Kindred of Rot
+57404000 Kindred of Rot
+57404090 Kindred of Rot
+57404094 Kindred of Rot
+57404095 Kindred of Rot
+57405000 Kindred of Rot
+57405094 Kindred of Rot
+57405095 Kindred of Rot
+57406000 Kindred of Rot
+57406094 Kindred of Rot
+57406095 Kindred of Rot
+57407000 Kindred of Rot
+57407094 Kindred of Rot
+57407095 Kindred of Rot
+57409000 Kindred of Rot
+57409080 Kindred of Rot
+57409081 Kindred of Rot
+57409083 Kindred of Rot
+57409090 Kindred of Rot
+57500000 Living Jar Warrior
+57500080 Living Jar Warrior
+57500084 Living Jar Warrior
+57500090 Living Jar Warrior
+57500098 Living Jar Warrior
+57500400 Living Jar Warrior
+57500480 Living Jar Warrior
+57500484 Living Jar Warrior
+57500490 Living Jar Warrior
+57500498 Living Jar Warrior
+57507000 Living Jar Warrior
+57508000 Living Jar Warrior
+57508080 Living Jar Warrior
+57508084 Living Jar Warrior
+57508090 Living Jar Warrior
+57508098 Living Jar Warrior
+57508100 Living Jar Warrior
+57508180 Living Jar Warrior
+57508184 Living Jar Warrior
+57508190 Living Jar Warrior
+57508200 Living Jar Warrior
+57508280 Living Jar Warrior
+57508284 Living Jar Warrior
+57508290 Living Jar Warrior
+57508300 Living Jar Warrior
+57508380 Living Jar Warrior
+57508390 Living Jar Warrior
+57508400 Living Jar Warrior
+57508480 Living Jar Warrior
+57508490 Living Jar Warrior
+57508500 Living Jar Warrior
+57508580 Living Jar Warrior
+57510000 Living Jar
+57510002 Living Jar
+57510080 Living Jar
+57510084 Living Jar
+57510090 Living Jar
+57510098 Living Jar
+57510200 Living Jar
+57510300 Living Jar
+57510400 Living Jar
+57510480 Living Jar
+57510484 Living Jar
+57510490 Living Jar
+57510498 Living Jar
+57600000 Rat
+57600080 Rat
+57600081 Rat
+57600084 Rat
+57600090 Rat
+57600100 Rat
+57600300 Rat
+57600386 Rat
+57600390 Rat
+57600886 Rat
+57610000 Giant Rat
+57610080 Giant Rat
+57610081 Giant Rat
+57610084 Giant Rat
+57610090 Giant Rat
+57610300 Giant Rat
+57610386 Giant Rat
+57610390 Giant Rat
+57610886 Giant Rat
+57800000 Runebear
+57800090 Runebear
+57800095 Runebear
+57800100 Runebear
+57800200 Runebear
+57800700 Runebear
+57900000 Guardian Golem
+57900090 Guardian Golem
+57900095 Guardian Golem
+57900100 Guardian Golem
+57901000 Guardian Golem
+57901090 Guardian Golem
+57901094 Guardian Golem
+57901095 Guardian Golem
+57901100 Guardian Golem
+57902000 Guardian Golem
+57902100 Guardian Golem
+57903000 Guardian Golem
+57903100 Guardian Golem
+57904000 Guardian Golem
+57904100 Guardian Golem
+57905000 Guardian Golem
+57905100 Guardian Golem
+57906000 Guardian Golem
+57907000 Guardian Golem
+57908000 Guardian Golem
+57909000 Guardian Golem
+58000000 Crucible Knight Devonia
+58000001 Crucible Knight Devonia
+58000094 Crucible Knight Devonia
+58100000 Demi-Human Swordmaster Onze
+58100001 Demi-Human Swordmaster Onze
+58100083 Demi-Human Swordmaster Onze
+58100093 Demi-Human Swordmaster Onze
+58100980 Demi-Human Swordmaster Onze
+58108083 Demi-Human Swordmaster Onze
+58200000 Great Red Bear
+58200001 Great Red Bear
+58200090 Great Red Bear
+58200093 Great Red Bear
+58200095 Great Red Bear
+58200990 Great Red Bear
+58300000 Messmer Soldier
+58300001 Messmer Soldier
+58300080 Messmer Soldier
+58300081 Messmer Soldier
+58300082 Messmer Soldier
+58300090 Messmer Soldier
+58300093 Messmer Soldier
+58300095 Messmer Soldier
+58300098 Messmer Soldier
+58300100 Messmer Soldier
+58300101 Messmer Soldier
+58300180 Messmer Soldier
+58300181 Messmer Soldier
+58300182 Messmer Soldier
+58300190 Messmer Soldier
+58300193 Messmer Soldier
+58300200 Messmer Soldier
+58300201 Messmer Soldier
+58300280 Messmer Soldier
+58300281 Messmer Soldier
+58300282 Messmer Soldier
+58300290 Messmer Soldier
+58300293 Messmer Soldier
+58300298 Messmer Soldier
+58300300 Messmer Soldier
+58300301 Messmer Soldier
+58300380 Messmer Soldier
+58300381 Messmer Soldier
+58300382 Messmer Soldier
+58300390 Messmer Soldier
+58300393 Messmer Soldier
+58300395 Messmer Soldier
+58300398 Messmer Soldier
+58300400 Messmer Soldier
+58300401 Messmer Soldier
+58300482 Messmer Soldier
+58300490 Messmer Soldier
+58300500 Messmer Soldier
+58300501 Messmer Soldier
+58300580 Messmer Soldier
+58300581 Messmer Soldier
+58300582 Messmer Soldier
+58300590 Messmer Soldier
+58300593 Messmer Soldier
+58300595 Messmer Soldier
+58300598 Messmer Soldier
+58300600 Messmer Soldier
+58300680 Messmer Soldier
+58300681 Messmer Soldier
+58300690 Messmer Soldier
+58300698 Messmer Soldier
+58301590 Messmer Soldier
+58309000 Messmer Soldier
+58309082 Messmer Soldier
+58309090 Messmer Soldier
+58309098 Messmer Soldier
+58400000 Black Knight
+58400001 Black Knight
+58400080 Black Knight
+58400081 Black Knight
+58400082 Black Knight
+58400090 Black Knight
+58400093 Black Knight
+58400098 Black Knight
+58400100 Black Knight
+58400101 Black Knight
+58400182 Black Knight
+58400190 Black Knight
+58400193 Black Knight
+58400195 Black Knight
+58400198 Black Knight
+58400200 Black Knight
+58400201 Black Knight
+58400290 Black Knight
+58400293 Black Knight
+58400300 Black Knight
+58400301 Black Knight
+58400382 Black Knight
+58400390 Black Knight
+58400398 Black Knight
+58400500 Black Knight
+58400501 Black Knight
+58400590 Black Knight
+58400600 Black Knight
+58400601 Black Knight
+58400690 Black Knight
+58401290 Black Knight
+58401390 Black Knight
+58409000 Black Knight
+58409098 Black Knight
+58500000 Giant Ram
+58500083 Giant Ram
+58500084 Giant Ram
+58500100 Giant Ram
+58500180 Giant Ram
+58500183 Giant Ram
+58500184 Giant Ram
+58500190 Giant Ram
+58600000 Ghostflame Dragon
+58600001 Ghostflame Dragon
+58600080 Ghostflame Dragon
+58600083 Ghostflame Dragon
+58600090 Ghostflame Dragon
+58700000 Imp (Lion Head)
+58700001 Imp (Lion Head)
+58700081 Imp (Lion Head)
+58700090 Imp (Lion Head)
+58700091 Imp (Lion Head)
+58700095 Imp (Lion Head)
+58700100 Imp (Lion Head)
+58700101 Imp (Lion Head)
+58700181 Imp (Lion Head)
+58700190 Imp (Lion Head)
+58700191 Imp (Lion Head)
+58700195 Imp (Lion Head)
+58700200 Imp (Lion Head)
+58700201 Imp (Lion Head)
+58700281 Imp (Lion Head)
+58700290 Imp (Lion Head)
+58700291 Imp (Lion Head)
+58700295 Imp (Lion Head)
+58700300 Imp (Lion Head)
+58700301 Imp (Lion Head)
+58700381 Imp (Lion Head)
+58700390 Imp (Lion Head)
+58700391 Imp (Lion Head)
+58700395 Imp (Lion Head)
+58700400 Imp (Lion Head)
+58700481 Imp (Lion Head)
+58700491 Imp (Lion Head)
+58700495 Imp (Lion Head)
+58710000 Imp (Dragon Head)
+58710001 Imp (Dragon Head)
+58710090 Imp (Dragon Head)
+58710095 Imp (Dragon Head)
+58720000 Imp (Dragon Head)
+58720001 Imp (Dragon Head)
+58720090 Imp (Dragon Head)
+58720091 Imp (Dragon Head)
+58727000 Imp (Dragon Head)
+58727090 Imp (Dragon Head)
+58727091 Imp (Dragon Head)
+58800000 Putrescence Sorcerer
+58800001 Putrescence Sorcerer
+58800090 Putrescence Sorcerer
+58800091 Putrescence Sorcerer
+58800095 Putrescence Sorcerer
+58800100 Putrescence Sorcerer
+58800101 Putrescence Sorcerer
+58800181 Putrescence Sorcerer
+58800190 Putrescence Sorcerer
+58800191 Putrescence Sorcerer
+58800200 Putrescence Sorcerer
+58800201 Putrescence Sorcerer
+58800281 Putrescence Sorcerer
+58800290 Putrescence Sorcerer
+58900000 Black Knight Horse
+58900001 Black Knight Horse
+58900090 Black Knight Horse
+58900093 Black Knight Horse
+58900190 Black Knight Horse
+59000000 Man-Fly
+59000001 Man-Fly
+59000080 Man-Fly
+59000081 Man-Fly
+59000083 Man-Fly
+59000088 Man-Fly
+59000089 Man-Fly
+59000090 Man-Fly
+59000091 Man-Fly
+59000094 Man-Fly
+59000100 Man-Fly
+59000180 Man-Fly
+59000181 Man-Fly
+59000183 Man-Fly
+59000188 Man-Fly
+59000189 Man-Fly
+59000190 Man-Fly
+59000191 Man-Fly
+59000194 Man-Fly
+59000200 Man-Fly
+59100000 Hornsent Grandam
+59100088 Hornsent Grandam
+59200000 Magma Wyrm
+59200100 Magma Wyrm
+59200181 Magma Wyrm
+59300000 Giant Skeleton
+59300084 Giant Skeleton
+59301000 Giant Skeleton
+59301084 Giant Skeleton
+59310000 Giant Beast Skeleton
+59310081 Giant Beast Skeleton
+59310084 Giant Beast Skeleton
+59311000 Giant Beast Skeleton
+59311081 Giant Beast Skeleton
+59311084 Giant Beast Skeleton
+59400000 Watcher Stones
+59400087 Watcher Stones
+59400100 Watcher Stones
+59400187 Watcher Stones
+59400200 Watcher Stones
+59400287 Watcher Stones
+59400300 Watcher Stones
+59400387 Watcher Stones
+59400400 Watcher Stones
+59400487 Watcher Stones
+59401000 Watcher Stones
+59401087 Watcher Stones
+59500000 Leonine Misbegotten
+59500087 Leonine Misbegotten
+59501000 Leonine Misbegotten
+59501087 Leonine Misbegotten
+59600000 Ulcerated Tree Spirit
+59600081 Ulcerated Tree Spirit
+59600088 Ulcerated Tree Spirit
+59600098 Ulcerated Tree Spirit
+59600100 Ulcerated Tree Spirit
+59600198 Ulcerated Tree Spirit
+59700000 Abductor Virgin
+59700083 Abductor Virgin
+59700090 Abductor Virgin
+59700190 Abductor Virgin
+59701000 Abductor Virgin
+59701100 Abductor Virgin
+59701190 Abductor Virgin
+59701290 Abductor Virgin
+59702000 Abductor Virgin
+59702090 Abductor Virgin
+59800000 Omenkiller
+59800090 Omenkiller
+59800100 Omenkiller
+59808000 Omenkiller
+59808100 Omenkiller
+59809090 Omenkiller
+59809190 Omenkiller
+59809290 Omenkiller
+59900000 Basilisk
+59900090 Basilisk
+59900094 Basilisk
+59900095 Basilisk
+59900100 Basilisk
+59900200 Basilisk
+59900294 Basilisk
 60010000 Eagle
 60010010 Eagle
 60010012 Eagle

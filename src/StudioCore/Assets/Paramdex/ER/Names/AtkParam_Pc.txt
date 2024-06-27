@@ -2,8 +2,6 @@
 1 Impact: No Target
 2 Impact: Oppose and Self
 3 Impact: Oppose and Friendly
-6 [Talisman] Talisman of Lord's Bestowal
-820 [Tear] Crimsonburst Dried Tear
 1010 Impact
 40000 Glintstone Pebble
 40010 Great Glintstone Shard
