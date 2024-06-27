@@ -92,8 +92,10 @@ internal class SpecialMapConnections
             return relations;
         }
 
-        if (Smithbox.ProjectType == ProjectType.ER && parts[0] == 60 && parts[1] > 0 && parts[2] > 0)
+        if (Smithbox.ProjectType == ProjectType.ER && ( parts[0] == 60 || parts[0] == 61 ) && parts[1] > 0 && parts[2] > 0)
         {
+            var topIndex = parts[0];
+
             var scale = parts[3] % 10;
             if (scale < 2)
             {
@@ -101,7 +103,11 @@ internal class SpecialMapConnections
                 var tileZ = parts[2];
                 tileX /= 2;
                 tileZ /= 2;
-                var parent = FormatMap(new byte[] { 60, tileX, tileZ, (byte)(parts[3] + 1) });
+
+                var parent = "";
+
+                parent = FormatMap(new byte[] { topIndex, tileX, tileZ, (byte)(parts[3] + 1) });
+
                 if (allMapIds.Contains(parent))
                 {
                     relations[parent] = RelationType.Parent;
@@ -109,7 +115,7 @@ internal class SpecialMapConnections
                     {
                         tileX /= 2;
                         tileZ /= 2;
-                        var ancestor = FormatMap(new byte[] { 60, tileX, tileZ, (byte)(parts[3] + 2) });
+                        var ancestor = FormatMap(new byte[] { topIndex, tileX, tileZ, (byte)(parts[3] + 2) });
                         if (allMapIds.Contains(ancestor))
                         {
                             relations[ancestor] = RelationType.Ancestor;
@@ -129,7 +135,7 @@ internal class SpecialMapConnections
                     {
                         var childX = (byte)(tileX * 2 + x);
                         var childZ = (byte)(tileZ * 2 + z);
-                        var child = FormatMap(new byte[] { 60, childX, childZ, (byte)(parts[3] - 1) });
+                        var child = FormatMap(new byte[] { topIndex, childX, childZ, (byte)(parts[3] - 1) });
                         if (allMapIds.Contains(child))
                         {
                             relations[child] = RelationType.Child;
@@ -144,7 +150,7 @@ internal class SpecialMapConnections
                                 {
                                     var descX = (byte)(childX * 2 + cx);
                                     var descZ = (byte)(childZ * 2 + cz);
-                                    var desc = FormatMap(new byte[] { 60, descX, descZ, (byte)(parts[3] - 2) });
+                                    var desc = FormatMap(new byte[] { topIndex, descX, descZ, (byte)(parts[3] - 2) });
                                     if (allMapIds.Contains(desc))
                                     {
                                         relations[desc] = RelationType.Descendant;
@@ -155,10 +161,6 @@ internal class SpecialMapConnections
                     }
                 }
             }
-        }
-        else if (Smithbox.ProjectType == ProjectType.AC6)
-        {
-            //TODO AC6
         }
 
         Dictionary<string, string> colPatterns = new();

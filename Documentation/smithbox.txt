@@ -124,3 +124,5 @@ TalkParam is lagging heavily: due to GenerateEntryGroup
 Param Upgrade:
  Check GetOldRegulationPath, might be supplying the wrong regulation, might explain the issues
  Change how the edits are displayed, message box isn't suitable anymore
+ 
+Add DLC support to GetRelatedMaps function (m61 maps)
