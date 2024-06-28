@@ -817,6 +817,15 @@ public class MEValueOperation : MEOperation<object, object>
         operations.Add("min",
             (new[] { "number" }, "Returns the smaller of the current value and number",
                 (ctx, args) => MassParamEdit.WithDynamicOf(ctx, v => Math.Min(v, double.Parse(args[0])))));
+        operations.Add("round",
+            (new[] { "number" }, "Rounds the current value to the specified number of decimals",
+                (ctx, args) => MassParamEdit.WithDynamicOf(ctx, v => Math.Round(v, int.Parse(args[0])))));
+        operations.Add("ceil",
+            (new[] { "number" }, "Rounds the current value up to the closest integer",
+                (ctx, args) => MassParamEdit.WithDynamicOf(ctx, v => Math.Ceiling(v))));
+        operations.Add("floor",
+            (new[] { "number" }, "Rounds the current value up to the closest integer",
+                (ctx, args) => MassParamEdit.WithDynamicOf(ctx, v => Math.Floor(v))));
     }
 }
 
