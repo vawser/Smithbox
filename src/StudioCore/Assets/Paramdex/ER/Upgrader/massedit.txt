@@ -185,29 +185,29 @@ param SignPuddleParam: modified && !added: unknown_0x40: = vanillafield unknown_
 1.12.1 - (SignPuddleParam) Set unknown_0x44 to Vanilla v1.12.1 values
 param SignPuddleParam: modified && !added: unknown_0x44: = vanillafield unknown_0x44
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set Unknown0 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: Unknown0: = vanillafield Unknown0
+1.12.1 - (PostureControlParam_WepRight) Set unknown_0x6c to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: unknown_0x6c: = vanillafield unknown_0x6c
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set Unknown1 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: Unknown1: = vanillafield Unknown1
+1.12.1 - (PostureControlParam_WepRight) Set unknown_0x70 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: unknown_0x70: = vanillafield unknown_0x70
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set Unknown2 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: Unknown2: = vanillafield Unknown2
+1.12.1 - (PostureControlParam_WepRight) Set unknown_0x74 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: unknown_0x74: = vanillafield unknown_0x74
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set Unknown3 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: Unknown3: = vanillafield Unknown3
+1.12.1 - (PostureControlParam_WepRight) Set unknown_0x78 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: unknown_0x78: = vanillafield unknown_0x78
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set Unknown4 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: Unknown4: = vanillafield Unknown4
+1.12.1 - (PostureControlParam_WepRight) Set unknown_0x7c to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: unknown_0x7c: = vanillafield unknown_0x7c
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set Unknown5 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: Unknown5: = vanillafield Unknown5
+1.12.1 - (PostureControlParam_WepRight) Set unknown_0x80 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: unknown_0x80: = vanillafield unknown_0x80
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set Unknown6 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: Unknown6: = vanillafield Unknown6
+1.12.1 - (PostureControlParam_WepRight) Set unknown_0x84 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: unknown_0x84: = vanillafield unknown_0x84
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set Unknown7 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: Unknown7: = vanillafield Unknown7
+1.12.1 - (PostureControlParam_WepRight) Set unknown_0x88 to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: unknown_0x88: = vanillafield unknown_0x88
 11210015L
 1.12.1 - (PostureControlParam_WepRight) Set endPad to Vanilla v1.12.1 values
 param PostureControlParam_WepRight: modified && !added: endPad: = vanillafield endPad
@@ -493,9 +493,6 @@ param EquipParamGem: modified && !added: canMountWep_ThrustingShield: = vanillaf
 11210015L
 1.12.1 - (EquipParamGem) Set canMountWep_ThrowingWeapon to Vanilla v1.12.1 values
 param EquipParamGem: modified && !added: canMountWep_ThrowingWeapon: = vanillafield canMountWep_ThrowingWeapon
-11210015L
-1.12.1 - (EquipParamGem) Set reserved2_canMountWep_old to Vanilla v1.12.1 values
-param EquipParamGem: modified && !added: reserved2_canMountWep_old: = vanillafield reserved2_canMountWep_old
 11210015L
 1.12.1 - (EquipParamGem) Set canMountWep_ReverseHandSword to Vanilla v1.12.1 values
 param EquipParamGem: modified && !added: canMountWep_ReverseHandSword: = vanillafield canMountWep_ReverseHandSword

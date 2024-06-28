@@ -414,7 +414,20 @@ public class ParamBank
                 p.ParamType == "CHR_MODEL_PARAM_ST" &&
                 version == 10601000)
             {
-                p.FixupERChrModelParam();
+                p.FixupERField(12, 16);
+            }
+
+            // Add in the new data for these two params added in 1.12.1
+            if (Smithbox.ProjectType == ProjectType.ER && version == 11210015)
+            {
+                if(p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
+                {
+                    p.FixupERField(116, 144);
+                }
+                if (p.ParamType == "SIGN_PUDDLE_PARAM_ST")
+                {
+                    p.FixupERField(32, 40);
+                }
             }
 
             if (p.ParamType == null)
@@ -1044,7 +1057,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Eventparam could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+            TaskLogs.AddLog("Eventparam could not be found.", LogLevel.Information, TaskLogs.LogPriority.Normal);
         }
     }
 
@@ -1139,7 +1152,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Eventparam could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+            TaskLogs.AddLog("Eventparam could not be found.", LogLevel.Information, TaskLogs.LogPriority.Normal);
         }
     }
 
@@ -2447,7 +2460,7 @@ public class ParamBank
         return dest;
     }
 
-    // Param upgrade. Currently for Elden Ring only.
+    // Param upgrade. Currently for Elden Ring/Armored Core VI.
     public ParamUpgradeResult UpgradeRegulation(ParamBank vanillaBank, string oldVanillaParamPath,
         Dictionary<string, HashSet<int>> conflictingParams)
     {

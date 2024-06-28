@@ -126,4 +126,3 @@ Param Upgrade:
  Check GetOldRegulationPath, might be supplying the wrong regulation, might explain the issues
  Change how the edits are displayed, message box isn't suitable anymore
  
-Fix issue with Project Enum secondary list not immediately updating when changes occur

@@ -493,11 +493,12 @@ public class Param : SoulsFile<Param>
     ///     to fix them up again. Fortunately the only modified paramdef was ChrModelParam, and the new
     ///     field is always 0, so we can easily fix them.
     /// </summary>
-    public void FixupERChrModelParam()
+    public void FixupERField(int originalSize, int newSize)
     {
-        if (RowSize != 12)
+        if (RowSize != originalSize)
             return;
-        var newData = new StridedByteArray((uint)Rows.Count, 16, BigEndian);
+
+        var newData = new StridedByteArray((uint)Rows.Count, (uint)newSize, BigEndian);
         for (var i = 0; i < Rows.Count; i++)
         {
             newData.AddZeroedElement();
@@ -505,7 +506,7 @@ public class Param : SoulsFile<Param>
         }
 
         _paramData = newData;
-        RowSize = 16;
+        RowSize = newSize;
     }
 
     protected override void Read(BinaryReaderEx br)

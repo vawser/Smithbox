@@ -441,14 +441,14 @@
     
     <Field Def="dummy8 pad[4]" RemovedVersion="11210015" />
     
-    <Field Def="s32 Unknown0" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown1" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown2" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown3" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown4" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown5" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown6" FirstVersion="11210015"/>
-    <Field Def="s32 Unknown7" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x6c" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x70" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x74" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x78" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x7c" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x80" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x84" FirstVersion="11210015"/>
+    <Field Def="s32 unknown_0x88" FirstVersion="11210015"/>
     
     <Field Def="dummy8 endPad[4]" FirstVersion="11210015" />
     

@@ -1136,27 +1136,6 @@ public class ParamEditorScreen : EditorScreen
                     {
                         UpgradeRegulation(ParamBank.PrimaryBank, ParamBank.VanillaBank, oldRegulationPath);
                     }
-
-                    /*
-                    var message = PlatformUtils.Instance.MessageBox(
-                            $"Project regulation.bin version appears to be out of date vs game folder regulation. Upgrading is recommended since the game will typically not load out of date regulation." +
-                            $"\n\nUpgrading requires you to select a VANILLA REGULATION.BIN WITH THE SAME VERSION AS YOUR MOD ({oldVersionString})" +
-                            $"\n\nWould you like to proceed?",
-                            $"Regulation upgrade {oldVersionString} -> {newVersionString}",
-                        MessageBoxButtons.OKCancel,
-                        MessageBoxIcon.Information);
-
-                    if (message == DialogResult.OK)
-                    {
-                        if (PlatformUtils.Instance.OpenFileDialog(
-                                $"Select regulation.bin for game version {ParamBank.PrimaryBank.ParamVersion}...",
-                                new[] { FilterStrings.RegulationBinFilter },
-                                out var path))
-                        {
-                            UpgradeRegulation(ParamBank.PrimaryBank, ParamBank.VanillaBank, path);
-                        }
-                    }
-                    */
                 }
 
                 ImGui.PopStyleColor();
@@ -1324,25 +1303,14 @@ public class ParamEditorScreen : EditorScreen
 
             if (success.Count > 0 || fail.Count > 0)
             {
-                if (fail.Count > 0)
+                foreach(var entry in success)
                 {
-                    PlatformUtils.Instance.MessageBox("Unable to perform the following edits:\n" + string.Join('\n', fail), "Regulation upgrade edits", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TaskLogs.AddLog($"SUCCESSFUL: {entry}");
                 }
-
-                /*
-                PlatformUtils.Instance.MessageBox(
-                    (success.Count > 0
-                        ? "Successfully performed the following edits:\n" + string.Join('\n', success)
-                        : "") +
-                    (success.Count > 0 && fail.Count > 0 ? "\n" : "") +
-                    (fail.Count > 0
-                        ? "Unable to perform the following edits:\n" + string.Join('\n', fail)
-                        : ""),
-                    "Regulation upgrade edits",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-                */
+                foreach (var entry in fail)
+                {
+                    TaskLogs.AddLog($"FAILED: {entry}");
+                }
             }
 
             UICache.ClearCaches();
