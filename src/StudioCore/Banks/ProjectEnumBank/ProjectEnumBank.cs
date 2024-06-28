@@ -191,37 +191,47 @@ public class ProjectEnumBank
 
             foreach (var entry in projectResource.List)
             {
-                var newEntry = new ProjectEnumEntry();
-
-                foreach(var bEntry in baseResource.List)
+                if (entry.Name == currentEntry.Name)
                 {
-                    if(currentEntry.Name == bEntry.Name)
+                    var newEntry = new ProjectEnumEntry();
+
+                    TaskLogs.AddLog($"entry: {entry.Name}");
+
+                    foreach (var bEntry in baseResource.List)
                     {
-                        newEntry.Name = bEntry.Name;
-                        newEntry.DisplayName = bEntry.DisplayName;
-                        newEntry.Description = bEntry.Description;
-
-                        // Restore options from base, but retain project-unique ones
-                        var newOptions = new List<ProjectEnumOption>();
-
-                        foreach (var bOpt in bEntry.Options)
+                        if (entry.Name == bEntry.Name)
                         {
-                            newOptions.Add(bOpt);
-                        }
+                            newEntry.Name = bEntry.Name;
+                            newEntry.DisplayName = bEntry.DisplayName;
+                            newEntry.Description = bEntry.Description;
 
-                        foreach (var opt in currentEntry.Options)
-                        {
-                            if(!bEntry.Options.Any(e => e.ID == opt.ID))
+                            // Restore options from base, but retain project-unique ones
+                            var newOptions = new List<ProjectEnumOption>();
+
+                            foreach (var bOpt in bEntry.Options)
                             {
-                                newOptions.Add(opt);
+                                newOptions.Add(bOpt);
                             }
+
+                            foreach (var opt in currentEntry.Options)
+                            {
+                                if (!bEntry.Options.Any(e => e.ID == opt.ID))
+                                {
+                                    newOptions.Add(opt);
+                                }
+                            }
+
+                            newEntry.Options = newOptions;
                         }
-
-                        newEntry.Options = newOptions;
                     }
-                }
 
-                newResource.List.Add(newEntry);
+                    TaskLogs.AddLog($"newEntry: {newEntry.Name}");
+                    newResource.List.Add(newEntry);
+                }
+                else
+                {
+                    newResource.List.Add(entry);
+                }
             }
 
             WriteEnumResource(newResource);

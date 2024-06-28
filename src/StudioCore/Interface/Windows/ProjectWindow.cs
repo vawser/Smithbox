@@ -205,6 +205,34 @@ public class ProjectWindow
         ImGui.Text("Enums");
         ImGui.Separator();
 
+        // Re-select the previous entry/option after the bank is reloaded so the list updates immediately.
+        if (ReselectEntry)
+        {
+            ReselectEntry = false;
+
+            foreach (var entry in Smithbox.BankHandler.ProjectEnums.Enums.List)
+            {
+                if (_selectedEntry != null)
+                {
+                    if (entry.Name == _selectedEntry.Name)
+                    {
+                        _selectedEntry = entry;
+                    }
+
+                    foreach (var opt in _selectedEntry.Options)
+                    {
+                        if (_selectedEntryOption != null)
+                        {
+                            if (opt.ID == _selectedEntryOption.ID)
+                            {
+                                _selectedEntryOption = opt;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         foreach (var entry in Smithbox.BankHandler.ProjectEnums.Enums.List)
         {
             var displayedName = $"{entry.DisplayName}";
@@ -220,8 +248,6 @@ public class ProjectWindow
         }
     }
 
-    // TODO: for some reason updating the bank isn't immediately reflected in this presentation-wise,
-    // the entry has to be to re-selected
     public void DisplayProjectEnumOptionList()
     {
         ImGui.Separator();
@@ -249,10 +275,6 @@ public class ProjectWindow
     private string _refUpdateDisplayName = "";
     private string _refUpdateDescription = "";
 
-    private string _refNewEntryName = "";
-    private string _refNewEntryDisplayName = "";
-    private string _refNewEntryDescription = "";
-
     private string _refUpdateOptionID = "";
     private string _refUpdateOptionName = "";
     private string _refUpdateOptionDescription = "";
@@ -260,6 +282,8 @@ public class ProjectWindow
     private string _refNewOptionID = "";
     private string _refNewOptionName = "";
     private string _refNewOptionDescription = "";
+
+    private bool ReselectEntry = false;
 
     public void DisplayProjectEnumAction()
     {
@@ -274,10 +298,6 @@ public class ProjectWindow
             // Selected Entry
             if (ImGui.CollapsingHeader("Selected Enum"))
             {
-                //ImGui.Text($"Name");
-                //ImguiUtils.ShowHoverTooltip("Defines the name that is looked up in the Paramdex META.");
-                //ImGui.InputTextMultiline($"##SelectedEntry_EditName", ref _refUpdateName, 255, inputSize);
-
                 ImGui.Text($"Display Name");
                 ImguiUtils.ShowHoverTooltip("Defines the display name of this enum list.");
                 ImGui.InputTextMultiline($"##SelectedEntry_EditDisplayName", ref _refUpdateDisplayName, 255, inputSize);
@@ -293,54 +313,15 @@ public class ProjectWindow
                     newEntry.Description = _refUpdateDescription;
 
                     Smithbox.BankHandler.ProjectEnums.UpdateEnumEntry(newEntry);
+                    ReselectEntry = true;
                 }
 
                 if (ImGui.Button("Restore to Default", buttonSize))
                 {
                     Smithbox.BankHandler.ProjectEnums.RestoreBaseEnumEntry(_selectedEntry);
-                }
-
-                /*
-                if (ImGui.Button("Delete Entry", buttonSize))
-                {
-                    var newEntry = new ProjectEnumEntry().Clone(_selectedEntry);
-                    Smithbox.BankHandler.ProjectEnums.RemoveEnumEntry(newEntry);
-                    _selectedEntry = null;
-                    _selectedEntryOption = null;
-                }
-                */
-            }
-
-            // Don't allow this since the META has to be changed anyway
-            /*
-            // New Entry
-            if (ImGui.CollapsingHeader("New Enum"))
-            {
-                ImGui.Text($"Name");
-                ImguiUtils.ShowHoverTooltip("Defines the name that is looked up in the Paramdex META.");
-                ImGui.InputTextMultiline($"##NewEntry_EditName", ref _refNewEntryName, 255, inputSize);
-                ImGui.Text($"Display Name");
-                ImguiUtils.ShowHoverTooltip("Defines the display name of this enum list.");
-                ImGui.InputTextMultiline($"##NewEntry_EditDisplayName", ref _refNewEntryDisplayName, 255, inputSize);
-                ImGui.Text($"Description");
-                ImguiUtils.ShowHoverTooltip("A description of what this enum list is for.");
-                ImGui.InputTextMultiline($"##NewEntry_EditDescription", ref _refNewEntryDescription, 255, inputSize);
-
-                if (ImGui.Button("Add Entry", buttonSize))
-                {
-                    if (_selectedEntry.Options.Where(e => e.Name == _refNewEntryName).Any())
-                    {
-                        PlatformUtils.Instance.MessageBox($"Entry with {_refNewEntryName} already exists.", "Error", MessageBoxButtons.OK);
-                    }
-                    else
-                    {
-                        var newEntry = new ProjectEnumEntry(_refNewEntryName, _refNewEntryDisplayName, _refNewEntryDescription);
-
-                        Smithbox.BankHandler.ProjectEnums.UpdateEnumEntry(newEntry);
-                    }
+                    ReselectEntry = true;
                 }
             }
-            */
 
             if (_selectedEntry != null)
             {
@@ -351,9 +332,6 @@ public class ProjectWindow
                         // Selected Option
                         if (ImGui.CollapsingHeader("Selected Option"))
                         {
-                            //ImGui.Text($"ID");
-                            //ImGui.InputTextMultiline($"##UpdateOptionID", ref _refUpdateOptionID, 255, inputSize);
-                            //ImguiUtils.ShowHoverTooltip("The numeric ID of the enum option.");
                             ImGui.Text($"Name");
                             ImGui.InputTextMultiline($"##UpdateOptionName", ref _refUpdateOptionName, 255, inputSize);
                             ImguiUtils.ShowHoverTooltip("The display name of the enum option.");
@@ -369,11 +347,13 @@ public class ProjectWindow
                                 newOption.Description = _refUpdateOptionDescription;
 
                                 Smithbox.BankHandler.ProjectEnums.UpdateEnumEntryOption(_selectedEntry, newOption);
+                                ReselectEntry = true;
                             }
                             if (ImGui.Button("Delete Option", buttonSize))
                             {
                                 Smithbox.BankHandler.ProjectEnums.RemoveEnumEntryOption(_selectedEntry, _selectedEntryOption);
                                 _selectedEntryOption = null;
+                                ReselectEntry = true;
                             }
                         }
                     }
@@ -406,6 +386,7 @@ public class ProjectWindow
                             newOption.Description = _refNewOptionDescription;
 
                             Smithbox.BankHandler.ProjectEnums.UpdateEnumEntryOption(_selectedEntry, newOption);
+                            ReselectEntry = true;
                         }
                     }
                 }

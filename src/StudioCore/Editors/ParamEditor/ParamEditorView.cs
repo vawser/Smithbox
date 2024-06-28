@@ -8,6 +8,7 @@ using StudioCore.Interface;
 using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
@@ -116,11 +117,16 @@ public class ParamEditorView
         }
         else if (Smithbox.ProjectType is ProjectType.ER || Smithbox.ProjectType is ProjectType.AC6)
         {
-            if (ImGui.Checkbox("Edit Event Params", ref _eventParamView))
+            // Only show if the user actually has the eventparam file
+            if (Path.Exists($"{Smithbox.GameRoot}\\param\\eventparam\\eventparam.parambnd.dcx"))
             {
-                _gConfigParamView = false;
-                UICache.ClearCaches();
+                if (ImGui.Checkbox("Edit Event Params", ref _eventParamView))
+                {
+                    _gConfigParamView = false;
+                    UICache.ClearCaches();
+                }
             }
+
             if (ImGui.Checkbox("Edit Graphics Config Params", ref _gConfigParamView))
             {
                 _eventParamView = false;
