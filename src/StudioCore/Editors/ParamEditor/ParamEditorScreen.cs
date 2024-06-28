@@ -1124,6 +1124,7 @@ public class ParamEditorScreen : EditorScreen
                 if (ImGui.Button("Upgrade Params"))
                 {
                     var oldVersionString = Utils.ParseRegulationVersion(ParamBank.PrimaryBank.ParamVersion);
+
                     var newVersionString = Utils.ParseRegulationVersion(ParamBank.VanillaBank.ParamVersion);
 
                     var oldRegulationPath = GetOldRegulationPath(oldVersionString);
