@@ -120,7 +120,7 @@ namespace StudioCore.Tools
             {  9, new List<int> { 0, 0, 1, 1, 0, 0, 0 }},
         };
 
-        public static string exportPath = $"{AppContext.BaseDirectory}/layout_export.txt";
+        public static string exportPath = $"F:\\SteamLibrary\\steamapps\\common\\ELDEN RING\\Game\\layout_export.txt";
 
         public static void SelectExportDirectory()
         {
@@ -130,23 +130,36 @@ namespace StudioCore.Tools
             }
         }
 
+        public static void CalcSOTEWorldMapLayout()
+        {
+            var xOffset = 350; // 
+            var yOffset = 1150; // 
+
+            var printStr = "";
+            printStr = printStr + BuildTileLayout(xOffset, yOffset, "61", printStr, "02", 496, largeTileDict, largeCols, largeRows, false);
+            printStr = printStr + BuildTileLayout(xOffset, yOffset, "61", printStr, "01", 248, mediumTileDict, mediumCols, mediumRows, false);
+            printStr = printStr + BuildTileLayout(xOffset, yOffset, "61", printStr, "00", 124, smallTileDict, smallCols, smallRows, false);
+
+            File.WriteAllText(exportPath, printStr);
+        }
+
         /// <summary>
         /// Builds a .layout file for the ER World Map
         /// </summary>
         public static void CalcWorldMapLayout()
         {
             var printStr = "";
-            printStr = printStr + BuildTileLayout(printStr, "02", 496, largeTileDict, largeCols, largeRows);
-            printStr = printStr + BuildTileLayout(printStr, "01", 248, mediumTileDict, mediumCols, mediumRows);
-            printStr = printStr + BuildTileLayout(printStr, "00", 124, smallTileDict, smallCols, smallRows);
+            printStr = printStr + BuildTileLayout(480, 55, "60", printStr, "02", 496, largeTileDict, largeCols, largeRows);
+            printStr = printStr + BuildTileLayout(480, 55, "60", printStr, "01", 248, mediumTileDict, mediumCols, mediumRows);
+            printStr = printStr + BuildTileLayout(480, 55, "60", printStr, "00", 124, smallTileDict, smallCols, smallRows);
 
             File.WriteAllText(exportPath, printStr);
         }
 
-        private static string BuildTileLayout(string existingStr, string postfix, int size, Dictionary<int, List<int>> dict, List<int> cols, List<int> rows)
+        private static string BuildTileLayout(int xOffset, int yOffset, string mapPrefix, string existingStr, string postfix, int size, Dictionary<int, List<int>> dict, List<int> cols, List<int> rows, bool respectTruthTable = true)
         {
-            var xOff = 480;
-            var yOff = 55;
+            var xOff = xOffset;
+            var yOff = yOffset;
 
             int rowIndex = 0;
             int colIndex = 0;
@@ -156,7 +169,7 @@ namespace StudioCore.Tools
             // Each row
             foreach (var entry in dict)
             {
-                string AA = "60";
+                string AA = mapPrefix;
                 string DD = postfix;
 
                 var CC = PadNumber(cols[colIndex]);
@@ -167,7 +180,7 @@ namespace StudioCore.Tools
                     string BB = PadNumber(rows[rowIndex]);
 
                     // Only print if the truth table is true
-                    if (section == 1)
+                    if (respectTruthTable && section == 1 || !respectTruthTable)
                     {
                         existingStr = existingStr + $"\t<SubTexture name=\"m{AA}_{BB}_{CC}_{DD}.png\" x=\"{curX}\" y=\"{curY}\" width=\"{size}\" height=\"{size}\"/>\n";
                     }

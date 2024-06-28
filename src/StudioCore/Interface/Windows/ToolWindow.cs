@@ -205,9 +205,13 @@ public class ToolWindow
                 }
                 ImguiUtils.ShowHoverTooltip("Select the directory that the world map layout file will be placed in.");
 
-                if (ImGui.Button("Generate Layout"))
+                if (ImGui.Button("Generate Vanilla Map Layout"))
                 {
                     WorldMapLayoutGenerator.CalcWorldMapLayout();
+                }
+                if (ImGui.Button("Generate SOTE Map Layout"))
+                {
+                    WorldMapLayoutGenerator.CalcSOTEWorldMapLayout();
                 }
 
                 ImGui.EndTabItem();

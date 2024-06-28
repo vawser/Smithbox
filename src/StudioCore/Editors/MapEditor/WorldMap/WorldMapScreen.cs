@@ -9,6 +9,7 @@ using StudioCore.Resource;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
 using Veldrid;
@@ -21,8 +22,8 @@ public class WorldMapScreen : IResourceEventListener
     private bool LoadedWorldMapTexture { get; set; }
     private bool WorldMapOpen { get; set; }
 
-    private ShoeboxLayout WorldMapLayout_Vanilla = null;
-    private ShoeboxLayout WorldMapLayout_SOTE = null;
+    private WorldMapLayout WorldMapLayout_Vanilla = null;
+    private WorldMapLayout WorldMapLayout_SOTE = null;
 
     private Vector2 zoomFactor;
 
@@ -56,8 +57,8 @@ public class WorldMapScreen : IResourceEventListener
         if (Smithbox.ProjectType is ProjectType.ER)
         {
             LoadWorldMapTexture();
-            LoadWorldMapLayout_Vanilla();
-            LoadWorldMapLayout_SOTE();
+            GenerateWorldMapLayout_Vanilla();
+            GenerateWorldMapLayout_SOTE();
         }
     }
 
@@ -227,7 +228,7 @@ public class WorldMapScreen : IResourceEventListener
         ImguiUtils.WrappedText($"Press {KeyBindings.Current.TextureViewer_ZoomReset.HintText} to reset zoom level to 100%.");
         ImguiUtils.WrappedText($"");
 
-        //ImGui.Text($"Relative Position: {relativePos}");
+        ImGui.Text($"Relative Position: {relativePos}");
         //ImGui.Text($"Relative (Sans Scroll) Position: {relativePosWindowPosition}");
         //ImGui.Text($"mousePos: {mousePos}");
         //ImGui.Text($"windowHeight: {windowHeight}");
@@ -307,58 +308,43 @@ public class WorldMapScreen : IResourceEventListener
         LoadedWorldMapTexture = true;
     }
 
-    private void LoadWorldMapLayout_Vanilla()
+    private void GenerateWorldMapLayout_Vanilla()
     {
-        string sourcePath = $@"{AppContext.BaseDirectory}\Assets\WorldMap\ER_WorldMap_Vanilla.layout";
-
-        if (File.Exists(sourcePath))
-        {
-            WorldMapLayout_Vanilla = new ShoeboxLayout(sourcePath);
-        }
-        else
-        {
-            TaskLogs.AddLog($"Failed to load Shoebox Layout: {sourcePath}");
-        }
+        WorldMapLayout_Vanilla = new WorldMapLayout("60", 480, 55);
+        WorldMapLayout_Vanilla.ConstructSmallTiles();
+        WorldMapLayout_Vanilla.ConstructMediumTiles();
+        WorldMapLayout_Vanilla.ConstructLargeTiles();
     }
 
-    private void LoadWorldMapLayout_SOTE()
+    private void GenerateWorldMapLayout_SOTE()
     {
-        string sourcePath = $@"{AppContext.BaseDirectory}\Assets\WorldMap\ER_WorldMap_SOTE.layout";
-
-        if (File.Exists(sourcePath))
-        {
-            WorldMapLayout_SOTE = new ShoeboxLayout(sourcePath);
-        }
-        else
-        {
-            TaskLogs.AddLog($"Failed to load Shoebox Layout: {sourcePath}");
-        }
+        WorldMapLayout_SOTE = new WorldMapLayout("61", 480, 55);
+        WorldMapLayout_Vanilla.ConstructSmallTiles();
+        WorldMapLayout_Vanilla.ConstructMediumTiles();
+        WorldMapLayout_Vanilla.ConstructLargeTiles();
     }
 
     private List<string> GetMatchingMaps(Vector2 pos)
     {
         List<string> matches =  new List<string>();
 
-        var atlases = WorldMapLayout_Vanilla.TextureAtlases;
+        var tiles = WorldMapLayout_Vanilla.Tiles;
 
         if (IsViewingSOTEMap)
         {
-            atlases = WorldMapLayout_SOTE.TextureAtlases;
+            tiles = WorldMapLayout_SOTE.Tiles;
         }
 
-        foreach(var entry in atlases)
+        foreach(var tile in tiles)
         {
-            foreach(var sub in entry.SubTextures)
+            var tileName = "";
+            var match = false;
+
+            (tileName, match) = MatchMousePosToIcon(tile, pos);
+
+            if(match && !matches.Contains(tileName))
             {
-                var subTex = "";
-                var match = false;
-
-                (subTex, match) = MatchMousePosToIcon(sub, pos);
-
-                if(match && !matches.Contains(subTex))
-                {
-                    matches.Add(subTex);
-                }
+                matches.Add(tileName);
             }
         }
 
@@ -390,25 +376,25 @@ public class WorldMapScreen : IResourceEventListener
         return relativePos;
     }
 
-    private (string, bool) MatchMousePosToIcon(SubTexture entry, Vector2 relativePos)
+    private (string, bool) MatchMousePosToIcon(WorldMapTile tile, Vector2 relativePos)
     {
         var cursorPos = relativePos;
 
-        var SubTexName = entry.Name.Replace(".png", "");
+        var Name = tile.Name;
 
         var success = false;
 
-        float Xmin = float.Parse(entry.X);
-        float Xmax = Xmin + float.Parse(entry.Width);
-        float Ymin = float.Parse(entry.Y);
-        float Ymax = Ymin + float.Parse(entry.Height);
+        float Xmin = tile.X;
+        float Xmax = Xmin + tile.Width;
+        float Ymin = tile.Y;
+        float Ymax = Ymin + tile.Height;
 
         if (cursorPos.X > Xmin && cursorPos.X < Xmax && cursorPos.Y > Ymin && cursorPos.Y < Ymax)
         {
             success = true;
         }
 
-        return (SubTexName, success);
+        return (Name, success);
     }
 
     private Vector2 GetImageSize(TextureResource texRes, bool includeZoomFactor)
