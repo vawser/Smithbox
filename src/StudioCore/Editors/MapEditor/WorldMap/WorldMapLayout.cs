@@ -34,7 +34,7 @@ public class WorldMapLayout
         return num.ToString(); ;
     }
 
-    private void GenerateTiles(List<int> rows, List<int> cols, string tileID, float increment)
+    public void GenerateTiles(List<int> rows, List<int> cols, string tileID, float increment)
     {
         var mapList = ResourceMapLocator.GetFullMapList();
 
@@ -70,48 +70,6 @@ public class WorldMapLayout
             CurX = CurX + increment;
             CurY = YOffset;
         }
-    }
-
-    public void ConstructSmallTiles()
-    {
-        var smallRows = new List<int>()
-        {
-            32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59
-        };
-        var smallCols = new List<int>()
-        {
-            63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30
-        };
-
-        GenerateTiles(smallRows, smallCols, "00", 124);
-    }
-
-    public void ConstructMediumTiles()
-    {
-        var mediumRows = new List<int>()
-        {
-            16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29
-        };
-        var mediumCols = new List<int>()
-        {
-            31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15
-        };
-
-        GenerateTiles(mediumRows, mediumCols, "01", 248);
-
-    }
-    public void ConstructLargeTiles()
-    {
-        var largeRows = new List<int>()
-        {
-            8, 9, 10, 11, 12, 13, 14
-        };
-        var largeCols = new List<int>()
-        {
-            15, 14, 13, 12, 11, 10, 9, 8, 7
-        };
-
-        GenerateTiles(largeRows, largeCols, "02", 496);
     }
 }
 

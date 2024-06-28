@@ -241,6 +241,14 @@ public class WorldMapScreen : IResourceEventListener
         ImGui.Text($"scrollPosYMax: {WorldMapScrollYMax}");
         */
 
+        ImGui.InputInt("X Offset", ref SOTE_xOffset);
+        ImGui.InputInt("Y Offset", ref SOTE_yOffset);
+
+        if (ImGui.Button("Update SOTE Layout"))
+        {
+            GenerateWorldMapLayout_SOTE();
+        }
+
         currentHoverMaps = GetMatchingMaps(relativePos);
 
         ImGui.Separator();
@@ -310,18 +318,36 @@ public class WorldMapScreen : IResourceEventListener
 
     private void GenerateWorldMapLayout_Vanilla()
     {
+        var smallRows = new List<int>() { 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 };
+        var smallCols = new List<int>() { 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30 };
+        var mediumRows = new List<int>() { 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 };
+        var mediumCols = new List<int>() { 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15 };
+        var largeRows = new List<int>() { 8, 9, 10, 11, 12, 13, 14 };
+        var largeCols = new List<int>() { 15, 14, 13, 12, 11, 10, 9, 8, 7 };
+
+
         WorldMapLayout_Vanilla = new WorldMapLayout("60", 480, 55);
-        WorldMapLayout_Vanilla.ConstructSmallTiles();
-        WorldMapLayout_Vanilla.ConstructMediumTiles();
-        WorldMapLayout_Vanilla.ConstructLargeTiles();
+        WorldMapLayout_Vanilla.GenerateTiles(smallRows, smallCols, "00", 124);
+        WorldMapLayout_Vanilla.GenerateTiles(mediumRows, mediumCols, "01", 248);
+        WorldMapLayout_Vanilla.GenerateTiles(largeRows, largeCols, "02", 496);
     }
+
+    private int SOTE_xOffset = 540;
+    private int SOTE_yOffset = -1075;
 
     private void GenerateWorldMapLayout_SOTE()
     {
-        WorldMapLayout_SOTE = new WorldMapLayout("61", 480, 55);
-        WorldMapLayout_Vanilla.ConstructSmallTiles();
-        WorldMapLayout_Vanilla.ConstructMediumTiles();
-        WorldMapLayout_Vanilla.ConstructLargeTiles();
+        var smallRows = new List<int>() { 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57 };
+        var smallCols = new List<int>() { 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30 };
+        var mediumRows = new List<int>() { 21, 22, 23, 24, 25, 26, 27, 28, 29 };
+        var mediumCols = new List<int>() { 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17 };
+        var largeRows = new List<int>() { 10, 11, 12, 13, 14 };
+        var largeCols = new List<int>() { 13, 12, 11, 10, 9, 8 };
+
+        WorldMapLayout_SOTE = new WorldMapLayout("61", SOTE_xOffset, SOTE_yOffset);
+        WorldMapLayout_SOTE.GenerateTiles(smallRows, smallCols, "00", 256);
+        WorldMapLayout_SOTE.GenerateTiles(mediumRows, mediumCols, "01", 528);
+        WorldMapLayout_SOTE.GenerateTiles(largeRows, largeCols, "02", 1056);
     }
 
     private List<string> GetMatchingMaps(Vector2 pos)
