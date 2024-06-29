@@ -239,7 +239,6 @@ public class WorldMapScreen : IResourceEventListener
         ImGui.Text($"scrollPosXMax: {WorldMapScrollXMax}");
         ImGui.Text($"scrollPosY: {WorldMapScrollY}");
         ImGui.Text($"scrollPosYMax: {WorldMapScrollYMax}");
-        */
 
         ImGui.InputInt("X Offset", ref SOTE_xOffset);
         ImGui.InputInt("Y Offset", ref SOTE_yOffset);
@@ -248,6 +247,7 @@ public class WorldMapScreen : IResourceEventListener
         {
             GenerateWorldMapLayout_SOTE();
         }
+        */
 
         currentHoverMaps = GetMatchingMaps(relativePos);
 

@@ -30,6 +30,13 @@
 18000800 [Stranded Graveyard] Crucible Illusion
 18000850 [Stranded Graveyard] Soldier of Godrick
 19000800 [Stone Platform] Elden Beast
+20000800 [Belurat, Tower Settlement] Divine Beast Dancing Lion
+20010800 [Enir-Ilim] Promised Consort Radahn
+21000850 [Shadow Keep] Golden Hippopotamus
+21010800 [Specimen Storehouse] Messmer the Impaler
+22000800 [Stone Coffin Fissure] Putrescent Knight
+25000800 [Finger Birthing Grounds] Metyr, Mother of Fingers
+28000800 [Midra's Manse] Midra, Lord of Frenzied Flame
 30000800 [Tombsward Catacombs] Cemetery Shade
 30010800 [Impaler's Catacombs] Erdtree Burial Watchdog
 30020800 [Stormfoot Catacombs] Erdtree Burial Watchdog
@@ -89,82 +96,116 @@
 35000800 [Subterranean Shunning-Grounds] Mohg The Omen
 35000850 [Subterranean Shunning-Grounds] Esgar Priest of Blood
 39200800 [Ruin-Strewn Precipice] Magma Wyrm Makar
+40000800 [Fog Rift Catacombs] Death Knight
+40010800 [Scorpion River Catacombs] Death Knight
+41000800 [Belurat Gaol] Demi-Human Swordmaster Onze
+41010800 [Bonny Gaol] Curseblade Labirith
+41020800 [Lamenter's Gaol] Lamenter
+43000800 [Rivermouth Cave] Chief Bloodfiend
+43010800 [Dragon's Pit] Ancient Dragon-man
 1033420800 [Liurnia - Moonlight Altar] Alecto Black Knife Ringleader
-1033430800 [Liurnia - Revenger's Shack] Erdtree Avatar
+1033430800 [Liurnia - Minor Erdtree] Erdtree Avatar
 1033450800 [Liurnia - Cuckoo's Evergaol] Bols Carian Knight
 1034420800 [Liurnia - Moonfolk Ruins] Glintstone Dragon Adula
 1034450800 [Liurnia - Meeting Place] Glintstone Dragon Smarag
-1034480800 [Liurnia - Northern Liurnia Lake Shore; Kingsrealm Ruins] Revenant
-1034500800 [Liurnia - Ranni's Rise- Seluvis's Rise] Glintstone Dragon)
-1035420800 [Liurnia - West Albinauric Village; Moonlight Altar - Cathedral of Manus Celes] Omenkiller
-1035500800 [Liurnia - Caria Manor] Loretta)
+1034480800 [Liurnia - Kingsrealm Ruins] Royal Revenant
+1034500800 [Liurnia - Ranni's Rise] Glintstone Dragon Adula
+1035420800 [Liurnia - Albinauric Village] Omenkiller
+1035500800 [Liurnia - Caria Manor] Loretta, Royal Knight
 1035530800 [Mt. Gelmir - Seethewater Terminus] Magma Wyrm
 1036450340 [Liurnia - Gate Town Northwest] Death Rite Bird
 1036480340 [Bellum Highway - East Raya Lucaria Gate] Night's Cavalry
-1036500800 [Liurnia - Behind Caria Manor- Royal Grave Evergaol- Part of Ravine] Onyx Lord
-1036540800 [Mt. Gelmir - Ninth Mt. Gelmir Campsite- Road of Iniquity- Volcano Manor Entrance] Fallingstar Beast
-1037420340 [Liurnia - Scenic Isle- Laskyar Ruins] Death Rite Bird
+1036500800 [Liurnia - Royal Grave Evergaol] Onyx Lord
+1036540800 [Mt. Gelmir - Ninth Mt. Gelmir Campsite] Fallingstar Beast
+1037420340 [Liurnia - Laskyar Ruins] Death Rite Bird
 1037460800 [Liurnia - Church of Vows] Bell Bearing Hunter
-1037510800 [Altus Plateau - Abandoned Coffin- Ruin-Strewn Precipice Exit] Ancient Dragon
-1037530800 [Mt. Gelmir - Primeval Sorcerer Azur- Gelmir Hero's Grave Entrance] Demi-Human Queen
-1037540810 [Mt. Gelmir - Minor Erdtree- Seethewater Cave Entrance] Ulcerated Tree Spirit
-1038410800 [Liurnia - Laskyar Ruins- Malefactor's Evergaol] Adan- Thief of Fire
-1038480800 [Bellum Highway - Frenzied Flame Village- Minor Erdtree] Erdtree Avatar
+1037510800 [Altus Plateau - Abandoned Coffin] Ancient Dragon Lansseax
+1037530800 [Mt. Gelmir - Primeval Sorcerer Azur] Demi-Human Queen Maggie
+1037540810 [Mt. Gelmir - Minor Erdtree] Ulcerated Tree Spirit
+1038410800 [Liurnia - Malefactor's Evergaol] Adan, Thief of Fire
+1038480800 [Bellum Highway - Minor Erdtree] Erdtree Avatar
 1038510800 [Altus Plateau - Erdtree-Gazing Hill- Lux Ruins] Demi-Human Queen
-1038520340 [Altus Plateau - Wyndham Ruins- Wyndham Catacombs Entrance] Tibia Mariner
+1038520340 [Altus Plateau - Wyndham Ruins] Tibia Mariner
 1039430340 [Liurnia - Liurnia Highway Far North] Night's Cavalry
-1039440800 [Liurnia - Jarburg- Divine Tower of Liurnia Entrance] Tibia Mariner
+1039440800 [Liurnia - Divine Tower of Liurnia Entrance] Tibia Mariner
 1039500800 [Altus Plateau - Golden Lineage Evergaol] Godrick the Reskinned
-1039510800 [Capital Outskirts - Northeast Outer Wall Battleground- Hermit Merchant's Shack] Bell Bearing Hunter
+1039510800 [Capital Outskirts - Hermit Merchant's Shack] Bell Bearing Hunter
 1039540800 [Altus Plateau - Shaded Castle] Bell Bearing Hunter
-1040520800 [Altus Plateau - Forest-Spanning Greatbridge- St. Trina's Hideaway- Sainted Hero's Grave Entrance] Black Knife Assassin
-1040530800 [Altus Plateau - Bower of Bounty- Writheblood Ruins] Sanguine Noble
+1040520800 [Altus Plateau - Sainted Hero's Grave Entrance] Black Knife Assassin
+1040530800 [Altus Plateau - Writheblood Ruins] Sanguine Noble
 1041500800 [Altus Plateau - South of Tree Sentinel Duo] Fallingstar Beast
-1041510800 [Altus Plateau - Tree Sentinel Duo- Perfumer's Grotto Entrance] Tree Sentinel
-1041520800 [Altus Plateau - Rampartside Path- Altus Tunnel Entrance] Ancient Dragon
-1041530800 [Altus Plateau - Woodfolk Ruins- Minor Erdtree] Wormface
-1042330800 [Weeping Peninsula - Tombsward; Weeping Evergaol; Tombsward Cave Entrance] Ancient Hero of Zamor
-1042360800 [Limgrave - Church of Elleh- Stranded Graveyard Exit] Tree Sentinel
-1042370800 [Limgrave - Gatefront- Stormhill Evergaol- Groveside Cave Entrance- Limgrave Tunnels Entrance] Crucible Knight
-1042380800 [Stormhill - Warmaster's Shack- Stormgate] Death Rite Bird
-1042380850 [Stormhill - Warmaster's Shack- Stormgate] Bell Bearing Hunter
+1041510800 [Altus Plateau - Tree Sentinel Duo] Tree Sentinel
+1041520800 [Altus Plateau - Altus Tunnel Entrance] Ancient Dragon
+1041530800 [Altus Plateau - Minor Erdtree] Wormface
+1042330800 [Weeping Peninsula - Weeping Evergaol] Ancient Hero of Zamor
+1042360800 [Limgrave - Church of Elleh] Tree Sentinel
+1042370800 [Limgrave - Stormhill Evergaol] Crucible Knight
+1042380800 [Stormhill - Stormgate] Death Rite Bird
+1042380850 [Stormhill - Warmaster's Shack] Bell Bearing Hunter
 1042550800 [Altus Plateau - Windmill Heights] Godskin Apostle
 1043300800 [Weeping Peninsula - Morne Moangrave] Leonine Misbegotten
-1043330800 [Weeping Peninsula - Minor Erdtree- Tombsward Catacombs Entrance- Morne Tunnel Entrance] Erdtree Avatar
-1043360800 [Limgrave - Agheel Lake- Dragon-Burnt Ruins] Flying Dragon
-1043370340 [Limgrave - Agheel Lake North- Murkwater Cave Entrance] Night's Cavalry
-1043530800 [Capital Outskirts - Northeast Outer Wall Battleground- Hermit Merchant's Shack] Bell Bearing Hunter
+1043330800 [Weeping Peninsula - Minor Erdtree] Erdtree Avatar
+1043360800 [Limgrave - Agheel Lake] Flying Dragon Agheel
+1043370340 [Limgrave - Agheel Lake North] Night's Cavalry
+1043530800 [Capital Outskirts - Hermit Merchant's Shack] Bell Bearing Hunter
 1044320340 [Weeping Peninsula - Castle Morne Approach North] Death Rite Bird
 1044320342 [Weeping Peninsula - Castle Morne Approach North] Night's Cavalry
-1044350800 [Limgrave - Agheel Lake South- Forlorn Hound Evergaol] Bloodhound Knight
+1044350800 [Limgrave - Forlorn Hound Evergaol] Bloodhound Knight Darriwil
 1044360800 [Limgrave - Waypoint Ruins] Mad Pumpkin Head
-1044530800 [Capital Outskirts - Northeast Outer Wall Battleground- Hermit Merchant's Shack] Bell Bearing Hunter
+1044530800 [Capital Outskirts - Hermit Merchant's Shack] Bell Bearing Hunter
 1045390800 [Limgrave - Summonwater Village] Tibia Mariner
-1045520800 [Capital Outskirts - Capital Rampart- Auriza Side Tomb Entrance] Draconic Tree Sentinel
-1047400800 [Caelid - Caelem Ruins- Forsaken Ruins- Minor Erdtree- Minor Erdtree Catacombs Entrance] Putrid Avatar
+1045520800 [Capital Outskirts - Capital Rampart] Draconic Tree Sentinel
+1047400800 [Caelid - Minor Erdtree] Putrid Avatar
 1048370800 [Caelid - Caelid Highway South] Decaying Ekzykes
-1048400800 [Caelid - Deep Siofra Well; Greyoll's Dragonbarrow - Dragonbarrow West] Mad Pumpkin Head
+1048400800 [Caelid - Dragonbarrow West] Mad Pumpkin Head
 1048410800 [Greyoll's Dragonbarrow - Isolated Merchant's Shack] Bell Bearing Hunter
 1048510800 [Mountaintops of the Giants - Forbidden Lands Midway] Night's Cavalry
-1048570800 [Consecrated Snowfield - Ordina- Liturgical Town] Death Rite Bird
+1048570800 [Consecrated Snowfield - Ordina, Liturgical Town] Death Rite Bird
 1049370800 [Caelid - Southern Aeonia Swamp Bank] Night's Cavalry
 1049370850 [Caelid - Southern Aeonia Swamp Bank] Death Rite Bird
-1049380800 [Caelid - East Aeonia Swamp] Commander
-1049390800 [Caelid - West Sellia- Sellia Crystal Tunnel Entrance] Nox Fighter
-1049390850 [Caelid - West Sellia- Sellia Crystal Tunnel Entrance] Battle Mage
-1049520800 [Mountaintops of the Giants - Before Grand Lift of Rold] Gargoyle
-1050560800 [Mountaintops of the Giants - Shack of the Lofty; Consecrated Snowfield - Minor Erdtree] Great Wyrm Theodorix
-1050570800 [Mountaintops of the Giants - West of Castle Sol; Consecrated Snowfield - North of Minor Erdtree] Death Rite Bird
-1050570850 [Mountaintops of the Giants - West of Castle Sol; Consecrated Snowfield - North of Minor Erdtree] Putrid Avatar
+1049380800 [Caelid - East Aeonia Swamp] Commander O'Neil
+1049390800 [Caelid - West Sellia] Nox Swordress & Nok Monk
+1049390850 [Caelid - West Sellia] Battlenage
+1049520800 [Mountaintops of the Giants - Before Grand Lift of Rold] Black Blade Kindred
+1050560800 [Mountaintops of the Giants - Consecrated Snowfield] Great Wyrm Theodorix
+1050570800 [Mountaintops of the Giants - West of Castle Sol] Death Rite Bird
+1050570850 [Mountaintops of the Giants - North of Minor Erdtree] Putrid Avatar
 1051360800 [Caelid - Redmane Castle] Crucible Knight
-1051400800 [Greyoll's Dragonbarrow - Minor Erdtree- Dragonbarrow Cave Entrance] Putrid Avatar
-1051430800 [Greyoll's Dragonbarrow - Bestial Sanctum] Gargoyle
-1051570800 [Mountaintops of the Giants - South Castle Sol- Snow Valley Ruins Overlook] Commander
+1051400800 [Greyoll's Dragonbarrow - Minor Erdtree] Putrid Avatar
+1051430800 [Greyoll's Dragonbarrow - Bestial Sanctum] Black Blade Kindred
+1051570800 [Mountaintops of the Giants - Castle Sol] Commander Niall
 1052380800 [Southeast Caelid] Starscourge Radahn
-1052410800 [Greyoll's Dragonbarrow - Southeast Farum Greatbridge- Lenne's Rise] Flying Dragon
-1052410850 [Greyoll's Dragonbarrow - Southeast Farum Greatbridge- Lenne's Rise] Night's Cavalry
+1052410800 [Greyoll's Dragonbarrow - Southeast Farum Greatbridge] Flying Dragon Greyll
+1052410850 [Greyoll's Dragonbarrow - Lenne's Rise] Night's Cavalry
 1052520800 [Southeast Mountaintops] Fire Giant
-1052560800 [Mountaintops of the Giants - Whiteridge Road- Minor Erdtree] Erdtree Avatar
-1053560800 [Mountaintops of the Giants - Southwest Freezing Lake- Lord Contender's Evergaol] Roundtable Knight Vyke
+1052560800 [Mountaintops of the Giants - Minor Erdtree] Erdtree Avatar
+1053560800 [Mountaintops of the Giants - Lord Contender's Evergaol] Roundtable Knight Vyke
 1054560800 [Northeast Mountaintops] Borealis the Freezing Fog
 1248550800 [Southwest Mountaintops] Night's Cavalry
+2044450800 [Ancient Ruins of Rauh] Romina, Saint of the Bud
+2044470800 [Ancient Ruins of Rauh] Great Red Bear
+2045440800 [Gravesite Plain] Ghostflame Dragon
+2046380800 [Cerulean Coast] Dancer of Ranah
+2046400800 [Cerulean Coast] Demi-Human Queen Marigga
+2046410800 [Gravesite Plain] Knight of the Solitary Gaol
+2046450800 [Gravesite Plain] Red Bear
+2046460800 [Gravesite Plain] Divine Beast Dancing Lion
+2047390800 [Cerulean Coast] Death Rite Bird
+2047450800 [Scadu Altus] Black Knight Garrew
+2048380850 [Scadu Altus] Ghostflame Dragon
+2048440800 [Gravesite Plain] Rellana, Twin Moon Knight
+2049410800 [Jagged Peak] Jagged Peak Drake
+2049430800 [Scadu Altus] Ghostflame Dragon
+2049430850 [Scadu Altus] Black Knight Edredd
+2049450800 [Scadu Altus] Great Red Bear
+2049480800 [Scadu Altus] Commander Gaius
+2050470800 [Scadu Altus] Tree Sentinel
+2050480800 [Scaduview] Scadutree Avatar
+2050480860 [Scaduview] Tree Sentinel
+2051440800 [Scadu Altus] Rakshasa
+2051450800 [Scadu Altus] Count Ymir, Mother of Fingers
+2052400800 [Jagged Peak] Jagged Peak Drake
+2052430800 [Abyssal Woods] Jori, the Elder Inquisitor
+2052480800 [Finger Ruins] Fallingstar Beast
+2054390800 [Jagged Peak] Bayle the Dread
+2054390850 [Jagged Peak] Ancient Dragon Senessax
