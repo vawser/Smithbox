@@ -1012,6 +1012,47 @@ public class SettingsWindow
 
             }
 
+            // Fonts
+            if (ImGui.CollapsingHeader("Fonts"))
+            {
+                ImGui.Text("Current English Font:");
+                ImGui.SameLine();
+                ImGui.Text(Path.GetFileName(CFG.Current.System_English_Font));
+
+                if (ImGui.Button("Set English font"))
+                {
+                    PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
+                    if (File.Exists(path))
+                    {
+                        CFG.Current.System_English_Font = path;
+                        Smithbox.FontRebuildRequest = true;
+                    }
+                }
+                ImguiUtils.ShowHoverTooltip("Use the following font for English characters. .ttf and .otf expected.");
+
+                ImGui.Text("Current Non-English Font:");
+                ImGui.SameLine();
+                ImGui.Text(Path.GetFileName(CFG.Current.System_Other_Font));
+
+                if (ImGui.Button("Set Non-English font"))
+                {
+                    PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
+                    if (File.Exists(path))
+                    {
+                        CFG.Current.System_Other_Font = path;
+                        Smithbox.FontRebuildRequest = true;
+                    }
+                }
+                ImguiUtils.ShowHoverTooltip("Use the following font for Non-English characters. .ttf and .otf expected.");
+
+                if(ImGui.Button("Restore Default Fonts"))
+                {
+                    CFG.Current.System_English_Font = "Assets\\Fonts\\RobotoMono-Light.ttf";
+                    CFG.Current.System_Other_Font = "Assets\\Fonts\\NotoSansCJKtc-Light.otf";
+                    Smithbox.FontRebuildRequest = true;
+                }
+            }
+
             // Additional Language Fonts
             if (ImGui.CollapsingHeader("Additional Language Fonts"))
             {

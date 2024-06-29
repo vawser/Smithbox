@@ -219,7 +219,9 @@ public class CFG
     public bool System_Font_Cyrillic = false;
     public bool System_Font_Korean = false;
     public bool System_Font_Thai = false;
-    public bool System_Font_Vietnamese = false;
+    public bool System_Font_Vietnamese = false; 
+    public string System_English_Font = "Assets\\Fonts\\RobotoMono-Light.ttf";
+    public string System_Other_Font = "Assets\\Fonts\\NotoSansCJKtc-Light.otf";
     public float System_Frame_Rate = 60.0f;
 
     public bool System_FlexibleUnpack = false;

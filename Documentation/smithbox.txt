@@ -117,6 +117,8 @@ Project:
 #--------------------------------------
 # Notes
 #--------------------------------------
+Make SOTE world map more accurate
+
 # Blockers
 TalkParam is lagging heavily: due to GenerateEntryGroup
  - TalkMsg FMG itself takes too long too

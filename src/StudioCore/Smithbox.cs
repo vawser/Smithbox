@@ -141,12 +141,20 @@ public class Smithbox
 
     private unsafe void SetupFonts()
     {
+        string engFont = @"Assets\Fonts\RobotoMono-Light.ttf";
+        string otherFont = @"Assets\Fonts\NotoSansCJKtc-Light.otf";
+
+        if (!string.IsNullOrWhiteSpace(CFG.Current.System_English_Font) && File.Exists(CFG.Current.System_English_Font))
+            engFont = CFG.Current.System_English_Font;
+        if (!string.IsNullOrWhiteSpace(CFG.Current.System_Other_Font) && File.Exists(CFG.Current.System_Other_Font))
+            otherFont = CFG.Current.System_Other_Font;
+
         ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
-        var fileEn = Path.Combine(AppContext.BaseDirectory, @"Assets\Fonts\RobotoMono-Light.ttf");
+        var fileEn = Path.Combine(AppContext.BaseDirectory, engFont);
         var fontEn = File.ReadAllBytes(fileEn);
         var fontEnNative = ImGui.MemAlloc((uint)fontEn.Length);
         Marshal.Copy(fontEn, 0, fontEnNative, fontEn.Length);
-        var fileOther = Path.Combine(AppContext.BaseDirectory, @"Assets\Fonts\NotoSansCJKtc-Light.otf");
+        var fileOther = Path.Combine(AppContext.BaseDirectory, otherFont);
         var fontOther = File.ReadAllBytes(fileOther);
         var fontOtherNative = ImGui.MemAlloc((uint)fontOther.Length);
         Marshal.Copy(fontOther, 0, fontOtherNative, fontOther.Length);
