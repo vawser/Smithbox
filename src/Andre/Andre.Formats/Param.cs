@@ -489,9 +489,7 @@ public class Param : SoulsFile<Param>
     }
 
     /// <summary>
-    ///     People were using Yapped and other param editors to save botched ER 1.06 params, so we need
-    ///     to fix them up again. Fortunately the only modified paramdef was ChrModelParam, and the new
-    ///     field is always 0, so we can easily fix them.
+    /// Fix up function to extend Param rows when they are expanded in regulation patches. Ignored if the Param row is already fixed.
     /// </summary>
     public void FixupERField(int originalSize, int newSize)
     {

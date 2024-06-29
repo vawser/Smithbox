@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using StudioCore.Locators;
 using StudioCore.Core;
+using StudioCore.Editors.ParamEditor.Toolbar;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -410,23 +411,31 @@ public class ParamBank
 
             // Try to fixup Elden Ring ChrModelParam for ER 1.06 because many have been saving botched params and
             // it's an easy fixup
-            if (Smithbox.ProjectType == ProjectType.ER &&
-                p.ParamType == "CHR_MODEL_PARAM_ST" &&
-                version == 10601000)
+            if (Smithbox.ProjectType == ProjectType.ER && version >= 10601000)
             {
-                p.FixupERField(12, 16);
+                if(p.ParamType == "CHR_MODEL_PARAM_ST")
+                {
+                    p.FixupERField(12, 16);
+                }
             }
 
             // Add in the new data for these two params added in 1.12.1
-            if (Smithbox.ProjectType == ProjectType.ER && version == 11210015)
+            if (Smithbox.ProjectType == ProjectType.ER && version >= 11210015)
             {
-                if(p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
+                if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
                 {
-                    p.FixupERField(116, 144);
+                    p.FixupERField(880, 1024);
+                    TaskLogs.AddLog($"GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
+                }
+                if (p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
+                {
+                    p.FixupERField(112, 144);
+                    TaskLogs.AddLog($"POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
                 }
                 if (p.ParamType == "SIGN_PUDDLE_PARAM_ST")
                 {
-                    p.FixupERField(32, 40);
+                    p.FixupERField(32, 48);
+                    TaskLogs.AddLog($"SIGN_PUDDLE_PARAM_ST fixed up.");
                 }
             }
 
@@ -998,7 +1007,7 @@ public class ParamBank
         // Load params
         var param = $@"{mod}\regulation.bin";
 
-        if (!File.Exists(param) || Smithbox.ProjectHandler.CurrentProject.Config.PartialParams)
+        if (!File.Exists(param))
         {
             param = $@"{dir}\regulation.bin";
         }
@@ -1006,39 +1015,6 @@ public class ParamBank
         LoadParamsERFromFile(param);
 
         param = $@"{mod}\regulation.bin";
-
-        if (Smithbox.ProjectHandler.CurrentProject.Config.PartialParams && File.Exists(param))
-        {
-            using BND4 pParamBnd = SFUtil.DecryptERRegulation(param);
-            Dictionary<string, Param> cParamBank = new();
-            ulong v;
-
-            LoadParamFromBinder(pParamBnd, ref cParamBank, out v, true);
-
-            foreach (KeyValuePair<string, Param> pair in cParamBank)
-            {
-                Param baseParam = _params[pair.Key];
-
-                foreach (Param.Row row in pair.Value.Rows)
-                {
-                    Param.Row bRow = baseParam[row.ID];
-
-                    if (bRow == null)
-                    {
-                        baseParam.AddRow(row);
-                    }
-                    else
-                    {
-                        bRow.Name = row.Name;
-                        foreach (Param.Column field in bRow.Columns)
-                        {
-                            Param.Cell cell = bRow[field];
-                            cell.Value = row[field].Value;
-                        }
-                    }
-                }
-            }
-        }
 
         var sysParam = ResourceLocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
         if (File.Exists(sysParam))
@@ -2014,22 +1990,6 @@ public class ParamBank
                 {
                     Param paramFile = _params[Path.GetFileNameWithoutExtension(p.Name)];
                     IReadOnlyList<Param.Row> backup = paramFile.Rows;
-                    List<Param.Row> changed = new();
-
-                    if (Smithbox.ProjectHandler.CurrentProject.Config.PartialParams)
-                    {
-                        TaskManager.WaitAll(); //wait on dirtycache update
-                        HashSet<int> dirtyCache = _vanillaDiffCache[Path.GetFileNameWithoutExtension(p.Name)];
-                        foreach (Param.Row row in paramFile.Rows)
-                        {
-                            if (dirtyCache.Contains(row.ID))
-                            {
-                                changed.Add(row);
-                            }
-                        }
-
-                        paramFile.Rows = changed;
-                    }
 
                     p.Bytes = paramFile.Write();
                     paramFile.Rows = backup;
@@ -2055,6 +2015,7 @@ public class ParamBank
         }
 
         BND4 regParams = SFUtil.DecryptERRegulation(param);
+
         OverwriteParamsER(regParams);
         Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.ER);
 
