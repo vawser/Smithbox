@@ -83,6 +83,7 @@ Param Editor:
  - Add stayparam support for DS3 (requires 'blob' editor with manual definitions)
  - Able to sort row order manually
  - Add quicklink in BonfireWarpParam that opens the map that the grace is located in
+ - Add button to restore param to vanilla fields
 
 Text Editor:
  - Add generator tool for quickly adding entires, e.g. weapon entries: start ID, step amount, end ID, default title, default desc

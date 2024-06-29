@@ -119,6 +119,9 @@ public class WorldMapScreen : IResourceEventListener
         {
             if (ImGui.Button("Lands Between", new Vector2(widthUnit * 40, 20 * scale)))
             {
+                if (!ResourceManager.IsResourceLoadedOrInFlight("smithbox/worldmap/world_map_vanilla", AccessLevel.AccessGPUOptimizedOnly))
+                    LoadWorldMapTexture();
+
                 WorldMapOpen = !WorldMapOpen;
                 if(IsViewingSOTEMap)
                 {
@@ -131,6 +134,9 @@ public class WorldMapScreen : IResourceEventListener
             ImGui.SameLine();
             if (ImGui.Button("Shadow of the Erdtree", new Vector2(widthUnit * 40, 20 * scale)))
             {
+                if (!ResourceManager.IsResourceLoadedOrInFlight("smithbox/worldmap/world_map_sote", AccessLevel.AccessGPUOptimizedOnly))
+                    LoadWorldMapTexture();
+
                 WorldMapOpen = !WorldMapOpen;
                 if (!IsViewingSOTEMap)
                 {
