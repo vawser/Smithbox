@@ -6,10 +6,10 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 Unknown0" />
-    <Field Def="s32 Unknown1" />
-    <Field Def="s32 Unknown2" />
-    <Field Def="s32 Unknown3" />
+    <Field Def="s32 isDlcTab" />
+    <Field Def="s32 tabTextId" />
+    <Field Def="s32 unknown_0x8" />
+    <Field Def="s32 unknown_0xc" />
 
   </Fields>
 </PARAMDEF>

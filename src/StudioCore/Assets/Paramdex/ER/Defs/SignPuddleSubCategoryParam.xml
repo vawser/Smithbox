@@ -6,10 +6,11 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 Unknown0" />
-    <Field Def="s32 Unknown1" />
-    <Field Def="s32 Unknown2" />
-    <Field Def="s32 Unknown3" />
+    <Field Def="dummy8 startPad[4]" />
+    <Field Def="s32 signPuddleCategoryText" />
+    <Field Def="u16 signPuddleTabId" />
+    <Field Def="u16 unknown_0xa" />
+    <Field Def="dummy8 endPad[4]" />
 
   </Fields>
 </PARAMDEF>

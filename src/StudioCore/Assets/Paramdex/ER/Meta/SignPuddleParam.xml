@@ -8,6 +8,9 @@
     <disableParamReserve2 AltName="" IsHidden=""/>
     <matchAreaId AltName="Match Area ID" Wiki="ID of the simple match area to which it belongs" />
     <pad1 AltName="" IsHidden=""/>
+    
+    <signSubCategoryId AltName="Sign Sub Category ID" Refs="SignPuddleSubCategoryParam" />
+    <locationTextId AltName="Location Text ID" FmgRef="TitleLocations" />
   </Field>
   <Self />
 </PARAMMETA>

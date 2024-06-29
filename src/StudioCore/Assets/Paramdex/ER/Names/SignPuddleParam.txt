@@ -1,0 +1,21 @@
+670100 Weeping Penisula - Witchbane Ruins
+670101 Limgrave - The First Step
+670102 Limgrave - Agheel Lake
+670103 Limgrave - Dragon-Burnt Ruins
+670104 Weeping Peninsula - Peninsula Minor Erdtree
+670105 Weeping Peninsula - Castle Morne
+670106 Limgrave - Waypoint Ruins
+670130 Stormhill - Castleward Tunnel
+670131 Stormveil Castle - Secluded Cell
+670132 Stormveil Castle - Liftside Chamber
+670133 Stormveil Castle - Rampart Tower
+670134 Stormveil Castle - Stormveil Cliffside
+670135 Stormveil Castle - Stormveil Main Gate
+670160 Weeping Peninsula - Tombsward Catacombs
+670161 Weeping Peninsula - Impaler's Catacombs
+670162 Limgrave - Stormfoot Catacombs
+670163 Stormhill - Deathtouched Catacombs
+670164 Limgrave - Murkwater Catacombs
+670170 Weeping Peninsula - Tombsward Cave
+670171 Weeping Peninsula - Earthbore Cave
+670172 Limgrave - Murkwater Cave

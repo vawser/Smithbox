@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <isDlcTab AltName="Is DLC Sign Tab" IsBool="" />
+    <tabTextId AltName="Tab Text ID" FmgRef="Modern_MenuText" />
+  </Field>
+  <Self />
+</PARAMMETA>

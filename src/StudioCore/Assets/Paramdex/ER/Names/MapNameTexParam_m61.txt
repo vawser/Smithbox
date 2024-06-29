@@ -1,0 +1,34 @@
+10 Gravesite Plain
+11 Gravesite Plain (Gravesite Plain -> Scadu Altus)
+12 Gravesite Plain (Gravesite Plain -> Rauh Base)
+15 Gravesite Plain
+20 Scadu Altus
+22 Scadu Altus (Scadu Altus -> Scaduview)
+23 (Scadu Altus -> Scadu Altus)
+25 Scadu Altus
+26 (Scadu Altus -> Scadu Altus)
+30 Rauh Base
+31 Scadu Altus (Rauh Base -> Scadu Altus)
+33 Scadu Altus (Rauh Base -> Ancient Ruins of Rauh)
+35 Rauh Base
+36 Scadu Altus (Rauh Base -> Scadu Altus)
+50 Cerulean Coast
+51 Cerulean Coast (Cerulean Coast -> Foot of the Jagged Peak)
+52 Cerulean Coast (Cerulean Coast -> Charo's Hidden Grave)
+60 Jagged Peak
+70 Foot of the Jagged Peak
+75 Cerulean Coast
+76 Cerulean Coast (Cerulean Coast -> Gravesite Plain)
+80 Charo's Hidden Grave
+81 Charo's Hidden Grave (Charo's Hidden Grave -> Gravesite Plain)
+90 Ancient Ruins of Rauh
+100 Scaduview
+110 Abyssal Woods
+111 Abyssal Woods (Abyssal Woods -> Gravesite Plain)
+112 Abyssal Woods (Abyssal Woods -> Scadu Altus)
+113 Abyssal Woods (Abyssal Woods -> Jagged Peak)
+114 Abyssal Woods (Abyssal Woods -> Foot of the Jagged Peak)
+115 Abyssal Woods (Abyssal Woods -> Foot of the Jagged Peak)
+116 Abyssal Woods (Abyssal Woods -> Charo's Hidden Grave)
+120 Castle Ensis
+121 Castle Ensis

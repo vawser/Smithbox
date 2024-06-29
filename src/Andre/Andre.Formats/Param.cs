@@ -491,10 +491,10 @@ public class Param : SoulsFile<Param>
     /// <summary>
     /// Fix up function to extend Param rows when they are expanded in regulation patches. Ignored if the Param row is already fixed.
     /// </summary>
-    public void FixupERField(int originalSize, int newSize)
+    public bool FixupERField(int originalSize, int newSize)
     {
         if (RowSize != originalSize)
-            return;
+            return false;
 
         var newData = new StridedByteArray((uint)Rows.Count, (uint)newSize, BigEndian);
         for (var i = 0; i < Rows.Count; i++)
@@ -505,6 +505,8 @@ public class Param : SoulsFile<Param>
 
         _paramData = newData;
         RowSize = newSize;
+
+        return true;
     }
 
     protected override void Read(BinaryReaderEx br)

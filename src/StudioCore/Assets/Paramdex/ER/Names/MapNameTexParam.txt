@@ -1,0 +1,32 @@
+10 Limgrave
+11 Limgrave
+12 Stormhill
+13 Stormhill
+15 Weeping Peninsula
+16 Weeping Peninsula
+20 Liurnia of the Lakes
+21 Liurnia of the Lakes
+22 Bellum Highway
+23 Bellum Highway
+24 Moonlight Altar
+25 Moonlight Altar
+30 Altus Plateau
+31 Altus Plateau
+32 Capital Outskirts
+33 Capital Outskirts
+34 Mt. Gelmir
+35 Mt. Gelmir
+36 Forbidden Lands
+37 Forbidden Lands
+40 Caelid
+41 Caelid
+42 Greyoll's Dragonbarrow
+43 Greyoll's Dragonbarrow
+44 Swamp of Aeonia
+45 Swamp of Aeonia
+50 Mountaintops of the Giants
+51 Mountaintops of the Giants
+52 Flame Peak
+53 Flame Peak
+54 Consecrated Snowfield
+55 Consecrated Snowfield

@@ -1,0 +1,55 @@
+6800 Gravesite Plain
+6820 Castle Ensis
+6830 Cerulean Coast
+6840 Charo's Hidden Grave
+6850 Jagged Peak
+6851 Foot of the Jagged Peak
+6860 Abyssal Woods
+6900 Scadu Altus
+6920 Scaduview
+6940 Ancient Ruins of Rauh
+6950 Rauh Base
+10000 Stormveil Castle
+10010 Chapel of Anticipation
+11000 Leyndell, Royal Capital
+11050 Leyndell, Ashen Capital
+11100 Roundtable Hold
+12010 Ainsel River Main
+12011 Lake of Rot
+12012 Ainsel River
+12020 Nokron, Eternal City
+12030 Deeproot Depths
+12050 Mohgwyn Palace
+12070 Siofra River
+13000 Crumbling Farum Azula
+14000 Academy of Raya Lucaria
+15000 Elphael, Brace of the Haligtree
+15001 Miquella's Haligtree
+16000 Volcano Manor
+18000 Stranded Graveyard
+19000 Stone Platform
+20000 Belurat, Tower Settlement
+20010 Enir-Ilim
+21000 Shadow Keep
+21001 Shadow Keep, Church District
+21010 Specimen Storehouse
+22000 Stone Coffin Fissure
+28000 Midra's Manse
+35000 Subterranean Shunning-Grounds
+39200 Ruin-Strewn Precipice
+61000 Limgrave
+61001 Stormhill
+61002 Weeping Peninsula
+62000 Liurnia of the Lakes
+62001 Bellum Highway
+62002 Moonlight Altar
+63000 Altus Plateau
+63001 Mt. Gelmir
+63002 Capital Outskirts
+63003 Forbidden Lands
+64000 Caelid
+64001 Greyoll's Dragonbarrow
+64002 Swamp of Aeonia
+65000 Mountaintops of the Giants
+65001 Flame Peak
+65002 Consecrated Snowfield

@@ -312,7 +312,8 @@ public class EditorDecorations
                 var matchingFmgInfo = FMGBank.FmgInfoBank.Find(x => x.Name == entry.fmg);
                 if (matchingFmgInfo != null)
                 {
-                    var entryGroupId = (int)oldval + entry.offset;
+                    // Apply Abs here since some weird fields use -ID but should still resolve as normal ID
+                    var entryGroupId = Math.Abs((int)oldval) + entry.offset;
 
                     var newFmgInfo = (matchingFmgInfo.Name, FMGBank.GenerateEntryGroup(entryGroupId, matchingFmgInfo));
 

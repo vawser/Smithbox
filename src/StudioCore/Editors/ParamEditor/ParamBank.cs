@@ -415,7 +415,8 @@ public class ParamBank
             {
                 if(p.ParamType == "CHR_MODEL_PARAM_ST")
                 {
-                    p.FixupERField(12, 16);
+                    if (p.FixupERField(12, 16))
+                        TaskLogs.AddLog($"CHR_MODEL_PARAM_ST fixed up.");
                 }
             }
 
@@ -424,18 +425,18 @@ public class ParamBank
             {
                 if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
                 {
-                    p.FixupERField(880, 1024);
-                    TaskLogs.AddLog($"GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
+                    if(p.FixupERField(880, 1024))
+                        TaskLogs.AddLog($"GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
                 }
                 if (p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
                 {
-                    p.FixupERField(112, 144);
-                    TaskLogs.AddLog($"POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
+                    if (p.FixupERField(112, 144))
+                        TaskLogs.AddLog($"POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
                 }
                 if (p.ParamType == "SIGN_PUDDLE_PARAM_ST")
                 {
-                    p.FixupERField(32, 48);
-                    TaskLogs.AddLog($"SIGN_PUDDLE_PARAM_ST fixed up.");
+                    if (p.FixupERField(32, 48))
+                        TaskLogs.AddLog($"SIGN_PUDDLE_PARAM_ST fixed up.");
                 }
             }
 

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <startPad IsHidden="" />
+    <signPuddleCategoryText AltName="Sign Puddle Category Text ID" FmgRef="Modern_MenuText" />
+    <signPuddleTabId AltName="Tab ID" Refs="SignPubbleTabParam" />
+    <endPad IsHidden="" />
+  </Field>
+  <Self />
+</PARAMMETA>

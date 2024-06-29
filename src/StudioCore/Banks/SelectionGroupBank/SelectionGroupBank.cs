@@ -51,7 +51,16 @@ public class SelectionGroupBank
 
         if (!Directory.Exists(SelectionDirectory))
         {
-            Directory.CreateDirectory(SelectionDirectory);
+            try
+            {
+                Directory.CreateDirectory(SelectionDirectory);
+            }
+            catch
+            {
+                TaskLogs.AddLog($"Failed to create selection groups directory: {SelectionDirectory}");
+                return;
+            }
+
             string template = "{ \"Resources\": [ ] }";
             try
             {
@@ -142,19 +151,27 @@ public class SelectionGroupBank
 
         string jsonString = JsonSerializer.Serialize(Groups, typeof(SelectionGroupList), SelectionGroupListSerializationContext.Default);
 
-        try
+        if (Directory.Exists(SelectionDirectory))
         {
-            var fs = new FileStream(SelectionPath, System.IO.FileMode.Create);
-            var data = Encoding.ASCII.GetBytes(jsonString);
-            fs.Write(data, 0, data.Length);
-            fs.Flush();
-            fs.Dispose();
-            return true;
+            try
+            {
+                var fs = new FileStream(SelectionPath, System.IO.FileMode.Create);
+                var data = Encoding.ASCII.GetBytes(jsonString);
+                fs.Write(data, 0, data.Length);
+                fs.Flush();
+                fs.Dispose();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"{ex}");
+            }
         }
-        catch (Exception ex)
+        else
         {
-            TaskLogs.AddLog($"{ex}");
+            return false;
         }
-        return false;
+
+        return true;
     }
 }

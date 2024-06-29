@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-	<bonusSoul_single Wiki=" Amount of Souls obtained when the boss is defeated during singleplayer" />
+	<bonusSoul_single Wiki="Amount of Souls obtained when the boss is defeated during singleplayer" />
 	<bonusSoul_multi Wiki="Amount of Souls obtained when the boss is defeated during multiplayer" />
 	<humanityPointCountFlagIdTop Wiki="Leading flag ID for managing humanity drop points" />
 	<humanityDropPoint1 Wiki="Threshold 1 for acquiring humanity" />

@@ -41,8 +41,8 @@
     <Field Def="f32 unknown_0x2c" FirstVersion="11210015"/>
     <Field Def="f32 unknown_0x30" FirstVersion="11210015"/>
     <Field Def="f32 unknown_0x34" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x38" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x3c" FirstVersion="11210015"/>
+    <Field Def="s32 signSubCategoryId" FirstVersion="11210015"/>
+    <Field Def="s32 locationTextId" FirstVersion="11210015"/>
     <Field Def="s32 unknown_0x40" FirstVersion="11210015"/>
     <Field Def="s32 unknown_0x44" FirstVersion="11210015"/>
 
