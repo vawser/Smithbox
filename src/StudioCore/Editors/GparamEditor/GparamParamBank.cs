@@ -37,7 +37,7 @@ public static class GparamParamBank
 
         GPARAM param = info.Gparam;
 
-        //TaskLogs.AddLog($"SaveGraphicsParams: {info.Path}");
+        TaskLogs.AddLog($"SaveGraphicsParams: {info.Path}");
 
         byte[] fileBytes = null;
 
@@ -76,7 +76,7 @@ public static class GparamParamBank
         var assetRoot = $@"{Smithbox.GameRoot}\{paramDir}\{info.Name}{paramExt}";
         var assetMod = $@"{Smithbox.ProjectRoot}\{paramDir}\{info.Name}{paramExt}";
 
-        if (Uri.IsWellFormedUriString($"{Smithbox.ProjectRoot}\\{paramDir}\\", UriKind.Absolute))
+        if (Smithbox.ProjectRoot != "")
         {
             // Add drawparam folder if it does not exist in GameModDirectory
             if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{paramDir}\\"))
