@@ -121,10 +121,9 @@ Project:
 Make SOTE world map more accurate
 
 # Blockers
+Implement DSMS change to TextEditor stuff, should fix the TalkParam issue
 TalkParam is lagging heavily: due to GenerateEntryGroup
  - TalkMsg FMG itself takes too long too
-
-Param Upgrade:
- Check GetOldRegulationPath, might be supplying the wrong regulation, might explain the issues
- Change how the edits are displayed, message box isn't suitable anymore
  
+
+TODO: add Param Upgrade functionality, base on DSMS impl, but adapt to the two-stage approach I envisioned

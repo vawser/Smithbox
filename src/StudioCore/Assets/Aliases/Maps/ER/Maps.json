@@ -3698,42 +3698,42 @@
 		},
 		{
 			"id": "m61_11_08_02",
-			"name": "",
+			"name": "Far South Cerulean Coast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_11_09_02",
-			"name": "",
+			"name": "Southwest Cerulean Coast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_11_10_02",
-			"name": "",
+			"name": "Southwest Gravesite Plain; Northwest Cerulean Coast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_11_11_02",
-			"name": "",
+			"name": "Northwest Gravesite Plain; West Scadu Altus; Rauh Ruins",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_11_11_12",
-			"name": "",
+			"name": "Northwest Gravesite Plain; West Scadu Altus; Rauh Ruins (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_11_12_02",
-			"name": "",
+			"name": "North Rauh Ruins",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -3747,28 +3747,28 @@
 		},
 		{
 			"id": "m61_12_09_02",
-			"name": "",
+			"name": "East Cerulean Coast; South Finger Ruins of Rhia; Dragon Communion Grand Altar",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_12_10_02",
-			"name": "",
+			"name": "Southeast Gravesite Plain; Fort Reprimand; Foot of the Jagged Peak; North Finger Ruins of Rhia; West Abyssal Woods",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_12_11_02",
-			"name": "",
+			"name": "Central Scadu Altus",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_12_12_02",
-			"name": "",
+			"name": "West Scaduview",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -3782,28 +3782,28 @@
 		},
 		{
 			"id": "m61_13_09_02",
-			"name": "",
+			"name": "South Jagged Peak",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_13_10_02",
-			"name": "",
+			"name": "North Jagged Peak; East Abyssal Woods",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_13_11_02",
-			"name": "",
+			"name": "Far East Scadu Altus; Finger Ruins of Dheo",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_13_12_02",
-			"name": "",
+			"name": "East Scaduview",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4391,7 +4391,7 @@
 		},
 		{
 			"id": "m61_44_41_00",
-			"name": "",
+			"name": "Gravesite Plain - Prospect Town West Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4405,7 +4405,7 @@
 		},
 		{
 			"id": "m61_44_43_00",
-			"name": "",
+			"name": "Gravesite Plain - Belurat Entrance Stairs",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4426,21 +4426,21 @@
 		},
 		{
 			"id": "m61_44_45_00",
-			"name": "Ancient Ruins of Rauh - Ancient Ruins, Grand Stairway",
+			"name": "Ancient Ruins of Rauh - South Church of the Bud, Sealing Tree, Grand Stairway, West Ruins Cave Upper Levels",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_44_45_10",
-			"name": "Ancient Ruins of Rauh - Church of the Bud",
+			"name": "Ancient Ruins of Rauh - Church of the Bud, Sealing Tree, Grand Stairway (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_44_46_00",
-			"name": "Ancient Ruins of Rauh - Church of the Bud, Main Entrance",
+			"name": "Rauh Base - Scorpion River Catacombs Entrance; Ancient Ruins of Rauh - Spirit Spring Courtyard, Rot Ruins, North Church of the Bud",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4454,7 +4454,7 @@
 		},
 		{
 			"id": "m61_44_47_00",
-			"name": "",
+			"name": "Rauh Base - West Scorpion River; Ancient Ruins of Rauh - West Ruins Northwest Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4468,7 +4468,7 @@
 		},
 		{
 			"id": "m61_44_48_00",
-			"name": "",
+			"name": "Rauh Base - Northwest Great Red Bear Area",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4524,42 +4524,42 @@
 		},
 		{
 			"id": "m61_45_39_00",
-			"name": "",
+			"name": "Charo's Hidden Grace - Far West Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_45_40_00",
-			"name": "",
+			"name": "Gravesite Plain - Prospect Town South Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_45_41_00",
-			"name": "",
+			"name": "Gravesite Plain - Cliffroad Terminus, Prospect Town",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_45_42_00",
-			"name": "",
+			"name": "Gravesite Plain - Belurat Main Gate Cross",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_45_43_00",
-			"name": "",
+			"name": "Gravesite Plain - South of Dragon Lake",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_45_44_00",
-			"name": "",
+			"name": "Gravesite Plain - Dragon Lake, Belurat Gaol Entrance",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4573,7 +4573,7 @@
 		},
 		{
 			"id": "m61_45_45_00",
-			"name": "Ancient Ruins of Rauh - Rauh Ancient Ruins, West",
+			"name": "Rauh Base - West of Temple Town Ruins; Ancient Ruins of Rauh - West Ruins Cave Entrance and Grace",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4587,7 +4587,7 @@
 		},
 		{
 			"id": "m61_45_46_00",
-			"name": "Rauh Base - Temple Town Ruins",
+			"name": "Rauh Base - Rot Area; Ancient Ruins of Rauh - Furnace Golem Area",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4601,7 +4601,7 @@
 		},
 		{
 			"id": "m61_45_47_00",
-			"name": "Rauh Base - Ravine North",
+			"name": "Rauh Base - Ravine North, East Scorpion River; Ancient Ruins of Rauh - West Ruins Northeast Cliffside, East Ruins Cave Exit",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4615,7 +4615,7 @@
 		},
 		{
 			"id": "m61_45_48_00",
-			"name": "",
+			"name": "Rauh Base - Northeast Great Red Bear Area",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4671,7 +4671,7 @@
 		},
 		{
 			"id": "m61_46_35_00",
-			"name": "",
+			"name": "Cerulean Coast - The Fissure West Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4692,49 +4692,49 @@
 		},
 		{
 			"id": "m61_46_38_00",
-			"name": "",
+			"name": "Cerulean Coast - Southern Nameless Mausoleum, Far Southwest Coast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_46_39_00",
-			"name": "Cerulean Coast - Cerulean Coast West",
+			"name": "Cerulean Coast - Cerulean Coast West; Charo's Hidden Grave - Southwest Furnace Golem Area",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_46_40_00",
-			"name": "",
+			"name": "Gravesite Plain - Church of Benediction; Cerulean Coast - Demi-Human Beach, Ravine North; Charo's Hidden Grave - Lamenter's Gaol Entrance",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_46_41_00",
-			"name": "",
+			"name": "Gravesite Plain - Western Nameless Mausoleum, East of Prospect Town, West of Scorched Ruins",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_46_42_00",
-			"name": "",
+			"name": "Gravesite Plain - Three-Path Cross",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_46_43_00",
-			"name": "",
+			"name": "Gravesite Plain - Ellac Greatbridge; Below Ellac Greatbridge",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_46_44_00",
-			"name": "",
+			"name": "Gravesite Plain - Greatbridge North, Abandoned Ailing Village, Rivermouth Cave Entrance",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4748,7 +4748,7 @@
 		},
 		{
 			"id": "m61_46_45_00",
-			"name": "",
+			"name": "Rauh Base - Temple Town Ruins; Gravesite Plain - Northern Nameless Mausoleum",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4762,7 +4762,7 @@
 		},
 		{
 			"id": "m61_46_46_00",
-			"name": "",
+			"name": "Rauh Base - North Temple Town Ruins",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4776,7 +4776,7 @@
 		},
 		{
 			"id": "m61_46_47_00",
-			"name": "Ancient Ruins of Rauh - Rauh Ancient Ruins, East",
+			"name": "Rauh Base - Fire Spritestone Cave; Ancient Ruins of Rauh - East Ruins Grace and Cave Entrance, Scorpion Cave",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4790,7 +4790,7 @@
 		},
 		{
 			"id": "m61_46_48_00",
-			"name": "",
+			"name": "Ancient Ruins of Rauh - East Ruins North Pit and Tunnels",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4846,70 +4846,70 @@
 		},
 		{
 			"id": "m61_47_35_00",
-			"name": "Cerulean Coast - The Fissure",
+			"name": "Cerulean Coast - The Fissure South, Stone Coffin Fissure Entrance",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_47_36_00",
-			"name": "",
+			"name": "Cerulean Coast - The Fissure North",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_47_37_00",
-			"name": "",
+			"name": "Cerulean Coast - Path to The Fissue",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_47_38_00",
-			"name": "",
+			"name": "Cerulean Coast - Southwest Coast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_47_39_00",
-			"name": "",
+			"name": "Cerulean Coast - Ravine South; Charo's Hidden Grave - South Central Lake",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_47_40_00",
-			"name": "",
+			"name": "Gravesite Plain - South of Scorched Ruins, Gravesite Plain South Cliffside; Cerulean Coast - Ravine Northeast; Charo's Hidden Grave - North Central Lake",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_47_41_00",
-			"name": "Gravesite Plain - Ellac River Downstream",
+			"name": "Gravesite Plain - Scorched Ruins; Ellac River Downstream",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_47_42_00",
-			"name": "",
+			"name": "Gravesite Plain - North of Scorched Ruins, Downstream of Ellac River Cave",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_47_43_00",
-			"name": "",
+			"name": "Gravesite Plain - East of Ensis Castle Front, Ellac River Cave",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_47_44_00",
-			"name": "",
+			"name": "Gravesite Plain - West Castle Ensis, South Fog Rift Fort",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4923,7 +4923,7 @@
 		},
 		{
 			"id": "m61_47_45_00",
-			"name": "Scadu Altus - Scadu Altus, West",
+			"name": "Gravesite Plain - North Fog Rift Fort, Northern Nameless Mausoleum East Cliffside; Scadu Altus - Scadu Altus West",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4937,7 +4937,7 @@
 		},
 		{
 			"id": "m61_47_46_00",
-			"name": "",
+			"name": "Scadu Altus - Church of the Crusade; Gravesite Plain - Fog Rift Catacombs Entrance; Rauh Base - Above Fog Rift; Ancient Ruins of Rauh - Bloodfiend Ruins Southeast Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4951,7 +4951,7 @@
 		},
 		{
 			"id": "m61_47_47_00",
-			"name": "Ancient Ruins of Rauh - Viaduct Minor Tower",
+			"name": "Rauh Base - Bloodfiend Cave; Ancient Ruins of Rauh - Shadow Keep Exit, Viaduct Minor Tower, Bloodfiend Ruins",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4965,7 +4965,7 @@
 		},
 		{
 			"id": "m61_47_48_00",
-			"name": "",
+			"name": "Rauh Base - West Rampart Bridge Northwest Cliffside; Ancient Ruins of Rauh - Viaduct Tower North Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5028,91 +5028,91 @@
 		},
 		{
 			"id": "m61_48_37_00",
-			"name": "Cerulean Coast - Cerulean Coast Cross",
+			"name": "Cerulean Coast - Cerulean Coast Cross, Far Southwest Fingercreeper Beach Coast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_48_38_00",
-			"name": "",
+			"name": "Cerulean Coast - Dragon Area, Beach-Facing Coffin; Charo's Hidden Grave - Southeast Mariner Area",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_48_39_00",
-			"name": "Cerulean Coast - Cerulean Coast / Charo's Hidden Grave",
+			"name": "Cerulean Coast - Cerulean Coast; Charo's Hidden Grave - Charo's Hidden Grave",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_48_40_00",
-			"name": "",
+			"name": "Gravesite Plain - South of Church of Consolation, Ellac River End; Charo's Hidden Grave - Central Lake Northeast Cliffside; Abyssal Woods - Southwest Corner",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_48_41_00",
-			"name": "",
+			"name": "Gravesite Plain - Church of Consolation, Suppressing Pillar, Dragon's Pit Entrance and Exit, North of Ellac River End; Abyssal Woods - Southwest Edge",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_48_42_00",
-			"name": "",
+			"name": "Gravesite Plain - Pillar Path Waypoint, Ruined Forge Lava Intake Entrance; Abyssal Woods - West Edge",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_48_43_00",
-			"name": "Abyssal Woods - Divided Falls",
+			"name": "Gravesite Plain - Pillar Path Cross; Abyssal Woods - Divided Falls; Scadu Altus - West of Moorth Highway South",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_48_44_00",
-			"name": "",
+			"name": "Gravesite Plain - East Castle Ensis, Exit to Scadu Altus; Scadu Altus - Ruined Forge of Starfall Past Entrance",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_48_45_00",
-			"name": "Scadu Altus - Highroad Cross",
+			"name": "Scadu Altus - Highroad Cross, Highway Fork",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_48_46_00",
-			"name": "",
+			"name": "Scadu Altus - Furnace Golem Area; Rauh Base - Entrance from Poison Swamp",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_48_47_00",
-			"name": "Rauh Base - Ancient Ruins Base",
+			"name": "Scadu Altus - Shadow Keep Main Gate; Rauh Base - Ancient Ruins Base",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_48_48_00",
-			"name": "",
+			"name": "Rauh Base - Taylew's Ruined Forge Entrance",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_48_49_00",
-			"name": "",
+			"name": "Scaduview - Far West Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5168,91 +5168,91 @@
 		},
 		{
 			"id": "m61_49_37_00",
-			"name": "",
+			"name": "Cerulean Coast - Fingercreeper Beach Central Coast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_49_38_00",
-			"name": "",
+			"name": "Cerulean Coast - Fingercreeper Beach Center; Finger Ruins of Rhia - Finger-Weaver's Hovel; Charo's Hidden Grave - Far Southeast Entrance; Foot of the Jagged Peak - South of Grand Altar",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_49_39_00",
-			"name": "Foot of the Jagged Peak - Grand Altar of Dragon Communion",
+			"name": "Finger Ruins of Rhia - Climb to Finger-Weaver's Hovel; Charo's Hidden Grave - Far East Cliffside; Foot of the Jagged Peak - Grand Altar of Dragon Communion",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_49_40_00",
-			"name": "",
+			"name": "Foot of the Jagged Peak - North of Grand Altar; Abyssal Woods - Midra's Manse Entrance",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_49_41_00",
-			"name": "",
+			"name": "Foot of the Jagged Peak - Drake Lake; Abyssal Woods - North of Midra's Manse",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_49_42_00",
-			"name": "",
+			"name": "Gravesite Plain - Elder's Hovel; Abyssal Woods - Between Divided Falls and Manse",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_49_43_00",
-			"name": "Scadu Altus - Moorth Highway, South / Fort of Reprimand / Behind the Fort of Reprimand",
+			"name": "Gravesite Plain - Southeast Poison Swamp; Scadu Altus - Moorth Highway South, Fort of Reprimand; Abyssal Woods - East of Divided Falls",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_49_44_00",
-			"name": "Scadu Altus - Moorth Ruins / Bonny Village",
+			"name": "Scadu Altus - Moorth Ruins, Bonny Village West Entrance",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_49_45_00",
-			"name": "",
+			"name": "Scadu Altus - Moorth Highway Camp, South Great Red Bear Area",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_49_46_00",
-			"name": "",
+			"name": "Scadu Altus - Poison Swamp, South Great Red Bear Area, Castle Watering Hole Southwest",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_49_47_00",
-			"name": "Scadu Altus - Castle Watering Hole",
+			"name": "Scadu Altus - Castle Watering Hole Northwest Entrance",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_49_48_00",
-			"name": "Scaduview - Scaduview / Shadow Keep, Back Gate",
+			"name": "Scaduview - Specimen Storehouse Exit, Commander Gaius' Arena",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_49_49_00",
-			"name": "Scaduview - Albinauric's Shack / Scadutree Chalice",
+			"name": "Scaduview - Scadutree Chalice, Albinauric's Shack",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5308,91 +5308,91 @@
 		},
 		{
 			"id": "m61_50_37_00",
-			"name": "",
+			"name": "Cerulean Coast - Far Southeast Fingercreeper Beach Coast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_50_38_00",
-			"name": "Cerulean Coast - Finger Ruins of Rhia",
+			"name": "Finger Ruins of Rhia - Far Southwest from Cerulean Coast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_50_39_00",
-			"name": "",
+			"name": "Finger Ruins of Rhia - Southwest",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_50_40_00",
-			"name": "",
+			"name": "Finger Ruins of Rhia - Northwest, Hanging Bell; Foot of the Jagged Peak - North of Grand Altar East Edge",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_50_41_00",
-			"name": "",
+			"name": "Finger Ruins of Rhia - Far Northwest; Foot of the Jagged Peak - Northeast of Drake Lake; Abyssal Woods - Central Woods South Edge",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_50_42_00",
-			"name": "Abyssal Woods - Abyssal Woods",
+			"name": "Abyssal Woods - Central Abyssal Woods",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_50_43_00",
-			"name": "Scadu Altus - Scaduview Cross",
+			"name": "Scadu Altus - Scaduview Cross, Bonny Gaol Entrance, Path to Village of Flies; Abyssal Woods - Alcove North of Central Woods",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_50_44_00",
-			"name": "Scadu Altus - Bonny Village / Village of Flies / Whipping Hut / Recluses' River Downstream",
+			"name": "Scadu Altus - Main Bonny Village, Whipping Hut, Recluses' River Downstream, Village of Flies",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_50_45_00",
-			"name": "Scadu Altus - Recluses' River Upstream",
+			"name": "Scadu Altus - Bonny Village North Tree and Overlook, Recluses' River Upstream, Manus Metyr Graveyard and West Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_50_46_00",
-			"name": "Scadu Altus - Ruins of Unte",
+			"name": "Scadu Altus - Castle Watering Hole Southeast, South Ruins of Unte, Church District Highroad West Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_50_47_00",
-			"name": "",
+			"name": "Scadu Altus - Castle Watering Hole Northeast, North Ruins of Unte, Above Shadow Keep East Tunnel",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_50_48_00",
-			"name": "Scaduview - Hinterland / Scadutree Base",
+			"name": "Scaduview - Hinterland, Lower Shadow Keep Exit, South Scadutree Base",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_50_49_00",
-			"name": "",
+			"name": "Scaduview - North Scadutree Base",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5455,70 +5455,70 @@
 		},
 		{
 			"id": "m61_51_38_00",
-			"name": "",
+			"name": "Finger Ruins of Rhia - Far Southeast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_51_39_00",
-			"name": "",
+			"name": "Finger Ruins of Rhia - Southeast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_51_40_00",
-			"name": "",
+			"name": "Finger Ruins of Rhia - Northeast; Foot of the Jagged Peak - Foot of the Jagged Peak West Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_51_41_00",
-			"name": "",
+			"name": "Finger Ruins of Rhia - Far Northeast; Foot of the Jagged Peak - First Spirit Spring and Rope Bridge; Abyssal Woods - South Winter-Lantern River by Woodland Trail",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_51_42_00",
-			"name": "Abyssal Woods - Woodland Trail",
+			"name": "Abyssal Woods - Between Woodland Trail and Central Woods",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_51_43_00",
-			"name": "",
+			"name": "Scadu Altus - Darklight Catacombs Entrance; Abyssal Woods - West of Forsaken Graveyard",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_51_44_00",
-			"name": "Scadu Altus - Eastern Nameless Mausoleum / Bridge Leading to the Village",
+			"name": "Scadu Altus - Bridge Leading to the Village, Eastern Nameless Mausoleum, Hippo Duo Pond",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_51_45_00",
-			"name": "Scadu Altus - Finger Ruins of Miyr / Cathedral of Manus Metyr",
+			"name": "Scadu Altus - Cathedral of Manus Metyr, Finger Ruins of Miyr, Furnace Golem Area",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_51_46_00",
-			"name": "",
+			"name": "Scadu Altus - Road to Manus Metyr, Finger Ruins of Miyr Warp Platform, Rabbath's Rise Building",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_51_47_00",
-			"name": "Scadu Altus - Church District Highroad / Shaman Village / Rabbath's Rise",
+			"name": "Scadu Altus - Church District Highroad, Rabbath's Rise, Shadow Keep East Tunnel Entrance; Scaduview - Shaman Village",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5526,14 +5526,14 @@
 
 		{
 			"id": "m61_51_48_00",
-			"name": "Scaduview - Fingerstone Hill / Hinterland Bridge",
+			"name": "Scaduview - Hinterland Bridge, West Fingerstone Hill",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_51_49_00",
-			"name": "",
+			"name": "Scaduview - Fingerstone Hill Northwest Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5589,35 +5589,35 @@
 		},
 		{
 			"id": "m61_52_39_00",
-			"name": "",
+			"name": "Foot of the Jagged Peak - Drake Duo Area South Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_52_40_00",
-			"name": "Foot of the Jagged Peak - Foot of the Jagged Peak",
+			"name": "Foot of the Jagged Peak - Foot of the Jagged Peak, Drake Duo Area; Abyssal Woods - Southwest of Church",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_52_41_00",
-			"name": "",
+			"name": "Abyssal Woods - Big Tree West of Church",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_52_42_00",
-			"name": "",
+			"name": "Abyssal Woods - Woodland Trail East Edge",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_52_43_00",
-			"name": "Abyssal Woods - Forsaken Graveyard",
+			"name": "Abyssal Woods - Forsaken Graveyard, Darklight Catacombs Exit",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5631,35 +5631,35 @@
 		},
 		{
 			"id": "m61_52_45_00",
-			"name": "",
+			"name": "Scadu Altus - Church District Highroad Southeast Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_52_46_00",
-			"name": "",
+			"name": "Scadu Altus - Church District Highroad East Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_52_47_00",
-			"name": "",
+			"name": "Scadu Altus - Church District Highroad Northast Cliffside; Scaduview - South of Fingerstone Hill Crater",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_52_48_00",
-			"name": "",
+			"name": "Scaduview - Fingerstone Hill Crater",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_52_49_00",
-			"name": "",
+			"name": "Scaduview - Fingerstone Hill Crater North Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5715,21 +5715,21 @@
 		},
 		{
 			"id": "m61_53_39_00",
-			"name": "Jagged Peak - Jagged Peak Mountainside",
+			"name": "Jagged Peak - Between Jagged Peak Mountainside and Summit, Before Senessax Lake",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_53_40_00",
-			"name": "",
+			"name": "Abyssal Woods - South of Church; Jagged Peak - East of Drake Duo Area",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_53_41_00",
-			"name": "Abyssal Woods - Church Ruins",
+			"name": "Abyssal Woods - Abandoned Church",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5757,28 +5757,28 @@
 		},
 		{
 			"id": "m61_53_45_00",
-			"name": "",
+			"name": "Finger Ruins of Dheo - Southwest",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_53_46_00",
-			"name": "Scaduview - Finger Ruins of Dheo",
+			"name": "Finger Ruins of Dheo - West, Hanging Bell",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_53_47_00",
-			"name": "Scaduview - Finger Ruins of Dheo",
+			"name": "Finger Ruins of Dheo - Northwest",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_53_48_00",
-			"name": "",
+			"name": "Scaduview - East of Fingerstone Hill Crater, Colossal Fingercreeper Cave",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5841,14 +5841,14 @@
 		},
 		{
 			"id": "m61_54_39_00",
-			"name": "Jagged Peak - Jagged Peak Summit",
+			"name": "Jagged Peak - Jagged Peak Summit, Bayle Arena, Senessax Lake",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_54_40_00",
-			"name": "",
+			"name": "Jagged Peak - Jagged Peak Mountainside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5883,28 +5883,28 @@
 		},
 		{
 			"id": "m61_54_45_00",
-			"name": "",
+			"name": "Finger Ruins of Dheo - Southeast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_54_46_00",
-			"name": "",
+			"name": "Finger Ruins of Dheo - East",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_54_47_00",
-			"name": "",
+			"name": "Finger Ruins of Dheo - Northeast",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_54_48_00",
-			"name": "",
+			"name": "Scaduview - Fingerstone Hill Far East Cliffside",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5967,7 +5967,7 @@
 		},
 		{
 			"id": "m61_55_39_00",
-			"name": "Jagged Peak - Rest of the Dread Dragon",
+			"name": "Jagged Peak - Bayle Arena East Wall, Rest of the Dread Dragon",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
