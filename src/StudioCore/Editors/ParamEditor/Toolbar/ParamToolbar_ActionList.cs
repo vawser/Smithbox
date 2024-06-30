@@ -73,5 +73,6 @@ public class ParamToolbar_ActionList
         ParamAction_MassEditScripts.Select();
         ParamAction_FindRowIdInstances.Select();
         ParamAction_FindValueInstances.Select();
+        ParamAction_UpgradeParams.Select();
     }
 }

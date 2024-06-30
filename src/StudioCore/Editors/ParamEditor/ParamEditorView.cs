@@ -63,19 +63,10 @@ public class ParamEditorView
         {
             ImGui.Text($"Param version {Utils.ParseParamVersion(ParamBank.PrimaryBank.ParamVersion)}");
 
-            if (_paramEditor.ParamUpgradeVersionSoftWhitelist != 0)
+            if (ParamBank.PrimaryBank.ParamVersion < ParamBank.VanillaBank.ParamVersion)
             {
-                if (ParamBank.PrimaryBank.ParamVersion < ParamBank.VanillaBank.ParamVersion
-                    || _paramEditor.ParamUpgradeVersionSoftWhitelist > ParamBank.PrimaryBank.ParamVersion)
-                {
-                    ImGui.SameLine();
-                    ImGui.Text("(out of date)");
-                }
-                else if (_paramEditor.ParamUpgradeVersionSoftWhitelist < ParamBank.PrimaryBank.ParamVersion)
-                {
-                    ImGui.SameLine();
-                    ImGui.Text("(unsupported version)");
-                }
+                ImGui.SameLine();
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Warning_Text_Color, "(out of date)");
             }
         }
 

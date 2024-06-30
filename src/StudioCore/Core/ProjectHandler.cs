@@ -40,6 +40,19 @@ public class ProjectHandler
         NewProjectModal = new NewProjectModal();
     }
 
+    public void ReloadCurrentProject()
+    {
+        LoadProjectFromJSON(CurrentProject.ProjectJsonPath);
+        Smithbox.ProjectHandler.IsInitialLoad = false;
+
+        if(ParamUpgrader.IsUpgradingParams)
+        {
+            ParamUpgrader.AddNewRegulationRows();
+            ParamUpgrader.ApplyNewRegulationMassEdits();
+            ParamUpgrader.IsUpgradingParams = false;
+        }
+    }
+
     public void HandleProjectSelection()
     {
         // Load previous project if it exists

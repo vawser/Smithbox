@@ -98,7 +98,7 @@ public class ParamBank
 
     private static readonly HashSet<int> EMPTYSET = new();
 
-    private Dictionary<string, Param> _params;
+    public Dictionary<string, Param> _params;
 
     private ulong _paramVersion;
 
@@ -326,6 +326,12 @@ public class ParamBank
             MassParamEditRegex.PerformMassEdit(this, "param .*: id .*: name: replace \r:0", null);
         return child;
     }
+
+    public void UpgradeRegulationVersion(ulong version)
+    {
+        _paramVersion = version;
+    }
+
 
     private void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version,
         bool checkVersion = false)
@@ -2017,6 +2023,11 @@ public class ParamBank
 
         BND4 regParams = SFUtil.DecryptERRegulation(param);
 
+        if(ParamUpgrader.IsUpgradingParams)
+        {
+            regParams = ParamUpgrader.UpgradeRegulation(regParams);
+        }
+
         OverwriteParamsER(regParams);
         Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.ER);
 
@@ -2037,6 +2048,11 @@ public class ParamBank
         }
 
         _pendingUpgrade = false;
+
+        if (ParamUpgrader.IsUpgradingParams)
+        {
+            Smithbox.ProjectHandler.ReloadCurrentProject();
+        }
     }
 
     private void SaveParamsAC6()
@@ -2164,7 +2180,32 @@ public class ParamBank
         }
     }
 
-    private static Param UpgradeParam(Param source, Param oldVanilla, Param newVanilla, HashSet<int> rowConflicts)
+    public Dictionary<string, Param> GetOldVanillaParams(string path)
+    {
+        // Load old vanilla regulation
+        BND4 oldVanillaParamBnd;
+        if (Smithbox.ProjectType == ProjectType.ER)
+        {
+            oldVanillaParamBnd = SFUtil.DecryptERRegulation(path);
+        }
+        else if (Smithbox.ProjectType == ProjectType.AC6)
+        {
+            oldVanillaParamBnd = SFUtil.DecryptAC6Regulation(path);
+        }
+        else
+        {
+            throw new NotImplementedException(
+                $"Param upgrading for game type {Smithbox.ProjectType} is not supported.");
+        }
+
+        Dictionary<string, Param> oldVanillaParams = new();
+        ulong version;
+        LoadParamFromBinder(oldVanillaParamBnd, ref oldVanillaParams, out version, true);
+
+        return oldVanillaParams;
+    }
+
+    public static Param UpgradeParam(Param source, Param oldVanilla, Param newVanilla, HashSet<int> rowConflicts)
     {
         // Presorting this would make it easier, but we're trying to preserve order as much as possible
         // Unfortunately given that rows aren't guaranteed to be sorted and there can be duplicate IDs,

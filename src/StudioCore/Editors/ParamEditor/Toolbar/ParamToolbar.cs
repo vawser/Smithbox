@@ -26,7 +26,8 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         MassEdit,
         MassEditScripts,
         FindRowIdInstances,
-        FindValueInstances
+        FindValueInstances,
+        UpgradeParams
     }
 
     public class ParamToolbar

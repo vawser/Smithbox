@@ -2,6 +2,7 @@
 
 public enum ProjectType
 {
+    Viewer = -1,
     Undefined = 0,
     DES = 1, // Demon's Souls
     DS1 = 2, // Dark Souls: Prepare to Die

@@ -47,6 +47,7 @@ public class ParamToolbar_Configuration
         ParamAction_MassEditScripts.Configure();
         ParamAction_FindRowIdInstances.Configure();
         ParamAction_FindValueInstances.Configure();
+        ParamAction_UpgradeParams.Configure();
 
         ParamAction_DuplicateRow.Act();
         ParamAction_SortRows.Act();
@@ -57,5 +58,6 @@ public class ParamToolbar_Configuration
         ParamAction_MassEditScripts.Act();
         ParamAction_FindRowIdInstances.Act();
         ParamAction_FindValueInstances.Act();
+        ParamAction_UpgradeParams.Act();
     }
 }

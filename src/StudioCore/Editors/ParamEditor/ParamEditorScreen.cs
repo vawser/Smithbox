@@ -605,7 +605,7 @@ public class ParamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        ParamUpgradeDisplay();
+        //ParamUpgradeDisplay();
 
         if (ImGui.BeginMenu("Tools"))
         {
