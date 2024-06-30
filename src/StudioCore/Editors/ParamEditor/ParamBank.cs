@@ -1314,7 +1314,7 @@ public class ParamBank
                             () => RefreshAllParamDiffCaches(true)));
                     }));
 
-                if (Smithbox.ProjectHandler.NewProjectModal.loadDefaultRowNamesOnCreation)
+                if (Smithbox.ProjectHandler.ProjectModal.loadDefaultRowNamesOnCreation)
                 {
                     try
                     {

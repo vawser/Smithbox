@@ -14,14 +14,14 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Interface.Modals;
 
-public class NewProjectModal
+public class ProjectModal
 {
     public Project newProject;
 
     public string newProjectDirectory = "";
     public bool loadDefaultRowNamesOnCreation = false;
 
-    public NewProjectModal()
+    public ProjectModal()
     {
         newProject = new Project();
         newProject.Config.PinnedParams = new();
@@ -37,7 +37,51 @@ public class NewProjectModal
         return Directory.GetLogicalDrives().Contains(path);
     }
 
-    public void DisplayProjectSelection()
+    public void Display()
+    {
+        ImGui.BeginTabBar("ProjectModelTabs");
+
+        if(ImGui.BeginTabItem("Load Project"))
+        {
+            DisplayProjectLoadOptions();
+
+            ImGui.EndTabItem();
+        }
+;
+        if (ImGui.BeginTabItem("Create Project"))
+        {
+            DisplayNewProjectCreation();
+
+            ImGui.EndTabItem();
+        }
+
+        ImGui.EndTabBar();
+    }
+
+    public void DisplayProjectLoadOptions()
+    {
+        ImGui.Separator();
+        ImguiUtils.WrappedText("Recent Projects");
+        ImGui.Separator();
+
+        Smithbox.ProjectHandler.DisplayRecentProjects();
+
+        var width = ImGui.GetWindowWidth() / 100;
+
+        ImGui.Separator();
+
+        if (ImGui.Button("Load New Project", new Vector2(width * 95, 32)))
+        {
+            Smithbox.ProjectHandler.OpenProjectDialog();
+        }
+
+        if (ImGui.Button("Load Recent Project", new Vector2(width * 95, 32)))
+        {
+            Smithbox.ProjectHandler.LoadRecentProject();
+        }
+    }
+
+    public void DisplayNewProjectCreation()
     {
         // Project Name
         ImGui.AlignTextToFramePadding();

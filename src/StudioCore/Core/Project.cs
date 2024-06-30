@@ -46,7 +46,7 @@ public class Project
         Type = ProjectType.Undefined;
         GameRootDirectory = "";
         GameModDirectory = "";
-        ProjectJsonPath = "";
+        ProjectJsonPath = AppContext.BaseDirectory;
         Config = new ProjectConfiguration();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
@@ -13,6 +14,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -25,7 +27,7 @@ public class ProjectHandler
 {
     public Project CurrentProject;
 
-    public NewProjectModal NewProjectModal;
+    public ProjectModal ProjectModal;
 
     public Timer AutomaticSaveTimer;
 
@@ -37,7 +39,24 @@ public class ProjectHandler
     public ProjectHandler()
     {
         CurrentProject = new Project();
-        NewProjectModal = new NewProjectModal();
+        ProjectModal = new ProjectModal();
+
+        IsInitialLoad = true;
+        UpdateProjectVariables();
+    }
+    public void OnGui()
+    {
+        if (IsInitialLoad)
+        {
+            ImGui.OpenPopup("Project Creation");
+        }
+
+        if (ImGui.BeginPopupModal("Project Creation", ref IsInitialLoad, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize))
+        {
+            ProjectModal.Display();
+
+            ImGui.EndPopup();
+        }
     }
 
     public void ReloadCurrentProject()
@@ -53,28 +72,7 @@ public class ProjectHandler
         }
     }
 
-    public void HandleProjectSelection()
-    {
-        // Load previous project if it exists
-        if (CFG.Current.LastProjectFile != null && CFG.Current.LastProjectFile != "" && File.Exists(CFG.Current.LastProjectFile))
-        {
-            var lastProjectPath = CFG.Current.LastProjectFile;
-
-            CurrentProject.Config = ReadProjectConfig(lastProjectPath);
-            
-            UpdateProjectVariables();
-
-            LoadProject(lastProjectPath, false);
-        }
-        // Otherwise display new project window
-        else
-        {
-            IsInitialLoad = true;
-            UpdateProjectVariables();
-        }
-    }
-
-    public void LoadProject(string path, bool update = true)
+    public void LoadProject(string path)
     {
         if (CurrentProject.Config == null)
         {
@@ -92,7 +90,6 @@ public class ProjectHandler
             return;
         }
 
-
         CurrentProject.ProjectJsonPath = path;
 
         SetGameRootPrompt(CurrentProject);
@@ -109,18 +106,17 @@ public class ProjectHandler
 
         Smithbox.SetProgramTitle($"Smithbox - {CurrentProject.Config.ProjectName}");
 
-        if (update)
-        {
-            ResourceMapLocator.FullMapList = null;
-            Smithbox.BankHandler.UpdateBanks();
-            Smithbox.EditorHandler.UpdateEditors();
-            Smithbox.NameCacheHandler.UpdateCaches();
+        ResourceMapLocator.FullMapList = null;
+        Smithbox.InitializeBanks();
+        Smithbox.InitializeNameCaches();
+        Smithbox.EditorHandler.UpdateEditors();
 
-            CFG.Current.LastProjectFile = path;
-            CFG.Save();
+        CFG.Current.LastProjectFile = path;
+        CFG.Save();
 
-            AddProjectToRecentList(CurrentProject);
-        }
+        AddProjectToRecentList(CurrentProject);
+
+        UpdateTimer();
     }
 
     public void LoadProjectFromJSON(string jsonPath)
@@ -160,19 +156,6 @@ public class ProjectHandler
         Smithbox.GameRoot = CurrentProject.Config.GameRoot;
         Smithbox.ProjectRoot = Path.GetDirectoryName(CurrentProject.ProjectJsonPath);
         Smithbox.SmithboxDataRoot = $"{Smithbox.ProjectRoot}\\.smithbox";
-    }
-    public void OnGui()
-    {
-        if (IsInitialLoad)
-        {
-            ImGui.OpenPopup("Project Creation");
-        }
-        if (ImGui.BeginPopupModal("Project Creation", ref IsInitialLoad, ImGuiWindowFlags.AlwaysAutoResize))
-        {
-            NewProjectModal.DisplayProjectSelection();
-
-            ImGui.EndPopup();
-        }
     }
 
     public void AddProjectToRecentList(Project targetProject)
@@ -479,6 +462,13 @@ public class ProjectHandler
         LoadProjectFromJSON(projectJsonPath);
         Smithbox.ProjectHandler.IsInitialLoad = false;
     }
+
+    public void LoadRecentProject()
+    {
+        LoadProjectFromJSON(Current.LastProjectFile);
+        Smithbox.ProjectHandler.IsInitialLoad = false;
+    }
+
 
     public void DisplayRecentProjects()
     {

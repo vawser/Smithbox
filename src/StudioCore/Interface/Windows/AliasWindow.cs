@@ -25,22 +25,11 @@ public class AliasWindow
     // Special-case tabs
     private MapGroupTab MapGroupTab;
 
+    private bool TabInitialized = false;
+
     public AliasWindow()
     {
-        MapAliasTab = new AliasTab(Smithbox.BankHandler.MapAliases, "Maps", ref CFG.Current.MapAtlas_ShowTags);
-        CharacterAliasTab = new AliasTab(Smithbox.BankHandler.CharacterAliases, "Characters", ref CFG.Current.CharacterAtlas_ShowTags, false, false);
-        AssetAliasTab = new AliasTab(Smithbox.BankHandler.AssetAliases, "Assets", ref CFG.Current.AssetAtlas_ShowTags, false, false);
-        PartAliasTab = new AliasTab(Smithbox.BankHandler.PartAliases, "Parts", ref CFG.Current.PartAtlas_ShowTags, false, false);
-        MapPieceAliasTab = new AliasTab(Smithbox.BankHandler.MapPieceAliases, "MapPieces", ref CFG.Current.MapPieceAtlas_ShowTags, false, false);
-        GparamAliasTab = new AliasTab(Smithbox.BankHandler.GparamAliases, "Gparams", ref CFG.Current.GparamNameAtlas_ShowTags);
-        CutsceneAliasTab = new AliasTab(Smithbox.BankHandler.CutsceneAliases, "Cutscenes", ref CFG.Current.CutsceneAtlas_ShowTags);
-        EventFlagAliasTab = new AliasTab(Smithbox.BankHandler.EventFlagAliases, "Event Flags", ref CFG.Current.EventFlagAtlas_ShowTags);
-        SoundAliasTab = new AliasTab(Smithbox.BankHandler.SoundAliases, "Sounds", ref CFG.Current.SoundAtlas_ShowTags, true);
-        ParticleAliasTab = new AliasTab(Smithbox.BankHandler.ParticleAliases, "Particles", ref CFG.Current.ParticleAtlas_ShowTags);
-        MovieAliasTab = new AliasTab(Smithbox.BankHandler.MovieAliases, "Movies", ref CFG.Current.MovieAtlas_ShowTags);
-
-        MapGroupTab = new MapGroupTab();
-
+        InitializeTabs();
     }
 
     public void ToggleMenuVisibility()
@@ -48,11 +37,41 @@ public class AliasWindow
         MenuOpenState = !MenuOpenState;
     }
 
+    private void InitializeTabs()
+    {
+        if (Smithbox.BankHandler != null)
+        {
+            if (!TabInitialized)
+            {
+                MapAliasTab = new AliasTab(Smithbox.BankHandler.MapAliases, "Maps", ref CFG.Current.MapAtlas_ShowTags);
+                CharacterAliasTab = new AliasTab(Smithbox.BankHandler.CharacterAliases, "Characters", ref CFG.Current.CharacterAtlas_ShowTags, false, false);
+                AssetAliasTab = new AliasTab(Smithbox.BankHandler.AssetAliases, "Assets", ref CFG.Current.AssetAtlas_ShowTags, false, false);
+                PartAliasTab = new AliasTab(Smithbox.BankHandler.PartAliases, "Parts", ref CFG.Current.PartAtlas_ShowTags, false, false);
+                MapPieceAliasTab = new AliasTab(Smithbox.BankHandler.MapPieceAliases, "MapPieces", ref CFG.Current.MapPieceAtlas_ShowTags, false, false);
+                GparamAliasTab = new AliasTab(Smithbox.BankHandler.GparamAliases, "Gparams", ref CFG.Current.GparamNameAtlas_ShowTags);
+                CutsceneAliasTab = new AliasTab(Smithbox.BankHandler.CutsceneAliases, "Cutscenes", ref CFG.Current.CutsceneAtlas_ShowTags);
+                EventFlagAliasTab = new AliasTab(Smithbox.BankHandler.EventFlagAliases, "Event Flags", ref CFG.Current.EventFlagAtlas_ShowTags);
+                SoundAliasTab = new AliasTab(Smithbox.BankHandler.SoundAliases, "Sounds", ref CFG.Current.SoundAtlas_ShowTags, true);
+                ParticleAliasTab = new AliasTab(Smithbox.BankHandler.ParticleAliases, "Particles", ref CFG.Current.ParticleAtlas_ShowTags);
+                MovieAliasTab = new AliasTab(Smithbox.BankHandler.MovieAliases, "Movies", ref CFG.Current.MovieAtlas_ShowTags);
+
+                MapGroupTab = new MapGroupTab();
+
+                TabInitialized = true;
+            }
+        }
+    }
+
     public void Display()
     {
         var scale = Smithbox.GetUIScale();
 
+        InitializeTabs();
+
         if (!MenuOpenState)
+            return;
+
+        if (Smithbox.BankHandler == null)
             return;
 
         ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * scale, ImGuiCond.FirstUseEver);

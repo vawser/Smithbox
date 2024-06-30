@@ -23,6 +23,7 @@ using Version = System.Version;
 using StudioCore.Interface;
 using StudioCore.Editors.AssetBrowser;
 using StudioCore.Core;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace StudioCore;
 
@@ -37,7 +38,7 @@ public class Smithbox
     public static ProjectType ProjectType = ProjectType.Undefined;
     public static string GameRoot = "";
     public static string ProjectRoot = "";
-    public static string SmithboxDataRoot = "";
+    public static string SmithboxDataRoot = AppContext.BaseDirectory; // Fallback directory
 
     private static double _desiredFrameLengthSeconds = 1.0 / 20.0f;
     private static readonly bool _limitFrameRate = true;
@@ -96,34 +97,13 @@ public class Smithbox
         // SoulsFormats toggles
         BinaryReaderEx.IsFlexible = CFG.Current.System_FlexibleUnpack;
 
-        // Project
+        // Handlers
         ProjectHandler = new ProjectHandler();
-        ProjectHandler.HandleProjectSelection();
-
-        // Banks
-        BankHandler = new BankHandler();
-        BankHandler.UpdateBanks();
-        BankHandler.SelectionGroups.CreateSelectionGroups();
-
-        // Name Caches
-        NameCacheHandler = new NameCacheHandler();
-        NameCacheHandler.UpdateCaches();
-
-        // Editors
         EditorHandler = new EditorHandler(_context);
-
-        // Windows
         WindowHandler = new WindowHandler(_context);
 
         // Soapstone Service
         _soapstoneService = new SoapstoneService(_version);
-
-        // Load previous project properly now
-        if (!ProjectHandler.IsInitialLoad)
-        {
-            ProjectHandler.LoadProject(ProjectHandler.CurrentProject.ProjectJsonPath);
-            ProjectHandler.UpdateTimer();
-        }
 
         ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
         SetupFonts();
@@ -131,8 +111,21 @@ public class Smithbox
 
         ImGuiStylePtr style = ImGui.GetStyle();
         style.TabBorderSize = 0;
-
     }
+
+    public static void InitializeBanks()
+    {
+        BankHandler = new BankHandler();
+        BankHandler.UpdateBanks();
+        BankHandler.SelectionGroups.CreateSelectionGroups();
+    }
+
+    public static void InitializeNameCaches()
+    {
+        NameCacheHandler = new NameCacheHandler();
+        NameCacheHandler.UpdateCaches();
+    }
+
 
     public static void SetProgramTitle(string projectName)
     {
@@ -482,9 +475,6 @@ public class Smithbox
         UpdateDpi();
         var scale = GetUIScale();
 
-        BankHandler.OnGui();
-        NameCacheHandler.OnGui();
-
         if (FontRebuildRequest)
         {
             _context.ImguiRenderer.Update(deltaseconds, InputTracker.FrameSnapshot, SetupFonts);
@@ -536,7 +526,7 @@ public class Smithbox
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 0.0f);
 
         if (ImGui.BeginMainMenuBar())
-        {
+    {
             EditorHandler.HandleEditorSharedBar();
             EditorHandler.FocusedEditor.DrawEditorMenu();
 
@@ -565,9 +555,6 @@ public class Smithbox
 
             ImGui.EndMainMenuBar();
         }
-
-        ProjectHandler.OnGui();
-        WindowHandler.OnGui();
 
         ImGui.PopStyleVar();
         Tracy.TracyCZoneEnd(ctx);
@@ -605,6 +592,7 @@ public class Smithbox
         }
 
         ctx = Tracy.TracyCZoneN(1, "Editor");
+
         foreach (EditorScreen editor in EditorHandler.EditorList)
         {
             string[] commands = null;
@@ -650,6 +638,15 @@ public class Smithbox
             EditorHandler.HandleEditorShortcuts();
             WindowHandler.HandleWindowShortcuts();
         }
+
+        ProjectHandler.OnGui();
+        WindowHandler.OnGui();
+
+        if(BankHandler != null)
+            BankHandler.OnGui();
+
+        if(NameCacheHandler != null)
+            NameCacheHandler.OnGui();
 
         ImGui.PopStyleVar(2);
         UnapplyStyle();

@@ -173,13 +173,6 @@ public class EditorHandler
                 Smithbox.ProjectHandler.OpenProjectDialog();
             }
 
-            // Close Project
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Folder}");
-            if (ImGui.MenuItem("Close Project", "", false, !TaskManager.AnyActiveTasks()))
-            {
-                Smithbox.ProjectHandler.ClearProject();
-            }
-
             // Recent Projects
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FolderOpen}");
             if (ImGui.BeginMenu("Recent Projects",
