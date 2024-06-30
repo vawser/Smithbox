@@ -744,6 +744,11 @@
 9140 About Wielding Armaments
 9141 About Great Runes
 9195 About Multiplayer
+9142 About the Cave of Knowledge
+9153 About Marika's Effigy at the Roundtable
+9150 About Duels
+9151 About United Combat and Combat Ordeals
+9152 About Combat with Spirit Ashes
 9300 Nomadic Warrior's Cookbook [1]
 9301 Nomadic Warrior's Cookbook [3]
 9302 Nomadic Warrior's Cookbook [6]

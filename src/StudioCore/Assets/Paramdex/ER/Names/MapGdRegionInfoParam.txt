@@ -1,3 +1,64 @@
+10000000 Stormveil Castle
+10010000 Chapel of Anticipation
+11000000 Leyndell, Royal Capital
+11050000 Leyndell, Ashen Capital
+12010000 Ainsel River
+12020000 Siofra River
+12030000 Deeproot Depths
+12040000 Ainsel River - Boss
+12050000 Mohgwyn Palace
+13000000 Crumbling Farum Azula
+14000000 Academy of Raya Lucaria
+15000000 Miquella's Haligtree
+16000000 Volcano Manor
+18000000 Stranded Graveyard
+19000000 Stone Platform
+30000000 Tombsward Catacombs
+30010000 Impaler's Catacombs
+30020000 Stormfoot Catacombs
+30030000 Road's End Catacombs
+30040000 Murkwater Catacombs
+30050000 Black Knife Catacombs
+30060000 Cliffbottom Catacombs
+30070000 Wyndham Catacombs
+30080000 Sainted Hero's Grave
+30090000 Gelmir Hero's Grave
+30100000 Auriza Hero's Grave
+30110000 Deathtouched Catacombs
+30120000 Unsightly Catacombs
+30130000 Auriza Side Tomb
+30140000 Minor Erdtree Catacombs
+30150000 Caelid Catacombs
+30160000 War-Dead Catacombs
+30170000 Giant-Conquering Hero's Grave
+30180000 Giants' Mountaintop Catacombs
+30190000 Consecrated Snowfield Catacombs
+31010000 Earthbore Cave
+31020000 Tombsward Cave
+31030000 Groveside Cave
+31040000 Stillwater Cave
+31050000 Lakeside Crystal Cave
+31060000 Academy Crystal Cave
+31070000 Seethewater Cave
+31090000 Volcano Cave
+31100000 Dragonbarrow Cave
+31110000 Sellia Hideaway
+31120000 Cave of the Forlorn
+31150000 Coastal Cave
+31170000 Highroad Cave
+32000000 Morne Tunnel
+32010000 Limgrave Tunnels
+32020000 Raya Lucaria Crystal Tunnel
+32040000 Old Altus Tunnel
+32050000 Altus Tunnel
+32070000 Gael Tunnel
+32080000 Sellia Crystal Tunnel
+32110000 Yelough Anix Tunnel
+34100000 Divine Tower of Limgrave
+34110000 Divine Tower of Liurnia
+34120000 Divine Tower of West Altus
+34130000 Divine Tower of Caelid
+34140000 Divine Tower of East Altus
 34150000 Isolated Divine Tower
 35000000 Subterranean Shunning-Grounds
 39200000 Ruin-Strewn Precipice
@@ -236,6 +297,7 @@
 60515200 Mountaintops of the Giants - Giants' Gravepost South Cliffside
 60515300 Mountaintops of the Giants - Southwest Giants' Gravepost
 60515400 Mountaintops of the Giants - Northwest Giants' Gravepost
+60515500 Mountaintops of the Giants - Before Ancient Snow Valley Ruins
 60515600 Mountaintops of the Giants - Ancient Snow Valley Ruins, Stargazers' Ruins
 60515700 Mountaintops of the Giants - South Castle Sol, Snow Valley Ruins Overlook
 60515800 Mountaintops of the Giants - North Castle Sol
@@ -249,3 +311,20 @@
 60525200 Mountaintops of the Giants - Southwest Fire Giant Arena
 60525300 Mountaintops of the Giants - Northwest Fire Giant Arena, Foot of the Forge
 60525400 Mountaintops of the Giants - Northeast Giants' Gravepost
+60525500 Mountaintops of the Giants - Guardians' Garrison
+60525600 Mountaintops of the Giants - Whiteridge Road, Minor Erdtree
+60525700 Mountaintops of the Giants - Before Freezing Lake, Heretical Rise
+60525800 Mountaintops of the Giants - Northwest of Freezing Lake, East of Castle Sol
+60533800 Caelid - East Radahn Arena
+60533900 Caelid - Northeast Radahn Arena
+60535200 Mountaintops of the Giants - Southeast Fire Giant Arena
+60535300 Mountaintops of the Giants - Northeast Fire Giant Arena
+60535400 Mountaintops of the Giants - Giants' Gravepost Northeast Cliffside
+60535500 Mountaintops of the Giants - West of First Church of Marika
+60535600 Mountaintops of the Giants - Southwest Freezing Lake, Lord Contender's Evergaol, Spiritcaller's Cave Entrance
+60535700 Mountaintops of the Giants - Northwest Freezing Lake
+60535800 Mountaintops of the Giants - Freezing Lake North Cliffside
+60545300 Mountaintops of the Giants - Forge of the Giants
+60545500 Mountaintops of the Giants - First Church of Marika
+60545600 Mountaintops of the Giants - Southeast Freezing Lake
+60545700 Mountaintops of the Giants - Northeast Freezing Lake
