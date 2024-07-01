@@ -83,9 +83,6 @@ public class DebugWindow
         ImGui.PopStyleColor(5);
     }
 
-    private string msbPropertyToFind = "";
-    private int msbValueToFind = 0;
-
     private void DisplayActions()
     {
         ImGui.BeginTabBar("DebugActions");
@@ -97,6 +94,7 @@ public class DebugWindow
         DisplayTool_ParamValidation();
         DisplayTool_MapValidation();
         DisplayTool_FLVERDump();
+        DisplayTool_RowNameHelper();
 
         ImGui.PopItemWidth();
         ImGui.PopStyleColor();
@@ -262,6 +260,19 @@ public class DebugWindow
             if (MapValidationTool.HasFinished)
             {
                 ImGui.Text("Validation has finished.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplayTool_RowNameHelper()
+    {
+        if (ImGui.BeginTabItem("Row Name Helper"))
+        {
+            if (ImGui.Button("Generate Atk Param Names"))
+            {
+                NameGenerationTool.GenerateAtkParamRowNames();
             }
 
             ImGui.EndTabItem();
