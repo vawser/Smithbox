@@ -529,11 +529,6 @@ public class Smithbox
     {
             EditorHandler.HandleEditorSharedBar();
             EditorHandler.FocusedEditor.DrawEditorMenu();
-
-            TaskLogs.Display();
-
-            ImGui.Separator();
-
             WindowHandler.HandleWindowIconBar();
 
             // Program Update
@@ -552,6 +547,8 @@ public class Smithbox
 
                 ImGui.PopStyleColor();
             }
+
+            TaskLogs.Display();
 
             ImGui.EndMainMenuBar();
         }

@@ -605,8 +605,6 @@ public class ParamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        //ParamUpgradeDisplay();
-
         if (ImGui.BeginMenu("Tools"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
@@ -649,6 +647,8 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+
+        ParamUpgradeDisplay();
     }
 
     public void OnGUI(string[] initcmd)
@@ -1124,19 +1124,30 @@ public class ParamEditorScreen : EditorScreen
                 if (ImGui.Button("Upgrade Params"))
                 {
                     var oldVersionString = Utils.ParseRegulationVersion(ParamBank.PrimaryBank.ParamVersion);
-
                     var newVersionString = Utils.ParseRegulationVersion(ParamBank.VanillaBank.ParamVersion);
 
-                    var oldRegulationPath = GetOldRegulationPath(oldVersionString);
+                    /*
+                    var message = PlatformUtils.Instance.MessageBox(
+                            $"Project regulation.bin version appears to be out of date vs game folder regulation. Upgrading is recommended since the game will typically not load out of date regulation." +
+                            $"\n\nUpgrading requires you to select a VANILLA REGULATION.BIN WITH THE SAME VERSION AS YOUR MOD ({oldVersionString})" +
+                            $"\n\nWould you like to proceed?",
+                            $"Regulation upgrade {oldVersionString} -> {newVersionString}",
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Information);
+                    if (message == DialogResult.OK)
+                    {
+                        if (PlatformUtils.Instance.OpenFileDialog(
+                                $"Select regulation.bin for game version {ParamBank.PrimaryBank.ParamVersion}...",
+                                new[] { FilterStrings.RegulationBinFilter },
+                                out var path))
+                        {
+                            UpgradeRegulation(ParamBank.PrimaryBank, ParamBank.VanillaBank, path);
+                        }
+                    }
+                    */
 
-                    if(oldRegulationPath == "")
-                    {
-                        PlatformUtils.Instance.MessageBox("Could not find old regulation.bin for upgrade. Param upgrade cancelled.", "Param Upgrader", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        UpgradeRegulation(ParamBank.PrimaryBank, ParamBank.VanillaBank, oldRegulationPath);
-                    }
+                    var oldRegulationPath = GetOldRegulationPath(oldVersionString);
+                    UpgradeRegulation(ParamBank.PrimaryBank, ParamBank.VanillaBank, oldRegulationPath);
                 }
 
                 ImGui.PopStyleColor();

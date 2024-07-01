@@ -461,9 +461,6 @@ param EquipParamWeapon: modified && !added: unknown_0x17c_7: = vanillafield unkn
 1.12.1 - (EquipParamWeapon) Set restrictSpecialSwordArt to Vanilla v1.12.1 values
 param EquipParamWeapon: modified && !added: restrictSpecialSwordArt: = vanillafield restrictSpecialSwordArt
 11210015L
-1.12.1 - (EquipParamWeapon) Set pad to Vanilla v1.12.1 values
-param EquipParamWeapon: modified && !added: pad: = vanillafield pad
-11210015L
 1.12.1 - (EquipParamGoods) Set unknown_0x40 to Vanilla v1.12.1 values
 param EquipParamGoods: modified && !added: unknown_0x40: = vanillafield unknown_0x40
 11210015L
@@ -508,9 +505,6 @@ param EquipParamGem: modified && !added: canMountWep_BeastClaw: = vanillafield c
 11210015L
 1.12.1 - (EquipParamGem) Set reserved_canMountWep_0x3d_4 to Vanilla v1.12.1 values
 param EquipParamGem: modified && !added: reserved_canMountWep_0x3d_4: = vanillafield reserved_canMountWep_0x3d_4
-11210015L
-1.12.1 - (EquipParamGem) Set reserved2_canMountWep to Vanilla v1.12.1 values
-param EquipParamGem: modified && !added: reserved2_canMountWep: = vanillafield reserved2_canMountWep
 11210015L
 1.12.1 - (CutsceneMapIdParam) Set unknown_0x18 to Vanilla v1.12.1 values
 param CutsceneMapIdParam: modified && !added: unknown_0x18: = vanillafield unknown_0x18

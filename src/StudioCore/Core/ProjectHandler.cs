@@ -63,13 +63,6 @@ public class ProjectHandler
     {
         LoadProjectFromJSON(CurrentProject.ProjectJsonPath);
         Smithbox.ProjectHandler.IsInitialLoad = false;
-
-        if(ParamUpgrader.IsUpgradingParams)
-        {
-            ParamUpgrader.AddNewRegulationRows();
-            ParamUpgrader.ApplyNewRegulationMassEdits();
-            ParamUpgrader.IsUpgradingParams = false;
-        }
     }
 
     public void LoadProject(string path)

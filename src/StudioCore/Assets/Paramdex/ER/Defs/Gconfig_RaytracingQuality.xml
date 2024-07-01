@@ -6,8 +6,8 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="u8 Unk0x00"></Field>
-    <Field Def="u8 Unk0x01"></Field>
+    <Field Def="u8 enableRaytraceAO"></Field>
+    <Field Def="u8 enableRaytraceShadows"></Field>
     <Field Def="u8 Unk0x02"></Field>
     <Field Def="u8 Unk0x03"></Field>
     <Field Def="f32 UnkFloat0x04"></Field>

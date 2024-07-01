@@ -58,15 +58,51 @@ public class ProjectModal
         ImGui.EndTabBar();
     }
 
+    public void RecentProjectEntry(CFG.RecentProject p, int id)
+    {
+        if (ImGui.MenuItem($@"{p.GameType}: {p.Name}##{id}"))
+        {
+            if (File.Exists(p.ProjectFile))
+            {
+                var path = p.ProjectFile;
+
+                Smithbox.ProjectHandler.LoadProjectFromJSON(path);
+                Smithbox.ProjectHandler.IsInitialLoad = false;
+            }
+            else
+            {
+                DialogResult result = PlatformUtils.Instance.MessageBox(
+                    $"Project file at \"{p.ProjectFile}\" does not exist.\n\n" +
+                    $"Remove project from list of recent projects?",
+                    $"Project.json cannot be found", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    CFG.RemoveRecentProject(p);
+                }
+            }
+        }
+
+        if (ImGui.BeginPopupContextItem())
+        {
+            if (ImGui.Selectable("Remove from list"))
+            {
+                CFG.RemoveRecentProject(p);
+                CFG.Save();
+            }
+
+            ImGui.EndPopup();
+        }
+    }
+
     public void DisplayProjectLoadOptions()
     {
+        var width = ImGui.GetWindowWidth() / 100;
+
         ImGui.Separator();
         ImguiUtils.WrappedText("Recent Projects");
         ImGui.Separator();
 
         Smithbox.ProjectHandler.DisplayRecentProjects();
-
-        var width = ImGui.GetWindowWidth() / 100;
 
         ImGui.Separator();
 

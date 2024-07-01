@@ -913,7 +913,7 @@ public class CFG
         CFG.Save();
     }
 
-    public class RecentProject
+    public class RecentProject : IComparable<RecentProject>
     {
         // JsonExtensionData stores info in config file not present in class in order to retain settings between versions.
 #pragma warning disable IDE0051
@@ -931,6 +931,14 @@ public class CFG
                 return true;
             }
             return false;
+        }
+
+        public int CompareTo(RecentProject other)
+        {
+            var typeInt = (int)GameType;
+            var otherInt = (int)other.GameType;
+
+            return typeInt.CompareTo(otherInt);
         }
     }
 

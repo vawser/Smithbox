@@ -126,4 +126,10 @@ TalkParam is lagging heavily: due to GenerateEntryGroup
  - TalkMsg FMG itself takes too long too
  
 
-TODO: add Param Upgrade functionality, base on DSMS impl, but adapt to the two-stage approach I envisioned
+11210015L
+1.12.1 - (EquipParamWeapon) Set pad to Vanilla v1.12.1 values
+param EquipParamWeapon: modified && !added: pad: = vanillafield pad
+
+11210015L
+1.12.1 - (EquipParamGem) Set reserved2_canMountWep to Vanilla v1.12.1 values
+param EquipParamGem: modified && !added: reserved2_canMountWep: = vanillafield reserved2_canMountWep

@@ -327,12 +327,6 @@ public class ParamBank
         return child;
     }
 
-    public void UpgradeRegulationVersion(ulong version)
-    {
-        _paramVersion = version;
-    }
-
-
     private void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version,
         bool checkVersion = false)
     {
@@ -2023,15 +2017,13 @@ public class ParamBank
 
         BND4 regParams = SFUtil.DecryptERRegulation(param);
 
-        if(ParamUpgrader.IsUpgradingParams)
-        {
-            regParams = ParamUpgrader.UpgradeRegulation(regParams);
-        }
-
         OverwriteParamsER(regParams);
+
         Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.ER);
 
         var sysParam = ResourceLocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
+        var eventParam = ResourceLocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+
         if (File.Exists(sysParam))
         {
             using var sysParams = BND4.Read(sysParam);
@@ -2039,7 +2031,6 @@ public class ParamBank
             Utils.WriteWithBackup(dir, mod, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
         }
 
-        var eventParam = ResourceLocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
         if (File.Exists(eventParam))
         {
             using var eventParams = BND4.Read(eventParam);
@@ -2048,11 +2039,6 @@ public class ParamBank
         }
 
         _pendingUpgrade = false;
-
-        if (ParamUpgrader.IsUpgradingParams)
-        {
-            Smithbox.ProjectHandler.ReloadCurrentProject();
-        }
     }
 
     private void SaveParamsAC6()
@@ -2180,33 +2166,16 @@ public class ParamBank
         }
     }
 
-    public Dictionary<string, Param> GetOldVanillaParams(string path)
+    public static void TargetLog(Param source, string text)
     {
-        // Load old vanilla regulation
-        BND4 oldVanillaParamBnd;
-        if (Smithbox.ProjectType == ProjectType.ER)
-        {
-            oldVanillaParamBnd = SFUtil.DecryptERRegulation(path);
-        }
-        else if (Smithbox.ProjectType == ProjectType.AC6)
-        {
-            oldVanillaParamBnd = SFUtil.DecryptAC6Regulation(path);
-        }
-        else
-        {
-            throw new NotImplementedException(
-                $"Param upgrading for game type {Smithbox.ProjectType} is not supported.");
-        }
-
-        Dictionary<string, Param> oldVanillaParams = new();
-        ulong version;
-        LoadParamFromBinder(oldVanillaParamBnd, ref oldVanillaParams, out version, true);
-
-        return oldVanillaParams;
+        if (source.ParamType == "EQUIP_PARAM_GEM_ST")
+            TaskLogs.AddLog(text);
     }
 
     public static Param UpgradeParam(Param source, Param oldVanilla, Param newVanilla, HashSet<int> rowConflicts)
     {
+        TargetLog(source, source.ParamType);
+
         // Presorting this would make it easier, but we're trying to preserve order as much as possible
         // Unfortunately given that rows aren't guaranteed to be sorted and there can be duplicate IDs,
         // we try to respect the existing order and IDs as much as possible.
@@ -2243,6 +2212,7 @@ public class ParamBank
             }
 
             addedRows[row.ID].Add(row);
+            TargetLog(source, $"Source - Add row: {row.ID}");
         }
 
         // Next we go through oldVanilla to determine if a row is added, deleted, modified, or unmodified
@@ -2257,12 +2227,15 @@ public class ParamBank
                 }
 
                 deletedRows[row.ID].Add(row);
+
                 if (!editOperations.ContainsKey(row.ID))
                 {
                     editOperations.Add(row.ID, new List<EditOperation>());
                 }
 
                 editOperations[row.ID].Add(EditOperation.Delete);
+                TargetLog(source, $"oldVanilla - EditOperation.Delete: {row.ID}");
+
                 continue;
             }
 
@@ -2289,11 +2262,14 @@ public class ParamBank
                     modrow.Name != null && row.Name != null && modrow.Name == row.Name)
                 {
                     editOperations[row.ID].Add(EditOperation.Match);
+                    TargetLog(source, $"oldVanilla - EditOperation.Match: {row.ID}");
                     continue;
                 }
 
                 // Name was updated
                 editOperations[row.ID].Add(EditOperation.NameChange);
+                TargetLog(source, $"oldVanilla - EditOperation.NameChange: {row.ID}");
+
                 if (!renamedRows.ContainsKey(row.ID))
                 {
                     renamedRows.Add(row.ID, new List<Param.Row>());
@@ -2323,6 +2299,7 @@ public class ParamBank
             }
 
             editOperations[row.ID].Add(EditOperation.Modify);
+            TargetLog(source, $"oldVanilla - EditOperation.Modify: {row.ID}");
         }
 
         // Mark all remaining rows as added
@@ -2336,13 +2313,19 @@ public class ParamBank
             foreach (List<EditOperation> k in editOperations.Values)
             {
                 editOperations[entry.Key].Add(EditOperation.Add);
+                TargetLog(source, $"oldVanilla - EditOperation.Add: {entry.Key}");
             }
         }
 
+        // Reverted "Reject attempts to upgrade via regulation matching current params" fix from https://github.com/soulsmods/DSMapStudio/pull/721
+        // This was causing the Param Upgrader to not actually add the new rows
+        /*
         if (editOperations.All(kvp => kvp.Value.All(eo => eo == EditOperation.Match)))
         {
+            TargetLog(source, $"Return oldVanilla param");
             return oldVanilla;
         }
+        */
 
         Param dest = new(newVanilla);
 
@@ -2352,6 +2335,8 @@ public class ParamBank
         var lastID = 0;
         foreach (Param.Row row in newVanilla.Rows)
         {
+            TargetLog(source, $"newVanilla row");
+
             // See if we have any pending adds we can slot in
             while (currPendingAdd < pendingAdds.Length &&
                    pendingAdds[currPendingAdd] >= lastID &&
@@ -2360,12 +2345,14 @@ public class ParamBank
                 if (!addedRows.ContainsKey(pendingAdds[currPendingAdd]))
                 {
                     currPendingAdd++;
+                    TargetLog(source, $"newVanilla - currPendingAdd: {pendingAdds[currPendingAdd]}");
                     continue;
                 }
 
                 foreach (Param.Row arow in addedRows[pendingAdds[currPendingAdd]])
                 {
                     dest.AddRow(new Param.Row(arow, dest));
+                    TargetLog(source, $"newVanilla - AddRow");
                 }
 
                 addedRows.Remove(pendingAdds[currPendingAdd]);
@@ -2379,6 +2366,7 @@ public class ParamBank
             {
                 // No edit operations for this ID, so just add it (likely a new row in the update)
                 dest.AddRow(new Param.Row(row, dest));
+                TargetLog(source, $"newVanilla - AddRow (New)");
                 continue;
             }
 
@@ -2700,4 +2688,6 @@ public class ParamBank
         NameChange,
         Match
     }
+
+    
 }
