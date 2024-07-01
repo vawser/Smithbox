@@ -87,7 +87,10 @@ public class ProjectHandler
 
         SetGameRootPrompt(CurrentProject);
         CheckUnpackedState(CurrentProject);
-        CheckDecompressionDLLs(CurrentProject);
+
+        // Only proceed if dll are found
+        if (!CheckDecompressionDLLs(CurrentProject))
+            return false;
 
         Smithbox.ProjectType = CurrentProject.Config.GameType;
         Smithbox.GameRoot = CurrentProject.Config.GameRoot;
@@ -276,25 +279,29 @@ public class ProjectHandler
         }
     }
 
-    public void CheckDecompressionDLLs(Project targetProject)
+    public bool CheckDecompressionDLLs(Project targetProject)
     {
         if (targetProject == null)
-            return;
+            return false;
+
+        bool success = false;
 
         if (targetProject.Config.GameType == ProjectType.SDT || targetProject.Config.GameType == ProjectType.ER)
         {
-            StealGameDllIfMissing(targetProject, "oo2core_6_win64");
+            success = StealGameDllIfMissing(targetProject, "oo2core_6_win64");
         }
         else if (targetProject.Config.GameType == ProjectType.AC6)
         {
-            StealGameDllIfMissing(targetProject, "oo2core_8_win64");
+            success = StealGameDllIfMissing(targetProject, "oo2core_8_win64");
         }
+
+        return success;
     }
 
-    public void StealGameDllIfMissing(Project targetProject, string dllName)
+    public bool StealGameDllIfMissing(Project targetProject, string dllName)
     {
         if (targetProject == null)
-            return;
+            return false;
 
         dllName = dllName + ".dll";
 
@@ -307,6 +314,7 @@ public class ProjectHandler
                 $"Could not find file \"{dllName}\" in \"{targetProject.Config.GameRoot}\", which should be included by default.\n\nTry verifying or reinstalling the game.",
                 "Error",
                 MessageBoxButtons.OK);
+            return false;
         }
         else
         {
@@ -315,6 +323,8 @@ public class ProjectHandler
                 File.Copy(rootDllPath, projectDllPath);
             }
         }
+
+        return true;
     }
 
     public ProjectType GetProjectTypeFromExecutable(string exePath)

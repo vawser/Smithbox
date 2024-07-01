@@ -264,8 +264,10 @@ public class ProjectModal
                 Smithbox.ProjectHandler.WriteProjectConfig(newProject);
 
                 Smithbox.ProjectHandler.CurrentProject = newProject;
-                Smithbox.ProjectHandler.LoadProject(newProject.ProjectJsonPath);
-                Smithbox.ProjectHandler.IsInitialLoad = false;
+
+                // Only proceed if load is successful
+                if(Smithbox.ProjectHandler.LoadProject(newProject.ProjectJsonPath))
+                    Smithbox.ProjectHandler.IsInitialLoad = false;
             }
         }
     }
