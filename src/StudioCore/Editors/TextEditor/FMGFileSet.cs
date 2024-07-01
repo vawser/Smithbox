@@ -49,7 +49,7 @@ public class FMGFileSet
                 if (Lang.LanguageFolder != "")
                 {
                     TaskLogs.AddLog(
-                        $"Could locate text data files when looking for \"{msgBndType}\" in \"{Lang.LanguageFolder}\" folder",
+                        $"Could not locate text data files when looking for \"{msgBndType}\" in \"{Lang.LanguageFolder}\" folder",
                         LogLevel.Warning);
                 }
                 else

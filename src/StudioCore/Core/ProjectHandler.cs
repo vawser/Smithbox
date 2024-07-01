@@ -284,14 +284,16 @@ public class ProjectHandler
         if (targetProject == null)
             return false;
 
-        bool success = false;
+        bool success = true;
 
         if (targetProject.Config.GameType == ProjectType.SDT || targetProject.Config.GameType == ProjectType.ER)
         {
+            success = false;
             success = StealGameDllIfMissing(targetProject, "oo2core_6_win64");
         }
         else if (targetProject.Config.GameType == ProjectType.AC6)
         {
+            success = false;
             success = StealGameDllIfMissing(targetProject, "oo2core_8_win64");
         }
 
@@ -595,14 +597,28 @@ public class ProjectHandler
 
     public void RecentProjectEntry(CFG.RecentProject p, int id)
     {
+        // Just remove invalid recent projects immediately
+        if(!File.Exists(p.ProjectFile))
+        {
+            CFG.RemoveRecentProject(p);
+        }
+
         if (ImGui.MenuItem($@"{p.GameType}: {p.Name}##{id}"))
         {
             if (File.Exists(p.ProjectFile))
             {
                 var path = p.ProjectFile;
 
-                LoadProjectFromJSON(path);
-                Smithbox.ProjectHandler.IsInitialLoad = false;
+                if (LoadProjectFromJSON(path))
+                {
+                    Smithbox.ProjectHandler.IsInitialLoad = false;
+                    UpdateProjectVariables();
+                }
+                else
+                {
+                    // Remove it if it failed
+                    CFG.RemoveRecentProject(p);
+                }
             }
             else
             {

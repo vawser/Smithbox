@@ -1,12 +1,9 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using HKLib.hk2018.hk;
-using ImGuiNET;
-using StudioCore.Banks.AliasBank;
+﻿using ImGuiNET;
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Platform;
-using StudioCore.Utilities;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
@@ -62,6 +59,8 @@ public class ProjectWindow
 
     public void DisplayProjectTab()
     {
+        var widthUnit = ImGui.GetWindowWidth() / 100;
+
         if (ImGui.BeginTabItem("General"))
         {
             if (Smithbox.ProjectHandler.CurrentProject == null)
@@ -83,10 +82,16 @@ public class ProjectWindow
 
                 ImGui.Separator();
 
-                if (ImGui.MenuItem("Open project settings file"))
+                if(ImGui.Button("Open Project.JSON", new Vector2(widthUnit * 48, 32)))
                 {
                     var projectPath = CFG.Current.LastProjectFile;
                     Process.Start("explorer.exe", projectPath);
+                }
+                ImGui.SameLine();
+                if (ImGui.Button("Clear Recent Project List", new Vector2(widthUnit * 48, 32)))
+                {
+                    CFG.Current.RecentProjects = new List<CFG.RecentProject>();
+                    CFG.Save();
                 }
 
                 ImGui.Separator();
