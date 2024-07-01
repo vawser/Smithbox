@@ -47,20 +47,20 @@ public static class ResourceTextLocator
     /// <summary>
     /// Get path of item.msgbnd (english by default)
     /// </summary>
-    public static ResourceDescriptor GetItemMsgbnd(string langFolder, bool writemode = false, bool updateAction = false, bool rootVersion = false)
+    public static ResourceDescriptor GetItemMsgbnd(string langFolder, bool writemode = false, bool nonDlcBndOnly = false, bool gameRootPathOnly = false)
     {
-        return GetMsgbnd("item", langFolder, writemode, updateAction, rootVersion);
+        return GetMsgbnd("item", langFolder, writemode, nonDlcBndOnly, gameRootPathOnly);
     }
 
     /// <summary>
     /// Get path of menu.msgbnd (english by default)
     /// </summary>
-    public static ResourceDescriptor GetMenuMsgbnd(string langFolder, bool writemode = false, bool updateAction = false, bool rootVersion = false)
+    public static ResourceDescriptor GetMenuMsgbnd(string langFolder, bool writemode = false, bool nonDlcBndOnly = false, bool gameRootPathOnly = false)
     {
-        return GetMsgbnd("menu", langFolder, writemode, updateAction, rootVersion);
+        return GetMsgbnd("menu", langFolder, writemode, nonDlcBndOnly, gameRootPathOnly);
     }
 
-    public static ResourceDescriptor GetMsgbnd(string msgBndType, string langFolder, bool writemode = false, bool updateAction = false, bool rootVersion = false)
+    public static ResourceDescriptor GetMsgbnd(string msgBndType, string langFolder, bool writemode = false, bool nonDlcBndOnly = false, bool gameRootPathOnly = false)
     {
         ResourceDescriptor ad = new();
         var path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
@@ -87,7 +87,7 @@ public static class ResourceTextLocator
         else if (Smithbox.ProjectType == ProjectType.DS3)
         {
             path = $@"msg\{langFolder}\{msgBndType}_dlc2.msgbnd.dcx";
-            if(updateAction)
+            if(nonDlcBndOnly)
             {
                 path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
             }
@@ -95,7 +95,7 @@ public static class ResourceTextLocator
         else if (Smithbox.ProjectType == ProjectType.ER)
         {
             path = $@"msg\{langFolder}\{msgBndType}_dlc02.msgbnd.dcx";
-            if (updateAction)
+            if (nonDlcBndOnly)
             {
                 path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
             }
@@ -107,8 +107,14 @@ public static class ResourceTextLocator
             return ad;
         }
 
+        if(gameRootPathOnly)
+        {
+            ad.AssetPath = $@"{Smithbox.GameRoot}\{path}";
+            return ad;
+        }
+
         if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}") ||
-            writemode && Smithbox.ProjectRoot != null && !rootVersion)
+            writemode && Smithbox.ProjectRoot != null)
             ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}";
         else if (File.Exists($@"{Smithbox.GameRoot}\{path}"))
             ad.AssetPath = $@"{Smithbox.GameRoot}\{path}";

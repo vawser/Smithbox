@@ -3684,14 +3684,14 @@
 		},
 		{
 			"id": "m61_10_11_02",
-			"name": "",
+			"name": "Ancient Ruins of Rauh / Enir-Ilim",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_10_12_02",
-			"name": "",
+			"name": "North-West Rauh Base",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4349,35 +4349,35 @@
 		},
 		{
 			"id": "m61_43_44_00",
-			"name": "",
+			"name": "Enir-Ilim - Spiral Rise",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_43_45_00",
-			"name": "",
+			"name": "Enir-Ilim - North-west",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_43_46_00",
-			"name": "",
+			"name": "Rauh Base - West Coastline",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_43_47_00",
-			"name": "",
+			"name": "Rauh Base - West Coastline",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_43_48_00",
-			"name": "",
+			"name": "Rauh Base - North-West Coastline",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4412,21 +4412,21 @@
 		},
 		{
 			"id": "m61_44_44_00",
-			"name": "",
+			"name": "Enir-Ilim - First Rise, Divine Gatefront Staircase",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_44_44_10",
-			"name": "",
+			"name": "Enir-Ilim - ?",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_44_45_00",
-			"name": "Ancient Ruins of Rauh - South Church of the Bud, Sealing Tree, Grand Stairway, West Ruins Cave Upper Levels",
+			"name": "Ancient Ruins of Rauh - South Church of the Bud, Sealing Tree, Grand Stairway, West Ruins Cave Upper Levels, Enir-Ilim - Outer Wall",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4475,7 +4475,7 @@
 		},
 		{
 			"id": "m61_44_49_00",
-			"name": "",
+			"name": "Rauh Base - North Coastline",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4622,7 +4622,7 @@
 		},
 		{
 			"id": "m61_45_49_00",
-			"name": "",
+			"name": "Rauh Base - North Coastline",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4797,7 +4797,7 @@
 		},
 		{
 			"id": "m61_46_49_00",
-			"name": "",
+			"name": "Rauh Base - North Coastline",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4972,14 +4972,14 @@
 		},
 		{
 			"id": "m61_47_49_00",
-			"name": "",
+			"name": "Rauh Base - North Coastline",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
 		},
 		{
 			"id": "m61_47_50_00",
-			"name": "",
+			"name": "Scaduview - North-West Coastline",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5119,7 +5119,7 @@
 		},
 		{
 			"id": "m61_48_50_00",
-			"name": "",
+			"name": "Scaduview - North Coastline",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -5259,7 +5259,7 @@
 		},
 		{
 			"id": "m61_49_50_00",
-			"name": "",
+			"name": "Scaduview - North Coastline",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]

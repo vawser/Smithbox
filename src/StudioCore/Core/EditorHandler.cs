@@ -14,7 +14,6 @@ using StudioCore.Graphics;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.MaterialEditor;
-using StudioCore.MergeTool;
 using StudioCore.ParticleEditor;
 using StudioCore.Settings;
 using StudioCore.TalkEditor;
@@ -51,7 +50,6 @@ public class EditorHandler
     public EsdEditorScreen EsdEditor;
     public TextureViewerScreen TextureViewer;
     public HavokEditorScreen HavokEditor;
-    public MergeToolScreen MergeTool;
 
     public EditorHandler(IGraphicsContext _context)
     {
@@ -68,7 +66,6 @@ public class EditorHandler
         EsdEditor = new EsdEditorScreen(_context.Window, _context.Device);
         TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
         HavokEditor = new HavokEditorScreen(_context.Window, _context.Device);
-        MergeTool = new MergeToolScreen(_context.Window, _context.Device);
 
         EditorList = [
             MapEditor,
@@ -87,9 +84,6 @@ public class EditorHandler
 
         if (FeatureFlags.EnableEditor_HavokBehavior)
             EditorList.Add(HavokEditor);
-
-        if (FeatureFlags.EnableEditor_MergeTool)
-            EditorList.Add(MergeTool);
 
         if (FeatureFlags.EnableEditor_Material)
             EditorList.Add(MaterialEditor);

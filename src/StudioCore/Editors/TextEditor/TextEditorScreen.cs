@@ -236,94 +236,244 @@ public class TextEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        /*
-        LoadFMGUpdateLists();
-
-        if (HasUniqueVanillaFMGEntries())
+        if (DisplayFmgUpdate && IsSupportedProjectType_FmgUpdate())
         {
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Warning_Text_Color);
             if (ImGui.Button("Update FMGs"))
             {
-
+                UpdateFmgs();
             }
+            ImGui.PopStyleColor();
             ImguiUtils.ShowHoverTooltip("Your mod has unique FMG entries that are not in the latest FMG binder. Use this action to move them into it.");
         }
-        */
-
     }
 
-    private bool InitFmgUpdateLists = false;
+    private bool DisplayFmgUpdate = false;
+    private Dictionary<FmgIDType, List<FMG.Entry>> itemEntriesToUpdate;
+    private Dictionary<FmgIDType, List<FMG.Entry>> menuEntriesToUpdate;
 
-    private void LoadFMGUpdateLists()
+    private bool IsSupportedProjectType_FmgUpdate()
     {
-        if (InitFmgUpdateLists)
-            return;
+        if(Smithbox.ProjectType is ProjectType.ER)
+            return true;
 
-        InitFmgUpdateLists = true;
+        return false;
+    }
 
+    private void SetupFmgUpdate()
+    {
         // Only support ER for now, although technically DS3 should be covered
         if (Smithbox.ProjectType is ProjectType.ER)
         {
-            Dictionary<FmgFileCategory, FMGFileSet> Project_VanillaFmgInfoBanks = new();
-            Dictionary<FmgFileCategory, FMGFileSet> Base_VanillaFmgInfoBanks = new();
+            Dictionary<FmgFileCategory, FMGFileSet> Project_Item_VanillaFmgInfoBanks = new();
+            Dictionary<FmgFileCategory, FMGFileSet> Project_DLC_Item_VanillaFmgInfoBanks = new();
+            Dictionary<FmgFileCategory, FMGFileSet> Base_Item_VanillaFmgInfoBanks = new();
+            Dictionary<FmgFileCategory, FMGFileSet> Base_DLC_Item_VanillaFmgInfoBanks = new();
+
+            Dictionary<FmgFileCategory, FMGFileSet> Project_Menu_VanillaFmgInfoBanks = new();
+            Dictionary<FmgFileCategory, FMGFileSet> Project_DLC_Menu_VanillaFmgInfoBanks = new();
+            Dictionary<FmgFileCategory, FMGFileSet> Base_Menu_VanillaFmgInfoBanks = new();
+            Dictionary<FmgFileCategory, FMGFileSet> Base_DLC_Menu_VanillaFmgInfoBanks = new();
 
             ResourceDescriptor projectItemMsgPath = ResourceTextLocator.GetItemMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true);
-            ResourceDescriptor projectMenuMsgPath = ResourceTextLocator.GetMenuMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true);
+            ResourceDescriptor projectDlcItemMsgPath = ResourceTextLocator.GetItemMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false);
             ResourceDescriptor baseItemMsgPath = ResourceTextLocator.GetItemMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true, true);
+            ResourceDescriptor baseDlcItemMsgPath = ResourceTextLocator.GetItemMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, false, true);
+
+            ResourceDescriptor projectMenuMsgPath = ResourceTextLocator.GetMenuMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true);
+            ResourceDescriptor projectDlcMenuMsgPath = ResourceTextLocator.GetMenuMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false);
             ResourceDescriptor baseMenuMsgPath = ResourceTextLocator.GetMenuMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true, true);
+            ResourceDescriptor baseDlcMenuMsgPath = ResourceTextLocator.GetMenuMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, false, true);
 
             FMGFileSet projectItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
             if (projectItemMsgBnd.LoadMsgBnd(projectItemMsgPath.AssetPath, "item.msgbnd"))
-                Project_VanillaFmgInfoBanks.Add(projectItemMsgBnd.FileCategory, projectItemMsgBnd);
+                Project_Item_VanillaFmgInfoBanks.Add(projectItemMsgBnd.FileCategory, projectItemMsgBnd);
 
-            FMGFileSet projectMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
-            if (projectMenuMsgBnd.LoadMsgBnd(projectMenuMsgPath.AssetPath, "menu.msgbnd"))
-                Project_VanillaFmgInfoBanks.Add(projectMenuMsgBnd.FileCategory, projectMenuMsgBnd);
+            FMGFileSet projectDlcItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
+            if (projectDlcItemMsgBnd.LoadMsgBnd(projectDlcItemMsgPath.AssetPath, "item.msgbnd"))
+                Project_DLC_Item_VanillaFmgInfoBanks.Add(projectDlcItemMsgBnd.FileCategory, projectDlcItemMsgBnd);
 
             FMGFileSet baseItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
             if (baseItemMsgBnd.LoadMsgBnd(baseItemMsgPath.AssetPath, "item.msgbnd"))
-                Base_VanillaFmgInfoBanks.Add(baseItemMsgBnd.FileCategory, baseItemMsgBnd);
+                Base_Item_VanillaFmgInfoBanks.Add(baseItemMsgBnd.FileCategory, baseItemMsgBnd);
+
+            FMGFileSet baseDlcItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
+            if (baseDlcItemMsgBnd.LoadMsgBnd(baseDlcItemMsgPath.AssetPath, "item.msgbnd"))
+                Base_DLC_Item_VanillaFmgInfoBanks.Add(baseDlcItemMsgBnd.FileCategory, baseDlcItemMsgBnd);
+
+            FMGFileSet projectMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
+            if (projectMenuMsgBnd.LoadMsgBnd(projectMenuMsgPath.AssetPath, "menu.msgbnd"))
+                Project_Menu_VanillaFmgInfoBanks.Add(projectMenuMsgBnd.FileCategory, projectMenuMsgBnd);
+
+            FMGFileSet projectDlcMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
+            if (projectDlcMenuMsgBnd.LoadMsgBnd(projectDlcMenuMsgPath.AssetPath, "menu.msgbnd"))
+                Project_DLC_Menu_VanillaFmgInfoBanks.Add(projectDlcMenuMsgBnd.FileCategory, projectDlcMenuMsgBnd);
 
             FMGFileSet baseMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
             if (baseMenuMsgBnd.LoadMsgBnd(baseMenuMsgPath.AssetPath, "menu.msgbnd"))
-                Base_VanillaFmgInfoBanks.Add(baseMenuMsgBnd.FileCategory, baseMenuMsgBnd);
+                Base_Menu_VanillaFmgInfoBanks.Add(baseMenuMsgBnd.FileCategory, baseMenuMsgBnd);
 
-            var allEntris_Item = new List<FMG.Entry>();
-            var newEntries_Item = new List<FMG.Entry>();
+            FMGFileSet baseDlcMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
+            if (baseDlcMenuMsgBnd.LoadMsgBnd(baseDlcMenuMsgPath.AssetPath, "menu.msgbnd"))
+                Base_DLC_Menu_VanillaFmgInfoBanks.Add(baseDlcMenuMsgBnd.FileCategory, baseDlcMenuMsgBnd);
 
-            // Items
-            foreach(var entry in Project_VanillaFmgInfoBanks)
+            if (projectItemMsgBnd == null || projectDlcItemMsgBnd == null || baseItemMsgBnd == null || baseDlcItemMsgBnd == null || projectMenuMsgBnd == null || baseMenuMsgBnd == null || baseDlcMenuMsgBnd == null || projectDlcMenuMsgBnd == null)
+                return;
+
+            itemEntriesToUpdate = new Dictionary<FmgIDType, List<FMG.Entry>>();
+            menuEntriesToUpdate = new Dictionary<FmgIDType, List<FMG.Entry>>();
+
+            itemEntriesToUpdate = GetEntriesToUpdate(Project_Item_VanillaFmgInfoBanks, Project_DLC_Item_VanillaFmgInfoBanks, Base_Item_VanillaFmgInfoBanks, Base_DLC_Item_VanillaFmgInfoBanks);
+            menuEntriesToUpdate = GetEntriesToUpdate(Project_Menu_VanillaFmgInfoBanks, Project_DLC_Menu_VanillaFmgInfoBanks, Base_Menu_VanillaFmgInfoBanks, Base_DLC_Menu_VanillaFmgInfoBanks);
+
+            foreach (var entry in itemEntriesToUpdate)
             {
-                var fileset = entry.Value;
-                foreach(var info in fileset.FmgInfos)
+                foreach (var fmgEntry in entry.Value)
                 {
-                    foreach(var row in info.Fmg.Entries)
-                    {
-                        allEntris_Item.Add(row);;
-                    }
+                    DisplayFmgUpdate = true;
+                    TaskLogs.AddLog($"New Item Entry: {entry.Key} - {fmgEntry.ID} {fmgEntry.Text}");
                 }
             }
-            foreach (var entry in Base_VanillaFmgInfoBanks)
+            foreach (var entry in menuEntriesToUpdate)
             {
-                var fileset = entry.Value;
-                foreach (var info in fileset.FmgInfos)
+                foreach (var fmgEntry in entry.Value)
                 {
-                    foreach (var row in info.Fmg.Entries)
+                    DisplayFmgUpdate = true;
+                    TaskLogs.AddLog($"New Menu Entry: {entry.Key} - {fmgEntry.ID} {fmgEntry.Text}");
+                }
+            }
+        }
+    }
+
+    private void UpdateFmgs()
+    {
+        ApplyFmgUpdate(itemEntriesToUpdate);
+        ApplyFmgUpdate(menuEntriesToUpdate);
+
+        Smithbox.BankHandler.FMGBank.SaveFMGs();
+
+        DisplayFmgUpdate = false;
+
+        SetupFmgUpdate(); // Re-run this to check FMG update state and set to false if update was successful
+    }
+
+    private void ApplyFmgUpdate(Dictionary<FmgIDType, List<FMG.Entry>> entries)
+    {
+        var fmgBank = Smithbox.BankHandler.FMGBank;
+
+        foreach(var updateEntry in entries)
+        {
+            foreach (var entry in fmgBank.FmgInfoBank)
+            {
+                if(updateEntry.Key == entry.FmgID)
+                {
+                    foreach (var fmgEntry in updateEntry.Value)
                     {
-                        allEntris_Item.Add(row); ;
+                        entry.Fmg.Entries.Add(fmgEntry);
                     }
                 }
             }
         }
     }
 
-    /// <summary>
-    /// Checks whether there are unique entries in the mod's vanilla/DLC1 FMGs (for games that use the DLC1/DLC2 system)
-    /// </summary>
-    /// <returns></returns>
-    private bool HasUniqueVanillaFMGEntries()
+    private Dictionary<FmgIDType, List<FMG.Entry>> GetEntriesToUpdate(Dictionary<FmgFileCategory, FMGFileSet> projectInfoBanks, Dictionary<FmgFileCategory, FMGFileSet> projectDlcInfoBanks, Dictionary<FmgFileCategory, FMGFileSet> baseInfoBanks, Dictionary<FmgFileCategory, FMGFileSet> baseDlcInfoBanks)
     {
+        var entries = new Dictionary<FmgIDType, List<FMG.Entry>>();
 
-        return false;
+        // Populate entries with the project vanilla entries
+        foreach(var bank in projectInfoBanks)
+        {
+            foreach(var fmgInfo in bank.Value.FmgInfos)
+            {
+                foreach(var entry in fmgInfo.Fmg.Entries)
+                {
+                    if(!entries.ContainsKey(fmgInfo.FmgID))
+                    {
+                        entries.Add(fmgInfo.FmgID, new List<FMG.Entry>());
+                    }
+
+                    entries[fmgInfo.FmgID].Add(entry);
+                }
+            }
+        }
+
+        // Remove any matches from the entries if they are present in the vanilla FMGs
+        foreach (var bank in baseInfoBanks)
+        {
+            foreach (var pEntry in entries)
+            {
+                foreach (var fmgInfo in bank.Value.FmgInfos)
+                {
+                    if (pEntry.Key == fmgInfo.FmgID)
+                    {
+                        foreach (var entry in fmgInfo.Fmg.Entries)
+                        {
+                            foreach (var pFmgEntry in pEntry.Value)
+                            {
+                                if (entry.ID == pFmgEntry.ID)
+                                {
+                                    entries[pEntry.Key].Remove(pFmgEntry);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Remove any matches from the entries if they are present in the vanilla DLC2 FMGs
+        foreach (var bank in baseDlcInfoBanks)
+        {
+            foreach (var pEntry in entries)
+            {
+                foreach (var fmgInfo in bank.Value.FmgInfos)
+                {
+                    if (pEntry.Key == fmgInfo.FmgID)
+                    {
+                        foreach (var entry in fmgInfo.Fmg.Entries)
+                        {
+                            foreach (var pFmgEntry in pEntry.Value)
+                            {
+                                if (entry.ID == pFmgEntry.ID)
+                                {
+                                    entries[pEntry.Key].Remove(pFmgEntry);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Remove any matches from the entries if they are present in the project DLC2 FMGs
+        foreach (var bank in projectDlcInfoBanks)
+        {
+            foreach (var pEntry in entries)
+            {
+                foreach (var fmgInfo in bank.Value.FmgInfos)
+                {
+                    if (pEntry.Key == fmgInfo.FmgID)
+                    {
+                        foreach (var entry in fmgInfo.Fmg.Entries)
+                        {
+                            foreach (var pFmgEntry in pEntry.Value)
+                            {
+                                if (entry.ID == pFmgEntry.ID)
+                                {
+                                    entries[pEntry.Key].Remove(pFmgEntry);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        return entries;
     }
 
     private Dictionary<string, string> TextLanguageNameMapping = new Dictionary<string, string>()
@@ -474,6 +624,7 @@ public class TextEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
+        SetupFmgUpdate();
         _fmgSearchAllString = "";
         _filteredFmgInfo.Clear();
         ClearTextEditorCache();
