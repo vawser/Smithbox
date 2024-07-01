@@ -11,6 +11,7 @@ using System.Linq;
 using StudioCore.Locators;
 using StudioCore.Core;
 using StudioCore.Editors.ParamEditor.Toolbar;
+using StudioCore.Editors.TextEditor;
 
 namespace StudioCore.Editors.ParamEditor;
 

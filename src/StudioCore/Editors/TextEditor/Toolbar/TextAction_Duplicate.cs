@@ -69,7 +69,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         public static void DuplicateSelectedEntry()
         {
-            var entry = TextEditorScreen._activeEntryGroup;
+            var entry = Smithbox.EditorHandler.TextEditor._activeEntryGroup;
 
             for (int i = 0; i < CFG.Current.FMG_DuplicateAmount; i++)
             {

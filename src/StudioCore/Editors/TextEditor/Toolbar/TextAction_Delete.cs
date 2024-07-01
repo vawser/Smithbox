@@ -90,11 +90,11 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         public static void DeleteSelectedEntry()
         {
-            var entry = TextEditorScreen._activeEntryGroup;
+            var entry = Smithbox.EditorHandler.TextEditor._activeEntryGroup;
 
             var action = new DeleteFMGEntryAction(entry);
             TextEditorScreen.EditorActionManager.ExecuteAction(action);
-            TextEditorScreen._activeEntryGroup = null;
+            Smithbox.EditorHandler.TextEditor._activeEntryGroup = null;
             TextEditorScreen._activeIDCache = -1;
 
             // Lazy method to refresh search filter

@@ -9,6 +9,8 @@ using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Banks.TextureCorrectionBank;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TextEditor;
+using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +56,8 @@ public class BankHandler
 
     public ProjectEnumBank ProjectEnums;
 
+    public FMGBank FMGBank;
+
     //public ProjectEnumBank ProjectEnums;
 
     public bool ReloadAliasBanks;
@@ -88,6 +92,8 @@ public class BankHandler
 
         ProjectEnums = new ProjectEnumBank("Project Enums");
 
+        FMGBank = new FMGBank();
+
         // TODO
         MaterialResourceBank.Setup();
     }
@@ -121,6 +127,8 @@ public class BankHandler
         SelectionGroups.LoadBank();
 
         ProjectEnums.LoadBank();
+
+        FMGBank.LoadFMGs();
 
         // TODO
         ParamBank.ReloadParams();

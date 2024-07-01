@@ -123,8 +123,8 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         private static void ConductSearchAndReplace()
         {
-            var CurrentFmgInfo = TextEditorScreen._activeFmgInfo;
-            var CurrentEntryGroup = TextEditorScreen._activeEntryGroup;
+            var CurrentFmgInfo = Smithbox.EditorHandler.TextEditor._activeFmgInfo;
+            var CurrentEntryGroup = Smithbox.EditorHandler.TextEditor._activeEntryGroup;
 
             if (CurrentTargetType == "Selected Entry")
             {
@@ -135,14 +135,14 @@ namespace StudioCore.Editors.TextEditor.Toolbar
             {
                 foreach (var fmgEntry in CurrentFmgInfo.Fmg.Entries)
                 {
-                    EntryGroup entryGroup = StudioCore.TextEditor.FMGBank.GenerateEntryGroup(fmgEntry.ID, CurrentFmgInfo);
+                    FMGEntryGroup entryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(fmgEntry.ID, CurrentFmgInfo);
 
                     StartSearchAndReplace(entryGroup);
                 }
             }
         }
 
-        private static void StartSearchAndReplace(EntryGroup entry)
+        private static void StartSearchAndReplace(FMGEntryGroup entry)
         {
             if(entry == null)
             {

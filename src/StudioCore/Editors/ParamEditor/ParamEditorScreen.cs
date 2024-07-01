@@ -25,6 +25,7 @@ using StudioCore.Utilities;
 using StudioCore.Memory;
 using StudioCore.Locators;
 using StudioCore.Core;
+using StudioCore.Editors.TextEditor;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -91,9 +92,9 @@ public class FMGItemParamDecorator : IParamDecorator
     private void PopulateDecorator()
     {
         // FMG Name decoration on row 
-        if (_entryCache.Count == 0 && FMGBank.IsLoaded)
+        if (_entryCache.Count == 0 && Smithbox.BankHandler.FMGBank.IsLoaded)
         {
-            List<FMG.Entry> fmgEntries = FMGBank.GetFmgEntriesByCategory(_category, false);
+            List<FMG.Entry> fmgEntries = Smithbox.BankHandler.FMGBank.GetFmgEntriesByCategory(_category, false);
             foreach (FMG.Entry fmgEntry in fmgEntries)
             {
                 _entryCache[fmgEntry.ID] = fmgEntry;

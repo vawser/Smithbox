@@ -1,5 +1,6 @@
 using Andre.Formats;
 using SoulsFormats;
+using StudioCore.Editors.TextEditor;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -534,7 +535,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         throw new Exception();
                     }
 
-                    List<FMG.Entry> fmgEntries = FMGBank.GetFmgEntriesByCategory(category, false);
+                    List<FMG.Entry> fmgEntries = Smithbox.BankHandler.FMGBank.GetFmgEntriesByCategory(category, false);
                     Dictionary<int, FMG.Entry> _cache = new();
                     foreach (FMG.Entry fmgEntry in fmgEntries)
                     {
@@ -765,12 +766,12 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         category = cat;
                     }
 
-                    if (category == FmgEntryCategory.None || !FMGBank.IsLoaded)
+                    if (category == FmgEntryCategory.None || !Smithbox.BankHandler.FMGBank.IsLoaded)
                     {
                         return row => rx.IsMatch(row.Name ?? "") || rx.IsMatch(row.ID.ToString());
                     }
 
-                    List<FMG.Entry> fmgEntries = FMGBank.GetFmgEntriesByCategory(category, false);
+                    List<FMG.Entry> fmgEntries = Smithbox.BankHandler.FMGBank.GetFmgEntriesByCategory(category, false);
                     Dictionary<int, FMG.Entry> _cache = new();
                     foreach (FMG.Entry fmgEntry in fmgEntries)
                     {

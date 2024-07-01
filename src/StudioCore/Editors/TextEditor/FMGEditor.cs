@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
@@ -10,7 +11,7 @@ namespace StudioCore.TextEditor;
 
 public class PropertyEditor
 {
-    private FMGBank.EntryGroup _eGroupCache;
+    private FMGEntryGroup _eGroupCache;
     private FMG.Entry _entryCache;
 
     private int _fmgID;
@@ -265,7 +266,7 @@ public class PropertyEditor
         _fmgID++;
     }
 
-    public void PropIDFMG(FMGBank.EntryGroup eGroup, List<FMG.Entry> entryCache)
+    public void PropIDFMG(FMGEntryGroup eGroup, List<FMG.Entry> entryCache)
     {
         var oldID = eGroup.ID;
         var id = oldID;

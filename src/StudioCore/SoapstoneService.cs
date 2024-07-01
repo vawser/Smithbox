@@ -15,6 +15,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Core;
+using StudioCore.Editors.TextEditor;
 
 #pragma warning disable CS1998 // Async method lacks 'await'. Return without Task is convenient, though
 
@@ -126,9 +127,9 @@ public class SoapstoneService : SoapstoneServiceV1
     private static bool FMGBankLoaded(FromSoftGame game, out SoulsFmg.FmgLanguage lang)
     {
         lang = default;
-        return FMGBank.IsLoaded
-               && !string.IsNullOrEmpty(FMGBank.LanguageFolder)
-               && SoulsFmg.TryGetFmgLanguageEnum(game, FMGBank.LanguageFolder, out lang);
+        return Smithbox.BankHandler.FMGBank.IsLoaded
+               && !string.IsNullOrEmpty(Smithbox.BankHandler.FMGBank.LanguageFolder)
+               && SoulsFmg.TryGetFmgLanguageEnum(game, Smithbox.BankHandler.FMGBank.LanguageFolder, out lang);
     }
 
     private static object AccessParamFile(SoulsKey.GameParamKey p, string key)
@@ -236,11 +237,11 @@ public class SoapstoneService : SoapstoneServiceV1
     private static bool GetFmgKey(
         FromSoftGame game,
         SoulsFmg.FmgLanguage lang,
-        FMGBank.FMGInfo info,
+        FMGInfo info,
         out SoulsKey.FmgKey key)
     {
         // UICategory is used to distinguish between name-keyed FMGs (DS2) and binder-keyed FMGs (item/menu bnds)
-        if (info.UICategory == FmgUICategory.Text)
+        if (info.FileCategory == FmgFileCategory.Loose)
         {
             if (SoulsFmg.TryGetFmgNameType(game, info.Name, out List<SoulsFmg.FmgType> types))
             {
@@ -310,9 +311,9 @@ public class SoapstoneService : SoapstoneServiceV1
         }
 
         if (resource.Type == EditorResourceType.Fmg
-            && FMGBank.IsLoaded
-            && !string.IsNullOrEmpty(FMGBank.LanguageFolder)
-            && SoulsFmg.TryGetFmgLanguageEnum(game, FMGBank.LanguageFolder, out SoulsFmg.FmgLanguage lang)
+            && Smithbox.BankHandler.FMGBank.IsLoaded
+            && !string.IsNullOrEmpty(Smithbox.BankHandler.FMGBank.LanguageFolder)
+            && SoulsFmg.TryGetFmgLanguageEnum(game, Smithbox.BankHandler.FMGBank.LanguageFolder, out SoulsFmg.FmgLanguage lang)
             && MatchesResource(resource, lang.ToString()))
         {
             foreach (SoulsKey getKey in keys)
@@ -323,7 +324,7 @@ public class SoapstoneService : SoapstoneServiceV1
                     continue;
                 }
 
-                FMGBank.FMGInfo info = FMGBank.FmgInfoBank
+               FMGInfo info = Smithbox.BankHandler.FMGBank.FmgInfoBank.ToList()
                     .Find(info =>
                         GetFmgKey(game, lang, info, out SoulsKey.FmgKey infoKey) && infoKey.Equals(fileKey));
                 if (info == null)
@@ -459,9 +460,9 @@ public class SoapstoneService : SoapstoneServiceV1
         }
 
         if (resource.Type == EditorResourceType.Fmg
-            && FMGBank.IsLoaded
-            && !string.IsNullOrEmpty(FMGBank.LanguageFolder)
-            && SoulsFmg.TryGetFmgLanguageEnum(game, FMGBank.LanguageFolder, out SoulsFmg.FmgLanguage lang)
+            && Smithbox.BankHandler.FMGBank.IsLoaded
+            && !string.IsNullOrEmpty(Smithbox.BankHandler.FMGBank.LanguageFolder)
+            && SoulsFmg.TryGetFmgLanguageEnum(game, Smithbox.BankHandler.FMGBank.LanguageFolder, out SoulsFmg.FmgLanguage lang)
             // Language applies to all FMGs at once currently, so filter it here if requested
             && MatchesResource(resource, lang.ToString())
             && search.GetKeyFilter("Language")(lang.ToString()))
@@ -469,7 +470,7 @@ public class SoapstoneService : SoapstoneServiceV1
             Predicate<object> fmgFilter = search.GetKeyFilter("FMG");
             Predicate<object> baseFmgFilter = search.GetKeyFilter("BaseFMG");
             Predicate<object> categoryFilter = search.GetKeyFilter("Category");
-            foreach (FMGBank.FMGInfo info in FMGBank.FmgInfoBank)
+            foreach (FMGInfo info in Smithbox.BankHandler.FMGBank.FmgInfoBank)
             {
                 if (!GetFmgKey(game, lang, info, out SoulsKey.FmgKey fileKey)
                     || !SoulsFmg.TryGetFmgInfo(game, fileKey, out SoulsFmg.FmgKeyInfo keyInfo))

@@ -369,9 +369,9 @@ public static class AliasUtils
                         var term = c.Value.ToParamEditorString();
                         var result = term;
 
-                        if (FMGBank.IsLoaded)
+                        if (Smithbox.BankHandler.FMGBank.IsLoaded)
                         {
-                            var matchingFmgInfo = FMGBank.FmgInfoBank.Find(x => x.Name.Contains("Character"));
+                            var matchingFmgInfo = Smithbox.BankHandler.FMGBank.FmgInfoBank.ToList().Find(x => x.Name.Contains("Character"));
 
                             if (matchingFmgInfo != null)
                             {

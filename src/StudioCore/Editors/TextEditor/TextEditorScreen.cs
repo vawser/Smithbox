@@ -10,11 +10,12 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
 using StudioCore.Interface;
-using static StudioCore.Editors.TextEditor.FMGBank;
 using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Utilities;
 using StudioCore.Locators;
 using StudioCore.Core;
+using StudioCore.Editors.TextEditor;
+using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 
 namespace StudioCore.TextEditor;
 
@@ -26,8 +27,8 @@ public class TextEditorScreen : EditorScreen
 
     private readonly PropertyEditor _propEditor;
 
-    public static FMGBank.EntryGroup _activeEntryGroup;
-    public static FMGBank.FMGInfo _activeFmgInfo;
+    public FMGEntryGroup _activeEntryGroup;
+    public FMGInfo _activeFmgInfo;
     public static int _activeIDCache = -1;
     private bool _arrowKeyPressed;
 
@@ -40,7 +41,7 @@ public class TextEditorScreen : EditorScreen
     public static string _searchFilterCached = "";
     private string _fmgSearchAllString = "";
     private bool _fmgSearchAllActive = false;
-    private List<FMGBank.FMGInfo> _filteredFmgInfo = new();
+    private List<FMGInfo> _filteredFmgInfo = new();
     public static ActionManager EditorActionManager = new();
 
     private TextToolbar _textToolbar;
@@ -67,7 +68,9 @@ public class TextEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
-        if (ImGui.BeginMenu("Edit", FMGBank.IsLoaded))
+        var currentFmgBank = Smithbox.BankHandler.FMGBank;
+
+        if (ImGui.BeginMenu("Edit", currentFmgBank.IsLoaded))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
@@ -132,7 +135,7 @@ public class TextEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Data", FMGBank.IsLoaded))
+        if (ImGui.BeginMenu("Data", Smithbox.BankHandler.FMGBank.IsLoaded))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
             if (ImGui.BeginMenu("Merge"))
@@ -142,7 +145,7 @@ public class TextEditorScreen : EditorScreen
 
                 if (ImGui.MenuItem("Import text files and merge"))
                 {
-                    if (FmgExporter.ImportFmgTxt(true))
+                    if (FmgExporter.ImportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], true))
                     {
                         ClearTextEditorCache();
                         ResetActionManager();
@@ -153,7 +156,7 @@ public class TextEditorScreen : EditorScreen
                     "Export: only modded text (different than vanilla) will be exported");
                 if (ImGui.MenuItem("Export modded text to text files"))
                 {
-                    FmgExporter.ExportFmgTxt(true);
+                    FmgExporter.ExportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], true);
                 }
 
                 ImGui.EndMenu();
@@ -167,7 +170,7 @@ public class TextEditorScreen : EditorScreen
 
                 if (ImGui.MenuItem("Import text files and replace"))
                 {
-                    if (FmgExporter.ImportFmgTxt(false))
+                    if (FmgExporter.ImportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], false))
                     {
                         ClearTextEditorCache();
                         ResetActionManager();
@@ -178,7 +181,7 @@ public class TextEditorScreen : EditorScreen
                     "Export: all text will be exported");
                 if (ImGui.MenuItem("Export all text to text files"))
                 {
-                    FmgExporter.ExportFmgTxt(false);
+                    FmgExporter.ExportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], false);
                 }
 
                 if (ImGui.BeginMenu("Legacy"))
@@ -202,7 +205,7 @@ public class TextEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Text Language", !FMGBank.IsLoading))
+        if (ImGui.BeginMenu("Text Language", !currentFmgBank.IsLoading))
         {
             Dictionary<string, string> folders = ResourceTextLocator.GetMsgLanguages();
             if (folders.Count == 0)
@@ -213,8 +216,13 @@ public class TextEditorScreen : EditorScreen
             {
                 foreach (KeyValuePair<string, string> path in folders)
                 {
-                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bookmark}");
-                    if (ImGui.MenuItem(path.Key, "", FMGBank.LanguageFolder == path.Key))
+                    string disp = path.Key;
+                    if (currentFmgBank.fmgLangs.ContainsKey(path.Key))
+                    {
+                        disp += "*";
+                    }
+
+                    if (ImGui.MenuItem(disp, "", currentFmgBank.LanguageFolder == path.Key))
                     {
                         ChangeLanguage(path.Key);
                     }
@@ -252,7 +260,9 @@ public class TextEditorScreen : EditorScreen
         }
         else
         {
-            if (!ImGui.IsAnyItemActive() && FMGBank.IsLoaded)
+            var currentFmgBank = Smithbox.BankHandler.FMGBank;
+
+            if (!ImGui.IsAnyItemActive() && currentFmgBank.IsLoaded)
             {
                 // Only allow key shortcuts when an item [text box] is not currently activated
                 if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
@@ -305,7 +315,7 @@ public class TextEditorScreen : EditorScreen
                         searchName = initcmd[1];
                     }
 
-                    foreach (FMGBank.FMGInfo info in FMGBank.FmgInfoBank)
+                    foreach (FMGInfo info in currentFmgBank.FmgInfoBank)
                     {
                         var match = false;
                         // This matches top-level item FMGs
@@ -337,7 +347,7 @@ public class TextEditorScreen : EditorScreen
                         var parsed = int.TryParse(initcmd[2], out var id);
                         if (parsed)
                         {
-                            _activeEntryGroup = FMGBank.GenerateEntryGroup(id, _activeFmgInfo);
+                            _activeEntryGroup = currentFmgBank.GenerateEntryGroup(id, _activeFmgInfo);
                         }
                     }
                 }
@@ -356,7 +366,6 @@ public class TextEditorScreen : EditorScreen
         _filteredFmgInfo.Clear();
         ClearTextEditorCache();
         ResetActionManager();
-        FMGBank.ReloadFMGs(Smithbox.ProjectHandler.CurrentProject.Config.LastFmgLanguageUsed);
     }
 
     public void Save()
@@ -364,7 +373,7 @@ public class TextEditorScreen : EditorScreen
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        FMGBank.SaveFMGs();
+        Smithbox.BankHandler.FMGBank.SaveFMGs();
     }
 
     public void SaveAll()
@@ -372,7 +381,7 @@ public class TextEditorScreen : EditorScreen
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        FMGBank.SaveFMGs();
+        Smithbox.BankHandler.FMGBank.SaveFMGs();
     }
 
     private void ClearTextEditorCache()
@@ -395,7 +404,7 @@ public class TextEditorScreen : EditorScreen
     /// <summary>
     ///     Deletes all Entries within active EntryGroup from their FMGs
     /// </summary>
-    private void DeleteFMGEntries(FMGBank.EntryGroup entry)
+    private void DeleteFMGEntries(FMGEntryGroup entry)
     {
         var action = new DeleteFMGEntryAction(entry);
         EditorActionManager.ExecuteAction(action);
@@ -444,7 +453,7 @@ public class TextEditorScreen : EditorScreen
                 }
 
                 // Descriptions
-                foreach (FMG.Entry entry in FMGBank.GetFmgEntriesByCategoryAndTextType(_activeFmgInfo.EntryCategory,
+                foreach (FMG.Entry entry in Smithbox.BankHandler.FMGBank.GetFmgEntriesByCategoryAndTextType(_activeFmgInfo.EntryCategory,
                              FmgEntryTextType.Description, false))
                 {
                     if (entry.Text != null)
@@ -461,7 +470,7 @@ public class TextEditorScreen : EditorScreen
                 }
 
                 // Summaries
-                foreach (FMG.Entry entry in FMGBank.GetFmgEntriesByCategoryAndTextType(_activeFmgInfo.EntryCategory,
+                foreach (FMG.Entry entry in Smithbox.BankHandler.FMGBank.GetFmgEntriesByCategoryAndTextType(_activeFmgInfo.EntryCategory,
                              FmgEntryTextType.Summary, false))
                 {
                     if (entry.Text != null)
@@ -478,7 +487,7 @@ public class TextEditorScreen : EditorScreen
                 }
 
                 // Extra Text
-                foreach (FMG.Entry entry in FMGBank.GetFmgEntriesByCategoryAndTextType(_activeFmgInfo.EntryCategory,
+                foreach (FMG.Entry entry in Smithbox.BankHandler.FMGBank.GetFmgEntriesByCategoryAndTextType(_activeFmgInfo.EntryCategory,
                              FmgEntryTextType.ExtraText, false))
                 {
                     if (entry.Text != null)
@@ -507,18 +516,18 @@ public class TextEditorScreen : EditorScreen
         }
     }
 
-    private void CategoryListUI(FmgUICategory uiType, bool doFocus)
+    private void CategoryListUI(FmgFileCategory uiType, bool doFocus)
     {
-        List<FMGBank.FMGInfo> infos;
+        List<FMGInfo> infos;
         if (_fmgSearchAllActive)
             infos = _filteredFmgInfo;
         else
-            infos = FMGBank.FmgInfoBank;
+            infos = Smithbox.BankHandler.FMGBank.FmgInfoBank.ToList();
 
         foreach (var info in infos)
         {
             if (info.PatchParent == null
-                && info.UICategory == uiType
+                && info.FileCategory == uiType
                 && info.EntryType is FmgEntryTextType.Title or FmgEntryTextType.TextBody)
             {
                 string displayName;
@@ -563,13 +572,13 @@ public class TextEditorScreen : EditorScreen
     {
         var scale = Smithbox.GetUIScale();
 
-        if (!FMGBank.IsLoaded)
+        if (!Smithbox.BankHandler.FMGBank.IsLoaded)
         {
             if (Smithbox.ProjectHandler.CurrentProject.Config == null)
             {
                 ImGui.Text("No project loaded. File -> New Project");
             }
-            else if (FMGBank.IsLoading)
+            else if (Smithbox.BankHandler.FMGBank.IsLoading)
             {
                 ImGui.Text("Loading...");
             }
@@ -601,7 +610,7 @@ public class TextEditorScreen : EditorScreen
             {
                 _fmgSearchAllActive = true;
                 _filteredFmgInfo.Clear();
-                foreach (var info in FMGBank.FmgInfoBank)
+                foreach (var info in Smithbox.BankHandler.FMGBank.SortedFmgInfoBank)
                 {
                     if (info.PatchParent == null)
                     {
@@ -646,17 +655,14 @@ public class TextEditorScreen : EditorScreen
             }
             ImGui.Separator();
 
-            foreach (KeyValuePair<FmgUICategory, bool> v in FMGBank.ActiveUITypes)
+            foreach (FmgFileCategory v in Smithbox.BankHandler.FMGBank.currentFmgInfoBanks)
             {
-                if (v.Value)
-                {
-                    ImGui.Separator();
-                    ImGui.Text($"  {v.Key} Text");
-                    ImGui.Separator();
-                    // Categories
-                    CategoryListUI(v.Key, doFocus);
-                    ImGui.Spacing();
-                }
+                ImGui.Separator();
+                ImGui.Text($"  {v} Text");
+                ImGui.Separator();
+                // Categories
+                CategoryListUI(v, doFocus);
+                ImGui.Spacing();
             }
 
             if (_activeFmgInfo != null)
@@ -735,11 +741,11 @@ public class TextEditorScreen : EditorScreen
                     label = Utils.ImGui_WordWrapString(label, ImGui.GetColumnWidth());
                     if (ImGui.Selectable(label, _activeIDCache == r.ID))
                     {
-                        _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+                        _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
                     }
                     else if (_activeIDCache == r.ID && _activeEntryGroup == null)
                     {
-                        _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+                        _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
                         _searchFilterCached = "";
                     }
 
@@ -747,7 +753,7 @@ public class TextEditorScreen : EditorScreen
                                          && _activeEntryGroup?.ID != r.ID)
                     {
                         // Up/Down arrow key selection
-                        _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+                        _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
                         _arrowKeyPressed = false;
                     }
 
@@ -761,7 +767,7 @@ public class TextEditorScreen : EditorScreen
                     {
                         if (ImGui.Selectable("Delete Entry"))
                         {
-                            _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+                            _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
                             TextAction_Delete.DeleteSelectedEntry();
                             DeleteFMGEntries(_activeEntryGroup);
                         }
@@ -770,7 +776,7 @@ public class TextEditorScreen : EditorScreen
 
                         if (ImGui.Selectable("Duplicate Entry"))
                         {
-                            _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+                            _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
                             TextAction_Duplicate.DuplicateSelectedEntry();
                         }
 
@@ -848,7 +854,7 @@ public class TextEditorScreen : EditorScreen
         _filteredFmgInfo.Clear();
         ClearTextEditorCache();
         ResetActionManager();
-        FMGBank.ReloadFMGs(path);
+        Smithbox.BankHandler.FMGBank.LoadFMGs();
     }
 
     

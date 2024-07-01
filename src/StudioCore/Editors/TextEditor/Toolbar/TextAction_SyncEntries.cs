@@ -93,9 +93,9 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         private static void PerformEntrySync()
         {
-            foreach (var entry in StudioCore.TextEditor.FMGBank.FmgInfoBank)
+            foreach (var entry in Smithbox.BankHandler.FMGBank.FmgInfoBank)
             {
-                if (entry.EntryCategory == TextEditorScreen._activeFmgInfo.EntryCategory)
+                if (entry.EntryCategory == Smithbox.EditorHandler.TextEditor._activeFmgInfo.EntryCategory)
                 {
                     // Reset these after each iteration
                     holdingSyncText = false;

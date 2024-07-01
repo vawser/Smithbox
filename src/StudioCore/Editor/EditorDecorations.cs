@@ -17,6 +17,7 @@ using StudioCore.Utilities;
 using StudioCore.Core;
 using Google.Protobuf.WellKnownTypes;
 using StudioCore.Interface;
+using StudioCore.Editors.TextEditor;
 
 namespace StudioCore.Editor;
 
@@ -283,15 +284,15 @@ public class EditorDecorations
         return rows;
     }
 
-    private static List<(string, FMGBank.EntryGroup)> resolveFMGRefs(List<FMGRef> fmgRefs, Param.Row context,
+    private static List<(string, FMGEntryGroup)> resolveFMGRefs(List<FMGRef> fmgRefs, Param.Row context,
         dynamic oldval)
     {
-        if (!FMGBank.IsLoaded)
+        if (!Smithbox.BankHandler.FMGBank.IsLoaded)
         {
-            return new List<(string, FMGBank.EntryGroup)>();
+            return new List<(string, FMGEntryGroup)>();
         }
 
-        List<(string, FMGBank.EntryGroup)> newFmgRefs = new();
+        List<(string, FMGEntryGroup)> newFmgRefs = new();
 
         foreach(var entry in fmgRefs)
         {
@@ -309,13 +310,13 @@ public class EditorDecorations
 
             if(cont)
             {
-                var matchingFmgInfo = FMGBank.FmgInfoBank.Find(x => x.Name == entry.fmg);
+                var matchingFmgInfo = Smithbox.BankHandler.FMGBank.FmgInfoBank.ToList().Find(x => x.Name == entry.fmg);
                 if (matchingFmgInfo != null)
                 {
                     // Apply Abs here since some weird fields use -ID but should still resolve as normal ID
                     var entryGroupId = Math.Abs((int)oldval) + entry.offset;
 
-                    var newFmgInfo = (matchingFmgInfo.Name, FMGBank.GenerateEntryGroup(entryGroupId, matchingFmgInfo));
+                    var newFmgInfo = (matchingFmgInfo.Name, Smithbox.BankHandler.FMGBank.GenerateEntryGroup(entryGroupId, matchingFmgInfo));
 
                     newFmgRefs.Add(newFmgInfo);
                 }
@@ -332,11 +333,11 @@ public class EditorDecorations
 
         textsToPrint = UICache.GetCached(ownerScreen, (int)oldval, "PARAM META FMGREF", () =>
         {
-            List<(string, FMGBank.EntryGroup)> refs = resolveFMGRefs(fmgNames, context, oldval);
+            List<(string, FMGEntryGroup)> refs = resolveFMGRefs(fmgNames, context, oldval);
             return refs.Where(x => x.Item2 != null)
                 .Select(x =>
                 {
-                    FMGBank.EntryGroup group = x.Item2;
+                    FMGEntryGroup group = x.Item2;
                     var toPrint = "";
                     if (!string.IsNullOrWhiteSpace(group.Title?.Text))
                     {
@@ -687,7 +688,7 @@ public class EditorDecorations
             }
             else if (fmgRefs != null)
             {
-                (string, FMGBank.EntryGroup)? primaryRef =
+                (string, FMGEntryGroup)? primaryRef =
                     resolveFMGRefs(fmgRefs, context, oldval)?.FirstOrDefault();
                 if (primaryRef?.Item2 != null)
                 {
@@ -867,9 +868,9 @@ public class EditorDecorations
         ActionManager executor)
     {
         // Add Goto statements
-        List<(string, FMGBank.EntryGroup)> refs = resolveFMGRefs(reftypes, context, oldval);
+        List<(string, FMGEntryGroup)> refs = resolveFMGRefs(reftypes, context, oldval);
         var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
-        foreach ((var name, FMGBank.EntryGroup group) in refs)
+        foreach ((var name, FMGEntryGroup group) in refs)
         {
             if (ImGui.Selectable($@"Goto {name} Text"))
             {
