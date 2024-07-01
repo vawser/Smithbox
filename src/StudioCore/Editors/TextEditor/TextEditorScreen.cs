@@ -286,39 +286,42 @@ public class TextEditorScreen : EditorScreen
             ResourceDescriptor baseDlcMenuMsgPath = ResourceTextLocator.GetMenuMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, false, true);
 
             FMGFileSet projectItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
-            if (projectItemMsgBnd.LoadMsgBnd(projectItemMsgPath.AssetPath, "item.msgbnd"))
-                Project_Item_VanillaFmgInfoBanks.Add(projectItemMsgBnd.FileCategory, projectItemMsgBnd);
-
             FMGFileSet projectDlcItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
-            if (projectDlcItemMsgBnd.LoadMsgBnd(projectDlcItemMsgPath.AssetPath, "item.msgbnd"))
-                Project_DLC_Item_VanillaFmgInfoBanks.Add(projectDlcItemMsgBnd.FileCategory, projectDlcItemMsgBnd);
-
             FMGFileSet baseItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
-            if (baseItemMsgBnd.LoadMsgBnd(baseItemMsgPath.AssetPath, "item.msgbnd"))
-                Base_Item_VanillaFmgInfoBanks.Add(baseItemMsgBnd.FileCategory, baseItemMsgBnd);
-
             FMGFileSet baseDlcItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
-            if (baseDlcItemMsgBnd.LoadMsgBnd(baseDlcItemMsgPath.AssetPath, "item.msgbnd"))
-                Base_DLC_Item_VanillaFmgInfoBanks.Add(baseDlcItemMsgBnd.FileCategory, baseDlcItemMsgBnd);
-
             FMGFileSet projectMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
-            if (projectMenuMsgBnd.LoadMsgBnd(projectMenuMsgPath.AssetPath, "menu.msgbnd"))
-                Project_Menu_VanillaFmgInfoBanks.Add(projectMenuMsgBnd.FileCategory, projectMenuMsgBnd);
-
             FMGFileSet projectDlcMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
-            if (projectDlcMenuMsgBnd.LoadMsgBnd(projectDlcMenuMsgPath.AssetPath, "menu.msgbnd"))
-                Project_DLC_Menu_VanillaFmgInfoBanks.Add(projectDlcMenuMsgBnd.FileCategory, projectDlcMenuMsgBnd);
-
             FMGFileSet baseMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
-            if (baseMenuMsgBnd.LoadMsgBnd(baseMenuMsgPath.AssetPath, "menu.msgbnd"))
-                Base_Menu_VanillaFmgInfoBanks.Add(baseMenuMsgBnd.FileCategory, baseMenuMsgBnd);
-
             FMGFileSet baseDlcMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
-            if (baseDlcMenuMsgBnd.LoadMsgBnd(baseDlcMenuMsgPath.AssetPath, "menu.msgbnd"))
-                Base_DLC_Menu_VanillaFmgInfoBanks.Add(baseDlcMenuMsgBnd.FileCategory, baseDlcMenuMsgBnd);
+
+            projectDlcItemMsgBnd = null;
 
             if (projectItemMsgBnd == null || projectDlcItemMsgBnd == null || baseItemMsgBnd == null || baseDlcItemMsgBnd == null || projectMenuMsgBnd == null || baseMenuMsgBnd == null || baseDlcMenuMsgBnd == null || projectDlcMenuMsgBnd == null)
                 return;
+
+            if (projectItemMsgBnd.LoadMsgBnd(projectItemMsgPath.AssetPath, "item.msgbnd"))
+                Project_Item_VanillaFmgInfoBanks.Add(projectItemMsgBnd.FileCategory, projectItemMsgBnd);
+
+            if (projectDlcItemMsgBnd.LoadMsgBnd(projectDlcItemMsgPath.AssetPath, "item.msgbnd"))
+                Project_DLC_Item_VanillaFmgInfoBanks.Add(projectDlcItemMsgBnd.FileCategory, projectDlcItemMsgBnd);
+
+            if (baseItemMsgBnd.LoadMsgBnd(baseItemMsgPath.AssetPath, "item.msgbnd"))
+                Base_Item_VanillaFmgInfoBanks.Add(baseItemMsgBnd.FileCategory, baseItemMsgBnd);
+
+            if (baseDlcItemMsgBnd.LoadMsgBnd(baseDlcItemMsgPath.AssetPath, "item.msgbnd"))
+                Base_DLC_Item_VanillaFmgInfoBanks.Add(baseDlcItemMsgBnd.FileCategory, baseDlcItemMsgBnd);
+
+            if (projectMenuMsgBnd.LoadMsgBnd(projectMenuMsgPath.AssetPath, "menu.msgbnd"))
+                Project_Menu_VanillaFmgInfoBanks.Add(projectMenuMsgBnd.FileCategory, projectMenuMsgBnd);
+
+            if (projectDlcMenuMsgBnd.LoadMsgBnd(projectDlcMenuMsgPath.AssetPath, "menu.msgbnd"))
+                Project_DLC_Menu_VanillaFmgInfoBanks.Add(projectDlcMenuMsgBnd.FileCategory, projectDlcMenuMsgBnd);
+
+            if (baseMenuMsgBnd.LoadMsgBnd(baseMenuMsgPath.AssetPath, "menu.msgbnd"))
+                Base_Menu_VanillaFmgInfoBanks.Add(baseMenuMsgBnd.FileCategory, baseMenuMsgBnd);
+
+            if (baseDlcMenuMsgBnd.LoadMsgBnd(baseDlcMenuMsgPath.AssetPath, "menu.msgbnd"))
+                Base_DLC_Menu_VanillaFmgInfoBanks.Add(baseDlcMenuMsgBnd.FileCategory, baseDlcMenuMsgBnd);
 
             itemEntriesToUpdate = new Dictionary<FmgIDType, List<FMG.Entry>>();
             menuEntriesToUpdate = new Dictionary<FmgIDType, List<FMG.Entry>>();

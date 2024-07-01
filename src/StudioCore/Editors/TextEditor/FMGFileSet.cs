@@ -21,6 +21,7 @@ public class FMGFileSet
 {
     internal FMGFileSet(FmgFileCategory category)
     {
+        Lang = new FMGLanguage(Smithbox.BankHandler.FMGBank.LanguageFolder);
         FileCategory = category;
     }
     internal FMGLanguage Lang;
@@ -43,17 +44,20 @@ public class FMGFileSet
     {
         if (path == null)
         {
-            if (Lang.LanguageFolder != "")
+            if (Lang != null)
             {
-                TaskLogs.AddLog(
-                    $"Could locate text data files when looking for \"{msgBndType}\" in \"{Lang.LanguageFolder}\" folder",
-                    LogLevel.Warning);
-            }
-            else
-            {
-                TaskLogs.AddLog(
-                    $"Could not locate text data files when looking for \"{msgBndType}\" in Default English folder",
-                    LogLevel.Warning);
+                if (Lang.LanguageFolder != "")
+                {
+                    TaskLogs.AddLog(
+                        $"Could locate text data files when looking for \"{msgBndType}\" in \"{Lang.LanguageFolder}\" folder",
+                        LogLevel.Warning);
+                }
+                else
+                {
+                    TaskLogs.AddLog(
+                        $"Could not locate text data files when looking for \"{msgBndType}\" in Default English folder",
+                        LogLevel.Warning);
+                }
             }
 
             IsLoaded = false;
