@@ -2349,7 +2349,7 @@ public class ParamBank
                 if (!addedRows.ContainsKey(pendingAdds[currPendingAdd]))
                 {
                     currPendingAdd++;
-                    TargetLog(source, $"newVanilla - currPendingAdd: {pendingAdds[currPendingAdd]}");
+                    TargetLog(source, $"newVanilla - currPendingAdd: {pendingAdds[currPendingAdd-1]}");
                     continue;
                 }
 

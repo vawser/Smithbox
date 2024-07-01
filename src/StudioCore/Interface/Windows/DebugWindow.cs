@@ -1,6 +1,8 @@
 ﻿using ImGuiNET;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Tests;
+using StudioCore.Tools;
 using System.Numerics;
 using System.Threading.Tasks;
 
@@ -86,11 +88,19 @@ public class DebugWindow
 
     private void DisplayActions()
     {
-        if (ImGui.Button("Dump FLVER Layouts"))
-        {
-            DebugActions.DumpFlverLayouts();
-        }
+        ImGui.BeginTabBar("DebugActions");
 
+        ImGui.PushStyleColor(ImGuiCol.Header, CFG.Current.Imgui_Moveable_Header);
+        ImGui.PushItemWidth(300f);
+
+        DisplayTool_MSB_Report();
+        DisplayTool_ParamValidation();
+        DisplayTool_MapValidation();
+        DisplayTool_FLVERDump();
+
+        ImGui.PopItemWidth();
+        ImGui.PopStyleColor();
+        ImGui.EndTabBar();
     }
 
     private void DisplayImGuiDemo()
@@ -146,6 +156,115 @@ public class DebugWindow
         if (ImGui.Button("Insert unique rows IDs into params"))
         {
             ParamUniqueRowFinder.Run();
+        }
+    }
+
+    private void DisplayTool_FLVERDump()
+    {
+        if (ImGui.BeginTabItem("Dump FLVER Layouts"))
+        {
+            if(ImGui.Button("Dump"))
+            {
+                DebugActions.DumpFlverLayouts();
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplayTool_MSB_Report()
+    {
+        if (Smithbox.ProjectType == ProjectType.ER)
+        {
+            if (ImGui.BeginTabItem("Map Information"))
+            {
+                ImGui.Text("This tool will dump all of the information with each MSB file to text, presenting it in a readable and searchable fashion.");
+
+                ImGui.Text("Export Path: " + MapInformationTool.exportPath);
+
+                ImGui.Checkbox("Use project files", ref MapInformationTool.TargetProject);
+                ImguiUtils.ShowHoverTooltip("The report will use the game root files by default, if you want to use your project's specific files, tick this.");
+
+                //ImGui.SameLine();
+                //ImGui.Checkbox("Export as single file", ref MapInformationTool.OneFile);
+                //ImguiUtils.ShowHoverTooltip("The report will be placed in one file, and each MSB will be separated by a header.");
+
+                if (ImGui.Button("Select Report Export Directory"))
+                {
+                    MapInformationTool.SelectExportDirectory();
+                }
+                ImguiUtils.ShowHoverTooltip("Select the directory that the MSB text files will be placed in. There will be one file for each MSB.");
+
+                if (ImGui.Button("Generate Report"))
+                {
+                    MapInformationTool.GenerateReport();
+                }
+
+                /*
+                if (ImGui.Button("Target Report"))
+                {
+                    MapInformationTool.GenerateTargetReport();
+                }
+                */
+
+                ImGui.Separator();
+
+
+
+                ImGui.EndTabItem();
+            }
+        }
+    }
+
+    private void DisplayTool_ParamValidation()
+    {
+        if (ImGui.BeginTabItem("Param Validation"))
+        {
+            ImGui.Text("This tool will validate the PARAMDEF and padding values. Issues will be printed to the Logger.");
+
+            if (ImGui.Button("Validate PARAMDEF"))
+            {
+                ParamValidationTool.ValidateParamdef();
+            }
+            ImguiUtils.ShowHoverTooltip("Validate that the current PARAMDEF works with the old-style SF PARAM class.");
+
+            if (ImGui.Button("Validate Padding (for selected param)"))
+            {
+                ParamValidationTool.ValidatePadding();
+            }
+            ImguiUtils.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
+
+            if (ImGui.Button("Validate Padding (for all params)"))
+            {
+                ParamValidationTool.ValidatePadding(true);
+            }
+            ImguiUtils.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplayTool_MapValidation()
+    {
+        if (ImGui.BeginTabItem("Map Validation"))
+        {
+            ImGui.Text("This tool will validate the MSB for the current project by loading all MSB files.");
+
+            ImGui.Checkbox("Check project files", ref MapValidationTool.TargetProject);
+            ImguiUtils.ShowHoverTooltip("The check will use the game root files by default, if you want to use your project's specific files, tick this.");
+
+
+            if (ImGui.Button("Validate MSB"))
+            {
+                MapValidationTool.ValidateMSB();
+            }
+
+            if (MapValidationTool.HasFinished)
+            {
+                ImGui.Text("Validation has finished.");
+            }
+
+            ImGui.EndTabItem();
         }
     }
 }

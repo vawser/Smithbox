@@ -102,8 +102,6 @@ Texture Viewer:
  - Add ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
  - Change image preview lookup to instead look more generally for icons, change icon field TextureRefs to "{gametype}Lookup", retain the explicit matching though for other usage
- - Rework how the Text Editor patching system works, currently it is fragile and awkward due to bnd ID map sharing across multiple games
- Just map the BND ids explicitly (e.g. 412 -> 312 -> 12)
  
 World Map:
  - Add the dungeon icons, add icon radius for the non-open world maps
@@ -114,4 +112,4 @@ World Map:
 #--------------------------------------
 Make SOTE world map more accurate
 
-Add FMG update action
+"EquipMtrlSetParam"

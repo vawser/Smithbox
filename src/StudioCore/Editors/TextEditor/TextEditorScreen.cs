@@ -331,7 +331,7 @@ public class TextEditorScreen : EditorScreen
                 foreach (var fmgEntry in entry.Value)
                 {
                     DisplayFmgUpdate = true;
-                    TaskLogs.AddLog($"New Item Entry: {entry.Key} - {fmgEntry.ID} {fmgEntry.Text}");
+                    //TaskLogs.AddLog($"New Item Entry: {entry.Key} - {fmgEntry.ID} {fmgEntry.Text}");
                 }
             }
             foreach (var entry in menuEntriesToUpdate)
@@ -339,7 +339,7 @@ public class TextEditorScreen : EditorScreen
                 foreach (var fmgEntry in entry.Value)
                 {
                     DisplayFmgUpdate = true;
-                    TaskLogs.AddLog($"New Menu Entry: {entry.Key} - {fmgEntry.ID} {fmgEntry.Text}");
+                    //TaskLogs.AddLog($"New Menu Entry: {entry.Key} - {fmgEntry.ID} {fmgEntry.Text}");
                 }
             }
         }

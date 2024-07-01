@@ -1293,10 +1293,10 @@ public class ParamEditorScreen : EditorScreen
             logWriter.Flush();
 
             DialogResult msgRes = PlatformUtils.Instance.MessageBox(
-                @"Conflicts were found while upgrading params. This is usually caused by a game update adding " +
-                "a new row that has the same ID as the one that you added in your mod. It is highly recommended that you " +
-                "review these conflicts and handle them before saving. You can revert to your original params by " +
-                "reloading your project without saving. Then you can move the conflicting rows to new IDs. " +
+                @"Conflicts were found while upgrading params. This is usually caused by a game update adding" +
+                "a new row that has the same ID as the one that you added in your mod.\nIt is highly recommended that you " +
+                "review these conflicts and handle them before saving.\nYou can revert to your original params by " +
+                "reloading your project without saving.\nThen you can move the conflicting rows to new IDs.\n" +
                 "Currently the added rows from your mod will have overwritten " +
                 "the added rows in the vanilla regulation.\n\nThe list of conflicts can be found in regulationUpgradeLog.txt " +
                 "in your mod project directory. Would you like to open them now?",
