@@ -2167,8 +2167,11 @@ public class ParamBank
         }
     }
 
+    // For debugging the upgrade process
     public static void TargetLog(Param source, string text)
     {
+        return;
+
         if (source.ParamType == "EQUIP_PARAM_GEM_ST")
             TaskLogs.AddLog(text);
     }

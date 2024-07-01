@@ -108,28 +108,10 @@ Texture Viewer:
 World Map:
  - Add the dungeon icons, add icon radius for the non-open world maps
  - Add support for large/medium/small tile overlays
- - World Map TPF may be unloaded by the map/model editor stuff (add exception for it)
-    - Move World Map textures to separate dictionary so they aren't randomly cleared by the normal ResourceDictionary stuff
- 
-Project:
- - Add a 'viewer' mode that the program is in by default: can view X gametype, but no saving of any kind.
- - Prompt user to either enter 'viewer' mode or load recent project (no more automatic reload without user confirmation)
  
 #--------------------------------------
 # Notes
 #--------------------------------------
 Make SOTE world map more accurate
 
-# Blockers
-Implement DSMS change to TextEditor stuff, should fix the TalkParam issue
-TalkParam is lagging heavily: due to GenerateEntryGroup
- - TalkMsg FMG itself takes too long too
- 
-
-11210015L
-1.12.1 - (EquipParamWeapon) Set pad to Vanilla v1.12.1 values
-param EquipParamWeapon: modified && !added: pad: = vanillafield pad
-
-11210015L
-1.12.1 - (EquipParamGem) Set reserved2_canMountWep to Vanilla v1.12.1 values
-param EquipParamGem: modified && !added: reserved2_canMountWep: = vanillafield reserved2_canMountWep
+Add FMG update action

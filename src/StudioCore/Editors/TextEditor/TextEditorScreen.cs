@@ -217,6 +217,10 @@ public class TextEditorScreen : EditorScreen
                 foreach (KeyValuePair<string, string> path in folders)
                 {
                     string disp = path.Key;
+
+                    if (TextLanguageNameMapping.ContainsKey(path.Key))
+                        disp = TextLanguageNameMapping[path.Key];
+
                     if (currentFmgBank.fmgLangs.ContainsKey(path.Key))
                     {
                         disp += "*";
@@ -231,7 +235,115 @@ public class TextEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+
+        /*
+        LoadFMGUpdateLists();
+
+        if (HasUniqueVanillaFMGEntries())
+        {
+            if (ImGui.Button("Update FMGs"))
+            {
+
+            }
+            ImguiUtils.ShowHoverTooltip("Your mod has unique FMG entries that are not in the latest FMG binder. Use this action to move them into it.");
+        }
+        */
+
     }
+
+    private bool InitFmgUpdateLists = false;
+
+    private void LoadFMGUpdateLists()
+    {
+        if (InitFmgUpdateLists)
+            return;
+
+        InitFmgUpdateLists = true;
+
+        // Only support ER for now, although technically DS3 should be covered
+        if (Smithbox.ProjectType is ProjectType.ER)
+        {
+            Dictionary<FmgFileCategory, FMGFileSet> Project_VanillaFmgInfoBanks = new();
+            Dictionary<FmgFileCategory, FMGFileSet> Base_VanillaFmgInfoBanks = new();
+
+            ResourceDescriptor projectItemMsgPath = ResourceTextLocator.GetItemMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true);
+            ResourceDescriptor projectMenuMsgPath = ResourceTextLocator.GetMenuMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true);
+            ResourceDescriptor baseItemMsgPath = ResourceTextLocator.GetItemMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true, true);
+            ResourceDescriptor baseMenuMsgPath = ResourceTextLocator.GetMenuMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true, true);
+
+            FMGFileSet projectItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
+            if (projectItemMsgBnd.LoadMsgBnd(projectItemMsgPath.AssetPath, "item.msgbnd"))
+                Project_VanillaFmgInfoBanks.Add(projectItemMsgBnd.FileCategory, projectItemMsgBnd);
+
+            FMGFileSet projectMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
+            if (projectMenuMsgBnd.LoadMsgBnd(projectMenuMsgPath.AssetPath, "menu.msgbnd"))
+                Project_VanillaFmgInfoBanks.Add(projectMenuMsgBnd.FileCategory, projectMenuMsgBnd);
+
+            FMGFileSet baseItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
+            if (baseItemMsgBnd.LoadMsgBnd(baseItemMsgPath.AssetPath, "item.msgbnd"))
+                Base_VanillaFmgInfoBanks.Add(baseItemMsgBnd.FileCategory, baseItemMsgBnd);
+
+            FMGFileSet baseMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
+            if (baseMenuMsgBnd.LoadMsgBnd(baseMenuMsgPath.AssetPath, "menu.msgbnd"))
+                Base_VanillaFmgInfoBanks.Add(baseMenuMsgBnd.FileCategory, baseMenuMsgBnd);
+
+            var allEntris_Item = new List<FMG.Entry>();
+            var newEntries_Item = new List<FMG.Entry>();
+
+            // Items
+            foreach(var entry in Project_VanillaFmgInfoBanks)
+            {
+                var fileset = entry.Value;
+                foreach(var info in fileset.FmgInfos)
+                {
+                    foreach(var row in info.Fmg.Entries)
+                    {
+                        allEntris_Item.Add(row);;
+                    }
+                }
+            }
+            foreach (var entry in Base_VanillaFmgInfoBanks)
+            {
+                var fileset = entry.Value;
+                foreach (var info in fileset.FmgInfos)
+                {
+                    foreach (var row in info.Fmg.Entries)
+                    {
+                        allEntris_Item.Add(row); ;
+                    }
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Checks whether there are unique entries in the mod's vanilla/DLC1 FMGs (for games that use the DLC1/DLC2 system)
+    /// </summary>
+    /// <returns></returns>
+    private bool HasUniqueVanillaFMGEntries()
+    {
+
+        return false;
+    }
+
+    private Dictionary<string, string> TextLanguageNameMapping = new Dictionary<string, string>()
+    {
+        { "araae", "Arabic" },
+        { "deude", "German" },
+        { "engus", "English" },
+        { "frafr", "French" },
+        { "itait", "Italian" },
+        { "jpnjp", "Japanese" },
+        { "korkr", "Korean" },
+        { "polpl", "Polish" },
+        { "porbr", "Portuguese - Brazil" },
+        { "rusru", "Russian" },
+        { "spaar", "Spanish - Spain" },
+        { "spaes", "Spanish - Latin America " },
+        { "thath", "Thai" },
+        { "zhocn", "Simplified Chinese" },
+        { "zhotw", "Traditional Chinese " }
+    };
 
     public void OnGUI(string[] initcmd)
     {
@@ -621,13 +733,14 @@ public class TextEditorScreen : EditorScreen
                             {
                                 if (info.EntryType is not FmgEntryTextType.Title and not FmgEntryTextType.TextBody)
                                 {
-                                    if (Smithbox.ProjectType == ProjectType.AC6)
+                                    try
                                     {
-                                        // Bugfix for AC6
-                                        if (info.FmgID is not FmgIDType.TutorialTitle2023)
-                                        {
-                                            _filteredFmgInfo.Add(info.GetTitleFmgInfo());
-                                        }
+                                        _filteredFmgInfo.Add(info.GetTitleFmgInfo());
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        //This fmginfo lacks a title
+                                        _filteredFmgInfo.Add(info);
                                     }
                                 }
                                 else
@@ -849,16 +962,12 @@ public class TextEditorScreen : EditorScreen
 
     private void ChangeLanguage(string path)
     {
+        TaskLogs.AddLog(path);
         Smithbox.ProjectHandler.CurrentProject.Config.LastFmgLanguageUsed = path;
         _fmgSearchAllString = "";
         _filteredFmgInfo.Clear();
         ClearTextEditorCache();
         ResetActionManager();
-        Smithbox.BankHandler.FMGBank.LoadFMGs();
+        Smithbox.BankHandler.FMGBank.LoadFMGs(path);
     }
-
-    
-
-
-    
 }

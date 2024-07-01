@@ -3,8 +3,8 @@
   <Enums>
   </Enums>
   <Field>
-    <atkChrId AltName="Rider - Character ID" Wiki="It is a parameter that identifies the character of the riding side when riding." />
-    <defChrId AltName="Mount - Character ID" Wiki="It is a parameter that identifies the character of the riding side when riding." />
+    <atkChrId AltName="Rider - Character ID" Wiki="It is a parameter that identifies the character of the riding side when riding." CharacterAlias="" />
+    <defChrId AltName="Mount - Character ID" Wiki="It is a parameter that identifies the character of the riding side when riding." CharacterAlias="" />
     <rideCamParamId AltName="Ride - Camera Param ID" Wiki="It is a parameter to change the camera parameter at the time of riding to a dedicated camera. It is a parameter for PC only, and it does not work even if it is set to the enemy." />
     <atkChrAnimId AltName="Rider - Character Animation ID" Wiki="It is a parameter to rewrite the value of variable RideOnAnimId set in RideOn (playback during riding) state of the tool HavokAnimationTool (HAT) that controls character animation playback." />
     <defChrAnimId AltName="Mount - Character Animation ID" Wiki="It is a parameter to rewrite the value of variable RiddenOnAnimId set in RiddenOn (playback when riding) state of the tool HavokAnimationTool (HAT) that controls character animation playback." />
