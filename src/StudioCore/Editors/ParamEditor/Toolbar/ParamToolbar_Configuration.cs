@@ -38,6 +38,7 @@ public class ParamToolbar_Configuration
         ImguiUtils.WrappedText("Configuration");
         ImGui.Separator();
 
+        ParamAction_MergeParams.Configure();
         ParamAction_DuplicateRow.Configure();
         ParamAction_SortRows.Configure();
         ParamAction_ImportRowNames.Configure();
@@ -48,6 +49,7 @@ public class ParamToolbar_Configuration
         ParamAction_FindRowIdInstances.Configure();
         ParamAction_FindValueInstances.Configure();
 
+        ParamAction_MergeParams.Act();
         ParamAction_DuplicateRow.Act();
         ParamAction_SortRows.Act();
         ParamAction_ImportRowNames.Act();

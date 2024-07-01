@@ -98,22 +98,28 @@ public class ProjectModal
     {
         var width = ImGui.GetWindowWidth() / 100;
 
-        ImGui.Separator();
-        ImguiUtils.WrappedText("Recent Projects");
-        ImGui.Separator();
+        if (CFG.Current.RecentProjects.Count > 0)
+        {
+            ImGui.Separator();
+            ImguiUtils.WrappedText("Recent Projects");
+            ImGui.Separator();
 
-        Smithbox.ProjectHandler.DisplayRecentProjects();
+            Smithbox.ProjectHandler.DisplayRecentProjects();
 
-        ImGui.Separator();
+            ImGui.Separator();
+        }
 
         if (ImGui.Button("Load New Project", new Vector2(width * 95, 32)))
         {
             Smithbox.ProjectHandler.OpenProjectDialog();
         }
 
-        if (ImGui.Button("Load Recent Project", new Vector2(width * 95, 32)))
+        if (CFG.Current.LastProjectFile != "")
         {
-            Smithbox.ProjectHandler.LoadRecentProject();
+            if (ImGui.Button("Load Recent Project", new Vector2(width * 95, 32)))
+            {
+                Smithbox.ProjectHandler.LoadRecentProject();
+            }
         }
     }
 

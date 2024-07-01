@@ -104,6 +104,31 @@ public class SettingsWindow
                     CFG.Current.System_UI_Scale = CFG.Default.System_UI_Scale;
                     Smithbox.FontRebuildRequest = true;
                 }
+                ImGui.SameLine();
+                if (ImGui.Button("Reset AppData"))
+                {
+                    DialogResult result = PlatformUtils.Instance.MessageBox(
+                    $"Do you want to delete your AppData files?",
+                    $"Warning", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        var configFolder = CFG.GetConfigFilePath();
+                        var keybindsFolder = CFG.GetBindingsFilePath();
+
+                        if (File.Exists(configFolder))
+                        {
+                            File.Delete(configFolder);
+                        }
+                        if (File.Exists(keybindsFolder))
+                        {
+                            File.Delete(keybindsFolder);
+                        }
+
+                        CFG.Save();
+                    }
+                }
+                ImguiUtils.ShowHoverTooltip("This will delete your Smithbox folder in %appdata%/Local/, allowing it to be re-generated.");
             }
 
             if (ImGui.CollapsingHeader("Formats"))

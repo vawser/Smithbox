@@ -65,14 +65,14 @@ public class ProjectHandler
         Smithbox.ProjectHandler.IsInitialLoad = false;
     }
 
-    public void LoadProject(string path)
+    public bool LoadProject(string path)
     {
         if (CurrentProject.Config == null)
         {
             PlatformUtils.Instance.MessageBox(
                 "Failed to load last project. Project will not be loaded after restart.",
                 "Project Load Error", MessageBoxButtons.OK);
-            return;
+            return false;
         }
 
         if(path == "")
@@ -80,7 +80,7 @@ public class ProjectHandler
             PlatformUtils.Instance.MessageBox(
                 $"Path parameter was empty: {path}",
                 "Project Load Error", MessageBoxButtons.OK);
-            return;
+            return false;
         }
 
         CurrentProject.ProjectJsonPath = path;
@@ -110,9 +110,11 @@ public class ProjectHandler
         AddProjectToRecentList(CurrentProject);
 
         UpdateTimer();
+
+        return true;
     }
 
-    public void LoadProjectFromJSON(string jsonPath)
+    public bool LoadProjectFromJSON(string jsonPath)
     {
         if (CurrentProject == null)
         {
@@ -124,10 +126,10 @@ public class ProjectHandler
 
         if (CurrentProject.Config == null)
         {
-            return;
+            return false;
         }
 
-        LoadProject(jsonPath);
+        return LoadProject(jsonPath);
     }
 
     public void ClearProject()
@@ -452,14 +454,25 @@ public class ProjectHandler
     {
         var success = PlatformUtils.Instance.OpenFileDialog("Choose the project json file", new[] { FilterStrings.ProjectJsonFilter }, out var projectJsonPath);
 
-        LoadProjectFromJSON(projectJsonPath);
-        Smithbox.ProjectHandler.IsInitialLoad = false;
+        if (projectJsonPath != null)
+        {
+            if (projectJsonPath.Contains("project.json"))
+            {
+                if (LoadProjectFromJSON(projectJsonPath))
+                {
+                    Smithbox.ProjectHandler.IsInitialLoad = false;
+                }
+            }
+        }
     }
 
     public void LoadRecentProject()
     {
-        LoadProjectFromJSON(Current.LastProjectFile);
-        Smithbox.ProjectHandler.IsInitialLoad = false;
+        // Only set this to false if recent project load is sucessful
+        if (LoadProjectFromJSON(Current.LastProjectFile))
+        {
+            Smithbox.ProjectHandler.IsInitialLoad = false;
+        }
     }
 
 

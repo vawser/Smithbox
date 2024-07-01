@@ -64,6 +64,7 @@ public class ParamToolbar_ActionList
         ImguiUtils.ShowHoverTooltip("Toggle whether certain toolbar actions prompt the user before applying.");
         ImGui.Separator();
 
+        ParamAction_MergeParams.Select();
         ParamAction_DuplicateRow.Select();
         ParamAction_SortRows.Select();
         ParamAction_ImportRowNames.Select();
