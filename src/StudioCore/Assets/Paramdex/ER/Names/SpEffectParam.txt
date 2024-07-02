@@ -3806,38 +3806,38 @@
 20007730 SOTE - Human-NPC NG+ Scaling:
 20007740 SOTE - Human-NPC NG+ Scaling:
 20007750 SOTE - Human-NPC NG+ Scaling:
-20008400 SOTE - DLC-Specific NG+ Scaling: 
-20008410 SOTE - DLC-Specific NG+ Scaling: 
-20008420 SOTE - DLC-Specific NG+ Scaling: 
-20008430 SOTE - DLC-Specific NG+ Scaling: 
-20008440 SOTE - DLC-Specific NG+ Scaling: 
-20008450 SOTE - DLC-Specific NG+ Scaling: 
-20008460 SOTE - DLC-Specific NG+ Scaling: 
-20008470 SOTE - DLC-Specific NG+ Scaling: 
-20008480 SOTE - DLC-Specific NG+ Scaling: 
-20008490 SOTE - DLC-Specific NG+ Scaling: 
-20008500 SOTE - DLC-Specific NG+ Scaling: 
-20008510 SOTE - DLC-Specific NG+ Scaling: 
-20008520 SOTE - DLC-Specific NG+ Scaling: 
-20008530 SOTE - DLC-Specific NG+ Scaling: 
-20008540 SOTE - DLC-Specific NG+ Scaling: 
-20008550 SOTE - DLC-Specific NG+ Scaling: 
-20008600 SOTE - DLC-Specific NG+ Scaling: 
-20008610 SOTE - DLC-Specific NG+ Scaling: 
-20008620 SOTE - DLC-Specific NG+ Scaling: 
-20008630 SOTE - DLC-Specific NG+ Scaling: 
-20008640 SOTE - DLC-Specific NG+ Scaling: 
-20008650 SOTE - DLC-Specific NG+ Scaling: 
-20008660 SOTE - DLC-Specific NG+ Scaling: 
-20008670 SOTE - DLC-Specific NG+ Scaling: 
-20008680 SOTE - DLC-Specific NG+ Scaling: 
-20008690 SOTE - DLC-Specific NG+ Scaling: 
-20008700 SOTE - DLC-Specific NG+ Scaling: 
-20008710 SOTE - DLC-Specific NG+ Scaling: 
-20008720 SOTE - DLC-Specific NG+ Scaling: 
-20008730 SOTE - DLC-Specific NG+ Scaling: 
-20008740 SOTE - DLC-Specific NG+ Scaling: 
-20008750 SOTE - DLC-Specific NG+ Scaling: 
+20008400 SOTE - DLC Completion NG+ Scaling: 
+20008410 SOTE - DLC Completion NG+ Scaling: 
+20008420 SOTE - DLC Completion NG+ Scaling: 
+20008430 SOTE - DLC Completion NG+ Scaling: 
+20008440 SOTE - DLC Completion NG+ Scaling: 
+20008450 SOTE - DLC Completion NG+ Scaling: 
+20008460 SOTE - DLC Completion NG+ Scaling: 
+20008470 SOTE - DLC Completion NG+ Scaling: 
+20008480 SOTE - DLC Completion NG+ Scaling: 
+20008490 SOTE - DLC Completion NG+ Scaling: 
+20008500 SOTE - DLC Completion NG+ Scaling: 
+20008510 SOTE - DLC Completion NG+ Scaling: 
+20008520 SOTE - DLC Completion NG+ Scaling: 
+20008530 SOTE - DLC Completion NG+ Scaling: 
+20008540 SOTE - DLC Completion NG+ Scaling: 
+20008550 SOTE - DLC Completion NG+ Scaling: 
+20008600 SOTE - DLC Completion NG+ Scaling: 
+20008610 SOTE - DLC Completion NG+ Scaling: 
+20008620 SOTE - DLC Completion NG+ Scaling: 
+20008630 SOTE - DLC Completion NG+ Scaling: 
+20008640 SOTE - DLC Completion NG+ Scaling: 
+20008650 SOTE - DLC Completion NG+ Scaling: 
+20008660 SOTE - DLC Completion NG+ Scaling: 
+20008670 SOTE - DLC Completion NG+ Scaling: 
+20008680 SOTE - DLC Completion NG+ Scaling: 
+20008690 SOTE - DLC Completion NG+ Scaling: 
+20008700 SOTE - DLC Completion NG+ Scaling: 
+20008710 SOTE - DLC Completion NG+ Scaling: 
+20008720 SOTE - DLC Completion NG+ Scaling: 
+20008730 SOTE - DLC Completion NG+ Scaling: 
+20008740 SOTE - DLC Completion NG+ Scaling: 
+20008750 SOTE - DLC Completion NG+ Scaling: 
 20200000 [Spirit Summon] Curseblade Meera
 20200001 [Spirit Summon] Curseblade Meera +1
 20200002 [Spirit Summon] Curseblade Meera +2
