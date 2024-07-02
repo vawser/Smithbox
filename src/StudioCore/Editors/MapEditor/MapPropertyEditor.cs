@@ -834,31 +834,9 @@ public class MapPropertyEditor
         // Top Decoration
         if (decorate)
         {
-            if (entSelection.Count == 1)
+            if (CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
             {
-                if (firstEnt.References != null)
-                {
-                    if (CFG.Current.MapEditor_Enable_Property_Property_Class_Info)
-                    {
-                        // Display info on the map object class (e.g. Part.Enemy, Region.RetryPoint, etc)
-                        PropInfo_MapObjectType.Display(firstEnt);
-
-                        // Display class-specific additional info
-                        PropInfo_Region_Connection.Display(firstEnt);
-                        PropInfo_Part_ConnectCollision.Display(firstEnt);
-                    }
-
-                    if (CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
-                    {
-                        if (CFG.Current.MapEditor_Enable_Property_Property_References)
-                        {
-                            // Display references
-                            PropInfo_References.Display(firstEnt, _viewport, ref selection, ref refID);
-                            PropInfo_ReferencedBy.Display(firstEnt, _viewport, ref selection, ref refID);
-                            PropInfo_ParamJumps.Display(firstEnt, _viewport, ref selection, ref refID);
-                        }
-                    }
-                }
+                DisplayPropertyViewDecorations(entSelection, firstEnt, selection, refID);
             }
 
             ImGui.Separator();
@@ -1264,20 +1242,39 @@ public class MapPropertyEditor
         {
             ImGui.Columns(1);
 
-            if (entSelection.Count == 1)
+            if (!CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
             {
-                if (firstEnt.References != null)
+                DisplayPropertyViewDecorations(entSelection, firstEnt, selection, refID);
+            }
+        }
+    }
+
+    private void DisplayPropertyViewDecorations(HashSet<Entity> entSelection, Entity firstEnt, ViewportSelection selection, int refID)
+    {
+        if (entSelection.Count == 1)
+        {
+            if (firstEnt.References != null)
+            {
+                if (CFG.Current.MapEditor_Enable_Property_Property_Class_Info)
                 {
-                    if (!CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
-                    {
-                        if (CFG.Current.MapEditor_Enable_Property_Property_References)
-                        {
-                            // Display references
-                            PropInfo_References.Display(firstEnt, _viewport, ref selection, ref refID);
-                            PropInfo_ReferencedBy.Display(firstEnt, _viewport, ref selection, ref refID);
-                            PropInfo_ParamJumps.Display(firstEnt, _viewport, ref selection, ref refID);
-                        }
-                    }
+                    PropInfo_MapObjectType.Display(firstEnt);
+                }
+                if(CFG.Current.MapEditor_Enable_Property_Property_SpecialProperty_Info)
+                {
+                    PropInfo_Region_Connection.Display(firstEnt);
+                    PropInfo_Part_ConnectCollision.Display(firstEnt);
+                }
+                if (CFG.Current.MapEditor_Enable_Property_Property_ReferencesTo)
+                {
+                    PropInfo_ReferencesTo.Display(firstEnt, _viewport, ref selection, ref refID);
+                }
+                if (CFG.Current.MapEditor_Enable_Property_Property_ReferencesBy)
+                {
+                    PropInfo_ReferencedBy.Display(firstEnt, _viewport, ref selection, ref refID);
+                }
+                if (CFG.Current.MapEditor_Enable_Param_Quick_Links)
+                {
+                    PropInfo_ParamJumps.Display(firstEnt, _viewport, ref selection, ref refID);
                 }
             }
         }

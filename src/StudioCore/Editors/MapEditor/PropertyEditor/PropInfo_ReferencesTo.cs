@@ -15,7 +15,7 @@ using Veldrid.Utilities;
 
 namespace StudioCore.Editors.MapEditor.PropertyEditor;
 
-public static class PropInfo_References
+public static class PropInfo_ReferencesTo
 {
     public static void Display(Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {

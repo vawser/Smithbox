@@ -50,6 +50,9 @@ public static class PropInfo_Part_ConnectCollision
                     }
                 }
             }
+            ImGui.Separator();
+            ImGui.Text($"Target Map ID:");
+            ImGui.Separator();
 
             ImGui.Text(mapString);
             AliasUtils.DisplayAlias(Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapString));

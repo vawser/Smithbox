@@ -356,11 +356,14 @@ public class CFG
     public bool MapEditor_Enable_Commmunity_Hints = true;
     public bool MapEditor_Enable_Property_Info = false;
     public bool MapEditor_Enable_Map_Load_on_Double_Click = false;
-    public bool MapEditor_Enable_Property_Property_Class_Info = true;
-    public bool MapEditor_Enable_Property_Property_References = true;
     public bool MapEditor_Enable_Property_Filter = true;
     public bool MapEditor_Enable_Param_Quick_Links = true;
+
     public bool MapEditor_Enable_Property_Property_TopDecoration = false;
+    public bool MapEditor_Enable_Property_Property_Class_Info = true;
+    public bool MapEditor_Enable_Property_Property_SpecialProperty_Info = true;
+    public bool MapEditor_Enable_Property_Property_ReferencesTo = true;
+    public bool MapEditor_Enable_Property_Property_ReferencesBy = true;
 
     public bool MapEditor_MapObjectList_ShowListSortingType = true;
     public bool MapEditor_MapObjectList_ShowMapIdSearch = true;

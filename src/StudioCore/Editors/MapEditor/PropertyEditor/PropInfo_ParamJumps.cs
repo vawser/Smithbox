@@ -26,9 +26,6 @@ public static class PropInfo_ParamJumps
         if (firstEnt.References.Count == 0)
             return;
 
-        if (!CFG.Current.MapEditor_Enable_Param_Quick_Links)
-            return;
-
         // Only relevant to assets
         if ( (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6 ) && firstEnt.IsPartPureAsset())
         {
