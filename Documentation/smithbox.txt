@@ -87,6 +87,7 @@ Param Editor:
 
 Text Editor:
  - Add generator tool for quickly adding entires, e.g. weapon entries: start ID, step amount, end ID, default title, default desc
+ - FMG Exporter is adding unneed \n newlines on export and then causing double newlines on import
  
 Gparam Editor:
  - Add mass edit power to Quick Edit: Allow edits to affect all files
@@ -115,3 +116,4 @@ Focus:
 - Change TextureRef lookup to not require the fixed paths in Param META (instead setup default lookups based on game, and add user-configurable extension to Project Textures window)
 - Generate AtkParam names by looking up TAE, finding Animation string that corresponds to BehaviorJudgeID usage, then look in c0000.hkx for the animation's generator to find the 'name' for the AtkParam row
 
+Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;

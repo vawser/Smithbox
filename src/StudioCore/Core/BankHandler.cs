@@ -7,6 +7,7 @@ using StudioCore.Banks.SelectionGroupBank;
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Banks.TextureCorrectionBank;
+using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
@@ -57,6 +58,7 @@ public class BankHandler
     public ProjectEnumBank ProjectEnums;
 
     public FMGBank FMGBank;
+    public LightmapAtlasBank LightmapAtlasBank;
 
     //public ProjectEnumBank ProjectEnums;
 
@@ -93,6 +95,7 @@ public class BankHandler
         ProjectEnums = new ProjectEnumBank("Project Enums");
 
         FMGBank = new FMGBank();
+        LightmapAtlasBank = new LightmapAtlasBank();
 
         // TODO
         MaterialResourceBank.Setup();
@@ -129,6 +132,7 @@ public class BankHandler
         ProjectEnums.LoadBank();
 
         FMGBank.LoadFMGs();
+        LightmapAtlasBank.LoadBank();
 
         // TODO
         ParamBank.ReloadParams();

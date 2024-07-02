@@ -26,6 +26,8 @@ using StudioCore.Editors.MapEditor.EntryFileList;
 using StudioCore.Locators;
 using StudioCore.Editors.AssetBrowser;
 using StudioCore.Core;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -535,7 +537,34 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             ImGui.EndMenu();
         }
+
+        if (ImGui.BeginMenu("Tools"))
+        {
+            // WIP
+            /*
+            if (Smithbox.BankHandler.LightmapAtlasBank.UsesLightmapAtlases())
+            {
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
+                if (ImGui.MenuItem("Lightmap Atlas Editor"))
+                {
+                    if (LightmapAtlasEditor == null)
+                    {
+                        LightmapAtlasEditor = new LightmapAtlasScreen();
+                        LightmapAtlasEditor.ToggleDisplay();
+                    }
+                    else
+                    {
+                        LightmapAtlasEditor.ToggleDisplay();
+                    }
+                }
+            }
+            */
+
+            ImGui.EndMenu();
+        }
     }
+
+    private LightmapAtlasScreen LightmapAtlasEditor;
 
     public void OnGUI(string[] initcmd)
     {
@@ -938,6 +967,11 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         if (FeatureFlags.EnableNavmeshBuilder)
         {
             NavMeshEditor.OnGui();
+        }
+
+        if(LightmapAtlasEditor != null)
+        {
+            LightmapAtlasEditor.OnGui();
         }
 
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);

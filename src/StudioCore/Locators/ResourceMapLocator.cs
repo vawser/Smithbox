@@ -341,4 +341,62 @@ public static class ResourceMapLocator
         // Default
         return mapid.Substring(0, 6) + "_00_00";
     }
+
+    /// <summary>
+    /// Get a BTAB asset.
+    /// </summary>
+    public static List<ResourceDescriptor> GetMapBTABs(string mapid)
+    {
+        List<ResourceDescriptor> resourceDescriptors = new();
+
+        var rootDirectory = $"{Smithbox.GameRoot}\\map\\{mapid}";
+        var projectDirectory = $"{Smithbox.ProjectRoot}\\map\\{mapid}";
+
+        // Get the names
+        var names = new List<string>();
+
+        if (Directory.Exists(rootDirectory))
+        {
+            foreach (var file in Directory.GetFiles(rootDirectory))
+            {
+                var path = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(file));
+
+                if (file.Contains(".btab.dcx"))
+                    names.Add(path);
+            }
+        }
+
+        if (Directory.Exists(projectDirectory))
+        {
+            foreach (var file in Directory.GetFiles(projectDirectory))
+            {
+                var path = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(file));
+                if (file.Contains(".btab.dcx"))
+                {
+                    if (!names.Contains(path))
+                        names.Add(path);
+                }
+            }
+        }
+
+        var paths = new List<string>();
+
+        // Get the resource descriptors
+        foreach(var name in names)
+        {
+            var path = ResourceLocatorUtils.GetAssetPath($"\\map\\{mapid}\\{name}.btab.dcx");
+            paths.Add(path);
+        }
+
+        foreach(var path in paths)
+        {
+            ResourceDescriptor resource = new ResourceDescriptor();
+
+            resource.AssetPath = path;
+
+            resourceDescriptors.Add(resource);
+        }
+
+        return resourceDescriptors;
+    }
 }
