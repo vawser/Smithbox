@@ -275,11 +275,11 @@ param ObjActParam: modified && !added: pad2: = vanillafield pad2
 1.12.1 - (NpcParam) Set unknown_0x1e3 to Vanilla v1.12.1 values
 param NpcParam: modified && !added: unknown_0x1e3: = vanillafield unknown_0x1e3
 11210015L
-1.12.1 - (NpcParam) Set unknown_0x26a to Vanilla v1.12.1 values
-param NpcParam: modified && !added: unknown_0x26a: = vanillafield unknown_0x26a
+1.12.1 - (NpcParam) Set isConsideredUndead to Vanilla v1.12.1 values
+param NpcParam: modified && !added: isConsideredUndead: = vanillafield isConsideredUndead
 11210015L
-1.12.1 - (NpcParam) Set unknown_0x2d8 to Vanilla v1.12.1 values
-param NpcParam: modified && !added: unknown_0x2d8: = vanillafield unknown_0x2d8
+1.12.1 - (NpcParam) Set dlcGameClearSpEffectID to Vanilla v1.12.1 values
+param NpcParam: modified && !added: dlcGameClearSpEffectID: = vanillafield dlcGameClearSpEffectID
 11210015L
 1.12.1 - (NetworkParam) Set unknown_0x7c to Vanilla v1.12.1 values
 param NetworkParam: modified && !added: unknown_0x7c: = vanillafield unknown_0x7c

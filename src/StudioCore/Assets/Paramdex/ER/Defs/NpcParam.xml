@@ -1983,7 +1983,7 @@
       <SortID>2000004</SortID>
     </Field>
     
-    <Field Def="u8 unknown_0x26a" FirstVersion="11210015" />
+    <Field Def="u8 isConsideredUndead" FirstVersion="11210015" />
     
     <Field Def="u8 wheelRotType">
       <DisplayName>車輪制御タイプ</DisplayName>
@@ -2202,7 +2202,8 @@
     
     <Field Def="dummy8 pad12_old[8]" RemovedVersion="11210015" />
     
-    <Field Def="s32 unknown_0x2d8" FirstVersion="11210015" />
+    <Field Def="s32 dlcGameClearSpEffectID" FirstVersion="11210015" />
+    
     <Field Def="dummy8 pad12[4]" FirstVersion="11210015" >
       <DisplayName>パディング12</DisplayName>
       <SortID>2000005</SortID>
