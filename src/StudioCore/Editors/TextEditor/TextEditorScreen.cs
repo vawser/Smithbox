@@ -1036,7 +1036,6 @@ public class TextEditorScreen : EditorScreen
                         {
                             _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
                             TextAction_Delete.DeleteSelectedEntry();
-                            DeleteFMGEntries(_activeEntryGroup);
                         }
 
                         ImGui.Separator();
