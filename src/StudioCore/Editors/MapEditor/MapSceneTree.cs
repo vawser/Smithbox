@@ -115,6 +115,11 @@ public class MapSceneTree : IActionEventHandler
         }
     }
 
+    public void SetWorldMapSelection()
+    {
+        _mapObjectListSearchInput = "World Map Selection";
+    }
+
     public void OnGui()
     {
         var scale = Smithbox.GetUIScale();
@@ -234,18 +239,32 @@ public class MapSceneTree : IActionEventHandler
             List<string> mapTags = Smithbox.NameCacheHandler.MapNameCache.GetMapTags(CurrentMapID);
 
             // Map name search filter
-            if(!SearchFilters.IsMapSearchMatch(_mapObjectListSearchInput, CurrentMapID, aliasName, mapTags))
+            if (_mapObjectListSearchInput == "World Map Selection")
             {
-                if (CFG.Current.MapEditor_Always_List_Loaded_Maps)
+                _worldMapScreen.MapSelectionActive = true;
+            }
+            else
+            {
+                if (_worldMapScreen.MapSelectionActive && _mapObjectListSearchInput != "World Map Selection")
                 {
-                    if(CurrentObjectContainer == null)
+                    _worldMapScreen.MapSelectionActive = false;
+                    Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;
+                }
+
+                if (!SearchFilters.IsMapSearchMatch(_mapObjectListSearchInput, CurrentMapID, aliasName, mapTags))
+                {
+
+                    if (CFG.Current.MapEditor_Always_List_Loaded_Maps)
+                    {
+                        if (CurrentObjectContainer == null)
+                        {
+                            continue;
+                        }
+                    }
+                    else
                     {
                         continue;
                     }
-                }
-                else
-                {
-                    continue;
                 }
             }
 

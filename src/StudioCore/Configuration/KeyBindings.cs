@@ -173,7 +173,6 @@ public class KeyBindings
 
         public KeyBind Map_WorldMap_Vanilla = new("Toggle Lands Between Map", KeybindCategory.MapEditor, Key.M, true, false, false);
         public KeyBind Map_WorldMap_SOTE = new("Toggle Shadow of the Erdtree Map", KeybindCategory.MapEditor, Key.M, true, true, false);
-        public KeyBind Map_WorldMap_ClearSelection = new("Clear World Map Selection", KeybindCategory.MapEditor, Key.X, true, false, false);
         public KeyBind Map_WorldMap_DragMap = new("Drag Map", KeybindCategory.MapEditor, Key.C, false, false, false);
 
         // Model Editor

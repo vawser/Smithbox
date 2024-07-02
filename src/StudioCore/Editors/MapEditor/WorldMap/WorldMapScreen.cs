@@ -5,6 +5,7 @@ using StudioCore.Core;
 using StudioCore.Formats;
 using StudioCore.Interface;
 using StudioCore.Locators;
+using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,8 @@ public class WorldMapScreen : IResourceEventListener
     List<string> currentHoverMaps = new List<string>();
 
     private bool IsViewingSOTEMap = false;
+
+    public bool MapSelectionActive = false;
 
     public WorldMapScreen()
     {
@@ -83,11 +86,6 @@ public class WorldMapScreen : IResourceEventListener
             };
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_ClearSelection))
-        {
-            Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;
-        }
-
         if (InputTracker.GetKey(Key.LControl))
         {
             HandleZoom();
@@ -117,7 +115,7 @@ public class WorldMapScreen : IResourceEventListener
 
         if (LoadedWorldMapTexture && CFG.Current.MapEditor_ShowWorldMapButtons)
         {
-            if (ImGui.Button("Lands Between", new Vector2(widthUnit * 40, 20 * scale)))
+            if (ImGui.Button("Lands Between", new Vector2(widthUnit * 48, 20 * scale)))
             {
                 if (!ResourceManager.IsResourceLoadedOrInFlight("smithbox/worldmap/world_map_vanilla", AccessLevel.AccessGPUOptimizedOnly))
                     LoadWorldMapTexture();
@@ -132,7 +130,7 @@ public class WorldMapScreen : IResourceEventListener
             ImguiUtils.ShowHoverTooltip($"Open the Lands Between world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.Map_WorldMap_Vanilla.HintText}");
 
             ImGui.SameLine();
-            if (ImGui.Button("Shadow of the Erdtree", new Vector2(widthUnit * 40, 20 * scale)))
+            if (ImGui.Button("Shadow of the Erdtree", new Vector2(widthUnit * 48, 20 * scale)))
             {
                 if (!ResourceManager.IsResourceLoadedOrInFlight("smithbox/worldmap/world_map_sote", AccessLevel.AccessGPUOptimizedOnly))
                     LoadWorldMapTexture();
@@ -145,13 +143,6 @@ public class WorldMapScreen : IResourceEventListener
                 };
             }
             ImguiUtils.ShowHoverTooltip($"Open the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.Map_WorldMap_SOTE.HintText}");
-
-            ImGui.SameLine();
-            if (ImGui.Button("Clear", new Vector2(widthUnit * 15, 20 * scale)))
-            {
-                Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;
-            }
-            ImguiUtils.ShowHoverTooltip($"Clear the current world map selection (if any).\nShortcut: {KeyBindings.Current.Map_WorldMap_ClearSelection.HintText}");
         }
     }
 
@@ -258,21 +249,6 @@ public class WorldMapScreen : IResourceEventListener
         currentHoverMaps = GetMatchingMaps(relativePos);
 
         ImGui.Separator();
-        ImGui.Text($"Maps in Tile:");
-        ImguiUtils.ShowHoverTooltip("These are the maps that are within the tile you are currently hovering over within the world map.");
-        ImGui.Separator();
-
-        // Hover Maps
-        if (currentHoverMaps != null && currentHoverMaps.Count > 0)
-        {
-            foreach(var match in currentHoverMaps)
-            {
-                ImGui.Text($"{match}");
-                AliasUtils.DisplayAlias(Smithbox.NameCacheHandler.MapNameCache.GetMapName(match));
-            }
-        }
-
-        ImGui.Separator();
         ImGui.Text($"Selection:");
         ImguiUtils.ShowHoverTooltip("These are the maps that the map object list will be filtered to.");
         ImGui.Separator();
@@ -282,7 +258,28 @@ public class WorldMapScreen : IResourceEventListener
         {
             foreach (var match in Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone)
             {
-                ImGui.Text($"{match}");
+                // Add load buttons here
+                if(ImGui.Button($"Load##load{match}"))
+                {
+                    Smithbox.EditorHandler.MapEditor.Universe.LoadMap(match, false);
+                }
+                ImGui.SameLine();
+                ImguiUtils.WrappedText($"{match}");
+                AliasUtils.DisplayAlias(Smithbox.NameCacheHandler.MapNameCache.GetMapName(match));
+            }
+        }
+
+        ImGui.Separator();
+        ImGui.Text($"Maps in Tile:");
+        ImguiUtils.ShowHoverTooltip("These are the maps that are within the tile you are currently hovering over within the world map.");
+        ImGui.Separator();
+
+        // Hover Maps
+        if (currentHoverMaps != null && currentHoverMaps.Count > 0)
+        {
+            foreach (var match in currentHoverMaps)
+            {
+                ImguiUtils.WrappedText($"{match}");
                 AliasUtils.DisplayAlias(Smithbox.NameCacheHandler.MapNameCache.GetMapName(match));
             }
         }
@@ -295,6 +292,7 @@ public class WorldMapScreen : IResourceEventListener
             {
                 if (currentHoverMaps != null && currentHoverMaps.Count > 0)
                 {
+                    Smithbox.EditorHandler.MapEditor.SceneTree.SetWorldMapSelection();
                     Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = currentHoverMaps;
                 }
             }
