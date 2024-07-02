@@ -83,8 +83,8 @@ param WepAbsorpPosParam: modified && !added: unknown_0x57: = vanillafield unknow
 1.12.1 - (WepAbsorpPosParam) Set reserve to Vanilla v1.12.1 values
 param WepAbsorpPosParam: modified && !added: reserve: = vanillafield reserve
 11210015L
-1.12.1 - (SwordArtsParam) Set swordArtsTypeDlc to Vanilla v1.12.1 values
-param SwordArtsParam: modified && !added: swordArtsTypeDlc: = vanillafield swordArtsTypeDlc
+1.12.1 - (SwordArtsParam) Set swordArtsTypeNew to Vanilla v1.12.1 values
+param SwordArtsParam: modified && !added: swordArtsTypeNew: = vanillafield swordArtsTypeNew
 11210015L
 1.12.1 - (SpEffectVfxParam) Set unknown_0x2f_7 to Vanilla v1.12.1 values
 param SpEffectVfxParam: modified && !added: unknown_0x2f_7: = vanillafield unknown_0x2f_7
@@ -280,9 +280,6 @@ param NpcParam: modified && !added: unknown_0x26a: = vanillafield unknown_0x26a
 11210015L
 1.12.1 - (NpcParam) Set unknown_0x2d8 to Vanilla v1.12.1 values
 param NpcParam: modified && !added: unknown_0x2d8: = vanillafield unknown_0x2d8
-11210015L
-1.12.1 - (NpcParam) Set pad12 to Vanilla v1.12.1 values
-param NpcParam: modified && !added: pad12: = vanillafield pad12
 11210015L
 1.12.1 - (NetworkParam) Set unknown_0x7c to Vanilla v1.12.1 values
 param NetworkParam: modified && !added: unknown_0x7c: = vanillafield unknown_0x7c
@@ -517,9 +514,6 @@ param CharaInitParam: modified && !added: unknown_0x50: = vanillafield unknown_0
 11210015L
 1.12.1 - (CharaInitParam) Set unknown_0x51 to Vanilla v1.12.1 values
 param CharaInitParam: modified && !added: unknown_0x51: = vanillafield unknown_0x51
-11210015L
-1.12.1 - (CharaInitParam) Set pad8 to Vanilla v1.12.1 values
-param CharaInitParam: modified && !added: pad8: = vanillafield pad8
 11210015L
 1.12.1 - (BulletParam) Set unknown_0x98_3 to Vanilla v1.12.1 values
 param BulletParam: modified && !added: unknown_0x98_3: = vanillafield unknown_0x98_3

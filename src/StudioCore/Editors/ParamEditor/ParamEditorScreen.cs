@@ -1310,7 +1310,9 @@ public class ParamEditorScreen : EditorScreen
             }
         }
 
-        if (result == ParamBank.ParamUpgradeResult.Success)
+        // Apply this even if Row conflicts occur since the user can still save,
+        // so we want the new fields to be populated correctly.
+        if (result == ParamBank.ParamUpgradeResult.Success || result == ParamBank.ParamUpgradeResult.RowConflictsFound)
         {
             (List<string> success, List<string> fail) = RunUpgradeEdits(oldVersion, newVersion);
 
