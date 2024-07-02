@@ -543,11 +543,18 @@ public class SettingsWindow
                 ImGui.Checkbox("Display property class info", ref CFG.Current.MapEditor_Enable_Property_Property_Class_Info);
                 ImguiUtils.ShowHoverTooltip("The MSB property view will display information relating to the map object's class.");
 
-                ImGui.Checkbox("Display property references", ref CFG.Current.MapEditor_Enable_Property_Property_References);
-                ImguiUtils.ShowHoverTooltip("The MSB property view will display references by and for the selected map object.");
-
                 ImGui.Checkbox("Display property filter", ref CFG.Current.MapEditor_Enable_Property_Filter);
                 ImguiUtils.ShowHoverTooltip("The MSB property filter combo-box will be visible.");
+            }
+
+            // Property References
+            if (ImGui.CollapsingHeader("Property References"))
+            {
+                ImGui.Checkbox("Display references at the top", ref CFG.Current.MapEditor_Enable_Property_Property_TopDecoration);
+                ImguiUtils.ShowHoverTooltip("The MSB property references will be displayed at the top of the properties window. By default they will appear at the bottom.");
+
+                ImGui.Checkbox("Display property references", ref CFG.Current.MapEditor_Enable_Property_Property_References);
+                ImguiUtils.ShowHoverTooltip("The MSB property view will display references by and for the selected map object.");
 
                 ImGui.Checkbox("Display param quick links", ref CFG.Current.MapEditor_Enable_Param_Quick_Links);
                 ImguiUtils.ShowHoverTooltip("The param quick links at the top of the MSB property view will be visible.");

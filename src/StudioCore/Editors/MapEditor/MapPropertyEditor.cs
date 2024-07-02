@@ -848,12 +848,15 @@ public class MapPropertyEditor
                         PropInfo_Part_ConnectCollision.Display(firstEnt);
                     }
 
-                    if (CFG.Current.MapEditor_Enable_Property_Property_References)
+                    if (CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
                     {
-                        // Display references
-                        PropInfo_References.Display(firstEnt, _viewport, ref selection, ref refID);
-                        PropInfo_ReferencedBy.Display(firstEnt, _viewport, ref selection, ref refID);
-                        PropInfo_ParamJumps.Display(firstEnt, _viewport, ref selection, ref refID);
+                        if (CFG.Current.MapEditor_Enable_Property_Property_References)
+                        {
+                            // Display references
+                            PropInfo_References.Display(firstEnt, _viewport, ref selection, ref refID);
+                            PropInfo_ReferencedBy.Display(firstEnt, _viewport, ref selection, ref refID);
+                            PropInfo_ParamJumps.Display(firstEnt, _viewport, ref selection, ref refID);
+                        }
                     }
                 }
             }
@@ -1254,6 +1257,29 @@ public class MapPropertyEditor
             }
 
             id++;
+        }
+    
+        // Bottom Decoration
+        if(decorate)
+        {
+            ImGui.Columns(1);
+
+            if (entSelection.Count == 1)
+            {
+                if (firstEnt.References != null)
+                {
+                    if (!CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
+                    {
+                        if (CFG.Current.MapEditor_Enable_Property_Property_References)
+                        {
+                            // Display references
+                            PropInfo_References.Display(firstEnt, _viewport, ref selection, ref refID);
+                            PropInfo_ReferencedBy.Display(firstEnt, _viewport, ref selection, ref refID);
+                            PropInfo_ParamJumps.Display(firstEnt, _viewport, ref selection, ref refID);
+                        }
+                    }
+                }
+            }
         }
     }
 
