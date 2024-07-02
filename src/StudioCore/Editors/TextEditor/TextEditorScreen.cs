@@ -294,8 +294,6 @@ public class TextEditorScreen : EditorScreen
             FMGFileSet baseMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
             FMGFileSet baseDlcMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
 
-            projectDlcItemMsgBnd = null;
-
             if (projectItemMsgBnd == null || projectDlcItemMsgBnd == null || baseItemMsgBnd == null || baseDlcItemMsgBnd == null || projectMenuMsgBnd == null || baseMenuMsgBnd == null || baseDlcMenuMsgBnd == null || projectDlcMenuMsgBnd == null)
                 return;
 
@@ -640,6 +638,8 @@ public class TextEditorScreen : EditorScreen
             return;
 
         Smithbox.BankHandler.FMGBank.SaveFMGs();
+
+        SetupFmgUpdate(); // Re-run this to check FMG update state
     }
 
     public void SaveAll()
@@ -648,6 +648,8 @@ public class TextEditorScreen : EditorScreen
             return;
 
         Smithbox.BankHandler.FMGBank.SaveFMGs();
+
+        SetupFmgUpdate(); // Re-run this to check FMG update state
     }
 
     private void ClearTextEditorCache()
