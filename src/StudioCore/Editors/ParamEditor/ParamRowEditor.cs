@@ -138,13 +138,13 @@ public class ParamRowEditor
     }
 
     private void PropEditorParamRow_RowFields(ParamBank bank, Param.Row row, Param.Row vrow,
-        List<(string, Param.Row)> auxRows, Param.Row crow, ref int imguiId, ParamEditorSelectionState selection)
+        List<(string, Param.Row)> auxRows, Param.Row crow, ref int imguiId, ParamEditorSelectionState selection, string activeParam)
     {
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         PropertyInfo nameProp = row.GetType().GetProperty("Name");
         PropertyInfo idProp = row.GetType().GetProperty("ID");
-        PropEditorPropInfoRow(bank, row, vrow, auxRows, crow, nameProp, "Name", ref imguiId, selection);
-        PropEditorPropInfoRow(bank, row, vrow, auxRows, crow, idProp, "ID", ref imguiId, selection);
+        PropEditorPropInfoRow(bank, row, vrow, auxRows, crow, nameProp, "Name", ref imguiId, selection, activeParam);
+        PropEditorPropInfoRow(bank, row, vrow, auxRows, crow, idProp, "ID", ref imguiId, selection, activeParam);
         ImGui.PopStyleColor();
         ImGui.Spacing();
     }
@@ -309,7 +309,7 @@ public class ParamRowEditor
 
             EditorDecorations.ImguiTableSeparator();
 
-            PropEditorParamRow_RowFields(bank, row, vrow, auxRows, crow, ref imguiId, selection);
+            PropEditorParamRow_RowFields(bank, row, vrow, auxRows, crow, ref imguiId, selection, activeParam);
 
             var search = propSearchString;
             List<(PseudoColumn, Param.Column)> cols = UICache.GetCached(_paramEditor, row, "fieldFilter",
@@ -355,7 +355,7 @@ public class ParamRowEditor
     // Many parameter options, which may be simplified.
     private void PropEditorPropInfoRow(ParamBank bank, Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, PropertyInfo prop, string visualName, ref int imguiId,
-        ParamEditorSelectionState selection)
+        ParamEditorSelectionState selection, string activeParam)
     {
         PropEditorPropRow(
             bank,
@@ -371,7 +371,7 @@ public class ParamRowEditor
             prop,
             null,
             row,
-            null,
+            activeParam,
             false,
             null,
             selection);
@@ -701,8 +701,14 @@ public class ParamRowEditor
             {
                 if (Smithbox.ProjectType is ProjectType.ER)
                 {
-                    ParamReferenceUtils.BonfireWarpParam(activeParam, row, internalName);
-                    ParamReferenceUtils.GameAreaParam(activeParam, row, internalName);
+                    // These are placed at the top, below the ID row
+                    if (imguiId == 1)
+                    {
+                        ParamReferenceUtils.BonfireWarpParam(activeParam, row, internalName);
+                        ParamReferenceUtils.GameAreaParam(activeParam, row, internalName);
+                    }
+
+                    // These are placed in-line with the current field
                 }
             }
 
@@ -710,6 +716,13 @@ public class ParamRowEditor
             {
                 if (Smithbox.ProjectType is ProjectType.ER)
                 {
+                    // These are placed at the top, below the ID row
+                    if (imguiId == 1)
+                    {
+                        ParamReferenceUtils.AssetGeometryParam(activeParam, row, internalName);
+                    }
+
+                    // These are placed in-line with the current field
                     ParamReferenceUtils.GrassTypeParam(activeParam, row, internalName);
                 }
             }

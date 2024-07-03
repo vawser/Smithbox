@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using HKX2;
 using ImGuiNET;
 using StudioCore.Editor;
 using StudioCore.Interface;
@@ -14,9 +15,19 @@ namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamReferenceUtils
 {
+    // Supports: ER
     public static void BonfireWarpParam(string activeParam, Param.Row row, string currentField)
     {
-        if (activeParam == "BonfireWarpParam" && currentField == "bonfireEntityId")
+        if (activeParam == null)
+            return;
+
+        if (row == null)
+            return;
+
+        if (currentField == null)
+            return;
+
+        if (activeParam == "BonfireWarpParam")
         {
             bool show = false;
             var mapId = "";
@@ -76,9 +87,19 @@ public static class ParamReferenceUtils
         }
     }
 
+    // Supports: ER
     public static void GameAreaParam(string activeParam, Param.Row row, string currentField)
     {
-        if (activeParam == "GameAreaParam" && currentField == "defeatBossFlagId")
+        if (activeParam == null)
+            return;
+
+        if (row == null)
+            return;
+
+        if (currentField == null)
+            return;
+
+        if (activeParam == "GameAreaParam")
         {
             bool show = false;
             var mapId = "";
@@ -136,8 +157,18 @@ public static class ParamReferenceUtils
         }
     }
 
+    // Supports: ER
     public static void GrassTypeParam(string activeParam, Param.Row row, string currentField)
     {
+        if (activeParam == null)
+            return;
+
+        if (row == null)
+            return;
+
+        if (currentField == null)
+            return;
+
         if (activeParam.Contains("GrassTypeParam") && (currentField == "model0Name" || currentField == "model1Name" ) )
         {
             Param.Cell? c = row?["model0Name"];
@@ -165,5 +196,80 @@ public static class ParamReferenceUtils
                 ImguiUtils.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
             }
         }
+    }
+
+    private static List<string> AssetList;
+
+    // Supports: ER
+    public static void AssetGeometryParam(string activeParam, Param.Row row, string currentField)
+    {
+        if (activeParam == null)
+            return;
+
+        if (row == null)
+            return;
+
+        if (activeParam == "AssetEnvironmentGeometryParam")
+        {
+            int rowID = row.ID;
+            string assetID = "";
+
+            assetID = DeriveAssetID(rowID);
+
+            var width = ImGui.GetColumnWidth();
+
+            if(AssetList == null)
+                AssetList = AssetListLocator.GetObjModels();
+
+            if (AssetList.Contains(assetID.ToLower()) && assetID != "")
+            {
+                var aliasName = AliasUtils.GetAliasFromCache(assetID.ToLower(), Smithbox.BankHandler.AssetAliases.Aliases.list);
+
+                if (ImGui.Button($"View Model: {assetID}", new Vector2(width, 20)))
+                {
+                    EditorCommandQueue.AddCommand($"model/load/{assetID}/Asset");
+                }
+                ImguiUtils.ShowWideHoverTooltip($"{assetID}: {aliasName}");
+            }
+        }
+    }
+
+    // Get the asset ID from the AssetGeometryParam row ID.
+    private static string DeriveAssetID(int rowID)
+    {
+        string assetID = "";
+
+        string id = rowID.ToString();
+        if (id.Length > 3)
+        {
+            string assetNum = id.Substring(id.Length - 3, 3);
+
+            if(id.Length == 4)
+            {
+                string assetCategoryNum = id.Substring(0, 1);
+                assetID = $"AEG00{assetCategoryNum}_{assetNum}";
+            }
+            if (id.Length == 5)
+            {
+                string assetCategoryNum = id.Substring(0, 2);
+                assetID = $"AEG0{assetCategoryNum}_{assetNum}";
+            }
+            if (id.Length == 6)
+            {
+                string assetCategoryNum = id.Substring(0, 3);
+                assetID = $"AEG{assetCategoryNum}_{assetNum}";
+            }
+        }
+        else
+        {
+            if (id.Length == 1)
+                assetID = $"AEG000_00{id}";
+            if (id.Length == 2)
+                assetID = $"AEG000_0{id}";
+            if (id.Length == 3)
+                assetID = $"AEG000_{id}";
+        }
+
+        return assetID;
     }
 }
