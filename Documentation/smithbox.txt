@@ -116,4 +116,4 @@ Misc:
 #--------------------------------------
 # Notes
 #--------------------------------------
-Map coordinates seem messed up for new m61 tiles
+Index outside bounds of array: TextureResource issue with icon preview (dylan)

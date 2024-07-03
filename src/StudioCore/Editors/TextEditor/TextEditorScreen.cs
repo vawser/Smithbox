@@ -16,6 +16,7 @@ using StudioCore.Locators;
 using StudioCore.Core;
 using StudioCore.Editors.TextEditor;
 using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
+using System.IO;
 
 namespace StudioCore.TextEditor;
 
@@ -294,7 +295,15 @@ public class TextEditorScreen : EditorScreen
             FMGFileSet baseMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
             FMGFileSet baseDlcMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
 
-            if (projectItemMsgBnd == null || projectDlcItemMsgBnd == null || baseItemMsgBnd == null || baseDlcItemMsgBnd == null || projectMenuMsgBnd == null || baseMenuMsgBnd == null || baseDlcMenuMsgBnd == null || projectDlcMenuMsgBnd == null)
+            // If the asset paths do not exist, return early to stop a failed msgbnd load
+            if (!File.Exists(projectItemMsgPath.AssetPath) ||
+                !File.Exists(projectDlcItemMsgPath.AssetPath) ||
+                !File.Exists(baseItemMsgPath.AssetPath) ||
+                !File.Exists(baseDlcItemMsgPath.AssetPath) ||
+                !File.Exists(projectMenuMsgPath.AssetPath) ||
+                !File.Exists(projectDlcMenuMsgPath.AssetPath) ||
+                !File.Exists(baseMenuMsgPath.AssetPath) ||
+                !File.Exists(baseDlcMenuMsgPath.AssetPath))
                 return;
 
             if (projectItemMsgBnd.LoadMsgBnd(projectItemMsgPath.AssetPath, "item.msgbnd"))
