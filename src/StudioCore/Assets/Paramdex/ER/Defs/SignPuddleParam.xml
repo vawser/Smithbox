@@ -37,14 +37,21 @@
     
     <Field Def="s32 unknown_0x20" FirstVersion="11210015"/>
     <Field Def="s32 unknown_0x24" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x28" FirstVersion="11210015"/>
-    <Field Def="f32 unknown_0x2c" FirstVersion="11210015"/>
-    <Field Def="f32 unknown_0x30" FirstVersion="11210015"/>
-    <Field Def="f32 unknown_0x34" FirstVersion="11210015"/>
+    
+    <Field Def="u8 areaNo" FirstVersion="11210015"/>
+    <Field Def="u8 gridXNo" FirstVersion="11210015"/>
+    <Field Def="u8 gridZNo" FirstVersion="11210015"/>
+    <Field Def="dummy8 pad3[1]" FirstVersion="11210015"/>
+    
+    <Field Def="f32 posX" FirstVersion="11210015"/>
+    <Field Def="f32 posY" FirstVersion="11210015"/>
+    <Field Def="f32 posZ" FirstVersion="11210015"/>
+    
     <Field Def="s32 signSubCategoryId" FirstVersion="11210015"/>
     <Field Def="s32 locationTextId" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x40" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x44" FirstVersion="11210015"/>
+    
+    <Field Def="s32 sortId" FirstVersion="11210015"/>
+    <Field Def="dummy8 endPad[4]" FirstVersion="11210015"/>
 
   </Fields>
 </PARAMDEF>

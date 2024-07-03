@@ -161,29 +161,38 @@ param SignPuddleParam: modified && !added: unknown_0x20: = vanillafield unknown_
 1.12.1 - (SignPuddleParam) Set unknown_0x24 to Vanilla v1.12.1 values
 param SignPuddleParam: modified && !added: unknown_0x24: = vanillafield unknown_0x24
 11210015L
-1.12.1 - (SignPuddleParam) Set unknown_0x28 to Vanilla v1.12.1 values
-param SignPuddleParam: modified && !added: unknown_0x28: = vanillafield unknown_0x28
+1.12.1 - (SignPuddleParam) Set areaNo to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: areaNo: = vanillafield areaNo
 11210015L
-1.12.1 - (SignPuddleParam) Set unknown_0x2c to Vanilla v1.12.1 values
-param SignPuddleParam: modified && !added: unknown_0x2c: = vanillafield unknown_0x2c
+1.12.1 - (SignPuddleParam) Set gridXNo to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: gridXNo: = vanillafield gridXNo
 11210015L
-1.12.1 - (SignPuddleParam) Set unknown_0x30 to Vanilla v1.12.1 values
-param SignPuddleParam: modified && !added: unknown_0x30: = vanillafield unknown_0x30
+1.12.1 - (SignPuddleParam) Set gridZNo to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: gridZNo: = vanillafield gridZNo
 11210015L
-1.12.1 - (SignPuddleParam) Set unknown_0x34 to Vanilla v1.12.1 values
-param SignPuddleParam: modified && !added: unknown_0x34: = vanillafield unknown_0x34
+1.12.1 - (SignPuddleParam) Set pad3 to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: pad3: = vanillafield pad3
 11210015L
-1.12.1 - (SignPuddleParam) Set unknown_0x38 to Vanilla v1.12.1 values
-param SignPuddleParam: modified && !added: unknown_0x38: = vanillafield unknown_0x38
+1.12.1 - (SignPuddleParam) Set posX to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: posX: = vanillafield posX
 11210015L
-1.12.1 - (SignPuddleParam) Set unknown_0x3c to Vanilla v1.12.1 values
-param SignPuddleParam: modified && !added: unknown_0x3c: = vanillafield unknown_0x3c
+1.12.1 - (SignPuddleParam) Set posY to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: posY: = vanillafield posY
 11210015L
-1.12.1 - (SignPuddleParam) Set unknown_0x40 to Vanilla v1.12.1 values
-param SignPuddleParam: modified && !added: unknown_0x40: = vanillafield unknown_0x40
+1.12.1 - (SignPuddleParam) Set posZ to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: posZ: = vanillafield posZ
 11210015L
-1.12.1 - (SignPuddleParam) Set unknown_0x44 to Vanilla v1.12.1 values
-param SignPuddleParam: modified && !added: unknown_0x44: = vanillafield unknown_0x44
+1.12.1 - (SignPuddleParam) Set signSubCategoryId to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: signSubCategoryId: = vanillafield signSubCategoryId
+11210015L
+1.12.1 - (SignPuddleParam) Set locationTextId to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: locationTextId: = vanillafield locationTextId
+11210015L
+1.12.1 - (SignPuddleParam) Set sortId to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: sortId: = vanillafield sortId
+11210015L
+1.12.1 - (SignPuddleParam) Set endPad to Vanilla v1.12.1 values
+param SignPuddleParam: modified && !added: endPad: = vanillafield endPad
 11210015L
 1.12.1 - (PostureControlParam_WepRight) Set unknown_0x6c to Vanilla v1.12.1 values
 param PostureControlParam_WepRight: modified && !added: unknown_0x6c: = vanillafield unknown_0x6c

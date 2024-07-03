@@ -5,7 +5,7 @@
   <Field>
     <startPad IsHidden="" />
     <signPuddleCategoryText AltName="Sign Puddle Category Text ID" FmgRef="Modern_MenuText" />
-    <signPuddleTabId AltName="Tab ID" Refs="SignPubbleTabParam" />
+    <signPuddleTabId AltName="Tab ID" Refs="SignPuddleTabParam" />
     <endPad IsHidden="" />
   </Field>
   <Self />
