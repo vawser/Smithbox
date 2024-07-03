@@ -961,7 +961,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 Universe.Selection.ClearSelection();
                 Universe.Selection.AddSelection(target);
                 Universe.Selection.GotoTreeTarget = target;
-                MapAction_FrameInViewport.Act(_selection);
+                MapAction_FrameInViewport.ApplyFrameInViewport(_selection);
             }
         }
 

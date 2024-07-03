@@ -3,6 +3,7 @@ using HKX2;
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Locators;
 using System;
@@ -332,8 +333,6 @@ public static class ParamReferenceUtils
 
             if (show)
             {
-                TaskLogs.AddLog("show");
-
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
