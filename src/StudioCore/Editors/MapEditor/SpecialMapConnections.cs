@@ -275,7 +275,7 @@ internal class SpecialMapConnections
             }
 
             var dstParts = GetRowMapParts(row, dstPartFields).ToArray();
-            if (dstParts[0] != 60)
+            if (dstParts[0] != 60 || dstParts[0] != 61)
             {
                 continue;
             }
@@ -304,7 +304,7 @@ internal class SpecialMapConnections
             // Calculating destination (legacy) in terms of source (already legacy)
             // Only one iteration of this appears to be needed.
             var dstParts = GetRowMapParts(row, dstPartFields).ToArray();
-            if (dstParts[0] == 60)
+            if (dstParts[0] == 60 || dstParts[0] == 61)
             {
                 continue;
             }
@@ -379,7 +379,7 @@ internal class SpecialMapConnections
             mapId[3] = 0;
         }
 
-        if (mapId[0] == 60 && mapId[1] > 0 && mapId[2] > 0)
+        if ((mapId[0] == 60 || mapId[0] == 61 ) && mapId[1] > 0 && mapId[2] > 0)
         {
             var scale = mapId[3] % 10;
             var scaleFactor = 1;

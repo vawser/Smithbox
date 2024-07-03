@@ -70,7 +70,8 @@ Map Editor:
  - Add "Find Value Instances" for MSB values
  - Fix select via arrow keys in the Map Scene tree (alias seems to stop it working).
  
-Model Editor:
+Model Editor: 
+ - Re-build Model Editor to follow the following structure: load FLVER and present data in with non-reflection method, then create rendering aspects FROM the FLVER data.
  - Fix the Model Editor so it saves the FLVERs correctly
  - Add "Copy As" action for top-level node that lets the user duplicate the entire "chr" set: anibnd, chrbnd, etc
  - Add floating text for dummy poly ref IDs
@@ -102,16 +103,17 @@ Texture Viewer:
  - Add ability to edit Shoebox Layouts (subwindow)
  - Add ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
- - Change image preview lookup to instead look more generally for icons, change icon field TextureRefs to "{gametype}Lookup", retain the explicit matching though for other usage
+ - Change TextureRef lookup to not require the fixed paths in Param META (instead setup default lookups based on game, and add user-configurable extension to Project Textures window)
  
 World Map:
  - Add the dungeon icons, add icon radius for the non-open world maps
  - Add support for large/medium/small tile overlays
  
+Misc:
+- Generate AtkParam names by looking up TAE, finding Animation string that corresponds to BehaviorJudgeID usage, then look in c0000.hkx for the animation's generator to find the 'name' for the AtkParam row
+
+
 #--------------------------------------
 # Notes
 #--------------------------------------
-Focus:
-- Generate AtkParam names by looking up TAE, finding Animation string that corresponds to BehaviorJudgeID usage, then look in c0000.hkx for the animation's generator to find the 'name' for the AtkParam row
-- Change TextureRef lookup to not require the fixed paths in Param META (instead setup default lookups based on game, and add user-configurable extension to Project Textures window)
-- Re-build Model Editor to follow the following structure: load FLVER and present data in with non-reflection method, then create rendering aspects FROM the FLVER data.
+Map coordinates seem messed up for new m61 tiles
