@@ -112,8 +112,6 @@ World Map:
 # Notes
 #--------------------------------------
 Focus:
-- Re-build Model Editor to follow the following structure: load FLVER and present data in with non-reflection method, then create rendering aspects FROM the FLVER data.
-- Change TextureRef lookup to not require the fixed paths in Param META (instead setup default lookups based on game, and add user-configurable extension to Project Textures window)
 - Generate AtkParam names by looking up TAE, finding Animation string that corresponds to BehaviorJudgeID usage, then look in c0000.hkx for the animation's generator to find the 'name' for the AtkParam row
-
-Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;
+- Change TextureRef lookup to not require the fixed paths in Param META (instead setup default lookups based on game, and add user-configurable extension to Project Textures window)
+- Re-build Model Editor to follow the following structure: load FLVER and present data in with non-reflection method, then create rendering aspects FROM the FLVER data.
