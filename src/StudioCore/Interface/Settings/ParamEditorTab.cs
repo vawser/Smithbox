@@ -88,6 +88,12 @@ public class ParamEditorTab
 
                 ImGui.Checkbox("Show graph visualisation", ref CFG.Current.Param_ShowGraphVisualisation);
                 ImguiUtils.ShowHoverTooltip("Show graph visualisation in field column if applicable.");
+
+                ImGui.Checkbox("Show view in map button", ref CFG.Current.Param_ViewInMapOption);
+                ImguiUtils.ShowHoverTooltip("Show the view in map if applicable.");
+
+                ImGui.Checkbox("Show view model button", ref CFG.Current.Param_ViewModelOption);
+                ImguiUtils.ShowHoverTooltip("Show the view model if applicable.");
             }
 
             // Values
@@ -117,9 +123,6 @@ public class ParamEditorTab
 
                 ImGui.Checkbox("Display row copy id option", ref CFG.Current.Param_RowContextMenu_CopyID);
                 ImguiUtils.ShowHoverTooltip("Show the copy id option in the right-click row context menu.");
-
-                ImGui.Checkbox("Display row view in map option", ref CFG.Current.Param_RowContextMenu_ViewInMapOption);
-                ImguiUtils.ShowHoverTooltip("Show the view in map option in the right-click row context menu if applicable for the param.");
             }
 
             // Context Menu

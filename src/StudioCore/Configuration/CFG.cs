@@ -446,6 +446,8 @@ public class CFG
     public bool Param_ShowColorPreview = true;
     public bool Param_ShowGraphVisualisation = true;
     public bool Param_PinnedRowsStayVisible = true;
+    public bool Param_ViewInMapOption = true;
+    public bool Param_ViewModelOption = true;
 
     public bool Param_ShowTraditionalPercentages = false;
 
@@ -457,7 +459,6 @@ public class CFG
     public bool Param_RowContextMenu_CompareOptions = true;
     public bool Param_RowContextMenu_ReverseLoopup = true;
     public bool Param_RowContextMenu_CopyID = true;
-    public bool Param_RowContextMenu_ViewInMapOption = true;
 
     public bool Param_FieldContextMenu_Split = false;
     public bool Param_FieldContextMenu_Name = false;

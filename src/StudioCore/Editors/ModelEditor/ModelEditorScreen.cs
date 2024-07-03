@@ -23,6 +23,8 @@ using ModelCore.Editors.ModelEditor.Toolbar;
 using StudioCore.Locators;
 using StudioCore.Editors.AssetBrowser;
 using StudioCore.Core;
+using Org.BouncyCastle.Asn1.X509;
+using HKLib.hk2018.hkaiCollisionAvoidance;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -388,7 +390,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
         }
     }
 
-    public void OnGUI(string[] commands)
+    public void OnGUI(string[] initcmd)
     {
         var scale = Smithbox.GetUIScale();
         // Docking setup
@@ -502,6 +504,40 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             {
                 RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Navmesh | RenderFilter.Object |
                                          RenderFilter.Character | RenderFilter.Region;
+            }
+        }
+
+        if (initcmd != null && initcmd.Length > 1)
+        {
+            if (initcmd[0] == "load")
+            {
+                var modelName = initcmd[1];
+                var assetType = initcmd[2];
+
+                if (assetType == "Character")
+                {
+                    OnInstantiateChr(modelName);
+                }
+
+                if (assetType == "Asset")
+                {
+                    OnInstantiateObj(modelName);
+                }
+
+                if (assetType == "Part")
+                {
+                    OnInstantiateParts(modelName);
+                }
+
+                if(initcmd.Length > 3)
+                {
+                    var mapId = initcmd[3];
+
+                    if (assetType == "MapPiece")
+                    {
+                        OnInstantiateMapPiece(mapId, modelName);
+                    }
+                }
             }
         }
 

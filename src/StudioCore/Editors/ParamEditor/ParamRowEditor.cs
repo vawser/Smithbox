@@ -691,18 +691,38 @@ public class ParamRowEditor
                 }
 
                 ImGui.EndGroup();
-                EditorDecorations.ParamRefEnumQuickLink(bank, oldval, RefTypes, row, FmgRef, Enum, TextureRef);
 
-                if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
+            }
+
+            EditorDecorations.ParamRefEnumQuickLink(bank, oldval, RefTypes, row, FmgRef, Enum, TextureRef);
+
+            // Param Reference Buttons
+            if (CFG.Current.Param_ViewInMapOption)
+            {
+                if (Smithbox.ProjectType is ProjectType.ER)
                 {
-                    if (!CFG.Current.Param_FieldContextMenu_Split)
-                    {
-                        ImGui.OpenPopup("ParamRowCommonMenu");
-                    }
-                    else
-                    {
-                        ImGui.OpenPopup("ParamRowValueMenu");
-                    }
+                    ParamReferenceUtils.BonfireWarpParam(activeParam, row, internalName);
+                    ParamReferenceUtils.GameAreaParam(activeParam, row, internalName);
+                }
+            }
+
+            if (CFG.Current.Param_ViewModelOption)
+            {
+                if (Smithbox.ProjectType is ProjectType.ER)
+                {
+                    ParamReferenceUtils.GrassTypeParam(activeParam, row, internalName);
+                }
+            }
+
+            if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
+            {
+                if (!CFG.Current.Param_FieldContextMenu_Split)
+                {
+                    ImGui.OpenPopup("ParamRowCommonMenu");
+                }
+                else
+                {
+                    ImGui.OpenPopup("ParamRowValueMenu");
                 }
             }
 

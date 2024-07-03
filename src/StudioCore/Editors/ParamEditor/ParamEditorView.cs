@@ -888,18 +888,6 @@ public class ParamEditorView
                 }
             }
 
-            // View in Map
-            if (CFG.Current.Param_RowContextMenu_ViewInMapOption)
-            {
-                ImGui.Separator();
-
-                if (Smithbox.ProjectType is ProjectType.ER)
-                {
-                    ParamMapReferenceUtils.BonfireWarpParam(activeParam, _selection);
-                    ParamMapReferenceUtils.GameAreaParam(activeParam, _selection);
-                }
-            }
-
             ImGui.EndPopup();
         }
 
