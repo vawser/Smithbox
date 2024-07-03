@@ -185,3 +185,82 @@
 1197 Contagious Fury
 1198 Ordovis's Vortex
 1199 Spinning Weapon
+2000 Dryleaf Whirlwind
+2001 Aspects of the Crucible: Wings
+4000 Spinning Gravity Thrust
+4010 Palm Blast
+4020 Piercing Throw
+4030 Scattershot Throw
+4040 Wall of Sparks
+4050 Rolling Sparks
+4060 Raging Beast
+4070 Savage Claws
+4080 Red Bear Hunt
+4090 Blind Spot
+4100 Swift Slash
+4110 Overhead Stance
+4120 Wing Stance
+4130 Blinkbolt
+4140 Flame Skewer
+4150 Savage Lion's Claw
+4160 Divine Beast Frost Stomp
+4170 Flame Spear
+4180 Carian Sovereignty
+4190 Shriek of Sorrow
+4210 Igon's Drake Hunt
+4220 Ghostflame Call
+5000 Dragonwound Slash
+5010 Needle Piercer
+5020 Light
+5030 Darkness
+5040 Onze's Line of Stars
+5050 The Poison Flower Blooms Twice
+5080 Spinning Guillotine
+5090 Unending Dance
+5100 Revenger's Blade
+5110 Mists of Eternal Sleep
+5120 Dynastic Sickleplay
+5130 Blinkbolt: Twinaxe
+5140 Blinkbolt: Long-hafted Axe
+5150 Promised Consort
+5160 Shadow Sunflower Headbutts
+5170 Moon-and-Fire Stance
+5180 Devonia's Vortex
+5190 Messmer's Assault
+5210 Sleep Evermore
+5220 Golden Crux
+5230 Moore's Charge
+5240 White Light Charge
+5250 Rancor Slash
+5260 Witching Hour Slash
+5270 Euporia Vortex
+5280 Smithing Art Spears
+5290 Rancor Slash
+5300 Romina's Purification
+5310 Poison Spear-Hand Strike
+5320 Madding Spear-Hand Strike
+5330 Feeble Lord's Frenzied Flame
+5340 Repeating Fire
+5350 Deadly Dance
+5360 Fan Shot
+5370 Discus Hurl
+5380 Flower Dragonbolt
+5390 Kowtower's Resentment
+5420 Painful Strike
+5430 Solitary Moon Slash
+5440 Revenge of the Night
+5450 Weed Cutter
+5460 Blindfold of Happiness
+5470 Jori's Inquisition
+5480 Roaring Bash
+5490 Deadly Poison Spray
+5500 Flare- O Serpent
+5510 Scattershot (Claws)
+5520 Hone Blade
+5530 Horn Calling
+5540 Horn Calling: Storm
+5550 Tremendous Phalanx
+5560 Bloodfiends' Bloodboon
+5570 Dragonform Flame
+5580 Lightspeed Slash
+5600 Rancor Shot
