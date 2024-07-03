@@ -62,53 +62,56 @@ public class TextureImagePreview : IResourceEventListener
         {
             TextureResource texRes = resHandle.Get();
 
-            CurrentTextureInView = texRes;
-            CurrentTextureName = _selectedTextureKey;
-
-            // Get the SubTexture that matches the current field value
-            if (_cachedPreviewSubtexture == null)
+            if (texRes != null)
             {
-                _cachedPreviewSubtexture = GetPreviewSubTexture(context, textureRef);
-            }
+                CurrentTextureInView = texRes;
+                CurrentTextureName = _selectedTextureKey;
 
-            if (texRes != null && _cachedPreviewSubtexture != null)
-            {
-                IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
-
-                // Get scaled image size vector
-                var scale = CFG.Current.Param_FieldContextMenu_ImagePreviewScale;
-
-                // Get crop bounds
-                float Xmin = float.Parse(_cachedPreviewSubtexture.X);
-                float Xmax = Xmin + float.Parse(_cachedPreviewSubtexture.Width);
-                float Ymin = float.Parse(_cachedPreviewSubtexture.Y);
-                float Ymax = Ymin + float.Parse(_cachedPreviewSubtexture.Height);
-
-                // Image size should be based on cropped image
-                Vector2 size = new Vector2(Xmax - Xmin, Ymax - Ymin) * scale;
-
-                // Get UV coordinates based on full image
-                float left = (Xmin) / texRes.GPUTexture.Width;
-                float top = (Ymin) / texRes.GPUTexture.Height;
-                float right = (Xmax) / texRes.GPUTexture.Width;
-                float bottom = (Ymax) / texRes.GPUTexture.Height;
-
-                // Build UV coordinates
-                var UV0 = new Vector2(left, top);
-                var UV1 = new Vector2(right, bottom);
-
-                if (CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu)
+                // Get the SubTexture that matches the current field value
+                if (_cachedPreviewSubtexture == null)
                 {
-                    displayImage = true;
+                    _cachedPreviewSubtexture = GetPreviewSubTexture(context, textureRef);
                 }
 
-                // Display image
-                if (displayImage)
+                if (_cachedPreviewSubtexture != null)
                 {
-                    ImGui.Image(handle, size, UV0, UV1);
-                }
+                    IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
 
-                return true;
+                    // Get scaled image size vector
+                    var scale = CFG.Current.Param_FieldContextMenu_ImagePreviewScale;
+
+                    // Get crop bounds
+                    float Xmin = float.Parse(_cachedPreviewSubtexture.X);
+                    float Xmax = Xmin + float.Parse(_cachedPreviewSubtexture.Width);
+                    float Ymin = float.Parse(_cachedPreviewSubtexture.Y);
+                    float Ymax = Ymin + float.Parse(_cachedPreviewSubtexture.Height);
+
+                    // Image size should be based on cropped image
+                    Vector2 size = new Vector2(Xmax - Xmin, Ymax - Ymin) * scale;
+
+                    // Get UV coordinates based on full image
+                    float left = (Xmin) / texRes.GPUTexture.Width;
+                    float top = (Ymin) / texRes.GPUTexture.Height;
+                    float right = (Xmax) / texRes.GPUTexture.Width;
+                    float bottom = (Ymax) / texRes.GPUTexture.Height;
+
+                    // Build UV coordinates
+                    var UV0 = new Vector2(left, top);
+                    var UV1 = new Vector2(right, bottom);
+
+                    if (CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu)
+                    {
+                        displayImage = true;
+                    }
+
+                    // Display image
+                    if (displayImage)
+                    {
+                        ImGui.Image(handle, size, UV0, UV1);
+                    }
+
+                    return true;
+                }
             }
         }
 
