@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using HKX2;
 using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Locators;
@@ -271,5 +272,107 @@ public static class ParamReferenceUtils
         }
 
         return assetID;
+    }
+
+    public static string CurrentMapID;
+    public static MSBE CurrentPeekMap;
+
+    // Supports: ER
+    public static void ItemLotParam_map(string activeParam, Param.Row row, string currentField)
+    {
+        if (activeParam == null)
+            return;
+
+        if (row == null)
+            return;
+
+        if (currentField == null)
+            return;
+
+        if (activeParam == "ItemLotParam_map")
+        {
+            bool show = false;
+            var mapId = "";
+
+            string rowID = row.ID.ToString();
+
+            string AA = "";
+            string BB = "";
+            string CC = "";
+
+            // Legacy Dungeon
+            if (rowID.Length == 8)
+            {
+                string mapSection = rowID.Substring(0, 5);
+                AA = $"{rowID.Substring(0, 2)}";
+                BB = $"{rowID.Substring(2, 2)}";
+                CC = $"{rowID.Substring(4, 1)}0";
+            }
+            // Open-world Tile
+            else if (rowID.Length >= 8)
+            {
+                string mapSection = rowID.Substring(0, 6);
+                AA = $"{rowID.Substring(0, 2)}";
+                BB = $"{rowID.Substring(2, 2)}";
+                CC = $"{rowID.Substring(4, 2)}";
+            }
+
+            if (AA == "" || BB == "" || CC == "")
+                return;
+
+            var rowMapId = $"m{AA}_{BB}_{CC}_00";
+
+            var mapList = ResourceMapLocator.GetFullMapList();
+
+            if (mapList.Contains(rowMapId))
+            {
+                show = true;
+                mapId = rowMapId;
+            }
+
+            if (show)
+            {
+                TaskLogs.AddLog("show");
+
+                if (CurrentMapID != rowMapId)
+                {
+                    CurrentMapID = rowMapId;
+                    var mapPath = ResourceMapLocator.GetMapMSB(rowMapId);
+                    CurrentPeekMap = MSBE.Read(mapPath.AssetPath);
+                }
+
+                if (CurrentPeekMap == null)
+                    return;
+
+                string AssetName = null;
+
+                foreach(var entry in CurrentPeekMap.Events.Treasures)
+                {
+                    if (entry.ItemLotID == row.ID)
+                    {
+                        AssetName = entry.TreasurePartName;
+                        break;
+                    }
+                }
+
+                if (AssetName == null)
+                    return;
+
+                var width = ImGui.GetColumnWidth();
+
+                if (ImGui.Button($"View in Map", new Vector2(width, 20)))
+                {
+                    if (mapId != "")
+                    {
+                        EditorCommandQueue.AddCommand($"map/load/{mapId}");
+                    }
+                    if (AssetName != "")
+                    {
+                        EditorCommandQueue.AddCommand($"map/select/{mapId}/{AssetName}");
+                    }
+                }
+                ImguiUtils.ShowHoverTooltip("Loads the map and selects the asset that holds this treasure.");
+            }
+        }
     }
 }

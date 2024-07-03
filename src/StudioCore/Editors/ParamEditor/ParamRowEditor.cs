@@ -706,6 +706,7 @@ public class ParamRowEditor
                     {
                         ParamReferenceUtils.BonfireWarpParam(activeParam, row, internalName);
                         ParamReferenceUtils.GameAreaParam(activeParam, row, internalName);
+                        ParamReferenceUtils.ItemLotParam_map(activeParam, row, internalName);
                     }
 
                     // These are placed in-line with the current field
