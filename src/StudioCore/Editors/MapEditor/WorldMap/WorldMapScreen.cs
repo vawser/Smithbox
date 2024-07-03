@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Veldrid;
 
@@ -99,6 +100,12 @@ public class WorldMapScreen : IResourceEventListener
         if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_DragMap))
         {
             AdjustScrollNextFrame = true;
+        }
+
+        if (InputTracker.GetKey(Key.Escape))
+        {
+            IsViewingSOTEMap = false;
+            WorldMapOpen = false;
         }
     }
 
@@ -225,7 +232,7 @@ public class WorldMapScreen : IResourceEventListener
         ImguiUtils.WrappedText($"Press {KeyBindings.Current.TextureViewer_ZoomReset.HintText} to reset zoom level to 100%.");
         ImguiUtils.WrappedText($"");
 
-        ImGui.Text($"Relative Position: {relativePos}");
+        //ImGui.Text($"Relative Position: {relativePos}");
         //ImGui.Text($"Relative (Sans Scroll) Position: {relativePosWindowPosition}");
         //ImGui.Text($"mousePos: {mousePos}");
         //ImGui.Text($"windowHeight: {windowHeight}");
@@ -254,11 +261,10 @@ public class WorldMapScreen : IResourceEventListener
         ImGui.Separator();
 
         // Stored Click Maps
-        if (Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone != null && Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone.Count > 0)
+        if (SelectedMapTiles.Count > 0)
         {
-            foreach (var match in Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone)
+            foreach (var match in SelectedMapTiles)
             {
-                // Add load buttons here
                 if(ImGui.Button($"Load##load{match}"))
                 {
                     Smithbox.EditorHandler.MapEditor.Universe.LoadMap(match, false);
@@ -292,12 +298,27 @@ public class WorldMapScreen : IResourceEventListener
             {
                 if (currentHoverMaps != null && currentHoverMaps.Count > 0)
                 {
-                    Smithbox.EditorHandler.MapEditor.SceneTree.SetWorldMapSelection();
-                    Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = currentHoverMaps;
+                    SelectedMapTiles = currentHoverMaps;
+
+                    if (CFG.Current.WorldMap_EnableFilterOnClick)
+                    {
+                        Smithbox.EditorHandler.MapEditor.SceneTree.SetWorldMapSelection();
+                        Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = currentHoverMaps;
+                    }
+                    if(CFG.Current.WorldMap_EnableLoadOnClick)
+                    {
+                        foreach(var mapId in currentHoverMaps)
+                        {
+                            Smithbox.EditorHandler.MapEditor.Universe.LoadMap(mapId, false);
+                        }
+                    }
                 }
             }
         }
     }
+
+    private List<string> SelectedMapTiles = new List<string>();
+
 
     private void LoadWorldMapTexture() 
     {

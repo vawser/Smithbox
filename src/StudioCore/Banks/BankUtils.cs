@@ -1,7 +1,6 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
-using StudioCore.Banks.MapGroupBank;
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Banks.SelectionGroupBank;
 using StudioCore.Banks.TextureAdditionBank;
@@ -264,84 +263,6 @@ public static class BankUtils
         else
         {
             TaskLogs.AddLog($"{baseResourcePath} does not exist!");
-        }
-
-        return baseResource;
-    }
-
-    public static MapGroupResource LoadMapGroupJSON(string filename, string directory)
-    {
-        var baseResource = new MapGroupResource();
-        var modResource = new MapGroupResource();
-
-        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\{directory}\\{ResourceMiscLocator.GetGameIDForDir()}\\{filename}.json";
-
-        if (File.Exists(baseResourcePath))
-        {
-            using (var stream = File.OpenRead(baseResourcePath))
-            {
-                baseResource = JsonSerializer.Deserialize(stream, MapGroupResourceSerializationContext.Default.MapGroupResource);
-            }
-        }
-
-        var modResourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\{directory}\\{ResourceMiscLocator.GetGameIDForDir()}\\{filename}.json";
-
-        // If path does not exist, use baseResource only
-        if (File.Exists(modResourcePath))
-        {
-            using (var stream = File.OpenRead(modResourcePath))
-            {
-                modResource = JsonSerializer.Deserialize(stream, MapGroupResourceSerializationContext.Default.MapGroupResource);
-            }
-
-            // Replace baseResource entries with those from modResource if there are ID matches
-            foreach (var bEntry in baseResource.list)
-            {
-                var baseId = bEntry.id;
-                var baseName = bEntry.name;
-                var baseDesc = bEntry.description;
-                var baseCategory = bEntry.category;
-                var baseMembers = bEntry.members;
-
-                foreach (var mEntry in modResource.list)
-                {
-                    var modId = mEntry.id;
-                    var modName = mEntry.name;
-                    var modDesc = mEntry.description;
-                    var modCategory = mEntry.category;
-                    var modMembers = mEntry.members;
-
-                    // Mod override exists
-                    if (baseId == modId)
-                    {
-                        bEntry.id = modId;
-                        bEntry.name = modName;
-                        bEntry.description = modDesc;
-                        bEntry.category = modCategory;
-                        bEntry.members = modMembers;
-                    }
-                }
-            }
-
-            // Add mod local unique rentries
-            foreach (var mEntry in modResource.list)
-            {
-                var modId = mEntry.id;
-
-                var isUnique = true;
-
-                foreach (var bEntry in baseResource.list)
-                {
-                    var baseId = bEntry.id;
-
-                    // Mod override exists
-                    if (baseId == modId)
-                        isUnique = false;
-                }
-
-                if (isUnique)
-                    baseResource.list.Add(mEntry);
-            }
         }
 
         return baseResource;

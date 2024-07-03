@@ -22,9 +22,6 @@ public class AliasWindow
     private AliasTab MovieAliasTab;
     private AliasTab MapAliasTab;
 
-    // Special-case tabs
-    private MapGroupTab MapGroupTab;
-
     private bool TabInitialized = false;
 
     public AliasWindow()
@@ -54,8 +51,6 @@ public class AliasWindow
                 SoundAliasTab = new AliasTab(Smithbox.BankHandler.SoundAliases, "Sounds", ref CFG.Current.SoundAtlas_ShowTags, true);
                 ParticleAliasTab = new AliasTab(Smithbox.BankHandler.ParticleAliases, "Particles", ref CFG.Current.ParticleAtlas_ShowTags);
                 MovieAliasTab = new AliasTab(Smithbox.BankHandler.MovieAliases, "Movies", ref CFG.Current.MovieAtlas_ShowTags);
-
-                MapGroupTab = new MapGroupTab();
 
                 TabInitialized = true;
             }
@@ -100,8 +95,6 @@ public class AliasWindow
             DisplayAliasTab(SoundAliasTab, "Sounds");
             DisplayAliasTab(MapAliasTab, "Map Names");
 
-            DisplayMapGroupTab();
-
             ImGui.EndTabBar();
         }
 
@@ -116,16 +109,6 @@ public class AliasWindow
         if (ImGui.BeginTabItem(name))
         {
             tab.Display();
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void DisplayMapGroupTab()
-    {
-        if (ImGui.BeginTabItem("Map Groups"))
-        {
-            MapGroupTab.Display();
 
             ImGui.EndTabItem();
         }

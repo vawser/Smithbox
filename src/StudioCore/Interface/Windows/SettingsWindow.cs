@@ -632,6 +632,22 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("Append the tags to the selection group name.");
             }
 
+            // World Map
+            if (ImGui.CollapsingHeader("World Map"))
+            {
+                if(ImGui.Checkbox("Enable automatic map filtering on click", ref CFG.Current.WorldMap_EnableFilterOnClick))
+                {
+                    CFG.Current.WorldMap_EnableLoadOnClick = false;
+                }
+                ImguiUtils.ShowHoverTooltip("Clicking on the world map will automatically filter the map list to the specific tiles you clicked. Disables automatic loading if enabled.");
+
+                if (ImGui.Checkbox("Enable automatic map loading on click", ref CFG.Current.WorldMap_EnableLoadOnClick))
+                {
+                    CFG.Current.WorldMap_EnableFilterOnClick = false;
+                }
+                ImguiUtils.ShowHoverTooltip("Clicking on the world map will automatically load the maps you clicked. Disables automatic filtering if enabled.");
+            }
+
             ImGui.Unindent();
             ImGui.EndTabItem();
         }

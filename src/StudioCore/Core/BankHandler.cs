@@ -1,7 +1,6 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
-using StudioCore.Banks.MapGroupBank;
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Banks.SelectionGroupBank;
 using StudioCore.Banks.TextureAdditionBank;
@@ -51,7 +50,6 @@ public class BankHandler
     public TextureAdditionBank AdditionalTextureInfo;
     public TextureBlockBank BlockedTextureInfo;
 
-    public MapGroupBank MapGroups;
     public GameOffsetBank GameOffsets;
     public SelectionGroupBank SelectionGroups;
 
@@ -88,7 +86,6 @@ public class BankHandler
         BlockedTextureInfo = new TextureBlockBank();
         CorrectedTextureInfo = new TextureCorrectionBank();
 
-        MapGroups = new MapGroupBank();
         GameOffsets = new GameOffsetBank();
         SelectionGroups = new SelectionGroupBank();
 
@@ -125,7 +122,6 @@ public class BankHandler
         BlockedTextureInfo.LoadBank();
         CorrectedTextureInfo.LoadBank();
 
-        MapGroups.LoadBank();
         GameOffsets.LoadBank();
         SelectionGroups.LoadBank();
 

@@ -402,6 +402,9 @@ public class CFG
     public bool Prefab_ApplySpecificEntityGroupID = false;
     public int Prefab_SpecificEntityGroupID = 0;
 
+    public bool WorldMap_EnableFilterOnClick = true;
+    public bool WorldMap_EnableLoadOnClick = false;
+
     //****************************
     // Settings: Model Editor
     //****************************

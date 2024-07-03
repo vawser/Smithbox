@@ -242,7 +242,6 @@
     
     <None Update="Assets\GameOffsets\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Help\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\MapGroups\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Mappings\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\MassEditScripts\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Themes\**" CopyToOutputDirectory="PreserveNewest" />

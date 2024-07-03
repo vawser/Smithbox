@@ -15,7 +15,6 @@ using StudioCore.Interface;
 using StudioCore.Editor;
 using StudioCore.Locators;
 using StudioCore.Editors.MapEditor.WorldMap;
-using StudioCore.Banks.MapGroupBank;
 using StudioCore.Core;
 
 namespace StudioCore.Editors.MapEditor;
@@ -170,21 +169,22 @@ public class MapSceneTree : IActionEventHandler
                 }
             }
 
-            // Map Groups
-            if (CFG.Current.MapEditor_ShowMapGroups)
-            {
-                DisplayMapGroups();
-            }
-
             // Map ID Search
             if (CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch)
             {
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Map Filter:");
-                ImGui.SameLine();
-                ImGui.SetNextItemWidth(-1);
+                var widthUnit = ImGui.GetWindowWidth() / 100;
+
+                ImGui.SetNextItemWidth(widthUnit * 80);
                 ImGui.InputText("##treeSearch", ref _mapObjectListSearchInput, 99);
-                ImguiUtils.ShowHoverTooltip("Filter the map list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
+                ImguiUtils.ShowHoverTooltip("Filters the map list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
+                ImGui.SameLine();
+                if (ImGui.Button($"Clear##ClearMapFilter", new Vector2(widthUnit * 16, 20 * Smithbox.GetUIScale())))
+                {
+                    _mapObjectListSearchInput = "";
+                    _worldMapScreen.MapSelectionActive = false;
+                    Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;
+                }
+                ImguiUtils.ShowHoverTooltip("Clear the map search filter.");
             }
 
             ImGui.Unindent(5 * scale);
@@ -279,28 +279,6 @@ public class MapSceneTree : IActionEventHandler
                         {
                             continue;
                         }
-                    }
-                }
-            }
-
-            // Map Groups
-            if (currentMapGroup != null)
-            {
-                if (currentMapGroup.members.Count > 0)
-                {
-                    var display = false;
-
-                    foreach (var entry in currentMapGroup.members)
-                    {
-                        if (entry.id == CurrentMapID)
-                        {
-                            display = true;
-                        }
-                    }
-
-                    if (!display)
-                    {
-                        continue;
                     }
                 }
             }
@@ -817,106 +795,6 @@ public class MapSceneTree : IActionEventHandler
         }
     }
 
-    private string currentMapGroupCategory = "All";
-    private MapGroupReference currentMapGroup;
-
-    public void DisplayMapGroups()
-    {
-        var scale = Smithbox.GetUIScale();
-
-        if(Smithbox.ProjectType == ProjectType.Undefined)
-        {
-            return;
-        }
-
-        // If there are no entries, don't display anything
-        if(Smithbox.BankHandler.MapGroups.Groups == null)
-        {
-            return;
-        }
-        else if(Smithbox.BankHandler.MapGroups.Groups.list.Count < 1)
-        {
-            return;
-        }
-
-        if(currentMapGroup == null)
-        {
-            currentMapGroup = Smithbox.BankHandler.MapGroups.Groups.list.First();
-        }
-
-        var widthUnit = ImGui.GetWindowWidth() / 100;
-
-        ImGui.Indent(2f);
-
-        // Map Group Category
-        ImGui.SetNextItemWidth(widthUnit * 40);
-        if (ImGui.BeginCombo("##mapGroupCatCombo", currentMapGroupCategory))
-        {
-            List<string> categoryOptions = new List<string>() { "All" };
-
-            // Add the map group category options
-            foreach (var entry in Smithbox.BankHandler.MapGroups.Groups.list)
-            {
-                if(!categoryOptions.Contains(entry.category))
-                {
-                    categoryOptions.Add(entry.category);
-                }
-            }
-
-            categoryOptions.Sort();
-
-            // Add the map group category options
-            foreach (var entry in categoryOptions)
-            {
-                bool isSelected = (currentMapGroupCategory == entry);
-                if (ImGui.Selectable($"{entry}##{entry}", isSelected))
-                {
-                    currentMapGroupCategory = entry;
-                }
-                if (isSelected)
-                {
-                    ImGui.SetItemDefaultFocus();
-                }
-            }
-
-            ImGui.EndCombo();
-        }
-        ImguiUtils.ShowHoverTooltip($"Filters the map group selection by location.");
-
-        // Map Group Selection
-        ImGui.SameLine();
-        ImGui.SetNextItemWidth(widthUnit * 40);
-        if (ImGui.BeginCombo("##mapGroupCombo", currentMapGroup.name))
-        {
-            foreach(var entry in Smithbox.BankHandler.MapGroups.Groups.list)
-            {
-                if (entry.category == currentMapGroupCategory || currentMapGroupCategory == "All")
-                {
-                    bool isSelected = (currentMapGroup == entry);
-                    if (ImGui.Selectable($"{entry.name}##{entry.id}", isSelected))
-                    {
-                        currentMapGroup = entry;
-                    }
-                    if (isSelected)
-                    {
-                        ImGui.SetItemDefaultFocus();
-                    }
-                }
-            }
-
-            ImGui.EndCombo();
-        }
-        ImguiUtils.ShowHoverTooltip($"Filters map list by selected map group.\n\n{currentMapGroup.description}");
-
-        ImGui.SameLine();
-        if(ImGui.Button("Clear##MapGroupClear", new Vector2(widthUnit * 15, 20 * Smithbox.GetUIScale())))
-        {
-            currentMapGroupCategory = "All";
-            currentMapGroup = Smithbox.BankHandler.MapGroups.Groups.list.First();
-        }
-
-        ImGui.Unindent(2f);
-    }
     public void OnActionEvent(ActionEvent evt)
     {
         if (evt.HasFlag(ActionEvent.ObjectAddedRemoved))
