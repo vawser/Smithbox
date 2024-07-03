@@ -103,7 +103,6 @@ Texture Viewer:
  - Add ability to edit Shoebox Layouts (subwindow)
  - Add ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
- - Change TextureRef lookup to not require the fixed paths in Param META (instead setup default lookups based on game, and add user-configurable extension to Project Textures window)
  
 World Map:
  - Add the dungeon icons, add icon radius for the non-open world maps
@@ -112,8 +111,10 @@ World Map:
 Misc:
 - Generate AtkParam names by looking up TAE, finding Animation string that corresponds to BehaviorJudgeID usage, then look in c0000.hkx for the animation's generator to find the 'name' for the AtkParam row
 
+Known Bugs:
+- Icon Preview (unknown circumstances) -> Index outside bounds of array in Veldrid.Texture: TextureResource issue with icon preview (dylan)
 
 #--------------------------------------
 # Notes
 #--------------------------------------
-Index outside bounds of array: TextureResource issue with icon preview (dylan)
+ - Change TextureRef lookup to not require the fixed paths in Param META (instead setup default lookups based on game, and add user-configurable extension to Project Textures window)
