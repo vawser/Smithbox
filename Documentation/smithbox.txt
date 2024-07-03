@@ -112,7 +112,9 @@ Misc:
 
 Known Bugs:
 - Icon Preview (unknown circumstances) -> Index outside bounds of array in Veldrid.Texture: TextureResource issue with icon preview (dylan)
+- Image Preview is throwing errors some for some.
 
 #--------------------------------------
 # Notes
 #--------------------------------------
+Try to implement ER collisions: requires HKLib usage

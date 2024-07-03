@@ -270,9 +270,9 @@ public class DebugWindow
     {
         if (ImGui.BeginTabItem("Row Name Helper"))
         {
-            if (ImGui.Button("Generate Atk Param Names"))
+            if (ImGui.Button("Generate Item Lot Names"))
             {
-                NameGenerationTool.GenerateAtkParamRowNames();
+                NameGenerationTool.GenerateItemLotNames();
             }
 
             ImGui.EndTabItem();

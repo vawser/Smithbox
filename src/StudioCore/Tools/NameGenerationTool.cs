@@ -12,4 +12,9 @@ public static class NameGenerationTool
     {
 
     }
+
+    public static void GenerateItemLotNames()
+    {
+
+    }
 }
