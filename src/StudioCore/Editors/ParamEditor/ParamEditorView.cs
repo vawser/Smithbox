@@ -896,6 +896,7 @@ public class ParamEditorView
                 if (Smithbox.ProjectType is ProjectType.ER)
                 {
                     ParamMapReferenceUtils.BonfireWarpParam(activeParam, _selection);
+                    ParamMapReferenceUtils.GameAreaParam(activeParam, _selection);
                 }
             }
 

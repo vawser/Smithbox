@@ -69,4 +69,61 @@ public static class ParamMapReferenceUtils
             }
         }
     }
+
+    public static void GameAreaParam(string activeParam, ParamEditorSelectionState _selection)
+    {
+        var activeRow = _selection.GetActiveRow();
+
+        if (activeParam == "GameAreaParam")
+        {
+            bool show = false;
+            var mapId = "";
+
+            uint entityID = 0;
+            entityID = (uint)activeRow.ID;
+
+            byte AA = (byte)activeRow.Cells.Where(e => e.Def.InternalName == "bossMapAreaNo").First().Value;
+            byte BB = (byte)activeRow.Cells.Where(e => e.Def.InternalName == "bossMapBlockNo").First().Value;
+            byte CC = (byte)activeRow.Cells.Where(e => e.Def.InternalName == "bossMapMapNo").First().Value;
+
+            string sAA = $"{AA}";
+            string sBB = $"{BB}";
+            string sCC = $"{CC}";
+
+            if (AA < 10)
+                sAA = $"0{AA}";
+
+            if (BB < 10)
+                sBB = $"0{BB}";
+
+            if (CC < 10)
+                sCC = $"0{CC}";
+
+            var rowMapId = $"m{sAA}_{sBB}_{sCC}_00";
+
+            var mapList = ResourceMapLocator.GetFullMapList();
+
+            if (mapList.Contains(rowMapId))
+            {
+                show = true;
+                mapId = rowMapId;
+            }
+
+            if (show)
+            {
+                if (ImGui.Selectable($"View in Map"))
+                {
+                    if (mapId != "")
+                    {
+                        EditorCommandQueue.AddCommand($"map/load/{mapId}");
+                    }
+                    if (entityID != 0)
+                    {
+                        EditorCommandQueue.AddCommand($"map/idselect/enemy/{mapId}/{entityID}");
+                    }
+                }
+                ImguiUtils.ShowHoverTooltip("Loads the map this boss is located in and selects the boss Enemy map object automatically, allowing you to frame it immediately.");
+            }
+        }
+    }
 }
