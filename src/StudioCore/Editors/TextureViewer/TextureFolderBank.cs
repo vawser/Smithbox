@@ -354,7 +354,6 @@ public static class TextureFolderBank
             Name = name;
             Path = path;
             WasModified = false;
-            CachedName = null;
         }
 
         public TextureViewCategory Category { get; set; }

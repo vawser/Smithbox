@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
+using Silk.NET.Core;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
@@ -338,6 +339,10 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         {
             foreach (var (name, info) in TextureFolderBank.FolderBank)
             {
+                // Skip if info is null
+                if (info == null)
+                    continue;
+
                 if(InvalidateCachedName)
                 {
                     info.CachedName = null;
@@ -345,7 +350,24 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
                 if (info.Category == displayCategory)
                 {
-                    if (SearchFilters.IsTextureSearchMatch(_fileSearchInput, info.Name, "_", info.CachedName))
+                    var rawName = info.Name.ToLower();
+                    var aliasName = "";
+                    switch(displayCategory)
+                    {
+                        case TextureViewCategory.Character: 
+                            aliasName = AliasUtils.GetAliasFromCache(rawName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
+                            break;
+                        case TextureViewCategory.Asset:
+                            aliasName = AliasUtils.GetAliasFromCache(rawName, Smithbox.BankHandler.AssetAliases.Aliases.list);
+                            break;
+                        case TextureViewCategory.Part:
+                            aliasName = AliasUtils.GetAliasFromCache(rawName, Smithbox.BankHandler.PartAliases.Aliases.list);
+                            break;
+                    }
+
+                    //TaskLogs.AddLog(aliasName);
+
+                    if (SearchFilters.IsTextureSearchMatch(_fileSearchInput, info.Name, "_", aliasName))
                     {
                         if(!CFG.Current.TextureViewer_FileList_ShowLowDetail_Entries)
                         {

@@ -17,6 +17,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamReferenceUtils
 {
+    // TODO: implement for other project types
     // Supports: ER
     public static void BonfireWarpParam(string activeParam, Param.Row row, string currentField)
     {
@@ -89,6 +90,7 @@ public static class ParamReferenceUtils
         }
     }
 
+    // TODO: implement for other project types
     // Supports: ER
     public static void GameAreaParam(string activeParam, Param.Row row, string currentField)
     {
@@ -159,6 +161,7 @@ public static class ParamReferenceUtils
         }
     }
 
+    // TODO: implement for AC6
     // Supports: ER
     public static void GrassTypeParam(string activeParam, Param.Row row, string currentField)
     {
@@ -202,6 +205,7 @@ public static class ParamReferenceUtils
 
     private static List<string> AssetList;
 
+    // TODO: implement for AC6
     // Supports: ER
     public static void AssetGeometryParam(string activeParam, Param.Row row, string currentField)
     {
@@ -278,6 +282,7 @@ public static class ParamReferenceUtils
     public static string CurrentMapID;
     public static MSBE CurrentPeekMap;
 
+    // TODO: implement for other project types
     // Supports: ER
     public static void ItemLotParam_map(string activeParam, Param.Row row, string currentField)
     {
@@ -304,7 +309,6 @@ public static class ParamReferenceUtils
             // Legacy Dungeon
             if (rowID.Length == 8)
             {
-                string mapSection = rowID.Substring(0, 5);
                 AA = $"{rowID.Substring(0, 2)}";
                 BB = $"{rowID.Substring(2, 2)}";
                 CC = $"{rowID.Substring(4, 1)}0";
@@ -312,7 +316,6 @@ public static class ParamReferenceUtils
             // Open-world Tile
             else if (rowID.Length >= 8)
             {
-                string mapSection = rowID.Substring(0, 6);
                 AA = $"{rowID.Substring(0, 2)}";
                 BB = $"{rowID.Substring(2, 2)}";
                 CC = $"{rowID.Substring(4, 2)}";
@@ -371,6 +374,92 @@ public static class ParamReferenceUtils
                     }
                 }
                 ImguiUtils.ShowHoverTooltip("Loads the map and selects the asset that holds this treasure.");
+            }
+        }
+    }
+
+    // TODO: implement for other project types
+    // Supports: ER
+    public static void BuddyStoneParam(string activeParam, Param.Row row, string currentField)
+    {
+        if (activeParam == null)
+            return;
+
+        if (row == null)
+            return;
+
+        if (currentField == null)
+            return;
+
+        if (activeParam == "BuddyStoneParam")
+        {
+            bool show = false;
+            var mapId = "";
+
+            uint entityID = (uint)row.ID;
+
+            string rowID = row.ID.ToString();
+
+            string AA = "";
+            string BB = "";
+            string CC = "";
+
+            // Legacy Dungeon
+            if (rowID.Length == 8)
+            {
+                AA = $"{rowID.Substring(0, 2)}";
+                BB = $"{rowID.Substring(2, 2)}";
+                CC = $"{rowID.Substring(4, 1)}0";
+            }
+            // Open-world Tile
+            else if (rowID.Length == 10)
+            {
+                AA = $"{rowID.Substring(0, 2)}";
+
+                if (AA == "10")
+                    AA = "60";
+
+                if (AA == "20")
+                    AA = "61";
+
+                BB = $"{rowID.Substring(2, 2)}";
+                CC = $"{rowID.Substring(4, 2)}";
+            }
+            else
+            {
+                // Ignore other rows
+                return;
+            }
+
+            if (AA == "" || BB == "" || CC == "")
+                return;
+
+            var rowMapId = $"m{AA}_{BB}_{CC}_00";
+
+            var mapList = ResourceMapLocator.GetFullMapList();
+
+            if (mapList.Contains(rowMapId))
+            {
+                show = true;
+                mapId = rowMapId;
+            }
+
+            if (show)
+            {
+                var width = ImGui.GetColumnWidth();
+
+                if (ImGui.Button($"View in Map", new Vector2(width, 20)))
+                {
+                    if (mapId != "")
+                    {
+                        EditorCommandQueue.AddCommand($"map/load/{mapId}");
+                    }
+                    if (entityID != 0)
+                    {
+                        EditorCommandQueue.AddCommand($"map/idselect/enemy/{mapId}/{entityID}");
+                    }
+                }
+                ImguiUtils.ShowHoverTooltip("Loads the map and select the buddy stone Enemy map object.");
             }
         }
     }

@@ -258,12 +258,13 @@ public static class SearchFilters
         return match;
     }
 
-    public static bool IsTextureSearchMatch(string rawInput, string checkInput, string delimiter, string cachedName)
+    public static bool IsTextureSearchMatch(string rawInput, string checkInput, string delimiter, string aliasName)
     {
         bool match = false;
 
         string cleanRawInput = rawInput.Trim().ToLower();
         string cleanCheckInput = checkInput.Trim().ToLower();
+        string clearAliasInput = aliasName.Trim().ToLower();
 
         if (cleanRawInput.Equals(""))
         {
@@ -281,22 +282,33 @@ public static class SearchFilters
             if (entry == cleanCheckInput)
                 partTruth[i] = true;
 
+            if(cleanCheckInput.Contains(entry))
+                partTruth[i] = true;
+
+            if (entry == clearAliasInput)
+                partTruth[i] = true;
+
+            if (clearAliasInput.Contains(entry))
+                partTruth[i] = true;
+
             var refParts = cleanCheckInput.Split($"{delimiter}");
             foreach (var refPart in refParts)
             {
                 if (entry == refPart)
-                {
                     partTruth[i] = true;
-                }
+
+                if(refPart.Contains(entry))
+                    partTruth[i] = true;
             }
 
-            var refNameParts = cachedName.Split($" ");
+            var refNameParts = clearAliasInput.Split($" ");
             foreach (var refNamePart in refNameParts)
             {
                 if (entry == refNamePart)
-                {
                     partTruth[i] = true;
-                }
+
+                if (refNamePart.Contains(entry))
+                    partTruth[i] = true;
             }
         }
 

@@ -721,6 +721,7 @@ public class ParamRowEditor
                     if (imguiId == 1)
                     {
                         ParamReferenceUtils.AssetGeometryParam(activeParam, row, internalName);
+                        ParamReferenceUtils.BuddyStoneParam(activeParam, row, internalName);
                     }
 
                     // These are placed in-line with the current field
