@@ -5,6 +5,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Interface;
+using StudioCore.Locators;
 using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
@@ -884,6 +885,17 @@ public class ParamEditorView
                 if (ImGui.Selectable("Copy ID to clipboard"))
                 {
                     PlatformUtils.Instance.SetClipboardText($"{r.ID}");
+                }
+            }
+
+            // View in Map
+            if (CFG.Current.Param_RowContextMenu_ViewInMapOption)
+            {
+                ImGui.Separator();
+
+                if (Smithbox.ProjectType is ProjectType.ER)
+                {
+                    ParamMapReferenceUtils.BonfireWarpParam(activeParam, _selection);
                 }
             }
 

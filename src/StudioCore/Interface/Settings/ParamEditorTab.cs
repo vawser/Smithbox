@@ -117,6 +117,9 @@ public class ParamEditorTab
 
                 ImGui.Checkbox("Display row copy id option", ref CFG.Current.Param_RowContextMenu_CopyID);
                 ImguiUtils.ShowHoverTooltip("Show the copy id option in the right-click row context menu.");
+
+                ImGui.Checkbox("Display row view in map option", ref CFG.Current.Param_RowContextMenu_ViewInMapOption);
+                ImguiUtils.ShowHoverTooltip("Show the view in map option in the right-click row context menu if applicable for the param.");
             }
 
             // Context Menu

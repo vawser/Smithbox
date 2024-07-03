@@ -457,6 +457,7 @@ public class CFG
     public bool Param_RowContextMenu_CompareOptions = true;
     public bool Param_RowContextMenu_ReverseLoopup = true;
     public bool Param_RowContextMenu_CopyID = true;
+    public bool Param_RowContextMenu_ViewInMapOption = true;
 
     public bool Param_FieldContextMenu_Split = false;
     public bool Param_FieldContextMenu_Name = false;

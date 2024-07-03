@@ -934,6 +934,28 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 }
             }
 
+            if (initcmd[0] == "idselect")
+            {
+                var type = initcmd[1];
+                var mapid = initcmd[2];
+                var entityID = initcmd[3];
+
+                if (initcmd.Length > 3)
+                {
+                    if (Universe.GetLoadedMap(mapid) is MapContainer m)
+                    {
+                        if (type == "enemy")
+                        {
+                            target = m.GetEnemyByID(entityID);
+                        }
+                        if (type == "asset")
+                        {
+                            target = m.GetAssetByID(entityID);
+                        }
+                    }
+                }
+            }
+
             if (target != null)
             {
                 Universe.Selection.ClearSelection();

@@ -2,6 +2,7 @@
 using System.Xml.Serialization;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
+using SoulsFormats;
 
 namespace StudioCore.Editor;
 
@@ -91,6 +92,109 @@ public class ObjectContainer
         }
 
         return value;
+    }
+
+    // Used by the idselect EditorCommandQueue command
+    public Entity GetEnemyByID(string entityID)
+    {
+        foreach (Entity m in Objects)
+        {
+            if (m.WrappedObject is MSB1.Part.Enemy enemy_ds1)
+            {
+                if (enemy_ds1.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSBB.Part.Enemy enemy_bb)
+            {
+                if (enemy_bb.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSB3.Part.Enemy enemy_ds3)
+            {
+                if (enemy_ds3.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSBS.Part.Enemy enemy_sdt)
+            {
+                if (enemy_sdt.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSBE.Part.Enemy enemy_er)
+            {
+                if (enemy_er.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSB_AC6.Part.Enemy enemy_ac6)
+            {
+                if (enemy_ac6.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public Entity GetAssetByID(string entityID)
+    {
+        foreach (Entity m in Objects)
+        {
+            if (m.WrappedObject is MSB1.Part.Object object_ds1)
+            {
+                if (object_ds1.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSBB.Part.Object object_bb)
+            {
+                if (object_bb.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSB3.Part.Object object_ds3)
+            {
+                if (object_ds3.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSBS.Part.Object object_sdt)
+            {
+                if (object_sdt.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSBE.Part.Asset asset_er)
+            {
+                if (asset_er.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSB_AC6.Part.Asset asset_ac6)
+            {
+                if (asset_ac6.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+        }
+
+        return null;
     }
 }
 

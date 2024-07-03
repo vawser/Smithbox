@@ -117,4 +117,3 @@ Known Bugs:
 #--------------------------------------
 # Notes
 #--------------------------------------
- - Change TextureRef lookup to not require the fixed paths in Param META (instead setup default lookups based on game, and add user-configurable extension to Project Textures window)
