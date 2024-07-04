@@ -113,8 +113,15 @@ Misc:
 Known Bugs:
 - Icon Preview (unknown circumstances) -> Index outside bounds of array in Veldrid.Texture: TextureResource issue with icon preview (dylan)
 - Image Preview is throwing errors some for some.
+- Check LowRequirements doesn't invoke any rendering stuff when loading a model in Model Editor
 
 #--------------------------------------
 # Notes
 #--------------------------------------
 Try to implement ER collisions: requires HKLib usage
+
+Need to fix Param saving for ER
+
+Check row name import on param bank reload
+ Confirmed, clicking "Import Row Names" re-imports then on reload
+

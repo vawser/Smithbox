@@ -1319,6 +1319,8 @@ public class ParamBank
 
                 if (Smithbox.ProjectHandler.ProjectModal.loadDefaultRowNamesOnCreation)
                 {
+                    Smithbox.ProjectHandler.ProjectModal.loadDefaultRowNamesOnCreation = false;
+
                     try
                     {
                         new ActionManager().ExecuteAction(PrimaryBank.LoadParamDefaultNames());
