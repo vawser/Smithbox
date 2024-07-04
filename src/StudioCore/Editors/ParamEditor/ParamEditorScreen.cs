@@ -1122,31 +1122,11 @@ public class ParamEditorScreen : EditorScreen
             {
                 ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Warning_Text_Color);
 
-                if (ImGui.Button("Upgrade Params"))
+                var newVersionString = Utils.ParseRegulationVersion(ParamBank.VanillaBank.ParamVersion);
+                var oldVersionString = Utils.ParseRegulationVersion(ParamBank.PrimaryBank.ParamVersion);
+
+                if (ImGui.Button($"Upgrade Params to {newVersionString}"))
                 {
-                    var oldVersionString = Utils.ParseRegulationVersion(ParamBank.PrimaryBank.ParamVersion);
-                    var newVersionString = Utils.ParseRegulationVersion(ParamBank.VanillaBank.ParamVersion);
-
-                    /*
-                    var message = PlatformUtils.Instance.MessageBox(
-                            $"Project regulation.bin version appears to be out of date vs game folder regulation. Upgrading is recommended since the game will typically not load out of date regulation." +
-                            $"\n\nUpgrading requires you to select a VANILLA REGULATION.BIN WITH THE SAME VERSION AS YOUR MOD ({oldVersionString})" +
-                            $"\n\nWould you like to proceed?",
-                            $"Regulation upgrade {oldVersionString} -> {newVersionString}",
-                        MessageBoxButtons.OKCancel,
-                        MessageBoxIcon.Information);
-                    if (message == DialogResult.OK)
-                    {
-                        if (PlatformUtils.Instance.OpenFileDialog(
-                                $"Select regulation.bin for game version {ParamBank.PrimaryBank.ParamVersion}...",
-                                new[] { FilterStrings.RegulationBinFilter },
-                                out var path))
-                        {
-                            UpgradeRegulation(ParamBank.PrimaryBank, ParamBank.VanillaBank, path);
-                        }
-                    }
-                    */
-
                     var oldRegulationPath = GetOldRegulationPath(oldVersionString);
                     UpgradeRegulation(ParamBank.PrimaryBank, ParamBank.VanillaBank, oldRegulationPath);
                 }
@@ -1196,6 +1176,7 @@ public class ParamEditorScreen : EditorScreen
                 case "1.10.0.1000": regulationFolder = "1.10 (11001000)"; break;
                 case "1.12.1.0015": regulationFolder = "1.12.1 (11210015)"; break;
                 case "1.12.2.0021": regulationFolder = "1.12.2 (11220021)"; break;
+                case "1.12.4.0023": regulationFolder = "1.12.4 (11240023)"; break;
             }
         }
 

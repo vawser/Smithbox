@@ -2178,15 +2178,13 @@ public class ParamBank
     // For debugging the upgrade process
     public static void TargetLog(Param source, string text)
     {
-        return;
-
         if (source.ParamType == "EQUIP_PARAM_GEM_ST")
             TaskLogs.AddLog(text);
     }
 
     public static Param UpgradeParam(Param source, Param oldVanilla, Param newVanilla, HashSet<int> rowConflicts)
     {
-        TargetLog(source, source.ParamType);
+        //TargetLog(source, source.ParamType);
 
         // Presorting this would make it easier, but we're trying to preserve order as much as possible
         // Unfortunately given that rows aren't guaranteed to be sorted and there can be duplicate IDs,
@@ -2224,7 +2222,7 @@ public class ParamBank
             }
 
             addedRows[row.ID].Add(row);
-            TargetLog(source, $"Source - Add row: {row.ID}");
+            //TargetLog(source, $"Source - Add row: {row.ID}");
         }
 
         // Next we go through oldVanilla to determine if a row is added, deleted, modified, or unmodified
@@ -2246,7 +2244,7 @@ public class ParamBank
                 }
 
                 editOperations[row.ID].Add(EditOperation.Delete);
-                TargetLog(source, $"oldVanilla - EditOperation.Delete: {row.ID}");
+                //TargetLog(source, $"oldVanilla - EditOperation.Delete: {row.ID}");
 
                 continue;
             }
@@ -2274,13 +2272,13 @@ public class ParamBank
                     modrow.Name != null && row.Name != null && modrow.Name == row.Name)
                 {
                     editOperations[row.ID].Add(EditOperation.Match);
-                    TargetLog(source, $"oldVanilla - EditOperation.Match: {row.ID}");
+                    //TargetLog(source, $"oldVanilla - EditOperation.Match: {row.ID}");
                     continue;
                 }
 
                 // Name was updated
                 editOperations[row.ID].Add(EditOperation.NameChange);
-                TargetLog(source, $"oldVanilla - EditOperation.NameChange: {row.ID}");
+                //TargetLog(source, $"oldVanilla - EditOperation.NameChange: {row.ID}");
 
                 if (!renamedRows.ContainsKey(row.ID))
                 {
@@ -2311,7 +2309,7 @@ public class ParamBank
             }
 
             editOperations[row.ID].Add(EditOperation.Modify);
-            TargetLog(source, $"oldVanilla - EditOperation.Modify: {row.ID}");
+            //TargetLog(source, $"oldVanilla - EditOperation.Modify: {row.ID}");
         }
 
         // Mark all remaining rows as added
@@ -2325,7 +2323,7 @@ public class ParamBank
             foreach (List<EditOperation> k in editOperations.Values)
             {
                 editOperations[entry.Key].Add(EditOperation.Add);
-                TargetLog(source, $"oldVanilla - EditOperation.Add: {entry.Key}");
+                //TargetLog(source, $"oldVanilla - EditOperation.Add: {entry.Key}");
             }
         }
 
@@ -2347,7 +2345,7 @@ public class ParamBank
         var lastID = 0;
         foreach (Param.Row row in newVanilla.Rows)
         {
-            TargetLog(source, $"newVanilla row");
+            //TargetLog(source, $"newVanilla row");
 
             // See if we have any pending adds we can slot in
             while (currPendingAdd < pendingAdds.Length &&
@@ -2357,14 +2355,14 @@ public class ParamBank
                 if (!addedRows.ContainsKey(pendingAdds[currPendingAdd]))
                 {
                     currPendingAdd++;
-                    TargetLog(source, $"newVanilla - currPendingAdd: {pendingAdds[currPendingAdd-1]}");
+                    //TargetLog(source, $"newVanilla - currPendingAdd: {pendingAdds[currPendingAdd-1]}");
                     continue;
                 }
 
                 foreach (Param.Row arow in addedRows[pendingAdds[currPendingAdd]])
                 {
                     dest.AddRow(new Param.Row(arow, dest));
-                    TargetLog(source, $"newVanilla - AddRow");
+                    //TargetLog(source, $"newVanilla - AddRow");
                 }
 
                 addedRows.Remove(pendingAdds[currPendingAdd]);
@@ -2378,7 +2376,7 @@ public class ParamBank
             {
                 // No edit operations for this ID, so just add it (likely a new row in the update)
                 dest.AddRow(new Param.Row(row, dest));
-                TargetLog(source, $"newVanilla - AddRow (New)");
+                //TargetLog(source, $"newVanilla - AddRow (New)");
                 continue;
             }
 
