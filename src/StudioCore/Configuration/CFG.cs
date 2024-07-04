@@ -52,6 +52,11 @@ public class CFG
     public Vector3 SavedScale = new Vector3();
 
     //**************
+    // Project
+    //**************
+    public bool Project_LoadRecentProjectImmediately = false;
+
+    //**************
     // Interface
     //**************
     // View Toggles

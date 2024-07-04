@@ -35,6 +35,7 @@ public class ProjectHandler
 
     public bool IsInitialLoad = false;
     public bool ShowProjectLoadSelection = true;
+    public bool RecentProjectLoad = false;
 
     public ProjectHandler()
     {
@@ -46,6 +47,20 @@ public class ProjectHandler
     }
     public void OnGui()
     {
+        if (!RecentProjectLoad && CFG.Current.Project_LoadRecentProjectImmediately)
+        {
+            RecentProjectLoad = true;
+            IsInitialLoad = false;
+            try
+            {
+                Smithbox.ProjectHandler.LoadProjectFromJSON(CFG.Current.LastProjectFile);
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog("Failed to load recent project.");
+            }
+        }
+
         if (IsInitialLoad)
         {
             ImGui.OpenPopup("Project Creation");

@@ -19,6 +19,9 @@ public class ProjectSettingsTab
 
         if (ImGui.BeginTabItem("Settings"))
         {
+            ImGui.Checkbox("Enable Automatic Recent Project Loading", ref CFG.Current.Project_LoadRecentProjectImmediately);
+            ImguiUtils.ShowHoverTooltip("The last loaded project will be automatically loaded when Smithbox starts up if this is enabled.");
+
             ImGui.Checkbox("Enable Recovery Folder", ref CFG.Current.System_EnableRecoveryFolder);
             ImguiUtils.ShowHoverTooltip("Enable a recovery project to be created upon an unexpected crash.");
 
