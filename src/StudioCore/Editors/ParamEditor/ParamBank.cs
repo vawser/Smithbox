@@ -274,7 +274,7 @@ public class ParamBank
         }
     }
 
-    public CompoundAction LoadParamDefaultNames(string param = null, bool onlyAffectEmptyNames = false, bool onlyAffectVanillaNames = false, bool useProjectNames = false)
+    public CompoundAction LoadParamDefaultNames(string param = null, bool onlyAffectEmptyNames = false, bool onlyAffectVanillaNames = false, bool useProjectNames = false, IEnumerable<Param.Row> affectedRows = null)
     {
         var dir = ResourceParamLocator.GetParamNamesDir();
 
@@ -303,7 +303,15 @@ public class ParamBank
                 continue;
             }
 
-            var names = File.ReadAllText(f);
+            var lines = File.ReadAllLines(f);
+
+            if (affectedRows != null)
+            {
+                var affectedIds = affectedRows.Select(a => a.ID.ToString());
+                lines = lines.Where(n => affectedIds.Any(i => n.StartsWith(i))).ToArray();
+            }
+
+            var names = string.Join(Environment.NewLine, lines);
 
             (var result, CompoundAction action) =
                 ParamIO.ApplySingleCSV(this, names, fName, "Name", ' ', true, onlyAffectEmptyNames, onlyAffectVanillaNames);
