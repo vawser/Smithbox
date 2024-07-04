@@ -307,7 +307,8 @@ public static class TextureFolderBank
         tStruct.Category = category;
         tStruct.Textures = null; // Done after selection in the Viewer
 
-        FolderBank.Add(name, tStruct);
+        if(!FolderBank.ContainsKey(name))
+            FolderBank.Add(name, tStruct);
     }
 
     public static List<string> GetFileNames(string fileDir, string fileExt)
