@@ -5,8 +5,10 @@ using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Platform;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -20,7 +22,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
     {
         private static bool _rowNameExporter_VanillaOnly = false;
         private static bool _rowNameExporter_EmptyOnly = false;
-        public static string CurrentTargetCategory = ParamToolbar.TargetTypes[0];
+        public static ParamToolbar.TargetType CurrentTargetCategory = ParamToolbar.DefaultTargetType;
 
         public static void Select()
         {
@@ -50,21 +52,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 }
                 else
                 {
-                    ImguiUtils.WrappedText("Target Category:");
-                    if (ImGui.BeginCombo("##Target", CurrentTargetCategory))
-                    {
-                        foreach (string e in ParamToolbar.TargetTypes)
-                        {
-                            if (ImGui.Selectable(e))
-                            {
-                                CurrentTargetCategory = e;
-                                break;
-                            }
-                        }
-                        ImGui.EndCombo();
-                    }
-                    ImguiUtils.ShowHoverTooltip("The target for the Row Name export.");
-                    ImguiUtils.WrappedText("");
+                    ParamToolbar.ParamTargetElement(ref CurrentTargetCategory, "The target for the Row Name export.");
                 }
             }
         }
@@ -119,23 +107,53 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         private static void ExportRowNames()
         {
             var selectedParam =  Smithbox.EditorHandler.ParamEditor._activeView._selection;
+            var activeParam = selectedParam.GetActiveParam();
 
-            if (CurrentTargetCategory == "Selected Param")
+            switch (CurrentTargetCategory)
             {
-                var param = selectedParam.GetActiveParam();
-
-                ExportRowNamesForParam(param);
-                PlatformUtils.Instance.MessageBox($"Row names for {param} have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                case ParamToolbar.TargetType.SelectedRows:
+                    ExportRowNamesForRows(selectedParam.GetSelectedRows());
+                    PlatformUtils.Instance.MessageBox($"Row names for {activeParam} selected rows have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case ParamToolbar.TargetType.SelectedParam:
+                    ExportRowNamesForParam(activeParam);
+                    PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case ParamToolbar.TargetType.AllParams:
+                    foreach(var param in ParamBank.PrimaryBank.Params)
+                    {
+                        ExportRowNamesForParam(param.Key);
+                    }
+                    PlatformUtils.Instance.MessageBox($"Row names for all params have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
+        }
 
-            if (CurrentTargetCategory == "All Params")
+        private static List<string> IterateRows(IEnumerable<Param.Row> rows)
+        {
+            return rows.Select(r => $"{r.ID} {r.Name}").ToList();
+        }
+
+        private static void ExportRowNamesForRows(IEnumerable<Param.Row> rows)
+        {
+            if (Smithbox.ProjectType == ProjectType.Undefined)
+                return;
+
+            var dialog = NativeFileDialogSharp.Dialog.FileSave("txt");
+            if (!dialog.IsOk) return;
+
+            var path = dialog.Path;
+
+            List<string> contents = IterateRows(rows);
+
+            var dir = Path.GetDirectoryName(path)!;
+            if(!Directory.Exists(dir))
             {
-                foreach(var param in ParamBank.PrimaryBank.Params)
-                {
-                    ExportRowNamesForParam(param.Key);
-                }
-                PlatformUtils.Instance.MessageBox($"Row names for all params have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Directory.CreateDirectory(dir);
             }
+            File.WriteAllLines(path, contents);
         }
 
         private static void ExportRowNamesForParam(string param)
@@ -148,18 +166,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
             Param p = ParamBank.PrimaryBank.Params[param];
 
-            List<string> contents = new List<string>();
-
-            for (var i = 0; i < p.Rows.Count; i++)
-            {
-                var id = p.Rows[i].ID;
-                var name = p.Rows[i].Name;
-
-                if (name != "")
-                {
-                    contents.Add($"{id} {name}");
-                }
-            }
+            List<string> contents = IterateRows(p.Rows);
 
             if(!Directory.Exists(dir))
             {

@@ -1,4 +1,5 @@
-﻿using ImGuiNET;
+﻿using Andre.Formats;
+using ImGuiNET;
 using StudioCore.Core;
 using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
@@ -18,8 +19,8 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
     {
         private static bool _rowNameImporter_VanillaOnly = false;
         private static bool _rowNameImporter_EmptyOnly = false;
-        public static string CurrentSourceCategory = ParamToolbar.SourceTypes[0];
-        public static string CurrentTargetCategory = ParamToolbar.TargetTypes[0];
+        public static ParamToolbar.SourceType CurrentSourceCategory = ParamToolbar.DefaultSourceType;
+        public static ParamToolbar.TargetType CurrentTargetCategory = ParamToolbar.DefaultTargetType;
 
         public static void Select()
         {
@@ -51,37 +52,8 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 }
                 else
                 {
-                    ImguiUtils.WrappedText("Target Category:");
-                    if (ImGui.BeginCombo("##Target", CurrentTargetCategory))
-                    {
-                        foreach (string e in ParamToolbar.TargetTypes)
-                        {
-                            if (ImGui.Selectable(e))
-                            {
-                                CurrentTargetCategory = e;
-                                break;
-                            }
-                        }
-                        ImGui.EndCombo();
-                    }
-                    ImguiUtils.ShowHoverTooltip("The target for the Row Name import.");
-                    ImguiUtils.WrappedText("");
-
-                    ImguiUtils.WrappedText("Source Category:");
-                    if (ImGui.BeginCombo("##Source", CurrentSourceCategory))
-                    {
-                        foreach (string e in ParamToolbar.SourceTypes)
-                        {
-                            if (ImGui.Selectable(e))
-                            {
-                                CurrentSourceCategory = e;
-                                break;
-                            }
-                        }
-                        ImGui.EndCombo();
-                    }
-                    ImguiUtils.ShowHoverTooltip("The source of the names used in by the Row Name import.");
-                    ImguiUtils.WrappedText("");
+                    ParamToolbar.ParamTargetElement(ref CurrentTargetCategory, "The target for the Row Name import.");
+                    ParamToolbar.ParamSourceElement(ref CurrentSourceCategory, "The source of the names used in by the Row Name import.");
 
                     ImGui.Checkbox("Only replace unmodified row names", ref _rowNameImporter_VanillaOnly);
                     ImguiUtils.ShowHoverTooltip("Row name import will only replace the name of unmodified rows.");
@@ -133,34 +105,43 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
             if (selectedParam.ActiveParamExists())
             {
-                var _rowNameImport_useProjectNames = false;
-                if (CurrentSourceCategory == "Project")
-                {
-                    _rowNameImport_useProjectNames = true;
-                }
+                bool _rowNameImport_useProjectNames = CurrentSourceCategory == ParamToolbar.SourceType.Project;
 
                 if (ParamBank.PrimaryBank.Params != null)
                 {
-                    if (CurrentTargetCategory == "All Params")
+                    switch (CurrentTargetCategory)
                     {
-                        ParamToolbar.EditorActionManager.ExecuteAction(
-                            ParamBank.PrimaryBank.LoadParamDefaultNames(
-                                null,
-                                _rowNameImporter_EmptyOnly,
-                                _rowNameImporter_VanillaOnly,
-                                _rowNameImport_useProjectNames)
+                        case ParamToolbar.TargetType.SelectedRows:
+                            var rows = selectedParam.GetSelectedRows();
+                            ParamToolbar.EditorActionManager.ExecuteAction(
+                                ParamBank.PrimaryBank.LoadParamDefaultNames(
+                                    selectedParam.GetActiveParam(),
+                                    _rowNameImporter_EmptyOnly,
+                                    _rowNameImporter_VanillaOnly,
+                                    _rowNameImport_useProjectNames,
+                                    rows)
                             );
-                    }
-
-                    if (CurrentTargetCategory == "Selected Param")
-                    {
-                        ParamToolbar.EditorActionManager.ExecuteAction(
-                            ParamBank.PrimaryBank.LoadParamDefaultNames(
-                                selectedParam.GetActiveParam(),
-                                _rowNameImporter_EmptyOnly,
-                                _rowNameImporter_VanillaOnly,
-                                _rowNameImport_useProjectNames)
+                            break;
+                        case ParamToolbar.TargetType.SelectedParam:
+                            ParamToolbar.EditorActionManager.ExecuteAction(
+                                ParamBank.PrimaryBank.LoadParamDefaultNames(
+                                    selectedParam.GetActiveParam(),
+                                    _rowNameImporter_EmptyOnly,
+                                    _rowNameImporter_VanillaOnly,
+                                    _rowNameImport_useProjectNames)
                             );
+                            break;
+                        case ParamToolbar.TargetType.AllParams:
+                            ParamToolbar.EditorActionManager.ExecuteAction(
+                                ParamBank.PrimaryBank.LoadParamDefaultNames(
+                                    null,
+                                    _rowNameImporter_EmptyOnly,
+                                    _rowNameImporter_VanillaOnly,
+                                    _rowNameImport_useProjectNames)
+                            );
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
                     }
                 }
             }

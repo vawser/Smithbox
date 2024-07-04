@@ -17,8 +17,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 {
     public static class ParamAction_TrimRowNames
     {
-
-        private static string CurrentTargetCategory = ParamToolbar.TargetTypes[0];
+        public static ParamToolbar.TargetType CurrentTargetCategory = ParamToolbar.DefaultTargetType;
 
         public static void Select()
         {
@@ -48,21 +47,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 }
                 else
                 {
-                    ImguiUtils.WrappedText("Target Category:");
-                    if (ImGui.BeginCombo("##Target", CurrentTargetCategory))
-                    {
-                        foreach (string e in ParamToolbar.TargetTypes)
-                        {
-                            if (ImGui.Selectable(e))
-                            {
-                                CurrentTargetCategory = e;
-                                break;
-                            }
-                        }
-                        ImGui.EndCombo();
-                    }
-                    ImguiUtils.ShowHoverTooltip("The target for the Row Name export.");
-                    ImguiUtils.WrappedText("");
+                    ParamToolbar.ParamTargetElement(ref CurrentTargetCategory, "The target for the Row Name trimming.");
                 }
             }
         }
@@ -99,39 +84,44 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             {
                 if (ParamBank.PrimaryBank.Params != null)
                 {
-                    if (CurrentTargetCategory == "Selected Param")
+                    var activeParam = selectedParam.GetActiveParam();
+                    var rows = selectedParam.GetSelectedRows();
+                    switch (CurrentTargetCategory)
                     {
-                        var param = selectedParam.GetActiveParam();
-
-                        TrimRowNames(param);
-                        PlatformUtils.Instance.MessageBox($"Row names for {param} have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                    if (CurrentTargetCategory == "All Params")
-                    {
-                        foreach (var param in ParamBank.PrimaryBank.Params)
-                        {
-                            TrimRowNames(param.Key);
-                        }
-                        PlatformUtils.Instance.MessageBox($"Row names for all params have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        case ParamToolbar.TargetType.SelectedRows:
+                            if (!rows.Any()) return;
+                            TrimRowNames(rows);
+                            PlatformUtils.Instance.MessageBox($"Row names for {rows.Count} selected rows have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        case ParamToolbar.TargetType.SelectedParam:
+                            TrimRowNames(activeParam);
+                            PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        case ParamToolbar.TargetType.AllParams:
+                            foreach (var param in ParamBank.PrimaryBank.Params)
+                            {
+                                TrimRowNames(param.Key);
+                            }
+                            PlatformUtils.Instance.MessageBox($"Row names for all params have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
                     }
                 }
             }
         }
 
+        private static void TrimRowNames(IEnumerable<Param.Row> rows)
+        {
+            foreach (Param.Row row in rows)
+            {
+                row.Name = row.Name.Trim();
+            }
+        }
         private static void TrimRowNames(string param)
         {
             Param p = ParamBank.PrimaryBank.Params[param];
-
-            for (var i = 0; i < p.Rows.Count; i++)
-            {
-                var id = p.Rows[i].ID;
-                var name = p.Rows[i].Name;
-
-                name = name.Replace("\r", "");
-
-                p.Rows[i].Name = name;
-            }
+            TrimRowNames(p.Rows);
         }
     }
 }
