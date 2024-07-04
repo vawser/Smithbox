@@ -551,7 +551,7 @@ namespace SoulsFormats
             File.WriteAllBytes(path, bytes);
         }
 
-        private static readonly byte[] erRegulationKey = ParseHexString("99 BF FC 36 6A 6B C8 C6 F5 82 7D 09 36 02 D6 76 C4 28 92 A0 1C 20 7F B0 24 D3 AF 4E 49 3F EF 99");
+        public static readonly byte[] erRegulationKey = ParseHexString("99 BF FC 36 6A 6B C8 C6 F5 82 7D 09 36 02 D6 76 C4 28 92 A0 1C 20 7F B0 24 D3 AF 4E 49 3F EF 99");
 
         /// <summary>
         /// Decrypts and unpacks ER's regulation BND4 from the specified path.
@@ -626,7 +626,7 @@ namespace SoulsFormats
             return result;
         }
 
-        private static byte[] DecryptByteArray(byte[] key, byte[] secret)
+        public static byte[] DecryptByteArray(byte[] key, byte[] secret)
         {
             byte[] iv = new byte[16];
             byte[] encryptedContent = new byte[secret.Length - 16];

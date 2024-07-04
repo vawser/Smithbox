@@ -1,8 +1,10 @@
 ﻿using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Tests;
 using StudioCore.Tools;
+using System.IO;
 using System.Numerics;
 using System.Threading.Tasks;
 
@@ -95,6 +97,7 @@ public class DebugWindow
         DisplayTool_MapValidation();
         DisplayTool_FLVERDump();
         DisplayTool_RowNameHelper();
+        DisplayTool_DecryptRegulation();
 
         ImGui.PopItemWidth();
         ImGui.PopStyleColor();
@@ -273,6 +276,24 @@ public class DebugWindow
             if (ImGui.Button("Generate Item Lot Names"))
             {
                 NameGenerationTool.GenerateItemLotNames();
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplayTool_DecryptRegulation()
+    {
+        if (ImGui.BeginTabItem("Decrypt Regulation"))
+        {
+            if (ImGui.Button("Decrypt"))
+            {
+                var path = "C:\\Users\\benja\\Modding\\Elden Ring\\Projects\\ER-SOTE\\Mod\\regulation.bin";
+                var writePath = "C:\\Users\\benja\\Modding\\Elden Ring\\Projects\\ER-SOTE\\Mod\\decrypted_regulation.bin";
+
+                byte[] bytes = File.ReadAllBytes(path);
+                bytes = SFUtil.DecryptByteArray(SFUtil.erRegulationKey, bytes);
+                File.WriteAllBytes(writePath, bytes);
             }
 
             ImGui.EndTabItem();
