@@ -612,11 +612,11 @@
 32500072 Draconic Tree Sentinel (Farum Azula)
 32510000 Tree Sentinel (Unscaled)
 32510010 Tree Sentinel (Limgrave)
-32510030 Tree Sentinel (Altus Plateua)
+32510030 Tree Sentinel (Altus Plateau)
 32510034 Tree Sentinel  (Leyndell- Royal Capital)
 32510070 Tree Sentinel
 32511000 Tree Sentinel (Unscaled)
-32511030 Tree Sentinel - Torch (Altus Plateua)
+32511030 Tree Sentinel - Torch (Altus Plateau)
 32520000 Loretta Tree Sentinel (Unscaled)
 32520054 Loretta, Knight of the Haligtree
 32520100 Loretta Tree Sentinel (Unscaled)
@@ -4046,48 +4046,48 @@
 49801052 Death Rite Bird
 50000000 Commander Gaius
 50000001 Commander Gaius
-50000092 Commander Gaius
+50000092 Commander Gaius (Boss)
 50100000 Golden Hippopotamus
 50100001 Golden Hippopotamus
-50100098 Golden Hippopotamus
+50100098 Golden Hippopotamus (Boss)
 50110000 Golden Hippopotamus (Golden Wings)
-50110084 Golden Hippopotamus (Golden Wings)
+50110084 Golden Hippopotamus (Charo's Hidden Grave)
 50110090 Golden Hippopotamus (Golden Wings)
-50110091 Golden Hippopotamus (Golden Wings)
-50110094 Golden Hippopotamus (Golden Wings)
+50110091 Golden Hippopotamus (Recluses' River)
+50110094 Golden Hippopotamus (Rauh)
 50200000 Putrescent Knight
 50200001 Putrescent Knight
-50200087 Putrescent Knight
+50200087 Putrescent Knight (Boss)
 50200100 Putrescent Knight
 50200101 Putrescent Knight
 50200187 Putrescent Knight
 50300000 Romina, Saint of the Bud
 50300001 Romina, Saint of the Bud
-50300094 Romina, Saint of the Bud
-50400000 Curseblade Labirith
-50400080 Curseblade Labirith
-50400081 Curseblade Labirith
-50400088 Curseblade Labirith
-50400089 Curseblade Labirith
-50400090 Curseblade Labirith
-50400091 Curseblade Labirith
-50400094 Curseblade Labirith
-50400100 Curseblade Labirith
-50400190 Curseblade Labirith
-50400194 Curseblade Labirith
-50400200 Curseblade Labirith
-50400300 Curseblade Labirith
-50400400 Curseblade Labirith
-50400494 Curseblade Labirith
-50400500 Curseblade Labirith
-50400600 Curseblade Labirith
-50400700 Curseblade Labirith
-50500000 Midra, Lord of Frenzied Flame
-50500001 Midra, Lord of Frenzied Flame
-50500086 Midra, Lord of Frenzied Flame
+50300094 Romina, Saint of the Bud (Boss)
+50400000 Curseblade
+50400080 Curseblade
+50400081 Curseblade
+50400088 Curseblade
+50400089 Curseblade
+50400090 Curseblade
+50400091 Curseblade
+50400094 Curseblade
+50400100 Curseblade
+50400190 Curseblade Labirith (Boss)
+50400194 Curseblade
+50400200 Curseblade
+50400300 Curseblade
+50400400 Curseblade
+50400494 Curseblade
+50400500 Curseblade
+50400600 Curseblade
+50400700 Curseblade
+50500000 Midra - Human
+50500001 Midra - Human
+50500086 Midra - Human
 50510000 Midra, Lord of Frenzied Flame
 50510001 Midra, Lord of Frenzied Flame
-50510086 Midra, Lord of Frenzied Flame
+50510086 Midra, Lord of Frenzied Flame (Boss)
 50600000 Lamprey
 50600001 Lamprey
 50600083 Lamprey
@@ -4116,10 +4116,10 @@
 50610883 Lamprey (Large)
 50610893 Lamprey (Large)
 50700000 Death Knight
-50700081 Death Knight
+50700081 Death Knight (Fog Rift Catacombs Boss)
 50701000 Death Knight
 50701090 Death Knight
-50701095 Death Knight
+50701095 Death Knight (Scorpion River Catacombs Boss)
 50800000 Bloodfiend
 50800001 Bloodfiend
 50800080 Bloodfiend
@@ -4186,7 +4186,7 @@
 50810100 Chief Bloodfiend
 50810194 Chief Bloodfiend
 50810195 Chief Bloodfiend
-50810990 Chief Bloodfiend
+50810990 Chief Bloodfiend (Boss)
 50811000 Chief Bloodfiend
 50811087 Chief Bloodfiend
 50900000 Gravebird
@@ -4241,12 +4241,12 @@
 51100790 Ghostly Worm
 51200000 Bayle the Dread
 51200001 Bayle the Dread
-51200085 Bayle the Dread
+51200085 Bayle the Dread (Boss)
 51300000 Messmer the Impaler
 51300001 Messmer the Impaler
 51300099 Messmer the Impaler
 51301000 Messmer the Impaler
-51301099 Messmer the Impaler
+51301099 Messmer the Impaler (Boss)
 51310000 Messmer the Impaler
 51320000 Messmer the Impaler
 51400000 Messmer: Base Serpent
@@ -4334,21 +4334,21 @@
 51930094 Spider Scorpion
 52000000 Metyr, Mother of Fingers
 52000001 Metyr, Mother of Fingers
-52000097 Metyr, Mother of Fingers
+52000097 Metyr, Mother of Fingers (Boss)
 52100000 Divine Beast Dancing Lion
 52100001 Divine Beast Dancing Lion
-52100088 Divine Beast Dancing Lion
-52100094 Divine Beast Dancing Lion
+52100088 Divine Beast Dancing Lion (Belurat Boss)
+52100094 Divine Beast Dancing Lion (Rauh Boss)
 52200000 Promised Consort Radahn
 52200001 Promised Consort Radahn
 52200089 Promised Consort Radahn
 52201000 Promised Consort Radahn
-52201089 Promised Consort Radahn
+52201089 Promised Consort Radahn (Boss)
 52202000 Promised Consort Radahn
 52210000 Miquella's Arms
 52300000 Scadutree Avatar
 52300001 Scadutree Avatar
-52300096 Scadutree Avatar
+52300096 Scadutree Avatar (Boss)
 52300100 Scadutree Avatar
 52300101 Scadutree Avatar
 52300196 Scadutree Avatar
@@ -4664,7 +4664,7 @@
 52800086 Winter-Lantern
 53000000 Rellana, Twin Moon Knight
 53000001 Rellana, Twin Moon Knight
-53000082 Rellana, Twin Moon Knight
+53000082 Rellana, Twin Moon Knight (Boss)
 53100900 Inquisitor
 53100901 Inquisitor
 53100986 Inquisitor
@@ -4707,21 +4707,21 @@
 53111386 Inquisitor (Candles)
 53120000 Inquisitor (Staff)
 53120001 Inquisitor (Staff)
-53120086 Inquisitor (Staff)
+53120086 Jori, Elder Inquisitor (Boss)
 53120100 Inquisitor (Staff)
 53120189 Inquisitor (Staff)
-53200000 Jori, Elder Inquisitor
-53200086 Jori, Elder Inquisitor
-53200089 Jori, Elder Inquisitor
-53200100 Jori, Elder Inquisitor
-53200101 Jori, Elder Inquisitor
-53200102 Jori, Elder Inquisitor
-53200186 Jori, Elder Inquisitor
-53200200 Jori, Elder Inquisitor
-53200286 Jori, Elder Inquisitor
-53207000 Jori, Elder Inquisitor
-53207086 Jori, Elder Inquisitor
-53207089 Jori, Elder Inquisitor
+53200000 Fat Inquisitor
+53200086 Fat Inquisitor
+53200089 Fat Inquisitor
+53200100 Fat Inquisitor
+53200101 Fat Inquisitor
+53200102 Fat Inquisitor
+53200186 Fat Inquisitor
+53200200 Fat Inquisitor
+53200286 Fat Inquisitor
+53207000 Fat Inquisitor
+53207086 Fat Inquisitor
+53207089 Fat Inquisitor
 53300000 St. Trina
 53300087 St. Trina
 53400000 Dummy Entity
@@ -4790,7 +4790,7 @@
 53700085 Ancient Dragon Senessax
 53701000 Ancient Dragon Senessax
 53701100 Ancient Dragon Senessax
-53701185 Ancient Dragon Senessax
+53701185 Ancient Dragon Senessax (Boss)
 53701200 Ancient Dragon Senessax
 53702000 Ancient Dragon Senessax
 53702100 Ancient Dragon Senessax
@@ -5270,13 +5270,13 @@
 55701290 Marionette Soldier
 55702000 Marionette Soldier
 55702090 Marionette Soldier
-55800000 Flying Dragon
-55800084 Flying Dragon
-55800085 Flying Dragon
-55800985 Flying Dragon
-55801000 Flying Dragon
-55808000 Flying Dragon
-55810000 Flying Dragon
+55800000 Jagged Peak Drake
+55800084 Jagged Peak Drake (Solo Boss)
+55800085 Jagged Peak Drake
+55800985 Jagged Peak Drake (Duo Boss)
+55801000 Jagged Peak Drake
+55808000 Jagged Peak Drake
+55810000 Jagged Peak Drake
 55900000 Putrid Flesh
 55900081 Putrid Flesh
 55900083 Putrid Flesh
@@ -5454,7 +5454,7 @@
 57200093 Demi-Human Chief
 57200100 Demi-Human Chief
 57300000 Demi-Human Queen
-57300083 Demi-Human Queen
+57300083 Demi-Human Queen Marigga (Boss)
 57301000 Demi-Human Queen
 57301993 Demi-Human Queen
 57400000 Kindred of Rot
@@ -5589,14 +5589,14 @@
 58100001 Demi-Human Swordmaster Onze
 58100083 Demi-Human Swordmaster Onze
 58100093 Demi-Human Swordmaster Onze
-58100980 Demi-Human Swordmaster Onze
+58100980 Demi-Human Swordmaster Onze (Boss)
 58108083 Demi-Human Swordmaster Onze
 58200000 Great Red Bear
 58200001 Great Red Bear
 58200090 Great Red Bear
 58200093 Great Red Bear
-58200095 Great Red Bear
-58200990 Great Red Bear
+58200095 Rugalea the Great Red Bear (Boss)
+58200990 Ralva the Great Red Bear (Boss)
 58300000 Messmer Soldier
 58300001 Messmer Soldier
 58300080 Messmer Soldier
@@ -5679,10 +5679,10 @@
 58400398 Black Knight
 58400500 Black Knight
 58400501 Black Knight
-58400590 Black Knight
+58400590 Black Knight Garrew (Boss)
 58400600 Black Knight
 58400601 Black Knight
-58400690 Black Knight
+58400690 Black Knight Edredd (Boss)
 58401290 Black Knight
 58401390 Black Knight
 58409000 Black Knight
@@ -5697,9 +5697,9 @@
 58500190 Giant Ram
 58600000 Ghostflame Dragon
 58600001 Ghostflame Dragon
-58600080 Ghostflame Dragon
-58600083 Ghostflame Dragon
-58600090 Ghostflame Dragon
+58600080 Ghostflame Dragon (Gravesite Plain Boss)
+58600083 Ghostflame Dragon (Cerulean Coast Boss)
+58600090 Ghostflame Dragon (Moorth Highway Boss)
 58700000 Imp (Lion Head)
 58700001 Imp (Lion Head)
 58700081 Imp (Lion Head)
@@ -5782,7 +5782,7 @@
 59100088 Hornsent Grandam
 59200000 Magma Wyrm
 59200100 Magma Wyrm
-59200181 Magma Wyrm
+59200181 Magma Wyrm (Dragon's Pit)
 59300000 Giant Skeleton
 59300084 Giant Skeleton
 59301000 Giant Skeleton
@@ -5810,11 +5810,11 @@
 59501000 Leonine Misbegotten
 59501087 Leonine Misbegotten
 59600000 Ulcerated Tree Spirit
-59600081 Ulcerated Tree Spirit
-59600088 Ulcerated Tree Spirit
-59600098 Ulcerated Tree Spirit
+59600081 Ulcerated Tree Spirit (Ellac River)
+59600088 Ulcerated Tree Spirit (Belurat, Tower Settlement)
+59600098 Ulcerated Tree Spirit (Church District)
 59600100 Ulcerated Tree Spirit
-59600198 Ulcerated Tree Spirit
+59600198 Ulcerated Tree Spirit (Church District)
 59700000 Abductor Virgin
 59700083 Abductor Virgin
 59700090 Abductor Virgin
@@ -6026,6 +6026,10 @@
 61000150 Springhare
 61000900 Springhare
 61000965 Springhare
+62510093 Tree Sentinel (Hinterland Boss)
+62511093 Tree Sentinel - Torch (Hinterland Boss)
+62601084 Death Rite Bird (Charo's Hidden Grave Boss)
+63101093 Fallingstar Beast (Hinterland Boss)
 70000000 Fallen Hawks Soldier
 70000065 Fallen Hawks Soldier
 70000100 Fallen Hawks Soldier
@@ -6497,7 +6501,7 @@
 524060084 Dragon Communion Priestess
 524070000 Ancient Dragon-Man
 524070001 Ancient Dragon-Man
-524070081 Ancient Dragon-Man
+524070081 Ancient Dragon-Man (Boss)
 524090000 Swordhand of Night Jolan
 524090090 Swordhand of Night Jolan
 524090100 Swordhand of Night Jolan
@@ -6532,7 +6536,7 @@
 524170089 Redmane Freyja
 524170099 Redmane Freyja
 524170189 Redmane Freyja
-524170289 Redmane Freyja
+524170289 Redmane Freyja (Boss)
 524180000 Needle Knight Leda
 524180068 Needle Knight Leda
 524180089 Needle Knight Leda
@@ -6540,7 +6544,7 @@
 524180189 Needle Knight Leda
 524180198 Needle Knight Leda
 524180199 Needle Knight Leda
-524180289 Needle Knight Leda
+524180289 Needle Knight Leda (Boss)
 524190000 Thiollier
 524190081 Thiollier
 524190087 Thiollier
@@ -6548,30 +6552,30 @@
 524190189 Thiollier
 524200000 Count Ymir, High Priest
 524200090 Count Ymir, High Priest
-524200190 Count Ymir, Mother of Fingers
-524210000 Red Bear
-524210001 Red Bear
-524210090 Red Bear
-524210095 Red Bear
+524200190 Count Ymir, Mother of Fingers (Boss)
+524210000 Red Bear - Human
+524210001 Red Bear - Human
+524210090 Red Bear - Human
+524210095 Red Bear - Human (Boss)
 524220000 Dancer of Ranah
 524220001 Dancer of Ranah
-524220083 Dancer of Ranah
+524220083 Dancer of Ranah (Boss)
 524230000 Rakshasa
 524230090 Rakshasa
-524230091 Rakshasa
+524230091 Rakshasa (Boss)
 524240000 Knight of the Solitary Gaol
-524240080 Knight of the Solitary Gaol
+524240080 Knight of the Solitary Gaol (Boss)
 524250000 Dryleaf Dane
 524250001 Dryleaf Dane
 524250002 Dryleaf Dane
 524250089 Dryleaf Dane
 524250090 Dryleaf Dane
 524250189 Dryleaf Dane
-524250190 Dryleaf Dane
-524250289 Dryleaf Dane
+524250190 Dryleaf Dane (Moorth Ruins Boss)
+524250289 Dryleaf Dane (Enir Elim Boss)
 524270000 Lamenter
 524270001 Lamenter
-524270084 Lamenter
+524270084 Lamenter (Boss)
 524280000 Greater Potentate
 524280090 Greater Potentate
 524290000 Madding Hand
@@ -6709,7 +6713,7 @@
 544070081 Ancient-Dragon-Man
 544090000 Swordhand of Night Jolan
 544120000 Swordhand of Night Anna
-544120090 Swordhand of Night Anna
+544120090 Swordhand of Night Anna (Invader)
 544130000 Fire Knight Queelign
 544130088 Fire Knight Queelign
 544130090 Fire Knight Queelign
