@@ -6,6 +6,29 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 
+public static class FMGDictionaries
+{
+    public static Dictionary<string, string> Languages = new Dictionary<string, string>()
+    {
+        { "araae", "Arabic" },
+        { "deude", "German" },
+        { "engus", "English" },
+        { "frafr", "French" },
+        { "itait", "Italian" },
+        { "jpnjp", "Japanese" },
+        { "korkr", "Korean" },
+        { "polpl", "Polish" },
+        { "porbr", "Portuguese - Brazil" },
+        { "rusru", "Russian" },
+        { "spaar", "Spanish - Spain" },
+        { "spaes", "Spanish - Latin America " },
+        { "thath", "Thai" },
+        { "zhocn", "Simplified Chinese" },
+        { "zhotw", "Traditional Chinese " }
+    };
+}
+
+
 /// <summary>
 ///     FMG sections in UI
 /// </summary>

@@ -412,6 +412,11 @@ public class ProjectHandler
         }
     }
 
+    public void SaveCurrentProject()
+    {
+        WriteProjectConfig(CurrentProject);
+    }
+
     public void OnAutomaticSave(object source, ElapsedEventArgs e)
     {
         if (CFG.Current.System_EnableAutoSave)

@@ -288,12 +288,7 @@ public class DebugWindow
         {
             if (ImGui.Button("Decrypt"))
             {
-                var path = "C:\\Users\\benja\\Modding\\Elden Ring\\Projects\\ER-SOTE\\Mod\\regulation.bin";
-                var writePath = "C:\\Users\\benja\\Modding\\Elden Ring\\Projects\\ER-SOTE\\Mod\\decrypted_regulation.bin";
-
-                byte[] bytes = File.ReadAllBytes(path);
-                bytes = SFUtil.DecryptByteArray(SFUtil.erRegulationKey, bytes);
-                File.WriteAllBytes(writePath, bytes);
+                DebugActions.DecryptRegulation();
             }
 
             ImGui.EndTabItem();

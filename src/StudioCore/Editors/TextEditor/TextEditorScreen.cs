@@ -219,8 +219,8 @@ public class TextEditorScreen : EditorScreen
                 {
                     string disp = path.Key;
 
-                    if (TextLanguageNameMapping.ContainsKey(path.Key))
-                        disp = TextLanguageNameMapping[path.Key];
+                    if (FMGDictionaries.Languages.ContainsKey(path.Key))
+                        disp = FMGDictionaries.Languages[path.Key];
 
                     if (currentFmgBank.fmgLangs.ContainsKey(path.Key))
                     {
@@ -485,25 +485,6 @@ public class TextEditorScreen : EditorScreen
 
         return entries;
     }
-
-    private Dictionary<string, string> TextLanguageNameMapping = new Dictionary<string, string>()
-    {
-        { "araae", "Arabic" },
-        { "deude", "German" },
-        { "engus", "English" },
-        { "frafr", "French" },
-        { "itait", "Italian" },
-        { "jpnjp", "Japanese" },
-        { "korkr", "Korean" },
-        { "polpl", "Polish" },
-        { "porbr", "Portuguese - Brazil" },
-        { "rusru", "Russian" },
-        { "spaar", "Spanish - Spain" },
-        { "spaes", "Spanish - Latin America " },
-        { "thath", "Thai" },
-        { "zhocn", "Simplified Chinese" },
-        { "zhotw", "Traditional Chinese " }
-    };
 
     public void OnGUI(string[] initcmd)
     {
@@ -1126,8 +1107,9 @@ public class TextEditorScreen : EditorScreen
 
     private void ChangeLanguage(string path)
     {
-        TaskLogs.AddLog(path);
         Smithbox.ProjectHandler.CurrentProject.Config.LastFmgLanguageUsed = path;
+        Smithbox.ProjectHandler.SaveCurrentProject();
+
         _fmgSearchAllString = "";
         _filteredFmgInfo.Clear();
         ClearTextEditorCache();

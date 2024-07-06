@@ -127,7 +127,9 @@ public class BankHandler
 
         ProjectEnums.LoadBank();
 
-        FMGBank.LoadFMGs();
+        FMGBank.SetDefaultLanguagePath();
+        FMGBank.LoadFMGs(Smithbox.ProjectHandler.CurrentProject.Config.LastFmgLanguageUsed);
+
         LightmapAtlasBank.LoadBank();
 
         // TODO

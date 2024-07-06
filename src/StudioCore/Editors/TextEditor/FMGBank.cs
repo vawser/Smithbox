@@ -76,11 +76,16 @@ public class FMGBank
 
     public void LoadFMGs(string languageFolder = "")
     {
-        TaskManager.Run(new TaskManager.LiveTask("FMG - Load Text - " + languageFolder, TaskManager.RequeueType.WaitThenRequeue, true,
+        var folderName = languageFolder;
+
+        if (FMGDictionaries.Languages.ContainsKey(languageFolder))
+            folderName = FMGDictionaries.Languages[languageFolder];
+
+        TaskManager.Run(new TaskManager.LiveTask("FMG - Load Text - " + folderName, TaskManager.RequeueType.WaitThenRequeue, true,
             () =>
             {
                 LanguageFolder = languageFolder;
-                SetDefaultLanguagePath();
+
                 if (fmgLangs.ContainsKey(LanguageFolder))
                 {
                     return;
@@ -116,8 +121,10 @@ public class FMGBank
     }
 
 
-    private void SetDefaultLanguagePath()
+    public void SetDefaultLanguagePath()
     {
+        LanguageFolder = Smithbox.ProjectHandler.CurrentProject.Config.LastFmgLanguageUsed;
+
         if (LanguageFolder == "")
         {
             // By default, try to find path to English folder.
@@ -127,6 +134,8 @@ public class FMGBank
                 if (folder.Contains("eng", StringComparison.CurrentCultureIgnoreCase))
                 {
                     LanguageFolder = folder;
+                    Smithbox.ProjectHandler.CurrentProject.Config.LastFmgLanguageUsed = folder;
+                    Smithbox.ProjectHandler.SaveCurrentProject();
                     break;
                 }
             }

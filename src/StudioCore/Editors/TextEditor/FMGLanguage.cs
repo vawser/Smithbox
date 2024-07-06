@@ -36,13 +36,18 @@ public class FMGLanguage
     internal bool LoadItemMenuMsgBnds(ResourceDescriptor itemMsgPath, ResourceDescriptor menuMsgPath)
     {
         FMGFileSet itemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
+
         if (itemMsgBnd.LoadMsgBnd(itemMsgPath.AssetPath, "item.msgbnd"))
             _FmgInfoBanks.Add(itemMsgBnd.FileCategory, itemMsgBnd);
+
         FMGFileSet menuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
+
         if (menuMsgBnd.LoadMsgBnd(menuMsgPath.AssetPath, "menu.msgbnd"))
             _FmgInfoBanks.Add(menuMsgBnd.FileCategory, menuMsgBnd);
+
         if (_FmgInfoBanks.Count == 0)
             return false;
+
         return true;
     }
 
@@ -50,6 +55,7 @@ public class FMGLanguage
     {
         ResourceDescriptor itemMsgPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder);
         ResourceDescriptor menuMsgPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder);
+
         if (LoadItemMenuMsgBnds(itemMsgPath, menuMsgPath))
         {
             return true;
