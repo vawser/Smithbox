@@ -1,4 +1,5 @@
-﻿using StudioCore.Core;
+﻿using Octokit;
+using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -47,23 +48,24 @@ public static class ResourceTextLocator
     /// <summary>
     /// Get path of item.msgbnd (english by default)
     /// </summary>
-    public static ResourceDescriptor GetItemMsgbnd(string langFolder, bool writemode = false, bool nonDlcBndOnly = false, bool gameRootPathOnly = false)
+    public static ResourceDescriptor GetItemMsgbnd(string langFolder, bool writemode = false)
     {
-        return GetMsgbnd("item", langFolder, writemode, nonDlcBndOnly, gameRootPathOnly);
+        return GetMsgbnd("item", langFolder, writemode);
     }
 
     /// <summary>
     /// Get path of menu.msgbnd (english by default)
     /// </summary>
-    public static ResourceDescriptor GetMenuMsgbnd(string langFolder, bool writemode = false, bool nonDlcBndOnly = false, bool gameRootPathOnly = false)
+    public static ResourceDescriptor GetMenuMsgbnd(string langFolder, bool writemode = false)
     {
-        return GetMsgbnd("menu", langFolder, writemode, nonDlcBndOnly, gameRootPathOnly);
+        return GetMsgbnd("menu", langFolder, writemode);
     }
 
-    public static ResourceDescriptor GetMsgbnd(string msgBndType, string langFolder, bool writemode = false, bool nonDlcBndOnly = false, bool gameRootPathOnly = false)
+    public static ResourceDescriptor GetMsgbnd(string msgBndType, string langFolder, bool writemode = false)
     {
         ResourceDescriptor ad = new();
         var path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
+
         if (Smithbox.ProjectType == ProjectType.DES)
         {
             path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
@@ -72,9 +74,13 @@ public static class ResourceTextLocator
                 path = $@"msg\{msgBndType}.msgbnd.dcx";
         }
         else if (Smithbox.ProjectType == ProjectType.DS1)
+        {
             path = $@"msg\{langFolder}\{msgBndType}.msgbnd";
+        }
         else if (Smithbox.ProjectType == ProjectType.DS1R)
+        {
             path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
+        }
         else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             // DS2 does not have an msgbnd but loose fmg files instead
@@ -87,29 +93,15 @@ public static class ResourceTextLocator
         else if (Smithbox.ProjectType == ProjectType.DS3)
         {
             path = $@"msg\{langFolder}\{msgBndType}_dlc2.msgbnd.dcx";
-            if(nonDlcBndOnly)
-            {
-                path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
-            }
         }
         else if (Smithbox.ProjectType == ProjectType.ER)
         {
             path = $@"msg\{langFolder}\{msgBndType}_dlc02.msgbnd.dcx";
-            if (nonDlcBndOnly)
-            {
-                path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
-            }
         }
 
         if (writemode)
         {
             ad.AssetPath = path;
-            return ad;
-        }
-
-        if(gameRootPathOnly)
-        {
-            ad.AssetPath = $@"{Smithbox.GameRoot}\{path}";
             return ad;
         }
 
@@ -119,6 +111,42 @@ public static class ResourceTextLocator
         else if (File.Exists($@"{Smithbox.GameRoot}\{path}"))
             ad.AssetPath = $@"{Smithbox.GameRoot}\{path}";
 
+        return ad;
+    }
+
+    public static ResourceDescriptor GetMsgbnd_Vanilla_Upgrader(string msgBndType, string release, string langFolder, bool writemode = false)
+    {
+        ResourceDescriptor ad = new();
+        var path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
+
+        if (Smithbox.ProjectType == ProjectType.DS3)
+        {
+            path = $@"msg\{langFolder}\{msgBndType}{release}.msgbnd.dcx";
+        }
+        else if (Smithbox.ProjectType == ProjectType.ER)
+        {
+            path = $@"msg\{langFolder}\{msgBndType}{release}.msgbnd.dcx";
+        }
+
+        ad.AssetPath = $@"{Smithbox.GameRoot}\{path}";
+        return ad;
+    }
+
+    public static ResourceDescriptor GetMsgbnd_Project_Upgrader(string msgBndType, string release, string langFolder, bool writemode = false)
+    {
+        ResourceDescriptor ad = new();
+        var path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
+
+        if (Smithbox.ProjectType == ProjectType.DS3)
+        {
+            path = $@"msg\{langFolder}\{msgBndType}{release}.msgbnd.dcx";
+        }
+        else if (Smithbox.ProjectType == ProjectType.ER)
+        {
+            path = $@"msg\{langFolder}\{msgBndType}{release}.msgbnd.dcx";
+        }
+
+        ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}";
         return ad;
     }
 }

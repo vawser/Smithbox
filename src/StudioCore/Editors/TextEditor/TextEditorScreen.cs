@@ -266,6 +266,8 @@ public class TextEditorScreen : EditorScreen
         // Only support ER for now, although technically DS3 should be covered
         if (Smithbox.ProjectType is ProjectType.ER)
         {
+            var langFolder = Smithbox.BankHandler.FMGBank.LanguageFolder;
+
             Dictionary<FmgFileCategory, FMGFileSet> Project_Item_VanillaFmgInfoBanks = new();
             Dictionary<FmgFileCategory, FMGFileSet> Project_DLC_Item_VanillaFmgInfoBanks = new();
             Dictionary<FmgFileCategory, FMGFileSet> Base_Item_VanillaFmgInfoBanks = new();
@@ -276,24 +278,15 @@ public class TextEditorScreen : EditorScreen
             Dictionary<FmgFileCategory, FMGFileSet> Base_Menu_VanillaFmgInfoBanks = new();
             Dictionary<FmgFileCategory, FMGFileSet> Base_DLC_Menu_VanillaFmgInfoBanks = new();
 
-            ResourceDescriptor projectItemMsgPath = ResourceTextLocator.GetItemMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true);
-            ResourceDescriptor projectDlcItemMsgPath = ResourceTextLocator.GetItemMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false);
-            ResourceDescriptor baseItemMsgPath = ResourceTextLocator.GetItemMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true, true);
-            ResourceDescriptor baseDlcItemMsgPath = ResourceTextLocator.GetItemMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, false, true);
+            ResourceDescriptor projectItemMsgPath = ResourceTextLocator.GetMsgbnd_Project_Upgrader("item", "", langFolder);
+            ResourceDescriptor projectDlcItemMsgPath = ResourceTextLocator.GetMsgbnd_Project_Upgrader("item", "_dlc02", langFolder);
+            ResourceDescriptor baseItemMsgPath = ResourceTextLocator.GetMsgbnd_Vanilla_Upgrader("item", "", langFolder);
+            ResourceDescriptor baseDlcItemMsgPath = ResourceTextLocator.GetMsgbnd_Vanilla_Upgrader("item", "_dlc02", langFolder);
 
-            ResourceDescriptor projectMenuMsgPath = ResourceTextLocator.GetMenuMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true);
-            ResourceDescriptor projectDlcMenuMsgPath = ResourceTextLocator.GetMenuMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false);
-            ResourceDescriptor baseMenuMsgPath = ResourceTextLocator.GetMenuMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, true, true);
-            ResourceDescriptor baseDlcMenuMsgPath = ResourceTextLocator.GetMenuMsgbnd(Smithbox.BankHandler.FMGBank.LanguageFolder, false, false, true);
-
-            FMGFileSet projectItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
-            FMGFileSet projectDlcItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
-            FMGFileSet baseItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
-            FMGFileSet baseDlcItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
-            FMGFileSet projectMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
-            FMGFileSet projectDlcMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
-            FMGFileSet baseMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
-            FMGFileSet baseDlcMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
+            ResourceDescriptor projectMenuMsgPath = ResourceTextLocator.GetMsgbnd_Project_Upgrader("menu", "", langFolder);
+            ResourceDescriptor projectDlcMenuMsgPath = ResourceTextLocator.GetMsgbnd_Project_Upgrader("menu", "_dlc02", langFolder);
+            ResourceDescriptor baseMenuMsgPath = ResourceTextLocator.GetMsgbnd_Vanilla_Upgrader("menu", "", langFolder);
+            ResourceDescriptor baseDlcMenuMsgPath = ResourceTextLocator.GetMsgbnd_Vanilla_Upgrader("menu", "_dlc02", langFolder);
 
             // If the asset paths do not exist, return early to stop a failed msgbnd load
             if (!File.Exists(projectItemMsgPath.AssetPath) ||
@@ -305,6 +298,15 @@ public class TextEditorScreen : EditorScreen
                 !File.Exists(baseMenuMsgPath.AssetPath) ||
                 !File.Exists(baseDlcMenuMsgPath.AssetPath))
                 return;
+
+            FMGFileSet projectItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
+            FMGFileSet projectDlcItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
+            FMGFileSet baseItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
+            FMGFileSet baseDlcItemMsgBnd = new FMGFileSet(FmgFileCategory.Item);
+            FMGFileSet projectMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
+            FMGFileSet projectDlcMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
+            FMGFileSet baseMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
+            FMGFileSet baseDlcMenuMsgBnd = new FMGFileSet(FmgFileCategory.Menu);
 
             if (projectItemMsgBnd.LoadMsgBnd(projectItemMsgPath.AssetPath, "item.msgbnd"))
                 Project_Item_VanillaFmgInfoBanks.Add(projectItemMsgBnd.FileCategory, projectItemMsgBnd);
