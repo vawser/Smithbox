@@ -4341,29 +4341,29 @@
 52100094 Divine Beast Dancing Lion (Rauh Boss)
 52200000 Promised Consort Radahn
 52200001 Promised Consort Radahn
-52200089 Promised Consort Radahn
+52200089 Promised Consort Radahn (Boss)
 52201000 Promised Consort Radahn
-52201089 Promised Consort Radahn (Boss)
-52202000 Promised Consort Radahn
+52201089 Radahn, Consort of Miquella (Boss)
+52202000 Radahn, Consort of Miquella (Illusion Copy)
 52210000 Miquella's Arms
 52300000 Scadutree Avatar
 52300001 Scadutree Avatar
-52300096 Scadutree Avatar (Boss)
+52300096 Scadutree Avatar - Phase 1 (Boss)
 52300100 Scadutree Avatar
 52300101 Scadutree Avatar
-52300196 Scadutree Avatar
+52300196 Scadutree Avatar - Phase 1 (HP Bar)
 52300200 Scadutree Avatar
 52300201 Scadutree Avatar
-52300296 Scadutree Avatar
+52300296 Scadutree Avatar - Phase 2 (Boss)
 52300300 Scadutree Avatar
 52300301 Scadutree Avatar
-52300396 Scadutree Avatar
+52300396 Scadutree Avatar - Phase 3 (Boss)
 52300400 Scadutree Avatar
 52300401 Scadutree Avatar
-52300496 Scadutree Avatar
+52300496 Scadutree Avatar - Phase 2 (HP Bar)
 52300500 Scadutree Avatar
 52300501 Scadutree Avatar
-52300596 Scadutree Avatar
+52300596 Scadutree Avatar - Phase 3 (HP Bar)
 52400000 Commoner (Pot)
 52400001 Commoner (Pot)
 52400002 Commoner (Pot)
