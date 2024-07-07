@@ -558,6 +558,16 @@
 4300 Enemy: Fade after death
 4301 Enemy: Fade after death (boss)
 4302 Enemy: Fade after death (blue)
+4400 Enemy: -0% HP
+4401 Enemy: -10% HP
+4402 Enemy: -20% HP
+4403 Enemy: -30% HP
+4404 Enemy: -40% HP
+4405 Enemy: -50% HP
+4406 Enemy: -60% HP
+4407 Enemy: -70% HP
+4408 Enemy: -80% HP
+4409 Enemy: -90% HP
 4460 PLAN_SP_EFFECT_SPIRIT_CANDLE
 4600 Wet (Rain)
 5010 PLAN_SP_EFFECT_HORSE_RIDE
@@ -3838,6 +3848,7 @@
 20008730 SOTE - DLC Completion NG+ Scaling: 
 20008740 SOTE - DLC Completion NG+ Scaling: 
 20008750 SOTE - DLC Completion NG+ Scaling: 
+20011448 [Scadutree Avatar] Critical Hit After Phase
 20200000 [Spirit Summon] Curseblade Meera
 20200001 [Spirit Summon] Curseblade Meera +1
 20200002 [Spirit Summon] Curseblade Meera +2
