@@ -96,6 +96,7 @@ public class ProjectModal
 
     public void DisplayProjectLoadOptions()
     {
+        var scale = Smithbox.GetUIScale();
         var width = ImGui.GetWindowWidth() / 100;
 
         if (CFG.Current.RecentProjects.Count > 0)
@@ -109,14 +110,14 @@ public class ProjectModal
             ImGui.Separator();
         }
 
-        if (ImGui.Button("Load New Project", new Vector2(width * 95, 32)))
+        if (ImGui.Button("Load New Project", new Vector2(width * 95, 32 * scale)))
         {
             Smithbox.ProjectHandler.OpenProjectDialog();
         }
 
         if (CFG.Current.LastProjectFile != "")
         {
-            if (ImGui.Button("Load Recent Project", new Vector2(width * 95, 32)))
+            if (ImGui.Button("Load Recent Project", new Vector2(width * 95, 32 * scale)))
             {
                 Smithbox.ProjectHandler.LoadRecentProject();
             }

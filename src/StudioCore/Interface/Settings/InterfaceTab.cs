@@ -3,6 +3,7 @@ using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,12 @@ namespace StudioCore.Interface.Settings;
 
 public class InterfaceTab
 {
-    public InterfaceTab() { }
+    private float _tempScale;
+
+    public InterfaceTab()
+    {
+        _tempScale = CFG.Current.System_UI_Scale;
+    }
 
     public void Display()
     {
@@ -26,16 +32,24 @@ public class InterfaceTab
                 ImGui.Checkbox("Show tooltips", ref CFG.Current.System_Show_UI_Tooltips);
                 ImguiUtils.ShowHoverTooltip("This is a tooltip.");
 
-                ImGui.SliderFloat("UI scale", ref CFG.Current.System_UI_Scale, 0.5f, 4.0f);
+                ImGui.SliderFloat("UI scale", ref _tempScale, 0.5f, 4.0f);
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
                     // Round to 0.05
-                    CFG.Current.System_UI_Scale = (float)Math.Round(CFG.Current.System_UI_Scale * 20) / 20;
+                    CFG.Current.System_UI_Scale = (float)Math.Round(_tempScale * 20) / 20;
                     Smithbox.UIScaleChanged?.Invoke(null, EventArgs.Empty);
                     Smithbox.FontRebuildRequest = true;
+                    _tempScale = CFG.Current.System_UI_Scale;
                 }
                 ImguiUtils.ShowHoverTooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
 
+                ImGui.Checkbox($"Multiply UI scale by DPI ({(Smithbox.Dpi / 100).ToString("P0", new NumberFormatInfo { PercentPositivePattern = 1, PercentNegativePattern = 1 })})", ref CFG.Current.System_ScaleByDPI);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    Smithbox.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+                    Smithbox.FontRebuildRequest = true;
+                }
+                ImguiUtils.ShowHoverTooltip("Multiplies the user interface scale by your monitor's DPI setting.");
             }
 
             // Fonts
