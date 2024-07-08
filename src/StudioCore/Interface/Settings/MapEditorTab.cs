@@ -177,17 +177,11 @@ public class MapEditorTab
             // World Map
             if (ImGui.CollapsingHeader("World Map"))
             {
-                if (ImGui.Checkbox("Enable automatic map filtering on click", ref CFG.Current.WorldMap_EnableFilterOnClick))
-                {
-                    CFG.Current.WorldMap_EnableLoadOnClick = false;
-                }
-                ImguiUtils.ShowHoverTooltip("Clicking on the world map will automatically filter the map list to the specific tiles you clicked. Disables automatic loading if enabled.");
+                ImGui.Checkbox("Enable automatic map filtering on click", ref CFG.Current.WorldMap_EnableFilterOnClick);
+                ImguiUtils.ShowHoverTooltip("Left-clicking on the world map will automatically filter the map list to the specific tiles you clicked.");
 
-                if (ImGui.Checkbox("Enable automatic map loading on click", ref CFG.Current.WorldMap_EnableLoadOnClick))
-                {
-                    CFG.Current.WorldMap_EnableFilterOnClick = false;
-                }
-                ImguiUtils.ShowHoverTooltip("Clicking on the world map will automatically load the maps you clicked. Disables automatic filtering if enabled.");
+                ImGui.Checkbox("Enable automatic map loading on click", ref CFG.Current.WorldMap_EnableLoadOnClick);
+                ImguiUtils.ShowHoverTooltip("Right-clicking on the world map will automatically load the maps you clicked.");
             }
 
             ImGui.Unindent();

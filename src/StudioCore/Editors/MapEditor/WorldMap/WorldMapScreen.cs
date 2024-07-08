@@ -305,9 +305,20 @@ public class WorldMapScreen : IResourceEventListener
                         Smithbox.EditorHandler.MapEditor.SceneTree.SetWorldMapSelection();
                         Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = currentHoverMaps;
                     }
-                    if(CFG.Current.WorldMap_EnableLoadOnClick)
+                }
+            }
+        }
+        if (InputTracker.GetMouseButtonDown(MouseButton.Right))
+        {
+            if (relativePosWindowPosition.X > 0 && relativePosWindowPosition.X < windowWidth && relativePosWindowPosition.Y > 0 && relativePosWindowPosition.Y < windowHeight)
+            {
+                if (currentHoverMaps != null && currentHoverMaps.Count > 0)
+                {
+                    SelectedMapTiles = currentHoverMaps;
+
+                    if (CFG.Current.WorldMap_EnableLoadOnClick)
                     {
-                        foreach(var mapId in currentHoverMaps)
+                        foreach (var mapId in currentHoverMaps)
                         {
                             Smithbox.EditorHandler.MapEditor.Universe.LoadMap(mapId, false);
                         }
