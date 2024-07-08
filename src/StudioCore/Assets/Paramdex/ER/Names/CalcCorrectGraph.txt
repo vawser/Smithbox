@@ -1,16 +1,26 @@
 0 Default
 1 Heavy
 2 Keen
+3 
 4 Magic / Fire / Lightning / Holy
+5 
+6 
 7 Occult
 8 Quality
+9 
+10 
+11 
 12 Catalyst -
+13 
 14 Catalyst - Demi-Human Queen's Staff
 15 Catalyst -
 16 Catalyst -
+50 
+51 
 100 HP Scaling - Vigor
 101 FP Scaling - Mind
 102 Soul Level - Defence
+103 
 104 Stamina - Endurance
 110 Resistance: Poison - Soul Level
 111 Resistance: Scarlet Rot - Soul Level
@@ -33,6 +43,7 @@
 134 Lightning Defence - Endurance
 135 Holy Defence - Faith
 140 Item Discovery - Arcane
+150 
 160 Shield - Absorption %
 161 Shield - Attribute %
 162 Shield - Status %
@@ -47,3 +58,20 @@
 212 Fall Damage - Strength
 213 Fall Damage - Dexterity
 220 Equip Load - Endurance
+300 
+301 
+302 
+303 
+304 
+310 
+320 
+330 
+340 
+341 
+342 
+350 
+351 
+352 
+400 
+401 
+500 

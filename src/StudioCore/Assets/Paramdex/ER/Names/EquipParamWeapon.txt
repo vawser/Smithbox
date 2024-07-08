@@ -1,3 +1,38 @@
+1000 
+1100 
+1200 
+1210 
+1220 
+1230 
+1240 
+1250 
+1260 
+1400 
+1410 
+1420 
+1430 
+1500 
+1600 
+1700 
+1800 
+1900 
+2000 
+2100 
+2200 
+11000 
+12000 
+13000 
+100000 
+100100 
+100200 
+100300 
+100400 
+100500 
+100600 
+100700 
+100800 
+100900 
+101000 
 110000 Unarmed
 170000 Throwing Dagger
 171000 Bone Dart
@@ -25,6 +60,7 @@
 361000 Acid Spraymist
 470000 Innard Meat
 471000 Dragon Communion Harpoon
+472000 
 502000 Lamenter's Mask
 600000 Spritestone
 613000 Horned Bairn
@@ -43,6 +79,7 @@
 834000 Swarm Pot
 835000 Holy Water Pot
 835100 Sacred Order Pot
+836000 
 837000 Poison Pot
 840000 Roped Fire Pot
 842000 Roped Lightning Pot
@@ -50,6 +87,7 @@
 844000 Roped Poison Pot
 846000 Roped Magic Pot
 847000 Roped Fly Pot
+848000 
 849000 Roped Volcano Pot
 851000 Roped Holy Water Pot
 860000 Volcano Pot
@@ -57,6 +95,7 @@
 865000 Rancor Pot
 866000 Magic Pot
 866100 Academy Magic Pot
+867000 
 930000 Hefty Fire Pot
 931000 Hefty Rock Pot
 932000 Hefty Lightning Pot
@@ -71,6 +110,7 @@
 969000 Hefty Red Lightning Pot
 970000 Red Lightning Pot
 971000 Frenzied Flame Pot
+974000 
 976000 Roped Frenzied Flame Pot
 1000000 Dagger
 1000100 Heavy Dagger
@@ -184,6 +224,7 @@
 1151100 Blood Erdsteel Dagger
 1151200 Occult Erdsteel Dagger
 1160000 Blade of Calling
+1190000 
 1500000 Main-gauche
 1500100 Heavy Main-gauche
 1500200 Keen Main-gauche
@@ -210,6 +251,8 @@
 1511000 Fire Knight's Poison Shortsword
 1511100 Fire Knight's Blood Shortsword
 1511200 Fire Knight's Occult Shortsword
+1690000 
+1910000 
 2000000 Longsword
 2000100 Heavy Longsword
 2000200 Keen Longsword
@@ -279,6 +322,7 @@
 2070000 Golden Epitaph
 2080000 Nox Flowing Sword
 2090000 Inseparable Sword
+2092000 
 2110000 Coded Sword
 2140000 Sword of Night and Flame
 2150000 Crystal Sword
@@ -461,6 +505,7 @@
 3191200 Gargoyle's Occult Greatsword
 3200000 Death's Poker
 3210000 Gargoyle's Blackblade
+3220000 
 3500000 Sword Lance
 3500100 Heavy Sword Lance
 3500200 Keen Sword Lance
@@ -489,6 +534,8 @@
 3521100 Blood Lizard Greatsword
 3521200 Occult Lizard Greatsword
 3550000 Greatsword of Solitude
+3690000 
+3900000 
 4000000 Greatsword
 4000100 Heavy Greatsword
 4000200 Keen Greatsword
@@ -565,6 +612,9 @@
 4530000 Greatsword of Radahn (Lord)
 4540000 Moonrithyll's Knight Sword
 4550000 Greatsword of Radahn (Light)
+4690000 
+4900000 
+4910000 
 5000000 Estoc
 5000100 Heavy Estoc
 5000200 Keen Estoc
@@ -644,6 +694,7 @@
 5061000 Noble's Poison Estoc
 5061100 Noble's Blood Estoc
 5061200 Noble's Occult Estoc
+5690000 
 6000000 Bloody Helice
 6010000 Godskin Stitcher
 6010100 Heavy Godskin Stitcher
@@ -685,6 +736,8 @@
 6501000 Queelign's Poison Greatsword
 6501100 Queelign's Blood Greatsword
 6501200 Queelign's Occult Greatsword
+6690000 
+6900000 
 7000000 Falchion
 7000100 Heavy Falchion
 7000200 Keen Falchion
@@ -835,6 +888,9 @@
 7510000 Falx
 7520000 Dancing Blade of Ranah
 7530000 Horned Warrior's Sword
+7670000 
+7680000 
+7690000 
 8010000 Onyx Lord's Greatsword
 8020000 Dismounter
 8020100 Heavy Dismounter
@@ -907,6 +963,8 @@
 8511100 Freyja's Blood Greatsword
 8511200 Freyja's Occult Greatsword
 8520000 Horned Warrior's Greatsword
+8690000 
+8900000 
 9000000 Uchigatana
 9000100 Heavy Uchigatana
 9000200 Keen Uchigatana
@@ -952,6 +1010,13 @@
 9081100 Blood Serpentbone Blade
 9081200 Occult Serpentbone Blade
 9500000 Sword of Night
+9680000 
+9690000 
+9900000 
+9910000 
+9911000 
+9920000 
+9930000 
 10000000 Twinblade
 10000100 Heavy Twinblade
 10000200 Keen Twinblade
@@ -1143,7 +1208,9 @@
 11141100 Blood Stone Club
 11141200 Occult Stone Club
 11150000 Marika's Hammer
+11170000 
 11500000 Flowerstone Gavel
+11690000 
 12000000 Large Club
 12000100 Heavy Large Club
 12000200 Keen Large Club
@@ -1318,6 +1385,8 @@
 12531000 Bloodfiend's Poison Arm
 12531100 Bloodfiend's Blood Arm
 12531200 Bloodfiend's Occult Arm
+12900000 
+12910000 
 13000000 Nightrider Flail
 13000100 Heavy Nightrider Flail
 13000200 Keen Nightrider Flail
@@ -1618,6 +1687,8 @@
 15140000 Gargoyle's Black Axe
 15500000 Death Knight's Longhaft Axe
 15510000 Bonny Butchering Knife
+15690000 
+15900000 
 16000000 Short Spear
 16000100 Heavy Short Spear
 16000200 Keen Short Spear
@@ -1827,6 +1898,8 @@
 17511100 Messmer Soldier's Blood Spear
 17511200 Messmer Soldier's Occult Spear
 17520000 Barbed Staff-Spear
+17900000 
+17910000 
 18000000 Halberd
 18000100 Heavy Halberd
 18000200 Keen Halberd
@@ -1994,6 +2067,7 @@
 19020000 Halo Scythe
 19060000 Winged Scythe
 19500000 Obsidian Lamina
+19690000 
 20000000 Whip
 20000100 Heavy Whip
 20000200 Keen Whip
@@ -2148,6 +2222,9 @@
 21541100 Blood Golem Fist
 21541200 Occult Golem Fist
 21550000 Shield of Night
+21670000 
+21680000 
+21690000 
 22000000 Hookclaws
 22000100 Heavy Hookclaws
 22000200 Keen Hookclaws
@@ -2201,6 +2278,7 @@
 22031100 Blood Raptor Talons
 22031200 Occult Raptor Talons
 22500000 Claws of Night
+22690000 
 23000000 Prelate's Inferno Crozier
 23000100 Prelate's Heavy Inferno Crozier
 23000200 Prelate's Keen Inferno Crozier
@@ -2303,6 +2381,10 @@
 23500000 Devonia's Hammer
 23510000 Shadow Sunflower Blossom
 23520000 Gazing Finger
+23900000 
+23910000 
+23920000 
+23930000 
 24000000 Torch
 24020000 Steel-Wire Torch
 24040000 St. Trina's Torch
@@ -2311,6 +2393,7 @@
 24070000 Sentry's Torch
 24500000 Nanaya's Torch
 24510000 Lamenting Visage
+24590000 
 30000000 Buckler
 30000100 Heavy Buckler
 30000200 Keen Buckler
@@ -2888,6 +2971,7 @@
 31521100 Blood Serpent Crest Shield
 31521200 Occult Serpent Crest Shield
 31530000 Golden Lion Shield
+31690000 
 32000000 Dragon Towershield
 32000100 Heavy Dragon Towershield
 32000200 Keen Dragon Towershield
@@ -3131,6 +3215,10 @@
 32501100 Blood Black Steel Greatshield
 32501200 Occult Black Steel Greatshield
 32520000 Verdigris Greatshield
+32690000 
+32900000 
+32910000 
+32920000 
 33000000 Glintstone Staff
 33040000 Crystal Staff
 33050000 Gelmir Glintstone Staff
@@ -3151,6 +3239,16 @@
 33280000 Staff of Loss
 33510000 Staff of the Great Beyond
 33520000 Maternal Staff
+33690000 
+33900000 
+33910000 
+33920000 
+33930000 
+33940000 
+33950000 
+33960000 
+33970000 
+33980000 
 34000000 Finger Seal
 34010000 Godslayer's Seal
 34020000 Giant's Seal
@@ -3163,6 +3261,25 @@
 34500000 Dryleaf Seal
 34510000 Fire Knight's Seal
 34520000 Spiraltree Seal
+34610000 
+34620000 
+34630000 
+34640000 
+34650000 
+34660000 
+34670000 
+34680000 
+34690000 
+34900000 
+34910000 
+34920000 
+34930000 
+34940000 
+34950000 
+34960000 
+34970000 
+34980000 
+34990000 
 40000000 Shortbow
 40010000 Misbegotten Shortbow
 40020000 Red Branch Shortbow
@@ -3177,11 +3294,13 @@
 41060000 Pulley Bow
 41070000 Black Bow
 41510000 Ansbach's Longbow
+41690000 
 42000000 Lion Greatbow
 42010000 Golem Greatbow
 42030000 Erdtree Greatbow
 42040000 Greatbow
 42500000 Igon's Greatbow
+42690000 
 43000000 Soldier's Crossbow
 43020000 Light Crossbow
 43030000 Heavy Crossbow
@@ -3191,9 +3310,13 @@
 43110000 Crepus's Black-Key Crossbow
 43500000 Repeating Crossbow
 43510000 Spread Crossbow
+43690000 
+43900000 
 44000000 Hand Ballista
 44010000 Jar Cannon
 44500000 Rabbath's Cannon
+47000000 
+47010000 
 50000000 Arrow
 50010000 Fire Arrow
 50020000 Serpent Arrow
@@ -3257,6 +3380,9 @@
 52180000 Sleepbone Bolt
 52190000 Flaming Bolt
 52520000 Piquebone Bolt
+52690000 
+52900000 
+52910000 
 53000000 Ballista Bolt
 53010000 Lightning Greatbolt
 53020000 Explosive Greatbolt
@@ -3288,11 +3414,14 @@
 60511000 Dane's Poison Footwork
 60511100 Dane's Blood Footwork
 60511200 Dane's Occult Footwork
+60680000 
+60690000 
 61500000 Firespark Perfume Bottle
 61510000 Chilling Perfume Bottle
 61520000 Frenzyflame Perfume Bottle
 61530000 Lightning Perfume Bottle
 61540000 Deadly Poison Perfume Bottle
+61690000 
 62500000 Dueling Shield
 62500100 Heavy Dueling Shield
 62500200 Keen Dueling Shield
@@ -3374,6 +3503,8 @@
 66501200 Occult Great Katana
 66510000 Dragon-Hunter's Great Katana
 66520000 Rakshasa's Great Katana
+66680000 
+66690000 
 67500000 Milady
 67500100 Heavy Milady
 67500200 Keen Milady
@@ -3389,6 +3520,7 @@
 67501200 Occult Milady
 67510000 Leda's Sword
 67520000 Rellana's Twin Blades
+67690000 
 68500000 Beast Claw
 68500100 Heavy Beast Claw
 68500200 Keen Beast Claw
@@ -3403,3 +3535,20 @@
 68501100 Blood Beast Claw
 68501200 Occult Beast Claw
 68510000 Red Bear's Claw
+68520000 
+68530000 
+68680000 
+68690000 
+90000000 
+90010000 
+90020000 
+90030000 
+98990000 
+99000000 
+99010000 
+99020000 
+99030000 
+99040000 
+99050000 
+99060000 
+99999999 

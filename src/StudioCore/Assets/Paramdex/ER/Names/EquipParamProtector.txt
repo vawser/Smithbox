@@ -115,6 +115,7 @@
 200300 Banished Knight Greaves
 201000 Banished Knight Helm (Altered)
 201100 Banished Knight Armor (Altered)
+202100 
 210000 Briar Helm
 210100 Briar Armor
 210200 Briar Gauntlets
@@ -338,6 +339,7 @@
 740200 Noble's Gloves
 740300 Noble's Trousers
 741000 Navy Hood
+742000 
 760000 Maliketh's Helm
 760100 Maliketh's Armor
 760200 Maliketh's Gauntlets
@@ -380,6 +382,12 @@
 832000 Lazuli Glintstone Crown
 833000 Karolos Glintstone Crown
 834000 Witch's Glintstone Crown
+834100 
+835000 
+835100 
+835200 
+835300 
+836000 
 840000 Marionette Soldier Helm
 840100 Marionette Soldier Armor
 850000 Marionette Soldier Birdhelm
@@ -397,6 +405,7 @@
 872100 White Reed Armor
 872200 White Reed Gauntlets
 872300 White Reed Greaves
+873000 
 880000 Confessor Hood
 880100 Confessor Armor
 880200 Confessor Gloves
@@ -407,21 +416,30 @@
 890100 Prisoner Clothing
 890300 Prisoner Trousers
 891000 Blackguard's Iron Mask
+892100 
 900000 Traveling Maiden Hood
 900100 Traveling Maiden Robe
 900200 Traveling Maiden Gloves
 900300 Traveling Maiden Boots
 901100 Traveling Maiden Robe (Altered)
+901200 
+901600 
 902000 Finger Maiden Fillet
 902100 Finger Maiden Robe
 902300 Finger Maiden Shoes
 903100 Finger Maiden Robe (Altered)
+904100 
 910000 Preceptor's Big Hat
 910100 Preceptor's Long Gown
 910200 Preceptor's Gloves
 910300 Preceptor's Trousers
 911000 Mask of Confidence
 911100 Preceptor's Long Gown (Altered)
+912000 
+912100 
+912200 
+912300 
+913000 
 920000 Grass Hair Ornament
 930000 Skeletal Mask
 930100 Raptor's Black Feathers
@@ -449,6 +467,11 @@
 963200 Bloodsoaked Manchettes
 964000 Bloodsoaked Mask
 964100 Official's Attire
+965000 
+965100 
+965300 
+966000 
+967000 
 970000 Omen Helm
 970100 Omen Armor
 970200 Omen Gauntlets
@@ -463,6 +486,7 @@
 990200 Errant Sorcerer Manchettes
 990300 Errant Sorcerer Boots
 991100 Errant Sorcerer Robe (Altered)
+992000 
 1000000 Haima Glintstone Crown
 1000100 Battlemage Robe
 1000200 Battlemage Manchettes
@@ -519,6 +543,7 @@
 1500200 Knight Gauntlets
 1500300 Knight Greaves
 1600000 Greathood
+1610000 
 1700000 Godrick Soldier Helm
 1700100 Tree-and-Beast Surcoat
 1700200 Godrick Soldier Gauntlets
@@ -600,14 +625,19 @@
 1920000 Cerulean Tear Scarab
 1930100 Deathbed Dress
 1930300 Deathbed Smalls
+1932100 
 1940000 Fia's Hood
 1940100 Fia's Robe
 1941100 Fia's Robe (Altered)
 1950100 Millicent's Robe
 1950200 Millicent's Gloves
 1950300 Millicent's Boots
+1960100 
+1960200 
 1970100 Millicent's Tunic
 1970200 Golden Prosthetic
+1971100 
+1971200 
 1980000 Highwayman Hood
 1980100 Highwayman Cloth Armor
 1980200 Highwayman Gauntlets
@@ -649,6 +679,15 @@
 5030200 Thiollier's Gloves
 5030300 Thiollier's Trousers
 5031100 Thiollier's Garb (Altered)
+5032100 
+5040000 
+5040100 
+5040200 
+5040300 
+5050000 
+5050100 
+5050200 
+5050300 
 5060000 High Priest Hat
 5060100 High Priest Robe
 5060200 High Priest Gloves
@@ -673,6 +712,9 @@
 5100300 Igon's Loincloth
 5101000 Igon's Helm (Altered)
 5101100 Igon's Armor (Altered)
+5102100 
+5102200 
+5102300 
 5110000 Wise Man's Mask
 5110100 Ansbach's Attire
 5110200 Ansbach's Manchettes
@@ -683,6 +725,7 @@
 5120200 Freyja's Gauntlets
 5120300 Freyja's Greaves
 5121100 Freyja's Armor (Altered)
+5122000 
 5130000 Helm of Solitude
 5130100 Armor of Solitude
 5130200 Gauntlets of Solitude
@@ -701,6 +744,14 @@
 5160100 Rakshasa Armor
 5160200 Rakshasa Gauntlets
 5160300 Rakshasa Greaves
+5170000 
+5170100 
+5170200 
+5170300 
+5172000 
+5172100 
+5172200 
+5172300 
 5180000 Fire Knight Helm
 5180100 Fire Knight Armor
 5180200 Fire Knight Gauntlets
@@ -766,3 +817,4 @@
 5310000 Crucible Hammer-Helm
 5320000 Greatjar
 5330000 Imp Head (Lion)
+9999999 

@@ -2,7 +2,338 @@
 1 Impact: No Target
 2 Impact: Oppose and Self
 3 Impact: Oppose and Friendly
+5 
+6 
+7 
+10 
+11 
+20 
+21 
+40 
+41 
+42 
+43 
+44 
+101 
+200 
+201 
+202 
+203 
+204 
+205 
+206 
+210 
+211 
+212 
+213 
+220 
+221 
+222 
+300 
+301 
+302 
+303 
+304 
+305 
+306 
+307 
+310 
+311 
+312 
+313 
+320 
+321 
+322 
+550 
+560 
+561 
+800 
+810 
+820 
+830 
+900 
+950 
+980 
+981 
+982 
+983 
+984 
+990 
+991 
+992 
+993 
+994 
+995 
+996 
+997 
+998 
+999 
+1000 
+1001 
+1002 
 1010 Impact
+1011 
+1012 
+1013 
+1020 
+1021 
+1022 
+1023 
+1024 
+1025 
+1030 
+1031 
+1032 
+1033 
+1040 
+1041 
+1042 
+1043 
+1044 
+1045 
+1070 
+1071 
+1072 
+1080 
+1081 
+1090 
+1091 
+1100 
+1101 
+1102 
+1110 
+1111 
+1120 
+1125 
+1130 
+1131 
+1135 
+1140 
+1141 
+1142 
+1145 
+1200 
+1201 
+1202 
+1204 
+1205 
+1206 
+1215 
+1220 
+1225 
+1230 
+1250 
+1400 
+1401 
+1403 
+1405 
+1410 
+1420 
+1425 
+1500 
+1505 
+1507 
+1510 
+1511 
+1512 
+1513 
+1515 
+1520 
+1523 
+1525 
+1540 
+1550 
+1555 
+1590 
+1800 
+1810 
+1820 
+1900 
+1910 
+1911 
+1912 
+2300 
+2310 
+2350 
+2351 
+2400 
+2410 
+2450 
+2451 
+2500 
+2510 
+2550 
+2551 
+2600 
+2610 
+2650 
+2651 
+2700 
+2710 
+2750 
+2751 
+2800 
+2810 
+2850 
+2851 
+2852 
+2860 
+2861 
+3000 
+3010 
+3020 
+3100 
+3110 
+3120 
+3200 
+3210 
+3220 
+3300 
+3400 
+3410 
+3420 
+3500 
+3501 
+3510 
+3520 
+3600 
+3610 
+3620 
+3800 
+10000 
+10001 
+10010 
+10020 
+10021 
+10022 
+10030 
+10050 
+10070 
+10080 
+10090 
+12000 
+12001 
+12002 
+12003 
+12010 
+12011 
+12012 
+12013 
+13000 
+13001 
+13002 
+13010 
+13011 
+13012 
+13020 
+13030 
+13040 
+14000 
+14001 
+14010 
+14020 
+15000 
+15001 
+15010 
+15020 
+15030 
+16000 
+16001 
+16002 
+16003 
+16004 
+16005 
+16100 
+16110 
+16120 
+16130 
+16140 
+16150 
+16200 
+16210 
+16220 
+16230 
+16240 
+16250 
+17000 
+18000 
+18001 
+18002 
+18003 
+19000 
+19001 
+19010 
+19011 
+19012 
+19013 
+19014 
+19020 
+19021 
+19022 
+19023 
+19024 
+20000 
+20010 
+21000 
+22000 
+23000 
+23010 
+24000 
+25000 
+26000 
+27000 
+28000 
+29010 
+29020 
+29021 
+29030 
+29040 
+29041 
+29050 
+29051 
+29052 
+29053 
+29054 
+29055 
+29065 
+29066 
+29070 
+29100 
+29101 
+29110 
+29111 
+29120 
+30000 
+30001 
+30002 
+30003 
+30004 
+30005 
+30006 
+30007 
+30008 
+30009 
+30010 
+30011 
+30012 
+30013 
+30014 
+30015 
+30016 
+30017 
+30018 
+30019 
+30020 
+30021 
+30022 
+30023 
+30024 
+30025 
+30026 
+30027 
+30028 
+30029 
+30030 
 40000 Glintstone Pebble
 40010 Great Glintstone Shard
 40070 Glintstone Arc
@@ -45,6 +376,8 @@
 41002 Shatter Earth
 41003 Shatter Earth
 41004 Shatter Earth
+41005 
+41006 
 41100 Rock Blaster
 41101 Rock Blaster
 41102 Rock Blaster
@@ -155,6 +488,8 @@
 46200 Night Comet
 46201 Night Comet
 46202 Night Comet
+46300 
+46301 
 46400 Carian Retaliation
 46401 Carian Retaliation
 46410 Carian Retaliation <unused>
@@ -181,6 +516,7 @@
 48007 Magma Shot
 48100 Gelmir's Fury
 48107 Gelmir's Fury
+48108 
 48200 Roiling Magma
 48201 Roiling Magma
 48202 Roiling Magma
@@ -232,14 +568,31 @@
 60101 Flame Sling
 60102 Flame Sling
 60103 Flame Sling
+60200 
+60201 
+60202 
+60205 
+60206 
+60207 
+60300 
+60305 
+60400 
 61000 Giantsflame Take Thee
 61005 Giantsflame Take Thee
 61100 Flame of the Fell God
 61101 Flame of the Fell God
+61200 
+61201 
+61202 
+61203 
+61204 
+61205 
+61206 
 62100 Black Flame
 62101 Black Flame
 62105 Black Flame
 62106 Black Flame [Charged]
+62200 
 62300 Scouring Black Flame
 62305 Scouring Black Flame
 62400 Noble Presence
@@ -322,6 +675,7 @@
 68205 Beast Claw
 68206 Beast Claw [Charged]
 68300 Gurranq's Beast Claw
+68301 
 68600 Bestial Constitution
 69000 Lightning Spear
 69001 Lightning Spear
@@ -396,6 +750,9 @@
 73110 Unendurable Frenzy
 73111 Unendurable Frenzy
 73112 Unendurable Frenzy
+73120 
+73121 
+73122 
 73200 Frenzied Burst
 73205 Frenzied Burst
 73300 Howl of Shabriri
@@ -427,8 +784,106 @@
 79982 Stone of Gurranq
 79983 Bloodflame Talons
 79984 Thops's Barrier
+79985 
+79986 
+79987 
 79990 Ancient Dragons' Lightning Strike
 79991 Noble Presence
+90000 
+90010 
+90020 
+90030 
+90040 
+90050 
+90100 
+90105 
+90110 
+90115 
+90120 
+90125 
+90130 
+90140 
+90150 
+90155 
+90160 
+90165 
+90180 
+90200 
+90203 
+90210 
+90213 
+90220 
+90230 
+90233 
+90240 
+90250 
+90300 
+90305 
+90310 
+90315 
+90320 
+90323 
+90325 
+90328 
+90330 
+90333 
+90340 
+90350 
+90355 
+90360 
+90365 
+90380 
+90381 
+90400 
+90410 
+90420 
+90430 
+90440 
+90450 
+90460 
+90470 
+90480 
+90500 
+90501 
+90505 
+90509 
+90510 
+90511 
+90515 
+90516 
+90517 
+90520 
+90530 
+90540 
+90550 
+90560 
+90561 
+90590 
+90591 
+90600 
+90605 
+90610 
+90630 
+90632 
+90635 
+90640 
+90642 
+90645 
+90650 
+90660 
+90665 
+90700 
+90705 
+90710 
+90730 
+90732 
+90735 
+90740 
+90742 
+90745 
+90750 
+90760 
+90765 
 100000 Default - Dagger - 1H Light #1
 100010 Default - Dagger - 1H Light #2
 100020 Default - Dagger - 1H Light #3
@@ -698,6 +1153,7 @@
 202305 Carian Knight's Sword - Lazuli Glintstone Sword
 202310 Carian Knight's Sword - Lazuli Glintstone Sword
 202315 Carian Knight's Sword - Lazuli Glintstone Sword
+203001 
 203100 Carian Knight's Sword - Lazuli Glintstone Sword
 203105 Carian Knight's Sword - Lazuli Glintstone Sword
 203110 Carian Knight's Sword - Lazuli Glintstone Sword
@@ -858,6 +1314,13 @@
 301001 Dark Moon Greatsword
 301002 Dark Moon Greatsword - Charged
 301003 Dark Moon Greatsword - WA Blade
+301004 
+301005 
+301006 
+301007 
+301008 
+301009 
+301010 
 301100 Dark Moon Greatsword
 301105 Dark Moon Greatsword
 301110 Dark Moon Greatsword
@@ -875,6 +1338,7 @@
 302305 Death's Poker
 302310 Death's Poker
 302315 Death's Poker
+303001 
 303100 Alabaster Lord's Sword
 303105 Alabaster Lord's Sword
 303110 Alabaster Lord's Sword
@@ -906,6 +1370,17 @@
 318310 Claymore
 318315 Claymore
 318330 Claymore
+321100 
+321101 
+321105 
+321106 
+321110 
+321115 
+321300 
+321305 
+321310 
+321315 
+321330 
 400000 Default - Colossal Sword
 400001 Default - Colossal Sword
 400002 Default - Colossal Sword
@@ -1016,6 +1491,7 @@
 402300 Zweihander - Troll Knight's Sword
 402305 Zweihander - Troll Knight's Sword
 403001 Ruins Greatsword
+403005 
 403100 Ruins Greatsword
 403105 Ruins Greatsword
 403110 Ruins Greatsword
@@ -1033,6 +1509,27 @@
 404400 Godslayer's Greatsword
 404410 Godslayer's Greatsword
 404420 Godslayer's Greatsword
+410200 
+410201 
+410205 
+410206 
+410210 
+410211 
+410215 
+410216 
+410300 
+410301 
+410310 
+410311 
+410320 
+410321 
+410325 
+410330 
+410340 
+410350 
+410360 
+410361 
+410380 
 500000 Default - Thrusting Sword
 500010 Default - Thrusting Sword
 500020 Default - Thrusting Sword
@@ -1301,6 +1798,38 @@
 602316 Godskin Stitcher
 602375 Godskin Stitcher
 602376 Godskin Stitcher
+610100 
+610105 
+610110 
+610115 
+610125 
+610126 
+610129 
+610160 
+610180 
+610300 
+610305 
+610310 
+610315 
+610325 
+610326 
+610329 
+610360 
+610380 
+610600 
+610605 
+610610 
+610630 
+610631 
+610632 
+610635 
+610700 
+610705 
+610710 
+610730 
+610731 
+610732 
+610735 
 700000 Default - Curved Sword
 700010 Default - Curved Sword
 700020 Default - Curved Sword
@@ -1502,6 +2031,38 @@
 714430 Shamshir - Scimitar
 714440 Shamshir - Scimitar
 714450 Shamshir - Scimitar
+720200 
+720205 
+720210 
+720215 
+720220 
+720225 
+720230 
+720235 
+720300 
+720305 
+720306 
+720310 
+720315 
+720316 
+720320 
+720321 
+720322 
+720323 
+720325 
+720330 
+720335 
+720340 
+720345 
+720350 
+720351 
+720355 
+720356 
+720360 
+720365 
+720375 
+720376 
+720380 
 800000 Default - Curved Greatsword
 800010 Default - Curved Greatsword
 800020 Default - Curved Greatsword
@@ -1621,6 +2182,8 @@
 802310 Magma Wyrm's Scalesword
 802315 Magma Wyrm's Scalesword
 802360 Magma Wyrm's Scalesword
+803160 
+803360 
 804150 Bloodhound's Fang
 804160 Bloodhound's Fang
 804350 Bloodhound's Fang
@@ -1807,9 +2370,14 @@
 1000470 Default - Twinblade
 1000480 Default - Twinblade
 1000500 Default - Twinblade-(Crit)
+1000505 
 1000509 Default - Twinblade
 1000510 Default - Twinblade-(Crit)
+1000515 
+1000516 
+1000520 
 1000530 Default - Twinblade-(Crit)
+1000540 
 1000550 Default - Twinblade-(Crit)
 1000560 Default - Twinblade-(Crit)
 1000561 Default - Twinblade-(Crit)
@@ -1890,6 +2458,118 @@
 1005315 Eleonora's Poleblade
 1005316 Eleonora's Poleblade
 1005317 Eleonora's Poleblade
+1010000 
+1010010 
+1010020 
+1010030 
+1010040 
+1010100 
+1010105 
+1010110 
+1010115 
+1010120 
+1010125 
+1010126 
+1010130 
+1010140 
+1010150 
+1010155 
+1010160 
+1010165 
+1010180 
+1010200 
+1010201 
+1010210 
+1010211 
+1010220 
+1010230 
+1010231 
+1010232 
+1010240 
+1010241 
+1010242 
+1010300 
+1010301 
+1010302 
+1010305 
+1010306 
+1010307 
+1010308 
+1010310 
+1010311 
+1010312 
+1010315 
+1010316 
+1010317 
+1010318 
+1010320 
+1010321 
+1010325 
+1010326 
+1010330 
+1010331 
+1010340 
+1010350 
+1010351 
+1010355 
+1010360 
+1010365 
+1010380 
+1010381 
+1010400 
+1010410 
+1010420 
+1010430 
+1010440 
+1010460 
+1010470 
+1010480 
+1010500 
+1010505 
+1010509 
+1010510 
+1010515 
+1010516 
+1010520 
+1010530 
+1010540 
+1010550 
+1010560 
+1010561 
+1010590 
+1010591 
+1010600 
+1010605 
+1010610 
+1010630 
+1010632 
+1010635 
+1010650 
+1010660 
+1010700 
+1010705 
+1010710 
+1010730 
+1010732 
+1010735 
+1010750 
+1010760 
+1010800 
+1010805 
+1010810 
+1010815 
+1010820 
+1010825 
+1010860 
+1010865 
+1010870 
+1010875 
+1010880 
+1010885 
+1010890 
+1010891 
+1010895 
+1010896 
 1100000 Default - Hammer
 1100010 Default - Hammer
 1100020 Default - Hammer
@@ -2152,6 +2832,9 @@
 1201305 Beastclaw Greathammer
 1201310 Beastclaw Greathammer
 1201315 Beastclaw Greathammer
+1202100 
+1202105 
+1202110 
 1203000 Pickaxe
 1203001 Pickaxe
 1203002 Pickaxe
@@ -2252,6 +2935,23 @@
 1203885 Pickaxe
 1203890 Pickaxe
 1203895 Pickaxe
+1210100 
+1210101 
+1210105 
+1210106 
+1210107 
+1210125 
+1210126 
+1210300 
+1210301 
+1210305 
+1210306 
+1210307 
+1210325 
+1210326 
+1211180 
+1211181 
+1211380 
 1300000 Default - Flail
 1300010 Default - Flail
 1300020 Default - Flail
@@ -2499,6 +3199,51 @@
 1406420 Iron Cleaver - Celebrant's Cleaver
 1406430 Iron Cleaver - Celebrant's Cleaver
 1406440 Iron Cleaver - Celebrant's Cleaver
+1420100 
+1420101 
+1420105 
+1420106 
+1420160 
+1420161 
+1420300 
+1420301 
+1420305 
+1420306 
+1420360 
+1420361 
+1421200 
+1421205 
+1421210 
+1421215 
+1421220 
+1421225 
+1421230 
+1421235 
+1421236 
+1421300 
+1421305 
+1421310 
+1421315 
+1421320 
+1421322 
+1421325 
+1421330 
+1421335 
+1421340 
+1421345 
+1421350 
+1421355 
+1421360 
+1421365 
+1421380 
+1422105 
+1422115 
+1422116 
+1422305 
+1422315 
+1422316 
+1422635 
+1422735 
 1500000 Default - Greataxe
 1500002 Default - Greataxe
 1500010 Default - Greataxe
@@ -2613,6 +3358,207 @@
 1503305 Axe of Godrick
 1503310 Axe of Godrick
 1503315 Axe of Godrick
+1504000 
+1504002 
+1504010 
+1504020 
+1504030 
+1504100 
+1504101 
+1504105 
+1504110 
+1504115 
+1504120 
+1504125 
+1504130 
+1504140 
+1504150 
+1504155 
+1504160 
+1504165 
+1504180 
+1504200 
+1504210 
+1504220 
+1504230 
+1504300 
+1504301 
+1504305 
+1504310 
+1504315 
+1504320 
+1504325 
+1504330 
+1504340 
+1504350 
+1504355 
+1504360 
+1504365 
+1504380 
+1504400 
+1504410 
+1504420 
+1504430 
+1504460 
+1504470 
+1504480 
+1504500 
+1504501 
+1504505 
+1504506 
+1504509 
+1504510 
+1504511 
+1504515 
+1504516 
+1504517 
+1504520 
+1504530 
+1504531 
+1504540 
+1504550 
+1504560 
+1504561 
+1504590 
+1504591 
+1504600 
+1504605 
+1504610 
+1504630 
+1504632 
+1504635 
+1504640 
+1504642 
+1504645 
+1504650 
+1504660 
+1504665 
+1504700 
+1504705 
+1504710 
+1504730 
+1504732 
+1504735 
+1504740 
+1504742 
+1504745 
+1504750 
+1504760 
+1504765 
+1504800 
+1504805 
+1504810 
+1504815 
+1504820 
+1504825 
+1504860 
+1504865 
+1504870 
+1504875 
+1504880 
+1504885 
+1504890 
+1504895 
+1505000 
+1505002 
+1505010 
+1505020 
+1505030 
+1505100 
+1505101 
+1505105 
+1505110 
+1505115 
+1505120 
+1505125 
+1505130 
+1505140 
+1505150 
+1505155 
+1505160 
+1505165 
+1505180 
+1505200 
+1505210 
+1505220 
+1505230 
+1505300 
+1505305 
+1505310 
+1505315 
+1505320 
+1505325 
+1505330 
+1505340 
+1505350 
+1505355 
+1505360 
+1505365 
+1505380 
+1505400 
+1505410 
+1505420 
+1505430 
+1505460 
+1505470 
+1505480 
+1505500 
+1505501 
+1505505 
+1505506 
+1505509 
+1505510 
+1505511 
+1505515 
+1505516 
+1505517 
+1505520 
+1505530 
+1505531 
+1505540 
+1505550 
+1505560 
+1505561 
+1505590 
+1505591 
+1505600 
+1505605 
+1505610 
+1505630 
+1505632 
+1505635 
+1505640 
+1505642 
+1505645 
+1505650 
+1505660 
+1505665 
+1505700 
+1505705 
+1505710 
+1505730 
+1505732 
+1505735 
+1505740 
+1505742 
+1505745 
+1505750 
+1505760 
+1505765 
+1505800 
+1505805 
+1505810 
+1505815 
+1505820 
+1505825 
+1505860 
+1505865 
+1505870 
+1505875 
+1505880 
+1505885 
+1505890 
+1505895 
 1600000 Default - Spear
 1600010 Default - Spear
 1600020 Default - Spear
@@ -2734,14 +3680,75 @@
 1605305 Partisan - Spiked Spear
 1605310 Partisan - Spiked Spear
 1605315 Partisan - Spiked Spear
+1605320 
+1605330 
+1605340 
+1606000 
+1606010 
+1606020 
+1606030 
 1606100 Pike
 1606105 Pike
 1606110 Pike
 1606115 Pike
+1606120 
+1606125 
+1606130 
+1606140 
+1606150 
+1606160 
+1606170 
+1606180 
+1606200 
+1606210 
+1606220 
+1606230 
 1606300 Pike
 1606305 Pike
 1606310 Pike
 1606315 Pike
+1606320 
+1606325 
+1606330 
+1606340 
+1606350 
+1606360 
+1606380 
+1606400 
+1606410 
+1606420 
+1606430 
+1606600 
+1606605 
+1606610 
+1606630 
+1606632 
+1606635 
+1606650 
+1606660 
+1606700 
+1606705 
+1606710 
+1606730 
+1606732 
+1606735 
+1606750 
+1606760 
+1606800 
+1606805 
+1606810 
+1606815 
+1606820 
+1606825 
+1606860 
+1606865 
+1606870 
+1606875 
+1606880 
+1606881 
+1606885 
+1606890 
+1606895 
 1611000 Cross-Naginata
 1611010 Cross-Naginata
 1611020 Cross-Naginata
@@ -2754,6 +3761,137 @@
 1611410 Cross-Naginata
 1611420 Cross-Naginata
 1611430 Cross-Naginata
+1612000 
+1612100 
+1612105 
+1612110 
+1612115 
+1612300 
+1612305 
+1612310 
+1612315 
+1615000 
+1615010 
+1615020 
+1615030 
+1615100 
+1615105 
+1615110 
+1615115 
+1615120 
+1615125 
+1615130 
+1615140 
+1615150 
+1615160 
+1615170 
+1615180 
+1615200 
+1615210 
+1615220 
+1615230 
+1615300 
+1615305 
+1615310 
+1615315 
+1615320 
+1615325 
+1615330 
+1615340 
+1615350 
+1615360 
+1615380 
+1615400 
+1615410 
+1615420 
+1615430 
+1615600 
+1615605 
+1615610 
+1615630 
+1615632 
+1615635 
+1615650 
+1615660 
+1615700 
+1615705 
+1615710 
+1615730 
+1615732 
+1615735 
+1615750 
+1615760 
+1615800 
+1615805 
+1615810 
+1615815 
+1615820 
+1615825 
+1615860 
+1615865 
+1615870 
+1615875 
+1615880 
+1615881 
+1615885 
+1615890 
+1615895 
+1617100 
+1617105 
+1617110 
+1617115 
+1617300 
+1617305 
+1617310 
+1617315 
+1620100 
+1620101 
+1620105 
+1620106 
+1620125 
+1620126 
+1620300 
+1620301 
+1620305 
+1620306 
+1620325 
+1620326 
+1620632 
+1620633 
+1620635 
+1620636 
+1620660 
+1620661 
+1620732 
+1620733 
+1620735 
+1620736 
+1620760 
+1620761 
+1621000 
+1621001 
+1621010 
+1621011 
+1621012 
+1621020 
+1621021 
+1621030 
+1621200 
+1621201 
+1621210 
+1621211 
+1621212 
+1621220 
+1621221 
+1621230 
+1621400 
+1621401 
+1621410 
+1621411 
+1621412 
+1621420 
+1621421 
+1621430 
 1700000 Lance
 1700001 Lance
 1700010 Lance
@@ -2872,14 +4010,29 @@
 1702305 Golem's Halberd
 1702310 Golem's Halberd
 1702315 Golem's Halberd
+1703001 
+1703002 
+1703003 
+1703004 
+1703005 
+1703006 
+1703007 
+1703008 
+1703009 
 1703100 Serpent-Hunter
 1703105 Serpent-Hunter
 1703110 Serpent-Hunter
 1703115 Serpent-Hunter
+1703130 
+1703160 
+1703165 
 1703300 Serpent-Hunter
 1703305 Serpent-Hunter
 1703310 Serpent-Hunter
 1703315 Serpent-Hunter
+1703330 
+1703360 
+1703365 
 1707100 Treespear
 1707105 Treespear
 1707106 Treespear
@@ -2892,6 +4045,95 @@
 1707310 Treespear
 1707315 Treespear
 1707316 Treespear
+1708000 
+1708001 
+1708010 
+1708020 
+1708100 
+1708105 
+1708110 
+1708115 
+1708120 
+1708125 
+1708126 
+1708129 
+1708130 
+1708140 
+1708150 
+1708160 
+1708170 
+1708180 
+1708200 
+1708210 
+1708220 
+1708300 
+1708305 
+1708310 
+1708315 
+1708320 
+1708325 
+1708326 
+1708329 
+1708330 
+1708340 
+1708350 
+1708360 
+1708380 
+1708400 
+1708410 
+1708420 
+1708600 
+1708605 
+1708610 
+1708630 
+1708631 
+1708632 
+1708635 
+1708650 
+1708660 
+1708700 
+1708705 
+1708710 
+1708730 
+1708731 
+1708732 
+1708735 
+1708750 
+1708760 
+1708800 
+1708805 
+1708810 
+1708815 
+1708820 
+1708825 
+1708860 
+1708861 
+1708864 
+1708865 
+1708866 
+1708869 
+1708870 
+1708875 
+1708880 
+1708885 
+1708890 
+1708895 
+1720100 
+1720101 
+1720105 
+1720106 
+1720125 
+1720126 
+1720300 
+1720301 
+1720305 
+1720325 
+1720326 
+1720632 
+1720633 
+1720635 
+1720660 
+1720661 
 1800000 Default - Halberd
 1800010 Default - Halberd
 1800020 Default - Halberd
@@ -2964,6 +4206,7 @@
 1800638 Default - Halberd
 1800650 Default - Halberd
 1800660 Default - Halberd
+1800665 
 1800700 Default - Halberd
 1800705 Default - Halberd
 1800710 Default - Halberd
@@ -2999,14 +4242,44 @@
 1801410 Dragon Halberd
 1801420 Dragon Halberd
 1801430 Dragon Halberd
+1802000 
+1802010 
+1802020 
+1802030 
 1802100 Lucerne - Nightrider Glaive - Golden Halberd
 1802105 Lucerne - Nightrider Glaive - Golden Halberd
 1802110 Lucerne - Nightrider Glaive - Golden Halberd
 1802115 Lucerne - Nightrider Glaive - Golden Halberd
+1802120 
+1802125 
+1802130 
+1802140 
+1802150 
+1802155 
+1802160 
+1802165 
+1802180 
+1802200 
+1802210 
+1802220 
+1802230 
 1802300 Lucerne - Nightrider Glaive - Golden Halberd
 1802305 Lucerne - Nightrider Glaive - Golden Halberd
 1802310 Lucerne - Nightrider Glaive - Golden Halberd
 1802315 Lucerne - Nightrider Glaive - Golden Halberd
+1802320 
+1802325 
+1802330 
+1802340 
+1802350 
+1802355 
+1802360 
+1802365 
+1802380 
+1802400 
+1802410 
+1802420 
+1802430 
 1802600 Lucerne - Nightrider Glaive - Golden Halberd
 1802605 Lucerne - Nightrider Glaive - Golden Halberd
 1802610 Lucerne - Nightrider Glaive - Golden Halberd
@@ -3025,6 +4298,20 @@
 1802738 Lucerne - Nightrider Glaive - Golden Halberd
 1802750 Lucerne - Nightrider Glaive - Golden Halberd
 1802760 Lucerne - Nightrider Glaive - Golden Halberd
+1802800 
+1802805 
+1802810 
+1802815 
+1802820 
+1802825 
+1802860 
+1802865 
+1802870 
+1802875 
+1802880 
+1802885 
+1802890 
+1802895 
 1809000 Guardian's Swordspear
 1809010 Guardian's Swordspear
 1809020 Guardian's Swordspear
@@ -3037,6 +4324,40 @@
 1809410 Guardian's Swordspear
 1809420 Guardian's Swordspear
 1809430 Guardian's Swordspear
+1813100 
+1813105 
+1813110 
+1813115 
+1813300 
+1813305 
+1813310 
+1813315 
+1814100 
+1814105 
+1814110 
+1814115 
+1814300 
+1814305 
+1814310 
+1814315 
+1814600 
+1814605 
+1814610 
+1814630 
+1814632 
+1814635 
+1814638 
+1814650 
+1814660 
+1814700 
+1814705 
+1814710 
+1814730 
+1814732 
+1814735 
+1814738 
+1814750 
+1814760 
 1900000 Default - Scythe
 1900010 Default - Scythe
 1900020 Default - Scythe
@@ -3215,6 +4536,8 @@
 2000885 Default - Whip
 2000890 Default - Whip
 2000895 Default - Whip
+2001900 
+2001910 
 2002100 Urumi
 2002105 Urumi
 2002106 Urumi
@@ -3353,6 +4676,10 @@
 2100885 Default - Fist
 2100890 Default - Fist
 2100895 Default - Fist
+2100900 
+2100910 
+2100920 
+2100930 
 2101000 Cipher Pata
 2101010 Cipher Pata
 2101020 Cipher Pata
@@ -3466,6 +4793,163 @@
 2102315 Caestus - Spiked Caestus
 2102316 Caestus - Spiked Caestus
 2102317 Caestus - Spiked Caestus
+2120100 
+2120101 
+2120105 
+2120106 
+2120300 
+2120301 
+2120305 
+2120306 
+2120307 
+2120308 
+2120400 
+2120410 
+2120420 
+2120430 
+2120440 
+2120450 
+2120800 
+2120805 
+2120810 
+2120815 
+2120820 
+2120830 
+2120835 
+2120845 
+2120850 
+2120855 
+2120860 
+2120865 
+2120870 
+2120875 
+2120880 
+2120885 
+2120890 
+2120895 
+2121400 
+2121410 
+2121420 
+2121430 
+2121440 
+2121450 
+2121800 
+2121805 
+2121810 
+2121815 
+2121820 
+2121830 
+2121835 
+2121845 
+2121850 
+2121855 
+2121860 
+2121865 
+2121870 
+2121875 
+2121880 
+2121885 
+2121890 
+2121895 
+2122000 
+2122010 
+2122020 
+2122030 
+2122040 
+2122050 
+2122100 
+2122105 
+2122110 
+2122115 
+2122120 
+2122125 
+2122130 
+2122140 
+2122150 
+2122155 
+2122160 
+2122165 
+2122180 
+2122200 
+2122203 
+2122210 
+2122213 
+2122220 
+2122230 
+2122233 
+2122240 
+2122250 
+2122253 
+2122300 
+2122305 
+2122308 
+2122310 
+2122315 
+2122318 
+2122320 
+2122323 
+2122325 
+2122328 
+2122330 
+2122333 
+2122340 
+2122343 
+2122350 
+2122353 
+2122355 
+2122358 
+2122360 
+2122363 
+2122365 
+2122368 
+2122380 
+2122381 
+2122400 
+2122410 
+2122420 
+2122430 
+2122440 
+2122450 
+2122600 
+2122605 
+2122610 
+2122630 
+2122632 
+2122635 
+2122640 
+2122642 
+2122645 
+2122650 
+2122660 
+2122700 
+2122705 
+2122710 
+2122730 
+2122732 
+2122735 
+2122740 
+2122742 
+2122745 
+2122750 
+2122760 
+2122800 
+2122805 
+2122810 
+2122815 
+2122820 
+2122830 
+2122835 
+2122845 
+2122850 
+2122855 
+2122860 
+2122865 
+2122870 
+2122875 
+2122880 
+2122885 
+2122890 
+2122895 
 2200000 Default - Claw
 2200010 Default - Claw
 2200020 Default - Claw
@@ -3532,6 +5016,7 @@
 2200500 Default - Claw-(Crit)
 2200501 Default - Claw-(Crit)
 2200505 Default - Claw-(Crit)
+2200506 
 2200509 Default - Claw
 2200510 Default - Claw-(Crit)
 2200511 Default - Claw-(Crit)
@@ -3609,6 +5094,52 @@
 2201351 Raptor Talons
 2201360 Raptor Talons
 2201361 Raptor Talons
+2210100 
+2210101 
+2210105 
+2210106 
+2210110 
+2210111 
+2210115 
+2210116 
+2210125 
+2210126 
+2210160 
+2210161 
+2210180 
+2210181 
+2210300 
+2210301 
+2210303 
+2210304 
+2210305 
+2210306 
+2210308 
+2210309 
+2210310 
+2210311 
+2210313 
+2210314 
+2210315 
+2210316 
+2210318 
+2210319 
+2210325 
+2210326 
+2210328 
+2210329 
+2210360 
+2210361 
+2210363 
+2210364 
+2210380 
+2210381 
+2210382 
+2210383 
+2210632 
+2210633 
+2210635 
+2210636 
 2300000 Default - Colossal Weapon
 2300001 Default - Colossal Weapon
 2300002 Default - Colossal Weapon
@@ -3696,6 +5227,10 @@
 2300885 Default - Colossal Weapon
 2300890 Default - Colossal Weapon
 2300895 Default - Colossal Weapon
+2301100 
+2301105 
+2301300 
+2301305 
 2302100 Great Club
 2302105 Great Club
 2302110 Great Club
@@ -3746,6 +5281,42 @@
 2305730 Ghiza's Wheel
 2305732 Ghiza's Wheel
 2305735 Ghiza's Wheel
+2306100 
+2306105 
+2306110 
+2306115 
+2306300 
+2306305 
+2306310 
+2306315 
+2311105 
+2311115 
+2311160 
+2311165 
+2311180 
+2311305 
+2311315 
+2311360 
+2311365 
+2311380 
+2311890 
+2311895 
+2312105 
+2312115 
+2312305 
+2312315 
+2312635 
+2312735 
+2320100 
+2320101 
+2320105 
+2320106 
+2320110 
+2320115 
+2320300 
+2320305 
+2320310 
+2320315 
 2400000 Default - Torch
 2400010 Default - Torch
 2400020 Default - Torch
@@ -4075,6 +5646,7 @@
 4100000 Default - Bow
 4100100 Default - Bow
 4100200 Default - Bow
+4100300 
 4100400 Default - Bow
 4100410 Default - Bow
 4100420 Default - Bow
@@ -4137,6 +5709,24 @@
 4400750 Default - Ballista
 4400760 Default - Ballista
 4400765 Default - Ballista
+4600000 
+4600100 
+4600200 
+4600300 
+4600400 
+4600410 
+4600420 
+4600430 
+4600440 
+4600450 
+4600500 
+4600510 
+4600520 
+4600530 
+4600540 
+4600580 
+4600600 
+4600610 
 4600800 Default - Crossbow
 4600801 Default - Crossbow
 5000300 Arrow
@@ -4158,6 +5748,8 @@
 5000875 Arrow [AOW] Through and Through
 5000880 Arrow
 5000885 Arrow
+5000900 
+5000901 
 5001300 Fire Arrow
 5001310 Fire Arrow
 5001400 Fire Arrow
@@ -4175,6 +5767,10 @@
 5001855 Fire Arrow [AOW] Rain of Arrows
 5001870 Fire Arrow [AOW] Through and Through
 5001875 Fire Arrow [AOW] Through and Through
+5001880 
+5001885 
+5001900 
+5001901 
 5002300 Serpent Arrow
 5002310 Serpent Arrow
 5002400 Serpent Arrow
@@ -4192,6 +5788,10 @@
 5002855 Serpent Arrow [AOW] Rain of Arrows
 5002870 Serpent Arrow [AOW] Through and Through
 5002875 Serpent Arrow [AOW] Through and Through
+5002880 
+5002885 
+5002900 
+5002901 
 5003300 Bone Arrow (Fletched)
 5003310 Bone Arrow (Fletched)
 5003400 Bone Arrow (Fletched)
@@ -4209,6 +5809,10 @@
 5003855 Bone Arrow (Fletched) [AOW] Rain of Arrows
 5003870 Bone Arrow (Fletched) [AOW] Through and Through
 5003875 Bone Arrow (Fletched) [AOW] Through and Through
+5003880 
+5003885 
+5003900 
+5003901 
 5004300 St. Trina's Arrow
 5004310 St. Trina's Arrow
 5004400 St. Trina's Arrow
@@ -4226,6 +5830,10 @@
 5004855 St. Trina's Arrow [AOW] Rain of Arrows
 5004870 St. Trina's Arrow [AOW] Through and Through
 5004875 St. Trina's Arrow [AOW] Through and Through
+5004880 
+5004885 
+5004900 
+5004901 
 5006300 Shattershard Arrow (Fletched)
 5006310 Shattershard Arrow (Fletched)
 5006400 Shattershard Arrow (Fletched)
@@ -4243,6 +5851,10 @@
 5006855 Shattershard Arrow (Fletched) [AOW] Rain of Arrows
 5006870 Shattershard Arrow (Fletched) [AOW] Through and Through
 5006875 Shattershard Arrow (Fletched) [AOW] Through and Through
+5006880 
+5006885 
+5006900 
+5006901 
 5008300 Rainbow Stone Arrow (Fletched)
 5008310 Rainbow Stone Arrow (Fletched)
 5008400 Rainbow Stone Arrow (Fletched)
@@ -4260,6 +5872,10 @@
 5008855 Rainbow Stone Arrow (Fletched) [AOW] Rain of Arrows
 5008870 Rainbow Stone Arrow (Fletched) [AOW] Through and Through
 5008875 Rainbow Stone Arrow (Fletched) [AOW] Through and Through
+5008880 
+5008885 
+5008900 
+5008901 
 5009300 Golden Arrow
 5009310 Golden Arrow
 5009400 Golden Arrow
@@ -4277,6 +5893,10 @@
 5009855 Golden Arrow [AOW] Rain of Arrows
 5009870 Golden Arrow [AOW] Through and Through
 5009875 Golden Arrow [AOW] Through and Through
+5009880 
+5009885 
+5009900 
+5009901 
 5010300 Dwelling Arrow
 5010310 Dwelling Arrow
 5010400 Dwelling Arrow
@@ -4294,6 +5914,10 @@
 5010855 Dwelling Arrow [AOW] Rain of Arrows
 5010870 Dwelling Arrow [AOW] Through and Through
 5010875 Dwelling Arrow [AOW] Through and Through
+5010880 
+5010885 
+5010900 
+5010901 
 5011300 Bone Arrow
 5011310 Bone Arrow
 5011400 Bone Arrow
@@ -4311,6 +5935,10 @@
 5011855 Bone Arrow [AOW] Rain of Arrows
 5011870 Bone Arrow [AOW] Through and Through
 5011875 Bone Arrow [AOW] Through and Through
+5011880 
+5011885 
+5011900 
+5011901 
 5013300 Firebone Arrow (Fletched)
 5013310 Firebone Arrow (Fletched)
 5013400 Firebone Arrow (Fletched)
@@ -4328,6 +5956,10 @@
 5013855 Firebone Arrow (Fletched) [AOW] Rain of Arrows
 5013870 Firebone Arrow (Fletched) [AOW] Through and Through
 5013875 Firebone Arrow (Fletched) [AOW] Through and Through
+5013880 
+5013885 
+5013900 
+5013901 
 5014300 Firebone Arrow
 5014310 Firebone Arrow
 5014400 Firebone Arrow
@@ -4345,6 +5977,10 @@
 5014855 Firebone Arrow [AOW] Rain of Arrows
 5014870 Firebone Arrow [AOW] Through and Through
 5014875 Firebone Arrow [AOW] Through and Through
+5014880 
+5014885 
+5014900 
+5014901 
 5015300 Poisonbone Arrow (Fletched)
 5015310 Poisonbone Arrow (Fletched)
 5015400 Poisonbone Arrow (Fletched)
@@ -4362,6 +5998,10 @@
 5015855 Poisonbone Arrow (Fletched) [AOW] Rain of Arrows
 5015870 Poisonbone Arrow (Fletched) [AOW] Through and Through
 5015875 Poisonbone Arrow (Fletched) [AOW] Through and Through
+5015880 
+5015885 
+5015900 
+5015901 
 5016300 Poisonbone Arrow
 5016310 Poisonbone Arrow
 5016400 Poisonbone Arrow
@@ -4379,6 +6019,10 @@
 5016855 Poisonbone Arrow [AOW] Rain of Arrows
 5016870 Poisonbone Arrow [AOW] Through and Through
 5016875 Poisonbone Arrow [AOW] Through and Through
+5016880 
+5016885 
+5016900 
+5016901 
 5017300 Sleepbone Arrow (Fletched)
 5017310 Sleepbone Arrow (Fletched)
 5017400 Sleepbone Arrow (Fletched)
@@ -4396,6 +6040,10 @@
 5017855 Sleepbone Arrow (Fletched) [AOW] Rain of Arrows
 5017870 Sleepbone Arrow (Fletched) [AOW] Through and Through
 5017875 Sleepbone Arrow (Fletched) [AOW] Through and Through
+5017880 
+5017885 
+5017900 
+5017901 
 5018300 Sleepbone Arrow
 5018310 Sleepbone Arrow
 5018400 Sleepbone Arrow
@@ -4413,6 +6061,10 @@
 5018855 Sleepbone Arrow [AOW] Rain of Arrows
 5018870 Sleepbone Arrow [AOW] Through and Through
 5018875 Sleepbone Arrow [AOW] Through and Through
+5018880 
+5018885 
+5018900 
+5018901 
 5019300 Stormwing Bone Arrow
 5019310 Stormwing Bone Arrow
 5019400 Stormwing Bone Arrow
@@ -4430,6 +6082,10 @@
 5019855 Stormwing Bone Arrow [AOW] Rain of Arrows
 5019870 Stormwing Bone Arrow [AOW] Through and Through
 5019875 Stormwing Bone Arrow [AOW] Through and Through
+5019880 
+5019885 
+5019900 
+5019901 
 5020300 Lightningbone Arrow (Fletched)
 5020310 Lightningbone Arrow (Fletched)
 5020400 Lightningbone Arrow (Fletched)
@@ -4447,8 +6103,12 @@
 5020855 Lightningbone Arrow (Fletched) [AOW] Rain of Arrows
 5020870 Lightningbone Arrow (Fletched) [AOW] Through and Through
 5020875 Lightningbone Arrow (Fletched) [AOW] Through and Through
+5020880 
+5020885 
 5020890 Lightningbone Arrow (Fletched)
 5020895 Lightningbone Arrow (Fletched)
+5020900 
+5020901 
 5021300 Lightningbone Arrow
 5021310 Lightningbone Arrow
 5021400 Lightningbone Arrow
@@ -4466,8 +6126,12 @@
 5021855 Lightningbone Arrow [AOW] Rain of Arrows
 5021870 Lightningbone Arrow [AOW] Through and Through
 5021875 Lightningbone Arrow [AOW] Through and Through
+5021880 
+5021885 
 5021890 Lightningbone Arrow
 5021895 Lightningbone Arrow
+5021900 
+5021901 
 5022300 Rainbow Stone Arrow
 5022310 Rainbow Stone Arrow
 5022400 Rainbow Stone Arrow
@@ -4485,6 +6149,10 @@
 5022855 Rainbow Stone Arrow [AOW] Rain of Arrows
 5022870 Rainbow Stone Arrow [AOW] Through and Through
 5022875 Rainbow Stone Arrow [AOW] Through and Through
+5022880 
+5022885 
+5022900 
+5022901 
 5023300 Shattershard Arrow
 5023310 Shattershard Arrow
 5023400 Shattershard Arrow
@@ -4502,6 +6170,10 @@
 5023855 Shattershard Arrow [AOW] Rain of Arrows
 5023870 Shattershard Arrow [AOW] Through and Through
 5023875 Shattershard Arrow [AOW] Through and Through
+5023880 
+5023885 
+5023900 
+5023901 
 5024300 Spiritflame Arrow
 5024310 Spiritflame Arrow
 5024400 Spiritflame Arrow
@@ -4519,6 +6191,13 @@
 5024855 Spiritflame Arrow [AOW] Rain of Arrows
 5024870 Spiritflame Arrow [AOW] Through and Through
 5024875 Spiritflame Arrow [AOW] Through and Through
+5024880 
+5024885 
+5024900 
+5024901 
+5025300 
+5025310 
+5025400 
 5025810 ? [AOW] Mighty Shot
 5025811 ? [AOW] Mighty Shot
 5025815 ? [AOW] Mighty Shot
@@ -4550,6 +6229,10 @@
 5026855 Magicbone Arrow (Fletched) [AOW] Rain of Arrows
 5026870 Magicbone Arrow (Fletched) [AOW] Through and Through
 5026875 Magicbone Arrow (Fletched) [AOW] Through and Through
+5026880 
+5026885 
+5026900 
+5026901 
 5027300 Magicbone Arrow
 5027310 Magicbone Arrow
 5027400 Magicbone Arrow
@@ -4567,6 +6250,10 @@
 5027855 Magicbone Arrow [AOW] Rain of Arrows
 5027870 Magicbone Arrow [AOW] Through and Through
 5027875 Magicbone Arrow [AOW] Through and Through
+5027880 
+5027885 
+5027900 
+5027901 
 5028300 Haligbone Arrow (Fletched)
 5028310 Haligbone Arrow (Fletched)
 5028400 Haligbone Arrow (Fletched)
@@ -4584,6 +6271,10 @@
 5028855 Haligbone Arrow (Fletched) [AOW] Rain of Arrows
 5028870 Haligbone Arrow (Fletched) [AOW] Through and Through
 5028875 Haligbone Arrow (Fletched) [AOW] Through and Through
+5028880 
+5028885 
+5028900 
+5028901 
 5029300 Haligbone Arrow
 5029310 Haligbone Arrow
 5029400 Haligbone Arrow
@@ -4601,6 +6292,10 @@
 5029855 Haligbone Arrow [AOW] Rain of Arrows
 5029870 Haligbone Arrow [AOW] Through and Through
 5029875 Haligbone Arrow [AOW] Through and Through
+5029880 
+5029885 
+5029900 
+5029901 
 5030300 Bloodbone Arrow (Fletched)
 5030310 Bloodbone Arrow (Fletched)
 5030400 Bloodbone Arrow (Fletched)
@@ -4618,6 +6313,10 @@
 5030855 Bloodbone Arrow (Fletched) [AOW] Rain of Arrows
 5030870 Bloodbone Arrow (Fletched) [AOW] Through and Through
 5030875 Bloodbone Arrow (Fletched) [AOW] Through and Through
+5030880 
+5030885 
+5030900 
+5030901 
 5031300 Bloodbone Arrow
 5031310 Bloodbone Arrow
 5031400 Bloodbone Arrow
@@ -4635,6 +6334,10 @@
 5031855 Bloodbone Arrow [AOW] Rain of Arrows
 5031870 Bloodbone Arrow [AOW] Through and Through
 5031875 Bloodbone Arrow [AOW] Through and Through
+5031880 
+5031885 
+5031900 
+5031901 
 5032300 Coldbone Arrow (Fletched)
 5032310 Coldbone Arrow (Fletched)
 5032400 Coldbone Arrow (Fletched)
@@ -4652,6 +6355,10 @@
 5032855 Coldbone Arrow (Fletched) [AOW] Rain of Arrows
 5032870 Coldbone Arrow (Fletched) [AOW] Through and Through
 5032875 Coldbone Arrow (Fletched) [AOW] Through and Through
+5032880 
+5032885 
+5032900 
+5032901 
 5033300 Coldbone Arrow
 5033310 Coldbone Arrow
 5033400 Coldbone Arrow
@@ -4669,6 +6376,10 @@
 5033855 Coldbone Arrow [AOW] Rain of Arrows
 5033870 Coldbone Arrow [AOW] Through and Through
 5033875 Coldbone Arrow [AOW] Through and Through
+5033880 
+5033885 
+5033900 
+5033901 
 5034300 Rotbone Arrow (Fletched)
 5034310 Rotbone Arrow (Fletched)
 5034400 Rotbone Arrow (Fletched)
@@ -4686,6 +6397,10 @@
 5034855 Rotbone Arrow (Fletched) [AOW] Rain of Arrows
 5034870 Rotbone Arrow (Fletched) [AOW] Through and Through
 5034875 Rotbone Arrow (Fletched) [AOW] Through and Through
+5034880 
+5034885 
+5034900 
+5034901 
 5035300 Rotbone Arrow
 5035310 Rotbone Arrow
 5035400 Rotbone Arrow
@@ -4703,6 +6418,72 @@
 5035855 Rotbone Arrow [AOW] Rain of Arrows
 5035870 Rotbone Arrow [AOW] Through and Through
 5035875 Rotbone Arrow [AOW] Through and Through
+5035880 
+5035885 
+5035900 
+5035901 
+5036300 
+5036310 
+5036400 
+5036410 
+5036810 
+5036811 
+5036815 
+5036816 
+5036820 
+5036825 
+5036830 
+5036835 
+5036840 
+5036845 
+5036850 
+5036855 
+5036870 
+5036875 
+5036880 
+5036885 
+5037300 
+5037310 
+5037400 
+5037810 
+5037811 
+5037815 
+5037816 
+5037820 
+5037825 
+5037830 
+5037835 
+5037840 
+5037845 
+5037850 
+5037855 
+5037870 
+5037875 
+5037880 
+5037885 
+5038300 
+5038310 
+5038400 
+5038810 
+5038811 
+5038815 
+5038816 
+5038820 
+5038825 
+5038830 
+5038835 
+5038840 
+5038845 
+5038850 
+5038855 
+5038870 
+5038875 
+5038880 
+5038885 
+5040900 
+5040901 
+5041900 
+5041901 
 5099999 Rotbone Arrow
 5100300 Great Arrow
 5100850 Great Arrow [AOW] Rain of Arrows
@@ -4711,6 +6492,8 @@
 5100875 Great Arrow [AOW] Through and Through
 5100880 Great Arrow
 5100885 Great Arrow
+5100900 
+5100905 
 5101300 Golem's Great Arrow
 5101301 Golem's Great Arrow
 5101302 Golem's Great Arrow
@@ -4724,6 +6507,8 @@
 5101875 Golem's Great Arrow [AOW] Through and Through
 5101880 Golem's Great Arrow
 5101885 Golem's Great Arrow
+5101900 
+5101905 
 5102300 Golden Great Arrow
 5102301 Golden Great Arrow
 5102850 Golden Great Arrow [AOW] Rain of Arrows
@@ -4732,6 +6517,8 @@
 5102875 Golden Great Arrow [AOW] Through and Through
 5102880 Golden Great Arrow
 5102885 Golden Great Arrow
+5102900 
+5102905 
 5103300 Golem's Magic Arrow
 5103850 Golem's Magic Arrow [AOW] Rain of Arrows
 5103855 Golem's Magic Arrow [AOW] Rain of Arrows
@@ -4739,6 +6526,8 @@
 5103875 Golem's Magic Arrow [AOW] Through and Through
 5103880 Golem's Magic Arrow
 5103885 Golem's Magic Arrow
+5103900 
+5103905 
 5104300 Radahn's Spear
 5104850 Radahn's Spear [AOW] Rain of Arrows
 5104855 Radahn's Spear [AOW] Rain of Arrows
@@ -4746,6 +6535,8 @@
 5104875 Radahn's Spear [AOW] Through and Through
 5104880 Radahn's Spear
 5104885 Radahn's Spear
+5104900 
+5104905 
 5105300 Bone Great Arrow (Fletched)
 5105850 Bone Great Arrow (Fletched) [AOW] Rain of Arrows
 5105855 Bone Great Arrow (Fletched) [AOW] Rain of Arrows
@@ -4753,6 +6544,8 @@
 5105875 Bone Great Arrow (Fletched) [AOW] Through and Through
 5105880 Bone Great Arrow (Fletched)
 5105885 Bone Great Arrow (Fletched)
+5105900 
+5105905 
 5106300 Bone Great Arrow
 5106850 Bone Great Arrow [AOW] Rain of Arrows
 5106855 Bone Great Arrow [AOW] Rain of Arrows
@@ -4760,15 +6553,37 @@
 5106875 Bone Great Arrow [AOW] Through and Through
 5106880 Bone Great Arrow
 5106885 Bone Great Arrow
+5106900 
+5106905 
+5107300 
+5107850 
+5107855 
+5107870 
+5107875 
+5107880 
+5107885 
+5107900 
+5107905 
+5199997 
+5199998 
 5199999 Bone Great Arrow
 5200300 Bolt
 5200600 Bolt
 5200610 Bolt
+5200640 
+5200650 
+5200655 
 5201300 Lightning Bolt
 5201301 Lightning Bolt
 5201600 Lightning Bolt
 5201601 Lightning Bolt
 5201610 Lightning Bolt
+5201640 
+5201641 
+5201650 
+5201651 
+5201655 
+5201656 
 5201690 Lightning Bolt
 5201695 Lightning Bolt
 5202300 Perfumer's Bolt
@@ -4777,75 +6592,1409 @@
 5202601 Perfumer's Bolt
 5202610 Perfumer's Bolt
 5202611 Perfumer's Bolt
+5202640 
+5202641 
+5202650 
+5202651 
+5202655 
+5202656 
 5203300 Black-Key Bolt
 5203600 Black-Key Bolt
 5203610 Black-Key Bolt
+5203640 
+5203650 
+5203655 
 5204300 Burred Bolt
 5204600 Burred Bolt
 5204610 Burred Bolt
+5204640 
+5204650 
+5204655 
 5205300 Meteor Bolt
 5205600 Meteor Bolt
 5205610 Meteor Bolt
+5205640 
+5205650 
+5205655 
 5206300 Explosive Bolt
 5206301 Explosive Bolt
 5206600 Explosive Bolt
 5206601 Explosive Bolt
 5206610 Explosive Bolt
 5206611 Explosive Bolt
+5206640 
+5206641 
+5206650 
+5206651 
+5206655 
+5206656 
 5207300 Golden Bolt
 5207600 Golden Bolt
 5207610 Golden Bolt
+5207640 
+5207650 
+5207655 
 5208300 Lordsworn's Bolt
 5208600 Lordsworn's Bolt
 5208610 Lordsworn's Bolt
+5208640 
+5208650 
+5208655 
 5209300 Bone Bolt
 5209600 Bone Bolt
 5209610 Bone Bolt
+5209640 
+5209650 
+5209655 
 5210300 Firebone Bolt
 5210600 Firebone Bolt
 5210610 Firebone Bolt
+5210640 
+5210650 
+5210655 
 5211300 Lightningbone Bolt
 5211600 Lightningbone Bolt
 5211610 Lightningbone Bolt
+5211640 
+5211650 
+5211655 
 5211690 Lightningbone Bolt
 5211695 Lightningbone Bolt
 5212300 Magicbone Bolt
 5212600 Magicbone Bolt
 5212610 Magicbone Bolt
+5212640 
+5212650 
+5212655 
 5213300 Haligbone Bolt
 5213600 Haligbone Bolt
 5213610 Haligbone Bolt
+5213640 
+5213650 
+5213655 
 5214300 Poisonbone Bolt
 5214600 Poisonbone Bolt
 5214610 Poisonbone Bolt
+5214640 
+5214650 
+5214655 
 5215300 Bloodbone Bolt
 5215600 Bloodbone Bolt
 5215610 Bloodbone Bolt
+5215640 
+5215650 
+5215655 
 5216300 Coldbone Bolt
 5216600 Coldbone Bolt
 5216610 Coldbone Bolt
+5216640 
+5216650 
+5216655 
 5217300 Rotbone Bolt
 5217600 Rotbone Bolt
 5217610 Rotbone Bolt
+5217640 
+5217650 
+5217655 
 5218300 Sleepbone Bolt
 5218600 Sleepbone Bolt
 5218610 Sleepbone Bolt
+5218640 
+5218650 
+5218655 
 5219300 Flaming Bolt
 5219600 Flaming Bolt
 5219610 Flaming Bolt
+5219640 
+5219650 
+5219655 
+5220300 
+5220600 
+5220640 
+5220650 
+5220655 
 5300300 Ballista Bolt
 5300700 Ballista Bolt
+5300720 
 5301300 Lightning Greatbolt
 5301301 Lightning Greatbolt
 5301700 Lightning Greatbolt
 5301701 Lightning Greatbolt
+5301720 
+5301721 
 5301790 Lightning Greatbolt
 5302300 Explosive Greatbolt
 5302301 Explosive Greatbolt
 5302700 Explosive Greatbolt
 5302701 Explosive Greatbolt
+5302720 
+5302721 
 5303300 Bone Ballista Bolt
 5303700 Bone Ballista Bolt
+5303720 
+5304300 
+5304301 
+5304700 
+5304701 
+5304720 
+5304721 
+6100000 
+6100010 
+6100020 
+6100030 
+6100100 
+6100105 
+6100110 
+6100115 
+6100120 
+6100125 
+6100127 
+6100130 
+6100140 
+6100150 
+6100160 
+6100180 
+6100200 
+6100210 
+6100220 
+6100230 
+6100300 
+6100305 
+6100310 
+6100315 
+6100320 
+6100325 
+6100327 
+6100330 
+6100340 
+6100350 
+6100360 
+6100380 
+6100400 
+6100410 
+6100420 
+6100430 
+6100460 
+6100461 
+6100470 
+6100471 
+6100480 
+6100500 
+6100509 
+6100510 
+6100530 
+6100550 
+6100560 
+6100561 
+6100590 
+6100591 
+6100600 
+6100605 
+6100610 
+6100630 
+6100632 
+6100635 
+6100650 
+6100660 
+6100700 
+6100705 
+6100710 
+6100730 
+6100732 
+6100735 
+6100750 
+6100760 
+6150000 
+6150010 
+6150020 
+6150030 
+6150100 
+6150105 
+6150110 
+6150115 
+6150120 
+6150125 
+6150126 
+6150130 
+6150140 
+6150150 
+6150160 
+6150167 
+6150173 
+6150180 
+6150200 
+6150203 
+6150210 
+6150213 
+6150220 
+6150223 
+6150230 
+6150233 
+6150300 
+6150303 
+6150305 
+6150308 
+6150310 
+6150313 
+6150315 
+6150318 
+6150320 
+6150323 
+6150325 
+6150326 
+6150328 
+6150329 
+6150330 
+6150333 
+6150340 
+6150343 
+6150350 
+6150353 
+6150360 
+6150363 
+6150380 
+6150383 
+6150400 
+6150410 
+6150420 
+6150430 
+6150440 
+6150450 
+6150460 
+6150470 
+6150480 
+6150500 
+6150509 
+6150510 
+6150530 
+6150550 
+6150560 
+6150590 
+6150591 
+6150600 
+6150605 
+6150610 
+6150632 
+6150635 
+6150800 
+6150803 
+6150810 
+6150813 
+6150820 
+6150823 
+6150830 
+6150833 
+6150860 
+6150863 
+6150870 
+6150873 
+6150880 
+6150883 
+6150890 
+6150893 
+6150970 
+6150975 
+6150980 
+6150985 
+6151000 
+6151010 
+6151020 
+6151030 
+6151100 
+6151105 
+6151110 
+6151115 
+6151120 
+6151125 
+6151126 
+6151130 
+6151140 
+6151150 
+6151160 
+6151167 
+6151173 
+6151180 
+6151200 
+6151203 
+6151210 
+6151213 
+6151220 
+6151223 
+6151230 
+6151233 
+6151300 
+6151303 
+6151305 
+6151308 
+6151310 
+6151313 
+6151315 
+6151318 
+6151320 
+6151323 
+6151325 
+6151326 
+6151328 
+6151329 
+6151330 
+6151333 
+6151340 
+6151343 
+6151350 
+6151353 
+6151360 
+6151363 
+6151380 
+6151383 
+6151400 
+6151410 
+6151420 
+6151430 
+6151440 
+6151450 
+6151460 
+6151470 
+6151480 
+6151500 
+6151509 
+6151510 
+6151530 
+6151550 
+6151560 
+6151590 
+6151591 
+6151600 
+6151605 
+6151610 
+6151632 
+6151635 
+6151800 
+6151803 
+6151810 
+6151813 
+6151820 
+6151823 
+6151830 
+6151833 
+6151860 
+6151863 
+6151870 
+6151873 
+6151880 
+6151883 
+6151890 
+6151893 
+6151970 
+6151975 
+6151980 
+6151985 
+6200000 
+6200010 
+6200020 
+6200030 
+6200040 
+6200050 
+6200100 
+6200105 
+6200110 
+6200115 
+6200120 
+6200125 
+6200130 
+6200140 
+6200150 
+6200160 
+6200175 
+6200176 
+6200180 
+6200200 
+6200203 
+6200210 
+6200213 
+6200220 
+6200223 
+6200230 
+6200233 
+6200240 
+6200243 
+6200250 
+6200253 
+6200300 
+6200303 
+6200305 
+6200308 
+6200310 
+6200313 
+6200315 
+6200318 
+6200320 
+6200323 
+6200325 
+6200328 
+6200330 
+6200333 
+6200340 
+6200343 
+6200350 
+6200353 
+6200360 
+6200363 
+6200375 
+6200376 
+6200377 
+6200378 
+6200380 
+6200381 
+6200400 
+6200410 
+6200420 
+6200430 
+6200440 
+6200450 
+6200460 
+6200470 
+6200480 
+6200500 
+6200509 
+6200510 
+6200530 
+6200550 
+6200560 
+6200590 
+6200591 
+6200600 
+6200605 
+6200610 
+6200632 
+6200635 
+6200800 
+6200805 
+6200810 
+6200815 
+6200820 
+6200825 
+6200830 
+6200835 
+6200840 
+6200845 
+6200850 
+6200855 
+6200860 
+6200865 
+6200870 
+6200875 
+6200880 
+6200885 
+6200890 
+6200895 
+6300000 
+6300001 
+6300002 
+6300003 
+6300004 
+6300010 
+6300020 
+6300021 
+6300030 
+6300031 
+6300040 
+6300050 
+6300051 
+6300060 
+6300061 
+6300062 
+6300100 
+6300101 
+6300102 
+6300105 
+6300106 
+6300107 
+6300110 
+6300112 
+6300115 
+6300117 
+6300120 
+6300125 
+6300126 
+6300128 
+6300130 
+6300131 
+6300140 
+6300141 
+6300150 
+6300160 
+6300162 
+6300180 
+6300181 
+6300182 
+6300200 
+6300203 
+6300210 
+6300211 
+6300213 
+6300214 
+6300220 
+6300223 
+6300224 
+6300230 
+6300233 
+6300240 
+6300241 
+6300243 
+6300250 
+6300253 
+6300300 
+6300302 
+6300303 
+6300304 
+6300305 
+6300307 
+6300308 
+6300309 
+6300310 
+6300311 
+6300312 
+6300313 
+6300314 
+6300315 
+6300316 
+6300317 
+6300318 
+6300319 
+6300320 
+6300323 
+6300325 
+6300326 
+6300327 
+6300328 
+6300329 
+6300330 
+6300333 
+6300334 
+6300340 
+6300341 
+6300343 
+6300350 
+6300353 
+6300360 
+6300362 
+6300363 
+6300364 
+6300380 
+6300381 
+6300382 
+6300383 
+6300400 
+6300410 
+6300420 
+6300421 
+6300430 
+6300431 
+6300440 
+6300450 
+6300451 
+6300460 
+6300470 
+6300480 
+6300500 
+6300501 
+6300509 
+6300510 
+6300511 
+6300530 
+6300531 
+6300550 
+6300560 
+6300561 
+6300590 
+6300591 
+6300600 
+6300605 
+6300610 
+6300630 
+6300632 
+6300633 
+6300635 
+6300636 
+6300700 
+6300705 
+6300710 
+6300730 
+6300732 
+6300733 
+6300735 
+6300736 
+6300800 
+6300805 
+6300810 
+6300811 
+6300815 
+6300816 
+6300820 
+6300825 
+6300826 
+6300830 
+6300835 
+6300840 
+6300841 
+6300845 
+6300850 
+6300855 
+6300860 
+6300865 
+6300870 
+6300875 
+6300876 
+6300880 
+6300881 
+6300885 
+6300890 
+6300891 
+6300895 
+6300896 
+6301000 
+6301009 
+6301060 
+6301061 
+6301100 
+6301101 
+6301102 
+6301105 
+6301106 
+6301107 
+6301110 
+6301111 
+6301112 
+6301115 
+6301116 
+6301117 
+6301200 
+6301201 
+6301203 
+6301204 
+6301250 
+6301251 
+6301300 
+6301301 
+6301302 
+6301303 
+6301304 
+6301305 
+6301306 
+6301307 
+6301308 
+6301309 
+6301310 
+6301311 
+6301312 
+6301313 
+6301314 
+6301315 
+6301316 
+6301317 
+6301318 
+6301319 
+6301400 
+6301401 
+6400000 
+6400010 
+6400020 
+6400030 
+6400040 
+6400050 
+6400100 
+6400101 
+6400105 
+6400106 
+6400110 
+6400115 
+6400116 
+6400120 
+6400125 
+6400126 
+6400130 
+6400140 
+6400150 
+6400160 
+6400161 
+6400180 
+6400181 
+6400200 
+6400203 
+6400210 
+6400213 
+6400220 
+6400223 
+6400230 
+6400240 
+6400243 
+6400250 
+6400253 
+6400300 
+6400303 
+6400305 
+6400308 
+6400310 
+6400313 
+6400315 
+6400316 
+6400318 
+6400320 
+6400323 
+6400325 
+6400326 
+6400327 
+6400328 
+6400330 
+6400333 
+6400340 
+6400343 
+6400350 
+6400353 
+6400360 
+6400363 
+6400380 
+6400381 
+6400382 
+6400383 
+6400400 
+6400410 
+6400420 
+6400430 
+6400440 
+6400450 
+6400460 
+6400470 
+6400480 
+6400500 
+6400501 
+6400509 
+6400510 
+6400511 
+6400530 
+6400550 
+6400560 
+6400561 
+6400590 
+6400591 
+6400600 
+6400605 
+6400610 
+6400630 
+6400632 
+6400635 
+6400700 
+6400705 
+6400710 
+6400730 
+6400732 
+6400735 
+6400800 
+6400805 
+6400810 
+6400815 
+6400820 
+6400825 
+6400830 
+6400840 
+6400845 
+6400850 
+6400855 
+6400860 
+6400865 
+6400870 
+6400875 
+6400880 
+6400885 
+6400890 
+6400895 
+6401100 
+6401105 
+6401110 
+6401115 
+6401125 
+6401160 
+6401175 
+6401176 
+6401180 
+6401300 
+6401303 
+6401305 
+6401308 
+6401310 
+6401313 
+6401315 
+6401318 
+6401325 
+6401328 
+6401360 
+6401363 
+6401375 
+6401376 
+6401377 
+6401378 
+6401380 
+6401381 
+6401632 
+6401635 
+6600000 
+6600010 
+6600020 
+6600030 
+6600100 
+6600105 
+6600110 
+6600115 
+6600120 
+6600125 
+6600130 
+6600140 
+6600150 
+6600155 
+6600160 
+6600165 
+6600180 
+6600200 
+6600210 
+6600220 
+6600230 
+6600300 
+6600305 
+6600310 
+6600315 
+6600320 
+6600325 
+6600330 
+6600340 
+6600350 
+6600355 
+6600360 
+6600365 
+6600380 
+6600400 
+6600410 
+6600420 
+6600430 
+6600460 
+6600470 
+6600480 
+6600500 
+6600501 
+6600505 
+6600509 
+6600510 
+6600511 
+6600515 
+6600516 
+6600520 
+6600530 
+6600531 
+6600540 
+6600550 
+6600560 
+6600561 
+6600590 
+6600591 
+6600600 
+6600605 
+6600610 
+6600630 
+6600632 
+6600635 
+6600640 
+6600642 
+6600645 
+6600650 
+6600660 
+6600665 
+6600700 
+6600705 
+6600710 
+6600730 
+6600732 
+6600735 
+6600740 
+6600742 
+6600745 
+6600750 
+6600760 
+6600765 
+6600800 
+6600805 
+6600810 
+6600815 
+6600820 
+6600825 
+6600860 
+6600865 
+6600870 
+6600875 
+6600880 
+6600885 
+6600890 
+6600895 
+6601100 
+6601105 
+6601110 
+6601115 
+6601300 
+6601305 
+6601310 
+6601315 
+6700000 
+6700010 
+6700013 
+6700020 
+6700023 
+6700030 
+6700040 
+6700041 
+6700044 
+6700100 
+6700101 
+6700104 
+6700105 
+6700106 
+6700109 
+6700110 
+6700111 
+6700113 
+6700114 
+6700115 
+6700116 
+6700118 
+6700119 
+6700120 
+6700123 
+6700125 
+6700126 
+6700128 
+6700130 
+6700133 
+6700140 
+6700150 
+6700160 
+6700161 
+6700163 
+6700164 
+6700180 
+6700181 
+6700183 
+6700184 
+6700200 
+6700210 
+6700213 
+6700220 
+6700223 
+6700230 
+6700240 
+6700241 
+6700243 
+6700300 
+6700301 
+6700304 
+6700305 
+6700306 
+6700309 
+6700310 
+6700311 
+6700313 
+6700314 
+6700315 
+6700316 
+6700318 
+6700319 
+6700320 
+6700325 
+6700326 
+6700329 
+6700330 
+6700333 
+6700340 
+6700343 
+6700350 
+6700360 
+6700361 
+6700363 
+6700364 
+6700380 
+6700381 
+6700383 
+6700384 
+6700400 
+6700410 
+6700413 
+6700420 
+6700423 
+6700430 
+6700440 
+6700441 
+6700444 
+6700460 
+6700470 
+6700480 
+6700500 
+6700509 
+6700510 
+6700530 
+6700550 
+6700560 
+6700561 
+6700590 
+6700591 
+6700600 
+6700605 
+6700610 
+6700632 
+6700633 
+6700635 
+6700638 
+6700700 
+6700705 
+6700710 
+6700732 
+6700733 
+6700735 
+6700738 
+6700800 
+6700805 
+6700810 
+6700813 
+6700815 
+6700819 
+6700820 
+6700823 
+6700825 
+6700826 
+6700829 
+6700830 
+6700831 
+6700833 
+6700834 
+6700835 
+6700836 
+6700838 
+6700839 
+6700860 
+6700865 
+6700869 
+6700870 
+6700873 
+6700875 
+6700880 
+6700883 
+6700885 
+6700889 
+6700890 
+6700891 
+6700893 
+6700894 
+6700895 
+6700990 
+6700991 
+6700992 
+6700997 
+6700998 
+6700999 
+6701000 
+6701010 
+6701013 
+6701020 
+6701023 
+6701030 
+6701040 
+6701041 
+6701044 
+6701100 
+6701101 
+6701104 
+6701105 
+6701106 
+6701109 
+6701110 
+6701111 
+6701113 
+6701114 
+6701115 
+6701116 
+6701118 
+6701119 
+6701120 
+6701123 
+6701125 
+6701126 
+6701128 
+6701130 
+6701133 
+6701140 
+6701150 
+6701160 
+6701161 
+6701163 
+6701164 
+6701180 
+6701181 
+6701183 
+6701184 
+6701200 
+6701205 
+6701210 
+6701213 
+6701215 
+6701219 
+6701220 
+6701223 
+6701225 
+6701226 
+6701229 
+6701230 
+6701231 
+6701233 
+6701234 
+6701235 
+6701236 
+6701238 
+6701239 
+6701320 
+6701321 
+6701322 
+6701330 
+6701331 
+6701332 
+6701340 
+6701341 
+6701342 
+6701343 
+6701350 
+6701351 
+6701352 
+6701353 
+6701354 
+6701400 
+6701401 
+6701410 
+6701411 
+6701420 
+6701421 
+6701430 
+6701431 
+6701440 
+6701441 
+6701500 
+6701509 
+6701510 
+6701530 
+6701550 
+6701560 
+6701561 
+6701590 
+6701600 
+6701605 
+6701610 
+6701632 
+6701633 
+6701635 
+6701638 
+6701700 
+6701705 
+6701710 
+6701732 
+6701733 
+6701735 
+6701738 
+6701800 
+6701805 
+6701810 
+6701813 
+6701815 
+6701819 
+6701820 
+6701823 
+6701825 
+6701826 
+6701829 
+6701830 
+6701831 
+6701833 
+6701834 
+6701835 
+6701836 
+6701838 
+6701839 
+6701860 
+6701865 
+6701869 
+6701870 
+6701873 
+6701875 
+6701880 
+6701883 
+6701885 
+6701889 
+6701890 
+6701891 
+6701893 
+6701894 
+6701895 
+6800000 
+6800010 
+6800011 
+6800020 
+6800030 
+6800100 
+6800105 
+6800110 
+6800115 
+6800120 
+6800125 
+6800126 
+6800130 
+6800140 
+6800150 
+6800160 
+6800175 
+6800176 
+6800180 
+6800181 
+6800200 
+6800201 
+6800210 
+6800211 
+6800212 
+6800220 
+6800221 
+6800230 
+6800300 
+6800301 
+6800305 
+6800306 
+6800310 
+6800311 
+6800315 
+6800316 
+6800320 
+6800321 
+6800325 
+6800326 
+6800327 
+6800330 
+6800331 
+6800340 
+6800341 
+6800350 
+6800351 
+6800360 
+6800361 
+6800375 
+6800376 
+6800380 
+6800381 
+6800382 
+6800383 
+6800400 
+6800410 
+6800411 
+6800420 
+6800430 
+6800460 
+6800470 
+6800480 
+6800500 
+6800501 
+6800509 
+6800510 
+6800511 
+6800530 
+6800531 
+6800540 
+6800550 
+6800560 
+6800561 
+6800590 
+6800591 
+6800600 
+6800605 
+6800610 
+6800630 
+6800632 
+6800635 
+6800640 
+6800642 
+6800645 
+6800650 
+6800660 
+6800665 
+6800700 
+6800705 
+6800710 
+6800730 
+6800732 
+6800735 
+6800740 
+6800742 
+6800745 
+6800750 
+6800760 
+6800765 
+6800800 
+6800801 
+6800810 
+6800811 
+6800812 
+6800820 
+6800821 
+6800830 
+6800860 
+6800861 
+6800870 
+6800871 
+6800880 
+6800881 
+6800890 
+6800891 
+9999000 
+9999010 
+9999020 
+9999030 
+9999100 
+9999105 
+9999110 
+9999115 
+9999120 
+9999125 
+9999130 
+9999140 
+9999150 
+9999155 
+9999160 
+9999165 
+9999200 
+9999210 
+9999220 
+9999230 
+9999300 
+9999303 
+9999305 
+9999310 
+9999313 
+9999315 
+9999318 
+9999320 
+9999325 
+9999330 
+9999340 
+9999350 
+9999355 
+9999360 
+9999365 
+9999400 
+9999410 
+9999420 
+9999460 
+9999470 
+10000000 
+10000001 
+10000002 
 10013500 Phantom Great Rune [Hit]
 10030000 Fire Pot
 10030001 Fire Pot [Hit]
@@ -4956,10 +8105,17 @@
 10355000 Bloodboil Aromatic
 10358000 Poison Spraymist [Hit]
 10361000 Acid Spraymist [Hit]
+11101600 
+11101700 
+11101701 
+19999997 
+19999998 
+19999999 
 30000041 [AOW] Eruption
 30000042 [AOW] Eruption
 30000552 [AOW] Golden Land
 30000554 [AOW] Golden Land
+30000812 
 30000831 [AOW] Prelate's Charge
 30000835 [AOW] Prelate's Charge
 30000836 [AOW] Prelate's Charge
@@ -4967,6 +8123,10 @@
 30000842 [AOW] Beast's Roar
 30020930 [AOW] Flame of the Redmanes
 30090011 Dragon Halberd
+30090012 
+30200830 
+30200840 
+30200842 
 30200921 Golden Great Arrow
 30300850 [AOW] Gravitas
 30300851 [AOW] Gravitas
@@ -4978,6 +8138,8 @@
 30300864 [AOW] Hoarfrost Stomp
 30300870 [AOW] Storm Stomp
 30300871 [AOW] Storm Stomp
+32100830 
+32100831 
 210030000 Hefty Fire Pot
 210030001 Hefty Fire Pot [Hit]
 210031000 Hefty Rock Pot
@@ -4989,6 +8151,8 @@
 210034000 Hefty Fly Pot
 210034001 Hefty Fly Pot [Hit]
 210034002 Hefty Fly Pot [Hit]
+210035000 
+210035001 
 210036000 Hefty Freezing Pot
 210036001 Hefty Freezing Pot [Hit]
 210037000 Hefty Poison Pot
@@ -4999,6 +8163,8 @@
 210060001 Hefty Volcano Pot [Hit]
 210062000 Hefty Frenzied Flame Pot
 210062001 Hefty Frenzied Flame Pot [Hit]
+210064000 
+210064001 
 210065000 Hefty Rancor Pot
 210065001 Hefty Rancor Pot [Hit]
 210066000 Hefty Magic Pot
@@ -5017,6 +8183,8 @@
 210071001 Frenzied Flame Pot [Hit]
 210074000 Eternal Sleep Pot
 210074001 Eternal Sleep Pot [Hit]
+210076000 
+210076001 
 210170000 Innard Meat
 210171000 Dragon Communion Harpoon
 210172000 Dragon Communion Harpoon
@@ -5037,6 +8205,10 @@
 210331000 Sunwarmth Stone [Hit]
 210335000 Charming Branch
 210335001 Charming Branch [Hit]
+210390000 
+210390005 
+210390010 
+210391000 
 210431000 Glintblade Trio
 210431050 Glintblade Trio
 210432000 Rellana's Twin Moons
@@ -5144,6 +8316,12 @@
 210782051 Messmer's Orb
 210782052 Messmer's Orb
 210782053 Messmer's Orb
+215001000 
+215001001 
+215001002 
+215001003 
+215001004 
+215001005 
 300000010 [AOW] Impaling Thrust
 300000011 [AOW] Impaling Thrust
 300000025 [AOW] Lifesteal Fist
@@ -5155,6 +8333,7 @@
 300000045 [AOW] Eruption
 300000046 [AOW] Eruption
 300000047 [AOW] Eruption
+300000048 
 300000050 [AOW] Piercing Fang
 300000051 [AOW] Piercing Fang
 300000055 [AOW] Bloody Slash
@@ -5167,6 +8346,7 @@
 300000126 [AOW] War Cry
 300000130 [AOW] Braggart's Roar
 300000131 [AOW] Braggart's Roar
+300000160 
 300000161 [AOW] Chilling Mist
 300000162 [AOW] Poisonous Mist
 300000165 [AOW] Chilling/Poisonous Mist
@@ -5196,6 +8376,10 @@
 300000194 [AOW] Double Slash
 300000195 [AOW] Double Slash
 300000196 [AOW] Double Slash
+300000210 
+300000211 
+300000212 
+300000213 
 300000220 [AOW] Spinning Slash
 300000221 [AOW] Spinning Slash
 300000222 [AOW] Spinning Slash
@@ -5373,6 +8557,9 @@
 300000711 [AOW] Lightning Ram - Roll
 300000715 [AOW] Lightning Ram
 300000716 [AOW] Lightning Ram
+300000760 
+300000761 
+300000762 
 300000780 [AOW] Shield Crash
 300000781 [AOW] Shield Crash
 300000782 [AOW] Shield Crash
@@ -5548,6 +8735,7 @@
 300200895 [AOW] Glintstone Pebble
 300200896 [AOW] Glintstone Pebble
 300200897 [AOW] Glintstone Pebble
+300200900 
 300200910 [AOW] Carian Greatsword
 300200911 [AOW] Carian Greatsword
 300200912 [AOW] Carian Greatsword
@@ -5610,8 +8798,11 @@
 300214926 Sword of Night and Flame [AOW] Night-and-Flame Stance
 300214930 Sword of Night and Flame [AOW] Night-and-Flame Stance
 300214931 Sword of Night and Flame [AOW] Night-and-Flame Stance
+300300800 
+300300810 
 300300820 [AOW] Lion's Claw
 300300821 [AOW] Lion's Claw
+300300830 
 300300852 [AOW] Gravitas
 300300853 [AOW] Gravitas
 300300950 Greatsword Category [AOW] Spinning Wheel
@@ -5664,6 +8855,8 @@
 300310901 Sacred Relic Sword [AOW] Wave of Gold
 300310905 Sacred Relic Sword [AOW] Wave of Gold
 300310906 Sacred Relic Sword [AOW] Wave of Gold
+300310907 
+300310908 
 300314900 Blasphemous Blade [AOW] Taker's Flames
 300314901 Blasphemous Blade [AOW] Taker's Flames
 300314902 Blasphemous Blade [AOW] Taker's Flames
@@ -5878,6 +9071,10 @@
 300900220 Hand of Malenia [AOW] Waterfowl Dance
 300900221 Hand of Malenia [AOW] Waterfowl Dance
 300900222 Hand of Malenia [AOW] Waterfowl Dance
+300900901 
+300900920 
+300900921 
+300900922 
 300900950 Katana Category [AOW] Spinning Wheel
 300900951 Katana Category [AOW] Spinning Wheel
 300900952 Katana Category [AOW] Spinning Wheel
@@ -5971,6 +9168,8 @@
 301005926 Eleonora's Poleblade [AOW] Bloodblade Dance
 301100800 [AOW] Kick
 301100801 [AOW] Kick
+301100810 
+301100811 
 301100950 Hammer Category [AOW] Spinning Wheel
 301100951 Hammer Category [AOW] Spinning Wheel
 301100952 Hammer Category [AOW] Spinning Wheel
@@ -6024,6 +9223,8 @@
 301115915 Marika's Hammer [AOW] Gold Breaker
 301200820 [AOW] Prayerful Strike
 301200821 [AOW] Prayerful Strike
+301200825 
+301200826 
 301200950 Warhammer Category [AOW] Spinning Wheel
 301200951 Warhammer Category [AOW] Spinning Wheel
 301200952 Warhammer Category [AOW] Spinning Wheel
@@ -6199,6 +9400,58 @@
 301414936 Stormhawk Axe [AOW] Thunderstorm
 301414940 Stormhawk Axe [AOW] Thunderstorm
 301414941 Stormhawk Axe [AOW] Thunderstorm
+301422950 
+301422951 
+301422952 
+301422953 
+301422954 
+301422955 
+301422956 
+301422957 
+301422958 
+301422959 
+301422960 
+301422961 
+301422962 
+301422963 
+301422964 
+301422965 
+301422966 
+301422967 
+301422968 
+301422969 
+301422980 
+301422981 
+301422982 
+301422983 
+301422984 
+301422985 
+301422986 
+301422987 
+301422988 
+301422989 
+301422990 
+301422991 
+301422992 
+301422993 
+301500815 
+301500816 
+301500817 
+301500818 
+301500819 
+301500820 
+301500821 
+301500822 
+301500823 
+301500825 
+301500826 
+301500827 
+301500828 
+301500829 
+301500830 
+301500831 
+301500832 
+301500833 
 301500950 Greataxe Category [AOW] Spinning Wheel
 301500951 Greataxe Category [AOW] Spinning Wheel
 301500952 Greataxe Category [AOW] Spinning Wheel
@@ -6252,12 +9505,19 @@
 301600442 Spear Category [AOW] Loretta's Slash
 301600443 Spear Category [AOW] Loretta's Slash
 301600444 Spear Category [AOW] Loretta's Slash
+301600800 
+301600810 
+301600820 
+301600830 
 301600840 [AOW] Thunderbolt
 301600841 [AOW] Thunderbolt
 301600842 [AOW] Thunderbolt
 301600843 [AOW] Thunderbolt
 301600845 [AOW] Thunderbolt
 301600849 [AOW] Lightning Slash / Thunderbolt
+301600900 
+301600901 
+301600902 
 301600950 Spear Category [AOW] Spinning Wheel
 301600951 Spear Category [AOW] Spinning Wheel
 301600952 Spear Category [AOW] Spinning Wheel
@@ -6576,6 +9836,44 @@
 302112919 Veteran's Prosthesis [AOW] Storm Kick
 302113900 Cipher Pata [AOW] Unblockable Blade
 302113905 Cipher Pata [AOW] Unblockable Blade
+302122950 
+302122951 
+302122952 
+302122953 
+302122954 
+302122955 
+302122956 
+302122957 
+302122958 
+302122959 
+302122960 
+302122961 
+302122962 
+302122963 
+302122964 
+302122965 
+302122966 
+302122967 
+302122968 
+302122969 
+302122980 
+302122981 
+302122982 
+302122983 
+302122984 
+302122985 
+302122986 
+302122987 
+302122988 
+302122989 
+302122990 
+302122991 
+302122992 
+302122993 
+302122994 
+302122995 
+302122996 
+302122997 
 302200950 Claw Category [AOW] Spinning Wheel
 302200951 Claw Category [AOW] Spinning Wheel
 302200952 Claw Category [AOW] Spinning Wheel
@@ -6750,6 +10048,24 @@
 303400313 Rivers of Blood [AOW] Corpse Piler
 303400314 Rivers of Blood [AOW] Corpse Piler
 303400315 Rivers of Blood [AOW] Corpse Piler
+303400320 
+303400321 
+303400322 
+303400323 
+303400324 
+303400325 
+303400380 
+303400381 
+303400382 
+303400383 
+303400384 
+303400385 
+303400390 
+303400391 
+303400392 
+303400393 
+303400394 
+303400395 
 303400400 Beastclaw Greathammer [AOW] Regal Beastclaw
 303400401 Beastclaw Greathammer [AOW] Regal Beastclaw
 303400405 Beastclaw Greathammer [AOW] Regal Beastclaw
@@ -6785,6 +10101,8 @@
 303401007 Ornamental Straight Sword [AOW] Golden Tempering
 303401008 Ornamental Straight Sword [AOW] Golden Tempering
 303401100 Sword of Milos [AOW] Shriek of Milos
+303401101 
+303401102 
 303401200 Dragon King's Cragblade [AOW] Thundercloud Form
 303401201 Dragon King's Cragblade [AOW] Thundercloud Form
 303401202 Dragon King's Cragblade [AOW] Thundercloud Form
@@ -6799,6 +10117,7 @@
 303401308 Death's Poker [AOW] Ghostflame Ignition
 303401309 Death's Poker [AOW] Ghostflame Ignition
 303401310 Death's Poker [AOW] Ghostflame Ignition
+303401390 
 303401400 Helphen's Steeple [AOW] Ruinous Ghostflame
 303401401 Helphen's Steeple [AOW] Ruinous Ghostflame
 303401500 Scepter of the All-Knowing [AOW] Knowledge Above All
@@ -6812,3 +10131,694 @@
 303401701 Gargoyle's Blackblade [AOW] Corpse Wax Cutter
 303401702 Gargoyle's Blackblade [AOW] Corpse Wax Cutter
 303401800 Golden Epitaph [AOW] Last Rites
+304400800 
+304400801 
+306100670 
+306100671 
+306100780 
+306100781 
+306100782 
+306100783 
+306100785 
+306100786 
+306100787 
+306100788 
+306300950 
+306300951 
+306300952 
+306300953 
+306300954 
+306300955 
+306300956 
+306300957 
+306300958 
+306300959 
+306300960 
+306300961 
+306300962 
+306300963 
+306300964 
+306300965 
+306300966 
+306300967 
+306300968 
+306300969 
+306300980 
+306300981 
+306300982 
+306300983 
+306300984 
+306300985 
+306300986 
+306300987 
+306300988 
+306300989 
+306300990 
+306300991 
+306300992 
+306300993 
+306300994 
+306300995 
+306300996 
+306300997 
+306700950 
+306700951 
+306700952 
+306700953 
+306700954 
+306700955 
+306700956 
+306700957 
+306700958 
+306700959 
+306700960 
+306700961 
+306700962 
+306700963 
+306700964 
+306700965 
+306700966 
+306700967 
+306700968 
+306700969 
+306700980 
+306700981 
+306700982 
+306700983 
+306700984 
+306700985 
+306700986 
+306700987 
+306700988 
+306700989 
+306700990 
+306700991 
+306700992 
+306700993 
+306800950 
+306800951 
+306800952 
+306800953 
+306800954 
+306800955 
+306800956 
+306800957 
+306800958 
+306800959 
+306800960 
+306800961 
+306800962 
+306800963 
+306800964 
+306800965 
+306800966 
+306800967 
+306800968 
+306800969 
+306800980 
+306800981 
+306800982 
+306800983 
+306800984 
+306800985 
+306800986 
+306800987 
+306800988 
+306800989 
+306800990 
+306800991 
+306800992 
+306800993 
+306800994 
+306800995 
+306800996 
+306800997 
+500000000 
+500000001 
+500000010 
+500000011 
+500000015 
+500000050 
+500000100 
+600000000 
+600000001 
+600000002 
+600000005 
+600000006 
+600000007 
+600000010 
+600000011 
+600000012 
+600000013 
+600000015 
+600000016 
+600000017 
+600000018 
+600000020 
+600000021 
+600000022 
+600000023 
+600000030 
+600000031 
+600000050 
+600000051 
+600000052 
+600000060 
+600000061 
+600000062 
+600000063 
+600000064 
+600000065 
+600000066 
+600000067 
+600000070 
+600000071 
+600000072 
+600000073 
+600000074 
+600000075 
+600000076 
+600000077 
+600000078 
+600000079 
+600000080 
+600000081 
+600000082 
+600000083 
+600000084 
+600000085 
+600000090 
+600000091 
+600000092 
+600000093 
+600000094 
+600000095 
+600000100 
+600000101 
+600000102 
+600000103 
+600000110 
+600000111 
+600000112 
+600000120 
+600000121 
+600000122 
+600000123 
+600000128 
+600000129 
+600000130 
+600000131 
+600000132 
+600000133 
+600000134 
+600000135 
+600000136 
+600000137 
+600000140 
+600000141 
+600000142 
+600000143 
+600000144 
+600000145 
+600000150 
+600000160 
+600000161 
+600000162 
+600000163 
+600000164 
+600000165 
+600000166 
+600000167 
+600000180 
+600000181 
+600000182 
+600000183 
+600000190 
+600000191 
+600000192 
+600000195 
+600000196 
+600000197 
+600000200 
+600000201 
+600000202 
+600000203 
+600000204 
+600000205 
+600000206 
+600000207 
+600000210 
+600000211 
+600000500 
+600000501 
+600000502 
+600000520 
+600000521 
+600000522 
+600000523 
+600000524 
+600000525 
+600000530 
+600000531 
+600000535 
+600000536 
+600000570 
+600000571 
+600000572 
+600000573 
+600000574 
+600000575 
+600000580 
+600000581 
+600000582 
+600000583 
+600000584 
+600000585 
+600000600 
+600000601 
+600000602 
+600000603 
+600000610 
+600000611 
+600000612 
+600000613 
+600000614 
+600000615 
+600000616 
+600000617 
+600000618 
+600000619 
+600000620 
+600000621 
+600000622 
+600000623 
+600000624 
+600000625 
+600000626 
+600000627 
+600000628 
+600000629 
+600000630 
+600000631 
+600000640 
+600000641 
+600000642 
+600000643 
+600000644 
+600000645 
+600000646 
+600000647 
+600000648 
+600000649 
+600000650 
+600000660 
+600000661 
+600000662 
+600000663 
+600000670 
+600000671 
+600000672 
+600000673 
+600000674 
+600000675 
+600000676 
+600000677 
+600000678 
+600000679 
+600000680 
+600000681 
+600000682 
+600000683 
+600000684 
+600000685 
+600000686 
+600000687 
+600000688 
+600000689 
+600000690 
+600000691 
+600000692 
+600000693 
+600000694 
+600000695 
+600000700 
+600000701 
+600000702 
+600000703 
+600000711 
+600000712 
+600000713 
+600000714 
+600000716 
+600000717 
+600000718 
+600000719 
+600000750 
+600000751 
+600000752 
+600000753 
+600000754 
+600000760 
+600000761 
+600000762 
+600000763 
+600000770 
+600000771 
+600000772 
+600000790 
+600000791 
+600000792 
+600000793 
+600000800 
+600000801 
+600000802 
+600000803 
+600000804 
+600000810 
+600000811 
+600000812 
+600000813 
+600000814 
+600000820 
+600000821 
+600000822 
+600000823 
+600000824 
+600000825 
+600000827 
+600000828 
+600000830 
+600000831 
+600000832 
+600000833 
+600000834 
+600000835 
+600000836 
+600000837 
+600000840 
+600000841 
+600000842 
+600000843 
+600000844 
+600000845 
+600000846 
+600000847 
+600000850 
+600000851 
+600000860 
+600000861 
+600000862 
+600000863 
+600000865 
+600000868 
+600000871 
+600000875 
+600000880 
+600000890 
+600000900 
+600000901 
+600000902 
+600000903 
+600000904 
+600000905 
+600000910 
+600000911 
+600000912 
+600000913 
+600000914 
+600000915 
+600000940 
+600000941 
+600000942 
+600000943 
+600000944 
+600000945 
+600000946 
+600000947 
+600000948 
+600000950 
+600000951 
+600000953 
+600000954 
+600000955 
+600000956 
+600000960 
+600000961 
+600000962 
+600000963 
+600000964 
+600000965 
+600000966 
+600000967 
+600000970 
+600000972 
+600000974 
+600000975 
+600000980 
+600000981 
+600000982 
+600000983 
+600000984 
+600000985 
+600000986 
+600000987 
+600000990 
+600000991 
+600000992 
+600000993 
+600001000 
+600001001 
+600001002 
+600001003 
+600001008 
+600001009 
+600200100 
+600600100 
+601000100 
+601000101 
+602420000 
+606100100 
+606100101 
+700000000 
+700000001 
+700000002 
+700000003 
+700000004 
+700000005 
+700000006 
+700000007 
+700000008 
+700000009 
+700000010 
+700000011 
+700000020 
+700000021 
+700000022 
+700000023 
+700000024 
+700000025 
+700000026 
+700000027 
+700000028 
+700000030 
+700000031 
+700000032 
+700000033 
+700000034 
+700000035 
+700000036 
+700000037 
+700000038 
+700000040 
+700000041 
+700000042 
+700000043 
+700000044 
+700000045 
+700000046 
+700000047 
+700000048 
+700000050 
+700000051 
+700000052 
+700000060 
+700000061 
+700000065 
+700000070 
+700000071 
+700000072 
+700000073 
+700000075 
+700000076 
+700000077 
+700000078 
+700000100 
+700000101 
+700000102 
+700000103 
+700000104 
+700000105 
+700000106 
+700000110 
+700000111 
+700000112 
+700000113 
+700000114 
+700000115 
+700000116 
+700000120 
+700000140 
+700000150 
+700000151 
+700000152 
+700000153 
+700000154 
+700000155 
+700000156 
+700000157 
+700000158 
+700000159 
+700000160 
+700000161 
+700000162 
+700000163 
+700000164 
+700000170 
+700000171 
+700000172 
+700000173 
+700000175 
+700000176 
+700000177 
+700000180 
+700000181 
+700000182 
+700000190 
+700000191 
+700000192 
+700000193 
+700000194 
+700000195 
+700000196 
+700000197 
+700000198 
+700000200 
+700000205 
+700000206 
+700000207 
+700000210 
+700000215 
+700000216 
+700000217 
+700000220 
+700000225 
+700000226 
+700000227 
+700000235 
+700000240 
+700000245 
+700000250 
+700000251 
+700000252 
+700000253 
+700000254 
+700000255 
+700000256 
+700000257 
+700000258 
+700000259 
+700000260 
+700000261 
+700000262 
+700000263 
+700000270 
+700000271 
+700000272 
+700000273 
+700000274 
+700000275 
+700000276 
+700000277 
+700000278 
+700000279 
+700000280 
+700000281 
+700000290 
+700000291 
+700000292 
+700000293 
+700000294 
+700000295 
+700000296 
+700000297 
+700000298 
+700000299 
+700000300 
+700000301 
+700000310 
+700000311 
+700000312 
+700000313 
+700000314 
+700000315 
+700000316 
+700000317 
+700000318 
+700000319 
+700000320 
+700000321 
+700000322 
+700000323 
+700000330 
+700000331 
+700000332 
+700000333 
+700000334 
+700000335 
+700000336 
+700000337 
+700000338 
+700000339 
+700000340 
+700000341 
+700000350 
+700000351 
+700000352 
+700000355 
+700000356 
+700000357 
+700000370 
+700000371 
+700000372 
+700000373 
+700000374 
+700000375 
+700000376 
+700000377 
+700000378 
+700000379 
+700000380 
+700000381 
+700000382 
+700000383 
+700000384 
+700000385 
+700000386 
+700000387 
+700000388 
+700000389 
+700000390 
+700000400 
+700000401 
+700000402 
+700000410 
+700000411 
+700000415 
+700000416 
+700000420 
+700000421 
+700000425 
+701320360 
+701320361 
+999999998 
+999999999 

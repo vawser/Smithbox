@@ -1,3 +1,4 @@
+0 
 1000 Title
 1001 TopItem_0
 1002 TopItem_1
@@ -18,6 +19,7 @@
 1017 Item_14
 1018 StatusTitle_0
 1019 StatusTitle_1
+1020 
 1100 Title
 1101 TopItem_0
 1102 TopItem_1
@@ -38,6 +40,7 @@
 1117 Item_14
 1118 StatusTitle_0
 1119 StatusTitle_1
+1120 
 1200 Title
 1201 TopItem_0
 1202 TopItem_1
@@ -58,6 +61,7 @@
 1217 Item_14
 1218 StatusTitle_0
 1219 StatusTitle_1
+1220 
 1300 Title
 1301 TopItem_0
 1302 TopItem_1
@@ -74,6 +78,7 @@
 1313 Item_11
 1314 Item_12
 1315 Item_13
+1316 
 1400 Title
 1401 TopItem_0
 1402 TopItem_1
@@ -94,6 +99,7 @@
 1417 Item_14
 1418 StatusTitle_0
 1419 StatusTitle_1
+1420 
 1500 Title
 1501 TopItem_0
 1502 TopItem_1
@@ -114,6 +120,7 @@
 1517 Item_14
 1518 StatusTitle_0
 1519 StatusTitle_1
+1520 
 1600 Title
 1601 TopItem_0
 1602 TopItem_1
@@ -134,6 +141,7 @@
 1617 Item_14
 1618 StatusTitle_0
 1619 StatusTitle_1
+1620 
 1700 Title
 1701 TopItem_0
 1702 TopItem_1
@@ -154,6 +162,7 @@
 1717 Item_14
 1718 StatusTitle_0
 1719 StatusTitle_1
+1720 
 2000 Title
 2001 TopItem_0
 2002 TopItem_1
@@ -224,6 +233,7 @@
 2067 StatusTitle_2
 2068 StatusTitle_3
 2069 StatusTitle_4
+2070 
 2100 Title
 2101 TopItem_0
 2102 TopItem_1
@@ -294,6 +304,7 @@
 2167 StatusTitle_2
 2168 StatusTitle_3
 2169 StatusTitle_4
+2170 
 2300 Title
 2301 TopItem_0
 2302 TopItem_1
@@ -364,6 +375,7 @@
 2367 StatusTitle_2
 2368 StatusTitle_3
 2369 StatusTitle_4
+2370 
 2400 Title
 2401 TopItem_0
 2402 TopItem_1
@@ -434,6 +446,7 @@
 2467 StatusTitle_2
 2468 StatusTitle_3
 2469 StatusTitle_4
+2470 
 2500 Title
 2501 TopItem_0
 2502 TopItem_1
@@ -504,6 +517,7 @@
 2567 StatusTitle_2
 2568 StatusTitle_3
 2569 StatusTitle_4
+2570 
 2600 Title
 2601 TopItem_0
 2602 TopItem_1
@@ -574,6 +588,7 @@
 2667 StatusTitle_2
 2668 StatusTitle_3
 2669 StatusTitle_4
+2670 
 4000 Title
 4001 TopItem_0
 4002 TopItem_1
@@ -601,6 +616,7 @@
 4024 R_Item_7
 4025 StatusTitle_0
 4026 StatusTitle_1
+4027 
 5000 Title
 5001 TopItem_0
 5002 TopItem_1
@@ -619,6 +635,7 @@
 5015 Item_14
 5016 StatusTitle_0
 5017 StatusTitle_1
+5018 
 6000 Title
 6001 TopItem_0
 6002 TopItem_1
@@ -649,6 +666,7 @@
 6027 Item_14
 6028 StatusTitle_0
 6029 StatusTitle_1
+6030 
 6500 Title
 6501 TopItem_0
 6502 TopItem_1
@@ -666,6 +684,10 @@
 6514 Item_14
 6515 StatusTitle_0
 6516 StatusTitle_1
+6517 
+6518 
+6519 
+6520 
 7000 Title
 7001 StatusTitle_0
 7002 TopItem_0_0
@@ -700,6 +722,7 @@
 7031 Item_3_1
 7032 Item_3_2
 7033 Item_3_3
+7034 
 7100 Title
 7101 StatusTitle_0
 7102 TopItem_0_0
@@ -734,6 +757,7 @@
 7131 Item_3_1
 7132 Item_3_2
 7133 Item_3_3
+7134 
 7200 Title
 7201 StatusTitle_0
 7202 TopItem_0_0
@@ -768,6 +792,7 @@
 7231 Item_3_1
 7232 Item_3_2
 7233 Item_3_3
+7234 
 10000 Item_01
 10001 Item_02
 10002 Item_03
@@ -795,6 +820,7 @@
 10024 Item_22
 10025 StatusTitle_0
 10026 StatusTitle_1
+10027 
 11000 Item_01
 11001 Item_02
 11002 Item_03
@@ -835,6 +861,7 @@
 11037 StatusTitle_1
 11038 StatusTitle_2
 11039 StatusTitle_3
+11040 
 15000 PlayerName
 15001 Item_0
 15002 Item_1
@@ -842,6 +869,7 @@
 15004 Item_3
 15005 StatusTitle_0
 15006 StatusTitle_1
+15007 
 15500 Item_0_0
 15501 Item_1_0
 15502 Item_2_0
@@ -861,6 +889,7 @@
 15516 LowerLeft_8
 15517 PlayerName
 15518 StatusTitle_1
+15519 
 16000 L_Item_00
 16001 L_Item_00_plus
 16002 L_Item_01
@@ -907,40 +936,59 @@
 16043 StatusTitle_1
 16044 StatusTitle_2
 16045 StatusTitle_3
+16046 
 20000 TopItem_0
 20001 TopItem_1
+20002 
 20100 TopItem_0
 20101 TopItem_1
+20102 
 20200 TopItem_0
 20201 TopItem_1
+20202 
 20300 Weight_Rate
 20301 Weight_Current
 20302 Weight_Max
+20303 
 20400 TopItem_0
 20401 TopItem_1
+20402 
 20500 TopItem_0
 20501 TopItem_1
+20502 
 20600 TopItem_0
 20601 TopItem_1
+20602 
 20700 TopItem_0
 20701 TopItem_1
+20702 
 20800 TopItem_0
 20801 TopItem_1
+20802 
 20900 TopItem_0
 20901 TopItem_1
+20902 
 21000 TopItem_0
 21001 L_Item_0_0
 21002 L_Item_1_0
 21003 L_Item_2_0
 21004 L_Item_3_0
 21005 L_Item_4_0
+21006 
 21100 TopItem_0
 21101 TopItem_1
+21102 
 21200 TopItem_0
 21201 TopItem_1
+21202 
 21300 TopItem_0
+21301 
 21400 TopItem_0
+21401 
 21500 TopItem_0
+21501 
+21600 
+21601 
 22000 L_TopItem_0_0
 22001 L_TopItem_0_1
 22002 L_Item_0_0
@@ -971,6 +1019,7 @@
 22027 R_Item_10_0
 22028 R_Item_10_1
 22029 R_Item_10_2
+22030 
 23000 L_TopItem_0_0
 23001 L_TopItem_0_1
 23002 L_Item_0_0
@@ -1006,6 +1055,7 @@
 23801 Item_1
 23802 Item_2
 23803 Item_3
+23804 
 30000 Item_0_0
 30001 Item_1_0
 30002 Item_2_0
@@ -1022,6 +1072,7 @@
 30013 LowerLeft_8
 30014 PlayerName
 30015 StatusTitle_1
+30016 
 31000 L_Item_00
 31001 L_Item_01
 31002 L_Item_02
@@ -1054,21 +1105,27 @@
 31029 StatusTitle_2
 31030 StatusTitle_3
 31031 StatusTitle_4
+31032 
 32000 Title
 32001 Item_0
 32002 Item_1
+32003 
 32100 Title
 32101 Item_0
 32102 Item_1
+32103 
 32200 Title
 32201 Item_0
 32202 Item_1
+32203 
 32300 Title
 32301 Item_0
 32302 Item_1
+32303 
 32400 Title
 32401 Item_0
 32402 Item_1
+32403 
 40000 TopItem_0
 40001 TopItem_1
 40002 TopItem_2
@@ -1084,3 +1141,4 @@
 40012 Bottom/Item_7_0
 40013 Bottom/Item_8_0
 40014 Bottom/Item_9_0
+40015 

@@ -39,6 +39,8 @@
 75 Status: Madness
 76 Status: Death
 77 Poise
+80 
+81 
 100 Cooperator's Objective (Furled Finger)
 101 Adversary's Objective (Duelist)
 102 Multipler Maximums
@@ -65,3 +67,6 @@
 152 Knowcking Down Mounted Enemies
 153 Hardened Foes
 200 Teardrop Scarabs
+205 
+206 
+207 

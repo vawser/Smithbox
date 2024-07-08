@@ -1,3 +1,4 @@
+0 
 100000 [Stormveil Castle] Godrick the Grafted
 100001 [Stormhill] Margit, the Fell Omen
 100002 [Stormhill] Castleward Tunnel
@@ -51,6 +52,8 @@
 120501 [Mohgwyn Palace] Palace Approach Ledge,Road
 120502 [Mohgwyn Palace] Dynasty Mausoleum Entrance
 120503 [Mohgwyn Palace] Dynasty Mausoleum Midpoint
+120600 
+120601 
 120700 [Siofra River] Siofra River Well Depths
 120701 [Nokron, Eternal City] Nokron, Eternal City
 130000 [Crumbling Farum Azula] Maliketh, the Black Blade

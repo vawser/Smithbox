@@ -1,4 +1,11 @@
+0 
 1 Human
+100 
+540 
+541 
+542 
+1000 
+9999 
 1000000 BuddyStone
 1002000 Patrol Dummy
 1100000 Caravan Dummy
@@ -6,6 +13,7 @@
 1200020 Bullet Dummy
 1200030 Bullet Dummy
 1200041 Bullet Dummy
+1200090 
 1200100 Bullet Dummy
 1300000 Balloon Dummy
 10000000 Bonfire
@@ -13,7 +21,9 @@
 10001000 BuddyStone
 10003000 Talk Dummy
 10003100 Talk Dummy
+10004000 
 10005000 Talk Dummy
+10006000 
 10006050 Talk Dummy
 10100000 Talk Dummy
 20100000 Blaidd the Half-Wolf
@@ -150,11 +160,16 @@
 21403100 Omen
 21403150 Fell Twin
 21409000 Omen
+21500000 
 21500052 Lightning Ball
 21500064 Lightning Ball (Siofra River)
+21500300 
 21500352 Lightning Ball
+21500400 
 21500452 Lightning Ball
+21500500 
 21500552 Lightning Ball
+21500600 
 21500652 Lightning Ball
 21600000 Finger Reader Crone
 21601000 Finger Reader Crone
@@ -1081,6 +1096,7 @@
 36200054 Large Oracle Envoy
 36300000 Giant Oracle Envoy
 36300054 Giant Oracle Envoy
+36400000 
 36500000 Guardian
 36500012 Guardian
 36500020 Guardian
@@ -3080,6 +3096,10 @@
 43562000 Haligtree Knight
 43562056 Haligtree Knight
 43562556 Haligtree Knight
+43580000 
+43581000 
+43581100 
+43582000 
 43610000 Godrick Knight's Horse
 43610010 Godrick Knight's Horse
 43610012 Godrick Knight's Horse
@@ -3097,6 +3117,8 @@
 43650000 Mausoleum Knight's Horse
 43650052 Mausoleum Knight's Horse
 43650066 Mausoleum Knight's Horse
+43680000 
+43680100 
 43710000 Godrick Foot Soldier
 43710010 Godrick Foot Soldier
 43710012 Godrick Foot Soldier
@@ -3812,6 +3834,7 @@
 46040020 Smithing Master Iji
 46040120 War Counselor Iji
 46040220 War Counselor Iji
+46100000 
 46200000 AAstel, Stars of Darkness
 46200062 Astel, Stars of Darkness
 46200952 Astel, Stars of Darkness (Snowfield Mine)
@@ -4341,29 +4364,29 @@
 52100094 Divine Beast Dancing Lion (Rauh Boss)
 52200000 Promised Consort Radahn
 52200001 Promised Consort Radahn
-52200089 Promised Consort Radahn (Boss)
+52200089 Promised Consort Radahn
 52201000 Promised Consort Radahn
-52201089 Radahn, Consort of Miquella (Boss)
-52202000 Radahn, Consort of Miquella (Illusion Copy)
+52201089 Promised Consort Radahn (Boss)
+52202000 Promised Consort Radahn
 52210000 Miquella's Arms
 52300000 Scadutree Avatar
 52300001 Scadutree Avatar
-52300096 Scadutree Avatar - Phase 1 (Boss)
+52300096 Scadutree Avatar (Boss)
 52300100 Scadutree Avatar
 52300101 Scadutree Avatar
-52300196 Scadutree Avatar - Phase 1 (HP Bar)
+52300196 Scadutree Avatar
 52300200 Scadutree Avatar
 52300201 Scadutree Avatar
-52300296 Scadutree Avatar - Phase 2 (Boss)
+52300296 Scadutree Avatar
 52300300 Scadutree Avatar
 52300301 Scadutree Avatar
-52300396 Scadutree Avatar - Phase 3 (Boss)
+52300396 Scadutree Avatar
 52300400 Scadutree Avatar
 52300401 Scadutree Avatar
-52300496 Scadutree Avatar - Phase 2 (HP Bar)
+52300496 Scadutree Avatar
 52300500 Scadutree Avatar
 52300501 Scadutree Avatar
-52300596 Scadutree Avatar - Phase 3 (HP Bar)
+52300596 Scadutree Avatar
 52400000 Commoner (Pot)
 52400001 Commoner (Pot)
 52400002 Commoner (Pot)
@@ -5421,6 +5444,8 @@
 56612098 Shadow Militia
 56612099 Shadow Militia
 56612100 Shadow Militia
+56700000 
+56700082 
 56800000 Wheeled Ballista
 56800081 Wheeled Ballista
 56800093 Wheeled Ballista
@@ -5555,6 +5580,9 @@
 57610386 Giant Rat
 57610390 Giant Rat
 57610886 Giant Rat
+57700000 
+57700084 
+57700100 
 57800000 Runebear
 57800090 Runebear
 57800095 Runebear
@@ -5873,6 +5901,7 @@
 60100900 Deer
 60100965 Deer
 60101000 Deer
+60200000 
 60310000 Bear
 60310010 Bear
 60310012 Bear
@@ -6026,53 +6055,225 @@
 61000150 Springhare
 61000900 Springhare
 61000965 Springhare
+62000000 Scarab
+62001000 Scarab
+62002000 Scarab
+62002100 Scarab
+62002200 Scarab
+62003000 Scarab
+62003100 Scarab
+62003200 Scarab
+62004000 Scarab
+62004100 Scarab
+62004200 Scarab
+62005000 Scarab
+62005100 Scarab
+62005200 Scarab
+62010000 Scarab
+62011000 Scarab
+62012000 Scarab
+62012090 Scarab
+62012095 Scarab
+62012100 Scarab
+62012200 Scarab
+62012290 Scarab
+62013000 Scarab
+62013090 Scarab
+62013100 Scarab
+62013200 Scarab
+62014000 Scarab
+62014090 Scarab
+62014100 Scarab
+62014200 Scarab
+62015000 Scarab
+62015090 Scarab
+62015091 Scarab
+62015095 Scarab
+62015100 Scarab
+62015200 Scarab
+62020000 Scarab
+62021000 Scarab
+62022000 Scarab
+62022200 Scarab
+62023000 Scarab
+62023200 Scarab
+62024000 Scarab
+62024200 Scarab
+62025000 Scarab
+62025200 Scarab
+62100000 Albinauric Archer
+62100092 Albinauric Archer
+62109000 Albinauric Archer
+62200000 Wolf
+62200092 Wolf
+62210000 Wolf
+62211000 Wolf
+62310000 Perfumer
+62310081 Perfumer
+62310090 Perfumer
+62310098 Perfumer
+62310190 Perfumer
+62311000 Perfumer
+62311081 Perfumer
+62311090 Perfumer
+62311098 Perfumer
+62322000 Glintstone Sorcerer
+62322082 Glintstone Sorcerer
+62330000 Page
+62330082 Page
+62331000 Page
+62400000 
+62400083 
+62400300 
+62400400 
+62400500 
+62400600 
+62510000 Tree Sentinel
 62510093 Tree Sentinel (Hinterland Boss)
+62511000 Tree Sentinel
 62511093 Tree Sentinel - Torch (Hinterland Boss)
+62600000 Death Rite Bird
+62601000 Death Rite Bird
 62601084 Death Rite Bird (Charo's Hidden Grave Boss)
-63101093 Fallingstar Beast (Hinterland Boss)
-70000000 Fallen Hawks Soldier
-70000065 Fallen Hawks Soldier
+62700000 Royal Revenant
+62700003 Royal Revenant
+62700084 Royal Revenant
+62700100 Royal Revenant
+62708000 Royal Revenant
+62708100 Royal Revenant
+62708200 Royal Revenant
+62708300 Royal Revenant
+62708400 Royal Revenant
+62900000 Misbegotten
+62900090 Misbegotten
+62900095 Misbegotten
+62900100 Misbegotten
+62900200 Misbegotten
+62900290 Misbegotten
+62901000 Misbegotten
+62901090 Misbegotten
+62901095 Misbegotten
+62901100 Misbegotten
+62902000 Misbegotten
+62902090 Misbegotten
+62902100 Misbegotten
+62909000 Misbegotten
+62909100 Misbegotten
+62910000 Scaly Misbegotten
+62910090 Scaly Misbegotten
+62910095 Scaly Misbegotten
+62910100 Scaly Misbegotten
+62910200 Scaly Misbegotten
+62919000 Scaly Misbegotten
+63000000 Snail (Base)
+63000094 Snail (Rauh Base)
+63001000 Snail
+63002000 Snail
+63002100 Snail
+63003000 Snail
+63004000 Snail
+63009000 Snail
+63100000 Fallingstar Beast (Base)
+63101000 Fallingstar Beast
+63101093 Fallingstar Beast (Scaduview) - Hinterland [Boss]
+63202000 Wandering Noble (Base)
+63202009 Wandering Noble
+63202082 Wandering Noble (Gravesite Plain) - Castle Ensis
+63202200 Wandering Noble
+63202300 Wandering Noble
+63202382 Wandering Noble (Gravesite Plain) - Castle Ensis
+63202400 Wandering Noble
+63202800 Wandering Noble
+63202900 Wandering Noble
+63207100 Wandering Noble
+63207180 Wandering Noble (Gravesite Plain) - Dragon Lake
+63207185 Wandering Noble (Jagged Peak)
+63207190 Wandering Noble
+63207195 Wandering Noble (Rauh Base)
+70000000 Fallen Hawks Soldier (Base)
+70000065 Fallen Hawks Soldier (Siofra River/Nokron)
 70000100 Fallen Hawks Soldier
 70001000 Fallen Hawks Soldier
-70001065 Fallen Hawks Soldier
+70001065 Fallen Hawks Soldier (Siofra River/Nokron)
 70002000 Fallen Hawks Soldier
-70002065 Fallen Hawks Soldier
+70002065 Fallen Hawks Soldier (Siofra River/Nokron)
 70003000 Fallen Hawks Soldier
 70003100 Fallen Hawks Soldier
-70003165 Fallen Hawks Soldier
-71000000 Ancient Hero of Zamor
-71000012 Ancient Hero of Zamor (Weeping Peninsula Boss)
-71000030 Ancient Hero of Zamor (Boss)
+70003165 Fallen Hawks Soldier (Siofra River/Nokron)
+71000000 Ancient Hero of Zamor (Base)
+71000012 Ancient Hero of Zamor (Weeping Peninsula) - Weeping Evergaol [Boss]
+71000030 Ancient Hero of Zamor (Altus Plateau) - Sainted Hero's Grave [Boss]
 71000050 Ancient Hero of Zamor
 71000100 Ancient Hero of Zamor
-71000150 Ancient Hero of Zamor
-71000950 Ancient Hero of Zamor (Boss)
+71000150 Ancient Hero of Zamor (Mountaintops of the Giants) - Zamor Ruins
+71000950 Ancient Hero of Zamor (Mountaintops of the Giants) - Giant-Conquering Hero's Grave [Boss]
 80000000 Torrent
-81000000 Ballista
-81000010 Ballista
-81000012 Ballista
+81000000 Ballista (Base)
+81000010 Ballista (Limgrave) - Fort Haight
+81000012 Ballista (Weeping Peninsula) - Tower of Return / Forest Lookout Tower
 81000014 Ballista (Stormveil Castle)
-81000030 Ballista
-81000041 Ballista
-81000051 Ballista
-81000056 Ballista
-81010000 Trebuchet
-81010010 Trebuchet
-81010012 Trebuchet
-81010030 Trebuchet
-81010041 Trebuchet
+81000030 Ballista (Altus Plateau)
+81000041 Ballista (Caelid) - Redmane Castle
+81000051 Ballista (Mountaintops of the Giants) - Castle Sol
+81000056 Ballista (Miquella's Haligtree)
+81010000 Trebuchet (Base)
+81010010 Trebuchet (Limgrave) - Stormhill
+81010012 Trebuchet (Weeping Peninsula) - Bridge of Sacrifice
+81010030 Trebuchet (Altus Plateau) - Altus Highway
+81010041 Trebuchet (Caelid) - Redmane Castle
 81010050 Trebuchet
-81100000 Dragon-faced Flamethrower
-81100014 Dragon-Faced Flamethrower
-81100020 Dragon-Faced Flamethrower
-81100041 Dragon-Faced Flamethrower
+81100000 Dragon-faced Flamethrower (Base)
+81100014 Dragon-Faced Flamethrower (Stormveil Castle)
+81100020 Dragon-Faced Flamethrower (Liurnia) - Gate Town
+81100041 Dragon-Faced Flamethrower (Caelid) - Redmane Castle
 81100050 Dragon-faced Flamethrower
-81200000 Merciless Chariot
-81200007 Merciless Chariot
-81200032 Merciless Chariot
-81200132 Merciless Chariot
+81200000 Merciless Chariot (Base)
+81200007 Merciless Chariot (Limgrave) - Fringefolk Hero's Grave
+81200032 Merciless Chariot (Mt. Gelmer) - Gelmir Hero's Grave / Auriza Hero's Grave
+81200033 Merciless Chariot
+81200132 Merciless Chariot (Mt. Gelmer) - Gelmir Hero's Grave
 89010000 Beast Clergyman / Maliketh- the Black Blade
+89990000 
+90000000 
+90000100 
+90000200 
 90010000 Human
+90010010 
+90010020 
+90010030 
+90010031 
+90010040 
+90010041 
+90020000 
+90080000 
+90081000 
+90082000 
+90083000 
+90084000 
+90090000 
+90510000 
+92200100 
+95000100 
+95001000 
+95010000 
+95020000 
+95021000 
+95022000 
+95023000 
+95024000 
+95025000 
+95026000 
+95027000 
+95028000 
+95029000 
+95030000 
+95031000 
+95032000 
+95033000 
+95034000 
+95090000 
+95091000 
+100000000 
 100000010 [Spirit Summon] Mimic Tear
 100000020 [Spirit Summon] Nepheli Loux Puppet
 100000030 [Spirit Summon] Dung Eater Puppet
@@ -6153,10 +6354,18 @@
 144910200 [Spirit Summon] Soldjars of Fortune
 148200000 [Spirit Summon] Omenkiller
 150000000 [Spirit Summon] Ancient Dragon Florissax
+150000001 
 150000002 [Spirit Summon] Fire Knight Queelign
 150000003 [Spirit Summon] Swordhand of Night Jolan
 150000004 [Spirit Summon] Jolan and Anna
 150000005 [Spirit Summon] Jolan and Anna
+150000006 
+150000007 
+150000008 
+150000009 
+150000010 
+150000011 
+150000012 
 150400000 [Spirit Summon] Curseblade Meera
 150800000 [Spirit Summon] Bloodfiend Hexer
 150900000 [Spirit Summon] Gravebird
@@ -6178,14 +6387,19 @@
 159000100 [Spirit Summon] Man-Fly 3
 170001000 [Spirit Summon] Fallen Hawks Greatshield Soldier
 170002000 [Spirit Summon] Fallen Hawks Archer
+199999999 
+500000000 
+500000006 
 500000010 Stormhill Colosseum Silent Spirit
 500000020 Caria Manor Silent Spirit
 500000032 Stormhill Colosseum Silent Spirit
 500000040 Stormhill Colosseum Silent Spirit
 500000042 Dragonbarrow Silent Spirit
 500000066 Stormhill Colosseum Silent Spirit
+500001000 
 500010000 Smithing Table
 500020079 Twin Maiden Husks
+500030000 
 501060020 Ranni/Renna
 501060024 Ranni/Renna
 501060062 Ranni/Renna
@@ -6198,7 +6412,9 @@
 502010024 Rennala's Children
 502160010 Blaidd
 502160110 Blaidd
+502160210 
 502160310 Blaidd
+502180010 
 502180062 Asimi
 502180064 Asimi
 502180065 Asimi
@@ -6206,6 +6422,7 @@
 502180165 Asimi
 502180264 Asimi
 502180265 Asimi
+502190020 
 502280050 Latenna
 502280052 Latenna
 503180010 Yura
@@ -6214,6 +6431,11 @@
 503300020 Basin of Atonement
 503390079 Smithing Table
 503490054 Smithing Table
+504020088 
+504020188 
+504140098 
+504160099 
+504180089 
 506010010 Church of Dragon Communion
 506010040 Cathedral of Dragon Communion
 506030012 Wandering Mausoleum Corpse
@@ -6221,13 +6443,40 @@
 506030050 Wandering Mausoleum Corpse
 506030052 Wandering Mausoleum Corpse
 506030066 Wandering Mausoleum Corpse
+506060020 
 506070078 Talk Dummy
 506080079 Clouded Mirror Stand
+506200034 
+506200070 
+506210010 
+506220040 
+506230079 
 506300084 Grand Altar of Dragon Communion
 506310083 Wandering Mausoleum Corpse
 506310090 Wandering Mausoleum Corpse
 506310093 Wandering Mausoleum Corpse
 520000000 Human
+520000001 
+520000002 
+520000003 
+520000004 
+520000005 
+520000006 
+520000007 
+520000008 
+520000009 
+520000010 
+520000011 
+520000012 
+520000013 
+520000014 
+520000015 
+520000016 
+520000017 
+520000018 
+520000019 
+520000020 
+520000021 
 523000000 Tanith, Volcano Manor Proprietress
 523000038 Tanith, Volcano Manor Proprietress
 523000138 Tanith, Volcano Manor Proprietress
@@ -6237,15 +6486,19 @@
 523010068 White Mask Varré
 523010110 White Mask Varré
 523010168 White Mask Varré
+523020000 
 523030000 Guilbert
 523040000 Festering Fingerprint Vyke
 523040020 Festering Fingerprint Vyke
 523040050 Roundtable Knight Vyke
+523050000 
+523060000 
 523070000 Preceptor Seluvis
 523070020 Preceptor Seluvis
 523070120 Preceptor Seluvis
 523070220 Preceptor Seluvis
 523070320 Preceptor Seluvis
+523080000 
 523090000 Patches
 523090010 Patches
 523090020 Patches
@@ -6291,6 +6544,7 @@
 523140120 Potentate Diallos
 523140179 Knight Diallos
 523140220 Potentate Diallos
+523150000 
 523150020 Human
 523160000 Sorceress Sellen
 523160010 Sorceress Sellen
@@ -6298,6 +6552,7 @@
 523160020 Sorceress Sellen
 523160024 Sorceress Sellen
 523160124 Sorceress Sellen
+523170000 
 523180000 Yura, Hunter of Bloody Fingers
 523180010 Yura, Hunter of Bloody Fingers
 523180020 Yura, Hunter of Bloody Fingers
@@ -6359,12 +6614,14 @@
 523270000 Eleonora, Violet Bloody Finger
 523270030 Eleonora, Violet Bloody Finger
 523270130 Eleonora, Violet Bloody Finger
+523290000 
 523290040 Human
 523290066 Lionel the Lionhearted
 523310000 Blackguard
 523310020 Blackguard
 523310033 Blackguard
 523310133 Blackguard
+523320000 
 523320038 Rykard-Hating Ghost
 523330000 Sorcerer Thops
 523330020 Sorcerer Thops
@@ -6384,12 +6641,16 @@
 523350079 Reeling Rico
 523360000 Vyke's Finger Maiden
 523360012 Vyke's Finger Maiden
+523370000 
+523370034 
+523370134 
 523380000 Finger Maiden
 523380016 Finger Maiden
 523390000 Ensha of the Royal Remains
 523390079 Ensha of the Royal Remains
 523400000 Bloody Finger Ravenmount Assassin
 523400020 Bloody Finger Ravenmount Assassin
+523410000 
 523420000 Boc the Seamster
 523420024 Boc the Seamster
 523430000 Bloody Finger Nerijus
@@ -6420,6 +6681,8 @@
 523490140 Sage Gowry
 523490240 Sage Gowry
 523490340 Sage Gowry
+523500000 
+523500032 
 523510000 Scribe Corhyn
 523510030 Brother Corhyn
 523510034 Scribe Corhyn
@@ -6436,17 +6699,21 @@
 523530032 Anastasia, Tarnished-Eater
 523530040 Anastasia, Tarnished-Eater
 523530052 Anastasia, Tarnished-Eater
+523540000 
 523550000 Okina
 523550040 Okina
 523550050 Bloody Finger Okina
 523560000 Adan, Thief of Fire
 523560020 Adan, Thief of Fire
+523570000 
+523580000 
 523590000 Moongrum, Carian Knight
 523590024 Moongrum, Carian Knight
 523600000 Vargram the Raging Wolf
 523600034 Vargram the Raging Wolf
 523610000 Fia's Champion
 523610066 Fia's Champion 1
+523620000 
 523630000 Finger Maiden Therolina
 523630020 Finger Maiden Therolina
 523630040 Finger Maiden Therolina
@@ -6474,8 +6741,10 @@
 523760930 Necromancer Garris
 523770000 Nameless White Mask
 523770068 Nameless White Mask
+523790000 
 523800000 Errant Sorcerer Wilhelm
 523800034 Errant Sorcerer Wilhelm
+523810000 
 523820000 Chief Guardian Arghanthy
 523820050 Chief Guardian Arghanthy
 523830000 Flame Guardian
@@ -6494,6 +6763,8 @@
 523900056 Polyanna, Youngest Sister
 523910000 Magnus the Beast Claw
 523910030 Magnus the Beast Claw
+523920000 
+523930000 
 524030000 Igon
 524030081 Igon
 524030085 Igon
@@ -6584,9 +6855,18 @@
 524310080 Logur, the Beast Claw
 524320000 Moonrithyll, Carian Knight
 524320082 Moonrithyll, Carian Knight
+526000000 
+526050000 
+526060000 
+526100000 
 526100052 Stray Mimic Tear
 526100965 Mimic Tear
+527900000 
 527900010 Human
+528500000 
+529000000 
+529000085 
+533030100 
 533040100 Roundtable Knight Vyke
 533090000 Patches
 533090040 Patches
@@ -6654,12 +6934,14 @@
 533900000 Polyanna, Youngest Sister
 533900040 Polyanna, Adopted Daughter
 533900056 Polyanna, Youngest Sister
+534000000 
 534031000 Igon
 534031085 Drake Warrior Igon
 534090000 Swordhand of Night Jolan
 534090083 Swordhand of Night Jolan
 534090093 Swordhand of Night Jolan
 534090099 Swordhand of Night Jolan
+534100000 
 534140000 Hornsent
 534140098 Hornsent
 534140099 Hornsent
@@ -6691,6 +6973,14 @@
 534260000 Sanguine Noble Nataan
 534260089 Sanguine Noble Nataan
 534260189 Sanguine Noble Nataan
+534300000 
+534400000 
+534500000 
+534600000 
+534700000 
+534800000 
+534900000 
+543030200 
 543110000 Edgar the Revenger
 543110020 Edgar the Revenger
 543260000 Knight Bernahl
@@ -6709,9 +6999,11 @@
 543690010 Recusant Henricus
 543850000 Mad Tongue Alberich
 543850079 Mad Tongue Alberich
+544000000 
 544070000 Ancient-Dragon-Man
 544070081 Ancient-Dragon-Man
 544090000 Swordhand of Night Jolan
+544100000 
 544120000 Swordhand of Night Anna
 544120090 Swordhand of Night Anna (Invader)
 544130000 Fire Knight Queelign
@@ -6735,4 +7027,13 @@
 544180000 Needle Knight Leda
 544190000 Thiollier
 544190087 Thiollier
+544200000 
 544250000 Dryleaf Dane
+544300000 
+544400000 
+544500000 
+544600000 
+544700000 
+544800000 
+544900000 
+599999999 

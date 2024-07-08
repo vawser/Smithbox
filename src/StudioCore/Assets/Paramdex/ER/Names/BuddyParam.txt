@@ -1,6 +1,10 @@
+0 
 20000000 Black Knife Tiche
 20100000 Banished Knight Oleg
 20200000 Banished Knight Engvall
+20228000 
+20229000 
+20230000 
 20300000 Fanged Imps
 20300001 Fanged Imps
 20400000 Latenna the Albinauric
@@ -131,6 +135,10 @@
 30200000 Gravebird Ashes
 30300000 Fire Knight Hilde
 30400000 Spider Scorpion
+30500000 
+30500001 
+30500002 
+30500003 
 30600000 Inquisitor 1
 30600001 Inquisitor 2
 30700000 Demi-Human Swordsman Yosh
@@ -147,7 +155,16 @@
 31500000 Horned Warrior
 31600000 Fingercreeper
 31700000 Ancient Dragon Florissax
+31800000 
 31900000 Fire Knight Queelign
 32000000 Swordhand of Night Jolan
 32100000 Jolan and Anna
 32200000 Jolan and Anna
+32300000 
+32400000 
+32500000 
+32600000 
+32700000 
+32800000 
+32900000 
+33000000 

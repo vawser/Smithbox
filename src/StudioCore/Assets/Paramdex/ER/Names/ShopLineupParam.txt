@@ -1,3 +1,8 @@
+1 
+1000 
+1001 
+1002 
+1003 
 100000 [Gatekeeper Gostoc] Festering Bloody Finger
 100002 [Gatekeeper Gostoc] Ruin Fragment
 100004 [Gatekeeper Gostoc] Buckler
@@ -101,6 +106,7 @@
 100337 [Pidia Carian Servant] Budding Horn
 100338 [Pidia Carian Servant] Ripple Blade
 100339 [Pidia Carian Servant] Black Leather Shield
+100340 
 100350 [Brother Corhyn] Rejection
 100351 [Brother Corhyn] Urgent Heal
 100352 [Brother Corhyn] Heal
@@ -553,6 +559,19 @@
 101879 [Twin Maiden Husks] Crafting Kit
 101880 [Twin Maiden Husks] Whetstone Knife
 101881 [Twin Maiden Husks] Talisman Pouch
+101885 
+101886 
+101887 
+101888 
+101889 
+101890 
+101891 
+101892 
+101893 
+101894 
+101895 
+101898 
+101899 
 101900 [Remembrance of the Grafted] Axe of Godrick
 101901 [Remembrance of the Grafted] Grafted Dragon
 101902 [Remembrance of the Starscourge] Starscourge Greatsword
@@ -583,6 +602,25 @@
 101927 [Elden Remembrance] Sacred Relic Sword
 101928 [Remembrance of the Naturalborn] Bastard's Stars
 101929 [Remembrance of the Naturalborn] Ash of War: Waves of Darkness
+101930 
+101931 
+101932 
+101933 
+101934 
+101935 
+101936 
+101937 
+101938 
+101939 
+101940 
+101941 
+101942 
+101943 
+101944 
+101945 
+101946 
+101947 
+101948 
 101950 [Dragon Communion] Dragonfire
 101951 [Dragon Communion] Dragonice
 101952 [Dragon Communion] Glintstone Breath
@@ -599,6 +637,98 @@
 101975 [Dragon Communion] Dragonclaw
 101976 [Dragon Communion] Dragonmaw
 101980 [Dragon Communion] Dragonfire
+102250 
+102251 
+102252 
+102253 
+102254 
+102255 
+102256 
+102257 
+102258 
+102259 
+102260 
+102261 
+102262 
+102263 
+102264 
+102265 
+102266 
+102270 
+102271 
+102272 
+102273 
+102274 
+102275 
+102276 
+102277 
+102278 
+102279 
+102280 
+102281 
+102282 
+102300 
+102301 
+102302 
+102303 
+102304 
+102305 
+102306 
+102307 
+102308 
+102350 
+102351 
+102355 
+102700 
+102701 
+102702 
+102703 
+102704 
+102705 
+102706 
+102707 
+102708 
+102710 
+102711 
+102712 
+102713 
+102714 
+102715 
+102716 
+102717 
+102718 
+102720 
+102721 
+102722 
+102723 
+102724 
+102725 
+102726 
+102800 
+102801 
+102802 
+102803 
+102804 
+102805 
+102806 
+102807 
+102808 
+102810 
+102811 
+102812 
+102813 
+102814 
+102815 
+102816 
+102817 
+102818 
+102820 
+102821 
+102822 
+102823 
+102824 
+102825 
+102826 
 110000 [Alteration] Drake Knight Helm (Altered)
 110001 [Alteration] Drake Knight Armor (Altered)
 110002 [Alteration] Scaled Armor (Altered)
@@ -664,11 +794,24 @@
 110067 [Alteration] Alberich's Pointed Hat (Altered)
 110068 [Alteration] Alberich's Robe (Altered)
 110069 [Alteration] Traveling Maiden Robe (Altered)
+110070 
+110073 
+110074 
+110075 
+110076 
+110077 
+110078 
+110079 
+110080 
+110081 
+110082 
 110100 [Alteration] Elden Lord Armor (Altered)
 110101 [Alteration] Radahn's Lion Armor (Altered)
 110102 [Alteration] Lord of Blood's Robe (Altered)
 110103 [Alteration] Maliketh's Armor (Altered)
 110104 [Alteration] Malenia's Armor (Altered)
+110105 
+110106 
 110200 [Reversion] Drake Knight Helm
 110201 [Reversion] Drake Knight Armor
 110202 [Reversion] Scaled Armor
@@ -734,11 +877,24 @@
 110267 [Reversion] Alberich's Pointed Hat
 110268 [Reversion] Alberich's Robe
 110269 [Reversion] Traveling Maiden Robe
+110270 
+110273 
+110274 
+110275 
+110276 
+110277 
+110278 
+110279 
+110280 
+110281 
+110282 
 110300 [Reversion] Elden Lord Armor
 110301 [Reversion] Radahn's Lion Armor
 110302 [Reversion] Lord of Blood's Robe
 110303 [Reversion] Maliketh's Armor
 110304 [Reversion] Malenia's Armor
+110305 
+110306 
 111000 [Alteration] Drake Knight Helm (Altered)
 111001 [Alteration] Drake Knight Armor (Altered)
 111002 [Alteration] Scaled Armor (Altered)
@@ -804,11 +960,24 @@
 111067 [Alteration] Alberich's Pointed Hat (Altered)
 111068 [Alteration] Alberich's Robe (Altered)
 111069 [Alteration] Traveling Maiden Robe (Altered)
+111070 
+111073 
+111074 
+111075 
+111076 
+111077 
+111078 
+111079 
+111080 
+111081 
+111082 
 111100 [Alteration] Elden Lord Armor (Altered)
 111101 [Alteration] Radahn's Lion Armor (Altered)
 111102 [Alteration] Lord of Blood's Robe (Altered)
 111103 [Alteration] Maliketh's Armor (Altered)
 111104 [Alteration] Malenia's Armor (Altered)
+111105 
+111106 
 111200 [Reversion] Drake Knight Helm
 111201 [Reversion] Drake Knight Armor
 111202 [Reversion] Scaled Armor
@@ -874,11 +1043,24 @@
 111267 [Reversion] Alberich's Pointed Hat
 111268 [Reversion] Alberich's Robe
 111269 [Reversion] Traveling Maiden Robe
+111270 
+111273 
+111274 
+111275 
+111276 
+111277 
+111278 
+111279 
+111280 
+111281 
+111282 
 111300 [Reversion] Elden Lord Armor
 111301 [Reversion] Radahn's Lion Armor
 111302 [Reversion] Lord of Blood's Robe
 111303 [Reversion] Maliketh's Armor
 111304 [Reversion] Malenia's Armor
+111305 
+111306 
 112000 Ash of War: Impaling Thrust
 112001 Ash of War: Piercing Fang
 112002 Ash of War: Spinning Slash
@@ -1010,11 +1192,14 @@
 600012 Warrior Greaves
 600013 Lone Wolf Ashes
 600014 Cracked Pot
+600015 
 600016 Arrow
 600017 String
 600018 Note: Imp Shades
 600019 Note: Flask of Wondrous Physick
+600020 
 600021 Miranda Powder
+600022 
 900000 [Incantation] Dragonfire
 900001 [Incantation] Agheel's Flame
 900002 [Incantation] Magma Breath
@@ -1048,17 +1233,22 @@
 1600111 Blue Cloth Vest
 1600112 Warrior Gauntlets
 1600113 Warrior Greaves
+1600114 
 1600115 Cracked Pot
+1600116 
 1600117 Arrow
 1600118 String
 1600119 Note: Imp Shades
 1600120 Note: Flask of Wondrous Physick
+1600121 
 1600122 Miranda Powder
+1600123 
 1600401 Glintstone Staff
 1600402 Finger Seal
 1600403 Clawmark Seal
 1600404 [Sorcery] Glintstone Pebble
 1600405 [Sorcery] Stars of Ruin
+1600406 
 1600407 [Incantation] Flame
 1600408 [Incantation] Frenzied Burst
 1600409 Carian Knight Helm
@@ -1082,3 +1272,6 @@
 9001001 Omen Armor
 9001002 Omen Gauntlets
 9001003 Omen Greaves
+9001004 
+9999001 
+9999002 

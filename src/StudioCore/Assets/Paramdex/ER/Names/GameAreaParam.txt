@@ -1,3 +1,7 @@
+0 
+1 
+9999991 
+9999992 
 10000800 [Stormveil Castle] Godrick the Grafted
 10000850 [Stormveil Castle] Margit the Fell Omen
 10010800 [Chapel of Anticipation] Grafted Scion
@@ -27,11 +31,12 @@
 16000800 [Volcano Manor] Rykard Lord of Blasphemy
 16000850 [Volcano Manor] Godskin Noble
 16000860 [Volcano Manor] Abductor Virgins
-18000800 [Stranded Graveyard] Ulcerated Tree Spirit
+18000800 [Stranded Graveyard] Crucible Illusion
 18000850 [Stranded Graveyard] Soldier of Godrick
 19000800 [Stone Platform] Elden Beast
 20000800 [Belurat, Tower Settlement] Divine Beast Dancing Lion
 20010800 [Enir-Ilim] Promised Consort Radahn
+20010850 
 21000850 [Shadow Keep] Golden Hippopotamus
 21010800 [Specimen Storehouse] Messmer the Impaler
 22000800 [Stone Coffin Fissure] Putrescent Knight
@@ -186,16 +191,16 @@
 2044470800 [Ancient Ruins of Rauh] Rugalea the Great Red Bear
 2045440800 [Gravesite Plain] Ghostflame Dragon
 2046380800 [Cerulean Coast] Dancer of Ranah
-2046400800 [Charo's Hidden Grave] Demi-Human Queen Marigga
-2046410800 [Gravesite Plain] Blackgaol Knight
+2046400800 [Cerulean Coast] Demi-Human Queen Marigga
+2046410800 [Gravesite Plain] Knight of the Solitary Gaol
 2046450800 [Gravesite Plain] Red Bear
-2046460800 [Rauh Base] Divine Beast Dancing Lion
-2047390800 [Charo's Hidden Grave] Death Rite Bird
+2046460800 [Gravesite Plain] Divine Beast Dancing Lion
+2047390800 [Cerulean Coast] Death Rite Bird
 2047450800 [Scadu Altus] Black Knight Garrew
 2048380850 [Cerulean Coast] Ghostflame Dragon
 2048440800 [Gravesite Plain] Rellana, Twin Moon Knight
-2049410800 [Finger Ruins Rhia] Jagged Peak Drake (Solo)
-2049430800 [Scadu Altus: Moorth Highway] Ghostflame Dragon
+2049410800 [Jagged Peak] Jagged Peak Drake (Solo)
+2049430800 [Moorth Highway] Ghostflame Dragon
 2049430850 [Scadu Altus] Black Knight Edredd
 2049450800 [Scadu Altus] Ralva the Great Red Bear
 2049480800 [Scadu Altus] Commander Gaius
@@ -206,6 +211,6 @@
 2051450800 [Scadu Altus] Count Ymir, Mother of Fingers
 2052400800 [Jagged Peak] Jagged Peak Drake (Duo)
 2052430800 [Abyssal Woods] Jori, the Elder Inquisitor
-2052480800 [Scaduview: Finger Ruins] Fallingstar Beast
+2052480800 [Finger Ruins] Fallingstar Beast
 2054390800 [Jagged Peak] Bayle the Dread
 2054390850 [Jagged Peak] Ancient Dragon Senessax

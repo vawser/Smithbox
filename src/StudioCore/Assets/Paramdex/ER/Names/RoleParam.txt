@@ -1,11 +1,27 @@
 0 Host of Fingers
 1 Furled Finger
 2 Duelist
+3 
+4 
+5 
+6 
+7 
 8 Host of Fingers
+9 
+10 
+11 
+12 
+13 
+14 
 15 Bloody Finger
 16 Recusant
 17 Hunter
 18 Bloody Finger
+19 
+20 
+21 
+22 
+23 
 10001 Hunter
 10002 Hunter
 20001 Furled Finger
@@ -24,3 +40,10 @@
 80002 Furled Finger
 90001 Hunter
 90002 Hunter
+1000001 
+1000002 
+1000003 
+1000010 
+1000014 
+1000000001 
+1000000002 

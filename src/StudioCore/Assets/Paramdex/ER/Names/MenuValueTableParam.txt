@@ -12,6 +12,15 @@
 105 E
 106 -
 110 -
+111 
+112 
+113 
+114 
+115 
+116 
+117 
+118 
+119 
 120 Dagger
 121 Straight Sword
 122 Greatsword
@@ -28,6 +37,7 @@
 133 Warhammer
 134 Flail
 135 Spear
+136 
 137 Great Spear
 138 Halberd
 139 Reaper
@@ -44,6 +54,7 @@
 150 Glintstone Staff
 151 Tattoo
 152 Sacred Seal
+153 
 154 Small Shield
 155 Medium Shield
 156 Greatshield
@@ -52,9 +63,26 @@
 159 Bolt
 160 Greatbolt
 161 Torch
+162 
+163 
+164 
+165 
+166 
+167 
+168 
+169 
+170 
+171 
+172 
+173 
+174 
+175 
+176 
+177 
 300 Cracked Pot
 301 Perfume Bottle
 302 Ritual Pot
+303 
 400 Standard
 401 Heavy
 402 Keen

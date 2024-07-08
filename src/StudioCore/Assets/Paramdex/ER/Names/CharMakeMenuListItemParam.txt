@@ -1,3 +1,6 @@
+0 
+1 
+2 
 100 Build - Standard
 101 Build - Slim
 102 Build - Very Slim

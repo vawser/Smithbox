@@ -1,8 +1,18 @@
+0 
+10 
+20 
+21 
+30 
+31 
+40 
+41 
+42 
 1000 Stormveil Castle
 1001 Chapel of Anticipation
 1100 Leyndell- Royal Capital
 1105 Leyndell- Ashen Capital
 1110 Roundtable Hold
+1171 
 1201 Ainsel River
 1202 Siofra River
 1203 Deeproot Depths
@@ -40,25 +50,36 @@
 3105 Lakeside Crystal Cave
 3106 Academy Crystal Cave
 3107 Seethewater Cave
+3108 
 3109 Volcano Cave
 3110 Dragonbarrow Cave
 3111 Sellia Hideaway
 3112 Cave of the Forlorn
+3113 
+3114 
 3115 Coastal Cave
 3117 High Road Cave
 3200 Morne Tunnel
 3201 Limgrave Tunnels
 3202 Raya Lucaria Crystal Tunnel
+3203 
 3204 Old Altus Tunnel
 3205 Altus Tunnel
+3206 
 3207 Gael Tunnel
 3208 Sellia Crystal Tunnel
+3209 
+3210 
 3211 Yelough Anix Tunnel
+3212 
 3410 Divine Tower of Limgrave
 3411 Divine Tower of Liurnia (Carian Study Hall)
 3412 Divine Tower of West Altus (Sealed Tunnel)
 3413 Divine Tower of Caelid
 3414 Divine Tower of East Altus
 3415 Isolated Divine Tower
+3416 
 3500 Subterranean Shunning-Grounds
 3920 Ruin-Strewn Precipice
+9901 
+9902 

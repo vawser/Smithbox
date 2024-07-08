@@ -184,6 +184,7 @@
 410100 Scadu Altus - Bonny Gaol
 410200 Charo's Hidden Grave - Lamenter's Gaol
 420000 Gravesite Plain - Ruined Forge Lava Intake
+420100 
 420200 Scadu Altus - Ruined Forge of Starfall Past
 420300 Rauh Base - Taylew's Ruined Forge
 430000 Gravesite Plain - Rivermouth Cave

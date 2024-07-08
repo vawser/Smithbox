@@ -1,3 +1,5 @@
+0 
+1 
 10 No Skill
 100 Lion's Claw
 101 Impaling Thrust
@@ -152,6 +154,8 @@
 1053 Last Rites
 1054 Unblockable Blade
 1055 Eochaid's Dancing Blade
+1165 
+1166 
 1167 Corpse Wax Cutter
 1168 Zamor Ice Storm
 1169 Radahn's Rain
@@ -251,6 +255,7 @@
 5440 Revenge of the Night
 5450 Weed Cutter
 5460 Blindfold of Happiness
+5461 
 5470 Jori's Inquisition
 5480 Roaring Bash
 5490 Deadly Poison Spray
@@ -263,4 +268,8 @@
 5560 Bloodfiends' Bloodboon
 5570 Dragonform Flame
 5580 Lightspeed Slash
+5590 
 5600 Rancor Shot
+8000 
+9991 
+9992 

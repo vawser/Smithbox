@@ -27,3 +27,7 @@
 27 Event Action (Examine, Open, etc.)
 28 Main Menu
 29 Map
+30 
+31 
+32 
+33 

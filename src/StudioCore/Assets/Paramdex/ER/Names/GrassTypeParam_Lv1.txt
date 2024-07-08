@@ -5,52 +5,16 @@
 44 Grey Grass
 45 Red Tall Grass
 98 Grey Grass
-100 Bricks
-101 Sticks
-102 Common Ivy
-103 Light-Grey Bricks
-104 Roots
-105 Pebbles
-106 Mixed Leaves
-107 Planks
-108 Fruits & Vegetables
-109 Ropes
-110 Books & Scrolls
-111 Hay
-112 Documents
-113 Sand with Pebbles
-114 Broken Crates
-115 Silverware
-116 Bushy Green Grass
-117 Bricks
 118 Mixed Leaves
-119 Skulls & Bones
-120 Stalactites
-121 Rocks
-122 Cursed Roots
-123 Bricks
-124 Green Grass Varied
-125 Rocks
-126 Pebbles
 130 Pebbles
-135 Ropes
 138 Dead Leaves
 139 Tall Brown Grass
 140 Short Dark Green Grass
-145 Rocks
-155 Gravel
-160 Animal Bones
-170 Green Grass Patches
-171 Tiny Reeds
-172 Tiny Reeds
-173 Grain
-180 Small Green Leaves
 185 Skulls and Bones
 187 Bigger Pebbles
 195 Red Flowers
 196 White Tall Flowers
 197 Tall Reeds
-202 Medium Bushes
 206 Small Bushes
 208 Blue Flowers
 209 Waterlily-like Plants
@@ -69,9 +33,6 @@
 300 Yellow Grass
 311 Golden Leaves
 317 Snow-White Grass & Red Flowers
-322 Grey Plants
-323 Mushrooms
-326 Glintstone Fragments
 337 Small Pebbles
 338 Green Grass Varied
 339 Cattail Plants
@@ -91,3 +52,22 @@
 408 Tall Green Grass
 442 Orange & Yellow Grass
 443 Orange & Yellow Grass Patches
+1001 
+1002 
+2000 
+2010 
+2020 
+2021 
+2024 
+2028 
+2040 
+2041 
+2042 
+2046 
+2047 
+2048 
+2049 
+2050 
+2220 
+2221 
+2999 

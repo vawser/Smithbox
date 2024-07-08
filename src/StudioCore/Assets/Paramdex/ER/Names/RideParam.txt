@@ -1,3 +1,4 @@
+0 
 80000 Player <> Torrent
 300081001 Exile Soldier <> Ballista
 300081011 Exile Soldier <> Trebuchet
@@ -45,6 +46,9 @@
 435643661 Haligtree Knight <> Haligtree Knight's Horse
 435643662 Haligtree Knight <> Haligtree Knight's Horse
 435643663 Haligtree Knight <> Haligtree Knight's Horse
+435843681 
+435843682 
+435843683 
 437081001 Foot Soldier <> Ballista
 437081011 Foot Soldier <> Trebuchet
 437081101 Foot Soldier <> Dragon-faced Flamethrower
@@ -77,3 +81,14 @@
 495149501 Godrick Torso <> Godrick the Grafted
 495149502 Godrick Torso <> Godrick the Grafted
 495149503 Godrick Torso <> Godrick the Grafted
+565056701 
+565056801 
+565056901 
+565156701 
+565156801 
+565156901 
+584058901 
+584058902 
+584058903 
+621062202 
+621062203 

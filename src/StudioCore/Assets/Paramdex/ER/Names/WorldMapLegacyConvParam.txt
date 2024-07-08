@@ -131,6 +131,22 @@
 221 Divine Tower of Caelid
 222 Divine Tower of East Altus
 223 Isolated Divine Tower
+224 
+225 
+226 
+227 
+228 
+229 
+230 
+231 
+232 
+233 
+234 
+235 
+236 
+237 
+238 
+239 
 1000 Finger Birthing Grounds
 1100 Belurat, Tower Settlement
 1101 Enir-Ilim
