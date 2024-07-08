@@ -57,6 +57,7 @@ public class BankHandler
 
     public FMGBank FMGBank;
     public LightmapAtlasBank LightmapAtlasBank;
+    public MaterialResourceBank MaterialBank;
 
     //public ProjectEnumBank ProjectEnums;
 
@@ -93,9 +94,7 @@ public class BankHandler
 
         FMGBank = new FMGBank();
         LightmapAtlasBank = new LightmapAtlasBank();
-
-        // TODO
-        MaterialResourceBank.Setup();
+        MaterialBank = new MaterialResourceBank();
     }
 
     public void UpdateBanks()
@@ -131,10 +130,9 @@ public class BankHandler
         FMGBank.LoadFMGs(Smithbox.ProjectHandler.CurrentProject.Config.LastFmgLanguageUsed);
 
         LightmapAtlasBank.LoadBank();
+        MaterialBank.LoadBank();
 
-        // TODO
         ParamBank.ReloadParams();
-        MaterialResourceBank.Setup();
     }
 
     /// <summary>

@@ -112,9 +112,9 @@ public class ModelContainer : ObjectContainer
                 {
                     var matname = Path.GetFileNameWithoutExtension(mat.MTD);
 
-                    if (MaterialResourceBank.Matbins.ContainsKey(matname))
+                    if (Smithbox.BankHandler.MaterialBank.Matbins.ContainsKey(matname))
                     {
-                        MATBIN matbin = MaterialResourceBank.Matbins[matname].Matbin;
+                        MATBIN matbin = Smithbox.BankHandler.MaterialBank.Matbins[matname].Matbin;
 
                         var name = Path.GetFileNameWithoutExtension(matbin.SourcePath);
 

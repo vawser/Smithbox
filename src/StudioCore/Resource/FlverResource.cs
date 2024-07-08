@@ -183,9 +183,9 @@ public class FlverResource : IResource, IDisposable
         {
             var mtdstring = Path.GetFileNameWithoutExtension(mtd);
 
-            if (MaterialResourceBank.Mtds.ContainsKey(mtdstring))
+            if (Smithbox.BankHandler.MaterialBank.Mtds.ContainsKey(mtdstring))
             {
-                MTD.Texture? tex = MaterialResourceBank.Mtds[mtdstring].Mtd.Textures.Find(x => x.Type == type);
+                MTD.Texture? tex = Smithbox.BankHandler.MaterialBank.Mtds[mtdstring].Mtd.Textures.Find(x => x.Type == type);
                 if (tex == null || !tex.Extended || tex.Path == "")
                 {
                     return;
@@ -195,9 +195,9 @@ public class FlverResource : IResource, IDisposable
                 //TaskLogs.AddLog($"MTD: {path}");
             }
 
-            if (MaterialResourceBank.Matbins.ContainsKey(mtdstring))
+            if (Smithbox.BankHandler.MaterialBank.Matbins.ContainsKey(mtdstring))
             {
-                MATBIN.Sampler? tex = MaterialResourceBank.Matbins[mtdstring].Matbin.Samplers.Find(x => x.Type == type);
+                MATBIN.Sampler? tex = Smithbox.BankHandler.MaterialBank.Matbins[mtdstring].Matbin.Samplers.Find(x => x.Type == type);
                 if (tex == null || tex.Path == "")
                 {
                     return;

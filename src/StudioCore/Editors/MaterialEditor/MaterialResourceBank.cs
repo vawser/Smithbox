@@ -9,15 +9,19 @@ namespace StudioCore.Editors.MaterialEditor;
 
 public class MaterialResourceBank
 {
-    private static Dictionary<string, MaterialInfo> _mtds = new();
-    private static Dictionary<string, MaterialInfo> _matbins = new();
+    private Dictionary<string, MaterialInfo> _mtds = new();
+    private Dictionary<string, MaterialInfo> _matbins = new();
 
-    public static IReadOnlyDictionary<string, MaterialInfo> Mtds => _mtds;
+    public IReadOnlyDictionary<string, MaterialInfo> Mtds => _mtds;
 
-    public static IReadOnlyDictionary<string, MaterialInfo> Matbins => _matbins;
+    public IReadOnlyDictionary<string, MaterialInfo> Matbins => _matbins;
 
-    public static void LoadMaterials()
+
+    public void LoadBank()
     {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
+
         TaskManager.Run(new TaskManager.LiveTask("Resource - Load Materials", TaskManager.RequeueType.WaitThenRequeue, false,
         () =>
         {
@@ -26,23 +30,7 @@ public class MaterialResourceBank
         }));
     }
 
-    public struct MaterialInfo
-    {
-        public string Name;
-        public string Path;
-        public MATBIN Matbin;
-        public MTD Mtd;
-
-        public MaterialInfo(string name, string path, MATBIN matbin, MTD mtd)
-        {
-            Name = name;
-            Path = path;
-            Matbin = matbin;
-            Mtd = mtd;
-        }
-    }
-
-    public static void LoadMatBins()
+    public void LoadMatBins()
     {
         _matbins = new Dictionary<string, MaterialInfo>();
 
@@ -71,7 +59,7 @@ public class MaterialResourceBank
         }
     }
 
-    public static void LoadMatbinFile(string file)
+    public void LoadMatbinFile(string file)
     {
         IBinder binder = null;
 
@@ -94,7 +82,7 @@ public class MaterialResourceBank
         }
     }
 
-    public static void LoadMtds()
+    public void LoadMtds()
     {
         _mtds = new Dictionary<string, MaterialInfo>();
 
@@ -123,7 +111,7 @@ public class MaterialResourceBank
         }
     }
 
-    public static void LoadMtdFile(string file)
+    public void LoadMtdFile(string file)
     {
         IBinder binder = null;
 
@@ -146,11 +134,19 @@ public class MaterialResourceBank
         }
     }
 
-    public static void Setup()
+    public struct MaterialInfo
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
+        public string Name;
+        public string Path;
+        public MATBIN Matbin;
+        public MTD Mtd;
 
-        LoadMaterials();
+        public MaterialInfo(string name, string path, MATBIN matbin, MTD mtd)
+        {
+            Name = name;
+            Path = path;
+            Matbin = matbin;
+            Mtd = mtd;
+        }
     }
 }
