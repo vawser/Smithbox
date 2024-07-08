@@ -120,7 +120,7 @@ Known Bugs:
 #--------------------------------------
 Try to implement ER collisions: requires HKLib usage
 
-FMG Update needs to account for project root not having the item.msgbnd.dcx (or menu)
+c4602
 
 Add support for other project types to the "View in Map" and "View Model" buttons
 
