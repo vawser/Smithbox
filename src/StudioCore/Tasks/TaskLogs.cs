@@ -43,8 +43,6 @@ public static class TaskLogs
 
     private static volatile LogEntry _lastLogEntry;
 
-    private static bool _showExtendedTime = false;
-
 #if DEBUG
     private static bool _showDebugLogs = true;
 # else
@@ -375,10 +373,7 @@ public static class TaskLogs
                     mes += $" x{MessageCount}";
                 }
 
-                if(_showExtendedTime)
-                    mes = $"[{LogTime.Hour:D2}:{LogTime.Minute:D2}:{LogTime.Second:D2}:{LogTime.Millisecond:D2}] {mes}";
-                else
-                    mes = $"[{LogTime.Hour:D2}:{LogTime.Minute:D2}] {mes}";
+                mes = $"[{LogTime.Hour:D2}:{LogTime.Minute:D2}:{LogTime.Second:D2}:{LogTime.Millisecond:D2}] {mes}";
 
                 return mes;
             }
