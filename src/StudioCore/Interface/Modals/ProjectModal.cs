@@ -245,7 +245,7 @@ public class ProjectModal
         ImGui.Text(@"Import row names:  ");
         ImGui.SameLine();
         Utils.ImGuiGenericHelpPopup("?", "##Help_ImportRowNames",
-            "Default: ON\nImports and applies row names from lists stored in Assets folder.\nRow names can be imported at any time in the param editor's Edit menu.");
+            "Default: OFF\nImports and applies row names from lists stored in Assets folder.\nRow names can be imported at any time in the param editor's Edit menu.");
         ImGui.SameLine();
         ImGui.Checkbox("##loadDefaultNames", ref loadDefaultRowNamesOnCreation);
         ImGui.NewLine();

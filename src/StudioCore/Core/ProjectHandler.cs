@@ -129,6 +129,9 @@ public class ProjectHandler
 
         UpdateTimer();
 
+        // Re-create this so project setup settings don't persist between projects (e.g. Import Row Names)
+        ProjectModal = new ProjectModal();
+
         return true;
     }
 
