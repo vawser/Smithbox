@@ -453,44 +453,35 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
     {
         var metaName = "";
 
-        if (Smithbox.BankHandler.CharacterAliases.Aliases != null)
+        foreach (var entry in Smithbox.BankHandler.CharacterAliases.GetList())
         {
-            foreach (var entry in Smithbox.BankHandler.CharacterAliases.Aliases.list)
+            if (entry.id == assetName)
             {
-                if (entry.id == assetName)
-                {
-                    metaName = entry.name;
-                }
+                metaName = entry.name;
             }
         }
-        if (Smithbox.BankHandler.AssetAliases.Aliases != null)
+
+        foreach (var entry in Smithbox.BankHandler.AssetAliases.GetList())
         {
-            foreach (var entry in Smithbox.BankHandler.AssetAliases.Aliases.list)
+            if (entry.id == assetName)
             {
-                if (entry.id == assetName)
-                {
-                    metaName = entry.name;
-                }
+                metaName = entry.name;
             }
         }
-        if (Smithbox.BankHandler.PartAliases.Aliases != null)
+
+        foreach (var entry in Smithbox.BankHandler.PartAliases.GetList())
         {
-            foreach (var entry in Smithbox.BankHandler.PartAliases.Aliases.list)
+            if (entry.id == assetName)
             {
-                if (entry.id == assetName)
-                {
-                    metaName = entry.name;
-                }
+                metaName = entry.name;
             }
         }
-        if (Smithbox.BankHandler.MapPieceAliases.Aliases != null)
+
+        foreach (var entry in Smithbox.BankHandler.MapPieceAliases.GetList())
         {
-            foreach (var entry in Smithbox.BankHandler.MapPieceAliases.Aliases.list)
+            if (entry.id == assetName)
             {
-                if (entry.id == assetName)
-                {
-                    metaName = entry.name;
-                }
+                metaName = entry.name;
             }
         }
 

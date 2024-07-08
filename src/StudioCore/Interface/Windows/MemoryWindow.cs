@@ -151,7 +151,7 @@ public class MemoryWindow
                 ImguiUtils.ShowHoverTooltip("This should match the executable version you wish to target, otherwise the memory offsets will be incorrect.");
 
                 var index = CFG.Current.SelectedGameOffsetData;
-                string[] options = Smithbox.BankHandler.GameOffsets.Offsets.list.Select(entry => entry.exeVersion).ToArray();
+                string[] options = Smithbox.BankHandler.GameOffsets.GetList().Select(entry => entry.exeVersion).ToArray();
 
                 if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
                 {

@@ -1,4 +1,5 @@
 ﻿using StudioCore.Banks.AliasBank;
+using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Editor;
 using StudioCore.Memory;
 using StudioCore.UserProject;
@@ -27,15 +28,27 @@ public class GameOffsetBank
 
     public void LoadBank()
     {
-        try
+        TaskManager.Run(new TaskManager.LiveTask($"Game Offset Bank - Load Offsets", TaskManager.RequeueType.WaitThenRequeue, false, () =>
         {
-            Offsets = BankUtils.LoadGameOffsetJSON(OffsetDirectory, OffsetFileName);
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddLog($"Failed to load Game Offset Bank: {e.Message}");
-        }
+            try
+            {
+                Offsets = BankUtils.LoadGameOffsetJSON(OffsetDirectory, OffsetFileName);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"Failed to load Game Offset Bank: {e.Message}");
+            }
+        }));
+    }
 
-        TaskLogs.AddLog($"Game Offset Bank: Loaded Offsets");
+    public List<GameOffsetReference> GetList()
+    {
+        if (Offsets == null)
+            return new List<GameOffsetReference>();
+
+        if (Offsets.list == null)
+            return new List<GameOffsetReference>();
+
+        return Offsets.list;
     }
 }

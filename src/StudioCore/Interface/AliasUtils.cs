@@ -56,6 +56,9 @@ public static class AliasUtils
 
     public static string GetAliasFromCache(string name, List<AliasReference> referenceList)
     {
+        if (referenceList == null)
+            return "";
+
         foreach (var alias in referenceList)
         {
             if (name == alias.id)
@@ -107,6 +110,12 @@ public static class AliasUtils
     // Gparam Editor
     public static string GetGparamAliasName(string gparamName)
     {
+        if (Smithbox.BankHandler.GparamAliases.Aliases == null)
+            return "";
+
+        if (Smithbox.BankHandler.GparamAliases.Aliases.list == null)
+            return "";
+
         var mPrefix = gparamName;
         var sPrefix = gparamName;
 
@@ -117,15 +126,12 @@ public static class AliasUtils
             sPrefix = gparamName.Substring(0, 6).Replace("s", "m"); // Cutscene
         }
 
-        if (Smithbox.BankHandler.GparamAliases.Aliases.list != null)
+        foreach (var entry in Smithbox.BankHandler.GparamAliases.Aliases.list)
         {
-            foreach (var entry in Smithbox.BankHandler.GparamAliases.Aliases.list)
+            // Check for normal entries, and for mXX_XX prefix or sXX_XX prefix
+            if (entry.id == gparamName || entry.id == mPrefix || entry.id == sPrefix)
             {
-                // Check for normal entries, and for mXX_XX prefix or sXX_XX prefix
-                if (entry.id == gparamName || entry.id == mPrefix || entry.id == sPrefix)
-                {
-                    return entry.name;
-                }
+                return entry.name;
             }
         }
 
@@ -138,13 +144,13 @@ public static class AliasUtils
         switch(category)
         {
             case AssetCategoryType.Character:
-                return Smithbox.BankHandler.CharacterAliases.Aliases.list;
+                return Smithbox.BankHandler.CharacterAliases.GetList();
             case AssetCategoryType.Asset:
-                return Smithbox.BankHandler.AssetAliases.Aliases.list;
+                return Smithbox.BankHandler.AssetAliases.GetList();
             case AssetCategoryType.Part:
-                return Smithbox.BankHandler.PartAliases.Aliases.list;
+                return Smithbox.BankHandler.PartAliases.GetList();
             case AssetCategoryType.MapPiece:
-                return Smithbox.BankHandler.MapPieceAliases.Aliases.list;
+                return Smithbox.BankHandler.MapPieceAliases.GetList();
         }
 
         return null;
@@ -201,7 +207,7 @@ public static class AliasUtils
 
                 if(Smithbox.BankHandler.CharacterAliases.Aliases != null)
                 {
-                    aliasName = GetAliasFromCache(usedName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
+                    aliasName = GetAliasFromCache(usedName, Smithbox.BankHandler.CharacterAliases.GetList());
                 }
             }
 
@@ -220,7 +226,7 @@ public static class AliasUtils
 
                 if (Smithbox.BankHandler.AssetAliases.Aliases != null)
                 {
-                    aliasName = GetAliasFromCache(usedName, Smithbox.BankHandler.AssetAliases.Aliases.list);
+                    aliasName = GetAliasFromCache(usedName, Smithbox.BankHandler.AssetAliases.GetList());
                 }
             }
 
@@ -233,7 +239,7 @@ public static class AliasUtils
 
                 if (Smithbox.BankHandler.PartAliases.Aliases != null)
                 {
-                    aliasName = GetAliasFromCache(usedName, Smithbox.BankHandler.PartAliases.Aliases.list);
+                    aliasName = GetAliasFromCache(usedName, Smithbox.BankHandler.PartAliases.GetList());
                 }
             }
 
@@ -290,29 +296,20 @@ public static class AliasUtils
         {
             if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
             {
-                if(Smithbox.BankHandler.CharacterAliases.Aliases.list != null)
-                {
-                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
-                    aliasName = $"{aliasName}";
-                }
+                aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.CharacterAliases.GetList());
+                aliasName = $"{aliasName}";
             }
 
             if (CFG.Current.MapEditor_MapObjectList_ShowAssetNames && (e.IsPartAsset() || e.IsPartDummyAsset()))
             {
-                if (Smithbox.BankHandler.AssetAliases.Aliases.list != null)
-                {
-                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.AssetAliases.Aliases.list);
-                    aliasName = $"{aliasName}";
-                }
+                aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.AssetAliases.GetList());
+                aliasName = $"{aliasName}";
             }
 
             if (CFG.Current.MapEditor_MapObjectList_ShowMapPieceNames && e.IsPartMapPiece())
             {
-                if (Smithbox.BankHandler.MapPieceAliases.Aliases.list != null)
-                {
-                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.MapPieceAliases.Aliases.list);
-                    aliasName = $"{aliasName}";
-                };
+                aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.MapPieceAliases.Aliases.list);
+                aliasName = $"{aliasName}";
             }
 
             // Player/System Characters: peek in param/fmg for name

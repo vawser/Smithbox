@@ -415,28 +415,25 @@ public class ParticleEditorScreen : EditorScreen
     {
         if (CFG.Current.Interface_Display_Alias_for_Particles)
         {
-            if (Smithbox.BankHandler.ParticleAliases.Aliases != null)
+            var prettyName = "";
+
+            foreach (var entry in Smithbox.BankHandler.ParticleAliases.GetList())
             {
-                var prettyName = "";
-
-                foreach (var entry in Smithbox.BankHandler.ParticleAliases.Aliases.list)
+                if (name == entry.id)
                 {
-                    if (name == entry.id)
-                    {
-                        prettyName = entry.name;
-                        break;
-                    }
+                    prettyName = entry.name;
+                    break;
                 }
+            }
 
-                if (prettyName != "")
-                {
-                    ImGui.SameLine();
-                    ImGui.PushTextWrapPos();
+            if (prettyName != "")
+            {
+                ImGui.SameLine();
+                ImGui.PushTextWrapPos();
 
-                    ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"<{prettyName}>");
+                ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"<{prettyName}>");
 
-                    ImGui.PopTextWrapPos();
-                }
+                ImGui.PopTextWrapPos();
             }
         }
     }

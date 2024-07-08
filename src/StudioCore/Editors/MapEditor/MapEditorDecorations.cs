@@ -29,9 +29,13 @@ namespace StudioCore.Editors.MapEditor
             if (attributes.Any())
             {
                 var enumName = attributes[0].EnumType;
-                var temp = Smithbox.BankHandler.MSB_Info.Enums.list.Where(x => x.id == enumName).ToList()[0];
+                var temp = new FormatEnumEntry();
 
-                if (temp == null)
+                if(Smithbox.BankHandler.MSB_Info != null)
+                {
+                    temp = Smithbox.BankHandler.MSB_Info.Enums.list.Where(x => x.id == enumName).ToList()[0];
+                }
+                else
                 {
                     return false;
                 }
@@ -132,42 +136,27 @@ namespace StudioCore.Editors.MapEditor
                 // Particles
                 if (enumName == "PARTICLES")
                 {
-                    if(Smithbox.BankHandler.ParticleAliases.Aliases != null)
-                    {
-                        options = Smithbox.BankHandler.ParticleAliases.Aliases.list;
-                    }
+                    options = Smithbox.BankHandler.ParticleAliases.GetList();
                 }
                 // Flags
                 if (enumName == "FLAGS")
                 {
-                    if (Smithbox.BankHandler.EventFlagAliases.Aliases != null)
-                    {
-                        options = Smithbox.BankHandler.EventFlagAliases.Aliases.list;
-                    }
+                    options = Smithbox.BankHandler.EventFlagAliases.GetList();
                 }
                 // Sounds
                 if (enumName == "SOUNDS")
                 {
-                    if (Smithbox.BankHandler.SoundAliases.Aliases != null)
-                    {
-                        options = Smithbox.BankHandler.SoundAliases.Aliases.list;
-                    }
+                    options = Smithbox.BankHandler.SoundAliases.GetList();
                 }
                 // Cutscenes
                 if (enumName == "CUTSCENES")
                 {
-                    if (Smithbox.BankHandler.CutsceneAliases.Aliases != null)
-                    {
-                        options = Smithbox.BankHandler.CutsceneAliases.Aliases.list;
-                    }
+                    options = Smithbox.BankHandler.CutsceneAliases.GetList();
                 }
                 // Movies
                 if (enumName == "MOVIES")
                 {
-                    if (Smithbox.BankHandler.MovieAliases.Aliases != null)
-                    {
-                        options = Smithbox.BankHandler.MovieAliases.Aliases.list;
-                    }
+                    options = Smithbox.BankHandler.MovieAliases.GetList();
                 }
 
                 if (options == null)
@@ -258,7 +247,12 @@ namespace StudioCore.Editors.MapEditor
         // Elden Ring Asset Mask and Anim property
         public static bool EldenRingAssetMaskAndAnimRow(PropertyInfo propinfo, object oldValue, ref object newValue, ViewportSelection selection)
         {
-            if(Smithbox.BankHandler.MSB_Info.Masks.list == null)
+            if (Smithbox.BankHandler.MSB_Info.Masks == null)
+            {
+                return false;
+            }
+
+            if (Smithbox.BankHandler.MSB_Info.Masks.list == null)
             {
                 return false;
             }

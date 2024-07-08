@@ -448,6 +448,12 @@ public class GparamEditorScreen : EditorScreen
     /// </summary>
     public void GparamGroupAddSection()
     {
+        if (Smithbox.BankHandler.GPARAM_Info.Information == null)
+            return;
+
+        if (Smithbox.BankHandler.GPARAM_Info.Information.list == null)
+            return;
+
         GPARAM data = _selectedGparam;
 
         List<FormatReference> missingGroups = new List<FormatReference>();
@@ -546,6 +552,12 @@ public class GparamEditorScreen : EditorScreen
     /// </summary>
     public void GparamFieldAddSection()
     {
+        if (Smithbox.BankHandler.GPARAM_Info.Information == null)
+            return;
+
+        if (Smithbox.BankHandler.GPARAM_Info.Information.list == null)
+            return;
+
         GPARAM.Param data = _selectedParamGroup;
 
         List<FormatMember> missingFields = new List<FormatMember>();

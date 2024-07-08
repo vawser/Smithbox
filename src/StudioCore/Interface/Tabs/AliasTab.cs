@@ -183,7 +183,7 @@ public class AliasTab
         if (ImGui.Button("Copy Alias List", buttonSize))
         {
             var aliasList = "";
-            foreach(var entry in Bank.GetEntries())
+            foreach(var entry in Bank.GetEntryDictionary())
             {
                 if (entry.Key == "dummy" || entry.Key == "default")
                     continue;

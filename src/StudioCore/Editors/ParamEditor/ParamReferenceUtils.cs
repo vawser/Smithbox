@@ -229,7 +229,7 @@ public static class ParamReferenceUtils
 
             if (AssetList.Contains(assetID.ToLower()) && assetID != "")
             {
-                var aliasName = AliasUtils.GetAliasFromCache(assetID.ToLower(), Smithbox.BankHandler.AssetAliases.Aliases.list);
+                var aliasName = AliasUtils.GetAliasFromCache(assetID.ToLower(), Smithbox.BankHandler.AssetAliases.GetList());
 
                 if (ImGui.Button($"View Model: {assetID}", new Vector2(width, 20)))
                 {

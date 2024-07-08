@@ -63,15 +63,15 @@ public static class PropInfo_ReferencedBy
 
                 if (m.IsPartEnemy() || m.IsPartDummyEnemy())
                 {
-                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
+                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.CharacterAliases);
                 }
                 if (m.IsPartAsset() || m.IsPartDummyAsset())
                 {
-                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.AssetAliases.Aliases.list);
+                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.AssetAliases);
                 }
                 if (m.IsPartMapPiece())
                 {
-                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.MapPieceAliases.Aliases.list);
+                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.MapPieceAliases);
                 }
 
                 if (aliasName != "")
@@ -93,9 +93,15 @@ public static class PropInfo_ReferencedBy
         }
     }
 
-    public static string GetAliasFromCache(string name, List<AliasReference> referenceList)
+    public static string GetAliasFromCache(string name, AliasBank bank)
     {
-        foreach (var alias in referenceList)
+        if (bank.Aliases == null)
+            return "";
+
+        if (bank.Aliases.list == null)
+            return "";
+
+        foreach (var alias in bank.Aliases.list)
         {
             if (name == alias.id)
             {

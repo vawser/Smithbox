@@ -32,6 +32,12 @@ public class LightmapAtlasScreen
     {
         var scale = Smithbox.GetUIScale();
 
+        if (Smithbox.BankHandler.LightmapAtlasBank == null)
+            return;
+
+        if (Smithbox.BankHandler.LightmapAtlasBank.LightmapAtlases == null)
+            return;
+
         if (!Smithbox.BankHandler.LightmapAtlasBank.UsesLightmapAtlases())
             return;
 

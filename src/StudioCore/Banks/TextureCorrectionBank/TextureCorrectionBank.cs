@@ -28,16 +28,28 @@ namespace StudioCore.Banks.TextureCorrectionBank
 
         public void LoadBank()
         {
-            try
+            TaskManager.Run(new TaskManager.LiveTask($"Load Texture Corrections", TaskManager.RequeueType.WaitThenRequeue, false, () =>
             {
-                TextureCorrections = BankUtils.LoadTextureCorrectionJSON(AliasDirectory, AliasFileName);
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"Failed to load Alias Bank {AliasFileName}: {e.Message}");
-            }
+                try
+                {
+                    TextureCorrections = BankUtils.LoadTextureCorrectionJSON(AliasDirectory, AliasFileName);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"Failed to load Alias Bank {AliasFileName}: {e.Message}");
+                }
+            }));
+        }
 
-            TaskLogs.AddLog($"Texture Correction Bank: Loaded Corrections");
+        public List<TextureCorrectionReference> GetList()
+        {
+            if (TextureCorrections == null)
+                return new List<TextureCorrectionReference>();
+
+            if (TextureCorrections.list == null)
+                return new List<TextureCorrectionReference>();
+
+            return TextureCorrections.list;
         }
 
         /// <summary>
@@ -66,10 +78,10 @@ namespace StudioCore.Banks.TextureCorrectionBank
 
         public bool IsBankValid()
         {
-            if (TextureCorrections.list == null)
+            if (TextureCorrections == null)
                 return false;
 
-            if (TextureCorrections == null)
+            if (TextureCorrections.list == null)
                 return false;
 
             return true;

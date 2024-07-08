@@ -70,64 +70,58 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                         {
                             if (obj.IsPart())
                             {
-                                if (Smithbox.BankHandler.AssetAliases.Aliases != null)
+                                foreach (var entry in Smithbox.BankHandler.AssetAliases.GetList())
                                 {
-                                    foreach (var entry in Smithbox.BankHandler.AssetAliases.Aliases.list)
+                                    var modelName = obj.GetPropertyValue<string>("ModelName");
+
+                                    if (entry.id == modelName)
                                     {
-                                        var modelName = obj.GetPropertyValue<string>("ModelName");
+                                        bool change = false;
 
-                                        if (entry.id == modelName)
+                                        foreach (var tag in entry.tags)
                                         {
-                                            bool change = false;
+                                            if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
+                                                change = true;
+                                        }
 
-                                            foreach (var tag in entry.tags)
+                                        if (change)
+                                        {
+                                            if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
                                             {
-                                                if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
-                                                    change = true;
+                                                obj.EditorVisible = true;
                                             }
-
-                                            if (change)
+                                            if (CFG.Current.Toolbar_Tag_Visibility_State_Disabled)
                                             {
-                                                if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
-                                                {
-                                                    obj.EditorVisible = true;
-                                                }
-                                                if (CFG.Current.Toolbar_Tag_Visibility_State_Disabled)
-                                                {
-                                                    obj.EditorVisible = false;
-                                                }
+                                                obj.EditorVisible = false;
                                             }
                                         }
                                     }
                                 }
 
-                                if (Smithbox.BankHandler.MapPieceAliases.Aliases != null)
+                                foreach (var entry in Smithbox.BankHandler.MapPieceAliases.GetList())
                                 {
-                                    foreach (var entry in Smithbox.BankHandler.MapPieceAliases.Aliases.list)
+                                    var entryName = $"m{entry.id.Split("_").Last()}";
+                                    var modelName = obj.GetPropertyValue<string>("ModelName");
+
+                                    if (entryName == modelName)
                                     {
-                                        var entryName = $"m{entry.id.Split("_").Last()}";
-                                        var modelName = obj.GetPropertyValue<string>("ModelName");
+                                        bool change = false;
 
-                                        if (entryName == modelName)
+                                        foreach (var tag in entry.tags)
                                         {
-                                            bool change = false;
+                                            if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
+                                                change = true;
+                                        }
 
-                                            foreach (var tag in entry.tags)
+                                        if (change)
+                                        {
+                                            if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
                                             {
-                                                if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
-                                                    change = true;
+                                                obj.EditorVisible = true;
                                             }
-
-                                            if (change)
+                                            if (CFG.Current.Toolbar_Tag_Visibility_State_Disabled)
                                             {
-                                                if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
-                                                {
-                                                    obj.EditorVisible = true;
-                                                }
-                                                if (CFG.Current.Toolbar_Tag_Visibility_State_Disabled)
-                                                {
-                                                    obj.EditorVisible = false;
-                                                }
+                                                obj.EditorVisible = false;
                                             }
                                         }
                                     }

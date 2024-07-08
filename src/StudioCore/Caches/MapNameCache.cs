@@ -18,29 +18,30 @@ public class MapNameCache
 
     public void BuildCache()
     {
-        if (Smithbox.BankHandler.MapAliases.Aliases != null)
+        if (Smithbox.BankHandler.MapAliases.Aliases == null)
+            return;
+
+        if (Smithbox.BankHandler.MapAliases.Aliases.list == null)
+            return;
+
+        TaskManager.Run(new TaskManager.LiveTask($"Load Map Names", TaskManager.RequeueType.WaitThenRequeue, false, () =>
         {
             MapNames = new Dictionary<string, string>();
             MapTags = new Dictionary<string, List<string>>();
 
-            if (Smithbox.BankHandler.MapAliases.Aliases.list != null)
+            foreach (var entry in Smithbox.BankHandler.MapAliases.Aliases.list)
             {
-                foreach (var entry in Smithbox.BankHandler.MapAliases.Aliases.list)
+                if (!MapNames.ContainsKey(entry.id))
                 {
-                    if (!MapNames.ContainsKey(entry.id))
-                    {
-                        MapNames.Add(entry.id, entry.name);
-                    }
+                    MapNames.Add(entry.id, entry.name);
+                }
 
-                    if (!MapTags.ContainsKey(entry.id))
-                    {
-                        MapTags.Add(entry.id, entry.tags);
-                    }
+                if (!MapTags.ContainsKey(entry.id))
+                {
+                    MapTags.Add(entry.id, entry.tags);
                 }
             }
-        }
-
-        TaskLogs.AddLog($"Name Cache: Loaded Map Names");
+        }));
     }
 
     public string GetMapName(string mapId)
