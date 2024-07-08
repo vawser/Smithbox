@@ -115,7 +115,7 @@ public class ProjectHandler
         if (Smithbox.ProjectRoot == "")
             TaskLogs.AddLog("Smithbox.ProjectRoot is empty!");
 
-        Smithbox.SetProgramTitle($"Smithbox - {CurrentProject.Config.ProjectName}");
+        Smithbox.SetProgramTitle($"{CurrentProject.Config.ProjectName} - Smithbox");
 
         ResourceMapLocator.FullMapList = null;
         Smithbox.InitializeBanks();
@@ -156,7 +156,7 @@ public class ProjectHandler
     public void ClearProject()
     {
         CurrentProject = null;
-        Smithbox.SetProgramTitle("Smithbox - No Project");
+        Smithbox.SetProgramTitle("No Project - Smithbox");
         Smithbox.ProjectType = ProjectType.Undefined;
         Smithbox.GameRoot = "";
         Smithbox.ProjectRoot = "";
@@ -167,7 +167,7 @@ public class ProjectHandler
 
     public void UpdateProjectVariables()
     {
-        Smithbox.SetProgramTitle($"Smithbox - {CurrentProject.Config.ProjectName}");
+        Smithbox.SetProgramTitle($"{CurrentProject.Config.ProjectName} - Smithbox");
         Smithbox.ProjectType = CurrentProject.Config.GameType;
         Smithbox.GameRoot = CurrentProject.Config.GameRoot;
         Smithbox.ProjectRoot = Path.GetDirectoryName(CurrentProject.ProjectJsonPath);
