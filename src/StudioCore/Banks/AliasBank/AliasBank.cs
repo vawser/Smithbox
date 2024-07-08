@@ -35,45 +35,30 @@ public class AliasBank
 
     public void LoadBank()
     {
-        TaskManager.Run(new TaskManager.LiveTask($"Alias Bank - Load {AliasTitle}", TaskManager.RequeueType.WaitThenRequeue, false, () =>
+        try
         {
-            try
-            {
-                Aliases = BankUtils.LoadAliasJSON(AliasFileName, AliasDirectory);
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"Failed to load: {AliasTitle} Bank: {e.Message}");
-            }
-        }));
+            Aliases = BankUtils.LoadAliasJSON(AliasFileName, AliasDirectory);
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"Failed to load: {AliasTitle} Bank: {e.Message}");
+        }
+
+        TaskLogs.AddLog($"Alias Bank: Loaded {AliasTitle} Bank");
     }
 
-    public List<AliasReference> GetList()
+    public Dictionary<string, AliasReference> GetEntries()
     {
-        if (Aliases == null)
-            return new List<AliasReference>();
-
-        if (Aliases.list == null)
-            return new List<AliasReference>();
-
-        return Aliases.list;
-    }
-
-    public Dictionary<string, AliasReference> GetEntryDictionary()
-    {
-        if (Aliases == null)
-            return new Dictionary<string, AliasReference>();
-
-        if (Aliases.list == null)
-            return new Dictionary<string, AliasReference>();
-
         Dictionary<string, AliasReference> Entries = new Dictionary<string, AliasReference>();
 
-        foreach (var entry in Aliases.list)
+        if(Aliases.list != null)
         {
-            if (!Entries.ContainsKey(entry.id))
+            foreach (var entry in Aliases.list)
             {
-                Entries.Add(entry.id, entry);
+                if (!Entries.ContainsKey(entry.id))
+                {
+                    Entries.Add(entry.id, entry);
+                }
             }
         }
 
@@ -258,12 +243,6 @@ public class AliasBank
 
     public Dictionary<string, string> GetEnumDictionary()
     {
-        if(Aliases == null)
-            return new Dictionary<string, string>();
-
-        if (Aliases.list == null)
-            return new Dictionary<string, string>();
-
         if (enumDict == null)
         {
             enumDict = new Dictionary<string, string>();

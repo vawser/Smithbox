@@ -126,57 +126,84 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             _cachedSearchValue = _searchValue;
 
             // Cutscene
-            foreach (var entry in Smithbox.BankHandler.CutsceneAliases.GetList())
+            if (Smithbox.BankHandler.CutsceneAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Cutscene");
+                foreach (var entry in Smithbox.BankHandler.CutsceneAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Cutscene");
+                }
             }
 
             // Flag
-            foreach (var entry in Smithbox.BankHandler.EventFlagAliases.GetList())
+            if (Smithbox.BankHandler.EventFlagAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Event Flag");
+                foreach (var entry in Smithbox.BankHandler.EventFlagAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Event Flag");
+                }
             }
 
             // Characters
-            foreach (var entry in Smithbox.BankHandler.CharacterAliases.GetList())
+            if (Smithbox.BankHandler.CharacterAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Character");
+                foreach (var entry in Smithbox.BankHandler.CharacterAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Character");
+                }
             }
 
             // Assets
-            foreach (var entry in Smithbox.BankHandler.AssetAliases.GetList())
+            if (Smithbox.BankHandler.AssetAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Object");
+                foreach (var entry in Smithbox.BankHandler.AssetAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Object");
+                }
             }
 
             // Parts
-            foreach (var entry in Smithbox.BankHandler.PartAliases.GetList())
+            if (Smithbox.BankHandler.AssetAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Part");
+                foreach (var entry in Smithbox.BankHandler.PartAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Part");
+                }
             }
 
             // MapPieces
-            foreach (var entry in Smithbox.BankHandler.MapAliases.GetList())
+            if (Smithbox.BankHandler.AssetAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Map Piece");
+                foreach (var entry in Smithbox.BankHandler.MapAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Map Piece");
+                }
             }
 
             // Movies
-            foreach (var entry in Smithbox.BankHandler.MovieAliases.GetList())
+            if (Smithbox.BankHandler.MovieAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Movie");
+                foreach (var entry in Smithbox.BankHandler.MovieAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Movie");
+                }
             }
 
             // Particles
-            foreach (var entry in Smithbox.BankHandler.ParticleAliases.GetList())
+            if (Smithbox.BankHandler.ParticleAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Particle");
+                foreach (var entry in Smithbox.BankHandler.ParticleAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Particle");
+                }
             }
 
             // Sounds
-            foreach (var entry in Smithbox.BankHandler.SoundAliases.GetList())
+            if (Smithbox.BankHandler.SoundAliases.Aliases != null)
             {
-                AddAliasResult(entry, _searchValue, "Sound");
+                foreach (var entry in Smithbox.BankHandler.SoundAliases.Aliases.list)
+                {
+                    AddAliasResult(entry, _searchValue, "Sound");
+                }
             }
         }
 

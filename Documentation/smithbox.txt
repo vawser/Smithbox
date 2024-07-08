@@ -114,7 +114,6 @@ Known Bugs:
 - Icon Preview (unknown circumstances) -> Index outside bounds of array in Veldrid.Texture: TextureResource issue with icon preview (dylan)
 - Image Preview is throwing errors some for some.
 - Check LowRequirements doesn't invoke any rendering stuff when loading a model in Model Editor
-- Fix update button
 
 #--------------------------------------
 # Notes

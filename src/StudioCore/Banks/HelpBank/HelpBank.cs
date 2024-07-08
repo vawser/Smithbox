@@ -1,5 +1,4 @@
-﻿using StudioCore.Editor;
-using StudioCore.Help;
+﻿using StudioCore.Help;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,16 +19,13 @@ public class HelpBank
 
     public HelpBank()
     {
-        TaskManager.Run(new TaskManager.LiveTask($"Load Help Information", TaskManager.RequeueType.WaitThenRequeue, false, () =>
-        {
-            _helpArticles = LoadHelpResource("Articles");
-            _helpTutorials = LoadHelpResource("Tutorials");
-            _helpGlossary = LoadHelpResource("Glossary");
-            _helpMassEdit = LoadHelpResource("MassEdit");
-            _helpRegex = LoadHelpResource("Regex");
-            _helpLinks = LoadHelpResource("Links");
-            _helpCredits = LoadHelpResource("Credits");
-        }));
+        _helpArticles = LoadHelpResource("Articles");
+        _helpTutorials = LoadHelpResource("Tutorials");
+        _helpGlossary = LoadHelpResource("Glossary");
+        _helpMassEdit = LoadHelpResource("MassEdit");
+        _helpRegex = LoadHelpResource("Regex");
+        _helpLinks = LoadHelpResource("Links");
+        _helpCredits = LoadHelpResource("Credits");
     }
 
     private List<HelpEntry> LoadHelpResource(string directory)

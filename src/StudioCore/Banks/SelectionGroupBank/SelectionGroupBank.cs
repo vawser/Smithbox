@@ -1,5 +1,4 @@
 ﻿using StudioCore.Banks.AliasBank;
-using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Locators;
@@ -30,28 +29,16 @@ public class SelectionGroupBank
 
     public void LoadBank()
     {
-        TaskManager.Run(new TaskManager.LiveTask($"Load Selection Groups", TaskManager.RequeueType.WaitThenRequeue, false, () =>
+        try
         {
-            try
-            {
-                Groups = BankUtils.LoadSelectionGroupJSON(GroupDirectory, GroupFileName);
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"Failed to load Selection Group Bank: {e.Message}");
-            }
-        }));
-    }
+            Groups = BankUtils.LoadSelectionGroupJSON(GroupDirectory, GroupFileName);
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"Failed to load Selection Group Bank: {e.Message}");
+        }
 
-    public List<SelectionGroupResource> GetList()
-    {
-        if (Groups == null)
-            return new List<SelectionGroupResource>();
-
-        if (Groups.Resources == null)
-            return new List<SelectionGroupResource>();
-
-        return Groups.Resources;
+        TaskLogs.AddLog($"Selection Group Bank: Loaded Selection Groups");
     }
 
     public void CreateSelectionGroups()

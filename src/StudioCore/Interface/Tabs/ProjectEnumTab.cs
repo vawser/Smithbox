@@ -80,7 +80,7 @@ public class ProjectEnumTab
         {
             ReselectEntry = false;
 
-            foreach (var entry in Smithbox.BankHandler.ProjectEnums.GetList())
+            foreach (var entry in Smithbox.BankHandler.ProjectEnums.Enums.List)
             {
                 if (_selectedEntry != null)
                 {
@@ -103,7 +103,7 @@ public class ProjectEnumTab
             }
         }
 
-        foreach (var entry in Smithbox.BankHandler.ProjectEnums.GetList())
+        foreach (var entry in Smithbox.BankHandler.ProjectEnums.Enums.List)
         {
             var displayedName = $"{entry.DisplayName}";
 

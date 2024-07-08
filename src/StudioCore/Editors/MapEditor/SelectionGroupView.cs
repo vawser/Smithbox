@@ -67,10 +67,7 @@ public class SelectionGroupView
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        if (Smithbox.BankHandler.SelectionGroups.Groups == null)
-            return;
-
-        if (Smithbox.BankHandler.SelectionGroups.Groups.Resources == null)
+        if (Smithbox.BankHandler.SelectionGroups.Groups == null || Smithbox.BankHandler.SelectionGroups.Groups.Resources == null)
             return;
 
         // This exposes the pop-up to the map editor
@@ -473,12 +470,6 @@ public class SelectionGroupView
 
     private void ShortcutSelectGroup(int index)
     {
-        if (Smithbox.BankHandler.SelectionGroups.Groups == null)
-            return;
-
-        if (Smithbox.BankHandler.SelectionGroups.Groups.Resources == null)
-            return;
-
         foreach (var entry in Smithbox.BankHandler.SelectionGroups.Groups.Resources)
         {
             if (entry.SelectionGroupKeybind == index)

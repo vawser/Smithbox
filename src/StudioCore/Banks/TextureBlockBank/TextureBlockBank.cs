@@ -1,7 +1,6 @@
 ﻿using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
-using StudioCore.Banks.TextureCorrectionBank;
 using StudioCore.Editor;
 using StudioCore.UserProject;
 using System;
@@ -30,28 +29,16 @@ namespace StudioCore.Banks.TextureBlockBank
 
         public void LoadBank()
         {
-            TaskManager.Run(new TaskManager.LiveTask($"Load Texture Blocks", TaskManager.RequeueType.WaitThenRequeue, false, () =>
+            try
             {
-                try
-                {
-                    TextureBlocks = BankUtils.LoadTextureBlockJSON(AliasDirectory, AliasFileName);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"Failed to load Alias Bank {AliasFileName}: {e.Message}");
-                }
-            }));
-        }
+                TextureBlocks = BankUtils.LoadTextureBlockJSON(AliasDirectory, AliasFileName);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"Failed to load Alias Bank {AliasFileName}: {e.Message}");
+            }
 
-        public List<string> GetList()
-        {
-            if (TextureBlocks == null)
-                return new List<string>();
-
-            if (TextureBlocks.list == null)
-                return new List<string>();
-
-            return TextureBlocks.list;
+            TaskLogs.AddLog($"Texture Block Bank: Loaded Blocks");
         }
 
         public bool IsBlockedTexture(string virtualPath)
@@ -72,12 +59,12 @@ namespace StudioCore.Banks.TextureBlockBank
 
         public bool IsBankValid()
         {
-            if (TextureBlocks == null)
+            if (TextureBlocks.list == null)
             {
                 return false;
             }
 
-            if (TextureBlocks.list == null)
+            if (TextureBlocks == null)
             {
                 return false;
             }

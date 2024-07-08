@@ -1,7 +1,5 @@
 ﻿using StudioCore.Banks.AliasBank;
-using StudioCore.Banks.SelectionGroupBank;
 using StudioCore.Core;
-using StudioCore.Editor;
 using StudioCore.Locators;
 using StudioCore.Platform;
 using System;
@@ -34,49 +32,34 @@ public class ProjectEnumBank
 
     public void LoadBank()
     {
-        TaskManager.Run(new TaskManager.LiveTask($"Enum Bank - Load {EnumTitle}", TaskManager.RequeueType.WaitThenRequeue, false, () =>
+        try
         {
-            try
+            Enums = BankUtils.LoadProjectEnumJSON();
+            foreach(var entry in Enums.List)
             {
-                Enums = BankUtils.LoadProjectEnumJSON();
-                foreach(var entry in Enums.List)
-                {
-                    entry.Options.Sort();
-                }
+                entry.Options.Sort();
             }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"Failed to load: {EnumTitle} Bank: {e.Message}");
-            }
-        }));
-    }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"Failed to load: {EnumTitle} Bank: {e.Message}");
+        }
 
-    public List<ProjectEnumEntry> GetList()
-    {
-        if (Enums == null)
-            return new List<ProjectEnumEntry>();
-
-        if (Enums.List == null)
-            return new List<ProjectEnumEntry>();
-
-        return Enums.List;
+        TaskLogs.AddLog($"Alias Bank: Loaded {EnumTitle} Bank");
     }
 
     public Dictionary<string, ProjectEnumEntry> GetEntries()
     {
-        if (Enums == null)
-            return new Dictionary<string, ProjectEnumEntry>();
-
-        if (Enums.List == null)
-            return new Dictionary<string, ProjectEnumEntry>();
-
         Dictionary<string, ProjectEnumEntry> Entries = new Dictionary<string, ProjectEnumEntry>();
 
-        foreach (var entry in Enums.List)
+        if (Enums.List != null)
         {
-            if (!Entries.ContainsKey(entry.Name))
+            foreach (var entry in Enums.List)
             {
-                Entries.Add(entry.Name, entry);
+                if (!Entries.ContainsKey(entry.Name))
+                {
+                    Entries.Add(entry.Name, entry);
+                }
             }
         }
 

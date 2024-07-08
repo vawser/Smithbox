@@ -28,28 +28,16 @@ namespace StudioCore.Banks.TextureAdditionBank
 
         public void LoadBank()
         {
-            TaskManager.Run(new TaskManager.LiveTask($"Load Texture Additions", TaskManager.RequeueType.WaitThenRequeue, false, () =>
+            try
             {
-                try
-                {
-                    TextureAdditions = BankUtils.LoadTextureAdditionJSON(AliasDirectory, AliasFileName);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"Failed to load {AliasFileName}: {e.Message}");
-                }
-            }));
-        }
+                TextureAdditions = BankUtils.LoadTextureAdditionJSON(AliasDirectory, AliasFileName);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"Failed to load Alias Bank {AliasFileName}: {e.Message}");
+            }
 
-        public List<TextureAdditionReference> GetList()
-        {
-            if (TextureAdditions == null)
-                return new List<TextureAdditionReference>();
-
-            if (TextureAdditions.list == null)
-                return new List<TextureAdditionReference>();
-
-            return TextureAdditions.list;
+            TaskLogs.AddLog($"Texture Addition Bank: Loaded Additions");
         }
 
         public bool HasAdditionalTextures(string modelid)

@@ -94,6 +94,7 @@ public class BankHandler
         FMGBank = new FMGBank();
         LightmapAtlasBank = new LightmapAtlasBank();
 
+        // TODO
         MaterialResourceBank.Setup();
     }
 
@@ -131,6 +132,7 @@ public class BankHandler
 
         LightmapAtlasBank.LoadBank();
 
+        // TODO
         ParamBank.ReloadParams();
         MaterialResourceBank.Setup();
     }

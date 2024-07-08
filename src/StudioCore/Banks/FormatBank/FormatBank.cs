@@ -2,7 +2,6 @@
 using System;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
-using StudioCore.Banks.GameOffsetBank;
 
 namespace StudioCore.Banks.FormatBank;
 
@@ -29,29 +28,22 @@ public class FormatBank
 
     public void LoadBank()
     {
-        TaskManager.Run(new TaskManager.LiveTask($"Format Bank - Load {FormatTitle}", TaskManager.RequeueType.WaitThenRequeue, false, () =>
+        try
         {
-            try
-            {
-                Information = BankUtils.LoadFormatResourceJSON(FormatTitle, IsGameSpecific);
-                Enums = BankUtils.LoadFormatEnumJSON(FormatTitle, IsGameSpecific);
-                Masks = BankUtils.LoadFormatMaskJSON(FormatTitle, IsGameSpecific);
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"Failed to load Format Bank {FormatTitle}: {e.Message}");
-            }
-        }));
+            Information = BankUtils.LoadFormatResourceJSON(FormatTitle, IsGameSpecific);
+            Enums = BankUtils.LoadFormatEnumJSON(FormatTitle, IsGameSpecific);
+            Masks = BankUtils.LoadFormatMaskJSON(FormatTitle, IsGameSpecific);
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"Failed to load Format Bank {FormatTitle}: {e.Message}");
+        }
+
+        TaskLogs.AddLog($"Format Bank: Loaded {FormatTitle} Bank");
     }
 
     public Dictionary<string, FormatReference> GetInformationEntries()
     {
-        if (Information == null)
-            return new Dictionary<string, FormatReference>();
-
-        if (Information.list == null)
-            return new Dictionary<string, FormatReference>();
-
         Dictionary<string, FormatReference> Entries = new Dictionary<string, FormatReference>();
 
         foreach (var entry in Information.list)
@@ -64,12 +56,6 @@ public class FormatBank
 
     public Dictionary<string, FormatEnumEntry> GetEnumEntries()
     {
-        if (Enums == null)
-            return new Dictionary<string, FormatEnumEntry>();
-
-        if (Enums.list == null)
-            return new Dictionary<string, FormatEnumEntry>();
-
         Dictionary<string, FormatEnumEntry> Entries = new Dictionary<string, FormatEnumEntry>();
 
         foreach (var entry in Enums.list)
@@ -82,12 +68,6 @@ public class FormatBank
 
     public Dictionary<string, FormatMaskEntry> GetMaskEntries()
     {
-        if (Masks == null)
-            return new Dictionary<string, FormatMaskEntry>();
-
-        if (Masks.list == null)
-            return new Dictionary<string, FormatMaskEntry>();
-
         Dictionary<string, FormatMaskEntry> Entries = new Dictionary<string, FormatMaskEntry>();
 
         foreach (var entry in Masks.list)
@@ -100,13 +80,10 @@ public class FormatBank
 
     public string GetClassReferenceName(string classKey)
     {
-        if (Information == null)
-            return "";
+        var name = "";
 
         if (Information.list == null)
-            return "";
-
-        var name = "";
+            return name;
 
         // Top
         foreach (FormatReference entry in Information.list)
@@ -122,13 +99,10 @@ public class FormatBank
 
     public string GetClassReferenceDescription(string classKey)
     {
-        if (Information == null)
-            return "";
+        var desc = "";
 
         if (Information.list == null)
-            return "";
-
-        var desc = "";
+            return desc;
 
         // Top
         foreach (FormatReference entry in Information.list)
@@ -144,9 +118,6 @@ public class FormatBank
 
     public string GetReferenceName(string classKey, string name, string sharedTypeName = "")
     {
-        if (Information == null)
-            return name;
-
         if (Information.list == null)
             return name;
 
@@ -171,13 +142,10 @@ public class FormatBank
 
     public string GetReferenceDescription(string classKey, string key, string sharedTypeName = "")
     {
-        if (Information == null)
-            return "";
+        var desc = "";
 
         if (Information.list == null)
-            return "";
-
-        string desc = "";
+            return desc;
 
         // Top
         foreach (FormatReference entry in Information.list)
@@ -200,12 +168,6 @@ public class FormatBank
 
     public string GetTypeForProperty(string fieldKey)
     {
-        if (Information == null)
-            return "";
-
-        if (Information.list == null)
-            return "";
-
         string typeName = "";
 
         foreach (var entry in Information.list)
@@ -224,12 +186,6 @@ public class FormatBank
 
     public FormatEnumEntry GetEnumForProperty(string fieldKey)
     {
-        if (Information == null)
-            return new FormatEnumEntry();
-
-        if (Information.list == null)
-            return new FormatEnumEntry();
-
         FormatEnumEntry formatEnum = null;
         string enumName = "";
 
@@ -287,9 +243,6 @@ public class FormatBank
 
     public bool IsSpecifiedProperty(string key, string attribute)
     {
-        if (Information == null)
-            return false;
-
         if (Information.list == null)
             return false;
 
