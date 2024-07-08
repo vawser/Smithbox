@@ -102,10 +102,6 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 ImguiUtils.ShowHoverTooltip("The file name used for this script.");
                 ImguiUtils.WrappedText("");
 
-                ImGui.Checkbox("Is Common Script", ref _newScriptIsCommon);
-                ImguiUtils.ShowHoverTooltip($"Save the script as a common script for all project types.\nIf not, then the script will only appear for {Smithbox.ProjectType} projects.");
-                ImguiUtils.WrappedText("");
-
                 var Size = ImGui.GetWindowSize();
                 float EditX = (Size.X / 100) * 95;
                 float EditY = (Size.Y / 100) * 25;
@@ -122,8 +118,9 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 ImGui.SameLine();
                 if (ImGui.Button("Open Script Folder", new Vector2(150, 32)))
                 {
-                    var dir = ResourceParamLocator.GetMassEditScriptGameDir();
-                    Process.Start("explorer.exe", dir);
+                    var projectScriptDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\MassEditScripts\\";
+
+                    Process.Start("explorer.exe", projectScriptDir);
                 }
             }
         }
@@ -144,39 +141,15 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 return;
             }
 
-            var path = "";
-            var commonPath = "";
-            var gameDirPath = "";
-
-            var commonDir = ResourceParamLocator.GetMassEditScriptCommonDir();
-            commonPath = Path.Combine(commonDir, $"{_newScriptName}.txt");
-
-            var gameDir = ResourceParamLocator.GetMassEditScriptGameDir();
-            gameDirPath = Path.Combine(gameDir, $"{_newScriptName}.txt");
-
-            if (_newScriptIsCommon)
-            {
-                path = commonPath;
-                if (!Directory.Exists(commonDir))
-                {
-                    Directory.CreateDirectory(commonDir);
-                }
-            }
-            else
-            {
-                path = gameDirPath;
-                if (!Directory.Exists(gameDir))
-                {
-                    Directory.CreateDirectory(gameDir);
-                }
-            }
+            var projectScriptDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\MassEditScripts\\";
+            var scriptPath = $"{projectScriptDir}{_newScriptName}.txt";
 
             // Check both so the name is unique everywhere
-            if (!File.Exists(gameDirPath) && !File.Exists(commonPath))
+            if (!File.Exists(scriptPath))
             {
                 try
                 {
-                    var fs = new FileStream(path, System.IO.FileMode.Create);
+                    var fs = new FileStream(scriptPath, System.IO.FileMode.Create);
                     var data = Encoding.ASCII.GetBytes(_newScriptBody);
                     fs.Write(data, 0, data.Length);
                     fs.Flush();

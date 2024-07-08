@@ -59,9 +59,20 @@ public class MassEditScript
         scriptList = new List<MassEditScript>();
         LoadScriptsFromDir(cdir);
         LoadScriptsFromDir(dir);
+
+        var projectScriptDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\MassEditScripts\\";
+
+        if (Directory.Exists(projectScriptDir))
+        {
+            LoadScriptsFromDir(projectScriptDir, true);
+        }
+        else
+        {
+            Directory.CreateDirectory(projectScriptDir);
+        }
     }
 
-    private static void LoadScriptsFromDir(string dir)
+    private static void LoadScriptsFromDir(string dir, bool isProjectScript = false)
     {
         try
         {
@@ -73,6 +84,9 @@ public class MassEditScript
                     try
                     {
                         name = Path.GetFileNameWithoutExtension(x);
+                        if (isProjectScript)
+                            name = $"Project: {name}";
+
                         return new MassEditScript(x, name);
                     }
                     catch (Exception e)
