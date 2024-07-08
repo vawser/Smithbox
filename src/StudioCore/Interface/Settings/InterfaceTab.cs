@@ -26,11 +26,11 @@ public class InterfaceTab
         {
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Wrap alias text", ref CFG.Current.System_WrapAliasDisplay);
-                ImguiUtils.ShowHoverTooltip("Makes the alias text display wrap instead of being cut off.");
-
                 ImGui.Checkbox("Show tooltips", ref CFG.Current.System_Show_UI_Tooltips);
                 ImguiUtils.ShowHoverTooltip("This is a tooltip.");
+
+                ImGui.Checkbox("Wrap alias text", ref CFG.Current.System_WrapAliasDisplay);
+                ImguiUtils.ShowHoverTooltip("Makes the alias text display wrap instead of being cut off.");
 
                 ImGui.SliderFloat("UI scale", ref _tempScale, 0.5f, 4.0f);
                 if (ImGui.IsItemDeactivatedAfterEdit())
@@ -50,6 +50,14 @@ public class InterfaceTab
                     Smithbox.FontRebuildRequest = true;
                 }
                 ImguiUtils.ShowHoverTooltip("Multiplies the user interface scale by your monitor's DPI setting.");
+
+                ImGui.SliderFloat("Font Size", ref CFG.Current.Interface_FontSize, 8.0f, 32.0f);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    CFG.Current.Interface_FontSize = (float)Math.Round(CFG.Current.Interface_FontSize);
+                    Smithbox.FontRebuildRequest = true;
+                }
+                ImguiUtils.ShowHoverTooltip("Adjusts the size of the font in Smithbox.");
             }
 
             // Fonts

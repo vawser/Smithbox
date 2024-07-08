@@ -59,6 +59,8 @@ public class CFG
     //**************
     // Interface
     //**************
+    public float Interface_FontSize = 14.0f;
+
     // View Toggles
     public bool Interface_Editor_Viewport = true;
     public bool Interface_Editor_Profiling = true;

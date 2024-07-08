@@ -43,7 +43,7 @@ public static class DataExplorer
         ImGui.Text("Input String");
         ImGui.InputText("##textInput", ref _textInput, 255);
 
-        if(ImGui.Button("NPC PARAM ID"))
+        if(ImGui.Button("Search"))
         {
             if (maps == null)
             {

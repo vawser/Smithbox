@@ -166,7 +166,7 @@ public class Smithbox
             cfg.GlyphMinAdvanceX = 5.0f;
             cfg.OversampleH = 5;
             cfg.OversampleV = 5;
-            fonts.AddFontFromMemoryTTF(fontEnNative, fontIcon.Length, (float)Math.Round(14.0f * scale), cfg,
+            fonts.AddFontFromMemoryTTF(fontEnNative, fontIcon.Length, (float)Math.Round(CFG.Current.Interface_FontSize * scale), cfg,
                 fonts.GetGlyphRangesDefault());
         }
 
@@ -210,7 +210,7 @@ public class Smithbox
             }
 
             glyphRanges.BuildRanges(out ImVector glyphRange);
-            fonts.AddFontFromMemoryTTF(fontOtherNative, fontOther.Length, 16.0f * scale, cfg, glyphRange.Data);
+            fonts.AddFontFromMemoryTTF(fontOtherNative, fontOther.Length, (float)Math.Round((CFG.Current.Interface_FontSize + 2) * scale), cfg, glyphRange.Data);
             glyphRanges.Destroy();
         }
 
@@ -227,7 +227,7 @@ public class Smithbox
 
             fixed (ushort* r = ranges)
             {
-                ImFontPtr f = fonts.AddFontFromMemoryTTF(fontIconNative, fontIcon.Length, 16.0f * scale, cfg,
+                ImFontPtr f = fonts.AddFontFromMemoryTTF(fontIconNative, fontIcon.Length, (float)Math.Round((CFG.Current.Interface_FontSize + 2) * scale), cfg,
                     (IntPtr)r);
             }
         }
