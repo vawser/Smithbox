@@ -672,7 +672,7 @@ public class Smithbox
     private const float DefaultDpi = 96f;
     private static float _dpi = DefaultDpi;
 
-    private static float Dpi
+    public static float Dpi
     {
         get => _dpi;
         set
@@ -702,7 +702,10 @@ public class Smithbox
 
     public static float GetUIScale()
     {
-        return CFG.Current.System_UI_Scale / DefaultDpi * Dpi;
+        var scale = CFG.Current.System_UI_Scale;
+        if (CFG.Current.System_ScaleByDPI)
+            scale = scale / DefaultDpi * Dpi;
+        return scale;
     }
 }
 
