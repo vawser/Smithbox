@@ -43,7 +43,7 @@ public class InterfaceTab
                 }
                 ImguiUtils.ShowHoverTooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
 
-                ImGui.Checkbox($"Multiply UI scale by DPI ({(Smithbox.Dpi / 100).ToString("P0", new NumberFormatInfo { PercentPositivePattern = 1, PercentNegativePattern = 1 })})", ref CFG.Current.System_ScaleByDPI);
+                ImGui.Checkbox($"Multiply UI scale by DPI ({(Smithbox.Dpi / 96).ToString("P0", new NumberFormatInfo { PercentPositivePattern = 1, PercentNegativePattern = 1 })})", ref CFG.Current.System_ScaleByDPI);
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
                     Smithbox.UIScaleChanged?.Invoke(null, EventArgs.Empty);
