@@ -124,6 +124,17 @@ c4602
 
 Add support for other project types to the "View in Map" and "View Model" buttons
 
+7 - Limgrave (Stranded Graveyard)
+10 - Limgrave
+12 - Weeping Peninsula
+14 - Stormveil Castle
+20 - Liurnia (Gate Town)
+30 - Altus Plateau (Altus Highway)
+32 - Mt. Gelmir
+41 - Caelid (Redmane Castle)
+51 - Mountaintops of the Giants
+56 - Miquella's Haligtree
+
 80 - 7000 - Gravesite Plain
 81 - 7020 - Ellac River
 82 - 7030 - Castle Ensis

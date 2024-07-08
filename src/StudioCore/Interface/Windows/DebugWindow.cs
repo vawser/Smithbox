@@ -92,7 +92,7 @@ public class DebugWindow
         ImGui.PushStyleColor(ImGuiCol.Header, CFG.Current.Imgui_Moveable_Header);
         ImGui.PushItemWidth(300f);
 
-        DisplayTool_MSB_Report();
+        DisplayTool_DataExplorer();
         DisplayTool_ParamValidation();
         DisplayTool_MapValidation();
         DisplayTool_FLVERDump();
@@ -173,44 +173,13 @@ public class DebugWindow
         }
     }
 
-    private void DisplayTool_MSB_Report()
+    private void DisplayTool_DataExplorer()
     {
         if (Smithbox.ProjectType == ProjectType.ER)
         {
-            if (ImGui.BeginTabItem("Map Information"))
+            if (ImGui.BeginTabItem("Data Explorer"))
             {
-                ImGui.Text("This tool will dump all of the information with each MSB file to text, presenting it in a readable and searchable fashion.");
-
-                ImGui.Text("Export Path: " + MapInformationTool.exportPath);
-
-                ImGui.Checkbox("Use project files", ref MapInformationTool.TargetProject);
-                ImguiUtils.ShowHoverTooltip("The report will use the game root files by default, if you want to use your project's specific files, tick this.");
-
-                //ImGui.SameLine();
-                //ImGui.Checkbox("Export as single file", ref MapInformationTool.OneFile);
-                //ImguiUtils.ShowHoverTooltip("The report will be placed in one file, and each MSB will be separated by a header.");
-
-                if (ImGui.Button("Select Report Export Directory"))
-                {
-                    MapInformationTool.SelectExportDirectory();
-                }
-                ImguiUtils.ShowHoverTooltip("Select the directory that the MSB text files will be placed in. There will be one file for each MSB.");
-
-                if (ImGui.Button("Generate Report"))
-                {
-                    MapInformationTool.GenerateReport();
-                }
-
-                /*
-                if (ImGui.Button("Target Report"))
-                {
-                    MapInformationTool.GenerateTargetReport();
-                }
-                */
-
-                ImGui.Separator();
-
-
+                DataExplorer.Display();
 
                 ImGui.EndTabItem();
             }

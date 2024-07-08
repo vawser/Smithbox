@@ -1,5 +1,9 @@
+0 
+1 
 1000 Retrieve lost runes
+1010 
 1020 Touch bloodstain
+1050 
 1100 Ride
 2000 Touch gold summon sign
 2001 Touch red summon sign
@@ -54,6 +58,7 @@
 6330 Be held
 6331 Touch Fia
 6332 Talk
+6333 
 6340 Summon Latenna
 6350 Examine
 6360 Talk
@@ -78,13 +83,29 @@
 6480 Talk
 6490 Talk
 6500 Talk
+6510 
 6511 Touch bloodstain
 6519 Return Unalloyed Gold Needle
+6520 
+6521 
+6522 
+6523 
+6530 
+6531 
+6532 
+6533 
+6534 
 6540 Talk
+6550 
+6560 
 6570 Talk
 6580 Examine altar
 6590 Examine grave
 6600 Talk
+6610 
+6611 
+6612 
+6613 
 6700 Examine
 7100 Open
 7101 Open
@@ -165,6 +186,7 @@
 9059 Be summoned to challenge Sorceress Sellen
 9060 Be summoned to assist Millicent
 9061 Be summoned to challenge Millicent
+9062 
 9070 Touch cooperative sign
 9071 Touch invasion sign
 9080 Restore the power of the Great Rune
@@ -183,6 +205,7 @@
 9220 Examine
 9230 Examine
 9240 Stargaze
+9250 
 9260 Examine
 9270 Use Birdseye Telescope
 9280 Examine
@@ -197,6 +220,8 @@
 9504 Examine
 9505 Examine seal
 9506 Examine seal
+9510 
+9512 
 9519 Examine
 9520 Light flame
 9521 Touch phantom
@@ -226,6 +251,8 @@
 9620 Become the Lord of Frenzied Flame
 9630 Wear ring
 9640 Open door
+9650 
+9660 
 9700 Hoist medallion
 9701 Hoist secret medallion
 9710 Rest in coffin
@@ -234,12 +261,29 @@
 9721 Remove inverted statue
 9730 Open door
 9740 Lie down
+9750 
 9980 Examine
 9999 Examine
 10000 Traverse the mist
 10001 Traverse the mist
 10010 Traverse the mist
+30000 
+32270 
+33180 
+33181 
+33950 
+34220 
+34280 
+34420 
+34490 
+34500 
+34550 
+34560 
+34630 
+99991 
+99992 
 206000 Talk
+206010 
 206020 Touch cross
 206021 Touch cross
 206022 Touch cross
@@ -337,6 +381,7 @@
 209500 Touch withered arm
 209502 Examine
 209504 Examine seal
+209512 
 209520 Touch gold summon sign
 209522 Touch gold summon sign
 209523 Examine

@@ -165,7 +165,7 @@ public class ParamIO
     }
 
     public static (string, CompoundAction?) ApplySingleCSV(ParamBank bank, string csvString, string param,
-        string field, char separator, bool ignoreMissingRows, bool onlyAffectEmptyNames = false, bool onlyAffectVanillaNames = false)
+        string field, char separator, bool ignoreMissingRows, bool onlyAffectEmptyNames = false, bool onlyAffectVanillaNames = false, bool skipInvalidLines = false)
     {
         var getVanillaRow = onlyAffectVanillaNames;
         try
@@ -226,6 +226,15 @@ public class ParamIO
                 }
 
                 var csvs = csvLine.Trim().Split(separator, 2);
+
+                // Used to skip the empty IDs in the name lists
+                if (skipInvalidLines)
+                {
+                    if (csvs.Length != 2)
+                        continue;
+                }
+
+
                 if (csvs.Length != 2 && !(csvs.Length == 3 && csvs[2].Trim().Equals("")))
                 {
                     return ("CSV has wrong number of values", null);
