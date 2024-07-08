@@ -166,7 +166,7 @@ public class Smithbox
             cfg.GlyphMinAdvanceX = 5.0f;
             cfg.OversampleH = 5;
             cfg.OversampleV = 5;
-            fonts.AddFontFromMemoryTTF(fontEnNative, fontIcon.Length, 14.0f * scale, cfg,
+            fonts.AddFontFromMemoryTTF(fontEnNative, fontIcon.Length, (float)Math.Round(14.0f * scale), cfg,
                 fonts.GetGlyphRangesDefault());
         }
 
