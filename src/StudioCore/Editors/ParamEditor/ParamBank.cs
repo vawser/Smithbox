@@ -362,7 +362,8 @@ public class ParamBank
 
             Param p;
 
-            if (Smithbox.ProjectType == ProjectType.AC6)
+            // AC6/SDT - Tentative ParamTypes
+            if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.SDT)
             {
                 _usedTentativeParamTypes = new Dictionary<string, string>();
                 p = Param.ReadIgnoreCompression(f.Bytes);
@@ -586,9 +587,9 @@ public class ParamBank
             using var bnd = BND3.Read(path);
             LoadParamFromBinder(bnd, ref _params, out _paramVersion);
         }
-        catch
+        catch (Exception e)
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -655,9 +656,9 @@ public class ParamBank
             using var bnd = BND3.Read(path);
             LoadParamFromBinder(bnd, ref _params, out _paramVersion);
         }
-        catch
+        catch (Exception e)
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -723,9 +724,9 @@ public class ParamBank
             using var bnd = BND3.Read(path);
             LoadParamFromBinder(bnd, ref _params, out _paramVersion);
         }
-        catch
+        catch (Exception e)
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -762,9 +763,9 @@ public class ParamBank
             using var bnd = BND4.Read(path);
             LoadParamFromBinder(bnd, ref _params, out _paramVersion);
         }
-        catch
+        catch(Exception e)
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -857,9 +858,9 @@ public class ParamBank
             {
                 paramBnd = SFUtil.DecryptDS2Regulation(path);
             }
-            catch
+            catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         else
@@ -868,9 +869,9 @@ public class ParamBank
             {
                 paramBnd = BND4.Read(path);
             }
-            catch
+            catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -998,9 +999,9 @@ public class ParamBank
             using BND4 lparamBnd = tryLooseParams ? BND4.Read(path) : SFUtil.DecryptDS3Regulation(path);
             LoadParamFromBinder(lparamBnd, ref _params, out _paramVersion);
         }
-        catch
+        catch (Exception e)
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -1085,9 +1086,9 @@ public class ParamBank
                 using var bnd = BND4.Read(path);
                 LoadParamFromBinder(bnd, ref _params, out _, false);
             }
-            catch
+            catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
@@ -1174,9 +1175,9 @@ public class ParamBank
                 using BND4 bnd = SFUtil.DecryptAC6Regulation(path);
                 LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
             }
-            catch
+            catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         else
@@ -1186,9 +1187,9 @@ public class ParamBank
                 using var bnd = BND4.Read(path);
                 LoadParamFromBinder(bnd, ref _params, out _, false);
             }
-            catch
+            catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
