@@ -429,6 +429,9 @@ public static class AliasUtils
 
         int itemlotId = e.GetPropertyValue<int>("ItemLotID");
 
+        if(Smithbox.ProjectType == ProjectType.DS3)
+            itemlotId = e.GetPropertyValue<int>("ItemLot1");
+
         try
         {
             var paramName = "ItemLotParam";

@@ -698,35 +698,27 @@ public class ParamRowEditor
 
             // Param Reference Buttons
             if (CFG.Current.Param_ViewInMapOption)
-            {
-                if (Smithbox.ProjectType is ProjectType.ER)
+        {
+                // These are placed at the top, below the ID row
+                if (imguiId == 1)
                 {
-                    // These are placed at the top, below the ID row
-                    if (imguiId == 1)
-                    {
-                        ParamReferenceUtils.BonfireWarpParam(activeParam, row, internalName);
-                        ParamReferenceUtils.GameAreaParam(activeParam, row, internalName);
-                        ParamReferenceUtils.ItemLotParam_map(activeParam, row, internalName);
-                    }
-
-                    // These are placed in-line with the current field
+                    ParamReferenceUtils.BonfireWarpParam(activeParam, row, internalName);
+                    ParamReferenceUtils.GameAreaParam(activeParam, row, internalName);
+                    ParamReferenceUtils.ItemLotParam(activeParam, row, internalName);
                 }
             }
 
             if (CFG.Current.Param_ViewModelOption)
             {
-                if (Smithbox.ProjectType is ProjectType.ER)
+                // These are placed at the top, below the ID row
+                if (imguiId == 1)
                 {
-                    // These are placed at the top, below the ID row
-                    if (imguiId == 1)
-                    {
-                        ParamReferenceUtils.AssetGeometryParam(activeParam, row, internalName);
-                        ParamReferenceUtils.BuddyStoneParam(activeParam, row, internalName);
-                    }
-
-                    // These are placed in-line with the current field
-                    ParamReferenceUtils.GrassTypeParam(activeParam, row, internalName);
+                    ParamReferenceUtils.AssetGeometryParam(activeParam, row, internalName);
+                    ParamReferenceUtils.BuddyStoneParam(activeParam, row, internalName);
                 }
+
+                // These are placed in-line with the current field
+                ParamReferenceUtils.GrassTypeParam(activeParam, row, internalName);
             }
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
