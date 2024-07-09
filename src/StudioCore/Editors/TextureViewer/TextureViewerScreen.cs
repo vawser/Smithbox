@@ -352,16 +352,17 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 {
                     var rawName = info.Name.ToLower();
                     var aliasName = "";
+
                     switch(displayCategory)
                     {
-                        case TextureViewCategory.Character: 
-                            aliasName = AliasUtils.GetAliasFromCache(rawName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
+                        case TextureViewCategory.Character:
+                            aliasName = AliasUtils.GetCharacterAlias(rawName);
                             break;
                         case TextureViewCategory.Asset:
-                            aliasName = AliasUtils.GetAliasFromCache(rawName, Smithbox.BankHandler.AssetAliases.Aliases.list);
+                            aliasName = AliasUtils.GetAssetAlias(rawName);
                             break;
                         case TextureViewCategory.Part:
-                            aliasName = AliasUtils.GetAliasFromCache(rawName, Smithbox.BankHandler.PartAliases.Aliases.list);
+                            aliasName = AliasUtils.GetPartAlias(rawName);
                             break;
                     }
 

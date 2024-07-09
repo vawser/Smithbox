@@ -224,7 +224,7 @@ public class AliasTab
             {
                 Bank.AddToLocalAliasBank(_refUpdateId, _refUpdateName, _refUpdateTags);
 
-                Smithbox.NameCacheHandler.ReloadNameCaches = true;
+                Smithbox.AliasCacheHandler.ReloadAliasCaches = true;
 
                 ImGui.CloseCurrentPopup();
             }
@@ -233,7 +233,7 @@ public class AliasTab
             {
                 Bank.RemoveFromLocalAliasBank(_refUpdateId);
 
-                Smithbox.NameCacheHandler.ReloadNameCaches = true;
+                Smithbox.AliasCacheHandler.ReloadAliasCaches = true;
 
                 ImGui.CloseCurrentPopup();
             }
@@ -299,7 +299,7 @@ public class AliasTab
             {
                 Bank.AddToLocalAliasBank(_newRefId, _newRefName, _newRefTags);
 
-                Smithbox.NameCacheHandler.ReloadNameCaches = true;
+                Smithbox.AliasCacheHandler.ReloadAliasCaches = true;
 
                 ImGui.CloseCurrentPopup();
             }

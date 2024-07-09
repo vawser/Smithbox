@@ -126,7 +126,7 @@ namespace StudioCore.Tools
 
         private static void ProcessEvents_ER(string mapid, MSBE map)
         {
-            var mapAlias = Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapid);
+            var mapAlias = AliasUtils.GetMapNameAlias(mapid);
 
             // Assets
             var assetHeader = $"EntityID,Name,NameAlias,ModelID,entityGroupID_1,entityGroupID_2,entityGroupID_3,entityGroupID_4,entityGroupID_5,entityGroupID_6,entityGroupID_7,entityGroupID_8,AssetSfxParamRelativeID,UnkModelMaskAndAnimID\n";
@@ -143,8 +143,8 @@ namespace StudioCore.Tools
 
                 if (modelId != null)
                 {
-                    if (Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets.ContainsKey(modelId))
-                        aliasName = Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets[modelId].name;
+                    if (Smithbox.AliasCacheHandler.AliasCache.Assets.ContainsKey(modelId))
+                        aliasName = Smithbox.AliasCacheHandler.AliasCache.Assets[modelId].name;
                 }
 
                 var entityID = part.EntityID;
@@ -172,7 +172,7 @@ namespace StudioCore.Tools
 
         private static void ProcessRegions_ER(string mapid, MSBE map)
         {
-            var mapAlias = Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapid);
+            var mapAlias = AliasUtils.GetMapNameAlias(mapid);
 
             // Assets
             var assetHeader = $"EntityID,Name,NameAlias,ModelID,entityGroupID_1,entityGroupID_2,entityGroupID_3,entityGroupID_4,entityGroupID_5,entityGroupID_6,entityGroupID_7,entityGroupID_8,AssetSfxParamRelativeID,UnkModelMaskAndAnimID\n";
@@ -189,8 +189,8 @@ namespace StudioCore.Tools
 
                 if (modelId != null)
                 {
-                    if (Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets.ContainsKey(modelId))
-                        aliasName = Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets[modelId].name;
+                    if (Smithbox.AliasCacheHandler.AliasCache.Assets.ContainsKey(modelId))
+                        aliasName = Smithbox.AliasCacheHandler.AliasCache.Assets[modelId].name;
                 }
 
                 var entityID = part.EntityID;
@@ -218,7 +218,7 @@ namespace StudioCore.Tools
 
         private static void ProcessParts_ER(string mapid, MSBE map)
         {
-            var mapAlias = Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapid);
+            var mapAlias = AliasUtils.GetMapNameAlias(mapid);
 
             // Assets
             var assetHeader = $"EntityID,Name,NameAlias,ModelID,entityGroupID_1,entityGroupID_2,entityGroupID_3,entityGroupID_4,entityGroupID_5,entityGroupID_6,entityGroupID_7,entityGroupID_8,AssetSfxParamRelativeID,UnkModelMaskAndAnimID\n";
@@ -235,8 +235,8 @@ namespace StudioCore.Tools
 
                 if (modelId != null)
                 {
-                    if (Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets.ContainsKey(modelId))
-                        aliasName = Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets[modelId].name;
+                    if (Smithbox.AliasCacheHandler.AliasCache.Assets.ContainsKey(modelId))
+                        aliasName = Smithbox.AliasCacheHandler.AliasCache.Assets[modelId].name;
                 }
 
                 var entityID = part.EntityID;
@@ -276,8 +276,8 @@ namespace StudioCore.Tools
 
                 if (modelId != null)
                 {
-                    if (Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets.ContainsKey(modelId))
-                        aliasName = Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets[modelId].name;
+                    if (Smithbox.AliasCacheHandler.AliasCache.Assets.ContainsKey(modelId))
+                        aliasName = Smithbox.AliasCacheHandler.AliasCache.Assets[modelId].name;
                 }
 
                 var entityID = part.EntityID;
@@ -346,8 +346,8 @@ namespace StudioCore.Tools
 
                 if (modelId != null)
                 {
-                    if (Smithbox.NameCacheHandler.AssetBrowserNameCache.MapPieces.ContainsKey(modelId))
-                        aliasName = Smithbox.NameCacheHandler.AssetBrowserNameCache.MapPieces[modelId].name;
+                    if (Smithbox.AliasCacheHandler.AliasCache.MapPieces.ContainsKey(modelId))
+                        aliasName = Smithbox.AliasCacheHandler.AliasCache.MapPieces[modelId].name;
                 }
 
                 var entityID = part.EntityID;
@@ -441,7 +441,7 @@ namespace StudioCore.Tools
                     mapId_3 = 0;
 
                 var collisionMapId = $"m{mapId_0}_{mapId_1}_{mapId_2}_{mapId_3}";
-                var collisionMapIdAlias = Smithbox.NameCacheHandler.MapNameCache.GetMapName(collisionMapId);
+                var collisionMapIdAlias = AliasUtils.GetMapNameAlias(collisionMapId);
 
                 partLine = $"{entityID},{name},{aliasName},{modelId},{entityGroupID_1},{entityGroupID_2},{entityGroupID_3},{entityGroupID_4},{entityGroupID_5},{entityGroupID_6},{entityGroupID_7},{entityGroupID_8},{collisionName},{collisionMapId},{collisionMapIdAlias}";
 
@@ -466,8 +466,8 @@ namespace StudioCore.Tools
 
                 if(modelId != null)
                 {
-                    if (Smithbox.NameCacheHandler.AssetBrowserNameCache.Characters.ContainsKey(modelId))
-                        aliasName = Smithbox.NameCacheHandler.AssetBrowserNameCache.Characters[modelId].name;
+                    if (Smithbox.AliasCacheHandler.AliasCache.Characters.ContainsKey(modelId))
+                        aliasName = Smithbox.AliasCacheHandler.AliasCache.Characters[modelId].name;
                 }
 
                 var entityID = part.EntityID;
@@ -519,8 +519,8 @@ namespace StudioCore.Tools
 
                 if (modelId != null)
                 {
-                    if (Smithbox.NameCacheHandler.AssetBrowserNameCache.Characters.ContainsKey(modelId))
-                        aliasName = Smithbox.NameCacheHandler.AssetBrowserNameCache.Characters[modelId].name;
+                    if (Smithbox.AliasCacheHandler.AliasCache.Characters.ContainsKey(modelId))
+                        aliasName = Smithbox.AliasCacheHandler.AliasCache.Characters[modelId].name;
                 }
 
                 var entityID = part.EntityID;

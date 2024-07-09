@@ -68,7 +68,7 @@ public static class PropInfo_ParamJumps
 
                     if (e.IsPartAsset() || e.IsPartDummyAsset())
                     {
-                        aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.PartAliases.Aliases.list);
+                        aliasName = AliasUtils.GetAssetAlias(modelName);
                     }
 
                     if (aliasName != "")
@@ -130,7 +130,7 @@ public static class PropInfo_ParamJumps
 
                     if (e.IsPartEnemy() || e.IsPartDummyEnemy())
                     {
-                        aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
+                        aliasName = AliasUtils.GetCharacterAlias(modelName);
                     }
 
                     if (aliasName != "")
@@ -160,22 +160,6 @@ public static class PropInfo_ParamJumps
     {
         string chrId = modelName.Replace("c", "");
         return chrId;
-    }
-
-    public static string GetAliasFromCache(string name, List<AliasReference> referenceList)
-    {
-        if(referenceList == null)
-            return "";
-
-        foreach (var alias in referenceList)
-        {
-            if (name == alias.id)
-            {
-                return alias.name;
-            }
-        }
-
-        return "";
     }
 }
 

@@ -136,7 +136,7 @@ public class AssetBrowserScreen
         if (Smithbox.BankHandler.MapPieceAliases.Aliases == null)
             return;
 
-        if (!Smithbox.NameCacheHandler.AssetBrowserNameCache.UpdateCacheComplete)
+        if (!Smithbox.AliasCacheHandler.AliasCache.UpdateCacheComplete)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
@@ -165,10 +165,10 @@ public class AssetBrowserScreen
             ImguiUtils.WrappedText("Assets:");
             ImGui.Separator();
 
-            DisplayBrowserList(AssetCategoryType.Character, Smithbox.NameCacheHandler.AssetBrowserNameCache.CharacterList, Smithbox.NameCacheHandler.AssetBrowserNameCache.Characters);
-            DisplayBrowserList(AssetCategoryType.Asset, Smithbox.NameCacheHandler.AssetBrowserNameCache.AssetList, Smithbox.NameCacheHandler.AssetBrowserNameCache.Assets);
-            DisplayBrowserList(AssetCategoryType.Part, Smithbox.NameCacheHandler.AssetBrowserNameCache.PartList, Smithbox.NameCacheHandler.AssetBrowserNameCache.Parts);
-            DisplayBrowserList_MapPiece(AssetCategoryType.MapPiece, Smithbox.NameCacheHandler.AssetBrowserNameCache.MapPieces);
+            DisplayBrowserList(AssetCategoryType.Character, Smithbox.AliasCacheHandler.AliasCache.CharacterList, Smithbox.AliasCacheHandler.AliasCache.Characters);
+            DisplayBrowserList(AssetCategoryType.Asset, Smithbox.AliasCacheHandler.AliasCache.AssetList, Smithbox.AliasCacheHandler.AliasCache.Assets);
+            DisplayBrowserList(AssetCategoryType.Part, Smithbox.AliasCacheHandler.AliasCache.PartList, Smithbox.AliasCacheHandler.AliasCache.Parts);
+            DisplayBrowserList_MapPiece(AssetCategoryType.MapPiece, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
         }
 
         ImGui.End();
@@ -239,7 +239,7 @@ public class AssetBrowserScreen
             }
         }
 
-        foreach (var mapId in Smithbox.NameCacheHandler.AssetBrowserNameCache.MapPieceDict.Keys)
+        foreach (var mapId in Smithbox.AliasCacheHandler.AliasCache.MapPieceDict.Keys)
         {
             if (ImGui.Selectable($"MapPieces: {mapId}", _selectedAssetMapId == mapId))
             {
@@ -249,7 +249,7 @@ public class AssetBrowserScreen
 
             if (CFG.Current.AssetBrowser_ShowAliasesInBrowser)
             {
-                var labelName = Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapId);
+                var labelName = AliasUtils.GetMapNameAlias(mapId);
                 AliasUtils.DisplayAlias(labelName);
             }
         }
@@ -336,7 +336,7 @@ public class AssetBrowserScreen
     {
         if (_selectedAssetType == assetType)
         {
-            if (Smithbox.NameCacheHandler.AssetBrowserNameCache.MapPieceDict.ContainsKey(_selectedAssetMapId))
+            if (Smithbox.AliasCacheHandler.AliasCache.MapPieceDict.ContainsKey(_selectedAssetMapId))
             {
                 if (_searchInput != _searchInputCache || _selectedAssetType != _selectedAssetTypeCache || _selectedAssetMapId != _selectedAssetMapIdCache)
                 {
@@ -345,7 +345,7 @@ public class AssetBrowserScreen
                     _selectedAssetMapIdCache = _selectedAssetMapId;
                 }
 
-                foreach (var name in Smithbox.NameCacheHandler.AssetBrowserNameCache.MapPieceDict[_selectedAssetMapId])
+                foreach (var name in Smithbox.AliasCacheHandler.AliasCache.MapPieceDict[_selectedAssetMapId])
                 {
                     var modelName = name.Replace($"{_selectedAssetMapId}_", "m");
 
@@ -514,7 +514,7 @@ public class AssetBrowserScreen
                 break;
         }
 
-        Smithbox.NameCacheHandler.ReloadNameCaches = true;
+        Smithbox.AliasCacheHandler.ReloadAliasCaches = true;
     }
 
     private void RestoreAssetAlias()
@@ -535,7 +535,7 @@ public class AssetBrowserScreen
                 break;
         }
 
-        Smithbox.NameCacheHandler.ReloadNameCaches = true;
+        Smithbox.AliasCacheHandler.ReloadAliasCaches = true;
     }
 
     public void ApplyMapAssetSelection()

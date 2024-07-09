@@ -1,6 +1,7 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Caches;
 
-public class AssetBrowserNameCache
+public class AliasCache
 {
     public List<string> CharacterList = new List<string>();
     public List<string> AssetList = new List<string>();
@@ -24,7 +25,7 @@ public class AssetBrowserNameCache
 
     public bool UpdateCacheComplete = false;
 
-    public AssetBrowserNameCache()
+    public AliasCache()
     {
     }
 
@@ -35,6 +36,12 @@ public class AssetBrowserNameCache
         {
             Smithbox.EditorHandler.TextureViewer.InvalidateCachedName = true;
         }
+
+        AliasUtils.MapNameAliasCache = new Dictionary<string, string>();
+        AliasUtils.CharacterNameAliasCache = new Dictionary<string, string>();
+        AliasUtils.AssetNameAliasCache = new Dictionary<string, string>();
+        AliasUtils.PartNameAliasCache = new Dictionary<string, string>();
+        AliasUtils.MapPieceNameAliasCache = new Dictionary<string, string>();
 
         Characters = new Dictionary<string, AliasReference>();
         Assets = new Dictionary<string, AliasReference>();

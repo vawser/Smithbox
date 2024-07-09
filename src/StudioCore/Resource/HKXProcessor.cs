@@ -8,6 +8,7 @@ using static StudioCore.Resource.HavokCollisionResource;
 
 namespace StudioCore.Resource;
 
+// Credit to Dropoff for his code from HavokCollisionConverter
 public static class HKXProcessor
 {
     public static (CollisionSubmesh, List<Vector3>, List<int>) ProcessColData(

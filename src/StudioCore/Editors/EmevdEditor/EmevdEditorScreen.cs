@@ -96,7 +96,7 @@ public class EmevdEditorScreen : EditorScreen
                 _selectedFileInfo = info;
                 _selectedScript = binder;
             }
-            var aliasName = Smithbox.NameCacheHandler.MapNameCache.GetMapName(info.Name);
+            var aliasName = AliasUtils.GetMapNameAlias(info.Name);
             AliasUtils.DisplayAlias(aliasName);
         }
 

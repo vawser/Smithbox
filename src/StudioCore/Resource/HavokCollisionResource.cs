@@ -865,6 +865,7 @@ public class HavokCollisionResource : IResource, IDisposable
     }
 
     // HKLib
+    // Credit to Dropoff for his code from HavokCollisionConverter as it was used in this section.
     private bool LoadInternal_ER(AccessLevel al)
     {
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)

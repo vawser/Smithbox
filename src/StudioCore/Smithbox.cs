@@ -32,7 +32,7 @@ public class Smithbox
     public static EditorHandler EditorHandler;
     public static WindowHandler WindowHandler;
     public static BankHandler BankHandler;
-    public static NameCacheHandler NameCacheHandler;
+    public static AliasCacheHandler AliasCacheHandler;
     public static ProjectHandler ProjectHandler;
 
     public static ProjectType ProjectType = ProjectType.Undefined;
@@ -126,8 +126,8 @@ public class Smithbox
 
     public static void InitializeNameCaches()
     {
-        NameCacheHandler = new NameCacheHandler();
-        NameCacheHandler.UpdateCaches();
+        AliasCacheHandler = new AliasCacheHandler();
+        AliasCacheHandler.UpdateCaches();
     }
 
 
@@ -646,8 +646,8 @@ public class Smithbox
         if(BankHandler != null)
             BankHandler.OnGui();
 
-        if(NameCacheHandler != null)
-            NameCacheHandler.OnGui();
+        if(AliasCacheHandler != null)
+            AliasCacheHandler.OnGui();
 
         ImGui.PopStyleVar(2);
         UnapplyStyle();

@@ -235,8 +235,8 @@ public class MapSceneTree : IActionEventHandler
             }
 
             var aliasName = "";
-            aliasName = Smithbox.NameCacheHandler.MapNameCache.GetMapName(CurrentMapID);
-            List<string> mapTags = Smithbox.NameCacheHandler.MapNameCache.GetMapTags(CurrentMapID);
+            aliasName = AliasUtils.GetMapNameAlias(CurrentMapID);
+            List<string> mapTags = AliasUtils.GetMapTags(CurrentMapID);
 
             // Map name search filter
             if (_mapObjectListSearchInput == "World Map Selection")

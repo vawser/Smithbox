@@ -68,6 +68,8 @@ Map Editor:
  - Add "Data Export" action for MSB data: output the MSB information as JSON
  - Add "Find Value Instances" for MSB values
  - Fix select via arrow keys in the Map Scene tree (alias seems to stop it working).
+ - Respect model masks on models in Map Editor
+ - Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
  
 Model Editor: 
  - Re-build Model Editor to follow the following structure: load FLVER and present data in with non-reflection method, then create rendering aspects FROM the FLVER data.
@@ -77,6 +79,7 @@ Model Editor:
  - Add floating text for co-ordinate direction (X, Y, Z)
  - Add dummy poly forward/upwards representation
  - FBX Export of Loaded Model
+ - Add easier toggling of model masks based on associated NpcParam (for characters)
 
 Param Editor:
  - Add proper support for ColorEdit section so it appears properly with compare col 
@@ -101,6 +104,7 @@ Texture Viewer:
  - Add ability to edit Shoebox Layouts (subwindow)
  - Add ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
+ - Asset tab is way too laggy currently
  
 World Map:
  - Add the dungeon icons, add icon radius for the non-open world maps

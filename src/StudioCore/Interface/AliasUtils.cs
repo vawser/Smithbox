@@ -54,16 +54,143 @@ public static class AliasUtils
         }
     }
 
-    public static string GetAliasFromCache(string name, List<AliasReference> referenceList)
+    public static Dictionary<string, string> CharacterNameAliasCache = new Dictionary<string, string>();
+    public static Dictionary<string, string> AssetNameAliasCache = new Dictionary<string, string>();
+    public static Dictionary<string, string> PartNameAliasCache = new Dictionary<string, string>();
+    public static Dictionary<string, string> MapPieceNameAliasCache = new Dictionary<string, string>();
+    public static Dictionary<string, string> MapNameAliasCache = new Dictionary<string, string>();
+    public static Dictionary<string, List<string>> MapTagAliasCache = new Dictionary<string, List<string>>();
+
+    public static string GetMapNameAlias(string name)
     {
-        foreach (var alias in referenceList)
+        if (MapNameAliasCache.ContainsKey(name))
         {
-            if (name == alias.id)
+            return MapNameAliasCache[name];
+        }
+        else
+        {
+
+            foreach (var alias in Smithbox.BankHandler.MapAliases.Aliases.list)
             {
-                return alias.name;
+                if (name == alias.id)
+                {
+                    MapNameAliasCache.Add(name, alias.name);
+                    return alias.name;
+                }
+            }
+
+        }
+
+        MapNameAliasCache.Add(name, "");
+        return "";
+    }
+
+    public static List<string> GetMapTags(string name)
+    {
+        if (MapTagAliasCache.ContainsKey(name))
+        {
+            return MapTagAliasCache[name];
+        }
+        else
+        {
+
+            foreach (var alias in Smithbox.BankHandler.MapAliases.Aliases.list)
+            {
+                if (name == alias.id)
+                {
+                    MapTagAliasCache.Add(name, alias.tags);
+                    return alias.tags;
+                }
+            }
+
+        }
+
+        MapTagAliasCache.Add(name, new List<string>());
+        return new List<string>();
+    }
+
+    public static string GetCharacterAlias(string name)
+    {
+        if (CharacterNameAliasCache.ContainsKey(name))
+        {
+            return CharacterNameAliasCache[name];
+        }
+        else
+        {
+            foreach (var alias in Smithbox.BankHandler.CharacterAliases.Aliases.list)
+            {
+                if (name == alias.id)
+                {
+                    CharacterNameAliasCache.Add(name, alias.name);
+                    return alias.name;
+                }
             }
         }
 
+        CharacterNameAliasCache.Add(name, "");
+        return "";
+    }
+    public static string GetAssetAlias(string name)
+    {
+        if (AssetNameAliasCache.ContainsKey(name))
+        {
+            return AssetNameAliasCache[name];
+        }
+        else
+        {
+            foreach (var alias in Smithbox.BankHandler.AssetAliases.Aliases.list)
+            {
+                if (name == alias.id)
+                {
+                    AssetNameAliasCache.Add(name, alias.name);
+                    return alias.name;
+                }
+            }
+        }
+
+        AssetNameAliasCache.Add(name, "");
+        return "";
+    }
+    public static string GetPartAlias(string name)
+    {
+        if (PartNameAliasCache.ContainsKey(name))
+        {
+            return PartNameAliasCache[name];
+        }
+        else
+        {
+            foreach (var alias in Smithbox.BankHandler.PartAliases.Aliases.list)
+            {
+                if (name == alias.id)
+                {
+                    PartNameAliasCache.Add(name, alias.name);
+                    return alias.name;
+                }
+            }
+        }
+
+        PartNameAliasCache.Add(name, "");
+        return "";
+    }
+    public static string GetMapPieceAlias(string name)
+    {
+        if (MapPieceNameAliasCache.ContainsKey(name))
+        {
+            return MapPieceNameAliasCache[name];
+        }
+        else
+        {
+            foreach (var alias in Smithbox.BankHandler.MapPieceAliases.Aliases.list)
+            {
+                if (name == alias.id)
+                {
+                    MapPieceNameAliasCache.Add(name, alias.name);
+                    return alias.name;
+                }
+            }
+        }
+
+        MapPieceNameAliasCache.Add(name, "");
         return "";
     }
 
@@ -201,7 +328,7 @@ public static class AliasUtils
 
                 if(Smithbox.BankHandler.CharacterAliases.Aliases != null)
                 {
-                    aliasName = GetAliasFromCache(usedName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
+                    aliasName = GetCharacterAlias(usedName);
                 }
             }
 
@@ -220,7 +347,7 @@ public static class AliasUtils
 
                 if (Smithbox.BankHandler.AssetAliases.Aliases != null)
                 {
-                    aliasName = GetAliasFromCache(usedName, Smithbox.BankHandler.AssetAliases.Aliases.list);
+                    aliasName = GetAssetAlias(usedName);
                 }
             }
 
@@ -233,16 +360,9 @@ public static class AliasUtils
 
                 if (Smithbox.BankHandler.PartAliases.Aliases != null)
                 {
-                    aliasName = GetAliasFromCache(usedName, Smithbox.BankHandler.PartAliases.Aliases.list);
+                    aliasName = GetPartAlias(usedName);
                 }
             }
-
-            /*
-            if (info.Category == TextureViewCategory.Particle)
-            {
-                aliasName = GetAliasFromCache(usedName, ParticleAliasBank.Bank.AliasNames.GetEntries("Particles"));
-            }
-            */
 
             info.CachedName = aliasName;
         }
@@ -292,7 +412,7 @@ public static class AliasUtils
             {
                 if(Smithbox.BankHandler.CharacterAliases.Aliases.list != null)
                 {
-                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
+                    aliasName = GetCharacterAlias(modelName);
                     aliasName = $"{aliasName}";
                 }
             }
@@ -301,7 +421,7 @@ public static class AliasUtils
             {
                 if (Smithbox.BankHandler.AssetAliases.Aliases.list != null)
                 {
-                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.AssetAliases.Aliases.list);
+                    aliasName = GetAssetAlias(modelName);
                     aliasName = $"{aliasName}";
                 }
             }
@@ -310,7 +430,7 @@ public static class AliasUtils
             {
                 if (Smithbox.BankHandler.MapPieceAliases.Aliases.list != null)
                 {
-                    aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.MapPieceAliases.Aliases.list);
+                    aliasName = GetMapPieceAlias(modelName);
                     aliasName = $"{aliasName}";
                 };
             }

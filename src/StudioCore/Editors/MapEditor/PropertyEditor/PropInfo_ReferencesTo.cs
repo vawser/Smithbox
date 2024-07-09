@@ -69,15 +69,15 @@ public static class PropInfo_ReferencesTo
 
                         if (e.IsPartEnemy() || e.IsPartDummyEnemy())
                         {
-                            aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.CharacterAliases.Aliases.list);
+                            aliasName = AliasUtils.GetCharacterAlias(modelName);
                         }
                         if (e.IsPartAsset() || e.IsPartDummyAsset())
                         {
-                            aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.AssetAliases.Aliases.list);
+                            aliasName = AliasUtils.GetAssetAlias(modelName);
                         }
                         if (e.IsPartMapPiece())
                         {
-                            aliasName = GetAliasFromCache(modelName, Smithbox.BankHandler.MapPieceAliases.Aliases.list);
+                            aliasName = AliasUtils.GetMapPieceAlias(modelName);
                         }
 
                         if (aliasName != "")
@@ -101,7 +101,7 @@ public static class PropInfo_ReferencesTo
                     // but only the RootObject has the TransformNode and Viewport integration.
                     var mapid = r.Name;
                     var prettyName = $"{ForkAwesome.Cube} {mapid}";
-                    prettyName = $"{prettyName} {Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapid)}";
+                    prettyName = $"{prettyName} {AliasUtils.GetMapNameAlias(mapid)}";
 
                     ImGui.SetNextItemWidth(-1);
                     if (ImGui.Button(prettyName + "##MSBRefTo" + refID, new Vector2((width * 94), 20 * scale)))
@@ -140,18 +140,6 @@ public static class PropInfo_ReferencesTo
                 refID++;
             }
         }
-    }
-    public static string GetAliasFromCache(string name, List<AliasReference> referenceList)
-    {
-        foreach (var alias in referenceList)
-        {
-            if (name == alias.id)
-            {
-                return alias.name;
-            }
-        }
-
-        return "";
     }
 }
 

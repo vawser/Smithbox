@@ -271,7 +271,7 @@ public class WorldMapScreen : IResourceEventListener
                 }
                 ImGui.SameLine();
                 ImguiUtils.WrappedText($"{match}");
-                AliasUtils.DisplayAlias(Smithbox.NameCacheHandler.MapNameCache.GetMapName(match));
+                AliasUtils.DisplayAlias(AliasUtils.GetMapNameAlias(match));
             }
         }
 
@@ -286,7 +286,7 @@ public class WorldMapScreen : IResourceEventListener
             foreach (var match in currentHoverMaps)
             {
                 ImguiUtils.WrappedText($"{match}");
-                AliasUtils.DisplayAlias(Smithbox.NameCacheHandler.MapNameCache.GetMapName(match));
+                AliasUtils.DisplayAlias(AliasUtils.GetMapNameAlias(match));
             }
         }
 

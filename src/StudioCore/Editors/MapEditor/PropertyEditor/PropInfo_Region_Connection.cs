@@ -50,7 +50,7 @@ public static class PropInfo_Region_Connection
             ImGui.Separator();
 
             ImGui.Text(mapString);
-            AliasUtils.DisplayAlias(Smithbox.NameCacheHandler.MapNameCache.GetMapName(mapString));
+            AliasUtils.DisplayAlias(AliasUtils.GetMapNameAlias(mapString));
             ImGui.Text("");
         }
     }

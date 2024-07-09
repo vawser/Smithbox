@@ -61,8 +61,8 @@ public static class DataExplorer
         ImGui.Text("Matches:");
         foreach (var entry in _matches)
         {
-            ImGui.Text($"{entry.MapID} - {AliasUtils.GetAliasFromCache(entry.MapID, Smithbox.BankHandler.MapAliases.Aliases.list)}");
-            ImGui.Text($"{entry.Name} - {AliasUtils.GetAliasFromCache(entry.MapID, Smithbox.BankHandler.CharacterAliases.Aliases.list)}");
+            ImGui.Text($"{entry.MapID} - {AliasUtils.GetMapNameAlias(entry.MapID)}");
+            ImGui.Text($"{entry.Name} - {AliasUtils.GetCharacterAlias(entry.Name)}");
         }
         ImGui.EndChild();
 
