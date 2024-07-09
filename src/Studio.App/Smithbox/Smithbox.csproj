@@ -50,7 +50,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\StudioCore\StudioCore.csproj" />
-    <ProjectReference Include="..\..\StudioCore\StudioCore.csproj" />
+    <ProjectReference Include="..\..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
   </ItemGroup>
 
 </Project>
