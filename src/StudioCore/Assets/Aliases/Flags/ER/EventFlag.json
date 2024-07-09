@@ -106,8 +106,8 @@
         { "id": "574", "name": "Weather Group: Fog", "tags": [ "script", "weather" ] },
         { "id": "575", "name": "Weather Group: Other", "tags": [ "script", "weather" ] },
         
-        { "id": "6000", "name": "Always ON", "tags": [ "script" ] },
-        { "id": "6001", "name": "Always OFF", "tags": [ "script" ] },
+        { "id": "6000", "name": "Always OFF", "tags": [ "script" ] },
+        { "id": "6001", "name": "Always ON", "tags": [ "script" ] },
         
         { "id": "9100", "name": "Defeated Godrick the Grafted", "tags": [ "boss", "progression", "vanilla" ] },
         { "id": "9101", "name": "Defeated Margit, the Fell Omen", "tags": [ "boss", "progression", "vanilla" ] },

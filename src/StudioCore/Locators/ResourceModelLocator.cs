@@ -113,6 +113,23 @@ public static class ResourceModelLocator
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/lo";
             }
         }
+        else if (Smithbox.ProjectType == ProjectType.ER)
+        {
+            if (hi)
+            {
+                ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\h{mapid.Substring(1)}.hkxbhd");
+                ret.AssetName = model;
+                ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/h{model.Substring(1)}.hkx.dcx";
+                ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/hi";
+            }
+            else
+            {
+                ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid.Substring(0,3)}\{mapid}\l{mapid.Substring(1)}.hkxbhd");
+                ret.AssetName = model;
+                ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx.dcx";
+                ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/lo";
+            }
+        }
         else
         {
             return GetNullAsset();
@@ -120,6 +137,7 @@ public static class ResourceModelLocator
 
         return ret;
     }
+
     public static ResourceDescriptor GetMapNVMModel(string mapid, string model)
     {
         ResourceDescriptor ret = new();

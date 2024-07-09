@@ -98,6 +98,7 @@ public class DebugWindow
         DisplayTool_FLVERDump();
         DisplayTool_RowNameHelper();
         DisplayTool_DecryptRegulation();
+        DisplayTool_HavokTool();
 
         ImGui.PopItemWidth();
         ImGui.PopStyleColor();
@@ -258,6 +259,23 @@ public class DebugWindow
             if (ImGui.Button("Decrypt"))
             {
                 DebugActions.DecryptRegulation();
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplayTool_HavokTool()
+    {
+        if (ImGui.BeginTabItem("Havok Tool"))
+        {
+            if (ImGui.Button("Test Collision Load"))
+            {
+                HavokTool.TestLoad();
+            }
+            if (ImGui.Button("Test Collision Resource"))
+            {
+                HavokTool.TestResource();
             }
 
             ImGui.EndTabItem();

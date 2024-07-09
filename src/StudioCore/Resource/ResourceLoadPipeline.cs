@@ -58,7 +58,7 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             var res = new T();
 
             // PIPELINE: Load the byte resource (as the <T> type)
-            var success = res._Load(r.Data, r.AccessLevel);
+            var success = res._Load(r.Data, r.AccessLevel, r.VirtualPath);
 
             // PIPELINE: If resource is loaded successful, add reply to Loaded Resource block
             if (success)
@@ -77,7 +77,7 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
                 var res = new T();
 
                 // PIPELINE: Load the byte resource (as the <T> type)
-                var success = res._Load(r.File, r.AccessLevel);
+                var success = res._Load(r.File, r.AccessLevel, r.VirtualPath);
 
                 // PIPELINE: If resource is loaded successful, add reply to Loaded Resource block
                 if (success)

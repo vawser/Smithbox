@@ -66,7 +66,6 @@ Map Editor:
  - Add 'flat' editor view: similar to Param Editor, where you can edit the MSB stuff without the viewport overhead.
  - Add enum support for the DS3 corpse poses
  - Add "Data Export" action for MSB data: output the MSB information as JSON
- - Implement ER collision (using HKLib)
  - Add "Find Value Instances" for MSB values
  - Fix select via arrow keys in the Map Scene tree (alias seems to stop it working).
  
@@ -118,41 +117,3 @@ Known Bugs:
 #--------------------------------------
 # Notes
 #--------------------------------------
-Try to implement ER collisions: requires HKLib usage
-
-c4602
-
-Add support for other project types to the "View in Map" and "View Model" buttons
-
-7 - Limgrave (Stranded Graveyard)
-10 - Limgrave
-12 - Weeping Peninsula
-14 - Stormveil Castle
-20 - Liurnia (Gate Town)
-30 - Altus Plateau (Altus Highway)
-32 - Mt. Gelmir
-41 - Caelid (Redmane Castle)
-51 - Mountaintops of the Giants
-56 - Miquella's Haligtree
-
-80 - 7000 - Gravesite Plain
-81 - 7020 - Ellac River
-82 - 7030 - Castle Ensis
-83 - 7030 - Cerulean Coast
-84 - 7050 - Charo's Hidden Grave
-85 - 7110 - Jagged Peak
-86 - 7100 - Abyssal Woods
-87 - 7060 - Stone Coffin Fissure
-88 - 7010 - Belurat, Tower Settlement
-89 - 7110 - Enir-Ilim
-90 - 7040 - Scadu Altus
-91 - 7080 - Recluses' River
-92 - 7090 - Scaduview
-93 - 7100 - Hinterland
-94 - 7090 - Ancient Ruins of Rauh
-95 - 7050 - Rauh Base
-96 - 7070 - Scadutree Base
-97 - 7110 - Finger Birthing Grounds
-98 - 7060 - Shadow Keep
-99 - 7080 - Specimen Storehouse
-

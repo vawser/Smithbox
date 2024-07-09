@@ -25,13 +25,13 @@ public class NVMNavmeshResource : IResource, IDisposable
 
     public BoundingBox Bounds { get; set; }
 
-    public bool _Load(Memory<byte> bytes, AccessLevel al)
+    public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
         Nvm = NVM.Read(bytes);
         return LoadInternal(al);
     }
 
-    public bool _Load(string file, AccessLevel al)
+    public bool _Load(string file, AccessLevel al, string virtPath)
     {
         Nvm = NVM.Read(file);
         return LoadInternal(al);

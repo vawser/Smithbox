@@ -20,6 +20,11 @@ using StudioCore.Editors;
 using StudioCore.Editor;
 using StudioCore.Locators;
 using StudioCore.Core;
+using HKLib.Serialization.hk2018.Binary;
+using Google.Protobuf.Reflection;
+using Silk.NET.SDL;
+using Silk.NET.OpenGL;
+using StudioCore.Havok;
 
 namespace StudioCore.MsbEditor;
 
@@ -370,6 +375,7 @@ public class Universe
             loadcol = true;
             asset = ResourceModelLocator.GetMapCollisionModel(amapid,
                 ResourceModelLocator.MapModelNameToAssetName(amapid, modelname), false);
+
             filt = RenderFilter.Collision;
         }
         else if (modelname.ToLower().StartsWith("n"))
@@ -394,6 +400,7 @@ public class Universe
             mesh.SetSelectable(obj);
             mesh.DrawFilter = RenderFilter.Collision;
             obj.RenderSceneMesh = mesh;
+
             if (load && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath,
                     AccessLevel.AccessGPUOptimizedOnly))
             {
@@ -690,6 +697,8 @@ public class Universe
         {
             return false;
         }
+
+        HavokUtils.OnLoadMap(mapid);
 
         LoadMapAsync(mapid, selectOnLoad);
 
@@ -1676,6 +1685,10 @@ public class Universe
 
     public void UnloadContainer(ObjectContainer container, bool clearFromList = false)
     {
+        TaskLogs.AddLog(container.Name);
+
+        HavokUtils.OnUnloadMap(container.Name);
+
         if (LoadedObjectContainers.ContainsKey(container.Name))
         {
             foreach (Entity obj in container.Objects)

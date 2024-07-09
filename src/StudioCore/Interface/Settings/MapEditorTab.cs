@@ -33,6 +33,9 @@ public class MapEditorTab
                     {
                         ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Viewport_Enable_ER_Auto_Map_Offset);
                         ImguiUtils.ShowHoverTooltip("");
+
+                        ImGui.Checkbox("Enable Elden Ring collisions", ref CFG.Current.MapEditor_LoadCollisions_ER);
+                        ImguiUtils.ShowHoverTooltip("Enables the viewing of Elden Ring collisions. Note this will add delay to map loading if enabled.");
                     }
                 }
             }

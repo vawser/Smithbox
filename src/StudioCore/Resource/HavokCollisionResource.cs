@@ -7,12 +7,11 @@ using System.Linq;
 using System.Numerics;
 using Veldrid.Utilities;
 using Vortice.Vulkan;
-using HKLib;
-using HKLib.Serialization;
 using System.IO;
 using HKLib.Serialization.hk2018.Binary;
-using HKLib.Serialization.hk2018.Xml;
 using StudioCore.Core;
+using HKLib.Reflection.hk2018;
+using StudioCore.Havok;
 
 namespace StudioCore.Resource;
 
@@ -21,16 +20,30 @@ public class HavokCollisionResource : IResource, IDisposable
     public CollisionSubmesh[] GPUMeshes;
     public HKX Hkx;
     public hkRootLevelContainer Hkx2;
+    public HKLib.hk2018.hkRootLevelContainer ER_HKX;
 
     public BoundingBox Bounds { get; set; }
 
     public VkFrontFace FrontFace { get; private set; }
 
-    public bool _Load(Memory<byte> bytes, AccessLevel al)
+    public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
         // HKLib - ER
         if (Smithbox.ProjectType == ProjectType.ER)
         {
+            var pathElements = virtPath.Split('/');
+            var filename = pathElements[4];
+
+            // HKX for ER is loaded directly in HavokUtils
+            // This is required since the parallel nature of the Resource Manager doesn't work with the HavokBinarySerializer
+            if (HavokUtils.HavokContainers.ContainsKey(filename))
+            {
+                ER_HKX = HavokUtils.HavokContainers[filename];
+            }
+            else
+            {
+                return false;
+            }
         }
         // HKX2 - DS3
         else if (Smithbox.ProjectType == ProjectType.DS3)
@@ -52,7 +65,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx = HKX.Read(bytes);
         }
 
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2 || Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.BB)
+        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER)
         {
             FrontFace = VkFrontFace.Clockwise;
         }
@@ -75,12 +88,24 @@ public class HavokCollisionResource : IResource, IDisposable
         return LoadInternal_HKX(al);
     }
 
-    public bool _Load(string file, AccessLevel al)
+    public bool _Load(string file, AccessLevel al, string virtPath)
     {
         // HKLib - ER
         if (Smithbox.ProjectType == ProjectType.ER)
         {
-            
+            var pathElements = virtPath.Split('/');
+            var filename = pathElements[4];
+
+            // HKX for ER is loaded directly in HavokUtils
+            // This is required since the parallel nature of the Resource Manager doesn't work with the HavokBinarySerializer
+            if (HavokUtils.HavokContainers.ContainsKey(filename))
+            {
+                ER_HKX = HavokUtils.HavokContainers[filename];
+            }
+            else
+            {
+                return false;
+            }
         }
         // HKX2 - DS3
         else if (Smithbox.ProjectType == ProjectType.DS3)
@@ -102,7 +127,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx = HKX.Read(file);
         }
 
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2 || Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.BB)
+        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER)
         {
             FrontFace = VkFrontFace.Clockwise;
         }
@@ -620,6 +645,81 @@ public class HavokCollisionResource : IResource, IDisposable
         }
     }
 
+    // HKX 2018
+    private unsafe void RenderHKX2018(CollisionSubmesh dest, List<Vector3> verts, List<int> indices)
+    {
+        dest.PickingIndices = indices.ToArray();
+        dest.PickingVertices = verts.ToArray();
+
+        dest.VertexCount = indices.Count;
+        dest.IndexCount = indices.Count;
+        var buffersize = (uint)dest.IndexCount * 4u;
+        var vbuffersize = (uint)dest.VertexCount * CollisionLayout.SizeInBytes;
+        dest.GeomBuffer =
+            Renderer.GeometryBufferAllocator.Allocate(vbuffersize, buffersize, (int)CollisionLayout.SizeInBytes, 4);
+        var MeshIndices = new Span<int>(dest.GeomBuffer.MapIBuffer().ToPointer(), dest.IndexCount);
+        var MeshVertices =
+            new Span<CollisionLayout>(dest.GeomBuffer.MapVBuffer().ToPointer(), dest.VertexCount);
+
+        for (var i = 0; i < indices.Count; i += 3)
+        {
+            Vector3 vert1 = verts[indices[i]];
+            Vector3 vert2 = verts[indices[i + 1]];
+            Vector3 vert3 = verts[indices[i + 2]];
+
+            MeshVertices[i] = new CollisionLayout();
+            MeshVertices[i + 1] = new CollisionLayout();
+            MeshVertices[i + 2] = new CollisionLayout();
+
+            MeshVertices[i].Position = vert1;
+            MeshVertices[i + 1].Position = vert2;
+            MeshVertices[i + 2].Position = vert3;
+            Vector3 n = Vector3.Normalize(Vector3.Cross(MeshVertices[i + 2].Position - MeshVertices[i].Position,
+                MeshVertices[i + 1].Position - MeshVertices[i].Position));
+            MeshVertices[i].Normal[0] = (sbyte)(n.X * 127.0f);
+            MeshVertices[i].Normal[1] = (sbyte)(n.Y * 127.0f);
+            MeshVertices[i].Normal[2] = (sbyte)(n.Z * 127.0f);
+            MeshVertices[i + 1].Normal[0] = (sbyte)(n.X * 127.0f);
+            MeshVertices[i + 1].Normal[1] = (sbyte)(n.Y * 127.0f);
+            MeshVertices[i + 1].Normal[2] = (sbyte)(n.Z * 127.0f);
+            MeshVertices[i + 2].Normal[0] = (sbyte)(n.X * 127.0f);
+            MeshVertices[i + 2].Normal[1] = (sbyte)(n.Y * 127.0f);
+            MeshVertices[i + 2].Normal[2] = (sbyte)(n.Z * 127.0f);
+
+            MeshVertices[i].Color[0] = 53;
+            MeshVertices[i].Color[1] = 157;
+            MeshVertices[i].Color[2] = 255;
+            MeshVertices[i].Color[3] = 255;
+            MeshVertices[i + 1].Color[0] = 53;
+            MeshVertices[i + 1].Color[1] = 157;
+            MeshVertices[i + 1].Color[2] = 255;
+            MeshVertices[i + 1].Color[3] = 255;
+            MeshVertices[i + 2].Color[0] = 53;
+            MeshVertices[i + 2].Color[1] = 157;
+            MeshVertices[i + 2].Color[2] = 255;
+            MeshVertices[i + 2].Color[3] = 255;
+            MeshVertices[i].Barycentric[0] = 0;
+            MeshVertices[i].Barycentric[1] = 0;
+            MeshVertices[i + 1].Barycentric[0] = 1;
+            MeshVertices[i + 1].Barycentric[1] = 0;
+            MeshVertices[i + 2].Barycentric[0] = 0;
+            MeshVertices[i + 2].Barycentric[1] = 1;
+
+            MeshIndices[i] = i;
+            MeshIndices[i + 1] = i + 1;
+            MeshIndices[i + 2] = i + 2;
+        }
+
+        dest.GeomBuffer.UnmapIBuffer();
+        dest.GeomBuffer.UnmapVBuffer();
+
+        fixed (void* ptr = dest.PickingVertices)
+        {
+            dest.Bounds = BoundingBox.CreateFromPoints((Vector3*)ptr, dest.PickingVertices.Count(), 12,
+                Quaternion.Identity, Vector3.Zero, Vector3.One);
+        }
+    }
+
     private bool LoadInternal_HKX(AccessLevel al)
     {
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
@@ -762,7 +862,73 @@ public class HavokCollisionResource : IResource, IDisposable
     // HKLib
     private bool LoadInternal_ER(AccessLevel al)
     {
-        return false;
+        if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
+        {
+            Bounds = new BoundingBox();
+            var submeshes = new List<CollisionSubmesh>();
+            var first = true;
+
+            if (ER_HKX.m_namedVariants.Count == 0)
+            {
+                // Yes this happens for some cols wtf From???
+                return false;
+            }
+
+            var physicsscene = (HKLib.hk2018.hknpPhysicsSceneData)ER_HKX.m_namedVariants[0].m_variant;
+
+            foreach (HKLib.hk2018.hknpBodyCinfo bodyInfo in physicsscene.m_systemDatas[0].m_bodyCinfos)
+            {
+                if (bodyInfo.m_shape is not HKLib.hk2018.fsnpCustomParamCompressedMeshShape ncol)
+                {
+                    continue;
+                }
+
+                try
+                {
+                    var mesh = new CollisionSubmesh();
+                    var indices = new List<int>();
+                    var vertices = new List<Vector3>();
+
+                    if (bodyInfo.m_shape is HKLib.hk2018.fsnpCustomParamCompressedMeshShape shape2)
+                    {
+                        (mesh, vertices, indices) = HKXProcessor.ProcessColData(
+                            (HKLib.hk2018.hknpCompressedMeshShapeData)shape2.m_data, bodyInfo, mesh);
+                        RenderHKX2018(mesh, vertices, indices);
+                    }
+                    else if (bodyInfo.m_shape is HKLib.hk2018.hknpCompressedMeshShape shape1)
+                    {
+                        (mesh, vertices, indices) = HKXProcessor.ProcessColData(
+                            (HKLib.hk2018.hknpCompressedMeshShapeData)shape1.m_data, bodyInfo, mesh);
+                        RenderHKX2018(mesh, vertices, indices);
+                    }
+
+                    if (first)
+                    {
+                        Bounds = mesh.Bounds;
+                        first = false;
+                    }
+                    else
+                    {
+                        Bounds = BoundingBox.Combine(Bounds, mesh.Bounds);
+                    }
+
+                    submeshes.Add(mesh);
+                }
+                catch (Exception e)
+                {
+                    // Debug failing cases later
+                }
+            }
+
+            GPUMeshes = submeshes.ToArray();
+        }
+
+        if (al == AccessLevel.AccessGPUOptimizedOnly)
+        {
+            ER_HKX = null;
+        }
+
+        return true;
     }
 
     public bool RayCast(Ray ray, Matrix4x4 transform, Utils.RayCastCull cull, out float dist)

@@ -173,6 +173,19 @@ public static class ResourcePathLocator
                         return ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
                     }
 
+                    if (Smithbox.ProjectType == ProjectType.ER)
+                    {
+                        bndpath = "";
+                        if (hittype == "lo")
+                        {
+                            return ResourceLocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\l{mapid.Substring(1)}.hkxbhd");
+                        }
+                        else if (hittype == "hi")
+                        {
+                            return ResourceLocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\h{mapid.Substring(1)}.hkxbhd");
+                        }
+                    }
+
                     bndpath = "";
                     return null;
                 }

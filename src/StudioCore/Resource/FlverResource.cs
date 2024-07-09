@@ -76,7 +76,7 @@ public class FlverResource : IResource, IDisposable
 
     public GPUBufferAllocator.GPUBufferHandle StaticBoneBuffer { get; private set; }
 
-    public bool _Load(Memory<byte> bytes, AccessLevel al)
+    public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
         bool ret;
         if (Smithbox.ProjectType is ProjectType.DES)
@@ -106,7 +106,7 @@ public class FlverResource : IResource, IDisposable
         return ret;
     }
 
-    public bool _Load(string path, AccessLevel al)
+    public bool _Load(string path, AccessLevel al, string virtPath)
     {
         bool ret;
         if (Smithbox.ProjectType is ProjectType.DES)

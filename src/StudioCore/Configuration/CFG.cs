@@ -354,6 +354,8 @@ public class CFG
     //****************************
     // Settings: Map Editor
     //****************************
+    public bool MapEditor_LoadCollisions_ER = true;
+
     public bool MapEditor_ShowMapGroups = true;
     public bool MapEditor_ShowWorldMapButtons = true;
     public bool MapEditor_MapObjectList_ShowMapNames = true;
