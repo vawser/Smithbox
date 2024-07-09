@@ -1,4 +1,5 @@
-﻿using HKLib.Serialization.hk2018.Binary;
+﻿using HKLib.hk2018;
+using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
 using StudioCore.Core;
 using System;
@@ -19,7 +20,7 @@ public enum HavokCollisionType
 
 public static class HavokUtils
 {
-    public static Dictionary<string, HKLib.hk2018.hkRootLevelContainer> HavokContainers = new Dictionary<string, HKLib.hk2018.hkRootLevelContainer>();
+    public static Dictionary<string, hkRootLevelContainer> HavokContainers = new Dictionary<string, hkRootLevelContainer>();
 
     public static HavokCollisionType VisibleCollisionType = HavokCollisionType.Low;
 
@@ -116,7 +117,7 @@ public static class HavokUtils
                         }
                         using (MemoryStream memoryStream = new MemoryStream(FileBytes))
                         {
-                            var fileHkx = (HKLib.hk2018.hkRootLevelContainer)serializer.Read(memoryStream);
+                            var fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
 
                             if (!HavokContainers.ContainsKey(name))
                             {

@@ -21,6 +21,9 @@
         <TrimmerRootAssembly Include="StudioCore" />
         <TrimmerRootAssembly Include="HKX2" />
         <TrimmerRootAssembly Include="Octokit" />
+        <TrimmerRootAssembly Include="HKLib" />
+        <TrimmerRootAssembly Include="HKLib.Reflection" />
+        <TrimmerRootAssembly Include="HKLib.Serialization" />
     </ItemGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
