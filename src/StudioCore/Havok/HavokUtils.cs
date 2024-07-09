@@ -10,9 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Havok;
+
+public enum HavokCollisionType
+{
+    Low,
+    High
+}
+
 public static class HavokUtils
 {
     public static Dictionary<string, HKLib.hk2018.hkRootLevelContainer> HavokContainers = new Dictionary<string, HKLib.hk2018.hkRootLevelContainer>();
+
+    public static HavokCollisionType VisibleCollisionType = HavokCollisionType.Low;
 
     public static void OnLoadMap(string mapId)
     {

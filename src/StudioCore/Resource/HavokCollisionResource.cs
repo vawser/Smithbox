@@ -34,6 +34,11 @@ public class HavokCollisionResource : IResource, IDisposable
             var pathElements = virtPath.Split('/');
             var filename = pathElements[4];
 
+            if(HavokUtils.VisibleCollisionType == HavokCollisionType.High)
+            {
+                filename = $"h{filename.Substring(1)}";
+            }
+
             // HKX for ER is loaded directly in HavokUtils
             // This is required since the parallel nature of the Resource Manager doesn't work with the HavokBinarySerializer
             if (HavokUtils.HavokContainers.ContainsKey(filename))

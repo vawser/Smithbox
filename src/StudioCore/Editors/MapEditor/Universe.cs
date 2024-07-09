@@ -463,8 +463,6 @@ public class Universe
                 if (asset.AssetName == "c0000")
                 {
                     asset = ResourceModelLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
-                    TaskLogs.AddLog($"{asset.AssetName}");
-                    TaskLogs.AddLog($"{asset.AssetVirtualPath}");
                 }
             }
 
@@ -1685,8 +1683,6 @@ public class Universe
 
     public void UnloadContainer(ObjectContainer container, bool clearFromList = false)
     {
-        TaskLogs.AddLog(container.Name);
-
         HavokUtils.OnUnloadMap(container.Name);
 
         if (LoadedObjectContainers.ContainsKey(container.Name))
