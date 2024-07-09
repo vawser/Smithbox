@@ -42,7 +42,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx2 = (HKX2.hkRootLevelContainer)des.Deserialize(br);
         }
         // HKX - BB
-        if (Smithbox.ProjectType == ProjectType.BB)
+        else if (Smithbox.ProjectType == ProjectType.BB)
         {
             Hkx = HKX.Read(bytes, HKX.HKXVariation.HKXBloodBorne);
         }
