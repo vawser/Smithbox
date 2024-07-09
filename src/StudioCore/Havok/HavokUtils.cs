@@ -48,19 +48,34 @@ public static class HavokUtils
 
     private static void LoadHavokContainers(string mapId, string type)
     {
+        // Mark as invalid by default
+        bool isValid = false;
         byte[] CompendiumBytes = null;
 
         var bdtPath = $"{Smithbox.GameRoot}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbdt";
         var bhdPath = $"{Smithbox.GameRoot}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbhd";
 
-        // If project version exists, load that instead
+        // If game root version exists, mark as valid
+        if (File.Exists(bdtPath) && File.Exists(bhdPath))
+        {
+            isValid = true;
+        }
+
+        // If project version exists, point path to that instead, and mark as valid
         var projectBdtPath = $"{Smithbox.ProjectRoot}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbdt";
         var projectBhdPath = $"{Smithbox.ProjectRoot}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbhd";
 
-        if(File.Exists(projectBdtPath) &&  File.Exists(projectBhdPath))
+        if (File.Exists(projectBdtPath) &&  File.Exists(projectBhdPath))
         {
             bdtPath = projectBdtPath;
             bhdPath = projectBhdPath;
+            isValid = true; // Load project if they are custom hkxbhd/hkxbdt
+        }
+
+        // If not marked as valid, return early to avoid bad read
+        if(!isValid)
+        {
+            return;
         }
 
         BXF4Reader reader = new BXF4Reader(bhdPath, bdtPath);
