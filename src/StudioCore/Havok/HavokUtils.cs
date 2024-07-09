@@ -44,6 +44,16 @@ public static class HavokUtils
         var bdtPath = $"{Smithbox.GameRoot}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbdt";
         var bhdPath = $"{Smithbox.GameRoot}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbhd";
 
+        // If project version exists, load that instead
+        var projectBdtPath = $"{Smithbox.ProjectRoot}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbdt";
+        var projectBhdPath = $"{Smithbox.ProjectRoot}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbhd";
+
+        if(File.Exists(projectBdtPath) &&  File.Exists(projectBhdPath))
+        {
+            bdtPath = projectBdtPath;
+            bhdPath = projectBhdPath;
+        }
+
         BXF4Reader reader = new BXF4Reader(bhdPath, bdtPath);
 
         // Get compendium
@@ -97,6 +107,6 @@ public static class HavokUtils
 
     private static void UnloadHavokContainers(string mapId, string type)
     {
-
+        // TODO: remove the map entries in HavokContainers so we don't waste memory
     }
 }
