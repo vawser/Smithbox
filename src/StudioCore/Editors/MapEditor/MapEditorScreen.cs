@@ -29,6 +29,7 @@ using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Havok;
+using StudioCore.Editors.MapEditor.CollisionPropertyEditor;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -584,6 +585,23 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                     }
                 }
             }
+            if (Smithbox.BankHandler.CollisionBank.UsesCollisionBank())
+            {
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
+                if (ImGui.MenuItem("Collision Property Editor"))
+                {
+                    if (CollisionPropertyEditor == null)
+                    {
+                        CollisionPropertyEditor = new CollisionPropertyEditorScreen();
+                        CollisionPropertyEditor.ToggleDisplay();
+                    }
+                    else
+                    {
+                        CollisionPropertyEditor.ToggleDisplay();
+                    }
+                }
+            }
+            
             */
 
             ImGui.EndMenu();
@@ -591,6 +609,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     }
 
     private LightmapAtlasScreen LightmapAtlasEditor;
+    private CollisionPropertyEditorScreen CollisionPropertyEditor;
 
     public void OnGUI(string[] initcmd)
     {
@@ -1020,6 +1039,11 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         if(LightmapAtlasEditor != null)
         {
             LightmapAtlasEditor.OnGui();
+        }
+
+        if (CollisionPropertyEditor != null)
+        {
+            CollisionPropertyEditor.OnGui();
         }
 
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);

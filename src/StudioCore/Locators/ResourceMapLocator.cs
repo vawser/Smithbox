@@ -399,4 +399,62 @@ public static class ResourceMapLocator
 
         return resourceDescriptors;
     }
+
+    /// <summary>
+    /// Get a HKX Collision asset.
+    /// </summary>
+    public static List<ResourceDescriptor> GetMapCollisions(string mapid)
+    {
+        List<ResourceDescriptor> resourceDescriptors = new();
+
+        var rootDirectory = $"{Smithbox.GameRoot}\\map\\{mapid.Substring(0, 3)}\\{mapid}";
+        var projectDirectory = $"{Smithbox.ProjectRoot}\\map\\{mapid.Substring(0, 3)}\\{mapid}";
+
+        // Get the names
+        var names = new List<string>();
+
+        if (Directory.Exists(rootDirectory))
+        {
+            foreach (var file in Directory.GetFiles(rootDirectory))
+            {
+                var path = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(file));
+
+                if (file.Contains(".hkxbhd"))
+                    names.Add(path.Replace(".hkxbhd", ""));
+            }
+        }
+
+        if (Directory.Exists(projectDirectory))
+        {
+            foreach (var file in Directory.GetFiles(projectDirectory))
+            {
+                var path = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(file));
+                if (file.Contains(".hkxbhd"))
+                {
+                    if (!names.Contains(path))
+                        names.Add(path.Replace(".hkxbhd", ""));
+                }
+            }
+        }
+
+        var paths = new List<string>();
+
+        // Get the resource descriptors
+        foreach (var name in names)
+        {
+            var path = ResourceLocatorUtils.GetAssetPath($"\\map\\{mapid}\\{name}.hkxbhd");
+            paths.Add(path);
+        }
+
+        foreach (var path in paths)
+        {
+            ResourceDescriptor resource = new ResourceDescriptor();
+
+            resource.AssetPath = path;
+
+            resourceDescriptors.Add(resource);
+        }
+
+        return resourceDescriptors;
+    }
 }
