@@ -78,6 +78,11 @@ public class Smithbox
 
         ImguiUtils.RestoreImguiIfMissing();
 
+        UIScaleChanged += (_, _) =>
+        {
+            FontRebuildRequest = true;
+        };
+
         // Hack to make sure dialogs work before the main window is created
         PlatformUtils.InitializeWindows(null);
         CFG.AttemptLoadOrDefault();
@@ -106,7 +111,6 @@ public class Smithbox
         _soapstoneService = new SoapstoneService(_version);
 
         ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
-        SetupFonts();
         _context.ImguiRenderer.OnSetupDone();
 
         ImGuiStylePtr style = ImGui.GetStyle();
@@ -679,10 +683,9 @@ public class Smithbox
         {
             if (Math.Abs(_dpi - value) < 0.0001f) return; // Skip doing anything if no difference
 
-            if (Math.Abs(value - _dpi) > 0.9f)
-                FontRebuildRequest = true;
             _dpi = value;
-            UIScaleChanged?.Invoke(null, EventArgs.Empty);
+            if (Math.Abs(value - _dpi) > 0.9f && CFG.Current.System_ScaleByDPI)
+                UIScaleChanged?.Invoke(null, EventArgs.Empty);
         }
     }
 
