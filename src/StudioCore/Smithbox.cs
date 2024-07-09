@@ -684,7 +684,7 @@ public class Smithbox
             if (Math.Abs(_dpi - value) < 0.0001f) return; // Skip doing anything if no difference
 
             _dpi = value;
-            if (Math.Abs(value - _dpi) > 0.9f && CFG.Current.System_ScaleByDPI)
+            if (CFG.Current.System_ScaleByDPI)
                 UIScaleChanged?.Invoke(null, EventArgs.Empty);
         }
     }
