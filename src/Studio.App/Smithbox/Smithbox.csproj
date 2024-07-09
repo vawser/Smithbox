@@ -47,7 +47,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\StudioCore\StudioCore.csproj" />
-    <ProjectReference Include="..\..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
+    <ProjectReference Include="..\..\StudioCore\StudioCore.csproj" />
+    <ProjectReference Include="..\..\HKLib\HKLib.csproj" />
+    <ProjectReference Include="..\..\HKLib.Reflection\HKLib.Reflection.csproj" />
+    <ProjectReference Include="..\..\HKLib.Serialization\HKLib.Serialization.csproj" />
   </ItemGroup>
 
 </Project>
