@@ -57,7 +57,7 @@ public class InterfaceTab
                 }
                 ImguiUtils.ShowHoverTooltip("Multiplies the user interface scale by your monitor's DPI setting.");
 
-                ImGui.SliderFloat("Font Size", ref CFG.Current.Interface_FontSize, 8.0f, 32.0f);
+                ImGui.SliderFloat("Font size", ref CFG.Current.Interface_FontSize, 8.0f, 32.0f);
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
                     CFG.Current.Interface_FontSize = (float)Math.Round(CFG.Current.Interface_FontSize);
