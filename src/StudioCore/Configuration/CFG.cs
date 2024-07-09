@@ -910,7 +910,7 @@ public class CFG
 
         Current.LastProjectFile = proj.ProjectFile;
 
-        CFG.Save();
+        Save();
     }
 
     /// <summary>
