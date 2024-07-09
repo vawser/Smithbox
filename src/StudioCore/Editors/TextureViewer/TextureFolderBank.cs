@@ -245,6 +245,14 @@ public static class TextureFolderBank
 
             FindTextureFolder(folderDir, fileExt, category);
         }
+
+        if(Smithbox.ProjectType is ProjectType.ER)
+        {
+            folderDir = @"\parts";
+            fileExt = @".tpf.dcx";
+
+            FindTextureFolder(folderDir, fileExt, category);
+        }
     }
 
     private static void ScanParticleFolder(TextureViewCategory category)

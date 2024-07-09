@@ -353,8 +353,13 @@ public static class ResourcePathLocator
                         i++;
                         if (pathElements[i].Equals("low"))
                         {
-                            ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}_l.partsbnd.dcx");
+                            return ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}_l.partsbnd.dcx");
                         }
+                    }
+
+                    if(partsId == "common_body")
+                    {
+                        return ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.tpf.dcx");
                     }
                 }
 

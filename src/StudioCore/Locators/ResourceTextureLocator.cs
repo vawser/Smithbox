@@ -417,6 +417,18 @@ public static class ResourceTextureLocator
                     ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex/low";
                 }
             }
+
+            if (partsId == "common_body")
+            {
+                path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.tpf.dcx");
+
+                if (path != null)
+                {
+                    ad.AssetPath = path;
+                    ad.AssetVirtualPath = $@"parts/{partsId}/tex";
+                    ad.AssetArchiveVirtualPath = null;
+                }
+            }
         }
         else if (Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.SDT)
         {
