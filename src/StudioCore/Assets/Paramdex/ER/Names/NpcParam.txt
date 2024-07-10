@@ -5295,7 +5295,7 @@
 55702090 Marionette Soldier
 55800000 Jagged Peak Drake
 55800084 Jagged Peak Drake (Solo Boss)
-55800085 Jagged Peak Drake
+55800085 Jagged Peak Drake (Duo Mob)
 55800985 Jagged Peak Drake (Duo Boss)
 55801000 Jagged Peak Drake
 55808000 Jagged Peak Drake
@@ -5842,7 +5842,7 @@
 59600088 Ulcerated Tree Spirit (Belurat, Tower Settlement)
 59600098 Ulcerated Tree Spirit (Church District)
 59600100 Ulcerated Tree Spirit
-59600198 Ulcerated Tree Spirit (Church District)
+59600198 Ulcerated Tree Spirit
 59700000 Abductor Virgin
 59700083 Abductor Virgin
 59700090 Abductor Virgin
@@ -6500,7 +6500,7 @@
 523070320 Preceptor Seluvis
 523080000 
 523090000 Patches
-523090010 Patches
+523090010 Patches (Boss)
 523090020 Patches
 523090030 Patches
 523090032 Patches
@@ -6704,7 +6704,7 @@
 523550040 Okina
 523550050 Bloody Finger Okina
 523560000 Adan, Thief of Fire
-523560020 Adan, Thief of Fire
+523560020 Adan, Thief of Fire (Boss)
 523570000 
 523580000 
 523590000 Moongrum, Carian Knight

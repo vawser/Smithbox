@@ -1083,10 +1083,10 @@
 20850 Volcanic Stone
 20852 Formic Rock
 20855 Gravel Stone
-50200 
-50201 
-50202 
-50203 
+50200 NPC Flask of Crimson Tears (Empty)
+50201 NPC Flask of Crimson Tears
+50202 NPC Flask of Crimson Tears (Empty)
+50203 NPC Flask of Crimson Tears
 51760 
 53090 
 53230 
