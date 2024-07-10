@@ -341,7 +341,7 @@ public class Universe
     /// </summary>
     /// <param name="modelname"></param>
     /// <returns></returns>
-    public RenderableProxy GetModelDrawable(MapContainer map, Entity obj, string modelname, bool load)
+    public RenderableProxy GetModelDrawable(MapContainer map, Entity obj, string modelname, bool load, IEnumerable<int>? masks)
     {
         ResourceDescriptor asset;
         var loadcol = false;
@@ -456,46 +456,47 @@ public class Universe
 
             return mesh;
         }
-        else if (loadflver)
+
+        if (!loadflver)
         {
-            if (CFG.Current.MapEditor_Substitute_PseudoPlayer_Model)
-            {
-                if (asset.AssetName == "c0000")
-                {
-                    asset = ResourceModelLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
-                }
-            }
-
-            var model = MeshRenderableProxy.MeshRenderableFromFlverResource(_renderScene, asset.AssetVirtualPath, modelMarkerType);
-            model.DrawFilter = filt;
-            model.World = obj.GetWorldMatrix();
-            obj.RenderSceneMesh = model;
-            model.SetSelectable(obj);
-
-            if (load && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
-            {
-                if (asset.AssetArchiveVirtualPath != null)
-                {
-                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                        ResourceManager.ResourceType.Flver);
-                }
-                else if (asset.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                }
-
-                ResourceManager.MarkResourceInFlight(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                Task task = job.Complete();
-                if (obj.Universe.postLoad)
-                {
-                    task.Wait();
-                }
-            }
-
-            return model;
+            return null;
         }
 
-        return null;
+        if (CFG.Current.MapEditor_Substitute_PseudoPlayer_Model)
+        {
+            if (asset.AssetName == "c0000")
+            {
+                asset = ResourceModelLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
+            }
+        }
+
+        var model = MeshRenderableProxy.MeshRenderableFromFlverResource(_renderScene, asset.AssetVirtualPath, modelMarkerType, masks);
+        model.DrawFilter = filt;
+        model.World = obj.GetWorldMatrix();
+        obj.RenderSceneMesh = model;
+        model.SetSelectable(obj);
+
+        if (load && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+        {
+            if (asset.AssetArchiveVirtualPath != null)
+            {
+                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                    ResourceManager.ResourceType.Flver);
+            }
+            else if (asset.AssetVirtualPath != null)
+            {
+                job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+            }
+
+            ResourceManager.MarkResourceInFlight(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+            Task task = job.Complete();
+            if (obj.Universe.postLoad)
+            {
+                task.Wait();
+            }
+        }
+
+        return model;
     }
 
     public void LoadDS2Generators(string mapid, MapContainer map)
@@ -573,7 +574,7 @@ public class Universe
                 {
                     ResourceDescriptor asset = ResourceModelLocator.GetChrModel($@"c{chrid}");
                     MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                        _renderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy);
+                        _renderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy, null);
                     model.DrawFilter = RenderFilter.Character;
                     generatorObjs[row.ID].RenderSceneMesh = model;
                     model.SetSelectable(generatorObjs[row.ID]);
@@ -906,7 +907,12 @@ public class Universe
                     if (obj.WrappedObject is IMsbPart mp && mp.ModelName != null && mp.ModelName != "" &&
                         obj.RenderSceneMesh == null)
                     {
-                        GetModelDrawable(map, obj, mp.ModelName, false);
+                        int[]? masks = null;
+                        if (obj is MsbEntity msbEnt)
+                        {
+                            masks = msbEnt.GetModelMasks();
+                        }
+                        GetModelDrawable(map, obj, mp.ModelName, false, masks);
                     }
                 }
             }

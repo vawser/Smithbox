@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
@@ -20,11 +21,26 @@ public static class MeshProviderCache
 {
     private static readonly Dictionary<string, MeshProvider> _cache = new();
 
-    public static FlverMeshProvider GetFlverMeshProvider(string virtualResourcePath)
+    public static string GetCacheKey(string virtualResourcePath, string uid = "")
     {
-        if (_cache.ContainsKey(virtualResourcePath))
+        return $"{virtualResourcePath}+{uid}";
+    }
+
+    public static FlverMeshProvider GetFlverMeshProvider(string virtualResourcePath, IEnumerable<int>? masks)
+    {
+        if (masks == null) return GetFlverMeshProvider(virtualResourcePath);
+        var provider = GetFlverMeshProvider(virtualResourcePath, $"masks{string.Join("", masks)}");
+        provider.ModelMasks = masks.ToList();
+        return provider;
+    }
+
+    public static FlverMeshProvider GetFlverMeshProvider(string virtualResourcePath, string uid = "")
+    {
+        var cacheKey = GetCacheKey(virtualResourcePath, uid);
+
+        if (_cache.ContainsKey(cacheKey))
         {
-            if (_cache[virtualResourcePath] is FlverMeshProvider fmp)
+            if (_cache[cacheKey] is FlverMeshProvider fmp)
             {
                 return fmp;
             }
@@ -34,7 +50,7 @@ public static class MeshProviderCache
 
         FlverMeshProvider nfmp = new(virtualResourcePath);
 
-        _cache.Add(virtualResourcePath, nfmp);
+        _cache.Add(cacheKey, nfmp);
         return nfmp;
     }
 
@@ -276,15 +292,30 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
     private int _referenceCount;
     private ResourceHandle<FlverResource> _resource;
 
-    private List<FlverSubmeshProvider> _submeshes = new();
+    public List<int> ModelMasks = new();
+    List<FlverSubmeshProvider> _allSubmeshes = new();
+    private List<FlverSubmeshProvider> _activeSubmeshes = new();
 
     public FlverMeshProvider(string resource)
     {
         _resourceName = resource;
         _resource = null;
     }
+    private void UpdateModelMasks()
+    {
+        if (!ModelMasks.Any())
+        {
+            _activeSubmeshes = _allSubmeshes;
+            return;
+        }
+        _activeSubmeshes = _allSubmeshes.Where((p, i) =>
+        {
+            var mask = _resource.Get().GPUMeshes[i].Material.MaterialMask;
+            return mask == -1 || ModelMasks[mask] == 1;
+        }).ToList();
+    }
 
-    public override int ChildCount => _submeshes.Count;
+    public override int ChildCount => _activeSubmeshes.Count;
 
     public override BoundingBox Bounds => _bounds;
 
@@ -320,12 +351,12 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
     {
         _resource?.Release();
         _resource = null;
-        foreach (FlverSubmeshProvider submesh in _submeshes)
+        foreach (FlverSubmeshProvider submesh in _allSubmeshes)
         {
             submesh.Invalidate();
         }
 
-        _submeshes.Clear();
+        _allSubmeshes.Clear();
         NotifyUnavailable();
     }
 
@@ -339,7 +370,7 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
     public override MeshProvider GetChildProvider(int index)
     {
-        return _submeshes[index];
+        return _activeSubmeshes[index];
     }
 
     public override bool TryLock()
@@ -391,14 +422,15 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
 
     private void CreateSubmeshes()
     {
-        _submeshes = new List<FlverSubmeshProvider>();
+        _allSubmeshes = new List<FlverSubmeshProvider>();
         FlverResource res = _resource.Get();
         _bounds = res.Bounds;
         for (var i = 0; i < res.GPUMeshes.Length; i++)
         {
             var sm = new FlverSubmeshProvider(_resource, i);
-            _submeshes.Add(sm);
+            _allSubmeshes.Add(sm);
         }
+        UpdateModelMasks();
     }
 }
 

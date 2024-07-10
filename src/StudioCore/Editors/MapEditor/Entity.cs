@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.MsbEditor;
 using StudioCore.Scene;
 using StudioCore.Utilities;
@@ -42,7 +43,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Current model string for the entity.
     /// </summary>
-    protected string CurrentModel = "";
+    protected string CurrentModelName = "";
 
     /// <summary>
     /// Internal. Bool to track if render scene mesh has been disposed of.
@@ -1463,6 +1464,9 @@ public class MsbEntity : Entity
         DS2ObjectInstance
     }
 
+    protected int CurrentNPCParamID = 0;
+    protected int[]? ModelMasks = null;
+
     /// <summary>
     /// Constructor
     /// </summary>
@@ -1487,9 +1491,10 @@ public class MsbEntity : Entity
         Container = map;
         WrappedObject = msbo;
         Type = type;
+
         if (!(msbo is Param.Row) && !(msbo is MergedParamRow))
         {
-            CurrentModel = GetPropertyValue<string>("ModelName");
+            CurrentModelName = GetPropertyValue<string>("ModelName");
         }
     }
 
@@ -1585,6 +1590,30 @@ public class MsbEntity : Entity
         }
     }
 
+    public int[]? GetModelMasks()
+    {
+        if (WrappedObject is MSBE.Part.EnemyBase enemy)
+        {
+            var npcParamId = enemy.NPCParamID;
+            var param = ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId];
+            if (param != null)
+            {
+                int[] enabledMasks = new int[32];
+
+                for (int i = 0; i < 32; i++)
+                {
+                    var fieldName = $"modelDispMask{i}";
+                    if (Convert.ToBoolean((byte)param[fieldName]!.Value.Value))
+                        enabledMasks[i] = 1;
+                }
+
+                return enabledMasks;
+            }
+        }
+
+        return null;
+    }
+
     /// <summary>
     /// Update the render model of this entity.
     /// </summary>
@@ -1632,7 +1661,18 @@ public class MsbEntity : Entity
             {
                 var model = (string)modelProp.GetValue(WrappedObject);
 
-                var modelChanged = CurrentModel != model;
+                var modelChanged = CurrentModelName != model;
+
+                PropertyInfo paramProp = GetProperty("NPCParamID");
+                if (paramProp != null)
+                {
+                    var id = (int)paramProp.GetValue(WrappedObject);
+
+                    if (CurrentNPCParamID != id)
+                        modelChanged = true;
+                    ModelMasks = GetModelMasks();
+                    CurrentNPCParamID = id;
+                }
 
                 if (modelChanged)
                 {
@@ -1642,12 +1682,12 @@ public class MsbEntity : Entity
                         _renderSceneMesh.Dispose();
                     }
 
-                    CurrentModel = model;
+                    CurrentModelName = model;
 
                     // Get model
                     if (model != null)
                     {
-                        _renderSceneMesh = Universe.GetModelDrawable(ContainingMap, this, model, true);
+                        _renderSceneMesh = Universe.GetModelDrawable(ContainingMap, this, model, true, ModelMasks);
                     }
 
                     if (Universe.Selection.IsSelected(this))
