@@ -1590,6 +1590,11 @@ public class MsbEntity : Entity
         }
     }
 
+    /// <summary>
+    /// Get the model masks for the current WrappedObject (if it is an enemy)
+    /// Direct references to param fields here, so must be updated if Paramdex changes.
+    /// </summary>
+    /// <returns></returns>
     public int[]? GetModelMasks()
     {
         if (WrappedObject is MSBE.Part.EnemyBase enemy)

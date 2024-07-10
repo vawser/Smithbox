@@ -824,7 +824,7 @@ public class MEValueOperation : MEOperation<object, object>
             (new[] { "number" }, "Rounds the current value up to the closest integer",
                 (ctx, args) => MassParamEdit.WithDynamicOf(ctx, v => Math.Ceiling(v))));
         operations.Add("floor",
-            (new[] { "number" }, "Rounds the current value up to the closest integer",
+            (new[] { "number" }, "Rounds the current value down to the closest integer",
                 (ctx, args) => MassParamEdit.WithDynamicOf(ctx, v => Math.Floor(v))));
     }
 }

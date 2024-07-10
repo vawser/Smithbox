@@ -275,7 +275,7 @@ internal class SpecialMapConnections
             }
 
             var dstParts = GetRowMapParts(row, dstPartFields).ToArray();
-            if (dstParts[0] != 60 || dstParts[0] != 61)
+            if (dstParts[0] != 60 && dstParts[0] != 61)
             {
                 continue;
             }

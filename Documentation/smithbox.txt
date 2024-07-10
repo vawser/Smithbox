@@ -68,7 +68,6 @@ Map Editor:
  - Add "Data Export" action for MSB data: output the MSB information as JSON
  - Add "Find Value Instances" for MSB values
  - Fix select via arrow keys in the Map Scene tree (alias seems to stop it working).
- - Respect model masks on models in Map Editor
  - Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
  
 Model Editor: 
