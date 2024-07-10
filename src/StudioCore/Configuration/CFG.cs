@@ -279,6 +279,8 @@ public class CFG
     public bool Viewport_Enable_Texturing = false;
     public bool Viewport_Enable_ER_Auto_Map_Offset = true;
     public bool Viewport_Enable_Selection_Outline = true;
+    public bool Viewport_Enable_Model_Masks = true;
+    public bool Viewport_Enable_LOD_Facesets = false;
 
     public Vector3 Viewport_BackgroundColor = Utils.GetDecimalColor(Color.Gray);
 
