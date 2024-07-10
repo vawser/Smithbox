@@ -41,7 +41,7 @@ internal partial class BtlLightSerializerContext : JsonSerializerContext
 /// </summary>
 public class Universe
 {
-    private readonly RenderScene _renderScene;
+    public RenderScene _renderScene;
     public int _dispGroupCount = 8;
 
     public ExceptionDispatchInfo LoadMapExceptions = null;
@@ -697,8 +697,6 @@ public class Universe
             return false;
         }
 
-        HavokUtils.OnLoadMap(mapid);
-
         LoadMapAsync(mapid, selectOnLoad);
 
 
@@ -737,6 +735,35 @@ public class Universe
         }
     }
 
+    private void SetupDrawgroupCount()
+    {
+        switch (Smithbox.ProjectType)
+        {
+            // imgui checkbox click seems to break at some point after 8 (8*32) checkboxes, so let's just hope that never happens, yeah?
+            case ProjectType.DES:
+            case ProjectType.DS1:
+            case ProjectType.DS1R:
+            case ProjectType.DS2:
+            case ProjectType.DS2S:
+                _dispGroupCount = 4;
+                break;
+            case ProjectType.BB:
+            case ProjectType.DS3:
+                _dispGroupCount = 8;
+                break;
+            case ProjectType.SDT:
+            case ProjectType.ER:
+            case ProjectType.AC6:
+                _dispGroupCount = 8; //?
+                break;
+            default:
+                throw new Exception($"Error: Did not expect Gametype {Smithbox.ProjectType}");
+                //break;
+        }
+    }
+
+    private List<Task> tasks = new();
+
     public async void LoadMapAsync(string mapid, bool selectOnLoad = false)
     {
         if (LoadedObjectContainers.TryGetValue(mapid, out var m) && m != null)
@@ -746,187 +773,40 @@ public class Universe
             return;
         }
 
+        HavokUtils.OnLoadMap(mapid);
+
         try
         {
             postLoad = false;
+
+            SetupDrawgroupCount();
+
             MapContainer map = new(this, mapid);
 
-            List<Task> tasks = new();
-            Task task;
+            MapResourceHandler resourceHandler = new MapResourceHandler(mapid);
 
-            HashSet<ResourceDescriptor> mappiecesToLoad = new();
-            HashSet<ResourceDescriptor> chrsToLoad = new();
-            HashSet<ResourceDescriptor> objsToLoad = new();
-            HashSet<ResourceDescriptor> colsToLoad = new();
-            HashSet<ResourceDescriptor> navsToLoad = new();
+            // Get the Map MSB resource
+            bool exists = resourceHandler.GetMapMSB();
 
-            //drawgroup count
-            switch (Smithbox.ProjectType)
-            {
-                // imgui checkbox click seems to break at some point after 8 (8*32) checkboxes, so let's just hope that never happens, yeah?
-                case ProjectType.DES:
-                case ProjectType.DS1:
-                case ProjectType.DS1R:
-                case ProjectType.DS2:
-                case ProjectType.DS2S:
-                    _dispGroupCount = 4;
-                    break;
-                case ProjectType.BB:
-                case ProjectType.DS3:
-                    _dispGroupCount = 8;
-                    break;
-                case ProjectType.SDT:
-                case ProjectType.ER:
-                case ProjectType.AC6:
-                    _dispGroupCount = 8; //?
-                    break;
-                default:
-                    throw new Exception($"Error: Did not expect Gametype {Smithbox.ProjectType}");
-                    //break;
-            }
-
-            ResourceDescriptor ad = ResourceMapLocator.GetMapMSB(mapid);
-            if (ad.AssetPath == null)
-            {
+            // If MSB resource doesn't exist, quit
+            if (!exists)
                 return;
-            }
 
-            IMsb msb;
-            if (Smithbox.ProjectType == ProjectType.DS3)
-            {
-                msb = MSB3.Read(ad.AssetPath);
-            }
-            else if (Smithbox.ProjectType == ProjectType.SDT)
-            {
-                msb = MSBS.Read(ad.AssetPath);
-            }
-            else if (Smithbox.ProjectType == ProjectType.ER)
-            {
-                msb = MSBE.Read(ad.AssetPath);
-            }
-            else if (Smithbox.ProjectType == ProjectType.AC6)
-            {
-                msb = MSB_AC6.Read(ad.AssetPath);
-            }
-            else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-            {
-                msb = MSB2.Read(ad.AssetPath);
-            }
-            else if (Smithbox.ProjectType == ProjectType.BB)
-            {
-                msb = MSBB.Read(ad.AssetPath);
-            }
-            else if (Smithbox.ProjectType == ProjectType.DES)
-            {
-                msb = MSBD.Read(ad.AssetPath);
-            }
-            else
-            {
-                msb = MSB1.Read(ad.AssetPath);
-            }
+            // Read the MSB
+            resourceHandler.ReadMap();
 
-            map.LoadMSB(msb);
-
-            var amapid = ResourceMapLocator.GetAssetMapID(mapid);
+            // Load the map into the MapContainer
+            map.LoadMSB(resourceHandler.Msb);
 
             if (IsRendering)
             {
-
-                // Add substitution model to the chrsToLoad set
-                ResourceDescriptor subAsset = ResourceModelLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
-                chrsToLoad.Add(subAsset);
-
-                if (CFG.Current.Viewport_Enable_Texturing)
-                {
-                    ResourceDescriptor tSubAsset = ResourceTextureLocator.GetChrTextures(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
-
-                    if (tSubAsset.AssetVirtualPath != null || tSubAsset.AssetArchiveVirtualPath != null)
-                    {
-                        chrsToLoad.Add(tSubAsset);
-                    }
-                }
-
-                foreach (IMsbModel model in msb.Models.GetEntries())
-                {
-                    ResourceDescriptor asset;
-                    if (model.Name.StartsWith("m"))
-                    {
-                        asset = ResourceModelLocator.GetMapModel(amapid,
-                            ResourceModelLocator.MapModelNameToAssetName(amapid, model.Name));
-                        mappiecesToLoad.Add(asset);
-                    }
-                    else if (model.Name.StartsWith("c"))
-                    {
-                        asset = ResourceModelLocator.GetChrModel(model.Name);
-                        chrsToLoad.Add(asset);
-
-                        if (CFG.Current.Viewport_Enable_Texturing)
-                        {
-                            ResourceDescriptor tasset = ResourceTextureLocator.GetChrTextures(model.Name);
-                            if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
-                            {
-                                chrsToLoad.Add(tasset);
-                            }
-                        }
-                    }
-                    else if (model.Name.StartsWith("o"))
-                    {
-                        asset = ResourceModelLocator.GetObjModel(model.Name);
-                        objsToLoad.Add(asset);
-
-                        if (CFG.Current.Viewport_Enable_Texturing)
-                        {
-                            ResourceDescriptor tasset = ResourceTextureLocator.GetObjTextureContainer(model.Name);
-                            if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
-                            {
-                                objsToLoad.Add(tasset);
-                            }
-                        }
-                    }
-                    else if (model.Name.StartsWith("AEG"))
-                    {
-                        asset = ResourceModelLocator.GetObjModel(model.Name);
-                        objsToLoad.Add(asset);
-                    }
-                    else if (model.Name.StartsWith("h"))
-                    {
-                        asset = ResourceModelLocator.GetMapCollisionModel(amapid,
-                            ResourceModelLocator.MapModelNameToAssetName(amapid, model.Name), false);
-                        colsToLoad.Add(asset);
-                    }
-                    else if (model.Name.StartsWith("n") && Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2 && Smithbox.ProjectType != ProjectType.BB)
-                    {
-                        asset = ResourceModelLocator.GetMapNVMModel(amapid,
-                            ResourceModelLocator.MapModelNameToAssetName(amapid, model.Name));
-                        navsToLoad.Add(asset);
-                    }
-                }
-
-                foreach (Entity obj in map.Objects)
-                {
-                    if (obj.WrappedObject is IMsbPart mp && mp.ModelName != null && mp.ModelName != "" &&
-                        obj.RenderSceneMesh == null)
-                    {
-                        int[]? masks = null;
-                        if (obj is MsbEntity msbEnt)
-                        {
-                            masks = msbEnt.GetModelMasks();
-                        }
-                        GetModelDrawable(map, obj, mp.ModelName, false, masks);
-                    }
-                }
+                resourceHandler.SetupHumanEnemySubstitute();
+                resourceHandler.SetupModelLoadLists();
+                resourceHandler.SetupTexturelLoadLists();
+                resourceHandler.SetupModelMasks(map);
             }
 
-            // Load BTLs (must be done after MapOffset is set)
-            List<ResourceDescriptor> BTLs = ResourceMapLocator.GetMapBTLs(mapid);
-            foreach (ResourceDescriptor btl_ad in BTLs)
-            {
-                BTL btl = ReturnBTL(btl_ad);
-                if (btl != null)
-                {
-                    map.LoadBTL(btl_ad, btl);
-                }
-            }
+            resourceHandler.LoadLights(map);
 
             if (IsRendering)
             {
@@ -962,162 +842,20 @@ public class Universe
 
             if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
-                LoadDS2Generators(amapid, map);
+                LoadDS2Generators(resourceHandler.AdjustedMapID, map);
             }
 
             if (IsRendering)
             {
-                // Temporary DS3 navmesh loading
-                if (Smithbox.ProjectType == ProjectType.DS3)
-                {
-                    ResourceDescriptor nvaasset = ResourceMapLocator.GetMapNVA(amapid);
-                    if (nvaasset.AssetPath != null)
-                    {
-                        var nva = NVA.Read(nvaasset.AssetPath);
-                        foreach (NVA.Navmesh nav in nva.Navmeshes)
-                        {
-                            // TODO2: set parent to MapOffset
-                            MsbEntity n = new(map, nav, MsbEntity.MsbEntityType.Editor);
-                            map.AddObject(n);
-                            var navid = $@"n{nav.ModelID:D6}";
-                            var navname = "n" + ResourceModelLocator.MapModelNameToAssetName(amapid, navid).Substring(1);
-                            ResourceDescriptor nasset = ResourceModelLocator.GetHavokNavmeshModel(amapid, navname);
+                tasks = resourceHandler.LoadTextures(tasks, map);
+                await Task.WhenAll(tasks);
+                tasks = resourceHandler.LoadModels(tasks, map);
+                await Task.WhenAll(tasks);
 
-                            var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                                _renderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
-                            mesh.World = n.GetWorldMatrix();
-                            mesh.SetSelectable(n);
-                            mesh.DrawFilter = RenderFilter.Navmesh;
-                            n.RenderSceneMesh = mesh;
-                        }
-                    }
-                }
-
-                ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob($@"Loading {amapid} geometry");
-                foreach (ResourceDescriptor mappiece in mappiecesToLoad)
-                {
-                    if (mappiece.AssetArchiveVirtualPath != null)
-                    {
-                        job.AddLoadArchiveTask(mappiece.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                            false, ResourceManager.ResourceType.Flver);
-                    }
-                    else if (mappiece.AssetVirtualPath != null)
-                    {
-                        job.AddLoadFileTask(mappiece.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                    }
-                }
-
-                task = job.Complete();
-                tasks.Add(task);
-
-                if (CFG.Current.Viewport_Enable_Texturing)
-                {
-                    job = ResourceManager.CreateNewJob($@"Loading {amapid} textures");
-                    foreach (ResourceDescriptor asset in ResourceTextureLocator.GetMapTextures(amapid))
-                    {
-                        if (asset.AssetArchiveVirtualPath != null)
-                        {
-                            job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                                false);
-                        }
-                        else if (asset.AssetVirtualPath != null)
-                        {
-                            job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                        }
-                    }
-
-                    task = job.Complete();
-                    tasks.Add(task);
-                }
-
-                job = ResourceManager.CreateNewJob($@"Loading {amapid} collisions");
-                string archive = null;
-                HashSet<string> colassets = new();
-                foreach (ResourceDescriptor col in colsToLoad)
-                {
-                    if (col.AssetArchiveVirtualPath != null)
-                    {
-                        //job.AddLoadArchiveTask(col.AssetArchiveVirtualPath, false);
-                        archive = col.AssetArchiveVirtualPath;
-                        colassets.Add(col.AssetVirtualPath);
-                    }
-                    else if (col.AssetVirtualPath != null)
-                    {
-                        job.AddLoadFileTask(col.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                    }
-                }
-
-                if (archive != null)
-                {
-                    job.AddLoadArchiveTask(archive, AccessLevel.AccessGPUOptimizedOnly, false, colassets);
-                }
-
-                task = job.Complete();
-                tasks.Add(task);
-
-
-                job = ResourceManager.CreateNewJob(@"Loading chrs");
-                foreach (ResourceDescriptor chr in chrsToLoad)
-                {
-                    if (chr.AssetArchiveVirtualPath != null)
-                    {
-                        job.AddLoadArchiveTask(chr.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                            ResourceManager.ResourceType.Flver);
-                    }
-                    else if (chr.AssetVirtualPath != null)
-                    {
-                        job.AddLoadFileTask(chr.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                    }
-                }
-
-                task = job.Complete();
-                tasks.Add(task);
-
-                job = ResourceManager.CreateNewJob(@"Loading objs");
-                foreach (ResourceDescriptor obj in objsToLoad)
-                {
-                    if (obj.AssetArchiveVirtualPath != null)
-                    {
-                        job.AddLoadArchiveTask(obj.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                            ResourceManager.ResourceType.Flver);
-                    }
-                    else if (obj.AssetVirtualPath != null)
-                    {
-                        job.AddLoadFileTask(obj.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                    }
-                }
-
-                task = job.Complete();
-                tasks.Add(task);
-
-                job = ResourceManager.CreateNewJob(@"Loading Navmeshes");
-                if (Smithbox.ProjectType == ProjectType.DS3)
-                {
-                    ResourceDescriptor nav = ResourceModelLocator.GetHavokNavmeshes(amapid);
-                    job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                        ResourceManager.ResourceType.NavmeshHKX);
-                }
-                else
-                {
-                    foreach (ResourceDescriptor nav in navsToLoad)
-                    {
-                        if (nav.AssetArchiveVirtualPath != null)
-                        {
-                            job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                                false);
-                        }
-                        else if (nav.AssetVirtualPath != null)
-                        {
-                            job.AddLoadFileTask(nav.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                        }
-                    }
-                }
-
-                task = job.Complete();
-                tasks.Add(task);
+                resourceHandler.SetupNavmesh(map);
 
                 // Real bad hack
-                EnvMapTextures = ResourceTextureLocator.GetEnvMapTextureNames(amapid);
+                EnvMapTextures = ResourceTextureLocator.GetEnvMapTextureNames(resourceHandler.AdjustedMapID);
 
                 ScheduleTextureRefresh();
             }

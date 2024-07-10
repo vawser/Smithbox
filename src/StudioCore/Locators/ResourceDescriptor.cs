@@ -64,4 +64,12 @@ public class ResourceDescriptor : IComparable<ResourceDescriptor>
         // Use string default CompareTo logic
         return AssetName.CompareTo(other.AssetName);
     }
+
+    public bool IsValid()
+    {
+        if (AssetVirtualPath == null && AssetArchiveVirtualPath == null)
+            return false;
+
+        return true;
+    }
 }

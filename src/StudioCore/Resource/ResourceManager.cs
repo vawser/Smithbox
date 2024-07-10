@@ -33,7 +33,6 @@ public static class ResourceManager
         CollisionHKX = 4,
         Navmesh = 8,
         NavmeshHKX = 16,
-        HavokCompendium = 32,
         All = 0xFFFFFFF
     }
 
@@ -702,15 +701,6 @@ public static class ResourceManager
 
                     // HAVOK COLLISION
                     if (ResourceMask.HasFlag(ResourceType.CollisionHKX))
-                    {
-                        if (ResourceLocatorUtils.IsHavokCollision(curFileBinderPath))
-                        {
-                            pipeline = _job.HavokCollisionLoadPipeline;
-                        }
-                    }
-
-                    // HAVOK COLLISION
-                    if (ResourceMask.HasFlag(ResourceType.HavokCompendium))
                     {
                         if (ResourceLocatorUtils.IsHavokCollision(curFileBinderPath))
                         {
