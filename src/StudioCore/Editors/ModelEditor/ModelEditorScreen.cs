@@ -874,7 +874,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             }
 
             _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                RenderScene, asset.AssetVirtualPath, ModelMarkerType.None);
+                RenderScene, asset.AssetVirtualPath, ModelMarkerType.None, null);
             _renderMesh.World = Matrix4x4.Identity;
         }
     }
@@ -891,7 +891,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
                     _renderMesh.Dispose();
                 }
 
-                _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None);
+                _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
                 _renderMesh.World = Matrix4x4.Identity;
             }
         }

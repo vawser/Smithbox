@@ -313,6 +313,13 @@ public class FlverResource : IResource, IDisposable
     private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest)
     {
         dest.MaterialName = Path.GetFileNameWithoutExtension(mat.MTD);
+
+        var matName = mat.Name;
+        if (matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
+        {
+            dest.MaterialMask =  int.Parse(matName.Substring(1, 2));
+        }
+
         dest.MaterialBuffer = Renderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
         dest.MaterialData = new Material();
 
@@ -411,7 +418,12 @@ public class FlverResource : IResource, IDisposable
         ref FlverMaterialDef mat, Span<FlverTexture> textures, bool isUTF)
     {
         var mtd = isUTF ? br.GetUTF16(mat.mtdOffset) : br.GetShiftJIS(mat.mtdOffset);
+        var matName = isUTF ? br.GetUTF16(mat.nameOffset) : br.GetShiftJIS(mat.nameOffset);
         dest.MaterialName = Path.GetFileNameWithoutExtension(mtd);
+        if (matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
+        {
+            dest.MaterialMask =  int.Parse(matName.Substring(1, 2));
+        }
         dest.MaterialBuffer = Renderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
         dest.MaterialData = new Material();
 
@@ -1314,6 +1326,11 @@ public class FlverResource : IResource, IDisposable
                 newFaceSet.LOD = 2;
                 newFaceSet.IsMotionBlur = false;
             }
+            else if ((faceset.Flags & FLVER2.FaceSet.FSFlags.LodLevelEx) > 0)
+            {
+                newFaceSet.LOD = 3;
+                newFaceSet.IsMotionBlur = false;
+            }
 
             if ((faceset.Flags & FLVER2.FaceSet.FSFlags.MotionBlur) > 0)
             {
@@ -1531,6 +1548,11 @@ public class FlverResource : IResource, IDisposable
             else if ((faceset.flags & FLVER2.FaceSet.FSFlags.LodLevel2) > 0)
             {
                 newFaceSet.LOD = 2;
+                newFaceSet.IsMotionBlur = false;
+            }
+            else if ((faceset.flags & FLVER2.FaceSet.FSFlags.LodLevelEx) > 0)
+            {
+                newFaceSet.LOD = 3;
                 newFaceSet.IsMotionBlur = false;
             }
 
@@ -1888,6 +1910,7 @@ public class FlverResource : IResource, IDisposable
         public GPUBufferAllocator.GPUBufferHandle MaterialBuffer;
         public Material MaterialData;
         public string MaterialName;
+        public int MaterialMask = -1;
 
         public string ShaderName;
         public List<SpecializationConstant> SpecializationConstants;
