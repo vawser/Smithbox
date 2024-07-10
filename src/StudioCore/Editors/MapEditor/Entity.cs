@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.MsbEditor;
@@ -1597,22 +1598,69 @@ public class MsbEntity : Entity
     /// <returns></returns>
     public int[]? GetModelMasks()
     {
-        if (WrappedObject is MSBE.Part.EnemyBase enemy)
+        if (Smithbox.ProjectType is ProjectType.DS3)
         {
-            var npcParamId = enemy.NPCParamID;
-            var param = ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId];
-            if (param != null)
+            if (WrappedObject is MSB3.Part.EnemyBase enemy)
             {
-                int[] enabledMasks = new int[32];
-
-                for (int i = 0; i < 32; i++)
+                var npcParamId = enemy.NPCParamID;
+                var param = ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId];
+                if (param != null)
                 {
-                    var fieldName = $"modelDispMask{i}";
-                    if (Convert.ToBoolean((byte)param[fieldName]!.Value.Value))
-                        enabledMasks[i] = 1;
-                }
+                    int[] enabledMasks = new int[32];
 
-                return enabledMasks;
+                    for (int i = 0; i < 32; i++)
+                    {
+                        var fieldName = $"modelDispMask{i}";
+                        if (Convert.ToBoolean((byte)param[fieldName]!.Value.Value))
+                            enabledMasks[i] = 1;
+                    }
+
+                    return enabledMasks;
+                }
+            }
+        }
+
+        if (Smithbox.ProjectType is ProjectType.SDT)
+        {
+            if (WrappedObject is MSBS.Part.EnemyBase enemy)
+            {
+                var npcParamId = enemy.NPCParamID;
+                var param = ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId];
+                if (param != null)
+                {
+                    int[] enabledMasks = new int[32];
+
+                    for (int i = 0; i < 32; i++)
+                    {
+                        var fieldName = $"modelDispMask{i}";
+                        if (Convert.ToBoolean((byte)param[fieldName]!.Value.Value))
+                            enabledMasks[i] = 1;
+                    }
+
+                    return enabledMasks;
+                }
+            }
+        }
+
+        if (Smithbox.ProjectType is ProjectType.ER)
+        {
+            if (WrappedObject is MSBE.Part.EnemyBase enemy)
+            {
+                var npcParamId = enemy.NPCParamID;
+                var param = ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId];
+                if (param != null)
+                {
+                    int[] enabledMasks = new int[32];
+
+                    for (int i = 0; i < 32; i++)
+                    {
+                        var fieldName = $"modelDispMask{i}";
+                        if (Convert.ToBoolean((byte)param[fieldName]!.Value.Value))
+                            enabledMasks[i] = 1;
+                    }
+
+                    return enabledMasks;
+                }
             }
         }
 
