@@ -295,23 +295,23 @@
 2007800 [Incantation] Fire Serpent
 2007810 [Incantation] Rain of Fire
 2007820 [Incantation] Messmer's Orb
-2050000 
-2050001 
-2050010 
-2050011 
-2050020 
-2050021 
-2050030 
-2050040 
-2050050 
-2050060 
-2050061 
-2050062 
-2050063 
-2050064 
-2050070 
-2050080 
-2050081 
-2050082 
-2050090 
+2050000 [NPC: Incantation] Dragonclaw
+2050001 [NPC: Incantation] Greyoll's Roar
+2050010 [NPC: Incantation]
+2050011 [NPC: Incantation] Dragonbolt of Florissax
+2050020 [NPC: Incantation] Magma Breath
+2050021 [NPC: Incantation] Dragonmaw
+2050030 [NPC: Incantation] Fire Serpent
+2050040 [NPC: Incantation] Multilayered Ring of Light
+2050050 [NPC: Incantation] Furious Blade of Ansbach
+2050060 [NPC: Sorcery] Miriam's Vanishing
+2050061 [NPC: Sorcery] Glintstone Nails
+2050062 [NPC: Sorcery] Cherishing Fingers
+2050063 [NPC: Sorcery] Fleeting Microcosm
+2050064 [NPC: Sorcery] Fleeting Microcosm
+2050070 [NPC: Incantation] Roar of Rugalea
+2050080 [NPC: Incantation] Lord's Heal
+2050081 [NPC: Incantation] Golden Vow
+2050082 [NPC: Incantation] Discus of Light
+2050090 [NPC: Incantation] The Flame of Frenzy
 999999999 [NPC: Incantation] Golden Lightning Fortification

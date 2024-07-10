@@ -5398,26 +5398,26 @@
 19310 
 19311 
 19350 
-19351 
-19352 
-19353 
-19354 
-19355 
-19356 
-19357 
-19358 
-19359 
-19360 
-19361 
-19362 
-19363 
-19364 
-19365 
-19366 
-19367 
-19368 
-19369 
-19370 
+19351 Human-NPC Area Scaling:
+19352 Human-NPC Area Scaling:
+19353 Human-NPC Area Scaling:
+19354 Human-NPC Area Scaling:
+19355 Human-NPC Area Scaling:
+19356 Human-NPC Area Scaling:
+19357 Human-NPC Area Scaling:
+19358 Human-NPC Area Scaling:
+19359 Human-NPC Area Scaling:
+19360 Human-NPC Area Scaling:
+19361 Human-NPC Area Scaling:
+19362 Human-NPC Area Scaling:
+19363 Human-NPC Area Scaling:
+19364 Human-NPC Area Scaling:
+19365 Human-NPC Area Scaling:
+19366 Human-NPC Area Scaling:
+19367 Human-NPC Area Scaling:
+19368 Human-NPC Area Scaling:
+19369 Human-NPC Area Scaling:
+19370 Human-NPC Area Scaling:
 19384 
 19385 
 19386 
@@ -5450,24 +5450,24 @@
 19465 
 19466 
 19467 
-19500 
-19501 
-19502 
-19503 
-19504 
-19505 
-19506 
-19507 
-19508 
-19509 
-19510 
-19511 
-19512 
-19513 
-19514 
-19515 
-19516 
-19517 
+19500 Human-NPC NG+ Scaling:
+19501 Human-NPC NG+ Scaling:
+19502 Human-NPC NG+ Scaling:
+19503 Human-NPC NG+ Scaling:
+19504 Human-NPC NG+ Scaling:
+19505 Human-NPC NG+ Scaling:
+19506 Human-NPC NG+ Scaling:
+19507 Human-NPC NG+ Scaling:
+19508 Human-NPC NG+ Scaling:
+19509 Human-NPC NG+ Scaling:
+19510 Human-NPC NG+ Scaling:
+19511 Human-NPC NG+ Scaling:
+19512 Human-NPC NG+ Scaling:
+19513 Human-NPC NG+ Scaling:
+19514 Human-NPC NG+ Scaling:
+19515 Human-NPC NG+ Scaling:
+19516 Human-NPC NG+ Scaling:
+19517 Human-NPC NG+ Scaling:
 19518 
 19519 
 19520 
