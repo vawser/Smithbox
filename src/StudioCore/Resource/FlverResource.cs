@@ -1304,6 +1304,12 @@ public class FlverResource : IResource, IDisposable
             {
                 continue;
             }
+            if (!CFG.Current.Viewport_Enable_LOD_Facesets &&
+                faceset.Flags != FLVER2.FaceSet.FSFlags.None &&
+                faceset.Flags != FLVER2.FaceSet.FSFlags.EdgeCompressed)
+            {
+                continue;
+            }
 
             //At this point they use 32-bit faceset vertex indices
             FlverSubmesh.FlverSubmeshFaceSet newFaceSet = new()
@@ -1812,7 +1818,14 @@ public class FlverResource : IResource, IDisposable
         Span<FlverFaceset> facesets = stackalloc FlverFaceset[faceSetCount];
         for (var i = 0; i < faceSetCount; i++)
         {
-            facesets[i] = new FlverFaceset(br, version, vertexIndicesSize, dataOffset);
+            var faceset = new FlverFaceset(br, version, vertexIndicesSize, dataOffset);
+            if (!CFG.Current.Viewport_Enable_LOD_Facesets &&
+                faceset.flags != FLVER2.FaceSet.FSFlags.None &&
+                faceset.flags != FLVER2.FaceSet.FSFlags.EdgeCompressed)
+            {
+                continue;
+            }
+            facesets[i] = faceset;
         }
 
         // Vertex buffers

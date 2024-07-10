@@ -45,10 +45,20 @@ public class ViewportTab
 
                 ImGui.ColorEdit3("Selection Color", ref CFG.Current.Viewport_DefaultRender_SelectColor);
 
+                ImGui.Checkbox("Enable enemy model masks", ref CFG.Current.Viewport_Enable_Model_Masks);
+                ImguiUtils.ShowHoverTooltip("Attempt to display the correct model masks for enemies based on NpcParam.");
+
+                ImGui.Checkbox("Draw LOD facesets", ref CFG.Current.Viewport_Enable_LOD_Facesets);
+                ImguiUtils.ShowHoverTooltip("Render all facesets for all FLVER meshes, including LOD ones.");
+
                 if (ImGui.Button("Reset##ResetRenderProperties"))
                 {
-                    CFG.Current.Viewport_DefaultRender_Brightness = 1.0f;
-                    CFG.Current.Viewport_DefaultRender_Saturation = 0.5f;
+                    CFG.Current.Viewport_DefaultRender_Brightness = CFG.Default.Viewport_DefaultRender_Brightness;
+                    CFG.Current.Viewport_DefaultRender_Saturation = CFG.Default.Viewport_DefaultRender_Saturation;
+                    CFG.Current.Viewport_Enable_Selection_Outline = CFG.Default.Viewport_Enable_Selection_Outline;
+                    CFG.Current.Viewport_DefaultRender_SelectColor = CFG.Default.Viewport_DefaultRender_SelectColor;
+                    CFG.Current.Viewport_Enable_Model_Masks = CFG.Default.Viewport_Enable_Model_Masks;
+                    CFG.Current.Viewport_Enable_LOD_Facesets = CFG.Default.Viewport_Enable_LOD_Facesets;
                 }
                 ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
             }
