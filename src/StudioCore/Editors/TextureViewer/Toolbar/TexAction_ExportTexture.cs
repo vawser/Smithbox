@@ -109,6 +109,12 @@ public static class TexAction_ExportTexture
                     }
                 }
 
+                if(!Directory.Exists(exportFilePath))
+                {
+                    write = false;
+                    PlatformUtils.Instance.MessageBox($"Directory is not valid.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
                 if (write)
                 {
                     if(CFG.Current.TextureViewerToolbar_ExportTexture_IncludeFolder)
