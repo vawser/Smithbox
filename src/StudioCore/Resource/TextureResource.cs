@@ -57,7 +57,13 @@ public class TextureResource : IResource, IDisposable
                 // Intercept unsupported DDS textures here
                 if (!Smithbox.BankHandler.BlockedTextureInfo.IsBlockedTexture(Texture.Textures[TPFIndex].Name))
                 {
-                    GPUTexture.FillWithTPF(d, cl, Texture.Platform, Texture.Textures[TPFIndex], Texture.Textures[TPFIndex].Name);
+                    if (TPFIndex < Texture.Textures.Count)
+                    {
+                        if (Texture.Textures[TPFIndex] != null)
+                        {
+                            GPUTexture.FillWithTPF(d, cl, Texture.Platform, Texture.Textures[TPFIndex], Texture.Textures[TPFIndex].Name);
+                        }
+                    }
                 }
 
                 Texture = null;
