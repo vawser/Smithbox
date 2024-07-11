@@ -77,7 +77,7 @@ public class CFG
 
     public bool Interface_ModelEditor_ModelHierarchy = true;
     public bool Interface_ModelEditor_Properties = true;
-    public bool Interface_ModelEditor_AssetBrowser = true;
+    public bool Interface_ModelEditor_ModelSelection = true;
     public bool Interface_ModelEditor_Toolbar = true;
     public bool Interface_ModelEditor_ResourceList = true;
     public bool Interface_ModelEditor_Viewport_Grid = true;

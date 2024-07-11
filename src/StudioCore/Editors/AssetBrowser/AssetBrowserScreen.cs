@@ -47,7 +47,6 @@ public class AssetBrowserScreen
 
     private AssetBrowserSource SourceType;
     private MapEditorScreen MapEditor;
-    private ModelEditorScreen ModelEditor;
     private ViewportActionManager _actionManager;
     private RenderScene _scene;
     private ViewportSelection _selection;
@@ -74,16 +73,8 @@ public class AssetBrowserScreen
         SourceType = sourceType;
 
         MapEditor = null;
-        ModelEditor = null;
 
-        if (sourceType == AssetBrowserSource.MapEditor)
-        {
-            MapEditor = (MapEditorScreen)editor;
-        }
-        if (sourceType == AssetBrowserSource.ModelEditor)
-        {
-            ModelEditor = (ModelEditorScreen)editor;
-        }
+        MapEditor = (MapEditorScreen)editor;
 
         _scene = scene;
         _selection = sel;
@@ -120,7 +111,7 @@ public class AssetBrowserScreen
         }
         if (SourceType == AssetBrowserSource.ModelEditor)
         {
-            if (!CFG.Current.Interface_ModelEditor_AssetBrowser)
+            if (!CFG.Current.Interface_ModelEditor_ModelSelection)
                 return;
         }
 
@@ -185,15 +176,7 @@ public class AssetBrowserScreen
             ImguiUtils.WrappedText("Actions:");
             ImGui.Separator();
 
-            if (SourceType == AssetBrowserSource.MapEditor)
-            {
-                DisplayActions_MapEditor();
-            }
-            if (SourceType == AssetBrowserSource.ModelEditor)
-            {
-                DisplayActions_ModelEditor();
-            }
-
+            DisplayActions_MapEditor();
         }
 
         ImGui.End();
@@ -454,48 +437,6 @@ public class AssetBrowserScreen
         }
     }
 
-    private void DisplayActions_ModelEditor()
-    {
-        if (_selectedName == null || _selectedName == "")
-            return;
-
-        ImguiUtils.WrappedText("Load the selected asset.");
-        ImguiUtils.WrappedText("");
-
-        if (ImGui.Button("Load##action_Asset_Load", new Vector2(200, 32)))
-        {
-            LoadModelAssetSelection();
-        }
-        ImguiUtils.WrappedText("");
-
-        ImGui.Separator();
-        ImguiUtils.WrappedText("Alias:");
-        ImGui.Separator();
-
-        ImguiUtils.WrappedText("Update the stored name and tag list for the selected asset here.");
-        ImguiUtils.WrappedText("");
-
-        ImguiUtils.WrappedText("Name:");
-        ImGui.InputText($"##Name", ref _refUpdateName, 255);
-        ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
-        ImguiUtils.WrappedText("");
-
-        ImguiUtils.WrappedText("Tags:");
-        ImGui.InputText($"##Tags", ref _refUpdateTags, 255);
-        ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
-        ImguiUtils.WrappedText("");
-
-        if (ImGui.Button("Update##action_AssetAlias_Update", new Vector2(200, 32)))
-        {
-            UpdateAssetAlias();
-        }
-        ImGui.SameLine();
-        if (ImGui.Button("Restore Default##action_AssetAlias_Restore", new Vector2(200, 32)))
-        {
-            RestoreAssetAlias();
-        }
-    }
-
     private void UpdateAssetAlias()
     {
         switch(_selectedAssetType)
@@ -555,32 +496,6 @@ public class AssetBrowserScreen
         else
         {
             SetObjectModelForSelection(modelName, assetType, "");
-        }
-    }
-
-    public void LoadModelAssetSelection()
-    {
-        var modelName = _selectedName;
-        var assetType = _selectedAssetType;
-
-        if (assetType == AssetCategoryType.Character)
-        {
-            ModelEditor.OnInstantiateChr(modelName);
-        }
-
-        if (assetType == AssetCategoryType.Asset)
-        {
-            ModelEditor.OnInstantiateObj(modelName);
-        }
-
-        if (assetType == AssetCategoryType.Part)
-        {
-            ModelEditor.OnInstantiateParts(modelName);
-        }
-
-        if (assetType == AssetCategoryType.MapPiece)
-        {
-            ModelEditor.OnInstantiateMapPiece(_selectedAssetMapId, modelName);
         }
     }
 

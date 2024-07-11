@@ -34,7 +34,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
     public bool ShowSaveOption { get; set; }
 
-    public AssetBrowserScreen ModelAssetBrowser;
+    public ModelSelectionView ModelSelectionView;
 
     private readonly ModelPropertyEditor _propEditor;
     private readonly ModelPropertyCache _propCache = new();
@@ -57,13 +57,10 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
     private bool ViewportUsingKeyboard;
     private Sdl2Window Window;
 
-    public ModelEditorModelType CurrentlyLoadedModelType;
-
     public ModelToolbar _modelToolbar;
     public ModelToolbar_ActionList _modelToolbar_ActionList;
     public ModelToolbar_Configuration _modelToolbar_Configuration;
 
-    public static string SelectedAssetID;
     public static LoadedModelInfo CurrentModelInfo;
 
     public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
@@ -81,12 +78,12 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             Viewport = new NullViewport(ViewportType.ModelEditor, "Modeleditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
         }
 
+        ModelSelectionView = new ModelSelectionView(this);
+
         _universe = new Universe(RenderScene, _selection);
 
         _sceneTree = new ModelSceneTree(this, "modeledittree", _universe, _selection, EditorActionManager, Viewport);
         _propEditor = new ModelPropertyEditor(EditorActionManager, _propCache, Viewport, null);
-
-        ModelAssetBrowser = new AssetBrowserScreen(AssetBrowserSource.ModelEditor, _universe, RenderScene, _selection, EditorActionManager, this, Viewport);
 
         _modelToolbar = new ModelToolbar(EditorActionManager, this);
         _modelToolbar_ActionList = new ModelToolbar_ActionList();
@@ -98,41 +95,30 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
         ShowSaveOption = false;
     }
 
-    public void UpdateLoadedModelInfo(string modelName, string mapID = "")
+    public void LoadCharacter(string name)
     {
-        CurrentModelInfo = new LoadedModelInfo(modelName, CurrentlyLoadedModelType, mapID);
+        LoadModel(name, ModelEditorModelType.Character);
+        UpdateLoadedModelInfo(name , ModelEditorModelType.Character);
+    }
+    public void LoadAsset(string name)
+    {
+        LoadModel(name, ModelEditorModelType.Object);
+        UpdateLoadedModelInfo(name, ModelEditorModelType.Object);
+    }
+    public void LoadPart(string name)
+    {
+        LoadModel(name, ModelEditorModelType.Parts);
+        UpdateLoadedModelInfo(name, ModelEditorModelType.Parts);
+    }
+    public void LoadMapPiece(string name, string mapId)
+    {
+        LoadModel(name, ModelEditorModelType.MapPiece, mapId);
+        UpdateLoadedModelInfo(name, ModelEditorModelType.MapPiece, mapId);
     }
 
-    public void OnInstantiateChr(string chrid)
+    public void UpdateLoadedModelInfo(string modelName, ModelEditorModelType type, string mapID = "")
     {
-        SelectedAssetID = chrid;
-        CurrentlyLoadedModelType = ModelEditorModelType.Character;
-        LoadModel(chrid, ModelEditorModelType.Character);
-        UpdateLoadedModelInfo(chrid);
-    }
-
-    public void OnInstantiateObj(string objid)
-    {
-        SelectedAssetID = objid;
-        CurrentlyLoadedModelType = ModelEditorModelType.Object;
-        LoadModel(objid, ModelEditorModelType.Object);
-        UpdateLoadedModelInfo(objid);
-    }
-
-    public void OnInstantiateParts(string partsid)
-    {
-        SelectedAssetID = partsid;
-        CurrentlyLoadedModelType = ModelEditorModelType.Parts;
-        LoadModel(partsid, ModelEditorModelType.Parts);
-        UpdateLoadedModelInfo(partsid);
-    }
-
-    public void OnInstantiateMapPiece(string mapid, string modelid)
-    {
-        SelectedAssetID = $"{mapid}{modelid}";
-        CurrentlyLoadedModelType = ModelEditorModelType.MapPiece;
-        LoadModel(modelid, ModelEditorModelType.MapPiece, mapid);
-        UpdateLoadedModelInfo(modelid, mapid);
+        CurrentModelInfo = new LoadedModelInfo(modelName, type, mapID);
     }
 
     public string EditorName => "Model Editor";
@@ -219,12 +205,6 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
                 ModelAction_DuplicateProperty.DuplicateFLVERProperty();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Load Asset Selection", KeyBindings.Current.ModelEditor_LoadCurrentSelection.HintText, true))
-            {
-                ModelAssetBrowser.LoadModelAssetSelection();
-            }
-
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.WindowClose}");
             if (ImGui.MenuItem("Unload Current Asset", KeyBindings.Current.ModelEditor_UnloadCurrentSelection.HintText, true))
             {
@@ -259,11 +239,11 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Properties);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Asset Browser"))
+            if (ImGui.MenuItem("Model Selection"))
             {
-                CFG.Current.Interface_ModelEditor_AssetBrowser = !CFG.Current.Interface_ModelEditor_AssetBrowser;
+                CFG.Current.Interface_ModelEditor_ModelSelection = !CFG.Current.Interface_ModelEditor_ModelSelection;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_AssetBrowser);
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ModelSelection);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Toolbar"))
@@ -425,11 +405,6 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             ModelAction_DeleteProperty.DeleteFLVERProperty();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.ModelEditor_LoadCurrentSelection))
-        {
-            ModelAssetBrowser.LoadModelAssetSelection();
-        }
-
         if (InputTracker.GetKeyDown(KeyBindings.Current.ModelEditor_UnloadCurrentSelection))
         {
             CurrentModelInfo = null;
@@ -516,17 +491,17 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
                 if (assetType == "Character")
                 {
-                    OnInstantiateChr(modelName);
+                    LoadCharacter(modelName);
                 }
 
                 if (assetType == "Asset")
                 {
-                    OnInstantiateObj(modelName);
+                    LoadAsset(modelName);
                 }
 
                 if (assetType == "Part")
                 {
-                    OnInstantiateParts(modelName);
+                    LoadPart(modelName);
                 }
 
                 if(initcmd.Length > 3)
@@ -535,7 +510,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
                     if (assetType == "MapPiece")
                     {
-                        OnInstantiateMapPiece(mapId, modelName);
+                        LoadMapPiece(mapId, modelName);
                     }
                 }
             }
@@ -550,7 +525,8 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
         //ImGui.Text(string.Format("Application average {0:F3} ms/frame ({1:F1} FPS)", 1000f / ImGui.GetIO().Framerate, ImGui.GetIO().Framerate));
 
         Viewport.OnGui();
-        ModelAssetBrowser.OnGui();
+        ModelSelectionView.OnGui();
+
         _sceneTree.OnGui();
         _propEditor.OnGui(_selection, "modeleditprop", Viewport.Width, Viewport.Height);
 
@@ -578,7 +554,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
     {
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
-            ModelAssetBrowser.OnProjectChanged();
+            ModelSelectionView.OnProjectChanged();
         }
 
         CurrentModelInfo = null;
