@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor
 {
-    public class LoadedModelInfo
+    public class FlverModelInfo
     {
         public string ModelName { get; set; }
         public ModelEditorModelType Type { get; set; }
@@ -25,7 +25,7 @@ namespace StudioCore.Editors.ModelEditor
         public string BinderPath { get; set; }
         public string BinderExtension { get; set; }
 
-        public LoadedModelInfo(string modelName, ModelEditorModelType modelType, string mapId)
+        public FlverModelInfo(string modelName, ModelEditorModelType modelType, string mapId)
         {
             ModelName = modelName;
             Type = modelType;

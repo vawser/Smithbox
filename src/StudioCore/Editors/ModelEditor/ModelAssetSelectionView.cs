@@ -139,7 +139,7 @@ namespace StudioCore.Editors.ModelEditor
                         {
                             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
-                                Screen.LoadCharacter(_selectedEntry);
+                                Screen.ResourceHandler.LoadCharacter(_selectedEntry);
                             }
                         }
                     }
@@ -176,7 +176,7 @@ namespace StudioCore.Editors.ModelEditor
                         {
                             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
-                                Screen.LoadAsset(_selectedEntry);
+                                Screen.ResourceHandler.LoadAsset(_selectedEntry);
                             }
                         }
                     }
@@ -206,7 +206,7 @@ namespace StudioCore.Editors.ModelEditor
                         {
                             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
-                                Screen.LoadPart(_selectedEntry);
+                                Screen.ResourceHandler.LoadPart(_selectedEntry);
                             }
                         }
                     }
@@ -253,7 +253,7 @@ namespace StudioCore.Editors.ModelEditor
                             {
                                 if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                                 {
-                                    Screen.LoadMapPiece(_selectedEntry, map);
+                                    Screen.ResourceHandler.LoadMapPiece(_selectedEntry, map);
                                 }
                             }
                         }

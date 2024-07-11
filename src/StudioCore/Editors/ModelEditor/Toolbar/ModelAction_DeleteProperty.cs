@@ -60,6 +60,7 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
 
         public static void DeleteFLVERProperty()
         {
+            /*
             ViewportSelection sel = ModelEditorScreen._sceneTree.GetCurrentSelection();
 
             if (sel.GetSelection().Count < 1)
@@ -82,6 +83,7 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
             ModelToolbar._screen.Save();
 
             CFG.Current.ModelEditor_RenderingUpdate = true;
+            */
         }
     }
 }

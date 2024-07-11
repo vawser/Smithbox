@@ -25,7 +25,7 @@ using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelEditorScreen : EditorScreen, IResourceEventListener
+public class ModelEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
@@ -39,16 +39,11 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
     public static ModelSceneTree _sceneTree;
     public static ViewportSelection _selection = new();
 
-    public static Universe _universe;
-
-    public static ResourceHandle<FlverResource> _flverhandle;
-
-    private Task _loadingTask;
-    public static MeshRenderableProxy _renderMesh;
+    public Universe _universe;
 
     public static MapEditor.ViewportActionManager EditorActionManager = new();
     public Rectangle Rect;
-    public static RenderScene RenderScene;
+    public RenderScene RenderScene;
     public IViewport Viewport;
 
     private bool ViewportUsingKeyboard;
@@ -58,7 +53,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
     public ModelToolbar_ActionList _modelToolbar_ActionList;
     public ModelToolbar_Configuration _modelToolbar_Configuration;
 
-    public static LoadedModelInfo CurrentModelInfo;
+    public ModelResourceHandler ResourceHandler;
 
     public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -75,6 +70,8 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             Viewport = new NullViewport(ViewportType.ModelEditor, "Modeleditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
         }
 
+        ResourceHandler = new ModelResourceHandler(this, Viewport);
+
         ModelSelectionView = new ModelAssetSelectionView(this);
 
         _universe = new Universe(RenderScene, _selection);
@@ -89,33 +86,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
     public void Init()
     {
-        ShowSaveOption = false;
-    }
-
-    public void LoadCharacter(string name)
-    {
-        LoadModel(name, ModelEditorModelType.Character);
-        UpdateLoadedModelInfo(name , ModelEditorModelType.Character);
-    }
-    public void LoadAsset(string name)
-    {
-        LoadModel(name, ModelEditorModelType.Object);
-        UpdateLoadedModelInfo(name, ModelEditorModelType.Object);
-    }
-    public void LoadPart(string name)
-    {
-        LoadModel(name, ModelEditorModelType.Parts);
-        UpdateLoadedModelInfo(name, ModelEditorModelType.Parts);
-    }
-    public void LoadMapPiece(string name, string mapId)
-    {
-        LoadModel(name, ModelEditorModelType.MapPiece, mapId);
-        UpdateLoadedModelInfo(name, ModelEditorModelType.MapPiece, mapId);
-    }
-
-    public void UpdateLoadedModelInfo(string modelName, ModelEditorModelType type, string mapID = "")
-    {
-        CurrentModelInfo = new LoadedModelInfo(modelName, type, mapID);
+        ShowSaveOption = true;
     }
 
     public string EditorName => "Model Editor";
@@ -131,10 +102,10 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
         {
             CFG.Current.ModelEditor_RenderingUpdate = false;
 
-            if (_flverhandle != null)
+            if (ResourceHandler._flverhandle != null)
             {
-                FlverResource r = _flverhandle.Get();
-                _universe.LoadFlverInModelEditor(r.Flver, _renderMesh, CurrentModelInfo.ModelName);
+                FlverResource r = ResourceHandler._flverhandle.Get();
+                _universe.LoadFlverInModelEditor(r.Flver, ResourceHandler._renderMesh, ResourceHandler.CurrentFLVERInfo.ModelName);
             }
 
             if (CFG.Current.Viewport_Enable_Texturing)
@@ -143,9 +114,9 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             }
         }
 
-        if (_loadingTask != null && _loadingTask.IsCompleted)
+        if (ResourceHandler._loadingTask != null && ResourceHandler._loadingTask.IsCompleted)
         {
-            _loadingTask = null;
+            ResourceHandler._loadingTask = null;
         }
     }
 
@@ -200,13 +171,6 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
                     _selection.IsSelection()))
             {
                 ModelAction_DuplicateProperty.DuplicateFLVERProperty();
-            }
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.WindowClose}");
-            if (ImGui.MenuItem("Unload Current Asset", KeyBindings.Current.ModelEditor_UnloadCurrentSelection.HintText, true))
-            {
-                CurrentModelInfo = null;
-                _universe.UnloadModels(true);
             }
 
             ImGui.EndMenu();
@@ -402,12 +366,6 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             ModelAction_DeleteProperty.DeleteFLVERProperty();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.ModelEditor_UnloadCurrentSelection))
-        {
-            CurrentModelInfo = null;
-            _universe.UnloadModels(true);
-        }
-
         if (!ViewportUsingKeyboard && !ImGui.GetIO().WantCaptureKeyboard)
         {
             if (InputTracker.GetKeyDown(KeyBindings.Current.Viewport_TranslateMode))
@@ -488,17 +446,17 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
                 if (assetType == "Character")
                 {
-                    LoadCharacter(modelName);
+                    ResourceHandler.LoadCharacter(modelName);
                 }
 
                 if (assetType == "Asset")
                 {
-                    LoadAsset(modelName);
+                    ResourceHandler.LoadAsset(modelName);
                 }
 
                 if (assetType == "Part")
                 {
-                    LoadPart(modelName);
+                    ResourceHandler.LoadPart(modelName);
                 }
 
                 if(initcmd.Length > 3)
@@ -507,7 +465,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
                     if (assetType == "MapPiece")
                     {
-                        LoadMapPiece(mapId, modelName);
+                        ResourceHandler.LoadMapPiece(mapId, modelName);
                     }
                 }
             }
@@ -540,6 +498,14 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             ResourceManager.OnGuiDrawResourceList("modelResourceList");
         }
         ImGui.PopStyleColor(1);
+
+        // Focus on Properties by default when this editor is made focused
+        if (FirstFrame)
+        {
+            ImGui.SetWindowFocus("Properties##modeleditprop");
+
+            FirstFrame = false;
+        }
     }
 
     public bool InputCaptured()
@@ -554,7 +520,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             ModelSelectionView.OnProjectChanged();
         }
 
-        CurrentModelInfo = null;
+        ResourceHandler.CurrentFLVERInfo = null;
         _universe.UnloadAll(true);
     }
 
@@ -563,147 +529,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        if (CurrentModelInfo != null)
-        {
-            // Copy the binder to the mod directory if it does not already exist.
-
-            var exists = CurrentModelInfo.CopyBinderToMod();
-
-            if (exists)
-            {
-                if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
-                {
-                    if (CurrentModelInfo.Type == ModelEditorModelType.MapPiece)
-                    {
-                        WriteModelFlver(); // DS1 doesn't wrap the mappiece flver within a container
-                    }
-                    else
-                    {
-                        WriteModelBinderBND3();
-                    }
-                }
-                else
-                {
-                    WriteModelBinderBND4();
-                }
-            }
-        }
-    }
-
-    public void WriteModelBinderBND4()
-    {
-        LoadedModelInfo info = CurrentModelInfo;
-        FlverResource flvResource = _flverhandle.Get();
-
-        byte[] fileBytes = null;
-
-        using (IBinder binder = BND4.Read(DCX.Decompress(info.ModBinderPath)))
-        {
-            foreach (var file in binder.Files)
-            {
-                var curFileName = $"{Path.GetFileName(file.Name)}";
-
-                if (curFileName == info.FlverFileName)
-                {
-                    try
-                    {
-                        file.Bytes = flvResource.Flver.Write();
-                    }
-                    catch (Exception ex)
-                    {
-                        TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
-                    }
-                }
-            }
-
-            // Then write those bytes to file
-            BND4 writeBinder = binder as BND4;
-
-            switch (Smithbox.ProjectType)
-            {
-                case ProjectType.DS3:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                    break;
-                case ProjectType.SDT:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                    break;
-                case ProjectType.ER:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                    break;
-                case ProjectType.AC6:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
-                    break;
-                default:
-                    TaskLogs.AddLog($"Invalid ProjectType during Model Editor Save");
-                    return;
-            }
-        }
-
-        if (fileBytes != null)
-        {
-            File.WriteAllBytes(info.ModBinderPath, fileBytes);
-            TaskLogs.AddLog($"Saved model at: {info.ModBinderPath}");
-        }
-    }
-
-    public void WriteModelBinderBND3()
-    {
-        LoadedModelInfo info = CurrentModelInfo;
-        FlverResource flvResource = _flverhandle.Get();
-        byte[] fileBytes = null;
-
-        using (IBinder binder = BND3.Read(DCX.Decompress(info.ModBinderPath)))
-        {
-            foreach (var file in binder.Files)
-            {
-                var curFileName = $"{Path.GetFileName(file.Name)}";
-
-                if (curFileName == info.FlverFileName)
-                {
-                    try
-                    {
-                        file.Bytes = flvResource.Flver.Write();
-                    }
-                    catch (Exception ex)
-                    {
-                        TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
-                    }
-                }
-            }
-
-            // Then write those bytes to file
-            BND3 writeBinder = binder as BND3;
-
-            switch (Smithbox.ProjectType)
-            {
-                case ProjectType.DS1:
-                case ProjectType.DS1R:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
-                    break;
-                default:
-                    TaskLogs.AddLog($"Invalid ProjectType during Model Editor Save");
-                    return;
-            }
-        }
-
-        if (fileBytes != null)
-        {
-            File.WriteAllBytes(info.ModBinderPath, fileBytes);
-            TaskLogs.AddLog($"Saved model at: {info.ModBinderPath}");
-        }
-    }
-
-    public void WriteModelFlver()
-    {
-        LoadedModelInfo info = CurrentModelInfo;
-        FlverResource flvResource = _flverhandle.Get();
-        byte[] fileBytes = null;
-
-        FLVER2 flver = FLVER2.Read(DCX.Decompress(info.ModBinderPath));
-        flver = flvResource.Flver;
-        flver.Write(DCX.Type.DCX_DFLT_10000_24_9);
-
-        TaskLogs.AddLog($"Saved model at: {info.ModBinderPath}");
+        ResourceHandler.SaveModel();
     }
 
     public void SaveAll()
@@ -712,50 +538,6 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             return;
 
         Save(); // Just call save.
-    }
-
-    public void OnResourceLoaded(IResourceHandle handle, int tag)
-    {
-        _flverhandle = (ResourceHandle<FlverResource>)handle;
-        _flverhandle.Acquire();
-
-        if (_renderMesh != null)
-        {
-            BoundingBox box = _renderMesh.GetBounds();
-            Viewport.FrameBox(box);
-
-            Vector3 dim = box.GetDimensions();
-            var mindim = Math.Min(dim.X, Math.Min(dim.Y, dim.Z));
-            var maxdim = Math.Max(dim.X, Math.Max(dim.Y, dim.Z));
-
-            var minSpeed = 1.0f;
-            var basespeed = Math.Max(minSpeed, (float)Math.Sqrt(mindim / 3.0f));
-            Viewport.WorldView.CameraMoveSpeed_Normal = basespeed;
-            Viewport.WorldView.CameraMoveSpeed_Slow = basespeed / 10.0f;
-            Viewport.WorldView.CameraMoveSpeed_Fast = basespeed * 10.0f;
-
-            Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
-        }
-
-        if (_flverhandle.IsLoaded && _flverhandle.Get() != null)
-        {
-            FlverResource r = _flverhandle.Get();
-            if (r.Flver != null)
-            {
-                _universe.UnloadModels(true);
-                _universe.LoadFlverInModelEditor(r.Flver, _renderMesh, CurrentModelInfo.ModelName);
-            }
-        }
-
-        if (CFG.Current.Viewport_Enable_Texturing)
-        {
-            _universe.ScheduleTextureRefresh();
-        }
-    }
-
-    public void OnResourceUnloaded(IResourceHandle handle, int tag)
-    {
-        _flverhandle = null;
     }
 
     public void OnEntityContextMenu(Entity ent)
@@ -769,157 +551,4 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             ModelAction_DeleteProperty.DeleteFLVERProperty();
         }
     }
-
-    public ResourceDescriptor loadedAsset;
-
-    public void LoadModel(string modelid, ModelEditorModelType modelType, string mapid = null)
-    {
-        LoadModelInternal(modelid, modelType, mapid);
-
-        // If model ID has additional textures associated with it, load them
-        if (Smithbox.BankHandler.AdditionalTextureInfo.HasAdditionalTextures(modelid))
-        {
-            foreach (var entry in Smithbox.BankHandler.AdditionalTextureInfo.GetAdditionalTextures(modelid))
-            {
-                LoadModelInternal(entry, modelType, mapid, true);
-            }
-        }
-    }
-
-    // PIPELINE: find resource desciptor for passed parameters and then start a new Resource Job for loading the resource.
-    public void LoadModelInternal(string modelid, ModelEditorModelType modelType, string mapid = null, bool skipModel = false)
-    {
-        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
-
-        ResourceDescriptor modelAsset = GetModelAssetDescriptor(modelid, modelType, mapid);
-        ResourceDescriptor textureAsset = GetTextureAssetDescriptor(modelid, modelType, mapid);
-
-        UpdateRenderMesh(modelAsset, skipModel);
-
-        // PIPELINE: resource has not already been loaded
-        if (!ResourceManager.IsResourceLoadedOrInFlight(modelAsset.AssetVirtualPath, AccessLevel.AccessFull))
-        {
-            // Ignore this if we are only loading textures
-            if (!skipModel)
-            {
-                // PIPELINE: resource path is a archive path (MAPBND.DCX or MAPBHD/MAPBDT)
-                if (modelAsset.AssetArchiveVirtualPath != null)
-                {
-                    job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
-                }
-                // PIPELINE: resource path is adirect path (FLVER.DCX)
-                else if (modelAsset.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessFull);
-                }
-            }
-
-            if (Universe.IsRendering)
-            {
-                if (CFG.Current.Viewport_Enable_Texturing)
-                {
-                    if (textureAsset.AssetArchiveVirtualPath != null)
-                    {
-                        job.AddLoadArchiveTask(textureAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
-                    }
-                    else if (textureAsset.AssetVirtualPath != null)
-                    {
-                        job.AddLoadFileTask(textureAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                    }
-                }
-            }
-
-            _loadingTask = job.Complete();
-        }
-
-        ResourceManager.AddResourceListener<FlverResource>(modelAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
-    }
-
-    public static void UpdateLoadedRenderMesh()
-    {
-        ResourceDescriptor asset = GetModelAssetDescriptor(CurrentModelInfo.ModelName, CurrentModelInfo.Type, CurrentModelInfo.MapID);
-
-        if (Universe.IsRendering)
-        {
-            if (_renderMesh != null)
-            {
-                _renderMesh.Dispose();
-            }
-
-            _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                RenderScene, asset.AssetVirtualPath, ModelMarkerType.None, null);
-            _renderMesh.World = Matrix4x4.Identity;
-        }
-    }
-
-    public void UpdateRenderMesh(ResourceDescriptor modelAsset, bool skipModel = false)
-    {
-        if (Universe.IsRendering)
-        {
-            // Ignore this if we are only loading textures
-            if (!skipModel)
-            {
-                if (_renderMesh != null)
-                {
-                    _renderMesh.Dispose();
-                }
-
-                _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
-                _renderMesh.World = Matrix4x4.Identity;
-            }
-        }
-    }
-
-    public static ResourceDescriptor GetModelAssetDescriptor(string modelid, ModelEditorModelType modelType, string mapid = null)
-    {
-        ResourceDescriptor asset;
-
-        switch (modelType)
-        {
-            case ModelEditorModelType.Character:
-                asset = ResourceModelLocator.GetChrModel(modelid);
-                break;
-            case ModelEditorModelType.Object:
-                asset = ResourceModelLocator.GetObjModel(modelid);
-                break;
-            case ModelEditorModelType.Parts:
-                asset = ResourceModelLocator.GetPartsModel(modelid);
-                break;
-            case ModelEditorModelType.MapPiece:
-                asset = ResourceModelLocator.GetMapModel(mapid, modelid);
-                break;
-            default:
-                asset = ResourceModelLocator.GetNullAsset();
-                break;
-        }
-
-        return asset;
-    }
-
-    public static ResourceDescriptor GetTextureAssetDescriptor(string modelid, ModelEditorModelType modelType, string mapid = null)
-    {
-        ResourceDescriptor asset;
-
-        switch (modelType)
-        {
-            case ModelEditorModelType.Character:
-                asset = ResourceTextureLocator.GetChrTextures(modelid);
-                break;
-            case ModelEditorModelType.Object:
-                asset = ResourceTextureLocator.GetObjTextureContainer(modelid);
-                break;
-            case ModelEditorModelType.Parts:
-                asset = ResourceTextureLocator.GetPartTextureContainer(modelid);
-                break;
-            case ModelEditorModelType.MapPiece:
-                asset = ResourceModelLocator.GetNullAsset();
-                break;
-            default:
-                asset = ResourceModelLocator.GetNullAsset();
-                break;
-        }
-
-        return asset;
-    }
-
 }

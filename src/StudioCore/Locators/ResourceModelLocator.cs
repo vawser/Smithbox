@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,6 +35,8 @@ public static class ResourceModelLocator
 
         return $@"{mapid}_{modelname.Substring(1)}";
     }
+
+
 
     public static ResourceDescriptor GetMapModel(string mapid, string model)
     {
@@ -184,6 +187,16 @@ public static class ResourceModelLocator
         else
             ret.AssetVirtualPath = $@"chr/{chr}/model/{chr}.flver";
 
+        // Direct paths
+        if (Smithbox.ProjectType == ProjectType.DS1)
+            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chr}.chrbnd");
+        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"model\chr\{chr}.bnd");
+        else if(Smithbox.ProjectType == ProjectType.DES)
+            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chr}\{chr}.chrbnd.dcx");
+        else
+            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chr}.chrbnd.dcx");
+
         return ret;
     }
 
@@ -199,6 +212,29 @@ public static class ResourceModelLocator
             ret.AssetVirtualPath = $@"obj/{obj}/model/{obj.ToUpper()}.flver";
         else
             ret.AssetVirtualPath = $@"obj/{obj}/model/{obj}.flver";
+
+        // Direct paths
+        if (Smithbox.ProjectType == ProjectType.DS1)
+            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd");
+        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"model\obj\{obj}.bnd");
+        else if(Smithbox.ProjectType == ProjectType.ER)
+        {
+            // Derive subfolder path from model name (all vanilla AEG are within subfolders)
+            if (obj.Length >= 6)
+            {
+                ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"asset\aeg\{obj.Substring(0, 6)}\{obj}.geombnd.dcx");
+            }
+        }
+        else if(Smithbox.ProjectType == ProjectType.AC6)
+        {
+            if (obj.Length >= 6)
+                ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"asset\environment\geometry\{obj}.geombnd.dcx");
+        }
+        else
+        {
+            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd.dcx");
+        }
 
         return ret;
     }
@@ -221,6 +257,50 @@ public static class ResourceModelLocator
         {
             ret.AssetVirtualPath = $@"parts/{part}/model/{part}.flver";
         }
+
+        // Direct paths
+        if (Smithbox.ProjectType == ProjectType.DS1)
+            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{part}.partsbnd");
+        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        {
+            var partType = "";
+            switch (part.Substring(0, 2))
+            {
+                case "as":
+                    partType = "accessories";
+                    break;
+                case "am":
+                    partType = "arm";
+                    break;
+                case "bd":
+                    partType = "body";
+                    break;
+                case "fa":
+                case "fc":
+                case "fg":
+                    partType = "face";
+                    break;
+                case "hd":
+                    partType = "head";
+                    break;
+                case "leg":
+                    partType = "leg";
+                    break;
+                case "sd":
+                    partType = "shield";
+                    break;
+                case "wp":
+                    partType = "weapon";
+                    break;
+            }
+
+            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"model\parts\{partType}\{part}.bnd");
+        }
+        else
+        {
+            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{part}.partsbnd.dcx");
+        }
+
         return ret;
     }
 }

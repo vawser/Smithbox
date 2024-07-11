@@ -60,6 +60,7 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
 
         public static void DuplicateFLVERProperty()
         {
+            /*
             CFG.Current.ModelEditor_RenderingUpdate = false;
 
             ViewportSelection sel = ModelEditorScreen._sceneTree.GetCurrentSelection();
@@ -84,6 +85,7 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
             ModelToolbar._screen.Save();
 
             CFG.Current.ModelEditor_RenderingUpdate = true;
+            */
         }
     }
 }
