@@ -261,7 +261,7 @@ public class FlverResource : IResource, IDisposable
 
                 if (tex == null || tex.Path == "")
                 {
-                    TaskLogs.AddLog($"Failed to find MATBIN string: {mtdstring} - {type}");
+                    //TaskLogs.AddLog($"Failed to find MATBIN string: {mtdstring} - {type}");
                     return;
                 }
 
