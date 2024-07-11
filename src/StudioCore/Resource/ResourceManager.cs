@@ -912,7 +912,7 @@ public static class ResourceManager
                 return;
             }
 
-            // PIPELINE: add Lond Binder Resources job to Resource Job
+            // PIPELINE: add Load Binder Resources job to Resource Job
             if (!archivesToLoad.Contains(virtualPath))
             {
                 archivesToLoad.Add(virtualPath);
@@ -936,7 +936,7 @@ public static class ResourceManager
                 return;
             }
 
-            // PIPELINE: add Lond Binder Resources job to Resource Job
+            // PIPELINE: add Load Binder Resources job to Resource Job
             if (!archivesToLoad.Contains(virtualPath))
             {
                 archivesToLoad.Add(virtualPath);

@@ -16,6 +16,8 @@ using StudioCore.Editors.MaterialEditor;
 using StudioCore.MsbEditor;
 using StudioCore.Locators;
 using StudioCore.Core;
+using static StudioCore.Editors.ParamEditor.Toolbar.ParamToolbar;
+using System.Text.RegularExpressions;
 
 namespace StudioCore.Resource;
 
@@ -188,6 +190,7 @@ public class FlverResource : IResource, IDisposable
                 MTD.Texture? tex = Smithbox.BankHandler.MaterialBank.Mtds[mtdstring].Mtd.Textures.Find(x => x.Type == type);
                 if (tex == null || !tex.Extended || tex.Path == "")
                 {
+                    //TaskLogs.AddLog($"Failed to find MTD string: {mtdstring} - {type}");
                     return;
                 }
 
@@ -197,9 +200,68 @@ public class FlverResource : IResource, IDisposable
 
             if (Smithbox.BankHandler.MaterialBank.Matbins.ContainsKey(mtdstring))
             {
-                MATBIN.Sampler? tex = Smithbox.BankHandler.MaterialBank.Matbins[mtdstring].Matbin.Samplers.Find(x => x.Type == type);
+                MATBIN.Sampler?  tex = null;
+
+                //MATBIN.Sampler? tex = Smithbox.BankHandler.MaterialBank.Matbins[mtdstring].Matbin.Samplers.Find(x => x.Type == type);
+
+                bool match = false;
+
+                foreach (var t in Smithbox.BankHandler.MaterialBank.Matbins[mtdstring].Matbin.Samplers)
+                {
+                    if (t.Type == type)
+                    {
+                        tex = t;
+                        match = true;
+                        break;
+                    }
+                }
+
+                // If normal match fails, try heuristic match to account for disparities between sampler and source
+                if(!match)
+                {
+                    foreach (var t in Smithbox.BankHandler.MaterialBank.Matbins[mtdstring].Matbin.Samplers)
+                    {
+                        // Hack to allow some differing paths between sampler and source to work correctly in ER
+                        // Namely for these aspects of the paths:
+                        // Mb<x> where <x> is a number, but differs between sampler and source 
+                        // <x>Mask where <x> is a number, but differs between sampler and source
+                        if (t.Type.Contains("__") && type.Contains("__"))
+                        {
+                            var samplerType = t.Type.Split("__")[1];
+                            var sourceType = type.Split("__")[1];
+
+                            if (samplerType == sourceType)
+                            {
+                                tex = t;
+                                break;
+                            }
+                        }
+
+                        // Loose match for Albedo
+                        if (type == "g_DiffuseTexture" || type.Contains("AlbedoMap"))
+                        {
+                            if(t.Type.Contains("AlbedoMap"))
+                            {
+                                tex = t;
+                                break;
+                            }
+                        }
+
+                        // Loose match for Normal
+                        if (type == "g_BumpmapTexture" || type.Contains("NormalMap"))
+                        {
+                            if (t.Type.Contains("NormalMap"))
+                            {
+                                tex = t;
+                                break;
+                            }
+                        }
+                    }
+                }
+
                 if (tex == null || tex.Path == "")
                 {
+                    TaskLogs.AddLog($"Failed to find MATBIN string: {mtdstring} - {type}");
                     return;
                 }
 
