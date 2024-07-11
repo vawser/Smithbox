@@ -6,7 +6,6 @@ using StudioCore.Banks.SelectionGroupBank;
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Banks.TextureCorrectionBank;
-using StudioCore.Editors.MapEditor.CollisionPropertyEditor;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ParamEditor;
@@ -60,10 +59,6 @@ public class BankHandler
     public LightmapAtlasBank LightmapAtlasBank;
     public MaterialResourceBank MaterialBank;
 
-    ///public CollisionBank CollisionBank;
-
-    //public ProjectEnumBank ProjectEnums;
-
     public bool ReloadAliasBanks;
 
     public BankHandler()
@@ -98,7 +93,6 @@ public class BankHandler
         FMGBank = new FMGBank();
         LightmapAtlasBank = new LightmapAtlasBank();
         MaterialBank = new MaterialResourceBank();
-        //CollisionBank = new CollisionBank();
     }
 
     public void UpdateBanks()
@@ -135,8 +129,6 @@ public class BankHandler
 
         LightmapAtlasBank.LoadBank();
         MaterialBank.LoadBank();
-
-        //CollisionBank.LoadBank();
 
         ParamBank.ReloadParams();
     }

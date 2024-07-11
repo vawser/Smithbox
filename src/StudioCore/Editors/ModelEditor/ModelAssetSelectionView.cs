@@ -3,7 +3,6 @@ using ImGuiNET;
 using SoulsFormats.KF4;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
-using StudioCore.Editors.AssetBrowser;
 using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Utilities;
@@ -11,14 +10,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Security.Cryptography.Xml;
-using System.Text;
-using System.Threading.Tasks;
-using static StudioCore.Editors.ParamEditor.Toolbar.ParamToolbar;
 
 namespace StudioCore.Editors.ModelEditor
 {
-    public class ModelSelectionView
+    public class ModelAssetSelectionView
     {
         private string _searchInput = "";
         private string _selectedEntry = "";
@@ -26,7 +21,7 @@ namespace StudioCore.Editors.ModelEditor
 
         private ModelEditorScreen Screen;
 
-        public ModelSelectionView(ModelEditorScreen screen)
+        public ModelAssetSelectionView(ModelEditorScreen screen)
         {
             Screen = screen;
         }
@@ -35,7 +30,8 @@ namespace StudioCore.Editors.ModelEditor
         {
             if (Smithbox.ProjectType != ProjectType.Undefined)
             {
-
+                _selectedEntry = "";
+                _selectedEntryType = ModelSelectionType.None;
             }
         }
 
@@ -49,13 +45,13 @@ namespace StudioCore.Editors.ModelEditor
             if (!Smithbox.AliasCacheHandler.AliasCache.UpdateCacheComplete)
                 return;
 
-            if (!CFG.Current.Interface_ModelEditor_ModelSelection)
+            if (!CFG.Current.Interface_ModelEditor_AssetBrowser)
                 return;
 
             ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
-            if (ImGui.Begin($@"Model Selection##ModelSelectionView"))
+            if (ImGui.Begin($@"Asset Browser##ModelAssetBrower"))
             {
                 ImGui.InputText($"Search", ref _searchInput, 255);
                 ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
@@ -83,7 +79,7 @@ namespace StudioCore.Editors.ModelEditor
                 refTagList = referenceDict[lowerName].tags;
             }
 
-            if (!CFG.Current.AssetBrowser_ShowLowDetailParts)
+            if (!CFG.Current.ModelEditor_AssetBrowser_ShowLowDetailParts)
             {
                 if (name.Substring(name.Length - 2) == "_l")
                 {
@@ -105,7 +101,7 @@ namespace StudioCore.Editors.ModelEditor
 
             if (referenceDict.ContainsKey(lowerName))
             {
-                if (CFG.Current.AssetBrowser_ShowAliasesInBrowser)
+                if (CFG.Current.ModelEditor_AssetBrowser_ShowAliases)
                 {
                     var aliasName = referenceDict[lowerName].name;
 
@@ -113,7 +109,7 @@ namespace StudioCore.Editors.ModelEditor
                 }
 
                 // Tags
-                if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
+                if (CFG.Current.ModelEditor_AssetBrowser_ShowTags)
                 {
                     var tagString = string.Join(" ", referenceDict[lowerName].tags);
                     AliasUtils.DisplayTagAlias(tagString);

@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.EntryFileList;
 using StudioCore.MsbEditor;
 using System;
 using System.Collections.Generic;

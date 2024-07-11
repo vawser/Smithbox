@@ -1,5 +1,4 @@
 ﻿using ImGuiNET;
-using StudioCore.Editors.AssetBrowser;
 using StudioCore.Interface.Tabs;
 using System.Numerics;
 

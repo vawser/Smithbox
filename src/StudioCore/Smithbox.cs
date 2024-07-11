@@ -21,7 +21,6 @@ using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
 using StudioCore.Interface;
-using StudioCore.Editors.AssetBrowser;
 using StudioCore.Core;
 using Microsoft.AspNetCore.Components.Forms;
 

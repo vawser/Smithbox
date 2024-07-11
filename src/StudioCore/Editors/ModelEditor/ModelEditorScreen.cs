@@ -21,10 +21,7 @@ using StudioCore.Utilities;
 using StudioCore.Editors.ModelEditor.Toolbar;
 using ModelCore.Editors.ModelEditor.Toolbar;
 using StudioCore.Locators;
-using StudioCore.Editors.AssetBrowser;
 using StudioCore.Core;
-using Org.BouncyCastle.Asn1.X509;
-using HKLib.hk2018.hkaiCollisionAvoidance;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -34,7 +31,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
 
     public bool ShowSaveOption { get; set; }
 
-    public ModelSelectionView ModelSelectionView;
+    public ModelAssetSelectionView ModelSelectionView;
 
     private readonly ModelPropertyEditor _propEditor;
     private readonly ModelPropertyCache _propCache = new();
@@ -78,7 +75,7 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             Viewport = new NullViewport(ViewportType.ModelEditor, "Modeleditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
         }
 
-        ModelSelectionView = new ModelSelectionView(this);
+        ModelSelectionView = new ModelAssetSelectionView(this);
 
         _universe = new Universe(RenderScene, _selection);
 
@@ -239,11 +236,11 @@ public class ModelEditorScreen : EditorScreen, IResourceEventListener
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Properties);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Model Selection"))
+            if (ImGui.MenuItem("Asset Browser"))
             {
-                CFG.Current.Interface_ModelEditor_ModelSelection = !CFG.Current.Interface_ModelEditor_ModelSelection;
+                CFG.Current.Interface_ModelEditor_AssetBrowser = !CFG.Current.Interface_ModelEditor_AssetBrowser;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ModelSelection);
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_AssetBrowser);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Toolbar"))

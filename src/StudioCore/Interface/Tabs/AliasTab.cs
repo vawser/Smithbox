@@ -2,7 +2,6 @@
 using ImGuiNET;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
-using StudioCore.Editors.AssetBrowser;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System.Collections.Generic;

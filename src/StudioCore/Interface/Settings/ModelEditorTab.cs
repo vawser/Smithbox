@@ -16,6 +16,16 @@ public class ModelEditorTab
     {
         if (ImGui.BeginTabItem("Model Editor"))
         {
+            // Scene View
+            if (ImGui.CollapsingHeader("Model Hierarchy", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Display material names with meshes", ref CFG.Current.ModelEditor_DisplayMatNameOnMesh);
+                ImguiUtils.ShowHoverTooltip("Display the material name that a mesh uses by the scene tree name.");
+
+                ImGui.Checkbox("Display dummy polygon reference ids", ref CFG.Current.ModelEditor_DisplayDmyPolyReferenceID);
+                ImguiUtils.ShowHoverTooltip("Display the reference ID of a dummy polygon by the scene tree name.");
+            }
+
             // Property View
             if (ImGui.CollapsingHeader("Properties", ImGuiTreeNodeFlags.DefaultOpen))
             {
@@ -27,14 +37,17 @@ public class ModelEditorTab
 
             }
 
-            // Scene View
-            if (ImGui.CollapsingHeader("Model Hierarchy", ImGuiTreeNodeFlags.DefaultOpen))
+            // Asset Browser
+            if (ImGui.CollapsingHeader("Asset Browser"))
             {
-                ImGui.Checkbox("Display material names with meshes", ref CFG.Current.ModelEditor_DisplayMatNameOnMesh);
-                ImguiUtils.ShowHoverTooltip("Display the material name that a mesh uses by the scene tree name.");
+                ImGui.Checkbox("Display aliases in list", ref CFG.Current.ModelEditor_AssetBrowser_ShowAliases);
+                ImguiUtils.ShowHoverTooltip("Show the aliases for each entry within the browser list as part of their displayed name.");
 
-                ImGui.Checkbox("Display dummy polygon reference ids", ref CFG.Current.ModelEditor_DisplayDmyPolyReferenceID);
-                ImguiUtils.ShowHoverTooltip("Display the reference ID of a dummy polygon by the scene tree name.");
+                ImGui.Checkbox("Display tags in list", ref CFG.Current.ModelEditor_AssetBrowser_ShowTags);
+                ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
+
+                ImGui.Checkbox("Display low detail Parts in list", ref CFG.Current.ModelEditor_AssetBrowser_ShowLowDetailParts);
+                ImguiUtils.ShowHoverTooltip("Show the _l (low-detail) part entries in the Model Editor instance of the Asset Browser.");
             }
 
             // Grid

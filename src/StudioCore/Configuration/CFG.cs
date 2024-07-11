@@ -77,7 +77,7 @@ public class CFG
 
     public bool Interface_ModelEditor_ModelHierarchy = true;
     public bool Interface_ModelEditor_Properties = true;
-    public bool Interface_ModelEditor_ModelSelection = true;
+    public bool Interface_ModelEditor_AssetBrowser = true;
     public bool Interface_ModelEditor_Toolbar = true;
     public bool Interface_ModelEditor_ResourceList = true;
     public bool Interface_ModelEditor_Viewport_Grid = true;
@@ -356,6 +356,10 @@ public class CFG
     //****************************
     // Settings: Map Editor
     //****************************
+    public bool MapEditor_AssetBrowser_ShowAliases = true;
+    public bool MapEditor_AssetBrowser_ShowTags = false;
+    public bool MapEditor_AssetBrowser_ShowLowDetailParts = false;
+
     public bool MapEditor_LoadCollisions_ER = true;
 
     public bool MapEditor_ShowMapGroups = true;
@@ -420,6 +424,10 @@ public class CFG
     //****************************
     // Settings: Model Editor
     //****************************
+    public bool ModelEditor_AssetBrowser_ShowAliases = true;
+    public bool ModelEditor_AssetBrowser_ShowTags = false;
+    public bool ModelEditor_AssetBrowser_ShowLowDetailParts = false;
+
     public bool ModelEditor_RenderingUpdate = false;
     public bool ModelEditor_ViewDummyPolys = true;
     public bool Model_ViewBones = true;

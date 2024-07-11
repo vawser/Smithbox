@@ -33,7 +33,6 @@ public class SettingsWindow
     private TextEditorTab TextEditorSettings;
     private GparamEditorTab GparamEditorSettings;
     private TextureViewerTab TextureViewerSettings;
-    private AssetBrowserTab AssetBrowserSettings;
     private InterfaceTab InterfaceSettings;
 
     public SettingsWindow()
@@ -46,7 +45,6 @@ public class SettingsWindow
         TextEditorSettings = new TextEditorTab();
         GparamEditorSettings = new GparamEditorTab();
         TextureViewerSettings = new TextureViewerTab();
-        AssetBrowserSettings = new AssetBrowserTab();
         InterfaceSettings = new InterfaceTab();
     }
 
@@ -89,7 +87,6 @@ public class SettingsWindow
             TextEditorSettings.Display();
             GparamEditorSettings.Display();
             TextureViewerSettings.Display();
-            AssetBrowserSettings.Display();
             InterfaceSettings.Display();
 
             ImGui.PopItemWidth();

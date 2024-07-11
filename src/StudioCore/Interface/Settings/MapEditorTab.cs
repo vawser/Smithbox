@@ -89,6 +89,19 @@ public class MapEditorTab
                 ImguiUtils.ShowHoverTooltip("The MSB property filter combo-box will be visible.");
             }
 
+            // Asset Browser
+            if (ImGui.CollapsingHeader("Asset Browser"))
+            {
+                ImGui.Checkbox("Display aliases in list", ref CFG.Current.MapEditor_AssetBrowser_ShowAliases);
+                ImguiUtils.ShowHoverTooltip("Show the aliases for each entry within the browser list as part of their displayed name.");
+
+                ImGui.Checkbox("Display tags in list", ref CFG.Current.MapEditor_AssetBrowser_ShowTags);
+                ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
+
+                ImGui.Checkbox("Display low detail Parts in list", ref CFG.Current.MapEditor_AssetBrowser_ShowLowDetailParts);
+                ImguiUtils.ShowHoverTooltip("Show the _l (low-detail) part entries in the Model Editor instance of the Asset Browser.");
+            }
+
             // Additional Property Information
             if (ImGui.CollapsingHeader("Additional Property Information"))
             {

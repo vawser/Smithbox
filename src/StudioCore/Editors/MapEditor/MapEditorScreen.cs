@@ -22,14 +22,11 @@ using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Utilities;
 using StudioCore.Interface;
-using StudioCore.Editors.MapEditor.EntryFileList;
 using StudioCore.Locators;
-using StudioCore.Editors.AssetBrowser;
 using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Havok;
-using StudioCore.Editors.MapEditor.CollisionPropertyEditor;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -49,7 +46,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     /// <summary>
     /// Current entity selection within the viewport.
     /// </summary>
-    private ViewportSelection _selection = new();
+    public ViewportSelection _selection = new();
 
     /// <summary>
     /// Active modal window.
@@ -67,8 +64,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public ViewportActionManager EditorActionManager = new();
 
     public DisplayGroupEditor DispGroupEditor;
-    public AssetBrowserScreen MapAssetBrowser;
-    public EntryFileListEditor EntryFileListViewer;
+    public MapAssetSelectionView MapAssetSelectionView;
     public SelectionGroupView SelectionGroupEditor;
 
     public MapToolbar _mapToolbar;
@@ -120,9 +116,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         DispGroupEditor = new DisplayGroupEditor(RenderScene, _selection, EditorActionManager);
         PropSearch = new MapSearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(RenderScene, _selection);
-        MapAssetBrowser = new AssetBrowserScreen(AssetBrowserSource.MapEditor, Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
+        MapAssetSelectionView = new MapAssetSelectionView(this);
+
         PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport);
-        EntryFileListViewer = new EntryFileListEditor(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
 
         SelectionGroupEditor = new SelectionGroupView(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
 
@@ -609,7 +605,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     }
 
     private LightmapAtlasScreen LightmapAtlasEditor;
-    private CollisionPropertyEditorScreen CollisionPropertyEditor;
 
     public void OnGUI(string[] initcmd)
     {
@@ -1041,11 +1036,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             LightmapAtlasEditor.OnGui();
         }
 
-        if (CollisionPropertyEditor != null)
-        {
-            CollisionPropertyEditor.OnGui();
-        }
-
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);
         if (CFG.Current.Interface_MapEditor_ResourceList)
         {
@@ -1053,8 +1043,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         }
 
         DispGroupEditor.OnGui(Universe._dispGroupCount);
-        MapAssetBrowser.OnGui();
-        EntryFileListViewer.OnGui();
+        MapAssetSelectionView.OnGui();
 
         if (CFG.Current.Interface_MapEditor_Selection_Groups)
         {
@@ -1112,7 +1101,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
-            MapAssetBrowser.OnProjectChanged();
+            MapAssetSelectionView.OnProjectChanged();
             SceneTree.OnProjectChanged();
         }
 

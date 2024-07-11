@@ -2,7 +2,6 @@
 using ImGuiNET;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
-using StudioCore.Editors.AssetBrowser;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.TextEditor;
@@ -257,31 +256,6 @@ public static class AliasUtils
         }
 
         return "";
-    }
-
-    // Asset Browser
-    public static List<AliasReference> GetAliasReferenceList(AssetCategoryType category)
-    {
-        switch(category)
-        {
-            case AssetCategoryType.Character:
-                return Smithbox.BankHandler.CharacterAliases.Aliases.list;
-            case AssetCategoryType.Asset:
-                return Smithbox.BankHandler.AssetAliases.Aliases.list;
-            case AssetCategoryType.Part:
-                return Smithbox.BankHandler.PartAliases.Aliases.list;
-            case AssetCategoryType.MapPiece:
-                return Smithbox.BankHandler.MapPieceAliases.Aliases.list;
-        }
-
-        return null;
-    }
-
-    public static string GetAssetBrowserAliasName(AssetCategoryType category, string rawName)
-    {
-        var aliasName = rawName;
-
-        return aliasName;
     }
 
     // Texture Viewer
