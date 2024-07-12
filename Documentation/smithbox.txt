@@ -71,8 +71,6 @@ Map Editor:
  - Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
  
 Model Editor: 
- - Re-build Model Editor to follow the following structure: load FLVER and present data in with non-reflection method, then create rendering aspects FROM the FLVER data.
- - Fix the Model Editor so it saves the FLVERs correctly
  - Add "Copy As" action for top-level node that lets the user duplicate the entire "chr" set: anibnd, chrbnd, etc
  - Add floating text for dummy poly ref IDs
  - Add floating text for co-ordinate direction (X, Y, Z)
@@ -123,8 +121,11 @@ Known Bugs:
 Look at Text Editor so it properly supports: "Vanilla" and "DLC" usage, currently is forces DLC "usage"
  - Separate Patch FMG seems to be broken too
 
-Implement Material/MATBIN editor
-Need to find fix for FlverResource not being fully purged so duplicate/delete can function correctly
-Dummy position edit in properties needs to move viewport entity
-
 aeg221_404
+
+Implement Material/MATBIN editor
+
+Need to find fix for FlverResource not being fully purged so duplicate/delete can function correctly
+ - Force it to re-load the FLVER even if it is already present in the ResourceDictionary
+
+Need to add click-through for dummy viewport selectables (ignore mesh selectables)

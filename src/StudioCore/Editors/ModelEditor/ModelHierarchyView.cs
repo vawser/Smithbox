@@ -121,7 +121,9 @@ public class ModelHierarchyView
                     _selectedDummy = i;
                     _lastSelectedEntry = ModelEntrySelectionType.Dummy;
 
-                    if(ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                    Screen.ModelPropertyEditor._trackedDummyPosition = new Vector3();
+
+                    if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                     {
                         Screen.ViewportHandler.SelectRepresentativeDummy(_selectedDummy);
                     }
@@ -196,11 +198,18 @@ public class ModelHierarchyView
             {
                 var curNode = Screen.ResourceHandler.CurrentFLVER.Nodes[i];
 
-                if (ImGui.Selectable($"Node {i} - {curNode.Name}", _selectedNode == i))
+                if (ImGui.Selectable($"Node {i} - {curNode.Name}", _selectedNode == i, ImGuiSelectableFlags.AllowDoubleClick))
                 {
                     ResetSelection();
                     _selectedNode = i;
                     _lastSelectedEntry = ModelEntrySelectionType.Node;
+
+                    Screen.ModelPropertyEditor._trackedNodePosition = new Vector3();
+
+                    if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                    {
+                        Screen.ViewportHandler.SelectRepresentativeNode(_selectedNode);
+                    }
                 }
             }
         }

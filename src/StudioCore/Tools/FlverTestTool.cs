@@ -16,7 +16,18 @@ namespace StudioCore.Tools
         {
             foreach (var (name, info) in TextureFolderBank.FolderBank)
             {
-                TaskLogs.AddLog(info.Path);
+                if(info.Path.Contains("bnd.dcx"))
+                {
+                    BND4Reader reader = new BND4Reader(info.Path);
+                    foreach(var file in reader.Files)
+                    {
+                        if(file.Name.Contains(".flv"))
+                        {
+                            TaskLogs.AddLog(file.Name);
+                            var flver = StudioCore.Formats.PureFLVER.FLVER2.FLVER2.Read(reader.ReadFile(file));
+                        }
+                    }
+                }
             }
         }
     }

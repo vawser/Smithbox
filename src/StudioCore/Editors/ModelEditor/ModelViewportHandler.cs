@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Veldrid.Utilities;
@@ -99,9 +100,51 @@ namespace StudioCore.Editors.ModelEditor
             }
         }
 
-        /// <summary>
-        /// Selects Viewport Dummy based on Pure Dummy index
-        /// </summary>
+        public void UpdateRepresentativeDummy(int index, Vector3 position)
+        {
+            if (_flverhandle.Get().Flver.Dummies.Count < index)
+                return;
+
+            var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            // This relies on the index of the lists to align
+            for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
+            {
+                var curNode = container.DummyPoly_RootNode.Children[i];
+
+                if (i == index)
+                {
+                    DummyPositionChange act = new(curNode, position);
+                    Screen.EditorActionManager.ExecuteAction(act);
+
+                    break;
+                }
+            }
+        }
+
+        public void UpdateRepresentativeNode(int index, Vector3 position)
+        {
+            if (_flverhandle.Get().Flver.Bones.Count < index)
+                return;
+
+            var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            // This relies on the index of the lists to align
+            for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
+            {
+                var curNode = container.Bone_RootNode.Children[i];
+
+                if (i == index)
+                {
+                    BonePositionChange act = new(curNode, position);
+                    Screen.EditorActionManager.ExecuteAction(act);
+                    TaskLogs.AddLog("UpdateRepresentativeNode");
+
+                    break;
+                }
+            }
+        }
+
         public void SelectRepresentativeDummy(int index)
         {
             if (_flverhandle.Get().Flver.Dummies.Count < index)
@@ -123,6 +166,27 @@ namespace StudioCore.Editors.ModelEditor
             }
         }
 
+        public void SelectRepresentativeNode(int index)
+        {
+            if (_flverhandle.Get().Flver.Bones.Count < index)
+                return;
+
+            var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            // This relies on the index of the lists to align
+            for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
+            {
+                var curNode = container.Bone_RootNode.Children[i];
+
+                if (i == index)
+                {
+                    Screen._selection.ClearSelection();
+                    Screen._selection.AddSelection(curNode);
+                    break;
+                }
+            }
+        }
+
         public void OnRepresentativeEntitySelected(Entity ent)
         {
             if (!IsTransformableNode(ent))
@@ -135,6 +199,12 @@ namespace StudioCore.Editors.ModelEditor
             {
                 Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.Dummy;
                 Screen.ModelHierarchy._selectedDummy = transformEnt.Index;
+            }
+            // Bones
+            if (transformEnt.WrappedObject is FLVER.Bone)
+            {
+                Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.Node;
+                Screen.ModelHierarchy._selectedNode = transformEnt.Index;
             }
         }
 
@@ -156,11 +226,16 @@ namespace StudioCore.Editors.ModelEditor
             // Dummies
             if (transformEnt.WrappedObject is FLVER.Dummy)
             {
-                UpdatePureDummyPosition(transformEnt);
+                UpdateStoredDummyPosition(transformEnt);
+            }
+            // Bones
+            if (transformEnt.WrappedObject is FLVER.Bone)
+            {
+                UpdateStoredNodePosition(transformEnt);
             }
         }
 
-        private void UpdatePureDummyPosition(TransformableNamedEntity transformEnt)
+        private void UpdateStoredDummyPosition(TransformableNamedEntity transformEnt)
         {
             if (Screen.ModelHierarchy._selectedDummy == -1)
                 return;
@@ -171,6 +246,20 @@ namespace StudioCore.Editors.ModelEditor
             if(dummy.Position != entDummy.Position)
             {
                 dummy.Position = entDummy.Position;
+            }
+        }
+
+        private void UpdateStoredNodePosition(TransformableNamedEntity transformEnt)
+        {
+            if (Screen.ModelHierarchy._selectedNode == -1)
+                return;
+
+            var bone = Screen.ResourceHandler.CurrentFLVER.Nodes[Screen.ModelHierarchy._selectedNode];
+            var entBone = (FLVER.Bone)transformEnt.WrappedObject;
+
+            if (bone.Translation != entBone.Position)
+            {
+                bone.Translation = entBone.Position;
             }
         }
 

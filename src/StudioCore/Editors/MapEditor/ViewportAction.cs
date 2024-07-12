@@ -1999,3 +1999,68 @@ public class OrderMapObjectsAction : ViewportAction
         return ActionEvent.ObjectAddedRemoved;
     }
 }
+
+public class DummyPositionChange : ViewportAction
+{
+    private Entity Node;
+    private Vector3 OldPosition;
+    private Vector3 NewPosition;
+    private FLVER.Dummy Dummy;
+
+    public DummyPositionChange(Entity node, Vector3 newPosition)
+    {
+        Node = node;
+        Dummy = (FLVER.Dummy)node.WrappedObject;
+        OldPosition = Dummy.Position;
+        NewPosition = newPosition;
+    }
+
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        Dummy.Position = NewPosition;
+        Node.UpdateRenderModel();
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Dummy.Position = OldPosition;
+        Node.UpdateRenderModel();
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class BonePositionChange : ViewportAction
+{
+    private Entity Node;
+    private Vector3 OldPosition;
+    private Vector3 NewPosition;
+    private FLVER.Bone Bone;
+
+    public BonePositionChange(Entity node, Vector3 newPosition)
+    {
+        Node = node;
+        Bone = (FLVER.Bone)node.WrappedObject;
+        OldPosition = Bone.Position;
+        NewPosition = newPosition;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        Bone.Position = NewPosition;
+        Node.UpdateRenderModel();
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Bone.Position = OldPosition;
+        Node.UpdateRenderModel();
+
+        return ActionEvent.NoEvent;
+    }
+}

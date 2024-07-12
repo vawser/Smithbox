@@ -159,6 +159,8 @@ public class ModelPropertyEditor
         entry.Unicode = unicode;
     }
 
+    public Vector3 _trackedDummyPosition = new Vector3();
+
     private void DisplayProperties_Dummies()
     {
         var index = Screen.ModelHierarchy._selectedDummy;
@@ -295,6 +297,12 @@ public class ModelPropertyEditor
         entry.Flag1 = flag1;
         entry.Unk30 = unk30;
         entry.Unk34 = unk34;
+
+        if(_trackedDummyPosition != entry.Position)
+        {
+            _trackedDummyPosition = entry.Position;
+            Screen.ViewportHandler.UpdateRepresentativeDummy(index, entry.Position);
+        }
     }
 
     private void DisplayProperties_Materials()
@@ -482,6 +490,8 @@ public class ModelPropertyEditor
         item.Data = data;
     }
 
+    public Vector3 _trackedNodePosition = new Vector3();
+
     private void DisplayProperties_Nodes()
     {
         var index = Screen.ModelHierarchy._selectedNode;
@@ -643,6 +653,12 @@ public class ModelPropertyEditor
         entry.BoundingBoxMin = bbMin;
         entry.BoundingBoxMax = bbMax;
         entry.Flags = (NodeFlags)flags;
+
+        if (_trackedNodePosition != entry.Translation)
+        {
+            _trackedNodePosition = entry.Translation;
+            Screen.ViewportHandler.UpdateRepresentativeNode(index, entry.Translation);
+        }
     }
 
     private void DisplayProperties_Meshes()
