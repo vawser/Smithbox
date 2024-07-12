@@ -794,24 +794,24 @@
 110067 [Alteration] Alberich's Pointed Hat (Altered)
 110068 [Alteration] Alberich's Robe (Altered)
 110069 [Alteration] Traveling Maiden Robe (Altered)
-110070 
-110073 
-110074 
-110075 
-110076 
-110077 
-110078 
-110079 
-110080 
-110081 
-110082 
+110070 [Alteration] Dryleaf Robe (Altered)
+110073 [Alteration] Thioller's Garb (Altered)
+110074 [Alteration] High Priest Robe
+110075 [Alteration] Dancer's Dress (Altered)
+110076 [Alteration] Igon's Helm (Altered)
+110077 [Alteration] Igon's Armor (Altered)
+110078 [Alteration] Ansbach's Attire (Altered)
+110079 [Alteration] Freyja's Armor (Altered)
+110080 [Alteration] Armor of Solitude (Altered)
+110081 [Alteration] Messmer Soldier Armor (Altered)
+110082 [Alteration] Fire Knight Armor (Altered)
 110100 [Alteration] Elden Lord Armor (Altered)
 110101 [Alteration] Radahn's Lion Armor (Altered)
 110102 [Alteration] Lord of Blood's Robe (Altered)
 110103 [Alteration] Maliketh's Armor (Altered)
 110104 [Alteration] Malenia's Armor (Altered)
-110105 
-110106 
+110105 [Alteration] Messmer's Helm (Altered)
+110106 [Alteration] Young Lion's Armor (Altered)
 110200 [Reversion] Drake Knight Helm
 110201 [Reversion] Drake Knight Armor
 110202 [Reversion] Scaled Armor
@@ -877,24 +877,24 @@
 110267 [Reversion] Alberich's Pointed Hat
 110268 [Reversion] Alberich's Robe
 110269 [Reversion] Traveling Maiden Robe
-110270 
-110273 
-110274 
-110275 
-110276 
-110277 
-110278 
-110279 
-110280 
-110281 
-110282 
+110270 [Reversion] Dryleaf Robe
+110273 [Reversion] Thioller's Garb
+110274 [Reversion] High Priest Robe
+110275 [Reversion] Dancer's Dress
+110276 [Reversion] Igon's Helm
+110277 [Reversion] Igon's Armor
+110278 [Reversion] Ansbach's Attire
+110279 [Reversion] Freyja's Armor
+110280 [Reversion] Armor of Solitude
+110281 [Reversion] Messmer Soldier Armor
+110282 [Reversion] Fire Knight Armor
 110300 [Reversion] Elden Lord Armor
 110301 [Reversion] Radahn's Lion Armor
 110302 [Reversion] Lord of Blood's Robe
 110303 [Reversion] Maliketh's Armor
 110304 [Reversion] Malenia's Armor
-110305 
-110306 
+110305 [Reversion] Messmer's Helm
+110306 [Reversion] Young Lion's Armor
 111000 [Alteration] Drake Knight Helm (Altered)
 111001 [Alteration] Drake Knight Armor (Altered)
 111002 [Alteration] Scaled Armor (Altered)
@@ -960,24 +960,24 @@
 111067 [Alteration] Alberich's Pointed Hat (Altered)
 111068 [Alteration] Alberich's Robe (Altered)
 111069 [Alteration] Traveling Maiden Robe (Altered)
-111070 
-111073 
-111074 
-111075 
-111076 
-111077 
-111078 
-111079 
-111080 
-111081 
-111082 
+111070 [Alteration] Dryleaf Robe (Altered)
+111073 [Alteration] Thioller's Garb (Altered)
+111074 [Alteration] High Priest Robe
+111075 [Alteration] Dancer's Dress (Altered)
+111076 [Alteration] Igon's Helm (Altered)
+111077 [Alteration] Igon's Armor (Altered)
+111078 [Alteration] Ansbach's Attire (Altered)
+111079 [Alteration] Freyja's Armor (Altered)
+111080 [Alteration] Armor of Solitude (Altered)
+111081 [Alteration] Messmer Soldier Armor (Altered)
+111082 [Alteration] Fire Knight Armor (Altered)
 111100 [Alteration] Elden Lord Armor (Altered)
 111101 [Alteration] Radahn's Lion Armor (Altered)
 111102 [Alteration] Lord of Blood's Robe (Altered)
 111103 [Alteration] Maliketh's Armor (Altered)
 111104 [Alteration] Malenia's Armor (Altered)
-111105 
-111106 
+111105 [Alteration] Messmer's Helm (Altered)
+111106 [Alteration] Young Lion's Armor (Altered)
 111200 [Reversion] Drake Knight Helm
 111201 [Reversion] Drake Knight Armor
 111202 [Reversion] Scaled Armor
@@ -1043,24 +1043,24 @@
 111267 [Reversion] Alberich's Pointed Hat
 111268 [Reversion] Alberich's Robe
 111269 [Reversion] Traveling Maiden Robe
-111270 
-111273 
-111274 
-111275 
-111276 
-111277 
-111278 
-111279 
-111280 
-111281 
-111282 
+111270 [Reversion] Dryleaf Robe
+111273 [Reversion] Thioller's Garb
+111274 [Reversion] High Priest Robe
+111275 [Reversion] Dancer's Dress
+111276 [Reversion] Igon's Helm
+111277 [Reversion] Igon's Armor
+111278 [Reversion] Ansbach's Attire
+111279 [Reversion] Freyja's Armor
+111280 [Reversion] Armor of Solitude
+111281 [Reversion] Messmer Soldier Armor
+111282 [Reversion] Fire Knight Armor
 111300 [Reversion] Elden Lord Armor
 111301 [Reversion] Radahn's Lion Armor
 111302 [Reversion] Lord of Blood's Robe
 111303 [Reversion] Maliketh's Armor
 111304 [Reversion] Malenia's Armor
-111305 
-111306 
+111305 [Reversion] Messmer's Helm
+111306 [Reversion] Young Lion's Armor
 112000 Ash of War: Impaling Thrust
 112001 Ash of War: Piercing Fang
 112002 Ash of War: Spinning Slash

@@ -108,6 +108,17 @@ public class FlverResource : IResource, IDisposable
         return ret;
     }
 
+    public bool _Load(Memory<byte> bytes)
+    {
+        bool ret;
+
+        Flver = FLVER2.Read(bytes);
+
+        ret = LoadInternal(AccessLevel.AccessFull);
+
+        return ret;
+    }
+
     public bool _Load(string path, AccessLevel al, string virtPath)
     {
         bool ret;

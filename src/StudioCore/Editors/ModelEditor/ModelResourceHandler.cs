@@ -1,9 +1,13 @@
-﻿using SoulsFormats;
+﻿using HKLib.hk2018.hkHashMapDetail;
+using HKLib.hk2018.hkWeakPtrTest;
+using Octokit;
+using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Formats.PureFLVER.FLVER2;
 using StudioCore.Gui;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
+using StudioCore.Platform;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using System;
@@ -21,14 +25,11 @@ namespace StudioCore.Editors.ModelEditor
     {
         public Formats.PureFLVER.FLVER2.FLVER2 CurrentFLVER;
         public FlverModelInfo CurrentFLVERInfo;
-
-        public ResourceHandle<FlverResource> _flverhandle;
+        public string VirtualResourcePath = "";
 
         public ModelEditorScreen Screen;
 
         public Task _loadingTask;
-
-        public MeshRenderableProxy _renderMesh;
 
         public IViewport Viewport;
 
@@ -44,6 +45,7 @@ namespace StudioCore.Editors.ModelEditor
         /// <param name="name"></param>
         public void LoadCharacter(string name)
         {
+            Screen.ModelHierarchy.ResetSelection();
             LoadEditableModel(name, ModelEditorModelType.Character);
             LoadRepresentativeModel(name, ModelEditorModelType.Character);
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Character, "");
@@ -54,6 +56,7 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadAsset(string name)
         {
+            Screen.ModelHierarchy.ResetSelection();
             LoadEditableModel(name, ModelEditorModelType.Object);
             LoadRepresentativeModel(name, ModelEditorModelType.Object);
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Object, "");
@@ -64,6 +67,7 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadPart(string name)
         {
+            Screen.ModelHierarchy.ResetSelection();
             LoadEditableModel(name, ModelEditorModelType.Parts);
             LoadRepresentativeModel(name, ModelEditorModelType.Parts);
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Parts, "");
@@ -74,6 +78,7 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadMapPiece(string name, string mapId)
         {
+            Screen.ModelHierarchy.ResetSelection();
             LoadEditableModel(name, ModelEditorModelType.MapPiece, mapId);
             LoadRepresentativeModel(name, ModelEditorModelType.MapPiece, mapId);
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.MapPiece, mapId);
@@ -85,7 +90,10 @@ namespace StudioCore.Editors.ModelEditor
         private void LoadEditableModel(string modelid, ModelEditorModelType modelType, string mapid = null)
         {
             ResourceDescriptor modelAsset = GetModelAssetDescriptor(modelid, modelType, mapid);
-            if(modelAsset.AssetPath != null)
+
+            //TaskLogs.AddLog(modelAsset.AssetPath);
+
+            if (modelAsset.AssetPath != null)
             {
                 if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
                 {
@@ -93,12 +101,16 @@ namespace StudioCore.Editors.ModelEditor
                     BND3Reader reader = new BND3Reader(modelAsset.AssetPath);
                     foreach (var file in reader.Files)
                     {
-                        if (file.Name == modelid)
+                        var fileName = file.Name.ToLower();
+                        var modelName = modelid.ToLower();
+
+                        if (fileName.Contains(modelName) && fileName.Contains(".flv"))
                         {
                             CurrentFLVER = Formats.PureFLVER.FLVER2.FLVER2.Read(reader.ReadFile(file));
+                            break;
                         }
-                        break;
                     }
+                    reader.Dispose();
                 }
                 else
                 {
@@ -106,12 +118,20 @@ namespace StudioCore.Editors.ModelEditor
                     BND4Reader reader = new BND4Reader(modelAsset.AssetPath);
                     foreach(var file in reader.Files)
                     {
-                        if(file.Name == modelid)
+                        var fileName = file.Name.ToLower();
+                        var modelName = modelid.ToLower();
+
+                        //TaskLogs.AddLog(fileName);
+                        //TaskLogs.AddLog(modelName);
+
+                        if (fileName.Contains(modelName) && fileName.Contains(".flv"))
                         {
+                            //TaskLogs.AddLog("New CurrentFLVER");
                             CurrentFLVER = Formats.PureFLVER.FLVER2.FLVER2.Read(reader.ReadFile(file));
+                            break;
                         }
-                        break;
                     }
+                    reader.Dispose();
                 }
             }
         }
@@ -143,7 +163,9 @@ namespace StudioCore.Editors.ModelEditor
             ResourceDescriptor modelAsset = GetModelAssetDescriptor(modelid, modelType, mapid);
             ResourceDescriptor textureAsset = GetTextureAssetDescriptor(modelid, modelType, mapid);
 
-            UpdateRenderMesh(modelAsset, skipModel);
+            VirtualResourcePath = modelAsset.AssetVirtualPath;
+
+            Screen.ViewportHandler.UpdateRenderMesh(modelAsset, skipModel);
 
             // PIPELINE: resource has not already been loaded
             if (!ResourceManager.IsResourceLoadedOrInFlight(modelAsset.AssetVirtualPath, AccessLevel.AccessFull))
@@ -248,6 +270,27 @@ namespace StudioCore.Editors.ModelEditor
                 return;
             }
 
+            bool success = true;
+            List<string> issues = new List<string>();
+            (success, issues) = VerifyDataIntegrity();
+
+            // Verift Data Integrity
+            if (!success)
+            {
+                string issuesStr = "";
+                foreach(var entry in issues)
+                {
+                    issuesStr = $"{issuesStr}\n{entry}";
+                }
+
+                var result = PlatformUtils.Instance.MessageBox($"This model currently has invalid index values:\n{issuesStr}\n\nDo you wish to proceed?", "Warning", MessageBoxButtons.OKCancel);
+
+                if(result == DialogResult.Cancel)
+                {
+                    return;
+                }
+            }
+
             if (CurrentFLVERInfo != null)
             {
                 // Copy the binder to the mod directory if it does not already exist.
@@ -275,6 +318,89 @@ namespace StudioCore.Editors.ModelEditor
                     }
                 }
             }
+        }
+
+        // This checks index properties to see if they point to existing entries.
+        // If not, they are added to the issues list
+        public (bool, List<string>) VerifyDataIntegrity()
+        {
+            bool success = true;
+            List<string> issues = new List<string>();
+
+            // Dummies
+            for (int i = 0; i < CurrentFLVER.Dummies.Count; i++)
+            {
+                var dummy = CurrentFLVER.Dummies[i];
+
+                if(dummy.ParentBoneIndex >= CurrentFLVER.Nodes.Count || dummy.ParentBoneIndex < -1)
+                {
+                    issues.Add($"Dummy {i} has invalid ParentBoneIndex value: {dummy.ParentBoneIndex}");
+                    success = false;
+                }
+                if (dummy.AttachBoneIndex >= CurrentFLVER.Nodes.Count || dummy.AttachBoneIndex < -1)
+                {
+                    issues.Add($"Dummy {i} has invalid AttachBoneIndex value: {dummy.AttachBoneIndex}");
+                    success = false;
+                }
+            }
+
+            // Materials
+            for (int i = 0; i < CurrentFLVER.Materials.Count; i++)
+            {
+                var material = CurrentFLVER.Materials[i];
+
+                if (material.GXIndex >= CurrentFLVER.GXLists.Count || material.GXIndex < -1)
+                {
+                    issues.Add($"Material {i} has invalid GXIndex value: {material.GXIndex}");
+                    success = false;
+                }
+            }
+
+            // Nodes
+            for (int i = 0; i < CurrentFLVER.Nodes.Count; i++)
+            {
+                var node = CurrentFLVER.Nodes[i];
+
+                if (node.ParentIndex >= CurrentFLVER.Nodes.Count || node.ParentIndex < -1)
+                {
+                    issues.Add($"Node {i} has invalid ParentIndex value: {node.ParentIndex}");
+                    success = false;
+                }
+                if (node.FirstChildIndex >= CurrentFLVER.Nodes.Count || node.FirstChildIndex < -1)
+                {
+                    issues.Add($"Node {i} has invalid FirstChildIndex value: {node.FirstChildIndex}");
+                    success = false;
+                }
+                if (node.NextSiblingIndex >= CurrentFLVER.Nodes.Count || node.NextSiblingIndex < -1)
+                {
+                    issues.Add($"Node {i} has invalid NextSiblingIndex value: {node.NextSiblingIndex}");
+                    success = false;
+                }
+                if (node.PreviousSiblingIndex >= CurrentFLVER.Nodes.Count || node.PreviousSiblingIndex < -1)
+                {
+                    issues.Add($"Node {i} has invalid PreviousSiblingIndex value: {node.PreviousSiblingIndex}");
+                    success = false;
+                }
+            }
+
+            // Meshes
+            for (int i = 0; i < CurrentFLVER.Meshes.Count; i++)
+            {
+                var mesh = CurrentFLVER.Meshes[i];
+
+                if (mesh.MaterialIndex >= CurrentFLVER.Materials.Count || mesh.MaterialIndex < -1)
+                {
+                    issues.Add($"Mesh {i} has invalid MaterialIndex value: {mesh.MaterialIndex}");
+                    success = false;
+                }
+                if (mesh.NodeIndex >= CurrentFLVER.Nodes.Count || mesh.NodeIndex < -1)
+                {
+                    issues.Add($"Mesh {i} has invalid NodeIndex value: {mesh.NodeIndex}");
+                    success = false;
+                }
+            }
+
+            return (success, issues);
         }
 
         /// <summary>
@@ -389,41 +515,7 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void OnResourceLoaded(IResourceHandle handle, int tag)
         {
-            _flverhandle = (ResourceHandle<FlverResource>)handle;
-            _flverhandle.Acquire();
-
-            if (_renderMesh != null)
-            {
-                BoundingBox box = _renderMesh.GetBounds();
-                Viewport.FrameBox(box);
-
-                Vector3 dim = box.GetDimensions();
-                var mindim = Math.Min(dim.X, Math.Min(dim.Y, dim.Z));
-                var maxdim = Math.Max(dim.X, Math.Max(dim.Y, dim.Z));
-
-                var minSpeed = 1.0f;
-                var basespeed = Math.Max(minSpeed, (float)Math.Sqrt(mindim / 3.0f));
-                Viewport.WorldView.CameraMoveSpeed_Normal = basespeed;
-                Viewport.WorldView.CameraMoveSpeed_Slow = basespeed / 10.0f;
-                Viewport.WorldView.CameraMoveSpeed_Fast = basespeed * 10.0f;
-
-                Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
-            }
-
-            if (_flverhandle.IsLoaded && _flverhandle.Get() != null)
-            {
-                FlverResource r = _flverhandle.Get();
-                if (r.Flver != null)
-                {
-                    Screen._universe.UnloadModels(true);
-                    Screen._universe.LoadFlverInModelEditor(r.Flver, _renderMesh, CurrentFLVERInfo.ModelName);
-                }
-            }
-
-            if (CFG.Current.Viewport_Enable_Texturing)
-            {
-                Screen._universe.ScheduleTextureRefresh();
-            }
+            Screen.ViewportHandler.OnResourceLoaded(handle, tag);
         }
 
         /// <summary>
@@ -431,28 +523,7 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void OnResourceUnloaded(IResourceHandle handle, int tag)
         {
-            _flverhandle = null;
-        }
-
-        /// <summary>
-        /// Updated the viewport FLVER model render mesh
-        /// </summary>
-        public void UpdateRenderMesh(ResourceDescriptor modelAsset, bool skipModel = false)
-        {
-            if (Universe.IsRendering)
-            {
-                // Ignore this if we are only loading textures
-                if (!skipModel)
-                {
-                    if (_renderMesh != null)
-                    {
-                        _renderMesh.Dispose();
-                    }
-
-                    _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(Screen.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
-                    _renderMesh.World = Matrix4x4.Identity;
-                }
-            }
+            Screen.ViewportHandler.OnResourceUnloaded(handle, tag);
         }
     }
 }

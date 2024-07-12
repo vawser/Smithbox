@@ -134,20 +134,17 @@ namespace StudioCore.Editors.MapEditor
                 {
                     if (FilterSelectionList(entry, Smithbox.AliasCacheHandler.AliasCache.Characters))
                     {
-                        if (ImGui.Selectable(entry, entry == _selectedEntry))
+                        if (ImGui.Selectable(entry, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             _selectedEntry = entry;
                             _selectedEntryType = ModelSelectionType.Character;
-                        }
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Characters);
 
-                        if (entry == _selectedEntry)
-                        {
                             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
                                 ApplyMapAssetSelection(_selectedEntry, ModelSelectionType.Character);
                             }
                         }
+                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Characters);
                     }
                 }
             }
@@ -171,20 +168,17 @@ namespace StudioCore.Editors.MapEditor
                 {
                     if (FilterSelectionList(entry, Smithbox.AliasCacheHandler.AliasCache.Assets))
                     {
-                        if (ImGui.Selectable(entry, entry == _selectedEntry))
+                        if (ImGui.Selectable(entry, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             _selectedEntry = entry;
                             _selectedEntryType = ModelSelectionType.Asset;
-                        }
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Assets);
 
-                        if (entry == _selectedEntry)
-                        {
                             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
                                 ApplyMapAssetSelection(_selectedEntry, ModelSelectionType.Asset);
                             }
                         }
+                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Assets);
                     }
                 }
             }
@@ -201,20 +195,17 @@ namespace StudioCore.Editors.MapEditor
                 {
                     if (FilterSelectionList(entry, Smithbox.AliasCacheHandler.AliasCache.Parts))
                     {
-                        if (ImGui.Selectable(entry, entry == _selectedEntry))
+                        if (ImGui.Selectable(entry, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             _selectedEntry = entry;
                             _selectedEntryType = ModelSelectionType.Part;
-                        }
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Parts);
 
-                        if (entry == _selectedEntry)
-                        {
                             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
                                 ApplyMapAssetSelection(_selectedEntry, ModelSelectionType.Part);
                             }
                         }
+                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Parts);
                     }
                 }
             }
@@ -248,20 +239,17 @@ namespace StudioCore.Editors.MapEditor
                         {
                             var mapPieceName = $"{entry.Replace(map, "m")}";
 
-                            if (ImGui.Selectable(mapPieceName, entry == _selectedEntry))
+                            if (ImGui.Selectable(mapPieceName, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                             {
                                 _selectedEntry = entry;
                                 _selectedEntryType = ModelSelectionType.MapPiece;
-                            }
-                            DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
 
-                            if (entry == _selectedEntry)
-                            {
                                 if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                                 {
                                     ApplyMapAssetSelection(_selectedEntry, ModelSelectionType.MapPiece, map);
                                 }
                             }
+                            DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
                         }
                     }
                 }

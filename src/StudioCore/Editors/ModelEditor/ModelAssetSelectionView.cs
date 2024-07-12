@@ -17,6 +17,7 @@ namespace StudioCore.Editors.ModelEditor
     {
         private string _searchInput = "";
         private string _selectedEntry = "";
+        private string _selectedMapId = "";
         private ModelSelectionType _selectedEntryType = ModelSelectionType.None;
 
         private ModelEditorScreen Screen;
@@ -117,6 +118,25 @@ namespace StudioCore.Editors.ModelEditor
             }
         }
 
+        public void ReloadModel()
+        {
+            switch(_selectedEntryType)
+            {
+                case ModelSelectionType.Character:
+                    Screen.ResourceHandler.LoadCharacter(_selectedEntry);
+                    break;
+                case ModelSelectionType.Asset:
+                    Screen.ResourceHandler.LoadAsset(_selectedEntry);
+                    break;
+                case ModelSelectionType.Part:
+                    Screen.ResourceHandler.LoadPart(_selectedEntry);
+                    break;
+                case ModelSelectionType.MapPiece:
+                    Screen.ResourceHandler.LoadMapPiece(_selectedEntry, _selectedMapId);
+                    break;
+            }
+        }
+
         private void DisplayCharacterList()
         {
             if (Smithbox.BankHandler.CharacterAliases.Aliases == null)
@@ -128,20 +148,17 @@ namespace StudioCore.Editors.ModelEditor
                 {
                     if (FilterSelectionList(entry, Smithbox.AliasCacheHandler.AliasCache.Characters))
                     {
-                        if (ImGui.Selectable(entry, entry == _selectedEntry))
+                        if (ImGui.Selectable(entry, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             _selectedEntry = entry;
                             _selectedEntryType = ModelSelectionType.Character;
-                        }
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Characters);
 
-                        if(entry == _selectedEntry)
-                        {
-                            if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                            if (ImGui.IsItemHovered() && ImGui.IsMouseClicked(ImGuiMouseButton.Left))
                             {
                                 Screen.ResourceHandler.LoadCharacter(_selectedEntry);
                             }
                         }
+                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Characters);
                     }
                 }
             }
@@ -165,20 +182,17 @@ namespace StudioCore.Editors.ModelEditor
                 {
                     if (FilterSelectionList(entry, Smithbox.AliasCacheHandler.AliasCache.Assets))
                     {
-                        if (ImGui.Selectable(entry, entry == _selectedEntry))
+                        if (ImGui.Selectable(entry, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             _selectedEntry = entry;
                             _selectedEntryType = ModelSelectionType.Asset;
-                        }
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Assets);
 
-                        if (entry == _selectedEntry)
-                        {
-                            if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                            if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
                                 Screen.ResourceHandler.LoadAsset(_selectedEntry);
                             }
                         }
+                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Assets);
                     }
                 }
             }
@@ -195,20 +209,17 @@ namespace StudioCore.Editors.ModelEditor
                 {
                     if (FilterSelectionList(entry, Smithbox.AliasCacheHandler.AliasCache.Parts))
                     {
-                        if (ImGui.Selectable(entry, entry == _selectedEntry))
+                        if (ImGui.Selectable(entry, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             _selectedEntry = entry;
                             _selectedEntryType = ModelSelectionType.Part;
-                        }
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Parts);
 
-                        if (entry == _selectedEntry)
-                        {
-                            if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                            if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
                                 Screen.ResourceHandler.LoadPart(_selectedEntry);
                             }
                         }
+                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Parts);
                     }
                 }
             }
@@ -242,20 +253,18 @@ namespace StudioCore.Editors.ModelEditor
                         {
                             var mapPieceName = $"{entry.Replace(map, "m")}";
 
-                            if (ImGui.Selectable(mapPieceName, entry == _selectedEntry))
+                            if (ImGui.Selectable(mapPieceName, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                             {
                                 _selectedEntry = entry;
                                 _selectedEntryType = ModelSelectionType.MapPiece;
-                            }
-                            DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
 
-                            if (entry == _selectedEntry)
-                            {
-                                if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                                if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                                 {
+                                    _selectedMapId = map;
                                     Screen.ResourceHandler.LoadMapPiece(_selectedEntry, map);
                                 }
                             }
+                            DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
                         }
                     }
                 }

@@ -161,7 +161,7 @@ public class CFG
     public Vector4 ImGui_ButtonActive = new Vector4(0.200f, 0.600f, 1.000f, 1.0f);
 
     // Selection
-    public Vector4 ImGui_Selection = new Vector4(0.000f, 0.478f, 0.800f, 1.0f);
+    public Vector4 ImGui_Selection = new Vector4(0.087f, 0.296f, 0.437f, 1.000f);
     public Vector4 ImGui_Selection_Hover = new Vector4(0.247f, 0.247f, 0.275f, 1.0f);
     public Vector4 ImGui_Selection_Active = new Vector4(0.161f, 0.550f, 0.939f, 1.0f);
 

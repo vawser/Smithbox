@@ -103,6 +103,7 @@ Texture Viewer:
  - Add ability to edit Shoebox Layouts (subwindow)
  - Add ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
+ - Add ability to export selected icon 'section' of icon file (assuming texture has a shoebox layout)
  
 World Map:
  - Add the dungeon icons, add icon radius for the non-open world maps
@@ -119,4 +120,11 @@ Known Bugs:
 #--------------------------------------
 # Notes
 #--------------------------------------
+Look at Text Editor so it properly supports: "Vanilla" and "DLC" usage, currently is forces DLC "usage"
+ - Separate Patch FMG seems to be broken too
 
+Implement Material/MATBIN editor
+Need to find fix for FlverResource not being fully purged so duplicate/delete can function correctly
+Dummy position edit in properties needs to move viewport entity
+
+aeg221_404

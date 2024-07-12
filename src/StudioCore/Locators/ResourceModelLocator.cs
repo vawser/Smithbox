@@ -260,7 +260,9 @@ public static class ResourceModelLocator
 
         // Direct paths
         if (Smithbox.ProjectType == ProjectType.DS1)
+        {
             ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{part}.partsbnd");
+        }
         else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             var partType = "";

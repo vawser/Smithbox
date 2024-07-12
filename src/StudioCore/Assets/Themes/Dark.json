@@ -33,7 +33,7 @@
     "ImGui_Button_Hovered": [0.247, 0.247, 0.275, 1.0],
     "ImGui_ButtonActive": [0.2, 0.6, 1.0, 1.0],
     
-    "ImGui_Selection": [0.0, 0.478, 0.8, 1.0],
+    "ImGui_Selection": [0.087, 0.296, 0.437, 1.000],
     "ImGui_Selection_Hover": [0.247, 0.247, 0.275, 1.0],
     "ImGui_Selection_Active": [0.161,  0.55, 0.939, 1.0],
     

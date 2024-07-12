@@ -304,6 +304,14 @@ public static class ResourceManager
                CheckAccessLevel(al, ResourceDatabase[lResourceName].AccessLevel);
     }
 
+    public static void RemoveResource(string resourceName)
+    {
+        if(ResourceDatabase.ContainsKey(resourceName))
+        {
+            ResourceDatabase[resourceName].Release(true);
+        }
+    }
+
     public static void UnloadResource(IResourceHandle resource, bool unloadOnlyIfUnused)
     {
         _unloadRequests.Post(new UnloadResourceRequest(resource, unloadOnlyIfUnused));

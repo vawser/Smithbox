@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
+using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using System;
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor.Toolbar
@@ -61,30 +63,32 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
         public static void DuplicateFLVERProperty()
         {
             /*
-            CFG.Current.ModelEditor_RenderingUpdate = false;
+            // Unload representative model
+            Smithbox.EditorHandler.ModelEditor._universe.UnloadModels(true);
 
-            ViewportSelection sel = ModelEditorScreen._sceneTree.GetCurrentSelection();
+            var currentFLVER = Smithbox.EditorHandler.ModelEditor.ResourceHandler.CurrentFLVER;
 
-            if (sel.GetSelection().Count < 1)
+            // Dummy
+            if(Smithbox.EditorHandler.ModelEditor.ModelHierarchy._lastSelectedEntry == ModelEntrySelectionType.Dummy)
             {
-                return;
+                var index = Smithbox.EditorHandler.ModelEditor.ModelHierarchy._selectedDummy;
+
+                if(index != -1)
+                {
+                    var clone = currentFLVER.Dummies[index].Clone();
+                    currentFLVER.Dummies.Insert(index, clone);
+                }
             }
 
-            FlverResource r = ModelEditorScreen._flverhandle.Get();
+            Smithbox.EditorHandler.ModelEditor._selection.ClearSelection();
+            Smithbox.EditorHandler.ModelEditor.ModelHierarchy.ResetSelection();
+            //Smithbox.EditorHandler.ModelEditor.ViewportHandler._flverhandle.Get().Dispose();
 
-            foreach(var curSel in sel.GetSelection())
-            {
-                Entity selected = curSel as Entity;
-                ModelSceneTree.Model.DuplicateMeshIfValid(selected, r);
-                ModelSceneTree.Model.DuplicateMaterialIfValid(selected, r);
-                ModelSceneTree.Model.DuplicateLayoutIfValid(selected, r);
-                ModelSceneTree.Model.DuplicateBoneIfValid(selected, r);
-                ModelSceneTree.Model.DuplicateDummyPolyIfValid(selected, r);
-            }
+            Smithbox.EditorHandler.ModelEditor.Save();
 
-            ModelToolbar._screen.Save();
+            Thread.Sleep(1000);
 
-            CFG.Current.ModelEditor_RenderingUpdate = true;
+            Smithbox.EditorHandler.ModelEditor.ModelSelectionView.ReloadModel();
             */
         }
     }

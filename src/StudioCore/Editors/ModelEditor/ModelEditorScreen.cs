@@ -31,29 +31,31 @@ public class ModelEditorScreen : EditorScreen
 
     public bool ShowSaveOption { get; set; }
 
+    public MapEditor.ViewportActionManager EditorActionManager = new();
+
     public ModelAssetSelectionView ModelSelectionView;
 
-    private readonly ModelPropertyEditor _propEditor;
-    private readonly ModelPropertyCache _propCache = new();
+    public ModelPropertyEditor ModelPropertyEditor;
+    public ModelPropertyCache _propCache = new();
 
-    public static ModelSceneTree _sceneTree;
-    public static ViewportSelection _selection = new();
+    public ModelHierarchyView ModelHierarchy;
+    public ViewportSelection _selection = new();
 
     public Universe _universe;
 
-    public static MapEditor.ViewportActionManager EditorActionManager = new();
     public Rectangle Rect;
     public RenderScene RenderScene;
     public IViewport Viewport;
 
-    private bool ViewportUsingKeyboard;
-    private Sdl2Window Window;
+    public bool ViewportUsingKeyboard;
+    public Sdl2Window Window;
 
     public ModelToolbar _modelToolbar;
     public ModelToolbar_ActionList _modelToolbar_ActionList;
     public ModelToolbar_Configuration _modelToolbar_Configuration;
 
     public ModelResourceHandler ResourceHandler;
+    public ModelViewportHandler ViewportHandler;
 
     public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -70,14 +72,13 @@ public class ModelEditorScreen : EditorScreen
             Viewport = new NullViewport(ViewportType.ModelEditor, "Modeleditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
         }
 
-        ResourceHandler = new ModelResourceHandler(this, Viewport);
-
-        ModelSelectionView = new ModelAssetSelectionView(this);
-
         _universe = new Universe(RenderScene, _selection);
 
-        _sceneTree = new ModelSceneTree(this, "modeledittree", _universe, _selection, EditorActionManager, Viewport);
-        _propEditor = new ModelPropertyEditor(EditorActionManager, _propCache, Viewport, null);
+        ResourceHandler = new ModelResourceHandler(this, Viewport);
+        ViewportHandler = new ModelViewportHandler(this, Viewport);
+        ModelSelectionView = new ModelAssetSelectionView(this);
+        ModelHierarchy = new ModelHierarchyView(this);
+        ModelPropertyEditor = new ModelPropertyEditor(this);
 
         _modelToolbar = new ModelToolbar(EditorActionManager, this);
         _modelToolbar_ActionList = new ModelToolbar_ActionList();
@@ -102,10 +103,10 @@ public class ModelEditorScreen : EditorScreen
         {
             CFG.Current.ModelEditor_RenderingUpdate = false;
 
-            if (ResourceHandler._flverhandle != null)
+            if (ViewportHandler._flverhandle != null)
             {
-                FlverResource r = ResourceHandler._flverhandle.Get();
-                _universe.LoadFlverInModelEditor(r.Flver, ResourceHandler._renderMesh, ResourceHandler.CurrentFLVERInfo.ModelName);
+                FlverResource r = ViewportHandler._flverhandle.Get();
+                _universe.LoadFlverInModelEditor(r.Flver, ViewportHandler._renderMesh, ResourceHandler.CurrentFLVERInfo.ModelName);
             }
 
             if (CFG.Current.Viewport_Enable_Texturing)
@@ -481,9 +482,8 @@ public class ModelEditorScreen : EditorScreen
 
         Viewport.OnGui();
         ModelSelectionView.OnGui();
-
-        _sceneTree.OnGui();
-        _propEditor.OnGui(_selection, "modeleditprop", Viewport.Width, Viewport.Height);
+        ModelHierarchy.OnGui();
+        ModelPropertyEditor.OnGui();
 
         if(CFG.Current.Interface_ModelEditor_Toolbar)
         {
@@ -502,7 +502,7 @@ public class ModelEditorScreen : EditorScreen
         // Focus on Properties by default when this editor is made focused
         if (FirstFrame)
         {
-            ImGui.SetWindowFocus("Properties##modeleditprop");
+            ImGui.SetWindowFocus("Properties##ModelEditorProperties");
 
             FirstFrame = false;
         }
@@ -518,6 +518,7 @@ public class ModelEditorScreen : EditorScreen
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             ModelSelectionView.OnProjectChanged();
+            ModelHierarchy.OnProjectChanged();
         }
 
         ResourceHandler.CurrentFLVERInfo = null;

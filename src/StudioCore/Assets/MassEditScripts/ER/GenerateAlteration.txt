@@ -1,0 +1,97 @@
+##@@Generate Alteration
+##@@False
+clear;
+clearvars;
+##Enter EquipParamProtector row IDs for your armor and its alteration.
+newvar revertedArmorID:60000;
+newvar alteredArmorID:61000;
+##Enter the last row in EquipMtrlSetParam. The new rows will begin after this one and its altered pair.
+newvar lastMtrlID:900183;
+##Enter the last row in the Alteration shop range.
+newvar lastAlterationID:110082;
+
+##start work
+
+##create materials
+param EquipMtrlSetParam: id $lastMtrlID: copyN 1;
+clipboard: ID: + 1;
+clipboard: paste;
+clear;
+param EquipMtrlSetParam: id $lastMtrlID: copyN 1;
+clipboard: ID: + 201;
+clipboard: paste;
+clear;
+
+##edit materials
+newvar revertedMtrlID:$lastMtrlID;
+vars revertedMtrlID: + 1;
+newvar alteredMtrlID:$lastMtrlID;
+vars alteredMtrlID: + 201;
+
+newvar revertedArmorName: UnkName;
+vars revertedArmorName: = paramlookup EquipParamProtector $revertedArmorID Name;
+vars revertedArmorName: +  * 1;
+newvar alteredArmorName: UnkName;
+vars alteredArmorName: = paramlookup EquipParamProtector $alteredArmorID Name;
+vars alteredArmorName: +  * 1;
+
+param EquipMtrlSetParam: id $revertedMtrlID: Name: = $revertedArmorName;
+param EquipMtrlSetParam: id $revertedMtrlID: materialId01: = $revertedArmorID;
+
+param EquipMtrlSetParam: id $alteredMtrlID: Name: = $alteredArmorName;
+param EquipMtrlSetParam: id $alteredMtrlID: materialId01: = $alteredArmorID;
+
+##create shop rows
+param ShopLineupParam: id $lastAlterationID: copy;
+clipboard: ID: + 1;
+clipboard: paste;
+clear;
+param ShopLineupParam: id $lastAlterationID: copy;
+clipboard: ID: + 201;
+clipboard: paste;
+clear;
+param ShopLineupParam: id $lastAlterationID: copy;
+clipboard: ID: + 1001;
+clipboard: paste;
+clear;
+param ShopLineupParam: id $lastAlterationID: copy;
+clipboard: ID: + 1201;
+clipboard: paste;
+clear;
+
+##edit shop rows
+newvar alteredBocID:$lastAlterationID;
+vars alteredBocID: + 1;
+newvar revertedBocID:$lastAlterationID;
+vars revertedBocID: + 201;
+newvar alteredGraceID:$lastAlterationID;
+vars alteredGraceID: + 1001;
+newvar revertedGraceID:$lastAlterationID;
+vars revertedGraceID: + 1201;
+
+newvar alteredName:[Alteration] ;
+vars alteredName: + paramlookup EquipParamProtector $alteredArmorID Name;
+newvar revertedName:[Reversion] ;
+vars revertedName: + paramlookup EquipParamProtector $revertedArmorID Name;
+
+param ShopLineupParam: id $alteredBocID: Name: = $alteredName;
+param ShopLineupParam: id $alteredBocID: equipId: = $alteredArmorID;
+param ShopLineupParam: id $alteredBocID: mtrlId: = $revertedMtrlID;
+param ShopLineupParam: id $alteredBocID: eventFlag_forRelease: = 0;
+
+param ShopLineupParam: id $revertedBocID: Name: = $revertedName;
+param ShopLineupParam: id $revertedBocID: equipId: = $revertedArmorID;
+param ShopLineupParam: id $revertedBocID: mtrlId: = $alteredMtrlID;
+param ShopLineupParam: id $revertedBocID: eventFlag_forRelease: = 0;
+
+param ShopLineupParam: id $alteredGraceID: Name: = $alteredName;
+param ShopLineupParam: id $alteredGraceID: equipId: = $alteredArmorID;
+param ShopLineupParam: id $alteredGraceID: mtrlId: = $revertedMtrlID;
+param ShopLineupParam: id $alteredGraceID: eventFlag_forRelease: = 0;
+param ShopLineupParam: id $alteredGraceID: value: = 500;
+
+param ShopLineupParam: id $revertedGraceID: Name: = $revertedName;
+param ShopLineupParam: id $revertedGraceID: equipId: = $revertedArmorID;
+param ShopLineupParam: id $revertedGraceID: mtrlId: = $alteredMtrlID;
+param ShopLineupParam: id $revertedGraceID: eventFlag_forRelease: = 0;
+param ShopLineupParam: id $revertedGraceID: value: = 500;

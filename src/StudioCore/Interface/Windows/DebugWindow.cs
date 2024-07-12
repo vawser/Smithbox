@@ -99,6 +99,7 @@ public class DebugWindow
         DisplayTool_RowNameHelper();
         DisplayTool_DecryptRegulation();
         DisplayTool_HavokTool();
+        DisplayTool_FlverTestTool();
 
         ImGui.PopItemWidth();
         ImGui.PopStyleColor();
@@ -276,6 +277,19 @@ public class DebugWindow
             if (ImGui.Button("Test Collision Resource"))
             {
                 HavokTool.TestResource();
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplayTool_FlverTestTool()
+    {
+        if (ImGui.BeginTabItem("FLVER Tool"))
+        {
+            if (ImGui.Button("Test FLVER2 Read"))
+            {
+                FlverTestTool.TestRead();
             }
 
             ImGui.EndTabItem();

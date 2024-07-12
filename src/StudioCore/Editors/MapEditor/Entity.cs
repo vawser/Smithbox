@@ -236,6 +236,7 @@ public class Entity : ISelectable, IDisposable
         {
             RenderSceneMesh.RenderSelectionOutline = true;
         }
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.OnRepresentativeEntitySelected(this);
     }
 
     /// <summary>
@@ -247,6 +248,7 @@ public class Entity : ISelectable, IDisposable
         {
             RenderSceneMesh.RenderSelectionOutline = false;
         }
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.OnRepresentativeEntityDeselected(this);
     }
 
     /// <summary>
@@ -1141,11 +1143,12 @@ public class Entity : ISelectable, IDisposable
             RenderSceneMesh.DrawGroups.RenderGroups = Drawgroups;
         }
 
-
         if (RenderSceneMesh != null)
         {
             RenderSceneMesh.Visible = _EditorVisible;
         }
+
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.OnRepresentativeEntityUpdate(this);
     }
 
     /// <summary>
