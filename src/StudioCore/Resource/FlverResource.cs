@@ -209,75 +209,78 @@ public class FlverResource : IResource, IDisposable
                 //TaskLogs.AddLog($"MTD: {path}");
             }
 
-            if (Smithbox.BankHandler.MaterialBank.Matbins.ContainsKey(mtdstring))
+            if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
             {
-                MATBIN.Sampler?  tex = null;
-
-                //MATBIN.Sampler? tex = Smithbox.BankHandler.MaterialBank.Matbins[mtdstring].Matbin.Samplers.Find(x => x.Type == type);
-
-                bool match = false;
-
-                foreach (var t in Smithbox.BankHandler.MaterialBank.Matbins[mtdstring].Matbin.Samplers)
+                if (Smithbox.BankHandler.MaterialBank.Matbins.ContainsKey(mtdstring))
                 {
-                    if (t.Type == type)
-                    {
-                        tex = t;
-                        match = true;
-                        break;
-                    }
-                }
+                    MATBIN.Sampler? tex = null;
 
-                // If normal match fails, try heuristic match to account for disparities between sampler and source
-                if(!match)
-                {
+                    //MATBIN.Sampler? tex = Smithbox.BankHandler.MaterialBank.Matbins[mtdstring].Matbin.Samplers.Find(x => x.Type == type);
+
+                    bool match = false;
+
                     foreach (var t in Smithbox.BankHandler.MaterialBank.Matbins[mtdstring].Matbin.Samplers)
                     {
-                        // Hack to allow some differing paths between sampler and source to work correctly in ER
-                        // Namely for these aspects of the paths:
-                        // Mb<x> where <x> is a number, but differs between sampler and source 
-                        // <x>Mask where <x> is a number, but differs between sampler and source
-                        if (t.Type.Contains("__") && type.Contains("__"))
+                        if (t.Type == type)
                         {
-                            var samplerType = t.Type.Split("__")[1];
-                            var sourceType = type.Split("__")[1];
-
-                            if (samplerType == sourceType)
-                            {
-                                tex = t;
-                                break;
-                            }
+                            tex = t;
+                            match = true;
+                            break;
                         }
+                    }
 
-                        // Loose match for Albedo
-                        if (type == "g_DiffuseTexture" || type.Contains("AlbedoMap"))
+                    // If normal match fails, try heuristic match to account for disparities between sampler and source
+                    if (!match)
+                    {
+                        foreach (var t in Smithbox.BankHandler.MaterialBank.Matbins[mtdstring].Matbin.Samplers)
                         {
-                            if(t.Type.Contains("AlbedoMap"))
+                            // Hack to allow some differing paths between sampler and source to work correctly in ER
+                            // Namely for these aspects of the paths:
+                            // Mb<x> where <x> is a number, but differs between sampler and source 
+                            // <x>Mask where <x> is a number, but differs between sampler and source
+                            if (t.Type.Contains("__") && type.Contains("__"))
                             {
-                                tex = t;
-                                break;
+                                var samplerType = t.Type.Split("__")[1];
+                                var sourceType = type.Split("__")[1];
+
+                                if (samplerType == sourceType)
+                                {
+                                    tex = t;
+                                    break;
+                                }
                             }
-                        }
 
-                        // Loose match for Normal
-                        if (type == "g_BumpmapTexture" || type.Contains("NormalMap"))
-                        {
-                            if (t.Type.Contains("NormalMap"))
+                            // Loose match for Albedo
+                            if (type == "g_DiffuseTexture" || type.Contains("AlbedoMap"))
                             {
-                                tex = t;
-                                break;
+                                if (t.Type.Contains("AlbedoMap"))
+                                {
+                                    tex = t;
+                                    break;
+                                }
+                            }
+
+                            // Loose match for Normal
+                            if (type == "g_BumpmapTexture" || type.Contains("NormalMap"))
+                            {
+                                if (t.Type.Contains("NormalMap"))
+                                {
+                                    tex = t;
+                                    break;
+                                }
                             }
                         }
                     }
-                }
 
-                if (tex == null || tex.Path == "")
-                {
-                    //TaskLogs.AddLog($"Failed to find MATBIN string: {mtdstring} - {type}");
-                    return;
-                }
+                    if (tex == null || tex.Path == "")
+                    {
+                        //TaskLogs.AddLog($"Failed to find MATBIN string: {mtdstring} - {type}");
+                        return;
+                    }
 
-                path = tex.Path;
-                //TaskLogs.AddLog($"MATBIN: {path}");
+                    path = tex.Path;
+                    //TaskLogs.AddLog($"MATBIN: {path}");
+                }
             }
         }
 
@@ -286,7 +289,7 @@ public class FlverResource : IResource, IDisposable
             string virtualPath = ResourcePathLocator.TexturePathToVirtual(path.ToLower());
 
             // Correct path if it is malformed (as game itself ignores this)
-            virtualPath = Smithbox.BankHandler.CorrectedTextureInfo.CorrectTexturePath(virtualPath);
+            //virtualPath = Smithbox.BankHandler.CorrectedTextureInfo.CorrectTexturePath(virtualPath);
 
             ResourceManager.AddResourceListener<TextureResource>(virtualPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;
@@ -386,15 +389,17 @@ public class FlverResource : IResource, IDisposable
     private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest)
     {
         dest.MaterialName = Path.GetFileNameWithoutExtension(mat.MTD);
-
-        var matName = mat.Name;
-        if (matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
-        {
-            dest.MaterialMask =  int.Parse(matName.Substring(1, 2));
-        }
-
         dest.MaterialBuffer = Renderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
         dest.MaterialData = new Material();
+
+        var matName = mat.Name;
+        if (matName.Length >= 3)
+        {
+            if (matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
+            {
+                dest.MaterialMask = int.Parse(matName.Substring(1, 2));
+            }
+        }
 
         //FLVER0 stores layouts directly in the material
         if (Smithbox.ProjectType == ProjectType.DES)
@@ -2109,7 +2114,10 @@ public class FlverResource : IResource, IDisposable
             {
                 if (disposing)
                 {
-                    MaterialBuffer.Dispose();
+                    if (MaterialBuffer != null)
+                    {
+                        MaterialBuffer.Dispose();
+                    }
                 }
 
                 ReleaseTextures();
@@ -2383,8 +2391,11 @@ public class FlverResource : IResource, IDisposable
             {
                 foreach (FlverSubmesh m in GPUMeshes)
                 {
-                    m.GeomBuffer.Dispose();
-                    //Marshal.FreeHGlobal(m.PickingVertices);
+                    if (m != null)
+                    {
+                        m.GeomBuffer.Dispose();
+                        //Marshal.FreeHGlobal(m.PickingVertices);
+                    }
                 }
             }
 
