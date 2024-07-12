@@ -22,9 +22,18 @@ using StudioCore.Editors.ModelEditor.Toolbar;
 using ModelCore.Editors.ModelEditor.Toolbar;
 using StudioCore.Locators;
 using StudioCore.Core;
+using System.ComponentModel;
 
 namespace StudioCore.Editors.ModelEditor;
 
+// DESIGN:
+// Actual Model is loaded as CurrentFLVER. This is the object that all edits apply to.
+// Viewport Model is loaded via the Resource Manager system and is represented via the Model Container instance.
+// Viewport Model is never edited, and instead it is discarded and re-generated from saved actual model when required.
+
+// PITFALLS:
+// Actual Model and Viewport Model must be manually kept in sync when entries are added/removed.
+// Default method is to add to actual model, force actual model save and then re-load.
 public class ModelEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
@@ -98,22 +107,18 @@ public class ModelEditorScreen : EditorScreen
     {
         ViewportUsingKeyboard = Viewport.Update(Window, dt);
 
-        // Reload the flvers if a rendering bool has changed
-        if (CFG.Current.ModelEditor_RenderingUpdate)
+        /*
+        if (ViewportHandler._flverhandle != null)
         {
-            CFG.Current.ModelEditor_RenderingUpdate = false;
-
-            if (ViewportHandler._flverhandle != null)
-            {
-                FlverResource r = ViewportHandler._flverhandle.Get();
-                _universe.LoadFlverInModelEditor(r.Flver, ViewportHandler._renderMesh, ResourceHandler.CurrentFLVERInfo.ModelName);
-            }
+            FlverResource r = ViewportHandler._flverhandle.Get();
+            _universe.LoadFlverInModelEditor(r.Flver, ViewportHandler._renderMesh, ResourceHandler.CurrentFLVERInfo.ModelName);
 
             if (CFG.Current.Viewport_Enable_Texturing)
             {
                 _universe.ScheduleTextureRefresh();
             }
         }
+        */
 
         if (ResourceHandler._loadingTask != null && ResourceHandler._loadingTask.IsCompleted)
         {
@@ -245,17 +250,38 @@ public class ModelEditorScreen : EditorScreen
             if (ImGui.MenuItem("Dummy Polygons"))
             {
                 CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
-                CFG.Current.ModelEditor_RenderingUpdate = true;
+
+                var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
+                foreach(var entry in container.DummyPoly_RootNode.Children)
+                {
+                    entry.EditorVisible = CFG.Current.ModelEditor_ViewDummyPolys;
+                }
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewDummyPolys);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
             if (ImGui.MenuItem("Bones"))
             {
-                CFG.Current.Model_ViewBones = !CFG.Current.Model_ViewBones;
-                CFG.Current.ModelEditor_RenderingUpdate = true;
+                CFG.Current.ModelEditor_ViewBones = !CFG.Current.ModelEditor_ViewBones;
+                var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
+                foreach (var entry in container.Bone_RootNode.Children)
+                {
+                    entry.EditorVisible = CFG.Current.ModelEditor_ViewBones;
+                }
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Model_ViewBones);
+            ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+            if (ImGui.MenuItem("Meshes"))
+            {
+                CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
+                var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
+                foreach (var entry in container.Mesh_RootNode.Children)
+                {
+                    entry.EditorVisible = CFG.Current.ModelEditor_ViewMeshes;
+                }
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
 
             ImGui.EndMenu();
         }

@@ -72,11 +72,9 @@ Map Editor:
  
 Model Editor: 
  - Add "Copy As" action for top-level node that lets the user duplicate the entire "chr" set: anibnd, chrbnd, etc
- - Add floating text for dummy poly ref IDs
- - Add floating text for co-ordinate direction (X, Y, Z)
- - Add dummy poly forward/upwards representation
  - FBX Export of Loaded Model
  - Add easier toggling of model masks based on associated NpcParam (for characters)
+ - Implement Material/MATBIN editor
 
 Param Editor:
  - Add proper support for ColorEdit section so it appears properly with compare col 
@@ -87,6 +85,8 @@ Param Editor:
 Text Editor:
  - Add generator tool for quickly adding entires, e.g. weapon entries: start ID, step amount, end ID, default title, default desc
  - FMG Exporter is adding unneed \n newlines on export and then causing double newlines on import
+ - Look at Text Editor so it properly supports: "Vanilla" and "DLC" usage, currently is forces DLC "usage"
+ - Separate Patch FMG seems to be broken too
  
 Gparam Editor:
  - Add mass edit power to Quick Edit: Allow edits to affect all files
@@ -107,25 +107,14 @@ World Map:
  - Add the dungeon icons, add icon radius for the non-open world maps
  - Add support for large/medium/small tile overlays
  
-Misc:
-- Generate AtkParam names by looking up TAE, finding Animation string that corresponds to BehaviorJudgeID usage, then look in c0000.hkx for the animation's generator to find the 'name' for the AtkParam row
-
-Known Bugs:
-- Icon Preview (unknown circumstances) -> Index outside bounds of array in Veldrid.Texture: TextureResource issue with icon preview (dylan)
-- Image Preview is throwing errors some for some.
-- Check LowRequirements doesn't invoke any rendering stuff when loading a model in Model Editor
-
 #--------------------------------------
 # Notes
 #--------------------------------------
-Look at Text Editor so it properly supports: "Vanilla" and "DLC" usage, currently is forces DLC "usage"
- - Separate Patch FMG seems to be broken too
-
-aeg221_404
-
-Implement Material/MATBIN editor
-
-Need to find fix for FlverResource not being fully purged so duplicate/delete can function correctly
- - Force it to re-load the FLVER even if it is already present in the ResourceDictionary
-
-Need to add click-through for dummy viewport selectables (ignore mesh selectables)
+ - Add floating text for dummy poly ref IDs
+ - Add floating text for co-ordinate direction (X, Y, Z)
+ - Add dummy poly forward/upwards representation
+ - Need to find fix for FlverResource not being fully purged so duplicate/delete can function correctly. Force it to re-load the FLVER even if it is already present in the ResourceDictionary
+ - Dummy/Bone wireframes don't re-rendering properly sometimes
+ 
+ - Add ability to add properties if empty (e.g. Dummies)
+ - Rotation/Scale needs to affect Bone properties (both ways)

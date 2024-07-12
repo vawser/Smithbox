@@ -1,11 +1,14 @@
 ﻿using HKLib.hk2018.hkHashMapDetail;
+using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Gui;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -138,7 +141,6 @@ namespace StudioCore.Editors.ModelEditor
                 {
                     BonePositionChange act = new(curNode, position);
                     Screen.EditorActionManager.ExecuteAction(act);
-                    TaskLogs.AddLog("UpdateRepresentativeNode");
 
                     break;
                 }
@@ -183,6 +185,216 @@ namespace StudioCore.Editors.ModelEditor
                     Screen._selection.ClearSelection();
                     Screen._selection.AddSelection(curNode);
                     break;
+                }
+            }
+        }
+
+        public void DisplayRepresentativeDummyState(int index)
+        {
+            if (_flverhandle.Get().Flver.Dummies.Count < index)
+                return;
+
+            var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            Entity curEntity = null;
+
+            // This relies on the index of the lists to align
+            for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
+            {
+                var curNode = container.DummyPoly_RootNode.Children[i];
+
+                if (i == index)
+                {
+                    curEntity = curNode;
+                }
+            }
+
+            if (curEntity != null)
+            {
+                ImGui.SetItemAllowOverlap();
+                var isVisible = curEntity.EditorVisible;
+                ImGui.SameLine();
+                ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * Smithbox.GetUIScale());
+                ImGui.PushStyleColor(ImGuiCol.Text, isVisible
+                    ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
+                    : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
+                ImGui.TextWrapped(isVisible ? ForkAwesome.Eye : ForkAwesome.EyeSlash);
+                ImGui.PopStyleColor();
+
+                if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                {
+                    // Quick-tool all if this key is down
+                    if (InputTracker.GetKey(KeyBindings.Current.ModelEditor_ToggleVisibilitySection))
+                    {
+                        for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
+                        {
+                            Screen.ViewportHandler.ToggleRepresentativeDummy(i);
+                        }
+                    }
+                    // Otherwise just toggle this row
+                    else
+                    {
+                        Screen.ViewportHandler.ToggleRepresentativeDummy(index);
+                    }
+                }
+            }
+        }
+
+        public void ToggleRepresentativeDummy(int index)
+        {
+            if (_flverhandle.Get().Flver.Dummies.Count < index)
+                return;
+
+            var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            // This relies on the index of the lists to align
+            for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
+            {
+                var curNode = container.DummyPoly_RootNode.Children[i];
+
+                if (i == index)
+                {
+                    curNode.EditorVisible = !curNode.EditorVisible;
+                }
+            }
+        }
+
+        public void DisplayRepresentativeNodeState(int index)
+        {
+            if (_flverhandle.Get().Flver.Bones.Count < index)
+                return;
+
+            var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            Entity curEntity = null;
+
+            // This relies on the index of the lists to align
+            for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
+            {
+                var curNode = container.Bone_RootNode.Children[i];
+
+                if (i == index)
+                {
+                    curEntity = curNode;
+                }
+            }
+
+            if (curEntity != null)
+            {
+                ImGui.SetItemAllowOverlap();
+                var isVisible = curEntity.EditorVisible;
+                ImGui.SameLine();
+                ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * Smithbox.GetUIScale());
+                ImGui.PushStyleColor(ImGuiCol.Text, isVisible
+                    ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
+                    : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
+                ImGui.TextWrapped(isVisible ? ForkAwesome.Eye : ForkAwesome.EyeSlash);
+                ImGui.PopStyleColor();
+
+                if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                {
+                    // Quick-tool all if this key is down
+                    if (InputTracker.GetKey(KeyBindings.Current.ModelEditor_ToggleVisibilitySection))
+                    {
+                        for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
+                        {
+                            Screen.ViewportHandler.ToggleRepresentativeNode(i);
+                        }
+                    }
+                    // Otherwise just toggle this row
+                    else
+                    {
+                        Screen.ViewportHandler.ToggleRepresentativeNode(index);
+                    }
+                }
+            }
+        }
+
+        public void ToggleRepresentativeNode(int index)
+        {
+            if (_flverhandle.Get().Flver.Bones.Count < index)
+                return;
+
+            var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            // This relies on the index of the lists to align
+            for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
+            {
+                var curNode = container.Bone_RootNode.Children[i];
+
+                if (i == index)
+                {
+                    curNode.EditorVisible = !curNode.EditorVisible;
+                }
+            }
+        }
+
+        public void DisplayRepresentativeMeshState(int index)
+        {
+            if (_flverhandle.Get().Flver.Meshes.Count < index)
+                return;
+
+            var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            Entity curEntity = null;
+
+            // This relies on the index of the lists to align
+            for (int i = 0; i < container.Mesh_RootNode.Children.Count; i++)
+            {
+                var curNode = container.Mesh_RootNode.Children[i];
+
+                if (i == index)
+                {
+                    curEntity = curNode;
+                }
+            }
+
+            if(curEntity != null)
+            {
+                ImGui.SetItemAllowOverlap();
+                var isVisible = curEntity.EditorVisible;
+                ImGui.SameLine();
+                ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * Smithbox.GetUIScale());
+                ImGui.PushStyleColor(ImGuiCol.Text, isVisible
+                    ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
+                    : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
+                ImGui.TextWrapped(isVisible ? ForkAwesome.Eye : ForkAwesome.EyeSlash);
+                ImGui.PopStyleColor();
+
+                if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                {
+                    // Quick-tool all if this key is down
+                    if (InputTracker.GetKey(KeyBindings.Current.ModelEditor_ToggleVisibilitySection))
+                    {
+                        for (int i = 0; i < container.Mesh_RootNode.Children.Count; i++)
+                        {
+                            Screen.ViewportHandler.ToggleRepresentativeMesh(i);
+                        }
+                    }
+                    // Otherwise just toggle this row
+                    else
+                    {
+                        Screen.ViewportHandler.ToggleRepresentativeMesh(index);
+                    }
+                }
+            }
+        }
+
+        public void ToggleRepresentativeMesh(int index)
+        {
+            if (_flverhandle.Get().Flver.Meshes.Count < index)
+                return;
+
+            var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            // This relies on the index of the lists to align
+            for (int i = 0; i < container.Mesh_RootNode.Children.Count; i++)
+            {
+                var curNode = container.Mesh_RootNode.Children[i];
+
+                if (i == index)
+                {
+                    curNode.EditorVisible = !curNode.EditorVisible;
                 }
             }
         }

@@ -65,8 +65,13 @@ public class ModelContainer : ObjectContainer
                 if (proxy.Submeshes.Count > 0 && i < proxy.Submeshes.Count)
                 {
                     meshNode.RenderSceneMesh = proxy.Submeshes[i];
-                    proxy.Submeshes[i].SetSelectable(meshNode);
+                    //proxy.Submeshes[i].SetSelectable(meshNode);
                 }
+            }
+
+            if (!CFG.Current.ModelEditor_ViewMeshes)
+            {
+                meshNode.EditorVisible = false;
             }
 
             Objects.Add(meshNode);
@@ -80,9 +85,11 @@ public class ModelContainer : ObjectContainer
         {
             var boneNode = new TransformableNamedEntity(this, flver.Bones[i], $"Bone {i} {{ {flver.Bones[i].Name} }}", i);
 
-            if (CFG.Current.Model_ViewBones)
+            boneNode.RenderSceneMesh = Universe.GetBoneDrawable(this, boneNode);
+
+            if (!CFG.Current.ModelEditor_ViewBones)
             {
-                boneNode.RenderSceneMesh = Universe.GetBoneDrawable(this, boneNode);
+                boneNode.EditorVisible = false;
             }
 
             Objects.Add(boneNode);
@@ -106,9 +113,11 @@ public class ModelContainer : ObjectContainer
         {
             var dummyPolyNode = new TransformableNamedEntity(this, flver.Dummies[i], $@"Dummy {i}", i);
 
-            if (CFG.Current.ModelEditor_ViewDummyPolys)
+            dummyPolyNode.RenderSceneMesh = Universe.GetDummyPolyDrawable(this, dummyPolyNode);
+
+            if (!CFG.Current.ModelEditor_ViewDummyPolys)
             {
-                dummyPolyNode.RenderSceneMesh = Universe.GetDummyPolyDrawable(this, dummyPolyNode);
+                dummyPolyNode.EditorVisible = false;
             }
 
             Objects.Add(dummyPolyNode);

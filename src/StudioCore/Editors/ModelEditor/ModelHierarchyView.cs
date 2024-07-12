@@ -128,6 +128,8 @@ public class ModelHierarchyView
                         Screen.ViewportHandler.SelectRepresentativeDummy(_selectedDummy);
                     }
                 }
+
+                Screen.ViewportHandler.DisplayRepresentativeDummyState(i);
             }
         }
     }
@@ -211,6 +213,8 @@ public class ModelHierarchyView
                         Screen.ViewportHandler.SelectRepresentativeNode(_selectedNode);
                     }
                 }
+
+                Screen.ViewportHandler.DisplayRepresentativeNodeState(i);
             }
         }
     }
@@ -232,12 +236,14 @@ public class ModelHierarchyView
                 if (nodeIndex < Screen.ResourceHandler.CurrentFLVER.Nodes.Count)
                     node = Screen.ResourceHandler.CurrentFLVER.Nodes[nodeIndex].Name;
 
-                if (ImGui.Selectable($"Mesh {i} - {material} : {node}", _selectedMesh == i))
+                if (ImGui.Selectable($"Mesh {i} - {material} : {node}", _selectedMesh == i, ImGuiSelectableFlags.AllowDoubleClick))
                 {
                     ResetSelection();
                     _selectedMesh = i;
                     _lastSelectedEntry = ModelEntrySelectionType.Mesh;
                 }
+
+                Screen.ViewportHandler.DisplayRepresentativeMeshState(i);
             }
         }
     }
