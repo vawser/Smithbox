@@ -31,12 +31,16 @@ public static class ResourceTextLocator
             else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                 folders = Directory.GetDirectories(Smithbox.GameRoot + @"\menu\text").ToList();
             else
+            {
                 // Exclude folders that don't have typical msgbnds
                 folders = Directory.GetDirectories(Smithbox.GameRoot + @"\msg")
                     .Where(x => !"common,as,eu,jp,na,uk,japanese".Contains(x.Split("\\").Last())).ToList();
+            }
 
             foreach (var path in folders)
+            {
                 dict.Add(path.Split("\\").Last(), path);
+            }
         }
         catch (Exception e) when (e is DirectoryNotFoundException or FileNotFoundException)
         {
@@ -48,20 +52,20 @@ public static class ResourceTextLocator
     /// <summary>
     /// Get path of item.msgbnd (english by default)
     /// </summary>
-    public static ResourceDescriptor GetItemMsgbnd(string langFolder, bool writemode = false)
+    public static ResourceDescriptor GetItemMsgbnd(string langFolder, bool writemode = false, string outputType = "")
     {
-        return GetMsgbnd("item", langFolder, writemode);
+        return GetMsgbnd("item", langFolder, writemode, outputType);
     }
 
     /// <summary>
     /// Get path of menu.msgbnd (english by default)
     /// </summary>
-    public static ResourceDescriptor GetMenuMsgbnd(string langFolder, bool writemode = false)
+    public static ResourceDescriptor GetMenuMsgbnd(string langFolder, bool writemode = false, string outputType = "")
     {
-        return GetMsgbnd("menu", langFolder, writemode);
+        return GetMsgbnd("menu", langFolder, writemode, outputType);
     }
 
-    public static ResourceDescriptor GetMsgbnd(string msgBndType, string langFolder, bool writemode = false)
+    public static ResourceDescriptor GetMsgbnd(string msgBndType, string langFolder, bool writemode = false, string outputType = "")
     {
         ResourceDescriptor ad = new();
         var path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
@@ -92,11 +96,11 @@ public static class ResourceTextLocator
         }
         else if (Smithbox.ProjectType == ProjectType.DS3)
         {
-            path = $@"msg\{langFolder}\{msgBndType}_dlc2.msgbnd.dcx";
+            path = $@"msg\{langFolder}\{msgBndType}{outputType}.msgbnd.dcx";
         }
         else if (Smithbox.ProjectType == ProjectType.ER)
         {
-            path = $@"msg\{langFolder}\{msgBndType}_dlc02.msgbnd.dcx";
+            path = $@"msg\{langFolder}\{msgBndType}{outputType}.msgbnd.dcx";
         }
 
         if (writemode)

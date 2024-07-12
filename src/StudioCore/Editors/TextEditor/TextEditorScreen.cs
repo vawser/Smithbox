@@ -17,6 +17,8 @@ using StudioCore.Core;
 using StudioCore.Editors.TextEditor;
 using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 using System.IO;
+using StudioCore.MsbEditor;
+using StudioCore.Scene;
 
 namespace StudioCore.TextEditor;
 
@@ -237,6 +239,38 @@ public class TextEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
+        // Only relevant for games that use the dlc FMG system
+        if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
+        {
+            if (ImGui.BeginMenu("Text Output"))
+            {
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+                if (ImGui.MenuItem("Vanilla"))
+                {
+                    CurrentTargetOutputMode = TargetOutputMode.Vanilla;
+                }
+                ImguiUtils.ShowActiveStatus(CurrentTargetOutputMode == TargetOutputMode.Vanilla);
+
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+                if (ImGui.MenuItem("DLC1"))
+                {
+                    CurrentTargetOutputMode = TargetOutputMode.DLC1;
+                }
+                ImguiUtils.ShowActiveStatus(CurrentTargetOutputMode == TargetOutputMode.DLC1);
+
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+                if (ImGui.MenuItem("DLC2"))
+                {
+                    CurrentTargetOutputMode = TargetOutputMode.DLC2;
+                }
+                ImguiUtils.ShowActiveStatus(CurrentTargetOutputMode == TargetOutputMode.DLC2);
+
+                ImGui.EndMenu();
+            }
+            ImguiUtils.ShowHoverTooltip("Allows you to switch the target FMG output on save. By default for DS3 dlc2 and ER this is dlc02.");
+        }
+
+
         if (DisplayFmgUpdate && IsSupportedProjectType_FmgUpdate())
         {
             ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Warning_Text_Color);
@@ -247,6 +281,15 @@ public class TextEditorScreen : EditorScreen
             ImGui.PopStyleColor();
             ImguiUtils.ShowHoverTooltip("Your mod has unique FMG entries that are not in the latest FMG binder. Use this action to move them into it.");
         }
+    }
+
+    public TargetOutputMode CurrentTargetOutputMode = TargetOutputMode.DLC2;
+
+    public enum TargetOutputMode
+    {
+        Vanilla,
+        DLC1,
+        DLC2
     }
 
     private bool DisplayFmgUpdate = false;

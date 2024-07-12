@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Silk.NET.Core;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor;
@@ -141,6 +142,46 @@ public class FMGLanguage
         ResourceDescriptor itemMsgPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder);
         ResourceDescriptor menuMsgPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder);
 
+        // Handle output types for ER
+        if(Smithbox.ProjectType is ProjectType.ER)
+        {
+            switch(Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
+            {
+                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.Vanilla:
+                    itemMsgPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, false, "");
+                    menuMsgPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, false, "");
+                    break;
+                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC1:
+                    itemMsgPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, false, "_dlc01");
+                    menuMsgPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, false, "_dlc01");
+                    break;
+                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC2:
+                    itemMsgPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, false, "_dlc02");
+                    menuMsgPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, false, "_dlc02");
+                    break;
+            }
+        }
+
+        // Handle output types for ER
+        if (Smithbox.ProjectType is ProjectType.DS3)
+        {
+            switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
+            {
+                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.Vanilla:
+                    itemMsgPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, false, "");
+                    menuMsgPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, false, "");
+                    break;
+                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC1:
+                    itemMsgPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, false, "_dlc1");
+                    menuMsgPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, false, "_dlc1");
+                    break;
+                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC2:
+                    itemMsgPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, false, "_dlc2");
+                    menuMsgPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, false, "_dlc2");
+                    break;
+            }
+        }
+
         if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
         {
             fmgBinderItem = BND3.Read(itemMsgPath.AssetPath);
@@ -152,15 +193,18 @@ public class FMGLanguage
             fmgBinderMenu = BND4.Read(menuMsgPath.AssetPath);
         }
 
+        // Item
         foreach (BinderFile file in fmgBinderItem.Files)
         {
             FMGInfo info = _FmgInfoBanks.SelectMany((x) => x.Value.FmgInfos).FirstOrDefault(e => e.FmgID == (FmgIDType)file.ID);
+            
             if (info != null)
             {
                 file.Bytes = info.Fmg.Write();
             }
         }
 
+        // Menu
         foreach (BinderFile file in fmgBinderMenu.Files)
         {
             FMGInfo info = _FmgInfoBanks.SelectMany((x) => x.Value.FmgInfos).FirstOrDefault(e => e.FmgID == (FmgIDType)file.ID);
@@ -172,8 +216,50 @@ public class FMGLanguage
 
         ResourceDescriptor itemMsgPathDest = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, true);
         ResourceDescriptor menuMsgPathDest = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, true);
+
+        // Handle output types for ER
+        if (Smithbox.ProjectType is ProjectType.ER)
+        {
+            switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
+            {
+                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.Vanilla:
+                    itemMsgPathDest = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, true, "");
+                    menuMsgPathDest = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, true, "");
+                    break;
+                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC1:
+                    itemMsgPathDest = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, true, "_dlc01");
+                    menuMsgPathDest = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, true, "_dlc01");
+                    break;
+                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC2:
+                    itemMsgPathDest = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, true, "_dlc02");
+                    menuMsgPathDest = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, true, "_dlc02");
+                    break;
+            }
+        }
+
+        // Handle output types for ER
+        if (Smithbox.ProjectType is ProjectType.DS3)
+        {
+            switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
+            {
+                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.Vanilla:
+                    itemMsgPathDest = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, true, "");
+                    menuMsgPathDest = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, true, "");
+                    break;
+                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC1:
+                    itemMsgPathDest = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, true, "_dlc1");
+                    menuMsgPathDest = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, true, "_dlc1");
+                    break;
+                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC2:
+                    itemMsgPathDest = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, true, "_dlc2");
+                    menuMsgPathDest = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, true, "_dlc2");
+                    break;
+            }
+        }
+
         var parentDir = Smithbox.GameRoot;
         var modDir = Smithbox.ProjectRoot;
+
         if (fmgBinderItem is BND3 bnd3)
         {
             Utils.WriteWithBackup(parentDir, modDir, itemMsgPathDest.AssetPath, bnd3);
