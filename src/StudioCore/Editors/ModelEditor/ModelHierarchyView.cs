@@ -23,6 +23,7 @@ public class ModelHierarchyView
     private string _searchInput = "";
 
     public bool SuspendView = false;
+    public bool FocusSelection = false;
 
     public ModelHierarchyView(ModelEditorScreen editor)
     {
@@ -130,6 +131,12 @@ public class ModelHierarchyView
                 }
 
                 Screen.ViewportHandler.DisplayRepresentativeDummyState(i);
+
+                if (FocusSelection && _selectedDummy == i)
+                {
+                    FocusSelection = false;
+                    ImGui.SetScrollHereY();
+                }
             }
         }
     }
@@ -156,6 +163,12 @@ public class ModelHierarchyView
                     _selectedMaterial = i;
                     _lastSelectedEntry = ModelEntrySelectionType.Material;
                 }
+
+                if (FocusSelection && _selectedMaterial == i)
+                {
+                    FocusSelection = false;
+                    ImGui.SetScrollHereY();
+                }
             }
         }
     }
@@ -179,6 +192,12 @@ public class ModelHierarchyView
                     ResetSelection();
                     _selectedGXList = i;
                     _lastSelectedEntry = ModelEntrySelectionType.GXList;
+                }
+
+                if (FocusSelection && _selectedGXList == i)
+                {
+                    FocusSelection = false;
+                    ImGui.SetScrollHereY();
                 }
             }
         }
@@ -215,6 +234,12 @@ public class ModelHierarchyView
                 }
 
                 Screen.ViewportHandler.DisplayRepresentativeNodeState(i);
+
+                if (FocusSelection && _selectedNode == i)
+                {
+                    FocusSelection = false;
+                    ImGui.SetScrollHereY();
+                }
             }
         }
     }
@@ -244,6 +269,12 @@ public class ModelHierarchyView
                 }
 
                 Screen.ViewportHandler.DisplayRepresentativeMeshState(i);
+
+                if (FocusSelection && _selectedMesh == i)
+                {
+                    FocusSelection = false;
+                    ImGui.SetScrollHereY();
+                }
             }
         }
     }
@@ -268,6 +299,12 @@ public class ModelHierarchyView
                     _selectedBufferLayout = i;
                     _lastSelectedEntry = ModelEntrySelectionType.BufferLayout;
                 }
+
+                if (FocusSelection && _selectedBufferLayout == i)
+                {
+                    FocusSelection = false;
+                    ImGui.SetScrollHereY();
+                }
             }
         }
     }
@@ -290,6 +327,12 @@ public class ModelHierarchyView
                     _selectedBaseSkeleton = i;
                     _lastSelectedEntry = ModelEntrySelectionType.BaseSkeleton;
                 }
+
+                if (FocusSelection && _selectedBaseSkeleton == i)
+                {
+                    FocusSelection = false;
+                    ImGui.SetScrollHereY();
+                }
             }
         }
 
@@ -308,6 +351,12 @@ public class ModelHierarchyView
                     ResetSelection();
                     _selectedAllSkeleton = i;
                     _lastSelectedEntry = ModelEntrySelectionType.AllSkeleton;
+                }
+
+                if (FocusSelection && _selectedAllSkeleton == i)
+                {
+                    FocusSelection = false;
+                    ImGui.SetScrollHereY();
                 }
             }
         }

@@ -49,6 +49,7 @@ namespace StudioCore.Editors.ModelEditor
                         Screen.ModelHierarchy.ResetSelection();
                         Screen.ModelHierarchy._selectedGXList = index;
                         Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.GXList;
+                        Screen.ModelHierarchy.FocusSelection = true;
                     }
 
                     ImGui.EndPopup();
@@ -90,6 +91,7 @@ namespace StudioCore.Editors.ModelEditor
                         Screen.ModelHierarchy.ResetSelection();
                         Screen.ModelHierarchy._selectedMaterial = index;
                         Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.Material;
+                        Screen.ModelHierarchy.FocusSelection = true;
                     }
 
                     ImGui.EndPopup();
@@ -131,6 +133,7 @@ namespace StudioCore.Editors.ModelEditor
                         Screen.ModelHierarchy.ResetSelection();
                         Screen.ModelHierarchy._selectedNode = index;
                         Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.Node;
+                        Screen.ModelHierarchy.FocusSelection = true;
                     }
 
                     ImGui.EndPopup();
@@ -172,6 +175,7 @@ namespace StudioCore.Editors.ModelEditor
                         Screen.ModelHierarchy.ResetSelection();
                         Screen.ModelHierarchy._selectedBufferLayout = index;
                         Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.BufferLayout;
+                        Screen.ModelHierarchy.FocusSelection = true;
                     }
 
                     ImGui.EndPopup();
