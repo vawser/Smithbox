@@ -113,8 +113,9 @@ World Map:
  - Add floating text for dummy poly ref IDs
  - Add floating text for co-ordinate direction (X, Y, Z)
  - Add dummy poly forward/upwards representation
- - Need to find fix for FlverResource not being fully purged so duplicate/delete can function correctly. Force it to re-load the FLVER even if it is already present in the ResourceDictionary
- - Dummy/Bone wireframes don't re-rendering properly sometimes
  
+TODO:
  - Add ability to add properties if empty (e.g. Dummies)
  - Rotation/Scale needs to affect Bone properties (both ways)
+ 
+ - Bypass Resource Manager stuff: implement a direct method of generating the backing aspects of a Resource, e.g. listern, rendering stuff, etc

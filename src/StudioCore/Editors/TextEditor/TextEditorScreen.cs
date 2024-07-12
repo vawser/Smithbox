@@ -1116,6 +1116,8 @@ public class TextEditorScreen : EditorScreen
         _filteredFmgInfo.Clear();
         ClearTextEditorCache();
         ResetActionManager();
+
+        Smithbox.BankHandler.FMGBank.LanguageFolder = path;
         Smithbox.BankHandler.FMGBank.LoadFMGs(path);
     }
 }

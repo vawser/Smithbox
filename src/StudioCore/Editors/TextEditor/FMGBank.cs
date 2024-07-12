@@ -21,7 +21,7 @@ public class FMGBank
 {
     public bool IsLoaded => fmgLangs.Count != 0 && fmgLangs.All((fs) => fs.Value.IsLoaded);
     public bool IsLoading => fmgLangs.Count != 0 && fmgLangs.Any((fs) => fs.Value.IsLoading);
-    public string LanguageFolder { get; private set; } = "";
+    public string LanguageFolder { get; set; } = "";
 
     public IEnumerable<FMGInfo> FmgInfoBank { get => fmgLangs[LanguageFolder]._FmgInfoBanks.SelectMany((x) => x.Value.FmgInfos); }
     public IEnumerable<FMGInfo> SortedFmgInfoBank
@@ -84,8 +84,6 @@ public class FMGBank
         TaskManager.Run(new TaskManager.LiveTask("FMG - Load Text - " + folderName, TaskManager.RequeueType.WaitThenRequeue, true,
             () =>
             {
-                LanguageFolder = languageFolder;
-
                 if (fmgLangs.ContainsKey(LanguageFolder))
                 {
                     return;

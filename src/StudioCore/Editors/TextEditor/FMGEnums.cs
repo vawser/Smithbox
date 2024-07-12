@@ -20,8 +20,8 @@ public static class FMGDictionaries
         { "polpl", "Polish" },
         { "porbr", "Portuguese - Brazil" },
         { "rusru", "Russian" },
-        { "spaar", "Spanish - Spain" },
-        { "spaes", "Spanish - Latin America " },
+        { "spaar", "Spanish - Latin America" },
+        { "spaes", "Spanish - Spain" },
         { "thath", "Thai" },
         { "zhocn", "Simplified Chinese" },
         { "zhotw", "Traditional Chinese " }
