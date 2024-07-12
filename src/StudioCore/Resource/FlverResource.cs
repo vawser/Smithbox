@@ -393,12 +393,9 @@ public class FlverResource : IResource, IDisposable
         dest.MaterialData = new Material();
 
         var matName = mat.Name;
-        if (matName.Length >= 3)
+        if (!string.IsNullOrWhiteSpace(matName) && matName.Length >= 3 && matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
         {
-            if (matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
-            {
-                dest.MaterialMask = int.Parse(matName.Substring(1, 2));
-            }
+            dest.MaterialMask = int.Parse(matName.Substring(1, 2));
         }
 
         //FLVER0 stores layouts directly in the material
