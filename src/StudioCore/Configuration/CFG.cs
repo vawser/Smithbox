@@ -432,6 +432,8 @@ public class CFG
     public bool ModelEditor_ViewBones = true;
     public bool ModelEditor_ViewMeshes = true;
 
+    public bool ModelEditor_ExactSearch = false;
+
     public bool ModelEditor_Enable_Commmunity_Names = true;
     public bool ModelEditor_Enable_Commmunity_Hints = true;
     public bool ModelEditor_DisplayDmyPolyReferenceID = true;

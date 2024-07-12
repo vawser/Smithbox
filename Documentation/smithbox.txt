@@ -85,8 +85,8 @@ Param Editor:
 Text Editor:
  - Add generator tool for quickly adding entires, e.g. weapon entries: start ID, step amount, end ID, default title, default desc
  - FMG Exporter is adding unneed \n newlines on export and then causing double newlines on import
- - Look at Text Editor so it properly supports: "Vanilla" and "DLC" usage, currently is forces DLC "usage"
  - Separate Patch FMG seems to be broken too
+ - Adjust FMG Updater checks so user's without the necessary files know what is lacking
  
 Gparam Editor:
  - Add mass edit power to Quick Edit: Allow edits to affect all files
