@@ -281,7 +281,7 @@ public class ModelEditorScreen : EditorScreen
                     entry.EditorVisible = CFG.Current.ModelEditor_ViewMeshes;
                 }
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
+            ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
 
             ImGui.EndMenu();
         }

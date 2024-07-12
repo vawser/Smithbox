@@ -2033,14 +2033,14 @@ public class DummyPositionChange : ViewportAction
     }
 }
 
-public class BonePositionChange : ViewportAction
+public class BoneTransformChange : ViewportAction
 {
     private Entity Node;
     private Vector3 OldPosition;
     private Vector3 NewPosition;
     private FLVER.Bone Bone;
 
-    public BonePositionChange(Entity node, Vector3 newPosition)
+    public BoneTransformChange(Entity node, Vector3 newPosition)
     {
         Node = node;
         Bone = (FLVER.Bone)node.WrappedObject;

@@ -139,7 +139,7 @@ namespace StudioCore.Editors.ModelEditor
 
                 if (i == index)
                 {
-                    BonePositionChange act = new(curNode, position);
+                    BoneTransformChange act = new(curNode, position);
                     Screen.EditorActionManager.ExecuteAction(act);
 
                     break;
@@ -411,12 +411,14 @@ namespace StudioCore.Editors.ModelEditor
             {
                 Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.Dummy;
                 Screen.ModelHierarchy._selectedDummy = transformEnt.Index;
+                Screen.ModelHierarchy.FocusSelection = true;
             }
             // Bones
             if (transformEnt.WrappedObject is FLVER.Bone)
             {
                 Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.Node;
                 Screen.ModelHierarchy._selectedNode = transformEnt.Index;
+                Screen.ModelHierarchy.FocusSelection = true;
             }
         }
 
