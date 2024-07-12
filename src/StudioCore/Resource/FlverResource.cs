@@ -482,7 +482,7 @@ public class FlverResource : IResource, IDisposable
         var mtd = isUTF ? br.GetUTF16(mat.mtdOffset) : br.GetShiftJIS(mat.mtdOffset);
         var matName = isUTF ? br.GetUTF16(mat.nameOffset) : br.GetShiftJIS(mat.nameOffset);
         dest.MaterialName = Path.GetFileNameWithoutExtension(mtd);
-        if (matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
+        if (!string.IsNullOrWhiteSpace(matName) && matName.Length >= 3 && matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
         {
             dest.MaterialMask =  int.Parse(matName.Substring(1, 2));
         }
