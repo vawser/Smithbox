@@ -1601,12 +1601,12 @@ public class MsbEntity : Entity
     /// <returns></returns>
     public int[]? GetModelMasks()
     {
-        int[]? callback(Param.Row? row)
+        int[]? callback(Param.Row? row, int count = 32)
         {
             if (row == null) return null;
-            int[] enabledMasks = new int[32];
+            int[] enabledMasks = new int[count];
 
-            for (int i = 0; i < 32; i++)
+            for (int i = 0; i < count; i++)
             {
                 var fieldName = $"modelDispMask{i}";
                 if (Convert.ToBoolean((byte)row[fieldName]!.Value.Value))
@@ -1646,8 +1646,23 @@ public class MsbEntity : Entity
                 }
                 break;
             case ProjectType.DES:
+                if (WrappedObject is MSBD.Part.EnemyBase dese)
+                {
+                    var npcParamId = dese.NPCParamID;
+                    return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId], 16);
+                }
+
+                break;
+                break;
             case ProjectType.DS1:
             case ProjectType.DS1R:
+                if (WrappedObject is MSB1.Part.EnemyBase ds1e)
+                {
+                    var npcParamId = ds1e.NPCParamID;
+                    return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId], 16);
+                }
+
+                break;
             case ProjectType.DS2S:
             case ProjectType.AC6:
             case ProjectType.DS2:
