@@ -125,7 +125,7 @@ namespace StudioCore.Editors.ModelEditor
             }
         }
 
-        public void UpdateRepresentativeNode(int index, Vector3 position)
+        public void UpdateRepresentativeNode(int index, Vector3 position, Vector3 rotation, Vector3 scale)
         {
             if (_flverhandle.Get().Flver.Bones.Count < index)
                 return;
@@ -139,7 +139,7 @@ namespace StudioCore.Editors.ModelEditor
 
                 if (i == index)
                 {
-                    BoneTransformChange act = new(curNode, position);
+                    BoneTransformChange act = new(curNode, position, rotation, scale);
                     Screen.EditorActionManager.ExecuteAction(act);
 
                     break;
@@ -445,7 +445,7 @@ namespace StudioCore.Editors.ModelEditor
             // Bones
             if (transformEnt.WrappedObject is FLVER.Bone)
             {
-                UpdateStoredNodePosition(transformEnt);
+                UpdateStoredNodeTransform(transformEnt);
             }
         }
 
@@ -463,7 +463,7 @@ namespace StudioCore.Editors.ModelEditor
             }
         }
 
-        private void UpdateStoredNodePosition(TransformableNamedEntity transformEnt)
+        private void UpdateStoredNodeTransform(TransformableNamedEntity transformEnt)
         {
             if (Screen.ModelHierarchy._selectedNode == -1)
                 return;
@@ -474,6 +474,14 @@ namespace StudioCore.Editors.ModelEditor
             if (bone.Translation != entBone.Position)
             {
                 bone.Translation = entBone.Position;
+            }
+            if (bone.Rotation != entBone.Rotation)
+            {
+                bone.Rotation = entBone.Rotation;
+            }
+            if (bone.Scale != entBone.Scale)
+            {
+                bone.Scale = entBone.Scale;
             }
         }
 

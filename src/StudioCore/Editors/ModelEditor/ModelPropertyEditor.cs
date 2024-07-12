@@ -657,7 +657,7 @@ public class ModelPropertyEditor
         if (_trackedNodePosition != entry.Translation)
         {
             _trackedNodePosition = entry.Translation;
-            Screen.ViewportHandler.UpdateRepresentativeNode(index, entry.Translation);
+            Screen.ViewportHandler.UpdateRepresentativeNode(index, entry.Translation, entry.Rotation, entry.Scale);
         }
     }
 
