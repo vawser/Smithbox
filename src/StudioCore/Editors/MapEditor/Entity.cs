@@ -1601,70 +1601,59 @@ public class MsbEntity : Entity
     /// <returns></returns>
     public int[]? GetModelMasks()
     {
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        int[]? callback(Param.Row? row)
         {
-            if (WrappedObject is MSB3.Part.EnemyBase enemy)
+            if (row == null) return null;
+            int[] enabledMasks = new int[32];
+
+            for (int i = 0; i < 32; i++)
             {
-                var npcParamId = enemy.NPCParamID;
-                var param = ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId];
-                if (param != null)
-                {
-                    int[] enabledMasks = new int[32];
-
-                    for (int i = 0; i < 32; i++)
-                    {
-                        var fieldName = $"modelDispMask{i}";
-                        if (Convert.ToBoolean((byte)param[fieldName]!.Value.Value))
-                            enabledMasks[i] = 1;
-                    }
-
-                    return enabledMasks;
-                }
+                var fieldName = $"modelDispMask{i}";
+                if (Convert.ToBoolean((byte)row[fieldName]!.Value.Value))
+                    enabledMasks[i] = 1;
             }
+            return enabledMasks;
         }
 
-        if (Smithbox.ProjectType is ProjectType.SDT)
+        switch (Smithbox.ProjectType)
         {
-            if (WrappedObject is MSBS.Part.EnemyBase enemy)
-            {
-                var npcParamId = enemy.NPCParamID;
-                var param = ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId];
-                if (param != null)
+            case ProjectType.DS3:
+                if (WrappedObject is MSB3.Part.EnemyBase ds3e)
                 {
-                    int[] enabledMasks = new int[32];
-
-                    for (int i = 0; i < 32; i++)
-                    {
-                        var fieldName = $"modelDispMask{i}";
-                        if (Convert.ToBoolean((byte)param[fieldName]!.Value.Value))
-                            enabledMasks[i] = 1;
-                    }
-
-                    return enabledMasks;
+                    var npcParamId = ds3e.NPCParamID;
+                    return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId]);
                 }
-            }
-        }
-
-        if (Smithbox.ProjectType is ProjectType.ER)
-        {
-            if (WrappedObject is MSBE.Part.EnemyBase enemy)
-            {
-                var npcParamId = enemy.NPCParamID;
-                var param = ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId];
-                if (param != null)
+                break;
+            case ProjectType.BB:
+                if (WrappedObject is MSBB.Part.EnemyBase bbe)
                 {
-                    int[] enabledMasks = new int[32];
-
-                    for (int i = 0; i < 32; i++)
-                    {
-                        var fieldName = $"modelDispMask{i}";
-                        if (Convert.ToBoolean((byte)param[fieldName]!.Value.Value))
-                            enabledMasks[i] = 1;
-                    }
-
-                    return enabledMasks;
+                    var npcParamId = bbe.NPCParamID;
+                    return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId]);
                 }
-            }
+                break;
+            case ProjectType.SDT:
+                if (WrappedObject is MSB3.Part.EnemyBase sdte)
+                {
+                    var npcParamId = sdte.NPCParamID;
+                    return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId]);
+                }
+                break;
+            case ProjectType.ER:
+                if (WrappedObject is MSB3.Part.EnemyBase ere)
+                {
+                    var npcParamId = ere.NPCParamID;
+                    return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId]);
+                }
+                break;
+            case ProjectType.DES:
+            case ProjectType.DS1:
+            case ProjectType.DS1R:
+            case ProjectType.DS2S:
+            case ProjectType.AC6:
+            case ProjectType.DS2:
+            case ProjectType.Undefined:
+            default:
+                return null;
         }
 
         return null;
