@@ -11,7 +11,7 @@
     <Field Def="s32 itemlot_id" />
     <Field Def="s32 enemy_common_id" />
     <Field Def="s32 boss_destruction_flag" />
-    <Field Def="s32 boss_shop_visibility_flag" />
+    <Field Def="s32 map_clear_global_event_flag" />
     <Field Def="s32 Unk02" />
     <Field Def="s32 camera_follow_iD" />
     <Field Def="s32 lockon_id" />

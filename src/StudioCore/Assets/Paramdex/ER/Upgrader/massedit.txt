@@ -524,8 +524,8 @@ param CharaInitParam: modified && !added: unknown_0x50: = vanillafield unknown_0
 1.12.1 - (CharaInitParam) Set unknown_0x51 to Vanilla v1.12.1 values
 param CharaInitParam: modified && !added: unknown_0x51: = vanillafield unknown_0x51
 11210015L
-1.12.1 - (BulletParam) Set unknown_0x98_3 to Vanilla v1.12.1 values
-param BulletParam: modified && !added: unknown_0x98_3: = vanillafield unknown_0x98_3
+1.12.1 - (BulletParam) Set mayRemoteDetonate to Vanilla v1.12.1 values
+param BulletParam: modified && !added: mayRemoteDetonate: = vanillafield mayRemoteDetonate
 11210015L
 1.12.1 - (BulletParam) Set pad to Vanilla v1.12.1 values
 param BulletParam: modified && !added: pad: = vanillafield pad

@@ -86,6 +86,7 @@
         <Option Value="2" Name="Type 2" />
         <Option Value="3" Name="Type 3" />
         <Option Value="4" Name="Type 4" />
+        <Option Value="6" Name="Trigger Remote Detonation" />
     </Enum>
   </Enums>
   <Field>
@@ -207,6 +208,8 @@
     <followOffset_Radius AltName="Follow Bullet - Radius Offset" Wiki="Funnel tracking position_radius [m]" />
     <spBulletDistUpRate AltName="SpEffect Bullet Distance - Magnification" Wiki="Special effect flight distance correction magnification" />
     <nolockTargetDist AltName="Target Range when Unlocked" Wiki="Target range when unlocked (-1: Refer to range, 0: No target)" />
+    
+    <mayRemoteDetonate AltName="Can be Remotely Detonated" Wiki="Bullets with Attach Type 6 will cause this bullet to be detonated if this bullet is within their hit radius." />
     <pad4 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Governs motion, hitbox and appearance of projetiles. Can reference AtkParam for damage."/>
