@@ -96,6 +96,11 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
                 foreach (FLVER.Vertex vertex in Vertices)
                     vertex.Write(bw, layout, uvFactor);
             }
+
+            public VertexBuffer Clone()
+            {
+                return (VertexBuffer)MemberwiseClone();
+            }
         }
     }
 }

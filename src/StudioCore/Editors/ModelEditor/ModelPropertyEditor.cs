@@ -29,6 +29,7 @@ public class ModelPropertyEditor
     private GXDataEditor GXDataEditor;
     private ModelPropertyDecorationHandler DecorationHandler;
     private MaterialInformationView MaterialInfoView;
+    private HierarchyContextMenu ContextMenu;
 
     private bool SuspendView = false;
 
@@ -38,6 +39,7 @@ public class ModelPropertyEditor
         GXDataEditor = new GXDataEditor();
         DecorationHandler = new ModelPropertyDecorationHandler(editor);
         MaterialInfoView = new MaterialInformationView(editor);
+        ContextMenu = new HierarchyContextMenu(Screen);
     }
 
     public void OnGui()
@@ -164,6 +166,9 @@ public class ModelPropertyEditor
     private void DisplayProperties_Dummies()
     {
         var index = Screen.ModelHierarchy._selectedDummy;
+
+        if (index == -1)
+            return;
 
         if (Screen.ResourceHandler.CurrentFLVER.Dummies.Count < index)
             return;
@@ -309,6 +314,9 @@ public class ModelPropertyEditor
     {
         var index = Screen.ModelHierarchy._selectedMaterial;
 
+        if (index == -1)
+            return;
+
         if (Screen.ResourceHandler.CurrentFLVER.Materials.Count < index)
             return;
 
@@ -375,20 +383,37 @@ public class ModelPropertyEditor
 
         if (ImGui.CollapsingHeader("Textures", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            if (Screen.ModelHierarchy._subSelectedTextureRow == -1)
+                return;
+
             // Textures
             for (int i = 0; i < entry.Textures.Count; i++)
             {
-                entry.Textures[i] = DisplayProperties_Material_Texture(entry.Textures[i], i);
+                if (entry.Textures[i] != null)
+                {
+                    DisplayProperties_Material_Texture(entry.Textures[i], i, entry);
+                }
             }
         }
+
+        ContextMenu.TextureHeaderContextMenu(entry);
 
         MaterialInfoView.DisplayMatbinInformation(entry.MTD);
     }
 
-    private Formats.PureFLVER.FLVER2.FLVER2.Texture DisplayProperties_Material_Texture(Formats.PureFLVER.FLVER2.FLVER2.Texture texture, int index)
+    private void DisplayProperties_Material_Texture(Texture texture, int index, Material curMaterial)
     {
         ImGui.Separator();
-        ImGui.Text("Texture");
+        if(ImGui.Selectable($"Texture##Texture{index}", Screen.ModelHierarchy._subSelectedTextureRow == index))
+        {
+            Screen.ModelHierarchy._subSelectedTextureRow = index;
+        }
+
+        if (Screen.ModelHierarchy._subSelectedTextureRow == index)
+        {
+            ContextMenu.TextureHeaderContextMenu(index);
+        }
+
         ImGui.Separator();
 
         var type = texture.Type;
@@ -428,12 +453,13 @@ public class ModelPropertyEditor
         texture.Type = type;
         texture.Path = path;
         texture.Scale = scale;
-
-        return texture;
     }
     private void DisplayProperties_GXLists()
     {
         var index = Screen.ModelHierarchy._selectedGXList;
+
+        if (index == -1)
+            return;
 
         if (Screen.ResourceHandler.CurrentFLVER.GXLists.Count < index)
             return;
@@ -450,10 +476,22 @@ public class ModelPropertyEditor
         }
     }
 
-    private void DisplayProperties_Material_GXItem(StudioCore.Formats.PureFLVER.FLVER2.FLVER2.GXItem item, int index)
+    private int byteArraySize = 32;
+
+    private void DisplayProperties_Material_GXItem(GXItem item, int index)
     {
         ImGui.Separator();
-        ImGui.Text("GX Item");
+
+        if (ImGui.Selectable($"GX Item##GXItem{index}", Screen.ModelHierarchy._subSelectedGXItemRow == index))
+        {
+            Screen.ModelHierarchy._subSelectedGXItemRow = index;
+        }
+
+        if (Screen.ModelHierarchy._subSelectedGXItemRow == index)
+        {
+            ContextMenu.GXItemHeaderContextMenu(index);
+        }
+
         ImGui.Separator();
 
         var id = item.ID;
@@ -482,6 +520,20 @@ public class ModelPropertyEditor
 
         ImGui.Columns(1);
 
+        if (item.Data.Length < 1)
+        {
+            ImGui.Separator();
+            ImGui.Text($"New Byte Array##newByteArray{index}");
+            ImGui.Separator();
+            ImGui.InputInt("Byte Array Size", ref byteArraySize);
+
+            if(ImGui.Button($"Create Byte Array##createByteArray{index}"))
+            {
+                item.Data = new byte[byteArraySize];
+            }
+            ImguiUtils.ShowHoverTooltip("Creates a byte array to the specified size. Note this is not checked for validity, that is up to the user to determine.");
+        }
+
         var data = GXDataEditor.DisplayProperties_GXItem_HandleData(item);
 
         // Changes
@@ -495,6 +547,9 @@ public class ModelPropertyEditor
     private void DisplayProperties_Nodes()
     {
         var index = Screen.ModelHierarchy._selectedNode;
+
+        if (index == -1)
+            return;
 
         if (Screen.ResourceHandler.CurrentFLVER.Nodes.Count < index)
             return;
@@ -665,6 +720,9 @@ public class ModelPropertyEditor
     {
         var index = Screen.ModelHierarchy._selectedMesh;
 
+        if (index == -1)
+            return;
+
         if (Screen.ResourceHandler.CurrentFLVER.Meshes.Count < index)
             return;
 
@@ -725,7 +783,7 @@ public class ModelPropertyEditor
         {
             if(entry.BoundingBox != null)
             {
-                entry.BoundingBox = DisplayProperties_Mesh_BoundingBox(entry.BoundingBox);
+                DisplayProperties_Mesh_BoundingBox(entry.BoundingBox);
             }
         }
 
@@ -733,7 +791,7 @@ public class ModelPropertyEditor
         {
             for (int i = 0; i < entry.FaceSets.Count; i++)
             {
-                entry.FaceSets[i] = DisplayProperties_Mesh_FaceSet(entry.FaceSets[i], i);
+                DisplayProperties_Mesh_FaceSet(entry.FaceSets[i], i);
             }
         }
 
@@ -741,7 +799,7 @@ public class ModelPropertyEditor
         {
             for (int i = 0; i < entry.VertexBuffers.Count; i++)
             {
-                entry.VertexBuffers[i] = DisplayProperties_Mesh_VertexBuffers(entry.VertexBuffers[i], i);
+                DisplayProperties_Mesh_VertexBuffers(entry.VertexBuffers[i], i);
             }
         }
 
@@ -768,10 +826,19 @@ public class ModelPropertyEditor
         */
     }
 
-    private Formats.PureFLVER.FLVER2.FLVER2.FaceSet DisplayProperties_Mesh_FaceSet(Formats.PureFLVER.FLVER2.FLVER2.FaceSet faceset, int index)
+    private void DisplayProperties_Mesh_FaceSet(Formats.PureFLVER.FLVER2.FLVER2.FaceSet faceset, int index)
     {
         ImGui.Separator();
-        ImGui.Text($"Face Set {index}");
+        if (ImGui.Selectable($"Face Set {index}##FaceSet{index}", Screen.ModelHierarchy._subSelectedFaceSetRow == index))
+        {
+            Screen.ModelHierarchy._subSelectedFaceSetRow = index;
+        }
+
+        if (Screen.ModelHierarchy._subSelectedFaceSetRow == index)
+        {
+            ContextMenu.FaceSetHeaderContextMenu(index);
+        }
+
         ImGui.Separator();
 
         var flags = (int)faceset.Flags;
@@ -829,20 +896,27 @@ public class ModelPropertyEditor
         {
             for (int i = 0; i < faceset.Indices.Count; i++)
             {
-                faceset.Indices[i] = DisplayProperties_Mesh_FaceSetIndices(faceset.Indices[i], i);
+                DisplayProperties_Mesh_FaceSetIndices(faceset.Indices[i], i);
             }
         }
         */
-
-        return faceset;
     }
 
-    private Formats.PureFLVER.FLVER2.FLVER2.VertexBuffer DisplayProperties_Mesh_VertexBuffers(Formats.PureFLVER.FLVER2.FLVER2.VertexBuffer vertexBuffer, int index)
+    private void DisplayProperties_Mesh_VertexBuffers(Formats.PureFLVER.FLVER2.FLVER2.VertexBuffer vertexBuffer, int index)
     {
         var layoutIndex = vertexBuffer.LayoutIndex;
 
         ImGui.Separator();
-        ImGui.Text($"Vertex Buffer {index}");
+        if (ImGui.Selectable($"Vertex Buffer {index}##VertexBuffer{index}", Screen.ModelHierarchy._subSelectedVertexBufferRow == index))
+        {
+            Screen.ModelHierarchy._subSelectedVertexBufferRow = index;
+        }
+
+        if (Screen.ModelHierarchy._subSelectedVertexBufferRow == index)
+        {
+            ContextMenu.VertexBufferHeaderContextMenu(index);
+        }
+
         ImGui.Separator();
 
         // Display
@@ -862,11 +936,9 @@ public class ModelPropertyEditor
         ImGui.Columns(1);
 
         vertexBuffer.LayoutIndex = layoutIndex;
-
-        return vertexBuffer;
     }
 
-    private int DisplayProperties_Mesh_FaceSetIndices(int vertexIndex, int index)
+    private void DisplayProperties_Mesh_FaceSetIndices(int vertexIndex, int index)
     {
         var curVertexIndex = vertexIndex;
 
@@ -883,11 +955,9 @@ public class ModelPropertyEditor
         ImGui.InputInt($"##VertexIndex{index}", ref curVertexIndex);
 
         ImGui.Columns(1);
-
-        return curVertexIndex;
     }
 
-    private int DisplayProperties_Mesh_BoneIndices(int boneIndex, int index)
+    private void DisplayProperties_Mesh_BoneIndices(int boneIndex, int index)
     {
         var curBoneIndex = boneIndex;
 
@@ -904,11 +974,9 @@ public class ModelPropertyEditor
         ImGui.InputInt($"##BoneIndex{index}", ref curBoneIndex);
 
         ImGui.Columns(1);
-
-        return curBoneIndex;
     }
 
-    private BoundingBoxes DisplayProperties_Mesh_BoundingBox(BoundingBoxes boundingBox)
+    private void DisplayProperties_Mesh_BoundingBox(BoundingBoxes boundingBox)
     {
         var bbMin = boundingBox.Min;
         var bbMax = boundingBox.Max;
@@ -946,13 +1014,14 @@ public class ModelPropertyEditor
         boundingBox.Min = bbMin;
         boundingBox.Max = bbMax;
         boundingBox.Unk = bbUnk;
-
-        return boundingBox;
     }
 
     private void DisplayProperties_BufferLayouts()
     {
         var index = Screen.ModelHierarchy._selectedBufferLayout;
+
+        if (index == -1)
+            return;
 
         if (Screen.ResourceHandler.CurrentFLVER.BufferLayouts.Count < index)
             return;
@@ -961,11 +1030,11 @@ public class ModelPropertyEditor
 
         for(int i = 0; i < entry.Count; i++)
         {
-            entry[i] = DisplayProperties_BufferLayout_LayoutMember(entry[i], i);
+            DisplayProperties_BufferLayout_LayoutMember(entry[i], i);
         }
     }
 
-    private Formats.PureFLVER.FLVER.LayoutMember DisplayProperties_BufferLayout_LayoutMember(Formats.PureFLVER.FLVER.LayoutMember layout, int index)
+    private void DisplayProperties_BufferLayout_LayoutMember(Formats.PureFLVER.FLVER.LayoutMember layout, int index)
     {
         ImGui.Separator();
         ImGui.Text($"Buffer Layout {index}");
@@ -1000,13 +1069,14 @@ public class ModelPropertyEditor
         ImGui.SameLine();
         ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{layout.Size}");
         ImguiUtils.ShowHoverTooltip("The size of this member's ValueType, in bytes.");
-
-        return layout;
     }
 
     private void DisplayProperties_BaseSkeletons()
     {
         var index = Screen.ModelHierarchy._selectedBaseSkeleton;
+
+        if (index == -1)
+            return;
 
         if (Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton.Count < index)
             return;
@@ -1117,6 +1187,9 @@ public class ModelPropertyEditor
     private void DisplayProperties_AllSkeletons()
     {
         var index = Screen.ModelHierarchy._selectedAllSkeleton;
+
+        if (index == -1)
+            return;
 
         if (Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons.Count < index)
             return;

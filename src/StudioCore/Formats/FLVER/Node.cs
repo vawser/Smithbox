@@ -169,6 +169,11 @@ namespace StudioCore.Formats.PureFLVER
                 else
                     bw.WriteShiftJIS(Name, true);
             }
+
+            public Node Clone()
+            {
+                return (Node)MemberwiseClone();
+            }
         }
     }
 }

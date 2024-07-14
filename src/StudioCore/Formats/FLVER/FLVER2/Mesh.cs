@@ -255,6 +255,11 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
                 }
             }
 
+            public Mesh Clone()
+            {
+                return (Mesh)MemberwiseClone();
+            }
+
             /// <summary>
             /// An optional bounding box for meshes added in DS2.
             /// </summary>
@@ -298,6 +303,11 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
                     bw.WriteVector3(Max);
                     if (header.Version >= 0x2001A)
                         bw.WriteVector3(Unk);
+                }
+
+                public BoundingBoxes Clone()
+                {
+                    return (BoundingBoxes)MemberwiseClone();
                 }
             }
         }

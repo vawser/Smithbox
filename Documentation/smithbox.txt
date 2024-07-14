@@ -119,3 +119,4 @@ TODO:
  - Backing data is not accurate for Bones (Nodes)
  - Bypass Resource Manager stuff: implement a direct method of generating the backing aspects of a Resource, e.g. listern, rendering stuff, etc
  
+ - Add undo support for the row actions

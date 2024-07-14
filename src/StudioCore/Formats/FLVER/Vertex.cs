@@ -95,6 +95,11 @@ namespace StudioCore.Formats.PureFLVER
                 Colors = new List<VertexColor>(clone.Colors);
             }
 
+            public Vertex Clone()
+            {
+                return (Vertex)MemberwiseClone();
+            }
+
             /// <summary>
             /// Must be called before writing any buffers. Queues list types so they will be split across buffers properly.
             /// </summary>

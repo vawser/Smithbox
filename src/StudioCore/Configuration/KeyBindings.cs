@@ -177,6 +177,8 @@ public class KeyBindings
 
         // Model Editor
         public KeyBind ModelEditor_ToggleVisibilitySection = new("Toggle Section (when clicking Visibility Icon)", KeybindCategory.ModelEditor, Key.A);
+        public KeyBind ModelEditor_Multiselect = new("Multi-Select Row", KeybindCategory.ModelEditor, Key.Z);
+        public KeyBind ModelEditor_Multiselect_Range = new("Multi-Select Row", KeybindCategory.ModelEditor, Key.Z, false, false, true);
 
         // Param
         public KeyBind Param_Copy = new("Copy", KeybindCategory.ParamEditor, Key.C, true);

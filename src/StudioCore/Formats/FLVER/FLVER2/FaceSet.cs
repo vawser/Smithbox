@@ -39,6 +39,11 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
                 LodLevel2 = 0x0200_0000,
 
                 /// <summary>
+                /// Extremely low detail mesh.
+                /// </summary>
+                LodLevelEx = 0x0400_0000,
+
+                /// <summary>
                 /// Not confirmed, but suspected to indicate when indices are edge-compressed.
                 /// </summary>
                 EdgeCompressed = 0x4000_0000,
@@ -263,6 +268,11 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
                 {
                     return new List<int>(Indices);
                 }
+            }
+
+            public FaceSet Clone()
+            {
+                return (FaceSet)MemberwiseClone();
             }
         }
     }

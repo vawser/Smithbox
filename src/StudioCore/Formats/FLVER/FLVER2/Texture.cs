@@ -147,6 +147,10 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
             {
                 return $"{Type} = {Path}";
             }
+            public Texture Clone()
+            {
+                return (Texture)MemberwiseClone();
+            }
         }
     }
 }

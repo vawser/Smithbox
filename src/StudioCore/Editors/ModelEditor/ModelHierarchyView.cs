@@ -19,6 +19,16 @@ namespace StudioCore.Editors.ModelEditor;
 public class ModelHierarchyView
 {
     private ModelEditorScreen Screen;
+    private HierarchyContextMenu ContextMenu;
+
+    private HierarchyMultiselect DummyMultiselect;
+    private HierarchyMultiselect MaterialMultiselect;
+    private HierarchyMultiselect GxListMultiselect;
+    private HierarchyMultiselect NodeMultiselect;
+    private HierarchyMultiselect MeshMultiselect;
+    private HierarchyMultiselect BufferLayoutMultiselect;
+    private HierarchyMultiselect BaseSkeletonMultiselect;
+    private HierarchyMultiselect AllSkeletonMultiselect;
 
     private string _searchInput = "";
 
@@ -28,6 +38,16 @@ public class ModelHierarchyView
     public ModelHierarchyView(ModelEditorScreen editor)
     {
         Screen = editor;
+        ContextMenu = new HierarchyContextMenu(Screen);
+
+        DummyMultiselect = new HierarchyMultiselect();
+        MaterialMultiselect = new HierarchyMultiselect();
+        GxListMultiselect = new HierarchyMultiselect();
+        NodeMultiselect = new HierarchyMultiselect();
+        MeshMultiselect = new HierarchyMultiselect();
+        BufferLayoutMultiselect = new HierarchyMultiselect();
+        BaseSkeletonMultiselect = new HierarchyMultiselect();
+        AllSkeletonMultiselect = new HierarchyMultiselect();
     }
 
     public void OnGui()
@@ -86,6 +106,12 @@ public class ModelHierarchyView
     public int _selectedBaseSkeleton = -1;
     public int _selectedAllSkeleton = -1;
 
+    public int _subSelectedTextureRow = -1;
+    public int _subSelectedGXItemRow = -1;
+    public int _subSelectedFaceSetRow = -1;
+    public int _subSelectedVertexBufferRow = -1;
+
+
     public void ResetSelection()
     {
         _selectedEntry = "";
@@ -98,6 +124,10 @@ public class ModelHierarchyView
         _selectedBufferLayout = -1;
         _selectedBaseSkeleton = -1;
         _selectedAllSkeleton = -1;
+        _subSelectedTextureRow = -1;
+        _subSelectedGXItemRow = -1;
+        _subSelectedFaceSetRow = -1;
+        _subSelectedVertexBufferRow = -1;
     }
 
 
@@ -115,14 +145,16 @@ public class ModelHierarchyView
     {
         if (ImGui.CollapsingHeader("Dummies"))
         {
-            for(int i = 0; i < Screen.ResourceHandler.CurrentFLVER.Dummies.Count; i++)
+            for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.Dummies.Count; i++)
             {
                 var curDummy = Screen.ResourceHandler.CurrentFLVER.Dummies[i];
 
                 if (ModelEditorSearch.IsModelEditorSearchMatch_Dummy(_searchInput, curDummy, Screen.ResourceHandler.CurrentFLVER, i))
                 {
-                    if (ImGui.Selectable($"Dummy {i} - [{curDummy.ReferenceID}]", _selectedDummy == i, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable($"Dummy {i} - [{curDummy.ReferenceID}]", (DummyMultiselect.IsMultiselected(i) || _selectedDummy == i), ImGuiSelectableFlags.AllowDoubleClick))
                     {
+                        DummyMultiselect.HandleMultiselect(_selectedDummy, i);
+
                         ResetSelection();
                         _selectedDummy = i;
                         _lastSelectedEntry = ModelEntrySelectionType.Dummy;
@@ -135,6 +167,18 @@ public class ModelHierarchyView
                         }
                     }
 
+                    if (_selectedDummy == i)
+                    {
+                        if (DummyMultiselect.HasValidMultiselection())
+                        {
+                            ContextMenu.DummyRowContextMenu_MultiSelect(DummyMultiselect);
+                        }
+                        else
+                        {
+                            ContextMenu.DummyRowContextMenu(i, curDummy);
+                        }
+                    }
+
                     Screen.ViewportHandler.DisplayRepresentativeDummyState(i);
 
                     if (FocusSelection && _selectedDummy == i)
@@ -144,6 +188,12 @@ public class ModelHierarchyView
                     }
                 }
             }
+        }
+
+        // Only display this one if the dummy list is empty
+        if (Screen.ResourceHandler.CurrentFLVER.Dummies.Count < 1)
+        {
+            ContextMenu.DummyHeaderContextMenu();
         }
     }
 
@@ -166,11 +216,30 @@ public class ModelHierarchyView
 
                 if (ModelEditorSearch.IsModelEditorSearchMatch_Material(_searchInput, curMaterial, Screen.ResourceHandler.CurrentFLVER, i))
                 {
-                    if (ImGui.Selectable($"{materialName}##material{i}", _selectedMaterial == i))
+                    if (ImGui.Selectable($"{materialName}##material{i}", (MaterialMultiselect.IsMultiselected(i) || _selectedMaterial == i)))
                     {
+                        MaterialMultiselect.HandleMultiselect(_selectedMaterial, i);
+
                         ResetSelection();
                         _selectedMaterial = i;
                         _lastSelectedEntry = ModelEntrySelectionType.Material;
+
+                        if(curMaterial.Textures.Count > 0)
+                        {
+                            _subSelectedTextureRow = 0;
+                        }
+                    }
+
+                    if (_selectedMaterial == i)
+                    {
+                        if (MaterialMultiselect.HasValidMultiselection())
+                        {
+                            ContextMenu.MaterialRowContextMenu_MultiSelect(MaterialMultiselect);
+                        }
+                        else
+                        {
+                            ContextMenu.MaterialRowContextMenu(i, curMaterial);
+                        }
                     }
 
                     if (FocusSelection && _selectedMaterial == i)
@@ -180,6 +249,12 @@ public class ModelHierarchyView
                     }
                 }
             }
+        }
+
+        // Only display this one if the list is empty
+        if (Screen.ResourceHandler.CurrentFLVER.Materials.Count < 1)
+        {
+            ContextMenu.MaterialHeaderContextMenu();
         }
     }
 
@@ -201,11 +276,30 @@ public class ModelHierarchyView
 
                 if (ModelEditorSearch.IsModelEditorSearchMatch_GXList(_searchInput, curGXList, Screen.ResourceHandler.CurrentFLVER, i))
                 {
-                    if (ImGui.Selectable($"GX List {i}", _selectedGXList == i))
+                    if (ImGui.Selectable($"GX List {i}", (GxListMultiselect.IsMultiselected(i) ||  _selectedGXList == i)))
                     {
+                        GxListMultiselect.HandleMultiselect(_selectedGXList, i);
+
                         ResetSelection();
                         _selectedGXList = i;
                         _lastSelectedEntry = ModelEntrySelectionType.GXList;
+
+                        if (curGXList.Count > 0)
+                        {
+                            _subSelectedGXItemRow = 0;
+                        }
+                    }
+
+                    if (_selectedGXList == i)
+                    {
+                        if (GxListMultiselect.HasValidMultiselection())
+                        {
+                            ContextMenu.GXListRowContextMenu_MultiSelect(GxListMultiselect);
+                        }
+                        else
+                        {
+                            ContextMenu.GXListRowContextMenu(i, curGXList);
+                        }
                     }
 
                     if (FocusSelection && _selectedGXList == i)
@@ -215,6 +309,12 @@ public class ModelHierarchyView
                     }
                 }
             }
+        }
+
+        // Only display this one if the list is empty
+        if (Screen.ResourceHandler.CurrentFLVER.GXLists.Count < 1)
+        {
+            ContextMenu.GXListHeaderContextMenu();
         }
     }
 
@@ -236,8 +336,10 @@ public class ModelHierarchyView
 
                 if (ModelEditorSearch.IsModelEditorSearchMatch_Node(_searchInput, curNode, Screen.ResourceHandler.CurrentFLVER, i))
                 {
-                    if (ImGui.Selectable($"Node {i} - {curNode.Name}", _selectedNode == i, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable($"Node {i} - {curNode.Name}", (NodeMultiselect.IsMultiselected(i) || _selectedNode == i), ImGuiSelectableFlags.AllowDoubleClick))
                     {
+                        NodeMultiselect.HandleMultiselect(_selectedNode, i);
+
                         ResetSelection();
                         _selectedNode = i;
                         _lastSelectedEntry = ModelEntrySelectionType.Node;
@@ -250,6 +352,18 @@ public class ModelHierarchyView
                         }
                     }
 
+                    if (_selectedNode == i)
+                    {
+                        if (NodeMultiselect.HasValidMultiselection())
+                        {
+                            ContextMenu.NodeRowContextMenu_MultiSelect(NodeMultiselect);
+                        }
+                        else
+                        {
+                            ContextMenu.NodeRowContextMenu(i, curNode);
+                        }
+                    }
+
                     Screen.ViewportHandler.DisplayRepresentativeNodeState(i);
 
                     if (FocusSelection && _selectedNode == i)
@@ -259,6 +373,12 @@ public class ModelHierarchyView
                     }
                 }
             }
+        }
+
+        // Only display this one if the list is empty
+        if (Screen.ResourceHandler.CurrentFLVER.Nodes.Count < 1)
+        {
+            ContextMenu.NodeHeaderContextMenu();
         }
     }
 
@@ -278,16 +398,40 @@ public class ModelHierarchyView
                     material = Screen.ResourceHandler.CurrentFLVER.Materials[materialIndex].Name;
 
                 var node = "";
-                if (nodeIndex < Screen.ResourceHandler.CurrentFLVER.Nodes.Count)
+                if (nodeIndex < Screen.ResourceHandler.CurrentFLVER.Nodes.Count && nodeIndex > -1)
                     node = Screen.ResourceHandler.CurrentFLVER.Nodes[nodeIndex].Name;
 
                 if (ModelEditorSearch.IsModelEditorSearchMatch_Mesh(_searchInput, curMesh, Screen.ResourceHandler.CurrentFLVER, i))
                 {
-                    if (ImGui.Selectable($"Mesh {i} - {material} : {node}", _selectedMesh == i, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable($"Mesh {i} - {material} : {node}", (MeshMultiselect.IsMultiselected(i) || _selectedMesh == i), ImGuiSelectableFlags.AllowDoubleClick))
                     {
+                        MeshMultiselect.HandleMultiselect(_selectedMesh, i);
+
                         ResetSelection();
                         _selectedMesh = i;
                         _lastSelectedEntry = ModelEntrySelectionType.Mesh;
+
+                        if (curMesh.FaceSets.Count > 0)
+                        {
+                            _subSelectedFaceSetRow = 0;
+                        }
+
+                        if (curMesh.VertexBuffers.Count > 0)
+                        {
+                            _subSelectedVertexBufferRow = 0;
+                        }
+                    }
+
+                    if (_selectedMesh == i)
+                    {
+                        if (MeshMultiselect.HasValidMultiselection())
+                        {
+                            ContextMenu.MeshRowContextMenu_MultiSelect(MeshMultiselect);
+                        }
+                        else
+                        {
+                            ContextMenu.MeshRowContextMenu(i, curMesh);
+                        }
                     }
 
                     Screen.ViewportHandler.DisplayRepresentativeMeshState(i);
@@ -299,6 +443,12 @@ public class ModelHierarchyView
                     }
                 }
             }
+        }
+
+        // Only display this one if the list is empty
+        if (Screen.ResourceHandler.CurrentFLVER.Meshes.Count < 1)
+        {
+            ContextMenu.MeshHeaderContextMenu();
         }
     }
 
@@ -320,11 +470,25 @@ public class ModelHierarchyView
 
                 if (ModelEditorSearch.IsModelEditorSearchMatch_BufferLayout(_searchInput, curLayout, Screen.ResourceHandler.CurrentFLVER, i))
                 {
-                    if (ImGui.Selectable($"Buffer Layout {i}", _selectedBufferLayout == i))
+                    if (ImGui.Selectable($"Buffer Layout {i}", (BufferLayoutMultiselect.IsMultiselected(i) || _selectedBufferLayout == i)))
                     {
+                        BufferLayoutMultiselect.HandleMultiselect(_selectedBufferLayout, i);
+
                         ResetSelection();
                         _selectedBufferLayout = i;
                         _lastSelectedEntry = ModelEntrySelectionType.BufferLayout;
+                    }
+
+                    if (_selectedBufferLayout == i)
+                    {
+                        if (BufferLayoutMultiselect.HasValidMultiselection())
+                        {
+                            ContextMenu.BufferLayoutRowContextMenu_MultiSelect(BufferLayoutMultiselect);
+                        }
+                        else
+                        {
+                            ContextMenu.BufferLayoutRowContextMenu(i, curLayout);
+                        }
                     }
 
                     if (FocusSelection && _selectedBufferLayout == i)
@@ -334,6 +498,12 @@ public class ModelHierarchyView
                     }
                 }
             }
+        }
+
+        // Only display this one if the list is empty
+        if (Screen.ResourceHandler.CurrentFLVER.BufferLayouts.Count < 1)
+        {
+            ContextMenu.BufferLayoutHeaderContextMenu();
         }
     }
 
@@ -348,16 +518,30 @@ public class ModelHierarchyView
                 var nodeIndex = Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton[i].NodeIndex;
 
                 var node = "";
-                if (nodeIndex < Screen.ResourceHandler.CurrentFLVER.Nodes.Count)
+                if (nodeIndex < Screen.ResourceHandler.CurrentFLVER.Nodes.Count && nodeIndex > -1)
                     node = Screen.ResourceHandler.CurrentFLVER.Nodes[nodeIndex].Name;
 
                 if (ModelEditorSearch.IsModelEditorSearchMatch_SkeletonBone(_searchInput, curBaseSkeleton, Screen.ResourceHandler.CurrentFLVER, i))
                 {
-                    if (ImGui.Selectable($"Base Skeleton {i} - {node}", _selectedBaseSkeleton == i))
+                    if (ImGui.Selectable($"Bone {i} - {node}", (BaseSkeletonMultiselect.IsMultiselected(i) || _selectedBaseSkeleton == i)))
                     {
+                        BaseSkeletonMultiselect.HandleMultiselect(_selectedBaseSkeleton, i);
+
                         ResetSelection();
                         _selectedBaseSkeleton = i;
                         _lastSelectedEntry = ModelEntrySelectionType.BaseSkeleton;
+                    }
+
+                    if (_selectedBaseSkeleton == i)
+                    {
+                        if (BaseSkeletonMultiselect.HasValidMultiselection())
+                        {
+                            ContextMenu.BaseSkeletonRowContextMenu_MultiSelect(BaseSkeletonMultiselect);
+                        }
+                        else
+                        {
+                            ContextMenu.BaseSkeletonRowContextMenu(i, curBaseSkeleton);
+                        }
                     }
 
                     if (FocusSelection && _selectedBaseSkeleton == i)
@@ -369,6 +553,12 @@ public class ModelHierarchyView
             }
         }
 
+        // Only display this one if the list is empty
+        if (Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton.Count < 1)
+        {
+            ContextMenu.BaseSkeletonHeaderContextMenu();
+        }
+
         if (ImGui.CollapsingHeader("All Skeleton"))
         {
             for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons.Count; i++)
@@ -378,16 +568,30 @@ public class ModelHierarchyView
                 var nodeIndex = Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons[i].NodeIndex;
 
                 var node = "";
-                if (nodeIndex < Screen.ResourceHandler.CurrentFLVER.Nodes.Count)
+                if (nodeIndex < Screen.ResourceHandler.CurrentFLVER.Nodes.Count && nodeIndex > -1)
                     node = Screen.ResourceHandler.CurrentFLVER.Nodes[nodeIndex].Name;
 
                 if (ModelEditorSearch.IsModelEditorSearchMatch_SkeletonBone(_searchInput, curAllSkeleton, Screen.ResourceHandler.CurrentFLVER, i))
                 {
-                    if (ImGui.Selectable($"All Skeleton {i} - {node}", _selectedAllSkeleton == i))
+                    if (ImGui.Selectable($"Bone {i} - {node}", (AllSkeletonMultiselect.IsMultiselected(i) || _selectedAllSkeleton == i)))
                     {
+                        AllSkeletonMultiselect.HandleMultiselect(_selectedAllSkeleton, i);
+
                         ResetSelection();
                         _selectedAllSkeleton = i;
                         _lastSelectedEntry = ModelEntrySelectionType.AllSkeleton;
+                    }
+
+                    if (_selectedAllSkeleton == i)
+                    {
+                        if (AllSkeletonMultiselect.HasValidMultiselection())
+                        {
+                            ContextMenu.AllSkeletonRowContextMenu_MultiSelect(AllSkeletonMultiselect);
+                        }
+                        else
+                        {
+                            ContextMenu.AllSkeletonRowContextMenu(i, curAllSkeleton);
+                        }
                     }
 
                     if (FocusSelection && _selectedAllSkeleton == i)
@@ -397,6 +601,12 @@ public class ModelHierarchyView
                     }
                 }
             }
+        }
+
+        // Only display this one if the list is empty
+        if (Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons.Count < 1)
+        {
+            ContextMenu.AllSkeletonHeaderContextMenu();
         }
     }
 }

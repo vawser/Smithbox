@@ -65,6 +65,10 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
                     structOffset += member.Size;
                 }
             }
+            public BufferLayout Clone()
+            {
+                return (BufferLayout)MemberwiseClone();
+            }
         }
     }
 }

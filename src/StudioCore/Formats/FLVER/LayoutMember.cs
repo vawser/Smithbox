@@ -86,6 +86,14 @@ namespace StudioCore.Formats.PureFLVER
                 Index = index;
             }
 
+            public LayoutMember()
+            {
+                Unk00 = 0;
+                Type = LayoutType.UV;
+                Semantic = LayoutSemantic.UV;
+                Index = 0;
+            }
+
             internal LayoutMember(BinaryReaderEx br, int structOffset)
             {
                 Unk00 = br.ReadInt32();
@@ -102,6 +110,10 @@ namespace StudioCore.Formats.PureFLVER
                 bw.WriteUInt32((uint)Type);
                 bw.WriteUInt32((uint)Semantic);
                 bw.WriteInt32(Index);
+            }
+            public LayoutMember Clone()
+            {
+                return (LayoutMember)MemberwiseClone();
             }
 
             /// <summary>

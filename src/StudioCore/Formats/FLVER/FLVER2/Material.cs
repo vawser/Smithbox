@@ -49,7 +49,7 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
             /// </summary>
             public Material()
             {
-                Name = "";
+                Name = "Untitled";
                 MTD = "";
                 Textures = new List<Texture>();
                 GXIndex = -1;
@@ -192,6 +192,10 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
             public override string ToString()
             {
                 return $"{Name} | {MTD}";
+            }
+            public Material Clone()
+            {
+                return (Material)MemberwiseClone();
             }
         }
     }

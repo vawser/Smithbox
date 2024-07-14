@@ -85,6 +85,11 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
                     member.Write(bw);
             }
 
+            public SkeletonSet Clone()
+            {
+                return (SkeletonSet)MemberwiseClone();
+            }
+
             /// <summary>
             /// A bone in a skeleton.
             /// </summary>
@@ -145,6 +150,10 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
                     bw.WriteInt16(PreviousSiblingIndex);
                     bw.WriteInt32(NodeIndex);
                     bw.WriteInt32(0);
+                }
+                public Bone Clone()
+                {
+                    return (Bone)MemberwiseClone();
                 }
             }
         }
