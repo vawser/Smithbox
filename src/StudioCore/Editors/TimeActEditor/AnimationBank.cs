@@ -102,7 +102,7 @@ public static class AnimationBank
         var fileDir = @"\chr";
         var fileExt = @".anibnd.dcx";
 
-        List<string> fileNames = ResourceMiscLocator.GetAnimationBinders();
+        List<string> fileNames = MiscLocator.GetAnimationBinders();
 
         foreach (var name in fileNames)
         {

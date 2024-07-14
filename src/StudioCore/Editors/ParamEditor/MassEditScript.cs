@@ -54,8 +54,8 @@ public class MassEditScript
 
     public static void ReloadScripts()
     {
-        var cdir = ResourceParamLocator.GetMassEditScriptCommonDir();
-        var dir = ResourceParamLocator.GetMassEditScriptGameDir();
+        var cdir = ParamLocator.GetMassEditScriptCommonDir();
+        var dir = ParamLocator.GetMassEditScriptGameDir();
         scriptList = new List<MassEditScript>();
         LoadScriptsFromDir(cdir);
         LoadScriptsFromDir(dir);

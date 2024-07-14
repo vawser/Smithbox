@@ -85,11 +85,11 @@ public class AliasBank
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        var resourcePath =  $"{Smithbox.SmithboxDataRoot}\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
+        var resourcePath =  $"{Smithbox.SmithboxDataRoot}\\Assets\\Aliases\\{AliasDirectory}\\{MiscLocator.GetGameIDForDir()}\\";
 
         if(CFG.Current.AliasBank_EditorMode)
         {
-            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
+            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{MiscLocator.GetGameIDForDir()}\\";
         }
 
         var resourceFilePath = $"{resourcePath}\\{AliasFileName}.json";
@@ -120,11 +120,11 @@ public class AliasBank
 
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{TemplateName}";
 
-        var resourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
+        var resourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\Aliases\\{AliasDirectory}\\{MiscLocator.GetGameIDForDir()}\\";
 
         if (CFG.Current.AliasBank_EditorMode)
         {
-            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
+            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{MiscLocator.GetGameIDForDir()}\\";
         }
 
         var resourceFilePath = $"{resourcePath}\\{AliasFileName}.json";
@@ -207,11 +207,11 @@ public class AliasBank
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        var resourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
+        var resourcePath = $"{Smithbox.SmithboxDataRoot}\\Assets\\Aliases\\{AliasDirectory}\\{MiscLocator.GetGameIDForDir()}\\";
 
         if (CFG.Current.AliasBank_EditorMode)
         {
-            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{ResourceMiscLocator.GetGameIDForDir()}\\";
+            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{MiscLocator.GetGameIDForDir()}\\";
         }
 
         var resourceFilePath = $"{resourcePath}\\{AliasFileName}.json";

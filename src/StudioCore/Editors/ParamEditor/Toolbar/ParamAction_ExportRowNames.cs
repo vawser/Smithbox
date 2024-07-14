@@ -83,7 +83,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 {
                     if (Smithbox.ProjectType != ProjectType.Undefined)
                     {
-                        var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Names";
+                        var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{MiscLocator.GetGameIDForDir()}\\Names";
                         Process.Start("explorer.exe", dir);
                     }
                 }
@@ -161,7 +161,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             if (Smithbox.ProjectType == ProjectType.Undefined)
                 return;
 
-            var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Names";
+            var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{MiscLocator.GetGameIDForDir()}\\Names";
             var path = Path.Combine(dir, $"{param}.txt");
 
             Param p = ParamBank.PrimaryBank.Params[param];

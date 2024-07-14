@@ -77,7 +77,7 @@ public static class ParticleBank
         var fileDir = @"\sfx";
         var fileExt = @".ffxbnd.dcx";
 
-        List<string> fileNames = ResourceMiscLocator.GetParticleBinders();
+        List<string> fileNames = MiscLocator.GetParticleBinders();
 
         foreach (var name in fileNames)
         {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Locators;
-public static class ResourceTextLocator
+public static class TextLocator
 {
     /// <summary>
     /// Get folders with msgbnds used in-game

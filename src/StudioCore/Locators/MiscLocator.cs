@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 namespace StudioCore.Locators;
-public static class ResourceMiscLocator
+public static class MiscLocator
 {
     public static string GetGameIDForDir()
     {
@@ -54,7 +54,7 @@ public static class ResourceMiscLocator
         var paramDir = @"\chr";
         var paramExt = @".anibnd.dcx";
 
-        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }
@@ -76,7 +76,7 @@ public static class ResourceMiscLocator
         var paramDir = @"\chr";
         var paramExt = @".behbnd.dcx";
 
-        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
 
@@ -96,7 +96,7 @@ public static class ResourceMiscLocator
         var paramDir = @"\chr";
         var paramExt = @".chrbnd.dcx";
 
-        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }
@@ -124,7 +124,7 @@ public static class ResourceMiscLocator
             paramExt = @".cutscenebnd.dcx";
         }
 
-        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }
@@ -152,7 +152,7 @@ public static class ResourceMiscLocator
             // Account for .devpatch in ER (e.g. matbinbnd.devpatch.dcx)
         }
 
-        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }
@@ -173,7 +173,7 @@ public static class ResourceMiscLocator
         var paramDir = @"\sfx";
         var paramExt = @".ffxbnd.dcx";
 
-        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }
@@ -194,7 +194,7 @@ public static class ResourceMiscLocator
         var paramDir = @"\event";
         var paramExt = @".emevd.dcx";
 
-        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }
@@ -215,7 +215,7 @@ public static class ResourceMiscLocator
         var paramDir = @"\script\talk";
         var paramExt = @".talkesdbnd.dcx";
 
-        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }

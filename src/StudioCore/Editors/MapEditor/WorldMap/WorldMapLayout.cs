@@ -36,7 +36,7 @@ public class WorldMapLayout
 
     public void GenerateTiles(List<int> rows, List<int> cols, string tileID, float increment)
     {
-        var mapList = ResourceMapLocator.GetFullMapList();
+        var mapList = MapLocator.GetFullMapList();
 
         float CurX = XOffset;
         float CurY = YOffset;

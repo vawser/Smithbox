@@ -94,7 +94,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             _newPrefabName = "";
             _prefabTags = "";
 
-            _prefabDir = $"{Smithbox.ProjectRoot}\\.smithbox\\{ResourceMiscLocator.GetGameIDForDir()}\\prefabs\\";
+            _prefabDir = $"{Smithbox.ProjectRoot}\\.smithbox\\{MiscLocator.GetGameIDForDir()}\\prefabs\\";
 
             if (!Directory.Exists(_prefabDir))
             {

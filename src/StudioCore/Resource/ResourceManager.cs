@@ -619,7 +619,7 @@ public static class ResourceManager
             if (Binder == null)
             {
                 string o;
-                var absoluteBinderPath = ResourcePathLocator.VirtualToRealPath(BinderVirtualPath, out o);
+                var absoluteBinderPath = VirtualPathLocator.VirtualToRealPath(BinderVirtualPath, out o);
 
                 Binder = InstantiateBinderReaderForFile(absoluteBinderPath, Smithbox.ProjectType);
                 if (Binder == null)
@@ -655,7 +655,7 @@ public static class ResourceManager
                 IResourceLoadPipeline pipeline = null;
 
                 // TPF
-                if (ResourceLocatorUtils.IsTPF(curFileBinderPath))
+                if (LocatorUtils.IsTPF(curFileBinderPath))
                 {
                     var bndvirt = BinderVirtualPath;
 
@@ -682,7 +682,7 @@ public static class ResourceManager
                     // FLVER
                     if (ResourceMask.HasFlag(ResourceType.Flver))
                     {
-                        if (ResourceLocatorUtils.IsFLVER(curFileBinderPath))
+                        if (LocatorUtils.IsFLVER(curFileBinderPath))
                         {
                             //handle = new ResourceHandle<FlverResource>();
                             pipeline = _job.FlverLoadPipeline;
@@ -692,7 +692,7 @@ public static class ResourceManager
                     // NAVMESH
                     if (ResourceMask.HasFlag(ResourceType.Navmesh))
                     {
-                        if (ResourceLocatorUtils.IsNavmesh(curFileBinderPath))
+                        if (LocatorUtils.IsNavmesh(curFileBinderPath))
                         {
                             pipeline = _job.NVMNavmeshLoadPipeline;
                         }
@@ -701,7 +701,7 @@ public static class ResourceManager
                     // HAVOK NAVMESH
                     if (ResourceMask.HasFlag(ResourceType.NavmeshHKX))
                     {
-                        if (ResourceLocatorUtils.IsHavokNavmesh(curFileBinderPath))
+                        if (LocatorUtils.IsHavokNavmesh(curFileBinderPath))
                         {
                             pipeline = _job.HavokNavmeshLoadPipeline;
                         }
@@ -710,7 +710,7 @@ public static class ResourceManager
                     // HAVOK COLLISION
                     if (ResourceMask.HasFlag(ResourceType.CollisionHKX))
                     {
-                        if (ResourceLocatorUtils.IsHavokCollision(curFileBinderPath))
+                        if (LocatorUtils.IsHavokCollision(curFileBinderPath))
                         {
                             pipeline = _job.HavokCollisionLoadPipeline;
                         }
@@ -969,7 +969,7 @@ public static class ResourceManager
             string bndout;
 
             // PIPELINE: convert resource path to absolute path
-            var path = ResourcePathLocator.VirtualToRealPath(virtualPath, out bndout);
+            var path = VirtualPathLocator.VirtualToRealPath(virtualPath, out bndout);
 
             IResourceLoadPipeline pipeline;
 
@@ -1070,7 +1070,7 @@ public static class ResourceManager
                                 continue;
                             }
 
-                            path = ResourceTextureLocator.GetAetTexture(fullaetid).AssetPath;
+                            path = TextureLocator.GetAetTexture(fullaetid).AssetPath;
 
                             assetTpfs.Add(fullaetid);
                         }
@@ -1085,7 +1085,7 @@ public static class ResourceManager
                                 continue;
                             }
 
-                            path = ResourceTextureLocator.GetAatTexture(aatname).AssetPath;
+                            path = TextureLocator.GetAatTexture(aatname).AssetPath;
 
                             assetTpfs.Add(aatname);
                         }
@@ -1103,7 +1103,7 @@ public static class ResourceManager
                                 continue;
                             }
 
-                            path = ResourceTextureLocator.GetSystexTexture(systexname).AssetPath;
+                            path = TextureLocator.GetSystexTexture(systexname).AssetPath;
 
                             assetTpfs.Add(systexname);
                         }

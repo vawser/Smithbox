@@ -265,17 +265,17 @@ public class TextureImagePreview : IResourceEventListener
 
         if (info.Category == TextureViewCategory.Menu)
         {
-            ad = ResourceTextureLocator.GetMenuTextureContainer(_selectedTextureContainerKey);
+            ad = TextureLocator.GetMenuTextureContainer(_selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Asset)
         {
-            ad = ResourceTextureLocator.GetAssetTextureContainer(_selectedTextureContainerKey);
+            ad = TextureLocator.GetAssetTextureContainer(_selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Object)
         {
-            ad = ResourceTextureLocator.GetObjTextureContainer(_selectedTextureContainerKey);
+            ad = TextureLocator.GetObjTextureContainer(_selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Part)
@@ -287,17 +287,17 @@ public class TextureImagePreview : IResourceEventListener
                 isLowDetail = true;
             }
 
-            ad = ResourceTextureLocator.GetPartTextureContainer(_selectedTextureContainerKey, isLowDetail);
+            ad = TextureLocator.GetPartTextureContainer(_selectedTextureContainerKey, isLowDetail);
         }
 
         if (info.Category == TextureViewCategory.Other)
         {
-            ad = ResourceTextureLocator.GetOtherTextureContainer(_selectedTextureContainerKey);
+            ad = TextureLocator.GetOtherTextureContainer(_selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Particle)
         {
-            ad = ResourceTextureLocator.GetParticleTextureContainer(_selectedTextureContainerKey);
+            ad = TextureLocator.GetParticleTextureContainer(_selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Character)
@@ -315,7 +315,7 @@ public class TextureImagePreview : IResourceEventListener
                 chrId = chrId.Substring(0, chrId.Length - 2); // remove the _h
             }
 
-            ad = ResourceTextureLocator.GetChrTextures(chrId, isLowDetail);
+            ad = TextureLocator.GetChrTextures(chrId, isLowDetail);
         }
 
         if (ad != null)

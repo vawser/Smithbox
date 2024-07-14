@@ -121,7 +121,7 @@ public static class CutsceneBank
             fileExt = @".cutscenebnd.dcx";
         }
 
-        List<string> fileNames = ResourceMiscLocator.GetCutsceneBinders();
+        List<string> fileNames = MiscLocator.GetCutsceneBinders();
 
         foreach (var name in fileNames)
         {

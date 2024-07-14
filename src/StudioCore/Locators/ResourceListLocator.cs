@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Locators;
 
-public static class AssetListLocator
+public static class ResourceListLocator
 {
     // Used to get the map model list from within the mapbhd/bdt
     public static List<ResourceDescriptor> GetMapModelsFromBXF(string mapid)

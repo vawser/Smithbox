@@ -115,7 +115,7 @@ public static class MaterialBank
             fileExt = @".matbinbnd.dcx";
         }
 
-        List<string> fileNames = ResourceMiscLocator.GetMaterialBinders();
+        List<string> fileNames = MiscLocator.GetMaterialBinders();
 
         foreach (var name in fileNames)
         {

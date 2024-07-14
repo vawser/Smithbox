@@ -74,12 +74,12 @@ public class FMGBank
         return str;
     }
 
-    public void LoadFMGs(string languageFolder = "")
+    public void LoadFMGs()
     {
-        var folderName = languageFolder;
+        var folderName = LanguageFolder;
 
-        if (FMGDictionaries.Languages.ContainsKey(languageFolder))
-            folderName = FMGDictionaries.Languages[languageFolder];
+        if (FMGDictionaries.Languages.ContainsKey(LanguageFolder))
+            folderName = FMGDictionaries.Languages[LanguageFolder];
 
         TaskManager.Run(new TaskManager.LiveTask("FMG - Load Text - " + folderName, TaskManager.RequeueType.WaitThenRequeue, true,
             () =>
@@ -126,7 +126,7 @@ public class FMGBank
         if (LanguageFolder == "")
         {
             // By default, try to find path to English folder.
-            foreach (KeyValuePair<string, string> lang in ResourceTextLocator.GetMsgLanguages())
+            foreach (KeyValuePair<string, string> lang in TextLocator.GetMsgLanguages())
             {
                 var folder = lang.Value.Split("\\").Last();
                 if (folder.Contains("eng", StringComparison.CurrentCultureIgnoreCase))

@@ -1059,9 +1059,9 @@ public class ParamEditorScreen : EditorScreen
 
         try
         {
-            var baseDir = ResourceParamLocator.GetUpgraderAssetsDir();
-            var wlFile = Path.Join(ResourceParamLocator.GetUpgraderAssetsDir(), "version.txt");
-            var massEditFile = Path.Join(ResourceParamLocator.GetUpgraderAssetsDir(), "massedit.txt");
+            var baseDir = ParamLocator.GetUpgraderAssetsDir();
+            var wlFile = Path.Join(ParamLocator.GetUpgraderAssetsDir(), "version.txt");
+            var massEditFile = Path.Join(ParamLocator.GetUpgraderAssetsDir(), "massedit.txt");
 
             if (!File.Exists(wlFile) || !File.Exists(massEditFile))
             {
@@ -1153,7 +1153,7 @@ public class ParamEditorScreen : EditorScreen
     {
         var oldRegulationPath = "";
         var regulationFolder = "";
-        var storedRegulationDirectory = AppContext.BaseDirectory + $"\\Assets\\Regulations\\{ResourceMiscLocator.GetGameIDForDir()}\\";
+        var storedRegulationDirectory = AppContext.BaseDirectory + $"\\Assets\\Regulations\\{MiscLocator.GetGameIDForDir()}\\";
 
         if (Smithbox.ProjectType == ProjectType.ER)
         {

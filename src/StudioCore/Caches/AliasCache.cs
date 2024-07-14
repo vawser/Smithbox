@@ -48,9 +48,9 @@ public class AliasCache
         Parts = new Dictionary<string, AliasReference>();
         MapPieces = new Dictionary<string, AliasReference>();
 
-        CharacterList = AssetListLocator.GetChrModels();
-        AssetList = AssetListLocator.GetObjModels();
-        PartList = AssetListLocator.GetPartsModels();
+        CharacterList = ResourceListLocator.GetChrModels();
+        AssetList = ResourceListLocator.GetObjModels();
+        PartList = ResourceListLocator.GetPartsModels();
         MapPieceDict = new Dictionary<string, List<string>>();
 
         if (Smithbox.BankHandler.CharacterAliases.Aliases != null)
@@ -70,21 +70,21 @@ public class AliasCache
             MapPieces = Smithbox.BankHandler.MapPieceAliases.GetEntries();
         }
 
-        List<string> mapList = ResourceMapLocator.GetFullMapList();
+        List<string> mapList = MapLocator.GetFullMapList();
 
         foreach (var mapId in mapList)
         {
-            var assetMapId = ResourceMapLocator.GetAssetMapID(mapId);
+            var assetMapId = MapLocator.GetAssetMapID(mapId);
 
             List<ResourceDescriptor> modelList = new List<ResourceDescriptor>();
 
             if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
-                modelList = AssetListLocator.GetMapModelsFromBXF(mapId);
+                modelList = ResourceListLocator.GetMapModelsFromBXF(mapId);
             }
             else
             {
-                modelList = AssetListLocator.GetMapModels(mapId);
+                modelList = ResourceListLocator.GetMapModels(mapId);
             }
 
             var cache = new List<string>();

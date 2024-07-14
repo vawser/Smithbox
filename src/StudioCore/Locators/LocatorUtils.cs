@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Locators;
 
-public static class ResourceLocatorUtils
+public static class LocatorUtils
 {
     public static bool IsTPF(string path)
     {

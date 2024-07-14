@@ -123,7 +123,7 @@ public static class EmevdBank
             paramExt = @".emevd";
         }
 
-        List<string> paramNames = ResourceMiscLocator.GetEventBinders();
+        List<string> paramNames = MiscLocator.GetEventBinders();
 
         foreach (var name in paramNames)
         {

@@ -40,12 +40,12 @@ namespace StudioCore.Editors.MapEditor
         public MapResourceHandler(string mapId)
         {
             MapID = mapId;
-            AdjustedMapID = ResourceMapLocator.GetAssetMapID(MapID);
+            AdjustedMapID = MapLocator.GetAssetMapID(MapID);
         }
 
         public bool GetMapMSB()
         {
-            MapResource = ResourceMapLocator.GetMapMSB(MapID);
+            MapResource = MapLocator.GetMapMSB(MapID);
 
             if(MapResource.AssetPath == null)
                 return false;
@@ -93,8 +93,8 @@ namespace StudioCore.Editors.MapEditor
         {
             var chrId = CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID;
 
-            var modelAsset = ResourceModelLocator.GetChrModel(chrId);
-            var textureAsset = ResourceTextureLocator.GetChrTextures(chrId);
+            var modelAsset = ModelLocator.GetChrModel(chrId);
+            var textureAsset = TextureLocator.GetChrTextures(chrId);
 
             if (modelAsset.IsValid())
                 LoadList_Character_Model.Add(modelAsset);
@@ -110,7 +110,7 @@ namespace StudioCore.Editors.MapEditor
                 // MapPiece
                 if (model.Name.StartsWith("m"))
                 {
-                    var modelAsset = ResourceModelLocator.GetMapModel(AdjustedMapID, ResourceModelLocator.MapModelNameToAssetName(AdjustedMapID, model.Name));
+                    var modelAsset = ModelLocator.GetMapModel(AdjustedMapID, ModelLocator.MapModelNameToAssetName(AdjustedMapID, model.Name));
 
                     if (modelAsset.IsValid())
                         LoadList_MapPiece_Model.Add(modelAsset);
@@ -119,7 +119,7 @@ namespace StudioCore.Editors.MapEditor
                 // Character
                 if (model.Name.StartsWith("c"))
                 {
-                    var modelAsset = ResourceModelLocator.GetChrModel(model.Name);
+                    var modelAsset = ModelLocator.GetChrModel(model.Name);
 
                     if (modelAsset.IsValid())
                         LoadList_Character_Model.Add(modelAsset);
@@ -128,7 +128,7 @@ namespace StudioCore.Editors.MapEditor
                 // Object / Asset
                 if (model.Name.StartsWith("o") || model.Name.StartsWith("AEG"))
                 {
-                    var modelAsset = ResourceModelLocator.GetObjModel(model.Name);
+                    var modelAsset = ModelLocator.GetObjModel(model.Name);
 
                     if (modelAsset.IsValid())
                         LoadList_Asset_Model.Add(modelAsset);
@@ -137,7 +137,7 @@ namespace StudioCore.Editors.MapEditor
                 // Collision
                 if (model.Name.StartsWith("h"))
                 {
-                    var modelAsset = ResourceModelLocator.GetMapCollisionModel(AdjustedMapID, ResourceModelLocator.MapModelNameToAssetName(AdjustedMapID, model.Name), false);
+                    var modelAsset = ModelLocator.GetMapCollisionModel(AdjustedMapID, ModelLocator.MapModelNameToAssetName(AdjustedMapID, model.Name), false);
 
                     if (modelAsset.IsValid())
                         LoadList_Collision.Add(modelAsset);
@@ -148,7 +148,7 @@ namespace StudioCore.Editors.MapEditor
                 {
                     if (model.Name.StartsWith("n"))
                     {
-                        var modelAsset = ResourceModelLocator.GetMapNVMModel(AdjustedMapID, ResourceModelLocator.MapModelNameToAssetName(AdjustedMapID, model.Name));
+                        var modelAsset = ModelLocator.GetMapNVMModel(AdjustedMapID, ModelLocator.MapModelNameToAssetName(AdjustedMapID, model.Name));
 
                         if (modelAsset.IsValid())
                             LoadList_Navmesh.Add(modelAsset);
@@ -165,7 +165,7 @@ namespace StudioCore.Editors.MapEditor
                 // Character
                 if (model.Name.StartsWith("c"))
                 {
-                    var textureAsset = ResourceTextureLocator.GetChrTextures(model.Name);
+                    var textureAsset = TextureLocator.GetChrTextures(model.Name);
 
                     if (textureAsset.IsValid())
                         LoadList_Character_Texture.Add(textureAsset);
@@ -174,7 +174,7 @@ namespace StudioCore.Editors.MapEditor
                 // Object
                 if (model.Name.StartsWith("o"))
                 {
-                    var textureAsset = ResourceTextureLocator.GetObjTextureContainer(model.Name);
+                    var textureAsset = TextureLocator.GetObjTextureContainer(model.Name);
 
                     if (textureAsset.IsValid())
                         LoadList_Asset_Texture.Add(textureAsset);
@@ -212,7 +212,7 @@ namespace StudioCore.Editors.MapEditor
             // SYSTEX
 
             // Map
-            foreach (ResourceDescriptor asset in ResourceTextureLocator.GetMapTextures(AdjustedMapID))
+            foreach (ResourceDescriptor asset in TextureLocator.GetMapTextures(AdjustedMapID))
             {
                 if (asset.IsValid())
                     LoadList_Map_Texture.Add(asset);
@@ -239,7 +239,7 @@ namespace StudioCore.Editors.MapEditor
 
         public void LoadLights(MapContainer map)
         {
-            List<ResourceDescriptor> BTLs = ResourceMapLocator.GetMapBTLs(MapID);
+            List<ResourceDescriptor> BTLs = MapLocator.GetMapBTLs(MapID);
             foreach (ResourceDescriptor btl_ad in BTLs)
             {
                 BTL btl = LoadBTL(btl_ad);
@@ -472,7 +472,7 @@ namespace StudioCore.Editors.MapEditor
             }
             else
             {
-                ResourceDescriptor nav = ResourceModelLocator.GetHavokNavmeshes(AdjustedMapID);
+                ResourceDescriptor nav = ModelLocator.GetHavokNavmeshes(AdjustedMapID);
                 job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
                     ResourceManager.ResourceType.NavmeshHKX);
             }
@@ -488,7 +488,7 @@ namespace StudioCore.Editors.MapEditor
             // DS3 Navmeshes
             if (Smithbox.ProjectType == ProjectType.DS3)
             {
-                ResourceDescriptor nvaasset = ResourceMapLocator.GetMapNVA(AdjustedMapID);
+                ResourceDescriptor nvaasset = MapLocator.GetMapNVA(AdjustedMapID);
                 if (nvaasset.AssetPath != null)
                 {
                     var nva = NVA.Read(nvaasset.AssetPath);
@@ -498,9 +498,9 @@ namespace StudioCore.Editors.MapEditor
                         MsbEntity n = new(map, currentNav, MsbEntity.MsbEntityType.Editor);
                         map.AddObject(n);
                         var navid = $@"n{currentNav.ModelID:D6}";
-                        var navname = "n" + ResourceModelLocator.MapModelNameToAssetName(AdjustedMapID, navid).Substring(1);
+                        var navname = "n" + ModelLocator.MapModelNameToAssetName(AdjustedMapID, navid).Substring(1);
 
-                        ResourceDescriptor nasset = ResourceModelLocator.GetHavokNavmeshModel(AdjustedMapID, navname);
+                        ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(AdjustedMapID, navname);
 
                         var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
                             Smithbox.EditorHandler.MapEditor.Universe._renderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);

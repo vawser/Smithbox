@@ -13,13 +13,13 @@ public static class BTLReadWrite
 {
     public static bool Run()
     {
-        List<string> msbs = ResourceMapLocator.GetFullMapList();
+        List<string> msbs = MapLocator.GetFullMapList();
         List<string> floats = new();
         List<string> noWrite = new();
         List<string> ver = new();
         foreach (var msb in msbs)
         {
-            List<ResourceDescriptor> btls = ResourceMapLocator.GetMapBTLs(msb);
+            List<ResourceDescriptor> btls = MapLocator.GetMapBTLs(msb);
 
             foreach (ResourceDescriptor file in btls)
             {

@@ -1,10 +1,15 @@
 ﻿using HKLib.hk2018.hk;
 using ImGuiNET;
+using Microsoft.Extensions.FileSystemGlobbing;
 using SoulsFormats.KF4;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
+using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
+using StudioCore.Interface.Modals;
 using StudioCore.Locators;
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -21,10 +26,12 @@ namespace StudioCore.Editors.ModelEditor
         private ModelSelectionType _selectedEntryType = ModelSelectionType.None;
 
         private ModelEditorScreen Screen;
+        private AssetCopyHandler AssetCopyHandler;
 
         public ModelAssetSelectionView(ModelEditorScreen screen)
         {
             Screen = screen;
+            AssetCopyHandler = new AssetCopyHandler(screen);
         }
 
         public void OnProjectChanged()
@@ -63,10 +70,15 @@ namespace StudioCore.Editors.ModelEditor
                 DisplayMapPieceList();
             }
 
+            AssetCopyHandler.CharacterCopyMenu();
+            AssetCopyHandler.AssetCopyMenu();
+            AssetCopyHandler.PartCopyMenu();
+
             ImGui.End();
             ImGui.PopStyleColor(1);
         }
 
+        
         private bool FilterSelectionList(string name, Dictionary<string, AliasReference> referenceDict)
         {
             var lowerName = name.ToLower();
@@ -159,6 +171,19 @@ namespace StudioCore.Editors.ModelEditor
                             }
                         }
                         DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Characters);
+
+                        if (ImGui.BeginPopupContextItem($"CharacterModel_Context_{entry}"))
+                        {
+                            if (AssetCopyHandler.IsSupportedProjectType() && entry != "c0000")
+                            {
+                                if (ImGui.Selectable("Copy as New Character"))
+                                {
+                                    AssetCopyHandler.OpenCharacterCopyMenu(entry);
+                                }
+
+                                ImGui.EndPopup();
+                            }
+                        }
                     }
                 }
             }
@@ -193,6 +218,19 @@ namespace StudioCore.Editors.ModelEditor
                             }
                         }
                         DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Assets);
+
+                        if (ImGui.BeginPopupContextItem($"AssetModel_Context_{entry}"))
+                        {
+                            if (AssetCopyHandler.IsSupportedProjectType())
+                            {
+                                if (ImGui.Selectable("Copy as New Asset"))
+                                {
+                                    AssetCopyHandler.OpenAssetCopyMenu(entry);
+                                }
+
+                                ImGui.EndPopup();
+                            }
+                        }
                     }
                 }
             }
@@ -220,6 +258,19 @@ namespace StudioCore.Editors.ModelEditor
                             }
                         }
                         DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Parts);
+
+                        if (ImGui.BeginPopupContextItem($"PartModel_Context_{entry}"))
+                        {
+                            if (AssetCopyHandler.IsSupportedProjectType())
+                            {
+                                if (ImGui.Selectable("Copy as New Part"))
+                                {
+                                    AssetCopyHandler.OpenPartCopyMenu(entry);
+                                }
+
+                                ImGui.EndPopup();
+                            }
+                        }
                     }
                 }
             }
@@ -230,7 +281,7 @@ namespace StudioCore.Editors.ModelEditor
             if (Smithbox.BankHandler.MapPieceAliases.Aliases == null)
                 return;
 
-            var maps = ResourceMapLocator.GetFullMapList();
+            var maps = MapLocator.GetFullMapList();
 
             if (ImGui.CollapsingHeader("Map Pieces"))
             {

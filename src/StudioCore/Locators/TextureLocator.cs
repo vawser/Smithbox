@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 
 namespace StudioCore.Locators;
-public static class ResourceTextureLocator
+public static class TextureLocator
 {
     public static List<ResourceDescriptor> GetMapTextures(string mapid)
     {
@@ -14,7 +14,7 @@ public static class ResourceTextureLocator
         if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             ResourceDescriptor t = new();
-            t.AssetPath = ResourceLocatorUtils.GetAssetPath($@"model\map\t{mapid.Substring(1)}.tpfbhd");
+            t.AssetPath = LocatorUtils.GetAssetPath($@"model\map\t{mapid.Substring(1)}.tpfbhd");
             t.AssetArchiveVirtualPath = $@"map/tex/{mapid}/tex";
             ads.Add(t);
         }
@@ -37,36 +37,36 @@ public static class ResourceTextureLocator
             var mid = mapid.Substring(0, 3);
 
             ResourceDescriptor t0000 = new();
-            t0000.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0000.tpfbhd");
+            t0000.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0000.tpfbhd");
             t0000.AssetArchiveVirtualPath = $@"map/tex/{mid}/0000";
             ads.Add(t0000);
 
             ResourceDescriptor t0001 = new();
-            t0001.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0001.tpfbhd");
+            t0001.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0001.tpfbhd");
             t0001.AssetArchiveVirtualPath = $@"map/tex/{mid}/0001";
             ads.Add(t0001);
 
             ResourceDescriptor t0002 = new();
-            t0002.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0002.tpfbhd");
+            t0002.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0002.tpfbhd");
             t0002.AssetArchiveVirtualPath = $@"map/tex/{mid}/0002";
             ads.Add(t0002);
 
             ResourceDescriptor t0003 = new();
-            t0003.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0003.tpfbhd");
+            t0003.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0003.tpfbhd");
             t0003.AssetArchiveVirtualPath = $@"map/tex/{mid}/0003";
             ads.Add(t0003);
 
             if (Smithbox.ProjectType == ProjectType.DS1R)
             {
                 ResourceDescriptor env = new();
-                env.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mid}\GI_EnvM_{mid}.tpfbhd");
+                env.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\GI_EnvM_{mid}.tpfbhd");
                 env.AssetArchiveVirtualPath = $@"map/tex/{mid}/env";
                 ads.Add(env);
             }
             else if (Smithbox.ProjectType == ProjectType.BB || Smithbox.ProjectType == ProjectType.DS3)
             {
                 ResourceDescriptor env = new();
-                env.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mid}\{mid}_envmap.tpf.dcx");
+                env.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_envmap.tpf.dcx");
                 env.AssetVirtualPath = $@"map/tex/{mid}/env";
                 ads.Add(env);
             }
@@ -85,9 +85,9 @@ public static class ResourceTextureLocator
         if (Smithbox.ProjectType == ProjectType.DS3)
         {
             var mid = mapid.Substring(0, 3);
-            if (File.Exists(ResourceLocatorUtils.GetAssetPath($@"map\{mid}\{mid}_envmap.tpf.dcx")))
+            if (File.Exists(LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_envmap.tpf.dcx")))
             {
-                var t = TPF.Read(ResourceLocatorUtils.GetAssetPath($@"map\{mid}\{mid}_envmap.tpf.dcx"));
+                var t = TPF.Read(LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_envmap.tpf.dcx"));
                 foreach (TPF.Texture tex in t.Textures)
                     l.Add(tex.Name);
             }
@@ -102,52 +102,52 @@ public static class ResourceTextureLocator
 
         if (Smithbox.ProjectType is ProjectType.DES)
         {
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}\{chrid}.tpf");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}\{chrid}.tpf");
         }
 
         if (Smithbox.ProjectType is ProjectType.DS1)
         {
-            var path = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}\{chrid}.tpf");
+            var path = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}\{chrid}.tpf");
             if (path != null)
                 return path;
 
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
         }
 
         if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"model\chr\{chrid}.texbnd");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"model\chr\{chrid}.texbnd");
         }
 
         if (Smithbox.ProjectType is ProjectType.DS1R)
         {
             // TODO: Some textures require getting chrtpfbhd from chrbnd, then using it with chrtpfbdt in chr folder.
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
         }
 
         if (Smithbox.ProjectType is ProjectType.BB)
         {
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}_2.tpf.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_2.tpf.dcx");
         }
 
         if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT)
         {
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}.texbnd.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.texbnd.dcx");
         }
 
         if (Smithbox.ProjectType is ProjectType.ER)
         {
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}_h.texbnd.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_h.texbnd.dcx");
 
             if(isLowDetail)
             {
-                overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}_l.texbnd.dcx");
+                overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_l.texbnd.dcx");
             }
         }
 
         if (Smithbox.ProjectType is ProjectType.AC6)
         {
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}.texbnd.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.texbnd.dcx");
         }
 
         if (overrideFilePath != null)
@@ -264,15 +264,15 @@ public static class ResourceTextureLocator
 
         if (Smithbox.ProjectType == ProjectType.DS1)
         {
-            path = ResourceLocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd");
+            path = LocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd");
         }
         else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
-            path = ResourceLocatorUtils.GetOverridenFilePath($@"model\obj\{obj}.bnd");
+            path = LocatorUtils.GetOverridenFilePath($@"model\obj\{obj}.bnd");
         }
         else if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1R or ProjectType.BB or ProjectType.DS3 or ProjectType.SDT)
         {
-            path = ResourceLocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd.dcx");
+            path = LocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd.dcx");
         }
 
         if (path != null)
@@ -293,11 +293,11 @@ public static class ResourceTextureLocator
 
         if (Smithbox.ProjectType == ProjectType.ER)
         {
-            path = ResourceLocatorUtils.GetOverridenFilePath($@"asset\aet\{aetid.Substring(0, 6)}\{aetid}.tpf.dcx");
+            path = LocatorUtils.GetOverridenFilePath($@"asset\aet\{aetid.Substring(0, 6)}\{aetid}.tpf.dcx");
         }
         else if (Smithbox.ProjectType is ProjectType.AC6)
         {
-            path = ResourceLocatorUtils.GetOverridenFilePath($@"\asset\environment\texture\{aetid}.tpf.dcx");
+            path = LocatorUtils.GetOverridenFilePath($@"\asset\environment\texture\{aetid}.tpf.dcx");
         }
         else
         {
@@ -321,7 +321,7 @@ public static class ResourceTextureLocator
         string path;
 
         if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
-            path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\common_body.tpf.dcx");
+            path = LocatorUtils.GetOverridenFilePath($@"parts\common_body.tpf.dcx");
         else
             throw new NotSupportedException();
 
@@ -343,7 +343,7 @@ public static class ResourceTextureLocator
 
         if (Smithbox.ProjectType == ProjectType.AC6 || Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.SDT || Smithbox.ProjectType == ProjectType.DS3)
         {
-            path = ResourceLocatorUtils.GetOverridenFilePath($@"other\systex.tpf.dcx");
+            path = LocatorUtils.GetOverridenFilePath($@"other\systex.tpf.dcx");
         }
         else
         {
@@ -395,7 +395,7 @@ public static class ResourceTextureLocator
             }
             */
 
-            var path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+            var path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
 
             if (path != null)
             {
@@ -405,7 +405,7 @@ public static class ResourceTextureLocator
         }
         else if (Smithbox.ProjectType == ProjectType.ER)
         {
-            var path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+            var path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
 
             if (path != null)
             {
@@ -420,7 +420,7 @@ public static class ResourceTextureLocator
 
             if (partsId == "common_body")
             {
-                path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.tpf.dcx");
+                path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.tpf.dcx");
 
                 if (path != null)
                 {
@@ -432,7 +432,7 @@ public static class ResourceTextureLocator
         }
         else if (Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.SDT)
         {
-            var path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+            var path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
             if (path != null)
             {
                 ad.AssetPath = path;
@@ -441,7 +441,7 @@ public static class ResourceTextureLocator
         }
         else if (Smithbox.ProjectType == ProjectType.BB)
         {
-            var path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+            var path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
             if (path != null)
             {
                 ad.AssetPath = path;
@@ -481,7 +481,7 @@ public static class ResourceTextureLocator
                     break;
             }
 
-            var path = ResourceLocatorUtils.GetOverridenFilePath($@"model\parts\{partType}\{partsId}.bnd");
+            var path = LocatorUtils.GetOverridenFilePath($@"model\parts\{partType}\{partsId}.bnd");
 
             if (path != null)
             {
@@ -491,7 +491,7 @@ public static class ResourceTextureLocator
         }
         else if (Smithbox.ProjectType == ProjectType.DS1R)
         {
-            var path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+            var path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
             if (path != null)
             {
                 ad.AssetPath = path;
@@ -500,7 +500,7 @@ public static class ResourceTextureLocator
         }
         else if (Smithbox.ProjectType == ProjectType.DS1)
         {
-            var path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd");
+            var path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd");
             if (path != null)
             {
                 ad.AssetPath = path;
@@ -509,7 +509,7 @@ public static class ResourceTextureLocator
         }
         else if (Smithbox.ProjectType == ProjectType.DES)
         {
-            var path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+            var path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
             if (path != null)
             {
                 ad.AssetPath = path;
@@ -532,11 +532,11 @@ public static class ResourceTextureLocator
 
         if (Smithbox.ProjectType == ProjectType.ER)
         {
-            path = ResourceLocatorUtils.GetOverridenFilePath($@"asset\aet\{resourceName.Substring(0, 6)}\{resourceName}.tpf.dcx");
+            path = LocatorUtils.GetOverridenFilePath($@"asset\aet\{resourceName.Substring(0, 6)}\{resourceName}.tpf.dcx");
         }
         else if (Smithbox.ProjectType is ProjectType.AC6)
         {
-            path = ResourceLocatorUtils.GetOverridenFilePath($@"\asset\environment\texture\{resourceName}.tpf.dcx");
+            path = LocatorUtils.GetOverridenFilePath($@"\asset\environment\texture\{resourceName}.tpf.dcx");
         }
 
         if (path != null)
@@ -555,12 +555,12 @@ public static class ResourceTextureLocator
 
         if (Smithbox.ProjectType is ProjectType.AC6)
         {
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"asset\environment\texture\{resourceName}.tpf.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"asset\environment\texture\{resourceName}.tpf.dcx");
         }
 
         if (Smithbox.ProjectType is ProjectType.ER)
         {
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"asset\aet\{resourceName.Substring(0, 6)}\{resourceName}.tpf.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"asset\aet\{resourceName.Substring(0, 6)}\{resourceName}.tpf.dcx");
         }
 
         if (overrideFilePath != null)
@@ -604,17 +604,17 @@ public static class ResourceTextureLocator
         // TPF
         if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
         {
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"menu\hi\{resourceName}.tpf.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\hi\{resourceName}.tpf.dcx");
         }
 
         if (Smithbox.ProjectType is ProjectType.DS3)
         {
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"menu\{resourceName}.tpf.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\{resourceName}.tpf.dcx");
         }
 
         if (Smithbox.ProjectType is ProjectType.DS1R)
         {
-            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"menu\{resourceName}.tpf.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\{resourceName}.tpf.dcx");
         }
 
         if (overrideFilePath != null)
@@ -626,12 +626,12 @@ public static class ResourceTextureLocator
         {
             if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
             {
-                overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"menu\hi\{resourceName}.tpfbhd");
+                overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\hi\{resourceName}.tpfbhd");
             }
 
             if (Smithbox.ProjectType is ProjectType.DS3)
             {
-                overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"menu\{resourceName}.tpfbhd");
+                overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\{resourceName}.tpfbhd");
             }
 
             if (overrideFilePath != null)
@@ -665,7 +665,7 @@ public static class ResourceTextureLocator
     {
         var overrideFilePath = "";
 
-        overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"other\{resourceName}.tpf.dcx");
+        overrideFilePath = LocatorUtils.GetOverridenFilePath($@"other\{resourceName}.tpf.dcx");
 
         if (overrideFilePath != null)
         {
@@ -703,7 +703,7 @@ public static class ResourceTextureLocator
             fileExt = @".ffxbnd";
         }
 
-        overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"sfx\{resourceName}{fileExt}");
+        overrideFilePath = LocatorUtils.GetOverridenFilePath($@"sfx\{resourceName}{fileExt}");
 
         if (overrideFilePath != null)
         {

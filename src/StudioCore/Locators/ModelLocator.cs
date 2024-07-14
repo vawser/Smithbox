@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Locators;
-public static class ResourceModelLocator
+public static class ModelLocator
 {
     public static ResourceDescriptor GetNullAsset()
     {
@@ -42,17 +42,17 @@ public static class ResourceModelLocator
     {
         ResourceDescriptor ret = new();
         if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.BB || Smithbox.ProjectType == ProjectType.DES)
-            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.flver");
+            ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{model}.flver");
         else if (Smithbox.ProjectType == ProjectType.DS1R)
-            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.flver.dcx");
+            ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{model}.flver.dcx");
         else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"model\map\{mapid}.mapbhd");
+            ret.AssetPath = LocatorUtils.GetAssetPath($@"model\map\{mapid}.mapbhd");
         else if (Smithbox.ProjectType == ProjectType.ER)
-            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{model}.mapbnd.dcx");
+            ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{model}.mapbnd.dcx");
         else if (Smithbox.ProjectType == ProjectType.AC6)
-            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{model}.mapbnd.dcx");
+            ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{model}.mapbnd.dcx");
         else
-            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.mapbnd.dcx");
+            ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{model}.mapbnd.dcx");
 
         ret.AssetName = model;
         if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
@@ -81,20 +81,20 @@ public static class ResourceModelLocator
         {
             if (hi)
             {
-                ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.hkx");
+                ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{model}.hkx");
                 ret.AssetName = model;
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/{model}.hkx";
             }
             else
             {
-                ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\l{model.Substring(1)}.hkx");
+                ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\l{model.Substring(1)}.hkx");
                 ret.AssetName = model;
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx";
             }
         }
         else if (Smithbox.ProjectType == ProjectType.DS2S)
         {
-            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"model\map\h{mapid.Substring(1)}.hkxbhd");
+            ret.AssetPath = LocatorUtils.GetAssetPath($@"model\map\h{mapid.Substring(1)}.hkxbhd");
             ret.AssetName = model;
             ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/{model}.hkx.dcx";
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/hi";
@@ -103,14 +103,14 @@ public static class ResourceModelLocator
         {
             if (hi)
             {
-                ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
+                ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
                 ret.AssetName = model;
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/h{model.Substring(1)}.hkx.dcx";
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/hi";
             }
             else
             {
-                ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\l{mapid.Substring(1)}.hkxbhd");
+                ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\l{mapid.Substring(1)}.hkxbhd");
                 ret.AssetName = model;
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx.dcx";
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/lo";
@@ -120,14 +120,14 @@ public static class ResourceModelLocator
         {
             if (hi)
             {
-                ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\h{mapid.Substring(1)}.hkxbhd");
+                ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\h{mapid.Substring(1)}.hkxbhd");
                 ret.AssetName = model;
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/h{model.Substring(1)}.hkx.dcx";
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/hi";
             }
             else
             {
-                ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid.Substring(0,3)}\{mapid}\l{mapid.Substring(1)}.hkxbhd");
+                ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid.Substring(0,3)}\{mapid}\l{mapid.Substring(1)}.hkxbhd");
                 ret.AssetName = model;
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx.dcx";
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/lo";
@@ -146,7 +146,7 @@ public static class ResourceModelLocator
         ResourceDescriptor ret = new();
         if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R || Smithbox.ProjectType == ProjectType.DES)
         {
-            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.nvm");
+            ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{model}.nvm");
             ret.AssetName = model;
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/nav";
             ret.AssetVirtualPath = $@"map/{mapid}/nav/{model}.nvm";
@@ -160,7 +160,7 @@ public static class ResourceModelLocator
     public static ResourceDescriptor GetHavokNavmeshes(string mapid)
     {
         ResourceDescriptor ret = new();
-        ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
+        ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
         ret.AssetName = mapid;
         ret.AssetArchiveVirtualPath = $@"map/{mapid}/nav";
         return ret;
@@ -169,7 +169,7 @@ public static class ResourceModelLocator
     public static ResourceDescriptor GetHavokNavmeshModel(string mapid, string model)
     {
         ResourceDescriptor ret = new();
-        ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
+        ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
         ret.AssetName = model;
         ret.AssetArchiveVirtualPath = $@"map/{mapid}/nav";
         ret.AssetVirtualPath = $@"map/{mapid}/nav/{model}.hkx";
@@ -189,13 +189,13 @@ public static class ResourceModelLocator
 
         // Direct paths
         if (Smithbox.ProjectType == ProjectType.DS1)
-            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chr}.chrbnd");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"chr\{chr}.chrbnd");
         else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"model\chr\{chr}.bnd");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\chr\{chr}.bnd");
         else if(Smithbox.ProjectType == ProjectType.DES)
-            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chr}\{chr}.chrbnd.dcx");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"chr\{chr}\{chr}.chrbnd.dcx");
         else
-            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chr}.chrbnd.dcx");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"chr\{chr}.chrbnd.dcx");
 
         return ret;
     }
@@ -215,25 +215,25 @@ public static class ResourceModelLocator
 
         // Direct paths
         if (Smithbox.ProjectType == ProjectType.DS1)
-            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd");
         else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"model\obj\{obj}.bnd");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\obj\{obj}.bnd");
         else if(Smithbox.ProjectType == ProjectType.ER)
         {
             // Derive subfolder path from model name (all vanilla AEG are within subfolders)
             if (obj.Length >= 6)
             {
-                ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"asset\aeg\{obj.Substring(0, 6)}\{obj}.geombnd.dcx");
+                ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"asset\aeg\{obj.Substring(0, 6)}\{obj}.geombnd.dcx");
             }
         }
         else if(Smithbox.ProjectType == ProjectType.AC6)
         {
             if (obj.Length >= 6)
-                ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"asset\environment\geometry\{obj}.geombnd.dcx");
+                ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"asset\environment\geometry\{obj}.geombnd.dcx");
         }
         else
         {
-            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd.dcx");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd.dcx");
         }
 
         return ret;
@@ -261,7 +261,7 @@ public static class ResourceModelLocator
         // Direct paths
         if (Smithbox.ProjectType == ProjectType.DS1)
         {
-            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{part}.partsbnd");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"parts\{part}.partsbnd");
         }
         else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
@@ -296,13 +296,14 @@ public static class ResourceModelLocator
                     break;
             }
 
-            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"model\parts\{partType}\{part}.bnd");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\parts\{partType}\{part}.bnd");
         }
         else
         {
-            ret.AssetPath = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{part}.partsbnd.dcx");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"parts\{part}.partsbnd.dcx");
         }
 
         return ret;
     }
+
 }

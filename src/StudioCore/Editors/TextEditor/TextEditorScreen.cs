@@ -210,7 +210,7 @@ public class TextEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Text Language", !currentFmgBank.IsLoading))
         {
-            Dictionary<string, string> folders = ResourceTextLocator.GetMsgLanguages();
+            Dictionary<string, string> folders = TextLocator.GetMsgLanguages();
             if (folders.Count == 0)
             {
                 ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f), "Cannot find language folders.");
@@ -321,15 +321,15 @@ public class TextEditorScreen : EditorScreen
             Dictionary<FmgFileCategory, FMGFileSet> Base_Menu_VanillaFmgInfoBanks = new();
             Dictionary<FmgFileCategory, FMGFileSet> Base_DLC_Menu_VanillaFmgInfoBanks = new();
 
-            ResourceDescriptor projectItemMsgPath = ResourceTextLocator.GetMsgbnd_Project_Upgrader("item", "", langFolder);
-            ResourceDescriptor projectDlcItemMsgPath = ResourceTextLocator.GetMsgbnd_Project_Upgrader("item", "_dlc02", langFolder);
-            ResourceDescriptor baseItemMsgPath = ResourceTextLocator.GetMsgbnd_Vanilla_Upgrader("item", "", langFolder);
-            ResourceDescriptor baseDlcItemMsgPath = ResourceTextLocator.GetMsgbnd_Vanilla_Upgrader("item", "_dlc02", langFolder);
+            ResourceDescriptor projectItemMsgPath = TextLocator.GetMsgbnd_Project_Upgrader("item", "", langFolder);
+            ResourceDescriptor projectDlcItemMsgPath = TextLocator.GetMsgbnd_Project_Upgrader("item", "_dlc02", langFolder);
+            ResourceDescriptor baseItemMsgPath = TextLocator.GetMsgbnd_Vanilla_Upgrader("item", "", langFolder);
+            ResourceDescriptor baseDlcItemMsgPath = TextLocator.GetMsgbnd_Vanilla_Upgrader("item", "_dlc02", langFolder);
 
-            ResourceDescriptor projectMenuMsgPath = ResourceTextLocator.GetMsgbnd_Project_Upgrader("menu", "", langFolder);
-            ResourceDescriptor projectDlcMenuMsgPath = ResourceTextLocator.GetMsgbnd_Project_Upgrader("menu", "_dlc02", langFolder);
-            ResourceDescriptor baseMenuMsgPath = ResourceTextLocator.GetMsgbnd_Vanilla_Upgrader("menu", "", langFolder);
-            ResourceDescriptor baseDlcMenuMsgPath = ResourceTextLocator.GetMsgbnd_Vanilla_Upgrader("menu", "_dlc02", langFolder);
+            ResourceDescriptor projectMenuMsgPath = TextLocator.GetMsgbnd_Project_Upgrader("menu", "", langFolder);
+            ResourceDescriptor projectDlcMenuMsgPath = TextLocator.GetMsgbnd_Project_Upgrader("menu", "_dlc02", langFolder);
+            ResourceDescriptor baseMenuMsgPath = TextLocator.GetMsgbnd_Vanilla_Upgrader("menu", "", langFolder);
+            ResourceDescriptor baseDlcMenuMsgPath = TextLocator.GetMsgbnd_Vanilla_Upgrader("menu", "_dlc02", langFolder);
 
             // If the asset paths do not exist, return early to stop a failed msgbnd load
             if (!File.Exists(projectItemMsgPath.AssetPath) ||
@@ -1161,6 +1161,6 @@ public class TextEditorScreen : EditorScreen
         ResetActionManager();
 
         Smithbox.BankHandler.FMGBank.LanguageFolder = path;
-        Smithbox.BankHandler.FMGBank.LoadFMGs(path);
+        Smithbox.BankHandler.FMGBank.LoadFMGs();
     }
 }

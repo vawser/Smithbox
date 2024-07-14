@@ -216,7 +216,7 @@ namespace StudioCore.Editors.MapEditor
             if (Smithbox.BankHandler.MapPieceAliases.Aliases == null)
                 return;
 
-            var maps = ResourceMapLocator.GetFullMapList();
+            var maps = MapLocator.GetFullMapList();
 
             if (ImGui.CollapsingHeader("Map Pieces"))
             {

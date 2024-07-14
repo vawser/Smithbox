@@ -117,7 +117,7 @@ public class ProjectHandler
 
         Smithbox.SetProgramTitle($"{CurrentProject.Config.ProjectName} - Smithbox");
 
-        ResourceMapLocator.FullMapList = null;
+        MapLocator.FullMapList = null;
         Smithbox.InitializeBanks();
         Smithbox.InitializeNameCaches();
         Smithbox.EditorHandler.UpdateEditors();
@@ -162,7 +162,7 @@ public class ProjectHandler
         Smithbox.ProjectRoot = "";
         Smithbox.SmithboxDataRoot = "";
 
-        ResourceMapLocator.FullMapList = null;
+        MapLocator.FullMapList = null;
     }
 
     public void UpdateProjectVariables()
@@ -282,7 +282,7 @@ public class ProjectHandler
         if (targetProject == null)
             return;
 
-        if (!ResourceLocatorUtils.CheckFilesExpanded(targetProject.Config.GameRoot, targetProject.Config.GameType))
+        if (!LocatorUtils.CheckFilesExpanded(targetProject.Config.GameRoot, targetProject.Config.GameType))
         {
             if (targetProject.Config.GameType is ProjectType.DS1 or ProjectType.DS2S or ProjectType.DS2)
             {

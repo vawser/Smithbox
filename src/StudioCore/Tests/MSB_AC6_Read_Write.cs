@@ -10,7 +10,7 @@ public static class MSB_AC6_Read_Write
 {
     public static bool Run()
     {
-        List<string> msbs = ResourceMapLocator.GetFullMapList();
+        List<string> msbs = MapLocator.GetFullMapList();
 
         // m00_90_00_00
 
@@ -18,7 +18,7 @@ public static class MSB_AC6_Read_Write
         {
             if (msb == "m00_90_00_00")
             {
-                ResourceDescriptor path = ResourceMapLocator.GetMapMSB(msb);
+                ResourceDescriptor path = MapLocator.GetMapMSB(msb);
                 var bytes = File.ReadAllBytes(path.AssetPath);
                 Memory<byte> decompressed = DCX.Decompress(bytes);
                 MSB_AC6 m = MSB_AC6.Read(decompressed);

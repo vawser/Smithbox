@@ -99,8 +99,8 @@ public static class FmgExporter
             return;
         }
 
-        var itemPath = ResourceTextLocator.GetItemMsgbnd(lang.LanguageFolder).AssetPath;
-        var menuPath = ResourceTextLocator.GetMenuMsgbnd(lang.LanguageFolder).AssetPath;
+        var itemPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder).AssetPath;
+        var menuPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder).AssetPath;
         var itemPath_Vanilla = itemPath.Replace(Smithbox.ProjectRoot, Smithbox.GameRoot);
         var menuPath_Vanilla = menuPath.Replace(Smithbox.ProjectRoot, Smithbox.GameRoot);
 

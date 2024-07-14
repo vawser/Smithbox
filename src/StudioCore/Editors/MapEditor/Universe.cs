@@ -349,44 +349,44 @@ public class Universe
         var loadflver = false;
         var filt = RenderFilter.All;
 
-        var amapid = ResourceMapLocator.GetAssetMapID(map.Name);
+        var amapid = MapLocator.GetAssetMapID(map.Name);
 
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
         if (modelname.ToLower().StartsWith("m"))
         {
             loadflver = true;
-            asset = ResourceModelLocator.GetMapModel(amapid, ResourceModelLocator.MapModelNameToAssetName(amapid, modelname));
+            asset = ModelLocator.GetMapModel(amapid, ModelLocator.MapModelNameToAssetName(amapid, modelname));
             filt = RenderFilter.MapPiece;
         }
         else if (modelname.ToLower().StartsWith("c"))
         {
             loadflver = true;
-            asset = ResourceModelLocator.GetChrModel(modelname);
+            asset = ModelLocator.GetChrModel(modelname);
             filt = RenderFilter.Character;
         }
         else if (modelname.ToLower().StartsWith("o") || modelname.StartsWith("AEG"))
         {
             loadflver = true;
-            asset = ResourceModelLocator.GetObjModel(modelname);
+            asset = ModelLocator.GetObjModel(modelname);
             filt = RenderFilter.Object;
         }
         else if (modelname.ToLower().StartsWith("h"))
         {
             loadcol = true;
-            asset = ResourceModelLocator.GetMapCollisionModel(amapid,
-                ResourceModelLocator.MapModelNameToAssetName(amapid, modelname), false);
+            asset = ModelLocator.GetMapCollisionModel(amapid,
+                ModelLocator.MapModelNameToAssetName(amapid, modelname), false);
 
             filt = RenderFilter.Collision;
         }
         else if (modelname.ToLower().StartsWith("n"))
         {
             loadnav = true;
-            asset = ResourceModelLocator.GetMapNVMModel(amapid, ResourceModelLocator.MapModelNameToAssetName(amapid, modelname));
+            asset = ModelLocator.GetMapNVMModel(amapid, ModelLocator.MapModelNameToAssetName(amapid, modelname));
             filt = RenderFilter.Navmesh;
         }
         else
         {
-            asset = ResourceModelLocator.GetNullAsset();
+            asset = ModelLocator.GetNullAsset();
         }
 
         ModelMarkerType modelMarkerType =
@@ -466,7 +466,7 @@ public class Universe
         {
             if (asset.AssetName == "c0000")
             {
-                asset = ResourceModelLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
+                asset = ModelLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
             }
         }
 
@@ -572,7 +572,7 @@ public class Universe
                     (int)regist.GetCellHandleOrThrow("EnemyParamID").Value);
                 if (chrid != null)
                 {
-                    ResourceDescriptor asset = ResourceModelLocator.GetChrModel($@"c{chrid}");
+                    ResourceDescriptor asset = ModelLocator.GetChrModel($@"c{chrid}");
                     MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(
                         _renderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy, null);
                     model.DrawFilter = RenderFilter.Character;
@@ -582,7 +582,7 @@ public class Universe
 
                     if (CFG.Current.Viewport_Enable_Texturing)
                     {
-                        ResourceDescriptor tasset = ResourceTextureLocator.GetChrTextures($@"c{chrid}");
+                        ResourceDescriptor tasset = TextureLocator.GetChrTextures($@"c{chrid}");
                         if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
                         {
                             chrsToLoad.Add(tasset);
@@ -662,7 +662,7 @@ public class Universe
     public void PopulateMapList()
     {
         LoadedObjectContainers.Clear();
-        foreach (var m in ResourceMapLocator.GetFullMapList())
+        foreach (var m in MapLocator.GetFullMapList())
         {
             LoadedObjectContainers.Add(m, null);
         }
@@ -691,7 +691,7 @@ public class Universe
             }
         }
 
-        ResourceDescriptor ad = ResourceMapLocator.GetMapMSB(mapid);
+        ResourceDescriptor ad = MapLocator.GetMapMSB(mapid);
         if (ad.AssetPath == null)
         {
             return false;
@@ -855,7 +855,7 @@ public class Universe
                 resourceHandler.SetupNavmesh(map);
 
                 // Real bad hack
-                EnvMapTextures = ResourceTextureLocator.GetEnvMapTextureNames(resourceHandler.AdjustedMapID);
+                EnvMapTextures = TextureLocator.GetEnvMapTextureNames(resourceHandler.AdjustedMapID);
 
                 ScheduleTextureRefresh();
             }
@@ -962,40 +962,40 @@ public class Universe
     private void SaveDS2Generators(MapContainer map)
     {
         // Load all the params
-        ResourceDescriptor regparamad = ResourceParamLocator.GetDS2GeneratorRegistParam(map.Name);
-        ResourceDescriptor regparamadw = ResourceParamLocator.GetDS2GeneratorRegistParam(map.Name, true);
+        ResourceDescriptor regparamad = ParamLocator.GetDS2GeneratorRegistParam(map.Name);
+        ResourceDescriptor regparamadw = ParamLocator.GetDS2GeneratorRegistParam(map.Name, true);
         Param regparam = Param.Read(regparamad.AssetPath);
-        PARAMDEF reglayout = ResourceParamLocator.GetParamdefForParam(regparam.ParamType);
+        PARAMDEF reglayout = ParamLocator.GetParamdefForParam(regparam.ParamType);
         regparam.ApplyParamdef(reglayout);
 
-        ResourceDescriptor locparamad = ResourceParamLocator.GetDS2GeneratorLocationParam(map.Name);
-        ResourceDescriptor locparamadw = ResourceParamLocator.GetDS2GeneratorLocationParam(map.Name, true);
+        ResourceDescriptor locparamad = ParamLocator.GetDS2GeneratorLocationParam(map.Name);
+        ResourceDescriptor locparamadw = ParamLocator.GetDS2GeneratorLocationParam(map.Name, true);
         Param locparam = Param.Read(locparamad.AssetPath);
-        PARAMDEF loclayout = ResourceParamLocator.GetParamdefForParam(locparam.ParamType);
+        PARAMDEF loclayout = ParamLocator.GetParamdefForParam(locparam.ParamType);
         locparam.ApplyParamdef(loclayout);
 
-        ResourceDescriptor genparamad = ResourceParamLocator.GetDS2GeneratorParam(map.Name);
-        ResourceDescriptor genparamadw = ResourceParamLocator.GetDS2GeneratorParam(map.Name, true);
+        ResourceDescriptor genparamad = ParamLocator.GetDS2GeneratorParam(map.Name);
+        ResourceDescriptor genparamadw = ParamLocator.GetDS2GeneratorParam(map.Name, true);
         Param genparam = Param.Read(genparamad.AssetPath);
-        PARAMDEF genlayout = ResourceParamLocator.GetParamdefForParam(genparam.ParamType);
+        PARAMDEF genlayout = ParamLocator.GetParamdefForParam(genparam.ParamType);
         genparam.ApplyParamdef(genlayout);
 
-        ResourceDescriptor evtparamad = ResourceParamLocator.GetDS2EventParam(map.Name);
-        ResourceDescriptor evtparamadw = ResourceParamLocator.GetDS2EventParam(map.Name, true);
+        ResourceDescriptor evtparamad = ParamLocator.GetDS2EventParam(map.Name);
+        ResourceDescriptor evtparamadw = ParamLocator.GetDS2EventParam(map.Name, true);
         Param evtparam = Param.Read(evtparamad.AssetPath);
-        PARAMDEF evtlayout = ResourceParamLocator.GetParamdefForParam(evtparam.ParamType);
+        PARAMDEF evtlayout = ParamLocator.GetParamdefForParam(evtparam.ParamType);
         evtparam.ApplyParamdef(evtlayout);
 
-        ResourceDescriptor evtlparamad = ResourceParamLocator.GetDS2EventLocationParam(map.Name);
-        ResourceDescriptor evtlparamadw = ResourceParamLocator.GetDS2EventLocationParam(map.Name, true);
+        ResourceDescriptor evtlparamad = ParamLocator.GetDS2EventLocationParam(map.Name);
+        ResourceDescriptor evtlparamadw = ParamLocator.GetDS2EventLocationParam(map.Name, true);
         Param evtlparam = Param.Read(evtlparamad.AssetPath);
-        PARAMDEF evtllayout = ResourceParamLocator.GetParamdefForParam(evtlparam.ParamType);
+        PARAMDEF evtllayout = ParamLocator.GetParamdefForParam(evtlparam.ParamType);
         evtlparam.ApplyParamdef(evtllayout);
 
-        ResourceDescriptor objparamad = ResourceParamLocator.GetDS2ObjInstanceParam(map.Name);
-        ResourceDescriptor objparamadw = ResourceParamLocator.GetDS2ObjInstanceParam(map.Name, true);
+        ResourceDescriptor objparamad = ParamLocator.GetDS2ObjInstanceParam(map.Name);
+        ResourceDescriptor objparamadw = ParamLocator.GetDS2ObjInstanceParam(map.Name, true);
         Param objparam = Param.Read(objparamad.AssetPath);
-        PARAMDEF objlayout = ResourceParamLocator.GetParamdefForParam(objparam.ParamType);
+        PARAMDEF objlayout = ParamLocator.GetParamdefForParam(objparam.ParamType);
         objparam.ApplyParamdef(objlayout);
 
         // Clear them out
@@ -1198,8 +1198,8 @@ public class Universe
     /// </summary>
     public void SaveBTL(MapContainer map)
     {
-        List<ResourceDescriptor> BTLs = ResourceMapLocator.GetMapBTLs(map.Name);
-        List<ResourceDescriptor> BTLs_w = ResourceMapLocator.GetMapBTLs(map.Name, true);
+        List<ResourceDescriptor> BTLs = MapLocator.GetMapBTLs(map.Name);
+        List<ResourceDescriptor> BTLs_w = MapLocator.GetMapBTLs(map.Name, true);
         DCX.Type compressionType = GetCompressionType();
         if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
@@ -1253,8 +1253,8 @@ public class Universe
         SaveBTL(map);
         try
         {
-            ResourceDescriptor ad = ResourceMapLocator.GetMapMSB(map.Name);
-            ResourceDescriptor adw = ResourceMapLocator.GetMapMSB(map.Name, true);
+            ResourceDescriptor ad = MapLocator.GetMapMSB(map.Name);
+            ResourceDescriptor adw = MapLocator.GetMapMSB(map.Name, true);
             IMsb msb;
             DCX.Type compressionType = GetCompressionType();
             if (Smithbox.ProjectType == ProjectType.DS3)

@@ -37,7 +37,7 @@ namespace StudioCore.Tools
                 if (entry.Contains(".msb.dcx"))
                 {
                     var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
-                    ResourceDescriptor ad = ResourceMapLocator.GetMapMSB(name);
+                    ResourceDescriptor ad = MapLocator.GetMapMSB(name);
                     if (ad.AssetPath != null)
                     {
                         resMaps.Add(ad);

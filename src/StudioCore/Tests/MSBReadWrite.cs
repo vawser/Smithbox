@@ -11,10 +11,10 @@ public static class MSBReadWrite
 {
     public static bool Run()
     {
-        List<string> msbs = ResourceMapLocator.GetFullMapList();
+        List<string> msbs = MapLocator.GetFullMapList();
         foreach (var msb in msbs)
         {
-            ResourceDescriptor path = ResourceMapLocator.GetMapMSB(msb);
+            ResourceDescriptor path = MapLocator.GetMapMSB(msb);
             var bytes = File.ReadAllBytes(path.AssetPath);
             Memory<byte> decompressed = DCX.Decompress(bytes);
             MSBE m = MSBE.Read(decompressed);

@@ -125,6 +125,7 @@ public class BankHandler
         ProjectEnums.LoadBank();
 
         FMGBank.SetDefaultLanguagePath();
+
         FMGBank.LanguageFolder = Smithbox.ProjectHandler.CurrentProject.Config.LastFmgLanguageUsed;
         FMGBank.LoadFMGs();
 

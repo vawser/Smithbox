@@ -100,7 +100,7 @@ public static class ParamReferenceUtils
                 rowMapId = $"m{sAA}_{sBB}_00_00";
             }
 
-            var mapList = ResourceMapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList();
 
             if (mapList.Contains(rowMapId))
             {
@@ -189,7 +189,7 @@ public static class ParamReferenceUtils
                 }
             }
 
-            var mapList = ResourceMapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList();
 
             if (mapList.Contains(rowMapId))
             {
@@ -295,7 +295,7 @@ public static class ParamReferenceUtils
             var width = ImGui.GetColumnWidth();
 
             if(AssetList == null)
-                AssetList = AssetListLocator.GetObjModels();
+                AssetList = ResourceListLocator.GetObjModels();
 
             if (AssetList.Contains(assetID.ToLower()) && assetID != "")
             {
@@ -409,7 +409,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_{CC}_00";
 
-            var mapList = ResourceMapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList();
 
             if (mapList.Contains(rowMapId))
             {
@@ -523,7 +523,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_00_00";
 
-            var mapList = ResourceMapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList();
 
             if (mapList.Contains(rowMapId))
             {
@@ -536,7 +536,7 @@ public static class ParamReferenceUtils
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = ResourceMapLocator.GetMapMSB(rowMapId);
+                    var mapPath = MapLocator.GetMapMSB(rowMapId);
                     CurrentPeekMap_DS1 = MSB1.Read(mapPath.AssetPath);
                 }
 
@@ -607,7 +607,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_00_00";
 
-            var mapList = ResourceMapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList();
 
             if (mapList.Contains(rowMapId))
             {
@@ -620,7 +620,7 @@ public static class ParamReferenceUtils
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = ResourceMapLocator.GetMapMSB(rowMapId);
+                    var mapPath = MapLocator.GetMapMSB(rowMapId);
                     CurrentPeekMap_DS3 = MSB3.Read(mapPath.AssetPath);
                 }
 
@@ -689,7 +689,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_00_00";
 
-            var mapList = ResourceMapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList();
 
             if (mapList.Contains(rowMapId))
             {
@@ -702,7 +702,7 @@ public static class ParamReferenceUtils
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = ResourceMapLocator.GetMapMSB(rowMapId);
+                    var mapPath = MapLocator.GetMapMSB(rowMapId);
                     CurrentPeekMap_SDT = MSBS.Read(mapPath.AssetPath);
                 }
 
@@ -770,7 +770,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_{CC}_00";
 
-            var mapList = ResourceMapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList();
 
             if (mapList.Contains(rowMapId))
             {
@@ -783,7 +783,7 @@ public static class ParamReferenceUtils
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = ResourceMapLocator.GetMapMSB(rowMapId);
+                    var mapPath = MapLocator.GetMapMSB(rowMapId);
                     CurrentPeekMap_ER = MSBE.Read(mapPath.AssetPath);
                 }
 
@@ -843,7 +843,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_{CC}_00";
 
-            var mapList = ResourceMapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList();
 
             if (mapList.Contains(rowMapId))
             {
@@ -856,7 +856,7 @@ public static class ParamReferenceUtils
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = ResourceMapLocator.GetMapMSB(rowMapId);
+                    var mapPath = MapLocator.GetMapMSB(rowMapId);
                     CurrentPeekMap_AC6 = MSB_AC6.Read(mapPath.AssetPath);
                 }
 

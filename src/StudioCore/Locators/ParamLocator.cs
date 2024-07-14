@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Locators;
-public static class ResourceParamLocator
+public static class ParamLocator
 {
     internal static ResourceDescriptor GetDS2Param(string paramStr, string appendStr, string mapid, bool writemode = false)
     {
@@ -73,12 +73,12 @@ public static class ResourceParamLocator
 
     public static string GetGameOffsetsAssetsDir()
     {
-        return $@"Assets\GameOffsets\{ResourceMiscLocator.GetGameIDForDir()}";
+        return $@"Assets\GameOffsets\{MiscLocator.GetGameIDForDir()}";
     }
 
     public static string GetParamAssetsDir()
     {
-        return $@"Assets\Paramdex\{ResourceMiscLocator.GetGameIDForDir()}";
+        return $@"Assets\Paramdex\{MiscLocator.GetGameIDForDir()}";
     }
 
     public static string GetParamdefDir()
@@ -130,6 +130,6 @@ public static class ResourceParamLocator
 
     public static string GetMassEditScriptGameDir()
     {
-        return $@"Assets\MassEditScripts\{ResourceMiscLocator.GetGameIDForDir()}";
+        return $@"Assets\MassEditScripts\{MiscLocator.GetGameIDForDir()}";
     }
 }

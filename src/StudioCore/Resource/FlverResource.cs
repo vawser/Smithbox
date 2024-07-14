@@ -286,7 +286,7 @@ public class FlverResource : IResource, IDisposable
 
         if (!dest.TextureResourceFilled[(int)textureType])
         {
-            string virtualPath = ResourcePathLocator.TexturePathToVirtual(path.ToLower());
+            string virtualPath = VirtualPathLocator.TexturePathToVirtual(path.ToLower());
 
             // Correct path if it is malformed (as game itself ignores this)
             //virtualPath = Smithbox.BankHandler.CorrectedTextureInfo.CorrectTexturePath(virtualPath);

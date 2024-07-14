@@ -28,13 +28,13 @@ public class LightmapAtlasBank
         if (!UsesLightmapAtlases())
             return;
 
-        var mapList = ResourceMapLocator.GetFullMapList();
+        var mapList = MapLocator.GetFullMapList();
 
         foreach (var map in mapList)
         {
             List<LightmapAtlasInfo> mapBTABs = new List<LightmapAtlasInfo>();
 
-            List<ResourceDescriptor> resources = ResourceMapLocator.GetMapBTABs(map);
+            List<ResourceDescriptor> resources = MapLocator.GetMapBTABs(map);
             foreach(var entry in resources)
             {
                 var info = new LightmapAtlasInfo(entry.AssetPath);

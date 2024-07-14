@@ -113,7 +113,7 @@ public static class HavokBehaviorBank
         var fileDir = @"\chr";
         var fileExt = @".behbnd.dcx";
 
-        List<string> fileNames = ResourceMiscLocator.GetBehaviorBinders();
+        List<string> fileNames = MiscLocator.GetBehaviorBinders();
 
         foreach (var name in fileNames)
         {

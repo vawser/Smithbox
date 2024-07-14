@@ -214,19 +214,19 @@ namespace StudioCore.Editors.ModelEditor
             switch (modelType)
             {
                 case ModelEditorModelType.Character:
-                    asset = ResourceModelLocator.GetChrModel(modelid);
+                    asset = ModelLocator.GetChrModel(modelid);
                     break;
                 case ModelEditorModelType.Object:
-                    asset = ResourceModelLocator.GetObjModel(modelid);
+                    asset = ModelLocator.GetObjModel(modelid);
                     break;
                 case ModelEditorModelType.Parts:
-                    asset = ResourceModelLocator.GetPartsModel(modelid);
+                    asset = ModelLocator.GetPartsModel(modelid);
                     break;
                 case ModelEditorModelType.MapPiece:
-                    asset = ResourceModelLocator.GetMapModel(mapid, modelid);
+                    asset = ModelLocator.GetMapModel(mapid, modelid);
                     break;
                 default:
-                    asset = ResourceModelLocator.GetNullAsset();
+                    asset = ModelLocator.GetNullAsset();
                     break;
             }
 
@@ -240,19 +240,19 @@ namespace StudioCore.Editors.ModelEditor
             switch (modelType)
             {
                 case ModelEditorModelType.Character:
-                    asset = ResourceTextureLocator.GetChrTextures(modelid);
+                    asset = TextureLocator.GetChrTextures(modelid);
                     break;
                 case ModelEditorModelType.Object:
-                    asset = ResourceTextureLocator.GetObjTextureContainer(modelid);
+                    asset = TextureLocator.GetObjTextureContainer(modelid);
                     break;
                 case ModelEditorModelType.Parts:
-                    asset = ResourceTextureLocator.GetPartTextureContainer(modelid);
+                    asset = TextureLocator.GetPartTextureContainer(modelid);
                     break;
                 case ModelEditorModelType.MapPiece:
-                    asset = ResourceModelLocator.GetNullAsset();
+                    asset = ModelLocator.GetNullAsset();
                     break;
                 default:
-                    asset = ResourceModelLocator.GetNullAsset();
+                    asset = ModelLocator.GetNullAsset();
                     break;
             }
 

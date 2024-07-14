@@ -91,7 +91,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 {
                     if (Smithbox.ProjectType != ProjectType.Undefined)
                     {
-                        var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{ResourceMiscLocator.GetGameIDForDir()}\\Names";
+                        var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{MiscLocator.GetGameIDForDir()}\\Names";
                         Process.Start("explorer.exe", dir);
                     }
                 }
