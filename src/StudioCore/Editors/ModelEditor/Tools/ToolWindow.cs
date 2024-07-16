@@ -76,6 +76,30 @@ public class ToolWindow
                     FlverTools.SolveBoundingBoxes(Screen.ResourceHandler.CurrentFLVER);
                 }
             }
+
+            // Reverse Face Set
+            if (ImGui.CollapsingHeader("Reverse Mesh Face Set"))
+            {
+                ImguiUtils.WrappedText("Reverse the currently selected face set for our selected mesh.");
+                ImguiUtils.WrappedText("");
+
+                if (ImGui.Button("Reverse", defaultButtonSize))
+                {
+                    FlverTools.ReverseFaceSet(Screen);
+                }
+            }
+
+            // Reverse Normals
+            if (ImGui.CollapsingHeader("Reverse Mesh Normals"))
+            {
+                ImguiUtils.WrappedText("Reverse the normals for the currently selected mesh.");
+                ImguiUtils.WrappedText("");
+
+                if (ImGui.Button("Reverse", defaultButtonSize))
+                {
+                    FlverTools.ReverseNormals(Screen);
+                }
+            }
         }
 
         ImGui.End();

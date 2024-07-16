@@ -6,12 +6,67 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using Vortice.Vulkan;
 
 namespace StudioCore.Editors.ModelEditor.Tools
 {
     // Credit to original author of the implementations in FLVER Editor
     public static class FlverTools
     {
+        public static void ReverseNormals(ModelEditorScreen screen)
+        {
+            var model = screen.ResourceHandler.CurrentFLVER;
+            var selectedMesh = screen.ModelHierarchy._selectedMesh;
+
+            foreach (FLVER.Vertex v in model.Meshes[selectedMesh].Vertices)
+            {
+                v.Normal = new Vector3(
+                    -v.Normal.X, 
+                    -v.Normal.Y, 
+                    -v.Normal.Z);
+
+                for (int j = 0; j < v.Tangents.Count; ++j)
+                {
+                    v.Tangents[j] = new Vector4(
+                        -v.Tangents[j].X, 
+                        -v.Tangents[j].Y, 
+                        -v.Tangents[j].Z, 
+                        v.Tangents[j].W);
+                }
+            }
+
+            // TODO: include viewport model update here
+
+            TaskLogs.AddLog("Mesh normals have been reversed.");
+        }
+
+        public static void ReverseFaceSet(ModelEditorScreen screen)
+        {
+            var model = screen.ResourceHandler.CurrentFLVER;
+            var selectedMesh = screen.ModelHierarchy._selectedMesh;
+            var selectedFaceSet = screen.ModelHierarchy._subSelectedFaceSetRow;
+
+            if (selectedMesh == -1)
+                return;
+
+            if (selectedFaceSet == -1)
+                return;
+
+            var faceSet = model.Meshes[selectedMesh].FaceSets[selectedFaceSet];
+
+            for (int j = 0; j < faceSet.Indices.Count; j += 3)
+            {
+                if (j > faceSet.Indices.Count - 2) 
+                    continue;
+
+                (faceSet.Indices[j + 1], faceSet.Indices[j + 2]) = (faceSet.Indices[j + 2], faceSet.Indices[j + 1]);
+            }
+
+            // TODO: include viewport model update here
+
+            TaskLogs.AddLog("Face Set reversed.");
+        }
+
         public static void SolveBoundingBoxes(FLVER2 model)
         {
             model.Header.BoundingBoxMin = new Vector3();

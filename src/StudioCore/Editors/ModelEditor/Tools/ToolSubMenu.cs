@@ -46,6 +46,18 @@ public class ToolSubMenu
             {
                 FlverTools.SolveBoundingBoxes(Screen.ResourceHandler.CurrentFLVER);
             }
+            // Reverse Face Set
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.MenuItem("Reverse Mesh Face Set"))
+            {
+                FlverTools.ReverseFaceSet(Screen);
+            }
+            // Reverse Normals
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.MenuItem("Reverse Mesh Normals"))
+            {
+                FlverTools.ReverseNormals(Screen);
+            }
 
             ImGui.EndMenu();
         }
