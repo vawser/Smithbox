@@ -507,6 +507,10 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
                 Version = 0x20014;
                 Unicode = true;
             }
+            public FLVERHeader Clone()
+            {
+                return (FLVERHeader)MemberwiseClone();
+            }
         }
     }
 }

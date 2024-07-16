@@ -34,7 +34,7 @@ namespace StudioCore.Editors.ModelEditor
         public void HandleMultiselect(int currentSelectionIndex, int currentIndex)
         {
             // Multi-Select: Range Select
-            if (InputTracker.GetKey(KeyBindings.Current.ModelEditor_Multiselect_Range))
+            if (InputTracker.GetKey(Veldrid.Key.LShift))
             {
                 var start = currentSelectionIndex;
                 var end = currentIndex;

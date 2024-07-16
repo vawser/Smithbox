@@ -1,31 +1,12 @@
-﻿using Andre.Formats;
-using HKLib.hk2018;
-using HKLib.hk2018.hkHashMapDetail;
-using HKX2;
-using ImGuiNET;
-using SoulsFormats;
+﻿using ImGuiNET;
 using StudioCore.Core;
-using StudioCore.Editor;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.MapEditor.Toolbar;
-using StudioCore.Gui;
+using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using System.Formats.Tar;
-using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Reflection;
-using System.Transactions;
-using static HKLib.hk2018.hknpMotionProperties;
-using static StudioCore.Formats.PureFLVER.FLVER.Node;
+using static SoulsFormats.PARAM;
 using static StudioCore.Formats.PureFLVER.FLVER2.FLVER2;
 using static StudioCore.Formats.PureFLVER.FLVER2.FLVER2.FaceSet;
 using static StudioCore.Formats.PureFLVER.FLVER2.FLVER2.Mesh;
-using hkRootLevelContainer = HKLib.hk2018.hkRootLevelContainer;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -43,7 +24,7 @@ public class ModelPropertyEditor
     public ModelPropertyEditor(ModelEditorScreen editor)
     {
         Screen = editor;
-        GXDataEditor = new GXDataEditor();
+        GXDataEditor = new GXDataEditor(editor);
         DecorationHandler = new ModelPropertyDecorationHandler(editor);
         MaterialInfoView = new MaterialInformationView(editor);
         ContextMenu = new HierarchyContextMenu(Screen);
@@ -164,23 +145,50 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Checkbox("##BigEndian", ref bigEndian);
+        if(ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.BigEndian != bigEndian)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERHeader_BigEndian(entry, entry.BigEndian, bigEndian));
+        }
+
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt("##Version", ref version);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Version != version)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERHeader_Version(entry, entry.Version, version));
+        }
+
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3("##BoundingBoxMin", ref bbMin);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.BoundingBoxMin != bbMin)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERHeader_BoundingBoxMin(entry, entry.BoundingBoxMin, bbMin));
+        }
+
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3("##BoundingBoxMax", ref bbMax);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.BoundingBoxMax != bbMax)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERHeader_BoundingBoxMax(entry, entry.BoundingBoxMax, bbMax));
+        }
+
         ImGui.AlignTextToFramePadding();
         ImGui.Checkbox("##Unicode", ref unicode);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Unicode != unicode)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERHeader_Unicode(entry, entry.Unicode, unicode));
+        }
 
         ImGui.Columns(1);
-
-        // Changes
-        entry.BigEndian = bigEndian;
-        entry.Version = version;
-        entry.BoundingBoxMin = bbMin;
-        entry.BoundingBoxMax = bbMax;
-        entry.Unicode = unicode;
     }
 
     public Vector3 _trackedDummyPosition = new Vector3();
@@ -194,6 +202,14 @@ public class ModelPropertyEditor
 
         if (Screen.ResourceHandler.CurrentFLVER.Dummies.Count < index)
             return;
+
+        if(Screen.ModelHierarchy.DummyMultiselect.StoredIndices.Count > 1)
+        {
+            ImGui.Separator();
+            ImguiUtils.WrappedText("Multiple Dummies are selected.\nProperties cannot be edited whilst in this state.");
+            ImGui.Separator();
+            return;
+        }
 
         ImGui.Separator();
         ImGui.Text("Dummy");
@@ -266,66 +282,102 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3("##Position", ref position);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Position != position)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_Position(entry, entry.Position, position));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3("##Forward", ref forward);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Forward != forward)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_Forward(entry, entry.Forward, forward));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3("##Upward", ref upward);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Upward != upward)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_Upward(entry, entry.Upward, upward));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt("##ReferenceID", ref refId);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.ReferenceID != refId)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_ReferenceID(entry, entry.ReferenceID, refId));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt("##ParentBoneIndex", ref parentBoneIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.ParentBoneIndex != parentBoneIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_ParentBoneIndex(entry, entry.ParentBoneIndex, parentBoneIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(parentBoneIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt("##AttachBoneIndex", ref attachBoneIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.AttachBoneIndex != attachBoneIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_AttachBoneIndex(entry, entry.AttachBoneIndex, attachBoneIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(attachBoneIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.Checkbox("##Flag1", ref flag1);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Flag1 != flag1)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_Flag1(entry, entry.Flag1, flag1));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.Checkbox("##UseUpwardVector", ref useUpwardVector);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.UseUpwardVector != useUpwardVector)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_UseUpwardVector(entry, entry.UseUpwardVector, useUpwardVector));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt("##Unk30", ref unk30);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Unk30 != unk30)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_Unk30(entry, entry.Unk30, unk30));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt("##Unk34", ref unk34);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Unk34 != unk34)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_Unk34(entry, entry.Unk34, unk34));
+        }
 
         ImGui.Columns(1);
 
-        // Changes
-        entry.Position = position;
-        entry.Forward = forward;
-        entry.Upward = upward;
-
-        if(refId > short.MaxValue)
-            refId = short.MaxValue;
-
-        entry.ReferenceID = (short)refId;
-
-        if (parentBoneIndex > short.MaxValue)
-            parentBoneIndex = short.MaxValue;
-
-        entry.ParentBoneIndex = (short)parentBoneIndex;
-
-        if (attachBoneIndex > short.MaxValue)
-            attachBoneIndex = short.MaxValue;
-
-        entry.AttachBoneIndex = (short)attachBoneIndex;
-
-        entry.UseUpwardVector = useUpwardVector;
-        entry.Flag1 = flag1;
-        entry.Unk30 = unk30;
-        entry.Unk34 = unk34;
-
-        if(_trackedDummyPosition != entry.Position)
+        // Update representative selectable
+        if (_trackedDummyPosition != entry.Position)
         {
             _trackedDummyPosition = entry.Position;
             Screen.ViewportHandler.UpdateRepresentativeDummy(index, entry.Position);
@@ -341,6 +393,14 @@ public class ModelPropertyEditor
 
         if (Screen.ResourceHandler.CurrentFLVER.Materials.Count < index)
             return;
+
+        if (Screen.ModelHierarchy.MaterialMultiselect.StoredIndices.Count > 1)
+        {
+            ImGui.Separator();
+            ImguiUtils.WrappedText("Multiple Materials are selected.\nProperties cannot be edited whilst in this state.");
+            ImGui.Separator();
+            return;
+        }
 
         ImGui.Separator();
         ImGui.Text("Material");
@@ -382,26 +442,44 @@ public class ModelPropertyEditor
         ImGui.AlignTextToFramePadding();
         ImGui.SetNextItemWidth(colWidth);
         ImGui.InputText("##Name", ref name, 255);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Name != name)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMaterial_Name(entry, entry.Name, name));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.SetNextItemWidth(colWidth);
         ImGui.InputText("##MTD", ref mtd, 255);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.MTD != mtd)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMaterial_MTD(entry, entry.MTD, mtd));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt("##GXIndex", ref gxIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.GXIndex != gxIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMaterial_GXIndex(entry, entry.GXIndex, gxIndex));
+        }
 
         DecorationHandler.GXListIndexDecorator(gxIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt("##MTDIndex", ref mtdIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Index != mtdIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMaterial_MTDIndex(entry, entry.Index, mtdIndex));
+        }
 
         ImGui.Columns(1);
-
-        // Changes
-        entry.Name = name;
-        entry.MTD = mtd;
-        entry.GXIndex = gxIndex;
-        entry.Index = mtdIndex;
 
         if (ImGui.CollapsingHeader("Textures", ImGuiTreeNodeFlags.DefaultOpen))
         {
@@ -463,18 +541,33 @@ public class ModelPropertyEditor
         ImGui.AlignTextToFramePadding();
         ImGui.SetNextItemWidth(colWidth);
         ImGui.InputText($"##Name_texture{index}", ref type, 255);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (texture.Type != type)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMaterial_Texture_Type(texture, texture.Type, type));
+        }
+
         ImGui.AlignTextToFramePadding();
         ImGui.SetNextItemWidth(colWidth);
         ImGui.InputText($"##Path_texture{index}", ref path, 255);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (texture.Path != path)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMaterial_Texture_Path(texture, texture.Path, path));
+        }
+
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat2($"##Scale_texture{index}", ref scale);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (texture.Scale != scale)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMaterial_Texture_Scale(texture, texture.Scale, scale));
+        }
 
         ImGui.Columns(1);
-
-        // Changes
-        texture.Type = type;
-        texture.Path = path;
-        texture.Scale = scale;
     }
     private void DisplayProperties_GXLists()
     {
@@ -539,9 +632,22 @@ public class ModelPropertyEditor
         ImGui.AlignTextToFramePadding();
         ImGui.SetNextItemWidth(colWidth);
         ImGui.InputText($"##ID_item{index}", ref id, 255);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (item.ID != id)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERGXList_GXItem_ID(item, item.ID, id));
+        }
+
         ImGui.AlignTextToFramePadding();
         ImGui.SetNextItemWidth(colWidth);
         ImGui.InputInt($"##Unk04_item{index}", ref unk04);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (item.Unk04 != unk04)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERGXList_GXItem_Unk04(item, item.Unk04, unk04));
+        }
 
         ImGui.Columns(1);
 
@@ -559,12 +665,7 @@ public class ModelPropertyEditor
             ImguiUtils.ShowHoverTooltip("Creates a byte array to the specified size. Note this is not checked for validity, that is up to the user to determine.");
         }
 
-        var data = GXDataEditor.DisplayProperties_GXItem_HandleData(item);
-
-        // Changes
-        item.ID = id;
-        item.Unk04 = unk04;
-        item.Data = data;
+        GXDataEditor.DisplayProperties_GXItem_HandleData(item);
     }
 
     public Vector3 _trackedNodePosition = new Vector3();
@@ -578,6 +679,14 @@ public class ModelPropertyEditor
 
         if (Screen.ResourceHandler.CurrentFLVER.Nodes.Count < index)
             return;
+
+        if (Screen.ModelHierarchy.NodeMultiselect.StoredIndices.Count > 1)
+        {
+            ImGui.Separator();
+            ImguiUtils.WrappedText("Multiple Nodes are selected.\nProperties cannot be edited whilst in this state.");
+            ImGui.Separator();
+            return;
+        }
 
         ImGui.Separator();
         ImGui.Text("Node");
@@ -663,77 +772,115 @@ public class ModelPropertyEditor
         ImGui.AlignTextToFramePadding();
         ImGui.SetNextItemWidth(colWidth);
         ImGui.InputText($"##Name", ref name, 255);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Name != name)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERNode_Name(entry, entry.Name, name));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##ParentIndex", ref parentIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.ParentIndex != parentIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERNode_ParentIndex(entry, entry.ParentIndex, parentIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(parentIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##FirstChildIndex", ref firstChildIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.FirstChildIndex != firstChildIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERNode_FirstChildIndex(entry, entry.FirstChildIndex, firstChildIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(firstChildIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##NextSiblingIndex", ref nextSiblingIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.NextSiblingIndex != nextSiblingIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERNode_NextSiblingIndex(entry, entry.NextSiblingIndex, nextSiblingIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(nextSiblingIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##PreviousSiblingIndex", ref previousSiblingIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.PreviousSiblingIndex != previousSiblingIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERNode_PreviousSiblingIndex(entry, entry.PreviousSiblingIndex, previousSiblingIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(previousSiblingIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3($"##Translation", ref translation);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Translation != translation)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERNode_Translation(entry, entry.Translation, translation));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3($"##Rotation", ref rotation);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Rotation != rotation)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERNode_Rotation(entry, entry.Rotation, rotation));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3($"##Scale", ref scale);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.Scale != scale)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERNode_Scale(entry, entry.Scale, scale));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3($"##BoundingBoxMin", ref bbMin);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.BoundingBoxMin != bbMin)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERNode_BoundingBoxMin(entry, entry.BoundingBoxMin, bbMin));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3($"##BoundingBoxMax", ref bbMax);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.BoundingBoxMax != bbMax)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERNode_BoundingBoxMax(entry, entry.BoundingBoxMax, bbMax));
+        }
 
+        // TODO: actually set this up to handle the flags properly
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##Flags", ref flags);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if ((int)entry.Flags != flags)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERNode_Flags(entry, (int)entry.Flags, flags));
+        }
 
         ImGui.Columns(1);
 
-        // Changes
-        entry.Name = name;
-
-        if (parentIndex > short.MaxValue)
-            parentIndex = short.MaxValue;
-
-        entry.ParentIndex = (short)parentIndex;
-
-        if (firstChildIndex > short.MaxValue)
-            firstChildIndex = short.MaxValue;
-
-        entry.FirstChildIndex = (short)firstChildIndex;
-
-        if (nextSiblingIndex > short.MaxValue)
-            nextSiblingIndex = short.MaxValue;
-
-        entry.NextSiblingIndex = (short)nextSiblingIndex;
-
-        if (previousSiblingIndex > short.MaxValue)
-            previousSiblingIndex = short.MaxValue;
-
-        entry.PreviousSiblingIndex = (short)previousSiblingIndex;
-
-        entry.Translation = translation;
-        entry.Rotation = rotation;
-        entry.Scale = scale;
-        entry.BoundingBoxMin = bbMin;
-        entry.BoundingBoxMax = bbMax;
-        entry.Flags = (NodeFlags)flags;
-
+        // Update representative selectable
         if (_trackedNodePosition != entry.Translation)
         {
             _trackedNodePosition = entry.Translation;
@@ -750,6 +897,14 @@ public class ModelPropertyEditor
 
         if (Screen.ResourceHandler.CurrentFLVER.Meshes.Count < index)
             return;
+
+        if (Screen.ModelHierarchy.MeshMultiselect.StoredIndices.Count > 1)
+        {
+            ImGui.Separator();
+            ImguiUtils.WrappedText("Multiple Meshes are selected.\nProperties cannot be edited whilst in this state.");
+            ImGui.Separator();
+            return;
+        }
 
         ImGui.Separator();
         ImGui.Text("Mesh");
@@ -786,27 +941,40 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Checkbox($"##UseBoneWeights", ref useBoneWeights);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.UseBoneWeights != useBoneWeights)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMesh_UseBoneWeights(entry, entry.UseBoneWeights, useBoneWeights));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##MaterialIndex", ref materialIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.MaterialIndex != materialIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMesh_MaterialIndex(entry, entry.MaterialIndex, materialIndex));
+        }
 
         DecorationHandler.MaterialIndexDecorator(materialIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##NodeIndex", ref nodeIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.NodeIndex != nodeIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMesh_NodeIndex(entry, entry.NodeIndex, nodeIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(nodeIndex);
 
         ImGui.Columns(1);
 
-        // Changes
-        entry.UseBoneWeights = useBoneWeights;
-        entry.MaterialIndex = materialIndex;
-        entry.NodeIndex = nodeIndex;
-
         if (ImGui.CollapsingHeader("Bounding Box"))
         {
-            if(entry.BoundingBox != null)
+            if(entry != null && entry.BoundingBox != null)
             {
                 DisplayProperties_Mesh_BoundingBox(entry.BoundingBox);
             }
@@ -816,7 +984,7 @@ public class ModelPropertyEditor
         {
             for (int i = 0; i < entry.FaceSets.Count; i++)
             {
-                if (entry.FaceSets[i] != null)
+                if (entry != null && entry.FaceSets[i] != null)
                 {
                     DisplayProperties_Mesh_FaceSet(entry.FaceSets[i], i);
                 }
@@ -827,37 +995,15 @@ public class ModelPropertyEditor
         {
             for (int i = 0; i < entry.VertexBuffers.Count; i++)
             {
-                if (entry.VertexBuffers[i] != null)
+                if (entry != null && entry.VertexBuffers[i] != null)
                 {
                     DisplayProperties_Mesh_VertexBuffers(entry.VertexBuffers[i], i);
                 }
             }
         }
-
-        // Don't expose this
-        /*
-        if (ImGui.CollapsingHeader("Bone Indices"))
-        {
-            for (int i = 0; i < entry.BoneIndices.Count; i++)
-            {
-                entry.BoneIndices[i] = DisplayProperties_Mesh_BoneIndices(entry.BoneIndices[i], i);
-            }
-        }
-        */
-
-        // Don't expose this
-        /*
-        if (ImGui.CollapsingHeader("Vertices"))
-        {
-            for (int i = 0; i < entry.Textures.Count; i++)
-            {
-                DisplayProperties_Material_Texture(entry.Textures[i], i);
-            }
-        }
-        */
     }
 
-    private void DisplayProperties_Mesh_FaceSet(Formats.PureFLVER.FLVER2.FLVER2.FaceSet faceset, int index)
+    private void DisplayProperties_Mesh_FaceSet(FaceSet faceset, int index)
     {
         ImGui.Separator();
         if (ImGui.Selectable($"Face Set {index}##FaceSet{index}", Screen.ModelHierarchy._subSelectedFaceSetRow == index))
@@ -898,17 +1044,42 @@ public class ModelPropertyEditor
 
         ImGui.NextColumn();
 
+        // TODO: handle the flags properly
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##Flags_faceset{index}", ref flags);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if ((int)faceset.Flags != flags)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMesh_FaceSet_Flags(faceset, (int)faceset.Flags, flags));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.Checkbox($"##TriangleStrip_faceset{index}", ref triangleStrip);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (faceset.TriangleStrip != triangleStrip)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMesh_FaceSet_TriangleStrip(faceset, faceset.TriangleStrip, triangleStrip));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.Checkbox($"##CullBackfaces_faceset{index}", ref cullBackfaces);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (faceset.CullBackfaces != cullBackfaces)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMesh_FaceSet_CullBackfaces(faceset, faceset.CullBackfaces, cullBackfaces));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##Unk06_faceset{index}", ref unk06);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if ((int)faceset.Unk06 != unk06)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMesh_FaceSet_Unk06(faceset, (int)faceset.Unk06, unk06));
+        }
 
         ImGui.Columns(1);
 
@@ -920,20 +1091,9 @@ public class ModelPropertyEditor
             unk06 = short.MaxValue;
 
         faceset.Unk06 = (short)unk06;
-
-        // Don't expose this
-        /*
-        if (ImGui.CollapsingHeader("Indices"))
-        {
-            for (int i = 0; i < faceset.Indices.Count; i++)
-            {
-                DisplayProperties_Mesh_FaceSetIndices(faceset.Indices[i], i);
-            }
-        }
-        */
     }
 
-    private void DisplayProperties_Mesh_VertexBuffers(Formats.PureFLVER.FLVER2.FLVER2.VertexBuffer vertexBuffer, int index)
+    private void DisplayProperties_Mesh_VertexBuffers(VertexBuffer vertexBuffer, int index)
     {
         var layoutIndex = vertexBuffer.LayoutIndex;
 
@@ -961,50 +1121,18 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##LayoutIndex{index}", ref layoutIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (vertexBuffer.LayoutIndex != layoutIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERMesh_VertexBuffer_VertexBuffer(vertexBuffer, vertexBuffer.LayoutIndex, layoutIndex));
+        }
 
         DecorationHandler.LayoutIndexDecorator(layoutIndex);
 
         ImGui.Columns(1);
 
         vertexBuffer.LayoutIndex = layoutIndex;
-    }
-
-    private void DisplayProperties_Mesh_FaceSetIndices(int vertexIndex, int index)
-    {
-        var curVertexIndex = vertexIndex;
-
-        // Display
-        ImGui.Columns(2);
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("Index");
-        ImguiUtils.ShowHoverTooltip("");
-
-        ImGui.NextColumn();
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.InputInt($"##VertexIndex{index}", ref curVertexIndex);
-
-        ImGui.Columns(1);
-    }
-
-    private void DisplayProperties_Mesh_BoneIndices(int boneIndex, int index)
-    {
-        var curBoneIndex = boneIndex;
-
-        // Display
-        ImGui.Columns(2);
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("Index");
-        ImguiUtils.ShowHoverTooltip("");
-
-        ImGui.NextColumn();
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.InputInt($"##BoneIndex{index}", ref curBoneIndex);
-
-        ImGui.Columns(1);
     }
 
     private void DisplayProperties_Mesh_BoundingBox(BoundingBoxes boundingBox)
@@ -1032,12 +1160,30 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3($"##Min", ref bbMin);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (boundingBox.Min != bbMin)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERMesh_BoundingBoxes_Min(boundingBox, boundingBox.Min, bbMin));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3($"##Max", ref bbMax);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (boundingBox.Max != bbMax)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERMesh_BoundingBoxes_Max(boundingBox, boundingBox.Max, bbMax));
+        }
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3($"##Unk", ref bbUnk);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (boundingBox.Unk != bbUnk)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERMesh_BoundingBoxes_Unk(boundingBox, boundingBox.Unk, bbUnk));
+        }
 
         ImGui.Columns(1);
 
@@ -1057,6 +1203,14 @@ public class ModelPropertyEditor
         if (Screen.ResourceHandler.CurrentFLVER.BufferLayouts.Count < index)
             return;
 
+        if (Screen.ModelHierarchy.BufferLayoutMultiselect.StoredIndices.Count > 1)
+        {
+            ImGui.Separator();
+            ImguiUtils.WrappedText("Multiple Buffer Layouts are selected.\nProperties cannot be edited whilst in this state.");
+            ImGui.Separator();
+            return;
+        }
+
         var entry = Screen.ResourceHandler.CurrentFLVER.BufferLayouts[index];
 
         for(int i = 0; i < entry.Count; i++)
@@ -1068,38 +1222,91 @@ public class ModelPropertyEditor
     private void DisplayProperties_BufferLayout_LayoutMember(Formats.PureFLVER.FLVER.LayoutMember layout, int index)
     {
         ImGui.Separator();
-        ImGui.Text($"Buffer Layout {index}");
+        if (ImGui.Selectable($"Layout Member {index}##LayoutMember{index}", Screen.ModelHierarchy._subSelectedBufferLayoutMember == index))
+        {
+            Screen.ModelHierarchy._subSelectedBufferLayoutMember = index;
+        }
         ImGui.Separator();
+
+        if (Screen.ModelHierarchy._subSelectedBufferLayoutMember == index)
+        {
+            ContextMenu.BufferLayoutMemberHeaderContextMenu(index);
+        }
+
+        var unk00 = layout.Unk00;
+        var type = (int)layout.Type;
+        var semantic = (int)layout.Semantic;
+        var layoutIndex = layout.Index;
+
+        ImGui.Columns(2);
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text($"Unk00:");
-        ImGui.SameLine();
-        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{layout.Unk00}");
         ImguiUtils.ShowHoverTooltip("Unknown; 0, 1, or 2.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text($"Layout Type:");
-        ImGui.SameLine();
-        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{layout.Type}");
         ImguiUtils.ShowHoverTooltip("Format used to store this member.");
+        ImGui.Text($"");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text($"Layout Semantic:");
-        ImGui.SameLine();
-        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{layout.Semantic}");
         ImguiUtils.ShowHoverTooltip("Vertex property being stored.");
+        ImGui.Text($"");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text($"Index:");
-        ImGui.SameLine();
-        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{layout.Index}");
         ImguiUtils.ShowHoverTooltip("For semantics that may appear more than once such as UVs, which one this member is.");
 
+        ImGui.NextColumn();
+
         ImGui.AlignTextToFramePadding();
-        ImGui.Text($"Size:");
-        ImGui.SameLine();
-        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{layout.Size}");
-        ImguiUtils.ShowHoverTooltip("The size of this member's ValueType, in bytes.");
+        ImGui.InputInt($"##Unk00##unk00{index}", ref unk00);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (layout.Unk00 != unk00)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERBufferLayout_LayoutMember_Unk00(layout, layout.Unk00, unk00));
+        }
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.InputInt($"##Type##type{index}", ref type);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if ((int)layout.Type != type)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERBufferLayout_LayoutMember_Type(layout, (int)layout.Type, type));
+        }
+
+        DecorationHandler.LayoutTypeDecorator(type);
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.InputInt($"##Semantic##semantic{index}", ref semantic);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if ((int)layout.Semantic != semantic)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERBufferLayout_LayoutMember_Semantic(layout, (int)layout.Semantic, semantic));
+        }
+
+        DecorationHandler.LayoutSemanticDecorator(semantic);
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.InputInt($"##Index##index{index}", ref layoutIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (layout.Index != layoutIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERBufferLayout_LayoutMember_Index(layout, layout.Index, layoutIndex));
+        }
+
+        if(layout.Size == -1)
+        {
+            ImguiUtils.WrappedTextColored(CFG.Default.ImGui_Warning_Text_Color, "Invalid Layout Type. Size cannot be determined.");
+        }
+
+        ImGui.Columns(1);
+
     }
 
     private void DisplayProperties_BaseSkeletons()
@@ -1111,6 +1318,14 @@ public class ModelPropertyEditor
 
         if (Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton.Count < index)
             return;
+
+        if (Screen.ModelHierarchy.BaseSkeletonMultiselect.StoredIndices.Count > 1)
+        {
+            ImGui.Separator();
+            ImguiUtils.WrappedText("Multiple Skeleton Bones are selected.\nProperties cannot be edited whilst in this state.");
+            ImGui.Separator();
+            return;
+        }
 
         ImGui.Separator();
         ImGui.Text("Standard Skeleton Hierarchy");
@@ -1167,52 +1382,60 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##ParentIndex", ref parentIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.ParentIndex != parentIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERSkeleton_Bone_ParentIndex(entry, entry.ParentIndex, parentIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(parentIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##FirstChildIndex", ref firstChildIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.FirstChildIndex != firstChildIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERSkeleton_Bone_FirstChildIndex(entry, entry.FirstChildIndex, firstChildIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(firstChildIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##NextSiblingIndex", ref nextSiblingIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.NextSiblingIndex != nextSiblingIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERSkeleton_Bone_NextSiblingIndex(entry, entry.NextSiblingIndex, nextSiblingIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(nextSiblingIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##PreviousSiblingIndex", ref previousSiblingIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.PreviousSiblingIndex != previousSiblingIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERSkeleton_Bone_PreviousSiblingIndex(entry, entry.PreviousSiblingIndex, previousSiblingIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(previousSiblingIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##NodeIndex", ref nodeIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.NodeIndex != nodeIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERSkeleton_Bone_NodeIndex(entry, entry.NodeIndex, nodeIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(nodeIndex);
 
         ImGui.Columns(1);
-
-        if (parentIndex > short.MaxValue)
-            parentIndex = short.MaxValue;
-
-        entry.ParentIndex = (short)parentIndex;
-
-        if (firstChildIndex > short.MaxValue)
-            firstChildIndex = short.MaxValue;
-
-        entry.FirstChildIndex = (short)firstChildIndex;
-
-        if (nextSiblingIndex > short.MaxValue)
-            nextSiblingIndex = short.MaxValue;
-
-        entry.NextSiblingIndex = (short)nextSiblingIndex;
-
-        if (previousSiblingIndex > short.MaxValue)
-            previousSiblingIndex = short.MaxValue;
-
-        entry.PreviousSiblingIndex = (short)previousSiblingIndex;
-
-        entry.NodeIndex = nodeIndex;
     }
 
     private void DisplayProperties_AllSkeletons()
@@ -1224,6 +1447,14 @@ public class ModelPropertyEditor
 
         if (Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons.Count < index)
             return;
+
+        if (Screen.ModelHierarchy.BaseSkeletonMultiselect.StoredIndices.Count > 1)
+        {
+            ImGui.Separator();
+            ImguiUtils.WrappedText("Multiple Skeleton Bones are selected.\nProperties cannot be edited whilst in this state.");
+            ImGui.Separator();
+            return;
+        }
 
         ImGui.Separator();
         ImGui.Text("Full Skeleton Hierarchy");
@@ -1280,52 +1511,58 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##ParentIndex", ref parentIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.ParentIndex != parentIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERSkeleton_Bone_ParentIndex(entry, entry.ParentIndex, parentIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(parentIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##FirstChildIndex", ref firstChildIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.FirstChildIndex != firstChildIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERSkeleton_Bone_FirstChildIndex(entry, entry.FirstChildIndex, firstChildIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(firstChildIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##NextSiblingIndex", ref nextSiblingIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.NextSiblingIndex != nextSiblingIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERSkeleton_Bone_NextSiblingIndex(entry, entry.NextSiblingIndex, nextSiblingIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(nextSiblingIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##PreviousSiblingIndex", ref previousSiblingIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.PreviousSiblingIndex != previousSiblingIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERSkeleton_Bone_PreviousSiblingIndex(entry, entry.PreviousSiblingIndex, previousSiblingIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(previousSiblingIndex);
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputInt($"##NodeIndex", ref nodeIndex);
+        if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
+        {
+            if (entry.NodeIndex != nodeIndex)
+                Screen.EditorActionManager.ExecuteAction(
+                new UpdateProperty_FLVERSkeleton_Bone_NodeIndex(entry, entry.NodeIndex, nodeIndex));
+        }
 
         DecorationHandler.NodeIndexDecorator(nodeIndex);
-
-        ImGui.Columns(1);
-
-        if (parentIndex > short.MaxValue)
-            parentIndex = short.MaxValue;
-
-        entry.ParentIndex = (short)parentIndex;
-
-        if (firstChildIndex > short.MaxValue)
-            firstChildIndex = short.MaxValue;
-
-        entry.FirstChildIndex = (short)firstChildIndex;
-
-        if (nextSiblingIndex > short.MaxValue)
-            nextSiblingIndex = short.MaxValue;
-
-        entry.NextSiblingIndex = (short)nextSiblingIndex;
-
-        if (previousSiblingIndex > short.MaxValue)
-            previousSiblingIndex = short.MaxValue;
-
-        entry.PreviousSiblingIndex = (short)previousSiblingIndex;
-
-        entry.NodeIndex = nodeIndex;
     }
 
 }

@@ -352,7 +352,7 @@ namespace StudioCore.Editors.ModelEditor
 
                 if (ImGui.Selectable($"Remove Meshes##removeAction"))
                 {
-                    var action = new RemoveMaterialEntryMulti(Screen, Screen.ResourceHandler.CurrentFLVER, MeshMultiselect);
+                    var action = new RemoveMeshEntryMulti(Screen, Screen.ResourceHandler.CurrentFLVER, MeshMultiselect);
                     Screen.EditorActionManager.ExecuteAction(action);
                 }
                 ImguiUtils.ShowHoverTooltip("Remove the currently selected Meshes.");
@@ -742,6 +742,48 @@ namespace StudioCore.Editors.ModelEditor
                     }
                 }
                 ImguiUtils.ShowHoverTooltip("Remove the currently selected Vertex Buffer.");
+
+                ImGui.EndPopup();
+            }
+        }
+
+        public void BufferLayoutMemberHeaderContextMenu(int index)
+        {
+            if (ImGui.BeginPopupContextItem($"LayoutMemberRow_ContextMenu"))
+            {
+                var currentFlver = Screen.ResourceHandler.CurrentFLVER;
+                var selectedBufferLayout = Screen.ModelHierarchy._selectedBufferLayout;
+
+                if (ImGui.Selectable($"Add New Layout Member##newAction{index}"))
+                {
+                    var action = new AddLayoutMemberEntry(Screen, Screen.ResourceHandler.CurrentFLVER);
+                    Screen.EditorActionManager.ExecuteAction(action);
+                }
+                ImguiUtils.ShowHoverTooltip("Add new Layout Member entry to the end of the list.");
+
+                if (ImGui.Selectable($"Duplicate Layout Member##dupeAction{index}"))
+                {
+                    var selectedMember = currentFlver.BufferLayouts[selectedBufferLayout][Screen.ModelHierarchy._subSelectedBufferLayoutMember];
+
+                    if (selectedMember != null)
+                    {
+                        var action = new DuplicateLayoutMemberEntry(Screen, Screen.ResourceHandler.CurrentFLVER, selectedMember);
+                        Screen.EditorActionManager.ExecuteAction(action);
+                    }
+                }
+                ImguiUtils.ShowHoverTooltip("Duplicate the selected Layout Member entry, inserting it at the end of the list.");
+
+                if (ImGui.Selectable($"Remove Layout Member##removeAction{index}"))
+                {
+                    var selectedMember = currentFlver.BufferLayouts[selectedBufferLayout][Screen.ModelHierarchy._subSelectedBufferLayoutMember];
+
+                    if (selectedMember != null)
+                    {
+                        var action = new RemoveLayoutMemberEntry(Screen, Screen.ResourceHandler.CurrentFLVER, selectedMember);
+                        Screen.EditorActionManager.ExecuteAction(action);
+                    }
+                }
+                ImguiUtils.ShowHoverTooltip("Remove the currently selected Layout Member.");
 
                 ImGui.EndPopup();
             }

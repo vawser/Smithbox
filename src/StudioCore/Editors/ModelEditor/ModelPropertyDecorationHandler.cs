@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Editors.TextureViewer;
+using StudioCore.Formats.PureFLVER;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -185,6 +186,28 @@ namespace StudioCore.Editors.ModelEditor
             ImGui.SameLine();
             ImGui.AlignTextToFramePadding();
             ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{alias}");
+        }
+
+        public void LayoutTypeDecorator(int value)
+        {
+            var alias = "";
+
+            var layoutType = (FLVER.LayoutType)value;
+            alias = layoutType.ToString();
+
+            ImGui.AlignTextToFramePadding();
+            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, @$"{alias}");
+        }
+
+        public void LayoutSemanticDecorator(int value)
+        {
+            var alias = "";
+
+            var layoutType = (FLVER.LayoutSemantic)value;
+            alias = layoutType.ToString();
+
+            ImGui.AlignTextToFramePadding();
+            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, @$"{alias}");
         }
     }
 }

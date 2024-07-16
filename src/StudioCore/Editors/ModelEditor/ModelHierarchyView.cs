@@ -111,6 +111,7 @@ public class ModelHierarchyView
     public int _subSelectedGXItemRow = -1;
     public int _subSelectedFaceSetRow = -1;
     public int _subSelectedVertexBufferRow = -1;
+    public int _subSelectedBufferLayoutMember = -1;
 
     public int _selectedLowCollision = -1;
     public int _selectedHighCollision = -1;
@@ -131,6 +132,7 @@ public class ModelHierarchyView
         _subSelectedGXItemRow = -1;
         _subSelectedFaceSetRow = -1;
         _subSelectedVertexBufferRow = -1;
+        _subSelectedBufferLayoutMember = -1;
         _selectedLowCollision = -1;
         _selectedHighCollision = -1;
     }
@@ -482,6 +484,11 @@ public class ModelHierarchyView
                         ResetSelection();
                         _selectedBufferLayout = i;
                         _lastSelectedEntry = ModelEntrySelectionType.BufferLayout;
+
+                        if (curLayout.Count > 0)
+                        {
+                            _subSelectedBufferLayoutMember = 0;
+                        }
                     }
 
                     if (_selectedBufferLayout == i)

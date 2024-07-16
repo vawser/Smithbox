@@ -70,7 +70,7 @@ namespace StudioCore.Formats.PureFLVER
                             return 16;
 
                         default:
-                            throw new NotImplementedException($"No size defined for buffer layout type: {Type}");
+                            return -1;
                     }
                 }
             }
