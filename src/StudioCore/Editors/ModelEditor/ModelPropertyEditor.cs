@@ -1,5 +1,7 @@
 ﻿using Andre.Formats;
+using HKLib.hk2018;
 using HKLib.hk2018.hkHashMapDetail;
+using HKX2;
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Core;
@@ -10,16 +12,20 @@ using StudioCore.Gui;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
+using System.Formats.Tar;
 using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Transactions;
+using static HKLib.hk2018.hknpMotionProperties;
 using static StudioCore.Formats.PureFLVER.FLVER.Node;
 using static StudioCore.Formats.PureFLVER.FLVER2.FLVER2;
 using static StudioCore.Formats.PureFLVER.FLVER2.FLVER2.FaceSet;
 using static StudioCore.Formats.PureFLVER.FLVER2.FLVER2.Mesh;
+using hkRootLevelContainer = HKLib.hk2018.hkRootLevelContainer;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -30,6 +36,7 @@ public class ModelPropertyEditor
     private ModelPropertyDecorationHandler DecorationHandler;
     private MaterialInformationView MaterialInfoView;
     private HierarchyContextMenu ContextMenu;
+    private CollisionPropertyEditor CollisionPropertyEditor;
 
     private bool SuspendView = false;
 
@@ -40,6 +47,7 @@ public class ModelPropertyEditor
         DecorationHandler = new ModelPropertyDecorationHandler(editor);
         MaterialInfoView = new MaterialInformationView(editor);
         ContextMenu = new HierarchyContextMenu(Screen);
+        CollisionPropertyEditor = new CollisionPropertyEditor(editor);
     }
 
     public void OnGui()
@@ -96,6 +104,20 @@ public class ModelPropertyEditor
                 if (entryType == ModelEntrySelectionType.AllSkeleton)
                 {
                     DisplayProperties_AllSkeletons();
+                }
+                if (entryType == ModelEntrySelectionType.CollisionLow)
+                {
+                    if (Screen.ResourceHandler.ER_CollisionLow != null)
+                    {
+                        CollisionPropertyEditor.DisplayProperties_CollisionLow();
+                    }
+                }
+                if (entryType == ModelEntrySelectionType.CollisionHigh)
+                {
+                    if (Screen.ResourceHandler.ER_CollisionHigh != null)
+                    {
+                        CollisionPropertyEditor.DisplayProperties_CollisionHigh();
+                    }
                 }
             }
         }
@@ -472,7 +494,10 @@ public class ModelPropertyEditor
 
         for (int i = 0; i < entry.Count; i++)
         {
-            DisplayProperties_Material_GXItem(entry[i], i);
+            if (entry[i] != null)
+            {
+                DisplayProperties_Material_GXItem(entry[i], i);
+            }
         }
     }
 
@@ -791,7 +816,10 @@ public class ModelPropertyEditor
         {
             for (int i = 0; i < entry.FaceSets.Count; i++)
             {
-                DisplayProperties_Mesh_FaceSet(entry.FaceSets[i], i);
+                if (entry.FaceSets[i] != null)
+                {
+                    DisplayProperties_Mesh_FaceSet(entry.FaceSets[i], i);
+                }
             }
         }
 
@@ -799,7 +827,10 @@ public class ModelPropertyEditor
         {
             for (int i = 0; i < entry.VertexBuffers.Count; i++)
             {
-                DisplayProperties_Mesh_VertexBuffers(entry.VertexBuffers[i], i);
+                if (entry.VertexBuffers[i] != null)
+                {
+                    DisplayProperties_Mesh_VertexBuffers(entry.VertexBuffers[i], i);
+                }
             }
         }
 
@@ -1073,7 +1104,7 @@ public class ModelPropertyEditor
 
     private void DisplayProperties_BaseSkeletons()
     {
-        var index = Screen.ModelHierarchy._selectedBaseSkeleton;
+        var index = Screen.ModelHierarchy._selectedBaseSkeletonBone;
 
         if (index == -1)
             return;
@@ -1186,7 +1217,7 @@ public class ModelPropertyEditor
 
     private void DisplayProperties_AllSkeletons()
     {
-        var index = Screen.ModelHierarchy._selectedAllSkeleton;
+        var index = Screen.ModelHierarchy._selectedAllSkeletonBone;
 
         if (index == -1)
             return;
@@ -1296,4 +1327,5 @@ public class ModelPropertyEditor
 
         entry.NodeIndex = nodeIndex;
     }
+
 }

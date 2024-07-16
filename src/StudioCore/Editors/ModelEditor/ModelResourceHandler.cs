@@ -1,23 +1,16 @@
-﻿using HKLib.hk2018.hkHashMapDetail;
-using HKLib.hk2018.hkWeakPtrTest;
-using Octokit;
+﻿using HKLib.hk2018;
+using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Formats.PureFLVER.FLVER2;
 using StudioCore.Gui;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
-using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Numerics;
-using System.Text;
 using System.Threading.Tasks;
-using Veldrid.Utilities;
 
 namespace StudioCore.Editors.ModelEditor
 {
@@ -26,6 +19,9 @@ namespace StudioCore.Editors.ModelEditor
         public Formats.PureFLVER.FLVER2.FLVER2 CurrentFLVER;
         public FlverModelInfo CurrentFLVERInfo;
         public string VirtualResourcePath = "";
+
+        public hkRootLevelContainer ER_CollisionLow;
+        public hkRootLevelContainer ER_CollisionHigh;
 
         public ModelEditorScreen Screen;
 
@@ -45,6 +41,7 @@ namespace StudioCore.Editors.ModelEditor
         /// <param name="name"></param>
         public void LoadCharacter(string name)
         {
+            Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
             LoadEditableModel(name, ModelEditorModelType.Character);
             LoadRepresentativeModel(name, ModelEditorModelType.Character);
@@ -56,8 +53,11 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadAsset(string name)
         {
+            Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
             LoadEditableModel(name, ModelEditorModelType.Object);
+            LoadEditableCollisionLow(name, ModelEditorModelType.Object);
+            LoadEditableCollisionHigh(name, ModelEditorModelType.Object);
             LoadRepresentativeModel(name, ModelEditorModelType.Object);
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Object, "");
         }
@@ -67,6 +67,7 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadPart(string name)
         {
+            Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
             LoadEditableModel(name, ModelEditorModelType.Parts);
             LoadRepresentativeModel(name, ModelEditorModelType.Parts);
@@ -78,6 +79,7 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadMapPiece(string name, string mapId)
         {
+            Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
             LoadEditableModel(name, ModelEditorModelType.MapPiece, mapId);
             LoadRepresentativeModel(name, ModelEditorModelType.MapPiece, mapId);
@@ -132,6 +134,84 @@ namespace StudioCore.Editors.ModelEditor
                         }
                     }
                     reader.Dispose();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Loads the editable collision
+        /// </summary>
+        private void LoadEditableCollisionLow(string modelid, ModelEditorModelType modelType, string mapid = null)
+        {
+            if (Smithbox.ProjectType is ProjectType.ER)
+            {
+                ResourceDescriptor collisionAsset = AssetLocator.GetAssetGeomHKXBinder(modelid, "_l");
+
+                TaskLogs.AddLog(collisionAsset.AssetPath);
+                if (collisionAsset.AssetPath != null)
+                {
+                    if (Smithbox.ProjectType is ProjectType.ER)
+                    {
+                        BND4Reader reader = new BND4Reader(collisionAsset.AssetPath);
+
+                        foreach (var file in reader.Files)
+                        {
+                            var fileName = file.Name.ToLower();
+                            var modelName = modelid.ToLower();
+
+                            var fileBytes = reader.ReadFile(file);
+
+                            if (fileName.Contains(modelName) && fileName.Contains(".hkx"))
+                            {
+                                HavokBinarySerializer serializer = new HavokBinarySerializer();
+                                using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray()))
+                                {
+                                    ER_CollisionLow = (hkRootLevelContainer)serializer.Read(memoryStream);
+                                }
+                                break;
+                            }
+                        }
+                        reader.Dispose();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Loads the editable collision
+        /// </summary>
+        private void LoadEditableCollisionHigh(string modelid, ModelEditorModelType modelType, string mapid = null)
+        {
+            if (Smithbox.ProjectType is ProjectType.ER)
+            {
+                ResourceDescriptor collisionAsset = AssetLocator.GetAssetGeomHKXBinder(modelid, "_h");
+
+                TaskLogs.AddLog(collisionAsset.AssetPath);
+                if (collisionAsset.AssetPath != null)
+                {
+                    if (Smithbox.ProjectType is ProjectType.ER)
+                    {
+                        BND4Reader reader = new BND4Reader(collisionAsset.AssetPath);
+
+                        foreach (var file in reader.Files)
+                        {
+                            var fileName = file.Name.ToLower();
+                            var modelName = modelid.ToLower();
+
+                            var fileBytes = reader.ReadFile(file);
+
+                            if (fileName.Contains(modelName) && fileName.Contains(".hkx"))
+                            {
+                                HavokBinarySerializer serializer = new HavokBinarySerializer();
+                                using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray()))
+                                {
+                                    ER_CollisionHigh = (hkRootLevelContainer)serializer.Read(memoryStream);
+                                }
+                                break;
+                            }
+                        }
+                        reader.Dispose();
+                    }
                 }
             }
         }

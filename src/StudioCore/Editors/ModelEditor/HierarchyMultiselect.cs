@@ -31,21 +31,21 @@ namespace StudioCore.Editors.ModelEditor
             return StoredIndices.Contains(index);
         }
 
-        public void HandleMultiselect(int storedIndex, int currentIndex)
+        public void HandleMultiselect(int currentSelectionIndex, int currentIndex)
         {
             // Multi-Select: Range Select
             if (InputTracker.GetKey(KeyBindings.Current.ModelEditor_Multiselect_Range))
             {
-                var start = storedIndex;
+                var start = currentSelectionIndex;
                 var end = currentIndex;
 
                 if (end < start)
                 {
                     start = currentIndex;
-                    end = storedIndex;
+                    end = currentSelectionIndex;
                 }
 
-                for (int k = start; k < end; k++)
+                for (int k = start; k <= end; k++)
                 {
                     if (StoredIndices.Contains(k))
                     {

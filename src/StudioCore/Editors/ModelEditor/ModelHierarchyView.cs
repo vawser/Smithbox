@@ -21,14 +21,14 @@ public class ModelHierarchyView
     private ModelEditorScreen Screen;
     private HierarchyContextMenu ContextMenu;
 
-    private HierarchyMultiselect DummyMultiselect;
-    private HierarchyMultiselect MaterialMultiselect;
-    private HierarchyMultiselect GxListMultiselect;
-    private HierarchyMultiselect NodeMultiselect;
-    private HierarchyMultiselect MeshMultiselect;
-    private HierarchyMultiselect BufferLayoutMultiselect;
-    private HierarchyMultiselect BaseSkeletonMultiselect;
-    private HierarchyMultiselect AllSkeletonMultiselect;
+    public HierarchyMultiselect DummyMultiselect;
+    public HierarchyMultiselect MaterialMultiselect;
+    public HierarchyMultiselect GxListMultiselect;
+    public HierarchyMultiselect NodeMultiselect;
+    public HierarchyMultiselect MeshMultiselect;
+    public HierarchyMultiselect BufferLayoutMultiselect;
+    public HierarchyMultiselect BaseSkeletonMultiselect;
+    public HierarchyMultiselect AllSkeletonMultiselect;
 
     private string _searchInput = "";
 
@@ -81,6 +81,7 @@ public class ModelHierarchyView
                 DisplaySection_Meshes();
                 DisplaySection_BufferLayouts();
                 DisplaySection_Skeletons();
+                DisplaySection_Collision();
             }
         }
 
@@ -103,14 +104,16 @@ public class ModelHierarchyView
     public int _selectedNode = -1;
     public int _selectedMesh = -1;
     public int _selectedBufferLayout = -1;
-    public int _selectedBaseSkeleton = -1;
-    public int _selectedAllSkeleton = -1;
+    public int _selectedBaseSkeletonBone = -1;
+    public int _selectedAllSkeletonBone = -1;
 
     public int _subSelectedTextureRow = -1;
     public int _subSelectedGXItemRow = -1;
     public int _subSelectedFaceSetRow = -1;
     public int _subSelectedVertexBufferRow = -1;
 
+    public int _selectedLowCollision = -1;
+    public int _selectedHighCollision = -1;
 
     public void ResetSelection()
     {
@@ -122,12 +125,14 @@ public class ModelHierarchyView
         _selectedNode = -1;
         _selectedMesh = -1;
         _selectedBufferLayout = -1;
-        _selectedBaseSkeleton = -1;
-        _selectedAllSkeleton = -1;
+        _selectedBaseSkeletonBone = -1;
+        _selectedAllSkeletonBone = -1;
         _subSelectedTextureRow = -1;
         _subSelectedGXItemRow = -1;
         _subSelectedFaceSetRow = -1;
         _subSelectedVertexBufferRow = -1;
+        _selectedLowCollision = -1;
+        _selectedHighCollision = -1;
     }
 
 
@@ -175,7 +180,7 @@ public class ModelHierarchyView
                         }
                         else
                         {
-                            ContextMenu.DummyRowContextMenu(i, curDummy);
+                            ContextMenu.DummyRowContextMenu(i);
                         }
                     }
 
@@ -238,7 +243,7 @@ public class ModelHierarchyView
                         }
                         else
                         {
-                            ContextMenu.MaterialRowContextMenu(i, curMaterial);
+                            ContextMenu.MaterialRowContextMenu(i);
                         }
                     }
 
@@ -298,7 +303,7 @@ public class ModelHierarchyView
                         }
                         else
                         {
-                            ContextMenu.GXListRowContextMenu(i, curGXList);
+                            ContextMenu.GXListRowContextMenu(i);
                         }
                     }
 
@@ -360,7 +365,7 @@ public class ModelHierarchyView
                         }
                         else
                         {
-                            ContextMenu.NodeRowContextMenu(i, curNode);
+                            ContextMenu.NodeRowContextMenu(i);
                         }
                     }
 
@@ -430,7 +435,7 @@ public class ModelHierarchyView
                         }
                         else
                         {
-                            ContextMenu.MeshRowContextMenu(i, curMesh);
+                            ContextMenu.MeshRowContextMenu(i);
                         }
                     }
 
@@ -523,16 +528,16 @@ public class ModelHierarchyView
 
                 if (ModelEditorSearch.IsModelEditorSearchMatch_SkeletonBone(_searchInput, curBaseSkeleton, Screen.ResourceHandler.CurrentFLVER, i))
                 {
-                    if (ImGui.Selectable($"Bone {i} - {node}", (BaseSkeletonMultiselect.IsMultiselected(i) || _selectedBaseSkeleton == i)))
+                    if (ImGui.Selectable($"Bone {i} - {node}##baseSkeletonBone{i}", (BaseSkeletonMultiselect.IsMultiselected(i) || _selectedBaseSkeletonBone == i)))
                     {
-                        BaseSkeletonMultiselect.HandleMultiselect(_selectedBaseSkeleton, i);
+                        BaseSkeletonMultiselect.HandleMultiselect(_selectedBaseSkeletonBone, i);
 
                         ResetSelection();
-                        _selectedBaseSkeleton = i;
+                        _selectedBaseSkeletonBone = i;
                         _lastSelectedEntry = ModelEntrySelectionType.BaseSkeleton;
                     }
 
-                    if (_selectedBaseSkeleton == i)
+                    if (_selectedBaseSkeletonBone == i)
                     {
                         if (BaseSkeletonMultiselect.HasValidMultiselection())
                         {
@@ -544,7 +549,7 @@ public class ModelHierarchyView
                         }
                     }
 
-                    if (FocusSelection && _selectedBaseSkeleton == i)
+                    if (FocusSelection && _selectedBaseSkeletonBone == i)
                     {
                         FocusSelection = false;
                         ImGui.SetScrollHereY();
@@ -573,16 +578,16 @@ public class ModelHierarchyView
 
                 if (ModelEditorSearch.IsModelEditorSearchMatch_SkeletonBone(_searchInput, curAllSkeleton, Screen.ResourceHandler.CurrentFLVER, i))
                 {
-                    if (ImGui.Selectable($"Bone {i} - {node}", (AllSkeletonMultiselect.IsMultiselected(i) || _selectedAllSkeleton == i)))
+                    if (ImGui.Selectable($"Bone {i} - {node}##allSkeletonBone{i}", (AllSkeletonMultiselect.IsMultiselected(i) || _selectedAllSkeletonBone == i)))
                     {
-                        AllSkeletonMultiselect.HandleMultiselect(_selectedAllSkeleton, i);
+                        AllSkeletonMultiselect.HandleMultiselect(_selectedAllSkeletonBone, i);
 
                         ResetSelection();
-                        _selectedAllSkeleton = i;
+                        _selectedAllSkeletonBone = i;
                         _lastSelectedEntry = ModelEntrySelectionType.AllSkeleton;
                     }
 
-                    if (_selectedAllSkeleton == i)
+                    if (_selectedAllSkeletonBone == i)
                     {
                         if (AllSkeletonMultiselect.HasValidMultiselection())
                         {
@@ -594,7 +599,7 @@ public class ModelHierarchyView
                         }
                     }
 
-                    if (FocusSelection && _selectedAllSkeleton == i)
+                    if (FocusSelection && _selectedAllSkeletonBone == i)
                     {
                         FocusSelection = false;
                         ImGui.SetScrollHereY();
@@ -607,6 +612,37 @@ public class ModelHierarchyView
         if (Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons.Count < 1)
         {
             ContextMenu.AllSkeletonHeaderContextMenu();
+        }
+    }
+
+    private void DisplaySection_Collision()
+    {
+        var index = 0;
+
+        if (Screen.ResourceHandler.ER_CollisionLow != null || Screen.ResourceHandler.ER_CollisionHigh != null)
+        {
+            if (ImGui.CollapsingHeader("Collision"))
+            {
+                if (Screen.ResourceHandler.ER_CollisionLow != null)
+                {
+                    if (ImGui.Selectable($"Low Collision {index}", _selectedLowCollision == index))
+                    {
+                        ResetSelection();
+                        _selectedLowCollision = index;
+                        _lastSelectedEntry = ModelEntrySelectionType.CollisionLow;
+                    }
+                }
+
+                if (Screen.ResourceHandler.ER_CollisionHigh != null)
+                {
+                    if (ImGui.Selectable($"High Collision {index}", _selectedHighCollision == index))
+                    {
+                        ResetSelection();
+                        _selectedHighCollision = index;
+                        _lastSelectedEntry = ModelEntrySelectionType.CollisionHigh;
+                    }
+                }
+            }
         }
     }
 }

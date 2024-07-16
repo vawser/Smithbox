@@ -1,22 +1,9 @@
-﻿using DotNext.Collections.Generic;
-using SoulsFormats;
-using StudioCore.Core;
+﻿using SoulsFormats;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
-using StudioCore.Editors.ModelEditor.Toolbar;
 using StudioCore.MsbEditor;
-using StudioCore.Resource;
 using StudioCore.Scene;
-using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
-using static SoulsFormats.BTPB;
-using static SoulsFormats.MSB_AC6.Region;
 
 namespace StudioCore.Editor;
 

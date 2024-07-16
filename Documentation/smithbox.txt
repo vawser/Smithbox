@@ -71,10 +71,12 @@ Map Editor:
  - Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
  
 Model Editor: 
- - Add "Copy As" action for top-level node that lets the user duplicate the entire "chr" set: anibnd, chrbnd, etc
  - FBX Export of Loaded Model
  - Add easier toggling of model masks based on associated NpcParam (for characters)
  - Implement Material/MATBIN editor
+ - Add floating text for dummy poly ref IDs
+ - Add floating text for co-ordinate direction (X, Y, Z)
+ - Add dummy poly forward/upwards representation
 
 Param Editor:
  - Add proper support for ColorEdit section so it appears properly with compare col 
@@ -85,7 +87,6 @@ Param Editor:
 Text Editor:
  - Add generator tool for quickly adding entires, e.g. weapon entries: start ID, step amount, end ID, default title, default desc
  - FMG Exporter is adding unneed \n newlines on export and then causing double newlines on import
- - Separate Patch FMG seems to be broken too
  - Adjust FMG Updater checks so user's without the necessary files know what is lacking
  
 Gparam Editor:
@@ -110,13 +111,13 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
- - Add floating text for dummy poly ref IDs
- - Add floating text for co-ordinate direction (X, Y, Z)
- - Add dummy poly forward/upwards representation
+Text Editor:
+ - FIX: the patch separation of FMGs
+
+Interface:
+ - ADD: Change the toolbar panels into single "Actions" panel with collapsible groups + add drop-down actions to menu-bar
  
-TODO:
- - Add ability to add properties if empty (e.g. Dummies)
- - Backing data is not accurate for Bones (Nodes)
- - Bypass Resource Manager stuff: implement a direct method of generating the backing aspects of a Resource, e.g. listern, rendering stuff, etc
- 
- - Add undo support for the row actions
+Model Editor:
+ - FIX: Backing data is not accurate for Bones (Nodes)
+ - FIX: Bypass Resource Manager stuff: implement a direct method of generating the backing aspects of a Resource, e.g. listener, rendering stuff, etc
+ - ADD: Add undo/redo support for the property values

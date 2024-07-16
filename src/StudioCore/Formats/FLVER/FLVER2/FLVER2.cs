@@ -72,6 +72,10 @@ namespace StudioCore.Formats.PureFLVER.FLVER2
             Meshes = new List<Mesh>();
             BufferLayouts = new List<BufferLayout>();
         }
+        public FLVER2 Clone()
+        {
+            return (FLVER2)MemberwiseClone();
+        }
 
         /// <summary>
         /// Returns true if the data appears to be a FLVER.

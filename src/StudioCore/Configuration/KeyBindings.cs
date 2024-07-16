@@ -99,6 +99,7 @@ public class KeyBindings
     public class Bindings
     {
         // Core
+        public KeyBind Core_Create = new("Create", KeybindCategory.Core, Key.Insert);
         public KeyBind Core_Delete = new("Delete", KeybindCategory.Core, Key.Delete);
         public KeyBind Core_Duplicate = new("Duplicate", KeybindCategory.Core, Key.D, true);
         public KeyBind Core_Redo = new("Redo", KeybindCategory.Core, Key.Y, true);
@@ -179,6 +180,8 @@ public class KeyBindings
         public KeyBind ModelEditor_ToggleVisibilitySection = new("Toggle Section (when clicking Visibility Icon)", KeybindCategory.ModelEditor, Key.A);
         public KeyBind ModelEditor_Multiselect = new("Multi-Select Row", KeybindCategory.ModelEditor, Key.Z);
         public KeyBind ModelEditor_Multiselect_Range = new("Multi-Select Row", KeybindCategory.ModelEditor, Key.Z, false, false, true);
+        public KeyBind ModelEditor_ExportModel = new("Export Model", KeybindCategory.ModelEditor, Key.K, true);
+        public KeyBind ModelEditor_ExportModelTextures = new("Export Model Textures", KeybindCategory.ModelEditor, Key.T, true);
 
         // Param
         public KeyBind Param_Copy = new("Copy", KeybindCategory.ParamEditor, Key.C, true);

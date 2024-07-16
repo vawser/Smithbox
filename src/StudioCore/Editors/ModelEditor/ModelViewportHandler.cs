@@ -3,6 +3,7 @@ using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Gui;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;

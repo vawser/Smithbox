@@ -17,6 +17,8 @@ namespace StudioCore.Editors.ModelEditor
         Mesh,
         BufferLayout,
         BaseSkeleton,
-        AllSkeleton
+        AllSkeleton,
+        CollisionLow,
+        CollisionHigh
     }
 }

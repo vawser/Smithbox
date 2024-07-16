@@ -3,26 +3,19 @@ using StudioCore.Editor;
 using StudioCore.Gui;
 using StudioCore.Resource;
 using StudioCore.Scene;
-using System;
 using System.Collections.Generic;
 using System.Numerics;
-using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.Utilities;
 using Viewport = StudioCore.Gui.Viewport;
 using StudioCore.Configuration;
-using System.IO;
-using SoulsFormats;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
-using StudioCore.Editors.ModelEditor.Toolbar;
-using ModelCore.Editors.ModelEditor.Toolbar;
-using StudioCore.Locators;
 using StudioCore.Core;
-using System.ComponentModel;
+using StudioCore.Editors.ModelEditor.Actions;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -59,12 +52,13 @@ public class ModelEditorScreen : EditorScreen
     public bool ViewportUsingKeyboard;
     public Sdl2Window Window;
 
-    public ModelToolbar _modelToolbar;
-    public ModelToolbar_ActionList _modelToolbar_ActionList;
-    public ModelToolbar_Configuration _modelToolbar_Configuration;
-
     public ModelResourceHandler ResourceHandler;
     public ModelViewportHandler ViewportHandler;
+
+    public ToolWindow ToolWindow;
+    public ToolSubMenu ToolSubMenu;
+
+    public ActionSubMenu ActionSubMenu;
 
     public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -89,9 +83,9 @@ public class ModelEditorScreen : EditorScreen
         ModelHierarchy = new ModelHierarchyView(this);
         ModelPropertyEditor = new ModelPropertyEditor(this);
 
-        _modelToolbar = new ModelToolbar(EditorActionManager, this);
-        _modelToolbar_ActionList = new ModelToolbar_ActionList();
-        _modelToolbar_Configuration = new ModelToolbar_Configuration();
+        ToolWindow = new ToolWindow(this);
+        ToolSubMenu = new ToolSubMenu(this);
+        ActionSubMenu = new ActionSubMenu(this);
     }
 
     public void Init()
@@ -166,21 +160,11 @@ public class ModelEditorScreen : EditorScreen
                 EditorActionManager.RedoAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Scissors}");
-            if (ImGui.MenuItem("Remove", KeyBindings.Current.Core_Delete.HintText, false, _selection.IsSelection()))
-            {
-                ModelAction_DeleteProperty.DeleteFLVERProperty();
-            }
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false,
-                    _selection.IsSelection()))
-            {
-                ModelAction_DuplicateProperty.DuplicateFLVERProperty();
-            }
-
             ImGui.EndMenu();
         }
+
+        ActionSubMenu.DisplayMenu();
+        ToolSubMenu.DisplayMenu();
 
         if (ImGui.BeginMenu("View"))
         {
@@ -213,11 +197,11 @@ public class ModelEditorScreen : EditorScreen
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_AssetBrowser);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Toolbar"))
+            if (ImGui.MenuItem("Tool Configuration"))
             {
-                CFG.Current.Interface_ModelEditor_Toolbar = !CFG.Current.Interface_ModelEditor_Toolbar;
+                CFG.Current.Interface_ModelEditor_ToolConfigurationWindow = !CFG.Current.Interface_ModelEditor_ToolConfigurationWindow;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Toolbar);
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ToolConfigurationWindow);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Profiling"))
@@ -383,15 +367,8 @@ public class ModelEditorScreen : EditorScreen
             EditorActionManager.RedoAction();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
-        {
-            ModelAction_DuplicateProperty.DuplicateFLVERProperty();
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete))
-        {
-            ModelAction_DeleteProperty.DeleteFLVERProperty();
-        }
+        ActionSubMenu.Shortcuts();
+        ToolSubMenu.Shortcuts();
 
         if (!ViewportUsingKeyboard && !ImGui.GetIO().WantCaptureKeyboard)
         {
@@ -511,10 +488,9 @@ public class ModelEditorScreen : EditorScreen
         ModelHierarchy.OnGui();
         ModelPropertyEditor.OnGui();
 
-        if(CFG.Current.Interface_ModelEditor_Toolbar)
+        if(CFG.Current.Interface_ModelEditor_ToolConfigurationWindow)
         {
-            _modelToolbar_ActionList.OnGui();
-            _modelToolbar_Configuration.OnGui();
+            ToolWindow.OnGui();
         }
 
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);
@@ -545,6 +521,9 @@ public class ModelEditorScreen : EditorScreen
         {
             ModelSelectionView.OnProjectChanged();
             ModelHierarchy.OnProjectChanged();
+            ToolWindow.OnProjectChanged();
+            ToolSubMenu.OnProjectChanged();
+            ActionSubMenu.OnProjectChanged();
         }
 
         ResourceHandler.CurrentFLVERInfo = null;
@@ -567,15 +546,4 @@ public class ModelEditorScreen : EditorScreen
         Save(); // Just call save.
     }
 
-    public void OnEntityContextMenu(Entity ent)
-    {
-        if (ImGui.MenuItem("Duplicate"))
-        {
-            ModelAction_DuplicateProperty.DuplicateFLVERProperty();
-        }
-        if (ImGui.MenuItem("Delete"))
-        {
-            ModelAction_DeleteProperty.DeleteFLVERProperty();
-        }
-    }
 }
