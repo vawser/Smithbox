@@ -18,6 +18,8 @@
         { "id": "57", "name": "Playthrough Lap: 7", "tags": [ "progression", "vanilla" ] },
         { "id": "58", "name": "Playthrough Lap: 8", "tags": [ "progression", "vanilla" ] },
     
+        { "id": "70", "name": "Apply DLC Game Clear SpEffect (Occurs if Radahn, Consort of Miquella is beated and NG+ is entered)", "tags": [ "progression", "shadow of the erdtree", "sote", "dlc" ] },
+        
         { "id": "100", "name": "Story: Start", "tags": [ "progression", "vanilla" ] },
         { "id": "101", "name": "Story: Reached Tutorial", "tags": [ "progression", "vanilla" ] },
         { "id": "102", "name": "Story: Reached Limgrave", "tags": [ "progression", "vanilla" ] },

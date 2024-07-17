@@ -594,7 +594,18 @@ public class TextEditorScreen : EditorScreen
 
         foreach (var info in infos)
         {
-            if (info.PatchParent == null
+            var proceed = false;
+
+            if(!CFG.Current.FMG_NoFmgPatching && info.PatchParent == null)
+            {
+                proceed = true;
+            }
+            else if(CFG.Current.FMG_NoFmgPatching)
+            {
+                proceed = true;
+            }
+
+            if (proceed
                 && info.FileCategory == uiType
                 && info.EntryType is FmgEntryTextType.Title or FmgEntryTextType.TextBody)
             {
