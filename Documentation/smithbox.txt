@@ -123,7 +123,10 @@ Interface:
  
 Text Editor:
  - FIX: the patch separation of FMGs
+ - FIX: vanilla entry should be preferred over dlc01/dlc02 entry
 
 Model Editor:
+ - FIX: multi-select should be reflected in viewport selection + multi viewport selection should start row multi-select
  - FIX: Backing data is not accurate for Bones (Nodes)
  - FIX: Bypass Resource Manager stuff: implement a direct method of generating the backing aspects of a Resource, e.g. listener, rendering stuff, etc
+ 
