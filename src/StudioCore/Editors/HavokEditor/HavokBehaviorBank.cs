@@ -1,4 +1,5 @@
-﻿using HKLib.Serialization.hk2018;
+﻿using HKLib.hk2018;
+using HKLib.Serialization.hk2018;
 using HKLib.Serialization.hk2018.Binary;
 using HKLib.Serialization.hk2018.Binary.Util;
 using Microsoft.Extensions.Logging;
@@ -13,13 +14,13 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.BehaviorEditor;
+namespace StudioCore.Editors.HavokEditor;
 public static class HavokBehaviorBank
 {
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
 
-    public static Dictionary<BehaviorFileInfo, IBinder> FileBank { get; private set; } = new();
+    public static Dictionary<BehaviorFileInfo, BND4Reader> FileBank { get; private set; } = new();
 
     public static void SaveBehaviors()
     {
@@ -38,8 +39,10 @@ public static class HavokBehaviorBank
         }
     }
 
-    public static void SaveBehavior(BehaviorFileInfo info, IBinder binder)
+    public static void SaveBehavior(BehaviorFileInfo info, BND4Reader binder)
     {
+        return;
+        /*
         if (binder == null)
             return;
 
@@ -51,7 +54,7 @@ public static class HavokBehaviorBank
         var fileDir = @"\chr";
         var fileExt = @".behbnd.dcx";
 
-        foreach (BinderFile file in binder.Files)
+        foreach (var file in binder.Files)
         {
             foreach (var hkxInfo in info.HkxFiles)
             {
@@ -70,9 +73,6 @@ public static class HavokBehaviorBank
         {
             case ProjectType.ER:
                 fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                break;
-            case ProjectType.DS3:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
                 break;
             default:
                 TaskLogs.AddLog($"Invalid ProjectType during SaveBehavior");
@@ -96,6 +96,7 @@ public static class HavokBehaviorBank
             File.WriteAllBytes(assetMod, fileBytes);
             TaskLogs.AddLog($"Saved at: {assetMod}");
         }
+        */
     }
 
     public static void LoadBehaviors()
@@ -155,46 +156,40 @@ public static class HavokBehaviorBank
         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
         BehaviorFileInfo fileStruct = new BehaviorFileInfo(name, path);
 
-        IBinder binder = BND4.Read(DCX.Decompress(path));
+        BND4Reader binder = new BND4Reader(path);
 
         FileBank.Add(fileStruct, binder);
     }
 
-    // Done separately from the default load so we populate the BehaviorFiles of only the target .behbnd
-    public static void LoadSelectedHavokBehaviorFiles(BehaviorFileInfo info, IBinder binder)
+    public static hkRootLevelContainer LoadSelectedHavokBehaviorFile(BehaviorFileInfo info, BND4Reader binder)
     {
         TaskLogs.AddLog($"LoadSelectedHkxFiles");
 
-        // Only add once, as this function will be called every time the binder selection is changed
         if (!info.LoadedHkxFiles)
         {
             info.LoadedHkxFiles = true;
 
             foreach (var file in binder.Files)
             {
-                var filePath = file.Name;
-                var fileName = Path.GetFileNameWithoutExtension(file.Name);
+                var fileName = file.Name.ToLower();
+                var fileBytes = binder.ReadFile(file);
 
-                if (filePath.Contains(".hkx") && filePath.Contains("Behaviors"))
+                TaskLogs.AddLog($"fileName: {fileName}");
+
+                if (fileName.Contains("behaviors") && fileName.Contains(".hkx"))
                 {
-                    TaskLogs.AddLog(filePath);
-                    try
-                    {
-                        BND4 bnd = BND4.Read(file.Bytes);
-                        byte[] data = bnd.Files.Single(x => x.Name == filePath).Bytes.ToArray();
+                    TaskLogs.AddLog($"fileName: HavokBinarySerializer");
 
-                        HkxFileInfo hkxInfoEntry = new HkxFileInfo(fileName, new MemoryStream(data));
-                        info.HkxFiles.Add(hkxInfoEntry);
-
-                        TaskLogs.AddLog($"Added entry: {fileName}");
-                    }
-                    catch (Exception ex)
+                    HavokBinarySerializer serializer = new HavokBinarySerializer();
+                    using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray()))
                     {
-                        TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}");
+                        return (hkRootLevelContainer)serializer.Read(memoryStream);
                     }
                 }
             }
         }
+
+        return null;
     }
 
     public class BehaviorFileInfo

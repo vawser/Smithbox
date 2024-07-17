@@ -57,6 +57,17 @@ public class FMGLanguage
         ResourceDescriptor itemMsgPath = TextLocator.GetItemMsgbnd(LanguageFolder);
         ResourceDescriptor menuMsgPath = TextLocator.GetMenuMsgbnd(LanguageFolder);
 
+        if(Smithbox.ProjectType is ProjectType.ER)
+        {
+            itemMsgPath = TextLocator.GetItemMsgbnd(LanguageFolder, false, "_dlc02");
+            menuMsgPath = TextLocator.GetMenuMsgbnd(LanguageFolder, false, "_dlc02");
+        }
+        if (Smithbox.ProjectType is ProjectType.DS3)
+        {
+            itemMsgPath = TextLocator.GetItemMsgbnd(LanguageFolder, false, "_dlc2");
+            menuMsgPath = TextLocator.GetMenuMsgbnd(LanguageFolder, false, "_dlc2");
+        }
+
         if (LoadItemMenuMsgBnds(itemMsgPath, menuMsgPath))
         {
             return true;
@@ -162,7 +173,7 @@ public class FMGLanguage
             }
         }
 
-        // Handle output types for ER
+        // Handle output types for DS3
         if (Smithbox.ProjectType is ProjectType.DS3)
         {
             switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)

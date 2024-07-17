@@ -45,6 +45,7 @@ public static class FilterStrings
     // Exported FMGs (*.fmg.json)|*.fmg.json
     public static string FmgJsonFilter = "fmg.json";
 
+
     // All file filter is implicitly added by NFD. Ideally this is used explicitly.
     // All files|*.*
 }

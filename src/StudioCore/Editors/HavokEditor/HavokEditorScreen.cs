@@ -1,19 +1,20 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.Editors.BehaviorEditor;
 using StudioCore.Editors.ParticleEditor;
 using StudioCore.Editors.TalkEditor;
 using System.Numerics;
 using System.Reflection;
 using Veldrid;
 using Veldrid.Sdl2;
-using static StudioCore.Editors.BehaviorEditor.HavokBehaviorBank;
 using HKLib.Serialization.hk2018.Binary;
 using HKLib.Serialization.hk2018.Xml;
 using StudioCore.Core;
+using HKLib.hk2018;
+using StudioCore.Editors.HavokEditor;
+using static StudioCore.Editors.HavokEditor.HavokBehaviorBank;
 
-namespace StudioCore.BehaviorEditor;
+namespace StudioCore.HavokEditor;
 
 public class HavokEditorScreen : EditorScreen
 {
@@ -24,24 +25,25 @@ public class HavokEditorScreen : EditorScreen
     public ActionManager EditorActionManager = new();
 
     private BehaviorFileInfo _selectedFileInfo;
-    private IBinder _selectedBinder;
+    private BND4Reader _selectedBinder;
     private string _selectedBinderKey;
 
-    private string _selectedHkxKey;
-    private HkxFileInfo _selectedHkxFileInfo;
+    public hkRootLevelContainer CurrentBehaviorFile;
+    private HavokBehaviorGraph BehaviorGraph;
+
 
     public HavokEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-
+        BehaviorGraph = new HavokBehaviorGraph(this);
     }
 
-    public string EditorName => "Havok Editor##HavokEditor";
-    public string CommandEndpoint => "havok";
-    public string SaveType => "Havok";
+    public string EditorName => "Behavior Editor##HavokEditor";
+    public string CommandEndpoint => "behavior";
+    public string SaveType => "Behavior";
 
     public void Init()
     {
-        ShowSaveOption = false;
+        ShowSaveOption = true;
     }
 
     public void DrawEditorMenu()
@@ -83,8 +85,7 @@ public class HavokEditorScreen : EditorScreen
             if (HavokBehaviorBank.IsLoaded)
             {
                 HavokBehaviorFileView();
-                HavokBehaviorSelectView();
-                HavokBehaviorTreeView();
+                BehaviorGraph.DisplayGraph();
             }
         }
 
@@ -105,44 +106,8 @@ public class HavokEditorScreen : EditorScreen
                 _selectedFileInfo = info;
                 _selectedBinder = binder;
 
-                HavokBehaviorBank.LoadSelectedHavokBehaviorFiles(info, binder);
+                CurrentBehaviorFile = HavokBehaviorBank.LoadSelectedHavokBehaviorFile(info, binder);
             }
-        }
-
-        ImGui.End();
-    }
-
-    public void HavokBehaviorSelectView()
-    {
-        // HKX
-        ImGui.Begin("Havok Behavior##HavokBehaviorFileList");
-
-        if (_selectedFileInfo != null)
-        {
-            for (int i = 0; i < _selectedFileInfo.HkxFiles.Count; i++)
-            {
-                HkxFileInfo entry = _selectedFileInfo.HkxFiles[i];
-
-                // i is added into the name to account for duplicate names across multiple directories
-                if (ImGui.Selectable($@" {entry.Name}##{entry.Name}{i}", entry.Name == _selectedHkxKey))
-                {
-                    _selectedHkxKey = $"{entry.Name}{i}";
-                    _selectedHkxFileInfo = entry;
-                }
-            }
-        }
-
-        ImGui.End();
-    }
-
-    public void HavokBehaviorTreeView()
-    {
-        // Class
-        ImGui.Begin("Data##HavokBehaviorTree");
-
-        if(_selectedHkxFileInfo != null)
-        {
-
         }
 
         ImGui.End();

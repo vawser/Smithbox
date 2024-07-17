@@ -111,12 +111,19 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
-Text Editor:
- - FIX: the patch separation of FMGs
+Param Editor:
+ - FIX: move Color Pickers into in-line position with last color field
+ - ADD: let Color Picker work for changing color
 
+Behavior Editor:
+ - ADD: implement it
+ 
 Interface:
  - ADD: Change the toolbar panels into single "Actions" panel with collapsible groups + add drop-down actions to menu-bar
  
+Text Editor:
+ - FIX: the patch separation of FMGs
+
 Model Editor:
  - FIX: Backing data is not accurate for Bones (Nodes)
  - FIX: Bypass Resource Manager stuff: implement a direct method of generating the backing aspects of a Resource, e.g. listener, rendering stuff, etc

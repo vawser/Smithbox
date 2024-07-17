@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using Microsoft.AspNetCore.Components.Forms;
-using StudioCore.BehaviorEditor;
 using StudioCore.Configuration;
 using StudioCore.CutsceneEditor;
 using StudioCore.Editor;
@@ -12,6 +11,7 @@ using StudioCore.Editors.TimeActEditor;
 using StudioCore.EmevdEditor;
 using StudioCore.Graphics;
 using StudioCore.GraphicsEditor;
+using StudioCore.HavokEditor;
 using StudioCore.Interface;
 using StudioCore.MaterialEditor;
 using StudioCore.ParticleEditor;

@@ -101,6 +101,19 @@ public static class FmgExporter
 
         var itemPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder).AssetPath;
         var menuPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder).AssetPath;
+
+
+        if (Smithbox.ProjectType is ProjectType.ER)
+        {
+            itemPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "_dlc02").AssetPath;
+            menuPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "_dlc02").AssetPath;
+        }
+        if (Smithbox.ProjectType is ProjectType.DS3)
+        {
+            itemPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "_dlc2").AssetPath;
+            menuPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "_dlc2").AssetPath;
+        }
+
         var itemPath_Vanilla = itemPath.Replace(Smithbox.ProjectRoot, Smithbox.GameRoot);
         var menuPath_Vanilla = menuPath.Replace(Smithbox.ProjectRoot, Smithbox.GameRoot);
 

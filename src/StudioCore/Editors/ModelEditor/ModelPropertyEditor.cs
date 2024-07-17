@@ -2,6 +2,10 @@
 using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Interface;
+using StudioCore.Platform;
+using StudioCore.Utilities;
+using System.Collections.Generic;
+using System.IO;
 using System.Numerics;
 using static SoulsFormats.PARAM;
 using static StudioCore.Formats.PureFLVER.FLVER2.FLVER2;
@@ -529,7 +533,7 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Path");
-        ImguiUtils.ShowHoverTooltip("Network path to the texture file to use.");
+        ImguiUtils.ShowHoverTooltip("Network path to the texture file to use.\n\nThe only important aspect of the path is the filename, as all textures are grouped into a texture pool in-game.\n\nSetting a texture filepath here will override the path used within the MATBIN.\n\nIt is recommended you include your texture within the model's texbnd.dcx, as that will be loaded into the texture pool automatically when the character is loaded (like wise for other asset types).");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Scale");
@@ -549,14 +553,27 @@ public class ModelPropertyEditor
         }
 
         ImGui.AlignTextToFramePadding();
-        ImGui.SetNextItemWidth(colWidth);
+        ImGui.SetNextItemWidth(colWidth * 0.9f);
         ImGui.InputText($"##Path_texture{index}", ref path, 255);
+        ImGui.SameLine();
+        if(ImGui.Button($@"{ForkAwesome.FileO}##filePicker{index}"))
+        {
+            if (PlatformUtils.Instance.OpenFileDialog("Select target texture...", new string[] { "png", "dds", "tif", "jpeg", "bmp" }, out var tPath))
+            {
+                var filename = Path.GetFileNameWithoutExtension(tPath);
+                path = $"{filename}.tif"; // Purely for consistency with vanilla
+            }
+        }
+        ImguiUtils.ShowHoverTooltip("Select the texture you wish to assign to this entry.");
+
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (texture.Path != path)
                 Screen.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMaterial_Texture_Path(texture, texture.Path, path));
         }
+
+        // TODO: re-render model with the new texture?
 
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat2($"##Scale_texture{index}", ref scale);
