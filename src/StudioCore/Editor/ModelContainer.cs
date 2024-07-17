@@ -11,17 +11,8 @@ namespace StudioCore.Editor;
 public class ModelContainer : ObjectContainer
 {
     public Entity Mesh_RootNode { get; set; }
-    public Entity MTD_RootNode { get; set; }
-    public Entity Matbin_RootNode { get; set; }
-    public Entity Layout_RootNode { get; set; }
     public Entity Bone_RootNode { get; set; }
     public Entity DummyPoly_RootNode { get; set; }
-
-    public Dictionary<int, string> MaterialDictionary = new Dictionary<int, string>();
-
-    public ModelContainer()
-    {
-    }
 
     public ModelContainer(Universe u, string name)
     {
@@ -40,13 +31,9 @@ public class ModelContainer : ObjectContainer
 
     public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy)
     {
-        MaterialDictionary.Clear();
-
         // Meshes
         for (var i = 0; i < flver.Meshes.Count; i++)
         {
-            TaskLogs.AddLog($"Mesh: {i}");
-
             var meshNode = new NamedEntity(this, flver.Meshes[i], $@"Mesh {i}", i);
             if (Universe.IsRendering)
             {
@@ -67,7 +54,6 @@ public class ModelContainer : ObjectContainer
         }
 
         // Bones
-        var boneEntList = new List<TransformableNamedEntity>();
         for (var i = 0; i < flver.Nodes.Count; i++)
         {
             var boneNode = new TransformableNamedEntity(this, flver.Nodes[i], $"Bone {i} {{ {flver.Nodes[i].Name} }}", i);
@@ -80,19 +66,7 @@ public class ModelContainer : ObjectContainer
             }
 
             Objects.Add(boneNode);
-            boneEntList.Add(boneNode);
-        }
-
-        for (var i = 0; i < flver.Nodes.Count; i++)
-        {
-            if (flver.Nodes[i].ParentIndex == -1)
-            {
-                Bone_RootNode.AddChild(boneEntList[i]);
-            }
-            else
-            {
-                boneEntList[flver.Nodes[i].ParentIndex].AddChild(boneEntList[i]);
-            }
+            Bone_RootNode.AddChild(boneNode);
         }
 
         // Dummy Polygons

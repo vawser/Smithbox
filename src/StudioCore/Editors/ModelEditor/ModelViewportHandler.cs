@@ -17,6 +17,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Reflection.Metadata;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Veldrid.Utilities;
 
@@ -39,19 +40,40 @@ namespace StudioCore.Editors.ModelEditor
             ContainerID = "";
         }
 
-        public void UpdateRepresentativeModel_Dummy(int selectionIndex)
+        public bool IsUpdatingViewportModel = false;
+
+        public void UpdateRepresentativeModel(int selectionIndex)
         {
+            IsUpdatingViewportModel = true;
+
             Screen._selection.ClearSelection();
 
             UpdateRepresentativeModel();
 
-            if(selectionIndex != -1)
+            if (Screen.ModelHierarchy._lastSelectedEntry == ModelEntrySelectionType.Dummy)
             {
-                var container = Screen._universe.LoadedModelContainers[ContainerID];
+                SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainers[ContainerID].DummyPoly_RootNode);
+            }
+            if (Screen.ModelHierarchy._lastSelectedEntry == ModelEntrySelectionType.Node)
+            {
+                SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainers[ContainerID].Bone_RootNode);
+            }
+            if (Screen.ModelHierarchy._lastSelectedEntry == ModelEntrySelectionType.Mesh)
+            {
+                SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainers[ContainerID].Mesh_RootNode);
+            }
+
+            IsUpdatingViewportModel = false;
+        }
+
+        private void SelectViewportDummy(int selectIndex, Entity rootNode)
+        {
+            if (selectIndex != -1)
+            {
                 int idx = 0;
-                foreach(var entry in container.DummyPoly_RootNode.Children)
+                foreach (var entry in rootNode.Children)
                 {
-                    if (idx == selectionIndex)
+                    if (idx == selectIndex)
                     {
                         Screen._selection.AddSelection(entry);
                     }
@@ -59,47 +81,6 @@ namespace StudioCore.Editors.ModelEditor
                 }
             }
         }
-        public void UpdateRepresentativeModel_Node(int selectionIndex)
-        {
-            Screen._selection.ClearSelection();
-
-            UpdateRepresentativeModel();
-
-            if (selectionIndex != -1)
-            {
-                var container = Screen._universe.LoadedModelContainers[ContainerID];
-                int idx = 0;
-                foreach (var entry in container.Bone_RootNode.Children)
-                {
-                    if (idx == selectionIndex)
-                    {
-                        Screen._selection.AddSelection(entry);
-                    }
-                    idx++;
-                }
-            }
-        }
-        public void UpdateRepresentativeModel_Mesh(int selectionIndex)
-        {
-            Screen._selection.ClearSelection();
-
-            UpdateRepresentativeModel();
-
-            if (selectionIndex != -1)
-            {
-                var container = Screen._universe.LoadedModelContainers[ContainerID];
-                int idx = 0;
-                foreach (var entry in container.Mesh_RootNode.Children)
-                {
-                    if (idx == selectionIndex)
-                    {
-                        Screen._selection.AddSelection(entry);
-                    }
-                    idx++;
-                }
-            }
-        }
-
         public void UpdateRepresentativeModel()
         {
             _flverhandle.Acquire();
@@ -492,6 +473,9 @@ namespace StudioCore.Editors.ModelEditor
             if (!IsTransformableNode(ent))
                 return;
 
+            if (IsUpdatingViewportModel)
+                return;
+
             TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
 
             // Dummies
@@ -515,12 +499,18 @@ namespace StudioCore.Editors.ModelEditor
             if (!IsTransformableNode(ent))
                 return;
 
+            if (IsUpdatingViewportModel)
+                return;
+
             TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
         }
 
         public void OnRepresentativeEntityUpdate(Entity ent)
         {
             if (!IsTransformableNode(ent))
+                return;
+
+            if (IsUpdatingViewportModel)
                 return;
 
             TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
@@ -562,14 +552,6 @@ namespace StudioCore.Editors.ModelEditor
             if (bone.Position != entBone.Position)
             {
                 bone.Position = entBone.Position;
-            }
-            if (bone.Rotation != entBone.Rotation)
-            {
-                bone.Rotation = entBone.Rotation;
-            }
-            if (bone.Scale != entBone.Scale)
-            {
-                bone.Scale = entBone.Scale;
             }
         }
 

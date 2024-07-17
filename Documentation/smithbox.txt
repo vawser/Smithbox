@@ -78,6 +78,9 @@ Param Editor:
  - FIX: move Color Pickers into in-line position with last color field
  - ADD: let Color Picker work for changing color
 
+Map Editor:
+ - FIX: DS2 Map Pieces aren't loaded.
+
 Behavior Editor:
  - ADD: implement it
  
@@ -89,6 +92,10 @@ Text Editor:
  - FIX: vanilla entry should be preferred over dlc01/dlc02 entry
 
 Model Editor:
+ - FIX: DS1 Map Pieces not loaded correctly
+ - FIX: DS2 Models not loaded correctly
+ - FIX: mesh models disappears on refresh sometimes (occurs randomly)
  - FIX: multi-select should be reflected in viewport selection + multi viewport selection should start row multi-select
- - FIX: Node select is off, plus renderable aspect doesn't populate fully
  
+ - ADD: Dummy groups: import and export, selection and whole, lets a user quickly replace or add to the dummies 
+ - ADD: Node groups: import and export, selection and whole, lets a user quickly replace or add to the nodes

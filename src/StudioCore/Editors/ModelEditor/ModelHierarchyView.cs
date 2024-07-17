@@ -521,6 +521,9 @@ public class ModelHierarchyView
 
     private void DisplaySection_Skeletons()
     {
+        if (Screen.ResourceHandler.CurrentFLVER.Skeletons == null)
+            return;
+
         if (ImGui.CollapsingHeader("Base Skeleton"))
         {
             for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton.Count; i++)

@@ -76,16 +76,15 @@ public class DummyPositionChange : ViewportAction
     private Entity Node;
     private Vector3 OldPosition;
     private Vector3 NewPosition;
-    private SoulsFormats.FLVER.Dummy Dummy;
+    private FLVER.Dummy Dummy;
 
     public DummyPositionChange(Entity node, Vector3 newPosition)
     {
         Node = node;
-        Dummy = (SoulsFormats.FLVER.Dummy)node.WrappedObject;
+        Dummy = (FLVER.Dummy)node.WrappedObject;
         OldPosition = Dummy.Position;
         NewPosition = newPosition;
     }
-
 
     public override ActionEvent Execute(bool isRedo = false)
     {
@@ -173,7 +172,7 @@ public class AddDummyEntry : ViewportAction
         CurrentFLVER.Dummies.Insert(Index, NewObject);
         Screen.ModelHierarchy._selectedDummy = Index;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Dummy(Index);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(Index);
 
         return ActionEvent.NoEvent;
     }
@@ -183,7 +182,7 @@ public class AddDummyEntry : ViewportAction
         Screen.ModelHierarchy._selectedDummy = PreviousSelectionIndex;
         CurrentFLVER.Dummies.RemoveAt(Index);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Dummy(PreviousSelectionIndex);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(PreviousSelectionIndex);
 
         return ActionEvent.NoEvent;
     }
@@ -211,7 +210,7 @@ public class DuplicateDummyEntry : ViewportAction
         CurrentFLVER.Dummies.Insert(Index, DupedObject);
         Screen.ModelHierarchy._selectedDummy = Index;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Dummy(Index);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(Index);
 
         return ActionEvent.NoEvent;
     }
@@ -221,7 +220,7 @@ public class DuplicateDummyEntry : ViewportAction
         Screen.ModelHierarchy._selectedDummy = PreviousSelectionIndex;
         CurrentFLVER.Dummies.RemoveAt(Index);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Dummy(PreviousSelectionIndex);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(PreviousSelectionIndex);
 
         return ActionEvent.NoEvent;
     }
@@ -249,7 +248,7 @@ public class RemoveDummyEntry : ViewportAction
         Screen.ModelHierarchy._selectedDummy = -1;
         CurrentFLVER.Dummies.RemoveAt(Index);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Dummy(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -259,7 +258,7 @@ public class RemoveDummyEntry : ViewportAction
         CurrentFLVER.Dummies.Insert(Index, RemovedObject);
         Screen.ModelHierarchy._selectedDummy = PreviousSelectionIndex;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Dummy(PreviousSelectionIndex);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(PreviousSelectionIndex);
 
         return ActionEvent.NoEvent;
     }
@@ -290,14 +289,14 @@ public class DuplicateDummyEntryMulti : ViewportAction
                 DupedObjects.Add(CurrentFLVER.Dummies[idx].Clone());
         }
 
-        foreach (var entry in DupedObjects)
+        for (int i = 0; i < DupedObjects.Count; i++)
         {
-            CurrentFLVER.Dummies.Add(entry);
+            CurrentFLVER.Dummies.Add(DupedObjects[i]);
         }
 
         Multiselect.StoredIndices = new List<int>();
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Dummy(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -309,7 +308,7 @@ public class DuplicateDummyEntryMulti : ViewportAction
             CurrentFLVER.Dummies.Remove(DupedObjects[i]);
         }
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Dummy(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -354,7 +353,7 @@ public class RemoveDummyEntryMulti : ViewportAction
 
         Multiselect.StoredIndices = new List<int>();
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Dummy(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -366,7 +365,7 @@ public class RemoveDummyEntryMulti : ViewportAction
             CurrentFLVER.Dummies.Insert(StoredIndices[i], StoredObjects[i]);
         }
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Dummy(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -803,7 +802,7 @@ public class AddNodeEntry : ViewportAction
         CurrentFLVER.Nodes.Insert(Index, NewObject);
         Screen.ModelHierarchy._selectedNode = Index;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Node(Index);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(Index);
 
         return ActionEvent.NoEvent;
     }
@@ -813,7 +812,7 @@ public class AddNodeEntry : ViewportAction
         Screen.ModelHierarchy._selectedNode = PreviousSelectionIndex;
         CurrentFLVER.Nodes.RemoveAt(Index);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Node(PreviousSelectionIndex);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(PreviousSelectionIndex);
 
         return ActionEvent.NoEvent;
     }
@@ -841,7 +840,7 @@ public class DuplicateNodeEntry : ViewportAction
         CurrentFLVER.Nodes.Insert(Index, DupedObject);
         Screen.ModelHierarchy._selectedNode = Index;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Node(Index);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(Index);
 
         return ActionEvent.NoEvent;
     }
@@ -851,7 +850,7 @@ public class DuplicateNodeEntry : ViewportAction
         Screen.ModelHierarchy._selectedNode = PreviousSelectionIndex;
         CurrentFLVER.Nodes.RemoveAt(Index);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Node(PreviousSelectionIndex);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(PreviousSelectionIndex);
 
         return ActionEvent.NoEvent;
     }
@@ -879,7 +878,7 @@ public class RemoveNodeEntry : ViewportAction
         Screen.ModelHierarchy._selectedNode = -1;
         CurrentFLVER.Nodes.RemoveAt(Index);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Node(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -889,7 +888,7 @@ public class RemoveNodeEntry : ViewportAction
         CurrentFLVER.Nodes.Insert(Index, RemovedObject);
         Screen.ModelHierarchy._selectedNode = PreviousSelectionIndex;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Node(PreviousSelectionIndex);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(PreviousSelectionIndex);
 
         return ActionEvent.NoEvent;
     }
@@ -927,7 +926,7 @@ public class DuplicateNodeEntryMulti : ViewportAction
 
         Multiselect.StoredIndices = new List<int>();
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Node(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -939,7 +938,7 @@ public class DuplicateNodeEntryMulti : ViewportAction
             CurrentFLVER.Nodes.Remove(DupedObjects[i]);
         }
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Node(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -984,7 +983,7 @@ public class RemoveNodeEntryMulti : ViewportAction
 
         Multiselect.StoredIndices = new List<int>();
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Node(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -996,7 +995,7 @@ public class RemoveNodeEntryMulti : ViewportAction
             CurrentFLVER.Nodes.Insert(StoredIndices[i], StoredObjects[i]);
         }
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Node(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -1033,7 +1032,7 @@ public class AddMeshEntry : ViewportAction
         CurrentFLVER.Meshes.Insert(Index, NewObject);
         Screen.ModelHierarchy._selectedMesh = Index;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Mesh(Index);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(Index);
 
         return ActionEvent.NoEvent;
     }
@@ -1043,7 +1042,7 @@ public class AddMeshEntry : ViewportAction
         Screen.ModelHierarchy._selectedMesh = PreviousSelectionIndex;
         CurrentFLVER.Meshes.RemoveAt(Index);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Mesh(PreviousSelectionIndex);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(PreviousSelectionIndex);
 
         return ActionEvent.NoEvent;
     }
@@ -1071,7 +1070,7 @@ public class DuplicateMeshEntry : ViewportAction
         CurrentFLVER.Meshes.Insert(Index, DupedObject);
         Screen.ModelHierarchy._selectedMesh = Index;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Mesh(Index);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(Index);
 
         return ActionEvent.NoEvent;
     }
@@ -1081,7 +1080,7 @@ public class DuplicateMeshEntry : ViewportAction
         Screen.ModelHierarchy._selectedMesh = PreviousSelectionIndex;
         CurrentFLVER.Meshes.RemoveAt(Index);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Mesh(PreviousSelectionIndex);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(PreviousSelectionIndex);
 
         return ActionEvent.NoEvent;
     }
@@ -1109,7 +1108,7 @@ public class RemoveMeshEntry : ViewportAction
         Screen.ModelHierarchy._selectedMesh = -1;
         CurrentFLVER.Meshes.RemoveAt(Index);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Mesh(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -1119,7 +1118,7 @@ public class RemoveMeshEntry : ViewportAction
         CurrentFLVER.Meshes.Insert(Index, RemovedObject);
         Screen.ModelHierarchy._selectedMesh = PreviousSelectionIndex;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Mesh(PreviousSelectionIndex);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(PreviousSelectionIndex);
 
         return ActionEvent.NoEvent;
     }
@@ -1157,7 +1156,7 @@ public class DuplicateMeshEntryMulti : ViewportAction
 
         Multiselect.StoredIndices = new List<int>();
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Mesh(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -1169,7 +1168,7 @@ public class DuplicateMeshEntryMulti : ViewportAction
             CurrentFLVER.Meshes.Remove(DupedObjects[i]);
         }
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Mesh(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -1214,7 +1213,7 @@ public class RemoveMeshEntryMulti : ViewportAction
 
         Multiselect.StoredIndices = new List<int>();
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Mesh(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -1226,7 +1225,7 @@ public class RemoveMeshEntryMulti : ViewportAction
             CurrentFLVER.Meshes.Insert(StoredIndices[i], StoredObjects[i]);
         }
 
-        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel_Mesh(-1);
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }

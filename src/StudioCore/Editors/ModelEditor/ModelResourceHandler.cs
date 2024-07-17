@@ -43,6 +43,7 @@ namespace StudioCore.Editors.ModelEditor
         {
             Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
+            Screen._selection.ClearSelection();
             LoadEditableModel(name, ModelEditorModelType.Character);
             LoadRepresentativeModel(name, ModelEditorModelType.Character);
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Character, "");
@@ -55,6 +56,7 @@ namespace StudioCore.Editors.ModelEditor
         {
             Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
+            Screen._selection.ClearSelection();
             LoadEditableModel(name, ModelEditorModelType.Object);
             LoadEditableCollisionLow(name, ModelEditorModelType.Object);
             LoadEditableCollisionHigh(name, ModelEditorModelType.Object);
@@ -69,6 +71,7 @@ namespace StudioCore.Editors.ModelEditor
         {
             Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
+            Screen._selection.ClearSelection();
             LoadEditableModel(name, ModelEditorModelType.Parts);
             LoadRepresentativeModel(name, ModelEditorModelType.Parts);
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Parts, "");
@@ -81,6 +84,7 @@ namespace StudioCore.Editors.ModelEditor
         {
             Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
+            Screen._selection.ClearSelection();
             LoadEditableModel(name, ModelEditorModelType.MapPiece, mapId);
             LoadRepresentativeModel(name, ModelEditorModelType.MapPiece, mapId);
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.MapPiece, mapId);
