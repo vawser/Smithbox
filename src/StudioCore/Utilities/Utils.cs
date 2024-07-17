@@ -792,10 +792,10 @@ public static class Utils
         return new float[] { -1, 1, 0, 0, 1, 1, 1, 0, 1, -1, 1, 1, -1, -1, 0, 1 };
     }
 
-    public static Matrix4x4 GetBoneObjectMatrix(FLVER.Bone bone, List<FLVER.Bone> bones)
+    public static Matrix4x4 GetBoneObjectMatrix(FLVER.Node bone, List<FLVER.Node> bones)
     {
         Matrix4x4 res = Matrix4x4.Identity;
-        FLVER.Bone parentBone = bone;
+        FLVER.Node parentBone = bone;
         do
         {
             res *= parentBone.ComputeLocalTransform();

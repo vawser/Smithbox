@@ -1,5 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using SoulsFormats;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+// FLVER implementation for Model Editor usage
+// Credit to The12thAvenger
 namespace SoulsFormats
 {
     public partial class FLVER0

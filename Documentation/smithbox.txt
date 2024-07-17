@@ -1,40 +1,3 @@
-# Behavior
-DCX.Type t;
-Memory<byte> decomp = DCX.Decompress(bytes, out t);
-var hvk = new HavokBinarySerializer();
-MemoryStream hvkStream = new MemoryStream(decomp.ToArray());
-
-hkRootLevelContainer rootObj = (hkRootLevelContainer)hvk.ReadAllObjects(hvkStream);
-
-# Map
-private unsafe void ComposeMap()
-{
-    ResourceHandle<TextureResource> mapHandle = GetImageTextureHandle("smithbox/worldmap/world_map_default");
-    ResourceHandle<TextureResource> largeTileHandle = GetImageTextureHandle("smithbox/worldmap/large_tile");
-
-    if (mapHandle != null && largeTileHandle != null)
-    {
-        TextureResource mapTex = mapHandle.Get();
-        TextureResource largeTileTex = largeTileHandle.Get();
-
-        if (mapTex != null && largeTileTex != null)
-        {
-            IntPtr mapPtr = (nint)mapTex.GPUTexture.TexHandle;
-            IntPtr lrgTilePtr = (nint)largeTileTex.GPUTexture.TexHandle;
-
-            size = GetImageSize(mapTex, true);
-
-            var windowPos = ImGui.GetWindowPos();
-
-            ImDrawListPtr drawListPtr = ImGui.GetWindowDrawList();
-            drawListPtr.AddImage(mapPtr, windowPos, size + windowPos);
-            drawListPtr.AddImage(lrgTilePtr, new Vector2(windowPos.X + 0, windowPos.Y + 0), new Vector2(windowPos.X + 496, windowPos.Y + 496));
-
-            //ImGui.Image((nint)drawListPtr.NativePtr, size);
-        }
-    }
-}
-
 #--------------------------------------
 # TO ADD
 #--------------------------------------
@@ -127,6 +90,5 @@ Text Editor:
 
 Model Editor:
  - FIX: multi-select should be reflected in viewport selection + multi viewport selection should start row multi-select
- - FIX: Backing data is not accurate for Bones (Nodes)
- - FIX: Bypass Resource Manager stuff: implement a direct method of generating the backing aspects of a Resource, e.g. listener, rendering stuff, etc
+ - FIX: Node select is off, plus renderable aspect doesn't populate fully
  

@@ -24,7 +24,7 @@ namespace StudioCore.Tools
                         if(file.Name.Contains(".flv"))
                         {
                             TaskLogs.AddLog(file.Name);
-                            var flver = StudioCore.Formats.PureFLVER.FLVER2.FLVER2.Read(reader.ReadFile(file));
+                            var flver = FLVER2.Read(reader.ReadFile(file));
                         }
                     }
                 }

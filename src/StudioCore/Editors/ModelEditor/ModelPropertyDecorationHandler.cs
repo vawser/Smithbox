@@ -1,13 +1,8 @@
 ﻿using ImGuiNET;
-using StudioCore.Editors.TextureViewer;
-using StudioCore.Formats.PureFLVER;
+using SoulsFormats;
 using StudioCore.Interface;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor
 {

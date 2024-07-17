@@ -8,9 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using static SoulsFormats.PARAM;
-using static StudioCore.Formats.PureFLVER.FLVER2.FLVER2;
-using static StudioCore.Formats.PureFLVER.FLVER2.FLVER2.FaceSet;
-using static StudioCore.Formats.PureFLVER.FLVER2.FLVER2.Mesh;
+using SoulsFormats;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -505,7 +503,7 @@ public class ModelPropertyEditor
         MaterialInfoView.DisplayMatbinInformation(entry.MTD);
     }
 
-    private void DisplayProperties_Material_Texture(Texture texture, int index, Material curMaterial)
+    private void DisplayProperties_Material_Texture(FLVER2.Texture texture, int index, FLVER2.Material curMaterial)
     {
         ImGui.Separator();
         if(ImGui.Selectable($"Texture##Texture{index}", Screen.ModelHierarchy._subSelectedTextureRow == index))
@@ -613,7 +611,7 @@ public class ModelPropertyEditor
 
     private int byteArraySize = 32;
 
-    private void DisplayProperties_Material_GXItem(GXItem item, int index)
+    private void DisplayProperties_Material_GXItem(FLVER2.GXItem item, int index)
     {
         ImGui.Separator();
 
@@ -716,7 +714,7 @@ public class ModelPropertyEditor
         int firstChildIndex = entry.FirstChildIndex;
         int nextSiblingIndex = entry.NextSiblingIndex;
         int previousSiblingIndex = entry.PreviousSiblingIndex;
-        var translation = entry.Translation;
+        var translation = entry.Position;
         var rotation = entry.Rotation;
         var scale = entry.Scale;
         var bbMin = entry.BoundingBoxMin;
@@ -844,9 +842,9 @@ public class ModelPropertyEditor
         ImGui.InputFloat3($"##Translation", ref translation);
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
-            if (entry.Translation != translation)
+            if (entry.Position != translation)
                 Screen.EditorActionManager.ExecuteAction(
-                    new UpdateProperty_FLVERNode_Translation(entry, entry.Translation, translation));
+                    new UpdateProperty_FLVERNode_Translation(entry, entry.Position, translation));
         }
 
         ImGui.AlignTextToFramePadding();
@@ -898,10 +896,10 @@ public class ModelPropertyEditor
         ImGui.Columns(1);
 
         // Update representative selectable
-        if (_trackedNodePosition != entry.Translation)
+        if (_trackedNodePosition != entry.Position)
         {
-            _trackedNodePosition = entry.Translation;
-            Screen.ViewportHandler.UpdateRepresentativeNode(index, entry.Translation, entry.Rotation, entry.Scale);
+            _trackedNodePosition = entry.Position;
+            Screen.ViewportHandler.UpdateRepresentativeNode(index, entry.Position, entry.Rotation, entry.Scale);
         }
     }
 
@@ -1020,7 +1018,7 @@ public class ModelPropertyEditor
         }
     }
 
-    private void DisplayProperties_Mesh_FaceSet(FaceSet faceset, int index)
+    private void DisplayProperties_Mesh_FaceSet(FLVER2.FaceSet faceset, int index)
     {
         ImGui.Separator();
         if (ImGui.Selectable($"Face Set {index}##FaceSet{index}", Screen.ModelHierarchy._subSelectedFaceSetRow == index))
@@ -1100,7 +1098,7 @@ public class ModelPropertyEditor
 
         ImGui.Columns(1);
 
-        faceset.Flags = (FSFlags)flags;
+        faceset.Flags = (FLVER2.FaceSet.FSFlags)flags;
         faceset.TriangleStrip = triangleStrip;
         faceset.CullBackfaces = cullBackfaces;
 
@@ -1110,7 +1108,7 @@ public class ModelPropertyEditor
         faceset.Unk06 = (short)unk06;
     }
 
-    private void DisplayProperties_Mesh_VertexBuffers(VertexBuffer vertexBuffer, int index)
+    private void DisplayProperties_Mesh_VertexBuffers(FLVER2.VertexBuffer vertexBuffer, int index)
     {
         var layoutIndex = vertexBuffer.LayoutIndex;
 
@@ -1152,7 +1150,7 @@ public class ModelPropertyEditor
         vertexBuffer.LayoutIndex = layoutIndex;
     }
 
-    private void DisplayProperties_Mesh_BoundingBox(BoundingBoxes boundingBox)
+    private void DisplayProperties_Mesh_BoundingBox(FLVER2.Mesh.BoundingBoxes boundingBox)
     {
         var bbMin = boundingBox.Min;
         var bbMax = boundingBox.Max;
@@ -1236,7 +1234,7 @@ public class ModelPropertyEditor
         }
     }
 
-    private void DisplayProperties_BufferLayout_LayoutMember(Formats.PureFLVER.FLVER.LayoutMember layout, int index)
+    private void DisplayProperties_BufferLayout_LayoutMember(FLVER.LayoutMember layout, int index)
     {
         ImGui.Separator();
         if (ImGui.Selectable($"Layout Member {index}##LayoutMember{index}", Screen.ModelHierarchy._subSelectedBufferLayoutMember == index))

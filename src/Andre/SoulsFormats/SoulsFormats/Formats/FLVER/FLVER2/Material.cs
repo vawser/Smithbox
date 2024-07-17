@@ -1,6 +1,12 @@
-﻿using System;
+﻿using SoulsFormats;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+// FLVER implementation for Model Editor usage
+// Credit to The12thAvenger
 namespace SoulsFormats
 {
     public partial class FLVER2
@@ -16,14 +22,9 @@ namespace SoulsFormats
             public string Name { get; set; }
 
             /// <summary>
-            /// Virtual path to an MTD file.
+            /// Virtual path to an MTD file or a Matxml file in games since ER.
             /// </summary>
             public string MTD { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int Flags { get; set; }
 
             /// <summary>
             /// Textures used by this material.
@@ -37,9 +38,9 @@ namespace SoulsFormats
             public int GXIndex { get; set; }
 
             /// <summary>
-            /// Unknown; only used in Sekiro.
+            /// Index of the material in the material list. Used since Sekiro during cutscenes. 
             /// </summary>
-            public int Unk18 { get; set; }
+            public int Index { get; set; }
 
             private int textureIndex, textureCount;
 
@@ -48,15 +49,10 @@ namespace SoulsFormats
             /// </summary>
             public Material()
             {
-                Name = "";
+                Name = "Untitled";
                 MTD = "";
                 Textures = new List<Texture>();
                 GXIndex = -1;
-            }
-
-            public Material Clone()
-            {
-                return (Material)MemberwiseClone();
             }
 
             /// <summary>
@@ -66,21 +62,39 @@ namespace SoulsFormats
             {
                 Name = name;
                 MTD = mtd;
-                Flags = flags;
                 Textures = new List<Texture>();
                 GXIndex = -1;
-                Unk18 = 0;
+                Index = 0;
             }
 
-            internal Material(BinaryReaderEx br, FLVER2Header header, List<GXList> gxLists, Dictionary<int, int> gxListIndices)
+            /// <summary>
+            /// Calculates the total number of bytes in the utf-16 null-terminated strings owned by this material
+            /// </summary>
+            private int CalculateNumStringBytes()
+            {
+                int numStringBytes = Name.Length + 1;
+                numStringBytes += MTD.Length + 1;
+                foreach (Texture texture in Textures)
+                {
+                    numStringBytes += texture.Type.Length + 1;
+                    numStringBytes += texture.Path.Length + 1;
+                }
+
+                // 2-bytes per character
+                numStringBytes *= 2;
+                return numStringBytes;
+            }
+
+            internal Material(BinaryReaderEx br, FLVERHeader header, List<GXList> gxLists, Dictionary<int, int> gxListIndices)
             {
                 int nameOffset = br.ReadInt32();
                 int mtdOffset = br.ReadInt32();
                 textureCount = br.ReadInt32();
                 textureIndex = br.ReadInt32();
-                Flags = br.ReadInt32();
+                // result of CalculateNumStringBytes
+                br.ReadInt32();
                 int gxOffset = br.ReadInt32();
-                Unk18 = br.ReadInt32();
+                Index = br.ReadInt32();
                 br.AssertInt32(0);
 
                 if (header.Unicode)
@@ -111,6 +125,7 @@ namespace SoulsFormats
                     }
                     GXIndex = gxListIndices[gxOffset];
                 }
+
             }
 
             internal void TakeTextures(Dictionary<int, Texture> textureDict)
@@ -135,9 +150,9 @@ namespace SoulsFormats
                 bw.ReserveInt32($"MaterialMTD{index}");
                 bw.WriteInt32(Textures.Count);
                 bw.ReserveInt32($"TextureIndex{index}");
-                bw.WriteInt32(Flags);
+                bw.WriteInt32(CalculateNumStringBytes());
                 bw.ReserveInt32($"GXOffset{index}");
-                bw.WriteInt32(Unk18);
+                bw.WriteInt32(Index);
                 bw.WriteInt32(0);
             }
 
@@ -156,7 +171,7 @@ namespace SoulsFormats
                     Textures[i].Write(bw, textureIndex + i);
             }
 
-            internal void WriteStrings(BinaryWriterEx bw, FLVER2Header header, int index)
+            internal void WriteStrings(BinaryWriterEx bw, FLVERHeader header, int index)
             {
                 bw.FillInt32($"MaterialName{index}", (int)bw.Position);
                 if (header.Unicode)
@@ -177,6 +192,10 @@ namespace SoulsFormats
             public override string ToString()
             {
                 return $"{Name} | {MTD}";
+            }
+            public Material Clone()
+            {
+                return (Material)MemberwiseClone();
             }
         }
     }

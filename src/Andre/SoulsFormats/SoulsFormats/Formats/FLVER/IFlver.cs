@@ -1,5 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+// FLVER implementation for Model Editor usage
+// Credit to The12thAvenger
 namespace SoulsFormats
 {
     /// <summary>
@@ -10,7 +16,7 @@ namespace SoulsFormats
         /// <summary>
         /// Joints available for vertices and dummy points to be attached to.
         /// </summary>
-        IReadOnlyList<FLVER.Bone> Bones { get; }
+        IReadOnlyList<FLVER.Node> Nodes { get; }
 
         /// <summary>
         /// Dummy points used to determine hitboxes, particle effects, etc.

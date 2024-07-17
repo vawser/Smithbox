@@ -188,8 +188,6 @@ public class Viewport : IViewport
                     $@"Vertex Buffers Size: {Renderer.GeometryBufferAllocator.TotalVertexFootprint / 1024 / 1024} MB");
                 ImGui.Text(
                     $@"Index Buffers Size: {Renderer.GeometryBufferAllocator.TotalIndexFootprint / 1024 / 1024} MB");
-                ImGui.Text($@"FLVER Read Caches: {FlverResource.CacheCount}");
-                ImGui.Text($@"FLVER Read Caches Size: {FlverResource.CacheFootprint / 1024 / 1024} MB");
                 //ImGui.Text($@"Selected renderable:  { _viewPipeline._pickingEntity }");
             }
 

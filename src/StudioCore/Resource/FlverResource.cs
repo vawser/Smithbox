@@ -32,7 +32,7 @@ public class FlverResource : IResource, IDisposable
     //private static ArrayPool<FlverLayout> VerticesPool = ArrayPool<FlverLayout>.Create();
 
     public const bool CaptureMaterialLayouts = false;
-    private static readonly Stack<FlverCache> FlverCaches = new();
+    //private static readonly Stack<FlverCache> FlverCaches = new();
     private static readonly object CacheLock = new();
 
     /// <summary>
@@ -51,8 +51,9 @@ public class FlverResource : IResource, IDisposable
     public FlverMaterial[] GPUMaterials;
 
     public FlverSubmesh[] GPUMeshes;
-    public static int CacheCount { get; private set; }
+    //public static int CacheCount { get; private set; }
 
+    /*
     public static long CacheFootprint
     {
         get
@@ -69,10 +70,11 @@ public class FlverResource : IResource, IDisposable
             return total;
         }
     }
+    */
 
     public BoundingBox Bounds { get; set; }
 
-    public List<FLVER.Bone> Bones { get; private set; }
+    public List<FLVER.Node> Bones { get; private set; }
     private List<FlverBone> FBones { get; set; }
     private List<Matrix4x4> BoneTransforms { get; set; }
 
@@ -98,10 +100,8 @@ public class FlverResource : IResource, IDisposable
             }
             else
             {
-                FlverCache? cache = al == AccessLevel.AccessGPUOptimizedOnly ? GetCache() : null;
-                Flver = FLVER2.Read(bytes, cache);
+                Flver = FLVER2.Read(bytes);
                 ret = LoadInternal(al);
-                ReleaseCache(cache);
             }
         }
 
@@ -142,50 +142,12 @@ public class FlverResource : IResource, IDisposable
             }
             else
             {
-                FlverCache? cache = al == AccessLevel.AccessGPUOptimizedOnly ? GetCache() : null;
-                Flver = FLVER2.Read(path, cache);
+                Flver = FLVER2.Read(path);
                 ret = LoadInternal(al);
-                ReleaseCache(cache);
             }
         }
 
         return ret;
-    }
-
-    private FlverCache GetCache()
-    {
-        lock (CacheLock)
-        {
-            if (FlverCaches.Count > 0)
-            {
-                return FlverCaches.Pop();
-            }
-
-            CacheCount++;
-        }
-
-        return new FlverCache();
-    }
-
-    public void ReleaseCache(FlverCache cache)
-    {
-        if (cache != null)
-        {
-            cache.ResetUsage();
-            lock (CacheLock)
-            {
-                FlverCaches.Push(cache);
-            }
-        }
-    }
-
-    public static void PurgeCaches()
-    {
-        FlverCaches.Clear();
-        //VerticesPool = ArrayPool<FlverLayout>.Create();
-        //GC.Collect();
-        //GC.WaitForPendingFinalizers();
-        //GC.Collect();
     }
 
     private void LookupTexture(FlverMaterial.TextureType textureType, FlverMaterial dest, string type, string mpath,
@@ -670,7 +632,7 @@ public class FlverResource : IResource, IDisposable
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private unsafe void FillUVShort(short* dest, ref FLVER.Vertex v, byte index)
     {
-        Vector3 uv = v.GetUV(index);
+        Vector3 uv = v.UVs[index];
         dest[0] = (short)(uv.X * 2048.0f);
         dest[1] = (short)(uv.Y * 2048.0f);
     }
@@ -752,7 +714,7 @@ public class FlverResource : IResource, IDisposable
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private void FillUVFloat(ref Vector2 dest, ref FLVER.Vertex v, byte index)
     {
-        Vector3 uv = v.GetUV(index);
+        Vector3 uv = v.UVs[index];
         dest.X = uv.X;
         dest.Y = uv.Y;
     }
@@ -761,7 +723,7 @@ public class FlverResource : IResource, IDisposable
     private unsafe void FillBinormalBitangentSNorm8(sbyte* destBinorm, sbyte* destBitan, ref FLVER.Vertex v,
         byte index)
     {
-        Vector4 tan = v.GetTangent(index);
+        Vector4 tan = v.Tangents[index];
         Vector3 t = Vector3.Normalize(new Vector3(tan.X, tan.Y, tan.Z));
         destBitan[0] = (sbyte)(t.X * 127.0f);
         destBitan[1] = (sbyte)(t.Y * 127.0f);
@@ -925,8 +887,8 @@ public class FlverResource : IResource, IDisposable
 
     private unsafe void FillVerticesNormalOnly(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, IntPtr vertBuffer)
     {
-        Span<FlverLayoutSky> verts = new(vertBuffer.ToPointer(), mesh.VertexCount);
-        for (var i = 0; i < mesh.VertexCount; i++)
+        Span<FlverLayoutSky> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
+        for (var i = 0; i < mesh.Vertices.Count; i++)
         {
             FLVER.Vertex vert = mesh.Vertices[i];
 
@@ -1015,10 +977,10 @@ public class FlverResource : IResource, IDisposable
 
     private unsafe void FillVerticesStandard(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, IntPtr vertBuffer)
     {
-        Span<FlverLayout> verts = new(vertBuffer.ToPointer(), mesh.VertexCount);
+        Span<FlverLayout> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         fixed (FlverLayout* pverts = verts)
         {
-            for (var i = 0; i < mesh.VertexCount; i++)
+            for (var i = 0; i < mesh.Vertices.Count; i++)
             {
                 FlverLayout* v = &pverts[i];
                 FLVER.Vertex vert = mesh.Vertices[i];
@@ -1027,7 +989,7 @@ public class FlverResource : IResource, IDisposable
                 pickingVerts[i] = new Vector3(vert.Position.X, vert.Position.Y, vert.Position.Z);
                 FillVertex(ref (*v).Position, ref vert);
                 FillNormalSNorm8((*v).Normal, ref vert);
-                if (vert.UVCount > 0)
+                if (vert.UVs.Count > 0)
                 {
                     FillUVShort((*v).Uv1, ref vert, 0);
                 }
@@ -1036,7 +998,7 @@ public class FlverResource : IResource, IDisposable
                     FillUVShortZero((*v).Uv1);
                 }
 
-                if (vert.TangentCount > 0)
+                if (vert.Tangents.Count > 0)
                 {
                     FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, ref vert, 0);
                 }
@@ -1062,7 +1024,7 @@ public class FlverResource : IResource, IDisposable
                 pickingVerts[i] = new Vector3(vert.Position.X, vert.Position.Y, vert.Position.Z);
                 FillVertex(ref (*v).Position, ref vert);
                 FillNormalSNorm8((*v).Normal, ref vert);
-                if (vert.UVCount > 0)
+                if (vert.UVs.Count > 0)
                 {
                     FillUVShort((*v).Uv1, ref vert, 0);
                 }
@@ -1071,7 +1033,7 @@ public class FlverResource : IResource, IDisposable
                     FillUVShortZero((*v).Uv1);
                 }
 
-                if (vert.TangentCount > 0)
+                if (vert.Tangents.Count > 0)
                 {
                     FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, ref vert, 0);
                 }
@@ -1137,10 +1099,10 @@ public class FlverResource : IResource, IDisposable
 
     private unsafe void FillVerticesUV2(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, IntPtr vertBuffer)
     {
-        Span<FlverLayoutUV2> verts = new(vertBuffer.ToPointer(), mesh.VertexCount);
+        Span<FlverLayoutUV2> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         fixed (FlverLayoutUV2* pverts = verts)
         {
-            for (var i = 0; i < mesh.VertexCount; i++)
+            for (var i = 0; i < mesh.Vertices.Count; i++)
             {
                 FLVER.Vertex vert = mesh.Vertices[i];
 
@@ -1151,7 +1113,7 @@ public class FlverResource : IResource, IDisposable
                 FillNormalSNorm8((*v).Normal, ref vert);
                 FillUVShort((*v).Uv1, ref vert, 0);
                 FillUVShort((*v).Uv2, ref vert, 1);
-                if (vert.TangentCount > 0)
+                if (vert.Tangents.Count > 0)
                 {
                     FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, ref vert, 0);
                 }
@@ -1179,7 +1141,7 @@ public class FlverResource : IResource, IDisposable
                 FillNormalSNorm8((*v).Normal, ref vert);
                 FillUVShort((*v).Uv1, ref vert, 0);
                 FillUVShort((*v).Uv2, ref vert, 1);
-                if (vert.TangentCount > 0)
+                if (vert.Tangents.Count > 0)
                 {
                     FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, ref vert, 0);
                 }
@@ -1228,7 +1190,7 @@ public class FlverResource : IResource, IDisposable
         Span<ushort> fs16 = null;
         Span<int> fs32 = null;
 
-        var indices = mesh.Triangulate(FlverDeS.Header.Version).ToArray();
+        var indices = mesh.Triangulate(FlverDeS.Version).ToArray();
         var indicesTotal = indices.Length;
 
         dest.GeomBuffer = Renderer.GeometryBufferAllocator.Allocate(vbuffersize,
@@ -1326,24 +1288,24 @@ public class FlverResource : IResource, IDisposable
         dest.Material = GPUMaterials[mesh.MaterialIndex];
 
         var vSize = dest.Material.VertexSize;
-        dest.PickingVertices = Marshal.AllocHGlobal(mesh.VertexCount * sizeof(Vector3));
-        Span<Vector3> pvhandle = new(dest.PickingVertices.ToPointer(), mesh.VertexCount);
+        dest.PickingVertices = Marshal.AllocHGlobal(mesh.Vertices.Count * sizeof(Vector3));
+        Span<Vector3> pvhandle = new(dest.PickingVertices.ToPointer(), mesh.Vertices.Count);
 
-        dest.VertexCount = mesh.VertexCount;
+        dest.VertexCount = mesh.Vertices.Count;
 
         dest.MeshFacesets = new List<FlverSubmesh.FlverSubmeshFaceSet>();
         List<FLVER2.FaceSet>? facesets = mesh.FaceSets;
 
-        var is32bit = Flver.Header.Version > 0x20005 && mesh.VertexCount > 65535;
+        var is32bit = Flver.Header.Version > 0x20005 && mesh.Vertices.Count > 65535;
         var indicesTotal = 0;
         Span<ushort> fs16 = null;
         Span<int> fs32 = null;
         foreach (FLVER2.FaceSet? faceset in facesets)
         {
-            indicesTotal += faceset.Indices.Length;
+            indicesTotal += faceset.Indices.Count;
         }
 
-        var vbuffersize = (uint)mesh.VertexCount * vSize;
+        var vbuffersize = (uint)mesh.Vertices.Count * vSize;
         dest.GeomBuffer = Renderer.GeometryBufferAllocator.Allocate(vbuffersize,
             (uint)indicesTotal * (is32bit ? 4u : 2u), (int)vSize, 4);
         var meshVertices = dest.GeomBuffer.MapVBuffer();
@@ -1375,7 +1337,7 @@ public class FlverResource : IResource, IDisposable
         var idxoffset = 0;
         foreach (FLVER2.FaceSet? faceset in facesets)
         {
-            if (faceset.Indices.Length == 0)
+            if (faceset.Indices.Count == 0)
             {
                 continue;
             }
@@ -1392,7 +1354,7 @@ public class FlverResource : IResource, IDisposable
                 BackfaceCulling = faceset.CullBackfaces,
                 IsTriangleStrip = faceset.TriangleStrip,
                 IndexOffset = idxoffset,
-                IndexCount = faceset.IndicesCount,
+                IndexCount = faceset.Indices.Count,
                 Is32Bit = is32bit
             };
 
@@ -1420,9 +1382,9 @@ public class FlverResource : IResource, IDisposable
 
             if (is32bit)
             {
-                for (var i = 0; i < faceset.Indices.Length; i++)
+                for (var i = 0; i < faceset.Indices.Count; i++)
                 {
-                    if (faceset.Indices[i] == 0xFFFF && faceset.Indices[i] > mesh.Vertices.Length)
+                    if (faceset.Indices[i] == 0xFFFF && faceset.Indices[i] > mesh.Vertices.Count)
                     {
                         fs32[newFaceSet.IndexOffset + i] = -1;
                     }
@@ -1434,9 +1396,9 @@ public class FlverResource : IResource, IDisposable
             }
             else
             {
-                for (var i = 0; i < faceset.Indices.Length; i++)
+                for (var i = 0; i < faceset.Indices.Count; i++)
                 {
-                    if (faceset.Indices[i] == 0xFFFF && faceset.Indices[i] > mesh.Vertices.Length)
+                    if (faceset.Indices[i] == 0xFFFF && faceset.Indices[i] > mesh.Vertices.Count)
                     {
                         fs16[newFaceSet.IndexOffset + i] = 0xFFFF;
                     }
@@ -1448,7 +1410,7 @@ public class FlverResource : IResource, IDisposable
             }
 
             dest.MeshFacesets.Add(newFaceSet);
-            idxoffset += faceset.Indices.Length;
+            idxoffset += faceset.Indices.Count;
         }
 
         dest.GeomBuffer.UnmapVBuffer();
@@ -1480,9 +1442,9 @@ public class FlverResource : IResource, IDisposable
             {
                 dest.Material.SetNormalWBoneTransform();
             }
-            else if (mesh.DefaultBoneIndex != -1 && mesh.DefaultBoneIndex < Bones.Count)
+            else if (mesh.NodeIndex != -1 && mesh.NodeIndex < Bones.Count)
             {
-                dest.LocalTransform = Utils.GetBoneObjectMatrix(Bones[mesh.DefaultBoneIndex], Bones);
+                dest.LocalTransform = Utils.GetBoneObjectMatrix(Bones[mesh.NodeIndex], Bones);
             }
         }
 
@@ -1774,7 +1736,7 @@ public class FlverResource : IResource, IDisposable
             GPUMeshes = new FlverSubmesh[Flver.Meshes.Count()];
             GPUMaterials = new FlverMaterial[Flver.Materials.Count()];
             Bounds = new BoundingBox();
-            Bones = Flver.Bones;
+            Bones = Flver.Nodes;
 
             for (var i = 0; i < Flver.Materials.Count(); i++)
             {

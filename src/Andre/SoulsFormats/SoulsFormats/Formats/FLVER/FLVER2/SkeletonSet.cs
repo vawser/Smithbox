@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 // FLVER implementation for Model Editor usage
 // Credit to The12thAvenger
-namespace StudioCore.Formats.PureFLVER.FLVER2
+namespace SoulsFormats
 {
     public partial class FLVER2
     {

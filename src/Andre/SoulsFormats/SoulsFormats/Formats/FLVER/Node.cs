@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 // FLVER implementation for Model Editor usage
 // Credit to The12thAvenger
-namespace StudioCore.Formats.PureFLVER
+namespace SoulsFormats
 {
     public partial class FLVER
     {
@@ -69,7 +69,7 @@ namespace StudioCore.Formats.PureFLVER
             /// <summary>
             /// Translation of this bone.
             /// </summary>
-            public Vector3 Translation { get; set; }
+            public Vector3 Position { get; set; }
 
             /// <summary>
             /// Rotation of this bone; euler radians in XZY order.
@@ -116,7 +116,7 @@ namespace StudioCore.Formats.PureFLVER
                     * Matrix4x4.CreateRotationX(Rotation.X)
                     * Matrix4x4.CreateRotationZ(Rotation.Z)
                     * Matrix4x4.CreateRotationY(Rotation.Y)
-                    * Matrix4x4.CreateTranslation(Translation);
+                    * Matrix4x4.CreateTranslation(Position);
             }
 
             /// <summary>
@@ -126,7 +126,7 @@ namespace StudioCore.Formats.PureFLVER
 
             internal Node(BinaryReaderEx br, bool unicode)
             {
-                Translation = br.ReadVector3();
+                Position = br.ReadVector3();
                 int nameOffset = br.ReadInt32();
                 Rotation = br.ReadVector3();
                 ParentIndex = br.ReadInt16();
@@ -147,7 +147,7 @@ namespace StudioCore.Formats.PureFLVER
 
             internal void Write(BinaryWriterEx bw, int index)
             {
-                bw.WriteVector3(Translation);
+                bw.WriteVector3(Position);
                 bw.ReserveInt32($"BoneNameOffset{index}");
                 bw.WriteVector3(Rotation);
                 bw.WriteInt16(ParentIndex);

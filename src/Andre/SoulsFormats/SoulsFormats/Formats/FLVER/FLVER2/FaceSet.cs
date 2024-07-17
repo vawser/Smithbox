@@ -1,8 +1,13 @@
-﻿using System;
+﻿using SoulsFormats;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+// FLVER implementation for Model Editor usage
+// Credit to The12thAvenger
 namespace SoulsFormats
 {
     public partial class FLVER2
@@ -69,14 +74,10 @@ namespace SoulsFormats
             /// </summary>
             public short Unk06 { get; set; }
 
-            [IndexProperty]
-            public int IndicesCount { get; set; }
-
             /// <summary>
             /// Indices to vertices in a mesh.
             /// </summary>
-            [IndexProperty]
-            public int[] Indices { get; set; }
+            public List<int> Indices { get; set; }
 
             /// <summary>
             /// Creates a new FaceSet with default values and no indices.
@@ -86,18 +87,13 @@ namespace SoulsFormats
                 Flags = FSFlags.None;
                 TriangleStrip = false;
                 CullBackfaces = true;
-                Indices = null;
-            }
-
-            public FaceSet Clone()
-            {
-                return (FaceSet)MemberwiseClone();
+                Indices = new List<int>();
             }
 
             /// <summary>
             /// Creates a new FaceSet with the specified values.
             /// </summary>
-            public FaceSet(FSFlags flags, bool triangleStrip, bool cullBackfaces, byte unk06, byte unk07, int[] indices)
+            public FaceSet(FSFlags flags, bool triangleStrip, bool cullBackfaces, short unk06, List<int> indices)
             {
                 Flags = flags;
                 TriangleStrip = triangleStrip;
@@ -106,7 +102,7 @@ namespace SoulsFormats
                 Indices = indices;
             }
 
-            internal FaceSet(BinaryReaderEx br, FLVER2Header header, FlverCache cache, int headerIndexSize, int dataOffset)
+            internal FaceSet(BinaryReaderEx br, FLVERHeader header, int headerIndexSize, int dataOffset)
             {
                 Flags = (FSFlags)br.ReadUInt32();
                 TriangleStrip = br.ReadBoolean();
@@ -130,28 +126,23 @@ namespace SoulsFormats
                 if (indexSize == 8 ^ Flags.HasFlag(FSFlags.EdgeCompressed))
                     throw new InvalidDataException("FSFlags.EdgeCompressed probably doesn't mean edge compression after all. Please investigate this.");
 
-                /*if (indexSize == 8)
+                if (indexSize == 8)
                 {
                     br.StepIn(dataOffset + indicesOffset);
                     {
                         Indices = EdgeIndexCompression.ReadEdgeIndexGroup(br, indexCount);
                     }
-                }
-                else*/ if (indexSize == 32)
-                {
-                    IndicesCount = indexCount;
-                    Indices = br.GetInt32s(dataOffset + indicesOffset, indexCount);
-                } else if(indexSize == 16)
-                {
-                    IndicesCount = indexCount;
-                    br.StepIn(dataOffset + indicesOffset);
-                    Indices = new int[indexCount];
-                    for (int i = 0; i < indexCount; i++)
-                    {
-                        Indices[i] = br.ReadUInt16();
-                    }
                     br.StepOut();
-
+                }
+                else if (indexSize == 16)
+                {
+                    Indices = new List<int>(indexCount);
+                    foreach (ushort index in br.GetUInt16s(dataOffset + indicesOffset, indexCount))
+                        Indices.Add(index);
+                }
+                else if (indexSize == 32)
+                {
+                    Indices = new List<int>(br.GetInt32s(dataOffset + indicesOffset, indexCount));
                 }
                 else
                 {
@@ -159,18 +150,18 @@ namespace SoulsFormats
                 }
             }
 
-            internal void Write(BinaryWriterEx bw, FLVER2Header header, int indexSize, int index)
+            internal void Write(BinaryWriterEx bw, FLVERHeader header, int indexSize, int index)
             {
                 bw.WriteUInt32((uint)Flags);
                 bw.WriteBoolean(TriangleStrip);
                 bw.WriteBoolean(CullBackfaces);
                 bw.WriteInt16(Unk06);
-                bw.WriteInt32(IndicesCount);
+                bw.WriteInt32(Indices.Count);
                 bw.ReserveInt32($"FaceSetVertices{index}");
 
                 if (header.Version > 0x20005)
                 {
-                    bw.WriteInt32(IndicesCount * (indexSize / 8));
+                    bw.WriteInt32(Indices.Count * (indexSize / 8));
                     bw.WriteInt32(0);
                     bw.WriteInt32(header.Version >= 0x20013 ? indexSize : 0);
                     bw.WriteInt32(0);
@@ -182,8 +173,8 @@ namespace SoulsFormats
                 bw.FillInt32($"FaceSetVertices{index}", (int)bw.Position - dataStart);
                 if (indexSize == 16)
                 {
-                    for (int i = 0; i < IndicesCount; i++)
-                        bw.WriteUInt16((ushort)Indices[i]);
+                    foreach (int i in Indices)
+                        bw.WriteUInt16((ushort)i);
                 }
                 else if (indexSize == 32)
                 {
@@ -207,7 +198,7 @@ namespace SoulsFormats
             {
                 if (TriangleStrip)
                 {
-                    for (int i = 0; i < IndicesCount - 2; i++)
+                    for (int i = 0; i < Indices.Count - 2; i++)
                     {
                         int vi1 = Indices[i];
                         int vi2 = Indices[i + 1];
@@ -225,8 +216,8 @@ namespace SoulsFormats
                 }
                 else
                 {
-                    totalFaceCount += IndicesCount / 3;
-                    trueFaceCount += IndicesCount / 3;
+                    totalFaceCount += Indices.Count / 3;
+                    trueFaceCount += Indices.Count / 3;
                 }
             }
 
@@ -241,7 +232,7 @@ namespace SoulsFormats
                 {
                     var triangles = new List<int>();
                     bool flip = false;
-                    for (int i = 0; i < IndicesCount - 2; i++)
+                    for (int i = 0; i < Indices.Count - 2; i++)
                     {
                         int vi1 = Indices[i];
                         int vi2 = Indices[i + 1];
@@ -277,6 +268,11 @@ namespace SoulsFormats
                 {
                     return new List<int>(Indices);
                 }
+            }
+
+            public FaceSet Clone()
+            {
+                return (FaceSet)MemberwiseClone();
             }
         }
     }

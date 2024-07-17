@@ -1,5 +1,4 @@
-﻿using StudioCore.Formats.PureFLVER;
-using StudioCore.Formats.PureFLVER.FLVER2;
+﻿using SoulsFormats;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -166,7 +165,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                 * Matrix4x4.CreateRotationX(node.Rotation.X)
                 * Matrix4x4.CreateRotationZ(node.Rotation.Z)
                 * Matrix4x4.CreateRotationY(node.Rotation.Y)
-                * Matrix4x4.CreateTranslation(node.Translation);
+                * Matrix4x4.CreateTranslation(node.Position);
         }
         private static FLVER.Node GetParent(FLVER.Node node, IReadOnlyList<FLVER.Node> nodes)
         {

@@ -1,11 +1,6 @@
-﻿using StudioCore.Formats.PureFLVER;
-using StudioCore.Formats.PureFLVER.FLVER2;
+﻿using SoulsFormats;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor
 {

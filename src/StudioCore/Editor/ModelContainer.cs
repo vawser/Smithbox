@@ -2,6 +2,7 @@
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.MsbEditor;
+using StudioCore.Resource;
 using StudioCore.Scene;
 using System.Collections.Generic;
 
@@ -39,13 +40,13 @@ public class ModelContainer : ObjectContainer
 
     public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy)
     {
-        //ModelEditorScreen.UpdateLoadedRenderMesh();
-
         MaterialDictionary.Clear();
 
         // Meshes
         for (var i = 0; i < flver.Meshes.Count; i++)
         {
+            TaskLogs.AddLog($"Mesh: {i}");
+
             var meshNode = new NamedEntity(this, flver.Meshes[i], $@"Mesh {i}", i);
             if (Universe.IsRendering)
             {
@@ -65,12 +66,11 @@ public class ModelContainer : ObjectContainer
             Mesh_RootNode.AddChild(meshNode);
         }
 
-
         // Bones
         var boneEntList = new List<TransformableNamedEntity>();
-        for (var i = 0; i < flver.Bones.Count; i++)
+        for (var i = 0; i < flver.Nodes.Count; i++)
         {
-            var boneNode = new TransformableNamedEntity(this, flver.Bones[i], $"Bone {i} {{ {flver.Bones[i].Name} }}", i);
+            var boneNode = new TransformableNamedEntity(this, flver.Nodes[i], $"Bone {i} {{ {flver.Nodes[i].Name} }}", i);
 
             boneNode.RenderSceneMesh = Universe.GetBoneDrawable(this, boneNode);
 
@@ -83,15 +83,15 @@ public class ModelContainer : ObjectContainer
             boneEntList.Add(boneNode);
         }
 
-        for (var i = 0; i < flver.Bones.Count; i++)
+        for (var i = 0; i < flver.Nodes.Count; i++)
         {
-            if (flver.Bones[i].ParentIndex == -1)
+            if (flver.Nodes[i].ParentIndex == -1)
             {
                 Bone_RootNode.AddChild(boneEntList[i]);
             }
             else
             {
-                boneEntList[flver.Bones[i].ParentIndex].AddChild(boneEntList[i]);
+                boneEntList[flver.Nodes[i].ParentIndex].AddChild(boneEntList[i]);
             }
         }
 

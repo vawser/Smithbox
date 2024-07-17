@@ -16,7 +16,7 @@ namespace StudioCore.Editors.ModelEditor
 {
     public class ModelResourceHandler : IResourceEventListener
     {
-        public Formats.PureFLVER.FLVER2.FLVER2 CurrentFLVER;
+        public FLVER2 CurrentFLVER;
         public FlverModelInfo CurrentFLVERInfo;
         public string VirtualResourcePath = "";
 
@@ -108,7 +108,7 @@ namespace StudioCore.Editors.ModelEditor
 
                         if (fileName.Contains(modelName) && fileName.Contains(".flv"))
                         {
-                            CurrentFLVER = Formats.PureFLVER.FLVER2.FLVER2.Read(reader.ReadFile(file));
+                            CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
                             break;
                         }
                     }
@@ -129,7 +129,7 @@ namespace StudioCore.Editors.ModelEditor
                         if (fileName.Contains(modelName) && fileName.Contains(".flv"))
                         {
                             //TaskLogs.AddLog("New CurrentFLVER");
-                            CurrentFLVER = Formats.PureFLVER.FLVER2.FLVER2.Read(reader.ReadFile(file));
+                            CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
                             break;
                         }
                     }

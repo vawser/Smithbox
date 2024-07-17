@@ -1,15 +1,7 @@
-﻿using HKLib.hk2018.hkHashMapDetail;
-using ImGuiNET;
+﻿using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
-using StudioCore.Formats;
-using StudioCore.Formats.PureFLVER;
-using StudioCore.Formats.PureFLVER.FLVER2;
 using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor
 {

@@ -19,7 +19,7 @@ public class NewAnimSkeleton
 
     public Matrix4x4[] ShaderMatrices = new Matrix4x4[1024];
 
-    public NewAnimSkeleton(List<FLVER.Bone> flverBones)
+    public NewAnimSkeleton(List<FLVER.Node> flverBones)
     {
         var childCounts = new int[flverBones.Count];
 
@@ -39,10 +39,10 @@ public class NewAnimSkeleton
             FlverSkeleton[i].Length = Math.Max(0.1f,
                 (flverBones[i].BoundingBoxMax.Z - flverBones[i].BoundingBoxMin.Z) * 0.8f);
 
-            if (childCounts[i] == 1 && flverBones[i].ChildIndex >= 0)
+            if (childCounts[i] == 1 && flverBones[i].FirstChildIndex >= 0)
             {
                 Vector3 parentChildDifference = Vector3.Transform(Vector3.Zero,
-                                                    FlverSkeleton[flverBones[i].ChildIndex].ReferenceMatrix) -
+                                                    FlverSkeleton[flverBones[i].FirstChildIndex].ReferenceMatrix) -
                                                 Vector3.Transform(Vector3.Zero, FlverSkeleton[i].ReferenceMatrix);
 
                 var parentChildDirection = Vector3.Normalize(parentChildDifference);
@@ -173,11 +173,11 @@ public class NewAnimSkeleton
         public string Name;
         public Matrix4x4 ReferenceMatrix = Matrix4x4.Identity;
 
-        public FlverBoneInfo(FLVER.Bone bone, List<FLVER.Bone> boneList)
+        public FlverBoneInfo(FLVER.Node bone, List<FLVER.Node> boneList)
         {
-            Matrix4x4 GetBoneMatrix(FLVER.Bone b)
+            Matrix4x4 GetBoneMatrix(FLVER.Node b)
             {
-                FLVER.Bone parentBone = b;
+                FLVER.Node parentBone = b;
 
                 Matrix4x4 result = Matrix4x4.Identity;
 
@@ -202,7 +202,7 @@ public class NewAnimSkeleton
             ReferenceMatrix = GetBoneMatrix(bone);
             Name = bone.Name;
 
-            if (bone.Unk3C == 0)
+            if (bone.Flags == 0)
             {
                 //BonePrim = new DbgPrimWireBone(bone.Name, new Transform(ReferenceMatrix), DBG.COLOR_FLVER_BONE)
                 //{

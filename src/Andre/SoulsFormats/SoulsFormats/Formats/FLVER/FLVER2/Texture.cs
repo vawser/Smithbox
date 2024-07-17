@@ -1,5 +1,13 @@
-﻿using System.Numerics;
+﻿using SoulsFormats;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
 
+// FLVER implementation for Model Editor usage
+// Credit to The12thAvenger
 namespace SoulsFormats
 {
     public partial class FLVER2
@@ -58,10 +66,6 @@ namespace SoulsFormats
                 Path = "";
                 Scale = Vector2.One;
             }
-            public Texture Clone()
-            {
-                return (Texture)MemberwiseClone();
-            }
 
             /// <summary>
             /// Creates a new Texture with the specified values.
@@ -78,7 +82,7 @@ namespace SoulsFormats
                 Unk1C = unk1C;
             }
 
-            internal Texture(BinaryReaderEx br, FLVER2Header header)
+            internal Texture(BinaryReaderEx br, FLVERHeader header)
             {
                 int pathOffset = br.ReadInt32();
                 int typeOffset = br.ReadInt32();
@@ -121,7 +125,7 @@ namespace SoulsFormats
                 bw.WriteSingle(Unk1C);
             }
 
-            internal void WriteStrings(BinaryWriterEx bw, FLVER2Header header, int index)
+            internal void WriteStrings(BinaryWriterEx bw, FLVERHeader header, int index)
             {
                 bw.FillInt32($"TexturePath{index}", (int)bw.Position);
                 if (header.Unicode)
@@ -142,6 +146,10 @@ namespace SoulsFormats
             public override string ToString()
             {
                 return $"{Type} = {Path}";
+            }
+            public Texture Clone()
+            {
+                return (Texture)MemberwiseClone();
             }
         }
     }

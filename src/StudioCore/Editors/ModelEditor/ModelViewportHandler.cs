@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using Veldrid.Utilities;
@@ -36,6 +37,81 @@ namespace StudioCore.Editors.ModelEditor
             Screen = screen;
             Viewport = viewport;
             ContainerID = "";
+        }
+
+        public void UpdateRepresentativeModel_Dummy(int selectionIndex)
+        {
+            Screen._selection.ClearSelection();
+
+            UpdateRepresentativeModel();
+
+            if(selectionIndex != -1)
+            {
+                var container = Screen._universe.LoadedModelContainers[ContainerID];
+                int idx = 0;
+                foreach(var entry in container.DummyPoly_RootNode.Children)
+                {
+                    if (idx == selectionIndex)
+                    {
+                        Screen._selection.AddSelection(entry);
+                    }
+                    idx++;
+                }
+            }
+        }
+        public void UpdateRepresentativeModel_Node(int selectionIndex)
+        {
+            Screen._selection.ClearSelection();
+
+            UpdateRepresentativeModel();
+
+            if (selectionIndex != -1)
+            {
+                var container = Screen._universe.LoadedModelContainers[ContainerID];
+                int idx = 0;
+                foreach (var entry in container.Bone_RootNode.Children)
+                {
+                    if (idx == selectionIndex)
+                    {
+                        Screen._selection.AddSelection(entry);
+                    }
+                    idx++;
+                }
+            }
+        }
+        public void UpdateRepresentativeModel_Mesh(int selectionIndex)
+        {
+            Screen._selection.ClearSelection();
+
+            UpdateRepresentativeModel();
+
+            if (selectionIndex != -1)
+            {
+                var container = Screen._universe.LoadedModelContainers[ContainerID];
+                int idx = 0;
+                foreach (var entry in container.Mesh_RootNode.Children)
+                {
+                    if (idx == selectionIndex)
+                    {
+                        Screen._selection.AddSelection(entry);
+                    }
+                    idx++;
+                }
+            }
+        }
+
+        public void UpdateRepresentativeModel()
+        {
+            _flverhandle.Acquire();
+
+            if (_flverhandle.IsLoaded && _flverhandle.Get() != null)
+            {
+                var currentFlverClone = Screen.ResourceHandler.CurrentFLVER.Clone();
+                var currentInfo = Screen.ResourceHandler.CurrentFLVERInfo;
+
+                Screen._universe.UnloadModels(true);
+                Screen._universe.LoadFlverInModelEditor(currentFlverClone,  _renderMesh, currentInfo.ModelName);
+            }
         }
 
         public void OnResourceLoaded(IResourceHandle handle, int tag)
@@ -63,11 +139,18 @@ namespace StudioCore.Editors.ModelEditor
 
             if (_flverhandle.IsLoaded && _flverhandle.Get() != null)
             {
+                var currentFlverClone = Screen.ResourceHandler.CurrentFLVER.Clone();
+                var currentInfo = Screen.ResourceHandler.CurrentFLVERInfo;
+
                 FlverResource r = _flverhandle.Get();
                 if (r.Flver != null)
                 {
                     Screen._universe.UnloadModels(true);
-                    Screen._universe.LoadFlverInModelEditor(r.Flver, _renderMesh, Screen.ResourceHandler.CurrentFLVERInfo.ModelName);
+
+                    Screen._universe.LoadFlverInModelEditor(currentFlverClone, _renderMesh, currentInfo.ModelName);
+
+                    //Screen._universe.LoadFlverInModelEditor(r.Flver, _renderMesh, Screen.ResourceHandler.CurrentFLVERInfo.ModelName);
+
                     ContainerID = Screen.ResourceHandler.CurrentFLVERInfo.ModelName;
                 }
             }
@@ -82,6 +165,8 @@ namespace StudioCore.Editors.ModelEditor
         {
             _flverhandle = null;
         }
+
+        private ResourceDescriptor currentResourceDescriptor;
 
         /// <summary>
         /// Updated the viewport FLVER model render mesh
@@ -98,6 +183,8 @@ namespace StudioCore.Editors.ModelEditor
                         _renderMesh.Dispose();
                     }
 
+                    currentResourceDescriptor = modelAsset;
+
                     _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(Screen.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
                     _renderMesh.World = Matrix4x4.Identity;
                 }
@@ -106,10 +193,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void UpdateRepresentativeDummy(int index, Vector3 position)
         {
-            if (_flverhandle.Get().Flver.Dummies.Count < index)
-                return;
-
             var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            if (container.DummyPoly_RootNode.Children.Count < index)
+                return;
 
             // This relies on the index of the lists to align
             for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
@@ -128,10 +215,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void UpdateRepresentativeNode(int index, Vector3 position, Vector3 rotation, Vector3 scale)
         {
-            if (_flverhandle.Get().Flver.Bones.Count < index)
-                return;
-
             var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            if (container.Bone_RootNode.Children.Count < index)
+                return;
 
             // This relies on the index of the lists to align
             for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
@@ -150,10 +237,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void SelectRepresentativeDummy(int index)
         {
-            if (_flverhandle.Get().Flver.Dummies.Count < index)
-                return;
-
             var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            if (container.DummyPoly_RootNode.Children.Count < index)
+                return;
 
             // This relies on the index of the lists to align
             for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
@@ -171,10 +258,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void SelectRepresentativeNode(int index)
         {
-            if (_flverhandle.Get().Flver.Bones.Count < index)
-                return;
-
             var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            if (container.Bone_RootNode.Children.Count < index)
+                return;
 
             // This relies on the index of the lists to align
             for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
@@ -192,10 +279,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void DisplayRepresentativeDummyState(int index)
         {
-            if (_flverhandle.Get().Flver.Dummies.Count < index)
-                return;
-
             var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            if (container.DummyPoly_RootNode.Children.Count < index)
+                return;
 
             Entity curEntity = null;
 
@@ -243,10 +330,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void ToggleRepresentativeDummy(int index)
         {
-            if (_flverhandle.Get().Flver.Dummies.Count < index)
-                return;
-
             var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            if (container.DummyPoly_RootNode.Children.Count < index)
+                return;
 
             // This relies on the index of the lists to align
             for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
@@ -262,10 +349,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void DisplayRepresentativeNodeState(int index)
         {
-            if (_flverhandle.Get().Flver.Bones.Count < index)
-                return;
-
             var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            if (container.Bone_RootNode.Children.Count < index)
+                return;
 
             Entity curEntity = null;
 
@@ -313,10 +400,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void ToggleRepresentativeNode(int index)
         {
-            if (_flverhandle.Get().Flver.Bones.Count < index)
-                return;
-
             var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            if (container.Bone_RootNode.Children.Count < index)
+                return;
 
             // This relies on the index of the lists to align
             for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
@@ -332,10 +419,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void DisplayRepresentativeMeshState(int index)
         {
-            if (_flverhandle.Get().Flver.Meshes.Count < index)
-                return;
-
             var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            if (container.Mesh_RootNode.Children.Count < index)
+                return;
 
             Entity curEntity = null;
 
@@ -383,10 +470,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void ToggleRepresentativeMesh(int index)
         {
-            if (_flverhandle.Get().Flver.Meshes.Count < index)
-                return;
-
             var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            if (container.Mesh_RootNode.Children.Count < index)
+                return;
 
             // This relies on the index of the lists to align
             for (int i = 0; i < container.Mesh_RootNode.Children.Count; i++)
@@ -415,7 +502,7 @@ namespace StudioCore.Editors.ModelEditor
                 Screen.ModelHierarchy.FocusSelection = true;
             }
             // Bones
-            if (transformEnt.WrappedObject is FLVER.Bone)
+            if (transformEnt.WrappedObject is FLVER.Node)
             {
                 Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.Node;
                 Screen.ModelHierarchy._selectedNode = transformEnt.Index;
@@ -444,7 +531,7 @@ namespace StudioCore.Editors.ModelEditor
                 UpdateStoredDummyPosition(transformEnt);
             }
             // Bones
-            if (transformEnt.WrappedObject is FLVER.Bone)
+            if (transformEnt.WrappedObject is FLVER.Node)
             {
                 UpdateStoredNodeTransform(transformEnt);
             }
@@ -470,11 +557,11 @@ namespace StudioCore.Editors.ModelEditor
                 return;
 
             var bone = Screen.ResourceHandler.CurrentFLVER.Nodes[Screen.ModelHierarchy._selectedNode];
-            var entBone = (FLVER.Bone)transformEnt.WrappedObject;
+            var entBone = (FLVER.Node)transformEnt.WrappedObject;
 
-            if (bone.Translation != entBone.Position)
+            if (bone.Position != entBone.Position)
             {
-                bone.Translation = entBone.Position;
+                bone.Position = entBone.Position;
             }
             if (bone.Rotation != entBone.Rotation)
             {

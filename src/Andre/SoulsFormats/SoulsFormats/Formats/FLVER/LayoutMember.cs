@@ -1,6 +1,12 @@
-﻿using System;
-using static SoulsFormats.FLVER;
+﻿using SoulsFormats;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+// FLVER implementation for Model Editor usage
+// Credit to The12thAvenger
 namespace SoulsFormats
 {
     public static partial class FLVER
@@ -48,6 +54,7 @@ namespace SoulsFormats
                         case LayoutType.Byte4C:
                         case LayoutType.UV:
                         case LayoutType.Byte4E:
+                        case LayoutType.Unknown:
                             return 4;
 
                         case LayoutType.Float2:
@@ -63,11 +70,8 @@ namespace SoulsFormats
                         case LayoutType.Float4:
                             return 16;
 
-                        case LayoutType.Unknown:
-                            return 4;
-
                         default:
-                            throw new NotImplementedException($"No size defined for buffer layout type: {Type}");
+                            return -1;
                     }
                 }
             }
@@ -83,9 +87,12 @@ namespace SoulsFormats
                 Index = index;
             }
 
-            public LayoutMember Clone()
+            public LayoutMember()
             {
-                return (LayoutMember)MemberwiseClone();
+                Unk00 = 0;
+                Type = LayoutType.UV;
+                Semantic = LayoutSemantic.UV;
+                Index = 0;
             }
 
             internal LayoutMember(BinaryReaderEx br, int structOffset)
@@ -104,6 +111,10 @@ namespace SoulsFormats
                 bw.WriteUInt32((uint)Type);
                 bw.WriteUInt32((uint)Semantic);
                 bw.WriteInt32(Index);
+            }
+            public LayoutMember Clone()
+            {
+                return (LayoutMember)MemberwiseClone();
             }
 
             /// <summary>
