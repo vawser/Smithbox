@@ -5,89 +5,72 @@
 Push 'Release' builds to github releases, not the 'Debug' builds
 Update imgui.default
 
-Additions:
- - ESD Editor
- - EMEVD Editor
- - TAE Editor
- - FXR Editor
- - MTD (Material) Editor
- - Cutscene (MQB) Editor
- 
 General:
- - Add format json support for the other MSB types.
- - Add shortcuts for Param/Model/Gparam/Texture Viewer toolbar actions
- - Remove the fixed nature of the Editor menu bar windows
- - Look into thumbnail generation for Chr/Asset/Parts
- - Add articles covering all of the features and common use-cases in Smithbox
- - Go through non-ER games and run the MSB validation and Param validation to catch any issues within them.
+ - ADD: Add format json support for the other MSB types.
+ - ADD: Add articles covering all of the features and common use-cases in Smithbox
  
 Interface:
  - ADD: Change the toolbar panels into single "Actions" panel with collapsible groups + add drop-down actions to menu-bar
  
 Map Editor: 
- - Add .BTAB support
- - Add .GRASS support
- - Add .ENTRYFILELIST support
- - Add 'flat' editor view: similar to Param Editor, where you can edit the MSB stuff without the viewport overhead.
- - Add enum support for the DS3 corpse poses
- - Add "Data Export" action for MSB data: output the MSB information as JSON
- - Add "Find Value Instances" for MSB values
- - Fix select via arrow keys in the Map Scene tree (alias seems to stop it working).
- - Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
+ - ADD: .BTAB support
+ - ADD: .GRASS support
+ - ADD: .ENTRYFILELIST support
+ - ADD: enum support for the DS3 corpse poses
+ - ADD: "Data Export" action for MSB data: output the MSB information as JSON
+ - ADD: "Find Value Instances" for MSB values
+ - ADD: Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
+ - FIX: select via arrow keys in the Map Scene tree (alias seems to stop it working).
  - FIX: DS2 Map Pieces aren't loaded.
  
 Model Editor: 
- - FBX Export of Loaded Model
+ - ADD: FBX Export of Loaded Model
  - Add easier toggling of model masks based on associated NpcParam (for characters)
- - Implement Material/MATBIN editor
- - Add floating text for dummy poly ref IDs
- - Add floating text for co-ordinate direction (X, Y, Z)
- - Add dummy poly forward/upwards representation
+ - ADD: floating text for dummy poly ref IDs
+ - ADD: floating text for co-ordinate direction (X, Y, Z)
+ - ADD: dummy poly forward/upwards representation
+ - FIX: DS1 Map Pieces not loaded correctly
+ - FIX: DS2 Models not loaded correctly
+ - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
+
+Material Editor
+ - ADD: Implement Material/MATBIN editor
 
 Param Editor:
- - Add proper support for ColorEdit section so it appears properly with compare col 
- - Add stayparam support for DS3 (requires 'blob' editor with manual definitions)
- - Able to sort row order manually
- - Add button to restore param to vanilla fields
  - FIX: move Color Pickers into in-line position with last color field
+ - ADD: stayparam support for DS3 (requires 'blob' editor with manual definitions)
+ - ADD: Able to sort row order manually
+ - ADD: button to restore param to vanilla fields
  - ADD: let Color Picker work for changing color
 
 Text Editor:
- - Add generator tool for quickly adding entires, e.g. weapon entries: start ID, step amount, end ID, default title, default desc
- - FMG Exporter is adding unneed \n newlines on export and then causing double newlines on import
+ - ADD: generator tool for quickly adding entires, e.g. weapon entries: start ID, step amount, end ID, default title, default desc
+ - FIX: Exporter is adding unneed \n newlines on export and then causing double newlines on import
  - FIX: the patch separation of FMGs
  - FIX: vanilla entry should be preferred over dlc01/dlc02 entry
+ - FIX: Adjust FMG Updater checks so user's without the necessary files know what is lacking
  
 Gparam Editor:
- - Add mass edit power to Quick Edit: Allow edits to affect all files
- - Add gparam reference support (e.g. jump to map param, and if it is offset, that value entry offset)
- - Add command: random:[{<x>}] {} contain the min and max (needed to support the vector splits)
- - Add command: restore - Restores the value to the value from Game Root version (if it exists).
- - Work out why AC6 Bloom field can't be added
+ - ADD: mass edit power to Quick Edit: Allow edits to affect all files
+ - ADD: gparam reference support (e.g. jump to map param, and if it is offset, that value entry offset)
+ - ADD: command: random:[{<x>}] {} contain the min and max (needed to support the vector splits)
+ - ADD: command: restore - Restores the value to the value from Game Root version (if it exists).
+ - FIX: Work out why AC6 Bloom field can't be added
 
 Texture Viewer: 
- - Add support for 'custom' Shoebox Layouts for non-Shoebox Layout games
-  - Smithbox will instead read from a Shoebox folder in .smithbox for these games.
- - Add ability to edit Shoebox Layouts (subwindow)
- - Add ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
- - Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
- - Add ability to export selected icon 'section' of icon file (assuming texture has a shoebox layout)
+ - ADD: support for 'custom' Shoebox Layouts for non-Shoebox Layout games. Smithbox will instead read from a Shoebox folder in .smithbox for these games.
+ - ADD: ability to edit Shoebox Layouts (subwindow)
+ - ADD: ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
+ - ADD: ability to export selected icon 'section' of icon file (assuming texture has a shoebox layout)
+ - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
  
 Behavior Editor:
  - ADD: implement it
  
 World Map:
- - Add the dungeon icons, add icon radius for the non-open world maps
- - Add support for large/medium/small tile overlays
+ - ADD: the dungeon icons, add icon radius for the non-open world maps
+ - ADD: support for large/medium/small tile overlays
  
 #--------------------------------------
 # Notes
 #--------------------------------------
-Text Editor:
- - FIX: Adjust FMG Updater checks so user's without the necessary files know what is lacking
-
-Model Editor:
- - FIX: DS1 Map Pieces not loaded correctly
- - FIX: DS2 Models not loaded correctly
- - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
- - ADD: load loose FLVER
