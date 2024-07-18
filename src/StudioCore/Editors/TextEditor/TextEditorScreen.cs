@@ -51,8 +51,6 @@ public class TextEditorScreen : EditorScreen
     private TextToolbar_ActionList _textToolbar_ActionList;
     private TextToolbar_Configuration _textToolbar_Configuration;
 
-    private FmgUpgrader Upgrader;
-
     public TextEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         _propEditor = new PropertyEditor(EditorActionManager);
@@ -60,8 +58,6 @@ public class TextEditorScreen : EditorScreen
         _textToolbar = new TextToolbar(EditorActionManager);
         _textToolbar_ActionList = new TextToolbar_ActionList();
         _textToolbar_Configuration = new TextToolbar_Configuration();
-
-        Upgrader = new FmgUpgrader(this);
     }
 
     public string EditorName => "Text Editor";
@@ -273,18 +269,6 @@ public class TextEditorScreen : EditorScreen
             }
             ImguiUtils.ShowHoverTooltip("Allows you to switch the target FMG output on save. By default for DS3 dlc2 and ER this is dlc02.");
         }
-
-
-        if (Upgrader.DisplayFmgUpdate && Upgrader.IsSupportedProjectType_FmgUpdate())
-        {
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Warning_Text_Color);
-            if (ImGui.Button("Update FMGs"))
-            {
-                Upgrader.UpdateFmgs();
-            }
-            ImGui.PopStyleColor();
-            ImguiUtils.ShowHoverTooltip("Your mod has unique FMG entries that are not in the latest FMG binder. Use this action to move them into it.");
-        }
     }
 
     public TargetOutputMode CurrentTargetOutputMode = TargetOutputMode.DLC2;
@@ -425,7 +409,6 @@ public class TextEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
-        Upgrader.SetupFmgUpdate();
         _fmgSearchAllString = "";
         _filteredFmgInfo.Clear();
         ClearTextEditorCache();
@@ -438,8 +421,6 @@ public class TextEditorScreen : EditorScreen
             return;
 
         Smithbox.BankHandler.FMGBank.SaveFMGs();
-
-        Upgrader.SetupFmgUpdate(); // Re-run this to check FMG update state
     }
 
     public void SaveAll()
@@ -448,8 +429,6 @@ public class TextEditorScreen : EditorScreen
             return;
 
         Smithbox.BankHandler.FMGBank.SaveFMGs();
-
-        Upgrader.SetupFmgUpdate(); // Re-run this to check FMG update state
     }
 
     private void ClearTextEditorCache()

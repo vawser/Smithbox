@@ -46,7 +46,6 @@ Text Editor:
  - FIX: Exporter is adding unneed \n newlines on export and then causing double newlines on import
  - FIX: the patch separation of FMGs
  - FIX: vanilla entry should be preferred over dlc01/dlc02 entry
- - FIX: Adjust FMG Updater checks so user's without the necessary files know what is lacking
  
 Gparam Editor:
  - ADD: mass edit power to Quick Edit: Allow edits to affect all files
