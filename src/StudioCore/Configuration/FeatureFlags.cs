@@ -19,7 +19,6 @@ public static class FeatureFlags
     public static bool EnableEditor_Evemd = false;
     public static bool EnableEditor_Esd = false;
     public static bool EnableEditor_HavokBehavior = false;
-    public static bool EnableEditor_MergeTool = false;
 
 #if DEBUG
     public static bool DebugMenu = true;

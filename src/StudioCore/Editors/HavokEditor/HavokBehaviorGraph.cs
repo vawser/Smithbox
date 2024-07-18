@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HKLib.hk2018;
 using StudioCore.HavokEditor;
+using static HKLib.hk2018.CustomLookAtTwistModifier;
 
 namespace StudioCore.Editors.HavokEditor;
 
@@ -32,8 +33,8 @@ public class HavokBehaviorGraph
                 {
                     // State Machines
                     hkbStateMachine hkbStateMachine = (hkbStateMachine)behaviorGraph.m_rootGenerator;
-                    int depth = 0;
-                    HavokStateMachineView(hkbStateMachine, depth);
+
+                    HavokStateMachineView(hkbStateMachine, 0);
 
                     ImGui.TreePop();
                 }
@@ -183,7 +184,7 @@ public class HavokBehaviorGraph
 
                 foreach (var entry in stateMachine.m_states)
                 {
-                    hkbStateMachineStateInfoView(depth, entry);
+                    hkbStateMachineStateInfoView(entry, depth);
                 }
 
                 if (stateMachine.m_wildcardTransitions != null)
@@ -209,7 +210,7 @@ public class HavokBehaviorGraph
         depth++;
     }
 
-    public void hkbStateMachineStateInfoView(int depth, hkbStateMachine.StateInfo entry)
+    public void hkbStateMachineStateInfoView(hkbStateMachine.StateInfo entry, int depth)
     {
         if (entry != null)
         {
@@ -250,12 +251,12 @@ public class HavokBehaviorGraph
                 if (entry.m_generator is hkbScriptGenerator)
                 {
                     var scriptGenerator = (hkbScriptGenerator)entry.m_generator;
-                    hkbScriptGeneratorView(depth, scriptGenerator);
+                    hkbScriptGeneratorView(scriptGenerator, depth);
                 }
                 else if (entry.m_generator is hkbBlenderGenerator)
                 {
                     var blenderGenerator = (hkbBlenderGenerator)entry.m_generator;
-                    hkbBlenderGeneratorView(depth, blenderGenerator);
+                    hkbBlenderGeneratorView(blenderGenerator, depth);
                 }
                 else
                 {
@@ -273,7 +274,7 @@ public class HavokBehaviorGraph
         depth++;
     }
 
-    public void hkbScriptGeneratorView(int depth, hkbScriptGenerator entry)
+    public void hkbScriptGeneratorView(hkbScriptGenerator entry, int depth)
     {
         if (entry != null)
         {
@@ -282,7 +283,7 @@ public class HavokBehaviorGraph
                 ImGui.Text($"m_name: {entry.m_name}");
 
                 var variableBindingSet = (hkbVariableBindingSet)entry.m_variableBindingSet;
-                variableBindingSetView(depth, variableBindingSet);
+                variableBindingSetView(variableBindingSet, depth);
 
                 ImGui.Text($"m_userData: {entry.m_userData}");
                 ImGui.Text($"m_name: {entry.m_name}");
@@ -290,7 +291,12 @@ public class HavokBehaviorGraph
                 if (entry.m_child is hkbModifierGenerator)
                 {
                     var child_generator = (hkbModifierGenerator)entry.m_child;
-                    hkbModifierGeneratorView(depth, child_generator);
+                    hkbModifierGeneratorView(child_generator, depth);
+                }
+                else if (entry.m_child is hkbBlenderGenerator)
+                {
+                    var child_generator = (hkbBlenderGenerator)entry.m_child;
+                    hkbBlenderGeneratorView(child_generator, depth);
                 }
                 else
                 {
@@ -310,32 +316,7 @@ public class HavokBehaviorGraph
         depth++;
     }
 
-    public void hkbBlenderGeneratorView(int depth, hkbBlenderGenerator entry)
-    {
-        if (entry != null)
-        {
-            if (ImGui.TreeNodeEx($"hkbBlenderGeneratorView##hkbBlenderGeneratorView{depth}"))
-            {
-                ImGui.Text($"m_referencePoseWeightThreshold: {entry.m_referencePoseWeightThreshold}");
-                ImGui.Text($"m_blendParameter: {entry.m_blendParameter}");
-                ImGui.Text($"m_minCyclicBlendParameter: {entry.m_minCyclicBlendParameter}");
-                ImGui.Text($"m_maxCyclicBlendParameter: {entry.m_maxCyclicBlendParameter}");
-                ImGui.Text($"m_indexOfSyncMasterChild: {entry.m_indexOfSyncMasterChild}");
-                ImGui.Text($"m_flags: {entry.m_flags}");
-                ImGui.Text($"m_subtractLastChild: {entry.m_subtractLastChild}");
-
-                foreach (hkbBlenderGeneratorChild cEntry in entry.m_children)
-                {
-                    hkbBlenderGeneratorChildView(depth, cEntry);
-                }
-
-                ImGui.TreePop();
-            }
-        }
-        depth++;
-    }
-
-    public void hkbBlenderGeneratorChildView(int depth, hkbBlenderGeneratorChild entry)
+    public void hkbBlenderGeneratorChildView(hkbBlenderGeneratorChild entry, int depth)
     {
         if (entry != null)
         {
@@ -344,12 +325,12 @@ public class HavokBehaviorGraph
                 if (entry.m_generator is hkbScriptGenerator)
                 {
                     var scriptGenerator = (hkbScriptGenerator)entry.m_generator;
-                    hkbScriptGeneratorView(depth, scriptGenerator);
+                    hkbScriptGeneratorView(scriptGenerator, depth);
                 }
                 else if (entry.m_generator is hkbBlenderGenerator)
                 {
                     var blenderGenerator = (hkbBlenderGenerator)entry.m_generator;
-                    hkbBlenderGeneratorView(depth, blenderGenerator);
+                    hkbBlenderGeneratorView(blenderGenerator, depth);
                 }
                 else
                 {
@@ -370,7 +351,7 @@ public class HavokBehaviorGraph
         depth++;
     }
 
-    public void variableBindingSetView(int depth, hkbVariableBindingSet entry)
+    public void variableBindingSetView(hkbVariableBindingSet entry, int depth)
     {
         if (entry != null)
         {
@@ -393,14 +374,14 @@ public class HavokBehaviorGraph
         depth++;
     }
 
-    public void hkbModifierGeneratorView(int depth, hkbModifierGenerator entry)
+    public void hkbModifierGeneratorView(hkbModifierGenerator entry, int depth)
     {
         if (entry != null)
         {
             if (ImGui.TreeNodeEx($"hkbModifierGeneratorView##hkbModifierGeneratorView{depth}"))
             {
                 var variableBindingSet = (hkbVariableBindingSet)entry.m_variableBindingSet;
-                variableBindingSetView(depth, variableBindingSet);
+                variableBindingSetView(variableBindingSet, depth);
 
                 ImGui.Text($"m_userData: {entry.m_userData}");
                 ImGui.Text($"m_name: {entry.m_name}");
@@ -410,7 +391,7 @@ public class HavokBehaviorGraph
                     var modifierList = (hkbModifierList)entry.m_modifier;
 
                     if (modifierList != null)
-                        hkbModifierListView(depth, modifierList);
+                        hkbModifierListView(modifierList, depth);
                 }
                 else
                 {
@@ -420,7 +401,7 @@ public class HavokBehaviorGraph
                 var scriptGenerator = (hkbScriptGenerator)entry.m_generator;
 
                 if (scriptGenerator != null)
-                    hkbScriptGeneratorView(depth, scriptGenerator);
+                    hkbScriptGeneratorView(scriptGenerator, depth);
 
                 ImGui.TreePop();
             }
@@ -429,14 +410,41 @@ public class HavokBehaviorGraph
         depth++;
     }
 
-    public void hkbModifierListView(int depth, hkbModifierList entry)
+    public void hkbBlenderGeneratorView(hkbBlenderGenerator entry, int depth)
+    {
+        if (entry != null)
+        {
+            if (ImGui.TreeNodeEx($"hkbBlenderGeneratorView##hkbBlenderGeneratorView{depth}"))
+            {
+                ImGui.Text($"m_referencePoseWeightThreshold: {entry.m_referencePoseWeightThreshold}");
+                ImGui.Text($"m_blendParameter: {entry.m_blendParameter}");
+                ImGui.Text($"m_minCyclicBlendParameter: {entry.m_minCyclicBlendParameter}");
+                ImGui.Text($"m_maxCyclicBlendParameter: {entry.m_maxCyclicBlendParameter}");
+                ImGui.Text($"m_indexOfSyncMasterChild: {entry.m_indexOfSyncMasterChild}");
+                ImGui.Text($"m_flags: {entry.m_flags}");
+                ImGui.Text($"m_subtractLastChild: {entry.m_subtractLastChild}");
+
+                foreach(var sEntry in entry.m_children)
+                {
+                    if (sEntry != null)
+                        hkbBlenderGeneratorChildView(sEntry, depth);
+                }
+
+                ImGui.TreePop();
+            }
+        }
+
+        depth++;
+    }
+
+    public void hkbModifierListView(hkbModifierList entry, int depth)
     {
         if (entry != null)
         {
             if (ImGui.TreeNodeEx($"hkbModifierListView##hkbModifierListView{depth}"))
             {
                 var variableBindingSet = (hkbVariableBindingSet)entry.m_variableBindingSet;
-                variableBindingSetView(depth, variableBindingSet);
+                variableBindingSetView(variableBindingSet, depth);
 
                 ImGui.Text($"m_userData: {entry.m_userData}");
                 ImGui.Text($"m_name: {entry.m_name}");
@@ -446,11 +454,31 @@ public class HavokBehaviorGraph
                 {
                     if (mEntry is hkbTwistModifier)
                     {
-                        hkbTwistModifierView(depth, (hkbTwistModifier)mEntry);
+                        hkbTwistModifierView((hkbTwistModifier)mEntry, depth);
                     }
                     else if (mEntry is hkbModifierList)
                     {
-                        hkbModifierListView(depth, (hkbModifierList)mEntry);
+                        hkbModifierListView((hkbModifierList)mEntry, depth);
+                    }
+                    else if (mEntry is CustomLookAtTwistModifier)
+                    {
+                        CustomLookAtTwistModifierView((CustomLookAtTwistModifier)mEntry, depth);
+                    }
+                    else if (mEntry is hkbGetHandleOnBoneModifier)
+                    {
+                        hkbGetHandleOnBoneModifierView((hkbGetHandleOnBoneModifier)mEntry, depth);
+                    }
+                    else if (mEntry is hkbEvaluateHandleModifier)
+                    {
+                        hkbEvaluateHandleModifierView((hkbEvaluateHandleModifier)mEntry, depth);
+                    }
+                    else if (mEntry is hkbHandIkModifier)
+                    {
+                        hkbHandIkModifierView((hkbHandIkModifier)mEntry, depth);
+                    }
+                    else if (mEntry is hkbFootIkModifier)
+                    {
+                        hkbFootIkModifierView((hkbFootIkModifier)mEntry, depth);
                     }
                     else
                     {
@@ -464,14 +492,14 @@ public class HavokBehaviorGraph
 
         depth++;
     }
-    public void hkbTwistModifierView(int depth, hkbTwistModifier entry)
+    public void hkbTwistModifierView(hkbTwistModifier entry, int depth)
     {
         if (entry != null)
         {
             if (ImGui.TreeNodeEx($"hkbTwistModifierView##hkbTwistModifierView{depth}"))
             {
                 var variableBindingSet = (hkbVariableBindingSet)entry.m_variableBindingSet;
-                variableBindingSetView(depth, variableBindingSet);
+                variableBindingSetView(variableBindingSet, depth);
 
                 ImGui.Text($"m_userData: {entry.m_userData}");
                 ImGui.Text($"m_name: {entry.m_name}");
@@ -490,5 +518,232 @@ public class HavokBehaviorGraph
 
         depth++;
     }
+    public void CustomLookAtTwistModifierView(CustomLookAtTwistModifier entry, int depth)
+    {
+        if (entry != null)
+        {
+            if (ImGui.TreeNodeEx($"CustomLookAtTwistModifierView##CustomLookAtTwistModifierView{depth}"))
+            {
+                ImGui.Text($"m_ModifierID: {entry.m_ModifierID}");
+                ImGui.Text($"m_rotationAxisType: {entry.m_rotationAxisType}");
+                ImGui.Text($"m_SensingDummyPoly: {entry.m_SensingDummyPoly}");
 
+                foreach(var sEntry in entry.m_twistParam)
+                {
+                    TwistParamView((TwistParam)sEntry, depth);
+                }
+
+                ImGui.Text($"m_UpLimitAngle: {entry.m_UpLimitAngle}");
+                ImGui.Text($"m_DownLimitAngle: {entry.m_DownLimitAngle}");
+                ImGui.Text($"m_RightLimitAngle: {entry.m_RightLimitAngle}");
+                ImGui.Text($"m_LeftLimitAngle: {entry.m_LeftLimitAngle}");
+                ImGui.Text($"m_UpMinimumAngle: {entry.m_UpMinimumAngle}");
+                ImGui.Text($"m_DownMinimumAngle: {entry.m_DownMinimumAngle}");
+                ImGui.Text($"m_RightMinimumAngle: {entry.m_RightMinimumAngle}");
+                ImGui.Text($"m_LeftMinimumAngle: {entry.m_LeftMinimumAngle}");
+                ImGui.Text($"m_SensingAngle: {entry.m_SensingAngle}");
+                ImGui.Text($"m_setAngleMethod: {entry.m_setAngleMethod}");
+                ImGui.Text($"m_isAdditive: {entry.m_isAdditive}");
+
+                ImGui.TreePop();
+            }
+        }
+
+        depth++;
+    }
+
+    public void TwistParamView(TwistParam entry, int depth)
+    {
+        if (entry != null)
+        {
+            if (ImGui.TreeNodeEx($"TwistParamView##TwistParamView{depth}"))
+            {
+                ImGui.Text($"m_startBoneIndex: {entry.m_startBoneIndex}");
+                ImGui.Text($"m_endBoneIndex: {entry.m_endBoneIndex}");
+                ImGui.Text($"m_targetRotationRate: {entry.m_targetRotationRate}");
+                ImGui.Text($"m_newTargetGain: {entry.m_newTargetGain}");
+                ImGui.Text($"m_onGain: {entry.m_onGain}");
+                ImGui.Text($"m_offGain: {entry.m_offGain}");
+
+                ImGui.TreePop();
+            }
+        }
+
+        depth++;
+    }
+
+    public void hkbGetHandleOnBoneModifierView(hkbGetHandleOnBoneModifier entry, int depth)
+    {
+        if (entry != null)
+        {
+            if (ImGui.TreeNodeEx($"hkbGetHandleOnBoneModifierView##hkbGetHandleOnBoneModifierView{depth}"))
+            {
+                ImGui.Text($"m_handleOut: {entry.m_handleOut}");
+                ImGui.Text($"m_localFrameName: {entry.m_localFrameName}");
+                ImGui.Text($"m_ragdollBoneIndex: {entry.m_ragdollBoneIndex}");
+                ImGui.Text($"m_animationBoneIndex: {entry.m_animationBoneIndex}");
+
+                ImGui.TreePop();
+            }
+        }
+
+        depth++;
+    }
+
+    public void hkbEvaluateHandleModifierView(hkbEvaluateHandleModifier entry, int depth)
+    {
+        if (entry != null)
+        {
+            if (ImGui.TreeNodeEx($"hkbEvaluateHandleModifierView##hkbEvaluateHandleModifierView{depth}"))
+            {
+                ImGui.Text($"m_handle: {entry.m_handle}");
+                ImGui.Text($"m_handlePositionOut: {entry.m_handlePositionOut}");
+                ImGui.Text($"m_handleRotationOut: {entry.m_handleRotationOut}");
+                ImGui.Text($"m_isValidOut: {entry.m_isValidOut}");
+                ImGui.Text($"m_extrapolationTimeStep: {entry.m_extrapolationTimeStep}");
+                ImGui.Text($"m_handleChangeSpeed: {entry.m_handleChangeSpeed}");
+                ImGui.Text($"m_handleChangeMode: {entry.m_handleChangeMode}");
+
+                ImGui.TreePop();
+            }
+        }
+
+        depth++;
+    }
+
+    public void hkbHandIkModifierView(hkbHandIkModifier entry, int depth)
+    {
+        if (entry != null)
+        {
+            if (ImGui.TreeNodeEx($"hkbHandIkModifierView##hkbHandIkModifierView{depth}"))
+            {
+                foreach(var sEntry in entry.m_hands)
+                {
+                    hkbHandIkModifierHandView((hkbHandIkModifier.Hand)sEntry, depth);
+                }
+
+                ImGui.Text($"m_fadeInOutCurve: {entry.m_fadeInOutCurve}");
+
+                ImGui.TreePop();
+            }
+        }
+
+        depth++;
+    }
+    public void hkbHandIkModifierHandView(hkbHandIkModifier.Hand entry, int depth)
+    {
+        if (entry != null)
+        {
+            if (ImGui.TreeNodeEx($"hkbHandIkModifierHandView##hkbHandIkModifierHandView{depth}"))
+            {
+                ImGui.Text($"m_elbowAxisLS: {entry.m_elbowAxisLS}");
+                ImGui.Text($"m_backHandNormalLS: {entry.m_backHandNormalLS}");
+                ImGui.Text($"m_handOffsetLS: {entry.m_handOffsetLS}");
+                ImGui.Text($"m_handOrientationOffsetLS: {entry.m_handOrientationOffsetLS}");
+                ImGui.Text($"m_maxElbowAngleDegrees: {entry.m_maxElbowAngleDegrees}");
+                ImGui.Text($"m_minElbowAngleDegrees: {entry.m_minElbowAngleDegrees}");
+                ImGui.Text($"m_shoulderIndex: {entry.m_shoulderIndex}");
+                ImGui.Text($"m_shoulderSiblingIndex: {entry.m_shoulderSiblingIndex}");
+                ImGui.Text($"m_elbowIndex: {entry.m_elbowIndex}");
+                ImGui.Text($"m_elbowSiblingIndex: {entry.m_elbowSiblingIndex}");
+                ImGui.Text($"m_fadm_wristIndexeInOutCurve: {entry.m_wristIndex}");
+                ImGui.Text($"m_enforceEndPosition: {entry.m_enforceEndPosition}");
+                ImGui.Text($"m_enforceEndRotation: {entry.m_enforceEndRotation}");
+                ImGui.Text($"m_localFrameName: {entry.m_localFrameName}");
+
+                ImGui.TreePop();
+            }
+        }
+
+        depth++;
+    }
+    public void hkbFootIkModifierView(hkbFootIkModifier entry, int depth)
+    {
+        if (entry != null)
+        {
+            if (ImGui.TreeNodeEx($"hkbHandIkModifierView##hkbHandIkModifierView{depth}"))
+            {
+                hkbFootIkGainsView((hkbFootIkGains)entry.m_gains, depth);
+
+                foreach (var sEntry in entry.m_legs)
+                {
+                    hkbFootIkModifierLegView((hkbFootIkModifier.Leg)sEntry, depth);
+                }
+
+                ImGui.Text($"m_raycastDistanceUp: {entry.m_raycastDistanceUp}");
+                ImGui.Text($"m_raycastDistanceDown: {entry.m_raycastDistanceDown}");
+                ImGui.Text($"m_originalGroundHeightMS: {entry.m_originalGroundHeightMS}");
+                ImGui.Text($"m_errorOut: {entry.m_errorOut}");
+                ImGui.Text($"m_verticalOffset: {entry.m_verticalOffset}");
+                ImGui.Text($"m_collisionFilterInfo: {entry.m_collisionFilterInfo}");
+                ImGui.Text($"m_forwardAlignFraction: {entry.m_forwardAlignFraction}");
+                ImGui.Text($"m_sidewaysAlignFraction: {entry.m_sidewaysAlignFraction}");
+                ImGui.Text($"m_sidewaysSampleWidth: {entry.m_sidewaysSampleWidth}");
+                ImGui.Text($"m_useTrackData: {entry.m_useTrackData}");
+                ImGui.Text($"m_lockFeetWhenPlanted: {entry.m_lockFeetWhenPlanted}");
+                ImGui.Text($"m_useCharacterUpVector: {entry.m_useCharacterUpVector}");
+                ImGui.Text($"m_keepSourceFootEndAboveGround: {entry.m_keepSourceFootEndAboveGround}");
+                ImGui.Text($"m_alignMode: {entry.m_alignMode}");
+
+                ImGui.TreePop();
+            }
+        }
+    }
+    public void hkbFootIkGainsView(hkbFootIkGains entry, int depth)
+    {
+        if (entry != null)
+        {
+            if (ImGui.TreeNodeEx($"hkbFootIkGainsView##hkbFootIkGainsView{depth}"))
+            {
+                ImGui.Text($"m_onOffGain: {entry.m_onOffGain}");
+                ImGui.Text($"m_groundAscendingGain: {entry.m_groundAscendingGain}");
+                ImGui.Text($"m_groundDescendingGain: {entry.m_groundDescendingGain}");
+                ImGui.Text($"m_footPlantedGain: {entry.m_footPlantedGain}");
+                ImGui.Text($"m_footRaisedGain: {entry.m_footRaisedGain}");
+                ImGui.Text($"m_footLockingGain: {entry.m_footLockingGain}");
+                ImGui.Text($"m_ankleRotationGain: {entry.m_ankleRotationGain}");
+                ImGui.Text($"m_worldFromModelFeedbackGain: {entry.m_worldFromModelFeedbackGain}");
+                ImGui.Text($"m_errorUpDownBias: {entry.m_errorUpDownBias}");
+                ImGui.Text($"m_alignWorldFromModelGain: {entry.m_alignWorldFromModelGain}");
+                ImGui.Text($"m_hipOrientationGain: {entry.m_hipOrientationGain}");
+
+                ImGui.TreePop();
+            }
+        }
+    }
+    public void hkbFootIkModifierLegView(hkbFootIkModifier.Leg entry, int depth)
+    {
+        if (entry != null)
+        {
+            if (ImGui.TreeNodeEx($"hkbFootIkModifierLegView##hkbFootIkModifierLegView{depth}"))
+            {
+                ImGui.Text($"m_originalAnkleTransformMS: {entry.m_originalAnkleTransformMS}");
+                ImGui.Text($"m_kneeAxisLS: {entry.m_kneeAxisLS}");
+                ImGui.Text($"m_footEndLS: {entry.m_footEndLS}");
+                ImGui.Text($"m_ungroundedEvent: {entry.m_ungroundedEvent}");
+                ImGui.Text($"m_footPlantedAnkleHeightMS: {entry.m_footPlantedAnkleHeightMS}");
+                ImGui.Text($"m_footRaisedAnkleHeightMS: {entry.m_footRaisedAnkleHeightMS}");
+                ImGui.Text($"m_maxAnkleHeightMS: {entry.m_maxAnkleHeightMS}");
+                ImGui.Text($"m_minAnkleHeightMS: {entry.m_minAnkleHeightMS}");
+                ImGui.Text($"m_maxFootPitchDegrees: {entry.m_maxFootPitchDegrees}");
+                ImGui.Text($"m_minFootPitchDegrees: {entry.m_minFootPitchDegrees}");
+                ImGui.Text($"m_maxFootRollDegrees: {entry.m_maxFootRollDegrees}");
+                ImGui.Text($"m_minFootRollDegrees: {entry.m_minFootRollDegrees}");
+                ImGui.Text($"m_heelOffsetFromAnkle: {entry.m_heelOffsetFromAnkle}");
+                ImGui.Text($"m_favorToeInterpenetrationOverSteepSlope: {entry.m_favorToeInterpenetrationOverSteepSlope}");
+                ImGui.Text($"m_favorHeelInterpenetrationOverSteepSlope: {entry.m_favorHeelInterpenetrationOverSteepSlope}");
+                ImGui.Text($"m_maxKneeAngleDegrees: {entry.m_maxKneeAngleDegrees}");
+                ImGui.Text($"m_minKneeAngleDegrees: {entry.m_minKneeAngleDegrees}");
+                ImGui.Text($"m_verticalError: {entry.m_verticalError}");
+                ImGui.Text($"m_hipIndex: {entry.m_hipIndex}");
+                ImGui.Text($"m_kneeIndex: {entry.m_kneeIndex}");
+                ImGui.Text($"m_ankleIndex: {entry.m_ankleIndex}");
+                ImGui.Text($"m_hitSomething: {entry.m_hitSomething}");
+                ImGui.Text($"m_isPlantedMS: {entry.m_isPlantedMS}");
+                ImGui.Text($"m_isOriginalAnkleTransformMSSet: {entry.m_isOriginalAnkleTransformMSSet}");
+
+                ImGui.TreePop();
+            }
+        }
+    }
 }
