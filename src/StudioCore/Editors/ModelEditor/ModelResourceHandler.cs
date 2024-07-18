@@ -139,20 +139,27 @@ namespace StudioCore.Editors.ModelEditor
                 {
                     if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
                     {
-                        // BND3
-                        BND3Reader reader = new BND3Reader(modelAsset.AssetPath);
-                        foreach (var file in reader.Files)
+                        if (modelType == ModelEditorModelType.MapPiece)
                         {
-                            var fileName = file.Name.ToLower();
-                            var modelName = modelid.ToLower();
-
-                            if (fileName.Contains(modelName) && fileName.Contains(".flv"))
-                            {
-                                CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
-                                break;
-                            }
+                            CurrentFLVER = FLVER2.Read(modelAsset.AssetPath);
                         }
-                        reader.Dispose();
+                        else
+                        {
+                            // BND3
+                            BND3Reader reader = new BND3Reader(modelAsset.AssetPath);
+                            foreach (var file in reader.Files)
+                            {
+                                var fileName = file.Name.ToLower();
+                                var modelName = modelid.ToLower();
+
+                                if (fileName.Contains(modelName) && fileName.Contains(".flv"))
+                                {
+                                    CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
+                                    break;
+                                }
+                            }
+                            reader.Dispose();
+                        }
                     }
                     // DS2, DS3, SDT, ER, AC6
                     else
@@ -233,7 +240,6 @@ namespace StudioCore.Editors.ModelEditor
             {
                 ResourceDescriptor collisionAsset = AssetLocator.GetAssetGeomHKXBinder(modelid, "_l");
 
-                TaskLogs.AddLog(collisionAsset.AssetPath);
                 if (collisionAsset.AssetPath != null)
                 {
                     if (Smithbox.ProjectType is ProjectType.ER)
@@ -272,7 +278,6 @@ namespace StudioCore.Editors.ModelEditor
             {
                 ResourceDescriptor collisionAsset = AssetLocator.GetAssetGeomHKXBinder(modelid, "_h");
 
-                TaskLogs.AddLog(collisionAsset.AssetPath);
                 if (collisionAsset.AssetPath != null)
                 {
                     if (Smithbox.ProjectType is ProjectType.ER)
