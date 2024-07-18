@@ -35,7 +35,7 @@ public class ModelEditorScreen : EditorScreen
 
     public MapEditor.ViewportActionManager EditorActionManager = new();
 
-    public ModelAssetSelectionView ModelSelectionView;
+    public ModelSelectionView ModelSelectionView;
 
     public ModelPropertyEditor ModelPropertyEditor;
     public ModelPropertyCache _propCache = new();
@@ -79,7 +79,7 @@ public class ModelEditorScreen : EditorScreen
 
         ResourceHandler = new ModelResourceHandler(this, Viewport);
         ViewportHandler = new ModelViewportHandler(this, Viewport);
-        ModelSelectionView = new ModelAssetSelectionView(this);
+        ModelSelectionView = new ModelSelectionView(this);
         ModelHierarchy = new ModelHierarchyView(this);
         ModelPropertyEditor = new ModelPropertyEditor(this);
 

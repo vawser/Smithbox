@@ -80,6 +80,21 @@ public static class VirtualPathLocator
         // Parse the virtual path with a DFA and convert it to a game path
         var i = 0;
 
+        // LOOSE
+        if (pathElements[i].Equals("loose"))
+        {
+            bndpath = "";
+            i++;
+
+            // Used to load loose FLVER files that may have any path
+            if (pathElements[i].Equals("flver"))
+            {
+                i++;
+                var loosePath = pathElements[i];
+                return loosePath;
+            }
+        }
+
         // MAP
         if (pathElements[i].Equals("map"))
         {

@@ -12,6 +12,7 @@ namespace StudioCore.Editors.ModelEditor
         Character,
         Asset,
         Part,
-        MapPiece
+        MapPiece,
+        Loose
     }
 }

@@ -36,6 +36,23 @@ namespace StudioCore.Editors.ModelEditor
         }
 
         /// <summary>
+        /// Loads a loose FLVER
+        /// </summary>
+        /// <param name="name"></param>
+        public void LoadLooseFLVER(string name, string loosePath)
+        {
+            Screen.EditorActionManager.Clear();
+            Screen.ModelHierarchy.ResetSelection();
+            Screen.ModelHierarchy.ResetMultiSelection();
+            Screen._selection.ClearSelection();
+
+            CurrentFLVERInfo = new FlverModelInfo(name, loosePath);
+
+            LoadEditableModel(name, ModelEditorModelType.Loose);
+            LoadRepresentativeModel(name, ModelEditorModelType.Loose);
+        }
+
+        /// <summary>
         /// Loads a Character FLVER
         /// </summary>
         /// <param name="name"></param>
@@ -45,8 +62,10 @@ namespace StudioCore.Editors.ModelEditor
             Screen.ModelHierarchy.ResetSelection();
             Screen.ModelHierarchy.ResetMultiSelection();
             Screen._selection.ClearSelection();
+
             LoadEditableModel(name, ModelEditorModelType.Character);
             LoadRepresentativeModel(name, ModelEditorModelType.Character);
+
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Character, "");
         }
 
@@ -59,10 +78,12 @@ namespace StudioCore.Editors.ModelEditor
             Screen.ModelHierarchy.ResetSelection();
             Screen.ModelHierarchy.ResetMultiSelection();
             Screen._selection.ClearSelection();
+
             LoadEditableModel(name, ModelEditorModelType.Object);
             LoadEditableCollisionLow(name, ModelEditorModelType.Object);
             LoadEditableCollisionHigh(name, ModelEditorModelType.Object);
             LoadRepresentativeModel(name, ModelEditorModelType.Object);
+
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Object, "");
         }
 
@@ -75,8 +96,10 @@ namespace StudioCore.Editors.ModelEditor
             Screen.ModelHierarchy.ResetSelection();
             Screen.ModelHierarchy.ResetMultiSelection();
             Screen._selection.ClearSelection();
+
             LoadEditableModel(name, ModelEditorModelType.Parts);
             LoadRepresentativeModel(name, ModelEditorModelType.Parts);
+
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Parts, "");
         }
 
@@ -89,8 +112,10 @@ namespace StudioCore.Editors.ModelEditor
             Screen.ModelHierarchy.ResetSelection();
             Screen.ModelHierarchy.ResetMultiSelection();
             Screen._selection.ClearSelection();
+
             LoadEditableModel(name, ModelEditorModelType.MapPiece, mapId);
             LoadRepresentativeModel(name, ModelEditorModelType.MapPiece, mapId);
+
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.MapPiece, mapId);
         }
 
@@ -103,45 +128,52 @@ namespace StudioCore.Editors.ModelEditor
 
             //TaskLogs.AddLog(modelAsset.AssetPath);
 
-            if (modelAsset.AssetPath != null)
+            if (modelType == ModelEditorModelType.Loose)
             {
-                if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
+                CurrentFLVER = FLVER2.Read(CurrentFLVERInfo.LoosePath);
+            }
+            else
+            {
+                if (modelAsset.AssetPath != null)
                 {
-                    // BND3
-                    BND3Reader reader = new BND3Reader(modelAsset.AssetPath);
-                    foreach (var file in reader.Files)
+                    if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
                     {
-                        var fileName = file.Name.ToLower();
-                        var modelName = modelid.ToLower();
-
-                        if (fileName.Contains(modelName) && fileName.Contains(".flv"))
+                        // BND3
+                        BND3Reader reader = new BND3Reader(modelAsset.AssetPath);
+                        foreach (var file in reader.Files)
                         {
-                            CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
-                            break;
+                            var fileName = file.Name.ToLower();
+                            var modelName = modelid.ToLower();
+
+                            if (fileName.Contains(modelName) && fileName.Contains(".flv"))
+                            {
+                                CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
+                                break;
+                            }
                         }
+                        reader.Dispose();
                     }
-                    reader.Dispose();
-                }
-                else
-                {
-                    // BND4
-                    BND4Reader reader = new BND4Reader(modelAsset.AssetPath);
-                    foreach(var file in reader.Files)
+                    else
                     {
-                        var fileName = file.Name.ToLower();
-                        var modelName = modelid.ToLower();
-
-                        //TaskLogs.AddLog(fileName);
-                        //TaskLogs.AddLog(modelName);
-
-                        if (fileName.Contains(modelName) && fileName.Contains(".flv"))
+                        // BND4
+                        BND4Reader reader = new BND4Reader(modelAsset.AssetPath);
+                        foreach (var file in reader.Files)
                         {
-                            //TaskLogs.AddLog("New CurrentFLVER");
-                            CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
-                            break;
+                            var fileName = file.Name.ToLower();
+                            var modelName = modelid.ToLower();
+
+                            //TaskLogs.AddLog(fileName);
+                            //TaskLogs.AddLog(modelName);
+
+                            if (fileName.Contains(modelName) && fileName.Contains(".flv"))
+                            {
+                                //TaskLogs.AddLog("New CurrentFLVER");
+                                CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
+                                break;
+                            }
                         }
+                        reader.Dispose();
                     }
-                    reader.Dispose();
                 }
             }
         }
@@ -253,6 +285,12 @@ namespace StudioCore.Editors.ModelEditor
 
             VirtualResourcePath = modelAsset.AssetVirtualPath;
 
+            if (modelType == ModelEditorModelType.Loose)
+            {
+                modelAsset = new ResourceDescriptor();
+                modelAsset.AssetVirtualPath = $"loose/flver/{CurrentFLVERInfo.LoosePath}";
+            }
+
             Screen.ViewportHandler.UpdateRenderMesh(modelAsset, skipModel);
 
             // PIPELINE: resource has not already been loaded
@@ -266,7 +304,7 @@ namespace StudioCore.Editors.ModelEditor
                     {
                         job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
                     }
-                    // PIPELINE: resource path is adirect path (FLVER.DCX)
+                    // PIPELINE: resource path is a direct path (FLVER.DCX)
                     else if (modelAsset.AssetVirtualPath != null)
                     {
                         job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessFull);
@@ -381,28 +419,36 @@ namespace StudioCore.Editors.ModelEditor
 
             if (CurrentFLVERInfo != null)
             {
-                // Copy the binder to the mod directory if it does not already exist.
-
-                var exists = CurrentFLVERInfo.CopyBinderToMod();
-
-                if (exists)
+                // For loose files, save directly
+                if (CurrentFLVERInfo.Type == ModelEditorModelType.Loose)
                 {
+                    byte[] flverBytes = CurrentFLVER.Write();
+                    File.WriteAllBytes(CurrentFLVERInfo.LoosePath, flverBytes);
+                }
+                // Copy the binder to the mod directory if it does not already exist.
+                else
+                {
+                    var exists = CurrentFLVERInfo.CopyBinderToMod();
 
-                    if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
+                    if (exists)
                     {
-                        if (CurrentFLVERInfo.Type == ModelEditorModelType.MapPiece)
+
+                        if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
                         {
-                            // TODO
-                            //WriteModelFlver(); // DS1 doesn't wrap the mappiece flver within a container
+                            if (CurrentFLVERInfo.Type == ModelEditorModelType.MapPiece)
+                            {
+                                // TODO
+                                //WriteModelFlver(); // DS1 doesn't wrap the mappiece flver within a container
+                            }
+                            else
+                            {
+                                WriteModelBinderBND3();
+                            }
                         }
                         else
                         {
-                            WriteModelBinderBND3();
+                            WriteModelBinderBND4();
                         }
-                    }
-                    else
-                    {
-                        WriteModelBinderBND4();
                     }
                 }
             }

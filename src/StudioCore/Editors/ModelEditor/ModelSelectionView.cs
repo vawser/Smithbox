@@ -13,12 +13,13 @@ using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Editors.ModelEditor
 {
-    public class ModelAssetSelectionView
+    public class ModelSelectionView
     {
         private string _searchInput = "";
         private string _selectedEntry = "";
@@ -28,7 +29,7 @@ namespace StudioCore.Editors.ModelEditor
         private ModelEditorScreen Screen;
         private AssetCopyHandler AssetCopyHandler;
 
-        public ModelAssetSelectionView(ModelEditorScreen screen)
+        public ModelSelectionView(ModelEditorScreen screen)
         {
             Screen = screen;
             AssetCopyHandler = new AssetCopyHandler(screen);
@@ -64,6 +65,7 @@ namespace StudioCore.Editors.ModelEditor
                 ImGui.InputText($"Search", ref _searchInput, 255);
                 ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
+                DisplayLooseSection();
                 DisplayCharacterList();
                 DisplayAssetList();
                 DisplayPartList();
@@ -146,6 +148,33 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelSelectionType.MapPiece:
                     Screen.ResourceHandler.LoadMapPiece(_selectedEntry, _selectedMapId);
                     break;
+            }
+        }
+
+        private string loosePath = "";
+
+        private void DisplayLooseSection()
+        {
+            if (Smithbox.BankHandler.CharacterAliases.Aliases == null)
+                return;
+
+            var windowWidth = ImGui.GetWindowWidth();
+            var defaultButtonSize = new Vector2(windowWidth, 32);
+
+            if (ImGui.CollapsingHeader("Loose"))
+            {
+                if(ImGui.Button("Load Loose FLVER", defaultButtonSize))
+                {
+                    var result = PlatformUtils.Instance.OpenFileDialog("Select loose FLVER...", new string[] { "png", "flver", "flv" }, out var loosePath);
+
+                    if(result)
+                    {
+                        var name = Path.GetFileNameWithoutExtension(loosePath);
+                        _selectedEntry = name;
+                        _selectedEntryType = ModelSelectionType.Loose;
+                        Screen.ResourceHandler.LoadLooseFLVER(_selectedEntry, loosePath);
+                    }
+                }
             }
         }
 

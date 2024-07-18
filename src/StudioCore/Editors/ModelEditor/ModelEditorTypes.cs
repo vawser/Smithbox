@@ -6,5 +6,6 @@ public enum ModelEditorModelType
     Character = 1,
     Object = 2,
     MapPiece = 3,
-    Parts = 4
+    Parts = 4,
+    Loose = 5
 }

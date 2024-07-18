@@ -2352,7 +2352,9 @@ public class FlverResource : IResource, IDisposable
                 {
                     if (m != null)
                     {
-                        m.GeomBuffer.Dispose();
+                        if(m.GeomBuffer != null)
+                            m.GeomBuffer.Dispose();
+
                         //Marshal.FreeHGlobal(m.PickingVertices);
                     }
                 }

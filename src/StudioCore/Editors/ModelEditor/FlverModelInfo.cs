@@ -25,6 +25,27 @@ namespace StudioCore.Editors.ModelEditor
         public string BinderPath { get; set; }
         public string BinderExtension { get; set; }
 
+        public string LoosePath { get; set; }
+
+        public FlverModelInfo(string name, string loosePath)
+        {
+            ModelName = name;
+            Type = ModelEditorModelType.Loose;
+            MapID = "";
+
+            BinderDirectory = GetBinderDirectory();
+            BinderExtension = GetBinderExtension();
+            BinderPath = $"{BinderDirectory}{ModelName}{BinderExtension}";
+            RootBinderPath = $"{Smithbox.GameRoot}{BinderPath}";
+            ModBinderPath = $"{Smithbox.ProjectRoot}{BinderPath}";
+            ModBinderDirectory = $"{Smithbox.ProjectRoot}{BinderDirectory}";
+
+            FlverFileExtension = GetFlverExtension();
+            FlverFileName = $"{ModelName}{FlverFileExtension}";
+
+            LoosePath = loosePath;
+        }
+
         public FlverModelInfo(string modelName, ModelEditorModelType modelType, string mapId)
         {
             ModelName = modelName;
