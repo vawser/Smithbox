@@ -102,10 +102,50 @@ public class ToolWindow
                 }
             }
 
+            // FLVER Groups
+            if (ImGui.CollapsingHeader("Groups: FLVER"))
+            {
+                FlverGroups.DisplayConfiguration(Screen);
+            }
             // Dummy Groups
-            if (ImGui.CollapsingHeader("Dummy Groups"))
+            if (ImGui.CollapsingHeader("Groups: Dummy"))
             {
                 DummyGroups.DisplayConfiguration(Screen);
+            }
+            // Material Groups
+            if (ImGui.CollapsingHeader("Groups: Material"))
+            {
+                MaterialGroups.DisplayConfiguration(Screen);
+            }
+            // GX List Groups
+            if (ImGui.CollapsingHeader("Groups: GX List"))
+            {
+                GXListGroups.DisplayConfiguration(Screen);
+            }
+            // Node Groups
+            if (ImGui.CollapsingHeader("Groups: Node"))
+            {
+                NodeGroups.DisplayConfiguration(Screen);
+            }
+            // Mesh Groups
+            if (ImGui.CollapsingHeader("Groups: Mesh"))
+            {
+                MeshGroups.DisplayConfiguration(Screen);
+            }
+            // Buffer Layout Groups
+            if (ImGui.CollapsingHeader("Groups: Buffer Layout"))
+            {
+                BufferLayoutGroups.DisplayConfiguration(Screen);
+            }
+            // Base Skeleton Bone Groups
+            if (ImGui.CollapsingHeader("Groups: Base Skeleton Bone"))
+            {
+                BaseSkeletonBoneGroups.DisplayConfiguration(Screen);
+            }
+            // All Skeleton Bone Groups
+            if (ImGui.CollapsingHeader("Groups: All Skeleton Bone"))
+            {
+                AllSkeletonBoneGroups.DisplayConfiguration(Screen);
             }
 
         }

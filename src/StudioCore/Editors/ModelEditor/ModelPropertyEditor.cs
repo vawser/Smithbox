@@ -9,6 +9,7 @@ using System.IO;
 using System.Numerics;
 using static SoulsFormats.PARAM;
 using SoulsFormats;
+using StudioCore.Editors.ModelEditor.SubEditors;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -928,6 +929,7 @@ public class ModelPropertyEditor
         var entry = Screen.ResourceHandler.CurrentFLVER.Meshes[index];
 
         var useBoneWeights = entry.UseBoneWeights;
+        int dynamic = entry.Dynamic;
         var materialIndex = entry.MaterialIndex;
         var nodeIndex = entry.NodeIndex;
 
@@ -1334,6 +1336,9 @@ public class ModelPropertyEditor
         if (Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton.Count < index)
             return;
 
+        if (Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton == null)
+            return;
+
         if (Screen.ModelHierarchy.BaseSkeletonMultiselect.StoredIndices.Count > 1)
         {
             ImGui.Separator();
@@ -1461,6 +1466,9 @@ public class ModelPropertyEditor
             return;
 
         if (Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons.Count < index)
+            return;
+
+        if (Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons == null)
             return;
 
         if (Screen.ModelHierarchy.BaseSkeletonMultiselect.StoredIndices.Count > 1)

@@ -4,14 +4,14 @@ using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Interface;
 
-namespace StudioCore.Editors.ModelEditor
+namespace StudioCore.Editors.ModelEditor.SubEditors
 {
     public class GXDataEditor
     {
         private ModelEditorScreen Screen;
 
         public GXDataEditor(ModelEditorScreen editor)
-        { 
+        {
             Screen = editor;
         }
 

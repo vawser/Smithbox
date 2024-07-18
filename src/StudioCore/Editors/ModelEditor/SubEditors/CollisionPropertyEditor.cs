@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.ModelEditor
+namespace StudioCore.Editors.ModelEditor.SubEditors
 {
     public class CollisionPropertyEditor
     {
@@ -45,10 +45,10 @@ namespace StudioCore.Editors.ModelEditor
         public void DisplayProperties_Collision(hkRootLevelContainer container)
         {
             hkRootLevelContainer rootLevelContainer = container;
-            HKLib.hk2018.hknpPhysicsSceneData physicsSceneData = (HKLib.hk2018.hknpPhysicsSceneData)rootLevelContainer.m_namedVariants[0].m_variant;
+            hknpPhysicsSceneData physicsSceneData = (hknpPhysicsSceneData)rootLevelContainer.m_namedVariants[0].m_variant;
 
             // System Data
-            foreach (var sysEntry in (physicsSceneData.m_systemDatas))
+            foreach (var sysEntry in physicsSceneData.m_systemDatas)
             {
                 ImGui.Separator();
                 ImGui.Text($"Materials");

@@ -58,11 +58,75 @@ public class ToolSubMenu
             {
                 FlverTools.ReverseNormals(Screen);
             }
+            // DFLVERummy Groups
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.BeginMenu("FLVER Groups"))
+            {
+                FlverGroups.DisplaySubMenu(Screen);
+
+                ImGui.EndMenu();
+            }
             // Dummy Groups
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Dummy Groups"))
             {
                 DummyGroups.DisplaySubMenu(Screen);
+
+                ImGui.EndMenu();
+            }
+            // Material Groups
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.BeginMenu("Material Groups"))
+            {
+                MaterialGroups.DisplaySubMenu(Screen);
+
+                ImGui.EndMenu();
+            }
+            // GX List Groups
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.BeginMenu("GX List Groups"))
+            {
+                GXListGroups.DisplaySubMenu(Screen);
+
+                ImGui.EndMenu();
+            }
+            // Node Groups
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.BeginMenu("Node Groups"))
+            {
+                NodeGroups.DisplaySubMenu(Screen);
+
+                ImGui.EndMenu();
+            }
+            // Mesh Groups
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.BeginMenu("Mesh Groups"))
+            {
+                MeshGroups.DisplaySubMenu(Screen);
+
+                ImGui.EndMenu();
+            }
+            // Buffer Layout Groups
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.BeginMenu("Material Groups"))
+            {
+                BufferLayoutGroups.DisplaySubMenu(Screen);
+
+                ImGui.EndMenu();
+            }
+            // Base Skeleton Bone Groups
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.BeginMenu("Base Skeleton Bone Groups"))
+            {
+                BaseSkeletonBoneGroups.DisplaySubMenu(Screen);
+
+                ImGui.EndMenu();
+            }
+            // All Skeleton Bone Groups
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.BeginMenu("All Skeleton Bone Groups"))
+            {
+                AllSkeletonBoneGroups.DisplaySubMenu(Screen);
 
                 ImGui.EndMenu();
             }

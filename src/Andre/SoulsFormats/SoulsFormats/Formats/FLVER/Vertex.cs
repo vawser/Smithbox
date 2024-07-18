@@ -70,6 +70,19 @@ namespace SoulsFormats
             private Queue<Vector4> tangentQueue;
             private Queue<VertexColor> colorQueue;
 
+            public Vertex()
+            {
+                Position = new Vector3();
+                BoneWeights = new VertexBoneWeights();
+                BoneIndices = new VertexBoneIndices();
+                Normal = new Vector3();
+                NormalW = -1;
+                UVs = new List<Vector3>(0);
+                Tangents = new List<Vector4>(0);
+                Colors = new List<VertexColor>(0);
+                Bitangent = new Vector4();
+            }
+
             /// <summary>
             /// Create a Vertex with null or empty values.
             /// </summary>

@@ -1,7 +1,5 @@
-﻿using HKLib.hk2018.hkHashMapDetail;
-using ImGuiNET;
+﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Interface;
 using StudioCore.Platform;
@@ -97,6 +95,10 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var sectionWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
             var defaultButtonSize = new Vector2(sectionWidth, 32);
+
+            ImguiUtils.WrappedText("Create a stored Dummy Group from your current selection with the Dummy list.");
+            ImguiUtils.WrappedText("A stored group can then be used to replace the existing Dummy list, or appended to the end.");
+            ImguiUtils.WrappedText("");
 
             UpdateDummyGroupList();
 

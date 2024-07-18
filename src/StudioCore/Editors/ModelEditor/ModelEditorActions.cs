@@ -1,12 +1,9 @@
-﻿using DotNext.Collections.Generic;
+﻿using SoulsFormats;
 using StudioCore.Editors.MapEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using SoulsFormats;
 using static SoulsFormats.FLVER2;
 
 namespace StudioCore.Editors.ModelEditor.Actions;
@@ -641,6 +638,68 @@ public class RemoveMaterialEntryMulti : ViewportAction
         return ActionEvent.NoEvent;
     }
 }
+public class ReplaceMaterialList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER2.Material> OldMaterials;
+    private List<FLVER2.Material> NewMaterials;
+
+    public ReplaceMaterialList(ModelEditorScreen screen, List<FLVER2.Material> materials)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldMaterials = [.. CurrentFLVER.Materials];
+        NewMaterials = materials;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        CurrentFLVER.Materials = NewMaterials;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.Materials = OldMaterials;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class AppendMaterialList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER2.Material> OldMaterials;
+    private List<FLVER2.Material> NewMaterials;
+
+    public AppendMaterialList(ModelEditorScreen screen, List<FLVER2.Material> materials)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldMaterials = [.. CurrentFLVER.Materials];
+        NewMaterials = materials;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        foreach (var entry in NewMaterials)
+        {
+            CurrentFLVER.Materials.Add(entry);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.Materials = OldMaterials;
+
+        return ActionEvent.NoEvent;
+    }
+}
 
 // GX List
 public class AddGXListEntry : ViewportAction
@@ -841,6 +900,69 @@ public class RemoveGXListEntryMulti : ViewportAction
         {
             CurrentFLVER.GXLists.Insert(StoredIndices[i], StoredObjects[i]);
         }
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class ReplaceGXListList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER2.GXList> OldGXLists;
+    private List<FLVER2.GXList> NewGXLists;
+
+    public ReplaceGXListList(ModelEditorScreen screen, List<FLVER2.GXList> GXLists)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldGXLists = [.. CurrentFLVER.GXLists];
+        NewGXLists = GXLists;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        CurrentFLVER.GXLists = NewGXLists;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.GXLists = OldGXLists;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class AppendGXListList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER2.GXList> OldGXLists;
+    private List<FLVER2.GXList> NewGXLists;
+
+    public AppendGXListList(ModelEditorScreen screen, List<FLVER2.GXList> GXLists)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldGXLists = [.. CurrentFLVER.GXLists];
+        NewGXLists = GXLists;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        foreach (var entry in NewGXLists)
+        {
+            CurrentFLVER.GXLists.Add(entry);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.GXLists = OldGXLists;
 
         return ActionEvent.NoEvent;
     }
@@ -1063,6 +1185,69 @@ public class RemoveNodeEntryMulti : ViewportAction
         }
 
         Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class ReplaceNodeList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER.Node> OldNodes;
+    private List<FLVER.Node> NewNodes;
+
+    public ReplaceNodeList(ModelEditorScreen screen, List<FLVER.Node> nodes)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldNodes = [.. CurrentFLVER.Nodes];
+        NewNodes = nodes;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        CurrentFLVER.Nodes = NewNodes;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.Nodes = OldNodes;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class AppendNodeList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER.Node> OldNodes;
+    private List<FLVER.Node> NewNodes;
+
+    public AppendNodeList(ModelEditorScreen screen, List<FLVER.Node> nodes)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldNodes = [.. CurrentFLVER.Nodes];
+        NewNodes = nodes;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        foreach (var entry in NewNodes)
+        {
+            CurrentFLVER.Nodes.Add(entry);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.Nodes = OldNodes;
 
         return ActionEvent.NoEvent;
     }
@@ -1298,6 +1483,69 @@ public class RemoveMeshEntryMulti : ViewportAction
     }
 }
 
+public class ReplaceMeshList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER2.Mesh> OldMeshes;
+    private List<FLVER2.Mesh> NewMeshes;
+
+    public ReplaceMeshList(ModelEditorScreen screen, List<FLVER2.Mesh> meshes)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldMeshes = [.. CurrentFLVER.Meshes];
+        NewMeshes = meshes;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        CurrentFLVER.Meshes = NewMeshes;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.Meshes = OldMeshes;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class AppendMeshList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER2.Mesh> OldMeshs;
+    private List<FLVER2.Mesh> NewMeshs;
+
+    public AppendMeshList(ModelEditorScreen screen, List<FLVER2.Mesh> meshes)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldMeshs = [.. CurrentFLVER.Meshes];
+        NewMeshs = meshes;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        foreach (var entry in NewMeshs)
+        {
+            CurrentFLVER.Meshes.Add(entry);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.Meshes = OldMeshs;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
 // Buffer Layout
 public class AddBufferLayoutEntry : ViewportAction
 {
@@ -1497,6 +1745,69 @@ public class RemoveBufferLayoutEntryMulti : ViewportAction
         {
             CurrentFLVER.BufferLayouts.Insert(StoredIndices[i], StoredObjects[i]);
         }
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class ReplaceBufferLayoutList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER2.BufferLayout> OldBufferLayouts;
+    private List<FLVER2.BufferLayout> NewBufferLayouts;
+
+    public ReplaceBufferLayoutList(ModelEditorScreen screen, List<FLVER2.BufferLayout> BufferLayouts)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldBufferLayouts = [.. CurrentFLVER.BufferLayouts];
+        NewBufferLayouts = BufferLayouts;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        CurrentFLVER.BufferLayouts = NewBufferLayouts;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.BufferLayouts = OldBufferLayouts;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class AppendBufferLayoutList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER2.BufferLayout> OldBufferLayouts;
+    private List<FLVER2.BufferLayout> NewBufferLayouts;
+
+    public AppendBufferLayoutList(ModelEditorScreen screen, List<FLVER2.BufferLayout> BufferLayouts)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldBufferLayouts = [.. CurrentFLVER.BufferLayouts];
+        NewBufferLayouts = BufferLayouts;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        foreach (var entry in NewBufferLayouts)
+        {
+            CurrentFLVER.BufferLayouts.Add(entry);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.BufferLayouts = OldBufferLayouts;
 
         return ActionEvent.NoEvent;
     }
@@ -1704,6 +2015,69 @@ public class RemoveBaseSkeletonBoneEntryMulti : ViewportAction
     }
 }
 
+public class ReplaceBaseSkeletonBoneList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER2.SkeletonSet.Bone> OldBaseSkeletonBones;
+    private List<FLVER2.SkeletonSet.Bone> NewBaseSkeletonBones;
+
+    public ReplaceBaseSkeletonBoneList(ModelEditorScreen screen, List<FLVER2.SkeletonSet.Bone> BaseSkeletonBones)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldBaseSkeletonBones = [.. CurrentFLVER.Skeletons.BaseSkeleton];
+        NewBaseSkeletonBones = BaseSkeletonBones;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        CurrentFLVER.Skeletons.BaseSkeleton = NewBaseSkeletonBones;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.Skeletons.BaseSkeleton = OldBaseSkeletonBones;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class AppendBaseSkeletonBoneList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER2.SkeletonSet.Bone> OldBaseSkeletonBones;
+    private List<FLVER2.SkeletonSet.Bone> NewBaseSkeletonBones;
+
+    public AppendBaseSkeletonBoneList(ModelEditorScreen screen, List<FLVER2.SkeletonSet.Bone> BaseSkeletonBones)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldBaseSkeletonBones = [.. CurrentFLVER.Skeletons.BaseSkeleton];
+        NewBaseSkeletonBones = BaseSkeletonBones;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        foreach (var entry in NewBaseSkeletonBones)
+        {
+            CurrentFLVER.Skeletons.BaseSkeleton.Add(entry);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.Skeletons.BaseSkeleton = OldBaseSkeletonBones;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
 // All Skeleton Bone
 public class AddAllSkeletonBoneEntry : ViewportAction
 {
@@ -1901,6 +2275,69 @@ public class RemoveAllSkeletonBoneEntryMulti : ViewportAction
         {
             CurrentFLVER.Skeletons.AllSkeletons.Insert(StoredIndices[i], StoredObjects[i]);
         }
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class ReplaceAllSkeletonBoneList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER2.SkeletonSet.Bone> OldAllSkeletonBones;
+    private List<FLVER2.SkeletonSet.Bone> NewAllSkeletonBones;
+
+    public ReplaceAllSkeletonBoneList(ModelEditorScreen screen, List<FLVER2.SkeletonSet.Bone> AllSkeletonBones)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldAllSkeletonBones = [.. CurrentFLVER.Skeletons.AllSkeletons];
+        NewAllSkeletonBones = AllSkeletonBones;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        CurrentFLVER.Skeletons.AllSkeletons = NewAllSkeletonBones;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.Skeletons.AllSkeletons = OldAllSkeletonBones;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class AppendAllSkeletonBoneList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER2.SkeletonSet.Bone> OldAllSkeletonBones;
+    private List<FLVER2.SkeletonSet.Bone> NewAllSkeletonBones;
+
+    public AppendAllSkeletonBoneList(ModelEditorScreen screen, List<FLVER2.SkeletonSet.Bone> AllSkeletonBones)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldAllSkeletonBones = [.. CurrentFLVER.Skeletons.AllSkeletons];
+        NewAllSkeletonBones = AllSkeletonBones;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        foreach (var entry in NewAllSkeletonBones)
+        {
+            CurrentFLVER.Skeletons.AllSkeletons.Add(entry);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.Skeletons.AllSkeletons = OldAllSkeletonBones;
 
         return ActionEvent.NoEvent;
     }
@@ -4071,6 +4508,36 @@ public class UpdateProperty_FLVERSkeleton_Bone_NodeIndex : ViewportAction
     public override ActionEvent Undo()
     {
         Entry.NodeIndex = OldValue;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class ReplaceFLVERList : ViewportAction
+{
+    private ModelEditorScreen Screen;
+    private List<FLVER2> OldFlvers;
+    private List<FLVER2> NewFlvers;
+
+    public ReplaceFLVERList(ModelEditorScreen screen, List<FLVER2> flvers)
+    {
+        Screen = screen;
+        OldFlvers = [.. flvers];
+        NewFlvers = flvers;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        Screen.ResourceHandler.CurrentFLVER = NewFlvers[0];
+
+        // TODO: should really update the viewport representation
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Screen.ResourceHandler.CurrentFLVER = OldFlvers[0];
 
         return ActionEvent.NoEvent;
     }
