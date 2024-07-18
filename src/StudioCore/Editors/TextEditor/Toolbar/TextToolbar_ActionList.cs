@@ -68,5 +68,6 @@ public class TextToolbar_ActionList
         TextAction_SyncEntries.Select();
         TextAction_Duplicate.Select();
         TextAction_Delete.Select();
+        TextAction_UpdateFMG.Select();
     }
 }

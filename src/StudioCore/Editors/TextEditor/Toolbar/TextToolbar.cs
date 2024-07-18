@@ -24,7 +24,8 @@ namespace StudioCore.Editors.TextEditor.Toolbar
         Duplicate,
         Delete,
         SearchAndReplace,
-        SyncEntries
+        SyncEntries,
+        UpdateFMGs
     }
 
     public class TextToolbar
@@ -57,6 +58,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
             TextAction_SyncEntries.Setup();
             TextAction_Duplicate.Setup();
             TextAction_Delete.Setup();
+            TextAction_UpdateFMG.Setup();
         }
     }
 }

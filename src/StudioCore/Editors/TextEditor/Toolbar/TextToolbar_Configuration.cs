@@ -42,10 +42,12 @@ public class TextToolbar_Configuration
         TextAction_Delete.Configure();
         TextAction_SearchAndReplace.Configure();
         TextAction_SyncEntries.Configure();
+        TextAction_UpdateFMG.Configure();
 
         TextAction_Duplicate.Act();
         TextAction_Delete.Act();
         TextAction_SearchAndReplace.Act();
         TextAction_SyncEntries.Act();
+        TextAction_UpdateFMG.Act();
     }
 }
