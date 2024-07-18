@@ -81,10 +81,13 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
                 DummyGroupFiles = new List<string>();
 
-                foreach (var file in Directory.EnumerateFiles(ExportBasePath, "*.json"))
+                if (Directory.Exists(ExportBasePath))
                 {
-                    var fileName = Path.GetFileName(file);
-                    DummyGroupFiles.Add(fileName.Replace(".json", ""));
+                    foreach (var file in Directory.EnumerateFiles(ExportBasePath, "*.json"))
+                    {
+                        var fileName = Path.GetFileName(file);
+                        DummyGroupFiles.Add(fileName.Replace(".json", ""));
+                    }
                 }
             }
         }

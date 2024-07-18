@@ -41,6 +41,7 @@ namespace StudioCore.Editors.ModelEditor
         }
 
 
+        // TODO: do this via reflection
         public void DisplayProperties_Collision(hkRootLevelContainer container)
         {
             hkRootLevelContainer rootLevelContainer = container;
@@ -153,17 +154,20 @@ namespace StudioCore.Editors.ModelEditor
                         ImGui.Text($"m_inertiaTensor: {bodyInfo.m_massDistribution.m_massDistribution.m_inertiaTensor}");
                     }
 
-                    foreach (var entry in bodyInfo.m_dragProperties.m_dragProperties.m_centerAndOffset)
+                    if (bodyInfo.m_dragProperties != null)
                     {
-                        ImGui.Text($"m_centerAndOffset: {entry}");
-                    }
-                    foreach (var entry in bodyInfo.m_dragProperties.m_dragProperties.m_angularEffectsAndArea)
-                    {
-                        ImGui.Text($"m_angularEffectsAndArea: {entry}");
-                    }
-                    foreach (var entry in bodyInfo.m_dragProperties.m_dragProperties.m_armUVs)
-                    {
-                        ImGui.Text($"m_armUVs: {entry}");
+                        foreach (var entry in bodyInfo.m_dragProperties.m_dragProperties.m_centerAndOffset)
+                        {
+                            ImGui.Text($"m_centerAndOffset: {entry}");
+                        }
+                        foreach (var entry in bodyInfo.m_dragProperties.m_dragProperties.m_angularEffectsAndArea)
+                        {
+                            ImGui.Text($"m_angularEffectsAndArea: {entry}");
+                        }
+                        foreach (var entry in bodyInfo.m_dragProperties.m_dragProperties.m_armUVs)
+                        {
+                            ImGui.Text($"m_armUVs: {entry}");
+                        }
                     }
 
                     ImGui.Text($"m_motionPropertiesId: {bodyInfo.m_motionPropertiesId}");
