@@ -5863,7 +5863,7 @@
 90020 NPC: Disable Hemorrhage
 90030 NPC: Disable Blight
 90040 NPC: Disable Frostbite
-90060 
+90060 NPC: Disable Madness 
 90061 
 90100 NPC: Ignore Fake Targets - All
 90110 NPC: Ignore Fake Targets - Normal

@@ -71,18 +71,18 @@
 5100 [Sorcery] Oracle Bubbles
 5110 [Sorcery] Great Oracular Bubble
 6000 [Incantation] Catch Flame
-6001 [Incantation] O' Flame!
+6001 [Incantation] O, Flame!
 6010 [Incantation] Flame Sling
 6020 [Incantation] Flame Fall Upon Them
-6030 [Incantation] Whirl O' Flame
+6030 [Incantation] Whirl, O Flame
 6040 [Incantation] Flame Cleanse Me
 6050 [Incantation] Flame Grant Me Strength
 6060 [Incantation] Flame Protect Me
 6100 [Incantation] Giantsflame Take Thee
 6110 [Incantation] Flame Of The Fell God
-6120 [Incantation] Burn O' Flame!
+6120 [Incantation] Burn, O Flame!
 6210 [Incantation] Black Flame
-6220 [Incantation] Surge O' Flame
+6220 [Incantation] Surge, O Flame
 6230 [Incantation] Scouring Black Flame
 6240 [Incantation] Black Flame Ritual
 6250 [Incantation] Black Flame Blade
@@ -224,7 +224,7 @@
 53522 [NPC: Sorcery] Greatblade Phalanx
 53523 [NPC: Sorcery] Magic Downpour 2
 53524 [NPC: Sorcery] Carian Slicer 1
-53560 [NPC: Incantation] O' Flame!
+53560 [NPC: Incantation] O, Flame!
 53561 [NPC: Incantation] Flame Of The Fell God
 53590 [NPC: Sorcery] Carian Piercer
 53610 [NPC: Sorcery] Carian Slicer 2
@@ -241,9 +241,9 @@
 53804 [NPC: Sorcery] Ambush Shard 2
 53805 [NPC: Sorcery] Night Comet 2
 53820 [NPC: Incantation] Catch Flame
-53821 [NPC: Incantation] Burn O' Flame!
-53822 [NPC: Incantation] Surge O' Flame!
-53830 [NPC: Incantation] Whirl O` Flame!
+53821 [NPC: Incantation] Burn, O Flame!
+53822 [NPC: Incantation] Surge, O Flame!
+53830 [NPC: Incantation] Whirl, O Flame!
 53850 [NPC: Sorcery] Glintstone Icecrag
 53851 [NPC: Sorcery] Freezing Mist
 53852 [NPC: Sorcery] Briars Of Sin
