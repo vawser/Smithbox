@@ -15,6 +15,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="System.Text.Json" Version="8.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\HKLib\HKLib.csproj" />
     </ItemGroup>
 </Project>

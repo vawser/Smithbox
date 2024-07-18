@@ -29,7 +29,6 @@ Model Editor:
  - ADD: floating text for dummy poly ref IDs
  - ADD: floating text for co-ordinate direction (X, Y, Z)
  - ADD: dummy poly forward/upwards representation
- - FIX: DS1 Map Pieces not loaded correctly
  - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
 
 Material Editor
