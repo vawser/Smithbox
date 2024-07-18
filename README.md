@@ -1,5 +1,5 @@
 # Smithbox
-Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3, Dark Souls 2, Dark Souls, Bloodborne and Demon's Souls.
+Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3, Dark Souls 2 and Dark Souls 1.
 
 [![GitHub release](https://img.shields.io/github/release/vawser/Smithbox.svg)](https://github.com/vawser/Smithbox/releases/latest)
 [![Github All Releases](https://img.shields.io/github/downloads/vawser/Smithbox/total.svg)](https://github.com/vawser/Smithbox/releases/latest)
@@ -8,11 +8,10 @@ Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3
 ## Key Features
 - Map Editor: a visual editor for editing maps.
 - Param Editor: a table editor for editing parameters, which contain most of the data that defines each game.
-- Model Editor: a visual viewer of looking at models.
+- Model Editor: a model editor for viewing and editing models. Similar to the FLVER Editor.
 - Text Editor: an editor for editing text localization.
 - Gparam Editor: a editor for quickly creating and editing GPARAM files.
 - Texture Viewer: a simple to use viewer for looking and extracting textures.
-- Asset Browser: a menu to browse through all of the assets used within each of the games.
 
 ## Requirements
 * Windows 7/8/8.1/10/11 (64-bit only)
@@ -40,14 +39,10 @@ Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3
 #### Sekiro: Shadows Die Twice
 * Use [UXM](https://www.nexusmods.com/sekiro/mods/26) to unpack the game.
 
-#### Demon's Souls
-* Make sure to disable the RPCS3 file cache to test changes if using an emulator.
-
-#### Bloodborne
-* Any valid full game dump should work out of the box. 
-* Note that some dumps will have the base game (1.0) and the patch as separate, so the patch should be merged on top of the base game before use with map studio.
-
 #### Elden Ring
+* Use [UXM Selective Unpack](https://github.com/Nordgaren/UXM-Selective-Unpack) to extract the game files.
+
+#### Armored Core VI
 * Use [UXM Selective Unpack](https://github.com/Nordgaren/UXM-Selective-Unpack) to extract the game files.
 
 ## Links
@@ -66,8 +61,10 @@ Smithbox is a fork of the [DSMapStudio repository](https://github.com/soulsmods/
 * [Horkrux](https://github.com/horkrux)
 
 ## Credits (Smithbox)
-* Vawser
-* ivi
+* Vawser (Developer)
+* ivi (Contributor)
+* nex3 (Contributor)
+* gixxpunk (Contributor)
 
 
   
