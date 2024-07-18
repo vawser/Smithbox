@@ -43,6 +43,7 @@ namespace StudioCore.Editors.ModelEditor
         {
             Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
+            Screen.ModelHierarchy.ResetMultiSelection();
             Screen._selection.ClearSelection();
             LoadEditableModel(name, ModelEditorModelType.Character);
             LoadRepresentativeModel(name, ModelEditorModelType.Character);
@@ -56,6 +57,7 @@ namespace StudioCore.Editors.ModelEditor
         {
             Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
+            Screen.ModelHierarchy.ResetMultiSelection();
             Screen._selection.ClearSelection();
             LoadEditableModel(name, ModelEditorModelType.Object);
             LoadEditableCollisionLow(name, ModelEditorModelType.Object);
@@ -71,6 +73,7 @@ namespace StudioCore.Editors.ModelEditor
         {
             Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
+            Screen.ModelHierarchy.ResetMultiSelection();
             Screen._selection.ClearSelection();
             LoadEditableModel(name, ModelEditorModelType.Parts);
             LoadRepresentativeModel(name, ModelEditorModelType.Parts);
@@ -84,6 +87,7 @@ namespace StudioCore.Editors.ModelEditor
         {
             Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
+            Screen.ModelHierarchy.ResetMultiSelection();
             Screen._selection.ClearSelection();
             LoadEditableModel(name, ModelEditorModelType.MapPiece, mapId);
             LoadRepresentativeModel(name, ModelEditorModelType.MapPiece, mapId);
@@ -540,8 +544,15 @@ namespace StudioCore.Editors.ModelEditor
 
             if (fileBytes != null)
             {
-                File.WriteAllBytes(info.ModBinderPath, fileBytes);
-                TaskLogs.AddLog($"Saved model at: {info.ModBinderPath}");
+                try
+                {
+                    File.WriteAllBytes(info.ModBinderPath, fileBytes);
+                    TaskLogs.AddLog($"Saved model at: {info.ModBinderPath}");
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"Failed to save model: {info.ModBinderPath}\n{ex.ToString()}");
+                }
             }
         }
 
@@ -589,8 +600,15 @@ namespace StudioCore.Editors.ModelEditor
 
             if (fileBytes != null)
             {
-                File.WriteAllBytes(info.ModBinderPath, fileBytes);
-                TaskLogs.AddLog($"Saved model at: {info.ModBinderPath}");
+                try
+                {
+                    File.WriteAllBytes(info.ModBinderPath, fileBytes);
+                    TaskLogs.AddLog($"Saved model at: {info.ModBinderPath}");
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"Failed to save model: {info.ModBinderPath}\n{ex.ToString()}");
+                }
             }
         }
 

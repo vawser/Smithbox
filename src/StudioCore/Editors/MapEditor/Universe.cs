@@ -25,6 +25,7 @@ using Google.Protobuf.Reflection;
 using Silk.NET.SDL;
 using Silk.NET.OpenGL;
 using StudioCore.Havok;
+using System.ComponentModel;
 
 namespace StudioCore.MsbEditor;
 
@@ -1401,6 +1402,43 @@ public class Universe
         foreach (ModelContainer un in toUnload)
         {
             UnloadModelContainer(un, clearFromList);
+        }
+    }
+
+    // This unloads only the Dummy and Node selectables
+    public void UnloadTransformableEntities(bool clearFromList = false)
+    {
+        List<ModelContainer> toUnload = new();
+        foreach (var key in LoadedModelContainers.Keys)
+        {
+            if (LoadedModelContainers[key] != null)
+            {
+                toUnload.Add(LoadedModelContainers[key]);
+            }
+        }
+
+        foreach (ModelContainer container in toUnload)
+        {
+            if (LoadedModelContainers.ContainsKey(container.Name))
+            {
+                foreach (Entity obj in container.Objects)
+                {
+                    if (obj is TransformableNamedEntity)
+                    {
+                        if (obj != null)
+                        {
+                            obj.Dispose();
+                        }
+                    }
+                }
+
+                container.Clear();
+                LoadedModelContainers[container.Name] = null;
+                if (clearFromList)
+                {
+                    LoadedModelContainers.Remove(container.Name);
+                }
+            }
         }
     }
 

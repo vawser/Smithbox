@@ -94,7 +94,5 @@ Text Editor:
 Model Editor:
  - FIX: DS1 Map Pieces not loaded correctly
  - FIX: DS2 Models not loaded correctly
- - FIX: mesh models disappears on refresh sometimes (occurs randomly)
- - FIX: multi-select should be reflected in viewport selection + multi viewport selection should start row multi-select
  
  - ADD: Node groups: import and export, selection and whole, lets a user quickly replace or add to the nodes

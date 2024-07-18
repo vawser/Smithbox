@@ -40,7 +40,7 @@ public class ModelContainer : ObjectContainer
                 if (proxy.Submeshes.Count > 0 && i < proxy.Submeshes.Count)
                 {
                     meshNode.RenderSceneMesh = proxy.Submeshes[i];
-                    //proxy.Submeshes[i].SetSelectable(meshNode);
+                    proxy.Submeshes[i].SetSelectable(meshNode);
                 }
             }
 

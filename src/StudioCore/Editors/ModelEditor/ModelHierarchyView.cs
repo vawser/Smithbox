@@ -136,6 +136,17 @@ public class ModelHierarchyView
         _selectedLowCollision = -1;
         _selectedHighCollision = -1;
     }
+    public void ResetMultiSelection()
+    {
+        DummyMultiselect = new HierarchyMultiselect();
+        MaterialMultiselect = new HierarchyMultiselect();
+        GxListMultiselect = new HierarchyMultiselect();
+        NodeMultiselect = new HierarchyMultiselect();
+        MeshMultiselect = new HierarchyMultiselect();
+        BufferLayoutMultiselect = new HierarchyMultiselect();
+        BaseSkeletonMultiselect = new HierarchyMultiselect();
+        AllSkeletonMultiselect = new HierarchyMultiselect();
+    }
 
 
     private void DisplaySection_Header()
@@ -168,10 +179,7 @@ public class ModelHierarchyView
 
                         Screen.ModelPropertyEditor._trackedDummyPosition = new Vector3();
 
-                        if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                        {
-                            Screen.ViewportHandler.SelectRepresentativeDummy(_selectedDummy);
-                        }
+                        Screen.ViewportHandler.SelectRepresentativeDummy(_selectedDummy, DummyMultiselect);
                     }
 
                     if (_selectedDummy == i)
@@ -353,10 +361,7 @@ public class ModelHierarchyView
 
                         Screen.ModelPropertyEditor._trackedNodePosition = new Vector3();
 
-                        if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                        {
-                            Screen.ViewportHandler.SelectRepresentativeNode(_selectedNode);
-                        }
+                        Screen.ViewportHandler.SelectRepresentativeNode(_selectedNode);
                     }
 
                     if (_selectedNode == i)
@@ -427,6 +432,8 @@ public class ModelHierarchyView
                         {
                             _subSelectedVertexBufferRow = 0;
                         }
+
+                        Screen.ViewportHandler.SelectRepresentativeMesh(_selectedMesh);
                     }
 
                     if (_selectedMesh == i)

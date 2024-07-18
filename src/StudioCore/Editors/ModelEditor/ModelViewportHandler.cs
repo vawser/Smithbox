@@ -1,5 +1,6 @@
 ﻿using HKLib.hk2018.hkHashMapDetail;
 using ImGuiNET;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editors.MapEditor;
@@ -41,6 +42,7 @@ namespace StudioCore.Editors.ModelEditor
         }
 
         public bool IsUpdatingViewportModel = false;
+        public bool IgnoreHierarchyFocus = false;
 
         public void UpdateRepresentativeModel(int selectionIndex)
         {
@@ -90,7 +92,7 @@ namespace StudioCore.Editors.ModelEditor
                 var currentFlverClone = Screen.ResourceHandler.CurrentFLVER.Clone();
                 var currentInfo = Screen.ResourceHandler.CurrentFLVERInfo;
 
-                Screen._universe.UnloadModels(true);
+                Screen._universe.UnloadTransformableEntities(true);
                 Screen._universe.LoadFlverInModelEditor(currentFlverClone,  _renderMesh, currentInfo.ModelName);
             }
         }
@@ -147,8 +149,6 @@ namespace StudioCore.Editors.ModelEditor
             _flverhandle = null;
         }
 
-        private ResourceDescriptor currentResourceDescriptor;
-
         /// <summary>
         /// Updated the viewport FLVER model render mesh
         /// </summary>
@@ -163,8 +163,6 @@ namespace StudioCore.Editors.ModelEditor
                     {
                         _renderMesh.Dispose();
                     }
-
-                    currentResourceDescriptor = modelAsset;
 
                     _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(Screen.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
                     _renderMesh.World = Matrix4x4.Identity;
@@ -216,23 +214,46 @@ namespace StudioCore.Editors.ModelEditor
             }
         }
 
-        public void SelectRepresentativeDummy(int index)
+        public void SelectRepresentativeDummy(int index, HierarchyMultiselect multiSelect)
         {
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (container.DummyPoly_RootNode.Children.Count < index)
                 return;
 
-            // This relies on the index of the lists to align
-            for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
+            if (multiSelect.HasValidMultiselection())
             {
-                var curNode = container.DummyPoly_RootNode.Children[i];
+                Screen._selection.ClearSelection();
 
-                if(i == index)
+                foreach (var entry in multiSelect.StoredIndices)
                 {
-                    Screen._selection.ClearSelection();
-                    Screen._selection.AddSelection(curNode);
-                    break;
+                    for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
+                    {
+                        var curNode = container.DummyPoly_RootNode.Children[i];
+
+                        if (i == entry)
+                        {
+                            IgnoreHierarchyFocus = true;
+                            Screen._selection.AddSelection(curNode);
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // This relies on the index of the lists to align
+                for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
+                {
+                    var curNode = container.DummyPoly_RootNode.Children[i];
+
+                    if (i == index)
+                    {
+                        IgnoreHierarchyFocus = true;
+                        Screen._selection.ClearSelection();
+                        Screen._selection.AddSelection(curNode);
+                        break;
+                    }
                 }
             }
         }
@@ -251,6 +272,28 @@ namespace StudioCore.Editors.ModelEditor
 
                 if (i == index)
                 {
+                    IgnoreHierarchyFocus = true;
+                    Screen._selection.ClearSelection();
+                    Screen._selection.AddSelection(curNode);
+                    break;
+                }
+            }
+        }
+        public void SelectRepresentativeMesh(int index)
+        {
+            var container = Screen._universe.LoadedModelContainers[ContainerID];
+
+            if (container.Mesh_RootNode.Children.Count < index)
+                return;
+
+            // This relies on the index of the lists to align
+            for (int i = 0; i < container.Mesh_RootNode.Children.Count; i++)
+            {
+                var curNode = container.Mesh_RootNode.Children[i];
+
+                if (i == index)
+                {
+                    IgnoreHierarchyFocus = true;
                     Screen._selection.ClearSelection();
                     Screen._selection.AddSelection(curNode);
                     break;
@@ -397,7 +440,6 @@ namespace StudioCore.Editors.ModelEditor
                 }
             }
         }
-
         public void DisplayRepresentativeMeshState(int index)
         {
             var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -470,60 +512,96 @@ namespace StudioCore.Editors.ModelEditor
 
         public void OnRepresentativeEntitySelected(Entity ent)
         {
-            if (!IsTransformableNode(ent))
+            if (!IsSelectableNode(ent))
                 return;
 
             if (IsUpdatingViewportModel)
                 return;
 
-            TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
-
             // Dummies
-            if (transformEnt.WrappedObject is FLVER.Dummy)
+            if (ent.WrappedObject is FLVER.Dummy)
             {
+                TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
+
                 Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.Dummy;
                 Screen.ModelHierarchy._selectedDummy = transformEnt.Index;
-                Screen.ModelHierarchy.FocusSelection = true;
+
+                if (IgnoreHierarchyFocus)
+                {
+                    IgnoreHierarchyFocus = false;
+                }
+                else
+                {
+                    Screen.ModelHierarchy.FocusSelection = true;
+                }
             }
             // Bones
-            if (transformEnt.WrappedObject is FLVER.Node)
+            if (ent.WrappedObject is FLVER.Node)
             {
+                TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
+
                 Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.Node;
                 Screen.ModelHierarchy._selectedNode = transformEnt.Index;
-                Screen.ModelHierarchy.FocusSelection = true;
+
+                if (IgnoreHierarchyFocus)
+                {
+                    IgnoreHierarchyFocus = false;
+                }
+                else
+                {
+                    Screen.ModelHierarchy.FocusSelection = true;
+                }
+            }
+            // Mesh
+            if (ent.WrappedObject is FLVER2.Mesh)
+            {
+                NamedEntity namedEnt = (NamedEntity)ent;
+
+                Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.Mesh;
+                Screen.ModelHierarchy._selectedMesh = namedEnt.Index;
+
+                if (IgnoreHierarchyFocus)
+                {
+                    IgnoreHierarchyFocus = false;
+                }
+                else
+                {
+                    Screen.ModelHierarchy.FocusSelection = true;
+                }
             }
         }
 
         public void OnRepresentativeEntityDeselected(Entity ent)
         {
-            if (!IsTransformableNode(ent))
+            if (!IsSelectableNode(ent))
                 return;
 
             if (IsUpdatingViewportModel)
                 return;
-
-            TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
         }
 
         public void OnRepresentativeEntityUpdate(Entity ent)
         {
-            if (!IsTransformableNode(ent))
+            if (!IsSelectableNode(ent))
                 return;
 
             if (IsUpdatingViewportModel)
                 return;
 
-            TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
+            if(ent.WrappedObject is FLVER.Dummy or FLVER.Node)
+            {
+                TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
 
-            // Dummies
-            if (transformEnt.WrappedObject is FLVER.Dummy)
-            {
-                UpdateStoredDummyPosition(transformEnt);
-            }
-            // Bones
-            if (transformEnt.WrappedObject is FLVER.Node)
-            {
-                UpdateStoredNodeTransform(transformEnt);
+                // Dummies
+                if (transformEnt.WrappedObject is FLVER.Dummy)
+                {
+                    UpdateStoredDummyPosition(transformEnt);
+                }
+                // Bones
+                if (transformEnt.WrappedObject is FLVER.Node)
+                {
+                    UpdateStoredNodeTransform(transformEnt);
+                }
             }
         }
 
@@ -555,9 +633,9 @@ namespace StudioCore.Editors.ModelEditor
             }
         }
 
-        public bool IsTransformableNode(Entity ent)
+        public bool IsSelectableNode(Entity ent)
         {
-            if(ent is TransformableNamedEntity)
+            if(ent is TransformableNamedEntity or NamedEntity)
             {
                 return true;
             }
