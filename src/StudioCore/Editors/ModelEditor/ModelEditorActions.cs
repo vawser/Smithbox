@@ -371,6 +371,73 @@ public class RemoveDummyEntryMulti : ViewportAction
     }
 }
 
+public class ReplaceDummyList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER.Dummy> OldDummies;
+    private List<FLVER.Dummy> NewDummies;
+
+    public ReplaceDummyList(ModelEditorScreen screen, List<FLVER.Dummy> dummies)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldDummies = [.. CurrentFLVER.Dummies];
+        NewDummies = dummies;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        CurrentFLVER.Dummies = NewDummies;
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.Dummies = OldDummies;
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class AppendDummyList : ViewportAction
+{
+    private FLVER2 CurrentFLVER;
+    private ModelEditorScreen Screen;
+    private List<FLVER.Dummy> OldDummies;
+    private List<FLVER.Dummy> NewDummies;
+
+    public AppendDummyList(ModelEditorScreen screen, List<FLVER.Dummy> dummies)
+    {
+        Screen = screen;
+        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        OldDummies = [.. CurrentFLVER.Dummies];
+        NewDummies = dummies;
+    }
+
+    public override ActionEvent Execute(bool isRedo = false)
+    {
+        foreach(var entry in NewDummies)
+        {
+            CurrentFLVER.Dummies.Add(entry);
+        }
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        CurrentFLVER.Dummies = OldDummies;
+        Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeModel(-1);
+
+        return ActionEvent.NoEvent;
+    }
+}
+
 // Material
 public class AddMaterialEntry : ViewportAction
 {
@@ -2395,7 +2462,6 @@ public class RemoveLayoutMemberEntry : ViewportAction
     }
 }
 
-// Anti-DRY, but too lazy to do it via reflection
 public class UpdateProperty_FLVERHeader_BigEndian : ViewportAction
 {
     private FLVERHeader Entry;

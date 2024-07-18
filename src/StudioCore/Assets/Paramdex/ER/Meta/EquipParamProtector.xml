@@ -315,46 +315,47 @@
     <pad2 AltName="" IsHidden=""/>
     <saleValue AltName="Shop Price" Wiki="Selling price" />
     <resistFreeze AltName="Resist - Frost" Wiki="Difficulty in getting cold air condition abnormal" />
-    <invisibleFlag_SexVer00 IsBool="" AltName="Mask 00 - Hide upper front face" Wiki="Bangs tip" />
-    <invisibleFlag_SexVer01 IsBool="" AltName="Mask 01 - Hide lower front face" Wiki="Bangs root" />
-    <invisibleFlag_SexVer02 IsBool="" AltName="Mask 02 - Hide middle front face" Wiki="Sideburns" />
-    <invisibleFlag_SexVer03 IsBool="" AltName="Mask 03 - Hide top and back of head" Wiki="Top of the head" />
-    <invisibleFlag_SexVer04 IsBool="" AltName="Mask 04 - Hide neck" Wiki="Top of the head" />
-    <invisibleFlag_SexVer05 IsBool="" AltName="Mask 05 - Hide neckline and shoulders" Wiki="Back hair" />
-    <invisibleFlag_SexVer06 IsBool="" AltName="Mask 06 - Hide upper torso area, reduce back size" Wiki="The tip of the back hair" />
-    <invisibleFlag_SexVer07 IsBool="" AltName="Mask 07 - Reduce bicep size" Wiki="" />
-    <invisibleFlag_SexVer08 IsBool="" AltName="Mask 08 - Reduce shoulder and upper bicep size" Wiki="" />
-    <invisibleFlag_SexVer09 IsBool="" AltName="Mask 09 - Hide elbows" Wiki="" />
-    <invisibleFlag_SexVer10 IsBool="" AltName="Mask 10 - Hide lower forearms" Wiki="collar" />
-    <invisibleFlag_SexVer11 IsBool="" AltName="Mask 11 - Hide right hand" Wiki="Around the collar" />
-    <invisibleFlag_SexVer12 IsBool="" AltName="Mask 12 - Hide upper leg area" Wiki="" />
-    <invisibleFlag_SexVer13 IsBool="" AltName="Mask 13 - Hide left hand" Wiki="" />
-    <invisibleFlag_SexVer14 IsBool="" AltName="Mask 14 - Hide lower leg area" Wiki="" />
-    <invisibleFlag_SexVer15 IsBool="" AltName="Mask 15 - Hide calves" Wiki="Hood hem" />
-    <invisibleFlag_SexVer16 IsBool="" AltName="Mask 16 - Hide feet" Wiki="" />
-    <invisibleFlag_SexVer17 IsBool="" AltName="Mask 17 - Alter Armor Part" Wiki="" />
-    <invisibleFlag_SexVer18 IsBool="" AltName="Mask 18 - Alter Armor Part" Wiki="" />
-    <invisibleFlag_SexVer19 IsBool="" AltName="Mask 19 - Alter Armor Part" Wiki="" />
-    <invisibleFlag_SexVer20 IsBool="" AltName="Mask 20 - Alter Armor Part" Wiki="Sleeve A" />
-    <invisibleFlag_SexVer21 IsBool="" AltName="Mask 21 - Alter Armor Part" Wiki="Sleeve B" />
-    <invisibleFlag_SexVer22 IsBool="" AltName="Mask 22 - Alter Armor Part" Wiki="" />
-    <invisibleFlag_SexVer23 IsBool="" AltName="Mask 23 - Alter Armor Part" Wiki="" />
-    <invisibleFlag_SexVer24 IsBool="" AltName="Mask 24 - Alter Armor Part" Wiki="" />
-    <invisibleFlag_SexVer25 IsBool="" AltName="Mask 25 - Alter Armor Part" Wiki="arm" />
-    <invisibleFlag_SexVer26 IsBool="" AltName="Mask 26 - Hide arms (for specific chest armor)" Wiki="" />
-    <invisibleFlag_SexVer27 IsBool="" AltName="Mask 27 - Alter Armor Part" Wiki="" />
-    <invisibleFlag_SexVer28 IsBool="" AltName="Mask 28 - Hide shoulders and shoulder armor" Wiki="" />
-    <invisibleFlag_SexVer29 IsBool="" AltName="Mask 29 - Hide wrist cloth" Wiki="" />
-    <invisibleFlag_SexVer30 IsBool="" AltName="Mask 30 - Alter Armor Part" Wiki="belt" />
-    <invisibleFlag_SexVer31 IsBool="" AltName="Mask 31 - Alter Armor Part" Wiki="" />
-    <invisibleFlag_SexVer32 IsBool="" AltName="Mask 32 - Alter Armor Part" Wiki="" />
-    <invisibleFlag_SexVer33 IsBool="" AltName="Mask 33 - Alter Armor Part" Wiki="" />
-    <invisibleFlag_SexVer34 IsBool="" AltName="Mask 34 - Alter Neck/Shoulder Part" Wiki="" />
-    <invisibleFlag_SexVer35 IsBool="" AltName="Mask 35 - Alter Lower Stomach Part" Wiki="" />
-    <invisibleFlag_SexVer36 IsBool="" AltName="Mask 36 - Alter Hood Part" Wiki="" />
-    <invisibleFlag_SexVer37 IsBool="" AltName="Mask 37 - Alter Armor Part" Wiki="" />
-    <invisibleFlag_SexVer38 IsBool="" AltName="Mask 38 - Hide Left Shoulder Part" Wiki="" />
-    <invisibleFlag_SexVer39 IsBool="" AltName="Mask 39 - Hide Right Shoulder Part" Wiki="" />
+    
+    <invisibleFlag_SexVer00 IsBool="" AltName="Mask 00 - Upper face" Wiki="" />
+    <invisibleFlag_SexVer01 IsBool="" AltName="Mask 01 - Chin" Wiki="" />
+    <invisibleFlag_SexVer02 IsBool="" AltName="Mask 02 - Nose and cheeks" Wiki="" />
+    <invisibleFlag_SexVer03 IsBool="" AltName="Mask 03 - Ears and top of head" Wiki="" />
+    <invisibleFlag_SexVer04 IsBool="" AltName="Mask 04 - Neck" Wiki="" />
+    <invisibleFlag_SexVer05 IsBool="" AltName="Mask 05 - Lower neck" Wiki="" />
+    <invisibleFlag_SexVer06 IsBool="" AltName="Mask 06 - Chest" Wiki="" />
+    <invisibleFlag_SexVer07 IsBool="" AltName="Mask 07 - Upper elbows" Wiki="" />
+    <invisibleFlag_SexVer08 IsBool="" AltName="Mask 08 - Shoulders" Wiki="" />
+    <invisibleFlag_SexVer09 IsBool="" AltName="Mask 09 - Lower elbows" Wiki="" />
+    <invisibleFlag_SexVer10 IsBool="" AltName="Mask 10 - Lower arms" Wiki="" />
+    <invisibleFlag_SexVer11 IsBool="" AltName="Mask 11 - Right hand" Wiki="" />
+    <invisibleFlag_SexVer12 IsBool="" AltName="Mask 12 - Waist" Wiki="" />
+    <invisibleFlag_SexVer13 IsBool="" AltName="Mask 13 - Left hand" Wiki="" />
+    <invisibleFlag_SexVer14 IsBool="" AltName="Mask 14 - Knees" Wiki="" />
+    <invisibleFlag_SexVer15 IsBool="" AltName="Mask 15 - Lower legs" Wiki="" />
+    <invisibleFlag_SexVer16 IsBool="" AltName="Mask 16 - Feet" Wiki="" />
+    <invisibleFlag_SexVer17 IsBool="" AltName="Mask 17 - Eyepatch" Wiki="" />
+    <invisibleFlag_SexVer18 IsBool="" AltName="Mask 18 - Unknown" Wiki="Set on most gauntlets" />
+    <invisibleFlag_SexVer19 IsBool="" AltName="Mask 19 - Unknown" Wiki="Set on most chests and legs" />
+    <invisibleFlag_SexVer20 IsBool="" AltName="Mask 20 - Long Gloves (Lower Arm)" Wiki="" />
+    <invisibleFlag_SexVer21 IsBool="" AltName="Mask 21 - Long Gloves (Full Length)" Wiki="" />
+    <invisibleFlag_SexVer22 IsBool="" AltName="Mask 22 - Unknown" Wiki="Set on bare chest" />
+    <invisibleFlag_SexVer23 IsBool="" AltName="Mask 23 - Scarf / High Collar (Compressed)" Wiki="" />
+    <invisibleFlag_SexVer24 IsBool="" AltName="Mask 24 - Sleeves (Bunched to Elbow)" Wiki="" />
+    <invisibleFlag_SexVer25 IsBool="" AltName="Mask 25 - Sleeves (Bunched Midway)" Wiki="" />
+    <invisibleFlag_SexVer26 IsBool="" AltName="Mask 26 - Sleeves (Full)" Wiki="" />
+    <invisibleFlag_SexVer27 IsBool="" AltName="Mask 27 - Large Sleeves (Bunched to Elbow)" Wiki="" />
+    <invisibleFlag_SexVer28 IsBool="" AltName="Mask 28 - Large Sleeves (Full)" Wiki="" />
+    <invisibleFlag_SexVer29 IsBool="" AltName="Mask 29 - Sleeves (Wrist Bracelets)" Wiki="" />
+    <invisibleFlag_SexVer30 IsBool="" AltName="Mask 30 - Couter / Elbow Armor" Wiki="belt" />
+    <invisibleFlag_SexVer31 IsBool="" AltName="Mask 31 - Couter / Elbow Armor (Higher Up)" Wiki="" />
+    <invisibleFlag_SexVer32 IsBool="" AltName="Mask 32 - Small Collar" Wiki="" />
+    <invisibleFlag_SexVer33 IsBool="" AltName="Mask 33 - Small Collar (Compressed)" Wiki="" />
+    <invisibleFlag_SexVer34 IsBool="" AltName="Mask 34 - Scarf / High Collar (Full)" Wiki="" />
+    <invisibleFlag_SexVer35 IsBool="" AltName="Mask 35 - Lower Abdomen Cover" Wiki="" />
+    <invisibleFlag_SexVer36 IsBool="" AltName="Mask 36 - Small Hood (Down)" Wiki="" />
+    <invisibleFlag_SexVer37 IsBool="" AltName="Mask 37 - Small Hood (Up)" Wiki="" />
+    <invisibleFlag_SexVer38 IsBool="" AltName="Mask 38 - Left Pauldron / Shoulder" Wiki="" />
+    <invisibleFlag_SexVer39 IsBool="" AltName="Mask 39 - Right Pauldron / Shoulder" Wiki="" />
     <invisibleFlag_SexVer40 IsBool="" AltName="Mask 40 - Alter Armor Part" Wiki="" />
     <invisibleFlag_SexVer41 IsBool="" AltName="Mask 41 - Alter Armor Part" Wiki="" />
     <invisibleFlag_SexVer42 IsBool="" AltName="Mask 42 - Alter Armor Part" Wiki="" />
@@ -411,6 +412,7 @@
     <invisibleFlag_SexVer93 IsBool="" AltName="Mask 93 - Alter Armor Part" Wiki="" />
     <invisibleFlag_SexVer94 IsBool="" AltName="Mask 94 - Alter Armor Part" Wiki="" />
     <invisibleFlag_SexVer95 IsBool="" AltName="Mask 95 - Alter Armor Part" Wiki="" />
+    
     <pad404 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Defines all types of equippable Armor, including no armor. Responsible for model masks." AlternativeOrder="rarity,sortId,sortGroupId,iconIdM,iconIdF,-,

@@ -58,6 +58,14 @@ public class ToolSubMenu
             {
                 FlverTools.ReverseNormals(Screen);
             }
+            // Dummy Groups
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.BeginMenu("Dummy Groups"))
+            {
+                DummyGroups.DisplaySubMenu(Screen);
+
+                ImGui.EndMenu();
+            }
 
             ImGui.EndMenu();
         }

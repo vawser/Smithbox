@@ -4,6 +4,7 @@ using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -100,6 +101,13 @@ public class ToolWindow
                     FlverTools.ReverseNormals(Screen);
                 }
             }
+
+            // Dummy Groups
+            if (ImGui.CollapsingHeader("Dummy Groups"))
+            {
+                DummyGroups.DisplayConfiguration(Screen);
+            }
+
         }
 
         ImGui.End();
