@@ -2184,7 +2184,7 @@
 23249 Sir Gideon Ofnir, the All-Knowing
 23250 Sorcerer Rogier
 23251 Sorcerer Rogier
-23252 Sorcerer Rogier
+23252 Sorcerer Rogier (Fia's Champions Boss)
 23260 Knight Bernahl
 23261 Recusant Bernahl
 23262 Recusant Bernahl
@@ -3148,8 +3148,8 @@
 2024061 
 2024070 
 2024071 
-2024090 
-2024091 
+2024090 Swordhand of Night Jolan 
+2024091 Swordhand of Night Jolan (Ymir Boss Fight)
 2024120 
 2024121 
 2024130 
@@ -3163,7 +3163,7 @@
 2024160 
 2024161 
 2024162 
-2024170 
+2024170 (Redmane Freyja Boss) 
 2024171 
 2024172 
 2024173 
@@ -3177,13 +3177,13 @@
 2024192 
 2024193 
 2024194 
-2024200 
+2024200 Count Ymir, Mother of Fingers (Boss)
 2024201 
 2024210 
 2024220 
-2024230 
-2024240 
-2024250 
+2024230 Rakshasa (Boss)
+2024240 Knight of the Solitary Gaol (Boss)
+2024250 Dryleaf Dane (Moorth RUins Boss)
 2024251 
 2024252 
 2024260 

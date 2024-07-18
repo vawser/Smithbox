@@ -5348,7 +5348,7 @@
 56004000 Catacomb Skeleton
 56004100 Catacomb Skeleton
 56200000 Tibia Mariner
-56200084 Tibia Mariner
+56200084 Tibia Mariner (Charo's Hidden Grave)
 56300000 Giant Crayfish
 56300083 Giant Crayfish
 56300090 Giant Crayfish
@@ -6490,7 +6490,7 @@
 523030000 Guilbert
 523040000 Festering Fingerprint Vyke
 523040020 Festering Fingerprint Vyke
-523040050 Roundtable Knight Vyke
+523040050 Roundtable Knight Vyke (Boss)
 523050000 
 523060000 
 523070000 Preceptor Seluvis
@@ -6602,7 +6602,7 @@
 523250000 Sorcerer Rogier
 523250014 Sorcerer Rogier
 523250050 Sorcerer Rogier
-523250066 Sorcerer Rogier
+523250066 Sorcerer Rogier (Fia's Champions Boss)
 523250079 Sorcerer Rogier
 523250114 Sorcerer Rogier
 523250166 Sorcerer Rogier
@@ -6616,7 +6616,7 @@
 523270130 Eleonora, Violet Bloody Finger
 523290000 
 523290040 Human
-523290066 Lionel the Lionhearted
+523290066 Lionel the Lionhearted (Fia's Champions Boss)
 523310000 Blackguard
 523310020 Blackguard
 523310033 Blackguard
@@ -6738,7 +6738,7 @@
 523750000 Knight of the Great Jar
 523750040 Knight of the Great Jar
 523760000 Necromancer Garris
-523760930 Necromancer Garris
+523760930 Necromancer Garris (Boss)
 523770000 Nameless White Mask
 523770068 Nameless White Mask
 523790000 
@@ -6752,7 +6752,7 @@
 523840000 Inquisitor Ghiza
 523840038 Inquisitor Ghiza
 523850000 Mad Tongue Alberich
-523860000 Esgar, Priest of Blood
+523860000 Esgar, Priest of Blood (Boss)
 523870000 Mary, Eldest Sister
 523870056 Mary, Eldest Sister
 523880000 Maureen, Second Sister
@@ -6776,7 +6776,7 @@
 524090000 Swordhand of Night Jolan
 524090090 Swordhand of Night Jolan
 524090100 Swordhand of Night Jolan
-524090190 Swordhand of Night Jolan
+524090190 Swordhand of Night Jolan (Ymir Boss Fight)
 524090290 Swordhand of Night Jolan
 524120000 Swordhand of Night Anna
 524120090 Swordhand of Night Anna
@@ -6787,7 +6787,7 @@
 524140089 Hornsent
 524140090 Hornsent
 524140099 Hornsent
-524140189 Hornsent
+524140189 Hornsent (Boss)
 524140198 Hornsent
 524140289 Hornsent
 524150000 Moore
