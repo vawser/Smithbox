@@ -1,4 +1,5 @@
-﻿using HKLib.hk2018;
+﻿using DotNext;
+using HKLib.hk2018;
 using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
 using StudioCore.Core;
@@ -153,26 +154,71 @@ namespace StudioCore.Editors.ModelEditor
                         }
                         reader.Dispose();
                     }
+                    // DS2, DS3, SDT, ER, AC6
                     else
                     {
-                        // BND4
-                        BND4Reader reader = new BND4Reader(modelAsset.AssetPath);
-                        foreach (var file in reader.Files)
+                        // DS2 Map Pieces
+                        if (modelAsset.AssetPath.Contains("mapbhd"))
                         {
-                            var fileName = file.Name.ToLower();
-                            var modelName = modelid.ToLower();
-
-                            //TaskLogs.AddLog(fileName);
-                            //TaskLogs.AddLog(modelName);
-
-                            if (fileName.Contains(modelName) && fileName.Contains(".flv"))
+                            var bhdPath = modelAsset.AssetPath;
+                            var bdtPath = modelAsset.AssetPath.Replace("bhd", "bdt");
+                            BXF4Reader reader = new BXF4Reader(bhdPath, bdtPath);
+                            foreach (var file in reader.Files)
                             {
-                                //TaskLogs.AddLog("New CurrentFLVER");
-                                CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
-                                break;
+                                var fileName = file.Name.ToLower();
+                                var modelName = modelid.ToLower();
+
+
+                                if (fileName.Contains(modelName))
+                                {
+                                    if (fileName.Contains(".flv.dcx"))
+                                    {
+                                        CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
+                                    }
+                                }
                             }
                         }
-                        reader.Dispose();
+                        // DS2, DS3, SDT, ER, AC6
+                        else
+                        {
+                            // BND4
+                            BND4Reader reader = new BND4Reader(modelAsset.AssetPath);
+                            foreach (var file in reader.Files)
+                            {
+                                var fileName = file.Name.ToLower();
+                                var modelName = modelid.ToLower();
+
+                                //TaskLogs.AddLog(fileName);
+                                //TaskLogs.AddLog(modelName);
+
+                                if (fileName.Contains(modelName))
+                                {
+                                    if (fileName.Contains(".flv"))
+                                    {
+                                        var proceed = true;
+
+                                        // DS2
+                                        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                                        {
+                                            proceed = false;
+
+                                            if (fileName.Length > 4 && fileName.Substring(fileName.Length - 3) == "flv")
+                                            {
+                                                proceed = true;
+                                            }
+                                        }
+
+                                        if (proceed)
+                                        {
+                                            //TaskLogs.AddLog("New CurrentFLVER");
+                                            CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            reader.Dispose();
+                        }
                     }
                 }
             }

@@ -619,6 +619,7 @@ public static class ResourceManager
             if (Binder == null)
             {
                 string o;
+
                 var absoluteBinderPath = VirtualPathLocator.VirtualToRealPath(BinderVirtualPath, out o);
 
                 Binder = InstantiateBinderReaderForFile(absoluteBinderPath, Smithbox.ProjectType);
