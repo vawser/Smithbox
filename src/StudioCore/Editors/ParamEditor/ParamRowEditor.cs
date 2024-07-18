@@ -58,70 +58,86 @@ public class ParamRowEditor
         }
     }
 
-    private static void PropEditorParamRow_ColorEditors(bool isActiveView, ParamMetaData meta, Param.Row row, List<(PseudoColumn, Param.Column)> cols)
+    private static void PropEditorParamRow_ColorEditors(bool isActiveView, ParamMetaData meta, Param.Row row, List<(PseudoColumn, Param.Column)> cols, int index)
     {
         if(meta.colorEditors.Count > 0)
         {
             foreach (var colorEditor in meta.colorEditors)
             {
                 var name = colorEditor.Value.name;
-                var rInfo = colorEditor.Value.values.ElementAt(0);
-                var gInfo = colorEditor.Value.values.ElementAt(1);
-                var bInfo = colorEditor.Value.values.ElementAt(2);
-                var aInfo = colorEditor.Value.values.ElementAt(3);
-
-                var rField = rInfo.Key;
-                var rType = rInfo.Value;
-
-                var gField = gInfo.Key;
-                var gType = gInfo.Value;
-
-                var bField = bInfo.Key;
-                var bType = bInfo.Value;
-
-                var aField = aInfo.Key;
-                var aType = aInfo.Value;
 
                 // RED
+                var rInfo = colorEditor.Value.values.ElementAt(0);
                 float rVal = 0.0f;
-                float.TryParse(GetColorValue(row, cols, rField), out rVal);
-                if (rType != "f32") // If not a float, then the value will need to be divided to work with ColorEdit4
+
+                if (rInfo.Key != null)
                 {
-                    rVal = (rVal / 255);
+                    var rField = rInfo.Key;
+                    var rType = rInfo.Value;
+
+                    float.TryParse(GetColorValue(row, cols, rField), out rVal);
+                    if (rType != "f32") // If not a float, then the value will need to be divided to work with ColorEdit4
+                    {
+                        rVal = (rVal / 255);
+                    }
                 }
 
                 // GREEN
+                var gInfo = colorEditor.Value.values.ElementAt(1);
                 float gVal = 0.0f;
-                float.TryParse(GetColorValue(row, cols, gField), out gVal);
-                if (gType != "f32")
+
+                if (gInfo.Key != null)
                 {
-                    gVal = (gVal / 255);
+                    var gField = gInfo.Key;
+                    var gType = gInfo.Value;
+
+                    float.TryParse(GetColorValue(row, cols, gField), out gVal);
+                    if (gType != "f32")
+                    {
+                        gVal = (gVal / 255);
+                    }
                 }
 
                 // BLUE
+                var bInfo = colorEditor.Value.values.ElementAt(2);
                 float bVal = 0.0f;
-                float.TryParse(GetColorValue(row, cols, bField), out bVal);
-                if (bType != "f32")
+
+                if(bInfo.Key != null)
                 {
-                    bVal = (bVal / 255);
+                    var bField = bInfo.Key;
+                    var bType = bInfo.Value;
+
+                    float.TryParse(GetColorValue(row, cols, bField), out bVal);
+                    if (bType != "f32")
+                    {
+                        bVal = (bVal / 255);
+                    }
                 }
 
                 // ALPHA
+                var aInfo = colorEditor.Value.values.ElementAt(3);
                 float aVal = 0.0f;
-                if (aField != "null")
+
+                if (aInfo.Key != null)
                 {
-                    float.TryParse(GetColorValue(row, cols, aField), out aVal);
-                }
-                if(aType != "f32")
-                {
-                    aVal = (aVal / 255);
+                    var aField = aInfo.Key;
+                    var aType = aInfo.Value;
+
+                    if (aField != "null")
+                    {
+                        float.TryParse(GetColorValue(row, cols, aField), out aVal);
+                    }
+                    if (aType != "f32")
+                    {
+                        aVal = (aVal / 255);
+                    }
                 }
 
                 var color = new Vector4(rVal, gVal, bVal, aVal);
 
                 var flags = ImGuiColorEditFlags.NoPicker | ImGuiColorEditFlags.NoInputs;
 
-                ImGui.ColorEdit4($"{name}##ColorEdit_{name}", ref color, flags);
+                ImGui.ColorEdit4($"{name}##ColorEdit_{name}{index}", ref color, flags);
             }
         }
     }
@@ -132,7 +148,11 @@ public class ParamRowEditor
 
         var matches = cols?.Where((x, i) => x.Item2 != null && x.Item2.Def.InternalName == fieldName).ToList();
         var match = matches.FirstOrDefault();
-        matchVal = row.Get(match).ToString();
+        matchVal = "";
+        if (match.Item2 != null)
+        {
+            matchVal = row.Get(match).ToString();
+        }
 
         return (string)matchVal;
     }
@@ -333,7 +353,7 @@ public class ParamRowEditor
 
             if (CFG.Current.Param_ShowColorPreview)
             {
-                PropEditorParamRow_ColorEditors(isActiveView, meta, row, cols);
+                PropEditorParamRow_ColorEditors(isActiveView, meta, row, cols, imguiId);
             }
 
             PropEditorParamRow_MainFields(meta, bank, row, vrow, auxRows, crow, cols, vcols, auxCols, ref imguiId,
