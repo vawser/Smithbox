@@ -24,6 +24,7 @@ Map Editor:
  - FIX: DS2 Map Pieces aren't loaded.
  
 Model Editor: 
+ - ADD: FBX Import into loose FLVER
  - ADD: FBX Export of Loaded Model
  - ADD: skeleton and skinning support for playing animations
  - ADD: easier toggling of model masks based on associated NpcParam (for characters)
@@ -32,6 +33,7 @@ Model Editor:
  - ADD: dummy poly forward/upwards representation
  - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
  - ADD: proper handling for the flag fields in the FLVER
+ - ADD: GX Item mapping so the byte arrays are more comprehesible
 
 Material Editor
  - ADD: Implement Material/MATBIN editor
@@ -81,3 +83,8 @@ Model Editor:
  - ADD: floating text for co-ordinate direction (X, Y, Z)
  - ADD: dummy poly forward/upwards representation
  - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
+
+Asset Browser:
+ - ADD: quicklink to the alias entry in the alias window (e.g. open the window, select the entry)
+ 
+ Fixed several issues that caused the Low Requirements build to crash.
