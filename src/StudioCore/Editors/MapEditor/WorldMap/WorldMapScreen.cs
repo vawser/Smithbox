@@ -333,6 +333,10 @@ public class WorldMapScreen : IResourceEventListener
 
     private void LoadWorldMapTexture() 
     {
+        // Required to stop the LowRequirements build from failing
+        if (Smithbox.LowRequirementsMode)
+            return;
+
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob($@"Loading World Map textures");
         ResourceDescriptor ad = new ResourceDescriptor();
         ad.AssetVirtualPath = "smithbox/worldmap";

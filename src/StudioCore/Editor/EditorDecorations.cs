@@ -161,6 +161,10 @@ public class EditorDecorations
 
     public static void TextureRefText(List<TexRef> textureRef, Param.Row context)
     {
+        // Required to stop the LowRequirements build from failing
+        if (Smithbox.LowRequirementsMode)
+            return;
+
         if (textureRef == null)
         {
             return;
@@ -387,6 +391,10 @@ public class EditorDecorations
     public static void TextureRefSelectable(EditorScreen ownerScreen, List<TexRef> texRefs, Param.Row context,
         dynamic oldval)
     {
+        // Required to stop the LowRequirements build from failing
+        if (Smithbox.LowRequirementsMode)
+            return;
+
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_FmgRef_Text);
 
         ImGui.TextUnformatted("View Source Image");

@@ -99,6 +99,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void OnResourceLoaded(IResourceHandle handle, int tag)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             _flverhandle = (ResourceHandle<FlverResource>)handle;
             _flverhandle.Acquire();
 
@@ -146,6 +150,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void OnResourceUnloaded(IResourceHandle handle, int tag)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             _flverhandle = null;
         }
 
@@ -154,6 +162,10 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void UpdateRenderMesh(ResourceDescriptor modelAsset, bool skipModel = false)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             if (Universe.IsRendering)
             {
                 // Ignore this if we are only loading textures
@@ -172,6 +184,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void UpdateRepresentativeDummy(int index, Vector3 position)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (container.DummyPoly_RootNode.Children.Count < index)
@@ -194,6 +210,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void UpdateRepresentativeNode(int index, Vector3 position, Vector3 rotation, Vector3 scale)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (container.Bone_RootNode.Children.Count < index)
@@ -216,6 +236,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void SelectRepresentativeDummy(int index, HierarchyMultiselect multiSelect)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (container.DummyPoly_RootNode.Children.Count < index)
@@ -260,6 +284,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void SelectRepresentativeNode(int index)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (container.Bone_RootNode.Children.Count < index)
@@ -281,6 +309,10 @@ namespace StudioCore.Editors.ModelEditor
         }
         public void SelectRepresentativeMesh(int index)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (container.Mesh_RootNode.Children.Count < index)
@@ -303,6 +335,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void DisplayRepresentativeDummyState(int index)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (container.DummyPoly_RootNode.Children.Count < index)
@@ -354,6 +390,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void ToggleRepresentativeDummy(int index)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (container.DummyPoly_RootNode.Children.Count < index)
@@ -373,6 +413,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void DisplayRepresentativeNodeState(int index)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (container.Bone_RootNode.Children.Count < index)
@@ -424,6 +468,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void ToggleRepresentativeNode(int index)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (container.Bone_RootNode.Children.Count < index)
@@ -442,6 +490,10 @@ namespace StudioCore.Editors.ModelEditor
         }
         public void DisplayRepresentativeMeshState(int index)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (container.Mesh_RootNode.Children.Count < index)
@@ -493,6 +545,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void ToggleRepresentativeMesh(int index)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (container.Mesh_RootNode.Children.Count < index)
@@ -512,6 +568,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void OnRepresentativeEntitySelected(Entity ent)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             if (!IsSelectableNode(ent))
                 return;
 
@@ -573,6 +633,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void OnRepresentativeEntityDeselected(Entity ent)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             if (!IsSelectableNode(ent))
                 return;
 
@@ -582,6 +646,10 @@ namespace StudioCore.Editors.ModelEditor
 
         public void OnRepresentativeEntityUpdate(Entity ent)
         {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
             if (!IsSelectableNode(ent))
                 return;
 

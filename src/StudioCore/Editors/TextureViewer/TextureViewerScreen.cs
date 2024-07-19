@@ -200,12 +200,25 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         var dsid = ImGui.GetID("DockSpace_TextureViewer");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
-
+        
         if (Smithbox.ProjectHandler.CurrentProject == null)
         {
             ImGui.Begin("Viewer##InvalidTextureViewer");
 
             ImGui.Text("No project loaded. File -> New Project");
+
+            ImGui.End();
+
+            ImGui.PopStyleVar();
+            ImGui.PopStyleColor(1);
+
+            return;
+        }
+        else if(Smithbox.LowRequirementsMode)
+        {
+            ImGui.Begin("Viewer##InvalidTextureViewerLowReqs");
+
+            ImGui.Text("Not usable in Low Requirements mode.");
 
             ImGui.End();
 

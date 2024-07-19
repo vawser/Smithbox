@@ -25,11 +25,13 @@ Map Editor:
  
 Model Editor: 
  - ADD: FBX Export of Loaded Model
- - Add easier toggling of model masks based on associated NpcParam (for characters)
+ - ADD: skeleton and skinning support for playing animations
+ - ADD: easier toggling of model masks based on associated NpcParam (for characters)
  - ADD: floating text for dummy poly ref IDs
  - ADD: floating text for co-ordinate direction (X, Y, Z)
  - ADD: dummy poly forward/upwards representation
  - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
+ - ADD: proper handling for the flag fields in the FLVER
 
 Material Editor
  - ADD: Implement Material/MATBIN editor
@@ -62,7 +64,10 @@ Texture Viewer:
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
  
 Behavior Editor:
- - ADD: implement it
+ - ADD: behavior HKX editor
+ - ADD: character HKX editor
+ - ADD: skeleton HKX editor
+ - ADD: collision HKX editor
  
 World Map:
  - ADD: the dungeon icons, add icon radius for the non-open world maps
@@ -71,10 +76,8 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
-Smithbox 1.0.16
-Overhauled the Model Editor entirely: it is now effectively a FLVER Editor replacement.
-Added support for display enemies with the correct model masks in the Map Editor (for ER, DS3 and SDT).
-Improved the texture lookup for ER, a more models will correctly find their textures.
-Fixed various issues.
-Changelog: https://github.com/vawser/Smithbox/releases/tag/1.0.16
-Download: https://github.com/vawser/Smithbox/releases/download/1.0.16/Smithbox_1_0_16_2024_07_19.zip
+Model Editor: 
+ - ADD: floating text for dummy poly ref IDs
+ - ADD: floating text for co-ordinate direction (X, Y, Z)
+ - ADD: dummy poly forward/upwards representation
+ - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)

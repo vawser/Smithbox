@@ -50,8 +50,6 @@ public class Smithbox
 
     public static IGraphicsContext _context;
 
-    public static GraphicsDevice _graphicsDevice;
-
     public static bool FontRebuildRequest;
 
     public static string _programTitle;
@@ -94,7 +92,6 @@ public class Smithbox
         _context = context;
         _context.Initialize();
         _context.Window.Title = _programTitle;
-        _graphicsDevice = context.Device;
 
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
@@ -110,6 +107,7 @@ public class Smithbox
         _soapstoneService = new SoapstoneService(_version);
 
         ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
+        SetupFonts();
         _context.ImguiRenderer.OnSetupDone();
 
         ImGuiStylePtr style = ImGui.GetStyle();
@@ -150,14 +148,17 @@ public class Smithbox
         var fontEn = File.ReadAllBytes(fileEn);
         var fontEnNative = ImGui.MemAlloc((uint)fontEn.Length);
         Marshal.Copy(fontEn, 0, fontEnNative, fontEn.Length);
+
         var fileOther = Path.Combine(AppContext.BaseDirectory, otherFont);
         var fontOther = File.ReadAllBytes(fileOther);
         var fontOtherNative = ImGui.MemAlloc((uint)fontOther.Length);
         Marshal.Copy(fontOther, 0, fontOtherNative, fontOther.Length);
+
         var fileIcon = Path.Combine(AppContext.BaseDirectory, @"Assets\Fonts\forkawesome-webfont.ttf");
         var fontIcon = File.ReadAllBytes(fileIcon);
         var fontIconNative = ImGui.MemAlloc((uint)fontIcon.Length);
         Marshal.Copy(fontIcon, 0, fontIconNative, fontIcon.Length);
+
         fonts.Clear();
 
         var scale = GetUIScale();
