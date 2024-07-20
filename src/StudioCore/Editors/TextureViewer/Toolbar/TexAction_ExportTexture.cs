@@ -109,7 +109,7 @@ public static class TexAction_ExportTexture
                     }
                 }
 
-                if(!Directory.Exists(exportFilePath))
+                if(!Directory.Exists(exportPath))
                 {
                     write = false;
                     PlatformUtils.Instance.MessageBox($"Directory is not valid.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
