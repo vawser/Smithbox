@@ -22,7 +22,7 @@ namespace StudioCore.Tools
         public static void ValidateMSB()
         {
             // Disable this since it ignores asserts if on.
-            CFG.Current.System_FlexibleUnpack = false;
+            CFG.Current.System_IgnoreAsserts = false;
             HasFinished = false;
 
             var mapDir = $"{Smithbox.GameRoot}/map/mapstudio/";

@@ -209,9 +209,16 @@ namespace StudioCore.Editors.ModelEditor
                                 {
                                     AssetCopyHandler.OpenCharacterCopyMenu(entry);
                                 }
-
-                                ImGui.EndPopup();
                             }
+
+                            if (ImGui.Selectable("Go to Alias"))
+                            {
+                                Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
+                                Smithbox.WindowHandler.AliasWindow.DisplayCharacterTab = true;
+                                Smithbox.WindowHandler.AliasWindow.TargetChrID = entry;
+                            }
+
+                            ImGui.EndPopup();
                         }
                     }
                 }
@@ -256,9 +263,16 @@ namespace StudioCore.Editors.ModelEditor
                                 {
                                     AssetCopyHandler.OpenAssetCopyMenu(entry);
                                 }
-
-                                ImGui.EndPopup();
                             }
+
+                            if (ImGui.Selectable("Go to Alias"))
+                            {
+                                Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
+                                Smithbox.WindowHandler.AliasWindow.DisplayAssetTab = true;
+                                Smithbox.WindowHandler.AliasWindow.TargetAssetID = entry;
+                            }
+
+                            ImGui.EndPopup();
                         }
                     }
                 }
@@ -296,9 +310,16 @@ namespace StudioCore.Editors.ModelEditor
                                 {
                                     AssetCopyHandler.OpenPartCopyMenu(entry);
                                 }
-
-                                ImGui.EndPopup();
                             }
+
+                            if (ImGui.Selectable("Go to Alias"))
+                            {
+                                Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
+                                Smithbox.WindowHandler.AliasWindow.DisplayPartTab = true;
+                                Smithbox.WindowHandler.AliasWindow.TargetPartID = entry;
+                            }
+
+                            ImGui.EndPopup();
                         }
                     }
                 }
@@ -345,6 +366,18 @@ namespace StudioCore.Editors.ModelEditor
                                 }
                             }
                             DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
+
+                            if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{entry}"))
+                            {
+                                if (ImGui.Selectable("Go to Alias"))
+                                {
+                                    Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
+                                    Smithbox.WindowHandler.AliasWindow.DisplayMapPieceTab = true;
+                                    Smithbox.WindowHandler.AliasWindow.TargetMapPieceID = entry;
+                                }
+
+                                ImGui.EndPopup();
+                            }
                         }
                     }
                 }

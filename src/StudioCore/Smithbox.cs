@@ -95,8 +95,7 @@ public class Smithbox
 
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
-        // SoulsFormats toggles
-        BinaryReaderEx.IsFlexible = CFG.Current.System_FlexibleUnpack;
+        UpdateFormatAssertState();
 
         // Handlers
         ProjectHandler = new ProjectHandler();
@@ -112,6 +111,11 @@ public class Smithbox
 
         ImGuiStylePtr style = ImGui.GetStyle();
         style.TabBorderSize = 0;
+    }
+
+    public static void UpdateFormatAssertState()
+    {
+        BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
     }
 
     public static void InitializeBanks()

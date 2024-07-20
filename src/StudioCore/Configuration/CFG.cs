@@ -232,7 +232,7 @@ public class CFG
     public string System_Other_Font = "Assets\\Fonts\\NotoSansCJKtc-Light.otf";
     public float System_Frame_Rate = 60.0f;
 
-    public bool System_FlexibleUnpack = false;
+    public bool System_IgnoreAsserts = false;
 
     public bool System_EnableAutoSave = true;
     public int System_AutoSaveIntervalSeconds = 300;
@@ -424,6 +424,8 @@ public class CFG
     //****************************
     // Settings: Model Editor
     //****************************
+    public bool ModelEditor_Format_IgnoreAsserts = false;
+
     public bool ModelEditor_AssetBrowser_ShowAliases = true;
     public bool ModelEditor_AssetBrowser_ShowTags = false;
     public bool ModelEditor_AssetBrowser_ShowLowDetailParts = false;

@@ -16,21 +16,23 @@ public class AliasTab
     private string _searchInput = "";
     private string _searchInputCache = "";
 
-    private string _refUpdateId = "";
-    private string _refUpdateName = "";
-    private string _refUpdateTags = "";
+    public string _refUpdateId = "";
+    public string _refUpdateName = "";
+    public string _refUpdateTags = "";
 
     private string _newRefId = "";
     private string _newRefName = "";
     private string _newRefTags = "";
 
-    private AliasReference _selectedEntry;
+    public AliasReference _selectedEntry;
 
     private AliasBank Bank;
     private string EntryName;
     private bool TagBool;
     private bool IsNumericID;
     private bool IsMapID;
+
+    public bool FocusSelection = false;
 
     public AliasTab(AliasBank bank, string name, ref bool tagBool, bool isNumericId = false, bool isMapId = false) 
     {
@@ -142,6 +144,12 @@ public class AliasTab
                     }
                     else
                         _refUpdateTags = "";
+                }
+
+                if(FocusSelection && entry == _selectedEntry)
+                {
+                    FocusSelection = false;
+                    ImGui.SetScrollHereY();
                 }
 
                 // Display name alias

@@ -34,6 +34,7 @@ Model Editor:
  - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
  - ADD: proper handling for the flag fields in the FLVER
  - ADD: GX Item mapping so the byte arrays are more comprehesible
+ - FIX: flag fields: they should be a set of checkboxes that resolve into the correct int value
 
 Material Editor
  - ADD: Implement Material/MATBIN editor
@@ -83,8 +84,5 @@ Model Editor:
  - ADD: floating text for co-ordinate direction (X, Y, Z)
  - ADD: dummy poly forward/upwards representation
  - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
+ - ADD: render bone connections (use patrol route method)
 
-Asset Browser:
- - ADD: quicklink to the alias entry in the alias window (e.g. open the window, select the entry)
- 
- Fixed several issues that caused the Low Requirements build to crash.

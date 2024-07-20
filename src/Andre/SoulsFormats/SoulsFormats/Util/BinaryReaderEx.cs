@@ -16,7 +16,7 @@ namespace SoulsFormats
     /// </summary>
     public sealed class BinaryReaderEx
     {
-        public static bool IsFlexible { get; set; }
+        public static bool IgnoreAsserts { get; set; }
 
         private Stack<long> _steps;
         public Memory<byte> _memory;
@@ -119,7 +119,7 @@ namespace SoulsFormats
         /// </summary>
         private T AssertValue<T>(T value, string typeName, string valueFormat, T option) where T : IEquatable<T>
         {
-            if (IsFlexible) return value;
+            if (IgnoreAsserts) return value;
 
             if (value.Equals(option))
                 return value;

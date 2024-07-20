@@ -152,7 +152,7 @@ namespace StudioCore.Editors.ModelEditor
                                 var fileName = file.Name.ToLower();
                                 var modelName = modelid.ToLower();
 
-                                if (fileName.Contains(modelName) && fileName.Contains(".flv"))
+                                if (fileName.Contains(modelName) && (fileName.EndsWith(".flver") || fileName.EndsWith(".flv")))
                                 {
                                     CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
                                     break;
@@ -200,7 +200,7 @@ namespace StudioCore.Editors.ModelEditor
 
                                 if (fileName.Contains(modelName))
                                 {
-                                    if (fileName.Contains(".flv"))
+                                    if ((fileName.EndsWith(".flver") || fileName.EndsWith(".flv")))
                                     {
                                         var proceed = true;
 
@@ -473,6 +473,9 @@ namespace StudioCore.Editors.ModelEditor
                 // For loose files, save directly
                 if (CurrentFLVERInfo.Type == ModelEditorModelType.Loose)
                 {
+                    // Backup loose file
+                    File.Copy(CurrentFLVERInfo.LoosePath, $@"{CurrentFLVERInfo.LoosePath}.bak", true);
+
                     byte[] flverBytes = CurrentFLVER.Write();
                     File.WriteAllBytes(CurrentFLVERInfo.LoosePath, flverBytes);
                 }
@@ -597,6 +600,9 @@ namespace StudioCore.Editors.ModelEditor
 
             byte[] fileBytes = null;
 
+            // Backup container file
+            File.Copy(info.ModBinderPath, $@"{info.ModBinderPath}.bak", true);
+
             using (IBinder binder = BND4.Read(DCX.Decompress(info.ModBinderPath)))
             {
                 foreach (var file in binder.Files)
@@ -660,6 +666,9 @@ namespace StudioCore.Editors.ModelEditor
         {
             FlverModelInfo info = CurrentFLVERInfo;
             byte[] fileBytes = null;
+
+            // Backup container file
+            File.Copy(info.ModBinderPath, $@"{info.ModBinderPath}.bak", true);
 
             using (IBinder binder = BND3.Read(DCX.Decompress(info.ModBinderPath)))
             {

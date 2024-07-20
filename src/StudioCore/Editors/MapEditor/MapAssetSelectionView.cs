@@ -145,6 +145,23 @@ namespace StudioCore.Editors.MapEditor
                             }
                         }
                         DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Characters);
+
+                        if (ImGui.BeginPopupContextItem($"CharacterModel_Context_{entry}"))
+                        {
+                            if (ImGui.Selectable("Change Selection to This"))
+                            {
+                                ApplyMapAssetSelection(entry, ModelSelectionType.Character);
+                            }
+
+                            if (ImGui.Selectable("Go to Alias"))
+                            {
+                                Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
+                                Smithbox.WindowHandler.AliasWindow.DisplayCharacterTab = true;
+                                Smithbox.WindowHandler.AliasWindow.TargetChrID = entry;
+                            }
+
+                            ImGui.EndPopup();
+                        }
                     }
                 }
             }
@@ -179,6 +196,23 @@ namespace StudioCore.Editors.MapEditor
                             }
                         }
                         DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Assets);
+
+                        if (ImGui.BeginPopupContextItem($"AssetModel_Context_{entry}"))
+                        {
+                            if (ImGui.Selectable("Change Selection to This"))
+                            {
+                                ApplyMapAssetSelection(entry, ModelSelectionType.Asset);
+                            }
+
+                            if (ImGui.Selectable("Go to Alias"))
+                            {
+                                Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
+                                Smithbox.WindowHandler.AliasWindow.DisplayAssetTab = true;
+                                Smithbox.WindowHandler.AliasWindow.TargetAssetID = entry;
+                            }
+
+                            ImGui.EndPopup();
+                        }
                     }
                 }
             }
@@ -206,6 +240,23 @@ namespace StudioCore.Editors.MapEditor
                             }
                         }
                         DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Parts);
+
+                        if (ImGui.BeginPopupContextItem($"PartModel_Context_{entry}"))
+                        {
+                            if (ImGui.Selectable("Change Selection to This"))
+                            {
+                                ApplyMapAssetSelection(entry, ModelSelectionType.Part);
+                            }
+
+                            if (ImGui.Selectable("Go to Alias"))
+                            {
+                                Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
+                                Smithbox.WindowHandler.AliasWindow.DisplayPartTab = true;
+                                Smithbox.WindowHandler.AliasWindow.TargetPartID = entry;
+                            }
+
+                            ImGui.EndPopup();
+                        }
                     }
                 }
             }
@@ -250,6 +301,23 @@ namespace StudioCore.Editors.MapEditor
                                 }
                             }
                             DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
+
+                            if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{entry}"))
+                            {
+                                if (ImGui.Selectable("Change Selection to This"))
+                                {
+                                    ApplyMapAssetSelection(_selectedEntry, ModelSelectionType.MapPiece, map);
+                                }
+
+                                if (ImGui.Selectable("Go to Alias"))
+                                {
+                                    Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
+                                    Smithbox.WindowHandler.AliasWindow.DisplayMapPieceTab = true;
+                                    Smithbox.WindowHandler.AliasWindow.TargetMapPieceID = entry;
+                                }
+
+                                ImGui.EndPopup();
+                            }
                         }
                     }
                 }

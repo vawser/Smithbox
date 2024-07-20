@@ -67,10 +67,10 @@ public class SystemTab
 
             if (ImGui.CollapsingHeader("Formats"))
             {
-                ImGui.Checkbox("Flexible Unpack", ref CFG.Current.System_FlexibleUnpack);
-                ImguiUtils.ShowHoverTooltip("Enable this if you are attempting to mod files that are 'encrypted'.");
+                ImGui.Checkbox("Ignore asserts", ref CFG.Current.System_IgnoreAsserts);
+                ImguiUtils.ShowHoverTooltip("If enabled, when attempting to read files, asserts will be ignored.");
 
-                BinaryReaderEx.IsFlexible = CFG.Current.System_FlexibleUnpack;
+                Smithbox.UpdateFormatAssertState();
             }
 
             if (ImGui.CollapsingHeader("Soapstone Server"))

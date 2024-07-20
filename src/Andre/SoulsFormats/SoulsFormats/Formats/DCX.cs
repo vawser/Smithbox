@@ -116,7 +116,7 @@ namespace SoulsFormats
                     byte unk38 = br.GetByte(0x38);
 
                     // Credit to ivi
-                    if (BinaryReaderEx.IsFlexible && unk04 != 0x11000)
+                    if (BinaryReaderEx.IgnoreAsserts && unk04 != 0x11000)
                         unk04 = 0x10000;
 
                     if (unk04 == 0x10000 && unk10 == 0x24 && unk30 == 9 && unk38 == 0)
