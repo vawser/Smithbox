@@ -54,6 +54,7 @@ public class ModelEditorScreen : EditorScreen
 
     public ModelResourceHandler ResourceHandler;
     public ModelViewportHandler ViewportHandler;
+    public SkeletonHandler SkeletonHandler;
 
     public ToolWindow ToolWindow;
     public ToolSubMenu ToolSubMenu;
@@ -82,6 +83,7 @@ public class ModelEditorScreen : EditorScreen
         ModelSelectionView = new ModelSelectionView(this);
         ModelHierarchy = new ModelHierarchyView(this);
         ModelPropertyEditor = new ModelPropertyEditor(this);
+        SkeletonHandler = new SkeletonHandler(this, _universe);
 
         ToolWindow = new ToolWindow(this);
         ToolSubMenu = new ToolSubMenu(this);
@@ -231,6 +233,18 @@ public class ModelEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+            if (ImGui.MenuItem("Meshes"))
+            {
+                CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
+                var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
+                foreach (var entry in container.Mesh_RootNode.Children)
+                {
+                    entry.EditorVisible = CFG.Current.ModelEditor_ViewMeshes;
+                }
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
             if (ImGui.MenuItem("Dummy Polygons"))
             {
                 CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
@@ -256,16 +270,11 @@ public class ModelEditorScreen : EditorScreen
             ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Meshes"))
+            if (ImGui.MenuItem("Skeleton"))
             {
-                CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
-                var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
-                foreach (var entry in container.Mesh_RootNode.Children)
-                {
-                    entry.EditorVisible = CFG.Current.ModelEditor_ViewMeshes;
-                }
+                CFG.Current.ModelEditor_ViewSkeleton = !CFG.Current.ModelEditor_ViewSkeleton;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
+            ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewSkeleton);
 
             ImGui.EndMenu();
         }
@@ -487,8 +496,9 @@ public class ModelEditorScreen : EditorScreen
         ModelSelectionView.OnGui();
         ModelHierarchy.OnGui();
         ModelPropertyEditor.OnGui();
+        SkeletonHandler.OnGui();
 
-        if(CFG.Current.Interface_ModelEditor_ToolConfigurationWindow)
+        if (CFG.Current.Interface_ModelEditor_ToolConfigurationWindow)
         {
             ToolWindow.OnGui();
         }

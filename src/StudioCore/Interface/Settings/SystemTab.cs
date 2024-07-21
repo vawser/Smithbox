@@ -67,6 +67,10 @@ public class SystemTab
 
             if (ImGui.CollapsingHeader("Formats"))
             {
+                ImguiUtils.WrappedText("By default, files are read by Smithbox in a strict manner. Data that is present in locations that it should not be will throw an exception.");
+
+                ImguiUtils.WrappedText("This option will remove that strictness, and will cause Smithbox to ignore the invalid data when reading a file.");
+
                 ImGui.Checkbox("Ignore asserts", ref CFG.Current.System_IgnoreAsserts);
                 ImguiUtils.ShowHoverTooltip("If enabled, when attempting to read files, asserts will be ignored.");
 

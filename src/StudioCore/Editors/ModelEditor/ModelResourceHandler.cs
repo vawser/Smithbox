@@ -51,6 +51,8 @@ namespace StudioCore.Editors.ModelEditor
 
             LoadEditableModel(name, ModelEditorModelType.Loose);
             LoadRepresentativeModel(name, ModelEditorModelType.Loose);
+
+            Screen.SkeletonHandler.GenerateSkeleton();
         }
 
         /// <summary>
@@ -68,6 +70,8 @@ namespace StudioCore.Editors.ModelEditor
             LoadRepresentativeModel(name, ModelEditorModelType.Character);
 
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Character, "");
+
+            Screen.SkeletonHandler.GenerateSkeleton();
         }
 
         /// <summary>
@@ -86,6 +90,8 @@ namespace StudioCore.Editors.ModelEditor
             LoadRepresentativeModel(name, ModelEditorModelType.Object);
 
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Object, "");
+
+            Screen.SkeletonHandler.GenerateSkeleton();
         }
 
         /// <summary>
@@ -102,6 +108,8 @@ namespace StudioCore.Editors.ModelEditor
             LoadRepresentativeModel(name, ModelEditorModelType.Parts);
 
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Parts, "");
+
+            Screen.SkeletonHandler.GenerateSkeleton();
         }
 
         /// <summary>
@@ -118,6 +126,8 @@ namespace StudioCore.Editors.ModelEditor
             LoadRepresentativeModel(name, ModelEditorModelType.MapPiece, mapId);
 
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.MapPiece, mapId);
+
+            Screen.SkeletonHandler.GenerateSkeleton();
         }
 
         /// <summary>
@@ -609,7 +619,7 @@ namespace StudioCore.Editors.ModelEditor
                 {
                     var curFileName = $"{Path.GetFileName(file.Name)}";
 
-                    if (curFileName == info.FlverFileName)
+                    if (curFileName.ToLower() == info.FlverFileName.ToLower())
                     {
                         try
                         {
@@ -676,7 +686,7 @@ namespace StudioCore.Editors.ModelEditor
                 {
                     var curFileName = $"{Path.GetFileName(file.Name)}";
 
-                    if (curFileName == info.FlverFileName)
+                    if (curFileName.ToLower() == info.FlverFileName.ToLower())
                     {
                         try
                         {

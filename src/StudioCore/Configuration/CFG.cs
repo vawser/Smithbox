@@ -424,15 +424,14 @@ public class CFG
     //****************************
     // Settings: Model Editor
     //****************************
-    public bool ModelEditor_Format_IgnoreAsserts = false;
-
     public bool ModelEditor_AssetBrowser_ShowAliases = true;
     public bool ModelEditor_AssetBrowser_ShowTags = false;
     public bool ModelEditor_AssetBrowser_ShowLowDetailParts = false;
 
+    public bool ModelEditor_ViewMeshes = true;
     public bool ModelEditor_ViewDummyPolys = true;
     public bool ModelEditor_ViewBones = true;
-    public bool ModelEditor_ViewMeshes = true;
+    public bool ModelEditor_ViewSkeleton = true;
 
     public bool ModelEditor_ExactSearch = false;
 
