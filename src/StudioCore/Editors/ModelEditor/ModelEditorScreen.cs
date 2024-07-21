@@ -269,12 +269,14 @@ public class ModelEditorScreen : EditorScreen
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
 
+            /*
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
             if (ImGui.MenuItem("Skeleton"))
             {
                 CFG.Current.ModelEditor_ViewSkeleton = !CFG.Current.ModelEditor_ViewSkeleton;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewSkeleton);
+            */
 
             ImGui.EndMenu();
         }

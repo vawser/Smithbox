@@ -35,6 +35,7 @@ Model Editor:
  - ADD: proper handling for the flag fields in the FLVER
  - ADD: GX Item mapping so the byte arrays are more comprehesible
  - FIX: flag fields: they should be a set of checkboxes that resolve into the correct int value
+ - ADD: render bone connections (use patrol route method)
 
 Material Editor
  - ADD: Implement Material/MATBIN editor
@@ -79,10 +80,5 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
-Model Editor: 
- - ADD: floating text for dummy poly ref IDs
- - ADD: floating text for co-ordinate direction (X, Y, Z)
- - ADD: dummy poly forward/upwards representation
- - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
- - ADD: render bone connections (use patrol route method)
+
 
