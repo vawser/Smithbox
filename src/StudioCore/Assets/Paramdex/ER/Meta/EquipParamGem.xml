@@ -132,7 +132,7 @@
     <spEffectId_forAtk0 AltName="SpEffect ID - Attack Hit [0]" Wiki="Special effect parameter ID for attack hit" Refs="SpEffectParam" />
     <spEffectId_forAtk1 AltName="SpEffect ID - Attack Hit [1]" Wiki="Special effect parameter ID for attack hit" Refs="SpEffectParam" />
     <spEffectId_forAtk2 AltName="SpEffect ID - Attack Hit [2]" Wiki="Special effect parameter ID for attack hit" Refs="SpEffectParam" />
-    <mountWepTextId AltName="Mount Weapon Text ID" Wiki="Corresponding Weapon Type Overwrite Text ID (-1: Do not overwrite) [Menu Text]" />
+    <mountWepTextId AltName="Mount Weapon Text ID" Wiki="Corresponding Weapon Type Overwrite Text ID (-1: Do not overwrite) [Menu Text]" FmgRef="Modern_MenuText" />
     <pad6 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Defines an Ash of War item. Determines what weapons it can be applied to and with what affinities.\nDoes not manage unique Ashes of War. Ashes of war may not immediately function on arbitrary weapons." AlternativeOrder="
