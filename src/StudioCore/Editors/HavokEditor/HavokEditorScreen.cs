@@ -13,6 +13,8 @@ using StudioCore.Core;
 using HKLib.hk2018;
 using StudioCore.Editors.HavokEditor;
 using static StudioCore.Editors.HavokEditor.HavokBehaviorBank;
+using System.Linq;
+using System;
 
 namespace StudioCore.HavokEditor;
 
@@ -37,9 +39,9 @@ public class HavokEditorScreen : EditorScreen
         BehaviorGraph = new HavokBehaviorGraph(this);
     }
 
-    public string EditorName => "Behavior Editor##HavokEditor";
-    public string CommandEndpoint => "behavior";
-    public string SaveType => "Behavior";
+    public string EditorName => "Havok Editor##HavokEditor";
+    public string CommandEndpoint => "Havok";
+    public string SaveType => "Havok";
 
     public void Init()
     {
@@ -84,6 +86,7 @@ public class HavokEditorScreen : EditorScreen
 
             if (HavokBehaviorBank.IsLoaded)
             {
+                HavokFileCategoryView();
                 HavokBehaviorFileView();
                 BehaviorGraph.DisplayGraph();
             }
@@ -91,6 +94,41 @@ public class HavokEditorScreen : EditorScreen
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
+    }
+
+    public enum HavokFileCategories
+    {
+        None,
+
+        // behbnd
+        Configuration,
+        Character,
+        Behavior,
+        Behavior_Common, // c9997
+
+        // anibnd - Uses compendium
+        Animation, 
+        Skeleton
+    }
+
+    private HavokFileCategories _selectedFileCategoryKey = HavokFileCategories.None;
+
+    public void HavokFileCategoryView()
+    {
+        ImGui.Begin("File Category##HavokFileCategoryList");
+
+        foreach (var entry in Enum.GetNames(typeof(HavokFileCategories)))
+        {
+            if(entry != "None")
+            {
+                if (ImGui.Selectable($@"{entry.Replace("_", " ")}", entry == _selectedBinderKey))
+                {
+                    _selectedBinderKey = entry;
+                }
+            }
+        }
+
+        ImGui.End();
     }
 
     public void HavokBehaviorFileView()

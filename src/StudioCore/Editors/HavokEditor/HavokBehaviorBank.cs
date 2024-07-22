@@ -176,7 +176,7 @@ public static class HavokBehaviorBank
 
                 TaskLogs.AddLog($"fileName: {fileName}");
 
-                if (fileName.Contains("behaviors") && fileName.Contains(".hkx"))
+                if (fileName.Contains("behaviors") && fileName.EndsWith(".hkx"))
                 {
                     TaskLogs.AddLog($"fileName: HavokBinarySerializer");
 
