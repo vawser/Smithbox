@@ -17,7 +17,7 @@
         "Row selection is done through any of the following:",
         "   !VALUE!: to select rows with a matching ID or a matching name",
         "   modified: to select rows changed from vanilla",
-        "   original: to select unmodified rows",
+        "   !modified: to select unmodified rows",
         "   id !VALUE!: to select rows with a matching ID",
         "   idrange MIN MAX: to select rows with an ID within the given bounds",
         "   name !NAME!: to select rows with a matching name",

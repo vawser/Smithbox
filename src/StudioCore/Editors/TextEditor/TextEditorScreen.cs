@@ -141,12 +141,10 @@ public class TextEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Data", Smithbox.BankHandler.FMGBank.IsLoaded))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
-            if (ImGui.BeginMenu("Merge"))
+            if (ImGui.BeginMenu("Import Text Entries"))
             {
-                ImGui.TextColored(new Vector4(0.75f, 0.75f, 0.75f, 1.0f),
-                    "Import: text will be merged with currently loaded text");
-
-                if (ImGui.MenuItem("Import text files and merge"))
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
+                if (ImGui.MenuItem("Merge Entries"))
                 {
                     if (FmgExporter.ImportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], true))
                     {
@@ -154,24 +152,10 @@ public class TextEditorScreen : EditorScreen
                         ResetActionManager();
                     }
                 }
+                ImguiUtils.ShowHoverTooltip("Import: text will be merged with currently loaded text");
 
-                ImGui.TextColored(new Vector4(0.75f, 0.75f, 0.75f, 1.0f),
-                    "Export: only modded text (different than vanilla) will be exported");
-                if (ImGui.MenuItem("Export modded text to text files"))
-                {
-                    FmgExporter.ExportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], true);
-                }
-
-                ImGui.EndMenu();
-            }
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
-            if (ImGui.BeginMenu("All"))
-            {
-                ImGui.TextColored(new Vector4(0.75f, 0.75f, 0.75f, 1.0f),
-                    "Import: text replaces currently loaded text entirely");
-
-                if (ImGui.MenuItem("Import text files and replace"))
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
+                if (ImGui.MenuItem("Replace Entries"))
                 {
                     if (FmgExporter.ImportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], false))
                     {
@@ -179,32 +163,30 @@ public class TextEditorScreen : EditorScreen
                         ResetActionManager();
                     }
                 }
+                ImguiUtils.ShowHoverTooltip("Import: text replaces currently loaded text entirely");
 
-                ImGui.TextColored(new Vector4(0.75f, 0.75f, 0.75f, 1.0f),
-                    "Export: all text will be exported");
-                if (ImGui.MenuItem("Export all text to text files"))
+                ImGui.EndMenu();
+            }
+
+            // Export
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
+            if (ImGui.BeginMenu("Export Text Entries"))
+            {
+                if (ImGui.MenuItem("Export Modded Entries"))
+                {
+                    FmgExporter.ExportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], true);
+                }
+                ImguiUtils.ShowHoverTooltip("Export: only modded text (different than vanilla) will be exported");
+
+                if (ImGui.MenuItem("Export All Entries"))
                 {
                     FmgExporter.ExportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], false);
                 }
+                ImguiUtils.ShowHoverTooltip("Export: all text will be exported");
 
-                if (ImGui.BeginMenu("Legacy"))
-                {
-                    ImGui.TextColored(new Vector4(0.75f, 0.75f, 0.75f, 1.0f),
-                        "Old version of text import/export system.\n" +
-                        "Import: text replaces currently loaded text entirely.");
-                    if (ImGui.MenuItem("Import json"))
-                    {
-                        if (FmgExporter.ImportFmgJson(false))
-                        {
-                            ClearTextEditorCache();
-                            ResetActionManager();
-                        }
-                    }
-
-                    ImGui.EndMenu();
-                }
                 ImGui.EndMenu();
             }
+
             ImGui.EndMenu();
         }
 

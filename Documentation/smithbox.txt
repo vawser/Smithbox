@@ -79,6 +79,5 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
-
  - FIX: FMG Import/Export is adding unneed \n newlines on export and then causing double newlines on import
  - FIX: FMG Import/Export ignores null entries, breaking the FMG if full export and then full import occurs.

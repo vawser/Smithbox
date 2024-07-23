@@ -16,33 +16,9 @@ using static StudioCore.TextEditor.FMGBank;
 using StudioCore.Locators;
 using StudioCore.Core;
 using StudioCore.Interface;
+using StudioCore.Banks.AliasBank;
 
 namespace StudioCore.Editors.TextEditor;
-
-[JsonSourceGenerationOptions(WriteIndented = true,
-    GenerationMode = JsonSourceGenerationMode.Metadata, IncludeFields = true)]
-[JsonSerializable(typeof(JsonFMG))]
-internal partial class FmgSerializerContext : JsonSerializerContext
-{
-}
-
-[Obsolete]
-public class JsonFMG
-{
-    public FMG Fmg;
-    public FmgIDType FmgID;
-
-    [JsonConstructor]
-    public JsonFMG()
-    {
-    }
-
-    public JsonFMG(FmgIDType fmg_id, FMG fmg)
-    {
-        FmgID = fmg_id;
-        Fmg = fmg;
-    }
-}
 
 /// <summary>
 ///     Imports and exports FMGs using external formats.
@@ -75,13 +51,6 @@ public static class FmgExporter
         return fmgs;
     }
 
-    private static string FormatJson(string json)
-    {
-        json = json.Replace("{\"ID\"", "\r\n{\"ID\"");
-        json = json.Replace("],", "\r\n],");
-        return json;
-    }
-
     /// <summary>
     ///     Exports jsons that only contains entries that differ between game and mod directories.
     /// </summary>
@@ -102,16 +71,43 @@ public static class FmgExporter
         var itemPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder).AssetPath;
         var menuPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder).AssetPath;
 
-
         if (Smithbox.ProjectType is ProjectType.ER)
         {
-            itemPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "_dlc02").AssetPath;
-            menuPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "_dlc02").AssetPath;
+            var itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "");
+            var menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "");
+
+            switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
+            {
+                case TextEditorScreen.TargetOutputMode.Vanilla:
+                    break;
+                case TextEditorScreen.TargetOutputMode.DLC1:
+                    itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "_dlc01");
+                    menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "_dlc01");
+                    break;
+                case TextEditorScreen.TargetOutputMode.DLC2:
+                    itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "_dlc02");
+                    menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "_dlc02");
+                    break;
+            }
         }
         if (Smithbox.ProjectType is ProjectType.DS3)
         {
-            itemPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "_dlc2").AssetPath;
-            menuPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "_dlc2").AssetPath;
+            var itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "");
+            var menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "");
+
+            switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
+            {
+                case TextEditorScreen.TargetOutputMode.Vanilla:
+                    break;
+                case TextEditorScreen.TargetOutputMode.DLC1:
+                    itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "_dlc1");
+                    menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "_dlc1");
+                    break;
+                case TextEditorScreen.TargetOutputMode.DLC2:
+                    itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "_dlc2");
+                    menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "_dlc2");
+                    break;
+            }
         }
 
         var itemPath_Vanilla = itemPath.Replace(Smithbox.ProjectRoot, Smithbox.GameRoot);
@@ -182,13 +178,15 @@ public static class FmgExporter
         foreach (var kvp in fmgs_out)
         {
             var fileName = kvp.Key.ToString();
+
             Dictionary<string, HashSet<int>> sharedText = new();
             foreach (var entry in kvp.Value.Entries)
             {
                 // Combine shared text
-
                 if (entry.Text == null)
-                    continue;
+                {
+                    entry.Text = "%null%"; // Write this since %null% entries are important
+                }
 
                 entry.Text = entry.Text.TrimEnd('\n');
 
@@ -199,99 +197,44 @@ public static class FmgExporter
                 ids.Add(entry.ID);
             }
 
-            List<string> output = [];
-            output.Add($"###ID {(int)kvp.Key}");
+            // Make Json sub-entry objects
+            List<FmgMergeJsonEntry> mergeEntries = new();
+
             foreach (var sharedKvp in sharedText)
             {
                 var text = sharedKvp.Key;
-                HashSet<int> ids = sharedKvp.Value;
-
                 text = text.Replace("\r", "");
                 text = text.TrimEnd('\n');
 
-                output.Add("");
-                string idsString = "";
-                foreach (var id in ids)
-                {
-                    idsString += _entrySeparator + id.ToString();
-                }
-                output.Add(idsString);
-                output.AddRange(text.Split("\n"));
+                var fmgMergeJsonEntry = new FmgMergeJsonEntry();
+                fmgMergeJsonEntry.Text = text;
+                fmgMergeJsonEntry.IDList = sharedKvp.Value.ToList();
+                mergeEntries.Add(fmgMergeJsonEntry);
             }
 
-            File.WriteAllLines($@"{path}\{fileName}.fmgmerge.txt", output);
-        }
+            // Make JSON object
+            var fmgMergeJson = new FmgMergeJson();
+            fmgMergeJson.FMG_ID = (int)kvp.Key;
+            fmgMergeJson.Entries = mergeEntries;
 
-        TaskLogs.AddLog("Finished exporting FMG txt files",
-            LogLevel.Information, TaskLogs.LogPriority.High);
-    }
+            // Write JSON
+            string jsonString = JsonSerializer.Serialize(fmgMergeJson, typeof(FmgMergeJson), FmgMergeJsonSerializationContext.Default);
 
-    [Obsolete]
-    public static bool ExportJsonFMGs()
-    {
-        if (!PlatformUtils.Instance.OpenFolderDialog("Choose Export Folder", out var path))
-        {
-            return false;
-        }
-
-        var filecount = 0;
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-        {
-            Directory.CreateDirectory(path);
-
-            foreach (FMGInfo info in Smithbox.BankHandler.FMGBank.FmgInfoBank)
+            try
             {
-                JsonFMG fmgPair = new(info.FmgID, info.Fmg);
-                var json = JsonSerializer.Serialize(fmgPair, FmgSerializerContext.Default.JsonFMG);
-                json = FormatJson(json);
-
-                var fileName = info.Name;
-                if (CFG.Current.FMG_ShowOriginalNames)
-                {
-                    fileName = info.FileName;
-                }
-
-                File.WriteAllText($@"{path}\{fileName}.fmg.json", json);
-
-                filecount++;
+                var fs = new FileStream($@"{path}\{fileName}.fmgmerge.json", System.IO.FileMode.Create);
+                var data = Encoding.ASCII.GetBytes(jsonString);
+                fs.Write(data, 0, data.Length);
+                fs.Flush();
+                fs.Dispose();
             }
-        }
-        else
-        {
-            var itemPath = $@"{path}\Item Text";
-            var menuPath = $@"{path}\Menu Text";
-            Directory.CreateDirectory(itemPath);
-            Directory.CreateDirectory(menuPath);
-            foreach (FMGInfo info in Smithbox.BankHandler.FMGBank.FmgInfoBank)
+            catch (Exception ex)
             {
-                if (info.FileCategory == FmgFileCategory.Item)
-                {
-                    path = itemPath;
-                }
-                else if (info.FileCategory == FmgFileCategory.Menu)
-                {
-                    path = menuPath;
-                }
-
-                JsonFMG fmgPair = new(info.FmgID, info.Fmg);
-                var json = JsonSerializer.Serialize(fmgPair, FmgSerializerContext.Default.JsonFMG);
-                json = FormatJson(json);
-
-                var fileName = info.Name;
-                if (CFG.Current.FMG_ShowOriginalNames)
-                {
-                    fileName = info.FileName;
-                }
-
-                File.WriteAllText($@"{path}\{fileName}.fmg.json", json);
-
-                filecount++;
+                TaskLogs.AddLog($"{ex}");
             }
         }
 
-        TaskLogs.AddLog($"Finished exporting {filecount} text files",
-            LogLevel.Information, TaskLogs.LogPriority.High);
-        return true;
+        TaskLogs.AddLog("Finished exporting FMG Merge files", LogLevel.Information, TaskLogs.LogPriority.High);
     }
 
     private static bool ImportFmg(FmgIDType fmgId, FMG fmg, bool merge)
@@ -332,53 +275,10 @@ public static class FmgExporter
         return false;
     }
 
-    public static bool ImportFmgJson(bool merge)
-    {
-        if (!PlatformUtils.Instance.OpenMultiFileDialog("Choose Files to Import",
-                new[] { FilterStrings.FmgJsonFilter }, out IReadOnlyList<string> files))
-        {
-            return false;
-        }
-
-        if (files.Count == 0)
-        {
-            return false;
-        }
-
-        var filecount = 0;
-        foreach (var filePath in files)
-        {
-            try
-            {
-                var file = File.ReadAllText(filePath);
-                JsonFMG json = JsonSerializer.Deserialize(file, FmgSerializerContext.Default.JsonFMG);
-                bool success = ImportFmg(json.FmgID, json.Fmg, merge);
-                if (success)
-                {
-                    filecount++;
-                }
-            }
-            catch (JsonException e)
-            {
-                TaskLogs.AddLog($"FMG import error: Couldn't import \"{filePath}\"",
-                    LogLevel.Error, TaskLogs.LogPriority.Normal, e);
-            }
-        }
-
-        if (filecount == 0)
-        {
-            return false;
-        }
-
-        //HandleDuplicateEntries();
-        PlatformUtils.Instance.MessageBox($"Imported {filecount} json files", "Finished", MessageBoxButtons.OK);
-        return true;
-    }
-
     public static bool ImportFmgTxt(FMGLanguage lang, bool merge)
     {
         if (!PlatformUtils.Instance.OpenMultiFileDialog("Choose Files to Import",
-                new[] { FilterStrings.TxtFilter }, out IReadOnlyList<string> files))
+                new[] { FilterStrings.FmgMergeJsonFilter }, out IReadOnlyList<string> files))
         {
             return false;
         }
@@ -393,74 +293,25 @@ public static class FmgExporter
         {
             try
             {
-                string fileName = Path.GetFileName(filePath);
+                var jsonString = File.ReadAllText(filePath);
+                var resource = JsonSerializer.Deserialize<FmgMergeJson>(jsonString, FmgMergeJsonSerializationContext.Default.FmgMergeJson);
+
                 FMG fmg = new();
                 int fmgId = 0;
-                var file = File.ReadAllLines(filePath);
-                try
+
+                fmgId = resource.FMG_ID;
+
+                foreach(var entry in resource.Entries)
                 {
-                    fmgId = int.Parse(file[0].Replace(_entrySeparator, "").Replace("ID", ""));
-                }
-                catch
-                {
-                    TaskLogs.AddLog($"FMG import error for file {fileName}: Cannot parse FMG ID on line 1.",
-                        LogLevel.Error, TaskLogs.LogPriority.Normal);
-                    return false;
-                }
+                    var entryText = entry.Text;
+                    var idList = entry.IDList;
 
-                Queue<int> entryIds = new();
-                List<string> text = new();
-                for (var i = 1; i < file.Length; i++)
-                {
-                    var line = file[i];
-
-                    if (i + 1 == file.Length)
+                    foreach(var id in idList)
                     {
-                        text.Add(line);
-                        string str = string.Join("\r\n", text);
-                        while (entryIds.Count > 0)
-                        {
-                            fmg.Entries.Add(new(entryIds.Dequeue(), str));
-                        }
+                        var newFmgEntry = new FMG.Entry(id, entryText);
+                        fmg.Entries.Add(newFmgEntry);
                     }
-                    else if (line.StartsWith(_entrySeparator) || i + 1 == file.Length)
-                    {
-                        if (text.Count > 0)
-                        {
-                            string str = string.Join("\r\n", text);
 
-                            while (entryIds.Count > 0)
-                            {
-                                fmg.Entries.Add(new(entryIds.Dequeue(), str));
-                            }
-
-                            if (i + 1 == file.Length)
-                                break;
-
-                            try
-                            {
-                                var ids = line.Split(_entrySeparator);
-                                foreach (var id in ids)
-                                {
-                                    if (string.IsNullOrEmpty(id))
-                                        continue;
-
-                                    entryIds.Enqueue(int.Parse(id));
-                                }
-                            }
-                            catch
-                            {
-                                TaskLogs.AddLog($"FMG import error for file {fileName}: Cannot parse entry ID on line {i + 1}.",
-                                    LogLevel.Error, TaskLogs.LogPriority.High);
-                                return false;
-                            }
-                            text = new();
-                        }
-                    }
-                    else
-                    {
-                        text.Add(line);
-                    }
                 }
 
                 bool success = ImportFmg((FmgIDType)fmgId, fmg, merge);
@@ -487,4 +338,31 @@ public static class FmgExporter
             LogLevel.Information, TaskLogs.LogPriority.Normal);
         return true;
     }
+}
+
+[JsonSourceGenerationOptions(
+    WriteIndented = true,
+    GenerationMode = JsonSourceGenerationMode.Metadata,
+    IncludeFields = true)
+]
+[JsonSerializable(typeof(FmgMergeJson))]
+[JsonSerializable(typeof(FmgMergeJsonEntry))]
+public partial class FmgMergeJsonSerializationContext
+    : JsonSerializerContext
+{ }
+
+public class FmgMergeJson
+{
+    public int FMG_ID { get; set; }
+    public List<FmgMergeJsonEntry> Entries { get; set; }
+
+    public FmgMergeJson() { }
+}
+
+public class FmgMergeJsonEntry
+{
+    public string Text { get; set; }
+    public List<int> IDList { get; set; }
+
+    public FmgMergeJsonEntry() { }
 }
