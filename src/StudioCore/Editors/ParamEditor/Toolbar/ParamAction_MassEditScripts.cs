@@ -2,7 +2,6 @@
 using ImGuiNET;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Platform;

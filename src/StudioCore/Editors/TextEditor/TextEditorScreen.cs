@@ -10,15 +10,15 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
 using StudioCore.Interface;
-using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Utilities;
 using StudioCore.Locators;
 using StudioCore.Core;
 using StudioCore.Editors.TextEditor;
-using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 using System.IO;
 using StudioCore.MsbEditor;
 using StudioCore.Scene;
+using StudioCore.Editors.TextEditor.Actions;
+using StudioCore.Editors.TextEditor.Tools;
 
 namespace StudioCore.TextEditor;
 
@@ -47,11 +47,12 @@ public class TextEditorScreen : EditorScreen
     private List<FMGInfo> _filteredFmgInfo = new();
     public ActionManager EditorActionManager = new();
 
-    private TextToolbar _textToolbar;
-    private TextToolbar_ActionList _textToolbar_ActionList;
-    private TextToolbar_Configuration _textToolbar_Configuration;
-
     public FmgEntrySelection SelectionHandler;
+
+    public ToolWindow ToolWindow;
+    public ToolSubMenu ToolSubMenu;
+
+    public ActionSubMenu ActionSubMenu;
 
     public TextEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -59,9 +60,9 @@ public class TextEditorScreen : EditorScreen
 
         _propEditor = new PropertyEditor(EditorActionManager);
 
-        _textToolbar = new TextToolbar(EditorActionManager);
-        _textToolbar_ActionList = new TextToolbar_ActionList();
-        _textToolbar_Configuration = new TextToolbar_Configuration();
+        ToolWindow = new ToolWindow(this);
+        ToolSubMenu = new ToolSubMenu(this);
+        ActionSubMenu = new ActionSubMenu(this);
     }
 
     public string EditorName => "Text Editor";
@@ -100,47 +101,11 @@ public class TextEditorScreen : EditorScreen
                 EditorActionManager.RedoAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Scissors}");
-            if (ImGui.MenuItem("Remove", KeyBindings.Current.Core_Delete.HintText, false,
-                    _activeEntryGroup != null))
-            {
-                TextAction_Delete.DeleteSelectedEntries();
-            }
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false,
-                    _activeEntryGroup != null))
-            {
-                TextAction_Duplicate.DuplicateEntries();
-            }
-
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("View"))
-        {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Text Categories"))
-            {
-                CFG.Current.Interface_TextEditor_TextCategories = !CFG.Current.Interface_TextEditor_TextCategories;
-            }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextCategories);
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Text Entry"))
-            {
-                CFG.Current.Interface_TextEditor_TextEntry = !CFG.Current.Interface_TextEditor_TextEntry;
-            }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextEntry);
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Toolbar"))
-            {
-                CFG.Current.Interface_TextEditor_Toolbar = !CFG.Current.Interface_TextEditor_Toolbar;
-            }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_Toolbar);
-            ImGui.EndMenu();
-        }
+        ActionSubMenu.DisplayMenu();
+        ToolSubMenu.DisplayMenu();
 
         if (ImGui.BeginMenu("Data", Smithbox.BankHandler.FMGBank.IsLoaded))
         {
@@ -191,6 +156,32 @@ public class TextEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
+            ImGui.EndMenu();
+        }
+
+
+        if (ImGui.BeginMenu("View"))
+        {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Text Categories"))
+            {
+                CFG.Current.Interface_TextEditor_TextCategories = !CFG.Current.Interface_TextEditor_TextCategories;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextCategories);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Text Entry"))
+            {
+                CFG.Current.Interface_TextEditor_TextEntry = !CFG.Current.Interface_TextEditor_TextEntry;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextEntry);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Tool Configuration"))
+            {
+                CFG.Current.Interface_TextEditor_ToolConfigurationWindow = !CFG.Current.Interface_TextEditor_ToolConfigurationWindow;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_ToolConfigurationWindow);
             ImGui.EndMenu();
         }
 
@@ -308,15 +299,8 @@ public class TextEditorScreen : EditorScreen
                     EditorActionManager.RedoAction();
                 }
 
-                if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete) && _activeEntryGroup != null)
-                {
-                    TextAction_Delete.DeleteSelectedEntries();
-                }
-
-                if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate) && _activeEntryGroup != null)
-                {
-                    TextAction_Duplicate.DuplicateEntries();
-                }
+                ActionSubMenu.Shortcuts();
+                ToolSubMenu.Shortcuts();
             }
 
             var doFocus = false;
@@ -395,6 +379,13 @@ public class TextEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
+        if (Smithbox.ProjectType != ProjectType.Undefined)
+        {
+            ToolWindow.OnProjectChanged();
+            ToolSubMenu.OnProjectChanged();
+            ActionSubMenu.OnProjectChanged();
+        }
+
         _fmgSearchAllString = "";
         _filteredFmgInfo.Clear();
         ClearTextEditorCache();
@@ -813,16 +804,13 @@ public class TextEditorScreen : EditorScreen
 
                     if (ImGui.BeginPopupContextItem())
                     {
-                        if (ImGui.Selectable("Delete Entry"))
+                        if (ImGui.Selectable("Duplicate Entries"))
                         {
-                            TextAction_Delete.DeleteSelectedEntries();
+                            ActionSubMenu.Handler.DuplicateHandler();
                         }
-
-                        ImGui.Separator();
-
-                        if (ImGui.Selectable("Duplicate Entry"))
+                        if (ImGui.Selectable("Delete Entries"))
                         {
-                            TextAction_Duplicate.DuplicateEntries();
+                            ActionSubMenu.Handler.DeleteHandler();
                         }
 
                         ImGui.EndPopup();
@@ -885,10 +873,9 @@ public class TextEditorScreen : EditorScreen
             ImGui.End();
         }
 
-        if (CFG.Current.Interface_TextEditor_Toolbar)
+        if (CFG.Current.Interface_ModelEditor_ToolConfigurationWindow)
         {
-            _textToolbar_ActionList.OnGui();
-            _textToolbar_Configuration.OnGui();
+            ToolWindow.OnGui();
         }
     }
 

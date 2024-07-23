@@ -3,7 +3,6 @@ using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.UserProject;

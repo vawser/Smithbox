@@ -49,7 +49,6 @@ Param Editor:
 
 Text Editor:
  - ADD: generator tool for quickly adding entires, e.g. weapon entries: start ID, step amount, end ID, default title, default desc
- - ADD: multi-select
  - FIX: the patch separation of FMGs
  - FIX: vanilla entry should be preferred over dlc01/dlc02 entry
  

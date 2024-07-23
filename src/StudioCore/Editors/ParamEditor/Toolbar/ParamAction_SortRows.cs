@@ -1,5 +1,4 @@
 ﻿using ImGuiNET;
-using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using System;

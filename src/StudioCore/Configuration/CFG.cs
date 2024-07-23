@@ -88,7 +88,7 @@ public class CFG
 
     public bool Interface_TextEditor_TextCategories = true;
     public bool Interface_TextEditor_TextEntry = true;
-    public bool Interface_TextEditor_Toolbar = true;
+    public bool Interface_TextEditor_ToolConfigurationWindow = true;
 
     public bool Interface_GparamEditor_Files = true;
     public bool Interface_GparamEditor_Groups = true;

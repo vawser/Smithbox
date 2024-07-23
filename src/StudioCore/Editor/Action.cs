@@ -364,6 +364,60 @@ public class DeleteFMGEntryAction : EditorAction
     }
 }
 
+public class SyncFMGEntryAction : EditorAction
+{
+    private FMGEntryGroup EntryGroup = new();
+    private FMGEntryGroup BackupEntryGroup = new();
+    private FMGEntryGroup NewEntryGroup = new();
+
+    public SyncFMGEntryAction(FMGEntryGroup entryGroup, FMGEntryGroup sourceEntryGroup)
+    {
+        EntryGroup = entryGroup;
+        BackupEntryGroup = entryGroup.CloneEntryGroup();
+        NewEntryGroup = sourceEntryGroup;
+    }
+
+    public override ActionEvent Execute()
+    {
+        EntryGroup.Description.Text = NewEntryGroup.Description.Text;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        EntryGroup.Description.Text = BackupEntryGroup.Description.Text;
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class ReplaceFMGEntryTextAction : EditorAction
+{
+    private FMG.Entry Entry;
+    private FMG.Entry BackupEntry;
+    private string NewText = "";
+
+    public ReplaceFMGEntryTextAction(FMG.Entry entryGroup, string newText)
+    {
+        BackupEntry = new FMG.Entry(entryGroup.ID, entryGroup.Text);
+        Entry = entryGroup;
+        NewText = newText;
+    }
+
+    public override ActionEvent Execute()
+    {
+        Entry.Text = NewText;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Entry.Text = BackupEntry.Text;
+        return ActionEvent.NoEvent;
+    }
+}
+
 public class CompoundAction : EditorAction
 {
     private readonly List<EditorAction> Actions;

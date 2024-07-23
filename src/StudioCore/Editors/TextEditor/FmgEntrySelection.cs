@@ -86,6 +86,7 @@ namespace StudioCore.Editors.TextEditor
             else
             {
                 EntryIds = new List<int>();
+                EntryIds.Add(currentId);
             }
         }
     }

@@ -1,7 +1,6 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.UserProject;

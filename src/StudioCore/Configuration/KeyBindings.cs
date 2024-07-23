@@ -199,6 +199,7 @@ public class KeyBindings
         public KeyBind Param_SelectAll = new("Select All", KeybindCategory.ParamEditor, Key.A, true);
 
         // Text FMG
+        public KeyBind TextFMG_Sync = new("Sync Description", KeybindCategory.TextEditor, Key.K, true);
         public KeyBind TextFMG_Search = new("Search", KeybindCategory.TextEditor, Key.F, true);
 
         // Viewport
