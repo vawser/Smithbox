@@ -32,27 +32,31 @@ public class TextEditorScreen : EditorScreen
 
     public FMGEntryGroup _activeEntryGroup;
     public FMGInfo _activeFmgInfo;
-    public static int _activeIDCache = -1;
+    public int _activeIDCache = -1;
     private bool _arrowKeyPressed;
 
     private bool _clearEntryGroup;
 
-    private List<FMG.Entry> _entryLabelCache;
-    private List<FMG.Entry> _EntryLabelCacheFiltered;
+    public List<FMG.Entry> _entryLabelCache;
+    public List<FMG.Entry> _EntryLabelCacheFiltered;
 
     private string _searchFilter = "";
-    public static string _searchFilterCached = "";
+    public string _searchFilterCached = "";
     private string _fmgSearchAllString = "";
     private bool _fmgSearchAllActive = false;
     private List<FMGInfo> _filteredFmgInfo = new();
-    public static ActionManager EditorActionManager = new();
+    public ActionManager EditorActionManager = new();
 
     private TextToolbar _textToolbar;
     private TextToolbar_ActionList _textToolbar_ActionList;
     private TextToolbar_Configuration _textToolbar_Configuration;
 
+    public FmgEntrySelection SelectionHandler;
+
     public TextEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
+        SelectionHandler = new FmgEntrySelection();
+
         _propEditor = new PropertyEditor(EditorActionManager);
 
         _textToolbar = new TextToolbar(EditorActionManager);
@@ -100,14 +104,14 @@ public class TextEditorScreen : EditorScreen
             if (ImGui.MenuItem("Remove", KeyBindings.Current.Core_Delete.HintText, false,
                     _activeEntryGroup != null))
             {
-                TextAction_Delete.DeleteSelectedEntry();
+                TextAction_Delete.DeleteSelectedEntries();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
             if (ImGui.MenuItem("Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false,
                     _activeEntryGroup != null))
             {
-                TextAction_Duplicate.DuplicateSelectedEntry();
+                TextAction_Duplicate.DuplicateEntries();
             }
 
             ImGui.EndMenu();
@@ -306,12 +310,12 @@ public class TextEditorScreen : EditorScreen
 
                 if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete) && _activeEntryGroup != null)
                 {
-                    TextAction_Delete.DeleteSelectedEntry();
+                    TextAction_Delete.DeleteSelectedEntries();
                 }
 
                 if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate) && _activeEntryGroup != null)
                 {
-                    TextAction_Duplicate.DuplicateSelectedEntry();
+                    TextAction_Duplicate.DuplicateEntries();
                 }
             }
 
@@ -780,9 +784,11 @@ public class TextEditorScreen : EditorScreen
                         : r.Text.Replace("\n", "\n".PadRight(r.ID.ToString().Length + 2));
                     var label = $@"{r.ID} {text}";
                     label = Utils.ImGui_WordWrapString(label, ImGui.GetColumnWidth());
-                    if (ImGui.Selectable(label, _activeIDCache == r.ID))
+
+                    if (ImGui.Selectable(label, ( _activeIDCache == r.ID || SelectionHandler.IsSelected(r.ID))))
                     {
                         _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+                        SelectionHandler.HandleSelection(r.ID);
                     }
                     else if (_activeIDCache == r.ID && _activeEntryGroup == null)
                     {
@@ -791,10 +797,11 @@ public class TextEditorScreen : EditorScreen
                     }
 
                     if (_arrowKeyPressed && ImGui.IsItemFocused()
-                                         && _activeEntryGroup?.ID != r.ID)
+                                         && ( _activeEntryGroup?.ID != r.ID && !SelectionHandler.IsSelected(r.ID)))
                     {
                         // Up/Down arrow key selection
                         _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+                        SelectionHandler.HandleSelection(r.ID);
                         _arrowKeyPressed = false;
                     }
 
@@ -808,16 +815,14 @@ public class TextEditorScreen : EditorScreen
                     {
                         if (ImGui.Selectable("Delete Entry"))
                         {
-                            _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
-                            TextAction_Delete.DeleteSelectedEntry();
+                            TextAction_Delete.DeleteSelectedEntries();
                         }
 
                         ImGui.Separator();
 
                         if (ImGui.Selectable("Duplicate Entry"))
                         {
-                            _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
-                            TextAction_Duplicate.DuplicateSelectedEntry();
+                            TextAction_Duplicate.DuplicateEntries();
                         }
 
                         ImGui.EndPopup();

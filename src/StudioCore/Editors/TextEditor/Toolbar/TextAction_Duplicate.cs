@@ -62,25 +62,35 @@ namespace StudioCore.Editors.TextEditor.Toolbar
             {
                 if (ImGui.Button("Apply##action_Selection_Duplicate", new Vector2(200, 32)))
                 {
-                    DuplicateSelectedEntry();
+                    DuplicateEntries();
                 }
             }
         }
 
-        public static void DuplicateSelectedEntry()
+        public static void DuplicateEntries()
         {
-            var entry = Smithbox.EditorHandler.TextEditor._activeEntryGroup;
+            var entryIds = Smithbox.EditorHandler.TextEditor.SelectionHandler.EntryIds;
+            var entries = Smithbox.EditorHandler.TextEditor._EntryLabelCacheFiltered;
+            var fmgInfo = Smithbox.EditorHandler.TextEditor._activeFmgInfo;
 
-            for (int i = 0; i < CFG.Current.FMG_DuplicateAmount; i++)
+            List<EditorAction> actions = new List<EditorAction>();
+
+            for (int k = 0; k < CFG.Current.FMG_DuplicateAmount; k++)
             {
-                TextEditorScreen._activeIDCache = entry.GetNextUnusedID(CFG.Current.FMG_DuplicateIncrement);
-                var action = new DuplicateFMGEntryAction(entry);
-                TextEditorScreen.EditorActionManager.ExecuteAction(action);
+                for (var i = 0; i < entries.Count; i++)
+                {
+                    FMG.Entry r = entries[i];
+                    if (entryIds.Contains(r.ID))
+                    {
+                        var entry = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, fmgInfo);
+                        actions.Add(new DuplicateFMGEntryAction(entry));
+                    }
+                }
             }
 
-            // Lazy method to refresh search filter
-            // TODO: _searchFilterCached should be cleared whenever CacheBank is cleared.
-            TextEditorScreen._searchFilterCached = "";
+            var compoundAction = new CompoundAction(actions);
+            Smithbox.EditorHandler.TextEditor.EditorActionManager.ExecuteAction(compoundAction);
+            Smithbox.EditorHandler.TextEditor._searchFilterCached = "";
         }
     }
 }

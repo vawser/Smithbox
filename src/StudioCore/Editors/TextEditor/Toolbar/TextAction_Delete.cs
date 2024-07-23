@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using static SoulsFormats.FFXDLSE;
 
 namespace StudioCore.Editors.TextEditor.Toolbar
 {
@@ -33,39 +35,6 @@ namespace StudioCore.Editors.TextEditor.Toolbar
             {
                 ImguiUtils.WrappedText("Delete the current selection.");
                 ImguiUtils.WrappedText("");
-
-                /*
-                if(ImGui.Checkbox("Standard", ref CFG.Current.FMG_StandardDelete))
-                {
-                    if (CFG.Current.FMG_BlockDelete)
-                    {
-                        CFG.Current.FMG_BlockDelete = false;
-                    }
-                }
-                ImguiUtils.ShowHoverTooltip("Delete the selected entry.");
-
-                if (ImGui.Checkbox("Block", ref CFG.Current.FMG_BlockDelete))
-                {
-                    if (CFG.Current.FMG_StandardDelete)
-                    {
-                        CFG.Current.FMG_StandardDelete = false;
-                    }
-                }
-                ImguiUtils.ShowHoverTooltip("Delete the entries within the specified start and end text ID.");
-                ImGui.Text("");
-                */
-
-                if (CFG.Current.FMG_BlockDelete)
-                {
-                    ImguiUtils.WrappedText("Start ID:");
-                    ImGui.InputInt("##startId", ref CFG.Current.FMG_BlockDelete_StartID);
-                    ImguiUtils.ShowHoverTooltip("Text ID at which to start deletion.");
-                    ImguiUtils.WrappedText("");
-
-                    ImguiUtils.WrappedText("End ID:");
-                    ImGui.InputInt("##endId", ref CFG.Current.FMG_BlockDelete_EndID);
-                    ImguiUtils.ShowHoverTooltip("Text ID at which to end deletion.");
-                }
             }
         }
 
@@ -75,35 +44,35 @@ namespace StudioCore.Editors.TextEditor.Toolbar
             {
                 if (ImGui.Button("Apply##action_Selection_Delete", new Vector2(200, 32)))
                 {
-                    if (CFG.Current.FMG_StandardDelete)
-                    {
-                        DeleteSelectedEntry();
-                    }
-
-                    if(CFG.Current.FMG_BlockDelete)
-                    {
-                        DeleteEntryBlock();
-                    }
+                    DeleteSelectedEntries();
                 }
             }
         }
 
-        public static void DeleteSelectedEntry()
+        public static void DeleteSelectedEntries()
         {
-            var entry = Smithbox.EditorHandler.TextEditor._activeEntryGroup;
+            var entryIds = Smithbox.EditorHandler.TextEditor.SelectionHandler.EntryIds;
+            var entries = Smithbox.EditorHandler.TextEditor._EntryLabelCacheFiltered;
+            var fmgInfo = Smithbox.EditorHandler.TextEditor._activeFmgInfo;
 
-            var action = new DeleteFMGEntryAction(entry);
-            TextEditorScreen.EditorActionManager.ExecuteAction(action);
+            List<EditorAction> actions = new List<EditorAction>();
+
+            for (var i = 0; i < entries.Count; i++)
+            {
+                FMG.Entry r = entries[i];
+                if (entryIds.Contains(r.ID))
+                {
+                    var entry = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, fmgInfo);
+                    actions.Add(new DeleteFMGEntryAction(entry));
+                }
+            }
+
+            var compoundAction = new CompoundAction(actions);
+            Smithbox.EditorHandler.TextEditor.EditorActionManager.ExecuteAction(compoundAction);
+
             Smithbox.EditorHandler.TextEditor._activeEntryGroup = null;
-            TextEditorScreen._activeIDCache = -1;
-
-            // Lazy method to refresh search filter
-            TextEditorScreen._searchFilterCached = "";
-        }
-
-        private static void DeleteEntryBlock()
-        {
-
+            Smithbox.EditorHandler.TextEditor._activeIDCache = -1;
+            Smithbox.EditorHandler.TextEditor._searchFilterCached = "";
         }
     }
 }
