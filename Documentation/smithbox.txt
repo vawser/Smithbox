@@ -49,7 +49,6 @@ Param Editor:
 
 Text Editor:
  - ADD: generator tool for quickly adding entires, e.g. weapon entries: start ID, step amount, end ID, default title, default desc
- - FIX: Exporter is adding unneed \n newlines on export and then causing double newlines on import
  - FIX: the patch separation of FMGs
  - FIX: vanilla entry should be preferred over dlc01/dlc02 entry
  
@@ -81,4 +80,5 @@ World Map:
 # Notes
 #--------------------------------------
 
-
+ - FIX: FMG Import/Export is adding unneed \n newlines on export and then causing double newlines on import
+ - FIX: FMG Import/Export ignores null entries, breaking the FMG if full export and then full import occurs.
