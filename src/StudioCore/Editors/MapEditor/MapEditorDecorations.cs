@@ -4,7 +4,9 @@ using Octokit;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
+using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -20,7 +22,7 @@ namespace StudioCore.Editors.MapEditor
     {
         public static bool GenericEnumRow(PropertyInfo propinfo, object val, ref object newVal)
         {
-            if(propinfo.GetCustomAttribute<MSBEnum>() == null)
+            if (propinfo.GetCustomAttribute<MSBEnum>() == null)
             {
                 return false;
             }
@@ -115,6 +117,106 @@ namespace StudioCore.Editors.MapEditor
             ImGui.EndChild();
             return false;
         }
+
+        public static bool MsbReferenceRow(PropertyInfo propInfo, object val, ref object newval, HashSet<Entity> entities)
+        {
+            var msbRef = propInfo.GetCustomAttribute<MSBReference>();
+            if (msbRef == null) return false;
+
+            var name = val as string;
+            // Empty values are usually valid, so we just skip
+            if (name == null || name == "") return false;
+
+            var refName = msbRef.ReferenceType.Name;
+
+            ImGui.NextColumn();
+            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.TextUnformatted(@$"   <{refName}>");
+            ImGui.PopStyleColor();
+            ImGui.PopStyleVar();
+            ImGui.NextColumn();
+
+
+            var maps = entities
+                .Select((e) => e.Container)
+                .Distinct();
+            // We're bailing out on multiple maps
+            if (maps.Count() != 1)
+            {
+                return false;
+            }
+
+
+            var map = maps.First();
+            var entity = map.GetObjectByName((string)val);
+            if (entity == null)
+            {
+                ImGui.TextColored(CFG.Current.ImGui_Invalid_Text_Color, "No object by that name");
+            }
+            else
+            {
+                var alias = AliasUtils.GetEntityAliasName(entity);
+                if (alias is null or "")
+                {
+                    ImGui.TextColored(CFG.Current.ImGui_ParamRef_Text, $"{entity.PrettyName}");
+                }
+                else
+                {
+                    ImGui.TextColored(CFG.Current.ImGui_ParamRef_Text, $"{entity.PrettyName} - {alias}");
+                }
+            }
+
+            if (ImGui.BeginPopupContextItem($"{msbRef.ReferenceType.Name}RefContextMenu"))
+            {
+                var changed = PropertyRowMsbRefContextItems(msbRef, val, ref newval, map);
+                ImGui.EndPopup();
+                return changed;
+            }
+
+            return false;
+        }
+
+        static string autocomplete = "";
+        public static bool PropertyRowMsbRefContextItems(
+            MSBReference reference,
+            object oldval,
+            ref object newval,
+            ObjectContainer container
+        )
+        {
+            if (oldval is not string name) return false;
+
+            var entity = container.GetObjectByName(name);
+
+            if (entity != null)
+            {
+                if (ImGui.Selectable($@"Select {name}"))
+                {
+                    EditorCommandQueue.AddCommand($@"map/select/{container.Name}/{name}");
+                }
+            }
+            ImGui.InputTextWithHint("##value", "Search...", ref autocomplete, 128);
+            if (autocomplete != "")
+            {
+                var shownList = container.Objects
+                    .Where((obj) => reference.ReferenceType.IsInstanceOfType(obj.WrappedObject))
+                    .Where((obj) => obj.Name.ToLower().Contains(autocomplete.ToLower()))
+                    .Take(15);
+                foreach (var shown in shownList)
+                {
+                    if (ImGui.Selectable($@"{shown.PrettyName}"))
+                    {
+                        newval = shown.Name;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+
 
         public static bool AliasEnumRow(PropertyInfo propinfo, object val, ref object newVal)
         {

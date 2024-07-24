@@ -488,6 +488,7 @@ public class MapPropertyEditor
             selection.Name = null;
         }
 
+        selection.BuildReferenceMap();
         // Undo and redo the last action with a rendering update
         if (_lastUncommittedAction != null && ContextActionManager.PeekUndoAction() == _lastUncommittedAction)
         {
@@ -531,9 +532,10 @@ public class MapPropertyEditor
     private void UpdateProperty(object prop, HashSet<Entity> selection, object newval,
         bool changed, bool committed, int arrayindex, int classIndex)
     {
-        foreach(var ent in selection)
+        foreach (var ent in selection)
         {
             ent.CachedAliasName = null;
+            if (changed) { ent.BuildReferenceMap(); }
         }
 
         if (changed)
@@ -819,6 +821,72 @@ public class MapPropertyEditor
 
     private string SelectedMsbPropertyFilter = "All";
 
+    private void PropGenericFieldRow(
+        ViewportSelection selection,
+        HashSet<Entity> entSelection,
+        PropertyInfo prop,
+        Type type,
+        object obj,
+        string name,
+        int arrayIndex = -1,
+        int classIndex = -1
+    )
+    {
+        PropContextRowOpener();
+        ImGui.Text(name);
+        ShowFieldHint(type, prop, selection);
+        ImGui.NextColumn();
+        ImGui.SetNextItemWidth(-1);
+        var oldval = obj;
+        object newval;
+
+        // Property Editor UI
+        (bool, bool) propEditResults = PropertyRow(type, oldval, out newval, prop);
+        var changed = propEditResults.Item1;
+        var committed = propEditResults.Item2;
+        DisplayPropContextMenu(selection, prop, obj);
+        if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
+        {
+            ImGui.SetItemDefaultFocus();
+        }
+
+        if (ParamRefRow(prop, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        if (MapEditorDecorations.GenericEnumRow(prop, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        if (MapEditorDecorations.AliasEnumRow(prop, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        if (MapEditorDecorations.MsbReferenceRow(prop, oldval, ref newval, entSelection))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        if (prop.GetCustomAttribute<EldenRingAssetMask>() != null)
+        {
+            if (MapEditorDecorations.EldenRingAssetMaskAndAnimRow(prop, oldval, ref newval, selection))
+            {
+                changed = true;
+                committed = true;
+            }
+        }
+
+        UpdateProperty(prop, entSelection, newval, changed, committed, arrayIndex, classIndex);
+        ImGui.NextColumn();
+    }
+
     private void PropEditorGeneric(ViewportSelection selection, HashSet<Entity> entSelection, object target = null,
         bool decorate = true, int classIndex = -1)
     {
@@ -920,62 +988,38 @@ public class MapPropertyEditor
             if (typ.IsArray)
             {
                 var a = (Array)prop.GetValue(obj);
-                for (var i = 0; i < a.Length; i++)
+                var open = ImGui.TreeNodeEx($@"{GetFieldName(type, prop, selection)}[]", ImGuiTreeNodeFlags.DefaultOpen);
+                ShowFieldHint(type, prop, selection);
+                if (open)
                 {
-                    ImGui.PushID(i);
-
-                    Type arrtyp = typ.GetElementType();
-                    if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
+                    for (var i = 0; i < a.Length; i++)
                     {
-                        var open = ImGui.TreeNodeEx($@"{GetFieldName(type, prop, selection)}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
-                        ShowFieldHint(type, prop, selection);
-                        ImGui.NextColumn();
-                        ImGui.SetNextItemWidth(-1);
-                        var o = a.GetValue(i);
-                        ImGui.Text(o.GetType().Name);
-                        ImGui.NextColumn();
-                        if (open)
+                        ImGui.PushID(i);
+                        Type arrtyp = typ.GetElementType();
+                        if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
-                            PropEditorGeneric(selection, entSelection, o, false, i);
-                            ImGui.TreePop();
+                            var classOpen = ImGui.TreeNodeEx($@"{GetFieldName(type, prop, selection)}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
+                            ShowFieldHint(type, prop, selection);
+                            ImGui.NextColumn();
+                            ImGui.SetNextItemWidth(-1);
+                            var o = a.GetValue(i);
+                            ImGui.Text(o.GetType().Name);
+                            ImGui.NextColumn();
+                            if (classOpen)
+                            {
+                                PropEditorGeneric(selection, entSelection, o, false, i);
+                                ImGui.TreePop();
+                            }
                         }
-
+                        else
+                        {
+                            var array = obj as object[];
+                            PropGenericFieldRow(selection, entSelection, prop, typ.GetElementType(), a.GetValue(i), $@"{GetFieldName(type, prop, selection)}[{i}]", i, classIndex);
+                        }
                         ImGui.PopID();
                     }
-                    else
-                    {
-                        PropContextRowOpener();
-                        ImGui.Text($@"{GetFieldName(type, prop, selection)}[{i}]");
-                        ShowFieldHint(type, prop, selection);
-                        ImGui.NextColumn();
-                        ImGui.SetNextItemWidth(-1);
-                        var oldval = a.GetValue(i);
-                        object newval = null;
-
-                        // Property Editor UI
-                        (bool, bool) propEditResults =
-                            PropertyRow(typ.GetElementType(), oldval, out newval, prop);
-                        var changed = propEditResults.Item1;
-                        var committed = propEditResults.Item2;
-                        DisplayPropContextMenu(selection, prop, obj);
-                        if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
-                        {
-                            ImGui.SetItemDefaultFocus();
-                        }
-
-                        if (ParamRefRow(prop, oldval, ref newval))
-                        {
-                            changed = true;
-                            committed = true;
-                        }
-
-                        UpdateProperty(prop, entSelection, newval, changed, committed, i, classIndex);
-
-                        ImGui.NextColumn();
-                        ImGui.PopID();
-                    }
+                    ImGui.TreePop();
                 }
-
                 ImGui.PopID();
             }
             else if (typ.IsGenericType && typ.GetGenericTypeDefinition() == typeof(List<>))
@@ -1007,33 +1051,7 @@ public class MapPropertyEditor
                     }
                     else
                     {
-                        PropContextRowOpener();
-                        ImGui.Text($@"{GetFieldName(type, prop, selection)}[{i}]");
-                        ShowFieldHint(type, prop, selection);
-                        ImGui.NextColumn();
-                        ImGui.SetNextItemWidth(-1);
-                        var oldval = itemprop.GetValue(l, new object[] { i });
-                        object newval = null;
-
-                        // Property Editor UI
-                        (bool, bool) propEditResults = PropertyRow(arrtyp, oldval, out newval, prop);
-                        var changed = propEditResults.Item1;
-                        var committed = propEditResults.Item2;
-                        DisplayPropContextMenu(selection, prop, obj);
-                        if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
-                        {
-                            ImGui.SetItemDefaultFocus();
-                        }
-
-                        if (ParamRefRow(prop, oldval, ref newval))
-                        {
-                            changed = true;
-                            committed = true;
-                        }
-
-                        UpdateProperty(prop, entSelection, newval, changed, committed, i, classIndex);
-
-                        ImGui.NextColumn();
+                        PropGenericFieldRow(selection, entSelection, prop, arrtyp, itemprop.GetValue(l, [i]), $@"{GetFieldName(type, prop, selection)}[{i}]", i, classIndex);
                         ImGui.PopID();
                     }
                 }
@@ -1183,54 +1201,7 @@ public class MapPropertyEditor
             }
             else
             {
-                PropContextRowOpener();
-                ImGui.Text(GetFieldName(type, prop, selection));
-                ShowFieldHint(type, prop, selection);
-                ImGui.NextColumn();
-                ImGui.SetNextItemWidth(-1);
-                var oldval = prop.GetValue(obj);
-                object newval = null;
-
-                // Property Editor UI
-                (bool, bool) propEditResults = PropertyRow(typ, oldval, out newval, prop);
-                var changed = propEditResults.Item1;
-                var committed = propEditResults.Item2;
-                DisplayPropContextMenu(selection, prop, obj);
-                if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
-                {
-                    ImGui.SetItemDefaultFocus();
-                }
-
-                if (ParamRefRow(prop, oldval, ref newval))
-                {
-                    changed = true;
-                    committed = true;
-                }
-
-                if (MapEditorDecorations.GenericEnumRow(prop, oldval, ref newval))
-                {
-                    changed = true;
-                    committed = true;
-                }
-
-                if (MapEditorDecorations.AliasEnumRow(prop, oldval, ref newval))
-                {
-                    changed = true;
-                    committed = true;
-                }
-
-                if (prop.GetCustomAttribute<EldenRingAssetMask>() != null)
-                {
-                    if (MapEditorDecorations.EldenRingAssetMaskAndAnimRow(prop, oldval, ref newval, selection))
-                    {
-                        changed = true;
-                        committed = true;
-                    }
-                }
-
-                UpdateProperty(prop, entSelection, newval, changed, committed, -1, classIndex);
-
-                ImGui.NextColumn();
+                PropGenericFieldRow(selection, entSelection, prop, typ, prop.GetValue(obj), GetFieldName(type, prop, selection), classIndex: -1);
                 ImGui.PopID();
             }
 
