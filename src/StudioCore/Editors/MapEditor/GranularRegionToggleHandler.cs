@@ -17,9 +17,43 @@ public class GranularRegionToggleHandler
 {
     public Universe Universe { get; set; }
 
+    public List<bool> RegionVisibilityTruth { get; set; }
+
     public GranularRegionToggleHandler(Universe universe)
     {
         Universe = universe;
+
+        SetupTruthList(true);
+    }
+
+    public void OnProjectChanged()
+    {
+        SetupTruthList(true);
+    }
+
+    public void SetupTruthList(bool defaultValue)
+    {
+        switch (Smithbox.ProjectType)
+        {
+            // Supported Project Types
+            case ProjectType.DS2:
+            case ProjectType.DS2S:
+                RegionVisibilityTruth = Enumerable.Repeat(defaultValue, 8).ToList();
+                break;
+            case ProjectType.DS3:
+                RegionVisibilityTruth = Enumerable.Repeat(defaultValue, 18).ToList();
+                break;
+            case ProjectType.SDT:
+                RegionVisibilityTruth = Enumerable.Repeat(defaultValue, 20).ToList();
+                break;
+            case ProjectType.ER:
+                RegionVisibilityTruth = Enumerable.Repeat(defaultValue, 38).ToList();
+                break;
+            case ProjectType.AC6:
+                RegionVisibilityTruth = Enumerable.Repeat(defaultValue, 29).ToList();
+                break;
+            default: break;
+        }
     }
 
     public void DisplayOptions()
@@ -51,142 +85,142 @@ public class GranularRegionToggleHandler
     {
         DisplayCommonToggles();
 
-        DisplayIndividualToggle(typeof(MSB2.Region.Region0), "Region0");
-        DisplayIndividualToggle(typeof(MSB2.Region.Light), "Light");
-        DisplayIndividualToggle(typeof(MSB2.Region.StartPoint), "Start Point");
-        DisplayIndividualToggle(typeof(MSB2.Region.Sound), "Sound");
-        DisplayIndividualToggle(typeof(MSB2.Region.SFX), "SFX");
-        DisplayIndividualToggle(typeof(MSB2.Region.Wind), "Wind");
-        DisplayIndividualToggle(typeof(MSB2.Region.EnvLight), "Env Light");
-        DisplayIndividualToggle(typeof(MSB2.Region.Fog), "Fog");
+        DisplayIndividualToggle(typeof(MSB2.Region.Region0), "Region0", 0);
+        DisplayIndividualToggle(typeof(MSB2.Region.Light), "Light", 1);
+        DisplayIndividualToggle(typeof(MSB2.Region.StartPoint), "Start Point", 2);
+        DisplayIndividualToggle(typeof(MSB2.Region.Sound), "Sound", 3);
+        DisplayIndividualToggle(typeof(MSB2.Region.SFX), "SFX", 4);
+        DisplayIndividualToggle(typeof(MSB2.Region.Wind), "Wind", 5);
+        DisplayIndividualToggle(typeof(MSB2.Region.EnvLight), "Env Light", 6);
+        DisplayIndividualToggle(typeof(MSB2.Region.Fog), "Fog", 7);
     }
     private void HandleGranularRegionToggles_DS3()
     {
         DisplayCommonToggles();
 
-        DisplayIndividualToggle(typeof(MSB3.Region.InvasionPoint), "Invasion Point");
-        DisplayIndividualToggle(typeof(MSB3.Region.EnvironmentMapPoint), "Environment Map Point");
-        DisplayIndividualToggle(typeof(MSB3.Region.Sound), "Sound");
-        DisplayIndividualToggle(typeof(MSB3.Region.SFX), "SFX");
-        DisplayIndividualToggle(typeof(MSB3.Region.WindSFX), "Wind SFX");
-        DisplayIndividualToggle(typeof(MSB3.Region.SpawnPoint), "Spawn Point");
-        DisplayIndividualToggle(typeof(MSB3.Region.Message), "Message");
-        DisplayIndividualToggle(typeof(MSB3.Region.PatrolRoute), "Patrol Route");
-        DisplayIndividualToggle(typeof(MSB3.Region.MovementPoint), "Movement Point");
-        DisplayIndividualToggle(typeof(MSB3.Region.WarpPoint), "Warp Point");
-        DisplayIndividualToggle(typeof(MSB3.Region.ActivationArea), "Activation Area");
-        DisplayIndividualToggle(typeof(MSB3.Region.Event), "Event");
-        DisplayIndividualToggle(typeof(MSB3.Region.Logic), "Logic");
-        DisplayIndividualToggle(typeof(MSB3.Region.EnvironmentMapEffectBox), "Environment Map Effect Box");
-        DisplayIndividualToggle(typeof(MSB3.Region.WindArea), "Wind Area");
-        DisplayIndividualToggle(typeof(MSB3.Region.MufflingBox), "Muffling Box");
-        DisplayIndividualToggle(typeof(MSB3.Region.MufflingPortal), "Muffling Portal");
-        DisplayIndividualToggle(typeof(MSB3.Region.Other), "Other");
+        DisplayIndividualToggle(typeof(MSB3.Region.InvasionPoint), "Invasion Point", 0);
+        DisplayIndividualToggle(typeof(MSB3.Region.EnvironmentMapPoint), "Environment Map Point", 1);
+        DisplayIndividualToggle(typeof(MSB3.Region.Sound), "Sound", 2);
+        DisplayIndividualToggle(typeof(MSB3.Region.SFX), "SFX", 3);
+        DisplayIndividualToggle(typeof(MSB3.Region.WindSFX), "Wind SFX", 4);
+        DisplayIndividualToggle(typeof(MSB3.Region.SpawnPoint), "Spawn Point", 5);
+        DisplayIndividualToggle(typeof(MSB3.Region.Message), "Message", 6);
+        DisplayIndividualToggle(typeof(MSB3.Region.PatrolRoute), "Patrol Route", 7);
+        DisplayIndividualToggle(typeof(MSB3.Region.MovementPoint), "Movement Point", 8);
+        DisplayIndividualToggle(typeof(MSB3.Region.WarpPoint), "Warp Point", 9);
+        DisplayIndividualToggle(typeof(MSB3.Region.ActivationArea), "Activation Area", 10);
+        DisplayIndividualToggle(typeof(MSB3.Region.Event), "Event", 11);
+        DisplayIndividualToggle(typeof(MSB3.Region.Logic), "Logic", 12);
+        DisplayIndividualToggle(typeof(MSB3.Region.EnvironmentMapEffectBox), "Environment Map Effect Box", 13);
+        DisplayIndividualToggle(typeof(MSB3.Region.WindArea), "Wind Area", 14);
+        DisplayIndividualToggle(typeof(MSB3.Region.MufflingBox), "Muffling Box", 15);
+        DisplayIndividualToggle(typeof(MSB3.Region.MufflingPortal), "Muffling Portal", 16);
+        DisplayIndividualToggle(typeof(MSB3.Region.Other), "Other", 17);
     }
 
     private void HandleGranularRegionToggles_SDT()
     {
         DisplayCommonToggles();
 
-        DisplayIndividualToggle(typeof(MSBS.Region.InvasionPoint), "Invasion Point");
-        DisplayIndividualToggle(typeof(MSBS.Region.EnvironmentMapPoint), "Environment Map Point");
-        DisplayIndividualToggle(typeof(MSBS.Region.Sound), "Sound");
-        DisplayIndividualToggle(typeof(MSBS.Region.SFX), "SFX");
-        DisplayIndividualToggle(typeof(MSBS.Region.WindSFX), "Wind SFX");
-        DisplayIndividualToggle(typeof(MSBS.Region.SpawnPoint), "Spawn Point");
-        DisplayIndividualToggle(typeof(MSBS.Region.PatrolRoute), "Patrol Route");
-        DisplayIndividualToggle(typeof(MSBS.Region.WarpPoint), "Warp Point");
-        DisplayIndividualToggle(typeof(MSBS.Region.ActivationArea), "Activation Area");
-        DisplayIndividualToggle(typeof(MSBS.Region.Event), "Event");
-        DisplayIndividualToggle(typeof(MSBS.Region.Logic), "Logic");
-        DisplayIndividualToggle(typeof(MSBS.Region.EnvironmentMapEffectBox), "Environment Map Effect Box");
-        DisplayIndividualToggle(typeof(MSBS.Region.WindArea), "Wind Area");
-        DisplayIndividualToggle(typeof(MSBS.Region.MufflingBox), "Muffling Box");
-        DisplayIndividualToggle(typeof(MSBS.Region.MufflingPortal), "Muffling Portal");
-        DisplayIndividualToggle(typeof(MSBS.Region.SoundSpaceOverride), "Sound Space Override");
-        DisplayIndividualToggle(typeof(MSBS.Region.MufflingPlane), "Muffling Plane");
-        DisplayIndividualToggle(typeof(MSBS.Region.PartsGroupArea), "Parts Group Area");
-        DisplayIndividualToggle(typeof(MSBS.Region.AutoDrawGroupPoint), "Auto Draw Group Point");
-        DisplayIndividualToggle(typeof(MSBS.Region.Other), "Other");
+        DisplayIndividualToggle(typeof(MSBS.Region.InvasionPoint), "Invasion Point", 0);
+        DisplayIndividualToggle(typeof(MSBS.Region.EnvironmentMapPoint), "Environment Map Point", 1);
+        DisplayIndividualToggle(typeof(MSBS.Region.Sound), "Sound", 2);
+        DisplayIndividualToggle(typeof(MSBS.Region.SFX), "SFX", 3);
+        DisplayIndividualToggle(typeof(MSBS.Region.WindSFX), "Wind SFX", 4);
+        DisplayIndividualToggle(typeof(MSBS.Region.SpawnPoint), "Spawn Point", 5);
+        DisplayIndividualToggle(typeof(MSBS.Region.PatrolRoute), "Patrol Route", 6);
+        DisplayIndividualToggle(typeof(MSBS.Region.WarpPoint), "Warp Point", 7);
+        DisplayIndividualToggle(typeof(MSBS.Region.ActivationArea), "Activation Area", 8);
+        DisplayIndividualToggle(typeof(MSBS.Region.Event), "Event", 9);
+        DisplayIndividualToggle(typeof(MSBS.Region.Logic), "Logic", 10);
+        DisplayIndividualToggle(typeof(MSBS.Region.EnvironmentMapEffectBox), "Environment Map Effect Box", 11);
+        DisplayIndividualToggle(typeof(MSBS.Region.WindArea), "Wind Area", 12);
+        DisplayIndividualToggle(typeof(MSBS.Region.MufflingBox), "Muffling Box", 13);
+        DisplayIndividualToggle(typeof(MSBS.Region.MufflingPortal), "Muffling Portal", 14);
+        DisplayIndividualToggle(typeof(MSBS.Region.SoundSpaceOverride), "Sound Space Override", 15);
+        DisplayIndividualToggle(typeof(MSBS.Region.MufflingPlane), "Muffling Plane", 16);
+        DisplayIndividualToggle(typeof(MSBS.Region.PartsGroupArea), "Parts Group Area", 17);
+        DisplayIndividualToggle(typeof(MSBS.Region.AutoDrawGroupPoint), "Auto Draw Group Point", 18);
+        DisplayIndividualToggle(typeof(MSBS.Region.Other), "Other", 19);
     }
 
     private void HandleGranularRegionToggles_ER()
     {
         DisplayCommonToggles();
 
-        DisplayIndividualToggle(typeof(MSBE.Region.InvasionPoint), "Invasion Point");
-        DisplayIndividualToggle(typeof(MSBE.Region.EnvironmentMapPoint), "Environment Map Point");
-        DisplayIndividualToggle(typeof(MSBE.Region.Sound), "Sound");
-        DisplayIndividualToggle(typeof(MSBE.Region.SFX), "SFX");
-        DisplayIndividualToggle(typeof(MSBE.Region.WindSFX), "Wind SFX");
-        DisplayIndividualToggle(typeof(MSBE.Region.SpawnPoint), "Spawn Point");
-        DisplayIndividualToggle(typeof(MSBE.Region.Message), "Message");
-        DisplayIndividualToggle(typeof(MSBE.Region.EnvironmentMapEffectBox), "Environment Map Effect Box");
-        DisplayIndividualToggle(typeof(MSBE.Region.WindArea), "Wind Area");
-        DisplayIndividualToggle(typeof(MSBE.Region.Connection), "Connection");
-        DisplayIndividualToggle(typeof(MSBE.Region.PatrolRoute22), "Patrol Route 22");
-        DisplayIndividualToggle(typeof(MSBE.Region.BuddySummonPoint), "Buddy Summon Point");
-        DisplayIndividualToggle(typeof(MSBE.Region.DisableTumbleweed), "Disable Tumbleweed");
-        DisplayIndividualToggle(typeof(MSBE.Region.MufflingBox), "Muffling Box");
-        DisplayIndividualToggle(typeof(MSBE.Region.MufflingPortal), "Muffling Portal");
-        DisplayIndividualToggle(typeof(MSBE.Region.SoundRegion), "Sound Region");
-        DisplayIndividualToggle(typeof(MSBE.Region.MufflingPlane), "Muffling Plane");
-        DisplayIndividualToggle(typeof(MSBE.Region.PatrolRoute), "Patrol Route");
-        DisplayIndividualToggle(typeof(MSBE.Region.MapPoint), "Map Point");
-        DisplayIndividualToggle(typeof(MSBE.Region.WeatherOverride), "Weather Override");
-        DisplayIndividualToggle(typeof(MSBE.Region.AutoDrawGroupPoint), "Auto Draw Group Point");
-        DisplayIndividualToggle(typeof(MSBE.Region.GroupDefeatReward), "Group Defeat Reward");
-        DisplayIndividualToggle(typeof(MSBE.Region.MapPointDiscoveryOverride), "Map Point Discovery Override");
-        DisplayIndividualToggle(typeof(MSBE.Region.MapPointParticipationOverride), "Map Point Participation Override");
-        DisplayIndividualToggle(typeof(MSBE.Region.Hitset), "Hitset");
-        DisplayIndividualToggle(typeof(MSBE.Region.FastTravelRestriction), "Fast Travel Restriction");
-        DisplayIndividualToggle(typeof(MSBE.Region.WeatherCreateAssetPoint), "Weather Create Asset Point");
-        DisplayIndividualToggle(typeof(MSBE.Region.PlayArea), "Play Area");
-        DisplayIndividualToggle(typeof(MSBE.Region.EnvironmentMapOutput), "Environment Map Output");
-        DisplayIndividualToggle(typeof(MSBE.Region.MountJump), "Mount Jump");
-        DisplayIndividualToggle(typeof(MSBE.Region.Dummy), "Dummy");
-        DisplayIndividualToggle(typeof(MSBE.Region.FallPreventionRemoval), "Fall Prevention Removal");
-        DisplayIndividualToggle(typeof(MSBE.Region.NavmeshCutting), "Navmesh Cutting");
-        DisplayIndividualToggle(typeof(MSBE.Region.MapNameOverride), "Map Name Override");
-        DisplayIndividualToggle(typeof(MSBE.Region.MountJumpFall), "Mount Jump Fall");
-        DisplayIndividualToggle(typeof(MSBE.Region.LockedMountJump), "Locked Mount Jump");
-        DisplayIndividualToggle(typeof(MSBE.Region.LockedMountJumpFall), "Locked Mount Jump Fall");
-        DisplayIndividualToggle(typeof(MSBE.Region.Other), "Other");
+        DisplayIndividualToggle(typeof(MSBE.Region.InvasionPoint), "Invasion Point", 0);
+        DisplayIndividualToggle(typeof(MSBE.Region.EnvironmentMapPoint), "Environment Map Point", 1);
+        DisplayIndividualToggle(typeof(MSBE.Region.Sound), "Sound", 2);
+        DisplayIndividualToggle(typeof(MSBE.Region.SFX), "SFX", 3);
+        DisplayIndividualToggle(typeof(MSBE.Region.WindSFX), "Wind SFX", 4);
+        DisplayIndividualToggle(typeof(MSBE.Region.SpawnPoint), "Spawn Point", 5);
+        DisplayIndividualToggle(typeof(MSBE.Region.Message), "Message", 6);
+        DisplayIndividualToggle(typeof(MSBE.Region.EnvironmentMapEffectBox), "Environment Map Effect Box", 7);
+        DisplayIndividualToggle(typeof(MSBE.Region.WindArea), "Wind Area", 8);
+        DisplayIndividualToggle(typeof(MSBE.Region.Connection), "Connection", 9);
+        DisplayIndividualToggle(typeof(MSBE.Region.PatrolRoute22), "Patrol Route 22", 10);
+        DisplayIndividualToggle(typeof(MSBE.Region.BuddySummonPoint), "Buddy Summon Point", 11);
+        DisplayIndividualToggle(typeof(MSBE.Region.DisableTumbleweed), "Disable Tumbleweed", 12);
+        DisplayIndividualToggle(typeof(MSBE.Region.MufflingBox), "Muffling Box", 13);
+        DisplayIndividualToggle(typeof(MSBE.Region.MufflingPortal), "Muffling Portal", 14);
+        DisplayIndividualToggle(typeof(MSBE.Region.SoundRegion), "Sound Region", 15);
+        DisplayIndividualToggle(typeof(MSBE.Region.MufflingPlane), "Muffling Plane", 16);
+        DisplayIndividualToggle(typeof(MSBE.Region.PatrolRoute), "Patrol Route", 17);
+        DisplayIndividualToggle(typeof(MSBE.Region.MapPoint), "Map Point", 18);
+        DisplayIndividualToggle(typeof(MSBE.Region.WeatherOverride), "Weather Override", 19);
+        DisplayIndividualToggle(typeof(MSBE.Region.AutoDrawGroupPoint), "Auto Draw Group Point", 20);
+        DisplayIndividualToggle(typeof(MSBE.Region.GroupDefeatReward), "Group Defeat Reward", 21);
+        DisplayIndividualToggle(typeof(MSBE.Region.MapPointDiscoveryOverride), "Map Point Discovery Override", 22);
+        DisplayIndividualToggle(typeof(MSBE.Region.MapPointParticipationOverride), "Map Point Participation Override", 23);
+        DisplayIndividualToggle(typeof(MSBE.Region.Hitset), "Hitset", 24);
+        DisplayIndividualToggle(typeof(MSBE.Region.FastTravelRestriction), "Fast Travel Restriction", 25);
+        DisplayIndividualToggle(typeof(MSBE.Region.WeatherCreateAssetPoint), "Weather Create Asset Point", 26);
+        DisplayIndividualToggle(typeof(MSBE.Region.PlayArea), "Play Area", 27);
+        DisplayIndividualToggle(typeof(MSBE.Region.EnvironmentMapOutput), "Environment Map Output", 28);
+        DisplayIndividualToggle(typeof(MSBE.Region.MountJump), "Mount Jump", 29);
+        DisplayIndividualToggle(typeof(MSBE.Region.Dummy), "Dummy", 30);
+        DisplayIndividualToggle(typeof(MSBE.Region.FallPreventionRemoval), "Fall Prevention Removal", 31);
+        DisplayIndividualToggle(typeof(MSBE.Region.NavmeshCutting), "Navmesh Cutting", 32);
+        DisplayIndividualToggle(typeof(MSBE.Region.MapNameOverride), "Map Name Override", 33);
+        DisplayIndividualToggle(typeof(MSBE.Region.MountJumpFall), "Mount Jump Fall", 34);
+        DisplayIndividualToggle(typeof(MSBE.Region.LockedMountJump), "Locked Mount Jump", 35);
+        DisplayIndividualToggle(typeof(MSBE.Region.LockedMountJumpFall), "Locked Mount Jump Fall", 36);
+        DisplayIndividualToggle(typeof(MSBE.Region.Other), "Other", 37);
     }
 
     private void HandleGranularRegionToggles_AC6()
     {
         DisplayCommonToggles();
 
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.None), "None");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.EntryPoint), "Entry Point");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.EnvMapPoint), "Environment Map Point");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.Sound), "Sound");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.SFX), "SFX");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.WindSFX), "Wind SFX");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.EnvMapEffectBox), "Environment Map Effect Box");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.WindPlacement), "Wind Placement");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.MufflingBox), "Muffling Box");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.MufflingPortal), "Muffling Portal");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.SoundOverride), "Sound Override");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.Patrol), "Patrol");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.FeMapDisplay), "Fe Map Display");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.OperationalArea), "Operational Area");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.AiInformationSharing), "AI Information Sharing");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.AiTarget), "AI Target");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.WwiseEnvironmentSound), "Wwise Environment Sound");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.NaviGeneration), "Navi Generation");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.TopdownView), "Topdown View");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.CharacterFollowing), "Character Following");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.NaviCvCancel), "Navi Cv Cancel");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.NavmeshCostControl), "Navmesh Cost Control");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.ArenaAppearance), "Arena Appearance");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.GarageCamera), "Garage Camera");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.JumpEdgeRestriction), "Jump Edge Restriction");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.CutscenePlayback), "Cutscene Playback");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.FallPreventionWallRemoval), "Fall Prevention Wall Removal");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.BigJump), "Big Jump");
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.Other), "Other");
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.None), "None", 0);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.EntryPoint), "Entry Point", 1);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.EnvMapPoint), "Environment Map Point", 2);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.Sound), "Sound", 3);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.SFX), "SFX", 4);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.WindSFX), "Wind SFX", 5);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.EnvMapEffectBox), "Environment Map Effect Box", 6);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.WindPlacement), "Wind Placement", 7);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.MufflingBox), "Muffling Box", 8);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.MufflingPortal), "Muffling Portal", 9);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.SoundOverride), "Sound Override", 10);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.Patrol), "Patrol", 11);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.FeMapDisplay), "Fe Map Display", 12);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.OperationalArea), "Operational Area", 13);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.AiInformationSharing), "AI Information Sharing", 14);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.AiTarget), "AI Target", 15);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.WwiseEnvironmentSound), "Wwise Environment Sound", 16);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.NaviGeneration), "Navi Generation", 17);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.TopdownView), "Topdown View", 18);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.CharacterFollowing), "Character Following", 19);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.NaviCvCancel), "Navi Cv Cancel", 20);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.NavmeshCostControl), "Navmesh Cost Control", 21);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.ArenaAppearance), "Arena Appearance", 22);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.GarageCamera), "Garage Camera", 23);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.JumpEdgeRestriction), "Jump Edge Restriction", 24);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.CutscenePlayback), "Cutscene Playback", 25);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.FallPreventionWallRemoval), "Fall Prevention Wall Removal", 26);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.BigJump), "Big Jump", 27);
+        DisplayIndividualToggle(typeof(MSB_AC6.Region.Other), "Other", 28);
     }
 
     public void DisplayCommonToggles()
@@ -203,6 +237,7 @@ public class GranularRegionToggleHandler
                         if (child.WrappedObject is MSB_AC6.Region or MSBE.Region or MSBS.Region or MSB3.Region or MSB2.Region)
                         {
                             child.EditorVisible = false;
+                            SetupTruthList(false);
                         }
                     }
                 }
@@ -222,6 +257,7 @@ public class GranularRegionToggleHandler
                         if (child.WrappedObject is MSB_AC6.Region or MSBE.Region or MSBS.Region or MSB3.Region or MSB2.Region)
                         {
                             child.EditorVisible = true;
+                            SetupTruthList(true);
                         }
                     }
                 }
@@ -232,7 +268,7 @@ public class GranularRegionToggleHandler
         ImGui.Separator();
     }
 
-    public void DisplayIndividualToggle(Type regionType, string name)
+    public void DisplayIndividualToggle(Type regionType, string name, int truthIndex)
     {
         var show = false;
 
@@ -255,7 +291,7 @@ public class GranularRegionToggleHandler
         if (show)
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem($"Toggle Region Visibility: {name}"))
+            if (ImGui.MenuItem($"Toggle: {name}"))
             {
                 foreach (var entry in Universe.LoadedObjectContainers.Values)
                 {
@@ -266,12 +302,14 @@ public class GranularRegionToggleHandler
                             if (child.WrappedObject.GetType() == regionType)
                             {
                                 child.EditorVisible = !child.EditorVisible;
+                                RegionVisibilityTruth[truthIndex] = child.EditorVisible;
                             }
                         }
                     }
                 }
             }
             ImguiUtils.ShowHoverTooltip($"Toggle the visibility of regions of the {name} type.");
+            ImguiUtils.ShowActiveStatus(RegionVisibilityTruth[truthIndex]);
         }
     }
 }
