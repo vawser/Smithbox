@@ -1,0 +1,156 @@
+{
+    "ProjectType": 8, 
+    "Name": "Weapon Affinities",
+    "Description": "Generate the 12 affinity entries from a base entry.",
+    "Count": 12,
+    "FMG_Title": [
+        {
+            "PossessiveAdjust": true,
+            "Offset": 100,
+            "PrependText": "Heavy ",
+            "AppendText": "",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 200,
+            "PrependText": "Keen ",
+            "AppendText": "",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 300,
+            "PrependText": "Quality ",
+            "AppendText": "",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 400,
+            "PrependText": "Fire ",
+            "AppendText": "",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 500,
+            "PrependText": "Flame Art ",
+            "AppendText": "",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 600,
+            "PrependText": "Lightning ",
+            "AppendText": "",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 700,
+            "PrependText": "Sacred ",
+            "AppendText": "",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 800,
+            "PrependText": "Magic ",
+            "AppendText": "",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 900,
+            "PrependText": "Cold ",
+            "AppendText": "",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 1000,
+            "PrependText": "Poison ",
+            "AppendText": "",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 1100,
+            "PrependText": "Blood ",
+            "AppendText": "",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 1200,
+            "PrependText": "Occult ",
+            "AppendText": "",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        }
+    ],
+    "FMG_TextBody": [],
+    "FMG_Summary": [],
+    "FMG_Description": [],
+    "FMG_ExtraText": []
+}

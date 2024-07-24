@@ -249,6 +249,7 @@
     <None Update="Assets\Shoebox\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Thumbnails\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\WorldMap\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Workflow\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

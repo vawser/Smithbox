@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SoulsFormats.FLVER2;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -45,6 +46,11 @@ public class FMGInfo
     {
         PatchParent = parent;
         parent.PatchChildren.Add(this);
+    }
+
+    public FMGInfo Clone()
+    {
+        return (FMGInfo)MemberwiseClone();
     }
 
     /// <summary>

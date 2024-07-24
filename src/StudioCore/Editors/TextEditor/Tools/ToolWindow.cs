@@ -43,8 +43,17 @@ public class ToolWindow
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth, 32);
 
+            // Generate Entries
+            if (ImGui.CollapsingHeader("Generate Entries"))
+            {
+                ImguiUtils.WrappedText("Generate entries based on the selected entry (or first member of a multi-selection), with a template applied.");
+                ImguiUtils.WrappedText("");
+
+                FmgEntryGenerator.SetupTemplates();
+                FmgEntryGenerator.DisplayConfiguration();
+            }
             // Duplicate Entries
-            if (ImGui.CollapsingHeader("Duplicate"))
+            if (ImGui.CollapsingHeader("Duplicate Entries"))
             {
                 ImguiUtils.WrappedText("Duplicate the selected entries in the Text Entries list.");
                 ImguiUtils.WrappedText("");

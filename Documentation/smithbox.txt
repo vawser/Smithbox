@@ -46,9 +46,9 @@ Param Editor:
  - ADD: Able to sort row order manually
  - ADD: button to restore param to vanilla fields
  - ADD: let Color Picker work for changing color
+ - ADD: pin groups (under tools), for quickly switching between defined param/row/field pin groups (remove the project.json aspect if this is added)
 
 Text Editor:
- - ADD: generator tool for quickly adding entires, e.g. weapon entries: start ID, step amount, end ID, default title, default desc
  - FIX: the patch separation of FMGs
  - FIX: vanilla entry should be preferred over dlc01/dlc02 entry
  
@@ -79,3 +79,6 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
+- Make the param massedit auto-builder more obvious:
+ - Add the the toolbar version
+ - Add submit buttons instead of the weird selectables

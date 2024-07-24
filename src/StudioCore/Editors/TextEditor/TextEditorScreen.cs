@@ -408,7 +408,18 @@ public class TextEditorScreen : EditorScreen
         Smithbox.BankHandler.FMGBank.SaveFMGs();
     }
 
-    private void ClearTextEditorCache()
+    public void RefreshTextEditorCache()
+    {
+        UICache.ClearCaches();
+        _entryLabelCache = null;
+        _EntryLabelCacheFiltered = null;
+        _activeEntryGroup = null;
+        _activeIDCache = -1;
+        _searchFilter = "";
+        _searchFilterCached = "";
+    }
+
+    public void ClearTextEditorCache()
     {
         UICache.ClearCaches();
         _entryLabelCache = null;

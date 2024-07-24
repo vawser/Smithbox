@@ -2,10 +2,12 @@
 using DotNext;
 using Google.Protobuf.WellKnownTypes;
 using HKX2;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Editors.TextEditor.Tools;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,9 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Text.RegularExpressions;
+using static SoulsFormats.MQB;
+using static StudioCore.Editors.ParticleEditor.ParticleBank;
 
 namespace StudioCore.Editor;
 
@@ -415,6 +420,158 @@ public class ReplaceFMGEntryTextAction : EditorAction
     {
         Entry.Text = BackupEntry.Text;
         return ActionEvent.NoEvent;
+    }
+}
+
+public class GenerateFMGEntryAction : EditorAction
+{
+    private FMGInfo FMGInfo = new();
+    private FMGEntryGroup BaseEntryGroup = new();
+    private FmgEntryGeneratorBase Source;
+    private List<FMGEntryGroup> NewEntries = new();
+
+    public GenerateFMGEntryAction(FMGInfo fmgInfo, FMGEntryGroup baseEntryGroup, FmgEntryGeneratorBase source)
+    {
+        FMGInfo = fmgInfo;
+        BaseEntryGroup = baseEntryGroup;
+        Source = source;
+    }
+
+    public override ActionEvent Execute()
+    {
+        // ID
+        for (int i = 0; i < Source.Count; i++)
+        {
+            if (Source.FMG_Title.Count > i)
+            {
+                var adjustmentEntry = Source.FMG_Title[i];
+
+                var newEntry = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(BaseEntryGroup.ID, FMGInfo);
+                newEntry.DuplicateFMGEntries();
+                newEntry.ID = BaseEntryGroup.ID + adjustmentEntry.Offset;
+                NewEntries.Add(newEntry);
+            }
+        }
+
+        // Title
+        for (int i = 0; i < Source.Count; i++)
+        {
+            if (Source.FMG_Title.Count > i)
+            {
+                var adjustmentEntry = Source.FMG_Title[i];
+                var newEntry = NewEntries[i];
+
+                newEntry.Title.Text = ProcessText(newEntry.Title.Text, newEntry, adjustmentEntry);
+            }
+        }
+
+        // TextBody
+        for (int i = 0; i < Source.Count; i++)
+        {
+            if (Source.FMG_TextBody.Count > i)
+            {
+                var adjustmentEntry = Source.FMG_TextBody[i];
+                var newEntry = NewEntries[i];
+
+                newEntry.TextBody.Text = ProcessText(newEntry.TextBody.Text, newEntry, adjustmentEntry);
+            }
+        }
+
+        // Summary
+        for (int i = 0; i < Source.Count; i++)
+        {
+            if (Source.FMG_Summary.Count > i)
+            {
+                var adjustmentEntry = Source.FMG_Summary[i];
+                var newEntry = NewEntries[i];
+
+                newEntry.Summary.Text = ProcessText(newEntry.Summary.Text, newEntry, adjustmentEntry);
+            }
+        }
+
+        // Description
+        for (int i = 0; i < Source.Count; i++)
+        {
+            if (Source.FMG_Description.Count > i)
+            {
+                var adjustmentEntry = Source.FMG_Description[i];
+                var newEntry = NewEntries[i];
+
+                newEntry.Description.Text = ProcessText(newEntry.Description.Text, newEntry, adjustmentEntry);
+            }
+        }
+
+        // ExtraText
+        for (int i = 0; i < Source.Count; i++)
+        {
+            if (Source.FMG_ExtraText.Count > i)
+            {
+                var adjustmentEntry = Source.FMG_ExtraText[i];
+                var newEntry = NewEntries[i];
+
+                newEntry.ExtraText.Text = ProcessText(newEntry.ExtraText.Text, newEntry, adjustmentEntry);
+            }
+        }
+
+        Smithbox.EditorHandler.TextEditor.RefreshTextEditorCache();
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        foreach(var entry in NewEntries)
+        {
+            entry.DeleteEntries();
+        }
+
+        Smithbox.EditorHandler.TextEditor.RefreshTextEditorCache();
+
+        return ActionEvent.NoEvent;
+    }
+
+    public string ProcessText(string baseText, FMGEntryGroup newEntry, FmgEntryGeneratorRow adjustmentEntry)
+    {
+        var newText = baseText;
+
+        // Search and Replace
+        if (adjustmentEntry.ReplaceList.Count > 0)
+        {
+            foreach (var entry in adjustmentEntry.ReplaceList)
+            {
+                if (entry.SearchText != "")
+                {
+                    newText = newText.Replace(entry.SearchText, entry.ReplaceText);
+                }
+            }
+        }
+
+        // Adjust the prepend/append to account for possesiveness
+        if (adjustmentEntry.PossessiveAdjust)
+        {
+            var possessiveWord = "";
+
+            // ([a-z]*'s).*
+            var result = Regex.Match(newText, @"([a-z]*'s)", RegexOptions.IgnoreCase);
+            possessiveWord = result.Value;
+            if (possessiveWord != "")
+            {
+                var tempText = newText.Replace(possessiveWord, "").TrimStart(' ');
+                tempText = $"{adjustmentEntry.PrependText}{tempText}{adjustmentEntry.AppendText}";
+                newText = $"{possessiveWord} {tempText}";
+            }
+            else
+            {
+                newText = $"{adjustmentEntry.PrependText}{newText}{adjustmentEntry.AppendText}";
+            }
+        }
+        else
+        {
+            // Text Prepend/Append
+            newText = $"{adjustmentEntry.PrependText}{newText}{adjustmentEntry.AppendText}";
+        }
+
+        return newText;
     }
 }
 

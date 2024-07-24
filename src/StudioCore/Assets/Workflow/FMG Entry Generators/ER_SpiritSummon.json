@@ -1,0 +1,132 @@
+{
+    "ProjectType": 8,
+    "Name": "Spirit Summon",
+    "Description": "Generate the 10 reinforcement entries from a base entry.",
+    "Count": 10,
+    "FMG_Title": [
+        {
+            "PossessiveAdjust": true,
+            "Offset": 1,
+            "PrependText": "",
+            "AppendText": " +1",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 2,
+            "PrependText": "",
+            "AppendText": " +2",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 3,
+            "PrependText": "",
+            "AppendText": " +3",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 4,
+            "PrependText": "",
+            "AppendText": " +4",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 5,
+            "PrependText": "",
+            "AppendText": " +5",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 6,
+            "PrependText": "",
+            "AppendText": " +6",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 7,
+            "PrependText": "",
+            "AppendText": " +7",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 8,
+            "PrependText": "",
+            "AppendText": " +8",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 9,
+            "PrependText": "",
+            "AppendText": " +9",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 10,
+            "PrependText": "",
+            "AppendText": " +10",
+            "ReplaceList": [
+                {
+                    "SearchText": "",
+                    "ReplaceText": ""
+                }
+            ]
+        }
+    ],
+    "FMG_TextBody": [],
+    "FMG_Summary": [],
+    "FMG_Description": [],
+    "FMG_ExtraText": []
+}
