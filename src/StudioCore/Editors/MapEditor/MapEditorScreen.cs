@@ -27,6 +27,7 @@ using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Havok;
+using static SoulsFormats.MSB.Shape.Composite;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -66,10 +67,13 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public DisplayGroupEditor DispGroupEditor;
     public MapAssetSelectionView MapAssetSelectionView;
     public SelectionGroupView SelectionGroupEditor;
+    private LightmapAtlasScreen LightmapAtlasEditor;
 
     public MapToolbar _mapToolbar;
     public MapToolbar_ActionList _mapToolbar_ActionList;
     public MapToolbar_Configuration _mapToolbar_Configuration;
+
+    public GranularRegionToggleHandler GranularRegionHandler;
 
     private bool GCNeedsCollection;
 
@@ -117,6 +121,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         PropSearch = new MapSearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(RenderScene, _selection);
         MapAssetSelectionView = new MapAssetSelectionView(this);
+        GranularRegionHandler = new GranularRegionToggleHandler(Universe);
 
         PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport);
 
@@ -125,6 +130,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         _mapToolbar = new MapToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _comboTargetMap);
         _mapToolbar_ActionList = new MapToolbar_ActionList();
         _mapToolbar_Configuration = new MapToolbar_Configuration();
+
 
         EditorActionManager.AddEventHandler(SceneTree);
     }
@@ -322,7 +328,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
+        if (ImGui.BeginMenu("General Filters", RenderScene != null && Viewport != null))
         {
             bool ticked;
 
@@ -397,6 +403,13 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
             ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Debug);
             ImguiUtils.ShowActiveStatus(ticked);
+
+            ImGui.EndMenu();
+        }
+
+        if (ImGui.BeginMenu("Region Filters", RenderScene != null && Viewport != null))
+        {
+            GranularRegionHandler.DisplayOptions();
 
             ImGui.EndMenu();
         }
@@ -603,8 +616,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImGui.EndMenu();
         }
     }
-
-    private LightmapAtlasScreen LightmapAtlasEditor;
 
     public void OnGUI(string[] initcmd)
     {
@@ -1267,6 +1278,4 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 LogLevel.Error, TaskLogs.LogPriority.High, e.Wrapped);
         }
     }
-
-
 }
