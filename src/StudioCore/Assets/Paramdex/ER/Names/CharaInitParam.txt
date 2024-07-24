@@ -3142,57 +3142,57 @@
 2019952 
 2019953 
 2019954 
-2024030 
-2024032 
-2024060 
+2024030 Drake Warrior Igon (Co-op) (Jagged Peak)
+2024032 Igon (NPC)
+2024060 Dragon Communion Priestess (NPC)
 2024061 
-2024070 
-2024071 
-2024090 Swordhand of Night Jolan 
-2024091 Swordhand of Night Jolan (Ymir Boss Fight)
-2024120 
-2024121 
-2024130 
-2024131 
+2024070 Ancient Dragon-Man (Boss) (Dragon's Pit)
+2024071 Ancient Dragon-Man (Invader) (Gravesite Plain - North of Scorched Ruins)
+2024090 Swordhand of Night Jolan (NPC)
+2024091 Swordhand of Night Jolan (Invader) (Cathedral of Manus Metyr)
+2024120 Swordhand of Night Anna (Invader) (Finger Ruins of Miyr)
+2024121 Swordhand of Night Anna (NPC)
+2024130 Fire Knight Queelign (NPC)
+2024131 Fire Knight Queelign (Invader) (Church of the Crusade)
 2024132 
-2024140 
-2024141 
-2024150 
-2024151 
-2024152 
-2024160 
-2024161 
-2024162 
-2024170 (Redmane Freyja Boss) 
-2024171 
+2024140 Hornsent (NPC)
+2024141 Hornsent (Invader) (Ancient Ruins of Rauh - Rot Ruins)
+2024150 Moore (NPC)
+2024151 Moore (Invader)
+2024152 Moore (Boss) (Enir-Ilim)
+2024160 Sir Ansbach (NPC)
+2024161 Sir Ansbach (Invasion) (Specimen Storehouse)
+2024162 Pureblood Knight Ansbach (NPC) (Enir-Ilim)
+2024170 Redmane Freyja (NPC)
+2024171 Redmane Freyja (Co-op)
 2024172 
-2024173 
-2024174 
-2024180 
-2024181 
-2024182 
-2024183 
-2024190 
-2024191 
-2024192 
-2024193 
-2024194 
-2024200 Count Ymir, Mother of Fingers (Boss)
-2024201 
-2024210 
-2024220 
-2024230 Rakshasa (Boss)
-2024240 Knight of the Solitary Gaol (Boss)
-2024250 Dryleaf Dane (Moorth RUins Boss)
-2024251 
-2024252 
-2024260 
-2024270 
-2024271 
-2024280 
-2024290 
-2024310 
-2024320 
+2024173 Redmane Freyja (NPC) (Enir-Ilim)
+2024174 Redmane Freyja (Boss) (Enir-Ilim)
+2024180 Needle Knight Leda (NPC)
+2024181 Needle Knight Leda (Co-op)
+2024182 Needle Knight Leda (Invasion Target)
+2024183 Needle knight Leda (Boss) (Enir-Ilim)
+2024190 Thiollier (NPC)
+2024191 Thiollier (Co-op)
+2024192 Thiollier (Invader) (Stone Coffin Fissure)
+2024193 Thiollier (NPC) (Stone Coffin Fissure)
+2024194 Thiollier (NPC) (Enir-Ilim)
+2024200 Count Ymir, High Priest (NPC) (Cathedral of Manus Metyr)
+2024201 Count Ymir, Mother of Fingers (Boss)
+2024210 (Tarnished) Red Bear (Boss) (Northern Nameless Mausoleum)
+2024220 Dancer of Ranah (Boss) (Southern Nameless Mausoleum)
+2024230 Rakshasa (Boss) (Western Nameless Mausoleum)
+2024240 Knight of the Solitary Gaol (Boss) (Western Nameless Mausoleum)
+2024250 Dryleaf Dane (NPC)
+2024251 Dryleaf Dane (Combat Set)
+2024252 Dryleaf Dane (Boss) (Enir-Ilim)
+2024260 Sanguine Noble Nataan (Helpful Spirit) (Enir-Ilim)
+2024270 Lamenter (Boss) (Lamenter's Gaol)
+2024271 Lamenter (Illusion) (Lamenter's Gaol)
+2024280 Greater Potentate (Bonny Village)
+2024290 Madding Hand (Woodland Trail)
+2024310 Logur, the Beast Claw (Gravesite Plain - South of Scorched Ruins)
+2024320 Moonrithyll, Carian Knight (West Castle Ensis)
 2029997 
 2029998 
 2029999 

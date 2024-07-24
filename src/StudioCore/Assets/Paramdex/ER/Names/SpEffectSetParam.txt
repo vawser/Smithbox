@@ -20,8 +20,8 @@
 108010 
 108100 
 108110 
-109000 
-109010 
+109000 Enemy: Fade After Death (Boss)
+109010 Enemy: Fade After Death
 1200000 
 1200010 
 1200020 

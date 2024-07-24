@@ -3981,25 +3981,25 @@
 47601000 Fire Giant
 47601050 Fire Giant
 47601900 Fire Giant
-47700000 Black Blade Kindred
-47700033 Black Blade Kindred
-47700034 Black Blade Kindred (Leyndell- Royal Capital)
-47700070 Black Blade Kindred
-47700100 Black Blade Kindred
-47700165 Valiant Gargoyle (Twinblade)
+47700000 Gargoyle
+47700033 Gargoyle (Capital Outskirts)
+47700034 Gargoyle (Leyndell - Royal Capital)
+47700070 Gargoyle (Leyndell - Ashen Capital)
+47700100 Gargoyle (Poison Breath)
+47700165 Valiant Gargoyle (Twinblade) (Nokron)
 47700200 Black Blade Kindred
 47700250 Black Blade Kindred (Forbidden Lands)
-47701000 Black Blade Kindred
-47701034 Black Blade Kindred (Leyndell- Royal Capital)
-47701100 Black Blade Kindred
-47701165 Valiant Gargoyle
-47701200 Black Blade Kindred
-47701242 Black Blade Kindred
-47702000 Black Blade Kindred Ruin
-47702034 Black Blade Kindred Ruin  (Leyndell- Royal Capital)
-47702066 Black Blade Kindred Ruin
-47709900 Black Blade Kindred
-47709910 Black Blade Kindred
+47701000 Gargoyle (Greatsword)
+47701034 Gargoyle (Greatsword) (Leyndell - Royal Capital)
+47701100 Gargoyle (Greatsword + Poison Breath)
+47701165 Valiant Gargoyle (Nokron)
+47701200 Black Blade Kindred (Greatsword)
+47701242 Black Blade Kindred (Dragonbarrow - Bestial Sanctum)
+47702000 Ruined Gargoyle
+47702034 Ruined Gargoyle (Leyndell - Royal Capital)
+47702066 Ruined Gargoyle (Deeproot Depths)
+47709900 Gargoyle -Passive Battle State-
+47709910 Gargoyle (Greatsword) -Passive Battle State-
 48000000 Mohg- The Omen
 48000068 Mohg, Lord of Blood
 48001000 Mohg- The Omen
@@ -4307,18 +4307,18 @@
 51602398 Fire Knight
 51700000 Furnace Golem
 51700001 Furnace Golem
-51700080 Furnace Golem
-51700083 Furnace Golem
-51700090 Furnace Golem
-51700091 Furnace Golem
+51700080 Furnace Golem (Southwest Gravesite Plain - Scorched Ruins)
+51700083 Furnace Golem (Southeast Gravesite Plain - Ellac River End)
+51700090 Furnace Golem (Central Scadu Altus - Shadow Keep Main Gate)
+51700091 Furnace Golem (Central Scadu Altus - Ruins of Unte)
 51700094 Furnace Golem
 51701000 Furnace Golem
 51701001 Furnace Golem
-51701084 Furnace Golem
-51701090 Furnace Golem
+51701084 Furnace Golem (Southwest Cerulean Coast - Charo's Hidden Grave)
+51701090 Furnace Golem (Central Scadu Altus - Church District Highroad)
 51702000 Furnace Golem
 51702001 Furnace Golem
-51702094 Furnace Golem
+51702094 Furnace Golem (Rauh Ruins)
 51709000 Furnace Golem
 51800000 Dummy Entity
 51800080 Dummy Entity
@@ -6766,95 +6766,95 @@
 523920000 
 523930000 
 524030000 Igon
-524030081 Igon
-524030085 Igon
+524030081 Igon (NPC) (Gravesite Plain - Pillar Path Waypoint)
+524030085 Igon (NPC) (Foot of the Jagged Peak - Drake Duo Area)
 524060000 Dragon Communion Priestess
-524060084 Dragon Communion Priestess
+524060084 Dragon Communion Priestess (NPC) (Foot of the Jagged Peak - Grand Altar)
 524070000 Ancient Dragon-Man
 524070001 Ancient Dragon-Man
-524070081 Ancient Dragon-Man (Boss)
+524070081 Ancient Dragon-Man (Boss) (Dragon's Pit)
 524090000 Swordhand of Night Jolan
-524090090 Swordhand of Night Jolan
+524090090 Swordhand of Night Jolan (NPC) (Scadu Altus - Cathedral of Manus Metyr)
 524090100 Swordhand of Night Jolan
-524090190 Swordhand of Night Jolan (Ymir Boss Fight)
-524090290 Swordhand of Night Jolan
+524090190 Swordhand of Night Jolan (Invader) (Scadu Altus - Cathedral of Manus Metyr)
+524090290 Swordhand of Night Jolan (NPC) (Scadu Altus - Cathedral of Manus Metyr)
 524120000 Swordhand of Night Anna
-524120090 Swordhand of Night Anna
+524120090 Swordhand of Night Anna (NPC) (Scadu Altus - Rabbath's Rise)
 524130000 Fire Knight Queelign
-524130098 Fire Knight Queelign
+524130098 Fire Knight Queelign (NPC) (Shadow Keep - Church District)
 524140000 Hornsent
-524140080 Hornsent
-524140089 Hornsent
-524140090 Hornsent
-524140099 Hornsent
-524140189 Hornsent (Boss)
-524140198 Hornsent
+524140080 Hornsent (NPC) (Gravesite Plain - Three-Path Cross)
+524140089 Hornsent (NPC) (Enir-Ilim)
+524140090 Hornsent (NPC) (Scadu Altus - Highroad Cross)
+524140099 Hornsent (NPC) (Specimen Storehouse)
+524140189 Hornsent (Boss) (Enir-Ilim)
+524140198 Hornsent (Invasion Target) (Shadow Keep)
 524140289 Hornsent
 524150000 Moore
-524150080 Moore
-524150089 Moore
-524150090 Moore
-524150189 Moore
+524150080 Moore (NPC) (Gravesite Plain - Belurat Main Gate Cross)
+524150089 Moore (NPC) (Enir-Ilim)
+524150090 Moore (NPC) (Scadu Altus - Church of the Crusade)
+524150189 Moore (Boss) (Enir-Ilim)
 524150289 Moore
 524160000 Sir Ansbach
-524160080 Sir Ansbach
-524160089 Sir Ansbach
-524160099 Sir Ansbach
-524160199 Sir Ansbach
+524160080 Sir Ansbach (NPC) (Gravesite Plain - Belurat Main Gate Cross)
+524160089 Sir Ansbach (NPC) (Enir-Ilim)
+524160099 Sir Ansbach (NPC) (Specimen Storehouse)
+524160199 Sir Ansbach (Invasion Target) (Specimen Storehouse)
 524160289 Pureblood Knight Ansbach
 524170000 Redmane Freyja
-524170080 Redmane Freyja
-524170089 Redmane Freyja
-524170099 Redmane Freyja
-524170189 Redmane Freyja
-524170289 Redmane Freyja (Boss)
+524170080 Redmane Freyja (NPC) (Gravesite Plain - Three-Path Cross)
+524170089 Redmane Freyja (NPC) (Enir-Ilim)
+524170099 Redmane Freyja (NPC) (Specimen Storehouse)
+524170189 Redmane Freyja (Boss) (Enir-Ilim)
+524170289 Redmane Freyja
 524180000 Needle Knight Leda
-524180068 Needle Knight Leda
-524180089 Needle Knight Leda
-524180090 Needle Knight Leda
-524180189 Needle Knight Leda
-524180198 Needle Knight Leda
-524180199 Needle Knight Leda
-524180289 Needle Knight Leda (Boss)
+524180068 Needle Knight Leda (NPC) (Mohgwyn Palace)
+524180089 Needle Knight Leda (NPC) (Enir-Ilim)
+524180090 Needle Knight Leda (NPC) (Scadu Altus - Highroad Cross)
+524180189 Needle Knight Leda (Boss) (Enir-Ilim)
+524180198 Needle Knight Leda (Invasion Target) (Shadow Keep)
+524180199 Needle Knight Leda (Invasion Target) (Specimen Storehouse)
+524180289 Needle Knight Leda
 524190000 Thiollier
-524190081 Thiollier
-524190087 Thiollier
-524190089 Thiollier
+524190081 Thiollier (NPC) (Gravesite Plain - Pillar Path Cross)
+524190087 Thiollier (NPC) (Stone Coffin Fissure)
+524190089 Thiollier (NPC) (Enir-Ilim)
 524190189 Thiollier
 524200000 Count Ymir, High Priest
-524200090 Count Ymir, High Priest
+524200090 Count Ymir, High Priest (NPC) (Scadu Altus - Cathedral of Manus Metyr)
 524200190 Count Ymir, Mother of Fingers (Boss)
-524210000 Red Bear - Human
-524210001 Red Bear - Human
-524210090 Red Bear - Human
-524210095 Red Bear - Human (Boss)
+524210000 (Tarnished) Red Bear
+524210001 (Tarnished) Red Bear
+524210090 (Tarnished) Red Bear
+524210095 (Tarnished) Red Bear (Boss) (Gravesite Plain - Northern Nameless Mausoleum)
 524220000 Dancer of Ranah
 524220001 Dancer of Ranah
-524220083 Dancer of Ranah (Boss)
+524220083 Dancer of Ranah (Boss) (Cerulean Coast - Southern Nameless Mausoleum)
 524230000 Rakshasa
 524230090 Rakshasa
-524230091 Rakshasa (Boss)
+524230091 Rakshasa (Boss) (Scadu Altus - Western Nameless Mausoleum)
 524240000 Knight of the Solitary Gaol
-524240080 Knight of the Solitary Gaol (Boss)
+524240080 Knight of the Solitary Gaol (Boss) (Gravesite Plain - Western Nameless Mausoleum)
 524250000 Dryleaf Dane
 524250001 Dryleaf Dane
 524250002 Dryleaf Dane
-524250089 Dryleaf Dane
-524250090 Dryleaf Dane
-524250189 Dryleaf Dane
-524250190 Dryleaf Dane (Moorth Ruins Boss)
-524250289 Dryleaf Dane (Enir Elim Boss)
+524250089 Dryleaf Dane (NPC) (Enir-Ilim)
+524250090 Dryleaf Dane (NPC) (Scadu Altus - Moorth Ruins)
+524250189 Dryleaf Dane (Boss) (Enir-Ilim)
+524250190 Dryleaf Dane (Miniboss) (Scadu Altus - Moorth Ruins)
+524250289 Dryleaf Dane
 524270000 Lamenter
-524270001 Lamenter
-524270084 Lamenter (Boss)
+524270001 Lamenter (Illusion) (Lamenter's Gaol)
+524270084 Lamenter (Boss) (Lamenter's Gaol)
 524280000 Greater Potentate
-524280090 Greater Potentate
+524280090 Greater Potentate (Scadu Altus - Bonny Village)
 524290000 Madding Hand
-524290086 Madding Hand
+524290086 Madding Hand (Abyssal Woods - Woodland Trail)
 524310000 Logur, the Beast Claw
-524310080 Logur, the Beast Claw
+524310080 Logur, the Beast Claw (Gravesite Plain - South of Scorched Ruins)
 524320000 Moonrithyll, Carian Knight
-524320082 Moonrithyll, Carian Knight
+524320082 Moonrithyll, Carian Knight (Gravesite Plain - West Castle Ensis)
 526000000 
 526050000 
 526060000 
@@ -6936,42 +6936,42 @@
 533900056 Polyanna, Youngest Sister
 534000000 
 534031000 Igon
-534031085 Drake Warrior Igon
+534031085 Drake Warrior Igon (Co-op) (Jagged Peak)
 534090000 Swordhand of Night Jolan
-534090083 Swordhand of Night Jolan
-534090093 Swordhand of Night Jolan
-534090099 Swordhand of Night Jolan
+534090083 Swordhand of Night Jolan (Co-op) (Cerulean Coast - Dragon Area)
+534090093 Swordhand of Night Jolan (Co-op) (Scadu Altus - Hinterlands)
+534090099 Swordhand of Night Jolan (Co-op) (Specimen Storehouse)
 534100000 
 534140000 Hornsent
-534140098 Hornsent
-534140099 Hornsent
-534140198 Hornsent
+534140098 Hornsent (Co-op) (Shadow Keep)
+534140099 Hornsent (Co-op) (Specimen Storehouse)
+534140198 Hornsent (Assisted Spirit) (Shadow Keep)
 534160000 Sir Ansbach
-534160089 Pureblood Knight Ansbach
-534160099 Sir Ansbach
-534160189 Pureblood Knight Ansbach
+534160089 Pureblood Knight Ansbach (Co-op) (Enir-Ilim)
+534160099 Sir Ansbach (Assisted Spirit) (Specimen Storehouse)
+534160189 Pureblood Knight Ansbach (Helpful Spirit) (Enir-Ilim)
 534160289 Pureblood Knight Ansbach
 534170000 Redmane Freyja
-534170088 Redmane Freyja
-534170090 Redmane Freyja
-534170098 Redmane Freyja
+534170088 Redmane Freyja (Co-op) (Belurat, Tower Settlement)
+534170090 Redmane Freyja (Co-op) (Rauh Base - Northwest Great Red Bear)
+534170098 Redmane Freyja (Co-op) (Shadow Keep)
 534180000 Needle Knight Leda
-534180082 Needle Knight Leda
+534180082 Needle Knight Leda (Co-op) (Gravesite Plain - East Castle Ensis)
 534180094 Needle Knight Leda
-534180098 Needle Knight Leda
-534180099 Needle Knight Leda
+534180098 Needle Knight Leda (Helpful Spirit) (Shadow Keep)
+534180099 Needle Knight Leda (Helpful Spirit) (Specimen Storehouse)
 534181000 Needle Knight Leda
 534190000 Thiollier
-534190087 Thiollier
-534190089 Thiollier
-534190189 Thiollier
+534190087 Thiollier (Co-op) (Stone Coffin Fissure)
+534190089 Thiollier (Co-op) (Enir-Ilim)
+534190189 Thiollier (Helpful Spirit) (Enir-Ilim)
 534190289 Thiollier
 534200000 Count Ymir, Hight Priest
 534250000 Dryleaf Dane
-534250082 Dryleaf Dane
-534250094 Dryleaf Dane
+534250082 Dryleaf Dane (Co-op) (Gravesite Plain - East Castle Ensis) (REMOVED)
+534250094 Dryleaf Dane (Co-op) (Ancient Ruins of Rauh - North Church of the Bud)
 534260000 Sanguine Noble Nataan
-534260089 Sanguine Noble Nataan
+534260089 Sanguine Noble Nataan (Helpful Spirit) (Enir-Ilim)
 534260189 Sanguine Noble Nataan
 534300000 
 534400000 
@@ -7000,33 +7000,33 @@
 543850000 Mad Tongue Alberich
 543850079 Mad Tongue Alberich
 544000000 
-544070000 Ancient-Dragon-Man
-544070081 Ancient-Dragon-Man
+544070000 Ancient Dragon-Man
+544070081 Ancient Dragon-Man (Invader) (Gravesite Plain - North of Scorched Ruins)
 544090000 Swordhand of Night Jolan
 544100000 
 544120000 Swordhand of Night Anna
-544120090 Swordhand of Night Anna (Invader)
+544120090 Swordhand of Night Anna (Invader) (Scadu Altus - Finger Ruins of Miyr)
 544130000 Fire Knight Queelign
-544130088 Fire Knight Queelign
-544130090 Fire Knight Queelign
+544130088 Fire Knight Queelign (Invader) (Belurat, Tower Settlement)
+544130090 Fire Knight Queelign (Invader) (Scadu Altus - Church of the Crusade)
 544130188 Fire Knight Queelign
 544130190 Fire Knight Queelign
 544140000 Hornsent
-544140094 Hornsent
+544140094 Hornsent (Invader) (Ancient Ruins of Rauh - Rot Ruins)
 544150000 Moore
-544150080 Moore
+544150080 Moore (Invader) (Gravesite Plain - Prospect Town)
 544150081 Moore
-544150083 Moore
-544150090 Moore
-544150180 Moore
+544150083 Moore (Invader) (Gravesite Plain - Ellac River End)
+544150090 Moore (Invader) (Scadu Altus)
+544150180 Moore (Hostile) (Gravesite Plain - Prospect Town)
 544150181 Moore
-544150183 Moore
-544150190 Moore
+544150183 Moore (Hostile) (Gravesite Plain - Ellac River End)
+544150190 Moore (Hostile) (Scadu Altus)
 544160000 Sir Ansbach
 544170000 Redmane Freyja
 544180000 Needle Knight Leda
 544190000 Thiollier
-544190087 Thiollier
+544190087 Thiollier (Invader) (Stone Coffin Fissure)
 544200000 
 544250000 Dryleaf Dane
 544300000 
