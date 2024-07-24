@@ -628,6 +628,18 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     public virtual void BuildReferenceMap()
     {
+        foreach (var array in References.Values)
+        {
+            foreach (var obj in array)
+            {
+                if (obj is Entity ent)
+                {
+                    ent.ReferencingObjects = null;
+                }
+            }
+        }
+        References.Clear();
+
         // Is not a param, e.g. DS2 enemy
         if (!(WrappedObject is Param.Row) && !(WrappedObject is MergedParamRow))
         {
@@ -646,36 +658,17 @@ public class Entity : ISelectable, IDisposable
                 // If this property has the [MSBReference] attribute
                 if (att != null)
                 {
-                    if (p.PropertyType.IsArray)
-                    {
-                        var array = (Array)p.GetValue(WrappedObject);
-                        foreach (var i in array)
-                        {
-                            var sref = (string)i;
-                            if (sref != null && sref != "")
-                            {
-                                Entity obj = Container.GetObjectByName(sref);
-                                if (obj != null)
-                                {
-                                    if (!References.ContainsKey(sref))
-                                    {
-                                        References.Add(sref, new[] { obj });
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        // Get the name, e.g. a Part would get the PartName property
-                        var sref = (string)p.GetValue(WrappedObject);
+                    string[] array;
+                    if (p.PropertyType.IsArray) { array = (string[])p.GetValue(WrappedObject); }
+                    else { array = [(string)p.GetValue(WrappedObject)]; }
 
+                    foreach (string sref in array)
+                    {
                         // Name is not null or empty.
                         if (sref != null && sref != "")
                         {
                             // Get the entity that has this name.
                             Entity obj = Container.GetObjectByName(sref);
-
                             if (obj != null)
                             {
                                 // Add the entity to the reference map
@@ -683,6 +676,8 @@ public class Entity : ISelectable, IDisposable
                                 {
                                     References.Add(sref, new[] { obj });
                                 }
+                                // Invalidate the referenced object's referencing objects
+                                obj.ReferencingObjects = null;
                             }
                         }
                     }
