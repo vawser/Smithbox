@@ -975,9 +975,9 @@
 4289 
 4290 
 4291 
-4300 Enemy: Fade after death
-4301 Enemy: Fade after death (boss)
-4302 Enemy: Fade after death (blue)
+4300 Enemy: Fade After Death
+4301 Enemy: Fade After Death (Boss)
+4302 Enemy: Fade After Death (Blue)
 4305 
 4306 
 4307 
@@ -4771,48 +4771,48 @@
 17552 
 17553 
 17554 
-17600 
-17601 
-17602 
-17603 
-17604 
-17605 
+17600 (Gargoyles) ???
+17601 (Gargoyles) Cancel Opportunity to 3001/ 3011
+17602 (Gargoyles) Cancel Opportunity to 3009
+17603 (Gargoyles) Evading Backwards - Don't Take Certain Actions
+17604 (Gargoyles) Cancel Opportunity to 3010
+17605 (Gargoyles) Cancel Opportunity to 3003/ 3013
 17606 
 17607 
-17608 
-17609 
-17610 
-17611 
+17608 (Gargoyles) Cancel Opportunity to 3019/ 3027
+17609 (Gargoyles) Cancel Opportunity to 3019/ 3021/ 3022/ 3026/ 3027/ 3033
+17610 (Gargoyles) Cancel Opportunity to 3017/ 3024/ 3028
+17611 (Gargoyles) Cancel Opportunity to 3021/ 3022/ 3027/ 3031/ 3033
 17612 
-17613 
+17613 (Gargoyles) Cancel Opportunity to 3024/ 3028
 17614 
-17615 
-17616 
-17617 
-17618 
-17619 
-17620 
+17615 (Gargoyles) ???
+17616 (Gargoyles) Cancel Opportunity to 3029/ 3034
+17617 (Gargoyles) Cancel Opportunity to 3025/ 3029
+17618 (Gargoyles) Cancel Opportunity to 3016/ 3024
+17619 (Gargoyles) Cancel Opportunity to 3030
+17620 (Gargoyles) Cancel Opportunity to 3018/ 3019/ 3027
 17625 
-17626 
-17628 
+17626 (Gargoyles) Currently Walking
+17628 (Gargoyles) ???
 17629 
-17630 
-17631 
-17632 
-17633 
-17634 
-17635 
-17636 
+17630 (Gargoyles) Accumulator 1 - Base
+17631 (Gargoyles) Accumulator 1 - [Trigger] Enemy LUA AI Probabilities Change
+17632 (Gargoyles) Accumulator 1 - Reset
+17633 (Gargoyles) Accumulator 1 - On Attack +10
+17634 (Gargoyles) Accumulator 1 - Battle Movement +10
+17635 (Gargoyles) Evading Sideways - Don't Take Certain Actions
+17636 (Gargoyles) ???
 17637 
-17638 
-17639 
-17640 
-17641 
-17642 
-17643 
-17644 
-17645 
-17646 
+17638 (Gargoyles) Greatsword Attack Set
+17639 (Gargoyles) Halberd Attack Set
+17640 (Gargoyles) Greataxe Attack Set
+17641 (Gargoyles) Twinblade Attack Set
+17642 (Gargoyles) Ruined Attack Set
+17643 (Gargoyles) Can Use Poison Breath
+17644 (Gargoyles) Black Blade Kindred
+17645 (Gargoyles) Less Aggressive Battle State
+17646 (Gargoyles) Less Aggressive Battle State
 17648 
 17649 
 17650 
@@ -5863,7 +5863,7 @@
 90020 NPC: Disable Hemorrhage
 90030 NPC: Disable Blight
 90040 NPC: Disable Frostbite
-90060 NPC: Disable Madness 
+90060 NPC: Disable Madness
 90061 
 90100 NPC: Ignore Fake Targets - All
 90110 NPC: Ignore Fake Targets - Normal
@@ -9679,7 +9679,7 @@
 20011111 
 20011112 
 20011113 
-20011114 
+20011114 [DLC] Furnace Golem (Head Critical Damage)
 20011115 
 20011116 
 20011117 

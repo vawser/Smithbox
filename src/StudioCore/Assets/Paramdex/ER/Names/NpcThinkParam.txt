@@ -1108,23 +1108,23 @@
 47500000 Godrick the Grafted
 47600000 Fire Giant
 47600900 Fire Giant
-47700000 Valiant Gargoyle
-47700010 Valiant Gargoyle
-47700011 Valiant Gargoyle
-47700050 Valiant Gargoyle
-47700200 Valiant Gargoyle
-47700900 Valiant Gargoyle
-47701000 Valiant Gargoyle
-47701010 Valiant Gargoyle
-47701200 Valiant Gargoyle
-47702000 Valiant Gargoyle
-47702010 Valiant Gargoyle
-47702100 Valiant Gargoyle
-47705000 Valiant Gargoyle
-47705900 Valiant Gargoyle
-47705950 Valiant Gargoyle
-47706000 Valiant Gargoyle
-47706900 Valiant Gargoyle
+47700000 Gargoyle
+47700010 Gargoyle
+47700011 Gargoyle
+47700050 Gargoyle
+47700200 Valiant Gargoyle (Twinblade) (Nokron)
+47700900 Gargoyle
+47701000 Gargoyle (Greatsword) (Leyndell - Royal Capital)
+47701010 Gargoyle
+47701200 Valiant Gargoyle (Nokron)
+47702000 Ruined Gargoyle (Leyndell - Royal Capital)
+47702010 Gargoyle
+47702100 Ruined Gargoyle (Leyndell - Royal Capital)
+47705000 Gargoyle
+47705900 Gargoyle
+47705950 Black Blade Kindred (Forbidden Lands)
+47706000 Gargoyle
+47706900 Black Blade Kindred (Dragonbarrow - Bestial Sanctum)
 48000000 Mohg, Lord of Blood
 48001000 Mohg the Omen
 48100000 Erdtree Avatar
@@ -2085,39 +2085,39 @@
 523910000 
 523920000 
 523930000 
-524030000 
-524060000 
-524070000 
-524090000 
-524090100 
-524120000 
-524130000 
-524140000 
-524140100 
-524140200 
-524150000 
+524030000 Igon
+524060000 Dragon Communion Priestess
+524070000 Ancient Dragon-Man
+524090000 Swordhand of Night Jolan
+524090100 Swordhand of Night Jolan (Invader) (Scadu Altus - Cathedral of Manus Metyr)
+524120000 Swordhand of Night Anna
+524130000 Fire Knight Queelign
+524140000 Hornsent
+524140100 Hornsent (Invasion Target) (Shadow Keep)
+524140200 Hornsent (Boss) (Enir-Ilim)
+524150000 Moore
 524150100 
-524150200 
-524160000 
-524160100 
-524170000 
-524180000 
-524180100 
-524190000 
-524200000 
-524200100 
-524210000 
-524220000 
-524230000 
-524240000 
-524250000 
-524250100 
-524270000 
-524270100 
-524280000 
-524290000 
-524310000 
-524320000 
+524150200 Moore (Invader)
+524160000 Sir Ansbach
+524160100 Moore (Boss) (Enir-Ilim)/ Sir Ansbach (Invasion Target) (Specimen Storehouse)
+524170000 Redmane Freyja
+524180000 Needle Knight Leda
+524180100 Needle Knight Leda (Invasion Target)
+524190000 Thiollier
+524200000 Count Ymir, High Priest
+524200100 Count Ymir, Mother of Fingers (Boss)
+524210000 (Tarnished) Red Bear (Boss)
+524220000 Dancer of Ranah (Boss)
+524230000 Rakshasa (Boss)
+524240000 Knight of the Solitary Gaol (Boss)
+524250000 Dryleaf Dane
+524250100 Dryleaf Dane (Miniboss) (Scadu Altus - Moorth Ruins)
+524270000 Lamenter (Boss)
+524270100 Lamenter (Illusion)
+524280000 Greater Potentate
+524290000 Madding Hand
+524310000 Logur, the Beast Claw
+524320000 Moonrithyll, Carian Knight
 526000000 
 526010000 
 526020000 
@@ -2159,20 +2159,20 @@
 533890000 Amy Third Sister
 533900000 Polyanna Youngest Sister
 534000000 
-534031000 
-534090000 
+534031000 Igon (Co-op)
+534090000 Swordhand of Night Jolan (Co-op)
 534100000 
-534140000 
-534160000 
-534161000 
-534170000 
-534180000 
-534181000 
-534190000 
-534191000 
-534200000 
-534250000 
-534260000 
+534140000 Hornsent (Co-op)
+534160000 Sir Ansbach (Co-op)
+534161000 Pureblood Knight Ansbach (Helpful Spirit) (Enir-Ilim)
+534170000 Redmane Freyja (Co-op)
+534180000 Needle Knight Leda (Helpful Spirit)
+534181000 Needle Knight Leda (Co-op) (Gravesite Plain - East Castle Ensis)
+534190000 Thiollier (Co-op)
+534191000 Thiollier (Helpful Spirit) (Enir-Ilim)
+534200000 Count Ymir, High Priest
+534250000 Dryleaf Dane (Co-op)
+534260000 Sanguine Noble Nataan (Helpful Spirit)
 534300000 
 534400000 
 534500000 
@@ -2192,18 +2192,18 @@
 543690000 Sage Gowry
 543850000 Mad Tongue Alberich
 544000000 
-544070000 
+544070000 Ancient Dragon-Man (Invader)
 544090000 
 544100000 
-544130000 
-544140000 
-544150000 
-544160000 
-544170000 
-544180000 
-544190000 
+544130000 Fire Knight Queelign (Invader)
+544140000 Hornsent (Invader)
+544150000 Moore (Invader)
+544160000 Sir Ansbach
+544170000 Redmane Freyja (Boss) (Enir-Ilim)
+544180000 Needle Knight Leda (Boss) (Enir-Ilim)
+544190000 Thiollier (Invader) (Stone Coffin Fissure)
 544200000 
-544250000 
+544250000 Dryleaf Dane (Boss) (Enir-Ilim)
 544300000 
 544400000 
 544500000 
