@@ -1,0 +1,14 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Area",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "The displayed name of an area, which pops up when you step on a collision marking the boundary.",
+        "Maps will often contain multiple display names."
+    ]
+}

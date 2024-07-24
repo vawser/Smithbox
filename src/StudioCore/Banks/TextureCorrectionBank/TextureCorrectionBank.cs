@@ -1,4 +1,5 @@
 ﻿using StudioCore.Editor;
+using StudioCore.Localization;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -34,10 +35,12 @@ namespace StudioCore.Banks.TextureCorrectionBank
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"Failed to load Alias Bank {AliasFileName}: {e.Message}");
+                TaskLogs.AddLog(
+                    $"{LOC.Get("TEXTURE_CORRECTION_BANK__FAILED_TO_LOAD")}" +
+                    $"{e.Message}");
             }
 
-            TaskLogs.AddLog($"Texture Correction Bank: Loaded Corrections");
+            TaskLogs.AddLog($"{LOC.Get("TEXTURE_CORRECTION_BANK__SUCCESSFUL_LOAD")}");
         }
 
         /// <summary>

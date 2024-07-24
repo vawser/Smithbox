@@ -1,0 +1,15 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Action Button",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "An in-game text prompt to interact with some object.",
+        "This may come from emevd waiting to interact with some specific region/object, or built in with ObjActs. In DS3 onwards there is a param for it.",
+        "Alternatively, such prompts can be created with a combination of ESD and params, when there is dialogue/menuing involved after the prompt."
+    ]
+}

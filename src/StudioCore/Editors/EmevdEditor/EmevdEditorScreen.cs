@@ -4,6 +4,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Interface;
+using StudioCore.Localization;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
@@ -31,9 +32,9 @@ public class EmevdEditorScreen : EditorScreen
     {
     }
 
-    public string EditorName => "EMEVD Editor##EventScriptEditor";
+    public string EditorName => $"{LOC.Get("EDITOR__EMEVD_EDITOR")}##EventScriptEditor";
     public string CommandEndpoint => "emevd";
-    public string SaveType => "EMEVD";
+    public string SaveType => $"{LOC.Get("EDITOR__EMEVD_EDITOR_SAVE_TYPE")}";
 
     public void Init()
     {
@@ -81,10 +82,7 @@ public class EmevdEditorScreen : EditorScreen
     private void EventScriptFileView()
     {
         // File List
-        ImGui.Begin("Files##EventScriptFileList");
-
-        ImGui.Text($"Files");
-        ImGui.Separator();
+        ImGui.Begin($"{LOC.Get("EMEVD_EDITOR__MENU__FILES")}" + "##EventScriptFileList");
 
         foreach (var (info, binder) in EmevdBank.ScriptBank)
         {
@@ -105,9 +103,9 @@ public class EmevdEditorScreen : EditorScreen
 
     private void EventScriptEventListView()
     {
-        ImGui.Begin("Events##EventListView");
+        ImGui.Begin($"{LOC.Get("EMEVD_EDITOR__MENU__EVENTS")}" + "##EventListView");
 
-        if(_selectedScript != null)
+        if (_selectedScript != null)
         {
             foreach (var evt in _selectedScript.Events)
             {
@@ -125,9 +123,9 @@ public class EmevdEditorScreen : EditorScreen
 
     private void EventScriptEventInstructionView()
     {
-        ImGui.Begin("Event Instructions##EventInstructionView");
+        ImGui.Begin($"{LOC.Get("EMEVD_EDITOR__MENU__EVENT_INSTRUCTIONS")}" + "##EventInstructionView");
 
-        if(_selectedEvent != null)
+        if (_selectedEvent != null)
         {
             ImGui.Columns(2);
             foreach (var ins in _selectedEvent.Instructions)

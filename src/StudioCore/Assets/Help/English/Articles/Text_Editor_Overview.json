@@ -1,0 +1,13 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Text Editor: Overview",
+    "Tags": [
+        "Feature"
+    ],
+    "Contents": [
+        "[Header]Information",
+        "The Text Editor allows you to edit the localization used by the game."
+    ]
+}

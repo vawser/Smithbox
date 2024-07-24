@@ -250,6 +250,8 @@
     <None Update="Assets\Thumbnails\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\WorldMap\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Workflow\**" CopyToOutputDirectory="PreserveNewest" />
+    
+    <None Update="Localization\Languages\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
@@ -318,6 +320,10 @@
     <Compile Update="Havok\NewAnimSkeleton.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Localization\Languages\" />
   </ItemGroup>
 
 </Project>

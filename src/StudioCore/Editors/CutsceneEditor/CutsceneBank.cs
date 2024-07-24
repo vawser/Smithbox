@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Localization;
 using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
@@ -76,7 +77,7 @@ public static class CutsceneBank
                 fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveCutscene");
+                TaskLogs.AddLog($"{LOC.Get("CUTSCENE_EDITOR__INVALID_PROJECT_DURING_SAVE")}");
                 return;
         }
 
@@ -142,21 +143,25 @@ public static class CutsceneBank
         IsLoaded = true;
         IsLoading = false;
 
-        TaskLogs.AddLog($"Cutscene File Bank - Load Complete");
+        TaskLogs.AddLog($"{LOC.Get("CUTSCENE_EDITOR__LOAD_FILE_BANK")}");
     }
 
     public static void LoadCutscene(string path)
     {
         if (path == null)
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Mqb file.",
-                    LogLevel.Warning);
+            TaskLogs.AddLog(
+                $"{LOC.Get("CUTSCENE_EDITOR__FAILED_TO_FIND_PATH")}" +
+                $"{LOC.Get("CUTSCENE_EDITOR__PATH")}" + $"{path}", 
+                LogLevel.Warning);
             return;
         }
         if (path == "")
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Mqb file.",
-                    LogLevel.Warning);
+            TaskLogs.AddLog(
+                $"{LOC.Get("CUTSCENE_EDITOR__FAILED_TO_FIND_PATH")}" +
+                $"{LOC.Get("CUTSCENE_EDITOR__PATH")}" + $"{path}",
+                LogLevel.Warning);
             return;
         }
 
@@ -176,7 +181,7 @@ public static class CutsceneBank
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}");
+                    TaskLogs.AddLog($"{file.ID} - " + $"{LOC.Get("CUTSCENE_EDITOR__FAILED_TO_READ_MQB")}" + $"\n{ex.ToString()}");
                 }
             }
         }

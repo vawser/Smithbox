@@ -5,6 +5,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using StudioCore.Interface.Modals;
+using StudioCore.Localization;
 using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.UserProject;
@@ -57,16 +58,16 @@ public class ProjectHandler
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog("Failed to load recent project.");
+                TaskLogs.AddLog($"{LOC.Get("PROJECT__FAILED_TO_LOAD_RECENT")}" + ex.Message);
             }
         }
 
         if (IsInitialLoad)
         {
-            ImGui.OpenPopup("Project Creation");
+            ImGui.OpenPopup($"{LOC.Get("PROJECT__PROJECT_CREATION")}##projectCreationModal");
         }
 
-        if (ImGui.BeginPopupModal("Project Creation", ref IsInitialLoad, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize))
+        if (ImGui.BeginPopupModal($"{LOC.Get("PROJECT__PROJECT_CREATION")}##projectCreationModal", ref IsInitialLoad, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize))
         {
             ProjectModal.Display();
 
@@ -85,16 +86,19 @@ public class ProjectHandler
         if (CurrentProject.Config == null)
         {
             PlatformUtils.Instance.MessageBox(
-                "Failed to load last project. Project will not be loaded after restart.",
-                "Project Load Error", MessageBoxButtons.OK);
+                $"{LOC.Get("PROJECT__PROJECT_LOAD_FAILED")}",
+                $"{LOC.Get("PROJECT__PROJECT_LOAD_ERROR")}", 
+                MessageBoxButtons.OK);
             return false;
         }
 
         if(path == "")
         {
             PlatformUtils.Instance.MessageBox(
-                $"Path parameter was empty: {path}",
-                "Project Load Error", MessageBoxButtons.OK);
+                $"{LOC.Get("PROJECT__PROJECT_LOAD_EMPTY_PATH")}" +
+                $"{path}",
+                $"{LOC.Get("PROJECT__PROJECT_LOAD_ERROR")}",
+                MessageBoxButtons.OK);
             return false;
         }
 
@@ -113,7 +117,7 @@ public class ProjectHandler
         Smithbox.SmithboxDataRoot = $"{Smithbox.ProjectRoot}\\.smithbox";
 
         if (Smithbox.ProjectRoot == "")
-            TaskLogs.AddLog("Smithbox.ProjectRoot is empty!");
+            TaskLogs.AddLog($"{LOC.Get("PROJECT__EMPTY_PROJECT_ROOT")}");
 
         Smithbox.SetProgramTitle($"{CurrentProject.Config.ProjectName} - Smithbox");
 
@@ -236,14 +240,14 @@ public class ProjectHandler
         if (!Directory.Exists(targetProject.Config.GameRoot))
         {
             PlatformUtils.Instance.MessageBox(
-                $@"Could not find game data directory for {targetProject.Config.GameType}. Please select the game executable.",
-                "Error",
+                $"{LOC.Get("PROJECT__GAME_ROOT_INVALID")}",
+                $"{LOC.Get("ERROR")}",
                 MessageBoxButtons.OK);
 
             while (true)
             {
                 if (PlatformUtils.Instance.OpenFileDialog(
-                        $"Select executable for {targetProject.Config.GameType}...",
+                        $"{LOC.Get("PROJECT__SELECT_EXECUTABLE")}" + $"{targetProject.Config.GameType}...",
                         new[] { FilterStrings.GameExecutableFilter },
                         out var path))
                 {
@@ -265,8 +269,8 @@ public class ProjectHandler
                     }
 
                     PlatformUtils.Instance.MessageBox(
-                        $@"Selected executable was not for {CurrentProject.Config.GameType}. Please select the correct game executable.",
-                        "Error",
+                        $"{LOC.Get("PROJECT__GAME_ROOT_INVALID")}",
+                        $"{LOC.Get("ERROR")}",
                         MessageBoxButtons.OK);
                 }
                 else
@@ -287,12 +291,12 @@ public class ProjectHandler
             if (targetProject.Config.GameType is ProjectType.DS1 or ProjectType.DS2S or ProjectType.DS2)
             {
                 TaskLogs.AddLog(
-                    $"The files for {targetProject.Config.GameType} do not appear to be unpacked. Please use UDSFM for DS1:PTDE and UXM for DS2 to unpack game files",
+                    $"{LOC.Get("PROJECT__GAME_NOT_UNPACKED_DS1_DS2")}",
                     LogLevel.Error, TaskLogs.LogPriority.High);
             }
 
             TaskLogs.AddLog(
-                $"The files for {targetProject.Config.GameType} do not appear to be fully unpacked. Functionality will be limited. Please use UXM selective unpacker to unpack game files",
+                $"{LOC.Get("PROJECT__GAME_NOT_UNPACKED")}",
                 LogLevel.Warning);
         }
     }
@@ -331,8 +335,10 @@ public class ProjectHandler
         if (!File.Exists(rootDllPath))
         {
             PlatformUtils.Instance.MessageBox(
-                $"Could not find file \"{dllName}\" in \"{targetProject.Config.GameRoot}\", which should be included by default.\n\nTry verifying or reinstalling the game.",
-                "Error",
+                $"{LOC.Get("PROJECT__DLL_MISSING_IN_GAME_ROOT")}" +
+                $"\n{LOC.Get("PROJECT__GAME_DLL")}" + $"{dllName}" +
+                $"\n{LOC.Get("PROJECT__GAME_ROOT")}" + $"{targetProject.Config.GameRoot}",
+                $"{LOC.Get("ERROR")}",
                 MessageBoxButtons.OK);
             return false;
         }
@@ -456,7 +462,7 @@ public class ProjectHandler
                     Smithbox.EditorHandler.GparamEditor.SaveAll();
                 }
 
-                TaskLogs.AddLog($"Automatic Save occured at {e.SignalTime}");
+                TaskLogs.AddLog($"{LOC.Get("PROJECT__AUTOMATIC_SAVE_OCCURED")}" + $"{e.SignalTime}");
             }
         }
     }
@@ -487,7 +493,7 @@ public class ProjectHandler
 
     public void OpenProjectDialog()
     {
-        var success = PlatformUtils.Instance.OpenFileDialog("Choose the project json file", new[] { FilterStrings.ProjectJsonFilter }, out var projectJsonPath);
+        var success = PlatformUtils.Instance.OpenFileDialog($"{LOC.Get("PROJECT__CHOOSE_PROJECT_JSON")}", new[] { FilterStrings.ProjectJsonFilter }, out var projectJsonPath);
 
         if (projectJsonPath != null)
         {
@@ -646,9 +652,10 @@ public class ProjectHandler
             else
             {
                 DialogResult result = PlatformUtils.Instance.MessageBox(
-                    $"Project file at \"{p.ProjectFile}\" does not exist.\n\n" +
-                    $"Remove project from list of recent projects?",
-                    $"Project.json cannot be found", MessageBoxButtons.YesNo);
+                    $"{LOC.Get("PROJECT__PROJECT_FILE_DOES_NOT_EXIST")}" +
+                    $"{LOC.Get("PROJECT__PROJECT_FILE")}" + $"{p.ProjectFile}",
+                    $"{LOC.Get("PROJECT__PROJECT_MISSING")}", 
+                    MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     CFG.RemoveRecentProject(p);
@@ -658,7 +665,7 @@ public class ProjectHandler
 
         if (ImGui.BeginPopupContextItem())
         {
-            if (ImGui.Selectable("Remove from list"))
+            if (ImGui.Selectable($"{LOC.Get("PROJECT__REMOVE_FROM_LIST")}##removeFromListButton"))
             {
                 CFG.RemoveRecentProject(p);
                 CFG.Save();

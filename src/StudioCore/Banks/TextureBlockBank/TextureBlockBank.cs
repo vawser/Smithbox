@@ -2,6 +2,7 @@
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Editor;
+using StudioCore.Localization;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -35,10 +36,12 @@ namespace StudioCore.Banks.TextureBlockBank
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"Failed to load Alias Bank {AliasFileName}: {e.Message}");
+                TaskLogs.AddLog(
+                    $"{LOC.Get("TEXTURE_BLOCK_BANK__FAILED_TO_LOAD")}" +
+                    $"{e.Message}");
             }
 
-            TaskLogs.AddLog($"Texture Block Bank: Loaded Blocks");
+            TaskLogs.AddLog($"{LOC.Get("TEXTURE_BLOCK_BANK__SUCCESSFUL_LOAD")}");
         }
 
         public bool IsBlockedTexture(string virtualPath)

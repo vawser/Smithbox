@@ -8,6 +8,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Drawing;
 using StudioCore.Core;
+using StudioCore.Localization;
 
 namespace StudioCore;
 
@@ -52,6 +53,11 @@ public class CFG
     public Vector3 SavedScale = new Vector3();
 
     //**************
+    // Localization
+    //**************
+    public LocalizationType CurrentLocalizationType = LocalizationType.English;
+
+    //**************
     // Project
     //**************
     public bool Project_LoadRecentProjectImmediately = false;
@@ -94,7 +100,6 @@ public class CFG
     public bool Interface_GparamEditor_Groups = true;
     public bool Interface_GparamEditor_Fields = true;
     public bool Interface_GparamEditor_Values = true;
-    public bool Interface_GparamEditor_Toolbar = true;
 
     public bool Interface_ParticleEditor_Files = true;
     public bool Interface_ParticleEditor_Particles = true;
@@ -898,6 +903,20 @@ public class CFG
                 }
 
                 LoadConfig();
+            }
+        }
+    }
+    public static void AttemptLoadKeybinds()
+    {
+        if (IsEnabled)
+        {
+            lock (_lock_SaveLoadCFG)
+            {
+                if (!Directory.Exists(GetConfigFolderPath()))
+                {
+                    Directory.CreateDirectory(GetConfigFolderPath());
+                }
+
                 LoadKeybinds();
             }
         }

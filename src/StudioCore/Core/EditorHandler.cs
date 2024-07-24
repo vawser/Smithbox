@@ -13,6 +13,7 @@ using StudioCore.Graphics;
 using StudioCore.GraphicsEditor;
 using StudioCore.HavokEditor;
 using StudioCore.Interface;
+using StudioCore.Localization;
 using StudioCore.MaterialEditor;
 using StudioCore.ParticleEditor;
 using StudioCore.Settings;
@@ -150,11 +151,11 @@ public class EditorHandler
     public void HandleEditorSharedBar()
     {
         // Dropdown: File
-        if (ImGui.BeginMenu("File"))
+        if (ImGui.BeginMenu($"{LOC.Get("MENUBAR__COMMON__FILE")}##fileSubMenu"))
         {
             // New Project
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.File}");
-            if (ImGui.MenuItem("New Project", "", false, !TaskManager.AnyActiveTasks()))
+            if (ImGui.MenuItem($"{LOC.Get("MENUBAR__COMMON__NEW_PROJECT")}##newProjectOption", "", false, !TaskManager.AnyActiveTasks()))
             {
                 Smithbox.ProjectHandler.ClearProject();
                 Smithbox.ProjectHandler.IsInitialLoad = true;
@@ -162,14 +163,14 @@ public class EditorHandler
 
             // Open Project
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Folder}");
-            if (ImGui.MenuItem("Open Project", "", false, !TaskManager.AnyActiveTasks()))
+            if (ImGui.MenuItem($"{LOC.Get("MENUBAR__COMMON__OPEN_PROJECT")}##openProjectOption", "", false, !TaskManager.AnyActiveTasks()))
             {
                 Smithbox.ProjectHandler.OpenProjectDialog();
             }
 
             // Recent Projects
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FolderOpen}");
-            if (ImGui.BeginMenu("Recent Projects",
+            if (ImGui.BeginMenu($"{LOC.Get("MENUBAR__COMMON__RECENT_PROJECTS")}##recentProjectsOption",
                     !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
             {
                 Smithbox.ProjectHandler.DisplayRecentProjects();
@@ -179,22 +180,22 @@ public class EditorHandler
 
             // Open in Explorer
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Archive}");
-            if (ImGui.BeginMenu("Open in Explorer",
+            if (ImGui.BeginMenu($"{LOC.Get("MENUBAR__COMMON__OPEN_IN_FILE_EXPLORER")}##openExplorerOption",
                     !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
             {
-                if (ImGui.MenuItem("Project Folder", "", false, !TaskManager.AnyActiveTasks()))
+                if (ImGui.MenuItem($"{LOC.Get("MENUBAR__COMMON__PROJECT_FOLDER")}##openProjectDirOption", "", false, !TaskManager.AnyActiveTasks()))
                 {
                     var projectPath = Smithbox.ProjectRoot;
                     Process.Start("explorer.exe", projectPath);
                 }
 
-                if (ImGui.MenuItem("Game Folder", "", false, !TaskManager.AnyActiveTasks()))
+                if (ImGui.MenuItem($"{LOC.Get("MENUBAR__COMMON__GAME_FOLDER")}##openGameDirOption", "", false, !TaskManager.AnyActiveTasks()))
                 {
                     var gamePath = Smithbox.GameRoot;
                     Process.Start("explorer.exe", gamePath);
                 }
 
-                if (ImGui.MenuItem("Config Folder", "", false, !TaskManager.AnyActiveTasks()))
+                if (ImGui.MenuItem($"{LOC.Get("MENUBAR__COMMON__CONFIG_FOLDER")}##openConfigOption", "", false, !TaskManager.AnyActiveTasks()))
                 {
                     var configPath = CFG.GetConfigFolderPath();
                     Process.Start("explorer.exe", configPath);
@@ -207,7 +208,7 @@ public class EditorHandler
             if (FocusedEditor.ShowSaveOption)
             {
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
-                if (ImGui.MenuItem($"Save Selected {FocusedEditor.SaveType}",
+                if (ImGui.MenuItem($"{LOC.Get("MENUBAR__COMMON__SAVE")}" + $"{FocusedEditor.SaveType}",
                         KeyBindings.Current.Core_SaveCurrentEditor.HintText))
                 {
                     Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
@@ -216,7 +217,7 @@ public class EditorHandler
 
                 // Save All
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
-                if (ImGui.MenuItem($"Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.Core_SaveAllCurrentEditor.HintText))
+                if (ImGui.MenuItem($"{LOC.Get("MENUBAR__COMMON__SAVE_ALL")}" + $"{FocusedEditor.SaveType}", KeyBindings.Current.Core_SaveAllCurrentEditor.HintText))
                 {
                     Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                     SaveAllFocusedEditor();

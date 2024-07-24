@@ -7,6 +7,7 @@ using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Banks.TextureCorrectionBank;
 using StudioCore.Core;
+using StudioCore.Localization;
 using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
@@ -141,7 +142,9 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            TaskLogs.AddLog(
+                $"{baseResourcePath} " +
+                $"{LOC.Get("DOES_NOT_EXIST")}");
         }
 
         return baseResource;
@@ -167,7 +170,9 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            TaskLogs.AddLog(
+                $"{baseResourcePath} " +
+                $"{LOC.Get("DOES_NOT_EXIST")}");
         }
 
         return baseResource;
@@ -193,7 +198,9 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            TaskLogs.AddLog(
+                $"{baseResourcePath} " +
+                $"{LOC.Get("DOES_NOT_EXIST")}");
         }
 
         return baseResource;
@@ -216,7 +223,9 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            TaskLogs.AddLog(
+                $"{baseResourcePath} " +
+                $"{LOC.Get("DOES_NOT_EXIST")}");
         }
 
         return baseResource;
@@ -239,7 +248,9 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            TaskLogs.AddLog(
+                $"{baseResourcePath} " +
+                $"{LOC.Get("DOES_NOT_EXIST")}");
         }
 
         return baseResource;
@@ -262,7 +273,9 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            TaskLogs.AddLog(
+                $"{baseResourcePath} " +
+                $"{LOC.Get("DOES_NOT_EXIST")}");
         }
 
         return baseResource;
@@ -283,7 +296,9 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+            TaskLogs.AddLog(
+                $"{baseResourcePath} " +
+                $"{LOC.Get("DOES_NOT_EXIST")}");
         }
 
         return baseResource;
@@ -304,7 +319,9 @@ public static class BankUtils
         }
         else
         {
-            TaskLogs.AddLog($"{smithboxResource} does not exist!");
+            TaskLogs.AddLog(
+                $"{smithboxResource} " +
+                $"{LOC.Get("DOES_NOT_EXIST")}");
         }
 
         return smithboxResource;

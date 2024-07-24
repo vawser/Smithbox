@@ -1,0 +1,6 @@
+{
+    "List": [
+        { "ID": "CORE_VERSION", "Text": "版本" },
+        { "ID": "SETTINGS_HEADER_SYSTEM", "Text": "系统" }
+    ]
+}

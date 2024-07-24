@@ -1,0 +1,27 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Overview",
+    "Tags": [
+        ""
+    ],
+    "Contents": [
+        "[Header]Information",
+        "Mass edit exists to make large batch-edits according to a simple scheme.",
+        "",
+        "A basic mass edit command is comprised of three selectors and an operation:",
+        "[Highlight@1]: Param Selection",
+        "[Highlight@2]: Row Selection",
+        "[Highlight@3]: Field Selection",
+        "[Highlight@4]: Field Value Operation",
+        "A more advanced mass edit command can instead perform a row operation:",
+        "[Highlight@1]: Param Selection",
+        "[Highlight@2]: Row Selection",
+        "[Highlight@2]: Row Operation",
+        "Selection in each category can be controlled more precisely by using the && characters to combine multiple selection criteria.",
+        "Row and field operations can make use of operation arguments, which return a value that can then be operated on.",
+        "Variables can be used to hold a value.",
+        ""
+    ]
+}

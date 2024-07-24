@@ -1,0 +1,31 @@
+{
+    "Author": "[Highlight@Author]: Archivist2",
+    "ProjectType": 9,
+    "Title": "Fix Model Lag",
+    "HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+    "HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+    "Tags": [
+        "Tutorial",
+        "Armored Core VI", "AC6"
+    ],
+    "Contents": [
+        "[Header]The Problem",
+        "When creating custom parts based on model replacements such as KRDCD's, an issue can arise where the model 'flags' if one attempts to move between the new part and the vanilla one the model files were originally created to replace, additionally resulting in broken textures under some circumstances.",
+        "The model refuses to change unless you switch to another part in between, and if you equip an affected part and another AC equips the other, the other AC will appear to be using yours, as the model is ‘stuck.'",
+        "[Header]The Cause",
+        "When using model replacements, the replacements are configured as, well, replacements, and this influences more than just models.",
+        "For example, if you change a weapon's model in EquipParamWeapon to another vanilla model, it shows the new model's shop icon, proving that the model entry influences more than just the weapon model itself.",
+        "Unpacking model files and opening them with Notepad++ led to the discovery that they contain specific references to the model number they're meant for, which is what results in the problem: while the game recognizes the changed model, the model's own files still reference an original part ID.",
+        "I can't pinpoint which references specifically do this (there are literally hundreds in some files), but it's somewhere in there. The files themselves are indecipherable in this state, because they're not really meant for reading with a text editor. However, this does lead to.",
+        "[Header]The Solution",
+        "The steps to resolve the issue are as follows.",
+        "[Highlight@1]: Unpack the model's .partsbnd files with WitchyBND.",
+        "[Highlight@2]: Open the unpacked files in Notepad++.",
+        "[Highlight@3]: Using Find and Replace, change all instances of the original part ID with the desired ID in each file. You can't read these files like this, so just let Find and Replace do it for you and spare yourself the headache.",
+        "The sub-files involved in this Find and Replace for weapons are the the anibnd, behbnd, and .hks files. I have not done this for frame parts yet and am not aware of differences at this time, I'll get to it.",
+        "[Highlight@4]: Save and rename the files as needed.",
+        "[Highlight@5]: Edit the WitchyBND XML in the unpacked folder to reference the new names.",
+        "[Highlight@6]: Repack the folder with WitchyBND.",
+        ""
+    ]
+}

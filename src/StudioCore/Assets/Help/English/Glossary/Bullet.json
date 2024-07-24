@@ -1,0 +1,16 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Bullet",
+    "Tags": [
+        "Term",
+        "Projectile"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "A bullet is an in-game projectile that can apply some damage and/or effect if it hits.",
+        "In most cases bullets are used for typical projectile purposes however there are esoteric cases such as the Perilous Symbol in Sekiro.",
+        "Typically a bullet is invoked via TAE through the usage of a behavior, but they can also be invoked through SpEffects and via EMEVD."
+    ]
+}

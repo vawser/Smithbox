@@ -1,0 +1,40 @@
+{
+    "ProjectType": 8,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Map Editor: Event",
+    "Tags": [
+        "Feature"
+    ],
+    "Contents": [
+        "[Header]Information",
+        "Event map objects control various attributes or states within the map.",
+        "A simple explanation covering each of the Event map object types.",
+        "Note that not all of the types are present within all of the games.",
+        "[Header]Generator",
+        "A set of attributes that determine the respawn state of a set of linked Enemies at a set of linked SpawnPoints.",
+        "[Header]Navmesh",
+        "Unknown.",
+        "[Header]Mount",
+        "A link between a Enemy rider and a Enemy mount.",
+        "[Header]ObjAct",
+        "A set of attributes that determine the interaction state of an Asset or Object.",
+        "Typically used for levers, lifts and chests.",
+        "[Header]Other",
+        "Unknown.",
+        "[Header]PatrolInfo",
+        "A set of attributes that determine the patrol route used by a linked Enemy.",
+        "It itself links to individual PatrolRoute objects with the Region group.",
+        "[Header]PlatoonInfo",
+        "A set of attributes that determine the composition of a platoon group, and its formation shape and speed.",
+        "[Header]PseudoMultiplayer",
+        "A set of attributes used by a Enemy that should emulate the online invasion mechanics.",
+        "[Header]SignPool",
+        "A link between an Asset and a Summoning Pool region.",
+        "[Header]RetryPoint",
+        "A link between a Statue of Marika and the retry Region.",
+        "[Header]Treasure",
+        "A link between an Asset or Object and an ItemLot.",
+        ""
+    ]
+}

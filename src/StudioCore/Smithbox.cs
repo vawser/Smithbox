@@ -23,6 +23,7 @@ using Version = System.Version;
 using StudioCore.Interface;
 using StudioCore.Core;
 using Microsoft.AspNetCore.Components.Forms;
+using StudioCore.Localization;
 
 namespace StudioCore;
 
@@ -70,9 +71,6 @@ public class Smithbox
 
     public unsafe Smithbox(IGraphicsContext context, string version)
     {
-        _version = version;
-        _programTitle = $"Version {_version}";
-
         ImguiUtils.RestoreImguiIfMissing();
 
         UIScaleChanged += (_, _) =>
@@ -82,7 +80,14 @@ public class Smithbox
 
         // Hack to make sure dialogs work before the main window is created
         PlatformUtils.InitializeWindows(null);
+
         CFG.AttemptLoadOrDefault();
+        LOC.Setup(); 
+        CFG.AttemptLoadKeybinds();
+
+        _version = version;
+        _programTitle = $"Version {_version}";
+
         UI.SetupThemes();
         UI.SetTheme(true);
 
@@ -281,14 +286,14 @@ public class Smithbox
 
         if (CFG.Current.System_Enable_Soapstone_Server)
         {
-            TaskManager.RunPassiveTask(new TaskManager.LiveTask("Soapstone Server",
+            TaskManager.RunPassiveTask(new TaskManager.LiveTask($"{LOC.Get("SOAPSTONE_SERVER")}",
                 TaskManager.RequeueType.None, true,
                 () => SoapstoneServer.RunAsync(KnownServer.Smithbox, _soapstoneService).Wait()));
         }
 
         if (CFG.Current.System_Check_Program_Update)
         {
-            TaskManager.Run(new TaskManager.LiveTask("Check Program Updates",
+            TaskManager.Run(new TaskManager.LiveTask($"{LOC.Get("PROGRAM_UPDATE")}",
                 TaskManager.RequeueType.None, true,
                 () => CheckProgramUpdate()));
         }
@@ -448,10 +453,10 @@ public class Smithbox
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Unable to save config during crash recovery.\n" +
-                                                  $"If you continue to crash on startup, delete config in AppData\\Local\\Smithbox\n\n" +
-                                                  $"{e.Message} {e.StackTrace}",
-                    "Error",
+                PlatformUtils.Instance.MessageBox(
+                    $"{LOC.Get("CRASH__UNABLE_TO_SAVE")}" + 
+                    $"{e.Message} {e.StackTrace}",
+                    $"{LOC.Get("ERROR")}",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
@@ -465,11 +470,9 @@ public class Smithbox
                 EditorHandler.SaveAllFocusedEditor();
 
                 PlatformUtils.Instance.MessageBox(
-                    $"Attempted to save project files to {ProjectRoot} for manual recovery.\n" +
-                    "You must manually replace your project files with these recovery files should you wish to restore them.\n" +
-                    "Given the program has crashed, these files may be corrupt and you should backup your last good saved\n" +
-                    "files before attempting to use these.",
-                    "Saved recovery",
+                    $"{LOC.Get("CRASH__ATTEMPTED_SAVE")}" +
+                    $"{ProjectRoot}", 
+                    $"{LOC.Get("CRASH__SAVED_RECOVERY")}",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
@@ -545,7 +548,7 @@ public class Smithbox
                 ImGui.Separator();
 
                 ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Benefit_Text_Color);
-                if (ImGui.Button("Update Available"))
+                if (ImGui.Button($"{LOC.Get("UPDATE_AVAILABLE")}##smithboxUpdateButton"))
                 {
                     Process myProcess = new();
                     myProcess.StartInfo.UseShellExecute = true;

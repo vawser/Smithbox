@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Localization;
 using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
@@ -71,7 +72,7 @@ public static class EmevdBank
                 fileBytes = script.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveEventScript");
+                TaskLogs.AddLog($"{LOC.Get("EMEVD_EDITOR__INVALID_PROJECT_DURING_SAVE")}");
                 return;
         }
 
@@ -144,21 +145,24 @@ public static class EmevdBank
         IsLoaded = true;
         IsLoading = false;
 
-        TaskLogs.AddLog($"Event Script Bank - Load Complete");
+        TaskLogs.AddLog($"{LOC.Get("EMEVD_EDITOR__LOAD_FILE_BANK")}");
     }
 
     private static void LoadEventScript(string path)
     {
         if (path == null)
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading EMEVD file.",
-                    LogLevel.Warning);
-            return;
+            TaskLogs.AddLog(
+                $"{LOC.Get("EMEVD_EDITOR__FAILED_TO_FIND_PATH")}" +
+                $"{LOC.Get("EMEVD_EDITOR__PATH")}" + $"{path}",
+                LogLevel.Warning);
         }
         if (path == "")
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading EMEVD file.",
-                    LogLevel.Warning);
+            TaskLogs.AddLog(
+                $"{LOC.Get("EMEVD_EDITOR__FAILED_TO_FIND_PATH")}" +
+                $"{LOC.Get("EMEVD_EDITOR__PATH")}" + $"{path}",
+                LogLevel.Warning);
             return;
         }
 
@@ -173,7 +177,7 @@ public static class EmevdBank
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Failed to read {path}");
+            TaskLogs.AddLog($"{path} - " + $"{LOC.Get("EMEVD_EDITOR__FAILED_TO_READ_EMEVD")}" + $"\n{ex.ToString()}");
         }
     }
 

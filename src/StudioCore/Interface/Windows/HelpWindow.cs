@@ -14,7 +14,6 @@ namespace StudioCore.Interface.Windows;
 
 public class HelpWindow
 {
-    private readonly HelpBank _helpBank;
     private bool MenuOpenState;
 
     // Articles
@@ -55,7 +54,6 @@ public class HelpWindow
 
     public HelpWindow()
     {
-        _helpBank = new HelpBank();
     }
 
     public void ToggleMenuVisibility()
@@ -86,13 +84,13 @@ public class HelpWindow
             ImGui.PushStyleColor(ImGuiCol.Header, CFG.Current.Imgui_Moveable_Header);
             ImGui.PushItemWidth(300f);
 
-            DisplayHelpSection(_helpBank.GetArticles(), "Article", "Articles", "article", HelpSectionType.Article, _inputStr_Article, _inputStrCache_Article);
-            DisplayHelpSection(_helpBank.GetTutorials(), "Tutorial", "Tutorials", "tutorial", HelpSectionType.Tutorial, _inputStr_Tutorial, _inputStrCache_Tutorial);
-            DisplayHelpSection(_helpBank.GetGlossaryEntries(), "Glossary", "Glossary", "glossary", HelpSectionType.Glossary, _inputStr_Glossary, _inputStrCache_Glossary);
-            DisplayHelpSection(_helpBank.GetMassEditHelp(), "Mass Edit", "Mass Edit", "mass edit", HelpSectionType.MassEdit, _inputStr_MassEdit, _inputStrCache_MassEdit);
-            DisplayHelpSection(_helpBank.GetRegexHelp(), "Regex", "Regexes", "regex", HelpSectionType.Regex, _inputStr_Regex, _inputStrCache_Regex);
-            DisplayHelpSection(_helpBank.GetLinks(), "Link", "Links", "link", HelpSectionType.Link, _inputStr_Link, _inputStrCache_Link);
-            DisplayHelpSection(_helpBank.GetCredits(), "Credit", "Credits", "credit", HelpSectionType.Credit, _inputStr_Credit, _inputStrCache_Credit);
+            DisplayHelpSection(Smithbox.BankHandler.HelpBank.GetArticles(), "Article", "Articles", "article", HelpSectionType.Article, _inputStr_Article, _inputStrCache_Article);
+            DisplayHelpSection(Smithbox.BankHandler.HelpBank.GetTutorials(), "Tutorial", "Tutorials", "tutorial", HelpSectionType.Tutorial, _inputStr_Tutorial, _inputStrCache_Tutorial);
+            DisplayHelpSection(Smithbox.BankHandler.HelpBank.GetGlossaryEntries(), "Glossary", "Glossary", "glossary", HelpSectionType.Glossary, _inputStr_Glossary, _inputStrCache_Glossary);
+            DisplayHelpSection(Smithbox.BankHandler.HelpBank.GetMassEditHelp(), "Mass Edit", "Mass Edit", "mass edit", HelpSectionType.MassEdit, _inputStr_MassEdit, _inputStrCache_MassEdit);
+            DisplayHelpSection(Smithbox.BankHandler.HelpBank.GetRegexHelp(), "Regex", "Regexes", "regex", HelpSectionType.Regex, _inputStr_Regex, _inputStrCache_Regex);
+            DisplayHelpSection(Smithbox.BankHandler.HelpBank.GetLinks(), "Link", "Links", "link", HelpSectionType.Link, _inputStr_Link, _inputStrCache_Link);
+            DisplayHelpSection(Smithbox.BankHandler.HelpBank.GetCredits(), "Credit", "Credits", "credit", HelpSectionType.Credit, _inputStr_Credit, _inputStrCache_Credit);
 
             ImGui.PopItemWidth();
             ImGui.PopStyleColor();

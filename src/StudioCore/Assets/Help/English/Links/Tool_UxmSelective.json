@@ -1,0 +1,15 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Tool: UXM Selective Unpack",
+    "Tags": [
+        ""
+    ],
+    "Contents": [
+        "[Header]Link",
+        "[Link@https:/github.com/Nordgaren/UXM-Selective-Unpack@UXM Selective Unpack]",
+        "[Header]Description",
+        "Enables file modding for DS1, DS2, SotFS, DS3, Sekiro and Elden Ring by unpacking game archives and patching the executable to load loose files instead."
+    ]
+}

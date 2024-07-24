@@ -1,6 +1,7 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Localization;
 using StudioCore.Locators;
 using StudioCore.Platform;
 using System;
@@ -17,14 +18,17 @@ public class SelectionGroupBank
 {
     public SelectionGroupList Groups { get; set; }
 
-    private string GroupDirectory = "";
+    private string GroupDirectory = "Workflow\\Entity Selection Groups";
 
-    private string GroupFileName = "";
+    private string GroupFileName = "Groups.json";
 
-    public SelectionGroupBank()
+    private string SelectionDirectory = "";
+    private string SelectionPath = "";
+
+    public SelectionGroupBank() 
     {
-        GroupDirectory = "selections";
-        GroupFileName = "selection_groups";
+        SelectionDirectory = $"{Smithbox.SmithboxDataRoot}\\{GroupDirectory}\\{MiscLocator.GetGameIDForDir()}\\";
+        SelectionPath = $"{SelectionDirectory}\\{GroupFileName}";
     }
 
     public void LoadBank()
@@ -35,19 +39,18 @@ public class SelectionGroupBank
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"Failed to load Selection Group Bank: {e.Message}");
+            TaskLogs.AddLog(
+                $"{LOC.Get("SELECTION_GROUP_BANK__FAILED_TO_LOAD")}" +
+                $"{e.Message}");
         }
 
-        TaskLogs.AddLog($"Selection Group Bank: Loaded Selection Groups");
+        TaskLogs.AddLog($"{LOC.Get("SELECTION_GROUP_BANK__SUCCESSFUL_LOAD")}");
     }
 
     public void CreateSelectionGroups()
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
-
-        var SelectionDirectory = $"{Smithbox.SmithboxDataRoot}\\{MiscLocator.GetGameIDForDir()}\\selections";
-        var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
 
         if (!Directory.Exists(SelectionDirectory))
         {
@@ -57,7 +60,10 @@ public class SelectionGroupBank
             }
             catch
             {
-                TaskLogs.AddLog($"Failed to create selection groups directory: {SelectionDirectory}");
+                TaskLogs.AddLog(
+                    $"{LOC.Get("SELECTION_GROUP_BANK__FAILED_TO_MAKE_DIR")}" + 
+                    $"{SelectionDirectory}");
+
                 return;
             }
 
@@ -89,24 +95,47 @@ public class SelectionGroupBank
 
     public bool AddSelectionGroup(string name, List<string> tags, List<string> selection, int keybindIndex, bool isEdit = false, string oldName = "")
     {
+        if(Groups.Resources == null)
+            Groups.Resources = new List<SelectionGroupResource> { };
+
         if (name == "")
         {
-            PlatformUtils.Instance.MessageBox("Group name is empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            PlatformUtils.Instance.MessageBox(
+                $"{LOC.Get("SELECTION_GROUP__GROUP_NAME_IS_EMPTY")}",
+                $"{LOC.Get("WARNING")}", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Error);
+
             return false;
         }
         else if (!isEdit && Groups.Resources.Any(x => x.Name == name))
         {
-            PlatformUtils.Instance.MessageBox("Group name already exists.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            PlatformUtils.Instance.MessageBox(
+                $"{LOC.Get("SELECTION_GROUP__GROUP_NAME_ALREADY_EXISTS")}",
+                $"{LOC.Get("WARNING")}", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Error);
+
             return false;
         }
         else if (!isEdit && selection == null)
         {
-            PlatformUtils.Instance.MessageBox("Selection is invalid.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            PlatformUtils.Instance.MessageBox(
+                $"{LOC.Get("SELECTION_GROUP__SELECTION_IS_INVALID")}",
+                $"{LOC.Get("WARNING")}", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Error);
+
             return false;
         }
         else if (!isEdit && selection.Count == 0)
         {
-            PlatformUtils.Instance.MessageBox("Selection is empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            PlatformUtils.Instance.MessageBox(
+                $"{LOC.Get("SELECTION_GROUP__SELECTION_IS_EMPTY")}",
+                $"{LOC.Get("WARNING")}", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Error);
+
             return false;
         }
         else if (keybindIndex != -1 && Groups.Resources.Any(x => x.SelectionGroupKeybind == keybindIndex))
@@ -116,7 +145,14 @@ public class SelectionGroupBank
             {
                 group = Groups.Resources.Where(x => (x.SelectionGroupKeybind == keybindIndex) && (x.Name != name)).First();
             }
-            PlatformUtils.Instance.MessageBox($"Keybind already assigned to another selection group: {group.Name}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            PlatformUtils.Instance.MessageBox(
+                $"{LOC.Get("SELECTION_GROUP__KEYBIND_ALREADY_ASSIGNED")}" +
+                $"{group.Name}",
+                $"{LOC.Get("WARNING")}", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Error);
+
             return false;
         }
         else
@@ -145,9 +181,6 @@ public class SelectionGroupBank
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return false;
-
-        var SelectionDirectory = $"{Smithbox.SmithboxDataRoot}\\{MiscLocator.GetGameIDForDir()}\\selections";
-        var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
 
         string jsonString = JsonSerializer.Serialize(Groups, typeof(SelectionGroupList), SelectionGroupListSerializationContext.Default);
 

@@ -97,11 +97,6 @@ public class WorldMapScreen : IResourceEventListener
             zoomFactor = GetDefaultZoomLevel();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_DragMap))
-        {
-            AdjustScrollNextFrame = true;
-        }
-
         if (InputTracker.GetKey(Key.Escape))
         {
             IsViewingSOTEMap = false;

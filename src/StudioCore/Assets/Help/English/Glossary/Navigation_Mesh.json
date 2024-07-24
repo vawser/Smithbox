@@ -1,0 +1,14 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Navigation Mesh",
+    "Tags": [
+        "Term",
+        "Navmesh"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "Navigation mesh is a set of data about how enemies can navigate within and between collisions, baked on top of the collision data."
+    ]
+}

@@ -4,6 +4,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
+using StudioCore.Localization;
 using StudioCore.UserProject;
 using System.Collections.Generic;
 using System.Numerics;
@@ -37,9 +38,9 @@ public class EsdEditorScreen : EditorScreen
     {
     }
 
-    public string EditorName => "ESD Editor##TalkScriptEditor";
+    public string EditorName => $"{LOC.Get("EDITOR__ESD_EDITOR")}##TalkScriptEditor";
     public string CommandEndpoint => "esd";
-    public string SaveType => "ESD";
+    public string SaveType => $"{LOC.Get("EDITOR__ESD_EDITOR_SAVE_TYPE")}";
 
     public void Init()
     {
@@ -87,11 +88,8 @@ public class EsdEditorScreen : EditorScreen
     public void EsdFileView()
     {
         // File List
-        ImGui.Begin("Files##TalkFileList");
-
-        ImGui.Text($"File");
-        ImGui.Separator();
-
+        ImGui.Begin($"{LOC.Get("ESD_EDITOR__MENU__FILES")}" + "##TalkFileList");
+        
         foreach (var (info, binder) in EsdBank.TalkBank)
         {
             if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedBinderKey))
@@ -106,13 +104,10 @@ public class EsdEditorScreen : EditorScreen
 
         ImGui.End();
 
-        ImGui.Begin("Scripts##EsdScriptList");
+        ImGui.Begin($"{LOC.Get("ESD_EDITOR__MENU__SCRIPTS")}" + "##EsdScriptList");
 
         if (_selectedFileInfo != null)
         {
-            ImGui.Text($"Scripts");
-            ImGui.Separator();
-
             for (int i = 0; i < _selectedFileInfo.EsdFiles.Count; i++)
             {
                 ESD entry = _selectedFileInfo.EsdFiles[i];
@@ -130,7 +125,7 @@ public class EsdEditorScreen : EditorScreen
 
     public void EsdStateGroupSelectView()
     {
-        ImGui.Begin("State Group Selection##EsdStateGroupSelectView");
+        ImGui.Begin($"{LOC.Get("ESD_EDITOR__MENU__STATE_GROUP_SELECTION")}" + "##EsdStateGroupSelectView");
 
         if (_selectedEsdScript != null)
         {
@@ -153,7 +148,7 @@ public class EsdEditorScreen : EditorScreen
     public void EsdStateNodeSelectView()
     {
         // File List
-        ImGui.Begin("State Node Selection##EsdStateNodeSelectView");
+        ImGui.Begin($"{LOC.Get("ESD_EDITOR__MENU__STATE_NODE_SELECTION")}" + "##EsdStateNodeSelectView");
 
         if (_selectedStateGroups != null)
         {

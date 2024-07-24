@@ -1,6 +1,7 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
+using StudioCore.Banks.HelpBank;
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Banks.SelectionGroupBank;
 using StudioCore.Banks.TextureAdditionBank;
@@ -59,6 +60,8 @@ public class BankHandler
     public LightmapAtlasBank LightmapAtlasBank;
     public MaterialResourceBank MaterialBank;
 
+    public HelpBank HelpBank;
+
     public bool ReloadAliasBanks;
 
     public BankHandler()
@@ -93,6 +96,8 @@ public class BankHandler
         FMGBank = new FMGBank();
         LightmapAtlasBank = new LightmapAtlasBank();
         MaterialBank = new MaterialResourceBank();
+
+        HelpBank = new HelpBank();
     }
 
     public void UpdateBanks()
@@ -131,6 +136,8 @@ public class BankHandler
 
         LightmapAtlasBank.LoadBank();
         MaterialBank.LoadBank();
+
+        HelpBank.LoadBank();
 
         ParamBank.ReloadParams();
     }

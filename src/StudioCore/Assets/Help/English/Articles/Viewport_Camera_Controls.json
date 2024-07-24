@@ -1,0 +1,18 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Viewport: Camera Controls",
+    "Tags": [
+        "Tip", "Hint",
+        "Camera", "Controls"
+    ],
+    "Contents": [
+        "[Header]Information",
+        "Holding click on the viewport will enable camera controls.",
+        "Use WASD to navigate.",
+        "Use right click to rotate the camera.",
+        "Hold Shift to temporarily speed up and Ctrl to temporarily slow down.",
+        "Scroll the mouse wheel to adjust overall speed."
+    ]
+}

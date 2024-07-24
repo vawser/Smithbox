@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Localization;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -177,14 +178,14 @@ public class TaskManager
             {
                 if (PassiveTask)
                 {
-                    TaskLogs.AddLog($"Running passive task: {TaskId}",
+                    TaskLogs.AddLog($"{LOC.Get("TASK_MANAGER__PASSIVE_TASK")} " + $"{TaskId}",
                         LogLevel.Information, LogPriority);
                 }
 
                 try
                 {
                     TaskAction.Invoke();
-                    TaskLogs.AddLog($"Task Completed: {TaskId}",
+                    TaskLogs.AddLog($"{LOC.Get("TASK_MANAGER__TASK_COMPLETE")} " + $"{TaskId}",
                         LogLevel.Information, LogPriority);
                 }
                 catch (Exception e)
@@ -195,7 +196,7 @@ public class TaskManager
                         {
                             e = e.InnerException;
                         }
-                        TaskLogs.AddLog($"Task Failed: {TaskId}",
+                        TaskLogs.AddLog($"{LOC.Get("TASK_MANAGER__TASK_FAILED")} " + $"{TaskId}",
                             LogLevel.Error, LogPriority, e);
                     }
                     else

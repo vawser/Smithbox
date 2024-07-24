@@ -1,0 +1,14 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Attack",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "[Header]Meaning",
+        "An action taken by a character, including the player, which can apply damage and/or effects along with animation(s).",
+        "This is a type of behavior."
+    ]
+}

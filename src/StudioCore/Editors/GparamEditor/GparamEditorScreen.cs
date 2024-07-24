@@ -5,9 +5,9 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
-using StudioCore.Editors.GparamEditor.Toolbar;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Interface;
+using StudioCore.Localization;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
@@ -58,20 +58,11 @@ public class GparamEditorScreen : EditorScreen
 
     private bool[] displayTruth;
 
-    public GparamToolbar _gparamToolbar;
-    public GparamToolbar_ActionList _gparamToolbar_ActionList;
-    public GparamToolbar_Configuration _gparamToolbar_Configuration;
+    public GparamEditorScreen(Sdl2Window window, GraphicsDevice device) { }
 
-    public GparamEditorScreen(Sdl2Window window, GraphicsDevice device)
-    {
-        _gparamToolbar = new GparamToolbar(EditorActionManager);
-        _gparamToolbar_ActionList = new GparamToolbar_ActionList();
-        _gparamToolbar_Configuration = new GparamToolbar_Configuration();
-    }
-
-    public string EditorName => "Gparam Editor##GparamEditor";
+    public string EditorName => $"{LOC.Get("EDITOR__GPARAM_EDITOR")}" + "##GparamEditor";
     public string CommandEndpoint => "gparam";
-    public string SaveType => "Gparam";
+    public string SaveType => $"{LOC.Get("EDITOR__GPARAM_EDITOR_SAVE_TYPE")}";
 
     public void Init()
     {
@@ -80,22 +71,22 @@ public class GparamEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
-        if (ImGui.BeginMenu("Edit"))
+        if (ImGui.BeginMenu($"{LOC.Get("GPARAM_EDITOR__MENUBAR__EDIT")}##gparamEditSubMenu"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_EDITOR__MENUBAR__UNDO")}##gparamUndoButton", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false, EditorActionManager.CanUndo()))
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_EDITOR__MENUBAR__UNDO_ALL")}##gparamUndoAllButton", "", false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_EDITOR__MENUBAR__REDO")}##gparamRedoButton", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
             }
@@ -103,42 +94,35 @@ public class GparamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu($"{LOC.Get("GPARAM_EDITOR__MENUBAR__VIEW")}##gparamViewSubMenu"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Files"))
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_EDITOR__MENUBAR__FILES")}" + "##viewFilterFiles"))
             {
                 CFG.Current.Interface_GparamEditor_Files = !CFG.Current.Interface_GparamEditor_Files;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Files);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Groups"))
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_EDITOR__MENUBAR__GROUPS")}" + "##viewFilterGroups"))
             {
                 CFG.Current.Interface_GparamEditor_Groups = !CFG.Current.Interface_GparamEditor_Groups;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Groups);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Fields"))
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_EDITOR__MENUBAR__FIELDS")}" + "##viewFilterFields"))
             {
                 CFG.Current.Interface_GparamEditor_Fields = !CFG.Current.Interface_GparamEditor_Fields;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Fields);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Values"))
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_EDITOR__MENUBAR__VALUES")}" + "##viewFilterValues"))
             {
                 CFG.Current.Interface_GparamEditor_Values = !CFG.Current.Interface_GparamEditor_Values;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Values);
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Toolbar"))
-            {
-                CFG.Current.Interface_GparamEditor_Toolbar = !CFG.Current.Interface_GparamEditor_Toolbar;
-            }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Toolbar);
 
             ImGui.EndMenu();
         }
@@ -161,19 +145,11 @@ public class GparamEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_GparamEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2 || Smithbox.ProjectHandler.CurrentProject == null)
         {
             ImGui.Begin("Editor##InvalidGparamEditor");
 
-            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
-
-            ImGui.End();
-        }
-        else if(Smithbox.ProjectHandler.CurrentProject == null)
-        {
-            ImGui.Begin("Editor##InvalidGparamEditor");
-
-            ImGui.Text("No project loaded. File -> New Project");
+            ImGui.Text($"{LOC.Get("EDITOR_DOES_NOT_SUPPORT")}" + $"{Smithbox.ProjectType}.");
 
             ImGui.End();
         }
@@ -288,12 +264,6 @@ public class GparamEditorScreen : EditorScreen
                     GparamValueProperties();
                 }
             }
-
-            if (CFG.Current.Interface_GparamEditor_Toolbar)
-            {
-                _gparamToolbar_ActionList.OnGui();
-                _gparamToolbar_Configuration.OnGui();
-            }
         }
 
         ImGui.PopStyleVar();
@@ -319,12 +289,12 @@ public class GparamEditorScreen : EditorScreen
     /// </summary>
     private void GparamListView()
     {
-        ImGui.Begin("Files##GparamFileList");
+        ImGui.Begin($"{LOC.Get("GPARAM_EDITOR__INTERFACE__FILES")}" + "##GparamFileList");
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _fileSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        ImGui.InputText($"{LOC.Get("GPARAM_EDITOR__INTERFACE__SEARCH")}##gparamSearchFilter", ref _fileSearchInput, 255);
+        ImguiUtils.ShowHoverTooltip($"{LOC.Get("GPARAM_EDITOR__INTERFACE__SEARCH_TOOLTIP")}");
 
         ImGui.Separator();
 
@@ -369,12 +339,12 @@ public class GparamEditorScreen : EditorScreen
     /// </summary>
     public void GparamGroupList()
     {
-        ImGui.Begin("Groups##GparamGroups");
+        ImGui.Begin($"{LOC.Get("GPARAM_EDITOR__INTERFACE__GROUPS")}" + "##GparamGroups");
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _paramGroupSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        ImGui.InputText($"{LOC.Get("GPARAM_EDITOR__INTERFACE__SEARCH")}##gparamGroupSearchFilter", ref _paramGroupSearchInput, 255);
+        ImguiUtils.ShowHoverTooltip($"{LOC.Get("GPARAM_EDITOR__INTERFACE__SEARCH_TOOLTIP")}");
 
         ImGui.Separator();
 
@@ -387,7 +357,7 @@ public class GparamEditorScreen : EditorScreen
         {
             GPARAM data = _selectedGparam;
 
-            ImGui.Text($"Group");
+            ImGui.Text($"{LOC.Get("GPARAM_EDITOR__TITLE_GROUP")}");
             ImGui.Separator();
 
             // Available groups
@@ -488,12 +458,12 @@ public class GparamEditorScreen : EditorScreen
     /// </summary>
     public void GparamFieldList()
     {
-        ImGui.Begin("Fields##GparamFields");
+        ImGui.Begin($"{LOC.Get("GPARAM_EDITOR__INTERFACE__FIELDS")}" + "##GparamFields");
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _paramFieldSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        ImGui.InputText($"{LOC.Get("GPARAM_EDITOR__INTERFACE__SEARCH")}##gparamFieldSearchFilter", ref _paramFieldSearchInput, 255);
+        ImguiUtils.ShowHoverTooltip($"{LOC.Get("GPARAM_EDITOR__INTERFACE__SEARCH_TOOLTIP")}");
 
         ImGui.Separator();
 
@@ -506,7 +476,7 @@ public class GparamEditorScreen : EditorScreen
         {
             GPARAM.Param data = _selectedParamGroup;
 
-            ImGui.Text($"Field");
+            ImGui.Text($"{LOC.Get("GPARAM_EDITOR__TITLE_FIELD")}");
             ImGui.Separator();
 
             for (int i = 0; i < data.Fields.Count; i++)
@@ -580,7 +550,7 @@ public class GparamEditorScreen : EditorScreen
             // Unknown should be skipped
             if (missing.id != "Unknown")
             {
-                if (ImGui.Button($"Add##{missing.id}"))
+                if (ImGui.Button($"{LOC.Get("GPARAM_EDITOR__ACTION_ADD")}" + "##{missing.id}"))
                 {
                     AddMissingField(_selectedParamGroup, missing);
                     _selectedGparamInfo.WasModified = true;
@@ -596,12 +566,12 @@ public class GparamEditorScreen : EditorScreen
     /// </summary>
     private void GparamValueProperties()
     {
-        ImGui.Begin("Values##GparamValues");
+        ImGui.Begin($"{LOC.Get("GPARAM_EDITOR__INTERFACE__VALUES")}" + "##GparamValues");
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _fieldIdSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        ImGui.InputText($"{LOC.Get("GPARAM_EDITOR__INTERFACE__SEARCH")}##gparamValueSearchFilter", ref _fieldIdSearchInput, 255);
+        ImguiUtils.ShowHoverTooltip($"{LOC.Get("GPARAM_EDITOR__INTERFACE__SEARCH_TOOLTIP")}");
 
         GparamQuickEdit.OnGui();
 
@@ -653,7 +623,7 @@ public class GparamEditorScreen : EditorScreen
 
             // Time of Day
             ImGui.BeginChild("IdList##GparamTimeOfDay");
-            ImGui.Text($"Time of Day");
+            ImGui.Text($"{LOC.Get("GPARAM_EDITOR__PROPERTY_TIME_OF_DAY")}");
             ImGui.Separator();
 
             for (int i = 0; i < field.Values.Count; i++)
@@ -671,7 +641,7 @@ public class GparamEditorScreen : EditorScreen
 
             // Value
             ImGui.BeginChild("ValueList##GparamPropertyValues");
-            ImGui.Text($"Value");
+            ImGui.Text($"{LOC.Get("GPARAM_EDITOR__PROPERTY_VALUE")}");
             ImGui.Separator();
 
             for (int i = 0; i < field.Values.Count; i++)
@@ -690,7 +660,7 @@ public class GparamEditorScreen : EditorScreen
 
             // Value
             ImGui.BeginChild("InfoList##GparamPropertyInfo");
-            ImGui.Text($"Information");
+            ImGui.Text($"{LOC.Get("GPARAM_EDITOR__PROPERTY_INFORMATION")}");
             ImGui.Separator();
 
             // Only show once
@@ -813,35 +783,35 @@ public class GparamEditorScreen : EditorScreen
     {
         if (info.Name == _selectedGparamKey)
         {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
+            if (ImGui.BeginPopupContextItem($"{LOC.Get("GPARAM_EDITOR__CONTEXT__OPTIONS")}" + "##Gparam_File_Context"))
             {
                 // Only show if the file exists in the project directory
                 if (info.Path.Contains(Smithbox.ProjectRoot))
                 {
-                    if (ImGui.Selectable("Remove"))
+                    if (ImGui.Selectable($"{LOC.Get("GPARAM_EDITOR__CONTEXT__DELETE")}##deleteEntryOption"))
                     {
                         RemoveGparamFile(info);
 
                         ImGui.CloseCurrentPopup();
                     }
-                    ImguiUtils.ShowHoverTooltip("Delete the selected file from your project.");
+                    ImguiUtils.ShowHoverTooltip($"{LOC.Get("GPARAM_EDITOR__CONTEXT__DELETE_TOOLTIP")}");
                 }
 
-                if (ImGui.Selectable("Duplicate"))
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_EDITOR__CONTEXT__DUPLICATE")}##duplicateEntryOption"))
                 {
                     DuplicateGparamFile();
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
+                ImguiUtils.ShowHoverTooltip($"{LOC.Get("GPARAM_EDITOR__CONTEXT__DUPLICATE_TOOLTIP")}");
 
-                if (ImGui.Selectable("Copy"))
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_EDITOR__CONTEXT__COPY")}##copyEntryOption"))
                 {
                     CopyGparamFile(info);
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Copy the selected file and rename it to the name specified below");
+                ImguiUtils.ShowHoverTooltip($"{LOC.Get("GPARAM_EDITOR__CONTEXT__COPY_TOOLTIP")}");
 
                 ImGui.Separator();
 
@@ -865,16 +835,16 @@ public class GparamEditorScreen : EditorScreen
     {
         if (index == _selectedParamGroupKey)
         {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_Group_Context"))
+            if (ImGui.BeginPopupContextItem($"{LOC.Get("GPARAM_EDITOR__CONTEXT__OPTIONS")}" + "##Gparam_Group_Context"))
             {
-                if (ImGui.Selectable("Remove"))
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_EDITOR__CONTEXT__DELETE")}##deleteGroupOption"))
                 {
                     _selectedGparam.Params.Remove(_selectedParamGroup);
                     _selectedGparamInfo.WasModified = true;
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Delete the selected group.");
+                ImguiUtils.ShowHoverTooltip($"{LOC.Get("GPARAM_EDITOR__CONTEXT__DELETE_GROUP_TOOLTIP")}");
 
                 ImGui.EndPopup();
             }
@@ -889,16 +859,16 @@ public class GparamEditorScreen : EditorScreen
     {
         if (index == _selectedParamFieldKey)
         {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_Field_Context"))
+            if (ImGui.BeginPopupContextItem($"{LOC.Get("GPARAM_EDITOR__CONTEXT__OPTIONS")}" + "##Gparam_Field_Context"))
             {
-                if (ImGui.Selectable("Remove"))
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_EDITOR__CONTEXT__DELETE")}##deleteRowOption"))
                 {
                     _selectedParamGroup.Fields.Remove(_selectedParamField);
                     _selectedGparamInfo.WasModified = true;
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Delete the selected row.");
+                ImguiUtils.ShowHoverTooltip($"{LOC.Get("GPARAM_EDITOR__CONTEXT__DELETE_ROW_TOOLTIP")}");
 
                 ImGui.EndPopup();
             }
@@ -913,9 +883,9 @@ public class GparamEditorScreen : EditorScreen
     {
         if (index == _selectedFieldValueKey)
         {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_PropId_Context"))
+            if (ImGui.BeginPopupContextItem($"{LOC.Get("GPARAM_EDITOR__CONTEXT__OPTIONS")}" + "##Gparam_PropId_Context"))
             {
-                if (ImGui.Selectable("Remove"))
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_EDITOR__CONTEXT__DELETE")}##deletePropertyOption"))
                 {
                     GparamEditor.RemovePropertyValueRow(_selectedParamField, _selectedFieldValue);
                     _selectedGparamInfo.WasModified = true;
@@ -925,9 +895,9 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Delete the value row.");
+                ImguiUtils.ShowHoverTooltip($"{LOC.Get("GPARAM_EDITOR__CONTEXT__DELETE_VALUE_TOOLTIP")}");
 
-                if (ImGui.Selectable("Duplicate"))
+                if (ImGui.Selectable($"{LOC.Get("GPARAM_EDITOR__CONTEXT__DUPLICATE_VALUE")}##duplicatePropertyOption"))
                 {
                     ExtendDisplayTruth(_selectedParamField);
                     GparamEditor.AddPropertyValueRow(_selectedParamField, _selectedFieldValue, _duplicateValueRowId);
@@ -938,7 +908,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
+                ImguiUtils.ShowHoverTooltip($"{LOC.Get("GPARAM_EDITOR__CONTEXT__DUPLICATE_VALUE_TOOLTIP")}");
 
                 ImGui.InputInt("##valueIdInput", ref _duplicateValueRowId);
 
@@ -1029,12 +999,12 @@ public class GparamEditorScreen : EditorScreen
 
         if (File.Exists(filePath))
         {
-            TaskLogs.AddLog($"{baseFileName} was removed from your project.");
+            TaskLogs.AddLog($"{baseFileName}" + $" {LOC.Get("GPARAM_EDITOR__FILE__REMOVE_FROM_PROJECT")}");
             File.Delete(filePath);
         }
         else
         {
-            TaskLogs.AddLog($"{baseFileName} does not exist within your project.");
+            TaskLogs.AddLog($"{baseFileName}" + $" {LOC.Get("GPARAM_EDITOR__FILE__DOES_NOT_EXIST")}");
         }
 
         GparamParamBank.LoadGraphicsParams();
@@ -1061,7 +1031,7 @@ public class GparamEditorScreen : EditorScreen
         }
         else
         {
-            TaskLogs.AddLog($"{newFilePath} already exists!");
+            TaskLogs.AddLog($"{newFilePath}" + $" {LOC.Get("GPARAM_EDITOR__FILE__ALREADY_EXISTS")}");
         }
 
         GparamParamBank.LoadGraphicsParams();
@@ -1092,7 +1062,7 @@ public class GparamEditorScreen : EditorScreen
             }
             else
             {
-                TaskLogs.AddLog($"{newFilePath} already exists!");
+                TaskLogs.AddLog($"{newFilePath}" + $" {LOC.Get("GPARAM_EDITOR__FILE__ALREADY_EXISTS")}");
                 tryFileName = currentfileName;
             }
         }

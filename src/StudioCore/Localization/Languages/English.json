@@ -1,0 +1,1550 @@
+{
+  "List": [
+    // CORE
+    {
+      "ID": "SOAPSTONE_SERVER",
+      "Text": "Soapstone Server"
+    },
+    {
+      "ID": "PROGRAM_UPDATE",
+      "Text": "Check Program Updates"
+    },
+    {
+      "ID": "ERROR",
+      "Text": "Error"
+    },
+    {
+      "ID": "WARNING",
+      "Text": "Warning"
+    },
+    {
+      "ID": "INFORMATION",
+      "Text": "Information"
+    },
+    {
+      "ID": "UPDATE_AVAILABLE",
+      "Text": "Update Available"
+    },
+    {
+      "ID": "DOES_NOT_EXIST",
+      "Text": "does not exist!"
+    },
+    {
+      "ID": "PARAM_CHECK_DIFFERENCES",
+      "Text": "Param - Check Differences"
+    },
+    {
+      "ID": "EDITOR_DOES_NOT_SUPPORT",
+      "Text": "This editor does not support"
+    },
+
+    // EDITORS
+    {
+      "ID": "EDITOR__CUTSCENE_EDITOR",
+      "Text": "Cutscene Editor"
+    },
+    {
+      "ID": "EDITOR__CUTSCENE_EDITOR_SAVE_TYPE",
+      "Text": "Cutscene"
+    },
+    {
+      "ID": "EDITOR__EMEVD_EDITOR",
+      "Text": "EMEVD Editor"
+    },
+    {
+      "ID": "EDITOR__EMEVD_EDITOR_SAVE_TYPE",
+      "Text": "EMEVD"
+    },
+    {
+      "ID": "EDITOR__ESD_EDITOR",
+      "Text": "ESD Editor"
+    },
+    {
+      "ID": "EDITOR__ESD_EDITOR_SAVE_TYPE",
+      "Text": "ESD"
+    },
+    {
+      "ID": "EDITOR__GPARAM_EDITOR",
+      "Text": "GPARAM Editor"
+    },
+    {
+      "ID": "EDITOR__GPARAM_EDITOR_SAVE_TYPE",
+      "Text": "GPARAM"
+    },
+    {
+      "ID": "EDITOR__HAVOK_EDITOR",
+      "Text": "Havok Editor"
+    },
+    {
+      "ID": "EDITOR__HAVOK_EDITOR_SAVE_TYPE",
+      "Text": "HKX"
+    },
+    {
+      "ID": "EDITOR__MAP_EDITOR",
+      "Text": "Map Editor"
+    },
+    {
+      "ID": "EDITOR__MAP_EDITOR_SAVE_TYPE",
+      "Text": "Maps"
+    },
+
+    // SETTINGS
+    {
+      "ID": "HEADER_SYSTEM",
+      "Text": "System"
+    },
+
+    // CRASH
+    {
+      "ID": "CRASH__UNABLE_TO_SAVE",
+      "Text": "Unable to save config during crash recovery.\nIf you continue to crash on startup, delete config in AppData\\Local\\Smithbox\n\n"
+    },
+    {
+      "ID": "CRASH__ATTEMPTED_SAVE",
+      "Text": "Attempted to save project files for manual recovery.\nYou must manually replace your project files with these recovery files should you wish to restore them.\nGiven the program has crashed, these files may be corrupt and you should backup your last good saved\nfiles before attempting to use these.\nProject files saved to: "
+    },
+    {
+      "ID": "CRASH__SAVED_RECOVERY",
+      "Text": "Saved Recovery"
+    },
+
+    // BANKS
+    {
+      "ID": "ALIAS_BANK__BANK",
+      "Text": "Bank"
+    },
+    {
+      "ID": "ALIAS_BANK__FAILED_TO_LOAD",
+      "Text": "Failed to load:"
+    },
+    {
+      "ID": "ALIAS_BANK__SUCCESSFUL_LOAD",
+      "Text": "Loaded"
+    },
+    {
+      "ID": "ALIAS_BANK__UNNAMED_ENUM",
+      "Text": "Not named"
+    },
+    {
+      "ID": "FORMAT_BANK__BANK",
+      "Text": "Bank"
+    },
+    {
+      "ID": "FORMAT_BANK__FAILED_TO_LOAD",
+      "Text": "Failed to load:"
+    },
+    {
+      "ID": "FORMAT_BANK__SUCCESSFUL_LOAD",
+      "Text": "Loaded"
+    },
+    {
+      "ID": "GAME_OFFSET_BANK__FAILED_TO_LOAD",
+      "Text": "Failed to load: Game Offset Bank"
+    },
+    {
+      "ID": "GAME_OFFSET_BANK__SUCCESSFUL_LOAD",
+      "Text": "Loaded Game Offset Bank"
+    },
+    {
+      "ID": "PROJECT_ENUM_BANK__FAILED_TO_LOAD",
+      "Text": "Failed to load:"
+    },
+    {
+      "ID": "PROJECT_ENUM_BANK__BANK",
+      "Text": "Bank"
+    },
+    {
+      "ID": "PROJECT_ENUM_BANK__SUCCESSFUL_LOAD",
+      "Text": "Loaded Project Enum Bank"
+    },
+    {
+      "ID": "PROJECT_ENUM_BANK__FAILED_TO_FIND_ENUM_JSON",
+      "Text": "Failed to find base Enums.json"
+    },
+    {
+      "ID": "SELECTION_GROUP_BANK__FAILED_TO_LOAD",
+      "Text": "Failed to load: Selection Group Bank."
+    },
+    {
+      "ID": "SELECTION_GROUP_BANK__SUCCESSFUL_LOAD",
+      "Text": "Loaded Selection Group Bank."
+    },
+    {
+      "ID": "SELECTION_GROUP_BANK__FAILED_TO_MAKE_DIR",
+      "Text": "Failed to create Selection Groups directory."
+    },
+    {
+      "ID": "TEXTURE_ADDITIONS_BANK__FAILED_TO_LOAD",
+      "Text": "Failed to load: Texture Addition Bank."
+    },
+    {
+      "ID": "TEXTURE_ADDITIONS_BANK__SUCCESSFUL_LOAD",
+      "Text": "Loaded Texture Addition Bank"
+    },
+    {
+      "ID": "TEXTURE_BLOCK_BANK__FAILED_TO_LOAD",
+      "Text": "Failed to load: Texture Block Bank."
+    },
+    {
+      "ID": "TEXTURE_BLOCK_BANK__SUCCESSFUL_LOAD",
+      "Text": "Loaded Texture Block Bank"
+    },
+    {
+      "ID": "TEXTURE_CORRECTION_BANK__FAILED_TO_LOAD",
+      "Text": "Failed to load: Texture Correction Bank."
+    },
+    {
+      "ID": "TEXTURE_CORRECTION_BANK__SUCCESSFUL_LOAD",
+      "Text": "Loaded Texture Correction Bank"
+    },
+    {
+      "ID": "ALIAS_CACHE__SUCCESSFUL_LOAD",
+      "Text": "Loaded Alias Name Cache"
+    },
+
+    // Selection Groups
+    {
+      "ID": "SELECTION_GROUP__GROUP_NAME_IS_EMPTY",
+      "Text": "Group name is empty."
+    },
+    {
+      "ID": "SELECTION_GROUP__GROUP_NAME_ALREADY_EXISTS",
+      "Text": "Group name already exists."
+    },
+    {
+      "ID": "SELECTION_GROUP__SELECTION_IS_INVALID",
+      "Text": "Selection is invalid."
+    },
+    {
+      "ID": "SELECTION_GROUP__SELECTION_IS_EMPTY",
+      "Text": "Selection is empty."
+    },
+    {
+      "ID": "SELECTION_GROUP__KEYBIND_ALREADY_ASSIGNED",
+      "Text": "Keybind already assigned to another selection group:"
+    },
+
+    // Keybinds
+    {
+      "ID": "KEYBIND__CORE__CREATE",
+      "Text": "Create"
+    },
+    {
+      "ID": "KEYBIND__CORE__DELETE",
+      "Text": "Delete"
+    },
+    {
+      "ID": "KEYBIND__CORE__DUPLICATE",
+      "Text": "Duplicate"
+    },
+    {
+      "ID": "KEYBIND__CORE__REDO",
+      "Text": "Redo"
+    },
+    {
+      "ID": "KEYBIND__CORE__UNDO",
+      "Text": "Undo"
+    },
+    {
+      "ID": "KEYBIND__CORE__SAVE_ALL",
+      "Text": "Save All"
+    },
+    {
+      "ID": "KEYBIND__CORE__SAVE",
+      "Text": "Save"
+    },
+    {
+      "ID": "KEYBIND__WINDOW__PROJECT_WINDOW",
+      "Text": "Toggle Project Window"
+    },
+    {
+      "ID": "KEYBIND__WINDOW__HELP_WINDOW",
+      "Text": "Toggle Help Window"
+    },
+    {
+      "ID": "KEYBIND__WINDOW__KEYBIND_WINDOW",
+      "Text": "Toggle Keybind Window"
+    },
+    {
+      "ID": "KEYBIND__WINDOW__MEMORY_WINDOW",
+      "Text": "Toggle Memory Window"
+    },
+    {
+      "ID": "KEYBIND__WINDOW__SETTINGS_WINDOW",
+      "Text": "Toggle Settings Window"
+    },
+    {
+      "ID": "KEYBIND__WINDOW__ALIAS_WINDOW",
+      "Text": "Toggle Alias Window"
+    },
+    {
+      "ID": "KEYBIND__WINDOW__TOOL_WINDOW",
+      "Text": "Toggle Tool Window"
+    },
+    {
+      "ID": "KEYBIND__WINDOW__DEBUG_WINDOW",
+      "Text": "Toggle Debug Window"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__ROTATE_SELECTION_ON_X_AXIS",
+      "Text": "Rotate Selection on X Axis"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__ROTATE_SELECTION_ON_Y_AXIS",
+      "Text": "Rotate Selection on Y Axis"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__PIVOT_SELECTION_ON_X_AXIS",
+      "Text": "Pivot Selection on X Axis"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__GO_TO_SELECTION_IN_MAP_OBJECT_LIST",
+      "Text": "Go to Selection in Object List"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__MOVE_SELECTION_TO_CAMERA_POSITION",
+      "Text": "Move Selection to Camera Position"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__FRAME_SELECTION_IN_VIEWPORT",
+      "Text": "Go to Selection in Object List"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__FLIP_VISIBILITY_OF_SELECTION",
+      "Text": "Flip Visibility of Selection"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__FLIP_VISIBILITY_OF_ALL_ENTITIES",
+      "Text": "Flip Visibility of all Entities"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__ENABLE_VISIBILITY_OF_SELECTION",
+      "Text": "Enable Visibility of Selection"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__ENABLE_VISIBILITY_OF_ALL_ENTITIES",
+      "Text": "Enable Visibility of all Entities"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__DISABLE_VISIBILITY_OF_SELECTION",
+      "Text": "Disable Visibility of Selection"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__DISABLE_VISIBILITY_OF_ALL_ENTITIES",
+      "Text": "Disable Visibility of all Entities"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__RESET_SELECTION_ROTATION",
+      "Text": "Reset Rotation of Selection to (0,0,0)"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__MAKE_SELECTION_A_DUMMY_MAP_OBJECT",
+      "Text": "Make Selection a Dummy Map Object"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SCRAMBLE_SELECTION",
+      "Text": "Scramble Selection"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__REPLICATE_SELECTION",
+      "Text": "Replicate Selection"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__MOVE_SELECTION_TO_VIEWPORT_GRID",
+      "Text": "Move Selection Vertical Position to Viewport Grid Height"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__CREATE_MAP_OBJECT",
+      "Text": "Create New Map Object"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__RENDER_PATROL_ROUTE_CONNECTIONS",
+      "Text": "Render Patrol Route Connections"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__EXPORT_PREFAB",
+      "Text": "Export Prefab"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__IMPORT_PREFAB",
+      "Text": "Import Prefab"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__COPY_SELECTION_TO_NEW_MAP",
+      "Text": "Copy Selection to New Map"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__PROPERTY_SEARCH",
+      "Text": "Make Selection a Normal Map Object"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__RENDER_GROUP__GET_DISPLAY_GROUP",
+      "Text": "Render Group: Get Display Group"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__RENDER_GROUP__GET_DRAW_GROUP",
+      "Text": "Render Group: Get Draw Group"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__RENDER_GROUP__GIVE_DISPLAY_GROUP",
+      "Text": "Render Group: Give Display Group"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__RENDER_GROUP__GIVE_DRAW_GROUP",
+      "Text": "Render Group: Give Draw Group"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__RENDER_GROUP__HIDE_ALL",
+      "Text": "Render Group: Hide All"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__RENDER_GROUP__SHOW_ALL",
+      "Text": "Render Group: Show All"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__RENDER_GROUP__SELECT_HIGHLIGHTS",
+      "Text": "Render Group: Select Highlights"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SELECTION_GROUP_CREATE",
+      "Text": "Create New Selection Group"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_0",
+      "Text": "Select Selection Group 0"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_1",
+      "Text": "Select Selection Group 1"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_2",
+      "Text": "Select Selection Group 2"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_3",
+      "Text": "Select Selection Group 3"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_4",
+      "Text": "Select Selection Group 4"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_5",
+      "Text": "Select Selection Group 5"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_6",
+      "Text": "Select Selection Group 6"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_7",
+      "Text": "Select Selection Group 7"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_8",
+      "Text": "Select Selection Group 8"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_9",
+      "Text": "Select Selection Group 9"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_10",
+      "Text": "Select Selection Group 10"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__ORDER_UP",
+      "Text": "Move Selected Map Object up in Map Object List"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__ORDER_DOWN",
+      "Text": "Move Selected Map Object down in Map Object List"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__ORDER_TOP",
+      "Text": "Move Selected Map Object to top of Map Object List"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__ORDER_BOTTOM",
+      "Text": "Move Selected Map Object to bottom of Map Object List"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__MAP__OPEN_LANDS_BETWEEN_MAP",
+      "Text": "Toggle Lands Between Map Window"
+    },
+    {
+      "ID": "KEYBIND__MAP_EDITOR__MAP__OPEN_SOTE_MAP",
+      "Text": "Toggle Shadow of the Erdtree Map Window"
+    },
+    {
+      "ID": "KEYBIND__MODEL_EDITOR__TOGGLE_VISIBILITY_ALL",
+      "Text": "Toggle Visiblity for All"
+    },
+    {
+      "ID": "KEYBIND__MODEL_EDITOR__MULTISELECT_ROW",
+      "Text": "Hold to Select Row for Multi-Selection"
+    },
+    {
+      "ID": "KEYBIND__MODEL_EDITOR__MULTISELECT_ROW_RANGE",
+      "Text": "Hold to Select Row Range for Multi-Selection"
+    },
+    {
+      "ID": "KEYBIND__MODEL_EDITOR__EXPORT_MODEL",
+      "Text": "Export Loaded Model"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__COPY_ROW",
+      "Text": "Copy Row"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__PASTE_ROW",
+      "Text": "Paste Row"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__IMPORT_CSV",
+      "Text": "Import CSV"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__EXPORT_CSV",
+      "Text": "Export CSV"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__OVERVIEW_GO_BACK",
+      "Text": "Overview: Go Back"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__GO_TO_ROW_ID",
+      "Text": "Go to Row ID"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__GO_TO_SELECTED_ROW",
+      "Text": "Go to Selected Row"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__HOT_LOAD_PARAM",
+      "Text": "Hot Load currently selected Param"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__HOT_LOAD_PARAMS",
+      "Text": "Hot Load all Params"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__TOGGLE_MASSEDIT_WINDOW",
+      "Text": "Toggle Massedit Window"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__SEARCH_FIELD",
+      "Text": "Sarch Field"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__SEARCH_ROW",
+      "Text": "Search Row"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__SEARCH_PARAM",
+      "Text": "Search Param"
+    },
+    {
+      "ID": "KEYBIND__PARAM_EDITOR__SELECT_ALL_ROWS",
+      "Text": "Select All Rows"
+    },
+    {
+      "ID": "KEYBIND__TEXT_EDITOR__SYNC_DESCRIPTIONS",
+      "Text": "Sync Descriptions to Base Entry"
+    },
+    {
+      "ID": "KEYBIND__TEXT_EDITOR__SEARCH_TEXT",
+      "Text": "Search Text"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__MOVE_BACKWARD",
+      "Text": "Move Backwards"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__MOVE_DOWN",
+      "Text": "Move Down"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__MOVE_FORWARD",
+      "Text": "Move Forward"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__MOVE_LEFT",
+      "Text": "Move Left"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__MOVE_RIGHT",
+      "Text": "Move Right"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__MOVE_UP",
+      "Text": "Move Up"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__RESET",
+      "Text": "Reset"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__GIZMO_ROTATION_MODE",
+      "Text": "Cycle Gizmo Rotation Mode"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__GIZMO_ORIGIN_MODE",
+      "Text": "Cycle Gizmo Origin Mode"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__GIZMO_SPACE_MODE",
+      "Text": "Cycle Gizmo Space Mode"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__GIZMO_TRANSLATE_MODE",
+      "Text": "Cycle Gizmo Translate Mode"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__MAP_GRID__LOWER",
+      "Text": "Lower Viewport Grid Height"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__MAP_GRID__RAISE",
+      "Text": "Raise Viewport Grid Height"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__MAP_GRID__SET_TO_SELECTION",
+      "Text": "Set Viewport Grid Height to Selection Height"
+    },
+    {
+      "ID": "KEYBIND__VIEWPORT__TOGGLE_SELECTION_OUTLINE",
+      "Text": "Toggle Selection Outline"
+    },
+    {
+      "ID": "KEYBIND__TEXTURE_VIEWER__ZOOM_MODE",
+      "Text": "Hold for Zoom Mode"
+    },
+    {
+      "ID": "KEYBIND__TEXTURE_VIEWER__RESET_ZOOM",
+      "Text": "Reset Zoom Magnification"
+    },
+
+    // MENUBAR - COMMON
+    {
+      "ID": "MENUBAR__COMMON__FILE",
+      "Text": "File"
+    },
+    {
+      "ID": "MENUBAR__COMMON__NEW_PROJECT",
+      "Text": "New Project"
+    },
+    {
+      "ID": "MENUBAR__COMMON__OPEN_PROJECT",
+      "Text": "Open Project"
+    },
+    {
+      "ID": "MENUBAR__COMMON__RECENT_PROJECTS",
+      "Text": "Recent Projects"
+    },
+    {
+      "ID": "MENUBAR__COMMON__OPEN_IN_FILE_EXPLORER",
+      "Text": "Open in Explorer"
+    },
+    {
+      "ID": "MENUBAR__COMMON__PROJECT_FOLDER",
+      "Text": "Project Folder"
+    },
+    {
+      "ID": "MENUBAR__COMMON__GAME_FOLDER",
+      "Text": "Game Folder"
+    },
+    {
+      "ID": "MENUBAR__COMMON__CONFIG_FOLDER",
+      "Text": "Config Folder"
+    },
+    {
+      "ID": "MENUBAR__COMMON__SAVE",
+      "Text": "Save Selected "
+    },
+    {
+      "ID": "MENUBAR__COMMON__SAVE_ALL",
+      "Text": "Save All Modified "
+    },
+
+    // PROJECT
+    {
+      "ID": "PROJECT__FAILED_TO_LOAD_RECENT",
+      "Text": "Failed to load recent project."
+    },
+    {
+      "ID": "PROJECT__PROJECT_CREATION",
+      "Text": "Project Creation"
+    },
+    {
+      "ID": "PROJECT__PROJECT_LOAD_ERROR",
+      "Text": "Project Load Error"
+    },
+    {
+      "ID": "PROJECT__PROJECT_LOAD_FAILED",
+      "Text": "Failed to load last project. Project will not be loaded after restart."
+    },
+    {
+      "ID": "PROJECT__PROJECT_LOAD_EMPTY_PATH",
+      "Text": "Path parameter was empty:"
+    },
+    {
+      "ID": "PROJECT__EMPTY_PROJECT_ROOT",
+      "Text": "Smithbox.ProjectRoot is empty!"
+    },
+    {
+      "ID": "PROJECT__GAME_ROOT_INVALID",
+      "Text": "Could not find game data directory for current project type. Please select the game executable."
+    },
+    {
+      "ID": "PROJECT__GAME_NOT_UNPACKED_DS1_DS2",
+      "Text": "The files for the current project type do not appear to be unpacked. Please use UDSFM for DS1:PTDE and UXM for DS2 to unpack game files."
+    },
+    {
+      "ID": "PROJECT__GAME_NOT_UNPACKED",
+      "Text": "The files for the current project type do not appear to be fully unpacked. Functionality will be limited. Please use UXM selective unpacker to unpack game files."
+    },
+    {
+      "ID": "PROJECT__DLL_MISSING_IN_GAME_ROOT",
+      "Text": "Could not find file target DLL in game root, which should be included by default. Try verifying or reinstalling the game."
+    },
+    {
+      "ID": "PROJECT__GAME_DLL",
+      "Text": "DLL: "
+    },
+    {
+      "ID": "PROJECT__GAME_ROOT",
+      "Text": "Game Root: "
+    },
+    {
+      "ID": "PROJECT__AUTOMATIC_SAVE_OCCURED",
+      "Text": "Automatic Save occured at "
+    },
+    {
+      "ID": "PROJECT__CHOOSE_PROJECT_JSON",
+      "Text": "Choose the project json file"
+    },
+    {
+      "ID": "PROJECT__PROJECT_FILE_DOES_NOT_EXIST",
+      "Text": "Project file does not exist.\n\nRemove project from list of recent projects?"
+    },
+    {
+      "ID": "PROJECT__PROJECT_MISSING",
+      "Text": "Project.json cannot be found"
+    },
+    {
+      "ID": "PROJECT__PROJECT_FILE",
+      "Text": "Project File: "
+    },
+    {
+      "ID": "PROJECT__REMOVE_FROM_LIST",
+      "Text": "Remove from List"
+    },
+
+    // PROJECT MODAL
+    {
+      "ID": "PROJECT_MODAL__LOAD_PROJECT",
+      "Text": "Load Project"
+    },
+    {
+      "ID": "PROJECT_MODAL__CREATE_PROJECT",
+      "Text": "Create Project"
+    },
+    {
+      "ID": "PROJECT_MODAL__RECENT_PROJECTS",
+      "Text": "Recent Projects"
+    },
+    {
+      "ID": "PROJECT_MODAL__LOAD_NEW_PROJECT",
+      "Text": "Load New Project"
+    },
+    {
+      "ID": "PROJECT_MODAL__LOAD_RECENT_PROJECT",
+      "Text": "Load Recent Project"
+    },
+    {
+      "ID": "PROJECT_MODAL__PROJECT_NAME",
+      "Text": "Project Name:"
+    },
+    {
+      "ID": "PROJECT_MODAL__PROJECT_NAME_TOOLTIP",
+      "Text": "Project's display name. Only affects visuals within Smithbox."
+    },
+    {
+      "ID": "PROJECT_MODAL__PROJECT_DIRECTORY",
+      "Text": "Project Directory:"
+    },
+    {
+      "ID": "PROJECT_MODAL__PROJECT_DIRECTORY_TOOLTIP",
+      "Text": "The location mod files will be saved.\nTypically, this should be Mod Engine's Mod folder."
+    },
+    {
+      "ID": "PROJECT_MODAL__SELECT_PROJECT_DIR",
+      "Text": "Select project directory..."
+    },
+    {
+      "ID": "PROJECT_MODAL__PROJECT_PLACED_AT_DRIVE_ROOT",
+      "Text": "Project Directory has been placed in a drive root. This is not allowed. Please select a different location."
+    },
+    {
+      "ID": "PROJECT_MODAL__GAME_EXECUTABLE",
+      "Text": "Game Executable:"
+    },
+    {
+      "ID": "PROJECT_MODAL__GAME_EXECUTABLE_TOOLTIP",
+      "Text": "The location of the game's .EXE or EBOOT.BIN file.\nThe folder with the executable will be used to obtain unpacked game data."
+    },
+    {
+      "ID": "PROJECT_MODAL__SELECT_GAME_EXECUTABLE",
+      "Text": "Select executable for the game you want to mod..."
+    },
+    {
+      "ID": "PROJECT_MODAL__LOOSE_PARAMS",
+      "Text": "Loose Params:"
+    },
+    {
+      "ID": "PROJECT_MODAL__LOOSE_PARAMS_TOOLTIP",
+      "Text": "Default: OFF\nDS2: Save and Load parameters as individual .param files instead of regulation.\nDS3: Save and Load parameters as decrypted .parambnd instead of regulation."
+    },
+    {
+      "ID": "PROJECT_MODAL__IMPORT_ROW_NAMES",
+      "Text": "Import row names:"
+    },
+    {
+      "ID": "PROJECT_MODAL__IMPORT_ROW_NAMES_TOOLTIP",
+      "Text": "Default: OFF\nImports and applies row names from lists stored in Assets folder.\nRow names can be imported at any time in the param editor's Edit menu."
+    },
+    {
+      "ID": "PROJECT_MODAL__INVALID_GAME_EXECUTABLE",
+      "Text": "Your game executable path does not exist. Please select a valid executable."
+    },
+    {
+      "ID": "PROJECT_MODAL__UNSUPPORTED_GAME",
+      "Text": "Your game executable is not a valid supported game."
+    },
+    {
+      "ID": "PROJECT_MODAL__INVALID_DIRECTORY",
+      "Text": "Your selected project directory is not valid."
+    },
+    {
+      "ID": "PROJECT_MODAL__ALREADY_EXISTING_PROJECT",
+      "Text": "Your selected project directory already contains a project.json. Would you like to replace it?"
+    },
+    {
+      "ID": "PROJECT_MODAL__PROJECT_MATCHES_GAME_ROOT",
+      "Text": "Project Directory is the same as Game Directory, which allows game files to be overwritten directly.\n\nIt's highly recommended you use the Mod Engine mod folder as your project folder instead (if possible).\n\nContinue and create project anyway?"
+    },
+    {
+      "ID": "PROJECT_MODAL__NO_PROJECT_NAME",
+      "Text": "You must specify a project name."
+    },
+    {
+      "ID": "PROJECT_MODAL__INVALID_GAME",
+      "Text": "No valid game has been detected. Please select a valid executable."
+    },
+
+    // WINDOWS
+    {
+      "ID": "WINDOW_HANDLER__PROJECT",
+      "Text": "Project"
+    },
+    {
+      "ID": "WINDOW_HANDLER__ALIAS",
+      "Text": "Aliases"
+    },
+    {
+      "ID": "WINDOW_HANDLER__HELP",
+      "Text": "Help"
+    },
+    {
+      "ID": "WINDOW_HANDLER__SETTINGS",
+      "Text": "Settings"
+    },
+    {
+      "ID": "WINDOW_HANDLER__KEYBINDS",
+      "Text": "Keybinds"
+    },
+    {
+      "ID": "WINDOW_HANDLER__MEMORY",
+      "Text": "Memory"
+    },
+    {
+      "ID": "WINDOW_HANDLER__TOOLS",
+      "Text": "Tools"
+    },
+    {
+      "ID": "WINDOW_HANDLER__DEBUG",
+      "Text": "Debug"
+    },
+
+    // DECORATOR
+    {
+      "ID": "DECORATOR__TEXTURE_REF_TITLE",
+      "Text": "   [Image]"
+    },
+    {
+      "ID": "DECORATOR__PARAM_REF_EMPTY",
+      "Text": "___"
+    },
+    {
+      "ID": "DECORATOR__TEXTURE_REF_ACTION",
+      "Text": "View Source Image"
+    },
+    {
+      "ID": "DECORATOR__MISSING_ENUM_ENTRY",
+      "Text": "Not Enumerated"
+    },
+    {
+      "ID": "DECORATOR__NONE_ENUM_ENTRY",
+      "Text": "None"
+    },
+    {
+      "ID": "DECORATOR__VIRTUAL_PARAM_REF_SEARCH_IN",
+      "Text": "Search in"
+    },
+    {
+      "ID": "DECORATOR__EXT_REF_GO_TO_FILE",
+      "Text": "Go to external file:"
+    },
+    {
+      "ID": "DECORATOR__EXT_REF_GO_TO_FILE_FAIL",
+      "Text": "could not be found. It may be map or chr specific."
+    },
+    {
+      "ID": "DECORATOR__PROPERTY_ROW__GO_TO",
+      "Text": "Go to"
+    },
+    {
+      "ID": "DECORATOR__PROPERTY_ROW__IN_NEW_VIEW",
+      "Text": "in new view"
+    },
+    {
+      "ID": "DECORATOR__PROPERTY_ROW__INHERIT_REF_NAME",
+      "Text": "Inherit referenced row's name"
+    },
+    {
+      "ID": "DECORATOR__PROPERTY_ROW__PROLIFERATE_NAME_TO_REF",
+      "Text": "Proliferate name to referenced row"
+    },
+    {
+      "ID": "DECORATOR__SEARCHBAR_SEARCH",
+      "Text": "Search..."
+    },
+    {
+      "ID": "DECORATOR__PARAM_FIELD_FAILED_CONVERT",
+      "Text": "Unable to convert value into param field's type'"
+    },
+    {
+      "ID": "DECORATOR__FMG_GOTO",
+      "Text": "Go to"
+    },
+    {
+      "ID": "DECORATOR__FMG_TEXT",
+      "Text": "Text"
+    },
+    {
+      "ID": "DECORATOR__INHERIT_REF_FMG",
+      "Text": "Inherit referenced fmg"
+    },
+    {
+      "ID": "DECORATOR__PROLIFERATE_NAME_TO_FMG",
+      "Text": "Proliferate name to referenced fmg"
+    },
+    {
+      "ID": "DECORATOR__TEX_REF_VIEW",
+      "Text": "View"
+    },
+    {
+      "ID": "DECORATOR__PARAM_REVERSE_REF_SEARCH",
+      "Text": "Search for references..."
+    },
+    {
+      "ID": "DECORATOR__PARAM_REVERSE_REF_IN",
+      "Text": "in"
+    },
+    {
+      "ID": "DECORATOR__PARAM_REVERSE_REF_NO_ROWS",
+      "Text": "No rows found."
+    },
+    {
+      "ID": "DECORATOR__PARAM_REVERSE_REF_NO_REF",
+      "Text": "This param is not referenced."
+    },
+    {
+      "ID": "DECORATOR__CALCGRAPH_NOTE_1",
+      "Text": "Note: add"
+    },
+    {
+      "ID": "DECORATOR__CALCGRAPH_NOTE_2",
+      "Text": "to x coordinate"
+    },
+    {
+      "ID": "DECORATOR__CALCGRAPH_INVALID_DRAW",
+      "Text": "Unable to draw graph."
+    },
+    {
+      "ID": "DECORATOR__PIN__MOVE_UP",
+      "Text": "Move pin up"
+    },
+    {
+      "ID": "DECORATOR__PIN__MOVE_DOWN",
+      "Text": "Move pin up"
+    },
+    {
+      "ID": "DECORATOR__PROPERTY_INFO__BITFIELD_TYPE",
+      "Text": "Bitfield Type within:"
+    },
+    {
+      "ID": "DECORATOR__PROPERTY_INFO__MIN",
+      "Text": "Min"
+    },
+    {
+      "ID": "DECORATOR__PROPERTY_INFO__MAX",
+      "Text": "Max"
+    },
+    {
+      "ID": "DECORATOR__PROPERTY_INFO__ARRAY_TYPE",
+      "Text": "Array Type:"
+    },
+    {
+      "ID": "DECORATOR__PROPERTY_INFO__LENGTH",
+      "Text": "Length:"
+    },
+    {
+      "ID": "DECORATOR__PROPERTY_INFO__VALUE_TYPE",
+      "Text": "Value Type:"
+    },
+    {
+      "ID": "DECORATOR__PROPERTY_INFO__STRING_TYPE",
+      "Text": "String Type:"
+    },
+    {
+      "ID": "MAP_CONTAINER__WRAPPED_OBJECT_NOT_BTL_LIGHT",
+      "Text": "WrappedObject is not a BTL Light."
+    },
+    {
+      "ID": "MAP_CONTAINER__DS2_ID_ALREADY_USED",
+      "Text": "has an ID that's already used. Please change it to something unique and save again."
+    },
+
+    // TASK MANAGER
+    {
+      "ID": "TASK_MANAGER__PASSIVE_TASK",
+      "Text": "Running passive task:"
+    },
+    {
+      "ID": "TASK_MANAGER__TASK_COMPLETE",
+      "Text": "Task Completed:"
+    },
+    {
+      "ID": "TASK_MANAGER__TASK_FAILED",
+      "Text": "Task Failed:"
+    },
+
+    // UIHINTS
+    {
+      "ID": "UIHINT_HELP",
+      "Text": "Help"
+    },
+    {
+      "ID": "UIHINT_MASSEDIT_HINT",
+      "Text": "For help with regex or examples, consult the main help menu.\nMass Edit Commands exist to make large batch-edits according to a simple scheme.\nSpecific help with individual components of massedit can be found in the autofill menu by  clicking the ?\n\nThe autofill is a valuable tool to help understand massedits. Feel free to experiment, you can ctrl-z a massedit.\n\nA mass edit command is formed of selectors and an operation.\nThere are multiple stages of selection when making a param massedit, going from params, to rows, to cells (fields).\n\nFinally, an operation is applied to everything selected.\n\nA selector has a name, such as the row selector 'prop', and can have arguments, separated by spaces.\n\nIn this case, prop expects the property name, and a value that the row should have to be selected.\nAll rows which match this are kept, while everything else is discarded.\nThis process repeats for each condition, and across each stage of selection.\nThere exists a special case of selector, which combines both param and row selectors into one key word.\nMost commonly this is the 'selection' selector, which selects currently selected rows in the currently selected param.\nUnlike the search bar selections, selections in massedit apply stricter criteria, needing to match exactly.\n\nAn operation also has a name, though often this is a symbol, such as '+', and has arguments.\nAn operation's arguments begin after the first space, but are actually separated with another : when there are multiple.\nThis is because the argument may also have arguments itself, separated with spaces.\nFor example, the argument 'field weight'. Instead of a fixed number, for each param, row and cell evaluated, a value to use is determined.\nIn this case, the number to add depends on the row we're currently in, and retrieves a different weight value each row.\n\nThe following is for advanced topics, and requires you to enable advanced options in the settings.\n\nMassedit can do more than modify final values of the currently loaded params.\nAfer selecting rows, it is possible to perform a row operation instead of selecting cells/fields.\nThese operations act on rows instead, including copying them into clipboard, or pasting them into the current params.\nThere exists also global operations, which require no selectors beforehand, such as clear to clear the clipboard.\nThe clipboard only supports 1 param at a time, and can be selected from in the same manner as current UI selection.\n\nWhen an additional set of params (parambank) is loaded, aux selectors and arguments become available.\nWith these, one can make a selection of not the currently loaded params, but from an auxilliary set.\nWhile it is not ideal to modify these with cell operations, they are useful for row operations, including passing rows between parambanks.\n\nMassedit can also define variables for use, mostly in scripts. A variable's type is dictated when defined in a global operation.\nIt can be an integer, floating point number, or a string.\nA variable's current value can be accessed using $name, and is usable in selector args, op args, and even the args of those op args.\nSets of vars can be selected in the same manner as params, and can be modified with the same operations available to edit param fields."
+    },
+    {
+      "ID": "UIHINT_SEARCH_BAR_HINT",
+      "Text": "For help with regex or examples, consult the main help menu.\nThis searchbar utilise Regex, and words surrounded by ! in commands indicate that a Regex expression may be used instead of plain text.\nAll other words in capitals are parameters for the given command.\nRegex searches are case-insensitive and the searched term may appear anywhere in the target rows. To specify an exact match, surround the text with ^ and $ (eg. ^10$) or use a range variant.\nMultiple selectors can be given by separating them with &&.\n\nRow selection is done through any of the following:\n    !VALUE!: to select rows with a matching ID or a matching name\n    modified: to select rows changed from vanilla\n    !modified: to select unmodified rows\n    id !VALUE!: to select rows with a matching ID\n    idrange MIN MAX: to select rows with an ID within the given bounds\n    name !NAME!: to select rows with a matching name\n    prop FIELD !VALUE!: to select rows who have a matching value for the given field\n    proprange FIELD MIN MAX: to select rows who have a value for the given field within the given bounds\n    propref FIELD !NAME!: to select rows that have a reference to another row with a matching name.\n\nA complete search may look like the following examples:\nid 10000 (This searches for all rows with an id containing 10000. This includes 10000, 1000010, 210000)\nname Dagger (This searches for all rows with a name containing Dagger. This includes Blood Dagger, Sharp daggers and daggerfall)\npropref originEquipWep0 Dagger (This searches for all rows whose field originEquipWep0 refers to a row with a name containing Dagger, following the same rules above.\nname Dagger && idrange 10000 Infinity (This searches for all rows with a name containing Dagger and that have an id greater than 9999)"
+    },
+
+    // CUTSCENE EDITOR
+    {
+      "ID": "CUTSCENE_EDITOR__INVALID_PROJECT_DURING_SAVE",
+      "Text": "Invalid project type during save."
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__LOAD_FILE_BANK",
+      "Text": "Cutscene File Bank - Load Complete"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__FAILED_TO_FIND_PATH",
+      "Text": "Could not locate path when loading MQB file."
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PATH",
+      "Text": "Path:"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__FAILED_TO_READ_MQB",
+      "Text": "Failed to read MQB file."
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__FILES",
+      "Text": "Files"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__CUTSCENES",
+      "Text": "Files"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__CUTSCENE_PROPERTIES",
+      "Text": "Cutscene Properties"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__FRAMERATE",
+      "Text": "Framerate"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__RESOURCE_DIRECTORY",
+      "Text": "Resource Directory"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__CUTS",
+      "Text": "Cuts"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__CUT_PROPERTIES",
+      "Text": "Cut Properties"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__DURATION",
+      "Text": "Duration"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__TIMELINES",
+      "Text": "Timelines"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__DISPOSITIONS",
+      "Text": "Dispositions"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__TIMELINE_CUSTOM_DATA",
+      "Text": "Timeline - Custom Data"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__TIMELINE_CUSTOM_DATA_PROPERTIES",
+      "Text": "Timeline - Custom Data Properties"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__TYPE",
+      "Text": "Type"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__UNK44",
+      "Text": "Unk44"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__VALUE",
+      "Text": "Value"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__TIMELINE_SEQUENCES",
+      "Text": "Timeline - Sequences"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__TIMELINE_SEQUENCE_PROPERTIES",
+      "Text": "Timeline - Sequence Properties"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__TIMELINE_SEQUENCE_POINT_PROPERTIES",
+      "Text": "Timeline - Sequence - Point Properties"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__VALUE_TYPE",
+      "Text": "Value Type"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__POINT_TYPE",
+      "Text": "Point Type"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__VALUE_INDEX",
+      "Text": "Value Index"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__UNK08",
+      "Text": "Unk08"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__UNK10",
+      "Text": "Unk10"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__UNK14",
+      "Text": "Unk14"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__DISPOSITION_PROPERTIES",
+      "Text": "Disposition Properties"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__RESOURCEINDEX",
+      "Text": "ResourceIndex"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__STARTFRAME",
+      "Text": "StartFrame"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__UNK18",
+      "Text": "Unk18"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__UNK1C",
+      "Text": "Unk1C"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__UNK20",
+      "Text": "Unk20"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__UNK28",
+      "Text": "Unk28"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__DISPOSITION_CUSTOM_DATA",
+      "Text": "Disposition - Custom Data"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__DISPOSITION_TRANSFORMS",
+      "Text": "Disposition - Custom Data"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__DISPOSITION_TRANSFORM_PROPERTIES",
+      "Text": "Disposition - Custom Data"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__FRAME",
+      "Text": "Frame"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__TRANSLATION",
+      "Text": "Translation"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__ROTATION",
+      "Text": "Rotation"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__UNK34",
+      "Text": "Unk34"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__UNK40",
+      "Text": "Unk40"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__SCALE",
+      "Text": "Scale"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__UNK58",
+      "Text": "Unk58"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__PROPERTY__UNK64",
+      "Text": "Unk64"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__DISPOSITION__CUSTOM_DATA_PROPERTIES",
+      "Text": "Disposition - Custom Data Properties"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__DISPOSITION__SEQUENCES",
+      "Text": "Disposition - Sequences"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__DISPOSITION__SEQUENCE_PROPERTIES",
+      "Text": "Disposition - Sequence Properties"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__DISPOSITION__SEQUENCE_POINTS",
+      "Text": "Disposition - Sequence - Points"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU__DISPOSITION__SEQUENCE_POINT_PROPERTIES",
+      "Text": "Disposition - Sequence - Point Properties"
+    },
+    {
+      "ID": "CUTSCENE_EDITOR__MENU_RESOURCES",
+      "Text": "Resources"
+    },
+    // EMEVD Editor
+    {
+      "ID": "EMEVD_EDITOR__INVALID_PROJECT_DURING_SAVE",
+      "Text": "Invalid project type during save."
+    },
+    {
+      "ID": "EMEVD_EDITOR__LOAD_FILE_BANK",
+      "Text": "Event Script Bank - Load Complete"
+    },
+    {
+      "ID": "EMEVD_EDITOR__FAILED_TO_FIND_PATH",
+      "Text": "Could not locate path when loading EMEVD file."
+    },
+    {
+      "ID": "EMEVD_EDITOR__PATH",
+      "Text": "Path:"
+    },
+    {
+      "ID": "EMEVD_EDITOR__FAILED_TO_READ_EMEVD",
+      "Text": "Failed to read EMEVD file."
+    },
+    {
+      "ID": "EMEVD_EDITOR__MENU__FILES",
+      "Text": "Files"
+    },
+    {
+      "ID": "EMEVD_EDITOR__MENU__EVENTS",
+      "Text": "Events"
+    },
+    {
+      "ID": "EMEVD_EDITOR__MENU__EVENT_INSTRUCTIONS",
+      "Text": "Event Instructions"
+    },
+    // ESD Editor
+    {
+      "ID": "ESD_EDITOR__INVALID_PROJECT_DURING_SAVE",
+      "Text": "Invalid project type during save."
+    },
+    {
+      "ID": "ESD_EDITOR__LOAD_FILE_BANK",
+      "Text": "ESD Script Bank - Load Complete"
+    },
+    {
+      "ID": "ESD_EDITOR__FAILED_TO_FIND_PATH",
+      "Text": "Could not locate path when loading ESD file."
+    },
+    {
+      "ID": "ESD_EDITOR__FAILED_TO_READ_ESD",
+      "Text": "Failed to read ESD file."
+    },
+    {
+      "ID": "ESD_EDITOR__PATH",
+      "Text": "Path:"
+    },
+    {
+      "ID": "ESD_EDITOR__MENU__FILES",
+      "Text": "Files"
+    },
+    {
+      "ID": "ESD_EDITOR__MENU__SCRIPTS",
+      "Text": "Scripts"
+    },
+    {
+      "ID": "ESD_EDITOR__MENU__STATE_GROUP_SELECTION",
+      "Text": "State Group Selection"
+    },
+    {
+      "ID": "ESD_EDITOR__MENU__STATE_NODE_SELECTION",
+      "Text": "State Node Selection"
+    },
+    // GPARAM Editor
+    {
+      "ID": "GPARAM_EDITOR__MENUBAR__EDIT",
+      "Text": "Edit"
+    },
+    {
+      "ID": "GPARAM_EDITOR__MENUBAR__UNDO",
+      "Text": "Undo"
+    },
+    {
+      "ID": "GPARAM_EDITOR__MENUBAR__UNDO_ALL",
+      "Text": "Undo All"
+    },
+    {
+      "ID": "GPARAM_EDITOR__MENUBAR__REDO",
+      "Text": "Redo"
+    },
+    {
+      "ID": "GPARAM_EDITOR__MENUBAR__VIEW",
+      "Text": "View"
+    },
+    {
+      "ID": "GPARAM_EDITOR__MENUBAR__FILES",
+      "Text": "Files"
+    },
+    {
+      "ID": "GPARAM_EDITOR__MENUBAR__GROUPS",
+      "Text": "Groups"
+    },
+    {
+      "ID": "GPARAM_EDITOR__MENUBAR__FIELDS",
+      "Text": "Fields"
+    },
+    {
+      "ID": "GPARAM_EDITOR__MENUBAR__VALUES",
+      "Text": "Values"
+    },
+    {
+      "ID": "GPARAM_EDITOR__INTERFACE__FILES",
+      "Text": "Files"
+    },
+    {
+      "ID": "GPARAM_EDITOR__INTERFACE__SEARCH",
+      "Text": "Search"
+    },
+    {
+      "ID": "GPARAM_EDITOR__INTERFACE__SEARCH_TOOLTIP",
+      "Text": "Separate terms are split via the + character."
+    },
+    {
+      "ID": "GPARAM_EDITOR__INTERFACE__GROUPS",
+      "Text": "Groups"
+    },
+    {
+      "ID": "GPARAM_EDITOR__TITLE_GROUP",
+      "Text": "Group"
+    },
+    {
+      "ID": "GPARAM_EDITOR__INTERFACE__FIELDS",
+      "Text": "Fields"
+    },
+    {
+      "ID": "GPARAM_EDITOR__TITLE_FIELD",
+      "Text": "Field"
+    },
+    {
+      "ID": "GPARAM_EDITOR__ACTION_ADD",
+      "Text": "Add"
+    },
+    {
+      "ID": "GPARAM_EDITOR__INTERFACE__VALUES",
+      "Text": "Values"
+    },
+    {
+      "ID": "GPARAM_EDITOR__PROPERTY_TIME_OF_DAY",
+      "Text": "Time of Day"
+    },
+    {
+      "ID": "GPARAM_EDITOR__PROPERTY_VALUE",
+      "Text": "Value"
+    },
+    {
+      "ID": "GPARAM_EDITOR__PROPERTY_INFORMATION",
+      "Text": "Information"
+    },
+    {
+      "ID": "GPARAM_EDITOR__CONTEXT__OPTIONS",
+      "Text": "Options"
+    },
+    {
+      "ID": "GPARAM_EDITOR__CONTEXT__DELETE",
+      "Text": "Delete"
+    },
+    {
+      "ID": "GPARAM_EDITOR__CONTEXT__DELETE_TOOLTIP",
+      "Text": "Delete the selected file from your project."
+    },
+    {
+      "ID": "GPARAM_EDITOR__CONTEXT__DUPLICATE",
+      "Text": "Duplicate"
+    },
+    {
+      "ID": "GPARAM_EDITOR__CONTEXT__DUPLICATE_TOOLTIP",
+      "Text": "Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible."
+    },
+    {
+      "ID": "GPARAM_EDITOR__CONTEXT__COPY",
+      "Text": "Copy"
+    },
+    {
+      "ID": "GPARAM_EDITOR__CONTEXT__COPY_TOOLTIP",
+      "Text": "Copy the selected file and rename it to the name specified below"
+    },
+    {
+      "ID": "GPARAM_EDITOR__CONTEXT__DELETE_GROUP_TOOLTIP",
+      "Text": "Delete the selected group."
+    },
+    {
+      "ID": "GPARAM_EDITOR__CONTEXT__DELETE_ROW_TOOLTIP",
+      "Text": "Delete the selected row."
+    },
+    {
+      "ID": "GPARAM_EDITOR__CONTEXT__DELETE_VALUE_TOOLTIP",
+      "Text": "Delete the selected value row."
+    },
+    {
+      "ID": "GPARAM_EDITOR__CONTEXT__DUPLICATE_VALUE",
+      "Text": "Duplicate"
+    },
+    {
+      "ID": "GPARAM_EDITOR__CONTEXT__DUPLICATE_VALUE_TOOLTIP",
+      "Text": "Duplicate the selected value row, assigning the specified ID below as the new id."
+    },
+    {
+      "ID": "GPARAM_EDITOR__FILE__REMOVE_FROM_PROJECT",
+      "Text": "was removed from your project."
+    },
+    {
+      "ID": "GPARAM_EDITOR__FILE__DOES_NOT_EXIST",
+      "Text": "does not exist within your project."
+    },
+    {
+      "ID": "GPARAM_EDITOR__FILE__ALREADY_EXISTS",
+      "Text": "already exists!"
+    },
+    // HAVOK EDITOR
+    {
+      "ID": "HAVOK_EDITOR__LOAD_FILE_BANK",
+      "Text": "Havok Script Bank - Load Complete"
+    },
+    {
+      "ID": "HAVOK_EDITOR__FAILED_TO_FIND_PATH",
+      "Text": "Could not locate path when loading HKX file."
+    },
+    {
+      "ID": "HAVOK_EDITOR__PATH",
+      "Text": "Path:"
+    },
+    {
+      "ID": "HAVOK_EDITOR__MENU__FILE_CATEGORY",
+      "Text": "File Category"
+    },
+    {
+      "ID": "HAVOK_EDITOR__MENU__FILES",
+      "Text": "Files"
+    },
+    // MAP EDITOR
+    {
+      "ID": "MAP_EDITOR__MENUBAR__EDIT",
+      "Text": "Edit"
+    },
+    {
+      "ID": "MAP_EDITOR__MENUBAR__UNDO",
+      "Text": "Undo"
+    },
+    {
+      "ID": "MAP_EDITOR__MENUBAR__UNDO_ALL",
+      "Text": "Undo All"
+    },
+    {
+      "ID": "MAP_EDITOR__MENUBAR__REDO",
+      "Text": "Redo"
+    },
+    {
+      "ID": "MAP_EDITOR__MENUBAR__DELETE",
+      "Text": "Delete"
+    },
+    {
+      "ID": "MAP_EDITOR__MENUBAR__DUPLICATE",
+      "Text": "Duplicate"
+    },
+    {
+      "ID": "MAP_EDITOR__MENUBAR__COPY_TO_NEW_MAP",
+      "Text": "Copy Selection to New Map"
+    },
+    {
+      "ID": "MAP_EDITOR__MENUBAR__COPY_TO_NEW_MAP_TOOLTIP",
+      "Text": "Select the target map, and copy your selection into that map."
+    },
+    {
+      "ID": "MAP_EDITOR__MENUBAR__VIEW",
+      "Text": "View"
+    },
+    {
+      "ID": "MAP_EDITOR__MENUBAR__VIEW__VIEWPORT",
+      "Text": "Viewport"
+    }
+  ]
+}

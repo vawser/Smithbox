@@ -5,6 +5,7 @@ using HKLib.Serialization.hk2018.Binary.Util;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Localization;
 using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
@@ -123,33 +124,35 @@ public static class HavokBehaviorBank
             if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
             {
                 LoadBehavior($"{Smithbox.ProjectRoot}\\{filePath}");
-                TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
                 LoadBehavior($"{Smithbox.GameRoot}\\{filePath}");
-                TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }
 
         IsLoaded = true;
         IsLoading = false;
 
-        TaskLogs.AddLog($"Behavior File Bank - Load Complete");
+        TaskLogs.AddLog($"{LOC.Get("HAVOK_EDITOR__LOAD_FILE_BANK")}");
     }
 
     public static void LoadBehavior(string path)
     {
         if (path == null)
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Behavior file.",
-                    LogLevel.Warning);
+            TaskLogs.AddLog(
+                $"{LOC.Get("HAVOK_EDITOR__FAILED_TO_FIND_PATH")}" +
+                $"{LOC.Get("HAVOK_EDITOR__PATH")}" + $"{path}",
+                LogLevel.Warning);
             return;
         }
         if (path == "")
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Behavior file.",
-                    LogLevel.Warning);
+            TaskLogs.AddLog(
+                $"{LOC.Get("HAVOK_EDITOR__FAILED_TO_FIND_PATH")}" +
+                $"{LOC.Get("HAVOK_EDITOR__PATH")}" + $"{path}",
+                LogLevel.Warning);
             return;
         }
 
@@ -174,12 +177,8 @@ public static class HavokBehaviorBank
                 var fileName = file.Name.ToLower();
                 var fileBytes = binder.ReadFile(file);
 
-                TaskLogs.AddLog($"fileName: {fileName}");
-
                 if (fileName.Contains("behaviors") && fileName.EndsWith(".hkx"))
                 {
-                    TaskLogs.AddLog($"fileName: HavokBinarySerializer");
-
                     HavokBinarySerializer serializer = new HavokBinarySerializer();
                     using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray()))
                     {

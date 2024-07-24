@@ -18,6 +18,7 @@ using StudioCore.Core;
 using Google.Protobuf.WellKnownTypes;
 using StudioCore.Interface;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Localization;
 
 namespace StudioCore.Editor;
 
@@ -175,7 +176,7 @@ public class EditorDecorations
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
             ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
 
-            ImGui.TextUnformatted(@"   [Image]");
+            ImGui.TextUnformatted($"{LOC.Get("DECORATOR__TEXTURE_REF_TITLE")}");
 
             ImGui.PopStyleColor();
             ImGui.PopStyleVar();
@@ -206,7 +207,7 @@ public class EditorDecorations
         if (!entryFound)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRefMissing_Text);
-            ImGui.TextUnformatted("___");
+            ImGui.TextUnformatted($"{LOC.Get("DECORATOR__PARAM_REF_EMPTY")}");
             ImGui.PopStyleColor();
         }
 
@@ -397,7 +398,7 @@ public class EditorDecorations
 
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_FmgRef_Text);
 
-        ImGui.TextUnformatted("View Source Image");
+        ImGui.TextUnformatted($"{LOC.Get("DECORATOR__TEXTURE_REF_ACTION")}");
 
         foreach (var texRef in texRefs)
         {
@@ -422,7 +423,7 @@ public class EditorDecorations
     public static void EnumValueText(Dictionary<string, string> enumValues, string value)
     {
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
-        ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
+        ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, $"{LOC.Get("DECORATOR__MISSING_ENUM_ENTRY")}"));
         ImGui.PopStyleColor();
     }
 
@@ -473,11 +474,11 @@ public class EditorDecorations
                 ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
                 if (value == "0" || value == "-1")
                 {
-                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "None"));
+                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, $"{LOC.Get("DECORATOR__NONE_ENUM_ENTRY")}"));
                 }
                 else
                 {
-                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
+                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, $"{LOC.Get("DECORATOR__MISSING_ENUM_ENTRY")}"));
                 }
                 ImGui.PopStyleColor();
             }
@@ -500,11 +501,11 @@ public class EditorDecorations
                 ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
                 if(value == "0" || value == "-1")
                 {
-                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "None"));
+                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, $"{LOC.Get("DECORATOR__NONE_ENUM_ENTRY")}"));
                 }
                 else
                 {
-                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
+                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, $"{LOC.Get("DECORATOR__MISSING_ENUM_ENTRY")}"));
                 }
                 ImGui.PopStyleColor();
             }
@@ -595,7 +596,7 @@ public class EditorDecorations
                     if (FieldMetaData.Get(f).VirtualRef != null &&
                         FieldMetaData.Get(f).VirtualRef.Equals(virtualRefName))
                     {
-                        if (ImGui.Selectable($@"Search in {param.Key} ({f.InternalName})"))
+                        if (ImGui.Selectable($"{LOC.Get("DECORATOR__VIRTUAL_PARAM_REF_SEARCH_IN")} " + $@"{param.Key} ({f.InternalName})"))
                         {
                             EditorCommandQueue.AddCommand($@"param/select/-1/{param.Key}");
                             EditorCommandQueue.AddCommand(
@@ -625,7 +626,7 @@ public class EditorDecorations
     {
         var exist = UICache.GetCached(cacheOwner, keyRow, $"extRef{menuText}{fieldKey}",
             () => Path.Exists(Path.Join(dir, matchedExtRefPath[0])));
-        if (exist && ImGui.Selectable($"Go to {menuText} file..."))
+        if (exist && ImGui.Selectable($"{LOC.Get("DECORATOR__EXT_REF_GO_TO_FILE")} " + $"{menuText}"))
         {
             var path = ResolveExtRefPath(matchedExtRefPath, dir);
             if (File.Exists(path))
@@ -634,7 +635,7 @@ public class EditorDecorations
             }
             else
             {
-                TaskLogs.AddLog($"\"{path}\" could not be found. It may be map or chr specific",
+                TaskLogs.AddLog($"\"{path}\"" + $" {LOC.Get("DECORATOR__EXT_REF_GO_TO_FILE_FAIL")} ",
                     LogLevel.Warning);
                 UICache.ClearCaches();
             }
@@ -786,12 +787,12 @@ public class EditorDecorations
         var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
         foreach ((string, Param.Row, string) rf in refs)
         {
-            if (ImGui.Selectable($@"Go to {rf.Item3}"))
+            if (ImGui.Selectable($"{LOC.Get("DECORATOR__PROPERTY_ROW__GO_TO")} " + $@"{rf.Item3}##gotoPropertyRowButton"))
             {
                 EditorCommandQueue.AddCommand($@"param/select/-1/{rf.Item1}/{rf.Item2.ID}");
             }
 
-            if (ImGui.Selectable($@"Go to {rf.Item3} in new view"))
+            if (ImGui.Selectable($"{LOC.Get("DECORATOR__PROPERTY_ROW__GO_TO")} " + $@"{rf.Item3}" + $" {LOC.Get("DECORATOR__PROPERTY_ROW__IN_NEW_VIEW")}##gotoPropertyRowInNewViewButton"))
             {
                 EditorCommandQueue.AddCommand($@"param/select/new/{rf.Item1}/{rf.Item2.ID}");
             }
@@ -803,14 +804,14 @@ public class EditorDecorations
 
             if (!string.IsNullOrWhiteSpace(rf.Item2.Name) &&
                 (ctrlDown || string.IsNullOrWhiteSpace(context.Name)) &&
-                ImGui.Selectable($@"Inherit referenced row's name ({rf.Item2.Name})"))
+                ImGui.Selectable($"{LOC.Get("DECORATOR__PROPERTY_ROW__INHERIT_REF_NAME")} " + $@"({rf.Item2.Name})##inheritRefNameButton"))
             {
                 executor.ExecuteAction(new PropertiesChangedAction(context.GetType().GetProperty("Name"), context,
                     rf.Item2.Name));
             }
             else if ((ctrlDown || string.IsNullOrWhiteSpace(rf.Item2.Name)) &&
                      !string.IsNullOrWhiteSpace(context.Name) &&
-                     ImGui.Selectable($@"Proliferate name to referenced row ({rf.Item1})"))
+                     ImGui.Selectable($"{LOC.Get("DECORATOR__PROPERTY_ROW__PROLIFERATE_NAME_TO_REF")} " + $@"({rf.Item1})##proliferateNameToRefButton"))
             {
                 executor.ExecuteAction(new PropertiesChangedAction(rf.Item2.GetType().GetProperty("Name"), rf.Item2,
                     context.Name));
@@ -818,7 +819,7 @@ public class EditorDecorations
         }
 
         // Add searchbar for named editing
-        ImGui.InputTextWithHint("##value", "Search...", ref _refContextCurrentAutoComplete, 128);
+        ImGui.InputTextWithHint("##value", $"{LOC.Get("DECORATOR__SEARCHBAR_SEARCH")}##propertySearchBar", ref _refContextCurrentAutoComplete, 128);
         // This should be replaced by a proper search box with a scroll and everything
         if (_refContextCurrentAutoComplete != "")
         {
@@ -859,7 +860,7 @@ public class EditorDecorations
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog("Unable to convert value into param field's type'", LogLevel.Warning,
+                            TaskLogs.AddLog($"{LOC.Get("DECORATOR__PARAM_FIELD_FAILED_CONVERT")}", LogLevel.Warning,
                                 TaskLogs.LogPriority.Normal, e);
                         }
                     }
@@ -880,7 +881,7 @@ public class EditorDecorations
         var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
         foreach ((var name, FMGEntryGroup group) in refs)
         {
-            if (ImGui.Selectable($@"Goto {name} Text"))
+            if (ImGui.Selectable($"{LOC.Get("DECORATOR__FMG_GOTO")} " + $"{name}" + $" {LOC.Get("DECORATOR__FMG_TEXT")}##goToFmgRefButton"))
             {
                 EditorCommandQueue.AddCommand($@"text/select/{name}/{group.ID}");
             }
@@ -896,7 +897,7 @@ public class EditorDecorations
                 var entry = (FMG.Entry)field.GetValue(group);
                 if (!string.IsNullOrWhiteSpace(entry?.Text) &&
                     (ctrlDown || string.IsNullOrWhiteSpace(context.Name)) &&
-                    ImGui.Selectable($@"Inherit referenced fmg {field.Name} ({entry?.Text})"))
+                    ImGui.Selectable($"{LOC.Get("DECORATOR__INHERIT_REF_FMG")} " + $@"{field.Name} ({entry?.Text})"))
                 {
                     executor.ExecuteAction(new PropertiesChangedAction(context.GetType().GetProperty("Name"),
                         context, entry?.Text));
@@ -904,7 +905,7 @@ public class EditorDecorations
 
                 if (entry != null && (ctrlDown || string.IsNullOrWhiteSpace(entry?.Text)) &&
                     !string.IsNullOrWhiteSpace(context.Name) &&
-                    ImGui.Selectable($@"Proliferate name to referenced fmg {field.Name} ({name})"))
+                    ImGui.Selectable($"{LOC.Get("DECORATOR__PROLIFERATE_NAME_TO_FMG")} " + $@"{field.Name} ({name})"))
                 {
                     executor.ExecuteAction(new PropertiesChangedAction(entry.GetType().GetProperty("Text"), entry,
                         context.Name));
@@ -923,7 +924,7 @@ public class EditorDecorations
 
             if (displayedImage)
             {
-                if (ImGui.Selectable($@"View {textureRef.TextureFile}"))
+                if (ImGui.Selectable($"{LOC.Get("DECORATOR__TEX_REF_VIEW")} " + $@"{textureRef.TextureFile}"))
                 {
                     EditorCommandQueue.AddCommand($@"texture/view/{textureRef.TextureContainer}/{textureRef.TextureFile}");
                 }
@@ -1005,17 +1006,17 @@ public class EditorDecorations
     public static void ParamRefReverseLookupSelectables(EditorScreen screen, ParamBank bank, string currentParam,
         int currentID)
     {
-        if (ImGui.BeginMenu("Search for references..."))
+        if (ImGui.BeginMenu($"{LOC.Get("DECORATOR__PARAM_REVERSE_REF_SEARCH")}##paramRefReverseLookup"))
         {
             Dictionary<string, List<(string, ParamRef)>> items = UICache.GetCached(screen, (bank, currentParam),
                 () => ParamRefReverseLookupFieldItems(bank, currentParam));
             foreach (KeyValuePair<string, List<(string, ParamRef)>> paramitems in items)
             {
-                if (ImGui.BeginMenu($@"in {paramitems.Key}..."))
+                if (ImGui.BeginMenu($"{LOC.Get("DECORATOR__PARAM_REVERSE_REF_IN")}" + $@"{paramitems.Key}..."))
                 {
                     foreach ((var fieldName, ParamRef pref) in paramitems.Value)
                     {
-                        if (ImGui.BeginMenu($@"in {fieldName}"))
+                        if (ImGui.BeginMenu($"{LOC.Get("DECORATOR__PARAM_REVERSE_REF_IN")}" + $@"{fieldName}"))
                         {
                             List<Param.Row> rows = UICache.GetCached(screen, (bank, currentParam, currentID, paramitems.Key, fieldName),
                                 () => ParamRefReverseLookupRowItems(bank, paramitems.Key, fieldName, currentID,
@@ -1031,7 +1032,7 @@ public class EditorDecorations
 
                             if (rows.Count == 0)
                             {
-                                ImGui.TextUnformatted("No rows found");
+                                ImGui.TextUnformatted($"{LOC.Get("DECORATOR__PARAM_REVERSE_REF_NO_ROWS")}");
                             }
 
                             ImGui.EndMenu();
@@ -1044,7 +1045,7 @@ public class EditorDecorations
 
             if (items.Count == 0)
             {
-                ImGui.TextUnformatted("This param is not referenced");
+                ImGui.TextUnformatted($"{LOC.Get("DECORATOR__PARAM_REVERSE_REF_NO_REF")}");
             }
 
             ImGui.EndMenu();
@@ -1089,14 +1090,14 @@ public class EditorDecorations
                     (values, xOffset, minY, maxY) = UICache.GetCached(screen, row, "calcCorrectData",
                         () => ParamUtils.getCalcCorrectedData(ccd, row));
                     ImGui.PlotLines("##graph", ref values[0], values.Length, 0,
-                        xOffset == 0 ? "" : $@"Note: add {xOffset} to x coordinate", minY, maxY,
+                        xOffset == 0 ? "" : $"{LOC.Get("DECORATOR__CALCGRAPH_NOTE_1")}" + $@" {xOffset} " + $"{LOC.Get("DECORATOR__CALCGRAPH_NOTE_2")}", minY, maxY,
                         new Vector2(ImGui.GetColumnWidth(-1) - 30f, (ImGui.GetColumnWidth(-1) * 0.5625f) - 30f));
                 }
             }
         }
         catch (Exception e)
         {
-            ImGui.TextUnformatted("Unable to draw graph");
+            ImGui.TextUnformatted($"{LOC.Get("DECORATOR__CALCGRAPH_INVALID_DRAW")}");
         }
 
         ImGui.NewLine();
@@ -1187,13 +1188,13 @@ public class EditorDecorations
     public static void PinListReorderOptions<T>(List<T> sourceListToModify, T currentElement)
     {
         int indexOfPin = sourceListToModify.IndexOf(currentElement);
-        if (indexOfPin > 0 && ImGui.Selectable("Move pin up"))
+        if (indexOfPin > 0 && ImGui.Selectable($"{LOC.Get("DECORATOR__PIN__MOVE_UP")}##movePinUpButton"))
         {
             T prevKey = sourceListToModify[indexOfPin - 1];
             sourceListToModify[indexOfPin] = prevKey;
             sourceListToModify[indexOfPin - 1] = currentElement;
         }
-        if (indexOfPin >= 0 && indexOfPin < sourceListToModify.Count - 1 && ImGui.Selectable("Move pin down"))
+        if (indexOfPin >= 0 && indexOfPin < sourceListToModify.Count - 1 && ImGui.Selectable($"{LOC.Get("DECORATOR__PIN__MOVE_DOWN")}##movePinDownButton"))
         {
             T nextKey = sourceListToModify[indexOfPin + 1];
             sourceListToModify[indexOfPin] = nextKey;
@@ -1231,20 +1232,20 @@ public class EditorDecorations
 
         if (bitSize != -1)
         {
-            var str = $"Bitfield Type within: {fieldName}";
+            var str = $"{LOC.Get("DECORATOR__PROPERTY_INFO__BITFIELD_TYPE")} " + $"{fieldName}";
             var min = 0;
             var max = (2ul << (bitSize - 1)) - 1;
-            str += $" (Min {min}, Max {max})";
+            str += $" (" + $"{LOC.Get("DECORATOR__PROPERTY_INFO__MIN")}" + $"{min}, " + $"{LOC.Get("DECORATOR__PROPERTY_INFO__MAX")}" + $"{max})";
             ImGui.TextColored(new Vector4(.4f, 1f, .7f, 1f), str);
         }
         else
         {
             if (propType.IsArray)
             {
-                var str = $"Array Type: {propType.Name}";
+                var str = $"{LOC.Get("DECORATOR__PROPERTY_INFO__ARRAY_TYPE")} " + $"{propType.Name}";
                 if (arrayLength > 0)
                 {
-                    str += $" (Length: {arrayLength})";
+                    str += $" (" + $"{LOC.Get("DECORATOR__PROPERTY_INFO__LENGTH")}" + $"{arrayLength})";
                 }
 
                 propType = propType.GetElementType();
@@ -1254,22 +1255,22 @@ public class EditorDecorations
 
             if (propType.IsValueType)
             {
-                var str = $"Value Type: {propType.Name}";
+                var str = $"{LOC.Get("DECORATOR__PROPERTY_INFO__VALUE_TYPE")} " + $"{propType.Name}";
                 var min = propType.GetField("MinValue")?.GetValue(propType);
                 var max = propType.GetField("MaxValue")?.GetValue(propType);
                 if (min != null && max != null)
                 {
-                    str += $" (Min {min}, Max {max})";
+                    str += $" (" + $"{LOC.Get("DECORATOR__PROPERTY_INFO__MIN")}" + $"{min}, " + $"{LOC.Get("DECORATOR__PROPERTY_INFO__MAX")}" + $"{max})";
                 }
 
                 ImGui.TextColored(new Vector4(.4f, 1f, .7f, 1f), str);
             }
             else if (propType == typeof(string))
             {
-                var str = $"String Type: {propType.Name}";
+                var str = $"{LOC.Get("DECORATOR__PROPERTY_INFO__STRING_TYPE")} " + $"{propType.Name}";
                 if (arrayLength > 0)
                 {
-                    str += $" (Length: {arrayLength})";
+                    str += $" (" + $"{LOC.Get("DECORATOR__PROPERTY_INFO__LENGTH")}" + $"{arrayLength})";
                 }
 
                 ImGui.TextColored(new Vector4(.4f, 1f, .7f, 1f), str);

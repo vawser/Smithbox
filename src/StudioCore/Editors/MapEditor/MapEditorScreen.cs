@@ -28,6 +28,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Havok;
 using static SoulsFormats.MSB.Shape.Composite;
+using StudioCore.Localization;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -153,9 +154,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         }
     }
 
-    public string EditorName => "Map Editor";
+    public string EditorName => $"{LOC.Get("EDITOR__MAP_EDITOR")}##MapEditor";
     public string CommandEndpoint => "map";
-    public string SaveType => "Maps";
+    public string SaveType => $"{LOC.Get("EDITOR__MAP_EDITOR_SAVE_TYPE")}";
 
     public void Init()
     {
@@ -194,31 +195,31 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public void DrawEditorMenu()
     {
         // Dropdown: Edit
-        if (ImGui.BeginMenu("Edit"))
+        if (ImGui.BeginMenu($"{LOC.Get("MAP_EDITOR__MENUBAR__EDIT")}##editSubMenu"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
+            if (ImGui.MenuItem($"{LOC.Get("MAP_EDITOR__MENUBAR__UNDO")}", KeyBindings.Current.Core_Undo.HintText, false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false,
+            if (ImGui.MenuItem($"{LOC.Get("MAP_EDITOR__MENUBAR__UNDO_ALL")}", "", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
+            if (ImGui.MenuItem($"{LOC.Get("MAP_EDITOR__MENUBAR__REDO")}", KeyBindings.Current.Core_Redo.HintText, false,
                     EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Scissors}");
-            if (ImGui.MenuItem("Remove", KeyBindings.Current.Core_Delete.HintText, false, _selection.IsSelection()))
+            if (ImGui.MenuItem($"{LOC.Get("MAP_EDITOR__MENUBAR__DELETE")}", KeyBindings.Current.Core_Delete.HintText, false, _selection.IsSelection()))
             {
                 DeleteMapObjectsAction action = new(Universe, RenderScene,
                     _selection.GetFilteredSelection<MsbEntity>().ToList(), true);
@@ -226,7 +227,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false,
+            if (ImGui.MenuItem($"{LOC.Get("MAP_EDITOR__MENUBAR__DUPLICATE")}", KeyBindings.Current.Core_Duplicate.HintText, false,
                     _selection.IsSelection()))
             {
                 CloneMapObjectsAction action = new(Universe, RenderScene,
@@ -235,20 +236,21 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.BeginMenu("Duplicate to Map", _selection.IsSelection()))
+            if (ImGui.BeginMenu($"{LOC.Get("MAP_EDITOR__MENUBAR__COPY_TO_NEW_MAP")}", _selection.IsSelection()))
             {
                 DuplicateToTargetMapUI();
                 ImGui.EndMenu();
             }
+            ImguiUtils.ShowHoverTooltip($"{LOC.Get("MAP_EDITOR__MENUBAR__COPY_TO_NEW_MAP_TOOLTIP")}");
 
             ImGui.EndMenu();
         }
 
         // Dropdown: View
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu($"{LOC.Get("MAP_EDITOR__MENUBAR__VIEW")}##mapEditorViewSubMenu"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Viewport"))
+            if (ImGui.MenuItem($"{LOC.Get("MAP_EDITOR__MENUBAR__VIEW__VIEWPORT")}##mapEditorToggleViewport"))
             {
                 CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
             }

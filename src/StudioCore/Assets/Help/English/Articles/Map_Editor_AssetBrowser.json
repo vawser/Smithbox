@@ -1,0 +1,25 @@
+{
+    "ProjectType": 0,
+	"HeaderColor": [ 0.0, 1.0, 0.0, 1.0 ],
+	"HighlightColor": [ 0.871, 0.843, 0.351, 1.0 ],
+	"Title": "Map Editor: Asset Browser",
+    "Tags": [
+        "Feature"
+    ],
+    "Contents": [
+        "[Header]Information",
+        "The asset browser allows you to quickly select characters, assets and objects from a list of available options for each game.",
+        "[Header]Categories",
+        "There are three categories:",
+        "[Highlight@Chr]: which means Characters.",
+        "[Highlight@AEG]: which means Asset. Used in Armored Core VI and Elden Ring.",
+        "[Highlight@Obj]: which means Object. Used in games prior to Elden Ring.",
+        "[Header]Contents",
+        "The contents list will be populated based on which category you have selected. Alias names are displayed alongside the ID to make it easier to identify which assets are which.",
+        "[Header]Actions",
+        "In the Map Editor, pressing the Apply action will change your current map object selection into that asset if valid.",
+        "[Header]Alias",
+        "You can update or add an Alias name for a selected asset, as well as adding tags to associate with the alias entry. Searching in the search bar within the asset browser will make use of these tags, allowing for user-defined groupings.",
+        ""
+    ]
+}
