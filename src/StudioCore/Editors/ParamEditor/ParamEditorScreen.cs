@@ -186,6 +186,7 @@ public class ParamEditorScreen : EditorScreen
     }
 
     public string EditorName => "Param Editor";
+    public string Discription => "参数编辑器 Param Editor";
     public string CommandEndpoint => "param";
     public string SaveType => "Params";
 
@@ -196,52 +197,52 @@ public class ParamEditorScreen : EditorScreen
     public void DrawEditorMenu()
     {
         // Menu Options
-        if (ImGui.BeginMenu("Edit"))
+        if (ImGui.BeginMenu("编辑 Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
+            if (ImGui.MenuItem("撤销 Undo", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
             {
                 ParamUndo();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false, EditorActionManager.CanUndo()))
+            if (ImGui.MenuItem("重置 Undo All", "", false, EditorActionManager.CanUndo()))
             {
                 ParamUndoAll();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
+            if (ImGui.MenuItem("返回 Redo", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
             {
                 ParamRedo();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Copy", KeyBindings.Current.Param_Copy.HintText, false, _activeView._selection.RowSelectionExists()))
+            if (ImGui.MenuItem("拷贝 Copy", KeyBindings.Current.Param_Copy.HintText, false, _activeView._selection.RowSelectionExists()))
             {
                 CopySelectionToClipboard();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Clipboard}");
-            if (ImGui.MenuItem("Paste", KeyBindings.Current.Param_Paste.HintText, false, ParamBank.ClipboardRows.Any()))
+            if (ImGui.MenuItem("暂停 Paste", KeyBindings.Current.Param_Paste.HintText, false, ParamBank.ClipboardRows.Any()))
             {
                 EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Scissors}");
-            if (ImGui.MenuItem("Remove", KeyBindings.Current.Core_Delete.HintText, false, _activeView._selection.RowSelectionExists()))
+            if (ImGui.MenuItem("移除 Remove", KeyBindings.Current.Core_Delete.HintText, false, _activeView._selection.RowSelectionExists()))
             {
                 DeleteSelection();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false, _activeView._selection.RowSelectionExists()))
+            if (ImGui.MenuItem("复制 Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false, _activeView._selection.RowSelectionExists()))
             {
                 DuplicateSelection();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.ArrowRight}");
-            if (ImGui.MenuItem("Goto selected row", KeyBindings.Current.Param_GotoSelectedRow.HintText, false, _activeView._selection.RowSelectionExists()))
+            if (ImGui.MenuItem("移动至选中行 Goto selected row", KeyBindings.Current.Param_GotoSelectedRow.HintText, false, _activeView._selection.RowSelectionExists()))
             {
                 GotoSelectedRow = true;
             }
@@ -249,17 +250,17 @@ public class ParamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("视图 View"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Editor"))
+            if (ImGui.MenuItem("编辑器 Editor"))
             {
                 CFG.Current.Interface_ParamEditor_Table = !CFG.Current.Interface_ParamEditor_Table;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Table);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Toolbar"))
+            if (ImGui.MenuItem("工具栏 Toolbar"))
             {
                 CFG.Current.Interface_ParamEditor_Toolbar = !CFG.Current.Interface_ParamEditor_Toolbar;
             }
@@ -270,27 +271,27 @@ public class ParamEditorScreen : EditorScreen
 
 
 
-        if (ImGui.BeginMenu("Data"))
+        if (ImGui.BeginMenu("数据 Data"))
         {
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Download}");
-            if (ImGui.BeginMenu("Export CSV", _activeView._selection.ActiveParamExists()))
+            if (ImGui.BeginMenu("导出 Export CSV", _activeView._selection.ActiveParamExists()))
             {
                 DelimiterInputText();
 
-                if (ImGui.BeginMenu("Quick action"))
+                if (ImGui.BeginMenu("快捷 Quick action"))
                 {
-                    if (ImGui.MenuItem("Export selected Names to window", KeyBindings.Current.Param_ExportCSV.HintText))
+                    if (ImGui.MenuItem("导出选中名称到窗口 Export selected Names to window", KeyBindings.Current.Param_ExportCSV.HintText))
                     {
                         EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/2");
                     }
 
-                    if (ImGui.MenuItem("Export entire param to window", KeyBindings.Current.Param_ExportCSV.HintText))
+                    if (ImGui.MenuItem("导出所有到窗口 Export entire param to window", KeyBindings.Current.Param_ExportCSV.HintText))
                     {
                         EditorCommandQueue.AddCommand(@"param/menu/massEditCSVExport/0");
                     }
 
-                    if (ImGui.MenuItem("Export entire param to file"))
+                    if (ImGui.MenuItem("导出所有到文件 Export entire param to file"))
                     {
                         if (SaveCsvDialog(out var path))
                         {
@@ -306,27 +307,27 @@ public class ParamEditorScreen : EditorScreen
 
                 ImGui.Separator();
 
-                if (ImGui.BeginMenu("All rows"))
+                if (ImGui.BeginMenu("所有行 All rows"))
                 {
                     CsvExportDisplay(ParamBank.RowGetType.AllRows);
                     ImGui.EndMenu();
                 }
 
-                if (ImGui.BeginMenu("Modified rows", ParamBank.PrimaryBank.GetVanillaDiffRows(_activeView._selection.GetActiveParam()).Any()))
+                if (ImGui.BeginMenu("修改行 Modified rows", ParamBank.PrimaryBank.GetVanillaDiffRows(_activeView._selection.GetActiveParam()).Any()))
                 {
                     CsvExportDisplay(ParamBank.RowGetType.ModifiedRows);
                     ImGui.EndMenu();
                 }
 
-                if (ImGui.BeginMenu("Selected rows", _activeView._selection.RowSelectionExists()))
+                if (ImGui.BeginMenu("选中行 Selected rows", _activeView._selection.RowSelectionExists()))
                 {
                     CsvExportDisplay(ParamBank.RowGetType.SelectedRows);
                     ImGui.EndMenu();
                 }
 
-                if (ImGui.BeginMenu("All params"))
+                if (ImGui.BeginMenu("所有参数 All params"))
                 {
-                    if (ImGui.MenuItem("Export all params to file"))
+                    if (ImGui.MenuItem("导出所有到文件 Export all params to file"))
                     {
                         if (PlatformUtils.Instance.OpenFolderDialog("Choose CSV directory", out var path))
                         {
@@ -347,21 +348,21 @@ public class ParamEditorScreen : EditorScreen
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Upload}");
-            if (ImGui.BeginMenu("Import CSV", _activeView._selection.ActiveParamExists()))
+            if (ImGui.BeginMenu("导入 Import CSV", _activeView._selection.ActiveParamExists()))
             {
                 DelimiterInputText();
 
-                if (ImGui.MenuItem("All fields", KeyBindings.Current.Param_ImportCSV.HintText))
+                if (ImGui.MenuItem("全部区块 All fields", KeyBindings.Current.Param_ImportCSV.HintText))
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/massEditCSVImport");
                 }
 
-                if (ImGui.MenuItem("Row Name"))
+                if (ImGui.MenuItem("按行导入 Row Name"))
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/massEditSingleCSVImport/Name");
                 }
 
-                if (ImGui.BeginMenu("Specific Field"))
+                if (ImGui.BeginMenu("特殊区块 Specific Field"))
                 {
                     foreach (PARAMDEF.Field field in ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()].AppliedParamdef.Fields)
                     {
@@ -374,9 +375,9 @@ public class ParamEditorScreen : EditorScreen
                     ImGui.EndMenu();
                 }
 
-                if (ImGui.BeginMenu("From file...", _activeView._selection.ActiveParamExists()))
+                if (ImGui.BeginMenu("从文件导入 From file...", _activeView._selection.ActiveParamExists()))
                 {
-                    if (ImGui.MenuItem("All fields"))
+                    if (ImGui.MenuItem("全部区块 All fields"))
                     {
                         if (ReadCsvDialog(out var csv))
                         {
@@ -402,7 +403,7 @@ public class ParamEditorScreen : EditorScreen
                             }
                         }
                     }
-                    if (ImGui.MenuItem("Row Name"))
+                    if (ImGui.MenuItem("按行文件 Row Name"))
                     {
                         if (ReadCsvDialog(out var csv))
                         {
@@ -426,7 +427,7 @@ public class ParamEditorScreen : EditorScreen
                         }
                     }
 
-                    if (ImGui.BeginMenu("Specific Field"))
+                    if (ImGui.BeginMenu("特定区块 Specific Field"))
                     {
                         foreach (PARAMDEF.Field field in ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()].AppliedParamdef.Fields)
                         {
@@ -468,16 +469,16 @@ public class ParamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Overviews"))
+        if (ImGui.BeginMenu("概览 Overviews"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-            if (ImGui.MenuItem("New Overview"))
+            if (ImGui.MenuItem("新建 New Overview"))
             {
                 AddView();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.ChainBroken}");
-            if (ImGui.MenuItem("Close Overview", null, false, CountViews() > 1))
+            if (ImGui.MenuItem("关闭 Close Overview", null, false, CountViews() > 1))
             {
                 RemoveView(_activeView);
             }
@@ -485,7 +486,7 @@ public class ParamEditorScreen : EditorScreen
             ImGui.Separator();
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.ArrowLeft}");
-            if (ImGui.MenuItem("Go back...", KeyBindings.Current.Param_GotoBack.HintText, false, _activeView._selection.HasHistory()))
+            if (ImGui.MenuItem("返回到 Go back...", KeyBindings.Current.Param_GotoBack.HintText, false, _activeView._selection.HasHistory()))
             {
                 EditorCommandQueue.AddCommand(@"param/back");
             }
@@ -493,10 +494,10 @@ public class ParamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Comparison"))
+        if (ImGui.BeginMenu("比较 Comparison"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
-            if (ImGui.MenuItem("Show Vanilla Params", null, CFG.Current.Param_ShowVanillaParams))
+            if (ImGui.MenuItem("显示普通参数 Show Vanilla Params", null, CFG.Current.Param_ShowVanillaParams))
             {
                 CFG.Current.Param_ShowVanillaParams = !CFG.Current.Param_ShowVanillaParams;
             }
@@ -504,13 +505,13 @@ public class ParamEditorScreen : EditorScreen
             ImGui.Separator();
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.ChainBroken}");
-            if (ImGui.MenuItem("Clear current row comparison", null, false, _activeView != null && _activeView._selection.GetCompareRow() != null))
+            if (ImGui.MenuItem("清空当前比较 Clear current row comparison", null, false, _activeView != null && _activeView._selection.GetCompareRow() != null))
             {
                 _activeView._selection.SetCompareRow(null);
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.ChainBroken}");
-            if (ImGui.MenuItem("Clear current field comparison", null, false, _activeView != null && _activeView._selection.GetCompareCol() != null))
+            if (ImGui.MenuItem("清空当前区块比较 Clear current field comparison", null, false, _activeView != null && _activeView._selection.GetCompareCol() != null))
             {
                 _activeView._selection.SetCompareCol(null);
             }
@@ -518,7 +519,7 @@ public class ParamEditorScreen : EditorScreen
             ImGui.Separator();
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Load Params for comparison...", null, false))
+            if (ImGui.MenuItem("加载参数比较 Load Params for comparison...", null, false))
             {
                 string[] allParamTypes =
                 {
@@ -582,7 +583,7 @@ public class ParamEditorScreen : EditorScreen
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.WindowClose}");
-            if (ImGui.BeginMenu("Clear param comparison...", ParamBank.AuxBanks.Count > 0))
+            if (ImGui.BeginMenu("清空参数比较 Clear param comparison...", ParamBank.AuxBanks.Count > 0))
             {
                 for (var i = 0; i < ParamBank.AuxBanks.Count; i++)
                 {
@@ -598,7 +599,7 @@ public class ParamEditorScreen : EditorScreen
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.WindowClose}");
-            if (ImGui.MenuItem("Clear all param comparisons", null, false, ParamBank.AuxBanks.Count > 0))
+            if (ImGui.MenuItem("清空所有参数比较 Clear all param comparisons", null, false, ParamBank.AuxBanks.Count > 0))
             {
                 ParamBank.AuxBanks = new Dictionary<string, ParamBank>();
             }
@@ -606,10 +607,10 @@ public class ParamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Tools"))
+        if (ImGui.BeginMenu("工具 Tools"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-            if (ImGui.MenuItem("Check all params for edits", null, false, !ParamBank.PrimaryBank.IsLoadingParams && !ParamBank.VanillaBank.IsLoadingParams))
+            if (ImGui.MenuItem("检查所有参数 Check all params for edits", null, false, !ParamBank.PrimaryBank.IsLoadingParams && !ParamBank.VanillaBank.IsLoadingParams))
             {
                 ParamBank.RefreshAllParamDiffCaches(true);
             }
@@ -620,7 +621,7 @@ public class ParamEditorScreen : EditorScreen
             {
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
 
-                if (ImGui.MenuItem("Editor Mode", null, EditorMode))
+                if (ImGui.MenuItem("编辑模式 Editor Mode", null, EditorMode))
                 {
                     EditorMode = true;
                 }
@@ -629,15 +630,15 @@ public class ParamEditorScreen : EditorScreen
             if (EditorMode)
             {
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-                if (ImGui.BeginMenu("Editor Mode"))
+                if (ImGui.BeginMenu("编辑模式 Editor Mode"))
                 {
-                    if (ImGui.MenuItem("Save Changes"))
+                    if (ImGui.MenuItem("保存更改 Save Changes"))
                     {
                         ParamMetaData.SaveAll();
                         EditorMode = false;
                     }
 
-                    if (ImGui.MenuItem("Discard Changes"))
+                    if (ImGui.MenuItem("放弃更改 Discard Changes"))
                     {
                         EditorMode = false;
                     }
@@ -1429,16 +1430,16 @@ public class ParamEditorScreen : EditorScreen
     /// </summary>
     private void CsvExportDisplay(ParamBank.RowGetType rowType)
     {
-        if (ImGui.BeginMenu("Export to window..."))
+        if (ImGui.BeginMenu("导出到窗口 Export to window..."))
         {
-            if (ImGui.MenuItem("Export all fields", KeyBindings.Current.Param_ExportCSV.HintText))
+            if (ImGui.MenuItem("导出所有区块 Export all fields", KeyBindings.Current.Param_ExportCSV.HintText))
             {
                 EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/{rowType}");
             }
 
-            if (ImGui.BeginMenu("Export specific field"))
+            if (ImGui.BeginMenu("导出特殊区块 Export specific field"))
             {
-                if (ImGui.MenuItem("Row name"))
+                if (ImGui.MenuItem("行名称 Row name"))
                 {
                     EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/{rowType}");
                 }
@@ -1457,9 +1458,9 @@ public class ParamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Export to file..."))
+        if (ImGui.BeginMenu("导出到文件 Export to file..."))
         {
-            if (ImGui.MenuItem("Export all fields"))
+            if (ImGui.MenuItem("导出所有区块 Export all fields"))
             {
                 if (SaveCsvDialog(out var path))
                 {
@@ -1472,7 +1473,7 @@ public class ParamEditorScreen : EditorScreen
                 }
             }
 
-            if (ImGui.BeginMenu("Export specific field"))
+            if (ImGui.BeginMenu("导出特殊区块 Export specific field"))
             {
                 if (ImGui.MenuItem("Row name"))
                 {
@@ -1543,7 +1544,7 @@ public class ParamEditorScreen : EditorScreen
             displayDelimiter = "\\t";
         }
 
-        if (ImGui.InputText("Delimiter", ref displayDelimiter, 2))
+        if (ImGui.InputText("分割符(\\t)", ref displayDelimiter, 2)) // Delimiter
         {
             if (displayDelimiter == "\\t")
                 displayDelimiter = "\t";

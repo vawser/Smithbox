@@ -1102,7 +1102,7 @@ public class ParamRowEditor
         // Pin Options
         if (showPinOptions && CFG.Current.Param_FieldContextMenu_PinOptions)
         {
-            if (ImGui.MenuItem(isPinned ? "Unpin " : "Pin " + internalName))
+            if (ImGui.MenuItem(isPinned ? "解 Unpin " : "钉 Pin " + internalName))
             {
                 if (!Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields.ContainsKey(activeParam))
                 {
@@ -1127,7 +1127,7 @@ public class ParamRowEditor
                     internalName);
             }
 
-            if (ImGui.Selectable("Unpin all"))
+            if (ImGui.Selectable("全解 Unpin all"))
             {
                 Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields.Clear();
             }
@@ -1138,7 +1138,7 @@ public class ParamRowEditor
         // Compare
         if (CFG.Current.Param_FieldContextMenu_CompareOptions)
         {
-            if (col != null && ImGui.MenuItem("Compare field"))
+            if (col != null && ImGui.MenuItem("区块比较 Compare field"))
             {
                 selection.SetCompareCol(col);
             }
@@ -1147,7 +1147,7 @@ public class ParamRowEditor
         // Value Distribution
         if (CFG.Current.Param_FieldContextMenu_ValueDistribution)
         {
-            if (ImGui.Selectable("View value distribution in selected rows..."))
+            if (ImGui.Selectable("浏览选中行介绍 View value distribution in selected rows..."))
             {
                 EditorCommandQueue.AddCommand($@"param/menu/distributionPopup/{internalName}");
             }
@@ -1156,7 +1156,7 @@ public class ParamRowEditor
         // Editor Mode
         if (ParamEditorScreen.EditorMode && cellMeta != null)
         {
-            if (ImGui.BeginMenu("Add Reference"))
+            if (ImGui.BeginMenu("添加引用 Add Reference"))
             {
                 foreach (var p in bank.Params.Keys)
                 {
@@ -1174,7 +1174,7 @@ public class ParamRowEditor
                 ImGui.EndMenu();
             }
 
-            if (cellMeta.RefTypes != null && ImGui.BeginMenu("Remove Reference"))
+            if (cellMeta.RefTypes != null && ImGui.BeginMenu("移除引用 Remove Reference"))
             {
                 foreach (ParamRef p in cellMeta.RefTypes)
                 {
@@ -1194,17 +1194,17 @@ public class ParamRowEditor
                 ImGui.EndMenu();
             }
 
-            if (ImGui.MenuItem(cellMeta.IsBool ? "Remove bool toggle" : "Add bool toggle"))
+            if (ImGui.MenuItem(cellMeta.IsBool ? "移除 Remove bool toggle" : "添加 Add bool toggle"))
             {
                 cellMeta.IsBool = !cellMeta.IsBool;
             }
 
-            if (cellMeta.Wiki == null && ImGui.MenuItem("Add wiki..."))
+            if (cellMeta.Wiki == null && ImGui.MenuItem("添加 Add wiki..."))
             {
                 cellMeta.Wiki = "Empty wiki...";
             }
 
-            if (cellMeta.Wiki != null && ImGui.MenuItem("Remove wiki"))
+            if (cellMeta.Wiki != null && ImGui.MenuItem("移除 Remove wiki"))
             {
                 cellMeta.Wiki = null;
             }
@@ -1251,13 +1251,13 @@ public class ParamRowEditor
 
             if (!CFG.Current.Param_FieldContextMenu_FullMassEdit)
             {
-                if (ImGui.Selectable("Mass edit"))
+                if (ImGui.Selectable("批量编辑 Mass edit"))
                 {
                     EditorCommandQueue.AddCommand(
                         $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: ");
                 }
 
-                if (ImGui.Selectable("Reset to vanilla"))
+                if (ImGui.Selectable("重置默认 Reset to vanilla"))
                 {
                     MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
                         $"selection && !added: {Regex.Escape(internalName)}: = vanilla;",
@@ -1266,17 +1266,17 @@ public class ParamRowEditor
             }
             else
             {
-                if (ImGui.CollapsingHeader("Mass edit", ImGuiTreeNodeFlags.SpanFullWidth))
+                if (ImGui.CollapsingHeader("批量编辑 Mass edit", ImGuiTreeNodeFlags.SpanFullWidth))
                 {
                     ImGui.Separator();
 
-                    if (ImGui.Selectable("Manually..."))
+                    if (ImGui.Selectable("手动 Manually..."))
                     {
                         EditorCommandQueue.AddCommand(
                             $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: ");
                     }
 
-                    if (ImGui.Selectable("Reset to vanilla..."))
+                    if (ImGui.Selectable("重置默认 Reset to vanilla..."))
                     {
                         EditorCommandQueue.AddCommand(
                             $@"param/menu/massEditRegex/selection && !added: {Regex.Escape(internalName)}: = vanilla;");

@@ -52,7 +52,7 @@ public class DisplayGroupEditor
             ImGui.SetNextWindowFocus();
         }
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(4.0f, 2.0f) * scale);
-        if (ImGui.Begin("Render Groups") && _scene != null)
+        if (ImGui.Begin("渲染组 Render Groups") && _scene != null)
         {
             DrawGroup dg = _scene.DisplayGroup;
             if (dg.AlwaysVisible || dg.RenderGroups.Length != dispCount)
@@ -66,7 +66,7 @@ public class DisplayGroupEditor
                 dg.AlwaysVisible = false;
             }
 
-            if (ImGui.Button($"Show All <{KeyBindings.Current.Map_RenderGroup_ShowAll.HintText}>")
+            if (ImGui.Button($"显示全部 Show All <{KeyBindings.Current.Map_RenderGroup_ShowAll.HintText}>")
                 || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_ShowAll))
             {
                 for (var i = 0; i < dispCount; i++)
@@ -76,7 +76,7 @@ public class DisplayGroupEditor
             }
 
             ImGui.SameLine(0.0f, 6.0f * scale);
-            if (ImGui.Button($"Hide All <{KeyBindings.Current.Map_RenderGroup_HideAll.HintText}>")
+            if (ImGui.Button($"隐藏全部 Hide All <{KeyBindings.Current.Map_RenderGroup_HideAll.HintText}>")
                 || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_HideAll))
             {
                 for (var i = 0; i < dispCount; i++)
@@ -91,7 +91,7 @@ public class DisplayGroupEditor
                 ImGui.BeginDisabled();
             }
 
-            if (ImGui.Button($"Get Disp <{KeyBindings.Current.Map_RenderGroup_GetDisp.HintText}>")
+            if (ImGui.Button($"队列 Get Disp <{KeyBindings.Current.Map_RenderGroup_GetDisp.HintText}>")
                 || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GetDisp)
                     && sdispgroups != null)
             {
@@ -102,7 +102,7 @@ public class DisplayGroupEditor
             }
 
             ImGui.SameLine(0.0f, 6.0f * scale);
-            if (ImGui.Button($"Get Draw <{KeyBindings.Current.Map_RenderGroup_GetDraw.HintText}>")
+            if (ImGui.Button($"绘制 Get Draw <{KeyBindings.Current.Map_RenderGroup_GetDraw.HintText}>")
                 || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GetDraw)
                     && sdispgroups != null)
             {
@@ -113,7 +113,7 @@ public class DisplayGroupEditor
             }
 
             ImGui.SameLine(0.0f, 12.0f * scale);
-            if (ImGui.Button($"Assign Draw <{KeyBindings.Current.Map_RenderGroup_GiveDraw.HintText}>")
+            if (ImGui.Button($"分配 Assign Draw <{KeyBindings.Current.Map_RenderGroup_GiveDraw.HintText}>")
                 || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GiveDraw)
                     && sdispgroups != null)
             {
@@ -123,7 +123,7 @@ public class DisplayGroupEditor
             }
 
             ImGui.SameLine(0.0f, 6.0f * scale);
-            if (ImGui.Button($"Assign Disp <{KeyBindings.Current.Map_RenderGroup_GiveDisp.HintText}>")
+            if (ImGui.Button($"分配队列 Assign Disp <{KeyBindings.Current.Map_RenderGroup_GiveDisp.HintText}>")
                 || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GiveDisp)
                     && sdispgroups != null)
             {
@@ -144,14 +144,14 @@ public class DisplayGroupEditor
             }
 
             bool selectHighlightsOperation = false;
-            if (ImGui.Button("Select Highlights")
+            if (ImGui.Button("选择高亮 Select Highlights")
                 || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_SelectHighlights))
             {
                 selectHighlightsOperation = true;
             }
 
             ImGui.SameLine(0.0f, 8.0f * scale);
-            if (ImGui.Button("Clear Highlights"))
+            if (ImGui.Button("清除高亮 Clear Highlights"))
             {
                 HighlightedGroups.Clear();
             }
@@ -161,7 +161,7 @@ public class DisplayGroupEditor
             }
 
             ImGui.SameLine(0.0f, 8.0f * scale);
-            if (ImGui.Button("Help"))
+            if (ImGui.Button("帮助 Help"))
             {
                 ImGui.OpenPopup("##RenderHelp");
             }
@@ -192,7 +192,7 @@ public class DisplayGroupEditor
             void DisplayTargetEntities()
             {
                 string affectedEntsStr = string.Join(", ", sels.Select(s => s.RenderGroupRefName != "" ? s.RenderGroupRefName : s.Name));
-                ImGui.Text($"Targets: {Utils.ImGui_WordWrapString(affectedEntsStr, ImGui.GetWindowWidth(), 99)}");
+                ImGui.Text($"目标 Targets: {Utils.ImGui_WordWrapString(affectedEntsStr, ImGui.GetWindowWidth(), 99)}");
             }
 
             if (sels.Count <= 5)
@@ -201,7 +201,7 @@ public class DisplayGroupEditor
             }
             else
             {
-                if (ImGui.CollapsingHeader("Targets##DisplayGroup"))
+                if (ImGui.CollapsingHeader("目标 Targets##DisplayGroup"))
                 {
                     DisplayTargetEntities();
                 }
@@ -219,7 +219,7 @@ public class DisplayGroupEditor
                     ImGui.Spacing();
                 }
 
-                ImGui.Text($@"Group {g}:");
+                ImGui.Text($@"组 Group {g}:");
                 for (var i = 0; i < 32; i++)
                 {
                     // Column

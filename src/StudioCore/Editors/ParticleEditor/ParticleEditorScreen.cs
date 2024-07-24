@@ -63,6 +63,7 @@ public class ParticleEditorScreen : EditorScreen
     }
 
     public string EditorName => "Particle Editor##ParticleEditor";
+    public string Discription => "粒子编辑器##ParticleEditor";
     public string CommandEndpoint => "particle";
     public string SaveType => "Particle";
 
@@ -73,22 +74,22 @@ public class ParticleEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
-        if (ImGui.BeginMenu("Edit"))
+        if (ImGui.BeginMenu("编辑 Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
+            if (ImGui.MenuItem("撤销 Undo", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false, EditorActionManager.CanUndo()))
+            if (ImGui.MenuItem("撤销全部 Undo All", "", false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
+            if (ImGui.MenuItem("返回 Redo", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
             }
@@ -96,31 +97,31 @@ public class ParticleEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("视图 View"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Files"))
+            if (ImGui.MenuItem("文件 Files"))
             {
                 CFG.Current.Interface_ParticleEditor_Files = !CFG.Current.Interface_ParticleEditor_Files;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParticleEditor_Files);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Particles"))
+            if (ImGui.MenuItem("粒子 Particles"))
             {
                 CFG.Current.Interface_ParticleEditor_Particles = !CFG.Current.Interface_ParticleEditor_Particles;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParticleEditor_Particles);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Data"))
+            if (ImGui.MenuItem("数据 Data"))
             {
                 CFG.Current.Interface_ParticleEditor_Data = !CFG.Current.Interface_ParticleEditor_Data;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParticleEditor_Data);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Toolbar"))
+            if (ImGui.MenuItem("工具栏 Toolbar"))
             {
                 CFG.Current.Interface_ParticleEditor_Toolbar = !CFG.Current.Interface_ParticleEditor_Toolbar;
             }
@@ -151,7 +152,7 @@ public class ParticleEditorScreen : EditorScreen
         {
             ImGui.Begin("Editor##InvalidParticleEditor");
 
-            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
+            ImGui.Text($"不支持 This editor does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }
@@ -162,7 +163,7 @@ public class ParticleEditorScreen : EditorScreen
             {
                 if (!CFG.Current.AutoLoadBank_Particle)
                 {
-                    if (ImGui.Button("Load Particle Editor"))
+                    if (ImGui.Button("加载粒子编辑器 Load Particle Editor"))
                     {
                         ParticleBank.LoadParticles();
                     }
@@ -226,8 +227,8 @@ public class ParticleEditorScreen : EditorScreen
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _fileSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        ImGui.InputText($"查找 Search", ref _fileSearchInput, 255);
+        ImguiUtils.ShowHoverTooltip("使用+号分割查找 Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -269,8 +270,8 @@ public class ParticleEditorScreen : EditorScreen
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _particleSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        ImGui.InputText($"查找 Search", ref _particleSearchInput, 255);
+        ImguiUtils.ShowHoverTooltip("使用+号分割查找 Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -281,7 +282,7 @@ public class ParticleEditorScreen : EditorScreen
 
         if (_selectedFileInfo != null && _selectedFileInfo.FxrFiles != null)
         {
-            ImGui.Text($"Particles");
+            ImGui.Text($"微粒 Particles");
             ImGui.Separator();
 
             for (int i = 0; i < _selectedFileInfo.FxrFiles.Count; i++)
@@ -323,8 +324,8 @@ public class ParticleEditorScreen : EditorScreen
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _particleDataSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        ImGui.InputText($"查找 Search", ref _particleDataSearchInput, 255);
+        ImguiUtils.ShowHoverTooltip("使用+号分割查找 Separate terms are split via the + character.");
 
         ImGui.Separator();
 

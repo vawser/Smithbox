@@ -38,6 +38,7 @@ public class EsdEditorScreen : EditorScreen
     }
 
     public string EditorName => "ESD Editor##TalkScriptEditor";
+    public string Discription => "ESD 编辑器 ESD Editor";
     public string CommandEndpoint => "esd";
     public string SaveType => "ESD";
 

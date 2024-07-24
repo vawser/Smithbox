@@ -11,6 +11,8 @@ public interface EditorScreen
     /// </summary>
     public string EditorName { get; }
 
+    public string Discription { get; }
+
     /// <summary>
     ///     The endpoint for editor commands that this editor responds to
     /// </summary>

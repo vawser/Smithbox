@@ -46,28 +46,28 @@ public class ActionSubMenu
 
     public void DisplayMenu()
     {
-        if (ImGui.BeginMenu("Actions"))
+        if (ImGui.BeginMenu("动作 Actions"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Duplicate Entries", KeyBindings.Current.Core_Duplicate.HintText))
+            if (ImGui.MenuItem("复刻 Duplicate Entries", KeyBindings.Current.Core_Duplicate.HintText))
             {
                 Handler.DuplicateHandler();
             }
-            ImguiUtils.ShowHoverTooltip("Duplicates current selection.");
+            ImguiUtils.ShowHoverTooltip("复刻选中值 Duplicates current selection.");
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Delete Entries", KeyBindings.Current.Core_Delete.HintText))
+            if (ImGui.MenuItem("删除 Delete Entries", KeyBindings.Current.Core_Delete.HintText))
             {
                 Handler.DeleteHandler();
             }
-            ImguiUtils.ShowHoverTooltip("Deletes current selection.");
+            ImguiUtils.ShowHoverTooltip("删除选中值 Deletes current selection.");
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Sync Description Entries", KeyBindings.Current.TextFMG_Sync.HintText))
+            if (ImGui.MenuItem("同步描述条目 Sync Description Entries", KeyBindings.Current.TextFMG_Sync.HintText))
             {
                 Handler.SyncDescriptionHandler();
             }
-            ImguiUtils.ShowHoverTooltip("Sync the description of all selected entries to the description of the first member of the selection.");
+            ImguiUtils.ShowHoverTooltip("同步所有选中条目的描述到选中项的第一个成员的描述 Sync the description of all selected entries to the description of the first member of the selection.");
 
 
             ImGui.EndMenu();

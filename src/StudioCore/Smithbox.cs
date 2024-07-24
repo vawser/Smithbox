@@ -534,7 +534,7 @@ public class Smithbox
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 0.0f);
 
         if (ImGui.BeginMainMenuBar())
-    {
+        {
             EditorHandler.HandleEditorSharedBar();
             EditorHandler.FocusedEditor.DrawEditorMenu();
             WindowHandler.HandleWindowIconBar();
@@ -647,10 +647,10 @@ public class Smithbox
         ProjectHandler.OnGui();
         WindowHandler.OnGui();
 
-        if(BankHandler != null)
+        if (BankHandler != null)
             BankHandler.OnGui();
 
-        if(AliasCacheHandler != null)
+        if (AliasCacheHandler != null)
             AliasCacheHandler.OnGui();
 
         ImGui.PopStyleVar(2);

@@ -140,7 +140,7 @@ public class MapSceneTree : IActionEventHandler
                 if (ParamBank.PrimaryBank.IsLoadingParams)
                 {
                     ImGui.NewLine();
-                    ImGui.Text("  Please wait for params to finish loading.");
+                    ImGui.Text("  请等待参数加载完毕 Please wait for params to finish loading.");
                     ImGui.End();
                     ImGui.PopStyleColor();
                     return;
@@ -158,7 +158,7 @@ public class MapSceneTree : IActionEventHandler
             if (CFG.Current.MapEditor_MapObjectList_ShowListSortingType)
             {
                 ImGui.AlignTextToFramePadding();
-                ImGui.Text("List Sorting Style:");
+                ImGui.Text("List Sorting Style:");ImguiUtils.ShowHoverTooltip("列表排序样式 List Sorting Style:");
                 ImGui.SameLine();
                 ImGui.SetNextItemWidth(-1);
 
@@ -176,7 +176,7 @@ public class MapSceneTree : IActionEventHandler
 
                 ImGui.SetNextItemWidth(widthUnit * 80);
                 ImGui.InputText("##treeSearch", ref _mapObjectListSearchInput, 99);
-                ImguiUtils.ShowHoverTooltip("Filters the map list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
+                ImguiUtils.ShowHoverTooltip("按名称查找地图列表 特征词也可\n\nFilters the map list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
                 ImGui.SameLine();
                 if (ImGui.Button($"Clear##ClearMapFilter", new Vector2(widthUnit * 16, 20 * Smithbox.GetUIScale())))
                 {
@@ -184,7 +184,7 @@ public class MapSceneTree : IActionEventHandler
                     _worldMapScreen.MapSelectionActive = false;
                     Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;
                 }
-                ImguiUtils.ShowHoverTooltip("Clear the map search filter.");
+                ImguiUtils.ShowHoverTooltip("清空筛选器 Clear the map search filter.");
             }
 
             ImGui.Unindent(5 * scale);
@@ -211,11 +211,11 @@ public class MapSceneTree : IActionEventHandler
         {
             if (_universe.GameType == ProjectType.Undefined)
             {
-                ImGui.Text("No project loaded. File -> New Project");
+                ImGui.Text("项目未加载 No project loaded. File -> New Project");
             }
             else
             {
-                ImGui.Text("This Editor requires unpacked game files. Use UXM");
+                ImGui.Text("游戏未被UXM解包 This Editor requires unpacked game files. Use UXM");
             }
         }
 
@@ -351,7 +351,7 @@ public class MapSceneTree : IActionEventHandler
             {
                 if (CurrentObjectContainer == null)
                 {
-                    if (ImGui.Selectable("Load Map"))
+                    if (ImGui.Selectable("加载 Load Map"))
                     {
                         if (selected)
                         {
@@ -363,7 +363,7 @@ public class MapSceneTree : IActionEventHandler
                 }
                 else if (CurrentObjectContainer is MapContainer m)
                 {
-                    if (ImGui.Selectable("Save Map"))
+                    if (ImGui.Selectable("保存 Save Map"))
                     {
                         try
                         {
@@ -375,7 +375,7 @@ public class MapSceneTree : IActionEventHandler
                         }
                     }
 
-                    if (ImGui.Selectable("Unload Map"))
+                    if (ImGui.Selectable("卸载 Unload Map"))
                     {
                         _selection.ClearSelection();
                         _editorActionManager.Clear();
@@ -390,7 +390,7 @@ public class MapSceneTree : IActionEventHandler
                 {
                     if (CurrentMapID.StartsWith("m60") || CurrentMapID.StartsWith("m61"))
                     {
-                        if (ImGui.Selectable("Load Related Maps"))
+                        if (ImGui.Selectable("加载关联地图 Load Related Maps"))
                         {
                             if (selected)
                             {
@@ -405,9 +405,9 @@ public class MapSceneTree : IActionEventHandler
 
                 if (_universe.GetLoadedMapCount() > 1)
                 {
-                    if (ImGui.Selectable("Unload All Maps"))
+                    if (ImGui.Selectable("卸载所有地图 Unload All Maps"))
                     {
-                        DialogResult result = PlatformUtils.Instance.MessageBox("Unload all maps?", "Confirm",
+                        DialogResult result = PlatformUtils.Instance.MessageBox("卸载所有地图吗 Unload all maps?", "确认 Confirm",
                             MessageBoxButtons.YesNo);
                         if (result == DialogResult.Yes)
                         {
@@ -879,7 +879,7 @@ public class MapSceneTree : IActionEventHandler
             }
 
             ImGui.SameLine();
-            if (ImGui.Button("Load"))
+            if (ImGui.Button("加载 Load"))
             {
                 if (!_universe.LoadMap(_chaliceMapID))
                 {

@@ -40,14 +40,14 @@ internal class AutoFillSearchEngine<A, B>
         var currentArgIndex = 0;
         if (enableComplexToggles)
         {
-            ImGui.Checkbox("Invert selection?##meautoinputnottoggle" + id, ref _autoFillNotToggle);
+            ImGui.Checkbox("反转选择 Invert selection?##meautoinputnottoggle" + id, ref _autoFillNotToggle);
             ImGui.SameLine();
-            ImGui.Checkbox("Add another condition?##meautoinputadditionalcondition" + id,
+            ImGui.Checkbox("添加另一个条件 Add another condition?##meautoinputadditionalcondition" + id,
                 ref _useAdditionalCondition);
         }
         else if (multiStageSE != null)
         {
-            ImGui.Checkbox("Add another condition?##meautoinputadditionalcondition" + id,
+            ImGui.Checkbox("添加另一个条件 Add another condition?##meautoinputadditionalcondition" + id,
                 ref _useAdditionalCondition);
         }
 
@@ -79,11 +79,11 @@ internal class AutoFillSearchEngine<A, B>
 
             string subResult = null;
             var wiki = cmd.Item3;
-            UIHints.AddImGuiHintButton(cmd.Item1 == null ? "hintdefault" : "hint" + cmd.Item1, ref wiki, false,
+            UIHints.AddImGuiHintButton(cmd.Item1 == null ? "默认提示 hintdefault" : "提示 hint" + cmd.Item1, ref wiki, false,
                 true);
             if (subMenu != null || _additionalCondition != null)
             {
-                if (ImGui.BeginMenu(cmd.Item1 == null ? "Default filter..." : cmd.Item1, valid))
+                if (ImGui.BeginMenu(cmd.Item1 == null ? "默认筛选 Default filter..." : cmd.Item1, valid))
                 {
                     var curResult = inheritedCommand + getCurrentStepText(valid, cmd.Item1, argIndices,
                         _additionalCondition != null ? " && " : suffix);
@@ -107,7 +107,7 @@ internal class AutoFillSearchEngine<A, B>
             }
             else
             {
-                subResult = ImGui.Selectable(cmd.Item1 == null ? "Default filter..." : cmd.Item1, false,
+                subResult = ImGui.Selectable(cmd.Item1 == null ? "默认筛选 Default filter..." : cmd.Item1, false,
                     valid ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled)
                     ? suffix
                     : null;
@@ -215,7 +215,7 @@ internal class AutoFill
         ImGui.Button($@"{ForkAwesome.CaretDown}");
         if (ImGui.BeginPopupContextItem("##psbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
-            ImGui.TextColored(HINTCOLOUR, "Select params...");
+            ImGui.TextColored(HINTCOLOUR, "选择参数 Select params...");
             var result = autoFillPse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
             return result;
@@ -230,7 +230,7 @@ internal class AutoFill
         ImGui.Button($@"{ForkAwesome.CaretDown}");
         if (ImGui.BeginPopupContextItem("##rsbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
-            ImGui.TextColored(HINTCOLOUR, "Select rows...");
+            ImGui.TextColored(HINTCOLOUR, "选择行 Select rows...");
             var result = autoFillRse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
             return result;
@@ -245,7 +245,7 @@ internal class AutoFill
         ImGui.Button($@"{ForkAwesome.CaretDown}");
         if (ImGui.BeginPopupContextItem("##csbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
-            ImGui.TextColored(HINTCOLOUR, "Select fields...");
+            ImGui.TextColored(HINTCOLOUR, "选择块 Select fields...");
             var result = autoFillCse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
             return result;
@@ -256,13 +256,13 @@ internal class AutoFill
 
     public static string MassEditCompleteAutoFill()
     {
-        ImGui.TextUnformatted("Add command...");
+        ImGui.TextUnformatted("添加指令 Add command...");
         ImGui.SameLine();
         ImGui.Button($@"{ForkAwesome.CaretDown}");
         if (ImGui.BeginPopupContextItem("##meautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.PushID("paramrow");
-            ImGui.TextColored(HINTCOLOUR, "Select param and rows...");
+            ImGui.TextColored(HINTCOLOUR, "选择参数和行 Select param and rows...");
             var result1 = autoFillParse.Menu(false, autoFillRse, false, ": ", null, inheritedCommand =>
             {
                 if (inheritedCommand != null)
@@ -270,7 +270,7 @@ internal class AutoFill
                     ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand);
                 }
 
-                ImGui.TextColored(HINTCOLOUR, "Select fields...");
+                ImGui.TextColored(HINTCOLOUR, "选择块 Select fields...");
                 var res1 = autoFillCse.Menu(true, true, ": ", inheritedCommand, inheritedCommand2 =>
                 {
                     if (inheritedCommand2 != null)
@@ -278,11 +278,11 @@ internal class AutoFill
                         ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand2);
                     }
 
-                    ImGui.TextColored(HINTCOLOUR, "Select field operation...");
+                    ImGui.TextColored(HINTCOLOUR, "选择操作块 Select field operation...");
                     return MassEditAutoFillForOperation(MEValueOperation.valueOps, ref _autoFillArgsCop, ";", null);
                 });
                 ImGui.Separator();
-                ImGui.TextColored(HINTCOLOUR, "Select row operation...");
+                ImGui.TextColored(HINTCOLOUR, "选择操作块 Select row operation...");
                 var res2 = MassEditAutoFillForOperation(MERowOperation.rowOps, ref _autoFillArgsRop, ";", null);
                 if (res1 != null)
                 {
@@ -294,7 +294,7 @@ internal class AutoFill
             ImGui.PopID();
             ImGui.Separator();
             ImGui.PushID("param");
-            ImGui.TextColored(HINTCOLOUR, "Select params...");
+            ImGui.TextColored(HINTCOLOUR, "选择参数 Select params...");
             var result2 = autoFillPse.Menu(true, false, ": ", null, inheritedCommand =>
             {
                 if (inheritedCommand != null)
@@ -302,7 +302,7 @@ internal class AutoFill
                     ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand);
                 }
 
-                ImGui.TextColored(HINTCOLOUR, "Select rows...");
+                ImGui.TextColored(HINTCOLOUR, "选择参数 Select rows...");
                 return autoFillRse.Menu(true, false, ": ", inheritedCommand, inheritedCommand2 =>
                 {
                     if (inheritedCommand2 != null)
@@ -310,7 +310,7 @@ internal class AutoFill
                         ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand2);
                     }
 
-                    ImGui.TextColored(HINTCOLOUR, "Select fields...");
+                    ImGui.TextColored(HINTCOLOUR, "选择块 Select fields...");
                     var res1 = autoFillCse.Menu(true, true, ": ", inheritedCommand2, inheritedCommand3 =>
                     {
                         if (inheritedCommand3 != null)
@@ -318,7 +318,7 @@ internal class AutoFill
                             ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand3);
                         }
 
-                        ImGui.TextColored(HINTCOLOUR, "Select field operation...");
+                        ImGui.TextColored(HINTCOLOUR, "选择操作块 Select field operation...");
                         return MassEditAutoFillForOperation(MEValueOperation.valueOps, ref _autoFillArgsCop, ";",
                             null);
                     });
@@ -326,7 +326,7 @@ internal class AutoFill
                     if (CFG.Current.Param_AdvancedMassedit)
                     {
                         ImGui.Separator();
-                        ImGui.TextColored(HINTCOLOUR, "Select row operation...");
+                        ImGui.TextColored(HINTCOLOUR, "选择操作行 Select row operation...");
                         res2 = MassEditAutoFillForOperation(MERowOperation.rowOps, ref _autoFillArgsRop, ";", null);
                     }
 
@@ -345,7 +345,7 @@ internal class AutoFill
             {
                 ImGui.Separator();
                 ImGui.PushID("globalop");
-                ImGui.TextColored(HINTCOLOUR, "Select global operation...");
+                ImGui.TextColored(HINTCOLOUR, "选择操作全局 Select global operation...");
                 result3 = MassEditAutoFillForOperation(MEGlobalOperation.globalOps, ref _autoFillArgsGop, ";",
                     null);
                 ImGui.PopID();
@@ -353,7 +353,7 @@ internal class AutoFill
                 {
                     ImGui.Separator();
                     ImGui.PushID("var");
-                    ImGui.TextColored(HINTCOLOUR, "Select variables...");
+                    ImGui.TextColored(HINTCOLOUR, "选择数据 Select variables...");
                     result4 = autoFillVse.Menu(false, false, ": ", null, inheritedCommand =>
                     {
                         if (inheritedCommand != null)
@@ -361,7 +361,7 @@ internal class AutoFill
                             ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand);
                         }
 
-                        ImGui.TextColored(HINTCOLOUR, "Select value operation...");
+                        ImGui.TextColored(HINTCOLOUR, "选择操作值 Select value operation...");
                         return MassEditAutoFillForOperation(MEValueOperation.valueOps, ref _autoFillArgsCop, ";",
                             null);
                     });

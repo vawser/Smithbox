@@ -68,6 +68,7 @@ public class CutsceneEditorScreen : EditorScreen
     }
 
     public string EditorName => "Cutscene Editor##CutsceneEditor";
+    public string Discription => "片段编辑器 Cutscene Editor";
     public string CommandEndpoint => "cutscene";
     public string SaveType => "Cutscene";
 
@@ -100,7 +101,7 @@ public class CutsceneEditorScreen : EditorScreen
         {
             ImGui.Begin("Editor##InvalidCutsceneEditor");
 
-            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
+            ImGui.Text($"不支持 This editor does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }
@@ -110,7 +111,7 @@ public class CutsceneEditorScreen : EditorScreen
             {
                 if (!CFG.Current.AutoLoadBank_Cutscene)
                 {
-                    if (ImGui.Button("Load Cutscene Editor"))
+                    if (ImGui.Button("加载片段编辑器 Load Cutscene Editor"))
                     {
                         CutsceneBank.LoadCutscenes();
                     }
@@ -159,7 +160,7 @@ public class CutsceneEditorScreen : EditorScreen
         // File List
         ImGui.Begin("Files##CutsceneFileList");
 
-        ImGui.Text($"File");
+        ImGui.Text($"文件 File");
         ImGui.Separator();
 
         foreach (var (info, binder) in CutsceneBank.FileBank)
@@ -222,8 +223,8 @@ public class CutsceneEditorScreen : EditorScreen
             ImGui.Columns(2);
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Text($"Framerate");
-            ImGui.Text($"Resource Directory");
+            ImGui.Text($"帧率 Framerate");
+            ImGui.Text($"资源路径 Resource Directory");
 
             ImGui.NextColumn();
 

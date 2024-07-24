@@ -62,8 +62,8 @@ namespace StudioCore.Editors.ModelEditor
 
             if (ImGui.Begin($@"Asset Browser##ModelAssetBrower"))
             {
-                ImGui.InputText($"Search", ref _searchInput, 255);
-                ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+                ImGui.InputText($"搜索 Search", ref _searchInput, 255);
+                ImguiUtils.ShowHoverTooltip("用+号来分割 Separate terms are split via the + character.");
 
                 DisplayLooseSection();
                 DisplayCharacterList();
@@ -161,11 +161,11 @@ namespace StudioCore.Editors.ModelEditor
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth, 32);
 
-            if (ImGui.CollapsingHeader("Loose"))
+            if (ImGui.CollapsingHeader("零碎 Loose"))
             {
-                if(ImGui.Button("Load Loose FLVER", defaultButtonSize))
+                if(ImGui.Button("加载零碎FLVER文件 Load Loose FLVER", defaultButtonSize))
                 {
-                    var result = PlatformUtils.Instance.OpenFileDialog("Select loose FLVER...", new string[] { "png", "flver", "flv" }, out var loosePath);
+                    var result = PlatformUtils.Instance.OpenFileDialog("选择零碎的FLVER文件 Select loose FLVER...", new string[] { "png", "flver", "flv" }, out var loosePath);
 
                     if(result)
                     {
@@ -183,7 +183,7 @@ namespace StudioCore.Editors.ModelEditor
             if (Smithbox.BankHandler.CharacterAliases.Aliases == null)
                 return;
 
-            if (ImGui.CollapsingHeader("Characters"))
+            if (ImGui.CollapsingHeader("角色 Characters"))
             {
                 foreach(var entry in Smithbox.AliasCacheHandler.AliasCache.CharacterList)
                 {
@@ -205,13 +205,13 @@ namespace StudioCore.Editors.ModelEditor
                         {
                             if (AssetCopyHandler.IsSupportedProjectType() && entry != "c0000")
                             {
-                                if (ImGui.Selectable("Copy as New Character"))
+                                if (ImGui.Selectable("复制到新角色 Copy as New Character"))
                                 {
                                     AssetCopyHandler.OpenCharacterCopyMenu(entry);
                                 }
                             }
 
-                            if (ImGui.Selectable("Go to Alias"))
+                            if (ImGui.Selectable("跳转到 Go to Alias"))
                             {
                                 Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
                                 Smithbox.WindowHandler.AliasWindow.DisplayCharacterTab = true;
@@ -230,11 +230,11 @@ namespace StudioCore.Editors.ModelEditor
             if (Smithbox.BankHandler.AssetAliases.Aliases == null)
                 return;
 
-            var assetLabel = "Objects";
+            var assetLabel = "对象 Objects";
 
             if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
             {
-                assetLabel = "Assets";
+                assetLabel = "资源 Assets";
             }
 
             if (ImGui.CollapsingHeader(assetLabel))
@@ -259,13 +259,13 @@ namespace StudioCore.Editors.ModelEditor
                         {
                             if (AssetCopyHandler.IsSupportedProjectType())
                             {
-                                if (ImGui.Selectable("Copy as New Asset"))
+                                if (ImGui.Selectable("复制到新资源 Copy as New Asset"))
                                 {
                                     AssetCopyHandler.OpenAssetCopyMenu(entry);
                                 }
                             }
 
-                            if (ImGui.Selectable("Go to Alias"))
+                            if (ImGui.Selectable("跳转别称 Go to Alias"))
                             {
                                 Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
                                 Smithbox.WindowHandler.AliasWindow.DisplayAssetTab = true;
@@ -284,7 +284,7 @@ namespace StudioCore.Editors.ModelEditor
             if (Smithbox.BankHandler.PartAliases.Aliases == null)
                 return;
 
-            if (ImGui.CollapsingHeader("Parts"))
+            if (ImGui.CollapsingHeader("局部 Parts"))
             {
                 foreach (var entry in Smithbox.AliasCacheHandler.AliasCache.PartList)
                 {
@@ -306,13 +306,13 @@ namespace StudioCore.Editors.ModelEditor
                         {
                             if (AssetCopyHandler.IsSupportedProjectType())
                             {
-                                if (ImGui.Selectable("Copy as New Part"))
+                                if (ImGui.Selectable("复制到新部分 Copy as New Part"))
                                 {
                                     AssetCopyHandler.OpenPartCopyMenu(entry);
                                 }
                             }
 
-                            if (ImGui.Selectable("Go to Alias"))
+                            if (ImGui.Selectable("跳至 Go to Alias"))
                             {
                                 Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
                                 Smithbox.WindowHandler.AliasWindow.DisplayPartTab = true;
@@ -333,7 +333,7 @@ namespace StudioCore.Editors.ModelEditor
 
             var maps = MapLocator.GetFullMapList();
 
-            if (ImGui.CollapsingHeader("Map Pieces"))
+            if (ImGui.CollapsingHeader("地图碎片 Map Pieces"))
             {
                 foreach (var map in maps)
                 {
@@ -369,7 +369,7 @@ namespace StudioCore.Editors.ModelEditor
 
                             if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{entry}"))
                             {
-                                if (ImGui.Selectable("Go to Alias"))
+                                if (ImGui.Selectable("调至别称 Go to Alias"))
                                 {
                                     Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
                                     Smithbox.WindowHandler.AliasWindow.DisplayMapPieceTab = true;

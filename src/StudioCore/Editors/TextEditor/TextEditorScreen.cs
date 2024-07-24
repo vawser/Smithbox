@@ -66,6 +66,7 @@ public class TextEditorScreen : EditorScreen
     }
 
     public string EditorName => "Text Editor";
+    public string Discription => "文本编辑器 Text Editor";
     public string CommandEndpoint => "text";
     public string SaveType => "Text";
 
@@ -78,24 +79,24 @@ public class TextEditorScreen : EditorScreen
     {
         var currentFmgBank = Smithbox.BankHandler.FMGBank;
 
-        if (ImGui.BeginMenu("Edit", currentFmgBank.IsLoaded))
+        if (ImGui.BeginMenu("编辑 Edit", currentFmgBank.IsLoaded))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
+            if (ImGui.MenuItem($"撤销 Undo", KeyBindings.Current.Core_Undo.HintText, false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false,
+            if (ImGui.MenuItem("撤销全部 Undo All", "", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
+            if (ImGui.MenuItem("返回 Redo", KeyBindings.Current.Core_Redo.HintText, false,
                     EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
@@ -107,13 +108,13 @@ public class TextEditorScreen : EditorScreen
         ActionSubMenu.DisplayMenu();
         ToolSubMenu.DisplayMenu();
 
-        if (ImGui.BeginMenu("Data", Smithbox.BankHandler.FMGBank.IsLoaded))
+        if (ImGui.BeginMenu("数据 Data", Smithbox.BankHandler.FMGBank.IsLoaded))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
-            if (ImGui.BeginMenu("Import Text Entries"))
+            if (ImGui.BeginMenu("导入文本 Import Text Entries"))
             {
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
-                if (ImGui.MenuItem("Merge Entries"))
+                if (ImGui.MenuItem("合并 Merge Entries"))
                 {
                     if (FmgExporter.ImportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], true))
                     {
@@ -121,10 +122,10 @@ public class TextEditorScreen : EditorScreen
                         ResetActionManager();
                     }
                 }
-                ImguiUtils.ShowHoverTooltip("Import: text will be merged with currently loaded text");
+                ImguiUtils.ShowHoverTooltip("导入保留原有的 Import: text will be merged with currently loaded text");
 
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
-                if (ImGui.MenuItem("Replace Entries"))
+                if (ImGui.MenuItem("替换 Replace Entries"))
                 {
                     if (FmgExporter.ImportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], false))
                     {
@@ -132,26 +133,26 @@ public class TextEditorScreen : EditorScreen
                         ResetActionManager();
                     }
                 }
-                ImguiUtils.ShowHoverTooltip("Import: text replaces currently loaded text entirely");
+                ImguiUtils.ShowHoverTooltip("导入并替换原有的 Import: text replaces currently loaded text entirely");
 
                 ImGui.EndMenu();
             }
 
             // Export
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
-            if (ImGui.BeginMenu("Export Text Entries"))
+            if (ImGui.BeginMenu("导出文本 Export Text Entries"))
             {
-                if (ImGui.MenuItem("Export Modded Entries"))
+                if (ImGui.MenuItem("导出模组 Export Modded Entries"))
                 {
                     FmgExporter.ExportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], true);
                 }
-                ImguiUtils.ShowHoverTooltip("Export: only modded text (different than vanilla) will be exported");
+                ImguiUtils.ShowHoverTooltip("仅导出经过修改的文本（与原版不同） Export: only modded text (different than vanilla) will be exported");
 
-                if (ImGui.MenuItem("Export All Entries"))
+                if (ImGui.MenuItem("导出所有条目 Export All Entries"))
                 {
                     FmgExporter.ExportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], false);
                 }
-                ImguiUtils.ShowHoverTooltip("Export: all text will be exported");
+                ImguiUtils.ShowHoverTooltip("导出：所有文本将被导出 Export: all text will be exported");
 
                 ImGui.EndMenu();
             }
@@ -160,24 +161,24 @@ public class TextEditorScreen : EditorScreen
         }
 
 
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("视图 View"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Text Categories"))
+            if (ImGui.MenuItem("类别 Text Categories"))
             {
                 CFG.Current.Interface_TextEditor_TextCategories = !CFG.Current.Interface_TextEditor_TextCategories;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextCategories);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Text Entry"))
+            if (ImGui.MenuItem("入口 Text Entry"))
             {
                 CFG.Current.Interface_TextEditor_TextEntry = !CFG.Current.Interface_TextEditor_TextEntry;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextEntry);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Tool Configuration"))
+            if (ImGui.MenuItem("配置 Tool Configuration"))
             {
                 CFG.Current.Interface_TextEditor_ToolConfigurationWindow = !CFG.Current.Interface_TextEditor_ToolConfigurationWindow;
             }
@@ -185,12 +186,12 @@ public class TextEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Text Language", !currentFmgBank.IsLoading))
+        if (ImGui.BeginMenu("语言 Text Language", !currentFmgBank.IsLoading))
         {
             Dictionary<string, string> folders = TextLocator.GetMsgLanguages();
             if (folders.Count == 0)
             {
-                ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f), "Cannot find language folders.");
+                ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f), "无此语言目录 Cannot find language folders.");
             }
             else
             {
@@ -219,10 +220,10 @@ public class TextEditorScreen : EditorScreen
         // Only relevant for games that use the dlc FMG system
         if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
         {
-            if (ImGui.BeginMenu("Text Output"))
+            if (ImGui.BeginMenu("文本输出 Text Output"))
             {
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-                if (ImGui.MenuItem("Vanilla"))
+                if (ImGui.MenuItem("默认 Vanilla"))
                 {
                     CurrentTargetOutputMode = TargetOutputMode.Vanilla;
                 }
@@ -244,7 +245,7 @@ public class TextEditorScreen : EditorScreen
 
                 ImGui.EndMenu();
             }
-            ImguiUtils.ShowHoverTooltip("Allows you to switch the target FMG output on save. By default for DS3 dlc2 and ER this is dlc02.");
+            ImguiUtils.ShowHoverTooltip("允许您在保存时切换目标 FMG 输出。默认情况下，对于 DS3 dlc2 和 ER，这个目标是 dlc02\nAllows you to switch the target FMG output on save. By default for DS3 dlc2 and ER this is dlc02.");
         }
     }
 
@@ -278,7 +279,7 @@ public class TextEditorScreen : EditorScreen
         {
             ImGui.Begin("Editor##InvalidTextEditor");
 
-            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
+            ImGui.Text($"不支持 This editor does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }
@@ -611,15 +612,15 @@ public class TextEditorScreen : EditorScreen
         {
             if (Smithbox.ProjectHandler.CurrentProject.Config == null)
             {
-                ImGui.Text("No project loaded. File -> New Project");
+                ImGui.Text("未加载项目 No project loaded. File -> New Project");
             }
             else if (Smithbox.BankHandler.FMGBank.IsLoading)
             {
-                ImGui.Text("Loading...");
+                ImGui.Text("加载中 Loading...");
             }
             else
             {
-                ImGui.Text("This Editor requires unpacked game files. Use UXM");
+                ImGui.Text("需要UXM解包后才能使用本程序\nThis Editor requires unpacked game files. Use UXM");
                 // Ascii fatcat (IMPORTANT)
                 ImGui.TextUnformatted(
                     "\nPPPPP5555PGGGGGGGBBBBBBGPYJ?????????JJYYYYYY5PPPGGPPPGPPPPPPPPPPPPGGGGGGGGGPPPPPPPPPPPPPPPPPPPPPPPPP\r\nPPPPP5555PGGGGGBBBBBBGGGPYJJ??????JJYY55555Y555PPPPGGGGGGGGGGGGGGGGGPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\r\nPPPPP555PPGGGGGBBBBBBGGGP5JJ?????JJY55555555YYY555PPPPGGGGGGGPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\r\nPPPPP555PPGGGGGBBBBBBGBGPYJ?????JJY555555555555555555PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPGPPP\r\nPP55555PPGGGGGGGBBBBBBGGPYJ????JJY555555555555555555555555PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP\r\n555Y55PPGGGGGGGGGGGBBGGG5Y?????JYY5555555P5555P555555555555555PPPPPPPPPPPPPPPPPPGGGGGGGGGPPPPPPPPPPP\r\n555555PPPPPPPPGGGGGBBBBGPJ???JJYY55555555PPPP5555555555555555555PPPPPPPPPPPPPPPPPPPPPPPPPPPPPGGGGGGG\r\nPPPPPPPPPPPGGGGGGGGGBBBBG5YJJJYYYY555555PPP55555555555555555555555PPPPPPPPPGGPPPPPGGGGPPPPPPPPPPPPPP\r\nPPPPPPPGGGGGGGGGGGGBBBBBGP555YYYYYYYYYY55555555555YYYYYYYYY55555555555PPPPPPPPPPPPPPPPPPPPPPPGPPPPPP\r\nPPPPPGGGGGPPPPPPPPGGGGGGPPPP5555YYYYYYYYYY555555YYYYYYYYYY55555YYYYYY5555555555555555555555555555PPP\r\nPPPPPPPPPPPP555555PPPPPPPPPP5555555555YYYYYYYYYYYYYYYYYYYY55YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY\r\n55PPPPPP555555555555555PP55555555555555555YYYYYYYYYYYYYYYYYYYYYYYJJJJJ??JJJJJJ?JJJJJJJJJJJJJJJJJJJJJ\r\nPPPPPPP55555555PP5555555P55555555555555555YYYYYYYYYYYYYYYYJJJJJJJJJ??????????77?????????????????????\r\nPPPPPP5PPPPPPPPPP555555555555555555555555YYYYYYYYYYYYYYYJJ??????????7777777777777?????????7?????????\r\nPPPPPPPPPPPPPPPP55555555555555555555YYYYYYYYYYYYYYYYJJJ???7777777777??7777777777777777????77777?????\r\nGGGGBBBBBBGGGGGGGGGPPPPPPPPP5555555YYYYYYYJJJJJJJJ??????77777777?77??????777777777777777?777777?????\r\nGGGGGGGBBBBBBBBBBBBBBGGGGGPPPPPP5555YYYYJJJJJJ????????7777777?????????????????????7777777777777?????\r\nPPPPPPPPPGGGGGGGGGGBBBBBBBGGPPPPPP555YYYYJJJJJ?????????77777????JJYYYJJJJJ?????????????????777777777\r\nPPP5PPPPPPPPPPPPPPPPPPPGGBBGGGPPPPPP55YYYYYYJJJ??7777????777??JJYY5555YYYYYYYYYYYYYJJJJYJJJJ????????\r\nPPPPPPPPPPPPP5PPPPPP555PPGGGGGPPPPPPP5555YYYJJ???7777?77777???JY555PPPPPPPPPGGGGGGGGGPPPPPPPP555YYYY\r\nPPPPPPPPPPPPP55PPP5555555PPPPPPPPPPPPP555YYJJ????????????777??J5PGGGGGGGGGGGGGGGGBBBBBBBBBBBBBBBBBBB\r\nPPPPPPPPPPPP55555555555PPPPPPPPPPPPPP55YYYYJJJ?????????????77?Y5P555YJJ??JJJJJ??JJJJJJJYYY5555555555\r\nPPP55PPPP5555555555555PPPPPPPPPPPGGPP5YYYYYJJJ????????????777??JJJJ???777777777777777777????????????\r\n555555P55555P55555555PPPPPPPPPPPGGGP55YYYYYJJJJJJJ??JJJ?????????????77777777777777777777777777777777\r\n5555555555PPPP55555PPPPPPPPPPPPPGGPP5YYYYYYJJJJJJJJJJJJJ????????????77777777777777777777777777777777\r\nP5555555555P5555555PPPPPPPPGGGGGGGPP5YYYYYYYYJJJJJYYYYYJJJ??????????77777777777777777777777777777777\r\n555P5555555555555555PPPPPPPGGGGPPPP55YYYYYYYYYYYYYY555YYJJJ????????777777777777777777777777777777777\r\n55555555555555PPP555PPPPPPGGGGGGPPP55YYYYYYYYYYYYYYY55YYJJJ???????7777777777777777777777777777777777\r\nPPPP55PP5555PPPPPPPPPPPPPPPGGGGGGPPP555YYYYYYYYYYY55PP5YJJ???????????7777777777777777777777777777777\r\nPPP555555PPPP55PPPPPPPPPPPGGGGBGGPPPPP555555555PPPGGPP5YJJJJ??????????777777777777777777777777777777\r\nPPPPPPPPPPPPPPPPPPPPPPPPPPGGGGGGGPPPPPPPPPPPPPPPGGGGP55YYYYJJ?????????777777777777777777777777777777\r\nPPPPPPPGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGPPGPPP55YYYYYJJJJ?????????77777777777777777777777777\r\nPPPPPPPPGGGBBBBBBBBBGGGBBBBBBBBBBBBBBBBBBBBGGBBGGGGGGPPP5555YYYYYYYJJJJJJ??????777777777777777777777\r\nPPPPPPPPPPPPPGGBBBGGPPGGBBBBBBBBBBBBBBBBBBBBBBBBBBBGGGGGGGPPPPPPPPP55555YYYYJJJ????77777777777777777\r\nPPPPPPPPPPPPPPPPPPPPPPPPGBBBBBBBBBBBBBBBBBBBBBB##BGGPPGGBBBBGGGGGGGGPPPPPPPP5555YYJJ??????7777777777\r\nPPPPPPPPPPPPPPPPPPP55555PPGGGBBBBBBBBBBBBBBBBBBBGGPPPPGGGGGPPPPPPPPPPP5555555555555YYJJJ????????????\r\nPPPPPPPPPPPPPPPP5PPPPP555PPPPPPPPPPPPPPPPGPPPPPPP555555555555555YYYJJJJJJJJJJJJJJYYYYJJJJJJJJJ??????\r\nPPPPPPPPPPPPPPP555PPPP555555555555555555555555YYYYYYYYYYYJJJJJJJ???777777777777???JJJJJJJJJJJJJJ????\r\nPPP55PPPPP555PP5555555555555555YYYYYYYYYYYYYYJJJJJJJJJJ??????777777777777777777???JJJJJJJJJJJJJJJ???\r\nPPPPPPPP5555555555555555YYYYYYYJJJJJJ????????????????????????????777777777777???JJJJJJJJJJJJJJJJJ???\r\nPPPP5P555555555555555555555YYYYYJJJJJJJJ??????????????????????????????7?????JJJJJJJJJJJJJJJJJJJJJJJJ\r\nPPP55PP55555555555555555555YYYYYYYJJJJJJJJJJJJJJJJ?????????JJJJJJJJ???JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ\r\n555555555555555555555555YYYYYYYYYYYYJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ\r\n55555555555555555555555555555555YYYYYYYYYYYYYYYYYYYYYYYYYYYYYJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ\r\n5555555555555555555555555555555555555555555555555555555YYYYYYYJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ?\r\n55555555555555555555555555555555555555555555555555555555YYYYYYYYYYYYJJJJJJJJJJJJJJJJJJJJJJJJJJJ?????\r\n555555555555555555555555555555555555555555555555555555YYYYYYYYYYYYYYYJJJJJJJJJJJJJJJJJJJJJ??????????");
@@ -641,7 +642,7 @@ public class TextEditorScreen : EditorScreen
                 _fmgSearchAllActive = false;
                 ImGui.BeginDisabled();
             }
-            if (ImGui.Button("Search All FMGs##FmgSearchAll"))
+            if (ImGui.Button("查找 Search All FMGs##FmgSearchAll"))
             {
                 _fmgSearchAllActive = true;
                 _filteredFmgInfo.Clear();
@@ -683,7 +684,7 @@ public class TextEditorScreen : EditorScreen
             }
 
             ImGui.SameLine();
-            if (ImGui.Button("Reset##FmgSearchAll"))
+            if (ImGui.Button("重置 Reset##FmgSearchAll"))
             {
                 _fmgSearchAllActive = false;
                 _fmgSearchAllString = "";
@@ -733,7 +734,7 @@ public class TextEditorScreen : EditorScreen
             ImGui.End();
 
             ImGui.Begin("Text Entries");
-            if (ImGui.Button("Clear Text"))
+            if (ImGui.Button("清空 Clear Text"))
             {
                 _searchFilter = "";
             }
@@ -746,18 +747,18 @@ public class TextEditorScreen : EditorScreen
                 ImGui.SetKeyboardFocusHere();
             }
 
-            ImGui.InputText($"Search <{KeyBindings.Current.TextFMG_Search.HintText}>", ref _searchFilter, 255);
+            ImGui.InputText($"查找 Search <{KeyBindings.Current.TextFMG_Search.HintText}>", ref _searchFilter, 255);
 
             FMGSearchLogic(ref doFocus);
 
-            ImGui.BeginChild("Text Entry List");
+            ImGui.BeginChild("文本列 Text Entry List");
             if (_activeFmgInfo == null)
             {
-                ImGui.Text("Select a category to see entries");
+                ImGui.Text("选择一个类别以查看条目 Select a category to see entries");
             }
             else if (_EntryLabelCacheFiltered == null)
             {
-                ImGui.Text("No entries match search filter");
+                ImGui.Text("没有条目匹配搜索过滤器 No entries match search filter");
             }
             else
             {
@@ -804,11 +805,11 @@ public class TextEditorScreen : EditorScreen
 
                     if (ImGui.BeginPopupContextItem())
                     {
-                        if (ImGui.Selectable("Duplicate Entries"))
+                        if (ImGui.Selectable("复刻 Duplicate Entries"))
                         {
                             ActionSubMenu.Handler.DuplicateHandler();
                         }
-                        if (ImGui.Selectable("Delete Entries"))
+                        if (ImGui.Selectable("删除 Delete Entries"))
                         {
                             ActionSubMenu.Handler.DeleteHandler();
                         }
@@ -827,7 +828,7 @@ public class TextEditorScreen : EditorScreen
             ImGui.Begin("Text");
             if (_activeEntryGroup == null)
             {
-                ImGui.Text("Select an item to edit text");
+                ImGui.Text("等待选中任意内容编辑\nSelect an item to edit text");
             }
             else
             {
@@ -844,27 +845,27 @@ public class TextEditorScreen : EditorScreen
                 _propEditor.PropEditorFMGBegin();
                 if (_activeEntryGroup.TextBody != null)
                 {
-                    _propEditor.PropEditorFMG(_activeEntryGroup.TextBody, "Text", 200.0f);
+                    _propEditor.PropEditorFMG(_activeEntryGroup.TextBody, "文本 Text", 200.0f);
                 }
 
                 if (_activeEntryGroup.Title != null)
                 {
-                    _propEditor.PropEditorFMG(_activeEntryGroup.Title, "Title", 20.0f);
+                    _propEditor.PropEditorFMG(_activeEntryGroup.Title, "标题 Title", 20.0f);
                 }
 
                 if (_activeEntryGroup.Summary != null)
                 {
-                    _propEditor.PropEditorFMG(_activeEntryGroup.Summary, "Summary", 80.0f);
+                    _propEditor.PropEditorFMG(_activeEntryGroup.Summary, "概述 Summary", 80.0f);
                 }
 
                 if (_activeEntryGroup.Description != null)
                 {
-                    _propEditor.PropEditorFMG(_activeEntryGroup.Description, "Description", 200.0f);
+                    _propEditor.PropEditorFMG(_activeEntryGroup.Description, "描述 Description", 200.0f);
                 }
 
                 if (_activeEntryGroup.ExtraText != null)
                 {
-                    _propEditor.PropEditorFMG(_activeEntryGroup.ExtraText, "Extra", 80.0f);
+                    _propEditor.PropEditorFMG(_activeEntryGroup.ExtraText, "其他 Extra", 80.0f);
                 }
 
                 _propEditor.PropEditorFMGEnd();

@@ -62,7 +62,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     }
                     else
                     {
-                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                        PlatformUtils.Instance.MessageBox("无选中对象 No object selected.", "Smithbox", MessageBoxButtons.OK);
                     }
                 }
             }

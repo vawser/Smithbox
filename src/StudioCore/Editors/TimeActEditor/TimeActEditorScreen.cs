@@ -34,6 +34,7 @@ public class TimeActEditorScreen : EditorScreen
     }
 
     public string EditorName => "TimeAct Editor##TimeActEditor";
+    public string Discription => "帧行为(TAE) TimeAct Editor";
     public string CommandEndpoint => "timeact";
     public string SaveType => "TAE";
 

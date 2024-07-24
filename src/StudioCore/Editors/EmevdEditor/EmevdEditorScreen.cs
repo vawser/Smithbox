@@ -32,6 +32,7 @@ public class EmevdEditorScreen : EditorScreen
     }
 
     public string EditorName => "EMEVD Editor##EventScriptEditor";
+    public string Discription => "EMEVD编辑器 EMEVD Editor";
     public string CommandEndpoint => "emevd";
     public string SaveType => "EMEVD";
 

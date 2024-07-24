@@ -134,7 +134,7 @@ public class WorldMapScreen : IResourceEventListener
                     WorldMapOpen = true;
                 };
             }
-            ImguiUtils.ShowHoverTooltip($"Open the Lands Between world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.Map_WorldMap_Vanilla.HintText}");
+            ImguiUtils.ShowHoverTooltip($"打开标准游戏互动地图\nOpen the Lands Between world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.Map_WorldMap_Vanilla.HintText}");
 
             ImGui.SameLine();
             if (ImGui.Button("Shadow of the Erdtree", new Vector2(widthUnit * 48, 20 * scale)))
@@ -149,7 +149,7 @@ public class WorldMapScreen : IResourceEventListener
                     WorldMapOpen = true;
                 };
             }
-            ImguiUtils.ShowHoverTooltip($"Open the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.Map_WorldMap_SOTE.HintText}");
+            ImguiUtils.ShowHoverTooltip($"打开幽影之地地图\nOpen the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.Map_WorldMap_SOTE.HintText}");
         }
     }
 
@@ -172,7 +172,7 @@ public class WorldMapScreen : IResourceEventListener
         if (!WorldMapOpen)
             return;
 
-        ImGui.Begin("World Map##WorldMapImage", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
+        ImGui.Begin("地图 World Map##WorldMapImage", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
 
         var windowHeight = ImGui.GetWindowHeight();
         var windowWidth = ImGui.GetWindowWidth();
@@ -226,10 +226,11 @@ public class WorldMapScreen : IResourceEventListener
         // Properties
         ImGui.Begin("Properties##WorldMapProperties");
 
-        ImguiUtils.WrappedText($"Press Left Mouse button to select an area of the map to filter the map object list by.");
+        ImguiUtils.WrappedText("属性 Properties");
+        ImguiUtils.WrappedText($"左键单机地图显示处于世界的对象\nPress Left Mouse button to select an area of the map to filter the map object list by.");
         ImguiUtils.WrappedText($"");
-        ImguiUtils.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
-        ImguiUtils.WrappedText($"Press {KeyBindings.Current.TextureViewer_ZoomReset.HintText} to reset zoom level to 100%.");
+        ImguiUtils.WrappedText($"按住左Ctrl+鼠标滚轮放大缩小\nHold Left-Control and scroll the mouse wheel to zoom in and out.");
+        ImguiUtils.WrappedText($"Press 按下{KeyBindings.Current.TextureViewer_ZoomReset.HintText}重置缩放 to reset zoom level to 100%.");
         ImguiUtils.WrappedText($"");
 
         //ImGui.Text($"Relative Position: {relativePos}");
@@ -256,8 +257,8 @@ public class WorldMapScreen : IResourceEventListener
         currentHoverMaps = GetMatchingMaps(relativePos);
 
         ImGui.Separator();
-        ImGui.Text($"Selection:");
-        ImguiUtils.ShowHoverTooltip("These are the maps that the map object list will be filtered to.");
+        ImGui.Text($"可选 Selection:");
+        ImguiUtils.ShowHoverTooltip("这些是地图对象列表将被过滤到的地图\nThese are the maps that the map object list will be filtered to.");
         ImGui.Separator();
 
         // Stored Click Maps
@@ -265,7 +266,7 @@ public class WorldMapScreen : IResourceEventListener
         {
             foreach (var match in SelectedMapTiles)
             {
-                if(ImGui.Button($"Load##load{match}"))
+                if(ImGui.Button($"加载 Load##load{match}"))
                 {
                     Smithbox.EditorHandler.MapEditor.Universe.LoadMap(match, false);
                 }
@@ -276,8 +277,8 @@ public class WorldMapScreen : IResourceEventListener
         }
 
         ImGui.Separator();
-        ImGui.Text($"Maps in Tile:");
-        ImguiUtils.ShowHoverTooltip("These are the maps that are within the tile you are currently hovering over within the world map.");
+        ImGui.Text($"互动地图 Maps in Tile:");
+        ImguiUtils.ShowHoverTooltip("这些是您当前在世界地图中悬停的互动程序内的地图\nThese are the maps that are within the tile you are currently hovering over within the world map.");
         ImGui.Separator();
 
         // Hover Maps

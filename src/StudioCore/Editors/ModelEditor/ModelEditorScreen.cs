@@ -96,6 +96,7 @@ public class ModelEditorScreen : EditorScreen
     }
 
     public string EditorName => "Model Editor";
+    public string Discription => "模型编辑器 Model Editor";
     public string CommandEndpoint => "model";
     public string SaveType => "Models";
 
@@ -139,24 +140,24 @@ public class ModelEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
-        if (ImGui.BeginMenu("Edit"))
+        if (ImGui.BeginMenu("编辑 Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
+            if (ImGui.MenuItem($"撤销 Undo", KeyBindings.Current.Core_Undo.HintText, false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false,
+            if (ImGui.MenuItem("撤销全部 Undo All", "", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
+            if (ImGui.MenuItem("返回 Redo", KeyBindings.Current.Core_Redo.HintText, false,
                     EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
@@ -168,59 +169,59 @@ public class ModelEditorScreen : EditorScreen
         ActionSubMenu.DisplayMenu();
         ToolSubMenu.DisplayMenu();
 
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("显示 View"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Viewport"))
+            if (ImGui.MenuItem("视图 Viewport"))
             {
                 CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_Editor_Viewport);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Model Hierarchy"))
+            if (ImGui.MenuItem("模型 Model Hierarchy"))
             {
                 CFG.Current.Interface_ModelEditor_ModelHierarchy = !CFG.Current.Interface_ModelEditor_ModelHierarchy;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ModelHierarchy);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Properties"))
+            if (ImGui.MenuItem("属性 Properties"))
             {
                 CFG.Current.Interface_ModelEditor_Properties = !CFG.Current.Interface_ModelEditor_Properties;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Properties);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Asset Browser"))
+            if (ImGui.MenuItem("资源浏览器 Asset Browser"))
             {
                 CFG.Current.Interface_ModelEditor_AssetBrowser = !CFG.Current.Interface_ModelEditor_AssetBrowser;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_AssetBrowser);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Tool Configuration"))
+            if (ImGui.MenuItem("工具配置 Tool Configuration"))
             {
                 CFG.Current.Interface_ModelEditor_ToolConfigurationWindow = !CFG.Current.Interface_ModelEditor_ToolConfigurationWindow;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ToolConfigurationWindow);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Profiling"))
+            if (ImGui.MenuItem("分析 Profiling"))
             {
                 CFG.Current.Interface_Editor_Profiling = !CFG.Current.Interface_Editor_Profiling;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_Editor_Profiling);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Resource List"))
+            if (ImGui.MenuItem("资源列表 Resource List"))
             {
                 CFG.Current.Interface_ModelEditor_ResourceList = !CFG.Current.Interface_ModelEditor_ResourceList;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ResourceList);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Viewport Grid"))
+            if (ImGui.MenuItem("视图网格 Viewport Grid"))
             {
                 CFG.Current.Interface_ModelEditor_Viewport_Grid = !CFG.Current.Interface_ModelEditor_Viewport_Grid;
                 CFG.Current.ModelEditor_Viewport_RegenerateMapGrid = true;
@@ -230,10 +231,10 @@ public class ModelEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
+        if (ImGui.BeginMenu("过滤器 Filters", RenderScene != null && Viewport != null))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Meshes"))
+            if (ImGui.MenuItem("网 Meshes"))
             {
                 CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
                 var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
@@ -245,7 +246,7 @@ public class ModelEditorScreen : EditorScreen
             ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Dummy Polygons"))
+            if (ImGui.MenuItem("占位 Dummy Polygons"))
             {
                 CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
 
@@ -258,7 +259,7 @@ public class ModelEditorScreen : EditorScreen
             ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewDummyPolys);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Bones"))
+            if (ImGui.MenuItem("骨骼 Bones"))
             {
                 CFG.Current.ModelEditor_ViewBones = !CFG.Current.ModelEditor_ViewBones;
                 var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
@@ -281,10 +282,10 @@ public class ModelEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Viewport"))
+        if (ImGui.BeginMenu("视图 Viewport"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.LightbulbO}");
-            if (ImGui.BeginMenu("Scene Lighting"))
+            if (ImGui.BeginMenu("场景亮度 Scene Lighting"))
             {
                 Viewport.SceneParamsGui();
                 ImGui.EndMenu();
@@ -293,18 +294,18 @@ public class ModelEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Gizmos"))
+        if (ImGui.BeginMenu("线框 Gizmos"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Compass}");
-            if (ImGui.BeginMenu("Mode"))
+            if (ImGui.BeginMenu("模式 Mode"))
             {
-                if (ImGui.MenuItem("Translate", KeyBindings.Current.Viewport_TranslateMode.HintText,
+                if (ImGui.MenuItem("平移 Translate", KeyBindings.Current.Viewport_TranslateMode.HintText,
                         Gizmos.Mode == Gizmos.GizmosMode.Translate))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Translate;
                 }
 
-                if (ImGui.MenuItem("Rotate", KeyBindings.Current.Viewport_RotationMode.HintText,
+                if (ImGui.MenuItem("旋转 Rotate", KeyBindings.Current.Viewport_RotationMode.HintText,
                         Gizmos.Mode == Gizmos.GizmosMode.Rotate))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Rotate;
@@ -314,15 +315,15 @@ public class ModelEditorScreen : EditorScreen
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Cube}");
-            if (ImGui.BeginMenu("Space"))
+            if (ImGui.BeginMenu("空间 Space"))
             {
-                if (ImGui.MenuItem("Local", KeyBindings.Current.Viewport_ToggleGizmoSpace.HintText,
+                if (ImGui.MenuItem("本地 Local", KeyBindings.Current.Viewport_ToggleGizmoSpace.HintText,
                         Gizmos.Space == Gizmos.GizmosSpace.Local))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.Local;
                 }
 
-                if (ImGui.MenuItem("World", KeyBindings.Current.Viewport_ToggleGizmoSpace.HintText,
+                if (ImGui.MenuItem("世界 World", KeyBindings.Current.Viewport_ToggleGizmoSpace.HintText,
                         Gizmos.Space == Gizmos.GizmosSpace.World))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.World;
@@ -332,15 +333,15 @@ public class ModelEditorScreen : EditorScreen
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Cubes}");
-            if (ImGui.BeginMenu("Origin"))
+            if (ImGui.BeginMenu("原始 Origin"))
             {
-                if (ImGui.MenuItem("World", KeyBindings.Current.Viewport_ToggleGizmoOrigin.HintText,
+                if (ImGui.MenuItem("世界 World", KeyBindings.Current.Viewport_ToggleGizmoOrigin.HintText,
                         Gizmos.Origin == Gizmos.GizmosOrigin.World))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.World;
                 }
 
-                if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.Viewport_ToggleGizmoOrigin.HintText,
+                if (ImGui.MenuItem("绑定 Bounding Box", KeyBindings.Current.Viewport_ToggleGizmoOrigin.HintText,
                         Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;

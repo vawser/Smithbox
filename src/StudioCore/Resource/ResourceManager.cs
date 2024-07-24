@@ -470,9 +470,9 @@ public static class ResourceManager
         }
 
         ImGui.AlignTextToFramePadding();
-        ImGui.Text("List of Resources Loaded & Unloaded");
+        ImGui.Text("已加载/卸载的资源列表 List of Resources Loaded & Unloaded");
 
-        if (ImGui.Button("Unload All"))
+        if (ImGui.Button("卸载全部 Unload All"))
         {
             foreach (KeyValuePair<string, IResourceHandle> item in ResourceDatabase)
             {
@@ -494,7 +494,7 @@ public static class ResourceManager
             ImGui.Text(item.Key);
             ImGui.NextColumn();
             ImGui.AlignTextToFramePadding();
-            ImGui.Text(item.Value.IsLoaded() ? "Loaded" : "Unloaded");
+            ImGui.Text(item.Value.IsLoaded() ? "已加载 Loaded" : "已卸载 Unloaded");
             ImGui.NextColumn();
             ImGui.AlignTextToFramePadding();
             ImGui.Text(item.Value.AccessLevel.ToString());
@@ -502,7 +502,7 @@ public static class ResourceManager
             ImGui.AlignTextToFramePadding();
             ImGui.Text(item.Value.GetReferenceCounts().ToString());
             ImGui.NextColumn();
-            if(ImGui.Button("Unload"))
+            if(ImGui.Button("已卸载 Unload"))
             {
                 item.Value.Release(true);
             }

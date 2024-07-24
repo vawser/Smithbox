@@ -15,7 +15,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (ImGui.RadioButton("Frame in Viewport##tool_Selection_FrameInViewport", MapEditorState.SelectedAction == MapEditorAction.Selection_Frame_in_Viewport))
+            if (ImGui.RadioButton("视图帧率 Frame in Viewport##tool_Selection_FrameInViewport", MapEditorState.SelectedAction == MapEditorAction.Selection_Frame_in_Viewport))
             {
                 MapEditorState.SelectedAction = MapEditorAction.Selection_Frame_in_Viewport;
             }
@@ -30,7 +30,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Frame_in_Viewport)
             {
-                ImguiUtils.WrappedText("Frame the current selection in the viewport (first if multiple are selected).");
+                ImguiUtils.WrappedText("视图的帧率(多选无效) Frame the current selection in the viewport (first if multiple are selected).");
                 ImguiUtils.WrappedText("");
             }
         }
@@ -39,7 +39,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Frame_in_Viewport)
             {
-                if (ImGui.Button("Apply##action_Selection_Frame_in_Viewport", new Vector2(200, 32)))
+                if (ImGui.Button("应用 Apply##action_Selection_Frame_in_Viewport", new Vector2(200, 32)))
                 {
                     if (_selection.IsSelection())
                     {
@@ -47,7 +47,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     }
                     else
                     {
-                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                        PlatformUtils.Instance.MessageBox("无对象选中 No object selected.", "Smithbox", MessageBoxButtons.OK);
                     }
                 }
             }
@@ -56,7 +56,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Frame_in_Viewport)
             {
-                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport.HintText)}");
+                ImguiUtils.WrappedText($"快捷方式 Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport.HintText)}");
             }
         }
 

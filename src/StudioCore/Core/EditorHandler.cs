@@ -150,11 +150,11 @@ public class EditorHandler
     public void HandleEditorSharedBar()
     {
         // Dropdown: File
-        if (ImGui.BeginMenu("File"))
+        if (ImGui.BeginMenu("文件 File"))
         {
             // New Project
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.File}");
-            if (ImGui.MenuItem("New Project", "", false, !TaskManager.AnyActiveTasks()))
+            if (ImGui.MenuItem("新建 New Project", "", false, !TaskManager.AnyActiveTasks()))
             {
                 Smithbox.ProjectHandler.ClearProject();
                 Smithbox.ProjectHandler.IsInitialLoad = true;
@@ -162,14 +162,14 @@ public class EditorHandler
 
             // Open Project
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Folder}");
-            if (ImGui.MenuItem("Open Project", "", false, !TaskManager.AnyActiveTasks()))
+            if (ImGui.MenuItem("打开 Open Project", "", false, !TaskManager.AnyActiveTasks()))
             {
                 Smithbox.ProjectHandler.OpenProjectDialog();
             }
 
             // Recent Projects
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FolderOpen}");
-            if (ImGui.BeginMenu("Recent Projects",
+            if (ImGui.BeginMenu("历史 Recent Projects",
                     !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
             {
                 Smithbox.ProjectHandler.DisplayRecentProjects();
@@ -179,22 +179,22 @@ public class EditorHandler
 
             // Open in Explorer
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Archive}");
-            if (ImGui.BeginMenu("Open in Explorer",
+            if (ImGui.BeginMenu("打开文件夹 Open in Explorer",
                     !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
             {
-                if (ImGui.MenuItem("Project Folder", "", false, !TaskManager.AnyActiveTasks()))
+                if (ImGui.MenuItem("项目路径 Project Folder", "", false, !TaskManager.AnyActiveTasks()))
                 {
                     var projectPath = Smithbox.ProjectRoot;
                     Process.Start("explorer.exe", projectPath);
                 }
 
-                if (ImGui.MenuItem("Game Folder", "", false, !TaskManager.AnyActiveTasks()))
+                if (ImGui.MenuItem("游戏路径 Game Folder", "", false, !TaskManager.AnyActiveTasks()))
                 {
                     var gamePath = Smithbox.GameRoot;
                     Process.Start("explorer.exe", gamePath);
                 }
 
-                if (ImGui.MenuItem("Config Folder", "", false, !TaskManager.AnyActiveTasks()))
+                if (ImGui.MenuItem("配置文件夹 Config Folder", "", false, !TaskManager.AnyActiveTasks()))
                 {
                     var configPath = CFG.GetConfigFolderPath();
                     Process.Start("explorer.exe", configPath);
@@ -207,7 +207,7 @@ public class EditorHandler
             if (FocusedEditor.ShowSaveOption)
             {
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
-                if (ImGui.MenuItem($"Save Selected {FocusedEditor.SaveType}",
+                if (ImGui.MenuItem($"保存选中 Save Selected {FocusedEditor.SaveType}",
                         KeyBindings.Current.Core_SaveCurrentEditor.HintText))
                 {
                     Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
@@ -216,7 +216,7 @@ public class EditorHandler
 
                 // Save All
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
-                if (ImGui.MenuItem($"Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.Core_SaveAllCurrentEditor.HintText))
+                if (ImGui.MenuItem($"保存全部 Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.Core_SaveAllCurrentEditor.HintText))
                 {
                     Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                     SaveAllFocusedEditor();

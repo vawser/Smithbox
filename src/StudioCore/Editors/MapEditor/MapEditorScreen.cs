@@ -148,6 +148,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     }
 
     public string EditorName => "Map Editor";
+    public string Discription => "地图编辑器 Map Editor";
     public string CommandEndpoint => "map";
     public string SaveType => "Maps";
 
@@ -188,31 +189,31 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public void DrawEditorMenu()
     {
         // Dropdown: Edit
-        if (ImGui.BeginMenu("Edit"))
+        if (ImGui.BeginMenu("编辑 Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
+            if (ImGui.MenuItem($"撤销 Undo", KeyBindings.Current.Core_Undo.HintText, false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false,
+            if (ImGui.MenuItem("撤销全部 Undo All", "", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
+            if (ImGui.MenuItem("返回 Redo", KeyBindings.Current.Core_Redo.HintText, false,
                     EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Scissors}");
-            if (ImGui.MenuItem("Remove", KeyBindings.Current.Core_Delete.HintText, false, _selection.IsSelection()))
+            if (ImGui.MenuItem("移除 Remove", KeyBindings.Current.Core_Delete.HintText, false, _selection.IsSelection()))
             {
                 DeleteMapObjectsAction action = new(Universe, RenderScene,
                     _selection.GetFilteredSelection<MsbEntity>().ToList(), true);
@@ -220,7 +221,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false,
+            if (ImGui.MenuItem("复制 Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false,
                     _selection.IsSelection()))
             {
                 CloneMapObjectsAction action = new(Universe, RenderScene,
@@ -229,7 +230,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.BeginMenu("Duplicate to Map", _selection.IsSelection()))
+            if (ImGui.BeginMenu("复制到地图 Duplicate to Map", _selection.IsSelection()))
             {
                 DuplicateToTargetMapUI();
                 ImGui.EndMenu();
@@ -239,7 +240,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         }
 
         // Dropdown: View
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("视图 View"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Viewport"))
@@ -256,63 +257,63 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapObjectList);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Toolbar"))
+            if (ImGui.MenuItem("菜单 Toolbar"))
             {
                 CFG.Current.Interface_MapEditor_Toolbar = !CFG.Current.Interface_MapEditor_Toolbar;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Toolbar);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Properties"))
+            if (ImGui.MenuItem("属性 Properties"))
             {
                 CFG.Current.Interface_MapEditor_Properties = !CFG.Current.Interface_MapEditor_Properties;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Properties);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Search Properties"))
+            if (ImGui.MenuItem("查找属性 Search Properties"))
             {
                 CFG.Current.Interface_MapEditor_PropertySearch = !CFG.Current.Interface_MapEditor_PropertySearch;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_PropertySearch);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Asset Browser"))
+            if (ImGui.MenuItem("资源浏览器 Asset Browser"))
             {
                 CFG.Current.Interface_MapEditor_AssetBrowser = !CFG.Current.Interface_MapEditor_AssetBrowser;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_AssetBrowser);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Render Groups"))
+            if (ImGui.MenuItem("渲染器 Render Groups"))
             {
                 CFG.Current.Interface_MapEditor_RenderGroups = !CFG.Current.Interface_MapEditor_RenderGroups;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_RenderGroups);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Profiling"))
+            if (ImGui.MenuItem("分析 Profiling"))
             {
                 CFG.Current.Interface_Editor_Profiling = !CFG.Current.Interface_Editor_Profiling;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_Editor_Profiling);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Resource List"))
+            if (ImGui.MenuItem("资源列表 Resource List"))
             {
                 CFG.Current.Interface_MapEditor_ResourceList = !CFG.Current.Interface_MapEditor_ResourceList;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_ResourceList);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Selection Groups"))
+            if (ImGui.MenuItem("可选组 Selection Groups"))
             {
                 CFG.Current.Interface_MapEditor_Selection_Groups = !CFG.Current.Interface_MapEditor_Selection_Groups;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Selection_Groups);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Viewport Grid"))
+            if (ImGui.MenuItem("视图网格 Viewport Grid"))
             {
                 CFG.Current.Interface_MapEditor_Viewport_Grid = !CFG.Current.Interface_MapEditor_Viewport_Grid;
                 CFG.Current.MapEditor_Viewport_RegenerateMapGrid = true;
@@ -322,13 +323,13 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
+        if (ImGui.BeginMenu("过滤 Filters", RenderScene != null && Viewport != null))
         {
             bool ticked;
 
             // Map Piece
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Map Piece"))
+            if (ImGui.MenuItem("地图碎片 Map Piece"))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.MapPiece);
             }
@@ -337,7 +338,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             // Collision
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Collision"))
+            if (ImGui.MenuItem("碰撞 Collision"))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Collision);
             }
@@ -346,7 +347,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             // Object
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Object"))
+            if (ImGui.MenuItem("对象 Object"))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Object);
             }
@@ -355,7 +356,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             // Character
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Character"))
+            if (ImGui.MenuItem("角色 Character"))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Character);
             }
@@ -364,7 +365,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             // Navmesh
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Navmesh"))
+            if (ImGui.MenuItem("路点 Navmesh"))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
             }
@@ -373,7 +374,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             // Region
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Region"))
+            if (ImGui.MenuItem("地区 Region"))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Region);
             }
@@ -382,7 +383,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             // Light
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Light"))
+            if (ImGui.MenuItem("亮度 Light"))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Light);
             }
@@ -391,7 +392,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             // Debug
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Debug"))
+            if (ImGui.MenuItem("调试 Debug"))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Debug);
             }
@@ -401,10 +402,10 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Viewport", RenderScene != null && Viewport != null))
+        if (ImGui.BeginMenu("视角 Viewport", RenderScene != null && Viewport != null))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Filter}");
-            if (ImGui.BeginMenu("Filter Presets"))
+            if (ImGui.BeginMenu("预设筛选 Filter Presets"))
             {
                 if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_01.Name, "Ctrl+1"))
                 {
@@ -440,9 +441,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Cloud}");
-            if (ImGui.BeginMenu("Environment Map"))
+            if (ImGui.BeginMenu("环境地图 Environment Map"))
             {
-                if (ImGui.MenuItem("Default"))
+                if (ImGui.MenuItem("默认 Default"))
                 {
                     Viewport.SetEnvMap(0);
                 }
@@ -467,7 +468,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.LightbulbO}");
-            if (ImGui.BeginMenu("Scene Lighting"))
+            if (ImGui.BeginMenu("场景亮度 Scene Lighting"))
             {
                 Viewport.SceneParamsGui();
                 ImGui.EndMenu();
@@ -476,10 +477,10 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             if (Smithbox.ProjectType is ProjectType.ER)
             {
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.Cube}");
-                if (ImGui.BeginMenu("Collision Type"))
+                if (ImGui.BeginMenu("碰撞类型 Collision Type"))
                 {
                     ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-                    if (ImGui.MenuItem("Low"))
+                    if (ImGui.MenuItem("低 Low"))
                     {
                         HavokUtils.VisibleCollisionType = HavokCollisionType.Low;
                     }
@@ -487,7 +488,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                     ImguiUtils.ShowActiveStatus(HavokUtils.VisibleCollisionType == HavokCollisionType.Low);
 
                     ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-                    if (ImGui.MenuItem("High"))
+                    if (ImGui.MenuItem("高 High"))
                     {
                         HavokUtils.VisibleCollisionType = HavokCollisionType.High;
                     }
@@ -502,18 +503,18 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Gizmos"))
+        if (ImGui.BeginMenu("小控件 Gizmos"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Compass}");
-            if (ImGui.BeginMenu("Mode"))
+            if (ImGui.BeginMenu("模式 Mode"))
             {
-                if (ImGui.MenuItem("Translate", KeyBindings.Current.Viewport_TranslateMode.HintText,
+                if (ImGui.MenuItem("译文 Translate", KeyBindings.Current.Viewport_TranslateMode.HintText,
                         Gizmos.Mode == Gizmos.GizmosMode.Translate))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Translate;
                 }
 
-                if (ImGui.MenuItem("Rotate", KeyBindings.Current.Viewport_RotationMode.HintText,
+                if (ImGui.MenuItem("旋转 Rotate", KeyBindings.Current.Viewport_RotationMode.HintText,
                         Gizmos.Mode == Gizmos.GizmosMode.Rotate))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Rotate;
@@ -523,15 +524,15 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Cube}");
-            if (ImGui.BeginMenu("Space"))
+            if (ImGui.BeginMenu("空间 Space"))
             {
-                if (ImGui.MenuItem("Local", KeyBindings.Current.Viewport_ToggleGizmoSpace.HintText,
+                if (ImGui.MenuItem("本地 Local", KeyBindings.Current.Viewport_ToggleGizmoSpace.HintText,
                         Gizmos.Space == Gizmos.GizmosSpace.Local))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.Local;
                 }
 
-                if (ImGui.MenuItem("World", KeyBindings.Current.Viewport_ToggleGizmoSpace.HintText,
+                if (ImGui.MenuItem("世界 World", KeyBindings.Current.Viewport_ToggleGizmoSpace.HintText,
                         Gizmos.Space == Gizmos.GizmosSpace.World))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.World;
@@ -541,15 +542,15 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Cubes}");
-            if (ImGui.BeginMenu("Origin"))
+            if (ImGui.BeginMenu("原始 Origin"))
             {
-                if (ImGui.MenuItem("World", KeyBindings.Current.Viewport_ToggleGizmoOrigin.HintText,
+                if (ImGui.MenuItem("世界 World", KeyBindings.Current.Viewport_ToggleGizmoOrigin.HintText,
                         Gizmos.Origin == Gizmos.GizmosOrigin.World))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.World;
                 }
 
-                if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.Viewport_ToggleGizmoOrigin.HintText,
+                if (ImGui.MenuItem("绑定 Bounding Box", KeyBindings.Current.Viewport_ToggleGizmoOrigin.HintText,
                         Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
@@ -561,7 +562,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Tools"))
+        if (ImGui.BeginMenu("工具 Tools"))
         {
             // WIP
             /*

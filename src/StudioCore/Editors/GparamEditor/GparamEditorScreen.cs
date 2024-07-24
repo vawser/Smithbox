@@ -70,6 +70,7 @@ public class GparamEditorScreen : EditorScreen
     }
 
     public string EditorName => "Gparam Editor##GparamEditor";
+    public string Discription => "G参编辑器 Gparam Editor";
     public string CommandEndpoint => "gparam";
     public string SaveType => "Gparam";
 
@@ -80,22 +81,22 @@ public class GparamEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
-        if (ImGui.BeginMenu("Edit"))
+        if (ImGui.BeginMenu("编辑 Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
+            if (ImGui.MenuItem("撤销 Undo", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false, EditorActionManager.CanUndo()))
+            if (ImGui.MenuItem("撤销全部 Undo All", "", false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
+            if (ImGui.MenuItem("返回 Redo", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
             }
@@ -103,38 +104,38 @@ public class GparamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("视图 View"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Files"))
+            if (ImGui.MenuItem("文件 Files"))
             {
                 CFG.Current.Interface_GparamEditor_Files = !CFG.Current.Interface_GparamEditor_Files;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Files);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Groups"))
+            if (ImGui.MenuItem("组 Groups"))
             {
                 CFG.Current.Interface_GparamEditor_Groups = !CFG.Current.Interface_GparamEditor_Groups;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Groups);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Fields"))
+            if (ImGui.MenuItem("块 Fields"))
             {
                 CFG.Current.Interface_GparamEditor_Fields = !CFG.Current.Interface_GparamEditor_Fields;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Fields);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Values"))
+            if (ImGui.MenuItem("值 Values"))
             {
                 CFG.Current.Interface_GparamEditor_Values = !CFG.Current.Interface_GparamEditor_Values;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Values);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Toolbar"))
+            if (ImGui.MenuItem("工具栏 Toolbar"))
             {
                 CFG.Current.Interface_GparamEditor_Toolbar = !CFG.Current.Interface_GparamEditor_Toolbar;
             }
@@ -165,7 +166,7 @@ public class GparamEditorScreen : EditorScreen
         {
             ImGui.Begin("Editor##InvalidGparamEditor");
 
-            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
+            ImGui.Text($"不支持 This editor does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }
@@ -173,7 +174,7 @@ public class GparamEditorScreen : EditorScreen
         {
             ImGui.Begin("Editor##InvalidGparamEditor");
 
-            ImGui.Text("No project loaded. File -> New Project");
+            ImGui.Text("无项目载入 No project loaded. File -> New Project");
 
             ImGui.End();
         }
@@ -323,7 +324,7 @@ public class GparamEditorScreen : EditorScreen
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _fileSearchInput, 255);
+        ImGui.InputText($"查找 Search", ref _fileSearchInput, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
@@ -373,7 +374,7 @@ public class GparamEditorScreen : EditorScreen
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _paramGroupSearchInput, 255);
+        ImGui.InputText($"查找 Search", ref _paramGroupSearchInput, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
@@ -387,7 +388,7 @@ public class GparamEditorScreen : EditorScreen
         {
             GPARAM data = _selectedGparam;
 
-            ImGui.Text($"Group");
+            ImGui.Text($"组 Group");
             ImGui.Separator();
 
             // Available groups
@@ -492,7 +493,7 @@ public class GparamEditorScreen : EditorScreen
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _paramFieldSearchInput, 255);
+        ImGui.InputText($"查找 Search", ref _paramFieldSearchInput, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
@@ -506,7 +507,7 @@ public class GparamEditorScreen : EditorScreen
         {
             GPARAM.Param data = _selectedParamGroup;
 
-            ImGui.Text($"Field");
+            ImGui.Text($"块 Field");
             ImGui.Separator();
 
             for (int i = 0; i < data.Fields.Count; i++)
@@ -600,7 +601,7 @@ public class GparamEditorScreen : EditorScreen
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _fieldIdSearchInput, 255);
+        ImGui.InputText($"查找 Search", ref _fieldIdSearchInput, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
         GparamQuickEdit.OnGui();

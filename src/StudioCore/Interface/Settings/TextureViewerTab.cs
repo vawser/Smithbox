@@ -13,27 +13,27 @@ public class TextureViewerTab
 
     public void Display()
     {
-        if (ImGui.BeginTabItem("Texture Viewer"))
+        if (ImGui.BeginTabItem("纹理显示器 Texture Viewer"))
         {
-            if (ImGui.CollapsingHeader("File List", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("文件列表 File List", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Show character names", ref CFG.Current.TextureViewer_FileList_ShowAliasName_Characters);
+                ImGui.Checkbox("显示角色名 Show character names", ref CFG.Current.TextureViewer_FileList_ShowAliasName_Characters);
                 ImguiUtils.ShowHoverTooltip("Show matching character aliases within the file list.");
 
-                ImGui.Checkbox("Show asset names", ref CFG.Current.TextureViewer_FileList_ShowAliasName_Assets);
+                ImGui.Checkbox("显示资源名 Show asset names", ref CFG.Current.TextureViewer_FileList_ShowAliasName_Assets);
                 ImguiUtils.ShowHoverTooltip("Show matching asset/object aliases within the file list.");
 
-                ImGui.Checkbox("Show part names", ref CFG.Current.TextureViewer_FileList_ShowAliasName_Parts);
+                ImGui.Checkbox("显示局部名称 Show part names", ref CFG.Current.TextureViewer_FileList_ShowAliasName_Parts);
                 ImguiUtils.ShowHoverTooltip("Show matching part aliases within the file list.");
 
-                ImGui.Checkbox("Show low detail entries", ref CFG.Current.TextureViewer_FileList_ShowLowDetail_Entries);
+                ImGui.Checkbox("显示低细节实例 Show low detail entries", ref CFG.Current.TextureViewer_FileList_ShowLowDetail_Entries);
                 ImguiUtils.ShowHoverTooltip("Show the low-detail texture containers.");
             }
 
-            if (ImGui.CollapsingHeader("Texture List", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("纹理列表 Texture List", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Show particle names", ref CFG.Current.TextureViewer_TextureList_ShowAliasName_Particles);
-                ImguiUtils.ShowHoverTooltip("Show matching particle aliases within the texture list.");
+                ImGui.Checkbox("显示微粒名称 Show particle names", ref CFG.Current.TextureViewer_TextureList_ShowAliasName_Particles);
+                ImguiUtils.ShowHoverTooltip("在纹理列表中显示匹配的粒子别名\nShow matching particle aliases within the texture list.");
             }
 
             ImGui.EndTabItem();

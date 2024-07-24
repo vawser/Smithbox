@@ -25,11 +25,11 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Export Row Names##tool_ExportRowNames", ParamToolbar.SelectedAction == ParamToolbarAction.ExportRowNames))
+            if (ImGui.RadioButton("导出行名称 Export Row Names##tool_ExportRowNames", ParamToolbar.SelectedAction == ParamToolbarAction.ExportRowNames))
             {
                 ParamToolbar.SelectedAction = ParamToolbarAction.ExportRowNames;
             }
-            ImguiUtils.ShowHoverTooltip("Use this to export row names to text.");
+            ImguiUtils.ShowHoverTooltip("以此来导出文本 Use this to export row names to text.");
 
             if (!CFG.Current.Interface_ParamEditor_Toolbar_ActionList_TopToBottom)
             {
@@ -41,12 +41,12 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         {
             if (ParamToolbar.SelectedAction == ParamToolbarAction.ExportRowNames)
             {
-                ImguiUtils.WrappedText("Export row names for the currently selected param, or for all params.");
+                ImguiUtils.WrappedText("导出当前选定参数或所有参数的行名称\nExport row names for the currently selected param, or for all params.");
                 ImguiUtils.WrappedText("");
 
                 if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
                 {
-                    ImguiUtils.WrappedText("You must select a param before you can use this action.");
+                    ImguiUtils.WrappedText("您必须选择一个参数才能使用此操作\nYou must select a param before you can use this action.");
                     ImguiUtils.WrappedText("");
                 }
                 else
@@ -60,11 +60,11 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         {
             if (ParamToolbar.SelectedAction == ParamToolbarAction.ExportRowNames)
             {
-                if (ImGui.Button("Apply##action_Selection_ExportRowNames", new Vector2(200, 32)))
+                if (ImGui.Button("应用 Apply##action_Selection_ExportRowNames", new Vector2(200, 32)))
                 {
                     if (CFG.Current.Interface_ParamEditor_PromptUser)
                     {
-                        var result = PlatformUtils.Instance.MessageBox($"You are about to use the Export Row Names action. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        var result = PlatformUtils.Instance.MessageBox($"确认导出吗 You are about to use the Export Row Names action. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                         if (result == DialogResult.Yes)
                         {
@@ -78,7 +78,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 }
 
                 ImGui.SameLine();
-                if(ImGui.Button("Open Project Folder##action_Selection_OpenExportFolder", new Vector2(200, 32)))
+                if(ImGui.Button("打开项目目录 Open Project Folder##action_Selection_OpenExportFolder", new Vector2(200, 32)))
                 {
                     if (Smithbox.ProjectType != ProjectType.Undefined)
                     {
@@ -86,7 +86,8 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                         Process.Start("explorer.exe", dir);
                     }
                 }
-                ImguiUtils.ShowHoverTooltip("Opens the project-specific Names folder that contains the exported Names.");
+                ImguiUtils.ShowHoverTooltip("打开包含导出名称的项目特定名称文件夹\nOpens the project-specific Names folder that contains the exported Names.");
+
             }
         }
 
@@ -112,18 +113,18 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             {
                 case ParamToolbar.TargetType.SelectedRows:
                     ExportRowNamesForRows(selectedParam.GetSelectedRows());
-                    PlatformUtils.Instance.MessageBox($"Row names for {activeParam} selected rows have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    PlatformUtils.Instance.MessageBox($"选中区已保存 Row names for {activeParam} selected rows have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case ParamToolbar.TargetType.SelectedParam:
                     ExportRowNamesForParam(activeParam);
-                    PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    PlatformUtils.Instance.MessageBox($"已保存 Row names for {activeParam} have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case ParamToolbar.TargetType.AllParams:
                     foreach(var param in ParamBank.PrimaryBank.Params)
                     {
                         ExportRowNamesForParam(param.Key);
                     }
-                    PlatformUtils.Instance.MessageBox($"Row names for all params have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    PlatformUtils.Instance.MessageBox($"所有行名称已保存 Row names for all params have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

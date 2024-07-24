@@ -17,7 +17,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (ImGui.RadioButton("Order##tool_Selection_Order", MapEditorState.SelectedAction == MapEditorAction.Selection_Order))
+            if (ImGui.RadioButton("指令 Order##tool_Selection_Order", MapEditorState.SelectedAction == MapEditorAction.Selection_Order))
             {
                 MapEditorState.SelectedAction = MapEditorAction.Selection_Order;
             }
@@ -32,7 +32,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Order)
             {
-                ImguiUtils.WrappedText("Change the current selection's order within the map object list.");
+                ImguiUtils.WrappedText("改变当前地图列表上选中的指令\nChange the current selection's order within the map object list.");
                 ImguiUtils.WrappedText("");
             }
         }
@@ -40,7 +40,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Order)
             {
-                if (ImGui.Button("Move Up##action_Selection_OrderUp", new Vector2(150, 32)))
+                if (ImGui.Button("上 Move Up##action_Selection_OrderUp", new Vector2(150, 32)))
                 {
                     if (_selection.IsSelection())
                     {
@@ -48,14 +48,14 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     }
                     else
                     {
-                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                        PlatformUtils.Instance.MessageBox("无选中对象 No object selected.", "Smithbox", MessageBoxButtons.OK);
                     }
                 }
                 ImguiUtils.ShowHoverTooltip("Move the selected map object up one space within its map object list category. Has no effect if already the first entry.");
 
                 ImGui.SameLine();
 
-                if (ImGui.Button("Move Down##action_Selection_OrderDown", new Vector2(150, 32)))
+                if (ImGui.Button("下 Move Down##action_Selection_OrderDown", new Vector2(150, 32)))
                 {
                     if (_selection.IsSelection())
                     {
@@ -63,12 +63,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     }
                     else
                     {
-                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                        PlatformUtils.Instance.MessageBox("无选中对象 No object selected.", "Smithbox", MessageBoxButtons.OK);
                     }
                 }
                 ImguiUtils.ShowHoverTooltip("Move the selected map object down one space within its map object list category. Has no effect if already the last entry.");
 
-                if (ImGui.Button("Move to Top##action_Selection_OrderTop", new Vector2(150, 32)))
+                if (ImGui.Button("顶 Move to Top##action_Selection_OrderTop", new Vector2(150, 32)))
                 {
                     if (_selection.IsSelection())
                     {
@@ -76,14 +76,14 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     }
                     else
                     {
-                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                        PlatformUtils.Instance.MessageBox("无选中对象 No object selected.", "Smithbox", MessageBoxButtons.OK);
                     }
                 }
                 ImguiUtils.ShowHoverTooltip("Move the selected map object to the top of its map object list category. Has no effect if already the first entry.");
 
                 ImGui.SameLine();
 
-                if (ImGui.Button("Move to Bottom##action_Selection_OrderBottom", new Vector2(150, 32)))
+                if (ImGui.Button("底 Move to Bottom##action_Selection_OrderBottom", new Vector2(150, 32)))
                 {
                     if (_selection.IsSelection())
                     {
@@ -91,7 +91,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     }
                     else
                     {
-                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                        PlatformUtils.Instance.MessageBox("无选中对象 No object selected.", "Smithbox", MessageBoxButtons.OK);
                     }
                 }
                 ImguiUtils.ShowHoverTooltip("Move the selected map object to the bottom of its map object list category. Has no effect if already the last entry.");
@@ -101,10 +101,10 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Order)
             {
-                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MapEditor_MoveOrderUp.HintText)} for Move Up");
-                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MapEditor_MoveOrderDown.HintText)} for Move Down");
-                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MapEditor_MoveOrderTop.HintText)} for Move to Top");
-                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MapEditor_MoveOrderBottom.HintText)} for Move to Bottom");
+                ImguiUtils.WrappedText($"快捷方式 Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MapEditor_MoveOrderUp.HintText)} for Move Up");
+                ImguiUtils.WrappedText($"快捷方式 Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MapEditor_MoveOrderDown.HintText)} for Move Down");
+                ImguiUtils.WrappedText($"快捷方式 Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MapEditor_MoveOrderTop.HintText)} for Move to Top");
+                ImguiUtils.WrappedText($"快捷方式 Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MapEditor_MoveOrderBottom.HintText)} for Move to Bottom");
                 ImguiUtils.WrappedText("");
             }
         }

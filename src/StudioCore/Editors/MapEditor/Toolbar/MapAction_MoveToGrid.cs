@@ -17,7 +17,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (CFG.Current.Interface_MapEditor_Viewport_Grid)
             {
-                if (ImGui.RadioButton("Move to Grid##tool_Selection_Move_to_Grid", MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Grid))
+                if (ImGui.RadioButton("移至网格 Move to Grid##tool_Selection_Move_to_Grid", MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Grid))
                 {
                     MapEditorState.SelectedAction = MapEditorAction.Selection_Move_to_Grid;
                 }
@@ -33,21 +33,21 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Grid)
             {
-                ImguiUtils.WrappedText("Set the current selection to the closest grid position.");
+                ImguiUtils.WrappedText("将当前选择设置为最近的网格位置\nSet the current selection to the closest grid position.");
                 ImguiUtils.WrappedText("");
 
                 ImGui.Checkbox("X", ref CFG.Current.Toolbar_Move_to_Grid_X);
-                ImguiUtils.ShowHoverTooltip("Move the current selection to the closest X co-ordinate within the map grid.");
+                ImguiUtils.ShowHoverTooltip("将当前选择移动到地图网格内最近的 X 坐标\nMove the current selection to the closest X coordinate within the map grid.");
 
                 ImGui.SameLine();
                 ImGui.Checkbox("Y", ref CFG.Current.Toolbar_Move_to_Grid_Y);
-                ImguiUtils.ShowHoverTooltip("Move the current selection to the closest Y co-ordinate within the map grid.");
+                ImguiUtils.ShowHoverTooltip("将当前选择移动到地图网格内最近的 Y 坐标\nMove the current selection to the closest Y coordinate within the map grid.");
 
                 ImGui.SameLine();
                 ImGui.Checkbox("Z", ref CFG.Current.Toolbar_Move_to_Grid_Z);
-                ImguiUtils.ShowHoverTooltip("Move the current selection to the closest Z co-ordinate within the map grid.");
+                ImguiUtils.ShowHoverTooltip("将当前选择移动到地图网格内最近的 Z 坐标\nMove the current selection to the closest Z coordinate within the map grid.");
 
-                if (ImGui.Button("Switch"))
+                if (ImGui.Button("选择 Switch"))
                 {
                     CFG.Current.Toolbar_Move_to_Grid_Specific_Height_Input = !CFG.Current.Toolbar_Move_to_Grid_Specific_Height_Input;
                 }
@@ -57,8 +57,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     var height = CFG.Current.MapEditor_Viewport_Grid_Height;
 
                     ImGui.PushItemWidth(200);
-                    ImGui.InputFloat("Grid height", ref height);
-                    ImguiUtils.ShowHoverTooltip("Set the current height of the map grid.");
+                    ImGui.InputFloat("网格高 Grid height", ref height);
+                    ImguiUtils.ShowHoverTooltip("设置当前地图网格高度 Set the current height of the map grid.");
 
                     if (height < -10000)
                         height = -10000;
@@ -71,8 +71,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 else
                 {
                     ImGui.PushItemWidth(200);
-                    ImGui.SliderFloat("Grid height", ref CFG.Current.MapEditor_Viewport_Grid_Height, -10000, 10000);
-                    ImguiUtils.ShowHoverTooltip("Set the current height of the map grid.");
+                    ImGui.SliderFloat("网格高 Grid height", ref CFG.Current.MapEditor_Viewport_Grid_Height, -10000, 10000);
+                    ImguiUtils.ShowHoverTooltip("设置当前地图网格高度 Set the current height of the map grid.");
                 }
             }
         }
@@ -81,7 +81,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Grid)
             {
-                if (ImGui.Button("Apply##action_Selection_Move_to_Grid", new Vector2(200, 32)))
+                if (ImGui.Button("应用 Apply##action_Selection_Move_to_Grid", new Vector2(200, 32)))
                 {
                     if (_selection.IsSelection())
                     {
@@ -89,7 +89,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     }
                     else
                     {
-                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                        PlatformUtils.Instance.MessageBox("无选中对象 No object selected.", "Smithbox", MessageBoxButtons.OK);
                     }
                 }
             }
@@ -99,7 +99,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Grid)
             {
-                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Set_to_Grid.HintText)}");
+                ImguiUtils.WrappedText($"快捷方式 Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Set_to_Grid.HintText)}");
             }
         }
 

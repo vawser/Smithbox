@@ -41,6 +41,7 @@ public class MaterialEditorScreen : EditorScreen
     }
 
     public string EditorName => "Material Editor##MaterialEditor";
+    public string Discription => "素材编辑器 Material Editor";
     public string CommandEndpoint => "material";
     public string SaveType => "Material";
 
@@ -74,7 +75,7 @@ public class MaterialEditorScreen : EditorScreen
         {
             ImGui.Begin("Editor##InvalidMaterialEditor");
 
-            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
+            ImGui.Text($"不支持 This editor does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }
@@ -85,7 +86,7 @@ public class MaterialEditorScreen : EditorScreen
             {
                 if (!CFG.Current.AutoLoadBank_Material)
                 {
-                    if (ImGui.Button("Load Material Editor"))
+                    if (ImGui.Button("加载素材编辑器 Load Material Editor"))
                     {
                         MaterialBank.LoadMaterials();
                     }
@@ -107,7 +108,7 @@ public class MaterialEditorScreen : EditorScreen
         // File List
         ImGui.Begin("Files##MaterialFileList");
 
-        ImGui.Text($"File");
+        ImGui.Text($"文件 File");
         ImGui.Separator();
 
         foreach (var (info, binder) in MaterialBank.FileBank)
@@ -129,7 +130,7 @@ public class MaterialEditorScreen : EditorScreen
 
         if (_selectedFileInfo.MaterialFiles != null)
         {
-            ImGui.Text($"Materials");
+            ImGui.Text($"素材 Materials");
             ImGui.Separator();
 
             for(int i = 0; i < _selectedFileInfo.MaterialFiles.Count; i++)

@@ -15,7 +15,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (ImGui.RadioButton("Move to Camera##tool_Selection_MoveToCamera", MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Camera))
+            if (ImGui.RadioButton("移至相机 Move to Camera##tool_Selection_MoveToCamera", MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Camera))
             {
                 MapEditorState.SelectedAction = MapEditorAction.Selection_Move_to_Camera;
             }
@@ -30,11 +30,11 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Camera)
             {
-                ImguiUtils.WrappedText("Move the current selection to the camera position.");
+                ImguiUtils.WrappedText("将当前选择移动到相机位置 Move the current selection to the camera position.");
                 ImguiUtils.WrappedText("");
 
-                ImguiUtils.WrappedText("Camera Offset Distance:");
-                if (ImGui.Button("Switch"))
+                ImguiUtils.WrappedText("相机偏移距离： Camera Offset Distance:");
+                if (ImGui.Button("选择 Switch"))
                 {
                     CFG.Current.Toolbar_Move_to_Camera_Offset_Specific_Input = !CFG.Current.Toolbar_Move_to_Camera_Offset_Specific_Input;
                 }
@@ -45,7 +45,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                     ImGui.PushItemWidth(200);
                     ImGui.InputFloat("##Offset distance", ref offset);
-                    ImguiUtils.ShowHoverTooltip("Set the distance at which the current selection is offset from the camera when this action is used.");
+                    ImguiUtils.ShowHoverTooltip("设置当前选择在使用此操作时与相机的偏移距离\nSet the distance at which the current selection is offset from the camera when this action is used.");
 
                     if (offset < 0)
                         offset = 0;
@@ -59,7 +59,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 {
                     ImGui.PushItemWidth(200);
                     ImGui.SliderFloat("##Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100);
-                    ImguiUtils.ShowHoverTooltip("Set the distance at which the current selection is offset from the camera when this action is used.");
+                    ImguiUtils.ShowHoverTooltip("设置当前选择在使用此操作时与相机的偏移距离\nSet the distance at which the current selection is offset from the camera when this action is used.");
                 }
                 ImguiUtils.WrappedText("");
             }
@@ -69,7 +69,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Camera)
             {
-                if (ImGui.Button("Apply##action_Selection_Move_to_Camera", new Vector2(200, 32)))
+                if (ImGui.Button("应用 Apply##action_Selection_Move_to_Camera", new Vector2(200, 32)))
                 {
                     if (_selection.IsSelection())
                     {
@@ -77,7 +77,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     }
                     else
                     {
-                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                        PlatformUtils.Instance.MessageBox("无选中对象 No object selected.", "Smithbox", MessageBoxButtons.OK);
                     }
                 }
             }
@@ -86,7 +86,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Camera)
             {
-                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Move_Selection_to_Camera.HintText)}");
+                ImguiUtils.WrappedText($"快捷方式 Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Move_Selection_to_Camera.HintText)}");
             }
         }
 

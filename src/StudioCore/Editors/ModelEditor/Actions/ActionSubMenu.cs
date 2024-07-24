@@ -46,28 +46,29 @@ public class ActionSubMenu
 
     public void DisplayMenu()
     {
-        if (ImGui.BeginMenu("Actions"))
+        if (ImGui.BeginMenu("动作 Actions"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Create", KeyBindings.Current.Core_Create.HintText))
+            if (ImGui.MenuItem("创建 Create", KeyBindings.Current.Core_Create.HintText))
             {
                 Handler.CreateHandler();
             }
-            ImguiUtils.ShowHoverTooltip("Adds new entry based on current selection in Model Hierarchy.");
+            ImguiUtils.ShowHoverTooltip("根据当前在模型层次结构中的选择添加新条目\nAdds new entry based on current selection in Model Hierarchy.");
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.Core_Duplicate.HintText))
+            if (ImGui.MenuItem("复刻 Duplicate", KeyBindings.Current.Core_Duplicate.HintText))
             {
                 Handler.DuplicateHandler();
             }
-            ImguiUtils.ShowHoverTooltip("Duplicates current selection in Model Hierarchy.");
+            ImguiUtils.ShowHoverTooltip("复制当前选择的模型层次结构中的条目\nDuplicates current selection in Model Hierarchy.");
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Delete", KeyBindings.Current.Core_Delete.HintText))
+            if (ImGui.MenuItem("删除 Delete", KeyBindings.Current.Core_Delete.HintText))
             {
                 Handler.DeleteHandler();
             }
-            ImguiUtils.ShowHoverTooltip("Deletes current selection in Model Hierarchy.");
+            ImguiUtils.ShowHoverTooltip("删除当前选择的模型层次结构中的条目\nDeletes current selection in Model Hierarchy.");
+
 
             ImGui.EndMenu();
         }

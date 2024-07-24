@@ -80,19 +80,19 @@ namespace StudioCore.Editors.GparamEditor
             "\nSets target rows to the Value of row ID <x>." +
             "\n";
 
-            ImGui.Text("Filter: ");
+            ImGui.Text("过滤 Filter: ");
             ImguiUtils.ShowWideHoverTooltip($"{filterArguments}");
             ImGui.SameLine();
 
             ImGui.InputText("##filterString", ref _filterString, 255);
 
-            ImGui.Text("Command:");
+            ImGui.Text("命令 Command:");
             ImguiUtils.ShowWideHoverTooltip($"{commandArguments}");
             ImGui.SameLine();
 
             ImGui.InputText("##commandString", ref _commandString, 255);
 
-            if(ImGui.Button("Execute"))
+            if(ImGui.Button("执行 Execute"))
             {
                 filterTruth = new bool[SelectedParamField.Values.Count];
                 ExecuteQuickEdit();

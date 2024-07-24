@@ -32,35 +32,35 @@ public class ToolSubMenu
 
     public void DisplayMenu()
     {
-        if (ImGui.BeginMenu("Tools"))
+        if (ImGui.BeginMenu("工具 Tools"))
         {
             // Export Model
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Export Model", KeyBindings.Current.ModelEditor_ExportModel.HintText))
+            if (ImGui.MenuItem("导出模型 Export Model", KeyBindings.Current.ModelEditor_ExportModel.HintText))
             {
                 ModelExporter.ExportModel(Screen);
             }
             // Solve Bounding Boxes
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Solve Bounding Boxes"))
+            if (ImGui.MenuItem("解决包围盒 Solve Bounding Boxes"))
             {
                 FlverTools.SolveBoundingBoxes(Screen.ResourceHandler.CurrentFLVER);
             }
             // Reverse Face Set
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Reverse Mesh Face Set"))
+            if (ImGui.MenuItem("反转网格面集合 Reverse Mesh Face Set"))
             {
                 FlverTools.ReverseFaceSet(Screen);
             }
             // Reverse Normals
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Reverse Mesh Normals"))
+            if (ImGui.MenuItem("反转网格法线 Reverse Mesh Normals"))
             {
                 FlverTools.ReverseNormals(Screen);
             }
             // DFLVERummy Groups
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("FLVER Groups"))
+            if (ImGui.BeginMenu("模型组 FLVER Groups"))
             {
                 FlverGroups.DisplaySubMenu(Screen);
 
@@ -68,7 +68,7 @@ public class ToolSubMenu
             }
             // Dummy Groups
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("Dummy Groups"))
+            if (ImGui.BeginMenu("占位组 Dummy Groups"))
             {
                 DummyGroups.DisplaySubMenu(Screen);
 
@@ -76,7 +76,7 @@ public class ToolSubMenu
             }
             // Material Groups
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("Material Groups"))
+            if (ImGui.BeginMenu("材质组 Material Groups"))
             {
                 MaterialGroups.DisplaySubMenu(Screen);
 
@@ -84,7 +84,7 @@ public class ToolSubMenu
             }
             // GX List Groups
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("GX List Groups"))
+            if (ImGui.BeginMenu("图形列表组 GX List Groups"))
             {
                 GXListGroups.DisplaySubMenu(Screen);
 
@@ -92,7 +92,7 @@ public class ToolSubMenu
             }
             // Node Groups
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("Node Groups"))
+            if (ImGui.BeginMenu("节点组 Node Groups"))
             {
                 NodeGroups.DisplaySubMenu(Screen);
 
@@ -100,7 +100,7 @@ public class ToolSubMenu
             }
             // Mesh Groups
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("Mesh Groups"))
+            if (ImGui.BeginMenu("网格组 Mesh Groups"))
             {
                 MeshGroups.DisplaySubMenu(Screen);
 
@@ -108,7 +108,7 @@ public class ToolSubMenu
             }
             // Buffer Layout Groups
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("Material Groups"))
+            if (ImGui.BeginMenu("缓冲区布局组 Buffer Layout Groups"))
             {
                 BufferLayoutGroups.DisplaySubMenu(Screen);
 
@@ -116,7 +116,7 @@ public class ToolSubMenu
             }
             // Base Skeleton Bone Groups
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("Base Skeleton Bone Groups"))
+            if (ImGui.BeginMenu("基础骨架骨骼组 Base Skeleton Bone Groups"))
             {
                 BaseSkeletonBoneGroups.DisplaySubMenu(Screen);
 
@@ -124,7 +124,7 @@ public class ToolSubMenu
             }
             // All Skeleton Bone Groups
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("All Skeleton Bone Groups"))
+            if (ImGui.BeginMenu("所有骨架骨骼组 All Skeleton Bone Groups"))
             {
                 AllSkeletonBoneGroups.DisplaySubMenu(Screen);
 

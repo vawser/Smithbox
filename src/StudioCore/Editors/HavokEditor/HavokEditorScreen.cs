@@ -40,6 +40,7 @@ public class HavokEditorScreen : EditorScreen
     }
 
     public string EditorName => "Havok Editor##HavokEditor";
+    public string Discription => "Havok引擎编辑器 Havok Editor";
     public string CommandEndpoint => "Havok";
     public string SaveType => "Havok";
 

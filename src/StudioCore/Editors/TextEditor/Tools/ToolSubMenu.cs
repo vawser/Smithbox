@@ -31,11 +31,11 @@ public class ToolSubMenu
     }
     public void DisplayMenu()
     {
-        if (ImGui.BeginMenu("Tools"))
+        if (ImGui.BeginMenu("工具 Tools"))
         {
             // Upgrade FMG Files
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Upgrade FMG Files"))
+            if (ImGui.MenuItem("升级消息文件 Upgrade FMG Files"))
             {
                 FmgUpdater.UpdateFMGs();
             }

@@ -70,6 +70,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     }
 
     public string EditorName => "Texture Viewer##TextureViewerEditor";
+    public string Discription => "纹理显示器 Texture Viewer";
     public string CommandEndpoint => "texture";
     public string SaveType => "Texture";
 
@@ -136,45 +137,45 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void DrawEditorMenu()
     {
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("视图 View"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Files"))
+            if (ImGui.MenuItem("文件 Files"))
             {
                 CFG.Current.Interface_TextureViewer_Files = !CFG.Current.Interface_TextureViewer_Files;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Files);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Textures"))
+            if (ImGui.MenuItem("纹理 Textures"))
             {
                 CFG.Current.Interface_TextureViewer_Textures = !CFG.Current.Interface_TextureViewer_Textures;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Textures);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Viewer"))
+            if (ImGui.MenuItem("显示 Viewer"))
             {
                 CFG.Current.Interface_TextureViewer_Viewer = !CFG.Current.Interface_TextureViewer_Viewer;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Viewer);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Properties"))
+            if (ImGui.MenuItem("属性 Properties"))
             {
                 CFG.Current.Interface_TextureViewer_Properties = !CFG.Current.Interface_TextureViewer_Properties;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Properties);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Toolbar"))
+            if (ImGui.MenuItem("工具栏 Toolbar"))
             {
                 CFG.Current.Interface_TextureViewer_Toolbar = !CFG.Current.Interface_TextureViewer_Toolbar;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Toolbar);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Resource List"))
+            if (ImGui.MenuItem("资源列表 Resource List"))
             {
                 CFG.Current.Interface_TextureViewer_ResourceList = !CFG.Current.Interface_TextureViewer_ResourceList;
             }
@@ -205,7 +206,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         {
             ImGui.Begin("Viewer##InvalidTextureViewer");
 
-            ImGui.Text("No project loaded. File -> New Project");
+            ImGui.Text("未加载项目 No project loaded. File -> New Project");
 
             ImGui.End();
 
@@ -218,7 +219,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         {
             ImGui.Begin("Viewer##InvalidTextureViewerLowReqs");
 
-            ImGui.Text("Not usable in Low Requirements mode.");
+            ImGui.Text("低依赖无法查看 Not usable in Low Requirements mode.");
 
             ImGui.End();
 
@@ -304,7 +305,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _fileSearchInput, 255);
+        ImGui.InputText($"查找 Search", ref _fileSearchInput, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
@@ -316,29 +317,29 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.ER)
         {
-            DisplayFileSection("Asset", TextureViewCategory.Asset);
+            DisplayFileSection("资源 Asset", TextureViewCategory.Asset);
         }
         else
         {
-            DisplayFileSection("Object", TextureViewCategory.Object);
+            DisplayFileSection("对象 Object", TextureViewCategory.Object);
         }
 
-        DisplayFileSection("Characters", TextureViewCategory.Character);
+        DisplayFileSection("角色 Characters", TextureViewCategory.Character);
 
         // AC6 needs some adjustments to support its parts properly
         if (Smithbox.ProjectType != ProjectType.AC6)
         {
-            DisplayFileSection("Parts", TextureViewCategory.Part);
+            DisplayFileSection("局部 Parts", TextureViewCategory.Part);
         }
 
-        DisplayFileSection("Particles", TextureViewCategory.Particle);
+        DisplayFileSection("粒子 Particles", TextureViewCategory.Particle);
 
-        DisplayFileSection("Menu", TextureViewCategory.Menu);
+        DisplayFileSection("菜单 Menu", TextureViewCategory.Menu);
 
         // DS2S doesn't have an other folder
         if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
         {
-            DisplayFileSection("Other", TextureViewCategory.Other);
+            DisplayFileSection("其他 Other", TextureViewCategory.Other);
         }
 
         ImGui.End();
@@ -423,7 +424,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         ResourceManager.UnloadPersistentTextures();
 
-        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob($@"Loading {info.Name} textures");
+        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob($@"加载了纹理 Loading {info.Name} textures");
 
         ResourceDescriptor ad = null;
 
@@ -561,7 +562,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         ImGui.Separator();
 
-        ImGui.InputText($"Search", ref _textureSearchInput, 255);
+        ImGui.InputText($"查找 Search", ref _textureSearchInput, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
@@ -575,7 +576,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         {
             TextureViewInfo data = _selectedTextureContainer;
 
-            ImGui.Text($"Textures");
+            ImGui.Text($"纹理 Textures");
             ImGui.Separator();
 
             if (data.Textures != null)
@@ -655,13 +656,13 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     private void TextureProperties()
     {
-        ImGui.Begin("Properties##PropertiesView");
+        ImGui.Begin("属性 Properties##PropertiesView");
 
-        ImguiUtils.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
-        ImguiUtils.WrappedText($"Press {KeyBindings.Current.TextureViewer_ZoomReset.HintText} to reset zoom level to 100%.");
+        ImguiUtils.WrappedText($"按住左Ctrl+鼠标滚轮缩放 Hold Left-Control and scroll the mouse wheel to zoom in and out.");
+        ImguiUtils.WrappedText($"Press 按下{KeyBindings.Current.TextureViewer_ZoomReset.HintText}重置缩放 to reset zoom level to 100%.");
 
         ImguiUtils.WrappedText($"");
-        ImguiUtils.WrappedText($"Properties of {CurrentTextureName}:");
+        ImguiUtils.WrappedText($"属性 Properties of {CurrentTextureName}:");
 
         if (_selectedTexture != null)
         {
@@ -672,9 +673,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
                 ImGui.Columns(2);
 
-                ImGui.Text("Width:");
-                ImGui.Text("Height:");
-                ImGui.Text("Format:");
+                ImGui.Text("宽 Width:");
+                ImGui.Text("高 Height:");
+                ImGui.Text("格式 Format:");
 
                 ImGui.NextColumn();
 
@@ -688,7 +689,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 ImGui.Columns(1);
 
                 ImGui.Text("");
-                ImGui.Text($"Relative Position: {relativePos}");
+                ImGui.Text($"相对坐标 Relative Position: {relativePos}");
 
                 if(shoeboxContainer != null)
                 {

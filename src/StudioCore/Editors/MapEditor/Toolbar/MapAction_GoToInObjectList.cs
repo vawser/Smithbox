@@ -14,7 +14,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (ImGui.RadioButton("Go to in Object List##tool_Selection_GoToInObjectList", MapEditorState.SelectedAction == MapEditorAction.Selection_Go_to_in_Object_List))
+            if (ImGui.RadioButton("跳转至对象列表 Go to in Object List##tool_Selection_GoToInObjectList", MapEditorState.SelectedAction == MapEditorAction.Selection_Go_to_in_Object_List))
             {
                 MapEditorState.SelectedAction = MapEditorAction.Selection_Go_to_in_Object_List;
             }
@@ -37,7 +37,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Go_to_in_Object_List)
             {
-                if (ImGui.Button("Apply##action_Selection_Go_to_in_Object_List", new Vector2(200, 32)))
+                if (ImGui.Button("应用 Apply##action_Selection_Go_to_in_Object_List", new Vector2(200, 32)))
                 {
                     if (_selection.IsSelection())
                     {
@@ -45,7 +45,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     }
                     else
                     {
-                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                        PlatformUtils.Instance.MessageBox("无选中对象 No object selected.", "Smithbox", MessageBoxButtons.OK);
                     }
                 }
             }

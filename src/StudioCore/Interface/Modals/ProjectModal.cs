@@ -39,16 +39,16 @@ public class ProjectModal
 
     public void Display()
     {
-        ImGui.BeginTabBar("ProjectModelTabs");
+        ImGui.BeginTabBar("项目模块栏 ProjectModelTabs");
 
-        if(ImGui.BeginTabItem("Load Project"))
+        if(ImGui.BeginTabItem("加载 Load Project"))
         {
             DisplayProjectLoadOptions();
 
             ImGui.EndTabItem();
         }
 ;
-        if (ImGui.BeginTabItem("Create Project"))
+        if (ImGui.BeginTabItem("新建 Create Project"))
         {
             DisplayNewProjectCreation();
 
@@ -72,9 +72,9 @@ public class ProjectModal
             else
             {
                 DialogResult result = PlatformUtils.Instance.MessageBox(
-                    $"Project file at \"{p.ProjectFile}\" does not exist.\n\n" +
-                    $"Remove project from list of recent projects?",
-                    $"Project.json cannot be found", MessageBoxButtons.YesNo);
+                    $"项目文件不存在 Project file at \"{p.ProjectFile}\" does not exist.\n\n" +
+                    $"从历史里移除吗 Remove project from list of recent projects?",
+                    $"Project.json cannot be found 未找到", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     CFG.RemoveRecentProject(p);
@@ -84,7 +84,7 @@ public class ProjectModal
 
         if (ImGui.BeginPopupContextItem())
         {
-            if (ImGui.Selectable("Remove from list"))
+            if (ImGui.Selectable("移除 Remove from list"))
             {
                 CFG.RemoveRecentProject(p);
                 CFG.Save();
@@ -102,7 +102,7 @@ public class ProjectModal
         if (CFG.Current.RecentProjects.Count > 0)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedText("Recent Projects");
+            ImguiUtils.WrappedText("历史 Recent Projects");
             ImGui.Separator();
 
             Smithbox.ProjectHandler.DisplayRecentProjects();
@@ -110,14 +110,14 @@ public class ProjectModal
             ImGui.Separator();
         }
 
-        if (ImGui.Button("Load New Project", new Vector2(width * 95, 32 * scale)))
+        if (ImGui.Button("加载新项目 Load New Project", new Vector2(width * 95, 32 * scale)))
         {
             Smithbox.ProjectHandler.OpenProjectDialog();
         }
 
         if (CFG.Current.LastProjectFile != "")
         {
-            if (ImGui.Button("Load Recent Project", new Vector2(width * 95, 32 * scale)))
+            if (ImGui.Button("加载上次项目 Load Recent Project", new Vector2(width * 95, 32 * scale)))
             {
                 Smithbox.ProjectHandler.LoadRecentProject();
             }
@@ -128,10 +128,10 @@ public class ProjectModal
     {
         // Project Name
         ImGui.AlignTextToFramePadding();
-        ImGui.Text("Project Name:      ");
+        ImGui.Text("项目名称 Project Name:      ");
         ImGui.SameLine();
         Utils.ImGuiGenericHelpPopup("?", "##Help_ProjectName",
-            "Project's display name. Only affects visuals within Smithbox.");
+            "起啥都行 Project's display name. Only affects visuals within Smithbox.");
         ImGui.SameLine();
 
         var pname = newProject.Config != null ? newProject.Config.ProjectName : "Blank";
@@ -143,21 +143,21 @@ public class ProjectModal
 
         // Project Directory
         ImGui.AlignTextToFramePadding();
-        ImGui.Text("Project Directory: ");
+        ImGui.Text("项目路径 Project Directory: ");
         ImGui.SameLine();
         Utils.ImGuiGenericHelpPopup("?", "##Help_ProjectDirectory",
-            "The location mod files will be saved.\nTypically, this should be Mod Engine's Mod folder.");
+            "最好是mod路径 Game其次 The location mod files will be saved.\nTypically, this should be Mod Engine's Mod folder.");
         ImGui.SameLine();
         ImGui.InputText("##pdir", ref newProjectDirectory, 255);
         ImGui.SameLine();
         if (ImGui.Button($@"{ForkAwesome.FileO}"))
         {
-            if (PlatformUtils.Instance.OpenFolderDialog("Select project directory...", out var path))
+            if (PlatformUtils.Instance.OpenFolderDialog("选择项目文件夹 Select project directory...", out var path))
             {
                 if (IsLogicalDrive(path))
                 {
                     DialogResult message = PlatformUtils.Instance.MessageBox(
-                        "Project Directory has been placed in a drive root. This is not allowed. Please select a different location.", "Error",
+                        "当前路径不可用 请更换其他路径 Project Directory has been placed in a drive root. This is not allowed. Please select a different location.", "Error",
                         MessageBoxButtons.OK);
                 }
                 else
@@ -169,10 +169,10 @@ public class ProjectModal
 
         // Game Executable
         ImGui.AlignTextToFramePadding();
-        ImGui.Text("Game Executable:   ");
+        ImGui.Text("游戏路径 Game Executable:   ");
         ImGui.SameLine();
         Utils.ImGuiGenericHelpPopup("?", "##Help_GameExecutable",
-            "The location of the game's .EXE or EBOOT.BIN file.\nThe folder with the executable will be used to obtain unpacked game data.");
+            "游戏exe文件路径 必须包含UMX解包数据 The location of the game's .EXE or EBOOT.BIN file.\nThe folder with the executable will be used to obtain unpacked game data.");
         ImGui.SameLine();
 
         var gname = newProject.Config != null ? newProject.Config.GameRoot : "";
@@ -200,7 +200,7 @@ public class ProjectModal
         if (ImGui.Button($@"{ForkAwesome.FileO}##fd2"))
         {
             if (PlatformUtils.Instance.OpenFileDialog(
-                    "Select executable for the game you want to mod...",
+                    "选择游戏exe文件 Select executable for the game you want to mod...",
                     new[] { FilterStrings.GameExecutableFilter },
                     out var path))
             {
@@ -218,7 +218,7 @@ public class ProjectModal
         }
 
         // Project Gametype
-        ImGui.Text($@"Game Type: {newProject.Config.GameType}");
+        ImGui.Text($@"游戏类型 Game Type: {newProject.Config.GameType}");
 
         // Project Options - Loose Params
         if (newProject.Config.GameType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3)
@@ -243,7 +243,7 @@ public class ProjectModal
 
         // Project Options - Import Row Names
         ImGui.AlignTextToFramePadding();
-        ImGui.Text(@"Import row names:  ");
+        ImGui.Text(@"导入行名称 Import row names:  ");
         ImGui.SameLine();
         Utils.ImGuiGenericHelpPopup("?", "##Help_ImportRowNames",
             "Default: OFF\nImports and applies row names from lists stored in Assets folder.\nRow names can be imported at any time in the param editor's Edit menu.");
@@ -254,7 +254,7 @@ public class ProjectModal
         ImGui.Separator();
 
         // Create
-        if (ImGui.Button("Create", new Vector2(120, 0) * Smithbox.GetUIScale()))
+        if (ImGui.Button("创建 Create", new Vector2(120, 0) * Smithbox.GetUIScale()))
         {
             bool validProject = CanCreateNewProject();
 
@@ -283,14 +283,14 @@ public class ProjectModal
                 !Directory.Exists(newProject.Config.GameRoot))
             {
                 PlatformUtils.Instance.MessageBox(
-                    "Your game executable path does not exist. Please select a valid executable.", "Error",
+                    "游戏exe路径不存在\nYour game executable path does not exist. Please select a valid executable.", "Error",
                     MessageBoxButtons.OK);
                 validated = false;
             }
 
             if (validated && newProject.Config.GameType == ProjectType.Undefined)
             {
-                PlatformUtils.Instance.MessageBox("Your game executable is not a valid supported game.",
+                PlatformUtils.Instance.MessageBox("游戏版本不支持\nYour game executable is not a valid supported game.",
                     "Error",
                     MessageBoxButtons.OK);
                 validated = false;
@@ -298,7 +298,7 @@ public class ProjectModal
 
             if (validated && (newProjectDirectory == null || !Directory.Exists(newProjectDirectory)))
             {
-                PlatformUtils.Instance.MessageBox("Your selected project directory is not valid.", "Error",
+                PlatformUtils.Instance.MessageBox("选中的项目已失效\nYour selected project directory is not valid.", "Error",
                     MessageBoxButtons.OK);
                 validated = false;
             }
@@ -306,7 +306,7 @@ public class ProjectModal
             if (validated && File.Exists($@"{newProjectDirectory}\project.json"))
             {
                 DialogResult message = PlatformUtils.Instance.MessageBox(
-                    "Your selected project directory already contains a project.json. Would you like to replace it?",
+                    "你要覆盖原本的project.json吗 Your selected project directory already contains a project.json. Would you like to replace it?",
                     "Error",
                     MessageBoxButtons.YesNo);
                 if (message == DialogResult.No)
@@ -318,10 +318,15 @@ public class ProjectModal
             if (validated && newProject.Config.GameRoot == newProjectDirectory)
             {
                 DialogResult message = PlatformUtils.Instance.MessageBox(
+                    "项目目录与游戏目录相同，这可能会直接覆盖游戏文件。\n" +
+                    "强烈建议您使用 Mod Engine 的 mod 文件夹作为您的项目文件夹\n" +
+                    "仍然继续并创建项目？\n" +
+
                     "Project Directory is the same as Game Directory, which allows game files to be overwritten directly.\n\n" +
                     "It's highly recommended you use the Mod Engine mod folder as your project folder instead (if possible).\n\n" +
-                    "Continue and create project anyway?", "Caution",
+                    "Continue and create project anyway?", "警告 Caution",
                     MessageBoxButtons.OKCancel);
+
                 if (message != DialogResult.OK)
                 {
                     validated = false;
@@ -331,14 +336,14 @@ public class ProjectModal
             if (validated && IsLogicalDrive(newProjectDirectory))
             {
                 DialogResult message = PlatformUtils.Instance.MessageBox(
-                    "Project Directory has been placed in a drive root. This is not allowed. Please select a different location.", "Error",
+                    "当前路径不可用 请更换其他路径 Project Directory has been placed in a drive root. This is not allowed. Please select a different location.", "Error",
                     MessageBoxButtons.OK);
                 validated = false;
             }
 
             if (validated && (newProject.Config.ProjectName == null || newProject.Config.ProjectName == ""))
             {
-                PlatformUtils.Instance.MessageBox("You must specify a project name.", "Error",
+                PlatformUtils.Instance.MessageBox("项目名不能为空 You must specify a project name.", "Error",
                     MessageBoxButtons.OK);
                 validated = false;
             }
@@ -346,7 +351,7 @@ public class ProjectModal
         else
         {
             PlatformUtils.Instance.MessageBox(
-                    "No valid game has been detected. Please select a valid executable.", "Error",
+                    "游戏被删除了 请重新选择一个有效的\nNo valid game has been detected. Please select a valid executable.", "Error",
                     MessageBoxButtons.OK);
             validated = false;
         }

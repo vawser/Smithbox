@@ -57,17 +57,17 @@ public class ParamEditorView
     //------------------------------------
     private void ParamView_ParamList_Header(bool isActiveView)
     {
-        ImGui.Text("Params");
+        ImGui.Text("参数 Params");
         ImGui.Separator();
 
         if (ParamBank.PrimaryBank.ParamVersion != 0)
         {
-            ImGui.Text($"Param version {Utils.ParseParamVersion(ParamBank.PrimaryBank.ParamVersion)}");
+            ImGui.Text($"参数版本 Param version {Utils.ParseParamVersion(ParamBank.PrimaryBank.ParamVersion)}");
 
             if (ParamBank.PrimaryBank.ParamVersion < ParamBank.VanillaBank.ParamVersion)
             {
                 ImGui.SameLine();
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Warning_Text_Color, "(out of date)");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Warning_Text_Color, "(已过时 out of date)");
             }
         }
 
@@ -76,7 +76,7 @@ public class ParamEditorView
             ImGui.SetKeyboardFocusHere();
         }
 
-        ImGui.InputText($"Search <{KeyBindings.Current.Param_SearchParam.HintText}>",
+        ImGui.InputText($"搜索 Search <{KeyBindings.Current.Param_SearchParam.HintText}>",
             ref _selection.currentParamSearchString, 256);
         var resAutoParam = AutoFill.ParamSearchBarAutoFill();
 
@@ -94,7 +94,7 @@ public class ParamEditorView
         if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
         {
             // This game has DrawParams, add UI element to toggle viewing DrawParam and GameParams.
-            if (ImGui.Checkbox("Edit Drawparams", ref _mapParamView))
+            if (ImGui.Checkbox("编辑绘制参数 Edit Drawparams", ref _mapParamView))
             {
                 UICache.ClearCaches();
             }
@@ -102,7 +102,7 @@ public class ParamEditorView
         else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             // DS2 has map params, add UI element to toggle viewing map params and GameParams.
-            if (ImGui.Checkbox("Edit Map Params", ref _mapParamView))
+            if (ImGui.Checkbox("编辑地图参数 Edit Map Params", ref _mapParamView))
             {
                 UICache.ClearCaches();
             }
@@ -112,14 +112,14 @@ public class ParamEditorView
             // Only show if the user actually has the eventparam file
             if (Path.Exists($"{Smithbox.GameRoot}\\param\\eventparam\\eventparam.parambnd.dcx"))
             {
-                if (ImGui.Checkbox("Edit Event Params", ref _eventParamView))
+                if (ImGui.Checkbox("编辑事件参数 Edit Event Params", ref _eventParamView))
                 {
                     _gConfigParamView = false;
                     UICache.ClearCaches();
                 }
             }
 
-            if (ImGui.Checkbox("Edit Graphics Config Params", ref _gConfigParamView))
+            if (ImGui.Checkbox("编辑图样参数 Edit Graphics Config Params", ref _gConfigParamView))
             {
                 _eventParamView = false;
                 UICache.ClearCaches();
@@ -161,14 +161,14 @@ public class ParamEditorView
 
                 if (ImGui.BeginPopupContextItem())
                 {
-                    if (ImGui.Selectable("Unpin " + paramKey))
+                    if (ImGui.Selectable("解 Unpin " + paramKey))
                     {
                         Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Remove(paramKey);
                     }
 
                     EditorDecorations.PinListReorderOptions(Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams, paramKey);
 
-                    if (ImGui.Selectable("Unpin all"))
+                    if (ImGui.Selectable("全解 Unpin all"))
                     {
                         Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.RemoveAll(x => true);
                     }
@@ -185,79 +185,290 @@ public class ParamEditorView
         }
     }
 
+    private static Dictionary<string, string> paramChs;
+    private static List<string> paramKeyList;
     private void ParamView_ParamList_Main(bool doFocus, float scale, float scrollTo)
     {
-        List<string> paramKeyList = UICache.GetCached(_paramEditor, _viewIndex, () =>
+        if(paramChs == null)
         {
-            List<(ParamBank, Param)> list =
-                ParamSearchEngine.pse.Search(true, _selection.currentParamSearchString, true, true);
-            var keyList = list.Where(param => param.Item1 == ParamBank.PrimaryBank)
-                .Select(param => ParamBank.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
+            
+            paramChs = new Dictionary<string, string>
+            {
+                {"ActionButtonParam", "交互按钮参数"},
+                {"AiSoundParam", "AI声音参数"},
+                {"AssetEnvironmentGeometryParam", "地图物体参数"},
+                {"AssetMaterialSfxParam", "地图物体材质特效参数"},
+                {"AssetModelSfxParam", "地图物体模型特效参数"},
+                {"AtkParam_Npc", "伤害判定atk-非褪色者"},
+                {"AtkParam_Pc", "伤害判定atk-褪色者"},
+                {"AttackElementCorrectParam", "伤害补正参数"},
+                {"AutoCreateEnvSoundParam", "自动生成环境声音参数"},
+                {"BaseChrSelectMenuParam", "玩家出身界面参数"},
+                {"BehaviorParam", "行为调用组-非褪色者"},
+                {"BehaviorParam_PC", "行为调用组-褪色者"},
+                {"BonfireWarpParam", "赐福点参数"},
+                {"BonfireWarpSubCategoryParam", "赐福点子类别参数"},
+                {"BonfireWarpTabParam", "赐福点类别参数"},
+                {"BuddyParam", "骨灰同伴参数"},
+                {"BuddyStoneParam", "骨灰召唤区域参数"},
+                {"BudgetParam", "预算参数"},
+                {"Bullet", "子弹"},
+                {"BulletCreateLimitParam", "子弹生成限制参数"},
+                {"CalcCorrectGraph", "数值增长曲线表"},
+                {"CameraFadeParam", "相机淡出参数"},
+                {"Ceremony", "地图仪式"},
+                {"CharaInitParam", "褪色者预设模板参数"},
+                {"CharMakeMenuListItemParam", "玩家出身界面选项参数"},
+                {"CharMakeMenuTopParam", "玩家出身界面栏目参数"},
+                {"ChrActivateConditionParam", "实体激活条件参数"},
+                {"ChrEquipModelParam", "角色装备模型参数"},
+                {"ChrModelParam", "角色模型参数"},
+                {"ClearCountCorrectParam", "游戏周目加成设置"},
+                {"CommonSystemParam", "通用系统参数"},
+                {"CoolTimeParam", "冷却时间参数"},
+                {"CutsceneGparamTimeParam", "过场动画G参数时间"},
+                {"CutsceneGparamWeatherParam", "过场动画G参数天气"},
+                {"CutsceneMapIdParam", "过场动画地图ID参数"},
+                {"CutSceneTextureLoadParam", "过场动画纹理加载参数"},
+                {"CutsceneTimezoneConvertParam", "过场动画时区转换参数"},
+                {"CutsceneWeatherOverrideGparamConvertParam", "过场动画天气覆盖G参数转换参数"},
+                {"DecalParam", "贴花参数"},
+                {"DefaultKeyAssign", "默认键位分配"},
+                {"DirectionCameraParam", "方向相机参数"},
+                {"EnemyCommonParam", "敌人通用参数"},
+                {"EnvObjLotParam", "环境对象生成参数"},
+                {"EquipMtrlSetParam", "材料需求表"},
+                {"EquipParamAccessory", "护符"},
+                {"EquipParamCustomWeapon", "特制武器-npc用"},
+                {"EquipParamGem", "战灰"},
+                {"EquipParamGoods", "道具"},
+                {"EquipParamProtector", "装备"},
+                {"EquipParamWeapon", "武器"},
+                {"FaceParam", "面部参数"},
+                {"FaceRangeParam", "面部范围参数"},
+                {"FeTextEffectParam", "FE横幅播报文本效果"},
+                {"FinalDamageRateParam", "最终伤害率参数"},
+                {"FootSfxParam", "脚步音效参数"},
+                {"GameAreaParam", "游戏区域参数"},
+                {"GameSystemCommonParam", "游戏系统通用参数"},
+                {"GestureParam", "表情对应动作表"},
+                {"GparamRefSettings", "G参数参考设置"},
+                {"GraphicsCommonParam", "图形通用参数"},
+                {"GraphicsConfig", "图形配置"},
+                {"GrassLodRangeParam", "草地Lod范围参数"},
+                {"GrassTypeParam", "草地类型参数"},
+                {"GrassTypeParam_Lv1", "草地类型参数_等级1"},
+                {"GrassTypeParam_Lv2", "草地类型参数_等级2"},
+                {"HitEffectSeParam", "击中效果SE参数"},
+                {"HitEffectSfxConceptParam", "击中效果SFX概念参数"},
+                {"HitEffectSfxParam", "击中效果SFX参数"},
+                {"HitMtrlParam", "击中材质参数"},
+                {"HPEstusFlaskRecoveryParam", "特定单位击杀后恢复血瓶设置"},
+                {"ItemLotParam_enemy", "敌人掉落参数"},
+                {"ItemLotParam_map", "物品获取表"},
+                {"KeyAssignMenuItemParam", "键位分配菜单项参数"},
+                {"KeyAssignParam_TypeA", "键位分配参数_类型A"},
+                {"KeyAssignParam_TypeB", "键位分配参数_类型B"},
+                {"KeyAssignParam_TypeC", "键位分配参数_类型C"},
+                {"KnockBackParam", "击退参数"},
+                {"KnowledgeLoadScreenItemParam", "知识加载屏幕项参数"},
+                {"LegacyDistantViewPartsReplaceParam", "遗留远景部件替换参数"},
+                {"LoadBalancerDrawDistScaleParam", "负载均衡器绘制距离缩放参数"},
+                {"LoadBalancerDrawDistScaleParam_ps4", "负载均衡器绘制距离缩放参数_PS4"},
+                {"LoadBalancerDrawDistScaleParam_ps5", "负载均衡器绘制距离缩放参数_PS5"},
+                {"LoadBalancerDrawDistScaleParam_xb1", "负载均衡器绘制距离缩放参数_XB1"},
+                {"LoadBalancerDrawDistScaleParam_xb1x", "负载均衡器绘制距离缩放参数_XB1X"},
+                {"LoadBalancerDrawDistScaleParam_xss", "负载均衡器绘制距离缩放参数_XSS"},
+                {"LoadBalancerDrawDistScaleParam_xsx", "负载均衡器绘制距离缩放参数_XSX"},
+                {"LoadBalancerNewDrawDistScaleParam_ps4", "负载均衡器新绘制距离缩放参数_PS4"},
+                {"LoadBalancerNewDrawDistScaleParam_ps5", "负载均衡器新绘制距离缩放参数_PS5"},
+                {"LoadBalancerNewDrawDistScaleParam_win64", "负载均衡器新绘制距离缩放参数_WIN64"},
+                {"LoadBalancerNewDrawDistScaleParam_xb1", "负载均衡器新绘制距离缩放参数_XB1"},
+                {"LoadBalancerNewDrawDistScaleParam_xb1x", "负载均衡器新绘制距离缩放参数_XB1X"},
+                {"LoadBalancerNewDrawDistScaleParam_xss", "负载均衡器新绘制距离缩放参数_XSS"},
+                {"LoadBalancerNewDrawDistScaleParam_xsx", "负载均衡器新绘制距离缩放参数_XSX"},
+                {"LoadBalancerParam", "负载均衡器参数"},
+                {"LockCamParam", "相机视角参数"},
+                {"Magic", "法术（魔法与祷告）"},
+                {"MapDefaultInfoParam", "地图默认信息参数"},
+                {"MapGdRegionDrawParam", "地图GD区域绘制参数"},
+                {"MapGdRegionInfoParam", "地图GD区域信息参数"},
+                {"MapGridCreateHeightDetailLimitInfo", "地图网格创建高度细节限制信息"},
+                {"MapGridCreateHeightLimitInfoParam", "地图网格创建高度限制信息参数"},
+                {"MapMimicryEstablishmentParam", "地图拟态建立参数"},
+                {"MapNameTexParam", "地图名称纹理参数"},
+                {"MapNameTexParam_m61", "地图名称纹理参数_m61"},
+                {"MapPieceTexParam", "地图碎片纹理参数"},
+                {"MapPieceTexParam_m61", "地图碎片纹理参数_m61"},
+                {"MaterialExParam", "材料扩展参数"},
+                {"MenuColorTableParam", "菜单颜色表参数"},
+                {"MenuCommonParam", "菜单界面通用参数"},
+                {"MenuOffscrRendParam", "菜单离屏渲染参数"},
+                {"MenuPropertyLayoutParam", "菜单属性布局参数"},
+                {"MenuPropertySpecParam", "菜单属性规格参数"},
+                {"MenuValueTableParam", "菜单值表参数"},
+                {"MimicryEstablishmentTexParam", "拟态建立纹理参数"},
+                {"MimicryEstablishmentTexParam_m61", "拟态建立纹理参数_m61"},
+                {"MoveParam", "移动参数"},
+                {"MPEstusFlaskRecoveryParam", "特定单位击杀后恢复蓝瓶设置"},
+                {"MultiHPEstusFlaskBonusParam", "多人游戏下特定单位击杀后恢复血瓶设置"},
+                {"MultiMPEstusFlaskBonusParam", "多人游戏下特定单位击杀后恢复蓝瓶设置"},
+                {"MultiPlayCorrectionParam", "多人游戏校正参数"},
+                {"MultiSoulBonusRateParam", "多人游戏灵魂奖金率参数"},
+                {"NetworkAreaParam", "网络区域参数"},
+                {"NetworkMsgParam", "网络消息参数"},
+                {"NetworkParam", "网络参数"},
+                {"NpcAiActionParam", "NPC AI行动参数"},
+                {"NpcAiBehaviorProbability", "NPC AI行为概率"},
+                {"NpcParam", "NPC参数"},
+                {"NpcThinkParam", "NPCAI感知参数"},
+                {"ObjActParam", "对象参数"},
+                {"PartsDrawParam", "部件绘制参数"},
+                {"PhantomParam", "灵体色调参数"},
+                {"PlayerCommonParam", "玩家通用参数"},
+                {"PlayRegionParam", "播放区域参数"},
+                {"PostureControlParam_Gender", "姿势控制参数_性别"},
+                {"PostureControlParam_Pro", "姿势控制参数_职业"},
+                {"PostureControlParam_WepLeft", "姿势控制参数_左手武器"},
+                {"PostureControlParam_WepRight", "姿势控制参数_右手武器"},
+                {"RandomAppearParam", "随机出现参数"},
+                {"ReinforceParamProtector", "防具强化曲线"},
+                {"ReinforceParamWeapon", "武器强化曲线"},
+                {"ResistCorrectParam", "异常抗性变化曲线"},
+                {"ReverbAuxSendBusParam", "混响辅助发送总线参数"},
+                {"RideParam", "骑乘参数"},
+                {"RoleParam", "玩家联机状态设置参数"},
+                {"RollingObjLotParam", "对象旋转色设置参数"},
+                {"RuntimeBoneControlParam", "运行时骨骼控制参数"},
+                {"SeActivationRangeParam", "SE激活范围参数"},
+                {"SeMaterialConvertParam", "SE材质转换参数"},
+                {"SfxBlockResShareParam", "SFX块资源共享参数"},
+                {"ShopLineupParam", "商店参数"},
+                {"ShopLineupParam_Recipe", "制作合成参数"},
+                {"SignPuddleParam", "标志水洼参数"},
+                {"SignPuddleSubCategoryParam", "标志水洼子类别参数"},
+                {"SignPuddleTabParam", "标志水洼标签参数"},
+                {"SoundAssetSoundObjEnableDistParam", "声音资产声音对象启用距离参数"},
+                {"SoundAutoEnvSoundGroupParam", "声音自动环境声音组参数"},
+                {"SoundAutoReverbEvaluationDistParam", "声音自动混响评估距离参数"},
+                {"SoundAutoReverbSelectParam", "声音自动混响选择参数"},
+                {"SoundChrPhysicsSeParam", "声音角色物理SE参数"},
+                {"SoundCommonIngameParam", "声音游戏内通用参数"},
+                {"SoundCommonSystemParam", "声音系统通用参数"},
+                {"SoundCutsceneParam", "声音过场动画参数"},
+                {"SpeedtreeParam", "SpeedTree参数"},
+                {"SpEffectParam", "效果-speffect参数"},
+                {"SpEffectSetParam", "效果集"},
+                {"SpEffectVfxParam", "效果衍生表现特效参数"},
+                {"SwordArtsParam", "战技参数"},
+                {"TalkParam", "NPC对话参数"},
+                {"ThrowDirectionSfxParam", "投技方向音效参数"},
+                {"ThrowParam", "投技参数"},
+                {"ToughnessParam", "耐久度参数"},
+                {"TutorialParam", "教程参数"},
+                {"WaypointParam", "路径点参数"},
+                {"WeatherAssetCreateParam", "天气资产创建参数"},
+                {"WeatherAssetReplaceParam", "天气资产替换参数"},
+                {"WeatherLotParam", "天气掉落参数"},
+                {"WeatherLotTexParam", "天气掉落纹理参数"},
+                {"WeatherLotTexParam_m61", "天气掉落纹理参数_m61"},
+                {"WeatherParam", "天气参数"},
+                {"WepAbsorpPosParam", "武器吸收位置参数"},
+                {"WetAspectParam", "湿润方面参数"},
+                {"WhiteSignCoolTimeParam", "白色标志冷却时间参数"},
+                {"WorldMapLegacyConvParam", "世界地图遗留转换参数"},
+                {"WorldMapPieceParam", "世界地图碎片参数"},
+                {"WorldMapPlaceNameParam", "世界地图地点名称参数"},
+                {"WorldMapPointParam", "世界地图特殊标记点参数"},
+                {"WwiseValueToStrParam_BgmBossChrIdConv", "Wwise值转字符串参数_BGM Boss角色ID转换"},
+                {"WwiseValueToStrParam_EnvPlaceType", "Wwise值转字符串参数_环境地点类型"},
+                {"WwiseValueToStrParam_Switch_AttackStrength", "Wwise值转字符串参数_攻击强度开关"},
+                {"WwiseValueToStrParam_Switch_AttackType", "Wwise值转字符串参数_攻击类型开关"},
+                {"WwiseValueToStrParam_Switch_DamageAmount", "Wwise值转字符串参数_伤害量开关"},
+                {"WwiseValueToStrParam_Switch_DeffensiveMaterial", "Wwise值转字符串参数_防御材料开关"},
+                {"WwiseValueToStrParam_Switch_GrassHitType", "Wwise值转字符串参数_草地击中类型开关"},
+                {"WwiseValueToStrParam_Switch_HitStop", "Wwise值转字符串参数_击中停顿开关"},
+                {"WwiseValueToStrParam_Switch_OffensiveMaterial", "Wwise值转字符串参数_攻击材料开关"},
+                {"WwiseValueToStrParam_Switch_PlayerEquipmentBottoms", "Wwise值转字符串参数_玩家装备底部开关"},
+                {"WwiseValueToStrParam_Switch_PlayerEquipmentTops", "Wwise值转字符串参数_玩家装备顶部开关"},
+                {"WwiseValueToStrParam_Switch_PlayerShoes", "Wwise值转字符串参数_玩家鞋子开关"},
+                {"WwiseValueToStrParam_Switch_PlayerVoiceType", "Wwise值转字符串参数_玩家声音类型开关"}
+            };
 
-            if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+            paramKeyList = UICache.GetCached(_paramEditor, _viewIndex, () =>
             {
-                if (_mapParamView)
-                {
-                    keyList = keyList.FindAll(p => p.EndsWith("Bank"));
-                }
-                else
-                {
-                    keyList = keyList.FindAll(p => !p.EndsWith("Bank"));
-                }
-            }
-            else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-            {
-                if (_mapParamView)
-                {
-                    keyList = keyList.FindAll(p => ParamBank.DS2MapParamlist.Contains(p.Split('_')[0]));
-                }
-                else
-                {
-                    keyList = keyList.FindAll(p => !ParamBank.DS2MapParamlist.Contains(p.Split('_')[0]));
-                }
-            }
-            else if (Smithbox.ProjectType is ProjectType.ER || Smithbox.ProjectType is ProjectType.AC6)
-            {
-                if (_eventParamView)
-                {
-                    keyList = keyList.FindAll(p => p.StartsWith("EFID"));
-                }
-                else
-                {
-                    keyList = keyList.FindAll(p => !p.StartsWith("EFID"));
-                }
+                List<(ParamBank, Param)> list =
+                    ParamSearchEngine.pse.Search(true, _selection.currentParamSearchString, true, true);
+                var keyList = list.Where(param => param.Item1 == ParamBank.PrimaryBank)
+                    .Select(param => ParamBank.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
 
-                if (_gConfigParamView)
+                if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                 {
-                    if(Smithbox.ProjectType == ProjectType.AC6)
+                    if (_mapParamView)
                     {
-                        keyList = keyList.FindAll(p => p.StartsWith("GraphicsConfig"));
+                        keyList = keyList.FindAll(p => p.EndsWith("Bank"));
                     }
                     else
                     {
-                        keyList = keyList.FindAll(p => p.StartsWith("Gconfig"));
+                        keyList = keyList.FindAll(p => !p.EndsWith("Bank"));
                     }
                 }
-                else
+                else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
-                    if (Smithbox.ProjectType == ProjectType.AC6)
+                    if (_mapParamView)
                     {
-                        keyList = keyList.FindAll(p => !p.StartsWith("GraphicsConfig"));
+                        keyList = keyList.FindAll(p => ParamBank.DS2MapParamlist.Contains(p.Split('_')[0]));
                     }
                     else
                     {
-                        keyList = keyList.FindAll(p => !p.StartsWith("Gconfig"));
+                        keyList = keyList.FindAll(p => !ParamBank.DS2MapParamlist.Contains(p.Split('_')[0]));
                     }
                 }
-            }
+                else if (Smithbox.ProjectType is ProjectType.ER || Smithbox.ProjectType is ProjectType.AC6)
+                {
+                    if (_eventParamView)
+                    {
+                        keyList = keyList.FindAll(p => p.StartsWith("EFID"));
+                    }
+                    else
+                    {
+                        keyList = keyList.FindAll(p => !p.StartsWith("EFID"));
+                    }
 
-            if (CFG.Current.Param_AlphabeticalParams)
-            {
-                keyList.Sort();
-            }
+                    if (_gConfigParamView)
+                    {
+                        if (Smithbox.ProjectType == ProjectType.AC6)
+                        {
+                            keyList = keyList.FindAll(p => p.StartsWith("GraphicsConfig"));
+                        }
+                        else
+                        {
+                            keyList = keyList.FindAll(p => p.StartsWith("Gconfig"));
+                        }
+                    }
+                    else
+                    {
+                        if (Smithbox.ProjectType == ProjectType.AC6)
+                        {
+                            keyList = keyList.FindAll(p => !p.StartsWith("GraphicsConfig"));
+                        }
+                        else
+                        {
+                            keyList = keyList.FindAll(p => !p.StartsWith("Gconfig"));
+                        }
+                    }
+                }
 
-            return keyList;
-        });
+                if (CFG.Current.Param_AlphabeticalParams)
+                {
+                    keyList.Sort();
+                }
+
+                return keyList;
+            });
+        }
+
+        //List<string> 
 
         foreach (var paramKey in paramKeyList)
         {
@@ -288,7 +499,15 @@ public class ParamEditorView
                 ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
             }
 
-            if (ImGui.Selectable($"{paramKey}", paramKey == _selection.GetActiveParam()))
+            if (paramChs.ContainsKey(paramKey))
+            {
+                if (ImGui.Selectable($"{paramKey + " " + paramChs[paramKey]}", paramKey == _selection.GetActiveParam()))
+                {
+                    //_selection.setActiveParam(param.Key);
+                    EditorCommandQueue.AddCommand($@"param/view/{_viewIndex}/{paramKey}");
+                }
+            }
+            else if (ImGui.Selectable($"{paramKey}", paramKey == _selection.GetActiveParam()))
             {
                 //_selection.setActiveParam(param.Key);
                 EditorCommandQueue.AddCommand($@"param/view/{_viewIndex}/{paramKey}");
@@ -303,7 +522,7 @@ public class ParamEditorView
 
             if (ImGui.BeginPopupContextItem())
             {
-                if (ImGui.Selectable("Pin " + paramKey) &&
+                if (ImGui.Selectable("钉 Pin " + paramKey) &&
                     !Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Contains(paramKey))
                 {
                     Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Add(paramKey);
@@ -323,7 +542,16 @@ public class ParamEditorView
                         meta.Wiki = null;
                     }
                 }
-
+                if (ImGui.Selectable("复制 Copy"))
+                {
+                    ImGui.SetClipboardText(paramKey);
+                    //string ss ="";
+                    //foreach (var s in paramKeyList)
+                    //{
+                    //    ss += s; ss += "\n";
+                    //}
+                    //ImGui.SetClipboardText(ss);
+                }
                 ImGui.EndPopup();
             }
 
@@ -361,12 +589,12 @@ public class ParamEditorView
     private void ParamView_RowList_Header(ref bool doFocus, bool isActiveView, ref float scrollTo,
         string activeParam)
     {
-        ImGui.Text("Rows");
+        ImGui.Text("行数据 Rows");
         ImGui.Separator();
 
         scrollTo = 0;
 
-        if (ImGui.Button($"Go to selected <{KeyBindings.Current.Param_GotoSelectedRow.HintText}>") ||
+        if (ImGui.Button($"筛选 Go to selected <{KeyBindings.Current.Param_GotoSelectedRow.HintText}>") ||
             isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.Param_GotoRowID))
         {
             _paramEditor.GotoSelectedRow = true;
@@ -374,7 +602,7 @@ public class ParamEditorView
 
         ImGui.SameLine();
 
-        if (ImGui.Button($"Go to ID <{KeyBindings.Current.Param_GotoRowID.HintText}>") ||
+        if (ImGui.Button($"指定 Go to ID <{KeyBindings.Current.Param_GotoRowID.HintText}>") ||
             isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.Param_GotoRowID))
         {
             ImGui.OpenPopup("gotoParamRow");
@@ -384,7 +612,7 @@ public class ParamEditorView
         {
             var gotorow = 0;
             ImGui.SetKeyboardFocusHere();
-            ImGui.InputInt("Goto Row ID", ref gotorow);
+            ImGui.InputInt("指定行 Goto Row ID", ref gotorow);
 
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
@@ -401,7 +629,7 @@ public class ParamEditorView
             ImGui.SetKeyboardFocusHere();
         }
 
-        ImGui.InputText($"Search <{KeyBindings.Current.Param_SearchRow.HintText}>",
+        ImGui.InputText($"查找 Search <{KeyBindings.Current.Param_SearchRow.HintText}>",
             ref _selection.GetCurrentRowSearchString(), 256);
         var resAutoRow = AutoFill.RowSearchBarAutoFill();
 
@@ -436,7 +664,7 @@ public class ParamEditorView
     {
         if (!_selection.ActiveParamExists())
         {
-            ImGui.Text("Select a param to see rows");
+            ImGui.Text("选择一个参数查看\nSelect a param to see rows");
         }
         else
         {
@@ -588,7 +816,7 @@ public class ParamEditorView
     //------------------------------------
     private void ParamView_FieldList_Header(bool isActiveView, string activeParam, Param.Row activeRow)
     {
-        ImGui.Text("Fields");
+        ImGui.Text("块 Fields");
         ImGui.Separator();
     }
 
@@ -599,7 +827,7 @@ public class ParamEditorView
         if (activeRow == null)
         {
             ImGui.BeginChild("columnsNONE");
-            ImGui.Text("Select a row to see properties");
+            ImGui.Text("选择以查看属性\nSelect a row to see properties");
             ImGui.EndChild();
         }
         else
@@ -789,7 +1017,7 @@ public class ParamEditorView
 
             if (CFG.Current.Param_RowContextMenu_ShortcutTools)
             {
-                if (ImGui.Selectable(@$"Copy selection ({KeyBindings.Current.Param_Copy.HintText})", false,
+                if (ImGui.Selectable(@$"复制 Copy selection ({KeyBindings.Current.Param_Copy.HintText})", false,
                         _selection.RowSelectionExists()
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
@@ -799,7 +1027,7 @@ public class ParamEditorView
 
                 ImGui.Separator();
 
-                if (ImGui.Selectable(@$"Paste clipboard ({KeyBindings.Current.Param_Paste.HintText})", false,
+                if (ImGui.Selectable(@$"粘贴 Paste clipboard ({KeyBindings.Current.Param_Paste.HintText})", false,
                         ParamBank.ClipboardRows.Any() ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
@@ -807,7 +1035,7 @@ public class ParamEditorView
 
                 ImGui.Separator();
 
-                if (ImGui.Selectable(@$"Delete selection ({KeyBindings.Current.Core_Delete.HintText})", false,
+                if (ImGui.Selectable(@$"删除 Delete selection ({KeyBindings.Current.Core_Delete.HintText})", false,
                         _selection.RowSelectionExists()
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
@@ -817,7 +1045,7 @@ public class ParamEditorView
 
                 ImGui.Separator();
 
-                if (ImGui.Selectable(@$"Duplicate selection ({KeyBindings.Current.Core_Duplicate.HintText})", false,
+                if (ImGui.Selectable(@$"复刻 Duplicate selection ({KeyBindings.Current.Core_Duplicate.HintText})", false,
                         _selection.RowSelectionExists()
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
@@ -830,7 +1058,7 @@ public class ParamEditorView
 
             if (CFG.Current.Param_RowContextMenu_PinOptions)
             {
-                if (ImGui.Selectable((isPinned ? "Unpin " : "Pin ") + r.ID))
+                if (ImGui.Selectable((isPinned ? "解 Unpin " : "钉 Pin ") + r.ID))
                 {
                     if (!Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.ContainsKey(activeParam))
                     {
@@ -854,7 +1082,7 @@ public class ParamEditorView
                     EditorDecorations.PinListReorderOptions(Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows[activeParam], r.ID);
                 }
 
-                if (ImGui.Selectable("Unpin all"))
+                if (ImGui.Selectable("全解 Unpin all"))
                 {
                     Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.Clear();
                 }
@@ -869,7 +1097,7 @@ public class ParamEditorView
 
             if (CFG.Current.Param_RowContextMenu_CompareOptions)
             {
-                if (ImGui.Selectable("Compare..."))
+                if (ImGui.Selectable("比较 Compare..."))
                 {
                     _selection.SetCompareRow(r);
                 }
@@ -882,7 +1110,7 @@ public class ParamEditorView
 
             if (CFG.Current.Param_RowContextMenu_CopyID)
             {
-                if (ImGui.Selectable("Copy ID to clipboard"))
+                if (ImGui.Selectable("复制ID到剪辑版 Copy ID to clipboard"))
                 {
                     PlatformUtils.Instance.SetClipboardText($"{r.ID}");
                 }
