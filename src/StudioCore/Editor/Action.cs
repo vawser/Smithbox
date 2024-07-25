@@ -8,7 +8,6 @@ using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Tools;
-using StudioCore.Localization;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -242,7 +241,7 @@ public class AddParamsAction : EditorAction
         }
 
         // Refresh diff cache
-        TaskManager.Run(new TaskManager.LiveTask($"{LOC.Get("PARAM_CHECK_DIFFERENCES")}",
+        TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
             TaskManager.RequeueType.Repeat, true,
             TaskLogs.LogPriority.Low,
             () => ParamBank.RefreshAllParamDiffCaches(false)));
@@ -313,7 +312,7 @@ public class DeleteParamsAction : EditorAction
         }
 
         // Refresh diff cache
-        TaskManager.Run(new TaskManager.LiveTask($"{LOC.Get("PARAM_CHECK_DIFFERENCES")}",
+        TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
             TaskManager.RequeueType.Repeat, true,
             TaskLogs.LogPriority.Low,
             () => ParamBank.RefreshAllParamDiffCaches(false)));

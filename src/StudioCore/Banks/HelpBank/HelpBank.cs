@@ -19,18 +19,6 @@ public class HelpBank
 
     public HelpBank()
     {
-    }
-
-    public void LoadBank()
-    {
-        _helpArticles = new();
-        _helpTutorials = new();
-        _helpGlossary = new();
-        _helpMassEdit = new();
-        _helpRegex = new();
-        _helpLinks = new();
-        _helpCredits = new();
-
         _helpArticles = LoadHelpResource("Articles");
         _helpTutorials = LoadHelpResource("Tutorials");
         _helpGlossary = LoadHelpResource("Glossary");
@@ -44,20 +32,11 @@ public class HelpBank
     {
         List<HelpEntry> helpEntries = new();
 
-        var language = CFG.Current.CurrentLocalizationType.ToString();
-
-        try
-        {
-            IEnumerable<string> articleDirFiles =
-                from file in Directory.EnumerateFiles(AppContext.BaseDirectory + $@"\Assets\Help\{language}\{directory}\")
-                select file;
-            foreach (var file in articleDirFiles)
-                helpEntries.Add(LoadHelpJSON(file));
-        }
-        catch
-        {
-
-        }
+        IEnumerable<string> articleDirFiles =
+            from file in Directory.EnumerateFiles(AppContext.BaseDirectory + $@"\Assets\Help\{directory}\")
+            select file;
+        foreach (var file in articleDirFiles)
+            helpEntries.Add(LoadHelpJSON(file));
 
         return helpEntries;
     }

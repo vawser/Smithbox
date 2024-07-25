@@ -67,6 +67,9 @@ public class SelectionGroupView
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
+        if (Smithbox.BankHandler.SelectionGroups.Groups == null || Smithbox.BankHandler.SelectionGroups.Groups.Resources == null)
+            return;
+
         // This exposes the pop-up to the map editor
         if (ImGui.BeginPopup("##selectionGroupModalExternal"))
         {
@@ -105,56 +108,52 @@ public class SelectionGroupView
             ImGui.InputText($"Search", ref _searchInput, 255);
             ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
-            if (Smithbox.BankHandler.SelectionGroups.Groups.Resources != null)
+            foreach (var entry in Smithbox.BankHandler.SelectionGroups.Groups.Resources)
             {
-                foreach (var entry in Smithbox.BankHandler.SelectionGroups.Groups.Resources)
+                var displayName = $"{entry.Name}";
+
+                if (CFG.Current.MapEditor_SelectionGroup_ShowKeybind)
                 {
-                    var displayName = $"{entry.Name}";
-
-                    if (CFG.Current.MapEditor_SelectionGroup_ShowKeybind)
+                    if (entry.SelectionGroupKeybind != -1)
                     {
-                        if (entry.SelectionGroupKeybind != -1)
+                        var keyBind = GetSelectionGroupKeyBind(entry.SelectionGroupKeybind);
+                        if (keyBind != null)
                         {
-                            var keyBind = GetSelectionGroupKeyBind(entry.SelectionGroupKeybind);
-                            if (keyBind != null)
-                            {
-                                displayName = $"{displayName} [{keyBind.HintText}]";
-                            }
+                            displayName = $"{displayName} [{keyBind.HintText}]";
                         }
                     }
+                }
 
-                    if (CFG.Current.MapEditor_SelectionGroup_ShowTags)
+                if (CFG.Current.MapEditor_SelectionGroup_ShowTags)
+                {
+                    if (entry.Tags.Count > 0)
                     {
-                        if (entry.Tags.Count > 0)
-                        {
-                            var tagString = string.Join(" ", entry.Tags);
-                            displayName = $"{displayName} {{ {tagString} }}";
-                        }
+                        var tagString = string.Join(" ", entry.Tags);
+                        displayName = $"{displayName} {{ {tagString} }}";
                     }
+                }
 
-                    if (SearchFilters.IsSelectionSearchMatch(_searchInput, entry.Name, entry.Tags))
+                if (SearchFilters.IsSelectionSearchMatch(_searchInput, entry.Name, entry.Tags))
+                {
+                    if (ImGui.Selectable(displayName, selectedResourceName == entry.Name))
                     {
-                        if (ImGui.Selectable(displayName, selectedResourceName == entry.Name))
+                        selectedResourceName = entry.Name;
+                        selectedResourceTags = entry.Tags;
+                        selectedResourceContents = entry.Selection;
+                        selectedResourceKeybind = entry.SelectionGroupKeybind;
+
+                        editPromptOldGroupName = entry.Name;
+                        editPromptGroupName = entry.Name;
+                        editPromptTags = AliasUtils.GetTagListString(entry.Tags);
+                        editPromptKeybind = entry.SelectionGroupKeybind;
+
+                        if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                         {
-                            selectedResourceName = entry.Name;
-                            selectedResourceTags = entry.Tags;
-                            selectedResourceContents = entry.Selection;
-                            selectedResourceKeybind = entry.SelectionGroupKeybind;
-
-                            editPromptOldGroupName = entry.Name;
-                            editPromptGroupName = entry.Name;
-                            editPromptTags = AliasUtils.GetTagListString(entry.Tags);
-                            editPromptKeybind = entry.SelectionGroupKeybind;
-
-                            if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                            {
-                                SelectSelectionGroup();
-                            }
+                            SelectSelectionGroup();
                         }
                     }
                 }
             }
-
             ImGui.EndChild();
 
             ImGui.NextColumn();

@@ -1,9 +1,6 @@
-﻿using DotNext.Reflection;
-using ImGuiNET;
+﻿using ImGuiNET;
 using SoapstoneLib;
 using SoulsFormats;
-using StudioCore.Localization;
-using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Settings;
 using System;
@@ -21,9 +18,7 @@ public class SystemTab
 
     public void Display()
     {
-        var test = "Me";
-
-        if (ImGui.BeginTabItem($"{LOC.Get("HEADER_SYSTEM")}##settingsTab"))
+        if (ImGui.BeginTabItem("System"))
         {
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
@@ -68,39 +63,6 @@ public class SystemTab
                     }
                 }
                 ImguiUtils.ShowHoverTooltip("This will delete your Smithbox folder in %appdata%/Local/, allowing it to be re-generated.");
-            }
-
-            if (ImGui.CollapsingHeader("Language"))
-            {
-                ImguiUtils.WrappedText("Determines the localization used throughout Smithbox.");
-
-                var languages = new List<string> { "English", "Chinese" };
-                var language = CFG.Current.CurrentLocalizationType.ToString();
-
-                if (ImGui.BeginCombo("Current Language", language))
-                {
-                    foreach (var entry in languages)
-                    {
-                        if (ImGui.Selectable(entry))
-                        {
-                            if (entry == "English")
-                            {
-                                CFG.Current.CurrentLocalizationType = LocalizationType.English;
-                            }
-                            if (entry == "Chinese")
-                            {
-                                CFG.Current.CurrentLocalizationType = LocalizationType.Chinese;
-                            }
-
-                            Smithbox.BankHandler.HelpBank.LoadBank();
-
-                            LOC.Setup();
-
-                            break;
-                        }
-                    }
-                    ImGui.EndCombo();
-                }
             }
 
             if (ImGui.CollapsingHeader("Formats"))

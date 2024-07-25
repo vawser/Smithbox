@@ -1,6 +1,5 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Editor;
-using StudioCore.Localization;
 using StudioCore.Memory;
 using StudioCore.UserProject;
 using System;
@@ -34,11 +33,9 @@ public class GameOffsetBank
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog(
-                $"{LOC.Get("GAME_OFFSET_BANK__FAILED_TO_LOAD")}" +
-                $"{e.Message}");
+            TaskLogs.AddLog($"Failed to load Game Offset Bank: {e.Message}");
         }
 
-        TaskLogs.AddLog($"{LOC.Get("GAME_OFFSET_BANK__SUCCESSFUL_LOAD")}");
+        TaskLogs.AddLog($"Game Offset Bank: Loaded Offsets");
     }
 }

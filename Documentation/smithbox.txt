@@ -8,7 +8,6 @@ Update imgui.default
 General:
  - ADD: Add format json support for the other MSB types.
  - ADD: Add articles covering all of the features and common use-cases in Smithbox
- - ADD: localization support (so non-English languages can be supported)
  
 Interface:
  - ADD: Change the toolbar panels into single "Actions" panel with collapsible groups + add drop-down actions to menu-bar
@@ -52,7 +51,6 @@ Param Editor:
 Text Editor:
  - FIX: the patch separation of FMGs
  - FIX: vanilla entry should be preferred over dlc01/dlc02 entry
- - ADD: way to copy 'modified' rows into other languages ready for translation
  
 Gparam Editor:
  - ADD: mass edit power to Quick Edit: Allow edits to affect all files
@@ -87,5 +85,3 @@ World Map:
 - Make the param massedit auto-builder more obvious:
  - Add the the toolbar version
  - Add submit buttons instead of the weird selectables
-
-$"{LOC.Get("ERROR")}"

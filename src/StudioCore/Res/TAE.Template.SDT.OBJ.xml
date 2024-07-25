@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<event_template game="SDT">
+  <!-- Bank 13: Objects -->
+  <bank id="13" name="Objects">
+    <event id="3" name="NULL">
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+    </event>
+    <event id="96" name="InvokeOneShotFFX_0x1406711F0">
+      <s32 name="FFXID"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="TimerNumber"/>
+      <b name="IsIgnoreDummyPolyAngle"/>
+      <b name="IsFollowDummyPoly"/>
+      <b name="IsRestrictToDummyPoly"/>
+      <u8 name="ExtraSpawnCondition"/>
+    </event>
+    <event id="108" name="InvokeOneShotFFX2_0x140670F90">
+      <s32 name="FFXID"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="TimerNumber"/>
+      <b name="IsIgnoreDummyPolyAngle"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+    </event>
+    <event id="110" name="InvokeFFX_General_0x140671250">
+      <s32 name="FFXID"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+    </event>
+    <event id="128" name="PlaySound_General">
+      <s32 name="SoundType">
+        <entry value="0" name="0: (a) Environment"/>
+        <entry value="1" name="1: (c) Character"/>
+        <entry value="2" name="2: (f) Menu SE"/>
+        <entry value="3" name="3: (o) Object"/>
+        <entry value="4" name="4: (p) Cutscene SE"/>
+        <entry value="5" name="5: (s) SFX"/>
+        <entry value="6" name="6: (m) BGM"/>
+        <entry value="7" name="7: (v) Voice"/>
+        <entry value="8" name="8: (x) Floor Material Determined"/>
+        <entry value="9" name="9: (b) Armor Material Determined"/>
+        <entry value="10" name="10: (g) Ghost"/>
+      </s32>
+      <s32 name="SoundID"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+    </event>
+    <event id="129" name="PlaySound_Extra">
+      <s32 name="SoundType">
+        <entry value="0" name="0: (a) Environment"/>
+        <entry value="1" name="1: (c) Character"/>
+        <entry value="2" name="2: (f) Menu SE"/>
+        <entry value="3" name="3: (o) Object"/>
+        <entry value="4" name="4: (p) Cutscene SE"/>
+        <entry value="5" name="5: (s) SFX"/>
+        <entry value="6" name="6: (m) BGM"/>
+        <entry value="7" name="7: (v) Voice"/>
+        <entry value="8" name="8: (x) Floor Material Determined"/>
+        <entry value="9" name="9: (b) Armor Material Determined"/>
+        <entry value="10" name="10: (g) Ghost"/>
+      </s32>
+      <s32 name="SoundID"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="TimerID (probably)"/>
+    </event>
+    <event id="131" name="PlaySound_ByDummypoly">
+      <s32 name="SoundType">
+        <entry value="0" name="0: (a) Environment"/>
+        <entry value="1" name="1: (c) Character"/>
+        <entry value="2" name="2: (f) Menu SE"/>
+        <entry value="3" name="3: (o) Object"/>
+        <entry value="4" name="4: (p) Cutscene SE"/>
+        <entry value="5" name="5: (s) SFX"/>
+        <entry value="6" name="6: (m) BGM"/>
+        <entry value="7" name="7: (v) Voice"/>
+        <entry value="8" name="8: (x) Floor Material Determined"/>
+        <entry value="9" name="9: (b) Armor Material Determined"/>
+        <entry value="10" name="10: (g) Ghost"/>
+      </s32>
+      <s32 name="SoundID"/>
+      <s32 name="DummyPolyId"/>
+      <s32 assert="0"/>
+    </event>
+    <event id="144" name="SekiroNew_0x14087D670">
+      <u16/>
+      <u16/>
+      <f32/>
+      <f32/>
+      <b/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+    </event>
+    <event id="147" name="SekiroNew_0x14087D670">
+      <u16/>
+      <u16/>
+      <f32/>
+      <f32/>
+      <b/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+    </event>
+    <event id="193" name="SetOpacityKeyframe">
+      <f32 name="GhostVal1"/>
+      <f32 name="GhostVal2"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+    </event>
+    <event id="199" name="ObjModelParamModifier1_0x14087D100">
+      <u16/>
+      <u16/>
+      <s32/>
+      <s32/>
+      <s32/>
+    </event>
+    <event id="200" name="SekiroNew_0x14087CF20">
+      <u16/>
+      <u16/>
+      <s32/>
+      <s32/>
+      <s32/>
+    </event>
+    <event id="201" name="SekiroNew_0x14087D2E0">
+      <u16/>
+      <u16/>
+      <s32/>
+      <s32/>
+      <s32/>
+    </event>
+    <event id="310" name="SekiroUpdated_0x14087CDA0">
+      <u8/>
+      <u8/>
+      <u16 assert="0"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+    </event>
+    <event id="400" name="PtdeMeme">
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+    </event>
+  </bank>
+</event_template>

@@ -2,7 +2,6 @@
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
-using StudioCore.Localization;
 using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
@@ -102,6 +101,6 @@ public class AliasCache
 
         UpdateCacheComplete = true;
 
-        TaskLogs.AddLog($"{LOC.Get("ALIAS_CACHE__SUCCESSFUL_LOAD")}");
+        TaskLogs.AddLog($"Name Cache: Loaded Asset Browser Names");
     }
 }

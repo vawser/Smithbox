@@ -4,7 +4,6 @@ using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
-using StudioCore.Localization;
 using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
@@ -68,9 +67,9 @@ public class CutsceneEditorScreen : EditorScreen
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => $"{LOC.Get("EDITOR__CUTSCENE_EDITOR")}##CutsceneEditor";
+    public string EditorName => "Cutscene Editor##CutsceneEditor";
     public string CommandEndpoint => "cutscene";
-    public string SaveType => $"{LOC.Get("EDITOR__CUTSCENE_EDITOR_SAVE_TYPE")}";
+    public string SaveType => "Cutscene";
 
     public void Init()
     {
@@ -101,7 +100,7 @@ public class CutsceneEditorScreen : EditorScreen
         {
             ImGui.Begin("Editor##InvalidCutsceneEditor");
 
-            ImGui.Text($"{LOC.Get("EDITOR_DOES_NOT_SUPPORT")} " + $"{Smithbox.ProjectType}.");
+            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }
@@ -111,7 +110,6 @@ public class CutsceneEditorScreen : EditorScreen
             {
                 if (!CFG.Current.AutoLoadBank_Cutscene)
                 {
-                    // TODO: change to lazy method where options are listed, then MQB loaded when clicked
                     if (ImGui.Button("Load Cutscene Editor"))
                     {
                         CutsceneBank.LoadCutscenes();
@@ -159,7 +157,10 @@ public class CutsceneEditorScreen : EditorScreen
     public void CutsceneFileView()
     {
         // File List
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__FILES")}" + "##CutsceneFileList");
+        ImGui.Begin("Files##CutsceneFileList");
+
+        ImGui.Text($"File");
+        ImGui.Separator();
 
         foreach (var (info, binder) in CutsceneBank.FileBank)
         {
@@ -184,7 +185,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void CutsceneListView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__CUTSCENES")}" + "##CutsceneList");
+        ImGui.Begin("Cutscenes##CutsceneList");
 
         if (_selectedFileInfo != null)
         {
@@ -214,15 +215,15 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void CutscenePropertiesView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__CUTSCENE_PROPERTIES")}" + "##CutsceneProperties");
+        ImGui.Begin("Cutscene Properties##CutsceneProperties");
 
         if (_selectedCutsceneKey != -1 && _selectedCutscene != null)
         {
             ImGui.Columns(2);
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__FRAMERATE")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__RESOURCE_DIRECTORY")}");
+            ImGui.Text($"Framerate");
+            ImGui.Text($"Resource Directory");
 
             ImGui.NextColumn();
 
@@ -238,7 +239,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void CutListView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__CUTS")}" + "##CutList");
+        ImGui.Begin("Cuts##CutList");
 
         // Cuts
         if (_selectedCutsceneKey != -1 && _selectedCutscene != null)
@@ -269,14 +270,14 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void CutPropertiesView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__CUT_PROPERTIES")}" + "##CutProperties");
+        ImGui.Begin("Cut Properties##CutProperties");
 
         if (_selectedCutKey != -1 && _selectedCut != null)
         {
             ImGui.Columns(2);
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__DURATION")}");
+            ImGui.Text($"Duration");
 
             ImGui.NextColumn();
 
@@ -291,7 +292,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void TimelineListView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__TIMELINES")}" + "##TimelineList");
+        ImGui.Begin("Timelines##TimelineList");
 
         if (_selectedCutKey != -1 && _selectedCut != null)
         {
@@ -320,7 +321,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void DispositionListView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__DISPOSITIONS")}" + "##DispositionList");
+        ImGui.Begin("Dispositions##DispositionList");
 
         if (_selectedTimelineKey != -1 && _selectedTimeline != null)
         {
@@ -345,7 +346,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void TimelineCustomDataListView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__TIMELINE_CUSTOM_DATA")}" + "##TimelineCustomDataList");
+        ImGui.Begin("Timeline - Custom Data##TimelineCustomDataList");
 
         // Custom Data
         if (_selectedTimelineKey != -1 && _selectedTimeline != null)
@@ -373,16 +374,16 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void TimelineCustomDataPropertiesView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__TIMELINE_CUSTOM_DATA_PROPERTIES")}" + "##TimelineCustomDataProperties");
+        ImGui.Begin("Timeline - Custom Data Properties##TimelineCustomDataProperties");
 
         if (_selectedTimelineCustomDataKey != -1 && _selectedTimelineCustomData != null)
         {
             ImGui.Columns(2);
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__TYPE")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK44")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__VALUE")}");
+            ImGui.Text($"Type");
+            ImGui.Text($"Unk44");
+            ImGui.Text($"Value");
 
             ImGui.NextColumn();
 
@@ -399,7 +400,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void TimelineCustomDataSequencesView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__TIMELINE_SEQUENCES")}" + "##TimelineSequencesProperties");
+        ImGui.Begin("Timeline - Sequences##TimelineSequencesProperties");
 
         if (_selectedTimelineCustomDataKey != -1 && _selectedTimelineCustomData != null)
         {
@@ -422,7 +423,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void TimelineCustomDataSequencePropertiesView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__TIMELINE_SEQUENCE_PROPERTIES")}" + "##TimelineSequenceProperties");
+        ImGui.Begin("Timeline - Sequence Properties##TimelineSequenceProperties");
 
         if (_selectedTimelineCustomData != null && _selectedTimelineCustomData.Sequences.Count > 0)
         {
@@ -431,9 +432,9 @@ public class CutsceneEditorScreen : EditorScreen
                 ImGui.Columns(2);
 
                 ImGui.AlignTextToFramePadding();
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__VALUE_TYPE")}");
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__POINT_TYPE")}");
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__VALUE_INDEX")}");
+                ImGui.Text($"Value Type");
+                ImGui.Text($"Point Type");
+                ImGui.Text($"Value Index");
 
                 ImGui.NextColumn();
 
@@ -475,7 +476,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void TimelineSequencePointPropertiesView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__TIMELINE_SEQUENCE_POINT_PROPERTIES")}" + "##TimelineSequencePointProperties");
+        ImGui.Begin("Timeline - Sequence - Point Properties##TimelineSequencePointProperties");
 
         if (_selectedTimelineSequence != null && _selectedTimelineSequence.Points.Count > 0)
         {
@@ -484,10 +485,10 @@ public class CutsceneEditorScreen : EditorScreen
                 ImGui.Columns(2);
 
                 ImGui.AlignTextToFramePadding();
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__VALUE")}");
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK08")}");
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK10")}");
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK14")}");
+                ImGui.Text($"Value");
+                ImGui.Text($"Unk08");
+                ImGui.Text($"Unk10");
+                ImGui.Text($"Unk14");
 
                 ImGui.NextColumn();
 
@@ -506,22 +507,22 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void DispositionPropertiesView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__DISPOSITION_PROPERTIES")}" + "##DispositionPropertiesView");
+        ImGui.Begin("Disposition Properties##DispositionPropertiesView");
 
         if (_selectedDispositionKey != -1 && _selectedDisposition != null)
         {
             ImGui.Columns(2);
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__RESOURCEINDEX")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK08")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__STARTFRAME")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__DURATION")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK14")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK18")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK1C")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK20")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK28")}");
+            ImGui.Text($"ResourceIndex");
+            ImGui.Text($"Unk08");
+            ImGui.Text($"StartFrame");
+            ImGui.Text($"Duration");
+            ImGui.Text($"Unk14");
+            ImGui.Text($"Unk18");
+            ImGui.Text($"Unk1C");
+            ImGui.Text($"Unk20");
+            ImGui.Text($"Unk28");
 
             ImGui.NextColumn();
 
@@ -544,7 +545,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void DispositionCustomDataListView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__DISPOSITION_CUSTOM_DATA")}" + "##DispositionCustomDataListView");
+        ImGui.Begin("Disposition - Custom Data##DispositionCustomDataListView");
 
         if (_selectedDispositionKey != -1 && _selectedDisposition != null)
         {
@@ -568,7 +569,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void DispositionTransformListView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__DISPOSITION_TRANSFORMS")}" + "##DispositionTransformListView");
+        ImGui.Begin("Disposition - Transforms##DispositionTransformListView");
 
         if (_selectedDispositionKey != -1 && _selectedDisposition != null)
         {
@@ -592,23 +593,23 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void DispositionTransformPropertiesView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__DISPOSITION_TRANSFORM_PROPERTIES")}" + "##DispositionTransformProperties");
+        ImGui.Begin("Disposition - Transform Properties##DispositionTransformProperties");
 
         if (_selectedDispositionTransformKey != -1 && _selectedDispositionTransform != null)
         {
             ImGui.Columns(2);
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__FRAME")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__TRANSLATION")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK10")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK1C")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__ROTATION")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK34")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK40")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__SCALE")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK58")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK64")}");
+            ImGui.Text($"Frame");
+            ImGui.Text($"Translation");
+            ImGui.Text($"Unk10");
+            ImGui.Text($"Unk1C");
+            ImGui.Text($"Rotation");
+            ImGui.Text($"Unk34");
+            ImGui.Text($"Unk40");
+            ImGui.Text($"Scale");
+            ImGui.Text($"Unk58");
+            ImGui.Text($"Unk64");
 
             ImGui.NextColumn();
 
@@ -632,16 +633,16 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void DispositionCustomDataPropertiesView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__DISPOSITION__CUSTOM_DATA_PROPERTIES")}" + "##DispositionCustomDataProperties");
+        ImGui.Begin("Disposition - Custom Data Properties##DispositionCustomDataProperties");
 
         if (_selectedDispositionCustomDataKey != -1 && _selectedDispositionCustomData != null)
         {
             ImGui.Columns(2);
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__TYPE")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK44")}");
-            ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__VALUE")}");
+            ImGui.Text($"Type");
+            ImGui.Text($"Unk44");
+            ImGui.Text($"Value");
 
             ImGui.NextColumn();
 
@@ -658,7 +659,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void DispositionCustomDataSequencesView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__DISPOSITION__SEQUENCES")}" + "##DispositionSequencesProperties");
+        ImGui.Begin("Disposition - Sequences##DispositionSequencesProperties");
 
         if (_selectedDispositionCustomDataKey != -1 && _selectedDispositionCustomData != null)
         {
@@ -681,7 +682,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void DispositionCustomDataSequencePropertiesView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__DISPOSITION__SEQUENCE_PROPERTIES")}" + "##DispositionSequenceProperties");
+        ImGui.Begin("Disposition - Sequence Properties##DispositionSequenceProperties");
 
         if (_selectedDispositionCustomData != null && _selectedDispositionCustomData.Sequences.Count > 0)
         {
@@ -690,9 +691,9 @@ public class CutsceneEditorScreen : EditorScreen
                 ImGui.Columns(2);
 
                 ImGui.AlignTextToFramePadding();
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__VALUE_TYPE")}");
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__POINT_TYPE")}");
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__VALUE_INDEX")}");
+                ImGui.Text($"Value Type");
+                ImGui.Text($"Point Type");
+                ImGui.Text($"Value Index");
 
                 ImGui.NextColumn();
 
@@ -710,7 +711,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void DispositionSequencePointsListView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__DISPOSITION__SEQUENCE_POINTS")}" + "##DispositionSequencePointsList");
+        ImGui.Begin("Disposition - Sequence - Points##DispositionSequencePointsList");
 
         if (_selectedDispositionCustomData != null && _selectedDispositionCustomData.Sequences.Count > 0)
         {
@@ -734,7 +735,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void DispositionSequencePointPropertiesView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU__DISPOSITION__SEQUENCE_POINT_PROPERTIES")}" + "##DispositionSequencePointProperties");
+        ImGui.Begin("Disposition - Sequence - Point Properties##DispositionSequencePointProperties");
 
         if (_selectedDispositionSequence != null && _selectedDispositionSequence.Points.Count > 0)
         {
@@ -743,10 +744,10 @@ public class CutsceneEditorScreen : EditorScreen
                 ImGui.Columns(2);
 
                 ImGui.AlignTextToFramePadding();
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__VALUE")}");
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK08")}");
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK10")}");
-                ImGui.Text($"{LOC.Get("CUTSCENE_EDITOR__PROPERTY__UNK14")}");
+                ImGui.Text($"Value");
+                ImGui.Text($"Unk08");
+                ImGui.Text($"Unk10");
+                ImGui.Text($"Unk14");
 
                 ImGui.NextColumn();
 
@@ -765,7 +766,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void ResourceListView()
     {
-        ImGui.Begin($"{LOC.Get("CUTSCENE_EDITOR__MENU_RESOURCES")}" + "##ResourceList");
+        ImGui.Begin("Resources##ResourceList");
 
         // Resources
         if (_selectedCutsceneKey != -1 && _selectedCutscene != null)

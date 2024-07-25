@@ -4,7 +4,6 @@ using StudioCore.Editor;
 using StudioCore.Graphics;
 using StudioCore.Interface;
 using StudioCore.Interface.Windows;
-using StudioCore.Localization;
 using StudioCore.Settings;
 using StudioCore.Utilities;
 using System;
@@ -112,44 +111,44 @@ public class WindowHandler
         {
             ProjectWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"{LOC.Get("WINDOW_HANDLER__PROJECT")}" + $"\n{KeyBindings.Current.ToggleWindow_Project.HintText}");
+        ImguiUtils.ShowHoverTooltip($"Project\n{KeyBindings.Current.ToggleWindow_Project.HintText}");
 
 
         if (ImGui.Button($"{ForkAwesome.FileText}##AliasWindow"))
         {
             AliasWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"{LOC.Get("WINDOW_HANDLER__ALIAS")}" + $"\n{KeyBindings.Current.ToggleWindow_Alias.HintText}");
+        ImguiUtils.ShowHoverTooltip($"Aliases\n{KeyBindings.Current.ToggleWindow_Alias.HintText}");
 
         if (ImGui.Button($"{ForkAwesome.Book}##HelpWindow"))
         {
             HelpWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"{LOC.Get("WINDOW_HANDLER__HELP")}" + $"\n{KeyBindings.Current.ToggleWindow_Help.HintText}");
+        ImguiUtils.ShowHoverTooltip($"Help\n{KeyBindings.Current.ToggleWindow_Help.HintText}");
 
         if (ImGui.Button($"{ForkAwesome.Cogs}##SettingsWindow"))
         {
             SettingsWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"{LOC.Get("WINDOW_HANDLER__SETTINGS")}" + $"\n{KeyBindings.Current.ToggleWindow_Settings.HintText}");
+        ImguiUtils.ShowHoverTooltip($"Settings\n{KeyBindings.Current.ToggleWindow_Settings.HintText}");
 
         if (ImGui.Button($"{ForkAwesome.KeyboardO}##KeybindWindow"))
         {
             KeybindWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"{LOC.Get("WINDOW_HANDLER__KEYBINDS")}" + $"\n{KeyBindings.Current.ToggleWindow_Keybind.HintText}");
+        ImguiUtils.ShowHoverTooltip($"Keybinds\n{KeyBindings.Current.ToggleWindow_Keybind.HintText}");
 
         if (ImGui.Button($"{ForkAwesome.Database}##MemoryWindow"))
         {
             MemoryWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"{LOC.Get("WINDOW_HANDLER__MEMORY")}" + $"\n{KeyBindings.Current.ToggleWindow_Memory.HintText}");
+        ImguiUtils.ShowHoverTooltip($"Memory\n{KeyBindings.Current.ToggleWindow_Memory.HintText}");
 
         if (ImGui.Button($"{ForkAwesome.Briefcase}##QuickToolWindow"))
         {
             ToolWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"{LOC.Get("WINDOW_HANDLER__TOOLS")}" + $"\n{KeyBindings.Current.ToggleWindow_QuickTools.HintText}");
+        ImguiUtils.ShowHoverTooltip($"Tools\n{KeyBindings.Current.ToggleWindow_QuickTools.HintText}");
 
         if (FeatureFlags.DebugMenu)
         {
@@ -157,7 +156,7 @@ public class WindowHandler
             {
                 DebugWindow.ToggleMenuVisibility();
             }
-            ImguiUtils.ShowHoverTooltip($"{LOC.Get("WINDOW_HANDLER__DEBUG")}" + $"\n{KeyBindings.Current.ToggleWindow_Debug.HintText}");
+            ImguiUtils.ShowHoverTooltip($"Debug\n{KeyBindings.Current.ToggleWindow_Debug.HintText}");
         }
     }
 }

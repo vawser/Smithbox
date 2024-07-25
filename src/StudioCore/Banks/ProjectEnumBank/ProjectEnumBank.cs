@@ -1,6 +1,5 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
-using StudioCore.Localization;
 using StudioCore.Locators;
 using StudioCore.Platform;
 using System;
@@ -43,14 +42,10 @@ public class ProjectEnumBank
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog(
-                $"{LOC.Get("PROJECT_ENUM_BANK__FAILED_TO_LOAD")}" +
-                $" {EnumTitle} " +
-                $"{LOC.Get("PROJECT_ENUM_BANK__BANK")}" +
-                $"{e.Message}");
+            TaskLogs.AddLog($"Failed to load: {EnumTitle} Bank: {e.Message}");
         }
 
-        TaskLogs.AddLog($"{LOC.Get("PROJECT_ENUM_BANK__SUCCESSFUL_LOAD")}");
+        TaskLogs.AddLog($"Alias Bank: Loaded {EnumTitle} Bank");
     }
 
     public Dictionary<string, ProjectEnumEntry> GetEntries()
@@ -128,10 +123,7 @@ public class ProjectEnumBank
 
         if (!File.Exists(baseResourcePath))
         {
-            PlatformUtils.Instance.MessageBox(
-                $"{LOC.Get("PROJECT_ENUM_BANK__FAILED_TO_FIND_ENUM_JSON")}", 
-                $"{LOC.Get("ERROR")}", 
-                MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox($"Failed to find base Enums.json.", "Error", MessageBoxButtons.OK);
             return;
         }
 
@@ -203,6 +195,8 @@ public class ProjectEnumBank
                 {
                     var newEntry = new ProjectEnumEntry();
 
+                    TaskLogs.AddLog($"entry: {entry.Name}");
+
                     foreach (var bEntry in baseResource.List)
                     {
                         if (entry.Name == bEntry.Name)
@@ -231,6 +225,7 @@ public class ProjectEnumBank
                         }
                     }
 
+                    TaskLogs.AddLog($"newEntry: {newEntry.Name}");
                     newResource.List.Add(newEntry);
                 }
                 else

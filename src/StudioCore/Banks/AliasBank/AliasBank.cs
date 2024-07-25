@@ -6,7 +6,6 @@ using System.Text.Json;
 using System.Text;
 using StudioCore.Core;
 using StudioCore.Locators;
-using StudioCore.Localization;
 
 namespace StudioCore.Banks.AliasBank;
 
@@ -42,17 +41,10 @@ public class AliasBank
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog(
-                $"{LOC.Get("ALIAS_BANK__FAILED_TO_LOAD")}" +
-                $" {AliasTitle} " +
-                $"{LOC.Get("ALIAS_BANK__BANK")}" +
-                $"{e.Message}");
+            TaskLogs.AddLog($"Failed to load: {AliasTitle} Bank: {e.Message}");
         }
 
-        TaskLogs.AddLog(
-            $"{LOC.Get("ALIAS_BANK__SUCCESSFUL_LOAD")}" +
-            $" {AliasTitle} " +
-            $"{LOC.Get("ALIAS_BANK__BANK")}");
+        TaskLogs.AddLog($"Alias Bank: Loaded {AliasTitle} Bank");
     }
 
     public Dictionary<string, AliasReference> GetEntries()
@@ -259,7 +251,7 @@ public class AliasBank
                 var name = entry.name;
                 if(name == "")
                 {
-                    name = $"{LOC.Get("ALIAS_BANK__UNNAMED_ENUM")}";
+                    name = "Not named";
                 }
 
                 enumDict[entry.id] = name;

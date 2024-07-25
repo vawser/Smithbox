@@ -13,7 +13,6 @@ using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Locators;
 using StudioCore.Core;
-using StudioCore.Localization;
 
 namespace StudioCore.Editor;
 
@@ -722,7 +721,7 @@ public class MapContainer : ObjectContainer
                     }
                     else
                     {
-                        throw new Exception($"{LOC.Get("MAP_CONTAINER__WRAPPED_OBJECT_NOT_BTL_LIGHT")}" + $"{e.WrappedObject}");
+                        throw new Exception($"WrappedObject \"{e.WrappedObject}\" is not a BTL Light.");
                     }
                 }
             }
@@ -751,10 +750,8 @@ public class MapContainer : ObjectContainer
                 else
                 {
                     PlatformUtils.Instance.MessageBox(
-                        $@"{mp.Name}" + $" {LOC.Get("MAP_CONTAINER__DS2_GENERATOR_ID_ALREADY_USED")}",
-                        $"{LOC.Get("ERROR")}", 
-                        MessageBoxButtons.OK, 
-                        MessageBoxIcon.Error);
+                        $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
+                        "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
@@ -798,10 +795,8 @@ public class MapContainer : ObjectContainer
                 else
                 {
                     PlatformUtils.Instance.MessageBox(
-                        $@"{mp.Name}" + $" {LOC.Get("MAP_CONTAINER__DS2_GENERATOR_ID_ALREADY_USED")}",
-                        $"{LOC.Get("ERROR")}", 
-                        MessageBoxButtons.OK, 
-                        MessageBoxIcon.Error);
+                        $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
+                        "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
@@ -826,10 +821,8 @@ public class MapContainer : ObjectContainer
                 else
                 {
                     PlatformUtils.Instance.MessageBox(
-                        $@"{mp.Name}" + $" {LOC.Get("MAP_CONTAINER__DS2_GENERATOR_ID_ALREADY_USED")}",
-                        $"{LOC.Get("ERROR")}",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                        $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
+                        "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
@@ -856,10 +849,8 @@ public class MapContainer : ObjectContainer
                 else
                 {
                     PlatformUtils.Instance.MessageBox(
-                        $@"{mp.Name}" + $" {LOC.Get("MAP_CONTAINER__DS2_GENERATOR_ID_ALREADY_USED")}",
-                        $"{LOC.Get("ERROR")}",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                        $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
+                        "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
@@ -893,10 +884,8 @@ public class MapContainer : ObjectContainer
                 else
                 {
                     PlatformUtils.Instance.MessageBox(
-                        $@"{mp.Name}" + $" {LOC.Get("MAP_CONTAINER__DS2_GENERATOR_ID_ALREADY_USED")}",
-                        $"{LOC.Get("ERROR")}",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                        $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
+                        "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 

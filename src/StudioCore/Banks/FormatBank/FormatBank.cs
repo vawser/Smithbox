@@ -2,7 +2,6 @@
 using System;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
-using StudioCore.Localization;
 
 namespace StudioCore.Banks.FormatBank;
 
@@ -37,17 +36,10 @@ public class FormatBank
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog(
-                $"{LOC.Get("FORMAT_BANK__FAILED_TO_LOAD")}" +
-                $" {FormatTitle} " +
-                $"{LOC.Get("FORMAT_BANK__BANK")}" +
-                $"{e.Message}");
+            TaskLogs.AddLog($"Failed to load Format Bank {FormatTitle}: {e.Message}");
         }
 
-        TaskLogs.AddLog(
-            $"{LOC.Get("FORMAT_BANK__SUCCESSFUL_LOAD")}" +
-            $" {FormatTitle} " +
-            $"{LOC.Get("FORMAT_BANK__BANK")}");
+        TaskLogs.AddLog($"Format Bank: Loaded {FormatTitle} Bank");
     }
 
     public Dictionary<string, FormatReference> GetInformationEntries()

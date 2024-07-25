@@ -15,7 +15,6 @@ using StudioCore.Editors.HavokEditor;
 using static StudioCore.Editors.HavokEditor.HavokBehaviorBank;
 using System.Linq;
 using System;
-using StudioCore.Localization;
 
 namespace StudioCore.HavokEditor;
 
@@ -40,9 +39,9 @@ public class HavokEditorScreen : EditorScreen
         BehaviorGraph = new HavokBehaviorGraph(this);
     }
 
-    public string EditorName => $"{LOC.Get("EDITOR__HAVOK_EDITOR")}##HavokEditor";
+    public string EditorName => "Havok Editor##HavokEditor";
     public string CommandEndpoint => "Havok";
-    public string SaveType => $"{LOC.Get("EDITOR__HAVOK_EDITOR_SAVE_TYPE")}";
+    public string SaveType => "Havok";
 
     public void Init()
     {
@@ -74,7 +73,7 @@ public class HavokEditorScreen : EditorScreen
         {
             ImGui.Begin("Editor##InvalidHavokEditor");
 
-            ImGui.Text($"{LOC.Get("EDITOR_DOES_NOT_SUPPORT")} " + $"{Smithbox.ProjectType}.");
+            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
 
             ImGui.End();
         }
@@ -116,7 +115,7 @@ public class HavokEditorScreen : EditorScreen
 
     public void HavokFileCategoryView()
     {
-        ImGui.Begin($"{LOC.Get("HAVOK_EDITOR__MENU__FILE_CATEGORY")}" + "##HavokFileCategoryList");
+        ImGui.Begin("File Category##HavokFileCategoryList");
 
         foreach (var entry in Enum.GetNames(typeof(HavokFileCategories)))
         {
@@ -135,7 +134,7 @@ public class HavokEditorScreen : EditorScreen
     public void HavokBehaviorFileView()
     {
         // File List
-        ImGui.Begin($"{LOC.Get("HAVOK_EDITOR__MENU__FILES")}" + "##BehaviorFileList");
+        ImGui.Begin("Files##BehaviorFileList");
 
         foreach (var (info, binder) in HavokBehaviorBank.FileBank)
         {

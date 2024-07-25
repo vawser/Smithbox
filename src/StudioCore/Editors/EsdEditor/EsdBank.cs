@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Localization;
 using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
@@ -70,7 +69,7 @@ public static class EsdBank
                 fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"{LOC.Get("ESD_EDITOR__INVALID_PROJECT_DURING_SAVE")}");
+                TaskLogs.AddLog($"Invalid ProjectType during SaveESDScript");
                 return;
         }
 
@@ -129,25 +128,21 @@ public static class EsdBank
         IsLoaded = true;
         IsLoading = false;
 
-        TaskLogs.AddLog($"{LOC.Get("ESD_EDITOR__LOAD_FILE_BANK")}");
+        TaskLogs.AddLog($"ESD Script Bank - Load Complete");
     }
 
     private static void LoadEsdScript(string path)
     {
         if (path == null)
         {
-            TaskLogs.AddLog(
-                $"{LOC.Get("ESD_EDITOR__FAILED_TO_FIND_PATH")}" +
-                $"{LOC.Get("ESD_EDITOR__PATH")}" + $"{path}",
-                LogLevel.Warning);
+            TaskLogs.AddLog($"Could not locate {path} when loading ESD file.",
+                    LogLevel.Warning);
             return;
         }
         if (path == "")
         {
-            TaskLogs.AddLog(
-                $"{LOC.Get("ESD_EDITOR__FAILED_TO_FIND_PATH")}" +
-                $"{LOC.Get("ESD_EDITOR__PATH")}" + $"{path}",
-                LogLevel.Warning);
+            TaskLogs.AddLog($"Could not locate {path} when loading ESD file.",
+                    LogLevel.Warning);
             return;
         }
 
@@ -167,7 +162,7 @@ public static class EsdBank
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{path} - " + $"{LOC.Get("ESD_EDITOR__FAILED_TO_READ_ESD")}" + $"\n{ex.ToString()}");
+                    TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}");
                 }
             }
         }

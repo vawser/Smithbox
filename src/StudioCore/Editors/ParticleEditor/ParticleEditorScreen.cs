@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.GparamEditor.Toolbar;
 using StudioCore.Editors.ParticleEditor;
 using StudioCore.Editors.ParticleEditor.Toolbar;
 using StudioCore.Editors.TalkEditor;

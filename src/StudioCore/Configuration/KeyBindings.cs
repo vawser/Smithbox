@@ -1,5 +1,4 @@
-﻿using StudioCore.Localization;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Veldrid;
@@ -100,229 +99,129 @@ public class KeyBindings
     public class Bindings
     {
         // Core
-        public KeyBind Core_Create = new($"{LOC.Get("KEYBIND__CORE__CREATE")}",
-            KeybindCategory.Core, Key.Insert);
-        public KeyBind Core_Delete = new($"{LOC.Get("KEYBIND__CORE__DELETE")}", 
-            KeybindCategory.Core, Key.Delete);
-        public KeyBind Core_Duplicate = new($"{LOC.Get("KEYBIND__CORE__DUPLICATE")}", 
-            KeybindCategory.Core, Key.D, true);
-        public KeyBind Core_Redo = new($"{LOC.Get("KEYBIND__CORE__REDO")}", 
-            KeybindCategory.Core, Key.Y, true);
-        public KeyBind Core_Undo = new($"{LOC.Get("KEYBIND__CORE__UNDO")}", 
-            KeybindCategory.Core, Key.Z, true);
-        public KeyBind Core_SaveAllCurrentEditor = new($"{LOC.Get("KEYBIND__CORE__SAVE_ALL")}", 
-            KeybindCategory.Core);
-        public KeyBind Core_SaveCurrentEditor = new($"{LOC.Get("KEYBIND__CORE__SAVE")}", 
-            KeybindCategory.Core, Key.S, true);
+        public KeyBind Core_Create = new("Create", KeybindCategory.Core, Key.Insert);
+        public KeyBind Core_Delete = new("Delete", KeybindCategory.Core, Key.Delete);
+        public KeyBind Core_Duplicate = new("Duplicate", KeybindCategory.Core, Key.D, true);
+        public KeyBind Core_Redo = new("Redo", KeybindCategory.Core, Key.Y, true);
+        public KeyBind Core_SaveAllCurrentEditor = new("Save All", KeybindCategory.Core);
+        public KeyBind Core_SaveCurrentEditor = new("Save", KeybindCategory.Core, Key.S, true);
+        public KeyBind Core_Undo = new("Undo", KeybindCategory.Core, Key.Z, true);
 
         // Windows
-        public KeyBind ToggleWindow_Project = new($"{LOC.Get("KEYBIND__WINDOW__PROJECT_WINDOW")}", 
-            KeybindCategory.Window, Key.F1);
-        public KeyBind ToggleWindow_Help = new($"{LOC.Get("KEYBIND__WINDOW__HELP_WINDOW")}", 
-            KeybindCategory.Window, Key.F2);
-        public KeyBind ToggleWindow_Keybind = new($"{LOC.Get("KEYBIND__WINDOW__KEYBIND_WINDOW")}", 
-            KeybindCategory.Window, Key.F3);
-        public KeyBind ToggleWindow_Memory = new($"{LOC.Get("KEYBIND__WINDOW__MEMORY_WINDOW")}", 
-            KeybindCategory.Window, Key.F4);
-        public KeyBind ToggleWindow_Settings = new($"{LOC.Get("KEYBIND__WINDOW__SETTINGS_WINDOW")}", 
-            KeybindCategory.Window, Key.F6);
-        public KeyBind ToggleWindow_Alias = new($"{LOC.Get("KEYBIND__WINDOW__ALIAS_WINDOW")}", 
-            KeybindCategory.Window, Key.F7);
-        public KeyBind ToggleWindow_QuickTools = new($"{LOC.Get("KEYBIND__WINDOW__TOOL_WINDOW")}", 
-            KeybindCategory.Window, Key.F8);
-        public KeyBind ToggleWindow_Debug = new($"{LOC.Get("KEYBIND__WINDOW__DEBUG_WINDOW")}", 
-            KeybindCategory.Window, Key.F9);
+        public KeyBind ToggleWindow_Project = new("Toggle Project Window", KeybindCategory.Window, Key.F1);
+        public KeyBind ToggleWindow_Help = new("Toggle Help Window", KeybindCategory.Window, Key.F2);
+        public KeyBind ToggleWindow_Keybind = new("Toggle Keybind Window", KeybindCategory.Window, Key.F3);
+        public KeyBind ToggleWindow_Memory = new("Toggle Memory Window", KeybindCategory.Window, Key.F4);
+        public KeyBind ToggleWindow_Settings = new("Toggle Settings Window", KeybindCategory.Window, Key.F6);
+        public KeyBind ToggleWindow_Alias = new("Toggle Alias Window", KeybindCategory.Window, Key.F7);
+        public KeyBind ToggleWindow_QuickTools = new("Toggle Color Picker Window", KeybindCategory.Window, Key.F8);
+        public KeyBind ToggleWindow_Debug = new("Toggle Debug Window", KeybindCategory.Window, Key.F9);
 
         // Map Toolbar
-        public KeyBind Toolbar_Rotate_X = new($"{LOC.Get("KEYBIND__MAP_EDITOR__ROTATE_SELECTION_ON_X_AXIS")}", 
-            KeybindCategory.MapEditor, Key.J);
-        public KeyBind Toolbar_Rotate_Y = new($"{LOC.Get("KEYBIND__MAP_EDITOR__ROTATE_SELECTION_ON_Y_AXIS")}", 
-            KeybindCategory.MapEditor, Key.K, false, false, true);
-        public KeyBind Toolbar_Rotate_Y_Pivot = new($"{LOC.Get("KEYBIND__MAP_EDITOR__PIVOT_SELECTION_ON_X_AXIS")}", 
-            KeybindCategory.MapEditor, Key.K);
-        public KeyBind Toolbar_Go_to_Selection_in_Object_List = new($"{LOC.Get("KEYBIND__MAP_EDITOR__GO_TO_SELECTION_IN_MAP_OBJECT_LIST")}", 
-            KeybindCategory.MapEditor, Key.G);
-        public KeyBind Toolbar_Move_Selection_to_Camera = new($"{LOC.Get("KEYBIND__MAP_EDITOR__MOVE_SELECTION_TO_CAMERA_POSITION")}", 
-            KeybindCategory.MapEditor, Key.X);
-        public KeyBind Toolbar_Frame_Selection_in_Viewport = new($"{LOC.Get("KEYBIND__MAP_EDITOR__FRAME_SELECTION_IN_VIEWPORT")}", 
-            KeybindCategory.MapEditor, Key.F);
-        public KeyBind Toolbar_Toggle_Selection_Visibility_Flip = new($"{LOC.Get("KEYBIND__MAP_EDITOR__FLIP_VISIBILITY_OF_SELECTION")}", 
-            KeybindCategory.MapEditor, Key.H, true);
-        public KeyBind Toolbar_Toggle_Map_Visibility_Flip = new($"{LOC.Get("KEYBIND__MAP_EDITOR__FLIP_VISIBILITY_OF_ALL_ENTITIES")}", 
-            KeybindCategory.MapEditor, Key.B, true);
-        public KeyBind Toolbar_Toggle_Selection_Visibility_Enabled = new($"{LOC.Get("KEYBIND__MAP_EDITOR__ENABLE_VISIBILITY_OF_SELECTION")}", 
-            KeybindCategory.MapEditor, Key.H, true, true);
-        public KeyBind Toolbar_Toggle_Map_Visibility_Enabled = new($"{LOC.Get("KEYBIND__MAP_EDITOR__ENABLE_VISIBILITY_OF_ALL_ENTITIES")}", 
-            KeybindCategory.MapEditor, Key.B, true, true);
-        public KeyBind Toolbar_Toggle_Selection_Visibility_Disabled = new($"{LOC.Get("KEYBIND__MAP_EDITOR__DISABLE_VISIBILITY_OF_SELECTION")}",
-            KeybindCategory.MapEditor, Key.H, true, true, true);
-        public KeyBind Toolbar_Toggle_Map_Visibility_Disabled = new($"{LOC.Get("KEYBIND__MAP_EDITOR__DISABLE_VISIBILITY_OF_ALL_ENTITIES")}", 
-            KeybindCategory.MapEditor, Key.B, true, true, true);
-        public KeyBind Toolbar_Reset_Rotation = new($"{LOC.Get("KEYBIND__MAP_EDITOR__RESET_SELECTION_ROTATION")}", 
-            KeybindCategory.MapEditor, Key.L);
-        public KeyBind Toolbar_Dummify = new($"{LOC.Get("KEYBIND__MAP_EDITOR__MAKE_SELECTION_A_DUMMY_MAP_OBJECT")}", 
-            KeybindCategory.MapEditor, Key.Comma, false, false, true);
-        public KeyBind Toolbar_Undummify = new($"{LOC.Get("KEYBIND__MAP_EDITOR__MAKE_SELECTION_A_NORMAL_MAP_OBJECT")}", 
-            KeybindCategory.MapEditor, Key.Period, false, false, true);
-        public KeyBind Toolbar_Scramble = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SCRAMBLE_SELECTION")}", 
-            KeybindCategory.MapEditor, Key.S, false, true);
-        public KeyBind Toolbar_Replicate = new($"{LOC.Get("KEYBIND__MAP_EDITOR__REPLICATE_SELECTION")}", 
-            KeybindCategory.MapEditor, Key.R, false, true);
-        public KeyBind Toolbar_Set_to_Grid = new($"{LOC.Get("KEYBIND__MAP_EDITOR__MOVE_SELECTION_TO_VIEWPORT_GRID")}", 
-            KeybindCategory.MapEditor, Key.G, false, true);
-        public KeyBind Toolbar_Create = new($"{LOC.Get("KEYBIND__MAP_EDITOR__CREATE_MAP_OBJECT")}", 
-            KeybindCategory.MapEditor, Key.C, false, true);
-        public KeyBind Toolbar_RenderEnemyPatrolRoutes = new($"{LOC.Get("KEYBIND__MAP_EDITOR__RENDER_PATROL_ROUTE_CONNECTIONS")}", 
-            KeybindCategory.MapEditor, Key.P, true);
+        public KeyBind Toolbar_Rotate_X = new("Rotate X", KeybindCategory.MapEditor, Key.J);
+        public KeyBind Toolbar_Rotate_Y = new("Rotate Y", KeybindCategory.MapEditor, Key.K, false, false, true);
+        public KeyBind Toolbar_Rotate_Y_Pivot = new("Rotate Y Pivot", KeybindCategory.MapEditor, Key.K);
+        public KeyBind Toolbar_Go_to_Selection_in_Object_List = new("Go to Selection in Object List", KeybindCategory.MapEditor, Key.G);
+        public KeyBind Toolbar_Move_Selection_to_Camera = new("Move Selection to Camera", KeybindCategory.MapEditor, Key.X);
+        public KeyBind Toolbar_Frame_Selection_in_Viewport = new("Frame Selection in Viewport", KeybindCategory.MapEditor, Key.F);
+        public KeyBind Toolbar_Toggle_Selection_Visibility_Flip = new("Toggle Selection Visibility: Flip", KeybindCategory.MapEditor, Key.H, true);
+        public KeyBind Toolbar_Toggle_Map_Visibility_Flip = new("Toggle Map Visibility: Flip", KeybindCategory.MapEditor, Key.B, true);
+        public KeyBind Toolbar_Toggle_Selection_Visibility_Enabled = new("Toggle Selection Visibility: Enable", KeybindCategory.MapEditor, Key.H, true, true);
+        public KeyBind Toolbar_Toggle_Map_Visibility_Enabled = new("Toggle Map Visibility: Enable", KeybindCategory.MapEditor, Key.B, true, true);
+        public KeyBind Toolbar_Toggle_Selection_Visibility_Disabled = new("Toggle Selection Visibility: Disable", KeybindCategory.MapEditor, Key.H, true, true, true);
+        public KeyBind Toolbar_Toggle_Map_Visibility_Disabled = new("Toggle Map Visibility: Disable", KeybindCategory.MapEditor, Key.B, true, true, true);
+        public KeyBind Toolbar_Reset_Rotation = new("Reset Rotation", KeybindCategory.MapEditor, Key.L);
+        public KeyBind Toolbar_Dummify = new("Dummify", KeybindCategory.MapEditor, Key.Comma, false, false, true);
+        public KeyBind Toolbar_Undummify = new("Undummify", KeybindCategory.MapEditor, Key.Period, false, false, true);
+        public KeyBind Toolbar_Scramble = new("Scramble", KeybindCategory.MapEditor, Key.S, false, true);
+        public KeyBind Toolbar_Replicate = new("Replicate", KeybindCategory.MapEditor, Key.R, false, true);
+        public KeyBind Toolbar_Set_to_Grid = new("Set to Grid", KeybindCategory.MapEditor, Key.G, false, true);
+        public KeyBind Toolbar_Create = new("Create", KeybindCategory.MapEditor, Key.C, false, true);
+        public KeyBind Toolbar_RenderEnemyPatrolRoutes = new("Render Patrol Routes", KeybindCategory.MapEditor, Key.P, true);
 
-        public KeyBind Toolbar_ExportPrefab = new($"{LOC.Get("KEYBIND__MAP_EDITOR__EXPORT_PREFAB")}", 
-            KeybindCategory.MapEditor, Key.E, true, true);
-        public KeyBind Toolbar_ImportPrefab = new($"{LOC.Get("KEYBIND__MAP_EDITOR__IMPORT_PREFAB")}", 
-            KeybindCategory.MapEditor, Key.I, true, true);
+        public KeyBind Toolbar_ExportPrefab = new("Export Prefab", KeybindCategory.MapEditor, Key.E, true, true);
+        public KeyBind Toolbar_ImportPrefab = new("Import Prefab", KeybindCategory.MapEditor, Key.I, true, true);
 
-        public KeyBind Map_DuplicateToMap = new($"{LOC.Get("KEYBIND__MAP_EDITOR__COPY_SELECTION_TO_NEW_MAP")}", 
-            KeybindCategory.MapEditor, Key.D, false, false, true);
-        public KeyBind Map_PropSearch = new($"{LOC.Get("KEYBIND__MAP_EDITOR__PROPERTY_SEARCH")}", 
-            KeybindCategory.MapEditor, Key.F, true);
-        public KeyBind Map_RenderGroup_GetDisp = new($"{LOC.Get("KEYBIND__MAP_EDITOR__RENDER_GROUP__GET_DISPLAY_GROUP")}", 
-            KeybindCategory.MapEditor, Key.G, true);
-        public KeyBind Map_RenderGroup_GetDraw = new($"{LOC.Get("KEYBIND__MAP_EDITOR__RENDER_GROUP__GET_DRAW_GROUP")}", 
-            KeybindCategory.MapEditor);
-        public KeyBind Map_RenderGroup_GiveDisp = new($"{LOC.Get("KEYBIND__MAP_EDITOR__RENDER_GROUP__GIVE_DISPLAY_GROUP")}", 
-            KeybindCategory.MapEditor);
-        public KeyBind Map_RenderGroup_GiveDraw = new($"{LOC.Get("KEYBIND__MAP_EDITOR__RENDER_GROUP__GIVE_DRAW_GROUP")}", 
-            KeybindCategory.MapEditor);
-        public KeyBind Map_RenderGroup_HideAll = new($"{LOC.Get("KEYBIND__MAP_EDITOR__RENDER_GROUP__HIDE_ALL")}", 
-            KeybindCategory.MapEditor);
-        public KeyBind Map_RenderGroup_ShowAll = new($"{LOC.Get("KEYBIND__MAP_EDITOR__RENDER_GROUP__SHOW_ALL")}", 
-            KeybindCategory.MapEditor, Key.R, true);
-        public KeyBind Map_RenderGroup_SelectHighlights = new($"{LOC.Get("KEYBIND__MAP_EDITOR__RENDER_GROUP__SELECT_HIGHLIGHTS")}", 
-            KeybindCategory.MapEditor);
+        // Map Editor
+        public KeyBind Map_DuplicateToMap = new("Duplicate to Map", KeybindCategory.MapEditor, Key.D, false, false, true);
+        public KeyBind Map_PropSearch = new("Property Search", KeybindCategory.MapEditor, Key.F, true);
+        public KeyBind Map_RenderGroup_GetDisp = new("Render Group: Get Display Group", KeybindCategory.MapEditor, Key.G, true);
+        public KeyBind Map_RenderGroup_GetDraw = new("Render Group: Get Draw Group", KeybindCategory.MapEditor);
+        public KeyBind Map_RenderGroup_GiveDisp = new("Render Group: Give Display Group", KeybindCategory.MapEditor);
+        public KeyBind Map_RenderGroup_GiveDraw = new("Render Group: Give Draw Group", KeybindCategory.MapEditor);
+        public KeyBind Map_RenderGroup_HideAll = new("Render Group: Hide All", KeybindCategory.MapEditor);
+        public KeyBind Map_RenderGroup_ShowAll = new("Render Group: Show All", KeybindCategory.MapEditor, Key.R, true);
+        public KeyBind Map_RenderGroup_SelectHighlights = new("Render Group: Select Highlights", KeybindCategory.MapEditor);
 
-        public KeyBind Map_CreateSelectionGroup = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SELECTION_GROUP_CREATE")}", 
-            KeybindCategory.MapEditor, Key.L, false, true);
-        public KeyBind Map_QuickSelect_SelectionGroup_0 = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_0")}", 
-            KeybindCategory.MapEditor, Key.Keypad0, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_1 = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_1")}", 
-            KeybindCategory.MapEditor, Key.Keypad1, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_2 = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_2")}", 
-            KeybindCategory.MapEditor, Key.Keypad2, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_3 = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_3")}", 
-            KeybindCategory.MapEditor, Key.Keypad3, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_4 = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_4")}", 
-            KeybindCategory.MapEditor, Key.Keypad4, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_5 = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_5")}", 
-            KeybindCategory.MapEditor, Key.Keypad5, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_6 = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_6")}", 
-            KeybindCategory.MapEditor, Key.Keypad6, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_7 = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_7")}", 
-            KeybindCategory.MapEditor, Key.Keypad7, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_8 = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_8")}", 
-            KeybindCategory.MapEditor, Key.Keypad8, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_9 = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_9")}", 
-            KeybindCategory.MapEditor, Key.Keypad9, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_10 = new($"{LOC.Get("KEYBIND__MAP_EDITOR__SELECTION_GROUP_SELECT_10")}", 
-            KeybindCategory.MapEditor, Key.KeypadAdd, false, false);
+        public KeyBind Map_CreateSelectionGroup = new("Create Selection Group", KeybindCategory.MapEditor, Key.L, false, true);
 
-        public KeyBind MapEditor_MoveOrderUp = new($"{LOC.Get("KEYBIND__MAP_EDITOR__ORDER_UP")}", 
-            KeybindCategory.MapEditor, Key.U, true, false);
-        public KeyBind MapEditor_MoveOrderDown = new($"{LOC.Get("KEYBIND__MAP_EDITOR__ORDER_DOWN")}", 
-            KeybindCategory.MapEditor, Key.J, true, false);
-        public KeyBind MapEditor_MoveOrderTop = new($"{LOC.Get("KEYBIND__MAP_EDITOR__ORDER_TOP")}", 
-            KeybindCategory.MapEditor, Key.U, true, true);
-        public KeyBind MapEditor_MoveOrderBottom = new($"{LOC.Get("KEYBIND__MAP_EDITOR__ORDER_BOTTOM")}", 
-            KeybindCategory.MapEditor, Key.J, true, true);
+        public KeyBind Map_QuickSelect_SelectionGroup_0 = new("Select Selection Group 0", KeybindCategory.MapEditor, Key.Keypad0, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_1 = new("Select Selection Group 1", KeybindCategory.MapEditor, Key.Keypad1, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_2 = new("Select Selection Group 2", KeybindCategory.MapEditor, Key.Keypad2, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_3 = new("Select Selection Group 3", KeybindCategory.MapEditor, Key.Keypad3, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_4 = new("Select Selection Group 4", KeybindCategory.MapEditor, Key.Keypad4, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_5 = new("Select Selection Group 5", KeybindCategory.MapEditor, Key.Keypad5, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_6 = new("Select Selection Group 6", KeybindCategory.MapEditor, Key.Keypad6, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_7 = new("Select Selection Group 7", KeybindCategory.MapEditor, Key.Keypad7, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_8 = new("Select Selection Group 9", KeybindCategory.MapEditor, Key.Keypad8, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_9 = new("Select Selection Group 0", KeybindCategory.MapEditor, Key.Keypad9, false, false);
+        public KeyBind Map_QuickSelect_SelectionGroup_10 = new("Select Selection Group 10", KeybindCategory.MapEditor, Key.KeypadAdd, false, false);
 
-        public KeyBind Map_WorldMap_Vanilla = new($"{LOC.Get("KEYBIND__MAP_EDITOR__MAP__OPEN_LANDS_BETWEEN_MAP")}", 
-            KeybindCategory.MapEditor, Key.M, true, false, false);
-        public KeyBind Map_WorldMap_SOTE = new($"{LOC.Get("KEYBIND__MAP_EDITOR__MAP__OPEN_SOTE_MAP")}", 
-            KeybindCategory.MapEditor, Key.M, true, true, false);
+        public KeyBind MapEditor_MoveOrderUp = new("Move Map Object Up in List", KeybindCategory.MapEditor, Key.U, true, false);
+        public KeyBind MapEditor_MoveOrderDown = new("Move Map Object Down in List", KeybindCategory.MapEditor, Key.J, true, false);
+        public KeyBind MapEditor_MoveOrderTop = new("Move Map Object to Top in List", KeybindCategory.MapEditor, Key.U, true, true);
+        public KeyBind MapEditor_MoveOrderBottom = new("Move Map Object to Bottom in List", KeybindCategory.MapEditor, Key.J, true, true);
+
+        public KeyBind Map_WorldMap_Vanilla = new("Toggle Lands Between Map", KeybindCategory.MapEditor, Key.M, true, false, false);
+        public KeyBind Map_WorldMap_SOTE = new("Toggle Shadow of the Erdtree Map", KeybindCategory.MapEditor, Key.M, true, true, false);
+        public KeyBind Map_WorldMap_DragMap = new("Drag Map", KeybindCategory.MapEditor, Key.C, false, false, false);
 
         // Model Editor
-        public KeyBind ModelEditor_ToggleVisibilitySection = new($"{LOC.Get("KEYBIND__MODEL_EDITOR__TOGGLE_VISIBILITY_ALL")}", KeybindCategory.ModelEditor, Key.A);
-        public KeyBind ModelEditor_Multiselect = new($"{LOC.Get("KEYBIND__MODEL_EDITOR__MULTISELECT_ROW")}", 
-            KeybindCategory.ModelEditor, Key.Z);
-        public KeyBind ModelEditor_Multiselect_Range = new($"{LOC.Get("KEYBIND__MODEL_EDITOR__MULTISELECT_ROW_RANGE")}", KeybindCategory.ModelEditor, Key.LShift, false, false, false, true);
-        public KeyBind ModelEditor_ExportModel = new($"{LOC.Get("KEYBIND__MODEL_EDITOR__EXPORT_MODEL")}", 
-            KeybindCategory.ModelEditor, Key.K, true);
+        public KeyBind ModelEditor_ToggleVisibilitySection = new("Toggle Section (when clicking Visibility Icon)", KeybindCategory.ModelEditor, Key.A);
+        public KeyBind ModelEditor_Multiselect = new("Multi-Select Row (hold)", KeybindCategory.ModelEditor, Key.Z);
+        public KeyBind ModelEditor_Multiselect_Range = new("Multi-Select Row Range (hold then click start and end row)", KeybindCategory.ModelEditor, Key.LShift, false, false, false, true);
+        public KeyBind ModelEditor_ExportModel = new("Export Model", KeybindCategory.ModelEditor, Key.K, true);
 
         // Param
-        public KeyBind Param_Copy = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__COPY_ROW")}", 
-            KeybindCategory.ParamEditor, Key.C, true);
-        public KeyBind Param_Paste = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__PASTE_ROW")}",
-            KeybindCategory.ParamEditor, Key.V, true);
-        public KeyBind Param_ImportCSV = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__IMPORT_CSV")}",
-            KeybindCategory.ParamEditor);
-        public KeyBind Param_ExportCSV = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__EXPORT_CSV")}", 
-            KeybindCategory.ParamEditor);
-        public KeyBind Param_GotoBack = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__OVERVIEW_GO_BACK")}", 
-            KeybindCategory.ParamEditor, Key.Escape);
-        public KeyBind Param_GotoRowID = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__GO_TO_ROW_ID")}", 
-            KeybindCategory.ParamEditor, Key.G, true);
-        public KeyBind Param_GotoSelectedRow = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__GO_TO_SELECTED_ROW")}", 
-            KeybindCategory.ParamEditor, Key.G);
-        public KeyBind Param_HotReload = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__HOT_LOAD_PARAM")}", 
-            KeybindCategory.ParamEditor, Key.F5);
-        public KeyBind Param_HotReloadAll = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__HOT_LOAD_PARAMS")}", 
-            KeybindCategory.ParamEditor, Key.F5, false, false, true);
-        public KeyBind Param_MassEdit = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__TOGGLE_MASSEDIT_WINDOW")}", 
-            KeybindCategory.ParamEditor);
-        public KeyBind Param_SearchField = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__SEARCH_FIELD")}", 
-            KeybindCategory.ParamEditor, Key.N, true);
-        public KeyBind Param_SearchRow = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__SEARCH_ROW")}", 
-            KeybindCategory.ParamEditor, Key.F, true);
-        public KeyBind Param_SearchParam = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__SEARCH_PARAM")}",
-            KeybindCategory.ParamEditor, Key.P, true);
-        public KeyBind Param_SelectAll = new($"{LOC.Get("KEYBIND__PARAM_EDITOR__SELECT_ALL_ROWS")}", 
-            KeybindCategory.ParamEditor, Key.A, true);
+        public KeyBind Param_Copy = new("Copy", KeybindCategory.ParamEditor, Key.C, true);
+        public KeyBind Param_ExportCSV = new("Export CSV", KeybindCategory.ParamEditor);
+        public KeyBind Param_GotoBack = new("Go to Back", KeybindCategory.ParamEditor, Key.Escape);
+        public KeyBind Param_GotoRowID = new("Go to Row ID", KeybindCategory.ParamEditor, Key.G, true);
+        public KeyBind Param_GotoSelectedRow = new("Go to Selected Row", KeybindCategory.ParamEditor, Key.G);
+        public KeyBind Param_HotReload = new("Hot Reload", KeybindCategory.ParamEditor, Key.F5);
+        public KeyBind Param_HotReloadAll = new("Hot Reload All", KeybindCategory.ParamEditor, Key.F5, false, false, true);
+        public KeyBind Param_ImportCSV = new("Import CSV", KeybindCategory.ParamEditor);
+        public KeyBind Param_MassEdit = new("Mass Edit", KeybindCategory.ParamEditor);
+        public KeyBind Param_Paste = new("Paste", KeybindCategory.ParamEditor, Key.V, true);
+        public KeyBind Param_SearchField = new("Search Field", KeybindCategory.ParamEditor, Key.N, true);
+        public KeyBind Param_SearchParam = new("Search Param", KeybindCategory.ParamEditor, Key.P, true);
+        public KeyBind Param_SearchRow = new("Search Row", KeybindCategory.ParamEditor, Key.F, true);
+        public KeyBind Param_SelectAll = new("Select All", KeybindCategory.ParamEditor, Key.A, true);
 
         // Text FMG
-        public KeyBind TextFMG_Sync = new($"{LOC.Get("KEYBIND__TEXT_EDITOR__SYNC_DESCRIPTIONS")}", 
-            KeybindCategory.TextEditor, Key.K, true);
-        public KeyBind TextFMG_Search = new($"{LOC.Get("KEYBIND__TEXT_EDITOR__SEARCH_TEXT")}", 
-            KeybindCategory.TextEditor, Key.F, true);
+        public KeyBind TextFMG_Sync = new("Sync Description", KeybindCategory.TextEditor, Key.K, true);
+        public KeyBind TextFMG_Search = new("Search", KeybindCategory.TextEditor, Key.F, true);
 
         // Viewport
-        public KeyBind Viewport_Cam_Back = new($"{LOC.Get("KEYBIND__VIEWPORT__MOVE_BACKWARD")}", 
-            KeybindCategory.Viewport, Key.S);
-        public KeyBind Viewport_Cam_Down = new($"{LOC.Get("KEYBIND__VIEWPORT__MOVE_DOWN")}", 
-            KeybindCategory.Viewport, Key.Q);
-        public KeyBind Viewport_Cam_Forward = new($"{LOC.Get("KEYBIND__VIEWPORT__MOVE_FORWARD")}", 
-            KeybindCategory.Viewport, Key.W);
-        public KeyBind Viewport_Cam_Left = new($"{LOC.Get("KEYBIND__VIEWPORT__MOVE_LEFT")}", 
-            KeybindCategory.Viewport, Key.A);
-        public KeyBind Viewport_Cam_Right = new($"{LOC.Get("KEYBIND__VIEWPORT__MOVE_RIGHT")}", 
-            KeybindCategory.Viewport, Key.D);
-        public KeyBind Viewport_Cam_Up = new($"{LOC.Get("KEYBIND__VIEWPORT__MOVE_UP")}", 
-            KeybindCategory.Viewport, Key.E);
-
-        public KeyBind Viewport_Cam_Reset = new($"{LOC.Get("KEYBIND__VIEWPORT__RESET")}",
-            KeybindCategory.Viewport, Key.R);
-
-        public KeyBind Viewport_RotationMode = new($"{LOC.Get("KEYBIND__VIEWPORT__GIZMO_ROTATION_MODE")}", 
-            KeybindCategory.Viewport, Key.E);
-        public KeyBind Viewport_ToggleGizmoOrigin = new($"{LOC.Get("KEYBIND__VIEWPORT__GIZMO_ORIGIN_MODE")}", 
-            KeybindCategory.Viewport, Key.Home);
-        public KeyBind Viewport_ToggleGizmoSpace = new($"{LOC.Get("KEYBIND__VIEWPORT__GIZMO_SPACE_MODE")}", 
-            KeybindCategory.Viewport);
-        public KeyBind Viewport_TranslateMode = new($"{LOC.Get("KEYBIND__VIEWPORT__GIZMO_TRANSLATE_MODE")}", 
-            KeybindCategory.Viewport, Key.W);
-
-        public KeyBind Map_ViewportGrid_Lower = new($"{LOC.Get("KEYBIND__VIEWPORT__MAP_GRID__LOWER")}", 
-            KeybindCategory.Viewport, Key.Q, true);
-        public KeyBind Map_ViewportGrid_Raise = new($"{LOC.Get("KEYBIND__VIEWPORT__MAP_GRID__RAISE")}", 
-            KeybindCategory.Viewport, Key.E, true);
-        public KeyBind Map_ViewportGrid_Bring_to_Selection = new($"{LOC.Get("KEYBIND__VIEWPORT__MAP_GRID__SET_TO_SELECTION")}", 
-            KeybindCategory.Viewport, Key.K, true);
-
-        public KeyBind Map_ToggleRenderOutline = new($"{LOC.Get("KEYBIND__VIEWPORT__TOGGLE_SELECTION_OUTLINE")}", 
-            KeybindCategory.Viewport);
+        public KeyBind Viewport_Cam_Back = new("Back", KeybindCategory.Viewport, Key.S);
+        public KeyBind Viewport_Cam_Down = new("Down", KeybindCategory.Viewport, Key.Q);
+        public KeyBind Viewport_Cam_Forward = new("Forward", KeybindCategory.Viewport, Key.W);
+        public KeyBind Viewport_Cam_Left = new("Left", KeybindCategory.Viewport, Key.A);
+        public KeyBind Viewport_Cam_Reset = new("Reset", KeybindCategory.Viewport, Key.R);
+        public KeyBind Viewport_Cam_Right = new("Right", KeybindCategory.Viewport, Key.D);
+        public KeyBind Viewport_Cam_Up = new("Up", KeybindCategory.Viewport, Key.E);
+        public KeyBind Viewport_RotationMode = new("Gizmo Rotation Mode", KeybindCategory.Viewport, Key.E);
+        public KeyBind Viewport_ToggleGizmoOrigin = new("Toggle Gizmo Origin", KeybindCategory.Viewport, Key.Home);
+        public KeyBind Viewport_ToggleGizmoSpace = new("Toggle Gizmo Space", KeybindCategory.Viewport);
+        public KeyBind Viewport_TranslateMode = new("Gizmo Translate Mode", KeybindCategory.Viewport, Key.W);
+        public KeyBind Map_ViewportGrid_Lower = new("Map Grid: Lower", KeybindCategory.Viewport, Key.Q, true);
+        public KeyBind Map_ViewportGrid_Raise = new("Map Grid: Raise", KeybindCategory.Viewport, Key.E, true);
+        public KeyBind Map_ViewportGrid_Bring_to_Selection = new("Map Grid: Bring to Selection", KeybindCategory.Viewport, Key.K, true);
+        public KeyBind Map_ToggleRenderOutline = new("Toggle Selection Outline", KeybindCategory.Viewport);
 
         // Texture Viewer
-        public KeyBind TextureViewer_ZoomMode = new($"{LOC.Get("KEYBIND__TEXTURE_VIEWER__ZOOM_MODE")}", 
-            KeybindCategory.TextureViewer, Key.LControl, false, false, false, true);
-        public KeyBind TextureViewer_ZoomReset = new($"{LOC.Get("KEYBIND__TEXTURE_VIEWER__RESET_ZOOM")}", 
-            KeybindCategory.TextureViewer, Key.R);
+        public KeyBind TextureViewer_ZoomMode = new("Zoom Mode", KeybindCategory.TextureViewer, Key.LControl, false, false, false, true);
+        public KeyBind TextureViewer_ZoomReset = new("Reset Zoom", KeybindCategory.TextureViewer, Key.R);
 
 #pragma warning disable IDE0051
         // JsonExtensionData stores info in config file not present in class in order to retain settings between versions.

@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using StudioCore.Core;
-using StudioCore.Localization;
 using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.UserProject;
@@ -42,14 +41,14 @@ public class ProjectModal
     {
         ImGui.BeginTabBar("ProjectModelTabs");
 
-        if(ImGui.BeginTabItem($"{LOC.Get("PROJECT_MODAL__LOAD_PROJECT")}##loadProjectTab"))
+        if(ImGui.BeginTabItem("Load Project"))
         {
             DisplayProjectLoadOptions();
 
             ImGui.EndTabItem();
         }
 ;
-        if (ImGui.BeginTabItem($"{LOC.Get("PROJECT_MODAL__CREATE_PROJECT")}##createProjectTab"))
+        if (ImGui.BeginTabItem("Create Project"))
         {
             DisplayNewProjectCreation();
 
@@ -73,10 +72,9 @@ public class ProjectModal
             else
             {
                 DialogResult result = PlatformUtils.Instance.MessageBox(
-                    $"{LOC.Get("PROJECT__PROJECT_FILE_DOES_NOT_EXIST")}" +
-                    $"{LOC.Get("PROJECT__PROJECT_FILE")}" + $"{p.ProjectFile}",
-                    $"{LOC.Get("PROJECT__PROJECT_MISSING")}", 
-                    MessageBoxButtons.YesNo);
+                    $"Project file at \"{p.ProjectFile}\" does not exist.\n\n" +
+                    $"Remove project from list of recent projects?",
+                    $"Project.json cannot be found", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     CFG.RemoveRecentProject(p);
@@ -86,7 +84,7 @@ public class ProjectModal
 
         if (ImGui.BeginPopupContextItem())
         {
-            if (ImGui.Selectable($"{LOC.Get("PROJECT__REMOVE_FROM_LIST")}##removeFromListButton"))
+            if (ImGui.Selectable("Remove from list"))
             {
                 CFG.RemoveRecentProject(p);
                 CFG.Save();
@@ -104,7 +102,7 @@ public class ProjectModal
         if (CFG.Current.RecentProjects.Count > 0)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedText($"{LOC.Get("PROJECT_MODAL__RECENT_PROJECTS")}");
+            ImguiUtils.WrappedText("Recent Projects");
             ImGui.Separator();
 
             Smithbox.ProjectHandler.DisplayRecentProjects();
@@ -112,14 +110,14 @@ public class ProjectModal
             ImGui.Separator();
         }
 
-        if (ImGui.Button($"{LOC.Get("PROJECT_MODAL__LOAD_NEW_PROJECT")}##loadNewProjectButton", new Vector2(width * 95, 32 * scale)))
+        if (ImGui.Button("Load New Project", new Vector2(width * 95, 32 * scale)))
         {
             Smithbox.ProjectHandler.OpenProjectDialog();
         }
 
         if (CFG.Current.LastProjectFile != "")
         {
-            if (ImGui.Button($"{LOC.Get("PROJECT_MODAL__LOAD_RECENT_PROJECT")}##loadRecentProjectButton", new Vector2(width * 95, 32 * scale)))
+            if (ImGui.Button("Load Recent Project", new Vector2(width * 95, 32 * scale)))
             {
                 Smithbox.ProjectHandler.LoadRecentProject();
             }
@@ -130,9 +128,10 @@ public class ProjectModal
     {
         // Project Name
         ImGui.AlignTextToFramePadding();
-        ImGui.Text($"{LOC.Get("PROJECT_MODAL__PROJECT_NAME")}");
-        ImguiUtils.ShowHoverTooltip($"{LOC.Get("PROJECT_MODAL__PROJECT_NAME_TOOLTIP")}");
+        ImGui.Text("Project Name:      ");
         ImGui.SameLine();
+        Utils.ImGuiGenericHelpPopup("?", "##Help_ProjectName",
+            "Project's display name. Only affects visuals within Smithbox.");
         ImGui.SameLine();
 
         var pname = newProject.Config != null ? newProject.Config.ProjectName : "Blank";
@@ -144,20 +143,21 @@ public class ProjectModal
 
         // Project Directory
         ImGui.AlignTextToFramePadding();
-        ImGui.Text($"{LOC.Get("PROJECT_MODAL__PROJECT_DIRECTORY")}");
-        ImguiUtils.ShowHoverTooltip($"{LOC.Get("PROJECT_MODAL__PROJECT_DIRECTORY_TOOLTIP")}");
+        ImGui.Text("Project Directory: ");
+        ImGui.SameLine();
+        Utils.ImGuiGenericHelpPopup("?", "##Help_ProjectDirectory",
+            "The location mod files will be saved.\nTypically, this should be Mod Engine's Mod folder.");
         ImGui.SameLine();
         ImGui.InputText("##pdir", ref newProjectDirectory, 255);
         ImGui.SameLine();
         if (ImGui.Button($@"{ForkAwesome.FileO}"))
         {
-            if (PlatformUtils.Instance.OpenFolderDialog($"{LOC.Get("PROJECT_MODAL__SELECT_PROJECT_DIR")}", out var path))
+            if (PlatformUtils.Instance.OpenFolderDialog("Select project directory...", out var path))
             {
                 if (IsLogicalDrive(path))
                 {
                     DialogResult message = PlatformUtils.Instance.MessageBox(
-                        $"{LOC.Get("PROJECT_MODAL__PROJECT_PLACED_AT_DRIVE_ROOT")}",
-                        $"{LOC.Get("ERROR")}",
+                        "Project Directory has been placed in a drive root. This is not allowed. Please select a different location.", "Error",
                         MessageBoxButtons.OK);
                 }
                 else
@@ -169,8 +169,10 @@ public class ProjectModal
 
         // Game Executable
         ImGui.AlignTextToFramePadding();
-        ImGui.Text($"{LOC.Get("PROJECT_MODAL__GAME_EXECUTABLE")}");
-        ImguiUtils.ShowHoverTooltip($"{LOC.Get("PROJECT_MODAL__GAME_EXECUTABLE_TOOLTIP")}");
+        ImGui.Text("Game Executable:   ");
+        ImGui.SameLine();
+        Utils.ImGuiGenericHelpPopup("?", "##Help_GameExecutable",
+            "The location of the game's .EXE or EBOOT.BIN file.\nThe folder with the executable will be used to obtain unpacked game data.");
         ImGui.SameLine();
 
         var gname = newProject.Config != null ? newProject.Config.GameRoot : "";
@@ -198,7 +200,7 @@ public class ProjectModal
         if (ImGui.Button($@"{ForkAwesome.FileO}##fd2"))
         {
             if (PlatformUtils.Instance.OpenFileDialog(
-                    $"{LOC.Get("PROJECT_MODAL__SELECT_GAME_EXECUTABLE")}",
+                    "Select executable for the game you want to mod...",
                     new[] { FilterStrings.GameExecutableFilter },
                     out var path))
             {
@@ -223,8 +225,12 @@ public class ProjectModal
         {
             ImGui.NewLine();
             ImGui.AlignTextToFramePadding();
-            ImGui.Text($"{LOC.Get("PROJECT_MODAL__LOOSE_PARAMS")}");
-            ImguiUtils.ShowHoverTooltip($"{LOC.Get("PROJECT_MODAL__LOOSE_PARAMS_TOOLTIP")}");
+            ImGui.Text(@"Loose Params:      ");
+            ImGui.SameLine();
+            Utils.ImGuiGenericHelpPopup("?", "##Help_LooseParams",
+                "Default: OFF\n" +
+                "DS2: Save and Load parameters as individual .param files instead of regulation.\n" +
+                "DS3: Save and Load parameters as decrypted .parambnd instead of regulation.");
             ImGui.SameLine();
             var looseparams = newProject.Config.UseLooseParams;
             if (ImGui.Checkbox("##looseparams", ref looseparams))
@@ -237,9 +243,10 @@ public class ProjectModal
 
         // Project Options - Import Row Names
         ImGui.AlignTextToFramePadding();
-        ImGui.Text($"{LOC.Get("PROJECT_MODAL__IMPORT_ROW_NAMES")}");
+        ImGui.Text(@"Import row names:  ");
         ImGui.SameLine();
-        ImguiUtils.ShowHoverTooltip($"{LOC.Get("PROJECT_MODAL__IMPORT_ROW_NAMES_TOOLTIP")}");
+        Utils.ImGuiGenericHelpPopup("?", "##Help_ImportRowNames",
+            "Default: OFF\nImports and applies row names from lists stored in Assets folder.\nRow names can be imported at any time in the param editor's Edit menu.");
         ImGui.SameLine();
         ImGui.Checkbox("##loadDefaultNames", ref loadDefaultRowNamesOnCreation);
         ImGui.NewLine();
@@ -247,7 +254,7 @@ public class ProjectModal
         ImGui.Separator();
 
         // Create
-        if (ImGui.Button($"{LOC.Get("PROJECT_MODAL__CREATE_PROJECT")}##createProjectButton", new Vector2(120, 0) * Smithbox.GetUIScale()))
+        if (ImGui.Button("Create", new Vector2(120, 0) * Smithbox.GetUIScale()))
         {
             bool validProject = CanCreateNewProject();
 
@@ -276,26 +283,22 @@ public class ProjectModal
                 !Directory.Exists(newProject.Config.GameRoot))
             {
                 PlatformUtils.Instance.MessageBox(
-                    $"{LOC.Get("PROJECT_MODAL__INVALID_GAME_EXECUTABLE")}",
-                    $"{LOC.Get("ERROR")}",
+                    "Your game executable path does not exist. Please select a valid executable.", "Error",
                     MessageBoxButtons.OK);
                 validated = false;
             }
 
             if (validated && newProject.Config.GameType == ProjectType.Undefined)
             {
-                PlatformUtils.Instance.MessageBox(
-                    $"{LOC.Get("PROJECT_MODAL__UNSUPPORTED_GAME")}",
-                    $"{LOC.Get("ERROR")}",
+                PlatformUtils.Instance.MessageBox("Your game executable is not a valid supported game.",
+                    "Error",
                     MessageBoxButtons.OK);
                 validated = false;
             }
 
             if (validated && (newProjectDirectory == null || !Directory.Exists(newProjectDirectory)))
             {
-                PlatformUtils.Instance.MessageBox(
-                    $"{LOC.Get("PROJECT_MODAL__INVALID_DIRECTORY")}",
-                    $"{LOC.Get("ERROR")}",
+                PlatformUtils.Instance.MessageBox("Your selected project directory is not valid.", "Error",
                     MessageBoxButtons.OK);
                 validated = false;
             }
@@ -303,8 +306,8 @@ public class ProjectModal
             if (validated && File.Exists($@"{newProjectDirectory}\project.json"))
             {
                 DialogResult message = PlatformUtils.Instance.MessageBox(
-                    $"{LOC.Get("PROJECT_MODAL__ALREADY_EXISTING_PROJECT")}",
-                    $"{LOC.Get("ERROR")}",
+                    "Your selected project directory already contains a project.json. Would you like to replace it?",
+                    "Error",
                     MessageBoxButtons.YesNo);
                 if (message == DialogResult.No)
                 {
@@ -315,8 +318,9 @@ public class ProjectModal
             if (validated && newProject.Config.GameRoot == newProjectDirectory)
             {
                 DialogResult message = PlatformUtils.Instance.MessageBox(
-                    $"{LOC.Get("PROJECT_MODAL__PROJECT_MATCHES_GAME_ROOT")}",
-                    $"{LOC.Get("WARNING")}",
+                    "Project Directory is the same as Game Directory, which allows game files to be overwritten directly.\n\n" +
+                    "It's highly recommended you use the Mod Engine mod folder as your project folder instead (if possible).\n\n" +
+                    "Continue and create project anyway?", "Caution",
                     MessageBoxButtons.OKCancel);
                 if (message != DialogResult.OK)
                 {
@@ -327,17 +331,14 @@ public class ProjectModal
             if (validated && IsLogicalDrive(newProjectDirectory))
             {
                 DialogResult message = PlatformUtils.Instance.MessageBox(
-                    $"{LOC.Get("PROJECT_MODAL__PROJECT_PLACED_AT_DRIVE_ROOT")}",
-                    $"{LOC.Get("ERROR")}",
+                    "Project Directory has been placed in a drive root. This is not allowed. Please select a different location.", "Error",
                     MessageBoxButtons.OK);
                 validated = false;
             }
 
             if (validated && (newProject.Config.ProjectName == null || newProject.Config.ProjectName == ""))
             {
-                PlatformUtils.Instance.MessageBox(
-                    $"{LOC.Get("PROJECT_MODAL__NO_PROJECT_NAME")}",
-                    $"{ LOC.Get("ERROR")}",
+                PlatformUtils.Instance.MessageBox("You must specify a project name.", "Error",
                     MessageBoxButtons.OK);
                 validated = false;
             }
@@ -345,8 +346,7 @@ public class ProjectModal
         else
         {
             PlatformUtils.Instance.MessageBox(
-                    $"{LOC.Get("PROJECT_MODAL__INVALID_GAME")}",
-                    $"{LOC.Get("ERROR")}",
+                    "No valid game has been detected. Please select a valid executable.", "Error",
                     MessageBoxButtons.OK);
             validated = false;
         }
