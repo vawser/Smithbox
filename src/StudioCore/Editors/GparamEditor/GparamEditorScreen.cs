@@ -17,6 +17,7 @@ using System.Text.RegularExpressions;
 using Veldrid;
 using Veldrid.Sdl2;
 using static SoulsFormats.GPARAM;
+using static StudioCore.Editors.GparamEditor.GparamEditorActions;
 
 namespace StudioCore.GraphicsEditor;
 
@@ -26,9 +27,10 @@ public class GparamEditorScreen : EditorScreen
 
     public bool ShowSaveOption { get; set; }
 
-    public static ActionManager EditorActionManager = new();
+    public ActionManager EditorActionManager = new();
+    public GparamEditor PropertyEditor;
 
-    private GparamParamBank.GparamInfo _selectedGparamInfo;
+    public GparamParamBank.GparamInfo _selectedGparamInfo;
     public GPARAM _selectedGparam;
     public string _selectedGparamKey;
 
@@ -36,26 +38,26 @@ public class GparamEditorScreen : EditorScreen
     private string _fileSearchInputCache = "";
 
     public GPARAM.Param _selectedParamGroup;
-    private int _selectedParamGroupKey;
+    public int _selectedParamGroupKey;
 
     private string _paramGroupSearchInput = "";
     private string _paramGroupSearchInputCache = "";
 
     public GPARAM.IField _selectedParamField;
-    private int _selectedParamFieldKey;
+    public int _selectedParamFieldKey;
 
     private string _paramFieldSearchInput = "";
     private string _paramFieldSearchInputCache = "";
 
     public GPARAM.IFieldValue _selectedFieldValue = null;
-    private int _selectedFieldValueKey;
+    public int _selectedFieldValueKey;
 
     private string _fieldIdSearchInput = "";
     private string _fieldIdSearchInputCache = "";
 
     private string _copyFileNewName = "";
 
-    private int _duplicateValueRowId = 0;
+    public int _duplicateValueRowId = 0;
 
     private bool[] displayTruth;
 
@@ -67,6 +69,7 @@ public class GparamEditorScreen : EditorScreen
 
     public GparamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
+        PropertyEditor = new GparamEditor(this);
         ToolWindow = new ToolWindow(this);
         ToolSubMenu = new ToolSubMenu(this);
         ActionSubMenu = new ActionSubMenu(this);
@@ -320,6 +323,24 @@ public class GparamEditorScreen : EditorScreen
         {
             EditorActionManager.RedoAction();
         }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete))
+        {
+            if (_selectedGparam != null && _selectedParamField != null && _selectedFieldValue != null)
+            {
+                var action = new GparamRemoveValueRow(this, _selectedGparam, _selectedParamField, _selectedFieldValue);
+                EditorActionManager.ExecuteAction(action);
+            }
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
+        {
+            if (_selectedParamField != null && _selectedFieldValue != null && _selectedGparam != null)
+            {
+                var action = new GparamDuplicateValueRow(this, _selectedGparam, _selectedParamField, _selectedFieldValue, _duplicateValueRowId);
+                EditorActionManager.ExecuteAction(action);
+            }
+        }
     }
 
     /// <summary>
@@ -403,7 +424,9 @@ public class GparamEditorScreen : EditorScreen
             {
                 GPARAM.Param entry = data.Params[i];
 
-                var name = Smithbox.BankHandler.GPARAM_Info.GetReferenceName(entry.Key, entry.Name);
+                var name = entry.Key;
+                if(CFG.Current.Gparam_DisplayParamGroupAlias)
+                    name = Smithbox.BankHandler.GPARAM_Info.GetReferenceName(entry.Key, entry.Name);
 
                 var display = false;
 
@@ -521,7 +544,9 @@ public class GparamEditorScreen : EditorScreen
             {
                 GPARAM.IField entry = data.Fields[i];
 
-                var name = Smithbox.BankHandler.GPARAM_Info.GetReferenceName(entry.Key, entry.Name);
+                var name = entry.Key;
+                if (CFG.Current.Gparam_DisplayParamFieldAlias)
+                    name = Smithbox.BankHandler.GPARAM_Info.GetReferenceName(entry.Key, entry.Name);
 
                 if (SearchFilters.IsEditorSearchMatch(_paramFieldSearchInput, entry.Name, " "))
                 {
@@ -648,7 +673,7 @@ public class GparamEditorScreen : EditorScreen
             {
                 if (ImGui.Button("Add"))
                 {
-                    GparamEditor.AddValueField(field);
+                    PropertyEditor.AddValueField(field);
                     ResetDisplayTruth(field);
                 }
             }
@@ -735,6 +760,19 @@ public class GparamEditorScreen : EditorScreen
             displayTruth[i] = true;
         }
     }
+    /// <summary>
+    /// REduce the Values display truth list in preparation for value row removal.
+    /// </summary>
+    /// <param name="field"></param>
+    public void ReduceDisplayTruth(IField field)
+    {
+        displayTruth = new bool[field.Values.Count + -1];
+
+        for (int i = 0; i < field.Values.Count + -1; i++)
+        {
+            displayTruth[i] = true;
+        }
+    }
 
     /// <summary>
     /// Values table: ID column
@@ -767,7 +805,7 @@ public class GparamEditorScreen : EditorScreen
     public void GparamProperty_TimeOfDay(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
-        GparamEditor.TimeOfDayField(index, field, value, _selectedGparamInfo);
+        PropertyEditor.TimeOfDayField(index, field, value, _selectedGparamInfo);
     }
 
     /// <summary>
@@ -779,7 +817,7 @@ public class GparamEditorScreen : EditorScreen
     public void GparamProperty_Value(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
-        GparamEditor.ValueField(index, field, value,
+        PropertyEditor.ValueField(index, field, value,
         _selectedGparamInfo);
     }
 
@@ -883,7 +921,7 @@ public class GparamEditorScreen : EditorScreen
             {
                 if (ImGui.Selectable("Target in Quick Edit"))
                 {
-                    QuickEditHandler.UpdateGroupFilter(_selectedParamGroup.Name);
+                    QuickEditHandler.UpdateGroupFilter(_selectedParamGroup.Key, _selectedParamGroup.Name);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -915,7 +953,7 @@ public class GparamEditorScreen : EditorScreen
             {
                 if (ImGui.Selectable("Target in Quick Edit"))
                 {
-                    QuickEditHandler.UpdateFieldFilter(_selectedParamField.Name);
+                    QuickEditHandler.UpdateFieldFilter(_selectedParamField.Key, _selectedParamField.Name);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -947,11 +985,8 @@ public class GparamEditorScreen : EditorScreen
             {
                 if (ImGui.Selectable("Remove"))
                 {
-                    GparamEditor.RemovePropertyValueRow(_selectedParamField, _selectedFieldValue);
-                    _selectedGparamInfo.WasModified = true;
-
-                    // Update the group index lists to account for the removed ID.
-                    GparamEditor.UpdateGroupIndexes(_selectedGparam);
+                    var action = new GparamRemoveValueRow(this, _selectedGparam, _selectedParamField, _selectedFieldValue);
+                    EditorActionManager.ExecuteAction(action);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -959,12 +994,11 @@ public class GparamEditorScreen : EditorScreen
 
                 if (ImGui.Selectable("Duplicate"))
                 {
-                    ExtendDisplayTruth(_selectedParamField);
-                    GparamEditor.AddPropertyValueRow(_selectedParamField, _selectedFieldValue, _duplicateValueRowId);
-                    _selectedGparamInfo.WasModified = true;
-
-                    // Update the group index lists to account for the new ID.
-                    GparamEditor.UpdateGroupIndexes(_selectedGparam);
+                    if (_selectedParamField != null && _selectedFieldValue != null && _selectedGparam != null)
+                    {
+                        var action = new GparamDuplicateValueRow(this, _selectedGparam, _selectedParamField, _selectedFieldValue, _duplicateValueRowId);
+                        EditorActionManager.ExecuteAction(action);
+                    }
 
                     ImGui.CloseCurrentPopup();
                 }

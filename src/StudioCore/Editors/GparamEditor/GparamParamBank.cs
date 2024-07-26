@@ -16,6 +16,7 @@ public static class GparamParamBank
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
 
+    public static SortedDictionary<string, GparamInfo> VanillaParamBank { get; set; }
     public static SortedDictionary<string, GparamInfo> ParamBank { get; set; }
 
     public static void SaveGraphicsParams()
@@ -107,6 +108,7 @@ public static class GparamParamBank
         IsLoading = true;
 
         ParamBank = new();
+        VanillaParamBank = new();
 
         var paramDir = @"\param\drawparam";
         var paramExt = @".gparam.dcx";
@@ -137,6 +139,8 @@ public static class GparamParamBank
                 LoadGraphicsParam($"{Smithbox.GameRoot}\\{filePath}", false);
                 //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
+
+            LoadVanillaGraphicsParam($"{Smithbox.GameRoot}\\{filePath}", false);
         }
 
         IsLoaded = true;
@@ -179,6 +183,45 @@ public static class GparamParamBank
             ParamBank.Add(name, gStruct);
         }
         catch(Exception e) 
+        {
+            TaskLogs.AddLog($"Failed to load {path}: {e.Message}");
+        }
+    }
+
+    private static void LoadVanillaGraphicsParam(string path, bool isModFile)
+    {
+        try
+        {
+            if (path == null)
+            {
+                TaskLogs.AddLog($"Could not locate {path} when loading GraphicsParam file.",
+                        LogLevel.Warning);
+                return;
+            }
+            if (path == "")
+            {
+                TaskLogs.AddLog($"Could not locate {path} when loading GraphicsParam file.",
+                        LogLevel.Warning);
+                return;
+            }
+
+            var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
+            GparamInfo gStruct = new GparamInfo(name, path);
+            gStruct.Gparam = new GPARAM();
+            gStruct.IsModFile = isModFile;
+
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            {
+                gStruct.Gparam = GPARAM.Read(path);
+            }
+            else
+            {
+                gStruct.Gparam = GPARAM.Read(DCX.Decompress(path));
+            }
+
+            VanillaParamBank.Add(name, gStruct);
+        }
+        catch (Exception e)
         {
             TaskLogs.AddLog($"Failed to load {path}: {e.Message}");
         }

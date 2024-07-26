@@ -9,27 +9,34 @@ using System.Drawing;
 using System.Numerics;
 using System.Reflection;
 using static SoulsFormats.GPARAM;
-using static StudioCore.Editor.GparamValueChangeAction;
+using static StudioCore.Editors.GparamEditor.GparamEditorActions;
 using static StudioCore.Editors.GraphicsEditor.GparamParamBank;
 
 namespace StudioCore.Editors.GparamEditor;
 public class GparamEditor
 {
-    private static object _editedValueCache;
+    private GparamEditorScreen Screen;
+
+    private object _editedValueCache;
 
     // Value has been changed via input
-    private static bool _changedCache;
+    private bool _changedCache;
 
     // Value can be changed in the GPARAM
-    private static bool _committedCache;
+    private bool _committedCache;
 
     // Value to change without commit
-    private static bool _uncommittedCache;
+    private bool _uncommittedCache;
 
-    private static bool _isHoldingColor;
-    private static Vector4 _heldColor;
+    private bool _isHoldingColor;
+    private Vector4 _heldColor;
 
-    public static unsafe void ValueField(int idx, IField field, IFieldValue value, GparamInfo _selectedGparamInfo)
+    public GparamEditor(GparamEditorScreen screen)
+    {
+        Screen = screen;
+    }
+
+    public unsafe void ValueField(int idx, IField field, IFieldValue value, GparamInfo _selectedGparamInfo)
     {
         _changedCache = false;
         _committedCache = false;
@@ -433,7 +440,8 @@ public class GparamEditor
                     _selectedGparamInfo.WasModified = true;
                     GparamValueChangeAction action = null;
                     action = new GparamValueChangeAction(field, value, newValue, idx, GparamValueChangeAction.ValueChangeType.Set);
-                    GparamEditorScreen.EditorActionManager.ExecuteAction(action);
+
+                    Screen.EditorActionManager.ExecuteAction(action);
                 }
             }
             // Only used for Vec4 color
@@ -457,7 +465,7 @@ public class GparamEditor
         }
     }
 
-    public static unsafe void TimeOfDayField(int idx, IField field, IFieldValue value, GparamInfo _selectedGparamInfo)
+    public unsafe void TimeOfDayField(int idx, IField field, IFieldValue value, GparamInfo _selectedGparamInfo)
     {
         _changedCache = false;
         _committedCache = false;
@@ -498,7 +506,8 @@ public class GparamEditor
                     _selectedGparamInfo.WasModified = true;
                     GparamTimeOfDayChangeAction action = null;
                     action = new GparamTimeOfDayChangeAction(field, value, newValue, idx);
-                    GparamEditorScreen.EditorActionManager.ExecuteAction(action);
+
+                    Screen.EditorActionManager.ExecuteAction(action);
                 }
             }
         }
@@ -508,7 +517,7 @@ public class GparamEditor
     /// Update the group index lists to reflect any additions
     /// or removals in terms of value row ids
     /// </summary>
-    public static void UpdateGroupIndexes(GPARAM gparam)
+    public void UpdateGroupIndexes(GPARAM gparam)
     {
         var newGroupIndexes = new List<UnkParamExtra>();
         int idx = 0;
@@ -546,7 +555,7 @@ public class GparamEditor
     /// <param name="targetField"></param>
     /// <param name="targetValue"></param>
     /// <param name="newRowId"></param>
-    public static void AddPropertyValueRow(IField targetField, IFieldValue targetValue, int newRowId)
+    public void AddPropertyValueRow(IField targetField, IFieldValue targetValue, int newRowId)
     {
         if (targetField is SbyteField sbyteField)
         {
@@ -672,11 +681,142 @@ public class GparamEditor
     }
 
     /// <summary>
+    /// Add selected value row (with specified new ID) to target field value list
+    /// </summary>
+    /// <param name="targetField"></param>
+    /// <param name="targetValue"></param>
+    /// <param name="newRowId"></param>
+    public void AddPropertyValueRowAtIndex(IField targetField, IFieldValue targetValue, int newRowId, int index)
+    {
+        if (targetField is SbyteField sbyteField)
+        {
+            GPARAM.SbyteField castField = (SbyteField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<sbyte>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (sbyte)targetValue.Value;
+
+            castField.Values.Insert(index, dupeVal);
+        }
+        if (targetField is ByteField byteField)
+        {
+            GPARAM.ByteField castField = (ByteField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<byte>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (byte)targetValue.Value;
+
+            castField.Values.Insert(index, dupeVal);
+        }
+        if (targetField is ShortField shortField)
+        {
+            GPARAM.ShortField castField = (ShortField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<short>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (short)targetValue.Value;
+
+            castField.Values.Insert(index, dupeVal);
+        }
+        if (targetField is IntField intField)
+        {
+            GPARAM.IntField castField = (IntField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<int>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (int)targetValue.Value;
+
+            castField.Values.Insert(index, dupeVal);
+        }
+        if (targetField is UintField uintField)
+        {
+            GPARAM.UintField castField = (UintField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<uint>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (uint)targetValue.Value;
+
+            castField.Values.Insert(index, dupeVal);
+        }
+        if (targetField is FloatField floatField)
+        {
+            GPARAM.FloatField castField = (FloatField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<float>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (float)targetValue.Value;
+
+            castField.Values.Insert(index, dupeVal);
+        }
+        if (targetField is BoolField boolField)
+        {
+            GPARAM.BoolField castField = (BoolField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<bool>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (bool)targetValue.Value;
+
+            castField.Values.Insert(index, dupeVal);
+        }
+        if (targetField is Vector2Field vector2Field)
+        {
+            GPARAM.Vector2Field castField = (Vector2Field)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<Vector2>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (Vector2)targetValue.Value;
+
+            castField.Values.Insert(index, dupeVal);
+        }
+        if (targetField is Vector3Field vector3Field)
+        {
+            GPARAM.Vector3Field castField = (Vector3Field)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<Vector3>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (Vector3)targetValue.Value;
+
+            castField.Values.Insert(index, dupeVal);
+        }
+        if (targetField is Vector4Field vector4Field)
+        {
+            GPARAM.Vector4Field castField = (Vector4Field)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<Vector4>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (Vector4)targetValue.Value;
+
+            castField.Values.Insert(index, dupeVal);
+        }
+        if (targetField is ColorField colorField)
+        {
+            GPARAM.ColorField castField = (ColorField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<Color>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (Color)targetValue.Value;
+
+            castField.Values.Insert(index, dupeVal);
+        }
+    }
+
+    /// <summary>
     /// Removed selected value row from target field value list
     /// </summary>
     /// <param name="targetField"></param>
     /// <param name="targetValue"></param>
-    public static void RemovePropertyValueRow(IField targetField, IFieldValue targetValue)
+    public void RemovePropertyValueRow(IField targetField, IFieldValue targetValue)
     {
         if (targetField is SbyteField sbyteField)
         {
@@ -735,7 +875,163 @@ public class GparamEditor
         }
     }
 
-    public static unsafe void AddValueField(IField field)
+    /// <summary>
+    /// Removed selected value row from target field value list
+    /// </summary>
+    /// <param name="targetField"></param>
+    /// <param name="targetValue"></param>
+    public int RemovePropertyValueRowById(IField targetField, IFieldValue targetValue, int rowId)
+    {
+        var targetIndex = -1;
+
+        if (targetField is SbyteField sbyteField)
+        {
+            GPARAM.SbyteField castField = (SbyteField)targetField;
+            for(int i = 0; i < castField.Values.Count; i++)
+            {
+                if (castField.Values[i].Id == rowId)
+                {
+                    targetIndex = i;
+                }
+            }
+            if(targetIndex != -1)
+                castField.Values.RemoveAt(targetIndex);
+        }
+        if (targetField is ByteField byteField)
+        {
+            GPARAM.ByteField castField = (ByteField)targetField;
+            for (int i = 0; i < castField.Values.Count; i++)
+            {
+                if (castField.Values[i].Id == rowId)
+                {
+                    targetIndex = i;
+                }
+            }
+            if (targetIndex != -1)
+                castField.Values.RemoveAt(targetIndex);
+        }
+        if (targetField is ShortField shortField)
+        {
+            GPARAM.ShortField castField = (ShortField)targetField;
+            for (int i = 0; i < castField.Values.Count; i++)
+            {
+                if (castField.Values[i].Id == rowId)
+                {
+                    targetIndex = i;
+                }
+            }
+            if (targetIndex != -1)
+                castField.Values.RemoveAt(targetIndex);
+        }
+        if (targetField is IntField intField)
+        {
+            GPARAM.IntField castField = (IntField)targetField;
+            for (int i = 0; i < castField.Values.Count; i++)
+            {
+                if (castField.Values[i].Id == rowId)
+                {
+                    targetIndex = i;
+                }
+            }
+            if (targetIndex != -1)
+                castField.Values.RemoveAt(targetIndex);
+        }
+        if (targetField is UintField uintField)
+        {
+            GPARAM.UintField castField = (UintField)targetField;
+            for (int i = 0; i < castField.Values.Count; i++)
+            {
+                if (castField.Values[i].Id == rowId)
+                {
+                    targetIndex = i;
+                }
+            }
+            if (targetIndex != -1)
+                castField.Values.RemoveAt(targetIndex);
+        }
+        if (targetField is FloatField floatField)
+        {
+            GPARAM.FloatField castField = (FloatField)targetField;
+            for (int i = 0; i < castField.Values.Count; i++)
+            {
+                if (castField.Values[i].Id == rowId)
+                {
+                    targetIndex = i;
+                }
+            }
+            if (targetIndex != -1)
+                castField.Values.RemoveAt(targetIndex);
+        }
+        if (targetField is BoolField boolField)
+        {
+            GPARAM.BoolField castField = (BoolField)targetField;
+            for (int i = 0; i < castField.Values.Count; i++)
+            {
+                if (castField.Values[i].Id == rowId)
+                {
+                    targetIndex = i;
+                }
+            }
+            if (targetIndex != -1)
+                castField.Values.RemoveAt(targetIndex);
+        }
+        if (targetField is Vector2Field vector2Field)
+        {
+            GPARAM.Vector2Field castField = (Vector2Field)targetField;
+            for (int i = 0; i < castField.Values.Count; i++)
+            {
+                if (castField.Values[i].Id == rowId)
+                {
+                    targetIndex = i;
+                }
+            }
+            if (targetIndex != -1)
+                castField.Values.RemoveAt(targetIndex);
+        }
+        if (targetField is Vector3Field vector3Field)
+        {
+            GPARAM.Vector3Field castField = (Vector3Field)targetField;
+            for (int i = 0; i < castField.Values.Count; i++)
+            {
+                if (castField.Values[i].Id == rowId)
+                {
+                    targetIndex = i;
+                }
+            }
+            if (targetIndex != -1)
+                castField.Values.RemoveAt(targetIndex);
+        }
+        if (targetField is Vector4Field vector4Field)
+        {
+            GPARAM.Vector4Field castField = (Vector4Field)targetField;
+            for (int i = 0; i < castField.Values.Count; i++)
+            {
+                if (castField.Values[i].Id == rowId)
+                {
+                    targetIndex = i;
+                }
+            }
+            if (targetIndex != -1)
+                castField.Values.RemoveAt(targetIndex);
+        }
+        if (targetField is ColorField colorField)
+        {
+            GPARAM.ColorField castField = (ColorField)targetField;
+            for (int i = 0; i < castField.Values.Count; i++)
+            {
+                if (castField.Values[i].Id == rowId)
+                {
+                    targetIndex = i;
+                }
+            }
+            if (targetIndex != -1)
+                castField.Values.RemoveAt(targetIndex);
+        }
+
+        return targetIndex;
+    }
+
+    public unsafe void AddValueField(IField field)
     {
         // INT
         if (field is GPARAM.IntField intField)

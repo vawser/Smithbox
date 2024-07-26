@@ -83,6 +83,5 @@ World Map:
  - Add submit buttons instead of the weird selectables
 
 Gparam Editor:
- - ADD: field filter index argument for fields that share names
  - ADD: command: random:[{<x>}] {} contain the min and max (needed to support the vector splits)
  - ADD: command: restore - Restores the value to the value from Game Root version (if it exists).

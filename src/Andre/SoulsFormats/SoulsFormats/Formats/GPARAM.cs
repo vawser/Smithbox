@@ -34,6 +34,11 @@ namespace SoulsFormats
             this.Params = new List<GPARAM.Param>();
         }
 
+        public GPARAM Clone()
+        {
+            return (GPARAM)MemberwiseClone();
+        }
+
         protected override bool Is(BinaryReaderEx br)
         {
             return br.Length >= 4L && br.GetASCII(0L, 8) == "f\0i\0l\0t\0";

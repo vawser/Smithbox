@@ -23,6 +23,9 @@ public class GparamEditorTab
 
             if (ImGui.CollapsingHeader("Groups", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                ImGui.Checkbox("Display param group aliases", ref CFG.Current.Gparam_DisplayParamGroupAlias);
+                ImguiUtils.ShowHoverTooltip("Display the aliased name for param groups, instead of the internal key.");
+
                 ImGui.Checkbox("Show add button for missing groups", ref CFG.Current.Gparam_DisplayAddGroups);
                 ImguiUtils.ShowHoverTooltip("Show the Add button for groups that are not present.");
 
@@ -32,6 +35,9 @@ public class GparamEditorTab
 
             if (ImGui.CollapsingHeader("Fields", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                ImGui.Checkbox("Display param field aliases", ref CFG.Current.Gparam_DisplayParamFieldAlias);
+                ImguiUtils.ShowHoverTooltip("Display the aliased name for param fields, instead of the internal key.");
+
                 ImGui.Checkbox("Show add button for missing fields", ref CFG.Current.Gparam_DisplayAddFields);
                 ImguiUtils.ShowHoverTooltip("Show the Add button for fields that are not present.");
             }
@@ -66,48 +72,101 @@ public class GparamEditorTab
                 ImguiUtils.ShowHoverTooltip("Show the color data as Hue, Saturation, Value color (0.0 to 1.0)");
             }
 
-            if (ImGui.CollapsingHeader("Quick Edit", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("Quick Edit - General"))
             {
-                ImGui.InputText("Filter: ID", ref CFG.Current.Gparam_QuickEdit_ID, 255);
-                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'ID' filter argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
-
-                ImGui.InputText("Filter: Time of Day", ref CFG.Current.Gparam_QuickEdit_TimeOfDay, 255);
-                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Time of Day' filter argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
-
-                ImGui.InputText("Filter: Value", ref CFG.Current.Gparam_QuickEdit_Value, 255);
-                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Value' filter argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
-
-                ImGui.InputText("Command: Set", ref CFG.Current.Gparam_QuickEdit_Set, 255);
-                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Set' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
-
-                ImGui.InputText("Command: Addition", ref CFG.Current.Gparam_QuickEdit_Add, 255);
-                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Addition' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
-
-                ImGui.InputText("Command: Subtract", ref CFG.Current.Gparam_QuickEdit_Subtract, 255);
-                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Subtract' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
-
-                ImGui.InputText("Command: Multiply", ref CFG.Current.Gparam_QuickEdit_Multiply, 255);
-                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Multiply' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
-
-                ImGui.InputText("Command: Set by Row", ref CFG.Current.Gparam_QuickEdit_SetByRow, 255);
-                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Set By Row' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
-
                 ImGui.InputText("Delimiter", ref CFG.Current.Gparam_QuickEdit_Chain, 255);
                 ImguiUtils.ShowHoverTooltip("The text string to split filter and commands.");
 
                 if (ImGui.Button("Reset to Default"))
                 {
                     CFG.Current.Gparam_QuickEdit_Chain = "+";
+                }
+            }
 
+            if (ImGui.CollapsingHeader("Quick Edit - File Filter"))
+            {
+                ImGui.InputText("File Filter: Match File", ref CFG.Current.Gparam_QuickEdit_File, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'File' filter argument.");
+
+                if (ImGui.Button("Reset to Default"))
+                {
+                    CFG.Current.Gparam_QuickEdit_File = "file";
+                }
+            }
+
+            if (ImGui.CollapsingHeader("Quick Edit - Group Filter"))
+            {
+                ImGui.InputText("Group Filter: Match Group", ref CFG.Current.Gparam_QuickEdit_Group, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Group' filter argument.");
+
+                if (ImGui.Button("Reset to Default"))
+                {
+                    CFG.Current.Gparam_QuickEdit_Group = "group";
+                }
+            }
+
+            if (ImGui.CollapsingHeader("Quick Edit - Field Filter"))
+            {
+                ImGui.InputText("Field Filter: Match Field", ref CFG.Current.Gparam_QuickEdit_Field, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Field' filter argument.");
+
+                if (ImGui.Button("Reset to Default"))
+                {
+                    CFG.Current.Gparam_QuickEdit_Field = "field";
+                }
+            }
+
+            if (ImGui.CollapsingHeader("Quick Edit - Value Filters"))
+            {
+                ImGui.InputText("Value Filter: Match ID", ref CFG.Current.Gparam_QuickEdit_ID, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'ID' filter argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
+
+                ImGui.InputText("Value Filter: Match Time of Day", ref CFG.Current.Gparam_QuickEdit_TimeOfDay, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Time of Day' filter argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
+
+                ImGui.InputText("Value Filter: Match Value", ref CFG.Current.Gparam_QuickEdit_Value, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Value' filter argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
+
+                if (ImGui.Button("Reset to Default"))
+                {
                     CFG.Current.Gparam_QuickEdit_ID = "id";
                     CFG.Current.Gparam_QuickEdit_TimeOfDay = "tod";
                     CFG.Current.Gparam_QuickEdit_Value = "value";
+                }
+            }
 
+            if (ImGui.CollapsingHeader("Quick Edit - Value Commands"))
+            {
+                ImGui.InputText("Value Command: Set", ref CFG.Current.Gparam_QuickEdit_Set, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Set' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
+
+                ImGui.InputText("Value Command: Addition", ref CFG.Current.Gparam_QuickEdit_Add, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Addition' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
+
+                ImGui.InputText("Value Command: Subtract", ref CFG.Current.Gparam_QuickEdit_Subtract, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Subtract' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
+
+                ImGui.InputText("Value Command: Multiply", ref CFG.Current.Gparam_QuickEdit_Multiply, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Multiply' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
+
+                ImGui.InputText("Value Command: Set by Row", ref CFG.Current.Gparam_QuickEdit_SetByRow, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Set By Row' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
+
+                ImGui.InputText("Value Command: Restore", ref CFG.Current.Gparam_QuickEdit_Restore, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Restore' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
+
+                ImGui.InputText("Value Command: Random", ref CFG.Current.Gparam_QuickEdit_Random, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Random' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
+
+                if (ImGui.Button("Reset to Default"))
+                {
                     CFG.Current.Gparam_QuickEdit_Set = "set";
                     CFG.Current.Gparam_QuickEdit_Add = "add";
                     CFG.Current.Gparam_QuickEdit_Subtract = "sub";
                     CFG.Current.Gparam_QuickEdit_Multiply = "mult";
                     CFG.Current.Gparam_QuickEdit_SetByRow = "setbyrow";
+                    CFG.Current.Gparam_QuickEdit_Restore = "restore";
+                    CFG.Current.Gparam_QuickEdit_Random = "random";
                 }
             }
 

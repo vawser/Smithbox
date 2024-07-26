@@ -533,6 +533,9 @@ public class CFG
     //****************************
     public bool Interface_Display_Alias_for_Gparam = true;
 
+    public bool Gparam_DisplayParamGroupAlias = true;
+    public bool Gparam_DisplayParamFieldAlias = false;
+
     public bool Gparam_DisplayColorEditForVector4Fields = true;
     public bool Gparam_DisplayEmptyGroups = true;
     public bool Gparam_DisplayAddGroups = true;
@@ -544,6 +547,10 @@ public class CFG
 
     public string Gparam_QuickEdit_Chain = "+";
 
+    public string Gparam_QuickEdit_File = "file";
+    public string Gparam_QuickEdit_Group = "group";
+    public string Gparam_QuickEdit_Field = "field";
+
     public string Gparam_QuickEdit_ID = "id";
     public string Gparam_QuickEdit_TimeOfDay = "tod";
     public string Gparam_QuickEdit_Value = "value";
@@ -553,6 +560,8 @@ public class CFG
     public string Gparam_QuickEdit_Subtract = "sub";
     public string Gparam_QuickEdit_Multiply = "mult";
     public string Gparam_QuickEdit_SetByRow = "setbyrow";
+    public string Gparam_QuickEdit_Restore = "restore";
+    public string Gparam_QuickEdit_Random = "random";
 
     //****************************
     // Settings: Particle Editor
