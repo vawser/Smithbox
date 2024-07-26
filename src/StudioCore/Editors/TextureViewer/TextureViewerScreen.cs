@@ -7,7 +7,8 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextureViewer;
-using StudioCore.Editors.TextureViewer.Toolbar;
+using StudioCore.Editors.TextureViewer.Actions;
+using StudioCore.Editors.TextureViewer.Tools;
 using StudioCore.Formats;
 using StudioCore.Interface;
 using StudioCore.Locators;
@@ -52,9 +53,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     private Task _loadingTask;
 
-    public TextureToolbar _textureToolbar;
-    public TextureToolbar_ActionList _textureToolbar_ActionList;
-    public TextureToolbar_Configuration _textureToolbar_Configuration;
+    public ToolWindow ToolWindow;
+    public ToolSubMenu ToolSubMenu;
+    public ActionSubMenu ActionSubMenu;
 
     private SubTexture _cachedPreviewSubtexture;
 
@@ -62,10 +63,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public TextureViewerScreen(Sdl2Window window, GraphicsDevice device)
     {
-        _textureToolbar = new TextureToolbar();
-        _textureToolbar_ActionList = new TextureToolbar_ActionList();
-        _textureToolbar_Configuration = new TextureToolbar_Configuration();
-
+        ToolWindow = new ToolWindow(this);
+        ToolSubMenu = new ToolSubMenu(this);
+        ActionSubMenu = new ActionSubMenu(this);
         ImagePreview = new TextureImagePreview();
     }
 
@@ -83,6 +83,13 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public void OnProjectChanged()
     {
         ImagePreview.OnProjectChanged();
+
+        if (Smithbox.ProjectType != ProjectType.Undefined)
+        {
+            ToolWindow.OnProjectChanged();
+            ToolSubMenu.OnProjectChanged();
+            ActionSubMenu.OnProjectChanged();
+        }
 
         if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
@@ -136,6 +143,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void DrawEditorMenu()
     {
+        ActionSubMenu.DisplayMenu();
+        ToolSubMenu.DisplayMenu();
+
         if (ImGui.BeginMenu("View"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
@@ -167,11 +177,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Properties);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Toolbar"))
+            if (ImGui.MenuItem("Tool Configuration"))
             {
-                CFG.Current.Interface_TextureViewer_Toolbar = !CFG.Current.Interface_TextureViewer_Toolbar;
+                CFG.Current.Interface_TextureViewer_ToolConfiguration = !CFG.Current.Interface_TextureViewer_ToolConfiguration;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Toolbar);
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ToolConfiguration);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Resource List"))
@@ -245,6 +255,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             }
         }
 
+        ActionSubMenu.Shortcuts();
+        ToolSubMenu.Shortcuts();
+
         TextureViewerShortcuts();
 
         if (TextureFolderBank.IsLoaded)
@@ -267,10 +280,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             }
         }
 
-        if(CFG.Current.Interface_TextureViewer_Toolbar)
+        if(CFG.Current.Interface_TextureViewer_ToolConfiguration)
         {
-            _textureToolbar_ActionList.OnGui();
-            _textureToolbar_Configuration.OnGui();
+            ToolWindow.OnGui();
         }
 
         if (CFG.Current.Interface_TextureViewer_ResourceList)

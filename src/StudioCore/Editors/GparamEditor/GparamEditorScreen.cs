@@ -5,7 +5,8 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
-using StudioCore.Editors.GparamEditor.Toolbar;
+using StudioCore.Editors.GparamEditor.Actions;
+using StudioCore.Editors.GparamEditor.Tools;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -28,25 +29,25 @@ public class GparamEditorScreen : EditorScreen
     public static ActionManager EditorActionManager = new();
 
     private GparamParamBank.GparamInfo _selectedGparamInfo;
-    private GPARAM _selectedGparam;
-    private string _selectedGparamKey;
+    public GPARAM _selectedGparam;
+    public string _selectedGparamKey;
 
     private string _fileSearchInput = "";
     private string _fileSearchInputCache = "";
 
-    private GPARAM.Param _selectedParamGroup;
+    public GPARAM.Param _selectedParamGroup;
     private int _selectedParamGroupKey;
 
     private string _paramGroupSearchInput = "";
     private string _paramGroupSearchInputCache = "";
 
-    private GPARAM.IField _selectedParamField;
+    public GPARAM.IField _selectedParamField;
     private int _selectedParamFieldKey;
 
     private string _paramFieldSearchInput = "";
     private string _paramFieldSearchInputCache = "";
 
-    private GPARAM.IFieldValue _selectedFieldValue = null;
+    public GPARAM.IFieldValue _selectedFieldValue = null;
     private int _selectedFieldValueKey;
 
     private string _fieldIdSearchInput = "";
@@ -58,15 +59,18 @@ public class GparamEditorScreen : EditorScreen
 
     private bool[] displayTruth;
 
-    public GparamToolbar _gparamToolbar;
-    public GparamToolbar_ActionList _gparamToolbar_ActionList;
-    public GparamToolbar_Configuration _gparamToolbar_Configuration;
+    public ToolWindow ToolWindow;
+    public ToolSubMenu ToolSubMenu;
+    public ActionSubMenu ActionSubMenu;
+
+    public GparamQuickEdit QuickEditHandler;
 
     public GparamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        _gparamToolbar = new GparamToolbar(EditorActionManager);
-        _gparamToolbar_ActionList = new GparamToolbar_ActionList();
-        _gparamToolbar_Configuration = new GparamToolbar_Configuration();
+        ToolWindow = new ToolWindow(this);
+        ToolSubMenu = new ToolSubMenu(this);
+        ActionSubMenu = new ActionSubMenu(this);
+        QuickEditHandler = new GparamQuickEdit(this);
     }
 
     public string EditorName => "Gparam Editor##GparamEditor";
@@ -103,6 +107,9 @@ public class GparamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
+        ActionSubMenu.DisplayMenu();
+        ToolSubMenu.DisplayMenu();
+
         if (ImGui.BeginMenu("View"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
@@ -134,11 +141,11 @@ public class GparamEditorScreen : EditorScreen
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Values);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Toolbar"))
+            if (ImGui.MenuItem("Tool Configuration"))
             {
-                CFG.Current.Interface_GparamEditor_Toolbar = !CFG.Current.Interface_GparamEditor_Toolbar;
+                CFG.Current.Interface_GparamEditor_ToolConfiguration = !CFG.Current.Interface_GparamEditor_ToolConfiguration;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Toolbar);
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_ToolConfiguration);
 
             ImGui.EndMenu();
         }
@@ -194,7 +201,6 @@ public class GparamEditorScreen : EditorScreen
                     // Gparam
                     foreach (var (name, info) in GparamParamBank.ParamBank)
                     {
-                        TaskLogs.AddLog($"{name}");
                         if (initcmd[1] == name)
                         {
                             _selectedGparamKey = info.Name;
@@ -236,7 +242,7 @@ public class GparamEditorScreen : EditorScreen
                                     if (initcmd[3] == entry.Key)
                                     {
                                         _selectedParamField = entry;
-                                        GparamQuickEdit.SelectedParamField = entry;
+                                        QuickEditHandler.targetParamField = entry;
                                         _selectedParamFieldKey = i;
                                     }
                                 }
@@ -267,6 +273,9 @@ public class GparamEditorScreen : EditorScreen
                 }
             }
 
+            ActionSubMenu.Shortcuts();
+            ToolSubMenu.Shortcuts();
+
             GparamShortcuts();
 
             if (GparamParamBank.IsLoaded)
@@ -289,10 +298,9 @@ public class GparamEditorScreen : EditorScreen
                 }
             }
 
-            if (CFG.Current.Interface_GparamEditor_Toolbar)
+            if (CFG.Current.Interface_GparamEditor_ToolConfiguration)
             {
-                _gparamToolbar_ActionList.OnGui();
-                _gparamToolbar_Configuration.OnGui();
+                ToolWindow.OnGui(QuickEditHandler);
             }
         }
 
@@ -522,7 +530,7 @@ public class GparamEditorScreen : EditorScreen
                         ResetValueSelection();
 
                         _selectedParamField = entry;
-                        GparamQuickEdit.SelectedParamField = entry;
+                        QuickEditHandler.targetParamField = entry;
                         _selectedParamFieldKey = i;
                     }
                 }
@@ -602,8 +610,6 @@ public class GparamEditorScreen : EditorScreen
 
         ImGui.InputText($"Search", ref _fieldIdSearchInput, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
-
-        GparamQuickEdit.OnGui();
 
         ImGui.Separator();
 
@@ -815,6 +821,14 @@ public class GparamEditorScreen : EditorScreen
         {
             if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
             {
+                if (ImGui.Selectable("Target in Quick Edit"))
+                {
+                    QuickEditHandler.UpdateFileFilter(name);
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowHoverTooltip("Add this file to the File Filter in the Quick Edit window.");
+
                 // Only show if the file exists in the project directory
                 if (info.Path.Contains(Smithbox.ProjectRoot))
                 {
@@ -867,6 +881,14 @@ public class GparamEditorScreen : EditorScreen
         {
             if (ImGui.BeginPopupContextItem($"Options##Gparam_Group_Context"))
             {
+                if (ImGui.Selectable("Target in Quick Edit"))
+                {
+                    QuickEditHandler.UpdateGroupFilter(_selectedParamGroup.Name);
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowHoverTooltip("Add this group to the Group Filter in the Quick Edit window.");
+
                 if (ImGui.Selectable("Remove"))
                 {
                     _selectedGparam.Params.Remove(_selectedParamGroup);
@@ -891,6 +913,14 @@ public class GparamEditorScreen : EditorScreen
         {
             if (ImGui.BeginPopupContextItem($"Options##Gparam_Field_Context"))
             {
+                if (ImGui.Selectable("Target in Quick Edit"))
+                {
+                    QuickEditHandler.UpdateFieldFilter(_selectedParamField.Name);
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowHoverTooltip("Add this field to the Field Filter in the Quick Edit window.");
+
                 if (ImGui.Selectable("Remove"))
                 {
                     _selectedParamGroup.Fields.Remove(_selectedParamField);
@@ -955,6 +985,13 @@ public class GparamEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
+        if (Smithbox.ProjectType != ProjectType.Undefined)
+        {
+            ToolWindow.OnProjectChanged();
+            ToolSubMenu.OnProjectChanged();
+            ActionSubMenu.OnProjectChanged();
+        }
+
         GparamParamBank.LoadGraphicsParams();
 
         ResetActionManager();

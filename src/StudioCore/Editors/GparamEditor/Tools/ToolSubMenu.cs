@@ -1,7 +1,8 @@
 ﻿using ImGuiNET;
-using StudioCore.Editors.ModelEditor;
+using StudioCore.Configuration;
+using StudioCore.Editors.GparamEditor.Actions;
+using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
-using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -9,15 +10,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.TextEditor.Tools;
+namespace StudioCore.Editors.GparamEditor.Tools;
 
 public class ToolSubMenu
 {
-    private TextEditorScreen Screen;
+    private GparamEditorScreen Screen;
+    public ActionHandler Handler;
 
-    public ToolSubMenu(TextEditorScreen screen)
+    public ToolSubMenu(GparamEditorScreen screen)
     {
         Screen = screen;
+        Handler = new ActionHandler(screen);
     }
 
     public void Shortcuts()
@@ -29,18 +32,22 @@ public class ToolSubMenu
     {
 
     }
+
     public void DisplayMenu()
     {
+        /*
         if (ImGui.BeginMenu("Tools"))
         {
-            // Upgrade FMG Files
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Upgrade Text Files"))
+
+            if (ImGui.MenuItem("TODO", KeyBindings.Current.TextureViewer_ExportTexture.HintText))
             {
-                FmgUpdater.UpdateFMGs();
+
             }
 
             ImGui.EndMenu();
         }
+        */
     }
 }
+

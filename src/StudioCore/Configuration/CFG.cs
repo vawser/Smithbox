@@ -94,7 +94,7 @@ public class CFG
     public bool Interface_GparamEditor_Groups = true;
     public bool Interface_GparamEditor_Fields = true;
     public bool Interface_GparamEditor_Values = true;
-    public bool Interface_GparamEditor_Toolbar = true;
+    public bool Interface_GparamEditor_ToolConfiguration = true;
 
     public bool Interface_ParticleEditor_Files = true;
     public bool Interface_ParticleEditor_Particles = true;
@@ -105,7 +105,7 @@ public class CFG
     public bool Interface_TextureViewer_Textures = true;
     public bool Interface_TextureViewer_Viewer = true;
     public bool Interface_TextureViewer_Properties = true;
-    public bool Interface_TextureViewer_Toolbar = true;
+    public bool Interface_TextureViewer_ToolConfiguration = true;
     public bool Interface_TextureViewer_ResourceList = true;
 
     public bool Interface_MapEditor_Toolbar_ActionList_TopToBottom = true;

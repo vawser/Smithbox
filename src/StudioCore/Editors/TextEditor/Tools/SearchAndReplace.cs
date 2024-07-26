@@ -40,16 +40,19 @@ public static class SearchAndReplace
         ImguiUtils.WrappedText("");
 
         ImguiUtils.WrappedText("Search Text:");
+        ImGui.SetNextItemWidth(defaultButtonSize.X);
         ImGui.InputText("##searchText", ref CFG.Current.FMG_SearchAndReplace_SearchText, 255);
         ImguiUtils.ShowHoverTooltip("Text to search for. Supports regular expressions.");
         ImguiUtils.WrappedText("");
 
         ImguiUtils.WrappedText("Replace Text:");
+        ImGui.SetNextItemWidth(defaultButtonSize.X);
         ImGui.InputText("##replaceText", ref CFG.Current.FMG_SearchAndReplace_ReplaceText, 255);
         ImguiUtils.ShowHoverTooltip("Text to replace the search text with. Supports regular expressions.");
         ImguiUtils.WrappedText("");
 
         ImguiUtils.WrappedText("Text Category:");
+        ImGui.SetNextItemWidth(defaultButtonSize.X);
         if (ImGui.BeginCombo("##Text Category", CurrentTextCategory))
         {
             foreach (string e in TextCategories)
@@ -66,6 +69,7 @@ public static class SearchAndReplace
         ImguiUtils.WrappedText("");
 
         ImguiUtils.WrappedText("Text Context:");
+        ImGui.SetNextItemWidth(defaultButtonSize.X);
         if (ImGui.BeginCombo("##Target Type", CurrentTargetType))
         {
             foreach (string e in TargetTypes)

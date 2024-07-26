@@ -220,6 +220,7 @@ public class KeyBindings
         public KeyBind Map_ToggleRenderOutline = new("Toggle Selection Outline", KeybindCategory.Viewport);
 
         // Texture Viewer
+        public KeyBind TextureViewer_ExportTexture = new("Export Texture", KeybindCategory.TextureViewer, Key.X, true);
         public KeyBind TextureViewer_ZoomMode = new("Zoom Mode", KeybindCategory.TextureViewer, Key.LControl, false, false, false, true);
         public KeyBind TextureViewer_ZoomReset = new("Reset Zoom", KeybindCategory.TextureViewer, Key.R);
 

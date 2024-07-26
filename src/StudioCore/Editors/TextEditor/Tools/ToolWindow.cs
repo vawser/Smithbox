@@ -59,6 +59,7 @@ public class ToolWindow
                 ImguiUtils.WrappedText("");
 
                 ImguiUtils.WrappedText("Amount:");
+                ImGui.SetNextItemWidth(defaultButtonSize.X);
                 ImGui.InputInt("##dupeamount", ref CFG.Current.FMG_DuplicateAmount);
                 ImguiUtils.ShowHoverTooltip("The number of times to duplicate this entry.");
                 ImguiUtils.WrappedText("");
@@ -67,6 +68,7 @@ public class ToolWindow
                     CFG.Current.FMG_DuplicateAmount = 1;
 
                 ImguiUtils.WrappedText("Increment:");
+                ImGui.SetNextItemWidth(defaultButtonSize.X);
                 ImGui.InputInt("##dupeIncrement", ref CFG.Current.FMG_DuplicateIncrement);
                 ImguiUtils.ShowHoverTooltip("The increment to apply to the text id when duplicating.");
                 ImguiUtils.WrappedText("");
@@ -83,7 +85,6 @@ public class ToolWindow
             if (ImGui.CollapsingHeader("Delete Entries"))
             {
                 ImguiUtils.WrappedText("Delete the selected entries in the Text Entries list.");
-
                 ImguiUtils.WrappedText("");
 
                 if (ImGui.Button("Apply##action_Delete", defaultButtonSize))
@@ -95,6 +96,7 @@ public class ToolWindow
             if (ImGui.CollapsingHeader("Sync Description"))
             {
                 ImguiUtils.WrappedText("Sync the descriptions of the selected entries in the Text Entries list with the first member's description.");
+                ImguiUtils.WrappedText("");
 
                 if (ImGui.Button("Apply##action_Sync", defaultButtonSize))
                 {
@@ -107,7 +109,7 @@ public class ToolWindow
                 SearchAndReplace.DisplayConfiguration(defaultButtonSize);
             }
             // Upgrade FMG Files
-            if (ImGui.CollapsingHeader("Upgrade FMG Files"))
+            if (ImGui.CollapsingHeader("Upgrade Text Files"))
             {
                 ImguiUtils.WrappedText("Ports all unique entries from item.msgbnd.dcx and menu.msgbnd.dcx to the DLC version: item_dlc02.msgbnd.dcx and menu_dlc02.msgbnd.dcx");
                 ImguiUtils.WrappedText("");
