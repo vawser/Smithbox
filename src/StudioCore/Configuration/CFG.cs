@@ -554,6 +554,7 @@ public class CFG
     public string Gparam_QuickEdit_ID = "id";
     public string Gparam_QuickEdit_TimeOfDay = "tod";
     public string Gparam_QuickEdit_Value = "value";
+    public string Gparam_QuickEdit_Index = "index";
 
     public string Gparam_QuickEdit_Set = "set";
     public string Gparam_QuickEdit_Add = "add";

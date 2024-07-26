@@ -1,12 +1,17 @@
-﻿using ImGuiNET;
+﻿using DotNext;
+using HKLib.hk2018.hk;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
+using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using static StudioCore.Editors.GparamEditor.GparamEditorActions;
 using static StudioCore.Editors.GparamEditor.GparamEditorActions.GparamValueChangeAction;
@@ -42,111 +47,164 @@ namespace StudioCore.Editors.GparamEditor
         public GPARAM.Param targetParamGroup;
         public GPARAM.IField targetParamField;
 
+        public RandomNumberGenerator RandomSource;
+
         public GparamQuickEdit(GparamEditorScreen screen)
         {
             Screen = screen;
+            RandomSource = RandomNumberGenerator.Create();
         }
+
+        private bool displayFileFilterSection = true;
+        private bool displayGroupFilterSection = true;
+        private bool displayFieldFilterSection = true;
+        private bool displayValueFilterSection = true;
+        private bool displayValueCommandSection = true;
 
         public void DisplayCheatSheet()
         {
             ImGui.Separator();
             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "File Filters:");
+            ImGui.SameLine();
+            if(ImGui.Button($"{ForkAwesome.Bars}##fileFilterToggle"))
+            {
+                displayFileFilterSection = !displayFileFilterSection;
+            }
             ImGui.Separator();
-            ImguiUtils.WrappedText($"File arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"*");
-            ImguiUtils.WrappedText("Targets all files.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"selection");
-            ImguiUtils.WrappedText("Targets current file selection.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"file:[<name>]");
-            ImguiUtils.WrappedText("Targets the file with the specified name.");
-            ImguiUtils.WrappedText("");
+            if (displayFileFilterSection)
+            {
+                ImguiUtils.WrappedText($"File arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"*");
+                ImguiUtils.WrappedText("Targets all files.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"selection");
+                ImguiUtils.WrappedText("Targets current file selection.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"file:[<name>]");
+                ImguiUtils.WrappedText("Targets the file with the specified name.");
+                ImguiUtils.WrappedText("");
+            }
 
             ImGui.Separator();
             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Group Filters:");
+            ImGui.SameLine();
+            if (ImGui.Button($"{ForkAwesome.Bars}##groupFilterToggle"))
+            {
+                displayGroupFilterSection = !displayGroupFilterSection;
+            }
             ImGui.Separator();
-            ImguiUtils.WrappedText($"Group arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"*");
-            ImguiUtils.WrappedText("Targets all groups.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"selection");
-            ImguiUtils.WrappedText("Targets current group selection.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"group:[<name>]");
-            ImguiUtils.WrappedText("Targets the groups with the specified name.");
-            ImguiUtils.WrappedText("");
+            if (displayGroupFilterSection)
+            {
+                ImguiUtils.WrappedText($"Group arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"*");
+                ImguiUtils.WrappedText("Targets all groups.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"selection");
+                ImguiUtils.WrappedText("Targets current group selection.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"group:[<name>]");
+                ImguiUtils.WrappedText("Targets the groups with the specified name.");
+                ImguiUtils.WrappedText("");
+            }
 
             ImGui.Separator();
             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Field Filters:");
+            ImGui.SameLine();
+            if (ImGui.Button($"{ForkAwesome.Bars}##fieldFilterToggle"))
+            {
+                displayFieldFilterSection = !displayFieldFilterSection;
+            }
             ImGui.Separator();
-            ImguiUtils.WrappedText($"Field arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"*");
-            ImguiUtils.WrappedText("Targets all fields.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"selection");
-            ImguiUtils.WrappedText("Targets current field selection.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"field:[<name>]");
-            ImguiUtils.WrappedText("Targets the fields with the specified name.");
-            ImguiUtils.WrappedText("");
+            if (displayFieldFilterSection)
+            {
+                ImguiUtils.WrappedText($"Field arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"*");
+                ImguiUtils.WrappedText("Targets all fields.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"selection");
+                ImguiUtils.WrappedText("Targets current field selection.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"field:[<name>]");
+                ImguiUtils.WrappedText("Targets the fields with the specified name.");
+                ImguiUtils.WrappedText("");
+            }
 
             ImGui.Separator();
             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Value Filters:");
+            ImGui.SameLine();
+            if (ImGui.Button($"{ForkAwesome.Bars}##valueFilterToggle"))
+            {
+                displayValueFilterSection = !displayValueFilterSection;
+            }
             ImGui.Separator();
-            ImguiUtils.WrappedText($"Filter arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"*");
-            ImguiUtils.WrappedText("Targets all rows.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"selection");
-            ImguiUtils.WrappedText("Targets current value row selection.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_ID}:<x>");
-            ImguiUtils.WrappedText("Targets all rows with <x> ID.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_TimeOfDay}:<x>");
-            ImguiUtils.WrappedText("Targets all rows with <x> Time of Day.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Value}:<x>");
-            ImguiUtils.WrappedText("Targets all rows with <x> Value. For multi-values split them like so: [<x>,<x>]");
-            ImguiUtils.WrappedText("");
+            if (displayValueFilterSection)
+            {
+                ImguiUtils.WrappedText($"Filter arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"*");
+                ImguiUtils.WrappedText("Targets all rows.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"selection");
+                ImguiUtils.WrappedText("Targets current value row selection.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_ID}:[<x>]");
+                ImguiUtils.WrappedText("Targets all rows with <x> ID.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Index}:[<x>]");
+                ImguiUtils.WrappedText("Targets all rows with <x> row index.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_TimeOfDay}:[<x>]");
+                ImguiUtils.WrappedText("Targets all rows with <x> Time of Day.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Value}:[<x>]");
+                ImguiUtils.WrappedText("Targets all rows with <x> Value. For multi-values split them like so: [<x>,<x>]");
+                ImguiUtils.WrappedText("");
+            }
 
             ImGui.Separator();
             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Value Commands:");
+            ImGui.SameLine();
+            if (ImGui.Button($"{ForkAwesome.Bars}##valueCommandToggle"))
+            {
+                displayValueCommandSection = !displayValueCommandSection;
+            }
             ImGui.Separator();
-            ImguiUtils.WrappedText($"Command arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Set}:[<x>]");
-            ImguiUtils.WrappedText("Sets target rows to <x> Value.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Add}:[<x>]");
-            ImguiUtils.WrappedText("Adds <x> to the Value of the target rows.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Subtract}:[<x>]");
-            ImguiUtils.WrappedText("Subtracts <x> from the Value of the target rows.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Multiply}:[<x>]");
-            ImguiUtils.WrappedText("Multiplies the Value of the target rows by <x>.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_SetByRow}:[<x>]");
-            ImguiUtils.WrappedText("Sets target rows to the Value of row ID <x>.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Restore}");
-            ImguiUtils.WrappedText("Sets target rows to their vanilla Value.");
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Random}:[<x>,<y>]");
-            ImguiUtils.WrappedText("Sets target rows to a random value between <x> and <y>.");
-            ImguiUtils.WrappedText("");
+            if (displayValueCommandSection)
+            {
+                ImguiUtils.WrappedText($"Command arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Set}:[<x>]");
+                ImguiUtils.WrappedText("Sets target rows to <x> Value.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Add}:[<x>]");
+                ImguiUtils.WrappedText("Adds <x> to the Value of the target rows.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Subtract}:[<x>]");
+                ImguiUtils.WrappedText("Subtracts <x> from the Value of the target rows.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Multiply}:[<x>]");
+                ImguiUtils.WrappedText("Multiplies the Value of the target rows by <x>.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_SetByRow}:[<x>]");
+                ImguiUtils.WrappedText("Sets target rows to the Value of row ID <x>.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Restore}");
+                ImguiUtils.WrappedText("Sets target rows to their vanilla Value.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Random}:[<x>][<y>]");
+                ImguiUtils.WrappedText("Sets target rows to a random value between <x> and <y>. First is the minimum, second is the maximum.");
+                ImguiUtils.WrappedText("");
+            }
         }
 
         public void DisplayInputWindow()
         {
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth, 32);
+            var thirdButtonSize = new Vector2(windowWidth / 3, 32);
 
             ImGui.Text("File Filter:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);
@@ -173,12 +231,80 @@ namespace StudioCore.Editors.GparamEditor
             ImGui.InputText("##commandString", ref _valueCommandString, 255);
             ImguiUtils.ShowHoverTooltip("Enter value command arguments here.");
 
-            if (ImGui.Button("Execute", defaultButtonSize))
+            if (ImGui.Button("Execute", thirdButtonSize))
             {
                 ExecuteQuickEdit();
             }
-        }
 
+            ImGui.SameLine();
+            if (ImGui.Button("Fill from Selection", thirdButtonSize))
+            {
+                _targetFileString = "";
+                _targetGroupString = "";
+                _targetFieldString = "";
+                _valueFilterString = "";
+
+                if (Screen._selectedGparamKey != null)
+                {
+                    UpdateFileFilter(Screen._selectedGparamKey);
+                }
+                else
+                {
+                    _valueFilterString = "*";
+                }
+
+                if (Screen._selectedParamGroup != null)
+                {
+                    UpdateGroupFilter(Screen._selectedParamGroup.Key);
+                }
+                else
+                {
+                    _valueFilterString = "*";
+                }
+
+                if (Screen._selectedParamField != null)
+                {
+                    UpdateFieldFilter(Screen._selectedParamField.Key);
+                }
+                else
+                {
+                    _valueFilterString = "*";
+                }
+
+                if (Screen._selectedParamField != null)
+                {
+                    var fieldIndex = -1;
+                    for (int i = 0; i < Screen._selectedParamField.Values.Count; i++)
+                    {
+                        if (Screen._selectedParamField.Values[i] == Screen._selectedFieldValue)
+                        {
+                            fieldIndex = i;
+                            break;
+                        }
+                    }
+
+                    if (fieldIndex != -1)
+                    {
+                        UpdateValueRowFilter(fieldIndex);
+                    }
+                }
+                else
+                {
+                    _valueFilterString = "*";
+                }
+            }
+            ImguiUtils.ShowHoverTooltip("Automatically fill the filter input based on current select.");
+
+            ImGui.SameLine();
+            if (ImGui.Button("Clear", thirdButtonSize))
+            {
+                _targetFileString = "";
+                _targetGroupString = "";
+                _targetFieldString = "";
+                _valueFilterString = "";
+                _valueCommandString = "";
+            }
+        }
 
         private void ExecuteQuickEdit()
         {
@@ -231,7 +357,7 @@ namespace StudioCore.Editors.GparamEditor
             {
                 foreach(var entry in resolvedList)
                 {
-                    TaskLogs.AddLog($"Applied Quick Edit to: {entry}");
+                    //TaskLogs.AddLog($"Applied Quick Edit to: {entry}");
                 }
 
                 if(actionList.Count > 0)
@@ -372,7 +498,7 @@ namespace StudioCore.Editors.GparamEditor
                 _targetFileString = $"{CFG.Current.Gparam_QuickEdit_File}:[{name}]";
             }
         }
-        public void UpdateGroupFilter(string key, string name)
+        public void UpdateGroupFilter(string key)
         {
             var input = key;
 
@@ -385,7 +511,7 @@ namespace StudioCore.Editors.GparamEditor
                 _targetGroupString = $"{CFG.Current.Gparam_QuickEdit_Group}:[{input}]";
             }
         }
-        public void UpdateFieldFilter(string key, string name)
+        public void UpdateFieldFilter(string key)
         {
             var input = key;
 
@@ -396,6 +522,17 @@ namespace StudioCore.Editors.GparamEditor
             else
             {
                 _targetFieldString = $"{CFG.Current.Gparam_QuickEdit_Field}:[{input}]";
+            }
+        }
+        public void UpdateValueRowFilter(int index)
+        {
+            if (_valueFilterString != "")
+            {
+                _valueFilterString = $"{_valueFilterString}+{CFG.Current.Gparam_QuickEdit_Index}:[{index}]";
+            }
+            else
+            {
+                _valueFilterString = $"{CFG.Current.Gparam_QuickEdit_Index}:[{index}]";
             }
         }
 
@@ -416,6 +553,7 @@ namespace StudioCore.Editors.GparamEditor
                 FilterAll(targetField, filter);
                 FilterSelection(targetField, filter);
                 FilterId(targetField, filter);
+                FilterIndex(targetField, filter);
                 FilterTimeOfDay(targetField, filter);
                 FilterValue(targetField, filter);
             }
@@ -436,6 +574,44 @@ namespace StudioCore.Editors.GparamEditor
             // Combine all the individual changes into a single action
             // so Undo/Redo treats the Quick Edit changes as one discrete change
             return new GparamBatchChangeAction(actions);
+        }
+
+        private (bool, object) GetVanillaValue(int index)
+        {
+            object vanillaValue = -1;
+            bool foundValue = false;
+
+            // Find vanilla value
+            foreach (var (name, info) in GparamParamBank.VanillaParamBank)
+            {
+                if (name == Screen._selectedGparamKey)
+                {
+                    foreach (var paramGroup in info.Gparam.Params)
+                    {
+                        if (paramGroup.Key == Screen._selectedParamGroup.Key)
+                        {
+                            foreach (var paramField in paramGroup.Fields)
+                            {
+                                if (paramField.Key == Screen._selectedParamField.Key)
+                                {
+                                    if (paramField.Values.Count > index)
+                                    {
+                                        vanillaValue = paramField.Values[index].Value;
+                                        foundValue = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (foundValue)
+                                break;
+                        }
+                    }
+                }
+                if (foundValue)
+                    break;
+            }
+
+            return (foundValue, vanillaValue);
         }
 
         private void CommandAdjust(GPARAM.IField targetField, string commandArg, EditEffectType effectType)
@@ -466,11 +642,11 @@ namespace StudioCore.Editors.GparamEditor
             }
             if (effectType == EditEffectType.Restore)
             {
-                valueCommandMatch = Regex.Match(commandArg, $@"{CFG.Current.Gparam_QuickEdit_Restore}:\[(.*)\]");
+                valueCommandMatch = Regex.Match(commandArg, $@"{CFG.Current.Gparam_QuickEdit_Restore}");
             }
             if (effectType == EditEffectType.Random)
             {
-                valueCommandMatch = Regex.Match(commandArg, $@"{CFG.Current.Gparam_QuickEdit_Random}:\[(.*)\]");
+                valueCommandMatch = Regex.Match(commandArg, $@"{CFG.Current.Gparam_QuickEdit_Random}:\[(.*)\]\[(.*)\]");
             }
 
             if (valueCommandMatch == null)
@@ -481,18 +657,63 @@ namespace StudioCore.Editors.GparamEditor
             // Ignore commands that are not set for bools
             if (targetField is GPARAM.BoolField)
             {
-                if (effectType != EditEffectType.Set)
+                if (effectType == EditEffectType.Add || 
+                    effectType == EditEffectType.Subtract || 
+                    effectType == EditEffectType.Multiply || 
+                    effectType == EditEffectType.SetByRow)
                 {
                     return;
                 }
             }
 
-            if (valueCommandMatch.Success && valueCommandMatch.Groups.Count >= 2)
+            var proceed = false;
+
+            if(effectType is EditEffectType.Set or EditEffectType.Add or EditEffectType.Subtract or EditEffectType.Multiply or EditEffectType.SetByRow)
             {
-                string setValue = valueCommandMatch.Groups[1].Value;
+                if(valueCommandMatch.Success && valueCommandMatch.Groups.Count >= 2)
+                {
+                    proceed = true;
+                }
+            }
+            // Separate since Restore doesn't have pass a parameter
+            else if(effectType is EditEffectType.Restore)
+            {
+                if(valueCommandMatch.Success)
+                {
+                    proceed = true;
+                }
+            }
+            else if(effectType is EditEffectType.Random)
+            {
+                if (valueCommandMatch.Success && valueCommandMatch.Groups.Count >= 3)
+                {
+                    proceed = true;
+                }
+            }
+
+            if (proceed)
+            {
+                string valueCommandString = valueCommandMatch.Groups[1].Value;
+                string valueCommandString_secondary = "";
+
+                // Read secondary group for "random" command
+                if (effectType is EditEffectType.Random)
+                {
+                    valueCommandString_secondary = valueCommandMatch.Groups[2].Value;
+                }
+
+                // Set this to a dummy value since "restore" doesn't pass a value
+                if (effectType == EditEffectType.Restore)
+                {
+                    valueCommandString = "0";
+                }
 
                 int rowsetId = -1;
-                int.TryParse(setValue, out rowsetId);
+                // Read value as int for set by row
+                if (effectType == EditEffectType.SetByRow)
+                {
+                    int.TryParse(valueCommandString, out rowsetId);
+                }
 
                 for (int i = 0; i < targetField.Values.Count; i++)
                 {
@@ -507,7 +728,7 @@ namespace StudioCore.Editors.GparamEditor
                         if (targetField is GPARAM.IntField intField)
                         {
                             int commandValue = -1;
-                            var valid = int.TryParse(setValue, out commandValue);
+                            var valid = int.TryParse(valueCommandString, out commandValue);
 
                             if (valid)
                             {
@@ -543,19 +764,30 @@ namespace StudioCore.Editors.GparamEditor
                                 }
                                 if (effectType == EditEffectType.Restore)
                                 {
-                                    // Find vanilla value
+                                    bool foundValue = false;
+                                    object vanillaValue = null;
+                                    (foundValue, vanillaValue) = GetVanillaValue(i);
 
-                                    // Then apply
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
+                                    if (foundValue)
+                                    {
+                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
                                 }
                                 if (effectType == EditEffectType.Random)
                                 {
-                                    // Generate new value
+                                    int commandValue_secondary = -1;
+                                    var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
 
-                                    // Then apply
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
-                                    actions.Add(action);
+                                    TaskLogs.AddLog($"commandValue: {commandValue}");
+                                    TaskLogs.AddLog($"commandValue_secondary: {commandValue_secondary}");
+
+                                    if (valid_secondary)
+                                    {
+                                        int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, newValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
                                 }
                             }
                         }
@@ -563,7 +795,7 @@ namespace StudioCore.Editors.GparamEditor
                         else if (targetField is GPARAM.UintField uintField)
                         {
                             uint commandValue = 0;
-                            var valid = uint.TryParse(setValue, out commandValue);
+                            var valid = uint.TryParse(valueCommandString, out commandValue);
 
                             if (valid)
                             {
@@ -597,13 +829,38 @@ namespace StudioCore.Editors.GparamEditor
                                         actions.Add(action);
                                     }
                                 }
+                                if (effectType == EditEffectType.Restore)
+                                {
+                                    bool foundValue = false;
+                                    object vanillaValue = null;
+                                    (foundValue, vanillaValue) = GetVanillaValue(i);
+
+                                    if (foundValue)
+                                    {
+                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
+                                }
+                                if (effectType == EditEffectType.Random)
+                                {
+                                    int commandValue_secondary = -1;
+                                    var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
+
+                                    if (valid_secondary)
+                                    {
+                                        int newValue = Utils.GenerateRandomInt(RandomSource, (int)commandValue, commandValue_secondary);
+
+                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, (uint)newValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
+                                }
                             }
                         }
                         // SHORT
                         else if (targetField is GPARAM.ShortField shortField)
                         {
                             short commandValue = 0;
-                            var valid = short.TryParse(setValue, out commandValue);
+                            var valid = short.TryParse(valueCommandString, out commandValue);
 
                             if (valid)
                             {
@@ -637,13 +894,41 @@ namespace StudioCore.Editors.GparamEditor
                                         actions.Add(action);
                                     }
                                 }
+                                if (effectType == EditEffectType.Restore)
+                                {
+                                    bool foundValue = false;
+                                    object vanillaValue = null;
+                                    (foundValue, vanillaValue) = GetVanillaValue(i);
+
+                                    if (foundValue)
+                                    {
+                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
+                                }
+                                if (effectType == EditEffectType.Random)
+                                {
+                                    int commandValue_secondary = -1;
+                                    var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
+
+                                    if (valid_secondary)
+                                    {
+                                        int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
+
+                                        if (newValue > short.MaxValue)
+                                            newValue = short.MaxValue;
+
+                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, (short)newValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
+                                }
                             }
                         }
                         // SBYTE
                         else if (targetField is GPARAM.SbyteField sbyteField)
                         {
                             sbyte commandValue = 0;
-                            var valid = sbyte.TryParse(setValue, out commandValue);
+                            var valid = sbyte.TryParse(valueCommandString, out commandValue);
 
                             if (valid)
                             {
@@ -677,13 +962,41 @@ namespace StudioCore.Editors.GparamEditor
                                         actions.Add(action);
                                     }
                                 }
+                                if (effectType == EditEffectType.Restore)
+                                {
+                                    bool foundValue = false;
+                                    object vanillaValue = null;
+                                    (foundValue, vanillaValue) = GetVanillaValue(i);
+
+                                    if (foundValue)
+                                    {
+                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
+                                }
+                                if (effectType == EditEffectType.Random)
+                                {
+                                    int commandValue_secondary = -1;
+                                    var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
+
+                                    if (valid_secondary)
+                                    {
+                                        int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
+
+                                        if (newValue > sbyte.MaxValue)
+                                            newValue = sbyte.MaxValue;
+
+                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, (sbyte)newValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
+                                }
                             }
                         }
                         // BYTE
                         else if (targetField is GPARAM.ByteField byteField)
                         {
                             byte commandValue = 0;
-                            var valid = byte.TryParse(setValue, out commandValue);
+                            var valid = byte.TryParse(valueCommandString, out commandValue);
 
                             if (valid)
                             {
@@ -717,13 +1030,41 @@ namespace StudioCore.Editors.GparamEditor
                                         actions.Add(action);
                                     }
                                 }
+                                if (effectType == EditEffectType.Restore)
+                                {
+                                    bool foundValue = false;
+                                    object vanillaValue = null;
+                                    (foundValue, vanillaValue) = GetVanillaValue(i);
+
+                                    if (foundValue)
+                                    {
+                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
+                                }
+                                if (effectType == EditEffectType.Random)
+                                {
+                                    int commandValue_secondary = -1;
+                                    var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
+
+                                    if (valid_secondary)
+                                    {
+                                        int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
+
+                                        if (newValue > byte.MaxValue)
+                                            newValue = byte.MaxValue;
+
+                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, (byte)newValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
+                                }
                             }
                         }
                         // BOOL
                         else if (targetField is GPARAM.BoolField boolField)
                         {
                             int commandValue = 0;
-                            var valid = int.TryParse(setValue, out commandValue);
+                            var valid = int.TryParse(valueCommandString, out commandValue);
                             var boolean = false;
 
                             if (commandValue == 1)
@@ -731,16 +1072,49 @@ namespace StudioCore.Editors.GparamEditor
 
                             if (valid)
                             {
-                                // Always set bools
-                                GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
-                                actions.Add(action);
+                                if (effectType == EditEffectType.Restore)
+                                {
+                                    bool foundValue = false;
+                                    object vanillaValue = null;
+                                    (foundValue, vanillaValue) = GetVanillaValue(i);
+
+                                    if (foundValue)
+                                    {
+                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
+                                }
+                                else if (effectType == EditEffectType.Random)
+                                {
+                                    int commandValue_secondary = -1;
+                                    var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
+
+                                    if (valid_secondary)
+                                    {
+                                        double newValue = Utils.GenerateRandomDouble(RandomSource, 0, 1);
+
+                                        bool newBool = false;
+
+                                        if (newValue > 0.5)
+                                            newBool = true;
+
+                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, newBool, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
+                                }
+                                else
+                                {
+                                    // Always set bools
+                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
+                                }
                             }
                         }
                         // FLOAT
                         else if (targetField is GPARAM.FloatField floatField)
                         {
                             float commandValue = 0.0f;
-                            var valid = float.TryParse(setValue, out commandValue);
+                            var valid = float.TryParse(valueCommandString, out commandValue);
 
                             if (valid)
                             {
@@ -774,6 +1148,31 @@ namespace StudioCore.Editors.GparamEditor
                                         actions.Add(action);
                                     }
                                 }
+                                if (effectType == EditEffectType.Restore)
+                                {
+                                    bool foundValue = false;
+                                    object vanillaValue = null;
+                                    (foundValue, vanillaValue) = GetVanillaValue(i);
+
+                                    if (foundValue)
+                                    {
+                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
+                                }
+                                if (effectType == EditEffectType.Random)
+                                {
+                                    float commandValue_secondary = -1;
+                                    var valid_secondary = float.TryParse(valueCommandString_secondary, out commandValue_secondary);
+
+                                    if (valid_secondary)
+                                    {
+                                        double newValue = Utils.GenerateRandomDouble(RandomSource, (double)commandValue, (double)commandValue_secondary);
+
+                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, (float)newValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
+                                    }
+                                }
                             }
                         }
                         // VECTOR2
@@ -791,13 +1190,25 @@ namespace StudioCore.Editors.GparamEditor
                                     actions.Add(action);
                                 }
                             }
+                            if (effectType == EditEffectType.Restore)
+                            {
+                                bool foundValue = false;
+                                object vanillaValue = null;
+                                (foundValue, vanillaValue) = GetVanillaValue(i);
 
-                            if (!setValue.Contains(","))
+                                if (foundValue)
+                                {
+                                    var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
+                                }
+                            }
+
+                            if (!valueCommandString.Contains(","))
                             {
                                 continue;
                             }
 
-                            var parts = setValue.Split(",");
+                            var parts = valueCommandString.Split(",");
 
                             if (parts.Length > 1)
                             {
@@ -831,6 +1242,32 @@ namespace StudioCore.Editors.GparamEditor
                                         GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                         actions.Add(action);
                                     }
+                                    if (effectType == EditEffectType.Random)
+                                    {
+                                        var partsSecondary = valueCommandString_secondary.Split(",");
+
+                                        if (partsSecondary.Length > 1)
+                                        {
+                                            float commandValue_secondary1 = 0.0f;
+                                            var valid_secondary1 = float.TryParse(partsSecondary[0], out commandValue_secondary1);
+
+                                            float commandValue_secondary2 = 0.0f;
+                                            var valid_secondary2 = float.TryParse(partsSecondary[1], out commandValue_secondary2);
+
+                                            if (valid_secondary1 && valid_secondary2)
+                                            {
+                                                double newValue1 = Utils.GenerateRandomDouble(
+                                                    RandomSource, (double)commandValue1, (double)commandValue_secondary1);
+                                                double newValue2 = Utils.GenerateRandomDouble(
+                                                    RandomSource, (double)commandValue2, (double)commandValue_secondary2);
+
+                                                Vector2 newValue = new Vector2((float)newValue1, (float)newValue2);
+
+                                                GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, newValue, i, ValueChangeType.Set);
+                                                actions.Add(action);
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -849,13 +1286,25 @@ namespace StudioCore.Editors.GparamEditor
                                     actions.Add(action);
                                 }
                             }
+                            if (effectType == EditEffectType.Restore)
+                            {
+                                bool foundValue = false;
+                                object vanillaValue = null;
+                                (foundValue, vanillaValue) = GetVanillaValue(i);
 
-                            if (!setValue.Contains(","))
+                                if (foundValue)
+                                {
+                                    var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
+                                }
+                            }
+
+                            if (!valueCommandString.Contains(","))
                             {
                                 continue;
                             }
 
-                            var parts = setValue.Split(",");
+                            var parts = valueCommandString.Split(",");
 
                             if (parts.Length > 2)
                             {
@@ -892,6 +1341,37 @@ namespace StudioCore.Editors.GparamEditor
                                         GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                         actions.Add(action);
                                     }
+                                    if (effectType == EditEffectType.Random)
+                                    {
+                                        var partsSecondary = valueCommandString_secondary.Split(",");
+
+                                        if (partsSecondary.Length > 2)
+                                        {
+                                            float commandValue_secondary1 = 0.0f;
+                                            var valid_secondary1 = float.TryParse(partsSecondary[0], out commandValue_secondary1);
+
+                                            float commandValue_secondary2 = 0.0f;
+                                            var valid_secondary2 = float.TryParse(partsSecondary[1], out commandValue_secondary2);
+
+                                            float commandValue_secondary3 = 0.0f;
+                                            var valid_secondary3 = float.TryParse(partsSecondary[2], out commandValue_secondary3);
+
+                                            if (valid_secondary1 && valid_secondary2 && valid_secondary3)
+                                            {
+                                                double newValue1 = Utils.GenerateRandomDouble(
+                                                    RandomSource, (double)commandValue1, (double)commandValue_secondary1);
+                                                double newValue2 = Utils.GenerateRandomDouble(
+                                                    RandomSource, (double)commandValue2, (double)commandValue_secondary2);
+                                                double newValue3 = Utils.GenerateRandomDouble(
+                                                    RandomSource, (double)commandValue3, (double)commandValue_secondary3);
+
+                                                Vector3 newValue = new Vector3((float)newValue1, (float)newValue2, (float)newValue3);
+
+                                                GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, newValue, i, ValueChangeType.Set);
+                                                actions.Add(action);
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -910,13 +1390,25 @@ namespace StudioCore.Editors.GparamEditor
                                     actions.Add(action);
                                 }
                             }
+                            if (effectType == EditEffectType.Restore)
+                            {
+                                bool foundValue = false;
+                                object vanillaValue = null;
+                                (foundValue, vanillaValue) = GetVanillaValue(i);
 
-                            if (!setValue.Contains(","))
+                                if (foundValue)
+                                {
+                                    var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
+                                }
+                            }
+
+                            if (!valueCommandString.Contains(","))
                             {
                                 continue;
                             }
 
-                            var parts = setValue.Split(",");
+                            var parts = valueCommandString.Split(",");
 
                             if (parts.Length > 3)
                             {
@@ -956,6 +1448,43 @@ namespace StudioCore.Editors.GparamEditor
                                         GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                         actions.Add(action);
                                     }
+                                    if (effectType == EditEffectType.Random)
+                                    {
+                                        var partsSecondary = valueCommandString_secondary.Split(",");
+
+                                        if (partsSecondary.Length > 3)
+                                        {
+                                            float commandValue_secondary1 = 0.0f;
+                                            var valid_secondary1 = float.TryParse(partsSecondary[0], out commandValue_secondary1);
+
+                                            float commandValue_secondary2 = 0.0f;
+                                            var valid_secondary2 = float.TryParse(partsSecondary[1], out commandValue_secondary2);
+
+                                            float commandValue_secondary3 = 0.0f;
+                                            var valid_secondary3 = float.TryParse(partsSecondary[2], out commandValue_secondary3);
+
+                                            float commandValue_secondary4 = 0.0f;
+                                            var valid_secondary4 = float.TryParse(partsSecondary[3], out commandValue_secondary4);
+
+                                            if (valid_secondary1 && valid_secondary2 && valid_secondary3 && valid_secondary4)
+                                            {
+                                                double newValue1 = Utils.GenerateRandomDouble(
+                                                    RandomSource, (double)commandValue1, (double)commandValue_secondary1);
+                                                double newValue2 = Utils.GenerateRandomDouble(
+                                                    RandomSource, (double)commandValue2, (double)commandValue_secondary2);
+                                                double newValue3 = Utils.GenerateRandomDouble(
+                                                    RandomSource, (double)commandValue3, (double)commandValue_secondary3);
+                                                double newValue4 = Utils.GenerateRandomDouble(
+                                                    RandomSource, (double)commandValue4, (double)commandValue_secondary4);
+
+                                                Vector4 newValue = new Vector4((float)newValue1, (float)newValue2, (float)newValue3, (float)newValue4);
+
+                                                GparamValueChangeAction action = new GparamValueChangeAction(
+                                                    targetField, entry, newValue, i, ValueChangeType.Set);
+                                                actions.Add(action);
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -993,7 +1522,7 @@ namespace StudioCore.Editors.GparamEditor
 
         private void FilterId(GPARAM.IField targetField, string filterArg)
         {
-            var idMatch = Regex.Match(filterArg, $@"{CFG.Current.Gparam_QuickEdit_ID}:([0-9]+)");
+            var idMatch = Regex.Match(filterArg, $@"{CFG.Current.Gparam_QuickEdit_ID}:\[([0-9]+)\]");
 
             if (idMatch.Success && idMatch.Groups.Count >= 2)
             {
@@ -1013,9 +1542,31 @@ namespace StudioCore.Editors.GparamEditor
             }
         }
 
+        private void FilterIndex(GPARAM.IField targetField, string filterArg)
+        {
+            var idxMatch = Regex.Match(filterArg, $@"{CFG.Current.Gparam_QuickEdit_Index}:\[([0-9]+)\]");
+
+            if (idxMatch.Success && idxMatch.Groups.Count >= 2)
+            {
+                int targetIdx = -1;
+                int.TryParse(idxMatch.Groups[1].Value, out targetIdx);
+
+                for (int i = 0; i < targetField.Values.Count; i++)
+                {
+                    GPARAM.IFieldValue entry = targetField.Values[i];
+
+                    if (i == targetIdx)
+                    {
+                        filterTruth[i] = true;
+                        //TaskLogs.AddLog($"Filter: Matched ID {targetId} - {entry.Id}");
+                    }
+                }
+            }
+        }
+
         private void FilterTimeOfDay(GPARAM.IField targetField, string filterArg)
         {
-            var todMatch = Regex.Match(filterArg, $@"{CFG.Current.Gparam_QuickEdit_TimeOfDay}:([0-9]+)");
+            var todMatch = Regex.Match(filterArg, $@"{CFG.Current.Gparam_QuickEdit_TimeOfDay}:\[([0-9]+)\]");
 
             if (todMatch.Success && todMatch.Groups.Count >= 2)
             {

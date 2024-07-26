@@ -127,11 +127,15 @@ public class GparamEditorTab
                 ImGui.InputText("Value Filter: Match Value", ref CFG.Current.Gparam_QuickEdit_Value, 255);
                 ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Value' filter argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
 
+                ImGui.InputText("Value Filter: Match Index", ref CFG.Current.Gparam_QuickEdit_Index, 255);
+                ImguiUtils.ShowHoverTooltip("The text string to detect for the 'Index' filter argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
+
                 if (ImGui.Button("Reset to Default"))
                 {
                     CFG.Current.Gparam_QuickEdit_ID = "id";
                     CFG.Current.Gparam_QuickEdit_TimeOfDay = "tod";
                     CFG.Current.Gparam_QuickEdit_Value = "value";
+                    CFG.Current.Gparam_QuickEdit_Index = "index";
                 }
             }
 

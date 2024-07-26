@@ -11,6 +11,11 @@ General:
  
 Interface:
  - ADD: Change the toolbar panels into single "Actions" panel with collapsible groups + add drop-down actions to menu-bar
+ - ADD: Edit History panel: works like the logger but as a separate window. (Add EditLog prints to all actions)
+ 
+Viewport:
+ - ADD: support for transparent shapes, so regions can be better visualized
+ - ADD: support for billboard sprites, e.g. images that are rendered towards the camera but placed at a fixed point in the viewport space
  
 Map Editor: 
  - ADD: .BTAB support
@@ -53,6 +58,7 @@ Text Editor:
  - FIX: vanilla entry should be preferred over dlc01/dlc02 entry
  
 Gparam Editor:
+ - ADD: json export/import of GPARAM (plus sub-classes?)
  - ADD: gparam reference support (e.g. jump to map param, and if it is offset, that value entry offset)
 
 Texture Viewer: 

@@ -1,5 +1,6 @@
 //using Microsoft.Xna.Framework;
 
+using DotNext;
 using ImGuiNET;
 using Microsoft.Win32;
 using SoulsFormats;
@@ -13,6 +14,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Security.Cryptography;
 using System.Text;
 using Veldrid;
 using Veldrid.Utilities;
@@ -1115,5 +1117,38 @@ public static class Utils
         //throw new NotImplementedException($"{vec}");
 
         return vec;
+    }
+
+    public static int GenerateRandomInt(RandomNumberGenerator randomSource, int min, int max)
+    {
+        double randomValue = randomSource.NextDouble();
+
+        TaskLogs.AddLog($"randomValue: {randomValue}");
+
+        int diff = max - min;
+
+        TaskLogs.AddLog($"diff: {diff}");
+        // In-case the order is swapped
+        if (max < min)
+            diff = min - max;
+
+        double tResult = (diff * randomValue);
+
+        TaskLogs.AddLog($"tResult: {tResult}");
+        TaskLogs.AddLog($"tResult Rounded: {(int)Math.Round(tResult)}");
+        return (int)Math.Round(tResult);
+    }
+
+    public static double GenerateRandomDouble(RandomNumberGenerator randomSource, double min, double max)
+    {
+        double randomValue = randomSource.NextDouble();
+
+        double diff = max - min;
+
+        // In-case the order is swapped
+        if (max < min)
+            diff = min - max;
+
+        return (diff * randomValue);
     }
 }

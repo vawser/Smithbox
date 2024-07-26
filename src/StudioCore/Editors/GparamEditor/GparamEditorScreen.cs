@@ -1,4 +1,5 @@
-﻿using ImGuiNET;
+﻿using Google.Protobuf.WellKnownTypes;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Configuration;
@@ -12,6 +13,7 @@ using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
 using Veldrid;
@@ -831,10 +833,13 @@ public class GparamEditorScreen : EditorScreen
 
         string desc = Smithbox.BankHandler.GPARAM_Info.GetReferenceDescription(_selectedParamGroup.Key, _selectedParamField.Key);
 
+        ImguiUtils.WrappedText($"Type: {GetHumanTypeName(field)}");
+        ImguiUtils.WrappedText($"");
+
         // Skip if empty
         if (desc != "")
         {
-            ImGui.Text($"{desc}");
+            ImguiUtils.WrappedText($"{desc}");
         }
 
         // Show enum list if they exist
@@ -843,9 +848,61 @@ public class GparamEditorScreen : EditorScreen
         {
             foreach (var entry in propertyEnum.members)
             {
-                ImGui.Text($"{entry.id} - {entry.name}");
+                ImguiUtils.WrappedText($"{entry.id} - {entry.name}");
             }
         }
+    }
+
+    private string GetHumanTypeName(IField field)
+    {
+        string typeName = "Unknown";
+
+        if(field is GPARAM.IntField)
+        {
+            typeName = "Signed Integer";
+        }
+        if (field is GPARAM.UintField)
+        {
+            typeName = "Unsigned Integer";
+        }
+        if (field is GPARAM.ShortField)
+        {
+            typeName = "Signed Short";
+        }
+        if (field is GPARAM.SbyteField)
+        {
+            typeName = "Signed Byte";
+        }
+        if (field is GPARAM.ByteField)
+        {
+            typeName = "Byte";
+        }
+        if (field is GPARAM.FloatField)
+        {
+            typeName = "Float";
+        }
+        if (field is GPARAM.Vector2Field)
+        {
+            typeName = "Vector2";
+        }
+        if (field is GPARAM.Vector3Field)
+        {
+            typeName = "Vector3";
+        }
+        if (field is GPARAM.Vector4Field)
+        {
+            typeName = "Vector4";
+        }
+        if (field is GPARAM.BoolField)
+        {
+            typeName = "Boolean";
+        }
+        if (field is GPARAM.ColorField)
+        {
+            typeName = "Color";
+        }
+
+        return typeName;
     }
 
     /// <summary>
@@ -921,7 +978,7 @@ public class GparamEditorScreen : EditorScreen
             {
                 if (ImGui.Selectable("Target in Quick Edit"))
                 {
-                    QuickEditHandler.UpdateGroupFilter(_selectedParamGroup.Key, _selectedParamGroup.Name);
+                    QuickEditHandler.UpdateGroupFilter(_selectedParamGroup.Key);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -953,7 +1010,7 @@ public class GparamEditorScreen : EditorScreen
             {
                 if (ImGui.Selectable("Target in Quick Edit"))
                 {
-                    QuickEditHandler.UpdateFieldFilter(_selectedParamField.Key, _selectedParamField.Name);
+                    QuickEditHandler.UpdateFieldFilter(_selectedParamField.Key);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -983,6 +1040,27 @@ public class GparamEditorScreen : EditorScreen
         {
             if (ImGui.BeginPopupContextItem($"Options##Gparam_PropId_Context"))
             {
+                if (ImGui.Selectable("Target in Quick Edit"))
+                {
+                    var fieldIndex = -1;
+                    for (int i = 0; i < _selectedParamField.Values.Count; i++)
+                    {
+                        if (_selectedParamField.Values[i] == _selectedFieldValue)
+                        {
+                            fieldIndex = i;
+                            break;
+                        }
+                    }
+
+                    if(fieldIndex != -1)
+                    {
+                        QuickEditHandler.UpdateValueRowFilter(fieldIndex);
+                    }
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowHoverTooltip("Add this field to the Field Filter in the Quick Edit window.");
+
                 if (ImGui.Selectable("Remove"))
                 {
                     var action = new GparamRemoveValueRow(this, _selectedGparam, _selectedParamField, _selectedFieldValue);
