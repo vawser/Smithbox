@@ -77,6 +77,17 @@ public class SystemTab
                 Smithbox.UpdateFormatAssertState();
             }
 
+            if (ImGui.CollapsingHeader("Loggers"))
+            {
+                ImGui.Checkbox("Display Information Logger", ref CFG.Current.Interface_DisplayInfoLogger);
+                ImguiUtils.ShowHoverTooltip("If enabled, the information logger will be visible in the menubar.");
+
+                ImGui.Checkbox("Display Edit History Logger", ref CFG.Current.Interface_DisplayEditLogger);
+                ImguiUtils.ShowHoverTooltip("If enabled, the edit history logger will be visible in the menubar.");
+
+                Smithbox.UpdateFormatAssertState();
+            }
+
             if (ImGui.CollapsingHeader("Soapstone Server"))
             {
                 var running = SoapstoneServer.GetRunningPort() is int port

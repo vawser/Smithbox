@@ -59,6 +59,9 @@ public class CFG
     //**************
     // Interface
     //**************
+    public bool Interface_DisplayInfoLogger = true;
+    public bool Interface_DisplayEditLogger = true;
+
     public float Interface_FontSize = 14.0f;
 
     // View Toggles

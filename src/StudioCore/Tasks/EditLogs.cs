@@ -10,12 +10,13 @@ using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace StudioCore;
+namespace StudioCore.Tasks;
+
 
 /// <summary>
-///     Used to log and display information for the user.
+/// Used to log and display edit information for the user.
 /// </summary>
-public static class TaskLogs
+public static class EditLogs
 {
     /// <summary>
     ///     Priority of log message. Affects how log is conveyed to the user.
@@ -148,42 +149,12 @@ public static class TaskLogs
 
     public static void Display()
     {
-        if (!CFG.Current.Interface_DisplayInfoLogger)
+        if (!CFG.Current.Interface_DisplayEditLogger)
             return;
 
         ImGui.Spacing();
         ImGui.Separator();
         ImGui.Spacing();
-
-        // Warning List
-        if (_warningList.Count > 0)
-        {
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Warning_Text_Color);
-            if (ImGui.BeginMenu("!! WARNINGS!! "))
-            {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Warning_Text_Color);
-                ImGui.Text("Click warnings to remove them from list");
-                if (ImGui.Button("Remove All Warnings"))
-                {
-                    _warningList.Clear();
-                }
-
-                ImGui.Separator();
-                foreach (var text in _warningList)
-                {
-                    if (ImGui.Selectable(text, false, ImGuiSelectableFlags.DontClosePopups))
-                    {
-                        _warningList.Remove(text);
-                        break;
-                    }
-                }
-
-                ImGui.PopStyleColor();
-                ImGui.EndMenu();
-            }
-
-            ImGui.PopStyleColor();
-        }
 
         // Logger
         var dir = ImGuiDir.Right;
@@ -192,11 +163,11 @@ public static class TaskLogs
             dir = ImGuiDir.Down;
         }
 
-        if (ImGui.ArrowButton("##ShowLogsBtn", dir))
+        if (ImGui.ArrowButton("##ShowEditLogsBtn", dir))
         {
             _loggerWindowOpen = !_loggerWindowOpen;
         }
-        ImguiUtils.ShowHoverTooltip("Show the Logger window.");
+        ImguiUtils.ShowHoverTooltip("Show the Edit History logger window.");
 
         if (_loggerWindowOpen)
         {
@@ -205,9 +176,9 @@ public static class TaskLogs
             ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Imgui_Moveable_TitleBg_Active);
             ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBg);
             ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-            if (ImGui.Begin("Logger##TaskLogger", ref _loggerWindowOpen, ImGuiWindowFlags.NoDocking))
+            if (ImGui.Begin("Edit History##EditLogger", ref _loggerWindowOpen, ImGuiWindowFlags.NoDocking))
             {
-                if (ImGui.Button("Clear##TaskLogger"))
+                if (ImGui.Button("Clear##EditLogger"))
                 {
                     _log.Clear();
                     _lastLogEntry = null;
@@ -215,10 +186,10 @@ public static class TaskLogs
                 }
 
                 ImGui.SameLine();
-                if (ImGui.Button("Copy to Clipboard##TaskLogger"))
+                if (ImGui.Button("Copy to Clipboard##EditLogger"))
                 {
                     string contents = "";
-                    foreach(var entry in _log)
+                    foreach (var entry in _log)
                     {
                         contents = contents + $"{entry.FormattedMessage}\n";
                     }
@@ -226,10 +197,7 @@ public static class TaskLogs
                     PlatformUtils.Instance.SetClipboardText($"{contents}");
                 }
 
-                ImGui.SameLine();
-                ImGui.Checkbox("Log debug messages", ref _showDebugLogs);
-
-                ImGui.BeginChild("##LogItems");
+                ImGui.BeginChild("##EditLogItems");
                 ImGui.Spacing();
                 for (var i = 0; i < _log.Count; i++)
                 {

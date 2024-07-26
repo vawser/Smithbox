@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.GraphicsEditor;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -31,7 +32,9 @@ public class GparamEditorActions
 
         private readonly List<GparamValueChange> Changes = new();
 
-        public GparamValueChangeAction(IField field, IFieldValue fieldValue, object newValue, int index, ValueChangeType valueChangeType)
+        private string ProvenanceString;
+
+        public GparamValueChangeAction(string fileName, string groupName, IField field, IFieldValue fieldValue, object newValue, int index, ValueChangeType valueChangeType)
         {
             var change = new GparamValueChange();
             change.Index = index;
@@ -40,6 +43,8 @@ public class GparamEditorActions
             change.NewValue = newValue;
             change.ValueChangeType = valueChangeType;
             Changes.Add(change);
+
+            ProvenanceString = $"Param: {fileName} - Group: {groupName} - Field: {field.Name}";
         }
 
         public override ActionEvent Execute()
@@ -78,6 +83,8 @@ public class GparamEditorActions
                         result = int.MinValue;
 
                     intField.Values[change.Index].Value = result;
+
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {intField.Values[change.Index].Id} Value changed to {intField.Values[change.Index].Value}");
                 }
                 if (change.Field is GPARAM.UintField uintField)
                 {
@@ -111,6 +118,7 @@ public class GparamEditorActions
                         result = uint.MinValue;
 
                     uintField.Values[change.Index].Value = result;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {uintField.Values[change.Index].Id} Value changed to {uintField.Values[change.Index].Value}");
                 }
                 if (change.Field is GPARAM.ShortField shortField)
                 {
@@ -144,6 +152,7 @@ public class GparamEditorActions
                         result = short.MinValue;
 
                     shortField.Values[change.Index].Value = result;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {shortField.Values[change.Index].Id} Value changed to {shortField.Values[change.Index].Value}");
                 }
                 if (change.Field is GPARAM.SbyteField sbyteField)
                 {
@@ -177,6 +186,7 @@ public class GparamEditorActions
                         result = sbyte.MinValue;
 
                     sbyteField.Values[change.Index].Value = result;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {sbyteField.Values[change.Index].Id} Value changed to {sbyteField.Values[change.Index].Value}");
                 }
                 if (change.Field is GPARAM.ByteField byteField)
                 {
@@ -210,6 +220,7 @@ public class GparamEditorActions
                         result = byte.MinValue;
 
                     byteField.Values[change.Index].Value = result;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {byteField.Values[change.Index].Id} Value changed to {byteField.Values[change.Index].Value}");
                 }
                 if (change.Field is GPARAM.BoolField boolField)
                 {
@@ -251,6 +262,7 @@ public class GparamEditorActions
                         result = float.MinValue;
 
                     floatField.Values[change.Index].Value = result;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {floatField.Values[change.Index].Id} Value changed to {floatField.Values[change.Index].Value}");
                 }
                 if (change.Field is GPARAM.Vector2Field vector2Field)
                 {
@@ -296,6 +308,7 @@ public class GparamEditorActions
                         result[1] = float.MinValue;
 
                     vector2Field.Values[change.Index].Value = result;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {vector2Field.Values[change.Index].Id} Value changed to {vector2Field.Values[change.Index].Value}");
                 }
                 if (change.Field is GPARAM.Vector3Field vector3Field)
                 {
@@ -350,6 +363,7 @@ public class GparamEditorActions
                         result[2] = float.MinValue;
 
                     vector3Field.Values[change.Index].Value = result;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {vector3Field.Values[change.Index].Id} Value changed to {vector3Field.Values[change.Index].Value}");
                 }
                 if (change.Field is GPARAM.Vector4Field vector4Field)
                 {
@@ -413,12 +427,14 @@ public class GparamEditorActions
                         result[3] = float.MinValue;
 
                     vector4Field.Values[change.Index].Value = result;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {vector4Field.Values[change.Index].Id} Value changed to {vector4Field.Values[change.Index].Value}");
                 }
                 if (change.Field is GPARAM.ColorField colorField)
                 {
                     var assignedValue = (Color)change.NewValue;
 
                     colorField.Values[change.Index].Value = assignedValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {colorField.Values[change.Index].Id} Value changed to {colorField.Values[change.Index].Value}");
                 }
             }
 
@@ -432,46 +448,57 @@ public class GparamEditorActions
                 if (change.Field is GPARAM.IntField intField)
                 {
                     intField.Values[change.Index].Value = (int)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {intField.Values[change.Index].Id} Value reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.UintField uintField)
                 {
                     uintField.Values[change.Index].Value = (uint)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {uintField.Values[change.Index].Id} Value reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.ShortField shortField)
                 {
                     shortField.Values[change.Index].Value = (short)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {shortField.Values[change.Index].Id} Value reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.SbyteField sbyteField)
                 {
                     sbyteField.Values[change.Index].Value = (sbyte)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {sbyteField.Values[change.Index].Id} Value reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.ByteField byteField)
                 {
                     byteField.Values[change.Index].Value = (byte)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {byteField.Values[change.Index].Id} Value reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.BoolField boolField)
                 {
                     boolField.Values[change.Index].Value = (bool)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {boolField.Values[change.Index].Id} Value reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.FloatField floatField)
                 {
                     floatField.Values[change.Index].Value = (float)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {floatField.Values[change.Index].Id} Value reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.Vector2Field vector2Field)
                 {
                     vector2Field.Values[change.Index].Value = (Vector2)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {vector2Field.Values[change.Index].Id} Value reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.Vector3Field vector3Field)
                 {
                     vector3Field.Values[change.Index].Value = (Vector3)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {vector3Field.Values[change.Index].Id} Value reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.Vector4Field vector4Field)
                 {
                     vector4Field.Values[change.Index].Value = (Vector4)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {vector4Field.Values[change.Index].Id} Value reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.ColorField colorField)
                 {
                     colorField.Values[change.Index].Value = (Color)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {colorField.Values[change.Index].Id} Value reverted to {change.OldValue}");
                 }
             }
 
@@ -492,7 +519,9 @@ public class GparamEditorActions
     {
         private readonly List<GparamValueChange> Changes = new();
 
-        public GparamTimeOfDayChangeAction(SoulsFormats.GPARAM.IField field, SoulsFormats.GPARAM.IFieldValue fieldValue, object newValue, int index)
+        private string ProvenanceString;
+
+        public GparamTimeOfDayChangeAction(string fileName, string groupName, GPARAM.IField field, GPARAM.IFieldValue fieldValue, object newValue, int index)
         {
             var change = new GparamValueChange();
             change.Index = index;
@@ -500,6 +529,8 @@ public class GparamEditorActions
             change.OldValue = fieldValue.Unk04;
             change.NewValue = newValue;
             Changes.Add(change);
+
+            ProvenanceString = $"Param: {fileName} - Group: {groupName} - Field: {field.Name}";
         }
 
         public override ActionEvent Execute()
@@ -509,46 +540,57 @@ public class GparamEditorActions
                 if (change.Field is GPARAM.IntField intField)
                 {
                     intField.Values[change.Index].Unk04 = (float)change.NewValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {intField.Values[change.Index].Unk04} Time of Day changed to {change.NewValue}");
                 }
                 if (change.Field is GPARAM.UintField uintField)
                 {
                     uintField.Values[change.Index].Unk04 = (float)change.NewValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {uintField.Values[change.Index].Unk04} Time of Day changed to {change.NewValue}");
                 }
                 if (change.Field is GPARAM.ShortField shortField)
                 {
                     shortField.Values[change.Index].Unk04 = (float)change.NewValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {shortField.Values[change.Index].Unk04} Time of Day changed to {change.NewValue}");
                 }
                 if (change.Field is GPARAM.SbyteField sbyteField)
                 {
                     sbyteField.Values[change.Index].Unk04 = (float)change.NewValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {sbyteField.Values[change.Index].Unk04} Time of Day changed to {change.NewValue}");
                 }
                 if (change.Field is GPARAM.ByteField byteField)
                 {
                     byteField.Values[change.Index].Unk04 = (float)change.NewValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {byteField.Values[change.Index].Unk04} Time of Day changed to {change.NewValue}");
                 }
                 if (change.Field is GPARAM.BoolField boolField)
                 {
                     boolField.Values[change.Index].Unk04 = (float)change.NewValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {boolField.Values[change.Index].Unk04} Time of Day changed to {change.NewValue}");
                 }
                 if (change.Field is GPARAM.FloatField floatField)
                 {
                     floatField.Values[change.Index].Unk04 = (float)change.NewValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {floatField.Values[change.Index].Unk04} Time of Day changed to {change.NewValue}");
                 }
                 if (change.Field is GPARAM.Vector2Field vector2Field)
                 {
                     vector2Field.Values[change.Index].Unk04 = (float)change.NewValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {vector2Field.Values[change.Index].Unk04} Time of Day changed to {change.NewValue}");
                 }
                 if (change.Field is GPARAM.Vector3Field vector3Field)
                 {
                     vector3Field.Values[change.Index].Unk04 = (float)change.NewValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {vector3Field.Values[change.Index].Unk04} Time of Day changed to {change.NewValue}");
                 }
                 if (change.Field is GPARAM.Vector4Field vector4Field)
                 {
                     vector4Field.Values[change.Index].Unk04 = (float)change.NewValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {vector4Field.Values[change.Index].Unk04} Time of Day changed to {change.NewValue}");
                 }
                 if (change.Field is GPARAM.ColorField colorField)
                 {
                     colorField.Values[change.Index].Unk04 = (float)change.NewValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {colorField.Values[change.Index].Unk04} Time of Day changed to {change.NewValue}");
                 }
             }
 
@@ -562,46 +604,57 @@ public class GparamEditorActions
                 if (change.Field is GPARAM.IntField intField)
                 {
                     intField.Values[change.Index].Unk04 = (float)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {intField.Values[change.Index].Unk04} Time of Day reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.UintField uintField)
                 {
                     uintField.Values[change.Index].Unk04 = (float)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {uintField.Values[change.Index].Unk04} Time of Day reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.ShortField shortField)
                 {
                     shortField.Values[change.Index].Unk04 = (float)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {shortField.Values[change.Index].Unk04} Time of Day reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.SbyteField sbyteField)
                 {
                     sbyteField.Values[change.Index].Unk04 = (float)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {sbyteField.Values[change.Index].Unk04} Time of Day reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.ByteField byteField)
                 {
                     byteField.Values[change.Index].Unk04 = (float)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {byteField.Values[change.Index].Unk04} Time of Day reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.BoolField boolField)
                 {
                     boolField.Values[change.Index].Unk04 = (float)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {boolField.Values[change.Index].Unk04} Time of Day reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.FloatField floatField)
                 {
                     floatField.Values[change.Index].Unk04 = (float)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {floatField.Values[change.Index].Unk04} Time of Day reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.Vector2Field vector2Field)
                 {
                     vector2Field.Values[change.Index].Unk04 = (float)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {vector2Field.Values[change.Index].Unk04} Time of Day reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.Vector3Field vector3Field)
                 {
                     vector3Field.Values[change.Index].Unk04 = (float)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {vector3Field.Values[change.Index].Unk04} Time of Day reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.Vector4Field vector4Field)
                 {
                     vector4Field.Values[change.Index].Unk04 = (float)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {vector4Field.Values[change.Index].Unk04} Time of Day reverted to {change.OldValue}");
                 }
                 if (change.Field is GPARAM.ColorField colorField)
                 {
                     colorField.Values[change.Index].Unk04 = (float)change.OldValue;
+                    EditLogs.AddLog($"GPARAM EDITOR: {ProvenanceString} Row {colorField.Values[change.Index].Unk04} Time of Day reverted to {change.OldValue}");
                 }
             }
 
@@ -674,6 +727,8 @@ public class GparamEditorActions
             Screen._selectedGparamInfo.WasModified = true;
             Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 
+            EditLogs.AddLog($"GPARAM EDITOR: GparamDuplicateValueRow executed: {NewRowID}");
+
             return ActionEvent.NoEvent;
         }
 
@@ -685,6 +740,8 @@ public class GparamEditorActions
 
             Screen._selectedGparamInfo.WasModified = false;
             Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
+
+            EditLogs.AddLog($"GPARAM EDITOR: GparamDuplicateValueRow reverted: {NewRowID}");
 
             return ActionEvent.NoEvent;
         }
@@ -717,6 +774,8 @@ public class GparamEditorActions
             Screen._selectedGparamInfo.WasModified = true;
             Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 
+            EditLogs.AddLog($"GPARAM EDITOR: GparamRemoveValueRow executed: {RemovedRowID}");
+
             return ActionEvent.NoEvent;
         }
 
@@ -728,6 +787,8 @@ public class GparamEditorActions
 
             Screen._selectedGparamInfo.WasModified = true;
             Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
+
+            EditLogs.AddLog($"GPARAM EDITOR: GparamRemoveValueRow reverted: {RemovedRowID}");
 
             return ActionEvent.NoEvent;
         }

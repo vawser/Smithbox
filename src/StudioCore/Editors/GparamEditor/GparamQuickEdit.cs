@@ -344,7 +344,7 @@ namespace StudioCore.Editors.GparamEditor
                                     resolvedList.Add($"{curParamName}:{curGroupName}:{curFieldName}");
 
                                     // TODO: Return bundle of actions so we can execute them as one clean compound action
-                                    var actions = ResolveQuickEdit(targetParamField);
+                                    var actions = ResolveQuickEdit(curParamName, curGroupName, targetParamField);
                                     actionList.Add(actions);
                                 }
                             }
@@ -536,7 +536,7 @@ namespace StudioCore.Editors.GparamEditor
             }
         }
 
-        private GparamBatchChangeAction ResolveQuickEdit(GPARAM.IField targetField)
+        private GparamBatchChangeAction ResolveQuickEdit(string gparamName, string groupName, GPARAM.IField targetField)
         {
             filterTruth = new bool[targetField.Values.Count];
             actions = new List<GparamValueChangeAction>();
@@ -562,13 +562,13 @@ namespace StudioCore.Editors.GparamEditor
             var commands = _valueCommandString.Split($"{CFG.Current.Gparam_QuickEdit_Chain}");
             foreach (var command in commands)
             {
-                CommandAdjust(targetField, command, EditEffectType.Set);
-                CommandAdjust(targetField, command, EditEffectType.Add);
-                CommandAdjust(targetField, command, EditEffectType.Subtract);
-                CommandAdjust(targetField, command, EditEffectType.Multiply);
-                CommandAdjust(targetField, command, EditEffectType.SetByRow);
-                CommandAdjust(targetField, command, EditEffectType.Restore);
-                CommandAdjust(targetField, command, EditEffectType.Random);
+                CommandAdjust(targetField, command, EditEffectType.Set, gparamName, groupName);
+                CommandAdjust(targetField, command, EditEffectType.Add, gparamName, groupName);
+                CommandAdjust(targetField, command, EditEffectType.Subtract, gparamName, groupName);
+                CommandAdjust(targetField, command, EditEffectType.Multiply, gparamName, groupName);
+                CommandAdjust(targetField, command, EditEffectType.SetByRow, gparamName, groupName);
+                CommandAdjust(targetField, command, EditEffectType.Restore, gparamName, groupName);
+                CommandAdjust(targetField, command, EditEffectType.Random, gparamName, groupName);
             }
 
             // Combine all the individual changes into a single action
@@ -614,7 +614,7 @@ namespace StudioCore.Editors.GparamEditor
             return (foundValue, vanillaValue);
         }
 
-        private void CommandAdjust(GPARAM.IField targetField, string commandArg, EditEffectType effectType)
+        private void CommandAdjust(GPARAM.IField targetField, string commandArg, EditEffectType effectType, string gparamName, string groupName)
         {
             //TaskLogs.AddLog(commandArg);
 
@@ -734,22 +734,22 @@ namespace StudioCore.Editors.GparamEditor
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                     actions.Add(action);
                                 }
                                 if(effectType == EditEffectType.SetByRow)
@@ -758,7 +758,7 @@ namespace StudioCore.Editors.GparamEditor
                                     {
                                         commandValue = intField.Values.Find(x => x.Id == rowsetId).Value;
 
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -770,7 +770,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (foundValue)
                                     {
-                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -779,13 +779,10 @@ namespace StudioCore.Editors.GparamEditor
                                     int commandValue_secondary = -1;
                                     var valid_secondary = int.TryParse(valueCommandString_secondary, out commandValue_secondary);
 
-                                    TaskLogs.AddLog($"commandValue: {commandValue}");
-                                    TaskLogs.AddLog($"commandValue_secondary: {commandValue_secondary}");
-
                                     if (valid_secondary)
                                     {
                                         int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, newValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -801,22 +798,22 @@ namespace StudioCore.Editors.GparamEditor
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName,  targetField, entry, commandValue, i, ValueChangeType.Addition);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.SetByRow)
@@ -825,7 +822,7 @@ namespace StudioCore.Editors.GparamEditor
                                     {
                                         commandValue = uintField.Values.Find(x => x.Id == rowsetId).Value;
 
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -837,7 +834,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (foundValue)
                                     {
-                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -850,7 +847,7 @@ namespace StudioCore.Editors.GparamEditor
                                     {
                                         int newValue = Utils.GenerateRandomInt(RandomSource, (int)commandValue, commandValue_secondary);
 
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, (uint)newValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, (uint)newValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -866,22 +863,22 @@ namespace StudioCore.Editors.GparamEditor
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.SetByRow)
@@ -890,7 +887,7 @@ namespace StudioCore.Editors.GparamEditor
                                     {
                                         commandValue = shortField.Values.Find(x => x.Id == rowsetId).Value;
 
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -902,7 +899,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (foundValue)
                                     {
-                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -918,7 +915,7 @@ namespace StudioCore.Editors.GparamEditor
                                         if (newValue > short.MaxValue)
                                             newValue = short.MaxValue;
 
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, (short)newValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, (short)newValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -934,22 +931,22 @@ namespace StudioCore.Editors.GparamEditor
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.SetByRow)
@@ -958,7 +955,7 @@ namespace StudioCore.Editors.GparamEditor
                                     {
                                         commandValue = sbyteField.Values.Find(x => x.Id == rowsetId).Value;
 
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -970,7 +967,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (foundValue)
                                     {
-                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -986,7 +983,7 @@ namespace StudioCore.Editors.GparamEditor
                                         if (newValue > sbyte.MaxValue)
                                             newValue = sbyte.MaxValue;
 
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, (sbyte)newValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, (sbyte)newValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -1002,22 +999,22 @@ namespace StudioCore.Editors.GparamEditor
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.SetByRow)
@@ -1026,7 +1023,7 @@ namespace StudioCore.Editors.GparamEditor
                                     {
                                         commandValue = byteField.Values.Find(x => x.Id == rowsetId).Value;
 
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -1038,7 +1035,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (foundValue)
                                     {
-                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -1054,7 +1051,7 @@ namespace StudioCore.Editors.GparamEditor
                                         if (newValue > byte.MaxValue)
                                             newValue = byte.MaxValue;
 
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, (byte)newValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, (byte)newValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -1080,7 +1077,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (foundValue)
                                     {
-                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -1098,14 +1095,14 @@ namespace StudioCore.Editors.GparamEditor
                                         if (newValue > 0.5)
                                             newBool = true;
 
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, newBool, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, newBool, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
                                 else
                                 {
                                     // Always set bools
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1120,22 +1117,22 @@ namespace StudioCore.Editors.GparamEditor
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.SetByRow)
@@ -1144,7 +1141,7 @@ namespace StudioCore.Editors.GparamEditor
                                     {
                                         commandValue = floatField.Values.Find(x => x.Id == rowsetId).Value;
 
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -1156,7 +1153,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (foundValue)
                                     {
-                                        var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                        var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -1169,7 +1166,7 @@ namespace StudioCore.Editors.GparamEditor
                                     {
                                         double newValue = Utils.GenerateRandomDouble(RandomSource, (double)commandValue, (double)commandValue_secondary);
 
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, (float)newValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, (float)newValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                 }
@@ -1186,7 +1183,7 @@ namespace StudioCore.Editors.GparamEditor
                                 {
                                     commandValue = vector2Field.Values.Find(x => x.Id == rowsetId).Value;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1198,7 +1195,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                 if (foundValue)
                                 {
-                                    var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1224,22 +1221,22 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (effectType == EditEffectType.Set)
                                     {
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Add)
                                     {
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                         actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Subtract)
                                     {
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                         actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Multiply)
                                     {
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                         actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Random)
@@ -1263,7 +1260,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                                 Vector2 newValue = new Vector2((float)newValue1, (float)newValue2);
 
-                                                GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, newValue, i, ValueChangeType.Set);
+                                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
                                                 actions.Add(action);
                                             }
                                         }
@@ -1282,7 +1279,7 @@ namespace StudioCore.Editors.GparamEditor
                                 {
                                     commandValue = vector3Field.Values.Find(x => x.Id == rowsetId).Value;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1294,7 +1291,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                 if (foundValue)
                                 {
-                                    var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1323,22 +1320,22 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (effectType == EditEffectType.Set)
                                     {
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Add)
                                     {
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                         actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Subtract)
                                     {
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                         actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Multiply)
                                     {
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                         actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Random)
@@ -1367,7 +1364,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                                 Vector3 newValue = new Vector3((float)newValue1, (float)newValue2, (float)newValue3);
 
-                                                GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, newValue, i, ValueChangeType.Set);
+                                                GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
                                                 actions.Add(action);
                                             }
                                         }
@@ -1386,7 +1383,7 @@ namespace StudioCore.Editors.GparamEditor
                                 {
                                     commandValue = vector4Field.Values.Find(x => x.Id == rowsetId).Value;
 
-                                    GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1398,7 +1395,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                 if (foundValue)
                                 {
-                                    var action = new GparamValueChangeAction(targetField, entry, vanillaValue, i, ValueChangeType.Set);
+                                    var action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, vanillaValue, i, ValueChangeType.Set);
                                     actions.Add(action);
                                 }
                             }
@@ -1430,22 +1427,22 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (effectType == EditEffectType.Set)
                                     {
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Set);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Add)
                                     {
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                         actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Subtract)
                                     {
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Subtraction);
                                         actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Multiply)
                                     {
-                                        GparamValueChangeAction action = new GparamValueChangeAction(targetField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                        GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                         actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Random)
@@ -1480,7 +1477,7 @@ namespace StudioCore.Editors.GparamEditor
                                                 Vector4 newValue = new Vector4((float)newValue1, (float)newValue2, (float)newValue3, (float)newValue4);
 
                                                 GparamValueChangeAction action = new GparamValueChangeAction(
-                                                    targetField, entry, newValue, i, ValueChangeType.Set);
+                                                    gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
                                                 actions.Add(action);
                                             }
                                         }

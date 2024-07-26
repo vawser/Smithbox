@@ -439,7 +439,7 @@ public class GparamEditor
                 {
                     _selectedGparamInfo.WasModified = true;
                     GparamValueChangeAction action = null;
-                    action = new GparamValueChangeAction(field, value, newValue, idx, GparamValueChangeAction.ValueChangeType.Set);
+                    action = new GparamValueChangeAction(Screen._selectedGparamKey, Screen._selectedParamGroup.Name, field, value, newValue, idx, GparamValueChangeAction.ValueChangeType.Set);
 
                     Screen.EditorActionManager.ExecuteAction(action);
                 }
@@ -505,7 +505,7 @@ public class GparamEditor
                 {
                     _selectedGparamInfo.WasModified = true;
                     GparamTimeOfDayChangeAction action = null;
-                    action = new GparamTimeOfDayChangeAction(field, value, newValue, idx);
+                    action = new GparamTimeOfDayChangeAction(Screen._selectedGparamKey, Screen._selectedParamGroup.Name, field, value, newValue, idx);
 
                     Screen.EditorActionManager.ExecuteAction(action);
                 }

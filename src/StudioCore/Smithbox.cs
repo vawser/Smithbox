@@ -23,6 +23,7 @@ using Version = System.Version;
 using StudioCore.Interface;
 using StudioCore.Core;
 using Microsoft.AspNetCore.Components.Forms;
+using StudioCore.Tasks;
 
 namespace StudioCore;
 
@@ -557,6 +558,7 @@ public class Smithbox
             }
 
             TaskLogs.Display();
+            EditLogs.Display();
 
             ImGui.EndMainMenuBar();
         }
