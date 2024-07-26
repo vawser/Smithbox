@@ -990,6 +990,8 @@ public class MapPropertyEditor
                 var a = (Array)prop.GetValue(obj);
                 var open = ImGui.TreeNodeEx($@"{GetFieldName(type, prop, selection)}[]", ImGuiTreeNodeFlags.DefaultOpen);
                 ShowFieldHint(type, prop, selection);
+                ImGui.NextColumn();
+                ImGui.NextColumn();
                 if (open)
                 {
                     for (var i = 0; i < a.Length; i++)
@@ -1013,6 +1015,7 @@ public class MapPropertyEditor
                         }
                         else
                         {
+                            ImGui.AlignTextToFramePadding();
                             var array = obj as object[];
                             PropGenericFieldRow(selection, entSelection, prop, typ.GetElementType(), a.GetValue(i), $@"{GetFieldName(type, prop, selection)}[{i}]", i, classIndex);
                         }
@@ -1201,7 +1204,7 @@ public class MapPropertyEditor
             }
             else
             {
-                PropGenericFieldRow(selection, entSelection, prop, typ, prop.GetValue(obj), GetFieldName(type, prop, selection), classIndex: -1);
+                PropGenericFieldRow(selection, entSelection, prop, typ, prop.GetValue(obj), GetFieldName(type, prop, selection), classIndex);
                 ImGui.PopID();
             }
 
