@@ -60,6 +60,7 @@ Text Editor:
 Gparam Editor:
  - ADD: json export/import of GPARAM (plus sub-classes?)
  - ADD: gparam reference support (e.g. jump to map param, and if it is offset, that value entry offset)
+ - ADD: sticky selection: don't automatically clear selection, rather only clear it if it becomes invalid
 
 Texture Viewer: 
  - ADD: support for 'custom' Shoebox Layouts for non-Shoebox Layout games. Smithbox will instead read from a Shoebox folder in .smithbox for these games.
@@ -88,6 +89,3 @@ World Map:
  - Add the the toolbar version
  - Add submit buttons instead of the weird selectables
 
-Gparam Editor:
- - ADD: command: random:[{<x>}] {} contain the min and max (needed to support the vector splits)
- - ADD: command: restore - Restores the value to the value from Game Root version (if it exists).

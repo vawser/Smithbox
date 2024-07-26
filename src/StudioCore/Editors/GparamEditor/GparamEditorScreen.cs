@@ -326,22 +326,22 @@ public class GparamEditorScreen : EditorScreen
             EditorActionManager.RedoAction();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete))
-        {
-            if (_selectedGparam != null && _selectedParamField != null && _selectedFieldValue != null)
-            {
-                var action = new GparamRemoveValueRow(this, _selectedGparam, _selectedParamField, _selectedFieldValue);
-                EditorActionManager.ExecuteAction(action);
-            }
-        }
+    }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
+    public void DeleteValueRow()
+    {
+        if (_selectedGparam != null && _selectedParamField != null && _selectedFieldValue != null)
         {
-            if (_selectedParamField != null && _selectedFieldValue != null && _selectedGparam != null)
-            {
-                var action = new GparamDuplicateValueRow(this, _selectedGparam, _selectedParamField, _selectedFieldValue, _duplicateValueRowId);
-                EditorActionManager.ExecuteAction(action);
-            }
+            var action = new GparamRemoveValueRow(this, _selectedGparam, _selectedParamField, _selectedFieldValue);
+            EditorActionManager.ExecuteAction(action);
+        }
+    }
+    public void DuplicateValueRow()
+    {
+        if (_selectedParamField != null && _selectedFieldValue != null && _selectedGparam != null)
+        {
+            var action = new GparamDuplicateValueRow(this, _selectedGparam, _selectedParamField, _selectedFieldValue, _duplicateValueRowId);
+            EditorActionManager.ExecuteAction(action);
         }
     }
 
@@ -1063,8 +1063,7 @@ public class GparamEditorScreen : EditorScreen
 
                 if (ImGui.Selectable("Remove"))
                 {
-                    var action = new GparamRemoveValueRow(this, _selectedGparam, _selectedParamField, _selectedFieldValue);
-                    EditorActionManager.ExecuteAction(action);
+                    DeleteValueRow();
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -1072,11 +1071,7 @@ public class GparamEditorScreen : EditorScreen
 
                 if (ImGui.Selectable("Duplicate"))
                 {
-                    if (_selectedParamField != null && _selectedFieldValue != null && _selectedGparam != null)
-                    {
-                        var action = new GparamDuplicateValueRow(this, _selectedGparam, _selectedParamField, _selectedFieldValue, _duplicateValueRowId);
-                        EditorActionManager.ExecuteAction(action);
-                    }
+                    DuplicateValueRow();
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -1130,15 +1125,6 @@ public class GparamEditorScreen : EditorScreen
     private void ResetActionManager()
     {
         EditorActionManager.Clear();
-    }
-
-
-    private void ResetAllSelection()
-    {
-        ResetFileSelection();
-        ResetGroupSelection();
-        ResetFieldSelection();
-        ResetValueSelection();
     }
 
     private void ResetFileSelection()

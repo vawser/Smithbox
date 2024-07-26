@@ -293,7 +293,7 @@ namespace StudioCore.Editors.GparamEditor
                     _valueFilterString = "*";
                 }
             }
-            ImguiUtils.ShowHoverTooltip("Automatically fill the filter input based on current select.");
+            ImguiUtils.ShowHoverTooltip("Automatically fill the filter input based on current selection.");
 
             ImGui.SameLine();
             if (ImGui.Button("Clear", thirdButtonSize))
