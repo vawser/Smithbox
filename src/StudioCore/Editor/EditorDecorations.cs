@@ -403,7 +403,11 @@ public class EditorDecorations
         {
             if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
             {
-                Smithbox.EditorHandler.TextureViewer.ImagePreview.ShowImagePreview(context, texRef);
+                var imageDisplayed = Smithbox.EditorHandler.TextureViewer.ImagePreview.ShowImagePreview(context, texRef);
+
+                // If an image has been displayed, exit the loop so we don't show multiple images
+                if (imageDisplayed)
+                    break;
             }
         }
 
