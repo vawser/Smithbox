@@ -89,3 +89,4 @@ World Map:
  - Add the the toolbar version
  - Add submit buttons instead of the weird selectables
 
+- Add EditLogs to all actions
