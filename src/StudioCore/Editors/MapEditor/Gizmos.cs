@@ -402,8 +402,10 @@ public class Gizmos
                         }
                     }
 
-                    OriginalTransform = new Transform(accumPos / _selection.GetSelection().Count,
-                        sels.First().GetRootLocalTransform().EulerRotation);
+                    OriginalTransform = new Transform(
+                        accumPos / sels.Count(),
+                        sels.First().GetRootLocalTransform().EulerRotation
+                    );
                 }
 
                 if (Space == GizmosSpace.World)
