@@ -826,6 +826,10 @@ public class MEValueOperation : MEOperation<object, object>
         operations.Add("floor",
             (new[] { "number" }, "Rounds the current value down to the closest integer",
                 (ctx, args) => MassParamEdit.WithDynamicOf(ctx, v => Math.Floor(v))));
+        operations.Add("prepend",
+            (new[] { "text to prepend" }, "Prepends the text to the current text value",
+                (ctx, args) => MassParamEdit.WithDynamicOf(ctx, v => $"{args[0]}{v}"))
+        );
     }
 }
 
