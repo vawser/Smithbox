@@ -1,28 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Enums>
-    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
-        <Option Value="0" Name="Slash" />
-        <Option Value="1" Name="Strike" />
-        <Option Value="2" Name="Thrust" />
-        <Option Value="3" Name="Standard" />
-        <Option Value="253" Name="Refers to EquipParamWeapon atkAttribute2 field" />
-        <Option Value="254" Name="Refers to EquipParamWeapon atkAttribute field" />
-    </Enum>
-    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="10" Name="Magic" />
-        <Option Value="11" Name="Fire" />
-        <Option Value="12" Name="Lightning" />
-        <Option Value="13" Name="Holy" />
-        <Option Value="20" Name="Poison" />
-        <Option Value="21" Name="Scarlet Rot" />
-        <Option Value="22" Name="Hemorrhage" />
-        <Option Value="23" Name="Frostbite" />
-        <Option Value="24" Name="Sleep" />
-        <Option Value="25" Name="Madness" />
-        <Option Value="26" Name="Blight" />
-    </Enum>
     <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
         <Option Value="0" Name="Slash" />
         <Option Value="1" Name="Strike" />
@@ -137,8 +115,8 @@
     <lockShootLimitAng AltName="Lock Direction Limit Angle" Wiki="Limit angle when facing the lock direction" />
     <pad2 AltName="" IsHidden=""/>
     <prevVelocityDirRate AltName="Previous Velocity Direction Rate" Wiki="Ratio to add the previous movement direction to the current direction when the sliding bullet hits the wall" />
-    <atkAttribute AltName="Attack Attribute" Wiki="Set the physical attributes to set for the bullet" Enum="ATKPARAM_ATKATTR_TYPE" />
-    <spAttribute AltName="Special Attribute" Wiki="Set special attributes to set for bullets" Enum="ATKPARAM_SPATTR_TYPE" />
+    <atkAttribute AltName="Attack Attribute" Wiki="Set the physical attributes to set for the bullet" ProjectEnum="ATKPARAM_ATKATTR_TYPE" />
+    <spAttribute AltName="Special Attribute" Wiki="Set special attributes to set for bullets" ProjectEnum="ATKPARAM_SPATTR_TYPE" />
     <Material_AttackType AltName="Material Attack Type" Wiki="Specify what the attack attribute is" Enum="BEHAVIOR_ATK_TYPE" />
     <Material_AttackMaterial AltName="Material Attack Material" Wiki="Used for SFX / SE during attack" Enum="WEP_MATERIAL_ATK" />
     <isPenetrateChr AltName="Is Penetrate Character" Wiki="If it is ON, it will penetrate without landing when it hits the character." IsBool="" />
