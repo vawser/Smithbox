@@ -20,21 +20,28 @@ public class ShoeboxLayoutContainer
 
     public ShoeboxLayoutContainer(string filepath)
     {
-        var binder = BND4.Read(filepath);
-
-        ContainerName = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(filepath));
-
-        foreach (var file in binder.Files)
+        try
         {
-            if(file.Name.Contains(".layout"))
-            {
-                ShoeboxLayout newLayout = new ShoeboxLayout(file);
+            var binder = BND4.Read(filepath);
 
-                if(!Layouts.ContainsKey(file.Name))
+            ContainerName = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(filepath));
+
+            foreach (var file in binder.Files)
+            {
+                if (file.Name.Contains(".layout"))
                 {
-                    Layouts.Add(file.Name, newLayout);
+                    ShoeboxLayout newLayout = new ShoeboxLayout(file);
+
+                    if (!Layouts.ContainsKey(file.Name))
+                    {
+                        Layouts.Add(file.Name, newLayout);
+                    }
                 }
             }
+        }
+        catch(Exception e) 
+        {
+            TaskLogs.AddLog($"Failed to load Shoebox Layout Container: {e.Message}");
         }
     }
 
