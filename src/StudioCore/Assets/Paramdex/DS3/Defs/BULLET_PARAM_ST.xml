@@ -59,12 +59,8 @@
     <Field Def="u8 Material_AttackMaterial = 6" />
     <Field Def="u8 Material_Size" />
     <Field Def="u8 launchConditionType" />
-    <Field Def="u8 FollowType0:1" />
-    <Field Def="u8 FollowType1:1" />
-    <Field Def="u8 FollowType2:1" />
-    <Field Def="u8 EmittePosType0:1" />
-    <Field Def="u8 EmittePosType1:1" />
-    <Field Def="u8 EmittePosType2:1" />
+    <Field Def="u8 FollowType:3" />
+    <Field Def="u8 EmittePosType:3" />
     <Field Def="u8 IsAttackSfx:1" />
     <Field Def="u8 IsEndlessHit:1" />
     <Field Def="u8 IsPenetrateMap:1" />
@@ -79,36 +75,36 @@
     <Field Def="u8 IsHitDarkForceMagic:1" />
     <Field Def="u8 IsInheritEffectToChild:1" />
     <Field Def="u8 IsInheritSpeedToChild:1" />
-    <Field Def="u8 IsLockModule:1" />
-    <Field Def="u8 IsSearchForTarget:1" />
-    <Field Def="u8 IsEmittedBullet:1" />
-    <Field Def="u8 IsInheritLifeToChild:1" />
+    <Field Def="u8 isEnableAutoHoming:1" />
+    <Field Def="u8 isSyncBulletCulcDumypolyPos:1" />
+    <Field Def="u8 isOwnerOverrideInitAngle:1" />
+    <Field Def="u8 isInheritSfxToChild:1" />
     <Field Def="u8 darkDamageDamp" />
-    <Field Def="u8 bulletHitType0" />
-    <Field Def="u8 bulletHitType1" />
-    <Field Def="f32 SpHomingYAngle" />
-    <Field Def="f32 rand_ShootAngleXZ" />
-    <Field Def="f32 rand_ShootANgleY" />
-    <Field Def="s32 bulletEmitter_bulletId = -1" />
-    <Field Def="f32 bulletEmitter_ShootInterval0" />
-    <Field Def="f32 bulletEmitter_InitInterval" />
-    <Field Def="f32 SpHomingYAngleForEnemy" />
-    <Field Def="f32 bulletEmitter_ShootInterval1" />
+    <Field Def="u8 bulletSfxDeleteType_byHit" />
+    <Field Def="u8 bulletSfxDeleteType_byLifeDead" />
+    <Field Def="f32 targetYOffsetRange" />
+    <Field Def="f32 shootAngleYMaxRandom" />
+    <Field Def="f32 shootAngleXMaxRandom" />
+    <Field Def="s32 intervalCreateBulletId = -1" />
+    <Field Def="f32 intervalCreateTimeMin" />
+    <Field Def="f32 intervalCreateTimeMax" />
+    <Field Def="f32 predictionShootObserveTime" />
+    <Field Def="f32 intervalCreateWaitTime" />
     <Field Def="u8 LaunchType" />
-    <Field Def="u8 LimitBulletParamId" />
+    <Field Def="u8 createLimitGroupId" />
     <Field Def="u8 CounterHitType = 1" />
-    <Field Def="u8 IsPosHitBullet:1" />
-    <Field Def="u8 IsAttachAttackSfx:1" />
-    <Field Def="u8 IsSpCorrection0:1" />
-    <Field Def="u8 IsSpCorrection1:1 = 1" />
-    <Field Def="u8 IsPenetrateTarget:1" />
+    <Field Def="u8 isInheritSpeedToChild:1" />
+    <Field Def="u8 isDisableHitSfx_byChrAndObj:1" />
+    <Field Def="u8 isCheckWall_byCenterRay:1" />
+    <Field Def="u8 isHitFlare:1 = 1" />
+    <Field Def="u8 isUseBulletWallFilter:1" />
     <Field Def="u8 IsSpCorrection2:1" />
-    <Field Def="u8 IsDisableIntScale:1" />
-    <Field Def="u8 unknown:1" />
-    <Field Def="f32 EmittePosRadius" />
-    <Field Def="s32 hitObjectId = -1" />
-    <Field Def="f32 subLife" />
-    <Field Def="s16 subHomingAngle = -1" />
+    <Field Def="u8 isNonDependenceMagicForFunnleNum:1" />
+    <Field Def="u8 isAiInterruptShootNoDamageBullet:1" />
+    <Field Def="f32 randomCreateRadius" />
+    <Field Def="s32 assetNo_Hit = -1" />
+    <Field Def="f32 lifeRandomRange" />
+    <Field Def="s16 homingAngleX = -1" />
     <Field Def="dummy8 pad1[2]" />
     <Field Def="f32 lockShootCorrectionAng" />
     <Field Def="dummy8 pad2[40]" />

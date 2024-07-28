@@ -29,13 +29,36 @@
         <Option Value="3" Name="Standard" />
     </Enum>
     <Enum Name="BULLET_LAUNCH_CONDITION_TYPE">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
-        <Option Value="3" Name="Type 3" />
-        <Option Value="4" Name="Type 4" />
-        <Option Value="5" Name="Type 5" />
-        <Option Value="6" Name="Type 6" />
+        <Option Value="0" Name="Always" />
+        <Option Value="1" Name="Hit water" />
+        <Option Value="2" Name="Hit water or swamp" />
+        <Option Value="3" Name="Didn't hit enemy" />
+        <Option Value="4" Name="Hit enemy" />
+        <Option Value="5" Name="Unknown" />
+        <Option Value="6" Name="Unknown" />
+        <Option Value="254" Name="Expired" />
+        <Option Value="255" Name="Hit ground or enemy" />
+    </Enum>
+    <Enum Name="BULLET_FOLLOW_TYPE" type="u8">
+      <Option Value="0" Name="Do not follow" />
+      <Option Value="1" Name="Follow shooter" />
+      <Option Value="2" Name="Follow shooter's feet" />
+      <Option Value="3" Name="Follow target" />
+      <Option Value="4" Name="Slide along ground" />
+      <Option Value="5" Name="Return to shooter" />
+    </Enum>
+    <Enum Name="BULLET_EMITTE_POS_TYPE" type="u8">
+        <Option Value="0" Name="Default" />
+        <Option Value="1" Name="Shooter + randomCreateRadius" />
+        <Option Value="2" Name="Higher elevation" />
+        <Option Value="3" Name="Nearby enemy origin. If no enemies, targets bullet origin." />
+        <Option Value="4" Name="Nearest enemy + randomCreateRadius" />
+        <Option Value="5" Name="Parent bullet (instead of hit location)" />
+        <Option Value="6" Name="Above and behind target" />
+    </Enum>
+    <Enum Name="BULLET_SFX_DELETE_TYPE" type="s8">
+      <Option Value="0" Name="Emitter Stopped" />
+      <Option Value="1" Name="Deletion" />
     </Enum>
   </Enums>
   <Self Wiki="Projectile data" Row0Dummy="" />
@@ -91,53 +114,53 @@
     <Material_AttackMaterial AltName="Material Attack Material" Wiki="Sound and visual effects on hit." />
     <Material_Size AltName="Material Size" Wiki="'Size' of attack." />
     <launchConditionType AltName="Launch Condition Type" Wiki="Condition for determining if a new bullet will be generated when this bullet lands or expires." Enum="BULLET_LAUNCH_CONDITION_TYPE" />
-    <FollowType0 AltName="Follow Type: Soulmass" IsBool="" />
-    <FollowType1 AltName="Follow Type: Catalyst" IsBool="" />
-    <FollowType2 AltName="Follow Type: Follow Floor" IsBool="" />
-    <EmittePosType0 AltName="Emitter Type: Player Feet" IsBool="" />
-    <EmittePosType1 AltName="Emitter Type: Parent Bullet" IsBool="" />
-    <EmittePosType2 AltName="Emitter Type: Nearest Enemy Feet" IsBool="" />
-    <IsAttackSfx AltName="Persistent Attack FX" Wiki="Set whether bullets stay stuck upon impact." IsBool="" />
-    <IsEndlessHit AltName="Continuous Hitbox" Wiki="Bullet hitbox is continuous." IsBool="" />
-    <IsPenetrateMap AltName="Can Penetrate Map" Wiki="Bullet will pierce the map." IsBool="" />
-    <IsHitBothTeam AltName="Can Hit Both Teams" Wiki="Bullet can hit any character." IsBool="" />
-    <IsUseShardHitList AltName="Use Shared Hit List" Wiki="Repeating bullets share the amount of times they have hit a target." IsBool="" />
-    <IsUseMultiDmyPolyIfPlace AltName="Use Multiple Dummy Polys for Placement" Wiki="Set to True if the same model point ('damipoly') is used multiple times when spawning the bullet." IsBool="" />
-    <attachEffectType0 AltName="Attach Effect Type [0]" Wiki="If either Type 0 or Type 1 are true, this bullet can deflect physical projectiles.\nIf both are true, this bullet can deflect spell projectiles." IsBool="" />
-    <attachEffectType1 AltName="Attach Effect Type [1]" Wiki="If either Type 0 or Type 1 are true, this bullet can deflect physical projectiles.\nIf both are true, this bullet can deflect spell projectiles." IsBool="" />
-    <IsHitForceMagic AltName="Can be Deflected (Ammunition)" Wiki="If true, this bullet will be deflected by bullets like Force." IsBool="" />
-    <IsIgnoreSfxIfHitWater AltName="Ignore FX On Water Hit" Wiki="If true, hit FX are not produced if the bullet impacts water." IsBool="" />
-    <IsIgnoreMoveStateIfHitWater AltName="Ignore State Transition On Water Hit" Wiki="Unclear effect, but True for knives/arrows/bolts and False otherwise." IsBool="" />
-    <IsHitDarkForceMagic AltName="Can be Deflected (Spell)" Wiki="If true, this bullet will be deflected by bullets like Spell Parry." IsBool="" />
-    <IsInheritEffectToChild AltName="Transfer Effect to Child Bullet" IsBool="" />
-    <IsInheritSpeedToChild AltName="Transfer Speed to Child Bullet" IsBool="" />
-    <IsLockModule AltName="Is Lock Module" IsBool="" />
-    <IsSearchForTarget AltName="Can Search for Target" IsBool="" />
-    <IsEmittedBullet AltName="Is Emitted Bullet" IsBool="" />
-    <IsInheritLifeToChild AltName="Transfer Duration to Child Bullet" IsBool="" />
+    
+    <FollowType AltName="Follow Type" Wiki="Follow-up type. Do not follow is the default." Enum="BULLET_FOLLOW_TYPE" />
+    <EmittePosType AltName="Emitter Source Type" Wiki="Source type. Usually from Damipoli. (Introduced to judge meteo)" Enum="BULLET_EMITTE_POS_TYPE" />
+    
+    <IsAttackSfx AltName="Is Persistent Attack SFX" Wiki="Set whether bullets such as arrows will remain stuck in the character" IsBool="" />
+    <IsEndlessHit AltName="Is Continuous Hit" Wiki="Do you keep hitting?" IsBool="" />
+    <IsPenetrateMap AltName="Is Penetrate Map" Wiki="If it is ON, it will penetrate without landing when hitting a hit / static asset." IsBool="" />
+    <IsHitBothTeam AltName="Is Hit Both Teams" Wiki="Are you an enemy or an ally? (Not a wandering ghost)" IsBool="" />
+    <IsUseShardHitList AltName="Is Use Shared Hit List" Wiki="Specify whether to share the hit list" IsBool="" />
+    <IsUseMultiDmyPolyIfPlace AltName="Use Multiple Dummy Polys for Placement" Wiki="Do you use the same Damipoly ID more than once when placing bullets?" IsBool="" />
+    <attachEffectType0 AltName="Force Erase Bullet A if Hit by Other Bullet" Wiki="Does it hit other bullets forced erasure A?" IsBool="" />
+    <attachEffectType1 AltName="Force Erase Bullet B if Hit by Other Bullet" Wiki="Does it hit the other bullet forced erasure B?" IsBool="" />
+    <IsHitForceMagic AltName="Is Deflected by Magic" Wiki="If true, this bullet will be deflected by bullets like Force." IsBool="" />
+    <IsIgnoreSfxIfHitWater AltName="Is SFX Ignored On Water Hit" Wiki="If true, hit FX are not produced if the bullet impacts water." IsBool="" />
+    <IsIgnoreMoveStateIfHitWater AltName="Is Move State Ignored On Water Hit" Wiki="Should I ignore the effect if it hits the surface of the water?" IsBool="" />
+    <IsHitDarkForceMagic AltName="Can be Deflected by Bullet Deflection" Wiki="If true, this bullet will be deflected by bullets like Spell Parry." IsBool="" />
+    <IsInheritEffectToChild AltName="Is Effect Inherited by Child Bullet" Wiki="Take over the effect to replace the submunition. Ignore the speed set for the submunition" IsBool="" />
+    <IsInheritSpeedToChild AltName="Is Speed Inherited by Child Bullet" Wiki="Take over the speed of the timing to replace the submunition. Ignore the speed set for the submunition" IsBool="" />
+    <isEnableAutoHoming AltName="Is Auto Homing Enabled" Wiki="Whether to automatically follow when not locked on" IsBool="" />
+    <isSyncBulletCulcDumypolyPos AltName="Is Emitter Source Synced with Bullet" Wiki="In the case of a synchronously generated bullet, the emitter attitude at the time of synchronization is used without recalculating the attitude due to the Damipoli position when the bullet is generated." IsBool="" />
+    <isOwnerOverrideInitAngle AltName="Is Direction Inherited by Child Bullet" Wiki="Only valid for sub-bullets. If it is ON, the reference direction is the owner." IsBool="" />
+    <isInheritSfxToChild AltName="Is SFX Inherited by Child Bullet" Wiki="Take over the SFX of the parent bullet. Ignore the SFX ID set for the sub bullet" IsBool="" />
     <darkDamageDamp AltName="Damage Falloff: Dark Damage" />
-	<bulletHitType0 AltName="SFX Delete Type - By Hit" />
-	<bulletHitType1 AltName="SFX Delete Type - By Life Dead" />
-	<spHomingYAngle AltName="Target Y Offset Range" />
-    <rand_ShootAngleXZ AltName="Emitted Bullet - Random Elevation Angle" />
-    <rand_ShootANgleY AltName="Emitted Bullet - Random Launch Angle" />
-    <bulletEmitter_bulletId AltName="Bullet Emitter - Emitted Bullet" Refs="Bullet" />
-	<bulletEmitter_ShootInterval0 AltName="Bullet Emitter - Min Interval" />
-	<bulletEmitter_InitInterval AltName="Bullet Emitter - Max Interval" />
-	<SpHomingYAngleForEnemy AltName="Prediction Shoot Observe Time" />
-	<bulletEmitter_ShootInterval1 AltName="Bullet Emitter - Wait Time" />
-	<LimitBulletParamId AltName="Limit Bullet ID" Refs="BulletCreateLimitParam" />
-	<IsPosHitBullet AltName="Is Position Hit Bullet" IsBool="" />
-	<IsAttachAttackSfx AltName="Is Attach Attack FX"  IsBool="" />
-	<IsSpCorrection0 AltName="Is Special Correction [0]" IsBool="" />
-	<IsSpCorrection1 AltName="Is Special Correction [1]" IsBool="" />
-    <IsPenetrateTarget AltName="Can Penetrate Target" IsBool="" />
+	<bulletSfxDeleteType_byHit AltName="Bullet SFX Delete Type - By Hit" Wiki="Bullet SFX extinction type when landing or playing" Enum="BULLET_SFX_DELETE_TYPE" />
+	<bulletSfxDeleteType_byLifeDead AltName="Bullet SFX Delete Type - By Expiration" Wiki="Bullet SFX extinction type at the end of life" Enum="BULLET_SFX_DELETE_TYPE" />
+	<targetYOffsetRange AltName="Target Vertical Offset" Wiki="Vertical offset of landing position. Shift the target position up and down at the time of launch and during homing. (-N ~ n)" />
+    <shootAngleYMaxRandom AltName="Random Launch Angle - Max" Wiki="Upper limit of random number of firing angle (0 to 360)" />
+    <shootAngleXMaxRandom AltName="Random Elevation Angle - Max" Wiki="Upper limit of firing elevation random number (0 to 360)" />
+    <intervalCreateBulletId AltName="Bullet Emitter: Bullet ID" Wiki="Bullet ID used when making bullets at regular intervals" Refs="Bullet" />
+	<intervalCreateTimeMin AltName="Bullet Emitter: Minimum Shoot Interval" Wiki="Minimum interval for making bullets at regular intervals (0 to n)" />
+	<intervalCreateTimeMax AltName="Bullet Emitter: Maximum Shoot Interval" Wiki="Maximum interval for making bullets at regular intervals (function is disabled if 0 to n 0)" />
+	<predictionShootObserveTime AltName="Prediction Shoot Observe Time" Wiki="Average speed observation time of predicted shooting function (function is invalid if 0 to 40)" />
+	<intervalCreateWaitTime AltName="Bullet Emitter: Initial Wait Time" Wiki="Waiting time to start making bullets at regular intervals" />
+	<createLimitGroupId AltName="Create Limit Group ID" Wiki="If it is 0, it is unused. If the upper limit is reached when creating a bullet set in the same group Id, that bullet will not be created. (Bullets created synchronously on the network will be released regardless)" Refs="BulletCreateLimitParam" />
+    <CounterHitType AltName="Counter Hit Type" />
+	<isInheritSpeedToChild AltName="Is Speed Inherited by Child Bullet" Wiki="Take over the speed of the timing to replace the submunition. Ignore the speed set for the submunition" IsBool="" />
+	<isDisableHitSfx_byChrAndObj AltName="Is SFX Disabled on Chr/Object Hit" Wiki="When ON, the bullet parameter landing SFX does not play even if it hits a character / object." IsBool="" />
+	<isCheckWall_byCenterRay AltName="Is Wall Checked by Center Ray" Wiki="There was a problem with the digging judgment when firing a bullet, so it is for error handling. SEQ23101 [Own character] If you use a soul short arrow or a strong soul short arrow in close contact with a character with a high lock-on position, the direction of the bullet will be reversed." IsBool="" />
+	<isHitFlare AltName="Is Hit Flare" Wiki="Do you hit flare magic?" IsBool="" />
+    <isUseBulletWallFilter AltName="Is Bullet Wall Filter Used" Wiki="Do you use primitive magic Atari? It will change to a filter that corresponds to the Atari dedicated to primitive magic." IsBool="" />
 	<IsSpCorrection2 AltName="Is Special Correction [2]" IsBool="" />
-	<IsDisableIntScale AltName="Disable Bullet Count scaling with INT" IsBool="" />
-    <EmittePosRadius AltName="Emitter Position Radius" />
-	<hitObjectId AltName="Hit Object ID" Refs="ObjectParam" Wiki="Spawns an object when bullet is considered hit."/>
-	<subLife AltName="Sub Duration"/>
-	<subHomingAngle AltName="Sub Homing Angle"/>
+	<isNonDependenceMagicForFunnleNum AltName="Is Follow Bullet Count not scaled by INT" Wiki="The number of funnels on the PC does not fluctuate by force. Become the number of shots" IsBool="" />
+    <isAiInterruptShootNoDamageBullet AltName="Is AI Interrupted by Bullet" Wiki="Does it react to AI bullets (even with 0 attack power)?" IsBool="" />
+    <randomCreateRadius AltName="Emitter Source Radius" Wiki="The range of bullets used when the source type is set to occur at random locations." />
+	<assetNo_Hit AltName="Object Generated on Hit" Wiki="The number of the asset to be generated at the time of landing. -1: Do not generate." />
+	<lifeRandomRange AltName="Duration - Random Range" Wiki="Add a random number of seconds with a set time fluctuation range to the lifetime [s]." />
+	<homingAngleX AltName="Homing Angle: X" Wiki="Only the X-axis component of the inductive performance is changed. Do not change with -1" />
 	<lockShootCorrectionAng AltName="Lock Direction Limit Correction"/>
     <externalForce AltName="External Force in Bullet Direction" Wiki="External force applied in the direction of shooting. (Y-axis is removed)" />
     <lockShootLimitAng AltName="Lock Direction Limit Angle" Wiki="Limit angle when facing the lock direction" />

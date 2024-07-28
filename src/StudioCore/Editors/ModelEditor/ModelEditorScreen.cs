@@ -461,16 +461,19 @@ public class ModelEditorScreen : EditorScreen
 
                 if (assetType == "Character")
                 {
+                    ModelSelectionView._searchInput = modelName;
                     ResourceHandler.LoadCharacter(modelName);
                 }
 
                 if (assetType == "Asset")
                 {
+                    ModelSelectionView._searchInput = modelName;
                     ResourceHandler.LoadAsset(modelName);
                 }
 
                 if (assetType == "Part")
                 {
+                    ModelSelectionView._searchInput = modelName;
                     ResourceHandler.LoadPart(modelName);
                 }
 
@@ -480,6 +483,7 @@ public class ModelEditorScreen : EditorScreen
 
                     if (assetType == "MapPiece")
                     {
+                        ModelSelectionView._searchInput = modelName;
                         ResourceHandler.LoadMapPiece(mapId, modelName);
                     }
                 }

@@ -6,8 +6,8 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="s32 LocationEventId = 1.4E+07" />
-    <Field Def="s32 WarpEventId = 4001950" />
+    <Field Def="s32 eventflagId" />
+    <Field Def="s32 bonfireEntityId" />
     <Field Def="s32 BonfireNameId = 211210" />
     <Field Def="s32 DescriptionTextId = -1" />
     <Field Def="s32 PictureId = 10011" />
@@ -15,7 +15,7 @@
     <Field Def="u8 IsDisableQuickwarp" />
     <Field Def="s16 CeremonyId = -1" />
     <Field Def="s32 onlineAreaId" />
-    <Field Def="s32 unknown_0x1c" />
+    <Field Def="s32 onlineAreaId2" />
     <Field Def="dummy8 pad1[32]" />
   </Fields>
 </PARAMDEF>

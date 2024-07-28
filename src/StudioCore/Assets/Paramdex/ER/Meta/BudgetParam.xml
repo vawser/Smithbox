@@ -23,7 +23,7 @@
     <reserve_0 AltName="" IsHidden=""/>
     <vram_other_tex AltName="VRAM: Other textures" Wiki="VRAM: Other models (in MB)" />
     <vram_other_mdl AltName="VRAM: Other models" Wiki="VRAM: Other textures (in MB)" />
-    <havok_anim AltName="HAVOK: Anime" Wiki="HAVOK: Animation (unit is MB)" />
+    <havok_anim AltName="HAVOK: Animation" Wiki="HAVOK: Animation (unit is MB)" />
     <havok_ins AltName="HAVOK: Placement" Wiki="HAVOK: Placement (unit is MB)" />
     <havok_hit AltName="HAVOK: Hit" Wiki="HAVOK: Hit (unit is MB)" />
     <vram_other AltName="VRAM: Other" Wiki="VRAM: Other (unit is MB)" />

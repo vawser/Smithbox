@@ -11,7 +11,6 @@ General:
  
 Interface:
  - ADD: Change the toolbar panels into single "Actions" panel with collapsible groups + add drop-down actions to menu-bar
- - ADD: Edit History panel: works like the logger but as a separate window. (Add EditLog prints to all actions)
  
 Viewport:
  - ADD: support for transparent shapes, so regions can be better visualized
@@ -84,6 +83,3 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
-- Re-work keybinding menu: make the layout fixed (so entries always appear properly)
- - Allow for Ctrl/Shift/Alt shortcuts (currently they can only be modifiers)
-

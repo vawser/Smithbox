@@ -17,21 +17,23 @@
         <Option Value="254" Name="Type 254" />
     </Enum>
     <Enum Name="BULLET_LAUNCH_CONDITION_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
-        <Option Value="3" Name="Type 3" />
-        <Option Value="4" Name="Type 4" />
-        <Option Value="5" Name="Type 5" />
-        <Option Value="6" Name="Type 6" />
+        <Option Value="0" Name="Always" />
+        <Option Value="1" Name="Hit water" />
+        <Option Value="2" Name="Hit water or swamp" />
+        <Option Value="3" Name="Didn't hit enemy" />
+        <Option Value="4" Name="Hit enemy" />
+        <Option Value="5" Name="Unknown" />
+        <Option Value="6" Name="Unknown" />
+        <Option Value="254" Name="Expired" />
+        <Option Value="255" Name="Hit ground or enemy" />
     </Enum>
     <Enum Name="BULLET_FOLLOW_TYPE" type="u8">
-        <Option Value="0" Name="Default" />
-        <Option Value="1" Name="Follow shooter dummyPoly" />
-        <Option Value="2" Name="Track shooter dummyPoly" />
-        <Option Value="3" Name="Follow target (strange behavior with no targets)" />
-        <Option Value="4" Name="Slide along ground" />
-        <Option Value="5" Name="Return to shooter" />
+      <Option Value="0" Name="Do not follow" />
+      <Option Value="1" Name="Follow shooter" />
+      <Option Value="2" Name="Follow shooter's feet" />
+      <Option Value="3" Name="Follow target" />
+      <Option Value="4" Name="Slide along ground" />
+      <Option Value="5" Name="Return to shooter" />
     </Enum>
     <Enum Name="BULLET_EMITTE_POS_TYPE" type="u8">
         <Option Value="0" Name="Default" />
@@ -46,24 +48,24 @@
         <Option Value="0" Name="Type 0" />
     </Enum>
     <Enum Name="BULLET_SFX_DELETE_TYPE" type="s8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
+      <Option Value="0" Name="Emitter Stopped" />
+      <Option Value="1" Name="Deletion" />
     </Enum>
-    <Enum Name="BULLET_SFX_CREATE_POSTURE_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+    <Enum Name="BULLET_SFX_CREATE_POSTURE_TYPE" type="s8">
+      <Option Value="0" Name="Parent" />
+      <Option Value="1" Name="Global Y Axis" />
+      <Option Value="2" Name="Impact" />
     </Enum>
     <Enum Name="BULLET_BALLISTIC_CALC_TYPE" type="u8">
         <Option Value="0" Name="Emit Forwards" />
         <Option Value="1" Name="Emit Backwards" />
     </Enum>
     <Enum Name="BULLET_ATTACH_EFFECT_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
-        <Option Value="3" Name="Type 3" />
-        <Option Value="4" Name="Type 4" />
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Force" />
+        <Option Value="2" Name="Unknown Protection" />
+        <Option Value="3" Name="Dark Force" />
+        <Option Value="4" Name="Unknown" />
         <Option Value="6" Name="Trigger Remote Detonation" />
     </Enum>
   </Enums>

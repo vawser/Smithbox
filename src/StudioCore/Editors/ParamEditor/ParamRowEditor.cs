@@ -735,6 +735,7 @@ public class ParamRowEditor
 
                 // These are placed in-line with the current field
                 ParamReferenceUtils.GrassTypeParam(activeParam, row, internalName);
+                ParamReferenceUtils.BulletParam(activeParam, row, internalName);
             }
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
@@ -1092,6 +1093,15 @@ public class ParamRowEditor
                 // Otherwise just add the property name
                 currInput = $"{currInput}{propertyName}";
                 _paramEditor.ToolWindow.MassEditHandler._currentMEditRegexInput = currInput;
+            }
+        }
+
+        // Search for Non-Default Values
+        if (col != null)
+        {
+            if (ImGui.MenuItem("Search for Non-Default Values"))
+            {
+                EditorCommandQueue.AddCommand($@"param/search/proprange {internalName.Replace(" ", "\\s")} 0.01 {int.MaxValue}");
             }
         }
 

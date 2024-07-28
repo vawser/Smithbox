@@ -50,19 +50,6 @@
       <Option Value="1" Name="Projectile" />
       <Option Value="2" Name="Hazard" />
     </Enum>
-    <Enum Name="HKS_BEHAVIOR_ID">
-      <Option Value="0" Name="None" />
-	  <Option Value="1" Name="Rolling" />
-	  <Option Value="2" Name="Use DamageLarge2 instead of DamageLarge" />
-      <Option Value="4" Name="Always Guardbreak" />
-      <Option Value="5" Name="Use JailerStagger" />
-	  <Option Value="6" Name="Fat Deacon Knock Over" />
-	  <Option Value="7" Name="Kick" />
-      <Option Value="8" Name="Do not increment Damage Count" />
-      <Option Value="9" Name="No AddDamage" />
-      <Option Value="10" Name="Use SpecialDamageUpper" />
-      <Option Value="11" Name="Is Also Guard (req. speffect 100690)" />
-    </Enum>
     <Enum Name="PLAYER_ATKPARAM_REP_DMGTYPE_UINT">
       <Option Value="0" Name="None" />
       <Option Value="1" Name="Small" />
@@ -82,13 +69,26 @@
       <Option Value="1" Name="Throw Trigger" />
       <Option Value="2" Name="Throw Damage" />
     </Enum>
+    <Enum Name="ATKPARAM_BEHAVIOR_ID" type="u8">
+      <Option Value="0" Name="None" />
+	  <Option Value="1" Name="Rolling" />
+	  <Option Value="2" Name="Use DamageLarge2 instead of DamageLarge" />
+      <Option Value="4" Name="Always Guardbreak" />
+      <Option Value="5" Name="Use JailerStagger" />
+	  <Option Value="6" Name="Fat Deacon Knock Over" />
+	  <Option Value="7" Name="Kick" />
+      <Option Value="8" Name="Do not increment Damage Count" />
+      <Option Value="9" Name="No AddDamage" />
+      <Option Value="10" Name="Use SpecialDamageUpper" />
+      <Option Value="11" Name="Is Also Guard (req. speffect 100690)" />
+    </Enum>
   </Enums>
   <Self Wiki="Character attack data" Row0Dummy="" AlternativeOrder="KnockbackDist,HitStopTime,spEffect0,spEffect1,spEffect2,spEffect3,spEffect4,-,
 atkElementCorrectId,Blowing Correction,AtkPhysCorrection,AtkMagCorrection,AtkFireCorrection,AtkThunCorrection,atkDarkCorrection,AtkStamCorrection,AtkSuperArmorCorrection,AtkThrowEscapeCorrection,-,
 AtkPhys,AtkMag,AtkFire,AtkThun,atkDark,AtkStam,AtkSuperArmor,AtkThrowEscape,AtkObj,-,
 GuardAtkRateCorrection,GuardBreakCorrection,GuardAtkRate,GuardBreakRate,GuardStaminaCutRate,GuardRate,GuardCutCancelRate,-,
-physSpCorrection,magSpCorrection,fireSpCorrection,thunSpCorrection,darkSpCorrection,-,
-ThrowTypeID,damageLevel,0x18B,pad1,damageLevelParameter,mapHitType,AtkAttribute,spAttribute,atkType,HitSourceType,ThrowFlag,disableGuard,disableStaminaAttack,disableHitSpEffect,IgnoreNotifyMissSwingForAI,IsArrowAtk,IsGhostAtk,isDisableNoDamage,opposeTarget,friendlyTarget,selfTarget,isChargeAtk,IsChargeAtk2,IsChargeAtk3,0x18A_0,0x195,isShareHitList,isCheckObjPenetration,regainableSlotId,deathCauseId,decalId1,decalId2,spawnAiSoundId,HitAiSoundId,RumbleId0,RumbleId1,RumbleId2,RumbleId3,repeatHitSfx,atkPowForSfxSe,atkDirForSfxSe,atkMaterial,atkSize,DefMaterial,DefSfxMaterial,defMaterialVal0,defMaterialVal1,defMaterialVal2,-,
+statusAilmentAtkPowerCorrectRate,spEffectAtkPowerCorrectRate_byPoint,spEffectAtkPowerCorrectRate_byRate,spEffectAtkPowerCorrectRate_byDmg,statusAilmentAtkPowerCorrectRate_byPoint,-,
+ThrowTypeID,damageLevel,0x18B,pad1,atkBehaviorId_2,mapHitType,AtkAttribute,spAttribute,atkType,HitSourceType,ThrowFlag,disableGuard,disableStaminaAttack,disableHitSpEffect,IgnoreNotifyMissSwingForAI,IsArrowAtk,IsGhostAtk,isDisableNoDamage,opposeTarget,friendlyTarget,selfTarget,isChargeAtk,isDisableParry,isDisableBothHandsAtkBonus,isInvalidatedByNoDamageInAir,isShareHitList,isCheckObjPenetration,sameAttackJudgmentId,deathCauseId,decalId1,decalId2,AppearAiSoundId,HitAiSoundId,HitRumbleId,HitRumbleIdByNormal,HitRumbleIdByMiddle,HitRumbleIdByRoot,repeatHitSfx,atkPowForSfxSe,atkDirForSfxSe,atkMaterial,atkSize,DefMaterial,DefSfxMaterial,defMaterialVal0,defMaterialVal1,defMaterialVal2,-,
 Hit0_Radius,Hit0_DmyPoly1,Hit0_DmyPoly2,Hit0_hitType,Hit0_VfxId,Hit0_DummyPolyId0,Hit0_DummyPolyId1,hit0_Priority,Hit1_Radius,Hit1_DmyPoly1,Hit1_DmyPoly2,Hit1_hitType,Hit1_VfxId1,Hit1_DummyPolyId0,Hit1_DummyPolyId1,hit1_Priority,Hit2_Radius,Hit2_DmyPoly1,Hit2_DmyPoly2,Hit2_hitType,Hit2_VfxId,Hit2_DummyPolyId0,Hit2_DummyPolyId1,hit2_Priority,Hit3_Radius,Hit3_DmyPoly1,Hit3_DmyPoly2,Hit3_hitType,Hit3_VfxId,Hit3_DummyPolyId0,Hit3_DummyPolyId1,hit3_Priority,Hit4_Radius,Hit4_DmyPoly1,Hit4_DmyPoly2,Hit4_hitType,Hit4_VfxId,Hit4_DummyPolyId0,Hit4_DummyPolyId1,Hit5_Radius,Hit5_DmyPoly1,Hit5_DmyPoly2,Hit5_hitType,Hit5_VfxId,Hit5_DummyPolyId0,Hit5_DummyPolyId1,Hit6_Radius,Hit6_DmyPoly1,Hit6_DmyPoly2,Hit6_hitType,Hit6_VfxId,Hit6_DummyPolyId0,Hit6_DummyPolyId1,Hit7_Radius,Hit7_DmyPoly1,Hit7_DmyPoly2,Hit7_hitType,Hit7_VfxId,Hit7_DummyPolyId0,Hit7_DummyPolyId1,Hit8_Radius,Hit8_DmyPoly1,Hit8_DmyPoly2,Hit8_hitType,Hit9_Radius,Hit9_DmyPoly1,Hit9_DmyPoly2,Hit9_hitType,Hit10_Radius,Hit10_DmyPoly1,Hit10_DmyPoly2,Hit10_hitType,Hit11_Radius,Hit11_DmyPoly1,Hit11_DmyPoly2,Hit11_hitType,Hit12_Radius,Hit12_DmyPoly1,Hit12_DmyPoly2,Hit12_hitType,Hit13_Radius,Hit13_DmyPoly1,Hit13_DmyPoly2,Hit13_hitType,Hit14_Radius,Hit14_DmyPoly1,Hit14_DmyPoly2,Hit14_hitType,Hit15_Radius,Hit15_DmyPoly1,Hit15_DmyPoly2,Hit15_hitType,-" />
   <Field>
     <Hit0_Radius AltName="Hit 0: Radius" Wiki="Radius of sphere/capsule hitbox." />
@@ -158,7 +158,7 @@ Hit0_Radius,Hit0_DmyPoly1,Hit0_DmyPoly2,Hit0_hitType,Hit0_VfxId,Hit0_DummyPolyId
     <disableHitSpEffect AltName="Disable Hit SpEffect" Wiki="If True, this attack will trigger no special effects on the target." IsBool="" />
     <IgnoreNotifyMissSwingForAI AltName="Disable Missed Attack Notification For AI" Wiki="If True, the character's AI will not be informed when this attack misses. Enabled for basic body attacks (falling, rolling, ladder punches, etc.) that are generally not considered to be serious attacks." IsBool="" />
     <repeatHitSfx AltName="Repeat Hit Sound FX" Wiki="If True, sound effects will supposedly be repeated as long as the attack continuously hits a wall." IsBool="" />
-    <IsArrowAtk AltName="Can Headshot" Wiki="Flags if this attack can land headshots. Frequently flagged for physical projectiles (knives/arrows/bolts)." IsBool="" />
+    <IsArrowAtk AltName="Is Arrow Attack: Can Headshot" Wiki="Flags if this attack can land headshots. Frequently flagged for physical projectiles (knives/arrows/bolts)." IsBool="" />
     <IsGhostAtk AltName="Is Attack By Ghost" Wiki="Flags if this is an attack of a ghost, which presumably disables wall collision, etc." IsBool="" />
     <isDisableNoDamage AltName="Ignore Invincibility Frames" Wiki="If True, this attack will ignore invincibility frames from rolling or backstepping (but not other sources of invincibility such as TAE or events)." IsBool="" />
     <atkPowForSfxSe AltName="Attack Power for SFX Effect" />
@@ -169,34 +169,41 @@ Hit0_Radius,Hit0_DmyPoly1,Hit0_DmyPoly2,Hit0_hitType,Hit0_VfxId,Hit0_DummyPolyId
     <isChargeAtk AltName="Is Charge Attack" IsBool="" />
     <isShareHitList AltName="Is Hit List Shared" IsBool="" />
     <isCheckObjPenetration AltName="Is Object Penetration Checked" IsBool="" />
-	<_0x81_0 AltName="Unknown" />
-	<_0x81_1 AltName="Unknown" />
-    <spawnAiSoundId AltName="Appear AI Sound ID" Refs="AiSoundParam"/>
-	<HitAiSoundId AltName="Hit AI Sound ID" Refs="AiSoundParam"/>
-	<Hit0_VfxId AltName="Blade Trail [0] VFX ID" />
-	<Hit0_DummyPolyId0 AltName="Blade Trail [0] Base Point" />
-	<Hit0_DummyPolyId1 AltName="Blade Trail [0] Tip Point" />
-	<Hit1_VfxId1 AltName="Blade Trail [1] VFX ID" />
-	<Hit1_DummyPolyId0 AltName="Blade Trail [1] Base Point" />
-	<Hit1_DummyPolyId1 AltName="Blade Trail [1] Tip Point" />
-	<Hit2_VfxId AltName="Blade Trail [2] VFX ID" />
-	<Hit2_DummyPolyId0 AltName="Blade Trail [2] Base Point" />
-	<Hit2_DummyPolyId1 AltName="Blade Trail [2] Tip Point" />
-	<Hit3_VfxId AltName="Blade Trail [3] VFX ID" />
-	<Hit3_DummyPolyId0 AltName="Blade Trail [3] Base Point" />
-	<Hit3_DummyPolyId1 AltName="Blade Trail [3] Tip Point" />
-	<Hit4_VfxId AltName="Blade Trail [4] VFX ID" />
-	<Hit4_DummyPolyId0 AltName="Blade Trail [4] Base Point" />
-	<Hit4_DummyPolyId1 AltName="Blade Trail [4] Tip Point" />
-	<Hit5_VfxId AltName="Blade Trail [5] VFX ID" />
-	<Hit5_DummyPolyId0 AltName="Blade Trail [5] Base Point" />
-	<Hit5_DummyPolyId1 AltName="Blade Trail [5] Tip Point" />
-	<Hit6_VfxId AltName="Blade Trail [6] VFX ID" />
-	<Hit6_DummyPolyId0 AltName="Blade Trail [6] Base Point" />
-	<Hit6_DummyPolyId1 AltName="Blade Trail [6] Tip Point" />
-	<Hit7_VfxId AltName="Blade Trail [7] VFX ID" />
-	<Hit7_DummyPolyId0 AltName="Blade Trail [7] Base Point" />
-	<Hit7_DummyPolyId1 AltName="Blade Trail [7] Tip Point" />
+    <atkBehaviorId AltName="Attack Behavior ID" Wiki="Behavior identification value: Extra large damage transition - HKS related" Enum="ATKPARAM_BEHAVIOR_ID" />
+    <sameAttackJudgmentId AltName="Same Attack Judgment ID" Wiki="Same attack judgment ID" />
+    <deathCauseId AltName="Death Cause ID" />
+    <decalId1 AltName="Decal ID [1]" Wiki="Decal ID 1 (directly specified)" Refs="DecalParam" />
+    <decalId2 AltName="Decal ID [2]" Wiki="Decal ID 2 (directly specified)" Refs="DecalParam" />
+    <AppearAiSoundId AltName="Appear AI Sound ID" Wiki="ID of AI sound generated when an attack occurs" Refs="AiSoundParam" />
+    <HitAiSoundId AltName="Hit AI Sound ID" Wiki="ID of AI sound generated at the time of hit" Refs="AiSoundParam" />
+    <HitRumbleId AltName="Hit Rumble ID - Default" Wiki="Vibration ID at the time of hit (-1 invalid). It is a vibration ID when none of the following three applies" />
+    <HitRumbleIdByNormal AltName="Hit Rumble ID - Normal" Wiki="Vibration ID at the time of hit when hitting the tip (-1 invalid)" />
+    <HitRumbleIdByMiddle AltName="Hit Rumble ID - Middle" Wiki="Vibration ID at the time of hit when hit in the middle (-1 invalid)" />
+    <HitRumbleIdByRoot AltName="Hit Rumble ID - Root" Wiki="Vibration ID at the time of hit when hitting the root (-1 invalid)" />
+	<traceSfxId0 AltName="Trace SFX ID [0]" Wiki="Sword flash SfxID_0 (-1 invalid)" ParticleAlias="" />
+    <traceDmyIdHead0 AltName="Trace SFX ID [0] - Head Dummy Poly" Wiki="Sword flash root Damipoli ID_0 (-1 invalid)" />
+    <traceDmyIdTail0 AltName="Trace SFX ID [0] - Tail Dummy Poly" Wiki="Sword Flash Sword Tip Damipoli ID_0" />
+    <traceSfxId1 AltName="Trace SFX ID [1]" Wiki="Sword flash SfxID_1 (-1 invalid)" ParticleAlias="" />
+    <traceDmyIdHead1 AltName="Trace SFX ID [1] - Head Dummy Poly" Wiki="Sword Flash Root Damipoli ID_1 (-1 invalid)" />
+    <traceDmyIdTail1 AltName="Trace SFX ID [1] - Tail Dummy Poly" Wiki="Sword Flash Sword Tip Damipoli ID_1" />
+    <traceSfxId2 AltName="Trace SFX ID [2]" Wiki="Sword flash SfxID_2 (-1 invalid)" ParticleAlias="" />
+    <traceDmyIdHead2 AltName="Trace SFX ID [2] - Head Dummy Poly" Wiki="Sword Flash Root Damipoli ID_2 (-1 invalid)" />
+    <traceDmyIdTail2 AltName="Trace SFX ID [2] - Tail Dummy Poly" Wiki="Sword Flash Sword Tip Damipoli ID_2" />
+    <traceSfxId3 AltName="Trace SFX ID [3]" Wiki="Sword Flash SfxID_3 (-1 invalid)" ParticleAlias="" />
+    <traceDmyIdHead3 AltName="Trace SFX ID [3] - Head Dummy Poly" Wiki="Sword flash root Damipoli ID_3 (-1 invalid)" />
+    <traceDmyIdTail3 AltName="Trace SFX ID [3] - Tail Dummy Poly" Wiki="Sword Flash Sword Tip Damipoli ID_3" />
+    <traceSfxId4 AltName="Trace SFX ID [4]" Wiki="Sword Flash SfxID_4 (-1 invalid)" ParticleAlias="" />
+    <traceDmyIdHead4 AltName="Trace SFX ID [4] - Head Dummy Poly" Wiki="Sword flash root Damipoli ID_4 (-1 invalid)" />
+    <traceDmyIdTail4 AltName="Trace SFX ID [4] - Tail Dummy Poly" Wiki="Sword Flash Sword Tip Damipoli ID_4" />
+    <traceSfxId5 AltName="Trace SFX ID [5]" Wiki="Sword Flash SfxID_5 (-1 invalid)" ParticleAlias="" />
+    <traceDmyIdHead5 AltName="Trace SFX ID [5] - Head Dummy Poly" Wiki="Sword Flash Root Damipoli ID_5 (-1 invalid)" />
+    <traceDmyIdTail5 AltName="Trace SFX ID [5] - Tail Dummy Poly" Wiki="Sword Flash Sword Tip Damipoli ID_5" />
+    <traceSfxId6 AltName="Trace SFX ID [6]" Wiki="Sword Flash SfxID_6 (-1 invalid)" ParticleAlias=""/>
+    <traceDmyIdHead6 AltName="Trace SFX ID [6] - Head Dummy Poly" Wiki="Sword Flash Root Damipoli ID_6 (-1 invalid)" />
+    <traceDmyIdTail6 AltName="Trace SFX ID [6] - Tail Dummy Poly" Wiki="Sword Flash Sword Tip Damipoli ID_6" />
+    <traceSfxId7 AltName="Trace SFX ID [7]" Wiki="Sword Flash SfxID_7 (-1 invalid)" ParticleAlias="" />
+    <traceDmyIdHead7 AltName="Trace SFX ID [7] - Head Dummy Poly" Wiki="Sword Flash Root Damipoli ID_7 (-1 invalid)" />
+    <traceDmyIdTail7 AltName="Trace SFX ID [7] - Tail Dummy Poly" Wiki="Sword Flash Sword Tip Damipoli ID_7" />
     <Hit4_Radius AltName="Hit 4: Radius" Wiki="Sphere, capsule radius" />
     <Hit5_Radius AltName="Hit 5: Radius" Wiki="Sphere, capsule radius" />
     <Hit6_Radius AltName="Hit 6: Radius" Wiki="Sphere, capsule radius" />
@@ -245,41 +252,26 @@ Hit0_Radius,Hit0_DmyPoly1,Hit0_DmyPoly2,Hit0_hitType,Hit0_VfxId,Hit0_DummyPolyId
     <Hit13_hitType AltName="Hit 13: Hit Type" Wiki="Type of hit applied by hitbox." Enum="ATK_PARAM_HIT_TYPE" />
     <Hit14_hitType AltName="Hit 14: Hit Type" Wiki="Type of hit applied by hitbox." Enum="ATK_PARAM_HIT_TYPE" />
     <Hit15_hitType AltName="Hit 15: Hit Type" Wiki="Type of hit applied by hitbox." Enum="ATK_PARAM_HIT_TYPE" />
-	<_0x174 AltName="Unknown" />
-	<_0x178 AltName="Unknown" />
-	<_0x17C AltName="Unknown" />
+	<pad10 IsHidden="" />
     <defMaterialVal0 AltName="Defence SFX Material [1]" Wiki="Used for SFX when guarding. 1"/>
     <defMaterialVal1 AltName="Defence SE Material [2]" Wiki="Used for SE when guarding 2" />
     <defMaterialVal2 AltName="Defence SFX Material [2]" Wiki="Used for SFX when guarding. 2" />
     <atkDarkCorrection AltName="Attack Correction: Dark" />
     <atkDark AltName="Damage: Dark" />
-    <IsChargeAtk2 AltName="Unknown" IsBool="" />
-    <IsChargeAtk3 AltName="Disable Parry" IsBool="" />
-	<_0x18A_0 AltName="Disable 2H Bonus" IsBool="" Wiki="Does not factor in 1.5x STR bonus from 2H"/>
-	<_0x18A_1 AltName="Unknown" />
-	<_0x18A_2 AltName="Unknown" />
-	<_0x18A_3 AltName="Unknown" />
-	<_0x18A_4 AltName="Unknown" />
-	<_0x18A_5 AltName="Unknown" />
-    <physSpCorrection AltName="Status Effect Correction" Wiki="Magnification correction is performed for the abnormal state attack power of special effects." />
-    <magSpCorrection AltName="Attack Correction - By SpEffect Point" Wiki="Magnification correction is performed for the special effect ~ ~ attack power [point]." />
-    <fireSpCorrection AltName="Attack Correction - By SpEffect Power" Wiki="Magnification is corrected for the special effect's attack power multiplier." />
-    <thunSpCorrection AltName="Attack Correction - By SpEffect Damage" Wiki="Attack side of special effect: ~ ~ Performs magnification correction for damage multiplier." />
-    <damageLevelParameter AltName="HKS Behavior ID [2]" Enum="HKS_BEHAVIOR_ID" Wiki="Corresponds to env(334) in HKS" />
-    <darkSpCorrection AltName="Status Effect Correction - By Point" Wiki="Magnification correction is performed for the special effect Whether to apply the abnormal state attack power magnification correction." />
-	<_0x195 AltName="Is Backstab" IsBool="" Wiki="Flags attack to be affected by Dragonscale Ring" />
+    <pad9 IsHidden="" />
+    <isDisableParry AltName="Is Disable Parry" Wiki="This is a flag to disable the new parry control. A process that determines that the damage on the attacking side has been parried when it comes into contact with a character in the parry state on the defending side." IsBool="" />
+	<isDisableBothHandsAtkBonus AltName="Is Disable 2H ATK Bonus" Wiki="Avoid using the 1.5x growth status adaptation with both hands" IsBool="" />
+	<isInvalidatedByNoDamageInAir AltName="Is Invalidated by No Damage in Air" Wiki="If Do you want to penetrate invincibility is , this setting will be ignored." IsBool="" />
+    <pad8 IsHidden="" />
+    <dmgLevel_vsPlayer AltName="Damage Level - Vs. Player" Wiki="Damage level to the player. If it is 0 (default), it is not used. The meaning of the range other than 0 (default) is the same as Damage level." Enum="PLAYER_ATKPARAM_REP_DMGTYPE_UINT" />
+    <statusAilmentAtkPowerCorrectRate AltName="Status Ailment Correction" Wiki="Magnification correction is performed for the abnormal state attack power of special effects." />
+    <spEffectAtkPowerCorrectRate_byPoint AltName="Attack Correction - By SpEffect Point" Wiki="Magnification correction is performed for the special effect ~ ~ attack power [point]." />
+    <spEffectAtkPowerCorrectRate_byRate AltName="Attack Correction - By SpEffect Power" Wiki="Magnification is corrected for the special effect's attack power multiplier." />
+    <spEffectAtkPowerCorrectRate_byDmg AltName="Attack Correction - By SpEffect Damage" Wiki="Attack side of special effect: ~ ~ Performs magnification correction for damage multiplier." />
+    <atkBehaviorId_2 AltName="Attack Behavior ID [2]" Wiki="Behavior identification value: Plays damage motion only at specific times" Enum="ATKPARAM_BEHAVIOR_ID" />
+	<throwDamageAttribute AltName="Throw Damage Attribute" Wiki="Attribute flags for throw damage." />
+    <statusAilmentAtkPowerCorrectRate_byPoint AltName="Status Ailment Correction - By Point" Wiki="Magnification correction is performed for the special effect Whether to apply the abnormal state attack power magnification correction." />
     <atkElementCorrectId AltName="Attack Element Correct ID" Refs="AttackElementCorrectParam" Wiki="Override for stat scaling behaviour.\nIf -1, equipped weapon determines AttackElementCorrectParam instead." />
-    <pad1 AltName="HKS Behavior ID" Enum="HKS_BEHAVIOR_ID" Wiki="Corresponds to env(334) in HKS"/>
-    <_0x18B AltName="Player-Type Damage Level" Enum="PLAYER_ATKPARAM_REP_DMGTYPE_UINT" Wiki="Used instead of damageLevel for c0000/players."/>
-    <regainableSlotId AltName="Same Attack Judgment ID" Wiki="Same attack judgment ID" />
-    <deathCauseId AltName="Death Cause ID" />
-    <decalId1 AltName="Decal ID [1]" Wiki="Decal ID 1 (directly specified)" Refs="DecalParam" />
-    <decalId2 AltName="Decal ID [2]" Wiki="Decal ID 2 (directly specified)" Refs="DecalParam" />
-    
-    <RumbleId0 AltName="Hit Rumble ID [0]" Wiki="Vibration ID at the time of hit (-1 invalid). It is a vibration ID when none of the following three applies" />
-    <RumbleId1 AltName="Hit Rumble ID [1]" Wiki="Vibration ID at the time of hit (-1 invalid). It is a vibration ID when none of the following three applies" />
-    <RumbleId2 AltName="Hit Rumble ID [2]" Wiki="Vibration ID at the time of hit (-1 invalid). It is a vibration ID when none of the following three applies" />
-    <RumbleId3 AltName="Hit Rumble ID [3]" Wiki="Vibration ID at the time of hit (-1 invalid). It is a vibration ID when none of the following three applies" />
     
     <pad2 AltName="" IsHidden=""/>
   </Field>

@@ -203,8 +203,8 @@ namespace StudioCore.Editors.GparamEditor
         public void DisplayInputWindow()
         {
             var windowWidth = ImGui.GetWindowWidth();
-            var defaultButtonSize = new Vector2(windowWidth, 32);
-            var thirdButtonSize = new Vector2(windowWidth / 3, 32);
+            var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
+            var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
 
             ImGui.Text("File Filter:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);

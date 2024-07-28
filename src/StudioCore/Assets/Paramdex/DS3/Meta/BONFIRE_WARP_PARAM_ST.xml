@@ -19,16 +19,16 @@
     </Enum>
   </Enums>
   <Field>
-	<LocationEventId AltName="Event Flag ID" Wiki="Used in RegisterBonfire command in EMEVD." />
-	<WarpEventId AltName="Bonfire Entity ID" Wiki="Used in RegisterBonfire command in EMEVD." />
-	<BonfireNameId AltName="Name ID" Wiki="Stored in Modern_MenuText." />
-	<DescriptionTextId AltName="Description ID" Wiki="Unused.\nPresumably stored in Modern_MenuText."/>
+	<eventflagId AltName="Event Flag ID" Wiki="Used in RegisterBonfire command in EMEVD." />
+	<bonfireEntityId AltName="Bonfire Entity ID" Wiki="Used in RegisterBonfire command in EMEVD." />
+	<BonfireNameId AltName="Bonfire Name ID" Wiki="Stored in Modern_MenuText." FmgRef="Modern_MenuText" />
+	<DescriptionTextId AltName="Description ID" Wiki="Unused.\nPresumably stored in Modern_MenuText." FmgRef="Modern_MenuText"/>
 	<PictureId AltName="Picture ID" Wiki="Stored in menu/mapimage." />
 	<ListId AltName="List ID" Enum="List" Wiki="Determines which warp group bonfire appears in." />
 	<IsDisableQuickwarp AltName="Is Home Bonfire" IsBool="" Wiki="Seems to enable bonfire level display at menu."/>
 	<CeremonyId AltName="Ceremony ID" Wiki="Forces map into ceremony if value is not -1." />
 	<onlineAreaId AltName="Play Region ID" Refs="PlayRegionParam" Wiki="For displaying online activity embers." />
-    <pad1 AltName="" IsHidden=""/>
+    <onlineAreaId2 AltName="Secondary Play Region ID" Refs="PlayRegionParam" Wiki="For displaying online activity embers." />
   </Field>
   <Self Wiki="Bonfire configuration"/>
 </PARAMMETA>

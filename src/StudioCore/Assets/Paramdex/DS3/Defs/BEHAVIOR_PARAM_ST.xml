@@ -14,7 +14,7 @@
     <Field Def="s32 refId = 200" />
     <Field Def="s32 sfxVariationId" />
     <Field Def="s32 stamina" />
-    <Field Def="s32 mp" />
+    <Field Def="s32 consumeDurability" />
     <Field Def="u8 category = 11" />
     <Field Def="u8 heroPoint" />
     <Field Def="dummy8 pad2[2]" />

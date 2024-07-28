@@ -14,12 +14,13 @@
     </Enum>
   </Enums>
   <Field>
-    <Radius AltName="Radius" Wiki="AI sound radius" />
+    <radius AltName="Radius" Wiki="AI sound radius" />
     <lifeFrame AltName="Duration" Wiki="Time for AI sound to remain" />
     <bSpEffectEnable AltName="Is Affected by Sound Radius Magnification" Wiki="Whether it is affected by the special effect Sound Radius Magnification" IsBool="" />
-    <Type AltName="Rate Type" Wiki="AI sound type" Enum="AI_SOUND_RATE_TYPE" />
+    <type AltName="Rate Type" Wiki="AI sound type" Enum="AI_SOUND_RATE_TYPE" />
 	<fakeTargetType AltName="Fake Target Type" Enum="AI_SOUND_FAKE_TARGET_TYPE" />
-    <UseHitDamageTeam AltName="Is Hit Damage Team" IsBool="" />
+    <interestCategory AltName="Interest Category" />
+    <useHitDamageTeam AltName="Is Hit Damage Team" IsBool="" />
     
     <pad AltName="" IsHidden=""/>
   </Field>

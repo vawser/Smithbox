@@ -69,42 +69,42 @@
       <Option Value="641" Name="2H L1 #3 +1" />
       <Option Value="642" Name="2H L1 #3 +2" />
       <Option Value="643" Name="2H L1 #3 +3" />
-      <Option Value="699" Name="WA        -1" />
+      <Option Value="699" Name="WA -1" />
       <Option Value="700" Name="WA" />
-      <Option Value="701" Name="WA        +1" />
-      <Option Value="702" Name="WA        +2" />
-      <Option Value="703" Name="WA        +3" />
-      <Option Value="704" Name="WA        +4" />
-      <Option Value="705" Name="WA     +5" />
-      <Option Value="706" Name="WA     +5 +1" />
+      <Option Value="701" Name="WA +1" />
+      <Option Value="702" Name="WA +2" />
+      <Option Value="703" Name="WA +3" />
+      <Option Value="704" Name="WA +4" />
+      <Option Value="705" Name="WA +5" />
+      <Option Value="706" Name="WA +5 +1" />
       <Option Value="710" Name="WA +10" />
       <Option Value="711" Name="WA +10    +1" />
       <Option Value="715" Name="WA +10 +5" />
       <Option Value="716" Name="WA +10 +5 +1" />
       <Option Value="720" Name="WA +20" />
-      <Option Value="721" Name="WA +20    +1" />
-      <Option Value="722" Name="WA +20    +2" />
-      <Option Value="723" Name="WA +20    +3" />
+      <Option Value="721" Name="WA +20 +1" />
+      <Option Value="722" Name="WA +20 +2" />
+      <Option Value="723" Name="WA +20 +3" />
       <Option Value="725" Name="WA +20 +5" />
       <Option Value="726" Name="WA +20 +5 +1" />
       <Option Value="730" Name="WA +30" />
-      <Option Value="731" Name="WA +30    +1" />
-      <Option Value="732" Name="WA +30    +2" />
+      <Option Value="731" Name="WA +30 +1" />
+      <Option Value="732" Name="WA +30 +2" />
       <Option Value="735" Name="WA +30 +5" />
       <Option Value="736" Name="WA +30 +5 +1" />
       <Option Value="740" Name="WA +40" />
-      <Option Value="741" Name="WA +40    +1" />
-      <Option Value="742" Name="WA +40    +2" />
-      <Option Value="743" Name="WA +40    +3" />
-      <Option Value="744" Name="WA +40    +4" />
+      <Option Value="741" Name="WA +40 +1" />
+      <Option Value="742" Name="WA +40 +2" />
+      <Option Value="743" Name="WA +40 +3" />
+      <Option Value="744" Name="WA +40 +4" />
       <Option Value="745" Name="WA +40 +5" />
       <Option Value="746" Name="WA +40 +5 +1" />
       <Option Value="747" Name="WA +40 +5 +2" />
       <Option Value="750" Name="WA +50" />
-      <Option Value="751" Name="WA +50    +1" />
+      <Option Value="751" Name="WA +50 +1" />
       <Option Value="755" Name="WA +50 +5" />
       <Option Value="760" Name="WA +60" />
-      <Option Value="761" Name="WA +60     +1" />
+      <Option Value="761" Name="WA +60 +1" />
       <Option Value="770" Name="WA +70" />
       <Option Value="780" Name="WA +80" />
       <Option Value="800" Name="Alt State 1H Heavy #1" />
@@ -154,23 +154,23 @@
   </Enums>
   <Self Wiki="Behavior data for character attacks" Row0Dummy="" />
   <Field>
-    <variationId AltName="Behavior Variation ID" VRef="behaviorVariation" />
-    <behaviorJudgeId AltName="Behavior Judge ID" Enum="AttackType" />
-    <ezStateBehaviorType_old AltName="State Behavior Type" Enum="STATE_BEHAVIOR_TYPE" />
-    <refType AltName="Reference Type" Enum="BEHAVIOR_REF_TYPE" />
-    <refId AltName="Reference ID" Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" />
-    <sfxVariationId AltName="SFX Variation ID" />
-    <stamina AltName="Stamina Cost" />
-    <mp AltName="Durability Cost" />
-    <category AltName="Category" Enum="BEHAVIOR_CATEGORY" />
-    <heroPoint AltName="Humanity Cost" />
+    <variationId AltName="Behavior Variation ID" VRef="behaviorVariation" Wiki="Used when calculating the ID for attack parameters. It is not used directly on the actual machine." />
+    <behaviorJudgeId AltName="Behavior Judge ID" Enum="AttackType" Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TimeActEditor. It is not used directly on the actual machine." />
+    <ezStateBehaviorType_old AltName="State Behavior Type" Enum="STATE_BEHAVIOR_TYPE" Wiki="For ID calculation rules" />
+    <refType AltName="Reference Type" Enum="BEHAVIOR_REF_TYPE" Wiki="Specify the reference ID so that it is correct." />
+    <refId AltName="Reference ID" Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" Wiki="It can be used properly according to the attack power, missile, ID of special effect parameter, and refType."/>
+    <sfxVariationId AltName="SFX Variation ID" Wiki="SFX used for multiplayer session actions" />
+    <stamina AltName="Stamina Cost" Wiki="Set the amount of stamina consumed during action." />
+    <consumeDurability AltName="Durability Cost" Wiki="Set the durability of weapons consumed during action." />
+    <category AltName="Category" Enum="BEHAVIOR_CATEGORY" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." />
+    <heroPoint AltName="Humanity Cost" Wiki="Set the amount of humanity consumed during action" />
     <pad1 AltName="" IsHidden=""/>
     <pad2 AltName="" IsHidden=""/>
   </Field>
-  <Self Row0Dummy="" AlternativeOrder="variationId,behaviorJudgeId,-,
+  <Self Row0Dummy="" Wiki="Handles animation events, including attack frames or firing bullets.\nResponsible for stamina consumption." AlternativeOrder="variationId,behaviorJudgeId,-,
 category,ezStateBehaviorType_old,-,
 refId,refType,-,
-stamina,mp,heroPoint,-,
+stamina,consumeDurability,heroPoint,-,
 sfxVariationId,-,
 pad1,pad2"/>
 </PARAMMETA>

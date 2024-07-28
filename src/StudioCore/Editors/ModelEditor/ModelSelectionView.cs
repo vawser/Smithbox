@@ -21,7 +21,7 @@ namespace StudioCore.Editors.ModelEditor
 {
     public class ModelSelectionView
     {
-        private string _searchInput = "";
+        public string _searchInput = "";
         private string _selectedEntry = "";
         private string _selectedMapId = "";
         private ModelSelectionType _selectedEntryType = ModelSelectionType.None;

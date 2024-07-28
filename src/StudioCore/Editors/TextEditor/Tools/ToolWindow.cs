@@ -41,7 +41,7 @@ public class ToolWindow
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextEditor"))
         {
             var windowWidth = ImGui.GetWindowWidth();
-            var defaultButtonSize = new Vector2(windowWidth, 32);
+            var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
 
             // Generate Entries
             if (ImGui.CollapsingHeader("Generate Entries"))

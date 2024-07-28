@@ -71,7 +71,7 @@ public static class ParamReferenceUtils
             }
             if (Smithbox.ProjectType is ProjectType.DS3)
             {
-                Param.Cell? c = row?["WarpEventId"];
+                Param.Cell? c = row?["bonfireEntityId"];
                 var value = (int)c.Value.Value;
 
                 entityID = (uint)(int)value;
@@ -433,6 +433,141 @@ public static class ParamReferenceUtils
                     }
                 }
                 ImguiUtils.ShowHoverTooltip("Loads the map and select the buddy stone Enemy map object.");
+            }
+        }
+    }
+
+    // Supports: AC6, ER, DS3
+    public static void BulletParam(string activeParam, Param.Row row, string currentField)
+    {
+        if (!(Smithbox.ProjectType is ProjectType.ER or ProjectType.DS3 or ProjectType.AC6))
+            return;
+
+        if (activeParam == null)
+            return;
+
+        if (row == null)
+            return;
+
+        if (currentField == null)
+            return;
+
+        if (activeParam.Contains("Bullet") || activeParam.Contains("Bullet_Npc"))
+        {
+            if ((currentField == "assetNo_Hit" || currentField == "assetCreationAssetId"))
+            {
+                Param.Cell? c = null;
+                if (Smithbox.ProjectType is ProjectType.AC6)
+                {
+                    c = row?["assetCreationAssetId"];
+                }
+                if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                {
+                    c = row?["assetNo_Hit"];
+                }
+
+                if (c == null)
+                    return;
+
+                int modelValue = (int)c.Value.Value;
+
+                if (modelValue <= 0 || modelValue > 999999)
+                    return;
+
+                string modelId = modelValue.ToString();
+
+                string modelString = "";
+                string category = "";
+                string modelName = "";
+
+                if (Smithbox.ProjectType is ProjectType.ER || Smithbox.ProjectType is ProjectType.AC6)
+                {
+                    if (modelId.Length == 6)
+                    {
+                        category = modelId.Substring(0, 3);
+                        modelName = modelId.Substring(3, 3);
+                    }
+                    else if (modelId.Length == 5)
+                    {
+                        category = modelId.Substring(0, 2);
+                        modelName = modelId.Substring(2, 3);
+                    }
+                    else if (modelId.Length == 4)
+                    {
+                        category = modelId.Substring(0, 1);
+                        modelName = modelId.Substring(1, 3);
+                    }
+
+                    var categoryString = "";
+                    var idString = "";
+
+                    if (category.Length == 3)
+                    {
+                        categoryString = $"{category}";
+                    }
+                    else if (category.Length == 2)
+                    {
+                        categoryString = $"0{category}";
+                    }
+                    else if (modelId.Length == 1)
+                    {
+                        categoryString = $"00{category}";
+                    }
+
+                    if (modelName.Length == 3)
+                    {
+                        idString = $"{modelName}";
+                    }
+                    else if (modelName.Length == 2)
+                    {
+                        idString = $"0{modelName}";
+                    }
+                    else if (modelName.Length == 1)
+                    {
+                        idString = $"00{modelName}";
+                    }
+
+                    modelString = $"aeg{categoryString}_{idString}";
+                }
+                // DS3
+                else
+                {
+                    if (modelId.Length == 6)
+                    {
+                        modelString = $"o{modelId}";
+                    }
+                    else if (modelId.Length == 5)
+                    {
+                        modelString = $"o0{modelId}";
+                    }
+                    else if (modelId.Length == 4)
+                    {
+                        modelString = $"o00{modelId}";
+                    }
+                    else if (modelId.Length == 3)
+                    {
+                        modelString = $"o000{modelId}";
+                    }
+                    else if (modelId.Length == 2)
+                    {
+                        modelString = $"o0000{modelId}";
+                    }
+                    else if (modelId.Length == 1)
+                    {
+                        modelString = $"o00000{modelId}";
+                    }
+                }
+
+                var width = ImGui.GetColumnWidth();
+
+                if (currentField == "assetNo_Hit" || currentField == "assetCreationAssetId")
+                {
+                    if (ImGui.Button($"View Model", new Vector2(width, 20)))
+                    {
+                        EditorCommandQueue.AddCommand($"model/load/{modelString}/Asset");
+                    }
+                    ImguiUtils.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
+                }
             }
         }
     }

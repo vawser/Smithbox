@@ -30,7 +30,7 @@ public class ModelHierarchyView
     public HierarchyMultiselect BaseSkeletonMultiselect;
     public HierarchyMultiselect AllSkeletonMultiselect;
 
-    private string _searchInput = "";
+    public string _searchInput = "";
 
     public bool SuspendView = false;
     public bool FocusSelection = false;
