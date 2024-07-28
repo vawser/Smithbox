@@ -260,23 +260,11 @@ param PlayRegionParam: modified && !added: unknown_0x45_1: = vanillafield unknow
 1.12.1 - (PlayRegionParam) Set pad1 to Vanilla v1.12.1 values
 param PlayRegionParam: modified && !added: pad1: = vanillafield pad1
 11210015L
-1.12.1 - (ObjActParam) Set unknown_0x38 to Vanilla v1.12.1 values
-param ObjActParam: modified && !added: unknown_0x38: = vanillafield unknown_0x38
+1.12.1 - (ObjActParam) Set spQualifiedId_new to Vanilla v1.12.1 values
+param ObjActParam: modified && !added: spQualifiedId_new: = vanillafield spQualifiedId_new
 11210015L
-1.12.1 - (ObjActParam) Set unknown_0x3c to Vanilla v1.12.1 values
-param ObjActParam: modified && !added: unknown_0x3c: = vanillafield unknown_0x3c
-11210015L
-1.12.1 - (ObjActParam) Set unknown_0x40 to Vanilla v1.12.1 values
-param ObjActParam: modified && !added: unknown_0x40: = vanillafield unknown_0x40
-11210015L
-1.12.1 - (ObjActParam) Set unknown_0x44 to Vanilla v1.12.1 values
-param ObjActParam: modified && !added: unknown_0x44: = vanillafield unknown_0x44
-11210015L
-1.12.1 - (ObjActParam) Set unknown_0x48 to Vanilla v1.12.1 values
-param ObjActParam: modified && !added: unknown_0x48: = vanillafield unknown_0x48
-11210015L
-1.12.1 - (ObjActParam) Set unknown_0x4c to Vanilla v1.12.1 values
-param ObjActParam: modified && !added: unknown_0x4c: = vanillafield unknown_0x4c
+1.12.1 - (ObjActParam) Set spQualifiedId2_new to Vanilla v1.12.1 values
+param ObjActParam: modified && !added: spQualifiedId2_new: = vanillafield spQualifiedId2_new
 11210015L
 1.12.1 - (ObjActParam) Set pad2 to Vanilla v1.12.1 values
 param ObjActParam: modified && !added: pad2: = vanillafield pad2
