@@ -102,28 +102,6 @@
         <Option Value="173" Name="Type 173" />
         <Option Value="255" Name="Type 255" />
     </Enum>
-    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
-      <Option Value="0" Name="Physical" />
-      <Option Value="10" Name="Magic" />
-      <Option Value="11" Name="Fire" />
-      <Option Value="12" Name="Lightning" />
-      <Option Value="13" Name="Holy" />
-      <Option Value="20" Name="Poison" />
-      <Option Value="21" Name="Scarlet Rot" />
-      <Option Value="22" Name="Hemorrhage" />
-      <Option Value="23" Name="Frostbite" />
-      <Option Value="24" Name="Sleep" />
-      <Option Value="25" Name="Madness" />
-      <Option Value="26" Name="Blight" />
-    </Enum>
-    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
-        <Option Value="0" Name="Slash" />
-        <Option Value="1" Name="Strike" />
-        <Option Value="2" Name="Thrust" />
-        <Option Value="3" Name="Standard" />
-        <Option Value="253" Name="Refers to EquipParamWeapon atkAttribute2 field" />
-        <Option Value="254" Name="Refers to EquipParamWeapon atkAttribute field" />
-    </Enum>
     <Enum Name="WEP_BASE_CHANGE_CATEGORY" type="u8">
         <Option Value="0" Name="Category 0" />
         <Option Value="4" Name="Category 4" />
@@ -385,7 +363,7 @@
     <atkMaterial AltName="Attack Material" Wiki="Attack material used from attack para" Enum="WEP_MATERIAL_ATK" />
     <defSeMaterial1 AltName="Defence SE Material [1]" Wiki="Defense SE material used from attack para 1" Enum="WEP_MATERIAL_DEF" />
     <correctType_Physics AltName="Correction Type: Physical" Wiki="Correcting physical attack power by primary parameters Determines the type of graph" Refs="CalcCorrectGraph" />
-    <spAttribute AltName="Speical Attribute" Wiki="Weapon special attribute value" Enum="ATKPARAM_SPATTR_TYPE" />
+    <spAttribute AltName="Speical Attribute" Wiki="Weapon special attribute value" ProjectEnum="ATKPARAM_SPATTR_TYPE" />
     <spAtkcategory AltName="Special Motion Category" Wiki="Special attack category (possible from 50 to 999)" ProjectEnum="WEPMOTION_OVERRIDE_CATEGORY" />
     <wepmotionOneHandId AltName="Weapon Motion Position - 1H" Wiki="Basic motion ID when equipped with one hand." />
     <wepmotionBothHandId AltName="Weapon Motion Position - 2H" Wiki="Basic motion ID when equipped with both hands." />
@@ -407,7 +385,7 @@
     <diseaseGuardResist AltName="Guard Resist: Scarlet Rot" Wiki="How much to cut the attack power (set as a special effect parameter) to make it a plague" />
     <bloodGuardResist AltName="Guard Resist: Hemorrhage" Wiki="How much to cut the attack power (set as a special effect parameter) to make bleeding" />
     <curseGuardResist AltName="Guard Resist: Blight" Wiki="How much to cut the attack power (set as a special effect parameter) to curse" />
-    <atkAttribute AltName="Attack Attribute [1]" Wiki="Physical attribute 1" Enum="ATKPARAM_ATKATTR_TYPE" />
+    <atkAttribute AltName="Attack Attribute [1]" Wiki="Physical attribute 1" ProjectEnum="ATKPARAM_ATKATTR_TYPE" />
     <rightHandEquipable AltName="Can wield in Right Hand" Wiki="Is it possible to equip it with the right hand?" IsBool="" />
     <leftHandEquipable AltName="Can wield in Left Hand" Wiki="Is it possible to equip it with the left hand?" IsBool="" />
     <bothHandEquipable AltName="Can wield in Both Hands" Wiki="Is it possible to equip with both hands?" IsBool="" />
@@ -491,7 +469,7 @@
     <correctType_Dark AltName="Correction Type: Holy" Wiki="Determine the type of darkness attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
     <correctType_Poison AltName="Correction Type: Poison" Wiki="Determining the type of poison attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
     <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." Enum="DISPLAY_CATEGORY_ID" />
-    <atkAttribute2 AltName="Attack Attribute [2]" Wiki="Physical attribute referred to in the AtkParam" Enum="ATKPARAM_ATKATTR_TYPE" />
+    <atkAttribute2 AltName="Attack Attribute [2]" Wiki="Physical attribute referred to in the AtkParam" ProjectEnum="ATKPARAM_ATKATTR_TYPE" />
     <sleepGuardResist AltName="Guard Resist: Sleep" Wiki="How much to cut the attack power (set as a special effect parameter) to sleep" />
     <madnessGuardResist AltName="Guard Resist: Madness" Wiki="How much to cut the attack power (set to the special effect parameter) that makes you go mad" />
     <correctType_Blood AltName="Correction Type: Hemorrhage" Wiki="Determine the type of bleeding attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
