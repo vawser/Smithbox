@@ -1618,7 +1618,7 @@
       <SortID>2000003</SortID>
     </Field>
     
-    <Field Def="u8 unknown_0x1e3" FirstVersion="11210015" />
+    <Field Def="u8 hpBurnDamageRate" FirstVersion="11210015" />
     
     <Field Def="s32 lockCameraParamId = -1">
       <DisplayName>ロックカメラパラメータID</DisplayName>

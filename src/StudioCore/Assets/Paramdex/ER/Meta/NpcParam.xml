@@ -470,6 +470,7 @@
     <resist_freeze AltName="Resist - Frostbite" Wiki="Difficulty in getting cold air condition abnormal" />
     <freezeGuardResist AltName="Guard Resist - Frostbite" Wiki="How much to cut the attack power against cold air (set as a special effect parameter)" />
     <pad1 AltName="" IsHidden=""/>
+    <hpBurnDamageRate AltName="HP Burn Damage %" Wiki="Adjusts the amount of HP Burn suffered from Destined Death/Black Flame sources." />
     <lockCameraParamId AltName="Lock Camera Param ID" Wiki="The ID of the lock camera parameter applied to the camera when locked on. Highest priority. Unused if -1" Refs="LockCamParam" />
     <spEffectID16 AltName="SpEffect ID [16]" Wiki="Resident special effects 16" Refs="SpEffectParam"/>
     <spEffectID17 AltName="SpEffect ID [17]" Wiki="Resident special effects 17" Refs="SpEffectParam"/>

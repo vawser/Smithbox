@@ -281,8 +281,8 @@ param ObjActParam: modified && !added: unknown_0x4c: = vanillafield unknown_0x4c
 1.12.1 - (ObjActParam) Set pad2 to Vanilla v1.12.1 values
 param ObjActParam: modified && !added: pad2: = vanillafield pad2
 11210015L
-1.12.1 - (NpcParam) Set unknown_0x1e3 to Vanilla v1.12.1 values
-param NpcParam: modified && !added: unknown_0x1e3: = vanillafield unknown_0x1e3
+1.12.1 - (NpcParam) Set hpBurnDamageRate to Vanilla v1.12.1 values
+param NpcParam: modified && !added: hpBurnDamageRate: = vanillafield hpBurnDamageRate
 11210015L
 1.12.1 - (NpcParam) Set isConsideredUndead to Vanilla v1.12.1 values
 param NpcParam: modified && !added: isConsideredUndead: = vanillafield isConsideredUndead
