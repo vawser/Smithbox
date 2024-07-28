@@ -558,7 +558,6 @@ public class Smithbox
             }
 
             TaskLogs.Display();
-            EditLogs.Display();
 
             ImGui.EndMainMenuBar();
         }

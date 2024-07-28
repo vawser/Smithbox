@@ -87,8 +87,3 @@ World Map:
 - Re-work keybinding menu: make the layout fixed (so entries always appear properly)
  - Allow for Ctrl/Shift/Alt shortcuts (currently they can only be modifiers)
 
-- Make the param massedit auto-builder more obvious:
- - Add the the toolbar version
- - Add submit buttons instead of the weird selectables
-
-TODO: finish edit log changes

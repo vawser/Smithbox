@@ -108,12 +108,10 @@ public class PropertiesChangedAction : EditorAction
             {
                 var a = (Array)change.Property.GetValue(ChangedObject);
                 a.SetValue(change.NewValue, change.ArrayIndex);
-                EditLogs.AddLog($"PARAM EDITOR - New Value: {change.NewValue} at {change.ArrayIndex}");
             }
             else
             {
                 change.Property.SetValue(ChangedObject, change.NewValue);
-                EditLogs.AddLog($"PARAM EDITOR - New Value: {change.NewValue}");
             }
         }
 
@@ -133,12 +131,10 @@ public class PropertiesChangedAction : EditorAction
             {
                 var a = (Array)change.Property.GetValue(ChangedObject);
                 a.SetValue(change.OldValue, change.ArrayIndex);
-                EditLogs.AddLog($"PARAM EDITOR - Old Value: {change.OldValue} at {change.ArrayIndex}");
             }
             else
             {
                 change.Property.SetValue(ChangedObject, change.OldValue);
-                EditLogs.AddLog($"PARAM EDITOR - Old Value: {change.OldValue}");
             }
         }
 
@@ -191,7 +187,6 @@ public class AddParamsAction : EditorAction
             {
                 newrow.Name = row.Name != null ? row.Name + "_1" : "";
                 Param.InsertRow(InsertIndex, newrow);
-                EditLogs.AddLog($"PARAM EDITOR - Insert Row: {newrow.ID}");
             }
             else
             {
@@ -203,7 +198,6 @@ public class AddParamsAction : EditorAction
                         RemovedIndex.Add(Param.IndexOfRow(existing));
                         Removed.Add(existing);
                         Param.RemoveRow(existing);
-                        EditLogs.AddLog($"PARAM EDITOR - Replace Existing Row: {existing.ID}");
                     }
                     else
                     {
@@ -216,7 +210,6 @@ public class AddParamsAction : EditorAction
 
                         newrow.ID = newID;
                         Param.InsertRow(Param.IndexOfRow(Param[newID - 1]) + 1, newrow);
-                        EditLogs.AddLog($"PARAM EDITOR - Insert Row: {newrow.ID}");
                     }
                 }
 
@@ -226,7 +219,6 @@ public class AddParamsAction : EditorAction
                     if (appOnly)
                     {
                         Param.AddRow(newrow);
-                        EditLogs.AddLog($"PARAM EDITOR - Append Row: {newrow.ID}");
                     }
                     else
                     {
@@ -242,7 +234,6 @@ public class AddParamsAction : EditorAction
                         }
 
                         Param.InsertRow(index, newrow);
-                        EditLogs.AddLog($"PARAM EDITOR - Insert Row: {newrow.ID} at {index}");
                     }
                 }
             }
@@ -268,7 +259,6 @@ public class AddParamsAction : EditorAction
         for (var i = 0; i < Clones.Count(); i++)
         {
             Param.RemoveRow(Clones[i]);
-            EditLogs.AddLog($"PARAM EDITOR - Revert Row: {Clones[i].ID}");
         }
 
         for (var i = Removed.Count() - 1; i >= 0; i--)
@@ -302,7 +292,6 @@ public class DeleteParamsAction : EditorAction
         {
             RemoveIndices.Add(Param.IndexOfRow(row));
             Param.RemoveRowAt(RemoveIndices.Last());
-            EditLogs.AddLog($"PARAM EDITOR - Remove Row: {RemoveIndices.Last()}");
         }
 
         if (SetSelection)
@@ -317,7 +306,6 @@ public class DeleteParamsAction : EditorAction
         for (var i = Deletables.Count() - 1; i >= 0; i--)
         {
             Param.InsertRow(RemoveIndices[i], Deletables[i]);
-            EditLogs.AddLog($"PARAM EDITOR - Revert Remove Row: {RemoveIndices[i]}");
         }
 
         if (SetSelection)
@@ -348,14 +336,12 @@ public class DuplicateFMGEntryAction : EditorAction
         NewEntryGroup = EntryGroup.DuplicateFMGEntries();
         NewEntryGroup.SetNextUnusedID();
 
-        EditLogs.AddLog($"TEXT EDITOR - Duplicate Entry - {EntryGroup.ID}");
         return ActionEvent.NoEvent;
     }
 
     public override ActionEvent Undo()
     {
         NewEntryGroup.DeleteEntries();
-        EditLogs.AddLog($"TEXT EDITOR - Revert Duplicate Entry - {EntryGroup.ID}");
         return ActionEvent.NoEvent;
     }
 }
@@ -374,7 +360,6 @@ public class DeleteFMGEntryAction : EditorAction
     {
         BackupEntryGroup = EntryGroup.CloneEntryGroup();
         EntryGroup.DeleteEntries();
-        EditLogs.AddLog($"TEXT EDITOR - Delete Duplicate Entry - {EntryGroup.ID}");
         return ActionEvent.NoEvent;
     }
 
@@ -382,7 +367,6 @@ public class DeleteFMGEntryAction : EditorAction
     {
         EntryGroup = BackupEntryGroup;
         EntryGroup.ImplementEntryGroup();
-        EditLogs.AddLog($"TEXT EDITOR - Revert Delete Duplicate Entry - {EntryGroup.ID}");
         return ActionEvent.NoEvent;
     }
 }
@@ -403,7 +387,6 @@ public class SyncFMGEntryAction : EditorAction
     public override ActionEvent Execute()
     {
         EntryGroup.Description.Text = NewEntryGroup.Description.Text;
-        EditLogs.AddLog($"TEXT EDITOR - Sync Duplicate Entry - {EntryGroup.ID}");
 
         return ActionEvent.NoEvent;
     }
@@ -411,7 +394,6 @@ public class SyncFMGEntryAction : EditorAction
     public override ActionEvent Undo()
     {
         EntryGroup.Description.Text = BackupEntryGroup.Description.Text;
-        EditLogs.AddLog($"TEXT EDITOR - Revert Duplicate Entry - {EntryGroup.ID}");
         return ActionEvent.NoEvent;
     }
 }
@@ -432,7 +414,6 @@ public class ReplaceFMGEntryTextAction : EditorAction
     public override ActionEvent Execute()
     {
         Entry.Text = NewText;
-        EditLogs.AddLog($"TEXT EDITOR - Replace Entry - {NewText}");
 
         return ActionEvent.NoEvent;
     }
@@ -440,7 +421,6 @@ public class ReplaceFMGEntryTextAction : EditorAction
     public override ActionEvent Undo()
     {
         Entry.Text = BackupEntry.Text;
-        EditLogs.AddLog($"TEXT EDITOR - Revert Replace Entry - {BackupEntry.Text}");
         return ActionEvent.NoEvent;
     }
 }
@@ -472,7 +452,6 @@ public class GenerateFMGEntryAction : EditorAction
                 newEntry.DuplicateFMGEntries();
                 newEntry.ID = BaseEntryGroup.ID + adjustmentEntry.Offset;
                 NewEntries.Add(newEntry);
-                EditLogs.AddLog($"TEXT EDITOR - Generate Entry - {newEntry.ID}");
             }
         }
 
@@ -485,7 +464,6 @@ public class GenerateFMGEntryAction : EditorAction
                 var newEntry = NewEntries[i];
 
                 newEntry.Title.Text = ProcessText(newEntry.Title.Text, newEntry, adjustmentEntry);
-                EditLogs.AddLog($"TEXT EDITOR - Generate Entry - {newEntry.Title.Text}");
             }
         }
 
@@ -498,7 +476,6 @@ public class GenerateFMGEntryAction : EditorAction
                 var newEntry = NewEntries[i];
 
                 newEntry.TextBody.Text = ProcessText(newEntry.TextBody.Text, newEntry, adjustmentEntry);
-                EditLogs.AddLog($"TEXT EDITOR - Generate Entry - {newEntry.TextBody.Text}");
             }
         }
 
@@ -511,7 +488,6 @@ public class GenerateFMGEntryAction : EditorAction
                 var newEntry = NewEntries[i];
 
                 newEntry.Summary.Text = ProcessText(newEntry.Summary.Text, newEntry, adjustmentEntry);
-                EditLogs.AddLog($"TEXT EDITOR - Generate Entry - {newEntry.Summary.Text}");
             }
         }
 
@@ -524,7 +500,6 @@ public class GenerateFMGEntryAction : EditorAction
                 var newEntry = NewEntries[i];
 
                 newEntry.Description.Text = ProcessText(newEntry.Description.Text, newEntry, adjustmentEntry);
-                EditLogs.AddLog($"TEXT EDITOR - Generate Entry - {newEntry.Description.Text}");
             }
         }
 
@@ -537,7 +512,6 @@ public class GenerateFMGEntryAction : EditorAction
                 var newEntry = NewEntries[i];
 
                 newEntry.ExtraText.Text = ProcessText(newEntry.ExtraText.Text, newEntry, adjustmentEntry);
-                EditLogs.AddLog($"TEXT EDITOR - Generate Entry - {newEntry.ExtraText.Text}");
             }
         }
 
@@ -551,7 +525,6 @@ public class GenerateFMGEntryAction : EditorAction
         foreach (var entry in NewEntries)
         {
             entry.DeleteEntries();
-            EditLogs.AddLog($"TEXT EDITOR - Revert Entry - {entry.ID}");
         }
 
         Smithbox.EditorHandler.TextEditor.RefreshTextEditorCache();
