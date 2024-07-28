@@ -3,7 +3,6 @@ using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Platform;
@@ -30,10 +29,6 @@ public class ParamEditorView
 
     internal ParamEditorScreen _paramEditor;
 
-    public ParamToolbar _paramToolbar;
-    public ParamToolbar_ActionList _paramToolbar_ActionList;
-    public ParamToolbar_Configuration _paramToolbar_Configuration;
-
     internal ParamEditorSelectionState _selection;
     internal int _viewIndex;
 
@@ -45,11 +40,6 @@ public class ParamEditorView
         _viewIndex = index;
         _propEditor = new ParamRowEditor(parent.EditorActionManager, _paramEditor);
         _selection = new ParamEditorSelectionState(_paramEditor);
-
-        // Toolbar
-        _paramToolbar = new ParamToolbar(parent.EditorActionManager);
-        _paramToolbar_ActionList = new ParamToolbar_ActionList();
-        _paramToolbar_Configuration = new ParamToolbar_Configuration();
     }
 
     //------------------------------------
@@ -822,7 +812,7 @@ public class ParamEditorView
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                 {
-                    ParamAction_DuplicateRow.DuplicateSelection(_selection);
+                    _paramEditor.ActionSubMenu.Handler.DuplicateHandler();
                 }
 
                 ImGui.Separator();

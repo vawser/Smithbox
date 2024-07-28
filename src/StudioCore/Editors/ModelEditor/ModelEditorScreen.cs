@@ -199,7 +199,7 @@ public class ModelEditorScreen : EditorScreen
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_AssetBrowser);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Tool Configuration"))
+            if (ImGui.MenuItem("Tool Window"))
             {
                 CFG.Current.Interface_ModelEditor_ToolConfigurationWindow = !CFG.Current.Interface_ModelEditor_ToolConfigurationWindow;
             }

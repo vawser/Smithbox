@@ -2,7 +2,6 @@
 using StudioCore.Banks.HelpBank;
 using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Help;
 using System.Collections.Generic;
 using System.Diagnostics;

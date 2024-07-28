@@ -16,7 +16,6 @@ using StudioCore.Editors.MaterialEditor;
 using StudioCore.MsbEditor;
 using StudioCore.Locators;
 using StudioCore.Core;
-using static StudioCore.Editors.ParamEditor.Toolbar.ParamToolbar;
 using System.Text.RegularExpressions;
 
 namespace StudioCore.Resource;

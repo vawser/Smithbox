@@ -87,7 +87,7 @@ public class CFG
 
     public bool Interface_ParamEditor_Table = true;
     public bool Interface_ParamEditor_MassEdit = true;
-    public bool Interface_ParamEditor_Toolbar = true;
+    public bool Interface_ParamEditor_ToolConfiguration = true;
 
     public bool Interface_TextEditor_TextCategories = true;
     public bool Interface_TextEditor_TextEntry = true;

@@ -177,7 +177,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Properties);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Tool Configuration"))
+            if (ImGui.MenuItem("Tool Window"))
             {
                 CFG.Current.Interface_TextureViewer_ToolConfiguration = !CFG.Current.Interface_TextureViewer_ToolConfiguration;
             }

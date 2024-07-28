@@ -10,8 +10,8 @@ using System.IO;
 using System.Linq;
 using StudioCore.Locators;
 using StudioCore.Core;
-using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Editors.TextEditor;
+using System.ComponentModel.DataAnnotations;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -31,9 +31,9 @@ public class ParamBank
 
     public enum RowGetType
     {
-        AllRows = 0,
-        ModifiedRows = 1,
-        SelectedRows = 2
+        [Display(Name = "All Rows")] AllRows = 0,
+        [Display(Name = "Modified Rows")] ModifiedRows = 1,
+        [Display(Name = "Selected Rows")] SelectedRows = 2
     }
 
     public static ParamBank PrimaryBank = new();

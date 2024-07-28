@@ -36,7 +36,7 @@ public class ToolWindow
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * Smithbox.GetUIScale(), ImGuiCond.FirstUseEver);
 
-        if (ImGui.Begin("Tool Configuration##ToolConfigureWindow_GparamEditor"))
+        if (ImGui.Begin("Tool Window##ToolConfigureWindow_GparamEditor"))
         {
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth, 32);

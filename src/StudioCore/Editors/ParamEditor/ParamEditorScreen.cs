@@ -20,12 +20,13 @@ using CompoundAction = StudioCore.Editor.CompoundAction;
 using DeleteParamsAction = StudioCore.Editor.DeleteParamsAction;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
-using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Utilities;
 using StudioCore.Memory;
 using StudioCore.Locators;
 using StudioCore.Core;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Editors.ParamEditor.Tools;
+using StudioCore.Editors.ParamEditor.Actions;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -177,8 +178,16 @@ public class ParamEditorScreen : EditorScreen
     public List<(ulong, string, string)> ParamUpgradeEdits;
     public ulong ParamUpgradeVersionSoftWhitelist;
 
+    public ToolWindow ToolWindow;
+    public ToolSubMenu ToolSubMenu;
+    public ActionSubMenu ActionSubMenu;
+
     public ParamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
+        ToolWindow = new ToolWindow(this);
+        ToolSubMenu = new ToolSubMenu(this);
+        ActionSubMenu = new ActionSubMenu(this);
+
         _views = new List<ParamEditorView>();
         _views.Add(new ParamEditorView(this, 0));
         _activeView = _views[0];
@@ -216,38 +225,11 @@ public class ParamEditorScreen : EditorScreen
                 ParamRedo();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Copy", KeyBindings.Current.Param_Copy.HintText, false, _activeView._selection.RowSelectionExists()))
-            {
-                CopySelectionToClipboard();
-            }
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Clipboard}");
-            if (ImGui.MenuItem("Paste", KeyBindings.Current.Param_Paste.HintText, false, ParamBank.ClipboardRows.Any()))
-            {
-                EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
-            }
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Scissors}");
-            if (ImGui.MenuItem("Remove", KeyBindings.Current.Core_Delete.HintText, false, _activeView._selection.RowSelectionExists()))
-            {
-                DeleteSelection();
-            }
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false, _activeView._selection.RowSelectionExists()))
-            {
-                DuplicateSelection();
-            }
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.ArrowRight}");
-            if (ImGui.MenuItem("Goto selected row", KeyBindings.Current.Param_GotoSelectedRow.HintText, false, _activeView._selection.RowSelectionExists()))
-            {
-                GotoSelectedRow = true;
-            }
-
             ImGui.EndMenu();
         }
+
+        ActionSubMenu.DisplayMenu();
+        ToolSubMenu.DisplayMenu();
 
         if (ImGui.BeginMenu("View"))
         {
@@ -259,16 +241,14 @@ public class ParamEditorScreen : EditorScreen
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Table);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Toolbar"))
+            if (ImGui.MenuItem("Tool Window"))
             {
-                CFG.Current.Interface_ParamEditor_Toolbar = !CFG.Current.Interface_ParamEditor_Toolbar;
+                CFG.Current.Interface_ParamEditor_ToolConfiguration = !CFG.Current.Interface_ParamEditor_ToolConfiguration;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Toolbar);
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParamEditor_ToolConfiguration);
 
             ImGui.EndMenu();
         }
-
-
 
         if (ImGui.BeginMenu("Data"))
         {
@@ -606,49 +586,6 @@ public class ParamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Tools"))
-        {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-            if (ImGui.MenuItem("Check all params for edits", null, false, !ParamBank.PrimaryBank.IsLoadingParams && !ParamBank.VanillaBank.IsLoadingParams))
-            {
-                ParamBank.RefreshAllParamDiffCaches(true);
-            }
-
-            ImGui.Separator();
-
-            if (!EditorMode)
-            {
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-
-                if (ImGui.MenuItem("Editor Mode", null, EditorMode))
-                {
-                    EditorMode = true;
-                }
-            }
-
-            if (EditorMode)
-            {
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-                if (ImGui.BeginMenu("Editor Mode"))
-                {
-                    if (ImGui.MenuItem("Save Changes"))
-                    {
-                        ParamMetaData.SaveAll();
-                        EditorMode = false;
-                    }
-
-                    if (ImGui.MenuItem("Discard Changes"))
-                    {
-                        EditorMode = false;
-                    }
-
-                    ImGui.EndMenu();
-                }
-            }
-
-            ImGui.EndMenu();
-        }
-
         ParamUpgradeDisplay();
     }
 
@@ -698,7 +635,7 @@ public class ParamEditorScreen : EditorScreen
 
             if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
             {
-                DuplicateSelection();
+                ActionSubMenu.Handler.DuplicateHandler();
             }
 
             if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete))
@@ -960,10 +897,9 @@ public class ParamEditorScreen : EditorScreen
         }
 
         // Toolbar
-        if (CFG.Current.Interface_ParamEditor_Toolbar)
+        if (CFG.Current.Interface_ParamEditor_ToolConfiguration)
         {
-            _activeView._paramToolbar_ActionList.OnGui();
-            _activeView._paramToolbar_Configuration.OnGui();
+            ToolWindow.OnGui();
         }
 
         if (CFG.Current.UI_CompactParams)
@@ -1572,10 +1508,7 @@ public class ParamEditorScreen : EditorScreen
         });
     }
 
-    public void DuplicateSelection()
-    {
-        ParamAction_DuplicateRow.DuplicateSelection(_activeView._selection);
-    }
+    
 
     public void OpenMassEditPopup(string popup)
     {

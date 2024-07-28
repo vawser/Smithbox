@@ -107,6 +107,8 @@ public class WindowHandler
 
     public void HandleWindowIconBar()
     {
+        ImGui.Separator();
+
         if (ImGui.Button($"{ForkAwesome.Wrench}##ProjectWindow"))
         {
             ProjectWindow.ToggleMenuVisibility();

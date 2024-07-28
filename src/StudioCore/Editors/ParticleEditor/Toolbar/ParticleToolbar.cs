@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using StudioCore.Editor;
-using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.ParticleEditor;

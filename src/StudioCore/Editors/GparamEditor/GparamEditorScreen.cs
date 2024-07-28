@@ -146,7 +146,7 @@ public class GparamEditorScreen : EditorScreen
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Values);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Tool Configuration"))
+            if (ImGui.MenuItem("Tool Window"))
             {
                 CFG.Current.Interface_GparamEditor_ToolConfiguration = !CFG.Current.Interface_GparamEditor_ToolConfiguration;
             }

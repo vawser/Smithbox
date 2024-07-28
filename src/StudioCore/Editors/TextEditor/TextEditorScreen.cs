@@ -177,7 +177,7 @@ public class TextEditorScreen : EditorScreen
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextEntry);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Tool Configuration"))
+            if (ImGui.MenuItem("Tool Window"))
             {
                 CFG.Current.Interface_TextEditor_ToolConfigurationWindow = !CFG.Current.Interface_TextEditor_ToolConfigurationWindow;
             }

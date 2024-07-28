@@ -52,6 +52,7 @@ Param Editor:
  - ADD: button to restore param to vanilla fields
  - ADD: let Color Picker work for changing color
  - ADD: pin groups (under tools), for quickly switching between defined param/row/field pin groups (remove the project.json aspect if this is added)
+ - ADD: make "Use project meta" merge in new entries instead of wholesale replacing (https://github.com/ividyon/WitchyBND/blob/main/WitchyBND/Configuration.cs)
 
 Text Editor:
  - FIX: the patch separation of FMGs
@@ -68,6 +69,7 @@ Texture Viewer:
  - ADD: ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - ADD: ability to export selected icon 'section' of icon file (assuming texture has a shoebox layout)
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
+ - FIX: Texture Viewer holding tpfbdt open.
  
 Behavior Editor:
  - ADD: behavior HKX editor
@@ -89,4 +91,4 @@ World Map:
  - Add the the toolbar version
  - Add submit buttons instead of the weird selectables
 
-- Add EditLogs to all actions
+TODO: finish edit log changes
