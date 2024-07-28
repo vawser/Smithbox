@@ -1646,8 +1646,6 @@ public class MsbEntity : Entity
                     var npcParamId = dese.NPCParamID;
                     return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId], 16);
                 }
-
-                break;
                 break;
             case ProjectType.DS1:
             case ProjectType.DS1R:
