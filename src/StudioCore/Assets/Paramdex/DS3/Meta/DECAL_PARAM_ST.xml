@@ -16,18 +16,8 @@
     </Enum>
   </Enums>
   <ColorEdit>
-    <ColorEditor Name="Diffuse Color">
-        <Field Name="diffuseColorR" Type="u8"/> 
-        <Field Name="diffuseColorG" Type="u8"/> 
-        <Field Name="diffuseColorB" Type="u8"/> 
-        <Field Name="null" Type="f32"/>
-    </ColorEditor>
-    <ColorEditor Name="Reflection Color">
-        <Field Name="reflecColorR" Type="u8"/> 
-        <Field Name="reflecColorG" Type="u8"/> 
-        <Field Name="reflecColorB" Type="u8"/> 
-        <Field Name="null" Type="f32"/>
-    </ColorEditor>
+    <ColorEditor Name="Diffuse Color" Fields="diffuseColorR,diffuseColorG,diffuseColorB" PlacedField="diffuseColorB" />
+    <ColorEditor Name="Reflection Color" Fields="reflecColorR,reflecColorG,reflecColorB" PlacedField="reflecColorB" />
   </ColorEdit>
   <Field>
     <textureId AltName="Texture ID" Wiki="Texture ID" />

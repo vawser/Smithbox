@@ -1,7 +1,9 @@
 ﻿using Andre.Formats;
+using HKLib.hk2018.hkHashMapDetail;
 using HKX2;
 using ImGuiNET;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -12,8 +14,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -1015,5 +1019,228 @@ public static class ParamReferenceUtils
                 ItemLotParam_Button(mapId, AssetName);
             }
         }
+    }
+
+    // Supports: AC6, ER, DS3
+    public static void ColorPicker(string activeParam, Param.Row row, string currentField)
+    {
+        if (!CFG.Current.Param_ShowColorPreview)
+            return;
+
+        if (activeParam == null)
+            return;
+
+        if (row == null)
+            return;
+
+        if (currentField == null)
+            return;
+
+        var meta = ParamMetaData.Get(row.Def);
+        var proceed = false;
+        string name = "";
+        string fields = "";
+        string placementField = "";
+
+        foreach (var editor in meta.ColorEditors)
+        {
+            name = editor.Name;
+            fields = editor.Fields;
+            placementField = editor.PlacedField;
+
+            if(currentField == placementField)
+            {
+                proceed = true;
+                break;
+            }
+        }
+
+        if(proceed)
+        {
+            List<string> FieldNames = new List<string>();
+            FieldNames = fields.Split(",").ToList();
+
+            DisplayColorPicker(row, name, FieldNames[0], FieldNames[1], FieldNames[2]);
+        }
+    }
+
+    private static Vector3 heldColor = new();
+
+    private static void DisplayColorPicker(Param.Row row, string name, string redField, string greenField, string blueField)
+    {
+        var editor = Smithbox.EditorHandler.ParamEditor;
+        var param = ParamBank.PrimaryBank.Params[editor._activeView._selection.GetActiveParam()];
+        var curRow = param[row.ID];
+
+        var color = GetVector3Color(curRow, redField, greenField, blueField);
+
+        if (ImGui.ColorEdit3($"{name}##ColorEdit_{name}{row.ID}", ref color))
+        {
+            heldColor = color;
+        }
+
+        if(ImGui.IsItemDeactivatedAfterEdit())
+        {
+            var newColor = GetRgbColor(curRow, heldColor.X, heldColor.Y, heldColor.Z);
+
+            PropertyInfo info = typeof(Param.Cell).GetProperty("Value");
+
+            // RED
+            var redProp = curRow[redField].Value;
+
+            var redValue = newColor.X;
+
+            // GREEN
+            var greenProp = curRow[greenField].Value;
+
+            var greenValue = newColor.Y;
+
+            // BLUE
+            var blueProp = curRow[blueField].Value;
+
+            var blueValue = newColor.Z;
+
+            PropertiesChangedAction redAction = null;
+
+            if (curRow[redField].Value.Def.InternalType == "u8")
+            {
+                redAction = new PropertiesChangedAction(info, redProp, (byte)redValue);
+            }
+            if (curRow[redField].Value.Def.InternalType == "s8")
+            {
+                redAction = new PropertiesChangedAction(info, redProp, (sbyte)redValue);
+            }
+            if (curRow[redField].Value.Def.InternalType == "u16")
+            {
+                redAction = new PropertiesChangedAction(info, redProp, (ushort)redValue);
+            }
+            if (curRow[redField].Value.Def.InternalType == "s16")
+            {
+                redAction = new PropertiesChangedAction(info, redProp, (short)redValue);
+            }
+            if (curRow[redField].Value.Def.InternalType == "u32")
+            {
+                redAction = new PropertiesChangedAction(info, redProp, (byte)redValue);
+            }
+            if (curRow[redField].Value.Def.InternalType == "s32")
+            {
+                redAction = new PropertiesChangedAction(info, redProp, (int)redValue);
+            }
+            if (curRow[redField].Value.Def.InternalType == "f32")
+            {
+                redAction = new PropertiesChangedAction(info, redProp, (float)redValue);
+            }
+
+            PropertiesChangedAction greenAction = null;
+
+            if (curRow[greenField].Value.Def.InternalType == "u8")
+            {
+                greenAction = new PropertiesChangedAction(info, greenProp, (byte)greenValue);
+            }
+            if (curRow[greenField].Value.Def.InternalType == "s8")
+            {
+                greenAction = new PropertiesChangedAction(info, greenProp, (sbyte)greenValue);
+            }
+            if (curRow[greenField].Value.Def.InternalType == "u16")
+            {
+                greenAction = new PropertiesChangedAction(info, greenProp, (ushort)greenValue);
+            }
+            if (curRow[greenField].Value.Def.InternalType == "s16")
+            {
+                greenAction = new PropertiesChangedAction(info, greenProp, (short)greenValue);
+            }
+            if (curRow[greenField].Value.Def.InternalType == "u32")
+            {
+                greenAction = new PropertiesChangedAction(info, greenProp, (byte)greenValue);
+            }
+            if (curRow[greenField].Value.Def.InternalType == "s32")
+            {
+                greenAction = new PropertiesChangedAction(info, greenProp, (int)greenValue);
+            }
+            if (curRow[greenField].Value.Def.InternalType == "f32")
+            {
+                greenAction = new PropertiesChangedAction(info, greenProp, (float)greenValue);
+            }
+
+            PropertiesChangedAction blueAction = null;
+
+            if (curRow[blueField].Value.Def.InternalType == "u8")
+            {
+                blueAction = new PropertiesChangedAction(info, blueProp, (byte)blueValue);
+            }
+            if (curRow[blueField].Value.Def.InternalType == "s8")
+            {
+                blueAction = new PropertiesChangedAction(info, blueProp, (sbyte)blueValue);
+            }
+            if (curRow[blueField].Value.Def.InternalType == "u16")
+            {
+                blueAction = new PropertiesChangedAction(info, blueProp, (ushort)blueValue);
+            }
+            if (curRow[blueField].Value.Def.InternalType == "s16")
+            {
+                blueAction = new PropertiesChangedAction(info, blueProp, (short)blueValue);
+            }
+            if (curRow[blueField].Value.Def.InternalType == "u32")
+            {
+                blueAction = new PropertiesChangedAction(info, blueProp, (byte)blueValue);
+            }
+            if (curRow[blueField].Value.Def.InternalType == "s32")
+            {
+                blueAction = new PropertiesChangedAction(info, blueProp, (int)blueValue);
+            }
+            if (curRow[blueField].Value.Def.InternalType == "f32")
+            {
+                blueAction = new PropertiesChangedAction(info, blueProp, (float)blueValue);
+            }
+
+            if (redAction != null && greenAction != null && blueAction != null)
+            {
+                var compoundAction = new CompoundAction(new List<EditorAction> { redAction, greenAction, blueAction });
+                editor.EditorActionManager.ExecuteAction(compoundAction);
+            }
+        }
+    }
+
+    public static Vector3 GetRgbColor(Param.Row curRow, float red, float green, float blue)
+    {
+        float rVal = (red * 255);
+        float gVal = (green * 255);
+        float bVal = (blue * 255);
+
+        return new Vector3(rVal, gVal, bVal);
+    }
+    public static Vector3 GetVector3Color(Param.Row curRow, string redField, string greenField, string blueField)
+    {
+        // RED
+        var redValue = curRow[redField].Value.Value.ToString();
+        float rVal = 0.0f;
+
+        float.TryParse(redValue, out rVal);
+        if (rVal > 1.0) // If greater than 1.0, then it is a 255,255,255 field
+        {
+            rVal = (rVal / 255);
+        }
+
+        // RED
+        var greenValue = curRow[greenField].Value.Value.ToString();
+        float gVal = 0.0f;
+
+        float.TryParse(greenValue, out gVal);
+        if (gVal > 1.0) // If greater than 1.0, then it is a 255,255,255 field
+        {
+            gVal = (gVal / 255);
+        }
+
+        // BLUE
+        var blueValue = curRow[blueField].Value.Value.ToString();
+        float bVal = 0.0f;
+
+        float.TryParse(blueValue, out bVal);
+        if (bVal > 1.0) // If greater than 1.0, then it is a 255,255,255 field
+        {
+            bVal = (bVal / 255);
+        }
+
+        return new Vector3(rVal, gVal, bVal);
     }
 }

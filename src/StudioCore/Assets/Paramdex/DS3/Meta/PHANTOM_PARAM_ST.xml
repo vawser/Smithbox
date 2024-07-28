@@ -10,36 +10,11 @@
     </Enum>
   </Enums>
   <ColorEdit>
-    <ColorEditor Name="Edge Color">
-        <Field Name="edgeColorR" Type="u8"/> 
-        <Field Name="edgeColorG" Type="u8"/> 
-        <Field Name="edgeColorB" Type="u8"/> 
-        <Field Name="edgeColorA" Type="f32"/>
-    </ColorEditor>
-    <ColorEditor Name="Front Color">
-        <Field Name="frontColorR" Type="u8"/> 
-        <Field Name="frontColorG" Type="u8"/> 
-        <Field Name="frontColorB" Type="u8"/> 
-        <Field Name="frontColorA" Type="f32"/>
-    </ColorEditor>
-    <ColorEditor Name="Diffuse Color">
-        <Field Name="diffMulColorR" Type="u8"/> 
-        <Field Name="diffMulColorG" Type="u8"/> 
-        <Field Name="diffMulColorB" Type="u8"/> 
-        <Field Name="specMulColorA" Type="f32"/>
-    </ColorEditor>
-    <ColorEditor Name="Specular Color">
-        <Field Name="specMulColorR" Type="u8"/> 
-        <Field Name="specMulColorG" Type="u8"/> 
-        <Field Name="specMulColorB" Type="u8"/> 
-        <Field Name="specMulColorA" Type="f32"/>
-    </ColorEditor>
-    <ColorEditor Name="Light Color">
-        <Field Name="lightColorR" Type="u8"/> 
-        <Field Name="lightColorG" Type="u8"/> 
-        <Field Name="lightColorB" Type="u8"/> 
-        <Field Name="null" Type="f32"/>
-    </ColorEditor>
+    <ColorEditor Name="Edge Color" Fields="edgeColorR,edgeColorG,edgeColorB" PlacedField="edgeColorB" />
+    <ColorEditor Name="Front Color" Fields="frontColorR,frontColorG,frontColorB" PlacedField="frontColorB" />
+    <ColorEditor Name="Diffuse Color" Fields="diffMulColorR,diffMulColorG,diffMulColorB" PlacedField="diffMulColorB" />
+    <ColorEditor Name="Specular Color" Fields="specMulColorR,specMulColorG,specMulColorB" PlacedField="specMulColorB" />
+    <ColorEditor Name="Light Color" Fields="lightColorR,lightColorG,lightColorB" PlacedField="lightColorB" />
   </ColorEdit>
   <Field>
     <edgeColorA AltName="Edge Color: Alpha" Wiki="Edge color A." />

@@ -1,12 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <ColorEdit>
-    <ColorEditor Name="Menu Color">
-        <Field Name="colorR" Type="u8"/> 
-        <Field Name="colorG" Type="u8"/> 
-        <Field Name="colorB" Type="u8"/> 
-        <Field Name="colorAlpha" Type="u8"/>
-    </ColorEditor>
+    <ColorEditor Name="Menu Color" Fields="colorR,colorG,colorB" PlacedField="colorB" />
   </ColorEdit>
   <Field>
     <colorR AltName="Menu Color: R" />

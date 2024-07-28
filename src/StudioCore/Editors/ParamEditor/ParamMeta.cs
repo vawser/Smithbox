@@ -20,7 +20,7 @@ public class ParamMetaData
 
     internal Dictionary<string, ParamEnum> enums = new();
 
-    internal Dictionary<string, ParamColorEdit> colorEditors = new();
+    internal List<ParamColorEdit> ColorEditors = new();
 
     public static string CurrentMetaFile = "";
 
@@ -152,7 +152,7 @@ public class ParamMetaData
         foreach (XmlNode node in root.SelectNodes("ColorEdit/ColorEditor"))
         {
             ParamColorEdit colorEditor = new(node);
-            colorEditors.Add(colorEditor.name, colorEditor);
+            ColorEditors.Add(colorEditor);
         }
 
         // Fields
@@ -720,17 +720,15 @@ public class FieldMetaData
 
 public class ParamColorEdit
 {
-    public string name;
-
-    public Dictionary<string, string> values = new();
+    public string Name;
+    public string Fields;
+    public string PlacedField;
 
     public ParamColorEdit(XmlNode enumNode)
     {
-        name = enumNode.Attributes["Name"].InnerText;
-        foreach (XmlNode option in enumNode.SelectNodes("Field"))
-        {
-            values[option.Attributes["Name"].InnerText] = option.Attributes["Type"].InnerText;
-        }
+        Name = enumNode.Attributes["Name"].InnerText;
+        Fields = enumNode.Attributes["Fields"].InnerText;
+        PlacedField = enumNode.Attributes["PlacedField"].InnerText;
     }
 }
 

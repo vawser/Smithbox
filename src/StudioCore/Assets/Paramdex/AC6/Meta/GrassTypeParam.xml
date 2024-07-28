@@ -26,18 +26,8 @@
     </Enum>
   </Enums>
   <ColorEdit>
-    <ColorEditor Name="Color Shade 1">
-        <Field Name="colorShade1_r" Type="u8"/> 
-        <Field Name="colorShade1_g" Type="u8"/> 
-        <Field Name="colorShade1_b" Type="u8"/> 
-        <Field Name="null" Type="f32"/>
-    </ColorEditor>
-    <ColorEditor Name="Color Shade 2">
-        <Field Name="colorShade2_r" Type="u8"/> 
-        <Field Name="colorShade2_g" Type="u8"/> 
-        <Field Name="colorShade2_b" Type="u8"/> 
-        <Field Name="null" Type="f32"/>
-    </ColorEditor>
+    <ColorEditor Name="Color Shade 1" Fields="colorShade1_r,colorShade1_g,colorShade1_b" PlacedField="colorShade1_b" />
+    <ColorEditor Name="Color Shade 2" Fields="colorShade2_r,colorShade2_g,colorShade2_b" PlacedField="colorShade2_b" />
   </ColorEdit>
   <Field>
     <lodRange AltName="LOD Distance" Wiki="" Refs="GrassLodRangeParam,GrassLodRangeParam+100,GrassLodRangeParam+200" />

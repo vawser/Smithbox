@@ -21,54 +21,14 @@
     </Enum>
   </Enums>
   <ColorEdit>
-        <ColorEditor Name="Skin Color">
-            <Field Name="skinColor_R" Type="u8"/> 
-            <Field Name="skinColor_G" Type="u8"/> 
-            <Field Name="skinColor_B" Type="u8"/> 
-            <Field Name="null" Type="f32"/>
-        </ColorEditor>
-        <ColorEditor Name="Right Eye Color">
-            <Field Name="eyeRColor_R" Type="u8"/> 
-            <Field Name="eyeRColor_G" Type="u8"/> 
-            <Field Name="eyeRColor_B" Type="u8"/> 
-            <Field Name="null" Type="f32"/>
-        </ColorEditor>
-        <ColorEditor Name="Left Eye Color">
-            <Field Name="eyeLColor_R" Type="u8"/> 
-            <Field Name="eyeLColor_G" Type="u8"/> 
-            <Field Name="eyeLColor_B" Type="u8"/> 
-            <Field Name="null" Type="f32"/>
-        </ColorEditor>
-        <ColorEditor Name="Hair Color">
-            <Field Name="hairColor_R" Type="u8"/> 
-            <Field Name="hairColor_G" Type="u8"/> 
-            <Field Name="hairColor_B" Type="u8"/> 
-            <Field Name="null" Type="f32"/>
-        </ColorEditor>
-        <ColorEditor Name="Eyebrow Color">
-            <Field Name="eyeBrowColor_R" Type="u8"/> 
-            <Field Name="eyeBrowColor_G" Type="u8"/> 
-            <Field Name="eyeBrowColor_B" Type="u8"/> 
-            <Field Name="null" Type="f32"/>
-        </ColorEditor>
-        <ColorEditor Name="Beard Color">
-            <Field Name="beardColor_R" Type="u8"/> 
-            <Field Name="beardColor_G" Type="u8"/> 
-            <Field Name="beardColor_B" Type="u8"/> 
-            <Field Name="null" Type="f32"/>
-        </ColorEditor>
-        <ColorEditor Name="Accessories Color">
-            <Field Name="accessoriesColor_R" Type="u8"/> 
-            <Field Name="accessoriesColor_G" Type="u8"/> 
-            <Field Name="accessoriesColor_B" Type="u8"/> 
-            <Field Name="null" Type="f32"/>
-        </ColorEditor>
-        <ColorEditor Name="Decal Color">
-            <Field Name="decalColor_R" Type="u8"/> 
-            <Field Name="decalColor_G" Type="u8"/> 
-            <Field Name="decalColor_B" Type="u8"/> 
-            <Field Name="null" Type="f32"/>
-        </ColorEditor>
+        <ColorEditor Name="Skin Color" Fields="skinColor_R,skinColor_G,skinColor_B" PlacedField="skinColor_B" />
+        <ColorEditor Name="Right Eye Color" Fields="eyeRColor_R,eyeRColor_G,eyeRColor_B" PlacedField="eyeRColor_B" />
+        <ColorEditor Name="Left Eye Color" Fields="eyeLColor_R,eyeLColor_G,eyeLColor_B" PlacedField="eyeLColor_B" />
+        <ColorEditor Name="Hair Color" Fields="hairColor_R,hairColor_G,hairColor_B" PlacedField="hairColor_B" />
+        <ColorEditor Name="Eyebrow Color" Fields="eyeBrowColor_R,eyeBrowColor_G,eyeBrowColor_B" PlacedField="eyeBrowColor_B" />
+        <ColorEditor Name="Beard Color" Fields="beardColor_R,beardColor_G,beardColor_B" PlacedField="beardColor_B" />
+        <ColorEditor Name="Accessories Color" Fields="accessoriesColor_R,accessoriesColor_G,accessoriesColor_B" PlacedField="accessoriesColor_B" />
+        <ColorEditor Name="Decal Color" Fields="decalColor_R,decalColor_G,decalColor_B" PlacedField="decalColor_B" />
     </ColorEdit>
   <Field>
     <facePartsId Enum="FacePartsEnum" AltName="Face Parts ID" Wiki="Hundreds digit value is musculature type:\n  0 = Standard, 1 = Muscular\nTens value is body hair type:\n  0 = Standard, 1 = Thick\nOnes digit is age type:\n  0 = Young, 1 = Mature, 2 = Aged, 3 = Slave Knight Gael\nExamples:\n  110 = muscular, thick body hair, and young\n  12 = thick body hair and aged\n  1 = mature" />

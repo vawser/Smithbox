@@ -45,11 +45,8 @@ Material Editor
  - ADD: Implement Material/MATBIN editor
 
 Param Editor:
- - FIX: move Color Pickers into in-line position with last color field
  - ADD: stayparam support for DS3 (requires 'blob' editor with manual definitions)
  - ADD: Able to sort row order manually
- - ADD: button to restore param to vanilla fields
- - ADD: let Color Picker work for changing color
  - ADD: pin groups (under tools), for quickly switching between defined param/row/field pin groups (remove the project.json aspect if this is added)
  - ADD: make "Use project meta" merge in new entries instead of wholesale replacing (https://github.com/ividyon/WitchyBND/blob/main/WitchyBND/Configuration.cs)
 

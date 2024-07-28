@@ -3,12 +3,7 @@
   <Enums>
   </Enums>
   <ColorEdit>
-    <ColorEditor Name="Map Color">
-        <Field Name="srcR" Type="u8"/> 
-        <Field Name="srcG" Type="u8"/> 
-        <Field Name="srcB" Type="u8"/> 
-        <Field Name="null" Type="f32"/>
-    </ColorEditor>
+    <ColorEditor Name="Map Color" Fields="srcR,srcG,srcB" PlacedField="srcB" />
   </ColorEdit>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />

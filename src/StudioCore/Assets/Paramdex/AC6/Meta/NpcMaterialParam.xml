@@ -1,12 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <ColorEdit>
-    <ColorEditor Name="Material Color">
-        <Field Name="colorRed" Type="f32"/> 
-        <Field Name="colorGreen" Type="f32"/> 
-        <Field Name="colorBlue" Type="f32"/> 
-        <Field Name="colorAlpha" Type="f32"/>
-    </ColorEditor>
+    <ColorEditor Name="Material Color" Fields="colorRed,colorGreen,colorBlue" PlacedField="colorBlue" />
   </ColorEdit>
   <Field>
     <Unk0x00 IsHidden="" />

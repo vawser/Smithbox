@@ -3,12 +3,7 @@
   <Enums>
   </Enums>
   <ColorEdit>
-    <ColorEditor Name="Base Color">
-        <Field Name="baseColorR" Type="u8"/> 
-        <Field Name="baseColorG" Type="u8"/> 
-        <Field Name="baseColorB" Type="u8"/> 
-        <Field Name="baseColorA" Type="f32"/>
-    </ColorEditor>
+    <ColorEditor Name="Base Color" Fields="baseColorR,baseColorG,baseColorB" PlacedField="baseColorB" />
   </ColorEdit>
   <Field>
     <baseColorR AltName="Base Color: R" Wiki="Base color color R." />
