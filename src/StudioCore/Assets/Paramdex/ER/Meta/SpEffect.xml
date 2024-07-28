@@ -72,28 +72,6 @@
         <Option Value="12" Name="Slot 12" />
 
     </Enum>
-    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
-        <Option Value="0" Name="Slash" />
-        <Option Value="1" Name="Strike" />
-        <Option Value="2" Name="Thrust" />
-        <Option Value="3" Name="Standard" />
-        <Option Value="253" Name="Refers to EquipParamWeapon atkAttribute2 field" />
-        <Option Value="254" Name="Refers to EquipParamWeapon atkAttribute field" />
-    </Enum>
-    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="10" Name="Magic" />
-        <Option Value="11" Name="Fire" />
-        <Option Value="12" Name="Lightning" />
-        <Option Value="13" Name="Holy" />
-        <Option Value="20" Name="Poison" />
-        <Option Value="21" Name="Scarlet Rot" />
-        <Option Value="22" Name="Hemorrhage" />
-        <Option Value="23" Name="Frostbite" />
-        <Option Value="24" Name="Sleep" />
-        <Option Value="25" Name="Madness" />
-        <Option Value="26" Name="Blight" />
-    </Enum>
     <Enum Name="SP_EFE_WEP_CHANGE_PARAM" type="u8">
         <Option Value="0" Name="None" />
         <Option Value="1" Name="Right-hand" />
@@ -286,20 +264,20 @@
     <defFlickPower AltName="Weapon Repel Defence +" Wiki="Set a value that overwrites the repelling defense" />
     <flickDamageCutRate AltName="Weapon Repel Absorption %" Wiki="Set a value that overwrites the damage attenuation rate at the time of repelling" />
     <bloodDamageRate AltName="Damage Correction %: Hemorrhage" Wiki="Point damage of state change type [bleeding], correction value used only when% damage" />
-    <dmgLv_None AltName="Damage Level: No Impact" Wiki="Specify the type to replace the damage Lv0" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
-    <dmgLv_S AltName="Damage Level: Small Impact" Wiki="Specify the type to replace the damage Lv1" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
-    <dmgLv_M AltName="Damage Level: Medium Impact" Wiki="Specify the type to replace the damage Lv2" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
-    <dmgLv_L AltName="Damage Level: Large Impact" Wiki="Specify the type to replace the damage Lv3" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
-    <dmgLv_BlowM AltName="Damage Level: Medium Blow" Wiki="Specify the type to replace the damage Lv4" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
-    <dmgLv_Push AltName="Damage Level: Push" Wiki="Specify the type to replace the damage Lv5" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
-    <dmgLv_Strike AltName="Damage Level: Strike" Wiki="Specify the type to replace the damage Lv6" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
-    <dmgLv_BlowS AltName="Damage Level: Small Blow" Wiki="Specify the type to replace the damage Lv7" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
-    <dmgLv_Min AltName="Damage Level: Minimal" Wiki="Specify the type to replace the damage Lv8" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
-    <dmgLv_Uppercut AltName="Damage Level: Uppercut" Wiki="Specify the type to replace the damage Lv9" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
-    <dmgLv_BlowLL AltName="Damage Level: Blow Backward" Wiki="Specify the type to replace the damage Lv10" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
-    <dmgLv_Breath AltName="Damage Level: Breath" Wiki="Specify the type to replace the damage Lv11" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
-    <atkAttribute AltName="Attack Attribute" Wiki="Physical attributes to set for special effects" Enum="ATKPARAM_ATKATTR_TYPE" />
-    <spAttribute AltName="SpEffect Attribute" Wiki="Special attributes to set for special effects" Enum="ATKPARAM_SPATTR_TYPE" />
+    <dmgLv_None AltName="Damage Level: No Impact" Wiki="Specify the type to replace the damage Lv0" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
+    <dmgLv_S AltName="Damage Level: Small Impact" Wiki="Specify the type to replace the damage Lv1" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
+    <dmgLv_M AltName="Damage Level: Medium Impact" Wiki="Specify the type to replace the damage Lv2" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
+    <dmgLv_L AltName="Damage Level: Large Impact" Wiki="Specify the type to replace the damage Lv3" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
+    <dmgLv_BlowM AltName="Damage Level: Medium Blow" Wiki="Specify the type to replace the damage Lv4" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
+    <dmgLv_Push AltName="Damage Level: Push" Wiki="Specify the type to replace the damage Lv5" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
+    <dmgLv_Strike AltName="Damage Level: Strike" Wiki="Specify the type to replace the damage Lv6" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
+    <dmgLv_BlowS AltName="Damage Level: Small Blow" Wiki="Specify the type to replace the damage Lv7" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
+    <dmgLv_Min AltName="Damage Level: Minimal" Wiki="Specify the type to replace the damage Lv8" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
+    <dmgLv_Uppercut AltName="Damage Level: Uppercut" Wiki="Specify the type to replace the damage Lv9" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
+    <dmgLv_BlowLL AltName="Damage Level: Blow Backward" Wiki="Specify the type to replace the damage Lv10" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
+    <dmgLv_Breath AltName="Damage Level: Breath" Wiki="Specify the type to replace the damage Lv11" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
+    <atkAttribute AltName="Attack Attribute" Wiki="Physical attributes to set for special effects" ProjectEnum="ATKPARAM_ATKATTR_TYPE" />
+    <spAttribute AltName="SpEffect Attribute" Wiki="Special attributes to set for special effects" ProjectEnum="ATKPARAM_SPATTR_TYPE" />
     <stateInfo AltName="State Info" Wiki="State change judgment flag" ProjectEnum="SP_EFFECT_TYPE" />
     <wepParamChange AltName="Weapon Parameter Change" Wiki="Specify which weapon is effective. If there is no limit, all attacks and defenses including enemies are targeted" Enum="SP_EFE_WEP_CHANGE_PARAM" />
     <moveType AltName="Move Type" Wiki="Movement type. Change the movement speed." Enum="SP_EFFECT_MOVE_TYPE" />
@@ -371,7 +349,7 @@
     <vowType13 AltName="Trigger for Vow Type [13]" Wiki="Pledge 13" IsBool="" />
     <vowType14 AltName="Trigger for Vow Type [14]" Wiki="Pledge 14" IsBool="" />
     <vowType15 AltName="Trigger for Vow Type [15]" Wiki="Pledge 15" IsBool="" />
-    <repAtkDmgLv AltName="Change Attacker Damage Level" Wiki="The damage level of the attacking side changes to this value" ProjectEnum="ATKPARAM_REP_DMGTYPE" />
+    <repAtkDmgLv AltName="Change Attacker Damage Level" Wiki="The damage level of the attacking side changes to this value" ProjectEnum="SPEFFECT_DMGTYPE_NEW" />
     <sightSearchRate AltName="AI Vision Correction" Wiki="Correct the ease of finding with a magnification" />
     <effectTargetOpposeTarget AltName="Trigger for Opponent" Wiki="Only the target for which this judgment is checked is effective, the default is " IsBool="" />
     <effectTargetFriendlyTarget AltName="Trigger for Friendly" Wiki="Only the target for which this judgment is checked is effective, the default is " IsBool="" />

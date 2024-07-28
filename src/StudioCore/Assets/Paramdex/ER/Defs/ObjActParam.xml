@@ -45,13 +45,13 @@
       <Maximum>60000</Maximum>
       <SortID>3000</SortID>
     </Field>
-    <Field Def="u16 spQualifiedId">
+    <Field Def="u16 spQualifiedId_old">
       <DisplayName>特殊条件のID</DisplayName>
       <Description>特殊条件のID</Description>
       <Maximum>9999</Maximum>
       <SortID>8000</SortID>
     </Field>
-    <Field Def="u16 spQualifiedId2">
+    <Field Def="u16 spQualifiedId2_old">
       <DisplayName>特殊条件のID 2</DisplayName>
       <Description>特殊条件のIDその2</Description>
       <Maximum>9999</Maximum>
@@ -145,14 +145,10 @@
     
     <Field Def="dummy8 pad2_old[40]" RemovedVersion="11210015" />
     
-    <Field Def="u8 unknown_0x38" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x3c" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x40" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x44" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x48" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x4c" FirstVersion="11210015" />
+    <Field Def="s32 spQualifiedId_new" FirstVersion="11210015" />
+    <Field Def="s32 spQualifiedId2_new" FirstVersion="11210015" />
     
-    <Field Def="dummy8 pad2[34]" FirstVersion="11210015" >
+    <Field Def="dummy8 pad2[32]" FirstVersion="11210015" >
       <SortID>13002</SortID>
     </Field>
   </Fields>

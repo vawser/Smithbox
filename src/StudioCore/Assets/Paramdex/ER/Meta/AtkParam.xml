@@ -13,28 +13,6 @@
         <Option Value="2" Name="Not on the map" />
         <Option Value="3" Name="Map, not an asset" />
     </Enum>
-    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
-        <Option Value="0" Name="Slash" />
-        <Option Value="1" Name="Strike" />
-        <Option Value="2" Name="Thrust" />
-        <Option Value="3" Name="Standard" />
-        <Option Value="253" Name="Refers to EquipParamWeapon atkAttribute2 field" />
-        <Option Value="254" Name="Refers to EquipParamWeapon atkAttribute field" />
-    </Enum>
-    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="10" Name="Magic" />
-        <Option Value="11" Name="Fire" />
-        <Option Value="12" Name="Lightning" />
-        <Option Value="13" Name="Holy" />
-        <Option Value="20" Name="Poison" />
-        <Option Value="21" Name="Scarlet Rot" />
-        <Option Value="22" Name="Hemorrhage" />
-        <Option Value="23" Name="Frostbite" />
-        <Option Value="24" Name="Sleep" />
-        <Option Value="25" Name="Madness" />
-        <Option Value="26" Name="Blight" />
-    </Enum>
     <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
         <Option Value="0" Name="Slash" />
         <Option Value="1" Name="Strike" />
@@ -297,11 +275,11 @@
     <hti1_Priority AltName="Hit 1: Priority" Wiki="priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
     <hti2_Priority AltName="Hit 2: Priority" Wiki="priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
     <hti3_Priority AltName="Hit 3: Priority" Wiki="priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
-    <dmgLevel AltName="Damage Level" Wiki="Which damage motion should be played against the enemy when attacking? To decide." ProjectEnum="ATKPARAM_REP_DMGTYPE" />
+    <dmgLevel AltName="Damage Level" Wiki="Which damage motion should be played against the enemy when attacking? To decide." ProjectEnum="ATKPARAM_DMGTYPE_NEW" />
     <mapHitType AltName="Map Hit Type" Wiki="Which map do you see around the attack? The set" Enum="ATK_PARAM_MAP_HIT" />
     <guardCutCancelRate AltName="Guard Absorption Bypass Rate" Wiki="Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut Become " />
-    <atkAttribute AltName="Attack Attribute" Wiki="Physical attributes to set for attacks" Enum="ATKPARAM_ATKATTR_TYPE" />
-    <spAttribute AltName="Special Attribute" Wiki="Special attributes to set for attacks" Enum="ATKPARAM_SPATTR_TYPE" />
+    <atkAttribute AltName="Attack Attribute" Wiki="Physical attributes to set for attacks" ProjectEnum="ATKPARAM_ATKATTR_TYPE" />
+    <spAttribute AltName="Special Attribute" Wiki="Special attributes to set for attacks" ProjectEnum="ATKPARAM_SPATTR_TYPE" />
     <atkType AltName="Attack Type" Wiki="Specify SFX / SE at the time of attack (1 set by attribute, material, size)" Enum="BEHAVIOR_ATK_TYPE" />
     <atkMaterial AltName="Attack Material" Wiki="Specify SFX / SE at the time of attack (1 set by attribute, material, size)" Enum="WEP_MATERIAL_ATK" />
     <guardRangeType AltName="Guard Range Type" Wiki="Guard judgment position" Enum="ATKPARAM_GUARD_RANGE_TYPE" />
@@ -431,7 +409,7 @@
     <isDisableBothHandsAtkBonus AltName="Is Disable 2H ATK Bonus" Wiki="Avoid using the 1.5x growth status adaptation with both hands" IsBool="" />
     <isInvalidatedByNoDamageInAir AltName="Is Invalidated by No Damage in Air" Wiki="If Do you want to penetrate invincibility is , this setting will be ignored." IsBool="" />
     <pad2 AltName="" IsHidden=""/>
-    <dmgLevel_vsPlayer AltName="Damage Level - Vs. Player" Wiki="Damage level to the player. If it is 0 (default), it is not used. The meaning of the range other than 0 (default) is the same as Damage level." ProjectEnum="ATKPARAM_REP_DMGTYPE" />
+    <dmgLevel_vsPlayer AltName="Damage Level - Vs. Player" Wiki="Damage level to the player. If it is 0 (default), it is not used. The meaning of the range other than 0 (default) is the same as Damage level." ProjectEnum="ATKPARAM_DMGTYPE_NEW" />
     <statusAilmentAtkPowerCorrectRate AltName="Status Ailment Correction" Wiki="Magnification correction is performed for the abnormal state attack power of special effects." />
     <spEffectAtkPowerCorrectRate_byPoint AltName="Attack Correction - By SpEffect Point" Wiki="Magnification correction is performed for the special effect ~ ~ attack power [point]." />
     <spEffectAtkPowerCorrectRate_byRate AltName="Attack Correction - By SpEffect Power" Wiki="Magnification is corrected for the special effect's attack power multiplier." />
