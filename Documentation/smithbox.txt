@@ -53,6 +53,8 @@ Param Editor:
 Text Editor:
  - FIX: the patch separation of FMGs
  - FIX: vanilla entry should be preferred over dlc01/dlc02 entry
+ - ADD: FMG Generator script creation modal
+ - ADD: FMG Generator open script folder (for project)
  
 Gparam Editor:
  - ADD: json export/import of GPARAM (plus sub-classes?)
@@ -80,3 +82,4 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
+-> Behavior Editor
