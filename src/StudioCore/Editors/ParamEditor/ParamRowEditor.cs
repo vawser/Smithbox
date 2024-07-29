@@ -578,7 +578,7 @@ public class ParamRowEditor
                 // Enum
                 if (displayEnum)
                 {
-                    EditorDecorations.EnumValueText(Enum.values, oldval.ToString());
+                    EditorDecorations.EnumValueText(Enum.Values, oldval.ToString());
                 }
 
                 // ParticleAlias
@@ -817,7 +817,7 @@ public class ParamRowEditor
 
             if (CFG.Current.Param_HideEnums == false && Enum != null)
             {
-                EditorDecorations.EnumValueText(Enum.values, colVal.ToString());
+                EditorDecorations.EnumValueText(Enum.Values, colVal.ToString());
             }
 
             // ParticleAlias
@@ -1098,7 +1098,7 @@ public class ParamRowEditor
             {
                 foreach (ParamRef p in cellMeta.RefTypes)
                 {
-                    if (ImGui.MenuItem(p.param + "##remove" + p.param))
+                    if (ImGui.MenuItem(p.ParamName + "##remove" + p.ParamName))
                     {
                         cellMeta.RefTypes.Remove(p);
 

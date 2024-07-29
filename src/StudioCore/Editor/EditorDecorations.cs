@@ -49,22 +49,22 @@ public class EditorDecorations
         var first = true;
         foreach (ParamRef r in paramRefs)
         {
-            Param.Cell? c = context?[r.conditionField];
-            var inactiveRef = context != null && c != null && Convert.ToInt32(c.Value.Value) != r.conditionValue;
+            Param.Cell? c = context?[r.ConditionField];
+            var inactiveRef = context != null && c != null && Convert.ToInt32(c.Value.Value) != r.ConditionValue;
             if (inactiveRef)
             {
-                inactiveRefs.Add(r.param);
+                inactiveRefs.Add(r.ParamName);
             }
             else
             {
                 if (first)
                 {
                     ImGui.SameLine();
-                    ImGui.TextUnformatted(r.param);
+                    ImGui.TextUnformatted(r.ParamName);
                 }
                 else
                 {
-                    ImGui.TextUnformatted("    " + r.param);
+                    ImGui.TextUnformatted("    " + r.ParamName);
                 }
 
                 first = false;
@@ -226,22 +226,22 @@ public class EditorDecorations
             (int)oldval; //make sure to explicitly cast from dynamic or C# complains. Object or Convert.ToInt32 fail.
         foreach (ParamRef rf in paramRefs)
         {
-            Param.Cell? c = context?[rf.conditionField];
-            var inactiveRef = context != null && c != null && Convert.ToInt32(c.Value.Value) != rf.conditionValue;
+            Param.Cell? c = context?[rf.ConditionField];
+            var inactiveRef = context != null && c != null && Convert.ToInt32(c.Value.Value) != rf.ConditionValue;
             if (inactiveRef)
             {
                 continue;
             }
 
-            var rt = rf.param;
+            var rt = rf.ParamName;
             var hint = "";
             if (bank.Params.ContainsKey(rt))
             {
                 var altval = originalValue;
-                if (rf.offset != 0)
+                if (rf.Offset != 0)
                 {
-                    altval += rf.offset;
-                    hint += rf.offset > 0 ? "+" + rf.offset : rf.offset.ToString();
+                    altval += rf.Offset;
+                    hint += rf.Offset > 0 ? "+" + rf.Offset : rf.Offset.ToString();
                 }
 
                 Param param = bank.Params[rt];
@@ -276,11 +276,11 @@ public class EditorDecorations
 
                 if (string.IsNullOrWhiteSpace(r.Name))
                 {
-                    rows.Add((rf.param, r, "Unnamed Row" + hint));
+                    rows.Add((rf.ParamName, r, "Unnamed Row" + hint));
                 }
                 else
                 {
-                    rows.Add((rf.param, r, r.Name + hint));
+                    rows.Add((rf.ParamName, r, r.Name + hint));
                 }
             }
         }
@@ -416,10 +416,10 @@ public class EditorDecorations
 
     public static void EnumNameText(ParamEnum pEnum)
     {
-        if (pEnum != null && pEnum.name != null && CFG.Current.Param_HideEnums == false) //Move preference
+        if (pEnum != null && pEnum.Name != null && CFG.Current.Param_HideEnums == false) //Move preference
         {
             ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
-            ImGui.TextUnformatted($@"   {pEnum.name}");
+            ImGui.TextUnformatted($@"   {pEnum.Name}");
             ImGui.PopStyleColor();
         }
     }
@@ -828,7 +828,7 @@ public class EditorDecorations
         {
             foreach (ParamRef rf in reftypes)
             {
-                var rt = rf.param;
+                var rt = rf.ParamName;
                 if (!bank.Params.ContainsKey(rt))
                 {
                     continue;
@@ -851,11 +851,11 @@ public class EditorDecorations
                         {
                             if (meta != null && meta.FixedOffset != 0)
                             {
-                                newval = Convert.ChangeType(r.ID - meta.FixedOffset - rf.offset, oldval.GetType());
+                                newval = Convert.ChangeType(r.ID - meta.FixedOffset - rf.Offset, oldval.GetType());
                             }
                             else
                             {
-                                newval = Convert.ChangeType(r.ID - rf.offset, oldval.GetType());
+                                newval = Convert.ChangeType(r.ID - rf.Offset, oldval.GetType());
                             }
 
                             _refContextCurrentAutoComplete = "";
@@ -978,11 +978,11 @@ public class EditorDecorations
     {
         ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, en.values.Count))))
+        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, en.Values.Count))))
         {
             try
             {
-                foreach (KeyValuePair<string, string> option in en.values)
+                foreach (KeyValuePair<string, string> option in en.Values)
                 {
                     if (SearchFilters.IsEditorSearchMatch(enumSearchStr, option.Key, " ")
                         || SearchFilters.IsEditorSearchMatch(enumSearchStr, option.Value, " ")
@@ -1125,7 +1125,7 @@ public class EditorDecorations
                 // get hilariously deep in loops
                 foreach (ParamRef pref in meta.RefTypes)
                 {
-                    if (!pref.param.Equals(currentParam))
+                    if (!pref.ParamName.Equals(currentParam))
                     {
                         continue;
                     }
@@ -1146,8 +1146,8 @@ public class EditorDecorations
     private static List<Param.Row> ParamRefReverseLookupRowItems(ParamBank bank, string paramName, string fieldName,
         int currentID, ParamRef pref)
     {
-        var searchTerm = pref.conditionField != null
-            ? $@"prop {fieldName} ^{currentID}$ && prop {pref.conditionField} ^{pref.conditionValue}$"
+        var searchTerm = pref.ConditionField != null
+            ? $@"prop {fieldName} ^{currentID}$ && prop {pref.ConditionField} ^{pref.ConditionValue}$"
             : $@"prop {fieldName} ^{currentID}$";
         return RowSearchEngine.rse.Search((bank, bank.Params[paramName]), searchTerm, false, false);
     }

@@ -145,7 +145,7 @@ public class ParamMetaData
         foreach (XmlNode node in root.SelectNodes("Enums/Enum"))
         {
             ParamEnum en = new(node);
-            enums.Add(en.name, en);
+            enums.Add(en.Name, en);
         }
 
         // Color Edits
@@ -329,7 +329,7 @@ public class ParamMetaData
         XmlNode node = GetXmlNode(xml, path);
         if (value != null)
         {
-            GetXmlAttribute(xml, node, property).InnerText = value.name;
+            GetXmlAttribute(xml, node, property).InnerText = value.Name;
         }
         else
         {
@@ -724,60 +724,106 @@ public class ParamColorEdit
     public string Fields;
     public string PlacedField;
 
-    public ParamColorEdit(XmlNode enumNode)
+    public ParamColorEdit(XmlNode colorEditNode)
     {
-        Name = enumNode.Attributes["Name"].InnerText;
-        Fields = enumNode.Attributes["Fields"].InnerText;
-        PlacedField = enumNode.Attributes["PlacedField"].InnerText;
+        Name = "";
+        Fields = "";
+        PlacedField = "";
+
+        if (colorEditNode.Attributes["Name"] != null)
+        {
+            Name = colorEditNode.Attributes["Name"].InnerText;
+        }
+        else
+        {
+            TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - Unable to populate ParamColorEdit Name property for {colorEditNode.Name}");
+        }
+        if (colorEditNode.Attributes["Fields"] != null)
+        {
+            Fields = colorEditNode.Attributes["Fields"].InnerText;
+        }
+        else
+        {
+            TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - Unable to populate ParamColorEdit Fields property for {colorEditNode.Name}");
+        }
+        if (colorEditNode.Attributes["PlacedField"] != null)
+        {
+            PlacedField = colorEditNode.Attributes["PlacedField"].InnerText;
+        }
+        else
+        {
+            TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - Unable to populate ParamColorEdit PlacedField property for {colorEditNode.Name}");
+        }
     }
 }
 
 public class ParamEnum
 {
-    public string name;
+    public string Name;
 
-    public Dictionary<string, string>
-        values = new(); // using string as an intermediate type. first string is value, second is name.
+    public Dictionary<string, string> Values = new(); // using string as an intermediate type. first string is value, second is name.
 
     public ParamEnum(XmlNode enumNode)
     {
-        name = enumNode.Attributes["Name"].InnerText;
+        Name = "";
+
+        if (enumNode.Attributes["Name"] != null)
+        {
+            Name = enumNode.Attributes["Name"].InnerText;
+        }
+        else
+        {
+            TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - Unable to populate ParamEnum Name property for {enumNode.Name}");
+        }
         foreach (XmlNode option in enumNode.SelectNodes("Option"))
         {
-            values[option.Attributes["Value"].InnerText] = option.Attributes["Name"].InnerText;
+            if (option.Attributes["Value"] != null)
+            {
+                Values[option.Attributes["Value"].InnerText] = option.Attributes["Name"].InnerText;
+            }
+            else
+            {
+                TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - Unable to populate ParamEnum Option Attribute Value property for {enumNode.Name}");
+            }
         }
     }
 }
 
 public class ParamRef
 {
-    public string conditionField;
-    public int conditionValue;
-    public int offset;
-    public string param;
+    public string ConditionField;
+    public int ConditionValue;
+    public int Offset;
+    public string ParamName;
 
     internal ParamRef(string refString)
     {
+        if(refString == "")
+        {
+            TaskLogs.AddLog($"PARAM META: {ParamMetaData.CurrentMetaFile} - ParamRef string is empty.");
+            return;
+        }
+
         var conditionSplit = refString.Split('(', 2, StringSplitOptions.TrimEntries);
         var offsetSplit = conditionSplit[0].Split('+', 2);
-        param = offsetSplit[0];
+        ParamName = offsetSplit[0];
         if (offsetSplit.Length > 1)
         {
-            offset = int.Parse(offsetSplit[1]);
+            Offset = int.Parse(offsetSplit[1]);
         }
 
         if (conditionSplit.Length > 1 && conditionSplit[1].EndsWith(')'))
         {
             var condition = conditionSplit[1].Substring(0, conditionSplit[1].Length - 1)
                 .Split('=', 2, StringSplitOptions.TrimEntries);
-            conditionField = condition[0];
-            conditionValue = int.Parse(condition[1]);
+            ConditionField = condition[0];
+            ConditionValue = int.Parse(condition[1]);
         }
     }
 
     internal string getStringForm()
     {
-        return conditionField != null ? param + '(' + conditionField + '=' + conditionValue + ')' : param;
+        return ConditionField != null ? ParamName + '(' + ConditionField + '=' + ConditionValue + ')' : ParamName;
     }
 }
 

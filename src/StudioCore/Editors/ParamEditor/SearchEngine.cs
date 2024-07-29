@@ -469,7 +469,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 {
                     List<ParamRef> validFields = FieldMetaData
                         .Get(context.Item2.AppliedParamdef.Fields.Find(f => f.InternalName.Equals(field))).RefTypes
-                        .FindAll(p => bank.Params.ContainsKey(p.param));
+                        .FindAll(p => bank.Params.ContainsKey(p.ParamName));
                     return row =>
                     {
                         Param.Cell? c = row[field];
@@ -481,7 +481,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         var val = (int)c.Value.Value;
                         foreach (ParamRef rt in validFields)
                         {
-                            Param.Row r = bank.Params[rt.param][val];
+                            Param.Row r = bank.Params[rt.ParamName][val];
                             if (r != null && rx.IsMatch(r.Name ?? ""))
                             {
                                 return true;
