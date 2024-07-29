@@ -335,6 +335,13 @@ public class ToolWindow
                 ImguiUtils.ShowWideHoverTooltip("Retain the mass edit command in the input text area after execution.");
                 ImguiUtils.WrappedText("");
 
+                // AutoFill
+                var res = AutoFill.MassEditCompleteAutoFill();
+                if (res != null)
+                {
+                    MassEditHandler._currentMEditRegexInput = MassEditHandler._currentMEditRegexInput + res;
+                }
+
                 // Input
                 ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Input:");
 
@@ -368,16 +375,6 @@ public class ToolWindow
                 ImGui.InputTextMultiline("##MEditRegexOutput", ref MassEditHandler._lastMEditRegexInput, 65536,
                     new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()), ImGuiInputTextFlags.ReadOnly);
                 ImguiUtils.WrappedText("");
-            }
-
-            // Mass Edit Builder
-            if (ImGui.CollapsingHeader("Mass Edit - Builder"))
-            {
-                var res = AutoFill.MassEditOpAutoFill();
-                if (res != null)
-                {
-                    MassEditHandler._currentMEditRegexInput = MassEditHandler._currentMEditRegexInput + res;
-                }
             }
 
             // Mass Edit Scripts
