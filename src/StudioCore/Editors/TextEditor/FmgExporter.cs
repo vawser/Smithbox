@@ -68,14 +68,11 @@ public static class FmgExporter
             return;
         }
 
-        var itemPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder).AssetPath;
-        var menuPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder).AssetPath;
+        var itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "");
+        var menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "");
 
         if (Smithbox.ProjectType is ProjectType.ER)
         {
-            var itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "");
-            var menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "");
-
             switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
             {
                 case TextEditorScreen.TargetOutputMode.Vanilla:
@@ -92,9 +89,6 @@ public static class FmgExporter
         }
         if (Smithbox.ProjectType is ProjectType.DS3)
         {
-            var itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "");
-            var menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "");
-
             switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
             {
                 case TextEditorScreen.TargetOutputMode.Vanilla:
@@ -109,6 +103,9 @@ public static class FmgExporter
                     break;
             }
         }
+
+        var itemPath = itemMsgPath.AssetPath;
+        var menuPath = menuMsgPath.AssetPath;
 
         var itemPath_Vanilla = itemPath.Replace(Smithbox.ProjectRoot, Smithbox.GameRoot);
         var menuPath_Vanilla = menuPath.Replace(Smithbox.ProjectRoot, Smithbox.GameRoot);
@@ -137,33 +134,36 @@ public static class FmgExporter
             foreach (var kvp in fmgs_mod)
             {
                 var fmg_mod = kvp.Value;
-                var entries_vanilla = fmgs_vanilla[kvp.Key].Entries.ToList();
-                FMG entries_out = new(fmg_mod.Version);
-
-                foreach (var entry in fmg_mod.Entries)
+                if (fmgs_vanilla.ContainsKey(kvp.Key))
                 {
-                    FMG.Entry entry_vanilla = null;
-                    for (var i = 0; i < entries_vanilla.Count; i++)
+                    var entries_vanilla = fmgs_vanilla[kvp.Key].Entries.ToList();
+                    FMG entries_out = new(fmg_mod.Version);
+
+                    foreach (var entry in fmg_mod.Entries)
                     {
-                        if (entries_vanilla[i].ID == entry.ID)
+                        FMG.Entry entry_vanilla = null;
+                        for (var i = 0; i < entries_vanilla.Count; i++)
                         {
-                            entry_vanilla = entries_vanilla[i];
-                            entries_vanilla.RemoveAt(i);
-                            break;
+                            if (entries_vanilla[i].ID == entry.ID)
+                            {
+                                entry_vanilla = entries_vanilla[i];
+                                entries_vanilla.RemoveAt(i);
+                                break;
+                            }
                         }
+
+                        if (entry_vanilla != null && entry.Text == entry_vanilla.Text)
+                        {
+                            continue;
+                        }
+
+                        entries_out.Entries.Add(entry);
                     }
 
-                    if (entry_vanilla != null && entry.Text == entry_vanilla.Text)
+                    if (entries_out.Entries.Count > 0)
                     {
-                        continue;
+                        fmgs_out.Add(kvp.Key, entries_out);
                     }
-
-                    entries_out.Entries.Add(entry);
-                }
-
-                if (entries_out.Entries.Count > 0)
-                {
-                    fmgs_out.Add(kvp.Key, entries_out);
                 }
             }
         }
