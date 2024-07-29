@@ -220,67 +220,51 @@ public class MapSceneTree : IActionEventHandler
         }
 
 
-        IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = _universe.LoadedObjectContainers.OrderBy(k => k.Key);
+        IEnumerable<string> selectedWorldMaps = null;
+        if (Smithbox.ProjectType == ProjectType.ER)
+        {
+            _worldMapScreen.MapSelectionActive = _mapObjectListSearchInput == "World Map Selection";
+            if (_worldMapScreen.MapSelectionActive)
+            {
+                selectedWorldMaps = Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone;
+            }
+        }
+
+        var orderedMaps = _universe.LoadedObjectContainers
+            .Where(k => k.Key is not null)
+            .OrderBy(k => k.Key);
+
+        var loadedMaps = orderedMaps.Where(k => k.Value is not null);
+        var unloadedMaps = orderedMaps.Where(k => k.Value is null);
+        if (selectedWorldMaps is not null && selectedWorldMaps.Any())
+        {
+            unloadedMaps = unloadedMaps.Where(m => selectedWorldMaps.Contains(m.Key));
+            if (!CFG.Current.MapEditor_Always_List_Loaded_Maps)
+                loadedMaps = loadedMaps.Where(m => selectedWorldMaps.Contains(m.Key));
+        }
+        else
+        {
+            var matchesMapSearch = (KeyValuePair<string, ObjectContainer> k) =>
+                SearchFilters.IsMapSearchMatch(
+                    _mapObjectListSearchInput, k.Key,
+                    AliasUtils.GetMapNameAlias(k.Key),
+                    AliasUtils.GetMapTags(k.Key)
+                );
+            unloadedMaps = unloadedMaps.Where(matchesMapSearch);
+            if (!CFG.Current.MapEditor_Always_List_Loaded_Maps)
+                loadedMaps = loadedMaps.Where(matchesMapSearch);
+        }
 
         _mapEnt_ImGuiID = 0;
-
-        foreach (KeyValuePair<string, ObjectContainer> lm in orderedMaps)
+        var unloadedSeparate = !loadedMaps.Any();
+        foreach (KeyValuePair<string, ObjectContainer> lm in loadedMaps.Concat(unloadedMaps))
         {
-            ObjectContainer CurrentObjectContainer = lm.Value;
-            var CurrentMapID = lm.Key;
+            var (CurrentMapID, CurrentObjectContainer) = lm;
 
-            if (CurrentMapID == null)
+            if (CurrentObjectContainer is null && !unloadedSeparate)
             {
-                continue;
-            }
-
-            var aliasName = "";
-            aliasName = AliasUtils.GetMapNameAlias(CurrentMapID);
-            List<string> mapTags = AliasUtils.GetMapTags(CurrentMapID);
-
-            // Map name search filter
-            if (_mapObjectListSearchInput == "World Map Selection")
-            {
-                _worldMapScreen.MapSelectionActive = true;
-            }
-            else
-            {
-                if (_worldMapScreen.MapSelectionActive && _mapObjectListSearchInput != "World Map Selection")
-                {
-                    _worldMapScreen.MapSelectionActive = false;
-                    Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;
-                }
-
-                if (!SearchFilters.IsMapSearchMatch(_mapObjectListSearchInput, CurrentMapID, aliasName, mapTags))
-                {
-
-                    if (CFG.Current.MapEditor_Always_List_Loaded_Maps)
-                    {
-                        if (CurrentObjectContainer == null)
-                        {
-                            continue;
-                        }
-                    }
-                    else
-                    {
-                        continue;
-                    }
-                }
-            }
-
-            // Hide other maps if World Map click has occured
-            if (Smithbox.ProjectType == ProjectType.ER)
-            {
-                if (Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone != null)
-                {
-                    if (Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone.Count > 0)
-                    {
-                        if (!Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone.Contains(CurrentMapID))
-                        {
-                            continue;
-                        }
-                    }
-                }
+                ImGui.Separator();
+                unloadedSeparate = true;
             }
 
             Entity mapRoot = CurrentObjectContainer?.RootObject;
@@ -330,7 +314,7 @@ public class MapSceneTree : IActionEventHandler
 
             if (CFG.Current.MapEditor_MapObjectList_ShowMapNames)
             {
-                AliasUtils.DisplayAlias(aliasName);
+                AliasUtils.DisplayAlias(AliasUtils.GetMapNameAlias(CurrentMapID));
             }
 
             ImGui.EndGroup();
