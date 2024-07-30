@@ -296,13 +296,14 @@ public class PrefabEditor
 
                 }
 
+                ImGui.EndChild();
+
                 if (ImGui.IsItemClicked() && selectedPrefab is not null)
                 {
                     selectedPrefab = null;
                     editName = "";
                     editFlags = "";
                 }
-                ImGui.EndChild();
             }
         }
 
