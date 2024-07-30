@@ -19,7 +19,7 @@ public class PrefabAttributes
 {
     public string PrefabName = "";
     public string PrefixSeparator = "[]";
-    public ProjectType Type = ProjectType.ER;
+    public ProjectType Type = Smithbox.ProjectType;
 
     public List<string> TagList { get; set; }
 }
@@ -170,8 +170,8 @@ internal class Prefab<T> : Prefab
         catch (Exception e)
         {
             PlatformUtils.Instance.MessageBox(
-                $"Unable to export Asset Prefab due to the following error:\n\n{e.Message}\n{e.StackTrace}",
-                "Asset Prefab export error",
+                $"Unable to export Prefab due to the following error:\n\n{e.Message}\n{e.StackTrace}",
+                "Prefab export error",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return false;
         }
@@ -194,7 +194,7 @@ internal class Prefab<T> : Prefab
         catch (Exception e)
         {
             PlatformUtils.Instance.MessageBox(
-                $"Unable to import Prefab_ER due to the following error:" +
+                $"Unable to import Prefab due to the following error:" +
                 $"\n\n{e.Message}"
                 , "Asset prefab import error"
                 , MessageBoxButtons.OK, MessageBoxIcon.Information);
