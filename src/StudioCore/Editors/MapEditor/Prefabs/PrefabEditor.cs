@@ -113,8 +113,10 @@ public class PrefabEditor
             if (CFG.Current.Prefab_ApplyOverrideName) 
                 prefixName = CFG.Current.Prefab_OverrideName;
 
-            GetLoadedPrefab(selectedPrefab.PrefabName)
-                .ImportToMap(comboMap.map as MapContainer, universe, scene, actionManager, prefixName);
+            var loadedPrefab = GetLoadedPrefab(selectedPrefab.PrefabName);
+
+            if(loadedPrefab != null)
+                loadedPrefab.ImportToMap(comboMap.map as MapContainer, universe, scene, actionManager, prefixName);
         }
         ImguiUtils.ShowHoverTooltip("Import the selected prefab into a loaded map.");
 
@@ -281,9 +283,13 @@ public class PrefabEditor
                     if (opened)
                     {
                         ImGui.Indent();
-                        foreach (var entName in GetLoadedPrefab(name).GetSelectedPrefabObjects())
+                        var loadedPrefab = GetLoadedPrefab(name);
+                        if (loadedPrefab != null)
                         {
-                            ImGui.Text(entName);
+                            foreach (var entName in loadedPrefab.GetSelectedPrefabObjects())
+                            {
+                                ImGui.Text(entName);
+                            }
                         }
                         ImGui.Unindent();
                         ImGui.TreePop();

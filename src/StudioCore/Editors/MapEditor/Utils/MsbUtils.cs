@@ -19,7 +19,8 @@ public class MsbUtils
     {
         foreach (var property in entry.GetType().GetProperties())
         {
-            if (property.GetCustomAttribute<MSBReference>() is not MSBReference msbReference) continue;
+            if (property.GetCustomAttribute<MSBReference>() is not MSBReference msbReference) 
+                continue;
 
             var value = property.GetValue(entry);
             if (value is string?[] array)
@@ -60,7 +61,9 @@ public class MsbUtils
     {
         foreach (var (current, type, set) in GetMsbReferences(obj))
         {
-            if (current is null or "") continue;
+            if (current is null or "") 
+                continue;
+
             if (!entities.Any((ent) => Matches(current, type, ent)))
                 set(null);
         }
