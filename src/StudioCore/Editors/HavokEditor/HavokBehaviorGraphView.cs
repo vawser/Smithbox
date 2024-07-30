@@ -10,22 +10,26 @@ using static HKLib.hk2018.CustomLookAtTwistModifier;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public class HavokBehaviorGraph
+public class HavokBehaviorGraphView
 {
     private HavokEditorScreen Screen;
 
-    public HavokBehaviorGraph(HavokEditorScreen screen)
+    public HavokBehaviorGraphView(HavokEditorScreen screen)
     {
         Screen = screen;
+    }
+    public void DisplayProperties()
+    {
+
     }
 
     public void DisplayGraph()
     {
-        ImGui.Begin("Behavior Graph##BehaviorGraph");
+        var loadedFile = Screen.SelectedContainerInfo.LoadedFile;
 
-        if (Screen.CurrentBehaviorFile != null)
+        if (loadedFile != null)
         {
-            HKLib.hk2018.hkbBehaviorGraph behaviorGraph = (HKLib.hk2018.hkbBehaviorGraph)Screen.CurrentBehaviorFile.m_namedVariants[0].m_variant;
+            hkbBehaviorGraph behaviorGraph = (hkbBehaviorGraph)loadedFile.m_namedVariants[0].m_variant;
 
             if (ImGui.CollapsingHeader("hkbStateMachine"))
             {
@@ -157,8 +161,6 @@ public class HavokBehaviorGraph
                 }
             }
         }
-
-        ImGui.End();
     }
 
     // Recursive
