@@ -18,7 +18,7 @@ public static class FeatureFlags
     public static bool EnableEditor_Particle = false;
     public static bool EnableEditor_Evemd = false;
     public static bool EnableEditor_Esd = false;
-    public static bool EnableEditor_HavokBehavior = true;
+    public static bool EnableEditor_HavokBehavior = false;
 
 #if DEBUG
     public static bool DebugMenu = true;

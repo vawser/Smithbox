@@ -10,7 +10,6 @@ using System.Numerics;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.Editors.HavokEditor;
 
@@ -65,12 +64,10 @@ public class HavokInfoGraphView
 
         depth++;
 
-        ImGui.Indent(1.0f);
         if (ImGui.Selectable($"hkbProjectStringData##hkbProjectStringData{depth}"))
         {
             _selectedHavokObject = entry;
         }
-        ImGui.Unindent(1.0f);
     }
 
     public void DisplayProperties()

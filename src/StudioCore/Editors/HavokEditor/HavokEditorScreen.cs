@@ -51,6 +51,7 @@ public class HavokEditorScreen : EditorScreen
     private string _selectedBinderKey;
 
     private HavokInfoGraphView InfoGraph;
+    private HavokCharacterGraphView CharacterGraph;
     private HavokBehaviorGraphView BehaviorGraph;
 
     public HavokContainerType CurrentHavokContainerType = HavokContainerType.Behavior;
@@ -61,6 +62,7 @@ public class HavokEditorScreen : EditorScreen
     public HavokEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         InfoGraph = new HavokInfoGraphView(this);
+        CharacterGraph = new HavokCharacterGraphView(this);
         BehaviorGraph = new HavokBehaviorGraphView(this);
     }
 
@@ -133,7 +135,7 @@ public class HavokEditorScreen : EditorScreen
         }
         if (CurrentHavokInternalFileType == HavokInternalType.Character)
         {
-
+            CharacterGraph.DisplayGraph();
         }
         if (CurrentHavokInternalFileType == HavokInternalType.Info)
         {
