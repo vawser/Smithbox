@@ -64,6 +64,17 @@ public class PinGroups
         ImguiUtils.WrappedText("Create a pin group from your current pinned params, rows or fields, or select an existing pin group to replace your current pinned params, rows or fields.");
         ImguiUtils.WrappedText("");
 
+        ImGui.Separator();
+        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Configuration");
+        ImGui.Separator();
+
+        ImGui.Checkbox("Show only pinned params exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedParams);
+        ImguiUtils.ShowHoverTooltip("When enabled, only pinned params will appear in the param list.");
+        ImGui.Checkbox("Show only pinned rows exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedRows);
+        ImguiUtils.ShowHoverTooltip("When enabled, only pinned rows will appear in the rows list.");
+        ImGui.Checkbox("Show only pinned fields exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedFields);
+        ImguiUtils.ShowHoverTooltip("When enabled, only pinned fields will appear in the param list.");
+
         if (ImGui.Button("Clear Param Pins", thirdButtonSize))
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams = new();

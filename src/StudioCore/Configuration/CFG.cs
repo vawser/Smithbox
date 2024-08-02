@@ -507,6 +507,10 @@ public class CFG
 
     public bool Param_Toolbar_FindValueInstances_InitialMatchOnly = false;
 
+    public bool Param_PinGroups_ShowOnlyPinnedParams = false;
+    public bool Param_PinGroups_ShowOnlyPinnedRows = false;
+    public bool Param_PinGroups_ShowOnlyPinnedFields = false;
+
     //****************************
     // Settings: Text Editor
     //****************************

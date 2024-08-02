@@ -263,8 +263,11 @@ public class ParamRowEditor
                 }
             }
 
-            PropEditorParamRow_MainFields(meta, bank, row, vrow, auxRows, crow, cols, vcols, auxCols, ref imguiId,
-                activeParam, selection, pinnedFields);
+            if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedFields)
+            {
+                PropEditorParamRow_MainFields(meta, bank, row, vrow, auxRows, crow, cols, vcols, auxCols, ref imguiId,
+                    activeParam, selection, pinnedFields);
+            }
 
             if (CFG.Current.Param_ShowGraphVisualisation)
             {

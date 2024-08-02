@@ -342,7 +342,11 @@ public class ParamEditorView
             ParamView_ParamList_Pinned(scale);
         }
 
-        ParamView_ParamList_Main(doFocus, scale, scrollTo);
+        if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedParams)
+        {
+            ParamView_ParamList_Main(doFocus, scale, scrollTo);
+        }
+
         ImGui.EndChild();
     }
     //------------------------------------
@@ -533,32 +537,36 @@ public class ParamEditorView
 
                 // Rows
                 var selectionCache = _selection.GetSelectionCache(rows, "regular");
-                for (var i = 0; i < rows.Count; i++)
+
+                if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedRows)
                 {
-                    Param.Row currentRow = rows[i];
-                    if (enableGrouping)
+                    for (var i = 0; i < rows.Count; i++)
                     {
-                        Param.Row prev = i - 1 > 0 ? rows[i - 1] : null;
-                        Param.Row next = i + 1 < rows.Count ? rows[i + 1] : null;
-                        if (prev != null && next != null && prev.ID + 1 != currentRow.ID &&
-                            currentRow.ID + 1 == next.ID)
+                        Param.Row currentRow = rows[i];
+                        if (enableGrouping)
                         {
-                            EditorDecorations.ImguiTableSeparator();
+                            Param.Row prev = i - 1 > 0 ? rows[i - 1] : null;
+                            Param.Row next = i + 1 < rows.Count ? rows[i + 1] : null;
+                            if (prev != null && next != null && prev.ID + 1 != currentRow.ID &&
+                                currentRow.ID + 1 == next.ID)
+                            {
+                                EditorDecorations.ImguiTableSeparator();
+                            }
+
+                            ParamView_RowList_Entry(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
+                                auxDiffCaches, decorator, ref scrollTo, doFocus, false, compareCol, compareColProp);
+
+                            if (prev != null && next != null && prev.ID + 1 == currentRow.ID &&
+                                currentRow.ID + 1 != next.ID)
+                            {
+                                EditorDecorations.ImguiTableSeparator();
+                            }
                         }
-
-                        ParamView_RowList_Entry(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
-                            auxDiffCaches, decorator, ref scrollTo, doFocus, false, compareCol, compareColProp);
-
-                        if (prev != null && next != null && prev.ID + 1 == currentRow.ID &&
-                            currentRow.ID + 1 != next.ID)
+                        else
                         {
-                            EditorDecorations.ImguiTableSeparator();
+                            ParamView_RowList_Entry(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
+                                auxDiffCaches, decorator, ref scrollTo, doFocus, false, compareCol, compareColProp);
                         }
-                    }
-                    else
-                    {
-                        ParamView_RowList_Entry(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
-                            auxDiffCaches, decorator, ref scrollTo, doFocus, false, compareCol, compareColProp);
                     }
                 }
 
