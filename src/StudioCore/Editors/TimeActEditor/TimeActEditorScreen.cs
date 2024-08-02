@@ -67,7 +67,7 @@ public class TimeActEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TimeActEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
+        if (Smithbox.ProjectType is not ProjectType.ER)
         {
             ImGui.Begin("Editor##InvalidTaeEditor");
 
@@ -115,7 +115,8 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.InputText($"Search##fileContainerFilter", ref TimeActFilters._fileContainerFilterString, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
-        for(int i = 0; i < AnimationBank.FileBank.Count; i++)
+        ImGui.BeginChild("ContainerList");
+        for (int i = 0; i < AnimationBank.FileBank.Count; i++)
         {
             var info = AnimationBank.FileBank.ElementAt(i).Key;
             var binder = AnimationBank.FileBank.ElementAt(i).Value;
@@ -133,8 +134,11 @@ public class TimeActEditorScreen : EditorScreen
                     SelectionHandler.FileContainerChange(info, binder, i);
                 }
                 TimeActUtils.DisplayTimeActFileAlias(info.Name);
+
+                SelectionHandler.ContainerContextMenu.ContainerMenu(isSelected);
             }
         }
+        ImGui.EndChild();
 
         ImGui.End();
     }
@@ -151,6 +155,8 @@ public class TimeActEditorScreen : EditorScreen
 
         ImGui.InputText($"Search##timeActFilter", ref TimeActFilters._timeActFilterString, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+
+        ImGui.BeginChild("TimeActList");
 
         for (int i = 0; i < SelectionHandler.ContainerInfo.TimeActFiles.Count; i++)
         {
@@ -170,9 +176,12 @@ public class TimeActEditorScreen : EditorScreen
                     SelectionHandler.TimeActChange(entry, i);
                 }
                 TimeActUtils.DisplayTimeActAlias(SelectionHandler.ContainerInfo, entry.ID);
+
+                SelectionHandler.TimeActContextMenu.TimeActMenu(isSelected);
             }
-            
+
         }
+        ImGui.EndChild();
 
         ImGui.End();
     }
@@ -190,6 +199,8 @@ public class TimeActEditorScreen : EditorScreen
 
         ImGui.InputText($"Search##timeActAnimationFilter", ref TimeActFilters._timeActAnimationFilterString, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+
+        ImGui.BeginChild("AnimationList");
 
         for (int i = 0; i < SelectionHandler.CurrentTimeAct.Animations.Count; i++)
         {
@@ -209,8 +220,11 @@ public class TimeActEditorScreen : EditorScreen
                     SelectionHandler.TimeActAnimationChange(entry, i);
                 }
                 TimeActUtils.DisplayAnimationAlias(SelectionHandler, entry.ID);
+
+                SelectionHandler.TimeActAnimationContextMenu.TimeActAnimationMenu(isSelected);
             }
         }
+        ImGui.EndChild();
 
         ImGui.End();
     }
@@ -227,6 +241,8 @@ public class TimeActEditorScreen : EditorScreen
 
         ImGui.InputText($"Search##timeActEventFilter", ref TimeActFilters._timeActEventFilterString, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+
+        ImGui.BeginChild("EventList");
 
         for (int i = 0; i < SelectionHandler.CurrentTimeActAnimation.Events.Count; i++)
         {
@@ -245,8 +261,11 @@ public class TimeActEditorScreen : EditorScreen
                 {
                     SelectionHandler.TimeActEventChange(evt, i);
                 }
+
+                SelectionHandler.TimeActEventContextMenu.TimeActEventMenu(isSelected);
             }
         }
+        ImGui.EndChild();
 
         ImGui.End();
     }
@@ -254,7 +273,9 @@ public class TimeActEditorScreen : EditorScreen
     public void OnProjectChanged()
     {
         if (CFG.Current.AutoLoadBank_TimeAct)
+        {
             AnimationBank.LoadTimeActs();
+        }
 
         ResetActionManager();
     }

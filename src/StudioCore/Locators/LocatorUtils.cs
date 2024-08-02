@@ -78,13 +78,14 @@ public static class LocatorUtils
         return success;
     }
 
-    public static List<string> GetAssetFiles(string paramDir, string paramExt)
+    public static List<string> GetAssetFiles(string paramDir, string paramExt, bool ignoreProject = false)
     {
         try
         {
             HashSet<string> fileList = new();
             List<string> ret = new();
 
+            // ROOT
             var paramFiles = Directory.GetFileSystemEntries(Smithbox.GameRoot + paramDir, $@"*{paramExt}")
                 .ToList();
             foreach (var f in paramFiles)
@@ -94,16 +95,20 @@ public static class LocatorUtils
                 fileList.Add(name);
             }
 
-            if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + paramDir))
+            // PROJECT
+            if (!ignoreProject)
             {
-                paramFiles = Directory.GetFileSystemEntries(Smithbox.ProjectRoot + paramDir, $@"*{paramExt}").ToList();
-                foreach (var f in paramFiles)
+                if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + paramDir))
                 {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
-                    if (!fileList.Contains(name))
+                    paramFiles = Directory.GetFileSystemEntries(Smithbox.ProjectRoot + paramDir, $@"*{paramExt}").ToList();
+                    foreach (var f in paramFiles)
                     {
-                        ret.Add(name);
-                        fileList.Add(name);
+                        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+                        if (!fileList.Contains(name))
+                        {
+                            ret.Add(name);
+                            fileList.Add(name);
+                        }
                     }
                 }
             }

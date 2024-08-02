@@ -122,26 +122,26 @@ public static class TimeActUtils
         switch (Smithbox.ProjectType)
         {
             case ProjectType.DS1:
-                entry.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.DS1"]);
+                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS1"]);
                 break;
             case ProjectType.DS2:
             case ProjectType.DS2S:
-                entry.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.SOTFS"]);
+                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.SOTFS"]);
                 break;
             case ProjectType.DS3:
-                entry.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.DS3"]);
+                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS3"]);
                 break;
             case ProjectType.BB:
-                entry.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.BB"]);
+                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.BB"]);
                 break;
             case ProjectType.SDT:
-                entry.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.SDT"]);
+                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.SDT"]);
                 break;
             case ProjectType.ER:
-                entry.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.ER"]);
+                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.ER"]);
                 break;
             case ProjectType.AC6:
-                entry.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.AC6"]);
+                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.AC6"]);
                 break;
         }
     }

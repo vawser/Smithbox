@@ -118,26 +118,26 @@ public static class NameGenerationTool
         switch (Smithbox.ProjectType)
         {
             case ProjectType.DS1:
-                baseTAE.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.DS1"]);
+                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS1"]);
                 break;
             case ProjectType.DS2:
             case ProjectType.DS2S:
-                baseTAE.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.SOTFS"]);
+                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.SOTFS"]);
                 break;
             case ProjectType.DS3:
-                baseTAE.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.DS3"]);
+                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS3"]);
                 break;
             case ProjectType.BB:
-                baseTAE.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.BB"]);
+                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.BB"]);
                 break;
             case ProjectType.SDT:
-                baseTAE.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.SDT"]);
+                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.SDT"]);
                 break;
             case ProjectType.ER:
-                baseTAE.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.ER"]);
+                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.ER"]);
                 break;
             case ProjectType.AC6:
-                baseTAE.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.AC6"]);
+                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.AC6"]);
                 break;
         }
 

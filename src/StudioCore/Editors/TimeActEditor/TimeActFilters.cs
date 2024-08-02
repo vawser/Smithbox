@@ -158,6 +158,7 @@ public static class TimeActFilters
             var tags = new List<string>();
 
             // TODO: alias part
+            var refAlias = Smithbox.BankHandler.HavokGeneratorAliases.HavokAliases.List.Where(e => e.ID == animEntry.ID.ToString()).FirstOrDefault();
 
             for (int i = 0; i < partTruth.Length; i++)
             {
@@ -169,18 +170,18 @@ public static class TimeActFilters
                 if (id.Contains(entry))
                     partTruth[i] = true;
 
-                if (entry == alias)
+                if (entry == refAlias.ID)
                     partTruth[i] = true;
 
-                if (alias.Contains(entry))
+                if (refAlias.ID.Contains(entry))
                     partTruth[i] = true;
 
-                foreach (string tagStr in tags)
+                foreach (string generator in refAlias.Generators)
                 {
-                    if (entry == tagStr.ToLower())
+                    if (entry == generator.ToLower())
                         partTruth[i] = true;
 
-                    if (tagStr.ToLower().Contains(entry))
+                    if (generator.ToLower().Contains(entry))
                         partTruth[i] = true;
                 }
             }

@@ -39,7 +39,7 @@ public static class MiscLocator
     }
 
     // TAE
-    public static List<string> GetAnimationBinders()
+    public static List<string> GetAnimationBinders(bool ignoreProject = false)
     {
         // Not supported
         if (Smithbox.ProjectType is ProjectType.DS2S
@@ -54,7 +54,7 @@ public static class MiscLocator
         var paramDir = @"\chr";
         var paramExt = @".anibnd.dcx";
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
 
         return ret;
     }

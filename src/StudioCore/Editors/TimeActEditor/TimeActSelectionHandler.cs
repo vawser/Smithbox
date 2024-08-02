@@ -39,6 +39,11 @@ public class TimeActSelectionHandler
     public Multiselect TimeActAnimationMultiselect;
     public Multiselect TimeActEventMultiselect;
 
+    public ContextMenu ContainerContextMenu;
+    public ContextMenu TimeActContextMenu;
+    public ContextMenu TimeActAnimationContextMenu;
+    public ContextMenu TimeActEventContextMenu;
+
     public TimeActSelectionHandler(ActionManager editorActionManager, TimeActEditorScreen screen)
     {
         EditorActionManager = editorActionManager;
@@ -47,6 +52,11 @@ public class TimeActSelectionHandler
         TimeActMultiselect = new();
         TimeActAnimationMultiselect = new();
         TimeActEventMultiselect = new();
+
+        ContainerContextMenu = new(screen, this);
+        TimeActContextMenu = new(screen, this);
+        TimeActAnimationContextMenu = new(screen, this);
+        TimeActEventContextMenu = new(screen, this);
     }
 
     public void FileContainerChange(AnimationFileInfo info, IBinder binder, int index)

@@ -15,11 +15,140 @@ public static class AnimationBank
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
 
+    public static Dictionary<AnimationFileInfo, IBinder> VanillaFileBank { get; private set; } = new();
     public static Dictionary<AnimationFileInfo, IBinder> FileBank { get; private set; } = new();
+
+    public static Dictionary<string, Template> TimeActTemplates = new Dictionary<string, Template>();
+
+    public static void LoadTimeActs()
+    {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+        {
+            return;
+        }
+
+        // Load templates
+        var templateDir = $"{AppContext.BaseDirectory}Assets\\TAE\\";
+        foreach (var file in Directory.EnumerateFiles(templateDir, "*.xml"))
+        {
+            var name = Path.GetFileNameWithoutExtension(file);
+            var template = TAE.Template.ReadXMLFile(file);
+
+            TimeActTemplates.Add(name, template);
+        }
+
+        IsLoaded = false;
+        IsLoading = true;
+
+        FileBank = new();
+        VanillaFileBank = new();
+
+        LoadProjectTimeActs();
+        LoadVanillaTimeActs();
+
+        IsLoaded = true;
+        IsLoading = false;
+    }
+
+    public static void LoadProjectTimeActs()
+    {
+        var fileDir = @"\chr";
+        var fileExt = @".anibnd.dcx";
+
+        List<string> fileNames = MiscLocator.GetAnimationBinders();
+
+        foreach (var name in fileNames)
+        {
+            // Skip the non-TAE holding ones
+            if(name.Length != 5)
+            {
+                continue;
+            }
+
+            var filePath = $"{fileDir}\\{name}{fileExt}";
+
+            if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
+            {
+                LoadTimeAct($"{Smithbox.ProjectRoot}\\{filePath}", FileBank);
+            }
+            else
+            {
+                LoadTimeAct($"{Smithbox.GameRoot}\\{filePath}", FileBank);
+            }
+        }
+
+        TaskLogs.AddLog($"Project TAE File Bank - Load Complete");
+    }
+
+    public static void LoadVanillaTimeActs()
+    {
+        var fileDir = @"\chr";
+        var fileExt = @".anibnd.dcx";
+
+        List<string> fileNames = MiscLocator.GetAnimationBinders(true);
+
+        foreach (var name in fileNames)
+        {
+            // Skip the non-TAE holding ones
+            if (name.Length != 5)
+            {
+                continue;
+            }
+
+            var filePath = $"{fileDir}\\{name}{fileExt}";
+
+            LoadTimeAct($"{Smithbox.GameRoot}\\{filePath}", VanillaFileBank);
+        }
+
+        TaskLogs.AddLog($"Vanilla TAE File Bank - Load Complete");
+    }
+
+    public static void LoadTimeAct(string path, Dictionary<AnimationFileInfo, IBinder> targetBank)
+    {
+        if (path == null)
+        {
+            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
+                    LogLevel.Warning);
+            return;
+        }
+        if (path == "")
+        {
+            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
+                    LogLevel.Warning);
+            return;
+        }
+
+        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
+        AnimationFileInfo fileStruct = new AnimationFileInfo(name, path);
+
+        IBinder binder = BND4.Read(DCX.Decompress(path));
+
+        foreach(var file in binder.Files)
+        {
+            if (file.Name.Contains(".tae"))
+            {
+                // Ignore the empty TAE files
+                if (file.Bytes.Length > 0)
+                {
+                    try
+                    {
+                        TAE taeFile = TAE.Read(file.Bytes);
+                        fileStruct.TimeActFiles.Add(taeFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        TaskLogs.AddLog($"{name} {file.Name} - Failed to read.\n{ex.ToString()}");
+                    }
+                }
+            }
+        }
+
+        targetBank.Add(fileStruct, binder);
+    }
 
     public static void SaveTimeActs()
     {
-        foreach(var (info, binder) in FileBank)
+        foreach (var (info, binder) in FileBank)
         {
             SaveTimeAct(info, binder);
         }
@@ -88,106 +217,6 @@ public static class AnimationBank
             File.WriteAllBytes(assetMod, fileBytes);
             //TaskLogs.AddLog($"Saved at: {assetMod}");
         }
-    }
-
-    public static Dictionary<string, Template> TAETemplates = new Dictionary<string, Template>();
-
-    public static void LoadTimeActs()
-    {
-        if(Smithbox.ProjectType == ProjectType.Undefined)
-        {
-            return;
-        }
-
-        // Load templates
-        var templateDir = $"{AppContext.BaseDirectory}Assets\\TAE\\";
-        foreach(var file in Directory.EnumerateFiles(templateDir, "*.xml"))
-        {
-            var name = Path.GetFileNameWithoutExtension(file);
-            var template = TAE.Template.ReadXMLFile(file);
-
-            TAETemplates.Add(name, template);
-        }
-
-        IsLoaded = false;
-        IsLoading = true;
-
-        FileBank = new();
-
-        var fileDir = @"\chr";
-        var fileExt = @".anibnd.dcx";
-
-        List<string> fileNames = MiscLocator.GetAnimationBinders();
-
-        foreach (var name in fileNames)
-        {
-            // Skip the non-TAE holding ones
-            if(name.Length != 5)
-            {
-                continue;
-            }
-
-            var filePath = $"{fileDir}\\{name}{fileExt}";
-
-            if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
-            {
-                LoadTimeAct($"{Smithbox.ProjectRoot}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
-            }
-            else
-            {
-                LoadTimeAct($"{Smithbox.GameRoot}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
-            }
-        }
-
-        IsLoaded = true;
-        IsLoading = false;
-
-        TaskLogs.AddLog($"Animation File Bank - Load Complete");
-    }
-
-    public static void LoadTimeAct(string path)
-    {
-        if (path == null)
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
-                    LogLevel.Warning);
-            return;
-        }
-        if (path == "")
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
-                    LogLevel.Warning);
-            return;
-        }
-
-        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        AnimationFileInfo fileStruct = new AnimationFileInfo(name, path);
-
-        IBinder binder = BND4.Read(DCX.Decompress(path));
-
-        foreach(var file in binder.Files)
-        {
-            if (file.Name.Contains(".tae"))
-            {
-                // Ignore the empty TAE files
-                if (file.Bytes.Length > 0)
-                {
-                    try
-                    {
-                        TAE taeFile = TAE.Read(file.Bytes);
-                        fileStruct.TimeActFiles.Add(taeFile);
-                    }
-                    catch (Exception ex)
-                    {
-                        TaskLogs.AddLog($"{name} {file.Name} - Failed to read.\n{ex.ToString()}");
-                    }
-                }
-            }
-        }
-
-        FileBank.Add(fileStruct, binder);
     }
 
     public class AnimationFileInfo
