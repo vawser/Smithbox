@@ -244,9 +244,9 @@ public class DebugWindow
     {
         if (ImGui.BeginTabItem("Row Name Helper"))
         {
-            if (ImGui.Button("Generate Item Lot Names"))
+            if (ImGui.Button("Generate Row Names"))
             {
-                NameGenerationTool.GenerateItemLotNames();
+                NameGenerationTool.GenerateRowNames();
             }
 
             ImGui.EndTabItem();

@@ -363,7 +363,7 @@
     <atkMaterial AltName="Attack Material" Wiki="Attack material used from attack para" Enum="WEP_MATERIAL_ATK" />
     <defSeMaterial1 AltName="Defence SE Material [1]" Wiki="Defense SE material used from attack para 1" Enum="WEP_MATERIAL_DEF" />
     <correctType_Physics AltName="Correction Type: Physical" Wiki="Correcting physical attack power by primary parameters Determines the type of graph" Refs="CalcCorrectGraph" />
-    <spAttribute AltName="Speical Attribute" Wiki="Weapon special attribute value" ProjectEnum="ATKPARAM_SPATTR_TYPE" />
+    <spAttribute AltName="Special Attribute" Wiki="Weapon special attribute value" ProjectEnum="ATKPARAM_SPATTR_TYPE" />
     <spAtkcategory AltName="Special Motion Category" Wiki="Special attack category (possible from 50 to 999)" ProjectEnum="WEPMOTION_OVERRIDE_CATEGORY" />
     <wepmotionOneHandId AltName="Weapon Motion Position - 1H" Wiki="Basic motion ID when equipped with one hand." />
     <wepmotionBothHandId AltName="Weapon Motion Position - 2H" Wiki="Basic motion ID when equipped with both hands." />

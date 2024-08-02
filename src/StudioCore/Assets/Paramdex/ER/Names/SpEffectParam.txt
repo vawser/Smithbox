@@ -38,7 +38,7 @@
 39 
 40 
 41 
-45 TAE - Counter Frames
+45 [HKS] Counter Frames
 46 
 50 
 51 
@@ -112,7 +112,7 @@
 144 [HKS] Unk Jump
 145 [HKS] Is Falling
 146 [HKS] Swing Window
-147 
+147 [HKS] Falling Attack
 150 
 151 
 152 
@@ -5543,6 +5543,7 @@
 19681 
 19682 
 19683 Miquella's Great Rune
+19684 
 19690 
 19691 
 19700 
@@ -5554,6 +5555,7 @@
 19706 
 19707 
 19710 
+19720 
 19860 
 19865 
 19870 [Weapon] Euporia
@@ -6246,32 +6248,32 @@
 105273 Hemorrhage - High - Innate +23
 105274 Hemorrhage - High - Innate +24
 105275 Hemorrhage - High - Innate +25
-105300 
-105301 
-105302 
-105303 
-105304 
-105305 
-105306 
-105307 
-105308 
-105309 
-105310 
-105311 
-105312 
-105313 
-105314 
-105315 
-105316 
-105317 
-105318 
-105319 
-105320 
-105321 
-105322 
-105323 
-105324 
-105325 
+105300 Hemorrhage - Special - Addition +0
+105301 Hemorrhage - Special - Addition +1
+105302 Hemorrhage - Special - Addition +2
+105303 Hemorrhage - Special - Addition +3
+105304 Hemorrhage - Special - Addition +4
+105305 Hemorrhage - Special - Addition +5
+105306 Hemorrhage - Special - Addition +6
+105307 Hemorrhage - Special - Addition +7
+105308 Hemorrhage - Special - Addition +8
+105309 Hemorrhage - Special - Addition +9
+105310 Hemorrhage - Special - Addition +10
+105311 Hemorrhage - Special - Addition +11
+105312 Hemorrhage - Special - Addition +12
+105313 Hemorrhage - Special - Addition +13
+105314 Hemorrhage - Special - Addition +14
+105315 Hemorrhage - Special - Addition +15
+105316 Hemorrhage - Special - Addition +16
+105317 Hemorrhage - Special - Addition +17
+105318 Hemorrhage - Special - Addition +18
+105319 Hemorrhage - Special - Addition +19
+105320 Hemorrhage - Special - Addition +20
+105321 Hemorrhage - Special - Addition +21
+105322 Hemorrhage - Special - Addition +22
+105323 Hemorrhage - Special - Addition +23
+105324 Hemorrhage - Special - Addition +24
+105325 Hemorrhage - Special - Addition +25
 105500 Sleep - Low - Addition +0
 105501 Sleep - Low - Addition +1
 105502 Sleep - Low - Addition +2
@@ -6584,32 +6586,32 @@
 106273 Poison - High - Innate +23
 106274 Poison - High - Innate +24
 106275 Poison - High - Innate +25
-106300 
-106301 
-106302 
-106303 
-106304 
-106305 
-106306 
-106307 
-106308 
-106309 
-106310 
-106311 
-106312 
-106313 
-106314 
-106315 
-106316 
-106317 
-106318 
-106319 
-106320 
-106321 
-106322 
-106323 
-106324 
-106325 
+106300 Poison - Special - Addition +0
+106301 Poison - Special - Addition +1
+106302 Poison - Special - Addition +2
+106303 Poison - Special - Addition +3
+106304 Poison - Special - Addition +4
+106305 Poison - Special - Addition +5
+106306 Poison - Special - Addition +6
+106307 Poison - Special - Addition +7
+106308 Poison - Special - Addition +8
+106309 Poison - Special - Addition +9
+106310 Poison - Special - Addition +10
+106311 Poison - Special - Addition +11
+106312 Poison - Special - Addition +12
+106313 Poison - Special - Addition +13
+106314 Poison - Special - Addition +14
+106315 Poison - Special - Addition +15
+106316 Poison - Special - Addition +16
+106317 Poison - Special - Addition +17
+106318 Poison - Special - Addition +18
+106319 Poison - Special - Addition +19
+106320 Poison - Special - Addition +20
+106321 Poison - Special - Addition +21
+106322 Poison - Special - Addition +22
+106323 Poison - Special - Addition +23
+106324 Poison - Special - Addition +24
+106325 Poison - Special - Addition +25
 107000 Scarlet Rot - Low - Addition +0
 107001 Scarlet Rot - Low - Addition +1
 107002 Scarlet Rot - Low - Addition +2
@@ -6922,32 +6924,32 @@
 107773 Frostbite - High - Innate +23
 107774 Frostbite - High - Innate +24
 107775 Frostbite - High - Innate +25
-107800 
-107801 
-107802 
-107803 
-107804 
-107805 
-107806 
-107807 
-107808 
-107809 
-107810 
-107811 
-107812 
-107813 
-107814 
-107815 
-107816 
-107817 
-107818 
-107819 
-107820 
-107821 
-107822 
-107823 
-107824 
-107825 
+107800 Frostbite - Special - Addition +0
+107801 Frostbite - Special - Addition +1
+107802 Frostbite - Special - Addition +2
+107803 Frostbite - Special - Addition +3
+107804 Frostbite - Special - Addition +4
+107805 Frostbite - Special - Addition +5
+107806 Frostbite - Special - Addition +6
+107807 Frostbite - Special - Addition +7
+107808 Frostbite - Special - Addition +8
+107809 Frostbite - Special - Addition +9
+107810 Frostbite - Special - Addition +10
+107811 Frostbite - Special - Addition +11
+107812 Frostbite - Special - Addition +12
+107813 Frostbite - Special - Addition +13
+107814 Frostbite - Special - Addition +14
+107815 Frostbite - Special - Addition +15
+107816 Frostbite - Special - Addition +17
+107817 Frostbite - Special - Addition +17
+107818 Frostbite - Special - Addition +18
+107819 Frostbite - Special - Addition +19
+107820 Frostbite - Special - Addition +20
+107821 Frostbite - Special - Addition +21
+107822 Frostbite - Special - Addition +22
+107823 Frostbite - Special - Addition +23
+107824 Frostbite - Special - Addition +24
+107825 Frostbite - Special - Addition +25
 107900 
 107901 
 108000 Blight - Low - Addition +0
@@ -8577,14 +8579,14 @@
 5010601 [Weapon] Celebrant's Sickle - Icon
 5010700 
 5011000 [Weapon] Cinquedea - Boost Incantation Power
-5025300 
+5025300 [Weapon] Carian Sorcery Sword
 5031400 [Weapon] Blasphemous Blade - Restore HP on Kill
 5031401 [Weapon] Blasphemous Blade (On Enemy Kill)
 5031600 [Weapon] Sword of Milos - Restore FP on Kill
 5031601 [Weapon] Sword of Milos (On Enemy Kill)
 5071100 [Weapon] Serpent-God's Curved Sword - Restore HP on Kill
 5071101 [Weapon] Serpent-God's Curved Sword (On Enemy Kill)
-5085100 
+5085100 [Weapon] Freyja's Greatsword
 5120100 [Weapon] Greathorn Hammer - Restore HP on Kill
 5120101 [Weapon] Greathorn Hammer (On Enemy Kill)
 5121300 [Weapon] Celebrant's Skull - Rune Gain on Hit
@@ -8600,11 +8602,11 @@
 5160600 [Weapon] Celebrant's Rib-Rake - Rune Gain on Hit
 5180100 [Weapon] Pest's Glaive - Boost Absorption
 5190100 [Weapon] Grave Scythe - Raise Vitality
-5215200 
-5215201 
-5215300 
-5215301 
-5215500 
+5215200 [Weapon] Poisoned Hand
+5215201 [Weapon] Poisoned Hand (Cycled)
+5215300 [Weapon] Madding Hand
+5215301 [Weapon] Madding Hand (Cycled)
+5215500 [Weapon] Shield of Night
 5300100 [Weapon] Perfumer's Shield - Raise Immunity
 5300400 [Weapon] Pillory Shield - Raise Vitality
 5301100 [Weapon] Rift Shield - Raise Focus
@@ -8619,13 +8621,13 @@
 5321400 [Weapon] Icon Shield - Grant HP Restoration
 5322200 [Weapon] Ant's Skull Plate - Raise Immunity
 5322400 [Weapon] Eclipse Crest Greatshield - Raise Immunity Robustness and Focus
-5335200 
-5345000 
-5345100 
-5345200 
-5425000 
+5335200 [Weapon] Maternal Staff - Boosts Ymir Sorcery
+5345000 [Weapon] Dryleaf Seal - Boosts Miquella Incantations
+5345100 [Weapon] Fire Knight's Seal - Boosts Messmer Incantations
+5345200 [Weapon] Spiraltree Seal - Boost Spiral Incantations
+5425000 [Weapon] Igon's Greatbow - Boost Igon's Harpoon
 5665200 
-5665201 
+5665201 [Weapon] Rakshasa's Great Katana
 6012000 [Armor] Alberich's Pointed Hat
 6012010 [Armor] Alberich's Robe
 6012020 [Armor] Alberich's Bracers
@@ -8760,7 +8762,7 @@
 6518002 [Armor] Fire Knight Armor
 6518010 [Armor] Fire Knight Armor (Cycled)
 6518200 [Armor] Death Mask Helm
-6518201 
+6518201 [Armor] Death Mask Helm
 6518300 [Armor] Winged Serpent Helm
 6518400 [Armor] Salza's Hood
 6520000 [Armor] Death Knight Armor Piece
@@ -8861,6 +8863,17 @@
 20000208 Revered Spirit Ash: 8
 20000209 Revered Spirit Ash: 9
 20000210 Revered Spirit Ash: 10
+20000220 
+20000221 
+20000222 
+20000223 
+20000224 
+20000225 
+20000226 
+20000227 
+20000228 
+20000229 
+20000230 
 20000300 
 20000301 
 20000302 
@@ -8954,7 +8967,7 @@
 20001033 
 20001034 
 20001035 
-20001039 
+20001039 [Weapon] Thiollier's Hidden Needle
 20001040 
 20001041 
 20001042 
@@ -8981,7 +8994,7 @@
 20001090 
 20001091 
 20001092 
-20001900 
+20001900 [Weapon] Fist Weapon - VFX
 20001910 
 20001911 
 20001912 
@@ -9016,6 +9029,12 @@
 20004272 
 20004380 
 20004820 
+20004821 
+20004822 
+20004823 
+20004824 
+20004825 
+20004826 
 20004999 
 20007000 SOTE - Area Scaling: Gravesite Plain
 20007010 SOTE - Area Scaling: Belurat, Tower Settlement
@@ -9564,6 +9583,7 @@
 20010852 
 20010853 
 20010854 
+20010855 
 20010860 
 20010861 
 20010862 
@@ -10466,6 +10486,7 @@
 20018638 
 20018639 
 20018640 
+20018641 
 20018647 
 20018648 
 20018649 
@@ -10513,7 +10534,7 @@
 20018691 
 20018692 
 20018693 
-20018694 
+20018694 [Weapon] Carian Sorcery Sword
 20018695 
 20018696 
 20018697 
@@ -10545,6 +10566,7 @@
 20018723 
 20018724 
 20018725 
+20018726 
 20018999 
 20020100 
 20022100 
@@ -10895,6 +10917,95 @@
 20230009 
 20230010 
 20296100 
+20297000 
+20297010 
+20297020 
+20297030 
+20297040 
+20297050 
+20297060 
+20297070 
+20297080 
+20297090 
+20297100 
+20297110 
+20297120 
+20297130 
+20297140 
+20297150 
+20297160 
+20297170 
+20297171 
+20297172 
+20297180 
+20297190 
+20297200 
+20297209 
+20297210 
+20297220 
+20297230 
+20297240 
+20297250 
+20297260 
+20297270 
+20297280 
+20297290 
+20297300 
+20297310 
+20297320 
+20297330 
+20297340 
+20297350 
+20297360 
+20297370 
+20297380 
+20297390 
+20297400 
+20297410 
+20297419 
+20297420 
+20297430 
+20297440 
+20297450 
+20297460 
+20297470 
+20297480 
+20297490 
+20297500 
+20297510 
+20297520 
+20297530 
+20297540 
+20297550 
+20297560 
+20297570 
+20297580 
+20297590 
+20297600 
+20297610 
+20297620 
+20297630 
+20297640 
+20297650 
+20297660 
+20297670 
+20297680 
+20297690 
+20297700 
+20297710 
+20297720 
+20297730 
+20297740 
+20297750 
+20297760 
+20297770 
+20297780 
+20297790 
+20297800 
+20297810 
+20297820 
+20297830 
+20297840 
 20370000 [Talisman] Crimson Amber Medallion +3
 20370100 [Talisman] Cerulean Amber Medallion +3
 20370200 [Talisman] Viridian Amber Medallion +3
@@ -10966,6 +11077,24 @@
 20381254 [Talisman] Ailment Talisman
 20381255 [Talisman] Ailment Talisman
 20381256 [Talisman] Ailment Talisman
+20381261 
+20381262 
+20381263 
+20381264 
+20381265 
+20381266 
+20381271 
+20381272 
+20381273 
+20381274 
+20381275 
+20381276 
+20381281 
+20381282 
+20381283 
+20381284 
+20381285 
+20381286 
 20381300 [Talisman] Retaliatory Crossed-Tree
 20381400 [Talisman] Lacerating Crossed-Tree
 20381600 [Talisman] St. Trina's Smile
@@ -11157,11 +11286,20 @@
 21491001 
 21491010 
 21500000 
+21500001 
 21620000 
 21621000 
 21621001 
 21621002 
 21621003 
+21630000 
+21630001 
+21630002 
+21630003 
+21630010 
+21630011 
+21630012 
+21630013 
 21640000 
 21640001 
 21667000 
@@ -11176,6 +11314,7 @@
 21692012 
 21702000 
 21720000 
+21720001 
 21730000 
 21730001 
 21730002 

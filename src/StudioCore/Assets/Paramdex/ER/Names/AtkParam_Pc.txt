@@ -4795,8 +4795,12 @@
 2102317 Caestus - Spiked Caestus
 2120100 
 2120101 
+2120102 
+2120103 
+2120104 
 2120105 
 2120106 
+2120107 
 2120300 
 2120301 
 2120305 
@@ -8220,6 +8224,7 @@
 210451050 Glintstone Nails
 210470000 Blades of Stone
 210470050 Blades of Stone
+210470051 
 210471000 Gravitational Missile
 210471001 Gravitational Missile
 210471002 Gravitational Missile
@@ -8263,10 +8268,13 @@
 210680050 Roar of Rugalea
 210680051 Roar of Rugalea
 210680052 Roar of Rugalea
+210680053 
 210690000 Knight's Lightning Spear
 210690001 Knight's Lightning Spear
+210690002 
 210690050 Knight's Lightning Spear
 210690051 Knight's Lightning Spear
+210690052 
 210691000 Dragonbolt of Florissax
 210691001 Dragonbolt of Florissax
 210692000 Electrocharge
@@ -10341,6 +10349,9 @@
 600000144 
 600000145 
 600000150 
+600000151 
+600000152 
+600000153 
 600000160 
 600000161 
 600000162 

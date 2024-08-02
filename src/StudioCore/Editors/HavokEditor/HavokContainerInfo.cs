@@ -32,6 +32,7 @@ public class HavokContainerInfo
 
     public BND4 ContainerBinder { get; set; }
     public Dictionary<string, hkRootLevelContainer> LoadedHavokFiles { get; set; }
+    public Dictionary<string, List<IHavokObject>> LoadHavokObjects { get; set; }
 
     public string Filename { get; set; }
     public bool IsModified { get; set; }
@@ -48,12 +49,15 @@ public class HavokContainerInfo
 
     public hkRootLevelContainer LoadedFile { get; set; }
 
+    public List<IHavokObject> LoadedObjects { get; set; }
+
     public HavokContainerInfo(string name, HavokContainerType type)
     {
         Type = type;
         Filename = name;
         IsModified = false;
         LoadedHavokFiles = new();
+        LoadHavokObjects = new();
 
         BinderDirectory = GetBinderDirectory();
         BinderExtension = GetBinderExtension();
@@ -72,7 +76,7 @@ public class HavokContainerInfo
         // Use mod if it exists
         if (File.Exists(ModBinderPath))
         {
-            TaskLogs.AddLog($"Loaded: {ModBinderPath}");
+            //TaskLogs.AddLog($"Loaded: {ModBinderPath}");
 
             ContainerBinder = BND4.Read(DCX.Decompress(ModBinderPath));
             InternalFileList = new();
@@ -84,7 +88,7 @@ public class HavokContainerInfo
         // Otherwise load root
         else
         {
-            TaskLogs.AddLog($"Loaded: {RootBinderPath}");
+            //TaskLogs.AddLog($"Loaded: {RootBinderPath}");
 
             ContainerBinder = BND4.Read(DCX.Decompress(RootBinderPath));
             InternalFileList = new();
@@ -122,6 +126,34 @@ public class HavokContainerInfo
                         LoadedHavokFiles.Add(key, container);
 
                         LoadedFile = LoadedHavokFiles[key];
+                    }
+                }
+            }
+        }
+    }
+
+    public void ReadHavokObjects(string key)
+    {
+        if (LoadHavokObjects.ContainsKey(key))
+        {
+            LoadedObjects = LoadHavokObjects[key];
+        }
+        else
+        {
+            foreach (var file in ContainerBinder.Files)
+            {
+                if (file.Name.ToLower() == key.ToLower())
+                {
+                    var fileName = file.Name.ToLower();
+                    var fileBytes = file.Bytes;
+
+                    HavokBinarySerializer serializer = new HavokBinarySerializer();
+                    using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray()))
+                    {
+                        var objects = serializer.ReadAllObjects(memoryStream).ToList();
+
+                        LoadHavokObjects.Add(key, objects);
+                        LoadedObjects = LoadHavokObjects[key];
                     }
                 }
             }

@@ -3150,6 +3150,8 @@
 2024071 Ancient Dragon-Man (Invader) (Gravesite Plain - North of Scorched Ruins)
 2024090 Swordhand of Night Jolan (NPC)
 2024091 Swordhand of Night Jolan (Invader) (Cathedral of Manus Metyr)
+2024092 
+2024093 
 2024120 Swordhand of Night Anna (Invader) (Finger Ruins of Miyr)
 2024121 Swordhand of Night Anna (NPC)
 2024130 Fire Knight Queelign (NPC)

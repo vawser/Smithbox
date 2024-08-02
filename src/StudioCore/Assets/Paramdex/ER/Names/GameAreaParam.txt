@@ -208,7 +208,7 @@
 2050480800 [Scaduview] Scadutree Avatar
 2050480860 [Hinterland] Tree Sentinel
 2051440800 [Scadu Altus] Rakshasa
-2051450800 [Scadu Altus] Count Ymir, Mother of Fingers
+2051450720 
 2052400800 [Jagged Peak] Jagged Peak Drake (Duo)
 2052430800 [Abyssal Woods] Jori, the Elder Inquisitor
 2052480800 [Finger Ruins] Fallingstar Beast

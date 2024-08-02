@@ -765,9 +765,9 @@ namespace SoulsFormats
         /// <summary>
         /// Reads either a four or eight-byte signed integer depending on VarintLong and throws an exception if it does not match any of the specified options.
         /// </summary>
-        public long AssertVarint(long option)
+        public long AssertVarint(params long[] options)
         {
-            return AssertValue(ReadVarint(), VarintLong ? "Varint64" : "Varint32", "0x{0:X}", option);
+            return AssertValue(ReadVarint(), VarintLong ? "Varint64" : "Varint32", "0x{0:X}", options);
         }
         
         /// <summary>

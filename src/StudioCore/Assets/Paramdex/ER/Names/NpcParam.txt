@@ -242,7 +242,7 @@
 22770033 Death Crab
 25000000 Crucible Knight (Unscaled)
 25000010 Crucible Knight (Limgrave Evergaol Boss)
-25000014 Crucible Knight 
+25000014 Crucible Knight
 25000030 Crucible Knight
 25000034 Crucible Knight (Leyndell- Royal Capital)
 25000042 Crucible Knight (Boss)

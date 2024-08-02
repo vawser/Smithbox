@@ -1,12 +1,22 @@
-﻿using ImGuiNET;
+﻿using DotNext.Collections.Generic;
+using HKLib.hk2018;
+using HKLib.hk2018.hkAsyncThreadPool;
+using ImGuiNET;
+using Org.BouncyCastle.Utilities;
 using SoulsFormats;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.GraphicsEditor;
+using StudioCore.Editors.HavokEditor;
+using StudioCore.Interface;
+using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
+using static SoulsFormats.DRB;
 using static StudioCore.Editors.TimeActEditor.AnimationBank;
 
 namespace StudioCore.Editors.TimeActEditor;
@@ -73,15 +83,30 @@ public class TimeActEditorScreen : EditorScreen
         }
         else
         {
-
             if (!AnimationBank.IsLoaded)
             {
-                AnimationBank.LoadTimeActs();
+                TaskManager.Run(new TaskManager.LiveTask($"Setup Time Act Editor", TaskManager.RequeueType.None, false,
+                () =>
+                {
+                    AnimationBank.LoadTimeActs();
+                    HavokFileBank.LoadAllHavokFiles();
+                }));
             }
 
-            if (AnimationBank.IsLoaded)
+            if (!TaskManager.AnyActiveTasks() && AnimationBank.IsLoaded && HavokFileBank.IsLoaded)
             {
-                TimeActFileView();
+                TimeActContainerFileView();
+                TimeActInternalFileView();
+                TimeActAnimationView();
+                TimeActAnimEventGraphView();
+            }
+            else
+            {
+                ImGui.Begin("Editor##LoadingTaeEditor");
+
+                ImGui.Text($"This editor is still loading.");
+
+                ImGui.End();
             }
         }
 
@@ -89,7 +114,9 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
     }
 
-    public void TimeActFileView()
+    private HavokContainerInfo LoadedHavokContainer;
+
+    public void TimeActContainerFileView()
     {
         // File List
         ImGui.Begin("Files##TimeActFileList");
@@ -102,17 +129,42 @@ public class TimeActEditorScreen : EditorScreen
             if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedBinderKey))
             {
                 _selectedTimeActKey = -1; // Clear tae key if file is changed
+                _selectedTimeActAnimationKey = -1;
+                _selectedTimeActEventKey = -1;
+                _selectedTimeAct = null;
 
                 _selectedBinderKey = info.Name;
                 _selectedFileInfo = info;
                 _selectedBinder = binder;
+
+                foreach (var entry in HavokFileBank.BehaviorContainerBank)
+                {
+                    if(entry.Filename == info.Name)
+                    {
+                        entry.LoadBinder();
+
+                        foreach (var file in entry.InternalFileList)
+                        {
+                            var name = file.Split("export")[1];
+                            if (name.Contains("behaviors"))
+                            {
+                                LoadedHavokContainer = entry;
+                                LoadedHavokContainer.LoadFile(file.ToLower());
+                                LoadedHavokContainer.ReadHavokObjects(file.ToLower());
+                            }
+                        }
+                    }
+                }
             }
+            DisplaySelectableAlias(info.Name, Smithbox.AliasCacheHandler.AliasCache.Characters);
         }
 
         ImGui.End();
+    }
 
-        // File List
-        ImGui.Begin("TimeActs##TimeActList");
+    public void TimeActInternalFileView()
+    {
+        ImGui.Begin("Time Acts##TimeActList");
 
         if (_selectedFileInfo != null)
         {
@@ -123,10 +175,159 @@ public class TimeActEditorScreen : EditorScreen
             {
                 TAE entry = _selectedFileInfo.TimeActFiles[i];
 
-                if (ImGui.Selectable($@" {entry.ID}", i == _selectedTimeActKey))
+                if (ImGui.Selectable($@" a{(entry.ID - 2000)}", i == _selectedTimeActKey))
                 {
+                    _selectedTimeActAnimationKey = -1;
+                    _selectedTimeActEventKey = -1;
                     _selectedTimeActKey = i;
                     _selectedTimeAct = entry;
+                    ApplyTemplate();
+                }
+            }
+        }
+
+        ImGui.End();
+    }
+
+    public void ApplyTemplate()
+    {
+        switch (Smithbox.ProjectType)
+        {
+            case ProjectType.DS1:
+                _selectedTimeAct.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.DS1"]);
+                break;
+            case ProjectType.DS2:
+            case ProjectType.DS2S:
+                _selectedTimeAct.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.SOTFS"]);
+                break;
+            case ProjectType.DS3:
+                _selectedTimeAct.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.DS3"]);
+                break;
+            case ProjectType.BB:
+                _selectedTimeAct.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.BB"]);
+                break;
+            case ProjectType.SDT:
+                _selectedTimeAct.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.SDT"]);
+                break;
+            case ProjectType.ER:
+                _selectedTimeAct.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.ER"]);
+                break;
+            case ProjectType.AC6:
+                _selectedTimeAct.ApplyTemplate(AnimationBank.TAETemplates["TAE.Template.AC6"]);
+                break;
+        }
+    }
+
+    private long _selectedTimeActAnimationKey = -1;
+
+    public void TimeActAnimationView()
+    {
+        ImGui.Begin("Animations##TimeActAnimationList");
+
+        if (_selectedTimeAct != null)
+        {
+            foreach(var anim in _selectedTimeAct.Animations)
+            {
+                if (ImGui.Selectable($@" {anim.ID}", anim.ID == _selectedTimeActAnimationKey))
+                {
+                    _selectedTimeActAnimationKey = anim.ID;
+                    _selectedTimeActEventKey = -1;
+                }
+                var list = GetAnimationAliasList(anim.ID);
+                if (list.Count > 0)
+                {
+                    AliasUtils.DisplayAlias(list[0]);
+                    AliasUtils.AliasTooltip(list, "Generators that use this animation:");
+                }
+            }
+        }
+
+        ImGui.End();
+    }
+
+    private Dictionary<long, List<string>> AnimationAliasCache = new();
+
+    private List<string> GetAnimationAliasList(long id)
+    {
+        List<string> aliasList = new();
+
+        if(AnimationAliasCache.ContainsKey(id))
+        {
+            aliasList = AnimationAliasCache[id];
+        }
+        else
+        {
+            // TODO: this is a bit slow with c0000, leading to a one-time delay of 15 seconds
+            // Would be better to pre-cache this with a Task, and just not display aliases until the Task finishes
+            List<CustomManualSelectorGenerator> cmsgs = LoadedHavokContainer.LoadedObjects
+            .Where(x => x is CustomManualSelectorGenerator cmsg && cmsg.m_generators
+            .All(y => y is hkbClipGenerator))
+            .Cast<CustomManualSelectorGenerator>().ToList();
+
+            Dictionary<hkbClipGenerator, List<CustomManualSelectorGenerator>> clipParents = LoadedHavokContainer.LoadedObjects
+                .Where(x => x is hkbClipGenerator)
+                .Cast<hkbClipGenerator>()
+                .Distinct()
+                .ToDictionary(x => x, _ => new List<CustomManualSelectorGenerator>());
+
+            var _cmsgsByAnimId = cmsgs.GroupBy(x => x.m_animId).ToDictionary(x => x.Key, x => x.ToList());
+
+            foreach (var entry in _cmsgsByAnimId)
+            {
+                if(entry.Key == id)
+                {
+                    foreach(var val in entry.Value)
+                    {
+                        aliasList.Add($"{val.m_name}");
+                    }
+                }
+            }
+
+            AnimationAliasCache.Add(id, aliasList);
+        }
+
+        return aliasList;
+    }
+
+    private void DisplaySelectableAlias(string name, Dictionary<string, AliasReference> referenceDict)
+    {
+        var lowerName = name.ToLower();
+
+        if (referenceDict.ContainsKey(lowerName))
+        {
+            if (CFG.Current.MapEditor_AssetBrowser_ShowAliases)
+            {
+                var aliasName = referenceDict[lowerName].name;
+
+                AliasUtils.DisplayAlias(aliasName);
+            }
+
+            // Tags
+            if (CFG.Current.MapEditor_AssetBrowser_ShowTags)
+            {
+                var tagString = string.Join(" ", referenceDict[lowerName].tags);
+                AliasUtils.DisplayTagAlias(tagString);
+            }
+        }
+    }
+
+    private long _selectedTimeActEventKey = -1;
+
+    public void TimeActAnimEventGraphView()
+    {
+        ImGui.Begin("Event Graph##TimeActAnimEventGraph");
+
+        if (_selectedTimeActAnimationKey != -1)
+        {
+            var selectedAnim = _selectedTimeAct.Animations.Where(e => e.ID == _selectedTimeActAnimationKey).FirstOrDefault();
+
+            for(int i = 0; i < selectedAnim.Events.Count; i++)
+            {
+                var evt = selectedAnim.Events[i];
+
+                if (ImGui.Selectable($@" {evt.TypeName}", i == _selectedTimeActEventKey))
+                {
+                    _selectedTimeActEventKey = i;
                 }
             }
         }

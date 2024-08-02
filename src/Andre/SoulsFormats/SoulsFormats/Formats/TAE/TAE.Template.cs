@@ -42,7 +42,7 @@ namespace SoulsFormats
                     basedOnMap.Add(newBank, basedOn);
                     if (ContainsKey(newBank.ID))
                     {
-                        throw new Exception($"TAE Template has more than one bank with ID {newBank.ID}.");
+                        throw new Exception($"TAE Template has more than one action with ID {newBank.ID}.");
                     }
                     Add(newBank.ID, newBank);
                 }
@@ -139,7 +139,7 @@ namespace SoulsFormats
                                 throw new Exception($"Event template in bank template {ID} failed to read.\n\nLast valid event ID read: {lastGoodEventTemplate.ID}\n\nMessage:\n{e}");
                             }
                         }
-                        
+
                     }
                 }
             }
@@ -170,6 +170,8 @@ namespace SoulsFormats
                         case ParamType.x32:
                         case ParamType.f32:
                             return 4;
+                        case ParamType.f32grad:
+                            return 8;
                         case ParamType.s64:
                         case ParamType.u64:
                         case ParamType.x64:
@@ -198,6 +200,7 @@ namespace SoulsFormats
                         case ParamType.u64: case ParamType.x64: return typeof(ulong);
                         case ParamType.s64: return typeof(long);
                         case ParamType.f32: return typeof(float);
+                        case ParamType.f32grad: return typeof(System.Numerics.Vector2);
                         case ParamType.f64: return typeof(double);
                         case ParamType.b: return typeof(bool);
                         default: throw new Exception($"Invalid ParamTemplate ParamType: {Type.ToString()}");
@@ -251,6 +254,11 @@ namespace SoulsFormats
                         case ParamType.x64: return ulong.Parse(str, System.Globalization.NumberStyles.HexNumber);
                         case ParamType.s64: return long.Parse(str);
                         case ParamType.f32: return float.Parse(str);
+                        case ParamType.f32grad:
+                            var floatSplit = str.Split('|');
+                            float gradStart = float.Parse(floatSplit[0]);
+                            float gradEnd = float.Parse(floatSplit[1]);
+                            return new System.Numerics.Vector2(gradStart, gradEnd);
                         case ParamType.f64: return double.Parse(str);
                         case ParamType.b:
                             string toLower = str.ToLower().Trim();
@@ -285,6 +293,7 @@ namespace SoulsFormats
                         case ParamType.x32: return ((uint)val).ToString("X8");
                         case ParamType.x64: return ((ulong)val).ToString("X16");
                         case ParamType.b: return ((bool)val) ? "True" : "False";
+                        case ParamType.f32grad: return $"{((System.Numerics.Vector2)val).X}|{((System.Numerics.Vector2)val).Y}";
                         default: return val.ToString();
                     }
                 }
@@ -304,6 +313,10 @@ namespace SoulsFormats
                         case ParamType.u64: case ParamType.x64: bw.WriteUInt64((ulong)value); break;
                         case ParamType.s64: bw.WriteInt64((long)value); break;
                         case ParamType.f32: bw.WriteSingle((float)value); break;
+                        case ParamType.f32grad:
+                            bw.WriteSingle(((System.Numerics.Vector2)value).X);
+                            bw.WriteSingle(((System.Numerics.Vector2)value).Y);
+                            break;
                         case ParamType.f64: bw.WriteDouble((double)value); break;
                         default: throw new Exception($"Invalid ParamTemplate ParamType: {Type.ToString()}");
                     }
@@ -324,6 +337,10 @@ namespace SoulsFormats
                         case ParamType.u64: case ParamType.x64: return br.ReadUInt64();
                         case ParamType.s64: return br.ReadInt64();
                         case ParamType.f32: return br.ReadSingle();
+                        case ParamType.f32grad:
+                            var gradStart = br.ReadSingle();
+                            var gradEnd = br.ReadSingle();
+                            return new System.Numerics.Vector2(gradStart, gradEnd);
                         case ParamType.f64: return br.ReadDouble();
                         default: throw new Exception($"Invalid ParamTemplate ParamType: {Type.ToString()}");
                     }
@@ -333,6 +350,7 @@ namespace SoulsFormats
                 {
                     switch (Type)
                     {
+#if DEBUG
                         case ParamType.aob:
                             var assertAob = (byte[])ValueToAssert;
                             for (int i = 0; i < AobLength; i++)
@@ -350,7 +368,31 @@ namespace SoulsFormats
                         case ParamType.u64: case ParamType.x64: br.AssertUInt64((ulong)ValueToAssert); break;
                         case ParamType.s64: br.AssertInt64((long)ValueToAssert); break;
                         case ParamType.f32: br.AssertSingle((float)ValueToAssert); break;
+                        case ParamType.f32grad:
+                            br.AssertSingle(((System.Numerics.Vector2)ValueToAssert).X);
+                            br.AssertSingle(((System.Numerics.Vector2)ValueToAssert).Y);
+                            break;
                         case ParamType.f64: br.AssertDouble((double)ValueToAssert); break;
+#else
+                        case ParamType.aob:
+                            var assertAob = (byte[])ValueToAssert;
+                            br.Position += assertAob.Length;
+                            break;
+                        case ParamType.b: br.Position += 1; break;
+                        case ParamType.u8: br.Position += 1; break;
+                        case ParamType.s8: br.Position += 1; break;
+                        case ParamType.u16: br.Position += 2; break;
+                        case ParamType.s16: br.Position += 2; break;
+                        case ParamType.u32: br.Position += 4; break;
+                        case ParamType.s32: br.Position += 4; break;
+                        case ParamType.u64: case ParamType.x64: br.Position += 8; break;
+                        case ParamType.s64: br.Position += 8; break;
+                        case ParamType.f32: br.Position += 4; break;
+                        case ParamType.f32grad:
+                            br.Position += 8; break;
+                            break;
+                        case ParamType.f64: br.Position += 8; break;
+#endif
                         default: throw new Exception($"Invalid ParamTemplate ParamType: {Type.ToString()}");
                     }
                 }
@@ -373,6 +415,10 @@ namespace SoulsFormats
                         case ParamType.u64: case ParamType.x64: bw.WriteUInt64((ulong)ValueToAssert); break;
                         case ParamType.s64: bw.WriteInt64((long)ValueToAssert); break;
                         case ParamType.f32: bw.WriteSingle((float)ValueToAssert); break;
+                        case ParamType.f32grad:
+                            bw.WriteSingle(((System.Numerics.Vector2)ValueToAssert).X);
+                            bw.WriteSingle(((System.Numerics.Vector2)ValueToAssert).Y);
+                            break;
                         case ParamType.f64: bw.WriteDouble((double)ValueToAssert); break;
                         default: throw new Exception($"Invalid ParamTemplate ParamType: {Type.ToString()}");
                     }
@@ -401,6 +447,10 @@ namespace SoulsFormats
                             case ParamType.u64: case ParamType.x64: bw.WriteUInt64(0); break;
                             case ParamType.s64: bw.WriteInt64(0); break;
                             case ParamType.f32: bw.WriteSingle(0); break;
+                            case ParamType.f32grad:
+                                bw.WriteSingle(0);
+                                bw.WriteSingle(0);
+                                break;
                             case ParamType.f64: bw.WriteDouble(0); break;
                             default: throw new Exception($"Invalid ParamTemplate ParamType: {Type.ToString()}");
                         }
@@ -422,11 +472,15 @@ namespace SoulsFormats
                             case ParamType.u64: case ParamType.x64: bw.WriteUInt64((ulong)DefaultValue); break;
                             case ParamType.s64: bw.WriteInt64((long)DefaultValue); break;
                             case ParamType.f32: bw.WriteSingle((float)DefaultValue); break;
+                            case ParamType.f32grad:
+                                bw.WriteSingle(((System.Numerics.Vector2)DefaultValue).X);
+                                bw.WriteSingle(((System.Numerics.Vector2)DefaultValue).Y);
+                                break;
                             case ParamType.f64: bw.WriteDouble((double)DefaultValue); break;
                             default: throw new Exception($"Invalid ParamTemplate ParamType: {Type.ToString()}");
                         }
                     }
-                    
+
                 }
 
                 /// <summary>
@@ -438,6 +492,20 @@ namespace SoulsFormats
                 /// The name of this parameter.
                 /// </summary>
                 public string Name;
+
+                /// <summary>
+                /// The name of the group this parameter is in.
+                /// Leave null to place outside of any groups.
+                /// </summary>
+                public string NameGroup = null;
+
+                public string GetKeyString()
+                {
+                    if (NameGroup != null)
+                        return $"{NameGroup}::{Name}";
+                    else
+                        return Name;
+                }
 
                 /// <summary>
                 /// (Optional) The value which should be asserted on this parameter.
@@ -461,6 +529,15 @@ namespace SoulsFormats
                 /// </summary>
                 public Dictionary<string, object> EnumEntries { get; private set; } = null;
 
+                public void EnsureEnumEntry(object entryValue)
+                {
+                    if (EnumEntries == null)
+                        EnumEntries = new Dictionary<string, object>();
+                    var v = Convert.ToInt32(entryValue);
+                    if (!EnumEntries.Any(a => Convert.ToInt32(a.Value) == v))
+                        EnumEntries.Add($"{v}: <Unmapped Value>", v);
+                }
+
                 /// <summary>
                 /// Sorts the enum entries by key.
                 /// </summary>
@@ -474,6 +551,7 @@ namespace SoulsFormats
                 {
                     Type = (ParamType)Enum.Parse(typeof(ParamType), paramNode.Name);
 
+                    NameGroup = paramNode.Attributes["group"]?.InnerText;
                     Name = paramNode.Attributes["name"]?.InnerText ?? $"Unk{offset:X2}";
 
                     // Load enum entries before doing default value so you can make the default value an enum entry.
@@ -513,7 +591,7 @@ namespace SoulsFormats
                     {
                         throw new Exception($"Bank {bankId} -> Event {eventId} -> Parameter {(Name != null ? $"'{Name}'" : $"{paramIndex}")}\n    Failed to read 'assert' attribute of parameter.\n\n\n{ex}");
                     }
-                    
+
                     try
                     {
                         if (DefaultValue == null)
@@ -558,7 +636,7 @@ namespace SoulsFormats
                                 $"attribute was set to {AobLength}.");
                         }
                     }
-                    
+
                 }
             }
 
@@ -623,7 +701,7 @@ namespace SoulsFormats
                             continue;
                         var newParam = new ParameterTemplate(bankId, ID, i++, paramNode, offset);
                         var paramSize = newParam.GetByteCount();
-                        Add(newParam.Name, newParam);
+                        Add(newParam.GetKeyString(), newParam);
                         offset += paramSize;
                     }
                 }
@@ -703,6 +781,11 @@ namespace SoulsFormats
                 /// Single-precision float.
                 /// </summary>
                 f32,
+
+                /// <summary>
+                /// Single-precision float gradient. Two float values to blend over time from the start of the event to the end of the event.
+                /// </summary>
+                f32grad,
 
                 /// <summary>
                 /// Double-precision float.

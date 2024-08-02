@@ -38,7 +38,7 @@
 540 
 541 
 542 
-550 
+550 Base Behavior - Jump Attack
 560 
 561 
 600 
@@ -706,18 +706,18 @@
 100301004 Dark Moon Greatsword -
 100301005 Dark Moon Greatsword -
 100301006 Dark Moon Greatsword -
-100301007 Dark Moon Greatsword -
-100301008 Dark Moon Greatsword -
-100301009 Dark Moon Greatsword -
-100301010 Dark Moon Greatsword -
 100301100 Dark Moon Greatsword -
 100301105 Dark Moon Greatsword -
 100301110 Dark Moon Greatsword -
 100301115 Dark Moon Greatsword -
 100301300 Dark Moon Greatsword -
+100301301 
 100301305 Dark Moon Greatsword -
+100301306 
 100301310 Dark Moon Greatsword -
+100301311 
 100301315 Dark Moon Greatsword -
+100301316 
 100302001 Sword of Milos -
 100302100 Sword of Milos -
 100302105 Sword of Milos -
@@ -10688,61 +10688,61 @@
 106701893 Rellana's Twin Blades -
 106701894 Rellana's Twin Blades -
 106701895 Rellana's Twin Blades -
-106800000 Beast Claw - Default
-106800010 Beast Claw - Default
-106800011 Beast Claw - Default
-106800020 Beast Claw - Default
-106800030 Beast Claw - Default
-106800100 Beast Claw - Default
-106800105 Beast Claw - Default
-106800110 Beast Claw - Default
-106800115 Beast Claw - Default
-106800120 Beast Claw - Default
-106800125 Beast Claw - Default
-106800126 Beast Claw - Default
-106800130 Beast Claw - Default
-106800140 Beast Claw - Default
-106800150 Beast Claw - Default
-106800160 Beast Claw - Default
-106800175 Beast Claw - Default
-106800176 Beast Claw - Default
-106800180 Beast Claw - Default
-106800181 Beast Claw - Default
-106800200 Beast Claw - Default
-106800201 Beast Claw - Default
-106800210 Beast Claw - Default
-106800211 Beast Claw - Default
-106800212 Beast Claw - Default
-106800220 Beast Claw - Default
-106800221 Beast Claw - Default
-106800230 Beast Claw - Default
-106800300 Beast Claw - Default
-106800301 Beast Claw - Default
-106800305 Beast Claw - Default
-106800306 Beast Claw - Default
-106800310 Beast Claw - Default
-106800311 Beast Claw - Default
-106800315 Beast Claw - Default
-106800316 Beast Claw - Default
-106800320 Beast Claw - Default
-106800321 Beast Claw - Default
-106800325 Beast Claw - Default
-106800326 Beast Claw - Default
-106800327 Beast Claw - Default
-106800330 Beast Claw - Default
-106800331 Beast Claw - Default
-106800340 Beast Claw - Default
-106800341 Beast Claw - Default
-106800350 Beast Claw - Default
-106800351 Beast Claw - Default
-106800360 Beast Claw - Default
-106800361 Beast Claw - Default
-106800375 Beast Claw - Default
-106800376 Beast Claw - Default
-106800380 Beast Claw - Default
-106800381 Beast Claw - Default
-106800382 Beast Claw - Default
-106800383 Beast Claw - Default
+106800000 Beast Claw: [030000] AttackRightLight1
+106800010 Beast Claw: [030010] AttackRightLight2 - Hit 1
+106800011 Beast Claw: [030010] AttackRightLight2 - Hit 2
+106800020 Beast Claw: [030020] AttackRightLight3
+106800030 Beast Claw: [030030] AttackRightLight4
+106800100 Beast Claw: [030505] AttackRightHeavy1End
+106800105 Beast Claw: [030500] AttackRightHeavy1Start
+106800110 Beast Claw: [030515] AttackRightHeavy2End
+106800115 Beast Claw: [030510] AttackRightHeavy2Start
+106800120 Beast Claw: [030200] AttackRightLightDash
+106800125 Beast Claw: [030210] AttackRightHeavyDash - Hit 1
+106800126 Beast Claw: [030210] AttackRightHeavyDash - Hit 2
+106800130 Beast Claw: [030300] AttackRightLightStep
+106800140 Beast Claw: [030400] AttackRightBackstep
+106800150 Beast Claw - Default: JumpAttack
+106800160 Beast Claw - Default: JumpAttack_Land
+106800175 Beast Claw: [030950] AttackRightSpecial1
+106800176 Beast Claw: [030955] AttackRightSpecial2
+106800180 Beast Claw: [030700] AttackRightLightCounter - Hit 1
+106800181 Beast Claw: [030700] AttackRightLightCounter - Hit 2
+106800200 Beast Claw - Default: AttackBothLight1 - Hit 1
+106800201 Beast Claw - Default: AttackBothLight1 - Hit 2
+106800210 Beast Claw - Default: AttackBothLight2 - Hit 1
+106800211 Beast Claw - Default: AttackBothLight2 - Hit 2
+106800212 Beast Claw - Default: AttackBothLight2 - Hit 3
+106800220 Beast Claw - Default: AttackBothLight3 - Hit 1
+106800221 Beast Claw - Default: AttackBothLight3 - Hit 2
+106800230 Beast Claw - Default: AttackBothLight4
+106800300 Beast Claw - Default: AttackBothHeavy1End - Hit 1
+106800301 Beast Claw - Default: AttackBothHeavy1End - Hit 2
+106800305 Beast Claw - Default: AttackBothHeavy1Start - Hit 1
+106800306 Beast Claw - Default: AttackBothHeavy1Start - Hit 2
+106800310 Beast Claw - Default: AttackBothHeavy2End - Hit 1
+106800311 Beast Claw - Default: AttackBothHeavy2End - Hit 2
+106800315 Beast Claw - Default: AttackBothHeavy2Start - Hit 1
+106800316 Beast Claw - Default: AttackBothHeavy2Start - Hit 2
+106800320 Beast Claw - Default: AttackArrowLeftFireDash - Hit 1
+106800321 Beast Claw - Default: AttackArrowLeftFireDash - Hit 2
+106800325 Beast Claw - Default: AttackBothHeavyDash - Hit 1
+106800326 Beast Claw - Default: AttackBothHeavyDash - Hit 2
+106800327 Beast Claw - Default: AttackBothHeavyDash - Hit 3
+106800330 Beast Claw - Default: AttackArrowRightFireStep - Hit 1
+106800331 Beast Claw - Default: AttackArrowRightFireStep - Hit 2
+106800340 Beast Claw - Default: AttackBothBackstep - Hit 1
+106800341 Beast Claw - Default: AttackBothBackstep - Hit 2
+106800350 Beast Claw - Default: JumpAttack_Light_Both - Hit 1
+106800351 Beast Claw - Default: JumpAttack_Light_Both - Hit 2
+106800360 Beast Claw - Default: JumpAttack_Hard_Both - Hit 1
+106800361 Beast Claw - Default: JumpAttack_Hard_Both - Hit 2
+106800375 Beast Claw - Default: AttackBothSpecial1
+106800376 Beast Claw - Default: AttackBothSpecial2
+106800380 Beast Claw - Default: AttackBothLightCounter - Hit 1
+106800381 Beast Claw - Default: AttackBothLightCounter - Hit 2
+106800382 Beast Claw - Default: AttackBothLightCounter - Hit 3
+106800383 Beast Claw - Default: AttackBothLightCounter - Hit 4
 106800400 Beast Claw - Default
 106800410 Beast Claw - Default
 106800411 Beast Claw - Default
@@ -12411,15 +12411,6 @@
 301702920 Siluria's Tree / Barbed Staff-Spear - [AOW] Siluria's Woe
 301702925 Siluria's Tree / Barbed Staff-Spear - [AOW] Siluria's Woe
 301702930 Siluria's Tree / Barbed Staff-Spear - [AOW] Siluria's Woe
-301703900 Serpent-Hunter - [AOW] Great-Serpent Hunt
-301703901 Serpent-Hunter - [AOW] Great-Serpent Hunt
-301703905 Serpent-Hunter - [AOW] Great-Serpent Hunt
-301703950 Serpent-Hunter - [AOW] Great-Serpent Hunt
-301703951 Serpent-Hunter - [AOW] Great-Serpent Hunt
-301703955 Serpent-Hunter - [AOW] Great-Serpent Hunt
-301703970 Serpent-Hunter - [AOW] Great-Serpent Hunt
-301703971 Serpent-Hunter - [AOW] Great-Serpent Hunt
-301703975 Serpent-Hunter - [AOW] Great-Serpent Hunt
 301705900 Vyke's War Spear - [AOW] Frenzyflame Thrust
 301705901 Vyke's War Spear - [AOW] Frenzyflame Thrust
 301705902 Vyke's War Spear - [AOW] Frenzyflame Thrust
@@ -12923,44 +12914,44 @@
 306700991 Light Greatsword - Default
 306700992 Light Greatsword - Default
 306700993 Light Greatsword - Default
-306800950 Beast Claw - Default
-306800951 Beast Claw - Default
-306800952 Beast Claw - Default
-306800953 Beast Claw - Default
-306800954 Beast Claw - Default
-306800955 Beast Claw - Default
-306800956 Beast Claw - Default
-306800957 Beast Claw - Default
-306800958 Beast Claw - Default
-306800959 Beast Claw - Default
-306800960 Beast Claw - Default
-306800961 Beast Claw - Default
-306800962 Beast Claw - Default
-306800963 Beast Claw - Default
-306800964 Beast Claw - Default
-306800965 Beast Claw - Default
-306800966 Beast Claw - Default
-306800967 Beast Claw - Default
-306800968 Beast Claw - Default
-306800969 Beast Claw - Default
-306800980 Beast Claw - Default
-306800981 Beast Claw - Default
-306800982 Beast Claw - Default
-306800983 Beast Claw - Default
-306800984 Beast Claw - Default
-306800985 Beast Claw - Default
-306800986 Beast Claw - Default
-306800987 Beast Claw - Default
-306800988 Beast Claw - Default
-306800989 Beast Claw - Default
-306800990 Beast Claw - Default
-306800991 Beast Claw - Default
-306800992 Beast Claw - Default
-306800993 Beast Claw - Default
-306800994 Beast Claw - Default
-306800995 Beast Claw - Default
-306800996 Beast Claw - Default
-306800997 Beast Claw - Default
+306800950 Beast Claw: [030600] AttackRightHeavySpecial1Start - Hit 1
+306800951 Beast Claw: [030600] AttackRightHeavySpecial1Start - Hit 2
+306800952 Beast Claw: [030600] AttackRightHeavySpecial1Start - Hit 3
+306800953 Beast Claw: [030605] AttackRightHeavySpecial1End - Hit 1
+306800954 Beast Claw: [030605] AttackRightHeavySpecial1End - Hit 2
+306800955 Beast Claw: [030605] AttackRightHeavySpecial1End - Hit 3
+306800956 Beast Claw: [030610] AttackRightHeavySpecial2Start - Hit 1
+306800957 Beast Claw: [030610] AttackRightHeavySpecial2Start - Hit 2
+306800958 Beast Claw: [030615] AttackRightHeavySpecial2End - Hit 1
+306800959 Beast Claw: [030615] AttackRightHeavySpecial2End - Hit 2
+306800960 Beast Claw - Default: AttackBothHeavySpecial1Start - Hit 1
+306800961 Beast Claw - Default: AttackBothHeavySpecial1Start - Hit 2
+306800962 Beast Claw - Default: AttackBothHeavySpecial1Start - Hit 3
+306800963 Beast Claw - Default: AttackBothHeavySpecial1End - Hit 1
+306800964 Beast Claw - Default: AttackBothHeavySpecial1End - Hit 2
+306800965 Beast Claw - Default: AttackBothHeavySpecial1End - Hit 3
+306800966 Beast Claw - Default: AttackBothHeavySpecial2Start - Hit 1
+306800967 Beast Claw - Default: AttackBothHeavySpecial2Start - Hit 2
+306800968 Beast Claw - Default: AttackBothHeavySpecial2End - Hit 1
+306800969 Beast Claw - Default: AttackBothHeavySpecial2End - Hit 2
+306800980 Beast Claw: [030620] AttackRightHeavySpecialWarrior1Start - Hit 1
+306800981 Beast Claw: [030625] AttackRightHeavySpecialWarrior1End
+306800982 Beast Claw: [030620] AttackRightHeavySpecialWarrior1Start - Hit 2
+306800983 Beast Claw: [030620] AttackRightHeavySpecialWarrior1Start - Hit 3
+306800984 Beast Claw: [030630] AttackRightHeavySpecialWarrior2Start - Hit 1
+306800985 Beast Claw: [030635] AttackRightHeavySpecialWarrior2End
+306800986 Beast Claw: [030630] AttackRightHeavySpecialWarrior2Start - Hit 2
+306800987 Beast Claw: [030630] AttackBothHeavySpecialWarrior1Start - Hit 3
+306800988 Beast Claw: [030630] AttackBothHeavySpecialWarrior1Start - Hit 4
+306800989 Beast Claw - Default: AttackBothHeavySpecialWarrior1End - Hit 1
+306800990 Beast Claw - Default: AttackBothHeavySpecialWarrior1End - Hit 2
+306800991 Beast Claw - Default: AttackBothHeavySpecialWarrior1Start - Hit 1
+306800992 Beast Claw - Default: AttackBothHeavySpecialWarrior1Start - Hit 2
+306800993 Beast Claw - Default: AttackBothHeavySpecialWarrior2Start - Hit 2
+306800994 Beast Claw - Default: AttackBothHeavySpecialWarrior2Start - Hit 3
+306800995 Beast Claw - Default: AttackBothHeavySpecialWarrior2End - Hit 1
+306800996 Beast Claw - Default: AttackBothHeavySpecialWarrior2End - Hit 2
+306800997 Beast Claw - Default: AttackBothHeavySpecialWarrior2Start - Hit 1
 400000000 Shared [AOW] Spinning Chain
 400000001 Shared [AOW] Spinning Chain
 400000002 Shared [AOW] Spinning Chain
@@ -12991,6 +12982,15 @@
 500000006 
 500000007 
 500000008 
+501703900 
+501703901 
+501703905 
+501703950 
+501703951 
+501703955 
+501703970 
+501703971 
+501703975 
 600000000 
 600000001 
 600000002 
@@ -13331,13 +13331,25 @@
 600000991 
 600000992 
 600000993 
+600100150 
 600200100 
+600200150 
+600300150 
+600400150 
 600500100 
+600500150 
 600600100 
+600600150 
+600700150 
+600800150 
 600900100 
+600900150 
 601000100 
 601000101 
 601600100 
+601600150 
+601700150 
+601800150 
 602210900 Claws of Night -
 602210901 Claws of Night -
 602210902 Claws of Night -
@@ -13449,7 +13461,10 @@
 606003247 Lightning Perfume Bottle -
 606100100 Thrusting Shield - Default
 606100101 Thrusting Shield - Default
+606200150 
+606600150 
 606700100 Light Greatsword - Default
+606700150 
 700000000 
 700000001 
 700000002 

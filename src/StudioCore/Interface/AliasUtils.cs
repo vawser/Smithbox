@@ -34,6 +34,13 @@ public static class AliasUtils
             }
         }
     }
+
+    public static void AliasTooltip(List<string> aliases, string title)
+    {
+        var lines = string.Join("\n- ", aliases);
+        ImguiUtils.ShowHoverTooltip($"{title}\n- {lines}");
+    }
+
     public static void DisplayTagAlias(string aliasName)
     {
         if (aliasName != "")

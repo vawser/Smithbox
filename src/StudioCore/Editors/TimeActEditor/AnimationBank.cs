@@ -5,6 +5,9 @@ using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml;
+using System.Xml.Linq;
+using static SoulsFormats.TAE;
 
 namespace StudioCore.Editors.TimeActEditor;
 public static class AnimationBank
@@ -87,11 +90,23 @@ public static class AnimationBank
         }
     }
 
+    public static Dictionary<string, Template> TAETemplates = new Dictionary<string, Template>();
+
     public static void LoadTimeActs()
     {
         if(Smithbox.ProjectType == ProjectType.Undefined)
         {
             return;
+        }
+
+        // Load templates
+        var templateDir = $"{AppContext.BaseDirectory}Assets\\TAE\\";
+        foreach(var file in Directory.EnumerateFiles(templateDir, "*.xml"))
+        {
+            var name = Path.GetFileNameWithoutExtension(file);
+            var template = TAE.Template.ReadXMLFile(file);
+
+            TAETemplates.Add(name, template);
         }
 
         IsLoaded = false;
@@ -106,6 +121,12 @@ public static class AnimationBank
 
         foreach (var name in fileNames)
         {
+            // Skip the non-TAE holding ones
+            if(name.Length != 5)
+            {
+                continue;
+            }
+
             var filePath = $"{fileDir}\\{name}{fileExt}";
 
             if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
