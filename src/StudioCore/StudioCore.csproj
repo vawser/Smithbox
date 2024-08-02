@@ -235,6 +235,9 @@
     <None Update="Assets\Aliases\Movies\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Aliases\Particles\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Aliases\Sounds\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Aliases\TimeActs\**" CopyToOutputDirectory="PreserveNewest" />
+    
+    <None Update="Assets\HavokAliases\**" CopyToOutputDirectory="PreserveNewest" />
     
     <None Update="Assets\FormatInfo\MSB\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\FormatInfo\FLVER\**" CopyToOutputDirectory="PreserveNewest" />

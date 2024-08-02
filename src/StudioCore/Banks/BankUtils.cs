@@ -1,6 +1,7 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
+using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Banks.SelectionGroupBank;
 using StudioCore.Banks.TextureAdditionBank;
@@ -86,6 +87,24 @@ public static class BankUtils
 
                 if (isUnique)
                     baseResource.list.Add(mEntry);
+            }
+        }
+
+        return baseResource;
+    }
+
+    public static HavokGeneratorAliasResource LoadHavokAliasJSON(string filename)
+    {
+        var baseResource = new HavokGeneratorAliasResource();
+        var modResource = new HavokGeneratorAliasResource();
+
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Havok Aliases\\{MiscLocator.GetGameIDForDir()}\\{filename}.json";
+
+        if (File.Exists(baseResourcePath))
+        {
+            using (var stream = File.OpenRead(baseResourcePath))
+            {
+                baseResource = JsonSerializer.Deserialize(stream, HavokAliasResourceSerializationContext.Default.HavokGeneratorAliasResource);
             }
         }
 

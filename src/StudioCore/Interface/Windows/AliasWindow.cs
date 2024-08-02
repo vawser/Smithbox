@@ -25,6 +25,7 @@ public class AliasWindow
     private AliasTab ParticleAliasTab;
     private AliasTab MovieAliasTab;
     private AliasTab MapAliasTab;
+    private AliasTab TimeActsTab;
 
     private bool TabInitialized = false;
 
@@ -55,6 +56,7 @@ public class AliasWindow
                 SoundAliasTab = new AliasTab(Smithbox.BankHandler.SoundAliases, "Sounds", ref CFG.Current.SoundAtlas_ShowTags, true);
                 ParticleAliasTab = new AliasTab(Smithbox.BankHandler.ParticleAliases, "Particles", ref CFG.Current.ParticleAtlas_ShowTags);
                 MovieAliasTab = new AliasTab(Smithbox.BankHandler.MovieAliases, "Movies", ref CFG.Current.MovieAtlas_ShowTags);
+                TimeActsTab = new AliasTab(Smithbox.BankHandler.TimeActAliases, "Time acts", ref CFG.Current.TimeActAtlas_ShowTags);
 
                 TabInitialized = true;
             }
@@ -98,6 +100,7 @@ public class AliasWindow
             DisplayAliasTab(MovieAliasTab, "Movies");
             DisplayAliasTab(SoundAliasTab, "Sounds");
             DisplayAliasTab(MapAliasTab, "Map Names");
+            DisplayAliasTab(TimeActsTab, "Time Acts");
 
             ImGui.EndTabBar();
         }

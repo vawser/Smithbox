@@ -21,6 +21,7 @@ public enum KeybindCategory
     ModelEditor,
     ParamEditor,
     TextEditor,
+    TimeActEditor,
     Viewport,
     TextureViewer
 }
@@ -218,6 +219,10 @@ public class KeyBindings
         public KeyBind Map_ViewportGrid_Raise = new("Map Grid: Raise", KeybindCategory.Viewport, Key.E, true);
         public KeyBind Map_ViewportGrid_Bring_to_Selection = new("Map Grid: Bring to Selection", KeybindCategory.Viewport, Key.K, true);
         public KeyBind Map_ToggleRenderOutline = new("Toggle Selection Outline", KeybindCategory.Viewport);
+
+        // TAE Editor
+        public KeyBind TimeActEditor_Multiselect = new("Multi-Select Row (hold)", KeybindCategory.TimeActEditor, Key.Z);
+        public KeyBind TimeActEditor_Multiselect_Range = new("Multi-Select Row Range (hold then click start and end row)", KeybindCategory.TimeActEditor, Key.LShift, false, false, false, true);
 
         // Texture Viewer
         public KeyBind TextureViewer_ExportTexture = new("Export Texture", KeybindCategory.TextureViewer, Key.X, true);

@@ -1,6 +1,7 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
+using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Banks.SelectionGroupBank;
 using StudioCore.Banks.TextureAdditionBank;
@@ -42,6 +43,9 @@ public class BankHandler
     public AliasBank CutsceneAliases;
     public AliasBank MovieAliases;
 
+    public AliasBank TimeActAliases;
+    public HavokGeneratorAliasBank HavokGeneratorAliases;
+
     public FormatBank MSB_Info;
     public FormatBank FLVER_Info;
     public FormatBank GPARAM_Info;
@@ -77,6 +81,10 @@ public class BankHandler
         CutsceneAliases = new AliasBank("Cutscene", "Cutscenes", "Cutscene");
         MovieAliases = new AliasBank("Movie", "Movies", "Movie");
 
+        TimeActAliases = new AliasBank("TimeActs", "TimeActs", "TimeAct");
+
+        HavokGeneratorAliases = new HavokGeneratorAliasBank("Generators", "Generator");
+
         MSB_Info = new FormatBank("MSB", true);
         FLVER_Info = new FormatBank("FLVER", false);
         GPARAM_Info = new FormatBank("GPARAM", true);
@@ -110,6 +118,9 @@ public class BankHandler
         SoundAliases.LoadBank();
         CutsceneAliases.LoadBank();
         MovieAliases.LoadBank();
+
+        TimeActAliases.LoadBank();
+        HavokGeneratorAliases.LoadBank();
 
         MSB_Info.LoadBank();
         FLVER_Info.LoadBank();
@@ -157,6 +168,8 @@ public class BankHandler
             SoundAliases.LoadBank();
             CutsceneAliases.LoadBank();
             MovieAliases.LoadBank();
+
+            TimeActAliases.LoadBank();
         }
     }
 }

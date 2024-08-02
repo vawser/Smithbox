@@ -615,6 +615,7 @@ public class CFG
     public bool SoundAtlas_ShowTags = true;
     public bool CutsceneAtlas_ShowTags = true;
     public bool MovieAtlas_ShowTags = true;
+    public bool TimeActAtlas_ShowTags = true;
 
     //****************************
     // Map Toolbar
