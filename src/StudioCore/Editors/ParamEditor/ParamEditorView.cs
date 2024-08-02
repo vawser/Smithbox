@@ -839,6 +839,47 @@ public class ParamEditorView
                     }
                 }
 
+                if(_selection.GetSelectedRows().Count > 0)
+                {
+                    if (ImGui.Selectable($"Pin Selection##pinSelection{r.ID}"))
+                    {
+                        foreach(var entry in _selection.GetSelectedRows())
+                        {
+                            if (!Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.ContainsKey(activeParam))
+                            {
+                                Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.Add(activeParam, new List<int>());
+                            }
+
+                            List<int> pinned = Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows[activeParam];
+
+                            if (!pinned.Contains(entry.ID))
+                            {
+                                pinned.Add(entry.ID);
+                            }
+                        }
+                    }
+                }
+                if (_selection.GetSelectedRows().Count > 0)
+                {
+                    if (ImGui.Selectable($"Unpin Selection##unpinSelection{r.ID}"))
+                    {
+                        foreach (var entry in _selection.GetSelectedRows())
+                        {
+                            if (!Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.ContainsKey(activeParam))
+                            {
+                                Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.Add(activeParam, new List<int>());
+                            }
+
+                            List<int> pinned = Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows[activeParam];
+
+                            if (pinned.Contains(entry.ID))
+                            {
+                                pinned.Remove(entry.ID);
+                            }
+                        }
+                    }
+                }
+
                 if (isPinned)
                 {
                     EditorDecorations.PinListReorderOptions(Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows[activeParam], r.ID);

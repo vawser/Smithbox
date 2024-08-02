@@ -914,6 +914,10 @@ public class ParamEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
+        ToolWindow.OnProjectChanged();
+        ToolSubMenu.OnProjectChanged();
+        ActionSubMenu.OnProjectChanged();
+
         foreach (ParamEditorView view in _views)
         {
             if (view != null)

@@ -16,6 +16,12 @@ Viewport:
  - ADD: support for transparent shapes, so regions can be better visualized
  - ADD: support for billboard sprites, e.g. images that are rendered towards the camera but placed at a fixed point in the viewport space
  
+Behavior Editor:
+ - ADD: behavior HKX editor
+ - ADD: character HKX editor
+ - ADD: skeleton HKX editor
+ - ADD: collision HKX editor
+ 
 Map Editor: 
  - ADD: .BTAB support
  - ADD: .GRASS support
@@ -26,6 +32,7 @@ Map Editor:
  - ADD: Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
  - FIX: select via arrow keys in the Map Scene tree (alias seems to stop it working).
  - FIX: DS2 Map Pieces aren't loaded.
+ - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
  
 Model Editor: 
  - ADD: FBX Import into loose FLVER
@@ -47,7 +54,6 @@ Material Editor
 Param Editor:
  - ADD: stayparam support for DS3 (requires 'blob' editor with manual definitions)
  - ADD: Able to sort row order manually
- - ADD: pin groups (under tools), for quickly switching between defined param/row/field pin groups (remove the project.json aspect if this is added)
  - ADD: make "Use project meta" merge in new entries instead of wholesale replacing (https://github.com/ividyon/WitchyBND/blob/main/WitchyBND/Configuration.cs)
 
 Text Editor:
@@ -69,12 +75,6 @@ Texture Viewer:
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
  - FIX: Texture Viewer holding tpfbdt open.
  
-Behavior Editor:
- - ADD: behavior HKX editor
- - ADD: character HKX editor
- - ADD: skeleton HKX editor
- - ADD: collision HKX editor
- 
 World Map:
  - ADD: the dungeon icons, add icon radius for the non-open world maps
  - ADD: support for large/medium/small tile overlays
@@ -82,4 +82,4 @@ World Map:
 #--------------------------------------
 # Notes
 #--------------------------------------
--> Behavior Editor
+- ADD: finish documenting ER SOTE rows

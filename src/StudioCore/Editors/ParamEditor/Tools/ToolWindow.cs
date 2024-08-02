@@ -24,18 +24,19 @@ public class ToolWindow
     private ParamEditorScreen Screen;
     public ActionHandler Handler;
     public MassEditHandler MassEditHandler;
-
+    public PinGroups PinGroupHandler;
 
     public ToolWindow(ParamEditorScreen screen)
     {
         Screen = screen;
         Handler = new ActionHandler(screen);
         MassEditHandler = new MassEditHandler(screen);
+        PinGroupHandler = new PinGroups(screen);
     }
 
     public void OnProjectChanged()
     {
-
+        PinGroupHandler.OnProjectChanged();
     }
 
     public void OnGui()
@@ -454,6 +455,13 @@ public class ToolWindow
                     Process.Start("explorer.exe", projectScriptDir);
                 }
             }
+
+            // Pin Groups
+            if (ImGui.CollapsingHeader("Pin Groups"))
+            {
+                PinGroupHandler.Display();
+            }
+
         }
 
         ImGui.End();

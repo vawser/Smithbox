@@ -83,7 +83,8 @@
                 { "ID": "2", "Name": "Pierce", "Description": "" },
                 { "ID": "3", "Name": "Standard", "Description": "" },
                 { "ID": "252", "Name": "EquipParamWeapon atkAttribute2 reference", "Description": "" },
-                { "ID": "253", "Name": "EquipParamWeapon atkAttribute reference", "Description": "" }
+                { "ID": "253", "Name": "EquipParamWeapon atkAttribute reference", "Description": "" },
+                { "ID": "254", "Name": "None", "Description": "" }
 
             ]
         },
@@ -103,7 +104,8 @@
                 { "ID": "23", "Name": "Frostbite", "Description": "" },
                 { "ID": "24", "Name": "Sleep", "Description": "" },
                 { "ID": "25", "Name": "Madness", "Description": "" },
-                { "ID": "26", "Name": "Blight", "Description": "" }
+                { "ID": "26", "Name": "Blight", "Description": "" },
+                { "ID": "254", "Name": "None", "Description": "" }
             ]
         },
         {
