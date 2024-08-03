@@ -993,27 +993,39 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "EnableDist",
-                    "name": "Enable Distance",
+                    "id": "DisplayDistance",
+                    "name": "Display Distance",
                     "description": "Distance from camera required before enabling envmap. 0 = always enabled.",
                     "attributes": ""
                 },
                 {
-                    "id": "TransitionDist",
-                    "name": "Transition Distance",
+                    "id": "FadeDistance",
+                    "name": "Fade Distance",
                     "description": "Distance it takes for an envmap to fully transition into view.",
                     "attributes": ""
                 },
                 {
-                    "id": "SpecularLightMult",
-                    "name": "Specular Light Multiplier",
-                    "description": "Strength of specular light in region.",
+                    "id": "ParallaxCorrection",
+                    "name": "Parallax Correction",
+                    "description": "",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "Priority",
+                    "name": "Priority",
+                    "description": "",
                     "attributes": ""
                 },
                 {
-                    "id": "PointLightMult",
-                    "name": "Point Light Multiplier",
-                    "description": "Strength of direct light emitting from EnvironmentMapPoint.",
+                    "id": "AmbientDiffuseIntensity",
+                    "name": "Ambient Diffuse Intensity",
+                    "description": "Strength of ambient diffuse light.",
+                    "attributes": ""
+                },
+                {
+                    "id": "AmbientSpecularIntensity",
+                    "name": "Ambient Specular Intensity",
+                    "description": "Strength of ambient specular light.",
                     "attributes": ""
                 },
                 {

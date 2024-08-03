@@ -16,15 +16,22 @@ public class TimeActEditorTab
     {
         if (ImGui.BeginTabItem("Time Act Editor"))
         {
-            // Animation List
-            if (ImGui.CollapsingHeader("Animation List", ImGuiTreeNodeFlags.DefaultOpen))
+            // Animations
+            if (ImGui.CollapsingHeader("Animations"))
             {
                 ImGui.Checkbox("Display every valid generator in animation alias", ref CFG.Current.TimeActEditor_DisplayAllGenerators);
                 ImguiUtils.ShowHoverTooltip("By default only the first generator is the list is displayed, this will display them all.");
             }
-            ImGui.EndTabItem();
+
+            // Properties List
+            if (ImGui.CollapsingHeader("Properties", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Display property type column", ref CFG.Current.Interface_TimeActEditor_DisplayPropertyType);
+                ImguiUtils.ShowHoverTooltip("Display the property type as an additional column in the Properties view.");
+            }
 
             // Grid
+            /*
             if (ImGui.CollapsingHeader("Viewport Grid"))
             {
                 ImGui.SliderInt("Grid size", ref CFG.Current.TimeActEditor_Viewport_Grid_Size, 100, 1000);
@@ -62,6 +69,9 @@ public class TimeActEditorTab
                 }
                 ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
             }
+            */
+
+            ImGui.EndTabItem();
         }
     }
 }

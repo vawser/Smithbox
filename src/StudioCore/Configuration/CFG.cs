@@ -579,6 +579,8 @@ public class CFG
     //****************************
     // Settings: Time Act Editor
     //****************************
+    public bool Interface_TimeActEditor_DisplayPropertyType = true;
+
     public bool Interface_TimeActEditor_Viewport_Grid = true;
 
     public bool TimeActEditor_Viewport_RegenerateMapGrid = false;

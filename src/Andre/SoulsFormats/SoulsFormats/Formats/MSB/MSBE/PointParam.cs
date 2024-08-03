@@ -1292,22 +1292,22 @@ namespace SoulsFormats
                 /// <summary>
                 /// Distance from camera required before enabling envmap. 0 = always enabled.
                 /// </summary>
-                public float EnableDist { get; set; }
+                public float DisplayDistance { get; set; }
 
                 /// <summary>
                 /// Distance it takes for an envmap to fully transition into view.
                 /// </summary>
-                public float TransitionDist { get; set; }
+                public float FadeDistance { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT08 { get; set; }
+                public byte ParallaxCorrection { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT09 { get; set; }
+                public byte Priority { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1315,14 +1315,14 @@ namespace SoulsFormats
                 public short UnkT0A { get; set; }
 
                 /// <summary>
-                /// Strength of specular light in region.
+                /// Strength of ambient fiffuse light .
                 /// </summary>
-                public float SpecularLightMult { get; set; }
+                public float AmbientDiffuseIntensity { get; set; }
 
                 /// <summary>
-                /// Strength of direct light emitting from EnvironmentMapPoint.
+                /// Strength of ambient specular light.
                 /// </summary>
-                public float PointLightMult { get; set; }
+                public float AmbientSpecularIntensity { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1373,14 +1373,14 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    EnableDist = br.ReadSingle();
-                    TransitionDist = br.ReadSingle();
-                    UnkT08 = br.ReadByte();
-                    UnkT09 = br.ReadByte();
+                    DisplayDistance = br.ReadSingle();
+                    FadeDistance = br.ReadSingle();
+                    ParallaxCorrection = br.ReadByte();
+                    Priority = br.ReadByte();
                     UnkT0A = br.ReadInt16();
                     br.AssertPattern(0x18, 0x00);
-                    SpecularLightMult = br.ReadSingle();
-                    PointLightMult = br.ReadSingle();
+                    AmbientDiffuseIntensity = br.ReadSingle();
+                    AmbientSpecularIntensity = br.ReadSingle();
                     UnkT2C = br.ReadInt16();
                     IsModifyLight = br.ReadBoolean();
                     UnkT2F = br.ReadBoolean();
@@ -1394,14 +1394,14 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteSingle(EnableDist);
-                    bw.WriteSingle(TransitionDist);
-                    bw.WriteByte(UnkT08);
-                    bw.WriteByte(UnkT09);
+                    bw.WriteSingle(DisplayDistance);
+                    bw.WriteSingle(FadeDistance);
+                    bw.WriteByte(ParallaxCorrection);
+                    bw.WriteByte(Priority);
                     bw.WriteInt16(UnkT0A);
                     bw.WritePattern(0x18, 0x00);
-                    bw.WriteSingle(SpecularLightMult);
-                    bw.WriteSingle(PointLightMult);
+                    bw.WriteSingle(AmbientDiffuseIntensity);
+                    bw.WriteSingle(AmbientSpecularIntensity);
                     bw.WriteInt16(UnkT2C);
                     bw.WriteBoolean(IsModifyLight);
                     bw.WriteBoolean(UnkT2F);
