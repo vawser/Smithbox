@@ -42,8 +42,11 @@ public class TimeActEditorTab
                 ImGui.Checkbox("Display additional in-line info: Param References", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_ParamRefInfo);
                 ImguiUtils.ShowHoverTooltip("Display additional info about the Param Reference properties in the Event row name.");
 
-                ImGui.Checkbox("Display additional in-line info: Data Aliases", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_AliasInfo);
+                ImGui.Checkbox("Display additional in-line info: Data Aliases", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_DataAliasInfo);
                 ImguiUtils.ShowHoverTooltip("Display additional info about the Data Alias properties in the Event row name.");
+
+                ImGui.Checkbox("Include Data Alias name within additional in-line info", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName);
+                ImguiUtils.ShowHoverTooltip("Include the alias name in the Data Alias properties in the Event row name.");
 
                 ImGui.Checkbox("Display additional in-line info: Project Enums", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_ProjectEnumInfo);
                 ImguiUtils.ShowHoverTooltip("Display additional info about the Project Enum properties in the Event row name.");

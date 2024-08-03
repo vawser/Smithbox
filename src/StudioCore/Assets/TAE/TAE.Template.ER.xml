@@ -156,7 +156,7 @@
       <s32 name="ArgB"/>
       <u8 name="ArgC"/>
       <u8 name="ArgD"/>
-      <s16 name="ArgE"/>
+      <s16 name="StateInfo" projectEnum="SP_EFFECT_TYPE"/>
     </event>
     <event id="1" name="InvokeAttackBehavior">
       <s32 name="AttackType">

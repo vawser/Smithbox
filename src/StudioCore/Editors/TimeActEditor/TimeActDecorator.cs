@@ -150,26 +150,32 @@ public class TimeActDecorator
                 // Particle
                 if (aliasType == "Particle")
                 {
-                    alias = $"FFX ID: {propertyValue} [Not Enumerated]";
+                    alias = $"FFX ID: {propertyValue}";
 
                     var bank = Smithbox.BankHandler.ParticleAliases;
                     var enumEntry = bank.Aliases.list.Where(e => e.id == propertyValue.ToString()).FirstOrDefault();
                     if (enumEntry != null)
                     {
-                        alias = $"FFX ID: {propertyValue} [{enumEntry.name}]";
+                        if (CFG.Current.Interface_TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName)
+                        {
+                            alias = $"FFX ID: {propertyValue} [{enumEntry.name}]";
+                        }
                     }
                 }
 
                 // Sound
                 if (aliasType == "Sound")
                 {
-                    alias = $"Sound ID: {propertyValue} [Not Enumerated]";
+                    alias = $"Sound ID: {propertyValue}";
 
                     var bank = Smithbox.BankHandler.SoundAliases;
                     var enumEntry = bank.Aliases.list.Where(e => e.id == propertyValue.ToString()).FirstOrDefault();
                     if (enumEntry != null)
                     {
-                        alias = $"Sound ID: {propertyValue} [{enumEntry.name}]";
+                        if(CFG.Current.Interface_TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName)
+                        {
+                            alias = $"Sound ID: {propertyValue} [{enumEntry.name}]";
+                        }
                     }
                 }
             }

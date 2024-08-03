@@ -593,7 +593,8 @@ public class CFG
 
     public bool Interface_TimeActEditor_DisplayEventRow_EnumInfo = true;
     public bool Interface_TimeActEditor_DisplayEventRow_ParamRefInfo = true;
-    public bool Interface_TimeActEditor_DisplayEventRow_AliasInfo = true;
+    public bool Interface_TimeActEditor_DisplayEventRow_DataAliasInfo = true;
+    public bool Interface_TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName = true;
     public bool Interface_TimeActEditor_DisplayEventRow_ProjectEnumInfo = true;
 
     public bool Interface_TimeActEditor_DisplayPropertyType = true;

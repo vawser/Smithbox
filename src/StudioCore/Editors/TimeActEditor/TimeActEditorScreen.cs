@@ -395,7 +395,7 @@ public class TimeActEditorScreen : EditorScreen
                 if (CFG.Current.Interface_TimeActEditor_DisplayEventRow_ParamRefInfo)
                     Decorator.DisplayParamRefInfo(evt);
 
-                if (CFG.Current.Interface_TimeActEditor_DisplayEventRow_AliasInfo)
+                if (CFG.Current.Interface_TimeActEditor_DisplayEventRow_DataAliasInfo)
                     Decorator.DisplayAliasEnumInfo(evt);
 
                 if (CFG.Current.Interface_TimeActEditor_DisplayEventRow_ProjectEnumInfo)
