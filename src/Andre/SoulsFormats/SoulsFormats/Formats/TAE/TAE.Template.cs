@@ -22,14 +22,9 @@ namespace SoulsFormats
             /// <summary>
             /// Creates new empty template.
             /// </summary>
-            public Template()
-                : base()
-            {
+            public Template() : base() { }
 
-            }
-
-            private Template(XmlDocument xml)
-                : base()
+            private Template(XmlDocument xml) : base()
             {
                 XmlNode templateNode = xml.SelectSingleNode("event_template");
                 Game = (TAEFormat)Enum.Parse(typeof(TAEFormat), templateNode.Attributes["game"].InnerText);
@@ -281,7 +276,7 @@ namespace SoulsFormats
                     {
                         if (EnumEntries.Values.Contains(val))
                         {
-                            return EnumEntries.First(x => x.Value.Equals(val)).Key;
+                            return EnumEntries.First(x => x.Key.Equals(val)).Value;
                         }
                     }
 
@@ -494,6 +489,21 @@ namespace SoulsFormats
                 public string Name;
 
                 /// <summary>
+                /// The name of the param this event parameter references.
+                /// </summary>
+                public string ParamRef;
+
+                /// <summary>
+                /// The name of the alias this event parameter references.
+                /// </summary>
+                public string AliasEnum;
+
+                /// <summary>
+                /// The name of the project enum this event parameter references.
+                /// </summary>
+                public string ProjectEnum;
+
+                /// <summary>
                 /// The name of the group this parameter is in.
                 /// Leave null to place outside of any groups.
                 /// </summary>
@@ -527,15 +537,17 @@ namespace SoulsFormats
                 /// <summary>
                 /// Possible values if this is an enum, otherwise it's null.
                 /// </summary>
-                public Dictionary<string, object> EnumEntries { get; private set; } = null;
+                public Dictionary<object, string> EnumEntries { get; private set; } = null;
 
                 public void EnsureEnumEntry(object entryValue)
                 {
                     if (EnumEntries == null)
-                        EnumEntries = new Dictionary<string, object>();
+                        EnumEntries = new Dictionary<object, string>();
+
                     var v = Convert.ToInt32(entryValue);
+
                     if (!EnumEntries.Any(a => Convert.ToInt32(a.Value) == v))
-                        EnumEntries.Add($"{v}: <Unmapped Value>", v);
+                        EnumEntries.Add(v, $"{v}: <Unmapped Value>");
                 }
 
                 /// <summary>
@@ -554,16 +566,21 @@ namespace SoulsFormats
                     NameGroup = paramNode.Attributes["group"]?.InnerText;
                     Name = paramNode.Attributes["name"]?.InnerText ?? $"Unk{offset:X2}";
 
+                    ParamRef = paramNode.Attributes["ref"]?.InnerText;
+                    AliasEnum = paramNode.Attributes["aliasEnum"]?.InnerText;
+                    ProjectEnum = paramNode.Attributes["projectEnum"]?.InnerText;
+
                     // Load enum entries before doing default value so you can make the default value an enum entry.
                     var enumNodes = paramNode.SelectNodes("entry");
                     if (enumNodes.Count > 0)
                     {
-                        EnumEntries = new Dictionary<string, object>();
+                        EnumEntries = new Dictionary<object, string>();
+
                         foreach (XmlNode entryNode in paramNode.SelectNodes("entry"))
                         {
                             var entryName = entryNode.Attributes["name"].InnerText;
                             var entryValue = StringToValue(entryNode.Attributes["value"].InnerText);
-                            EnumEntries.Add(entryName, entryValue);
+                            EnumEntries.Add(entryValue, entryName);
                         }
                     }
 

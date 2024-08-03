@@ -40,6 +40,7 @@ public class TimeActEditorScreen : EditorScreen
     public Sdl2Window Window;
 
     public PropertyHandler PropertyHandler;
+    public TimeActDecorator Decorator;
 
     public TimeActEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -62,7 +63,8 @@ public class TimeActEditorScreen : EditorScreen
         //_universe = new Universe(RenderScene, _selection);
 
         SelectionHandler = new TimeActSelectionHandler(EditorActionManager, this);
-        PropertyHandler = new PropertyHandler(EditorActionManager, this);
+        Decorator = new TimeActDecorator(EditorActionManager, this);
+        PropertyHandler = new PropertyHandler(EditorActionManager, this, Decorator);
     }
 
     public string EditorName => "Time Act Editor##TimeActEditor";
@@ -288,7 +290,9 @@ public class TimeActEditorScreen : EditorScreen
                 {
                     SelectionHandler.TimeActChange(entry, i);
                 }
-                TimeActUtils.DisplayTimeActAlias(SelectionHandler.ContainerInfo, entry.ID);
+
+                if (CFG.Current.Interface_TimeActEditor_DisplayTimeActRow_AliasInfo)
+                    TimeActUtils.DisplayTimeActAlias(SelectionHandler.ContainerInfo, entry.ID);
 
                 SelectionHandler.ContextMenu.TimeActMenu(isSelected);
             }
@@ -332,7 +336,9 @@ public class TimeActEditorScreen : EditorScreen
                 {
                     SelectionHandler.TimeActAnimationChange(entry, i);
                 }
-                TimeActUtils.DisplayAnimationAlias(SelectionHandler, entry.ID);
+
+                if (CFG.Current.Interface_TimeActEditor_DisplayAnimRow_GeneratorInfo)
+                    TimeActUtils.DisplayAnimationAlias(SelectionHandler, entry.ID);
 
                 SelectionHandler.ContextMenu.TimeActAnimationMenu(isSelected);
             }
@@ -383,6 +389,18 @@ public class TimeActEditorScreen : EditorScreen
                     SelectionHandler.TimeActEventChange(evt, i);
                 }
 
+                if(CFG.Current.Interface_TimeActEditor_DisplayEventRow_EnumInfo)
+                    Decorator.DisplayEnumInfo(evt);
+
+                if (CFG.Current.Interface_TimeActEditor_DisplayEventRow_ParamRefInfo)
+                    Decorator.DisplayParamRefInfo(evt);
+
+                if (CFG.Current.Interface_TimeActEditor_DisplayEventRow_AliasInfo)
+                    Decorator.DisplayAliasEnumInfo(evt);
+
+                if (CFG.Current.Interface_TimeActEditor_DisplayEventRow_ProjectEnumInfo)
+                    Decorator.DisplayProjectEnumInfo(evt);
+
                 SelectionHandler.ContextMenu.TimeActEventMenu(isSelected);
             }
         }
@@ -426,9 +444,10 @@ public class TimeActEditorScreen : EditorScreen
                 {
                     ImGui.AlignTextToFramePadding();
                     ImGui.Text($"{propertyType}");
-                }
 
-                // Add empty Text here if property has ref link or enum list
+                    Decorator.HandleTypeColumn(property);
+                    
+                }
             }
 
             ImGui.NextColumn();
@@ -448,7 +467,6 @@ public class TimeActEditorScreen : EditorScreen
         for (int i = 0; i < SelectionHandler.CurrentTimeActEvent.Parameters.ParameterValues.Count; i++)
         {
             var property = SelectionHandler.CurrentTimeActEvent.Parameters.ParameterValues.ElementAt(i).Key;
-            var propertyType = SelectionHandler.CurrentTimeActEvent.Parameters.GetParamValueType(property);
 
             if (TimeActFilters.TimeActEventPropertyFilter(SelectionHandler.ContainerInfo, property))
             {
@@ -458,17 +476,15 @@ public class TimeActEditorScreen : EditorScreen
                     isSelected = true;
                 }
 
-                var displayName = $"{property}";
-
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Selectable($@"{displayName}##taeEventProperty{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                if (ImGui.Selectable($@"{property}##taeEventProperty{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
                 {
                     SelectionHandler.TimeActEventPropertyChange(property, i);
                 }
 
                 SelectionHandler.ContextMenu.TimeActEventPropertiesMenu(isSelected);
 
-                // Add empty Text here if property has ref link or enum list
+                Decorator.HandleNameColumn(property);
             }
         }
 
@@ -483,6 +499,7 @@ public class TimeActEditorScreen : EditorScreen
 
         ImGui.End();
     }
+
 
     public void DrawEditorMenu()
     {

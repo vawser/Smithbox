@@ -57,7 +57,6 @@ public static class TimeActUtils
         }
     }
 
-    // TEMP
     public static void DisplayAnimationAlias(TimeActSelectionHandler SelectionHandler, long id)
     {
         if (Smithbox.BankHandler.HavokGeneratorAliases != null)

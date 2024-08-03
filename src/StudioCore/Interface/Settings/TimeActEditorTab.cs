@@ -16,11 +16,37 @@ public class TimeActEditorTab
     {
         if (ImGui.BeginTabItem("Time Act Editor"))
         {
+            // Time Acts
+            if (ImGui.CollapsingHeader("Time Acts"))
+            {
+                ImGui.Checkbox("Display time act aliases", ref CFG.Current.Interface_TimeActEditor_DisplayTimeActRow_AliasInfo);
+                ImguiUtils.ShowHoverTooltip("Display aliases for each of the Time Act rows");
+            }
+
             // Animations
             if (ImGui.CollapsingHeader("Animations"))
             {
+                ImGui.Checkbox("Display animation aliases", ref CFG.Current.Interface_TimeActEditor_DisplayAnimRow_GeneratorInfo);
+                ImguiUtils.ShowHoverTooltip("Display the generator info aliases for each of the Animation rows");
+
                 ImGui.Checkbox("Display every valid generator in animation alias", ref CFG.Current.TimeActEditor_DisplayAllGenerators);
                 ImguiUtils.ShowHoverTooltip("By default only the first generator is the list is displayed, this will display them all.");
+            }
+
+            // Events
+            if (ImGui.CollapsingHeader("Events"))
+            {
+                ImGui.Checkbox("Display additional in-line info: Enums", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_EnumInfo);
+                ImguiUtils.ShowHoverTooltip("Display additional info about the Enum properties in the Event row name.");
+
+                ImGui.Checkbox("Display additional in-line info: Param References", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_ParamRefInfo);
+                ImguiUtils.ShowHoverTooltip("Display additional info about the Param Reference properties in the Event row name.");
+
+                ImGui.Checkbox("Display additional in-line info: Data Aliases", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_AliasInfo);
+                ImguiUtils.ShowHoverTooltip("Display additional info about the Data Alias properties in the Event row name.");
+
+                ImGui.Checkbox("Display additional in-line info: Project Enums", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_ProjectEnumInfo);
+                ImguiUtils.ShowHoverTooltip("Display additional info about the Project Enum properties in the Event row name.");
             }
 
             // Properties List
@@ -28,6 +54,23 @@ public class TimeActEditorTab
             {
                 ImGui.Checkbox("Display property type column", ref CFG.Current.Interface_TimeActEditor_DisplayPropertyType);
                 ImguiUtils.ShowHoverTooltip("Display the property type as an additional column in the Properties view.");
+            }
+
+            // Text Colors
+            if (ImGui.CollapsingHeader("Event List - Additional Info Coloring", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.ColorEdit4("Enum Text", ref CFG.Current.ImGui_TimeAct_InfoText_1_Color);
+                ImGui.ColorEdit4("Param Reference Text", ref CFG.Current.ImGui_TimeAct_InfoText_2_Color);
+                ImGui.ColorEdit4("Alias Text", ref CFG.Current.ImGui_TimeAct_InfoText_3_Color);
+                ImGui.ColorEdit4("Project Enum Text", ref CFG.Current.ImGui_TimeAct_InfoText_4_Color);
+
+                if(ImGui.Button("Reset"))
+                {
+                    CFG.Current.ImGui_TimeAct_InfoText_1_Color = CFG.Default.ImGui_TimeAct_InfoText_1_Color;
+                    CFG.Current.ImGui_TimeAct_InfoText_2_Color = CFG.Default.ImGui_TimeAct_InfoText_2_Color;
+                    CFG.Current.ImGui_TimeAct_InfoText_3_Color = CFG.Default.ImGui_TimeAct_InfoText_3_Color;
+                    CFG.Current.ImGui_TimeAct_InfoText_4_Color = CFG.Default.ImGui_TimeAct_InfoText_4_Color;
+                }
             }
 
             // Grid

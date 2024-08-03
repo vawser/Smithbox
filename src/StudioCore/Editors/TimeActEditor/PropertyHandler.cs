@@ -19,11 +19,13 @@ public class PropertyHandler
 {
     private ActionManager EditorActionManager;
     private TimeActEditorScreen Screen;
+    private TimeActDecorator Decorator;
 
-    public PropertyHandler(ActionManager editorActionManager, TimeActEditorScreen screen)
+    public PropertyHandler(ActionManager editorActionManager, TimeActEditorScreen screen, TimeActDecorator decorator)
     {
         EditorActionManager = editorActionManager;
         Screen = screen;
+        Decorator = decorator;
     }
 
     public void ValueSection(TimeActSelectionHandler handler)
@@ -53,9 +55,9 @@ public class PropertyHandler
 
         for (int i = 0; i < paramValues.Count; i++)
         {
-            var property = paramValues.ElementAt(i).Key;
-            var propertyValue = paramValues[property];
-            var propertyType = parameters.GetParamValueType(property);
+            var propertyName = paramValues.ElementAt(i).Key;
+            var propertyValue = paramValues[propertyName];
+            var propertyType = parameters.GetParamValueType(propertyName);
 
             changed = false;
 
@@ -63,12 +65,11 @@ public class PropertyHandler
 
             if(changed)
             {
-                var action = new EventPropertyChange(paramValues, property, propertyValue, newValue);
+                var action = new EventPropertyChange(paramValues, propertyName, propertyValue, newValue, propertyValue.GetType());
                 EditorActionManager.ExecuteAction(action);
             }
 
-            // TODO: ref links/enums
-            // Add empty Text here if property has ref link or enum list
+            Decorator.HandleValueColumn(paramValues, i);
         }
     }
 

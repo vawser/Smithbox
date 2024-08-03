@@ -231,6 +231,7 @@ public class InterfaceTab
                     ImGui.ColorEdit4("Warning Text", ref CFG.Current.ImGui_Warning_Text_Color);
                     ImGui.ColorEdit4("Beneficial Text", ref CFG.Current.ImGui_Benefit_Text_Color);
                     ImGui.ColorEdit4("Invalid Text", ref CFG.Current.ImGui_Invalid_Text_Color);
+
                     ImGui.ColorEdit4("Param Reference Text", ref CFG.Current.ImGui_ParamRef_Text);
                     ImGui.ColorEdit4("Param Reference Missing Text", ref CFG.Current.ImGui_ParamRefMissing_Text);
                     ImGui.ColorEdit4("Param Reference Inactive Text", ref CFG.Current.ImGui_ParamRefInactive_Text);

@@ -86,7 +86,6 @@ World Map:
 - ADD: finish documenting ER SOTE rows
 
 Time Act Editor
- - ADD: undo support
+ - ADD: Duplicate/Delete/Copy/Paste row context for Animations and Events
+ - ADD: Data export/import for TAE/Animation/Event
  - ADD: TAE Quick Edit tool
- - ADD: ref links in properties
- - ADD: TAE META (extend the XML template stuff to include it?)

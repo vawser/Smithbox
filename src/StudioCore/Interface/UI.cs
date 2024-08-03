@@ -79,6 +79,12 @@ namespace StudioCore.Interface
             CFG.Current.ImGui_Warning_Text_Color = CFG.Default.ImGui_Warning_Text_Color;
             CFG.Current.ImGui_Benefit_Text_Color = CFG.Default.ImGui_Benefit_Text_Color;
             CFG.Current.ImGui_Invalid_Text_Color = CFG.Default.ImGui_Invalid_Text_Color;
+
+            CFG.Current.ImGui_TimeAct_InfoText_1_Color = CFG.Default.ImGui_TimeAct_InfoText_1_Color;
+            CFG.Current.ImGui_TimeAct_InfoText_2_Color = CFG.Default.ImGui_TimeAct_InfoText_2_Color;
+            CFG.Current.ImGui_TimeAct_InfoText_3_Color = CFG.Default.ImGui_TimeAct_InfoText_3_Color;
+            CFG.Current.ImGui_TimeAct_InfoText_4_Color = CFG.Default.ImGui_TimeAct_InfoText_4_Color;
+
             CFG.Current.ImGui_ParamRef_Text = CFG.Default.ImGui_ParamRef_Text;
             CFG.Current.ImGui_ParamRefMissing_Text = CFG.Default.ImGui_ParamRefMissing_Text;
             CFG.Current.ImGui_ParamRefInactive_Text = CFG.Default.ImGui_ParamRefInactive_Text;
@@ -233,6 +239,12 @@ namespace StudioCore.Interface
             theme.ImGui_Warning_Text_Color = GetFloatList(CFG.Current.ImGui_Warning_Text_Color);
             theme.ImGui_Benefit_Text_Color = GetFloatList(CFG.Current.ImGui_Benefit_Text_Color);
             theme.ImGui_Invalid_Text_Color = GetFloatList(CFG.Current.ImGui_Invalid_Text_Color);
+
+            theme.ImGui_TimeAct_InfoText_1_Color = GetFloatList(CFG.Current.ImGui_TimeAct_InfoText_1_Color);
+            theme.ImGui_TimeAct_InfoText_2_Color = GetFloatList(CFG.Current.ImGui_TimeAct_InfoText_2_Color);
+            theme.ImGui_TimeAct_InfoText_3_Color = GetFloatList(CFG.Current.ImGui_TimeAct_InfoText_3_Color);
+            theme.ImGui_TimeAct_InfoText_4_Color = GetFloatList(CFG.Current.ImGui_TimeAct_InfoText_4_Color);
+
             theme.ImGui_ParamRef_Text = GetFloatList(CFG.Current.ImGui_ParamRef_Text);
             theme.ImGui_ParamRefMissing_Text = GetFloatList(CFG.Current.ImGui_ParamRefMissing_Text);
             theme.ImGui_ParamRefInactive_Text = GetFloatList(CFG.Current.ImGui_ParamRefInactive_Text);
@@ -370,6 +382,12 @@ namespace StudioCore.Interface
             CFG.Current.ImGui_Warning_Text_Color = GetVectorValue(theme.ImGui_Warning_Text_Color);
             CFG.Current.ImGui_Benefit_Text_Color = GetVectorValue(theme.ImGui_Benefit_Text_Color);
             CFG.Current.ImGui_Invalid_Text_Color = GetVectorValue(theme.ImGui_Invalid_Text_Color);
+
+            CFG.Current.ImGui_TimeAct_InfoText_1_Color = GetVectorValue(theme.ImGui_TimeAct_InfoText_1_Color);
+            CFG.Current.ImGui_TimeAct_InfoText_2_Color = GetVectorValue(theme.ImGui_TimeAct_InfoText_2_Color);
+            CFG.Current.ImGui_TimeAct_InfoText_3_Color = GetVectorValue(theme.ImGui_TimeAct_InfoText_3_Color);
+            CFG.Current.ImGui_TimeAct_InfoText_4_Color = GetVectorValue(theme.ImGui_TimeAct_InfoText_4_Color);
+
             CFG.Current.ImGui_ParamRef_Text = GetVectorValue(theme.ImGui_ParamRef_Text);
             CFG.Current.ImGui_ParamRefMissing_Text = GetVectorValue(theme.ImGui_ParamRefMissing_Text);
             CFG.Current.ImGui_ParamRefInactive_Text = GetVectorValue(theme.ImGui_ParamRefInactive_Text);
@@ -475,6 +493,13 @@ namespace StudioCore.Interface
         public List<float> ImGui_Warning_Text_Color { get; set; }
         public List<float> ImGui_Benefit_Text_Color { get; set; }
         public List<float> ImGui_Invalid_Text_Color { get; set; }
+
+        public List<float> ImGui_TimeAct_InfoText_1_Color { get; set; }
+        public List<float> ImGui_TimeAct_InfoText_2_Color { get; set; }
+        public List<float> ImGui_TimeAct_InfoText_3_Color { get; set; }
+        public List<float> ImGui_TimeAct_InfoText_4_Color { get; set; }
+        public List<float> ImGui_Conditional_Text_Color5 { get; set; }
+
         public List<float> ImGui_ParamRef_Text { get; set; }
         public List<float> ImGui_ParamRefMissing_Text { get; set; }
         public List<float> ImGui_ParamRefInactive_Text { get; set; }

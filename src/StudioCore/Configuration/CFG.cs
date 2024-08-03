@@ -186,6 +186,12 @@ public class CFG
     public Vector4 ImGui_Warning_Text_Color = new Vector4(1.0f, 0f, 0f, 1.0f);
     public Vector4 ImGui_Benefit_Text_Color = new Vector4(0.0f, 1.0f, 0.0f, 1.0f);
     public Vector4 ImGui_Invalid_Text_Color = new Vector4(1.0f, 0.3f, 0.3f, 1.0f);
+
+    public Vector4 ImGui_TimeAct_InfoText_1_Color = new Vector4(1.0f, 1.0f, 0.0f, 1.0f); // Green
+    public Vector4 ImGui_TimeAct_InfoText_2_Color = new Vector4(0.409f, 0.967f, 0.693f, 1.0f); // Cyan
+    public Vector4 ImGui_TimeAct_InfoText_3_Color = new Vector4(0.237f, 0.925f, 1.000f, 1.0f); // Light Blue
+    public Vector4 ImGui_TimeAct_InfoText_4_Color = new Vector4(1f, 0.470f, 0.884f, 1.0f); // Purple
+
     public Vector4 ImGui_ParamRef_Text = new Vector4(1.0f, 0.5f, 0.5f, 1.0f);
     public Vector4 ImGui_ParamRefMissing_Text = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
     public Vector4 ImGui_ParamRefInactive_Text = new Vector4(0.7f, 0.7f, 0.7f, 1.0f);
@@ -579,6 +585,17 @@ public class CFG
     //****************************
     // Settings: Time Act Editor
     //****************************
+    public bool Interface_TimeActEditor_DisplayTimeActRow_AliasInfo = true;
+
+    public bool Interface_TimeActEditor_DisplayAnimRow_GeneratorInfo = true;
+
+    public bool TimeActEditor_DisplayAllGenerators = false;
+
+    public bool Interface_TimeActEditor_DisplayEventRow_EnumInfo = true;
+    public bool Interface_TimeActEditor_DisplayEventRow_ParamRefInfo = true;
+    public bool Interface_TimeActEditor_DisplayEventRow_AliasInfo = true;
+    public bool Interface_TimeActEditor_DisplayEventRow_ProjectEnumInfo = true;
+
     public bool Interface_TimeActEditor_DisplayPropertyType = true;
 
     public bool Interface_TimeActEditor_Viewport_Grid = true;
@@ -589,8 +606,6 @@ public class CFG
     public int TimeActEditor_Viewport_Grid_Square_Size = 10;
     public float TimeActEditor_Viewport_Grid_Height = 0;
     public Vector3 TimeActEditor_Viewport_Grid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    public bool TimeActEditor_DisplayAllGenerators = false;
 
     //****************************
     // Settings: Texture Viewer
