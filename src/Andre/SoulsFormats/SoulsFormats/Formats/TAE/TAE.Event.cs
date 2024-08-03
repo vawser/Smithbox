@@ -18,7 +18,7 @@ namespace SoulsFormats
             /// </summary>
             public class ParameterContainer
             {
-                private Dictionary<string, object> parameterValues;
+                public Dictionary<string, object> ParameterValues;
 
                 /// <summary>
                 /// The template of the event for which these are the parameters.
@@ -28,16 +28,16 @@ namespace SoulsFormats
                 /// <summary>
                 /// Returns all parameters.
                 /// </summary>
-                public IReadOnlyDictionary<string, object> Values
-                    => parameterValues;
+                public Dictionary<string, object> Values
+                    => ParameterValues;
 
                 /// <summary>
                 /// Value of the specified parameter.
                 /// </summary>
                 public object this[string paramName]
                 {
-                    get => parameterValues[paramName];
-                    set => parameterValues[paramName] = value;
+                    get => ParameterValues[paramName];
+                    set => ParameterValues[paramName] = value;
                 }
 
                 /// <summary>
@@ -67,7 +67,7 @@ namespace SoulsFormats
                 internal ParameterContainer(long animID, int eventIndex,
                     bool bigEndian, byte[] paramData, Template.EventTemplate template, bool suppressAssert = false)
                 {
-                    parameterValues = new Dictionary<string, object>();
+                    ParameterValues = new Dictionary<string, object>();
                     Template = template;
                     using (var memStream = new System.IO.MemoryStream(paramData))
                     {
@@ -104,7 +104,7 @@ namespace SoulsFormats
 
                                 try
                                 {
-                                    parameterValues.Add(p.GetKeyString(), p.ReadValue(br));
+                                    ParameterValues.Add(p.GetKeyString(), p.ReadValue(br));
                                 }
                                 catch (Exception ex)
                                 {
@@ -122,7 +122,7 @@ namespace SoulsFormats
 
                 internal ParameterContainer(bool bigEndian, byte[] paramData, Template.EventTemplate template, bool suppressAssert = false)
                 {
-                    parameterValues = new Dictionary<string, object>();
+                    ParameterValues = new Dictionary<string, object>();
                     Template = template;
                     using (var memStream = new System.IO.MemoryStream(paramData))
                     {
@@ -157,7 +157,7 @@ namespace SoulsFormats
                             {
                                 try
                                 {
-                                    parameterValues.Add(p.GetKeyString(), p.ReadValue(br));
+                                    ParameterValues.Add(p.GetKeyString(), p.ReadValue(br));
                                 }
                                 catch (Exception ex)
                                 {

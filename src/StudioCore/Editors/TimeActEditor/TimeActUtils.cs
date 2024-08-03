@@ -73,7 +73,14 @@ public static class TimeActUtils
             }
             if (aliasList.Count > 0)
             {
-                AliasUtils.DisplayAlias(aliasList[0]);
+                if (CFG.Current.TimeActEditor_DisplayAllGenerators)
+                {
+                    AliasUtils.DisplayAlias(string.Join(", ", aliasList));
+                }
+                else
+                {
+                    AliasUtils.DisplayAlias(aliasList[0]);
+                }
                 AliasUtils.AliasTooltip(aliasList, "Generators that use this animation:");
             }
         }

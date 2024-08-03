@@ -34,6 +34,7 @@ public class SettingsWindow
     private GparamEditorTab GparamEditorSettings;
     private TextureViewerTab TextureViewerSettings;
     private InterfaceTab InterfaceSettings;
+    private TimeActEditorTab TimeActEditorSettings;
 
     public SettingsWindow()
     {
@@ -45,6 +46,7 @@ public class SettingsWindow
         TextEditorSettings = new TextEditorTab();
         GparamEditorSettings = new GparamEditorTab();
         TextureViewerSettings = new TextureViewerTab();
+        TimeActEditorSettings = new TimeActEditorTab();
         InterfaceSettings = new InterfaceTab();
     }
 
@@ -86,6 +88,7 @@ public class SettingsWindow
             ParamEditorSettings.Display();
             TextEditorSettings.Display();
             GparamEditorSettings.Display();
+            TimeActEditorSettings.Display();
             TextureViewerSettings.Display();
             InterfaceSettings.Display();
 

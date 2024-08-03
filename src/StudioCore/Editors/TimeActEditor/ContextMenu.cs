@@ -63,4 +63,15 @@ public class ContextMenu
             ImGui.EndPopup();
         }
     }
+
+    public void TimeActEventPropertiesMenu(bool isSelected)
+    {
+        if (!isSelected)
+            return;
+
+        if (ImGui.BeginPopupContextItem($"TimeActEventPropertiesContextMenu"))
+        {
+            ImGui.EndPopup();
+        }
+    }
 }

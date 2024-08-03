@@ -54,7 +54,7 @@ public class ModelEditorTab
             if (ImGui.CollapsingHeader("Viewport Grid"))
             {
                 ImGui.SliderInt("Grid size", ref CFG.Current.ModelEditor_Viewport_Grid_Size, 100, 1000);
-                ImguiUtils.ShowHoverTooltip("The overall maximum size of the grid.\nThe grid will only update upon restarting DSMS after changing this value.");
+                ImguiUtils.ShowHoverTooltip("The overall maximum size of the grid.\nThe grid will only update upon restarting Smithbox after changing this value.");
 
                 ImGui.SliderInt("Grid increment", ref CFG.Current.ModelEditor_Viewport_Grid_Square_Size, 1, 100);
                 ImguiUtils.ShowHoverTooltip("The increment size of the grid.");

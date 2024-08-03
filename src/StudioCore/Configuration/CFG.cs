@@ -577,6 +577,20 @@ public class CFG
     public bool Interface_Display_Alias_for_Particles = true;
 
     //****************************
+    // Settings: Time Act Editor
+    //****************************
+    public bool Interface_TimeActEditor_Viewport_Grid = true;
+
+    public bool TimeActEditor_Viewport_RegenerateMapGrid = false;
+    public int TimeActEditor_Viewport_GridType = 0;
+    public int TimeActEditor_Viewport_Grid_Size = 100;
+    public int TimeActEditor_Viewport_Grid_Square_Size = 10;
+    public float TimeActEditor_Viewport_Grid_Height = 0;
+    public Vector3 TimeActEditor_Viewport_Grid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    public bool TimeActEditor_DisplayAllGenerators = false;
+
+    //****************************
     // Settings: Texture Viewer
     //****************************
     public bool TextureViewer_FileList_ShowLowDetail_Entries = true;

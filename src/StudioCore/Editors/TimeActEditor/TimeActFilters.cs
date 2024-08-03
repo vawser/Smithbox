@@ -18,6 +18,7 @@ public static class TimeActFilters
     public static string _timeActFilterString = "";
     public static string _timeActAnimationFilterString = "";
     public static string _timeActEventFilterString = "";
+    public static string _timeActEventPropertyFilterString = "";
 
     public static bool FileContainerFilter(AnimationFileInfo info)
     {
@@ -154,10 +155,8 @@ public static class TimeActFilters
             bool[] partTruth = new bool[inputParts.Length];
 
             var id = animEntry.ID.ToString();
-            var alias = "";
             var tags = new List<string>();
 
-            // TODO: alias part
             var refAlias = Smithbox.BankHandler.HavokGeneratorAliases.HavokAliases.List.Where(e => e.ID == animEntry.ID.ToString()).FirstOrDefault();
 
             for (int i = 0; i < partTruth.Length; i++)
@@ -170,19 +169,22 @@ public static class TimeActFilters
                 if (id.Contains(entry))
                     partTruth[i] = true;
 
-                if (entry == refAlias.ID)
-                    partTruth[i] = true;
-
-                if (refAlias.ID.Contains(entry))
-                    partTruth[i] = true;
-
-                foreach (string generator in refAlias.Generators)
+                if (refAlias != null)
                 {
-                    if (entry == generator.ToLower())
+                    if (entry == refAlias.ID)
                         partTruth[i] = true;
 
-                    if (generator.ToLower().Contains(entry))
+                    if (refAlias.ID.Contains(entry))
                         partTruth[i] = true;
+
+                    foreach (string generator in refAlias.Generators)
+                    {
+                        if (entry == generator.ToLower())
+                            partTruth[i] = true;
+
+                        if (generator.ToLower().Contains(entry))
+                            partTruth[i] = true;
+                    }
                 }
             }
 
@@ -206,7 +208,57 @@ public static class TimeActFilters
             string[] inputParts = input.Split("+");
             bool[] partTruth = new bool[inputParts.Length];
 
-            var id = evtEntry.TypeName.ToString();
+            var id = evtEntry.TypeName.ToString().ToLower();
+            var alias = "";
+            var tags = new List<string>();
+
+            for (int i = 0; i < partTruth.Length; i++)
+            {
+                string entry = inputParts[i];
+
+                if (entry == id)
+                    partTruth[i] = true;
+
+                if (id.Contains(entry))
+                    partTruth[i] = true;
+
+                if (entry == alias)
+                    partTruth[i] = true;
+
+                if (alias.Contains(entry))
+                    partTruth[i] = true;
+
+                foreach (string tagStr in tags)
+                {
+                    if (entry == tagStr.ToLower())
+                        partTruth[i] = true;
+
+                    if (tagStr.ToLower().Contains(entry))
+                        partTruth[i] = true;
+                }
+            }
+
+            foreach (bool entry in partTruth)
+            {
+                if (!entry)
+                    isValid = false;
+            }
+        }
+
+        return isValid;
+    }
+
+    public static bool TimeActEventPropertyFilter(AnimationFileInfo info, string propertyName)
+    {
+        bool isValid = true;
+        var input = _timeActEventPropertyFilterString.ToLower();
+
+        if (input != "")
+        {
+            string[] inputParts = input.Split("+");
+            bool[] partTruth = new bool[inputParts.Length];
+
+            var id = propertyName;
             var alias = "";
             var tags = new List<string>();
 

@@ -4,21 +4,31 @@ using HKLib.hk2018;
 using HKLib.hk2018.hkAsyncThreadPool;
 using ImGuiNET;
 using Org.BouncyCastle.Utilities;
+using SoapstoneLib.Proto.Internal;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Editors.HavokEditor;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor;
+using StudioCore.Gui;
 using StudioCore.Interface;
+using StudioCore.MsbEditor;
+using StudioCore.Scene;
+using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
+using Veldrid.Utilities;
 using static SoulsFormats.DRB;
 using static StudioCore.Editors.TimeActEditor.AnimationBank;
+using Viewport = StudioCore.Gui.Viewport;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -28,13 +38,40 @@ public class TimeActEditorScreen : EditorScreen
 
     public bool ShowSaveOption { get; set; }
 
+    public ViewportActionManager ViewportEditorActionManager = new();
     public ActionManager EditorActionManager = new();
 
     public TimeActSelectionHandler SelectionHandler;
 
+    public ViewportSelection _selection = new();
+    public Universe _universe;
+    public Rectangle Rect;
+    public RenderScene RenderScene;
+    public IViewport Viewport;
+    public bool ViewportUsingKeyboard;
+    public Sdl2Window Window;
+
+    public PropertyHandler PropertyHandler;
+
     public TimeActEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
+        Rect = window.Bounds;
+        Window = window;
+
+        if (device != null)
+        {
+            RenderScene = new RenderScene();
+            Viewport = new Viewport(ViewportType.TimeActEditor, "TimeActEditor_ViewPort", device, RenderScene, ViewportEditorActionManager, _selection, Rect.Width, Rect.Height);
+        }
+        else
+        {
+            Viewport = new NullViewport(ViewportType.TimeActEditor, "TimeActEditor_ViewPort", ViewportEditorActionManager, _selection, Rect.Width, Rect.Height);
+        }
+
+        _universe = new Universe(RenderScene, _selection);
+
         SelectionHandler = new TimeActSelectionHandler(EditorActionManager, this);
+        PropertyHandler = new PropertyHandler(EditorActionManager, this);
     }
 
     public string EditorName => "TimeAct Editor##TimeActEditor";
@@ -43,11 +80,26 @@ public class TimeActEditorScreen : EditorScreen
 
     public void Init()
     {
-        ShowSaveOption = false;
+        ShowSaveOption = true;
     }
 
-    public void DrawEditorMenu()
+    public void Update(float dt)
     {
+        ViewportUsingKeyboard = Viewport.Update(Window, dt);
+    }
+
+    public void EditorResized(Sdl2Window window, GraphicsDevice device)
+    {
+        Window = window;
+        Rect = window.Bounds;
+    }
+
+    public void Draw(GraphicsDevice device, CommandList cl)
+    {
+        if (Viewport != null)
+        {
+            Viewport.Draw(device, cl);
+        }
     }
 
     public void OnGUI(string[] initcmd)
@@ -88,10 +140,14 @@ public class TimeActEditorScreen : EditorScreen
 
             if (!TaskManager.AnyActiveTasks() && AnimationBank.IsLoaded)
             {
+                Viewport.OnGui();
+                TimeActCommandLine(initcmd);
+                TimeActEditorShortcuts();
                 TimeActContainerFileView();
                 TimeActInternalFileView();
                 TimeActAnimationView();
-                TimeActAnimEventGraphView();
+                TimeActAnimEventView();
+                TimeActEventPropertiesView();
             }
             else
             {
@@ -105,6 +161,66 @@ public class TimeActEditorScreen : EditorScreen
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
+    }
+
+    // Respond to EditorQueue commands
+    public void TimeActCommandLine(string[] initcmd)
+    {
+        if (initcmd != null && initcmd.Length > 2)
+        {
+            if (initcmd[0] == "load")
+            {
+                var file = initcmd[1];
+                var taeName = initcmd[2];
+                var animationID = initcmd[3];
+
+                // TODO
+            }
+        }
+    }
+
+    public void TimeActEditorShortcuts()
+    {
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
+        {
+            EditorActionManager.RedoAction();
+        }
+
+        if (!ViewportUsingKeyboard && !ImGui.GetIO().WantCaptureKeyboard)
+        {
+            // F key frames the selection
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport))
+            {
+                HashSet<Entity> selected = _selection.GetFilteredSelection<Entity>();
+                var first = false;
+                BoundingBox box = new();
+                foreach (Entity s in selected)
+                {
+                    if (s.RenderSceneMesh != null)
+                    {
+                        if (!first)
+                        {
+                            box = s.RenderSceneMesh.GetBounds();
+                            first = true;
+                        }
+                        else
+                        {
+                            box = BoundingBox.Combine(box, s.RenderSceneMesh.GetBounds());
+                        }
+                    }
+                }
+
+                if (first)
+                {
+                    Viewport.FrameBox(box);
+                }
+            }
+        }
     }
 
     public void TimeActContainerFileView()
@@ -135,7 +251,7 @@ public class TimeActEditorScreen : EditorScreen
                 }
                 TimeActUtils.DisplayTimeActFileAlias(info.Name);
 
-                SelectionHandler.ContainerContextMenu.ContainerMenu(isSelected);
+                SelectionHandler.ContextMenu.ContainerMenu(isSelected);
             }
         }
         ImGui.EndChild();
@@ -177,7 +293,7 @@ public class TimeActEditorScreen : EditorScreen
                 }
                 TimeActUtils.DisplayTimeActAlias(SelectionHandler.ContainerInfo, entry.ID);
 
-                SelectionHandler.TimeActContextMenu.TimeActMenu(isSelected);
+                SelectionHandler.ContextMenu.TimeActMenu(isSelected);
             }
 
         }
@@ -221,7 +337,7 @@ public class TimeActEditorScreen : EditorScreen
                 }
                 TimeActUtils.DisplayAnimationAlias(SelectionHandler, entry.ID);
 
-                SelectionHandler.TimeActAnimationContextMenu.TimeActAnimationMenu(isSelected);
+                SelectionHandler.ContextMenu.TimeActAnimationMenu(isSelected);
             }
         }
         ImGui.EndChild();
@@ -229,7 +345,9 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.End();
     }
 
-    public void TimeActAnimEventGraphView()
+    public bool SelectFirstEvent = false;
+
+    public void TimeActAnimEventView()
     {
         ImGui.Begin("Events##TimeActAnimEventList");
 
@@ -257,12 +375,18 @@ public class TimeActEditorScreen : EditorScreen
                     isSelected = true;
                 }
 
+                if(SelectFirstEvent)
+                {
+                    SelectFirstEvent = false;
+                    SelectionHandler.TimeActEventChange(evt, i);
+                }
+
                 if (ImGui.Selectable($@" {evt.TypeName}##taeEvent{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
                 {
                     SelectionHandler.TimeActEventChange(evt, i);
                 }
 
-                SelectionHandler.TimeActEventContextMenu.TimeActEventMenu(isSelected);
+                SelectionHandler.ContextMenu.TimeActEventMenu(isSelected);
             }
         }
         ImGui.EndChild();
@@ -270,14 +394,126 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.End();
     }
 
-    public void OnProjectChanged()
+    public void TimeActEventPropertiesView()
     {
-        if (CFG.Current.AutoLoadBank_TimeAct)
+        ImGui.Begin("Properties##TimeActEventProperties");
+
+        if (!SelectionHandler.HasSelectedTimeActEvent())
         {
-            AnimationBank.LoadTimeActs();
+            ImGui.End();
+            return;
         }
 
+        ImGui.InputText($"Search##timeActEventPropertyFilter", ref TimeActFilters._timeActEventPropertyFilterString, 255);
+        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+
+        ImGui.BeginChild("EventPropertyList");
+
+        ImGui.Columns(2);
+
+        // Property
+        ImGui.AlignTextToFramePadding();
+        ImGui.Selectable($@"Start Time##taeEventProperty_StartTime", false);
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.Selectable($@"End Time##taeEventProperty_StartTime", false);
+
+        for (int i = 0; i < SelectionHandler.CurrentTimeActEvent.Parameters.ParameterValues.Count; i++)
+        {
+            var property = SelectionHandler.CurrentTimeActEvent.Parameters.ParameterValues.ElementAt(i).Key;
+
+            if (TimeActFilters.TimeActEventPropertyFilter(SelectionHandler.ContainerInfo, property))
+            {
+                var isSelected = false;
+                if (i == SelectionHandler.CurrentTimeActEventPropertyIndex)
+                {
+                    isSelected = true;
+                }
+
+                ImGui.AlignTextToFramePadding();
+                if (ImGui.Selectable($@"{property}##taeEventProperty{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                {
+                    SelectionHandler.TimeActEventPropertyChange(property, i);
+                }
+
+                SelectionHandler.ContextMenu.TimeActEventPropertiesMenu(isSelected);
+
+            }
+        }
+
+        ImGui.NextColumn();
+
+        // Values
+        PropertyHandler.ValueSection(SelectionHandler);
+        
+        ImGui.Columns(1);
+
+        ImGui.EndChild();
+
+        ImGui.End();
+    }
+
+    public void DrawEditorMenu()
+    {
+        // For now, the viewport is disabled until we implement the model/skeleton stuff
+        CFG.Current.Interface_Editor_Viewport = false;
+
+        if (ImGui.BeginMenu("Edit"))
+        {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
+                    EditorActionManager.CanUndo()))
+            {
+                EditorActionManager.UndoAction();
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            if (ImGui.MenuItem("Undo All", "", false,
+                    EditorActionManager.CanUndo()))
+            {
+                EditorActionManager.UndoAllAction();
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
+            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
+                    EditorActionManager.CanRedo()))
+            {
+                EditorActionManager.RedoAction();
+            }
+
+            ImGui.EndMenu();
+        }
+
+        if (ImGui.BeginMenu("View"))
+        {
+            /*
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Viewport"))
+            {
+                CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_Editor_Viewport);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Viewport Grid"))
+            {
+                CFG.Current.Interface_TimeActEditor_Viewport_Grid = !CFG.Current.Interface_TimeActEditor_Viewport_Grid;
+                CFG.Current.TimeActEditor_Viewport_RegenerateMapGrid = true;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Viewport_Grid);
+            */
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void OnProjectChanged()
+    {
+        if (AnimationBank.IsLoaded)
+            AnimationBank.LoadTimeActs();
+
         ResetActionManager();
+        _universe.UnloadAll(true);
     }
 
     public void Save()
@@ -301,5 +537,9 @@ public class TimeActEditorScreen : EditorScreen
     private void ResetActionManager()
     {
         EditorActionManager.Clear();
+    }
+    public bool InputCaptured()
+    {
+        return Viewport.ViewportSelected;
     }
 }

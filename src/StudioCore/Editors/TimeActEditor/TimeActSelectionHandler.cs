@@ -18,6 +18,8 @@ public class TimeActSelectionHandler
     private ActionManager EditorActionManager;
     private TimeActEditorScreen Screen;
 
+    public HavokContainerInfo LoadedHavokContainer;
+
     public AnimationFileInfo ContainerInfo;
     public IBinder ContainerBinder;
     public string ContainerKey;
@@ -33,16 +35,14 @@ public class TimeActSelectionHandler
     public TAE.Event CurrentTimeActEvent;
     public int CurrentTimeActEventIndex = -1;
 
-    public HavokContainerInfo LoadedHavokContainer;
+    public string CurrentTimeActEventProperty;
+    public int CurrentTimeActEventPropertyIndex = -1;
 
     public Multiselect TimeActMultiselect;
     public Multiselect TimeActAnimationMultiselect;
     public Multiselect TimeActEventMultiselect;
 
-    public ContextMenu ContainerContextMenu;
-    public ContextMenu TimeActContextMenu;
-    public ContextMenu TimeActAnimationContextMenu;
-    public ContextMenu TimeActEventContextMenu;
+    public ContextMenu ContextMenu;
 
     public TimeActSelectionHandler(ActionManager editorActionManager, TimeActEditorScreen screen)
     {
@@ -53,10 +53,7 @@ public class TimeActSelectionHandler
         TimeActAnimationMultiselect = new();
         TimeActEventMultiselect = new();
 
-        ContainerContextMenu = new(screen, this);
-        TimeActContextMenu = new(screen, this);
-        TimeActAnimationContextMenu = new(screen, this);
-        TimeActEventContextMenu = new(screen, this);
+        ContextMenu = new(screen, this);
     }
 
     public void FileContainerChange(AnimationFileInfo info, IBinder binder, int index)
@@ -74,6 +71,9 @@ public class TimeActSelectionHandler
 
         CurrentTimeActEvent = null;
         CurrentTimeActEventIndex = -1;
+
+        CurrentTimeActEventProperty = null;
+        CurrentTimeActEventPropertyIndex = -1;
 
         TimeActMultiselect = new Multiselect();
         TimeActAnimationMultiselect = new Multiselect();
@@ -93,6 +93,9 @@ public class TimeActSelectionHandler
         CurrentTimeActEvent = null;
         CurrentTimeActEventIndex = -1;
 
+        CurrentTimeActEventProperty = null;
+        CurrentTimeActEventPropertyIndex = -1;
+
         TimeActAnimationMultiselect = new Multiselect();
         TimeActEventMultiselect = new Multiselect();
 
@@ -109,6 +112,15 @@ public class TimeActSelectionHandler
         CurrentTimeActEvent = null;
         CurrentTimeActEventIndex = -1;
 
+        CurrentTimeActEventProperty = null;
+        CurrentTimeActEventPropertyIndex = -1;
+
+        // If a filter is active, auto-select first result (if any), since this is more user-friendly
+        if(TimeActFilters._timeActEventFilterString != "")
+        {
+            Screen.SelectFirstEvent = true;
+        }
+
         TimeActEventMultiselect = new Multiselect();
     }
 
@@ -118,6 +130,15 @@ public class TimeActSelectionHandler
 
         CurrentTimeActEvent = entry;
         CurrentTimeActEventIndex = index;
+
+        CurrentTimeActEventProperty = null;
+        CurrentTimeActEventPropertyIndex = -1;
+    }
+
+    public void TimeActEventPropertyChange(string entry, int index)
+    {
+        CurrentTimeActEventProperty = entry;
+        CurrentTimeActEventPropertyIndex = index;
     }
 
     public bool HasSelectedFileContainer()
@@ -133,5 +154,10 @@ public class TimeActSelectionHandler
     public bool HasSelectedTimeActAnimation()
     {
         return CurrentTimeActAnimation != null;
+    }
+
+    public bool HasSelectedTimeActEvent()
+    {
+        return CurrentTimeActEvent != null;
     }
 }
