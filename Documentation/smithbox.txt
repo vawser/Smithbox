@@ -86,7 +86,7 @@ World Map:
 - ADD: finish documenting ER SOTE rows
 
 Time Act Editor
- - ADD: basic TAE editing
+ - ADD: undo support
  - ADD: TAE Quick Edit tool
  - ADD: ref links in properties
  - ADD: TAE META (extend the XML template stuff to include it?)

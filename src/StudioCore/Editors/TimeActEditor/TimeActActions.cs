@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using DotNext.Collections.Generic;
+using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.GraphicsEditor;
 using System;
@@ -10,44 +11,87 @@ using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.TimeActEditor;
 
-public class TimeActExampleAction : EditorAction
+public class EventPropertyChange : EditorAction
 {
-    private GPARAM SelectedGPARAM;
-    private GparamEditorScreen Screen;
-    private IField SelectedField;
-    private IFieldValue SelectedFieldValue;
-    private int NewRowID;
+    private Dictionary<string, object> Parameters;
+    private string ParamName;
+    private object OldValue;
+    private object NewValue;
 
-    public TimeActExampleAction(GparamEditorScreen screen, GPARAM selectedGparam, IField selectedField, IFieldValue fieldValue, int dupeRowId)
+    public EventPropertyChange(Dictionary<string, object> parameters, string paramName, object oldValue, object newValue)
     {
-        SelectedGPARAM = selectedGparam;
-        Screen = screen;
-        SelectedField = selectedField;
-        SelectedFieldValue = fieldValue;
-        NewRowID = dupeRowId;
+        Parameters = parameters;
+        ParamName = paramName;
+        OldValue = oldValue;
+        NewValue = newValue;
     }
 
     public override ActionEvent Execute()
     {
-        Screen.ExtendDisplayTruth(SelectedField);
-
-        Screen.PropertyEditor.AddPropertyValueRow(SelectedField, SelectedFieldValue, NewRowID);
-
-        // Update the group index lists to account for the new ID.
-        Screen._selectedGparamInfo.WasModified = true;
-        Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
+        Parameters[ParamName] = NewValue;
 
         return ActionEvent.NoEvent;
     }
 
     public override ActionEvent Undo()
     {
-        Screen.ReduceDisplayTruth(SelectedField);
+        Parameters[ParamName] = OldValue;
 
-        Screen.PropertyEditor.RemovePropertyValueRowById(SelectedField, SelectedFieldValue, NewRowID);
+        return ActionEvent.NoEvent;
+    }
+}
 
-        Screen._selectedGparamInfo.WasModified = false;
-        Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
+public class TimeActStartTimePropertyChange : EditorAction
+{
+    private TAE.Event Event;
+    private object OldValue;
+    private object NewValue;
+
+    public TimeActStartTimePropertyChange(TAE.Event entry, object oldValue, object newValue)
+    {
+        Event = entry;
+        OldValue = oldValue;
+        NewValue = newValue;
+    }
+
+    public override ActionEvent Execute()
+    {
+        Event.StartTime = (float)NewValue;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Event.StartTime = (float)OldValue;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class TimeActEndTimePropertyChange : EditorAction
+{
+    private TAE.Event Event;
+    private object OldValue;
+    private object NewValue;
+
+    public TimeActEndTimePropertyChange(TAE.Event entry, object oldValue, object newValue)
+    {
+        Event = entry;
+        OldValue = oldValue;
+        NewValue = newValue;
+    }
+
+    public override ActionEvent Execute()
+    {
+        Event.EndTime = (float)NewValue;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Event.EndTime = (float)OldValue;
 
         return ActionEvent.NoEvent;
     }

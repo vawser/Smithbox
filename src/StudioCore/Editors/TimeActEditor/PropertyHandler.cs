@@ -31,19 +31,41 @@ public class PropertyHandler
         var parameters = handler.CurrentTimeActEvent.Parameters;
         var paramValues = handler.CurrentTimeActEvent.Parameters.ParameterValues;
 
-        // TODO: add action here
-        handler.CurrentTimeActEvent.StartTime = (float)HandleProperty("startTime", handler.CurrentTimeActEvent.StartTime, TAE.Template.ParamType.f32);
-        // TODO: add action here
-        handler.CurrentTimeActEvent.EndTime = (float)HandleProperty("endTime", handler.CurrentTimeActEvent.EndTime, TAE.Template.ParamType.f32);
-        
+        object newValue;
+        bool changed = false;
+
+        (changed, newValue) = HandleProperty("startTime", handler.CurrentTimeActEvent.StartTime, TAE.Template.ParamType.f32);
+        if(changed)
+        {
+            var action = new TimeActStartTimePropertyChange(handler.CurrentTimeActEvent, handler.CurrentTimeActEvent.StartTime, newValue);
+            EditorActionManager.ExecuteAction(action);
+        }
+
+        changed = false;
+
+        (changed, newValue) = HandleProperty("endTime", handler.CurrentTimeActEvent.EndTime, TAE.Template.ParamType.f32);
+
+        if (changed)
+        {
+            var action = new TimeActEndTimePropertyChange(handler.CurrentTimeActEvent, handler.CurrentTimeActEvent.EndTime, newValue);
+            EditorActionManager.ExecuteAction(action);
+        }
+
         for (int i = 0; i < paramValues.Count; i++)
         {
             var property = paramValues.ElementAt(i).Key;
             var propertyValue = paramValues[property];
             var propertyType = parameters.GetParamValueType(property);
 
-            // TODO: add action here
-            paramValues[property] = HandleProperty(i.ToString(), propertyValue, propertyType);
+            changed = false;
+
+            (changed, newValue) = HandleProperty(i.ToString(), propertyValue, propertyType);
+
+            if(changed)
+            {
+                var action = new EventPropertyChange(paramValues, property, propertyValue, newValue);
+                EditorActionManager.ExecuteAction(action);
+            }
 
             // TODO: ref links/enums
             // Add empty Text here if property has ref link or enum list
@@ -54,7 +76,7 @@ public class PropertyHandler
     private bool _changedCache;
     private bool _committedCache;
 
-    public object HandleProperty(string index, object property, Template.ParamType type)
+    public (bool, object) HandleProperty(string index, object property, Template.ParamType type)
     {
         _changedCache = false;
         _committedCache = false;
@@ -64,7 +86,6 @@ public class PropertyHandler
 
         ImGui.SetNextItemWidth(-1);
 
-        // TODO: the rest of the types
         if (type == Template.ParamType.b)
         {
             oldValue = property;
@@ -341,15 +362,15 @@ public class PropertyHandler
             {
                 if (newValue == null)
                 {
-                    return property;
+                    return (false, property);
                 }
                 else
                 {
-                    return newValue;
+                    return (true, newValue);
                 }
             }
         }
 
-        return property;
+        return (false, property);
     }
 }
