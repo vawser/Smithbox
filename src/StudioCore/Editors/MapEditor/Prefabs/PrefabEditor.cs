@@ -41,7 +41,7 @@ public class PrefabEditor
     {
         var loadedPrefab = loadedPrefabs.GetValueOrDefault(name);
 
-        if (loadedPrefab is not null) 
+        if (loadedPrefab is not null)
             return loadedPrefab;
 
         loadedPrefab = Prefab.New(Smithbox.ProjectType);
@@ -110,12 +110,12 @@ public class PrefabEditor
         if (ImGui.Button("Import", buttonSize))
         {
             string prefixName = null;
-            if (CFG.Current.Prefab_ApplyOverrideName) 
+            if (CFG.Current.Prefab_ApplyOverrideName)
                 prefixName = CFG.Current.Prefab_OverrideName;
 
             var loadedPrefab = GetLoadedPrefab(selectedPrefab.PrefabName);
 
-            if(loadedPrefab != null)
+            if (loadedPrefab != null)
                 loadedPrefab.ImportToMap(comboMap.map as MapContainer, universe, scene, actionManager, prefixName);
         }
         ImguiUtils.ShowHoverTooltip("Import the selected prefab into a loaded map.");
@@ -154,7 +154,7 @@ public class PrefabEditor
         ImGui.Checkbox("Override import name", ref CFG.Current.Prefab_ApplyOverrideName);
         ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be prepended with this instead of the prefab name");
 
-        if (!CFG.Current.Prefab_ApplyOverrideName) 
+        if (!CFG.Current.Prefab_ApplyOverrideName)
             CFG.Current.Prefab_OverrideName = "";
 
         ImGui.SameLine();
@@ -177,7 +177,7 @@ public class PrefabEditor
         {
             ImGui.Checkbox("Apply Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
 
-            if (!CFG.Current.Prefab_ApplySpecificEntityGroupID) 
+            if (!CFG.Current.Prefab_ApplySpecificEntityGroupID)
                 CFG.Current.Prefab_SpecificEntityGroupID = 0;
 
             ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
@@ -204,57 +204,56 @@ public class PrefabEditor
             var defaultSize = new Vector2(width * 0.975f, 32);
             var thirdSizeButton = new Vector2(defaultSize.X * 0.33f, 32);
 
-            ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Export Prefab");
-            ImGui.Separator();
-
-            ImGui.Text("Name:");
-            ImGui.SetNextItemWidth(defaultSize.X);
-            ImGui.InputText("##PrefabName", ref editName, 64);
-
-            ImGui.Text("Flags:");
-            ImGui.SetNextItemWidth(defaultSize.X);
-            ImGui.InputText("##PrefabFlags", ref editFlags, 64);
-
-            CreateButton(thirdSizeButton);
-            ImGui.SameLine();
-            DeleteButton(thirdSizeButton);
-            ImGui.SameLine();
-            ReplaceButton(thirdSizeButton);
-
-            ImGui.Text("Export Options:");
-            ExportConfig();
-            ImGui.Text("");
-
-            ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Import Prefab");
-            ImGui.Separator();
-
-            ImGui.Text("Map:");
-            ImGui.SameLine();
-
-            if (comboMap.name != null && universe.LoadedObjectContainers[comboMap.name] == null)
-                comboMap = (null, null);
-
-            ImGui.PushItemWidth(-1);
-            if (ImGui.BeginCombo("##PrefabMapCombo", comboMap.name))
+            if (ImGui.CollapsingHeader("Export Prefab"))
             {
-                foreach (var (name, container) in universe.LoadedObjectContainers)
-                {
-                    if (container is null) continue;
-                    if (ImGui.Selectable(name))
-                    {
-                        comboMap = (name, container);
-                    }
-                }
-                ImGui.EndCombo();
+                ImGui.Text("Name:");
+                ImGui.SetNextItemWidth(defaultSize.X);
+                ImGui.InputText("##PrefabName", ref editName, 64);
+
+                ImGui.Text("Flags:");
+                ImGui.SetNextItemWidth(defaultSize.X);
+                ImGui.InputText("##PrefabFlags", ref editFlags, 64);
+
+                CreateButton(thirdSizeButton);
+                ImGui.SameLine();
+                DeleteButton(thirdSizeButton);
+                ImGui.SameLine();
+                ReplaceButton(thirdSizeButton);
+
+                ImGui.Text("Export Options:");
+                ExportConfig();
+                ImGui.Text("");
             }
-            ImGui.PopItemWidth();
 
-            ImportButton(defaultSize);
+            if (ImGui.CollapsingHeader("Import Prefab"))
+            {
 
-            ImGui.Text("Import Options:");
-            ImportConfig();
+                ImGui.Text("Map:");
+                ImGui.SameLine();
+
+                if (comboMap.name != null && universe.LoadedObjectContainers[comboMap.name] == null)
+                    comboMap = (null, null);
+
+                ImGui.PushItemWidth(-1);
+                if (ImGui.BeginCombo("##PrefabMapCombo", comboMap.name))
+                {
+                    foreach (var (name, container) in universe.LoadedObjectContainers)
+                    {
+                        if (container is null) continue;
+                        if (ImGui.Selectable(name))
+                        {
+                            comboMap = (name, container);
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+                ImGui.PopItemWidth();
+
+                ImportButton(defaultSize);
+
+                ImGui.Text("Import Options:");
+                ImportConfig();
+            }
 
             ImGui.Text("");
             ImGui.Text("Prefabs:");
@@ -264,7 +263,7 @@ public class PrefabEditor
                 {
                     bool selected = selectedPrefab == prefab;
                     var flag = ImGuiTreeNodeFlags.OpenOnArrow;
-                    if (selected) 
+                    if (selected)
                         flag |= ImGuiTreeNodeFlags.Selected;
 
                     bool opened = ImGui.TreeNodeEx($"{name}##PrefabTreeNode", flag);
@@ -296,23 +295,22 @@ public class PrefabEditor
                     }
                     else
                     {
-                        if (loadedPrefabs.ContainsKey(name)) 
+                        if (loadedPrefabs.ContainsKey(name))
                             loadedPrefabs.Remove(name);
                     }
 
                 }
 
-                ImGui.EndChild();
+            }
 
-                if (ImGui.IsItemClicked() && selectedPrefab is not null)
-                {
-                    selectedPrefab = null;
-                    editName = "";
-                    editFlags = "";
-                }
+            ImGui.EndChild();
+            if (ImGui.IsItemClicked() && selectedPrefab is not null)
+            {
+                selectedPrefab = null;
+                editName = "";
+                editFlags = "";
             }
         }
-
         ImGui.End();
         ImGui.PopStyleColor();
     }
