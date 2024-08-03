@@ -53,6 +53,12 @@
     "ImGui_Warning_Text_Color": [1.0, 0.0, 0.0, 1.0],
     "ImGui_Benefit_Text_Color": [0.0, 1.0, 0.0, 1.0],
     "ImGui_Invalid_Text_Color": [1.0, 0.3, 0.3, 1.0],
+    
+    "ImGui_TimeAct_InfoText_1_Color": [1.0, 1.0, 0.0, 1.0],
+    "ImGui_TimeAct_InfoText_2_Color": [0.409, 0.967, 0.693, 1.0],
+    "ImGui_TimeAct_InfoText_3_Color": [0.237, 0.925, 1.0, 1.0],
+    "ImGui_TimeAct_InfoText_4_Color": [1.0, 0.470, 0.884, 1.0],
+    
     "ImGui_ParamRef_Text": [1.0, 0.5, 0.5, 1.0],
     "ImGui_ParamRefMissing_Text": [0.0, 0.0, 0.0, 1.0],
     "ImGui_ParamRefInactive_Text": [0.7, 0.7, 0.7, 1.0],
@@ -68,12 +74,7 @@
     "ImGui_AuxAdded_Text": [0.7, 0.8, 1.0, 1.0],
     "ImGui_PrimaryChanged_Text": [0.7, 1.0, 0.7, 1.0],
     "ImGui_ParamRow_Text": [0.8, 0.8, 0.8, 1.0],
-  "ImGui_AliasName_Text": [
-    1.0,
-    1.0,
-    0.0,
-    1
-  ],
+    "ImGui_AliasName_Text": [ 1.0, 1.0, 0.0, 1 ],
     
     "DisplayGroupEditor_Border_Highlight": [1.0, 0.2, 0.2, 1.0],
     "DisplayGroupEditor_DisplayActive_Frame": [0.4, 0.06, 0.06, 1.0],

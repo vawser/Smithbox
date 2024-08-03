@@ -104,6 +104,15 @@ public class CFG
     public bool Interface_ParticleEditor_Data = true;
     public bool Interface_ParticleEditor_Toolbar = true;
 
+    public bool Interface_TimeActEditor_ContainerFileList = true;
+    public bool Interface_TimeActEditor_TimeActList = true;
+    public bool Interface_TimeActEditor_AnimationList = true;
+    public bool Interface_TimeActEditor_AnimationProperties = true;
+    public bool Interface_TimeActEditor_EventList = true;
+    public bool Interface_TimeActEditor_EventProperties = true;
+
+    public bool Interface_TimeActEditor_ToolConfiguration = true;
+
     public bool Interface_TextureViewer_Files = true;
     public bool Interface_TextureViewer_Textures = true;
     public bool Interface_TextureViewer_Viewer = true;

@@ -1208,7 +1208,8 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT08 { get; set; }
+                [MSBParamReference(ParamName = "ItemLotParam_map")]
+                public int ItemLotParamID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1257,7 +1258,7 @@ namespace SoulsFormats
                     MessageID = br.ReadInt16();
                     UnkT02 = br.ReadInt16();
                     Hidden = br.AssertInt32([0, 1]) == 1;
-                    UnkT08 = br.ReadInt32();
+                    ItemLotParamID = br.ReadInt32();
                     MessageSfxID = br.ReadInt32();
                     EnableEventFlagID = br.ReadUInt32();
                     CharacterModelName = br.ReadInt32();
@@ -1271,7 +1272,7 @@ namespace SoulsFormats
                     bw.WriteInt16(MessageID);
                     bw.WriteInt16(UnkT02);
                     bw.WriteInt32(Hidden ? 1 : 0);
-                    bw.WriteInt32(UnkT08);
+                    bw.WriteInt32(ItemLotParamID);
                     bw.WriteInt32(MessageSfxID);
                     bw.WriteUInt32(EnableEventFlagID);
                     bw.WriteInt32(CharacterModelName);

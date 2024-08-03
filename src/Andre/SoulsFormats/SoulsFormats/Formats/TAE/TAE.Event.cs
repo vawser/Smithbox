@@ -208,7 +208,6 @@ namespace SoulsFormats
                 Type = newType;
             }
 
-
             /// <summary>
             /// TAE Event Group which contains this event.
             /// </summary>

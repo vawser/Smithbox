@@ -20,56 +20,58 @@ public class ContextMenu
         Handler = handler;
     }
 
-    public void ContainerMenu(bool isSelected)
+    public void ContainerMenu(bool isSelected, string key)
     {
         if (!isSelected)
             return;
 
-        if (ImGui.BeginPopupContextItem($"ContainerContextMenu"))
+        if (ImGui.BeginPopupContextItem($"ContainerContextMenu##ContainerContextMenu{key}"))
         {
             ImGui.EndPopup();
         }
     }
 
-    public void TimeActMenu(bool isSelected)
+    public void TimeActMenu(bool isSelected, string key)
     {
         if (!isSelected)
             return;
 
-        if (ImGui.BeginPopupContextItem($"TimeActContextMenu"))
+        if (ImGui.BeginPopupContextItem($"TimeActContextMenu##TimeActContextMenu{key}"))
         {
             ImGui.EndPopup();
         }
     }
 
-    public void TimeActAnimationMenu(bool isSelected)
+    private bool InAnimationPropertyMode = false;
+
+    public void TimeActAnimationMenu(bool isSelected, string key)
     {
         if (!isSelected)
             return;
 
-        if (ImGui.BeginPopupContextItem($"TimeActAnimationContextMenu"))
+        if (ImGui.BeginPopupContextItem($"TimeActAnimationContextMenu##TimeActAnimationContextMenu{key}"))
         {
             ImGui.EndPopup();
         }
     }
 
-    public void TimeActEventMenu(bool isSelected)
+    public void TimeActEventMenu(bool isSelected, string key)
     {
         if (!isSelected)
             return;
 
-        if (ImGui.BeginPopupContextItem($"TimeActEventContextMenu"))
+        if (ImGui.BeginPopupContextItem($"TimeActEventContextMenu##TimeActEventContextMenu{key}"))
         {
             ImGui.EndPopup();
         }
     }
 
-    public void TimeActEventPropertiesMenu(bool isSelected)
+    public void TimeActEventPropertiesMenu(bool isSelected, string key)
     {
         if (!isSelected)
             return;
 
-        if (ImGui.BeginPopupContextItem($"TimeActEventPropertiesContextMenu"))
+        if (ImGui.BeginPopupContextItem($"TimeActEventPropertiesContextMenu##TimeActEventPropertiesContextMenu{key}"))
         {
             ImGui.EndPopup();
         }
