@@ -317,7 +317,7 @@ public class PropertyHandler
             }
             _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
-        else if (type == Template.ParamType.f32 || type == Template.ParamType.f32grad || type == Template.ParamType.f64)
+        else if (type == Template.ParamType.f32 || type == Template.ParamType.f64)
         {
             oldValue = property;
             float propertyValue = (float)property;
@@ -326,6 +326,21 @@ public class PropertyHandler
             if (ImGui.InputFloat($"##floatInput{index}", ref inputPropertyValue))
             {
                 newValue = (float)inputPropertyValue;
+
+                _editedValueCache = newValue;
+                _changedCache = true;
+            }
+            _committedCache = ImGui.IsItemDeactivatedAfterEdit();
+        }
+        else if (type == Template.ParamType.f32grad)
+        {
+            oldValue = property;
+            Vector2 propertyValue = (Vector2)property;
+            Vector2 inputPropertyValue = propertyValue;
+
+            if (ImGui.InputFloat2($"##float2Input{index}", ref inputPropertyValue))
+            {
+                newValue = (Vector2)inputPropertyValue;
 
                 _editedValueCache = newValue;
                 _changedCache = true;

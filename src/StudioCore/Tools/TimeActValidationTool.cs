@@ -19,7 +19,7 @@ public static class TimeActValidationTool
 
     public static void ValidateTAE()
     {
-        Dictionary<int, string> errors = new();
+        SortedDictionary<int, string> errors = new();
 
         for (int i = 0; i < AnimationBank.FileBank.Count; i++)
         {
@@ -53,7 +53,7 @@ public static class TimeActValidationTool
             }
         }
 
-        foreach(var (id, name) in errors)
+        foreach (var (id, name) in errors)
         {
             TaskLogs.AddLog($"Event Type: {id} - {name}");
         }

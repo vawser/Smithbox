@@ -72,6 +72,8 @@ namespace SoulsFormats
                 indices = new List<int>();
             }
 
+            public long heldVarInt;
+
             internal EventGroup(BinaryReaderEx br, List<long> eventHeaderOffsets, TAEFormat format)
             {
                 long entryCount = br.ReadVarint();
@@ -91,7 +93,7 @@ namespace SoulsFormats
                     }
                     else if (format is TAEFormat.DS3 or TAEFormat.SDT)
                     {
-                        br.AssertVarint(0);
+                        heldVarInt = br.ReadVarint();
                     }
                     else
                     {
@@ -152,7 +154,7 @@ namespace SoulsFormats
                 }
                 else if (format == TAEFormat.DS3 || format == TAEFormat.SDT)
                 {
-                    bw.WriteVarint(0);
+                    bw.WriteVarint(heldVarInt);
                 }
                 else
                 {
