@@ -74,7 +74,7 @@ public class SystemTab
                 ImGui.Checkbox("Ignore asserts", ref CFG.Current.System_IgnoreAsserts);
                 ImguiUtils.ShowHoverTooltip("If enabled, when attempting to read files, asserts will be ignored.");
 
-                Smithbox.UpdateFormatAssertState();
+                Smithbox.UpdateSoulsFormatsToggles();
             }
 
             if (ImGui.CollapsingHeader("Loggers"))
@@ -85,7 +85,7 @@ public class SystemTab
                 ImGui.Checkbox("Display Edit History Logger", ref CFG.Current.Interface_DisplayEditLogger);
                 ImguiUtils.ShowHoverTooltip("If enabled, the edit history logger will be visible in the menubar.");
 
-                Smithbox.UpdateFormatAssertState();
+                Smithbox.UpdateSoulsFormatsToggles();
             }
 
             if (ImGui.CollapsingHeader("Soapstone Server"))

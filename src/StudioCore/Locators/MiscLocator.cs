@@ -41,20 +41,19 @@ public static class MiscLocator
     // TAE
     public static List<string> GetAnimationBinders(bool ignoreProject = false)
     {
-        // Not supported
-        if (Smithbox.ProjectType is ProjectType.DS2S
-            or ProjectType.DS2
-            or ProjectType.BB
-            or ProjectType.DES)
-        {
-            return new List<string>();
-        }
+        List<string> ret = new List<string>();
 
         // DS1R + DS3 + Sekiro + ER + AC6
         var paramDir = @"\chr";
         var paramExt = @".anibnd.dcx";
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
+        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            paramDir = @"\timeact\chr";
+            paramExt = @".tae";
+        }
+
+        ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
 
         return ret;
     }

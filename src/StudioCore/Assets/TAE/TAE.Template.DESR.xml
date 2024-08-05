@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<event_template game="DESR">
+  <!-- DES doesn't have banks :fatcat: -->
+  <bank id="0" name="Default">
+    <!-- NOTE: THIS EVENT TEMPLATE HAS HARDCODED EDITOR BEHAVIOR WITH THE ARGS. BE CAREFUL. -->
+    <event id="0" name="JumpTable">
+      <s32 name="JumpTableID">
+        <entry value="0" name="0: Do Nothing"/>
+        <entry value="1" name="1: Cancel Possible - RH Attack"/>
+        <entry value="3" name="3: Set Guard Type|ArgB:Guard BehaviorJudgeID"/>
+        <entry value="4" name="4: End If RH Attack Queued"/>
+        <entry value="5" name="5: Get-Parried Window|ArgC:Unknown"/>
+        <entry value="6" name="6: Disable Movement?"/>
+        <entry value="7" name="7: Disable Turning"/>
+        <entry value="8" name="8: Flag As Dodging"/>
+        <entry value="9" name="9: ?"/>
+        <entry value="10" name="10: ?"/>
+        <entry value="11" name="11: Cancel - LS Move"/>
+        <entry value="12" name="12: Kill Character"/>
+        <entry value="13" name="13: ?"/>
+        <entry value="14" name="14: Set Some Bool?"/>
+        <entry value="15" name="15: Set Something?"/>
+        <entry value="16" name="16: Cancel - LH Attack"/>
+        <entry value="18" name="18: ?"/>
+        <entry value="19" name="19: Disable Map Hit"/>
+        <entry value="20" name="20: ?"/>
+        <entry value="21" name="21: Cancel Possible - Guard"/>
+        <entry value="22" name="22: Cancel - Guard"/>
+        <entry value="23" name="23: Cancel - AI ComboAttack"/>
+        <entry value="24" name="24: ?"/>
+        <entry value="25" name="25: Cancel Possible - Dodge?"/>
+        <entry value="26" name="26: Cancel - Dodge"/>
+        <entry value="27" name="27: Set Gravity"/>
+        <entry value="28" name="28: ?"/>
+        <entry value="29" name="29: ?"/>
+        <entry value="30" name="30: Cancel - Estus"/>
+        <entry value="31" name="31: Cancel - Goods"/>
+        <entry value="32" name="32: Cancel - Weapon Switch"/>
+        <entry value="37" name="37: ?"/>
+        <entry value="38" name="38: ?"/>
+        <entry value="39" name="39: ?"/>
+        <entry value="40" name="40: ?"/>
+        <entry value="41" name="41: Flag Me As Open To Attack?"/>
+        <entry value="42" name="42: Go To Whiff Animation If Applicable"/>
+        <entry value="43" name="43: ?"/>
+        <entry value="44" name="44: ?"/>
+        <entry value="45" name="45: ?"/>
+        <entry value="46" name="46: Disable Character"/>
+        <entry value="49" name="49: Disable Locking Onto Character"/>
+        <entry value="50" name="50: Disable Chr Hit"/>
+        <entry value="51" name="51: Prevent Fall Animation"/>
+        <entry value="53" name="53: ?"/>
+        <entry value="54" name="54: Some Flag? -Only Used On Throws And ObjActs?-"/>
+        <entry value="55" name="55: Break Lockon"/>
+        <entry value="56" name="56: Ignore Hitbox Wall Clang"/>
+        <entry value="57" name="57: Set Some Hitbox Flag B?"/>
+        <entry value="59" name="59: ?"/>
+        <entry value="60" name="60: Flag As Throw?"/>
+        <entry value="61" name="61: Flag As Something?"/>
+        <entry value="62" name="62: ?"/>
+        <entry value="63" name="63: Flag As Impending Attack Behavior"/>
+        <entry value="64" name="64: Flag As Something?"/>
+        <entry value="65" name="65: Flag As Something?"/>
+        <entry value="66" name="66: Flag As Dodge?"/>
+        <entry value="67" name="67: Force SuperArmor"/>
+        <entry value="68" name="68: End If ThrowEscape Queued"/>
+        <entry value="69" name="69: Transition To Throw Death Anim?"/>
+        <entry value="70" name="70: Some Throw Related Flag?"/>
+        <entry value="71" name="71: Flag As Knockback?"/>
+        <entry value="72" name="72: Set Knockback?|ArgA:Value"/>
+        <entry value="73" name="73: Set Some Bool?"/>
+        <entry value="74" name="74: Disable Hit"/>
+        <entry value="75" name="75: Flag As Picking Up Item?"/>
+        <entry value="76" name="76: ?"/>
+        <entry value="78" name="78: End If AI Move Queued"/>
+        <entry value="79" name="79: End If AI Step Queued"/>
+        <entry value="80" name="80: Flag As Something?"/>
+        <entry value="81" name="81: Flag As Something?"/>
+        <entry value="82" name="82: Flag As Something?"/>
+        <entry value="83" name="83: Flag As Starting Guard?"/>
+        <entry value="84" name="84: Flag As Impending Jump Attack?"/>
+        <entry value="85" name="85: Flag As Holding Guard?"/>
+        <entry value="86" name="86: End If AI Attack Queued"/>
+        <entry value="87" name="87: Flag As AttackAnimEnd?"/>
+        <entry value="88" name="88: Flag As On A Ladder?"/>
+        <entry value="89" name="89: Disable All Movement"/>
+        <entry value="90" name="90: Limit Move Speed To Walk"/>
+        <entry value="91" name="91: Limit Move Speed To Dash"/>
+        <entry value="92" name="92: Flag As Something?"/>
+        <entry value="94" name="94: ?"/>
+        <entry value="95" name="95: Disable Shadow"/>
+        <entry value="97" name="97: Non-Attack Input Queue Window - All"/>
+      </s32>
+      <!-- THE ARGS BELOW ARE MATCHED TO KEYWORDS IN THE ENUM VALUES ABOVE DO NOT CHANGE LOL -->
+      <f32 name="ArgA"/>
+      <s32 name="ArgB"/>
+      <u8 name="ArgC"/>
+      <u8 name="ArgD"/>
+      <s16 name="ArgE"/>
+    </event>
+    <event id="1" name="InvokeAttackBehavior">
+      <s32 name="AttackType">
+        <entry value="0" name="Standard"/>
+        <entry value="1" name="Unknown_InfestedGhoulJumpSlashDS1"/>
+        <entry value="2" name="ForwardR1"/>
+        <entry value="62" name="PlungingAttack"/>
+        <entry value="64" name="Parry"/>
+      </s32>
+      <s32 name="AttackIndex"/>
+      <f32/>
+      <s32/>
+      <f32/>
+      <s32 name="BehaviorJudgeID"/>
+      <s32/>
+      <s32/>
+      
+      <!-- Turns out these were the next event data. -->
+      <!--<s32/>
+      <s32/>-->
+    </event>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <event id="2" name="InvokeBulletBehavior">
+      <s32 name="DummyPolyID"/>
+      <s32/>
+      <s32 name="BehaviorJudgeID"/>
+      <u8 name="AttachmentType"/>
+      <b name="Enable"/>
+      <s16 name="StateInfo"/>
+    </event>
+    <event id="5" name="InvokeCommonBehavior">
+      <s32 name="AttackIndex (0-8)"/>
+      <s32 name="BehaviorJudgeID"/>
+    </event>
+    <event id="16" name="Blend"/>
+    <event id="24" name="QueueTransitionAnimation">
+      <s32 name="Playback Type">
+        <entry value="0" name="0: Wait For Anim End"/>
+        <entry value="1" name="1: Match Playback Time"/>
+        <entry value="2" name="2: Immediate"/>
+      </s32>
+      <s32 name="Destination Anim ID"/>
+      <s32 name="Transition Anim ID"/>
+      <s32/>
+    </event>
+    <!-- For c0000 -->
+    <event id="32" name="SetWeaponStyle">
+      <s32 name="WeaponStyle">
+        <entry value="0" name="0: None"/>
+        <entry value="1" name="1: Right Weapon One-Handed"/>
+        <entry value="2" name="2: Left Weapon Two-Handed"/>
+        <entry value="3" name="3: Right Weapon Two-Handed"/>
+        <entry value="4" name="4: One-Hand (Left Weapon Transformed)"/>
+        <entry value="5" name="5: One-Hand (Right Weapon Transformed)"/>
+        <entry value="6" name="6: Unknown"/>
+      </s32>
+    </event>
+    <!-- For c0000 -->
+    <event id="33" name="SwitchWeapon">
+      <s32 name="WeaponSlotID"/>
+    </event>
+    <!-- For c0000 -->
+    <event id="34" name="UnequipCrossbowBolt">
+      <s32 name="HandType">
+        <entry value="-1" name="-1: Both Hands"/>
+        <entry value="0" name="0: Left Hand"/>
+        <entry value="1" name="1: Right Hand"/>
+      </s32>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+    </event>
+    <!-- For c0000 -->
+    <event id="35" name="EquipCrossbowBolt">
+      <s32 name="HandType">
+        <entry value="-1" name="-1: Both Hands"/>
+        <entry value="0" name="0: Left Hand"/>
+        <entry value="1" name="1: Right Hand"/>
+      </s32>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+    </event>
+    <!-- For c0000 -->
+    <event id="64" name="CastHighlightedMagic">
+      <s32 name="DummyPolyID"/>
+      <b name="Is???"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+    </event>
+    <!-- For c0000 -->
+    <event id="65" name="ConsumeCurrentGoods">
+      <s32 name="DummyPolyID"/>
+    </event>
+    <event id="66" name="AddSpEffect_Multiplayer">
+      <s32 name="SpEffectID"/>
+    </event>
+    <event id="67" name="AddSpEffect">
+      <s32 name="SpEffectID"/>
+    </event>
+    <event id="96" name="SpawnOneShotFFX">
+      <s32 name="FFXID"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+    </event>
+    <event id="99" name="SpawnFFX_99">
+      <s32 name="FFXID"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+    </event>
+    <event id="100" name="SpawnFFX_100">
+      <s32 name="FFXID"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+    </event>
+    <event id="101" name="SpawnFFX_General">
+      <s32 name="FFXID"/>
+    </event>
+    <event id="104" name="SpawnFFX_Unk104">
+      <s32 name="FFXID"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+    </event>
+    <event id="108" name="SpawnFFX_108">
+      <s32 name="FFXID"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+    </event>
+    <event id="109" name="SpawnFFX_109">
+      <s32 name="FFXID"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+    </event>
+    <event id="110" name="SpawnFFX_110">
+      <s32 name="FFXID"/>
+    </event>
+    <event id="112" name="SpawnFFX_ByFloor">
+      <s32 name="FFXID"/>
+      <s32 name="DummyPolyID"/>
+    </event>
+    <!-- Like 115 but this one can be spawned multiple times during anim -->
+    <event id="114" name="SpawnFFX_GoodsAndMagic">
+      <s32 name="FFXID"/>
+      <s16 name="DummyPolySource">
+        <entry value="0" name="0: Body"/>
+        <entry value="1" name="1: Left Weapon"/>
+        <entry value="2" name="2: Right Weapon"/>
+      </s16>
+      <s16 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+    </event>
+    <!-- Like 114, but this one can only be spawned once? -->
+    <event id="115" name="SpawnFFX_GoodsAndMagic2">
+      <s32 name="FFXID"/>
+      <s16 name="DummyPolySource">
+        <entry value="0" name="0: Body"/>
+        <entry value="1" name="1: Left Weapon"/>
+        <entry value="2" name="2: Right Weapon"/>
+      </s16>
+      <s16 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+    </event>
+    <event id="116" name="SpawnFFX_116">
+      <s32 name="FFXID_Plus_SomeShortFromMemory"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+    </event>
+    <event id="117" name="SpawnFFX_ThrowDirection">
+      <s32 name="ThrowDirectionSFXIndex"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+      <b name="IsIgnoreDummyPolyAngle"/>
+      <b name="IsFollowDummyPoly"/>
+      <b name="IsRestrictToDummyPoly"/>
+      <u8 name="ExtraSpawnCondition"/>
+    </event>
+    <event id="118" name="SpawnFFX_Blade">
+      <s32 name="FFXID"/>
+      <s16 name="DummyPolySource">
+        <entry value="0" name="0: Body"/>
+        <entry value="1" name="1: Left Weapon"/>
+        <entry value="2" name="2: Right Weapon"/>
+      </s16>
+      <s16 name="DummyPolyBladeBaseID"/>
+      <s16 name="DummyPolyBladeTipID"/>
+      <s16 name="SlotID"/>
+    </event>
+    <event id="119" name="SpawnFFX_Body_ForEventDuration">
+      <s32 name="FFXID"/>
+      <s16 name="DummyPolyID"/>
+      <s16/>
+      <s32 name="RepeatType">
+        <entry value="0" name="0: PlayOnce"/>
+        <entry value="1" name="1: PlayTwice"/>
+      </s32>
+    </event>
+    <event id="120" name="SpawnFFX_ChrType">
+      <s32 name="FFXID_MAIN"/>
+      <s32 name="FFXID_GreyGhost"/>
+      <s32 name="FFXID_WhiteGhost"/>
+      <s32 name="FFXID_BlackGhost"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+    </event>
+    <event id="121" name="SpawnFFX_121">
+      <s32 name="FFXID"/>
+      <s16 name="DummyPolyID"/>
+      <u8/>
+      <u8/>
+    </event>
+    <event id="128" name="PlaySound_CenterBody">
+      <s32 name="SoundType">
+        <entry value="0" name="0: (a) Environment"/>
+        <entry value="1" name="1: (c) Character"/>
+        <entry value="2" name="2: (f) Menu SE"/>
+        <entry value="3" name="3: (o) Object"/>
+        <entry value="4" name="4: (p) Cutscene SE"/>
+        <entry value="5" name="5: (s) SFX"/>
+        <entry value="6" name="6: (m) BGM"/>
+        <entry value="7" name="7: (v) Voice"/>
+        <entry value="8" name="8: (x) Floor Material Determined"/>
+        <entry value="9" name="9: (b) Armor Material Determined"/>
+        <entry value="10" name="10: (g) Ghost"/>
+      </s32>
+      <s32 name="SoundID"/>
+    </event>
+    <event id="129" name="PlaySound_ByStateInfo">
+      <s32 name="SoundType">
+        <entry value="0" name="0: (a) Environment"/>
+        <entry value="1" name="1: (c) Character"/>
+        <entry value="2" name="2: (f) Menu SE"/>
+        <entry value="3" name="3: (o) Object"/>
+        <entry value="4" name="4: (p) Cutscene SE"/>
+        <entry value="5" name="5: (s) SFX"/>
+        <entry value="6" name="6: (m) BGM"/>
+        <entry value="7" name="7: (v) Voice"/>
+        <entry value="8" name="8: (x) Floor Material Determined"/>
+        <entry value="9" name="9: (b) Armor Material Determined"/>
+        <entry value="10" name="10: (g) Ghost"/>
+      </s32>
+      <s32 name="SoundID"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+    </event>
+    <event id="130" name="PlaySound_ByDummyPoly_PlayerVoice">
+      <s32 name="SoundType">
+        <entry value="0" name="0: (a) Environment"/>
+        <entry value="1" name="1: (c) Character"/>
+        <entry value="2" name="2: (f) Menu SE"/>
+        <entry value="3" name="3: (o) Object"/>
+        <entry value="4" name="4: (p) Cutscene SE"/>
+        <entry value="5" name="5: (s) SFX"/>
+        <entry value="6" name="6: (m) BGM"/>
+        <entry value="7" name="7: (v) Voice"/>
+        <entry value="8" name="8: (x) Floor Material Determined"/>
+        <entry value="9" name="9: (b) Armor Material Determined"/>
+        <entry value="10" name="10: (g) Ghost"/>
+      </s32>
+      <s32 name="SoundID"/>
+      <s32 name="DummyPolyID"/>
+      <s32 name="SlotID"/>
+    </event>
+    <event id="144" name="InvokeRumbleCam_ByRange">
+      <s16 name="RumbleCamID"/>
+      <u16 name="DummyPolyID"/>
+      <f32 name="FalloffStart"/>
+      <f32 name="FalloffEnd"/>
+    </event>
+    <event id="145" name="InvokeRumbleCam_ByDummyPoly">
+      <s16 name="RumbleCamID"/>
+      <u16 name="Condition">
+        <entry value="0" name="0: Unconditional"/>
+        <entry value="1" name="1: OnGround"/>
+      </u16>
+    </event>
+    <event id="192" name="InvokeDebugFadeOut">
+      <f32 name="FadeOut"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+    </event>
+    <event id="193" name="SetOpacityKeyframe">
+      <f32 name="OpacityAtEventStart"/>
+      <f32 name="OpacityAtEventEnd"/>
+    </event>
+    <event id="224" name="SetTurnSpeed">
+      <f32 name="TurnSpeed"/>
+    </event>
+    <event id="225" name="SetSPRegenRatePercent">
+      <u8 name="RegenRatePercent"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+    </event>
+    <event id="226" name="SetKnockbackPercent">
+      <u8 name="KnockbackPercent"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+    </event>
+    <event id="227" name="InvokeEventEzStateFlag&lt;ESD_env301&gt;">
+      <s32 name="EzStateFlagID"/>
+    </event>
+    <event id="228" name="RagdollReviveTime">
+      <f32 name="ReviveTimerExtra"/>
+      <f32 name="ReviveTimer"/>
+    </event>
+    <event id="229" name="SpawnAISound">
+      <s32 name="AISoundID"/>
+    </event>
+    <event id="230" name="SetMPRegenRatePercent">
+      <u8 name="RegenRatePercent"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+    </event>
+    <event id="231" name="SendEzStateRequest">
+      <s32 name="EzStateRequestID"/>
+    </event>
+    <event id="232" name="AllowVerticalTorsoAim">
+      <u8 name="UpwardAngleLimit"/>
+      <u8 name="DownwardAngleLimit"/>
+      <u8 name="UpwardAngleThreshold"/>
+      <u8 name="DownwardAngleThreshold"/>
+    </event>
+    <!-- RTTI: ChrPrimDispMask -->
+    <event id="233" name="ChangeChrDrawMask">
+      <u8 name="Mask1"/>
+      <u8 name="Mask2"/>
+      <u8 name="Mask3"/>
+      <u8 name="Mask4"/>
+      <u8 name="Mask5"/>
+      <u8 name="Mask6"/>
+      <u8 name="Mask7"/>
+      <u8 name="Mask8"/>
+    </event>
+    <!-- Havok? -->
+    <event id="234" name="AddOffsetToNextAnimID">
+      <s32 name="Offset"/>
+    </event>
+    <!-- RTTI: ChrPrimDispMask -->
+    <event id="235">
+      <b name="Mask1"/>
+      <b name="Mask2"/>
+      <b name="Mask3"/>
+      <b name="Mask4"/>
+      <b name="Mask5"/>
+      <b name="Mask6"/>
+      <b name="Mask7"/>
+      <b name="Mask8"/>
+    </event>
+    <event id="236" name="RootMotionReduction">
+      <f32 name="ReductionAtEventStart"/>
+      <f32 name="ReductionAtEventEnd"/>
+      <u8 name="ReductionType"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+    </event>
+    <event id="300" name="ActivateJumpTableEarly">
+      <s16 name="JumpTableID_ToActivateEarly"/>
+      <s16 name="JumpTable2ID_ToJudgeHowEarly">
+        <entry value="0"   name="0: Default"/>
+        <entry value="1"   name="1: Equip Load"/>
+        <entry value="2"   name="2: Weapon Weight Rate"/>
+        <entry value="3"   name="3: Compressed Damage Rate?"/>
+        <entry value="4"   name="4: Always As Early As Possible"/>
+        <entry value="5"   name="5: Dexterity Casting Speed"/>
+        <entry value="6"   name="6: Debug TAE Value"/>
+      </s16>
+      <f32 name="Parameter1"/>
+      <f32 name="Parameter2"/>
+      <s16/>
+      <s16 name="StateInfo"/>
+    </event>
+    <event id="301" name="Event301">
+      <s32/>
+    </event>
+    <event id="302" name="AddSpEffect_DragonForm">
+      <s32 name="SpEffectID"/>
+    </event>
+    <event id="303" name="PlayAnimation">
+      <s32 name="AnimID"/>
+    </event>
+    <event id="304" name="InvokeThrowDamageBehavior">
+      <u8/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+      <s32 name="BehaviorJudgeID"/>
+    </event>
+    <event id="307" name="InvokePCBehavior">
+      <u16/>
+      <u16/>
+      <s32 name="PCBehaviorType"/>
+      <s32 name="BehaviorJudgeID"/>
+    </event>
+    <!-- RTTI : ArrowTurnAnim-->
+    <event id="308">
+      <f32/>
+    </event>
+    <event id="401" name="AddSpEffect_Multiplayer_401">
+      <s32 name="SpEffectID"/>
+    </event>
+    <!-- Different From DS3? -->
+    <event id="500">
+      <u8/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+      <u8 assert="0"/>
+    </event>
+  </bank>
+</event_template>

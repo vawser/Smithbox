@@ -63,6 +63,9 @@ public class TimeActDecorator
 
     public void DisplayEnumInfo(TAE.Event entry)
     {
+        if (entry.Parameters == null)
+            return;
+
         Vector4 displayColor = CFG.Current.ImGui_TimeAct_InfoText_1_Color;
         bool foundAlias = false;
         var alias = "";
@@ -97,6 +100,9 @@ public class TimeActDecorator
 
     public void DisplayParamRefInfo(TAE.Event entry)
     {
+        if (entry.Parameters == null)
+            return;
+
         Vector4 displayColor = CFG.Current.ImGui_TimeAct_InfoText_2_Color;
         bool foundAlias = false;
         var alias = "";
@@ -131,6 +137,9 @@ public class TimeActDecorator
 
     public void DisplayAliasEnumInfo(TAE.Event entry)
     {
+        if (entry.Parameters == null)
+            return;
+
         Vector4 displayColor = CFG.Current.ImGui_TimeAct_InfoText_3_Color;
         bool foundAlias = false;
         var alias = "";
@@ -192,6 +201,9 @@ public class TimeActDecorator
 
     public void DisplayProjectEnumInfo(TAE.Event entry)
     {
+        if (entry.Parameters == null)
+            return;
+
         var bank = Smithbox.BankHandler.ProjectEnums;
 
         if (bank == null)

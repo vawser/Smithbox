@@ -123,12 +123,34 @@ public static class TimeActUtils
         return displayName;
     }
 
-    public static void ApplyTemplate(TAE entry)
+    public enum TemplateType
+    {
+        Character,
+        Object,
+        Cutscene
+    }
+
+    public static void ApplyTemplate(TAE entry, TemplateType type)
     {
         switch (Smithbox.ProjectType)
         {
+            case ProjectType.DES:
+                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DES"]);
+                break;
             case ProjectType.DS1:
-                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS1"]);
+            case ProjectType.DS1R:
+                if (type is TemplateType.Character)
+                {
+                    entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS1"]);
+                }
+                else if (type is TemplateType.Object)
+                {
+                    entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS1.OBJ"]);
+                }
+                else if (type is TemplateType.Cutscene)
+                {
+                    entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS1.REMO"]);
+                }
                 break;
             case ProjectType.DS2:
             case ProjectType.DS2S:

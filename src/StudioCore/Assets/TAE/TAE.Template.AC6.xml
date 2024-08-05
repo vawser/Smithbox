@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <event_template game="SDT">
-  <bank id="35" name="Characters_ER">
+  <bank id="56" name="Characters_AC6">
     <event id="0" name="Jump Table">
       <s32 name="Jump Table ID">
         <entry value="0"    name="Do Nothing"/>
@@ -131,6 +131,12 @@
       <u8 name="Arg C"/>
       <u8 name="Arg D"/>
       <s16 name="State Info" projectEnum="SP_EFFECT_TYPE"/>
+      <f32 />
+      <f32 />
+      <f32 />
+      <f32 />
+      <s32 assert="0" />
+      <s32 assert="0" />
     </event>
     <event id="1" name="Attack Behavior">
       <s32 name="Attack Type">
@@ -159,6 +165,10 @@
         <entry value="2" name="Force Left Hand"/>
       </u8>
       <s16 name="State Info" projectEnum="SP_EFFECT_TYPE"/>
+      <s32 assert="0" />
+      <s32 assert="0" />
+      <s32 assert="0" />
+      <s32 assert="0" />
     </event>
     <event id="2" name="Bullet Behavior">
       <s32 name="Dummy Poly ID"/>
@@ -179,8 +189,10 @@
       <s16 name="State Info" projectEnum="SP_EFFECT_TYPE"/>
       <s16 name="Offset"/>
       <u8/>
-      <u8/>
-      <s32 assert="0"/>
+      <b/>
+      <s32 />
+      <s32 assert="0" />
+      <s32 assert="0" />
     </event>
     <event id="5" name="Common Behavior">
       <s32 name="Attack Index">
@@ -197,6 +209,22 @@
       <s32 name="Behavior Judge ID"/>
       <s32 assert="0"/>
       <s32 assert="0"/>
+    </event>
+    <event id="8" name="Bullet List">
+      <s32 name="Attack Index">
+        <entry value="0" name="0"/>
+        <entry value="1" name="1"/>
+        <entry value="2" name="2"/>
+        <entry value="3" name="3"/>
+        <entry value="4" name="4"/>
+        <entry value="5" name="5"/>
+        <entry value="6" name="6"/>
+        <entry value="7" name="7"/>
+        <entry value="8" name="8"/>
+      </s32>
+      <s32 name="Behavior Judge ID" />
+      <s32 />
+      <s32 />
     </event>
     <event id="14" Name="Event 14">
       <u8/>
@@ -218,6 +246,36 @@
       <s32 assert="0"/>
       <s32 assert="0"/>
     </event>
+    <event id="18" name="Event 18">
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="19" name="Event 19">
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="20" name="Event 20">
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="21" name="Event 21">
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="23" name="Event 23">
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+    </event>
     <event id="24" name="Queue Transition Animation [Obsolete]">
       <s32 name="Playback Type">
         <entry value="0" name="Wait For Anim End"/>
@@ -227,6 +285,18 @@
       <s32 name="Destination Anim ID"/>
       <s32 name="Transition Anim ID"/>
       <s32/>
+    </event>
+    <event id="26" name="Event 26">
+        <s32 />
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="29" name="Event 29">
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
     </event>
     <event id="32" name="Set Weapon Style">
       <s32 name="Weapon Style">
@@ -304,10 +374,28 @@
     <event id="66" name="Add SpEffect - Multiplayer">
       <s32 name="SpEffect ID" ref="SpEffectParam"/>
       <s32 assert="0"/>
+      <s32 assert="0" />
+      <s32 assert="0" />
     </event>
     <event id="67" name="Add SpEffect">
       <s32 name="SpEffect ID" ref="SpEffectParam"/>
       <s32 assert="0"/>
+    </event>
+    <event id="80" name="Event 80">
+        <s32 />
+        <f32 />
+        <s32 />
+        <s32 />
+    </event>
+    <event id="81" name="Event 81">
+        <s32 />
+        <f32 />
+        <s32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
     </event>
     <event id="95" name="Spawn One Shot FFX: Ember">
       <s32 name="FFX ID" aliasEnum="Particle"/>
@@ -330,8 +418,11 @@
       <b name="Restrict to Dummy Poly"/>
       <u8 name="Additional Spawn Condition"/>
       <s16 name="State Info" projectEnum="SP_EFFECT_TYPE"/>
-      <s16 assert="0"/>
-      <s32 assert="0"/>
+      <s16 />
+      <s32 />
+      <u16 />
+      <s16 />
+      <f32 />
     </event>
     <event id="104" name="Spawn FFX [104]">
       <s32 name="FFX ID" aliasEnum="Particle"/>
@@ -352,6 +443,12 @@
       <s16/>
       <s32/>
       <s32 assert="0"/>
+    </event>
+    <event id="113" name="Event 113">
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
     </event>
     <event id="114" name="Spawn FFX [Goods and Magic]">
       <s32 name="FFX ID (Deprecated)" aliasEnum="Particle"/>
@@ -557,23 +654,20 @@
       <s32 name="Dummy Poly ID"/>
       <s32 name="Slot ID"/>
       <s16 name="State Info" projectEnum="SP_EFFECT_TYPE"/>
-      <u8 name="Playback Behavior Type">
-        <entry value="0" name="Play Until Sound Ends"/>
-        <entry value="1" name="Play Until Event Ends Then Cutoff"/>
-        <entry value="2" name="Unknown - Used on Torrent Double Jump"/>
+      <s16 />
+      <s32 />
+      <s32 />
+      <s32 />
+      <u16 assert="0" />
+      <u8 name="PlaybackBehaviorType">
+          <entry name="0: Play Until Sound Ends" value="0" />
+          <entry name="1: Play Until Event Ends Then Cutoff" value="1" />
+          <entry name="2: Unknown - Used on Torrent Double Jump" value="2" />
       </u8>
-      <u8/>
-      <s32/>
-      <s32/>
-      <s8 name="Sound ID Offset Type">
-        <entry name="No Offset" value="-1"/>
-        <entry name="Unknown 0" value="0"/>
-        <entry name="Unknown 1" value="1"/>
-        <entry name="EquipParamWeapon - seIdOffset" value="2"/>
-      </s8>
-      <u8 assert="0"/>
-      <u8 assert="0"/>
-      <u8 assert="0"/>
+      <u8 />
+      <u32 assert="0" />
+      <u32 assert="0" />
+      <u32 assert="0" />
     </event>
     <event id="132" name="Play Sound - Weapon [Wwise]">
       <s32 name="Sound Type">
@@ -683,6 +777,13 @@
       <s16/>
       <s16 assert="0"/>
     </event>
+    <event id="146" name="Pad Rumble">
+        <s32 name="Pad Rumble ID" />
+        <s16 />
+        <s16 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
     <event id="150" name="Set Lock-cam Param">
       <s32 name="Lock-cam Param ID" ref="LockCamParam"/>
       <s32 assert="0"/>
@@ -723,6 +824,22 @@
       <u8 assert="0"/>
       <u8 assert="0"/>
     </event>
+    <event id="154" name="Event 154">
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="155" name="Event 155">
+        <f32 />
+        <s32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <s32 />
+        <f32 />
+    </event>
     <event id="160" name="Sekiro Code 4">
       <s32 assert="0"/>
       <s32 assert="0"/>
@@ -734,6 +851,42 @@
       <s32 assert="0"/>
       <s32 assert="0"/>
       <s32 assert="0"/>
+    </event>
+    <event id="164" name="Event 164">
+        <f32 />
+        <f32 />
+        <f32 />
+        <s32 />
+        <s32 />
+        <f32 />
+        <f32 />
+        <s32 />
+    </event>
+    <event id="169" name="Event 169">
+        <f32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <f32 />
+        <f32 />
+        <s32 />
+        <s32 />
+    </event>
+    <event id="171" name="Event 171">
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+    </event>
+    <event id="173" name="Event 173">
+        <f32 />
+        <s32 />
+        <s32 />
+        <s32 />
+    </event>
+    <event id="181" name="Event 181">
+        <f32 />
+        <s32 assert="0" />
     </event>
     <event id="192" name="Debug Fade Out">
       <f32 name="Fade Out"/>
@@ -788,18 +941,68 @@
       <s32/>
     </event>
     <event id="199" name="Adjust Material Param">
-      <s16/>
-      <u16 assert="0"/>
-      <s32 name="MaterialExParam ID" ref="MaterialEx"/>
-      <s32 assert="0"/>
-      <s32 assert="0"/>
+        <s16 />
+        <u16 />
+        <s32 name="MaterialExParam ID" ref="MaterialEx" />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <s32 />
+        <s32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <s16 />
+        <s16 />
+        <s32 />
     </event>
     <event id="200" name="Material Param Modifier">
-      <s16/>
-      <u16 assert="0"/>
-      <s32 name="MaterialExParam ID" ref="MaterialEx"/>
-      <s32 assert="0"/>
-      <s32 assert="0"/>
+        <s16 />
+        <u16 />
+        <s32 name="MaterialParamEx ID" ref="MaterialEx"/>
+        <f32 />
+        <f32 />
+        <f32 />
+        <s32 />
+        <s32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <s32 />
+        <s32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <s32 />
+        <s32 />
+        <f32 />
+        <f32 />
+        <s16 />
+        <s16 />
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="201" name="Event 201">
+        <s32 />
+        <f32 />
+        <f32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="223" name="Event 223">
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
     </event>
     <event id="224" name="Set Turn Speed">
       <f32 name="Turn Speed"/>
@@ -807,6 +1010,8 @@
       <u8 name="Unknown Argument"/>
       <u8 assert="0"/>
       <u8 assert="0"/>
+      <f32 />
+      <s32 assert="0" />
     </event>
     <event id="225" name="Set Stamina Regeneration Percentage">
       <u8 name="Regeneration Percentage"/>
@@ -906,7 +1111,7 @@
       <u8 name="Mask 31"/>
       <u8 name="Mask 32"/>
     </event>
-    <event id="234" name="Havok - Add Offset to Next Anim ID">
+    <event id="234" name="Havok - Add Offset to Next Anim ID [Obsolete]">
       <s32 name="Offset"/>
       <s32 assert="0"/>
       <s32 assert="0"/>
@@ -964,6 +1169,32 @@
       <s32 />
       <s32 />
       <s32 />
+    </event>
+    <event id="243" name="Event 243">
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="245" name="Event 245">
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="250" name="Event 250">
+        <f32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
     </event>
     <event id="300" name="Activate Jump Table Early">
       <s16 name="Jump Table ID - Early Activation">
@@ -1114,16 +1345,18 @@
       <s32 assert="0"/>
       <s32 assert="0"/>
     </event>
-    <event id="303" name="Play Animation">
-      <s32 name="Stay Anim Type"/>
-      <s32 assert="0"/>
-      <s32 assert="0"/>
-      <s32 assert="0"/>
-    </event>
+    <action id="303" name="Set Animation Overlay">
+        <s32 name="Animation Type" />
+        <s32 name="Animation ID" />
+        <f32grad name="Animation Weight" />
+        <s32 />
+        <f32 />
+        <f32 />
+        <s32 />
+    </action>
     <event id="304" name="Throw Damage Behavior">
       <u16/>
-      <u8/>
-      <u8/>
+      <s16 name="Index"/>
       <s32 name="Behavior Judge ID"/>
       <s32 assert="0"/>
       <s32 assert="0"/>
@@ -1134,6 +1367,8 @@
       <s32 name="PC Behavior Type"/>
       <s32 name="Behavior Judge ID"/>
       <s32 assert="0"/>
+      <s32 assert="0" />
+      <s32 assert="0" />
     </event>
     <event id="310" name="Character Cloth State">
       <u8/>
@@ -1185,6 +1420,39 @@
       <b name="Mask 31"/>
       <b name="Mask 32"/>
     </event>
+    <event id="313" name="Event 313">
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <s32 />
+        <s32 />
+    </event>
+    <event id="315" name="Event 315">
+        <u8 />
+        <u8 />
+        <u8 />
+        <u8 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+    </event>
+    <event id="316" name="Event 316">
+        <s32 />
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
     <event id="320" name="Player Input Check">
       <b name="Enable Act: R1 / R2 / Light Kick / Heavy Kick"/>
       <b name="Enable Act: L1 / L2"/>
@@ -1196,6 +1464,22 @@
       <u8 assert="0"/>
       <s32 assert="0"/>
       <s32 assert="0"/>
+    </event>
+    <event id="322" name="Event 322">
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="323" name="Event 323">
+        <s32 />
+        <f32 />
+        <f32 />
+        <s32 />
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
     </event>
     <event id="330" name="Weapon Art FP Consumption">
       <s32 assert="0"/>
@@ -1319,7 +1603,6 @@
       <s32 assert="0"/>
     </event>
     <event id="601" name="Set Additive Animation">
-      <!-- 0 - 10 -->
       <s32 name="Animation Type">
         <entry name="Type 0" value="0"/>
         <entry name="Type 1" value="1"/>
@@ -1428,6 +1711,9 @@
       <f32 name="Down Minimum Angle"/>
       <f32 name="Right Minimum Angle"/>
       <f32 name="Left Minimum Angle"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
+      <s32 assert="0"/>
     </event>
     <event id="702" name="Behavior Data [702]">
       <f32/>
@@ -1643,7 +1929,9 @@
       <u8 assert="0"/>
       <u8 assert="0"/>
       <u8 assert="0"/>
-      <s32 assert="0"/>
+      <s32 assert="0" />
+      <s32 assert="0" />
+      <s32 assert="0" />
     </event>
     <event id="715" name="Override Weapon Absorption Position">
       <u8 name="Weapon Model Type">
@@ -1682,6 +1970,63 @@
       <s32 assert="0"/>
       <s32 assert="0"/>
     </event>
+    <event id="721" name="Event 721">
+        <f32 />
+        <f32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="723" name="Event 723">
+        <s32 />
+        <s32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <s32 />
+        <f32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="725" name="Event 725">
+        <s8 />
+        <s8 />
+        <s8 />
+        <s8 />
+        <s32 name="Dummy Poly ID" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="728" name="Event 728">
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+        <f32 />
+        <f32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="729" name="Event 729">
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
     <event id="730" name="Action Flag [730]">
       <f32/>
       <f32/>
@@ -1692,6 +2037,16 @@
       <s32 assert="0"/>
       <s32 assert="0"/>
     </event>
+    <action id="732" name="Blade Homing">
+        <s32 name="Blade Homing Ang Speed Param" ref="BladeHomingangSpeedParam" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </action>
     <event id="740" name="Event 740">
       <s32 assert="0"/>
       <s32 assert="0"/>
@@ -1708,12 +2063,20 @@
       <f32 name="Enable Range Maximum"/>
       <f32 name="Arrive Angle from Target"/>
       <f32 name="Arrive Dist from Target"/>
+        <s32 assert="0" />
+        <s32 assert="0" />
     </event>
     <event id="761" name="AI Module [761]">
       <s32 assert="0"/>
       <s32 assert="0"/>
       <s32 assert="0"/>
       <s32 assert="0"/>
+    </event>
+    <event id="767" name="Event 767">
+        <f32 />
+        <f32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
     </event>
     <event id="770" name="Action Flag - Change Bone Position [770]">
       <s32/>
@@ -1733,6 +2096,47 @@
       <s32 assert="0"/>
       <s32 assert="0"/>
     </event>
+    <event id="772" name="Event 772">
+        <s32 />
+        <f32 />
+        <f32 />
+        <f32 />
+    </event>
+    <event id="773" name="Event 773">
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="774" name="Event 774">
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="776" name="Event 776">
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <f32 />
+        <u8 />
+        <u8 />
+        <u8 />
+        <u8 />
+        <f32 />
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="779" name="Event 779">
+        <u32 />
+        <u32 />
+        <u32 />
+        <u32 />
+    </event>
     <event id="781" name="Turn Lower Body">
       <u8 name="Turn State"/>
       <u8 assert="0"/>
@@ -1748,6 +2152,18 @@
       <s32 assert="0"/>
       <s32 assert="0"/>
     </event>
+    <event id="783" name="Event 783">
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="784" name="Event 784">
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
     <event id="785" name="Spawn Character Finder Bullet">
       <f32 name="Detection Range"/>
       <s32 name="Dummy Poly ID"/>
@@ -1756,6 +2172,11 @@
       <u8 name="Target Number"/>
       <u8 assert="0"/>
       <u8 assert="0"/>
+    </event>
+    <event id="786" name="Event 786">
+        <f32grad />
+        <s32 assert="0" />
+        <s32 assert="0" />
     </event>
     <event id="787" name="Action Flag [787]">
       <f32/>
@@ -1871,8 +2292,8 @@
     </event>
     <event id="908" name="Behavior Data [908]">
       <f32 name="Unknown 1"/>
-      <f32 name="Unknown2"/>
-      <f32 name="Unknown3"/>
+      <f32 name="Unknown 2"/>
+      <f32 name="Unknown 3"/>
       <s32 assert="0"/>
     </event>
     <event id="910" name="Event 910">
@@ -1887,11 +2308,65 @@
       <s32 assert="0"/>
       <s32 assert="0"/>
     </event>
-    <event id="10096" name="Invoke SFX">
-      <s32/>
-      <s32/>
-      <s32/>
-      <s32 />
+    
+    <event id="8060" name="Event 8060">
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="8120" name="Event 8120">
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+    </event>
+    <event id="8600" name="Event 8600">
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="8903" name="Event 8903">
+        <s32 />
+        <f32 />
+        <f32 />
+        <s32 />
+    </event>
+    <event id="9003" name="Event 9003">
+        <f32 />
+        <s32 />
+        <s32 />
+        <s32 />
+    </event>
+    <event id="9700" name="World Timescale">
+        <f32grad />
+        <s32 />
+        <s32 />
+    </event>
+    <event id="9720" name="Fancy Lock-cam">
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="9801" name="Event 9801">
+        <s32 />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
+    <event id="9900" name="Event 990">
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
+    </event>
+    <event id="10096" name="SFX">
+        <s32 />
+        <s32 />
+        <s32 />
+        <s32 />
     </event>
     <event id="10130" name="Play Sound - Wander Ghost [Obsolete]">
       <s32/>
@@ -1911,46 +2386,13 @@
       <s32 />
       <s32 />
     </event>
-    <event id="113" name="Unknown [113]">
-      <s32 assert="0"/>
-      <s32 assert="0"/>
+    <event id="10200" name="Event 10200">
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
+        <s32 assert="0" />
     </event>
   </bank>
-
-  <bank id="29" name="Characters_ER_Alt_29" basedon="35">
-
-  </bank>
-
-  <bank id="31" name="Characters_ER_Alt_31" basedon="35">
-
-  </bank>
-
-  <bank id="33" name="Characters_ER_Alt_33" basedon="35">
-
-  </bank>
-
-  <bank id="36" name="Characters_ER_Alt_36" basedon="35">
-
-  </bank>
-
-  <bank id="26" name="Characters_ER_Alt_26" basedon="35">
-
-  </bank>
-
-  <bank id="34" name="Characters_ER_Alt_34" basedon="35">
-
-  </bank>
-  
-  <bank id="37" name="Characters_ER_New_37" basedon="35">
-    <event id="155" name="Unknown [155]">
-      <s32/>
-      <s32/>
-      <s32/>
-      <s32/>
-    </event>
-  </bank>
-
-
 
 </event_template>
 

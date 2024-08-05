@@ -608,11 +608,11 @@
 9020 Unknown - Allow Invasion
 9100 Spear of the Chuch - Allow Invasion
 9120 Item Ban
-9135 HKS - Minimal Stagger
-9136 HKS - Stagger
-9137 HKS - Stumble Back
-9138 HKS - Heavy Stagger and Stumble
-9139 HKS - Knockback to Ground
+9135 [HKS] Minimal Stagger
+9136 [HKS] Stagger
+9137 [HKS] Stumble Back
+9138 [HKS] Heavy Stagger and Stumble
+9139 [HKS] Knockback to Ground
 9190 Goods Use Animation
 9200 Invasion occurring 
 9201 Intrusion Outbreak & Intrusion Stop State 
@@ -1753,90 +1753,90 @@
 99600 Test for time measurement until the pseudo-death resurrection 
 99700 Team Type Change test 
 99800 Tae-eventmaker Collaboration Test 
-100000 HKS - Anim - Walking
-100001 HKS - Anim - Running
-100002 HKS - Anim - Sprinting
-100005 HKS - Anim - Stop Walking
-100006 HKS - Anim - Stop Running
-100007 HKS - Anim - Stop Sprinting
-100010 HKS - Anim - Turning
-100020 HKS - Player stamina out of judgment
-100030 HKS - upper body Anime End transition judgement
-100040 HKS - Lower body anime End transition judgement
-100050 HKS - Rotation attack transition available for specified period
-100060 HKS - HKS - Heavy attack for back-step Prohibition in motion
-100070 HKS - For the fall transition judging of jump animation
-100080 HKS - For judgment of wall collision during throwing
-100090 HKS - For determining the timing of the possible interruption of the reservoir attack
-100100 HKS - For determining death timing for wall collisions
-100110 HKS - Bonfire Event Issue Timing determination
-100120 HKS - Guard reversal Possible timing determination
-100130 HKS - Moving right
-100140 HKS - Moving right diagonal
-100150 HKS - Moving left
-100160 HKS - Moving left diagonal
-100170 HKS - For determination of 180 degree turning in dash
-100180 HKS - For no dash judgment
-100190 HKS - For the driving and dash no judgment
-100200 HKS - For non-moving judgment
-100210 HKS - Left-hand attack transition timing
-100220 HKS - Continue to dash even if dash input is missing
-100230 HKS - Make a default attack instead of a combo attack
-100240 HKS - No Turn whilst Rolling
-100250 HKS - The second stage of attack can be derived or determined
-100260 HKS - The second stage of the rush attack can be derived or determined
-100270 HKS - Can rise and roll
-100280 HKS - Crucifix of the Mad King
-100290 HKS - Blank
-100300 HKS - Blank
-100310 HKS - Falling
-100320 HKS - Blank
-100330 HKS - Repeating Crossbow
-100340 HKS - Crossbow
-100350 HKS - Shield Bash
-100360 HKS - Rolling
-100370 HKS - Rolling
-100380 HKS - Blank
-100390 HKS - Rolling
-100400 HKS - Slide
-100410 HKS -
-100420 HKS - Dragonhead Greatshield
-100430 HKS -
-100440 HKS -
-100450 HKS -
-100460 HKS -
-100470 HKS -
-100480 HKS -
-100490 HKS - Non-generator Transition - Friede's Great Scythe
-100500 HKS - Non-generator Transition
-100510 HKS - Guard
-100520 HKS - Guard Break
-100530 HKS -
-100540 HKS -
-100550 HKS -
-100560 HKS - Anim - Item Usage
-100570 HKS - Harald Curved Greatsword
-100580 HKS - Demon's Scar
-100590 HKS - Harald Curved Greatsword
-100591 HKS - Kirk
-100595 HKS - Ivory King UGS - WA Heavy - Follow-up
-100600 HKS -
-100610 HKS -
-100620 HKS - Cast Magic
-100630 HKS - Cast Magic
-100640 HKS - Cast Magic
-100650 HKS - Cast Magic
-100660 HKS - Cast Magic
-100670 HKS - Cast Magic
-100680 HKS - Frayed Blade
-100690 HKS - Guard
-100700 HKS - Guard
-100710 HKS - SubStart 2 Transition
-100711 HKS - SubStart 2  into End
-100712 HKS - SubStart 2  into Start
-100713 HKS - SubStart 1  into End
-100714 HKS - SubStart 1  into Start
-100715 HKS - SubStart 1 Transition
+100000 [HKS] Anim - Walking
+100001 [HKS] Anim - Running
+100002 [HKS] Anim - Sprinting
+100005 [HKS] Anim - Stop Walking
+100006 [HKS] Anim - Stop Running
+100007 [HKS] Anim - Stop Sprinting
+100010 [HKS] Anim - Turning
+100020 [HKS] Player stamina out of judgment
+100030 [HKS] upper body Anime End transition judgement
+100040 [HKS] Lower body anime End transition judgement
+100050 [HKS] Rotation attack transition available for specified period
+100060 [HKS] [HKS] Heavy attack for back-step Prohibition in motion
+100070 [HKS] For the fall transition judging of jump animation
+100080 [HKS] For judgment of wall collision during throwing
+100090 [HKS] For determining the timing of the possible interruption of the reservoir attack
+100100 [HKS] For determining death timing for wall collisions
+100110 [HKS] Bonfire Event Issue Timing determination
+100120 [HKS] Guard reversal Possible timing determination
+100130 [HKS] Moving right
+100140 [HKS] Moving right diagonal
+100150 [HKS] Moving left
+100160 [HKS] Moving left diagonal
+100170 [HKS] For determination of 180 degree turning in dash
+100180 [HKS] For no dash judgment
+100190 [HKS] For the driving and dash no judgment
+100200 [HKS] For non-moving judgment
+100210 [HKS] Left-hand attack transition timing
+100220 [HKS] Continue to dash even if dash input is missing
+100230 [HKS] Make a default attack instead of a combo attack
+100240 [HKS] No Turn whilst Rolling
+100250 [HKS] Draw Stance Heavy Combo
+100260 [HKS] The second stage of the rush attack can be derived or determined
+100270 [HKS] Can rise and roll
+100280 [HKS] Is Charging Heavy Attack
+100290 [HKS] Unk Attack Right Special
+100300 [HKS] Blank
+100310 [HKS] Falling
+100320 [HKS] Blank
+100330 [HKS] Repeating Crossbow
+100340 [HKS] Crossbow
+100350 [HKS] Shield Bash
+100360 [HKS] Rolling
+100370 [HKS] Rolling
+100380 [HKS] Blank
+100390 [HKS] Rolling
+100400 [HKS] Slide
+100410 [HKS] Guard On
+100420 [HKS] Dragonhead Greatshield
+100430 [HKS]
+100440 [HKS]
+100450 [HKS]
+100460 [HKS]
+100470 [HKS]
+100480 [HKS]
+100490 [HKS] Non-generator Transition - Friede's Great Scythe
+100500 [HKS] Non-generator Transition
+100510 [HKS] Guard
+100520 [HKS] Guard Break
+100530 [HKS]
+100540 [HKS]
+100550 [HKS]
+100560 [HKS] Anim - Item Usage
+100570 [HKS] Harald Curved Greatsword
+100580 [HKS] Demon's Scar
+100590 [HKS] Harald Curved Greatsword
+100591 [HKS] Kirk
+100595 [HKS] Ivory King UGS - WA Heavy - Follow-up
+100600 [HKS]
+100610 [HKS]
+100620 [HKS] Cast Magic
+100630 [HKS] Cast Magic
+100640 [HKS] Cast Magic
+100650 [HKS] Cast Magic
+100660 [HKS] Cast Magic
+100670 [HKS] Cast Magic
+100680 [HKS] Frayed Blade
+100690 [HKS] Guard
+100700 [HKS] Guard
+100710 [HKS] SubStart 2 Transition
+100711 [HKS] SubStart 2  into End
+100712 [HKS] SubStart 2  into Start
+100713 [HKS] SubStart 1  into End
+100714 [HKS] SubStart 1  into Start
+100715 [HKS] SubStart 1 Transition
 120000 Weapon Art - Axe: War cry
 120010 Weapon Art - Axe: War cry Lack of FP
 120020 Weapon Art - Axe: War cry - Shockwave Lack of FP

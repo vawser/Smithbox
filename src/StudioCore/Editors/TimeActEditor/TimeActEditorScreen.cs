@@ -132,7 +132,7 @@ public class TimeActEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TimeActEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Smithbox.ProjectType is not ProjectType.ER)
+        if (Smithbox.ProjectType is ProjectType.Undefined or ProjectType.DS2 or ProjectType.DS2S)
         {
             ImGui.Begin("Editor##InvalidTaeEditor");
 
@@ -162,7 +162,7 @@ public class TimeActEditorScreen : EditorScreen
                     TimeActContainerFileView();
                 }
 
-                if(CFG.Current.Interface_TimeActEditor_TimeActList)
+                if (CFG.Current.Interface_TimeActEditor_TimeActList)
                 {
                     TimeActInternalFileView();
                 }
@@ -761,6 +761,8 @@ public class TimeActEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
+        SelectionHandler.OnProjectChanged();
+
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             ToolWindow.OnProjectChanged();

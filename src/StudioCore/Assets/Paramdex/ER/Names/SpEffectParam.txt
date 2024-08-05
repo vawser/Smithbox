@@ -7972,19 +7972,19 @@
 295231 
 295232 
 295233 
-295900 [Spirit Summon]
-295901 [Spirit Summon]
-295902 [Spirit Summon]
-295910 [Spirit Summon]
-296000 [Spirit Summon] Damage/Absorption Setup
-296010 [Spirit Summon] Damage/Absorption Setup
-296011 [Spirit Summon] Damage/Absorption Setup
-296106 [Spirit Summon] Damage/Absorption Setup
-296110 [Spirit Summon] Damage/Absorption Setup
-296117 [Spirit Summon] Damage/Absorption Setup
-296122 [Spirit Summon] Damage/Absorption Setup
-296156 [Spirit Summon] Damage/Absorption Setup
-296159 [Spirit Summon] Damage/Absorption Setup
+295900 [Spirit Summon] Clayman Corpse Hider 1
+295901 [Spirit Summon] Clayman Corpse Hider 2
+295902 [Spirit Summon] Clayman Corpse Hider 3
+295910 [Spirit Summon] Haligtree Foot Soldier Kamikazi VFX
+296000 [Spirit Summon] -75% Damage, +50% Absorption, -95% Poise Damage
+296010 [Spirit Summon] -50% Target Priority
+296011 [Spirit Summon] -25% Target Priority
+296106 [Spirit Summon] +10% Lightning Damage (PvP), +10% Fire Damage (PvE)
+296110 [Spirit Summon] +25% Damage, 0 Seconds
+296117 [Spirit Summon] -25% Damage 
+296122 [Spirit Summon] -30% Damage
+296156 [Spirit Summon] +75% Damage, 0 Seconds
+296159 [Spirit Summon] +25% Damage
 297000 [Spirit Summon] Follow & Warp to Player
 297100 [Spirit Summon] PLAN_SP_EFFECT_BUDDY_WALK_FOLLOW
 297101 [Spirit Summon] PLAN_SP_EFFECT_BUDDY_REAR_FOLLOW

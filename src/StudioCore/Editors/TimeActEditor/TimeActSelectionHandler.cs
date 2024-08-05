@@ -1,4 +1,5 @@
-﻿using HKLib.hk2018.hkHashMapDetail;
+﻿using HKLib.hk2018.hkAsyncThreadPool;
+using HKLib.hk2018.hkHashMapDetail;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.HavokEditor;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static SoulsFormats.DRB;
 using static StudioCore.Editors.TimeActEditor.AnimationBank;
+using static StudioCore.Editors.TimeActEditor.TimeActUtils;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -44,6 +46,8 @@ public class TimeActSelectionHandler
 
     public ContextMenu ContextMenu;
 
+    public TemplateType CurrentTimeActType = TemplateType.Character;
+
     public TimeActSelectionHandler(ActionManager editorActionManager, TimeActEditorScreen screen)
     {
         EditorActionManager = editorActionManager;
@@ -54,6 +58,30 @@ public class TimeActSelectionHandler
         TimeActEventMultiselect = new();
 
         ContextMenu = new(screen, this);
+    }
+
+    public void OnProjectChanged()
+    {
+        ContainerIndex = -1;
+        ContainerKey = null;
+        ContainerInfo = null;
+        ContainerBinder = null;
+
+        CurrentTimeActKey = -1;
+        CurrentTimeAct = null;
+
+        CurrentTimeActAnimation = null;
+        CurrentTimeActAnimationIndex = -1;
+
+        CurrentTimeActEvent = null;
+        CurrentTimeActEventIndex = -1;
+
+        CurrentTimeActEventProperty = null;
+        CurrentTimeActEventPropertyIndex = -1;
+
+        TimeActMultiselect = new Multiselect();
+        TimeActAnimationMultiselect = new Multiselect();
+        TimeActEventMultiselect = new Multiselect();
     }
 
     public void FileContainerChange(AnimationFileInfo info, IBinder binder, int index)
@@ -99,7 +127,7 @@ public class TimeActSelectionHandler
         TimeActAnimationMultiselect = new Multiselect();
         TimeActEventMultiselect = new Multiselect();
 
-        TimeActUtils.ApplyTemplate(CurrentTimeAct);
+        TimeActUtils.ApplyTemplate(CurrentTimeAct, CurrentTimeActType);
     }
 
     public void TimeActAnimationChange(TAE.Animation entry, int index)

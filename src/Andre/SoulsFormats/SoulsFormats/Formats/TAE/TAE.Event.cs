@@ -472,7 +472,7 @@ namespace SoulsFormats
             /// </summary>
             public override string ToString()
             {
-                return $"{(int)Math.Round(StartTime * 30):D3} - {(int)Math.Round(EndTime * 30):D3} {Type}";
+                return $"Start Frame: {(int)Math.Round(StartTime * 30):D3} - End Frame: {(int)Math.Round(EndTime * 30):D3} Event Type: {Type}";
             }
 
             internal static Event Read(BinaryReaderEx br, out long parametersOffset, TAEFormat format)

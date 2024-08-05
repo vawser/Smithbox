@@ -95,6 +95,7 @@ public class DebugWindow
         DisplayTool_DataExplorer();
         DisplayTool_ParamValidation();
         DisplayTool_MapValidation();
+        DisplayTool_TimeActValidation();
         DisplayTool_FLVERDump();
         DisplayTool_RowNameHelper();
         DisplayTool_DecryptRegulation();
@@ -232,6 +233,26 @@ public class DebugWindow
             }
 
             if (MapValidationTool.HasFinished)
+            {
+                ImGui.Text("Validation has finished.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplayTool_TimeActValidation()
+    {
+        if (ImGui.BeginTabItem("Time Act Validation"))
+        {
+            ImGui.Text("This tool will validate the Time Act files for the current project by loading all TAe files.");
+
+            if (ImGui.Button("Validate TAE"))
+            {
+                TimeActValidationTool.ValidateTAE();
+            }
+
+            if (TimeActValidationTool.HasFinished)
             {
                 ImGui.Text("Validation has finished.");
             }

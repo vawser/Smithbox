@@ -96,7 +96,7 @@ public class Smithbox
 
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
-        UpdateFormatAssertState();
+        UpdateSoulsFormatsToggles();
 
         // Handlers
         ProjectHandler = new ProjectHandler();
@@ -114,7 +114,7 @@ public class Smithbox
         style.TabBorderSize = 0;
     }
 
-    public static void UpdateFormatAssertState()
+    public static void UpdateSoulsFormatsToggles()
     {
         BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
     }

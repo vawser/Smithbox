@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<event_template game="SOTFS">
+    <bank id="1" name="DS2 TAE">
+        <event id="201" name="Event 201">
+            <s32 name="ID"/>
+            <s32 assert="0"/>
+            <s16 assert="0"/>
+            <s16 name="Dummy Poly ID"/>
+            <s32 />
+            <s16 />
+            <s16 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+        </event>
+        <event id="300" name="Event 300">
+            <s32 />
+            <s32 />
+            <s32 />
+            <s32 />
+        </event>
+        <event id="2200" name="Event 2200">
+            <s32 name="ID"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+        </event>
+        <event id="2202" name="Shoot Bullet">
+            <s32 name="Bullet ID" ref="BulletParam"/>
+            <s32 />
+            <s32 />
+            <s32 />
+            <s32 />
+            <s32 />
+            <s32 />
+            <s32 />
+        </event>
+        <event id="2301" name="Event 2301">
+            <s32 name="ID 1"/>
+            <s32 name="ID 2"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+        </event>
+        <event id="110210" name="Event 110210">
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+        </event>
+        <event id="111000" name="Event 111000">
+            <f32/>
+            <s32/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+        </event>
+        <event id="111400" name="Event 111400">
+            <f32/>
+            <s32/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+        </event>
+        <event id="120200" name="Event 120200">
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+        </event>
+        <event id="270001" name="Event 270001">
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+        </event>
+        <event id="280100" name="Set Character Turn Rate">
+            <f32 name="Turn Rate"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+            <s32 assert="0"/>
+        </event>
+    </bank>
+</event_template>
