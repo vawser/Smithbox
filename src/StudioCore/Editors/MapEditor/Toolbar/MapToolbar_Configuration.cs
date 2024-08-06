@@ -53,11 +53,6 @@ public class MapToolbar_Configuration
         MapAction_Replicate.Shortcuts();
         MapAction_Order.Shortcuts();
 
-        // Prefabs
-        //MapAction_EditPrefab.Shortcuts();
-        MapAction_ImportPrefab.Shortcuts();
-        MapAction_ExportPrefab.Shortcuts();
-
         // Shortcut: Global
         MapAction_Create.Shortcuts();
         MapAction_AssignEntityGroupID.Shortcuts();
@@ -83,11 +78,6 @@ public class MapToolbar_Configuration
         MapAction_Scramble.Configure(_selection);
         MapAction_Replicate.Configure(_selection);
         MapAction_Order.Configure(_selection);
-
-        // Prefabs
-        //MapAction_EditPrefab.Configure(_selection);
-        MapAction_ImportPrefab.Configure(_selection);
-        MapAction_ExportPrefab.Configure(_selection);
 
         // Configure: Global
         MapAction_Create.Configure(_selection);
@@ -121,10 +111,5 @@ public class MapToolbar_Configuration
         MapAction_CheckForErrors.Act(_selection);
         MapAction_GenerateNavigationData.Act(_selection);
         MapAction_Search_MSB.Act(_selection);
-
-        // Prefabs
-        //MapAction_EditPrefab.Act(_selection);
-        MapAction_ImportPrefab.Act(_selection);
-        MapAction_ExportPrefab.Act(_selection);
     }
 }
