@@ -1807,9 +1807,19 @@
     </event>
   </bank>
 
-  <bank id="19" name="Objects_SomethingElseIdk" basedon="18">
+  <bank id="4" name="Event Bank 4" basedon="18">
   </bank>
-  <bank id="20" name="Objects_SomethingElseIdk" basedon="20">
+  <bank id="8" name="Event Bank 8" basedon="18">
+  </bank>
+  <bank id="14" name="Event Bank 14" basedon="18">
+  </bank>
+  <bank id="15" name="Event Bank 15" basedon="18">
+  </bank>
+  <bank id="16" name="Event Bank 16" basedon="18">
+  </bank>
+  <bank id="19" name="Event Bank 19" basedon="18">
+  </bank>
+  <bank id="20" name="Event Bank 20" basedon="20">
   </bank>
 </event_template>
 
