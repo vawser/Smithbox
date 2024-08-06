@@ -14,7 +14,7 @@ namespace StudioCore.Tools;
 
 public static class NameGenerationTool
 {
-    private static AnimationBank.AnimationFileInfo PlayerTAEContainer;
+    private static AnimationBank.ContainerFileInfo PlayerTAEContainer;
 
     private static Param EquipWeaponParam;
     private static Param SwordArtsParam;
@@ -34,7 +34,7 @@ public static class NameGenerationTool
             HavokFileBank.LoadAllHavokFiles();
         }
 
-        PlayerTAEContainer = AnimationBank.FileBank.Where(e => e.Key.Name == "c0000").FirstOrDefault().Key;
+        PlayerTAEContainer = AnimationBank.FileChrBank.Where(e => e.Key.Name == "c0000").FirstOrDefault().Key;
         var playerContainer = HavokFileBank.BehaviorContainerBank.Where(e => e.Filename == "c0000.behbnd.dcx").FirstOrDefault();
 
         // Read TAE: get animations (behavior judge -> animation ID)
@@ -113,7 +113,7 @@ public static class NameGenerationTool
         var baseMotionCategory = (byte)row["wepmotionCategory"].Value.Value;
 
         // Find relevant TAE
-        var baseTAE = PlayerTAEContainer.TimeActFiles.Where(e => (e.ID-2000) == baseMotionCategory).First();
+        var baseTAE = PlayerTAEContainer.InternalFiles.Where(e => (e.TAE.ID-2000) == baseMotionCategory).First().TAE;
 
         switch (Smithbox.ProjectType)
         {

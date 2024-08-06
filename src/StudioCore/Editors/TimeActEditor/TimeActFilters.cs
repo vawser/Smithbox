@@ -20,7 +20,7 @@ public static class TimeActFilters
     public static string _timeActEventFilterString = "";
     public static string _timeActEventPropertyFilterString = "";
 
-    public static bool FileContainerFilter(AnimationFileInfo info)
+    public static bool FileContainerFilter(ContainerFileInfo info)
     {
         bool isValid = true;
         var input = _fileContainerFilterString.ToLower();
@@ -78,7 +78,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActFilter(AnimationFileInfo info, TAE taeEntry)
+    public static bool TimeActFilter(ContainerFileInfo info, TAE taeEntry)
     {
         bool isValid = true;
         var input = _timeActFilterString.ToLower();
@@ -144,7 +144,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActAnimationFilter(AnimationFileInfo info, TAE.Animation animEntry)
+    public static bool TimeActAnimationFilter(ContainerFileInfo info, TAE.Animation animEntry)
     {
         bool isValid = true;
         var input = _timeActAnimationFilterString.ToLower();
@@ -198,7 +198,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActEventFilter(AnimationFileInfo info, TAE.Event evtEntry)
+    public static bool TimeActEventFilter(ContainerFileInfo info, TAE.Event evtEntry)
     {
         bool isValid = true;
         var input = _timeActEventFilterString.ToLower();
@@ -248,7 +248,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActEventPropertyFilter(AnimationFileInfo info, string propertyName)
+    public static bool TimeActEventPropertyFilter(ContainerFileInfo info, string propertyName)
     {
         bool isValid = true;
         var input = _timeActEventPropertyFilterString.ToLower();

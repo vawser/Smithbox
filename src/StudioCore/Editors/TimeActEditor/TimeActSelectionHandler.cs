@@ -22,8 +22,8 @@ public class TimeActSelectionHandler
 
     public HavokContainerInfo LoadedHavokContainer;
 
-    public AnimationFileInfo ContainerInfo;
-    public IBinder ContainerBinder;
+    public ContainerFileInfo ContainerInfo;
+    public BinderInfo ContainerBinder;
     public string ContainerKey;
     public int ContainerIndex = -1;
 
@@ -84,12 +84,12 @@ public class TimeActSelectionHandler
         TimeActEventMultiselect = new Multiselect();
     }
 
-    public void FileContainerChange(AnimationFileInfo info, IBinder binder, int index)
+    public void FileContainerChange(ContainerFileInfo info, BinderInfo binderInfo, int index)
     {
         ContainerIndex = index;
         ContainerKey = info.Name;
         ContainerInfo = info;
-        ContainerBinder = binder;
+        ContainerBinder = binderInfo;
 
         CurrentTimeActKey = -1;
         CurrentTimeAct = null;

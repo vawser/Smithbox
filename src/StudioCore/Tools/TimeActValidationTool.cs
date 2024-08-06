@@ -21,14 +21,14 @@ public static class TimeActValidationTool
     {
         SortedDictionary<int, string> errors = new();
 
-        for (int i = 0; i < AnimationBank.FileBank.Count; i++)
+        for (int i = 0; i < AnimationBank.FileChrBank.Count; i++)
         {
-            var info = AnimationBank.FileBank.ElementAt(i).Key;
-            var binder = AnimationBank.FileBank.ElementAt(i).Value;
+            var info = AnimationBank.FileChrBank.ElementAt(i).Key;
+            var binder = AnimationBank.FileChrBank.ElementAt(i).Value;
 
-            for (int k = 0; k < info.TimeActFiles.Count; k++)
+            for (int k = 0; k < info.InternalFiles.Count; k++)
             {
-                TAE entry = info.TimeActFiles[k];
+                TAE entry = info.InternalFiles[k].TAE;
 
                 TimeActUtils.ApplyTemplate(entry, TemplateType.Character);
 
@@ -41,6 +41,38 @@ public static class TimeActValidationTool
                         TAE.Event evt = animEntry.Events[l];
 
                         if(evt.Parameters == null)
+                        {
+                            if (!errors.ContainsKey(evt.Type))
+                            {
+                                var error = $"Bank: {entry.EventBank} - Event Size: {evt.GetParameterBytes(false).Length}";
+                                errors.Add(evt.Type, error);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < AnimationBank.FileObjBank.Count; i++)
+        {
+            var info = AnimationBank.FileObjBank.ElementAt(i).Key;
+            var binder = AnimationBank.FileObjBank.ElementAt(i).Value;
+
+            for (int k = 0; k < info.InternalFiles.Count; k++)
+            {
+                TAE entry = info.InternalFiles[k].TAE;
+
+                TimeActUtils.ApplyTemplate(entry, TemplateType.Character);
+
+                for (int j = 0; j < entry.Animations.Count; j++)
+                {
+                    TAE.Animation animEntry = entry.Animations[j];
+
+                    for (int l = 0; l < animEntry.Events.Count; l++)
+                    {
+                        TAE.Event evt = animEntry.Events[l];
+
+                        if (evt.Parameters == null)
                         {
                             if (!errors.ContainsKey(evt.Type))
                             {

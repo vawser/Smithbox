@@ -1,6 +1,7 @@
 ﻿using StudioCore.Core;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace StudioCore.Locators;
 public static class MiscLocator
@@ -39,7 +40,7 @@ public static class MiscLocator
     }
 
     // TAE
-    public static List<string> GetAnimationBinders(bool ignoreProject = false)
+    public static List<string> GetCharacterTimeActBinders(bool ignoreProject = false)
     {
         List<string> ret = new List<string>();
 
@@ -54,6 +55,41 @@ public static class MiscLocator
         }
 
         ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
+
+        return ret;
+    }
+    public static List<string> GetObjectTimeActBinders(bool ignoreProject = false)
+    {
+        List<string> ret = new List<string>();
+
+        var paramDir = @"\obj";
+        var paramExt = @".objbnd.dcx";
+
+        ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
+
+        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            paramDir = @"\timeact\obj";
+            paramExt = @".tae";
+
+            ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
+        }
+        else if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        {
+            ret = new();
+
+            paramDir = @"\asset\aeg\";
+            paramExt = @".geombnd.dcx";
+
+            var searchDir = $"{Smithbox.GameRoot}\\{paramDir}";
+            foreach(var folder in Directory.EnumerateDirectories(searchDir))
+            {
+                foreach(var file in Directory.EnumerateFiles(folder))
+                {
+                    ret.Add(file);
+                }
+            }
+        }
 
         return ret;
     }

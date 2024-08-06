@@ -1,6 +1,7 @@
 ﻿using DotNext.Collections.Generic;
 using HKLib.hk2018;
 using HKLib.hk2018.hkAsyncThreadPool;
+using Org.BouncyCastle.Crypto;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.HavokAliasBank;
@@ -34,25 +35,28 @@ public static class TimeActUtils
         }
     }
 
-    public static void DisplayTimeActAlias(AnimationFileInfo info, int id)
+    public static void DisplayTimeActAlias(ContainerFileInfo info, int id)
     {
         if (Smithbox.BankHandler.TimeActAliases.Aliases != null)
         {
             var idStr = id.ToString();
-            var idSection = idStr.Substring(idStr.Length - 3);
-
-            var searchStr = $"{info.Name}_{idSection}";
-            var alias = Smithbox.BankHandler.TimeActAliases.Aliases.list.Where(e => e.id == searchStr)
-                .FirstOrDefault();
-
-            if (alias != null)
+            if (idStr.Length > 3)
             {
-                var aliasStr = alias.name;
-                AliasUtils.DisplayAlias(aliasStr);
-            }
-            else
-            {
-                AliasUtils.DisplayAlias("");
+                var idSection = idStr.Substring(idStr.Length - 3);
+
+                var searchStr = $"{info.Name}_{idSection}";
+                var alias = Smithbox.BankHandler.TimeActAliases.Aliases.list.Where(e => e.id == searchStr)
+                    .FirstOrDefault();
+
+                if (alias != null)
+                {
+                    var aliasStr = alias.name;
+                    AliasUtils.DisplayAlias(aliasStr);
+                }
+                else
+                {
+                    AliasUtils.DisplayAlias("");
+                }
             }
         }
     }
@@ -85,7 +89,7 @@ public static class TimeActUtils
         }
     }
 
-    public static HavokContainerInfo LoadHavokObjects(AnimationFileInfo info)
+    public static HavokContainerInfo LoadHavokObjects(ContainerFileInfo info)
     {
         HavokContainerInfo newInfo = null;
 

@@ -20,6 +20,7 @@ using static Silk.NET.Core.Native.WinString;
 using static SoulsFormats.TAE.Animation;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Tools;
+using static StudioCore.Editors.TimeActEditor.AnimationBank;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -283,28 +284,69 @@ public class TimeActEditorScreen : EditorScreen
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("ContainerList");
-        for (int i = 0; i < AnimationBank.FileBank.Count; i++)
+
+        if (ImGui.CollapsingHeader("Characters", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            var info = AnimationBank.FileBank.ElementAt(i).Key;
-            var binder = AnimationBank.FileBank.ElementAt(i).Value;
-
-            if (TimeActFilters.FileContainerFilter(info))
+            for (int i = 0; i < AnimationBank.FileChrBank.Count; i++)
             {
-                var isSelected = false;
-                if(i == SelectionHandler.ContainerIndex)
-                {
-                    isSelected = true;
-                }
+                var info = AnimationBank.FileChrBank.ElementAt(i).Key;
+                var binder = AnimationBank.FileChrBank.ElementAt(i).Value;
 
-                if (ImGui.Selectable($@" {info.Name}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                if (TimeActFilters.FileContainerFilter(info))
                 {
-                    SelectionHandler.FileContainerChange(info, binder, i);
-                }
-                TimeActUtils.DisplayTimeActFileAlias(info.Name);
+                    var isSelected = false;
+                    if (i == SelectionHandler.ContainerIndex)
+                    {
+                        isSelected = true;
+                    }
 
-                SelectionHandler.ContextMenu.ContainerMenu(isSelected, info.Name);
+                    if (ImGui.Selectable($@" {info.Name}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                    {
+                        SelectionHandler.FileContainerChange(info, binder, i);
+                    }
+                    TimeActUtils.DisplayTimeActFileAlias(info.Name);
+
+                    SelectionHandler.ContextMenu.ContainerMenu(isSelected, info.Name);
+                }
             }
         }
+
+        if (!(Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6))
+        {
+            var title = "Objects";
+
+            if(Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+            {
+                title = "Assets";
+            }
+
+            if (ImGui.CollapsingHeader(title))
+            {
+                for (int i = 0; i < AnimationBank.FileObjBank.Count; i++)
+                {
+                    var info = AnimationBank.FileObjBank.ElementAt(i).Key;
+                    var binder = AnimationBank.FileObjBank.ElementAt(i).Value;
+
+                    if (TimeActFilters.FileContainerFilter(info))
+                    {
+                        var isSelected = false;
+                        if (i == SelectionHandler.ContainerIndex)
+                        {
+                            isSelected = true;
+                        }
+
+                        if (ImGui.Selectable($@" {info.Name}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                        {
+                            SelectionHandler.FileContainerChange(info, binder, i);
+                        }
+                        TimeActUtils.DisplayTimeActFileAlias(info.Name);
+
+                        SelectionHandler.ContextMenu.ContainerMenu(isSelected, info.Name);
+                    }
+                }
+            }
+        }
+
         ImGui.EndChild();
 
         ImGui.End();
@@ -325,9 +367,10 @@ public class TimeActEditorScreen : EditorScreen
 
         ImGui.BeginChild("TimeActList");
 
-        for (int i = 0; i < SelectionHandler.ContainerInfo.TimeActFiles.Count; i++)
+        for (int i = 0; i < SelectionHandler.ContainerInfo.InternalFiles.Count; i++)
         {
-            TAE entry = SelectionHandler.ContainerInfo.TimeActFiles[i];
+            InternalFileInfo info = SelectionHandler.ContainerInfo.InternalFiles[i];
+            TAE entry = SelectionHandler.ContainerInfo.InternalFiles[i].TAE;
 
             if (TimeActFilters.TimeActFilter(SelectionHandler.ContainerInfo, entry))
             {
@@ -338,7 +381,7 @@ public class TimeActEditorScreen : EditorScreen
                     isSelected = true;
                 }
 
-                if (ImGui.Selectable($@"{TimeActUtils.GetTimeActName(entry.ID)}##TimeAct{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                if (ImGui.Selectable($@"{info.Name}##TimeAct{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
                 {
                     SelectionHandler.TimeActChange(entry, i);
                 }

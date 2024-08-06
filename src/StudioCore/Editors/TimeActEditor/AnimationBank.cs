@@ -9,7 +9,9 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
+using static SoulsFormats.MSB_AC6.Part;
 using static SoulsFormats.TAE;
+using static StudioCore.Editors.TimeActEditor.AnimationBank;
 
 namespace StudioCore.Editors.TimeActEditor;
 public static class AnimationBank
@@ -17,8 +19,11 @@ public static class AnimationBank
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
 
-    public static Dictionary<AnimationFileInfo, IBinder> VanillaFileBank { get; private set; } = new();
-    public static Dictionary<AnimationFileInfo, IBinder> FileBank { get; private set; } = new();
+    public static Dictionary<ContainerFileInfo, BinderInfo> VanillaChrFileBank { get; private set; } = new();
+    public static Dictionary<ContainerFileInfo, BinderInfo> FileChrBank { get; private set; } = new();
+
+    public static Dictionary<ContainerFileInfo, BinderInfo> VanillaObjFileBank { get; private set; } = new();
+    public static Dictionary<ContainerFileInfo, BinderInfo> FileObjBank { get; private set; } = new();
 
     public static Dictionary<string, Template> TimeActTemplates = new Dictionary<string, Template>();
 
@@ -44,17 +49,23 @@ public static class AnimationBank
         IsLoaded = false;
         IsLoading = true;
 
-        FileBank = new();
-        VanillaFileBank = new();
+        FileChrBank = new();
+        VanillaChrFileBank = new();
 
-        LoadTimeActs(FileBank);
-        LoadTimeActs(VanillaFileBank, true);
+        LoadChrTimeActs(FileChrBank);
+        LoadChrTimeActs(VanillaChrFileBank, true);
+
+        FileObjBank = new();
+        VanillaObjFileBank = new();
+
+        LoadObjTimeActs(FileObjBank);
+        LoadObjTimeActs(VanillaObjFileBank, true);
 
         IsLoaded = true;
         IsLoading = false;
     }
 
-    public static void LoadTimeActs(Dictionary<AnimationFileInfo, IBinder> targetBank, bool rootOnly = false)
+    public static void LoadChrTimeActs(Dictionary<ContainerFileInfo, BinderInfo> targetBank, bool rootOnly = false)
     {
         var fileDir = @"\chr";
         var fileExt = @".anibnd.dcx";
@@ -65,34 +76,25 @@ public static class AnimationBank
             fileExt = @".tae";
         }
 
-        List<string> fileNames = MiscLocator.GetAnimationBinders();
+        List<string> fileNames = MiscLocator.GetCharacterTimeActBinders();
 
         foreach (var name in fileNames)
         {
-            if (!(Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S))
-            {
-                // Skip the non-TAE holding ones
-                if (name.Length != 5)
-                {
-                    continue;
-                }
-            } 
-
             var filePath = $"{fileDir}\\{name}{fileExt}";
 
             if (rootOnly)
             {
-                LoadTimeAct($"{Smithbox.GameRoot}\\{filePath}", FileBank);
+                LoadChrTimeAct($"{Smithbox.GameRoot}\\{filePath}", targetBank);
             }
             else
             {
                 if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
                 {
-                    LoadTimeAct($"{Smithbox.ProjectRoot}\\{filePath}", FileBank);
+                    LoadChrTimeAct($"{Smithbox.ProjectRoot}\\{filePath}", targetBank);
                 }
                 else
                 {
-                    LoadTimeAct($"{Smithbox.GameRoot}\\{filePath}", FileBank);
+                    LoadChrTimeAct($"{Smithbox.GameRoot}\\{filePath}", targetBank);
                 }
             }
         }
@@ -100,7 +102,48 @@ public static class AnimationBank
         TaskLogs.AddLog($"Project TAE File Bank - Load Complete");
     }
 
-    public static void LoadTimeAct(string path, Dictionary<AnimationFileInfo, IBinder> targetBank)
+
+    public static void LoadObjTimeActs(Dictionary<ContainerFileInfo, BinderInfo> targetBank, bool rootOnly = false)
+    {
+        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+            return;
+
+        var fileDir = @"\obj";
+        var fileExt = @".objbnd.dcx";
+
+        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            fileDir = @"\timeact\obj";
+            fileExt = @".tae";
+        }
+
+        List<string> fileNames = MiscLocator.GetObjectTimeActBinders();
+
+        foreach (var name in fileNames)
+        {
+            var filePath = $"{fileDir}\\{name}{fileExt}";
+
+            if (rootOnly)
+            {
+                LoadObjTimeAct($"{Smithbox.GameRoot}\\{filePath}", targetBank);
+            }
+            else
+            {
+                if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
+                {
+                    LoadObjTimeAct($"{Smithbox.ProjectRoot}\\{filePath}", targetBank);
+                }
+                else
+                {
+                    LoadObjTimeAct($"{Smithbox.GameRoot}\\{filePath}", targetBank);
+                }
+            }
+        }
+
+        TaskLogs.AddLog($"Project TAE File Bank - Load Complete");
+    }
+
+    public static void LoadChrTimeAct(string path, Dictionary<ContainerFileInfo, BinderInfo> targetBank)
     {
         if (path == null)
         {
@@ -116,11 +159,12 @@ public static class AnimationBank
         }
 
         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        AnimationFileInfo fileStruct = new AnimationFileInfo(name, path);
+        ContainerFileInfo fileStruct = new ContainerFileInfo(name, path);
+        bool validFile = false;
 
         IBinder binder = null;
 
-        // DS2 doesn't use a container
+        // Loose .tae
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             fileStruct.IsContainerFile = false;
@@ -129,13 +173,16 @@ public static class AnimationBank
             {
                 var fileBytes = File.ReadAllBytes(path);
                 TAE taeFile = TAE.Read(fileBytes);
-                fileStruct.TimeActFiles.Add(taeFile);
+                InternalFileInfo tInfo = new(path, taeFile);
+                fileStruct.InternalFiles.Add(tInfo);
+                validFile = true;
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"{name} - Failed to read.\n{ex.ToString()}");
+                TaskLogs.AddLog($"{name} {path} - Failed to read.\n{ex.ToString()}");
             }
         }
+        // Within .anibnd.dcx
         else
         {
             fileStruct.IsContainerFile = true;
@@ -153,13 +200,14 @@ public static class AnimationBank
             {
                 if (file.Name.Contains(".tae"))
                 {
-                    // Ignore the empty TAE files
                     if (file.Bytes.Length > 0)
                     {
                         try
                         {
                             TAE taeFile = TAE.Read(file.Bytes);
-                            fileStruct.TimeActFiles.Add(taeFile);
+                            InternalFileInfo tInfo = new(file.Name, taeFile);
+                            fileStruct.InternalFiles.Add(tInfo);
+                            validFile = true;
                         }
                         catch (Exception ex)
                         {
@@ -170,20 +218,107 @@ public static class AnimationBank
             }
         }
 
-        targetBank.Add(fileStruct, binder);
+        // Only add if the file contains at least one TAE entry
+        if (validFile)
+        {
+            var binderInfo = new BinderInfo(binder, null, "");
+            targetBank.Add(fileStruct, binderInfo);
+        }
+    }
+
+    public static void LoadObjTimeAct(string path, Dictionary<ContainerFileInfo, BinderInfo> targetBank)
+    {
+        if (path == null)
+        {
+            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
+                    LogLevel.Warning);
+            return;
+        }
+        if (path == "")
+        {
+            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
+                    LogLevel.Warning);
+            return;
+        }
+
+        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
+        ContainerFileInfo fileStruct = new ContainerFileInfo(name, path);
+        bool validFile = false;
+
+        IBinder binder = null;
+        IBinder aniBinder = null;
+        string aniBinderName = "";
+
+        fileStruct.IsContainerFile = true;
+
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        {
+            binder = BND3.Read(DCX.Decompress(path));
+        }
+        else
+        {
+            binder = BND4.Read(DCX.Decompress(path));
+        }
+
+        foreach (var file in binder.Files)
+        {
+            if (file.Name.Contains(".anibnd"))
+            {
+                aniBinderName = file.Name;
+
+                if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+                {
+                    aniBinder = BND3.Read(file.Bytes);
+                }
+                else
+                {
+                    aniBinder = BND4.Read(file.Bytes);
+                }
+
+                foreach (var aniFile in aniBinder.Files)
+                {
+                    if (aniFile.Name.Contains(".tae"))
+                    {
+                        if (aniFile.Bytes.Length > 0)
+                        {
+                            try
+                            {
+                                TAE taeFile = TAE.Read(aniFile.Bytes);
+                                InternalFileInfo tInfo = new(aniFile.Name, taeFile);
+                                fileStruct.InternalFiles.Add(tInfo);
+                                validFile = true;
+
+                                //TaskLogs.AddLog($"Added to bank: {file.Name}");
+                            }
+                            catch (Exception ex)
+                            {
+                                TaskLogs.AddLog($"{name} {aniFile.Name} - Failed to read.\n{ex.ToString()}");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Only add if the file contains at least one TAE entry
+        if (validFile)
+        {
+            var binderInfo = new BinderInfo(binder, aniBinder, aniBinderName);
+            targetBank.Add(fileStruct, binderInfo);
+        }
     }
 
     public static void SaveTimeActs()
     {
-        foreach (var (info, binder) in FileBank)
+        foreach (var (info, binder) in FileChrBank)
         {
             SaveTimeAct(info, binder);
         }
     }
 
-    public static void SaveTimeAct(AnimationFileInfo info, IBinder binder)
+    public static void SaveTimeAct(ContainerFileInfo info, BinderInfo binderInfo)
     {
-        if (binder == null)
+        if (binderInfo.ContainerBinder == null)
             return;
 
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -192,7 +327,7 @@ public static class AnimationBank
             var fileExt = @".tae";
 
             // Direct file with DS2
-            var fileBytes = info.TimeActFiles.First().Write();
+            var fileBytes = info.InternalFiles.First().TAE.Write();
 
             var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
             var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
@@ -214,23 +349,87 @@ public static class AnimationBank
             var fileDir = @"\chr";
             var fileExt = @".anibnd.dcx";
 
-            foreach (BinderFile file in binder.Files)
+            // Dealing with objbnd
+            if(binderInfo.InternalBinder != null)
             {
-                foreach (TAE tFile in info.TimeActFiles)
+                fileDir = @"\obj";
+                fileExt = @".objbnd.dcx";
+            }
+
+            // TAE files within anibnd.dcx container
+            foreach (BinderFile file in binderInfo.ContainerBinder.Files)
+            {
+                foreach (InternalFileInfo tInfo in info.InternalFiles)
                 {
-                    var fileID = file.ID;
-                    var taeFileID = tFile.ID;
-
-                    // Accounts for the internal File IDs
-                    if(Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS3)
+                    if (file.Name == tInfo.Filepath)
                     {
-                        taeFileID = taeFileID - 2000;
-                        fileID = fileID - 5000000;
+                        //TaskLogs.AddLog($"Written File: {file.Name}");
+                        file.Bytes = tInfo.TAE.Write();
                     }
+                }
+            }
 
-                    if (fileID == taeFileID)
+            // TAE files within internal anibnd container
+            if(binderInfo.InternalBinder != null)
+            {
+                foreach (BinderFile file in binderInfo.ContainerBinder.Files)
+                {
+                    if (file.Name == binderInfo.InternalBinderName)
                     {
-                        file.Bytes = tFile.Write();
+                        var internalBinderBytes = file.Bytes;
+
+                        foreach (BinderFile internalFile in binderInfo.InternalBinder.Files)
+                        {
+                            foreach (InternalFileInfo tInfo in info.InternalFiles)
+                            {
+                                if (internalFile.Name == tInfo.Filepath)
+                                {
+                                    //TaskLogs.AddLog($"Written File: {file.Name}");
+                                    internalFile.Bytes = tInfo.TAE.Write();
+                                }
+                            }
+                        }
+
+                        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+                        {
+                            BND3 writeBinder = binderInfo.InternalBinder as BND3;
+
+                            switch (Smithbox.ProjectType)
+                            {
+                                case ProjectType.DS1:
+                                case ProjectType.DS1R:
+                                    internalBinderBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
+                                    break;
+                                default:
+                                    TaskLogs.AddLog($"Invalid Project Type during Save Time Act");
+                                    return;
+                            }
+                        }
+                        else
+                        {
+                            BND4 writeBinder = binderInfo.InternalBinder as BND4;
+
+                            switch (Smithbox.ProjectType)
+                            {
+                                case ProjectType.DS3:
+                                    internalBinderBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                                    break;
+                                case ProjectType.SDT:
+                                    internalBinderBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                                    break;
+                                case ProjectType.ER:
+                                    internalBinderBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                                    break;
+                                case ProjectType.AC6:
+                                    internalBinderBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                                    break;
+                                default:
+                                    TaskLogs.AddLog($"Invalid Project Type during Save Time Act");
+                                    return;
+                            }
+                        }
+
+                        file.Bytes = internalBinderBytes;
                     }
                 }
             }
@@ -242,7 +441,7 @@ public static class AnimationBank
 
             if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
-                BND3 writeBinder = binder as BND3;
+                BND3 writeBinder = binderInfo.ContainerBinder as BND3;
 
                 switch (Smithbox.ProjectType)
                 {
@@ -257,7 +456,7 @@ public static class AnimationBank
             }
             else
             {
-                BND4 writeBinder = binder as BND4;
+                BND4 writeBinder = binderInfo.ContainerBinder as BND4;
 
                 switch (Smithbox.ProjectType)
                 {
@@ -303,13 +502,13 @@ public static class AnimationBank
         }
     }
 
-    public class AnimationFileInfo
+    public class ContainerFileInfo
     {
-        public AnimationFileInfo(string name, string path)
+        public ContainerFileInfo(string name, string path)
         {
             Name = name;
             Path = path;
-            TimeActFiles = new List<TAE>();
+            InternalFiles = new List<InternalFileInfo>();
         }
 
         public string Name { get; set; }
@@ -317,6 +516,34 @@ public static class AnimationBank
 
         public bool IsContainerFile { get; set; }
 
-        public List<TAE> TimeActFiles { get; set; }
+        public List<InternalFileInfo> InternalFiles { get; set; }
+    }
+
+    public class InternalFileInfo
+    {
+        public string Name { get; set; }
+        public string Filepath { get; set; }
+        public TAE TAE { get; set; }
+
+        public InternalFileInfo(string path, TAE taeData)
+        {
+            Filepath = path;
+            TAE = taeData;
+            Name = Path.GetFileNameWithoutExtension(path);
+        }
+    }
+
+    public class BinderInfo
+    {
+        public IBinder ContainerBinder { get; set; }
+        public IBinder InternalBinder { get; set; }
+        public string InternalBinderName { get; set; }
+
+        public BinderInfo(IBinder containerBinder, IBinder internalBinder, string internalBinderName)
+        {
+            ContainerBinder = containerBinder;
+            InternalBinder = internalBinder;
+            InternalBinderName = internalBinderName;
+        }
     }
 }

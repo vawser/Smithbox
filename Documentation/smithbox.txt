@@ -86,8 +86,9 @@ World Map:
 - ADD: finish documenting ER SOTE rows
 
 Time Act Editor
- - ADD: add Character TAE tab, add Obj TAE tab
+ - FIX: TAE a330 + a331 in AC6 are not reading correctly
  - ADD: TAE.Animation property editor
  - ADD: Duplicate/Delete/Copy/Paste row context for Animations and Events
  - ADD: Data export/import for TAE/Animation/Event
  - ADD: TAE Quick Edit tool
+ - ADD: proper support for ER/AC6 asset TAEs

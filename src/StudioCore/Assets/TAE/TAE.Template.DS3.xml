@@ -1809,6 +1809,8 @@
 
   <bank id="19" name="Objects_SomethingElseIdk" basedon="18">
   </bank>
+  <bank id="20" name="Objects_SomethingElseIdk" basedon="20">
+  </bank>
 </event_template>
 
 
