@@ -167,7 +167,6 @@ public static class NameGenerationTool
         {
             foreach(var evt in anim.Events)
             {
-                evt.ApplyTemplate(false, baseTAE.BankTemplate[(int)baseTAE.EventBank]);
                 foreach (var entry in evt.Parameters.Values)
                 {
                     TaskLogs.AddLog($"event: {entry.Key} {entry.Value}");

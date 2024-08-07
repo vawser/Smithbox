@@ -312,16 +312,16 @@ namespace SoulsFormats
                 long animID, int eventIndex, int eventType)
             {
 
-                if (template[containingTae.EventBank].ContainsKey(eventType))
+                if (template.Events.ContainsKey(eventType))
                 {
                     if (Parameters != null)
                     {
                         CopyParametersToBytes(containingTae.BigEndian);
                     }
                     Type = eventType;
-                    Array.Resize(ref ParameterBytes, template[containingTae.EventBank][Type].GetAllParametersByteCount());
+                    Array.Resize(ref ParameterBytes, template.Events[Type].GetAllParametersByteCount());
                     Parameters = new ParameterContainer(animID, eventIndex,
-                        containingTae.BigEndian, ParameterBytes, template[containingTae.EventBank][Type]);
+                        containingTae.BigEndian, ParameterBytes, template.Events[Type]);
 
                 }
             }
@@ -329,17 +329,17 @@ namespace SoulsFormats
             internal void ChangeTemplateAfterLoading(TAE containingTae, Template template,
                 long animID, int eventIndex, int eventType)
             {
-                if (template[containingTae.EventBank].ContainsKey(eventType))
+                if (template.Events.ContainsKey(eventType))
                 {
                     Type = eventType;
-                    Array.Resize(ref ParameterBytes, template[containingTae.EventBank][Type].GetAllParametersByteCount());
+                    Array.Resize(ref ParameterBytes, template.Events[Type].GetAllParametersByteCount());
 
                     var newParameters = new ParameterContainer(animID, eventIndex,
-                        containingTae.BigEndian, ParameterBytes, template[containingTae.EventBank][Type],
+                        containingTae.BigEndian, ParameterBytes, template.Events[Type],
                         suppressAssert: true);
                     if (Parameters != null)
                     {
-                        foreach (var field in template[containingTae.EventBank][Type])
+                        foreach (var field in template.Events[Type])
                         {
                             if (field.Value.ValueToAssert != null)
                                 continue;

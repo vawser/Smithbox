@@ -12,12 +12,14 @@ namespace SoulsFormats
         /// <summary>
         /// Template for the parameters in an event.
         /// </summary>
-        public class Template : Dictionary<long, Template.BankTemplate>
+        public class Template 
         {
             /// <summary>
             /// The game(s) this template is for.
             /// </summary>
             public TAEFormat Game;
+
+            public Dictionary<int, EventTemplate> Events = new Dictionary<int, EventTemplate>();
 
             /// <summary>
             /// Creates new empty template.
@@ -29,29 +31,32 @@ namespace SoulsFormats
                 XmlNode templateNode = xml.SelectSingleNode("event_template");
                 Game = (TAEFormat)Enum.Parse(typeof(TAEFormat), templateNode.Attributes["game"].InnerText);
 
-                Dictionary<BankTemplate, long> basedOnMap = new Dictionary<BankTemplate, long>();
+                EventTemplate lastGoodEventTemplate = null;
 
-                foreach (XmlNode bankNode in templateNode.SelectNodes("bank"))
+                foreach (XmlNode eventNode in templateNode.SelectNodes("event"))
                 {
-                    var newBank = new BankTemplate(bankNode, out long basedOn);
-                    basedOnMap.Add(newBank, basedOn);
-                    if (ContainsKey(newBank.ID))
-                    {
-                        throw new Exception($"TAE Template has more than one action with ID {newBank.ID}.");
-                    }
-                    Add(newBank.ID, newBank);
-                }
+                    var ID = long.Parse(eventNode.Attributes["id"].InnerText);
 
-                foreach (var kvp in basedOnMap)
-                {
-                    if (kvp.Value != -1)
+                    try
                     {
-                        foreach (var importFromKvp in this[kvp.Value])
+                        var newEvent = new EventTemplate(ID, eventNode);
+                        if (Events.ContainsKey(newEvent.ID))
                         {
-                            if (!kvp.Key.ContainsKey(importFromKvp.Key))
-                            {
-                                kvp.Key.Add(importFromKvp.Key, importFromKvp.Value);
-                            }
+                            throw new Exception($"TAE Bank Template has more than one event with ID {newEvent.ID}.");
+                        }
+                        Events.Add(newEvent.ID, newEvent);
+
+                        lastGoodEventTemplate = newEvent;
+                    }
+                    catch (Exception e)
+                    {
+                        if (lastGoodEventTemplate == null)
+                        {
+                            throw new Exception($"First event template in bank template {ID} failed to read:\n\n{e}");
+                        }
+                        else
+                        {
+                            throw new Exception($"Event template in bank template {ID} failed to read.\n\nLast valid event ID read: {lastGoodEventTemplate.ID}\n\nMessage:\n{e}");
                         }
                     }
                 }
@@ -83,60 +88,6 @@ namespace SoulsFormats
             public static Template ReadXMLDoc(XmlDocument xml)
             {
                 return new Template(xml);
-            }
-
-            /// <summary>
-            /// A template for a bank of events.
-            /// </summary>
-            public class BankTemplate : Dictionary<int, EventTemplate>
-            {
-                /// <summary>
-                /// ID of this bank template.
-                /// </summary>
-                public long ID;
-
-                /// <summary>
-                /// Name of this bank template.
-                /// </summary>
-                public string Name;
-
-                internal BankTemplate(XmlNode bankNode, out long basedOn)
-                    : base()
-                {
-                    ID = long.Parse(bankNode.Attributes["id"].InnerText);
-                    Name = bankNode.Attributes["name"].InnerText;
-
-                    basedOn = long.Parse(bankNode.Attributes["basedon"]?.InnerText ?? "-1");
-
-                    EventTemplate lastGoodEventTemplate = null;
-
-                    foreach (XmlNode eventNode in bankNode.SelectNodes("event"))
-                    {
-                        try
-                        {
-                            var newEvent = new EventTemplate(ID, eventNode);
-                            if (ContainsKey(newEvent.ID))
-                            {
-                                throw new Exception($"TAE Bank Template has more than one event with ID {newEvent.ID}.");
-                            }
-                            Add(newEvent.ID, newEvent);
-
-                            lastGoodEventTemplate = newEvent;
-                        }
-                        catch (Exception e)
-                        {
-                            if (lastGoodEventTemplate == null)
-                            {
-                                throw new Exception($"First event template in bank template {ID} failed to read:\n\n{e}");
-                            }
-                            else
-                            {
-                                throw new Exception($"Event template in bank template {ID} failed to read.\n\nLast valid event ID read: {lastGoodEventTemplate.ID}\n\nMessage:\n{e}");
-                            }
-                        }
-
-                    }
-                }
             }
 
             /// <summary>

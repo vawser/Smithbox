@@ -103,11 +103,6 @@ namespace SoulsFormats
         public Template AppliedTemplate { get; private set; }
 
         /// <summary>
-        /// Gets the current bank being used in the currently applied template, if a template is applied.
-        /// </summary>
-        public Template.BankTemplate BankTemplate => AppliedTemplate?[EventBank];
-
-        /// <summary>
         /// Applies a template to this TAE for easier editing.
         /// After applying template, use events' .Parameters property.
         /// </summary>
@@ -116,19 +111,12 @@ namespace SoulsFormats
             if (template.Game != Format)
                 throw new InvalidOperationException($"Template is for {template.Game} but this TAE is for {Format}.");
 
-            if (template.ContainsKey(EventBank))
+            foreach (var anim in Animations)
             {
-                foreach (var anim in Animations)
+                for (int i = 0; i < anim.Events.Count; i++)
                 {
-                    for (int i = 0; i < anim.Events.Count; i++)
-                    {
-                        anim.Events[i].ApplyTemplate(this, template, anim.ID, i, anim.Events[i].Type);
-                    }
+                    anim.Events[i].ApplyTemplate(this, template, anim.ID, i, anim.Events[i].Type);
                 }
-            }
-            else
-            {
-                throw new InvalidOperationException($"This TAE uses event bank {EventBank} but no such bank exists in the template.");
             }
 
             AppliedTemplate = template;
@@ -145,19 +133,12 @@ namespace SoulsFormats
             if (bank >= 0)
                 EventBank = bank;
 
-            if (template.ContainsKey(EventBank))
+            foreach (var anim in Animations)
             {
-                foreach (var anim in Animations)
+                for (int i = 0; i < anim.Events.Count; i++)
                 {
-                    for (int i = 0; i < anim.Events.Count; i++)
-                    {
-                        anim.Events[i].ChangeTemplateAfterLoading(this, template, anim.ID, i, anim.Events[i].Type);
-                    }
+                    anim.Events[i].ChangeTemplateAfterLoading(this, template, anim.ID, i, anim.Events[i].Type);
                 }
-            }
-            else
-            {
-                throw new InvalidOperationException($"This TAE uses event bank {EventBank} but no such bank exists in the template.");
             }
 
             AppliedTemplate = template;
