@@ -17,4 +17,13 @@ public class ActionHandler
         Screen = screen;
         EditorActionManager = manager;
     }
+
+    public void DetermineDuplicateTarget()
+    {
+
+    }
+    public void DetermineDeleteTarget()
+    {
+
+    }
 }

@@ -270,3 +270,90 @@ public class TimeActEndTimePropertyChange : EditorAction
         return ActionEvent.NoEvent;
     }
 }
+
+public class TimeActEndAnimHeaderPropertyChange : EditorAction
+{
+    private TAE.Animation Animation;
+    private object OldValue;
+    private object NewValue;
+    private TemporaryAnimHeader OldTempHeader;
+
+    public TimeActEndAnimHeaderPropertyChange(TAE.Animation entry, object oldValue, object newValue, TemporaryAnimHeader tempHeader)
+    {
+        Animation = entry;
+        OldValue = oldValue;
+        NewValue = newValue;
+        OldTempHeader = tempHeader;
+    }
+
+    public override ActionEvent Execute()
+    {
+        Animation.MiniHeader = (TAE.Animation.AnimMiniHeader)NewValue;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Animation.MiniHeader = (TAE.Animation.AnimMiniHeader)OldValue;
+        Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTemporaryAnimHeader = OldTempHeader;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class TimeActEndAnimIDPropertyChange : EditorAction
+{
+    private TAE.Animation Event;
+    private object OldValue;
+    private object NewValue;
+
+    public TimeActEndAnimIDPropertyChange(TAE.Animation entry, object oldValue, object newValue)
+    {
+        Event = entry;
+        OldValue = oldValue;
+        NewValue = newValue;
+    }
+
+    public override ActionEvent Execute()
+    {
+        Event.ID = (long)NewValue;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Event.ID = (long)OldValue;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class TimeActEndAnimNamePropertyChange : EditorAction
+{
+    private TAE.Animation Event;
+    private object OldValue;
+    private object NewValue;
+
+    public TimeActEndAnimNamePropertyChange(TAE.Animation entry, object oldValue, object newValue)
+    {
+        Event = entry;
+        OldValue = oldValue;
+        NewValue = newValue;
+    }
+
+    public override ActionEvent Execute()
+    {
+        Event.AnimFileName = (string)NewValue;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Event.AnimFileName = (string)OldValue;
+
+        return ActionEvent.NoEvent;
+    }
+}

@@ -32,6 +32,7 @@ public class TimeActSelectionHandler
     public int CurrentTimeActIndex = -1;
 
     public TAE.Animation CurrentTimeActAnimation;
+    public TemporaryAnimHeader CurrentTemporaryAnimHeader;
     public int CurrentTimeActAnimationIndex = -1;
 
     public TAE.Event CurrentTimeActEvent;
@@ -47,6 +48,18 @@ public class TimeActSelectionHandler
     public ContextMenu ContextMenu;
 
     public TemplateType CurrentTimeActType = TemplateType.Character;
+
+    public SelectionContext CurrentSelectionContext = SelectionContext.None;
+
+    public enum SelectionContext
+    {
+        None,
+        File,
+        TimeAct,
+        Animation,
+        Event,
+        Property
+    }
 
     public TimeActSelectionHandler(ActionManager editorActionManager, TimeActEditorScreen screen)
     {
@@ -72,6 +85,7 @@ public class TimeActSelectionHandler
 
         CurrentTimeActAnimation = null;
         CurrentTimeActAnimationIndex = -1;
+        CurrentTemporaryAnimHeader = null;
 
         CurrentTimeActEvent = null;
         CurrentTimeActEventIndex = -1;
@@ -86,6 +100,8 @@ public class TimeActSelectionHandler
 
     public void FileContainerChange(ContainerFileInfo info, BinderInfo binderInfo, int index)
     {
+        CurrentSelectionContext = SelectionContext.File;
+
         ContainerIndex = index;
         ContainerKey = info.Name;
         ContainerInfo = info;
@@ -96,6 +112,7 @@ public class TimeActSelectionHandler
 
         CurrentTimeActAnimation = null;
         CurrentTimeActAnimationIndex = -1;
+        CurrentTemporaryAnimHeader = null;
 
         CurrentTimeActEvent = null;
         CurrentTimeActEventIndex = -1;
@@ -110,12 +127,15 @@ public class TimeActSelectionHandler
 
     public void TimeActChange(TAE entry, int index)
     {
+        CurrentSelectionContext = SelectionContext.TimeAct;
+
         TimeActMultiselect.HandleMultiselect(CurrentTimeActKey, index);
 
         CurrentTimeActKey = index;
         CurrentTimeAct = entry;
 
         CurrentTimeActAnimation = null;
+        CurrentTemporaryAnimHeader = null;
         CurrentTimeActAnimationIndex = -1;
 
         CurrentTimeActEvent = null;
@@ -132,10 +152,13 @@ public class TimeActSelectionHandler
 
     public void TimeActAnimationChange(TAE.Animation entry, int index)
     {
+        CurrentSelectionContext = SelectionContext.Animation;
+
         TimeActAnimationMultiselect.HandleMultiselect(CurrentTimeActAnimationIndex, index);
 
         CurrentTimeActAnimation = entry;
         CurrentTimeActAnimationIndex = index;
+        CurrentTemporaryAnimHeader = null;
 
         CurrentTimeActEvent = null;
         CurrentTimeActEventIndex = -1;
@@ -154,6 +177,8 @@ public class TimeActSelectionHandler
 
     public void TimeActEventChange(TAE.Event entry, int index)
     {
+        CurrentSelectionContext = SelectionContext.Event;
+
         TimeActEventMultiselect.HandleMultiselect(CurrentTimeActEventIndex, index);
 
         CurrentTimeActEvent = entry;
@@ -165,6 +190,8 @@ public class TimeActSelectionHandler
 
     public void TimeActEventPropertyChange(string entry, int index)
     {
+        CurrentSelectionContext = SelectionContext.Property;
+
         CurrentTimeActEventProperty = entry;
         CurrentTimeActEventPropertyIndex = index;
     }

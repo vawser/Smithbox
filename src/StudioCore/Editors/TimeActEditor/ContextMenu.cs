@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static StudioCore.Editors.TimeActEditor.TimeActSelectionHandler;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -38,6 +39,17 @@ public class ContextMenu
 
         if (ImGui.BeginPopupContextItem($"TimeActContextMenu##TimeActContextMenu{key}"))
         {
+            if(ImGui.Selectable($"Duplicate##duplicateAction{key}"))
+            {
+                Screen.SelectionHandler.CurrentSelectionContext = SelectionContext.TimeAct;
+                Screen.ActionHandler.DetermineDuplicateTarget();
+            }
+            if (ImGui.Selectable($"Delete##deleteAction{key}"))
+            {
+                Screen.SelectionHandler.CurrentSelectionContext = SelectionContext.TimeAct;
+                Screen.ActionHandler.DetermineDeleteTarget();
+            }
+
             ImGui.EndPopup();
         }
     }
@@ -51,6 +63,17 @@ public class ContextMenu
 
         if (ImGui.BeginPopupContextItem($"TimeActAnimationContextMenu##TimeActAnimationContextMenu{key}"))
         {
+            if (ImGui.Selectable($"Duplicate##duplicateAction{key}"))
+            {
+                Screen.SelectionHandler.CurrentSelectionContext = SelectionContext.Animation;
+                Screen.ActionHandler.DetermineDuplicateTarget();
+            }
+            if (ImGui.Selectable($"Delete##deleteAction{key}"))
+            {
+                Screen.SelectionHandler.CurrentSelectionContext = SelectionContext.Animation;
+                Screen.ActionHandler.DetermineDeleteTarget();
+            }
+
             ImGui.EndPopup();
         }
     }
@@ -62,6 +85,17 @@ public class ContextMenu
 
         if (ImGui.BeginPopupContextItem($"TimeActEventContextMenu##TimeActEventContextMenu{key}"))
         {
+            if (ImGui.Selectable($"Duplicate##duplicateAction{key}"))
+            {
+                Screen.SelectionHandler.CurrentSelectionContext = SelectionContext.Event;
+                Screen.ActionHandler.DetermineDuplicateTarget();
+            }
+            if (ImGui.Selectable($"Delete##deleteAction{key}"))
+            {
+                Screen.SelectionHandler.CurrentSelectionContext = SelectionContext.Event;
+                Screen.ActionHandler.DetermineDeleteTarget();
+            }
+
             ImGui.EndPopup();
         }
     }

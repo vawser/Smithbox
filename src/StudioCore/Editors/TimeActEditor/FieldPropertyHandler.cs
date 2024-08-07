@@ -1,31 +1,202 @@
 ﻿using Assimp;
 using Google.Protobuf.WellKnownTypes;
 using ImGuiNET;
+using Newtonsoft.Json.Linq;
 using SoapstoneLib.Proto.Internal;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using static Silk.NET.Core.Native.WinString;
+using static SoulsFormats.DRB;
 using static SoulsFormats.TAE;
+using static SoulsFormats.TAE.Animation;
 using static StudioCore.Editors.GparamEditor.GparamEditorActions;
 
 namespace StudioCore.Editors.TimeActEditor;
 
-public class PropertyHandler
+/// <summary>
+/// Handles property edits for direct fields
+/// </summary>
+public class FieldPropertyHandler
 {
     private ActionManager EditorActionManager;
     private TimeActEditorScreen Screen;
     private TimeActDecorator Decorator;
 
-    public PropertyHandler(ActionManager editorActionManager, TimeActEditorScreen screen, TimeActDecorator decorator)
+    public FieldPropertyHandler(ActionManager editorActionManager, TimeActEditorScreen screen, TimeActDecorator decorator)
     {
         EditorActionManager = editorActionManager;
         Screen = screen;
         Decorator = decorator;
+    }
+
+    public void AnimationHeaderSection(TimeActSelectionHandler handler)
+    {
+        var anim = handler.CurrentTimeActAnimation;
+        var width = ImGui.GetWindowWidth();
+        var buttonSize = new Vector2(width * 0.975f, 32);
+        var tempHeader = handler.CurrentTemporaryAnimHeader;
+
+        if (anim.MiniHeader.Type == MiniHeaderType.Standard)
+        {
+            if (ImGui.Button("Switch to Import", buttonSize))
+            {
+                var tempHeaderOld = tempHeader.Clone();
+                var newHeader = new AnimMiniHeader.ImportOtherAnim();
+                newHeader.ImportFromAnimID = tempHeader.ImportFromAnimID;
+                newHeader.Unknown = tempHeader.Unknown;
+
+                var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                EditorActionManager.ExecuteAction(action);
+            }
+        }
+        if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
+        {
+            if (ImGui.Button("Switch to Standard", buttonSize))
+            {
+                var tempHeaderOld = tempHeader.Clone();
+                var newHeader = new AnimMiniHeader.Standard();
+                newHeader.IsLoopByDefault = tempHeader.IsLoopByDefault;
+                newHeader.ImportsHKX = tempHeader.ImportsHKX;
+                newHeader.AllowDelayLoad = tempHeader.AllowDelayLoad;
+                newHeader.ImportHKXSourceAnimID = tempHeader.ImportHKXSourceAnimID;
+
+                var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                EditorActionManager.ExecuteAction(action);
+            }
+        }
+    }
+
+    public void AnimationValueSection(TimeActSelectionHandler handler)
+    {
+        var anim = handler.CurrentTimeActAnimation;
+        var tempHeader = handler.CurrentTemporaryAnimHeader;
+
+        // Animation
+        object newValue;
+        bool changed = false;
+
+        (changed, newValue) = HandleProperty("ID", anim.ID, TAE.Template.ParamType.s64);
+        if (changed)
+        {
+            var action = new TimeActEndAnimIDPropertyChange(anim, anim.ID, newValue);
+            EditorActionManager.ExecuteAction(action);
+        }
+
+        changed = false;
+
+        (changed, newValue) = HandleProperty("Name", anim.AnimFileName, TAE.Template.ParamType.str);
+        if (changed)
+        {
+            var action = new TimeActEndAnimNamePropertyChange(anim, anim.AnimFileName, newValue);
+            EditorActionManager.ExecuteAction(action);
+        }
+
+        changed = false;
+
+        if (handler.CurrentTemporaryAnimHeader != null)
+        {
+            // Header
+            if (anim.MiniHeader.Type == MiniHeaderType.Standard)
+            {
+                (changed, newValue) = HandleProperty("IsLoopByDefault", tempHeader.IsLoopByDefault, TAE.Template.ParamType.b);
+                if (changed)
+                {
+                    var tempHeaderOld = tempHeader.Clone();
+                    tempHeader.IsLoopByDefault = (bool)newValue;
+
+                    var newHeader = new AnimMiniHeader.Standard();
+
+                    newHeader.IsLoopByDefault = (bool)newValue;
+                    newHeader.ImportsHKX = tempHeader.ImportsHKX;
+                    newHeader.AllowDelayLoad = tempHeader.AllowDelayLoad;
+                    newHeader.ImportHKXSourceAnimID = tempHeader.ImportHKXSourceAnimID;
+
+                    var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                    EditorActionManager.ExecuteAction(action);
+                }
+
+                changed = false;
+
+                (changed, newValue) = HandleProperty("AllowDelayLoad", tempHeader.AllowDelayLoad, TAE.Template.ParamType.b);
+                if (changed)
+                {
+                    var tempHeaderOld = tempHeader.Clone();
+                    tempHeader.AllowDelayLoad = (bool)newValue;
+
+                    var newHeader = new AnimMiniHeader.Standard();
+                    newHeader.IsLoopByDefault = tempHeader.IsLoopByDefault;
+                    newHeader.ImportsHKX = tempHeader.ImportsHKX;
+                    newHeader.AllowDelayLoad = (bool)newValue;
+                    newHeader.ImportHKXSourceAnimID = tempHeader.ImportHKXSourceAnimID;
+
+                    var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                    EditorActionManager.ExecuteAction(action);
+
+                }
+
+                changed = false;
+
+                (changed, newValue) = HandleProperty("ImportsHKX", tempHeader.ImportsHKX, TAE.Template.ParamType.b);
+                if (changed)
+                {
+                    var tempHeaderOld = tempHeader.Clone();
+                    tempHeader.ImportsHKX = (bool)newValue;
+
+                    var newHeader = new AnimMiniHeader.Standard();
+
+                    newHeader.IsLoopByDefault = tempHeader.IsLoopByDefault;
+                    newHeader.ImportsHKX = (bool)newValue;
+                    newHeader.AllowDelayLoad = tempHeader.AllowDelayLoad;
+                    newHeader.ImportHKXSourceAnimID = tempHeader.ImportHKXSourceAnimID;
+
+                    var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                    EditorActionManager.ExecuteAction(action);
+                }
+
+                changed = false;
+
+                (changed, newValue) = HandleProperty("ImportHKXSourceAnimID", tempHeader.ImportHKXSourceAnimID, TAE.Template.ParamType.s32);
+                if (changed)
+                {
+                    var tempHeaderOld = tempHeader.Clone();
+                    tempHeader.ImportHKXSourceAnimID = (int)newValue;
+
+                    var newHeader = new AnimMiniHeader.Standard();
+
+                    newHeader.IsLoopByDefault = tempHeader.IsLoopByDefault;
+                    newHeader.ImportsHKX = tempHeader.ImportsHKX;
+                    newHeader.AllowDelayLoad = tempHeader.AllowDelayLoad;
+                    newHeader.ImportHKXSourceAnimID = (int)newValue;
+
+                    var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                    EditorActionManager.ExecuteAction(action);
+                }
+            }
+
+            if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
+            {
+                (changed, newValue) = HandleProperty("ImportFromAnimID", tempHeader.ImportFromAnimID, TAE.Template.ParamType.s32);
+                if (changed)
+                {
+                    var tempHeaderOld = tempHeader.Clone();
+                    tempHeader.ImportFromAnimID = (int)newValue;
+
+                    var newHeader = new AnimMiniHeader.ImportOtherAnim();
+                    newHeader.ImportFromAnimID = (int)newValue;
+                    newHeader.Unknown = tempHeader.Unknown;
+
+                    var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                    EditorActionManager.ExecuteAction(action);
+                }
+            }
+        }
     }
 
     public void ValueSection(TimeActSelectionHandler handler)
@@ -245,10 +416,11 @@ public class PropertyHandler
         else if (type == Template.ParamType.u64)
         {
             oldValue = property;
-            int propertyValue = (int)property;
+            ulong longValue = (ulong)property;
+            int propertyValue = Convert.ToInt32(longValue);
             int inputPropertyValue = propertyValue;
 
-            if (ImGui.InputInt($"##uintegerInput{index}", ref inputPropertyValue, 1, 1))
+            if (ImGui.InputInt($"##ulongInput{index}", ref inputPropertyValue, 1, 1))
             {
                 newValue = (ulong)inputPropertyValue;
 
@@ -275,10 +447,11 @@ public class PropertyHandler
         else if (type == Template.ParamType.x64)
         {
             oldValue = property;
-            int propertyValue = (int)property;
+            long longValue = (long)property;
+            int propertyValue = Convert.ToInt32(longValue);
             int inputPropertyValue = propertyValue;
 
-            if (ImGui.InputInt($"##hexintegerInput{index}", ref inputPropertyValue, 1, 1, ImGuiInputTextFlags.CharsHexadecimal))
+            if (ImGui.InputInt($"##hexlongInput{index}", ref inputPropertyValue, 1, 1, ImGuiInputTextFlags.CharsHexadecimal))
             {
                 newValue = (ulong)inputPropertyValue;
 
@@ -305,10 +478,11 @@ public class PropertyHandler
         else if (type == Template.ParamType.s64)
         {
             oldValue = property;
-            int propertyValue = (int)property;
+            long longValue = (long)property;
+            int propertyValue = Convert.ToInt32(longValue);
             int inputPropertyValue = propertyValue;
 
-            if (ImGui.InputInt($"##integerInput{index}", ref inputPropertyValue, 1, 1))
+            if (ImGui.InputInt($"##longInput{index}", ref inputPropertyValue, 1, 1))
             {
                 newValue = (long)inputPropertyValue;
 
@@ -356,6 +530,21 @@ public class PropertyHandler
             if (ImGui.InputFloat($"##floatInput{index}", ref inputPropertyValue))
             {
                 newValue = (double)inputPropertyValue;
+
+                _editedValueCache = newValue;
+                _changedCache = true;
+            }
+            _committedCache = ImGui.IsItemDeactivatedAfterEdit();
+        }
+        else if (type == Template.ParamType.str)
+        {
+            oldValue = property;
+            string propertyValue = (string)property;
+            string inputPropertyValue = propertyValue;
+
+            if (ImGui.InputText($"##textInput{index}", ref inputPropertyValue, 255))
+            {
+                newValue = (string)inputPropertyValue;
 
                 _editedValueCache = newValue;
                 _changedCache = true;

@@ -22,6 +22,7 @@ using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Tools;
 using static StudioCore.Editors.TimeActEditor.TimeActUtils;
 using HKLib.hk2018.hkAsyncThreadPool;
+using static SoulsFormats.TAE.Animation.AnimMiniHeader;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -44,7 +45,8 @@ public class TimeActEditorScreen : EditorScreen
     public bool ViewportUsingKeyboard;
     public Sdl2Window Window;
 
-    public PropertyHandler PropertyHandler;
+    public CollectionPropertyHandler CollectionPropertyHandler;
+    public FieldPropertyHandler FieldPropertyHandler;
     public TimeActDecorator Decorator;
     public EventGraph EventGraph;
 
@@ -76,7 +78,8 @@ public class TimeActEditorScreen : EditorScreen
 
         SelectionHandler = new TimeActSelectionHandler(EditorActionManager, this);
         Decorator = new TimeActDecorator(EditorActionManager, this);
-        PropertyHandler = new PropertyHandler(EditorActionManager, this, Decorator);
+        FieldPropertyHandler = new FieldPropertyHandler(EditorActionManager, this, Decorator);
+        CollectionPropertyHandler = new CollectionPropertyHandler(EditorActionManager, this, Decorator);
         EventGraph = new EventGraph(EditorActionManager, this, SelectionHandler);
 
         ActionHandler = new(this, EditorActionManager);
@@ -449,74 +452,123 @@ public class TimeActEditorScreen : EditorScreen
 
         var anim = SelectionHandler.CurrentTimeActAnimation;
 
-        // TODO: section for swapping header type
-
-
-        ImGui.Columns(2);
-
-        // Animation
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("ID");
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("AnimFileName");
-
-        // Header
-        if (anim.MiniHeader.Type == MiniHeaderType.Standard)
+        if (SelectionHandler.CurrentTemporaryAnimHeader == null)
         {
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("IsLoopByDefault");
+            SelectionHandler.CurrentTemporaryAnimHeader = new TemporaryAnimHeader();
+            SelectionHandler.CurrentTemporaryAnimHeader.CurrentType = anim.MiniHeader.Type;
 
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("AllowDelayLoad");
-
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("ImportsHKX");
-
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("ImportHKXSourceAnimID");
+            if(anim.MiniHeader.Type is MiniHeaderType.Standard)
+            {
+                var standardHeader = anim.MiniHeader as Standard;
+                SelectionHandler.CurrentTemporaryAnimHeader.IsLoopByDefault = standardHeader.IsLoopByDefault;
+                SelectionHandler.CurrentTemporaryAnimHeader.ImportsHKX = standardHeader.ImportsHKX;
+                SelectionHandler.CurrentTemporaryAnimHeader.AllowDelayLoad = standardHeader.AllowDelayLoad;
+                SelectionHandler.CurrentTemporaryAnimHeader.ImportHKXSourceAnimID = standardHeader.ImportHKXSourceAnimID;
+                SelectionHandler.CurrentTemporaryAnimHeader.ImportFromAnimID = 0;
+                SelectionHandler.CurrentTemporaryAnimHeader.Unknown = -1;
+            }
+            if (anim.MiniHeader.Type is MiniHeaderType.ImportOtherAnim)
+            {
+                var importHeader = anim.MiniHeader as ImportOtherAnim;
+                SelectionHandler.CurrentTemporaryAnimHeader.IsLoopByDefault = false;
+                SelectionHandler.CurrentTemporaryAnimHeader.ImportsHKX = false;
+                SelectionHandler.CurrentTemporaryAnimHeader.AllowDelayLoad = false;
+                SelectionHandler.CurrentTemporaryAnimHeader.ImportHKXSourceAnimID = 0;
+                SelectionHandler.CurrentTemporaryAnimHeader.ImportFromAnimID = importHeader.ImportFromAnimID;
+                SelectionHandler.CurrentTemporaryAnimHeader.Unknown = importHeader.Unknown;
+            }
         }
 
-        if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
-        {
+        FieldPropertyHandler.AnimationHeaderSection(SelectionHandler);
 
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("ImportFromAnimID");
+        if (CFG.Current.TimeActEditor_DisplayPropertyType)
+        {
+            ImGui.Columns(3);
+        }
+        else
+        {
+            ImGui.Columns(2);
+        }
+
+        // Property Column
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("ID");
+        ImguiUtils.ShowHoverTooltip("ID number of this animation.");
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("Name");
+        ImguiUtils.ShowHoverTooltip("The name of this animation entry.");
+
+        if (SelectionHandler.CurrentTemporaryAnimHeader != null)
+        {
+            if (anim.MiniHeader.Type == MiniHeaderType.Standard)
+            {
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Loop by Default");
+                ImguiUtils.ShowHoverTooltip("Makes the animation loop by default. Only relevant for animations not controlled byESD or HKS such as ObjAct animations.");
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Allow Delay Load");
+                ImguiUtils.ShowHoverTooltip("Whether to allow this animation to be loaded from delayload anibnds such as the c0000_cXXXX.anibnd player throw anibnds.");
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Imports HKX");
+                ImguiUtils.ShowHoverTooltip("Whether to import the HKX (actual motion data) of the animation with the ID of referenced in Import HKX Source Anim ID.");
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Import HKX Source Anim ID");
+                ImguiUtils.ShowHoverTooltip("Anim ID to import HKX from.");
+            }
+
+            if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
+            {
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Import Anim ID");
+                ImguiUtils.ShowHoverTooltip("ID of animation from which to import motion dat and all events.");
+            }
         }
 
         ImGui.NextColumn();
 
-        // Animation
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text($"{anim.ID}");
+        // Value Column
+        FieldPropertyHandler.AnimationValueSection(SelectionHandler);
 
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text($"{anim.AnimFileName}");
+        // Type Column
 
-        // Header
-        if (anim.MiniHeader.Type == MiniHeaderType.Standard)
+        // Type Column
+        if (CFG.Current.TimeActEditor_DisplayPropertyType)
         {
-            var header = anim.MiniHeader.GetClone() as AnimMiniHeader.Standard;
+            ImGui.NextColumn();
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Text($"{header.IsLoopByDefault}");
+            ImGui.Text("int");
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Text($"{header.AllowDelayLoad}");
+            ImGui.Text("string");
 
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text($"{header.ImportsHKX}");
+            if (SelectionHandler.CurrentTemporaryAnimHeader != null)
+            {
+                if (anim.MiniHeader.Type == MiniHeaderType.Standard)
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("b");
 
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text($"{header.ImportHKXSourceAnimID}");
-        }
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("b");
 
-        if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
-        {
-            var header = anim.MiniHeader.GetClone() as AnimMiniHeader.ImportOtherAnim;
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("b");
 
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text($"{header.ImportFromAnimID}");
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("long");
+                }
+
+                if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("int");
+                }
+            }
         }
 
         ImGui.Columns(1);
@@ -622,39 +674,15 @@ public class TimeActEditorScreen : EditorScreen
 
         ImGui.BeginChild("EventPropertyList");
 
-        // Type Column
         if (CFG.Current.TimeActEditor_DisplayPropertyType)
         {
             ImGui.Columns(3);
-
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("f32");
-
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("f32");
-
-            for (int i = 0; i < SelectionHandler.CurrentTimeActEvent.Parameters.ParameterValues.Count; i++)
-            {
-                var property = SelectionHandler.CurrentTimeActEvent.Parameters.ParameterValues.ElementAt(i).Key;
-                var propertyType = SelectionHandler.CurrentTimeActEvent.Parameters.GetParamValueType(property);
-
-                if (TimeActFilters.TimeActEventPropertyFilter(SelectionHandler.ContainerInfo, property))
-                {
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text($"{propertyType}");
-
-                    Decorator.HandleTypeColumn(property);
-                    
-                }
-            }
-
-            ImGui.NextColumn();
         }
         else
         {
             ImGui.Columns(2);
         }
-
+        
         // Property Column
         ImGui.AlignTextToFramePadding();
         ImGui.Selectable($@"Start Time##taeEventProperty_StartTime", false);
@@ -689,8 +717,35 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.NextColumn();
 
         // Value Column
-        PropertyHandler.ValueSection(SelectionHandler);
+        FieldPropertyHandler.ValueSection(SelectionHandler);
         
+        // Type Column
+        if (CFG.Current.TimeActEditor_DisplayPropertyType)
+        {
+            ImGui.NextColumn();
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("f32");
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("f32");
+
+            for (int i = 0; i < SelectionHandler.CurrentTimeActEvent.Parameters.ParameterValues.Count; i++)
+            {
+                var property = SelectionHandler.CurrentTimeActEvent.Parameters.ParameterValues.ElementAt(i).Key;
+                var propertyType = SelectionHandler.CurrentTimeActEvent.Parameters.GetParamValueType(property);
+
+                if (TimeActFilters.TimeActEventPropertyFilter(SelectionHandler.ContainerInfo, property))
+                {
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text($"{propertyType}");
+
+                    Decorator.HandleTypeColumn(property);
+
+                }
+            }
+        }
+
         ImGui.Columns(1);
 
         ImGui.EndChild();

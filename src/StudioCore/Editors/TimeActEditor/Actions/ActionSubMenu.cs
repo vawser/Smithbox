@@ -25,10 +25,12 @@ public class ActionSubMenu
     {
         if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete))
         {
+            Handler.DetermineDeleteTarget();
         }
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
         {
+            Handler.DetermineDuplicateTarget();
         }
     }
 
@@ -43,14 +45,14 @@ public class ActionSubMenu
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Duplicate"))
             {
-                // TODO: contextually determine if the target is Animation or Event
+                Handler.DetermineDuplicateTarget();
             }
             ImguiUtils.ShowHoverTooltip("Duplicates the current selection.");
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Delete"))
             {
-                // TODO: contextually determine if the target is Animation or Event
+                Handler.DetermineDeleteTarget();
             }
             ImguiUtils.ShowHoverTooltip("Deletes the current selection.");
 

@@ -618,6 +618,10 @@ public static class AnimationBank
             {
                 File.Copy(assetRoot, $@"{assetRoot}.bak", true);
             }
+            else if (File.Exists(assetMod))
+            {
+                File.Copy(assetMod, $@"{assetMod}.bak", true);
+            }
 
             if (fileBytes != null)
             {
@@ -786,6 +790,10 @@ public static class AnimationBank
                 if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
                 {
                     File.Copy(assetRoot, $@"{assetRoot}.bak", true);
+                }
+                else if(File.Exists(assetMod))
+                {
+                    File.Copy(assetMod, $@"{assetMod}.bak", true);
                 }
 
                 File.WriteAllBytes(assetMod, fileBytes);

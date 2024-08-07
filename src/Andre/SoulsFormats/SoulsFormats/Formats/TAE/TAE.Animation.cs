@@ -46,7 +46,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Standard MiniHeader with three flags, 2 of which can reference specific parts of another animation.
                 /// </summary>
-                public sealed class Standard : AnimMiniHeader
+                public class Standard : AnimMiniHeader
                 {
                     /// <summary>
                     /// Type of AnimMiniHeader that this is.
@@ -147,7 +147,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// AnimMiniHeader that signifies that the animation fully imports the motion data and all events from another animation.
                 /// </summary>
-                public sealed class ImportOtherAnim : AnimMiniHeader
+                public class ImportOtherAnim : AnimMiniHeader
                 {
                     /// <summary>
                     /// Type of AnimMiniHeader that this is.

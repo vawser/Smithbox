@@ -615,7 +615,7 @@ public class CFG
     public bool TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName = true;
     public bool TimeActEditor_DisplayEventRow_ProjectEnumInfo = true;
 
-    public bool TimeActEditor_DisplayPropertyType = true;
+    public bool TimeActEditor_DisplayPropertyType = false;
 
     public bool TimeActEditor_Viewport_Grid = true;
 

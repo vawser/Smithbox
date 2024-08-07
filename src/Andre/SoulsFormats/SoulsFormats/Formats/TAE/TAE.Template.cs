@@ -764,6 +764,8 @@ namespace SoulsFormats
                 /// Array of bytes.
                 /// </summary>
                 aob,
+
+                str
             }
 
         }
