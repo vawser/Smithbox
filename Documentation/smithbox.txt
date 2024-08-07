@@ -93,3 +93,4 @@ Time Act Editor
  - ADD: Data export/import for TAE/Animation/Event
  - ADD: TAE Quick Edit tool
  - ADD: proper support for ER/AC6 asset TAEs
+ 

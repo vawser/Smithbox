@@ -620,6 +620,9 @@
     <event id="308" name="Arrow Turn Animation">
       <f32/>
     </event>
+    <event id="400" name="Event 400">
+      <s32/>
+    </event>
     <event id="401" name="Add SpEffect - Multiplayer [401]">
       <s32 name="SpEffect ID" ref="SpEffectParam"/>
     </event>

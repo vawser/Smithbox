@@ -21,6 +21,8 @@ using static SoulsFormats.TAE.Animation;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Tools;
 using static StudioCore.Editors.TimeActEditor.AnimationBank;
+using static StudioCore.Editors.TimeActEditor.TimeActUtils;
+using HKLib.hk2018.hkAsyncThreadPool;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -133,7 +135,7 @@ public class TimeActEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TimeActEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Smithbox.ProjectType is ProjectType.Undefined or ProjectType.DS2 or ProjectType.DS2S)
+        if (Smithbox.ProjectType is ProjectType.Undefined)
         {
             ImGui.Begin("Editor##InvalidTaeEditor");
 
@@ -304,7 +306,7 @@ public class TimeActEditorScreen : EditorScreen
                     {
                         SelectionHandler.FileContainerChange(info, binder, i);
                     }
-                    TimeActUtils.DisplayTimeActFileAlias(info.Name);
+                    TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Character);
 
                     SelectionHandler.ContextMenu.ContainerMenu(isSelected, info.Name);
                 }
@@ -339,7 +341,7 @@ public class TimeActEditorScreen : EditorScreen
                         {
                             SelectionHandler.FileContainerChange(info, binder, i);
                         }
-                        TimeActUtils.DisplayTimeActFileAlias(info.Name);
+                        TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Asset);
 
                         SelectionHandler.ContextMenu.ContainerMenu(isSelected, info.Name);
                     }

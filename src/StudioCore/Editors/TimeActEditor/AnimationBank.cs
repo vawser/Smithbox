@@ -249,50 +249,72 @@ public static class AnimationBank
         IBinder aniBinder = null;
         string aniBinderName = "";
 
-        fileStruct.IsContainerFile = true;
-
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        // Loose .tae
+        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            binder = BND3.Read(DCX.Decompress(path));
+            fileStruct.IsContainerFile = false;
+
+            try
+            {
+                var fileBytes = File.ReadAllBytes(path);
+                TAE taeFile = TAE.Read(fileBytes);
+                InternalFileInfo tInfo = new(path, taeFile);
+                fileStruct.InternalFiles.Add(tInfo);
+                validFile = true;
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"{name} {path} - Failed to read.\n{ex.ToString()}");
+            }
         }
+        // Within .anibnd.dcx
         else
         {
-            binder = BND4.Read(DCX.Decompress(path));
-        }
+            fileStruct.IsContainerFile = true;
 
-        foreach (var file in binder.Files)
-        {
-            if (file.Name.Contains(".anibnd"))
+            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
-                aniBinderName = file.Name;
+                binder = BND3.Read(DCX.Decompress(path));
+            }
+            else
+            {
+                binder = BND4.Read(DCX.Decompress(path));
+            }
 
-                if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            foreach (var file in binder.Files)
+            {
+                if (file.Name.Contains(".anibnd"))
                 {
-                    aniBinder = BND3.Read(file.Bytes);
-                }
-                else
-                {
-                    aniBinder = BND4.Read(file.Bytes);
-                }
+                    aniBinderName = file.Name;
 
-                foreach (var aniFile in aniBinder.Files)
-                {
-                    if (aniFile.Name.Contains(".tae"))
+                    if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
                     {
-                        if (aniFile.Bytes.Length > 0)
-                        {
-                            try
-                            {
-                                TAE taeFile = TAE.Read(aniFile.Bytes);
-                                InternalFileInfo tInfo = new(aniFile.Name, taeFile);
-                                fileStruct.InternalFiles.Add(tInfo);
-                                validFile = true;
+                        aniBinder = BND3.Read(file.Bytes);
+                    }
+                    else
+                    {
+                        aniBinder = BND4.Read(file.Bytes);
+                    }
 
-                                //TaskLogs.AddLog($"Added to bank: {file.Name}");
-                            }
-                            catch (Exception ex)
+                    foreach (var aniFile in aniBinder.Files)
+                    {
+                        if (aniFile.Name.Contains(".tae"))
+                        {
+                            if (aniFile.Bytes.Length > 0)
                             {
-                                TaskLogs.AddLog($"{name} {aniFile.Name} - Failed to read.\n{ex.ToString()}");
+                                try
+                                {
+                                    TAE taeFile = TAE.Read(aniFile.Bytes);
+                                    InternalFileInfo tInfo = new(aniFile.Name, taeFile);
+                                    fileStruct.InternalFiles.Add(tInfo);
+                                    validFile = true;
+
+                                    //TaskLogs.AddLog($"Added to bank: {file.Name}");
+                                }
+                                catch (Exception ex)
+                                {
+                                    TaskLogs.AddLog($"{name} {aniFile.Name} - Failed to read.\n{ex.ToString()}");
+                                }
                             }
                         }
                     }
@@ -318,19 +340,27 @@ public static class AnimationBank
 
     public static void SaveTimeAct(ContainerFileInfo info, BinderInfo binderInfo)
     {
-        if (binderInfo.ContainerBinder == null)
-            return;
-
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             var fileDir = @"\timeact\chr";
             var fileExt = @".tae";
+
+            if(info.Path.Contains("obj"))
+            {
+                fileDir = @"\timeact\obj";
+            }
 
             // Direct file with DS2
             var fileBytes = info.InternalFiles.First().TAE.Write();
 
             var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
             var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
+            var assetModDir = $@"{Smithbox.ProjectRoot}\{fileDir}\";
+
+            if (!Directory.Exists(assetModDir))
+            {
+                Directory.CreateDirectory(assetModDir);
+            }
 
             // Make a backup of the original file if a mod path doesn't exist
             if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
@@ -341,11 +371,14 @@ public static class AnimationBank
             if (fileBytes != null)
             {
                 File.WriteAllBytes(assetMod, fileBytes);
-                //TaskLogs.AddLog($"Saved at: {assetMod}");
+                TaskLogs.AddLog($"Saved at: {assetMod}");
             }
         }
         else
         {
+            if (binderInfo.ContainerBinder == null)
+                return;
+
             var fileDir = @"\chr";
             var fileExt = @".anibnd.dcx";
 

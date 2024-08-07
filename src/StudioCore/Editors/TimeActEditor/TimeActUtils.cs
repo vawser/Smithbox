@@ -22,9 +22,21 @@ namespace StudioCore.Editors.TimeActEditor;
 
 public static class TimeActUtils
 {
-    public static void DisplayTimeActFileAlias(string name)
+    public enum AliasType
+    {
+        Character,
+        Asset
+    }
+
+    public static void DisplayTimeActFileAlias(string name, AliasType type)
     {
         var referenceDict = Smithbox.AliasCacheHandler.AliasCache.Characters;
+
+        if(type == AliasType.Asset)
+        {
+            referenceDict = Smithbox.AliasCacheHandler.AliasCache.Assets;
+        }
+
         var lowerName = name.ToLower();
 
         if (referenceDict.ContainsKey(lowerName))
