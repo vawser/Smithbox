@@ -603,10 +603,12 @@ public class CFG
 
     public bool TimeActEditor_DisplayTimeActRow_AliasInfo = true;
 
+    public bool TimeActEditor_DisplayAnimFileName = true;
     public bool TimeActEditor_DisplayAnimRow_GeneratorInfo = true;
 
     public bool TimeActEditor_DisplayAllGenerators = false;
 
+    public bool TimeActEditor_DisplayEventID = true;
     public bool TimeActEditor_DisplayEventRow_EnumInfo = true;
     public bool TimeActEditor_DisplayEventRow_ParamRefInfo = true;
     public bool TimeActEditor_DisplayEventRow_DataAliasInfo = true;

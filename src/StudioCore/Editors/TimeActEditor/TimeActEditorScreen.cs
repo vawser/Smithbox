@@ -413,7 +413,13 @@ public class TimeActEditorScreen : EditorScreen
                     isSelected = true;
                 }
 
-                if (ImGui.Selectable($@" {entry.ID}##taeAnim{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                var displayName = $"{entry.ID}";
+                if(CFG.Current.TimeActEditor_DisplayAnimFileName)
+                {
+                    displayName = $"{entry.ID} {entry.AnimFileName}";
+                }
+
+                if (ImGui.Selectable($@" {displayName}##taeAnim{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
                 {
                     EventGraph.ResetGraph();
                     SelectionHandler.TimeActAnimationChange(entry, i);
@@ -442,6 +448,9 @@ public class TimeActEditorScreen : EditorScreen
         }
 
         var anim = SelectionHandler.CurrentTimeActAnimation;
+
+        // TODO: section for swapping header type
+
 
         ImGui.Columns(2);
 
@@ -567,7 +576,13 @@ public class TimeActEditorScreen : EditorScreen
                     SelectionHandler.TimeActEventChange(evt, i);
                 }
 
-                if (ImGui.Selectable($@" {evt.TypeName}##taeEvent{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                var displayName = $"{evt.TypeName}";
+                if(CFG.Current.TimeActEditor_DisplayEventID)
+                {
+                    displayName = $" [{evt.Type}] {evt.TypeName}";
+                }
+
+                if (ImGui.Selectable($@"{displayName}##taeEvent{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
                 {
                     SelectionHandler.TimeActEventChange(evt, i);
                 }

@@ -42,6 +42,9 @@ public class TimeActEditorTab
             // Animations
             if (ImGui.CollapsingHeader("Animations"))
             {
+                ImGui.Checkbox("Display animation file name", ref CFG.Current.TimeActEditor_DisplayAnimFileName);
+                ImguiUtils.ShowHoverTooltip("Display the stored filename for each animation.");
+
                 ImGui.Checkbox("Display animation aliases", ref CFG.Current.TimeActEditor_DisplayAnimRow_GeneratorInfo);
                 ImguiUtils.ShowHoverTooltip("Display the generator info aliases for each of the Animation rows");
 
@@ -52,6 +55,9 @@ public class TimeActEditorTab
             // Events
             if (ImGui.CollapsingHeader("Events"))
             {
+                ImGui.Checkbox("Display event id", ref CFG.Current.TimeActEditor_DisplayEventID);
+                ImguiUtils.ShowHoverTooltip("Display the internal event ID for each event.");
+
                 ImGui.Checkbox("Display additional in-line info: Enums", ref CFG.Current.TimeActEditor_DisplayEventRow_EnumInfo);
                 ImguiUtils.ShowHoverTooltip("Display additional info about the Enum properties in the Event row name.");
 
