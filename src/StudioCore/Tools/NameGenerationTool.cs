@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Editor;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TimeActEditor;
@@ -27,7 +28,26 @@ public static class NameGenerationTool
     {
         if (!AnimationBank.IsLoaded)
         {
-            AnimationBank.LoadTimeActs();
+            TaskManager.Run(
+                    new TaskManager.LiveTask($"Setup Time Act Editor: Templates", TaskManager.RequeueType.None, false,
+                () =>
+                {
+                    AnimationBank.LoadTimeActTemplates();
+                }));
+
+            TaskManager.Run(
+                new TaskManager.LiveTask($"Setup Time Act Editor: Characters", TaskManager.RequeueType.None, false,
+            () =>
+            {
+                AnimationBank.LoadProjectCharacterTimeActs();
+            }));
+
+            TaskManager.Run(
+                new TaskManager.LiveTask($"Setup Time Act Editor: Objects", TaskManager.RequeueType.None, false,
+            () =>
+            {
+                AnimationBank.LoadProjectObjectTimeActs();
+            }));
         }
         if (!HavokFileBank.IsLoaded)
         {

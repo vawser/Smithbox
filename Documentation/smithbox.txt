@@ -87,10 +87,13 @@ World Map:
 - ADD: finish documenting ER SOTE rows
 
 Time Act Editor
- - FIX: TAE a330 + a331 in AC6 are not reading correctly
  - ADD: TAE.Animation property editor
  - ADD: Duplicate/Delete/Copy/Paste row context for Animations and Events
  - ADD: Data export/import for TAE/Animation/Event
  - ADD: TAE Quick Edit tool
- - ADD: proper support for ER/AC6 asset TAEs
+ - ADD: TAE Deep Search tool:  
+  - Search by animation ID, quick-link to all instances (TAE -> Animation)
+  - Search by event ID/name, quick-link to all instances (TAE -> Animation -> Event)
+  - Search by event value, quick-link to all instances (TAE -> Animation -> Event)
+ - FIX: TAE a330 + a331 in AC6 are not reading correctly
  

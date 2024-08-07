@@ -16,17 +16,33 @@ public class TimeActEditorTab
     {
         if (ImGui.BeginTabItem("Time Act Editor"))
         {
+            // Setup
+            if (ImGui.CollapsingHeader("Setup"))
+            {
+                ImGui.Checkbox("Load project character time acts", ref CFG.Current.TimeActEditor_Load_CharacterTimeActs);
+                ImguiUtils.ShowHoverTooltip("Load the character time act files when setting up the Time Act Editor.");
+
+                ImGui.Checkbox("Load vanilla character time acts", ref CFG.Current.TimeActEditor_Load_VanillaCharacterTimeActs);
+                ImguiUtils.ShowHoverTooltip("Load the vanillacharacter time act files when setting up the Time Act Editor.");
+
+                ImGui.Checkbox("Load project object time acts", ref CFG.Current.TimeActEditor_Load_ObjectTimeActs);
+                ImguiUtils.ShowHoverTooltip("Load the object/asset time act files when setting up the Time Act Editor.");
+
+                ImGui.Checkbox("Load vanilla object time acts", ref CFG.Current.TimeActEditor_Load_VanillaObjectTimeActs);
+                ImguiUtils.ShowHoverTooltip("Load the vanilla object/asset time act files when setting up the Time Act Editor.");
+            }
+
             // Time Acts
             if (ImGui.CollapsingHeader("Time Acts"))
             {
-                ImGui.Checkbox("Display time act aliases", ref CFG.Current.Interface_TimeActEditor_DisplayTimeActRow_AliasInfo);
+                ImGui.Checkbox("Display time act aliases", ref CFG.Current.TimeActEditor_DisplayTimeActRow_AliasInfo);
                 ImguiUtils.ShowHoverTooltip("Display aliases for each of the Time Act rows");
             }
 
             // Animations
             if (ImGui.CollapsingHeader("Animations"))
             {
-                ImGui.Checkbox("Display animation aliases", ref CFG.Current.Interface_TimeActEditor_DisplayAnimRow_GeneratorInfo);
+                ImGui.Checkbox("Display animation aliases", ref CFG.Current.TimeActEditor_DisplayAnimRow_GeneratorInfo);
                 ImguiUtils.ShowHoverTooltip("Display the generator info aliases for each of the Animation rows");
 
                 ImGui.Checkbox("Display every valid generator in animation alias", ref CFG.Current.TimeActEditor_DisplayAllGenerators);
@@ -36,26 +52,26 @@ public class TimeActEditorTab
             // Events
             if (ImGui.CollapsingHeader("Events"))
             {
-                ImGui.Checkbox("Display additional in-line info: Enums", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_EnumInfo);
+                ImGui.Checkbox("Display additional in-line info: Enums", ref CFG.Current.TimeActEditor_DisplayEventRow_EnumInfo);
                 ImguiUtils.ShowHoverTooltip("Display additional info about the Enum properties in the Event row name.");
 
-                ImGui.Checkbox("Display additional in-line info: Param References", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_ParamRefInfo);
+                ImGui.Checkbox("Display additional in-line info: Param References", ref CFG.Current.TimeActEditor_DisplayEventRow_ParamRefInfo);
                 ImguiUtils.ShowHoverTooltip("Display additional info about the Param Reference properties in the Event row name.");
 
-                ImGui.Checkbox("Display additional in-line info: Data Aliases", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_DataAliasInfo);
+                ImGui.Checkbox("Display additional in-line info: Data Aliases", ref CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo);
                 ImguiUtils.ShowHoverTooltip("Display additional info about the Data Alias properties in the Event row name.");
 
-                ImGui.Checkbox("Include Data Alias name within additional in-line info", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName);
+                ImGui.Checkbox("Include Data Alias name within additional in-line info", ref CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName);
                 ImguiUtils.ShowHoverTooltip("Include the alias name in the Data Alias properties in the Event row name.");
 
-                ImGui.Checkbox("Display additional in-line info: Project Enums", ref CFG.Current.Interface_TimeActEditor_DisplayEventRow_ProjectEnumInfo);
+                ImGui.Checkbox("Display additional in-line info: Project Enums", ref CFG.Current.TimeActEditor_DisplayEventRow_ProjectEnumInfo);
                 ImguiUtils.ShowHoverTooltip("Display additional info about the Project Enum properties in the Event row name.");
             }
 
             // Properties List
             if (ImGui.CollapsingHeader("Properties", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Display property type column", ref CFG.Current.Interface_TimeActEditor_DisplayPropertyType);
+                ImGui.Checkbox("Display property type column", ref CFG.Current.TimeActEditor_DisplayPropertyType);
                 ImguiUtils.ShowHoverTooltip("Display the property type as an additional column in the Properties view.");
             }
 

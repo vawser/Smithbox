@@ -1,7 +1,10 @@
-﻿using StudioCore.Core;
+﻿using DotNext;
+using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using static SoulsFormats.MSBB.Event;
 
 namespace StudioCore.Locators;
 public static class MiscLocator
@@ -74,22 +77,39 @@ public static class MiscLocator
 
             ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
         }
-        else if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+
+        return ret;
+    }
+
+    public static Dictionary<string, List<string>> GetAssetTimeActBinders_ER(bool ignoreProject = false)
+    {
+        Dictionary<string, List<string>> assetDict = new();
+
+        var paramDir = @"\asset\aeg\";
+        var paramExt = @".geombnd.dcx";
+
+        List<string> ret = new List<string>();
+
+        var searchDir = $"{Smithbox.GameRoot}\\{paramDir}";
+        foreach (var folderPath in Directory.EnumerateDirectories(searchDir))
         {
-            ret = new();
+            var folderName = folderPath.Substring(folderPath.Length - 6);
 
-            paramDir = @"\asset\aeg\";
-            paramExt = @".geombnd.dcx";
-
-            var searchDir = $"{Smithbox.GameRoot}\\{paramDir}";
-            foreach(var folder in Directory.EnumerateDirectories(searchDir))
-            {
-                foreach(var file in Directory.EnumerateFiles(folder))
-                {
-                    ret.Add(file);
-                }
-            }
+            ret = LocatorUtils.GetAssetFiles($"{paramDir}\\{folderName}\\", paramExt, ignoreProject);
+            assetDict.Add(folderName, ret);
         }
+
+        return assetDict;
+    }
+
+    public static List<string> GetAssetTimeActBinders_AC6(bool ignoreProject = false)
+    {
+        List<string> ret = new List<string>();
+
+        var paramDir = @"\asset\environment\geometry\";
+        var paramExt = @".geombnd.dcx";
+
+        ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
 
         return ret;
     }

@@ -596,21 +596,26 @@ public class CFG
     //****************************
     // Settings: Time Act Editor
     //****************************
-    public bool Interface_TimeActEditor_DisplayTimeActRow_AliasInfo = true;
+    public bool TimeActEditor_Load_CharacterTimeActs = true;
+    public bool TimeActEditor_Load_ObjectTimeActs = false;
+    public bool TimeActEditor_Load_VanillaCharacterTimeActs = true;
+    public bool TimeActEditor_Load_VanillaObjectTimeActs = false;
 
-    public bool Interface_TimeActEditor_DisplayAnimRow_GeneratorInfo = true;
+    public bool TimeActEditor_DisplayTimeActRow_AliasInfo = true;
+
+    public bool TimeActEditor_DisplayAnimRow_GeneratorInfo = true;
 
     public bool TimeActEditor_DisplayAllGenerators = false;
 
-    public bool Interface_TimeActEditor_DisplayEventRow_EnumInfo = true;
-    public bool Interface_TimeActEditor_DisplayEventRow_ParamRefInfo = true;
-    public bool Interface_TimeActEditor_DisplayEventRow_DataAliasInfo = true;
-    public bool Interface_TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName = true;
-    public bool Interface_TimeActEditor_DisplayEventRow_ProjectEnumInfo = true;
+    public bool TimeActEditor_DisplayEventRow_EnumInfo = true;
+    public bool TimeActEditor_DisplayEventRow_ParamRefInfo = true;
+    public bool TimeActEditor_DisplayEventRow_DataAliasInfo = true;
+    public bool TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName = true;
+    public bool TimeActEditor_DisplayEventRow_ProjectEnumInfo = true;
 
-    public bool Interface_TimeActEditor_DisplayPropertyType = true;
+    public bool TimeActEditor_DisplayPropertyType = true;
 
-    public bool Interface_TimeActEditor_Viewport_Grid = true;
+    public bool TimeActEditor_Viewport_Grid = true;
 
     public bool TimeActEditor_Viewport_RegenerateMapGrid = false;
     public int TimeActEditor_Viewport_GridType = 0;

@@ -20,7 +20,6 @@ using static Silk.NET.Core.Native.WinString;
 using static SoulsFormats.TAE.Animation;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Tools;
-using static StudioCore.Editors.TimeActEditor.AnimationBank;
 using static StudioCore.Editors.TimeActEditor.TimeActUtils;
 using HKLib.hk2018.hkAsyncThreadPool;
 
@@ -145,14 +144,7 @@ public class TimeActEditorScreen : EditorScreen
         }
         else
         {
-            if (!AnimationBank.IsLoaded)
-            {
-                TaskManager.Run(new TaskManager.LiveTask($"Setup Time Act Editor", TaskManager.RequeueType.None, false,
-                () =>
-                {
-                    AnimationBank.LoadTimeActs();
-                }));
-            }
+            AnimationBank.Load();
 
             if (!TaskManager.AnyActiveTasks() && AnimationBank.IsLoaded)
             {
@@ -197,7 +189,7 @@ public class TimeActEditorScreen : EditorScreen
             {
                 ImGui.Begin("Editor##LoadingTaeEditor");
 
-                ImGui.Text($"This editor is still loading.");
+                AnimationBank.DisplayLoadState();
 
                 ImGui.End();
             }
@@ -313,38 +305,30 @@ public class TimeActEditorScreen : EditorScreen
             }
         }
 
-        if (!(Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6))
+        var title = $"{AnimationBank.GetObjectTitle()}s";
+
+        if (ImGui.CollapsingHeader(title))
         {
-            var title = "Objects";
-
-            if(Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+            for (int i = 0; i < AnimationBank.FileObjBank.Count; i++)
             {
-                title = "Assets";
-            }
+                var info = AnimationBank.FileObjBank.ElementAt(i).Key;
+                var binder = AnimationBank.FileObjBank.ElementAt(i).Value;
 
-            if (ImGui.CollapsingHeader(title))
-            {
-                for (int i = 0; i < AnimationBank.FileObjBank.Count; i++)
+                if (TimeActFilters.FileContainerFilter(info))
                 {
-                    var info = AnimationBank.FileObjBank.ElementAt(i).Key;
-                    var binder = AnimationBank.FileObjBank.ElementAt(i).Value;
-
-                    if (TimeActFilters.FileContainerFilter(info))
+                    var isSelected = false;
+                    if (i == SelectionHandler.ContainerIndex)
                     {
-                        var isSelected = false;
-                        if (i == SelectionHandler.ContainerIndex)
-                        {
-                            isSelected = true;
-                        }
-
-                        if (ImGui.Selectable($@" {info.Name}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
-                        {
-                            SelectionHandler.FileContainerChange(info, binder, i);
-                        }
-                        TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Asset);
-
-                        SelectionHandler.ContextMenu.ContainerMenu(isSelected, info.Name);
+                        isSelected = true;
                     }
+
+                    if (ImGui.Selectable($@" {info.Name}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                    {
+                        SelectionHandler.FileContainerChange(info, binder, i);
+                    }
+                    TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Asset);
+
+                    SelectionHandler.ContextMenu.ContainerMenu(isSelected, info.Name);
                 }
             }
         }
@@ -371,7 +355,7 @@ public class TimeActEditorScreen : EditorScreen
 
         for (int i = 0; i < SelectionHandler.ContainerInfo.InternalFiles.Count; i++)
         {
-            InternalFileInfo info = SelectionHandler.ContainerInfo.InternalFiles[i];
+            AnimationBank.InternalFileInfo info = SelectionHandler.ContainerInfo.InternalFiles[i];
             TAE entry = SelectionHandler.ContainerInfo.InternalFiles[i].TAE;
 
             if (TimeActFilters.TimeActFilter(SelectionHandler.ContainerInfo, entry))
@@ -388,7 +372,7 @@ public class TimeActEditorScreen : EditorScreen
                     SelectionHandler.TimeActChange(entry, i);
                 }
 
-                if (CFG.Current.Interface_TimeActEditor_DisplayTimeActRow_AliasInfo)
+                if (CFG.Current.TimeActEditor_DisplayTimeActRow_AliasInfo)
                     TimeActUtils.DisplayTimeActAlias(SelectionHandler.ContainerInfo, entry.ID);
 
                 SelectionHandler.ContextMenu.TimeActMenu(isSelected, entry.ID.ToString());
@@ -435,7 +419,7 @@ public class TimeActEditorScreen : EditorScreen
                     SelectionHandler.TimeActAnimationChange(entry, i);
                 }
 
-                if (CFG.Current.Interface_TimeActEditor_DisplayAnimRow_GeneratorInfo)
+                if (CFG.Current.TimeActEditor_DisplayAnimRow_GeneratorInfo)
                     TimeActUtils.DisplayAnimationAlias(SelectionHandler, entry.ID);
 
                 SelectionHandler.ContextMenu.TimeActAnimationMenu(isSelected, entry.ID.ToString());
@@ -588,16 +572,16 @@ public class TimeActEditorScreen : EditorScreen
                     SelectionHandler.TimeActEventChange(evt, i);
                 }
 
-                if(CFG.Current.Interface_TimeActEditor_DisplayEventRow_EnumInfo)
+                if(CFG.Current.TimeActEditor_DisplayEventRow_EnumInfo)
                     Decorator.DisplayEnumInfo(evt);
 
-                if (CFG.Current.Interface_TimeActEditor_DisplayEventRow_ParamRefInfo)
+                if (CFG.Current.TimeActEditor_DisplayEventRow_ParamRefInfo)
                     Decorator.DisplayParamRefInfo(evt);
 
-                if (CFG.Current.Interface_TimeActEditor_DisplayEventRow_DataAliasInfo)
+                if (CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo)
                     Decorator.DisplayAliasEnumInfo(evt);
 
-                if (CFG.Current.Interface_TimeActEditor_DisplayEventRow_ProjectEnumInfo)
+                if (CFG.Current.TimeActEditor_DisplayEventRow_ProjectEnumInfo)
                     Decorator.DisplayProjectEnumInfo(evt);
 
                 SelectionHandler.ContextMenu.TimeActEventMenu(isSelected, i.ToString());
@@ -624,7 +608,7 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.BeginChild("EventPropertyList");
 
         // Type Column
-        if (CFG.Current.Interface_TimeActEditor_DisplayPropertyType)
+        if (CFG.Current.TimeActEditor_DisplayPropertyType)
         {
             ImGui.Columns(3);
 
@@ -816,8 +800,14 @@ public class TimeActEditorScreen : EditorScreen
         }
 
         if (AnimationBank.IsLoaded)
-            AnimationBank.LoadTimeActs();
+        {
+            AnimationBank.IsLoaded = false;
+            AnimationBank.IsTemplatesLoaded = false;
+            AnimationBank.IsCharacterTimeActsLoaded = false;
+            AnimationBank.IsObjectTimeActsLoaded = false;
 
+            AnimationBank.Load();
+        }
         ResetActionManager();
         //_universe.UnloadAll(true);
     }

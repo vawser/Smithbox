@@ -54,7 +54,7 @@ public class TimeActViewGrid
             Regenerate();
         }
 
-        if (CFG.Current.Interface_TimeActEditor_Viewport_Grid && Smithbox.EditorHandler.FocusedEditor is TimeActEditorScreen)
+        if (CFG.Current.TimeActEditor_Viewport_Grid && Smithbox.EditorHandler.FocusedEditor is TimeActEditorScreen)
         {
             ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.TimeActEditor_Viewport_Grid_Color);
             ViewportGrid.Visible = true;

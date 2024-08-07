@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <event_template game="SDT">
-  <bank id="56" name="Characters_AC6">
+  <bank id="56" name="Event Bank 56">
     <event id="0" name="Jump Table">
       <s32 name="Jump Table ID">
         <entry value="0"    name="Do Nothing"/>
@@ -2917,7 +2917,7 @@
     </event>
   </bank>
 
-  <bank id="36" name="Characters_AC6_Alt_36" basedon="56">
+  <bank id="36" name="Event Bank 36" basedon="56">
     <event id="10" name="Event 10">
       <s32 />
       <s32 />
@@ -2988,7 +2988,7 @@
     </event>
   </bank>
   
-  <bank id="32" name="Characters_AC6_Alt_36" basedon="56">
+  <bank id="32" name="Event Bank 32" basedon="56">
     <event id="194" name="Event 194">
       <s32 />
       <s32 />
@@ -3031,7 +3031,7 @@
     </event>
   </bank>
   
-  <bank id="53" name="Characters_AC6_Alt_53" basedon="56">
+  <bank id="53" name="Event Bank 53" basedon="56">
     <event id="726" name="Event 726">
       <s32 />
       <s32 />
@@ -3054,21 +3054,18 @@
     </event>
   </bank>
   
-  <bank id="42" name="Characters_AC6_Alt_42" basedon="56">
-
-  </bank>
-  
-  <bank id="50" name="Characters_AC6_Alt_50" basedon="56">
-
-  </bank>
-  
-  <bank id="52" name="Characters_AC6_Alt_52" basedon="56">
-
-  </bank>
-  
-  <bank id="35" name="Characters_AC6_Alt_35" basedon="56">
-
-  </bank>
+  <bank id="35" name="Event Bank 35" basedon="56"></bank>
+  <bank id="40" name="Event Bank 40" basedon="56"></bank>
+  <bank id="42" name="Event Bank 42" basedon="56"></bank>
+  <bank id="43" name="Event Bank 43" basedon="56"></bank>
+  <bank id="44" name="Event Bank 44" basedon="56"></bank>
+  <bank id="45" name="Event Bank 45" basedon="56"></bank>
+  <bank id="46" name="Event Bank 46" basedon="56"></bank>
+  <bank id="47" name="Event Bank 47" basedon="56"></bank>
+  <bank id="48" name="Event Bank 48" basedon="56"></bank>
+  <bank id="49" name="Event Bank 49" basedon="56"></bank>
+  <bank id="50" name="Event Bank 50" basedon="56"></bank>
+  <bank id="52" name="Event Bank 52" basedon="56"></bank>
   
 </event_template>
 

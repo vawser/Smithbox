@@ -165,7 +165,7 @@ public class TimeActDecorator
                     var enumEntry = bank.Aliases.list.Where(e => e.id == propertyValue.ToString()).FirstOrDefault();
                     if (enumEntry != null)
                     {
-                        if (CFG.Current.Interface_TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName)
+                        if (CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName)
                         {
                             alias = $"FFX ID: {propertyValue} [{enumEntry.name}]";
                         }
@@ -181,7 +181,7 @@ public class TimeActDecorator
                     var enumEntry = bank.Aliases.list.Where(e => e.id == propertyValue.ToString()).FirstOrDefault();
                     if (enumEntry != null)
                     {
-                        if(CFG.Current.Interface_TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName)
+                        if(CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName)
                         {
                             alias = $"Sound ID: {propertyValue} [{enumEntry.name}]";
                         }

@@ -1917,40 +1917,53 @@
     </event>
   </bank>
 
-  <bank id="29" name="Characters_ER_Alt_29" basedon="35">
-
+  <bank id="22" name="Event Bank 22" basedon="35"></bank>
+  <bank id="23" name="Event Bank 23" basedon="35"></bank>
+  <bank id="24" name="Event Bank 24" basedon="35"></bank>
+  <bank id="25" name="Event Bank 25" basedon="35"></bank>
+  <bank id="26" name="Event Bank 26" basedon="35"></bank>
+  <bank id="27" name="Event Bank 27" basedon="35"></bank>
+  <bank id="28" name="Event Bank 28" basedon="35"></bank>
+  <bank id="29" name="Event Bank 29" basedon="35"></bank>
+  <bank id="30" name="Event Bank 30" basedon="35"></bank>
+  <bank id="31" name="Event Bank 31" basedon="35"></bank>
+  <bank id="32" name="Event Bank 32" basedon="35">
+    <event id="135" name="Event 135">
+      <s32/>
+      <s32/>
+    </event>
   </bank>
-
-  <bank id="31" name="Characters_ER_Alt_31" basedon="35">
-
-  </bank>
-
-  <bank id="33" name="Characters_ER_Alt_33" basedon="35">
-
-  </bank>
-
-  <bank id="36" name="Characters_ER_Alt_36" basedon="35">
-
-  </bank>
-
-  <bank id="26" name="Characters_ER_Alt_26" basedon="35">
-
-  </bank>
-
-  <bank id="34" name="Characters_ER_Alt_34" basedon="35">
-
-  </bank>
-  
-  <bank id="37" name="Characters_ER_New_37" basedon="35">
-    <event id="155" name="Unknown [155]">
+  <bank id="33" name="Event Bank 33" basedon="35">
+    <event id="135" name="Event 135">
       <s32/>
       <s32/>
       <s32/>
       <s32/>
     </event>
   </bank>
-
-
+  <bank id="34" name="Event Bank 34" basedon="35"></bank>
+  <bank id="36" name="Event Bank 36" basedon="35">
+    <event id="194" name="Event 194">
+      <s32/>
+      <s32/>
+      <s32/>
+      <s32/>
+      <s32/>
+      <s32/>
+    </event>
+    <event id="400" name="Event 400">
+      <s32/>
+      <s32/>
+    </event>
+  </bank>
+  <bank id="37" name="Event Bank 37" basedon="35">
+    <event id="155" name="Event 155">
+      <s32/>
+      <s32/>
+      <s32/>
+      <s32/>
+    </event>
+  </bank>
 
 </event_template>
 
