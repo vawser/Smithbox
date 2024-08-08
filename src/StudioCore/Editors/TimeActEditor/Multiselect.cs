@@ -55,7 +55,7 @@ public class Multiselect
             }
         }
         // Multi-Select Mode
-        else if (InputTracker.GetKey(KeyBindings.Current.TimeActEditor_Multiselect))
+        else if (InputTracker.GetKey(KeyBindings.Current.TIMEACT_Multiselect))
         {
             if (_storedIndices.Contains(currentIndex))
             {

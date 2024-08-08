@@ -54,122 +54,6 @@ public class KeybindWindow
         MenuOpenState = !MenuOpenState;
     }
 
-    private void DisplaySettings_Keybinds()
-    {
-        if (ImGui.IsAnyItemActive())
-            _currentKeyBind = null;
-
-        FieldInfo[] binds = KeyBindings.Current.GetType().GetFields();
-
-        KeybindSection("Core", binds, KeybindCategory.Core, 0, "These keybinds are available across all editors.");
-        KeybindSection("Window", binds, KeybindCategory.Window, 1, "These keybinds are available across all editors.");
-        KeybindSection("Map Editor", binds, KeybindCategory.MapEditor, 2, "These keybinds are only available in the Map Editor.");
-        KeybindSection("Model Editor", binds, KeybindCategory.ModelEditor, 3, "These keybinds are only available in the Model Editor.");
-        KeybindSection("Param Editor", binds, KeybindCategory.ParamEditor, 4, "These keybinds are only available in the Param Editor.");
-        KeybindSection("Text Editor", binds, KeybindCategory.TextEditor, 5, "These keybinds are only available in the Text Editor.");
-        KeybindSection("Viewport", binds, KeybindCategory.Viewport, 6, "These keybinds are only available within the Viewport of the Map or Model Editor.");
-        KeybindSection("Texture Viewer", binds, KeybindCategory.TextureViewer, 7, "These keybinds are only available within the Texture Viewer.");
-
-        if (ImGui.BeginTabItem($"Defaults"))
-        {
-            ImGui.Text("This button will reset your shortcuts to the default assignments.");
-
-            if (ImGui.Button("Restore keybinds"))
-            {
-                KeyBindings.ResetKeyBinds();
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void KeybindSection(string title, FieldInfo[] binds, KeybindCategory keyCategory, int idx, string contextInfo)
-    {
-        if (ImGui.BeginTabItem($"{title}##KeyBind{title}{idx}"))
-        {
-            ImGui.Text(contextInfo);
-
-            ImGui.Columns(2);
-
-            foreach (FieldInfo bind in binds)
-            {
-                KeyBind bindVal = (KeyBind)bind.GetValue(KeyBindings.Current);
-
-                if (bindVal.KeyCategory == keyCategory)
-                {
-                    KeybindTitle(bind, bindVal, keyCategory, idx);
-                }
-            }
-
-            ImGui.NextColumn();
-
-            foreach (FieldInfo bind in binds)
-            {
-                KeyBind bindVal = (KeyBind)bind.GetValue(KeyBindings.Current);
-
-                if (bindVal.KeyCategory == keyCategory)
-                {
-                    KeybindEntry(bind, bindVal, keyCategory, idx);
-                }
-            }
-
-            ImGui.Columns(1);
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void KeybindTitle(FieldInfo bind, KeyBind bindVal, KeybindCategory keyCategory, int idx)
-    {
-        var name = bindVal.PresentationName;
-        if (bindVal.PresentationName == null)
-        {
-            name = "";
-        }
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text($"{name}");
-    }
-
-    public void KeybindEntry(FieldInfo bind, KeyBind bindVal, KeybindCategory keyCategory, int idx)
-    {
-        var fixedKey = bindVal.FixedKey;
-        var keyText = bindVal.HintText;
-
-        if (!fixedKey)
-        {
-            if (bindVal.PrimaryKey == Key.Unknown)
-                keyText = "[None]";
-
-            if (_currentKeyBind == bindVal)
-            {
-                ImGui.Button("Press Key <Esc - Clear>");
-                if (InputTracker.GetKeyDown(Key.Escape))
-                {
-                    KeyBind newkey = InputTracker.GetEmptyKeyBind(bindVal.PresentationName, bindVal.KeyCategory);
-                    bind.SetValue(KeyBindings.Current, newkey);
-                    _currentKeyBind = null;
-                }
-                else
-                {
-                    KeyBind newkey = InputTracker.GetNewKeyBind(bindVal.PresentationName, bindVal.KeyCategory);
-                    if (newkey != null)
-                    {
-                        bind.SetValue(KeyBindings.Current, newkey);
-                        _currentKeyBind = null;
-                    }
-                }
-            }
-            else if (ImGui.Button($"{keyText}##{bind.Name}{keyCategory}{idx}"))
-            {
-                _currentKeyBind = bindVal;
-            }
-        }
-        else
-        {
-            ImGui.Text($"{keyText}");
-        }
-    }
-
     public void Display()
     {
         var scale = Smithbox.GetUIScale();
@@ -266,170 +150,609 @@ public class KeybindWindow
 
 public class CommonKeybindTab
 {
-    public CommonKeybindTab()
-    {
-
-    }
+    public CommonKeybindTab() { }
 
     public void Display()
     {
-        ImGui.Columns(2);
+        ImGui.Separator();
+        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        ImGui.Separator();
 
-        ImGui.AlignTextToFramePadding();
-        ImguiUtils.WrappedText(KeyBindings.Current.Core_Create.PresentationName);
-
-        ImGui.NextColumn();
-
-        KeyBindings.Current.Core_Create = KeybindEntry(KeyBindings.Current.Core_Create);
-
-        ImGui.Columns(1);
-    }
-
-    private KeyBind _currentKeyBind;
-
-    public KeyBind KeybindEntry(KeyBind bindVal)
-    {
-        var newKeyBind = bindVal;
-        var fixedKey = bindVal.FixedKey;
-        var keyText = bindVal.HintText;
-
-        if (!fixedKey)
+        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            if (bindVal.PrimaryKey == Key.Unknown)
-                keyText = "[None]";
+            KeyBindings.Current.CORE_CreateNewEntry = InputTracker.KeybindLine(0,
+                KeyBindings.Current.CORE_CreateNewEntry,
+                KeyBindings.Default.CORE_CreateNewEntry);
 
-            if (_currentKeyBind == bindVal)
-            {
-                ImGui.Button("Press Key <Esc - Clear>");
-                if (InputTracker.GetKeyDown(Key.Escape))
-                {
-                    KeyBind newkey = InputTracker.GetEmptyKeyBind(bindVal.PresentationName, bindVal.KeyCategory);
-                    newKeyBind = newkey;
-                    _currentKeyBind = null;
-                }
-                else
-                {
-                    KeyBind newkey = InputTracker.GetNewKeyBind(bindVal.PresentationName, bindVal.KeyCategory);
-                    if (newkey != null)
-                    {
-                        newKeyBind = newkey;
-                        _currentKeyBind = null;
-                    }
-                }
-            }
-            else if (ImGui.Button($"{keyText}##{bindVal}"))
-            {
-                _currentKeyBind = bindVal;
-            }
-        }
-        else
-        {
-            ImGui.Text($"{keyText}");
+            KeyBindings.Current.CORE_DeleteSelectedEntry = InputTracker.KeybindLine(1,
+                KeyBindings.Current.CORE_DeleteSelectedEntry,
+                KeyBindings.Default.CORE_DeleteSelectedEntry);
+
+            KeyBindings.Current.CORE_DuplicateSelectedEntry = InputTracker.KeybindLine(2,
+                KeyBindings.Current.CORE_DuplicateSelectedEntry,
+                KeyBindings.Default.CORE_DuplicateSelectedEntry);
+
+            KeyBindings.Current.CORE_RedoAction = InputTracker.KeybindLine(3,
+                KeyBindings.Current.CORE_RedoAction,
+                KeyBindings.Default.CORE_RedoAction);
+
+            KeyBindings.Current.CORE_UndoAction = InputTracker.KeybindLine(4,
+                KeyBindings.Current.CORE_UndoAction,
+                KeyBindings.Default.CORE_UndoAction);
+
+            KeyBindings.Current.CORE_SaveAll = InputTracker.KeybindLine(5,
+                KeyBindings.Current.CORE_SaveAll,
+                KeyBindings.Default.CORE_SaveAll);
+
+            KeyBindings.Current.CORE_Save = InputTracker.KeybindLine(6,
+                KeyBindings.Current.CORE_Save,
+                KeyBindings.Default.CORE_Save);
         }
 
-        return newKeyBind;
+        if (ImGui.CollapsingHeader("Windows", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.CORE_ConfigurationWindow = InputTracker.KeybindLine(7,
+                KeyBindings.Current.CORE_ConfigurationWindow,
+                KeyBindings.Default.CORE_ConfigurationWindow);
+
+            KeyBindings.Current.CORE_HelpWindow = InputTracker.KeybindLine(8,
+                KeyBindings.Current.CORE_HelpWindow,
+                KeyBindings.Default.CORE_HelpWindow);
+
+            KeyBindings.Current.CORE_KeybindsWindow = InputTracker.KeybindLine(9,
+                KeyBindings.Current.CORE_KeybindsWindow,
+                KeyBindings.Default.CORE_KeybindsWindow);
+        }
     }
 }
 
 public class ViewportKeybindTab
 {
-    public ViewportKeybindTab()
-    {
-
-    }
+    public ViewportKeybindTab() { }
 
     public void Display()
     {
+        ImGui.Separator();
+        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        ImGui.Separator();
 
+        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.VIEWPORT_CameraForward = InputTracker.KeybindLine(0,
+                KeyBindings.Current.VIEWPORT_CameraForward,
+                KeyBindings.Default.VIEWPORT_CameraForward);
+
+            KeyBindings.Current.VIEWPORT_CameraBack = InputTracker.KeybindLine(1,
+                KeyBindings.Current.VIEWPORT_CameraBack,
+                KeyBindings.Default.VIEWPORT_CameraBack);
+
+            KeyBindings.Current.VIEWPORT_CameraUp = InputTracker.KeybindLine(2,
+                KeyBindings.Current.VIEWPORT_CameraUp,
+                KeyBindings.Default.VIEWPORT_CameraUp);
+
+            KeyBindings.Current.VIEWPORT_CameraDown = InputTracker.KeybindLine(3,
+                KeyBindings.Current.VIEWPORT_CameraDown,
+                KeyBindings.Default.VIEWPORT_CameraDown);
+
+            KeyBindings.Current.VIEWPORT_CameraLeft = InputTracker.KeybindLine(4,
+                KeyBindings.Current.VIEWPORT_CameraLeft,
+                KeyBindings.Default.VIEWPORT_CameraLeft);
+
+            KeyBindings.Current.VIEWPORT_CameraRight = InputTracker.KeybindLine(5,
+                KeyBindings.Current.VIEWPORT_CameraRight,
+                KeyBindings.Default.VIEWPORT_CameraRight);
+
+            KeyBindings.Current.VIEWPORT_CameraReset = InputTracker.KeybindLine(6,
+                KeyBindings.Current.VIEWPORT_CameraReset,
+                KeyBindings.Default.VIEWPORT_CameraReset);
+        }
+
+        if (ImGui.CollapsingHeader("Gizmos", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.VIEWPORT_GizmoRotationMode = InputTracker.KeybindLine(7,
+                KeyBindings.Current.VIEWPORT_GizmoRotationMode,
+                KeyBindings.Default.VIEWPORT_GizmoRotationMode);
+
+            KeyBindings.Current.VIEWPORT_GizmoOriginMode = InputTracker.KeybindLine(8,
+                KeyBindings.Current.VIEWPORT_GizmoOriginMode,
+                KeyBindings.Default.VIEWPORT_GizmoOriginMode);
+
+            KeyBindings.Current.VIEWPORT_GizmoSpaceMode = InputTracker.KeybindLine(9,
+                KeyBindings.Current.VIEWPORT_GizmoSpaceMode,
+                KeyBindings.Default.VIEWPORT_GizmoSpaceMode);
+
+            KeyBindings.Current.VIEWPORT_GizmoTranslationMode = InputTracker.KeybindLine(10,
+                KeyBindings.Current.VIEWPORT_GizmoTranslationMode,
+                KeyBindings.Default.VIEWPORT_GizmoTranslationMode);
+        }
+
+        if (ImGui.CollapsingHeader("Grid", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.VIEWPORT_LowerGrid = InputTracker.KeybindLine(11,
+                KeyBindings.Current.VIEWPORT_LowerGrid,
+                KeyBindings.Default.VIEWPORT_LowerGrid);
+
+            KeyBindings.Current.VIEWPORT_RaiseGrid = InputTracker.KeybindLine(12,
+                KeyBindings.Current.VIEWPORT_RaiseGrid,
+                KeyBindings.Default.VIEWPORT_RaiseGrid);
+
+            KeyBindings.Current.VIEWPORT_SetGridToSelectionHeight = InputTracker.KeybindLine(13,
+                KeyBindings.Current.VIEWPORT_SetGridToSelectionHeight,
+                KeyBindings.Default.VIEWPORT_SetGridToSelectionHeight);
+        }
+
+        if (ImGui.CollapsingHeader("Selection", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.VIEWPORT_RenderOutline = InputTracker.KeybindLine(14,
+                KeyBindings.Current.VIEWPORT_RenderOutline,
+                KeyBindings.Default.VIEWPORT_RenderOutline);
+        }
     }
 }
 
 public class MapEditorKeybindTab
 {
-    public MapEditorKeybindTab()
-    {
-
-    }
+    public MapEditorKeybindTab() { }
 
     public void Display()
     {
+        ImGui.Separator();
+        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        ImGui.Separator();
 
+        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.MAP_DuplicateToMap = InputTracker.KeybindLine(0,
+                KeyBindings.Current.MAP_DuplicateToMap,
+                KeyBindings.Default.MAP_DuplicateToMap);
+
+            KeyBindings.Current.MAP_CreateMapObject = InputTracker.KeybindLine(1,
+                KeyBindings.Current.MAP_CreateMapObject,
+                KeyBindings.Default.MAP_CreateMapObject);
+
+            KeyBindings.Current.MAP_GoToInList = InputTracker.KeybindLine(2,
+                KeyBindings.Current.MAP_GoToInList,
+                KeyBindings.Default.MAP_GoToInList);
+
+            KeyBindings.Current.MAP_MoveToCamera = InputTracker.KeybindLine(3,
+                KeyBindings.Current.MAP_MoveToCamera,
+                KeyBindings.Default.MAP_MoveToCamera);
+
+            KeyBindings.Current.MAP_FrameSelection = InputTracker.KeybindLine(4,
+                KeyBindings.Current.MAP_FrameSelection,
+                KeyBindings.Default.MAP_FrameSelection);
+
+            KeyBindings.Current.MAP_RotateSelectionXAxis = InputTracker.KeybindLine(5,
+                KeyBindings.Current.MAP_RotateSelectionXAxis,
+                KeyBindings.Default.MAP_RotateSelectionXAxis);
+
+            KeyBindings.Current.MAP_RotateSelectionYAxis = InputTracker.KeybindLine(6,
+                KeyBindings.Current.MAP_RotateSelectionYAxis,
+                KeyBindings.Default.MAP_RotateSelectionYAxis);
+
+            KeyBindings.Current.MAP_PivotSelectionYAxis = InputTracker.KeybindLine(7,
+                KeyBindings.Current.MAP_PivotSelectionYAxis,
+                KeyBindings.Default.MAP_PivotSelectionYAxis);
+
+            KeyBindings.Current.MAP_ResetRotation = InputTracker.KeybindLine(8,
+                KeyBindings.Current.MAP_ResetRotation,
+                KeyBindings.Default.MAP_ResetRotation);
+
+            KeyBindings.Current.MAP_FlipSelectionVisibility = InputTracker.KeybindLine(9,
+                KeyBindings.Current.MAP_FlipSelectionVisibility,
+                KeyBindings.Default.MAP_FlipSelectionVisibility);
+
+            KeyBindings.Current.MAP_FlipAllVisibility = InputTracker.KeybindLine(10,
+                KeyBindings.Current.MAP_FlipAllVisibility,
+                KeyBindings.Default.MAP_FlipAllVisibility);
+
+            KeyBindings.Current.MAP_EnableSelectionVisibility = InputTracker.KeybindLine(11,
+                KeyBindings.Current.MAP_EnableSelectionVisibility,
+                KeyBindings.Default.MAP_EnableSelectionVisibility);
+
+            KeyBindings.Current.MAP_EnableAllVisibility = InputTracker.KeybindLine(12,
+                KeyBindings.Current.MAP_EnableAllVisibility,
+                KeyBindings.Default.MAP_EnableAllVisibility);
+
+            KeyBindings.Current.MAP_DisableSelectionVisibility = InputTracker.KeybindLine(13,
+                KeyBindings.Current.MAP_DisableSelectionVisibility,
+                KeyBindings.Default.MAP_DisableSelectionVisibility);
+
+            KeyBindings.Current.MAP_DisableAllVisibility = InputTracker.KeybindLine(14,
+                KeyBindings.Current.MAP_DisableAllVisibility,
+                KeyBindings.Default.MAP_DisableAllVisibility);
+
+            KeyBindings.Current.MAP_MakeDummyObject = InputTracker.KeybindLine(15,
+                KeyBindings.Current.MAP_MakeDummyObject,
+                KeyBindings.Default.MAP_MakeDummyObject);
+
+            KeyBindings.Current.MAP_MakeNormalObject = InputTracker.KeybindLine(16,
+                KeyBindings.Current.MAP_MakeNormalObject,
+                KeyBindings.Default.MAP_MakeNormalObject);
+
+            KeyBindings.Current.MAP_ScrambleSelection = InputTracker.KeybindLine(17,
+                KeyBindings.Current.MAP_ScrambleSelection,
+                KeyBindings.Default.MAP_ScrambleSelection);
+
+            KeyBindings.Current.MAP_ReplicateSelection = InputTracker.KeybindLine(18,
+                KeyBindings.Current.MAP_ReplicateSelection,
+                KeyBindings.Default.MAP_ReplicateSelection);
+
+            KeyBindings.Current.MAP_SetSelectionToGrid = InputTracker.KeybindLine(19,
+                KeyBindings.Current.MAP_SetSelectionToGrid,
+                KeyBindings.Default.MAP_SetSelectionToGrid);
+        }
+
+        if (ImGui.CollapsingHeader("Order", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.MAP_MoveObjectUp = InputTracker.KeybindLine(20,
+                KeyBindings.Current.MAP_MoveObjectUp,
+                KeyBindings.Default.MAP_MoveObjectUp);
+
+            KeyBindings.Current.MAP_MoveObjectDown = InputTracker.KeybindLine(21,
+                KeyBindings.Current.MAP_MoveObjectDown,
+                KeyBindings.Default.MAP_MoveObjectDown);
+
+            KeyBindings.Current.MAP_MoveObjectTop = InputTracker.KeybindLine(22,
+                KeyBindings.Current.MAP_MoveObjectTop,
+                KeyBindings.Default.MAP_MoveObjectTop);
+
+            KeyBindings.Current.MAP_MoveObjectBottom = InputTracker.KeybindLine(23,
+                KeyBindings.Current.MAP_MoveObjectBottom,
+                KeyBindings.Default.MAP_MoveObjectBottom);
+        }
+
+        if (ImGui.CollapsingHeader("Prefabs", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.MAP_ExportPrefab = InputTracker.KeybindLine(24,
+                KeyBindings.Current.MAP_ExportPrefab,
+                KeyBindings.Default.MAP_ExportPrefab);
+
+            KeyBindings.Current.MAP_ImportPrefab = InputTracker.KeybindLine(25,
+                KeyBindings.Current.MAP_ImportPrefab,
+                KeyBindings.Default.MAP_ImportPrefab);
+        }
+
+        if (ImGui.CollapsingHeader("Render Groups", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.MAP_GetDisplayGroup = InputTracker.KeybindLine(26,
+                KeyBindings.Current.MAP_GetDisplayGroup,
+                KeyBindings.Default.MAP_GetDisplayGroup);
+
+            KeyBindings.Current.MAP_GetDrawGroup = InputTracker.KeybindLine(27,
+                KeyBindings.Current.MAP_GetDrawGroup,
+                KeyBindings.Default.MAP_GetDrawGroup);
+
+            KeyBindings.Current.MAP_SetDisplayGroup = InputTracker.KeybindLine(28,
+                KeyBindings.Current.MAP_SetDisplayGroup,
+                KeyBindings.Default.MAP_SetDisplayGroup);
+
+            KeyBindings.Current.MAP_SetDrawGroup = InputTracker.KeybindLine(29,
+                KeyBindings.Current.MAP_SetDrawGroup,
+                KeyBindings.Default.MAP_SetDrawGroup);
+
+            KeyBindings.Current.MAP_HideAllDisplayGroups = InputTracker.KeybindLine(30,
+                KeyBindings.Current.MAP_HideAllDisplayGroups,
+                KeyBindings.Default.MAP_HideAllDisplayGroups);
+
+            KeyBindings.Current.MAP_ShowAllDisplayGroups = InputTracker.KeybindLine(31,
+                KeyBindings.Current.MAP_ShowAllDisplayGroups,
+                KeyBindings.Default.MAP_ShowAllDisplayGroups);
+
+            KeyBindings.Current.MAP_SelectDisplayGroupHighlights = InputTracker.KeybindLine(32,
+                KeyBindings.Current.MAP_SelectDisplayGroupHighlights,
+                KeyBindings.Default.MAP_SelectDisplayGroupHighlights);
+        }
+
+        if (ImGui.CollapsingHeader("Selection Groups", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.MAP_CreateSelectionGroup = InputTracker.KeybindLine(33,
+                KeyBindings.Current.MAP_CreateSelectionGroup,
+                KeyBindings.Default.MAP_CreateSelectionGroup);
+
+            KeyBindings.Current.MAP_SelectionGroup_0 = InputTracker.KeybindLine(34,
+                KeyBindings.Current.MAP_SelectionGroup_0,
+                KeyBindings.Default.MAP_SelectionGroup_0);
+
+            KeyBindings.Current.MAP_SelectionGroup_1 = InputTracker.KeybindLine(35,
+                KeyBindings.Current.MAP_SelectionGroup_1,
+                KeyBindings.Default.MAP_SelectionGroup_1);
+
+            KeyBindings.Current.MAP_SelectionGroup_2 = InputTracker.KeybindLine(36,
+                KeyBindings.Current.MAP_SelectionGroup_2,
+                KeyBindings.Default.MAP_SelectionGroup_2);
+
+            KeyBindings.Current.MAP_SelectionGroup_3 = InputTracker.KeybindLine(37,
+                KeyBindings.Current.MAP_SelectionGroup_3,
+                KeyBindings.Default.MAP_SelectionGroup_3);
+
+            KeyBindings.Current.MAP_SelectionGroup4 = InputTracker.KeybindLine(38,
+                KeyBindings.Current.MAP_SelectionGroup4,
+                KeyBindings.Default.MAP_SelectionGroup4);
+
+            KeyBindings.Current.MAP_SelectionGroup5 = InputTracker.KeybindLine(39,
+                KeyBindings.Current.MAP_SelectionGroup5,
+                KeyBindings.Default.MAP_SelectionGroup5);
+
+            KeyBindings.Current.MAP_SelectionGroup6 = InputTracker.KeybindLine(40,
+                KeyBindings.Current.MAP_SelectionGroup6,
+                KeyBindings.Default.MAP_SelectionGroup6);
+
+            KeyBindings.Current.MAP_SelectionGroup7 = InputTracker.KeybindLine(41,
+                KeyBindings.Current.MAP_SelectionGroup7,
+                KeyBindings.Default.MAP_SelectionGroup7);
+
+            KeyBindings.Current.MAP_SelectionGroup8 = InputTracker.KeybindLine(42,
+                KeyBindings.Current.MAP_SelectionGroup8,
+                KeyBindings.Default.MAP_SelectionGroup8);
+
+            KeyBindings.Current.MAP_SelectionGroup9 = InputTracker.KeybindLine(43,
+                KeyBindings.Current.MAP_SelectionGroup9,
+                KeyBindings.Default.MAP_SelectionGroup9);
+
+            KeyBindings.Current.MAP_SelectionGroup10 = InputTracker.KeybindLine(44,
+                KeyBindings.Current.MAP_SelectionGroup10,
+                KeyBindings.Default.MAP_SelectionGroup10);
+        }
+
+        if (ImGui.CollapsingHeader("Visualisation", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.MAP_TogglePatrolRouteRendering = InputTracker.KeybindLine(45,
+                KeyBindings.Current.MAP_TogglePatrolRouteRendering,
+                KeyBindings.Default.MAP_TogglePatrolRouteRendering);
+        }
+
+        if (ImGui.CollapsingHeader("World Map", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.MAP_ToggleERMapVanilla = InputTracker.KeybindLine(46,
+                KeyBindings.Current.MAP_ToggleERMapVanilla,
+                KeyBindings.Default.MAP_ToggleERMapVanilla);
+
+            KeyBindings.Current.MAP_ToggleERMapSOTE = InputTracker.KeybindLine(47,
+                KeyBindings.Current.MAP_ToggleERMapSOTE,
+                KeyBindings.Default.MAP_ToggleERMapSOTE);
+
+            KeyBindings.Current.MAP_DragWorldMap = InputTracker.KeybindLine(48,
+                KeyBindings.Current.MAP_DragWorldMap,
+                KeyBindings.Default.MAP_DragWorldMap);
+        }
     }
 }
 
 public class ModelEditorKeybindTab
 {
-    public ModelEditorKeybindTab()
-    {
-
-    }
+    public ModelEditorKeybindTab() { }
 
     public void Display()
     {
+        ImGui.Separator();
+        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        ImGui.Separator();
 
+        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.MODEL_ToggleVisibility = InputTracker.KeybindLine(0,
+                KeyBindings.Current.MODEL_ToggleVisibility,
+                KeyBindings.Default.MODEL_ToggleVisibility);
+
+            KeyBindings.Current.MODEL_Multiselect = InputTracker.KeybindLine(1,
+                KeyBindings.Current.MODEL_Multiselect,
+                KeyBindings.Default.MODEL_Multiselect);
+
+            KeyBindings.Current.MODEL_MultiselectRange = InputTracker.KeybindLine(2,
+                KeyBindings.Current.MODEL_MultiselectRange,
+                KeyBindings.Default.MODEL_MultiselectRange);
+        
+            KeyBindings.Current.MODEL_ExportModel = InputTracker.KeybindLine(3,
+                KeyBindings.Current.MODEL_ExportModel,
+                KeyBindings.Default.MODEL_ExportModel);
+        }
     }
 }
 
 public class ParamEditorKeybindTab
 {
-    public ParamEditorKeybindTab()
-    {
-
-    }
+    public ParamEditorKeybindTab() { }
 
     public void Display()
     {
+        ImGui.Separator();
+        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        ImGui.Separator();
 
+        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.PARAM_SelectAll = InputTracker.KeybindLine(0,
+                KeyBindings.Current.PARAM_SelectAll,
+                KeyBindings.Default.PARAM_SelectAll);
+
+            KeyBindings.Current.PARAM_GoToSelectedRow = InputTracker.KeybindLine(1,
+                KeyBindings.Current.PARAM_GoToSelectedRow,
+                KeyBindings.Default.PARAM_GoToSelectedRow);
+
+            KeyBindings.Current.PARAM_GoToRowID = InputTracker.KeybindLine(2,
+                KeyBindings.Current.PARAM_GoToRowID,
+                KeyBindings.Default.PARAM_GoToRowID);
+
+            KeyBindings.Current.PARAM_CopyToClipboard = InputTracker.KeybindLine(3,
+                KeyBindings.Current.PARAM_CopyToClipboard,
+                KeyBindings.Default.PARAM_CopyToClipboard);
+
+            KeyBindings.Current.PARAM_PasteClipboard = InputTracker.KeybindLine(4,
+                KeyBindings.Current.PARAM_PasteClipboard,
+                KeyBindings.Default.PARAM_PasteClipboard);
+
+            KeyBindings.Current.PARAM_ViewMassEdit = InputTracker.KeybindLine(5,
+                KeyBindings.Current.PARAM_ViewMassEdit,
+                KeyBindings.Default.PARAM_ViewMassEdit);
+
+            KeyBindings.Current.PARAM_SearchParam = InputTracker.KeybindLine(6,
+                KeyBindings.Current.PARAM_SearchParam,
+                KeyBindings.Default.PARAM_SearchParam);
+
+            KeyBindings.Current.PARAM_SearchRow = InputTracker.KeybindLine(7,
+                KeyBindings.Current.PARAM_SearchRow,
+                KeyBindings.Default.PARAM_SearchRow);
+
+            KeyBindings.Current.PARAM_SearchField = InputTracker.KeybindLine(8,
+                KeyBindings.Current.PARAM_SearchField,
+                KeyBindings.Default.PARAM_SearchField);
+        }
+
+        if (ImGui.CollapsingHeader("CSV", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.PARAM_ImportCSV = InputTracker.KeybindLine(9,
+                KeyBindings.Current.PARAM_ImportCSV,
+                KeyBindings.Default.PARAM_ImportCSV);
+
+            KeyBindings.Current.PARAM_ExportCSV = InputTracker.KeybindLine(10,
+                KeyBindings.Current.PARAM_ExportCSV,
+                KeyBindings.Default.PARAM_ExportCSV);
+        }
+
+        if (ImGui.CollapsingHeader("Param Reloader", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.PARAM_ReloadParam = InputTracker.KeybindLine(11,
+                KeyBindings.Current.PARAM_ReloadParam,
+                KeyBindings.Default.PARAM_ReloadParam);
+
+            KeyBindings.Current.PARAM_ReloadAllParams = InputTracker.KeybindLine(12,
+                KeyBindings.Current.PARAM_ReloadAllParams,
+                KeyBindings.Default.PARAM_ReloadAllParams);
+        }
+
+        if (ImGui.CollapsingHeader("Pin Groups", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.PARAM_CreateParamGroup = InputTracker.KeybindLine(13,
+                KeyBindings.Current.PARAM_CreateParamGroup,
+                KeyBindings.Default.PARAM_CreateParamGroup);
+
+            KeyBindings.Current.PARAM_CreateRowGroup = InputTracker.KeybindLine(14,
+                KeyBindings.Current.PARAM_CreateRowGroup,
+                KeyBindings.Default.PARAM_CreateRowGroup);
+
+            KeyBindings.Current.PARAM_CreateFieldGroup = InputTracker.KeybindLine(15,
+                KeyBindings.Current.PARAM_CreateFieldGroup,
+                KeyBindings.Default.PARAM_CreateFieldGroup);
+
+            KeyBindings.Current.PARAM_ClearPinnedParams = InputTracker.KeybindLine(16,
+                KeyBindings.Current.PARAM_ClearPinnedParams,
+                KeyBindings.Default.PARAM_ClearPinnedParams);
+
+            KeyBindings.Current.PARAM_ClearPinnedRows = InputTracker.KeybindLine(17,
+                KeyBindings.Current.PARAM_ClearPinnedRows,
+                KeyBindings.Default.PARAM_ClearPinnedRows);
+
+            KeyBindings.Current.PARAM_ClearPinnedFields = InputTracker.KeybindLine(18,
+                KeyBindings.Current.PARAM_ClearPinnedFields,
+                KeyBindings.Default.PARAM_ClearPinnedFields);
+
+            KeyBindings.Current.PARAM_ShowPinnedParamsOnly = InputTracker.KeybindLine(19,
+                KeyBindings.Current.PARAM_ShowPinnedParamsOnly,
+                KeyBindings.Default.PARAM_ShowPinnedParamsOnly);
+
+            KeyBindings.Current.PARAM_ShowPinnedRowsOnly = InputTracker.KeybindLine(20,
+                KeyBindings.Current.PARAM_ShowPinnedRowsOnly,
+                KeyBindings.Default.PARAM_ShowPinnedRowsOnly);
+
+            KeyBindings.Current.PARAM_ShowPinnedFieldsOnly = InputTracker.KeybindLine(21,
+                KeyBindings.Current.PARAM_ShowPinnedFieldsOnly,
+                KeyBindings.Default.PARAM_ShowPinnedFieldsOnly);
+        }
     }
 }
 
 public class TextEditorKeybindTab
 {
-    public TextEditorKeybindTab()
-    {
-
-    }
+    public TextEditorKeybindTab() { }
 
     public void Display()
     {
+        ImGui.Separator();
+        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        ImGui.Separator();
 
+        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.TEXT_FocusSearch = InputTracker.KeybindLine(0,
+                KeyBindings.Current.TEXT_FocusSearch,
+                KeyBindings.Default.TEXT_FocusSearch);
+
+            KeyBindings.Current.TEXT_SyncDescriptions = InputTracker.KeybindLine(1,
+                KeyBindings.Current.TEXT_SyncDescriptions,
+                KeyBindings.Default.TEXT_SyncDescriptions);
+        }
     }
 }
 public class GparamEditorKeybindTab
 {
-    public GparamEditorKeybindTab()
-    {
-
-    }
+    public GparamEditorKeybindTab() { }
 
     public void Display()
     {
+        ImGui.Separator();
+        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        ImGui.Separator();
 
+        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.GPARAM_GenerateQuickEdit = InputTracker.KeybindLine(0,
+                KeyBindings.Current.GPARAM_GenerateQuickEdit,
+                KeyBindings.Default.GPARAM_GenerateQuickEdit);
+
+            KeyBindings.Current.GPARAM_ClearQuickEdit = InputTracker.KeybindLine(1,
+                KeyBindings.Current.GPARAM_ClearQuickEdit,
+                KeyBindings.Default.GPARAM_ClearQuickEdit);
+        }
     }
 }
 
 public class TimeActEditorKeybindTab
 {
-    public TimeActEditorKeybindTab()
-    {
-
-    }
+    public TimeActEditorKeybindTab() { }
 
     public void Display()
     {
+        ImGui.Separator();
+        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        ImGui.Separator();
 
+        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.TIMEACT_Multiselect = InputTracker.KeybindLine(0,
+                KeyBindings.Current.TIMEACT_Multiselect,
+                KeyBindings.Default.TIMEACT_Multiselect);
+
+            KeyBindings.Current.TIMEACT_MultiselectRange = InputTracker.KeybindLine(1,
+                KeyBindings.Current.TIMEACT_MultiselectRange,
+                KeyBindings.Default.TIMEACT_MultiselectRange);
+        }
     }
 }
 
 public class TextureViewerKeybindTab
 {
-    public TextureViewerKeybindTab()
-    {
-
-    }
+    public TextureViewerKeybindTab() { }
 
     public void Display()
     {
+        ImGui.Separator();
+        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        ImGui.Separator();
 
+        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.TEXTURE_ExportTexture = InputTracker.KeybindLine(0,
+                KeyBindings.Current.TEXTURE_ExportTexture,
+                KeyBindings.Default.TEXTURE_ExportTexture);
+
+            KeyBindings.Current.TEXTURE_ZoomMode = InputTracker.KeybindLine(0,
+                KeyBindings.Current.TEXTURE_ZoomMode,
+                KeyBindings.Default.TEXTURE_ZoomMode);
+
+            KeyBindings.Current.TEXTURE_ResetZoomLevel = InputTracker.KeybindLine(0,
+                KeyBindings.Current.TEXTURE_ResetZoomLevel,
+                KeyBindings.Default.TEXTURE_ResetZoomLevel);
+        }
     }
 }

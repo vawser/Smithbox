@@ -58,7 +58,7 @@ namespace StudioCore.Editors.ModelEditor
                 }
             }
             // Multi-Select Mode
-            else if (InputTracker.GetKey(KeyBindings.Current.ModelEditor_Multiselect))
+            else if (InputTracker.GetKey(KeyBindings.Current.MODEL_Multiselect))
             {
                 if (StoredIndices.Contains(currentIndex))
                 {

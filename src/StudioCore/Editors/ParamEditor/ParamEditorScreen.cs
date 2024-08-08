@@ -210,7 +210,7 @@ public class ParamEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
+            if (ImGui.MenuItem("Undo", KeyBindings.Current.CORE_UndoAction.HintText, false, EditorActionManager.CanUndo()))
             {
                 ParamUndo();
             }
@@ -222,7 +222,7 @@ public class ParamEditorScreen : EditorScreen
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
+            if (ImGui.MenuItem("Redo", KeyBindings.Current.CORE_RedoAction.HintText, false, EditorActionManager.CanRedo()))
             {
                 ParamRedo();
             }
@@ -271,12 +271,12 @@ public class ParamEditorScreen : EditorScreen
 
                 if (ImGui.BeginMenu("Quick action"))
                 {
-                    if (ImGui.MenuItem("Export selected Names to window", KeyBindings.Current.Param_ExportCSV.HintText))
+                    if (ImGui.MenuItem("Export selected Names to window", KeyBindings.Current.PARAM_ExportCSV.HintText))
                     {
                         EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/2");
                     }
 
-                    if (ImGui.MenuItem("Export entire param to window", KeyBindings.Current.Param_ExportCSV.HintText))
+                    if (ImGui.MenuItem("Export entire param to window", KeyBindings.Current.PARAM_ExportCSV.HintText))
                     {
                         EditorCommandQueue.AddCommand(@"param/menu/massEditCSVExport/0");
                     }
@@ -342,7 +342,7 @@ public class ParamEditorScreen : EditorScreen
             {
                 DelimiterInputText();
 
-                if (ImGui.MenuItem("All fields", KeyBindings.Current.Param_ImportCSV.HintText))
+                if (ImGui.MenuItem("All fields", KeyBindings.Current.PARAM_ImportCSV.HintText))
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/massEditCSVImport");
                 }
@@ -475,13 +475,13 @@ public class ParamEditorScreen : EditorScreen
                 RemoveView(_activeView);
             }
 
-            ImGui.Separator();
-
+            /*
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.ArrowLeft}");
             if (ImGui.MenuItem("Go back...", KeyBindings.Current.Param_GotoBack.HintText, false, _activeView._selection.HasHistory()))
             {
                 EditorCommandQueue.AddCommand(@"param/back");
             }
+            */
 
             ImGui.EndMenu();
         }
@@ -611,22 +611,24 @@ public class ParamEditorScreen : EditorScreen
         if (!_isShortcutPopupOpen && !_isMEditPopupOpen && !_isStatisticPopupOpen && !_isSearchBarActive)
         {
             // Keyboard shortcuts
-            if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
+            if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
             {
                 ParamUndo();
             }
 
-            if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
+            if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
             {
                 ParamRedo();
             }
 
+            /*
             if (_activeView._selection.HasHistory() && InputTracker.GetKeyDown(KeyBindings.Current.Param_GotoBack))
             {
                 EditorCommandQueue.AddCommand(@"param/back");
             }
+            */
 
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.ActiveParamExists() && InputTracker.GetKeyDown(KeyBindings.Current.Param_SelectAll))
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.ActiveParamExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SelectAll))
             {
                 ParamBank.ClipboardParam = _activeView._selection.GetActiveParam();
 
@@ -638,31 +640,34 @@ public class ParamEditorScreen : EditorScreen
                 }
             }
 
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.Param_Copy))
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyToClipboard))
             {
                 CopySelectionToClipboard();
             }
 
-            if (ParamBank.ClipboardRows.Count > 00 && ParamBank.ClipboardParam == _activeView._selection.GetActiveParam() && !ImGui.IsAnyItemActive() && InputTracker.GetKeyDown(KeyBindings.Current.Param_Paste))
+            if (ParamBank.ClipboardRows.Count > 00 && ParamBank.ClipboardParam == _activeView._selection.GetActiveParam() && !ImGui.IsAnyItemActive() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_PasteClipboard))
             {
                 ImGui.OpenPopup("ctrlVPopup");
             }
 
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
             {
                 ActionSubMenu.Handler.DuplicateHandler();
             }
 
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete))
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
             {
                 DeleteSelection();
             }
 
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.Param_GotoSelectedRow))
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToSelectedRow))
             {
                 GotoSelectedRow = true;
             }
         }
+
+        ActionSubMenu.Shortcuts();
+        ToolSubMenu.Shortcuts();
 
         if (Smithbox.ProjectHandler.CurrentProject == null)
         {
@@ -691,27 +696,27 @@ public class ParamEditorScreen : EditorScreen
         //Hot Reload shortcut keys
         if (ParamReloader.CanReloadMemoryParams(ParamBank.PrimaryBank))
         {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Param_HotReloadAll))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadAllParams))
             {
                 ParamReloader.ReloadMemoryParams(ParamBank.PrimaryBank, ParamBank.PrimaryBank.Params.Keys.ToArray());
             }
-            else if (InputTracker.GetKeyDown(KeyBindings.Current.Param_HotReload) && _activeView._selection.GetActiveParam() != null)
+            else if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadParam) && _activeView._selection.GetActiveParam() != null)
             {
                 ParamReloader.ReloadMemoryParam(ParamBank.PrimaryBank, _activeView._selection.GetActiveParam());
             }
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Param_MassEdit))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ViewMassEdit))
         {
             EditorCommandQueue.AddCommand(@"param/menu/massEditRegex");
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Param_ImportCSV))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ImportCSV))
         {
             EditorCommandQueue.AddCommand(@"param/menu/massEditCSVImport");
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Param_ExportCSV))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExportCSV))
         {
             EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/{ParamBank.RowGetType.AllRows}");
         }
@@ -1390,7 +1395,7 @@ public class ParamEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("Export to window..."))
         {
-            if (ImGui.MenuItem("Export all fields", KeyBindings.Current.Param_ExportCSV.HintText))
+            if (ImGui.MenuItem("Export all fields", KeyBindings.Current.PARAM_ExportCSV.HintText))
             {
                 EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/{rowType}");
             }

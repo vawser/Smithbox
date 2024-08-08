@@ -474,11 +474,13 @@ public class ToolWindow
                     {
                         ParamMemoryTools.ReloadCurrentParam();
                     }
+                    ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
 
                     if (ImGui.Button("Reload All Params", defaultButtonSize))
                     {
                         ParamMemoryTools.ReloadAllParams();
                     }
+                    ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
                 }
             }
 

@@ -41,13 +41,13 @@ public class DisplayGroupEditor
             sdispgroups = sels.First().Dispgroups;
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GetDisp)
-            || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GetDraw)
-            || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GiveDisp)
-            || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GiveDraw)
-            || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_ShowAll)
-            || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_HideAll)
-            || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_SelectHighlights))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDisplayGroup)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDrawGroup)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetDisplayGroup)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetDrawGroup)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_ShowAllDisplayGroups)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_HideAllDisplayGroups)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectDisplayGroupHighlights))
         {
             ImGui.SetNextWindowFocus();
         }
@@ -66,8 +66,8 @@ public class DisplayGroupEditor
                 dg.AlwaysVisible = false;
             }
 
-            if (ImGui.Button($"Show All <{KeyBindings.Current.Map_RenderGroup_ShowAll.HintText}>")
-                || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_ShowAll))
+            if (ImGui.Button($"Show All <{KeyBindings.Current.MAP_ShowAllDisplayGroups.HintText}>")
+                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_ShowAllDisplayGroups))
             {
                 for (var i = 0; i < dispCount; i++)
                 {
@@ -76,8 +76,8 @@ public class DisplayGroupEditor
             }
 
             ImGui.SameLine(0.0f, 6.0f * scale);
-            if (ImGui.Button($"Hide All <{KeyBindings.Current.Map_RenderGroup_HideAll.HintText}>")
-                || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_HideAll))
+            if (ImGui.Button($"Hide All <{KeyBindings.Current.MAP_HideAllDisplayGroups.HintText}>")
+                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_HideAllDisplayGroups))
             {
                 for (var i = 0; i < dispCount; i++)
                 {
@@ -91,8 +91,8 @@ public class DisplayGroupEditor
                 ImGui.BeginDisabled();
             }
 
-            if (ImGui.Button($"Get Disp <{KeyBindings.Current.Map_RenderGroup_GetDisp.HintText}>")
-                || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GetDisp)
+            if (ImGui.Button($"Get Disp <{KeyBindings.Current.MAP_GetDisplayGroup.HintText}>")
+                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDisplayGroup)
                     && sdispgroups != null)
             {
                 for (var i = 0; i < dispCount; i++)
@@ -102,8 +102,8 @@ public class DisplayGroupEditor
             }
 
             ImGui.SameLine(0.0f, 6.0f * scale);
-            if (ImGui.Button($"Get Draw <{KeyBindings.Current.Map_RenderGroup_GetDraw.HintText}>")
-                || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GetDraw)
+            if (ImGui.Button($"Get Draw <{KeyBindings.Current.MAP_GetDrawGroup.HintText}>")
+                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDrawGroup)
                     && sdispgroups != null)
             {
                 for (var i = 0; i < dispCount; i++)
@@ -113,8 +113,8 @@ public class DisplayGroupEditor
             }
 
             ImGui.SameLine(0.0f, 12.0f * scale);
-            if (ImGui.Button($"Assign Draw <{KeyBindings.Current.Map_RenderGroup_GiveDraw.HintText}>")
-                || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GiveDraw)
+            if (ImGui.Button($"Assign Draw <{KeyBindings.Current.MAP_SetDrawGroup.HintText}>")
+                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetDrawGroup)
                     && sdispgroups != null)
             {
                 IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
@@ -123,8 +123,8 @@ public class DisplayGroupEditor
             }
 
             ImGui.SameLine(0.0f, 6.0f * scale);
-            if (ImGui.Button($"Assign Disp <{KeyBindings.Current.Map_RenderGroup_GiveDisp.HintText}>")
-                || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GiveDisp)
+            if (ImGui.Button($"Assign Disp <{KeyBindings.Current.MAP_SetDisplayGroup.HintText}>")
+                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetDisplayGroup)
                     && sdispgroups != null)
             {
                 IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
@@ -145,7 +145,7 @@ public class DisplayGroupEditor
 
             bool selectHighlightsOperation = false;
             if (ImGui.Button("Select Highlights")
-                || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_SelectHighlights))
+                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectDisplayGroupHighlights))
             {
                 selectHighlightsOperation = true;
             }

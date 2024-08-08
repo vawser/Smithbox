@@ -35,13 +35,10 @@ public class ActionSubMenu
 
     public void DisplayMenu()
     {
-        // None yet
-        /*
         if (ImGui.BeginMenu("Actions"))
         {
             
             ImGui.EndMenu();
         }
-        */
     }
 }

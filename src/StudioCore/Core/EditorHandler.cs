@@ -133,13 +133,13 @@ public class EditorHandler
     {
         if (FocusedEditor.ShowSaveOption)
         {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Core_SaveCurrentEditor))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
             {
                 Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                 SaveFocusedEditor();
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Core_SaveAllCurrentEditor))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_SaveAll))
             {
                 Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                 SaveAllFocusedEditor();
@@ -210,7 +210,7 @@ public class EditorHandler
             {
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
                 if (ImGui.MenuItem($"Save Selected {FocusedEditor.SaveType}",
-                        KeyBindings.Current.Core_SaveCurrentEditor.HintText))
+                        KeyBindings.Current.CORE_Save.HintText))
                 {
                     Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                     SaveFocusedEditor();
@@ -218,7 +218,7 @@ public class EditorHandler
 
                 // Save All
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
-                if (ImGui.MenuItem($"Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.Core_SaveAllCurrentEditor.HintText))
+                if (ImGui.MenuItem($"Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.CORE_SaveAll.HintText))
                 {
                     Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                     SaveAllFocusedEditor();

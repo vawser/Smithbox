@@ -25,15 +25,15 @@ public class ActionSubMenu
 
     public void Shortcuts()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
         {
             Handler.DuplicateHandler();
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
         {
             Handler.DeleteHandler();
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TextFMG_Sync))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXT_SyncDescriptions))
         {
             Handler.SyncDescriptionHandler();
         }
@@ -49,21 +49,21 @@ public class ActionSubMenu
         if (ImGui.BeginMenu("Actions"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Duplicate Entries", KeyBindings.Current.Core_Duplicate.HintText))
+            if (ImGui.MenuItem("Duplicate Entries", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
                 Handler.DuplicateHandler();
             }
             ImguiUtils.ShowHoverTooltip("Duplicates current selection.");
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Delete Entries", KeyBindings.Current.Core_Delete.HintText))
+            if (ImGui.MenuItem("Delete Entries", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 Handler.DeleteHandler();
             }
             ImguiUtils.ShowHoverTooltip("Deletes current selection.");
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Sync Description Entries", KeyBindings.Current.TextFMG_Sync.HintText))
+            if (ImGui.MenuItem("Sync Description Entries", KeyBindings.Current.TEXT_SyncDescriptions.HintText))
             {
                 Handler.SyncDescriptionHandler();
             }

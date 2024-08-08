@@ -25,12 +25,12 @@ public class ActionSubMenu
 
     public void Shortcuts()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
         {
             Screen.DeleteValueRow();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
         {
             Screen.DuplicateValueRow();
         }
@@ -46,14 +46,14 @@ public class ActionSubMenu
         if (ImGui.BeginMenu("Actions"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Duplicate Value Row", KeyBindings.Current.Core_Duplicate.HintText))
+            if (ImGui.MenuItem("Duplicate Value Row", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
                 Screen.DuplicateValueRow();
             }
             ImguiUtils.ShowHoverTooltip("Duplicates the current value row selection.");
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Delete Value Row", KeyBindings.Current.Core_Delete.HintText))
+            if (ImGui.MenuItem("Delete Value Row", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 Screen.DeleteValueRow();
             }

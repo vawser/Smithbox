@@ -372,7 +372,7 @@ namespace StudioCore.Editors.ModelEditor
                 if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                 {
                     // Quick-tool all if this key is down
-                    if (InputTracker.GetKey(KeyBindings.Current.ModelEditor_ToggleVisibilitySection))
+                    if (InputTracker.GetKey(KeyBindings.Current.MODEL_ToggleVisibility))
                     {
                         for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
                         {
@@ -450,7 +450,7 @@ namespace StudioCore.Editors.ModelEditor
                 if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                 {
                     // Quick-tool all if this key is down
-                    if (InputTracker.GetKey(KeyBindings.Current.ModelEditor_ToggleVisibilitySection))
+                    if (InputTracker.GetKey(KeyBindings.Current.MODEL_ToggleVisibility))
                     {
                         for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
                         {
@@ -527,7 +527,7 @@ namespace StudioCore.Editors.ModelEditor
                 if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                 {
                     // Quick-tool all if this key is down
-                    if (InputTracker.GetKey(KeyBindings.Current.ModelEditor_ToggleVisibilitySection))
+                    if (InputTracker.GetKey(KeyBindings.Current.MODEL_ToggleVisibility))
                     {
                         for (int i = 0; i < container.Mesh_RootNode.Children.Count; i++)
                         {

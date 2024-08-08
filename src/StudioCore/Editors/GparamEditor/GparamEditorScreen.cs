@@ -94,7 +94,7 @@ public class GparamEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
+            if (ImGui.MenuItem("Undo", KeyBindings.Current.CORE_UndoAction.HintText, false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
@@ -106,7 +106,7 @@ public class GparamEditorScreen : EditorScreen
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
+            if (ImGui.MenuItem("Redo", KeyBindings.Current.CORE_RedoAction.HintText, false, EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
             }
@@ -291,6 +291,7 @@ public class GparamEditorScreen : EditorScreen
             ToolSubMenu.Shortcuts();
 
             GparamShortcuts();
+            QuickEditHandler.Shortcuts();
 
             if (GparamParamBank.IsLoaded)
             {
@@ -325,12 +326,12 @@ public class GparamEditorScreen : EditorScreen
     public void GparamShortcuts()
     {
         // Keyboard shortcuts
-        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
         {
             EditorActionManager.UndoAction();
         }
 
-        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
         {
             EditorActionManager.RedoAction();
         }

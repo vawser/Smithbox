@@ -26,7 +26,7 @@ public class ToolSubMenu
 
     public void Shortcuts()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TextureViewer_ExportTexture))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ExportTexture))
         {
             Handler.ExportTextureHandler();
         }
@@ -42,7 +42,7 @@ public class ToolSubMenu
         if (ImGui.BeginMenu("Tools"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Export Texture", KeyBindings.Current.TextureViewer_ExportTexture.HintText))
+            if (ImGui.MenuItem("Export Texture", KeyBindings.Current.TEXTURE_ExportTexture.HintText))
             {
                 Handler.ExportTextureHandler();
             }

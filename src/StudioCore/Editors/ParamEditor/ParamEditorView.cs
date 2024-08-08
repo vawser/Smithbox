@@ -61,12 +61,12 @@ public class ParamEditorView
             }
         }
 
-        if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.Param_SearchParam))
+        if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SearchParam))
         {
             ImGui.SetKeyboardFocusHere();
         }
 
-        ImGui.InputText($"Search <{KeyBindings.Current.Param_SearchParam.HintText}>",
+        ImGui.InputText($"Search <{KeyBindings.Current.PARAM_SearchParam.HintText}>",
             ref _selection.currentParamSearchString, 256);
         var resAutoParam = AutoFill.ParamSearchBarAutoFill();
 
@@ -360,16 +360,16 @@ public class ParamEditorView
 
         scrollTo = 0;
 
-        if (ImGui.Button($"Go to selected <{KeyBindings.Current.Param_GotoSelectedRow.HintText}>") ||
-            isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.Param_GotoRowID))
+        if (ImGui.Button($"Go to selected <{KeyBindings.Current.PARAM_GoToSelectedRow.HintText}>") ||
+            isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
         {
             _paramEditor.GotoSelectedRow = true;
         }
 
         ImGui.SameLine();
 
-        if (ImGui.Button($"Go to ID <{KeyBindings.Current.Param_GotoRowID.HintText}>") ||
-            isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.Param_GotoRowID))
+        if (ImGui.Button($"Go to ID <{KeyBindings.Current.PARAM_GoToRowID.HintText}>") ||
+            isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
         {
             ImGui.OpenPopup("gotoParamRow");
         }
@@ -390,12 +390,12 @@ public class ParamEditorView
         }
 
         //Row ID/name search
-        if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.Param_SearchRow))
+        if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SearchRow))
         {
             ImGui.SetKeyboardFocusHere();
         }
 
-        ImGui.InputText($"Search <{KeyBindings.Current.Param_SearchRow.HintText}>",
+        ImGui.InputText($"Search <{KeyBindings.Current.PARAM_SearchRow.HintText}>",
             ref _selection.GetCurrentRowSearchString(), 256);
         var resAutoRow = AutoFill.RowSearchBarAutoFill();
 
@@ -787,7 +787,7 @@ public class ParamEditorView
 
             if (CFG.Current.Param_RowContextMenu_ShortcutTools)
             {
-                if (ImGui.Selectable(@$"Copy selection ({KeyBindings.Current.Param_Copy.HintText})", false,
+                if (ImGui.Selectable(@$"Copy selection ({KeyBindings.Current.PARAM_CopyToClipboard.HintText})", false,
                         _selection.RowSelectionExists()
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
@@ -797,7 +797,7 @@ public class ParamEditorView
 
                 ImGui.Separator();
 
-                if (ImGui.Selectable(@$"Paste clipboard ({KeyBindings.Current.Param_Paste.HintText})", false,
+                if (ImGui.Selectable(@$"Paste clipboard ({KeyBindings.Current.PARAM_PasteClipboard.HintText})", false,
                         ParamBank.ClipboardRows.Any() ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
@@ -805,7 +805,7 @@ public class ParamEditorView
 
                 ImGui.Separator();
 
-                if (ImGui.Selectable(@$"Delete selection ({KeyBindings.Current.Core_Delete.HintText})", false,
+                if (ImGui.Selectable(@$"Delete selection ({KeyBindings.Current.CORE_DeleteSelectedEntry.HintText})", false,
                         _selection.RowSelectionExists()
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
@@ -815,7 +815,7 @@ public class ParamEditorView
 
                 ImGui.Separator();
 
-                if (ImGui.Selectable(@$"Duplicate selection ({KeyBindings.Current.Core_Duplicate.HintText})", false,
+                if (ImGui.Selectable(@$"Duplicate selection ({KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText})", false,
                         _selection.RowSelectionExists()
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))

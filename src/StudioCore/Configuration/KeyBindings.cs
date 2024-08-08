@@ -35,18 +35,19 @@ public class KeyBind
     public bool FixedKey;
 
     public string PresentationName;
-    public KeybindCategory KeyCategory;
+    public string Description;
 
     [JsonConstructor]
     public KeyBind()
     {
         PresentationName = "";
+        Description = "";
     }
 
-    public KeyBind(string name, KeybindCategory category, Key primaryKey = Key.Unknown, bool ctrlKey = false, bool altKey = false, bool shiftKey = false, bool fixedKey = false)
+    public KeyBind(string name, string description, Key primaryKey = Key.Unknown, bool ctrlKey = false, bool altKey = false, bool shiftKey = false, bool fixedKey = false)
     {
         PresentationName = name;
-        KeyCategory = category;
+        Description = description;
 
         PrimaryKey = primaryKey;
         Ctrl_Pressed = ctrlKey;
@@ -90,7 +91,7 @@ public class KeyBind
 public class KeyBindings
 {
     public static Bindings Current { get; set; }
-    //public static Bindings Default { get; set; } = new();
+    public static Bindings Default { get; set; } = new();
 
     public static void ResetKeyBinds()
     {
@@ -99,129 +100,739 @@ public class KeyBindings
 
     public class Bindings
     {
+        //-----------------------------
         // Core
-        public KeyBind Core_Create = new("Create", KeybindCategory.Core, Key.Insert);
-        public KeyBind Core_Delete = new("Delete", KeybindCategory.Core, Key.Delete);
-        public KeyBind Core_Duplicate = new("Duplicate", KeybindCategory.Core, Key.D, true);
-        public KeyBind Core_Redo = new("Redo", KeybindCategory.Core, Key.Y, true);
-        public KeyBind Core_SaveAllCurrentEditor = new("Save All", KeybindCategory.Core);
-        public KeyBind Core_SaveCurrentEditor = new("Save", KeybindCategory.Core, Key.S, true);
-        public KeyBind Core_Undo = new("Undo", KeybindCategory.Core, Key.Z, true);
-        public KeyBind ToggleWindow_Settings = new("Toggle Settings Window", KeybindCategory.Core, Key.F2);
-        public KeyBind ToggleWindow_Help = new("Toggle Help Window", KeybindCategory.Core, Key.F3);
-        public KeyBind ToggleWindow_Keybind = new("Toggle Keybind Window", KeybindCategory.Core, Key.F4);
+        //-----------------------------
+        // Core
+        public KeyBind CORE_CreateNewEntry = new(
+            "Create New Entry", 
+            "Creates a new default entry based on the current selection context.", 
+            Key.Insert);
 
+        public KeyBind CORE_DeleteSelectedEntry = new(
+            "Delete Selected Entry", 
+            "Deletes the selected entry or entries based on the current selection context.", 
+            Key.Delete);
+
+        public KeyBind CORE_DuplicateSelectedEntry = new(
+            "Duplicate",
+            "Duplicates the selected entry or entries based on the current selection context.",
+            Key.D, 
+            true);
+
+        public KeyBind CORE_RedoAction = new(
+            "Redo", 
+            "Re-executes a previously un-done action.", 
+            Key.Y, 
+            true);
+
+        public KeyBind CORE_UndoAction = new(
+            "Undo",
+            "Undoes a previously executed action.",
+            Key.Z,
+            true);
+
+        public KeyBind CORE_SaveAll = new(
+            "Save All", 
+            "Saves all modified files within the focused editor.",
+            Key.Unknown);
+
+        public KeyBind CORE_Save = new(
+            "Save", 
+            "Save the current file-level selection within the focused editor.", 
+            Key.S, 
+            true);
+
+        // Windows
+        public KeyBind CORE_ConfigurationWindow = new(
+            "Configuration Window", 
+            "Toggles the visibility of the Configuration window.",
+            Key.F2);
+
+        public KeyBind CORE_HelpWindow = new(
+            "Help Window",
+            "Toggles the visibility of the Help window.",
+            Key.F3);
+
+        public KeyBind CORE_KeybindsWindow = new(
+            "Keybinds Window",
+            "Toggles the visibility of the Keybinds window.",
+            Key.F4);
+
+        //-----------------------------
         // Viewport
-        public KeyBind Viewport_Cam_Back = new("Back", KeybindCategory.Viewport, Key.S);
-        public KeyBind Viewport_Cam_Down = new("Down", KeybindCategory.Viewport, Key.Q);
-        public KeyBind Viewport_Cam_Forward = new("Forward", KeybindCategory.Viewport, Key.W);
-        public KeyBind Viewport_Cam_Left = new("Left", KeybindCategory.Viewport, Key.A);
-        public KeyBind Viewport_Cam_Reset = new("Reset", KeybindCategory.Viewport, Key.R);
-        public KeyBind Viewport_Cam_Right = new("Right", KeybindCategory.Viewport, Key.D);
-        public KeyBind Viewport_Cam_Up = new("Up", KeybindCategory.Viewport, Key.E);
-        public KeyBind Viewport_RotationMode = new("Gizmo Rotation Mode", KeybindCategory.Viewport, Key.E);
-        public KeyBind Viewport_ToggleGizmoOrigin = new("Toggle Gizmo Origin", KeybindCategory.Viewport, Key.Home);
-        public KeyBind Viewport_ToggleGizmoSpace = new("Toggle Gizmo Space", KeybindCategory.Viewport);
-        public KeyBind Viewport_TranslateMode = new("Gizmo Translate Mode", KeybindCategory.Viewport, Key.W);
-        public KeyBind Map_ViewportGrid_Lower = new("Map Grid: Lower", KeybindCategory.Viewport, Key.Q, true);
-        public KeyBind Map_ViewportGrid_Raise = new("Map Grid: Raise", KeybindCategory.Viewport, Key.E, true);
-        public KeyBind Map_ViewportGrid_Bring_to_Selection = new("Map Grid: Bring to Selection", KeybindCategory.Viewport, Key.K, true);
-        public KeyBind Map_ToggleRenderOutline = new("Toggle Selection Outline", KeybindCategory.Viewport);
+        //-----------------------------
+        // Core
+        public KeyBind VIEWPORT_CameraForward = new(
+            "Move Forward",
+            "Moves the camera forward.",
+            Key.W);
 
-        // Map Toolbar
-        public KeyBind Toolbar_Rotate_X = new("Rotate X", KeybindCategory.MapEditor, Key.J);
-        public KeyBind Toolbar_Rotate_Y = new("Rotate Y", KeybindCategory.MapEditor, Key.K, false, false, true);
-        public KeyBind Toolbar_Rotate_Y_Pivot = new("Rotate Y Pivot", KeybindCategory.MapEditor, Key.K);
-        public KeyBind Toolbar_Go_to_Selection_in_Object_List = new("Go to Selection in Object List", KeybindCategory.MapEditor, Key.G);
-        public KeyBind Toolbar_Move_Selection_to_Camera = new("Move Selection to Camera", KeybindCategory.MapEditor, Key.X);
-        public KeyBind Toolbar_Frame_Selection_in_Viewport = new("Frame Selection in Viewport", KeybindCategory.MapEditor, Key.F);
-        public KeyBind Toolbar_Toggle_Selection_Visibility_Flip = new("Toggle Selection Visibility: Flip", KeybindCategory.MapEditor, Key.H, true);
-        public KeyBind Toolbar_Toggle_Map_Visibility_Flip = new("Toggle Map Visibility: Flip", KeybindCategory.MapEditor, Key.B, true);
-        public KeyBind Toolbar_Toggle_Selection_Visibility_Enabled = new("Toggle Selection Visibility: Enable", KeybindCategory.MapEditor, Key.H, true, true);
-        public KeyBind Toolbar_Toggle_Map_Visibility_Enabled = new("Toggle Map Visibility: Enable", KeybindCategory.MapEditor, Key.B, true, true);
-        public KeyBind Toolbar_Toggle_Selection_Visibility_Disabled = new("Toggle Selection Visibility: Disable", KeybindCategory.MapEditor, Key.H, true, true, true);
-        public KeyBind Toolbar_Toggle_Map_Visibility_Disabled = new("Toggle Map Visibility: Disable", KeybindCategory.MapEditor, Key.B, true, true, true);
-        public KeyBind Toolbar_Reset_Rotation = new("Reset Rotation", KeybindCategory.MapEditor, Key.L);
-        public KeyBind Toolbar_Dummify = new("Dummify", KeybindCategory.MapEditor, Key.Comma, false, false, true);
-        public KeyBind Toolbar_Undummify = new("Undummify", KeybindCategory.MapEditor, Key.Period, false, false, true);
-        public KeyBind Toolbar_Scramble = new("Scramble", KeybindCategory.MapEditor, Key.S, false, true);
-        public KeyBind Toolbar_Replicate = new("Replicate", KeybindCategory.MapEditor, Key.R, false, true);
-        public KeyBind Toolbar_Set_to_Grid = new("Set to Grid", KeybindCategory.MapEditor, Key.G, false, true);
-        public KeyBind Toolbar_Create = new("Create", KeybindCategory.MapEditor, Key.C, false, true);
-        public KeyBind Toolbar_RenderEnemyPatrolRoutes = new("Render Patrol Routes", KeybindCategory.MapEditor, Key.P, true);
+        public KeyBind VIEWPORT_CameraBack = new(
+            "Move Back",
+            "Moves the camera backwards.", 
+            Key.S);
 
-        public KeyBind Toolbar_ExportPrefab = new("Export Prefab", KeybindCategory.MapEditor, Key.E, true, true);
-        public KeyBind Toolbar_ImportPrefab = new("Import Prefab", KeybindCategory.MapEditor, Key.I, true, true);
+        public KeyBind VIEWPORT_CameraUp = new(
+            "Move Up",
+            "Moves the camera upwards.",
+            Key.E);
 
+        public KeyBind VIEWPORT_CameraDown = new(
+            "Move Down",
+            "Moves the camera downwards.", 
+            Key.Q);
+
+        public KeyBind VIEWPORT_CameraLeft = new(
+            "Move Left",
+            "Moves the camera leftwards.", 
+            Key.A);
+
+        public KeyBind VIEWPORT_CameraRight = new(
+            "Move Right",
+            "Moves the camera rightwards.",
+            Key.D);
+
+        public KeyBind VIEWPORT_CameraReset = new(
+            "Reset Position", 
+            "Resets the camera's position to (0,0,0)", 
+            Key.R);
+
+        // Gizmos
+        public KeyBind VIEWPORT_GizmoRotationMode = new(
+            "Cycle Gizmo Rotation Mode", 
+            "Cycles through the gizmo rotation modes.", 
+            Key.E);
+
+        public KeyBind VIEWPORT_GizmoOriginMode = new(
+            "Cycle Gizmo Origin Mode",
+            "Cycles through the gizmo origin modes.",
+            Key.Home);
+
+        public KeyBind VIEWPORT_GizmoSpaceMode = new(
+            "Cycle Gizmo Space Mode",
+            "Cycles through the gizmo space modes.",
+            Key.Unknown);
+
+        public KeyBind VIEWPORT_GizmoTranslationMode = new(
+            "Cycle Gizmo Translation Mode",
+            "Cycles through the gizmo translation modes.", 
+            Key.W);
+
+        // Grid
+        public KeyBind VIEWPORT_LowerGrid = new(
+            "Lower Grid",
+            "Lowers the viewport grid height by the specified unit increment.", 
+            Key.Q, 
+            true);
+
+        public KeyBind VIEWPORT_RaiseGrid = new(
+            "Raise Grid",
+            "Raises the viewport grid height by the specified unit increment.",
+            Key.E, 
+            true);
+
+        public KeyBind VIEWPORT_SetGridToSelectionHeight = new(
+            "Move Grid to Selection Height",
+            "Set the viewport grid height to the height of the current selection.",
+            Key.K, 
+            true);
+
+        // Selection
+        public KeyBind VIEWPORT_RenderOutline = new(
+            "Selection Outline", 
+            "Toggles the appearance of the selection outline.",
+            Key.Unknown);
+
+        //-----------------------------
         // Map Editor
-        public KeyBind Map_DuplicateToMap = new("Duplicate to Map", KeybindCategory.MapEditor, Key.D, false, false, true);
-        public KeyBind Map_PropSearch = new("Property Search", KeybindCategory.MapEditor, Key.F, true);
-        public KeyBind Map_RenderGroup_GetDisp = new("Render Group: Get Display Group", KeybindCategory.MapEditor, Key.G, true);
-        public KeyBind Map_RenderGroup_GetDraw = new("Render Group: Get Draw Group", KeybindCategory.MapEditor);
-        public KeyBind Map_RenderGroup_GiveDisp = new("Render Group: Give Display Group", KeybindCategory.MapEditor);
-        public KeyBind Map_RenderGroup_GiveDraw = new("Render Group: Give Draw Group", KeybindCategory.MapEditor);
-        public KeyBind Map_RenderGroup_HideAll = new("Render Group: Hide All", KeybindCategory.MapEditor);
-        public KeyBind Map_RenderGroup_ShowAll = new("Render Group: Show All", KeybindCategory.MapEditor, Key.R, true);
-        public KeyBind Map_RenderGroup_SelectHighlights = new("Render Group: Select Highlights", KeybindCategory.MapEditor);
+        //-----------------------------
+        // Core
+        public KeyBind MAP_GoToInList = new(
+            "Go to in List",
+            "Go to the selection within the Map Object List.",
+            Key.G);
 
-        public KeyBind Map_CreateSelectionGroup = new("Create Selection Group", KeybindCategory.MapEditor, Key.L, false, true);
+        public KeyBind MAP_MoveToCamera = new(
+            "Move Selection to Camera",
+            "Moves the current selection to the camera's position.",
+            Key.X);
 
-        public KeyBind Map_QuickSelect_SelectionGroup_0 = new("Select Selection Group 0", KeybindCategory.MapEditor, Key.Keypad0, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_1 = new("Select Selection Group 1", KeybindCategory.MapEditor, Key.Keypad1, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_2 = new("Select Selection Group 2", KeybindCategory.MapEditor, Key.Keypad2, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_3 = new("Select Selection Group 3", KeybindCategory.MapEditor, Key.Keypad3, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_4 = new("Select Selection Group 4", KeybindCategory.MapEditor, Key.Keypad4, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_5 = new("Select Selection Group 5", KeybindCategory.MapEditor, Key.Keypad5, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_6 = new("Select Selection Group 6", KeybindCategory.MapEditor, Key.Keypad6, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_7 = new("Select Selection Group 7", KeybindCategory.MapEditor, Key.Keypad7, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_8 = new("Select Selection Group 9", KeybindCategory.MapEditor, Key.Keypad8, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_9 = new("Select Selection Group 0", KeybindCategory.MapEditor, Key.Keypad9, false, false);
-        public KeyBind Map_QuickSelect_SelectionGroup_10 = new("Select Selection Group 10", KeybindCategory.MapEditor, Key.KeypadAdd, false, false);
+        public KeyBind MAP_FrameSelection = new(
+            "Frame Selection",
+            "Frames the current selection within the viewport.",
+            Key.F);
 
-        public KeyBind MapEditor_MoveOrderUp = new("Move Map Object Up in List", KeybindCategory.MapEditor, Key.U, true, false);
-        public KeyBind MapEditor_MoveOrderDown = new("Move Map Object Down in List", KeybindCategory.MapEditor, Key.J, true, false);
-        public KeyBind MapEditor_MoveOrderTop = new("Move Map Object to Top in List", KeybindCategory.MapEditor, Key.U, true, true);
-        public KeyBind MapEditor_MoveOrderBottom = new("Move Map Object to Bottom in List", KeybindCategory.MapEditor, Key.J, true, true);
+        public KeyBind MAP_RotateSelectionXAxis = new(
+            "Rotate Selection on X-axis", 
+            "Rotates the current selection on the X-axis by the specified increment.", 
+            Key.J);
 
-        public KeyBind Map_WorldMap_Vanilla = new("Toggle Lands Between Map", KeybindCategory.MapEditor, Key.M, true, false, false);
-        public KeyBind Map_WorldMap_SOTE = new("Toggle Shadow of the Erdtree Map", KeybindCategory.MapEditor, Key.M, true, true, false);
-        public KeyBind Map_WorldMap_DragMap = new("Drag Map", KeybindCategory.MapEditor, Key.C, false, false, false);
+        public KeyBind MAP_RotateSelectionYAxis = new(
+            "Rotate Selection on Y-axis",
+            "Rotates the current selection on the Y-axis by the specified increment.",
+            Key.K, 
+            false, 
+            false, 
+            true);
 
+        public KeyBind MAP_PivotSelectionYAxis = new(
+            "Pivot Selection on Y-axis",
+            "Pivots the current selection on the Y-axis by the specified increment.",
+            Key.K);
+
+        public KeyBind MAP_ResetRotation = new(
+            "Reset Rotation for Selection",
+            "Resets the rotation of the current selection to (0,0,0).",
+            Key.L);
+
+        public KeyBind MAP_FlipSelectionVisibility = new(
+            "Flip Editor Visibility of Selection", 
+            "Flip the editor visibility state for the current selection.", 
+            Key.H, 
+            true);
+
+        public KeyBind MAP_FlipAllVisibility = new(
+            "Flip Editor Visibility of All",
+            "Flip the editor visibility state for all map objects.",
+            Key.B, 
+            true);
+
+        public KeyBind MAP_EnableSelectionVisibility = new(
+            "Enable Editor Visibility of Selection",
+            "Enable the editor visibility for the current selection.",
+            Key.H,
+            true, 
+            true);
+
+        public KeyBind MAP_EnableAllVisibility = new(
+            "Enable Editor Visibility of All",
+            "Enable the editor visibility for all map objects.",
+            Key.B, 
+            true, 
+            true);
+
+        public KeyBind MAP_DisableSelectionVisibility = new(
+            "Disable Editor Visibility of Selection",
+            "Disable the editor visibility for the current selection.",
+            Key.H, 
+            true, 
+            true, 
+            true);
+
+        public KeyBind MAP_DisableAllVisibility = new(
+            "Disable Editor Visibility of All",
+            "Disable the editor visibility for all map objects.",
+            Key.B, 
+            true, 
+            true, 
+            true);
+
+        public KeyBind MAP_MakeDummyObject = new(
+            "Make Selection into Dummy Object", 
+            "Changes the current selection into the equivalent Dummy map object type (if possible).",
+            Key.Comma, 
+            false, 
+            false, 
+            true);
+
+        public KeyBind MAP_MakeNormalObject = new(
+            "Make Selection into Normal Object",
+            "Changes the current selection (if Dummy objects) into the equivalent normal map object type.",
+            Key.Period, 
+            false, 
+            false, 
+            true);
+
+        public KeyBind MAP_ScrambleSelection = new(
+            "Scramble Selection", 
+            "Scrambles the position, rotation and scale (depending on Scramble tool settings) of the current selection.", 
+            Key.S, 
+            false, 
+            true);
+
+        public KeyBind MAP_ReplicateSelection = new(
+            "Replicate Selection", 
+            "Replicates the current selection (based on the Replicate tool settings).", 
+            Key.R, 
+            false, 
+            true);
+
+        public KeyBind MAP_SetSelectionToGrid = new(
+            "Set Selection Height to Grid Height", 
+            "Moves the current selection's height to the height of the viewport grid.", 
+            Key.G, 
+            false, 
+            true);
+
+        public KeyBind MAP_CreateMapObject = new(
+            "Create Map Object", 
+            "Create a new map object of the selected type with default values.", 
+            Key.C, 
+            false, 
+            true);
+
+        public KeyBind MAP_TogglePatrolRouteRendering = new(
+            "Toggle Patrol Route Connections", 
+            "Toggles the rendering of patrol route connections.", 
+            Key.P, 
+            true);
+
+        public KeyBind MAP_ExportPrefab = new(
+            "Export Prefab from Selection", 
+            "Exports the current selection as a prefab.", 
+            Key.E, 
+            true, 
+            true);
+
+        public KeyBind MAP_ImportPrefab = new(
+            "Import Prefab", 
+            "Imports the currently selected prefab, creating new map objects based upon it.", 
+            Key.I, 
+            true, 
+            true);
+
+        public KeyBind MAP_DuplicateToMap = new(
+            "Duplicate Selection to Map", 
+            "Duplicates the current selection into the targeted map.", 
+            Key.D, 
+            false, 
+            false, 
+            true);
+
+        // Render Groups
+        public KeyBind MAP_GetDisplayGroup = new(
+            "View Display Group", 
+            "Display the display group for the current selection.", 
+            Key.G, 
+            true);
+
+        public KeyBind MAP_GetDrawGroup = new(
+            "View Draw Group",
+            "Display the draw group for the current selection.",
+            Key.Unknown);
+
+        public KeyBind MAP_SetDisplayGroup = new(
+            "Set Display Group", 
+            "Set the display group (as appears in the Render Groups tab) to the current selection.",
+            Key.Unknown);
+
+        public KeyBind MAP_SetDrawGroup = new(
+            "Render Group: Give Draw Group",
+            "Set the draw group (as appears in the Render Groups tab) to the current selection.",
+            Key.Unknown);
+
+        public KeyBind MAP_HideAllDisplayGroups = new(
+            "Hide All Display Groups", 
+            "Set the current selection display groups to 0.",
+            Key.Unknown);
+
+        public KeyBind MAP_ShowAllDisplayGroups = new(
+            "Show All Display Groups",
+            "Set the current selection display groups to 0xFFFFFFFF.",
+            Key.R, 
+            true);
+
+        public KeyBind MAP_SelectDisplayGroupHighlights = new(
+            "Select Display Group Highlights", 
+            "Select the objects that match the current display groups.",
+            Key.Unknown);
+
+        // Selection Group
+        public KeyBind MAP_CreateSelectionGroup = new(
+            "Create Selection Group", 
+            "Creates a new selection group from current selection.", 
+            Key.L, 
+            false, 
+            true);
+
+        public KeyBind MAP_SelectionGroup_0 = new(
+            "Select Selection Group 0", 
+            "Select the contents of Selection Group 0 (if defined).", 
+            Key.Keypad0, 
+            false,
+            false);
+
+        public KeyBind MAP_SelectionGroup_1 = new(
+            "Select Selection Group 1",
+            "Select the contents of Selection Group 1 (if defined).",
+            Key.Keypad1, 
+            false, 
+            false);
+
+        public KeyBind MAP_SelectionGroup_2 = new(
+            "Select Selection Group 2",
+            "Select the contents of Selection Group 2 (if defined).",
+            Key.Keypad2, 
+            false, 
+            false);
+
+        public KeyBind MAP_SelectionGroup_3 = new(
+            "Select Selection Group 3",
+            "Select the contents of Selection Group 3 (if defined).",
+            Key.Keypad3, 
+            false,
+            false);
+
+
+        public KeyBind MAP_SelectionGroup4 = new(
+            "Select Selection Group 4",
+            "Select the contents of Selection Group 4 (if defined).",
+            Key.Keypad4,
+            false,
+            false);
+
+
+        public KeyBind MAP_SelectionGroup5 = new(
+            "Select Selection Group 5",
+            "Select the contents of Selection Group 5 (if defined).",
+            Key.Keypad5,
+            false,
+            false);
+
+
+        public KeyBind MAP_SelectionGroup6 = new(
+            "Select Selection Group 6",
+            "Select the contents of Selection Group 6 (if defined).",
+            Key.Keypad6,
+            false,
+            false);
+
+        public KeyBind MAP_SelectionGroup7 = new(
+            "Select Selection Group 7",
+            "Select the contents of Selection Group 7 (if defined).",
+            Key.Keypad7,
+            false,
+            false);
+
+
+        public KeyBind MAP_SelectionGroup8 = new(
+            "Select Selection Group 8",
+            "Select the contents of Selection Group 8 (if defined).",
+            Key.Keypad8,
+            false,
+            false);
+
+
+        public KeyBind MAP_SelectionGroup9 = new(
+            "Select Selection Group 9",
+            "Select the contents of Selection Group 9 (if defined).",
+            Key.Keypad9,
+            false,
+            false);
+
+        public KeyBind MAP_SelectionGroup10 = new(
+            "Select Selection Group 10",
+            "Select the contents of Selection Group 10 (if defined).",
+            Key.KeypadAdd, 
+            false, 
+            false);
+
+        // Order
+        public KeyBind MAP_MoveObjectUp = new(
+            "Move Map Object Up in List", 
+            "Moves the selected map object up on the Map Object List order.", 
+            Key.U, 
+            true, 
+            false);
+
+        public KeyBind MAP_MoveObjectDown = new(
+            "Move Map Object Down in List",
+            "Moves the selected map object down on the Map Object List order.",
+            Key.J,
+            true, 
+            false);
+
+        public KeyBind MAP_MoveObjectTop = new(
+            "Move Map Object to Top in List",
+            "Moves the selected map object to the top of the Map Object List order.",
+            Key.U, 
+            true, 
+            true);
+
+        public KeyBind MAP_MoveObjectBottom = new(
+            "Move Map Object to Bottom in List",
+            "Moves the selected map object to the bottom of the Map Object List order.",
+            Key.J, 
+            true, 
+            true);
+
+        // World Map
+        public KeyBind MAP_ToggleERMapVanilla = new(
+            "Toggle Lands Between Map", 
+            "Toggles the visibility of the Lands Between map.",
+            Key.M, 
+            true, 
+            false, 
+            false);
+
+        public KeyBind MAP_ToggleERMapSOTE = new(
+            "Toggle Land of Shadow Map", 
+            "Toggles the visibility of the Land of Shadow map",
+            Key.M, 
+            true, 
+            true, 
+            false);
+
+        public KeyBind MAP_DragWorldMap = new(
+            "Drag World Map", 
+            "Held to drag around the world map.", 
+            Key.C, 
+            false, 
+            false, 
+            false);
+
+        //-----------------------------
         // Model Editor
-        public KeyBind ModelEditor_ToggleVisibilitySection = new("Toggle Section (when clicking Visibility Icon)", KeybindCategory.ModelEditor, Key.A);
-        public KeyBind ModelEditor_Multiselect = new("Multi-Select Row (hold)", KeybindCategory.ModelEditor, Key.Z);
-        public KeyBind ModelEditor_Multiselect_Range = new("Multi-Select Row Range (hold then click start and end row)", KeybindCategory.ModelEditor, Key.LShift, false, false, false, true);
-        public KeyBind ModelEditor_ExportModel = new("Export Model", KeybindCategory.ModelEditor, Key.K, true);
+        //-----------------------------
+        // Core
+        public KeyBind MODEL_ToggleVisibility = new(
+            "Toggle Section Visibility", 
+            "Applies visibility change to all members of the section when clicking the visibility eye icon.", 
+            Key.A);
 
-        // Param
-        public KeyBind Param_Copy = new("Copy", KeybindCategory.ParamEditor, Key.C, true);
-        public KeyBind Param_ExportCSV = new("Export CSV", KeybindCategory.ParamEditor);
-        public KeyBind Param_GotoBack = new("Go to Back", KeybindCategory.ParamEditor, Key.Escape);
-        public KeyBind Param_GotoRowID = new("Go to Row ID", KeybindCategory.ParamEditor, Key.G, true);
-        public KeyBind Param_GotoSelectedRow = new("Go to Selected Row", KeybindCategory.ParamEditor, Key.G);
-        public KeyBind Param_HotReload = new("Hot Reload", KeybindCategory.ParamEditor, Key.F5);
-        public KeyBind Param_HotReloadAll = new("Hot Reload All", KeybindCategory.ParamEditor, Key.F5, false, false, true);
-        public KeyBind Param_ImportCSV = new("Import CSV", KeybindCategory.ParamEditor);
-        public KeyBind Param_MassEdit = new("Mass Edit", KeybindCategory.ParamEditor);
-        public KeyBind Param_Paste = new("Paste", KeybindCategory.ParamEditor, Key.V, true);
-        public KeyBind Param_SearchField = new("Search Field", KeybindCategory.ParamEditor, Key.N, true);
-        public KeyBind Param_SearchParam = new("Search Param", KeybindCategory.ParamEditor, Key.P, true);
-        public KeyBind Param_SearchRow = new("Search Row", KeybindCategory.ParamEditor, Key.F, true);
-        public KeyBind Param_SelectAll = new("Select All", KeybindCategory.ParamEditor, Key.A, true);
+        public KeyBind MODEL_Multiselect = new(
+            "Multi-Select Row", 
+            "When held, multiple rows may be selected.", 
+            Key.Z);
 
-        // Text FMG
-        public KeyBind TextFMG_Sync = new("Sync Description", KeybindCategory.TextEditor, Key.K, true);
-        public KeyBind TextFMG_Search = new("Search", KeybindCategory.TextEditor, Key.F, true);
+        public KeyBind MODEL_MultiselectRange = new(
+            "Multi-Select Row Range", 
+            "When held, the next row selected will be considered the 'start', and the next row after that the 'end'. All rows between them will be selected.",
+            Key.LShift, 
+            false, 
+            false, 
+            false, 
+            true);
 
-        // TAE Editor
-        public KeyBind TimeActEditor_Multiselect = new("Multi-Select Row (hold)", KeybindCategory.TimeActEditor, Key.Z);
-        public KeyBind TimeActEditor_Multiselect_Range = new("Multi-Select Row Range (hold then click start and end row)", KeybindCategory.TimeActEditor, Key.LShift, false, false, false, true);
+        public KeyBind MODEL_ExportModel = new(
+            "Export Model", 
+            "Export the currently loaded model as a .DAE file.", 
+            Key.K, 
+            true);
 
+        //-----------------------------
+        // Param Editor
+        //-----------------------------
+        // Core
+        public KeyBind PARAM_SelectAll = new(
+            "Select All",
+            "Select all rows.",
+            Key.A,
+            true);
+
+        public KeyBind PARAM_GoToSelectedRow = new(
+            "Go to Selected Row",
+            "Change the list view to the currently selected row.",
+            Key.G);
+
+        public KeyBind PARAM_GoToRowID = new(
+            "Go to Row ID",
+            "Trigger the Row ID search prompt.",
+            Key.G,
+            true);
+
+        public KeyBind PARAM_CopyToClipboard = new(
+            "Copy Selection to Clipboard", 
+            "Copies the current param row to the clipboard.",
+            Key.C, 
+            true);
+
+        public KeyBind PARAM_PasteClipboard = new(
+            "Paste Clipboard",
+            "Paste the current param row in the clipboard.",
+            Key.V,
+            true);
+
+        public KeyBind PARAM_ViewMassEdit = new(
+            "View Mass Edit",
+            "Trigger the Mass Edit prompt.",
+            Key.Unknown);
+
+        public KeyBind PARAM_SearchParam = new(
+            "Focus Param Search",
+            "Moves focus to the param search input.",
+            Key.P,
+            true);
+
+        public KeyBind PARAM_SearchRow = new(
+            "Focus Row Search",
+            "Moves focus to the row search input.",
+            Key.F,
+            true);
+
+        public KeyBind PARAM_SearchField = new(
+            "Focus Field Search",
+            "Moves focus to the field search input.",
+            Key.N,
+            true);
+
+        // CSV
+        public KeyBind PARAM_ImportCSV = new(
+            "Import CSV",
+            "Trigger the CSV Import prompt.",
+            Key.Unknown);
+
+        public KeyBind PARAM_ExportCSV = new(
+            "Export CSV", 
+            "Trigger the CSV Export prompt.",
+            Key.Unknown);
+
+        // Param Reloader
+        public KeyBind PARAM_ReloadParam = new(
+            "Reload Current Param", 
+            "Reloads the rows of the current Param selection in-game.", 
+            Key.F5);
+
+        public KeyBind PARAM_ReloadAllParams = new(
+            "Reload All Params",
+            "Reloads the rows of all Params in-game.",
+            Key.F5, 
+            false, 
+            false, 
+            true);
+
+        // Pin Groups
+        public KeyBind PARAM_CreateParamGroup = new(
+            "Create Param Pin Group",
+            "Create a new Param pin group from the currently pinned params.",
+            Key.Number1,
+            true);
+
+        public KeyBind PARAM_CreateRowGroup = new(
+            "Create Row Pin Group",
+            "Create a new Row pin group from the currently pinned rows.",
+            Key.Number2,
+            true);
+
+        public KeyBind PARAM_CreateFieldGroup = new(
+            "Create Field Pin Group",
+            "Create a new Field pin group from the currently pinned fields.",
+            Key.Number3,
+            true);
+
+        public KeyBind PARAM_ClearPinnedParams = new(
+            "Clear Pinned Params",
+            "Clear currently pinned params.",
+            Key.Number1,
+            false,
+            true);
+
+        public KeyBind PARAM_ClearPinnedRows = new(
+            "Clear Pinned Rows",
+            "Clear currently pinned Rows.",
+            Key.Number2,
+            false,
+            true);
+
+        public KeyBind PARAM_ClearPinnedFields = new(
+            "Clear Pinned Fields",
+            "Clear currently pinned Fields.",
+            Key.Number3,
+            false,
+            true);
+
+        public KeyBind PARAM_ShowPinnedParamsOnly = new(
+            "Show Pinned Params Only",
+            "Toggle the setting to show only pinned params in the param list.",
+            Key.Number1,
+            false,
+            false,
+            true);
+
+        public KeyBind PARAM_ShowPinnedRowsOnly = new(
+            "Show Pinned Rows Only",
+            "Toggle the setting to show only pinned rows in the param list.",
+            Key.Number2,
+            false,
+            false,
+            true);
+
+        public KeyBind PARAM_ShowPinnedFieldsOnly = new(
+            "Show Pinned Fields Only",
+            "Toggle the setting to show only pinned fields in the param list.",
+            Key.Number3,
+            false,
+            false,
+            true);
+
+        //-----------------------------
+        // Text Editor
+        //-----------------------------
+        // Core
+        public KeyBind TEXT_FocusSearch = new(
+            "Focus Text Search",
+            "Moves focus to the Text search input.",
+            Key.F,
+            true);
+
+        public KeyBind TEXT_SyncDescriptions = new(
+            "Sync Descriptions", 
+            "Sync the descriptions of the selected text entries.", 
+            Key.K, 
+            true);
+
+        //-----------------------------
+        // GPARAM Editor
+        //-----------------------------
+        // Core
+        public KeyBind GPARAM_GenerateQuickEdit = new(
+            "Generate Quick Edit Commands",
+            "Generate quick edit commands from current selection.",
+            Key.K,
+            true);
+
+        public KeyBind GPARAM_ClearQuickEdit = new(
+            "Clear Quick Edit Commands",
+            "Clear current quick edit commands.",
+            Key.L,
+            true);
+
+        //-----------------------------
+        // Time Act Editor
+        //-----------------------------
+        // Core
+        public KeyBind TIMEACT_Multiselect = new(
+            "Multi-Select Row",
+            "When held, multiple rows may be selected.",
+            Key.Z);
+
+        public KeyBind TIMEACT_MultiselectRange = new(
+            "Multi-Select Row Range", 
+            "When held, the next row selected will be considered the 'start', and the next row after that the 'end'. All rows between them will be selected.",
+            Key.LShift, 
+            false, 
+            false, 
+            false, 
+            true);
+
+        //-----------------------------
         // Texture Viewer
-        public KeyBind TextureViewer_ExportTexture = new("Export Texture", KeybindCategory.TextureViewer, Key.X, true);
-        public KeyBind TextureViewer_ZoomMode = new("Zoom Mode", KeybindCategory.TextureViewer, Key.LControl, false, false, false, true);
-        public KeyBind TextureViewer_ZoomReset = new("Reset Zoom", KeybindCategory.TextureViewer, Key.R);
+        //-----------------------------
+        // Core
+        public KeyBind TEXTURE_ExportTexture = new(
+            "Export Texture", 
+            "Export the currently viewed texture.", 
+            Key.X, 
+            true);
 
+        public KeyBind TEXTURE_ZoomMode = new(
+            "Zoom Mode", 
+            "When held, the texture may be zoomed in/out with the mouse wheel.", 
+            Key.LControl, 
+            false, 
+            false, 
+            false, 
+            true);
+
+        public KeyBind TEXTURE_ResetZoomLevel = new(
+            "Reset Zoom Level", 
+            "Resets the zoom level to default.", 
+            Key.R);
+
+        //-----------------------------
+        // Misc
+        //-----------------------------
 #pragma warning disable IDE0051
         // JsonExtensionData stores info in config file not present in class in order to retain settings between versions.
         [JsonExtensionData] internal IDictionary<string, JsonElement> AdditionalData { get; set; }

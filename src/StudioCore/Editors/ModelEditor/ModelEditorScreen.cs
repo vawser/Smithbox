@@ -144,7 +144,7 @@ public class ModelEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
+            if (ImGui.MenuItem($"Undo", KeyBindings.Current.CORE_UndoAction.HintText, false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
@@ -158,7 +158,7 @@ public class ModelEditorScreen : EditorScreen
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
+            if (ImGui.MenuItem("Redo", KeyBindings.Current.CORE_RedoAction.HintText, false,
                     EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
@@ -313,13 +313,13 @@ public class ModelEditorScreen : EditorScreen
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Compass}");
             if (ImGui.BeginMenu("Mode"))
             {
-                if (ImGui.MenuItem("Translate", KeyBindings.Current.Viewport_TranslateMode.HintText,
+                if (ImGui.MenuItem("Translate", KeyBindings.Current.VIEWPORT_GizmoTranslationMode.HintText,
                         Gizmos.Mode == Gizmos.GizmosMode.Translate))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Translate;
                 }
 
-                if (ImGui.MenuItem("Rotate", KeyBindings.Current.Viewport_RotationMode.HintText,
+                if (ImGui.MenuItem("Rotate", KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText,
                         Gizmos.Mode == Gizmos.GizmosMode.Rotate))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Rotate;
@@ -331,13 +331,13 @@ public class ModelEditorScreen : EditorScreen
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Cube}");
             if (ImGui.BeginMenu("Space"))
             {
-                if (ImGui.MenuItem("Local", KeyBindings.Current.Viewport_ToggleGizmoSpace.HintText,
+                if (ImGui.MenuItem("Local", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText,
                         Gizmos.Space == Gizmos.GizmosSpace.Local))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.Local;
                 }
 
-                if (ImGui.MenuItem("World", KeyBindings.Current.Viewport_ToggleGizmoSpace.HintText,
+                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText,
                         Gizmos.Space == Gizmos.GizmosSpace.World))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.World;
@@ -349,13 +349,13 @@ public class ModelEditorScreen : EditorScreen
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Cubes}");
             if (ImGui.BeginMenu("Origin"))
             {
-                if (ImGui.MenuItem("World", KeyBindings.Current.Viewport_ToggleGizmoOrigin.HintText,
+                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText,
                         Gizmos.Origin == Gizmos.GizmosOrigin.World))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.World;
                 }
 
-                if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.Viewport_ToggleGizmoOrigin.HintText,
+                if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText,
                         Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
@@ -383,12 +383,12 @@ public class ModelEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0));
 
         // Keyboard shortcuts
-        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
         {
             EditorActionManager.UndoAction();
         }
 
-        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
         {
             EditorActionManager.RedoAction();
         }
@@ -398,18 +398,18 @@ public class ModelEditorScreen : EditorScreen
 
         if (!ViewportUsingKeyboard && !ImGui.GetIO().WantCaptureKeyboard)
         {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Viewport_TranslateMode))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoTranslationMode))
             {
                 Gizmos.Mode = Gizmos.GizmosMode.Translate;
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Viewport_RotationMode))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoRotationMode))
             {
                 Gizmos.Mode = Gizmos.GizmosMode.Rotate;
             }
 
             // Use home key to cycle between gizmos origin modes
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Viewport_ToggleGizmoOrigin))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoOriginMode))
             {
                 if (Gizmos.Origin == Gizmos.GizmosOrigin.World)
                 {
@@ -422,7 +422,7 @@ public class ModelEditorScreen : EditorScreen
             }
 
             // F key frames the selection
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_FrameSelection))
             {
                 HashSet<Entity> selected = _selection.GetFilteredSelection<Entity>();
                 var first = false;

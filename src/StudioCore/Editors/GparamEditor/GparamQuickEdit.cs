@@ -2,8 +2,10 @@
 using HKLib.hk2018.hk;
 using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.GraphicsEditor;
+using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -53,6 +55,18 @@ namespace StudioCore.Editors.GparamEditor
         {
             Screen = screen;
             RandomSource = RandomNumberGenerator.Create();
+        }
+
+        public void Shortcuts()
+        {
+            if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_GenerateQuickEdit))
+            {
+                GenerateQuickEditCommands();
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_ClearQuickEdit))
+            {
+                ClearQuickEditCommands();
+            }
         }
 
         private bool displayFileFilterSection = true;
@@ -239,70 +253,80 @@ namespace StudioCore.Editors.GparamEditor
             ImGui.SameLine();
             if (ImGui.Button("Fill from Selection", thirdButtonSize))
             {
-                _targetFileString = "";
-                _targetGroupString = "";
-                _targetFieldString = "";
-                _valueFilterString = "";
-
-                if (Screen._selectedGparamKey != null)
-                {
-                    UpdateFileFilter(Screen._selectedGparamKey);
-                }
-                else
-                {
-                    _valueFilterString = "*";
-                }
-
-                if (Screen._selectedParamGroup != null)
-                {
-                    UpdateGroupFilter(Screen._selectedParamGroup.Key);
-                }
-                else
-                {
-                    _valueFilterString = "*";
-                }
-
-                if (Screen._selectedParamField != null)
-                {
-                    UpdateFieldFilter(Screen._selectedParamField.Key);
-                }
-                else
-                {
-                    _valueFilterString = "*";
-                }
-
-                if (Screen._selectedParamField != null)
-                {
-                    var fieldIndex = -1;
-                    for (int i = 0; i < Screen._selectedParamField.Values.Count; i++)
-                    {
-                        if (Screen._selectedParamField.Values[i] == Screen._selectedFieldValue)
-                        {
-                            fieldIndex = i;
-                            break;
-                        }
-                    }
-
-                    if (fieldIndex != -1)
-                    {
-                        UpdateValueRowFilter(fieldIndex);
-                    }
-                }
-                else
-                {
-                    _valueFilterString = "*";
-                }
+                GenerateQuickEditCommands();
             }
             ImguiUtils.ShowHoverTooltip("Automatically fill the filter input based on current selection.");
 
             ImGui.SameLine();
             if (ImGui.Button("Clear", thirdButtonSize))
             {
-                _targetFileString = "";
-                _targetGroupString = "";
-                _targetFieldString = "";
-                _valueFilterString = "";
-                _valueCommandString = "";
+                ClearQuickEditCommands();
+            }
+        }
+
+        public void ClearQuickEditCommands()
+        {
+            _targetFileString = "";
+            _targetGroupString = "";
+            _targetFieldString = "";
+            _valueFilterString = "";
+            _valueCommandString = "";
+        }
+
+        public void GenerateQuickEditCommands()
+        {
+            _targetFileString = "";
+            _targetGroupString = "";
+            _targetFieldString = "";
+            _valueFilterString = "";
+
+            if (Screen._selectedGparamKey != null)
+            {
+                UpdateFileFilter(Screen._selectedGparamKey);
+            }
+            else
+            {
+                _valueFilterString = "*";
+            }
+
+            if (Screen._selectedParamGroup != null)
+            {
+                UpdateGroupFilter(Screen._selectedParamGroup.Key);
+            }
+            else
+            {
+                _valueFilterString = "*";
+            }
+
+            if (Screen._selectedParamField != null)
+            {
+                UpdateFieldFilter(Screen._selectedParamField.Key);
+            }
+            else
+            {
+                _valueFilterString = "*";
+            }
+
+            if (Screen._selectedParamField != null)
+            {
+                var fieldIndex = -1;
+                for (int i = 0; i < Screen._selectedParamField.Values.Count; i++)
+                {
+                    if (Screen._selectedParamField.Values[i] == Screen._selectedFieldValue)
+                    {
+                        fieldIndex = i;
+                        break;
+                    }
+                }
+
+                if (fieldIndex != -1)
+                {
+                    UpdateValueRowFilter(fieldIndex);
+                }
+            }
+            else
+            {
+                _valueFilterString = "*";
             }
         }
 

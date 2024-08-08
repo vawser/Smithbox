@@ -228,12 +228,12 @@ public class TimeActEditorScreen : EditorScreen
 
     public void TimeActEditorShortcuts()
     {
-        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
         {
             EditorActionManager.UndoAction();
         }
 
-        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
         {
             EditorActionManager.RedoAction();
         }
@@ -766,7 +766,7 @@ public class TimeActEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
+            if (ImGui.MenuItem($"Undo", KeyBindings.Current.CORE_UndoAction.HintText, false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
@@ -780,7 +780,7 @@ public class TimeActEditorScreen : EditorScreen
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
+            if (ImGui.MenuItem("Redo", KeyBindings.Current.CORE_RedoAction.HintText, false,
                     EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();

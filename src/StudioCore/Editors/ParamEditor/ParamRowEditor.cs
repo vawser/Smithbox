@@ -29,12 +29,12 @@ public class ParamRowEditor
     {
         if (propSearchString != null)
         {
-            if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.Param_SearchField))
+            if (isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SearchField))
             {
                 ImGui.SetKeyboardFocusHere();
             }
 
-            ImGui.InputText($"Search <{KeyBindings.Current.Param_SearchField.HintText}>", ref propSearchString,
+            ImGui.InputText($"Search <{KeyBindings.Current.PARAM_SearchField.HintText}>", ref propSearchString,
                 255);
             if (ImGui.IsItemEdited())
             {

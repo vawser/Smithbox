@@ -92,7 +92,7 @@ public class SelectionGroupView
             {
                 CreateSelectionGroup("Internal");
             }
-            ImguiUtils.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.Map_CreateSelectionGroup.HintText}\nBring up the selection group creation menu to assign your current selection to a selection group.");
+            ImguiUtils.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.MAP_CreateSelectionGroup.HintText}\nBring up the selection group creation menu to assign your current selection to a selection group.");
 
             if (ImGui.BeginPopup("##selectionGroupModalInternal"))
             {
@@ -417,52 +417,52 @@ public class SelectionGroupView
 
     public void MonitorShortcuts()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_CreateSelectionGroup))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateSelectionGroup))
         {
             CreateSelectionGroup("External");
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_QuickSelect_SelectionGroup_0))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_0))
         {
             ShortcutSelectGroup(0);
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_QuickSelect_SelectionGroup_1))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_1))
         {
             ShortcutSelectGroup(1);
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_QuickSelect_SelectionGroup_2))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_2))
         {
             ShortcutSelectGroup(2);
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_QuickSelect_SelectionGroup_3))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_3))
         {
             ShortcutSelectGroup(3);
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_QuickSelect_SelectionGroup_4))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup4))
         {
             ShortcutSelectGroup(4);
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_QuickSelect_SelectionGroup_5))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup5))
         {
             ShortcutSelectGroup(5);
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_QuickSelect_SelectionGroup_6))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup6))
         {
             ShortcutSelectGroup(6);
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_QuickSelect_SelectionGroup_7))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup7))
         {
             ShortcutSelectGroup(7);
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_QuickSelect_SelectionGroup_8))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup8))
         {
             ShortcutSelectGroup(8);
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_QuickSelect_SelectionGroup_9))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup9))
         {
             ShortcutSelectGroup(9);
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_QuickSelect_SelectionGroup_10))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup10))
         {
             ShortcutSelectGroup(10);
         }
@@ -492,17 +492,17 @@ public class SelectionGroupView
 
         switch (index)
         {
-            case 0: return KeyBindings.Current.Map_QuickSelect_SelectionGroup_0;
-            case 1: return KeyBindings.Current.Map_QuickSelect_SelectionGroup_1;
-            case 2: return KeyBindings.Current.Map_QuickSelect_SelectionGroup_2;
-            case 3: return KeyBindings.Current.Map_QuickSelect_SelectionGroup_3;
-            case 4: return KeyBindings.Current.Map_QuickSelect_SelectionGroup_4;
-            case 5: return KeyBindings.Current.Map_QuickSelect_SelectionGroup_5;
-            case 6: return KeyBindings.Current.Map_QuickSelect_SelectionGroup_6;
-            case 7: return KeyBindings.Current.Map_QuickSelect_SelectionGroup_7;
-            case 8: return KeyBindings.Current.Map_QuickSelect_SelectionGroup_8;
-            case 9: return KeyBindings.Current.Map_QuickSelect_SelectionGroup_9;
-            case 10: return KeyBindings.Current.Map_QuickSelect_SelectionGroup_10;
+            case 0: return KeyBindings.Current.MAP_SelectionGroup_0;
+            case 1: return KeyBindings.Current.MAP_SelectionGroup_1;
+            case 2: return KeyBindings.Current.MAP_SelectionGroup_2;
+            case 3: return KeyBindings.Current.MAP_SelectionGroup_3;
+            case 4: return KeyBindings.Current.MAP_SelectionGroup4;
+            case 5: return KeyBindings.Current.MAP_SelectionGroup5;
+            case 6: return KeyBindings.Current.MAP_SelectionGroup6;
+            case 7: return KeyBindings.Current.MAP_SelectionGroup7;
+            case 8: return KeyBindings.Current.MAP_SelectionGroup8;
+            case 9: return KeyBindings.Current.MAP_SelectionGroup9;
+            case 10: return KeyBindings.Current.MAP_SelectionGroup10;
             default: return null;
         }
     }

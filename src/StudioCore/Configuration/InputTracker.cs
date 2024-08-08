@@ -20,6 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+using ImGuiNET;
+using StudioCore.Interface;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -185,7 +187,7 @@ public static class InputTracker
             _newKeysThisFrame.Add(key);
     }
 
-    public static KeyBind GetNewKeyBind(string name, KeybindCategory keyCategory)
+    public static KeyBind GetNewKeyBind(string name, string description)
     {
         Key newkey = GetNextKey();
         _newKeysThisFrame.Clear(); // Clear to prevent hotkeys from triggering
@@ -195,24 +197,110 @@ public static class InputTracker
             var ctrl = GetKey(Key.LControl) || GetKey(Key.RControl);
             var alt = GetKey(Key.AltLeft) || GetKey(Key.AltRight);
             var shift = GetKey(Key.ShiftLeft) || GetKey(Key.ShiftRight);
-            return new KeyBind(name, keyCategory, newkey, ctrl, alt, shift);
+            return new KeyBind(name, description, newkey, ctrl, alt, shift);
         }
 
         return null;
     }
 
-    public static KeyBind GetEmptyKeyBind(string name, KeybindCategory keyCategory)
+    public static KeyBind GetEmptyKeyBind(string name, string description)
     {
         Key newkey = Key.Unknown;
         _newKeysThisFrame.Clear(); // Clear to prevent hotkeys from triggering
 
-        return new KeyBind(name, keyCategory, newkey, false, false, false);
+        return new KeyBind(name, description, newkey, false, false, false);
     }
 
     public static Key GetNextKey()
     {
         return _newKeysThisFrame.FirstOrDefault(e =>
-            e != Key.LControl && e != Key.RControl && e != Key.LAlt && e != Key.RAlt && e != Key.LShift &&
-            e != Key.RShift);
+                e != Key.LControl && e != Key.RControl && e != Key.LAlt && e != Key.RAlt && e != Key.LShift &&
+                e != Key.RShift);
+    }
+
+    public static KeyBind KeybindEntry(int index, KeyBind bindVal)
+    {
+        var scale = Smithbox.GetUIScale();
+        var columnWidth = ImGui.GetColumnWidth();
+
+        var newKeyBind = bindVal;
+        var fixedKey = bindVal.FixedKey;
+        var keyText = bindVal.HintText;
+
+        if (!fixedKey)
+        {
+            if (bindVal.PrimaryKey == Key.Unknown)
+                keyText = "[None]";
+
+            ImGui.AlignTextToFramePadding();
+            if (_currentKeyBind == bindVal)
+            {
+                ImGui.Button($"Press Key <Esc - Clear>##resetButton{index}", new Vector2(columnWidth, 20 * scale));
+                if (InputTracker.GetKeyDown(Key.Escape))
+                {
+                    KeyBind newkey = InputTracker.GetEmptyKeyBind(bindVal.PresentationName, bindVal.Description);
+                    newKeyBind = newkey;
+                    _currentKeyBind = null;
+                }
+                else
+                {
+                    KeyBind newkey = InputTracker.GetNewKeyBind(bindVal.PresentationName, bindVal.Description);
+                    if (newkey != null)
+                    {
+                        newKeyBind = newkey;
+                        _currentKeyBind = null;
+                    }
+                }
+            }
+            else if (ImGui.Button($"{keyText}##setButton{index}", new Vector2(columnWidth, 20 * scale)))
+            {
+                _currentKeyBind = bindVal;
+            }
+        }
+        else
+        {
+            ImGui.BeginDisabled();
+            if (ImGui.Button($"{keyText}##disabledbutton{index}", new Vector2(columnWidth, 20 * scale)))
+            {
+            }
+            ImguiUtils.ShowHoverTooltip("You cannot change this shortcut.");
+            ImGui.EndDisabled();
+        }
+
+        return newKeyBind;
+    }
+
+    private static KeyBind _currentKeyBind;
+
+    public static KeyBind KeybindLine(int index, KeyBind currentKeyBind, KeyBind defaultKeyBind)
+    {
+        var scale = Smithbox.GetUIScale();
+
+        ImGui.Columns(3);
+
+        ImGui.AlignTextToFramePadding();
+        ImguiUtils.WrappedText(currentKeyBind.PresentationName);
+        if (currentKeyBind.Description != "")
+        {
+            ImguiUtils.ShowHoverTooltip(currentKeyBind.Description);
+        }
+
+        ImGui.NextColumn();
+
+        currentKeyBind = KeybindEntry(index, currentKeyBind);
+
+        ImGui.NextColumn();
+
+        var columnWidth = ImGui.GetColumnWidth();
+        ImGui.AlignTextToFramePadding();
+        if (ImGui.Button($"Reset to Default##defaultButton{index}", new Vector2(columnWidth, 20 * scale)))
+        {
+            currentKeyBind = defaultKeyBind;
+        }
+
+        ImGui.Columns(1);
+
+        var newKeyBind = currentKeyBind;
+        return newKeyBind;
     }
 }

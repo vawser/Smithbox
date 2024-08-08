@@ -101,10 +101,10 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Order)
             {
-                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MapEditor_MoveOrderUp.HintText)} for Move Up");
-                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MapEditor_MoveOrderDown.HintText)} for Move Down");
-                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MapEditor_MoveOrderTop.HintText)} for Move to Top");
-                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MapEditor_MoveOrderBottom.HintText)} for Move to Bottom");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MAP_MoveObjectUp.HintText)} for Move Up");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MAP_MoveObjectDown.HintText)} for Move Down");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MAP_MoveObjectTop.HintText)} for Move to Top");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MAP_MoveObjectBottom.HintText)} for Move to Bottom");
                 ImguiUtils.WrappedText("");
             }
         }

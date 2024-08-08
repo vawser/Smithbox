@@ -3896,10 +3896,10 @@
 1700001 Lance
 1700010 Lance
 1700020 Lance
-1700100 Default - Lance
-1700105 Default - Lance
-1700110 Default - Lance
-1700115 Default - Lance
+1700100 Default - Great Spear
+1700105 Default - Great Spear
+1700110 Default - Great Spear
+1700115 Default - Great Spear
 1700120 Serpent-Hunter
 1700125 Serpent-Hunter
 1700126 Serpent-Hunter
@@ -3917,10 +3917,10 @@
 1700200 Lance
 1700210 Lance
 1700220 Lance
-1700300 Default - Lance
-1700305 Default - Lance
-1700310 Default - Lance
-1700315 Default - Lance
+1700300 Default - Great Spear
+1700305 Default - Great Spear
+1700310 Default - Great Spear
+1700315 Default - Great Spear
 1700320 Serpent-Hunter
 1700325 Serpent-Hunter
 1700326 Serpent-Hunter
@@ -3958,7 +3958,7 @@
 1700605 Serpent-Hunter
 1700610 Serpent-Hunter
 1700630 Serpent-Hunter
-1700631 Default - Lance
+1700631 Default - Great Spear
 1700632 Serpent-Hunter
 1700635 Serpent-Hunter
 1700640 Serpent-Hunter
@@ -3971,7 +3971,7 @@
 1700705 Serpent-Hunter
 1700710 Serpent-Hunter
 1700730 Serpent-Hunter
-1700731 Default - Lance
+1700731 Default - Great Spear
 1700732 Serpent-Hunter
 1700735 Serpent-Hunter
 1700740 Serpent-Hunter

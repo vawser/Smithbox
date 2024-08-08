@@ -83,7 +83,7 @@ public class TextEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit", currentFmgBank.IsLoaded))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
+            if (ImGui.MenuItem($"Undo", KeyBindings.Current.CORE_UndoAction.HintText, false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
@@ -97,7 +97,7 @@ public class TextEditorScreen : EditorScreen
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
+            if (ImGui.MenuItem("Redo", KeyBindings.Current.CORE_RedoAction.HintText, false,
                     EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
@@ -304,12 +304,12 @@ public class TextEditorScreen : EditorScreen
             if (!ImGui.IsAnyItemActive() && currentFmgBank.IsLoaded)
             {
                 // Only allow key shortcuts when an item [text box] is not currently activated
-                if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
+                if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
                 {
                     EditorActionManager.UndoAction();
                 }
 
-                if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
+                if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
                 {
                     EditorActionManager.RedoAction();
                 }
@@ -769,12 +769,12 @@ public class TextEditorScreen : EditorScreen
             ImGui.SameLine();
 
             // Search
-            if (InputTracker.GetKeyDown(KeyBindings.Current.TextFMG_Search))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.TEXT_FocusSearch))
             {
                 ImGui.SetKeyboardFocusHere();
             }
 
-            ImGui.InputText($"Search <{KeyBindings.Current.TextFMG_Search.HintText}>", ref _searchFilter, 255);
+            ImGui.InputText($"Search <{KeyBindings.Current.TEXT_FocusSearch.HintText}>", ref _searchFilter, 255);
 
             FMGSearchLogic(ref doFocus);
 

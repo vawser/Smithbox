@@ -68,7 +68,7 @@ public class WorldMapScreen : IResourceEventListener
 
     public void Shortcuts()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_Vanilla))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ToggleERMapVanilla))
         {
             WorldMapOpen = !WorldMapOpen;
             if (IsViewingSOTEMap)
@@ -77,7 +77,7 @@ public class WorldMapScreen : IResourceEventListener
                 WorldMapOpen = true;
             };
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_SOTE))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ToggleERMapSOTE))
         {
             WorldMapOpen = !WorldMapOpen;
             if (!IsViewingSOTEMap)
@@ -92,12 +92,12 @@ public class WorldMapScreen : IResourceEventListener
             HandleZoom();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TextureViewer_ZoomReset))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ResetZoomLevel))
         {
             zoomFactor = GetDefaultZoomLevel();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Map_WorldMap_DragMap))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DragWorldMap))
         {
             AdjustScrollNextFrame = true;
         }
@@ -134,7 +134,7 @@ public class WorldMapScreen : IResourceEventListener
                     WorldMapOpen = true;
                 };
             }
-            ImguiUtils.ShowHoverTooltip($"Open the Lands Between world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.Map_WorldMap_Vanilla.HintText}");
+            ImguiUtils.ShowHoverTooltip($"Open the Lands Between world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapVanilla.HintText}");
 
             ImGui.SameLine();
             if (ImGui.Button("Shadow of the Erdtree", new Vector2(widthUnit * 48, 20 * scale)))
@@ -149,7 +149,7 @@ public class WorldMapScreen : IResourceEventListener
                     WorldMapOpen = true;
                 };
             }
-            ImguiUtils.ShowHoverTooltip($"Open the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.Map_WorldMap_SOTE.HintText}");
+            ImguiUtils.ShowHoverTooltip($"Open the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapSOTE.HintText}");
         }
     }
 
@@ -229,7 +229,7 @@ public class WorldMapScreen : IResourceEventListener
         ImguiUtils.WrappedText($"Press Left Mouse button to select an area of the map to filter the map object list by.");
         ImguiUtils.WrappedText($"");
         ImguiUtils.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
-        ImguiUtils.WrappedText($"Press {KeyBindings.Current.TextureViewer_ZoomReset.HintText} to reset zoom level to 100%.");
+        ImguiUtils.WrappedText($"Press {KeyBindings.Current.TEXTURE_ResetZoomLevel.HintText} to reset zoom level to 100%.");
         ImguiUtils.WrappedText($"");
 
         //ImGui.Text($"Relative Position: {relativePos}");

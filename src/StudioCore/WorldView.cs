@@ -313,7 +313,7 @@ public class WorldView
 
         var isSpeedupKeyPressed = InputTracker.GetKey(Key.LShift) || InputTracker.GetKey(Key.RShift);
         var isSlowdownKeyPressed = InputTracker.GetKey(Key.LControl) || InputTracker.GetKey(Key.RControl);
-        var isResetKeyPressed = InputTracker.GetKeyDown(KeyBindings.Current.Viewport_Cam_Reset);
+        var isResetKeyPressed = InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_CameraReset);
         var isMoveLightKeyPressed = InputTracker.GetKey(Key.Space);
         var isOrbitCamToggleKeyPressed = false; // keyboard.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.F);
         var isPointCamAtObjectKeyPressed = false; // keyboard.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.T);
@@ -475,32 +475,32 @@ public class WorldView
             float y = 0;
             float z = 0;
 
-            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.Viewport_Cam_Right))
+            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.VIEWPORT_CameraRight))
             {
                 x += 1;
             }
 
-            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.Viewport_Cam_Left))
+            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.VIEWPORT_CameraLeft))
             {
                 x -= 1;
             }
 
-            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.Viewport_Cam_Up))
+            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.VIEWPORT_CameraUp))
             {
                 y += 1;
             }
 
-            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.Viewport_Cam_Down))
+            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.VIEWPORT_CameraDown))
             {
                 y -= 1;
             }
 
-            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.Viewport_Cam_Forward))
+            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.VIEWPORT_CameraForward))
             {
                 z += 1;
             }
 
-            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.Viewport_Cam_Back))
+            if (InputTracker.GetKey_IgnoreModifier(KeyBindings.Current.VIEWPORT_CameraBack))
             {
                 z -= 1;
             }

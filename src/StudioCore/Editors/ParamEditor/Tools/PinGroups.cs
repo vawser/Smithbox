@@ -388,6 +388,14 @@ public class PinGroups
         }
     }
 
+    private int autoGroupNameId = 0;
+
+    public void SetAutoGroupName(string type)
+    {
+        _newGroupName = $"{type} Group {autoGroupNameId}";
+        autoGroupNameId = autoGroupNameId + 1;
+    }
+
     public void CreateParamGroup()
     {
         if(_newGroupName == "")

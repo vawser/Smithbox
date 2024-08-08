@@ -43,7 +43,7 @@ public class ToolSubMenu
 
             // Export Model
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Export Model", KeyBindings.Current.ModelEditor_ExportModel.HintText))
+            if (ImGui.MenuItem("Export Model", KeyBindings.Current.MODEL_ExportModel.HintText))
             {
                 ModelExporter.ExportModel(Screen);
             }

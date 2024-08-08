@@ -308,7 +308,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             HandleZoom();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TextureViewer_ZoomReset))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ResetZoomLevel))
         {
             ZoomReset();
         }
@@ -677,7 +677,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         ImGui.Begin("Properties##PropertiesView");
 
         ImguiUtils.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
-        ImguiUtils.WrappedText($"Press {KeyBindings.Current.TextureViewer_ZoomReset.HintText} to reset zoom level to 100%.");
+        ImguiUtils.WrappedText($"Press {KeyBindings.Current.TEXTURE_ResetZoomLevel.HintText} to reset zoom level to 100%.");
 
         ImguiUtils.WrappedText($"");
         ImguiUtils.WrappedText($"Properties of {CurrentTextureName}:");

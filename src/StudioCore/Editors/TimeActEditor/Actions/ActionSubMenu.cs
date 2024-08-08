@@ -23,12 +23,12 @@ public class ActionSubMenu
 
     public void Shortcuts()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
         {
             Handler.DetermineDeleteTarget();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
         {
             Handler.DetermineDuplicateTarget();
         }

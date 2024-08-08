@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Editors.TextEditor.Tools;
@@ -28,7 +29,47 @@ public class ToolSubMenu
 
     public void Shortcuts()
     {
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CreateParamGroup))
+        {
+            Screen.ToolWindow.PinGroupHandler.SetAutoGroupName("Param");
+            Screen.ToolWindow.PinGroupHandler.CreateParamGroup();
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CreateRowGroup))
+        {
+            Screen.ToolWindow.PinGroupHandler.SetAutoGroupName("Row");
+            Screen.ToolWindow.PinGroupHandler.CreateRowGroup();
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CreateFieldGroup))
+        {
+            Screen.ToolWindow.PinGroupHandler.SetAutoGroupName("Field");
+            Screen.ToolWindow.PinGroupHandler.CreateFieldGroup();
+        }
 
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearPinnedParams))
+        {
+            Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams = new();
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearPinnedRows))
+        {
+            Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows = new();
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearPinnedFields))
+        {
+            Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields = new();
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ShowPinnedParamsOnly))
+        {
+            CFG.Current.Param_PinGroups_ShowOnlyPinnedParams = !CFG.Current.Param_PinGroups_ShowOnlyPinnedParams;
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ShowPinnedRowsOnly))
+        {
+            CFG.Current.Param_PinGroups_ShowOnlyPinnedRows = !CFG.Current.Param_PinGroups_ShowOnlyPinnedRows;
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ShowPinnedFieldsOnly))
+        {
+            CFG.Current.Param_PinGroups_ShowOnlyPinnedFields = !CFG.Current.Param_PinGroups_ShowOnlyPinnedFields;
+        }
     }
 
     public void OnProjectChanged()
@@ -44,13 +85,13 @@ public class ToolSubMenu
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
                 if (ImGui.BeginMenu("Param Reloader"))
                 {
-                    if (ImGui.MenuItem("Current Param", KeyBindings.Current.Param_HotReload.HintText))
+                    if (ImGui.MenuItem("Current Param", KeyBindings.Current.PARAM_ReloadParam.HintText))
                     {
                         ParamMemoryTools.ReloadCurrentParam();
                     }
                     ImguiUtils.ShowHoverTooltip("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
 
-                    if (ImGui.MenuItem("All Params", KeyBindings.Current.Param_HotReloadAll.HintText))
+                    if (ImGui.MenuItem("All Params", KeyBindings.Current.PARAM_ReloadAllParams.HintText))
                     {
                         ParamMemoryTools.ReloadAllParams();
                     }

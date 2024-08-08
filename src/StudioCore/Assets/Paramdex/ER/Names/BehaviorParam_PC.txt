@@ -3530,116 +3530,116 @@
 101699750 
 101699760 
 101699765 
-101700000 Default - Lance
-101700001 Default - Lance
-101700010 Default - Lance
-101700020 Default - Lance
-101700100 Default - Lance
-101700105 Default - Lance
-101700110 Default - Lance
-101700115 Default - Lance
-101700120 Default - Lance
-101700125 Default - Lance
-101700126 Default - Lance
-101700127 Default - Lance
-101700128 Default - Lance
-101700129 Default - Lance
-101700130 Default - Lance
-101700140 Default - Lance
-101700150 Default - Lance
-101700155 Default - Lance
-101700160 Default - Lance
-101700165 Default - Lance
-101700170 Default - Lance
-101700180 Default - Lance
-101700200 Default - Lance
-101700210 Default - Lance
-101700220 Default - Lance
-101700300 Default - Lance
-101700305 Default - Lance
-101700310 Default - Lance
-101700315 Default - Lance
-101700320 Default - Lance
-101700325 Default - Lance
-101700326 Default - Lance
-101700327 Default - Lance
-101700328 Default - Lance
-101700329 Default - Lance
-101700330 Default - Lance
-101700340 Default - Lance
-101700350 Default - Lance
-101700355 Default - Lance
-101700360 Default - Lance
-101700365 Default - Lance
-101700380 Default - Lance
-101700400 Default - Lance
-101700410 Default - Lance
-101700420 Default - Lance
-101700460 Default - Lance
-101700470 Default - Lance
-101700480 Default - Lance
-101700500 Default - Lance
-101700505 Default - Lance
-101700509 Default - Lance
-101700510 Default - Lance
-101700515 Default - Lance
-101700516 Default - Lance
-101700520 Default - Lance
-101700530 Default - Lance
-101700540 Default - Lance
-101700550 Default - Lance
-101700560 Default - Lance
-101700561 Default - Lance
-101700590 Default - Lance
-101700591 Default - Lance - Parry
-101700600 Default - Lance
-101700605 Default - Lance
-101700610 Default - Lance
-101700630 Default - Lance
-101700631 Default - Lance
-101700632 Default - Lance
-101700635 Default - Lance
-101700640 Default - Lance
-101700642 Default - Lance
-101700645 Default - Lance
-101700650 Default - Lance
-101700660 Default - Lance
-101700665 Default - Lance
-101700700 Default - Lance
-101700705 Default - Lance
-101700710 Default - Lance
-101700730 Default - Lance
-101700731 Default - Lance
-101700732 Default - Lance
-101700735 Default - Lance
-101700740 Default - Lance
-101700742 Default - Lance
-101700745 Default - Lance
-101700750 Default - Lance
-101700760 Default - Lance
-101700765 Default - Lance
-101700800 Default - Lance
-101700805 Default - Lance
-101700810 Default - Lance
-101700815 Default - Lance
-101700820 Default - Lance
-101700825 Default - Lance
-101700860 Default - Lance
-101700861 Default - Lance
-101700862 Default - Lance
-101700863 Default - Lance
-101700864 Default - Lance
-101700865 Default - Lance
-101700866 Default - Lance
-101700867 Default - Lance
-101700868 Default - Lance
-101700869 Default - Lance
-101700870 Default - Lance
-101700875 Default - Lance
-101700880 Default - Lance
-101700885 Default - Lance
-101700890 Default - Lance
-101700895 Default - Lance
+101700000 Default - Great Spear
+101700001 Default - Great Spear
+101700010 Default - Great Spear
+101700020 Default - Great Spear
+101700100 Default - Great Spear
+101700105 Default - Great Spear
+101700110 Default - Great Spear
+101700115 Default - Great Spear
+101700120 Default - Great Spear
+101700125 Default - Great Spear
+101700126 Default - Great Spear
+101700127 Default - Great Spear
+101700128 Default - Great Spear
+101700129 Default - Great Spear
+101700130 Default - Great Spear
+101700140 Default - Great Spear
+101700150 Default - Great Spear
+101700155 Default - Great Spear
+101700160 Default - Great Spear
+101700165 Default - Great Spear
+101700170 Default - Great Spear
+101700180 Default - Great Spear
+101700200 Default - Great Spear
+101700210 Default - Great Spear
+101700220 Default - Great Spear
+101700300 Default - Great Spear
+101700305 Default - Great Spear
+101700310 Default - Great Spear
+101700315 Default - Great Spear
+101700320 Default - Great Spear
+101700325 Default - Great Spear
+101700326 Default - Great Spear
+101700327 Default - Great Spear
+101700328 Default - Great Spear
+101700329 Default - Great Spear
+101700330 Default - Great Spear
+101700340 Default - Great Spear
+101700350 Default - Great Spear
+101700355 Default - Great Spear
+101700360 Default - Great Spear
+101700365 Default - Great Spear
+101700380 Default - Great Spear
+101700400 Default - Great Spear
+101700410 Default - Great Spear
+101700420 Default - Great Spear
+101700460 Default - Great Spear
+101700470 Default - Great Spear
+101700480 Default - Great Spear
+101700500 Default - Great Spear
+101700505 Default - Great Spear
+101700509 Default - Great Spear
+101700510 Default - Great Spear
+101700515 Default - Great Spear
+101700516 Default - Great Spear
+101700520 Default - Great Spear
+101700530 Default - Great Spear
+101700540 Default - Great Spear
+101700550 Default - Great Spear
+101700560 Default - Great Spear
+101700561 Default - Great Spear
+101700590 Default - Great Spear
+101700591 Default - Great Spear - Parry
+101700600 Default - Great Spear
+101700605 Default - Great Spear
+101700610 Default - Great Spear
+101700630 Default - Great Spear
+101700631 Default - Great Spear
+101700632 Default - Great Spear
+101700635 Default - Great Spear
+101700640 Default - Great Spear
+101700642 Default - Great Spear
+101700645 Default - Great Spear
+101700650 Default - Great Spear
+101700660 Default - Great Spear
+101700665 Default - Great Spear
+101700700 Default - Great Spear
+101700705 Default - Great Spear
+101700710 Default - Great Spear
+101700730 Default - Great Spear
+101700731 Default - Great Spear
+101700732 Default - Great Spear
+101700735 Default - Great Spear
+101700740 Default - Great Spear
+101700742 Default - Great Spear
+101700745 Default - Great Spear
+101700750 Default - Great Spear
+101700760 Default - Great Spear
+101700765 Default - Great Spear
+101700800 Default - Great Spear
+101700805 Default - Great Spear
+101700810 Default - Great Spear
+101700815 Default - Great Spear
+101700820 Default - Great Spear
+101700825 Default - Great Spear
+101700860 Default - Great Spear
+101700861 Default - Great Spear
+101700862 Default - Great Spear
+101700863 Default - Great Spear
+101700864 Default - Great Spear
+101700865 Default - Great Spear
+101700866 Default - Great Spear
+101700867 Default - Great Spear
+101700868 Default - Great Spear
+101700869 Default - Great Spear
+101700870 Default - Great Spear
+101700875 Default - Great Spear
+101700880 Default - Great Spear
+101700885 Default - Great Spear
+101700890 Default - Great Spear
+101700895 Default - Great Spear
 101702100 Siluria's Tree / Barbed Staff-Spear -
 101702105 Siluria's Tree / Barbed Staff-Spear -
 101702110 Siluria's Tree / Barbed Staff-Spear -
