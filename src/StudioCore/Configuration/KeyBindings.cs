@@ -107,16 +107,26 @@ public class KeyBindings
         public KeyBind Core_SaveAllCurrentEditor = new("Save All", KeybindCategory.Core);
         public KeyBind Core_SaveCurrentEditor = new("Save", KeybindCategory.Core, Key.S, true);
         public KeyBind Core_Undo = new("Undo", KeybindCategory.Core, Key.Z, true);
+        public KeyBind ToggleWindow_Settings = new("Toggle Settings Window", KeybindCategory.Core, Key.F2);
+        public KeyBind ToggleWindow_Help = new("Toggle Help Window", KeybindCategory.Core, Key.F3);
+        public KeyBind ToggleWindow_Keybind = new("Toggle Keybind Window", KeybindCategory.Core, Key.F4);
 
-        // Windows
-        public KeyBind ToggleWindow_Project = new("Toggle Project Window", KeybindCategory.Window, Key.F1);
-        public KeyBind ToggleWindow_Help = new("Toggle Help Window", KeybindCategory.Window, Key.F2);
-        public KeyBind ToggleWindow_Keybind = new("Toggle Keybind Window", KeybindCategory.Window, Key.F3);
-        public KeyBind ToggleWindow_Memory = new("Toggle Memory Window", KeybindCategory.Window, Key.F4);
-        public KeyBind ToggleWindow_Settings = new("Toggle Settings Window", KeybindCategory.Window, Key.F6);
-        public KeyBind ToggleWindow_Alias = new("Toggle Alias Window", KeybindCategory.Window, Key.F7);
-        public KeyBind ToggleWindow_QuickTools = new("Toggle Color Picker Window", KeybindCategory.Window, Key.F8);
-        public KeyBind ToggleWindow_Debug = new("Toggle Debug Window", KeybindCategory.Window, Key.F9);
+        // Viewport
+        public KeyBind Viewport_Cam_Back = new("Back", KeybindCategory.Viewport, Key.S);
+        public KeyBind Viewport_Cam_Down = new("Down", KeybindCategory.Viewport, Key.Q);
+        public KeyBind Viewport_Cam_Forward = new("Forward", KeybindCategory.Viewport, Key.W);
+        public KeyBind Viewport_Cam_Left = new("Left", KeybindCategory.Viewport, Key.A);
+        public KeyBind Viewport_Cam_Reset = new("Reset", KeybindCategory.Viewport, Key.R);
+        public KeyBind Viewport_Cam_Right = new("Right", KeybindCategory.Viewport, Key.D);
+        public KeyBind Viewport_Cam_Up = new("Up", KeybindCategory.Viewport, Key.E);
+        public KeyBind Viewport_RotationMode = new("Gizmo Rotation Mode", KeybindCategory.Viewport, Key.E);
+        public KeyBind Viewport_ToggleGizmoOrigin = new("Toggle Gizmo Origin", KeybindCategory.Viewport, Key.Home);
+        public KeyBind Viewport_ToggleGizmoSpace = new("Toggle Gizmo Space", KeybindCategory.Viewport);
+        public KeyBind Viewport_TranslateMode = new("Gizmo Translate Mode", KeybindCategory.Viewport, Key.W);
+        public KeyBind Map_ViewportGrid_Lower = new("Map Grid: Lower", KeybindCategory.Viewport, Key.Q, true);
+        public KeyBind Map_ViewportGrid_Raise = new("Map Grid: Raise", KeybindCategory.Viewport, Key.E, true);
+        public KeyBind Map_ViewportGrid_Bring_to_Selection = new("Map Grid: Bring to Selection", KeybindCategory.Viewport, Key.K, true);
+        public KeyBind Map_ToggleRenderOutline = new("Toggle Selection Outline", KeybindCategory.Viewport);
 
         // Map Toolbar
         public KeyBind Toolbar_Rotate_X = new("Rotate X", KeybindCategory.MapEditor, Key.J);
@@ -202,23 +212,6 @@ public class KeyBindings
         // Text FMG
         public KeyBind TextFMG_Sync = new("Sync Description", KeybindCategory.TextEditor, Key.K, true);
         public KeyBind TextFMG_Search = new("Search", KeybindCategory.TextEditor, Key.F, true);
-
-        // Viewport
-        public KeyBind Viewport_Cam_Back = new("Back", KeybindCategory.Viewport, Key.S);
-        public KeyBind Viewport_Cam_Down = new("Down", KeybindCategory.Viewport, Key.Q);
-        public KeyBind Viewport_Cam_Forward = new("Forward", KeybindCategory.Viewport, Key.W);
-        public KeyBind Viewport_Cam_Left = new("Left", KeybindCategory.Viewport, Key.A);
-        public KeyBind Viewport_Cam_Reset = new("Reset", KeybindCategory.Viewport, Key.R);
-        public KeyBind Viewport_Cam_Right = new("Right", KeybindCategory.Viewport, Key.D);
-        public KeyBind Viewport_Cam_Up = new("Up", KeybindCategory.Viewport, Key.E);
-        public KeyBind Viewport_RotationMode = new("Gizmo Rotation Mode", KeybindCategory.Viewport, Key.E);
-        public KeyBind Viewport_ToggleGizmoOrigin = new("Toggle Gizmo Origin", KeybindCategory.Viewport, Key.Home);
-        public KeyBind Viewport_ToggleGizmoSpace = new("Toggle Gizmo Space", KeybindCategory.Viewport);
-        public KeyBind Viewport_TranslateMode = new("Gizmo Translate Mode", KeybindCategory.Viewport, Key.W);
-        public KeyBind Map_ViewportGrid_Lower = new("Map Grid: Lower", KeybindCategory.Viewport, Key.Q, true);
-        public KeyBind Map_ViewportGrid_Raise = new("Map Grid: Raise", KeybindCategory.Viewport, Key.E, true);
-        public KeyBind Map_ViewportGrid_Bring_to_Selection = new("Map Grid: Bring to Selection", KeybindCategory.Viewport, Key.K, true);
-        public KeyBind Map_ToggleRenderOutline = new("Toggle Selection Outline", KeybindCategory.Viewport);
 
         // TAE Editor
         public KeyBind TimeActEditor_Multiselect = new("Multi-Select Row (hold)", KeybindCategory.TimeActEditor, Key.Z);

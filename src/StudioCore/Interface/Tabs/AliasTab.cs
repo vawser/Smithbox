@@ -64,6 +64,7 @@ public class AliasTab
 
         ImGui.Columns(2);
 
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBgSecondary);
         ImGui.BeginChild($"AliasSelectionList_{EntryName}");
 
         if(Bank.Aliases != null)
@@ -72,9 +73,11 @@ public class AliasTab
         }
 
         ImGui.EndChild();
+        ImGui.PopStyleColor(1);
 
         ImGui.NextColumn();
 
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBgSecondary);
         ImGui.BeginChild($"EditAliasWindow_{EntryName}");
 
         ImGui.Separator();
@@ -96,6 +99,7 @@ public class AliasTab
         DisplayNameAddSection();
 
         ImGui.EndChild();
+        ImGui.PopStyleColor(1);
 
         ImGui.Columns(1);
     }

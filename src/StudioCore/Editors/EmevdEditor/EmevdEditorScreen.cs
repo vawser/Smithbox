@@ -41,6 +41,8 @@ public class EmevdEditorScreen : EditorScreen
     }
     public void DrawEditorMenu()
     {
+        ImGui.Separator();
+
     }
 
     public void OnGUI(string[] initcmd)

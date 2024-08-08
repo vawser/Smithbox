@@ -36,6 +36,7 @@ namespace StudioCore.Interface
             CFG.Current.Imgui_Moveable_TitleBg = CFG.Default.Imgui_Moveable_TitleBg;
             CFG.Current.Imgui_Moveable_TitleBg_Active = CFG.Default.Imgui_Moveable_TitleBg_Active;
             CFG.Current.Imgui_Moveable_ChildBg = CFG.Default.Imgui_Moveable_ChildBg;
+            CFG.Current.Imgui_Moveable_ChildBgSecondary = CFG.Default.Imgui_Moveable_ChildBgSecondary;
             CFG.Current.Imgui_Moveable_Header = CFG.Default.Imgui_Moveable_Header;
 
             // Scroll
@@ -198,6 +199,7 @@ namespace StudioCore.Interface
 
             theme.Imgui_Moveable_MainBg = GetFloatList(CFG.Current.Imgui_Moveable_MainBg);
             theme.Imgui_Moveable_ChildBg = GetFloatList(CFG.Current.Imgui_Moveable_ChildBg);
+            theme.Imgui_Moveable_ChildBgSecondary = GetFloatList(CFG.Current.Imgui_Moveable_ChildBgSecondary);
             theme.Imgui_Moveable_TitleBg = GetFloatList(CFG.Current.Imgui_Moveable_TitleBg);
             theme.Imgui_Moveable_TitleBg_Active = GetFloatList(CFG.Current.Imgui_Moveable_TitleBg_Active);
             theme.Imgui_Moveable_Header = GetFloatList(CFG.Current.Imgui_Moveable_Header);
@@ -339,6 +341,7 @@ namespace StudioCore.Interface
             CFG.Current.Imgui_Moveable_TitleBg = GetVectorValue(theme.Imgui_Moveable_TitleBg);
             CFG.Current.Imgui_Moveable_TitleBg_Active = GetVectorValue(theme.Imgui_Moveable_TitleBg_Active);
             CFG.Current.Imgui_Moveable_ChildBg = GetVectorValue(theme.Imgui_Moveable_ChildBg);
+            CFG.Current.Imgui_Moveable_ChildBgSecondary = GetVectorValue(theme.Imgui_Moveable_ChildBgSecondary);
             CFG.Current.Imgui_Moveable_Header = GetVectorValue(theme.Imgui_Moveable_Header);
 
             // Scroll
@@ -458,6 +461,7 @@ namespace StudioCore.Interface
         public List<float> ImGui_MenuBarBg { get; set; }
         public List<float> Imgui_Moveable_MainBg { get; set; }
         public List<float> Imgui_Moveable_ChildBg { get; set; }
+        public List<float> Imgui_Moveable_ChildBgSecondary { get; set; }
         public List<float> Imgui_Moveable_TitleBg { get; set; }
         public List<float> Imgui_Moveable_TitleBg_Active { get; set; }
         public List<float> Imgui_Moveable_Header { get; set; }

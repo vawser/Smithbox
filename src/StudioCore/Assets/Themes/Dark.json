@@ -12,6 +12,7 @@
     
     "Imgui_Moveable_MainBg": [0.0, 0.0, 0.0, 1.0],
     "Imgui_Moveable_ChildBg": [0.145, 0.145, 0.145, 1.0],
+    "Imgui_Moveable_ChildBgSecondary": [0.1, 0.1, 0.1, 1.0],
     "Imgui_Moveable_TitleBg": [0.176, 0.176, 0.176, 1.0],
     "Imgui_Moveable_TitleBg_Active": [0.25, 0.25, 0.25, 1.0],
     "Imgui_Moveable_Header": [0.3, 0.3, 0.6, 0.4],

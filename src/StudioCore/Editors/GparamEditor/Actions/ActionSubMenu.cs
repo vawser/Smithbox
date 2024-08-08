@@ -46,14 +46,14 @@ public class ActionSubMenu
         if (ImGui.BeginMenu("Actions"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Duplicate Value Row"))
+            if (ImGui.MenuItem("Duplicate Value Row", KeyBindings.Current.Core_Duplicate.HintText))
             {
                 Screen.DuplicateValueRow();
             }
             ImguiUtils.ShowHoverTooltip("Duplicates the current value row selection.");
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Delete Value Row"))
+            if (ImGui.MenuItem("Delete Value Row", KeyBindings.Current.Core_Delete.HintText))
             {
                 Screen.DeleteValueRow();
             }

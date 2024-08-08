@@ -48,6 +48,8 @@ public class EsdEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
+        ImGui.Separator();
+
     }
 
     public void OnGUI(string[] initcmd)

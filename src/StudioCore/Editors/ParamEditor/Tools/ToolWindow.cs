@@ -462,6 +462,59 @@ public class ToolWindow
                 PinGroupHandler.Display();
             }
 
+            // Param Reloader
+            if (ParamMemoryTools.IsParamReloaderSupported())
+            {
+                if (ImGui.CollapsingHeader("Param Reloader"))
+                {
+                    ImguiUtils.WrappedText("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
+                    ImguiUtils.WrappedText("");
+
+                    if (ImGui.Button("Reload Current Param", defaultButtonSize))
+                    {
+                        ParamMemoryTools.ReloadCurrentParam();
+                    }
+
+                    if (ImGui.Button("Reload All Params", defaultButtonSize))
+                    {
+                        ParamMemoryTools.ReloadAllParams();
+                    }
+                }
+            }
+
+            // Item Gib
+            if (Smithbox.ProjectType == ProjectType.DS3)
+            {
+                if (ImGui.CollapsingHeader("Item Gib"))
+                {
+                    ImguiUtils.WrappedText("Use this tool to spawn an item in-game. First, select an EquipParam row within the Param Editor.");
+                    ImguiUtils.WrappedText("");
+
+                    var activeParam = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
+
+                    if (activeParam == "EquipParamGoods")
+                    {
+                        ImguiUtils.WrappedText("Number of Spawned Items");
+                        ImGui.InputInt("##spawnItemCount", ref ParamMemoryTools.SpawnedItemAmount);
+                    }
+                    if (activeParam == "EquipParamWeapon")
+                    {
+                        ImguiUtils.WrappedText("Reinforcement of Spawned Weapon");
+                        ImGui.InputInt("##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
+                        if(ParamMemoryTools.SpawnWeaponLevel > 10)
+                        {
+                            ParamMemoryTools.SpawnWeaponLevel = 10;
+                        }
+                    }
+
+                    ImguiUtils.WrappedText("");
+                    if (ImGui.Button("Give Item", defaultButtonSize))
+                    {
+                        ParamMemoryTools.GiveItem();
+                    }
+
+                }
+            }
         }
 
         ImGui.End();

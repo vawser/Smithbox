@@ -8,6 +8,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Drawing;
 using StudioCore.Core;
+using static StudioCore.Interface.Settings.TimeActEditorTab;
 
 namespace StudioCore;
 
@@ -148,6 +149,7 @@ public class CFG
     // Moveable Window
     public Vector4 Imgui_Moveable_MainBg = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
     public Vector4 Imgui_Moveable_ChildBg = new Vector4(0.145f, 0.145f, 0.149f, 1.0f);
+    public Vector4 Imgui_Moveable_ChildBgSecondary = new Vector4(0.1f, 0.1f, 0.1f, 1.0f); 
     public Vector4 Imgui_Moveable_TitleBg = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
     public Vector4 Imgui_Moveable_TitleBg_Active = new Vector4(0.25f, 0.25f, 0.25f, 1.0f);
     public Vector4 Imgui_Moveable_Header = new Vector4(0.3f, 0.3f, 0.6f, 0.4f);
@@ -596,6 +598,8 @@ public class CFG
     //****************************
     // Settings: Time Act Editor
     //****************************
+    public TimeactCompressionType CurrentTimeActCompressionType = TimeactCompressionType.Default;
+
     public bool TimeActEditor_Load_CharacterTimeActs = true;
     public bool TimeActEditor_Load_ObjectTimeActs = false;
     public bool TimeActEditor_Load_VanillaCharacterTimeActs = true;
@@ -608,6 +612,7 @@ public class CFG
 
     public bool TimeActEditor_DisplayAllGenerators = false;
 
+    public bool TimeActEditor_DisplayEventBank = true;
     public bool TimeActEditor_DisplayEventID = true;
     public bool TimeActEditor_DisplayEventRow_EnumInfo = true;
     public bool TimeActEditor_DisplayEventRow_ParamRefInfo = true;

@@ -19,47 +19,33 @@ namespace StudioCore.Core;
 /// </summary>
 public class WindowHandler
 {
-    public ProjectWindow ProjectWindow;
-    public AliasWindow AliasWindow;
     public SettingsWindow SettingsWindow;
     public HelpWindow HelpWindow;
     public DebugWindow DebugWindow;
     public KeybindWindow KeybindWindow;
-    public MemoryWindow MemoryWindow;
-    public ToolWindow ToolWindow;
 
     public WindowHandler(IGraphicsContext _context)
     {
-        ProjectWindow = new ProjectWindow();
-        AliasWindow = new AliasWindow();
         SettingsWindow = new SettingsWindow();
         HelpWindow = new HelpWindow();
         DebugWindow = new DebugWindow();
         KeybindWindow = new KeybindWindow();
-        MemoryWindow = new MemoryWindow();
-        ToolWindow = new ToolWindow();
-
-        MemoryWindow._activeView = Smithbox.EditorHandler.ParamEditor._activeView;
     }
 
     public void OnGui()
     {
-        ProjectWindow.Display();
-        AliasWindow.Display();
         SettingsWindow.Display();
         HelpWindow.Display();
         DebugWindow.Display();
         KeybindWindow.Display();
-        MemoryWindow.Display();
-        ToolWindow.Display();
     }
 
     public void HandleWindowShortcuts()
     {
-        // Shortcut: Open Project Window
-        if (InputTracker.GetKeyDown(KeyBindings.Current.ToggleWindow_Project))
+        // Shortcut: Open Settings Window
+        if (InputTracker.GetKeyDown(KeyBindings.Current.ToggleWindow_Settings))
         {
-            ProjectWindow.ToggleMenuVisibility();
+            SettingsWindow.ToggleMenuVisibility();
         }
 
         // Shortcut: Open Help Window
@@ -73,54 +59,15 @@ public class WindowHandler
         {
             KeybindWindow.ToggleMenuVisibility();
         }
-
-        // Shortcut: Open Memory Window
-        if (InputTracker.GetKeyDown(KeyBindings.Current.ToggleWindow_Memory))
-        {
-            MemoryWindow.ToggleMenuVisibility();
-        }
-
-        // Shortcut: Open Settings Window
-        if (InputTracker.GetKeyDown(KeyBindings.Current.ToggleWindow_Settings))
-        {
-            SettingsWindow.ToggleMenuVisibility();
-        }
-
-        // Shortcut: Open Alias Window
-        if (InputTracker.GetKeyDown(KeyBindings.Current.ToggleWindow_Alias))
-        {
-            AliasWindow.ToggleMenuVisibility();
-        }
-
-        // Shortcut: Open Color Picker Window
-        if (InputTracker.GetKeyDown(KeyBindings.Current.ToggleWindow_QuickTools))
-        {
-            ToolWindow.ToggleMenuVisibility();
-        }
-
-        // Shortcut: Open Debug Window
-        if (InputTracker.GetKeyDown(KeyBindings.Current.ToggleWindow_Debug))
-        {
-            DebugWindow.ToggleMenuVisibility();
-        }
     }
 
     public void HandleWindowIconBar()
     {
-        ImGui.Separator();
-
-        if (ImGui.Button($"{ForkAwesome.Wrench}##ProjectWindow"))
+        if (ImGui.Button($"{ForkAwesome.Cogs}##SettingsWindow"))
         {
-            ProjectWindow.ToggleMenuVisibility();
+            SettingsWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"Project\n{KeyBindings.Current.ToggleWindow_Project.HintText}");
-
-
-        if (ImGui.Button($"{ForkAwesome.FileText}##AliasWindow"))
-        {
-            AliasWindow.ToggleMenuVisibility();
-        }
-        ImguiUtils.ShowHoverTooltip($"Aliases\n{KeyBindings.Current.ToggleWindow_Alias.HintText}");
+        ImguiUtils.ShowHoverTooltip($"Configuration\n{KeyBindings.Current.ToggleWindow_Settings.HintText}");
 
         if (ImGui.Button($"{ForkAwesome.Book}##HelpWindow"))
         {
@@ -128,37 +75,19 @@ public class WindowHandler
         }
         ImguiUtils.ShowHoverTooltip($"Help\n{KeyBindings.Current.ToggleWindow_Help.HintText}");
 
-        if (ImGui.Button($"{ForkAwesome.Cogs}##SettingsWindow"))
-        {
-            SettingsWindow.ToggleMenuVisibility();
-        }
-        ImguiUtils.ShowHoverTooltip($"Settings\n{KeyBindings.Current.ToggleWindow_Settings.HintText}");
-
         if (ImGui.Button($"{ForkAwesome.KeyboardO}##KeybindWindow"))
         {
             KeybindWindow.ToggleMenuVisibility();
         }
         ImguiUtils.ShowHoverTooltip($"Keybinds\n{KeyBindings.Current.ToggleWindow_Keybind.HintText}");
 
-        if (ImGui.Button($"{ForkAwesome.Database}##MemoryWindow"))
-        {
-            MemoryWindow.ToggleMenuVisibility();
-        }
-        ImguiUtils.ShowHoverTooltip($"Memory\n{KeyBindings.Current.ToggleWindow_Memory.HintText}");
-
-        if (ImGui.Button($"{ForkAwesome.Briefcase}##QuickToolWindow"))
-        {
-            ToolWindow.ToggleMenuVisibility();
-        }
-        ImguiUtils.ShowHoverTooltip($"Tools\n{KeyBindings.Current.ToggleWindow_QuickTools.HintText}");
-
         if (FeatureFlags.DebugMenu)
         {
-            if (ImGui.Button($"{ForkAwesome.Bell}##DebugWindow"))
+            if (ImGui.Button($"{ForkAwesome.LightbulbO}##DebugWindow"))
             {
                 DebugWindow.ToggleMenuVisibility();
             }
-            ImguiUtils.ShowHoverTooltip($"Debug\n{KeyBindings.Current.ToggleWindow_Debug.HintText}");
+            ImguiUtils.ShowHoverTooltip($"Debug");
         }
     }
 }

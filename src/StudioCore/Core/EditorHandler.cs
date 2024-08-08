@@ -149,6 +149,8 @@ public class EditorHandler
 
     public void HandleEditorSharedBar()
     {
+        ImGui.Separator();
+
         // Dropdown: File
         if (ImGui.BeginMenu("File"))
         {

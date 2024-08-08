@@ -134,53 +134,7 @@ internal class ParamReloader
         }
     }
 
-    public static void GiveItemMenu(List<Param.Row> rowsToGib, string param)
-    {
-        GameOffsetsEntry offsets = GetGameOffsets();
-
-        if (!offsets.itemGibOffsets.ContainsKey(param))
-        {
-            return;
-        }
-
-        if (ImGui.MenuItem("Spawn Selected Items In Game"))
-        {
-            GiveItem(offsets, rowsToGib, param, param == "EquipParamGoods" ? (int)numberOfItemsToGive : 1,
-                param == "EquipParamWeapon" ? (int)upgradeLevelItemToGive : 0);
-        }
-
-        if (param == "EquipParamGoods")
-        {
-            var itemsNum = numberOfItemsToGive.ToString();
-            ImGui.Indent();
-            ImGui.Text("Number of Spawned Items");
-            ImGui.SameLine();
-            if (ImGui.InputText("##Number of Spawned Items", ref itemsNum, 2))
-            {
-                if (uint.TryParse(itemsNum, out var result) && result != 0)
-                {
-                    numberOfItemsToGive = result;
-                }
-            }
-        }
-        else if (param == "EquipParamWeapon")
-        {
-            ImGui.Text("Spawned Weapon Level");
-            ImGui.SameLine();
-            var weaponLevel = upgradeLevelItemToGive.ToString();
-            if (ImGui.InputText("##Spawned Weapon Level", ref weaponLevel, 2))
-            {
-                if (uint.TryParse(weaponLevel, out var result) && result < 11)
-                {
-                    upgradeLevelItemToGive = result;
-                }
-            }
-        }
-
-        ImGui.Unindent();
-    }
-
-    private static void GiveItem(GameOffsetsEntry offsets, List<Param.Row> rowsToGib, string studioParamType,
+    public static void GiveItem(GameOffsetsEntry offsets, List<Param.Row> rowsToGib, string studioParamType,
         int itemQuantityReceived, int upgradeLevelItemToGive = 0)
     {
         if (rowsToGib.Any())

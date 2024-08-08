@@ -55,6 +55,7 @@
         0.67441857,
         1
     ],
+    "Imgui_Moveable_ChildBgSecondary": [0.6, 0.6, 0.6, 1.0],
     "Imgui_Moveable_TitleBg": [
         0.7627907,
         0.7592428,

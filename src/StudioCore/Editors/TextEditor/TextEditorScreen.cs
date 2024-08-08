@@ -76,6 +76,8 @@ public class TextEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
+        ImGui.Separator();
+
         var currentFmgBank = Smithbox.BankHandler.FMGBank;
 
         if (ImGui.BeginMenu("Edit", currentFmgBank.IsLoaded))
@@ -104,8 +106,15 @@ public class TextEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
+        ImGui.Separator();
+
         ActionSubMenu.DisplayMenu();
+
+        ImGui.Separator();
+
         ToolSubMenu.DisplayMenu();
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("Data", Smithbox.BankHandler.FMGBank.IsLoaded))
         {
@@ -160,6 +169,8 @@ public class TextEditorScreen : EditorScreen
         }
 
 
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("View"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
@@ -184,6 +195,8 @@ public class TextEditorScreen : EditorScreen
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_ToolConfigurationWindow);
             ImGui.EndMenu();
         }
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("Text Language", !currentFmgBank.IsLoading))
         {
@@ -219,6 +232,8 @@ public class TextEditorScreen : EditorScreen
         // Only relevant for games that use the dlc FMG system
         if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
         {
+            ImGui.Separator();
+
             if (ImGui.BeginMenu("Text Output"))
             {
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");

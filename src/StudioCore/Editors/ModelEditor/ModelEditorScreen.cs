@@ -139,6 +139,8 @@ public class ModelEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
@@ -165,8 +167,15 @@ public class ModelEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
+        ImGui.Separator();
+
         ActionSubMenu.DisplayMenu();
+
+        ImGui.Separator();
+
         ToolSubMenu.DisplayMenu();
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("View"))
         {
@@ -230,6 +239,8 @@ public class ModelEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
@@ -281,6 +292,8 @@ public class ModelEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("Viewport"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.LightbulbO}");
@@ -292,6 +305,8 @@ public class ModelEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("Gizmos"))
         {

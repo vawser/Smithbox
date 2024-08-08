@@ -39,34 +39,35 @@ public class ProjectEnumTab
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        if (ImGui.BeginTabItem("Enums"))
-        {
-            ImGui.Columns(3);
+        ImGui.Columns(3);
 
-            ImGui.BeginChild($"ProjectEnumSelectionList");
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBgSecondary);
+        ImGui.BeginChild($"ProjectEnumSelectionList");
 
-            DisplayProjectEnumSelectionList();
+        DisplayProjectEnumSelectionList();
 
-            ImGui.EndChild();
+        ImGui.EndChild();
+        ImGui.PopStyleColor(1);
 
-            ImGui.NextColumn();
+        ImGui.NextColumn();
 
-            ImGui.BeginChild($"ProjectEnumOptionSelectionList");
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBgSecondary);
+        ImGui.BeginChild($"ProjectEnumOptionSelectionList");
 
-            DisplayProjectEnumOptionList();
+        DisplayProjectEnumOptionList();
 
-            ImGui.EndChild();
+        ImGui.EndChild();
+        ImGui.PopStyleColor(1);
 
-            ImGui.NextColumn();
+        ImGui.NextColumn();
 
-            ImGui.BeginChild($"ProjectEnumActions");
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBgSecondary);
+        ImGui.BeginChild($"ProjectEnumActions");
 
-            DisplayProjectEnumAction();
+        DisplayProjectEnumAction();
 
-            ImGui.EndChild();
-
-            ImGui.EndTabItem();
-        }
+        ImGui.EndChild();
+        ImGui.PopStyleColor(1);
     }
 
     public void DisplayProjectEnumSelectionList()

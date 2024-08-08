@@ -631,8 +631,13 @@ public class TimeActEditorScreen : EditorScreen
                 var displayName = $"{evt.TypeName}";
                 if(CFG.Current.TimeActEditor_DisplayEventID)
                 {
-                    displayName = $" [{evt.Type}] {evt.TypeName}";
+                    displayName = $"[{evt.Type}] {displayName}";
                 }
+                if(CFG.Current.TimeActEditor_DisplayEventBank)
+                {
+                    displayName = $"<{SelectionHandler.CurrentTimeAct.EventBank}> {displayName}";
+                }
+                displayName = $" {displayName}";
 
                 if (ImGui.Selectable($@"{displayName}##taeEvent{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
                 {
@@ -756,6 +761,8 @@ public class TimeActEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
@@ -782,8 +789,15 @@ public class TimeActEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
+        ImGui.Separator();
+
         ActionSubMenu.DisplayMenu();
+
+        ImGui.Separator();
+
         ToolSubMenu.DisplayMenu();
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("View"))
         {

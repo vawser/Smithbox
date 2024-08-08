@@ -1,7 +1,9 @@
 ﻿using ImGuiNET;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Editors.TextEditor.Tools;
 using StudioCore.Interface;
+using StudioCore.Tools;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -37,8 +39,64 @@ public class ToolSubMenu
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ParamMemoryTools.IsParamReloaderSupported())
+            {
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                if (ImGui.BeginMenu("Param Reloader"))
+                {
+                    if (ImGui.MenuItem("Current Param", KeyBindings.Current.Param_HotReload.HintText))
+                    {
+                        ParamMemoryTools.ReloadCurrentParam();
+                    }
+                    ImguiUtils.ShowHoverTooltip("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
 
+                    if (ImGui.MenuItem("All Params", KeyBindings.Current.Param_HotReloadAll.HintText))
+                    {
+                        ParamMemoryTools.ReloadAllParams();
+                    }
+                    ImguiUtils.ShowHoverTooltip("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
+
+                    ImGui.EndMenu();
+                }
+            }
+
+            if (Smithbox.ProjectType == ProjectType.DS3)
+            {
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                if (ImGui.BeginMenu("Item Gib"))
+                {
+                    var activeParam = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
+
+                    if (activeParam == "EquipParamGoods")
+                    {
+                        ImGui.InputInt("Number of Spawned Items##spawnItemCount", ref ParamMemoryTools.SpawnedItemAmount);
+                    }
+                    if (activeParam == "EquipParamWeapon")
+                    {
+                        ImGui.InputInt("Reinforcement of Spawned Weapon##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
+                        if (ParamMemoryTools.SpawnWeaponLevel > 10)
+                        {
+                            ParamMemoryTools.SpawnWeaponLevel = 10;
+                        }
+                    }
+
+                    if (ImGui.MenuItem("Give Selected Item"))
+                    {
+                        ParamMemoryTools.GiveItem();
+                    }
+                    ImguiUtils.ShowHoverTooltip("Spawns selected item in-game.");
+
+                    ImGui.EndMenu();
+                }
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.MenuItem("Color Picker"))
+            {
+                ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Import Row Names"))
             {
                 if (ImGui.BeginMenu("Smithbox"))

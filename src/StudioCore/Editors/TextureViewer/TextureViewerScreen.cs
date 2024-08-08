@@ -143,8 +143,15 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void DrawEditorMenu()
     {
+        ImGui.Separator();
+
         ActionSubMenu.DisplayMenu();
+
+        ImGui.Separator();
+
         ToolSubMenu.DisplayMenu();
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("View"))
         {

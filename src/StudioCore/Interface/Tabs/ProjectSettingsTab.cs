@@ -9,24 +9,21 @@ namespace StudioCore.Interface.Tabs;
 
 public class ProjectSettingsTab
 {
-    public ProjectSettingsTab()
-    {
-
-    }
+    public ProjectSettingsTab() { }
 
     public void Display()
     {
-
-        if (ImGui.BeginTabItem("Settings"))
+        if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Enable Automatic Recent Project Loading", ref CFG.Current.Project_LoadRecentProjectImmediately);
             ImguiUtils.ShowHoverTooltip("The last loaded project will be automatically loaded when Smithbox starts up if this is enabled.");
 
             ImGui.Checkbox("Enable Recovery Folder", ref CFG.Current.System_EnableRecoveryFolder);
             ImguiUtils.ShowHoverTooltip("Enable a recovery project to be created upon an unexpected crash.");
+        }
 
-            ImGui.Separator();
-
+        if (ImGui.CollapsingHeader("Automatic Save", ImGuiTreeNodeFlags.DefaultOpen))
+        {
             ImGui.Checkbox("Enable Automatic Save", ref CFG.Current.System_EnableAutoSave);
             ImguiUtils.ShowHoverTooltip("All changes will be saved at the interval specificed.");
 
@@ -46,8 +43,6 @@ public class ProjectSettingsTab
             ImGui.Text("Automatically Save:");
             ImguiUtils.ShowHoverTooltip("Determines which elements of Smithbox will be automatically saved, if automatic save is enabled.");
 
-            ImGui.Indent(5.0f);
-
             ImGui.Checkbox("Project", ref CFG.Current.System_EnableAutoSave_Project);
             ImguiUtils.ShowHoverTooltip("The project.json will be automatically saved.");
 
@@ -65,11 +60,6 @@ public class ProjectSettingsTab
 
             ImGui.Checkbox("Gparam Editor", ref CFG.Current.System_EnableAutoSave_GparamEditor);
             ImguiUtils.ShowHoverTooltip("All modified gparams will be automatically saved.");
-
-            ImGui.Unindent();
-
-            ImGui.EndTabItem();
         }
-
     }
 }

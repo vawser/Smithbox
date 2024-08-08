@@ -3,6 +3,7 @@ using StudioCore.Configuration;
 using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
+using StudioCore.Tools;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -35,19 +36,16 @@ public class ToolSubMenu
 
     public void DisplayMenu()
     {
-        /*
         if (ImGui.BeginMenu("Tools"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-
-            if (ImGui.MenuItem("TODO", KeyBindings.Current.TextureViewer_ExportTexture.HintText))
+            if (ImGui.MenuItem("Color Picker"))
             {
-
+                ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
             }
 
             ImGui.EndMenu();
         }
-        */
     }
 }
 

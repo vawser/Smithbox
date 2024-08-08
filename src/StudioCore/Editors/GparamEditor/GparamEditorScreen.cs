@@ -89,6 +89,8 @@ public class GparamEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
@@ -112,8 +114,15 @@ public class GparamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
+        ImGui.Separator();
+
         ActionSubMenu.DisplayMenu();
+
+        ImGui.Separator();
+
         ToolSubMenu.DisplayMenu();
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("View"))
         {

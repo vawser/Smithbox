@@ -24,6 +24,7 @@ using StudioCore.Interface;
 using StudioCore.Core;
 using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Tasks;
+using StudioCore.Tools;
 
 namespace StudioCore;
 
@@ -411,12 +412,16 @@ public class Smithbox
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, style.IndentSpacing * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, style.ItemSpacing * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.ItemInnerSpacing, style.ItemInnerSpacing * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 1);
+        ImGui.PushStyleVar(ImGuiStyleVar.ChildBorderSize, 1);
+        ImGui.PushStyleVar(ImGuiStyleVar.PopupBorderSize, 1);
+        ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 1);
     }
 
     public void UnapplyStyle()
     {
         ImGui.PopStyleColor(29);
-        ImGui.PopStyleVar(10);
+        ImGui.PopStyleVar(14);
     }
 
     //Unhappy with this being here
@@ -535,10 +540,10 @@ public class Smithbox
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 0.0f);
 
         if (ImGui.BeginMainMenuBar())
-    {
+        {
+            WindowHandler.HandleWindowIconBar();
             EditorHandler.HandleEditorSharedBar();
             EditorHandler.FocusedEditor.DrawEditorMenu();
-            WindowHandler.HandleWindowIconBar();
 
             // Program Update
             if (_programUpdateAvailable)
@@ -653,6 +658,9 @@ public class Smithbox
 
         if(AliasCacheHandler != null)
             AliasCacheHandler.OnGui();
+
+        // Tool windows
+        ColorPicker.DisplayColorPicker();
 
         ImGui.PopStyleVar(2);
         UnapplyStyle();

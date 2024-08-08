@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ImGuiNET;
 using StudioCore.Editors.TimeActEditor.Actions;
 
 namespace StudioCore.Editors.TimeActEditor.Tools;
@@ -30,9 +31,9 @@ public class ToolSubMenu
 
     public void DisplayMenu()
     {
-        /*
         if (ImGui.BeginMenu("Tools"))
         {
+            /*
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
 
             if (ImGui.MenuItem("TODO", KeyBindings.Current.TextureViewer_ExportTexture.HintText))
@@ -40,8 +41,9 @@ public class ToolSubMenu
 
             }
 
+            */
+
             ImGui.EndMenu();
         }
-        */
     }
 }

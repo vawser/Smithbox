@@ -77,6 +77,8 @@ public class HavokEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
+        ImGui.Separator();
+
     }
 
     public void OnGUI(string[] initcmd)

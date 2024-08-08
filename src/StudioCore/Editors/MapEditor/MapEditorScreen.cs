@@ -28,6 +28,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Havok;
 using static SoulsFormats.MSB.Shape.Composite;
+using StudioCore.Tools;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -195,6 +196,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void DrawEditorMenu()
     {
+        ImGui.Separator();
+
         // Dropdown: Edit
         if (ImGui.BeginMenu("Edit"))
         {
@@ -245,6 +248,25 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             ImGui.EndMenu();
         }
+
+        // Actions
+
+        ImGui.Separator();
+
+        // Tools
+
+        if (ImGui.BeginMenu("Tools"))
+        {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.MenuItem("Color Picker", KeyBindings.Current.TextureViewer_ExportTexture.HintText))
+            {
+                ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
+            }
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.Separator();
 
         // Dropdown: View
         if (ImGui.BeginMenu("View"))
@@ -330,6 +352,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImGui.EndMenu();
         }
 
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("General Filters", RenderScene != null && Viewport != null))
         {
             bool ticked;
@@ -409,12 +433,16 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImGui.EndMenu();
         }
 
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("Region Filters", RenderScene != null && Viewport != null))
         {
             GranularRegionHandler.DisplayOptions();
 
             ImGui.EndMenu();
         }
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("Viewport", RenderScene != null && Viewport != null))
         {
@@ -517,6 +545,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImGui.EndMenu();
         }
 
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("Gizmos"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Compass}");
@@ -572,48 +602,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
                 ImGui.EndMenu();
             }
-
-            ImGui.EndMenu();
-        }
-
-        if (ImGui.BeginMenu("Tools"))
-        {
-            // WIP
-            /*
-            if (Smithbox.BankHandler.LightmapAtlasBank.UsesLightmapAtlases())
-            {
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-                if (ImGui.MenuItem("Lightmap Atlas Editor"))
-                {
-                    if (LightmapAtlasEditor == null)
-                    {
-                        LightmapAtlasEditor = new LightmapAtlasScreen();
-                        LightmapAtlasEditor.ToggleDisplay();
-                    }
-                    else
-                    {
-                        LightmapAtlasEditor.ToggleDisplay();
-                    }
-                }
-            }
-            if (Smithbox.BankHandler.CollisionBank.UsesCollisionBank())
-            {
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-                if (ImGui.MenuItem("Collision Property Editor"))
-                {
-                    if (CollisionPropertyEditor == null)
-                    {
-                        CollisionPropertyEditor = new CollisionPropertyEditorScreen();
-                        CollisionPropertyEditor.ToggleDisplay();
-                    }
-                    else
-                    {
-                        CollisionPropertyEditor.ToggleDisplay();
-                    }
-                }
-            }
-            
-            */
 
             ImGui.EndMenu();
         }

@@ -2,6 +2,7 @@
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Interface;
+using StudioCore.Tools;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,12 @@ public class ToolSubMenu
     {
         if (ImGui.BeginMenu("Tools"))
         {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.MenuItem("Color Picker"))
+            {
+                ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
+            }
+
             // Export Model
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Export Model", KeyBindings.Current.ModelEditor_ExportModel.HintText))

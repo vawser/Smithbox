@@ -204,6 +204,8 @@ public class ParamEditorScreen : EditorScreen
     }
     public void DrawEditorMenu()
     {
+        ImGui.Separator();
+
         // Menu Options
         if (ImGui.BeginMenu("Edit"))
         {
@@ -228,8 +230,15 @@ public class ParamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
+        ImGui.Separator();
+
         ActionSubMenu.DisplayMenu();
+
+        ImGui.Separator();
+
         ToolSubMenu.DisplayMenu();
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("View"))
         {
@@ -249,6 +258,8 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("Data"))
         {
@@ -448,6 +459,8 @@ public class ParamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("Overviews"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
@@ -472,6 +485,8 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("Comparison"))
         {
@@ -1043,6 +1058,8 @@ public class ParamEditorScreen : EditorScreen
             && !ParamBank.VanillaBank.IsLoadingParams
             && ParamBank.PrimaryBank.ParamVersion < ParamBank.VanillaBank.ParamVersion)
         {
+            ImGui.Separator();
+
             if (!_paramUpgraderLoaded)
             {
                 ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Benefit_Text_Color);

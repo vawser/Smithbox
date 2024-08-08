@@ -51,6 +51,8 @@ public class MaterialEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
+        ImGui.Separator();
+
     }
 
     public void OnGUI(string[] initcmd)

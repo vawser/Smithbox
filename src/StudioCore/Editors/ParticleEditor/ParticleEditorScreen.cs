@@ -72,6 +72,8 @@ public class ParticleEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
@@ -94,6 +96,8 @@ public class ParticleEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("View"))
         {

@@ -5,6 +5,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
+using StudioCore.Interface.Settings;
 using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ using System.Xml.Linq;
 using static SoulsFormats.MSB_AC6.Part;
 using static SoulsFormats.TAE;
 using static StudioCore.Editors.TimeActEditor.AnimationBank;
+using static StudioCore.Interface.Settings.TimeActEditorTab;
 
 namespace StudioCore.Editors.TimeActEditor;
 public static class AnimationBank
@@ -690,93 +692,17 @@ public static class AnimationBank
                             }
                         }
 
-                        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-                        {
-                            BND3 writeBinder = binderInfo.InternalBinder as BND3;
-
-                            switch (Smithbox.ProjectType)
-                            {
-                                case ProjectType.DS1:
-                                case ProjectType.DS1R:
-                                    internalBinderBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
-                                    break;
-                                default:
-                                    TaskLogs.AddLog($"Invalid Project Type during Save Time Act");
-                                    return;
-                            }
-                        }
-                        else
-                        {
-                            BND4 writeBinder = binderInfo.InternalBinder as BND4;
-
-                            switch (Smithbox.ProjectType)
-                            {
-                                case ProjectType.DS3:
-                                    internalBinderBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                                    break;
-                                case ProjectType.SDT:
-                                    internalBinderBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                                    break;
-                                case ProjectType.ER:
-                                    internalBinderBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                                    break;
-                                case ProjectType.AC6:
-                                    internalBinderBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
-                                    break;
-                                default:
-                                    TaskLogs.AddLog($"Invalid Project Type during Save Time Act");
-                                    return;
-                            }
-                        }
-
-                        file.Bytes = internalBinderBytes;
+                        byte[] tempBytes = GetBinderBytes(binderInfo.InternalBinder);
+                        file.Bytes = tempBytes;
                     }
                 }
             }
 
-            byte[] fileBytes = null;
 
             var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
             var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
 
-            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-            {
-                BND3 writeBinder = binderInfo.ContainerBinder as BND3;
-
-                switch (Smithbox.ProjectType)
-                {
-                    case ProjectType.DS1:
-                    case ProjectType.DS1R:
-                        fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
-                        break;
-                    default:
-                        TaskLogs.AddLog($"Invalid Project Type during Save Time Act");
-                        return;
-                }
-            }
-            else
-            {
-                BND4 writeBinder = binderInfo.ContainerBinder as BND4;
-
-                switch (Smithbox.ProjectType)
-                {
-                    case ProjectType.DS3:
-                        fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                        break;
-                    case ProjectType.SDT:
-                        fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                        break;
-                    case ProjectType.ER:
-                        fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                        break;
-                    case ProjectType.AC6:
-                        fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
-                        break;
-                    default:
-                        TaskLogs.AddLog($"Invalid Project Type during Save Time Act");
-                        return;
-                }
-            }
+            byte[] fileBytes = GetBinderBytes(binderInfo.ContainerBinder);
 
             if (fileBytes != null)
             {
@@ -804,6 +730,62 @@ public static class AnimationBank
                 TaskLogs.AddLog($"Failed to save {info.Name} - {assetMod}.");
             }
         }
+    }
+
+    public static byte[] GetBinderBytes(IBinder targetBinder)
+    {
+        // Allow older compression types for these two since KRAK is slow
+        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        {
+            BND4 writeBinder = targetBinder as BND4;
+            var currentCompressionType = CFG.Current.CurrentTimeActCompressionType;
+
+            if (currentCompressionType != TimeactCompressionType.Default)
+            {
+                switch (currentCompressionType)
+                {
+                    case TimeactCompressionType.DFLT:
+                        return writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                    case TimeactCompressionType.KRAK:
+                        return writeBinder.Write(DCX.Type.DCX_KRAK);
+                    case TimeactCompressionType.KRAK_MAX:
+                        return writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                }
+            }
+        }
+
+        // Otherwise use the normal compression types
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        {
+            BND3 writeBinder = targetBinder as BND3;
+
+            switch (Smithbox.ProjectType)
+            {
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                    return writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
+            }
+        }
+        else
+        {
+            BND4 writeBinder = targetBinder as BND4;
+
+            switch (Smithbox.ProjectType)
+            {
+                case ProjectType.DS3:
+                    return writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                case ProjectType.SDT:
+                    return writeBinder.Write(DCX.Type.DCX_KRAK);
+                case ProjectType.ER:
+                    return writeBinder.Write(DCX.Type.DCX_KRAK);
+                case ProjectType.AC6:
+                    return writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+            }
+        }
+
+        TaskLogs.AddLog($"Invalid Project Type during Save Time Act");
+
+        return null;
     }
 
     public static string GetObjectTitle()

@@ -155,9 +155,9 @@ namespace StudioCore.Editors.MapEditor
 
                             if (ImGui.Selectable("Go to Alias"))
                             {
-                                Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
-                                Smithbox.WindowHandler.AliasWindow.DisplayCharacterTab = true;
-                                Smithbox.WindowHandler.AliasWindow.TargetChrID = entry;
+                                Smithbox.WindowHandler.SettingsWindow.MenuOpenState = true;
+                                Smithbox.WindowHandler.SettingsWindow.DisplayCharacterTab = true;
+                                Smithbox.WindowHandler.SettingsWindow.TargetChrID = entry;
                             }
 
                             ImGui.EndPopup();
@@ -206,9 +206,9 @@ namespace StudioCore.Editors.MapEditor
 
                             if (ImGui.Selectable("Go to Alias"))
                             {
-                                Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
-                                Smithbox.WindowHandler.AliasWindow.DisplayAssetTab = true;
-                                Smithbox.WindowHandler.AliasWindow.TargetAssetID = entry;
+                                Smithbox.WindowHandler.SettingsWindow.MenuOpenState = true;
+                                Smithbox.WindowHandler.SettingsWindow.DisplayAssetTab = true;
+                                Smithbox.WindowHandler.SettingsWindow.TargetAssetID = entry;
                             }
 
                             ImGui.EndPopup();
@@ -250,9 +250,9 @@ namespace StudioCore.Editors.MapEditor
 
                             if (ImGui.Selectable("Go to Alias"))
                             {
-                                Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
-                                Smithbox.WindowHandler.AliasWindow.DisplayPartTab = true;
-                                Smithbox.WindowHandler.AliasWindow.TargetPartID = entry;
+                                Smithbox.WindowHandler.SettingsWindow.MenuOpenState = true;
+                                Smithbox.WindowHandler.SettingsWindow.DisplayPartTab = true;
+                                Smithbox.WindowHandler.SettingsWindow.TargetPartID = entry;
                             }
 
                             ImGui.EndPopup();
@@ -311,9 +311,9 @@ namespace StudioCore.Editors.MapEditor
 
                                 if (ImGui.Selectable("Go to Alias"))
                                 {
-                                    Smithbox.WindowHandler.AliasWindow.MenuOpenState = true;
-                                    Smithbox.WindowHandler.AliasWindow.DisplayMapPieceTab = true;
-                                    Smithbox.WindowHandler.AliasWindow.TargetMapPieceID = entry;
+                                    Smithbox.WindowHandler.SettingsWindow.MenuOpenState = true;
+                                    Smithbox.WindowHandler.SettingsWindow.DisplayMapPieceTab = true;
+                                    Smithbox.WindowHandler.SettingsWindow.TargetMapPieceID = entry;
                                 }
 
                                 ImGui.EndPopup();
