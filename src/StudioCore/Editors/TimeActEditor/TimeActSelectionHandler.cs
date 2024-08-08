@@ -50,6 +50,7 @@ public class TimeActSelectionHandler
     public TemplateType CurrentTimeActType = TemplateType.Character;
 
     public SelectionContext CurrentSelectionContext = SelectionContext.None;
+    public FileContainerType CurrentFileContainerType = FileContainerType.None;
 
     public enum SelectionContext
     {
@@ -59,6 +60,13 @@ public class TimeActSelectionHandler
         Animation,
         Event,
         Property
+    }
+
+    public enum FileContainerType
+    {
+        None,
+        Character,
+        Object
     }
 
     public TimeActSelectionHandler(ActionManager editorActionManager, TimeActEditorScreen screen)
@@ -98,8 +106,9 @@ public class TimeActSelectionHandler
         TimeActEventMultiselect = new Multiselect();
     }
 
-    public void FileContainerChange(ContainerFileInfo info, BinderInfo binderInfo, int index)
+    public void FileContainerChange(ContainerFileInfo info, BinderInfo binderInfo, int index, FileContainerType containerType)
     {
+        CurrentFileContainerType = containerType;
         CurrentSelectionContext = SelectionContext.File;
 
         ContainerIndex = index;
@@ -107,6 +116,26 @@ public class TimeActSelectionHandler
         ContainerInfo = info;
         ContainerBinder = binderInfo;
 
+        CurrentTimeActKey = -1;
+        CurrentTimeAct = null;
+
+        CurrentTimeActAnimation = null;
+        CurrentTimeActAnimationIndex = -1;
+        CurrentTemporaryAnimHeader = null;
+
+        CurrentTimeActEvent = null;
+        CurrentTimeActEventIndex = -1;
+
+        CurrentTimeActEventProperty = null;
+        CurrentTimeActEventPropertyIndex = -1;
+
+        TimeActMultiselect = new Multiselect();
+        TimeActAnimationMultiselect = new Multiselect();
+        TimeActEventMultiselect = new Multiselect();
+    }
+
+    public void ResetOnTimeActChange()
+    {
         CurrentTimeActKey = -1;
         CurrentTimeAct = null;
 
@@ -150,6 +179,22 @@ public class TimeActSelectionHandler
         TimeActUtils.ApplyTemplate(CurrentTimeAct, CurrentTimeActType);
     }
 
+    public void ResetOnTimeActAnimationChange()
+    {
+        CurrentTimeActAnimation = null;
+        CurrentTimeActAnimationIndex = -1;
+        CurrentTemporaryAnimHeader = null;
+
+        CurrentTimeActEvent = null;
+        CurrentTimeActEventIndex = -1;
+
+        CurrentTimeActEventProperty = null;
+        CurrentTimeActEventPropertyIndex = -1;
+
+        TimeActAnimationMultiselect = new Multiselect();
+        TimeActEventMultiselect = new Multiselect();
+    }
+
     public void TimeActAnimationChange(TAE.Animation entry, int index)
     {
         CurrentSelectionContext = SelectionContext.Animation;
@@ -171,6 +216,17 @@ public class TimeActSelectionHandler
         {
             Screen.SelectFirstEvent = true;
         }
+
+        TimeActEventMultiselect = new Multiselect();
+    }
+
+    public void ResetOnTimeActEventChange()
+    {
+        CurrentTimeActEvent = null;
+        CurrentTimeActEventIndex = -1;
+
+        CurrentTimeActEventProperty = null;
+        CurrentTimeActEventPropertyIndex = -1;
 
         TimeActEventMultiselect = new Multiselect();
     }

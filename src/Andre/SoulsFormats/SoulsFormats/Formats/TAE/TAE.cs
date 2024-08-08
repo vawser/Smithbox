@@ -102,6 +102,11 @@ namespace SoulsFormats
         /// </summary>
         public Template AppliedTemplate { get; private set; }
 
+        public TAE Clone()
+        {
+            return (TAE)MemberwiseClone();
+        }
+
         /// <summary>
         /// Applies a template to this TAE for easier editing.
         /// After applying template, use events' .Parameters property.

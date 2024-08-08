@@ -38,19 +38,20 @@ public class ActionSubMenu
     {
 
     }
+
     public void DisplayMenu()
     {
         if (ImGui.BeginMenu("Actions"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Duplicate"))
+            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
                 Handler.DetermineDuplicateTarget();
             }
             ImguiUtils.ShowHoverTooltip("Duplicates the current selection.");
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Delete"))
+            if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 Handler.DetermineDeleteTarget();
             }

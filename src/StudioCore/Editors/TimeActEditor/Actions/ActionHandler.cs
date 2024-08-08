@@ -21,29 +21,45 @@ public class ActionHandler
 
     public void DetermineDuplicateTarget()
     {
+        return;
+
         var handler = Screen.CollectionPropertyHandler;
         var context = Screen.SelectionHandler.CurrentSelectionContext;
 
         switch(context)
         {
             case SelectionContext.File: break;
-            case SelectionContext.TimeAct: break;
-            case SelectionContext.Animation: break;
-            case SelectionContext.Event: break;
+            case SelectionContext.TimeAct:
+                Screen.CollectionPropertyHandler.DuplicateTimeAct();
+                break;
+            case SelectionContext.Animation:
+                Screen.CollectionPropertyHandler.DuplicateAnimation(); 
+                break;
+            case SelectionContext.Event:
+                Screen.CollectionPropertyHandler.DuplicateEvent(); 
+                break;
             case SelectionContext.Property: break;
         }
     }
     public void DetermineDeleteTarget()
     {
+        return;
+
         var handler = Screen.CollectionPropertyHandler;
         var context = Screen.SelectionHandler.CurrentSelectionContext;
 
         switch (context)
         {
             case SelectionContext.File: break;
-            case SelectionContext.TimeAct: break;
-            case SelectionContext.Animation: break;
-            case SelectionContext.Event: break;
+            case SelectionContext.TimeAct:
+                Screen.CollectionPropertyHandler.DeleteTimeAct();
+                break;
+            case SelectionContext.Animation:
+                Screen.CollectionPropertyHandler.DeleteAnimation(); 
+                break;
+            case SelectionContext.Event:
+                Screen.CollectionPropertyHandler.DeleteEvent(); 
+                break;
             case SelectionContext.Property: break;
         }
     }

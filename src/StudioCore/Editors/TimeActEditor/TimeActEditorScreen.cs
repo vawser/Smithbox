@@ -23,6 +23,7 @@ using StudioCore.Editors.TimeActEditor.Tools;
 using static StudioCore.Editors.TimeActEditor.TimeActUtils;
 using HKLib.hk2018.hkAsyncThreadPool;
 using static SoulsFormats.TAE.Animation.AnimMiniHeader;
+using static StudioCore.Editors.TimeActEditor.TimeActSelectionHandler;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -299,7 +300,7 @@ public class TimeActEditorScreen : EditorScreen
 
                     if (ImGui.Selectable($@" {info.Name}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        SelectionHandler.FileContainerChange(info, binder, i);
+                        SelectionHandler.FileContainerChange(info, binder, i, FileContainerType.Character);
                     }
                     TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Character);
 
@@ -327,7 +328,7 @@ public class TimeActEditorScreen : EditorScreen
 
                     if (ImGui.Selectable($@" {info.Name}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        SelectionHandler.FileContainerChange(info, binder, i);
+                        SelectionHandler.FileContainerChange(info, binder, i, FileContainerType.Object);
                     }
                     TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Asset);
 
