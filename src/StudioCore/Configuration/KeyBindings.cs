@@ -632,6 +632,12 @@ public class KeyBindings
             Key.G,
             true);
 
+        public KeyBind PARAM_Sort = new(
+            "Sort",
+            "Sort the rows of the currently selected param",
+            Key.Y,
+            true);
+
         public KeyBind PARAM_CopyToClipboard = new(
             "Copy Selection to Clipboard", 
             "Copies the current param row to the clipboard.",
@@ -643,11 +649,6 @@ public class KeyBindings
             "Paste the current param row in the clipboard.",
             Key.V,
             true);
-
-        public KeyBind PARAM_ViewMassEdit = new(
-            "View Mass Edit",
-            "Trigger the Mass Edit prompt.",
-            Key.Unknown);
 
         public KeyBind PARAM_SearchParam = new(
             "Focus Param Search",
@@ -665,6 +666,18 @@ public class KeyBindings
             "Focus Field Search",
             "Moves focus to the field search input.",
             Key.N,
+            true);
+
+        // Mass Edit
+        public KeyBind PARAM_ViewMassEdit = new(
+            "View Mass Edit",
+            "Trigger the Mass Edit prompt.",
+            Key.Unknown);
+
+        public KeyBind PARAM_ExecuteMassEdit = new(
+            "Execute Mass Edit",
+            "Execute the current Mass Edit input (if any).",
+            Key.Q,
             true);
 
         // CSV
@@ -776,6 +789,12 @@ public class KeyBindings
         // GPARAM Editor
         //-----------------------------
         // Core
+        public KeyBind GPARAM_ExecuteQuickEdit = new(
+            "Execute Quick Edit Commands",
+            "Execute the current quick edit commands.",
+            Key.E,
+            true);
+
         public KeyBind GPARAM_GenerateQuickEdit = new(
             "Generate Quick Edit Commands",
             "Generate quick edit commands from current selection.",

@@ -49,6 +49,7 @@ Model Editor:
  - FIX: flag fields: they should be a set of checkboxes that resolve into the correct int value
  - ADD: render bone connections (use patrol route method)
  - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
+ - FIX: account for scale
 
 Material Editor
  - ADD: Implement Material/MATBIN editor

@@ -18,13 +18,11 @@ public class ToolSubMenu
 {
     private ParamEditorScreen Screen;
     public ActionHandler Handler;
-    public MassEditHandler MassEditHandler;
 
     public ToolSubMenu(ParamEditorScreen screen)
     {
         Screen = screen;
         Handler = new ActionHandler(screen);
-        MassEditHandler = new MassEditHandler(screen);
     }
 
     public void Shortcuts()

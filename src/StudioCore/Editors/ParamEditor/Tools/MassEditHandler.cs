@@ -1,4 +1,5 @@
-﻿using StudioCore.Editor;
+﻿using StudioCore.Configuration;
+using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Platform;
 using System;
@@ -29,8 +30,18 @@ public class MassEditHandler
         Screen = screen;
     }
 
+    public void Shortcuts()
+    {
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExecuteMassEdit))
+        {
+            ExecuteMassEdit();
+        }
+    }
+
     public void ExecuteMassEdit()
     {
+        var command = _currentMEditRegexInput;
+
         Smithbox.EditorHandler.ParamEditor._activeView._selection.SortSelection();
         (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
             _currentMEditRegexInput, Smithbox.EditorHandler.ParamEditor._activeView._selection);
@@ -51,6 +62,11 @@ public class MassEditHandler
         }
 
         _mEditRegexResult = r.Information;
+
+        if (retainMassEditCommand)
+        {
+            _currentMEditRegexInput = command;
+        }
     }
 
     public void MassEditScriptSetup()

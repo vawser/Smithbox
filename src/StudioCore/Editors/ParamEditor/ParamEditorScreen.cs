@@ -668,6 +668,7 @@ public class ParamEditorScreen : EditorScreen
 
         ActionSubMenu.Shortcuts();
         ToolSubMenu.Shortcuts();
+        ToolWindow.Shortcuts();
 
         if (Smithbox.ProjectHandler.CurrentProject == null)
         {

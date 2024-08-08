@@ -59,6 +59,10 @@ namespace StudioCore.Editors.GparamEditor
 
         public void Shortcuts()
         {
+            if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_ExecuteQuickEdit))
+            {
+                ExecuteQuickEdit();
+            }
             if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_GenerateQuickEdit))
             {
                 GenerateQuickEditCommands();

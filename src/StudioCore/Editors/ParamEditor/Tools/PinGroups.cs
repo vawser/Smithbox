@@ -69,29 +69,34 @@ public class PinGroups
         ImGui.Separator();
 
         ImGui.Checkbox("Show only pinned params exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedParams);
-        ImguiUtils.ShowHoverTooltip("When enabled, only pinned params will appear in the param list.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ShowPinnedParamsOnly.HintText}\nWhen enabled, only pinned params will appear in the param list.");
+
         ImGui.Checkbox("Show only pinned rows exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedRows);
-        ImguiUtils.ShowHoverTooltip("When enabled, only pinned rows will appear in the rows list.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ShowPinnedRowsOnly.HintText}\nWhen enabled, only pinned rows will appear in the rows list.");
+
         ImGui.Checkbox("Show only pinned fields exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedFields);
-        ImguiUtils.ShowHoverTooltip("When enabled, only pinned fields will appear in the param list.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ShowPinnedFieldsOnly.HintText}\nWhen enabled, only pinned fields will appear in the param list.");
 
         if (ImGui.Button("Clear Param Pins", thirdButtonSize))
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams = new();
         }
-        ImguiUtils.ShowHoverTooltip("Clear current pinned params.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearPinnedParams.HintText}\nClear current pinned params.");
+
         ImGui.SameLine();
         if (ImGui.Button("Clear Row Pins", thirdButtonSize))
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows = new();
         }
-        ImguiUtils.ShowHoverTooltip("Clear current pinned rows.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearPinnedRows.HintText}\nClear current pinned rows.");
+
         ImGui.SameLine();
         if (ImGui.Button("Clear Field Pins", thirdButtonSize))
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields = new();
         }
-        ImguiUtils.ShowHoverTooltip("Clear current pinned fields.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearPinnedFields.HintText}\nClear current pinned fields.");
+
 
         ImGui.Separator();
         ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Group Creation");
@@ -105,19 +110,21 @@ public class PinGroups
         {
             CreateParamGroup();
         }
-        ImguiUtils.ShowHoverTooltip("Create a new pin group from the current pinned params.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateParamGroup.HintText}\nCreate a new pin group from the current pinned params.");
+
         ImGui.SameLine();
         if (ImGui.Button("Create Row Group", thirdButtonSize))
         {
             CreateRowGroup();
         }
-        ImguiUtils.ShowHoverTooltip("Create a new pin group from the current pinned rows.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateRowGroup.HintText}\nCreate a new pin group from the current pinned rows.");
+
         ImGui.SameLine();
         if (ImGui.Button("Create Field Group", thirdButtonSize))
         {
             CreateFieldGroup();
         }
-        ImguiUtils.ShowHoverTooltip("Create a new pin group from the current pinned fields.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateFieldGroup.HintText}\nCreate a new pin group from the current pinned fields.");
 
         ImGui.Separator();
         ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Group Lists");

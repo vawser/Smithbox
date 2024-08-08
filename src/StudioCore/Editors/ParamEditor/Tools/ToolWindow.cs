@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Actions;
@@ -32,6 +33,16 @@ public class ToolWindow
         Handler = new ActionHandler(screen);
         MassEditHandler = new MassEditHandler(screen);
         PinGroupHandler = new PinGroups(screen);
+    }
+
+    public void Shortcuts()
+    {
+        MassEditHandler.Shortcuts();
+
+        if(InputTracker.GetKeyDown(KeyBindings.Current.PARAM_Sort))
+        {
+            Handler.SortRowsHandler();
+        }
     }
 
     public void OnProjectChanged()
@@ -349,16 +360,13 @@ public class ToolWindow
                 ImGui.InputTextMultiline("##MEditRegexInput", ref MassEditHandler._currentMEditRegexInput, 65536,
                 new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
 
-
                 if (ImGui.Button("Apply##action_Selection_MassEdit_Execute", halfButtonSize))
                 {
-                    var command = MassEditHandler._currentMEditRegexInput;
                     MassEditHandler.ExecuteMassEdit();
-                    if (MassEditHandler.retainMassEditCommand)
-                    {
-                        MassEditHandler._currentMEditRegexInput = command;
-                    }
                 }
+                ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExecuteMassEdit.HintText}");
+
+
                 ImGui.SameLine();
                 if (ImGui.Button("Clear##action_Selection_MassEdit_Clear", halfButtonSize))
                 {

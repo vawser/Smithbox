@@ -574,6 +574,10 @@ public class ParamEditorKeybindTab
                 KeyBindings.Current.PARAM_GoToRowID,
                 KeyBindings.Default.PARAM_GoToRowID);
 
+            KeyBindings.Current.PARAM_Sort = InputTracker.KeybindLine(23,
+                KeyBindings.Current.PARAM_Sort,
+                KeyBindings.Default.PARAM_Sort);
+
             KeyBindings.Current.PARAM_CopyToClipboard = InputTracker.KeybindLine(3,
                 KeyBindings.Current.PARAM_CopyToClipboard,
                 KeyBindings.Default.PARAM_CopyToClipboard);
@@ -581,10 +585,6 @@ public class ParamEditorKeybindTab
             KeyBindings.Current.PARAM_PasteClipboard = InputTracker.KeybindLine(4,
                 KeyBindings.Current.PARAM_PasteClipboard,
                 KeyBindings.Default.PARAM_PasteClipboard);
-
-            KeyBindings.Current.PARAM_ViewMassEdit = InputTracker.KeybindLine(5,
-                KeyBindings.Current.PARAM_ViewMassEdit,
-                KeyBindings.Default.PARAM_ViewMassEdit);
 
             KeyBindings.Current.PARAM_SearchParam = InputTracker.KeybindLine(6,
                 KeyBindings.Current.PARAM_SearchParam,
@@ -597,6 +597,17 @@ public class ParamEditorKeybindTab
             KeyBindings.Current.PARAM_SearchField = InputTracker.KeybindLine(8,
                 KeyBindings.Current.PARAM_SearchField,
                 KeyBindings.Default.PARAM_SearchField);
+        }
+
+        if (ImGui.CollapsingHeader("Mass Edit", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.PARAM_ViewMassEdit = InputTracker.KeybindLine(5,
+                KeyBindings.Current.PARAM_ViewMassEdit,
+                KeyBindings.Default.PARAM_ViewMassEdit);
+
+            KeyBindings.Current.PARAM_ExecuteMassEdit = InputTracker.KeybindLine(22,
+                KeyBindings.Current.PARAM_ExecuteMassEdit,
+                KeyBindings.Default.PARAM_ExecuteMassEdit);
         }
 
         if (ImGui.CollapsingHeader("CSV", ImGuiTreeNodeFlags.DefaultOpen))
@@ -696,11 +707,15 @@ public class GparamEditorKeybindTab
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            KeyBindings.Current.GPARAM_GenerateQuickEdit = InputTracker.KeybindLine(0,
+            KeyBindings.Current.GPARAM_ExecuteQuickEdit = InputTracker.KeybindLine(0,
+                KeyBindings.Current.GPARAM_ExecuteQuickEdit,
+                KeyBindings.Default.GPARAM_ExecuteQuickEdit);
+
+            KeyBindings.Current.GPARAM_GenerateQuickEdit = InputTracker.KeybindLine(1,
                 KeyBindings.Current.GPARAM_GenerateQuickEdit,
                 KeyBindings.Default.GPARAM_GenerateQuickEdit);
 
-            KeyBindings.Current.GPARAM_ClearQuickEdit = InputTracker.KeybindLine(1,
+            KeyBindings.Current.GPARAM_ClearQuickEdit = InputTracker.KeybindLine(2,
                 KeyBindings.Current.GPARAM_ClearQuickEdit,
                 KeyBindings.Default.GPARAM_ClearQuickEdit);
         }
