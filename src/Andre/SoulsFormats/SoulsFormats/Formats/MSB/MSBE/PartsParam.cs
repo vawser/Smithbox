@@ -514,7 +514,7 @@ namespace SoulsFormats
                 br.AssertByte(0);
                 br.AssertByte(0);
                 br.AssertByte(0); // Former lantern ID
-                PartsDrawParamID = br.ReadInt16();
+                PartsDrawParamID = br.ReadUInt16();
                 IsPointLightShadowSrc = br.ReadSByte(); // Seems to be 0 or -1
                 UnkE0B = br.ReadByte();
                 IsShadowSrc = br.ReadBoolean();
@@ -706,7 +706,7 @@ namespace SoulsFormats
                 bw.WriteByte(0);
                 bw.WriteByte(0);
                 bw.WriteByte(0);
-                bw.WriteInt16(PartsDrawParamID);
+                bw.WriteUInt16(PartsDrawParamID);
                 bw.WriteSByte(IsPointLightShadowSrc);
                 bw.WriteByte(UnkE0B);
                 bw.WriteBoolean(IsShadowSrc);
