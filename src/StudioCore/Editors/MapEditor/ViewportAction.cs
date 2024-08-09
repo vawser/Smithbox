@@ -17,6 +17,7 @@ using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Editor;
 using StudioCore.Platform;
 using StudioCore.Core;
+using DotNext.Collections.Generic;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -400,7 +401,6 @@ public class CloneMapObjectsAction : ViewportAction
                         clonedList.Select(e => e.Item2.WrappedObject as IMsbEntry),
                         cloned.WrappedObject as IMsbEntry
                     );
-                ViewportActionCommon.RenameDuplicates(targetMap, clonedList.Select(e => e.Item2), cloned);
 
                 int? maybeIndex = null;
                 if (TargetMap is null)
@@ -409,7 +409,6 @@ public class CloneMapObjectsAction : ViewportAction
                 Entity parent = null;
                 if (TargetBTL is not null && cloned.WrappedObject is BTL.Light)
                     parent = TargetBTL;
-                ViewportActionCommon.AddObjectToMap(targetMap, cloned, maybeIndex, parent);
                 if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
                     ViewportActionCommon.SetUniqueEntityID(cloned, map);
                 if (CFG.Current.Toolbar_Duplicate_Increment_InstanceID)
@@ -418,6 +417,8 @@ public class CloneMapObjectsAction : ViewportAction
                     ViewportActionCommon.ClearEntityID(cloned, map);
                 if (CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs)
                     ViewportActionCommon.ClearEntityGroupID(cloned, map);
+                ViewportActionCommon.RenameDuplicates(targetMap, clonedList.Select(e => e.Item2), cloned);
+                ViewportActionCommon.AddObjectToMap(targetMap, cloned, maybeIndex, parent);
             }
         }
 
@@ -477,14 +478,14 @@ public class AddMapObjectsAction : ViewportAction
     {
         foreach (var added in Added)
         {
-            ViewportActionCommon.RenameDuplicates(Map, Added, added);
-            ViewportActionCommon.AddObjectToMap(Map, added, parent: Parent);
             if (CFG.Current.Prefab_ApplyUniqueInstanceID)
                 ViewportActionCommon.SetUniqueInstanceID(added, Map);
             if (CFG.Current.Prefab_ApplyUniqueEntityID)
                 ViewportActionCommon.SetUniqueEntityID(added, Map);
             if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
                 ViewportActionCommon.SetSpecificEntityGroupID(added, Map);
+            ViewportActionCommon.RenameDuplicates(Map, Added, added);
+            ViewportActionCommon.AddObjectToMap(Map, added, parent: Parent);
         }
 
         if (SetSelection)
@@ -1830,26 +1831,26 @@ public class OrderMapObjectsAction : ViewportAction
 }
 
 
-public class RenameObjectsAction(List<MsbEntity> entities, List<string> newNames) : ViewportAction
+public class RenameObjectsAction(List<MsbEntity> entities, List<string> newNames, bool reference) : ViewportAction
 {
     List<string> oldNames = entities.Select(e => e.Name).ToList();
 
     void Rename(MsbEntity entity, string name)
     {
-        if (entity.Container.GetObjectByName(name) is not null)
-        {
-            TaskLogs.AddLog($"Failed to rename {entity.Name}: there's another entity by that name", LogLevel.Error);
-            return;
+        if (reference) {
+            ViewportActionCommon.SetNameHandleDuplicate(
+                entity.ContainingMap,
+                entity.ContainingMap.Objects
+                    .Where(e => e.WrappedObject is IMsbEntry)
+                    .Select(e => e as MsbEntity),
+                entity,
+                name
+            );
+        } else {
+            entity.Name = name;
         }
-        MsbUtils.RenameWithRefs(
-            entity.Container.Objects
-                .Select(o => o.WrappedObject as IMsbEntry)
-                .Where(o => o is not null),
-            entity.WrappedObject as IMsbEntry,
-            name
-        );
-        entity.Name = name;
     }
+
     public override ActionEvent Execute(bool isRedo = false)
     {
         foreach (var (entity, name) in entities.Zip(newNames))

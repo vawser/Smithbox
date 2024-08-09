@@ -394,6 +394,7 @@ public class CFG
     public bool MapEditor_Enable_Map_Load_on_Double_Click = false;
     public bool MapEditor_Enable_Property_Filter = true;
     public bool MapEditor_Enable_Param_Quick_Links = true;
+    public bool MapEditor_Enable_Referenced_Rename = false;
 
     public bool MapEditor_Enable_Property_Property_TopDecoration = false;
     public bool MapEditor_Enable_Property_Property_Class_Info = true;

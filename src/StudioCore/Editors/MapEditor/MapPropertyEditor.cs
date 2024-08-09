@@ -900,7 +900,34 @@ public class MapPropertyEditor
     }
 
     (string name, Entity entity) editName = ("", null);
-    private void PropEditorEntryName(IEnumerable<MsbEntity> entities)
+    private void PropEditorNameDirect(IEnumerable<MsbEntity> entities)
+    {
+        ImGui.Text("Name");
+        ImGui.NextColumn();
+        var first = entities.First();
+        if (first != editName.entity) editName = (first.Name, first);
+
+        ImGui.PushItemWidth(-1);
+        if (ImGui.InputText("##EntityName", ref editName.name, 64))
+        {
+            if (entities.Count() == 1)
+                ContextActionManager.ExecuteAction(new RenameObjectsAction(
+                    entities.ToList(),
+                    new List<string> { editName.name },
+                    false
+                ));
+            else
+                ContextActionManager.ExecuteAction(new RenameObjectsAction(
+                    entities.ToList(),
+                    entities.Select((ent, i) => $"{editName.name}_{i}").ToList(),
+                    false
+                ));
+        }
+        ImGui.PopItemWidth();
+        ImGui.NextColumn();
+    }
+
+    private void PropEditorNameWithRef(IEnumerable<MsbEntity> entities)
     {
         var first = entities.First();
         if (first.WrappedObject is not IMsbEntry) return;
@@ -926,16 +953,21 @@ public class MapPropertyEditor
             if (single)
                 ContextActionManager.ExecuteAction(new RenameObjectsAction(
                     new List<MsbEntity> { first },
-                    new List<string> { editName.name }
+                    new List<string> { editName.name },
+                    true
                 ));
             else
             {
                 var nameList = entities
                     .GroupBy(e => e.WrappedObject.GetType())
                     .SelectMany(group =>
-                        group.Select((ent, index) => $"{editName.name}-{group.Key.Name}{index}"
+                        group.Select((ent, index) => $"{editName.name}-{group.Key.Name}"
                     ));
-                ContextActionManager.ExecuteAction(new RenameObjectsAction(entities.ToList(), nameList.ToList()));
+                ContextActionManager.ExecuteAction(new RenameObjectsAction(
+                    entities.ToList(),
+                    nameList.ToList(),
+                    true
+                ));
             }
         }
         ImGui.NextColumn();
@@ -1000,7 +1032,10 @@ public class MapPropertyEditor
             ImGui.NextColumn();
         }
 
-        PropEditorEntryName(entities);
+        if (CFG.Current.MapEditor_Enable_Referenced_Rename)
+            PropEditorNameWithRef(entities);
+        else
+            PropEditorNameDirect(entities);
 
         if (types.Count() > 1)
         {

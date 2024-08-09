@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using DotNext.Collections.Generic;
+using Microsoft.Extensions.Logging;
 using Silk.NET.SDL;
 using SoulsFormats;
 using StudioCore.Core;
@@ -7,6 +8,7 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -610,32 +612,52 @@ namespace StudioCore.Editors.MapEditor
             }
         }
 
-        static Regex DuplicateIndex = new Regex(@"(^.+) (\{\d+\})$");
-        public static void RenameDuplicates(MapContainer map, IEnumerable<MsbEntity> entities, MsbEntity target)
+        static Regex WithIndex = new Regex(@"^(.+)_(\d+)$");
+        public static void SetNameHandleDuplicate(MapContainer map, IEnumerable<MsbEntity> entities, MsbEntity target, string name)
         {
-
-            if (map.GetObjectByName(target.Name) is not null)
+            var baseName = name;
+            string instanceId = null;
+            if (map.GetObjectByName(baseName) is not null)
             {
-                var baseName = target.Name;
-                var match = DuplicateIndex.Match(baseName);
-                if (match.Success) baseName = match.Groups[1].Value;
-                
+                var match = WithIndex.Match(baseName);
+                if (match.Success)
+                    baseName = match.Groups[1].Value;
+                if (target.WrappedObject.GetType().GetProperty("InstanceID") is PropertyInfo prop)
+                    instanceId = $"{prop.GetValue(target.WrappedObject)}";
+            }
+
+            var newName = baseName;
+            if (instanceId is not null)
+                newName += $"_{instanceId}";
+
+            if (map.GetObjectByName(newName) is not null)
+            {
                 int count = 2;
-                var name = "";
                 do
                 {
-                    name = $"{baseName} {{{count}}}";
+                    newName = $"{baseName}_{count}";
+                    if (instanceId is not null)
+                        newName += $"_{instanceId}";
                     count += 1;
-                } while (map.GetObjectByName(name) is not null || entities.Any(ent => ent.Name == name));
+                }
+                while (map.GetObjectByName(newName) is not null || entities.Any(ent => ent.Name == newName));
+            }
+            MsbUtils.RenameWithRefs(
+                entities.Select(ent => ent.WrappedObject as IMsbEntry),
+                target.WrappedObject as IMsbEntry,
+                newName
+            );
+            target.Name = newName;
+        }
 
-                MsbUtils.RenameWithRefs(
-                    entities.Select(ent => ent.WrappedObject as IMsbEntry),
-                    target.WrappedObject as IMsbEntry,
-                    name
-                );
-                target.Name = name;
+        public static void RenameDuplicates(MapContainer map, IEnumerable<MsbEntity> entities, MsbEntity target)
+        {
+            if (map.GetObjectByName(target.Name) is not null)
+            {
+                SetNameHandleDuplicate(map, entities, target, target.Name);
             }
         }
+
         public static void AddObjectToMap(MapContainer map, MsbEntity entity, int? maybeIndex = null, Entity parent = null)
         {
             if (map.GetObjectByName(entity.Name) is not null)
