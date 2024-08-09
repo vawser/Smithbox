@@ -56,15 +56,15 @@ public class ToolSubMenu
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields = new();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ShowPinnedParamsOnly))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_OnlyShowPinnedParams))
         {
             CFG.Current.Param_PinGroups_ShowOnlyPinnedParams = !CFG.Current.Param_PinGroups_ShowOnlyPinnedParams;
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ShowPinnedRowsOnly))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_OnlyShowPinnedRows))
         {
             CFG.Current.Param_PinGroups_ShowOnlyPinnedRows = !CFG.Current.Param_PinGroups_ShowOnlyPinnedRows;
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ShowPinnedFieldsOnly))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_OnlyShowPinnedFields))
         {
             CFG.Current.Param_PinGroups_ShowOnlyPinnedFields = !CFG.Current.Param_PinGroups_ShowOnlyPinnedFields;
         }

@@ -69,13 +69,13 @@ public class PinGroups
         ImGui.Separator();
 
         ImGui.Checkbox("Show only pinned params exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedParams);
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ShowPinnedParamsOnly.HintText}\nWhen enabled, only pinned params will appear in the param list.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedParams.HintText}\nWhen enabled, only pinned params will appear in the param list.");
 
         ImGui.Checkbox("Show only pinned rows exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedRows);
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ShowPinnedRowsOnly.HintText}\nWhen enabled, only pinned rows will appear in the rows list.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedRows.HintText}\nWhen enabled, only pinned rows will appear in the rows list.");
 
         ImGui.Checkbox("Show only pinned fields exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedFields);
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ShowPinnedFieldsOnly.HintText}\nWhen enabled, only pinned fields will appear in the param list.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedFields.HintText}\nWhen enabled, only pinned fields will appear in the param list.");
 
         if (ImGui.Button("Clear Param Pins", thirdButtonSize))
         {

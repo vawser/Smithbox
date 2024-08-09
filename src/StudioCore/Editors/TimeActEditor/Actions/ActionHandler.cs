@@ -21,6 +21,9 @@ public class ActionHandler
 
     public void DetermineDuplicateTarget()
     {
+        // Disable until finished
+        return;
+
         var handler = Screen.CollectionPropertyHandler;
         var context = Screen.SelectionHandler.CurrentSelectionContext;
 
@@ -41,6 +44,9 @@ public class ActionHandler
     }
     public void DetermineDeleteTarget()
     {
+        // Disable until finished
+        return;
+
         var handler = Screen.CollectionPropertyHandler;
         var context = Screen.SelectionHandler.CurrentSelectionContext;
 

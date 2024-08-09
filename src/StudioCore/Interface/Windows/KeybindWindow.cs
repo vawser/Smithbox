@@ -658,17 +658,17 @@ public class ParamEditorKeybindTab
                 KeyBindings.Current.PARAM_ClearPinnedFields,
                 KeyBindings.Default.PARAM_ClearPinnedFields);
 
-            KeyBindings.Current.PARAM_ShowPinnedParamsOnly = InputTracker.KeybindLine(19,
-                KeyBindings.Current.PARAM_ShowPinnedParamsOnly,
-                KeyBindings.Default.PARAM_ShowPinnedParamsOnly);
+            KeyBindings.Current.PARAM_OnlyShowPinnedParams = InputTracker.KeybindLine(19,
+                KeyBindings.Current.PARAM_OnlyShowPinnedParams,
+                KeyBindings.Default.PARAM_OnlyShowPinnedParams);
 
-            KeyBindings.Current.PARAM_ShowPinnedRowsOnly = InputTracker.KeybindLine(20,
-                KeyBindings.Current.PARAM_ShowPinnedRowsOnly,
-                KeyBindings.Default.PARAM_ShowPinnedRowsOnly);
+            KeyBindings.Current.PARAM_OnlyShowPinnedRows = InputTracker.KeybindLine(20,
+                KeyBindings.Current.PARAM_OnlyShowPinnedRows,
+                KeyBindings.Default.PARAM_OnlyShowPinnedRows);
 
-            KeyBindings.Current.PARAM_ShowPinnedFieldsOnly = InputTracker.KeybindLine(21,
-                KeyBindings.Current.PARAM_ShowPinnedFieldsOnly,
-                KeyBindings.Default.PARAM_ShowPinnedFieldsOnly);
+            KeyBindings.Current.PARAM_OnlyShowPinnedFields = InputTracker.KeybindLine(21,
+                KeyBindings.Current.PARAM_OnlyShowPinnedFields,
+                KeyBindings.Default.PARAM_OnlyShowPinnedFields);
         }
     }
 }

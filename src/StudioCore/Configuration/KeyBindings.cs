@@ -736,17 +736,17 @@ public class KeyBindings
             "Clear currently pinned Fields.",
             Key.Unknown);
 
-        public KeyBind PARAM_ShowPinnedParamsOnly = new(
+        public KeyBind PARAM_OnlyShowPinnedParams = new(
             "Show Pinned Params Only",
             "Toggle the setting to show only pinned params in the param list.",
             Key.Unknown);
 
-        public KeyBind PARAM_ShowPinnedRowsOnly = new(
+        public KeyBind PARAM_OnlyShowPinnedRows = new(
             "Show Pinned Rows Only",
             "Toggle the setting to show only pinned rows in the param list.",
             Key.Unknown);
 
-        public KeyBind PARAM_ShowPinnedFieldsOnly = new(
+        public KeyBind PARAM_OnlyShowPinnedFields = new(
             "Show Pinned Fields Only",
             "Toggle the setting to show only pinned fields in the param list.",
             Key.Unknown);
