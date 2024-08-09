@@ -95,7 +95,9 @@ Time Act Editor
   - Search by event ID/name, quick-link to all instances (TAE -> Animation -> Event)
   - Search by event value, quick-link to all instances (TAE -> Animation -> Event)
   
+ - ADD: event graph: use table API to represent each 0.05 frame, each cell is one frame
  - ADD: Data export/import for TAE/Animation/Event
  - ADD: TAE Quick Edit tool
  - FIX: TAE a330 + a331 in AC6 are not reading correctly
+ - FIX: switching project doesn't properly switch template (inconsistent)
  
