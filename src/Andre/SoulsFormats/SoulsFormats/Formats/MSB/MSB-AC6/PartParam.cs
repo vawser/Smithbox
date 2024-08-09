@@ -340,7 +340,7 @@ namespace SoulsFormats
             /// </summary>
             [MSBParamReference(ParamName = "PartsDrawParam")]
             [IgnoreProperty]
-            public short PartsDrawParamID { get; set; }
+            public ushort PartsDrawParamID { get; set; }
 
             /// <summary>
             /// Unknown.
