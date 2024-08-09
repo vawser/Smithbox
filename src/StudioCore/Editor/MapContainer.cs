@@ -143,6 +143,10 @@ public class MapContainer : ObjectContainer
         BTLParents.Add(btlParent);
     }
 
+    public IMsbModel GetModel(string name) {
+        return LoadedModels[name];
+    }
+
     private void AddModelDeS(IMsb m, MSBD.Model model, string name)
     {
         if (LoadedModels[name] != null)
