@@ -31,14 +31,19 @@ namespace StudioCore.Editors.MapEditor
             if (attributes.Any())
             {
                 var enumName = attributes[0].EnumType;
-                var temp = Smithbox.BankHandler.MSB_Info.Enums.list.Where(x => x.id == enumName).ToList()[0];
+                var enumList = Smithbox.BankHandler.MSB_Info.Enums.list.Where(x => x.id == enumName).ToList();
+                FormatEnumEntry enumEntry = null;
+                if(enumList.Count > 0)
+                {
+                    enumEntry = enumList[0];
+                }
 
-                if (temp == null)
+                if (enumEntry == null)
                 {
                     return false;
                 }
 
-                var options = temp.members;
+                var options = enumEntry.members;
 
 
                 ImGui.NextColumn();
