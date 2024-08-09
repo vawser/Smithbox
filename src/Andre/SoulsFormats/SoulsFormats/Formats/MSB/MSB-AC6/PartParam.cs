@@ -340,7 +340,7 @@ namespace SoulsFormats
             /// </summary>
             [MSBParamReference(ParamName = "PartsDrawParam")]
             [IgnoreProperty]
-            public short PartsDrawParamID { get; set; }
+            public ushort PartsDrawParamID { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -577,7 +577,7 @@ namespace SoulsFormats
                 UnkE05 = br.ReadByte();
                 UnkE06 = br.ReadByte();
                 UnkE07 = br.ReadByte();
-                PartsDrawParamID = br.ReadInt16();
+                PartsDrawParamID = br.ReadUInt16();
                 IsPointLightShadowSrc = br.ReadSByte();
                 UnkE0B = br.ReadByte();
                 IsShadowSrc = br.ReadBoolean();
@@ -781,7 +781,7 @@ namespace SoulsFormats
                 bw.WriteByte(UnkE05);
                 bw.WriteByte(UnkE06);
                 bw.WriteByte(UnkE07);
-                bw.WriteInt16(PartsDrawParamID);
+                bw.WriteUInt16(PartsDrawParamID);
                 bw.WriteSByte(IsPointLightShadowSrc);
                 bw.WriteByte(UnkE0B);
                 bw.WriteBoolean(IsShadowSrc);
