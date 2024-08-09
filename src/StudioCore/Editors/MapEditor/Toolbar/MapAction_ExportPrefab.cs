@@ -83,7 +83,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.ExportPrefab)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_ExportPrefab.HintText)}");
+                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MAP_ExportPrefab.HintText)}");
             }
         }
 

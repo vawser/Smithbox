@@ -145,7 +145,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.ImportPrefab)
             {
-                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_ImportPrefab.HintText)}");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.MAP_ImportPrefab.HintText)}");
             }
         }
 
