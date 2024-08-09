@@ -364,6 +364,12 @@ public class TimeActEditorScreen : EditorScreen
 
             if (TimeActFilters.TimeActFilter(SelectionHandler.ContainerInfo, entry))
             {
+                // Ignore entries marked for removal
+                if(info.MarkForRemoval)
+                {
+                    continue;
+                }
+
                 var isSelected = false;
                 if (i == SelectionHandler.CurrentTimeActKey || 
                     SelectionHandler.TimeActMultiselect.IsMultiselected(i))

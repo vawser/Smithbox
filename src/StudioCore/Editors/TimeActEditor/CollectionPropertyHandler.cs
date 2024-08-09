@@ -41,24 +41,33 @@ public class CollectionPropertyHandler
         var curInternalFile = SelectionHandler.ContainerInfo.InternalFiles[SelectionHandler.CurrentTimeActKey];
         var newInternalFile = new InternalFileInfo(curInternalFile.Filepath, curInternalFile.TAE.Clone());
 
-        TaskLogs.AddLog($"Name: {newInternalFile.Name}");
-        TaskLogs.AddLog($"Filepath: {newInternalFile.Filepath}");
-        TaskLogs.AddLog($"TAE.ID: {newInternalFile.TAE.ID}");
-
         int id = int.Parse(newInternalFile.Name.Substring(1));
-        string newName = GetNewFileName(id);
+        int newId = id;
+        string newName = "";
+        (newId, newName) = GetNewFileName(id);
+
         string newFilePath = newInternalFile.Filepath.Replace(newInternalFile.Name, newName);
         int newTaeID = GetNewTAEID(newInternalFile.TAE.ID);
-
-        TaskLogs.AddLog($"New Name: {newName}");
-        TaskLogs.AddLog($"New File Path: {newFilePath}");
-        TaskLogs.AddLog($"New TAE ID: {newTaeID}");
 
         newInternalFile.Name = newName;
         newInternalFile.Filepath = newFilePath;
         newInternalFile.TAE.ID = newTaeID;
+        newInternalFile.MarkForAddition = true;
 
-        SelectionHandler.ContainerInfo.InternalFiles.Insert(SelectionHandler.CurrentTimeActKey+1, newInternalFile);
+        // Inserts the new internal file at the right position in the list
+        for (int i = 0; i < SelectionHandler.ContainerInfo.InternalFiles.Count; i++)
+        {
+            var curFile = SelectionHandler.ContainerInfo.InternalFiles[i];
+            int curId = int.Parse(curFile.Name.Substring(1));
+            if (curId == (newId-1))
+            {
+                SelectionHandler.ContainerInfo.InternalFiles.Insert(i+1, newInternalFile);
+                break;
+            }
+        }
+
+        SelectionHandler.ContainerInfo.InternalFiles.Sort();
+
         SelectionHandler.ResetOnTimeActChange();
     }
 
@@ -71,7 +80,8 @@ public class CollectionPropertyHandler
             return;
 
         var curInternalFile = SelectionHandler.ContainerInfo.InternalFiles[SelectionHandler.CurrentTimeActKey];
-        SelectionHandler.ContainerInfo.InternalFiles.Remove(curInternalFile);
+        curInternalFile.MarkForRemoval = true;
+
         SelectionHandler.ResetOnTimeActChange();
     }
 
@@ -115,7 +125,7 @@ public class CollectionPropertyHandler
 
     // Utility
 
-    public string GetNewFileName(int id)
+    public (int, string) GetNewFileName(int id)
     {
         var trackedId = id;
         string newName = $"a{PadFileName(trackedId)}";
@@ -130,7 +140,7 @@ public class CollectionPropertyHandler
             }
         }
 
-        return newName;
+        return (trackedId, newName);
     }
 
     public string PadFileName(int id)

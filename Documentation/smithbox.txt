@@ -99,5 +99,4 @@ Time Act Editor
  - ADD: Data export/import for TAE/Animation/Event
  - ADD: TAE Quick Edit tool
  - FIX: TAE a330 + a331 in AC6 are not reading correctly
- - FIX: switching project doesn't properly switch template (inconsistent)
  

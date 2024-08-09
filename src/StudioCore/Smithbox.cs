@@ -98,6 +98,7 @@ public class Smithbox
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
         UpdateSoulsFormatsToggles();
+        ClearTemporaryCFGToggles();
 
         // Handlers
         ProjectHandler = new ProjectHandler();
@@ -113,6 +114,14 @@ public class Smithbox
 
         ImGuiStylePtr style = ImGui.GetStyle();
         style.TabBorderSize = 0;
+    }
+
+    // Reset certain CFG variables on startup
+    public static void ClearTemporaryCFGToggles()
+    {
+        CFG.Current.Param_PinGroups_ShowOnlyPinnedParams = false;
+        CFG.Current.Param_PinGroups_ShowOnlyPinnedRows = false;
+        CFG.Current.Param_PinGroups_ShowOnlyPinnedFields = false;
     }
 
     public static void UpdateSoulsFormatsToggles()

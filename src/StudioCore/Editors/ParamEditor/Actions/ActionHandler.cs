@@ -302,6 +302,7 @@ public class ActionHandler
     {
         if (Screen._activeView._selection.ActiveParamExists())
         {
+            TaskLogs.AddLog($"Param rows sorted for {Screen._activeView._selection.GetActiveParam()}");
             Screen.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(ParamBank.PrimaryBank, Screen._activeView._selection.GetActiveParam()));
         }
     }

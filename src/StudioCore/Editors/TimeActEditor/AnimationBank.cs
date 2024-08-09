@@ -1,4 +1,5 @@
-﻿using ImGuiNET;
+﻿using HKLib.hk2018.hkAsyncThreadPool;
+using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
@@ -459,6 +460,7 @@ public static class AnimationBank
         // Only add if the file contains at least one TAE entry
         if (validFile)
         {
+            fileStruct.InternalFiles.Sort();
             var binderInfo = new BinderInfo(binder, null, "");
             targetBank.Add(fileStruct, binderInfo);
         }
@@ -578,6 +580,7 @@ public static class AnimationBank
         // Only add if the file contains at least one TAE entry
         if (validFile)
         {
+            fileStruct.InternalFiles.Sort();
             var binderInfo = new BinderInfo(binder, aniBinder, aniBinderName);
             targetBank.Add(fileStruct, binderInfo);
         }
@@ -591,45 +594,117 @@ public static class AnimationBank
         }
     }
 
+    public static void HandleDS2TimeActSave(ContainerFileInfo info, BinderInfo binderInfo)
+    {
+        var fileDir = @"\timeact\chr";
+        var fileExt = @".tae";
+
+        if (info.Path.Contains("obj"))
+        {
+            fileDir = @"\timeact\obj";
+        }
+
+        // Direct file with DS2
+        var fileBytes = info.InternalFiles.First().TAE.Write();
+
+        var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
+        var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
+        var assetModDir = $@"{Smithbox.ProjectRoot}\{fileDir}\";
+
+        if (!Directory.Exists(assetModDir))
+        {
+            Directory.CreateDirectory(assetModDir);
+        }
+
+        // Make a backup of the original file if a mod path doesn't exist
+        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        {
+            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
+        }
+        else if (File.Exists(assetMod))
+        {
+            File.Copy(assetMod, $@"{assetMod}.bak", true);
+        }
+
+        if (fileBytes != null)
+        {
+            File.WriteAllBytes(assetMod, fileBytes);
+            TaskLogs.AddLog($"Saved at: {assetMod}");
+        }
+    }
+
+    public static void HandleBinderContents(ContainerFileInfo info, BinderInfo binderInfo, IBinder binder)
+    {
+        // Write existing TAE, and discover files that need to be added
+        foreach (InternalFileInfo tInfo in info.InternalFiles)
+        {
+            foreach (BinderFile file in binder.Files)
+            {
+                if (file.Name == tInfo.Filepath)
+                {
+                    file.Bytes = tInfo.TAE.Write();
+                }
+            }
+        }
+
+        // TAE files within anibnd.dcx container
+        var internalFilepath = "";
+
+        // Grab correct path for a TAE binderFile
+        foreach (BinderFile file in binder.Files)
+        {
+            if (internalFilepath == "" && file.Name.Contains(".tae"))
+                internalFilepath = file.Name;
+        }
+
+        // Get internal path without the tae file part
+        var filename = Path.GetFileName(internalFilepath);
+        var internalPath = internalFilepath.Replace(filename, "");
+
+        // Create new binder files for the newly added internal files
+        foreach (InternalFileInfo tInfo in info.InternalFiles)
+        {
+            if (tInfo.MarkForAddition)
+            {
+                var newBinderfile = new BinderFile();
+                var id = int.Parse(tInfo.Name.Substring(1));
+
+                newBinderfile.ID = id;
+                newBinderfile.Name = $"{internalPath}\\{tInfo.Name}.tae";
+                newBinderfile.Bytes = tInfo.TAE.Write();
+
+                binder.Files.Add(newBinderfile);
+            }
+        }
+
+        // Remove internal files marked for removal
+        foreach (InternalFileInfo tInfo in info.InternalFiles)
+        {
+            if (tInfo.MarkForRemoval)
+            {
+                BinderFile fileToRemove = null;
+
+                foreach (BinderFile file in binder.Files)
+                {
+                    if (file.Name == tInfo.Filepath)
+                    {
+                        fileToRemove = file;
+                    }
+                }
+
+                if(fileToRemove != null)
+                {
+                    binder.Files.Remove(fileToRemove);
+                }
+            }
+        }
+    }
+
     public static void SaveTimeAct(ContainerFileInfo info, BinderInfo binderInfo)
     {
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            var fileDir = @"\timeact\chr";
-            var fileExt = @".tae";
-
-            if(info.Path.Contains("obj"))
-            {
-                fileDir = @"\timeact\obj";
-            }
-
-            // Direct file with DS2
-            var fileBytes = info.InternalFiles.First().TAE.Write();
-
-            var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
-            var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
-            var assetModDir = $@"{Smithbox.ProjectRoot}\{fileDir}\";
-
-            if (!Directory.Exists(assetModDir))
-            {
-                Directory.CreateDirectory(assetModDir);
-            }
-
-            // Make a backup of the original file if a mod path doesn't exist
-            if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
-            {
-                File.Copy(assetRoot, $@"{assetRoot}.bak", true);
-            }
-            else if (File.Exists(assetMod))
-            {
-                File.Copy(assetMod, $@"{assetMod}.bak", true);
-            }
-
-            if (fileBytes != null)
-            {
-                File.WriteAllBytes(assetMod, fileBytes);
-                TaskLogs.AddLog($"Saved at: {assetMod}");
-            }
+            HandleDS2TimeActSave(info, binderInfo);
         }
         else
         {
@@ -658,39 +733,17 @@ public static class AnimationBank
                 }
             }
 
-            // TAE files within anibnd.dcx container
-            foreach (BinderFile file in binderInfo.ContainerBinder.Files)
-            {
-                foreach (InternalFileInfo tInfo in info.InternalFiles)
-                {
-                    if (file.Name == tInfo.Filepath)
-                    {
-                        //TaskLogs.AddLog($"Written File: {file.Name}");
-                        file.Bytes = tInfo.TAE.Write();
-                    }
-                }
-            }
+            // TAE files within the direct container
+            HandleBinderContents(info, binderInfo, binderInfo.ContainerBinder);
 
             // TAE files within internal anibnd container
-            if(binderInfo.InternalBinder != null)
+            if (binderInfo.InternalBinder != null)
             {
                 foreach (BinderFile file in binderInfo.ContainerBinder.Files)
                 {
                     if (file.Name == binderInfo.InternalBinderName)
                     {
-                        var internalBinderBytes = file.Bytes;
-
-                        foreach (BinderFile internalFile in binderInfo.InternalBinder.Files)
-                        {
-                            foreach (InternalFileInfo tInfo in info.InternalFiles)
-                            {
-                                if (internalFile.Name == tInfo.Filepath)
-                                {
-                                    //TaskLogs.AddLog($"Written File: {file.Name}");
-                                    internalFile.Bytes = tInfo.TAE.Write();
-                                }
-                            }
-                        }
+                        HandleBinderContents(info, binderInfo, binderInfo.InternalBinder);
 
                         byte[] tempBytes = GetBinderBytes(binderInfo.InternalBinder);
                         file.Bytes = tempBytes;
@@ -698,11 +751,10 @@ public static class AnimationBank
                 }
             }
 
+            byte[] fileBytes = GetBinderBytes(binderInfo.ContainerBinder);
 
             var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
             var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
-
-            byte[] fileBytes = GetBinderBytes(binderInfo.ContainerBinder);
 
             if (fileBytes != null)
             {
@@ -819,17 +871,37 @@ public static class AnimationBank
         public List<InternalFileInfo> InternalFiles { get; set; }
     }
 
-    public class InternalFileInfo
+    public class InternalFileInfo : IComparable<InternalFileInfo>
     {
         public string Name { get; set; }
         public string Filepath { get; set; }
         public TAE TAE { get; set; }
+
+        public bool MarkForAddition { get; set; }
+        public bool MarkForRemoval { get; set; }
 
         public InternalFileInfo(string path, TAE taeData)
         {
             Filepath = path;
             TAE = taeData;
             Name = Path.GetFileNameWithoutExtension(path);
+        }
+
+        public int CompareTo(InternalFileInfo other)
+        {
+            var thisID = int.Parse(Name.Substring(1));
+            var otherID = int.Parse(other.Name.Substring(1));
+
+            if(thisID > otherID) 
+                return 1;
+
+            if(otherID > thisID) 
+                return -1;
+
+            if(thisID == otherID) 
+                return 0;
+
+            return 0;
         }
     }
 

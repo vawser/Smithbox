@@ -635,8 +635,7 @@ public class KeyBindings
         public KeyBind PARAM_Sort = new(
             "Sort",
             "Sort the rows of the currently selected param",
-            Key.Y,
-            true);
+            Key.Unknown);
 
         public KeyBind PARAM_CopyToClipboard = new(
             "Copy Selection to Clipboard", 
@@ -709,65 +708,48 @@ public class KeyBindings
         public KeyBind PARAM_CreateParamGroup = new(
             "Create Param Pin Group",
             "Create a new Param pin group from the currently pinned params.",
-            Key.Number1,
-            true);
+            Key.Unknown);
 
         public KeyBind PARAM_CreateRowGroup = new(
             "Create Row Pin Group",
             "Create a new Row pin group from the currently pinned rows.",
-            Key.Number2,
-            true);
+            Key.Unknown);
 
         public KeyBind PARAM_CreateFieldGroup = new(
             "Create Field Pin Group",
             "Create a new Field pin group from the currently pinned fields.",
-            Key.Number3,
+            Key.Unknown,
             true);
 
         public KeyBind PARAM_ClearPinnedParams = new(
             "Clear Pinned Params",
             "Clear currently pinned params.",
-            Key.Number1,
-            false,
-            true);
+            Key.Unknown);
 
         public KeyBind PARAM_ClearPinnedRows = new(
             "Clear Pinned Rows",
             "Clear currently pinned Rows.",
-            Key.Number2,
-            false,
-            true);
+            Key.Unknown);
 
         public KeyBind PARAM_ClearPinnedFields = new(
             "Clear Pinned Fields",
             "Clear currently pinned Fields.",
-            Key.Number3,
-            false,
-            true);
+            Key.Unknown);
 
         public KeyBind PARAM_ShowPinnedParamsOnly = new(
             "Show Pinned Params Only",
             "Toggle the setting to show only pinned params in the param list.",
-            Key.Number1,
-            false,
-            false,
-            true);
+            Key.Unknown);
 
         public KeyBind PARAM_ShowPinnedRowsOnly = new(
             "Show Pinned Rows Only",
             "Toggle the setting to show only pinned rows in the param list.",
-            Key.Number2,
-            false,
-            false,
-            true);
+            Key.Unknown);
 
         public KeyBind PARAM_ShowPinnedFieldsOnly = new(
             "Show Pinned Fields Only",
             "Toggle the setting to show only pinned fields in the param list.",
-            Key.Number3,
-            false,
-            false,
-            true);
+            Key.Unknown);
 
         //-----------------------------
         // Text Editor
