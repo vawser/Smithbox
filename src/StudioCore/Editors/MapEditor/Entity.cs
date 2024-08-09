@@ -669,7 +669,7 @@ public class Entity : ISelectable, IDisposable
                         {
                             // Get the entity that has this name.
                             Entity obj = Container.GetObjectByName(sref);
-                            if (obj != null && obj != this)
+                            if (obj != null)
                             {
                                 // Add the entity to the reference map
                                 if (!References.ContainsKey(sref))

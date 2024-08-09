@@ -1,6 +1,9 @@
-﻿using SoulsFormats;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Prefabs;
 
@@ -56,15 +59,5 @@ public static class PrefabUtils
         }
 
         return fullname;
-    }
-
-    public static IEnumerable<IMsbEntry> GetMapMsbEntries(IMsb map)
-    {
-        return new IEnumerable<IMsbEntry>[] {
-                map.Parts.GetEntries(),
-                map.Events.GetEntries(),
-                map.Regions.GetEntries(),
-            }
-            .SelectMany(e => e);
     }
 }

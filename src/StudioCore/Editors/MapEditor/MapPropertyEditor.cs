@@ -1,5 +1,4 @@
 ﻿using Andre.Formats;
-using DotNext.Reflection;
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
@@ -139,7 +138,7 @@ public class MapPropertyEditor
         else if (typ == typeof(short))
         {
             int val = (short)oldval;
-
+            
             if (Smithbox.BankHandler.MSB_Info.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
@@ -530,14 +529,8 @@ public class MapPropertyEditor
     /// </summary>
     /// <param name="arrayindex">Index of the targeted value in an array of values.</param>
     /// <param name="classIndex">Index of the targeted class in an array of classes.</param>
-    private void UpdateProperty(object prop,
-     IEnumerable<Entity> selection,
-     object newval,
-
-        bool changed,
-         bool committed,
-         int arrayindex,
-         int classIndex)
+    private void UpdateProperty(object prop, HashSet<Entity> selection, object newval,
+        bool changed, bool committed, int arrayindex, int classIndex)
     {
         foreach (var ent in selection)
         {
@@ -548,10 +541,6 @@ public class MapPropertyEditor
         if (changed)
         {
             ChangePropertyMultiple(prop, selection, newval, ref committed, arrayindex, classIndex);
-            foreach (var ent in selection)
-            {
-                ent.BuildReferenceMap();
-            }
         }
 
         if (committed)
@@ -577,7 +566,7 @@ public class MapPropertyEditor
     /// </summary>
     /// <param name="arrayindex">Index of the targeted value in an array of values.</param>
     /// <param name="classIndex">Index of the targeted class in an array of classes.</param>
-    private void ChangePropertyMultiple(object prop, IEnumerable<Entity> ents, object newval, ref bool committed,
+    private void ChangePropertyMultiple(object prop, HashSet<Entity> ents, object newval, ref bool committed,
         int arrayindex = -1, int classIndex = -1)
     {
         if (prop == _changingPropery && _lastUncommittedAction != null &&
@@ -590,23 +579,22 @@ public class MapPropertyEditor
             _lastUncommittedAction = null;
         }
 
-        var set = ents.ToHashSet();
         MultipleEntityPropertyChangeAction action;
         foreach (Entity selection in ents)
         {
-            if (selection != null && _changingObject != null && !set.SetEquals((HashSet<Entity>)_changingObject))
+            if (selection != null && _changingObject != null && !ents.SetEquals((HashSet<Entity>)_changingObject))
             {
                 committed = true;
                 return;
             }
         }
 
-        action = new MultipleEntityPropertyChangeAction((PropertyInfo)prop, set, newval, arrayindex, classIndex);
+        action = new MultipleEntityPropertyChangeAction((PropertyInfo)prop, ents, newval, arrayindex, classIndex);
         ContextActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;
         _changingPropery = prop;
-        _changingObject = set;
+        _changingObject = ents;
     }
 
     private void PropEditorParamRow(Entity selection)
@@ -835,7 +823,7 @@ public class MapPropertyEditor
 
     private void PropGenericFieldRow(
         ViewportSelection selection,
-        IEnumerable<Entity> entSelection,
+        HashSet<Entity> entSelection,
         PropertyInfo prop,
         Type type,
         object obj,
@@ -899,138 +887,67 @@ public class MapPropertyEditor
         ImGui.NextColumn();
     }
 
-    (string name, Entity entity) editName = ("", null);
-    private void PropEditorEntryName(IEnumerable<MsbEntity> entities)
-    {
-        var first = entities.First();
-        if (first.WrappedObject is not IMsbEntry) return;
-
-        ImGui.Text("Name");
-        ImGui.NextColumn();
-
-        bool single = entities.Count() == 1;
-        if (single)
-        {
-            if (first != editName.entity) editName = (first.Name, first);
-            ImGui.Text($"{first.Name}");
-        }
-        else
-        {
-            if (first != editName.entity) editName = ("", first);
-            ImGui.Text("...");
-        }
-
-        ImGui.NextColumn();
-        if (ImGui.Button("Rename"))
-        {
-            if (single)
-                ContextActionManager.ExecuteAction(new RenameObjectsAction(
-                    new List<MsbEntity> { first },
-                    new List<string> { editName.name }
-                ));
-            else
-            {
-                var nameList = entities
-                    .GroupBy(e => e.WrappedObject.GetType())
-                    .SelectMany(group =>
-                        group.Select((ent, index) => $"{editName.name}-{group.Key.Name}{index}"
-                    ));
-                ContextActionManager.ExecuteAction(new RenameObjectsAction(entities.ToList(), nameList.ToList()));
-            }
-        }
-        ImGui.NextColumn();
-
-        ImGui.PushItemWidth(-1);
-        ImGui.InputText("##Name", ref editName.name, 64);
-        ImGui.PopItemWidth();
-        ImGui.NextColumn();
-    }
-
-    private void PropEditorSelectedEntities(ViewportSelection selection, int classIndex = -1)
-    {
-        var entities = selection.GetFilteredSelection<MsbEntity>();
-        var types = entities.Select(t => t.WrappedObject.GetType()).Distinct();
-        var maps = entities.Select(t => t.Container).Distinct();
-        var first = entities.First();
-
-        var type = types.Count() == 1 ? types.First() : typeof(IMsbEntry);
-
-        if (CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
-        {
-            DisplayPropertyViewDecorations(selection, 0);
-        }
-
-        ImGui.Separator();
-        ImGui.Text("Properties");
-        ImGui.Separator();
-
-        var mapNames = string.Join(", ", maps.Select(map => map.Name));
-        ImGui.Text($"Map: {mapNames}");
-
-        ImGui.Columns(2);
-
-        ImGui.AlignTextToFramePadding();
-        {
-            ImGui.Text("Object Type");
-            ImGui.NextColumn();
-            ImGui.Text(type.Name);
-            ImGui.NextColumn();
-        }
-
-        if (CFG.Current.MapEditor_Enable_Property_Filter)
-        {
-            ImGui.Text("Property Filter");
-            ImGui.NextColumn();
-            // MSB Property Filter list
-            ImGui.SetNextItemWidth(-1);
-            if (ImGui.BeginCombo("##PropertyFilterList", SelectedMsbPropertyFilter))
-            {
-                foreach (var filter in MsbPropertyFilters)
-                {
-                    if (ImGui.Selectable(filter, filter == SelectedMsbPropertyFilter))
-                    {
-                        SelectedMsbPropertyFilter = filter;
-                        break;
-                    }
-                }
-
-                ImGui.EndCombo();
-            }
-            ImguiUtils.ShowHoverTooltip("Filter the property view, narrowing down what is visible.");
-            ImGui.NextColumn();
-        }
-
-        PropEditorEntryName(entities);
-
-        if (types.Count() > 1)
-        {
-            return;
-        }
-
-        ImGui.Separator();
-
-        PropEditorGeneric(selection, entities, entities.First().WrappedObject, classIndex: classIndex);
-
-        // Bottom Decoration
-        ImGui.Columns(1);
-        if (!CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
-        {
-            DisplayPropertyViewDecorations(selection, 0);
-        }
-    }
-
-    private void PropEditorGeneric(
-        ViewportSelection selection,
-        IEnumerable<Entity> entSelection,
-        object obj,
-        int classIndex = -1
-    )
+    private void PropEditorGeneric(ViewportSelection selection, HashSet<Entity> entSelection, object target = null,
+        bool decorate = true, int classIndex = -1)
     {
         var scale = Smithbox.GetUIScale();
         Entity firstEnt = entSelection.First();
+        var obj = target == null ? firstEnt.WrappedObject : target;
         Type type = obj.GetType();
 
         PropertyInfo[] properties = _propCache.GetCachedProperties(type);
+
+        var refID = 0; // ID for ImGui distinction
+
+        // Top Decoration
+        if (decorate)
+        {
+            if (CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
+            {
+                DisplayPropertyViewDecorations(entSelection, firstEnt, selection, refID);
+            }
+
+            ImGui.Separator();
+            ImGui.Text("Properties");
+            ImGui.Separator();
+
+            ImGui.Text($"Map: {firstEnt.Container.Name}");
+
+            ImGui.Columns(2);
+
+            ImGui.Text("Object Type");
+
+            if (CFG.Current.MapEditor_Enable_Property_Filter)
+            {
+                ImGui.Text("Property Filter");
+            }
+
+            ImGui.NextColumn();
+
+            ImGui.Text(type.Name);
+
+            if (CFG.Current.MapEditor_Enable_Property_Filter)
+            {
+                // MSB Property Filter list
+                ImGui.SetNextItemWidth(-1);
+                if (ImGui.BeginCombo("##PropertyFilterList", SelectedMsbPropertyFilter))
+                {
+                    foreach (var filter in MsbPropertyFilters)
+                    {
+                        if (ImGui.Selectable(filter, filter == SelectedMsbPropertyFilter))
+                        {
+                            SelectedMsbPropertyFilter = filter;
+                            break;
+                        }
+                    }
+
+                    ImGui.EndCombo();
+                }
+                ImguiUtils.ShowHoverTooltip("Filter the property view, narrowing down what is visible.");
+            }
+
+            ImGui.NextColumn();
+        }
 
         // Properties
         var id = 0;
@@ -1041,11 +958,11 @@ public class MapPropertyEditor
                 continue;
             }
 
-            // IMsbEntry.Name needs special handling to keep it unique
-            if (typeof(IMsbEntry).IsAssignableFrom(type) && prop.Name == "Name") continue;
-
             // Index Properties are hidden by default
-            if (prop.GetCustomAttribute<IndexProperty>() != null) continue;
+            if (prop.GetCustomAttribute<IndexProperty>() != null)
+            {
+                continue;
+            }
 
             if (SelectedMsbPropertyFilter == "Vital")
             {
@@ -1092,7 +1009,7 @@ public class MapPropertyEditor
                             ImGui.NextColumn();
                             if (classOpen)
                             {
-                                PropEditorGeneric(selection, entSelection, o, i);
+                                PropEditorGeneric(selection, entSelection, o, false, i);
                                 ImGui.TreePop();
                             }
                         }
@@ -1129,7 +1046,7 @@ public class MapPropertyEditor
                         ImGui.NextColumn();
                         if (open)
                         {
-                            PropEditorGeneric(selection, entSelection, o);
+                            PropEditorGeneric(selection, entSelection, o, false);
                             ImGui.TreePop();
                         }
 
@@ -1154,7 +1071,7 @@ public class MapPropertyEditor
                 var shapetype = Enum.Parse<RegionShape>(o.GetType().Name);
                 var shap = (int)shapetype;
 
-                if (entSelection.Count() == 1)
+                if (entSelection.Count == 1)
                 {
                     if (ImGui.Combo("##shapecombo", ref shap, _regionShapes, _regionShapes.Length))
                     {
@@ -1207,7 +1124,7 @@ public class MapPropertyEditor
                 ImGui.NextColumn();
                 if (open)
                 {
-                    PropEditorGeneric(selection, entSelection, o);
+                    PropEditorGeneric(selection, entSelection, o, false);
                     ImGui.TreePop();
                 }
 
@@ -1262,7 +1179,7 @@ public class MapPropertyEditor
                 ImGui.NextColumn();
                 if (open)
                 {
-                    PropEditorGeneric(selection, entSelection, o);
+                    PropEditorGeneric(selection, entSelection, o, false);
                     ImGui.TreePop();
                 }
 
@@ -1279,7 +1196,7 @@ public class MapPropertyEditor
                 ImGui.NextColumn();
                 if (open)
                 {
-                    PropEditorGeneric(selection, entSelection, o);
+                    PropEditorGeneric(selection, entSelection, o, false);
                     ImGui.TreePop();
                 }
 
@@ -1293,38 +1210,47 @@ public class MapPropertyEditor
 
             id++;
         }
+    
+        // Bottom Decoration
+        if(decorate)
+        {
+            ImGui.Columns(1);
 
-
+            if (!CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
+            {
+                DisplayPropertyViewDecorations(entSelection, firstEnt, selection, refID);
+            }
+        }
     }
 
-    private void DisplayPropertyViewDecorations(ViewportSelection selection, int refID)
+    private void DisplayPropertyViewDecorations(HashSet<Entity> entSelection, Entity firstEnt, ViewportSelection selection, int refID)
     {
-        var entSelection = selection.GetFilteredSelection<Entity>();
-        if (entSelection.Count != 1) return;
-
-        var firstEnt = entSelection.FirstOrDefault();
-        if (firstEnt.References is null) return;
-
-        if (CFG.Current.MapEditor_Enable_Property_Property_Class_Info)
+        if (entSelection.Count == 1)
         {
-            PropInfo_MapObjectType.Display(firstEnt);
-        }
-        if (CFG.Current.MapEditor_Enable_Property_Property_SpecialProperty_Info)
-        {
-            PropInfo_Region_Connection.Display(firstEnt);
-            PropInfo_Part_ConnectCollision.Display(firstEnt);
-        }
-        if (CFG.Current.MapEditor_Enable_Property_Property_ReferencesTo)
-        {
-            PropInfo_ReferencesTo.Display(firstEnt, _viewport, ref selection, ref refID);
-        }
-        if (CFG.Current.MapEditor_Enable_Property_Property_ReferencesBy)
-        {
-            PropInfo_ReferencedBy.Display(firstEnt, _viewport, ref selection, ref refID);
-        }
-        if (CFG.Current.MapEditor_Enable_Param_Quick_Links)
-        {
-            PropInfo_ParamJumps.Display(firstEnt, _viewport, ref selection, ref refID);
+            if (firstEnt.References != null)
+            {
+                if (CFG.Current.MapEditor_Enable_Property_Property_Class_Info)
+                {
+                    PropInfo_MapObjectType.Display(firstEnt);
+                }
+                if(CFG.Current.MapEditor_Enable_Property_Property_SpecialProperty_Info)
+                {
+                    PropInfo_Region_Connection.Display(firstEnt);
+                    PropInfo_Part_ConnectCollision.Display(firstEnt);
+                }
+                if (CFG.Current.MapEditor_Enable_Property_Property_ReferencesTo)
+                {
+                    PropInfo_ReferencesTo.Display(firstEnt, _viewport, ref selection, ref refID);
+                }
+                if (CFG.Current.MapEditor_Enable_Property_Property_ReferencesBy)
+                {
+                    PropInfo_ReferencedBy.Display(firstEnt, _viewport, ref selection, ref refID);
+                }
+                if (CFG.Current.MapEditor_Enable_Param_Quick_Links)
+                {
+                    PropInfo_ParamJumps.Display(firstEnt, _viewport, ref selection, ref refID);
+                }
+            }
         }
     }
 
@@ -1336,7 +1262,7 @@ public class MapPropertyEditor
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            if (_selected != null)
+            if(_selected != null)
             {
                 name = Smithbox.BankHandler.MSB_Info.GetReferenceName(classType.Name, name);
 
@@ -1397,7 +1323,7 @@ public class MapPropertyEditor
             if (desc != "")
             {
                 ImguiUtils.ShowHoverTooltip(desc);
-            }
+            }        
         }
     }
 
@@ -1419,23 +1345,34 @@ public class MapPropertyEditor
         if (entSelection.Count > 1)
         {
             Entity firstEnt = entSelection.First();
-            if (firstEnt.WrappedObject is Param.Row prow || firstEnt.WrappedObject is MergedParamRow)
+            if (entSelection.All(e => e.WrappedObject.GetType() == firstEnt.WrappedObject.GetType()))
             {
-                ImGui.Text("Cannot edit multiples of this object at once.");
+                if (firstEnt.WrappedObject is Param.Row prow || firstEnt.WrappedObject is MergedParamRow)
+                {
+                    ImGui.Text("Cannot edit multiples of this object at once.");
+                    ImGui.EndChild();
+                    ImGui.End();
+                    ImGui.PopStyleColor(2);
+                    return;
+                }
+
+                ImGui.TextColored(new Vector4(0.5f, 1.0f, 0.0f, 1.0f),
+                    " Editing Multiple Objects.\n Changes will be applied to all selected objects.");
+                ImGui.Separator();
+                ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_MultipleInput_Background);
+                ImGui.BeginChild("MSB_EditingMultipleObjsChild");
+                PropEditorGeneric(selection, entSelection);
+                ImGui.PopStyleColor();
+                ImGui.EndChild();
+            }
+            else
+            {
+                ImGui.Text("Not all selected objects are the same type.");
                 ImGui.EndChild();
                 ImGui.End();
                 ImGui.PopStyleColor(2);
                 return;
             }
-
-            ImGui.TextColored(new Vector4(0.5f, 1.0f, 0.0f, 1.0f),
-                " Editing Multiple Objects.\n Changes will be applied to all selected objects.");
-            ImGui.Separator();
-            ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_MultipleInput_Background);
-            ImGui.BeginChild("MSB_EditingMultipleObjsChild");
-            PropEditorSelectedEntities(selection);
-            ImGui.PopStyleColor();
-            ImGui.EndChild();
         }
         else if (entSelection.Any())
         {
@@ -1456,7 +1393,7 @@ public class MapPropertyEditor
             }
             else
             {
-                PropEditorSelectedEntities(selection);
+                PropEditorGeneric(selection, entSelection);
             }
         }
         else

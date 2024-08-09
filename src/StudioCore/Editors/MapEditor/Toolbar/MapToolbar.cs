@@ -34,6 +34,15 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         private IViewport _viewport;
 
+        // These are used by the Prefab actions
+        // Held here since they need to persist across all of them
+        public static string _prefabName;
+        public static string _prefabExt;
+        public static string _prefabDir;
+
+        public static string _newPrefabName;
+        public static string _prefabTags;
+
         public static List<PrefabInfo> _prefabInfos;
         public static PrefabInfo _selectedPrefabInfo;
         public static PrefabInfo _selectedPrefabInfoCache;
@@ -50,6 +59,11 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             _viewport = viewport;
 
+            _prefabName = "";
+            _prefabExt = ".json";
+            _prefabDir = "";
+            _newPrefabName = "";
+            _prefabTags = "";
             _comboTargetMap = comboTargetMap;
 
             MapEditorState.ActionManager = _actionManager;
@@ -77,6 +91,106 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             _selectedPrefabInfo = null;
             _selectedPrefabInfoCache = null;
             _comboTargetMap = ("", null);
+            _newPrefabName = "";
+            _prefabTags = "";
+
+            _prefabDir = $"{Smithbox.ProjectRoot}\\.smithbox\\{MiscLocator.GetGameIDForDir()}\\prefabs\\";
+
+            if (!Directory.Exists(_prefabDir))
+            {
+                try
+                {
+                    Directory.CreateDirectory(_prefabDir);
+                }
+                catch { }
+            }
+
+            RefreshPrefabList();
+        }
+
+        public static void RefreshPrefabList()
+        {
+            _prefabInfos = GetPrefabList();
+        }
+
+        public static List<PrefabInfo> GetPrefabList()
+        {
+            List<PrefabInfo> infoList = new();
+
+            if (Directory.Exists(_prefabDir))
+            {
+                string[] files = Directory.GetFiles(_prefabDir, "*.json", SearchOption.AllDirectories);
+                foreach (var file in files)
+                {
+                    var name = Path.GetFileNameWithoutExtension(file);
+                    PrefabInfo info = new PrefabInfo(name, file, GetPrefabTags(file));
+                    infoList.Add(info);
+                }
+            }
+
+            return infoList;
+        }
+
+        public static List<string> GetPrefabTags(string filepath)
+        {
+            var options = new JsonSerializerOptions
+            {
+                ReadCommentHandling = JsonCommentHandling.Skip,
+                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
+            };
+
+            List<string> tags = new List<string>();
+
+            switch (Smithbox.ProjectType)
+            {
+                case ProjectType.AC6:
+                    var prefab_AC6 = new Prefab_AC6();
+                    using (var stream = File.OpenRead(filepath))
+                        prefab_AC6 = JsonSerializer.Deserialize<Prefab_AC6>(File.OpenRead(filepath), options);
+
+                    tags = prefab_AC6.TagList;
+                    break;
+                case ProjectType.ER:
+                    var prefab_ER = new Prefab_ER();
+                    using (var stream = File.OpenRead(filepath))
+                        prefab_ER = JsonSerializer.Deserialize<Prefab_ER>(File.OpenRead(filepath), options);
+
+                    tags = prefab_ER.TagList;
+                    break;
+                case ProjectType.SDT:
+                    var prefab_SDT = new Prefab_SDT();
+                    using (var stream = File.OpenRead(filepath))
+                        prefab_SDT = JsonSerializer.Deserialize<Prefab_SDT>(File.OpenRead(filepath), options);
+
+                    tags = prefab_SDT.TagList;
+                    break;
+                case ProjectType.DS3:
+                    var prefab_DS3 = new Prefab_DS3();
+                    using (var stream = File.OpenRead(filepath))
+                        prefab_DS3 = JsonSerializer.Deserialize<Prefab_DS3>(File.OpenRead(filepath), options);
+
+                    tags = prefab_DS3.TagList;
+                    break;
+                case ProjectType.DS2:
+                case ProjectType.DS2S:
+                    var prefab_DS2 = new Prefab_DS2();
+                    using (var stream = File.OpenRead(filepath))
+                        prefab_DS2 = JsonSerializer.Deserialize<Prefab_DS2>(File.OpenRead(filepath), options);
+
+                    tags = prefab_DS2.TagList;
+                    break;
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                    var prefab_DS1 = new Prefab_DS1();
+                    using (var stream = File.OpenRead(filepath))
+                        prefab_DS1 = JsonSerializer.Deserialize<Prefab_DS1>(File.OpenRead(filepath), options);
+
+                    tags = prefab_DS1.TagList;
+                    break;
+                default: break;
+            }
+
+            return tags;
         }
     }
 }

@@ -434,11 +434,9 @@ public class CFG
 
     public bool Prefab_ApplyUniqueInstanceID = true;
     public bool Prefab_ApplyUniqueEntityID = false;
+    public bool Prefab_ApplySelfPartNames = true;
     public bool Prefab_ApplySpecificEntityGroupID = false;
     public int Prefab_SpecificEntityGroupID = 0;
-
-    public bool Prefab_ApplyOverrideName = false;
-    public string Prefab_OverrideName = "";
 
     public bool WorldMap_EnableFilterOnClick = true;
     public bool WorldMap_EnableLoadOnClick = false;
