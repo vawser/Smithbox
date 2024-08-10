@@ -23,6 +23,9 @@ public class ContextMenu
 
     public void ContainerMenu(bool isSelected, string key)
     {
+        // Enable once ready
+        return;
+        
         if (!isSelected)
             return;
 
@@ -34,6 +37,9 @@ public class ContextMenu
 
     public void TimeActMenu(bool isSelected, string key)
     {
+        // Enable once ready
+        return;
+
         if (!isSelected)
             return;
 
@@ -54,10 +60,11 @@ public class ContextMenu
         }
     }
 
-    private bool InAnimationPropertyMode = false;
-
     public void TimeActAnimationMenu(bool isSelected, string key)
     {
+        // Enable once ready
+        return;
+
         if (!isSelected)
             return;
 
@@ -80,6 +87,9 @@ public class ContextMenu
 
     public void TimeActEventMenu(bool isSelected, string key)
     {
+        // Enable once ready
+        return;
+
         if (!isSelected)
             return;
 
@@ -102,6 +112,9 @@ public class ContextMenu
 
     public void TimeActEventPropertiesMenu(bool isSelected, string key)
     {
+        // Enable once ready
+        return;
+
         if (!isSelected)
             return;
 

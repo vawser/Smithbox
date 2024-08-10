@@ -27,31 +27,31 @@ public class ToolSubMenu
 
     public void Shortcuts()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CreateParamGroup))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CreateParamPinGroup))
         {
             Screen.ToolWindow.PinGroupHandler.SetAutoGroupName("Param");
             Screen.ToolWindow.PinGroupHandler.CreateParamGroup();
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CreateRowGroup))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CreateRowPinGroup))
         {
             Screen.ToolWindow.PinGroupHandler.SetAutoGroupName("Row");
             Screen.ToolWindow.PinGroupHandler.CreateRowGroup();
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CreateFieldGroup))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CreateFieldPinGroup))
         {
             Screen.ToolWindow.PinGroupHandler.SetAutoGroupName("Field");
             Screen.ToolWindow.PinGroupHandler.CreateFieldGroup();
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearPinnedParams))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearCurrentPinnedParams))
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams = new();
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearPinnedRows))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearCurrentPinnedRows))
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows = new();
         }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearPinnedFields))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearCurrentPinnedFields))
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields = new();
         }

@@ -632,8 +632,8 @@ public class KeyBindings
             Key.G,
             true);
 
-        public KeyBind PARAM_Sort = new(
-            "Sort",
+        public KeyBind PARAM_SortRows = new(
+            "Sort Rows",
             "Sort the rows of the currently selected param",
             Key.Unknown);
 
@@ -705,33 +705,33 @@ public class KeyBindings
             true);
 
         // Pin Groups
-        public KeyBind PARAM_CreateParamGroup = new(
+        public KeyBind PARAM_CreateParamPinGroup = new(
             "Create Param Pin Group",
             "Create a new Param pin group from the currently pinned params.",
             Key.Unknown);
 
-        public KeyBind PARAM_CreateRowGroup = new(
+        public KeyBind PARAM_CreateRowPinGroup = new(
             "Create Row Pin Group",
             "Create a new Row pin group from the currently pinned rows.",
             Key.Unknown);
 
-        public KeyBind PARAM_CreateFieldGroup = new(
+        public KeyBind PARAM_CreateFieldPinGroup = new(
             "Create Field Pin Group",
             "Create a new Field pin group from the currently pinned fields.",
             Key.Unknown,
             true);
 
-        public KeyBind PARAM_ClearPinnedParams = new(
+        public KeyBind PARAM_ClearCurrentPinnedParams = new(
             "Clear Pinned Params",
             "Clear currently pinned params.",
             Key.Unknown);
 
-        public KeyBind PARAM_ClearPinnedRows = new(
+        public KeyBind PARAM_ClearCurrentPinnedRows = new(
             "Clear Pinned Rows",
             "Clear currently pinned Rows.",
             Key.Unknown);
 
-        public KeyBind PARAM_ClearPinnedFields = new(
+        public KeyBind PARAM_ClearCurrentPinnedFields = new(
             "Clear Pinned Fields",
             "Clear currently pinned Fields.",
             Key.Unknown);

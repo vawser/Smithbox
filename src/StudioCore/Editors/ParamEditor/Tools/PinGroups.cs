@@ -81,21 +81,21 @@ public class PinGroups
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams = new();
         }
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearPinnedParams.HintText}\nClear current pinned params.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedParams.HintText}\nClear current pinned params.");
 
         ImGui.SameLine();
         if (ImGui.Button("Clear Row Pins", thirdButtonSize))
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows = new();
         }
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearPinnedRows.HintText}\nClear current pinned rows.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedRows.HintText}\nClear current pinned rows.");
 
         ImGui.SameLine();
         if (ImGui.Button("Clear Field Pins", thirdButtonSize))
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields = new();
         }
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearPinnedFields.HintText}\nClear current pinned fields.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedFields.HintText}\nClear current pinned fields.");
 
 
         ImGui.Separator();
@@ -110,21 +110,21 @@ public class PinGroups
         {
             CreateParamGroup();
         }
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateParamGroup.HintText}\nCreate a new pin group from the current pinned params.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateParamPinGroup.HintText}\nCreate a new pin group from the current pinned params.");
 
         ImGui.SameLine();
         if (ImGui.Button("Create Row Group", thirdButtonSize))
         {
             CreateRowGroup();
         }
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateRowGroup.HintText}\nCreate a new pin group from the current pinned rows.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateRowPinGroup.HintText}\nCreate a new pin group from the current pinned rows.");
 
         ImGui.SameLine();
         if (ImGui.Button("Create Field Group", thirdButtonSize))
         {
             CreateFieldGroup();
         }
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateFieldGroup.HintText}\nCreate a new pin group from the current pinned fields.");
+        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateFieldPinGroup.HintText}\nCreate a new pin group from the current pinned fields.");
 
         ImGui.Separator();
         ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Group Lists");

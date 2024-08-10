@@ -574,9 +574,9 @@ public class ParamEditorKeybindTab
                 KeyBindings.Current.PARAM_GoToRowID,
                 KeyBindings.Default.PARAM_GoToRowID);
 
-            KeyBindings.Current.PARAM_Sort = InputTracker.KeybindLine(23,
-                KeyBindings.Current.PARAM_Sort,
-                KeyBindings.Default.PARAM_Sort);
+            KeyBindings.Current.PARAM_SortRows = InputTracker.KeybindLine(23,
+                KeyBindings.Current.PARAM_SortRows,
+                KeyBindings.Default.PARAM_SortRows);
 
             KeyBindings.Current.PARAM_CopyToClipboard = InputTracker.KeybindLine(3,
                 KeyBindings.Current.PARAM_CopyToClipboard,
@@ -634,29 +634,29 @@ public class ParamEditorKeybindTab
 
         if (ImGui.CollapsingHeader("Pin Groups", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            KeyBindings.Current.PARAM_CreateParamGroup = InputTracker.KeybindLine(13,
-                KeyBindings.Current.PARAM_CreateParamGroup,
-                KeyBindings.Default.PARAM_CreateParamGroup);
+            KeyBindings.Current.PARAM_CreateParamPinGroup = InputTracker.KeybindLine(13,
+                KeyBindings.Current.PARAM_CreateParamPinGroup,
+                KeyBindings.Default.PARAM_CreateParamPinGroup);
 
-            KeyBindings.Current.PARAM_CreateRowGroup = InputTracker.KeybindLine(14,
-                KeyBindings.Current.PARAM_CreateRowGroup,
-                KeyBindings.Default.PARAM_CreateRowGroup);
+            KeyBindings.Current.PARAM_CreateRowPinGroup = InputTracker.KeybindLine(14,
+                KeyBindings.Current.PARAM_CreateRowPinGroup,
+                KeyBindings.Default.PARAM_CreateRowPinGroup);
 
-            KeyBindings.Current.PARAM_CreateFieldGroup = InputTracker.KeybindLine(15,
-                KeyBindings.Current.PARAM_CreateFieldGroup,
-                KeyBindings.Default.PARAM_CreateFieldGroup);
+            KeyBindings.Current.PARAM_CreateFieldPinGroup = InputTracker.KeybindLine(15,
+                KeyBindings.Current.PARAM_CreateFieldPinGroup,
+                KeyBindings.Default.PARAM_CreateFieldPinGroup);
 
-            KeyBindings.Current.PARAM_ClearPinnedParams = InputTracker.KeybindLine(16,
-                KeyBindings.Current.PARAM_ClearPinnedParams,
-                KeyBindings.Default.PARAM_ClearPinnedParams);
+            KeyBindings.Current.PARAM_ClearCurrentPinnedParams = InputTracker.KeybindLine(16,
+                KeyBindings.Current.PARAM_ClearCurrentPinnedParams,
+                KeyBindings.Default.PARAM_ClearCurrentPinnedParams);
 
-            KeyBindings.Current.PARAM_ClearPinnedRows = InputTracker.KeybindLine(17,
-                KeyBindings.Current.PARAM_ClearPinnedRows,
-                KeyBindings.Default.PARAM_ClearPinnedRows);
+            KeyBindings.Current.PARAM_ClearCurrentPinnedRows = InputTracker.KeybindLine(17,
+                KeyBindings.Current.PARAM_ClearCurrentPinnedRows,
+                KeyBindings.Default.PARAM_ClearCurrentPinnedRows);
 
-            KeyBindings.Current.PARAM_ClearPinnedFields = InputTracker.KeybindLine(18,
-                KeyBindings.Current.PARAM_ClearPinnedFields,
-                KeyBindings.Default.PARAM_ClearPinnedFields);
+            KeyBindings.Current.PARAM_ClearCurrentPinnedFields = InputTracker.KeybindLine(18,
+                KeyBindings.Current.PARAM_ClearCurrentPinnedFields,
+                KeyBindings.Default.PARAM_ClearCurrentPinnedFields);
 
             KeyBindings.Current.PARAM_OnlyShowPinnedParams = InputTracker.KeybindLine(19,
                 KeyBindings.Current.PARAM_OnlyShowPinnedParams,

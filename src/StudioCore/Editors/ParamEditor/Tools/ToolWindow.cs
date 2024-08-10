@@ -39,7 +39,7 @@ public class ToolWindow
     {
         MassEditHandler.Shortcuts();
 
-        if(InputTracker.GetKeyDown(KeyBindings.Current.PARAM_Sort))
+        if(InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SortRows))
         {
             Handler.SortRowsHandler();
         }
