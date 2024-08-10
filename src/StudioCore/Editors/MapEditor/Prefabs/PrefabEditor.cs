@@ -39,14 +39,20 @@ public class PrefabEditor
 
     Prefab GetLoadedPrefab(string name)
     {
+        var prefabPath = $@"{prefabDir}\{name}.json";
         var loadedPrefab = loadedPrefabs.GetValueOrDefault(name);
 
         if (loadedPrefab is not null)
             return loadedPrefab;
 
         loadedPrefab = Prefab.New(Smithbox.ProjectType);
-        loadedPrefab.ImportJson($@"{prefabDir}\{name}.json");
-        loadedPrefabs[name] = loadedPrefab;
+
+        if (File.Exists(prefabPath))
+        {
+            loadedPrefab.ImportJson(prefabPath);
+            loadedPrefabs[name] = loadedPrefab;
+        }
+
         return loadedPrefab;
     }
 
@@ -335,6 +341,7 @@ public class PrefabEditor
             try { Directory.CreateDirectory(prefabDir); } catch { }
         }
 
+        if(Directory.Exists(prefabDir))
         {
             string[] files = Directory.GetFiles(prefabDir, "*.json", SearchOption.AllDirectories);
             foreach (var file in files)
