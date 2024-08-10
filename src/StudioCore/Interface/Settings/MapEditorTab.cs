@@ -74,6 +74,9 @@ public class MapEditorTab
         // Property View
         if (ImGui.CollapsingHeader("Properties"))
         {
+            ImGui.Checkbox("Enable complex rename", ref CFG.Current.MapEditor_Enable_Referenced_Rename);
+            ImguiUtils.ShowHoverTooltip("This option will allow renaming an object to also rename every reference to it, but will require a confirmation to apply a rename");
+
             ImGui.Checkbox("Display community names", ref CFG.Current.MapEditor_Enable_Commmunity_Names);
             ImguiUtils.ShowHoverTooltip("The MSB property fields will be given crowd-sourced names instead of the canonical name.");
 

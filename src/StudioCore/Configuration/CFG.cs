@@ -394,6 +394,7 @@ public class CFG
     public bool MapEditor_Enable_Map_Load_on_Double_Click = false;
     public bool MapEditor_Enable_Property_Filter = true;
     public bool MapEditor_Enable_Param_Quick_Links = true;
+    public bool MapEditor_Enable_Referenced_Rename = false;
 
     public bool MapEditor_Enable_Property_Property_TopDecoration = false;
     public bool MapEditor_Enable_Property_Property_Class_Info = true;
@@ -434,9 +435,11 @@ public class CFG
 
     public bool Prefab_ApplyUniqueInstanceID = true;
     public bool Prefab_ApplyUniqueEntityID = false;
-    public bool Prefab_ApplySelfPartNames = true;
     public bool Prefab_ApplySpecificEntityGroupID = false;
     public int Prefab_SpecificEntityGroupID = 0;
+
+    public bool Prefab_ApplyOverrideName = false;
+    public string Prefab_OverrideName = "";
 
     public bool WorldMap_EnableFilterOnClick = true;
     public bool WorldMap_EnableLoadOnClick = false;

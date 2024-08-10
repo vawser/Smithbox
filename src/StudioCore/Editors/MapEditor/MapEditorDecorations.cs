@@ -123,7 +123,7 @@ namespace StudioCore.Editors.MapEditor
             return false;
         }
 
-        public static bool MsbReferenceRow(PropertyInfo propInfo, object val, ref object newval, HashSet<Entity> entities)
+        public static bool MsbReferenceRow(PropertyInfo propInfo, object val, ref object newval, IEnumerable<Entity> entities)
         {
             var msbRef = propInfo.GetCustomAttribute<MSBReference>();
             if (msbRef == null) return false;

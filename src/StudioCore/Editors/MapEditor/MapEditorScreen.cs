@@ -68,6 +68,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public DisplayGroupEditor DispGroupEditor;
     public MapAssetSelectionView MapAssetSelectionView;
     public SelectionGroupView SelectionGroupEditor;
+    public PrefabEditor PrefabEditor;
     private LightmapAtlasScreen LightmapAtlasEditor;
 
     public MapToolbar _mapToolbar;
@@ -127,6 +128,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport);
 
         SelectionGroupEditor = new SelectionGroupView(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
+        PrefabEditor = new() { universe = Universe, scene = RenderScene, actionManager = EditorActionManager };
 
         _mapToolbar = new MapToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _comboTargetMap);
         _mapToolbar_ActionList = new MapToolbar_ActionList();
@@ -843,14 +845,14 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ExportPrefab))
             {
-                MapAction_ExportPrefab.AssignUniquePrefabName(_selection);
-                MapAction_ExportPrefab.ExportCurrentSelection(_selection);
+                // MapAction_ExportPrefab.AssignUniquePrefabName(_selection);
+                // MapAction_ExportPrefab.ExportCurrentSelection(_selection);
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ImportPrefab))
             {
                 if (MapToolbar._selectedPrefabInfo != null)
                 {
-                    MapAction_ImportPrefab.ImportSelectedPrefab();
+                    // MapAction_ImportPrefab.ImportSelectedPrefab();
                 }
                 else
                 {
@@ -1034,7 +1036,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             NavMeshEditor.OnGui();
         }
 
-        if(LightmapAtlasEditor != null)
+        if (LightmapAtlasEditor != null)
         {
             LightmapAtlasEditor.OnGui();
         }
@@ -1052,6 +1054,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         {
             SelectionGroupEditor.OnGui();
         }
+        PrefabEditor.OnGui();
 
         if (CFG.Current.Interface_MapEditor_Toolbar)
         {
@@ -1107,6 +1110,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             MapAssetSelectionView.OnProjectChanged();
             SceneTree.OnProjectChanged();
             GranularRegionHandler.OnProjectChanged();
+            PrefabEditor.OnProjectChanged();
         }
 
         _mapToolbar.OnProjectChanged();

@@ -1,4 +1,6 @@
-﻿using Silk.NET.SDL;
+﻿using DotNext.Collections.Generic;
+using Microsoft.Extensions.Logging;
+using Silk.NET.SDL;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -6,7 +8,9 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor
@@ -439,11 +443,11 @@ namespace StudioCore.Editors.MapEditor
 
                 uint[] newEntityGroupIDs = new uint[part.EntityGroupIDs.Length];
 
-                for(int i = 0; i < part.EntityGroupIDs.Length; i++)
+                for (int i = 0; i < part.EntityGroupIDs.Length; i++)
                 {
                     newEntityGroupIDs[i] = part.EntityGroupIDs[i];
 
-                    if(!added && part.EntityGroupIDs[i] == 0)
+                    if (!added && part.EntityGroupIDs[i] == 0)
                     {
                         added = true;
                         newEntityGroupIDs[i] = newID;
@@ -474,7 +478,7 @@ namespace StudioCore.Editors.MapEditor
 
                 part.EntityGroupIDs = newEntityGroupIDs;
             }
-            else if(Smithbox.ProjectType == ProjectType.DS3)
+            else if (Smithbox.ProjectType == ProjectType.DS3)
             {
                 var newID = CFG.Current.Prefab_SpecificEntityGroupID;
                 var added = false;
@@ -605,6 +609,95 @@ namespace StudioCore.Editors.MapEditor
                 }
 
                 part.EntityGroupIDs = newEntityGroupIDs;
+            }
+        }
+
+        static Regex WithIndex = new Regex(@"^(.+)_(\d+)$");
+        public static void SetNameHandleDuplicate(MapContainer map, IEnumerable<MsbEntity> entities, MsbEntity target, string name)
+        {
+            var baseName = name;
+            string instanceId = null;
+            if (map.GetObjectByName(baseName) is not null)
+            {
+                var match = WithIndex.Match(baseName);
+                if (match.Success)
+                    baseName = match.Groups[1].Value;
+                if (target.WrappedObject.GetType().GetProperty("InstanceID") is PropertyInfo prop)
+                    instanceId = $"{prop.GetValue(target.WrappedObject)}";
+            }
+
+            var newName = baseName;
+            if (instanceId is not null)
+                newName += $"_{instanceId}";
+
+            if (map.GetObjectByName(newName) is not null)
+            {
+                int count = 2;
+                do
+                {
+                    newName = $"{baseName}_{count}";
+                    if (instanceId is not null)
+                        newName += $"_{instanceId}";
+                    count += 1;
+                }
+                while (map.GetObjectByName(newName) is not null || entities.Any(ent => ent.Name == newName));
+            }
+            MsbUtils.RenameWithRefs(
+                entities.Select(ent => ent.WrappedObject as IMsbEntry),
+                target.WrappedObject as IMsbEntry,
+                newName
+            );
+            target.Name = newName;
+        }
+
+        public static void RenameDuplicates(MapContainer map, IEnumerable<MsbEntity> entities, MsbEntity target)
+        {
+            if (map.GetObjectByName(target.Name) is not null)
+            {
+                SetNameHandleDuplicate(map, entities, target, target.Name);
+            }
+        }
+
+        public static void AddObjectToMap(MapContainer map, MsbEntity entity, int? maybeIndex = null, Entity parent = null)
+        {
+            if (map.GetObjectByName(entity.Name) is not null)
+            {
+                TaskLogs.AddLog($"Could not add entity {entity.Name}: there's already an entity of that name", LogLevel.Error);
+                return;
+            }
+
+            entity.Container = map;
+            entity.UpdateRenderModel();
+            if (entity.RenderSceneMesh is not null)
+            {
+                entity.RenderSceneMesh.SetSelectable(entity);
+                entity.RenderSceneMesh.AutoRegister = true;
+                entity.RenderSceneMesh.Register();
+            }
+
+            if (maybeIndex is int index)
+            {
+                map.Objects.Insert(index, entity);
+            }
+            else
+            {
+                map.Objects.Add(entity);
+            }
+
+            parent ??= map.MapOffsetNode ?? map.RootObject;
+            parent.AddChild(entity);
+            map.HasUnsavedChanges = true;
+        }
+
+        public static void RemoveObjectFromMap(MsbEntity target)
+        {
+            target.Container.Objects.Remove(target);
+            target.Parent?.RemoveChild(target);
+
+            if (target.RenderSceneMesh != null)
+            {
+                target.RenderSceneMesh.AutoRegister = false;
+                target.RenderSceneMesh.UnregisterWithScene();
             }
         }
     }

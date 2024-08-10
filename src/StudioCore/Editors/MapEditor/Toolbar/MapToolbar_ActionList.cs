@@ -81,11 +81,6 @@ public class MapToolbar_ActionList
         MapAction_Replicate.Select(_selection);
         MapAction_Order.Select(_selection);
 
-        // Prefabs
-        //MapAction_EditPrefab.Select(_selection);
-        MapAction_ImportPrefab.Select(_selection);
-        MapAction_ExportPrefab.Select(_selection);
-
         // Global
         MapAction_Create.Select(_selection);
         MapAction_AssignEntityGroupID.Select(_selection);
