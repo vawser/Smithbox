@@ -304,27 +304,27 @@ public class TimeActEndAnimHeaderPropertyChange : EditorAction
 
 public class TimeActEndAnimIDPropertyChange : EditorAction
 {
-    private TAE.Animation Event;
+    private TAE.Animation Animation;
     private object OldValue;
     private object NewValue;
 
     public TimeActEndAnimIDPropertyChange(TAE.Animation entry, object oldValue, object newValue)
     {
-        Event = entry;
+        Animation = entry;
         OldValue = oldValue;
         NewValue = newValue;
     }
 
     public override ActionEvent Execute()
     {
-        Event.ID = (long)NewValue;
+        Animation.ID = (long)NewValue;
 
         return ActionEvent.NoEvent;
     }
 
     public override ActionEvent Undo()
     {
-        Event.ID = (long)OldValue;
+        Animation.ID = (long)OldValue;
 
         return ActionEvent.NoEvent;
     }
@@ -332,27 +332,27 @@ public class TimeActEndAnimIDPropertyChange : EditorAction
 
 public class TimeActEndAnimNamePropertyChange : EditorAction
 {
-    private TAE.Animation Event;
+    private TAE.Animation Animation;
     private object OldValue;
     private object NewValue;
 
     public TimeActEndAnimNamePropertyChange(TAE.Animation entry, object oldValue, object newValue)
     {
-        Event = entry;
+        Animation = entry;
         OldValue = oldValue;
         NewValue = newValue;
     }
 
     public override ActionEvent Execute()
     {
-        Event.AnimFileName = (string)NewValue;
+        Animation.AnimFileName = (string)NewValue;
 
         return ActionEvent.NoEvent;
     }
 
     public override ActionEvent Undo()
     {
-        Event.AnimFileName = (string)OldValue;
+        Animation.AnimFileName = (string)OldValue;
 
         return ActionEvent.NoEvent;
     }

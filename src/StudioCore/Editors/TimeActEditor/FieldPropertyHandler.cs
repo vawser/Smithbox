@@ -12,11 +12,9 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using static Silk.NET.Core.Native.WinString;
 using static SoulsFormats.DRB;
 using static SoulsFormats.TAE;
 using static SoulsFormats.TAE.Animation;
-using static StudioCore.Editors.GparamEditor.GparamEditorActions;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -48,7 +46,8 @@ public class FieldPropertyHandler
             if (ImGui.Button("Switch to Import", buttonSize))
             {
                 var tempHeaderOld = tempHeader.Clone();
-                var newHeader = new AnimMiniHeader.ImportOtherAnim();
+                var newHeader = new AnimMiniHeader();
+                newHeader.Type = MiniHeaderType.ImportOtherAnim;
                 newHeader.ImportFromAnimID = tempHeader.ImportFromAnimID;
                 newHeader.Unknown = tempHeader.Unknown;
 
@@ -61,7 +60,8 @@ public class FieldPropertyHandler
             if (ImGui.Button("Switch to Standard", buttonSize))
             {
                 var tempHeaderOld = tempHeader.Clone();
-                var newHeader = new AnimMiniHeader.Standard();
+                var newHeader = new AnimMiniHeader();
+                newHeader.Type = MiniHeaderType.Standard;
                 newHeader.IsLoopByDefault = tempHeader.IsLoopByDefault;
                 newHeader.ImportsHKX = tempHeader.ImportsHKX;
                 newHeader.AllowDelayLoad = tempHeader.AllowDelayLoad;
@@ -87,6 +87,9 @@ public class FieldPropertyHandler
         {
             var action = new TimeActEndAnimIDPropertyChange(anim, anim.ID, newValue);
             EditorActionManager.ExecuteAction(action);
+
+            // Re-select row at new index
+            TimeActUtils.SelectNewAnimation(anim);
         }
 
         changed = false;
@@ -105,13 +108,15 @@ public class FieldPropertyHandler
             // Header
             if (anim.MiniHeader.Type == MiniHeaderType.Standard)
             {
+                // Standard
                 (changed, newValue) = HandleProperty("IsLoopByDefault", tempHeader.IsLoopByDefault, TAE.Template.ParamType.b);
                 if (changed)
                 {
                     var tempHeaderOld = tempHeader.Clone();
                     tempHeader.IsLoopByDefault = (bool)newValue;
 
-                    var newHeader = new AnimMiniHeader.Standard();
+                    var newHeader = new AnimMiniHeader();
+                    newHeader.Type = MiniHeaderType.Standard;
 
                     newHeader.IsLoopByDefault = (bool)newValue;
                     newHeader.ImportsHKX = tempHeader.ImportsHKX;
@@ -130,7 +135,9 @@ public class FieldPropertyHandler
                     var tempHeaderOld = tempHeader.Clone();
                     tempHeader.AllowDelayLoad = (bool)newValue;
 
-                    var newHeader = new AnimMiniHeader.Standard();
+                    var newHeader = new AnimMiniHeader();
+                    newHeader.Type = MiniHeaderType.Standard;
+
                     newHeader.IsLoopByDefault = tempHeader.IsLoopByDefault;
                     newHeader.ImportsHKX = tempHeader.ImportsHKX;
                     newHeader.AllowDelayLoad = (bool)newValue;
@@ -149,7 +156,8 @@ public class FieldPropertyHandler
                     var tempHeaderOld = tempHeader.Clone();
                     tempHeader.ImportsHKX = (bool)newValue;
 
-                    var newHeader = new AnimMiniHeader.Standard();
+                    var newHeader = new AnimMiniHeader();
+                    newHeader.Type = MiniHeaderType.Standard;
 
                     newHeader.IsLoopByDefault = tempHeader.IsLoopByDefault;
                     newHeader.ImportsHKX = (bool)newValue;
@@ -168,7 +176,8 @@ public class FieldPropertyHandler
                     var tempHeaderOld = tempHeader.Clone();
                     tempHeader.ImportHKXSourceAnimID = (int)newValue;
 
-                    var newHeader = new AnimMiniHeader.Standard();
+                    var newHeader = new AnimMiniHeader();
+                    newHeader.Type = MiniHeaderType.Standard;
 
                     newHeader.IsLoopByDefault = tempHeader.IsLoopByDefault;
                     newHeader.ImportsHKX = tempHeader.ImportsHKX;
@@ -180,6 +189,7 @@ public class FieldPropertyHandler
                 }
             }
 
+            // Import
             if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
             {
                 (changed, newValue) = HandleProperty("ImportFromAnimID", tempHeader.ImportFromAnimID, TAE.Template.ParamType.s32);
@@ -188,7 +198,9 @@ public class FieldPropertyHandler
                     var tempHeaderOld = tempHeader.Clone();
                     tempHeader.ImportFromAnimID = (int)newValue;
 
-                    var newHeader = new AnimMiniHeader.ImportOtherAnim();
+                    var newHeader = new AnimMiniHeader();
+                    newHeader.Type = MiniHeaderType.ImportOtherAnim;
+
                     newHeader.ImportFromAnimID = (int)newValue;
                     newHeader.Unknown = tempHeader.Unknown;
 

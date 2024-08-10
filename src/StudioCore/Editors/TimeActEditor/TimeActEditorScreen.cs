@@ -466,23 +466,21 @@ public class TimeActEditorScreen : EditorScreen
 
             if(anim.MiniHeader.Type is MiniHeaderType.Standard)
             {
-                var standardHeader = anim.MiniHeader as Standard;
-                SelectionHandler.CurrentTemporaryAnimHeader.IsLoopByDefault = standardHeader.IsLoopByDefault;
-                SelectionHandler.CurrentTemporaryAnimHeader.ImportsHKX = standardHeader.ImportsHKX;
-                SelectionHandler.CurrentTemporaryAnimHeader.AllowDelayLoad = standardHeader.AllowDelayLoad;
-                SelectionHandler.CurrentTemporaryAnimHeader.ImportHKXSourceAnimID = standardHeader.ImportHKXSourceAnimID;
+                SelectionHandler.CurrentTemporaryAnimHeader.IsLoopByDefault = anim.MiniHeader.IsLoopByDefault;
+                SelectionHandler.CurrentTemporaryAnimHeader.ImportsHKX = anim.MiniHeader.ImportsHKX;
+                SelectionHandler.CurrentTemporaryAnimHeader.AllowDelayLoad = anim.MiniHeader.AllowDelayLoad;
+                SelectionHandler.CurrentTemporaryAnimHeader.ImportHKXSourceAnimID = anim.MiniHeader.ImportHKXSourceAnimID;
                 SelectionHandler.CurrentTemporaryAnimHeader.ImportFromAnimID = 0;
                 SelectionHandler.CurrentTemporaryAnimHeader.Unknown = -1;
             }
             if (anim.MiniHeader.Type is MiniHeaderType.ImportOtherAnim)
             {
-                var importHeader = anim.MiniHeader as ImportOtherAnim;
                 SelectionHandler.CurrentTemporaryAnimHeader.IsLoopByDefault = false;
                 SelectionHandler.CurrentTemporaryAnimHeader.ImportsHKX = false;
                 SelectionHandler.CurrentTemporaryAnimHeader.AllowDelayLoad = false;
                 SelectionHandler.CurrentTemporaryAnimHeader.ImportHKXSourceAnimID = 0;
-                SelectionHandler.CurrentTemporaryAnimHeader.ImportFromAnimID = importHeader.ImportFromAnimID;
-                SelectionHandler.CurrentTemporaryAnimHeader.Unknown = importHeader.Unknown;
+                SelectionHandler.CurrentTemporaryAnimHeader.ImportFromAnimID = anim.MiniHeader.ImportFromAnimID;
+                SelectionHandler.CurrentTemporaryAnimHeader.Unknown = anim.MiniHeader.Unknown;
             }
         }
 

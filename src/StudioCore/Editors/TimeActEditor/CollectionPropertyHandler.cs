@@ -1,10 +1,13 @@
-﻿using StudioCore.Editor;
+﻿using DotNext.Collections.Generic;
+using SoulsFormats;
+using StudioCore.Editor;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SoulsFormats.DRB;
 using static StudioCore.Editors.TimeActEditor.AnimationBank;
 
 namespace StudioCore.Editors.TimeActEditor;
@@ -87,9 +90,90 @@ public class CollectionPropertyHandler
 
     public void DuplicateAnimation()
     {
+        if (SelectionHandler.CurrentTimeActAnimation == null)
+            return;
 
+        if (SelectionHandler.CurrentTimeActAnimationIndex == -1)
+            return;
+
+        var multiselect = SelectionHandler.TimeActAnimationMultiselect;
+
+        List<TAE.Animation> targetAnims = new();
+
+        for(int i = 0; i < SelectionHandler.CurrentTimeAct.Animations.Count; i++)
+        {
+            var targetAnim = SelectionHandler.CurrentTimeAct.Animations[i];
+            if(multiselect._storedIndices.Contains(i))
+            {
+                targetAnims.Add(targetAnim);
+            }
+        }
+
+        List<TAE.Animation> newAnims = new();
+
+        foreach (var anim in targetAnims)
+        {
+            var curID = anim.ID;
+            var curHeader = anim.MiniHeader.GetClone();
+            var curName = anim.AnimFileName;
+            List<TAE.EventGroup> newEventGroups = new();
+            foreach (var eventGrp in anim.EventGroups)
+            {
+                newEventGroups.Add(eventGrp.GetClone());
+            }
+            List<TAE.Event> newEvents = new();
+            foreach (var evt in anim.Events)
+            {
+                newEvents.Add(evt.GetClone(false));
+            }
+
+            long newID = 0;
+            int insertIdx = 0;
+            (newID, insertIdx) = GetNewAnimationID(curID);
+
+            var newAnimation = new TAE.Animation(newID, curHeader, curName);
+            newAnimation.EventGroups = newEventGroups;
+            newAnimation.Events = newEvents;
+
+            SelectionHandler.CurrentTimeAct.Animations.Insert(insertIdx, newAnimation);
+
+            newAnims.Add(newAnimation);
+        }
+
+        // Re-select last row at new index
+        TimeActUtils.SelectNewAnimation(newAnims.Last());
     }
+
     public void DeleteAnimation()
+    {
+        if (SelectionHandler.CurrentTimeActAnimation == null)
+            return;
+
+        if (SelectionHandler.CurrentTimeActAnimationIndex == -1)
+            return;
+
+        var multiselect = SelectionHandler.TimeActAnimationMultiselect;
+
+        List<TAE.Animation> targetAnims = new();
+
+        for (int i = 0; i < SelectionHandler.CurrentTimeAct.Animations.Count; i++)
+        {
+            var targetAnim = SelectionHandler.CurrentTimeAct.Animations[i];
+            if (multiselect._storedIndices.Contains(i))
+            {
+                targetAnims.Add(targetAnim);
+            }
+        }
+
+        foreach (var anim in targetAnims)
+        {
+            SelectionHandler.CurrentTimeAct.Animations.Remove(anim);
+        }
+
+        SelectionHandler.CurrentTimeAct.Animations.Sort();
+        SelectionHandler.ResetOnTimeActAnimationChange();
+    }
+    public void CreateEvent()
     {
 
     }
@@ -124,7 +208,6 @@ public class CollectionPropertyHandler
     }
 
     // Utility
-
     public (int, string) GetNewFileName(int id)
     {
         var trackedId = id;
@@ -169,5 +252,25 @@ public class CollectionPropertyHandler
         }
 
         return newID;
+    }
+
+    public (long, int) GetNewAnimationID(long id)
+    {
+        long newID = id + 1;
+        int insertIdx = 0;
+
+        // If there are matches, keep incrementing
+        for (int i = 0; i < SelectionHandler.CurrentTimeAct.Animations.Count; i++)
+        {
+            var anim = SelectionHandler.CurrentTimeAct.Animations[i];
+
+            if (anim.ID == newID)
+            {
+                insertIdx = i;
+                newID = newID + 1;
+            }
+        }
+
+        return (newID, insertIdx);
     }
 }

@@ -189,4 +189,23 @@ public static class TimeActUtils
                 break;
         }
     }
+
+    public static void SelectNewAnimation(TAE.Animation existingAnim)
+    {
+        var handler = Smithbox.EditorHandler.TimeActEditor.SelectionHandler;
+        handler.TimeActAnimationMultiselect._storedIndices.Clear();
+
+        handler.CurrentTimeAct.Animations.Sort();
+        for (int i = 0; i < handler.CurrentTimeAct.Animations.Count; i++)
+        {
+            var serAnim = handler.CurrentTimeAct.Animations[i];
+            if (serAnim.ID == existingAnim.ID)
+            {
+                handler.CurrentTimeActAnimation = serAnim;
+                handler.CurrentTimeActAnimationIndex = i;
+                handler.TimeActAnimationMultiselect._storedIndices.Add(i);
+                break;
+            }
+        }
+    }
 }

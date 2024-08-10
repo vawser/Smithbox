@@ -44,7 +44,7 @@ public class Multiselect
 
             for (int k = start; k <= end; k++)
             {
-                if (_storedIndices.Contains(k))
+                if (_storedIndices.Contains(k) && _storedIndices.Count > 1)
                 {
                     _storedIndices.Remove(k);
                 }
@@ -57,7 +57,7 @@ public class Multiselect
         // Multi-Select Mode
         else if (InputTracker.GetKey(KeyBindings.Current.TIMEACT_Multiselect))
         {
-            if (_storedIndices.Contains(currentIndex))
+            if (_storedIndices.Contains(currentIndex) && _storedIndices.Count > 1)
             {
                 _storedIndices.Remove(currentIndex);
             }
@@ -69,7 +69,7 @@ public class Multiselect
         // Reset Multi-Selection if normal selection occurs
         else
         {
-            _storedIndices = new List<int>();
+            _storedIndices = new List<int>() { currentIndex };
         }
     }
 }
