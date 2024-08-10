@@ -9,11 +9,13 @@ public class ToolWindow
 {
     private TimeActEditorScreen Screen;
     public ActionHandler Handler;
+    public TimeActSearch TimeActSearch;
 
     public ToolWindow(TimeActEditorScreen screen, ActionHandler handler)
     {
         Screen = screen;
         Handler = handler;
+        TimeActSearch = new TimeActSearch(Screen, Handler);
     }
 
     public void OnProjectChanged()
@@ -32,9 +34,11 @@ public class ToolWindow
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TimeActEditor"))
         {
             var windowWidth = ImGui.GetWindowWidth();
-            var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-            var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
 
+            if(ImGui.CollapsingHeader("Search for Value"))
+            {
+                TimeActSearch.Display();
+            }
         }
 
         ImGui.End();

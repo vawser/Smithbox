@@ -175,27 +175,48 @@ public class CollectionPropertyHandler
     }
     public void CreateEvent()
     {
+        if (SelectionHandler.CurrentTimeActEvent == null)
+            return;
+
+        if (SelectionHandler.CurrentTimeActEventIndex == -1)
+            return;
 
     }
 
     public void DuplicateEvent()
     {
+        if (SelectionHandler.CurrentTimeActEvent == null)
+            return;
 
+        if (SelectionHandler.CurrentTimeActEventIndex == -1)
+            return;
     }
 
     public void DeleteEvent()
     {
+        if (SelectionHandler.CurrentTimeActEvent == null)
+            return;
 
+        if (SelectionHandler.CurrentTimeActEventIndex == -1)
+            return;
     }
 
     public void OrderAnimation()
     {
+        if (SelectionHandler.CurrentTimeActAnimation == null)
+            return;
 
+        if (SelectionHandler.CurrentTimeActAnimationIndex == -1)
+            return;
     }
 
     public void OrderEvent()
     {
+        if (SelectionHandler.CurrentTimeActEvent == null)
+            return;
 
+        if (SelectionHandler.CurrentTimeActEventIndex == -1)
+            return;
     }
 
     public enum OrderType

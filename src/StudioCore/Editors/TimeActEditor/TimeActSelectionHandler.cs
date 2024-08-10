@@ -29,7 +29,6 @@ public class TimeActSelectionHandler
 
     public TAE CurrentTimeAct;
     public int CurrentTimeActKey;
-    public int CurrentTimeActIndex = -1;
 
     public TAE.Animation CurrentTimeActAnimation;
     public TemporaryAnimHeader CurrentTemporaryAnimHeader;
@@ -82,6 +81,11 @@ public class TimeActSelectionHandler
     }
 
     public void OnProjectChanged()
+    {
+        ResetSelection();
+    }
+
+    public void ResetSelection()
     {
         ContainerIndex = -1;
         ContainerKey = null;

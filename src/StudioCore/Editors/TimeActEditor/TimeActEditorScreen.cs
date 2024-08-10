@@ -211,18 +211,109 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
     }
 
+    private bool FocusContainer = false;
+    private bool FocusTimeAct = false;
+    private bool FocusAnimation = false;
+    private bool FocusEvent = false;
+
     // Respond to EditorQueue commands
     public void TimeActCommandLine(string[] initcmd)
     {
         if (initcmd != null && initcmd.Length > 2)
         {
-            if (initcmd[0] == "load")
+            if (initcmd[0] == "select")
             {
-                var file = initcmd[1];
-                var taeName = initcmd[2];
-                var animationID = initcmd[3];
+                SelectionHandler.ResetSelection();
 
-                // TODO
+                var containerType = initcmd[1];
+                var containerIndex = initcmd[2];
+
+                if (containerType == "chr")
+                {
+                    for (int i = 0; i < AnimationBank.FileChrBank.Count; i++)
+                    {
+                        var container = AnimationBank.FileChrBank.ElementAt(i);
+                        var index = int.Parse(containerIndex);
+
+                        if (i == index)
+                        {
+                            SelectionHandler.ContainerIndex = index;
+                            SelectionHandler.ContainerKey = container.Key.Name;
+                            SelectionHandler.ContainerInfo = container.Key;
+                            SelectionHandler.ContainerBinder = container.Value;
+                            FocusContainer = true;
+                        }
+                    }
+                }
+
+                if (containerType == "obj")
+                {
+                    for (int i = 0; i < AnimationBank.FileObjBank.Count; i++)
+                    {
+                        var container = AnimationBank.FileObjBank.ElementAt(i);
+                        var index = int.Parse(containerIndex);
+
+                        if (i == index)
+                        {
+                            SelectionHandler.ContainerIndex = index;
+                            SelectionHandler.ContainerKey = container.Key.Name;
+                            SelectionHandler.ContainerInfo = container.Key;
+                            SelectionHandler.ContainerBinder = container.Value;
+                            FocusContainer = true;
+                        }
+                    }
+                }
+
+                if (initcmd.Length > 3)
+                {
+                    var timeActIndex = initcmd[3];
+                    var index = int.Parse(timeActIndex);
+
+                    for (int i = 0; i < SelectionHandler.ContainerInfo.InternalFiles.Count; i++)
+                    {
+                        if(i == index)
+                        {
+                            SelectionHandler.CurrentTimeActKey = i;
+                            SelectionHandler.CurrentTimeAct = SelectionHandler.ContainerInfo.InternalFiles[i].TAE;
+                            SelectionHandler.TimeActMultiselect._storedIndices.Add(i);
+                            FocusTimeAct = true;
+                        }
+                    }
+                }
+
+                if (initcmd.Length > 4)
+                {
+                    var animationIndex = initcmd[4];
+                    var index = int.Parse(animationIndex);
+
+                    for (int i = 0; i < SelectionHandler.CurrentTimeAct.Animations.Count; i++)
+                    {
+                        if (i == index)
+                        {
+                            SelectionHandler.CurrentTimeActAnimationIndex = i;
+                            SelectionHandler.CurrentTimeActAnimation = SelectionHandler.CurrentTimeAct.Animations[i];
+                            SelectionHandler.TimeActAnimationMultiselect._storedIndices.Add(i);
+                            FocusAnimation = true;
+                        }
+                    }
+                }
+
+                if (initcmd.Length > 5)
+                {
+                    var eventIndex = initcmd[5];
+                    var index = int.Parse(eventIndex);
+
+                    for (int i = 0; i < SelectionHandler.CurrentTimeActAnimation.Events.Count; i++)
+                    {
+                        if (i == index)
+                        {
+                            SelectionHandler.CurrentTimeActEventIndex = i;
+                            SelectionHandler.CurrentTimeActEvent = SelectionHandler.CurrentTimeActAnimation.Events[i];
+                            SelectionHandler.TimeActEventMultiselect._storedIndices.Add(i);
+                            FocusEvent = true;
+                        }
+                    }
+                }
             }
         }
     }
@@ -305,6 +396,13 @@ public class TimeActEditorScreen : EditorScreen
                     TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Character);
 
                     SelectionHandler.ContextMenu.ContainerMenu(isSelected, info.Name);
+
+                    if(FocusContainer)
+                    {
+                        FocusContainer = false;
+
+                        ImGui.SetScrollHereY();
+                    }
                 }
             }
         }
@@ -333,6 +431,13 @@ public class TimeActEditorScreen : EditorScreen
                     TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Asset);
 
                     SelectionHandler.ContextMenu.ContainerMenu(isSelected, info.Name);
+
+                    if (FocusContainer)
+                    {
+                        FocusContainer = false;
+
+                        ImGui.SetScrollHereY();
+                    }
                 }
             }
         }
@@ -386,6 +491,13 @@ public class TimeActEditorScreen : EditorScreen
                     TimeActUtils.DisplayTimeActAlias(SelectionHandler.ContainerInfo, entry.ID);
 
                 SelectionHandler.ContextMenu.TimeActMenu(isSelected, entry.ID.ToString());
+
+                if (FocusTimeAct)
+                {
+                    FocusTimeAct = false;
+
+                    ImGui.SetScrollHereY();
+                }
             }
 
         }
@@ -439,6 +551,13 @@ public class TimeActEditorScreen : EditorScreen
                     TimeActUtils.DisplayAnimationAlias(SelectionHandler, entry.ID);
 
                 SelectionHandler.ContextMenu.TimeActAnimationMenu(isSelected, entry.ID.ToString());
+
+                if (FocusAnimation)
+                {
+                    FocusAnimation = false;
+
+                    ImGui.SetScrollHereY();
+                }
             }
         }
         ImGui.EndChild();
@@ -662,6 +781,13 @@ public class TimeActEditorScreen : EditorScreen
                     Decorator.DisplayProjectEnumInfo(evt);
 
                 SelectionHandler.ContextMenu.TimeActEventMenu(isSelected, i.ToString());
+
+                if (FocusEvent)
+                {
+                    FocusEvent = false;
+
+                    ImGui.SetScrollHereY();
+                }
             }
         }
         ImGui.EndChild();
