@@ -3,7 +3,6 @@ using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
 using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Banks.ProjectEnumBank;
-using StudioCore.Banks.SelectionGroupBank;
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Banks.TextureCorrectionBank;
@@ -55,7 +54,6 @@ public class BankHandler
     public TextureBlockBank BlockedTextureInfo;
 
     public GameOffsetBank GameOffsets;
-    public SelectionGroupBank SelectionGroups;
 
     public ProjectEnumBank ProjectEnums;
 
@@ -94,7 +92,6 @@ public class BankHandler
         CorrectedTextureInfo = new TextureCorrectionBank();
 
         GameOffsets = new GameOffsetBank();
-        SelectionGroups = new SelectionGroupBank();
 
         ProjectEnums = new ProjectEnumBank("Project Enums");
 
@@ -131,7 +128,6 @@ public class BankHandler
         CorrectedTextureInfo.LoadBank();
 
         GameOffsets.LoadBank();
-        SelectionGroups.LoadBank();
 
         ProjectEnums.LoadBank();
 

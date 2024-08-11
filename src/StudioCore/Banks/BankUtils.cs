@@ -3,7 +3,6 @@ using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.GameOffsetBank;
 using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Banks.ProjectEnumBank;
-using StudioCore.Banks.SelectionGroupBank;
 using StudioCore.Banks.TextureAdditionBank;
 using StudioCore.Banks.TextureBlockBank;
 using StudioCore.Banks.TextureCorrectionBank;
@@ -306,26 +305,5 @@ public static class BankUtils
         }
 
         return baseResource;
-    }
-
-    public static SelectionGroupList LoadSelectionGroupJSON(string directory, string filename)
-    {
-        var smithboxResource = new SelectionGroupList();
-
-        var smithboxResourcePath = $"{Smithbox.SmithboxDataRoot}\\{MiscLocator.GetGameIDForDir()}\\{directory}\\{filename}.json";
-
-        if (File.Exists(smithboxResourcePath))
-        {
-            using (var stream = File.OpenRead(smithboxResourcePath))
-            {
-                smithboxResource = JsonSerializer.Deserialize(stream, SelectionGroupListSerializationContext.Default.SelectionGroupList);
-            }
-        }
-        else
-        {
-            TaskLogs.AddLog($"{smithboxResource} does not exist!");
-        }
-
-        return smithboxResource;
     }
 }

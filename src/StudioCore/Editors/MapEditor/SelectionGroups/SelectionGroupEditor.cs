@@ -15,7 +15,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class SelectionGroupView
+public class SelectionGroupEditor
 {
     private readonly ViewportActionManager _actionManager;
 
@@ -30,7 +30,9 @@ public class SelectionGroupView
 
     private MsbEntity selectedEntity;
 
-    public SelectionGroupView(Universe universe, RenderScene scene, ViewportSelection sel, ViewportActionManager manager, MapEditorScreen editor, IViewport viewport)
+    private SelectionGroupBank Bank;
+
+    public SelectionGroupEditor(Universe universe, RenderScene scene, ViewportSelection sel, ViewportActionManager manager, MapEditorScreen editor, IViewport viewport)
     {
         _scene = scene;
         _selection = sel;
@@ -39,6 +41,8 @@ public class SelectionGroupView
 
         _msbEditor = editor;
         _viewport = viewport;
+
+        Bank = new SelectionGroupBank();
     }
 
     private string selectedResourceName = "";
@@ -57,6 +61,12 @@ public class SelectionGroupView
 
     private string _searchInput = "";
 
+    public void OnProjectChanged()
+    {
+        Bank.CreateSelectionGroups();
+        Bank.LoadBank();
+    }
+
     /// <summary>
     /// Display the window.
     /// </summary>
@@ -67,7 +77,7 @@ public class SelectionGroupView
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        if (Smithbox.BankHandler.SelectionGroups.Groups == null || Smithbox.BankHandler.SelectionGroups.Groups.Resources == null)
+        if (Bank.Groups == null || Bank.Groups.Resources == null)
             return;
 
         // This exposes the pop-up to the map editor
@@ -108,7 +118,7 @@ public class SelectionGroupView
             ImGui.InputText($"Search", ref _searchInput, 255);
             ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
-            foreach (var entry in Smithbox.BankHandler.SelectionGroups.Groups.Resources)
+            foreach (var entry in Bank.Groups.Resources)
             {
                 var displayName = $"{entry.Name}";
 
@@ -349,13 +359,13 @@ public class SelectionGroupView
 
         if (result == DialogResult.Yes)
         {
-            Smithbox.BankHandler.SelectionGroups.DeleteSelectionGroup(selectedResourceName);
+            Bank.DeleteSelectionGroup(selectedResourceName);
 
             selectedResourceName = "";
             selectedResourceTags = new List<string>();
             selectedResourceContents = new List<string>();
 
-            Smithbox.BankHandler.SelectionGroups.LoadBank();
+            Bank.LoadBank();
         }
     }
 
@@ -409,9 +419,9 @@ public class SelectionGroupView
             }
         }
 
-        if (Smithbox.BankHandler.SelectionGroups.AddSelectionGroup(createPromptGroupName, tagList, selectionList, currentKeyBindOption, isEdit, editPromptOldGroupName))
+        if (Bank.AddSelectionGroup(createPromptGroupName, tagList, selectionList, currentKeyBindOption, isEdit, editPromptOldGroupName))
         {
-            Smithbox.BankHandler.SelectionGroups.LoadBank();
+            Bank.LoadBank();
         }
     }
 
@@ -470,7 +480,7 @@ public class SelectionGroupView
 
     private void ShortcutSelectGroup(int index)
     {
-        foreach (var entry in Smithbox.BankHandler.SelectionGroups.Groups.Resources)
+        foreach (var entry in Bank.Groups.Resources)
         {
             if (entry.SelectionGroupKeybind == index)
             {

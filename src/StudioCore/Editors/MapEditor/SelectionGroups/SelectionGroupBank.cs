@@ -1,4 +1,5 @@
-﻿using StudioCore.Banks.AliasBank;
+﻿using StudioCore.Banks;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Locators;
@@ -11,7 +12,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace StudioCore.Banks.SelectionGroupBank;
+namespace StudioCore.Editors.MapEditor;
 
 public class SelectionGroupBank
 {
@@ -31,7 +32,7 @@ public class SelectionGroupBank
     {
         try
         {
-            Groups = BankUtils.LoadSelectionGroupJSON(GroupDirectory, GroupFileName);
+            Groups = LoadSelectionGroupJSON(GroupDirectory, GroupFileName);
         }
         catch (Exception e)
         {
@@ -46,7 +47,10 @@ public class SelectionGroupBank
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        var SelectionDirectory = $"{Smithbox.SmithboxDataRoot}\\{MiscLocator.GetGameIDForDir()}\\selections";
+        if (Smithbox.ProjectRoot == "")
+            return;
+
+        var SelectionDirectory = $"{Smithbox.ProjectRoot}\\.smithbox\\{MiscLocator.GetGameIDForDir()}\\selections";
         var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
 
         if (!Directory.Exists(SelectionDirectory))
@@ -64,7 +68,7 @@ public class SelectionGroupBank
             string template = "{ \"Resources\": [ ] }";
             try
             {
-                var fs = new FileStream(SelectionPath, System.IO.FileMode.Create);
+                var fs = new FileStream(SelectionPath, FileMode.Create);
                 var data = Encoding.ASCII.GetBytes(template);
                 fs.Write(data, 0, data.Length);
                 fs.Flush();
@@ -114,7 +118,7 @@ public class SelectionGroupBank
             var group = Groups.Resources.Where(x => x.SelectionGroupKeybind == keybindIndex).First();
             if (isEdit)
             {
-                group = Groups.Resources.Where(x => (x.SelectionGroupKeybind == keybindIndex) && (x.Name != name)).First();
+                group = Groups.Resources.Where(x => x.SelectionGroupKeybind == keybindIndex && x.Name != name).First();
             }
             PlatformUtils.Instance.MessageBox($"Keybind already assigned to another selection group: {group.Name}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
@@ -146,7 +150,7 @@ public class SelectionGroupBank
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return false;
 
-        var SelectionDirectory = $"{Smithbox.SmithboxDataRoot}\\{MiscLocator.GetGameIDForDir()}\\selections";
+        var SelectionDirectory = $"{Smithbox.ProjectRoot}\\.smithbox\\{MiscLocator.GetGameIDForDir()}\\selections";
         var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
 
         string jsonString = JsonSerializer.Serialize(Groups, typeof(SelectionGroupList), SelectionGroupListSerializationContext.Default);
@@ -155,7 +159,7 @@ public class SelectionGroupBank
         {
             try
             {
-                var fs = new FileStream(SelectionPath, System.IO.FileMode.Create);
+                var fs = new FileStream(SelectionPath, FileMode.Create);
                 var data = Encoding.ASCII.GetBytes(jsonString);
                 fs.Write(data, 0, data.Length);
                 fs.Flush();
@@ -173,5 +177,25 @@ public class SelectionGroupBank
         }
 
         return true;
+    }
+    public SelectionGroupList LoadSelectionGroupJSON(string directory, string filename)
+    {
+        var smithboxResource = new SelectionGroupList();
+
+        var smithboxResourcePath = $"{Smithbox.SmithboxDataRoot}\\{MiscLocator.GetGameIDForDir()}\\{directory}\\{filename}.json";
+
+        if (File.Exists(smithboxResourcePath))
+        {
+            using (var stream = File.OpenRead(smithboxResourcePath))
+            {
+                smithboxResource = JsonSerializer.Deserialize(stream, SelectionGroupListSerializationContext.Default.SelectionGroupList);
+            }
+        }
+        else
+        {
+            TaskLogs.AddLog($"{smithboxResource} does not exist!");
+        }
+
+        return smithboxResource;
     }
 }

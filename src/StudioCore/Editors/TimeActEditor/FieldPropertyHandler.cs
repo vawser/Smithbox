@@ -53,6 +53,7 @@ public class FieldPropertyHandler
 
                 var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                 EditorActionManager.ExecuteAction(action);
+                Screen.SelectionHandler.ContainerInfo.IsModified = true;
             }
         }
         if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
@@ -69,6 +70,7 @@ public class FieldPropertyHandler
 
                 var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                 EditorActionManager.ExecuteAction(action);
+                Screen.SelectionHandler.ContainerInfo.IsModified = true;
             }
         }
     }
@@ -87,6 +89,7 @@ public class FieldPropertyHandler
         {
             var action = new TimeActEndAnimIDPropertyChange(anim, anim.ID, newValue);
             EditorActionManager.ExecuteAction(action);
+            Screen.SelectionHandler.ContainerInfo.IsModified = true;
 
             // Re-select row at new index
             TimeActUtils.SelectNewAnimation(anim);
@@ -99,6 +102,7 @@ public class FieldPropertyHandler
         {
             var action = new TimeActEndAnimNamePropertyChange(anim, anim.AnimFileName, newValue);
             EditorActionManager.ExecuteAction(action);
+            Screen.SelectionHandler.ContainerInfo.IsModified = true;
         }
 
         changed = false;
@@ -125,6 +129,7 @@ public class FieldPropertyHandler
 
                     var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
+                    Screen.SelectionHandler.ContainerInfo.IsModified = true;
                 }
 
                 changed = false;
@@ -145,6 +150,7 @@ public class FieldPropertyHandler
 
                     var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
+                    Screen.SelectionHandler.ContainerInfo.IsModified = true;
 
                 }
 
@@ -166,6 +172,7 @@ public class FieldPropertyHandler
 
                     var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
+                    Screen.SelectionHandler.ContainerInfo.IsModified = true;
                 }
 
                 changed = false;
@@ -186,6 +193,7 @@ public class FieldPropertyHandler
 
                     var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
+                    Screen.SelectionHandler.ContainerInfo.IsModified = true;
                 }
             }
 
@@ -206,6 +214,7 @@ public class FieldPropertyHandler
 
                     var action = new TimeActEndAnimHeaderPropertyChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
+                    Screen.SelectionHandler.ContainerInfo.IsModified = true;
                 }
             }
         }
@@ -224,6 +233,7 @@ public class FieldPropertyHandler
         {
             var action = new TimeActStartTimePropertyChange(handler.CurrentTimeActEvent, handler.CurrentTimeActEvent.StartTime, newValue);
             EditorActionManager.ExecuteAction(action);
+            Screen.SelectionHandler.ContainerInfo.IsModified = true;
         }
 
         changed = false;
@@ -234,6 +244,7 @@ public class FieldPropertyHandler
         {
             var action = new TimeActEndTimePropertyChange(handler.CurrentTimeActEvent, handler.CurrentTimeActEvent.EndTime, newValue);
             EditorActionManager.ExecuteAction(action);
+            Screen.SelectionHandler.ContainerInfo.IsModified = true;
         }
 
         for (int i = 0; i < paramValues.Count; i++)
@@ -250,6 +261,7 @@ public class FieldPropertyHandler
             {
                 var action = new EventPropertyChange(paramValues, propertyName, propertyValue, newValue, propertyValue.GetType());
                 EditorActionManager.ExecuteAction(action);
+                Screen.SelectionHandler.ContainerInfo.IsModified = true;
             }
 
             Decorator.HandleValueColumn(paramValues, i);

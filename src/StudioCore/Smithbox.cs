@@ -133,7 +133,6 @@ public class Smithbox
     {
         BankHandler = new BankHandler();
         BankHandler.UpdateBanks();
-        BankHandler.SelectionGroups.CreateSelectionGroups();
     }
 
     public static void InitializeNameCaches()

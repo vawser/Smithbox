@@ -67,7 +67,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public DisplayGroupEditor DispGroupEditor;
     public MapAssetSelectionView MapAssetSelectionView;
-    public SelectionGroupView SelectionGroupEditor;
+    public SelectionGroupEditor SelectionGroupEditor;
     public PrefabEditor PrefabEditor;
     private LightmapAtlasScreen LightmapAtlasEditor;
 
@@ -127,7 +127,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport);
 
-        SelectionGroupEditor = new SelectionGroupView(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
+        SelectionGroupEditor = new SelectionGroupEditor(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
         PrefabEditor = new() { universe = Universe, scene = RenderScene, actionManager = EditorActionManager };
 
         _mapToolbar = new MapToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _comboTargetMap);
@@ -1107,6 +1107,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
+            SelectionGroupEditor.OnProjectChanged();
             MapAssetSelectionView.OnProjectChanged();
             SceneTree.OnProjectChanged();
             GranularRegionHandler.OnProjectChanged();

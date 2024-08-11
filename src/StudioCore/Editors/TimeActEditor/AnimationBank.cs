@@ -702,6 +702,9 @@ public static class AnimationBank
 
     public static void SaveTimeAct(ContainerFileInfo info, BinderInfo binderInfo)
     {
+        if (!info.IsModified)
+            return;
+
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             HandleDS2TimeActSave(info, binderInfo);
@@ -867,6 +870,8 @@ public static class AnimationBank
         public string AegFolder { get; set; }
 
         public bool IsContainerFile { get; set; }
+
+        public bool IsModified { get; set; }
 
         public List<InternalFileInfo> InternalFiles { get; set; }
     }

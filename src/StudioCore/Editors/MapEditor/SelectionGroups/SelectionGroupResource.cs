@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace StudioCore.Banks.SelectionGroupBank;
+namespace StudioCore.Editors.MapEditor;
 
 [JsonSourceGenerationOptions(
     WriteIndented = true,

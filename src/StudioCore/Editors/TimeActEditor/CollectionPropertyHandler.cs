@@ -41,6 +41,8 @@ public class CollectionPropertyHandler
         if (SelectionHandler.CurrentTimeActKey == -1)
             return;
 
+        SelectionHandler.ContainerInfo.IsModified = true;
+
         var curInternalFile = SelectionHandler.ContainerInfo.InternalFiles[SelectionHandler.CurrentTimeActKey];
         var newInternalFile = new InternalFileInfo(curInternalFile.Filepath, curInternalFile.TAE.Clone());
 
@@ -82,6 +84,8 @@ public class CollectionPropertyHandler
         if (SelectionHandler.CurrentTimeActKey == -1)
             return;
 
+        SelectionHandler.ContainerInfo.IsModified = true;
+
         var curInternalFile = SelectionHandler.ContainerInfo.InternalFiles[SelectionHandler.CurrentTimeActKey];
         curInternalFile.MarkForRemoval = true;
 
@@ -95,6 +99,8 @@ public class CollectionPropertyHandler
 
         if (SelectionHandler.CurrentTimeActAnimationIndex == -1)
             return;
+
+        SelectionHandler.ContainerInfo.IsModified = true;
 
         var multiselect = SelectionHandler.TimeActAnimationMultiselect;
 
@@ -152,6 +158,8 @@ public class CollectionPropertyHandler
         if (SelectionHandler.CurrentTimeActAnimationIndex == -1)
             return;
 
+        SelectionHandler.ContainerInfo.IsModified = true;
+
         var multiselect = SelectionHandler.TimeActAnimationMultiselect;
 
         List<TAE.Animation> targetAnims = new();
@@ -181,6 +189,7 @@ public class CollectionPropertyHandler
         if (SelectionHandler.CurrentTimeActEventIndex == -1)
             return;
 
+        SelectionHandler.ContainerInfo.IsModified = true;
     }
 
     public void DuplicateEvent()
@@ -190,6 +199,8 @@ public class CollectionPropertyHandler
 
         if (SelectionHandler.CurrentTimeActEventIndex == -1)
             return;
+
+        SelectionHandler.ContainerInfo.IsModified = true;
     }
 
     public void DeleteEvent()
@@ -199,6 +210,8 @@ public class CollectionPropertyHandler
 
         if (SelectionHandler.CurrentTimeActEventIndex == -1)
             return;
+
+        SelectionHandler.ContainerInfo.IsModified = true;
     }
 
     public void OrderAnimation()
@@ -208,6 +221,8 @@ public class CollectionPropertyHandler
 
         if (SelectionHandler.CurrentTimeActAnimationIndex == -1)
             return;
+
+        SelectionHandler.ContainerInfo.IsModified = true;
     }
 
     public void OrderEvent()
@@ -217,6 +232,8 @@ public class CollectionPropertyHandler
 
         if (SelectionHandler.CurrentTimeActEventIndex == -1)
             return;
+
+        SelectionHandler.ContainerInfo.IsModified = true;
     }
 
     public enum OrderType
