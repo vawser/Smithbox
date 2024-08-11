@@ -266,7 +266,6 @@ public class CFG
     public bool System_EnableRecoveryFolder = true;
 
     // Resource Banks
-    public bool AutoLoadBank_TimeAct = false;
     public bool AutoLoadBank_Cutscene = false;
     public bool AutoLoadBank_Material = false;
     public bool AutoLoadBank_Particle = true;

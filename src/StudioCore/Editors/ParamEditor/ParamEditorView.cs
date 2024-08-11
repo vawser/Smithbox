@@ -129,44 +129,48 @@ public class ParamEditorView
             foreach (var paramKey in pinnedParamKeyList)
             {
                 HashSet<int> primary = ParamBank.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
-                Param p = ParamBank.PrimaryBank.Params[paramKey];
-                if (p != null)
+
+                if (ParamBank.PrimaryBank.Params.ContainsKey(paramKey))
                 {
-                    var meta = ParamMetaData.Get(p.AppliedParamdef);
-                    var Wiki = meta?.Wiki;
-                    if (Wiki != null)
+                    Param p = ParamBank.PrimaryBank.Params[paramKey];
+                    if (p != null)
                     {
-                        if (EditorDecorations.HelpIcon(paramKey + "wiki", ref Wiki, true))
+                        var meta = ParamMetaData.Get(p.AppliedParamdef);
+                        var Wiki = meta?.Wiki;
+                        if (Wiki != null)
                         {
-                            meta.Wiki = Wiki;
+                            if (EditorDecorations.HelpIcon(paramKey + "wiki", ref Wiki, true))
+                            {
+                                meta.Wiki = Wiki;
+                            }
                         }
                     }
-                }
 
-                ImGui.Indent(15.0f * scale);
-                if (ImGui.Selectable($"{paramKey}##pin{paramKey}", paramKey == _selection.GetActiveParam()))
-                {
-                    EditorCommandQueue.AddCommand($@"param/view/{_viewIndex}/{paramKey}");
-                }
-
-                if (ImGui.BeginPopupContextItem())
-                {
-                    if (ImGui.Selectable("Unpin " + paramKey))
+                    ImGui.Indent(15.0f * scale);
+                    if (ImGui.Selectable($"{paramKey}##pin{paramKey}", paramKey == _selection.GetActiveParam()))
                     {
-                        Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Remove(paramKey);
+                        EditorCommandQueue.AddCommand($@"param/view/{_viewIndex}/{paramKey}");
                     }
 
-                    EditorDecorations.PinListReorderOptions(Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams, paramKey);
-
-                    if (ImGui.Selectable("Unpin all"))
+                    if (ImGui.BeginPopupContextItem())
                     {
-                        Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.RemoveAll(x => true);
+                        if (ImGui.Selectable("Unpin " + paramKey))
+                        {
+                            Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.Remove(paramKey);
+                        }
+
+                        EditorDecorations.PinListReorderOptions(Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams, paramKey);
+
+                        if (ImGui.Selectable("Unpin all"))
+                        {
+                            Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams.RemoveAll(x => true);
+                        }
+
+                        ImGui.EndPopup();
                     }
 
-                    ImGui.EndPopup();
+                    ImGui.Unindent(15.0f * scale);
                 }
-
-                ImGui.Unindent(15.0f * scale);
             }
 
             ImGui.Spacing();

@@ -98,14 +98,8 @@ public class SystemTab
 
         if (ImGui.CollapsingHeader("Resources"))
         {
-            ImGui.Checkbox("Alias Banks - Editor Mode", ref CFG.Current.AliasBank_EditorMode);
+            ImGui.Checkbox("Alias Banks - Commit to Base", ref CFG.Current.AliasBank_EditorMode);
             ImguiUtils.ShowHoverTooltip("If enabled, editing the name and tags for alias banks will commit the changes to the Smithbox base version instead of the mod-specific version.");
-
-            if (FeatureFlags.EnableEditor_TimeAct)
-            {
-                ImGui.Checkbox("Time Act Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_TimeAct);
-                ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
-            }
 
             if (FeatureFlags.EnableEditor_Cutscene)
             {

@@ -90,11 +90,6 @@ World Map:
 Time Act Editor
  - ADD: Duplicate/Delete/Copy/Paste row context for Animations and Events
  
- - ADD: TAE Deep Search tool:  
-  - Search by animation ID, quick-link to all instances (TAE -> Animation)
-  - Search by event ID/name, quick-link to all instances (TAE -> Animation -> Event)
-  - Search by event value, quick-link to all instances (TAE -> Animation -> Event)
-  
  - ADD: event graph: use table API to represent each 0.05 frame, each cell is one frame
  - ADD: Data export/import for TAE/Animation/Event
  - ADD: TAE Quick Edit tool
