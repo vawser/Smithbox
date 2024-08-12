@@ -1716,7 +1716,8 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT04 { get; set; }
+                [MSBParamReference(ParamName = "WwiseValueToStrParam_EnvPlaceType")]
+                public int WwiseEnvPlaceTypeID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1746,7 +1747,7 @@ namespace SoulsFormats
                     UnkT01 = br.ReadByte();
                     UnkT02 = br.ReadByte();
                     UnkT03 = br.ReadByte();
-                    UnkT04 = br.ReadInt32();
+                    WwiseEnvPlaceTypeID = br.ReadInt32();
                     UnkT08 = br.ReadInt16();
                     UnkT0A = br.ReadInt16();
                     UnkT0C = br.ReadByte();
@@ -1759,7 +1760,7 @@ namespace SoulsFormats
                     bw.WriteByte(UnkT01);
                     bw.WriteByte(UnkT02);
                     bw.WriteByte(UnkT03);
-                    bw.WriteInt32(UnkT04);
+                    bw.WriteInt32(WwiseEnvPlaceTypeID);
                     bw.WriteInt16(UnkT08);
                     bw.WriteInt16(UnkT0A);
                     bw.WriteByte(UnkT0C);

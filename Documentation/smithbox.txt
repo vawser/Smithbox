@@ -71,10 +71,8 @@ Gparam Editor:
  - ADD: sticky selection: don't automatically clear selection, rather only clear it if it becomes invalid
 
 Time Act Editor
- - ADD: Duplicate/Delete/Copy/Paste row context for Animations and Events
  - ADD: event graph: use table API to represent each 0.05 frame, each cell is one frame
  - ADD: Data export/import for TAE/Animation/Event
- - ADD: TAE Quick Edit tool
  - FIX: TAE a330 + a331 in AC6 are not reading correctly
 
 Texture Viewer: 
@@ -94,3 +92,6 @@ World Map:
 #--------------------------------------
 - ADD: finish documenting ER SOTE rows
 
+Time Act Editor
+ - ADD: Duplicate/Delete/Copy/Paste row context for Animations and Events
+ - ADD: TAE Quick Edit tool
