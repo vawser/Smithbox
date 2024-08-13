@@ -232,7 +232,7 @@ public static class TimeActUtils
     public static void SelectNewAnimation(TAE.Animation existingAnim)
     {
         var handler = Smithbox.EditorHandler.TimeActEditor.SelectionHandler;
-        handler.TimeActAnimationMultiselect._storedIndices.Clear();
+        handler.TimeActMultiselect.StoredAnimations.Clear();
 
         handler.CurrentTimeAct.Animations.Sort();
         for (int i = 0; i < handler.CurrentTimeAct.Animations.Count; i++)
@@ -242,7 +242,7 @@ public static class TimeActUtils
             {
                 handler.CurrentTimeActAnimation = serAnim;
                 handler.CurrentTimeActAnimationIndex = i;
-                handler.TimeActAnimationMultiselect._storedIndices.Add(i);
+                handler.TimeActMultiselect.StoredAnimations.Add(i, handler.CurrentTimeActAnimation);
                 break;
             }
         }
@@ -272,7 +272,7 @@ public static class TimeActUtils
     public static void SelectNewEvent(int targetIndex)
     {
         var handler = Smithbox.EditorHandler.TimeActEditor.SelectionHandler;
-        handler.TimeActEventMultiselect._storedIndices.Clear();
+        handler.TimeActMultiselect.StoredEvents.Clear();
 
         for (int i = 0; i < handler.CurrentTimeActAnimation.Events.Count; i++)
         {
@@ -282,7 +282,7 @@ public static class TimeActUtils
             {
                 handler.CurrentTimeActEvent = curEvent;
                 handler.CurrentTimeActEventIndex = i;
-                handler.TimeActEventMultiselect._storedIndices.Add(i);
+                handler.TimeActMultiselect.StoredEvents.Add(i, handler.CurrentTimeActEvent);
                 break;
             }
         }

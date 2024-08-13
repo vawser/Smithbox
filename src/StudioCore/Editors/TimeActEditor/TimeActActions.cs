@@ -441,11 +441,9 @@ public class TimeActMultiDuplicateEvent : EditorAction
 
     public override ActionEvent Undo()
     {
-        for (int i = InsertionIndexes.Count; i > 0; i--)
+        foreach(var entry in NewEvents)
         {
-            var curIndex = InsertionIndexes[i];
-
-            EventList.RemoveAt(curIndex);
+            EventList.Remove(entry);
         }
 
         return ActionEvent.NoEvent;
@@ -475,6 +473,45 @@ public class TimeActDeleteEvent : EditorAction
     public override ActionEvent Undo()
     {
         EventList.Insert(RemovalIndex, StoredEvent);
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class TimeActMultiDeleteEvent : EditorAction
+{
+    private List<TAE.Event> StoredEvents;
+    private List<TAE.Event> EventList;
+    private List<int> RemovalIndices;
+    private List<int> InsertIndices;
+
+    public TimeActMultiDeleteEvent(List<TAE.Event> storedEvents, List<TAE.Event> eventList, List<int> removalIndices)
+    {
+        RemovalIndices = removalIndices;
+        StoredEvents = storedEvents;
+        EventList = eventList;
+    }
+
+    public override ActionEvent Execute()
+    {
+        for (int i = RemovalIndices.Count - 1; i >= 0; i--)
+        {
+            var curIndex = RemovalIndices[i];
+            EventList.RemoveAt(curIndex);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        for (int i = 0; i < RemovalIndices.Count; i++)
+        {
+            var storedEvent = StoredEvents[i];
+            var curIndex = RemovalIndices[i];
+
+            EventList.Insert(curIndex, storedEvent);
+        }
 
         return ActionEvent.NoEvent;
     }

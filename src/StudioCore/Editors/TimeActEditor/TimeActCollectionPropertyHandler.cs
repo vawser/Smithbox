@@ -75,6 +75,8 @@ public class TimeActCollectionPropertyHandler
                 if (ImGui.Button("Create", buttonSize))
                 {
                     var newEvent = new TAE.Event(curEvent.StartTime, curEvent.EndTime, CurrentEvent.ID, curEvent.Unk04, false, CurrentEvent);
+                    newEvent.Group = curEvent.Group;
+
                     var animations = Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTimeActAnimation;
                     var insertIdx = animations.Events.IndexOf(curEvent) + 1;
 
@@ -165,14 +167,14 @@ public class TimeActCollectionPropertyHandler
 
         SelectionHandler.ContainerInfo.IsModified = true;
 
-        var multiselect = SelectionHandler.TimeActAnimationMultiselect;
+        var storedAnims = Screen.SelectionHandler.TimeActMultiselect.StoredAnimations;
 
         List<TAE.Animation> targetAnims = new();
 
         for(int i = 0; i < SelectionHandler.CurrentTimeAct.Animations.Count; i++)
         {
             var targetAnim = SelectionHandler.CurrentTimeAct.Animations[i];
-            if(multiselect._storedIndices.Contains(i))
+            if(storedAnims.ContainsKey(i))
             {
                 targetAnims.Add(targetAnim);
             }
@@ -208,14 +210,14 @@ public class TimeActCollectionPropertyHandler
 
         SelectionHandler.ContainerInfo.IsModified = true;
 
-        var multiselect = SelectionHandler.TimeActAnimationMultiselect;
+        var storedAnims = Screen.SelectionHandler.TimeActMultiselect.StoredAnimations;
 
         List<TAE.Animation> targetAnims = new();
 
         for (int i = 0; i < SelectionHandler.CurrentTimeAct.Animations.Count; i++)
         {
             var targetAnim = SelectionHandler.CurrentTimeAct.Animations[i];
-            if (multiselect._storedIndices.Contains(i))
+            if (storedAnims.ContainsKey(i))
             {
                 targetAnims.Add(targetAnim);
             }
@@ -254,15 +256,15 @@ public class TimeActCollectionPropertyHandler
 
         SelectionHandler.ContainerInfo.IsModified = true;
 
-        var indices = Screen.SelectionHandler.TimeActEventMultiselect._storedIndices;
+        var storedEvents = Screen.SelectionHandler.TimeActMultiselect.StoredEvents;
         var animations = Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTimeActAnimation;
 
         var lastEventIdx = -1;
 
         // Single
-        if(indices.Count <= 1)
+        if(storedEvents.Count <= 1)
         {
-            var curEvent = animations.Events[indices.First()];
+            var curEvent = animations.Events[storedEvents.First().Key];
             var insertIdx = animations.Events.IndexOf(curEvent) + 1;
             var dupeEvent = curEvent.GetClone(false);
 
@@ -277,7 +279,7 @@ public class TimeActCollectionPropertyHandler
 
             for (int i = 0; i < animations.Events.Count; i++)
             {
-                if (indices.Contains(i))
+                if (storedEvents.ContainsKey(i))
                 {
                     var curEvent = animations.Events[i];
                     var insertIdx = animations.Events.IndexOf(curEvent) + 1;
@@ -285,7 +287,7 @@ public class TimeActCollectionPropertyHandler
                     var dupeEvent = curEvent.GetClone(false);
                     newEvents.Add(dupeEvent);
 
-                    lastEventIdx = i;
+                    lastEventIdx = insertIdx;
                 }
             }
 
@@ -310,43 +312,44 @@ public class TimeActCollectionPropertyHandler
 
         SelectionHandler.ContainerInfo.IsModified = true;
 
-        var indices = Screen.SelectionHandler.TimeActEventMultiselect._storedIndices;
+        var storedEvents = Screen.SelectionHandler.TimeActMultiselect.StoredEvents;
         var animations = Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTimeActAnimation;
-        var editorActions = new List<EditorAction>();
 
-        TAE.Event firstEvent = null;
-        var firstEventIdx = -1;
-
-        for (int i = 0; i < animations.Events.Count; i++)
+        // Single
+        if (storedEvents.Count <= 1)
         {
-            if (indices.Contains(i))
+            var curEvent = animations.Events[storedEvents.First().Key];
+
+            var removeIdx = animations.Events.IndexOf(curEvent);
+            var storedEvent = curEvent.GetClone(false);
+
+            var action = new TimeActDeleteEvent(storedEvent, animations.Events, removeIdx);
+            EditorActionManager.ExecuteAction(action);
+        }
+        // Multi-Select
+        else
+        {
+            List<int> removeIndices = new List<int>();
+            List<TAE.Event> removedEvents = new List<TAE.Event>();
+
+            for (int i = 0; i < animations.Events.Count; i++)
             {
-                var curEvent = animations.Events[i];
-
-                if (firstEventIdx == -1)
+                if (storedEvents.ContainsKey(i))
                 {
-                    firstEvent = curEvent;
-                    firstEventIdx = i;
+                    var curEvent = animations.Events[i];
+                    var removeIdx = animations.Events.IndexOf(curEvent);
+                    var storedEvent = curEvent.GetClone(false);
+
+                    removeIndices.Add(removeIdx);
+                    removedEvents.Add(storedEvent);
                 }
-
-                var removeIdx = animations.Events.IndexOf(curEvent);
-                var storedEvent = curEvent.GetClone(false);
-
-                var action = new TimeActDeleteEvent(storedEvent, animations.Events, removeIdx);
-                editorActions.Add(action);
             }
+
+            var action = new TimeActMultiDeleteEvent(removedEvents, animations.Events, removeIndices);
+            EditorActionManager.ExecuteAction(action);
         }
 
-        var compoundAction = new CompoundAction(editorActions);
-        EditorActionManager.ExecuteAction(compoundAction);
-
-        if(firstEventIdx != -1 && firstEventIdx != 0)
-        {
-            var newIndex = firstEventIdx - 1;
-            Screen.SelectionHandler.CurrentTimeActEvent = firstEvent;
-            Screen.SelectionHandler.CurrentTimeActEventIndex = newIndex;
-            Screen.SelectionHandler.TimeActEventMultiselect._storedIndices.Add(newIndex);
-        }
+        Screen.SelectionHandler.TimeActMultiselect.Reset(false, false, true);
     }
 
     public void OrderAnimation()

@@ -277,7 +277,9 @@ public class TimeActEditorScreen : EditorScreen
                         {
                             SelectionHandler.CurrentTimeActKey = i;
                             SelectionHandler.CurrentTimeAct = SelectionHandler.ContainerInfo.InternalFiles[i].TAE;
-                            SelectionHandler.TimeActMultiselect._storedIndices.Add(i);
+
+                            SelectionHandler.TimeActMultiselect.StoredTimeActs.Add(i, SelectionHandler.ContainerInfo.InternalFiles[i].TAE);
+
                             FocusTimeAct = true;
                         }
                     }
@@ -294,7 +296,9 @@ public class TimeActEditorScreen : EditorScreen
                         {
                             SelectionHandler.CurrentTimeActAnimationIndex = i;
                             SelectionHandler.CurrentTimeActAnimation = SelectionHandler.CurrentTimeAct.Animations[i];
-                            SelectionHandler.TimeActAnimationMultiselect._storedIndices.Add(i);
+
+                            SelectionHandler.TimeActMultiselect.StoredAnimations.Add(i, SelectionHandler.CurrentTimeAct.Animations[i]);
+
                             FocusAnimation = true;
                         }
                     }
@@ -311,7 +315,9 @@ public class TimeActEditorScreen : EditorScreen
                         {
                             SelectionHandler.CurrentTimeActEventIndex = i;
                             SelectionHandler.CurrentTimeActEvent = SelectionHandler.CurrentTimeActAnimation.Events[i];
-                            SelectionHandler.TimeActEventMultiselect._storedIndices.Add(i);
+
+                            SelectionHandler.TimeActMultiselect.StoredEvents.Add(i, SelectionHandler.CurrentTimeActAnimation.Events[i]);
+
                             FocusEvent = true;
                         }
                     }
@@ -479,7 +485,7 @@ public class TimeActEditorScreen : EditorScreen
 
                 var isSelected = false;
                 if (i == SelectionHandler.CurrentTimeActKey || 
-                    SelectionHandler.TimeActMultiselect.IsMultiselected(i))
+                    SelectionHandler.TimeActMultiselect.IsTimeActSelected(i))
                 {
                     isSelected = true;
                 }
@@ -532,7 +538,7 @@ public class TimeActEditorScreen : EditorScreen
             {
                 var isSelected = false;
                 if (i == SelectionHandler.CurrentTimeActAnimationIndex ||
-                    SelectionHandler.TimeActAnimationMultiselect.IsMultiselected(i))
+                    SelectionHandler.TimeActMultiselect.IsAnimationSelected(i))
                 {
                     isSelected = true;
                 }
@@ -743,7 +749,7 @@ public class TimeActEditorScreen : EditorScreen
             {
                 var isSelected = false;
                 if (i == SelectionHandler.CurrentTimeActEventIndex ||
-                    SelectionHandler.TimeActEventMultiselect.IsMultiselected(i))
+                    SelectionHandler.TimeActMultiselect.IsEventSelected(i))
                 {
                     isSelected = true;
                 }
