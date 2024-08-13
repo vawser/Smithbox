@@ -40,11 +40,11 @@ public class TimeActSelectionHandler
     public string CurrentTimeActEventProperty;
     public int CurrentTimeActEventPropertyIndex = -1;
 
-    public Multiselect TimeActMultiselect;
-    public Multiselect TimeActAnimationMultiselect;
-    public Multiselect TimeActEventMultiselect;
+    public TimeActMultiselect TimeActMultiselect;
+    public TimeActMultiselect TimeActAnimationMultiselect;
+    public TimeActMultiselect TimeActEventMultiselect;
 
-    public ContextMenu ContextMenu;
+    public TimeActContextMenu ContextMenu;
 
     public TemplateType CurrentTimeActType = TemplateType.Character;
 
@@ -105,9 +105,9 @@ public class TimeActSelectionHandler
         CurrentTimeActEventProperty = null;
         CurrentTimeActEventPropertyIndex = -1;
 
-        TimeActMultiselect = new Multiselect();
-        TimeActAnimationMultiselect = new Multiselect();
-        TimeActEventMultiselect = new Multiselect();
+        TimeActMultiselect = new TimeActMultiselect();
+        TimeActAnimationMultiselect = new TimeActMultiselect();
+        TimeActEventMultiselect = new TimeActMultiselect();
     }
 
     public void FileContainerChange(ContainerFileInfo info, BinderInfo binderInfo, int index, FileContainerType containerType)
@@ -133,9 +133,9 @@ public class TimeActSelectionHandler
         CurrentTimeActEventProperty = null;
         CurrentTimeActEventPropertyIndex = -1;
 
-        TimeActMultiselect = new Multiselect();
-        TimeActAnimationMultiselect = new Multiselect();
-        TimeActEventMultiselect = new Multiselect();
+        TimeActMultiselect = new TimeActMultiselect();
+        TimeActAnimationMultiselect = new TimeActMultiselect();
+        TimeActEventMultiselect = new TimeActMultiselect();
     }
 
     public void ResetOnTimeActChange()
@@ -153,9 +153,9 @@ public class TimeActSelectionHandler
         CurrentTimeActEventProperty = null;
         CurrentTimeActEventPropertyIndex = -1;
 
-        TimeActMultiselect = new Multiselect();
-        TimeActAnimationMultiselect = new Multiselect();
-        TimeActEventMultiselect = new Multiselect();
+        TimeActMultiselect = new TimeActMultiselect();
+        TimeActAnimationMultiselect = new TimeActMultiselect();
+        TimeActEventMultiselect = new TimeActMultiselect();
     }
 
     public void TimeActChange(TAE entry, int index)
@@ -177,8 +177,8 @@ public class TimeActSelectionHandler
         CurrentTimeActEventProperty = null;
         CurrentTimeActEventPropertyIndex = -1;
 
-        TimeActAnimationMultiselect = new Multiselect();
-        TimeActEventMultiselect = new Multiselect();
+        TimeActAnimationMultiselect = new TimeActMultiselect();
+        TimeActEventMultiselect = new TimeActMultiselect();
 
         TimeActUtils.ApplyTemplate(CurrentTimeAct, CurrentTimeActType);
     }
@@ -195,8 +195,8 @@ public class TimeActSelectionHandler
         CurrentTimeActEventProperty = null;
         CurrentTimeActEventPropertyIndex = -1;
 
-        TimeActAnimationMultiselect = new Multiselect();
-        TimeActEventMultiselect = new Multiselect();
+        TimeActAnimationMultiselect = new TimeActMultiselect();
+        TimeActEventMultiselect = new TimeActMultiselect();
     }
 
     public void TimeActAnimationChange(TAE.Animation entry, int index)
@@ -221,7 +221,7 @@ public class TimeActSelectionHandler
             Screen.SelectFirstEvent = true;
         }
 
-        TimeActEventMultiselect = new Multiselect();
+        TimeActEventMultiselect = new TimeActMultiselect();
     }
 
     public void ResetOnTimeActEventChange()
@@ -232,7 +232,7 @@ public class TimeActSelectionHandler
         CurrentTimeActEventProperty = null;
         CurrentTimeActEventPropertyIndex = -1;
 
-        TimeActEventMultiselect = new Multiselect();
+        TimeActEventMultiselect = new TimeActMultiselect();
     }
 
     public void TimeActEventChange(TAE.Event entry, int index)

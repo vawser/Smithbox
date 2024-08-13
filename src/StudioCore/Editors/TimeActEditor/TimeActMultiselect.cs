@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor;
 
-public class Multiselect
+public class TimeActMultiselect
 {
     public List<int> _storedIndices = new List<int>();
 
-    public Multiselect() { }
+    public TimeActMultiselect() { }
 
     public bool HasValidMultiselection()
     {

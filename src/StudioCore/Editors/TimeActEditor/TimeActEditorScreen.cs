@@ -46,10 +46,10 @@ public class TimeActEditorScreen : EditorScreen
     public bool ViewportUsingKeyboard;
     public Sdl2Window Window;
 
-    public CollectionPropertyHandler CollectionPropertyHandler;
-    public FieldPropertyHandler FieldPropertyHandler;
+    public TimeActCollectionPropertyHandler CollectionPropertyHandler;
+    public TimeActFieldPropertyHandler FieldPropertyHandler;
     public TimeActDecorator Decorator;
-    public EventGraph EventGraph;
+    public TimeActEventGraph EventGraph;
 
     public ToolWindow ToolWindow;
     public ToolSubMenu ToolSubMenu;
@@ -79,9 +79,9 @@ public class TimeActEditorScreen : EditorScreen
 
         SelectionHandler = new TimeActSelectionHandler(EditorActionManager, this);
         Decorator = new TimeActDecorator(EditorActionManager, this);
-        FieldPropertyHandler = new FieldPropertyHandler(EditorActionManager, this, Decorator);
-        CollectionPropertyHandler = new CollectionPropertyHandler(EditorActionManager, this, Decorator);
-        EventGraph = new EventGraph(EditorActionManager, this, SelectionHandler);
+        FieldPropertyHandler = new TimeActFieldPropertyHandler(EditorActionManager, this, Decorator);
+        CollectionPropertyHandler = new TimeActCollectionPropertyHandler(EditorActionManager, this, Decorator);
+        EventGraph = new TimeActEventGraph(EditorActionManager, this, SelectionHandler);
 
         ActionHandler = new(this, EditorActionManager);
         ActionSubMenu = new(this, ActionHandler);
@@ -206,6 +206,8 @@ public class TimeActEditorScreen : EditorScreen
         {
             ToolWindow.OnGui();
         }
+
+        CollectionPropertyHandler.OnGui();
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);

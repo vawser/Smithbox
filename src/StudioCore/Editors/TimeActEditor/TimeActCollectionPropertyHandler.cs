@@ -1,10 +1,13 @@
 ﻿using DotNext.Collections.Generic;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Interface.Modals;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using static SoulsFormats.DRB;
@@ -15,20 +18,72 @@ namespace StudioCore.Editors.TimeActEditor;
 /// <summary>
 /// Handles property edits for collection fields
 /// </summary>
-public class CollectionPropertyHandler
+public class TimeActCollectionPropertyHandler
 {
     private ActionManager EditorActionManager;
     private TimeActEditorScreen Screen;
     private TimeActDecorator Decorator;
     private TimeActSelectionHandler SelectionHandler;
 
-    public CollectionPropertyHandler(ActionManager editorActionManager, TimeActEditorScreen screen, TimeActDecorator decorator)
+    public TimeActCollectionPropertyHandler(ActionManager editorActionManager, TimeActEditorScreen screen, TimeActDecorator decorator)
     {
         EditorActionManager = editorActionManager;
         Screen = screen;
         Decorator = decorator;
         SelectionHandler = screen.SelectionHandler;
 
+    }
+
+    public bool ShowCreateEventModal = false;
+    private TAE.Template.EventTemplate CurrentEvent;
+
+    public void OnGui()
+    {
+        if (ShowCreateEventModal)
+        {
+            TaskLogs.AddLog("Create Event Modal");
+            ImGui.OpenPopup("Create Event");
+        }
+
+        if (ImGui.BeginPopupModal("Create Event", ref ShowCreateEventModal, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize))
+        {
+            var listboxSize = new Vector2(520, 400);
+            var buttonSize = new Vector2(520 * 0.5f, 24);
+
+            var curEvent = Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTimeActEvent;
+            var curTemplate = TimeActUtils.GetRelevantTemplate(TimeActUtils.TemplateType.Character);
+
+            if (curEvent != null && curTemplate != null)
+            {
+                ImGui.Text("Event Types:");
+                if (ImGui.BeginListBox("##eventTypes", listboxSize))
+                {
+                    foreach (var entry in curTemplate.Events)
+                    {
+                        var eventType = entry.Value;
+
+                        if (ImGui.Selectable($"[{eventType.ID}] {eventType.Name}##eventEntry{eventType.ID}", eventType == CurrentEvent))
+                        {
+                            CurrentEvent = eventType;
+                        }
+                    }
+
+                    ImGui.EndListBox();
+                }
+
+                if (ImGui.Button("Create", buttonSize))
+                {
+
+                }
+                ImGui.SameLine();
+                if (ImGui.Button("Close", buttonSize))
+                {
+                    ShowCreateEventModal = false;
+                }
+            }
+
+            ImGui.EndPopup();
+        }
     }
 
     // TODO: actionize
@@ -175,6 +230,8 @@ public class CollectionPropertyHandler
             return;
 
         SelectionHandler.ContainerInfo.IsModified = true;
+
+        ShowCreateEventModal = true;
     }
 
     public void DuplicateEvent()
@@ -297,3 +354,4 @@ public class CollectionPropertyHandler
         return (newID, insertIdx);
     }
 }
+

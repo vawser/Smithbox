@@ -146,6 +146,45 @@ public static class TimeActUtils
         Cutscene
     }
 
+    public static TAE.Template GetRelevantTemplate(TemplateType type)
+    {
+        switch (Smithbox.ProjectType)
+        {
+            case ProjectType.DES:
+                return AnimationBank.TimeActTemplates["TAE.Template.DES"];
+            case ProjectType.DS1:
+            case ProjectType.DS1R:
+                if (type is TemplateType.Character)
+                {
+                    return AnimationBank.TimeActTemplates["TAE.Template.DS1"];
+                }
+                else if (type is TemplateType.Object)
+                {
+                    return AnimationBank.TimeActTemplates["TAE.Template.DS1.OBJ"];
+                }
+                else if (type is TemplateType.Cutscene)
+                {
+                    return AnimationBank.TimeActTemplates["TAE.Template.DS1.REMO"];
+                }
+                break;
+            case ProjectType.DS2:
+            case ProjectType.DS2S:
+                return AnimationBank.TimeActTemplates["TAE.Template.SOTFS"];
+            case ProjectType.DS3:
+                return AnimationBank.TimeActTemplates["TAE.Template.DS3"];
+            case ProjectType.BB:
+                return AnimationBank.TimeActTemplates["TAE.Template.BB"];
+            case ProjectType.SDT:
+                return AnimationBank.TimeActTemplates["TAE.Template.SDT"];
+            case ProjectType.ER:
+                return AnimationBank.TimeActTemplates["TAE.Template.ER"];
+            case ProjectType.AC6:
+                return AnimationBank.TimeActTemplates["TAE.Template.AC6"];
+        }
+
+        return null;
+    }
+
     public static void ApplyTemplate(TAE entry, TemplateType type)
     {
         switch (Smithbox.ProjectType)

@@ -53,6 +53,8 @@ namespace StudioCore.Editors.ModelEditor
             LoadRepresentativeModel(name, ModelEditorModelType.Loose);
 
             Screen.SkeletonHandler.GenerateSkeleton();
+
+            Screen.ToolWindow.ModelUsageSearch._searchInput = name;
         }
 
         /// <summary>
@@ -72,6 +74,8 @@ namespace StudioCore.Editors.ModelEditor
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Character, "");
 
             Screen.SkeletonHandler.GenerateSkeleton();
+
+            Screen.ToolWindow.ModelUsageSearch._searchInput = name;
         }
 
         /// <summary>
@@ -92,6 +96,8 @@ namespace StudioCore.Editors.ModelEditor
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Object, "");
 
             Screen.SkeletonHandler.GenerateSkeleton();
+
+            Screen.ToolWindow.ModelUsageSearch._searchInput = name;
         }
 
         /// <summary>
@@ -110,6 +116,8 @@ namespace StudioCore.Editors.ModelEditor
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Parts, "");
 
             Screen.SkeletonHandler.GenerateSkeleton();
+
+            Screen.ToolWindow.ModelUsageSearch._searchInput = name;
         }
 
         /// <summary>
@@ -128,6 +136,8 @@ namespace StudioCore.Editors.ModelEditor
             CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.MapPiece, mapId);
 
             Screen.SkeletonHandler.GenerateSkeleton();
+
+            Screen.ToolWindow.ModelUsageSearch._searchInput = name;
         }
 
         /// <summary>

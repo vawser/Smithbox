@@ -10,12 +10,12 @@ using static StudioCore.Editors.TimeActEditor.TimeActSelectionHandler;
 
 namespace StudioCore.Editors.TimeActEditor;
 
-public class ContextMenu
+public class TimeActContextMenu
 {
     private TimeActEditorScreen Screen;
     private TimeActSelectionHandler Handler;
 
-    public ContextMenu(TimeActEditorScreen screen, TimeActSelectionHandler handler)
+    public TimeActContextMenu(TimeActEditorScreen screen, TimeActSelectionHandler handler)
     {
         Screen = screen;
         Handler = handler;
@@ -83,6 +83,11 @@ public class ContextMenu
 
         if (ImGui.BeginPopupContextItem($"TimeActEventContextMenu##TimeActEventContextMenu{key}"))
         {
+            if (ImGui.Selectable($"Create##createAction{key}"))
+            {
+                Screen.SelectionHandler.CurrentSelectionContext = SelectionContext.Event;
+                Screen.ActionHandler.DetermineCreateTarget();
+            }
             if (ImGui.Selectable($"Duplicate##duplicateAction{key}"))
             {
                 Screen.SelectionHandler.CurrentSelectionContext = SelectionContext.Event;

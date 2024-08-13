@@ -21,13 +21,13 @@ namespace StudioCore.Editors.TimeActEditor;
 /// <summary>
 /// Handles property edits for direct fields
 /// </summary>
-public class FieldPropertyHandler
+public class TimeActFieldPropertyHandler
 {
     private ActionManager EditorActionManager;
     private TimeActEditorScreen Screen;
     private TimeActDecorator Decorator;
 
-    public FieldPropertyHandler(ActionManager editorActionManager, TimeActEditorScreen screen, TimeActDecorator decorator)
+    public TimeActFieldPropertyHandler(ActionManager editorActionManager, TimeActEditorScreen screen, TimeActDecorator decorator)
     {
         EditorActionManager = editorActionManager;
         Screen = screen;

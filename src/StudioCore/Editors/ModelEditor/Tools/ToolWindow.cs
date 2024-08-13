@@ -17,15 +17,17 @@ namespace StudioCore.Editors.ModelEditor.Actions;
 public class ToolWindow
 {
     private ModelEditorScreen Screen;
+    public ModelUsageSearch ModelUsageSearch;
 
     public ToolWindow(ModelEditorScreen screen)
     {
         Screen = screen;
+        ModelUsageSearch = new ModelUsageSearch(screen);
     }
 
     public void OnProjectChanged()
     {
-
+        ModelUsageSearch.OnProjectChanged();
     }
 
     public void OnGui()
@@ -146,6 +148,33 @@ public class ToolWindow
             if (ImGui.CollapsingHeader("Groups: All Skeleton Bone"))
             {
                 AllSkeletonBoneGroups.DisplayConfiguration(Screen);
+            }
+
+            // Search for Usage
+            if (ImGui.CollapsingHeader("Search for Usage"))
+            {
+                ImguiUtils.WrappedText("Search through all maps for usage of the currently loaded model if input is blank, or the specificed model name if not.");
+                ImguiUtils.WrappedText("");
+
+                ImguiUtils.WrappedText("Model Name:");
+                ImGui.InputText("##modelNameInput", ref ModelUsageSearch._searchInput, 255);
+
+                ImguiUtils.WrappedText("");
+                ImGui.Checkbox("Target Project Files", ref ModelUsageSearch._targetProjectFiles);
+                ImguiUtils.ShowHoverTooltip("Uses the project map files instead of game root.");
+                ImGui.Checkbox("Loose Name Match", ref ModelUsageSearch._looseModelNameMatch);
+                ImguiUtils.ShowHoverTooltip("Only require the Model Name field to contain the search string, instead of requiring an exact match.");
+
+                ImguiUtils.WrappedText("");
+
+                if (ImGui.Button("Search", defaultButtonSize))
+                {
+                    ModelUsageSearch.SearchMaps();
+                }
+
+                ImguiUtils.WrappedText("");
+
+                ModelUsageSearch.DisplayInstances();
             }
 
         }

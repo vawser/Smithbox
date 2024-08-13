@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor;
 
-public class EventGraph
+public class TimeActEventGraph
 {
     private ActionManager EditorActionManager;
     private TimeActEditorScreen Screen;
     private TimeActSelectionHandler Handler;
 
-    public EventGraph(ActionManager editorActionManager, TimeActEditorScreen screen, TimeActSelectionHandler handler)
+    public TimeActEventGraph(ActionManager editorActionManager, TimeActEditorScreen screen, TimeActSelectionHandler handler)
     {
         EditorActionManager = editorActionManager;
         Screen = screen;

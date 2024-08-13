@@ -19,6 +19,25 @@ public class ActionHandler
         EditorActionManager = manager;
     }
 
+    public void DetermineCreateTarget()
+    {
+        var handler = Screen.CollectionPropertyHandler;
+        var context = Screen.SelectionHandler.CurrentSelectionContext;
+
+        switch (context)
+        {
+            case SelectionContext.File: break;
+            case SelectionContext.TimeAct:
+                break;
+            case SelectionContext.Animation:
+                break;
+            case SelectionContext.Event:
+                Screen.CollectionPropertyHandler.CreateEvent();
+                break;
+            case SelectionContext.Property: break;
+        }
+    }
+
     public void DetermineDuplicateTarget()
     {
         var handler = Screen.CollectionPropertyHandler;
