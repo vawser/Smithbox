@@ -12,7 +12,6 @@ public static class FeatureFlags
     public static bool EnableNavmeshBuilder = false;
 
     // Editor Toggles
-    public static bool EnableEditor_TimeAct = true;
     public static bool EnableEditor_Cutscene = false;
     public static bool EnableEditor_Material = false;
     public static bool EnableEditor_Particle = false;

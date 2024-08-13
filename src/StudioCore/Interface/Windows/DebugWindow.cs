@@ -92,15 +92,16 @@ public class DebugWindow
         ImGui.PushStyleColor(ImGuiCol.Header, CFG.Current.Imgui_Moveable_Header);
         ImGui.PushItemWidth(300f);
 
-        DisplayTool_DataExplorer();
         DisplayTool_ParamValidation();
         DisplayTool_MapValidation();
         DisplayTool_TimeActValidation();
-        DisplayTool_FLVERDump();
         DisplayTool_RowNameHelper();
-        DisplayTool_DecryptRegulation();
-        DisplayTool_HavokTool();
-        DisplayTool_FlverTestTool();
+        DisplayTool_EditorTest();
+        //DisplayTool_HavokTool();
+        //DisplayTool_DataExplorer();
+        //DisplayTool_DecryptRegulation();
+        //DisplayTool_FLVERDump();
+        //DisplayTool_FlverTestTool();
 
         ImGui.PopItemWidth();
         ImGui.PopStyleColor();
@@ -169,7 +170,7 @@ public class DebugWindow
         {
             if(ImGui.Button("Dump"))
             {
-                DebugActions.DumpFlverLayouts();
+                FlverDumpTools.DumpFlverLayouts();
             }
 
             ImGui.EndTabItem();
@@ -280,7 +281,7 @@ public class DebugWindow
         {
             if (ImGui.Button("Decrypt"))
             {
-                DebugActions.DecryptRegulation();
+                DecryptionTool.DecryptRegulation();
             }
 
             ImGui.EndTabItem();
@@ -309,6 +310,19 @@ public class DebugWindow
         if (ImGui.BeginTabItem("FLVER Tool"))
         {
             if (ImGui.Button("Test FLVER2 Read"))
+            {
+                FlverTestTool.TestRead();
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplayTool_EditorTest()
+    {
+        if (ImGui.BeginTabItem("Editor Test"))
+        {
+            if (ImGui.Button("Add Editor Instanc"))
             {
                 FlverTestTool.TestRead();
             }
