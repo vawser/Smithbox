@@ -19,7 +19,7 @@ public class ProjectModal
     public Project newProject;
 
     public string newProjectDirectory = "";
-    public bool loadDefaultRowNamesOnCreation = false;
+    public bool loadDefaultRowNamesOnCreation = true;
 
     public ProjectModal()
     {
@@ -29,7 +29,7 @@ public class ProjectModal
         newProject.Config.PinnedFields = new();
 
         newProjectDirectory = "";
-        loadDefaultRowNamesOnCreation = false;
+        loadDefaultRowNamesOnCreation = true;
     }
 
     public bool IsLogicalDrive(string path)
@@ -266,8 +266,10 @@ public class ProjectModal
 
                 Smithbox.ProjectHandler.CurrentProject = newProject;
 
+                Smithbox.ProjectHandler.ImportRowNames = true;
+
                 // Only proceed if load is successful
-                if(Smithbox.ProjectHandler.LoadProject(newProject.ProjectJsonPath))
+                if (Smithbox.ProjectHandler.LoadProject(newProject.ProjectJsonPath))
                     Smithbox.ProjectHandler.IsInitialLoad = false;
             }
         }

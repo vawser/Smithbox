@@ -37,6 +37,8 @@ public class ProjectHandler
     public bool ShowProjectLoadSelection = true;
     public bool RecentProjectLoad = false;
 
+    public bool ImportRowNames = false;
+
     public ProjectHandler()
     {
         CurrentProject = new Project();

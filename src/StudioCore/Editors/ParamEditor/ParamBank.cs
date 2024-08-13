@@ -281,6 +281,10 @@ public class ParamBank
         if (useProjectNames && Smithbox.ProjectType != ProjectType.Undefined)
         {
             dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Paramdex\\{MiscLocator.GetGameIDForDir()}\\Names";
+
+            // Fallback to Smithbox if the project ones don't exist
+            if(!Directory.Exists(dir))
+                dir = ParamLocator.GetParamNamesDir();
         }
 
         var files = param == null
@@ -1318,9 +1322,9 @@ public class ParamBank
                             () => RefreshAllParamDiffCaches(true)));
                     }));
 
-                if (Smithbox.ProjectHandler.ProjectModal.loadDefaultRowNamesOnCreation)
+                if (Smithbox.ProjectHandler.ImportRowNames)
                 {
-                    Smithbox.ProjectHandler.ProjectModal.loadDefaultRowNamesOnCreation = false;
+                    Smithbox.ProjectHandler.ImportRowNames = false;
 
                     try
                     {

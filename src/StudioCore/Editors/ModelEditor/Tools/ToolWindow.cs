@@ -153,7 +153,7 @@ public class ToolWindow
             // Search for Usage
             if (ImGui.CollapsingHeader("Search for Usage"))
             {
-                ImguiUtils.WrappedText("Search through all maps for usage of the currently loaded model if input is blank, or the specificed model name if not.");
+                ImguiUtils.WrappedText("Search through all maps for usage of the specificed model name.");
                 ImguiUtils.WrappedText("");
 
                 ImguiUtils.WrappedText("Model Name:");
