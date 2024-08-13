@@ -92,5 +92,4 @@ World Map:
 - ADD: finish documenting ER SOTE rows
 
 Time Act Editor
- - ADD: Duplicate/Delete/Copy/Paste row context for Animations and Events
  - ADD: TAE Quick Edit tool

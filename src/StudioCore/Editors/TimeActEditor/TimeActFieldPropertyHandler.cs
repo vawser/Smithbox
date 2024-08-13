@@ -92,7 +92,7 @@ public class TimeActFieldPropertyHandler
             Screen.SelectionHandler.ContainerInfo.IsModified = true;
 
             // Re-select row at new index
-            TimeActUtils.SelectNewAnimation(anim);
+            TimeActUtils.SelectAdjustedAnimation(anim);
         }
 
         changed = false;

@@ -96,8 +96,6 @@ public class TimeActCollectionPropertyHandler
         }
     }
 
-    // TODO: actionize
-
     public void DuplicateTimeAct()
     {
         if (SelectionHandler.CurrentTimeAct == null)
@@ -131,7 +129,8 @@ public class TimeActCollectionPropertyHandler
             int curId = int.Parse(curFile.Name.Substring(1));
             if (curId == (newId-1))
             {
-                SelectionHandler.ContainerInfo.InternalFiles.Insert(i+1, newInternalFile);
+                var action = new TimeActDuplicate(newInternalFile, SelectionHandler.ContainerInfo.InternalFiles, i + 1);
+                EditorActionManager.ExecuteAction(action);
                 break;
             }
         }
@@ -152,7 +151,9 @@ public class TimeActCollectionPropertyHandler
         SelectionHandler.ContainerInfo.IsModified = true;
 
         var curInternalFile = SelectionHandler.ContainerInfo.InternalFiles[SelectionHandler.CurrentTimeActKey];
-        curInternalFile.MarkForRemoval = true;
+
+        var action = new TimeActDelete(curInternalFile);
+        EditorActionManager.ExecuteAction(action);
 
         SelectionHandler.ResetOnTimeActChange();
     }
@@ -167,37 +168,56 @@ public class TimeActCollectionPropertyHandler
 
         SelectionHandler.ContainerInfo.IsModified = true;
 
+        var timeact = Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTimeAct;
         var storedAnims = Screen.SelectionHandler.TimeActMultiselect.StoredAnimations;
+        var lastAnimIdx = -1;
 
-        List<TAE.Animation> targetAnims = new();
-
-        for(int i = 0; i < SelectionHandler.CurrentTimeAct.Animations.Count; i++)
+        if (storedAnims.Count <= 1)
         {
-            var targetAnim = SelectionHandler.CurrentTimeAct.Animations[i];
-            if(storedAnims.ContainsKey(i))
+            var curAnim = timeact.Animations[storedAnims.First().Key];
+            var insertIdx = timeact.Animations.IndexOf(curAnim);
+            var dupeAnim = TimeActUtils.CloneAnimation(curAnim);
+
+            var action = new TimeActDuplicateAnimation(dupeAnim, timeact.Animations, insertIdx);
+            EditorActionManager.ExecuteAction(action);
+
+            timeact.Animations.Sort();
+        }
+        else
+        {
+            List<int> insertIndices = new List<int>();
+            List<TAE.Animation> newAnims = new List<TAE.Animation>();
+
+            for (int i = 0; i < timeact.Animations.Count; i++)
             {
-                targetAnims.Add(targetAnim);
+                if (storedAnims.ContainsKey(i))
+                {
+                    var curAnim = timeact.Animations[i];
+                    var insertIdx = timeact.Animations.IndexOf(curAnim);
+                    var dupeAnim = TimeActUtils.CloneAnimation(curAnim);
+
+                    long newID = 0;
+                    (newID, insertIdx) = GetNewAnimationID(dupeAnim.ID);
+                    dupeAnim.ID = newID;
+
+                    insertIndices.Add(insertIdx);
+                    newAnims.Add(dupeAnim);
+
+                    lastAnimIdx = insertIdx;
+                }
             }
+
+            var action = new TimeActMultiDuplicateAnim(newAnims, timeact.Animations, insertIndices);
+            EditorActionManager.ExecuteAction(action);
+
+            // Select last newly duplicated event
+            if (lastAnimIdx != -1)
+            {
+                TimeActUtils.SelectNewAnimation(lastAnimIdx);
+            }
+
+            timeact.Animations.Sort();
         }
-
-        List<TAE.Animation> newAnims = new();
-
-        foreach (var anim in targetAnims)
-        {
-            long newID = 0;
-            int insertIdx = 0;
-            (newID, insertIdx) = GetNewAnimationID(anim.ID);
-
-            var newAnim = TimeActUtils.CloneAnimation(anim);
-            newAnim.ID = newID;
-
-            SelectionHandler.CurrentTimeAct.Animations.Insert(insertIdx, newAnim);
-
-            newAnims.Add(newAnim);
-        }
-
-        // Re-select last row at new index
-        TimeActUtils.SelectNewAnimation(newAnims.Last());
     }
 
     public void DeleteAnimation()
@@ -211,26 +231,44 @@ public class TimeActCollectionPropertyHandler
         SelectionHandler.ContainerInfo.IsModified = true;
 
         var storedAnims = Screen.SelectionHandler.TimeActMultiselect.StoredAnimations;
+        var timeact = Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTimeAct;
 
-        List<TAE.Animation> targetAnims = new();
-
-        for (int i = 0; i < SelectionHandler.CurrentTimeAct.Animations.Count; i++)
+        // Single
+        if (storedAnims.Count <= 1)
         {
-            var targetAnim = SelectionHandler.CurrentTimeAct.Animations[i];
-            if (storedAnims.ContainsKey(i))
+            var curAnim = timeact.Animations[storedAnims.First().Key];
+            var removeIdx = timeact.Animations.IndexOf(curAnim);
+            var storedAnim = TimeActUtils.CloneAnimation(curAnim);
+
+            var action = new TimeActDeleteAnim(storedAnim, timeact.Animations, removeIdx);
+            EditorActionManager.ExecuteAction(action);
+        }
+        // Multi-Select
+        else
+        {
+            List<int> removeIndices = new List<int>();
+            List<TAE.Animation> removedAnims = new List<TAE.Animation>();
+
+            for (int i = 0; i < timeact.Animations.Count; i++)
             {
-                targetAnims.Add(targetAnim);
+                if (storedAnims.ContainsKey(i))
+                {
+                    var curAnim = timeact.Animations[i];
+                    var removeIdx = timeact.Animations.IndexOf(curAnim);
+                    var storedAnim = TimeActUtils.CloneAnimation(curAnim);
+
+                    removeIndices.Add(removeIdx);
+                    removedAnims.Add(storedAnim);
+                }
             }
+
+            var action = new TimeActMultiDeleteAnim(removedAnims, timeact.Animations, removeIndices);
+            EditorActionManager.ExecuteAction(action);
         }
 
-        foreach (var anim in targetAnims)
-        {
-            SelectionHandler.CurrentTimeAct.Animations.Remove(anim);
-        }
-
-        SelectionHandler.CurrentTimeAct.Animations.Sort();
-        SelectionHandler.ResetOnTimeActAnimationChange();
+        Screen.SelectionHandler.TimeActMultiselect.Reset(false, true, true);
     }
+
     public void CreateEvent()
     {
         if (SelectionHandler.CurrentTimeActEvent == null)
@@ -265,7 +303,7 @@ public class TimeActCollectionPropertyHandler
         if(storedEvents.Count <= 1)
         {
             var curEvent = animations.Events[storedEvents.First().Key];
-            var insertIdx = animations.Events.IndexOf(curEvent) + 1;
+            var insertIdx = animations.Events.IndexOf(curEvent);
             var dupeEvent = curEvent.GetClone(false);
 
             var action = new TimeActDuplicateEvent(dupeEvent, animations.Events, insertIdx);
@@ -282,7 +320,7 @@ public class TimeActCollectionPropertyHandler
                 if (storedEvents.ContainsKey(i))
                 {
                     var curEvent = animations.Events[i];
-                    var insertIdx = animations.Events.IndexOf(curEvent) + 1;
+                    var insertIdx = animations.Events.IndexOf(curEvent);
                     insertIndices.Add(insertIdx);
                     var dupeEvent = curEvent.GetClone(false);
                     newEvents.Add(dupeEvent);

@@ -1,4 +1,5 @@
 ﻿using DotNext.Collections.Generic;
+using HKLib.hk2018.hkHashMapDetail;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.GraphicsEditor;
@@ -9,9 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Veldrid;
 using static SoulsFormats.GPARAM;
+using static StudioCore.Editors.TimeActEditor.AnimationBank;
 
 namespace StudioCore.Editors.TimeActEditor;
 
+/// <summary>
+/// Event - Property Change (Generic)
+/// </summary>
 public class EventPropertyChange : EditorAction
 {
     private Dictionary<string, object> Parameters;
@@ -216,6 +221,9 @@ public class EventPropertyChange : EditorAction
     }
 }
 
+/// <summary>
+/// Event - Property Change (StartTime)
+/// </summary>
 public class TimeActStartTimePropertyChange : EditorAction
 {
     private TAE.Event Event;
@@ -244,6 +252,9 @@ public class TimeActStartTimePropertyChange : EditorAction
     }
 }
 
+/// <summary>
+/// Event - Property Change (EndTime)
+/// </summary>
 public class TimeActEndTimePropertyChange : EditorAction
 {
     private TAE.Event Event;
@@ -272,6 +283,9 @@ public class TimeActEndTimePropertyChange : EditorAction
     }
 }
 
+/// <summary>
+/// Animation - Property Change (Generic)
+/// </summary>
 public class TimeActEndAnimHeaderPropertyChange : EditorAction
 {
     private TAE.Animation Animation;
@@ -303,6 +317,9 @@ public class TimeActEndAnimHeaderPropertyChange : EditorAction
     }
 }
 
+/// <summary>
+/// Animation - Property Change (ID)
+/// </summary>
 public class TimeActEndAnimIDPropertyChange : EditorAction
 {
     private TAE.Animation Animation;
@@ -331,6 +348,9 @@ public class TimeActEndAnimIDPropertyChange : EditorAction
     }
 }
 
+/// <summary>
+/// Animation - Property Change (AnimFileName)
+/// </summary>
 public class TimeActEndAnimNamePropertyChange : EditorAction
 {
     private TAE.Animation Animation;
@@ -358,6 +378,153 @@ public class TimeActEndAnimNamePropertyChange : EditorAction
         return ActionEvent.NoEvent;
     }
 }
+
+/// <summary>
+/// Animation - Duplicate (Single)
+/// </summary>
+public class TimeActDuplicateAnimation : EditorAction
+{
+    private TAE.Animation NewAnim;
+    private List<TAE.Animation> AnimationList;
+    private int InsertionIndex;
+
+    public TimeActDuplicateAnimation(TAE.Animation newAnimation, List<TAE.Animation> animList, int index)
+    {
+        InsertionIndex = index;
+        NewAnim = newAnimation;
+        AnimationList = animList;
+    }
+
+    public override ActionEvent Execute()
+    {
+        AnimationList.Insert(InsertionIndex, NewAnim);
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        AnimationList.RemoveAt(InsertionIndex);
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+/// <summary>
+/// Animation - Duplicate (Multiple)
+/// </summary>
+public class TimeActMultiDuplicateAnim : EditorAction
+{
+    private List<TAE.Animation> NewAnims;
+    private List<TAE.Animation> AnimationList;
+    private List<int> InsertionIndexes;
+
+    public TimeActMultiDuplicateAnim(List<TAE.Animation> newAnims, List<TAE.Animation> animList, List<int> indexList)
+    {
+        InsertionIndexes = indexList;
+        NewAnims = newAnims;
+        AnimationList = animList;
+    }
+
+    public override ActionEvent Execute()
+    {
+        for (int i = 0; i < InsertionIndexes.Count; i++)
+        {
+            var curNewAnim = NewAnims[i];
+            var curIndex = InsertionIndexes[i];
+
+            AnimationList.Insert(curIndex, curNewAnim);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        foreach (var entry in NewAnims)
+        {
+            AnimationList.Remove(entry);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+/// <summary>
+/// Animation - Delete (Single)
+/// </summary>
+public class TimeActDeleteAnim : EditorAction
+{
+    private TAE.Animation StoredAnim;
+    private List<TAE.Animation> AnimationList;
+    private int RemovalIndex;
+
+    public TimeActDeleteAnim(TAE.Animation storedAnim, List<TAE.Animation> animList, int index)
+    {
+        StoredAnim = storedAnim;
+        AnimationList = animList;
+        RemovalIndex = index;
+    }
+
+    public override ActionEvent Execute()
+    {
+        AnimationList.RemoveAt(RemovalIndex);
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        AnimationList.Insert(RemovalIndex, StoredAnim);
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+/// <summary>
+/// Animation - Delete (Multiple)
+/// </summary>
+public class TimeActMultiDeleteAnim : EditorAction
+{
+    private List<TAE.Animation> StoredAnims;
+    private List<TAE.Animation> AnimationList;
+    private List<int> RemovedIndices;
+
+    public TimeActMultiDeleteAnim(List<TAE.Animation> storedAnims, List<TAE.Animation> animList, List<int> indices)
+    {
+        StoredAnims = storedAnims;
+        AnimationList = animList;
+        RemovedIndices = indices;
+    }
+
+    public override ActionEvent Execute()
+    {
+        for (int i = RemovedIndices.Count - 1; i >= 0; i--)
+        {
+            var curIndex = RemovedIndices[i];
+            AnimationList.RemoveAt(curIndex);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        for (int i = 0; i < RemovedIndices.Count; i++)
+        {
+            var storedAnim = StoredAnims[i];
+            var curIndex = RemovedIndices[i];
+
+            AnimationList.Insert(curIndex, storedAnim);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+/// <summary>
+/// Event - Create
+/// </summary>
 public class TimeActCreateNewEvent : EditorAction
 {
     private TAE.Event NewEvent;
@@ -385,6 +552,10 @@ public class TimeActCreateNewEvent : EditorAction
         return ActionEvent.NoEvent;
     }
 }
+
+/// <summary>
+/// Event - Duplicate (Single)
+/// </summary>
 public class TimeActDuplicateEvent : EditorAction
 {
     private TAE.Event NewEvent;
@@ -413,6 +584,9 @@ public class TimeActDuplicateEvent : EditorAction
     }
 }
 
+/// <summary>
+/// Event - Duplicate (Multiple)
+/// </summary>
 public class TimeActMultiDuplicateEvent : EditorAction
 {
     private List<TAE.Event> NewEvents;
@@ -450,6 +624,9 @@ public class TimeActMultiDuplicateEvent : EditorAction
     }
 }
 
+/// <summary>
+/// Event - Delete (Single)
+/// </summary>
 public class TimeActDeleteEvent : EditorAction
 {
     private TAE.Event StoredEvent;
@@ -478,6 +655,9 @@ public class TimeActDeleteEvent : EditorAction
     }
 }
 
+/// <summary>
+/// Event - Delete (Multiple)
+/// </summary>
 public class TimeActMultiDeleteEvent : EditorAction
 {
     private List<TAE.Event> StoredEvents;
@@ -512,6 +692,65 @@ public class TimeActMultiDeleteEvent : EditorAction
 
             EventList.Insert(curIndex, storedEvent);
         }
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+
+/// <summary>
+/// Event - Duplicate (Single)
+/// </summary>
+public class TimeActDuplicate : EditorAction
+{
+    private InternalFileInfo TargetTimeAct;
+    private List<InternalFileInfo> FileList;
+    private int InsertionIndex;
+
+    public TimeActDuplicate(InternalFileInfo newInfo, List<InternalFileInfo> fileList, int index)
+    {
+        InsertionIndex = index;
+        FileList = fileList;
+        TargetTimeAct = newInfo;
+    }
+
+    public override ActionEvent Execute()
+    {
+        FileList.Insert(InsertionIndex, TargetTimeAct);
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        FileList.RemoveAt(InsertionIndex);
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+/// <summary>
+/// Event - Delete (Single)
+/// </summary>
+public class TimeActDelete : EditorAction
+{
+    private InternalFileInfo TargetTimeAct;
+
+    public TimeActDelete(InternalFileInfo info)
+    {
+        TargetTimeAct = info;
+    }
+
+    public override ActionEvent Execute()
+    {
+        TargetTimeAct.MarkForRemoval = true;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        TargetTimeAct.MarkForRemoval = false;
 
         return ActionEvent.NoEvent;
     }

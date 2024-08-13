@@ -229,25 +229,6 @@ public static class TimeActUtils
         }
     }
 
-    public static void SelectNewAnimation(TAE.Animation existingAnim)
-    {
-        var handler = Smithbox.EditorHandler.TimeActEditor.SelectionHandler;
-        handler.TimeActMultiselect.StoredAnimations.Clear();
-
-        handler.CurrentTimeAct.Animations.Sort();
-        for (int i = 0; i < handler.CurrentTimeAct.Animations.Count; i++)
-        {
-            var serAnim = handler.CurrentTimeAct.Animations[i];
-            if (serAnim.ID == existingAnim.ID)
-            {
-                handler.CurrentTimeActAnimation = serAnim;
-                handler.CurrentTimeActAnimationIndex = i;
-                handler.TimeActMultiselect.StoredAnimations.Add(i, handler.CurrentTimeActAnimation);
-                break;
-            }
-        }
-    }
-
     public static TAE.Animation CloneAnimation(TAE.Animation sourceAnim)
     {
         TAE.Animation newAnim = new TAE.Animation(sourceAnim.ID, sourceAnim.MiniHeader.GetClone(), sourceAnim.AnimFileName);
@@ -267,6 +248,44 @@ public static class TimeActUtils
         newAnim.Events = newEvents;
 
         return newAnim;
+    }
+
+    public static void SelectAdjustedAnimation(TAE.Animation targetAnim)
+    {
+        var handler = Smithbox.EditorHandler.TimeActEditor.SelectionHandler;
+        handler.TimeActMultiselect.StoredAnimations.Clear();
+
+        handler.CurrentTimeAct.Animations.Sort();
+        for (int i = 0; i < handler.CurrentTimeAct.Animations.Count; i++)
+        {
+            var serAnim = handler.CurrentTimeAct.Animations[i];
+            if (serAnim.ID == targetAnim.ID)
+            {
+                handler.CurrentTimeActAnimation = serAnim;
+                handler.CurrentTimeActAnimationIndex = i;
+                handler.TimeActMultiselect.StoredAnimations.Add(i, handler.CurrentTimeActAnimation);
+                break;
+            }
+        }
+    }
+
+    public static void SelectNewAnimation(int targetIndex)
+    {
+        var handler = Smithbox.EditorHandler.TimeActEditor.SelectionHandler;
+        handler.TimeActMultiselect.StoredAnimations.Clear();
+
+        for (int i = 0; i < handler.CurrentTimeAct.Animations.Count; i++)
+        {
+            var curAnim = handler.CurrentTimeAct.Animations[i];
+
+            if (i == targetIndex)
+            {
+                handler.CurrentTimeActAnimation = curAnim;
+                handler.CurrentTimeActAnimationIndex = i;
+                handler.TimeActMultiselect.StoredAnimations.Add(i, handler.CurrentTimeActAnimation);
+                break;
+            }
+        }
     }
 
     public static void SelectNewEvent(int targetIndex)
