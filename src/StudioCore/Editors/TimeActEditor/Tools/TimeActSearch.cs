@@ -11,6 +11,8 @@ using StudioCore.Interface;
 using System.Numerics;
 using StudioCore.Editor;
 using SoulsFormats;
+using HKLib.hk2018.hkAsyncThreadPool;
+using static StudioCore.Editors.TimeActEditor.TimeActUtils;
 
 namespace StudioCore.Editors.TimeActEditor.Tools;
 
@@ -62,8 +64,9 @@ public class TimeActSearch
         }
         if (CurrentSearchType is SearchType.EventValue)
         {
-            ImguiUtils.WrappedText("Event Value will only match within the currently selected Time Act.");
             ImguiUtils.WrappedText("");
+            ImguiUtils.WrappedText($"Event Value will only match within the currently selected Time Act container:");
+            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{Screen.SelectionHandler.ContainerInfo.Name}");
         }
         ImguiUtils.WrappedText("");
 

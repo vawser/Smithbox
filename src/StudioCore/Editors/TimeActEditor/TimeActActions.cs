@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Veldrid;
 using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.TimeActEditor;
@@ -353,6 +354,127 @@ public class TimeActEndAnimNamePropertyChange : EditorAction
     public override ActionEvent Undo()
     {
         Animation.AnimFileName = (string)OldValue;
+
+        return ActionEvent.NoEvent;
+    }
+}
+public class TimeActCreateNewEvent : EditorAction
+{
+    private TAE.Event NewEvent;
+    private List<TAE.Event> EventList;
+    private int InsertionIndex;
+
+    public TimeActCreateNewEvent(TAE.Event entryNewEvent, List<TAE.Event> eventList, int index)
+    {
+        InsertionIndex = index;
+        NewEvent = entryNewEvent;
+        EventList = eventList;
+    }
+
+    public override ActionEvent Execute()
+    {
+        EventList.Insert(InsertionIndex, NewEvent);
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        EventList.RemoveAt(InsertionIndex);
+
+        return ActionEvent.NoEvent;
+    }
+}
+public class TimeActDuplicateEvent : EditorAction
+{
+    private TAE.Event NewEvent;
+    private List<TAE.Event> EventList;
+    private int InsertionIndex;
+
+    public TimeActDuplicateEvent(TAE.Event entryNewEvent, List<TAE.Event> eventList, int index)
+    {
+        InsertionIndex = index;
+        NewEvent = entryNewEvent;
+        EventList = eventList;
+    }
+
+    public override ActionEvent Execute()
+    {
+        EventList.Insert(InsertionIndex, NewEvent);
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        EventList.RemoveAt(InsertionIndex);
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class TimeActMultiDuplicateEvent : EditorAction
+{
+    private List<TAE.Event> NewEvents;
+    private List<TAE.Event> EventList;
+    private List<int> InsertionIndexes;
+
+    public TimeActMultiDuplicateEvent(List<TAE.Event> newEvents, List<TAE.Event> eventList, List<int> indexList)
+    {
+        InsertionIndexes = indexList;
+        NewEvents = newEvents;
+        EventList = eventList;
+    }
+
+    public override ActionEvent Execute()
+    {
+        for(int i = 0; i < InsertionIndexes.Count; i++)
+        {
+            var curNewEvent = NewEvents[i];
+            var curIndex = InsertionIndexes[i];
+
+            EventList.Insert(curIndex, curNewEvent);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        for (int i = InsertionIndexes.Count; i > 0; i--)
+        {
+            var curIndex = InsertionIndexes[i];
+
+            EventList.RemoveAt(curIndex);
+        }
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+public class TimeActDeleteEvent : EditorAction
+{
+    private TAE.Event StoredEvent;
+    private List<TAE.Event> EventList;
+    private int RemovalIndex;
+
+    public TimeActDeleteEvent(TAE.Event entryOldEvent, List<TAE.Event> eventList, int index)
+    {
+        RemovalIndex = index;
+        StoredEvent = entryOldEvent;
+        EventList = eventList;
+    }
+
+    public override ActionEvent Execute()
+    {
+        EventList.RemoveAt(RemovalIndex);
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        EventList.Insert(RemovalIndex, StoredEvent);
 
         return ActionEvent.NoEvent;
     }

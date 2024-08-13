@@ -268,4 +268,23 @@ public static class TimeActUtils
 
         return newAnim;
     }
+
+    public static void SelectNewEvent(int targetIndex)
+    {
+        var handler = Smithbox.EditorHandler.TimeActEditor.SelectionHandler;
+        handler.TimeActEventMultiselect._storedIndices.Clear();
+
+        for (int i = 0; i < handler.CurrentTimeActAnimation.Events.Count; i++)
+        {
+            var curEvent = handler.CurrentTimeActAnimation.Events[i];
+
+            if (i == targetIndex)
+            {
+                handler.CurrentTimeActEvent = curEvent;
+                handler.CurrentTimeActEventIndex = i;
+                handler.TimeActEventMultiselect._storedIndices.Add(i);
+                break;
+            }
+        }
+    }
 }

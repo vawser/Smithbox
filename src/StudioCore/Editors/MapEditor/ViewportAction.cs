@@ -397,26 +397,36 @@ public class CloneMapObjectsAction : ViewportAction
             foreach (var (originalName, cloned) in clonedList)
             {
                 if (targetMap != map)
+                {
                     MsbUtils.StripMsbReference(
                         clonedList.Select(e => e.Item2.WrappedObject as IMsbEntry),
                         cloned.WrappedObject as IMsbEntry
                     );
+                }
 
                 int? maybeIndex = null;
                 if (TargetMap is null)
+                {
                     maybeIndex = map.Objects.IndexOf(map.GetObjectByName(originalName)) + 1;
+                }
 
                 Entity parent = null;
+
                 if (TargetBTL is not null && cloned.WrappedObject is BTL.Light)
                     parent = TargetBTL;
+
                 if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
                     ViewportActionCommon.SetUniqueEntityID(cloned, map);
+
                 if (CFG.Current.Toolbar_Duplicate_Increment_InstanceID)
                     ViewportActionCommon.SetUniqueInstanceID(cloned, map);
+
                 if (CFG.Current.Toolbar_Duplicate_Clear_Entity_ID)
                     ViewportActionCommon.ClearEntityID(cloned, map);
+
                 if (CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs)
                     ViewportActionCommon.ClearEntityGroupID(cloned, map);
+
                 ViewportActionCommon.RenameDuplicates(targetMap, clonedList.Select(e => e.Item2), cloned);
                 ViewportActionCommon.AddObjectToMap(targetMap, cloned, maybeIndex, parent);
             }

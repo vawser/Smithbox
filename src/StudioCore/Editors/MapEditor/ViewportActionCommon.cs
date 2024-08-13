@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -642,11 +643,15 @@ namespace StudioCore.Editors.MapEditor
                 }
                 while (map.GetObjectByName(newName) is not null || entities.Any(ent => ent.Name == newName));
             }
-            MsbUtils.RenameWithRefs(
-                entities.Select(ent => ent.WrappedObject as IMsbEntry),
-                target.WrappedObject as IMsbEntry,
-                newName
-            );
+
+            if (target.WrappedObject is not BTL.Light)
+            {
+                MsbUtils.RenameWithRefs(
+                    entities.Select(ent => ent.WrappedObject as IMsbEntry),
+                    target.WrappedObject as IMsbEntry,
+                    newName
+                );
+            }
             target.Name = newName;
         }
 
@@ -684,8 +689,22 @@ namespace StudioCore.Editors.MapEditor
                 map.Objects.Add(entity);
             }
 
-            parent ??= map.MapOffsetNode ?? map.RootObject;
+            if (entity.WrappedObject is BTL.Light)
+            {
+                // TODO: should probably actually find the correct parent in circumstances where there are multiple
+                parent = map.BTLParents.First();
+            }
+            else if (map.MapOffsetNode != null)
+            {
+                parent = map.MapOffsetNode;
+            }
+            else if (map.RootObject != null)
+            {
+                parent = map.RootObject;
+            }
+
             parent.AddChild(entity);
+            TaskLogs.AddLog($"parent: {parent.Name}");
             map.HasUnsavedChanges = true;
         }
 

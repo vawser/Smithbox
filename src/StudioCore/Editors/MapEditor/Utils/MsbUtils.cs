@@ -1,4 +1,5 @@
 using HKLib.hk2018.hkAtomic;
+using Org.BouncyCastle.Asn1.X509;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
