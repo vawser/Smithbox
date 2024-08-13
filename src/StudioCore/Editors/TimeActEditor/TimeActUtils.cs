@@ -208,4 +208,25 @@ public static class TimeActUtils
             }
         }
     }
+
+    public static TAE.Animation CloneAnimation(TAE.Animation sourceAnim)
+    {
+        TAE.Animation newAnim = new TAE.Animation(sourceAnim.ID, sourceAnim.MiniHeader.GetClone(), sourceAnim.AnimFileName);
+
+        List<TAE.EventGroup> newEventGroups = new();
+        foreach (var eventGrp in sourceAnim.EventGroups)
+        {
+            newEventGroups.Add(eventGrp.GetClone());
+        }
+        List<TAE.Event> newEvents = new();
+        foreach (var evt in sourceAnim.Events)
+        {
+            newEvents.Add(evt.GetClone(false));
+        }
+
+        newAnim.EventGroups = newEventGroups;
+        newAnim.Events = newEvents;
+
+        return newAnim;
+    }
 }

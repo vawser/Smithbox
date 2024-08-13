@@ -119,31 +119,16 @@ public class CollectionPropertyHandler
 
         foreach (var anim in targetAnims)
         {
-            var curID = anim.ID;
-            var curHeader = anim.MiniHeader.GetClone();
-            var curName = anim.AnimFileName;
-            List<TAE.EventGroup> newEventGroups = new();
-            foreach (var eventGrp in anim.EventGroups)
-            {
-                newEventGroups.Add(eventGrp.GetClone());
-            }
-            List<TAE.Event> newEvents = new();
-            foreach (var evt in anim.Events)
-            {
-                newEvents.Add(evt.GetClone(false));
-            }
-
             long newID = 0;
             int insertIdx = 0;
-            (newID, insertIdx) = GetNewAnimationID(curID);
+            (newID, insertIdx) = GetNewAnimationID(anim.ID);
 
-            var newAnimation = new TAE.Animation(newID, curHeader, curName);
-            newAnimation.EventGroups = newEventGroups;
-            newAnimation.Events = newEvents;
+            var newAnim = TimeActUtils.CloneAnimation(anim);
+            newAnim.ID = newID;
 
-            SelectionHandler.CurrentTimeAct.Animations.Insert(insertIdx, newAnimation);
+            SelectionHandler.CurrentTimeAct.Animations.Insert(insertIdx, newAnim);
 
-            newAnims.Add(newAnimation);
+            newAnims.Add(newAnim);
         }
 
         // Re-select last row at new index

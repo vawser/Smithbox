@@ -22,7 +22,6 @@ Behavior Editor:
  - ADD: skeleton HKX editor
  - ADD: collision HKX editor
  
-
 Map Editor: 
  - ADD: .BTAB support
  - ADD: .GRASS support
