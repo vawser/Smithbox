@@ -334,6 +334,10 @@ public class MapEditorKeybindTab
                 KeyBindings.Current.MAP_PivotSelectionYAxis,
                 KeyBindings.Default.MAP_PivotSelectionYAxis);
 
+            KeyBindings.Current.MAP_RotateFixedAngle = InputTracker.KeybindLine(50,
+                KeyBindings.Current.MAP_RotateFixedAngle,
+                KeyBindings.Default.MAP_RotateFixedAngle);
+
             KeyBindings.Current.MAP_ResetRotation = InputTracker.KeybindLine(8,
                 KeyBindings.Current.MAP_ResetRotation,
                 KeyBindings.Default.MAP_ResetRotation);
@@ -370,6 +374,14 @@ public class MapEditorKeybindTab
                 KeyBindings.Current.MAP_MakeNormalObject,
                 KeyBindings.Default.MAP_MakeNormalObject);
 
+            KeyBindings.Current.MAP_DisableGamePresence = InputTracker.KeybindLine(51,
+                KeyBindings.Current.MAP_DisableGamePresence,
+                KeyBindings.Default.MAP_DisableGamePresence);
+
+            KeyBindings.Current.MAP_EnableGamePresence = InputTracker.KeybindLine(52,
+                KeyBindings.Current.MAP_EnableGamePresence,
+                KeyBindings.Default.MAP_EnableGamePresence);
+
             KeyBindings.Current.MAP_ScrambleSelection = InputTracker.KeybindLine(17,
                 KeyBindings.Current.MAP_ScrambleSelection,
                 KeyBindings.Default.MAP_ScrambleSelection);
@@ -400,17 +412,6 @@ public class MapEditorKeybindTab
             KeyBindings.Current.MAP_MoveObjectBottom = InputTracker.KeybindLine(23,
                 KeyBindings.Current.MAP_MoveObjectBottom,
                 KeyBindings.Default.MAP_MoveObjectBottom);
-        }
-
-        if (ImGui.CollapsingHeader("Prefabs", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            KeyBindings.Current.MAP_ExportPrefab = InputTracker.KeybindLine(24,
-                KeyBindings.Current.MAP_ExportPrefab,
-                KeyBindings.Default.MAP_ExportPrefab);
-
-            KeyBindings.Current.MAP_ImportPrefab = InputTracker.KeybindLine(25,
-                KeyBindings.Current.MAP_ImportPrefab,
-                KeyBindings.Default.MAP_ImportPrefab);
         }
 
         if (ImGui.CollapsingHeader("Render Groups", ImGuiTreeNodeFlags.DefaultOpen))

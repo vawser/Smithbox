@@ -1,15 +1,11 @@
-﻿using DotNext;
-using HKLib.hk2018.hk;
-using ImGuiNET;
+﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.GraphicsEditor;
-using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;

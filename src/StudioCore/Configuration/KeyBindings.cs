@@ -266,25 +266,33 @@ public class KeyBindings
         public KeyBind MAP_RotateSelectionXAxis = new(
             "Rotate Selection on X-axis", 
             "Rotates the current selection on the X-axis by the specified increment.", 
-            Key.J);
+            Key.R,
+            true);
 
         public KeyBind MAP_RotateSelectionYAxis = new(
             "Rotate Selection on Y-axis",
             "Rotates the current selection on the Y-axis by the specified increment.",
-            Key.K, 
-            false, 
-            false, 
-            true);
+            Key.Unknown);
 
         public KeyBind MAP_PivotSelectionYAxis = new(
             "Pivot Selection on Y-axis",
             "Pivots the current selection on the Y-axis by the specified increment.",
-            Key.K);
+            Key.R,
+            false,
+            false,
+            true);
+
+        public KeyBind MAP_RotateFixedAngle = new(
+            "Rotate to Fixed Increment for Selection",
+            "Increment the rotation of the current selection to the fixed angle defined in the tool window.",
+            Key.Unknown);
 
         public KeyBind MAP_ResetRotation = new(
             "Reset Rotation for Selection",
             "Resets the rotation of the current selection to (0,0,0).",
-            Key.L);
+            Key.R,
+            false,
+            true);
 
         public KeyBind MAP_FlipSelectionVisibility = new(
             "Flip Editor Visibility of Selection", 
@@ -344,6 +352,16 @@ public class KeyBindings
             false, 
             true);
 
+        public KeyBind MAP_DisableGamePresence = new(
+            "Disable Game Presence of Selection",
+            "Changes the current selection GameEditionDisable to 0, hiding it in-game.",
+            Key.Unknown);
+
+        public KeyBind MAP_EnableGamePresence = new(
+            "Enable Game Presence of Selection",
+            "Changes the current selection GameEditionDisable to 1, display it in-game.",
+            Key.Unknown);
+
         public KeyBind MAP_ScrambleSelection = new(
             "Scramble Selection", 
             "Scrambles the position, rotation and scale (depending on Scramble tool settings) of the current selection.", 
@@ -376,20 +394,6 @@ public class KeyBindings
             "Toggle Patrol Route Connections", 
             "Toggles the rendering of patrol route connections.", 
             Key.P, 
-            true);
-
-        public KeyBind MAP_ExportPrefab = new(
-            "Export Prefab from Selection", 
-            "Exports the current selection as a prefab.", 
-            Key.E, 
-            true, 
-            true);
-
-        public KeyBind MAP_ImportPrefab = new(
-            "Import Prefab", 
-            "Imports the currently selected prefab, creating new map objects based upon it.", 
-            Key.I, 
-            true, 
             true);
 
         public KeyBind MAP_DuplicateToMap = new(

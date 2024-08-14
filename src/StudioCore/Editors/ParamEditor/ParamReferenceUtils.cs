@@ -1,23 +1,14 @@
 ﻿using Andre.Formats;
-using HKLib.hk2018.hkHashMapDetail;
-using HKX2;
 using ImGuiNET;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Octokit;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Locators;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.Editors.ParamEditor;
 

@@ -1,14 +1,12 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Core;
-using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Gui;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Scene;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -67,13 +65,62 @@ public class SelectionGroupEditor
         Bank.LoadBank();
     }
 
-    /// <summary>
-    /// Display the window.
-    /// </summary>
+    public void SelectionGroupShortcuts()
+    {
+        // Selection Groups
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateSelectionGroup))
+        {
+            CreateSelectionGroup("External");
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_0))
+        {
+            ShortcutSelectGroup(0);
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_1))
+        {
+            ShortcutSelectGroup(1);
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_2))
+        {
+            ShortcutSelectGroup(2);
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_3))
+        {
+            ShortcutSelectGroup(3);
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup4))
+        {
+            ShortcutSelectGroup(4);
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup5))
+        {
+            ShortcutSelectGroup(5);
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup6))
+        {
+            ShortcutSelectGroup(6);
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup7))
+        {
+            ShortcutSelectGroup(7);
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup8))
+        {
+            ShortcutSelectGroup(8);
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup9))
+        {
+            ShortcutSelectGroup(9);
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup10))
+        {
+            ShortcutSelectGroup(10);
+        }
+    }
+
     public void OnGui()
     {
-        var scale = Smithbox.GetUIScale();
-
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
@@ -87,138 +134,140 @@ public class SelectionGroupEditor
 
             ImGui.EndPopup();
         }
+    }
 
-        MonitorShortcuts();
+    /// <summary>
+    /// Display the window.
+    /// </summary>
+    public void Display()
+    {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+            return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+        if (Bank.Groups == null || Bank.Groups.Resources == null)
+            return;
 
-        if (ImGui.Begin($@"Selection Groups##MapEditor_SelectionGroupEditor"))
+        var width = ImGui.GetWindowWidth();
+        var buttonWidth = width / 100 * 95;
+
+        if (ImGui.Button("Create Selection Group from Current Selection", new Vector2(buttonWidth, 32)))
         {
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width / 100 * 95;
+            CreateSelectionGroup("Internal");
+        }
+        ImguiUtils.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.MAP_CreateSelectionGroup.HintText}\nBring up the selection group creation menu to assign your current selection to a selection group.");
 
-            if (ImGui.Button("Create Selection Group from Current Selection", new Vector2(buttonWidth, 32)))
+        if (ImGui.BeginPopup("##selectionGroupModalInternal"))
+        {
+            DisplayCreationModal();
+
+            ImGui.EndPopup();
+        }
+
+        ImGui.Columns(2);
+
+        ImGui.BeginChild("##selectionGroupList");
+
+        ImGui.InputText($"Search", ref _searchInput, 255);
+        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+
+        foreach (var entry in Bank.Groups.Resources)
+        {
+            var displayName = $"{entry.Name}";
+
+            if (CFG.Current.MapEditor_SelectionGroup_ShowKeybind)
             {
-                CreateSelectionGroup("Internal");
+                if (entry.SelectionGroupKeybind != -1)
+                {
+                    var keyBind = GetSelectionGroupKeyBind(entry.SelectionGroupKeybind);
+                    if (keyBind != null)
+                    {
+                        displayName = $"{displayName} [{keyBind.HintText}]";
+                    }
+                }
             }
-            ImguiUtils.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.MAP_CreateSelectionGroup.HintText}\nBring up the selection group creation menu to assign your current selection to a selection group.");
 
-            if (ImGui.BeginPopup("##selectionGroupModalInternal"))
+            if (CFG.Current.MapEditor_SelectionGroup_ShowTags)
             {
-                DisplayCreationModal();
+                if (entry.Tags.Count > 0)
+                {
+                    var tagString = string.Join(" ", entry.Tags);
+                    displayName = $"{displayName} {{ {tagString} }}";
+                }
+            }
+
+            if (SearchFilters.IsSelectionSearchMatch(_searchInput, entry.Name, entry.Tags))
+            {
+                if (ImGui.Selectable(displayName, selectedResourceName == entry.Name))
+                {
+                    selectedResourceName = entry.Name;
+                    selectedResourceTags = entry.Tags;
+                    selectedResourceContents = entry.Selection;
+                    selectedResourceKeybind = entry.SelectionGroupKeybind;
+
+                    editPromptOldGroupName = entry.Name;
+                    editPromptGroupName = entry.Name;
+                    editPromptTags = AliasUtils.GetTagListString(entry.Tags);
+                    editPromptKeybind = entry.SelectionGroupKeybind;
+
+                    if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                    {
+                        SelectSelectionGroup();
+                    }
+                }
+            }
+        }
+        ImGui.EndChild();
+
+        ImGui.NextColumn();
+
+        ImGui.BeginChild("##selectionGroupActions");
+
+        width = ImGui.GetWindowWidth();
+        buttonWidth = width / 100 * 95;
+
+        if (selectedResourceName != "")
+        {
+            if (ImGui.Button("Select Contents", new Vector2(buttonWidth, 32)))
+            {
+                SelectSelectionGroup();
+            }
+            ImguiUtils.ShowHoverTooltip("Select the map objects listed by your currently selected group.");
+
+            if (ImGui.Button("Edit Group", new Vector2(buttonWidth, 32)))
+            {
+                ImGui.OpenPopup($"##selectionGroupModalEdit");
+            }
+            ImguiUtils.ShowHoverTooltip("Edit the name, tags and keybind for the selected group.");
+
+            if (ImGui.BeginPopup("##selectionGroupModalEdit"))
+            {
+                DisplayEditModal();
 
                 ImGui.EndPopup();
             }
 
-            ImGui.Columns(2);
-
-            ImGui.BeginChild("##selectionGroupList");
-
-            ImGui.InputText($"Search", ref _searchInput, 255);
-            ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
-
-            foreach (var entry in Bank.Groups.Resources)
+            if (ImGui.Button("Delete Group", new Vector2(buttonWidth, 32)))
             {
-                var displayName = $"{entry.Name}";
-
-                if (CFG.Current.MapEditor_SelectionGroup_ShowKeybind)
-                {
-                    if (entry.SelectionGroupKeybind != -1)
-                    {
-                        var keyBind = GetSelectionGroupKeyBind(entry.SelectionGroupKeybind);
-                        if (keyBind != null)
-                        {
-                            displayName = $"{displayName} [{keyBind.HintText}]";
-                        }
-                    }
-                }
-
-                if (CFG.Current.MapEditor_SelectionGroup_ShowTags)
-                {
-                    if (entry.Tags.Count > 0)
-                    {
-                        var tagString = string.Join(" ", entry.Tags);
-                        displayName = $"{displayName} {{ {tagString} }}";
-                    }
-                }
-
-                if (SearchFilters.IsSelectionSearchMatch(_searchInput, entry.Name, entry.Tags))
-                {
-                    if (ImGui.Selectable(displayName, selectedResourceName == entry.Name))
-                    {
-                        selectedResourceName = entry.Name;
-                        selectedResourceTags = entry.Tags;
-                        selectedResourceContents = entry.Selection;
-                        selectedResourceKeybind = entry.SelectionGroupKeybind;
-
-                        editPromptOldGroupName = entry.Name;
-                        editPromptGroupName = entry.Name;
-                        editPromptTags = AliasUtils.GetTagListString(entry.Tags);
-                        editPromptKeybind = entry.SelectionGroupKeybind;
-
-                        if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                        {
-                            SelectSelectionGroup();
-                        }
-                    }
-                }
+                DeleteSelectionGroup();
             }
-            ImGui.EndChild();
+            ImguiUtils.ShowHoverTooltip("Delete this selected group.");
 
-            ImGui.NextColumn();
-
-            ImGui.BeginChild("##selectionGroupActions");
-
-            width = ImGui.GetWindowWidth();
-            buttonWidth = width / 100 * 95;
-
-            if (selectedResourceName != "")
+            if (selectedResourceTags.Count > 0)
             {
-                if (ImGui.Button("Select Contents", new Vector2(buttonWidth, 32)))
-                {
-                    SelectSelectionGroup();
-                }
-                ImguiUtils.ShowHoverTooltip("Select the map objects listed by your currently selected group.");
-
-                if (ImGui.Button("Edit Group", new Vector2(buttonWidth, 32)))
-                {
-                    ImGui.OpenPopup($"##selectionGroupModalEdit");
-                }
-                ImguiUtils.ShowHoverTooltip("Edit the name, tags and keybind for the selected group.");
-
-                if (ImGui.BeginPopup("##selectionGroupModalEdit"))
-                {
-                    DisplayEditModal();
-
-                    ImGui.EndPopup();
-                }
-
-                if (ImGui.Button("Delete Group", new Vector2(buttonWidth, 32)))
-                {
-                    DeleteSelectionGroup();
-                }
-                ImguiUtils.ShowHoverTooltip("Delete this selected group.");
-
-                if (selectedResourceTags.Count > 0)
-                {
-                    ImguiUtils.WrappedText("");
-                    ImguiUtils.WrappedText("Tags:");
-                    var tagString = string.Join(" ", selectedResourceTags);
-                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Default_Text_Color, tagString);
-                }
-
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedText("Contents:");
-                foreach (var entry in selectedResourceContents)
-                {
-                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, entry);
-                }
+                ImguiUtils.WrappedText("Tags:");
+                var tagString = string.Join(" ", selectedResourceTags);
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Default_Text_Color, tagString);
             }
-            ImGui.EndChild();
+
+            ImguiUtils.WrappedText("");
+            ImguiUtils.WrappedText("Contents:");
+            foreach (var entry in selectedResourceContents)
+            {
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, entry);
+            }
         }
-        ImGui.End();
-        ImGui.PopStyleColor(1);
+        ImGui.EndChild();
     }
 
     private int currentKeyBindOption = -1;
@@ -330,7 +379,7 @@ public class SelectionGroupEditor
         }
     }
 
-    private void CreateSelectionGroup(string type)
+    public void CreateSelectionGroup(string type)
     {
         if (CFG.Current.MapEditor_SelectionGroup_AutoCreation)
         {
@@ -396,8 +445,8 @@ public class SelectionGroupEditor
         if (CFG.Current.MapEditor_SelectionGroup_FrameSelection)
         {
             ViewportSelection firstSel = (ViewportSelection)_selection.GetSelection().First();
-            MapAction_FrameInViewport.Act(firstSel);
-            MapAction_GoToInObjectList.Act(firstSel);
+            _msbEditor.ActionHandler.ApplyFrameInViewport();
+            _msbEditor.ActionHandler.ApplyGoToInObjectList();
         }
     }
 
@@ -425,60 +474,7 @@ public class SelectionGroupEditor
         }
     }
 
-    public void MonitorShortcuts()
-    {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateSelectionGroup))
-        {
-            CreateSelectionGroup("External");
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_0))
-        {
-            ShortcutSelectGroup(0);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_1))
-        {
-            ShortcutSelectGroup(1);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_2))
-        {
-            ShortcutSelectGroup(2);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_3))
-        {
-            ShortcutSelectGroup(3);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup4))
-        {
-            ShortcutSelectGroup(4);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup5))
-        {
-            ShortcutSelectGroup(5);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup6))
-        {
-            ShortcutSelectGroup(6);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup7))
-        {
-            ShortcutSelectGroup(7);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup8))
-        {
-            ShortcutSelectGroup(8);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup9))
-        {
-            ShortcutSelectGroup(9);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup10))
-        {
-            ShortcutSelectGroup(10);
-        }
-    }
-
-    private void ShortcutSelectGroup(int index)
+    public void ShortcutSelectGroup(int index)
     {
         foreach (var entry in Bank.Groups.Resources)
         {

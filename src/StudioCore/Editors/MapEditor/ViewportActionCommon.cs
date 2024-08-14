@@ -704,7 +704,6 @@ namespace StudioCore.Editors.MapEditor
             }
 
             parent.AddChild(entity);
-            TaskLogs.AddLog($"parent: {parent.Name}");
             map.HasUnsavedChanges = true;
         }
 

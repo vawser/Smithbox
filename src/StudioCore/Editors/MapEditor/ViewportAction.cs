@@ -1,9 +1,10 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
-using Org.BouncyCastle.Utilities;
-using Silk.NET.SDL;
 using SoulsFormats;
-using SoulsFormats.Util;
+using StudioCore.Core;
+using StudioCore.Editor;
+using StudioCore.MsbEditor;
+using StudioCore.Platform;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
@@ -12,12 +13,6 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using StudioCore.MsbEditor;
-using StudioCore.Editors.MapEditor.Toolbar;
-using StudioCore.Editor;
-using StudioCore.Platform;
-using StudioCore.Core;
-using DotNext.Collections.Generic;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -1198,10 +1193,7 @@ public class ReplicateMapObjectsAction : ViewportAction
     private readonly List<MsbEntity> Clonables = new();
     private readonly List<ObjectContainer> CloneMaps = new();
     private readonly List<MsbEntity> Clones = new();
-    private readonly Universe Universe;
-    private RenderScene Scene;
-    private MapToolbar Toolbar;
-    private ViewportActionManager ActionManager;
+    private MapEditorScreen Screen;
 
     private int idxCache;
 
@@ -1221,20 +1213,17 @@ public class ReplicateMapObjectsAction : ViewportAction
 
     private SquareSide currentSquareSide;
 
-    public ReplicateMapObjectsAction(MapToolbar toolbar, Universe univ, RenderScene scene, List<MsbEntity> objects, ViewportActionManager _actionManager)
+    public ReplicateMapObjectsAction(MapEditorScreen screen, List<MsbEntity> objects)
     {
-        Toolbar = toolbar;
-        Universe = univ;
-        Scene = scene;
+        Screen = screen;
         Clonables.AddRange(objects);
-        ActionManager = _actionManager;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
     {
         if (isRedo)
         {
-            ActionManager.Clear();
+            Screen.EditorActionManager.Clear();
 
             return ActionEvent.NoEvent;
         }
@@ -1275,7 +1264,7 @@ public class ReplicateMapObjectsAction : ViewportAction
                 }
 
                 MapContainer m;
-                m = Universe.GetLoadedMap(Clonables[i].MapID);
+                m = Screen.Universe.GetLoadedMap(Clonables[i].MapID);
 
                 if (m != null)
                 {
@@ -1558,7 +1547,7 @@ public class ReplicateMapObjectsAction : ViewportAction
     {
         if (CFG.Current.Replicator_Apply_Scramble_Configuration)
         {
-            Transform scrambledTransform = MapAction_Scramble.GetScrambledTransform(newobj);
+            Transform scrambledTransform = Screen.ActionHandler.GetScrambledTransform(newobj);
 
             if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {

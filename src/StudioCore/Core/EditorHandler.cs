@@ -74,13 +74,11 @@ public class EditorHandler
             TextEditor,
             GparamEditor,
             TextureViewer,
+            TimeActEditor
         ];
 
         if(FeatureFlags.EnableEditor_Cutscene) 
             EditorList.Add(CutsceneEditor);
-
-        if (FeatureFlags.EnableEditor_TimeAct)
-            EditorList.Add(TimeActEditor);
 
         if (FeatureFlags.EnableEditor_HavokBehavior)
             EditorList.Add(HavokEditor);

@@ -1,23 +1,18 @@
 ﻿using Andre.Formats;
-using DotNext.Reflection;
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.PropertyEditor;
-using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Gui;
 using StudioCore.Interface;
-using StudioCore.Scene;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using Veldrid.Utilities;
 
 namespace StudioCore.Editors.MapEditor;
 

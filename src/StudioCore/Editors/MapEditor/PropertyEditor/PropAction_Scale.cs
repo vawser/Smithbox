@@ -25,7 +25,7 @@ namespace StudioCore.Editors.MapEditor.PropertyEditor
             }
 
             CompoundAction action = new(actlist);
-            MapEditorState.ActionManager.ExecuteAction(action);
+            Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(action);
         }
     }
 }

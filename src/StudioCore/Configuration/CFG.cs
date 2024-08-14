@@ -74,7 +74,7 @@ public class CFG
     public bool Interface_MapEditor_PropertySearch = true;
     public bool Interface_MapEditor_RenderGroups = true;
     public bool Interface_MapEditor_AssetBrowser = true;
-    public bool Interface_MapEditor_Toolbar = true;
+    public bool Interface_MapEditor_ToolConfigurationWindow = true;
     public bool Interface_MapEditor_ResourceList = true;
     public bool Interface_MapEditor_Selection_Groups = true;
     public bool Interface_MapEditor_Viewport_Grid = true;
@@ -698,13 +698,6 @@ public class CFG
 
     public bool Toolbar_Rotate_Specific_Input = false;
     public float Toolbar_Rotate_Increment { get; set; } = 90.0f;
-
-    public bool Toolbar_Visibility_Target_Selection = true;
-    public bool Toolbar_Visibility_Target_All = false;
-
-    public bool Toolbar_Visibility_State_Enabled = true;
-    public bool Toolbar_Visibility_State_Disabled = false;
-    public bool Toolbar_Visibility_State_Flip = false;
 
     public bool Toolbar_Move_to_Grid_X = false;
     public bool Toolbar_Move_to_Grid_Y = true;
