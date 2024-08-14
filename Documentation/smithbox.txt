@@ -28,7 +28,6 @@ Map Editor:
  - ADD: .ENTRYFILELIST support
  - ADD: enum support for the DS3 corpse poses
  - ADD: "Data Export" action for MSB data: output the MSB information as JSON
- - ADD: "Find Value Instances" for MSB values
  - ADD: Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
  - FIX: select via arrow keys in the Map Scene tree (alias seems to stop it working).
  - FIX: DS2 Map Pieces aren't loaded.
@@ -92,3 +91,5 @@ World Map:
 # Notes
 #--------------------------------------
 - ADD: finish documenting ER SOTE rows
+
+- ADD: global map prop search

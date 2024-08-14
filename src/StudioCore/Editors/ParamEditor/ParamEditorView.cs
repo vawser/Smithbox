@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -12,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using Veldrid;
 
 namespace StudioCore.Editors.ParamEditor;
@@ -169,6 +171,8 @@ public class ParamEditorView
                         ImGui.EndPopup();
                     }
 
+                    DisplayDS2MapNameAlias(paramKey);
+
                     ImGui.Unindent(15.0f * scale);
                 }
             }
@@ -321,12 +325,43 @@ public class ParamEditorView
                 ImGui.EndPopup();
             }
 
+            // Map alias
+            DisplayDS2MapNameAlias(paramKey);
+
             ImGui.Unindent(15.0f * scale);
         }
 
         if (doFocus)
         {
             ImGui.SetScrollFromPosY(scrollTo - ImGui.GetScrollY());
+        }
+    }
+
+    private void DisplayDS2MapNameAlias(string paramKey)
+    {
+        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            if (_mapParamView)
+            {
+                Regex pattern = new Regex(@"(m[0-9]{2}_[0-9]{2}_[0-9]{2}_[0-9]{2})");
+                Match match = pattern.Match(paramKey);
+
+                var alias = "";
+
+                if (match.Captures.Count > 0)
+                {
+                    var aliasRef = Smithbox.BankHandler.MapAliases.GetEntries()
+                        .Where(e => e.Key == match.Captures[0].Value)
+                        .FirstOrDefault();
+
+                    if (aliasRef.Key != null)
+                    {
+                        alias = aliasRef.Value.name;
+                    }
+                }
+
+                AliasUtils.DisplayAlias(alias);
+            }
         }
     }
 
