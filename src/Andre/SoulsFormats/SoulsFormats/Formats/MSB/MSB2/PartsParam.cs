@@ -384,7 +384,7 @@ namespace SoulsFormats
                 /// Unknown.
                 /// </summary>
                 /// 
-                [MSBParamReference(ParamName = "MapObjectInstanceParam", MatchWithMapName = true)]
+                [MSBParamReference(ParamName = "", ObjectInstanceParam = true)]
                 public int MapObjectInstanceParamID { get; set; }
 
                 /// <summary>
