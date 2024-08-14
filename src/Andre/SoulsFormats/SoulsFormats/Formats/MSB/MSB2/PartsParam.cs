@@ -383,11 +383,14 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                /// 
+                [MSBParamReference(ParamName = "MapObjectInstanceParam", MatchWithMapName = true)]
                 public int MapObjectInstanceParamID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [MSBParamReference(ParamName = "MapObjectBonfireParam")]
                 public short MapObjectBonfireParamID { get; set; }
 
                 /// <summary>

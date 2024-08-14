@@ -14,6 +14,7 @@ namespace SoulsFormats
     public class MSBParamReference : Attribute
     {
         public string ParamName;
+        public bool MatchWithMapName = false;
     }
 
     [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
