@@ -1072,6 +1072,14 @@ public class ToolWindow
                 Screen.PrefabEditor.ExportPrefabMenu();
                 Screen.PrefabEditor.PrefabTree();
             }
+
+            ///--------------------
+            /// Property Search
+            ///--------------------
+            if (ImGui.CollapsingHeader("Property Search"))
+            {
+                Screen.PropSearch.Display();
+            }
         }
 
         ImGui.End();

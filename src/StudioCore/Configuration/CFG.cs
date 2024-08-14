@@ -74,7 +74,7 @@ public class CFG
     public bool Interface_MapEditor_PropertySearch = true;
     public bool Interface_MapEditor_RenderGroups = true;
     public bool Interface_MapEditor_AssetBrowser = true;
-    public bool Interface_MapEditor_ToolConfigurationWindow = true;
+    public bool Interface_MapEditor_ToolWindow = true;
     public bool Interface_MapEditor_ResourceList = true;
     public bool Interface_MapEditor_Selection_Groups = true;
     public bool Interface_MapEditor_Viewport_Grid = true;

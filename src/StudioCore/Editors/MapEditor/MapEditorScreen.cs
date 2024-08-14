@@ -265,11 +265,11 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapObjectList);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Tool Configuration"))
+            if (ImGui.MenuItem("Tool Window"))
             {
-                CFG.Current.Interface_MapEditor_ToolConfigurationWindow = !CFG.Current.Interface_MapEditor_ToolConfigurationWindow;
+                CFG.Current.Interface_MapEditor_ToolWindow = !CFG.Current.Interface_MapEditor_ToolWindow;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_ToolConfigurationWindow);
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_ToolWindow);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Properties"))
@@ -277,13 +277,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 CFG.Current.Interface_MapEditor_Properties = !CFG.Current.Interface_MapEditor_Properties;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Properties);
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Search Properties"))
-            {
-                CFG.Current.Interface_MapEditor_PropertySearch = !CFG.Current.Interface_MapEditor_PropertySearch;
-            }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_PropertySearch);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Asset Browser"))
@@ -656,7 +649,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         MapAssetSelectionView.OnGui();
         SelectionGroupEditor.OnGui();
 
-        if (CFG.Current.Interface_MapEditor_ToolConfigurationWindow)
+        if (CFG.Current.Interface_MapEditor_ToolWindow)
         {
             ToolWindow.OnGui();
         }
