@@ -92,6 +92,27 @@ public static class ModelLocator
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx";
             }
         }
+        else if (Smithbox.ProjectType is ProjectType.DS1R)
+        {
+            if(CFG.Current.PTDE_Collision_Root != "")
+            {
+                if(Directory.Exists(CFG.Current.PTDE_Collision_Root))
+                {
+                    if (hi)
+                    {
+                        ret.AssetPath = LocatorUtils.GetAssetPath_CollisionHack($@"map\{mapid}\{model}.hkx");
+                        ret.AssetName = model;
+                        ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/{model}.hkx";
+                    }
+                    else
+                    {
+                        ret.AssetPath = LocatorUtils.GetAssetPath_CollisionHack($@"map\{mapid}\l{model.Substring(1)}.hkx");
+                        ret.AssetName = model;
+                        ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx";
+                    }
+                }
+            }
+        }
         else if (Smithbox.ProjectType == ProjectType.DS2S)
         {
             ret.AssetPath = LocatorUtils.GetAssetPath($@"model\map\h{mapid.Substring(1)}.hkxbhd");

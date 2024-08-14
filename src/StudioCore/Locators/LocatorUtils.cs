@@ -133,6 +133,10 @@ public static class LocatorUtils
 
         return $@"{Smithbox.GameRoot}\{relpath}";
     }
+    public static string GetAssetPath_CollisionHack(string relpath)
+    {
+        return $@"{CFG.Current.PTDE_Collision_Root}\{relpath}";
+    }
 
     public static bool CheckFilesExpanded(string gamepath, ProjectType game)
     {

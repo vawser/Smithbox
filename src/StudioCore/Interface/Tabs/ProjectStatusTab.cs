@@ -1,9 +1,13 @@
-﻿using ImGuiNET;
+﻿using HKLib.hk2018.hkHashMapDetail;
+using ImGuiNET;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Platform;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -38,6 +42,22 @@ public class ProjectStatusTab
             ImGui.Text($"Project Type: {Smithbox.ProjectType}");
             ImGui.Text($"Project Root Directory: {Smithbox.GameRoot}");
             ImGui.Text($"Project Mod Directory: {Smithbox.ProjectRoot}");
+
+            if(Smithbox.ProjectType is ProjectType.DS1R)
+            {
+                ImGui.Text($"Project Collision Directory: {CFG.Current.PTDE_Collision_Root}");
+                ImGui.SameLine();
+                if (ImGui.Button($@"{ForkAwesome.FileO}##collisionDirPicker"))
+                {
+                    if (PlatformUtils.Instance.OpenFileDialog("Select Dark Souls: Prepare to Die Edition .exe", new string[] { "exe" }, out var ptdeRoot))
+                    {
+                        var filename = Path.GetFileName(ptdeRoot);
+                        CFG.Current.PTDE_Collision_Root = ptdeRoot.Replace(filename, "");
+                        CFG.Save();
+                    }
+                }
+                ImguiUtils.ShowHoverTooltip("This will allow collision to be visible whilst editing Dark Souls: Remastered maps.");
+            }
 
             ImGui.Separator();
 

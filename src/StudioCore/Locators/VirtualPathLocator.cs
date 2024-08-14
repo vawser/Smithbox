@@ -172,6 +172,17 @@ public static class VirtualPathLocator
                         bndpath = "";
                         return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}");
                     }
+                    else if (Smithbox.ProjectType == ProjectType.DS1R)
+                    {
+                        if (CFG.Current.PTDE_Collision_Root != "")
+                        {
+                            if (Directory.Exists(CFG.Current.PTDE_Collision_Root))
+                            {
+                                bndpath = "";
+                                return LocatorUtils.GetAssetPath_CollisionHack($@"map\{mapid}\{pathElements[i]}");
+                            }
+                        }
+                    }
 
                     if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
                     {

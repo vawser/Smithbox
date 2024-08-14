@@ -776,6 +776,12 @@ public class MapPropertyEditor
         }
     }
 
+    public List<string> DS2_ObjectInstanceParams = new List<string>
+    {
+        "mapobjectinstanceparam",
+        "treasureboxparam"
+    };
+
     private bool ParamRefRow(PropertyInfo propinfo, object val, ref object newObj)
     {
         List<MSBParamReference> attributes = propinfo.GetCustomAttributes<MSBParamReference>().ToList();
@@ -784,7 +790,29 @@ public class MapPropertyEditor
             List<ParamRef> refs = new();
             foreach (MSBParamReference att in attributes)
             {
-                refs.Add(new ParamRef(att.ParamName));
+                if (att.ObjectInstanceParam)
+                {
+                    foreach (var param in DS2_ObjectInstanceParams)
+                    {
+                        var paramName = param;
+                        var selection = Smithbox.EditorHandler.MapEditor._selection;
+
+                        if (selection.IsSelection())
+                        {
+                            // Get cur map name, apend to ParamName
+                            var sel = selection.GetSelection().First() as Entity;
+                            var map = sel.Parent.Name;
+
+                            paramName = $"{paramName}_{map}".ToLower();
+
+                            refs.Add(new ParamRef(paramName));
+                        }
+                    }
+                }
+                else
+                {
+                    refs.Add(new ParamRef(att.ParamName));
+                }
             }
 
             ImGui.NextColumn();
@@ -906,17 +934,21 @@ public class MapPropertyEditor
         if (ImGui.InputText("##EntityName", ref editName.name, 64))
         {
             if (entities.Count() == 1)
+            {
                 ContextActionManager.ExecuteAction(new RenameObjectsAction(
                     entities.ToList(),
                     new List<string> { editName.name },
                     false
                 ));
+            }
             else
+            {
                 ContextActionManager.ExecuteAction(new RenameObjectsAction(
                     entities.ToList(),
                     entities.Select((ent, i) => $"{editName.name}_{i}").ToList(),
                     false
                 ));
+            }
         }
         ImGui.PopItemWidth();
         ImGui.NextColumn();
@@ -933,12 +965,16 @@ public class MapPropertyEditor
         bool single = entities.Count() == 1;
         if (single)
         {
-            if (first != editName.entity) editName = (first.Name, first);
+            if (first != editName.entity) 
+                editName = (first.Name, first);
+
             ImGui.Text($"{first.Name}");
         }
         else
         {
-            if (first != editName.entity) editName = ("", first);
+            if (first != editName.entity) 
+                editName = ("", first);
+
             ImGui.Text("...");
         }
 
@@ -946,11 +982,13 @@ public class MapPropertyEditor
         if (ImGui.Button("Rename"))
         {
             if (single)
+            {
                 ContextActionManager.ExecuteAction(new RenameObjectsAction(
                     new List<MsbEntity> { first },
                     new List<string> { editName.name },
                     true
                 ));
+            }
             else
             {
                 var nameList = entities
@@ -958,6 +996,7 @@ public class MapPropertyEditor
                     .SelectMany(group =>
                         group.Select((ent, index) => $"{editName.name}-{group.Key.Name}"
                     ));
+
                 ContextActionManager.ExecuteAction(new RenameObjectsAction(
                     entities.ToList(),
                     nameList.ToList(),
@@ -1072,10 +1111,12 @@ public class MapPropertyEditor
             }
 
             // IMsbEntry.Name needs special handling to keep it unique
-            if (typeof(IMsbEntry).IsAssignableFrom(type) && prop.Name == "Name") continue;
+            if (typeof(IMsbEntry).IsAssignableFrom(type) && prop.Name == "Name") 
+                continue;
 
             // Index Properties are hidden by default
-            if (prop.GetCustomAttribute<IndexProperty>() != null) continue;
+            if (prop.GetCustomAttribute<IndexProperty>() != null) 
+                continue;
 
             if (SelectedMsbPropertyFilter == "Vital")
             {

@@ -98,7 +98,7 @@ public class Smithbox
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
         UpdateSoulsFormatsToggles();
-        ClearTemporaryCFGToggles();
+        HandleStartupCFGVars();
 
         // Handlers
         ProjectHandler = new ProjectHandler();
@@ -117,7 +117,7 @@ public class Smithbox
     }
 
     // Reset certain CFG variables on startup
-    public static void ClearTemporaryCFGToggles()
+    public static void HandleStartupCFGVars()
     {
         CFG.Current.Param_PinGroups_ShowOnlyPinnedParams = false;
         CFG.Current.Param_PinGroups_ShowOnlyPinnedRows = false;
