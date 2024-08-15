@@ -558,6 +558,7 @@
     <vsPlayerDmgCorrectRate_Curse AltName="Vs. Player - Blight Damage %" Wiki="Only attacks on the player will correct the damage done." />
     <pad AltName="" IsHidden=""/>
     <restrictSpecialSwordArt AltName="Restrict Special Ashes of War" Wiki="If set to true, then ashes of war in EquipParamGem with isSpecialSwordArt set to 1 cannot be applied to this weapon." /> 
+    <allowMagicCast AltName="Allow Magic Casting" IsBool="" />
   </Field>
   <Self Wiki="Defines weapon types and each affinity.\nIncludes arrows and bolts. Responsible for scaling shown on certain consumables.\nIDs not ending in a multiple of 100 are ignored.\nPermitting affinities on a weapon without affinity rows at the correct IDs will result in the nearest 10000 being used.\nSpEffects specified here can be modified by upgrades in ReinforceParamWeapon." OffsetSize="100" AlternativeOrder="sortId,trophySGradeId,-,
 behaviorVariationId,swordArtsParamId,wepmotionCategory,guardmotionCategory,wepmotionOneHandId,wepmotionBothHandId,-,

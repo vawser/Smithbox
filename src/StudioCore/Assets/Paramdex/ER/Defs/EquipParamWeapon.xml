@@ -1239,7 +1239,7 @@
     
     <Field Def="u8 unknown_0x17c_5:1" FirstVersion="11210015" />
     <Field Def="u8 unknown_0x17c_6:1" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0x17c_7:1" FirstVersion="11210015" />
+    <Field Def="u8 allowMagicCast:1" FirstVersion="11210015" />
     
     <Field Def="u8 correctType_Magic">
       <DisplayName>補正タイプ（魔法攻撃力）</DisplayName>

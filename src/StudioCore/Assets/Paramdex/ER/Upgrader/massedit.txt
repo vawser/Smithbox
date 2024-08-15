@@ -449,8 +449,8 @@ param EquipParamWeapon: modified && !added: unknown_0x17c_5: = vanillafield unkn
 1.12.1 - (EquipParamWeapon) Set unknown_0x17c_6 to Vanilla v1.12.1 values
 param EquipParamWeapon: modified && !added: unknown_0x17c_6: = vanillafield unknown_0x17c_6
 11210015L
-1.12.1 - (EquipParamWeapon) Set unknown_0x17c_7 to Vanilla v1.12.1 values
-param EquipParamWeapon: modified && !added: unknown_0x17c_7: = vanillafield unknown_0x17c_7
+1.12.1 - (EquipParamWeapon) Set allowMagicCast to Vanilla v1.12.1 values
+param EquipParamWeapon: modified && !added: allowMagicCast: = vanillafield allowMagicCast
 11210015L
 1.12.1 - (EquipParamWeapon) Set restrictSpecialSwordArt to Vanilla v1.12.1 values
 param EquipParamWeapon: modified && !added: restrictSpecialSwordArt: = vanillafield restrictSpecialSwordArt
