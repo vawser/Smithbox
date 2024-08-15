@@ -304,6 +304,8 @@
     <bulletEmitVerticalAngle AltName="Emitted Bullet: Vertical Angle" />
     <useRicochetAdjustment AltName="Use Ricochet Adjustments" Wiki="0 causes damage adjustments due to Ricochet to be ignored." />
     <ricochetBounceTimeDuration AltName="Ricochet Bounce Time Duration" />
+    <sfxId_Ricochet AltName="Ricochet FFX ID" Wiki="This effect plays when a bullet ricochets." />
+    <sfxId_Despawn AltName="Expiration FFX ID" Wiki="This effect plays when a bullet despawns/expires due to distance, time, proximity to target, etc." />
     
     <bulletFlightHeightAdjustment0 AltName="Flight Height Adjustment [0]" Wiki="When not in attack activation range will descend or ascend depending on field number.\nPositive values will ascend, negative values will descend" />
     <bulletFlightHeightAdjustment1 AltName="Flight Height Adjustment [1]" Wiki="When not in attack activation range will descend or ascend depending on field number.\nPositive values will ascend, negative values will descend" />
