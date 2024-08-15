@@ -56,7 +56,7 @@ public class ProjectStatusTab
                         CFG.Save();
                     }
                 }
-                ImguiUtils.ShowHoverTooltip("This will allow collision to be visible whilst editing Dark Souls: Remastered maps.");
+                ImguiUtils.ShowHoverTooltip("When set this will allow collisions to be visible whilst editing Dark Souls: Remastered maps, assuming you have unpacked Dark Souls: Prepare the Die Edition.");
             }
 
             ImGui.Separator();

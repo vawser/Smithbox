@@ -17,12 +17,12 @@ namespace StudioCore.Editors.ModelEditor.Actions;
 public class ToolWindow
 {
     private ModelEditorScreen Screen;
-    public ModelUsageSearch ModelUsageSearch;
+    public GlobalModelSearch ModelUsageSearch;
 
     public ToolWindow(ModelEditorScreen screen)
     {
         Screen = screen;
-        ModelUsageSearch = new ModelUsageSearch(screen);
+        ModelUsageSearch = new GlobalModelSearch(screen);
     }
 
     public void OnProjectChanged()
@@ -151,7 +151,7 @@ public class ToolWindow
             }
 
             // Search for Usage
-            if (ImGui.CollapsingHeader("Search for Usage"))
+            if (ImGui.CollapsingHeader("Global Model Search"))
             {
                 ImguiUtils.WrappedText("Search through all maps for usage of the specificed model name.");
                 ImguiUtils.WrappedText("");
@@ -171,6 +171,7 @@ public class ToolWindow
                 {
                     ModelUsageSearch.SearchMaps();
                 }
+                ImguiUtils.ShowHoverTooltip("Initial usage will be slow as all maps have to be loaded. Subsequent usage will be instant.");
 
                 ImguiUtils.WrappedText("");
 

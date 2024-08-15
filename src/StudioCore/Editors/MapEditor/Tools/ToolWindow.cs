@@ -25,15 +25,19 @@ public class ToolWindow
     private MapEditorScreen Screen;
     private ActionHandler Handler;
 
+    private GlobalPropSearch GlobalPropSearch;
+
     public ToolWindow(MapEditorScreen screen, ActionHandler handler)
     {
         Screen = screen;
         Handler = handler;
+
+        GlobalPropSearch = new GlobalPropSearch(screen);
     }
 
     public void OnProjectChanged()
     {
-        
+        GlobalPropSearch.OnProjectChanged();
     }
 
     public void OnGui()
@@ -1076,9 +1080,13 @@ public class ToolWindow
             ///--------------------
             /// Property Search
             ///--------------------
-            if (ImGui.CollapsingHeader("Property Search"))
+            if (ImGui.CollapsingHeader("Local Property Search"))
             {
                 Screen.PropSearch.Display();
+            }
+            if (ImGui.CollapsingHeader("Global Property Search"))
+            {
+                GlobalPropSearch.Display();
             }
         }
 

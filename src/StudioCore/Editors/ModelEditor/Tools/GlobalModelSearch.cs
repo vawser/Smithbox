@@ -14,12 +14,12 @@ using StudioCore.Editor;
 
 namespace StudioCore.Editors.ModelEditor.Tools;
 
-public class ModelUsageSearch
+public class GlobalModelSearch
 {
     private ModelEditorScreen Screen;
 
     public string _searchInput = "";
-    public List<ModelUsageMatch> Matches = new List<ModelUsageMatch>();
+    public List<MapModelMatch> Matches = new List<MapModelMatch>();
 
     public List<ResourceDescriptor> resMaps = new List<ResourceDescriptor>();
     public bool _targetProjectFiles = false;
@@ -29,7 +29,7 @@ public class ModelUsageSearch
 
     public Dictionary<string, IMsb> MapList = new Dictionary<string, IMsb>();
 
-    public ModelUsageSearch(ModelEditorScreen screen)
+    public GlobalModelSearch(ModelEditorScreen screen)
     {
         Screen = screen;
     }
@@ -182,7 +182,7 @@ public class ModelUsageSearch
                 {
                     if(!Matches.Any(e => e.MapName == mapName))
                     {
-                        var match = new ModelUsageMatch(mapName, modelName, entry.Name);
+                        var match = new MapModelMatch(mapName, modelName, entry.Name);
                         Matches.Add(match);
                     }
                 }
@@ -193,7 +193,7 @@ public class ModelUsageSearch
                 {
                     if (!Matches.Any(e => e.MapName == mapName))
                     {
-                        var match = new ModelUsageMatch(mapName, modelName, entry.Name);
+                        var match = new MapModelMatch(mapName, modelName, entry.Name);
                         Matches.Add(match);
                     }
                 }
@@ -222,13 +222,13 @@ public class ModelUsageSearch
     }
 }
 
-public class ModelUsageMatch
+public class MapModelMatch
 {
     public string MapName;
     public string ModelName;
     public string EntityName;
 
-    public ModelUsageMatch(string mapname, string modelname, string entityName) 
+    public MapModelMatch(string mapname, string modelname, string entityName) 
     { 
         MapName = mapname;
         ModelName = modelname;

@@ -35,7 +35,7 @@ public class ToolWindow
         {
             var windowWidth = ImGui.GetWindowWidth();
 
-            if(ImGui.CollapsingHeader("Search for Value"))
+            if(ImGui.CollapsingHeader("Property Search"))
             {
                 TimeActSearch.Display();
             }

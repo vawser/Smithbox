@@ -93,3 +93,4 @@ World Map:
 - ADD: finish documenting ER SOTE rows
 
 - ADD: global map prop search
+
