@@ -1,1 +1,8 @@
 625000 ICE WORM - NPC Part
+41001000 AAP07 BALTEUS Pulse Armour
+42000100 IB-07: SOL 644 Coral glow and trail
+42000101 IB-07: SOL 644 Coral glow and trail
+42000102 IB-07: SOL 644 Coral glow and trail
+42000103 IB-07: SOL 644 Coral glow and trail
+42000104 IB-07: SOL 644 Coral glow and trail
+42006000 IB-07: SOL 644 Electrical Sparks

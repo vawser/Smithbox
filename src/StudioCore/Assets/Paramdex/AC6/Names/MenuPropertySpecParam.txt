@@ -1,16 +1,24 @@
+0 ----
+99 ----- ? From here for item -----
 100 Name
 101 Part Info
+102 [Common items] Detailed Description
 103 Weight
 104 Sort ID
 105 "Acquistion"
 106 "Default"
 107 Corporation ID
 108 Equipment Menu Manage Category
+110 [Common Items] Number of Items in Possession
+111 [Common Items] Item Max Holdings
+112 [Common Items] Item Warehouse Maximum Holder
+113 [Common Items] Item Maximum Warehouse Value
 120 Purchase Total
 121 Sell Price
 122 EN Load
 123 Category
 124 EN Output
+1000 [Tool] Consumption Type when used
 1900 WEAPON - Damage Type (Type)
 1901 WEAPON - Firing Type (Weapon Type)
 1902 WEAPON - Reload Type
@@ -24,6 +32,16 @@
 1975 "Chg. Accum. Impact" (Not actually?)
 1976 "Chg. Attack Power" (Not actually?)
 1977 "Chg. Impact" (Not actually?)
+1978 [Weapon] Accumulated impact performance after charge (Sun Bullet)
+1979 [Weapon] Second stage of attack performance after charge (Sun Bullet)
+1980 [Weapon] Second stage of impact performance after charge (Sun Bullet)
+1981 [Weapon] Second stage of impact accumulation performance after charge (Sun Bullet)
+1982 [Weapon] Attack performance after charge (great-grandson bullet)
+1983 [Weapon] Impact performance after charge (great-grandson bullet)
+1984 [Weapon] Accumulated impact performance after charge (great-grandson bullet)
+1985 [Weapon] Second stage of attack performance after charge (great-grandson bullet)
+1986 [Weapon] Second stage of impact performance after charge (great-grandson bullet)
+1987 [Weapon] Second stage of shock accumulation performance after charge (great-grandson bullet)
 1990 WEAPON - (Charged) Direct Hit Adjustment (Unused)
 1991 WEAPON - (Charged) PA Interference (Actual internal number) (Unused)
 1992 WEAPON - Chg. Blast Radius
@@ -124,18 +142,22 @@
 3011 AC - Anti-Energy Defense
 3012 AC - Anti-Explosive Defense
 3013 AC - Attitude Stability
-3050 HEAD - Anti-Kinetic Defense
-3051 HEAD - Anti-Energy Defense
-3052 HEAD - Anti-Explosive Defense
-3060 CORE - Anti-Kinetic Defense
-3061 CORE - Anti-Energy Defense
-3062 CORE - Anti-Explosive Defense
+3050 HEAD - Anti-Kinetic Defence
+3051 HEAD - Anti-Energy Defence
+3052 HEAD - Anti-Explosive Defence
+3053 HEAD - Anti-Coral Defence
+3060 CORE - Anti-Kinetic Defence
+3061 CORE - Anti-Energy Defence
+3062 CORE - Anti-Explosive Defence
+3063 CORE - Anti-Coral Defence
 3070 ARMS - Anti-Kinetic Defense
 3071 ARMS - Anti-Energy Defense
 3072 ARMS - Anti-Explosive Defense
+3073 ARMS - Anti-Coral Defence
 3080 LEGS - Anti-Kinetic Defense
 3081 LEGS - Anti-Energy Defense
 3082 LEGS - Anti-Explosive Defense
+3083 LEGS - Anti-Coral Defence
 3100 HEAD - Attitude Stability
 3101 HEAD - System Recovery
 3102 HEAD - "Unk0x2C8" (Unused)
@@ -205,12 +227,18 @@
 10018 WEAPON - Guidance (Great Grandchild Bullet) (Unused)
 10019 WEAPON - (Charged) Effective Range (Unused)
 11000 UNKNOWN
+19900 [For PG] Number of Possessions for Sorting (Warehouse/Inventory: Number of Possessions Auto-Detected)
+19998 ----- ? Up to here for items -----
+19999 ----- ? From here for player status -----
 20000 PILOT NAME
 20001 COAM (Current Amount)
-20005 AC Specs - Total Weight
-20006 AC Specs - Load Limit
+20002 [PC Basic] Gender
 20007 AC Specs - Total Load
-20010 AC Specs - Boost Speed
+20006 AC Specs - Load Limit
+20005 [PC] Gross weight
+20008 [PC] Live ammunition defense
+20009 [PC] EN protection
+20010 [PC] Movement speed
 20011 AC Specs - Total EN Load
 20012 AC Specs - EN Output
 20013 AC Specs - AP
@@ -241,7 +269,11 @@
 20110 HUNTER CLASS
 20111 ARENA RANK
 20150 PILOT NAME
+20190 [PC] Number of weapon parts in your possession
+20191 [PC] Number of Frame parts
+20192 [PC] Number of interior parts in your possession
 20200 OST Chips (Current Amount)
+20210 [PC] Arena points held
 21000 R-ARM UNIT
 21001 L-ARM UNIT
 21002 R-BACK UNIT
@@ -259,6 +291,30 @@
 29901 WARNING - Overburdened
 29902 WARNING - Arms Overburdened
 29903 WARNING - Unknown
+29999 ----- ? Up to here for player status -----
+30000 [Image] Creation Date
+30001 [Image] Creator
+30002 [Image] UgcID
+30010 [Image] Number of pieces used
+40000 ----- ? From here for decal setting -----
+40001 [Decal] Base point position: X
+40002 [Decal] Base point position: Y
+40003 [Decal] Base point position: Z
+40004 [Decal] Angle of base point: X
+40005 [Decal] Angle of base point: Y
+40006 [Decal] Correction of application direction: X
+40007 [Decal] Apply orientation correction: Y
+40008 [Decal] Image angle: Z
+40009 [Decal] Image position: X
+40010 [Decal] Image position: Y
+40011 [Decal] Image size: X
+40012 [Decal] Image size: Y
+40013 [Decal] Image invert: left/right
+40014 [Decal] Attach target
+40015 [Decal] Attachment limit distance
+40100 [Decal] Number of images used
+40199 ----- ? Up to here for decal setting -----
+50000 ----- ? From here for OS enhancement -----
 50001 OS TUNING - Kinetic Weapons - Fire Control Tuning
 50002 OS TUNING - Explosive Weapons - Fuse Control Tuning
 50003 OS TUNING - Energy Weapons - Output Control Tuning
@@ -276,127 +332,181 @@
 50501 OS TUNING - Pulse Armor
 50502 OS TUNING - Pulse Protection
 50503 OS TUNING - Terminal Armor
-60050 Purchase Total
-79001 RANK
-79002 SUBJECT NAME
-79003 AC NAME
-79004 NOTES
-79005 COAM
-79006 OST CHIPS
-79007 SUBJECT NAME
-79008 AC NAME
-79900 TIME
-79901 REWARD
-80001 Base Pay
-80003 Bonus Pay
-80004 Penalties
-80019 Paid In
-80020 Repair Costs
-80021 Ammunition Costs
-80039 Expenses
-80090 Income
-90000 Maintain Target Assist
-90002 Boost Control
-90003 Assault Boost Control
-90004 Core Expansion Control
-90005 Automatically Purge Weapon
-90010 Camera Y-Axis
-90011 Camera X-Axis
-90012 Reset Camera Y-Axis
-90013 Camera Speed
-90020 Display Subtitles
-90024 HDR
-90025 Adjust Brightness
-90026 Adjust Image Quality
-90030 Music Volume
-90031 Sound Effect Volume
-90032 Voice Volume
-90033 Master Volume
-90040 Adjust Brightness
-90050 Adjust Brightness
-90051 Maximum Brightness
-90052 Adjust Saturation
-90090 Control Assignments
-90091 Control Assignments (Detailed)
-90100 Device for On-Screen Prompts
-90101 Mouse Sensitivity
-90102 Mouse X-Axis
-90103 Mouse Y-Axis
-90104 Key Bindings
-90130 Matchmaking Region
-90131 Voice Chat
-90132 Display Player Names
-90133 Launch Setting
-90134 Data Usage Agreement
-90135 Software Usage Agreement
-90136 Privacy Policy
-90150 Text
-90151 Voice
-90200 Screen Mode
-90201 Resolution
-90202 Auto-Detect Best Rendering Settings
-90203 Quality Settings
-90204 Quality Settings (Detailed)
-90205 Perfomance Settings
-90206 Ray Tracing
-90207 Limit Frame Rate
-90208 V-Sync
-90210 Texture Quality
-90211 Antialiasing
-90212 SSAO
-90213 Depth of Field
-90214 Motion Blur
-90215 Shadow Quality
-90216 Lighting Quality
-90217 Effects Quality
-90218 Volumetric Fog Quality
-90219 Reflection Quality
-90220 Water Surface Quality
-90221 Shader Quality
-90222 Ray Tracing Quality
-92000 DAMAGE CONTROL
-92001 CORE EXPANSIONS
-92002 SYSTEM UNLOCKS
-92004 ALL
-100000 Aperture Angle
-100001 Tilt
-100004 Focal Length
-100005 f-Number
-100007 Exposure
-100008 Hue
-100009 Brightness
-100010 Saturation
-100011 Contrast
-100015 R
-100016 G
-100017 B
-100019 Smoothness
-100020 Intensity
-100021 Camera Blur ON/OFF
-100022 Camera Blur Intensity
-100023 Camera Blur Range
-100024 Horizontal Camera Blur
-100025 Vertical Camera Blur
-100026 Camera Blur Depth
-100027 Brightness
-100028 Threshold
-100029 Saturation
-100030 Smoothness
-110000 Craft
-110001 AI
-120000 Capacity
-120001 Match Format
-120002 Time Limit
-120003 Map
-120004 Member Rotation
-120005 Access
-120006 Keywords
-120090 Create
-120091 Search
-120092 Change
-180000 Match Mode
-180001 Match Rules
-180002 Match Date/Time
-190000 Item to Report
-190001 Reason for Report
-190010 Report
+50999 ----- ? Up to here for OS enhancement -----
+59000 ----- ? From here for auto-assembly -----
+59001 [Auto Assembly] Leg Type
+59002 [Auto Assembly] Assembly Tendency
+59050 [Auto Assembly] Excess Loading
+59051 [Auto Assembly] Excess EN
+59999 ----- ? Up to here for auto-assembly -----
+60000 ----- ? From here for nameplate -----
+60001 [Name Plate] frame
+60002 [Name Plate Background
+60003 [Name Plate Background
+60004 [Name Plate Color] Pilot's Name
+60005 [Name Plate Color] Aircraft Name
+60006 [Name Plate Color] Online ID
+60050 [Name Plate] Required Points
+60999 ----- ? Up to here for name plate -----
+79000 ----- ? From here for arena -----
+79001 [Arena] Opponent: Rank
+79002 [Arena] Opponent: Pilot Name (for menu)
+79003 [Arena] Opponent: Aircraft Name (for menu)
+79004 [Arena] Opponent: Profile
+79005 [Arena] Earned Amount
+79006 [Arena] OS Enhancement Points Earned
+79007 [Arena] Opponent: Pilot Name (for FE)
+79008 [Arena] Opponent: Aircraft Name (for FE)
+79900 [Arena] Result: Duration of the match
+79901 [Arena] Result: Reward Amount
+79999 ----- ? Up to here for Arena -----
+80000 ----- ? From here for mission result -----
+80001 [Result] Income: basic reward
+80002 [Result] Income: Acquisitions
+80003 [Result] Income: Total Special Additions
+80004 [Result] Income: Special Subtraction Total
+80010 [Result] Income: Special addition 0
+80011 [Result] Income: Special addition 1
+80012 [Result] Income: Special addition 2
+80013 [Result] Income: special addition 3
+80014 [Result] Income: special addition 4
+80019 [Result] Income: total
+80020 [Result] Expenses: Repair
+80021 [Result] Expenses: ammunition
+80030 [Result] Cost: Special subtraction 0
+80031 [Result] Cost: Special subtraction 1
+80032 [Result] Cost: Special subtraction 2
+80033 [Result] Cost: Special subtraction 3
+80034 [Result] Cost: Special subtraction 4
+80039 [Result] Expenses: total
+80040 [Result] Company Contribution 0
+80041 [Result] Company Contribution 1
+80042 [Result] Company Contribution 2
+80043 [Result] Company Contribution 3
+80044 [Result] Company Contribution 4
+80050 [Result] Experience gained
+80090 [Result] Income and Expenses: Total
+80999 ----- ? Up to here for mission result -----
+90000 [Game Options] Lock-on Auto Switch
+90001 [Game Options] Controller Vibration
+90002 [Game Options] Boost Control
+90003 [Game Options] Assault Boost Operation
+90004 [Game Options] Limiter Release Operation
+90005 [Game Options] Auto Purge
+90010 [Camera Options] Camera Control up/down
+90011 [Camera Options] Camera Conrol left/right
+90012 [Camera Options] Camera Up/Down Reset
+90013 [Camera Options] Camera Speed
+90020 [Display Options] Subtitle display
+90022 [Display Options] HUD Color (button)
+90023 [Display Options] HUD Layout (button)
+90024 [Display Options] HDR
+90025 [Display Options] Brightness Adjustment (button)
+90026 [Display Options] Image quality Adjustment (button)
+90030 [Sound Options] BGM volume
+90031 [Sound Options] SE volume
+90032 [Acoustic Options] Voice volume
+90033 [Acoustic Options] Volume
+90040 [Brightness adjustment] SDR brightness
+90050 [Picture quality adjustment] HDR brightness
+90051 [Picture quality adjustment] HDR maximum brightness
+90052 [Picture Quality Adjustment] HDR Saturation
+90090 [Button Settings] Button Assignment
+90091 [Button Settings] Detailed Button Assignment Settings (Button)
+90100 [Input Device Settings] Target Device for Operation Guide
+90101 [Input Device Settings] Mouse Sensitivity
+90102 [Input Device Settings] Mouse Left/Right
+90103 [Input device Settings] Mouse operation up/down
+90104 [Input device settings] Key settings
+90130 [Network Settings] Matching Region Selection
+90131 [Network Settings] Voice Chat
+90132 [Network Settings] Player Name Display
+90133 [Network Settings] Title Activation Settings
+90134 [Network Settings] Data Usage Agreement
+90135 [Network Settings] Software Terms of Use
+90136 [Network Settings] Privacy Policy
+90150 [Language Settings] Text
+90151 [Language Settings] Voice
+90200 [Graphics Settings] Screen Mode
+90201 [Graphics Settings] Screen Resolution
+90202 [Graphics Settings] Auto Drawing Adjustment
+90203 [Graphics Settings] Quality Settings
+90204 [Graphics Settings] Advanced Settings (button)
+90205 [Graphics Settings] Performance Settings
+90206 [Graphics Settings] Ray Tracing Function (PS5/Scarlett)
+90207 [Graphics Settings] FPS Limit
+90208 [Graphics Settings] Vsync
+90210 [Graphics Details] Texture Quality
+90211 [Graphics Details] Antialiasing Application
+90212 [Graphic Details] SSAO
+90213 [Graphic Details] Depth of Field
+90214 [Graphic Details] Motion Blur
+90215 [Graphic Details] Shadow Quality
+90216 [Graphic Details] Lighting Quality
+90217 [Graphic Details] Quality of Effects
+90218 [Graphic Details] Quality of Volumetric Fog
+90219 [Graphic Details] Quality of Reflection Representation
+90220 [Graphic Details] Water Surface Quality
+90221 [Graphic Details] Shader Quality
+90222 [Graphic Details] Ray Tracing Quality
+92000 [Tuning] Close Range Lock Appropriateness
+92001 [Tuning] Long Range Lock Appropriateness
+92002 [Tuning] Missile Lock Appropriateness
+92003 [Tuning] EN attack output
+92004 [Tuning] Armor Performance
+92005 [Tuning] EN capacity
+92006 [Tuning] Stealth appropriateness
+92007 [Tuning] Loading
+100000 [Photo mode] View angle
+100001 [Photo mode] Tilt
+100002 [Photo mode] Proximity intensity
+100003 [Photo mode] Far intensity
+100004 [Photo mode] Focal length
+100005 [Photo mode] F value
+100006 [Photo mode] Aperture value
+100007 [Photo mode] Exposure
+100008 [Photo mode] Hue
+100009 [Photo mode] Brightness
+100010 [Photo mode] Saturation[Photo mode] Saturation
+100011 [Photo mode] Contrast[Photo mode] Contrast
+100012 [Photo mode] Color Scale R
+100013 [Photo mode] Color Scale G
+100014 [Photo mode] Color Scale B
+100015 [Photo mode] Color Shift R
+100016 [Photo mode] Color Shift G
+100017 [Photo mode] Color shift B
+100018 [Photo mode] Flash level
+100019 [Photo mode] Blur Smoothness
+100020 [Photo mode] Degree of luminescence composition
+100021 [Photo mode] Blur
+100022 [Photo mode] Intensity
+100023 [Photo mode] Blur Range
+100024 [Photo mode] Camera Blur Horizontal
+100025 [Photo mode] Camera Blur Vertical
+100026 [Photo mode] Camera blur depth direction
+100027 [Photo mode] Bloom: Brightness
+100028 [Photo mode] Bloom: Threshold
+100029 [Bloom] Saturation
+100030 [Bloom] Smoothness
+110000 [ENEMY Settings] Enemy Pattern
+110001 [ENEMY Settings] AI
+120000 [ENEMY Settings] Number of people
+120001 [Room Settings] Rules
+120002 [Room Settings] Time Limit
+120003 [Room Settings] Map
+120004 [Room Settings] Team participation Method
+120005 [Room Settings] Public Method
+120006 [Room Settings] Keyword
+120090 [Room Search] Create Room Button
+120091 [Room Search] Room Search Button
+120092 [Room Search] Change Room Settings Button
+120100 [Room Search] Host ID/Keyword
+120101 [Room Search] Number of current room members
+180000 [Matchup History] Matchup Mode
+180001 [Matchup History] Matchup Rules
+180002 [Matchup History] Matchup Date
+190000 [Report] Category
+190001 [Report] Reason 1
+190002 [Report] Reason 2
+190003 [Report] Reason 3
+190010 [Report] button
