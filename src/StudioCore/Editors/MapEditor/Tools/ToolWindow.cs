@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions;
+using StudioCore.Editors.MapEditor.MapQuery;
 using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Interface;
 using StudioCore.Locators;
@@ -25,19 +26,19 @@ public class ToolWindow
     private MapEditorScreen Screen;
     private ActionHandler Handler;
 
-    private GlobalPropSearch GlobalPropSearch;
+    private MapQueryEngine MapQueryHandler;
 
     public ToolWindow(MapEditorScreen screen, ActionHandler handler)
     {
         Screen = screen;
         Handler = handler;
 
-        GlobalPropSearch = new GlobalPropSearch(screen);
+        MapQueryHandler = new MapQueryEngine(screen);
     }
 
     public void OnProjectChanged()
     {
-        GlobalPropSearch.OnProjectChanged();
+        MapQueryHandler.OnProjectChanged();
     }
 
     public void OnGui()
@@ -1086,7 +1087,7 @@ public class ToolWindow
             }
             if (ImGui.CollapsingHeader("Global Property Search"))
             {
-                GlobalPropSearch.Display();
+                MapQueryHandler.Display();
             }
         }
 
