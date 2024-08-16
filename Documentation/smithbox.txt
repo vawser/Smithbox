@@ -48,6 +48,7 @@ Model Editor:
  - ADD: render bone connections (use patrol route method)
  - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
  - FIX: account for scale
+ - FIX: radahn appears broken on re-save, black hair occurs.
 
 Material Editor
  - ADD: Implement Material/MATBIN editor
@@ -69,6 +70,7 @@ Gparam Editor:
  - ADD: sticky selection: don't automatically clear selection, rather only clear it if it becomes invalid
 
 Time Act Editor
+ - TEST: save results in-game
  - ADD: TAE Mass Edit tool
  - ADD: handling for event groups (currently copied events simply inherit the existing assignment)
  - ADD: Data export/import for TAE/Animation/Event

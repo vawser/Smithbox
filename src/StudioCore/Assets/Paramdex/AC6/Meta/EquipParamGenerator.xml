@@ -45,6 +45,8 @@
     <energyFirearmSpec AltName="Energy Firearm Specialization" />
     <corporationTextureId AltName="Corporation Texture ID" Enum="EQUIP_MAKER_TYPE" TextureRef="Direct/01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" />
     <colorSfxType AltName="Color SFX Type" Enum="GeneratorColorSfxTypeEnum" Wiki="Determines SFX used by boosters. Coral also affects core expansion SFX."/> 
+    <expansionSfxType AltName="Expansion SFX Type" />
+    <inheritedGeneratorId AltName="Inherited Generator ID" Refs="EquipParamGenerator" />
   </Field>
   <Self />
 </PARAMMETA>

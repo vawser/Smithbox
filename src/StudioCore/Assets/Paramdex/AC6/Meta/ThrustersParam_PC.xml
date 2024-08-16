@@ -60,6 +60,65 @@
     <thrusterSfxParamId_56 AltName="Thruster SFX ID [56]" Refs="ThrustersSfxIdParam_PC" />
     <thrusterSfxParamId_57 AltName="Thruster SFX ID [57]" Refs="ThrustersSfxIdParam_PC" />
     <thrusterSfxParamId_58 AltName="Thruster SFX ID [58]" Refs="ThrustersSfxIdParam_PC" />
+    
+    <thrusterSize_1 AltName="Thruster Size [1] - Omnidirectional Grounded Continuous Thrust" />
+    <thrusterSize_2 AltName="Thruster Size [2] - Forward Continuous Thrust" />
+    <thrusterSize_3 AltName="Thruster Size [3] - Backward Continuous Thrust" />
+    <thrusterSize_4 AltName="Thruster Size [4] - Right Strafe Continuous Thrust" />
+    <thrusterSize_5 AltName="Thruster Size [5] - Left Strafe Continuous Thrust" />
+    <thrusterSize_6 AltName="Thruster Size [6] - Forward Quick Boost" />
+    <thrusterSize_7 AltName="Thruster Size [7] - Backward Quick Boost" />
+    <thrusterSize_8 AltName="Thruster Size [8] - Right Quick Boost" />
+    <thrusterSize_9 AltName="Thruster Size [9] - Left Quick Boost" />
+    <thrusterSize_10 AltName="Thruster Size [10] - Upwards Continuous Thrust" />
+    <thrusterSize_11 AltName="Thruster Size [11] - Tank Legs" />
+    <thrusterSize_12 AltName="Thruster Size [12] - Tank Legs" />
+    <thrusterSize_13 AltName="Thruster Size [13] - Tank Legs" />
+    <thrusterSize_14 AltName="Thruster Size [14] - Tank Legs" />
+    <thrusterSize_15 AltName="Thruster Size [15] - Right Turn Quick Boost" />
+    <thrusterSize_16 AltName="Thruster Size [16] - Left Turn Quick Boost" />
+    <thrusterSize_17 AltName="Thruster Size [17] - Assault Boost Start" />
+    <thrusterSize_18 AltName="Thruster Size [18] - Tetrapod Legs" />
+    <thrusterSize_19 AltName="Thruster Size [19] - Tetrapod Legs" />
+    <thrusterSize_20 AltName="Thruster Size [20] - Tetrapod Legs" />
+    <thrusterSize_21 AltName="Thruster Size [21] - Tetrapod Legs" />
+    <thrusterSize_22 AltName="Thruster Size [22] - Tetrapod Legs" />
+    <thrusterSize_23 AltName="Thruster Size [23] - Tetrapod Legs" />
+    <thrusterSize_24 AltName="Thruster Size [24] - Quick Right Turn" />
+    <thrusterSize_25 AltName="Thruster Size [25] - Quick Left Turn" />
+    <thrusterSize_26 AltName="Thruster Size [26]" />
+    <thrusterSize_27 AltName="Thruster Size [27] - Assault Boost End" />
+    <thrusterSize_28 AltName="Thruster Size [28] - Low Power Continuous Thrust" />
+    <thrusterSize_29 AltName="Thruster Size [29]" />
+    <thrusterSize_30 AltName="Thruster Size [30]" />
+    <thrusterSize_31 AltName="Thruster Size [31]" />
+    <thrusterSize_32 AltName="Thruster Size [32]" />
+    <thrusterSize_33 AltName="Thruster Size [33]" />
+    <thrusterSize_34 AltName="Thruster Size [34]" />
+    <thrusterSize_35 AltName="Thruster Size [35]" />
+    <thrusterSize_36 AltName="Thruster Size [36]" />
+    <thrusterSize_37 AltName="Thruster Size [37]" />
+    <thrusterSize_38 AltName="Thruster Size [38]" />
+    <thrusterSize_39 AltName="Thruster Size [39]" />
+    <thrusterSize_40 AltName="Thruster Size [40]" />
+    <thrusterSize_41 AltName="Thruster Size [41]" />
+    <thrusterSize_42 AltName="Thruster Size [42]" />
+    <thrusterSize_43 AltName="Thruster Size [43]" />
+    <thrusterSize_44 AltName="Thruster Size [44]" />
+    <thrusterSize_45 AltName="Thruster Size [45]" />
+    <thrusterSize_46 AltName="Thruster Size [46]" />
+    <thrusterSize_47 AltName="Thruster Size [47]" />
+    <thrusterSize_48 AltName="Thruster Size [48]" />
+    <thrusterSize_49 AltName="Thruster Size [49]" />
+    <thrusterSize_50 AltName="Thruster Size [50]" />
+    <thrusterSize_51 AltName="Thruster Size [51]" />
+    <thrusterSize_52 AltName="Thruster Size [52]" />
+    <thrusterSize_53 AltName="Thruster Size [53]" />
+    <thrusterSize_54 AltName="Thruster Size [54]" />
+    <thrusterSize_55 AltName="Thruster Size [55]" />
+    <thrusterSize_56 AltName="Thruster Size [56]" />
+    <thrusterSize_57 AltName="Thruster Size [57]" />
+    <thrusterSize_58 AltName="Thruster Size [58]" />
   </Field>
   <Self />
 </PARAMMETA>
