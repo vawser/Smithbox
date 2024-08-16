@@ -1,4 +1,5 @@
-﻿using ImGuiNET;
+﻿using CommunityToolkit.HighPerformance;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Editor;
@@ -9,7 +10,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static SoulsFormats.NVA;
 using static StudioCore.Editors.MapEditor.MapPropertyEditor;
 
 namespace StudioCore.Editors.MapEditor.MapQuery;
@@ -73,19 +76,27 @@ public class MapQueryEngine
             ImguiUtils.WrappedText("");
 
             ImguiUtils.WrappedText("Map Filter:");
+            ImguiUtils.ShowHoverTooltip("Target this specific string when querying the map. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
             ImGui.InputText("##mapFilter", ref _searchInputMap, 255);
 
             ImguiUtils.WrappedText("Property Filter:");
+            ImguiUtils.ShowHoverTooltip("Target this specific string when querying the property name. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
             ImGui.InputText("##propertyNameFilter", ref _searchInputProperty, 255);
 
             ImguiUtils.WrappedText("Value Filter:");
+            ImguiUtils.ShowHoverTooltip("Target this specific string when querying the property value. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
             ImGui.InputText("##propertyValueFilter", ref _searchInputValue, 255);
+
+            if(ImGui.BeginPopupContextWindow())
+            {
+                // 
+
+                ImGui.EndPopup();
+            }
 
             ImguiUtils.WrappedText("");
             ImGui.Checkbox("Target Project Files", ref _targetProjectFiles);
             ImguiUtils.ShowHoverTooltip("Uses the project map files instead of game root.");
-            ImGui.Checkbox("Loose Property Match", ref _looseStringMatch);
-            ImguiUtils.ShowHoverTooltip("Only require the string property to contain the search string, instead of requiring an exact match.");
 
             ImguiUtils.WrappedText("");
 
@@ -96,6 +107,7 @@ public class MapQueryEngine
                 {
                 }
                 ImGui.EndDisabled();
+                ImGui.SameLine();
                 ImGui.BeginDisabled();
                 if (ImGui.Button("Clear", halfButtonSize))
                 {
@@ -104,10 +116,11 @@ public class MapQueryEngine
             }
             else
             {
-                if (ImGui.Button("Search", defaultButtonSize))
+                if (ImGui.Button("Search", halfButtonSize))
                 {
                     RunQuery();
                 }
+                ImGui.SameLine();
                 if (ImGui.Button("Clear", halfButtonSize))
                 {
                     _searchInputMap = "";
@@ -131,6 +144,7 @@ public class MapQueryEngine
 
             ImGui.Separator();
             ImguiUtils.WrappedText($"Search Results:");
+            ImguiUtils.ShowHoverTooltip("Result rows are presented as: <entity name>, <name alias>, <matched value>");
             ImGui.SameLine();
             if (ImGui.Button($"{ForkAwesome.Bars}##resultListToggle"))
             {
@@ -152,6 +166,10 @@ public class MapQueryEngine
         }
     }
 
+    List<Regex> MapFilterPatterns = new List<Regex>();
+    List<Regex> PropertyFilterPatterns = new List<Regex>();
+    List<Regex> ValueFilterPatterns = new List<Regex>();
+
     public async void RunQuery()
     {
         if (!Bank.MapBankInitialized)
@@ -161,11 +179,18 @@ public class MapQueryEngine
         MayRunQuery = false;
 
         Matches = new();
+        MapFilterPatterns = new List<Regex>();
+        PropertyFilterPatterns = new List<Regex>();
+        ValueFilterPatterns = new List<Regex>();
 
         // Assigned to new vars so we can ignore if the user edits the input vars via the text input
         MapFilterInputs = _searchInputMap.ToLower();
         PropertyFilterInputs = _searchInputProperty.ToLower();
         ValueFilterInputs = _searchInputValue.ToLower();
+
+        MapFilterPatterns = BuildFilterPatterns(MapFilterInputs);
+        PropertyFilterPatterns = BuildFilterPatterns(PropertyFilterInputs);
+        ValueFilterPatterns = BuildFilterPatterns(ValueFilterInputs);
 
         // Load the maps async so the main thread isn't blocked
         Task<bool> runQueryTask = BuildResults();
@@ -173,6 +198,23 @@ public class MapQueryEngine
         bool result = await runQueryTask;
         QueryComplete = result;
         MayRunQuery = result;
+    }
+
+    public List<Regex> BuildFilterPatterns(string inputs)
+    {
+        List<Regex> patternList = new();
+
+        var sections = inputs.Split("|");
+
+        for (int i = 0; i < sections.Count(); i++)
+        {
+            var input = sections[i].ToLower();
+
+            Regex filter = new Regex(input, RegexOptions.IgnoreCase);
+            patternList.Add(filter);
+        }
+
+        return patternList;
     }
 
     public async Task<bool> BuildResults()
@@ -199,8 +241,6 @@ public class MapQueryEngine
 
     public void CheckPropertyList<T>(string mapName, IMsb map, IReadOnlyList<T> list)
     {
-        // Apply property filters here
-
         // Property List
         foreach (var entry in list)
         {
@@ -304,9 +344,9 @@ public class MapQueryEngine
 
         if (IsPropertyMatch(propName))
         {
-            if (IsValueMatch(propValue))
+            if (IsValueMatch(propValue, prop))
             {
-                MapObjectMatch match = new MapObjectMatch(mapName, entityName, propName, $"{propValue}");
+                MapObjectMatch match = new MapObjectMatch(obj, mapName, entityName, propName, $"{propValue}");
 
                 if(!Matches.ContainsKey(mapName))
                 {
@@ -318,42 +358,6 @@ public class MapQueryEngine
                 }
             }
         }
-    }
-
-    public bool IsPropertyMatch(string propName)
-    {
-        var searchName = _searchInputProperty.ToLower();
-
-        if (_looseStringMatch)
-        {
-            if (propName.Contains(searchName))
-            {
-                return true;
-            }
-        }
-        else
-        {
-            if (searchName == propName.ToLower())
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    public bool IsValueMatch(object propValue)
-    {
-        // Apply value properties here
-
-        var searchValue = _searchInputValue.ToLower();
-
-        if (searchValue == $"{propValue}".ToLower())
-        {
-            return true;
-        }
-
-        return false;
     }
 
     public void DisplayResultList()
@@ -379,8 +383,12 @@ public class MapQueryEngine
                         }
                         if (ImGui.IsItemVisible())
                         {
+                            // Entity Name
                             var alias = GetUnknownAlias(entry.EntityName);
-                            AliasUtils.DisplayAlias(alias);
+                            AliasUtils.DisplayColoredAlias(alias, CFG.Current.ImGui_AliasName_Text);
+
+                            // Value
+                            AliasUtils.DisplayColoredAlias($"- {entry.PropertyName}: {entry.PropertyValue}", CFG.Current.ImGui_Benefit_Text_Color);
                         }
                     }
                 }
@@ -428,31 +436,62 @@ public class MapQueryEngine
     
     public bool IsMapFilterMatch(string mapName)
     {
-        // Blank
         if (MapFilterInputs == "")
             return true;
 
-        var sections = MapFilterInputs.Split("|");
-
-        foreach(var entry in sections)
+        foreach (var entry in MapFilterPatterns)
         {
-            // String
-
-            // Regex
-
-            // Group
+            if (entry.IsMatch(mapName))
+            {
+                //TaskLogs.AddLog($"Match: {propName}");
+                return true;
+            }
         }
 
         return false;
     }
 
+
+    public bool IsPropertyMatch(string propName)
+    {
+        if (PropertyFilterInputs == "")
+            return true;
+
+        foreach(var entry in PropertyFilterPatterns)
+        {
+            if (entry.IsMatch(propName))
+            {
+                //TaskLogs.AddLog($"Match: {propName}");
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public bool IsValueMatch(object propValue, PropertyInfo prop)
+    {
+        if (ValueFilterInputs == "")
+            return true;
+
+        foreach (var entry in ValueFilterPatterns)
+        {
+            if (entry.IsMatch($"{propValue}"))
+            {
+                //TaskLogs.AddLog($"Match: {propValue}");
+                return true;
+            }
+        }
+
+        return false;
+    }
     public void AddMapFilterInput(string mapID)
     {
         var addition = $"{mapID}";
 
         if (_searchInputMap != "")
         {
-            addition = $"+{addition}";
+            addition = $"|{addition}";
         }
 
         _searchInputMap = _searchInputMap + addition;
@@ -464,7 +503,7 @@ public class MapQueryEngine
 
         if (_searchInputProperty != "")
         {
-            addition = $"+{addition}";
+            addition = $"|{addition}";
         }
 
         _searchInputProperty = _searchInputProperty + addition;
@@ -497,30 +536,13 @@ public class MapQueryEngine
             if (DisplayMapFilterSection)
             {
                 ImguiUtils.WrappedText($"Represents the map you want to match.");
-                ImguiUtils.WrappedText($"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
                 ImguiUtils.WrappedText("");
                 ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<blank>");
                 ImguiUtils.WrappedText("Targets all maps.");
                 ImguiUtils.WrappedText("");
                 ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<string>");
-                ImguiUtils.WrappedText("Targets the specified map.");
+                ImguiUtils.WrappedText("Targets the specified map. Supports regex.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"regex:[<string>]");
-                ImguiUtils.WrappedText("Targets the specified maps whose name matches the specified regex.");
-                ImguiUtils.WrappedText("");
-
-                // Speical groups for ER
-                if (Smithbox.ProjectType is Core.ProjectType.ER)
-                {
-                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"group:[<string>]");
-                    ImguiUtils.WrappedText("Targets the specified pre-defined map group.\n\n" +
-                        "The possible map groups are:\n" +
-                        " legacy - Target maps such as legacy dungeons and other non-tile maps.\n" +
-                        " tile - Target all the open world tile maps.\n" +
-                        " vanilla_tile - Target all the open world tile maps for the base game.\n" +
-                        " dlc_tile - Target all the open world tile maps for the DLC.");
-                    ImguiUtils.WrappedText("");
-                }
             }
 
             // Property Filter
@@ -535,16 +557,12 @@ public class MapQueryEngine
             if (DisplayPropertyFilterSection)
             {
                 ImguiUtils.WrappedText($"Represents the property you want to match.");
-                ImguiUtils.WrappedText($"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
                 ImguiUtils.WrappedText("");
                 ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<blank>");
                 ImguiUtils.WrappedText("Targets all properties.");
                 ImguiUtils.WrappedText("");
                 ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<string>");
-                ImguiUtils.WrappedText("Targets the specified property string.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"regex:[<string>]");
-                ImguiUtils.WrappedText("Targets the specified properties whose name matches the specified regex.");
+                ImguiUtils.WrappedText("Targets the specified property string. Supports regex.");
                 ImguiUtils.WrappedText("");
             }
 
@@ -560,27 +578,20 @@ public class MapQueryEngine
             if (DisplayValueFilterSection)
             {
                 ImguiUtils.WrappedText($"Represents the property value you want to match.");
-                ImguiUtils.WrappedText($"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
                 ImguiUtils.WrappedText("");
                 ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<blank>");
                 ImguiUtils.WrappedText("Targets all values.");
                 ImguiUtils.WrappedText("");
                 ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<value>");
-                ImguiUtils.WrappedText("Targets the specified property value.");
+                ImguiUtils.WrappedText("Targets the specified property value. Supports regex.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"regex:[<string>]");
-                ImguiUtils.WrappedText("Targets the specified property values whose value matches the specified regex.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"list:[<value>,<value>,<etc>]");
-                ImguiUtils.WrappedText("Targets the specified property values within the list.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"range:[<min value>,<max value>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<min> ^ <max>");
                 ImguiUtils.WrappedText("Targets the specified property values between the minimum and maximum (inclusive).");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"below:[<value>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"< <value>");
                 ImguiUtils.WrappedText("Targets the specified property values below the specified value (inclusive).");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"above:[<value>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"> <value>");
                 ImguiUtils.WrappedText("Targets the specified property values above the specified value (inclusive).");
                 ImguiUtils.WrappedText("");
             }
@@ -596,8 +607,10 @@ public class MapObjectMatch
     public string PropertyName = "";
     public string PropertyValue = "";
 
-    public MapObjectMatch(string mapname, string entityName, string propName, string propValue)
+    public object MapObject = null;
+    public MapObjectMatch(object obj, string mapname, string entityName, string propName, string propValue)
     {
+        MapObject = obj;
         MapName = mapname;
         EntityName = entityName;
         PropertyName = propName;

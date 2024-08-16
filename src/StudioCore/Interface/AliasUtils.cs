@@ -8,6 +8,7 @@ using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
 namespace StudioCore.Interface;
@@ -31,6 +32,24 @@ public static class AliasUtils
             else
             {
                 ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName}");
+            }
+        }
+    }
+
+    public static void DisplayColoredAlias(string aliasName, Vector4 color)
+    {
+        if (aliasName != "")
+        {
+            ImGui.SameLine();
+            if (CFG.Current.System_WrapAliasDisplay)
+            {
+                ImGui.PushTextWrapPos();
+                ImGui.TextColored(color, @$"{aliasName}");
+                ImGui.PopTextWrapPos();
+            }
+            else
+            {
+                ImGui.TextColored(color, @$"{aliasName}");
             }
         }
     }

@@ -36,25 +36,28 @@ public static class TextureLocator
             // Clean this up. Even if it's common code having something like "!=Sekiro" can lead to future issues
             var mid = mapid.Substring(0, 3);
 
-            ResourceDescriptor t0000 = new();
-            t0000.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0000.tpfbhd");
-            t0000.AssetArchiveVirtualPath = $@"map/tex/{mid}/0000";
-            ads.Add(t0000);
+            if (!(Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6))
+            {
+                ResourceDescriptor t0000 = new();
+                t0000.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0000.tpfbhd");
+                t0000.AssetArchiveVirtualPath = $@"map/tex/{mid}/0000";
+                ads.Add(t0000);
 
-            ResourceDescriptor t0001 = new();
-            t0001.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0001.tpfbhd");
-            t0001.AssetArchiveVirtualPath = $@"map/tex/{mid}/0001";
-            ads.Add(t0001);
+                ResourceDescriptor t0001 = new();
+                t0001.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0001.tpfbhd");
+                t0001.AssetArchiveVirtualPath = $@"map/tex/{mid}/0001";
+                ads.Add(t0001);
 
-            ResourceDescriptor t0002 = new();
-            t0002.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0002.tpfbhd");
-            t0002.AssetArchiveVirtualPath = $@"map/tex/{mid}/0002";
-            ads.Add(t0002);
+                ResourceDescriptor t0002 = new();
+                t0002.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0002.tpfbhd");
+                t0002.AssetArchiveVirtualPath = $@"map/tex/{mid}/0002";
+                ads.Add(t0002);
 
-            ResourceDescriptor t0003 = new();
-            t0003.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0003.tpfbhd");
-            t0003.AssetArchiveVirtualPath = $@"map/tex/{mid}/0003";
-            ads.Add(t0003);
+                ResourceDescriptor t0003 = new();
+                t0003.AssetPath = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_0003.tpfbhd");
+                t0003.AssetArchiveVirtualPath = $@"map/tex/{mid}/0003";
+                ads.Add(t0003);
+            }
 
             if (Smithbox.ProjectType == ProjectType.DS1R)
             {

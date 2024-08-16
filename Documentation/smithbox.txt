@@ -60,10 +60,11 @@ Param Editor:
  - ADD: make "Use project meta" merge in new entries instead of wholesale replacing (https://github.com/ividyon/WitchyBND/blob/main/WitchyBND/Configuration.cs)
 
 Text Editor:
- - FIX: the patch separation of FMGs
+ - CHANGE: remove the in-built categorization of the FMGs, add as an optional bundling, but internally they should reflect the actual FMG binder structure
  - FIX: vanilla entry should be preferred over dlc01/dlc02 entry
  - ADD: FMG Generator script creation modal
  - ADD: FMG Generator open script folder (for project)
+ - ADD: modified filter
  
 Gparam Editor:
  - ADD: json export/import of GPARAM (plus sub-classes?)
@@ -95,33 +96,10 @@ World Map:
 #--------------------------------------
 - ADD: finish documenting ER SOTE rows
 
-- CHANGE: remove switch buttons for Slider/Drag elements, add tooltip that notifies use of Ctrl+Click method of getting input box
-
 - ADD: global map prop search
 
-// Map
-<blank> - Any
-<string> - Targets the specified map.
-regex:[<string>] - Targets the specified maps whose name matches the specified regex.
-group:[<string>] - Targets the specified pre-defined map group.
-
-The possible map groups are:
- legacy - Target maps such as legacy dungeons and other non-tile maps.
- tile - Target all the open world tile maps.
- vanilla_tile - Target all the open world tile maps for the base game.
- dlc_tile - Target all the open world tile maps for the DLC.
-                
-// Property
-<blank> - Any
-<string> - Targets the specified property string.
-regex:[<string>] - Targets the specified properties whose name matches the specified regex.
 
 // Value
-<blank> - Any
-<string> - Targets the specified property value.
-regex:[<string>] - Targets the specified property values whose value matches the specified regex.
-list:[<value>,<value>,<etc>] - Targets the specified property values within the list.
-range:[<min value>,<max value>] - Targets the specified property values between the minimum and maximum (inclusive).
-below:[<value>] - Targets the specified property values below the specified value (inclusive).
-above:[<value>] - Targets the specified property values above the specified value (inclusive).
-
+<> Between
+< Less than
+> Greater than
