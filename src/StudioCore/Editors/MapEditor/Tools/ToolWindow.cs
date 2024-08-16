@@ -411,32 +411,18 @@ public class ToolWindow
                 ImguiUtils.WrappedText("");
 
                 ImguiUtils.WrappedText("Camera Offset Distance:");
-                if (CFG.Current.Toolbar_Move_to_Camera_Offset_Specific_Input)
+
+                ImGui.PushItemWidth(defaultButtonSize.X);
+                if(ImGui.SliderFloat("##Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100))
                 {
-                    var offset = CFG.Current.Toolbar_Move_to_Camera_Offset;
+                    if (CFG.Current.Toolbar_Move_to_Camera_Offset < 0)
+                        CFG.Current.Toolbar_Move_to_Camera_Offset = 0;
 
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    ImGui.InputFloat("##Offset distance", ref offset);
-                    ImguiUtils.ShowHoverTooltip("Set the distance at which the current selection is offset from the camera when this action is used.");
-
-                    if (offset < 0)
-                        offset = 0;
-
-                    if (offset > 100)
-                        offset = 100;
-
-                    CFG.Current.Toolbar_Move_to_Camera_Offset = offset;
+                    if (CFG.Current.Toolbar_Move_to_Camera_Offset > 100)
+                        CFG.Current.Toolbar_Move_to_Camera_Offset = 100;
                 }
-                else
-                {
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    ImGui.SliderFloat("##Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100);
-                    ImguiUtils.ShowHoverTooltip("Set the distance at which the current selection is offset from the camera when this action is used.");
-                }
-                if (ImGui.Button("Switch##switchCameraButton", thinButtonSize))
-                {
-                    CFG.Current.Toolbar_Move_to_Camera_Offset_Specific_Input = !CFG.Current.Toolbar_Move_to_Camera_Offset_Specific_Input;
-                }
+                ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the distance at which the current selection is offset from the camera when this action is used.");
+
                 ImguiUtils.WrappedText("");
 
                 if (ImGui.Button("Move Selection to Camera", defaultButtonSize))
@@ -492,25 +478,13 @@ public class ToolWindow
                 if (!CFG.Current.Toolbar_Fixed_Rotate)
                 {
                     ImguiUtils.WrappedText("Degree Increment:");
-                    if (CFG.Current.Toolbar_Rotate_Specific_Input)
+                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    if(ImGui.SliderFloat("##Degree Increment", ref rot, -180.0f, 180.0f))
                     {
-                        ImGui.PushItemWidth(defaultButtonSize.X);
-                        if (ImGui.InputFloat("##Degree Increment", ref rot))
-                        {
-                            CFG.Current.Toolbar_Rotate_Increment = Math.Clamp(rot, -180.0f, 180.0f);
-                        }
+                        CFG.Current.Toolbar_Rotate_Increment = Math.Clamp(rot, -180.0f, 180.0f);
                     }
-                    else
-                    {
-                        ImGui.PushItemWidth(defaultButtonSize.X);
-                        ImGui.SliderFloat("##Degree Increment", ref rot, -180.0f, 180.0f);
-                    }
-                    ImguiUtils.ShowHoverTooltip("Set the angle increment amount used by the rotation.");
+                    ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
-                    if (ImGui.Button("Switch##switchRotateButton", thinButtonSize))
-                    {
-                        CFG.Current.Toolbar_Rotate_Specific_Input = !CFG.Current.Toolbar_Rotate_Specific_Input;
-                    }
                     ImguiUtils.WrappedText("");
                 }
                 else
@@ -857,22 +831,9 @@ public class ToolWindow
                     ImguiUtils.WrappedText("");
 
                     ImguiUtils.WrappedText("Circle Radius:");
-                    if (CFG.Current.Replicator_Circle_Radius_Specific_Input)
-                    {
-                        ImGui.PushItemWidth(defaultButtonSize.X);
-                        ImGui.InputFloat("##Radius", ref CFG.Current.Replicator_Circle_Radius);
-                    }
-                    else
-                    {
-                        ImGui.PushItemWidth(defaultButtonSize.X);
-                        ImGui.SliderFloat("##Radius", ref CFG.Current.Replicator_Circle_Radius, 0.1f, 100);
-                    }
-                    ImguiUtils.ShowHoverTooltip("The radius of the circle on which to place the entities.");
-
-                    if (ImGui.Button("Switch##circleSwitchButton", thinButtonSize))
-                    {
-                        CFG.Current.Replicator_Circle_Radius_Specific_Input = !CFG.Current.Replicator_Circle_Radius_Specific_Input;
-                    }
+                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    ImGui.SliderFloat("##Radius", ref CFG.Current.Replicator_Circle_Radius, 0.1f, 100);
+                    ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nThe radius of the circle on which to place the entities.");
 
                     ImguiUtils.WrappedText("");
 
@@ -981,33 +942,17 @@ public class ToolWindow
 
                 ImguiUtils.WrappedText("");
 
-                if (CFG.Current.Toolbar_Move_to_Grid_Specific_Height_Input)
+                ImguiUtils.WrappedText("Grid Height");
+                ImGui.PushItemWidth(defaultButtonSize.X);
+                if (ImGui.SliderFloat("Grid height", ref CFG.Current.MapEditor_Viewport_Grid_Height, -10000, 10000))
                 {
-                    var height = CFG.Current.MapEditor_Viewport_Grid_Height;
+                    if (CFG.Current.MapEditor_Viewport_Grid_Height < -10000)
+                        CFG.Current.MapEditor_Viewport_Grid_Height = -10000;
 
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    ImGui.InputFloat("Grid height", ref height);
-                    ImguiUtils.ShowHoverTooltip("Set the current height of the map grid.");
-
-                    if (height < -10000)
-                        height = -10000;
-
-                    if (height > 10000)
-                        height = 10000;
-
-                    CFG.Current.MapEditor_Viewport_Grid_Height = height;
+                    if (CFG.Current.MapEditor_Viewport_Grid_Height > 10000)
+                        CFG.Current.MapEditor_Viewport_Grid_Height = 10000;
                 }
-                else
-                {
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    ImGui.SliderFloat("Grid height", ref CFG.Current.MapEditor_Viewport_Grid_Height, -10000, 10000);
-                    ImguiUtils.ShowHoverTooltip("Set the current height of the map grid.");
-                }
-
-                if (ImGui.Button("Switch##gridSwitchButton", thinButtonSize))
-                {
-                    CFG.Current.Toolbar_Move_to_Grid_Specific_Height_Input = !CFG.Current.Toolbar_Move_to_Grid_Specific_Height_Input;
-                }
+                ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the current height of the map grid.");
 
                 ImguiUtils.WrappedText("");
 

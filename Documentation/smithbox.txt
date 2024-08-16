@@ -32,6 +32,7 @@ Map Editor:
  - FIX: select via arrow keys in the Map Scene tree (alias seems to stop it working).
  - FIX: DS2 Map Pieces aren't loaded.
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
+ - FIX: asset browser entity change not properly changing Instance ID and Self Parts
  
 Model Editor: 
  - ADD: FBX Import into loose FLVER
