@@ -10,6 +10,7 @@ using System.Numerics;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static SoulsFormats.FFXDLSE;
 
 namespace StudioCore.Editors.TextEditor.Tools;
 
@@ -121,10 +122,13 @@ public static class SearchAndReplace
                 if (entryIds.Contains(r.ID))
                 {
                     var entryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, fmgInfo);
-                    var action = ReplaceText(entryGroup);
-                    if (action != null)
+                    var actionList = ReplaceText(entryGroup);
+                    if (actionList != null)
                     {
-                        actions.Add(action);
+                        foreach (var entry in actionList)
+                        {
+                            actions.Add(entry);
+                        }
                     }
                 }
             }
@@ -136,10 +140,13 @@ public static class SearchAndReplace
             {
                 FMGEntryGroup entryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(fmgEntry.ID, fmgInfo);
 
-                var action = ReplaceText(entryGroup);
-                if (action != null)
+                var actionList = ReplaceText(entryGroup);
+                if (actionList != null)
                 {
-                    actions.Add(action);
+                    foreach (var entry in actionList)
+                    {
+                        actions.Add(entry);
+                    }
                 }
             }
         }
@@ -148,46 +155,46 @@ public static class SearchAndReplace
         Smithbox.EditorHandler.TextEditor.EditorActionManager.ExecuteAction(compoundAction);
     }
 
-    private static ReplaceFMGEntryTextAction ReplaceText(FMGEntryGroup entry)
+    private static List<ReplaceFMGEntryTextAction> ReplaceText(FMGEntryGroup entry)
     {
         if (entry == null)
         {
             return null;
         }
 
-        ReplaceFMGEntryTextAction action = null;
+        List<ReplaceFMGEntryTextAction> actions = null;
 
         // Title
         if (CurrentTextCategory is "Title" or "All")
         {
-            action = PerformSearchAndReplace(entry.Title);
+            actions.Add(PerformSearchAndReplace(entry.Title));
         }
 
         // TextBody
         if (CurrentTextCategory is "Text Body" or "All")
         {
-            action = PerformSearchAndReplace(entry.TextBody);
+            actions.Add(PerformSearchAndReplace(entry.TextBody));
         }
 
         // Summary
         if (CurrentTextCategory is "Summary" or "All")
         {
-            action = PerformSearchAndReplace(entry.Summary);
+            actions.Add(PerformSearchAndReplace(entry.Summary));
         }
 
         // ExtraText
         if (CurrentTextCategory is "Extra Text" or "All")
         {
-            action = PerformSearchAndReplace(entry.ExtraText);
+            actions.Add(PerformSearchAndReplace(entry.ExtraText));
         }
 
         // Description
         if (CurrentTextCategory is "Description" or "All")
         {
-            action = PerformSearchAndReplace(entry.Description);
+            actions.Add(PerformSearchAndReplace(entry.Description));
         }
 
-        return action;
+        return actions;
     }
 
     private static ReplaceFMGEntryTextAction PerformSearchAndReplace(FMG.Entry entry)
