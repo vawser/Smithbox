@@ -1,3 +1,136 @@
+400090000 Commence mission.
+400090001 Get to work, 621.
+400090002 Get into position, 621.
+400090003 Mission accomplished.
+400090004 That's it for this job, 621.
+400090005 ...Mission failed.
+400090006 Back to base, 621.
+400090007 Sending you target intel.
+400090008 Destroy all targets.
+400090009 Destroy the targets.
+400090010 All targets destroyed.
+400090011 All targets have been destroyed.
+400090012 Destroy the target.
+400090013 Be sure to get that target.
+400090014 Target destroyed.
+400090015 Target has been destroyed.
+400090016 Neutralize all hostiles.
+400090017 Neutralize the hostiles.
+400090018 All hostiles neutralized.
+400090019 All hostiles have been neutralized.
+400090020 Neutralize the hostile.
+400090021 Be sure to neutralize that hostile.
+400090022 Hostile neutralized.
+400090023 Hostile has been neutralized.
+400090024 Defend the objective.
+400090025 Make sure you defend the objective.
+400090026 Sending marker data.
+400090027 Take a look, 621.
+400090028 Head to the destination.
+400090029 Locate the destination.
+400090030 Updated your destination.
+400090031 I've updated the destination.
+400090032 Head to the next position.
+400090033 Locate the next position.
+400090034 You've reached the destination.
+400090035 You've arrived at the destination.
+400090036 We've got company.
+400090037 Hostile company inbound.
+400090038 Reinforcements!
+400090039 More incoming, 621.
+400090040 Watch yourself.
+400090041 Handle it, 621.
+400090042 Engage the enemy, 621.
+400090043 Good job, 621.
+400090044 Commencing mission.
+400090045 Raven. Commencing mission.
+400090046 Let's get to work.
+400090047 Let's get started, Raven.
+400090048 Mission accomplished.
+400090049 Mission accomplished, Raven.
+400090050 ...Mission failed.
+400090051 Let's head back, Raven.
+400090052 Sent intel on your target.
+400090053 Destroy all the targets.
+400090054 Let's go after those targets.
+400090055 All targets destroyed.
+400090056 All targets have been destroyed.
+400090057 Destroy the target.
+400090058 Destroy the target, Raven.
+400090059 Target destroyed.
+400090060 Target has been destroyed.
+400090061 Neutralize all hostiles.
+400090062 Neutralize the hostiles.
+400090063 All hostiles neutralized.
+400090064 All hostiles have been neutralized.
+400090065 Neutralize the hostile.
+400090066 Neutralize the hostile, Raven.
+400090067 Hostile neutralized.
+400090068 Hostile has been neutralized.
+400090069 Defend the objective.
+400090070 Defend the objective, Raven.
+400090071 I've sent you the marker data.
+400090072 Take a look, Raven.
+400090073 Head to the destination.
+400090074 Let's head to the destination.
+400090075 Updated destination.
+400090076 I've updated your destination.
+400090077 Head to the next destination.
+400090078 Let's head to the next destination.
+400090079 Arrival at destination confirmed.
+400090080 I see you've arrived at the destination.
+400090081 New enemy detected.
+400090082 We've got company.
+400090083 Reinforcements...!
+400090084 Reinforcements, Raven.
+400090085 Be careful, Raven.
+400090086 You can do it, Raven.
+400090087 Engage the enemy, Raven.
+400090088 Good job, Raven.
+400090089 Let's go.
+400090090 Up and at 'em, tourist.
+400090091 Get into position, tourist.
+400090092 That's all she wrote.
+400090093 You done, tourist?
+400090094 ...Mission failed.
+400090095 Go home, tourist.
+400090096 Sending target intel.
+400090097 Destroy all targets.
+400090098 Wipe those targets up.
+400090099 All targets destroyed.
+400090100 Looks like you got 'em.
+400090101 Destroy the target.
+400090102 Smash it up.
+400090103 Target destroyed.
+400090104 Target has been destroyed.
+400090105 Neutralize the hostiles.
+400090106 Get in there and spank 'em.
+400090107 All targets destroyed.
+400090108 You sure showed them.
+400090109 Take out the hostile.
+400090110 Knock 'em out.
+400090111 Hostile neutralized.
+400090112 Another notch in the belt.
+400090113 Defend the objective.
+400090114 Keep the objective safe.
+400090115 Heads up, marker for you.
+400090116 Check it, tourist.
+400090117 Head to the destination.
+400090118 You know where to go.
+400090119 Updated your destination.
+400090120 I've updated your destination.
+400090121 Head to the next destination.
+400090122 Keep moving, tourist.
+400090123 Arrival at destination confirmed.
+400090124 Took you long enough.
+400090125 Got something on the radar.
+400090126 Hope you got room for more.
+400090127 Reinforcements!
+400090128 Got company, tourist.
+400090129 Eyes forward, tourist.
+400090130 Handle it, tourist.
+400090131 Go get 'em, tourist.
+400090132 Nice work, tourist.
 100700100 Commence mission.
 100700101 Destroy the reactor and disable laser barrier.
 100700200 Raven, let's start by finding our way in.
@@ -52,14 +185,16 @@
 100703420 15 seconds remaining!
 100703440 621! Move it, now!
 100703700 Raven! You have to get clear!
-100703701 It's gonna blow! Brace for impact!
 100704100 Raven...!
+110909900 621...! Not like this!
+100703701 It's gonna blow! Brace for impact!
 100800100 ...Let's go, Raven.
 100800101 The rendezvous point that ALLMIND gave at Depth 1. It's not far from the surface.
 100800500 What... What are these things?!
 100800501 I don't know how, but... Watchpoint's defenses are back online!
 100800900 Corporate stragglers still remain the Watchpoint.
 100800901 We have made some adjustments to that they will not be a threat.
+100804100 AC! ID unknown!
 100802100 Watch out—sniper LCs!
 100802500 Fire! If they're not with us, they're against us!
 100802501 We need to get out of here!
@@ -67,7 +202,6 @@
 100803300 No... Don't—
 100803800 Without their leadership, the corporations powerless.
 100803801 A chain made of human links is easily broken.
-100804100 AC! ID unknown!
 100804101 This is hell! We're in hell!
 100804500 I'm picking up enemies behind you!
 100804900 It's all going wrong and that AC's to blame!
@@ -83,9 +217,9 @@
 100806501 Enemy detected! Above!
 100806900 V.III Pater, taking command!
 100806901 Huh?! You...!
-100806902 My old colleague Raven, I presume?!
 100807000 Augmented human C4-621—Raven.
 100807001 Kindly secure the area.
+100806902 My old colleague Raven, I presume?!
 100807300 You killed V.III... killed O'Keeffe!
 100807301 Damn you...
 100807302 He always looked out for me!
@@ -298,8 +432,8 @@
 101301001 Yikes, tourist. like they want you dead first.
 101301002 Tough break. It's not easy being popular!
 101301700 Two down... Not bad, tourist!
-101301701 Looks like all your fans are to see you, tourist.
 101301710 We've lost the vanguard. fleet, maintain formation.
+101301701 Looks like all your fans are to see you, tourist.
 101302101 Blast your way through.'re cleaning up!
 101302200 You can use the Coral out here an energy source.
 101302201 There's plenty of fuel to burn, tourist!
@@ -348,9 +482,9 @@
 101308501 You must have chosen something... something...
 101308502 You found your purpose...didn't you, buddy?!
 101308600 I won't stop!
+101308650 I won't stop!
 101308610 I'll chase the clouds from over Rubicon...
 101308620 Only I can fly high enough!
-101308650 I won't stop!
 101308700 Always were at your best under pressure, buddy.
 101308701 But this ends here and now!
 101308800 Must be heavy... This purpose you found.
@@ -513,11 +647,11 @@
 101505100 You can bill me for the AC repair fees, Michigan.
 101505101 You've ruined our little field trip, Walter...'ll be billing you for tuition fees too.
 101800100 Let's get started, Raven.
+101801000 Intercept the two targets.
 101800500 ASTER CROWN's pilot, callsign King, an 89.6% mission success rate.
 101800501 His reputation for finesse is such that's advertised as the ideal mercenary.
 101800900 UMBER OX is piloted by Chartreuse, aggressive bulldozer with unrivaled firepower.
 101800901 Those who've seen her at work her an unstoppable force.
-101801000 Intercept the two targets.
 101801300 You must be "Raven"...
 101801301 Not a name I'd expected to see to a hostile AC.
 101801700 You know our priorities, Chartreuse. me deal with this.
@@ -529,8 +663,8 @@
 101802901 Quit telling me what to do!
 101802902 Don't let them pin you down, Raven!
 101803300 This is more of a challenge I'd anticipated...
-101803301 I haven't seen anything like this since—!
 101803310 This is more of a challenge I'd anticipated...
+101803301 I haven't seen anything like this since—!
 101803700 You're strong... of your name...
 101804100 You're strong... of your name...
 101804101 King! Pull your head out your ass and withdraw!
@@ -600,12 +734,12 @@
 101808000 I knew this would be trouble...
 101808020 Get off the throne and help, King!
 101808100 Raven—we can still...
-101808101 ...
-101808102 ...Alright. We'll watch this one.
-101808103 See where they go on a Raven's wings.
 101808110 Raven—we can still...
+101808101 ...
 101808111 ...
+101808102 ...Alright. We'll watch this one.
 101808112 ...Alright. We'll watch this one.
+101808103 See where they go on a Raven's wings.
 101808120 See where they go on a Raven's wings.
 101808200 ...All enemy ACs destroyed.
 101808201 Mission accomplished.
@@ -704,11 +838,11 @@
 102504903 Hate to leave you like this, you'll have to finish without me!
 102505300 He's gone. much for our decoy.
 102505700 Confirmed. JUGGERNAUT destroyed.
+102506000 Confirmed. JUGGERNAUT destroyed.
 102505701 Operation Wallclimber is a success.
+102506001 Operation Wallclimber is a success.
 102505702 That pilot, Rusty... seems he knew who you really are.
 102505703 It won't matter.'ve taken that contingency into account.
-102506000 Confirmed. JUGGERNAUT destroyed.
-102506001 Operation Wallclimber is a success.
 102506100 So that's how a hound fights.
 102506101 I'll take care of mopping up remaining hostiles.
 102506102 With luck, maybe we'll meet again.
@@ -737,6 +871,7 @@
 102602601 Pitiful dog. feel sorry for you, I really do.
 102602602 You may have survived a little longer, only you had a different master.
 102602700 C1-249..."Sulla." He's an independent mercenary survived first-gen augmentation.
+302600115 C1-249..."Sulla." He's an independent mercenary survived first-gen augmentation.
 102602701 Don't think twice, 621. him before he kills you.
 102602900 Where's 619 and 620? Dead?
 102602901 Which ones did I kill, I wonder...?
@@ -768,18 +903,18 @@
 102603480 That hound's better off dead...
 102603481 It's for your own good...Handler Walter.
 102603500 ... ......
+102603510 ... ......
 102603501 ...No more of those unidentified mechs.
 102603502 621. Take out Sulla next.
-102603510 ... ......
 102603520 Handler Walter... about the hound...
-102603521 ...Confirmed. Enemy AC destroyed.
-102603522 621. Finish off the unidentified mechs.
 102603530 Handler Walter... about the hound...
+102603521 ...Confirmed. Enemy AC destroyed.
 102603531 ...Confirmed. Enemy AC destroyed.
-102603532 Forget about them, 621.
+102603522 621. Finish off the unidentified mechs.
 102603560 ... ......
 102603580 53424c
 102603600 ...You're clear.
+102603532 Forget about them, 621.
 102603601 Forget about them, 621.
 102604100 ...Back to work.
 102604101 Penetrate the control center destroy the target.
@@ -970,6 +1105,7 @@
 103504001 I...couldn't keep my promise...
 103504002 ...Confirmed. Enemy AC destroyed.
 103504003 Get back to work, 621.
+110406502 Get back to work, 621.
 103504100 Keep an eye on the clock. avoid combat, or make it quick.
 103504200 Almost out of time, 621.
 103504500 We've still got time, but we've out every promising wreck.
@@ -986,12 +1122,16 @@
 103600400 It's too quiet...
 103600500 ...Watch out, 621!
 103600600 ...... ...
+110406100 ...... ...
 103600700 That mech... I can't see it!
+110406101 That mech... I can't see it!
 103600701 621. Watch its shots and see they're coming from.
 103600800 ...Of course. MDD.
 103600801 Stick to it like glue.'ll lose it if it gets too far.
 103600900 ... ......
+110406500 ... ......
 103601000 Confirmed. Unidentified machine down.
+110406501 Confirmed. Unidentified machine down.
 103601001 MDD... Encoded comms...
 103601002 Was that mech behind what happened here?
 103601100 ...621. Continue the investigation.
@@ -1248,8 +1388,8 @@
 104002100 All fuel storage tanks destroyed. should be a nice catch, Raven.
 104002101 Now, let's deal with the plant.
 104002500 That's the refinery plant.
-104002501 They've got it locked down. before you leap, 621.
 104002510 That's the refinery plant.
+104002501 They've got it locked down. before you leap, 621.
 104002511 Do it, 621.
 104002900 Target destroyed. work here is done, 621.
 104002901 ...Raven—I'm picking up something in stratosphere. It's approaching fast!
@@ -1282,10 +1422,10 @@
 104100100 Your objective is to destroy the Coral transports.
 104100110 Independent mercenary Kate Markson will dispose any transports that escape the combat zone.
 104100129 We calculate that she can handle five on her own.
-104100120 We look forward to seeing you work.
 104100125 We calculate that she can handle four on her own.
 104100127 We calculate that she can handle on her own.
 104100111 Just be aware that she also has her limits.
+104100120 We look forward to seeing you work.
 104100200 Enemy attack! It's one AC!
 104100210 They want the Coral... the transports!
 104100300 Even in trace quantities, Coral is volatile.
@@ -1318,10 +1458,10 @@
 104101601 We just need to get one transport through... team, cover us!
 104101700 Raven. Use the vertical catapults to between the upper and lower areas.
 104101701 We can't spend too long on a single target... need to move fast.
-104101800 We've got a loose transport overhead!
 104101740 ...
 104101741 Is that the last of them...?
 104101760 Multiple targets acquired. of them.
+104101800 We've got a loose transport overhead!
 104101900 Transport activity below!
 104102000 Raven, topside!
 104102100 Raven, below!
@@ -1602,8 +1742,8 @@
 104705702 Take them down, 621—I'll clean up the mess.
 104705900 PCA heavy combat helicopters.'re equipped for anti-AC operations.
 104705901 Be ready for missiles and explosive fire!
-104706000 ...Raven. I've identified some defenses we can co-opt.
 104706001 Try accessing it if you need support.
+104706000 ...Raven. I've identified some defenses we can co-opt.
 104706100 This is it. I'll override some the city's defense grid.
 104706200 Normalization Process E: Activating defenses.
 104706210 Normalization Process C: Activating defenses.
@@ -1914,9 +2054,9 @@
 106200501 This is where the survey begins in earnest.
 106200900 According to the structural drawings, route continues past this partition.
 106200901 Looks like the power's out.'s find a way to bring it back online.
-106201300 An ambush!
 106201301 Been waiting for you, Raven!
 106201302 You're gonna die, traitor!
+106201300 An ambush!
 106201303 ...Sounds like you found Balam's MTs.
 106201304 Eliminate them, 621.
 106201400 Damn you, Arquebus...
@@ -1949,9 +2089,9 @@
 106202810 &lt;?lt?&gt;gasp&lt;?gt?&gt; Raven, behind you!
 106202815 &lt;?lt?&gt;gasp&lt;?gt?&gt; Raven, ambush!
 106202820 You must be Raven..., you do seem rather extraordinary.
+106202832 Well. personal—this is just business.
 106202830 ...Independent mercenary, Coldcall., DEADSLED.
 106202831 It seems he's a black-market contract killer.
-106202832 Well. personal—this is just business.
 106202840 I see why poor Iguazu couldn't beat you.
 106202841 Why he abandoned his Redgun pride succumbed to his frustrations...
 106202842 Ah, what a pity.
@@ -2353,7 +2493,6 @@
 106807901 NOW, G13!
 106808000 Is it over?!
 106808010 Get clear! It's gonna blow!
-106808020 You shittin' me? The freelancer really did it...
 106808100 Looking pretty beat up there, freelancer...
 106808101 Not so smug now, are you?!
 106808200 Don't forget to smile, tourist.
@@ -2803,8 +2942,8 @@
 108602800 Raven, fight back!
 108603000 ...We're out of repair kits now.
 108603001 Raven, we have to avoid further combat.
-108603200 ...We're not far from our destination, Raven.
 108603201 Walter's message... he...gone?
+108603200 ...We're not far from our destination, Raven.
 108603300 What's this?
 108603301 ...I've checked.'s not a trap.
 108603400 Emergency beacon intercepted.
@@ -2926,8 +3065,8 @@
 108805540 Chatty's ACS is compromised!
 108805560 Now, Raven!
 108805600 Hang in there, Raven!
-108805601 Focus on one at a time!
 108805610 Hang in there, Raven!
+108805601 Focus on one at a time!
 108805620 She's...tougher than I thought!
 108805700 Chief... Get your laughs...while you can...
 108805701 Chatty!
@@ -2948,8 +3087,8 @@
 108807930 Let me... Chief...
 108807931 I'll...take us over the finish line...
 108807940 Inheriting privileges. Owner: "Cinder" Carla. Perimeter Protocol.
-108807950 All systems locked out.
 108807960 Xylem propulsion vector locked.
+108807950 All systems locked out.
 108808100 ...Pathetic.
 108808101 Walter must be turning in his grave.
 108808500 ...Pathetic.
@@ -3056,11 +3195,11 @@
 109001807 Yessir. This'll be fun, sir.
 109001900 Now—let's finish this, Pater.
 109001901 Yessir!
-109001902 ...They won't go down easily, Raven. focused.
 109002000 The situation's under control... me, Pater.
-109002001 ...They won't go down easily, Raven. focused.
 109002100 ...Hawkins' number is mine. I've waited for this...
 109002101 This is the stepping stone'll take me to the top!
+109001902 ...They won't go down easily, Raven. focused.
+109002001 ...They won't go down easily, Raven. focused.
 109002102 ...They won't go down easily, Raven. focused.
 109002300 ...They won't go down easily, Raven. focused.
 109002400 Should have known this wouldn't be easy...
@@ -3200,12 +3339,7 @@
 110404900 Commander Michigan...needs to know...
 110404901 The enemy MT squad has been eliminated.
 110404902 That's it for this job, 621. to base.
-110406100 ...... ...
-110406101 That mech... I can't see it!
 110406102 Handle it, 621.
-110406500 ... ......
-110406501 Confirmed. Unidentified machine down.
-110406502 Get back to work, 621.
 110600100 Let's get rolling, tourist.
 110600101 Get out there and bag me some Coyotes.
 110600900 They're already moving in, Raven.'s handle them.
@@ -3358,7 +3492,6 @@
 110906810 Mission accomplished.
 110907200 ...It's over.
 110907201 Good holding out, 621. work here is done.
-110909900 621...! Not like this!
 111000100 Commence mission—
 111000101 Wait. Something's not right, 621.
 111000102 The battle's...over already?
@@ -4107,7 +4240,6 @@
 302500201 ...One of the infamous Handler Walter's hounds.
 302500202 Interesting.
 302500203 You ready to climb the Wall?
-302600115 C1-249..."Sulla." He's an independent mercenary survived first-gen augmentation.
 302600200 ...Good job, 621.
 302600201 We're done here. Head back to base.
 302600202 Wait... No!
@@ -4257,6 +4389,7 @@
 306800114 Thanks to your fine work, this field trip a rousing success!
 306800115 Go get your rest, 621. are going to get busy.
 306800116 You did good.
+106808020 You shittin' me? The freelancer really did it...
 306800200 It's time, 621. You ready?
 306800201 This mission depends upon you, Raven.
 306800202 Let's go.'ll be here to offer support.
@@ -4431,294 +4564,161 @@
 400013500 Left hand ammunition at 10%.
 400013600 Right shoulder ammunition at 10%.
 400013700 Left shoulder ammunition at 10%.
-400090000 Commence mission.
-400090001 Get to work, 621.
-400090002 Get into position, 621.
-400090003 Mission accomplished.
-400090004 That's it for this job, 621.
-400090005 ...Mission failed.
-400090006 Back to base, 621.
-400090007 Sending you target intel.
-400090008 Destroy all targets.
-400090009 Destroy the targets.
-400090010 All targets destroyed.
-400090011 All targets have been destroyed.
-400090012 Destroy the target.
-400090013 Be sure to get that target.
-400090014 Target destroyed.
-400090015 Target has been destroyed.
-400090016 Neutralize all hostiles.
-400090017 Neutralize the hostiles.
-400090018 All hostiles neutralized.
-400090019 All hostiles have been neutralized.
-400090020 Neutralize the hostile.
-400090021 Be sure to neutralize that hostile.
-400090022 Hostile neutralized.
-400090023 Hostile has been neutralized.
-400090024 Defend the objective.
-400090025 Make sure you defend the objective.
-400090026 Sending marker data.
-400090027 Take a look, 621.
-400090028 Head to the destination.
-400090029 Locate the destination.
-400090030 Updated your destination.
-400090031 I've updated the destination.
-400090032 Head to the next position.
-400090033 Locate the next position.
-400090034 You've reached the destination.
-400090035 You've arrived at the destination.
-400090036 We've got company.
-400090037 Hostile company inbound.
-400090038 Reinforcements!
-400090039 More incoming, 621.
-400090040 Watch yourself.
-400090041 Handle it, 621.
-400090042 Engage the enemy, 621.
-400090043 Good job, 621.
-400090044 Commencing mission.
-400090045 Raven. Commencing mission.
-400090046 Let's get to work.
-400090047 Let's get started, Raven.
-400090048 Mission accomplished.
-400090049 Mission accomplished, Raven.
-400090050 ...Mission failed.
-400090051 Let's head back, Raven.
-400090052 Sent intel on your target.
-400090053 Destroy all the targets.
-400090054 Let's go after those targets.
-400090055 All targets destroyed.
-400090056 All targets have been destroyed.
-400090057 Destroy the target.
-400090058 Destroy the target, Raven.
-400090059 Target destroyed.
-400090060 Target has been destroyed.
-400090061 Neutralize all hostiles.
-400090062 Neutralize the hostiles.
-400090063 All hostiles neutralized.
-400090064 All hostiles have been neutralized.
-400090065 Neutralize the hostile.
-400090066 Neutralize the hostile, Raven.
-400090067 Hostile neutralized.
-400090068 Hostile has been neutralized.
-400090069 Defend the objective.
-400090070 Defend the objective, Raven.
-400090071 I've sent you the marker data.
-400090072 Take a look, Raven.
-400090073 Head to the destination.
-400090074 Let's head to the destination.
-400090075 Updated destination.
-400090076 I've updated your destination.
-400090077 Head to the next destination.
-400090078 Let's head to the next destination.
-400090079 Arrival at destination confirmed.
-400090080 I see you've arrived at the destination.
-400090081 New enemy detected.
-400090082 We've got company.
-400090083 Reinforcements...!
-400090084 Reinforcements, Raven.
-400090085 Be careful, Raven.
-400090086 You can do it, Raven.
-400090087 Engage the enemy, Raven.
-400090088 Good job, Raven.
-400090089 Let's go.
-400090090 Up and at 'em, tourist.
-400090091 Get into position, tourist.
-400090092 That's all she wrote.
-400090093 You done, tourist?
-400090094 ...Mission failed.
-400090095 Go home, tourist.
-400090096 Sending target intel.
-400090097 Destroy all targets.
-400090098 Wipe those targets up.
-400090099 All targets destroyed.
-400090100 Looks like you got 'em.
-400090101 Destroy the target.
-400090102 Smash it up.
-400090103 Target destroyed.
-400090104 Target has been destroyed.
-400090105 Neutralize the hostiles.
-400090106 Get in there and spank 'em.
-400090107 All targets destroyed.
-400090108 You sure showed them.
-400090109 Take out the hostile.
-400090110 Knock 'em out.
-400090111 Hostile neutralized.
-400090112 Another notch in the belt.
-400090113 Defend the objective.
-400090114 Keep the objective safe.
-400090115 Heads up, marker for you.
-400090116 Check it, tourist.
-400090117 Head to the destination.
-400090118 You know where to go.
-400090119 Updated your destination.
-400090120 I've updated your destination.
-400090121 Head to the next destination.
-400090122 Keep moving, tourist.
-400090123 Arrival at destination confirmed.
-400090124 Took you long enough.
-400090125 Got something on the radar.
-400090126 Hope you got room for more.
-400090127 Reinforcements!
-400090128 Got company, tourist.
-400090129 Eyes forward, tourist.
-400090130 Handle it, tourist.
-400090131 Go get 'em, tourist.
-400090132 Nice work, tourist.
 510002000 Main System: Activating Combat Mode.
 520102000 Main System: Activating Combat Mode.
-520201000 ...G13, huh.'ll stick with "621."
-520201001 Don't let the Redguns teach you bad manners.
 520202000 Main System: Activating Combat Mode.
-520301000 Your objective is to take the Front fortress—the Wall.
-520301001 Show them you're worth the credits, 621.
 520302000 Main System: Activating Combat Mode.
-520501000 ...You'll be going in under cover of darkness. ready for anything.
 520502000 Main System: Activating Combat Mode.
-520601000 ...Some advice before you go, 621.
-520601001 "Expect the unexpected."
 520602000 Main System: Activating Combat Mode.
-520801000 Time for a little self-promotion, 621.
-520801001 Smash the STRIDER, and Arquebus HQ will be sure remember your name.
 520802000 Main System: Activating Combat Mode.
-521001000 621. You should be used to Rubicon by now.
-521001001 Time to take a break from shooting up the place.
 521002000 Main System: Activating Combat Mode.
-521201000 Let me handle getting us into the Grid.
-521201001 I'm fairly adept at analyzing systems— manipulating them, too.
 521202000 Main System: Activating Combat Mode.
-521401000 Looks like switching sides at Gallia an impression on the Liberation Front...
-521401001 Guess we have you to thank for this job.
 521402000 Main System: Activating Combat Mode.
-521701000 In order to ambush and eliminate target undetected...
-521701001 you'll need to adopt different style of fighting.
 521702000 Main System: Activating Combat Mode.
-521801000 This will be our third sortie together, Raven.
-521801001 I'm quite enjoying the routine.
 521802000 Main System: Activating Combat Mode.
-522001000 What's stranger, a mandatory inspection a job from another mercenary?
-522001001 Whatever happens, handle it. like you always do.
 522002000 Main System: Activating Combat Mode.
-522111000 ...ALLMIND reiterates its gratitude your favorable response.
-522111001 Kindly commence the operation.
 522112000 Main System: Activating Combat Mode.
-522201000 It's almost time, Raven.'s head over.
-522201001 Hopefully the Dosers won't be too dosed up Coral to make an appearance.
 522202000 Main System: Activating Combat Mode.
-522301000 Your handler didn't authorize sortie either...
-522301001 But we shouldn't miss this chance.'ll support you.
 522302000 Main System: Activating Combat Mode.
-522401000 ...You're up against two of Arena's top performers.
-522401001 Make sure you're ready for this, Raven.
 522402000 Main System: Activating Combat Mode.
-522501000 Chose the Liberation Front, did you?
-522501001 Whatever works to get your name out there.'s the benefit of being independent.
 522502000 Main System: Activating Combat Mode.
-530111000 ...621. Are you still hearing things?
-530111001 Tell me if it happens on the job.'ll make adjustments.
 530112000 Main System: Activating Combat Mode.
-530301000 A walking advertisement?
-530301001 You're not their mascot, 621. focus on getting the job done.
 530302000 Main System: Activating Combat Mode.
-530431000 If this mission succeeds, the corporations deal the PCA a major blow.
-530431001 Ignore V.II's snotty attitude. focus on your own work.
 530432000 Main System: Activating Combat Mode.
-532301000 It's not every day you see competing forces together like this.
-532301001 ...Now or never, 621.
 532302000 Main System: Activating Combat Mode.
-533201000 You ready for this, tourist?
-533201001 No one's gonna miss Brute— we all stand to gain.
 533202000 Main System: Activating Combat Mode.
-534201000 I don't think Dafeng appreciates your true value.
-534201001 I'll talk to them.
 534202000 Main System: Activating Combat Mode.
-534301000 Seems the Liberation Front are hoping rivals will wear each other down...
-534301001 They must be desperate to avoid a triumphant victor.
 534302000 Main System: Activating Combat Mode.
-535001000 I've taken a few liberties— thinks you've gone on a geological survey.
-535001001 Thank you for doing this for me....
 535002000 Main System: Activating Combat Mode.
-540001000 ...Watchpoint Alpha.
-540001001 My brothers and sisters...they're deep inside.
 540002000 Main System: Activating Combat Mode.
-540101000 ...Just so you know, 621, my radar won't able to reach the lower Depths.
-540101001 You'll have to trust your eyes and ears.
 540102000 Main System: Activating Combat Mode.
-540201000 Walter... It's like he already knows the Coral convergence is.
-540201001 What makes him so confident?
 540202000 Main System: Activating Combat Mode.
-540211000 Who could be following you?
-540211001 The Liberation Front? Another mercenary?
 540212000 Main System: Activating Combat Mode.
-540301000 ...621. here on out, I...
-540301001 ...Never mind. trust your instincts.
 540302000 Main System: Activating Combat Mode.
-541001000 Once you reach the rendezvous point...
-541001001 No one will be able to threaten you anymore.
 541002000 Main System: Activating Combat Mode.
-541101000 Middle Flatwell is the de facto leader the Rubicon Liberation Front.
-541101001 If he's accompanying you in person... must be planning to take your measure.
 541102000 Main System: Activating Combat Mode.
 542002000 Main System: Activating Combat Mode.
+550102000 Main System: Activating Combat Mode.
+550202000 Main System: Activating Combat Mode.
+550302000 Main System: Activating Combat Mode.
+550402000 Main System: Activating Combat Mode.
+550502000 Main System: Activating Combat Mode.
+551002000 Main System: Activating Combat Mode.
+551102000 Main System: Activating Combat Mode.
+560002000 Main System: Activating Combat Mode.
+560102000 Main System: Activating Combat Mode.
+560202000 Main System: Activating Combat Mode.
+579002000 Main System: Activating Combat Mode.
+579102000 Main System: Activating Combat Mode.
+579202000 Main System: Activating Combat Mode.
+579302000 Main System: Activating Combat Mode.
+579402000 Main System: Activating Combat Mode.
+579502000 Main System: Activating Combat Mode.
+579602000 Main System: Activating Combat Mode.
+579702000 Main System: Activating Combat Mode.
+579802000 Main System: Activating Combat Mode.
+579902000 Main System: Activating Combat Mode.
+520201000 ...G13, huh.'ll stick with "621."
+520201001 Don't let the Redguns teach you bad manners.
+520301000 Your objective is to take the Front fortress—the Wall.
+520301001 Show them you're worth the credits, 621.
+520501000 ...You'll be going in under cover of darkness. ready for anything.
+520601000 ...Some advice before you go, 621.
+520601001 "Expect the unexpected."
+520801000 Time for a little self-promotion, 621.
+520801001 Smash the STRIDER, and Arquebus HQ will be sure remember your name.
+521001000 621. You should be used to Rubicon by now.
+521001001 Time to take a break from shooting up the place.
+521201000 Let me handle getting us into the Grid.
+521201001 I'm fairly adept at analyzing systems— manipulating them, too.
+521401000 Looks like switching sides at Gallia an impression on the Liberation Front...
+521401001 Guess we have you to thank for this job.
+521701000 In order to ambush and eliminate target undetected...
+521701001 you'll need to adopt different style of fighting.
+521801000 This will be our third sortie together, Raven.
+521801001 I'm quite enjoying the routine.
+522001000 What's stranger, a mandatory inspection a job from another mercenary?
+522001001 Whatever happens, handle it. like you always do.
+522111000 ...ALLMIND reiterates its gratitude your favorable response.
+522111001 Kindly commence the operation.
+522201000 It's almost time, Raven.'s head over.
+522201001 Hopefully the Dosers won't be too dosed up Coral to make an appearance.
+522301000 Your handler didn't authorize sortie either...
+522301001 But we shouldn't miss this chance.'ll support you.
+522401000 ...You're up against two of Arena's top performers.
+522401001 Make sure you're ready for this, Raven.
+522501000 Chose the Liberation Front, did you?
+522501001 Whatever works to get your name out there.'s the benefit of being independent.
+530111000 ...621. Are you still hearing things?
+530111001 Tell me if it happens on the job.'ll make adjustments.
+530301000 A walking advertisement?
+530301001 You're not their mascot, 621. focus on getting the job done.
+530431000 If this mission succeeds, the corporations deal the PCA a major blow.
+530431001 Ignore V.II's snotty attitude. focus on your own work.
+532301000 It's not every day you see competing forces together like this.
+532301001 ...Now or never, 621.
+533201000 You ready for this, tourist?
+533201001 No one's gonna miss Brute— we all stand to gain.
+534201000 I don't think Dafeng appreciates your true value.
+534201001 I'll talk to them.
+534301000 Seems the Liberation Front are hoping rivals will wear each other down...
+534301001 They must be desperate to avoid a triumphant victor.
+535001000 I've taken a few liberties— thinks you've gone on a geological survey.
+535001001 Thank you for doing this for me....
+540001000 ...Watchpoint Alpha.
+540001001 My brothers and sisters...they're deep inside.
+540101000 ...Just so you know, 621, my radar won't able to reach the lower Depths.
+540101001 You'll have to trust your eyes and ears.
+540201000 Walter... It's like he already knows the Coral convergence is.
+540201001 What makes him so confident?
+540211000 Who could be following you?
+540211001 The Liberation Front? Another mercenary?
+540301000 ...621. here on out, I...
+540301001 ...Never mind. trust your instincts.
+541001000 Once you reach the rendezvous point...
+541001001 No one will be able to threaten you anymore.
+541101000 Middle Flatwell is the de facto leader the Rubicon Liberation Front.
+541101001 If he's accompanying you in person... must be planning to take your measure.
 550101000 Overseer, the Association of Observers...
 550101001 They want to...burn the Coral...
-550102000 Main System: Activating Combat Mode.
 550201000 Raven.'ve made your decision.
 550201001 ...I'm sorry.
-550202000 Main System: Activating Combat Mode.
 550301000 Let's go, Raven.
 550301001 One of our allies should be arriving already.
-550302000 Main System: Activating Combat Mode.
 550401000 ...Time to do or die.
 550401001 Let's get our laughs while we can.
-550402000 Main System: Activating Combat Mode.
 550501000 I was hoping you would take the job, Raven...
 550501001 ...Thank you.
-550502000 Main System: Activating Combat Mode.
 551001000 The ECM fog is going to...with comms it's disabled.
 551001001 Follow the beacons left by...survey drone.
-551002000 Main System: Activating Combat Mode.
 551101000 ALLMIND is after Overseer...
 551101001 ...'s get started, Raven.
-551102000 Main System: Activating Combat Mode.
 560001000 ...I'm waiting at the Closure Station.
 560001001 Come to me, Raven.
-560002000 Main System: Activating Combat Mode.
 560101000 ...We'll also need to prepare for re-entry.
 560101001 Be ready to escape once we're finished.
-560102000 Main System: Activating Combat Mode.
 560201000 What awaits us on the "other side"?
 560201001 Raven...'s find out together.
-560202000 Main System: Activating Combat Mode.
 579001000 ...Now they're asking for you by name.
 579001001 Keep building your rep.
-579002000 Main System: Activating Combat Mode.
 579101000 It's exceptionally rare to get a direct request Liberation Front leadership.
 579101001 Perhaps the situation changed their attitudes, too.
-579102000 Main System: Activating Combat Mode.
 579201000 You've got ID. Now you need a rep.
 579201001 Get their attention, 621.
-579202000 Main System: Activating Combat Mode.
 579301000 ...Just get it done.
 579301001 There's nothing more for me to say.
-579302000 Main System: Activating Combat Mode.
 579401000 ...We've made our decision.
 579401001 Let's get this done, Raven.
-579402000 Main System: Activating Combat Mode.
 579501000 The PCA are going to be fighting to win.
 579501001 621. Don't forget you have MT backup.
-579502000 Main System: Activating Combat Mode.
 579601000 Your handler didn't authorize sortie either...
 579601001 But we shouldn't miss this chance.'ll support you.
-579602000 Main System: Activating Combat Mode.
 579701000 The client doesn't care who does this job...
 579701001 ...as long as it gets done.
-579702000 Main System: Activating Combat Mode.
 579801000 The target may be a product sample, it's still an AC.
 579801001 Stay sharp, 621.
-579802000 Main System: Activating Combat Mode.
 579901000 Seems Balam can't let go of failure to climb the Wall.
 579901001 That's fine.'ll make it work for us.
-579902000 Main System: Activating Combat Mode.
 600110100 Arena combat aptitude evaluation No. 9, rank B.
 600110101 Subject AC: STEEL HAZE.: V.IV Rusty.
 600110102 Commencing evaluation.
@@ -5243,12 +5243,12 @@
 913160016 Oh, and a personal note before you go.
 913160017 Thanks for saving Ziyi. I owe you one.
 913200010 I see you're back, 621.
-913200011 About the Coral well that was found BAWS Arsenal No. 2....
-913200012 That was just a drip coming from underground vein, and it won't last long.
-913200013 It's not the Coral we're searching for.
 913201010 I see you're back, 621.
+913200011 About the Coral well that was found BAWS Arsenal No. 2....
 913201011 About the Coral well that was found BAWS Arsenal No. 2....
+913200012 That was just a drip coming from underground vein, and it won't last long.
 913201012 That was just a drip coming from underground vein, and it won't last long.
+913200013 It's not the Coral we're searching for.
 913201013 It's not the Coral we're searching for.
 913201014 ...One more thing.
 913201015 I've sent you your next job.
@@ -5510,11 +5510,6 @@
 940002010 Registration number Rb23, callsign Raven. records have been updated.
 940002011 A-Rank virtual encounters are available in the Arena.
 940002012 May these encounters further your technique.
-940021010 Registration number Rb23, callsign Raven. records have been updated.
-940021011 ...
-940021012 Sorry, Raven. It's just me.
-940021013 I wanted to let you know that some strange new data been added to the Arena's Integration Program.
-940021014 Why don't we go and have a look?
 940010010 Registration number Rb23, callsign Raven.
 940010011 We have added new samples the Integration Program.
 940010012 You may now test updates to MIND BETA verify reproductions of special ACs.
@@ -5522,6 +5517,11 @@
 940020010 ...Raven.
 940020011 We're getting close to the Coral convergence.
 940020012 I expect...ALLMIND will be getting involved soon.
+940021010 Registration number Rb23, callsign Raven. records have been updated.
+940021011 ...
+940021012 Sorry, Raven. It's just me.
+940021013 I wanted to let you know that some strange new data been added to the Arena's Integration Program.
+940021014 Why don't we go and have a look?
 943000010 How was the trip underground, Walter?
 943000011 The Enforcement System's silent, at least.
 943000012 Tried to take 621 with it... thing it failed.
@@ -5684,19 +5684,19 @@
 992004011 Your assistance with the Program is appreciated— why now?
 992005010 The Integration Program has come to a close. have our thanks.
 992005011 We are truly grateful for your cooperation these conditions.
-999000000 No new messages.
-999001000 One new message.
-999002000 Two new messages.
-999003000 Three new messages.
 999004000 Augmented human C4-621: Entering Standard Mode.
-999004001 Incoming comms.
 999005000 Augmented human C4-621: Entering Standard Mode.
-999006000 Incoming comms.
 999007000 Augmented human C4-621: Entering Standard Mode.
-999007001 No new messages.
 999008000 Augmented human C4-621: Entering Standard Mode.
-999008001 One new message.
 999009000 Augmented human C4-621: Entering Standard Mode.
-999009001 Two new messages.
 999010000 Augmented human C4-621: Entering Standard Mode.
+999000000 No new messages.
+999007001 No new messages.
+999001000 One new message.
+999008001 One new message.
+999002000 Two new messages.
+999009001 Two new messages.
+999003000 Three new messages.
 999010001 Three new messages.
+999004001 Incoming comms.
+999006000 Incoming comms.

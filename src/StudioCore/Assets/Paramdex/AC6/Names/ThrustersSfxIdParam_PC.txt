@@ -1,6 +1,6 @@
 0 None
 410000 Continuous Thrust - Small
-410001 Continuous Thrust - Standard
+410001 Continuous Thrust - Booster
 410002 Continuous Thrust - Large
 410003 Continuous Thrust - Giant (Flowery Pattern)
 410010 Continuous Thrust - Small, Long, Thin
@@ -13,7 +13,7 @@
 430001 Brief Thrust - Medium
 430002 Brief Thrust - Giant
 430011 Fast Turn Puff
-440001 Assault Boost Startup
+440000 Assault Boost - Startup
 440011 Assault Boost - Continuous Thrust
 440101 Assault Boost - End
 450000 Quick Boost

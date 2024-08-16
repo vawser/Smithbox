@@ -1,32 +1,4 @@
-5001000 Death Explosion Long + Medium, brief aftermath
-5001001 Death Explosion Long + Large, long-lasting aftermath
-5001002 Death Explosion Long + V. Large, long-lasting aftermath
-5001003 Death Explosion Long + Giant, long-lasting aftermath
-5001004 Death Explosion Long + Huge, long-lasting aftermath
-5001105 Death Explosion Radial + Tiny
-5001100 Death Explosion Radial + Small
-5001101 Death Explosion Radial + Medium
-5001102 Death Explosion Radial + Large
-5001103 Death Explosion Radial + V. Large
-5001104 Death Explosion Radial + Giant
-5001300 Fire Tiny
-5001301 Fire Small
-5001302 Fire Medium
-5001303 Fire Large
-5001304 Fire V.Large
-990020 Assault Armour Charge
-990021 Assault Armour
-990041 Unknown
-990050 Low Power Pulse Armour (unused???)
-990051 Pulse Armour/Protection Charge
-990055 Pulse Armour Activation Effect
-990080 Pulse Armour Activation Sound
-997150 Coral Armour Activation Sound
-990081 Pulse Armour
-997151 Coral Armour
-990082 Pulse Armour Deactivation
-997152 Coral Armour Deactivation
-990083 Pulse Armour Deactivation again?
-990800 Active Expansion Sparks
-7000120 Unknown
-7300053 Dramatic Explosion Buildup Flash
+990080 TOYBOX MT / Quadcopter Drone
+990081 TOYBOX MT / Quadcopter Drone
+990082 TOYBOX MT / Quadcopter Drone
+990083 TOYBOX MT / Quadcopter Drone
