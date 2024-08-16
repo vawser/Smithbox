@@ -199,7 +199,10 @@ namespace StudioCore.Editors.ModelEditor
                                 Screen.ResourceHandler.LoadCharacter(_selectedEntry);
                             }
                         }
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Characters);
+                        if (ImGui.IsItemVisible())
+                        {
+                            DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Characters);
+                        }
 
                         if (ImGui.BeginPopupContextItem($"CharacterModel_Context_{entry}"))
                         {
@@ -253,7 +256,10 @@ namespace StudioCore.Editors.ModelEditor
                                 Screen.ResourceHandler.LoadAsset(_selectedEntry);
                             }
                         }
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Assets);
+                        if (ImGui.IsItemVisible())
+                        {
+                            DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Assets);
+                        }
 
                         if (ImGui.BeginPopupContextItem($"AssetModel_Context_{entry}"))
                         {
@@ -300,7 +306,10 @@ namespace StudioCore.Editors.ModelEditor
                                 Screen.ResourceHandler.LoadPart(_selectedEntry);
                             }
                         }
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Parts);
+                        if (ImGui.IsItemVisible())
+                        {
+                            DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Parts);
+                        }
 
                         if (ImGui.BeginPopupContextItem($"PartModel_Context_{entry}"))
                         {
@@ -365,7 +374,10 @@ namespace StudioCore.Editors.ModelEditor
                                     Screen.ResourceHandler.LoadMapPiece(_selectedEntry, map);
                                 }
                             }
-                            DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
+                            if (ImGui.IsItemVisible())
+                            {
+                                DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
+                            }
 
                             if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{entry}"))
                             {

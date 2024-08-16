@@ -26,19 +26,15 @@ public class ToolWindow
     private MapEditorScreen Screen;
     private ActionHandler Handler;
 
-    private MapQueryEngine MapQueryHandler;
-
     public ToolWindow(MapEditorScreen screen, ActionHandler handler)
     {
         Screen = screen;
         Handler = handler;
-
-        MapQueryHandler = new MapQueryEngine(screen);
     }
 
     public void OnProjectChanged()
     {
-        MapQueryHandler.OnProjectChanged();
+
     }
 
     public void OnGui()
@@ -55,6 +51,139 @@ public class ToolWindow
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth, 32);
             var thinButtonSize = new Vector2(windowWidth, 24);
+
+
+            ///--------------------
+            /// Global Property Search
+            ///--------------------
+            if (ImGui.CollapsingHeader("Global Property Search"))
+            {
+                Screen.MapQueryHandler.IsOpen = true;
+                Screen.MapQueryHandler.DisplayInput();
+                Screen.MapQueryHandler.DisplayResults();
+                Screen.MapQueryHandler.DisplayWiki();
+            }
+            else
+            {
+                Screen.MapQueryHandler.IsOpen = false;
+            }
+
+            ///--------------------
+            /// Local Property Search
+            ///--------------------
+            if (ImGui.CollapsingHeader("Local Property Search"))
+            {
+                Screen.PropSearch.Display();
+            }
+
+            ///--------------------
+            /// Entity ID Assigner
+            ///--------------------
+            /// TODO: re-do as a Global Property Edit, use Map Query Engine stuff
+            /*
+            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+            {
+                if (ImGui.CollapsingHeader("Entity ID Assigner"))
+                {
+                    ImguiUtils.WrappedText("Assign an Entity Group ID to all entities across all maps,\noptionally filtering by specific attributes.");
+                    ImguiUtils.WrappedText("");
+
+                    ImguiUtils.WrappedText("Entity Group ID");
+                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    ImGui.InputInt("##entityGroupInput", ref CFG.Current.Toolbar_EntityGroupID);
+                    ImguiUtils.WrappedText("");
+
+                    ImguiUtils.WrappedText("Filter");
+
+                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    if (ImGui.BeginCombo("##filterAttribute", Handler.SelectedFilter.GetDisplayName()))
+                    {
+                        foreach (var entry in Enum.GetValues(typeof(EntityFilterType)))
+                        {
+                            var target = (EntityFilterType)entry;
+
+                            if (ImGui.Selectable($"{target.GetDisplayName()}"))
+                            {
+                                Handler.SelectedFilter = target;
+                                break;
+                            }
+                        }
+
+                        ImGui.EndCombo();
+                    }
+                    ImguiUtils.ShowHoverTooltip("When assigning the Entity Group ID, the action will only assign it to entities that match this attribute.");
+                    ImguiUtils.WrappedText("");
+
+                    ImguiUtils.WrappedText("Filter Input");
+                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    ImGui.InputText("##entityGroupAttribute", ref CFG.Current.Toolbar_EntityGroup_Attribute, 255);
+                    ImguiUtils.WrappedText("");
+
+                    ImguiUtils.WrappedText("Target Map");
+                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    if (ImGui.BeginCombo("##mapTargetFilter", Handler.SelectedMapFilter))
+                    {
+                        IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = Screen.Universe.LoadedObjectContainers.OrderBy(k => k.Key);
+
+                        foreach (var entry in orderedMaps)
+                        {
+                            if (ImGui.Selectable($"{entry.Key}"))
+                            {
+                                Handler.SelectedMapFilter = entry.Key;
+                                break;
+                            }
+                        }
+
+                        if (ImGui.Selectable($"All"))
+                        {
+                            Handler.SelectedMapFilter = "All";
+                        }
+
+                        ImGui.EndCombo();
+                    }
+                    ImguiUtils.ShowHoverTooltip("When assigning the Entity Group ID, the action will only assign it to entities that match this attribute.");
+                    ImguiUtils.WrappedText("");
+
+                    if (Handler.SelectedMapFilter == "All")
+                    {
+                        ImguiUtils.WrappedText("WARNING: applying this to all maps will take a few minutes,\nexpect Smithbox to hang until it finishes.");
+                        ImguiUtils.WrappedText("");
+                    }
+
+                    if (ImGui.Button("Assign", defaultButtonSize))
+                    {
+                        Handler.ApplyEntityAssigner();
+                    }
+                }
+            }
+            */
+
+
+            ///--------------------
+            /// Selection Groups
+            ///--------------------
+            if (ImGui.CollapsingHeader("Selection Groups"))
+            {
+                Screen.SelectionGroupEditor.Display();
+            }
+
+            ///--------------------
+            /// Import Prefab
+            ///--------------------
+            if (ImGui.CollapsingHeader("Import Prefab"))
+            {
+                Screen.PrefabEditor.ImportPrefabMenu();
+                Screen.PrefabEditor.PrefabTree();
+            }
+
+            ///--------------------
+            /// Export Prefab
+            ///--------------------
+            if (ImGui.CollapsingHeader("Export Prefab"))
+            {
+                Screen.PrefabEditor.ExportPrefabMenu();
+                Screen.PrefabEditor.PrefabTree();
+            }
 
             ///--------------------
             /// Create
@@ -886,208 +1015,6 @@ public class ToolWindow
                 {
                     Handler.ApplyMovetoGrid();
                 }
-            }
-
-            ///--------------------
-            /// Toggle Editor Visibility by Tag
-            ///--------------------
-            if (ImGui.CollapsingHeader("Toggle Editor Visibility by Tag"))
-            {
-                ImguiUtils.WrappedText("Toggle the visibility of map objects, filtering the " +
-                    "\ntargets by tag.");
-                ImguiUtils.WrappedText("");
-
-                ImguiUtils.WrappedText("Target Tag:");
-                ImGui.PushItemWidth(defaultButtonSize.X);
-                ImGui.InputText("##targetTag", ref CFG.Current.Toolbar_Tag_Visibility_Target, 255);
-                ImguiUtils.ShowHoverTooltip("Specific which tag the map objects will be filtered by.");
-                ImguiUtils.WrappedText("");
-
-                ImguiUtils.WrappedText("State:");
-                if (ImGui.Checkbox("Visible", ref CFG.Current.Toolbar_Tag_Visibility_State_Enabled))
-                {
-                    CFG.Current.Toolbar_Tag_Visibility_State_Disabled = false;
-                }
-                ImguiUtils.ShowHoverTooltip("Set the visible state to enabled.");
-
-                if (ImGui.Checkbox("Invisible", ref CFG.Current.Toolbar_Tag_Visibility_State_Disabled))
-                {
-                    CFG.Current.Toolbar_Tag_Visibility_State_Enabled = false;
-                }
-                ImguiUtils.ShowHoverTooltip("Set the visible state to disabled.");
-                ImguiUtils.WrappedText("");
-
-                if (ImGui.Button("Toggle Editor Visibility", defaultButtonSize))
-                {
-                    Handler.ApplyEditorVisibilityChangeByTag();
-                }
-            }
-
-            ///--------------------
-            /// Entity ID Checker
-            ///--------------------
-            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
-            {
-                if (ImGui.CollapsingHeader("Entity ID Checker"))
-                {
-                    ImguiUtils.WrappedText("This tool will check for any incorrect Entity ID assignments.");
-                    ImguiUtils.WrappedText("Invalid assignments will be noted in the logger.");
-                    ImguiUtils.WrappedText("");
-
-                    if (Screen.Universe.LoadedObjectContainers == null)
-                    {
-                        ImguiUtils.WrappedText("No maps have been loaded yet.");
-                        ImguiUtils.WrappedText("");
-                    }
-                    else if (Screen.Universe.LoadedObjectContainers != null && !Screen.Universe.LoadedObjectContainers.Any())
-                    {
-                        ImguiUtils.WrappedText("No maps have been loaded yet.");
-                        ImguiUtils.WrappedText("");
-                    }
-                    else
-                    {
-                        ImguiUtils.WrappedText("Target Map:");
-                        ImGui.PushItemWidth(defaultButtonSize.X);
-                        if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
-                        {
-                            foreach (var obj in Screen.Universe.LoadedObjectContainers)
-                            {
-                                if (obj.Value != null)
-                                {
-                                    if (ImGui.Selectable(obj.Key))
-                                    {
-                                        Handler._targetMap = (obj.Key, obj.Value);
-                                        break;
-                                    }
-                                }
-                            }
-                            ImGui.EndCombo();
-                        }
-                        ImguiUtils.WrappedText("");
-                    }
-
-                    if (ImGui.Button("Check", defaultButtonSize))
-                    {
-                        Handler.ApplyEntityChecker();
-                    }
-                }
-            }
-
-            ///--------------------
-            /// Entity ID Assigner
-            ///--------------------
-            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
-            {
-                if (ImGui.CollapsingHeader("Entity ID Assigner"))
-                {
-                    ImguiUtils.WrappedText("Assign an Entity Group ID to all entities across all maps,\noptionally filtering by specific attributes.");
-                    ImguiUtils.WrappedText("");
-
-                    ImguiUtils.WrappedText("Entity Group ID");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    ImGui.InputInt("##entityGroupInput", ref CFG.Current.Toolbar_EntityGroupID);
-                    ImguiUtils.WrappedText("");
-
-                    ImguiUtils.WrappedText("Filter");
-
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    if (ImGui.BeginCombo("##filterAttribute", Handler.SelectedFilter.GetDisplayName()))
-                    {
-                        foreach (var entry in Enum.GetValues(typeof(EntityFilterType)))
-                        {
-                            var target = (EntityFilterType)entry;
-
-                            if (ImGui.Selectable($"{target.GetDisplayName()}"))
-                            {
-                                Handler.SelectedFilter = target;
-                                break;
-                            }
-                        }
-
-                        ImGui.EndCombo();
-                    }
-                    ImguiUtils.ShowHoverTooltip("When assigning the Entity Group ID, the action will only assign it to entities that match this attribute.");
-                    ImguiUtils.WrappedText("");
-
-                    ImguiUtils.WrappedText("Filter Input");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    ImGui.InputText("##entityGroupAttribute", ref CFG.Current.Toolbar_EntityGroup_Attribute, 255);
-                    ImguiUtils.WrappedText("");
-
-                    ImguiUtils.WrappedText("Target Map");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    if (ImGui.BeginCombo("##mapTargetFilter", Handler.SelectedMapFilter))
-                    {
-                        IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = Screen.Universe.LoadedObjectContainers.OrderBy(k => k.Key);
-
-                        foreach (var entry in orderedMaps)
-                        {
-                            if (ImGui.Selectable($"{entry.Key}"))
-                            {
-                                Handler.SelectedMapFilter = entry.Key;
-                                break;
-                            }
-                        }
-
-                        if (ImGui.Selectable($"All"))
-                        {
-                            Handler.SelectedMapFilter = "All";
-                        }
-
-                        ImGui.EndCombo();
-                    }
-                    ImguiUtils.ShowHoverTooltip("When assigning the Entity Group ID, the action will only assign it to entities that match this attribute.");
-                    ImguiUtils.WrappedText("");
-
-                    if (Handler.SelectedMapFilter == "All")
-                    {
-                        ImguiUtils.WrappedText("WARNING: applying this to all maps will take a few minutes,\nexpect Smithbox to hang until it finishes.");
-                        ImguiUtils.WrappedText("");
-                    }
-
-                    if (ImGui.Button("Assign", defaultButtonSize))
-                    {
-                        Handler.ApplyEntityAssigner();
-                    }
-                }
-            }
-
-            ///--------------------
-            /// Selection Groups
-            ///--------------------
-            if (ImGui.CollapsingHeader("Selection Groups"))
-            {
-                Screen.SelectionGroupEditor.Display();
-            }
-
-            ///--------------------
-            /// Import Prefab
-            ///--------------------
-            if (ImGui.CollapsingHeader("Import Prefab"))
-            {
-                Screen.PrefabEditor.ImportPrefabMenu();
-                Screen.PrefabEditor.PrefabTree();
-            }
-
-            ///--------------------
-            /// Export Prefab
-            ///--------------------
-            if (ImGui.CollapsingHeader("Export Prefab"))
-            {
-                Screen.PrefabEditor.ExportPrefabMenu();
-                Screen.PrefabEditor.PrefabTree();
-            }
-
-            ///--------------------
-            /// Property Search
-            ///--------------------
-            if (ImGui.CollapsingHeader("Local Property Search"))
-            {
-                Screen.PropSearch.Display();
-            }
-            if (ImGui.CollapsingHeader("Global Property Search"))
-            {
-                MapQueryHandler.Display();
             }
         }
 

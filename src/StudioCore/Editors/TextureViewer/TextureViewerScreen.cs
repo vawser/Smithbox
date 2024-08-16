@@ -418,8 +418,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                         {
                             SelectTextureContainer(info);
                         }
-                        var alias = AliasUtils.GetTextureContainerAliasName(info);
-                        AliasUtils.DisplayAlias(alias);
+                        if (ImGui.IsItemVisible())
+                        {
+                            var alias = AliasUtils.GetTextureContainerAliasName(info);
+                            AliasUtils.DisplayAlias(alias);
+                        }
 
                         ImGui.EndGroup();
                     }

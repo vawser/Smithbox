@@ -86,8 +86,12 @@ public class MapSceneTree : IActionEventHandler
 
     private WorldMapScreen _worldMapScreen;
 
-    public MapSceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe, ViewportSelection sel, ViewportActionManager aman, IViewport vp)
+    private MapEditorScreen Screen;
+
+    public MapSceneTree(MapEditorScreen screen, Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe, ViewportSelection sel, ViewportActionManager aman, IViewport vp)
     {
+        Screen = screen;
+
         _handler = handler;
         _id = id;
         _universe = universe;
@@ -405,6 +409,14 @@ public class MapSceneTree : IActionEventHandler
                     }
                 }
 
+                if (Screen.MapQueryHandler.IsOpen)
+                {
+                    if (ImGui.Selectable("Add to Map Filter"))
+                    {
+                        Screen.MapQueryHandler.AddMapFilterInput(CurrentMapID);
+                    }
+                }
+
                 ImGui.EndPopup();
             }
 
@@ -556,8 +568,11 @@ public class MapSceneTree : IActionEventHandler
                     }
                 }
             }
-            var alias = AliasUtils.GetEntityAliasName(e);
-            AliasUtils.DisplayAlias(alias);
+            if (ImGui.IsItemVisible())
+            {
+                var alias = AliasUtils.GetEntityAliasName(e);
+                AliasUtils.DisplayAlias(alias);
+            }
         }
 
         if (ImGui.IsItemClicked(0))

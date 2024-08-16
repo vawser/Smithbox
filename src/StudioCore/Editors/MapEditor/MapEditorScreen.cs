@@ -6,6 +6,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
+using StudioCore.Editors.MapEditor.MapQuery;
 using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Gui;
 using StudioCore.Havok;
@@ -94,6 +95,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public ActionHandler ActionHandler;
     public ActionSubMenu ActionSubMenu;
 
+    public MapQueryEngine MapQueryHandler;
+    
+
     public MapEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         Rect = window.Bounds;
@@ -112,14 +116,14 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         Universe = new Universe(RenderScene, _selection);
 
-        SceneTree = new MapSceneTree(MapSceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport);
+        SceneTree = new MapSceneTree(this, MapSceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport);
         DispGroupEditor = new DisplayGroupEditor(RenderScene, _selection, EditorActionManager);
         PropSearch = new MapSearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(RenderScene, _selection);
         MapAssetSelectionView = new MapAssetSelectionView(this);
         GranularRegionHandler = new GranularRegionToggleHandler(Universe);
 
-        PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport);
+        PropEditor = new MapPropertyEditor(this, EditorActionManager, _propCache, Viewport);
 
         SelectionGroupEditor = new SelectionGroupEditor(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
         PrefabEditor = new() { universe = Universe, scene = RenderScene, actionManager = EditorActionManager };
@@ -128,6 +132,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         ToolWindow = new ToolWindow(this, ActionHandler);
         ToolSubMenu = new ToolSubMenu(this, ActionHandler);
         ActionSubMenu = new ActionSubMenu(this, ActionHandler);
+
+        MapQueryHandler = new MapQueryEngine(this);
 
         EditorActionManager.AddEventHandler(SceneTree);
     }
@@ -911,6 +917,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
+            MapQueryHandler.OnProjectChanged();
             SelectionGroupEditor.OnProjectChanged();
             MapAssetSelectionView.OnProjectChanged();
             SceneTree.OnProjectChanged();

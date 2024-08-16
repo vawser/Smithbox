@@ -89,13 +89,13 @@ namespace StudioCore.Editors.GparamEditor
             {
                 ImguiUtils.WrappedText($"File arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"*");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"*");
                 ImguiUtils.WrappedText("Targets all files.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"selection");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"selection");
                 ImguiUtils.WrappedText("Targets current file selection.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"file:[<name>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"file:[<name>]");
                 ImguiUtils.WrappedText("Targets the file with the specified name.");
                 ImguiUtils.WrappedText("");
             }
@@ -112,13 +112,13 @@ namespace StudioCore.Editors.GparamEditor
             {
                 ImguiUtils.WrappedText($"Group arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"*");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"*");
                 ImguiUtils.WrappedText("Targets all groups.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"selection");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"selection");
                 ImguiUtils.WrappedText("Targets current group selection.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"group:[<name>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"group:[<name>]");
                 ImguiUtils.WrappedText("Targets the groups with the specified name.");
                 ImguiUtils.WrappedText("");
             }
@@ -135,13 +135,13 @@ namespace StudioCore.Editors.GparamEditor
             {
                 ImguiUtils.WrappedText($"Field arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"*");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"*");
                 ImguiUtils.WrappedText("Targets all fields.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"selection");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"selection");
                 ImguiUtils.WrappedText("Targets current field selection.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"field:[<name>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"field:[<name>]");
                 ImguiUtils.WrappedText("Targets the fields with the specified name.");
                 ImguiUtils.WrappedText("");
             }
@@ -158,22 +158,22 @@ namespace StudioCore.Editors.GparamEditor
             {
                 ImguiUtils.WrappedText($"Filter arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"*");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"*");
                 ImguiUtils.WrappedText("Targets all rows.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"selection");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"selection");
                 ImguiUtils.WrappedText("Targets current value row selection.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_ID}:[<x>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_ID}:[<x>]");
                 ImguiUtils.WrappedText("Targets all rows with <x> ID.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Index}:[<x>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Index}:[<x>]");
                 ImguiUtils.WrappedText("Targets all rows with <x> row index.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_TimeOfDay}:[<x>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_TimeOfDay}:[<x>]");
                 ImguiUtils.WrappedText("Targets all rows with <x> Time of Day.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Value}:[<x>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Value}:[<x>]");
                 ImguiUtils.WrappedText("Targets all rows with <x> Value. For multi-values split them like so: [<x>,<x>]");
                 ImguiUtils.WrappedText("");
             }
@@ -190,25 +190,25 @@ namespace StudioCore.Editors.GparamEditor
             {
                 ImguiUtils.WrappedText($"Command arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Set}:[<x>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Set}:[<x>]");
                 ImguiUtils.WrappedText("Sets target rows to <x> Value.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Add}:[<x>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Add}:[<x>]");
                 ImguiUtils.WrappedText("Adds <x> to the Value of the target rows.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Subtract}:[<x>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Subtract}:[<x>]");
                 ImguiUtils.WrappedText("Subtracts <x> from the Value of the target rows.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Multiply}:[<x>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Multiply}:[<x>]");
                 ImguiUtils.WrappedText("Multiplies the Value of the target rows by <x>.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_SetByRow}:[<x>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_SetByRow}:[<x>]");
                 ImguiUtils.WrappedText("Sets target rows to the Value of row ID <x>.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Restore}");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Restore}");
                 ImguiUtils.WrappedText("Sets target rows to their vanilla Value.");
                 ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{CFG.Current.Gparam_QuickEdit_Random}:[<x>][<y>]");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Random}:[<x>][<y>]");
                 ImguiUtils.WrappedText("Sets target rows to a random value between <x> and <y>. First is the minimum, second is the maximum.");
                 ImguiUtils.WrappedText("");
             }

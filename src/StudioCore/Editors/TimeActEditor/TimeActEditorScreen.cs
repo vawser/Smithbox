@@ -401,7 +401,10 @@ public class TimeActEditorScreen : EditorScreen
                     {
                         SelectionHandler.FileContainerChange(info, binder, i, FileContainerType.Character);
                     }
-                    TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Character);
+                    if (ImGui.IsItemVisible())
+                    {
+                        TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Character);
+                    }
 
                     SelectionHandler.ContextMenu.ContainerMenu(isSelected, info.Name);
 
@@ -436,7 +439,10 @@ public class TimeActEditorScreen : EditorScreen
                     {
                         SelectionHandler.FileContainerChange(info, binder, i, FileContainerType.Object);
                     }
-                    TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Asset);
+                    if (ImGui.IsItemVisible())
+                    {
+                        TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Asset);
+                    }
 
                     SelectionHandler.ContextMenu.ContainerMenu(isSelected, info.Name);
 
@@ -495,8 +501,11 @@ public class TimeActEditorScreen : EditorScreen
                     SelectionHandler.TimeActChange(entry, i);
                 }
 
-                if (CFG.Current.TimeActEditor_DisplayTimeActRow_AliasInfo)
-                    TimeActUtils.DisplayTimeActAlias(SelectionHandler.ContainerInfo, entry.ID);
+                if (ImGui.IsItemVisible())
+                {
+                    if (CFG.Current.TimeActEditor_DisplayTimeActRow_AliasInfo)
+                        TimeActUtils.DisplayTimeActAlias(SelectionHandler.ContainerInfo, entry.ID);
+                }
 
                 SelectionHandler.ContextMenu.TimeActMenu(isSelected, entry.ID.ToString());
 
@@ -555,8 +564,11 @@ public class TimeActEditorScreen : EditorScreen
                     SelectionHandler.TimeActAnimationChange(entry, i);
                 }
 
-                if (CFG.Current.TimeActEditor_DisplayAnimRow_GeneratorInfo)
-                    TimeActUtils.DisplayAnimationAlias(SelectionHandler, entry.ID);
+                if (ImGui.IsItemVisible())
+                {
+                    if (CFG.Current.TimeActEditor_DisplayAnimRow_GeneratorInfo)
+                        TimeActUtils.DisplayAnimationAlias(SelectionHandler, entry.ID);
+                }
 
                 SelectionHandler.ContextMenu.TimeActAnimationMenu(isSelected, entry.ID.ToString());
 
@@ -776,17 +788,20 @@ public class TimeActEditorScreen : EditorScreen
                     SelectionHandler.TimeActEventChange(evt, i);
                 }
 
-                if(CFG.Current.TimeActEditor_DisplayEventRow_EnumInfo)
-                    Decorator.DisplayEnumInfo(evt);
+                if (ImGui.IsItemVisible())
+                {
+                    if (CFG.Current.TimeActEditor_DisplayEventRow_EnumInfo)
+                        Decorator.DisplayEnumInfo(evt);
 
-                if (CFG.Current.TimeActEditor_DisplayEventRow_ParamRefInfo)
-                    Decorator.DisplayParamRefInfo(evt);
+                    if (CFG.Current.TimeActEditor_DisplayEventRow_ParamRefInfo)
+                        Decorator.DisplayParamRefInfo(evt);
 
-                if (CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo)
-                    Decorator.DisplayAliasEnumInfo(evt);
+                    if (CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo)
+                        Decorator.DisplayAliasEnumInfo(evt);
 
-                if (CFG.Current.TimeActEditor_DisplayEventRow_ProjectEnumInfo)
-                    Decorator.DisplayProjectEnumInfo(evt);
+                    if (CFG.Current.TimeActEditor_DisplayEventRow_ProjectEnumInfo)
+                        Decorator.DisplayProjectEnumInfo(evt);
+                }
 
                 SelectionHandler.ContextMenu.TimeActEventMenu(isSelected, i.ToString());
 

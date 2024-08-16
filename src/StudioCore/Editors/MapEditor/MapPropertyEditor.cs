@@ -36,8 +36,11 @@ public class MapPropertyEditor
 
     private IViewport _viewport;
 
-    public MapPropertyEditor(ViewportActionManager manager, MapPropertyCache propCache, IViewport viewport)
+    private MapEditorScreen Screen;
+
+    public MapPropertyEditor(MapEditorScreen screen, ViewportActionManager manager, MapPropertyCache propCache, IViewport viewport)
     {
+        Screen = screen;
         ContextActionManager = manager;
         _propCache = propCache;
         _viewport = viewport;
@@ -728,6 +731,15 @@ public class MapPropertyEditor
             {
                 RequestedSearchProperty = prop;
                 EditorCommandQueue.AddCommand($@"map/propsearch/{prop.Name}");
+            }
+
+
+            if (Screen.MapQueryHandler.IsOpen)
+            {
+                if (ImGui.Selectable("Add to Property Filter"))
+                {
+                    Screen.MapQueryHandler.AddPropertyFilterInput(prop.Name);
+                }
             }
 
             // Position - Copy/Paste

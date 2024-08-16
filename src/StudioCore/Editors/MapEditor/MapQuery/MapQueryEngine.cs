@@ -1,24 +1,15 @@
-﻿using HKLib.hk2018.TypeRegistryTest;
-using ImGuiNET;
-using Org.BouncyCastle.Asn1.X509.Qualified;
+﻿using ImGuiNET;
 using SoulsFormats;
-using SoulsFormats.KF4;
-using StudioCore.Core;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Editor;
-using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Interface;
-using StudioCore.Locators;
-using StudioCore.Platform;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
-using static HKLib.hk2018.hkaiUserEdgeUtils;
-using static SoulsFormats.NVA;
 using static StudioCore.Editors.MapEditor.MapPropertyEditor;
 
 namespace StudioCore.Editors.MapEditor.MapQuery;
@@ -28,6 +19,8 @@ public class MapQueryEngine
     private MapEditorScreen Screen;
     private MapQueryBank Bank;
 
+    public bool IsOpen = false;
+
     public string _searchInputMap = "";
     public string _searchInputProperty = "";
     public string _searchInputValue = "";
@@ -35,6 +28,26 @@ public class MapQueryEngine
 
     public bool _targetProjectFiles = false;
     public bool _looseStringMatch = false;
+
+    public bool DisplayWikiSection = false;
+    public bool DisplayMapFilterSection = true;
+    public bool DisplayPropertyFilterSection = true;
+    public bool DisplayValueFilterSection = true;
+
+    private bool DisplayResultListSection = true;
+
+    public bool QueryComplete = false;
+    public bool MayRunQuery = true;
+
+    public string MapFilterInputs = "";
+    public string PropertyFilterInputs = "";
+    public string ValueFilterInputs = "";
+
+    /// <summary>
+    /// Track the property filter index so we can use the correct value filter
+    /// when dealing with more than 1 filter argument.
+    /// </summary>
+    private int CurrentPropertyFilterIndex = -1;
 
     public MapQueryEngine(MapEditorScreen screen)
     {
@@ -48,10 +61,11 @@ public class MapQueryEngine
         Bank.SetupData();
     }
 
-    public void Display()
+    public void DisplayInput()
     {
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth, 32);
+        var halfButtonSize = new Vector2(windowWidth / 2, 32);
 
         if (Bank.MapBankInitialized)
         {
@@ -60,20 +74,17 @@ public class MapQueryEngine
 
             ImguiUtils.WrappedText("Map Filter:");
             ImGui.InputText("##mapFilter", ref _searchInputMap, 255);
-            ImguiUtils.ShowHoverTooltip(MapQueryTooltips.MAP_FILTER_TOOLTIP);
 
-            ImguiUtils.WrappedText("Property Name Filter:");
+            ImguiUtils.WrappedText("Property Filter:");
             ImGui.InputText("##propertyNameFilter", ref _searchInputProperty, 255);
-            ImguiUtils.ShowHoverTooltip(MapQueryTooltips.PROPERTY_NAME_FILTER_TOOLTIP);
 
-            ImguiUtils.WrappedText("Property Value Filter:");
+            ImguiUtils.WrappedText("Value Filter:");
             ImGui.InputText("##propertyValueFilter", ref _searchInputValue, 255);
-            ImguiUtils.ShowHoverTooltip(MapQueryTooltips.PROPERTY_VALUE_FILTER_TOOLTIP);
 
             ImguiUtils.WrappedText("");
             ImGui.Checkbox("Target Project Files", ref _targetProjectFiles);
             ImguiUtils.ShowHoverTooltip("Uses the project map files instead of game root.");
-            ImGui.Checkbox("Loose String Match", ref _looseStringMatch);
+            ImGui.Checkbox("Loose Property Match", ref _looseStringMatch);
             ImguiUtils.ShowHoverTooltip("Only require the string property to contain the search string, instead of requiring an exact match.");
 
             ImguiUtils.WrappedText("");
@@ -81,7 +92,12 @@ public class MapQueryEngine
             if (!MayRunQuery)
             {
                 ImGui.BeginDisabled();
-                if (ImGui.Button("Search", defaultButtonSize))
+                if (ImGui.Button("Search", halfButtonSize))
+                {
+                }
+                ImGui.EndDisabled();
+                ImGui.BeginDisabled();
+                if (ImGui.Button("Clear", halfButtonSize))
                 {
                 }
                 ImGui.EndDisabled();
@@ -92,21 +108,12 @@ public class MapQueryEngine
                 {
                     RunQuery();
                 }
-            }
-
-            ImguiUtils.WrappedText("");
-
-            ImGui.Separator();
-            ImguiUtils.WrappedText($"Search Results:");
-            ImGui.Separator();
-
-            if (QueryComplete)
-            {
-                DisplayResults();
-            }
-            else if(!MayRunQuery)
-            {
-                ImguiUtils.WrappedText($"Search query is not yet complete...");
+                if (ImGui.Button("Clear", halfButtonSize))
+                {
+                    _searchInputMap = "";
+                    _searchInputProperty = "";
+                    _searchInputValue = "";
+                }
             }
         }
         else
@@ -116,12 +123,34 @@ public class MapQueryEngine
         }
     }
 
-    public bool QueryComplete = false;
-    public bool MayRunQuery = true;
+    public void DisplayResults()
+    {
+        if (Bank.MapBankInitialized)
+        {
+            ImguiUtils.WrappedText("");
 
-    public string mapInput = "";
-    public string propertyInput = "";
-    public string valueInput = "";
+            ImGui.Separator();
+            ImguiUtils.WrappedText($"Search Results:");
+            ImGui.SameLine();
+            if (ImGui.Button($"{ForkAwesome.Bars}##resultListToggle"))
+            {
+                DisplayResultListSection = !DisplayResultListSection;
+            }
+            ImGui.Separator();
+
+            if (DisplayResultListSection)
+            {
+                if (QueryComplete)
+                {
+                    DisplayResultList();
+                }
+                else if (!MayRunQuery)
+                {
+                    ImguiUtils.WrappedText($"Search query is not yet complete...");
+                }
+            }
+        }
+    }
 
     public async void RunQuery()
     {
@@ -134,9 +163,9 @@ public class MapQueryEngine
         Matches = new();
 
         // Assigned to new vars so we can ignore if the user edits the input vars via the text input
-        mapInput = _searchInputMap.ToLower();
-        propertyInput = _searchInputProperty.ToLower();
-        valueInput = _searchInputValue.ToLower();
+        MapFilterInputs = _searchInputMap.ToLower();
+        PropertyFilterInputs = _searchInputProperty.ToLower();
+        ValueFilterInputs = _searchInputValue.ToLower();
 
         // Load the maps async so the main thread isn't blocked
         Task<bool> runQueryTask = BuildResults();
@@ -156,9 +185,13 @@ public class MapQueryEngine
             var mapName = entry.Key;
             var map = entry.Value;
 
-            CheckPropertyList(mapName, map, map.Parts.GetEntries());
-            CheckPropertyList(mapName, map, map.Regions.GetEntries());
-            CheckPropertyList(mapName, map, map.Events.GetEntries());
+            // Apply map filters here
+            if (IsMapFilterMatch(mapName))
+            {
+                CheckPropertyList(mapName, map, map.Parts.GetEntries());
+                CheckPropertyList(mapName, map, map.Regions.GetEntries());
+                CheckPropertyList(mapName, map, map.Events.GetEntries());
+            }
         }
 
         return true;
@@ -166,12 +199,15 @@ public class MapQueryEngine
 
     public void CheckPropertyList<T>(string mapName, IMsb map, IReadOnlyList<T> list)
     {
+        // Apply property filters here
+
         // Property List
         foreach (var entry in list)
         {
             var properties = entry.GetType().GetProperties();
 
             var entityName = "";
+
             var msbEntity = (IMsbEntry)entry;
             if (msbEntity != null)
             {
@@ -308,6 +344,8 @@ public class MapQueryEngine
 
     public bool IsValueMatch(object propValue)
     {
+        // Apply value properties here
+
         var searchValue = _searchInputValue.ToLower();
 
         if (searchValue == $"{propValue}".ToLower())
@@ -318,7 +356,7 @@ public class MapQueryEngine
         return false;
     }
 
-    public void DisplayResults()
+    public void DisplayResultList()
     {
         if (Matches.Count > 0)
         {
@@ -339,8 +377,212 @@ public class MapQueryEngine
                             EditorCommandQueue.AddCommand($"map/load/{entry.MapName}");
                             EditorCommandQueue.AddCommand($"map/select/{entry.MapName}/{entry.EntityName}");
                         }
+                        if (ImGui.IsItemVisible())
+                        {
+                            var alias = GetUnknownAlias(entry.EntityName);
+                            AliasUtils.DisplayAlias(alias);
+                        }
                     }
                 }
+            }
+        }
+    }
+
+    private string GetUnknownAlias(string rawName)
+    {
+        rawName = rawName.ToLower();
+        if(rawName.Contains("_"))
+        {
+            rawName = rawName.Split("_")[0];
+        }
+
+        string alias = "";
+
+        var chrAlias =  GetAlias(rawName, Smithbox.AliasCacheHandler.AliasCache.Characters);
+        var assetAlias = GetAlias(rawName, Smithbox.AliasCacheHandler.AliasCache.Assets);
+        var mapPieceAlias = GetAlias(rawName, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
+
+        if (chrAlias != "")
+            return chrAlias;
+
+        if(assetAlias != "")
+            return assetAlias;
+
+        if (mapPieceAlias != "")
+            return mapPieceAlias;
+
+        return alias;
+    }
+
+    private string GetAlias(string name, Dictionary<string, AliasReference> referenceDict)
+    {
+        var lowerName = name.ToLower();
+
+        if (referenceDict.ContainsKey(lowerName))
+        {
+            return referenceDict[lowerName].name;
+        }
+
+        return "";
+    }
+    
+    public bool IsMapFilterMatch(string mapName)
+    {
+        // Blank
+        if (MapFilterInputs == "")
+            return true;
+
+        var sections = MapFilterInputs.Split("|");
+
+        foreach(var entry in sections)
+        {
+            // String
+
+            // Regex
+
+            // Group
+        }
+
+        return false;
+    }
+
+    public void AddMapFilterInput(string mapID)
+    {
+        var addition = $"{mapID}";
+
+        if (_searchInputMap != "")
+        {
+            addition = $"+{addition}";
+        }
+
+        _searchInputMap = _searchInputMap + addition;
+    }
+
+    public void AddPropertyFilterInput(string propertyName)
+    {
+        var addition = $"{propertyName}";
+
+        if (_searchInputProperty != "")
+        {
+            addition = $"+{addition}";
+        }
+
+        _searchInputProperty = _searchInputProperty + addition;
+    }
+
+    public void DisplayWiki()
+    {
+        ImguiUtils.WrappedText("");
+
+        ImGui.Separator();
+        ImguiUtils.WrappedText($"Help:");
+        ImGui.SameLine();
+        if (ImGui.Button($"{ForkAwesome.Bars}##wikiToggle"))
+        {
+            DisplayWikiSection = !DisplayWikiSection;
+        }
+        ImGui.Separator();
+
+        if (DisplayWikiSection)
+        {
+            // Map Filters
+            ImGui.Separator();
+            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Map Filters:");
+            ImGui.SameLine();
+            if (ImGui.Button($"{ForkAwesome.Bars}##mapFilterToggle"))
+            {
+                DisplayMapFilterSection = !DisplayMapFilterSection;
+            }
+            ImGui.Separator();
+            if (DisplayMapFilterSection)
+            {
+                ImguiUtils.WrappedText($"Represents the map you want to match.");
+                ImguiUtils.WrappedText($"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<blank>");
+                ImguiUtils.WrappedText("Targets all maps.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<string>");
+                ImguiUtils.WrappedText("Targets the specified map.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"regex:[<string>]");
+                ImguiUtils.WrappedText("Targets the specified maps whose name matches the specified regex.");
+                ImguiUtils.WrappedText("");
+
+                // Speical groups for ER
+                if (Smithbox.ProjectType is Core.ProjectType.ER)
+                {
+                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"group:[<string>]");
+                    ImguiUtils.WrappedText("Targets the specified pre-defined map group.\n\n" +
+                        "The possible map groups are:\n" +
+                        " legacy - Target maps such as legacy dungeons and other non-tile maps.\n" +
+                        " tile - Target all the open world tile maps.\n" +
+                        " vanilla_tile - Target all the open world tile maps for the base game.\n" +
+                        " dlc_tile - Target all the open world tile maps for the DLC.");
+                    ImguiUtils.WrappedText("");
+                }
+            }
+
+            // Property Filter
+            ImGui.Separator();
+            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Property Filters:");
+            ImGui.SameLine();
+            if (ImGui.Button($"{ForkAwesome.Bars}##propertyFilterToggle"))
+            {
+                DisplayPropertyFilterSection = !DisplayPropertyFilterSection;
+            }
+            ImGui.Separator();
+            if (DisplayPropertyFilterSection)
+            {
+                ImguiUtils.WrappedText($"Represents the property you want to match.");
+                ImguiUtils.WrappedText($"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<blank>");
+                ImguiUtils.WrappedText("Targets all properties.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<string>");
+                ImguiUtils.WrappedText("Targets the specified property string.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"regex:[<string>]");
+                ImguiUtils.WrappedText("Targets the specified properties whose name matches the specified regex.");
+                ImguiUtils.WrappedText("");
+            }
+
+            // Value Filter
+            ImGui.Separator();
+            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Value Filters:");
+            ImGui.SameLine();
+            if (ImGui.Button($"{ForkAwesome.Bars}##valueFilterToggle"))
+            {
+                DisplayValueFilterSection = !DisplayValueFilterSection;
+            }
+            ImGui.Separator();
+            if (DisplayValueFilterSection)
+            {
+                ImguiUtils.WrappedText($"Represents the property value you want to match.");
+                ImguiUtils.WrappedText($"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<blank>");
+                ImguiUtils.WrappedText("Targets all values.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<value>");
+                ImguiUtils.WrappedText("Targets the specified property value.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"regex:[<string>]");
+                ImguiUtils.WrappedText("Targets the specified property values whose value matches the specified regex.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"list:[<value>,<value>,<etc>]");
+                ImguiUtils.WrappedText("Targets the specified property values within the list.");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"range:[<min value>,<max value>]");
+                ImguiUtils.WrappedText("Targets the specified property values between the minimum and maximum (inclusive).");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"below:[<value>]");
+                ImguiUtils.WrappedText("Targets the specified property values below the specified value (inclusive).");
+                ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"above:[<value>]");
+                ImguiUtils.WrappedText("Targets the specified property values above the specified value (inclusive).");
+                ImguiUtils.WrappedText("");
             }
         }
     }
