@@ -240,7 +240,7 @@ public class MapQueryEngine
             }
             catch
             {
-                TaskLogs.AddLog($"Failed to build filter pattern due to invalid regex expression: {input}");
+                TaskLogs.AddLog($"Failed to add filter pattern due to invalid regex expression: {input}");
             }
         }
 

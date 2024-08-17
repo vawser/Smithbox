@@ -8,6 +8,7 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -350,7 +351,16 @@ public static class Utils
             }
             else if (gameType == ProjectType.ER && item is BND4 bndER)
             {
-                SFUtil.EncryptERRegulation(writepath + ".temp", bndER);
+                // If DLC version or higher, force compression to ZSTD (to account for regulations that have previous form of compression)
+                if(ParamBank.PrimaryBank.ParamVersion >= 11210015L)
+                {
+                    SFUtil.EncryptERRegulation(writepath + ".temp", bndER, DCX.Type.DCX_ZSTD);
+                }
+                // Otherwise use the compression type that is defined within the container.
+                else
+                {
+                    SFUtil.EncryptERRegulation(writepath + ".temp", bndER);
+                }
             }
             else if (gameType == ProjectType.AC6 && item is BND4 bndAC6)
             {

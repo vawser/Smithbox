@@ -577,9 +577,18 @@ namespace SoulsFormats
         /// <summary>
         /// Repacks and encrypts ER's regulation BND4 to the specified path.
         /// </summary>
-        public static void EncryptERRegulation(string path, BND4 bnd)
+        public static void EncryptERRegulation(string path, BND4 bnd, DCX.Type compression = DCX.Type.Unknown)
         {
-            byte[] bytes = bnd.Write();
+            byte[] bytes = null;
+            if (compression != DCX.Type.Unknown)
+            {
+                bytes = bnd.Write(compression);
+            }
+            else
+            {
+                bytes = bnd.Write();
+            }
+
             bytes = EncryptByteArray(erRegulationKey, bytes);
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             File.WriteAllBytes(path, bytes);
