@@ -710,7 +710,7 @@ public class MapPropertyEditor
     /// <summary>
     /// Displays property context menu.
     /// </summary>
-    private void DisplayPropContextMenu(ViewportSelection selection, PropertyInfo prop, object obj)
+    private void DisplayPropContextMenu(ViewportSelection selection, PropertyInfo prop, object obj, int arrayIndex)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
@@ -738,7 +738,7 @@ public class MapPropertyEditor
             {
                 if (ImGui.Selectable("Add to Property Filter"))
                 {
-                    Screen.MapQueryHandler.AddPropertyFilterInput(prop.Name);
+                    Screen.MapQueryHandler.AddPropertyFilterInput(prop, arrayIndex);
                 }
             }
 
@@ -891,7 +891,7 @@ public class MapPropertyEditor
         (bool, bool) propEditResults = PropertyRow(type, oldval, out newval, prop);
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
-        DisplayPropContextMenu(selection, prop, obj);
+        DisplayPropContextMenu(selection, prop, obj, arrayIndex);
         if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
         {
             ImGui.SetItemDefaultFocus();

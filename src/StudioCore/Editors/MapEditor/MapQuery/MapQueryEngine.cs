@@ -32,25 +32,12 @@ public class MapQueryEngine
     public bool _targetProjectFiles = false;
     public bool _looseStringMatch = false;
 
-    public bool DisplayWikiSection = false;
-    public bool DisplayMapFilterSection = true;
-    public bool DisplayPropertyFilterSection = true;
-    public bool DisplayValueFilterSection = true;
-
-    private bool DisplayResultListSection = true;
-
     public bool QueryComplete = false;
     public bool MayRunQuery = true;
 
     public string MapFilterInputs = "";
     public string PropertyFilterInputs = "";
     public string ValueFilterInputs = "";
-
-    /// <summary>
-    /// Track the property filter index so we can use the correct value filter
-    /// when dealing with more than 1 filter argument.
-    /// </summary>
-    private int CurrentPropertyFilterIndex = -1;
 
     public MapQueryEngine(MapEditorScreen screen)
     {
@@ -75,11 +62,12 @@ public class MapQueryEngine
             ImguiUtils.WrappedText("Search through all maps for usage of the specificed property value.");
             ImguiUtils.WrappedText("");
 
+            // Map Filter
             ImguiUtils.WrappedText("Map Filter:");
             ImguiUtils.ShowHoverTooltip("Target this specific string when querying the map. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
             ImGui.InputText("##mapFilter", ref _searchInputMap, 255);
 
-            if (ImGui.BeginPopupContextWindow("mapFilterContext"))
+            if (ImGui.BeginPopupContextItem($"MapFilterContextMenu"))
             {
                 // Quick Regex buttons
                 if (ImGui.Selectable("Exact"))
@@ -91,11 +79,14 @@ public class MapQueryEngine
                 ImGui.EndPopup();
             }
 
+            // Property Filter
             ImguiUtils.WrappedText("Property Filter:");
             ImguiUtils.ShowHoverTooltip("Target this specific string when querying the property name. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
             ImGui.InputText("##propertyNameFilter", ref _searchInputProperty, 255);
 
-            if (ImGui.BeginPopupContextWindow("propertyFilterContext"))
+            // TODO: add arrow button that lets user traverse a tree that displays the MSB structure, allowing them to select properties easily without needing to load a map
+
+            if (ImGui.BeginPopupContextItem($"PropertyFilterContextMenu"))
             {
                 // Quick Regex buttons
                 if (ImGui.Selectable("Exact"))
@@ -103,15 +94,21 @@ public class MapQueryEngine
                     _searchInputProperty = $"^{_searchInputProperty}$";
                 }
                 ImguiUtils.ShowHoverTooltip("Apply regex that makes the current input match exactly.");
+                if (ImGui.Selectable("Index"))
+                {
+                    _searchInputProperty = @$"{_searchInputProperty}\[0\]";
+                }
+                ImguiUtils.ShowHoverTooltip("Escaped square brackets for targeting specific index in array properties.");
 
                 ImGui.EndPopup();
             }
 
+            // Value Filter
             ImguiUtils.WrappedText("Value Filter:");
             ImguiUtils.ShowHoverTooltip("Target this specific string when querying the property value. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
             ImGui.InputText("##propertyValueFilter", ref _searchInputValue, 255);
 
-            if(ImGui.BeginPopupContextWindow("valueFilterContext"))
+            if (ImGui.BeginPopupContextItem($"ValueFilterContextMenu"))
             {
                 // Quick Regex buttons
                 if (ImGui.Selectable("Exact"))
@@ -179,23 +176,15 @@ public class MapQueryEngine
             ImGui.Separator();
             ImguiUtils.WrappedText($"Search Results:");
             ImguiUtils.ShowHoverTooltip("Result rows are presented as: <entity name>, <name alias>, <matched value>");
-            ImGui.SameLine();
-            if (ImGui.Button($"{ForkAwesome.Bars}##resultListToggle"))
-            {
-                DisplayResultListSection = !DisplayResultListSection;
-            }
             ImGui.Separator();
 
-            if (DisplayResultListSection)
+            if (QueryComplete)
             {
-                if (QueryComplete)
-                {
-                    DisplayResultList();
-                }
-                else if (!MayRunQuery)
-                {
-                    ImguiUtils.WrappedText($"Search query is not yet complete...");
-                }
+                DisplayResultList();
+            }
+            else if (!MayRunQuery)
+            {
+                ImguiUtils.WrappedText($"Search query is not yet complete...");
             }
         }
     }
@@ -244,8 +233,15 @@ public class MapQueryEngine
         {
             var input = sections[i].ToLower();
 
-            Regex filter = new Regex(input, RegexOptions.IgnoreCase);
-            patternList.Add(filter);
+            try
+            {
+                Regex filter = new Regex(input, RegexOptions.IgnoreCase);
+                patternList.Add(filter);
+            }
+            catch
+            {
+                TaskLogs.AddLog($"Failed to build filter pattern due to invalid regex expression: {input}");
+            }
         }
 
         return patternList;
@@ -376,7 +372,7 @@ public class MapQueryEngine
             propValue = arr.GetValue(index);
         }
 
-        if (IsPropertyMatch(propName))
+        if (IsPropertyMatch(propName, index))
         {
             if (IsValueMatch(propValue, prop))
             {
@@ -487,14 +483,18 @@ public class MapQueryEngine
     }
 
 
-    public bool IsPropertyMatch(string propName)
+    public bool IsPropertyMatch(string propName, int index)
     {
         if (PropertyFilterInputs == "")
             return true;
 
-        foreach(var entry in PropertyFilterPatterns)
+        var checkedName = propName;
+
+        for(int i = 0; i < PropertyFilterPatterns.Count; i++)
         {
-            if (entry.IsMatch(propName))
+            var entry = PropertyFilterPatterns[i];
+
+            if (entry.IsMatch(checkedName))
             {
                 //TaskLogs.AddLog($"Match: {propName}");
                 return true;
@@ -532,9 +532,14 @@ public class MapQueryEngine
         _searchInputMap = _searchInputMap + addition;
     }
 
-    public void AddPropertyFilterInput(string propertyName)
+    public void AddPropertyFilterInput(PropertyInfo property, int arrayIndex)
     {
-        var addition = $"{propertyName}";
+        var addition = $"{property.Name}";
+
+        if(arrayIndex != -1)
+        {
+            addition = @$"{addition}\[{arrayIndex}\]";
+        }
 
         if (_searchInputProperty != "")
         {
