@@ -96,6 +96,12 @@ public class TimeActEditorScreen : EditorScreen
     public void Init()
     {
         ShowSaveOption = true;
+
+        // TAE implementation needs to be updated for AC6 (need to decompile AC6 DSAS to work out differences)
+        if(Smithbox.ProjectType is ProjectType.AC6)
+        {
+            ShowSaveOption = false;
+        }
     }
 
     public void Update(float dt)
