@@ -469,8 +469,7 @@ namespace SoulsFormats
                 SFUtil.WriteZlib(bw, 0xDA, data);
             else if (type == Type.ZSTD)
             {
-                CompressDCPDFLT(data, bw);
-                //CompressDCXZSTD(data, bw);
+                CompressDCXZSTD(data, bw);
             }
             else if (type == Type.DCP_DFLT)
                 CompressDCPDFLT(data, bw);
@@ -492,39 +491,34 @@ namespace SoulsFormats
                 throw new NotImplementedException("Compression for the given type is not implemented.");
         }
 
-        private static void CompressDCXZSTD(Span<byte> data, BinaryWriterEx bw)
+        private static void CompressDCXZSTD(Span<byte> data, BinaryWriterEx bw, int compressionLevel = 5)
         {
+            byte[] compressed = SFUtil.WriteZstd(data, compressionLevel);
+
             bw.WriteASCII("DCX\0");
             bw.WriteInt32(0x11000);
             bw.WriteInt32(0x18);
             bw.WriteInt32(0x24);
             bw.WriteInt32(0x44);
             bw.WriteInt32(0x4C);
-
             bw.WriteASCII("DCS\0");
-            bw.WriteInt32(data.Length);
-            bw.ReserveInt32("CompressedSize");
-
+            bw.WriteUInt32((uint)data.Length);
+            bw.WriteUInt32((uint)compressed.Length);
             bw.WriteASCII("DCP\0");
             bw.WriteASCII("ZSTD");
             bw.WriteInt32(0x20);
-            bw.WriteByte(0x15);
+            bw.WriteByte((byte)compressionLevel);
             bw.WriteByte(0);
             bw.WriteByte(0);
             bw.WriteByte(0);
-            bw.WriteInt32(0x0);
-            bw.WriteByte(0);
-            bw.WriteByte(0);
-            bw.WriteByte(0);
-            bw.WriteByte(0);
-            bw.WriteInt32(0x0);
-            bw.WriteInt32(0x010100);
-
+            bw.WriteInt32(0);
+            bw.WriteInt32(0);
+            bw.WriteInt32(0);
+            bw.WriteInt32(0x10100);
             bw.WriteASCII("DCA\0");
             bw.WriteInt32(8);
-
-            int compressedSize = SFUtil.WriteZstd(bw, 3, data);
-            bw.FillInt32("CompressedSize", compressedSize);
+            bw.WriteBytes(compressed);
+            bw.Pad(0x10);
         }
 
         private static void CompressDCPDFLT(Span<byte> data, BinaryWriterEx bw)
