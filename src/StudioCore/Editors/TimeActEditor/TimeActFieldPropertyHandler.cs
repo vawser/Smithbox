@@ -36,6 +36,9 @@ public class TimeActFieldPropertyHandler
 
     public void AnimationHeaderSection(TimeActSelectionHandler handler)
     {
+        if (AnimationBank.IsSaving)
+            ImGui.BeginDisabled();
+
         var anim = handler.CurrentTimeActAnimation;
         var width = ImGui.GetWindowWidth();
         var buttonSize = new Vector2(width * 0.975f, 32);
@@ -73,10 +76,16 @@ public class TimeActFieldPropertyHandler
                 Screen.SelectionHandler.ContainerInfo.IsModified = true;
             }
         }
+
+        if (AnimationBank.IsSaving)
+            ImGui.EndDisabled();
     }
 
     public void AnimationValueSection(TimeActSelectionHandler handler)
     {
+        if (AnimationBank.IsSaving)
+            ImGui.BeginDisabled();
+
         var anim = handler.CurrentTimeActAnimation;
         var tempHeader = handler.CurrentTemporaryAnimHeader;
 
@@ -218,10 +227,16 @@ public class TimeActFieldPropertyHandler
                 }
             }
         }
+
+        if (AnimationBank.IsSaving)
+            ImGui.EndDisabled();
     }
 
     public void ValueSection(TimeActSelectionHandler handler)
     {
+        if (AnimationBank.IsSaving)
+            ImGui.BeginDisabled();
+
         var parameters = handler.CurrentTimeActEvent.Parameters;
         var paramValues = handler.CurrentTimeActEvent.Parameters.ParameterValues;
 
@@ -266,6 +281,9 @@ public class TimeActFieldPropertyHandler
 
             Decorator.HandleValueColumn(paramValues, i);
         }
+
+        if (AnimationBank.IsSaving)
+            ImGui.EndDisabled();
     }
 
     private object _editedValueCache;

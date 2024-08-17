@@ -23,6 +23,9 @@ public class TimeActContextMenu
 
     public void ContainerMenu(bool isSelected, string key)
     {
+        if (AnimationBank.IsSaving)
+            return;
+
         if (!isSelected)
             return;
 
@@ -34,6 +37,9 @@ public class TimeActContextMenu
 
     public void TimeActMenu(bool isSelected, string key)
     {
+        if (AnimationBank.IsSaving)
+            return;
+
         if (!isSelected)
             return;
 
@@ -56,6 +62,9 @@ public class TimeActContextMenu
 
     public void TimeActAnimationMenu(bool isSelected, string key)
     {
+        if (AnimationBank.IsSaving)
+            return;
+
         if (!isSelected)
             return;
 
@@ -78,6 +87,9 @@ public class TimeActContextMenu
 
     public void TimeActEventMenu(bool isSelected, string key)
     {
+        if (AnimationBank.IsSaving)
+            return;
+
         if (!isSelected)
             return;
 
@@ -105,6 +117,9 @@ public class TimeActContextMenu
 
     public void TimeActEventPropertiesMenu(bool isSelected, string key)
     {
+        if (AnimationBank.IsSaving)
+            return;
+
         if (!isSelected)
             return;
 

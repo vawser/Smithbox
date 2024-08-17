@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using static SoulsFormats.MSB_AC6.Part;
@@ -22,6 +23,7 @@ using static StudioCore.Interface.Settings.TimeActEditorTab;
 namespace StudioCore.Editors.TimeActEditor;
 public static class AnimationBank
 {
+    public static bool IsSaving { get; set; }
     public static bool IsLoaded { get; set; }
     public static bool IsTemplatesLoaded { get; set; }
     public static bool IsCharacterTimeActsLoaded { get; set; }
@@ -586,12 +588,25 @@ public static class AnimationBank
         }
     }
 
-    public static void SaveTimeActs()
+    public static async void SaveTimeActsTask()
+    {
+        IsSaving = true;
+
+        // Load the maps async so the main thread isn't blocked
+        Task<bool> saveTimeActs = SaveTimeActs();
+
+        bool result = await saveTimeActs;
+        IsSaving = result;
+    }
+
+    public static async Task<bool> SaveTimeActs()
     {
         foreach (var (info, binder) in FileChrBank)
         {
-            SaveTimeAct(info, binder);
+            await SaveTimeAct(info, binder);
         }
+
+        return false;
     }
 
     public static void HandleDS2TimeActSave(ContainerFileInfo info, BinderInfo binderInfo)
@@ -700,10 +715,24 @@ public static class AnimationBank
         }
     }
 
-    public static void SaveTimeAct(ContainerFileInfo info, BinderInfo binderInfo)
+    public static async void SaveTimeActTask(ContainerFileInfo info, BinderInfo binderInfo)
     {
+        IsSaving = true;
+
+        // Load the maps async so the main thread isn't blocked
+        Task<bool> saveTimeAct = SaveTimeAct(info, binderInfo);
+
+        bool result = await saveTimeAct;
+
+        IsSaving = result;
+    }
+
+    public static async Task<bool> SaveTimeAct(ContainerFileInfo info, BinderInfo binderInfo)
+    {
+        await Task.Delay(1000);
+
         if (!info.IsModified)
-            return;
+            return false;
 
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
@@ -712,7 +741,7 @@ public static class AnimationBank
         else
         {
             if (binderInfo.ContainerBinder == null)
-                return;
+                return false;
 
             var fileDir = @"\chr";
             var fileExt = @".anibnd.dcx";
@@ -785,6 +814,8 @@ public static class AnimationBank
                 TaskLogs.AddLog($"Failed to save {info.Name} - {assetMod}.");
             }
         }
+
+        return false;
     }
 
     public static byte[] GetBinderBytes(IBinder targetBinder)

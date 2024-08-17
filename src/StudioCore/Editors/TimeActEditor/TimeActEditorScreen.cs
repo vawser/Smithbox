@@ -1061,8 +1061,15 @@ public class TimeActEditorScreen : EditorScreen
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        if (AnimationBank.IsLoaded)
-            AnimationBank.SaveTimeAct(SelectionHandler.ContainerInfo, SelectionHandler.ContainerBinder);
+        if (AnimationBank.IsLoaded && !AnimationBank.IsSaving)
+        {
+            TaskLogs.AddLog("Modified file will now be saved.");
+            AnimationBank.SaveTimeActTask(SelectionHandler.ContainerInfo, SelectionHandler.ContainerBinder);
+        }
+        else if (AnimationBank.IsSaving)
+        {
+            TaskLogs.AddLog("Modified file is already in the process of being saved.");
+        }
     }
 
     public void SaveAll()
@@ -1070,8 +1077,15 @@ public class TimeActEditorScreen : EditorScreen
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        if (AnimationBank.IsLoaded)
-            AnimationBank.SaveTimeActs();
+        if (AnimationBank.IsLoaded && !AnimationBank.IsSaving)
+        {
+            TaskLogs.AddLog("Modified files will now be saved.");
+            AnimationBank.SaveTimeActsTask();
+        }
+        else if (AnimationBank.IsSaving)
+        {
+            TaskLogs.AddLog("Modified files is already in the process of being saved.");
+        }
     }
 
     private void ResetActionManager()
