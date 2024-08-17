@@ -18,7 +18,7 @@ namespace StudioCore.Tools
 {
     /// <summary>
     /// Just a store location for useful snippets of code.
-    /// These should never to called.
+    /// These should never be called.
     /// </summary>
     internal class CodeStore
     {

@@ -741,6 +741,13 @@ public class MapPropertyEditor
                     Screen.MapQueryHandler.AddPropertyFilterInput(prop, arrayIndex);
                 }
             }
+            if (Screen.MapQueryEditHandler.IsOpen)
+            {
+                if (ImGui.Selectable("Add to Property Filter"))
+                {
+                    Screen.MapQueryEditHandler.AddPropertyFilterInput(prop, arrayIndex);
+                }
+            }
 
             // Position - Copy/Paste
             var posAtt = prop.GetCustomAttribute<PositionProperty>();

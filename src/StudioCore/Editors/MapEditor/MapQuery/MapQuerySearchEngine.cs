@@ -12,12 +12,11 @@ using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using static SoulsFormats.NVA;
 using static StudioCore.Editors.MapEditor.MapPropertyEditor;
 
 namespace StudioCore.Editors.MapEditor.MapQuery;
 
-public class MapQueryEngine
+public class MapQuerySearchEngine : IMapQueryEngine
 {
     private MapEditorScreen Screen;
     private MapQueryBank Bank;
@@ -39,7 +38,7 @@ public class MapQueryEngine
     public string PropertyFilterInputs = "";
     public string ValueFilterInputs = "";
 
-    public MapQueryEngine(MapEditorScreen screen)
+    public MapQuerySearchEngine(MapEditorScreen screen)
     {
         Screen = screen;
         Bank = new MapQueryBank(this);
@@ -548,23 +547,9 @@ public class MapQueryEngine
 
         _searchInputProperty = _searchInputProperty + addition;
     }
-}
-
-public class MapObjectMatch
-{
-    public string MapName = "";
-    public string EntityName = "";
-
-    public string PropertyName = "";
-    public string PropertyValue = "";
-
-    public object MapObject = null;
-    public MapObjectMatch(object obj, string mapname, string entityName, string propName, string propValue)
+    public bool GetProjectFileUsage()
     {
-        MapObject = obj;
-        MapName = mapname;
-        EntityName = entityName;
-        PropertyName = propName;
-        PropertyValue = propValue;
+        return _targetProjectFiles;
     }
 }
+

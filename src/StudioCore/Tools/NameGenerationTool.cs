@@ -28,26 +28,7 @@ public static class NameGenerationTool
     {
         if (!AnimationBank.IsLoaded)
         {
-            TaskManager.Run(
-                    new TaskManager.LiveTask($"Setup Time Act Editor: Templates", TaskManager.RequeueType.None, false,
-                () =>
-                {
-                    AnimationBank.LoadTimeActTemplates();
-                }));
-
-            TaskManager.Run(
-                new TaskManager.LiveTask($"Setup Time Act Editor: Characters", TaskManager.RequeueType.None, false,
-            () =>
-            {
-                AnimationBank.LoadProjectCharacterTimeActs();
-            }));
-
-            TaskManager.Run(
-                new TaskManager.LiveTask($"Setup Time Act Editor: Objects", TaskManager.RequeueType.None, false,
-            () =>
-            {
-                AnimationBank.LoadProjectObjectTimeActs();
-            }));
+            return;
         }
         if (!HavokFileBank.IsLoaded)
         {

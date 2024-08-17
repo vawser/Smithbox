@@ -1084,7 +1084,7 @@ public class TimeActEditorScreen : EditorScreen
         }
         else if (AnimationBank.IsSaving)
         {
-            TaskLogs.AddLog("Modified files is already in the process of being saved.");
+            TaskLogs.AddLog("Modified files are already in the process of being saved.");
         }
     }
 

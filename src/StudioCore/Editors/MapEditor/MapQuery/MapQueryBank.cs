@@ -12,7 +12,7 @@ namespace StudioCore.Editors.MapEditor.MapQuery;
 
 public class MapQueryBank
 {
-    private MapQueryEngine Engine;
+    private IMapQueryEngine Engine;
 
     public bool MapBankInitialized = false;
 
@@ -20,7 +20,7 @@ public class MapQueryBank
 
     public Dictionary<string, IMsb> MapList = new Dictionary<string, IMsb>();
 
-    public MapQueryBank(MapQueryEngine engine) 
+    public MapQueryBank(IMapQueryEngine engine) 
     {
         Engine = engine;
     }
@@ -53,7 +53,7 @@ public class MapQueryBank
 
         var mapDir = $"{Smithbox.GameRoot}/map/mapstudio/";
 
-        if (Engine._targetProjectFiles)
+        if (Engine.GetProjectFileUsage())
         {
             mapDir = $"{Smithbox.ProjectRoot}/map/mapstudio/";
         }

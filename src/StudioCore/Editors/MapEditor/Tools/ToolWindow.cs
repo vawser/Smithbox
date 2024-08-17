@@ -68,95 +68,28 @@ public class ToolWindow
             }
 
             ///--------------------
+            /// Global Property Edit
+            ///--------------------
+            /*
+            if (ImGui.CollapsingHeader("Global Property Edit"))
+            {
+                Screen.MapQueryEditHandler.IsOpen = true;
+                Screen.MapQueryEditHandler.DisplayInput();
+                Screen.MapQueryEditHandler.DisplayEditStaging();
+            }
+            else
+            {
+                Screen.MapQueryEditHandler.IsOpen = false;
+            }
+            */
+
+            ///--------------------
             /// Local Property Search
             ///--------------------
             if (ImGui.CollapsingHeader("Local Property Search"))
             {
                 Screen.PropSearch.Display();
             }
-
-            ///--------------------
-            /// Entity ID Assigner
-            ///--------------------
-            /// TODO: re-do as a Global Property Edit, use Map Query Engine stuff
-            /*
-            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
-            {
-                if (ImGui.CollapsingHeader("Entity ID Assigner"))
-                {
-                    ImguiUtils.WrappedText("Assign an Entity Group ID to all entities across all maps,\noptionally filtering by specific attributes.");
-                    ImguiUtils.WrappedText("");
-
-                    ImguiUtils.WrappedText("Entity Group ID");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    ImGui.InputInt("##entityGroupInput", ref CFG.Current.Toolbar_EntityGroupID);
-                    ImguiUtils.WrappedText("");
-
-                    ImguiUtils.WrappedText("Filter");
-
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    if (ImGui.BeginCombo("##filterAttribute", Handler.SelectedFilter.GetDisplayName()))
-                    {
-                        foreach (var entry in Enum.GetValues(typeof(EntityFilterType)))
-                        {
-                            var target = (EntityFilterType)entry;
-
-                            if (ImGui.Selectable($"{target.GetDisplayName()}"))
-                            {
-                                Handler.SelectedFilter = target;
-                                break;
-                            }
-                        }
-
-                        ImGui.EndCombo();
-                    }
-                    ImguiUtils.ShowHoverTooltip("When assigning the Entity Group ID, the action will only assign it to entities that match this attribute.");
-                    ImguiUtils.WrappedText("");
-
-                    ImguiUtils.WrappedText("Filter Input");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    ImGui.InputText("##entityGroupAttribute", ref CFG.Current.Toolbar_EntityGroup_Attribute, 255);
-                    ImguiUtils.WrappedText("");
-
-                    ImguiUtils.WrappedText("Target Map");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    if (ImGui.BeginCombo("##mapTargetFilter", Handler.SelectedMapFilter))
-                    {
-                        IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = Screen.Universe.LoadedObjectContainers.OrderBy(k => k.Key);
-
-                        foreach (var entry in orderedMaps)
-                        {
-                            if (ImGui.Selectable($"{entry.Key}"))
-                            {
-                                Handler.SelectedMapFilter = entry.Key;
-                                break;
-                            }
-                        }
-
-                        if (ImGui.Selectable($"All"))
-                        {
-                            Handler.SelectedMapFilter = "All";
-                        }
-
-                        ImGui.EndCombo();
-                    }
-                    ImguiUtils.ShowHoverTooltip("When assigning the Entity Group ID, the action will only assign it to entities that match this attribute.");
-                    ImguiUtils.WrappedText("");
-
-                    if (Handler.SelectedMapFilter == "All")
-                    {
-                        ImguiUtils.WrappedText("WARNING: applying this to all maps will take a few minutes,\nexpect Smithbox to hang until it finishes.");
-                        ImguiUtils.WrappedText("");
-                    }
-
-                    if (ImGui.Button("Assign", defaultButtonSize))
-                    {
-                        Handler.ApplyEntityAssigner();
-                    }
-                }
-            }
-            */
-
 
             ///--------------------
             /// Selection Groups

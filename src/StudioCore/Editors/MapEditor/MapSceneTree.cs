@@ -416,6 +416,13 @@ public class MapSceneTree : IActionEventHandler
                         Screen.MapQueryHandler.AddMapFilterInput(CurrentMapID);
                     }
                 }
+                if (Screen.MapQueryEditHandler.IsOpen)
+                {
+                    if (ImGui.Selectable("Add to Map Filter"))
+                    {
+                        Screen.MapQueryEditHandler.AddMapFilterInput(CurrentMapID);
+                    }
+                }
 
                 ImGui.EndPopup();
             }

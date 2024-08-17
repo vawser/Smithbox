@@ -22,6 +22,10 @@ Behavior Editor:
  - ADD: skeleton HKX editor
  - ADD: collision HKX editor
  
+World Map:
+ - ADD: the dungeon icons, add icon radius for the non-open world maps
+ - ADD: support for large/medium/small tile overlays
+ 
 Map Editor: 
  - ADD: .BTAB support
  - ADD: .GRASS support
@@ -51,6 +55,7 @@ Model Editor:
  - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
  - FIX: account for scale
  - FIX: radahn appears broken on re-save, black hair occurs.
+ - CHECK/FIX: project-only models appear in list
 
 Material Editor
  - ADD: Implement Material/MATBIN editor
@@ -89,11 +94,7 @@ Texture Viewer:
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
  - FIX: Texture Viewer holding tpfbdt open.
  - FIX: Image Preview fails for users when they edit an icon image file and save it incorrectly (as BC3 and not BC7)
- - 
  
-World Map:
- - ADD: the dungeon icons, add icon radius for the non-open world maps
- - ADD: support for large/medium/small tile overlays
  
 #--------------------------------------
 # Notes
