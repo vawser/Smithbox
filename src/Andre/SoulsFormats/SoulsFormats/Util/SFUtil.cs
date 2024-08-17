@@ -329,23 +329,9 @@ namespace SoulsFormats
             }
         }
 
-        // TODO: actually implement this properly
-        public static int WriteZstd(BinaryWriterEx bw, byte compressionLevel, Span<byte> input)
-        {
-            long start = bw.Position;
-
-            using var compressor = new Compressor(new CompressionOptions(compressionLevel));
-            var compressedData = compressor.Wrap(input);
-
-            var data = input.ToArray();
-            using (var deflateStream = new DeflateStream(bw.Stream, CompressionMode.Compress, true))
-            {
-                deflateStream.Write(data, 0, input.Length);
-            }
-
-            return (int)(bw.Position - start);
-        }
-
+        /**
+         * Written by ClayAmore
+         */
         public static byte[] ReadZstd(BinaryReaderEx br, int compressedSize)
         {
             byte[] compressed = br.ReadBytes(compressedSize);
@@ -358,6 +344,15 @@ namespace SoulsFormats
                     deflateStream.CopyTo(decompressedStream);
                 }
                 return decompressedStream.ToArray();
+            }
+        }
+
+        public static byte[] WriteZstd(Span<byte> data, int compressionLevel)
+        {
+            var options = new CompressionOptions(null, new Dictionary<ZSTD_cParameter, int> { { ZSTD_cParameter.ZSTD_c_contentSizeFlag, 0 }, { ZSTD_cParameter.ZSTD_c_windowLog, 16 } }, compressionLevel);
+            using (var compressor = new Compressor(options))
+            {
+                return compressor.Wrap(data).ToArray();
             }
         }
 

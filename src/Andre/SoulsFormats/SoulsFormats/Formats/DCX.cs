@@ -98,7 +98,7 @@ namespace SoulsFormats
                 }
                 else if (format == "ZSTD")
                 {
-                    type = Type.ZSTD;
+                    type = Type.DCX_ZSTD;
                 }
             }
             else if (magic == "DCX\0")
@@ -137,7 +137,7 @@ namespace SoulsFormats
                 }
                 else if (format == "ZSTD")
                 {
-                    type = Type.ZSTD;
+                    type = Type.DCX_ZSTD;
                 }
             }
             else
@@ -157,7 +157,7 @@ namespace SoulsFormats
                 return DecompressDCPEDGE(br);
             else if (type == Type.DCP_DFLT)
                 return DecompressDCPDFLT(br);
-            else if (type == Type.ZSTD)
+            else if (type == Type.DCX_ZSTD)
                 return DecompressDCXZSTD(br);
             else if (type == Type.DCX_EDGE)
                 return DecompressDCXEDGE(br);
@@ -185,13 +185,13 @@ namespace SoulsFormats
             br.AssertInt32(0x4C);
 
             br.AssertASCII("DCS\0");
-            int uncompressedSize = br.ReadInt32();
+            br.ReadInt32(); // uncompressed size
             int compressedSize = br.ReadInt32();
 
             br.AssertASCII("DCP\0");
             br.AssertASCII("ZSTD");
             br.AssertInt32(0x20);
-            br.AssertByte(0x15);
+            br.ReadByte(); // compression level
             br.AssertByte(0);
             br.AssertByte(0);
             br.AssertByte(0);
@@ -467,10 +467,9 @@ namespace SoulsFormats
             bw.BigEndian = true;
             if (type == Type.Zlib)
                 SFUtil.WriteZlib(bw, 0xDA, data);
-            else if (type == Type.ZSTD)
+            else if (type == Type.DCX_ZSTD)
             {
-                CompressDCPDFLT(data, bw);
-                //CompressDCXZSTD(data, bw);
+                CompressDCXZSTD(data, bw);
             }
             else if (type == Type.DCP_DFLT)
                 CompressDCPDFLT(data, bw);
@@ -492,39 +491,34 @@ namespace SoulsFormats
                 throw new NotImplementedException("Compression for the given type is not implemented.");
         }
 
-        private static void CompressDCXZSTD(Span<byte> data, BinaryWriterEx bw)
+        private static void CompressDCXZSTD(Span<byte> data, BinaryWriterEx bw, int compressionLevel = 15)
         {
+            byte[] compressed = SFUtil.WriteZstd(data, compressionLevel);
+
             bw.WriteASCII("DCX\0");
             bw.WriteInt32(0x11000);
             bw.WriteInt32(0x18);
             bw.WriteInt32(0x24);
             bw.WriteInt32(0x44);
             bw.WriteInt32(0x4C);
-
             bw.WriteASCII("DCS\0");
-            bw.WriteInt32(data.Length);
-            bw.ReserveInt32("CompressedSize");
-
+            bw.WriteUInt32((uint)data.Length);
+            bw.WriteUInt32((uint)compressed.Length);
             bw.WriteASCII("DCP\0");
             bw.WriteASCII("ZSTD");
             bw.WriteInt32(0x20);
-            bw.WriteByte(0x15);
+            bw.WriteByte((byte)compressionLevel);
             bw.WriteByte(0);
             bw.WriteByte(0);
             bw.WriteByte(0);
-            bw.WriteInt32(0x0);
-            bw.WriteByte(0);
-            bw.WriteByte(0);
-            bw.WriteByte(0);
-            bw.WriteByte(0);
-            bw.WriteInt32(0x0);
-            bw.WriteInt32(0x010100);
-
+            bw.WriteInt32(0);
+            bw.WriteInt32(0);
+            bw.WriteInt32(0);
+            bw.WriteInt32(0x10100);
             bw.WriteASCII("DCA\0");
             bw.WriteInt32(8);
-
-            int compressedSize = SFUtil.WriteZstd(bw, 3, data);
-            bw.FillInt32("CompressedSize", compressedSize);
+            bw.WriteBytes(compressed);
+            bw.Pad(0x10);
         }
 
         private static void CompressDCPDFLT(Span<byte> data, BinaryWriterEx bw)
@@ -770,7 +764,7 @@ namespace SoulsFormats
             /// <summary>
             /// DCP header, deflate compression. Used in SOTE Elden Ring regulation.bin
             /// </summary>
-            ZSTD,
+            DCX_ZSTD,
 
             /// <summary>
             /// DCX header, chunked deflate compression. Primarily used in DeS.
