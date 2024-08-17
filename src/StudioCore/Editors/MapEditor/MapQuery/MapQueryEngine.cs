@@ -79,17 +79,56 @@ public class MapQueryEngine
             ImguiUtils.ShowHoverTooltip("Target this specific string when querying the map. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
             ImGui.InputText("##mapFilter", ref _searchInputMap, 255);
 
+            if (ImGui.BeginPopupContextWindow("mapFilterContext"))
+            {
+                // Quick Regex buttons
+                if (ImGui.Selectable("Exact"))
+                {
+                    _searchInputProperty = $"^{_searchInputProperty}$";
+                }
+                ImguiUtils.ShowHoverTooltip("Apply regex that makes the current input match exactly.");
+
+                ImGui.EndPopup();
+            }
+
             ImguiUtils.WrappedText("Property Filter:");
             ImguiUtils.ShowHoverTooltip("Target this specific string when querying the property name. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
             ImGui.InputText("##propertyNameFilter", ref _searchInputProperty, 255);
+
+            if (ImGui.BeginPopupContextWindow("propertyFilterContext"))
+            {
+                // Quick Regex buttons
+                if (ImGui.Selectable("Exact"))
+                {
+                    _searchInputProperty = $"^{_searchInputProperty}$";
+                }
+                ImguiUtils.ShowHoverTooltip("Apply regex that makes the current input match exactly.");
+                if (ImGui.Selectable("Non-Zero Number"))
+                {
+                    _searchInputProperty = "^[1-9]\\d*$";
+                }
+                ImguiUtils.ShowHoverTooltip("Apply regex that makes the current input match non-zero numbers.");
+
+                ImGui.EndPopup();
+            }
 
             ImguiUtils.WrappedText("Value Filter:");
             ImguiUtils.ShowHoverTooltip("Target this specific string when querying the property value. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
             ImGui.InputText("##propertyValueFilter", ref _searchInputValue, 255);
 
-            if(ImGui.BeginPopupContextWindow())
+            if(ImGui.BeginPopupContextWindow("valueFilterContext"))
             {
-                // 
+                // Quick Regex buttons
+                if (ImGui.Selectable("Exact"))
+                {
+                    _searchInputProperty = $"^{_searchInputProperty}$";
+                }
+                ImguiUtils.ShowHoverTooltip("Apply regex that makes the current input match exactly.");
+                if (ImGui.Selectable("Non-Zero Number"))
+                {
+                    _searchInputProperty = "^[1-9]\\d*$";
+                }
+                ImguiUtils.ShowHoverTooltip("Apply regex that makes the current input match non-zero numbers.");
 
                 ImGui.EndPopup();
             }
@@ -392,6 +431,7 @@ public class MapQueryEngine
                         }
                     }
                 }
+                ImguiUtils.ShowHoverTooltip($"Number of matches: {objectMatches.Count}");
             }
         }
     }
@@ -507,95 +547,6 @@ public class MapQueryEngine
         }
 
         _searchInputProperty = _searchInputProperty + addition;
-    }
-
-    public void DisplayWiki()
-    {
-        ImguiUtils.WrappedText("");
-
-        ImGui.Separator();
-        ImguiUtils.WrappedText($"Help:");
-        ImGui.SameLine();
-        if (ImGui.Button($"{ForkAwesome.Bars}##wikiToggle"))
-        {
-            DisplayWikiSection = !DisplayWikiSection;
-        }
-        ImGui.Separator();
-
-        if (DisplayWikiSection)
-        {
-            // Map Filters
-            ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Map Filters:");
-            ImGui.SameLine();
-            if (ImGui.Button($"{ForkAwesome.Bars}##mapFilterToggle"))
-            {
-                DisplayMapFilterSection = !DisplayMapFilterSection;
-            }
-            ImGui.Separator();
-            if (DisplayMapFilterSection)
-            {
-                ImguiUtils.WrappedText($"Represents the map you want to match.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<blank>");
-                ImguiUtils.WrappedText("Targets all maps.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<string>");
-                ImguiUtils.WrappedText("Targets the specified map. Supports regex.");
-                ImguiUtils.WrappedText("");
-            }
-
-            // Property Filter
-            ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Property Filters:");
-            ImGui.SameLine();
-            if (ImGui.Button($"{ForkAwesome.Bars}##propertyFilterToggle"))
-            {
-                DisplayPropertyFilterSection = !DisplayPropertyFilterSection;
-            }
-            ImGui.Separator();
-            if (DisplayPropertyFilterSection)
-            {
-                ImguiUtils.WrappedText($"Represents the property you want to match.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<blank>");
-                ImguiUtils.WrappedText("Targets all properties.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<string>");
-                ImguiUtils.WrappedText("Targets the specified property string. Supports regex.");
-                ImguiUtils.WrappedText("");
-            }
-
-            // Value Filter
-            ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Value Filters:");
-            ImGui.SameLine();
-            if (ImGui.Button($"{ForkAwesome.Bars}##valueFilterToggle"))
-            {
-                DisplayValueFilterSection = !DisplayValueFilterSection;
-            }
-            ImGui.Separator();
-            if (DisplayValueFilterSection)
-            {
-                ImguiUtils.WrappedText($"Represents the property value you want to match.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<blank>");
-                ImguiUtils.WrappedText("Targets all values.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<value>");
-                ImguiUtils.WrappedText("Targets the specified property value. Supports regex.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"<min> ^ <max>");
-                ImguiUtils.WrappedText("Targets the specified property values between the minimum and maximum (inclusive).");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"< <value>");
-                ImguiUtils.WrappedText("Targets the specified property values below the specified value (inclusive).");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"> <value>");
-                ImguiUtils.WrappedText("Targets the specified property values above the specified value (inclusive).");
-                ImguiUtils.WrappedText("");
-            }
-        }
     }
 }
 

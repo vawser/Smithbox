@@ -61,7 +61,6 @@ public class ToolWindow
                 Screen.MapQueryHandler.IsOpen = true;
                 Screen.MapQueryHandler.DisplayInput();
                 Screen.MapQueryHandler.DisplayResults();
-                Screen.MapQueryHandler.DisplayWiki();
             }
             else
             {
