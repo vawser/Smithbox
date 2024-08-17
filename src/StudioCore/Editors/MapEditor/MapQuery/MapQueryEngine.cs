@@ -103,11 +103,6 @@ public class MapQueryEngine
                     _searchInputProperty = $"^{_searchInputProperty}$";
                 }
                 ImguiUtils.ShowHoverTooltip("Apply regex that makes the current input match exactly.");
-                if (ImGui.Selectable("Non-Zero Number"))
-                {
-                    _searchInputProperty = "^[1-9]\\d*$";
-                }
-                ImguiUtils.ShowHoverTooltip("Apply regex that makes the current input match non-zero numbers.");
 
                 ImGui.EndPopup();
             }
