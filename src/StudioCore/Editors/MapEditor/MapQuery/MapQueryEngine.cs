@@ -84,7 +84,7 @@ public class MapQueryEngine
                 // Quick Regex buttons
                 if (ImGui.Selectable("Exact"))
                 {
-                    _searchInputProperty = $"^{_searchInputProperty}$";
+                    _searchInputMap = $"^{_searchInputMap}$";
                 }
                 ImguiUtils.ShowHoverTooltip("Apply regex that makes the current input match exactly.");
 
@@ -121,12 +121,12 @@ public class MapQueryEngine
                 // Quick Regex buttons
                 if (ImGui.Selectable("Exact"))
                 {
-                    _searchInputProperty = $"^{_searchInputProperty}$";
+                    _searchInputValue = $"^{_searchInputValue}$";
                 }
                 ImguiUtils.ShowHoverTooltip("Apply regex that makes the current input match exactly.");
                 if (ImGui.Selectable("Non-Zero Number"))
                 {
-                    _searchInputProperty = "^[1-9]\\d*$";
+                    _searchInputValue = "^[1-9]\\d*$";
                 }
                 ImguiUtils.ShowHoverTooltip("Apply regex that makes the current input match non-zero numbers.");
 
