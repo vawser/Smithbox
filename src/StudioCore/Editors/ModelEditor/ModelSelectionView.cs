@@ -3,6 +3,7 @@ using ImGuiNET;
 using Microsoft.Extensions.FileSystemGlobbing;
 using SoulsFormats.KF4;
 using StudioCore.Banks.AliasBank;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
@@ -199,6 +200,7 @@ namespace StudioCore.Editors.ModelEditor
                                 Screen.ResourceHandler.LoadCharacter(_selectedEntry);
                             }
                         }
+
                         if (ImGui.IsItemVisible())
                         {
                             DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Characters);

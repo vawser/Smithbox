@@ -1,4 +1,5 @@
 ﻿using Google.Protobuf.WellKnownTypes;
+using HKLib.hk2018.hkAsyncThreadPool;
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks.FormatBank;
@@ -20,6 +21,7 @@ using Veldrid;
 using Veldrid.Sdl2;
 using static SoulsFormats.GPARAM;
 using static StudioCore.Editors.GparamEditor.GparamEditorActions;
+using static StudioCore.Editors.GraphicsEditor.GparamParamBank;
 
 namespace StudioCore.GraphicsEditor;
 
@@ -355,11 +357,25 @@ public class GparamEditorScreen : EditorScreen
         }
     }
 
+    private bool SelectGparamFile = false;
+
     /// <summary>
     /// Files list: selectable files
     /// </summary>
     private void GparamListView()
     {
+        // Selection
+        void ApplyGparamFileSelection(GparamInfo info)
+        {
+            ResetGroupSelection();
+            ResetFieldSelection();
+            ResetValueSelection();
+
+            _selectedGparamKey = info.Name;
+            _selectedGparamInfo = info;
+            _selectedGparam = info.Gparam;
+        }
+
         ImGui.Begin("Files##GparamFileList");
 
         ImGui.Separator();
@@ -379,15 +395,22 @@ public class GparamEditorScreen : EditorScreen
             if (SearchFilters.IsEditorSearchMatch(_fileSearchInput, info.Name, "_"))
             {
                 ImGui.BeginGroup();
+
+                // File row
                 if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedGparamKey))
                 {
-                    ResetGroupSelection();
-                    ResetFieldSelection();
-                    ResetValueSelection();
+                    ApplyGparamFileSelection(info);
+                }
 
-                    _selectedGparamKey = info.Name;
-                    _selectedGparamInfo = info;
-                    _selectedGparam = info.Gparam;
+                // Arrow Selection
+                if (ImGui.IsItemHovered() && SelectGparamFile)
+                {
+                    SelectGparamFile = false;
+                    ApplyGparamFileSelection(info);
+                }
+                if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                {
+                    SelectGparamFile = true;
                 }
 
                 if (CFG.Current.Interface_Display_Alias_for_Gparam)
@@ -405,11 +428,23 @@ public class GparamEditorScreen : EditorScreen
         ImGui.End();
     }
 
+    private bool SelectGparamGroup = false;
+
     /// <summary>
     /// Groups list: selectable groups
     /// </summary>
     public void GparamGroupList()
     {
+        // Selection
+        void ApplyGparamGroupSelection(int index, GPARAM.Param entry)
+        {
+            ResetFieldSelection();
+            ResetValueSelection();
+
+            _selectedParamGroup = entry;
+            _selectedParamGroupKey = index;
+        }
+
         ImGui.Begin("Groups##GparamGroups");
 
         ImGui.Separator();
@@ -461,13 +496,21 @@ public class GparamEditorScreen : EditorScreen
                 {
                     if (display)
                     {
+                        // Group row
                         if (ImGui.Selectable($@" {name}##{entry.Key}", i == _selectedParamGroupKey))
                         {
-                            ResetFieldSelection();
-                            ResetValueSelection();
+                            ApplyGparamGroupSelection(i, entry);
+                        }
 
-                            _selectedParamGroup = entry;
-                            _selectedParamGroupKey = i;
+                        // Arrow Selection
+                        if (ImGui.IsItemHovered() && SelectGparamGroup)
+                        {
+                            SelectGparamGroup = false;
+                            ApplyGparamGroupSelection(i, entry);
+                        }
+                        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                        {
+                            SelectGparamGroup = true;
                         }
                     }
                 }
@@ -526,11 +569,23 @@ public class GparamEditorScreen : EditorScreen
         }
     }
 
+    private bool SelectGparamField = false;
+
     /// <summary>
     /// Fields List: selectable fields
     /// </summary>
     public void GparamFieldList()
     {
+        // Selection
+        void ApplyGparamFieldSelection(int index, GPARAM.IField entry)
+        {
+            ResetValueSelection();
+
+            _selectedParamField = entry;
+            QuickEditHandler.targetParamField = entry;
+            _selectedParamFieldKey = index;
+        }
+
         ImGui.Begin("Fields##GparamFields");
 
         ImGui.Separator();
@@ -562,13 +617,21 @@ public class GparamEditorScreen : EditorScreen
 
                 if (SearchFilters.IsEditorSearchMatch(_paramFieldSearchInput, entry.Name, " "))
                 {
+                    // Field row
                     if (ImGui.Selectable($@" {name}##{entry.Key}{i}", i == _selectedParamFieldKey))
                     {
-                        ResetValueSelection();
+                        ApplyGparamFieldSelection(i, entry);
+                    }
 
-                        _selectedParamField = entry;
-                        QuickEditHandler.targetParamField = entry;
-                        _selectedParamFieldKey = i;
+                    // Arrow Selection
+                    if (ImGui.IsItemHovered() && SelectGparamField)
+                    {
+                        SelectGparamField = false;
+                        ApplyGparamFieldSelection(i, entry);
+                    }
+                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                    {
+                        SelectGparamField = true;
                     }
                 }
 

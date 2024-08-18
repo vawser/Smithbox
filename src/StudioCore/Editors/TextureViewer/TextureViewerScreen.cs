@@ -364,6 +364,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     }
 
     public bool InvalidateCachedName = false;
+    private bool SelectFile = false;
 
     private void DisplayFileSection(string title, TextureViewCategory displayCategory)
     {
@@ -414,10 +415,23 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
                         var displayName = info.Name;
 
+                        // File row
                         if (ImGui.Selectable($@" {displayName}", info.Name == _selectedTextureContainerKey))
                         {
                             SelectTextureContainer(info);
                         }
+
+                        // Arrow Selection
+                        if (ImGui.IsItemHovered() && SelectFile)
+                        {
+                            SelectFile = false;
+                            SelectTextureContainer(info);
+                        }
+                        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                        {
+                            SelectFile = true;
+                        }
+
                         if (ImGui.IsItemVisible())
                         {
                             var alias = AliasUtils.GetTextureContainerAliasName(info);
@@ -577,6 +591,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         return textures;
     }
 
+    private bool SelectTexture = false;
+
     private void TextureList()
     {
         ImGui.Begin("Textures##TextureViewList");
@@ -606,10 +622,23 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 {
                     if (SearchFilters.IsEditorSearchMatch(_textureSearchInput, tex.Name, "_"))
                     {
+                        // Texture row
                         if (ImGui.Selectable($@" {tex.Name}", tex.Name == _selectedTextureKey))
                         {
                             _selectedTextureKey = tex.Name;
                             _selectedTexture = tex;
+                        }
+
+                        // Arrow Selection
+                        if (ImGui.IsItemHovered() && SelectTexture)
+                        {
+                            SelectTexture = false;
+                            _selectedTextureKey = tex.Name;
+                            _selectedTexture = tex;
+                        }
+                        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                        {
+                            SelectTexture = true;
                         }
                     }
                 }
