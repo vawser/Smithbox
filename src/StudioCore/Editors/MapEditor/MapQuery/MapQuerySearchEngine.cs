@@ -46,12 +46,18 @@ public class MapQuerySearchEngine : IMapQueryEngine
 
     public void OnProjectChanged()
     {
+        if (Smithbox.ProjectType is Core.ProjectType.DS2S or Core.ProjectType.DS2)
+            return;
+
         Bank.OnProjectChanged();
         Bank.SetupData();
     }
 
     public void DisplayInput()
     {
+        if (Smithbox.ProjectType is Core.ProjectType.DS2S or Core.ProjectType.DS2)
+            return;
+
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth, 32);
         var halfButtonSize = new Vector2(windowWidth / 2, 32);
@@ -168,6 +174,9 @@ public class MapQuerySearchEngine : IMapQueryEngine
 
     public void DisplayResults()
     {
+        if (Smithbox.ProjectType is Core.ProjectType.DS2S or Core.ProjectType.DS2)
+            return;
+
         if (Bank.MapBankInitialized)
         {
             ImguiUtils.WrappedText("");

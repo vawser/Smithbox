@@ -51,6 +51,8 @@ public class MapQueryBank
     {
         MapResources = new List<ResourceDescriptor>();
 
+        // TODO: add DS2 path for map files
+
         var mapDir = $"{Smithbox.GameRoot}/map/mapstudio/";
 
         if (Engine.GetProjectFileUsage())
@@ -78,6 +80,9 @@ public class MapQueryBank
 
         foreach (var resource in MapResources)
         {
+            if (resource == null)
+                continue;
+
             var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(resource.AssetPath));
             IMsb msb = null;
 

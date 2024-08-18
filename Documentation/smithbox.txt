@@ -9,22 +9,19 @@ General:
  - ADD: Add format json support for the other MSB types.
  - ADD: Add articles covering all of the features and common use-cases in Smithbox
  
-Interface:
- - ADD: Change the toolbar panels into single "Actions" panel with collapsible groups + add drop-down actions to menu-bar
- 
 Viewport:
  - ADD: support for transparent shapes, so regions can be better visualized
  - ADD: support for billboard sprites, e.g. images that are rendered towards the camera but placed at a fixed point in the viewport space
+ 
+World Map:
+ - ADD: the dungeon icons, add icon radius for the non-open world maps
+ - ADD: support for large/medium/small tile overlays
  
 Behavior Editor:
  - ADD: behavior HKX editor
  - ADD: character HKX editor
  - ADD: skeleton HKX editor
  - ADD: collision HKX editor
- 
-World Map:
- - ADD: the dungeon icons, add icon radius for the non-open world maps
- - ADD: support for large/medium/small tile overlays
  
 Map Editor: 
  - ADD: .BTAB support
@@ -33,13 +30,15 @@ Map Editor:
  - ADD: enum support for the DS3 corpse poses
  - ADD: "Data Export" action for MSB data: output the MSB information as JSON
  - ADD: Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
- - FIX: select via arrow keys in the Map Scene tree (alias seems to stop it working).
  - ADD: global prop edit
- - FIX: DS2 Map Pieces aren't loaded.
+ 
+ - FIX: select via arrow keys in the Map Scene tree (alias seems to stop it working).
+ - FIX: DS2 Map Pieces aren't loaded/displayed.
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
  - FIX: asset browser entity change not properly changing Instance ID and Self Parts
  
 Model Editor: 
+ - ADD: arrow key auto-select (currently it requires Space to select)
  - ADD: FBX Import into loose FLVER
  - ADD: FBX Export of Loaded Model
  - ADD: skeleton and skinning support for playing animations
@@ -47,15 +46,15 @@ Model Editor:
  - ADD: floating text for dummy poly ref IDs
  - ADD: floating text for co-ordinate direction (X, Y, Z)
  - ADD: dummy poly forward/upwards representation
- - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
  - ADD: proper handling for the flag fields in the FLVER
  - ADD: GX Item mapping so the byte arrays are more comprehesible
- - FIX: flag fields: they should be a set of checkboxes that resolve into the correct int value
  - ADD: render bone connections (use patrol route method)
+ 
+ - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
+ - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
  - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
- - FIX: account for scale
- - FIX: radahn appears broken on re-save, black hair occurs.
- - CHECK/FIX: project-only models appear in list
+ - FIX: account for scale when displaying dummies/bones
+ - FIX: FLVER save validation: report of radahn appearing broken on re-save, black hair occurs.
 
 Material Editor
  - ADD: Implement Material/MATBIN editor
@@ -66,38 +65,53 @@ Param Editor:
  - ADD: make "Use project meta" merge in new entries instead of wholesale replacing (https://github.com/ividyon/WitchyBND/blob/main/WitchyBND/Configuration.cs)
 
 Text Editor:
- - CHANGE: remove the in-built categorization of the FMGs, add as an optional bundling, but internally they should reflect the actual FMG binder structure
- - FIX: vanilla entry should be preferred over dlc01/dlc02 entry
+ - REWORK: remove the in-built categorization of the FMGs, add as an optional bundling, but internally they should reflect the actual FMG binder structure
+ 
+ - ADD: arrow key auto-select (currently it requires Space to select)
  - ADD: FMG Generator script creation modal
  - ADD: FMG Generator open script folder (for project)
  - ADD: add modified filter
  
+ - FIX: internal vanilla entry should be preferred over internal dlc01/dlc02 entry due to FMG read preference (vanilla entry overrides dlc1 entry, dlc1 entry overrides dlc2 entry)
+ 
 Gparam Editor:
+ - ADD: arrow key auto-select (currently it requires Space to select)
  - ADD: json export/import of GPARAM (plus sub-classes?)
  - ADD: gparam reference support (e.g. jump to map param, and if it is offset, that value entry offset)
  - ADD: sticky selection: don't automatically clear selection, rather only clear it if it becomes invalid
 
 Time Act Editor
+ - ADD: arrow key auto-select (currently it requires Space to select)
  - ADD: TAE Mass Edit tool
  - ADD: handling for event groups (currently copied events simply inherit the existing assignment)
  - ADD: Data export/import for TAE/Animation/Event
  - ADD: event graph: use table API to represent each 0.05 frame, each cell is one frame
+ 
  - FIX: TAE a330 + a331 in AC6 are not reading correctly
  - FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
+ - FIX: Template bank doesn't properly update on project switch
 
 Texture Viewer: 
+ - ADD: arrow key auto-select (currently it requires Space to select)
  - ADD: support for tpfbdt files 
  - ADD: support for 'custom' Shoebox Layouts for non-Shoebox Layout games. Smithbox will instead read from a Shoebox folder in .smithbox for these games.
  - ADD: ability to edit Shoebox Layouts (subwindow)
  - ADD: ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - ADD: ability to export selected icon 'section' of icon file (assuming texture has a shoebox layout)
+ 
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
- - FIX: Texture Viewer holding tpfbdt open.
  - FIX: Image Preview fails for users when they edit an icon image file and save it incorrectly (as BC3 and not BC7)
  
- 
+Documentation:
+ - ADD: finish documenting ER SOTE rows
+
 #--------------------------------------
 # Notes
 #--------------------------------------
-- ADD: finish documenting ER SOTE rows
 
+EMEVD Editor:
+ - ADD: Display EMEVD file as function list -> function commands -> command properties. 
+ - ADD: Add ability to insert/delete/order commands. 
+ - ADD: Add ability to adjust function arguments.
+ - ADD: support for DS2 emevd (direct usefulness over DarkScript, plus simple enough for framework impl)
+ 
