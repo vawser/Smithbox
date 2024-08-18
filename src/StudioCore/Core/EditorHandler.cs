@@ -145,6 +145,27 @@ public class EditorHandler
         }
     }
 
+    private bool MayChangeProject()
+    {
+        if(TaskManager.AnyActiveTasks())
+        {
+            return false;
+        }
+
+        // Add async stuff here that doesn't directly use the TaskManager system
+        if(!MapEditor.MapQueryHandler.Bank.MapBankInitialized)
+        {
+            return false;
+        }
+
+        if (!MapEditor.MapQueryEditHandler.Bank.MapBankInitialized)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
     public void HandleEditorSharedBar()
     {
         ImGui.Separator();
@@ -154,7 +175,7 @@ public class EditorHandler
         {
             // New Project
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.File}");
-            if (ImGui.MenuItem("New Project", "", false, !TaskManager.AnyActiveTasks()))
+            if (ImGui.MenuItem("New Project", "", false, MayChangeProject()))
             {
                 Smithbox.ProjectHandler.ClearProject();
                 Smithbox.ProjectHandler.IsInitialLoad = true;
@@ -162,15 +183,14 @@ public class EditorHandler
 
             // Open Project
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Folder}");
-            if (ImGui.MenuItem("Open Project", "", false, !TaskManager.AnyActiveTasks()))
+            if (ImGui.MenuItem("Open Project", "", false, MayChangeProject()))
             {
                 Smithbox.ProjectHandler.OpenProjectDialog();
             }
 
             // Recent Projects
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FolderOpen}");
-            if (ImGui.BeginMenu("Recent Projects",
-                    !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
+            if (ImGui.BeginMenu("Recent Projects", MayChangeProject() && CFG.Current.RecentProjects.Count > 0))
             {
                 Smithbox.ProjectHandler.DisplayRecentProjects();
 
@@ -182,19 +202,19 @@ public class EditorHandler
             if (ImGui.BeginMenu("Open in Explorer",
                     !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
             {
-                if (ImGui.MenuItem("Project Folder", "", false, !TaskManager.AnyActiveTasks()))
+                if (ImGui.MenuItem("Project Folder", "", false))
                 {
                     var projectPath = Smithbox.ProjectRoot;
                     Process.Start("explorer.exe", projectPath);
                 }
 
-                if (ImGui.MenuItem("Game Folder", "", false, !TaskManager.AnyActiveTasks()))
+                if (ImGui.MenuItem("Game Folder", "", false))
                 {
                     var gamePath = Smithbox.GameRoot;
                     Process.Start("explorer.exe", gamePath);
                 }
 
-                if (ImGui.MenuItem("Config Folder", "", false, !TaskManager.AnyActiveTasks()))
+                if (ImGui.MenuItem("Config Folder", "", false))
                 {
                     var configPath = CFG.GetConfigFolderPath();
                     Process.Start("explorer.exe", configPath);

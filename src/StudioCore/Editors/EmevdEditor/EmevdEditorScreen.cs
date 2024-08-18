@@ -1,5 +1,7 @@
-﻿using ImGuiNET;
+﻿using HKLib.hk2018.hkAsyncThreadPool;
+using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
@@ -7,6 +9,7 @@ using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using System.Reflection;
 using Veldrid;
 using Veldrid.Sdl2;
 using static StudioCore.Editors.EmevdEditor.EmevdBank;
@@ -21,14 +24,20 @@ public class EmevdEditorScreen : EditorScreen
 
     public ActionManager EditorActionManager = new();
 
-    private EventScriptInfo _selectedFileInfo;
-    private EMEVD _selectedScript;
-    private string _selectedScriptKey;
+    public EventScriptInfo _selectedFileInfo;
+    public EMEVD _selectedScript;
+    public string _selectedScriptKey;
 
-    private EMEVD.Event _selectedEvent;
+    public EMEVD.Event _selectedEvent;
+    public EMEVD.Instruction _selectedInstruction;
+
+    public EventParameterEditor EventParameterEditor;
+    public InstructionParameterEditor InstructionParameterEditor;
 
     public EmevdEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
+        EventParameterEditor = new EventParameterEditor(this);
+        InstructionParameterEditor = new InstructionParameterEditor(this);
     }
 
     public string EditorName => "EMEVD Editor##EventScriptEditor";
@@ -37,7 +46,7 @@ public class EmevdEditorScreen : EditorScreen
 
     public void Init()
     {
-        ShowSaveOption = false;
+        ShowSaveOption = true;
     }
     public void DrawEditorMenu()
     {
@@ -62,23 +71,37 @@ public class EmevdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_EventScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (!EmevdBank.IsLoaded)
+        if (!(Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S))
         {
-            EmevdBank.LoadEventScripts();
-            EmevdBank.LoadEMEDF();
-        }
+            ImGui.Begin("Editor##InvalidEmevdEditor");
 
-        if (EmevdBank.IsLoaded)
+            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
+
+            ImGui.End();
+        }
+        else
         {
-            EventScriptFileView();
-            EventScriptEventListView();
-            EventScriptEventInstructionView();
-            EventScriptEventParameterView();
+            if (!EmevdBank.IsLoaded)
+            {
+                EmevdBank.LoadEventScripts();
+                EmevdBank.LoadEMEDF();
+            }
+
+            if (EmevdBank.IsLoaded && EmevdBank.IsSupported)
+            {
+                EventScriptFileView();
+                EventScriptEventListView();
+                EventScriptEventInstructionView();
+                EventScriptEventParameterView();
+                EventScriptInstructionParameterView();
+            }
         }
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
     }
+
+    private bool SelectScript = false;
 
     private void EventScriptFileView()
     {
@@ -92,18 +115,35 @@ public class EmevdEditorScreen : EditorScreen
         {
             var displayName = $"{info.Name}";
 
+            // Script row
             if (ImGui.Selectable(displayName, info.Name == _selectedScriptKey))
             {
                 _selectedScriptKey = info.Name;
                 _selectedFileInfo = info;
                 _selectedScript = binder;
             }
+
+            // Arrow Selection
+            if (ImGui.IsItemHovered() && SelectScript)
+            {
+                SelectScript = false;
+                _selectedScriptKey = info.Name;
+                _selectedFileInfo = info;
+                _selectedScript = binder;
+            }
+            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+            {
+                SelectScript = true;
+            }
+
             var aliasName = AliasUtils.GetMapNameAlias(info.Name);
             AliasUtils.DisplayAlias(aliasName);
         }
 
         ImGui.End();
     }
+
+    private bool SelectEvent = false;
 
     private void EventScriptEventListView()
     {
@@ -113,9 +153,21 @@ public class EmevdEditorScreen : EditorScreen
         {
             foreach (var evt in _selectedScript.Events)
             {
+                // Event row
                 if (ImGui.Selectable($@" {evt.ID} - {evt.Name} - {evt.RestBehavior}", evt == _selectedEvent))
                 {
                     _selectedEvent = evt;
+                }
+                
+                // Arrow Selection
+                if (ImGui.IsItemHovered() && SelectEvent)
+                {
+                    SelectEvent = false;
+                    _selectedEvent = evt;
+                }
+                if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                {
+                    SelectEvent = true;
                 }
             }
         }
@@ -123,7 +175,7 @@ public class EmevdEditorScreen : EditorScreen
         ImGui.End();
     }
 
-    Vector4 insColor = new Vector4(1.0f, 0.5f, 0.5f, 1.0f);
+    private bool SelectEventInstruction = false;
 
     private void EventScriptEventInstructionView()
     {
@@ -131,187 +183,33 @@ public class EmevdEditorScreen : EditorScreen
 
         if(_selectedEvent != null)
         {
-            ImGui.Columns(2);
             foreach (var ins in _selectedEvent.Instructions)
             {
-                ShowRawDisplay(ins);
+                if (ImGui.Selectable($@" {ins.Bank}[{ins.ID}]", ins == _selectedInstruction))
+                {
+                    _selectedInstruction = ins;
+                }
+
+                // Arrow Selection
+                if (ImGui.IsItemHovered() && SelectEventInstruction)
+                {
+                    SelectEventInstruction = false;
+                    _selectedInstruction = ins;
+                }
+                if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                {
+                    SelectEventInstruction = true;
+                }
+
+                DisplayInstructionAlias(ins);
             }
 
-            ImGui.NextColumn();
-
-            foreach (var ins in _selectedEvent.Instructions)
-            {
-                ShowSimpleDisplay(ins);
-            }
-
-            ImGui.Columns(1);
         }
 
         ImGui.End();
     }
 
-    Dictionary<long, string> InstructionTypes = new Dictionary<long, string>()
-    {
-        [0] = "byte",
-        [1] = "ushort",
-        [2] = "uint",
-        [3] = "sbyte",
-        [4] = "short",
-        [5] = "int",
-        [6] = "float"
-    };
-
-    private void ShowRawDisplay(EMEVD.Instruction ins)
-    {
-        var eventStr = $"{ins.Bank}[{ins.ID}]";
-        var eventArgs = "";
-        int argIndex = 0;
-
-        foreach (var classEntry in EmevdBank.InfoBank.Classes)
-        {
-            if (ins.Bank == classEntry.Index)
-            {
-                foreach (var insEntry in classEntry.Instructions)
-                {
-                    if (ins.ID == insEntry.Index)
-                    {
-                        // This formats the args byte array into the right primitive types for display
-                        for(int i = 0; i < insEntry.Arguments.Length; i++)
-                        {
-                            var argEntry = insEntry.Arguments[i];
-                            string separator = ", ";
-
-                            if(i == insEntry.Arguments.Length - 1)
-                            {
-                                separator = "";
-                            }
-
-                            // TODO: peek and check we don't exceed the length of the arguments
-                            if (InstructionTypes.ContainsKey(argEntry.Type))
-                            {
-                                switch (argEntry.Type)
-                                {
-                                    // byte
-                                    case 0:
-                                        if (argIndex + 1 <= ins.ArgData.Length)
-                                        {
-                                            var byteVal = ins.ArgData[argIndex];
-                                            eventArgs = eventArgs + $"{byteVal}{separator}";
-                                            argIndex += 1;
-                                        }
-                                        else
-                                        {
-                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
-                                        }
-                                        break;
-                                    // ushort
-                                    case 1:
-                                        if (argIndex + 2 <= ins.ArgData.Length)
-                                        {
-                                            var ushortVal = BitConverter.ToUInt16(ins.ArgData, argIndex);
-                                            eventArgs = eventArgs + $"{ushortVal}{separator}";
-                                            argIndex += 2;
-                                        }
-                                        else
-                                        {
-                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
-                                        }
-                                        break;
-                                    // uint
-                                    case 2:
-                                        if (argIndex + 4 <= ins.ArgData.Length)
-                                        {
-                                            var uintVal = BitConverter.ToUInt32(ins.ArgData, argIndex);
-                                            eventArgs = eventArgs + $"{uintVal}{separator}";
-                                            argIndex += 4;
-                                        }
-                                        else
-                                        {
-                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
-                                        }
-                                        break;
-                                    // sbyte
-                                    case 3:
-                                        if (argIndex + 1 <= ins.ArgData.Length)
-                                        {
-                                            var sbyteVal = (sbyte)ins.ArgData[argIndex];
-                                            eventArgs = eventArgs + $"{sbyteVal}{separator}";
-                                            argIndex += 1;
-                                        }
-                                        else
-                                        {
-                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
-                                        }
-                                        break;
-                                    // short
-                                    case 4:
-                                        if (argIndex + 2 <= ins.ArgData.Length)
-                                        {
-                                            var shortVal = BitConverter.ToInt16(ins.ArgData, argIndex);
-                                            eventArgs = eventArgs + $"{shortVal}{separator}";
-                                            argIndex += 2;
-                                        }
-                                        else
-                                        {
-                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
-                                        }
-                                        break;
-                                    // int
-                                    case 5:
-                                        if (argIndex + 4 <= ins.ArgData.Length)
-                                        {
-                                            var intVal = BitConverter.ToInt32(ins.ArgData, argIndex);
-                                            eventArgs = eventArgs + $"{intVal}{separator}";
-                                            argIndex += 4;
-                                        }
-                                        else
-                                        {
-                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
-                                        }
-                                        break;
-                                    // float
-                                    case 6:
-                                        if (argIndex + 4 <= ins.ArgData.Length)
-                                        {
-                                            var floatVal = BitConverter.ToSingle(ins.ArgData, argIndex);
-                                            eventArgs = eventArgs + $"{floatVal}{separator}";
-                                            argIndex += 4;
-                                        }
-                                        else
-                                        {
-                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
-                                        }
-                                        break;
-                                    // uint
-                                    case 8:
-                                        if (argIndex + 4 <= ins.ArgData.Length)
-                                        {
-                                            var uintVal2 = BitConverter.ToUInt32(ins.ArgData, argIndex);
-                                            eventArgs = eventArgs + $"{uintVal2}{separator}";
-                                            argIndex += 4;
-                                        }
-                                        else
-                                        {
-                                            //TaskLogs.AddLog($"{eventStr}: Stored Length of {argIndex} exceeded actual length");
-                                        }
-                                        break;
-                                    // unk
-                                    default: break;
-                                }
-                            }
-                        }
-                    }
-                }
-
-            }
-        }
-
-        ImguiUtils.WrappedText($"{eventStr}");
-        ImGui.SameLine();
-        ImguiUtils.WrappedTextColored(insColor, $"({eventArgs})");
-    }
-
-    private void ShowSimpleDisplay(EMEVD.Instruction ins)
+    private void DisplayInstructionAlias(EMEVD.Instruction ins)
     {
         var classStr = "Unknown";
         var insStr = "Unknown";
@@ -350,32 +248,34 @@ public class EmevdEditorScreen : EditorScreen
         if (argsStr == "")
             argsStr = "Unknown";
 
-        ImguiUtils.WrappedText($"{classStr} [{insStr}]");
-        ImGui.SameLine();
-        ImguiUtils.WrappedTextColored(insColor, $"({argsStr})");
+
+        AliasUtils.DisplayAlias($"{classStr} [{insStr}]");
+        AliasUtils.DisplayColoredAlias($"({argsStr})", CFG.Current.ImGui_Benefit_Text_Color);
     }
 
     private void EventScriptEventParameterView()
     {
         ImGui.Begin("Event Parameters##EventParameterView");
 
-        if (_selectedEvent != null)
-        {
-            foreach (var para in _selectedEvent.Parameters)
-            {
-                ImGui.Text($"InstructionIndex: {para.InstructionIndex}");
-                ImGui.Text($"TargetStartByte: {para.TargetStartByte}");
-                ImGui.Text($"SourceStartByte: {para.SourceStartByte}");
-                ImGui.Text($"ByteCount: {para.ByteCount}");
-                ImGui.Text($"UnkID: {para.UnkID}");
-            }
-        }
+        EventParameterEditor.Display();
+
+        ImGui.End();
+    }
+
+    private void EventScriptInstructionParameterView()
+    {
+        ImGui.Begin("Instruction Parameters##InstructionParameterView");
+
+        InstructionParameterEditor.Display();
 
         ImGui.End();
     }
 
     public void OnProjectChanged()
     {
+        EventParameterEditor.OnProjectChanged();
+        InstructionParameterEditor.OnProjectChanged();
+
         EmevdBank.LoadEventScripts();
         EmevdBank.LoadEMEDF();
 

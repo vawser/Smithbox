@@ -109,27 +109,3 @@ EMEVD Editor:
  - ADD: support for DS2 emevd (direct usefulness over DarkScript, plus simple enough for framework impl)
  
 
-        // Selection
-        void ApplyDummySelection(int index)
-        {
-            DummyMultiselect.HandleMultiselect(_selectedDummy, index);
-
-            ResetSelection();
-            _selectedDummy = index;
-            _lastSelectedEntry = ModelEntrySelectionType.Dummy;
-
-            Screen.ModelPropertyEditor._trackedDummyPosition = new Vector3();
-
-            Screen.ViewportHandler.SelectRepresentativeDummy(_selectedDummy, DummyMultiselect);
-        }
-
-        // Arrow Selection
-        if (ImGui.IsItemHovered() && SelectDummy)
-        {
-            SelectDummy = false;
-            ApplyDummySelection(i);
-        }
-        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
-        {
-            SelectDummy = true;
-        }

@@ -633,6 +633,10 @@ public class CFG
     public Vector3 TimeActEditor_Viewport_Grid_Color = new Vector3(0.5f, 0.5f, 0.5f);
 
     //****************************
+    // Settings: EMEVD Editor
+    //****************************
+
+    //****************************
     // Settings: Texture Viewer
     //****************************
     public bool TextureViewer_FileList_ShowLowDetail_Entries = true;
