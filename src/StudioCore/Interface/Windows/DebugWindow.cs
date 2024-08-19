@@ -95,8 +95,8 @@ public class DebugWindow
         DisplayTool_ParamValidation();
         DisplayTool_MapValidation();
         DisplayTool_TimeActValidation();
+        DisplayTool_FmgTool();
         DisplayTool_RowNameHelper();
-        DisplayTool_EditorTest();
         //DisplayTool_HavokTool();
         //DisplayTool_DataExplorer();
         //DisplayTool_DecryptRegulation();
@@ -246,7 +246,7 @@ public class DebugWindow
     {
         if (ImGui.BeginTabItem("Time Act Validation"))
         {
-            ImGui.Text("This tool will validate the Time Act files for the current project by loading all TAe files.");
+            ImGui.Text("This tool will validate the Time Act files for the current project by loading all TAE files.");
 
             if (ImGui.Button("Validate TAE"))
             {
@@ -256,6 +256,21 @@ public class DebugWindow
             if (TimeActValidationTool.HasFinished)
             {
                 ImGui.Text("Validation has finished.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplayTool_FmgTool()
+    {
+        if (ImGui.BeginTabItem("Get META FMG Names"))
+        {
+            ImGui.Text("This tool will export the FMG Names usable in the Param Meta to the clipboard.");
+
+            if (ImGui.Button("Export"))
+            {
+                FmgMetaTool.GetNames();
             }
 
             ImGui.EndTabItem();

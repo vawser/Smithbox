@@ -188,17 +188,21 @@ public class ParamEditorTab
 
         if (SelectedGameOffsetData != null)
         {
-            if (ImGui.CollapsingHeader("Param Reloader"))
+            // Ignore if no game offsets exist for the project type
+            if (Smithbox.BankHandler.GameOffsets.Offsets.list != null)
             {
-                ImGui.Text("Param Reloader Version");
-                ImguiUtils.ShowHoverTooltip("This should match the executable version you wish to target, otherwise the memory offsets will be incorrect.");
-
-                var index = CFG.Current.SelectedGameOffsetData;
-                string[] options = Smithbox.BankHandler.GameOffsets.Offsets.list.Select(entry => entry.exeVersion).ToArray();
-
-                if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
+                if (ImGui.CollapsingHeader("Param Reloader"))
                 {
-                    CFG.Current.SelectedGameOffsetData = index;
+                    ImGui.Text("Param Reloader Version");
+                    ImguiUtils.ShowHoverTooltip("This should match the executable version you wish to target, otherwise the memory offsets will be incorrect.");
+
+                    var index = CFG.Current.SelectedGameOffsetData;
+                    string[] options = Smithbox.BankHandler.GameOffsets.Offsets.list.Select(entry => entry.exeVersion).ToArray();
+
+                    if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
+                    {
+                        CFG.Current.SelectedGameOffsetData = index;
+                    }
                 }
             }
         }

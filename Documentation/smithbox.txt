@@ -110,6 +110,50 @@ Documentation:
 # Notes
 #--------------------------------------
 
+ADD: automatic naming tool: for current param, look for reference fields, name the linked param row with the base name if empty (e.g. Item -> Bullet-> AtkParam)
+
 # TODO:
 ADD BB Param Meta
 ADD BB English Row Names
+
+TitleGoods - TitleGoods
+TitleWeapons - TitleWeapons
+TitleArmor - TitleArmor
+TitleRings - TitleRings
+TitleSpells - TitleSpells
+TitleCharacters - TitleCharacters
+TitleLocations - TitleLocations
+SummaryGoods - SummaryGoods
+SummaryWeapons - SummaryWeapons
+SummaryArmor - SummaryArmor
+SummaryRings - SummaryRings
+DescriptionGoods - DescriptionGoods
+DescriptionWeapons - DescriptionWeapons
+DescriptionArmor - DescriptionArmor
+DescriptionRings - DescriptionRings
+SummarySpells - SummarySpells
+DescriptionSpells - DescriptionSpells
+TalkMsg - TalkMsg
+BloodMsg - BloodMsg
+MovieSubtitle - MovieSubtitle
+TalkMsg_FemalePC_Alt - TalkMsg_FemalePC_Alt
+Event - Event
+NetworkMessage - NetworkMessage
+GemExtraInfo - ReusedFMG_32
+EventTextForTalk - EventTextForTalk
+EventTextForMap - EventTextForMap
+TitleGem - ReusedFMG_35
+MenuInGame - MenuInGame
+MenuCommon - MenuCommon
+MenuOther - MenuOther
+MenuDialog - MenuDialog
+MenuKeyGuide - MenuKeyGuide
+MenuLineHelp - MenuLineHelp
+MenuTags - MenuTags
+Win32Tags - Win32Tags
+Win32Messages - Win32Messages
+Modern_MenuText - Modern_MenuText
+Modern_LineHelp - Modern_LineHelp
+Modern_KeyGuide - Modern_KeyGuide
+Modern_SystemMessage_win64 - Modern_SystemMessage_win64
+Modern_Dialogues - Modern_Dialogues

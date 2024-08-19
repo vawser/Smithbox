@@ -865,21 +865,34 @@ public class MapSceneTree : IActionEventHandler
         }
     }
 
+    private bool DisplayChaliceDungeonSection = true;
+
     private void ChaliceDungeonImportButton()
     {
-        ImGui.Selectable($@"   {ForkAwesome.PlusCircle} Load Chalice Dungeon...", false);
-        if (ImGui.BeginPopupContextItem("chalice", 0))
+        ImGui.Separator();
+
+        if(ImGui.Selectable("Toggle Chalice Dungeon Panel"))
         {
+            DisplayChaliceDungeonSection = !DisplayChaliceDungeonSection;
+        }
+
+        ImGui.Separator();
+
+        if (DisplayChaliceDungeonSection)
+        {
+            var width = ImGui.GetWindowWidth() * 0.95f;
+
+            ImGui.Indent(5f);
             ImGui.AlignTextToFramePadding();
             ImGui.Text("Chalice ID (m29_xx_xx_xx): ");
-            ImGui.SameLine();
             var pname = _chaliceMapID;
-            ImGui.SetNextItemWidth(100);
+
             if (_chaliceLoadError)
             {
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_ErrorInput_Background);
             }
 
+            ImGui.SetNextItemWidth(width);
             if (ImGui.InputText("##chalicename", ref pname, 12))
             {
                 _chaliceMapID = pname;
@@ -890,8 +903,7 @@ public class MapSceneTree : IActionEventHandler
                 ImGui.PopStyleColor();
             }
 
-            ImGui.SameLine();
-            if (ImGui.Button("Load"))
+            if (ImGui.Button("Load", new Vector2(width, 24)))
             {
                 if (!_universe.LoadMap(_chaliceMapID))
                 {
@@ -904,8 +916,7 @@ public class MapSceneTree : IActionEventHandler
                     _chaliceMapID = "m29_";
                 }
             }
-
-            ImGui.EndPopup();
+            ImGui.Unindent(5f);
         }
     }
 }
