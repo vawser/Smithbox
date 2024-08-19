@@ -60,17 +60,20 @@ public class MapQueryBank
                 mapDir = $"{Smithbox.ProjectRoot}/map/";
             }
 
-            foreach (var entry in Directory.EnumerateDirectories(mapDir))
+            if (Directory.Exists(mapDir))
             {
-                foreach (var fileEntry in Directory.EnumerateFiles(entry))
+                foreach (var entry in Directory.EnumerateDirectories(mapDir))
                 {
-                    if (fileEntry.Contains(".msb"))
+                    foreach (var fileEntry in Directory.EnumerateFiles(entry))
                     {
-                        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(fileEntry));
-                        ResourceDescriptor ad = MapLocator.GetMapMSB(name);
-                        if (ad.AssetPath != null)
+                        if (fileEntry.Contains(".msb"))
                         {
-                            MapResources.Add(ad);
+                            var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(fileEntry));
+                            ResourceDescriptor ad = MapLocator.GetMapMSB(name);
+                            if (ad.AssetPath != null)
+                            {
+                                MapResources.Add(ad);
+                            }
                         }
                     }
                 }
@@ -85,15 +88,18 @@ public class MapQueryBank
                 mapDir = $"{Smithbox.ProjectRoot}/map/mapstudio/";
             }
 
-            foreach (var entry in Directory.EnumerateFiles(mapDir))
+            if (Directory.Exists(mapDir))
             {
-                if (entry.Contains(".msb.dcx"))
+                foreach (var entry in Directory.EnumerateFiles(mapDir))
                 {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
-                    ResourceDescriptor ad = MapLocator.GetMapMSB(name);
-                    if (ad.AssetPath != null)
+                    if (entry.Contains(".msb.dcx"))
                     {
-                        MapResources.Add(ad);
+                        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
+                        ResourceDescriptor ad = MapLocator.GetMapMSB(name);
+                        if (ad.AssetPath != null)
+                        {
+                            MapResources.Add(ad);
+                        }
                     }
                 }
             }

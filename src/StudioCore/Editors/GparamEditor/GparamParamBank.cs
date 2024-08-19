@@ -48,6 +48,7 @@ public static class GparamParamBank
             case ProjectType.DS2S:
                 fileBytes = param.Write(DCX.Type.None);
                 break;
+            case ProjectType.BB:
             case ProjectType.DS3:
                 fileBytes = param.Write(DCX.Type.DCX_DFLT_10000_44_9);
                 break;
