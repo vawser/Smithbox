@@ -80,6 +80,7 @@ Time Act Editor
  - ADD: handling for event groups (currently copied events simply inherit the existing assignment)
  - ADD: Data export/import for TAE/Animation/Event
  - ADD: event graph: use table API to represent each 0.05 frame, each cell is one frame
+ - ADD: quicklink to TimeAct from param
  
  - FIX: TAE a330 + a331 in AC6 are not reading correctly
  - FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
@@ -107,5 +108,5 @@ EMEVD Editor:
  - ADD: Add ability to insert/delete/order commands. 
  - ADD: Add ability to adjust function arguments.
  - ADD: support for DS2 emevd (direct usefulness over DarkScript, plus simple enough for framework impl)
+ - ADD: quicklink to EMEVD from param field
  
-

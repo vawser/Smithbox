@@ -5,9 +5,11 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using Veldrid;
@@ -30,14 +32,15 @@ public class EmevdEditorScreen : EditorScreen
 
     public EMEVD.Event _selectedEvent;
     public EMEVD.Instruction _selectedInstruction;
+    public int _selectedInstructionIndex = -1;
 
-    public EventParameterEditor EventParameterEditor;
-    public InstructionParameterEditor InstructionParameterEditor;
+    public EmevdEventHandler EventParameterEditor;
+    public EmevdInstructionHandler InstructionParameterEditor;
 
     public EmevdEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        EventParameterEditor = new EventParameterEditor(this);
-        InstructionParameterEditor = new InstructionParameterEditor(this);
+        EventParameterEditor = new EmevdEventHandler(this);
+        InstructionParameterEditor = new EmevdInstructionHandler(this);
     }
 
     public string EditorName => "EMEVD Editor##EventScriptEditor";
@@ -151,14 +154,26 @@ public class EmevdEditorScreen : EditorScreen
 
         if(_selectedScript != null)
         {
-            foreach (var evt in _selectedScript.Events)
+            for (int i = 0; i < _selectedScript.Events.Count; i++)
             {
+                var evt = _selectedScript.Events[i];
+
+                var eventName = evt.Name;
+                if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                {
+                    var itemName = ParamBank.PrimaryBank.GetParamFromName("ItemParam");
+                    var itemRow = itemName.Rows.Where(e => e.ID == (int)evt.ID).FirstOrDefault();
+
+                    if (itemRow != null)
+                        eventName = itemRow.Name;
+                }
+
                 // Event row
-                if (ImGui.Selectable($@" {evt.ID} - {evt.Name} - {evt.RestBehavior}", evt == _selectedEvent))
+                if (ImGui.Selectable($@" {evt.ID}##eventRow{i}", evt == _selectedEvent))
                 {
                     _selectedEvent = evt;
                 }
-                
+
                 // Arrow Selection
                 if (ImGui.IsItemHovered() && SelectEvent)
                 {
@@ -169,6 +184,8 @@ public class EmevdEditorScreen : EditorScreen
                 {
                     SelectEvent = true;
                 }
+
+                AliasUtils.DisplayColoredAlias(eventName, CFG.Current.ImGui_AliasName_Text);
             }
         }
 
@@ -183,11 +200,14 @@ public class EmevdEditorScreen : EditorScreen
 
         if(_selectedEvent != null)
         {
-            foreach (var ins in _selectedEvent.Instructions)
+            for(int i = 0; i < _selectedEvent.Instructions.Count; i++)
             {
-                if (ImGui.Selectable($@" {ins.Bank}[{ins.ID}]", ins == _selectedInstruction))
+                var ins = _selectedEvent.Instructions[i];
+
+                if (ImGui.Selectable($@" {ins.Bank}[{ins.ID}]##eventInstruction{i}", ins == _selectedInstruction))
                 {
                     _selectedInstruction = ins;
+                    _selectedInstructionIndex = i;
                 }
 
                 // Arrow Selection
@@ -195,62 +215,19 @@ public class EmevdEditorScreen : EditorScreen
                 {
                     SelectEventInstruction = false;
                     _selectedInstruction = ins;
+                    _selectedInstructionIndex = i;
                 }
                 if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                 {
                     SelectEventInstruction = true;
                 }
 
-                DisplayInstructionAlias(ins);
+                EmevdUtils.DisplayInstructionAlias(ins);
             }
 
         }
 
         ImGui.End();
-    }
-
-    private void DisplayInstructionAlias(EMEVD.Instruction ins)
-    {
-        var classStr = "Unknown";
-        var insStr = "Unknown";
-        var argsStr = "";
-
-        foreach (var classEntry in EmevdBank.InfoBank.Classes)
-        {
-            if (ins.Bank == classEntry.Index)
-            {
-                classStr = classEntry.Name;
-
-                foreach (var insEntry in classEntry.Instructions)
-                {
-                    if(ins.ID == insEntry.Index)
-                    {
-                        insStr = insEntry.Name;
-
-                        for (int i = 0; i < insEntry.Arguments.Length; i++)
-                        {
-                            var argEntry = insEntry.Arguments[i];
-                            string separator = ", ";
-
-                            if (i == insEntry.Arguments.Length - 1)
-                            {
-                                separator = "";
-                            }
-
-                            argsStr = $"{argsStr}{argEntry.Name}{separator}";
-                        }
-                    }
-                }
-
-            }
-        }
-
-        if (argsStr == "")
-            argsStr = "Unknown";
-
-
-        AliasUtils.DisplayAlias($"{classStr} [{insStr}]");
-        AliasUtils.DisplayColoredAlias($"({argsStr})", CFG.Current.ImGui_Benefit_Text_Color);
     }
 
     private void EventScriptEventParameterView()

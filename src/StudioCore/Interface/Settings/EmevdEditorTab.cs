@@ -23,8 +23,11 @@ public class EmevdEditorTab
         // Instructions
         if (ImGui.CollapsingHeader("Instructions"))
         {
-            ImGui.Checkbox("Display time act aliases", ref CFG.Current.TimeActEditor_DisplayTimeActRow_AliasInfo);
-            ImguiUtils.ShowHoverTooltip("Display aliases for each of the Time Act rows");
+            ImGui.Checkbox("Display instruction category", ref CFG.Current.EmevdEditor_DisplayInstructionCategory);
+            ImguiUtils.ShowHoverTooltip("Display the instruction category within the Instruction row.");
+
+            ImGui.Checkbox("Display instruction parameter names", ref CFG.Current.EmevdEditor_DisplayInstructionParameterNames);
+            ImguiUtils.ShowHoverTooltip("Display the instruction parameter names within the Instruction row.");
         }
     }
 }

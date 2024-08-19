@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EmevdEditor;
 
-public class EventParameterEditor
+public class EmevdEventHandler
 {
     private EmevdEditorScreen Screen;
 
-    public EventParameterEditor(EmevdEditorScreen screen)
+    public EmevdEventHandler(EmevdEditorScreen screen)
     {
         Screen = screen;
     }
@@ -26,6 +26,10 @@ public class EventParameterEditor
     {
         if (Screen._selectedEvent != null)
         {
+            var evt = Screen._selectedEvent;
+
+            ImGui.Text($"{evt.RestBehavior}");
+
             foreach (var para in Screen._selectedEvent.Parameters)
             {
                 ImGui.Text($"InstructionIndex: {para.InstructionIndex}");
