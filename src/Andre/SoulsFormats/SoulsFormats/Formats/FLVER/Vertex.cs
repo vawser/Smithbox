@@ -596,9 +596,9 @@ namespace SoulsFormats
                         }
                         else if (member.Type == LayoutType.Byte4C)
                         {
-                            bw.WriteByte((byte)Math.Round(uv.X * 255f));
-                            bw.WriteByte((byte)Math.Round(uv.Y * 255f));
-                            bw.WriteByte((byte)Math.Round(uv.Z * 255f));
+                            bw.WriteByte((byte)Math.Round(uv.X / uvFactor * 255f));
+                            bw.WriteByte((byte)Math.Round(uv.Y / uvFactor * 255f));
+                            bw.WriteByte((byte)Math.Round(uv.Z / uvFactor * 255f));
                             bw.WriteByte(0);
                         }
                         else if (member.Type == LayoutType.UV)
