@@ -1112,15 +1112,13 @@ public class TimeActEditorScreen : EditorScreen
             ActionSubMenu.OnProjectChanged();
         }
 
-        if (AnimationBank.IsLoaded)
-        {
-            AnimationBank.IsLoaded = false;
-            AnimationBank.IsTemplatesLoaded = false;
-            AnimationBank.IsCharacterTimeActsLoaded = false;
-            AnimationBank.IsObjectTimeActsLoaded = false;
+        AnimationBank.IsLoaded = false;
+        AnimationBank.IsTemplatesLoaded = false;
+        AnimationBank.IsCharacterTimeActsLoaded = false;
+        AnimationBank.IsObjectTimeActsLoaded = false;
 
-            AnimationBank.Load();
-        }
+        AnimationBank.Load();
+
         ResetActionManager();
         //_universe.UnloadAll(true);
     }

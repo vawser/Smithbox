@@ -185,8 +185,10 @@ public class EditorHandler
             status = status + "Map Query Edit still initializing.\n";
         }
 
-        if(status != "")
+        if (status != "")
+        {
             ImguiUtils.ShowHoverTooltip(status);
+        }
     }
 
     public void HandleEditorSharedBar()
