@@ -128,6 +128,17 @@ public class TimeActSelectionHandler
         CurrentTimeActEventPropertyIndex = -1;
 
         TimeActMultiselect.Reset(true, true, true);
+
+        // Auto-Select first TimeAct if not empty
+        if(ContainerInfo.InternalFiles.Count > 0)
+        {
+            for(int i = 0; i < ContainerInfo.InternalFiles.Count; i++)
+            {
+                var timeAct = ContainerInfo.InternalFiles[i].TAE;
+                TimeActChange(timeAct, i);
+                break;
+            }
+        }
     }
 
     public void ResetOnTimeActChange()
@@ -157,7 +168,6 @@ public class TimeActSelectionHandler
         CurrentTimeActKey = index;
         CurrentTimeAct = entry;
 
-
         CurrentTimeActAnimation = null;
         CurrentTemporaryAnimHeader = null;
         CurrentTimeActAnimationIndex = -1;
@@ -171,6 +181,17 @@ public class TimeActSelectionHandler
         TimeActMultiselect.Reset(false, true, true);
 
         TimeActUtils.ApplyTemplate(CurrentTimeAct, CurrentTimeActType);
+
+        // Auto-Select first Animation if not empty
+        if (CurrentTimeAct.Animations.Count > 0)
+        {
+            for (int i = 0; i < CurrentTimeAct.Animations.Count; i++)
+            {
+                var anim = CurrentTimeAct.Animations[i];
+                TimeActAnimationChange(anim, i);
+                break;
+            }
+        }
     }
 
     public void ResetOnTimeActAnimationChange()
@@ -211,6 +232,17 @@ public class TimeActSelectionHandler
         }
 
         TimeActMultiselect.Reset(false, false, true);
+
+        // Auto-Select first Event if not empty
+        if (CurrentTimeActAnimation.Events.Count > 0)
+        {
+            for (int i = 0; i < CurrentTimeActAnimation.Events.Count; i++)
+            {
+                var evt = CurrentTimeActAnimation.Events[i];
+                TimeActEventChange(evt, i);
+                break;
+            }
+        }
     }
 
     public void ResetOnTimeActEventChange()

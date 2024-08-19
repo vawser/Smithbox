@@ -1,6 +1,13 @@
 {
     "list": [
         {
+            "id": "c0000",
+            "name": "Player",
+            "tags": [
+                ""
+            ]
+        },
+        {
             "id": "c1000",
             "name": "Wolf Beast",
             "tags": [

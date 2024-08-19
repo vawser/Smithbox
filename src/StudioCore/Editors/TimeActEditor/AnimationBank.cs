@@ -603,7 +603,10 @@ public static class AnimationBank
     {
         foreach (var (info, binder) in FileChrBank)
         {
-            await SaveTimeAct(info, binder);
+            if (info.IsModified)
+            {
+                await SaveTimeAct(info, binder);
+            }
         }
 
         return false;
@@ -731,9 +734,6 @@ public static class AnimationBank
     {
         await Task.Delay(1000);
 
-        if (!info.IsModified)
-            return false;
-
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             HandleDS2TimeActSave(info, binderInfo);
@@ -858,6 +858,7 @@ public static class AnimationBank
 
             switch (Smithbox.ProjectType)
             {
+                case ProjectType.BB:
                 case ProjectType.DS3:
                     return writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
                 case ProjectType.SDT:
