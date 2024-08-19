@@ -647,6 +647,7 @@ namespace StudioCore.Editors.ModelEditor
 
                 switch (Smithbox.ProjectType)
                 {
+                    case ProjectType.BB:
                     case ProjectType.DS3:
                         fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
                         break;
