@@ -54,6 +54,9 @@ public class MassEditScript
 
     public static void ReloadScripts()
     {
+        if (Smithbox.ProjectType is Core.ProjectType.Undefined)
+            return;
+
         var cdir = ParamLocator.GetMassEditScriptCommonDir();
         var dir = ParamLocator.GetMassEditScriptGameDir();
         scriptList = new List<MassEditScript>();

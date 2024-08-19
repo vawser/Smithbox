@@ -211,9 +211,6 @@ public class ProjectModal
                 {
                     newProject.Config.GameRoot += @"\dvdroot_ps4";
                 }
-
-                newProject.ProjectJsonPath = $@"{newProjectDirectory}\project.json";
-
             }
         }
 
@@ -256,6 +253,8 @@ public class ProjectModal
         // Create
         if (ImGui.Button("Create", new Vector2(120, 0) * Smithbox.GetUIScale()))
         {
+            newProject.ProjectJsonPath = $@"{newProjectDirectory}\project.json";
+
             bool validProject = CanCreateNewProject();
 
             if(validProject)

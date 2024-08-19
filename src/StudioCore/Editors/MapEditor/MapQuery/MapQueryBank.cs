@@ -23,12 +23,22 @@ public class MapQueryBank
     public MapQueryBank(IMapQueryEngine engine) 
     {
         Engine = engine;
+
+        if (Smithbox.ProjectType is ProjectType.Undefined)
+        {
+            MapBankInitialized = true;
+        }
     }
 
     public void OnProjectChanged()
     {
         MapBankInitialized = false;
         MapList = new Dictionary<string, IMsb>();
+
+        if (Smithbox.ProjectType is ProjectType.Undefined)
+        {
+            MapBankInitialized = true;
+        }
     }
 
     public Dictionary<string, IMsb> GetMaps()

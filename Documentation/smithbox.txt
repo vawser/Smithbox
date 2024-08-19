@@ -110,6 +110,8 @@ Documentation:
 # Notes
 #--------------------------------------
 
+Fix project issue where order of input causes project root to be empty
+
 # TODO:
 ADD BB Param Meta
 ADD BB English Row Names
