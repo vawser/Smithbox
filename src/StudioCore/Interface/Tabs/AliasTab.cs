@@ -20,9 +20,9 @@ public class AliasTab
     public string _refUpdateName = "";
     public string _refUpdateTags = "";
 
-    private string _newRefId = "";
-    private string _newRefName = "";
-    private string _newRefTags = "";
+    public string _newRefId = "";
+    public string _newRefName = "";
+    public string _newRefTags = "";
 
     public AliasReference _selectedEntry;
 
@@ -226,10 +226,10 @@ public class AliasTab
             ImGui.Text($"Alias for {refID}");
 
             ImGui.Text($"Name");
-            ImGui.InputTextMultiline($"##EditName_{EntryName}", ref _refUpdateName, 255, inputSize);
+            ImGui.InputText($"##EditName_{EntryName}", ref _refUpdateName, 255);
 
             ImGui.Text($"Tags");
-            ImGui.InputTextMultiline($"##EditTags_{EntryName}", ref _refUpdateTags, 255, inputSize);
+            ImGui.InputText($"##EditTags_{EntryName}", ref _refUpdateTags, 255);
 
             if (ImGui.Button("Update", buttonSize))
             {
@@ -269,15 +269,15 @@ public class AliasTab
         var buttonSize = new Vector2(width, 24 * scale);
 
         ImGui.Text("ID");
-        ImGui.InputTextMultiline($"##AddID_{EntryName}", ref _newRefId, 255, inputSize);
+        ImGui.InputText($"##AddID_{EntryName}", ref _newRefId, 255);
         ImguiUtils.ShowHoverTooltip("The map ID of the map name to add.");
 
         ImGui.Text("Name");
-        ImGui.InputTextMultiline($"##AddName_{EntryName}", ref _newRefName, 255, inputSize);
+        ImGui.InputText($"##AddName_{EntryName}", ref _newRefName, 255);
         ImguiUtils.ShowHoverTooltip("The alias name to give to the added map name.");
 
         ImGui.Text("Tags");
-        ImGui.InputTextMultiline($"##AddTags_{EntryName}", ref _newRefTags, 255, inputSize);
+        ImGui.InputText($"##AddTags_{EntryName}", ref _newRefTags, 255);
         ImguiUtils.ShowHoverTooltip("The tags to associate with this map name.");
 
         if (ImGui.Button("Add New Alias", buttonSize))

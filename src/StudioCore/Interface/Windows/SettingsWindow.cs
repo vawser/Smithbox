@@ -94,6 +94,8 @@ public class SettingsWindow
         {
             if (!TabInitialized)
             {
+                TabInitialized = true;
+
                 MapAliasTab = new AliasTab(Smithbox.BankHandler.MapAliases, "Maps", ref CFG.Current.MapAtlas_ShowTags);
                 CharacterAliasTab = new AliasTab(Smithbox.BankHandler.CharacterAliases, "Characters", ref CFG.Current.CharacterAtlas_ShowTags, false, false);
                 AssetAliasTab = new AliasTab(Smithbox.BankHandler.AssetAliases, "Assets", ref CFG.Current.AssetAtlas_ShowTags, false, false);
@@ -106,8 +108,6 @@ public class SettingsWindow
                 ParticleAliasTab = new AliasTab(Smithbox.BankHandler.ParticleAliases, "Particles", ref CFG.Current.ParticleAtlas_ShowTags);
                 MovieAliasTab = new AliasTab(Smithbox.BankHandler.MovieAliases, "Movies", ref CFG.Current.MovieAtlas_ShowTags);
                 TimeActsTab = new AliasTab(Smithbox.BankHandler.TimeActAliases, "Time acts", ref CFG.Current.TimeActAtlas_ShowTags);
-
-                TabInitialized = true;
             }
         }
     }
@@ -167,6 +167,23 @@ public class SettingsWindow
             ImGui.EndChild();
 
             ImGui.NextColumn();
+
+            if(DisplayCharacterTab)
+            {
+                SelectedTab = SelectedSettingTab.ProjectAliases_Characters;
+            }
+            if(DisplayAssetTab)
+            {
+                SelectedTab = SelectedSettingTab.ProjectAliases_Assets;
+            }
+            if (DisplayPartTab)
+            {
+                SelectedTab = SelectedSettingTab.ProjectAliases_Parts;
+            }
+            if (DisplayMapPieceTab)
+            {
+                SelectedTab = SelectedSettingTab.ProjectAliases_MapPieces;
+            }
 
             ImGui.BeginChild("configurationTab");
             switch (SelectedTab)
@@ -275,18 +292,22 @@ public class SettingsWindow
 
     public void DisplayAliasTab(AliasTab tab, string name)
     {
+        if (!TabInitialized)
+            return;
+
         if (DisplayCharacterTab)
         {
-            SelectedTab = SelectedSettingTab.ProjectAliases_Characters;
-
             if (name == "Characters")
             {
-                DisplayCharacterTab = false;
-
                 foreach (var entry in Smithbox.BankHandler.CharacterAliases.Aliases.list)
                 {
+                    TaskLogs.AddLog(entry.id);
+                    TaskLogs.AddLog(TargetChrID);
+
                     if (entry.id == TargetChrID)
                     {
+                        CharacterAliasTab._newRefId = "";
+
                         CharacterAliasTab.FocusSelection = true;
                         CharacterAliasTab._selectedEntry = entry;
                         CharacterAliasTab._refUpdateId = entry.id;
@@ -294,21 +315,25 @@ public class SettingsWindow
                         CharacterAliasTab._refUpdateTags = AliasUtils.GetTagListString(entry.tags);
                         break;
                     }
+                    else
+                    {
+                        CharacterAliasTab._newRefId = TargetChrID;
+                    }
                 }
             }
+
+            DisplayCharacterTab = false;
         }
         if (DisplayAssetTab)
         {
-            SelectedTab = SelectedSettingTab.ProjectAliases_Assets;
-
             if (name == "Assets")
             {
-                DisplayAssetTab = false;
-
                 foreach (var entry in Smithbox.BankHandler.AssetAliases.Aliases.list)
                 {
                     if (entry.id == TargetAssetID)
                     {
+                        AssetAliasTab._newRefId = "";
+
                         AssetAliasTab.FocusSelection = true;
                         AssetAliasTab._selectedEntry = entry;
                         AssetAliasTab._refUpdateId = entry.id;
@@ -316,21 +341,25 @@ public class SettingsWindow
                         AssetAliasTab._refUpdateTags = AliasUtils.GetTagListString(entry.tags);
                         break;
                     }
+                    else
+                    {
+                        AssetAliasTab._newRefId = TargetAssetID;
+                    }
                 }
             }
+
+            DisplayAssetTab = false;
         }
         if (DisplayPartTab)
         {
-            SelectedTab = SelectedSettingTab.ProjectAliases_Parts;
-
             if (name == "Parts")
             {
-                DisplayPartTab = false;
-
                 foreach (var entry in Smithbox.BankHandler.PartAliases.Aliases.list)
                 {
                     if (entry.id == TargetPartID)
                     {
+                        PartAliasTab._newRefId = "";
+
                         PartAliasTab.FocusSelection = true;
                         PartAliasTab._selectedEntry = entry;
                         PartAliasTab._refUpdateId = entry.id;
@@ -338,21 +367,25 @@ public class SettingsWindow
                         PartAliasTab._refUpdateTags = AliasUtils.GetTagListString(entry.tags);
                         break;
                     }
+                    else
+                    {
+                        PartAliasTab._newRefId = TargetPartID;
+                    }
                 }
             }
+
+            DisplayPartTab = false;
         }
         if (DisplayMapPieceTab)
         {
-            SelectedTab = SelectedSettingTab.ProjectAliases_MapPieces;
-
             if (name == "Map Pieces")
             {
-                DisplayMapPieceTab = false;
-
                 foreach (var entry in Smithbox.BankHandler.MapPieceAliases.Aliases.list)
                 {
                     if (entry.id == TargetMapPieceID)
                     {
+                        MapPieceAliasTab._newRefId = "";
+
                         MapPieceAliasTab.FocusSelection = true;
                         MapPieceAliasTab._selectedEntry = entry;
                         MapPieceAliasTab._refUpdateId = entry.id;
@@ -360,8 +393,14 @@ public class SettingsWindow
                         MapPieceAliasTab._refUpdateTags = AliasUtils.GetTagListString(entry.tags);
                         break;
                     }
+                    else
+                    {
+                        MapPieceAliasTab._newRefId = TargetMapPieceID;
+                    }
                 }
             }
+
+            DisplayMapPieceTab = false;
         }
 
         tab.Display();

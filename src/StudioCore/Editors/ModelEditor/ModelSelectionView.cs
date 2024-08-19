@@ -218,7 +218,11 @@ namespace StudioCore.Editors.ModelEditor
 
                             if (ImGui.Selectable("Go to Alias"))
                             {
-                                Smithbox.WindowHandler.SettingsWindow.MenuOpenState = true;
+                                if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
+                                {
+                                    Smithbox.WindowHandler.SettingsWindow.ToggleMenuVisibility();
+                                }
+
                                 Smithbox.WindowHandler.SettingsWindow.DisplayCharacterTab = true;
                                 Smithbox.WindowHandler.SettingsWindow.TargetChrID = entry;
                             }
@@ -275,7 +279,11 @@ namespace StudioCore.Editors.ModelEditor
 
                             if (ImGui.Selectable("Go to Alias"))
                             {
-                                Smithbox.WindowHandler.SettingsWindow.MenuOpenState = true;
+                                if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
+                                {
+                                    Smithbox.WindowHandler.SettingsWindow.ToggleMenuVisibility();
+                                }
+
                                 Smithbox.WindowHandler.SettingsWindow.DisplayAssetTab = true;
                                 Smithbox.WindowHandler.SettingsWindow.TargetAssetID = entry;
                             }
@@ -325,7 +333,11 @@ namespace StudioCore.Editors.ModelEditor
 
                             if (ImGui.Selectable("Go to Alias"))
                             {
-                                Smithbox.WindowHandler.SettingsWindow.MenuOpenState = true;
+                                if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
+                                {
+                                    Smithbox.WindowHandler.SettingsWindow.ToggleMenuVisibility();
+                                }
+
                                 Smithbox.WindowHandler.SettingsWindow.DisplayPartTab = true;
                                 Smithbox.WindowHandler.SettingsWindow.TargetPartID = entry;
                             }
@@ -385,7 +397,11 @@ namespace StudioCore.Editors.ModelEditor
                             {
                                 if (ImGui.Selectable("Go to Alias"))
                                 {
-                                    Smithbox.WindowHandler.SettingsWindow.MenuOpenState = true;
+                                    if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
+                                    {
+                                        Smithbox.WindowHandler.SettingsWindow.ToggleMenuVisibility();
+                                    }
+
                                     Smithbox.WindowHandler.SettingsWindow.DisplayMapPieceTab = true;
                                     Smithbox.WindowHandler.SettingsWindow.TargetMapPieceID = entry;
                                 }
