@@ -194,41 +194,62 @@ param SignPuddleParam: modified && !added: sortId: = vanillafield sortId
 1.12.1 - (SignPuddleParam) Set endPad to Vanilla v1.12.1 values
 param SignPuddleParam: modified && !added: endPad: = vanillafield endPad
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set unknown_0x6c to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: unknown_0x6c: = vanillafield unknown_0x6c
+1.12.1 - (PostureControlParam_WepRight) Set a015_rightArmFB to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a015_rightArmFB: = vanillafield a015_rightArmFB
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set unknown_0x70 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: unknown_0x70: = vanillafield unknown_0x70
+1.12.1 - (PostureControlParam_WepRight) Set a015_rightWristFB to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a015_rightWristFB: = vanillafield a015_rightWristFB
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set unknown_0x74 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: unknown_0x74: = vanillafield unknown_0x74
+1.12.1 - (PostureControlParam_WepRight) Set a015_rightWristIO to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a015_rightWristIO: = vanillafield a015_rightWristIO
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set unknown_0x78 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: unknown_0x78: = vanillafield unknown_0x78
+1.12.1 - (PostureControlParam_WepRight) Set a015_rightWeaponRotation to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a015_rightWeaponRotation: = vanillafield a015_rightWeaponRotation
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set unknown_0x7c to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: unknown_0x7c: = vanillafield unknown_0x7c
+1.12.1 - (PostureControlParam_WepRight) Set a015_leftArmFB to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a015_leftArmFB: = vanillafield a015_leftArmFB
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set unknown_0x80 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: unknown_0x80: = vanillafield unknown_0x80
+1.12.1 - (PostureControlParam_WepRight) Set a015_leftWristFB to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a015_leftWristFB: = vanillafield a015_leftWristFB
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set unknown_0x84 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: unknown_0x84: = vanillafield unknown_0x84
+1.12.1 - (PostureControlParam_WepRight) Set a015_leftWristIO to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a015_leftWristIO: = vanillafield a015_leftWristIO
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set unknown_0x88 to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: unknown_0x88: = vanillafield unknown_0x88
+1.12.1 - (PostureControlParam_WepRight) Set a015_lefttWeaponRotation to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a015_lefttWeaponRotation: = vanillafield a015_lefttWeaponRotation
 11210015L
-1.12.1 - (PostureControlParam_WepRight) Set endPad to Vanilla v1.12.1 values
-param PostureControlParam_WepRight: modified && !added: endPad: = vanillafield endPad
+1.12.1 - (PostureControlParam_WepRight) Set a016_rightArmFB to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a016_rightArmFB: = vanillafield a016_rightArmFB
 11210015L
-1.12.1 - (PostureControlParam_WepLeft) Set unknown_0x12 to Vanilla v1.12.1 values
-param PostureControlParam_WepLeft: modified && !added: unknown_0x12: = vanillafield unknown_0x12
+1.12.1 - (PostureControlParam_WepRight) Set a016_rightWristFB to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a016_rightWristFB: = vanillafield a016_rightWristFB
 11210015L
-1.12.1 - (PostureControlParam_WepLeft) Set unknown_0x14 to Vanilla v1.12.1 values
-param PostureControlParam_WepLeft: modified && !added: unknown_0x14: = vanillafield unknown_0x14
+1.12.1 - (PostureControlParam_WepRight) Set a016_rightWristIO to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a016_rightWristIO: = vanillafield a016_rightWristIO
 11210015L
-1.12.1 - (PostureControlParam_WepLeft) Set unknown_0x16 to Vanilla v1.12.1 values
-param PostureControlParam_WepLeft: modified && !added: unknown_0x16: = vanillafield unknown_0x16
+1.12.1 - (PostureControlParam_WepRight) Set a016_rightWeaponRotation to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a016_rightWeaponRotation: = vanillafield a016_rightWeaponRotation
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set a016_leftArmFB to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a016_leftArmFB: = vanillafield a016_leftArmFB
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set a016_leftWristFB to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a016_leftWristFB: = vanillafield a016_leftWristFB
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set a016_leftWristIO to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a016_leftWristIO: = vanillafield a016_leftWristIO
+11210015L
+1.12.1 - (PostureControlParam_WepRight) Set a016_lefttWeaponRotation to Vanilla v1.12.1 values
+param PostureControlParam_WepRight: modified && !added: a016_lefttWeaponRotation: = vanillafield a016_lefttWeaponRotation
+11210015L
+1.12.1 - (PostureControlParam_WepLeft) Set a003_leftWristFB to Vanilla v1.12.1 values
+param PostureControlParam_WepLeft: modified && !added: a003_leftWristFB: = vanillafield a003_leftWristFB
+11210015L
+1.12.1 - (PostureControlParam_WepLeft) Set a003_leftWristIO to Vanilla v1.12.1 values
+param PostureControlParam_WepLeft: modified && !added: a003_leftWristIO: = vanillafield a003_leftWristIO
+11210015L
+1.12.1 - (PostureControlParam_WepLeft) Set a003_leftWeaponRotation to Vanilla v1.12.1 values
+param PostureControlParam_WepLeft: modified && !added: a003_leftWeaponRotation: = vanillafield a003_leftWeaponRotation
 11210015L
 1.12.1 - (PostureControlParam_WepLeft) Set pad to Vanilla v1.12.1 values
 param PostureControlParam_WepLeft: modified && !added: pad: = vanillafield pad
