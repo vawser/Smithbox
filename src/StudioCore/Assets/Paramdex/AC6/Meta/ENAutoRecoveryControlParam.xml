@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
+    <idleEnergyRecoveryRate AltName="No Boost: Energy Recovery Rate" Wiki="Percentage-based modifier that controls the rate at which the equipped generator recovers energy while the AC is not boosting. Also applies to standing still, walking, running and jumping." /> 
+    <idleEnergyCapacityMax AltName="No Boost: Energy Capacity Maximum" Wiki="Applies to any physical movement that isn't boosting. So, standing still, walking, running and jumping." />
+    <idleEnergyCapacitySetAfterAction AltName="No Boost: Energy Capacity Set after Action" Wiki="Applies to any physical movement that isn't boosting. So, standing still, walking, running and jumping." />
+    
     <concurrentEnergyUseMinimumTime AltName="Concurrent Energy Use - Minimum Time" />
     <concurrentEnergyUseNoConsumeTime AltName="Concurrent Energy Use - No Consumption Time" />
     
