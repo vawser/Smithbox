@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <itemCategory AltName="Item Category" Wiki="" Enum="ITEMLOT_LVDEP_ITEMCATEGORY"/>
+    <itemId AltName="Item ID" Wiki="" />
+  </Field>
+  <Self Wiki="Item Lots - Level-dependant Configuration"/>
+</PARAMMETA>

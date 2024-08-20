@@ -694,6 +694,20 @@ public class KeyBindings
             "Trigger the CSV Export prompt.",
             Key.Unknown);
 
+        // Row Namer
+        public KeyBind PARAM_RowNamer_Flat_Apply = new(
+            "Apply Row Namer (Flat)",
+            "Apply the Row Namer to the current row selection, with the Flat configuration.",
+            Key.I,
+            true);
+
+        public KeyBind PARAM_RowNamer_Cascade_Apply = new(
+            "Apply Row Namer (Flat)",
+            "Apply the Row Namer to the current row selection, with the Flat configuration.",
+            Key.I,
+            false,
+            true);
+
         // Param Reloader
         public KeyBind PARAM_ReloadParam = new(
             "Reload Current Param", 

@@ -114,7 +114,6 @@ ADD: automatic naming tool: for current param, look for reference fields, name t
 
 # TODO:
 ADD BB Param Meta
-ADD BB English Row Names
 
 TitleGoods - TitleGoods
 TitleWeapons - TitleWeapons

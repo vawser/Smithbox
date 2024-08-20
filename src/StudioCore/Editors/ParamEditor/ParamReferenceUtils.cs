@@ -126,7 +126,7 @@ public static class ParamReferenceUtils
     // Supports: ER, DS3, SDT, DS1, DS1R
     public static void GameAreaParam(string activeParam, Param.Row row, string currentField)
     {
-        if (!(Smithbox.ProjectType is ProjectType.ER or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS3 or ProjectType.SDT))
+        if (!(Smithbox.ProjectType is ProjectType.ER or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS3 or ProjectType.SDT or ProjectType.BB))
             return;
 
         if (activeParam == null)
@@ -171,7 +171,7 @@ public static class ParamReferenceUtils
 
                 rowMapId = $"m{sAA}_{sBB}_{sCC}_00";
             }
-            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS3 or ProjectType.SDT)
+            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS3 or ProjectType.SDT or ProjectType.BB)
             {
                 var idStr = entityID.ToString();
 
@@ -569,17 +569,22 @@ public static class ParamReferenceUtils
 
     public static string CurrentMapID;
     public static MSB1 CurrentPeekMap_DS1;
+    public static MSB3 CurrentPeekMap_BB;
     public static MSB3 CurrentPeekMap_DS3;
     public static MSBS CurrentPeekMap_SDT;
     public static MSBE CurrentPeekMap_ER;
     public static MSB_AC6 CurrentPeekMap_AC6;
 
-    // Supports: ER
+    // Supports: DS1, DS3, SDT, ER, AC6
     public static void ItemLotParam(string activeParam, Param.Row row, string currentField)
     {
         if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
             ItemLotParam_DS1(activeParam, row, currentField);
+        }
+        if (Smithbox.ProjectType is ProjectType.BB)
+        {
+            ItemLotParam_BB(activeParam, row, currentField);
         }
         if (Smithbox.ProjectType is ProjectType.DS3)
         {
@@ -678,6 +683,97 @@ public static class ParamReferenceUtils
                 foreach (var entry in CurrentPeekMap_DS1.Events.Treasures)
                 {
                     if (entry.ItemLots[0] == row.ID)
+                    {
+                        AssetName = entry.TreasurePartName;
+                        break;
+                    }
+                }
+
+                if (AssetName == null)
+                    return;
+
+                ItemLotParam_Button(mapId, AssetName);
+            }
+        }
+    }
+
+    public static void ItemLotParam_BB(string activeParam, Param.Row row, string currentField)
+    {
+        if (activeParam == null)
+            return;
+
+        if (row == null)
+            return;
+
+        if (currentField == null)
+            return;
+
+        if (activeParam == "ItemLotParam")
+        {
+            bool show = false;
+            bool isNGPlusLot = false;
+            var mapId = "";
+
+            string rowID = row.ID.ToString();
+
+            string AA = "";
+            string BB = "";
+
+            if (rowID.Length == 7)
+            {
+                AA = $"{rowID.Substring(0, 2)}";
+                BB = $"{rowID.Substring(2, 2)}";
+            }
+
+            // NG+ lots
+            if (rowID.Length == 9)
+            {
+                AA = $"{rowID.Substring(2, 2)}";
+                BB = $"{rowID.Substring(4, 2)}";
+                isNGPlusLot = true;
+            }
+
+            if (AA == "" || BB == "")
+                return;
+
+            // For some reason they XX_01 lots are setup like this
+            if (BB == "10")
+                BB = "01";
+
+            var rowMapId = $"m{AA}_{BB}_00_00";
+
+            var mapList = MapLocator.GetFullMapList();
+
+            if (mapList.Contains(rowMapId))
+            {
+                show = true;
+                mapId = rowMapId;
+            }
+
+            if (show)
+            {
+                if (CurrentMapID != rowMapId)
+                {
+                    CurrentMapID = rowMapId;
+                    var mapPath = MapLocator.GetMapMSB(rowMapId);
+                    CurrentPeekMap_BB = MSB3.Read(mapPath.AssetPath);
+                }
+
+                if (CurrentPeekMap_BB == null)
+                    return;
+
+                string AssetName = null;
+
+                foreach (var entry in CurrentPeekMap_BB.Events.Treasures)
+                {
+                    var id = row.ID;
+
+                    if (isNGPlusLot)
+                    {
+                        id = id - 200000000;
+                    }
+
+                    if (entry.ItemLot1 == id)
                     {
                         AssetName = entry.TreasurePartName;
                         break;
@@ -1012,7 +1108,6 @@ public static class ParamReferenceUtils
         }
     }
 
-    // Supports: AC6, ER, DS3
     public static void ColorPicker(string activeParam, Param.Row row, string currentField)
     {
         if (!CFG.Current.Param_ShowColorPreview)

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<slotTypeRateA AltName="Slot Type A: Appearance Rate" Wiki="" />
+	<slotTypeRateB AltName="Slot Type B: Appearance Rate" Wiki="" />
+	<slotTypeRateC AltName="Slot Type C: Appearance Rate" Wiki="" />
+	<slotTypeRateD AltName="Slot Type D: Appearance Rate" Wiki="" />
+	<slotTypeRateE AltName="Slot Type E: Appearance Rate" Wiki="" />
+	<slotTypeRateF AltName="Slot Type F: Appearance Rate" Wiki="" />
+	<directionalIdRate_0 AltName="Directional Appearance Rate [0]" Wiki="" />
+	<directionalIdRate_1 AltName="Directional Appearance Rate [1]" Wiki="" />
+	<directionalIdRate_2 AltName="Directional Appearance Rate [2]" Wiki="" />
+	<directionalIdRate_3 AltName="Directional Appearance Rate [3]" Wiki="" />
+	<directionalIdRate_4 AltName="Directional Appearance Rate [4]" Wiki="" />
+	<directionalIdRate_5 AltName="Directional Appearance Rate [5]" Wiki="" />
+	<directionalIdRate_6 AltName="Directional Appearance Rate [6]" Wiki="" />
+	<directionalIdRate_7 AltName="Directional Appearance Rate [7]" Wiki="" />
+	<affinityCateId_0 AltName="Compatibility Category Group ID [0]" Wiki="" />
+	<affinityModifyRate_0 AltName="Compatibility Correction % [0]" Wiki="" />
+	<affinityCateId_1 AltName="Compatibility Category Group ID [1]" Wiki="" />
+	<affinityModifyRate_1 AltName="Compatibility Correction % [1]" Wiki="" />
+	<affinityCateId_2 AltName="Compatibility Category Group ID [2]" Wiki="" />
+	<affinityModifyRate_2 AltName="Compatibility Correction % [2]" Wiki="" />
+	<affinityCateId_3 AltName="Compatibility Category Group ID [3]" Wiki="" />
+	<affinityModifyRate_3 AltName="Compatibility Correction % [3]" Wiki="" />
+	<manifestRate_0 AltName="Appearance Rate by Category [0]" Wiki="" />
+	<manifestRate_1 AltName="Appearance Rate by Category [1]" Wiki="" />
+	<manifestRate_2 AltName="Appearance Rate by Category [2]" Wiki="" />
+	<manifestRate_3 AltName="Appearance Rate by Category [3]" Wiki="" />
+	<manifestRate_4 AltName="Appearance Rate by Category [4]" Wiki="" />
+	<manifestRate_5 AltName="Appearance Rate by Category [5]" Wiki="" />
+	<negativizeRate_0 AltName="Negative Effect Rate" Wiki="" />
+	<normalDistributionAve AltName="Normal Distribution: Mean Value" Wiki="" />
+	<normalDistributionSigma AltName="Normal Distribution: Standard Deviation" Wiki="" />
+  </Field>
+  <Self Wiki="Blood Gem - Drop Modification"/>
+</PARAMMETA>

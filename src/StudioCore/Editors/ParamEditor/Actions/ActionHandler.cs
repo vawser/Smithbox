@@ -800,4 +800,27 @@ public class ActionHandler
 
         public AliasValueResult() { }
     }
+
+    public bool OnlyNameEmptyRows = true;
+
+    // Automatic Name generation
+    public bool CanUseAutomaticNaming()
+    {
+        return true;
+    }
+
+    public void AutoNameHandler(bool includeReferencedRows = false)
+    {
+        var selectedParam = Smithbox.EditorHandler.ParamEditor._activeView._selection;
+
+        if (selectedParam.ActiveParamExists())
+        {
+            if (ParamBank.PrimaryBank.Params != null)
+            {
+                var activeParam = selectedParam.GetActiveParam();
+                var rows = selectedParam.GetSelectedRows();
+               
+            }
+        }
+    }
 }

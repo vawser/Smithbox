@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<rankMin AltName="Rank: Lower Limit" Wiki="" />
+	<rankMax AltName="Rank: Upper Limit" Wiki="" />
+	<normalDistributionAve AltName="Normal Distribution: Mean Value" Wiki="" />
+	<normalDistributionSigma AltName="Normal Distribution: Standard Deviation" Wiki="" />
+	<slotTypeRateA AltName="Slot Type A: Appearance Rate" Wiki="" />
+	<slotTypeRateB AltName="Slot Type B: Appearance Rate" Wiki="" />
+	<slotTypeRateC AltName="Slot Type C: Appearance Rate" Wiki="" />
+	<slotTypeRateD AltName="Slot Type D: Appearance Rate" Wiki="" />
+	<slotTypeRateE AltName="Slot Type E: Appearance Rate" Wiki="" />
+	<slotTypeRateF AltName="Slot Type F: Appearance Rate" Wiki="" />
+	<directionalIdRate_0 AltName="Directional Appearance Rate [0]" Wiki="" />
+	<directionalIdRate_1 AltName="Directional Appearance Rate [1]" Wiki="" />
+	<directionalIdRate_2 AltName="Directional Appearance Rate [2]" Wiki="" />
+	<directionalIdRate_3 AltName="Directional Appearance Rate [3]" Wiki="" />
+	<directionalIdRate_4 AltName="Directional Appearance Rate [4]" Wiki="" />
+	<directionalIdRate_5 AltName="Directional Appearance Rate [5]" Wiki="" />
+	<directionalIdRate_6 AltName="Directional Appearance Rate [6]" Wiki="" />
+	<directionalIdRate_7 AltName="Directional Appearance Rate [7]" Wiki="" />
+  </Field>
+  <Self Wiki="Blood Gem - Drops"/>
+</PARAMMETA>

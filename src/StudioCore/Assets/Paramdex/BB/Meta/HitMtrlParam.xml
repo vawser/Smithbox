@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Collision Hit Material data"/>
+  <Field>
+    <aiVolumeRate AltName="AI Volume Rate" Wiki="Normal when 1x. When set to 0, the radius of sound becomes 0 (SE and SFX are unrelated game-like parameters)." />
+    <spEffectIdOnHit0 AltName="On Hit [1] - SpEffect ID" Wiki="When the character steps on the hit material, the set special effect 0 is exhibited." Refs="SpEffectParam"/>
+    <spEffectIdOnHit1 AltName="On Hit [2] - SpEffect ID" Wiki="When the character steps on the hit material, the set special effect 1 is exhibited." Refs="SpEffectParam"/>
+    <footEffectHeightType AltName="Foot Effect Height Type" Wiki="Height to generate foot effect" Enum="HMP_FOOT_EFFECT_HEIGHT_TYPE" />
+    <footEffectDirType AltName="Foot Effect Direction Type" Wiki="Direction of foot effect" Enum="HMP_FOOT_EFFECT_DIR_TYPE" />
+    <floorHeightType AltName="Floor Height Type" Wiki="For floating items such as the surface of the water" Enum="HMP_FLOOR_HEIGHT_TYPE" />
+  </Field>
+</PARAMMETA>

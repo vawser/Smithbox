@@ -68,6 +68,15 @@ public class ToolSubMenu
         {
             CFG.Current.Param_PinGroups_ShowOnlyPinnedFields = !CFG.Current.Param_PinGroups_ShowOnlyPinnedFields;
         }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_RowNamer_Flat_Apply))
+        {
+            Handler.AutoNameHandler(false);
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_RowNamer_Cascade_Apply))
+        {
+            Handler.AutoNameHandler(true);
+        }
     }
 
     public void OnProjectChanged()
@@ -134,6 +143,35 @@ public class ToolSubMenu
             {
                 ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
             }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.BeginMenu("Editor Mode"))
+            {
+                if (ImGui.MenuItem("Toggle"))
+                {
+                    ParamEditorScreen.EditorMode = !ParamEditorScreen.EditorMode;
+                }
+                ImguiUtils.ShowHoverTooltip("Toggle Editor Mode, allowing you to edit the Param Meta within Smithbox.");
+                ImguiUtils.ShowActiveStatus(ParamEditorScreen.EditorMode);
+
+                if (ImGui.MenuItem("Save Changes"))
+                {
+                    ParamMetaData.SaveAll();
+                    ParamEditorScreen.EditorMode = false;
+                }
+                ImguiUtils.ShowHoverTooltip("Save current Param Meta changes.");
+
+                if (ImGui.MenuItem("Discard Changes"))
+                {
+
+                    ParamEditorScreen.EditorMode = false;
+                }
+                ImguiUtils.ShowHoverTooltip("Discard current Param Meta changes.");
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.Separator();
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Import Row Names"))
@@ -265,47 +303,40 @@ public class ToolSubMenu
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.BeginMenu("Row Namer"))
+            {
+                ImGui.Checkbox("Only Name Empty Rows", ref Handler.OnlyNameEmptyRows);
+
+                if (ImGui.MenuItem("Flat", Handler.CanUseAutomaticNaming()))
+                {
+                    if (Screen._activeView._selection.RowSelectionExists())
+                    {
+                        Handler.AutoNameHandler(false);
+                    }
+                }
+                ImguiUtils.ShowHoverTooltip("Automatically name the currently selected rows, ignoring any referenced rows.");
+
+                if (ImGui.MenuItem("Cascade", Handler.CanUseAutomaticNaming()))
+                {
+                    if (Screen._activeView._selection.RowSelectionExists())
+                    {
+                        Handler.AutoNameHandler(true);
+                    }
+                }
+                ImguiUtils.ShowHoverTooltip("Automatically name the currently selected rows, and include all referenced rows.");
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.Separator();
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Sort Rows"))
             {
                 if (Screen._activeView._selection.ActiveParamExists())
                 {
                     Handler.SortRowsHandler();
                 }
-            }
-            
-            /*
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Check Params for Edits", null, false, !ParamBank.PrimaryBank.IsLoadingParams && !ParamBank.VanillaBank.IsLoadingParams))
-            {
-                ParamBank.RefreshAllParamDiffCaches(true);
-            }
-            */
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("Editor Mode"))
-            {
-                if (ImGui.MenuItem("Toggle"))
-                {
-                    ParamEditorScreen.EditorMode = !ParamEditorScreen.EditorMode;
-                }
-                ImguiUtils.ShowHoverTooltip("Toggle Editor Mode, allowing you to edit the Param Meta within Smithbox.");
-                ImguiUtils.ShowActiveStatus(ParamEditorScreen.EditorMode);
-
-                if (ImGui.MenuItem("Save Changes"))
-                {
-                    ParamMetaData.SaveAll();
-                    ParamEditorScreen.EditorMode = false;
-                }
-                ImguiUtils.ShowHoverTooltip("Save current Param Meta changes.");
-
-                if (ImGui.MenuItem("Discard Changes"))
-                {
-
-                    ParamEditorScreen.EditorMode = false;
-                }
-                ImguiUtils.ShowHoverTooltip("Discard current Param Meta changes.");
-
-                ImGui.EndMenu();
             }
 
             ImGui.EndMenu();
