@@ -701,9 +701,9 @@
                 { "ID": "475", "Name": "Apply Spirit Summon Death Effect", "Description": "" },
                 
                 { "ID": "476", "Name": "Enhance Spirit Summon Attack", "Description": "" },
-                { "ID": "477", "Name": "Ancient Dragon-form (Priestess Heart) - Unknown", "Description": "" },
-                { "ID": "478", "Name": "Ancient Dragon-form (Rock Heart) - Unknown", "Description": "" },
-                { "ID": "479", "Name": "Ancient Dragon-form - Unknown", "Description": "" },
+                { "ID": "477", "Name": "Transformation - Prevent Rock Heart", "Description": "" },
+                { "ID": "478", "Name": "Transformation - Prevent Priestess Heart", "Description": "" },
+                { "ID": "479", "Name": "Transformation - Prevent Lamenter's Mask", "Description": "" },
                 { "ID": "480", "Name": "Unknown", "Description": "" },
                 { "ID": "483", "Name": "Trigger after Successful Critical Attack", "Description": "" },
                 { "ID": "484", "Name": "Unknown", "Description": "" },

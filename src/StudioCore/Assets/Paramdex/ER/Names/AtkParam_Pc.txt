@@ -3,12 +3,12 @@
 2 Impact: Oppose and Self
 3 Impact: Oppose and Friendly
 5 
-6 
-7 
+6 Flask of Crimson Tears Bullet
+7 Phantom Great Rune Bullet
 10 
 11 
-20 
-21 
+20 [AOW] Chilling Mist Bullet
+21 [AOW] Hoarfrost Stomp Bullet
 40 
 41 
 42 
@@ -44,13 +44,13 @@
 320 
 321 
 322 
-550 
+550 Base Behavior - Jump Attack Attack
 560 
 561 
-800 
+800 [Morgott] Bullet
 810 
-820 
-830 
+820 Deathbed Dress - Ally HP Restore Bullet
+830 [DLC - Great Red Bear] Bullet
 900 
 950 
 980 
@@ -516,7 +516,7 @@
 48007 Magma Shot
 48100 Gelmir's Fury
 48107 Gelmir's Fury
-48108 
+48108 Gelmir's Fury Bullet
 48200 Roiling Magma
 48201 Roiling Magma
 48202 Roiling Magma
@@ -568,15 +568,15 @@
 60101 Flame Sling
 60102 Flame Sling
 60103 Flame Sling
-60200 
-60201 
-60202 
-60205 
-60206 
-60207 
-60300 
-60305 
-60400 
+60200 Flame Fall Upon Them Bullet
+60201 Flame Fall Upon Them Bullet
+60202 Flame Fall Upon Them Bullet
+60205 Flame Fall Upon Them [Charged] Bullet
+60206 Flame Fall Upon Them Bullet
+60207 Flame Fall Upon Them Bullet
+60300 Whirl O Flame! Bullet
+60305 Whirl O Flame! [Charged] Bullet
+60400 Flame Cleanse Me Bullet
 61000 Giantsflame Take Thee
 61005 Giantsflame Take Thee
 61100 Flame of the Fell God
@@ -584,7 +584,7 @@
 61200 
 61201 
 61202 
-61203 
+61203 Burn O Flame! Bullet
 61204 
 61205 
 61206 
@@ -592,7 +592,7 @@
 62101 Black Flame
 62105 Black Flame
 62106 Black Flame [Charged]
-62200 
+62200 Surge O Flame! Bullet
 62300 Scouring Black Flame
 62305 Scouring Black Flame
 62400 Noble Presence
@@ -859,7 +859,7 @@
 90560 
 90561 
 90590 
-90591 
+90591 Parry Attack
 90600 
 90605 
 90610 
@@ -1314,9 +1314,9 @@
 301001 Dark Moon Greatsword
 301002 Dark Moon Greatsword - Charged
 301003 Dark Moon Greatsword - WA Blade
-301004 
-301005 
-301006 
+301004 Dark Moon Greatsword - Attack
+301005 Dark Moon Greatsword - Attack
+301006 Dark Moon Greatsword - Attack
 301007 
 301008 
 301009 
@@ -1370,16 +1370,16 @@
 318310 Claymore
 318315 Claymore
 318330 Claymore
-321100 
-321101 
-321105 
-321106 
-321110 
-321115 
-321300 
-321305 
-321310 
-321315 
+321100 Lizard Greatsword - Attack
+321101 Lizard Greatsword - Bullet
+321105 Lizard Greatsword - Attack
+321106 Lizard Greatsword - Bullet
+321110 Lizard Greatsword - Attack
+321115 Lizard Greatsword - Attack
+321300 Lizard Greatsword - Attack
+321305 Lizard Greatsword - Attack
+321310 Lizard Greatsword - Attack
+321315 Lizard Greatsword - Attack
 321330 
 400000 Default - Colossal Sword
 400001 Default - Colossal Sword
@@ -1491,7 +1491,7 @@
 402300 Zweihander - Troll Knight's Sword
 402305 Zweihander - Troll Knight's Sword
 403001 Ruins Greatsword
-403005 
+403005 Ruins Greatsword R2    Bullet
 403100 Ruins Greatsword
 403105 Ruins Greatsword
 403110 Ruins Greatsword
@@ -1798,38 +1798,38 @@
 602316 Godskin Stitcher
 602375 Godskin Stitcher
 602376 Godskin Stitcher
-610100 
-610105 
-610110 
-610115 
-610125 
-610126 
-610129 
-610160 
-610180 
-610300 
-610305 
-610310 
-610315 
-610325 
-610326 
-610329 
-610360 
-610380 
-610600 
-610605 
-610610 
-610630 
-610631 
-610632 
-610635 
-610700 
-610705 
-610710 
-610730 
-610731 
-610732 
-610735 
+610100 Sword Lance - Attack
+610105 Sword Lance - Attack
+610110 Sword Lance - Attack
+610115 Sword Lance - Attack
+610125 Sword Lance - Attack
+610126 Sword Lance - Attack
+610129 Sword Lance - Attack
+610160 Sword Lance - Attack
+610180 Sword Lance - Attack
+610300 Sword Lance - Attack
+610305 Sword Lance - Attack
+610310 Sword Lance - Attack
+610315 Sword Lance - Attack
+610325 Sword Lance - Attack
+610326 Sword Lance - Attack
+610329 Sword Lance - Attack
+610360 Sword Lance - Attack
+610380 Sword Lance - Attack
+610600 Sword Lance - Attack
+610605 Sword Lance - Attack
+610610 Sword Lance - Attack
+610630 Sword Lance - Attack
+610631 Sword Lance - Attack
+610632 Sword Lance - Attack
+610635 Sword Lance - Attack
+610700 Sword Lance - Attack
+610705 Sword Lance - Attack
+610710 Sword Lance - Attack
+610730 Sword Lance - Attack
+610731 Sword Lance - Attack
+610732 Sword Lance - Attack
+610735 Sword Lance - Attack
 700000 Default - Curved Sword
 700010 Default - Curved Sword
 700020 Default - Curved Sword
@@ -2031,38 +2031,38 @@
 714430 Shamshir - Scimitar
 714440 Shamshir - Scimitar
 714450 Shamshir - Scimitar
-720200 
-720205 
-720210 
-720215 
-720220 
-720225 
-720230 
-720235 
-720300 
-720305 
-720306 
-720310 
-720315 
-720316 
-720320 
-720321 
-720322 
-720323 
-720325 
-720330 
-720335 
-720340 
-720345 
-720350 
-720351 
-720355 
-720356 
-720360 
-720365 
-720375 
-720376 
-720380 
+720200 Falx / Horned Warrior's Sword - Attack
+720205 Falx / Horned Warrior's Sword - Attack
+720210 Falx / Horned Warrior's Sword - Attack
+720215 Falx / Horned Warrior's Sword - Attack
+720220 Falx / Horned Warrior's Sword - Attack
+720225 Falx / Horned Warrior's Sword - Attack
+720230 Falx / Horned Warrior's Sword - Attack
+720235 Falx / Horned Warrior's Sword - Attack
+720300 Falx / Horned Warrior's Sword - Attack
+720305 Falx / Horned Warrior's Sword - Attack
+720306 Falx / Horned Warrior's Sword - Attack
+720310 Falx / Horned Warrior's Sword - Attack
+720315 Falx / Horned Warrior's Sword - Attack
+720316 Falx / Horned Warrior's Sword - Attack
+720320 Falx / Horned Warrior's Sword - Attack
+720321 Falx / Horned Warrior's Sword - Attack
+720322 Falx / Horned Warrior's Sword - Attack
+720323 Falx / Horned Warrior's Sword - Attack
+720325 Falx / Horned Warrior's Sword - Attack
+720330 Falx / Horned Warrior's Sword - Attack
+720335 Falx / Horned Warrior's Sword - Attack
+720340 Falx / Horned Warrior's Sword - Attack
+720345 Falx / Horned Warrior's Sword - Attack
+720350 Falx / Horned Warrior's Sword - Attack
+720351 Falx / Horned Warrior's Sword - Attack
+720355 Falx / Horned Warrior's Sword - Attack
+720356 Falx / Horned Warrior's Sword - Attack
+720360 Falx / Horned Warrior's Sword - Attack
+720365 Falx / Horned Warrior's Sword - Attack
+720375 Falx / Horned Warrior's Sword - Attack
+720376 Falx / Horned Warrior's Sword - Attack
+720380 Falx / Horned Warrior's Sword - Attack
 800000 Default - Curved Greatsword
 800010 Default - Curved Greatsword
 800020 Default - Curved Greatsword
@@ -2458,118 +2458,118 @@
 1005315 Eleonora's Poleblade
 1005316 Eleonora's Poleblade
 1005317 Eleonora's Poleblade
-1010000 
-1010010 
-1010020 
-1010030 
-1010040 
-1010100 
-1010105 
-1010110 
-1010115 
-1010120 
-1010125 
-1010126 
-1010130 
-1010140 
-1010150 
-1010155 
-1010160 
-1010165 
-1010180 
-1010200 
-1010201 
-1010210 
-1010211 
-1010220 
-1010230 
-1010231 
-1010232 
-1010240 
-1010241 
-1010242 
-1010300 
-1010301 
-1010302 
-1010305 
-1010306 
-1010307 
-1010308 
-1010310 
-1010311 
-1010312 
-1010315 
-1010316 
-1010317 
-1010318 
-1010320 
-1010321 
-1010325 
-1010326 
-1010330 
-1010331 
-1010340 
-1010350 
-1010351 
-1010355 
-1010360 
-1010365 
-1010380 
-1010381 
-1010400 
-1010410 
-1010420 
-1010430 
-1010440 
-1010460 
-1010470 
-1010480 
-1010500 
+1010000 Euporia - Attack
+1010010 Euporia - Attack
+1010020 Euporia - Attack
+1010030 Euporia - Attack
+1010040 Euporia - Attack
+1010100 Euporia - Attack
+1010105 Euporia - Attack
+1010110 Euporia - Attack
+1010115 Euporia - Attack
+1010120 Euporia - Attack
+1010125 Euporia - Attack
+1010126 Euporia - Attack
+1010130 Euporia - Attack
+1010140 Euporia - Attack
+1010150 Euporia - Attack
+1010155 Euporia - Attack
+1010160 Euporia - Attack
+1010165 Euporia - Attack
+1010180 Euporia - Attack
+1010200 Euporia - Attack
+1010201 Euporia - Attack
+1010210 Euporia - Attack
+1010211 Euporia - Attack
+1010220 Euporia - Attack
+1010230 Euporia - Attack
+1010231 Euporia - Attack
+1010232 Euporia - Attack
+1010240 Euporia - Attack
+1010241 Euporia - Attack
+1010242 Euporia - Attack
+1010300 Euporia - Attack
+1010301 Euporia - Attack
+1010302 Euporia - Attack
+1010305 Euporia - Attack
+1010306 Euporia - Attack
+1010307 Euporia - Attack
+1010308 Euporia - Attack
+1010310 Euporia - Attack
+1010311 Euporia - Attack
+1010312 Euporia - Attack
+1010315 Euporia - Attack
+1010316 Euporia - Attack
+1010317 Euporia - Attack
+1010318 Euporia - Attack
+1010320 Euporia - Attack
+1010321 Euporia - Attack
+1010325 Euporia - Attack
+1010326 Euporia - Attack
+1010330 Euporia - Attack
+1010331 Euporia - Attack
+1010340 Euporia - Attack
+1010350 Euporia - Attack
+1010351 Euporia - Attack
+1010355 Euporia - Attack
+1010360 Euporia - Attack
+1010365 Euporia - Attack
+1010380 Euporia - Attack
+1010381 Euporia - Attack
+1010400 Euporia - Attack
+1010410 Euporia - Attack
+1010420 Euporia - Attack
+1010430 Euporia - Attack
+1010440 Euporia - Attack
+1010460 Euporia - Attack
+1010470 Euporia - Attack
+1010480 Euporia - Attack
+1010500 Euporia - Attack
 1010505 
-1010509 
-1010510 
+1010509 Euporia - Attack
+1010510 Euporia - Attack
 1010515 
 1010516 
 1010520 
-1010530 
+1010530 Euporia - Attack
 1010540 
-1010550 
-1010560 
-1010561 
-1010590 
-1010591 
-1010600 
-1010605 
-1010610 
-1010630 
-1010632 
-1010635 
-1010650 
-1010660 
-1010700 
-1010705 
-1010710 
-1010730 
-1010732 
-1010735 
-1010750 
-1010760 
-1010800 
-1010805 
-1010810 
-1010815 
-1010820 
-1010825 
-1010860 
-1010865 
-1010870 
-1010875 
-1010880 
-1010885 
-1010890 
-1010891 
-1010895 
-1010896 
+1010550 Euporia - Attack
+1010560 Euporia - Attack
+1010561 Euporia - Attack
+1010590 Euporia - Attack
+1010591 Euporia - Attack
+1010600 Euporia - Attack
+1010605 Euporia - Attack
+1010610 Euporia - Attack
+1010630 Euporia - Attack
+1010632 Euporia - Attack
+1010635 Euporia - Attack
+1010650 Euporia - Attack
+1010660 Euporia - Attack
+1010700 Euporia - Attack
+1010705 Euporia - Attack
+1010710 Euporia - Attack
+1010730 Euporia - Attack
+1010732 Euporia - Attack
+1010735 Euporia - Attack
+1010750 Euporia - Attack
+1010760 Euporia - Attack
+1010800 Euporia - Attack
+1010805 Euporia - Attack
+1010810 Euporia - Attack
+1010815 Euporia - Attack
+1010820 Euporia - Attack
+1010825 Euporia - Attack
+1010860 Euporia - Attack
+1010865 Euporia - Attack
+1010870 Euporia - Attack
+1010875 Euporia - Attack
+1010880 Euporia - Attack
+1010885 Euporia - Attack
+1010890 Euporia - Attack
+1010891 Euporia - Attack
+1010895 Euporia - Attack
+1010896 Euporia - Attack
 1100000 Default - Hammer
 1100010 Default - Hammer
 1100020 Default - Hammer
@@ -2935,23 +2935,23 @@
 1203885 Pickaxe
 1203890 Pickaxe
 1203895 Pickaxe
-1210100 
-1210101 
-1210105 
-1210106 
-1210107 
-1210125 
-1210126 
-1210300 
-1210301 
-1210305 
-1210306 
-1210307 
-1210325 
-1210326 
-1211180 
-1211181 
-1211380 
+1210100 Smithscript Greathammer - Bullet
+1210101 Smithscript Greathammer - Attack
+1210105 Smithscript Greathammer - Bullet
+1210106 Smithscript Greathammer - Attack
+1210107 Smithscript Greathammer - Attack
+1210125 Smithscript Greathammer - Bullet
+1210126 Smithscript Greathammer - Attack
+1210300 Smithscript Greathammer - Bullet
+1210301 Smithscript Greathammer - Attack
+1210305 Smithscript Greathammer - Bullet
+1210306 Smithscript Greathammer - Attack
+1210307 Smithscript Greathammer - Attack
+1210325 Smithscript Greathammer - Bullet
+1210326 Smithscript Greathammer - Attack
+1211180 Black Steel Greathammer - Attack
+1211181 Black Steel Greathammer - Bullet
+1211380 Black Steel Greathammer - Attack
 1300000 Default - Flail
 1300010 Default - Flail
 1300020 Default - Flail
@@ -3211,38 +3211,38 @@
 1420306 
 1420360 
 1420361 
-1421200 
-1421205 
-1421210 
-1421215 
-1421220 
-1421225 
-1421230 
-1421235 
-1421236 
-1421300 
-1421305 
-1421310 
-1421315 
-1421320 
-1421322 
-1421325 
-1421330 
-1421335 
-1421340 
-1421345 
-1421350 
-1421355 
-1421360 
-1421365 
-1421380 
-1422105 
-1422115 
-1422116 
-1422305 
-1422315 
-1422316 
-1422635 
+1421200 Death Knight's Twin Axes - Attack
+1421205 Death Knight's Twin Axes - Attack
+1421210 Death Knight's Twin Axes - Attack
+1421215 Death Knight's Twin Axes - Attack
+1421220 Death Knight's Twin Axes - Attack
+1421225 Death Knight's Twin Axes - Attack
+1421230 Death Knight's Twin Axes - Attack
+1421235 Death Knight's Twin Axes - Attack
+1421236 Death Knight's Twin Axes - Attack
+1421300 Death Knight's Twin Axes - Attack
+1421305 Death Knight's Twin Axes - Attack
+1421310 Death Knight's Twin Axes - Attack
+1421315 Death Knight's Twin Axes - Attack
+1421320 Death Knight's Twin Axes - Attack
+1421322 Death Knight's Twin Axes - Attack
+1421325 Death Knight's Twin Axes - Attack
+1421330 Death Knight's Twin Axes - Attack
+1421335 Death Knight's Twin Axes - Attack
+1421340 Death Knight's Twin Axes - Attack
+1421345 Death Knight's Twin Axes - Attack
+1421350 Death Knight's Twin Axes - Attack
+1421355 Death Knight's Twin Axes - Attack
+1421360 Death Knight's Twin Axes - Attack
+1421365 Death Knight's Twin Axes - Attack
+1421380 Death Knight's Twin Axes - Attack
+1422105 Messmer Soldier's Axe - Attack
+1422115 Messmer Soldier's Axe - Attack
+1422116 Messmer Soldier's Axe - Attack
+1422305 Messmer Soldier's Axe - Attack
+1422315 Messmer Soldier's Axe - Attack
+1422316 Messmer Soldier's Axe - Attack
+1422635 Messmer Soldier's Axe - Attack
 1422735 
 1500000 Default - Greataxe
 1500002 Default - Greataxe
@@ -3459,106 +3459,106 @@
 1504885 
 1504890 
 1504895 
-1505000 
-1505002 
-1505010 
-1505020 
-1505030 
-1505100 
-1505101 
-1505105 
-1505110 
-1505115 
-1505120 
-1505125 
-1505130 
-1505140 
-1505150 
-1505155 
-1505160 
-1505165 
-1505180 
-1505200 
-1505210 
-1505220 
-1505230 
-1505300 
-1505305 
-1505310 
-1505315 
-1505320 
-1505325 
-1505330 
-1505340 
-1505350 
-1505355 
-1505360 
-1505365 
-1505380 
-1505400 
-1505410 
-1505420 
-1505430 
-1505460 
-1505470 
-1505480 
-1505500 
-1505501 
-1505505 
-1505506 
-1505509 
-1505510 
-1505511 
-1505515 
-1505516 
-1505517 
-1505520 
-1505530 
-1505531 
-1505540 
-1505550 
-1505560 
-1505561 
-1505590 
-1505591 
-1505600 
-1505605 
-1505610 
-1505630 
-1505632 
-1505635 
-1505640 
-1505642 
-1505645 
-1505650 
-1505660 
-1505665 
-1505700 
-1505705 
-1505710 
-1505730 
-1505732 
-1505735 
-1505740 
-1505742 
-1505745 
-1505750 
-1505760 
-1505765 
-1505800 
-1505805 
-1505810 
-1505815 
-1505820 
-1505825 
-1505860 
-1505865 
-1505870 
-1505875 
-1505880 
-1505885 
-1505890 
-1505895 
+1505000 Bonny Butchering Knife - Attack
+1505002 Bonny Butchering Knife - Attack
+1505010 Bonny Butchering Knife - Attack
+1505020 Bonny Butchering Knife - Attack
+1505030 Bonny Butchering Knife - Attack
+1505100 Bonny Butchering Knife - Attack
+1505101 Bonny Butchering Knife - Attack
+1505105 Bonny Butchering Knife - Attack
+1505110 Bonny Butchering Knife - Attack
+1505115 Bonny Butchering Knife - Attack
+1505120 Bonny Butchering Knife - Attack
+1505125 Bonny Butchering Knife - Attack
+1505130 Bonny Butchering Knife - Attack
+1505140 Bonny Butchering Knife - Attack
+1505150 Bonny Butchering Knife - Attack
+1505155 Bonny Butchering Knife - Attack
+1505160 Bonny Butchering Knife - Attack
+1505165 Bonny Butchering Knife - Attack
+1505180 Bonny Butchering Knife - Attack
+1505200 Bonny Butchering Knife - Attack
+1505210 Bonny Butchering Knife - Attack
+1505220 Bonny Butchering Knife - Attack
+1505230 Bonny Butchering Knife - Attack
+1505300 Bonny Butchering Knife - Attack
+1505305 Bonny Butchering Knife - Attack
+1505310 Bonny Butchering Knife - Attack
+1505315 Bonny Butchering Knife - Attack
+1505320 Bonny Butchering Knife - Attack
+1505325 Bonny Butchering Knife - Attack
+1505330 Bonny Butchering Knife - Attack
+1505340 Bonny Butchering Knife - Attack
+1505350 Bonny Butchering Knife - Attack
+1505355 Bonny Butchering Knife - Attack
+1505360 Bonny Butchering Knife - Attack
+1505365 Bonny Butchering Knife - Attack
+1505380 Bonny Butchering Knife - Attack
+1505400 Bonny Butchering Knife - Attack
+1505410 Bonny Butchering Knife - Attack
+1505420 Bonny Butchering Knife - Attack
+1505430 Bonny Butchering Knife - Attack
+1505460 Bonny Butchering Knife - Attack
+1505470 Bonny Butchering Knife - Attack
+1505480 Bonny Butchering Knife - Attack
+1505500 Bonny Butchering Knife - Attack
+1505501 Bonny Butchering Knife - Attack
+1505505 Bonny Butchering Knife - Attack
+1505506 Bonny Butchering Knife - Attack
+1505509 Bonny Butchering Knife - Attack
+1505510 Bonny Butchering Knife - Attack
+1505511 Bonny Butchering Knife - Attack
+1505515 Bonny Butchering Knife - Attack
+1505516 Bonny Butchering Knife - Attack
+1505517 Bonny Butchering Knife - Attack
+1505520 Bonny Butchering Knife - Attack
+1505530 Bonny Butchering Knife - Attack
+1505531 Bonny Butchering Knife - Attack
+1505540 Bonny Butchering Knife - Attack
+1505550 Bonny Butchering Knife - Attack
+1505560 Bonny Butchering Knife - Attack
+1505561 Bonny Butchering Knife - Attack
+1505590 Bonny Butchering Knife - Attack
+1505591 Bonny Butchering Knife - Attack
+1505600 Bonny Butchering Knife - Attack
+1505605 Bonny Butchering Knife - Attack
+1505610 Bonny Butchering Knife - Attack
+1505630 Bonny Butchering Knife - Attack
+1505632 Bonny Butchering Knife - Attack
+1505635 Bonny Butchering Knife - Attack
+1505640 Bonny Butchering Knife - Attack
+1505642 Bonny Butchering Knife - Attack
+1505645 Bonny Butchering Knife - Attack
+1505650 Bonny Butchering Knife - Attack
+1505660 Bonny Butchering Knife - Attack
+1505665 Bonny Butchering Knife - Attack
+1505700 Bonny Butchering Knife - Attack
+1505705 Bonny Butchering Knife - Attack
+1505710 Bonny Butchering Knife - Attack
+1505730 Bonny Butchering Knife - Attack
+1505732 Bonny Butchering Knife - Attack
+1505735 Bonny Butchering Knife - Attack
+1505740 Bonny Butchering Knife - Attack
+1505742 Bonny Butchering Knife - Attack
+1505745 Bonny Butchering Knife - Attack
+1505750 Bonny Butchering Knife - Attack
+1505760 Bonny Butchering Knife - Attack
+1505765 Bonny Butchering Knife - Attack
+1505800 Bonny Butchering Knife - Attack
+1505805 Bonny Butchering Knife - Attack
+1505810 Bonny Butchering Knife - Attack
+1505815 Bonny Butchering Knife - Attack
+1505820 Bonny Butchering Knife - Attack
+1505825 Bonny Butchering Knife - Attack
+1505860 Bonny Butchering Knife - Attack
+1505865 Bonny Butchering Knife - Attack
+1505870 Bonny Butchering Knife - Attack
+1505875 Bonny Butchering Knife - Attack
+1505880 Bonny Butchering Knife - Attack
+1505885 Bonny Butchering Knife - Attack
+1505890 Bonny Butchering Knife - Attack
+1505895 Bonny Butchering Knife - Attack
 1600000 Default - Spear
 1600010 Default - Spear
 1600020 Default - Spear
@@ -3680,75 +3680,75 @@
 1605305 Partisan - Spiked Spear
 1605310 Partisan - Spiked Spear
 1605315 Partisan - Spiked Spear
-1605320 
-1605330 
-1605340 
-1606000 
-1606010 
-1606020 
-1606030 
+1605320 Partisan - Attack
+1605330 Partisan - Attack
+1605340 Partisan - Attack
+1606000 Pike - Attack
+1606010 Pike - Attack
+1606020 Pike - Attack
+1606030 Pike - Attack
 1606100 Pike
 1606105 Pike
 1606110 Pike
 1606115 Pike
-1606120 
-1606125 
-1606130 
-1606140 
-1606150 
-1606160 
-1606170 
-1606180 
-1606200 
-1606210 
-1606220 
-1606230 
+1606120 Pike - Attack
+1606125 Pike - Attack
+1606130 Pike - Attack
+1606140 Pike - Attack
+1606150 Pike - Attack
+1606160 Pike - Attack
+1606170 Pike - Attack
+1606180 Pike - Attack
+1606200 Pike - Attack
+1606210 Pike - Attack
+1606220 Pike - Attack
+1606230 Pike - Attack
 1606300 Pike
 1606305 Pike
 1606310 Pike
 1606315 Pike
-1606320 
-1606325 
-1606330 
-1606340 
-1606350 
-1606360 
-1606380 
-1606400 
-1606410 
-1606420 
-1606430 
-1606600 
-1606605 
-1606610 
-1606630 
-1606632 
-1606635 
-1606650 
-1606660 
-1606700 
-1606705 
-1606710 
-1606730 
-1606732 
-1606735 
-1606750 
-1606760 
-1606800 
-1606805 
-1606810 
-1606815 
-1606820 
-1606825 
-1606860 
-1606865 
-1606870 
-1606875 
-1606880 
-1606881 
-1606885 
-1606890 
-1606895 
+1606320 Pike - Attack
+1606325 Pike - Attack
+1606330 Pike - Attack
+1606340 Pike - Attack
+1606350 Pike - Attack
+1606360 Pike - Attack
+1606380 Pike - Attack
+1606400 Pike - Attack
+1606410 Pike - Attack
+1606420 Pike - Attack
+1606430 Pike - Attack
+1606600 Pike - Attack
+1606605 Pike - Attack
+1606610 Pike - Attack
+1606630 Pike - Attack
+1606632 Pike - Attack
+1606635 Pike - Attack
+1606650 Pike - Attack
+1606660 Pike - Attack
+1606700 Pike - Attack
+1606705 Pike - Attack
+1606710 Pike - Attack
+1606730 Pike - Attack
+1606732 Pike - Attack
+1606735 Pike - Attack
+1606750 Pike - Attack
+1606760 Pike - Attack
+1606800 Pike - Attack
+1606805 Pike - Attack
+1606810 Pike - Attack
+1606815 Pike - Attack
+1606820 Pike - Attack
+1606825 Pike - Attack
+1606860 Pike - Attack
+1606865 Pike - Attack
+1606870 Pike - Attack
+1606875 Pike - Attack
+1606880 Pike - Attack
+1606881 Pike - Attack
+1606885 Pike - Attack
+1606890 Pike - Attack
+1606895 Pike - Attack
 1611000 Cross-Naginata
 1611010 Cross-Naginata
 1611020 Cross-Naginata
@@ -3770,128 +3770,128 @@
 1612305 
 1612310 
 1612315 
-1615000 
-1615010 
-1615020 
-1615030 
-1615100 
-1615105 
-1615110 
-1615115 
-1615120 
-1615125 
-1615130 
-1615140 
-1615150 
-1615160 
-1615170 
-1615180 
-1615200 
-1615210 
-1615220 
-1615230 
-1615300 
-1615305 
-1615310 
-1615315 
-1615320 
-1615325 
-1615330 
-1615340 
-1615350 
-1615360 
-1615380 
-1615400 
-1615410 
-1615420 
-1615430 
-1615600 
-1615605 
-1615610 
-1615630 
-1615632 
-1615635 
-1615650 
-1615660 
-1615700 
-1615705 
-1615710 
-1615730 
-1615732 
-1615735 
-1615750 
-1615760 
-1615800 
-1615805 
-1615810 
-1615815 
-1615820 
-1615825 
-1615860 
-1615865 
-1615870 
-1615875 
-1615880 
-1615881 
-1615885 
-1615890 
-1615895 
-1617100 
-1617105 
-1617110 
-1617115 
-1617300 
-1617305 
-1617310 
-1617315 
-1620100 
-1620101 
-1620105 
-1620106 
-1620125 
-1620126 
-1620300 
-1620301 
-1620305 
-1620306 
-1620325 
-1620326 
-1620632 
-1620633 
-1620635 
-1620636 
-1620660 
-1620661 
-1620732 
-1620733 
-1620735 
-1620736 
-1620760 
-1620761 
-1621000 
-1621001 
-1621010 
-1621011 
-1621012 
-1621020 
-1621021 
-1621030 
-1621200 
-1621201 
-1621210 
-1621211 
-1621212 
-1621220 
-1621221 
-1621230 
-1621400 
-1621401 
-1621410 
-1621411 
-1621412 
-1621420 
-1621421 
-1621430 
+1615000 Spear - Attack
+1615010 Spear - Attack
+1615020 Spear - Attack
+1615030 Spear - Attack
+1615100 Spear - Attack
+1615105 Spear - Attack
+1615110 Spear - Attack
+1615115 Spear - Attack
+1615120 Spear - Attack
+1615125 Spear - Attack
+1615130 Spear - Attack
+1615140 Spear - Attack
+1615150 Spear - Attack
+1615160 Spear - Attack
+1615170 Spear - Attack
+1615180 Spear - Attack
+1615200 Spear - Attack
+1615210 Spear - Attack
+1615220 Spear - Attack
+1615230 Spear - Attack
+1615300 Spear - Attack
+1615305 Spear - Attack
+1615310 Spear - Attack
+1615315 Spear - Attack
+1615320 Spear - Attack
+1615325 Spear - Attack
+1615330 Spear - Attack
+1615340 Spear - Attack
+1615350 Spear - Attack
+1615360 Spear - Attack
+1615380 Spear - Attack
+1615400 Spear - Attack
+1615410 Spear - Attack
+1615420 Spear - Attack
+1615430 Spear - Attack
+1615600 Spear - Attack
+1615605 Spear - Attack
+1615610 Spear - Attack
+1615630 Spear - Attack
+1615632 Spear - Attack
+1615635 Spear - Attack
+1615650 Spear - Attack
+1615660 Spear - Attack
+1615700 Spear - Attack
+1615705 Spear - Attack
+1615710 Spear - Attack
+1615730 Spear - Attack
+1615732 Spear - Attack
+1615735 Spear - Attack
+1615750 Spear - Attack
+1615760 Spear - Attack
+1615800 Spear - Attack
+1615805 Spear - Attack
+1615810 Spear - Attack
+1615815 Spear - Attack
+1615820 Spear - Attack
+1615825 Spear - Attack
+1615860 Spear - Attack
+1615865 Spear - Attack
+1615870 Spear - Attack
+1615875 Spear - Attack
+1615880 Spear - Attack
+1615881 Spear - Attack
+1615885 Spear - Attack
+1615890 Spear - Attack
+1615895 Spear - Attack
+1617100 Spiked Spear - Attack
+1617105 Spiked Spear - Attack
+1617110 Spiked Spear - Attack
+1617115 Spiked Spear - Attack
+1617300 Spiked Spear - Attack
+1617305 Spiked Spear - Attack
+1617310 Spiked Spear - Attack
+1617315 Spiked Spear - Attack
+1620100 Smithscript Spear - Bullet
+1620101 Smithscript Spear - Bullet
+1620105 Smithscript Spear - Bullet
+1620106 Smithscript Spear - Bullet
+1620125 Smithscript Spear - Bullet
+1620126 Smithscript Spear - Bullet
+1620300 Smithscript Spear - Bullet
+1620301 Smithscript Spear - Bullet
+1620305 Smithscript Spear - Bullet
+1620306 Smithscript Spear - Bullet
+1620325 Smithscript Spear - Bullet
+1620326 Smithscript Spear - Bullet
+1620632 Smithscript Spear - Bullet
+1620633 Smithscript Spear - Bullet
+1620635 Smithscript Spear - Bullet
+1620636 Smithscript Spear - Bullet
+1620660 Smithscript Spear - Bullet
+1620661 Smithscript Spear - Bullet
+1620732 Smithscript Spear - Bullet
+1620733 Smithscript Spear - Bullet
+1620735 Smithscript Spear - Bullet
+1620736 Smithscript Spear - Bullet
+1620760 Smithscript Spear - Bullet
+1620761 Smithscript Spear - Bullet
+1621000 Swift Spear - Attack
+1621001 Swift Spear - Attack
+1621010 Swift Spear - Attack
+1621011 Swift Spear - Attack
+1621012 Swift Spear - Attack
+1621020 Swift Spear - Attack
+1621021 Swift Spear - Attack
+1621030 Swift Spear - Attack
+1621200 Swift Spear - Attack
+1621201 Swift Spear - Attack
+1621210 Swift Spear - Attack
+1621211 Swift Spear - Attack
+1621212 Swift Spear - Attack
+1621220 Swift Spear - Attack
+1621221 Swift Spear - Attack
+1621230 Swift Spear - Attack
+1621400 Swift Spear - Attack
+1621401 Swift Spear - Attack
+1621410 Swift Spear - Attack
+1621411 Swift Spear - Attack
+1621412 Swift Spear - Attack
+1621420 Swift Spear - Attack
+1621421 Swift Spear - Attack
+1621430 Swift Spear - Attack
 1700000 Lance
 1700001 Lance
 1700010 Lance
@@ -4023,16 +4023,16 @@
 1703105 Serpent-Hunter
 1703110 Serpent-Hunter
 1703115 Serpent-Hunter
-1703130 
-1703160 
-1703165 
+1703130 Serpent-Hunter - Attack
+1703160 Serpent-Hunter - Attack
+1703165 Serpent-Hunter - Attack
 1703300 Serpent-Hunter
 1703305 Serpent-Hunter
 1703310 Serpent-Hunter
 1703315 Serpent-Hunter
-1703330 
-1703360 
-1703365 
+1703330 Serpent-Hunter - Attack
+1703360 Serpent-Hunter - Attack
+1703365 Serpent-Hunter - Attack
 1707100 Treespear
 1707105 Treespear
 1707106 Treespear
@@ -4045,79 +4045,79 @@
 1707310 Treespear
 1707315 Treespear
 1707316 Treespear
-1708000 
-1708001 
-1708010 
-1708020 
-1708100 
-1708105 
-1708110 
-1708115 
-1708120 
-1708125 
-1708126 
-1708129 
-1708130 
-1708140 
-1708150 
-1708160 
-1708170 
-1708180 
-1708200 
-1708210 
-1708220 
-1708300 
-1708305 
-1708310 
-1708315 
-1708320 
-1708325 
-1708326 
-1708329 
-1708330 
-1708340 
-1708350 
-1708360 
-1708380 
-1708400 
-1708410 
-1708420 
-1708600 
-1708605 
-1708610 
-1708630 
-1708631 
-1708632 
-1708635 
-1708650 
-1708660 
-1708700 
-1708705 
-1708710 
-1708730 
-1708731 
-1708732 
-1708735 
-1708750 
-1708760 
-1708800 
-1708805 
-1708810 
-1708815 
-1708820 
-1708825 
-1708860 
-1708861 
-1708864 
-1708865 
-1708866 
-1708869 
-1708870 
-1708875 
-1708880 
-1708885 
-1708890 
-1708895 
+1708000 Lance - Attack
+1708001 Lance - Attack
+1708010 Lance - Attack
+1708020 Lance - Attack
+1708100 Lance - Attack
+1708105 Lance - Attack
+1708110 Lance - Attack
+1708115 Lance - Attack
+1708120 Lance - Attack
+1708125 Lance - Attack
+1708126 Lance - Attack
+1708129 Lance - Attack
+1708130 Lance - Attack
+1708140 Lance - Attack
+1708150 Lance - Attack
+1708160 Lance - Attack
+1708170 Lance - Attack
+1708180 Lance - Attack
+1708200 Lance - Attack
+1708210 Lance - Attack
+1708220 Lance - Attack
+1708300 Lance - Attack
+1708305 Lance - Attack
+1708310 Lance - Attack
+1708315 Lance - Attack
+1708320 Lance - Attack
+1708325 Lance - Attack
+1708326 Lance - Attack
+1708329 Lance - Attack
+1708330 Lance - Attack
+1708340 Lance - Attack
+1708350 Lance - Attack
+1708360 Lance - Attack
+1708380 Lance - Attack
+1708400 Lance - Attack
+1708410 Lance - Attack
+1708420 Lance - Attack
+1708600 Lance - Attack
+1708605 Lance - Attack
+1708610 Lance - Attack
+1708630 Lance - Attack
+1708631 Lance - Attack
+1708632 Lance - Attack
+1708635 Lance - Attack
+1708650 Lance - Attack
+1708660 Lance - Attack
+1708700 Lance - Attack
+1708705 Lance - Attack
+1708710 Lance - Attack
+1708730 Lance - Attack
+1708731 Lance - Attack
+1708732 Lance - Attack
+1708735 Lance - Attack
+1708750 Lance - Attack
+1708760 Lance - Attack
+1708800 Lance - Attack
+1708805 Lance - Attack
+1708810 Lance - Attack
+1708815 Lance - Attack
+1708820 Lance - Attack
+1708825 Lance - Attack
+1708860 Lance - Attack
+1708861 Lance - Attack
+1708864 Lance - Attack
+1708865 Lance - Attack
+1708866 Lance - Attack
+1708869 Lance - Attack
+1708870 Lance - Attack
+1708875 Lance - Attack
+1708880 Lance - Attack
+1708885 Lance - Attack
+1708890 Lance - Attack
+1708895 Lance - Attack
 1720100 
 1720101 
 1720105 
@@ -4242,44 +4242,44 @@
 1801410 Dragon Halberd
 1801420 Dragon Halberd
 1801430 Dragon Halberd
-1802000 
-1802010 
-1802020 
-1802030 
+1802000 Lucerne - Attack
+1802010 Lucerne - Attack
+1802020 Lucerne - Attack
+1802030 Lucerne - Attack
 1802100 Lucerne - Nightrider Glaive - Golden Halberd
 1802105 Lucerne - Nightrider Glaive - Golden Halberd
 1802110 Lucerne - Nightrider Glaive - Golden Halberd
 1802115 Lucerne - Nightrider Glaive - Golden Halberd
-1802120 
-1802125 
-1802130 
-1802140 
-1802150 
-1802155 
-1802160 
-1802165 
-1802180 
-1802200 
-1802210 
-1802220 
-1802230 
+1802120 Lucerne - Attack
+1802125 Lucerne - Attack
+1802130 Lucerne - Attack
+1802140 Lucerne - Attack
+1802150 Lucerne - Attack
+1802155 Lucerne - Attack
+1802160 Lucerne - Attack
+1802165 Lucerne - Attack
+1802180 Lucerne - Attack
+1802200 Lucerne - Attack
+1802210 Lucerne - Attack
+1802220 Lucerne - Attack
+1802230 Lucerne - Attack
 1802300 Lucerne - Nightrider Glaive - Golden Halberd
 1802305 Lucerne - Nightrider Glaive - Golden Halberd
 1802310 Lucerne - Nightrider Glaive - Golden Halberd
 1802315 Lucerne - Nightrider Glaive - Golden Halberd
-1802320 
-1802325 
-1802330 
-1802340 
-1802350 
-1802355 
-1802360 
-1802365 
-1802380 
-1802400 
-1802410 
-1802420 
-1802430 
+1802320 Lucerne - Attack
+1802325 Lucerne - Attack
+1802330 Lucerne - Attack
+1802340 Lucerne - Attack
+1802350 Lucerne - Attack
+1802355 Lucerne - Attack
+1802360 Lucerne - Attack
+1802365 Lucerne - Attack
+1802380 Lucerne - Attack
+1802400 Lucerne - Attack
+1802410 Lucerne - Attack
+1802420 Lucerne - Attack
+1802430 Lucerne - Attack
 1802600 Lucerne - Nightrider Glaive - Golden Halberd
 1802605 Lucerne - Nightrider Glaive - Golden Halberd
 1802610 Lucerne - Nightrider Glaive - Golden Halberd
@@ -4298,20 +4298,20 @@
 1802738 Lucerne - Nightrider Glaive - Golden Halberd
 1802750 Lucerne - Nightrider Glaive - Golden Halberd
 1802760 Lucerne - Nightrider Glaive - Golden Halberd
-1802800 
-1802805 
-1802810 
-1802815 
-1802820 
-1802825 
-1802860 
-1802865 
-1802870 
-1802875 
-1802880 
-1802885 
-1802890 
-1802895 
+1802800 Lucerne - Attack
+1802805 Lucerne - Attack
+1802810 Lucerne - Attack
+1802815 Lucerne - Attack
+1802820 Lucerne - Attack
+1802825 Lucerne - Attack
+1802860 Lucerne - Attack
+1802865 Lucerne - Attack
+1802870 Lucerne - Attack
+1802875 Lucerne - Attack
+1802880 Lucerne - Attack
+1802885 Lucerne - Attack
+1802890 Lucerne - Attack
+1802895 Lucerne - Attack
 1809000 Guardian's Swordspear
 1809010 Guardian's Swordspear
 1809020 Guardian's Swordspear
@@ -4324,22 +4324,22 @@
 1809410 Guardian's Swordspear
 1809420 Guardian's Swordspear
 1809430 Guardian's Swordspear
-1813100 
-1813105 
-1813110 
-1813115 
-1813300 
-1813305 
-1813310 
-1813315 
-1814100 
-1814105 
-1814110 
-1814115 
-1814300 
-1814305 
-1814310 
-1814315 
+1813100 Golden Halberd - Attack
+1813105 Golden Halberd - Attack
+1813110 Golden Halberd - Attack
+1813115 Golden Halberd - Attack
+1813300 Golden Halberd - Attack
+1813305 Golden Halberd - Attack
+1813310 Golden Halberd - Attack
+1813315 Golden Halberd - Attack
+1814100 Nightrider Glaive - Attack
+1814105 Nightrider Glaive - Attack
+1814110 Nightrider Glaive - Attack
+1814115 Nightrider Glaive - Attack
+1814300 Nightrider Glaive - Attack
+1814305 Nightrider Glaive - Attack
+1814310 Nightrider Glaive - Attack
+1814315 Nightrider Glaive - Attack
 1814600 
 1814605 
 1814610 
@@ -4793,44 +4793,44 @@
 2102315 Caestus - Spiked Caestus
 2102316 Caestus - Spiked Caestus
 2102317 Caestus - Spiked Caestus
-2120100 
-2120101 
-2120102 
-2120103 
-2120104 
-2120105 
-2120106 
-2120107 
-2120300 
-2120301 
-2120305 
-2120306 
-2120307 
-2120308 
-2120400 
-2120410 
-2120420 
-2120430 
-2120440 
-2120450 
-2120800 
-2120805 
-2120810 
-2120815 
-2120820 
-2120830 
-2120835 
-2120845 
-2120850 
-2120855 
-2120860 
-2120865 
-2120870 
-2120875 
-2120880 
-2120885 
-2120890 
-2120895 
+2120100 Golem Fist - Bullet
+2120101 Golem Fist - Bullet
+2120102 Golem Fist - Attack
+2120103 Golem Fist - Attack
+2120104 Golem Fist - Attack
+2120105 Golem Fist - Bullet
+2120106 Golem Fist - Bullet
+2120107 Golem Fist - Attack
+2120300 Golem Fist - Bullet
+2120301 Golem Fist - Bullet
+2120305 Golem Fist - Bullet
+2120306 Golem Fist - Bullet
+2120307 Golem Fist - Bullet
+2120308 Golem Fist - Bullet
+2120400 Golem Fist - Attack
+2120410 Golem Fist - Attack
+2120420 Golem Fist - Attack
+2120430 Golem Fist - Attack
+2120440 Golem Fist - Attack
+2120450 Golem Fist - Attack
+2120800 Golem Fist - Attack
+2120805 Golem Fist - Attack
+2120810 Golem Fist - Attack
+2120815 Golem Fist - Attack
+2120820 Golem Fist - Attack
+2120830 Golem Fist - Attack
+2120835 Golem Fist - Attack
+2120845 Golem Fist - Attack
+2120850 Golem Fist - Attack
+2120855 Golem Fist - Attack
+2120860 Golem Fist - Attack
+2120865 Golem Fist - Attack
+2120870 Golem Fist - Attack
+2120875 Golem Fist - Attack
+2120880 Golem Fist - Attack
+2120885 Golem Fist - Attack
+2120890 Golem Fist - Attack
+2120895 Golem Fist - Attack
 2121400 
 2121410 
 2121420 
@@ -4855,105 +4855,105 @@
 2121885 
 2121890 
 2121895 
-2122000 
-2122010 
-2122020 
-2122030 
-2122040 
-2122050 
-2122100 
-2122105 
-2122110 
-2122115 
-2122120 
-2122125 
-2122130 
-2122140 
-2122150 
-2122155 
-2122160 
-2122165 
-2122180 
-2122200 
-2122203 
-2122210 
-2122213 
-2122220 
-2122230 
-2122233 
-2122240 
-2122250 
-2122253 
-2122300 
-2122305 
-2122308 
-2122310 
-2122315 
-2122318 
-2122320 
-2122323 
-2122325 
-2122328 
-2122330 
-2122333 
-2122340 
-2122343 
-2122350 
-2122353 
-2122355 
-2122358 
-2122360 
-2122363 
-2122365 
-2122368 
-2122380 
-2122381 
-2122400 
-2122410 
-2122420 
-2122430 
-2122440 
-2122450 
-2122600 
-2122605 
-2122610 
-2122630 
-2122632 
-2122635 
-2122640 
-2122642 
-2122645 
-2122650 
-2122660 
-2122700 
-2122705 
-2122710 
-2122730 
-2122732 
-2122735 
-2122740 
-2122742 
-2122745 
-2122750 
-2122760 
-2122800 
-2122805 
-2122810 
-2122815 
-2122820 
-2122830 
-2122835 
-2122845 
-2122850 
-2122855 
-2122860 
-2122865 
-2122870 
-2122875 
-2122880 
-2122885 
-2122890 
-2122895 
+2122000 Pata - Attack
+2122010 Pata - Attack
+2122020 Pata - Attack
+2122030 Pata - Attack
+2122040 Pata - Attack
+2122050 Pata - Attack
+2122100 Pata - Attack
+2122105 Pata - Attack
+2122110 Pata - Attack
+2122115 Pata - Attack
+2122120 Pata - Attack
+2122125 Pata - Attack
+2122130 Pata - Attack
+2122140 Pata - Attack
+2122150 Pata - Attack
+2122155 Pata - Attack
+2122160 Pata - Attack
+2122165 Pata - Attack
+2122180 Pata - Attack
+2122200 Pata - Attack
+2122203 Pata - Attack
+2122210 Pata - Attack
+2122213 Pata - Attack
+2122220 Pata - Attack
+2122230 Pata - Attack
+2122233 Pata - Attack
+2122240 Pata - Attack
+2122250 Pata - Attack
+2122253 Pata - Attack
+2122300 Pata - Attack
+2122305 Pata - Attack
+2122308 Pata - Attack
+2122310 Pata - Attack
+2122315 Pata - Attack
+2122318 Pata - Attack
+2122320 Pata - Attack
+2122323 Pata - Attack
+2122325 Pata - Attack
+2122328 Pata - Attack
+2122330 Pata - Attack
+2122333 Pata - Attack
+2122340 Pata - Attack
+2122343 Pata - Attack
+2122350 Pata - Attack
+2122353 Pata - Attack
+2122355 Pata - Attack
+2122358 Pata - Attack
+2122360 Pata - Attack
+2122363 Pata - Attack
+2122365 Pata - Attack
+2122368 Pata - Attack
+2122380 Pata - Attack
+2122381 Pata - Attack
+2122400 Pata - Attack
+2122410 Pata - Attack
+2122420 Pata - Attack
+2122430 Pata - Attack
+2122440 Pata - Attack
+2122450 Pata - Attack
+2122600 Pata - Attack
+2122605 Pata - Attack
+2122610 Pata - Attack
+2122630 Pata - Attack
+2122632 Pata - Attack
+2122635 Pata - Attack
+2122640 Pata - Attack
+2122642 Pata - Attack
+2122645 Pata - Attack
+2122650 Pata - Attack
+2122660 Pata - Attack
+2122700 Pata - Attack
+2122705 Pata - Attack
+2122710 Pata - Attack
+2122730 Pata - Attack
+2122732 Pata - Attack
+2122735 Pata - Attack
+2122740 Pata - Attack
+2122742 Pata - Attack
+2122745 Pata - Attack
+2122750 Pata - Attack
+2122760 Pata - Attack
+2122800 Pata - Attack
+2122805 Pata - Attack
+2122810 Pata - Attack
+2122815 Pata - Attack
+2122820 Pata - Attack
+2122830 Pata - Attack
+2122835 Pata - Attack
+2122845 Pata - Attack
+2122850 Pata - Attack
+2122855 Pata - Attack
+2122860 Pata - Attack
+2122865 Pata - Attack
+2122870 Pata - Attack
+2122875 Pata - Attack
+2122880 Pata - Attack
+2122885 Pata - Attack
+2122890 Pata - Attack
+2122895 Pata - Attack
 2200000 Default - Claw
 2200010 Default - Claw
 2200020 Default - Claw
@@ -5020,7 +5020,7 @@
 2200500 Default - Claw-(Crit)
 2200501 Default - Claw-(Crit)
 2200505 Default - Claw-(Crit)
-2200506 
+2200506 Default - Claw Attack
 2200509 Default - Claw
 2200510 Default - Claw-(Crit)
 2200511 Default - Claw-(Crit)
@@ -5098,52 +5098,52 @@
 2201351 Raptor Talons
 2201360 Raptor Talons
 2201361 Raptor Talons
-2210100 
-2210101 
-2210105 
-2210106 
-2210110 
-2210111 
-2210115 
-2210116 
-2210125 
-2210126 
-2210160 
-2210161 
-2210180 
-2210181 
-2210300 
-2210301 
-2210303 
-2210304 
-2210305 
-2210306 
-2210308 
-2210309 
-2210310 
-2210311 
-2210313 
-2210314 
-2210315 
-2210316 
-2210318 
-2210319 
-2210325 
-2210326 
-2210328 
-2210329 
-2210360 
-2210361 
-2210363 
-2210364 
-2210380 
-2210381 
+2210100 Claws of Night - Bullet
+2210101 Claws of Night - Bullet
+2210105 Claws of Night - Bullet
+2210106 Claws of Night - Bullet
+2210110 Claws of Night - Bullet
+2210111 Claws of Night - Bullet
+2210115 Claws of Night - Bullet
+2210116 Claws of Night - Bullet
+2210125 Claws of Night - Bullet
+2210126 Claws of Night - Bullet
+2210160 Claws of Night - Bullet
+2210161 Claws of Night - Bullet
+2210180 Claws of Night - Bullet
+2210181 Claws of Night - Bullet
+2210300 Claws of Night - Bullet
+2210301 Claws of Night - Bullet
+2210303 Claws of Night - Bullet
+2210304 Claws of Night - Bullet
+2210305 Claws of Night - Bullet
+2210306 Claws of Night - Bullet
+2210308 Claws of Night - Bullet
+2210309 Claws of Night - Bullet
+2210310 Claws of Night - Bullet
+2210311 Claws of Night - Bullet
+2210313 Claws of Night - Bullet
+2210314 Claws of Night - Bullet
+2210315 Claws of Night - Bullet
+2210316 Claws of Night - Bullet
+2210318 Claws of Night - Bullet
+2210319 Claws of Night - Bullet
+2210325 Claws of Night - Bullet
+2210326 Claws of Night - Bullet
+2210328 Claws of Night - Bullet
+2210329 Claws of Night - Bullet
+2210360 Claws of Night - Bullet
+2210361 Claws of Night - Bullet
+2210363 Claws of Night - Bullet
+2210364 Claws of Night - Bullet
+2210380 Claws of Night - Bullet
+2210381 Claws of Night - Bullet
 2210382 
-2210383 
-2210632 
-2210633 
-2210635 
-2210636 
+2210383 Claws of Night - Bullet
+2210632 Claws of Night - Bullet
+2210633 Claws of Night - Bullet
+2210635 Claws of Night - Bullet
+2210636 Claws of Night - Bullet
 2300000 Default - Colossal Weapon
 2300001 Default - Colossal Weapon
 2300002 Default - Colossal Weapon
@@ -5285,42 +5285,42 @@
 2305730 Ghiza's Wheel
 2305732 Ghiza's Wheel
 2305735 Ghiza's Wheel
-2306100 
-2306105 
-2306110 
-2306115 
-2306300 
-2306305 
-2306310 
-2306315 
-2311105 
-2311115 
-2311160 
-2311165 
-2311180 
-2311305 
-2311315 
-2311360 
-2311365 
-2311380 
-2311890 
-2311895 
-2312105 
-2312115 
-2312305 
-2312315 
-2312635 
-2312735 
-2320100 
-2320101 
-2320105 
-2320106 
-2320110 
-2320115 
-2320300 
-2320305 
-2320310 
-2320315 
+2306100 Golem's Halberd - Attack
+2306105 Golem's Halberd - Attack
+2306110 Golem's Halberd - Attack
+2306115 Golem's Halberd - Attack
+2306300 Golem's Halberd - Attack
+2306305 Golem's Halberd - Attack
+2306310 Golem's Halberd - Attack
+2306315 Golem's Halberd - Attack
+2311105 Watchdog's Staff - Attack
+2311115 Watchdog's Staff - Attack
+2311160 Watchdog's Staff - Attack
+2311165 Watchdog's Staff - Attack
+2311180 Watchdog's Staff - Attack
+2311305 Watchdog's Staff - Attack
+2311315 Watchdog's Staff - Attack
+2311360 Watchdog's Staff - Attack
+2311365 Watchdog's Staff - Attack
+2311380 Watchdog's Staff - Attack
+2311890 Watchdog's Staff - Attack
+2311895 Watchdog's Staff - Attack
+2312105 Duelist Greataxe / Rotten Greataxe - Attack
+2312115 Duelist Greataxe / Rotten Greataxe - Attack
+2312305 Duelist Greataxe / Rotten Greataxe - Attack
+2312315 Duelist Greataxe / Rotten Greataxe - Attack
+2312635 Duelist Greataxe / Rotten Greataxe - Attack
+2312735 Duelist Greataxe / Rotten Greataxe - Attack
+2320100 Bloodfiend's Arm - Attack
+2320101 Bloodfiend's Arm - Bullet
+2320105 Bloodfiend's Arm - Attack
+2320106 Bloodfiend's Arm - Bullet
+2320110 Bloodfiend's Arm - Attack
+2320115 Bloodfiend's Arm - Attack
+2320300 Bloodfiend's Arm - Attack
+2320305 Bloodfiend's Arm - Attack
+2320310 Bloodfiend's Arm - Attack
+2320315 Bloodfiend's Arm - Attack
 2400000 Default - Torch
 2400010 Default - Torch
 2400020 Default - Torch
@@ -5722,7 +5722,7 @@
 4600420 
 4600430 
 4600440 
-4600450 
+4600450 [Troll Knight] Bullet
 4600500 
 4600510 
 4600520 
@@ -5752,8 +5752,8 @@
 5000875 Arrow [AOW] Through and Through
 5000880 Arrow
 5000885 Arrow
-5000900 
-5000901 
+5000900 Arrow - Bullet
+5000901 Arrow - Bullet
 5001300 Fire Arrow
 5001310 Fire Arrow
 5001400 Fire Arrow
@@ -5771,10 +5771,10 @@
 5001855 Fire Arrow [AOW] Rain of Arrows
 5001870 Fire Arrow [AOW] Through and Through
 5001875 Fire Arrow [AOW] Through and Through
-5001880 
-5001885 
-5001900 
-5001901 
+5001880 Fire Arrow - Bullet
+5001885 Fire Arrow - Bullet
+5001900 Fire Arrow - Bullet
+5001901 Fire Arrow - Bullet
 5002300 Serpent Arrow
 5002310 Serpent Arrow
 5002400 Serpent Arrow
@@ -5792,10 +5792,10 @@
 5002855 Serpent Arrow [AOW] Rain of Arrows
 5002870 Serpent Arrow [AOW] Through and Through
 5002875 Serpent Arrow [AOW] Through and Through
-5002880 
-5002885 
-5002900 
-5002901 
+5002880 Serpent Arrow - Bullet
+5002885 Serpent Arrow - Bullet
+5002900 Serpent Arrow - Bullet
+5002901 Serpent Arrow - Bullet
 5003300 Bone Arrow (Fletched)
 5003310 Bone Arrow (Fletched)
 5003400 Bone Arrow (Fletched)
@@ -5813,10 +5813,10 @@
 5003855 Bone Arrow (Fletched) [AOW] Rain of Arrows
 5003870 Bone Arrow (Fletched) [AOW] Through and Through
 5003875 Bone Arrow (Fletched) [AOW] Through and Through
-5003880 
-5003885 
-5003900 
-5003901 
+5003880 Bone Arrow (Fletched) - Bullet
+5003885 Bone Arrow (Fletched) - Bullet
+5003900 Bone Arrow (Fletched) - Bullet
+5003901 Bone Arrow (Fletched) - Bullet
 5004300 St. Trina's Arrow
 5004310 St. Trina's Arrow
 5004400 St. Trina's Arrow
@@ -5834,10 +5834,10 @@
 5004855 St. Trina's Arrow [AOW] Rain of Arrows
 5004870 St. Trina's Arrow [AOW] Through and Through
 5004875 St. Trina's Arrow [AOW] Through and Through
-5004880 
-5004885 
-5004900 
-5004901 
+5004880 St. Trina's Arrow - Bullet
+5004885 St. Trina's Arrow - Bullet
+5004900 St. Trina's Arrow - Bullet
+5004901 St. Trina's Arrow - Bullet
 5006300 Shattershard Arrow (Fletched)
 5006310 Shattershard Arrow (Fletched)
 5006400 Shattershard Arrow (Fletched)
@@ -5855,10 +5855,10 @@
 5006855 Shattershard Arrow (Fletched) [AOW] Rain of Arrows
 5006870 Shattershard Arrow (Fletched) [AOW] Through and Through
 5006875 Shattershard Arrow (Fletched) [AOW] Through and Through
-5006880 
-5006885 
-5006900 
-5006901 
+5006880 Shattershard Arrow (Fletched) - Bullet
+5006885 Shattershard Arrow (Fletched) - Bullet
+5006900 Shattershard Arrow (Fletched) - Bullet
+5006901 Shattershard Arrow (Fletched) - Bullet
 5008300 Rainbow Stone Arrow (Fletched)
 5008310 Rainbow Stone Arrow (Fletched)
 5008400 Rainbow Stone Arrow (Fletched)
@@ -5876,10 +5876,10 @@
 5008855 Rainbow Stone Arrow (Fletched) [AOW] Rain of Arrows
 5008870 Rainbow Stone Arrow (Fletched) [AOW] Through and Through
 5008875 Rainbow Stone Arrow (Fletched) [AOW] Through and Through
-5008880 
-5008885 
-5008900 
-5008901 
+5008880 Rainbow Stone Arrow (Fletched) - Bullet
+5008885 Rainbow Stone Arrow (Fletched) - Bullet
+5008900 Rainbow Stone Arrow (Fletched) - Bullet
+5008901 Rainbow Stone Arrow (Fletched) - Bullet
 5009300 Golden Arrow
 5009310 Golden Arrow
 5009400 Golden Arrow
@@ -5897,10 +5897,10 @@
 5009855 Golden Arrow [AOW] Rain of Arrows
 5009870 Golden Arrow [AOW] Through and Through
 5009875 Golden Arrow [AOW] Through and Through
-5009880 
-5009885 
-5009900 
-5009901 
+5009880 Golden Arrow - Bullet
+5009885 Golden Arrow - Bullet
+5009900 Golden Arrow - Bullet
+5009901 Golden Arrow - Bullet
 5010300 Dwelling Arrow
 5010310 Dwelling Arrow
 5010400 Dwelling Arrow
@@ -5918,10 +5918,10 @@
 5010855 Dwelling Arrow [AOW] Rain of Arrows
 5010870 Dwelling Arrow [AOW] Through and Through
 5010875 Dwelling Arrow [AOW] Through and Through
-5010880 
-5010885 
-5010900 
-5010901 
+5010880 Dwelling Arrow - Bullet
+5010885 Dwelling Arrow - Bullet
+5010900 Dwelling Arrow - Bullet
+5010901 Dwelling Arrow - Bullet
 5011300 Bone Arrow
 5011310 Bone Arrow
 5011400 Bone Arrow
@@ -5939,10 +5939,10 @@
 5011855 Bone Arrow [AOW] Rain of Arrows
 5011870 Bone Arrow [AOW] Through and Through
 5011875 Bone Arrow [AOW] Through and Through
-5011880 
-5011885 
-5011900 
-5011901 
+5011880 Bone Arrow - Bullet
+5011885 Bone Arrow - Bullet
+5011900 Bone Arrow - Bullet
+5011901 Bone Arrow - Bullet
 5013300 Firebone Arrow (Fletched)
 5013310 Firebone Arrow (Fletched)
 5013400 Firebone Arrow (Fletched)
@@ -5960,10 +5960,10 @@
 5013855 Firebone Arrow (Fletched) [AOW] Rain of Arrows
 5013870 Firebone Arrow (Fletched) [AOW] Through and Through
 5013875 Firebone Arrow (Fletched) [AOW] Through and Through
-5013880 
-5013885 
-5013900 
-5013901 
+5013880 Firebone Arrow (Fletched) - Bullet
+5013885 Firebone Arrow (Fletched) - Bullet
+5013900 Firebone Arrow (Fletched) - Bullet
+5013901 Firebone Arrow (Fletched) - Bullet
 5014300 Firebone Arrow
 5014310 Firebone Arrow
 5014400 Firebone Arrow
@@ -5981,10 +5981,10 @@
 5014855 Firebone Arrow [AOW] Rain of Arrows
 5014870 Firebone Arrow [AOW] Through and Through
 5014875 Firebone Arrow [AOW] Through and Through
-5014880 
-5014885 
-5014900 
-5014901 
+5014880 Firebone Arrow - Bullet
+5014885 Firebone Arrow - Bullet
+5014900 Firebone Arrow - Bullet
+5014901 Firebone Arrow - Bullet
 5015300 Poisonbone Arrow (Fletched)
 5015310 Poisonbone Arrow (Fletched)
 5015400 Poisonbone Arrow (Fletched)
@@ -6002,10 +6002,10 @@
 5015855 Poisonbone Arrow (Fletched) [AOW] Rain of Arrows
 5015870 Poisonbone Arrow (Fletched) [AOW] Through and Through
 5015875 Poisonbone Arrow (Fletched) [AOW] Through and Through
-5015880 
-5015885 
-5015900 
-5015901 
+5015880 Poisonbone Arrow (Fletched) - Bullet
+5015885 Poisonbone Arrow (Fletched) - Bullet
+5015900 Poisonbone Arrow (Fletched) - Bullet
+5015901 Poisonbone Arrow (Fletched) - Bullet
 5016300 Poisonbone Arrow
 5016310 Poisonbone Arrow
 5016400 Poisonbone Arrow
@@ -6023,10 +6023,10 @@
 5016855 Poisonbone Arrow [AOW] Rain of Arrows
 5016870 Poisonbone Arrow [AOW] Through and Through
 5016875 Poisonbone Arrow [AOW] Through and Through
-5016880 
-5016885 
-5016900 
-5016901 
+5016880 Poisonbone Arrow - Bullet
+5016885 Poisonbone Arrow - Bullet
+5016900 Poisonbone Arrow - Bullet
+5016901 Poisonbone Arrow - Bullet
 5017300 Sleepbone Arrow (Fletched)
 5017310 Sleepbone Arrow (Fletched)
 5017400 Sleepbone Arrow (Fletched)
@@ -6044,10 +6044,10 @@
 5017855 Sleepbone Arrow (Fletched) [AOW] Rain of Arrows
 5017870 Sleepbone Arrow (Fletched) [AOW] Through and Through
 5017875 Sleepbone Arrow (Fletched) [AOW] Through and Through
-5017880 
-5017885 
-5017900 
-5017901 
+5017880 Sleepbone Arrow (Fletched) - Bullet
+5017885 Sleepbone Arrow (Fletched) - Bullet
+5017900 Sleepbone Arrow (Fletched) - Bullet
+5017901 Sleepbone Arrow (Fletched) - Bullet
 5018300 Sleepbone Arrow
 5018310 Sleepbone Arrow
 5018400 Sleepbone Arrow
@@ -6065,10 +6065,10 @@
 5018855 Sleepbone Arrow [AOW] Rain of Arrows
 5018870 Sleepbone Arrow [AOW] Through and Through
 5018875 Sleepbone Arrow [AOW] Through and Through
-5018880 
-5018885 
-5018900 
-5018901 
+5018880 Sleepbone Arrow - Bullet
+5018885 Sleepbone Arrow - Bullet
+5018900 Sleepbone Arrow - Bullet
+5018901 Sleepbone Arrow - Bullet
 5019300 Stormwing Bone Arrow
 5019310 Stormwing Bone Arrow
 5019400 Stormwing Bone Arrow
@@ -6086,10 +6086,10 @@
 5019855 Stormwing Bone Arrow [AOW] Rain of Arrows
 5019870 Stormwing Bone Arrow [AOW] Through and Through
 5019875 Stormwing Bone Arrow [AOW] Through and Through
-5019880 
-5019885 
-5019900 
-5019901 
+5019880 Stormwing Bone Arrow - Bullet
+5019885 Stormwing Bone Arrow - Bullet
+5019900 Stormwing Bone Arrow - Bullet
+5019901 Stormwing Bone Arrow - Bullet
 5020300 Lightningbone Arrow (Fletched)
 5020310 Lightningbone Arrow (Fletched)
 5020400 Lightningbone Arrow (Fletched)
@@ -6107,12 +6107,12 @@
 5020855 Lightningbone Arrow (Fletched) [AOW] Rain of Arrows
 5020870 Lightningbone Arrow (Fletched) [AOW] Through and Through
 5020875 Lightningbone Arrow (Fletched) [AOW] Through and Through
-5020880 
-5020885 
+5020880 Lightningbone Arrow (Fletched) - Bullet
+5020885 Lightningbone Arrow (Fletched) - Bullet
 5020890 Lightningbone Arrow (Fletched)
 5020895 Lightningbone Arrow (Fletched)
-5020900 
-5020901 
+5020900 Lightningbone Arrow (Fletched) - Bullet
+5020901 Lightningbone Arrow (Fletched) - Bullet
 5021300 Lightningbone Arrow
 5021310 Lightningbone Arrow
 5021400 Lightningbone Arrow
@@ -6130,12 +6130,12 @@
 5021855 Lightningbone Arrow [AOW] Rain of Arrows
 5021870 Lightningbone Arrow [AOW] Through and Through
 5021875 Lightningbone Arrow [AOW] Through and Through
-5021880 
-5021885 
+5021880 Lightningbone Arrow - Bullet
+5021885 Lightningbone Arrow - Bullet
 5021890 Lightningbone Arrow
 5021895 Lightningbone Arrow
-5021900 
-5021901 
+5021900 Lightningbone Arrow - Bullet
+5021901 Lightningbone Arrow - Bullet
 5022300 Rainbow Stone Arrow
 5022310 Rainbow Stone Arrow
 5022400 Rainbow Stone Arrow
@@ -6153,10 +6153,10 @@
 5022855 Rainbow Stone Arrow [AOW] Rain of Arrows
 5022870 Rainbow Stone Arrow [AOW] Through and Through
 5022875 Rainbow Stone Arrow [AOW] Through and Through
-5022880 
-5022885 
-5022900 
-5022901 
+5022880 Rainbow Stone Arrow - Bullet
+5022885 Rainbow Stone Arrow - Bullet
+5022900 Rainbow Stone Arrow - Bullet
+5022901 Rainbow Stone Arrow - Bullet
 5023300 Shattershard Arrow
 5023310 Shattershard Arrow
 5023400 Shattershard Arrow
@@ -6174,10 +6174,10 @@
 5023855 Shattershard Arrow [AOW] Rain of Arrows
 5023870 Shattershard Arrow [AOW] Through and Through
 5023875 Shattershard Arrow [AOW] Through and Through
-5023880 
-5023885 
-5023900 
-5023901 
+5023880 Shattershard Arrow - Bullet
+5023885 Shattershard Arrow - Bullet
+5023900 Shattershard Arrow - Bullet
+5023901 Shattershard Arrow - Bullet
 5024300 Spiritflame Arrow
 5024310 Spiritflame Arrow
 5024400 Spiritflame Arrow
@@ -6195,13 +6195,13 @@
 5024855 Spiritflame Arrow [AOW] Rain of Arrows
 5024870 Spiritflame Arrow [AOW] Through and Through
 5024875 Spiritflame Arrow [AOW] Through and Through
-5024880 
-5024885 
-5024900 
-5024901 
-5025300 
-5025310 
-5025400 
+5024880 Spiritflame Arrow - Bullet
+5024885 Spiritflame Arrow - Bullet
+5024900 Spiritflame Arrow - Bullet
+5024901 Spiritflame Arrow - Bullet
+5025300 ? - Bullet
+5025310 ? - Bullet
+5025400 ? - Bullet
 5025810 ? [AOW] Mighty Shot
 5025811 ? [AOW] Mighty Shot
 5025815 ? [AOW] Mighty Shot
@@ -6233,10 +6233,10 @@
 5026855 Magicbone Arrow (Fletched) [AOW] Rain of Arrows
 5026870 Magicbone Arrow (Fletched) [AOW] Through and Through
 5026875 Magicbone Arrow (Fletched) [AOW] Through and Through
-5026880 
-5026885 
-5026900 
-5026901 
+5026880 Magicbone Arrow (Fletched) - Bullet
+5026885 Magicbone Arrow (Fletched) - Bullet
+5026900 Magicbone Arrow (Fletched) - Bullet
+5026901 Magicbone Arrow (Fletched) - Bullet
 5027300 Magicbone Arrow
 5027310 Magicbone Arrow
 5027400 Magicbone Arrow
@@ -6254,10 +6254,10 @@
 5027855 Magicbone Arrow [AOW] Rain of Arrows
 5027870 Magicbone Arrow [AOW] Through and Through
 5027875 Magicbone Arrow [AOW] Through and Through
-5027880 
-5027885 
-5027900 
-5027901 
+5027880 Magicbone Arrow - Bullet
+5027885 Magicbone Arrow - Bullet
+5027900 Magicbone Arrow - Bullet
+5027901 Magicbone Arrow - Bullet
 5028300 Haligbone Arrow (Fletched)
 5028310 Haligbone Arrow (Fletched)
 5028400 Haligbone Arrow (Fletched)
@@ -6275,10 +6275,10 @@
 5028855 Haligbone Arrow (Fletched) [AOW] Rain of Arrows
 5028870 Haligbone Arrow (Fletched) [AOW] Through and Through
 5028875 Haligbone Arrow (Fletched) [AOW] Through and Through
-5028880 
-5028885 
-5028900 
-5028901 
+5028880 Haligbone Arrow (Fletched) - Bullet
+5028885 Haligbone Arrow (Fletched) - Bullet
+5028900 Haligbone Arrow (Fletched) - Bullet
+5028901 Haligbone Arrow (Fletched) - Bullet
 5029300 Haligbone Arrow
 5029310 Haligbone Arrow
 5029400 Haligbone Arrow
@@ -6296,10 +6296,10 @@
 5029855 Haligbone Arrow [AOW] Rain of Arrows
 5029870 Haligbone Arrow [AOW] Through and Through
 5029875 Haligbone Arrow [AOW] Through and Through
-5029880 
-5029885 
-5029900 
-5029901 
+5029880 Haligbone Arrow - Bullet
+5029885 Haligbone Arrow - Bullet
+5029900 Haligbone Arrow - Bullet
+5029901 Haligbone Arrow - Bullet
 5030300 Bloodbone Arrow (Fletched)
 5030310 Bloodbone Arrow (Fletched)
 5030400 Bloodbone Arrow (Fletched)
@@ -6317,10 +6317,10 @@
 5030855 Bloodbone Arrow (Fletched) [AOW] Rain of Arrows
 5030870 Bloodbone Arrow (Fletched) [AOW] Through and Through
 5030875 Bloodbone Arrow (Fletched) [AOW] Through and Through
-5030880 
-5030885 
-5030900 
-5030901 
+5030880 Bloodbone Arrow (Fletched) - Bullet
+5030885 Bloodbone Arrow (Fletched) - Bullet
+5030900 Bloodbone Arrow (Fletched) - Bullet
+5030901 Bloodbone Arrow (Fletched) - Bullet
 5031300 Bloodbone Arrow
 5031310 Bloodbone Arrow
 5031400 Bloodbone Arrow
@@ -6338,10 +6338,10 @@
 5031855 Bloodbone Arrow [AOW] Rain of Arrows
 5031870 Bloodbone Arrow [AOW] Through and Through
 5031875 Bloodbone Arrow [AOW] Through and Through
-5031880 
-5031885 
-5031900 
-5031901 
+5031880 Bloodbone Arrow - Bullet
+5031885 Bloodbone Arrow - Bullet
+5031900 Bloodbone Arrow - Bullet
+5031901 Bloodbone Arrow - Bullet
 5032300 Coldbone Arrow (Fletched)
 5032310 Coldbone Arrow (Fletched)
 5032400 Coldbone Arrow (Fletched)
@@ -6359,10 +6359,10 @@
 5032855 Coldbone Arrow (Fletched) [AOW] Rain of Arrows
 5032870 Coldbone Arrow (Fletched) [AOW] Through and Through
 5032875 Coldbone Arrow (Fletched) [AOW] Through and Through
-5032880 
-5032885 
-5032900 
-5032901 
+5032880 Coldbone Arrow (Fletched) - Bullet
+5032885 Coldbone Arrow (Fletched) - Bullet
+5032900 Coldbone Arrow (Fletched) - Bullet
+5032901 Coldbone Arrow (Fletched) - Bullet
 5033300 Coldbone Arrow
 5033310 Coldbone Arrow
 5033400 Coldbone Arrow
@@ -6380,10 +6380,10 @@
 5033855 Coldbone Arrow [AOW] Rain of Arrows
 5033870 Coldbone Arrow [AOW] Through and Through
 5033875 Coldbone Arrow [AOW] Through and Through
-5033880 
-5033885 
-5033900 
-5033901 
+5033880 Coldbone Arrow - Bullet
+5033885 Coldbone Arrow - Bullet
+5033900 Coldbone Arrow - Bullet
+5033901 Coldbone Arrow - Bullet
 5034300 Rotbone Arrow (Fletched)
 5034310 Rotbone Arrow (Fletched)
 5034400 Rotbone Arrow (Fletched)
@@ -6401,10 +6401,10 @@
 5034855 Rotbone Arrow (Fletched) [AOW] Rain of Arrows
 5034870 Rotbone Arrow (Fletched) [AOW] Through and Through
 5034875 Rotbone Arrow (Fletched) [AOW] Through and Through
-5034880 
-5034885 
-5034900 
-5034901 
+5034880 Rotbone Arrow (Fletched) - Bullet
+5034885 Rotbone Arrow (Fletched) - Bullet
+5034900 Rotbone Arrow (Fletched) - Bullet
+5034901 Rotbone Arrow (Fletched) - Bullet
 5035300 Rotbone Arrow
 5035310 Rotbone Arrow
 5035400 Rotbone Arrow
@@ -6422,49 +6422,49 @@
 5035855 Rotbone Arrow [AOW] Rain of Arrows
 5035870 Rotbone Arrow [AOW] Through and Through
 5035875 Rotbone Arrow [AOW] Through and Through
-5035880 
-5035885 
-5035900 
-5035901 
-5036300 
-5036310 
-5036400 
-5036410 
-5036810 
-5036811 
-5036815 
-5036816 
-5036820 
-5036825 
-5036830 
-5036835 
-5036840 
-5036845 
-5036850 
-5036855 
+5035880 Rotbone Arrow - Bullet
+5035885 Rotbone Arrow - Bullet
+5035900 Rotbone Arrow - Bullet
+5035901 Rotbone Arrow - Bullet
+5036300 Piquebone Arrow (Fletched) - Bullet
+5036310 Piquebone Arrow (Fletched) - Bullet
+5036400 Piquebone Arrow (Fletched) - Bullet
+5036410 Piquebone Arrow (Fletched) - Bullet
+5036810 Piquebone Arrow (Fletched) - Bullet
+5036811 Piquebone Arrow (Fletched) - Bullet
+5036815 Piquebone Arrow (Fletched) - Bullet
+5036816 Piquebone Arrow (Fletched) - Bullet
+5036820 Piquebone Arrow (Fletched) - Bullet
+5036825 Piquebone Arrow (Fletched) - Bullet
+5036830 Piquebone Arrow (Fletched) - Bullet
+5036835 Piquebone Arrow (Fletched) - Bullet
+5036840 Piquebone Arrow (Fletched) - Bullet
+5036845 Piquebone Arrow (Fletched) - Bullet
+5036850 Piquebone Arrow (Fletched) - Bullet
+5036855 Piquebone Arrow (Fletched) - Bullet
 5036870 
 5036875 
-5036880 
-5036885 
-5037300 
-5037310 
-5037400 
-5037810 
-5037811 
-5037815 
-5037816 
-5037820 
-5037825 
-5037830 
-5037835 
-5037840 
-5037845 
-5037850 
-5037855 
+5036880 Piquebone Arrow (Fletched) - Bullet
+5036885 Piquebone Arrow (Fletched) - Bullet
+5037300 Piquebone Arrow - Bullet
+5037310 Piquebone Arrow - Bullet
+5037400 Piquebone Arrow - Bullet
+5037810 Piquebone Arrow - Bullet
+5037811 Piquebone Arrow - Bullet
+5037815 Piquebone Arrow - Bullet
+5037816 Piquebone Arrow - Bullet
+5037820 Piquebone Arrow - Bullet
+5037825 Piquebone Arrow - Bullet
+5037830 Piquebone Arrow - Bullet
+5037835 Piquebone Arrow - Bullet
+5037840 Piquebone Arrow - Bullet
+5037845 Piquebone Arrow - Bullet
+5037850 Piquebone Arrow - Bullet
+5037855 Piquebone Arrow - Bullet
 5037870 
 5037875 
-5037880 
-5037885 
+5037880 Piquebone Arrow - Bullet
+5037885 Piquebone Arrow - Bullet
 5038300 
 5038310 
 5038400 
@@ -6484,10 +6484,10 @@
 5038875 
 5038880 
 5038885 
-5040900 
-5040901 
-5041900 
-5041901 
+5040900 Piquebone Arrow (Fletched) - Bullet
+5040901 Piquebone Arrow (Fletched) - Bullet
+5041900 Piquebone Arrow - Bullet
+5041901 Piquebone Arrow - Bullet
 5099999 Rotbone Arrow
 5100300 Great Arrow
 5100850 Great Arrow [AOW] Rain of Arrows
@@ -6496,8 +6496,8 @@
 5100875 Great Arrow [AOW] Through and Through
 5100880 Great Arrow
 5100885 Great Arrow
-5100900 
-5100905 
+5100900 Great Arrow - Bullet
+5100905 Great Arrow - Bullet
 5101300 Golem's Great Arrow
 5101301 Golem's Great Arrow
 5101302 Golem's Great Arrow
@@ -6511,8 +6511,8 @@
 5101875 Golem's Great Arrow [AOW] Through and Through
 5101880 Golem's Great Arrow
 5101885 Golem's Great Arrow
-5101900 
-5101905 
+5101900 Golem's Great Arrow - Bullet
+5101905 Golem's Great Arrow - Bullet
 5102300 Golden Great Arrow
 5102301 Golden Great Arrow
 5102850 Golden Great Arrow [AOW] Rain of Arrows
@@ -6521,8 +6521,8 @@
 5102875 Golden Great Arrow [AOW] Through and Through
 5102880 Golden Great Arrow
 5102885 Golden Great Arrow
-5102900 
-5102905 
+5102900 Golden Great Arrow - Bullet
+5102905 Golden Great Arrow - Bullet
 5103300 Golem's Magic Arrow
 5103850 Golem's Magic Arrow [AOW] Rain of Arrows
 5103855 Golem's Magic Arrow [AOW] Rain of Arrows
@@ -6530,8 +6530,8 @@
 5103875 Golem's Magic Arrow [AOW] Through and Through
 5103880 Golem's Magic Arrow
 5103885 Golem's Magic Arrow
-5103900 
-5103905 
+5103900 Golem's Magic Arrow - Bullet
+5103905 Golem's Magic Arrow - Bullet
 5104300 Radahn's Spear
 5104850 Radahn's Spear [AOW] Rain of Arrows
 5104855 Radahn's Spear [AOW] Rain of Arrows
@@ -6539,8 +6539,8 @@
 5104875 Radahn's Spear [AOW] Through and Through
 5104880 Radahn's Spear
 5104885 Radahn's Spear
-5104900 
-5104905 
+5104900 Radahn's Spear - Bullet
+5104905 Radahn's Spear - Bullet
 5105300 Bone Great Arrow (Fletched)
 5105850 Bone Great Arrow (Fletched) [AOW] Rain of Arrows
 5105855 Bone Great Arrow (Fletched) [AOW] Rain of Arrows
@@ -6548,8 +6548,8 @@
 5105875 Bone Great Arrow (Fletched) [AOW] Through and Through
 5105880 Bone Great Arrow (Fletched)
 5105885 Bone Great Arrow (Fletched)
-5105900 
-5105905 
+5105900 Bone Great Arrow (Fletched) - Bullet
+5105905 Bone Great Arrow (Fletched) - Bullet
 5106300 Bone Great Arrow
 5106850 Bone Great Arrow [AOW] Rain of Arrows
 5106855 Bone Great Arrow [AOW] Rain of Arrows
@@ -6557,37 +6557,37 @@
 5106875 Bone Great Arrow [AOW] Through and Through
 5106880 Bone Great Arrow
 5106885 Bone Great Arrow
-5106900 
-5106905 
-5107300 
-5107850 
-5107855 
-5107870 
-5107875 
-5107880 
-5107885 
-5107900 
-5107905 
-5199997 
-5199998 
+5106900 Bone Great Arrow - Bullet
+5106905 Bone Great Arrow - Bullet
+5107300 Igon's Harpoon - Bullet
+5107850 Igon's Harpoon - [AOW] Rain of Arrows Bullet
+5107855 Igon's Harpoon - [AOW] Rain of Arrows Bullet
+5107870 Igon's Harpoon - [AOW] Through and Through Bullet
+5107875 Igon's Harpoon - [AOW] Through and Through Bullet
+5107880 Igon's Harpoon - Bullet
+5107885 Igon's Harpoon - Bullet
+5107900 Igon's Harpoon - Bullet
+5107905 Igon's Harpoon - Bullet
+5199997 Radahn's Spear [AOW] Rain of Arrows Bullet
+5199998 Igon's Harpoon - [AOW] Rain of Arrows Bullet
 5199999 Bone Great Arrow
 5200300 Bolt
 5200600 Bolt
 5200610 Bolt
-5200640 
-5200650 
-5200655 
+5200640 Bolt - Bullet
+5200650 Bolt - Bullet
+5200655 Bolt - Bullet
 5201300 Lightning Bolt
 5201301 Lightning Bolt
 5201600 Lightning Bolt
 5201601 Lightning Bolt
 5201610 Lightning Bolt
-5201640 
-5201641 
-5201650 
-5201651 
-5201655 
-5201656 
+5201640 Lightning Bolt - Bullet
+5201641 Lightning Bolt - Bullet
+5201650 Lightning Bolt - Bullet
+5201651 Lightning Bolt - Bullet
+5201655 Lightning Bolt - Bullet
+5201656 Lightning Bolt - Bullet
 5201690 Lightning Bolt
 5201695 Lightning Bolt
 5202300 Perfumer's Bolt
@@ -6596,135 +6596,135 @@
 5202601 Perfumer's Bolt
 5202610 Perfumer's Bolt
 5202611 Perfumer's Bolt
-5202640 
-5202641 
-5202650 
-5202651 
-5202655 
-5202656 
+5202640 Perfumer's Bolt - Bullet
+5202641 Perfumer's Bolt - Bullet
+5202650 Perfumer's Bolt - Bullet
+5202651 Perfumer's Bolt - Bullet
+5202655 Perfumer's Bolt - Bullet
+5202656 Perfumer's Bolt - Bullet
 5203300 Black-Key Bolt
 5203600 Black-Key Bolt
 5203610 Black-Key Bolt
-5203640 
-5203650 
-5203655 
+5203640 Black-Key Bolt - Bullet
+5203650 Black-Key Bolt - Bullet
+5203655 Black-Key Bolt - Bullet
 5204300 Burred Bolt
 5204600 Burred Bolt
 5204610 Burred Bolt
-5204640 
-5204650 
-5204655 
+5204640 Burred Bolt - Bullet
+5204650 Burred Bolt - Bullet
+5204655 Burred Bolt - Bullet
 5205300 Meteor Bolt
 5205600 Meteor Bolt
 5205610 Meteor Bolt
-5205640 
-5205650 
-5205655 
+5205640 Meteor Bolt - Bullet
+5205650 Meteor Bolt - Bullet
+5205655 Meteor Bolt - Bullet
 5206300 Explosive Bolt
 5206301 Explosive Bolt
 5206600 Explosive Bolt
 5206601 Explosive Bolt
 5206610 Explosive Bolt
 5206611 Explosive Bolt
-5206640 
-5206641 
-5206650 
-5206651 
-5206655 
-5206656 
+5206640 Explosive Bolt - Bullet
+5206641 Explosive Bolt - Bullet
+5206650 Explosive Bolt - Bullet
+5206651 Explosive Bolt - Bullet
+5206655 Explosive Bolt - Bullet
+5206656 Explosive Bolt - Bullet
 5207300 Golden Bolt
 5207600 Golden Bolt
 5207610 Golden Bolt
-5207640 
-5207650 
-5207655 
+5207640 Golden Bolt - Bullet
+5207650 Golden Bolt - Bullet
+5207655 Golden Bolt - Bullet
 5208300 Lordsworn's Bolt
 5208600 Lordsworn's Bolt
 5208610 Lordsworn's Bolt
-5208640 
-5208650 
-5208655 
+5208640 Lordsworn's Bolt - Bullet
+5208650 Lordsworn's Bolt - Bullet
+5208655 Lordsworn's Bolt - Bullet
 5209300 Bone Bolt
 5209600 Bone Bolt
 5209610 Bone Bolt
-5209640 
-5209650 
-5209655 
+5209640 Bone Bolt - Bullet
+5209650 Bone Bolt - Bullet
+5209655 Bone Bolt - Bullet
 5210300 Firebone Bolt
 5210600 Firebone Bolt
 5210610 Firebone Bolt
-5210640 
-5210650 
-5210655 
+5210640 Firebone Bolt - Bullet
+5210650 Firebone Bolt - Bullet
+5210655 Firebone Bolt - Bullet
 5211300 Lightningbone Bolt
 5211600 Lightningbone Bolt
 5211610 Lightningbone Bolt
-5211640 
-5211650 
-5211655 
+5211640 Lightningbone Bolt - Bullet
+5211650 Lightningbone Bolt - Bullet
+5211655 Lightningbone Bolt - Bullet
 5211690 Lightningbone Bolt
 5211695 Lightningbone Bolt
 5212300 Magicbone Bolt
 5212600 Magicbone Bolt
 5212610 Magicbone Bolt
-5212640 
-5212650 
-5212655 
+5212640 Magicbone Bolt - Bullet
+5212650 Magicbone Bolt - Bullet
+5212655 Magicbone Bolt - Bullet
 5213300 Haligbone Bolt
 5213600 Haligbone Bolt
 5213610 Haligbone Bolt
-5213640 
-5213650 
-5213655 
+5213640 Haligbone Bolt - Bullet
+5213650 Haligbone Bolt - Bullet
+5213655 Haligbone Bolt - Bullet
 5214300 Poisonbone Bolt
 5214600 Poisonbone Bolt
 5214610 Poisonbone Bolt
-5214640 
-5214650 
-5214655 
+5214640 Poisonbone Bolt - Bullet
+5214650 Poisonbone Bolt - Bullet
+5214655 Poisonbone Bolt - Bullet
 5215300 Bloodbone Bolt
 5215600 Bloodbone Bolt
 5215610 Bloodbone Bolt
-5215640 
-5215650 
-5215655 
+5215640 Bloodbone Bolt - Bullet
+5215650 Bloodbone Bolt - Bullet
+5215655 Bloodbone Bolt - Bullet
 5216300 Coldbone Bolt
 5216600 Coldbone Bolt
 5216610 Coldbone Bolt
-5216640 
-5216650 
-5216655 
+5216640 Coldbone Bolt - Bullet
+5216650 Coldbone Bolt - Bullet
+5216655 Coldbone Bolt - Bullet
 5217300 Rotbone Bolt
 5217600 Rotbone Bolt
 5217610 Rotbone Bolt
-5217640 
-5217650 
-5217655 
+5217640 Rotbone Bolt - Bullet
+5217650 Rotbone Bolt - Bullet
+5217655 Rotbone Bolt - Bullet
 5218300 Sleepbone Bolt
 5218600 Sleepbone Bolt
 5218610 Sleepbone Bolt
-5218640 
-5218650 
-5218655 
+5218640 Sleepbone Bolt - Bullet
+5218650 Sleepbone Bolt - Bullet
+5218655 Sleepbone Bolt - Bullet
 5219300 Flaming Bolt
 5219600 Flaming Bolt
 5219610 Flaming Bolt
-5219640 
-5219650 
-5219655 
-5220300 
-5220600 
-5220640 
-5220650 
-5220655 
+5219640 Flaming Bolt - Bullet
+5219650 Flaming Bolt - Bullet
+5219655 Flaming Bolt - Bullet
+5220300 Piquebone Bolt - Bullet
+5220600 Piquebone Bolt - Bullet
+5220640 Piquebone Bolt - Bullet
+5220650 Piquebone Bolt - Bullet
+5220655 Piquebone Bolt - Bullet
 5300300 Ballista Bolt
 5300700 Ballista Bolt
-5300720 
+5300720 Ballista Bolt - Bullet
 5301300 Lightning Greatbolt
 5301301 Lightning Greatbolt
 5301700 Lightning Greatbolt
 5301701 Lightning Greatbolt
-5301720 
+5301720 Lightning Greatbolt - Bullet
 5301721 
 5301790 Lightning Greatbolt
 5302300 Explosive Greatbolt
@@ -6735,133 +6735,133 @@
 5302721 
 5303300 Bone Ballista Bolt
 5303700 Bone Ballista Bolt
-5303720 
-5304300 
-5304301 
-5304700 
-5304701 
-5304720 
-5304721 
-6100000 
-6100010 
-6100020 
-6100030 
-6100100 
-6100105 
-6100110 
-6100115 
-6100120 
-6100125 
-6100127 
-6100130 
-6100140 
-6100150 
-6100160 
-6100180 
-6100200 
-6100210 
-6100220 
-6100230 
-6100300 
-6100305 
-6100310 
-6100315 
-6100320 
-6100325 
-6100327 
-6100330 
-6100340 
-6100350 
-6100360 
-6100380 
-6100400 
-6100410 
-6100420 
-6100430 
-6100460 
-6100461 
-6100470 
-6100471 
-6100480 
-6100500 
-6100509 
-6100510 
-6100530 
-6100550 
-6100560 
-6100561 
-6100590 
-6100591 
-6100600 
-6100605 
-6100610 
-6100630 
-6100632 
-6100635 
-6100650 
-6100660 
-6100700 
-6100705 
-6100710 
-6100730 
-6100732 
-6100735 
-6100750 
-6100760 
-6150000 
-6150010 
-6150020 
-6150030 
-6150100 
-6150105 
-6150110 
-6150115 
-6150120 
-6150125 
-6150126 
-6150130 
-6150140 
-6150150 
-6150160 
-6150167 
-6150173 
-6150180 
-6150200 
-6150203 
-6150210 
-6150213 
-6150220 
-6150223 
-6150230 
-6150233 
-6150300 
-6150303 
-6150305 
-6150308 
-6150310 
-6150313 
-6150315 
-6150318 
-6150320 
-6150323 
-6150325 
-6150326 
-6150328 
-6150329 
-6150330 
-6150333 
-6150340 
-6150343 
-6150350 
-6150353 
-6150360 
-6150363 
-6150380 
-6150383 
-6150400 
-6150410 
-6150420 
-6150430 
+5303720 Bone Ballista Bolt - Bullet
+5304300 Rabbath's Greatbolt - Bullet
+5304301 Rabbath's Greatbolt - Bullet
+5304700 Rabbath's Greatbolt - Bullet
+5304701 Rabbath's Greatbolt - Bullet
+5304720 Rabbath's Greatbolt - Bullet
+5304721 Rabbath's Greatbolt - Bullet
+6100000 Thrusting Shield - Default Attack
+6100010 Thrusting Shield - Default Attack
+6100020 Thrusting Shield - Default Attack
+6100030 Thrusting Shield - Default Attack
+6100100 Thrusting Shield - Default Attack
+6100105 Thrusting Shield - Default Attack
+6100110 Thrusting Shield - Default Attack
+6100115 Thrusting Shield - Default Attack
+6100120 Thrusting Shield - Default Attack
+6100125 Thrusting Shield - Default Attack
+6100127 Thrusting Shield - Default Attack
+6100130 Thrusting Shield - Default Attack
+6100140 Thrusting Shield - Default Attack
+6100150 Thrusting Shield - Default Attack
+6100160 Thrusting Shield - Default Attack
+6100180 Thrusting Shield - Default Attack
+6100200 Thrusting Shield - Default Attack
+6100210 Thrusting Shield - Default Attack
+6100220 Thrusting Shield - Default Attack
+6100230 Thrusting Shield - Default Attack
+6100300 Thrusting Shield - Default Attack
+6100305 Thrusting Shield - Default Attack
+6100310 Thrusting Shield - Default Attack
+6100315 Thrusting Shield - Default Attack
+6100320 Thrusting Shield - Default Attack
+6100325 Thrusting Shield - Default Attack
+6100327 Thrusting Shield - Default Attack
+6100330 Thrusting Shield - Default Attack
+6100340 Thrusting Shield - Default Attack
+6100350 Thrusting Shield - Default Attack
+6100360 Thrusting Shield - Default Attack
+6100380 Thrusting Shield - Default Attack
+6100400 Thrusting Shield - Default Attack
+6100410 Thrusting Shield - Default Attack
+6100420 Thrusting Shield - Default Attack
+6100430 Thrusting Shield - Default Attack
+6100460 Thrusting Shield - Default Attack
+6100461 Thrusting Shield - Default Attack
+6100470 Thrusting Shield - Default Attack
+6100471 Thrusting Shield - Default Attack
+6100480 Thrusting Shield - Default Attack
+6100500 Thrusting Shield - Default Attack
+6100509 Thrusting Shield - Default Attack
+6100510 Thrusting Shield - Default Attack
+6100530 Thrusting Shield - Default Attack
+6100550 Thrusting Shield - Default Attack
+6100560 Thrusting Shield - Default Attack
+6100561 Thrusting Shield - Default Attack
+6100590 Thrusting Shield - Default Attack
+6100591 Thrusting Shield - Default Attack
+6100600 Thrusting Shield - Default Attack
+6100605 Thrusting Shield - Default Attack
+6100610 Thrusting Shield - Default Attack
+6100630 Thrusting Shield - Default Attack
+6100632 Thrusting Shield - Default Attack
+6100635 Thrusting Shield - Default Attack
+6100650 Thrusting Shield - Default Attack
+6100660 Thrusting Shield - Default Attack
+6100700 Thrusting Shield - Default Attack
+6100705 Thrusting Shield - Default Attack
+6100710 Thrusting Shield - Default Attack
+6100730 Thrusting Shield - Default Attack
+6100732 Thrusting Shield - Default Attack
+6100735 Thrusting Shield - Default Attack
+6100750 Thrusting Shield - Default Attack
+6100760 Thrusting Shield - Default Attack
+6150000 Firespark Perfume Bottle - Bullet
+6150010 Firespark Perfume Bottle - Bullet
+6150020 Firespark Perfume Bottle - Bullet
+6150030 Firespark Perfume Bottle - Bullet
+6150100 Firespark Perfume Bottle - Bullet
+6150105 Firespark Perfume Bottle - Bullet
+6150110 Firespark Perfume Bottle - Bullet
+6150115 Firespark Perfume Bottle - Bullet
+6150120 Firespark Perfume Bottle - Bullet
+6150125 Firespark Perfume Bottle - Bullet
+6150126 Firespark Perfume Bottle - Bullet
+6150130 Firespark Perfume Bottle - Bullet
+6150140 Firespark Perfume Bottle - Bullet
+6150150 Firespark Perfume Bottle - Bullet
+6150160 Firespark Perfume Bottle - Bullet
+6150167 Firespark Perfume Bottle - Bullet
+6150173 Firespark Perfume Bottle - Bullet
+6150180 Firespark Perfume Bottle - Bullet
+6150200 Firespark Perfume Bottle - Bullet
+6150203 Firespark Perfume Bottle - Bullet
+6150210 Firespark Perfume Bottle - Bullet
+6150213 Firespark Perfume Bottle - Bullet
+6150220 Firespark Perfume Bottle - Bullet
+6150223 Firespark Perfume Bottle - Bullet
+6150230 Firespark Perfume Bottle - Bullet
+6150233 Firespark Perfume Bottle - Bullet
+6150300 Firespark Perfume Bottle - Bullet
+6150303 Firespark Perfume Bottle - Bullet
+6150305 Firespark Perfume Bottle - Bullet
+6150308 Firespark Perfume Bottle - Bullet
+6150310 Firespark Perfume Bottle - Bullet
+6150313 Firespark Perfume Bottle - Bullet
+6150315 Firespark Perfume Bottle - Bullet
+6150318 Firespark Perfume Bottle - Bullet
+6150320 Firespark Perfume Bottle - Bullet
+6150323 Firespark Perfume Bottle - Bullet
+6150325 Firespark Perfume Bottle - Bullet
+6150326 Firespark Perfume Bottle - Bullet
+6150328 Firespark Perfume Bottle - Bullet
+6150329 Firespark Perfume Bottle - Bullet
+6150330 Firespark Perfume Bottle - Bullet
+6150333 Firespark Perfume Bottle - Bullet
+6150340 Firespark Perfume Bottle - Bullet
+6150343 Firespark Perfume Bottle - Bullet
+6150350 Firespark Perfume Bottle - Bullet
+6150353 Firespark Perfume Bottle - Bullet
+6150360 Firespark Perfume Bottle - Bullet
+6150363 Firespark Perfume Bottle - Bullet
+6150380 Firespark Perfume Bottle - Bullet
+6150383 Firespark Perfume Bottle - Bullet
+6150400 Firespark Perfume Bottle - Bullet
+6150410 Firespark Perfume Bottle - Bullet
+6150420 Firespark Perfume Bottle - Bullet
+6150430 Firespark Perfume Bottle - Bullet
 6150440 
 6150450 
 6150460 
@@ -6875,85 +6875,85 @@
 6150560 
 6150590 
 6150591 
-6150600 
-6150605 
-6150610 
-6150632 
-6150635 
-6150800 
-6150803 
-6150810 
-6150813 
-6150820 
-6150823 
-6150830 
-6150833 
-6150860 
-6150863 
-6150870 
-6150873 
-6150880 
-6150883 
-6150890 
-6150893 
-6150970 
-6150975 
-6150980 
-6150985 
-6151000 
-6151010 
-6151020 
-6151030 
-6151100 
-6151105 
-6151110 
-6151115 
-6151120 
-6151125 
-6151126 
-6151130 
-6151140 
-6151150 
-6151160 
-6151167 
-6151173 
-6151180 
-6151200 
-6151203 
-6151210 
-6151213 
-6151220 
-6151223 
-6151230 
-6151233 
-6151300 
-6151303 
-6151305 
-6151308 
-6151310 
-6151313 
-6151315 
-6151318 
-6151320 
-6151323 
-6151325 
-6151326 
-6151328 
-6151329 
-6151330 
-6151333 
-6151340 
-6151343 
-6151350 
-6151353 
-6151360 
-6151363 
-6151380 
-6151383 
-6151400 
-6151410 
-6151420 
-6151430 
+6150600 Firespark Perfume Bottle - Bullet
+6150605 Firespark Perfume Bottle - Bullet
+6150610 Firespark Perfume Bottle - Bullet
+6150632 Firespark Perfume Bottle - Bullet
+6150635 Firespark Perfume Bottle - Bullet
+6150800 Firespark Perfume Bottle - Bullet
+6150803 Firespark Perfume Bottle - Bullet
+6150810 Firespark Perfume Bottle - Bullet
+6150813 Firespark Perfume Bottle - Bullet
+6150820 Firespark Perfume Bottle - Bullet
+6150823 Firespark Perfume Bottle - Bullet
+6150830 Firespark Perfume Bottle - Bullet
+6150833 Firespark Perfume Bottle - Bullet
+6150860 Firespark Perfume Bottle - Bullet
+6150863 Firespark Perfume Bottle - Bullet
+6150870 Firespark Perfume Bottle - Bullet
+6150873 Firespark Perfume Bottle - Bullet
+6150880 Firespark Perfume Bottle - Bullet
+6150883 Firespark Perfume Bottle - Bullet
+6150890 Firespark Perfume Bottle - Bullet
+6150893 Firespark Perfume Bottle - Bullet
+6150970 Firespark Perfume Bottle - Bullet
+6150975 Firespark Perfume Bottle - Bullet
+6150980 Firespark Perfume Bottle - Bullet
+6150985 Firespark Perfume Bottle - Bullet
+6151000 Firespark Perfume Bottle - Bullet
+6151010 Firespark Perfume Bottle - Bullet
+6151020 Firespark Perfume Bottle - Bullet
+6151030 Firespark Perfume Bottle - Bullet
+6151100 Firespark Perfume Bottle - Bullet
+6151105 Firespark Perfume Bottle - Bullet
+6151110 Firespark Perfume Bottle - Bullet
+6151115 Firespark Perfume Bottle - Bullet
+6151120 Firespark Perfume Bottle - Bullet
+6151125 Firespark Perfume Bottle - Bullet
+6151126 Firespark Perfume Bottle - Bullet
+6151130 Firespark Perfume Bottle - Bullet
+6151140 Firespark Perfume Bottle - Bullet
+6151150 Firespark Perfume Bottle - Bullet
+6151160 Firespark Perfume Bottle - Bullet
+6151167 Firespark Perfume Bottle - Bullet
+6151173 Firespark Perfume Bottle - Bullet
+6151180 Firespark Perfume Bottle - Bullet
+6151200 Firespark Perfume Bottle - Bullet
+6151203 Firespark Perfume Bottle - Bullet
+6151210 Firespark Perfume Bottle - Bullet
+6151213 Firespark Perfume Bottle - Bullet
+6151220 Firespark Perfume Bottle - Bullet
+6151223 Firespark Perfume Bottle - Bullet
+6151230 Firespark Perfume Bottle - Bullet
+6151233 Firespark Perfume Bottle - Bullet
+6151300 Firespark Perfume Bottle - Bullet
+6151303 Firespark Perfume Bottle - Bullet
+6151305 Firespark Perfume Bottle - Bullet
+6151308 Firespark Perfume Bottle - Bullet
+6151310 Firespark Perfume Bottle - Bullet
+6151313 Firespark Perfume Bottle - Bullet
+6151315 Firespark Perfume Bottle - Bullet
+6151318 Firespark Perfume Bottle - Bullet
+6151320 Firespark Perfume Bottle - Bullet
+6151323 Firespark Perfume Bottle - Bullet
+6151325 Firespark Perfume Bottle - Bullet
+6151326 Firespark Perfume Bottle - Bullet
+6151328 Firespark Perfume Bottle - Bullet
+6151329 Firespark Perfume Bottle - Bullet
+6151330 Firespark Perfume Bottle - Bullet
+6151333 Firespark Perfume Bottle - Bullet
+6151340 Firespark Perfume Bottle - Bullet
+6151343 Firespark Perfume Bottle - Bullet
+6151350 Firespark Perfume Bottle - Bullet
+6151353 Firespark Perfume Bottle - Bullet
+6151360 Firespark Perfume Bottle - Bullet
+6151363 Firespark Perfume Bottle - Bullet
+6151380 Firespark Perfume Bottle - Bullet
+6151383 Firespark Perfume Bottle - Bullet
+6151400 Firespark Perfume Bottle - Bullet
+6151410 Firespark Perfume Bottle - Bullet
+6151420 Firespark Perfume Bottle - Bullet
+6151430 Firespark Perfume Bottle - Bullet
 6151440 
 6151450 
 6151460 
@@ -6967,995 +6967,995 @@
 6151560 
 6151590 
 6151591 
-6151600 
-6151605 
-6151610 
-6151632 
-6151635 
-6151800 
-6151803 
-6151810 
-6151813 
-6151820 
-6151823 
-6151830 
-6151833 
-6151860 
-6151863 
-6151870 
-6151873 
-6151880 
-6151883 
-6151890 
-6151893 
-6151970 
-6151975 
-6151980 
-6151985 
-6200000 
-6200010 
-6200020 
-6200030 
-6200040 
-6200050 
-6200100 
-6200105 
-6200110 
-6200115 
-6200120 
-6200125 
-6200130 
-6200140 
-6200150 
-6200160 
-6200175 
-6200176 
-6200180 
-6200200 
-6200203 
-6200210 
-6200213 
-6200220 
-6200223 
-6200230 
-6200233 
-6200240 
-6200243 
-6200250 
-6200253 
-6200300 
-6200303 
-6200305 
-6200308 
-6200310 
-6200313 
-6200315 
-6200318 
-6200320 
-6200323 
-6200325 
-6200328 
-6200330 
-6200333 
-6200340 
-6200343 
-6200350 
-6200353 
-6200360 
-6200363 
-6200375 
-6200376 
-6200377 
-6200378 
-6200380 
-6200381 
-6200400 
-6200410 
-6200420 
-6200430 
-6200440 
-6200450 
-6200460 
-6200470 
-6200480 
-6200500 
-6200509 
-6200510 
-6200530 
-6200550 
-6200560 
-6200590 
-6200591 
-6200600 
-6200605 
-6200610 
-6200632 
-6200635 
-6200800 
-6200805 
-6200810 
-6200815 
-6200820 
-6200825 
-6200830 
-6200835 
-6200840 
-6200845 
-6200850 
-6200855 
-6200860 
-6200865 
-6200870 
-6200875 
-6200880 
-6200885 
-6200890 
-6200895 
-6300000 
-6300001 
-6300002 
-6300003 
-6300004 
-6300010 
-6300020 
-6300021 
-6300030 
-6300031 
-6300040 
-6300050 
-6300051 
-6300060 
-6300061 
-6300062 
-6300100 
-6300101 
-6300102 
-6300105 
-6300106 
-6300107 
-6300110 
-6300112 
-6300115 
-6300117 
-6300120 
-6300125 
-6300126 
-6300128 
-6300130 
-6300131 
-6300140 
-6300141 
-6300150 
-6300160 
-6300162 
-6300180 
-6300181 
-6300182 
-6300200 
-6300203 
-6300210 
-6300211 
-6300213 
-6300214 
-6300220 
-6300223 
-6300224 
-6300230 
-6300233 
-6300240 
-6300241 
-6300243 
-6300250 
-6300253 
-6300300 
-6300302 
-6300303 
-6300304 
-6300305 
-6300307 
-6300308 
-6300309 
-6300310 
-6300311 
-6300312 
-6300313 
-6300314 
-6300315 
-6300316 
-6300317 
-6300318 
-6300319 
-6300320 
-6300323 
-6300325 
-6300326 
-6300327 
-6300328 
-6300329 
-6300330 
-6300333 
-6300334 
-6300340 
-6300341 
-6300343 
-6300350 
-6300353 
-6300360 
-6300362 
-6300363 
-6300364 
-6300380 
-6300381 
-6300382 
-6300383 
-6300400 
-6300410 
-6300420 
-6300421 
-6300430 
-6300431 
-6300440 
-6300450 
-6300451 
-6300460 
-6300470 
-6300480 
-6300500 
-6300501 
-6300509 
-6300510 
-6300511 
-6300530 
-6300531 
-6300550 
-6300560 
-6300561 
-6300590 
-6300591 
-6300600 
-6300605 
-6300610 
-6300630 
-6300632 
-6300633 
-6300635 
-6300636 
-6300700 
-6300705 
-6300710 
-6300730 
-6300732 
-6300733 
-6300735 
-6300736 
-6300800 
-6300805 
-6300810 
-6300811 
-6300815 
-6300816 
-6300820 
-6300825 
-6300826 
-6300830 
-6300835 
-6300840 
-6300841 
-6300845 
-6300850 
-6300855 
-6300860 
-6300865 
-6300870 
-6300875 
-6300876 
-6300880 
-6300881 
-6300885 
-6300890 
-6300891 
-6300895 
-6300896 
-6301000 
-6301009 
-6301060 
-6301061 
-6301100 
-6301101 
-6301102 
-6301105 
-6301106 
-6301107 
-6301110 
-6301111 
-6301112 
-6301115 
-6301116 
-6301117 
-6301200 
-6301201 
-6301203 
-6301204 
-6301250 
-6301251 
-6301300 
-6301301 
-6301302 
-6301303 
-6301304 
-6301305 
-6301306 
-6301307 
-6301308 
-6301309 
-6301310 
-6301311 
-6301312 
-6301313 
-6301314 
-6301315 
-6301316 
-6301317 
-6301318 
-6301319 
-6301400 
-6301401 
-6400000 
-6400010 
-6400020 
-6400030 
-6400040 
-6400050 
-6400100 
-6400101 
-6400105 
-6400106 
-6400110 
-6400115 
-6400116 
-6400120 
-6400125 
-6400126 
-6400130 
-6400140 
-6400150 
-6400160 
-6400161 
-6400180 
-6400181 
-6400200 
-6400203 
-6400210 
-6400213 
-6400220 
-6400223 
-6400230 
-6400240 
-6400243 
-6400250 
-6400253 
-6400300 
-6400303 
-6400305 
-6400308 
-6400310 
-6400313 
-6400315 
-6400316 
-6400318 
-6400320 
-6400323 
-6400325 
-6400326 
-6400327 
-6400328 
-6400330 
-6400333 
-6400340 
-6400343 
-6400350 
-6400353 
-6400360 
-6400363 
-6400380 
-6400381 
-6400382 
-6400383 
-6400400 
-6400410 
-6400420 
-6400430 
-6400440 
-6400450 
-6400460 
-6400470 
-6400480 
-6400500 
-6400501 
-6400509 
-6400510 
-6400511 
-6400530 
-6400550 
-6400560 
-6400561 
-6400590 
-6400591 
-6400600 
-6400605 
-6400610 
-6400630 
-6400632 
-6400635 
-6400700 
-6400705 
-6400710 
-6400730 
-6400732 
-6400735 
-6400800 
-6400805 
-6400810 
-6400815 
-6400820 
-6400825 
-6400830 
-6400840 
-6400845 
-6400850 
-6400855 
-6400860 
-6400865 
-6400870 
-6400875 
-6400880 
-6400885 
-6400890 
-6400895 
-6401100 
-6401105 
-6401110 
-6401115 
-6401125 
-6401160 
+6151600 Firespark Perfume Bottle - Bullet
+6151605 Firespark Perfume Bottle - Bullet
+6151610 Firespark Perfume Bottle - Bullet
+6151632 Firespark Perfume Bottle - Bullet
+6151635 Firespark Perfume Bottle - Bullet
+6151800 Firespark Perfume Bottle - Bullet
+6151803 Firespark Perfume Bottle - Bullet
+6151810 Firespark Perfume Bottle - Bullet
+6151813 Firespark Perfume Bottle - Bullet
+6151820 Firespark Perfume Bottle - Bullet
+6151823 Firespark Perfume Bottle - Bullet
+6151830 Firespark Perfume Bottle - Bullet
+6151833 Firespark Perfume Bottle - Bullet
+6151860 Firespark Perfume Bottle - Bullet
+6151863 Firespark Perfume Bottle - Bullet
+6151870 Firespark Perfume Bottle - Bullet
+6151873 Firespark Perfume Bottle - Bullet
+6151880 Firespark Perfume Bottle - Bullet
+6151883 Firespark Perfume Bottle - Bullet
+6151890 Firespark Perfume Bottle - Bullet
+6151893 Firespark Perfume Bottle - Bullet
+6151970 Firespark Perfume Bottle - Bullet
+6151975 Firespark Perfume Bottle - Bullet
+6151980 Firespark Perfume Bottle - Bullet
+6151985 Firespark Perfume Bottle - Bullet
+6200000 Throwing Blade - Default Bullet
+6200010 Throwing Blade - Default Bullet
+6200020 Throwing Blade - Default Bullet
+6200030 Throwing Blade - Default Bullet
+6200040 Throwing Blade - Default Bullet
+6200050 Throwing Blade - Default Bullet
+6200100 Throwing Blade - Default Bullet
+6200105 Throwing Blade - Default Bullet
+6200110 Throwing Blade - Default Bullet
+6200115 Throwing Blade - Default Bullet
+6200120 Throwing Blade - Default Bullet
+6200125 Throwing Blade - Default Bullet
+6200130 Throwing Blade - Default Bullet
+6200140 Throwing Blade - Default Bullet
+6200150 Throwing Blade - Default Bullet
+6200160 Throwing Blade - Default Bullet
+6200175 Throwing Blade - Default Bullet
+6200176 Throwing Blade - Default Bullet
+6200180 Throwing Blade - Default Bullet
+6200200 Throwing Blade - Default Bullet
+6200203 Throwing Blade - Default Bullet
+6200210 Throwing Blade - Default Bullet
+6200213 Throwing Blade - Default Bullet
+6200220 Throwing Blade - Default Bullet
+6200223 Throwing Blade - Default Bullet
+6200230 Throwing Blade - Default Bullet
+6200233 Throwing Blade - Default Bullet
+6200240 Throwing Blade - Default Bullet
+6200243 Throwing Blade - Default Bullet
+6200250 Throwing Blade - Default Bullet
+6200253 Throwing Blade - Default Bullet
+6200300 Throwing Blade - Default Bullet
+6200303 Throwing Blade - Default Bullet
+6200305 Throwing Blade - Default Bullet
+6200308 Throwing Blade - Default Bullet
+6200310 Throwing Blade - Default Bullet
+6200313 Throwing Blade - Default Bullet
+6200315 Throwing Blade - Default Bullet
+6200318 Throwing Blade - Default Bullet
+6200320 Throwing Blade - Default Bullet
+6200323 Throwing Blade - Default Bullet
+6200325 Throwing Blade - Default Bullet
+6200328 Throwing Blade - Default Bullet
+6200330 Throwing Blade - Default Bullet
+6200333 Throwing Blade - Default Bullet
+6200340 Throwing Blade - Default Bullet
+6200343 Throwing Blade - Default Bullet
+6200350 Throwing Blade - Default Bullet
+6200353 Throwing Blade - Default Bullet
+6200360 Throwing Blade - Default Bullet
+6200363 Throwing Blade - Default Bullet
+6200375 Throwing Blade - Default Bullet
+6200376 Throwing Blade - Default Bullet
+6200377 Throwing Blade - Default Bullet
+6200378 Throwing Blade - Default Bullet
+6200380 Throwing Blade - Default Bullet
+6200381 Throwing Blade - Default Bullet
+6200400 Throwing Blade - Default Bullet
+6200410 Throwing Blade - Default Bullet
+6200420 Throwing Blade - Default Bullet
+6200430 Throwing Blade - Default Bullet
+6200440 Throwing Blade - Default Bullet
+6200450 Throwing Blade - Default Bullet
+6200460 Throwing Blade - Default Attack
+6200470 Throwing Blade - Default Attack
+6200480 Throwing Blade - Default Attack
+6200500 Throwing Blade - Default Attack
+6200509 Throwing Blade - Default Attack
+6200510 Throwing Blade - Default Attack
+6200530 Throwing Blade - Default Attack
+6200550 Throwing Blade - Default Attack
+6200560 Throwing Blade - Default Attack
+6200590 Throwing Blade - Default Attack
+6200591 Throwing Blade - Default Attack
+6200600 Throwing Blade - Default Bullet
+6200605 Throwing Blade - Default Bullet
+6200610 Throwing Blade - Default Bullet
+6200632 Throwing Blade - Default Bullet
+6200635 Throwing Blade - Default Bullet
+6200800 Throwing Blade - Default Bullet
+6200805 Throwing Blade - Default Bullet
+6200810 Throwing Blade - Default Bullet
+6200815 Throwing Blade - Default Bullet
+6200820 Throwing Blade - Default Bullet
+6200825 Throwing Blade - Default Bullet
+6200830 Throwing Blade - Default Bullet
+6200835 Throwing Blade - Default Bullet
+6200840 Throwing Blade - Default Bullet
+6200845 Throwing Blade - Default Bullet
+6200850 Throwing Blade - Default Bullet
+6200855 Throwing Blade - Default Bullet
+6200860 Throwing Blade - Default Bullet
+6200865 Throwing Blade - Default Bullet
+6200870 Throwing Blade - Default Bullet
+6200875 Throwing Blade - Default Bullet
+6200880 Throwing Blade - Default Bullet
+6200885 Throwing Blade - Default Bullet
+6200890 Throwing Blade - Default Bullet
+6200895 Throwing Blade - Default Bullet
+6300000 Hand-to-Hand - Default Attack
+6300001 Hand-to-Hand - Default Bullet
+6300002 Hand-to-Hand - Default Bullet
+6300003 Hand-to-Hand - Default Bullet
+6300004 Hand-to-Hand - Default Bullet
+6300010 Hand-to-Hand - Default Attack
+6300020 Hand-to-Hand - Default Attack
+6300021 Hand-to-Hand - Default Attack
+6300030 Hand-to-Hand - Default Attack
+6300031 Hand-to-Hand - Default Attack
+6300040 Hand-to-Hand - Default Attack
+6300050 Hand-to-Hand - Default Attack
+6300051 Hand-to-Hand - Default Attack
+6300060 Hand-to-Hand - Default Bullet
+6300061 Hand-to-Hand - Default Bullet
+6300062 Hand-to-Hand - Default Bullet
+6300100 Hand-to-Hand - Default Attack
+6300101 Hand-to-Hand - Default Attack
+6300102 Hand-to-Hand - Default Bullet
+6300105 Hand-to-Hand - Default Attack
+6300106 Hand-to-Hand - Default Attack
+6300107 Hand-to-Hand - Default Bullet
+6300110 Hand-to-Hand - Default Attack
+6300112 Hand-to-Hand - Default Bullet
+6300115 Hand-to-Hand - Default Attack
+6300117 Hand-to-Hand - Default Bullet
+6300120 Hand-to-Hand - Default Attack
+6300125 Hand-to-Hand - Default Attack
+6300126 Hand-to-Hand - Default Attack
+6300128 Hand-to-Hand - Default Bullet
+6300130 Hand-to-Hand - Default Attack
+6300131 Hand-to-Hand - Default Attack
+6300140 Hand-to-Hand - Default Attack
+6300141 Hand-to-Hand - Default Attack
+6300150 Hand-to-Hand - Default Attack
+6300160 Hand-to-Hand - Default Attack
+6300162 Hand-to-Hand - Default Bullet
+6300180 Hand-to-Hand - Default Attack
+6300181 Hand-to-Hand - Default Attack
+6300182 Hand-to-Hand - Default Bullet
+6300200 Hand-to-Hand - Default Attack
+6300203 Hand-to-Hand - Default Attack
+6300210 Hand-to-Hand - Default Attack
+6300211 Hand-to-Hand - Default Attack
+6300213 Hand-to-Hand - Default Attack
+6300214 Hand-to-Hand - Default Attack
+6300220 Hand-to-Hand - Default Attack
+6300223 Hand-to-Hand - Default Attack
+6300224 Hand-to-Hand - Default Attack
+6300230 Hand-to-Hand - Default Attack
+6300233 Hand-to-Hand - Default Attack
+6300240 Hand-to-Hand - Default Attack
+6300241 Hand-to-Hand - Default Attack
+6300243 Hand-to-Hand - Default Attack
+6300250 Hand-to-Hand - Default Attack
+6300253 Hand-to-Hand - Default Attack
+6300300 Hand-to-Hand - Default Attack
+6300302 Hand-to-Hand - Default Bullet
+6300303 Hand-to-Hand - Default Attack
+6300304 Hand-to-Hand - Default Attack
+6300305 Hand-to-Hand - Default Attack
+6300307 Hand-to-Hand - Default Bullet
+6300308 Hand-to-Hand - Default Attack
+6300309 Hand-to-Hand - Default Attack
+6300310 Hand-to-Hand - Default Attack
+6300311 Hand-to-Hand - Default Attack
+6300312 Hand-to-Hand - Default Bullet
+6300313 Hand-to-Hand - Default Attack
+6300314 Hand-to-Hand - Default Attack
+6300315 Hand-to-Hand - Default Attack
+6300316 Hand-to-Hand - Default Attack
+6300317 Hand-to-Hand - Default Bullet
+6300318 Hand-to-Hand - Default Attack
+6300319 Hand-to-Hand - Default Attack
+6300320 Hand-to-Hand - Default Attack
+6300323 Hand-to-Hand - Default Attack
+6300325 Hand-to-Hand - Default Attack
+6300326 Hand-to-Hand - Default Attack
+6300327 Hand-to-Hand - Default Bullet
+6300328 Hand-to-Hand - Default Attack
+6300329 Hand-to-Hand - Default Attack
+6300330 Hand-to-Hand - Default Attack
+6300333 Hand-to-Hand - Default Attack
+6300334 Hand-to-Hand - Default Attack
+6300340 Hand-to-Hand - Default Attack
+6300341 Hand-to-Hand - Default Attack
+6300343 Hand-to-Hand - Default Attack
+6300350 Hand-to-Hand - Default Attack
+6300353 Hand-to-Hand - Default Attack
+6300360 Hand-to-Hand - Default Attack
+6300362 Hand-to-Hand - Default Bullet
+6300363 Hand-to-Hand - Default Attack
+6300364 Hand-to-Hand - Default Bullet
+6300380 Hand-to-Hand - Default Attack
+6300381 Hand-to-Hand - Default Attack
+6300382 Hand-to-Hand - Default Bullet
+6300383 Hand-to-Hand - Default Bullet
+6300400 Hand-to-Hand - Default Attack
+6300410 Hand-to-Hand - Default Attack
+6300420 Hand-to-Hand - Default Attack
+6300421 Hand-to-Hand - Default Attack
+6300430 Hand-to-Hand - Default Attack
+6300431 Hand-to-Hand - Default Attack
+6300440 Hand-to-Hand - Default Attack
+6300450 Hand-to-Hand - Default Attack
+6300451 Hand-to-Hand - Default Attack
+6300460 Hand-to-Hand - Default Attack
+6300470 Hand-to-Hand - Default Attack
+6300480 Hand-to-Hand - Default Attack
+6300500 Hand-to-Hand - Default Attack
+6300501 Hand-to-Hand - Default Attack
+6300509 Hand-to-Hand - Default Attack
+6300510 Hand-to-Hand - Default Attack
+6300511 Hand-to-Hand - Default Attack
+6300530 Hand-to-Hand - Default Attack
+6300531 Hand-to-Hand - Default Attack
+6300550 Hand-to-Hand - Default Attack
+6300560 Hand-to-Hand - Default Attack
+6300561 Hand-to-Hand - Default Attack
+6300590 Hand-to-Hand - Default Attack
+6300591 Hand-to-Hand - Default Attack
+6300600 Hand-to-Hand - Default Attack
+6300605 Hand-to-Hand - Default Attack
+6300610 Hand-to-Hand - Default Attack
+6300630 Hand-to-Hand - Default Attack
+6300632 Hand-to-Hand - Default Attack
+6300633 Hand-to-Hand - Default Bullet
+6300635 Hand-to-Hand - Default Attack
+6300636 Hand-to-Hand - Default Bullet
+6300700 Hand-to-Hand - Default Attack
+6300705 Hand-to-Hand - Default Attack
+6300710 Hand-to-Hand - Default Attack
+6300730 Hand-to-Hand - Default Attack
+6300732 Hand-to-Hand - Default Attack
+6300733 Hand-to-Hand - Default Bullet
+6300735 Hand-to-Hand - Default Attack
+6300736 Hand-to-Hand - Default Bullet
+6300800 Hand-to-Hand - Default Attack
+6300805 Hand-to-Hand - Default Attack
+6300810 Hand-to-Hand - Default Attack
+6300811 Hand-to-Hand - Default Attack
+6300815 Hand-to-Hand - Default Attack
+6300816 Hand-to-Hand - Default Attack
+6300820 Hand-to-Hand - Default Attack
+6300825 Hand-to-Hand - Default Attack
+6300826 Hand-to-Hand - Default Attack
+6300830 Hand-to-Hand - Default Attack
+6300835 Hand-to-Hand - Default Attack
+6300840 Hand-to-Hand - Default Attack
+6300841 Hand-to-Hand - Default Attack
+6300845 Hand-to-Hand - Default Attack
+6300850 Hand-to-Hand - Default Attack
+6300855 Hand-to-Hand - Default Attack
+6300860 Hand-to-Hand - Default Attack
+6300865 Hand-to-Hand - Default Attack
+6300870 Hand-to-Hand - Default Attack
+6300875 Hand-to-Hand - Default Attack
+6300876 Hand-to-Hand - Default Attack
+6300880 Hand-to-Hand - Default Attack
+6300881 Hand-to-Hand - Default Attack
+6300885 Hand-to-Hand - Default Attack
+6300890 Hand-to-Hand - Default Attack
+6300891 Hand-to-Hand - Default Bullet
+6300895 Hand-to-Hand - Default Attack
+6300896 Hand-to-Hand - Default Bullet
+6301000 Dane's Footwork - Attack
+6301009 Dane's Footwork - Attack
+6301060 Dane's Footwork - Bullet
+6301061 Dane's Footwork - Bullet
+6301100 Dane's Footwork - Attack
+6301101 Dane's Footwork - Attack
+6301102 Dane's Footwork - Bullet
+6301105 Dane's Footwork - Attack
+6301106 Dane's Footwork - Attack
+6301107 Dane's Footwork - Bullet
+6301110 Dane's Footwork - Attack
+6301111 Dane's Footwork - Attack
+6301112 Dane's Footwork - Bullet
+6301115 Dane's Footwork - Attack
+6301116 Dane's Footwork - Attack
+6301117 Dane's Footwork - Bullet
+6301200 Dane's Footwork - Attack
+6301201 Dane's Footwork - Attack
+6301203 Dane's Footwork - Attack
+6301204 Dane's Footwork - Attack
+6301250 Dane's Footwork - Attack
+6301251 Dane's Footwork - Attack
+6301300 Dane's Footwork - Attack
+6301301 Dane's Footwork - Attack
+6301302 Dane's Footwork - Bullet
+6301303 Dane's Footwork - Attack
+6301304 Dane's Footwork - Attack
+6301305 Dane's Footwork - Attack
+6301306 Dane's Footwork - Attack
+6301307 Dane's Footwork - Bullet
+6301308 Dane's Footwork - Attack
+6301309 Dane's Footwork - Attack
+6301310 Dane's Footwork - Attack
+6301311 Dane's Footwork - Bullet
+6301312 Dane's Footwork - Bullet
+6301313 Dane's Footwork - Attack
+6301314 Dane's Footwork - Attack
+6301315 Dane's Footwork - Attack
+6301316 Dane's Footwork - Bullet
+6301317 Dane's Footwork - Bullet
+6301318 Dane's Footwork - Attack
+6301319 Dane's Footwork - Attack
+6301400 Dane's Footwork - Attack
+6301401 Dane's Footwork - Attack
+6400000 Reverse-hand Blade - Default Attack
+6400010 Reverse-hand Blade - Default Attack
+6400020 Reverse-hand Blade - Default Attack
+6400030 Reverse-hand Blade - Default Attack
+6400040 Reverse-hand Blade - Default Attack
+6400050 Reverse-hand Blade - Default Attack
+6400100 Reverse-hand Blade - Default Attack
+6400101 Reverse-hand Blade - Default Attack
+6400105 Reverse-hand Blade - Default Attack
+6400106 Reverse-hand Blade - Default Attack
+6400110 Reverse-hand Blade - Default Attack
+6400115 Reverse-hand Blade - Default Attack
+6400116 Reverse-hand Blade - Default Attack
+6400120 Reverse-hand Blade - Default Attack
+6400125 Reverse-hand Blade - Default Attack
+6400126 Reverse-hand Blade - Default Attack
+6400130 Reverse-hand Blade - Default Attack
+6400140 Reverse-hand Blade - Default Attack
+6400150 Reverse-hand Blade - Default Attack
+6400160 Reverse-hand Blade - Default Attack
+6400161 Reverse-hand Blade - Default Attack
+6400180 Reverse-hand Blade - Default Attack
+6400181 Reverse-hand Blade - Default Attack
+6400200 Reverse-hand Blade - Default Attack
+6400203 Reverse-hand Blade - Default Attack
+6400210 Reverse-hand Blade - Default Attack
+6400213 Reverse-hand Blade - Default Attack
+6400220 Reverse-hand Blade - Default Attack
+6400223 Reverse-hand Blade - Default Attack
+6400230 Reverse-hand Blade - Default Attack
+6400240 Reverse-hand Blade - Default Attack
+6400243 Reverse-hand Blade - Default Attack
+6400250 Reverse-hand Blade - Default Attack
+6400253 Reverse-hand Blade - Default Attack
+6400300 Reverse-hand Blade - Default Attack
+6400303 Reverse-hand Blade - Default Attack
+6400305 Reverse-hand Blade - Default Attack
+6400308 Reverse-hand Blade - Default Attack
+6400310 Reverse-hand Blade - Default Attack
+6400313 Reverse-hand Blade - Default Attack
+6400315 Reverse-hand Blade - Default Attack
+6400316 Reverse-hand Blade - Default Attack
+6400318 Reverse-hand Blade - Default Attack
+6400320 Reverse-hand Blade - Default Attack
+6400323 Reverse-hand Blade - Default Attack
+6400325 Reverse-hand Blade - Default Attack
+6400326 Reverse-hand Blade - Default Attack
+6400327 Reverse-hand Blade - Default Attack
+6400328 Reverse-hand Blade - Default Attack
+6400330 Reverse-hand Blade - Default Attack
+6400333 Reverse-hand Blade - Default Attack
+6400340 Reverse-hand Blade - Default Attack
+6400343 Reverse-hand Blade - Default Attack
+6400350 Reverse-hand Blade - Default Attack
+6400353 Reverse-hand Blade - Default Attack
+6400360 Reverse-hand Blade - Default Attack
+6400363 Reverse-hand Blade - Default Attack
+6400380 Reverse-hand Blade - Default Attack
+6400381 Reverse-hand Blade - Default Attack
+6400382 Reverse-hand Blade - Default Attack
+6400383 Reverse-hand Blade - Default Attack
+6400400 Reverse-hand Blade - Default Attack
+6400410 Reverse-hand Blade - Default Attack
+6400420 Reverse-hand Blade - Default Attack
+6400430 Reverse-hand Blade - Default Attack
+6400440 Reverse-hand Blade - Default Attack
+6400450 Reverse-hand Blade - Default Attack
+6400460 Reverse-hand Blade - Default Attack
+6400470 Reverse-hand Blade - Default Attack
+6400480 Reverse-hand Blade - Default Attack
+6400500 Reverse-hand Blade - Default Attack
+6400501 Reverse-hand Blade - Default Attack
+6400509 Reverse-hand Blade - Default Attack
+6400510 Reverse-hand Blade - Default Attack
+6400511 Reverse-hand Blade - Default Attack
+6400530 Reverse-hand Blade - Default Attack
+6400550 Reverse-hand Blade - Default Attack
+6400560 Reverse-hand Blade - Default Attack
+6400561 Reverse-hand Blade - Default Attack
+6400590 Reverse-hand Blade - Default Attack
+6400591 Reverse-hand Blade - Default Attack
+6400600 Reverse-hand Blade - Default Attack
+6400605 Reverse-hand Blade - Default Attack
+6400610 Reverse-hand Blade - Default Attack
+6400630 Reverse-hand Blade - Default Attack
+6400632 Reverse-hand Blade - Default Attack
+6400635 Reverse-hand Blade - Default Attack
+6400700 Reverse-hand Blade - Default Attack
+6400705 Reverse-hand Blade - Default Attack
+6400710 Reverse-hand Blade - Default Attack
+6400730 Reverse-hand Blade - Default Attack
+6400732 Reverse-hand Blade - Default Attack
+6400735 Reverse-hand Blade - Default Attack
+6400800 Reverse-hand Blade - Default Attack
+6400805 Reverse-hand Blade - Default Attack
+6400810 Reverse-hand Blade - Default Attack
+6400815 Reverse-hand Blade - Default Attack
+6400820 Reverse-hand Blade - Default Attack
+6400825 Reverse-hand Blade - Default Attack
+6400830 Reverse-hand Blade - Default Attack
+6400840 Reverse-hand Blade - Default Attack
+6400845 Reverse-hand Blade - Default Attack
+6400850 Reverse-hand Blade - Default Attack
+6400855 Reverse-hand Blade - Default Attack
+6400860 Reverse-hand Blade - Default Attack
+6400865 Reverse-hand Blade - Default Attack
+6400870 Reverse-hand Blade - Default Attack
+6400875 Reverse-hand Blade - Default Attack
+6400880 Reverse-hand Blade - Default Attack
+6400885 Reverse-hand Blade - Default Attack
+6400890 Reverse-hand Blade - Default Attack
+6400895 Reverse-hand Blade - Default Attack
+6401100 Smithscript Cirque - Bullet
+6401105 Smithscript Cirque - Bullet
+6401110 Smithscript Cirque - Bullet
+6401115 Smithscript Cirque - Bullet
+6401125 Smithscript Cirque - Bullet
+6401160 Smithscript Cirque - Bullet
 6401175 
 6401176 
-6401180 
-6401300 
-6401303 
-6401305 
-6401308 
-6401310 
-6401313 
-6401315 
-6401318 
-6401325 
-6401328 
-6401360 
-6401363 
+6401180 Smithscript Cirque - Bullet
+6401300 Smithscript Cirque - Bullet
+6401303 Smithscript Cirque - Bullet
+6401305 Smithscript Cirque - Bullet
+6401308 Smithscript Cirque - Bullet
+6401310 Smithscript Cirque - Bullet
+6401313 Smithscript Cirque - Bullet
+6401315 Smithscript Cirque - Bullet
+6401318 Smithscript Cirque - Bullet
+6401325 Smithscript Cirque - Bullet
+6401328 Smithscript Cirque - Bullet
+6401360 Smithscript Cirque - Bullet
+6401363 Smithscript Cirque - Bullet
 6401375 
 6401376 
 6401377 
 6401378 
-6401380 
-6401381 
-6401632 
-6401635 
-6600000 
-6600010 
-6600020 
-6600030 
-6600100 
-6600105 
-6600110 
-6600115 
-6600120 
-6600125 
-6600130 
-6600140 
-6600150 
-6600155 
-6600160 
-6600165 
-6600180 
-6600200 
-6600210 
-6600220 
-6600230 
-6600300 
-6600305 
-6600310 
-6600315 
-6600320 
-6600325 
-6600330 
-6600340 
-6600350 
-6600355 
-6600360 
-6600365 
-6600380 
-6600400 
-6600410 
-6600420 
-6600430 
-6600460 
-6600470 
-6600480 
-6600500 
-6600501 
-6600505 
-6600509 
-6600510 
-6600511 
-6600515 
-6600516 
-6600520 
-6600530 
-6600531 
-6600540 
-6600550 
-6600560 
-6600561 
-6600590 
-6600591 
-6600600 
-6600605 
-6600610 
-6600630 
-6600632 
-6600635 
-6600640 
-6600642 
-6600645 
-6600650 
-6600660 
-6600665 
-6600700 
-6600705 
-6600710 
-6600730 
-6600732 
-6600735 
-6600740 
-6600742 
-6600745 
-6600750 
-6600760 
-6600765 
-6600800 
-6600805 
-6600810 
-6600815 
-6600820 
-6600825 
-6600860 
-6600865 
-6600870 
-6600875 
-6600880 
-6600885 
-6600890 
-6600895 
-6601100 
-6601105 
-6601110 
-6601115 
-6601300 
-6601305 
-6601310 
-6601315 
-6700000 
-6700010 
-6700013 
-6700020 
-6700023 
-6700030 
-6700040 
-6700041 
-6700044 
-6700100 
-6700101 
-6700104 
-6700105 
-6700106 
-6700109 
-6700110 
-6700111 
-6700113 
-6700114 
-6700115 
-6700116 
-6700118 
-6700119 
-6700120 
-6700123 
-6700125 
-6700126 
-6700128 
-6700130 
-6700133 
-6700140 
-6700150 
-6700160 
-6700161 
-6700163 
-6700164 
-6700180 
-6700181 
-6700183 
-6700184 
-6700200 
-6700210 
-6700213 
-6700220 
-6700223 
-6700230 
-6700240 
-6700241 
-6700243 
-6700300 
-6700301 
-6700304 
-6700305 
-6700306 
-6700309 
-6700310 
-6700311 
-6700313 
-6700314 
-6700315 
-6700316 
-6700318 
-6700319 
-6700320 
-6700325 
-6700326 
-6700329 
-6700330 
-6700333 
-6700340 
-6700343 
-6700350 
-6700360 
-6700361 
-6700363 
-6700364 
-6700380 
-6700381 
-6700383 
-6700384 
-6700400 
-6700410 
-6700413 
-6700420 
-6700423 
-6700430 
-6700440 
-6700441 
-6700444 
-6700460 
-6700470 
-6700480 
-6700500 
-6700509 
-6700510 
-6700530 
-6700550 
-6700560 
-6700561 
-6700590 
-6700591 
-6700600 
-6700605 
-6700610 
-6700632 
-6700633 
-6700635 
-6700638 
-6700700 
-6700705 
-6700710 
-6700732 
-6700733 
-6700735 
-6700738 
-6700800 
-6700805 
-6700810 
-6700813 
-6700815 
-6700819 
-6700820 
-6700823 
-6700825 
-6700826 
-6700829 
-6700830 
-6700831 
-6700833 
-6700834 
-6700835 
-6700836 
-6700838 
-6700839 
-6700860 
-6700865 
-6700869 
-6700870 
-6700873 
-6700875 
-6700880 
-6700883 
-6700885 
-6700889 
-6700890 
-6700891 
-6700893 
-6700894 
-6700895 
-6700990 
-6700991 
-6700992 
-6700997 
-6700998 
-6700999 
-6701000 
-6701010 
-6701013 
-6701020 
-6701023 
-6701030 
-6701040 
-6701041 
-6701044 
-6701100 
-6701101 
-6701104 
-6701105 
-6701106 
-6701109 
-6701110 
-6701111 
-6701113 
-6701114 
-6701115 
-6701116 
-6701118 
-6701119 
-6701120 
-6701123 
-6701125 
-6701126 
-6701128 
-6701130 
-6701133 
-6701140 
-6701150 
-6701160 
-6701161 
-6701163 
-6701164 
-6701180 
-6701181 
-6701183 
-6701184 
-6701200 
-6701205 
-6701210 
-6701213 
-6701215 
-6701219 
-6701220 
-6701223 
-6701225 
-6701226 
-6701229 
-6701230 
-6701231 
-6701233 
-6701234 
-6701235 
-6701236 
-6701238 
-6701239 
-6701320 
-6701321 
-6701322 
-6701330 
-6701331 
-6701332 
-6701340 
-6701341 
-6701342 
-6701343 
-6701350 
-6701351 
-6701352 
-6701353 
-6701354 
-6701400 
-6701401 
-6701410 
-6701411 
-6701420 
-6701421 
-6701430 
-6701431 
-6701440 
-6701441 
-6701500 
-6701509 
-6701510 
-6701530 
-6701550 
-6701560 
-6701561 
-6701590 
-6701600 
-6701605 
-6701610 
-6701632 
-6701633 
-6701635 
-6701638 
-6701700 
-6701705 
-6701710 
-6701732 
-6701733 
-6701735 
-6701738 
-6701800 
-6701805 
-6701810 
-6701813 
-6701815 
-6701819 
-6701820 
-6701823 
-6701825 
-6701826 
-6701829 
-6701830 
-6701831 
-6701833 
-6701834 
-6701835 
-6701836 
-6701838 
-6701839 
-6701860 
-6701865 
-6701869 
-6701870 
-6701873 
-6701875 
-6701880 
-6701883 
-6701885 
-6701889 
-6701890 
-6701891 
-6701893 
-6701894 
-6701895 
-6800000 
-6800010 
-6800011 
-6800020 
-6800030 
-6800100 
-6800105 
-6800110 
-6800115 
-6800120 
-6800125 
-6800126 
-6800130 
-6800140 
-6800150 
-6800160 
-6800175 
-6800176 
-6800180 
-6800181 
-6800200 
-6800201 
-6800210 
-6800211 
-6800212 
-6800220 
-6800221 
-6800230 
-6800300 
-6800301 
-6800305 
-6800306 
-6800310 
-6800311 
-6800315 
-6800316 
-6800320 
-6800321 
-6800325 
-6800326 
-6800327 
-6800330 
-6800331 
-6800340 
-6800341 
-6800350 
-6800351 
-6800360 
-6800361 
-6800375 
-6800376 
-6800380 
-6800381 
-6800382 
-6800383 
-6800400 
-6800410 
-6800411 
-6800420 
-6800430 
-6800460 
-6800470 
-6800480 
-6800500 
-6800501 
-6800509 
-6800510 
-6800511 
-6800530 
-6800531 
-6800540 
-6800550 
-6800560 
-6800561 
-6800590 
-6800591 
-6800600 
-6800605 
-6800610 
-6800630 
-6800632 
-6800635 
-6800640 
-6800642 
-6800645 
-6800650 
-6800660 
-6800665 
-6800700 
-6800705 
-6800710 
-6800730 
-6800732 
-6800735 
-6800740 
-6800742 
-6800745 
-6800750 
-6800760 
-6800765 
-6800800 
-6800801 
-6800810 
-6800811 
-6800812 
-6800820 
-6800821 
-6800830 
-6800860 
-6800861 
-6800870 
-6800871 
-6800880 
-6800881 
-6800890 
-6800891 
+6401380 Smithscript Cirque - Bullet
+6401381 Smithscript Cirque - Bullet
+6401632 Smithscript Cirque - Bullet
+6401635 Smithscript Cirque - Bullet
+6600000 Great Katana - Default Attack
+6600010 Great Katana - Default Attack
+6600020 Great Katana - Default Attack
+6600030 Great Katana - Default Attack
+6600100 Great Katana - Default Attack
+6600105 Great Katana - Default Attack
+6600110 Great Katana - Default Attack
+6600115 Great Katana - Default Attack
+6600120 Great Katana - Default Attack
+6600125 Great Katana - Default Attack
+6600130 Great Katana - Default Attack
+6600140 Great Katana - Default Attack
+6600150 Great Katana - Default Attack
+6600155 Great Katana - Default Attack
+6600160 Great Katana - Default Attack
+6600165 Great Katana - Default Attack
+6600180 Great Katana - Default Attack
+6600200 Great Katana - Default Attack
+6600210 Great Katana - Default Attack
+6600220 Great Katana - Default Attack
+6600230 Great Katana - Default Attack
+6600300 Great Katana - Default Attack
+6600305 Great Katana - Default Attack
+6600310 Great Katana - Default Attack
+6600315 Great Katana - Default Attack
+6600320 Great Katana - Default Attack
+6600325 Great Katana - Default Attack
+6600330 Great Katana - Default Attack
+6600340 Great Katana - Default Attack
+6600350 Great Katana - Default Attack
+6600355 Great Katana - Default Attack
+6600360 Great Katana - Default Attack
+6600365 Great Katana - Default Attack
+6600380 Great Katana - Default Attack
+6600400 Great Katana - Default Attack
+6600410 Great Katana - Default Attack
+6600420 Great Katana - Default Attack
+6600430 Great Katana - Default Attack
+6600460 Great Katana - Default Attack
+6600470 Great Katana - Default Attack
+6600480 Great Katana - Default Attack
+6600500 Great Katana - Default Attack
+6600501 Great Katana - Default Attack
+6600505 Great Katana - Default Attack
+6600509 Great Katana - Default Attack
+6600510 Great Katana - Default Attack
+6600511 Great Katana - Default Attack
+6600515 Great Katana - Default Attack
+6600516 Great Katana - Default Attack
+6600520 Great Katana - Default Attack
+6600530 Great Katana - Default Attack
+6600531 Great Katana - Default Attack
+6600540 Great Katana - Default Attack
+6600550 Great Katana - Default Attack
+6600560 Great Katana - Default Attack
+6600561 Great Katana - Default Attack
+6600590 Great Katana - Default Attack
+6600591 Great Katana - Default Attack
+6600600 Great Katana - Default Attack
+6600605 Great Katana - Default Attack
+6600610 Great Katana - Default Attack
+6600630 Great Katana - Default Attack
+6600632 Great Katana - Default Attack
+6600635 Great Katana - Default Attack
+6600640 Great Katana - Default Attack
+6600642 Great Katana - Default Attack
+6600645 Great Katana - Default Attack
+6600650 Great Katana - Default Attack
+6600660 Great Katana - Default Attack
+6600665 Great Katana - Default Attack
+6600700 Great Katana - Default Attack
+6600705 Great Katana - Default Attack
+6600710 Great Katana - Default Attack
+6600730 Great Katana - Default Attack
+6600732 Great Katana - Default Attack
+6600735 Great Katana - Default Attack
+6600740 Great Katana - Default Attack
+6600742 Great Katana - Default Attack
+6600745 Great Katana - Default Attack
+6600750 Great Katana - Default Attack
+6600760 Great Katana - Default Attack
+6600765 Great Katana - Default Attack
+6600800 Great Katana - Default Attack
+6600805 Great Katana - Default Attack
+6600810 Great Katana - Default Attack
+6600815 Great Katana - Default Attack
+6600820 Great Katana - Default Attack
+6600825 Great Katana - Default Attack
+6600860 Great Katana - Default Attack
+6600865 Great Katana - Default Attack
+6600870 Great Katana - Default Attack
+6600875 Great Katana - Default Attack
+6600880 Great Katana - Default Attack
+6600885 Great Katana - Default Attack
+6600890 Great Katana - Default Attack
+6600895 Great Katana - Default Attack
+6601100 Rakshasa's Great Katana - Attack
+6601105 Rakshasa's Great Katana - Attack
+6601110 Rakshasa's Great Katana - Attack
+6601115 Rakshasa's Great Katana - Attack
+6601300 Rakshasa's Great Katana - Attack
+6601305 Rakshasa's Great Katana - Attack
+6601310 Rakshasa's Great Katana - Attack
+6601315 Rakshasa's Great Katana - Attack
+6700000 Light Greatsword - Default Attack
+6700010 Light Greatsword - Default Attack
+6700013 Light Greatsword - Default Attack
+6700020 Light Greatsword - Default Attack
+6700023 Light Greatsword - Default Attack
+6700030 Light Greatsword - Default Attack
+6700040 Light Greatsword - Default Attack
+6700041 Light Greatsword - Default Attack
+6700044 Light Greatsword - Default Attack
+6700100 Light Greatsword - Default Attack
+6700101 Light Greatsword - Default Attack
+6700104 Light Greatsword - Default Attack
+6700105 Light Greatsword - Default Attack
+6700106 Light Greatsword - Default Attack
+6700109 Light Greatsword - Default Attack
+6700110 Light Greatsword - Default Attack
+6700111 Light Greatsword - Default Attack
+6700113 Light Greatsword - Default Attack
+6700114 Light Greatsword - Default Attack
+6700115 Light Greatsword - Default Attack
+6700116 Light Greatsword - Default Attack
+6700118 Light Greatsword - Default Attack
+6700119 Light Greatsword - Default Attack
+6700120 Light Greatsword - Default Attack
+6700123 Light Greatsword - Default Attack
+6700125 Light Greatsword - Default Attack
+6700126 Light Greatsword - Default Attack
+6700128 Light Greatsword - Default Attack
+6700130 Light Greatsword - Default Attack
+6700133 Light Greatsword - Default Attack
+6700140 Light Greatsword - Default Attack
+6700150 Light Greatsword - Default Attack
+6700160 Light Greatsword - Default Attack
+6700161 Light Greatsword - Default Attack
+6700163 Light Greatsword - Default Attack
+6700164 Light Greatsword - Default Attack
+6700180 Light Greatsword - Default Attack
+6700181 Light Greatsword - Default Attack
+6700183 Light Greatsword - Default Attack
+6700184 Light Greatsword - Default Attack
+6700200 Light Greatsword - Default Attack
+6700210 Light Greatsword - Default Attack
+6700213 Light Greatsword - Default Attack
+6700220 Light Greatsword - Default Attack
+6700223 Light Greatsword - Default Attack
+6700230 Light Greatsword - Default Attack
+6700240 Light Greatsword - Default Attack
+6700241 Light Greatsword - Default Attack
+6700243 Light Greatsword - Default Attack
+6700300 Light Greatsword - Default Attack
+6700301 Light Greatsword - Default Attack
+6700304 Light Greatsword - Default Attack
+6700305 Light Greatsword - Default Attack
+6700306 Light Greatsword - Default Attack
+6700309 Light Greatsword - Default Attack
+6700310 Light Greatsword - Default Attack
+6700311 Light Greatsword - Default Attack
+6700313 Light Greatsword - Default Attack
+6700314 Light Greatsword - Default Attack
+6700315 Light Greatsword - Default Attack
+6700316 Light Greatsword - Default Attack
+6700318 Light Greatsword - Default Attack
+6700319 Light Greatsword - Default Attack
+6700320 Light Greatsword - Default Attack
+6700325 Light Greatsword - Default Attack
+6700326 Light Greatsword - Default Attack
+6700329 Light Greatsword - Default Attack
+6700330 Light Greatsword - Default Attack
+6700333 Light Greatsword - Default Attack
+6700340 Light Greatsword - Default Attack
+6700343 Light Greatsword - Default Attack
+6700350 Light Greatsword - Default Attack
+6700360 Light Greatsword - Default Attack
+6700361 Light Greatsword - Default Attack
+6700363 Light Greatsword - Default Attack
+6700364 Light Greatsword - Default Attack
+6700380 Light Greatsword - Default Attack
+6700381 Light Greatsword - Default Attack
+6700383 Light Greatsword - Default Attack
+6700384 Light Greatsword - Default Attack
+6700400 Light Greatsword - Default Attack
+6700410 Light Greatsword - Default Attack
+6700413 Light Greatsword - Default Attack
+6700420 Light Greatsword - Default Attack
+6700423 Light Greatsword - Default Attack
+6700430 Light Greatsword - Default Attack
+6700440 Light Greatsword - Default Attack
+6700441 Light Greatsword - Default Attack
+6700444 Light Greatsword - Default Attack
+6700460 Light Greatsword - Default Attack
+6700470 Light Greatsword - Default Attack
+6700480 Light Greatsword - Default Attack
+6700500 Light Greatsword - Default Attack
+6700509 Light Greatsword - Default Attack
+6700510 Light Greatsword - Default Attack
+6700530 Light Greatsword - Default Attack
+6700550 Light Greatsword - Default Attack
+6700560 Light Greatsword - Default Attack
+6700561 Light Greatsword - Default Attack
+6700590 Light Greatsword - Default Attack
+6700591 Light Greatsword - Default Attack
+6700600 Light Greatsword - Default Attack
+6700605 Light Greatsword - Default Attack
+6700610 Light Greatsword - Default Attack
+6700632 Light Greatsword - Default Attack
+6700633 Light Greatsword - Default Attack
+6700635 Light Greatsword - Default Attack
+6700638 Light Greatsword - Default Attack
+6700700 Light Greatsword - Default Attack
+6700705 Light Greatsword - Default Attack
+6700710 Light Greatsword - Default Attack
+6700732 Light Greatsword - Default Attack
+6700733 Light Greatsword - Default Attack
+6700735 Light Greatsword - Default Attack
+6700738 Light Greatsword - Default Attack
+6700800 Light Greatsword - Default Attack
+6700805 Light Greatsword - Default Attack
+6700810 Light Greatsword - Default Attack
+6700813 Light Greatsword - Default Attack
+6700815 Light Greatsword - Default Attack
+6700819 Light Greatsword - Default Attack
+6700820 Light Greatsword - Default Attack
+6700823 Light Greatsword - Default Attack
+6700825 Light Greatsword - Default Attack
+6700826 Light Greatsword - Default Attack
+6700829 Light Greatsword - Default Attack
+6700830 Light Greatsword - Default Attack
+6700831 Light Greatsword - Default Attack
+6700833 Light Greatsword - Default Attack
+6700834 Light Greatsword - Default Attack
+6700835 Light Greatsword - Default Attack
+6700836 Light Greatsword - Default Attack
+6700838 Light Greatsword - Default Attack
+6700839 Light Greatsword - Default Attack
+6700860 Light Greatsword - Default Attack
+6700865 Light Greatsword - Default Attack
+6700869 Light Greatsword - Default Attack
+6700870 Light Greatsword - Default Attack
+6700873 Light Greatsword - Default Attack
+6700875 Light Greatsword - Default Attack
+6700880 Light Greatsword - Default Attack
+6700883 Light Greatsword - Default Attack
+6700885 Light Greatsword - Default Attack
+6700889 Light Greatsword - Default Attack
+6700890 Light Greatsword - Default Attack
+6700891 Light Greatsword - Default Attack
+6700893 Light Greatsword - Default Attack
+6700894 Light Greatsword - Default Attack
+6700895 Light Greatsword - Default Attack
+6700990 Light Greatsword - Default Attack
+6700991 Light Greatsword - Default Attack
+6700992 Light Greatsword - Default Attack
+6700997 Light Greatsword - Default Attack
+6700998 Light Greatsword - Default Attack
+6700999 Light Greatsword - Default Attack
+6701000 Rellana's Twin Blades - Attack
+6701010 Rellana's Twin Blades - Attack
+6701013 Rellana's Twin Blades - Attack
+6701020 Rellana's Twin Blades - Attack
+6701023 Rellana's Twin Blades - Attack
+6701030 Rellana's Twin Blades - Attack
+6701040 Rellana's Twin Blades - Attack
+6701041 Rellana's Twin Blades - Attack
+6701044 Rellana's Twin Blades - Attack
+6701100 Rellana's Twin Blades - Attack
+6701101 Rellana's Twin Blades - Attack
+6701104 Rellana's Twin Blades - Attack
+6701105 Rellana's Twin Blades - Attack
+6701106 Rellana's Twin Blades - Attack
+6701109 Rellana's Twin Blades - Attack
+6701110 Rellana's Twin Blades - Attack
+6701111 Rellana's Twin Blades - Attack
+6701113 Rellana's Twin Blades - Attack
+6701114 Rellana's Twin Blades - Attack
+6701115 Rellana's Twin Blades - Attack
+6701116 Rellana's Twin Blades - Attack
+6701118 Rellana's Twin Blades - Attack
+6701119 Rellana's Twin Blades - Attack
+6701120 Rellana's Twin Blades - Attack
+6701123 Rellana's Twin Blades - Attack
+6701125 Rellana's Twin Blades - Attack
+6701126 Rellana's Twin Blades - Attack
+6701128 Rellana's Twin Blades - Attack
+6701130 Rellana's Twin Blades - Attack
+6701133 Rellana's Twin Blades - Attack
+6701140 Rellana's Twin Blades - Attack
+6701150 Rellana's Twin Blades - Attack
+6701160 Rellana's Twin Blades - Attack
+6701161 Rellana's Twin Blades - Attack
+6701163 Rellana's Twin Blades - Attack
+6701164 Rellana's Twin Blades - Attack
+6701180 Rellana's Twin Blades - Attack
+6701181 Rellana's Twin Blades - Attack
+6701183 Rellana's Twin Blades - Attack
+6701184 Rellana's Twin Blades - Attack
+6701200 Rellana's Twin Blades - Attack
+6701205 Rellana's Twin Blades - Attack
+6701210 Rellana's Twin Blades - Attack
+6701213 Rellana's Twin Blades - Attack
+6701215 Rellana's Twin Blades - Attack
+6701219 Rellana's Twin Blades - Attack
+6701220 Rellana's Twin Blades - Attack
+6701223 Rellana's Twin Blades - Attack
+6701225 Rellana's Twin Blades - Attack
+6701226 Rellana's Twin Blades - Attack
+6701229 Rellana's Twin Blades - Attack
+6701230 Rellana's Twin Blades - Attack
+6701231 Rellana's Twin Blades - Attack
+6701233 Rellana's Twin Blades - Attack
+6701234 Rellana's Twin Blades - Attack
+6701235 Rellana's Twin Blades - Attack
+6701236 Rellana's Twin Blades - Attack
+6701238 Rellana's Twin Blades - Attack
+6701239 Rellana's Twin Blades - Attack
+6701320 Rellana's Twin Blades - Attack
+6701321 Rellana's Twin Blades - Attack
+6701322 Rellana's Twin Blades - Attack
+6701330 Rellana's Twin Blades - Attack
+6701331 Rellana's Twin Blades - Attack
+6701332 Rellana's Twin Blades - Attack
+6701340 Rellana's Twin Blades - Attack
+6701341 Rellana's Twin Blades - Attack
+6701342 Rellana's Twin Blades - Attack
+6701343 Rellana's Twin Blades - Attack
+6701350 Rellana's Twin Blades - Attack
+6701351 Rellana's Twin Blades - Attack
+6701352 Rellana's Twin Blades - Attack
+6701353 Rellana's Twin Blades - Attack
+6701354 Rellana's Twin Blades - Attack
+6701400 Rellana's Twin Blades - Attack
+6701401 Rellana's Twin Blades - Attack
+6701410 Rellana's Twin Blades - Attack
+6701411 Rellana's Twin Blades - Attack
+6701420 Rellana's Twin Blades - Attack
+6701421 Rellana's Twin Blades - Attack
+6701430 Rellana's Twin Blades - Attack
+6701431 Rellana's Twin Blades - Attack
+6701440 Rellana's Twin Blades - Attack
+6701441 Rellana's Twin Blades - Attack
+6701500 Rellana's Twin Blades - Attack
+6701509 Rellana's Twin Blades - Attack
+6701510 Rellana's Twin Blades - Attack
+6701530 Rellana's Twin Blades - Attack
+6701550 Rellana's Twin Blades - Attack
+6701560 Rellana's Twin Blades - Attack
+6701561 Rellana's Twin Blades - Attack
+6701590 Rellana's Twin Blades - Attack
+6701600 Rellana's Twin Blades - Attack
+6701605 Rellana's Twin Blades - Attack
+6701610 Rellana's Twin Blades - Attack
+6701632 Rellana's Twin Blades - Attack
+6701633 Rellana's Twin Blades - Attack
+6701635 Rellana's Twin Blades - Attack
+6701638 Rellana's Twin Blades - Attack
+6701700 Rellana's Twin Blades - Attack
+6701705 Rellana's Twin Blades - Attack
+6701710 Rellana's Twin Blades - Attack
+6701732 Rellana's Twin Blades - Attack
+6701733 Rellana's Twin Blades - Attack
+6701735 Rellana's Twin Blades - Attack
+6701738 Rellana's Twin Blades - Attack
+6701800 Rellana's Twin Blades - Attack
+6701805 Rellana's Twin Blades - Attack
+6701810 Rellana's Twin Blades - Attack
+6701813 Rellana's Twin Blades - Attack
+6701815 Rellana's Twin Blades - Attack
+6701819 Rellana's Twin Blades - Attack
+6701820 Rellana's Twin Blades - Attack
+6701823 Rellana's Twin Blades - Attack
+6701825 Rellana's Twin Blades - Attack
+6701826 Rellana's Twin Blades - Attack
+6701829 Rellana's Twin Blades - Attack
+6701830 Rellana's Twin Blades - Attack
+6701831 Rellana's Twin Blades - Attack
+6701833 Rellana's Twin Blades - Attack
+6701834 Rellana's Twin Blades - Attack
+6701835 Rellana's Twin Blades - Attack
+6701836 Rellana's Twin Blades - Attack
+6701838 Rellana's Twin Blades - Attack
+6701839 Rellana's Twin Blades - Attack
+6701860 Rellana's Twin Blades - Attack
+6701865 Rellana's Twin Blades - Attack
+6701869 Rellana's Twin Blades - Attack
+6701870 Rellana's Twin Blades - Attack
+6701873 Rellana's Twin Blades - Attack
+6701875 Rellana's Twin Blades - Attack
+6701880 Rellana's Twin Blades - Attack
+6701883 Rellana's Twin Blades - Attack
+6701885 Rellana's Twin Blades - Attack
+6701889 Rellana's Twin Blades - Attack
+6701890 Rellana's Twin Blades - Attack
+6701891 Rellana's Twin Blades - Attack
+6701893 Rellana's Twin Blades - Attack
+6701894 Rellana's Twin Blades - Attack
+6701895 Rellana's Twin Blades - Attack
+6800000 Beast Claw: [030000] AttackRightLight1 Attack
+6800010 Beast Claw: [030010] AttackRightLight2 - Hit 1 Attack
+6800011 Beast Claw: [030010] AttackRightLight2 - Hit 2 Attack
+6800020 Beast Claw: [030020] AttackRightLight3 Attack
+6800030 Beast Claw: [030030] AttackRightLight4 Attack
+6800100 Beast Claw: [030505] AttackRightHeavy1End Attack
+6800105 Beast Claw: [030500] AttackRightHeavy1Start Attack
+6800110 Beast Claw: [030515] AttackRightHeavy2End Attack
+6800115 Beast Claw: [030510] AttackRightHeavy2Start Attack
+6800120 Beast Claw: [030200] AttackRightLightDash Attack
+6800125 Beast Claw: [030210] AttackRightHeavyDash - Hit 1 Attack
+6800126 Beast Claw: [030210] AttackRightHeavyDash - Hit 2 Attack
+6800130 Beast Claw: [030300] AttackRightLightStep Attack
+6800140 Beast Claw: [030400] AttackRightBackstep Attack
+6800150 Beast Claw - Default: JumpAttack Attack
+6800160 Beast Claw - Default: JumpAttack_Land Attack
+6800175 Beast Claw: [030950] AttackRightSpecial1 Attack
+6800176 Beast Claw: [030955] AttackRightSpecial2 Attack
+6800180 Beast Claw: [030700] AttackRightLightCounter - Hit 1 Attack
+6800181 Beast Claw: [030700] AttackRightLightCounter - Hit 2 Attack
+6800200 Beast Claw - Default: AttackBothLight1 - Hit 1 Attack
+6800201 Beast Claw - Default: AttackBothLight1 - Hit 2 Attack
+6800210 Beast Claw - Default: AttackBothLight2 - Hit 1 Attack
+6800211 Beast Claw - Default: AttackBothLight2 - Hit 2 Attack
+6800212 Beast Claw - Default: AttackBothLight2 - Hit 3 Attack
+6800220 Beast Claw - Default: AttackBothLight3 - Hit 1 Attack
+6800221 Beast Claw - Default: AttackBothLight3 - Hit 2 Attack
+6800230 Beast Claw - Default: AttackBothLight4 Attack
+6800300 Beast Claw - Default: AttackBothHeavy1End - Hit 1 Attack
+6800301 Beast Claw - Default: AttackBothHeavy1End - Hit 2 Attack
+6800305 Beast Claw - Default: AttackBothHeavy1Start - Hit 1 Attack
+6800306 Beast Claw - Default: AttackBothHeavy1Start - Hit 2 Attack
+6800310 Beast Claw - Default: AttackBothHeavy2End - Hit 1 Attack
+6800311 Beast Claw - Default: AttackBothHeavy2End - Hit 2 Attack
+6800315 Beast Claw - Default: AttackBothHeavy2Start - Hit 1 Attack
+6800316 Beast Claw - Default: AttackBothHeavy2Start - Hit 2 Attack
+6800320 Beast Claw - Default: AttackArrowLeftFireDash - Hit 1 Attack
+6800321 Beast Claw - Default: AttackArrowLeftFireDash - Hit 2 Attack
+6800325 Beast Claw - Default: AttackBothHeavyDash - Hit 1 Attack
+6800326 Beast Claw - Default: AttackBothHeavyDash - Hit 2 Attack
+6800327 Beast Claw - Default: AttackBothHeavyDash - Hit 3 Attack
+6800330 Beast Claw - Default: AttackArrowRightFireStep - Hit 1 Attack
+6800331 Beast Claw - Default: AttackArrowRightFireStep - Hit 2 Attack
+6800340 Beast Claw - Default: AttackBothBackstep - Hit 1 Attack
+6800341 Beast Claw - Default: AttackBothBackstep - Hit 2 Attack
+6800350 Beast Claw - Default: JumpAttack_Light_Both - Hit 1 Attack
+6800351 Beast Claw - Default: JumpAttack_Light_Both - Hit 2 Attack
+6800360 Beast Claw - Default: JumpAttack_Hard_Both - Hit 1 Attack
+6800361 Beast Claw - Default: JumpAttack_Hard_Both - Hit 2 Attack
+6800375 Beast Claw - Default: AttackBothSpecial1 Attack
+6800376 Beast Claw - Default: AttackBothSpecial2 Attack
+6800380 Beast Claw - Default: AttackBothLightCounter - Hit 1 Attack
+6800381 Beast Claw - Default: AttackBothLightCounter - Hit 2 Attack
+6800382 Beast Claw - Default: AttackBothLightCounter - Hit 3 Attack
+6800383 Beast Claw - Default: AttackBothLightCounter - Hit 4 Attack
+6800400 Beast Claw - Default Attack
+6800410 Beast Claw - Default Attack
+6800411 Beast Claw - Default Attack
+6800420 Beast Claw - Default Attack
+6800430 Beast Claw - Default Attack
+6800460 Beast Claw - Default Attack
+6800470 Beast Claw - Default Attack
+6800480 Beast Claw - Default Attack
+6800500 Beast Claw - Default Attack
+6800501 Beast Claw - Default Attack
+6800509 Beast Claw - Default Attack
+6800510 Beast Claw - Default Attack
+6800511 Beast Claw - Default Attack
+6800530 Beast Claw - Default Attack
+6800531 Beast Claw - Default Attack
+6800540 Beast Claw - Default Attack
+6800550 Beast Claw - Default Attack
+6800560 Beast Claw - Default Attack
+6800561 Beast Claw - Default Attack
+6800590 Beast Claw - Default Attack
+6800591 Beast Claw - Default Attack
+6800600 Beast Claw - Default Attack
+6800605 Beast Claw - Default Attack
+6800610 Beast Claw - Default Attack
+6800630 Beast Claw - Default Attack
+6800632 Beast Claw - Default Attack
+6800635 Beast Claw - Default Attack
+6800640 Beast Claw - Default Attack
+6800642 Beast Claw - Default Attack
+6800645 Beast Claw - Default Attack
+6800650 Beast Claw - Default Attack
+6800660 Beast Claw - Default Attack
+6800665 Beast Claw - Default Attack
+6800700 Beast Claw - Default Attack
+6800705 Beast Claw - Default Attack
+6800710 Beast Claw - Default Attack
+6800730 Beast Claw - Default Attack
+6800732 Beast Claw - Default Attack
+6800735 Beast Claw - Default Attack
+6800740 Beast Claw - Default Attack
+6800742 Beast Claw - Default Attack
+6800745 Beast Claw - Default Attack
+6800750 Beast Claw - Default Attack
+6800760 Beast Claw - Default Attack
+6800765 Beast Claw - Default Attack
+6800800 Beast Claw - Default Attack
+6800801 Beast Claw - Default Attack
+6800810 Beast Claw - Default Attack
+6800811 Beast Claw - Default Attack
+6800812 Beast Claw - Default Attack
+6800820 Beast Claw - Default Attack
+6800821 Beast Claw - Default Attack
+6800830 Beast Claw - Default Attack
+6800860 Beast Claw - Default Attack
+6800861 Beast Claw - Default Attack
+6800870 Beast Claw - Default Attack
+6800871 Beast Claw - Default Attack
+6800880 Beast Claw - Default Attack
+6800881 Beast Claw - Default Attack
+6800890 Beast Claw - Default Attack
+6800891 Beast Claw - Default Attack
 9999000 
 9999010 
 9999020 
@@ -8119,7 +8119,7 @@
 30000042 [AOW] Eruption
 30000552 [AOW] Golden Land
 30000554 [AOW] Golden Land
-30000812 
+30000812 [AOW] Waves of Darkness Bullet
 30000831 [AOW] Prelate's Charge
 30000835 [AOW] Prelate's Charge
 30000836 [AOW] Prelate's Charge
@@ -8127,7 +8127,7 @@
 30000842 [AOW] Beast's Roar
 30020930 [AOW] Flame of the Redmanes
 30090011 Dragon Halberd
-30090012 
+30090012 Dragonscale Blade [AOW] Ice Lightning Sword Bullet
 30200830 
 30200840 
 30200842 
@@ -8224,7 +8224,7 @@
 210451050 Glintstone Nails
 210470000 Blades of Stone
 210470050 Blades of Stone
-210470051 
+210470051 Blades of Stone Bullet
 210471000 Gravitational Missile
 210471001 Gravitational Missile
 210471002 Gravitational Missile
@@ -8269,12 +8269,17 @@
 210680051 Roar of Rugalea
 210680052 Roar of Rugalea
 210680053 
+210680100 
+210680150 
+210680151 
+210680152 
+210680153 
 210690000 Knight's Lightning Spear
 210690001 Knight's Lightning Spear
-210690002 
+210690002 Knight's Lightning Spear Bullet
 210690050 Knight's Lightning Spear
 210690051 Knight's Lightning Spear
-210690052 
+210690052 Knight's Lightning Spear Bullet
 210691000 Dragonbolt of Florissax
 210691001 Dragonbolt of Florissax
 210692000 Electrocharge
@@ -8341,7 +8346,7 @@
 300000045 [AOW] Eruption
 300000046 [AOW] Eruption
 300000047 [AOW] Eruption
-300000048 
+300000048 [AOW] Eruption Bullet
 300000050 [AOW] Piercing Fang
 300000051 [AOW] Piercing Fang
 300000055 [AOW] Bloody Slash
@@ -8384,10 +8389,10 @@
 300000194 [AOW] Double Slash
 300000195 [AOW] Double Slash
 300000196 [AOW] Double Slash
-300000210 
-300000211 
-300000212 
-300000213 
+300000210 [AOW] Holy Ground Bullet
+300000211 [AOW] Holy Ground Bullet
+300000212 [AOW] Holy Ground Bullet
+300000213 [AOW] Holy Ground Bullet
 300000220 [AOW] Spinning Slash
 300000221 [AOW] Spinning Slash
 300000222 [AOW] Spinning Slash
@@ -8565,9 +8570,9 @@
 300000711 [AOW] Lightning Ram - Roll
 300000715 [AOW] Lightning Ram
 300000716 [AOW] Lightning Ram
-300000760 
-300000761 
-300000762 
+300000760 [AOW] White Shadow's Lure Bullet
+300000761 [AOW] White Shadow's Lure Bullet
+300000762 [AOW] White Shadow's Lure Bullet
 300000780 [AOW] Shield Crash
 300000781 [AOW] Shield Crash
 300000782 [AOW] Shield Crash
@@ -8863,8 +8868,8 @@
 300310901 Sacred Relic Sword [AOW] Wave of Gold
 300310905 Sacred Relic Sword [AOW] Wave of Gold
 300310906 Sacred Relic Sword [AOW] Wave of Gold
-300310907 
-300310908 
+300310907 Sacred Relic Sword [AOW] Wave of Gold Bullet
+300310908 Sacred Relic Sword [AOW] Wave of Gold Bullet
 300314900 Blasphemous Blade [AOW] Taker's Flames
 300314901 Blasphemous Blade [AOW] Taker's Flames
 300314902 Blasphemous Blade [AOW] Taker's Flames
@@ -9408,40 +9413,40 @@
 301414936 Stormhawk Axe [AOW] Thunderstorm
 301414940 Stormhawk Axe [AOW] Thunderstorm
 301414941 Stormhawk Axe [AOW] Thunderstorm
-301422950 
-301422951 
-301422952 
-301422953 
-301422954 
-301422955 
-301422956 
-301422957 
-301422958 
-301422959 
-301422960 
-301422961 
-301422962 
-301422963 
-301422964 
-301422965 
-301422966 
-301422967 
-301422968 
-301422969 
-301422980 
-301422981 
-301422982 
-301422983 
-301422984 
-301422985 
-301422986 
-301422987 
-301422988 
-301422989 
-301422990 
-301422991 
-301422992 
-301422993 
+301422950 Messmer Soldier's Axe - Attack
+301422951 Messmer Soldier's Axe - Attack
+301422952 Messmer Soldier's Axe - Attack
+301422953 Messmer Soldier's Axe - Attack
+301422954 Messmer Soldier's Axe - Attack
+301422955 Messmer Soldier's Axe - Attack
+301422956 Messmer Soldier's Axe - Attack
+301422957 Messmer Soldier's Axe - Attack
+301422958 Messmer Soldier's Axe - Attack
+301422959 Messmer Soldier's Axe - Attack
+301422960 Messmer Soldier's Axe - Attack
+301422961 Messmer Soldier's Axe - Attack
+301422962 Messmer Soldier's Axe - Attack
+301422963 Messmer Soldier's Axe - Attack
+301422964 Messmer Soldier's Axe - Attack
+301422965 Messmer Soldier's Axe - Attack
+301422966 Messmer Soldier's Axe - Attack
+301422967 Messmer Soldier's Axe - Attack
+301422968 Messmer Soldier's Axe - Attack
+301422969 Messmer Soldier's Axe - Attack
+301422980 Messmer Soldier's Axe - Attack
+301422981 Messmer Soldier's Axe - Attack
+301422982 Messmer Soldier's Axe - Attack
+301422983 Messmer Soldier's Axe - Attack
+301422984 Messmer Soldier's Axe - Attack
+301422985 Messmer Soldier's Axe - Attack
+301422986 Messmer Soldier's Axe - Attack
+301422987 Messmer Soldier's Axe - Attack
+301422988 Messmer Soldier's Axe - Attack
+301422989 Messmer Soldier's Axe - Attack
+301422990 Messmer Soldier's Axe - Attack
+301422991 Messmer Soldier's Axe - Attack
+301422992 Messmer Soldier's Axe - Attack
+301422993 Messmer Soldier's Axe - Attack
 301500815 
 301500816 
 301500817 
@@ -9844,44 +9849,44 @@
 302112919 Veteran's Prosthesis [AOW] Storm Kick
 302113900 Cipher Pata [AOW] Unblockable Blade
 302113905 Cipher Pata [AOW] Unblockable Blade
-302122950 
-302122951 
-302122952 
-302122953 
-302122954 
-302122955 
-302122956 
-302122957 
-302122958 
-302122959 
-302122960 
-302122961 
-302122962 
-302122963 
-302122964 
-302122965 
-302122966 
-302122967 
-302122968 
-302122969 
-302122980 
-302122981 
-302122982 
-302122983 
-302122984 
-302122985 
-302122986 
-302122987 
-302122988 
-302122989 
-302122990 
-302122991 
-302122992 
-302122993 
-302122994 
-302122995 
-302122996 
-302122997 
+302122950 Pata - Attack
+302122951 Pata - Attack
+302122952 Pata - Attack
+302122953 Pata - Attack
+302122954 Pata - Attack
+302122955 Pata - Attack
+302122956 Pata - Attack
+302122957 Pata - Attack
+302122958 Pata - Attack
+302122959 Pata - Attack
+302122960 Pata - Attack
+302122961 Pata - Attack
+302122962 Pata - Attack
+302122963 Pata - Attack
+302122964 Pata - Attack
+302122965 Pata - Attack
+302122966 Pata - Attack
+302122967 Pata - Attack
+302122968 Pata - Attack
+302122969 Pata - Attack
+302122980 Pata - Attack
+302122981 Pata - Attack
+302122982 Pata - Attack
+302122983 Pata - Attack
+302122984 Pata - Attack
+302122985 Pata - Attack
+302122986 Pata - Attack
+302122987 Pata - Attack
+302122988 Pata - Attack
+302122989 Pata - Attack
+302122990 Pata - Attack
+302122991 Pata - Attack
+302122992 Pata - Attack
+302122993 Pata - Attack
+302122994 Pata - Attack
+302122995 Pata - Attack
+302122996 Pata - Attack
+302122997 Pata - Attack
 302200950 Claw Category [AOW] Spinning Wheel
 302200951 Claw Category [AOW] Spinning Wheel
 302200952 Claw Category [AOW] Spinning Wheel
@@ -10056,12 +10061,12 @@
 303400313 Rivers of Blood [AOW] Corpse Piler
 303400314 Rivers of Blood [AOW] Corpse Piler
 303400315 Rivers of Blood [AOW] Corpse Piler
-303400320 
-303400321 
-303400322 
-303400323 
-303400324 
-303400325 
+303400320 Rivers of Blood - Attack
+303400321 Rivers of Blood - Attack
+303400322 Rivers of Blood - Attack
+303400323 Rivers of Blood - Attack
+303400324 Rivers of Blood - Attack
+303400325 Rivers of Blood - Attack
 303400380 
 303400381 
 303400382 
@@ -10109,8 +10114,8 @@
 303401007 Ornamental Straight Sword [AOW] Golden Tempering
 303401008 Ornamental Straight Sword [AOW] Golden Tempering
 303401100 Sword of Milos [AOW] Shriek of Milos
-303401101 
-303401102 
+303401101 Sword of Milos - [AOW] Shriek of Milos Attack
+303401102 Sword of Milos - [AOW] Shriek of Milos Attack
 303401200 Dragon King's Cragblade [AOW] Thundercloud Form
 303401201 Dragon King's Cragblade [AOW] Thundercloud Form
 303401202 Dragon King's Cragblade [AOW] Thundercloud Form
@@ -10141,126 +10146,126 @@
 303401800 Golden Epitaph [AOW] Last Rites
 304400800 
 304400801 
-306100670 
-306100671 
-306100780 
-306100781 
-306100782 
-306100783 
-306100785 
-306100786 
-306100787 
-306100788 
-306300950 
-306300951 
-306300952 
-306300953 
-306300954 
-306300955 
-306300956 
-306300957 
-306300958 
-306300959 
-306300960 
-306300961 
-306300962 
-306300963 
-306300964 
-306300965 
-306300966 
-306300967 
-306300968 
-306300969 
-306300980 
-306300981 
-306300982 
-306300983 
-306300984 
-306300985 
-306300986 
-306300987 
-306300988 
-306300989 
-306300990 
-306300991 
-306300992 
-306300993 
-306300994 
-306300995 
-306300996 
-306300997 
-306700950 
-306700951 
-306700952 
-306700953 
-306700954 
-306700955 
-306700956 
-306700957 
-306700958 
-306700959 
-306700960 
-306700961 
-306700962 
-306700963 
-306700964 
-306700965 
-306700966 
-306700967 
-306700968 
-306700969 
-306700980 
-306700981 
-306700982 
-306700983 
-306700984 
-306700985 
-306700986 
-306700987 
-306700988 
-306700989 
-306700990 
-306700991 
-306700992 
-306700993 
-306800950 
-306800951 
-306800952 
-306800953 
-306800954 
-306800955 
-306800956 
-306800957 
-306800958 
-306800959 
-306800960 
-306800961 
-306800962 
-306800963 
-306800964 
-306800965 
-306800966 
-306800967 
-306800968 
-306800969 
-306800980 
-306800981 
-306800982 
-306800983 
-306800984 
-306800985 
-306800986 
-306800987 
-306800988 
-306800989 
-306800990 
-306800991 
-306800992 
-306800993 
-306800994 
-306800995 
-306800996 
-306800997 
+306100670 Thrusting Shield - Default Attack
+306100671 Thrusting Shield - Default Attack
+306100780 Thrusting Shield - Default Attack
+306100781 Thrusting Shield - Default Attack
+306100782 Thrusting Shield - Default Attack
+306100783 Thrusting Shield - Default Attack
+306100785 Thrusting Shield - Default Attack
+306100786 Thrusting Shield - Default Attack
+306100787 Thrusting Shield - Default Attack
+306100788 Thrusting Shield - Default Attack
+306300950 Hand-to-Hand - Default Attack
+306300951 Hand-to-Hand - Default Attack
+306300952 Hand-to-Hand - Default Attack
+306300953 Hand-to-Hand - Default Attack
+306300954 Hand-to-Hand - Default Attack
+306300955 Hand-to-Hand - Default Attack
+306300956 Hand-to-Hand - Default Attack
+306300957 Hand-to-Hand - Default Attack
+306300958 Hand-to-Hand - Default Attack
+306300959 Hand-to-Hand - Default Attack
+306300960 Hand-to-Hand - Default Attack
+306300961 Hand-to-Hand - Default Attack
+306300962 Hand-to-Hand - Default Attack
+306300963 Hand-to-Hand - Default Attack
+306300964 Hand-to-Hand - Default Attack
+306300965 Hand-to-Hand - Default Attack
+306300966 Hand-to-Hand - Default Attack
+306300967 Hand-to-Hand - Default Attack
+306300968 Hand-to-Hand - Default Attack
+306300969 Hand-to-Hand - Default Attack
+306300980 Hand-to-Hand - Default Attack
+306300981 Hand-to-Hand - Default Attack
+306300982 Hand-to-Hand - Default Attack
+306300983 Hand-to-Hand - Default Attack
+306300984 Hand-to-Hand - Default Attack
+306300985 Hand-to-Hand - Default Attack
+306300986 Hand-to-Hand - Default Attack
+306300987 Hand-to-Hand - Default Attack
+306300988 Hand-to-Hand - Default Attack
+306300989 Hand-to-Hand - Default Attack
+306300990 Hand-to-Hand - Default Attack
+306300991 Hand-to-Hand - Default Attack
+306300992 Hand-to-Hand - Default Attack
+306300993 Hand-to-Hand - Default Attack
+306300994 Hand-to-Hand - Default Attack
+306300995 Hand-to-Hand - Default Attack
+306300996 Hand-to-Hand - Default Attack
+306300997 Hand-to-Hand - Default Attack
+306700950 Light Greatsword - Default Attack
+306700951 Light Greatsword - Default Attack
+306700952 Light Greatsword - Default Attack
+306700953 Light Greatsword - Default Attack
+306700954 Light Greatsword - Default Attack
+306700955 Light Greatsword - Default Attack
+306700956 Light Greatsword - Default Attack
+306700957 Light Greatsword - Default Attack
+306700958 Light Greatsword - Default Attack
+306700959 Light Greatsword - Default Attack
+306700960 Light Greatsword - Default Attack
+306700961 Light Greatsword - Default Attack
+306700962 Light Greatsword - Default Attack
+306700963 Light Greatsword - Default Attack
+306700964 Light Greatsword - Default Attack
+306700965 Light Greatsword - Default Attack
+306700966 Light Greatsword - Default Attack
+306700967 Light Greatsword - Default Attack
+306700968 Light Greatsword - Default Attack
+306700969 Light Greatsword - Default Attack
+306700980 Light Greatsword - Default Attack
+306700981 Light Greatsword - Default Attack
+306700982 Light Greatsword - Default Attack
+306700983 Light Greatsword - Default Attack
+306700984 Light Greatsword - Default Attack
+306700985 Light Greatsword - Default Attack
+306700986 Light Greatsword - Default Attack
+306700987 Light Greatsword - Default Attack
+306700988 Light Greatsword - Default Attack
+306700989 Light Greatsword - Default Attack
+306700990 Light Greatsword - Default Attack
+306700991 Light Greatsword - Default Attack
+306700992 Light Greatsword - Default Attack
+306700993 Light Greatsword - Default Attack
+306800950 Beast Claw: [030600] AttackRightHeavySpecial1Start - Hit 1 Attack
+306800951 Beast Claw: [030600] AttackRightHeavySpecial1Start - Hit 2 Attack
+306800952 Beast Claw: [030600] AttackRightHeavySpecial1Start - Hit 3 Attack
+306800953 Beast Claw: [030605] AttackRightHeavySpecial1End - Hit 1 Attack
+306800954 Beast Claw: [030605] AttackRightHeavySpecial1End - Hit 2 Attack
+306800955 Beast Claw: [030605] AttackRightHeavySpecial1End - Hit 3 Attack
+306800956 Beast Claw: [030610] AttackRightHeavySpecial2Start - Hit 1 Attack
+306800957 Beast Claw: [030610] AttackRightHeavySpecial2Start - Hit 2 Attack
+306800958 Beast Claw: [030615] AttackRightHeavySpecial2End - Hit 1 Attack
+306800959 Beast Claw: [030615] AttackRightHeavySpecial2End - Hit 2 Attack
+306800960 Beast Claw - Default: AttackBothHeavySpecial1Start - Hit 1 Attack
+306800961 Beast Claw - Default: AttackBothHeavySpecial1Start - Hit 2 Attack
+306800962 Beast Claw - Default: AttackBothHeavySpecial1Start - Hit 3 Attack
+306800963 Beast Claw - Default: AttackBothHeavySpecial1End - Hit 1 Attack
+306800964 Beast Claw - Default: AttackBothHeavySpecial1End - Hit 2 Attack
+306800965 Beast Claw - Default: AttackBothHeavySpecial1End - Hit 3 Attack
+306800966 Beast Claw - Default: AttackBothHeavySpecial2Start - Hit 1 Attack
+306800967 Beast Claw - Default: AttackBothHeavySpecial2Start - Hit 2 Attack
+306800968 Beast Claw - Default: AttackBothHeavySpecial2End - Hit 1 Attack
+306800969 Beast Claw - Default: AttackBothHeavySpecial2End - Hit 2 Attack
+306800980 Beast Claw: [030620] AttackRightHeavySpecialWarrior1Start - Hit 1 Attack
+306800981 Beast Claw: [030625] AttackRightHeavySpecialWarrior1End Attack
+306800982 Beast Claw: [030620] AttackRightHeavySpecialWarrior1Start - Hit 2 Attack
+306800983 Beast Claw: [030620] AttackRightHeavySpecialWarrior1Start - Hit 3 Attack
+306800984 Beast Claw: [030630] AttackRightHeavySpecialWarrior2Start - Hit 1 Attack
+306800985 Beast Claw: [030635] AttackRightHeavySpecialWarrior2End Attack
+306800986 Beast Claw: [030630] AttackRightHeavySpecialWarrior2Start - Hit 2 Attack
+306800987 Beast Claw: [030630] AttackBothHeavySpecialWarrior1Start - Hit 3 Attack
+306800988 Beast Claw: [030630] AttackBothHeavySpecialWarrior1Start - Hit 4 Attack
+306800989 Beast Claw - Default: AttackBothHeavySpecialWarrior1End - Hit 1 Attack
+306800990 Beast Claw - Default: AttackBothHeavySpecialWarrior1End - Hit 2 Attack
+306800991 Beast Claw - Default: AttackBothHeavySpecialWarrior1Start - Hit 1 Attack
+306800992 Beast Claw - Default: AttackBothHeavySpecialWarrior1Start - Hit 2 Attack
+306800993 Beast Claw - Default: AttackBothHeavySpecialWarrior2Start - Hit 2 Attack
+306800994 Beast Claw - Default: AttackBothHeavySpecialWarrior2Start - Hit 3 Attack
+306800995 Beast Claw - Default: AttackBothHeavySpecialWarrior2End - Hit 1 Attack
+306800996 Beast Claw - Default: AttackBothHeavySpecialWarrior2End - Hit 2 Attack
+306800997 Beast Claw - Default: AttackBothHeavySpecialWarrior2Start - Hit 1 Attack
 500000000 
 500000001 
 500000010 
@@ -10282,12 +10287,12 @@
 600000016 
 600000017 
 600000018 
-600000020 
-600000021 
-600000022 
-600000023 
-600000030 
-600000031 
+600000020 Firespark Perfume Bottle - Bullet
+600000021 Firespark Perfume Bottle - Bullet
+600000022 Firespark Perfume Bottle - Bullet
+600000023 Firespark Perfume Bottle - Bullet
+600000030 Firespark Perfume Bottle - Bullet
+600000031 Firespark Perfume Bottle - Bullet
 600000050 
 600000051 
 600000052 
@@ -10597,19 +10602,19 @@
 600000991 
 600000992 
 600000993 
-600001000 
-600001001 
-600001002 
-600001003 
-600001008 
-600001009 
-600200100 
+600001000 Claws of Night - Bullet
+600001001 Claws of Night - Bullet
+600001002 Claws of Night - Bullet
+600001003 Claws of Night - Bullet
+600001008 Claws of Night - Bullet
+600001009 Claws of Night - Bullet
+600200100 Light Greatsword - Default Attack
 600600100 
 601000100 
 601000101 
-602420000 
-606100100 
-606100101 
+602420000 Nanaya's Torch - Bullet
+606100100 Thrusting Shield - Default Attack
+606100101 Thrusting Shield - Default Attack
 700000000 
 700000001 
 700000002 
@@ -10704,15 +10709,15 @@
 700000180 
 700000181 
 700000182 
-700000190 
-700000191 
-700000192 
-700000193 
-700000194 
-700000195 
-700000196 
-700000197 
-700000198 
+700000190 Verdigris Greatshield - Attack
+700000191 Verdigris Greatshield - Attack
+700000192 Verdigris Greatshield - Attack
+700000193 Verdigris Greatshield - Attack
+700000194 Verdigris Greatshield - Attack
+700000195 Verdigris Greatshield - Attack
+700000196 Verdigris Greatshield - Attack
+700000197 Verdigris Greatshield - Attack
+700000198 Verdigris Greatshield - Bullet
 700000200 
 700000205 
 700000206 
@@ -10829,7 +10834,7 @@
 700000420 
 700000421 
 700000425 
-701320360 
-701320361 
+701320360 Serpent Flail - Bullet
+701320361 Serpent Flail - Bullet
 999999998 
 999999999 

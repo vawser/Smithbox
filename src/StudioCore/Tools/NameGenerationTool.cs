@@ -44,7 +44,7 @@ public static class NameGenerationTool
         EquipWeaponParam = ParamBank.PrimaryBank.Params.Where(e => e.Key == "EquipParamWeapon").First().Value;
         SwordArtsParam = ParamBank.PrimaryBank.Params.Where(e => e.Key == "SwordArtsParam").First().Value;
         BehaviorParam_PC = ParamBank.PrimaryBank.Params.Where(e => e.Key == "BehaviorParam_PC").First().Value;
-        SpEffectParam = ParamBank.PrimaryBank.Params.Where(e => e.Key == "BehaviorParam_PC").First().Value;
+        SpEffectParam = ParamBank.PrimaryBank.Params.Where(e => e.Key == "SpEffectParam").First().Value;
         Bullet = ParamBank.PrimaryBank.Params.Where(e => e.Key == "Bullet").First().Value;
         AtkParam_Pc = ParamBank.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Pc").First().Value;
 

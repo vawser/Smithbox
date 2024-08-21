@@ -18,6 +18,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using static SoulsFormats.BHD5;
 
 namespace StudioCore.Editors.ParamEditor.Actions;
 public enum TargetType
@@ -799,67 +800,5 @@ public class ActionHandler
         public string Name;
 
         public AliasValueResult() { }
-    }
-
-    public bool OnlyNameEmptyRows = true;
-
-    // Automatic Name generation
-    public bool CanUseAutomaticNaming()
-    {
-        return true;
-    }
-
-    public void AutoNameHandler(bool includeReferencedRows = false)
-    {
-        var selectedParam = Smithbox.EditorHandler.ParamEditor._activeView._selection;
-
-        if (selectedParam.ActiveParamExists())
-        {
-            if (ParamBank.PrimaryBank.Params != null)
-            {
-                var activeParam = selectedParam.GetActiveParam();
-                var rows = selectedParam.GetSelectedRows();
-
-                HandleShopLineupParam(activeParam, rows);
-            }
-        }
-    }
-
-    public void HandleShopLineupParam(string activeParam, List<Param.Row> rows)
-    {
-        if (activeParam == "ShopLineUp")
-        {
-            foreach (var row in rows)
-            {
-                var refID = $"{row["equipId"].Value.Value}";
-                var equipType = $"{row["equipType"].Value.Value}";
-
-                // Weapon 
-                if (equipType == "0")
-                {
-                    var EquipParamWeapon = ParamBank.PrimaryBank.Params.Where(e => e.Key == "EquipParamWeapon").First().Value;
-                }
-                // Armor 
-                if (equipType == "1")
-                {
-                    var EquipParamProtector = ParamBank.PrimaryBank.Params.Where(e => e.Key == "EquipParamProtector").First().Value;
-                }
-                // Accessory 
-                if (equipType == "2")
-                {
-                    var EquipParamAccessory = ParamBank.PrimaryBank.Params.Where(e => e.Key == "EquipParamAccessory").First().Value;
-                }
-                // Good 
-                if (equipType == "3")
-                {
-                    var EquipParamGoods = ParamBank.PrimaryBank.Params.Where(e => e.Key == "EquipParamGoods").First().Value;
-                }
-                // Ash of War 
-                if (equipType == "4")
-                {
-
-                }
-            }
-        }
     }
 }

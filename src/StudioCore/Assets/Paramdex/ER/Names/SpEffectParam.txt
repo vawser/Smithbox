@@ -11220,14 +11220,14 @@
 20502010 [Item] Rock Heart (Cycled)
 20502011 [Item] Rock Heart (Cycled)
 20502012 [Item] Rock Heart
-20502015 
+20502015 [Item] Rock Heart (Dragon Communion Buff)
 20502020 [Item] Priestess Heart (Cycled)
 20502021 [Item] Priestess Heart (Cycled)
 20502022 [Item] Priestess Heart
-20502025 
-20502030 
-20502031 
-20502035 
+20502025 [Item] Priestess Heart (Dragon Cult Buff)
+20502030 [Item] Lamenter's Mask (Cycled)
+20502031 [Item] Lamenter's Mask
+20502035 [Item] Lamenter's Mask (Bullet Activator)
 20502100 [Item] Ancient Dragon's Blessing
 20502101 [Item] Ancient Dragon's Blessing
 20502102 [Item] Ancient Dragon's Blessing

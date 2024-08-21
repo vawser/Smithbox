@@ -42,6 +42,12 @@ public class TimeActSearch
 
     public void Display()
     {
+        if (Screen.SelectionHandler.ContainerInfo == null)
+        {
+            ImguiUtils.WrappedText("You must select a File first.");
+            return;
+        }
+
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
 

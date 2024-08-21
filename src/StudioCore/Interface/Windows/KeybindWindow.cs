@@ -624,13 +624,9 @@ public class ParamEditorKeybindTab
 
         if (ImGui.CollapsingHeader("Row Namer", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            KeyBindings.Current.PARAM_RowNamer_Flat_Apply = InputTracker.KeybindLine(60,
-                KeyBindings.Current.PARAM_RowNamer_Flat_Apply,
-                KeyBindings.Default.PARAM_RowNamer_Flat_Apply);
-
-            KeyBindings.Current.PARAM_RowNamer_Cascade_Apply = InputTracker.KeybindLine(61,
-                KeyBindings.Current.PARAM_RowNamer_Cascade_Apply,
-                KeyBindings.Default.PARAM_RowNamer_Cascade_Apply);
+            KeyBindings.Current.PARAM_ApplyRowNamer = InputTracker.KeybindLine(60,
+                KeyBindings.Current.PARAM_ApplyRowNamer,
+                KeyBindings.Default.PARAM_ApplyRowNamer);
         }
 
         if (ImGui.CollapsingHeader("Param Reloader", ImGuiTreeNodeFlags.DefaultOpen))

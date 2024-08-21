@@ -2576,10 +2576,25 @@
                 "shadow of the erdtree",
                 "sote"
             ]
+        },{
+            "id": "c5650",
+            "name": "Messmer Foot Soldier",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
         },
         {
             "id": "c5651",
             "name": "Messmer Foot Soldier",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
+            "id": "c5660",
+            "name": "Shadow Militia",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -2993,7 +3008,23 @@
             ]
         },
         {
+            "id": "c6200",
+            "name": "Scarab",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
             "id": "c6201",
+            "name": "Scarab",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
+            "id": "c6202",
             "name": "Scarab",
             "tags": [
                 "shadow of the erdtree",
@@ -3011,6 +3042,30 @@
         {
             "id": "c6220",
             "name": "Wolf",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
+            "id": "c6221",
+            "name": "Wolf",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
+            "id": "c6223",
+            "name": "Wolf",
+            "tags": [
+                "shadow of the erdtree",
+                "sote"
+            ]
+        },
+        {
+            "id": "c6230",
+            "name": "Perfumer",
             "tags": [
                 "shadow of the erdtree",
                 "sote"
@@ -3042,7 +3097,7 @@
         },
         {
             "id": "c6240",
-            "name": "",
+            "name": "Dummy",
             "tags": [
                 "shadow of the erdtree",
                 "sote"

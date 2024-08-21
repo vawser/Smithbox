@@ -1226,6 +1226,10 @@ public static class ParamReferenceUtils
     {
         var editor = Smithbox.EditorHandler.ParamEditor;
         var param = ParamBank.PrimaryBank.Params[editor._activeView._selection.GetActiveParam()];
+
+        if (param == null)
+            return;
+
         var curRow = param[row.ID];
 
         var color = GetVector3Color(curRow, redField, greenField, blueField);

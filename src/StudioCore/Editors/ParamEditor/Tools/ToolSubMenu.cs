@@ -69,13 +69,9 @@ public class ToolSubMenu
             CFG.Current.Param_PinGroups_ShowOnlyPinnedFields = !CFG.Current.Param_PinGroups_ShowOnlyPinnedFields;
         }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_RowNamer_Flat_Apply))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ApplyRowNamer))
         {
-            Handler.AutoNameHandler(false);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_RowNamer_Cascade_Apply))
-        {
-            Handler.AutoNameHandler(true);
+            RowNamer.ApplyRowNamer();
         }
     }
 
@@ -302,32 +298,6 @@ public class ToolSubMenu
                 }
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("Row Namer"))
-            {
-                ImGui.Checkbox("Only Name Empty Rows", ref Handler.OnlyNameEmptyRows);
-
-                if (ImGui.MenuItem("Flat", Handler.CanUseAutomaticNaming()))
-                {
-                    if (Screen._activeView._selection.RowSelectionExists())
-                    {
-                        Handler.AutoNameHandler(false);
-                    }
-                }
-                ImguiUtils.ShowHoverTooltip("Automatically name the currently selected rows, ignoring any referenced rows.");
-
-                if (ImGui.MenuItem("Cascade", Handler.CanUseAutomaticNaming()))
-                {
-                    if (Screen._activeView._selection.RowSelectionExists())
-                    {
-                        Handler.AutoNameHandler(true);
-                    }
-                }
-                ImguiUtils.ShowHoverTooltip("Automatically name the currently selected rows, and include all referenced rows.");
-
-                ImGui.EndMenu();
-            }
-
             ImGui.Separator();
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
@@ -338,6 +308,30 @@ public class ToolSubMenu
                     Handler.SortRowsHandler();
                 }
             }
+
+            ImGui.Separator();
+
+
+            // Developer-only actions
+#if DEBUG
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.MenuItem("Weapon - Deep Row Namer"))
+            {
+                if (Screen._activeView._selection.ActiveParamExists())
+                {
+                    RowNamer.ApplyWeaponDeepRowNamer();
+                }
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.MenuItem("Enemy - Deep Row Namer"))
+            {
+                if (Screen._activeView._selection.ActiveParamExists())
+                {
+                    RowNamer.ApplyEnemyDeepRowNamer();
+                }
+            }
+#endif
 
             ImGui.EndMenu();
         }
