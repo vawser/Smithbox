@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<logicId AltName="Logic ID" Wiki="Set the ID of the logic created by the script." />
+    <battleGoalID AltName="Battle Goal ID" Wiki="Battle goal ID" />
+    <nearDist AltName="Near Distance" Wiki="This is the range that is considered short distance. Used for determining close combat." />
+    <midDist AltName="Middle Distance" Wiki="This range is considered medium distance. Used to judge medium-range combat." />
+    <farDist AltName="Far Distance" Wiki="This is the range that is considered long distance. Used to judge projectiles." />
+    <outDist AltName="Out of Combat Distance" Wiki="This is the distance considered to be outside the combat range. Will no longer attempt to perform combat actions on enemies outside of range." />
+    <BackHomeLife_OnHitEneWal AltName="Back Home Time on Touching Enemy Wall" Wiki="The life of the BackToHome goal when it touches an enemy wall that blocks the block" />
+    <goalID_ToCaution AltName="Goal: Alert State (Normal Sound)" Wiki="" />
+    <idAttackCannotMove AltName="Blocked Movement - Anim ID" Wiki="An action that automatically takes place when a destructible object stops it." />
+    <goalID_ToFind AltName="Goal: Search State" Wiki="" />
+    <callHelp_ActionAnimId AltName="Call Help - Action Animation ID" Wiki="Animation ID (EzStateAnimID) when responding" />
+    <callHelp_CallActionId AltName="Call Help - Call Action ID" Wiki="Action ID (EzStateAnimID) when calling a friend" />
+    <eye_dist AltName="Vision - Search Distance" Wiki="Visual enemy search range." />
+    <ear_dist AltName="Listen - Search Distance" Wiki="Enemy search range by hearing." />
+    <ear_soundcut_dist AltName="Listen - Sound Cutoff Distance" Wiki="The distance to reduce the size of the sound source. You will not hear any sound below this distance." />
+    <nose_dist AltName="Sense - Distance" Wiki="Search range by smell." />
+    <maxBackhomeDist AltName="Retreat Home - Max Distance" Wiki="COMMON_SetBattleActLogic argument" />
+    <backhomeDist AltName="Retreat Home - Distance" Wiki="COMMON_SetBattleActLogic argument" />
+    <backhomeBattleDist AltName="Retreat Home - Battle Distance" Wiki="COMMON_SetBattleActLogic argument" />
+    <nonBattleActLife AltName="Combat - Non-Battle Act Duration" Wiki="COMMON_SetBattleActLogic argument" />
+    <BackHome_LookTargetTime AltName="Retreat Home - Look for Target Time" Wiki="When returning home: Time to look at the target [sec]" />
+    <BackHome_LookTargetDist AltName="Retreat Home - Look for Target Distance" Wiki="When returning home: Distance to see the target [m]" />
+    <SightTargetForgetTime AltName="Vision - Target Visual Forget Time" Wiki="Time to forget the visual target." />
+    <SoundTargetForgetTime AltName="Listen - Target Forget Time" Wiki="Time to forget the sound target." />
+    <BattleStartDist AltName="Combat - Start Distance" Wiki="" />
+    <callHelp_MyPeerId AltName="Call Help - My Peer ID" Wiki="My fellow group ID" />
+    <callHelp_CallPeerId AltName="Call Help - Call Peer ID" Wiki="Companion group ID to call a companion" />
+    <targetSys_DmgEffectRate AltName="Target System - Damage Effect Rate" Wiki="Damage impact rate acquisition (target system evaluation information)" />
+    <TeamAttackEffectivity AltName="Team Attack Effectivity" Wiki="A value for determining the number of simultaneous attacks in a team. Increasing the value reduces the number of people who can participate in the attack at the same time." />
+    <eye_angX AltName="Vision - Height Angle" Wiki="Visual search range." />
+    <eye_angY AltName="Vision - Width Angle" Wiki="Visual search range." />
+    <ear_angX AltName="Listen - Height Angle" Wiki="Hearing search range." />
+    <ear_angY AltName="Listen - Width Angle" Wiki="Hearing search range." />
+    <callHelp_CallValidMinDistTarget AltName="Call Help - Valid Target Min Distance" Wiki="If it is closer than this value, you cannot call a friend." />
+    <callHelp_CallValidRange AltName="Call Help - Valid Target Range" Wiki="Do not call if the companion is farther than this value." />
+    <callHelp_ForgetTimeByArrival AltName="Call Help - Forget Time by Arrival" Wiki="Time to respond" />
+    <callHelp_MinWaitTime AltName="Call Help - Min Wait Time" Wiki="Minimum time for the first wait goal of the response goal [101 => 10.1sec]" />
+    <callHelp_MaxWaitTime AltName="Call Help - Max Wait Time" Wiki="Maximum time for the first waiting goal of the response goal [101 => 10.1sec]" />
+    <goalAction_ToCaution AltName="Goal Action - To Alert (Sound)" Wiki="Goal action: Target becomes alert due to normal sound detection" Enum="NPC_THINK_GOAL_ACTION" />
+    <goalAction_ToFind AltName="Goal Action - To Search (Sound)" Wiki="Goal action: Target becomes alert due to normal sound detection" Enum="NPC_THINK_GOAL_ACTION" />
+    <callHelp_ReplyBehaviorType AltName="Call Help - Reply Behavior Type" Wiki="Action type to target position after response" Enum="NPC_THINK_REPLY_BEHAVIOR_TYPE" />
+    <disablePathMove AltName="Disable Path Move" Wiki="Whether to move directly without following the path even if a path move command comes" IsBool="" />
+    <skipArrivalVisibleCheck AltName="Skip Arrival Visibility Check" Wiki="Do you want to skip the arrival judgment by the line of sight? When set to On, arrival judgment is performed even if the line of sight does not pass." IsBool="" />
+    <thinkAttr_doAdmirer AltName="Think Attribute - Do Admirer" Wiki="Thinking attribute: When turned on, it plays a role of surrounding." IsBool="" /><enableNaviFlg_Edge AltName="Navigation - Edge" Wiki="Can you pass through the node cliff? (def: 1)" IsBool="" />
+    <enableNaviFlg_LargeSpace AltName="Navigation - Large Space" Wiki="Can you pass through the node wide? (def: 1)" IsBool="" />
+    <enableNaviFlg_Ladder AltName="Navigation - Ladder" Wiki="Can you pass through the node ladder? (def: 0)" IsBool="" />
+    <enableNaviFlg_Hole AltName="Navigation - Hole" Wiki="Can you go through the node hole? (def: 0)" IsBool="" />
+    <enableNaviFlg_Door AltName="Navigation - Door" Wiki="Can you pass through the node door? (def: 0)" IsBool="" />
+    <enableNaviFlg_InSideWall AltName="Navigation - Ignore Navmesh Wall" Wiki="Can you pass through the node in the wall? (def: 0)" IsBool="" />
+    <enableNaviFlg_EdgeOrdinary AltName="Navigation - Cliff Edge" Wiki="Can you pass the node cliff under normal / alert conditions? (def: 1)" IsBool="" />
+    <enableNaviFlg_reserve0 IsHidden="" />
+    <enableNaviFlg_reserve1 IsHidden="" />
+    <eyeDist_forDark AltName="Vision Distance - In Darkness" />
+    <battleStartDist_forDark AltName="Combat - Start Distance - In Darkness" />
+    <eyeDist_forPitchDark AltName="Vision Distance - In Total Darkness" />
+    <battleStartDist_forPitchDark AltName="Combat - Start Distance - In Total Darkness" />
+    <platoonReplyTime AltName="Platoon - Reply Time" Wiki="Platoon reaction delay time [sec]" />
+    <platoonReplyAddRandomTime AltName="Platoon - Reply Add Random Time" Wiki="Platoon reaction additional random time [sec]" />
+    <eye_BackOffsetDist AltName="Vision - Start Position - Backward Offset" Wiki="The viewing angle start position is behind this distance from the center of the character." />
+    <eye_BeginDist AltName="Vision - Start Distance" Wiki="This distance is not recognized from the viewing angle generation position" />
+    <target_ArriveDist AltName="Target - Arrival Distance" />
+    <point_ArriveDist AltName="Point - Arrival Distance" />
+    <changeStateAction_ToFind AltName="Goal Action - Start Search State" />
+    <changeStateAction_ToCaution AltName="Goal Action - Start Alert State" />
+    <changeStateAction_ToBattle AltName="Goal Action - Start Battle State" />
+    <goalAction_ToDisappear AltName="Goal Action - Target Lost" Wiki="Goal action: Lost target" Enum="NPC_THINK_GOAL_ACTION" />
+    <disableLocalSteering AltName="Disable Local Steering" Wiki="Do you want to turn off the behavior (local steering) that tries to move while avoiding other characters?" IsBool="" />
+    <actTypeOnFailedPath AltName="Act Type on Failed Path" Wiki="Default action type to be performed when the path search fails, when the end point of the alternative path is reached / when the homecoming limit distance is reached" Enum="NPC_THINK_ACTTYPE_ON_FAILEDPATH" />
+    <interestCategory AltName="Sound Interest Category" />
+    <goalAction_ToInterest AltName="Goal Action: Alert State (Interesting Sound)" />
+    <goalID_ToInterest AltName="Goal: Alert State (Interesting Sound)" />
+    <changeStateAction_ToInterest AltName="Goal Action: Start Alert State (Interesting Sound)" />
+    <changeStateAction_ToNormal AltName="Goal Action: Start Normal State" Wiki="Action when transitioning to the normal state" Enum="NPC_THINK_CHANGE_STATE_ACTION" />
+    <pad IsHidden="" />
+    
+  </Field>
+  <Self Wiki="NPC AI data" />
+</PARAMMETA>

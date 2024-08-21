@@ -123,6 +123,76 @@ public static class ParamReferenceUtils
         }
     }
 
+    // Supports: BB
+    public static void ReturnPointParam(string activeParam, Param.Row row, string currentField)
+    {
+        if (!(Smithbox.ProjectType is ProjectType.BB))
+            return;
+
+        if (activeParam == null)
+            return;
+
+        if (row == null)
+            return;
+
+        if (currentField == null)
+            return;
+
+        if (activeParam == "ReturnPointParam")
+        {
+            bool show = false;
+            var mapId = "";
+            var rowMapId = "";
+            int entityID = 0;
+
+            Param.Cell? c = row?["returnPointEntityId"];
+            entityID = (int)c.Value.Value;
+            entityID = entityID - 2000; // To get the enemy ID
+
+            c = row?["areaNo"];
+            short AA = (short)c.Value.Value;
+            c = row?["blockNo"];
+            short BB = (short)c.Value.Value;
+
+            string sAA = $"{AA}";
+            string sBB = $"{BB}";
+
+            if (AA < 10)
+                sAA = $"0{AA}";
+
+            if (BB < 10)
+                sBB = $"0{BB}";
+
+            rowMapId = $"m{sAA}_{sBB}_00_00";
+
+            var mapList = MapLocator.GetFullMapList();
+
+            if (mapList.Contains(rowMapId))
+            {
+                show = true;
+                mapId = rowMapId;
+            }
+
+            if (show)
+            {
+                var width = ImGui.GetColumnWidth();
+
+                if (ImGui.Button($"View in Map", new Vector2(width, 20)))
+                {
+                    if (mapId != "")
+                    {
+                        EditorCommandQueue.AddCommand($"map/load/{mapId}");
+                    }
+                    if (entityID != 0)
+                    {
+                        EditorCommandQueue.AddCommand($"map/idselect/enemy/{mapId}/{entityID}");
+                    }
+                }
+                ImguiUtils.ShowHoverTooltip("Loads the map this lamp is located in and selects the bonfire Enemy map object automatically, allowing you to frame it immediately.");
+            }
+        }
+    }
+
     // Supports: ER, DS3, SDT, DS1, DS1R
     public static void GameAreaParam(string activeParam, Param.Row row, string currentField)
     {

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <neckTurnGain AltName="Neck Turn Gain" Wiki="Swing gain. The higher it is, the faster it spins." />
+    <originalGroundHeightMS AltName="Height from Origin to Ground" />
+    <minAnkleHeightMS AltName="Minimum Ankle Height" Wiki="Minimum Height at which Ankle is raised" />
+    <maxAnkleHeightMS AltName="Maximum Ankle Height" Wiki="Maximum Height at which Ankle is raised" />
+    <cosineMaxKneeAngle AltName="Maximum Bend Angle" Wiki="Maximum angle at which the knee can be bent (cosine value)" />
+    <cosineMinKneeAngle AAltName="Minimum Bend Angle" Wiki="Minimum angle at which the knee can be bent (cosine value)" />
+    <footPlantedAnkleHeightMS AltName="Lowest Ankle Height" Wiki="The lowest position assuming that the ankles are attached" />
+    <footRaisedAnkleHeightMS AltName="Highest Ankle Height" Wiki="Highest position assuming ankles are apart" />
+    <raycastDistanceUp AltName="Raycast Distance: Up" />
+    <raycastDistanceDown AltName="Raycast Distance: Down" />
+    <footEndLS_X AltName="Foot End LS: X" />
+    <footEndLS_Y AltName="Foot End LS: Y" />
+    <footEndLS_Z AltName="Foot End LS: Z" />
+    <onOffGain AltName="On/Off Gain" />
+    <groundAcsendingGain AltName="Ground Ascending Gain" />
+    <groundDescendingGain AltName="Ground Descending Gain" />
+    <footRaisedGain AltName="Foot Raised Gain" />
+    <footPlantedGain AltName="Foot Planted Gain" />
+    <footUnlockGain AltName="Foot Unlock Gain" />
+    <kneeAxisType AltName="Knee Axis Type" />
+    <useFootLocking AltName="Use Foot Locking" IsBool="" />
+    <footPlacementOn AltName="Use Foot Placement" IsBool="" />
+    <twistKneeAxisType AltName="Twist Knee Axis Type" />
+    <neckTurnPriority AltName="Neck Turn Priority" />
+    <neckTurnMaxAngle AltName="Neck Turn Max Angle" />
+    <pad1 AltName="" IsHidden=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

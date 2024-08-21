@@ -632,6 +632,7 @@ public class ParamRowEditor
                 // These are placed at the top, below the ID row
                 if (imguiId == 1)
                 {
+                    ParamReferenceUtils.ReturnPointParam(activeParam, row, internalName);
                     ParamReferenceUtils.BonfireWarpParam(activeParam, row, internalName);
                     ParamReferenceUtils.GameAreaParam(activeParam, row, internalName);
                     ParamReferenceUtils.ItemLotParam(activeParam, row, internalName);

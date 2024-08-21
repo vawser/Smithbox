@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="SHOP_LINEUP_EQUIPTYPE" type="u8">
+        <Option Value="0" Name="Weapon" />
+        <Option Value="1" Name="Protector" />
+        <Option Value="2" Name="Accessory" />
+        <Option Value="3" Name="Good" />
+    </Enum>
+  </Enums>
+  <Field>
+    <equipId AltName="Reference ID" Wiki="ID of the equipment for sale" Refs="EquipParamAccessory(equipType=2),EquipParamGoods(equipType=3),EquipParamProtector(equipType=1),EquipParamWeapon(equipType=0)" />
+    <value AltName="Sell Price Overwrite" Wiki="Selling price to overwrite (-1: Do not overwrite)" />
+    <mtrlId AltName="Required Material ID" Wiki="Material ID required for purchase (-1: None)" Refs="EquipMtrlSetParam" />
+    <eventFlag AltName="Quantity - Event Flag ID" Wiki="Event flag value that holds the number" />
+    <qwcId AltName="Visibility - Event Flag ID" Wiki="Sales ban event flag" />
+    <sellQuantity AltName="Amount to Sell" Wiki="Number of units sold" />
+    <shopType AltName="Shop Type" Wiki="" Enum="SHOP_LINEUP_SHOPTYPE" />
+    <equipType AltName="Equipment Type" Wiki="Types of equipment for sale" Enum="SHOP_LINEUP_EQUIPTYPE" />
+    <value_SAN AltName="Sale Price" Wiki="" />
+    <pad_0 AltName="" IsHidden=""/>
+  </Field>
+  <Self Wiki="Shop parameters."/>
+</PARAMMETA>

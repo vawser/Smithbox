@@ -261,6 +261,8 @@ public class ParamBank
         {
             var fName = f.Substring(f.LastIndexOf('\\') + 1);
 
+            //TaskLogs.AddLog(fName);
+
             if (CFG.Current.Param_UseProjectMeta && Smithbox.ProjectType != ProjectType.Undefined)
             {
                 var metaDir = ParamLocator.GetParammetaDir();
