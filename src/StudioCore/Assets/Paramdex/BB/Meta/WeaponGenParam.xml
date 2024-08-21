@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <wepParamId AltName="Weapon ID" Wiki="Equipment_Weapon parameter ID" Refs="EquipParamWeapon" />
+    <gemSlotType_0 AltName="Gem Slot Type [0]" Wiki="" Enum="GEM_SLOT_TYPE_MASK" />
+    <gemGenId_0 AltName="Gem Generation ID [0]" Wiki="" Refs="GemGenParam" />
+    <gemSlotType_1 AltName="Gem Slot Type [1]" Wiki="" Enum="GEM_SLOT_TYPE_MASK" />
+    <gemGenId_1 AltName="Gem Generation ID [1]" Wiki="" Refs="GemGenParam" />
+    <gemSlotType_2 AltName="Gem Slot Type [2]" Wiki="" Enum="GEM_SLOT_TYPE_MASK" />
+    <gemGenId_2 AltName="Gem Generation ID [2]" Wiki="" Refs="GemGenParam" />
+    <gemSlotType_3 AltName="Gem Slot Type [3]" Wiki="" Enum="GEM_SLOT_TYPE_MASK" />
+    <gemGenId_3 AltName="Gem Generation ID [3]" Wiki="" Refs="GemGenParam" />
+    <gemSlotType_4 AltName="Gem Slot Type [4]" Wiki="" Enum="GEM_SLOT_TYPE_MASK" />
+    <gemGenId_4 AltName="Gem Generation ID [4]" Wiki="" Refs="GemGenParam" />
+    <equipableGemSegmentMask AltName="Gem Classification Mask" Wiki="" Enum="GEM_SEGMENT_MASK" />
+    <reserveGemSlotNo_0 AltName="Reserved Gem Slot [0]" Wiki="" />
+    <reserveGemSlotNo_1 AltName="Reserved Gem Slot [1]" Wiki="" />
+    <reserveGemSlotNo_2 AltName="Reserved Gem Slot [2]" Wiki="" />
+  </Field>
+  <Self Wiki=""/>
+</PARAMMETA>

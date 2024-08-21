@@ -51,7 +51,7 @@ Model Editor:  - ADD: FBX Import into loose FLVER
  - ADD: floating text for co-ordinate direction (X, Y, Z)
  - ADD: dummy poly forward/upwards representation
  - ADD: proper handling for the flag fields in the FLVER
- - ADD: GX Item mapping so the byte arrays are more comprehesible
+ - ADD: GX Item mapping so the byte arrays are more comprehesible (https://github.com/JKAnderson/SoulsFormats/issues/14)
  - ADD: render bone connections (use patrol route method)
  
  - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
@@ -67,6 +67,7 @@ Param Editor:
  - ADD: stayparam support for DS3 (requires 'blob' editor with manual definitions)
  - ADD: Able to sort row order manually
  - ADD: make "Use project meta" merge in new entries instead of wholesale replacing (https://github.com/ividyon/WitchyBND/blob/main/WitchyBND/Configuration.cs)
+ - ADD: automatic naming tool: for current param, look for reference fields, name the linked param row with the base name if empty (e.g. Item -> Bullet-> AtkParam)
 
 Text Editor:
  - REWORK: remove the in-built categorization of the FMGs, add as an optional bundling, but internally they should reflect the actual FMG binder structure
@@ -74,6 +75,7 @@ Text Editor:
  - ADD: FMG Generator script creation modal
  - ADD: FMG Generator open script folder (for project)
  - ADD: add modified filter
+ - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
  
  - FIX: internal vanilla entry should be preferred over internal dlc01/dlc02 entry due to FMG read preference (vanilla entry overrides dlc1 entry, dlc1 entry overrides dlc2 entry)
  
@@ -109,50 +111,6 @@ Documentation:
 #--------------------------------------
 # Notes
 #--------------------------------------
-
-ADD: automatic naming tool: for current param, look for reference fields, name the linked param row with the base name if empty (e.g. Item -> Bullet-> AtkParam)
-
 # TODO:
-ADD BB Param Meta
+Finish BB Param Meta
 
-TitleGoods - TitleGoods
-TitleWeapons - TitleWeapons
-TitleArmor - TitleArmor
-TitleRings - TitleRings
-TitleSpells - TitleSpells
-TitleCharacters - TitleCharacters
-TitleLocations - TitleLocations
-SummaryGoods - SummaryGoods
-SummaryWeapons - SummaryWeapons
-SummaryArmor - SummaryArmor
-SummaryRings - SummaryRings
-DescriptionGoods - DescriptionGoods
-DescriptionWeapons - DescriptionWeapons
-DescriptionArmor - DescriptionArmor
-DescriptionRings - DescriptionRings
-SummarySpells - SummarySpells
-DescriptionSpells - DescriptionSpells
-TalkMsg - TalkMsg
-BloodMsg - BloodMsg
-MovieSubtitle - MovieSubtitle
-TalkMsg_FemalePC_Alt - TalkMsg_FemalePC_Alt
-Event - Event
-NetworkMessage - NetworkMessage
-GemExtraInfo - ReusedFMG_32
-EventTextForTalk - EventTextForTalk
-EventTextForMap - EventTextForMap
-TitleGem - ReusedFMG_35
-MenuInGame - MenuInGame
-MenuCommon - MenuCommon
-MenuOther - MenuOther
-MenuDialog - MenuDialog
-MenuKeyGuide - MenuKeyGuide
-MenuLineHelp - MenuLineHelp
-MenuTags - MenuTags
-Win32Tags - Win32Tags
-Win32Messages - Win32Messages
-Modern_MenuText - Modern_MenuText
-Modern_LineHelp - Modern_LineHelp
-Modern_KeyGuide - Modern_KeyGuide
-Modern_SystemMessage_win64 - Modern_SystemMessage_win64
-Modern_Dialogues - Modern_Dialogues
