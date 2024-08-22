@@ -111,5 +111,4 @@ Documentation:
 #--------------------------------------
 # Notes
 #--------------------------------------
-TODO: fix issue with Param Upgrader where it doesn't include new vanilla rows (confirm issue first)
 

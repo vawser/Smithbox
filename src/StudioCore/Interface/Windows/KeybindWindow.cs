@@ -199,9 +199,9 @@ public class CommonKeybindTab
                 KeyBindings.Current.CORE_HelpWindow,
                 KeyBindings.Default.CORE_HelpWindow);
 
-            KeyBindings.Current.CORE_KeybindsWindow = InputTracker.KeybindLine(9,
-                KeyBindings.Current.CORE_KeybindsWindow,
-                KeyBindings.Default.CORE_KeybindsWindow);
+            KeyBindings.Current.CORE_KeybindingWindow = InputTracker.KeybindLine(9,
+                KeyBindings.Current.CORE_KeybindingWindow,
+                KeyBindings.Default.CORE_KeybindingWindow);
         }
     }
 }

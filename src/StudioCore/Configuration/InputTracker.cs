@@ -192,7 +192,7 @@ public static class InputTracker
         Key newkey = GetNextKey();
         _newKeysThisFrame.Clear(); // Clear to prevent hotkeys from triggering
 
-        if (newkey != Key.Unknown)
+        if (newkey != Key.Unknown && newkey != Key.F4)
         {
             var ctrl = GetKey(Key.LControl) || GetKey(Key.RControl);
             var alt = GetKey(Key.AltLeft) || GetKey(Key.AltRight);
@@ -215,7 +215,7 @@ public static class InputTracker
     {
         return _newKeysThisFrame.FirstOrDefault(e =>
                 e != Key.LControl && e != Key.RControl && e != Key.LAlt && e != Key.RAlt && e != Key.LShift &&
-                e != Key.RShift);
+                e != Key.RShift && e != Key.F4);
     }
 
     public static KeyBind KeybindEntry(int index, KeyBind bindVal)

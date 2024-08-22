@@ -181,6 +181,12 @@ public class ActionSubMenu
         {
             Handler.ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Enable);
         }
+
+        // Toggle Selection Outline
+        if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_RenderOutline))
+        {
+            CFG.Current.Viewport_Enable_Selection_Outline = !CFG.Current.Viewport_Enable_Selection_Outline;
+        }
     }
 
     public void OnProjectChanged()
