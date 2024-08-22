@@ -105,10 +105,6 @@ Texture Viewer:
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
  - FIX: Image Preview fails for users when they edit an icon image file and save it incorrectly (as BC3 and not BC7)
  
-Documentation:
- - ADD: finish documenting ER SOTE rows
- 
 #--------------------------------------
 # Notes
 #--------------------------------------
-

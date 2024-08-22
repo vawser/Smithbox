@@ -104,10 +104,12 @@ public class TimeActSelectionHandler
         TimeActMultiselect.Reset(false, false, true);
     }
 
-    public void FileContainerChange(ContainerFileInfo info, BinderInfo binderInfo, int index, FileContainerType containerType)
+    public void FileContainerChange(ContainerFileInfo info, BinderInfo binderInfo, int index, FileContainerType containerType, bool changeContext = true)
     {
         CurrentFileContainerType = containerType;
-        CurrentSelectionContext = SelectionContext.File;
+
+        if (changeContext)
+            CurrentSelectionContext = SelectionContext.File;
 
         ContainerIndex = index;
         ContainerKey = info.Name;
@@ -135,7 +137,7 @@ public class TimeActSelectionHandler
             for(int i = 0; i < ContainerInfo.InternalFiles.Count; i++)
             {
                 var timeAct = ContainerInfo.InternalFiles[i].TAE;
-                TimeActChange(timeAct, i);
+                TimeActChange(timeAct, i, false);
                 break;
             }
         }
@@ -159,9 +161,10 @@ public class TimeActSelectionHandler
         TimeActMultiselect.Reset(true, true, true);
     }
 
-    public void TimeActChange(TAE entry, int index)
+    public void TimeActChange(TAE entry, int index, bool changeContext = true)
     {
-        CurrentSelectionContext = SelectionContext.TimeAct;
+        if(changeContext)
+            CurrentSelectionContext = SelectionContext.TimeAct;
 
         TimeActMultiselect.TimeActSelection(CurrentTimeActKey, index);
 
@@ -188,7 +191,7 @@ public class TimeActSelectionHandler
             for (int i = 0; i < CurrentTimeAct.Animations.Count; i++)
             {
                 var anim = CurrentTimeAct.Animations[i];
-                TimeActAnimationChange(anim, i);
+                TimeActAnimationChange(anim, i, false);
                 break;
             }
         }
@@ -209,9 +212,10 @@ public class TimeActSelectionHandler
         TimeActMultiselect.Reset(false, true, true);
     }
 
-    public void TimeActAnimationChange(TAE.Animation entry, int index)
+    public void TimeActAnimationChange(TAE.Animation entry, int index, bool changeContext = true)
     {
-        CurrentSelectionContext = SelectionContext.Animation;
+        if (changeContext)
+            CurrentSelectionContext = SelectionContext.Animation;
 
         TimeActMultiselect.AnimationSelection(CurrentTimeActAnimationIndex, index);
 
@@ -239,7 +243,7 @@ public class TimeActSelectionHandler
             for (int i = 0; i < CurrentTimeActAnimation.Events.Count; i++)
             {
                 var evt = CurrentTimeActAnimation.Events[i];
-                TimeActEventChange(evt, i);
+                TimeActEventChange(evt, i, false);
                 break;
             }
         }
@@ -256,9 +260,10 @@ public class TimeActSelectionHandler
         TimeActMultiselect.Reset(false, false, true);
     }
 
-    public void TimeActEventChange(TAE.Event entry, int index)
+    public void TimeActEventChange(TAE.Event entry, int index, bool changeContext = true)
     {
-        CurrentSelectionContext = SelectionContext.Event;
+        if (changeContext)
+            CurrentSelectionContext = SelectionContext.Event;
 
         TimeActMultiselect.EventSelection(CurrentTimeActEventIndex, index);
 
