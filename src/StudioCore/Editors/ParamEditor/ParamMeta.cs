@@ -128,18 +128,6 @@ public class ParamMetaData
                 }
             }
 
-            XmlAttribute AltRowOrd = self.Attributes["AlternateRowOrder"];
-            if (AltRowOrd != null)
-            {
-                AlternateRowOrder = new List<string>(AltRowOrd.InnerText.Replace("\n", "")
-                    .Split(',', StringSplitOptions.RemoveEmptyEntries));
-
-                for (var i = 0; i < AlternateRowOrder.Count; i++)
-                {
-                    AlternateRowOrder[i] = AlternateRowOrder[i].Trim();
-                }
-            }
-
             XmlAttribute CCD = self.Attributes["CalcCorrectDef"];
             if (CCD != null)
             {
@@ -193,6 +181,33 @@ public class ParamMetaData
                 new FieldMetaData(this, f);
             }
         }
+        
+        //Row orders
+        var orders = root.SelectSingleNode("AlternateRowOrders");
+        if (orders != null)
+        {
+            foreach (XmlNode node in orders.ChildNodes)
+            {
+                if (AlternateRowOrders == null) AlternateRowOrders = [];
+                XmlAttribute altOrd = node.Attributes["Order"];
+                if (altOrd != null)
+                {
+                    List<string> ord =
+                    [
+                        ..altOrd.InnerText.Replace("\n", "")
+                            .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                    ];
+
+                    for (var i = 0; i < ord.Count; i++)
+                    {
+                        ord[i] = ord[i].Trim();
+                    }
+                
+                    AlternateRowOrders.Add(node.Name, ord);
+                }
+            }
+        }
+        
     }
 
     /// <summary>
@@ -238,7 +253,7 @@ public class ParamMetaData
     /// <summary>
     ///     Provides a reordering of rows for display purposes only
     /// </summary>
-    public List<string> AlternateRowOrder { get; set; }
+    public Dictionary<string, List<string>> AlternateRowOrders { get; set; }
 
     /// <summary>
     ///     Provides a set of fields the define a CalcCorrectGraph
@@ -377,13 +392,18 @@ public class ParamMetaData
         {
             return;
         }
-
         SetStringXmlProperty("Wiki", Wiki, true, _xml, "PARAMMETA", "Self");
         SetIntXmlProperty("OffsetSize", OffsetSize, _xml, "PARAMMETA", "Self");
         SetIntXmlProperty("FixedOffset", FixedOffset, _xml, "PARAMMETA", "Self");
         SetBoolXmlProperty("Row0Dummy", Row0Dummy, _xml, "PARAMMETA", "Self");
         SetStringListXmlProperty("AlternativeOrder", AlternateOrder, x => x, "-,", _xml, "PARAMMETA", "Self");
-        SetStringListXmlProperty("AlternateRowOrder", AlternateRowOrder, x => x, "-,", _xml, "PARAMMETA", "Self");
+        if (AlternateRowOrders != null)
+        {
+            foreach (var (k, v) in AlternateRowOrders)
+            {
+                SetStringListXmlProperty("Order", v, x => x, "-,", _xml, "PARAMMETA", "AlternateRowOrders", k);
+            }
+        }
         SetStringXmlProperty("CalcCorrectDef", CalcCorrectDef?.getStringForm(), false, _xml, "PARAMMETA", "Self");
         SetStringXmlProperty("SoulCostDef", SoulCostDef?.getStringForm(), false, _xml, "PARAMMETA", "Self");
     }
@@ -405,7 +425,8 @@ public class ParamMetaData
                 File.WriteAllBytes(_path, new byte[0]);
             }
 
-            _xml.Save(XmlWriter.Create(_path, writeSettings));
+            using var writer = XmlWriter.Create(_path, writeSettings);
+            _xml.Save(writer);
         }
         catch (Exception e)
         {

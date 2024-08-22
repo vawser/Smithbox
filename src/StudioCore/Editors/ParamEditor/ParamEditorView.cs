@@ -580,10 +580,16 @@ public class ParamEditorView
                 bool allowReorder = CFG.Current.Param_AllowRowReorder;
                 if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedRows && allowReorder)
                 {
-                    List<string> rowOrder = meta is { AlternateRowOrder: not null }
-                        ? [..meta.AlternateRowOrder]
-                        : [];
-
+                    List<string> rowOrder;
+                    if (!(meta?.AlternateRowOrders?.TryGetValue(activeParam, out var defRowOrder) ?? false))
+                    {
+                        rowOrder = [];
+                        defRowOrder = null;
+                    }
+                    else
+                    {
+                        rowOrder = [..defRowOrder];
+                    }
                     HashSet<string> rowOrderSet = [..rowOrder];
 
                     foreach (var row in para.Rows)
@@ -595,14 +601,18 @@ public class ParamEditorView
                         }
                     }
 
-                    if (meta is { AlternateRowOrder: null } || meta.AlternateRowOrder.Count != rowOrder.Count)
+                    if (meta != null && ParamEditorScreen.EditorMode)
                     {
-                        meta.AlternateRowOrder = [..rowOrder];
+                        meta.AlternateRowOrders ??= [];
+                        if (defRowOrder == null)
+                            meta.AlternateRowOrders.Add(activeParam, [..rowOrder]);
+                        else if (defRowOrder.Count != rowOrder.Count)
+                            meta.AlternateRowOrders[activeParam] = [..rowOrder];
                     }
 
-                    Dictionary<string, (int, Param.Row)> rowD = new();
-                    foreach (var t in rows.Select((r, i) => (i, r)))
-                        rowD.Add(t.r.ID.ToString(), t);
+                    Dictionary<string, (int, Param.Row)> rowD = rows
+                        .Select((r, i) => (i, r))
+                        .ToDictionary(t => t.r.ID.ToString());
 
                     foreach (string rowId in rowOrder)
                     {
@@ -1004,10 +1014,11 @@ public class ParamEditorView
                 }
             }
             
-            if (ParamEditorScreen.EditorMode && !isPinned && CFG.Current.Param_AllowRowReorder && meta is { AlternateRowOrder: not null })
+            if (ParamEditorScreen.EditorMode && !isPinned && CFG.Current.Param_AllowRowReorder && 
+                (meta?.AlternateRowOrders?.TryGetValue(activeParam, out var rowOrder) ?? false))
             {
                 ImGui.Separator();
-                EditorDecorations.ListReorderOptions(meta.AlternateRowOrder, r.ID.ToString());
+                EditorDecorations.ListReorderOptions(rowOrder, r.ID.ToString());
             }
 
             ImGui.EndPopup();
