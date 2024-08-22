@@ -69,22 +69,26 @@ public class ParamRowEditor
         return (string)matchVal;
     }
 
-    private void PropEditorParamRow_RowFields(ParamBank bank, Param.Row row, Param.Row vrow,
-        List<(string, Param.Row)> auxRows, Param.Row crow, ref int imguiId, ParamEditorSelectionState selection, string activeParam)
+    private void PropEditorParamRow_RowFields(ParamBank bank, Param.Row row, ParamMetaData? meta, Param.Row vrow,
+        List<(string, Param.Row)> auxRows, Param.Row crow, ref int imguiId, ParamEditorSelectionState selection, 
+        string activeParam)
     {
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         PropertyInfo nameProp = row.GetType().GetProperty("Name");
         PropertyInfo idProp = row.GetType().GetProperty("ID");
-        PropEditorPropInfoRow(bank, row, vrow, auxRows, crow, nameProp, "Name", ref imguiId, selection, activeParam);
-        PropEditorPropInfoRow(bank, row, vrow, auxRows, crow, idProp, "ID", ref imguiId, selection, activeParam);
+        PropEditorPropInfoRow(bank, row, meta, vrow, auxRows, crow, nameProp, "Name", ref imguiId, selection,
+            activeParam);
+        PropEditorPropInfoRow(bank, row, meta, vrow, auxRows, crow, idProp, "ID", ref imguiId, selection, 
+            activeParam);
         ImGui.PopStyleColor();
         ImGui.Spacing();
     }
 
-    private void PropEditorParamRow_PinnedFields(List<string> pinList, ParamBank bank, Param.Row row,
-        Param.Row vrow, List<(string, Param.Row)> auxRows, Param.Row crow, List<(PseudoColumn, Param.Column)> cols,
-        List<(PseudoColumn, Param.Column)> vcols, List<List<(PseudoColumn, Param.Column)>> auxCols, ref int imguiId,
-        string activeParam, ParamEditorSelectionState selection)
+    private void PropEditorParamRow_PinnedFields(List<string> pinList, ParamBank bank, ParamMetaData? meta,
+        Param.Row row, Param.Row vrow, List<(string, Param.Row)> auxRows, Param.Row crow, 
+        List<(PseudoColumn, Param.Column)> cols, List<(PseudoColumn, Param.Column)> vcols, 
+        List<List<(PseudoColumn, Param.Column)>> auxCols, ref int imguiId, string activeParam, 
+        ParamEditorSelectionState selection, ref int index)
     {
         var pinnedFields = new List<string>(pinList);
         foreach (var field in pinnedFields)
@@ -98,6 +102,7 @@ public class ParamRowEditor
             for (var i = 0; i < matches.Count; i++)
             {
                 PropEditorPropCellRow(bank,
+                    meta,
                     row,
                     crow,
                     matches[i],
@@ -107,18 +112,19 @@ public class ParamRowEditor
                     auxMatches.Select((x, j) => x.Count > i ? x[i] : (PseudoColumn.None, null)).ToList(),
                     OffsetTextOfColumn(matches[i].Item2),
                     ref imguiId, activeParam, true, selection);
+                index++;
             }
         }
     }
 
-    private void PropEditorParamRow_MainFields(ParamMetaData meta, ParamBank bank, Param.Row row, Param.Row vrow,
+    private void PropEditorParamRow_MainFields(ParamMetaData? meta, ParamBank bank, Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, List<(PseudoColumn, Param.Column)> cols,
         List<(PseudoColumn, Param.Column)> vcols, List<List<(PseudoColumn, Param.Column)>> auxCols, ref int imguiId,
         string activeParam, ParamEditorSelectionState selection, List<string> pinnedFields)
     {
-        List<string> fieldOrder = meta != null && meta.AlternateOrder != null && CFG.Current.Param_AllowFieldReorder
-            ? meta.AlternateOrder
-            : new List<string>();
+        List<string> fieldOrder = meta is { AlternateOrder: not null } && CFG.Current.Param_AllowFieldReorder
+            ? [..meta.AlternateOrder]
+            : [];
 
         foreach (PARAMDEF.Field field in row.Def.Fields)
         {
@@ -128,8 +134,15 @@ public class ParamRowEditor
             }
         }
 
+        if (meta != null &&
+            CFG.Current.Param_AllowFieldReorder && 
+            (meta is { AlternateOrder: null } || meta.AlternateOrder.Count != fieldOrder.Count))
+        {
+            meta.AlternateOrder = [..fieldOrder];
+        }
         var firstRow = true;
         var lastRowExists = false;
+        int index = 0;
         foreach (var field in fieldOrder)
         {
             if(firstRow)
@@ -140,18 +153,48 @@ public class ParamRowEditor
                 {
                     if (pinnedFields?.Count > 0)
                     {
-                        PropEditorParamRow_PinnedFields(pinnedFields, bank, row, vrow, auxRows, crow, cols, vcols, auxCols,
-                            ref imguiId, activeParam, selection);
+                        PropEditorParamRow_PinnedFields(pinnedFields, bank, meta, row, vrow, auxRows, crow, cols, vcols, 
+                            auxCols, ref imguiId, activeParam, selection, ref index);
                         EditorDecorations.ImguiTableSeparator();
                     }
                 }
             }
 
-            if (field.Equals("-") && lastRowExists)
+            if (field.Equals("-"))
             {
-                EditorDecorations.ImguiTableSeparator();
-                lastRowExists = false;
-                continue;
+                if (ParamEditorScreen.EditorMode)
+                {
+                    var ncols = ImGui.TableGetColumnCount();
+                    ImGui.TableNextRow();
+                    for (var i = 0; i < ncols; i++)
+                    {
+                        if (ImGui.TableNextColumn())
+                        {
+                            ImGui.Selectable($"---##{index}{i}", false);
+                            if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
+                            {
+                                ImGui.OpenPopup($"SeparatorContextMenu##{index}");
+                            }
+                        }
+                    }
+
+                    if (ImGui.BeginPopup($"SeparatorContextMenu##{index}"))
+                    {
+                        var scale = Smithbox.GetUIScale();
+                        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0f, 10f) * scale);
+                        EditorDecorations.ListReorderOptions(meta.AlternateOrder, field, index);
+                        ImGui.PopStyleVar();
+                        ImGui.EndPopup();
+                    }
+                    
+                }
+                else if (lastRowExists)
+                {
+                    EditorDecorations.ImguiTableSeparator();
+                    lastRowExists = false;
+                    continue;
+                }
+                index++;
             }
 
             var matches =
@@ -164,6 +207,7 @@ public class ParamRowEditor
             for (var i = 0; i < matches.Count; i++)
             {
                 PropEditorPropCellRow(bank,
+                    meta,
                     row,
                     crow,
                     matches[i],
@@ -173,6 +217,7 @@ public class ParamRowEditor
                     auxMatches.Select((x, j) => x.Count > i ? x[i] : (PseudoColumn.None, null)).ToList(),
                     OffsetTextOfColumn(matches[i].Item2),
                     ref imguiId, activeParam, false, selection);
+                index++;
                 lastRowExists = true;
             }
         }
@@ -241,7 +286,7 @@ public class ParamRowEditor
 
             EditorDecorations.ImguiTableSeparator();
 
-            PropEditorParamRow_RowFields(bank, row, vrow, auxRows, crow, ref imguiId, selection, activeParam);
+            PropEditorParamRow_RowFields(bank, row, meta, vrow, auxRows, crow, ref imguiId, selection, activeParam);
 
             var search = propSearchString;
             List<(PseudoColumn, Param.Column)> cols = UICache.GetCached(_paramEditor, row, "fieldFilter",
@@ -257,8 +302,9 @@ public class ParamRowEditor
             {
                 if (pinnedFields?.Count > 0)
                 {
-                    PropEditorParamRow_PinnedFields(pinnedFields, bank, row, vrow, auxRows, crow, cols, vcols, auxCols,
-                        ref imguiId, activeParam, selection);
+                    int i = 0;
+                    PropEditorParamRow_PinnedFields(pinnedFields, bank, meta, row, vrow, auxRows, crow, cols, vcols, 
+                        auxCols, ref imguiId, activeParam, selection, ref i);
                     EditorDecorations.ImguiTableSeparator();
                 }
             }
@@ -283,7 +329,7 @@ public class ParamRowEditor
     }
 
     // Many parameter options, which may be simplified.
-    private void PropEditorPropInfoRow(ParamBank bank, Param.Row row, Param.Row vrow,
+    private void PropEditorPropInfoRow(ParamBank bank, Param.Row row, ParamMetaData? meta, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, PropertyInfo prop, string visualName, ref int imguiId,
         ParamEditorSelectionState selection, string activeParam)
     {
@@ -301,13 +347,14 @@ public class ParamRowEditor
             prop,
             null,
             row,
+            meta,
             activeParam,
             false,
             null,
             selection);
     }
 
-    private void PropEditorPropCellRow(ParamBank bank, Param.Row row, Param.Row crow,
+    private void PropEditorPropCellRow(ParamBank bank, ParamMetaData? meta, Param.Row row, Param.Row crow,
         (PseudoColumn, Param.Column) col, Param.Row vrow, (PseudoColumn, Param.Column) vcol,
         List<(string, Param.Row)> auxRows, List<(PseudoColumn, Param.Column)> auxCols, string fieldOffset,
         ref int imguiId, string activeParam, bool isPinned, ParamEditorSelectionState selection)
@@ -325,6 +372,7 @@ public class ParamRowEditor
             typeof(Param.Cell).GetProperty("Value"),
             row[col.Item2],
             row,
+            meta,
             activeParam,
             isPinned,
             col.Item2,
@@ -333,7 +381,7 @@ public class ParamRowEditor
 
     private void PropEditorPropRow(ParamBank bank, object oldval, object compareval, object vanillaval,
         List<object> auxVals, ref int imguiId, string fieldOffset, string internalName, FieldMetaData cellMeta,
-        Type propType, PropertyInfo proprow, Param.Cell? nullableCell, Param.Row row, string activeParam,
+        Type propType, PropertyInfo proprow, Param.Cell? nullableCell, Param.Row row, ParamMetaData? meta, string activeParam,
         bool isPinned, Param.Column col, ParamEditorSelectionState selection)
     {
         var Wiki = cellMeta?.Wiki;
@@ -628,7 +676,7 @@ public class ParamRowEditor
 
             // Param Reference Buttons
             if (CFG.Current.Param_ViewInMapOption)
-        {
+            {
                 // These are placed at the top, below the ID row
                 if (imguiId == 1)
                 {
@@ -724,8 +772,8 @@ public class ParamRowEditor
 
         if (ImGui.BeginPopup("ParamRowCommonMenu"))
         {
-            PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
-                isPinned, col, selection, propType, Wiki, oldval, true);
+            PropertyRowNameContextMenuItems(bank, internalName, cellMeta, meta, activeParam, 
+                activeParam != null, isPinned, col, selection, propType, Wiki, oldval, true);
             PropertyRowValueContextMenuItems(bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
                 RefTypes, FmgRef, TextureRef, Enum);
 
@@ -734,15 +782,15 @@ public class ParamRowEditor
 
         if (ImGui.BeginPopup("ParamRowNameMenu"))
         {
-            PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
-                isPinned, col, selection, propType, Wiki, oldval, true);
+            PropertyRowNameContextMenuItems(bank, internalName, cellMeta, meta, activeParam, 
+                activeParam != null, isPinned, col, selection, propType, Wiki, oldval, true);
 
             ImGui.EndPopup();
         }
 
         if (ImGui.BeginPopup("ParamRowValueMenu"))
         {
-            PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
+            PropertyRowNameContextMenuItems(bank, internalName, cellMeta, meta, activeParam, activeParam != null,
                 isPinned, col, selection, propType, Wiki, oldval, false);
             PropertyRowValueContextMenuItems(bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
                 RefTypes, FmgRef, TextureRef, Enum);
@@ -930,7 +978,7 @@ public class ParamRowEditor
     }
 
     private void PropertyRowNameContextMenuItems(ParamBank bank, string internalName, FieldMetaData cellMeta,
-        string activeParam, bool showPinOptions, bool isPinned, Param.Column col,
+        ParamMetaData? meta, string activeParam, bool showPinOptions, bool isPinned, Param.Column col,
         ParamEditorSelectionState selection, Type propType, string Wiki, dynamic oldval, bool isNameMenu)
     {
         var scale = Smithbox.GetUIScale();
@@ -1057,6 +1105,11 @@ public class ParamRowEditor
             }
 
             ImGui.Separator();
+        }
+        
+        if (ParamEditorScreen.EditorMode && !isPinned && CFG.Current.Param_AllowFieldReorder && meta is { AlternateOrder: not null })
+        {
+            EditorDecorations.ListReorderOptions(meta.AlternateOrder, internalName);
         }
 
         // Compare

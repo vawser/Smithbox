@@ -62,6 +62,9 @@ public class ParamEditorTab
 
             ImGui.Checkbox("Disable row grouping", ref CFG.Current.Param_DisableRowGrouping);
             ImguiUtils.ShowHoverTooltip("Disable the grouping of connected rows in certain params, such as ItemLotParam within the Row View list.");
+
+            ImGui.Checkbox("Allow row reordering", ref CFG.Current.Param_AllowRowReorder);
+            ImguiUtils.ShowHoverTooltip("Allow the row order to be changed by an alternative order as defined within the Paramdex META file.");
         }
 
         // Fields

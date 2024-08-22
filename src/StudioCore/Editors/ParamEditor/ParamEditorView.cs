@@ -493,6 +493,7 @@ public class ParamEditorView
             //ImGui.BeginChild("rows" + activeParam);
             if (EditorDecorations.ImGuiTableStdColumns("rowList", compareCol == null ? 1 : 2, false))
             {
+                var meta = ParamMetaData.Get(ParamBank.PrimaryBank.Params[activeParam].AppliedParamdef);
                 var pinnedRowList = Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows
                     .GetValueOrDefault(activeParam, new List<int>()).Select(id => para[id]).ToList();
 
@@ -538,7 +539,7 @@ public class ParamEditorView
 
                         lastCol = ParamView_RowList_Entry(selectionCachePins, i, activeParam, null, row,
                             vanillaDiffCache, auxDiffCaches, decorator, ref scrollTo, false, true, compareCol,
-                            compareColProp);
+                            compareColProp, meta);
                     }
 
                     if (lastCol)
@@ -571,13 +572,48 @@ public class ParamEditorView
                     () => RowSearchEngine.rse.Search((ParamBank.PrimaryBank, para),
                         _selection.GetCurrentRowSearchString(), true, true));
 
-                var enableGrouping = !CFG.Current.Param_DisableRowGrouping && ParamMetaData
-                    .Get(ParamBank.PrimaryBank.Params[activeParam].AppliedParamdef).ConsecutiveIDs;
+                var enableGrouping = !CFG.Current.Param_DisableRowGrouping && meta.ConsecutiveIDs;
 
                 // Rows
                 var selectionCache = _selection.GetSelectionCache(rows, "regular");
+                
+                bool allowReorder = CFG.Current.Param_AllowRowReorder;
+                if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedRows && allowReorder)
+                {
+                    List<string> rowOrder = meta is { AlternateRowOrder: not null }
+                        ? [..meta.AlternateRowOrder]
+                        : [];
 
-                if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedRows)
+                    HashSet<string> rowOrderSet = [..rowOrder];
+
+                    foreach (var row in para.Rows)
+                    {
+                        if (!rowOrderSet.Contains(row.ID.ToString()))
+                        {
+                            rowOrder.Add(row.ID.ToString());
+                            rowOrderSet.Add(row.ID.ToString());
+                        }
+                    }
+
+                    if (meta is { AlternateRowOrder: null } || meta.AlternateRowOrder.Count != rowOrder.Count)
+                    {
+                        meta.AlternateRowOrder = [..rowOrder];
+                    }
+
+                    Dictionary<string, (int, Param.Row)> rowD = new();
+                    foreach (var t in rows.Select((r, i) => (i, r)))
+                        rowD.Add(t.r.ID.ToString(), t);
+
+                    foreach (string rowId in rowOrder)
+                    {
+                        if (!rowD.TryGetValue(rowId, out var row))
+                            continue;
+                        ParamView_RowList_Entry(selectionCache, row.Item1, activeParam, rows, row.Item2, vanillaDiffCache,
+                            auxDiffCaches, decorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
+                            meta);
+                    }
+                } 
+                else if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedRows)
                 {
                     for (var i = 0; i < rows.Count; i++)
                     {
@@ -593,7 +629,8 @@ public class ParamEditorView
                             }
 
                             ParamView_RowList_Entry(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
-                                auxDiffCaches, decorator, ref scrollTo, doFocus, false, compareCol, compareColProp);
+                                auxDiffCaches, decorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
+                                meta);
 
                             if (prev != null && next != null && prev.ID + 1 == currentRow.ID &&
                                 currentRow.ID + 1 != next.ID)
@@ -604,7 +641,8 @@ public class ParamEditorView
                         else
                         {
                             ParamView_RowList_Entry(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
-                                auxDiffCaches, decorator, ref scrollTo, doFocus, false, compareCol, compareColProp);
+                                auxDiffCaches, decorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
+                                meta);
                         }
                     }
                 }
@@ -693,7 +731,7 @@ public class ParamEditorView
     private void ParamView_RowList_Entry_Row(bool[] selectionCache, int selectionCacheIndex, string activeParam,
         List<Param.Row> p, Param.Row r, HashSet<int> vanillaDiffCache,
         List<(HashSet<int>, HashSet<int>)> auxDiffCaches, IParamDecorator decorator, ref float scrollTo,
-        bool doFocus, bool isPinned)
+        bool doFocus, bool isPinned, ParamMetaData? meta)
     {
         var diffVanilla = vanillaDiffCache.Contains(r.ID);
         var auxDiffVanilla = auxDiffCaches.Where(cache => cache.Item1.Contains(r.ID)).Count() > 0;
@@ -965,6 +1003,12 @@ public class ParamEditorView
                     PlatformUtils.Instance.SetClipboardText($"{r.ID}");
                 }
             }
+            
+            if (ParamEditorScreen.EditorMode && !isPinned && CFG.Current.Param_AllowRowReorder && meta is { AlternateRowOrder: not null })
+            {
+                ImGui.Separator();
+                EditorDecorations.ListReorderOptions(meta.AlternateRowOrder, r.ID.ToString());
+            }
 
             ImGui.EndPopup();
         }
@@ -983,7 +1027,7 @@ public class ParamEditorView
     private bool ParamView_RowList_Entry(bool[] selectionCache, int selectionCacheIndex, string activeParam,
         List<Param.Row> p, Param.Row r, HashSet<int> vanillaDiffCache,
         List<(HashSet<int>, HashSet<int>)> auxDiffCaches, IParamDecorator decorator, ref float scrollTo,
-        bool doFocus, bool isPinned, Param.Column compareCol, PropertyInfo compareColProp)
+        bool doFocus, bool isPinned, Param.Column compareCol, PropertyInfo compareColProp, ParamMetaData? meta)
     {
         var scale = Smithbox.GetUIScale();
 
@@ -998,7 +1042,7 @@ public class ParamEditorView
         if (ImGui.TableNextColumn())
         {
             ParamView_RowList_Entry_Row(selectionCache, selectionCacheIndex, activeParam, p, r, vanillaDiffCache,
-                auxDiffCaches, decorator, ref scrollTo, doFocus, isPinned);
+                auxDiffCaches, decorator, ref scrollTo, doFocus, isPinned, meta);
             lastCol = true;
         }
 

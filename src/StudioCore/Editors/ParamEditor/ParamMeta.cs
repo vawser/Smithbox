@@ -128,6 +128,18 @@ public class ParamMetaData
                 }
             }
 
+            XmlAttribute AltRowOrd = self.Attributes["AlternateRowOrder"];
+            if (AltRowOrd != null)
+            {
+                AlternateRowOrder = new List<string>(AltRowOrd.InnerText.Replace("\n", "")
+                    .Split(',', StringSplitOptions.RemoveEmptyEntries));
+
+                for (var i = 0; i < AlternateRowOrder.Count; i++)
+                {
+                    AlternateRowOrder[i] = AlternateRowOrder[i].Trim();
+                }
+            }
+
             XmlAttribute CCD = self.Attributes["CalcCorrectDef"];
             if (CCD != null)
             {
@@ -222,6 +234,11 @@ public class ParamMetaData
     ///     Provides a reordering of fields for display purposes only
     /// </summary>
     public List<string> AlternateOrder { get; set; }
+    
+    /// <summary>
+    ///     Provides a reordering of rows for display purposes only
+    /// </summary>
+    public List<string> AlternateRowOrder { get; set; }
 
     /// <summary>
     ///     Provides a set of fields the define a CalcCorrectGraph
@@ -366,6 +383,7 @@ public class ParamMetaData
         SetIntXmlProperty("FixedOffset", FixedOffset, _xml, "PARAMMETA", "Self");
         SetBoolXmlProperty("Row0Dummy", Row0Dummy, _xml, "PARAMMETA", "Self");
         SetStringListXmlProperty("AlternativeOrder", AlternateOrder, x => x, "-,", _xml, "PARAMMETA", "Self");
+        SetStringListXmlProperty("AlternateRowOrder", AlternateRowOrder, x => x, "-,", _xml, "PARAMMETA", "Self");
         SetStringXmlProperty("CalcCorrectDef", CalcCorrectDef?.getStringForm(), false, _xml, "PARAMMETA", "Self");
         SetStringXmlProperty("SoulCostDef", SoulCostDef?.getStringForm(), false, _xml, "PARAMMETA", "Self");
     }
