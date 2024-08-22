@@ -5,8 +5,8 @@
         <Authors>Katalash, Vawser</Authors>
         <Version>1.0.19</Version>
         <ApplicationIcon>icon.ico</ApplicationIcon>
-        <PackageVersion>1.0.19</PackageVersion>
-        <AssemblyVersion>1.0.19</AssemblyVersion>
+        <PackageVersion>1.0.19.1</PackageVersion>
+        <AssemblyVersion>1.0.19.1</AssemblyVersion>
         <ApplicationManifest>app.manifest</ApplicationManifest>
         <LangVersion>12</LangVersion>
         <IsPackable>false</IsPackable>
