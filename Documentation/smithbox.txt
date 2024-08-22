@@ -111,6 +111,5 @@ Documentation:
 #--------------------------------------
 # Notes
 #--------------------------------------
-# TODO:
-Finish BB Param Meta
+TODO: fix issue with Param Upgrader where it doesn't include new vanilla rows (confirm issue first)
 
