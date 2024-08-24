@@ -639,7 +639,7 @@ public static class ParamReferenceUtils
 
     public static string CurrentMapID;
     public static MSB1 CurrentPeekMap_DS1;
-    public static MSB3 CurrentPeekMap_BB;
+    public static MSBB CurrentPeekMap_BB;
     public static MSB3 CurrentPeekMap_DS3;
     public static MSBS CurrentPeekMap_SDT;
     public static MSBE CurrentPeekMap_ER;
@@ -826,7 +826,7 @@ public static class ParamReferenceUtils
                 {
                     CurrentMapID = rowMapId;
                     var mapPath = MapLocator.GetMapMSB(rowMapId);
-                    CurrentPeekMap_BB = MSB3.Read(mapPath.AssetPath);
+                    CurrentPeekMap_BB = MSBB.Read(mapPath.AssetPath);
                 }
 
                 if (CurrentPeekMap_BB == null)
