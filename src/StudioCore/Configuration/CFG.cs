@@ -376,6 +376,8 @@ public class CFG
     //****************************
     // Settings: Map Editor
     //****************************
+    public bool MapEditor_LoadMapQueryData = true;
+
     public bool MapEditor_AssetBrowser_ShowAliases = true;
     public bool MapEditor_AssetBrowser_ShowTags = false;
     public bool MapEditor_AssetBrowser_ShowLowDetailParts = false;

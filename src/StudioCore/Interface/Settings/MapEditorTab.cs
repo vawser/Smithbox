@@ -36,6 +36,10 @@ public class MapEditorTab
                     ImguiUtils.ShowHoverTooltip("Enables the viewing of Elden Ring collisions. Note this will add delay to map loading if enabled.");
                 }
             }
+
+            ImGui.Checkbox("Enable global property search", ref CFG.Current.MapEditor_LoadMapQueryData);
+            ImguiUtils.ShowHoverTooltip("This option will allow the global property search to be used. Note, this will load all map files into memory.\nYou need to restart Smithbox after enabling this.");
+
         }
 
         // Scene View

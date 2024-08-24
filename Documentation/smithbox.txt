@@ -43,7 +43,8 @@ Map Editor:
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
  - FIX: asset browser entity change not properly changing Instance ID and Self Parts
  
-Model Editor:  - ADD: FBX Import into loose FLVER
+Model Editor:  
+ - ADD: FBX Import into loose FLVER
  - ADD: FBX Export of Loaded Model
  - ADD: skeleton and skinning support for playing animations
  - ADD: easier toggling of model masks based on associated NpcParam (for characters)

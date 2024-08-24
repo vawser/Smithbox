@@ -48,6 +48,9 @@ public class MapQueryBank
 
     public async void SetupData()
     {
+        if (!CFG.Current.MapEditor_LoadMapQueryData)
+            return;
+
         ReadMapResources();
 
         // Load the maps async so the main thread isn't blocked
@@ -123,6 +126,9 @@ public class MapQueryBank
         foreach (var resource in MapResources)
         {
             if (resource == null)
+                continue;
+
+            if (resource.AssetPath == null || resource.AssetPath == "")
                 continue;
 
             var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(resource.AssetPath));

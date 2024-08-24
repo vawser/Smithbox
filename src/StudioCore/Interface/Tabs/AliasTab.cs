@@ -226,9 +226,11 @@ public class AliasTab
             ImGui.Text($"Alias for {refID}");
 
             ImGui.Text($"Name");
+            ImGui.SetNextItemWidth(width);
             ImGui.InputText($"##EditName_{EntryName}", ref _refUpdateName, 255);
 
             ImGui.Text($"Tags");
+            ImGui.SetNextItemWidth(width);
             ImGui.InputText($"##EditTags_{EntryName}", ref _refUpdateTags, 255);
 
             if (ImGui.Button("Update", buttonSize))
@@ -269,14 +271,17 @@ public class AliasTab
         var buttonSize = new Vector2(width, 24 * scale);
 
         ImGui.Text("ID");
+        ImGui.SetNextItemWidth(width);
         ImGui.InputText($"##AddID_{EntryName}", ref _newRefId, 255);
         ImguiUtils.ShowHoverTooltip("The map ID of the map name to add.");
 
         ImGui.Text("Name");
+        ImGui.SetNextItemWidth(width);
         ImGui.InputText($"##AddName_{EntryName}", ref _newRefName, 255);
         ImguiUtils.ShowHoverTooltip("The alias name to give to the added map name.");
 
         ImGui.Text("Tags");
+        ImGui.SetNextItemWidth(width);
         ImGui.InputText($"##AddTags_{EntryName}", ref _newRefTags, 255);
         ImguiUtils.ShowHoverTooltip("The tags to associate with this map name.");
 
