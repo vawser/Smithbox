@@ -153,12 +153,12 @@ public class EditorHandler
         }
 
         // Add async stuff here that doesn't directly use the TaskManager system
-        if(!MapEditor.MapQueryHandler.Bank.MapBankInitialized)
+        if(MapEditor.MapQueryHandler.UserLoadedData && !MapEditor.MapQueryHandler.Bank.MapBankInitialized)
         {
             return false;
         }
 
-        if (!MapEditor.MapQueryEditHandler.Bank.MapBankInitialized)
+        if (MapEditor.MapQueryHandler.UserLoadedData && !MapEditor.MapQueryEditHandler.Bank.MapBankInitialized)
         {
             return false;
         }

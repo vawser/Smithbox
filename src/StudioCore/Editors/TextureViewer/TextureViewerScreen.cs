@@ -82,7 +82,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void OnProjectChanged()
     {
-        CurrentTextureInView.Dispose();
+        if(CurrentTextureInView != null)
+            CurrentTextureInView.Dispose();
 
         ImagePreview.OnProjectChanged();
 

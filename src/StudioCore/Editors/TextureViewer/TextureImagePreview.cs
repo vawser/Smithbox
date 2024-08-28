@@ -47,7 +47,8 @@ public class TextureImagePreview : IResourceEventListener
 
     public void OnProjectChanged()
     {
-        CurrentTextureInView.Dispose();
+        if(CurrentTextureInView != null)
+            CurrentTextureInView.Dispose();
 
         if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
         {

@@ -1,10 +1,12 @@
 ﻿using SoulsFormats;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.TextureViewer;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace StudioCore.Editor;
 
@@ -83,7 +85,66 @@ public class ModelContainer : ObjectContainer
 
             Objects.Add(dummyPolyNode);
             DummyPoly_RootNode.AddChild(dummyPolyNode);
+
+            //ApplyDummyOffsetting(dummyPolyNode, flver.Dummies[i], flver, i);
         }
+    }
+
+    public void ApplyDummyOffsetting(TransformableNamedEntity ent, FLVER.Dummy dummy, FLVER2 flver, int index)
+    {
+        var pos = new Vector3(dummy.Position.X, dummy.Position.Y, dummy.Position.Z);
+
+        Vector3 OffsetPos(Vector3 pos, FLVER2 flver, FLVER.Dummy dummy)
+        {
+            if (dummy.ParentBoneIndex >= 0)
+                return RecursiveBoneOffset(pos, flver.Nodes[dummy.ParentBoneIndex], flver);
+
+            return pos;
+        }
+
+        pos = OffsetPos(pos, flver, dummy);
+        dummy.Position = pos;
+
+        //Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeDummy(index, pos);
+    }
+
+    // Offset a vector position by the rotation and translation of a bone it is attached to
+    public Vector3 RecursiveBoneOffset(Vector3 pos, FLVER.Node bone, FLVER2 flver)
+    {
+        pos = RotateVector(pos, bone.Rotation) + bone.Position;
+        if (bone.ParentIndex >= 0)
+            return RecursiveBoneOffset(pos, flver.Nodes[bone.ParentIndex], flver);
+        return pos;
+    }
+
+    // Rotation logic taken from cannon.js:
+    // https://github.com/schteppe/cannon.js/blob/master/src/math/Quaternion.js#L249
+    public Vector3 RotateVector(Vector3 v, Vector3 r)
+    {
+        var quat = Quaternion.CreateFromYawPitchRoll(r.X, r.Y, r.Z);
+
+        var target = new Vector3();
+
+        var x = v.X;
+        var y = v.Y;
+        var z = v.Z;
+
+        var qx = quat.X;
+        var qy = quat.Y;
+        var qz = quat.Z;
+        var qw = quat.W;
+
+        // q*v
+        var ix = qw * x + qy * z - qz * y;
+        var iy = qw * y + qz * x - qx * z;
+        var iz = qw * z + qx * y - qy * x;
+        var iw = -qx * x - qy * y - qz * z;
+
+        target.X = ix * qw + iw * -qx + iy * -qz - iz * -qy;
+        target.Y = iy * qw + iw * -qy + iz * -qx - ix * -qz;
+        target.Z = iz * qw + iw * -qz + ix * -qy - iy * -qx;
+
+        return target;
     }
 }
 

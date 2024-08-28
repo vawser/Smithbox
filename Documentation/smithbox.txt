@@ -65,7 +65,6 @@ Material Editor
 
 Param Editor:
  - ADD: stayparam support for DS3 (requires 'blob' editor with manual definitions)
- - ADD: Able to sort row order manually
  - ADD: make "Use project meta" merge in new entries instead of wholesale replacing (https://github.com/ividyon/WitchyBND/blob/main/WitchyBND/Configuration.cs)
  - ADD: automatic naming tool: for current param, look for reference fields, name the linked param row with the base name if empty (e.g. Item -> Bullet-> AtkParam)
 
@@ -100,7 +99,7 @@ Texture Viewer:
  - ADD: ability to edit Shoebox Layouts (subwindow)
  - ADD: ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - ADD: ability to export selected icon 'section' of icon file (assuming texture has a shoebox layout)
- 
+ - FIX: Image Preview fails for users when they edit an icon image file and save it incorrectly (as BC3 and not BC7)
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
 
  
@@ -108,4 +107,3 @@ Texture Viewer:
 # Notes
 #--------------------------------------
  - FIX: asset browser entity change not properly changing Instance ID and Self Parts
- - FIX: Image Preview fails for users when they edit an icon image file and save it incorrectly (as BC3 and not BC7)
