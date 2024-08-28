@@ -45,6 +45,40 @@ public class TextureImagePreview : IResourceEventListener
 
     }
 
+    public void OnProjectChanged()
+    {
+        CurrentTextureInView.Dispose();
+
+        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        {
+            string sourcePath = $@"menu\hi\01_common.sblytbnd.dcx";
+            if (File.Exists($@"{Smithbox.ProjectRoot}\{sourcePath}"))
+            {
+                sourcePath = $@"{Smithbox.ProjectRoot}\{sourcePath}";
+            }
+            else
+            {
+                sourcePath = $@"{Smithbox.GameRoot}\{sourcePath}";
+            }
+
+            if (File.Exists(sourcePath))
+            {
+                shoeboxContainer = new ShoeboxLayoutContainer(sourcePath);
+                shoeboxContainer.BuildTextureDictionary();
+            }
+            else
+            {
+                TaskLogs.AddLog($"Failed to load Shoebox Layout: {sourcePath}");
+            }
+        }
+        else
+        {
+            // TODO: add support for 'custom' Shoebox layouts to the older games to map out their icons for usage with the Image Preview feature
+        }
+
+        ResetTextureViewer();
+    }
+
     public void InvalidatePreviewImage()
     {
         _cachedPreviewSubtexture = null;
@@ -198,38 +232,6 @@ public class TextureImagePreview : IResourceEventListener
         }
 
         return subTex;
-    }
-    
-    public void OnProjectChanged()
-    {
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
-        {
-            string sourcePath = $@"menu\hi\01_common.sblytbnd.dcx";
-            if (File.Exists($@"{Smithbox.ProjectRoot}\{sourcePath}"))
-            {
-                sourcePath = $@"{Smithbox.ProjectRoot}\{sourcePath}";
-            }
-            else
-            {
-                sourcePath = $@"{Smithbox.GameRoot}\{sourcePath}";
-            }
-
-            if (File.Exists(sourcePath))
-            {
-                shoeboxContainer = new ShoeboxLayoutContainer(sourcePath);
-                shoeboxContainer.BuildTextureDictionary();
-            }
-            else
-            {
-                TaskLogs.AddLog($"Failed to load Shoebox Layout: {sourcePath}");
-            }
-        }
-        else
-        {
-            // TODO: add support for 'custom' Shoebox layouts to the older games to map out their icons for usage with the Image Preview feature
-        }
-
-        ResetTextureViewer();
     }
 
     public static void ResetTextureViewer()

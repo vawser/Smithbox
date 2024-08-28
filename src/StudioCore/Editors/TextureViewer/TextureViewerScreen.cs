@@ -82,6 +82,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void OnProjectChanged()
     {
+        CurrentTextureInView.Dispose();
+
         ImagePreview.OnProjectChanged();
 
         if (Smithbox.ProjectType != ProjectType.Undefined)
