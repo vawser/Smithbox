@@ -352,9 +352,13 @@ public static class Utils
             else if (gameType == ProjectType.ER && item is BND4 bndER)
             {
                 // If DLC version or higher, force compression to ZSTD (to account for regulations that have previous form of compression)
-                if(ParamBank.PrimaryBank.ParamVersion >= 11210015L)
+                if(ParamBank.PrimaryBank.ParamVersion >= 11210015L && !CFG.Current.Param_SaveERAsDFLT)
                 {
                     SFUtil.EncryptERRegulation(writepath + ".temp", bndER, DCX.Type.DCX_ZSTD);
+                }
+                else if (ParamBank.PrimaryBank.ParamVersion >= 11210015L && CFG.Current.Param_SaveERAsDFLT)
+                {
+                    SFUtil.EncryptERRegulation(writepath + ".temp", bndER, DCX.Type.DCX_DFLT_11000_44_9_15);
                 }
                 // Otherwise use the compression type that is defined within the container.
                 else

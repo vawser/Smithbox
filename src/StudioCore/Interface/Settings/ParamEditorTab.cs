@@ -25,6 +25,11 @@ public class ParamEditorTab
         // General
         if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            if (Smithbox.ProjectType is ProjectType.ER && ParamBank.PrimaryBank.ParamVersion >= 11210015L)
+            {
+                ImGui.Checkbox("Save regulation.bin as DCX.DFLT", ref CFG.Current.Param_SaveERAsDFLT);
+            }
+
             if (ImGui.Checkbox("Use project meta", ref CFG.Current.Param_UseProjectMeta))
             {
                 if (CFG.Current.Param_UseProjectMeta)

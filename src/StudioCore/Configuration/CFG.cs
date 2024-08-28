@@ -474,6 +474,8 @@ public class CFG
     //****************************
     // Settings: Param Editor
     //****************************
+    public bool Param_SaveERAsDFLT = false;
+
     public bool UI_CompactParams = false;
 
     public bool Param_UseProjectMeta = false;
