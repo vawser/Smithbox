@@ -41,7 +41,6 @@ Map Editor:
  
  - FIX: DS2 Map Pieces aren't loaded/displayed.
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
- - FIX: asset browser entity change not properly changing Instance ID and Self Parts
  
 Model Editor:  
  - ADD: FBX Import into loose FLVER
@@ -94,7 +93,6 @@ Time Act Editor
  
  - FIX: TAE a330 + a331 in AC6 are not reading correctly
  - FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
- - FIX: Template bank doesn't properly update on project switch
 
 Texture Viewer: 
  - ADD: support for tpfbdt files 
@@ -104,8 +102,13 @@ Texture Viewer:
  - ADD: ability to export selected icon 'section' of icon file (assuming texture has a shoebox layout)
  
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
- - FIX: Image Preview fails for users when they edit an icon image file and save it incorrectly (as BC3 and not BC7)
+
  
 #--------------------------------------
 # Notes
 #--------------------------------------
+ - ADD: Add option to toggle which compression is used to save the regulation.
+ 
+ - FIX: asset browser entity change not properly changing Instance ID and Self Parts
+ - FIX: Image Preview fails for users when they edit an icon image file and save it incorrectly (as BC3 and not BC7)
+ - FIX: Check issue with Duplicate not updating new entity position properly (and instead placing it at 0,0,0

@@ -33,6 +33,7 @@ public class MapQuerySearchEngine : IMapQueryEngine
 
     public bool QueryComplete = false;
     public bool MayRunQuery = true;
+    public bool UserLoadedData = false;
 
     public string MapFilterInputs = "";
     public string PropertyFilterInputs = "";
@@ -47,9 +48,14 @@ public class MapQuerySearchEngine : IMapQueryEngine
     public void OnProjectChanged()
     {
         Bank.OnProjectChanged();
-        Bank.SetupData();
+        UserLoadedData = false;
     }
 
+    public void Setup()
+    {
+        Bank.SetupData();
+        UserLoadedData = true;
+    }
     public void DisplayInput()
     {
         var windowWidth = ImGui.GetWindowWidth();
@@ -159,7 +165,7 @@ public class MapQuerySearchEngine : IMapQueryEngine
                 }
             }
         }
-        else
+        else if (UserLoadedData)
         {
             ImguiUtils.WrappedText("Map Query Engine is loading...");
             ImguiUtils.WrappedText("");

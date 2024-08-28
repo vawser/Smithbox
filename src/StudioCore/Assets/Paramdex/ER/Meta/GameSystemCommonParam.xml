@@ -287,6 +287,47 @@
     <blockClearBonusDelayTime AltName="Boss Kill - Rune Acquisition Delay Time" Wiki="Clear bonus acquisition delay time after boss defeat processing" />
     <bonfireCheckEnemyRange AltName="Bonfire Check Enemy Range" Wiki="[Unused] (Refer to SEQ25048) Distance from PC to bonfire that determines invalidation of bonfire by enemy [m] (0 or less PC distance is not checked. Checked at all distances)" />
     <reserved_124_0 AltName="" IsHidden=""/>
+    
+    <matchingLevelUnkUpperRel AltName="Chr Type 13 Phantom - Level Coefficient 1" Wiki="Soul level coefficient of whether to apply level sync" />
+    <matchingLevelUnkUpperAbs AltName="Chr Type 13 Phantom - Level Coefficient 2" Wiki="Soul level coefficient of whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_0 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 0" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_1 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 1" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_2 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 2" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_3 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 3" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_4 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 4" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_5 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 5" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_6 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 6" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_7 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 7" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_8 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 8" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_9 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 9" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_10 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 10" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_11 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 11" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_12 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 12" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_13 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 13" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_14 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 14" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_15 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 15" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_16 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 16" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_17 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 17" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_18 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 18" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_19 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 19" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_20 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 20" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_21 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 21" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_22 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 22" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_23 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 23" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_24 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 24" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    <matchingWeaponLevelUpperUnk_25 AltName="Chr Type 13 Phantom - Max Reinforcement Coefficient 25" Wiki="Maximum weapon enhancement level factor for whether to apply level sync" />
+    
+    <baseScaduBlessingSpEffectId AltName="Base Scadu Blessing SpEffect ID" Wiki="" Refs="SpEffectParam" />
+    <baseReveredSpiritAshBlessingSpEffectId AltName="Base Revered Spirit Ash Blessing SpEffect ID" Wiki="" Refs="SpEffectParam" />
+    <glovewortCrystalSpiritBuffSpEffectId AltName="Glovewort Crystal Spirit Buff SpEffect ID" Wiki="" Refs="SpEffectParam" />
+    <baseReveredSpiritTorrentBlessingSpEffectId AltName="Base Revered Spirit Torrent Blessing SpEffect ID" Wiki="" Refs="SpEffectParam" />
+    
+    <ridingSAReceivedRatePlayer AltName="Player Riding Poise - Absorption %" Wiki="Applied to isAddBaseAtk attacks only" />
+    <ridingSAReceivedRateNotPlayer AltName="Enemy Riding Poise - Absorption %" Wiki="Applied to isAddBaseAtk attacks only" />
+    
+    <unknownSpEffectId_0x388 AltName="Unknown SpEffect ID" Wiki="" Refs="SpEffectParam" />
+    <unknownSpEffectId_0x38c AltName="Unknown SpEffect ID" Wiki="" Refs="SpEffectParam" />
+    <unknownSpEffectId_0x390 AltName="Unknown SpEffect ID" Wiki="" Refs="SpEffectParam" />
   </Field>
   <Self />
 </PARAMMETA>

@@ -154,10 +154,10 @@ public class KeyBindings
             "Toggles the visibility of the Help window.",
             Key.F3);
 
-        public KeyBind CORE_KeybindingWindow = new(
+        public KeyBind CORE_KeybindConfigWindow = new(
             "Keybinds Window",
             "Toggles the visibility of the Keybinds window.",
-            Key.F5);
+            Key.F6);
 
         //-----------------------------
         // Viewport

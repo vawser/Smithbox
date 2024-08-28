@@ -2211,13 +2211,34 @@
     </Field>
     
     <Field Def="s32 unknown_0x2f0" FirstVersion="11210015" />
-    <Field Def="s32 unknown_0x2f4" FirstVersion="11210015" />
-    <Field Def="s32 unknown_0x2f8" FirstVersion="11210015" />
-    <Field Def="s32 unknown_0x2fc" FirstVersion="11210015" />
-    <Field Def="s32 unknown_0x300" FirstVersion="11210015" />
-    <Field Def="s32 unknown_0x304" FirstVersion="11210015" />
-    <Field Def="s32 unknown_0x308" FirstVersion="11210015" />
-    <Field Def="s32 unknown_0x30c" FirstVersion="11210015" />
+    <Field Def="u8 matchingLevelUnkUpperRel" FirstVersion="11210015" />
+    <Field Def="u8 matchingLevelUnkUpperAbs" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_0" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_1" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_2" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_3" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_4" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_5" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_6" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_7" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_8" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_9" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_10" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_11" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_12" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_13" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_14" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_15" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_16" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_17" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_18" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_19" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_20" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_21" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_22" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_23" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_24" FirstVersion="11210015" />
+    <Field Def="u8 matchingWeaponLevelUpperUnk_25" FirstVersion="11210015" />
     
     <Field Def="f32 unknown_0x310" FirstVersion="10701000" />
     <Field Def="f32 unknown_0x314" FirstVersion="10701000" />
@@ -2241,21 +2262,21 @@
     <Field Def="s32 unknown_0x354" FirstVersion="11210015"/>
     <Field Def="s32 unknown_0x358" FirstVersion="11210015"/>
     <Field Def="s32 unknown_0x35c" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x360" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x364" FirstVersion="11210015"/>
+    <Field Def="s32 baseScaduBlessingSpEffectId" FirstVersion="11210015"/>
+    <Field Def="s32 baseReveredSpiritAshBlessingSpEffectId" FirstVersion="11210015"/>
     <Field Def="s32 unknown_0x368" FirstVersion="11210015"/>
     <Field Def="s32 unknown_0x36c" FirstVersion="11210015"/>
     <Field Def="s32 unknown_0x370" FirstVersion="11210015"/>
     
-    <Field Def="s32 unknown_0x374" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x378" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x37c" FirstVersion="11210015"/>
+    <Field Def="f32 ridingSAReceivedRatePlayer" FirstVersion="11210015"/>
+    <Field Def="f32 ridingSAReceivedRateNotPlayer" FirstVersion="11210015"/>
+    <Field Def="s32 glovewortCrystalSpiritBuffSpEffectId" FirstVersion="11210015"/>
     <Field Def="s32 unknown_0x380" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x384" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x388" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x38c" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x390" FirstVersion="11210015"/>
-    <Field Def="s32 unknown_0x394" FirstVersion="11210015"/>
+    <Field Def="f32 unknown_0x384" FirstVersion="11210015"/>
+    <Field Def="s32 unknownSpEffectId_0x388" FirstVersion="11210015"/>
+    <Field Def="s32 unknownSpEffectId_0x38c" FirstVersion="11210015"/>
+    <Field Def="s32 unknownSpEffectId_0x390" FirstVersion="11210015"/>
+    <Field Def="s32 baseReveredSpiritTorrentBlessingSpEffectId" FirstVersion="11210015"/>
     
     <Field Def="dummy8 endPad[108]" FirstVersion="11210015"/>
 

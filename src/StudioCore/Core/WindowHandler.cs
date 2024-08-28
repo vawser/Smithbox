@@ -55,7 +55,7 @@ public class WindowHandler
         }
 
         // Shortcut: Open Keybind Window
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_KeybindingWindow))
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_KeybindConfigWindow))
         {
             KeybindWindow.ToggleMenuVisibility();
         }
@@ -79,7 +79,7 @@ public class WindowHandler
         {
             KeybindWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"Keybinds\n{KeyBindings.Current.CORE_KeybindingWindow.HintText}");
+        ImguiUtils.ShowHoverTooltip($"Keybinds\n{KeyBindings.Current.CORE_KeybindConfigWindow.HintText}");
 
         if (FeatureFlags.DebugMenu)
         {

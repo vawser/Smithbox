@@ -383,26 +383,131 @@ param GameSystemCommonParam: modified && !added: unknown_0x230: = vanillafield u
 1.12.1 - (GameSystemCommonParam) Set unknown_0x2f0 to Vanilla v1.12.1 values
 param GameSystemCommonParam: modified && !added: unknown_0x2f0: = vanillafield unknown_0x2f0
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x2f4 to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x2f4: = vanillafield unknown_0x2f4
+1.12.1 - (GameSystemCommonParam) Set matchingLevelUnkUpperRel to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingLevelUnkUpperRel: = vanillafield matchingLevelUnkUpperRel
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x2f8 to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x2f8: = vanillafield unknown_0x2f8
+1.12.1 - (GameSystemCommonParam) Set matchingLevelUnkUpperAbs to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingLevelUnkUpperAbs: = vanillafield matchingLevelUnkUpperAbs
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x2fc to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x2fc: = vanillafield unknown_0x2fc
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_0 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_0: = vanillafield matchingWeaponLevelUpperUnk_0
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x300 to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x300: = vanillafield unknown_0x300
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_1 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_1: = vanillafield matchingWeaponLevelUpperUnk_1
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x304 to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x304: = vanillafield unknown_0x304
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_2 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_2: = vanillafield matchingWeaponLevelUpperUnk_2
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x308 to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x308: = vanillafield unknown_0x308
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_3 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_3: = vanillafield matchingWeaponLevelUpperUnk_3
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x30c to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x30c: = vanillafield unknown_0x30c
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_4 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_4: = vanillafield matchingWeaponLevelUpperUnk_4
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_5 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_5: = vanillafield matchingWeaponLevelUpperUnk_5
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_6 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_6: = vanillafield matchingWeaponLevelUpperUnk_6
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_7 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_7: = vanillafield matchingWeaponLevelUpperUnk_7
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_8 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_8: = vanillafield matchingWeaponLevelUpperUnk_8
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_9 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_9: = vanillafield matchingWeaponLevelUpperUnk_9
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_10 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_10: = vanillafield matchingWeaponLevelUpperUnk_10
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_11 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_11: = vanillafield matchingWeaponLevelUpperUnk_11
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_12 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_12: = vanillafield matchingWeaponLevelUpperUnk_12
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_13 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_13: = vanillafield matchingWeaponLevelUpperUnk_13
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_14 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_14: = vanillafield matchingWeaponLevelUpperUnk_14
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_15 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_15: = vanillafield matchingWeaponLevelUpperUnk_15
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_16 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_16: = vanillafield matchingWeaponLevelUpperUnk_16
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_17 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_17: = vanillafield matchingWeaponLevelUpperUnk_17
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_18 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_18: = vanillafield matchingWeaponLevelUpperUnk_18
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_19 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_19: = vanillafield matchingWeaponLevelUpperUnk_19
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_20 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_20: = vanillafield matchingWeaponLevelUpperUnk_20
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_21 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_21: = vanillafield matchingWeaponLevelUpperUnk_21
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_22 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_22: = vanillafield matchingWeaponLevelUpperUnk_22
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_23 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_23: = vanillafield matchingWeaponLevelUpperUnk_23
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_24 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_24: = vanillafield matchingWeaponLevelUpperUnk_24
+11210015L
+1.12.1 - (GameSystemCommonParam) Set matchingWeaponLevelUpperUnk_25 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: matchingWeaponLevelUpperUnk_25: = vanillafield matchingWeaponLevelUpperUnk_25
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x310 to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x310: = vanillafield unknown_0x310
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x314 to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x314: = vanillafield unknown_0x314
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x318 to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x318: = vanillafield unknown_0x318
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x31c to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x31c: = vanillafield unknown_0x31c
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x320 to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x320: = vanillafield unknown_0x320
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x324 to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x324: = vanillafield unknown_0x324
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x328 to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x328: = vanillafield unknown_0x328
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x32c to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x32c: = vanillafield unknown_0x32c
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x330 to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x330: = vanillafield unknown_0x330
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x334 to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x334: = vanillafield unknown_0x334
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x338 to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x338: = vanillafield unknown_0x338
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x33c to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x33c: = vanillafield unknown_0x33c
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x340 to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x340: = vanillafield unknown_0x340
+10701000L
+1.12.1 - (GameSystemCommonParam) Set unknown_0x344 to Vanilla v1.07 values
+param GameSystemCommonParam: modified && !added: unknown_0x344: = vanillafield unknown_0x344
 11210015L
 1.12.1 - (GameSystemCommonParam) Set unknown_0x34c to Vanilla v1.12.1 values
 param GameSystemCommonParam: modified && !added: unknown_0x34c: = vanillafield unknown_0x34c
@@ -416,11 +521,11 @@ param GameSystemCommonParam: modified && !added: unknown_0x354: = vanillafield u
 1.12.1 - (GameSystemCommonParam) Set unknown_0x358 to Vanilla v1.12.1 values
 param GameSystemCommonParam: modified && !added: unknown_0x358: = vanillafield unknown_0x358
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x35c to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x35c: = vanillafield unknown_0x35c
+1.12.1 - (GameSystemCommonParam) Set baseScaduBlessingSpEffectId to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: baseScaduBlessingSpEffectId: = vanillafield baseScaduBlessingSpEffectId
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x360 to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x360: = vanillafield unknown_0x360
+1.12.1 - (GameSystemCommonParam) Set baseReveredSpiritAshBlessingSpEffectId to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: baseReveredSpiritAshBlessingSpEffectId: = vanillafield baseReveredSpiritAshBlessingSpEffectId
 11210015L
 1.12.1 - (GameSystemCommonParam) Set unknown_0x364 to Vanilla v1.12.1 values
 param GameSystemCommonParam: modified && !added: unknown_0x364: = vanillafield unknown_0x364
@@ -431,14 +536,14 @@ param GameSystemCommonParam: modified && !added: unknown_0x368: = vanillafield u
 1.12.1 - (GameSystemCommonParam) Set unknown_0x36c to Vanilla v1.12.1 values
 param GameSystemCommonParam: modified && !added: unknown_0x36c: = vanillafield unknown_0x36c
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x370 to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x370: = vanillafield unknown_0x370
+1.12.1 - (GameSystemCommonParam) Set ridingSAReceivedRatePlayer to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: ridingSAReceivedRatePlayer: = vanillafield ridingSAReceivedRatePlayer
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x374 to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x374: = vanillafield unknown_0x374
+1.12.1 - (GameSystemCommonParam) Set ridingSAReceivedRateNotPlayer to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: ridingSAReceivedRateNotPlayer: = vanillafield ridingSAReceivedRateNotPlayer
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x378 to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x378: = vanillafield unknown_0x378
+1.12.1 - (GameSystemCommonParam) Set glovewortCrystalSpiritBuffSpEffectId to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: glovewortCrystalSpiritBuffSpEffectId: = vanillafield glovewortCrystalSpiritBuffSpEffectId
 11210015L
 1.12.1 - (GameSystemCommonParam) Set unknown_0x37c to Vanilla v1.12.1 values
 param GameSystemCommonParam: modified && !added: unknown_0x37c: = vanillafield unknown_0x37c
@@ -449,17 +554,17 @@ param GameSystemCommonParam: modified && !added: unknown_0x380: = vanillafield u
 1.12.1 - (GameSystemCommonParam) Set unknown_0x384 to Vanilla v1.12.1 values
 param GameSystemCommonParam: modified && !added: unknown_0x384: = vanillafield unknown_0x384
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x388 to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x388: = vanillafield unknown_0x388
+1.12.1 - (GameSystemCommonParam) Set unknownSpEffectId_0x388 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknownSpEffectId_0x388: = vanillafield unknownSpEffectId_0x388
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x38c to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x38c: = vanillafield unknown_0x38c
+1.12.1 - (GameSystemCommonParam) Set unknownSpEffectId_0x38c to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknownSpEffectId_0x38c: = vanillafield unknownSpEffectId_0x38c
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x390 to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x390: = vanillafield unknown_0x390
+1.12.1 - (GameSystemCommonParam) Set unknownSpEffectId_0x390 to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: unknownSpEffectId_0x390: = vanillafield unknownSpEffectId_0x390
 11210015L
-1.12.1 - (GameSystemCommonParam) Set unknown_0x394 to Vanilla v1.12.1 values
-param GameSystemCommonParam: modified && !added: unknown_0x394: = vanillafield unknown_0x394
+1.12.1 - (GameSystemCommonParam) Set baseReveredSpiritTorrentBlessingSpEffectId to Vanilla v1.12.1 values
+param GameSystemCommonParam: modified && !added: baseReveredSpiritTorrentBlessingSpEffectId: = vanillafield baseReveredSpiritTorrentBlessingSpEffectId
 11210015L
 1.12.1 - (GameSystemCommonParam) Set endPad to Vanilla v1.12.1 values
 param GameSystemCommonParam: modified && !added: endPad: = vanillafield endPad

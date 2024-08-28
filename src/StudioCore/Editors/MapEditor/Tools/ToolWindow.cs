@@ -37,6 +37,8 @@ public class ToolWindow
 
     }
 
+    public bool FocusLocalPropertySearch = false;
+
     public void OnGui()
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -58,6 +60,14 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Global Property Search"))
             {
+                if(!Screen.MapQueryHandler.Bank.MapBankInitialized && !Screen.MapQueryHandler.UserLoadedData)
+                {
+                    if(ImGui.Button("Load Map Data", defaultButtonSize))
+                    {
+                        Screen.MapQueryHandler.Setup();
+                    }
+                }
+
                 Screen.MapQueryHandler.IsOpen = true;
                 Screen.MapQueryHandler.DisplayInput();
                 Screen.MapQueryHandler.DisplayResults();
@@ -86,6 +96,11 @@ public class ToolWindow
             ///--------------------
             /// Local Property Search
             ///--------------------
+            if(FocusLocalPropertySearch)
+            {
+                FocusLocalPropertySearch = false;
+                ImGui.SetNextItemOpen(true);
+            }
             if (ImGui.CollapsingHeader("Local Property Search"))
             {
                 Screen.PropSearch.Display();

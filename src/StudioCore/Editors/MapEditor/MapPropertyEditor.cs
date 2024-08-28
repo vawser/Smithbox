@@ -729,6 +729,7 @@ public class MapPropertyEditor
             // Actions
             if (ImGui.Selectable(@"Search##PropSearch"))
             {
+                Screen.ToolWindow.FocusLocalPropertySearch = true;
                 RequestedSearchProperty = prop;
                 EditorCommandQueue.AddCommand($@"map/propsearch/{prop.Name}");
             }

@@ -47,6 +47,10 @@ public class MapQueryEditEngine : IMapQueryEngine
     public void OnProjectChanged()
     {
         Bank.OnProjectChanged();
+    }
+
+    public void Setup()
+    {
         Bank.SetupData();
     }
 
