@@ -162,7 +162,7 @@ public static class SearchAndReplace
             return null;
         }
 
-        List<ReplaceFMGEntryTextAction> actions = null;
+        List<ReplaceFMGEntryTextAction> actions = new List<ReplaceFMGEntryTextAction>();
 
         FMG.Entry tempEntry = null;
 
