@@ -64,7 +64,7 @@ namespace StudioCore.Editors.TextEditor
                     {
                         EntryIds.Remove(k);
                     }
-                    else
+                    else if (!EntryIds.Contains(k))
                     {
                         EntryIds.Add(k);
                     }
@@ -77,7 +77,7 @@ namespace StudioCore.Editors.TextEditor
                 {
                     EntryIds.Remove(currentId);
                 }
-                else
+                else if (!EntryIds.Contains(currentId))
                 {
                     EntryIds.Add(currentId);
                 }

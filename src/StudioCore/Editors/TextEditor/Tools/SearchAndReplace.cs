@@ -164,34 +164,45 @@ public static class SearchAndReplace
 
         List<ReplaceFMGEntryTextAction> actions = null;
 
+        FMG.Entry tempEntry = null;
+
         // Title
         if (CurrentTextCategory is "Title" or "All")
         {
-            actions.Add(PerformSearchAndReplace(entry.Title));
+            tempEntry = entry.Title;
         }
 
         // TextBody
         if (CurrentTextCategory is "Text Body" or "All")
         {
-            actions.Add(PerformSearchAndReplace(entry.TextBody));
+            tempEntry = entry.TextBody;
         }
 
         // Summary
         if (CurrentTextCategory is "Summary" or "All")
         {
-            actions.Add(PerformSearchAndReplace(entry.Summary));
+            tempEntry = entry.Summary;
         }
 
         // ExtraText
         if (CurrentTextCategory is "Extra Text" or "All")
         {
-            actions.Add(PerformSearchAndReplace(entry.ExtraText));
+            tempEntry = entry.ExtraText;
         }
 
         // Description
         if (CurrentTextCategory is "Description" or "All")
         {
-            actions.Add(PerformSearchAndReplace(entry.Description));
+            tempEntry = entry.Description;
+        }
+
+        if (tempEntry != null)
+        {
+            var action = PerformSearchAndReplace(tempEntry);
+            if(action != null)
+            {
+                actions.Add(action);
+            }
         }
 
         return actions;

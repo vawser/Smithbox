@@ -807,6 +807,7 @@ public class TextEditorScreen : EditorScreen
                     if (ImGui.Selectable(label, ( _activeIDCache == r.ID || SelectionHandler.IsSelected(r.ID))))
                     {
                         _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+
                         SelectionHandler.HandleSelection(r.ID);
                     }
                     else if (_activeIDCache == r.ID && _activeEntryGroup == null)
@@ -820,7 +821,9 @@ public class TextEditorScreen : EditorScreen
                     {
                         // Up/Down arrow key selection
                         _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+
                         SelectionHandler.HandleSelection(r.ID);
+
                         _arrowKeyPressed = false;
                     }
 
