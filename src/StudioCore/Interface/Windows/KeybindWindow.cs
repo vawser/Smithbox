@@ -693,6 +693,18 @@ public class TextEditorKeybindTab
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            KeyBindings.Current.TEXT_SelectAll = InputTracker.KeybindLine(0,
+                KeyBindings.Current.TEXT_SelectAll,
+                KeyBindings.Default.TEXT_SelectAll);
+
+            KeyBindings.Current.TEXT_Multiselect = InputTracker.KeybindLine(0,
+                KeyBindings.Current.TEXT_Multiselect,
+                KeyBindings.Default.TEXT_Multiselect);
+
+            KeyBindings.Current.TEXT_MultiselectRange = InputTracker.KeybindLine(0,
+                KeyBindings.Current.TEXT_MultiselectRange,
+                KeyBindings.Default.TEXT_MultiselectRange);
+
             KeyBindings.Current.TEXT_FocusSearch = InputTracker.KeybindLine(0,
                 KeyBindings.Current.TEXT_FocusSearch,
                 KeyBindings.Default.TEXT_FocusSearch);

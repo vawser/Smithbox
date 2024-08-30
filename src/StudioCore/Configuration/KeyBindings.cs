@@ -766,6 +766,26 @@ public class KeyBindings
         // Text Editor
         //-----------------------------
         // Core
+        public KeyBind TEXT_SelectAll = new(
+            "Select All",
+            "Select all rows.",
+            Key.A,
+            true);
+
+        public KeyBind TEXT_Multiselect = new(
+            "Multi-Select Row",
+            "When held, multiple rows may be selected.",
+            Key.Z);
+
+        public KeyBind TEXT_MultiselectRange = new(
+            "Multi-Select Row Range",
+            "When held, the next row selected will be considered the 'start', and the next row after that the 'end'. All rows between them will be selected.",
+            Key.LShift,
+            false,
+            false,
+            false,
+            true);
+
         public KeyBind TEXT_FocusSearch = new(
             "Focus Text Search",
             "Moves focus to the Text search input.",

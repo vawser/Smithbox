@@ -316,6 +316,8 @@ public class TextEditorScreen : EditorScreen
 
                 ActionSubMenu.Shortcuts();
                 ToolSubMenu.Shortcuts();
+
+                SelectionHandler.Shortcuts(_EntryLabelCacheFiltered);
             }
 
             var doFocus = false;
@@ -808,7 +810,7 @@ public class TextEditorScreen : EditorScreen
                     {
                         _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
 
-                        SelectionHandler.HandleSelection(r.ID);
+                        SelectionHandler.HandleSelection(r.ID, _EntryLabelCacheFiltered);
                     }
                     else if (_activeIDCache == r.ID && _activeEntryGroup == null)
                     {
@@ -822,7 +824,7 @@ public class TextEditorScreen : EditorScreen
                         // Up/Down arrow key selection
                         _activeEntryGroup = Smithbox.BankHandler.FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
 
-                        SelectionHandler.HandleSelection(r.ID);
+                        SelectionHandler.HandleSelection(r.ID, _EntryLabelCacheFiltered);
 
                         _arrowKeyPressed = false;
                     }

@@ -1,4 +1,5 @@
-﻿using StudioCore.Configuration;
+﻿using SoulsFormats;
+using StudioCore.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace StudioCore.Editors.TextEditor
             return EntryIds.Contains(id);
         }
 
-        public void HandleSelection(int currentId)
+        public void HandleSelection(int currentId, List<FMG.Entry> entries)
         {
             if(_previousEntryId == -1)
             {
@@ -58,20 +59,25 @@ namespace StudioCore.Editors.TextEditor
                     end = _previousEntryId;
                 }
 
-                for (int k = start; k <= end; k++)
+                foreach(var entry in entries)
                 {
-                    if (EntryIds.Contains(k) && _previousEntryId != k)
+                    var curId = entry.ID;
+
+                    if (curId >= start && curId <= end)
                     {
-                        EntryIds.Remove(k);
-                    }
-                    else if (!EntryIds.Contains(k))
-                    {
-                        EntryIds.Add(k);
+                        if (EntryIds.Contains(curId) && _previousEntryId != curId)
+                        {
+                            EntryIds.Remove(curId);
+                        }
+                        else if (!EntryIds.Contains(curId))
+                        {
+                            EntryIds.Add(curId);
+                        }
                     }
                 }
             }
             // Multi-Select: Pick Select
-            else if (InputTracker.GetKey(Veldrid.Key.ControlLeft))
+            else if (InputTracker.GetKey(KeyBindings.Current.TEXT_Multiselect))
             {
                 if (EntryIds.Contains(currentId) && _previousEntryId != currentId)
                 {
@@ -87,6 +93,22 @@ namespace StudioCore.Editors.TextEditor
             {
                 EntryIds = new List<int>();
                 EntryIds.Add(currentId);
+            }
+        }
+
+        public void Shortcuts(List<FMG.Entry> entries)
+        {
+            // Select All
+            if (InputTracker.GetKey(KeyBindings.Current.TEXT_SelectAll))
+            {
+                EntryIds = new List<int>();
+
+                foreach (var entry in entries)
+                {
+                    var curId = entry.ID;
+
+                    EntryIds.Add(curId);
+                }
             }
         }
     }
