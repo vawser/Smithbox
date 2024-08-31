@@ -727,18 +727,15 @@ namespace StudioCore.Editors.MapEditor
 
             if (entity.WrappedObject is BTL.Light)
             {
-                // TODO: should probably actually find the correct parent in circumstances where there are multiple
                 parent = map.BTLParents.First();
             }
             else if (map.MapOffsetNode != null)
             {
                 parent = map.MapOffsetNode;
-                TaskLogs.AddLog($"MapOffset: {parent.TempTransform}");
             }
             else if (map.RootObject != null)
             {
                 parent = map.RootObject;
-                TaskLogs.AddLog($"RootObject: {parent.TempTransform}");
             }
 
             parent.AddChild(entity);

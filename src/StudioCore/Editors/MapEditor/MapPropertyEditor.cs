@@ -1507,7 +1507,7 @@ public class MapPropertyEditor
         ImGui.Begin($@"Properties##{id}");
         ImGui.BeginChild("propedit");
 
-        if (entSelection.Count > 1)
+        if (Screen.Universe.postLoad && entSelection.Count > 1)
         {
             Entity firstEnt = entSelection.First();
             if (firstEnt.WrappedObject is Param.Row prow || firstEnt.WrappedObject is MergedParamRow)
@@ -1528,7 +1528,7 @@ public class MapPropertyEditor
             ImGui.PopStyleColor();
             ImGui.EndChild();
         }
-        else if (entSelection.Any())
+        else if (Screen.Universe.postLoad && entSelection.Any())
         {
             Entity firstEnt = entSelection.First();
             //ImGui.Text($" Map: {firstEnt.Container.Name}");
@@ -1549,6 +1549,10 @@ public class MapPropertyEditor
             {
                 PropEditorSelectedEntities(selection);
             }
+        }
+        else if(!Screen.Universe.postLoad)
+        {
+            ImGui.Text("Map has not finished loading.");
         }
         else
         {
