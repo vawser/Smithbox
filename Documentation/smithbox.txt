@@ -99,13 +99,16 @@ Texture Viewer:
  - ADD: ability to edit Shoebox Layouts (subwindow)
  - ADD: ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
  - ADD: ability to export selected icon 'section' of icon file (assuming texture has a shoebox layout)
- - FIX: Image Preview fails for users when they edit an icon image file and save it incorrectly (as BC3 and not BC7)
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
 
  
 #--------------------------------------
 # Notes
 #--------------------------------------
- - FIX: issue with duplicate in Map Editor not working correctly in some instances (likely related to the internal changes)
  - FIX: asset browser entity change not properly changing Instance ID and Self Parts
- - FIX: duplicating SFX in the Ringed City map is causing duplicate to go to 0,0,0 origin
+ 
+ - FIX: duplicate does not properly function in some cases: DS3 duplicate causes the new map object to lose position
+  - Seems linked to the name handling, as it appears to work correctly in ER, which has explicit handling for instance ID
+  
+  - Revert the changes made by Strackeror's commit in ViewportAction / ViewportActionCommon back to pre-merge state
+   https://github.com/vawser/Smithbox/tree/0759843964714dc9cb1832fdbfde77351cc10d5d (pre commit merge repo)

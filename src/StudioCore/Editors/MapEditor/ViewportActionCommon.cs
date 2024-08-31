@@ -614,34 +614,52 @@ namespace StudioCore.Editors.MapEditor
         }
 
         static Regex WithIndex = new Regex(@"^(.+)_(\d+)$");
+
         public static void SetNameHandleDuplicate(MapContainer map, IEnumerable<MsbEntity> entities, MsbEntity target, string name)
         {
             var baseName = name;
-            string instanceId = null;
+            string postfixId = null;
+
             if (map.GetObjectByName(baseName) is not null)
             {
                 var match = WithIndex.Match(baseName);
+
                 if (match.Success)
+                {
                     baseName = match.Groups[1].Value;
+                    postfixId = match.Groups[2].Value;
+                }
+
                 if (target.WrappedObject.GetType().GetProperty("InstanceID") is PropertyInfo prop)
-                    instanceId = $"{prop.GetValue(target.WrappedObject)}";
+                {
+                    postfixId = $"{prop.GetValue(target.WrappedObject)}";
+                }
             }
 
             var newName = baseName;
-            if (instanceId is not null)
-                newName += $"_{instanceId}";
+
+            if (postfixId is not null)
+                newName += $"_{postfixId}";
 
             if (map.GetObjectByName(newName) is not null)
             {
-                int count = 2;
-                do
+                try
                 {
-                    newName = $"{baseName}_{count}";
-                    if (instanceId is not null)
-                        newName += $"_{instanceId}";
-                    count += 1;
+                    var postId = int.Parse(postfixId);
+
+                    int count = postId;
+                    do
+                    {
+                        newName = $"{baseName}_{PadID(count)}";
+
+                        count += 1;
+                    }
+                    while (map.GetObjectByName(newName) is not null || entities.Any(ent => ent.Name == newName));
                 }
-                while (map.GetObjectByName(newName) is not null || entities.Any(ent => ent.Name == newName));
+                catch
+                {
+
+                }
             }
 
             if (target.WrappedObject is not BTL.Light)
@@ -653,6 +671,24 @@ namespace StudioCore.Editors.MapEditor
                 );
             }
             target.Name = newName;
+        }
+
+        private static string PadID(int count)
+        {
+            if(count < 10)
+            {
+                return $"000{count}";
+            }
+            else if (count >= 10 && count < 100)
+            {
+                return $"00{count}";
+            }
+            else if (count >= 100 && count < 1000)
+            {
+                return $"0{count}";
+            }
+
+            return $"{count}";
         }
 
         public static void RenameDuplicates(MapContainer map, IEnumerable<MsbEntity> entities, MsbEntity target)
@@ -697,10 +733,12 @@ namespace StudioCore.Editors.MapEditor
             else if (map.MapOffsetNode != null)
             {
                 parent = map.MapOffsetNode;
+                TaskLogs.AddLog($"MapOffset: {parent.TempTransform}");
             }
             else if (map.RootObject != null)
             {
                 parent = map.RootObject;
+                TaskLogs.AddLog($"RootObject: {parent.TempTransform}");
             }
 
             parent.AddChild(entity);
