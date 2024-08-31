@@ -348,17 +348,21 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
 
 public class CloneMapObjectsAction : ViewportAction
 {
+    private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Clonables = new();
-    private readonly List<(string, MsbEntity)> Clones = new();
+    private readonly List<ObjectContainer> CloneMaps = new();
+    private readonly List<MsbEntity> Clones = new();
     private readonly bool SetSelection;
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
     private readonly Universe Universe;
+    private RenderScene Scene;
 
     public CloneMapObjectsAction(Universe univ, RenderScene scene, List<MsbEntity> objects, bool setSelection,
         MapContainer targetMap = null, Entity targetBTL = null)
     {
         Universe = univ;
+        Scene = scene;
         Clonables.AddRange(objects);
         SetSelection = setSelection;
         TargetMap = targetMap;
@@ -368,71 +372,162 @@ public class CloneMapObjectsAction : ViewportAction
     public override ActionEvent Execute(bool isRedo = false)
     {
         var clonesCached = Clones.Count() > 0;
-        if (!clonesCached)
-        {
-            Clones.AddRange(Clonables.Select(ent => (ent.Name, (MsbEntity)ent.Clone())));
-        }
 
-        var grouped = Clones
-            .GroupBy((ent) => ent.Item2.ContainingMap)
-            .Select(group => (group.Key, group));
+        var objectnames = new Dictionary<string, HashSet<string>>();
+        Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
-        foreach (var (map, clonedList) in grouped)
+        for (var i = 0; i < Clonables.Count(); i++)
         {
-            var targetMap = TargetMap ?? map;
-            if (map == null)
+            if (Clonables[i].MapID == null)
             {
-                TaskLogs.AddLog(
-                    $"Failed to dupe {clonedList.First().Item1}, could not find containing map",
-                    LogLevel.Warning
-                );
+                TaskLogs.AddLog($"Failed to dupe {Clonables[i].Name}, as it had no defined MapID",
+                    LogLevel.Warning);
                 continue;
             }
 
-            foreach (var (originalName, cloned) in clonedList)
+            MapContainer m;
+            if (TargetMap != null)
             {
-                if (targetMap != map)
+                m = Universe.GetLoadedMap(TargetMap.Name);
+            }
+            else
+            {
+                m = Universe.GetLoadedMap(Clonables[i].MapID);
+            }
+
+            if (m != null)
+            {
+                // Get list of names that exist so our duplicate names don't trample over them
+                if (!objectnames.ContainsKey(Clonables[i].MapID))
                 {
-                    MsbUtils.StripMsbReference(
-                        clonedList.Select(e => e.Item2.WrappedObject as IMsbEntry),
-                        cloned.WrappedObject as IMsbEntry
-                    );
+                    var nameset = new HashSet<string>();
+                    foreach (Entity n in m.Objects)
+                    {
+                        nameset.Add(n.Name);
+                    }
+
+                    objectnames.Add(Clonables[i].MapID, nameset);
                 }
 
-                int? maybeIndex = null;
-                if (TargetMap is null)
+                // If this was executed in the past we reused the cloned objects so because redo
+                // actions that follow this may reference the previously cloned object
+                MsbEntity newobj = clonesCached ? Clones[i] : (MsbEntity)Clonables[i].Clone();
+
+                // Use pattern matching to attempt renames based on appended ID
+                Match idmatch = TrailIDRegex.Match(Clonables[i].Name);
+                if (idmatch.Success)
                 {
-                    maybeIndex = map.Objects.IndexOf(map.GetObjectByName(originalName)) + 1;
+                    var idstring = idmatch.Result("${id}");
+                    var id = int.Parse(idstring);
+                    var newid = idstring;
+                    while (objectnames[Clonables[i].MapID]
+                           .Contains(Clonables[i].Name.Substring(0, Clonables[i].Name.Length - idstring.Length) +
+                                     newid))
+                    {
+                        id++;
+                        newid = id.ToString("D" + idstring.Length);
+                    }
+
+                    newobj.Name = Clonables[i].Name.Substring(0, Clonables[i].Name.Length - idstring.Length) +
+                                  newid;
+                    objectnames[Clonables[i].MapID].Add(newobj.Name);
+                }
+                else
+                {
+                    var idstring = "0001";
+                    var id = int.Parse(idstring);
+                    var newid = idstring;
+                    while (objectnames[Clonables[i].MapID].Contains(Clonables[i].Name + "_" + newid))
+                    {
+                        id++;
+                        newid = id.ToString("D" + idstring.Length);
+                    }
+
+                    newobj.Name = Clonables[i].Name + "_" + newid;
+                    objectnames[Clonables[i].MapID].Add(newobj.Name);
                 }
 
-                Entity parent = null;
+                if (TargetMap == null)
+                {
+                    m.Objects.Insert(m.Objects.IndexOf(Clonables[i]) + 1, newobj);
+                }
+                else
+                {
+                    m.Objects.Add(newobj);
+                }
 
-                if (TargetBTL is not null && cloned.WrappedObject is BTL.Light)
-                    parent = TargetBTL;
+                if (TargetBTL != null && newobj.WrappedObject is BTL.Light)
+                {
+                    TargetBTL.AddChild(newobj);
+                }
+                else if (TargetMap != null)
+                {
+                    // Duping to a targeted map, update parent.
+                    if (TargetMap.MapOffsetNode != null)
+                    {
+                        TargetMap.MapOffsetNode.AddChild(newobj);
+                    }
+                    else
+                    {
+                        TargetMap.RootObject.AddChild(newobj);
+                    }
+                }
+                else if (Clonables[i].Parent != null)
+                {
+                    var idx = Clonables[i].Parent.ChildIndex(Clonables[i]);
+                    Clonables[i].Parent.AddChild(newobj, idx + 1);
+                }
 
                 if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
-                    ViewportActionCommon.SetUniqueEntityID(cloned, map);
-
-                if (CFG.Current.Toolbar_Duplicate_Increment_InstanceID)
-                    ViewportActionCommon.SetUniqueInstanceID(cloned, map);
-
+                {
+                    ViewportActionCommon.SetUniqueEntityID(newobj, m);
+                }
+                if(CFG.Current.Toolbar_Duplicate_Increment_InstanceID)
+                {
+                    ViewportActionCommon.SetUniqueInstanceID(newobj, m);
+                }
+                if (CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames)
+                {
+                    ViewportActionCommon.SetSelfPartNames(newobj, m);
+                }
                 if (CFG.Current.Toolbar_Duplicate_Clear_Entity_ID)
-                    ViewportActionCommon.ClearEntityID(cloned, map);
-
+                {
+                    ViewportActionCommon.ClearEntityID(newobj, m);
+                }
                 if (CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs)
-                    ViewportActionCommon.ClearEntityGroupID(cloned, map);
+                {
+                    ViewportActionCommon.ClearEntityGroupID(newobj, m);
+                }
 
-                ViewportActionCommon.RenameDuplicates(targetMap, clonedList.Select(e => e.Item2), cloned);
-                ViewportActionCommon.AddObjectToMap(targetMap, cloned, maybeIndex, parent);
+                newobj.UpdateRenderModel();
+                if (newobj.RenderSceneMesh != null)
+                {
+                    newobj.RenderSceneMesh.SetSelectable(newobj);
+                }
+
+                if (!clonesCached)
+                {
+                    Clones.Add(newobj);
+                    CloneMaps.Add(m);
+                    m.HasUnsavedChanges = true;
+                }
+                else
+                {
+                    if (Clones[i].RenderSceneMesh != null)
+                    {
+                        Clones[i].RenderSceneMesh.AutoRegister = true;
+                        Clones[i].RenderSceneMesh.Register();
+                    }
+                }
             }
         }
 
         if (SetSelection)
         {
             Universe.Selection.ClearSelection();
-            foreach (var (name, entity) in Clones)
+            foreach (MsbEntity c in Clones)
             {
-                Universe.Selection.AddSelection(entity);
+                Universe.Selection.AddSelection(c);
             }
         }
 
@@ -441,11 +536,22 @@ public class CloneMapObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        foreach (var (_, cloned) in Clones)
+        for (var i = 0; i < Clones.Count(); i++)
         {
-            ViewportActionCommon.RemoveObjectFromMap(cloned);
+            CloneMaps[i].Objects.Remove(Clones[i]);
+            if (Clones[i] != null)
+            {
+                Clones[i].Parent.RemoveChild(Clones[i]);
+            }
+
+            if (Clones[i].RenderSceneMesh != null)
+            {
+                Clones[i].RenderSceneMesh.AutoRegister = false;
+                Clones[i].RenderSceneMesh.UnregisterWithScene();
+            }
         }
 
+        // Clones.Clear();
         if (SetSelection)
         {
             Universe.Selection.ClearSelection();
@@ -461,15 +567,18 @@ public class CloneMapObjectsAction : ViewportAction
 
 public class AddMapObjectsAction : ViewportAction
 {
+    private static Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Added = new();
+    private readonly List<ObjectContainer> AddedMaps = new();
     private readonly MapContainer Map;
     private readonly Entity Parent;
     private readonly bool SetSelection;
     private readonly Universe Universe;
     private RenderScene Scene;
+    private MapContainer TargetMap;
 
     public AddMapObjectsAction(Universe univ, MapContainer map, RenderScene scene, List<MsbEntity> objects,
-        bool setSelection, Entity parent)
+        bool setSelection, Entity parent, MapContainer targetMap = null)
     {
         Universe = univ;
         Map = map;
@@ -477,20 +586,57 @@ public class AddMapObjectsAction : ViewportAction
         Added.AddRange(objects);
         SetSelection = setSelection;
         Parent = parent;
+        TargetMap = targetMap;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        foreach (var added in Added)
+        for (var i = 0; i < Added.Count(); i++)
         {
-            if (CFG.Current.Prefab_ApplyUniqueInstanceID)
-                ViewportActionCommon.SetUniqueInstanceID(added, Map);
-            if (CFG.Current.Prefab_ApplyUniqueEntityID)
-                ViewportActionCommon.SetUniqueEntityID(added, Map);
-            if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
-                ViewportActionCommon.SetSpecificEntityGroupID(added, Map);
-            ViewportActionCommon.RenameDuplicates(Map, Added, added);
-            ViewportActionCommon.AddObjectToMap(Map, added, parent: Parent);
+            if (Map != null)
+            {
+                Map.Objects.Add(Added[i]);
+                Parent.AddChild(Added[i]);
+                Added[i].UpdateRenderModel();
+                if (Added[i].RenderSceneMesh != null)
+                {
+                    Added[i].RenderSceneMesh.SetSelectable(Added[i]);
+                }
+
+                if (Added[i].RenderSceneMesh != null)
+                {
+                    Added[i].RenderSceneMesh.AutoRegister = true;
+                    Added[i].RenderSceneMesh.Register();
+                }
+
+                MsbEntity ent = Added[i];
+                MapContainer m;
+
+                AddedMaps.Add(Map);
+
+                if (TargetMap != null)
+                {
+                    m = Universe.GetLoadedMap(TargetMap.Name);
+
+                    // Prefab-specific
+                    if (CFG.Current.Prefab_ApplyUniqueInstanceID)
+                    {
+                        ViewportActionCommon.SetUniqueInstanceID(ent, m);
+                    }
+                    if (CFG.Current.Prefab_ApplyUniqueEntityID)
+                    {
+                        ViewportActionCommon.SetUniqueEntityID(ent, m);
+                    }
+                    if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
+                    {
+                        ViewportActionCommon.SetSpecificEntityGroupID(ent, m);
+                    }
+                }
+            }
+            else
+            {
+                AddedMaps.Add(null);
+            }
         }
 
         if (SetSelection)
@@ -507,11 +653,22 @@ public class AddMapObjectsAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        foreach (var added in Added)
+        for (var i = 0; i < Added.Count(); i++)
         {
-            ViewportActionCommon.RemoveObjectFromMap(added);
+            AddedMaps[i].Objects.Remove(Added[i]);
+            if (Added[i] != null)
+            {
+                Added[i].Parent.RemoveChild(Added[i]);
+            }
+
+            if (Added[i].RenderSceneMesh != null)
+            {
+                Added[i].RenderSceneMesh.AutoRegister = false;
+                Added[i].RenderSceneMesh.UnregisterWithScene();
+            }
         }
 
+        //Clones.Clear();
         if (SetSelection)
         {
             Universe.Selection.ClearSelection();
@@ -1829,14 +1986,14 @@ public class OrderMapObjectsAction : ViewportAction
     }
 }
 
-
 public class RenameObjectsAction(List<MsbEntity> entities, List<string> newNames, bool reference) : ViewportAction
 {
     List<string> oldNames = entities.Select(e => e.Name).ToList();
 
     void Rename(MsbEntity entity, string name)
     {
-        if (reference) {
+        if (reference)
+        {
             ViewportActionCommon.SetNameHandleDuplicate(
                 entity.ContainingMap,
                 entity.ContainingMap.Objects
@@ -1845,7 +2002,9 @@ public class RenameObjectsAction(List<MsbEntity> entities, List<string> newNames
                 entity,
                 name
             );
-        } else {
+        }
+        else
+        {
             entity.Name = name;
         }
     }

@@ -100,7 +100,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// The parent entity of this entity.
     /// </summary>
-    [XmlIgnore] public Entity Parent { get; private set; }
+    [XmlIgnore] public Entity Parent { get; set; }
 
     /// <summary>
     /// A list that contains all the children of this entity.
@@ -1111,6 +1111,7 @@ public class Entity : ISelectable, IDisposable
 
         Matrix4x4 t = UseTempTransform ? TempTransform.WorldMatrix : GetLocalTransform().WorldMatrix;
         Entity p = Parent;
+
         while (p != null)
         {
             t = t * (p.UseTempTransform ? p.TempTransform.WorldMatrix : p.GetLocalTransform().WorldMatrix);
