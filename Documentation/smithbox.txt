@@ -39,6 +39,7 @@ Map Editor:
  - ADD: Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
  - ADD: global prop edit
  
+ - FIX: asset browser entity change not properly changing Instance ID and Self Parts
  - FIX: DS2 Map Pieces aren't loaded/displayed.
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
  
@@ -94,7 +95,6 @@ Time Act Editor
  - FIX: AC6 TAE doesn't save correctly (TAE implementation needs to be updated)
 
 Texture Viewer: 
- - ADD: support for tpfbdt files 
  - ADD: support for 'custom' Shoebox Layouts for non-Shoebox Layout games. Smithbox will instead read from a Shoebox folder in .smithbox for these games.
  - ADD: ability to edit Shoebox Layouts (subwindow)
  - ADD: ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
@@ -105,6 +105,7 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #--------------------------------------
- - FIX: asset browser entity change not properly changing Instance ID and Self Parts
  
- - FIX: duplicate not respecting mapoffsetnode transform, causing the new map objects to be incorrectly positioned in the viewport
+ - ADD: auto-icon layout add for ER/AC6 textures (support extending existing .layouts)
+ - ADD: icon inject (adds icon png to dds icon spritesheet)
+ - ADD: support for tpfbdt files 

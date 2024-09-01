@@ -49,7 +49,7 @@
 620 GENERATOR - EN Recharge Delay
 621 GENERATOR - EN Post Recovery
 700 FCS - Softlock Strength
-701 FCS - Target Tracking (Arms)
+701 WEIGHT - FCS - Armload Target Tracking
 702 FCS - Hardlock Strength
 703 FCS - White Lock Strength (0 is 100%)
 970 FIREARM SPECIALIZATION - Target Tracing Multiplier

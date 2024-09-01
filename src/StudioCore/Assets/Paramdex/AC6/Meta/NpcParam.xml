@@ -577,6 +577,8 @@
     <generatorTypeSfxIdReplaceId_3 AltName="Generator Type Replace SFX ID [3]" Refs="GeneratorTypeSfxIdRplace_PC" />
     <generatorTypeSfxIdReplaceId_4 AltName="Generator Type Replace SFX ID [4]" Refs="GeneratorTypeSfxIdRplace_PC" />
     
+    <effectiveRangeLimit AltName="Effective Range Cap %" Wiki="Percentage-based modifier that reduces the effective range of your weapon against a specific NPC and causes ricochets to happen sooner. Ranges from 1.00 to 0.00, where 1.00 is 100% and 0.00 is 0%. At 1.00, your weapons can cover their full effective range before ricochets occur. At 0, your weapons will ricochet the moment they surpass their ideal range." />
+    
     <endPadding IsHidden="" />
     
   </Field>
