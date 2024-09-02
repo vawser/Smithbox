@@ -49,7 +49,6 @@ Model Editor:
  - ADD: easier toggling of model masks based on associated NpcParam (for characters)
  - ADD: floating text for dummy poly ref IDs
  - ADD: floating text for co-ordinate direction (X, Y, Z)
- - ADD: dummy poly forward/upwards representation
  - ADD: proper handling for the flag fields in the FLVER
  - ADD: GX Item mapping so the byte arrays are more comprehesible (https://github.com/JKAnderson/SoulsFormats/issues/14)
  - ADD: render bone connections (use patrol route method)
@@ -97,14 +96,13 @@ Texture Viewer:
  - ADD: support for 'custom' Shoebox Layouts for non-Shoebox Layout games. Smithbox will instead read from a Shoebox folder in .smithbox for these games.
  - ADD: ability to edit Shoebox Layouts (subwindow)
  - ADD: ability to inject new DDS file into existing binder (would need to move ROOT instances to MOD first)
- - ADD: ability to export selected icon 'section' of icon file (assuming texture has a shoebox layout)
+ - ADD: ability to export selected icon 'section' of icon file (assuming texture has a shoebox layout)-
+ - ADD: auto-icon layout add for ER/AC6 textures (support extending existing .layouts)
+ - ADD: icon inject (adds icon png to dds icon spritesheet)
+ - ADD: support for tpfbdt files 
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
 
  
 #--------------------------------------
 # Notes
 #--------------------------------------
- 
- - ADD: auto-icon layout add for ER/AC6 textures (support extending existing .layouts)
- - ADD: icon inject (adds icon png to dds icon spritesheet)
- - ADD: support for tpfbdt files 

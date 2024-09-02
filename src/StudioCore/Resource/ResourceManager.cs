@@ -639,6 +639,9 @@ public static class ResourceManager
 
             var b = Binder.Value;
 
+            if (b == null)
+                return;
+
             // Iterate through each file in the binder
             for (var i = 0; i < b.Files.Count(); i++)
             {

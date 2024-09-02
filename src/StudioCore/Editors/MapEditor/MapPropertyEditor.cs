@@ -1552,7 +1552,7 @@ public class MapPropertyEditor
         }
         else if(!Screen.Universe.postLoad)
         {
-            ImGui.Text("Map has not finished loading.");
+            ImGui.Text("");
         }
         else
         {
