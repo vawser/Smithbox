@@ -193,19 +193,9 @@ namespace StudioCore.Editors.ModelEditor
             if (container.DummyPoly_RootNode.Children.Count < index)
                 return;
 
-            // This relies on the index of the lists to align
-            for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
-            {
-                var curNode = container.DummyPoly_RootNode.Children[i];
-
-                if (i == index)
-                {
-                    DummyPositionChange act = new(curNode, position);
-                    Screen.EditorActionManager.ExecuteAction(act);
-
-                    break;
-                }
-            }
+            var curNode = container.DummyPoly_RootNode.Children[index];
+            DummyPositionChange act = new(curNode, position);
+            Screen.EditorActionManager.ExecuteAction(act);
         }
 
         public void UpdateRepresentativeNode(int index, Vector3 position, Vector3 rotation, Vector3 scale)
@@ -219,19 +209,9 @@ namespace StudioCore.Editors.ModelEditor
             if (container.Bone_RootNode.Children.Count < index)
                 return;
 
-            // This relies on the index of the lists to align
-            for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
-            {
-                var curNode = container.Bone_RootNode.Children[i];
-
-                if (i == index)
-                {
-                    BoneTransformChange act = new(curNode, position, rotation, scale);
-                    Screen.EditorActionManager.ExecuteAction(act);
-
-                    break;
-                }
-            }
+            var curNode = container.Bone_RootNode.Children[index];
+            BoneTransformChange act = new(curNode, position, rotation, scale);
+            Screen.EditorActionManager.ExecuteAction(act);
         }
 
         public void SelectRepresentativeDummy(int index, HierarchyMultiselect multiSelect)
@@ -251,34 +231,18 @@ namespace StudioCore.Editors.ModelEditor
 
                 foreach (var entry in multiSelect.StoredIndices)
                 {
-                    for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
-                    {
-                        var curNode = container.DummyPoly_RootNode.Children[i];
-
-                        if (i == entry)
-                        {
-                            IgnoreHierarchyFocus = true;
-                            Screen._selection.AddSelection(curNode);
-                            break;
-                        }
-                    }
+                    var curNode = container.DummyPoly_RootNode.Children[entry];
+                    IgnoreHierarchyFocus = true;
+                    Screen._selection.AddSelection(curNode);
                 }
             }
             else
             {
-                // This relies on the index of the lists to align
-                for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
-                {
-                    var curNode = container.DummyPoly_RootNode.Children[i];
 
-                    if (i == index)
-                    {
-                        IgnoreHierarchyFocus = true;
-                        Screen._selection.ClearSelection();
-                        Screen._selection.AddSelection(curNode);
-                        break;
-                    }
-                }
+                var curNode = container.DummyPoly_RootNode.Children[index];
+                IgnoreHierarchyFocus = true;
+                Screen._selection.ClearSelection();
+                Screen._selection.AddSelection(curNode);
             }
         }
 
@@ -293,19 +257,10 @@ namespace StudioCore.Editors.ModelEditor
             if (container.Bone_RootNode.Children.Count < index)
                 return;
 
-            // This relies on the index of the lists to align
-            for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
-            {
-                var curNode = container.Bone_RootNode.Children[i];
-
-                if (i == index)
-                {
-                    IgnoreHierarchyFocus = true;
-                    Screen._selection.ClearSelection();
-                    Screen._selection.AddSelection(curNode);
-                    break;
-                }
-            }
+            var curNode = container.Bone_RootNode.Children[index];
+            IgnoreHierarchyFocus = true;
+            Screen._selection.ClearSelection();
+            Screen._selection.AddSelection(curNode);
         }
         public void SelectRepresentativeMesh(int index)
         {
@@ -318,19 +273,10 @@ namespace StudioCore.Editors.ModelEditor
             if (container.Mesh_RootNode.Children.Count < index)
                 return;
 
-            // This relies on the index of the lists to align
-            for (int i = 0; i < container.Mesh_RootNode.Children.Count; i++)
-            {
-                var curNode = container.Mesh_RootNode.Children[i];
-
-                if (i == index)
-                {
-                    IgnoreHierarchyFocus = true;
-                    Screen._selection.ClearSelection();
-                    Screen._selection.AddSelection(curNode);
-                    break;
-                }
-            }
+            var curNode = container.Mesh_RootNode.Children[index];
+            IgnoreHierarchyFocus = true;
+            Screen._selection.ClearSelection();
+            Screen._selection.AddSelection(curNode);
         }
 
         public void DisplayRepresentativeDummyState(int index)
@@ -346,16 +292,8 @@ namespace StudioCore.Editors.ModelEditor
 
             Entity curEntity = null;
 
-            // This relies on the index of the lists to align
-            for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
-            {
-                var curNode = container.DummyPoly_RootNode.Children[i];
-
-                if (i == index)
-                {
-                    curEntity = curNode;
-                }
-            }
+            var curNode = container.DummyPoly_RootNode.Children[index];
+            curEntity = curNode;
 
             if (curEntity != null)
             {
@@ -399,16 +337,8 @@ namespace StudioCore.Editors.ModelEditor
             if (container.DummyPoly_RootNode.Children.Count < index)
                 return;
 
-            // This relies on the index of the lists to align
-            for (int i = 0; i < container.DummyPoly_RootNode.Children.Count; i++)
-            {
-                var curNode = container.DummyPoly_RootNode.Children[i];
-
-                if (i == index)
-                {
-                    curNode.EditorVisible = !curNode.EditorVisible;
-                }
-            }
+            var curNode = container.DummyPoly_RootNode.Children[index];
+            curNode.EditorVisible = !curNode.EditorVisible;
         }
 
         public void DisplayRepresentativeNodeState(int index)
@@ -424,16 +354,8 @@ namespace StudioCore.Editors.ModelEditor
 
             Entity curEntity = null;
 
-            // This relies on the index of the lists to align
-            for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
-            {
-                var curNode = container.Bone_RootNode.Children[i];
-
-                if (i == index)
-                {
-                    curEntity = curNode;
-                }
-            }
+            var curNode = container.Bone_RootNode.Children[index];
+            curEntity = curNode;
 
             if (curEntity != null)
             {
@@ -477,16 +399,8 @@ namespace StudioCore.Editors.ModelEditor
             if (container.Bone_RootNode.Children.Count < index)
                 return;
 
-            // This relies on the index of the lists to align
-            for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
-            {
-                var curNode = container.Bone_RootNode.Children[i];
-
-                if (i == index)
-                {
-                    curNode.EditorVisible = !curNode.EditorVisible;
-                }
-            }
+            var curNode = container.Bone_RootNode.Children[index];
+            curNode.EditorVisible = !curNode.EditorVisible;
         }
         public void DisplayRepresentativeMeshState(int index)
         {
@@ -501,16 +415,8 @@ namespace StudioCore.Editors.ModelEditor
 
             Entity curEntity = null;
 
-            // This relies on the index of the lists to align
-            for (int i = 0; i < container.Mesh_RootNode.Children.Count; i++)
-            {
-                var curNode = container.Mesh_RootNode.Children[i];
-
-                if (i == index)
-                {
-                    curEntity = curNode;
-                }
-            }
+            var curNode = container.Mesh_RootNode.Children[index];
+            curEntity = curNode;
 
             if(curEntity != null)
             {
@@ -554,16 +460,8 @@ namespace StudioCore.Editors.ModelEditor
             if (container.Mesh_RootNode.Children.Count < index)
                 return;
 
-            // This relies on the index of the lists to align
-            for (int i = 0; i < container.Mesh_RootNode.Children.Count; i++)
-            {
-                var curNode = container.Mesh_RootNode.Children[i];
-
-                if (i == index)
-                {
-                    curNode.EditorVisible = !curNode.EditorVisible;
-                }
-            }
+            var curNode = container.Mesh_RootNode.Children[index];
+            curNode.EditorVisible = !curNode.EditorVisible;
         }
 
         public void OnRepresentativeEntitySelected(Entity ent)
