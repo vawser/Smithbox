@@ -710,5 +710,16 @@ namespace StudioCore.Editors.ModelEditor
 
             return false;
         }
+
+        public void OnProjectChanged()
+        {
+            ContainerID = "";
+            Screen._universe.UnloadModels(true);
+            _flverhandle?.Unload();
+            _flverhandle = null;
+            _renderMesh?.Dispose();
+            _renderMesh = null;
+            
+        }
     }
 }
