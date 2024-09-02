@@ -8,7 +8,7 @@ namespace StudioCore.Resource;
 
 public readonly record struct LoadByteResourceRequest(
     string VirtualPath,
-    Memory<byte> Data,
+    RefCount<Memory<byte>> Data,
     AccessLevel AccessLevel);
 
 public readonly record struct LoadFileResourceRequest(
@@ -58,7 +58,7 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             var res = new T();
 
             // PIPELINE: Load the byte resource (as the <T> type)
-            var success = res._Load(r.Data, r.AccessLevel, r.VirtualPath);
+            var success = res._Load(r.Data.Value, r.AccessLevel, r.VirtualPath);
 
             // PIPELINE: If resource is loaded successful, add reply to Loaded Resource block
             if (success)
@@ -67,6 +67,8 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
 
                 _loadedResources.Post(request);
             }
+            
+            r.Data.Dispose();
         }, options);
 
         // PIPELINE: File Requests
