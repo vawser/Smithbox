@@ -97,12 +97,14 @@ public static class ResourceManager
             }
         }
 
-        action._job.IncrementEstimateTaskSize(action._tpf.Textures.Count);
-        var ret = new LoadTPFTextureResourceRequest[action._tpf.Textures.Count];
-        for (var i = 0; i < action._tpf.Textures.Count; i++)
+        var tpf = action._tpf;
+        
+        action._job.IncrementEstimateTaskSize(tpf.Textures.Count);
+        var ret = new LoadTPFTextureResourceRequest[tpf.Textures.Count];
+        for (var i = 0; i < tpf.Textures.Count; i++)
         {
-            TPF.Texture tex = action._tpf.Textures[i];
-            ret[i] = new LoadTPFTextureResourceRequest($@"{action._virtpathbase}/{tex.Name}", action._tpf, i,
+            TPF.Texture tex = tpf.Textures[i];
+            ret[i] = new LoadTPFTextureResourceRequest($@"{action._virtpathbase}/{tex.Name}", tpf, i,
                 action._accessLevel);
         }
 
@@ -117,52 +119,57 @@ public static class ResourceManager
         try
         {
             action.ProcessBinder();
+            var b = action.Binder;
             if (!action.PopulateResourcesOnly)
             {
                 var doasync = action.PendingResources.Count() + action.PendingTPFs.Count() > 1;
                 var i = 0;
 
                 // PIPELINE: non-TPF files within the binder
-                foreach (Tuple<IResourceLoadPipeline, string, BinderFileHeader> p in action.PendingResources)
+                foreach (var p in action.PendingResources)
                 {
                     var pipeline = p.Item1;
                     var virtualPath = p.Item2;
                     var binder = p.Item3;
+                    i++;
 
-                    Memory<byte> binderData = action.Binder.ReadFile(binder);
+                    Memory<byte> binderData = action.Binder.Value.ReadFile(binder.Value);
+
+                    var child = new ChildResource<BinderReader, Memory<byte>>(action.Binder.Ref(), binderData);
 
                     // PIPELINE: create request to load resource from bytes
-                    var request = new LoadByteResourceRequest(virtualPath, binderData, action.AccessLevel);
+                    var request = new LoadByteResourceRequest(virtualPath, child, action.AccessLevel);
 
                     // PIPELINE: add request to pipeline action block
                     pipeline.LoadByteResourceBlock.Post(request);
+                    
 
                     action._job.IncrementEstimateTaskSize(1);
 
-                    i++;
                 }
 
                 // PIPELINE: TPF files within the binder
-                foreach (Tuple<string, BinderFileHeader, bool> t in action.PendingTPFs)
+                foreach (var t in action.PendingTPFs)
                 {
                     var tpfName = t.Item1;
                     var binder = t.Item2;
                     var isPersistent = t.Item3;
+                    i++;
 
                     try
                     {
-                        TPF tpfData = TPF.Read(action.Binder.ReadFile(binder));
+                        TPF tpf = TPF.Read(action.Binder.Value.ReadFile(binder.Value));
 
-                        var request = new LoadTPFResourcesAction(action._job, tpfName, tpfData, action.AccessLevel);
+                        var request = new LoadTPFResourcesAction(action._job, tpfName, tpf, action.AccessLevel);
 
                         action._job.AddLoadTPFResources(request, isPersistent);
                     }
                     catch (Exception e)
                     {
                         TaskLogs.AddLog($"Failed to load TPF \"{tpfName}\"", LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                        i--;
                     }
 
-                    i++;
                 }
             }
         }
@@ -171,7 +178,8 @@ public static class ResourceManager
             TaskLogs.AddLog($"Failed to load binder \"{action.BinderVirtualPath}\"",
                 LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
         }
-
+        
+        action.Binder.Dispose();
         action.PendingResources.Clear();
         action.Binder = null;
     }
@@ -587,13 +595,13 @@ public static class ResourceManager
         public ResourceJob _job;
         public AccessLevel AccessLevel = AccessLevel.AccessGPUOptimizedOnly;
         public HashSet<string> AssetWhitelist;
-        public BinderReader Binder;
+        public RefCount<BinderReader> Binder;
         public HashSet<int> BinderLoadMask = null;
         public string BinderVirtualPath;
         public List<Task> LoadingTasks = new();
 
-        public List<Tuple<IResourceLoadPipeline, string, BinderFileHeader>> PendingResources = new();
-        public List<Tuple<string, BinderFileHeader, bool>> PendingTPFs = new();
+        public List<Tuple<IResourceLoadPipeline, string, RefCount<BinderFileHeader>>> PendingResources = new();
+        public List<Tuple<string, RefCount<BinderFileHeader>, bool>> PendingTPFs = new();
         public bool PopulateResourcesOnly;
         public ResourceType ResourceMask = ResourceType.All;
         public List<int> TaskProgress = new();
@@ -622,17 +630,19 @@ public static class ResourceManager
 
                 var absoluteBinderPath = VirtualPathLocator.VirtualToRealPath(BinderVirtualPath, out o);
 
-                Binder = InstantiateBinderReaderForFile(absoluteBinderPath, Smithbox.ProjectType);
+                Binder = new(InstantiateBinderReaderForFile(absoluteBinderPath, Smithbox.ProjectType));
                 if (Binder == null)
                 {
                     return;
                 }
             }
 
+            var b = Binder.Value;
+
             // Iterate through each file in the binder
-            for (var i = 0; i < Binder.Files.Count(); i++)
+            for (var i = 0; i < b.Files.Count(); i++)
             {
-                BinderFileHeader f = Binder.Files[i];
+                var f = new ChildResource<BinderReader, BinderFileHeader>(Binder.Ref(), b.Files[i]);
 
                 // Skip entry if entry ID is not in binder load mask (if defined)
                 if (BinderLoadMask != null && !BinderLoadMask.Contains(i))
@@ -642,7 +652,7 @@ public static class ResourceManager
 
                 // Append internal filename to the BinderVirtualPath
                 var curFileBinderPath = BinderVirtualPath;
-                var curBinderFilename = Path.GetFileNameWithoutExtension($@"{f.Name}.blah");
+                var curBinderFilename = Path.GetFileNameWithoutExtension($@"{f.Value.Name}.blah");
 
                 if (curBinderFilename.Length > 0)
                     curFileBinderPath = $@"{BinderVirtualPath}/{curBinderFilename}";
@@ -675,8 +685,7 @@ public static class ResourceManager
                         }
                     }
 
-                    Tuple<string, BinderFileHeader, bool> sentTpf = new(bndvirt, f, PersistentTPF);
-                    PendingTPFs.Add(sentTpf);
+                    PendingTPFs.Add((bndvirt, (RefCount<BinderFileHeader>)f, PersistentTPF).ToTuple());
                 }
                 else
                 {
@@ -720,21 +729,13 @@ public static class ResourceManager
                     // Send pipeline (if valid)
                     if (pipeline != null)
                     {
-                        Tuple<IResourceLoadPipeline, string, BinderFileHeader> sentPipeline = new(pipeline, curFileBinderPath, f);
 
-                        PendingResources.Add(sentPipeline);
+                        PendingResources.Add((pipeline, curFileBinderPath, (RefCount<BinderFileHeader>)f).ToTuple());
                     }
                 }
             }
-
-            if(ResourceMask.HasFlag(ResourceType.CollisionHKX) || Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-            {
-                // Ignore dispose if the resource is a Collision, or we are working with DS2
-            }
-            else
-            {
-                Binder.Dispose();
-            }
+            
+            Binder.Dispose();
         }
     }
 

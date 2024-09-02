@@ -924,6 +924,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     private static DbgPrimWireSphere? _regionSphere;
     private static DbgPrimWireSphere? _regionPoint;
     private static DbgPrimWireSphere? _dmyPoint;
+    private static DbgPrimWireSphereForwardUp? _dmySphereFwdUp;
     private static DbgPrimWireSphere? _jointSphere;
     private static DbgPrimWireSpheroidWithArrow? _modelMarkerChr;
     private static DbgPrimWireWallBox? _modelMarkerObj;
@@ -1367,6 +1368,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         _regionSphere = new DbgPrimWireSphere(Transform.Default, 1.0f, Color.Blue);
         _regionPoint = new DbgPrimWireSphere(Transform.Default, 1.0f, Color.Yellow, 1, 4);
         _dmyPoint = new DbgPrimWireSphere(Transform.Default, 0.05f, Color.Yellow, 1, 4);
+        _dmySphereFwdUp = new DbgPrimWireSphereForwardUp(Transform.Default, 0.05f, Color.Yellow, Color.Blue, Color.White, 1, 4);
         _jointSphere = new DbgPrimWireSphere(Transform.Default, 0.05f, Color.Blue, 6, 6);
         _modelMarkerChr = new DbgPrimWireSpheroidWithArrow(Transform.Default, .9f, Color.Firebrick, 4, 10, true);
         _modelMarkerObj = new DbgPrimWireWallBox(Transform.Default, new Vector3(-1.5f, 0.0f, -0.75f),
@@ -1424,6 +1426,14 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     public static DebugPrimitiveRenderableProxy GetDummyPolyRegionProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OverlayRenderables, _dmyPoint);
+        r.BaseColor = GetRenderableColor(CFG.Current.GFX_Renderable_DummyPoly_BaseColor);
+        r.HighlightedColor = GetRenderableColor(CFG.Current.GFX_Renderable_DummyPoly_HighlightColor);
+        return r;
+    }
+
+    public static DebugPrimitiveRenderableProxy GetDummyPolyForwardUpProxy(RenderScene scene)
+    {
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _dmySphereFwdUp);
         r.BaseColor = GetRenderableColor(CFG.Current.GFX_Renderable_DummyPoly_BaseColor);
         r.HighlightedColor = GetRenderableColor(CFG.Current.GFX_Renderable_DummyPoly_HighlightColor);
         return r;

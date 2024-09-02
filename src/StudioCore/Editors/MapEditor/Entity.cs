@@ -831,25 +831,50 @@ public class Entity : ISelectable, IDisposable
             var rx = GetPropertyValue("RotationX");
             var ry = GetPropertyValue("RotationY");
             var rz = GetPropertyValue("RotationZ");
-            Vector3 r = Vector3.Zero;
-            if (rx != null)
+            if (rx == null && ry == null && rz == null)
             {
-                r.X = (float)rx;
-            }
+                var forwardN = (Vector3?)GetPropertyValue("Forward");
+                var upwardN = (Vector3?)GetPropertyValue("Upward");
+                if (forwardN == null)
+                {
+                    t.EulerRotation = Vector3.Zero;
+                }
+                else
+                {
+                    var look = Vector3.Normalize(forwardN.Value);
+                    var up = Vector3.Normalize(upwardN ?? Vector3.UnitZ);
+                    var right = Vector3.Normalize(Vector3.Cross(look, up));
 
-            if (ry != null)
+                    t.EulerRotationXZY = EulerUtils.MatrixToEulerXZY(new(
+                        look.X, look.Y, look.Z, 1f,
+                        up.X, up.Y, up.Z, 1f,
+                        right.X, right.Y, right.Z, 1f,
+                        1f, 1f, 1f, 1f
+                    ));
+                }
+            }
+            else
             {
-                r.Y = (float)ry +
-                      180.0f; // According to Vawser, DS2 enemies are flipped 180 relative to map rotations
-            }
+                Vector3 r = Vector3.Zero;
+                if (rx != null)
+                {
+                    r.X = (float)rx;
+                }
 
-            if (rz != null)
-            {
-                r.Z = (float)rz;
-            }
+                if (ry != null)
+                {
+                    r.Y = (float)ry +
+                          180.0f; // According to Vawser, DS2 enemies are flipped 180 relative to map rotations
+                }
 
-            t.EulerRotation = new Vector3(Utils.DegToRadians(r.X), Utils.DegToRadians(r.Y),
-                Utils.DegToRadians(r.Z));
+                if (rz != null)
+                {
+                    r.Z = (float)rz;
+                }
+
+                t.EulerRotation = new Vector3(Utils.DegToRadians(r.X), Utils.DegToRadians(r.Y),
+                    Utils.DegToRadians(r.Z));
+            }
         }
 
         var scale = GetPropertyValue("Scale");

@@ -40,7 +40,6 @@ Map Editor:
  - ADD: global prop edit
  
  - FIX: asset browser entity change not properly changing Instance ID and Self Parts
- - FIX: DS2 Map Pieces aren't loaded/displayed.
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
  
 Model Editor:  

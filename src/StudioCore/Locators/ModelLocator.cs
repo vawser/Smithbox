@@ -57,7 +57,7 @@ public static class ModelLocator
         ret.AssetName = model;
         if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
-            ret.AssetArchiveVirtualPath = $@"map/{mapid}/model/";
+            ret.AssetArchiveVirtualPath = $@"map/{mapid}/model";
             ret.AssetVirtualPath = $@"map/{mapid}/model/{model}.flv.dcx";
         }
         else

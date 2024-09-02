@@ -1,6 +1,7 @@
 ﻿using DotNext;
 using HKLib.hk2018;
 using HKLib.Serialization.hk2018.Binary;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Gui;
@@ -42,10 +43,6 @@ namespace StudioCore.Editors.ModelEditor
         /// <param name="name"></param>
         public void LoadLooseFLVER(string name, string loosePath)
         {
-            Screen.EditorActionManager.Clear();
-            Screen.ModelHierarchy.ResetSelection();
-            Screen.ModelHierarchy.ResetMultiSelection();
-            Screen._selection.ClearSelection();
 
             CurrentFLVERInfo = new FlverModelInfo(name, loosePath);
 
@@ -753,6 +750,21 @@ namespace StudioCore.Editors.ModelEditor
         public void OnResourceUnloaded(IResourceHandle handle, int tag)
         {
             Screen.ViewportHandler.OnResourceUnloaded(handle, tag);
+        }
+
+        public void OnProjectChange()
+        {
+            if (_loadingTask != null)
+            {
+                TaskLogs.AddLog(
+                    "ModelResourceHandler loadingTask was not null during project switch. This may cause unexpected behavior.",
+                    LogLevel.Warning);
+            }
+            CurrentFLVERInfo = null;
+            CurrentFLVER = null;
+            ER_CollisionLow = null;
+            ER_CollisionHigh = null;
+            VirtualResourcePath = "";
         }
     }
 }

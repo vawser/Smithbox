@@ -555,9 +555,10 @@ public class ModelEditorScreen : EditorScreen
             ToolWindow.OnProjectChanged();
             ToolSubMenu.OnProjectChanged();
             ActionSubMenu.OnProjectChanged();
+            ViewportHandler.OnProjectChanged();
         }
 
-        ResourceHandler.CurrentFLVERInfo = null;
+        ResourceHandler.OnProjectChange();
         _universe.UnloadAll(true);
     }
 
