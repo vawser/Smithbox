@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Interface;
@@ -9,6 +10,7 @@ using System.IO;
 using System.Numerics;
 using static SoulsFormats.PARAM;
 using SoulsFormats;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.SubEditors;
 
 namespace StudioCore.Editors.ModelEditor;
@@ -196,6 +198,17 @@ public class ModelPropertyEditor
 
     public Vector3 _trackedDummyPosition = new Vector3();
 
+    private void UpdateDummy(int index)
+    {
+        var container = Screen._universe.LoadedModelContainers[this.Screen.ViewportHandler.ContainerID];
+        if (container.DummyPoly_RootNode.Children.Count <= index)
+        {
+            TaskLogs.AddLog($"Index {index} is past size of dummy poly array, count {container.DummyPoly_RootNode.Children.Count}", LogLevel.Warning);
+            return;
+        }
+        container.DummyPoly_RootNode.Children[index].UpdateRenderModel();
+    }
+
     private void DisplayProperties_Dummies()
     {
         var index = Screen.ModelHierarchy._selectedDummy;
@@ -283,13 +296,13 @@ public class ModelPropertyEditor
 
         ImGui.NextColumn();
 
+        ViewportAction? vpAction = null;
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3("##Position", ref position);
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Position != position)
-                Screen.EditorActionManager.ExecuteAction(
-                    new UpdateProperty_FLVERDummy_Position(entry, entry.Position, position));
+                vpAction = new UpdateProperty_FLVERDummy_Position(entry, entry.Position, position);
         }
 
         ImGui.AlignTextToFramePadding();
@@ -297,8 +310,10 @@ public class ModelPropertyEditor
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Forward != forward)
-                Screen.EditorActionManager.ExecuteAction(
-                    new UpdateProperty_FLVERDummy_Forward(entry, entry.Forward, forward));
+            {
+                vpAction = new UpdateProperty_FLVERDummy_Forward(entry, entry.Forward, forward);
+                
+            }
         }
 
         ImGui.AlignTextToFramePadding();
@@ -306,8 +321,7 @@ public class ModelPropertyEditor
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Upward != upward)
-                Screen.EditorActionManager.ExecuteAction(
-                    new UpdateProperty_FLVERDummy_Upward(entry, entry.Upward, upward));
+                vpAction = new UpdateProperty_FLVERDummy_Upward(entry, entry.Upward, upward);
         }
 
         ImGui.AlignTextToFramePadding();
@@ -378,6 +392,13 @@ public class ModelPropertyEditor
         }
 
         ImGui.Columns(1);
+
+        if (vpAction != null)
+        {
+            var a = new CompoundAction([vpAction]);
+            a.SetPostExecutionAction(_ => UpdateDummy(index));
+            Screen.EditorActionManager.ExecuteAction(a);
+        }
 
         // Update representative selectable
         if (_trackedDummyPosition != entry.Position)

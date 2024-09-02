@@ -301,7 +301,7 @@ public class Universe
 
     public RenderableProxy GetDummyPolyDrawable(ObjectContainer map, Entity obj)
     {
-        DebugPrimitiveRenderableProxy mesh = DebugPrimitiveRenderableProxy.GetDummyPolyRegionProxy(_renderScene);
+        DebugPrimitiveRenderableProxy mesh = DebugPrimitiveRenderableProxy.GetDummyPolyForwardUpProxy(_renderScene);
         mesh.World = obj.GetWorldMatrix();
         obj.RenderSceneMesh = mesh;
         mesh.SetSelectable(obj);
