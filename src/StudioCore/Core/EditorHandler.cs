@@ -175,12 +175,12 @@ public class EditorHandler
             status = status + "Active tasks still on going.\n";
         }
 
-        if (!MapEditor.MapQueryHandler.Bank.MapBankInitialized)
+        if (MapEditor.MapQueryHandler.UserLoadedData && !MapEditor.MapQueryHandler.Bank.MapBankInitialized)
         {
             status = status + "Map Query Search still initializing.\n";
         }
 
-        if (!MapEditor.MapQueryEditHandler.Bank.MapBankInitialized)
+        if (MapEditor.MapQueryHandler.UserLoadedData && !MapEditor.MapQueryEditHandler.Bank.MapBankInitialized)
         {
             status = status + "Map Query Edit still initializing.\n";
         }
