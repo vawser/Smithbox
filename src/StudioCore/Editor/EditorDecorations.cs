@@ -919,6 +919,10 @@ public class EditorDecorations
 
     public static void PropertyRowTextureRefsContextItems(List<TexRef> reftypes, Param.Row context, ActionManager executor)
     {
+        // Required to stop the LowRequirements build from failing
+        if (Smithbox.LowRequirementsMode)
+            return;
+
         var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
 
         foreach(var textureRef in reftypes)

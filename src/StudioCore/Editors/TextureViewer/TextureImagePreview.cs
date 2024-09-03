@@ -5,6 +5,7 @@ using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Formats;
 using StudioCore.Locators;
+using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using System;
 using System.Collections.Generic;
