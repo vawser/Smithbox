@@ -104,6 +104,7 @@ public class ProjectHandler
 
         SetGameRootPrompt(CurrentProject);
         CheckUnpackedState(CurrentProject);
+        CheckPtdeCollisionRoot(CurrentProject);
 
         // Only proceed if dll are found
         if (!CheckDecompressionDLLs(CurrentProject))
@@ -296,6 +297,27 @@ public class ProjectHandler
             TaskLogs.AddLog(
                 $"The files for {targetProject.Config.GameType} do not appear to be fully unpacked. Functionality will be limited. Please use UXM selective unpacker to unpack game files",
                 LogLevel.Warning);
+        }
+    }
+
+    /// <summary>
+    /// When loading a DS1R project, displays a warning if PTDE_Collision_Root is not set or if the directory it points
+    /// to does not exist.
+    /// </summary>
+    /// <param name="targetProject"></param>
+    public void CheckPtdeCollisionRoot(Project targetProject)
+    {
+        if (targetProject.Config.GameType is not ProjectType.DS1R)
+            return;
+
+        if (CFG.Current.PTDE_Collision_Root == "" && CFG.Current.PTDE_Collision_Root_Warning)
+        {
+            TaskLogs.AddLog("No directory is set for Dark Souls 1 collision files. No collision functionality will be available. You can set the directory or disable this warning under Project Status in settings.",
+                LogLevel.Warning, TaskLogs.LogPriority.High);
+        } 
+        else if (!Directory.Exists(CFG.Current.PTDE_Collision_Root))
+        {
+            TaskLogs.AddLog("The set Dark Souls 1 collision directory does not exist.", LogLevel.Warning);
         }
     }
 

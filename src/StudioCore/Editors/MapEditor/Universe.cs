@@ -377,6 +377,8 @@ public class Universe
             asset = ModelLocator.GetMapCollisionModel(amapid,
                 ModelLocator.MapModelNameToAssetName(amapid, modelname), false);
 
+            if (asset == null || asset.AssetPath == null) loadcol = false;
+
             filt = RenderFilter.Collision;
         }
         else if (modelname.ToLower().StartsWith("n"))
