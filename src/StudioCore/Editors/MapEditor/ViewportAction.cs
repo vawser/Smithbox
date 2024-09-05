@@ -249,7 +249,7 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
         ChangedEnts = changedEnts;
         foreach (Entity o in changedEnts)
         {
-            var propObj = PropFinderUtil.FindPropertyObject(prop, o.WrappedObject, classIndex, false);
+            var propObj = PropFinderUtil.FindPropertyObject(prop, o.WrappedObject, index, classIndex, false);
             if (propObj != null)
             {
                 var change = new PropertyChange

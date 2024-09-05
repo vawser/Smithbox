@@ -24,7 +24,7 @@ public static class PropFinderUtil
     /// <param name="onlyCheckPropName">If true, search only checks property name. Otherwise, it checks unique MetadataToken.</param>
     /// <returns>PropData that has the property if found, otherwise null.</returns>
     /// <summary>
-    private static PropData? GetPropData(PropertyInfo prop, object obj, int classIndex = -1, bool onlyCheckPropName = false)
+    private static PropData? GetPropData(PropertyInfo prop, object obj, int arrayIndex = -1, int classIndex = -1, bool onlyCheckPropName = false)
     {
         foreach (PropertyInfo p in obj.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public))
         {
@@ -44,7 +44,7 @@ public static class PropFinderUtil
 
             if (p.PropertyType.IsNested)
             {
-                var retObj = GetPropData(prop, p.GetValue(obj), classIndex);
+                var retObj = GetPropData(prop, p.GetValue(obj), arrayIndex, classIndex);
                 if (retObj != null)
                     return retObj;
             }
@@ -54,9 +54,16 @@ public static class PropFinderUtil
                 if (pType.IsNested)
                 {
                     var array = (Array)p.GetValue(obj);
-                    if (classIndex != -1)
+                    if (arrayIndex != -1)
                     {
-                        var retObj = GetPropData(prop, array.GetValue(classIndex), classIndex);
+                        var retObj = GetPropData(prop, array.GetValue(arrayIndex), arrayIndex, classIndex);
+                        if (retObj != null)
+                            return retObj;
+                        
+                    }
+                    else if (classIndex != -1)
+                    {
+                        var retObj = GetPropData(prop, array.GetValue(classIndex), arrayIndex, classIndex);
                         if (retObj != null)
                             return retObj;
                     }
@@ -64,7 +71,7 @@ public static class PropFinderUtil
                     {
                         foreach (var arrayObj in array)
                         {
-                            var retObj = GetPropData(prop, arrayObj, classIndex);
+                            var retObj = GetPropData(prop, arrayObj, arrayIndex, classIndex);
                             if (retObj != null)
                                 return retObj;
                         }
@@ -129,9 +136,9 @@ public static class PropFinderUtil
     ///     Searches an object to find exactly which object contains the property.
     /// </summary>
     /// <returns>Object containing property if found, otherwise null.</returns>
-    public static object? FindPropertyObject(PropertyInfo prop, object obj, int classIndex = -1, bool onlyCheckPropName = false)
+    public static object? FindPropertyObject(PropertyInfo prop, object obj, int arrayIndex = -1, int classIndex = -1, bool onlyCheckPropName = false)
     {
-        var result = GetPropData(prop, obj, classIndex, onlyCheckPropName);
+        var result = GetPropData(prop, obj, arrayIndex, classIndex, onlyCheckPropName);
 
         if (result == null)
             return null;
@@ -145,7 +152,7 @@ public static class PropFinderUtil
     /// <returns>Value of the property within given object if found, otherwise null.</returns>
     public static object? FindPropertyValue(PropertyInfo prop, object obj, bool onlyCheckPropName = false)
     {
-        var propData = GetPropData(prop, obj, -1, onlyCheckPropName);
+        var propData = GetPropData(prop, obj, -1, -1, onlyCheckPropName);
 
         if (propData == null)
             return null;
