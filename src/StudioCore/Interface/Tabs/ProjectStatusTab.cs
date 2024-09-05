@@ -45,7 +45,7 @@ public class ProjectStatusTab
 
             if(Smithbox.ProjectType is ProjectType.DS1R)
             {
-                ImGui.Text($"Project Collision Directory: {CFG.Current.PTDE_Collision_Root}");
+                ImGui.Text($"Project DS1 Collision Directory: {CFG.Current.PTDE_Collision_Root}");
                 ImGui.SameLine();
                 if (ImGui.Button($@"{ForkAwesome.FileO}##collisionDirPicker"))
                 {
@@ -57,6 +57,11 @@ public class ProjectStatusTab
                     }
                 }
                 ImguiUtils.ShowHoverTooltip("When set this will allow collisions to be visible whilst editing Dark Souls: Remastered maps, assuming you have unpacked Dark Souls: Prepare the Die Edition.");
+                var warning = CFG.Current.PTDE_Collision_Root_Warning;
+                if (ImGui.Checkbox("Warning for Missing Collision Directory", ref warning))
+                    CFG.Current.PTDE_Collision_Root_Warning = warning;
+                ImguiUtils.ShowHoverTooltip("When set to true, a warning will be displayed when loading Dark Souls: Remastered projects if the DS1 collision directory is not set.");
+
             }
 
             ImGui.Separator();
