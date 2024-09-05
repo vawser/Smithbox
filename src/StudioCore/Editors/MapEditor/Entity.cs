@@ -387,7 +387,19 @@ public class Entity : ISelectable, IDisposable
             if (sourceProperty.PropertyType.IsArray)
             {
                 var arr = (Array)sourceProperty.GetValue(obj);
-                Array.Copy(arr, (Array)targetProperty.GetValue(clone), arr.Length);
+                var elemType = sourceProperty.PropertyType.GetElementType();
+                var target = (Array)targetProperty.GetValue(clone);
+                if (elemType.IsClass && elemType != typeof(string))
+                {
+                    for (int i = 0; i < arr.Length; i++)
+                    {
+                        target.SetValue(DeepCopyObject(arr.GetValue(i)), i);
+                    }
+                }
+                else
+                {
+                    Array.Copy(arr, target, arr.Length);
+                }
             }
             else if (sourceProperty.CanWrite)
             {
