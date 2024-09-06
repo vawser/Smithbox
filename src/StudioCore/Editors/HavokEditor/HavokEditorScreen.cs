@@ -199,6 +199,19 @@ public class HavokEditorScreen : EditorScreen
                 DisplaySelectableAlias(info.Filename, Smithbox.AliasCacheHandler.AliasCache.Characters);
             }
         }
+        // Collision List
+        if (CurrentHavokContainerType == HavokContainerType.Collision)
+        {
+            foreach (var info in HavokFileBank.CollisionContainerBank)
+            {
+                if (ImGui.Selectable($@" {info.Filename}", info.Filename == _selectedBinderKey))
+                {
+                    _selectedBinderKey = info.Filename;
+                    SelectedContainerInfo = info;
+                    info.LoadBinder();
+                }
+            }
+        }
 
         ImGui.End();
     }

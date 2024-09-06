@@ -114,7 +114,7 @@ public static class MiscLocator
         return ret;
     }
 
-    public static List<string> GetBehaviorBinders()
+    public static List<string> GetHavokBehaviorBinders()
     {
         // Not supported
         if (Smithbox.ProjectType is ProjectType.DS1
@@ -136,6 +136,55 @@ public static class MiscLocator
         return ret;
 
     }
+
+    public static List<string> GetHavokCollisionBinders()
+    {
+        // Not supported
+        if (Smithbox.ProjectType is ProjectType.DS1
+            or ProjectType.DS1R
+            or ProjectType.DS2S
+            or ProjectType.DS2
+            or ProjectType.BB
+            or ProjectType.DES
+            or ProjectType.DS3
+            or ProjectType.SDT
+            or ProjectType.AC6)
+        {
+            return new List<string>();
+        }
+
+        // ER
+        var baseDir = $"{Smithbox.GameRoot}\\map";
+        var targetExt = @".hkxbhd";
+
+        List<string> combinedList = new();
+
+        if (Directory.Exists(baseDir))
+        {
+            foreach (var folder in Directory.GetDirectories(baseDir))
+            {
+                if (Directory.Exists(folder))
+                {
+                    foreach (var subFolder in Directory.GetDirectories(folder))
+                    {
+                        if (Directory.Exists(subFolder))
+                        {
+                            foreach(var file in Directory.GetFiles(subFolder))
+                            {
+                                if(file.Contains(targetExt))
+                                {
+                                    combinedList.Add(file);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return combinedList;
+    }
+
     public static List<string> GetCharacterBinders()
     {
         // Not supported

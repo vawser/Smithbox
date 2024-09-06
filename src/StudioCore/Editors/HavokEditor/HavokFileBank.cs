@@ -22,16 +22,35 @@ public static class HavokFileBank
     public static bool IsLoading { get; private set; }
 
     public static List<HavokContainerInfo> BehaviorContainerBank { get; private set; } = new();
+    public static List<HavokContainerInfo> CollisionContainerBank { get; private set; } = new();
 
     public static void LoadAllHavokFiles()
     {
         // Behaviors
-        List<string> fileNames = MiscLocator.GetBehaviorBinders();
+        List<string> fileNames = MiscLocator.GetHavokBehaviorBinders();
         foreach(var entry in fileNames)
         {
             var filename = Path.GetFileNameWithoutExtension(entry);
             SetupBehaviorContainer(filename);
         }
+
+        // Collisions
+        fileNames = MiscLocator.GetHavokCollisionBinders();
+        foreach (var entry in fileNames)
+        {
+            var filename = Path.GetFileNameWithoutExtension(entry);
+
+            var bhdPath = $"{entry}";
+            var bdtPath = $"{entry.Replace("bhd", "bdt")}";
+
+            var reader = new BXF4Reader(bhdPath, bdtPath);
+
+            foreach(var file in reader.Files)
+            {
+                SetupCollisionContainer(bhdPath, bdtPath, file.Name, reader.ReadFile(file).ToArray());
+            }
+        }
+
 
         IsLoaded = true;
     }
@@ -42,10 +61,28 @@ public static class HavokFileBank
         BehaviorContainerBank.Add(containerInfo);
     }
 
+    public static void SetupCollisionContainer(string bhdPath, string bdtPath, string filename, byte[] data)
+    {
+        HavokContainerInfo containerInfo = new(filename, HavokContainerType.Collision);
+        containerInfo.BhdPath = bhdPath;
+        containerInfo.BdtPath = bdtPath;
+        containerInfo.IsBxf = true;
+        containerInfo.LoadFromData = true;
+        containerInfo.Data = data;
+
+        CollisionContainerBank.Add(containerInfo);
+    }
+
     public static void SaveHavokFiles()
     {
         // Behaviors
         foreach (var info in BehaviorContainerBank)
+        {
+            SaveHavokFile(info);
+        }
+
+        // Collisions
+        foreach (var info in CollisionContainerBank)
         {
             SaveHavokFile(info);
         }
@@ -56,51 +93,58 @@ public static class HavokFileBank
         if (!info.IsModified)
             return;
 
-        info.CopyBinderToMod();
-
-        foreach (var file in info.ContainerBinder.Files)
+        if (info.IsBxf)
         {
-            var fileBytes = file.Bytes;
+            // TODO
+        }
+        else
+        {
+            info.CopyBinderToMod();
 
-            foreach (var entry in info.LoadedHavokFiles)
+            foreach (var file in info.Container.Files)
             {
-                if (file.Name.ToLower() == entry.Key.ToLower())
-                {
-                    HavokBinarySerializer deserializer = new HavokBinarySerializer();
+                var fileBytes = file.Bytes;
 
-                    // TODO: we need to work out the extra capacity need beforehand, rather than using a fixed +1024
-                    using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray().Length + 1024))
+                foreach (var entry in info.LoadedHavokFiles)
+                {
+                    if (file.Name.ToLower() == entry.Key.ToLower())
                     {
-                        deserializer.Write(entry.Value, memoryStream);
-                        fileBytes = memoryStream.ToArray();
+                        HavokBinarySerializer deserializer = new HavokBinarySerializer();
+
+                        // TODO: we need to work out the extra capacity need beforehand, rather than using a fixed +1024
+                        using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray().Length + 1024))
+                        {
+                            deserializer.Write(entry.Value, memoryStream);
+                            fileBytes = memoryStream.ToArray();
+                        }
                     }
                 }
+
+                file.Bytes = fileBytes;
             }
 
-            file.Bytes = fileBytes;
-        }
+            byte[] binderBytes;
 
-        byte[] binderBytes;
+            switch (Smithbox.ProjectType)
+            {
+                case ProjectType.ER:
+                    binderBytes = info.Container.Write(DCX.Type.DCX_KRAK);
+                    break;
+                default:
+                    TaskLogs.AddLog($"Invalid Project Type during Save Havok File");
+                    return;
+            }
 
-        switch (Smithbox.ProjectType)
-        {
-            case ProjectType.ER:
-                binderBytes = info.ContainerBinder.Write(DCX.Type.DCX_KRAK);
-                break;
-            default:
-                TaskLogs.AddLog($"Invalid Project Type during Save Havok File");
-                return;
-        }
+            if (Smithbox.ProjectRoot == null && !File.Exists($@"{info.ModBinderPath}.bak") && File.Exists(info.ModBinderPath))
+            {
+                File.Copy(info.ModBinderPath, $@"{info.ModBinderPath}.bak", true);
+            }
 
-        if (Smithbox.ProjectRoot == null && !File.Exists($@"{info.ModBinderPath}.bak") && File.Exists(info.ModBinderPath))
-        {
-            File.Copy(info.ModBinderPath, $@"{info.ModBinderPath}.bak", true);
-        }
-
-        if (binderBytes != null)
-        {
-            File.WriteAllBytes(info.ModBinderPath, binderBytes);
-            TaskLogs.AddLog($"Saved at: {info.ModBinderPath}");
+            if (binderBytes != null)
+            {
+                File.WriteAllBytes(info.ModBinderPath, binderBytes);
+                TaskLogs.AddLog($"Saved at: {info.ModBinderPath}");
+            }
         }
     }
 }

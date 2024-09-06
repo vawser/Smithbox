@@ -30,7 +30,7 @@ public class HavokContainerInfo
 {
     public HavokContainerType Type { get; set; }
 
-    public BND4 ContainerBinder { get; set; }
+    public BND4 Container { get; set; }
     public Dictionary<string, hkRootLevelContainer> LoadedHavokFiles { get; set; }
     public Dictionary<string, List<IHavokObject>> LoadHavokObjects { get; set; }
 
@@ -44,6 +44,15 @@ public class HavokContainerInfo
     public string BinderDirectory { get; set; }
     public string BinderPath { get; set; }
     public string BinderExtension { get; set; }
+
+    public string BhdPath { get; set; }
+    public string BdtPath { get; set; }
+    public bool IsBxf { get; set; }
+
+
+    public bool LoadFromData { get; set; }
+    
+    public byte[] Data { get; set; }
 
     public List<string> InternalFileList { get; set; }
 
@@ -73,28 +82,58 @@ public class HavokContainerInfo
     /// </summary>
     public void LoadBinder()
     {
-        // Use mod if it exists
-        if (File.Exists(ModBinderPath))
+        if (LoadFromData)
         {
-            //TaskLogs.AddLog($"Loaded: {ModBinderPath}");
-
-            ContainerBinder = BND4.Read(DCX.Decompress(ModBinderPath));
-            InternalFileList = new();
-            foreach (var entry in ContainerBinder.Files)
+            // Use mod if it exists
+            if (File.Exists(ModBinderPath))
             {
-                InternalFileList.Add(entry.Name.ToLower());
+                //TaskLogs.AddLog($"Loaded: {ModBinderPath}");
+
+                Container = BND4.Read(Data);
+                InternalFileList = new();
+                foreach (var entry in Container.Files)
+                {
+                    InternalFileList.Add(entry.Name.ToLower());
+                }
+            }
+            // Otherwise load root
+            else
+            {
+                //TaskLogs.AddLog($"Loaded: {RootBinderPath}");
+
+                Container = BND4.Read(Data);
+                InternalFileList = new();
+                foreach (var entry in Container.Files)
+                {
+                    InternalFileList.Add(entry.Name.ToLower());
+                }
             }
         }
-        // Otherwise load root
         else
         {
-            //TaskLogs.AddLog($"Loaded: {RootBinderPath}");
-
-            ContainerBinder = BND4.Read(DCX.Decompress(RootBinderPath));
-            InternalFileList = new();
-            foreach (var entry in ContainerBinder.Files)
+            // Use mod if it exists
+            if (File.Exists(ModBinderPath))
             {
-                InternalFileList.Add(entry.Name.ToLower());
+                //TaskLogs.AddLog($"Loaded: {ModBinderPath}");
+
+                Container = BND4.Read(DCX.Decompress(ModBinderPath));
+                InternalFileList = new();
+                foreach (var entry in Container.Files)
+                {
+                    InternalFileList.Add(entry.Name.ToLower());
+                }
+            }
+            // Otherwise load root
+            else
+            {
+                //TaskLogs.AddLog($"Loaded: {RootBinderPath}");
+
+                Container = BND4.Read(DCX.Decompress(RootBinderPath));
+                InternalFileList = new();
+                foreach (var entry in Container.Files)
+                {
+                    InternalFileList.Add(entry.Name.ToLower());
+                }
             }
         }
     }
@@ -111,7 +150,7 @@ public class HavokContainerInfo
         }
         else
         {
-            foreach (var file in ContainerBinder.Files)
+            foreach (var file in Container.Files)
             {
                 if (file.Name.ToLower() == key.ToLower())
                 {
@@ -140,7 +179,7 @@ public class HavokContainerInfo
         }
         else
         {
-            foreach (var file in ContainerBinder.Files)
+            foreach (var file in Container.Files)
             {
                 if (file.Name.ToLower() == key.ToLower())
                 {
