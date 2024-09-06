@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Editor;
-using StudioCore.Interface;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;

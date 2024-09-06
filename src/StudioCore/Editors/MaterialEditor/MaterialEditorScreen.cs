@@ -1,7 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.GraphicsEditor;

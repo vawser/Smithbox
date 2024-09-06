@@ -19,14 +19,13 @@ using AddParamsAction = StudioCore.Editor.AddParamsAction;
 using CompoundAction = StudioCore.Editor.CompoundAction;
 using DeleteParamsAction = StudioCore.Editor.DeleteParamsAction;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Interface;
 using StudioCore.Utilities;
 using StudioCore.Memory;
 using StudioCore.Locators;
-using StudioCore.Core;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Editors.ParamEditor.Actions;
+using StudioCore.Core.Project;
 
 namespace StudioCore.Editors.ParamEditor;
 

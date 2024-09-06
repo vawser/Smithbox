@@ -14,8 +14,8 @@ using System.Threading.Tasks;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Core;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Core.Project;
 
 #pragma warning disable CS1998 // Async method lacks 'await'. Return without Task is convenient, though
 

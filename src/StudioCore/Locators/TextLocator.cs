@@ -1,5 +1,5 @@
 ﻿using Octokit;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using System;
 using System.Collections.Generic;
 using System.IO;

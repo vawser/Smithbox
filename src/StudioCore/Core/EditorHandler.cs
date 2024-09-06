@@ -12,7 +12,6 @@ using StudioCore.EmevdEditor;
 using StudioCore.Graphics;
 using StudioCore.GraphicsEditor;
 using StudioCore.HavokEditor;
-using StudioCore.Interface;
 using StudioCore.MaterialEditor;
 using StudioCore.ParticleEditor;
 using StudioCore.Settings;

@@ -1,9 +1,8 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Editors.TextEditor.Tools;
-using StudioCore.Interface;
 using StudioCore.Tools;
 using StudioCore.Utilities;
 using System;

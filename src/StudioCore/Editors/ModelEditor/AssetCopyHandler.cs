@@ -1,10 +1,10 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Core;
-using StudioCore.Interface;
+using StudioCore.Core.Project;
 using StudioCore.Locators;
 using StudioCore.Platform;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;

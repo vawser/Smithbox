@@ -4,7 +4,6 @@ using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.GraphicsEditor;
-using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;

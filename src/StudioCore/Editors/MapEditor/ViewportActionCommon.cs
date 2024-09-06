@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Silk.NET.SDL;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Utilities;
 using System;

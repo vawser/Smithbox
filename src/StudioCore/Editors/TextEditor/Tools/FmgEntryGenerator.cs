@@ -1,11 +1,11 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Actions;
-using StudioCore.Interface;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;

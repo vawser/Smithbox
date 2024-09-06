@@ -8,10 +8,10 @@ using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.Scene;
 using System.Linq;
-using StudioCore.Core;
 using Microsoft.Extensions.Logging;
 
 using static MsbUtils;
+using StudioCore.Core.Project;
 
 namespace StudioCore.Editors.MapEditor.Prefabs;
 

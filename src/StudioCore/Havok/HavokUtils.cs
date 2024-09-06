@@ -1,7 +1,7 @@
 ﻿using HKLib.hk2018;
 using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

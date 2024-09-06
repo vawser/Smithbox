@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using StudioCore.Banks.AliasBank;
-using StudioCore.Gui;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;

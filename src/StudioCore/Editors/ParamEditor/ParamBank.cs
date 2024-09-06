@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using StudioCore.Locators;
-using StudioCore.Core;
 using StudioCore.Editors.TextEditor;
 using System.ComponentModel.DataAnnotations;
+using StudioCore.Core.Project;
 
 namespace StudioCore.Editors.ParamEditor;
 

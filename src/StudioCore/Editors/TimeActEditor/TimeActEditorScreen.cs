@@ -2,11 +2,8 @@
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Gui;
-using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Scene;
 using StudioCore.Utilities;
@@ -24,6 +21,8 @@ using static StudioCore.Editors.TimeActEditor.TimeActUtils;
 using HKLib.hk2018.hkAsyncThreadPool;
 using static SoulsFormats.TAE.Animation.AnimMiniHeader;
 using static StudioCore.Editors.TimeActEditor.TimeActSelectionHandler;
+using StudioCore.Core.Project;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.TimeActEditor;
 

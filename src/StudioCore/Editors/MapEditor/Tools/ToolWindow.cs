@@ -1,11 +1,10 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions;
 using StudioCore.Editors.MapEditor.MapQuery;
 using StudioCore.Editors.ModelEditor.Tools;
-using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;

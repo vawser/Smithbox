@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Org.BouncyCastle.Utilities;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Locators;
 using System;
 using System.Collections.Generic;

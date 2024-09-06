@@ -2,7 +2,7 @@
 using ImGuiNET;
 using StudioCore.Editors.MapEditor;
 using StudioCore.HavokEditor;
-using StudioCore.Interface;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

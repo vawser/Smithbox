@@ -9,7 +9,6 @@ using Veldrid;
 using Veldrid.Sdl2;
 using HKLib.Serialization.hk2018.Binary;
 using HKLib.Serialization.hk2018.Xml;
-using StudioCore.Core;
 using HKLib.hk2018;
 using StudioCore.Editors.HavokEditor;
 using static StudioCore.Editors.HavokEditor.HavokFileBank;
@@ -21,7 +20,7 @@ using System.ComponentModel.DataAnnotations;
 using StudioCore.Utilities;
 using System.IO;
 using StudioCore.Banks.AliasBank;
-using StudioCore.Interface;
+using StudioCore.Core.Project;
 
 namespace StudioCore.HavokEditor;
 

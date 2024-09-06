@@ -1,8 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Linq;

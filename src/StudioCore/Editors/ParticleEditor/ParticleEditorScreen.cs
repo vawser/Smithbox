@@ -2,12 +2,11 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParticleEditor;
 using StudioCore.Editors.ParticleEditor.Toolbar;
 using StudioCore.Editors.TalkEditor;
-using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.IO;

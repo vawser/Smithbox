@@ -7,8 +7,8 @@ using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Drawing;
-using StudioCore.Core;
-using static StudioCore.Interface.Settings.TimeActEditorTab;
+using static StudioCore.Configuration.Settings.TimeActEditorTab;
+using StudioCore.Core.Project;
 
 namespace StudioCore;
 
@@ -44,6 +44,9 @@ public class CFG
     public bool Debug_FireOnce = false;
 
     public bool ShowDeveloperTools = false;
+
+    public bool DisplayRandomiserTools = false;
+    public bool DisplayDebugTools = false;
 
     //**************
     // Actions

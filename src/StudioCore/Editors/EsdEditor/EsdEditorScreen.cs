@@ -1,6 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;

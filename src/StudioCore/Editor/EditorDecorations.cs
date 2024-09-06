@@ -16,7 +16,6 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
 using StudioCore.Core;
 using Google.Protobuf.WellKnownTypes;
-using StudioCore.Interface;
 using StudioCore.Editors.TextEditor;
 
 namespace StudioCore.Editor;

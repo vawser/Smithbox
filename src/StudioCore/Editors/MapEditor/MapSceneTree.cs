@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
-using StudioCore.Gui;
 using StudioCore.Platform;
 using StudioCore.Scene;
 using StudioCore.Utilities;
@@ -11,11 +10,11 @@ using System.Numerics;
 using Veldrid;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.MsbEditor;
-using StudioCore.Interface;
 using StudioCore.Editor;
 using StudioCore.Locators;
 using StudioCore.Editors.MapEditor.WorldMap;
-using StudioCore.Core;
+using StudioCore.Core.Project;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.MapEditor;
 

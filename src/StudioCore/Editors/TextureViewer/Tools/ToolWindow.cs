@@ -1,10 +1,10 @@
 ﻿using ImGuiNET;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.TextEditor.Tools;
 using StudioCore.Editors.TextureViewer.Actions;
-using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextureViewer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

@@ -1,8 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Utilities;
 using System;

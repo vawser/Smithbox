@@ -7,7 +7,6 @@ using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.EmevdEditor;
-using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

@@ -1,8 +1,8 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor.Actions;
-using StudioCore.Interface;
+using StudioCore.Utilities;
 
 namespace StudioCore.Editors.ModelEditor.SubEditors
 {

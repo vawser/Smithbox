@@ -15,8 +15,8 @@ using Veldrid.Utilities;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.MsbEditor;
 using StudioCore.Locators;
-using StudioCore.Core;
 using System.Text.RegularExpressions;
+using StudioCore.Core.Project;
 
 namespace StudioCore.Resource;
 

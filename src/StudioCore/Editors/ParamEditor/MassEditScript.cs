@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Locators;
 using StudioCore.UserProject;
@@ -54,7 +55,7 @@ public class MassEditScript
 
     public static void ReloadScripts()
     {
-        if (Smithbox.ProjectType is Core.ProjectType.Undefined)
+        if (Smithbox.ProjectType is ProjectType.Undefined)
             return;
 
         var cdir = ParamLocator.GetMassEditScriptCommonDir();

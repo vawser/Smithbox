@@ -1,6 +1,4 @@
 ﻿using SoulsFormats;
-using StudioCore.Core;
-using StudioCore.Interface;
 using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
@@ -11,6 +9,8 @@ using System.Threading.Tasks;
 using ImGuiNET;
 using System.Text.RegularExpressions;
 using StudioCore.Editor;
+using StudioCore.Core.Project;
+using StudioCore.Utilities;
 
 namespace StudioCore.Editors.ModelEditor.Tools;
 

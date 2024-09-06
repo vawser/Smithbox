@@ -8,7 +8,7 @@ using StudioCore.Scene;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 
 namespace StudioCore.Editors.MapEditor;
 

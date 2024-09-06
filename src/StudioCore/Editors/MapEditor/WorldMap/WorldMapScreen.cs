@@ -1,12 +1,12 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Formats;
-using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;

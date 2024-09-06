@@ -9,16 +9,15 @@ using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
-using StudioCore.Interface;
 using StudioCore.Utilities;
 using StudioCore.Locators;
-using StudioCore.Core;
 using StudioCore.Editors.TextEditor;
 using System.IO;
 using StudioCore.MsbEditor;
 using StudioCore.Scene;
 using StudioCore.Editors.TextEditor.Actions;
 using StudioCore.Editors.TextEditor.Tools;
+using StudioCore.Core.Project;
 
 namespace StudioCore.TextEditor;
 

@@ -2,11 +2,8 @@
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Interface;
-using StudioCore.Interface.Settings;
 using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
@@ -18,7 +15,9 @@ using System.Xml.Linq;
 using static SoulsFormats.MSB_AC6.Part;
 using static SoulsFormats.TAE;
 using static StudioCore.Editors.TimeActEditor.AnimationBank;
-using static StudioCore.Interface.Settings.TimeActEditorTab;
+using static StudioCore.Configuration.Settings.TimeActEditorTab;
+using StudioCore.Core.Project;
+using StudioCore.Utilities;
 
 namespace StudioCore.Editors.TimeActEditor;
 public static class AnimationBank

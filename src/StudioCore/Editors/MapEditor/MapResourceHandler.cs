@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using SoulsFormats.KF4;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Locators;
 using StudioCore.Resource;

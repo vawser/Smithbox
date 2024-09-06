@@ -2,7 +2,7 @@
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.Interface;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

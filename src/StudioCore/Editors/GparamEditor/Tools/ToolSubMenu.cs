@@ -2,7 +2,6 @@
 using StudioCore.Configuration;
 using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.GraphicsEditor;
-using StudioCore.Interface;
 using StudioCore.Tools;
 using StudioCore.Utilities;
 using System;

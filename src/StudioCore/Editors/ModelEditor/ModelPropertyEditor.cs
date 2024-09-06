@@ -1,8 +1,6 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
-using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Actions;
-using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -12,6 +10,7 @@ using static SoulsFormats.PARAM;
 using SoulsFormats;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.SubEditors;
+using StudioCore.Core.Project;
 
 namespace StudioCore.Editors.ModelEditor;
 

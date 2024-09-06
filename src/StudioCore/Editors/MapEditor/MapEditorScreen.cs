@@ -2,13 +2,12 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Editors.MapEditor.MapQuery;
 using StudioCore.Editors.MapEditor.Tools;
-using StudioCore.Gui;
 using StudioCore.Havok;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
@@ -24,7 +23,7 @@ using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
-using Viewport = StudioCore.Gui.Viewport;
+using Viewport = StudioCore.Interface.Viewport;
 
 namespace StudioCore.Editors.MapEditor;
 

@@ -1,8 +1,8 @@
 ﻿using StudioCore.Banks.AliasBank;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Interface;
 using StudioCore.Locators;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

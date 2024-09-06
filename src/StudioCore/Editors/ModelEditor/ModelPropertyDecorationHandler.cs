@@ -1,6 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Interface;
+using StudioCore.Utilities;
 using System;
 using System.Linq;
 

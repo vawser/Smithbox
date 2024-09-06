@@ -6,7 +6,6 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

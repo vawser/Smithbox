@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using StudioCore.Editor;
-using StudioCore.Gui;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using System.Collections.Generic;
@@ -8,14 +7,14 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.Utilities;
-using Viewport = StudioCore.Gui.Viewport;
+using Viewport = StudioCore.Interface.Viewport;
 using StudioCore.Configuration;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Interface;
 using StudioCore.Utilities;
-using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Core.Project;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.ModelEditor;
 

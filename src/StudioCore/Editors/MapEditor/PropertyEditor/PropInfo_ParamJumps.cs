@@ -1,8 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Banks.AliasBank;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Gui;
 using StudioCore.Interface;
 using StudioCore.Scene;
 using StudioCore.Utilities;

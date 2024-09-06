@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using StudioCore.Editors.TimeActEditor.Actions;
 using ImGuiNET;
 using StudioCore.Utilities;
-using StudioCore.Interface;
 using System.Numerics;
 using StudioCore.Editor;
 using SoulsFormats;

@@ -25,6 +25,7 @@ using StudioCore.Core;
 using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Tasks;
 using StudioCore.Tools;
+using StudioCore.Core.Project;
 
 namespace StudioCore;
 

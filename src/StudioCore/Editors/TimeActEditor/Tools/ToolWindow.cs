@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
 using ImGuiNET;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.TimeActEditor.Actions;
 
 namespace StudioCore.Editors.TimeActEditor.Tools;

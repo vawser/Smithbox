@@ -12,7 +12,7 @@ using StudioCore.MsbEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Locators;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 
 namespace StudioCore.Editor;
 

@@ -1,7 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Editors.ModelEditor.Tools;
-using StudioCore.Interface;
 using StudioCore.Platform;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;

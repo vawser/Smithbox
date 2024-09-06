@@ -14,7 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using StudioCore.Locators;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 
 namespace StudioCore.Resource;
 

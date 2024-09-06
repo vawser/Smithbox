@@ -2,10 +2,9 @@
 using SoulsFormats;
 using SoulsFormats.KF4;
 using StudioCore.Banks.AliasBank;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ModelEditor;
-using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;

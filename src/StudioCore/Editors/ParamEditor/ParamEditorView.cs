@@ -2,11 +2,11 @@
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Platform;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;

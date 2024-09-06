@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Text;
-using StudioCore.Core;
 using StudioCore.Locators;
+using StudioCore.Core.Project;
 
 namespace StudioCore.Banks.AliasBank;
 

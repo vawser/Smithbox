@@ -19,13 +19,13 @@ using StudioCore.Editors.MapEditor;
 using StudioCore.Editors;
 using StudioCore.Editor;
 using StudioCore.Locators;
-using StudioCore.Core;
 using HKLib.Serialization.hk2018.Binary;
 using Google.Protobuf.Reflection;
 using Silk.NET.SDL;
 using Silk.NET.OpenGL;
 using StudioCore.Havok;
 using System.ComponentModel;
+using StudioCore.Core.Project;
 
 namespace StudioCore.MsbEditor;
 

@@ -5,7 +5,7 @@ using ImGuiNET;
 using Microsoft.Win32;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;

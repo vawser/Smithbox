@@ -1,8 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor.Actions;
-using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Tools;
 using StudioCore.Utilities;

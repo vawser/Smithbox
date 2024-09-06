@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
-using StudioCore.Core;
-using StudioCore.Gui;
+using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;

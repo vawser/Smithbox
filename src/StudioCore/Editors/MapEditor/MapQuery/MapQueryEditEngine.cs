@@ -3,7 +3,6 @@ using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Editor;
-using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

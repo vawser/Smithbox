@@ -1,8 +1,8 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
-using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Settings;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

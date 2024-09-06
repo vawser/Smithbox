@@ -1,5 +1,5 @@
 ﻿using ImGuiNET;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.GraphicsEditor;
 using System;

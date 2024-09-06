@@ -1,10 +1,13 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Configuration.Help;
+using StudioCore.Configuration.Keybinds;
+using StudioCore.Configuration.Settings;
 using StudioCore.Editor;
 using StudioCore.Graphics;
-using StudioCore.Interface;
-using StudioCore.Interface.Windows;
 using StudioCore.Settings;
+using StudioCore.Tools.Development;
+using StudioCore.Tools.Randomiser;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -23,6 +26,7 @@ public class WindowHandler
     public HelpWindow HelpWindow;
     public DebugWindow DebugWindow;
     public KeybindWindow KeybindWindow;
+    public RandomiserWindow RandomiserWindow;
 
     public WindowHandler(IGraphicsContext _context)
     {
@@ -30,6 +34,7 @@ public class WindowHandler
         HelpWindow = new HelpWindow();
         DebugWindow = new DebugWindow();
         KeybindWindow = new KeybindWindow();
+        RandomiserWindow = new RandomiserWindow();
     }
 
     public void OnGui()
@@ -38,6 +43,7 @@ public class WindowHandler
         HelpWindow.Display();
         DebugWindow.Display();
         KeybindWindow.Display();
+        RandomiserWindow.Display();
     }
 
     public void HandleWindowShortcuts()
@@ -81,13 +87,23 @@ public class WindowHandler
         }
         ImguiUtils.ShowHoverTooltip($"Keybinds\n{KeyBindings.Current.CORE_KeybindConfigWindow.HintText}");
 
-        if (FeatureFlags.DebugMenu)
+
+        if (CFG.Current.DisplayRandomiserTools)
+        {
+            if (ImGui.Button($"{ForkAwesome.Random}##RandomiserWindow"))
+            {
+                RandomiserWindow.ToggleMenuVisibility();
+            }
+            ImguiUtils.ShowHoverTooltip($"Randomiser Tools");
+        }
+
+        if (CFG.Current.DisplayDebugTools)
         {
             if (ImGui.Button($"{ForkAwesome.LightbulbO}##DebugWindow"))
             {
                 DebugWindow.ToggleMenuVisibility();
             }
-            ImguiUtils.ShowHoverTooltip($"Debug");
+            ImguiUtils.ShowHoverTooltip($"Debug Tools");
         }
     }
 }

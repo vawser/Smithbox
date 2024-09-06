@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Tools;
-using StudioCore.Interface;
 using StudioCore.Tools;
 using StudioCore.Utilities;
 using System;

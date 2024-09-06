@@ -2,7 +2,7 @@
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using System;

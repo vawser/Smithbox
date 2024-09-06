@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
-using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;

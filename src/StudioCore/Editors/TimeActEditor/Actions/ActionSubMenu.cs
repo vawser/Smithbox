@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
-using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

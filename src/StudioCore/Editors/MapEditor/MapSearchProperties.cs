@@ -2,7 +2,6 @@
 using SoulsFormats;
 using SoulsFormats.Util;
 using StudioCore.Editor;
-using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Utilities;
 using System;

@@ -2,7 +2,6 @@
 using StudioCore.Configuration;
 using StudioCore.Editors.TextEditor.Tools;
 using StudioCore.Editors.TextureViewer.Actions;
-using StudioCore.Interface;
 using StudioCore.TextureViewer;
 using StudioCore.Utilities;
 using System;

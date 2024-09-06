@@ -1,9 +1,8 @@
 ﻿using ImGuiNET;
 using Silk.NET.SDL;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;

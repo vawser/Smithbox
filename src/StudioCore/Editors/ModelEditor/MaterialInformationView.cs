@@ -1,9 +1,9 @@
 ﻿using ImGuiNET;
 using Org.BouncyCastle.Utilities;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Interface;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;

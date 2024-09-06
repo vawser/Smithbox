@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Gui;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -11,8 +10,7 @@ using Veldrid;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editor;
-using StudioCore.Core;
-using StudioCore.Interface;
+using StudioCore.Core.Project;
 
 namespace StudioCore.Editors.ModelEditor;
 

@@ -1,7 +1,7 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;

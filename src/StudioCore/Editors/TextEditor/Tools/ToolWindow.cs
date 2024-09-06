@@ -1,10 +1,10 @@
 ﻿using ImGuiNET;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TextEditor.Actions;
-using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

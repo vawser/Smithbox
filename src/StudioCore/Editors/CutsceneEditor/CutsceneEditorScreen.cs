@@ -1,7 +1,7 @@
 ﻿using DotNext.Collections.Generic;
 using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using System.Collections.Generic;

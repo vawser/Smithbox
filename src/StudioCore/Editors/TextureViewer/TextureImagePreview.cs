@@ -1,7 +1,7 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Formats;
 using StudioCore.Locators;
