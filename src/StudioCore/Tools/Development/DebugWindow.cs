@@ -1,14 +1,18 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Configuration.Settings;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Tests;
 using StudioCore.Tools.Generation;
 using StudioCore.Tools.Validation;
 using StudioCore.Utilities;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Numerics;
 using System.Threading.Tasks;
+using static StudioCore.Configuration.Settings.SettingsWindow;
+using System;
 
 namespace StudioCore.Tools.Development;
 
@@ -32,6 +36,35 @@ public class DebugWindow
 
     private Task _loadingTask;
 
+    private SelectedDebugTab SelectedTab = SelectedDebugTab.DisplayTaskStatus;
+
+    public enum SelectedDebugTab
+    {
+        // Information
+        [Display(Name = "Task Status")] DisplayTaskStatus,
+
+        // ImGui
+        [Display(Name = "ImGui Demo")] ImGuiDemo,
+        [Display(Name = "ImGui Metrics")] ImGuiMetrics,
+        [Display(Name = "ImGui Debug Log")] ImGuiLog,
+        [Display(Name = "ImGui Stack Tool")] ImGuiStackTool,
+
+        // Validation
+        [Display(Name = "Paramdef Validation")] ValidateParamdef,
+        [Display(Name = "MSB Validation")] ValidateMSB,
+        [Display(Name = "TAE Validation")] ValidateTAE,
+
+        // Helpers
+        [Display(Name = "FMG Name Helper")] FmgNameHelper,
+        [Display(Name = "FLVER Layout Helper")] FlverLayoutHelper,
+
+        // Tests
+        [Display(Name = "MSBE Read/Write")] Test_MSBE_ReadWrite,
+        [Display(Name = "MSB_AC6 Read/Write")] Test_MSB_AC6_ReadWrite,
+        [Display(Name = "BTL Read/Write")] Test_BTL_ReadWrite,
+        [Display(Name = "Unique Param Row ID Insert")] Test_UniqueParamRowIDs
+    }
+
     public void Display()
     {
         var scale = Smithbox.GetUIScale();
@@ -46,39 +79,119 @@ public class DebugWindow
         ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBg);
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(10.0f, 10.0f) * scale);
-        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(20.0f, 10.0f) * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(5.0f, 5.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
 
         if (ImGui.Begin("Debug##TestWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            ImGui.BeginTabBar("##DebugTabs");
+            ImGui.Columns(2);
 
-            if (ImGui.BeginTabItem("Actions"))
+            ImGui.BeginChild("debugToolList");
+
+            var arr = Enum.GetValues(typeof(SelectedDebugTab));
+            for (int i = 0; i < arr.Length; i++)
             {
-                DisplayActions();
+                var tab = (SelectedDebugTab)arr.GetValue(i);
 
-                ImGui.EndTabItem();
+                if (tab == SelectedDebugTab.DisplayTaskStatus)
+                {
+                    ImGui.Separator();
+                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Information");
+                    ImGui.Separator();
+                }
+                if (tab == SelectedDebugTab.ImGuiDemo)
+                {
+                    ImGui.Separator();
+                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "ImGui");
+                    ImGui.Separator();
+                }
+                if (tab == SelectedDebugTab.ValidateParamdef)
+                {
+                    ImGui.Separator();
+                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Validation");
+                    ImGui.Separator();
+                }
+                if (tab == SelectedDebugTab.FmgNameHelper)
+                {
+                    ImGui.Separator();
+                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Helpers");
+                    ImGui.Separator();
+                }
+                if (tab == SelectedDebugTab.Test_MSBE_ReadWrite)
+                {
+                    ImGui.Separator();
+                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Tests");
+                    ImGui.Separator();
+                }
+
+                if (ImGui.Selectable(tab.GetDisplayName(), tab == SelectedTab))
+                {
+                    SelectedTab = tab;
+                }
             }
-            if (ImGui.BeginTabItem("Tests"))
+
+            ImGui.EndChild();
+
+            ImGui.NextColumn();
+
+            ImGui.BeginChild("configurationTab");
+            switch (SelectedTab)
             {
-                DisplayTests();
+                // Information
+                case SelectedDebugTab.DisplayTaskStatus:
+                    DisplayTasks();
+                    break;
 
-                ImGui.EndTabItem();
+                // ImGui
+                case SelectedDebugTab.ImGuiDemo:
+                    DisplayImGuiDemo();
+                    break;
+                case SelectedDebugTab.ImGuiMetrics:
+                    DisplayImGuiMetrics();
+                    break;
+                case SelectedDebugTab.ImGuiLog:
+                    DisplayImGuiDebugLog();
+                    break;
+                case SelectedDebugTab.ImGuiStackTool:
+                    DisplayImGuiStackTool();
+                    break;
+
+                // Validation
+                case SelectedDebugTab.ValidateParamdef:
+                    DisplayTool_ParamValidation();
+                    break;
+                case SelectedDebugTab.ValidateMSB:
+                    DisplayTool_MapValidation();
+                    break;
+                case SelectedDebugTab.ValidateTAE:
+                    DisplayTool_TimeActValidation();
+                    break;
+
+                // Helpers
+                case SelectedDebugTab.FmgNameHelper:
+                    DisplayHelper_FMGNames();
+                    break;
+                case SelectedDebugTab.FlverLayoutHelper:
+                    DisplayHelper_FLVERDumpy();
+                    break;
+
+                // Tests
+                case SelectedDebugTab.Test_MSBE_ReadWrite:
+                    DisplayTest_MSBE();
+                    break;
+                case SelectedDebugTab.Test_MSB_AC6_ReadWrite:
+                    DisplayTest_MSB_AC6();
+                    break;
+                case SelectedDebugTab.Test_BTL_ReadWrite:
+                    DisplayTest_BTL();
+                    break;
+                case SelectedDebugTab.Test_UniqueParamRowIDs:
+                    DisplayTest_UniqueParamRows();
+                    break;
             }
-            if (ImGui.BeginTabItem("ImGui"))
-            {
-                DisplayImGuiDemo();
+            ImGui.EndChild();
 
-                ImGui.EndTabItem();
-            }
-            if (ImGui.BeginTabItem("Soapstone"))
-            {
-                DisplayTasks();
-
-                ImGui.EndTabItem();
-            }
-
-            ImGui.EndTabBar();
+            ImGui.Columns(1);
         }
 
         ImGui.End();
@@ -87,54 +200,12 @@ public class DebugWindow
         ImGui.PopStyleColor(5);
     }
 
-    private void DisplayActions()
-    {
-        ImGui.BeginTabBar("DebugActions");
-
-        ImGui.PushStyleColor(ImGuiCol.Header, CFG.Current.Imgui_Moveable_Header);
-        ImGui.PushItemWidth(300f);
-
-        DisplayTool_ParamValidation();
-        DisplayTool_MapValidation();
-        DisplayTool_TimeActValidation();
-        DisplayTool_FmgTool();
-        DisplayTool_RowNameHelper();
-        //DisplayTool_HavokTool();
-        //DisplayTool_DataExplorer();
-        //DisplayTool_DecryptRegulation();
-        //DisplayTool_FLVERDump();
-        //DisplayTool_FlverTestTool();
-
-        ImGui.PopItemWidth();
-        ImGui.PopStyleColor();
-        ImGui.EndTabBar();
-    }
-
-    private void DisplayImGuiDemo()
-    {
-        if (ImGui.Button("Demo"))
-        {
-            _showImGuiDemoWindow = !_showImGuiDemoWindow;
-        }
-
-        if (ImGui.Button("Metrics"))
-        {
-            _showImGuiMetricsWindow = !_showImGuiMetricsWindow;
-        }
-
-        if (ImGui.Button("Debug Log"))
-        {
-            _showImGuiDebugLogWindow = !_showImGuiDebugLogWindow;
-        }
-
-        if (ImGui.Button("Stack Tool"))
-        {
-            _showImGuiStackToolWindow = !_showImGuiStackToolWindow;
-        }
-    }
-
+    // Information
     private void DisplayTasks()
     {
+        ImGui.Text("Currently running tasks:");
+        ImGui.Text("");
+
         if (TaskManager.GetLiveThreads().Count > 0)
         {
             foreach (var task in TaskManager.GetLiveThreads())
@@ -143,195 +214,175 @@ public class DebugWindow
             }
         }
     }
-    private void DisplayTests()
+
+    // ImGui
+    private void DisplayImGuiDemo()
     {
-        if (ImGui.Button("MSBE read/write test"))
-        {
-            MSBReadWrite.Run();
-        }
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
 
-        if (ImGui.Button("MSB_AC6 Read/Write Test"))
+        if (ImGui.Button("Demo", buttonSize))
         {
-            MSB_AC6_Read_Write.Run();
+            _showImGuiDemoWindow = !_showImGuiDemoWindow;
         }
+    }
+    private void DisplayImGuiMetrics()
+    {
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
 
-        if (ImGui.Button("BTL read/write test"))
+        if (ImGui.Button("Metrics", buttonSize))
         {
-            BTLReadWrite.Run();
+            _showImGuiMetricsWindow = !_showImGuiMetricsWindow;
         }
+    }
+    private void DisplayImGuiDebugLog()
+    {
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
 
-        if (ImGui.Button("Insert unique rows IDs into params"))
+        if (ImGui.Button("Debug Log", buttonSize))
         {
-            ParamUniqueRowFinder.Run();
+            _showImGuiDebugLogWindow = !_showImGuiDebugLogWindow;
+        }
+    }
+    private void DisplayImGuiStackTool()
+    {
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        if (ImGui.Button("Stack Tool", buttonSize))
+        {
+            _showImGuiStackToolWindow = !_showImGuiStackToolWindow;
         }
     }
 
-    private void DisplayTool_FLVERDump()
-    {
-        if (ImGui.BeginTabItem("Dump FLVER Layouts"))
-        {
-            if (ImGui.Button("Dump"))
-            {
-                FlverDumpTools.DumpFlverLayouts();
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
+    // Validation
     private void DisplayTool_ParamValidation()
     {
-        if (ImGui.BeginTabItem("Param Validation"))
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        ImGui.Text("This tool will validate the PARAMDEF and padding values. Issues will be printed to the Logger.");
+        ImGui.Text("");
+
+        if (ImGui.Button("Validate PARAMDEF", buttonSize))
         {
-            ImGui.Text("This tool will validate the PARAMDEF and padding values. Issues will be printed to the Logger.");
-
-            if (ImGui.Button("Validate PARAMDEF"))
-            {
-                ParamValidationTool.ValidateParamdef();
-            }
-            ImguiUtils.ShowHoverTooltip("Validate that the current PARAMDEF works with the old-style SF PARAM class.");
-
-            if (ImGui.Button("Validate Padding (for selected param)"))
-            {
-                ParamValidationTool.ValidatePadding();
-            }
-            ImguiUtils.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
-
-            if (ImGui.Button("Validate Padding (for all params)"))
-            {
-                ParamValidationTool.ValidatePadding(true);
-            }
-            ImguiUtils.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
-
-            ImGui.EndTabItem();
+            ParamValidationTool.ValidateParamdef();
         }
+        ImguiUtils.ShowHoverTooltip("Validate that the current PARAMDEF works with the old-style SF PARAM class.");
+
+        if (ImGui.Button("Validate Padding (for selected param)", buttonSize))
+        {
+            ParamValidationTool.ValidatePadding();
+        }
+        ImguiUtils.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
+
+        if (ImGui.Button("Validate Padding (for all params)", buttonSize))
+        {
+            ParamValidationTool.ValidatePadding(true);
+        }
+        ImguiUtils.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
+
     }
 
     private void DisplayTool_MapValidation()
     {
-        if (ImGui.BeginTabItem("Map Validation"))
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        ImGui.Text("This tool will validate the MSB for the current project by loading all MSB files.");
+        ImGui.Text("");
+
+        if (MapValidationTool.HasFinished)
         {
-            ImGui.Text("This tool will validate the MSB for the current project by loading all MSB files.");
-
-            ImGui.Checkbox("Check project files", ref MapValidationTool.TargetProject);
-            ImguiUtils.ShowHoverTooltip("The check will use the game root files by default, if you want to use your project's specific files, tick this.");
-
-
-            if (ImGui.Button("Validate MSB"))
-            {
-                MapValidationTool.ValidateMSB();
-            }
-
-            if (MapValidationTool.HasFinished)
-            {
-                ImGui.Text("Validation has finished.");
-            }
-
-            ImGui.EndTabItem();
+            ImGui.Text("Validation has finished.");
+            ImGui.Text("");
         }
+
+        if (ImGui.Button("Validate MSB", buttonSize))
+        {
+            MapValidationTool.ValidateMSB();
+        }
+
+        ImGui.Checkbox("Check project files", ref MapValidationTool.TargetProject);
+        ImguiUtils.ShowHoverTooltip("The check will use the game root files by default, if you want to use your project's specific files, tick this.");
     }
 
     private void DisplayTool_TimeActValidation()
     {
-        if (ImGui.BeginTabItem("Time Act Validation"))
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        ImGui.Text("This tool will validate the Time Act files for the current project by loading all TAE files.");
+        ImGui.Text("");
+
+        if (TimeActValidationTool.HasFinished)
         {
-            ImGui.Text("This tool will validate the Time Act files for the current project by loading all TAE files.");
+            ImGui.Text("Validation has finished.");
+            ImGui.Text("");
+        }
 
-            if (ImGui.Button("Validate TAE"))
-            {
-                TimeActValidationTool.ValidateTAE();
-            }
-
-            if (TimeActValidationTool.HasFinished)
-            {
-                ImGui.Text("Validation has finished.");
-            }
-
-            ImGui.EndTabItem();
+        if (ImGui.Button("Validate TAE", buttonSize))
+        {
+            TimeActValidationTool.ValidateTAE();
         }
     }
 
-    private void DisplayTool_FmgTool()
+    // Helpers
+    private void DisplayHelper_FMGNames()
     {
-        if (ImGui.BeginTabItem("Get META FMG Names"))
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        ImGui.Text("This tool will export the FMG Names usable in the Param Meta to the clipboard.");
+        ImGui.Text("");
+
+        if (ImGui.Button("Export", buttonSize))
         {
-            ImGui.Text("This tool will export the FMG Names usable in the Param Meta to the clipboard.");
-
-            if (ImGui.Button("Export"))
-            {
-                FmgMetaTool.GetNames();
-            }
-
-            ImGui.EndTabItem();
+            FmgMetaTool.GetNames();
         }
     }
 
-    private void DisplayTool_RowNameHelper()
+    private void DisplayHelper_FLVERDumpy()
     {
-        if (ImGui.BeginTabItem("Row Name Helper"))
-        {
-            if (ImGui.Button("Generate Row Names"))
-            {
-                NameGenerationTool.GenerateRowNames();
-            }
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
 
-            ImGui.EndTabItem();
+        if (ImGui.Button("Dump Layouts", buttonSize))
+        {
+            FlverDumpTools.DumpFlverLayouts();
         }
     }
 
-    private void DisplayTool_DecryptRegulation()
+    // Tests
+    private void DisplayTest_MSBE()
     {
-        if (ImGui.BeginTabItem("Decrypt Regulation"))
-        {
-            if (ImGui.Button("Decrypt"))
-            {
-                DecryptionTool.DecryptRegulation();
-            }
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
 
-            ImGui.EndTabItem();
+        if (ImGui.Button("MSBE read/write test", buttonSize))
+        {
+            MSBReadWrite.Run();
         }
     }
 
-    private void DisplayTool_HavokTool()
+    private void DisplayTest_MSB_AC6()
     {
-        if (ImGui.BeginTabItem("Havok Tool"))
-        {
-            if (ImGui.Button("Test Collision Load"))
-            {
-                HavokTool.TestLoad();
-            }
-            if (ImGui.Button("Test Collision Resource"))
-            {
-                HavokTool.TestResource();
-            }
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
 
-            ImGui.EndTabItem();
+        if (ImGui.Button("MSB_AC6 Read/Write Test", buttonSize))
+        {
+            MSB_AC6_Read_Write.Run();
+        }
+    }
+    private void DisplayTest_BTL()
+    {
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        if (ImGui.Button("BTL read/write test", buttonSize))
+        {
+            BTLReadWrite.Run();
         }
     }
 
-    private void DisplayTool_FlverTestTool()
+    private void DisplayTest_UniqueParamRows()
     {
-        if (ImGui.BeginTabItem("FLVER Tool"))
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        if (ImGui.Button("Insert unique rows IDs into params", buttonSize))
         {
-            if (ImGui.Button("Test FLVER2 Read"))
-            {
-                FlverTestTool.TestRead();
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    private void DisplayTool_EditorTest()
-    {
-        if (ImGui.BeginTabItem("Editor Test"))
-        {
-            if (ImGui.Button("Add Editor Instanc"))
-            {
-                FlverTestTool.TestRead();
-            }
-
-            ImGui.EndTabItem();
+            ParamUniqueRowFinder.Run();
         }
     }
 }
