@@ -26,6 +26,7 @@ using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Tasks;
 using StudioCore.Tools;
 using StudioCore.Core.Project;
+using StudioCore.Tools.Randomiser;
 
 namespace StudioCore;
 
@@ -86,6 +87,7 @@ public class Smithbox
         // Hack to make sure dialogs work before the main window is created
         PlatformUtils.InitializeWindows(null);
         CFG.AttemptLoadOrDefault();
+        RandomiserCFG.AttemptLoadOrDefault();
         UI.SetupThemes();
         UI.SetTheme(true);
 
