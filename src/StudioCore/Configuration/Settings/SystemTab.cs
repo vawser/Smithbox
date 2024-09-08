@@ -120,8 +120,8 @@ public class SystemTab
 
         if (ImGui.CollapsingHeader("Secret Tools"))
         {
-            ImGui.Checkbox("Display Randomiser Toosl", ref CFG.Current.DisplayRandomiserTools);
-            ImguiUtils.ShowHoverTooltip("If enabled, the randomiser tools will be available via the icon bar.");
+            //ImGui.Checkbox("Display Randomiser Toosl", ref CFG.Current.DisplayRandomiserTools);
+            //ImguiUtils.ShowHoverTooltip("If enabled, the randomiser tools will be available via the icon bar.");
 
             ImGui.Checkbox("Display Debug Toosl", ref CFG.Current.DisplayDebugTools);
             ImguiUtils.ShowHoverTooltip("If enabled, the debug tools will be available via the icon bar.");
