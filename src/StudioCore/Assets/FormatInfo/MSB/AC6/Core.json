@@ -587,6 +587,12 @@
                     "name": "Entity ID",
                     "description": "Identifies the region in event scripts.",
                     "attributes": ""
+                },
+                {
+                    "id": "EntityGroupID",
+                    "name": "Entity Group ID",
+                    "description": "Identifies a group of regions in event scripts.",
+                    "attributes": ""
                 }
             ]
         },

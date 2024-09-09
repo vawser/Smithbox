@@ -89,4 +89,14 @@ public static class EmevdUtils
         if (type == 8) return 6; // uint
         throw new Exception("Invalid type in argument definition.");
     }
+
+    public static string GetCurrentFileID()
+    {
+        return Smithbox.EditorHandler.EmevdEditor._selectedFileInfo.Name;
+    }
+
+    public static string GetCurrentEventID()
+    {
+        return Smithbox.EditorHandler.EmevdEditor._selectedEvent.ID.ToString();
+    }
 }

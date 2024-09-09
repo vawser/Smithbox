@@ -5,6 +5,8 @@ using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
+using StudioCore.Editors.EmevdEditor.Actions;
+using StudioCore.Editors.EmevdEditor.Tools;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
 using System;
@@ -37,10 +39,23 @@ public class EmevdEditorScreen : EditorScreen
     public EmevdEventHandler EventParameterEditor;
     public EmevdInstructionHandler InstructionParameterEditor;
 
+    public EmevdDecorator Decorator;
+
+    public ToolWindow ToolWindow;
+    public ToolSubMenu ToolSubMenu;
+
+    public ActionSubMenu ActionSubMenu;
+
     public EmevdEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
+        Decorator = new EmevdDecorator(this);
+
         EventParameterEditor = new EmevdEventHandler(this);
         InstructionParameterEditor = new EmevdInstructionHandler(this);
+
+        ToolWindow = new ToolWindow(this);
+        ToolSubMenu = new ToolSubMenu(this);
+        ActionSubMenu = new ActionSubMenu(this);
     }
 
     public string EditorName => "EMEVD Editor##EventScriptEditor";
@@ -55,6 +70,88 @@ public class EmevdEditorScreen : EditorScreen
     {
         ImGui.Separator();
 
+        if (ImGui.BeginMenu("Edit"))
+        {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            if (ImGui.MenuItem($"Undo", KeyBindings.Current.CORE_UndoAction.HintText, false,
+                    EditorActionManager.CanUndo()))
+            {
+                EditorActionManager.UndoAction();
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            if (ImGui.MenuItem("Undo All", "", false,
+                    EditorActionManager.CanUndo()))
+            {
+                EditorActionManager.UndoAllAction();
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
+            if (ImGui.MenuItem("Redo", KeyBindings.Current.CORE_RedoAction.HintText, false,
+                    EditorActionManager.CanRedo()))
+            {
+                EditorActionManager.RedoAction();
+            }
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.Separator();
+
+        ActionSubMenu.DisplayMenu();
+
+        ImGui.Separator();
+
+        ToolSubMenu.DisplayMenu();
+
+        ImGui.Separator();
+
+        if (ImGui.BeginMenu("View"))
+        {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Files"))
+            {
+                CFG.Current.Interface_EmevdEditor_Files = !CFG.Current.Interface_EmevdEditor_Files;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Files);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Events"))
+            {
+                CFG.Current.Interface_EmevdEditor_Events = !CFG.Current.Interface_EmevdEditor_Events;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Events);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Instructions"))
+            {
+                CFG.Current.Interface_EmevdEditor_Instructions = !CFG.Current.Interface_EmevdEditor_Instructions;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Instructions);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Event Properties"))
+            {
+                CFG.Current.Interface_EmevdEditor_EventProperties = !CFG.Current.Interface_EmevdEditor_EventProperties;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_EventProperties);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Instruction Properties"))
+            {
+                CFG.Current.Interface_EmevdEditor_InstructionProperties = !CFG.Current.Interface_EmevdEditor_InstructionProperties;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_InstructionProperties);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Tool Window"))
+            {
+                CFG.Current.Interface_EmevdEditor_ToolConfigurationWindow = !CFG.Current.Interface_EmevdEditor_ToolConfigurationWindow;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_ToolConfigurationWindow);
+
+            ImGui.EndMenu();
+        }
     }
 
     public void OnGUI(string[] initcmd)
@@ -74,7 +171,7 @@ public class EmevdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_EventScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (!(Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S))
+        if (!SupportsEditor())
         {
             ImGui.Begin("Editor##InvalidEmevdEditor");
 
@@ -92,17 +189,52 @@ public class EmevdEditorScreen : EditorScreen
 
             if (EmevdBank.IsLoaded && EmevdBank.IsSupported)
             {
-                EventScriptFileView();
-                EventScriptEventListView();
-                EventScriptEventInstructionView();
-                EventScriptEventParameterView();
-                EventScriptInstructionParameterView();
+                if (CFG.Current.Interface_EmevdEditor_Files)
+                {
+                    EventScriptFileView();
+                }
+                if (CFG.Current.Interface_EmevdEditor_Events)
+                {
+                    EventScriptEventListView();
+                }
+                if (CFG.Current.Interface_EmevdEditor_Instructions)
+                {
+                    EventScriptEventInstructionView();
+                }
+                if (CFG.Current.Interface_EmevdEditor_EventProperties)
+                {
+                    EventScriptEventParameterView();
+                }
+                if (CFG.Current.Interface_EmevdEditor_InstructionProperties)
+                {
+                    EventScriptInstructionParameterView();
+                }
             }
+        }
+
+        ToolWindow.Shortcuts();
+        ToolSubMenu.Shortcuts();
+        ActionSubMenu.Shortcuts();
+
+        if (CFG.Current.Interface_EmevdEditor_ToolConfigurationWindow)
+        {
+            ToolWindow.OnGui();
         }
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
     }
+
+    private bool SupportsEditor()
+    {
+        return true;
+
+        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            return true;
+
+        return false;
+    }
+
 
     private bool SelectScript = false;
 
@@ -196,7 +328,7 @@ public class EmevdEditorScreen : EditorScreen
 
     private void EventScriptEventInstructionView()
     {
-        ImGui.Begin("Event Instructions##EventInstructionView");
+        ImGui.Begin("Instructions##EventInstructionView");
 
         if(_selectedEvent != null)
         {
@@ -232,7 +364,7 @@ public class EmevdEditorScreen : EditorScreen
 
     private void EventScriptEventParameterView()
     {
-        ImGui.Begin("Event Parameters##EventParameterView");
+        ImGui.Begin("Event Properties##EventParameterView");
 
         EventParameterEditor.Display();
 
@@ -241,7 +373,7 @@ public class EmevdEditorScreen : EditorScreen
 
     private void EventScriptInstructionParameterView()
     {
-        ImGui.Begin("Instruction Parameters##InstructionParameterView");
+        ImGui.Begin("Instruction Properties##InstructionParameterView");
 
         InstructionParameterEditor.Display();
 
@@ -250,11 +382,20 @@ public class EmevdEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
-        EventParameterEditor.OnProjectChanged();
-        InstructionParameterEditor.OnProjectChanged();
+        if (Smithbox.ProjectType != ProjectType.Undefined)
+        {
+            Decorator.OnProjectChanged();
 
-        EmevdBank.LoadEventScripts();
-        EmevdBank.LoadEMEDF();
+            EventParameterEditor.OnProjectChanged();
+            InstructionParameterEditor.OnProjectChanged();
+
+            ToolWindow.OnProjectChanged();
+            ToolSubMenu.OnProjectChanged();
+            ActionSubMenu.OnProjectChanged();
+
+            EmevdBank.LoadEventScripts();
+            EmevdBank.LoadEMEDF();
+        }
 
         ResetActionManager();
     }

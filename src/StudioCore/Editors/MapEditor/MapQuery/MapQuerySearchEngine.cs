@@ -356,7 +356,10 @@ public class MapQuerySearchEngine : IMapQueryEngine
             {
                 var o = prop.GetValue(obj);
 
-                CheckProperties(o, o.GetType().GetProperties(), mapName, entityName);
+                if(o != null)
+                {
+                    CheckProperties(o, o.GetType().GetProperties(), mapName, entityName);
+                }
             }
             else
             {

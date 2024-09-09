@@ -760,6 +760,34 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                         {
                             target = m.GetAssetByID(entityID);
                         }
+                        if (type == "region")
+                        {
+                            target = m.GetRegionByID(entityID);
+                        }
+                    }
+                }
+            }
+
+            if (initcmd[0] == "emevd_select")
+            {
+                var mapid = initcmd[1];
+                var entityID = initcmd[2];
+
+                if (initcmd.Length > 2)
+                {
+                    if (Universe.GetLoadedMap(mapid) is MapContainer m)
+                    {
+                        if (target == null)
+                            target = m.GetEnemyByID(entityID, true);
+
+                        if(target == null)
+                            target = m.GetAssetByID(entityID);
+
+                        if (target == null)
+                            target = m.GetRegionByID(entityID);
+
+                        if (target == null)
+                            target = m.GetCollisionByID(entityID);
                     }
                 }
             }

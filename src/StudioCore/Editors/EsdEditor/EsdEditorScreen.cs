@@ -69,21 +69,37 @@ public class EsdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TalkScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (!EsdBank.IsLoaded)
+        if (!SupportsEditor())
         {
-            EsdBank.LoadEsdScripts();
-        }
+            ImGui.Begin("Editor##InvalidEsdEditor");
 
-        if (EsdBank.IsLoaded)
+            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
+
+            ImGui.End();
+        }
+        else
         {
-            EsdFileView();
-            EsdStateGroupSelectView();
-            EsdStateNodeSelectView();
-            EsdStateNodeView();
+            if (!EsdBank.IsLoaded)
+            {
+                EsdBank.LoadEsdScripts();
+            }
+
+            if (EsdBank.IsLoaded)
+            {
+                EsdFileView();
+                EsdStateGroupSelectView();
+                EsdStateNodeSelectView();
+                EsdStateNodeView();
+            }
         }
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
+    }
+
+    private bool SupportsEditor()
+    {
+        return true;
     }
 
     public void EsdFileView()

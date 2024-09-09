@@ -95,7 +95,7 @@ public class ObjectContainer
     }
 
     // Used by the idselect EditorCommandQueue command
-    public Entity GetEnemyByID(string entityID)
+    public Entity GetEnemyByID(string entityID, bool includeGroups = false)
     {
         foreach (Entity m in Objects)
         {
@@ -119,12 +119,34 @@ public class ObjectContainer
                 {
                     return m;
                 }
+
+                if (includeGroups)
+                {
+                    foreach (var entry in enemy_ds3.EntityGroups)
+                    {
+                        if (entry.ToString() == entityID)
+                        {
+                            return m;
+                        }
+                    }
+                }
             }
             if (m.WrappedObject is MSBS.Part.Enemy enemy_sdt)
             {
                 if (enemy_sdt.EntityID.ToString() == entityID)
                 {
                     return m;
+                }
+
+                if (includeGroups)
+                {
+                    foreach (var entry in enemy_sdt.EntityGroupIDs)
+                    {
+                        if (entry.ToString() == entityID)
+                        {
+                            return m;
+                        }
+                    }
                 }
             }
             if (m.WrappedObject is MSBE.Part.Enemy enemy_er)
@@ -133,12 +155,34 @@ public class ObjectContainer
                 {
                     return m;
                 }
+
+                if (includeGroups)
+                {
+                    foreach (var entry in enemy_er.EntityGroupIDs)
+                    {
+                        if (entry.ToString() == entityID)
+                        {
+                            return m;
+                        }
+                    }
+                }
             }
             if (m.WrappedObject is MSB_AC6.Part.Enemy enemy_ac6)
             {
                 if (enemy_ac6.EntityID.ToString() == entityID)
                 {
                     return m;
+                }
+
+                if (includeGroups)
+                {
+                    foreach (var entry in enemy_ac6.EntityGroupIDs)
+                    {
+                        if (entry.ToString() == entityID)
+                        {
+                            return m;
+                        }
+                    }
                 }
             }
         }
@@ -186,6 +230,110 @@ public class ObjectContainer
                 }
             }
             if (m.WrappedObject is MSB_AC6.Part.Asset asset_ac6)
+            {
+                if (asset_ac6.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+        }
+
+        return null;
+    }
+    public Entity GetRegionByID(string entityID)
+    {
+        foreach (Entity m in Objects)
+        {
+            if (m.WrappedObject is MSB1.Region object_ds1)
+            {
+                if (object_ds1.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSBB.Region object_bb)
+            {
+                if (object_bb.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSB3.Region object_ds3)
+            {
+                if (object_ds3.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSBS.Region object_sdt)
+            {
+                if (object_sdt.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSBE.Region asset_er)
+            {
+                if (asset_er.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSB_AC6.Region asset_ac6)
+            {
+                if (asset_ac6.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+                if (asset_ac6.EntityGroupID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+        }
+
+        return null;
+    }
+    public Entity GetCollisionByID(string entityID)
+    {
+        foreach (Entity m in Objects)
+        {
+            if (m.WrappedObject is MSB1.Part.Collision object_ds1)
+            {
+                if (object_ds1.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSBB.Part.Collision object_bb)
+            {
+                if (object_bb.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSB3.Part.Collision object_ds3)
+            {
+                if (object_ds3.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSBS.Part.Collision object_sdt)
+            {
+                if (object_sdt.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSBE.Part.Collision asset_er)
+            {
+                if (asset_er.EntityID.ToString() == entityID)
+                {
+                    return m;
+                }
+            }
+            if (m.WrappedObject is MSB_AC6.Part.Collision asset_ac6)
             {
                 if (asset_ac6.EntityID.ToString() == entityID)
                 {

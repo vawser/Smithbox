@@ -74,6 +74,7 @@ public class CFG
     public bool Interface_Editor_Viewport = true;
     public bool Interface_Editor_Profiling = true;
 
+    // Map Editor
     public bool Interface_MapEditor_MapObjectList = true;
     public bool Interface_MapEditor_Properties = true;
     public bool Interface_MapEditor_PropertySearch = true;
@@ -84,6 +85,7 @@ public class CFG
     public bool Interface_MapEditor_Selection_Groups = true;
     public bool Interface_MapEditor_Viewport_Grid = true;
 
+    // Model Editor
     public bool Interface_ModelEditor_ModelHierarchy = true;
     public bool Interface_ModelEditor_Properties = true;
     public bool Interface_ModelEditor_AssetBrowser = true;
@@ -91,34 +93,50 @@ public class CFG
     public bool Interface_ModelEditor_ResourceList = true;
     public bool Interface_ModelEditor_Viewport_Grid = true;
 
+    // Param Editor
     public bool Interface_ParamEditor_Table = true;
     public bool Interface_ParamEditor_MassEdit = true;
     public bool Interface_ParamEditor_ToolConfiguration = true;
 
+    // Text Editor
     public bool Interface_TextEditor_TextCategories = true;
     public bool Interface_TextEditor_TextEntry = true;
     public bool Interface_TextEditor_ToolConfigurationWindow = true;
 
+    // GPARM EDitor
     public bool Interface_GparamEditor_Files = true;
     public bool Interface_GparamEditor_Groups = true;
     public bool Interface_GparamEditor_Fields = true;
     public bool Interface_GparamEditor_Values = true;
     public bool Interface_GparamEditor_ToolConfiguration = true;
 
+    // SFX Editor
     public bool Interface_ParticleEditor_Files = true;
     public bool Interface_ParticleEditor_Particles = true;
     public bool Interface_ParticleEditor_Data = true;
     public bool Interface_ParticleEditor_Toolbar = true;
 
+    // TAE Editor
     public bool Interface_TimeActEditor_ContainerFileList = true;
     public bool Interface_TimeActEditor_TimeActList = true;
     public bool Interface_TimeActEditor_AnimationList = true;
     public bool Interface_TimeActEditor_AnimationProperties = true;
     public bool Interface_TimeActEditor_EventList = true;
     public bool Interface_TimeActEditor_EventProperties = true;
-
     public bool Interface_TimeActEditor_ToolConfiguration = true;
 
+    // EMEVD Editor
+    public bool Interface_EmevdEditor_Files = true;
+    public bool Interface_EmevdEditor_Events = true;
+    public bool Interface_EmevdEditor_Instructions = true;
+    public bool Interface_EmevdEditor_EventProperties = true;
+    public bool Interface_EmevdEditor_InstructionProperties = true;
+    public bool Interface_EmevdEditor_ToolConfigurationWindow = true;
+
+    // ESD Editor
+    public bool Interface_EsdEditor_ToolConfigurationWindow = true;
+
+    // Texture Viewer
     public bool Interface_TextureViewer_Files = true;
     public bool Interface_TextureViewer_Textures = true;
     public bool Interface_TextureViewer_Viewer = true;

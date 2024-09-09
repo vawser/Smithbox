@@ -953,7 +953,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public int UnkC0C { get; set; }
+            public int EntityGroupID { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -1041,7 +1041,7 @@ namespace SoulsFormats
                 UnkC08 = br.ReadSByte();
                 br.AssertByte(new byte[1]);
                 br.AssertInt16((short)-1);
-                UnkC0C = br.ReadInt32();
+                EntityGroupID = br.ReadInt32();
                 UnkC10 = br.ReadInt32();
                 br.AssertInt32(new int[1]);
                 br.AssertInt32(new int[1]);
@@ -1129,7 +1129,7 @@ namespace SoulsFormats
                 bw.WriteSByte(UnkC08);
                 bw.WriteByte((byte)0);
                 bw.WriteInt16((short)-1);
-                bw.WriteInt32(UnkC0C);
+                bw.WriteInt32(EntityGroupID);
                 bw.WriteInt32(UnkC10);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
