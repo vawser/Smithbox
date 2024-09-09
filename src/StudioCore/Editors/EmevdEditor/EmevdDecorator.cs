@@ -6,6 +6,7 @@ using SoulsFormats.KF4;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.EmevdEditor;
 using StudioCore.Locators;
@@ -288,6 +289,137 @@ namespace StudioCore.Editors.EmevdEditor
         }
         #endregion
 
+        #region Text Reference
+        public bool HasTextReference(string parameterName)
+        {
+            // DS1
+            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            {
+            }
+
+            // DS2
+            if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+
+            }
+
+            // DS3
+            if (Smithbox.ProjectType is ProjectType.DS3)
+            {
+            }
+
+            // BB
+            if (Smithbox.ProjectType is ProjectType.BB)
+            {
+            }
+
+            // SDT
+            if (Smithbox.ProjectType is ProjectType.SDT)
+            {
+            }
+
+            // ER
+            if (Smithbox.ProjectType is ProjectType.ER)
+            {
+            }
+
+            // AC6
+            if (Smithbox.ProjectType is ProjectType.AC6)
+            {
+                if (parameterName == "Name ID")
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void DetermineTextReferenceSpacing(string parameterName, string value, int i)
+        {
+            // DS1
+            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            {
+            }
+
+            // DS2
+            if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+            }
+
+            // DS3
+            if (Smithbox.ProjectType is ProjectType.DS3)
+            {
+            }
+
+            // BB
+            if (Smithbox.ProjectType is ProjectType.BB)
+            {
+            }
+
+            // SDT
+            if (Smithbox.ProjectType is ProjectType.SDT)
+            {
+            }
+
+            // ER
+            if (Smithbox.ProjectType is ProjectType.ER)
+            {
+            }
+
+            // AC6
+            if (Smithbox.ProjectType is ProjectType.AC6)
+            {
+                if (parameterName == "Name ID")
+                {
+                    ImGui.Text("");
+                }
+            }
+        }
+
+        public void DetermineTextReference(string parameterName, string value, int i)
+        {
+            // DS1
+            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            {
+            }
+
+            // DS2
+            if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+            }
+
+            // DS3
+            if (Smithbox.ProjectType is ProjectType.DS3)
+            {
+            }
+
+            // BB
+            if (Smithbox.ProjectType is ProjectType.BB)
+            {
+            }
+
+            // SDT
+            if (Smithbox.ProjectType is ProjectType.SDT)
+            {
+            }
+
+            // ER
+            if (Smithbox.ProjectType is ProjectType.ER)
+            {
+            }
+
+            // AC6
+            if (Smithbox.ProjectType is ProjectType.AC6)
+            {
+                if (parameterName == "Name ID")
+                {
+                    ConstructTextReference("TitleCharacters", value, i);
+                }
+            }
+        }
+        #endregion
+
         #region Alias Reference
         public bool HasAliasReference(string parameterName)
         {
@@ -296,6 +428,10 @@ namespace StudioCore.Editors.EmevdEditor
                 return true;
             }
             if (IsParticleParameter(parameterName))
+            {
+                return true;
+            }
+            if (IsSoundParameter(parameterName))
             {
                 return true;
             }
@@ -313,6 +449,10 @@ namespace StudioCore.Editors.EmevdEditor
             {
                 ImGui.Text("");
             }
+            if (IsSoundParameter(parameterName))
+            {
+                ImGui.Text("");
+            }
         }
 
         public void DetermineAliasReference(string parameterName, string value, int i)
@@ -322,20 +462,16 @@ namespace StudioCore.Editors.EmevdEditor
                 var entries = Smithbox.BankHandler.EventFlagAliases.Aliases.list;
                 if (entries != null)
                 {
-                    var found = false;
-
                     foreach(var entry in entries)
                     {
                         if(entry.id == value)
                         {
                             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{entry.name}");
-                            found = true;
                         }
-                    }
-
-                    if(!found)
-                    {
-                        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"NOT ENUMERATED");
+                        else
+                        {
+                            //ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"---");
+                        }
                     }
                 }
             }
@@ -345,23 +481,39 @@ namespace StudioCore.Editors.EmevdEditor
                 var entries = Smithbox.BankHandler.ParticleAliases.Aliases.list;
                 if (entries != null)
                 {
-                    var found = false;
-
                     foreach (var entry in entries)
                     {
                         if (entry.id == value)
                         {
                             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{entry.name}");
-                            found = true;
                         }
-                    }
-
-                    if (!found)
-                    {
-                        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"NOT ENUMERATED");
+                        else
+                        {
+                            //ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"---");
+                        }
                     }
                 }
             }
+
+            if (IsSoundParameter(parameterName))
+            {
+                var entries = Smithbox.BankHandler.SoundAliases.Aliases.list;
+                if (entries != null)
+                {
+                    foreach (var entry in entries)
+                    {
+                        if (entry.id == value)
+                        {
+                            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{entry.name}");
+                        }
+                        else
+                        {
+                            //ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"---");
+                        }
+                    }
+                }
+            }
+
         }
         #endregion
 
@@ -519,6 +671,16 @@ namespace StudioCore.Editors.EmevdEditor
             return false;
         }
 
+        private bool IsSoundParameter(string parameterName)
+        {
+            if (parameterName == "Sound ID")
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         private bool IsParticleParameter(string parameterName)
         {
             if (parameterName == "SFX ID")
@@ -554,7 +716,8 @@ namespace StudioCore.Editors.EmevdEditor
                 parameterName == "Area Entity ID" ||
                 parameterName == "Target Entity ID A" ||
                 parameterName == "Target Entity ID B" ||
-                parameterName == "Attacker Entity ID")
+                parameterName == "Attacker Entity ID" ||
+                parameterName == "Warp Destination Entity ID")
             {
                 return true;
             }
@@ -580,6 +743,35 @@ namespace StudioCore.Editors.EmevdEditor
 
                 ImGui.EndPopup();
             }
+        }
+
+        private void ConstructTextReference(string fmgName, string value, int i)
+        {
+            if (!Smithbox.BankHandler.FMGBank.IsLoaded)
+            {
+                return;
+            }
+
+            var refValue = int.Parse(value);
+
+            (string, FMGEntryGroup) match = resolveFMGRef(fmgName, refValue);
+
+            if(match.Item2 != null)
+            {
+                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{match.Item2.Title.Text}");
+
+                if (ImGui.BeginPopupContextItem($"TextContextMenu_{fmgName}_{i}"))
+                {
+                    if (ImGui.Selectable($"Go to {match.Item2.ID} ({match.Item2.Title})"))
+                    {
+                        EditorCommandQueue.AddCommand($@"text/select/{fmgName}/{match.Item2.ID}");
+                    }
+
+                    ImGui.EndPopup();
+                }
+            }
+
+
         }
 
         private (string, Param.Row, string) ResolveParamRef(ParamBank bank, string paramRef, dynamic oldval)
@@ -639,6 +831,28 @@ namespace StudioCore.Editors.EmevdEditor
 
             return row;
         }
+
+        private static (string, FMGEntryGroup) resolveFMGRef(string fmgName, int value, int offset = 0)
+        {
+            if (!Smithbox.BankHandler.FMGBank.IsLoaded)
+            {
+                return ("", null);
+            }
+
+            var matchingFmgInfo = Smithbox.BankHandler.FMGBank.FmgInfoBank.ToList().Find(x => x.Name == fmgName);
+
+            if (matchingFmgInfo != null)
+            {
+                var entryGroupId = Math.Abs(value) + offset;
+
+                var newFmgInfo = (matchingFmgInfo.Name, Smithbox.BankHandler.FMGBank.GenerateEntryGroup(entryGroupId, matchingFmgInfo));
+
+                return newFmgInfo;
+            }
+
+            return ("", null);
+        }
+
         #endregion
     }
 }

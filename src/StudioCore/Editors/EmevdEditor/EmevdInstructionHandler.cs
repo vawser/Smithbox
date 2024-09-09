@@ -60,6 +60,12 @@ public class EmevdInstructionHandler
                     Decorator.DetermineParamReferenceSpacing(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
                 }
 
+                // Text Reference
+                if (Decorator.HasTextReference(arg.ArgDoc.Name))
+                {
+                    Decorator.DetermineTextReferenceSpacing(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
+                }
+
                 // Alias Reference
                 if (Decorator.HasAliasReference(arg.ArgDoc.Name))
                 {
@@ -94,6 +100,12 @@ public class EmevdInstructionHandler
                 if (Decorator.HasParamReference(arg.ArgDoc.Name))
                 {
                     Decorator.DetermineParamReference(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
+                }
+
+                // Text Reference
+                if (Decorator.HasTextReference(arg.ArgDoc.Name))
+                {
+                    Decorator.DetermineTextReference(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
                 }
 
                 // Alias Reference

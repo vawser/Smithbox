@@ -95,7 +95,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public ActionSubMenu ActionSubMenu;
 
     public MapQuerySearchEngine MapQueryHandler;
-    public MapQueryEditEngine MapQueryEditHandler;
 
 
     public MapEditorScreen(Sdl2Window window, GraphicsDevice device)
@@ -134,7 +133,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         ActionSubMenu = new ActionSubMenu(this, ActionHandler);
 
         MapQueryHandler = new MapQuerySearchEngine(this);
-        MapQueryEditHandler = new MapQueryEditEngine(this);
 
         EditorActionManager.AddEventHandler(SceneTree);
     }
@@ -947,7 +945,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             MapQueryHandler.OnProjectChanged();
-            MapQueryEditHandler.OnProjectChanged();
             SelectionGroupEditor.OnProjectChanged();
             MapAssetSelectionView.OnProjectChanged();
             SceneTree.OnProjectChanged();

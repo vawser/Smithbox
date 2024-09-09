@@ -157,11 +157,6 @@ public class EditorHandler
             return false;
         }
 
-        if (MapEditor.MapQueryHandler.UserLoadedData && !MapEditor.MapQueryEditHandler.Bank.MapBankInitialized)
-        {
-            return false;
-        }
-
         return true;
     }
 
@@ -177,11 +172,6 @@ public class EditorHandler
         if (MapEditor.MapQueryHandler.UserLoadedData && !MapEditor.MapQueryHandler.Bank.MapBankInitialized)
         {
             status = status + "Map Query Search still initializing.\n";
-        }
-
-        if (MapEditor.MapQueryHandler.UserLoadedData && !MapEditor.MapQueryEditHandler.Bank.MapBankInitialized)
-        {
-            status = status + "Map Query Edit still initializing.\n";
         }
 
         if (status != "")
