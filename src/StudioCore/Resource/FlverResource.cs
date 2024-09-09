@@ -131,10 +131,9 @@ public class FlverResource : IResource, IDisposable
             if (al == AccessLevel.AccessGPUOptimizedOnly && Smithbox.ProjectType != ProjectType.DS1R &&
                 Smithbox.ProjectType != ProjectType.DS1)
             {
-                using var file =
-                    MemoryMappedFile.CreateFromFile(path, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);
-                using IMappedMemoryOwner accessor = file.CreateMemoryAccessor(0, 0, MemoryMappedFileAccess.Read);
-                BinaryReaderEx br = new(false, accessor.Memory);
+                var fileBytes = File.ReadAllBytes(path);
+
+                BinaryReaderEx br = new(false, fileBytes);
                 DCX.Type ctype;
                 br = SFUtil.GetDecompressedBR(br, out ctype);
                 ret = LoadInternalFast(br);

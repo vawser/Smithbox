@@ -49,6 +49,31 @@ namespace StudioCore.Resource
                 if (Value is IDisposable d) d.Dispose();
             }
         }
+
+        /// <summary>
+        /// Decrements the ref count, disposing the contained value if the new count is 0.
+        /// </summary>
+        public virtual void Dispose(bool force)
+        {
+            if (force)
+            {
+                isValid = false;
+
+                if (Value is IDisposable d) 
+                    d.Dispose();
+            }
+            else
+            {
+                var r = Refs.DecrementAndGet();
+                if (r == 0)
+                {
+                    isValid = false;
+
+                    if (Value is IDisposable d) 
+                        d.Dispose();
+                }
+            }
+        }
     }
 
     /// <summary>

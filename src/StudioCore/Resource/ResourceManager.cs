@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using StudioCore.Locators;
 using StudioCore.Core.Project;
+using StudioCore.Editors.ModelEditor;
 
 namespace StudioCore.Resource;
 
@@ -131,6 +132,7 @@ public static class ResourceManager
                     var pipeline = p.Item1;
                     var virtualPath = p.Item2;
                     var binder = p.Item3;
+
                     i++;
 
                     Memory<byte> binderData = action.Binder.Value.ReadFile(binder.Value);
@@ -178,8 +180,16 @@ public static class ResourceManager
             TaskLogs.AddLog($"Failed to load binder \"{action.BinderVirtualPath}\"",
                 LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
         }
-        
-        action.Binder.Dispose();
+
+        // We always want to dispose when using the Model Editor (so we can save the container), so we ignore the refcount logic
+        if(Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
+        {
+            action.Binder.Dispose(true);
+        }
+        else
+        {
+            action.Binder.Dispose();
+        }
         action.PendingResources.Clear();
         action.Binder = null;
     }

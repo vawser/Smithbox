@@ -108,15 +108,19 @@ public class ToolWindow
             {
                 SearchAndReplace.DisplayConfiguration(defaultButtonSize);
             }
-            // Upgrade FMG Files
-            if (ImGui.CollapsingHeader("Upgrade Text Files"))
-            {
-                ImguiUtils.WrappedText("Ports all unique entries from item.msgbnd.dcx and menu.msgbnd.dcx to the DLC version: item_dlc02.msgbnd.dcx and menu_dlc02.msgbnd.dcx");
-                ImguiUtils.WrappedText("");
 
-                if (ImGui.Button("Apply##action_UpdateFmgFiles", defaultButtonSize))
+            if (Smithbox.ProjectType is ProjectType.ER)
+            {
+                // Upgrade FMG Files
+                if (ImGui.CollapsingHeader("Upgrade Text Files"))
                 {
-                    FmgUpdater.UpdateFMGs();
+                    ImguiUtils.WrappedText("Ports all unique entries from item.msgbnd.dcx and menu.msgbnd.dcx to the DLC version: item_dlc02.msgbnd.dcx and menu_dlc02.msgbnd.dcx");
+                    ImguiUtils.WrappedText("");
+
+                    if (ImGui.Button("Apply##action_UpdateFmgFiles", defaultButtonSize))
+                    {
+                        FmgUpdater.UpdateFMGs();
+                    }
                 }
             }
         }

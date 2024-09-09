@@ -1,5 +1,6 @@
 ﻿using DotNext;
 using HKLib.hk2018;
+using HKLib.hk2018.hkAsyncThreadPool;
 using HKLib.Serialization.hk2018.Binary;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
@@ -495,6 +496,7 @@ namespace StudioCore.Editors.ModelEditor
 
                     byte[] flverBytes = CurrentFLVER.Write();
                     File.WriteAllBytes(CurrentFLVERInfo.LoosePath, flverBytes);
+                    TaskLogs.AddLog($"Saved model at: {CurrentFLVERInfo.LoosePath}");
                 }
                 // Copy the binder to the mod directory if it does not already exist.
                 else

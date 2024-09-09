@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
@@ -32,11 +33,14 @@ public class ToolSubMenu
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            // Upgrade FMG Files
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Upgrade Text Files"))
+            if (Smithbox.ProjectType is ProjectType.ER)
             {
-                FmgUpdater.UpdateFMGs();
+                // Upgrade FMG Files
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                if (ImGui.MenuItem("Upgrade Text Files"))
+                {
+                    FmgUpdater.UpdateFMGs();
+                }
             }
 
             ImGui.EndMenu();
