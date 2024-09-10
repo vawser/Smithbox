@@ -127,23 +127,29 @@ namespace StudioCore.Editors.EmevdEditor
             {
                 if (parameterName == "Bullet ID")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("");
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("");
                 }
 
                 if (parameterName == "DamageParam ID")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("");
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("");
                 }
 
                 if (parameterName == "ChrFullBodySFXParam ID")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("");
                 }
 
                 if (parameterName == "Head Armor ID" || parameterName == "Chest Armor ID" || parameterName == "Arm Armor ID" || parameterName == "Leg Armor ID")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("");
                 }
             }
@@ -173,16 +179,19 @@ namespace StudioCore.Editors.EmevdEditor
             {
                 if (parameterName == "SpEffect ID")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("");
                 }
 
                 if (parameterName == "Action Button Parameter ID")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("");
                 }
 
                 if (parameterName == "Item ID")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("");
                 }
             }
@@ -255,6 +264,7 @@ namespace StudioCore.Editors.EmevdEditor
 
                     if (value == "0")
                     {
+                        ImGui.AlignTextToFramePadding();
                         ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"ESD");
                     }
                     else
@@ -466,6 +476,7 @@ namespace StudioCore.Editors.EmevdEditor
                     {
                         if(entry.id == value)
                         {
+                            ImGui.AlignTextToFramePadding();
                             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{entry.name}");
                         }
                         else
@@ -485,6 +496,7 @@ namespace StudioCore.Editors.EmevdEditor
                     {
                         if (entry.id == value)
                         {
+                            ImGui.AlignTextToFramePadding();
                             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{entry.name}");
                         }
                         else
@@ -504,6 +516,7 @@ namespace StudioCore.Editors.EmevdEditor
                     {
                         if (entry.id == value)
                         {
+                            ImGui.AlignTextToFramePadding();
                             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{entry.name}");
                         }
                         else
@@ -532,6 +545,7 @@ namespace StudioCore.Editors.EmevdEditor
         {
             if (IsEntityParameter(parameterName))
             {
+                ImGui.AlignTextToFramePadding();
                 ImGui.Text("");
             }
         }
@@ -561,7 +575,6 @@ namespace StudioCore.Editors.EmevdEditor
 
                     mapID = $"m{id}_{block}_00_00";
 
-                    TaskLogs.AddLog(mapID);
                 }
             }
 
@@ -569,6 +582,7 @@ namespace StudioCore.Editors.EmevdEditor
             {
                 if (!IsSpecialEntityID(value))
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "View in Map");
 
                     // Context Menu for param ref
@@ -585,20 +599,24 @@ namespace StudioCore.Editors.EmevdEditor
                 }
                 else if(value == "10000" || value == "10010" || value == "0")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Target Self");
                 }
                 else if (value == "10002" || value == "10012")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Target Host Player");
                 }
                 else if (value == "10003" || value == "10013" ||
                          value == "10004" || value == "10014" ||
                          value == "10005" || value == "10015")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Target Client Player");
                 }
                 else if (value == "20000")
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Target Any Player");
                 }
             }
@@ -613,6 +631,7 @@ namespace StudioCore.Editors.EmevdEditor
             var enumDoc = EmevdBank.InfoBank.Enums.Where(e => e.Name == arg.ArgDoc.EnumName).FirstOrDefault();
             var alias = enumDoc.Values.Where(e => e.Key == $"{arg.ArgObject}").FirstOrDefault();
 
+            ImGui.AlignTextToFramePadding();
             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{alias.Value}");
 
             // Context Menu for enum
@@ -731,6 +750,7 @@ namespace StudioCore.Editors.EmevdEditor
 
             (string, Param.Row, string) match = ResolveParamRef(ParamBank.PrimaryBank, paramName, refValue);
 
+            ImGui.AlignTextToFramePadding();
             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{match.Item3}");
 
             // Context Menu for param ref
@@ -758,6 +778,7 @@ namespace StudioCore.Editors.EmevdEditor
 
             if(match.Item2 != null)
             {
+                ImGui.AlignTextToFramePadding();
                 ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{match.Item2.Title.Text}");
 
                 if (ImGui.BeginPopupContextItem($"TextContextMenu_{fmgName}_{i}"))

@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Octokit;
 using SoulsFormats;
 using StudioCore.EmevdEditor;
 using System;
@@ -15,11 +16,13 @@ public class EmevdInstructionHandler
 {
     private EmevdEditorScreen Screen;
     private EmevdDecorator Decorator;
+    private EmevdPropertyEditor PropEditor;
 
     public EmevdInstructionHandler(EmevdEditorScreen screen)
     {
         Screen = screen;
         Decorator = screen.Decorator;
+        PropEditor = new EmevdPropertyEditor(screen);
     }
 
     public void OnProjectChanged()
@@ -46,11 +49,13 @@ public class EmevdInstructionHandler
                 var arg = Arguments[i];
 
                 // Property Name
+                ImGui.AlignTextToFramePadding();
                 ImGui.Text($"{arg.ArgDoc.Name}");
 
                 // Enum Reference
                 if(arg.ArgDoc.EnumName != null)
                 {
+                    ImGui.AlignTextToFramePadding();
                     ImGui.Text("");
                 }
 
@@ -88,7 +93,15 @@ public class EmevdInstructionHandler
 
                 // Property Value
                 // TODO: add property edit
-                ImGui.Text($"{arg.ArgObject}");
+                object newValue;
+                (bool, bool) propEditResults = PropEditor.PropertyRow(arg, arg.ArgObject, out newValue);
+
+                var changed = propEditResults.Item1;
+                var committed = propEditResults.Item2;
+
+                PropEditor.UpdateProperty(arg, arg.ArgObject, newValue, changed, committed);
+
+                //ImGui.Text($"{arg.ArgObject}");
 
                 // Enum Reference
                 if (arg.ArgDoc.EnumName != null)
