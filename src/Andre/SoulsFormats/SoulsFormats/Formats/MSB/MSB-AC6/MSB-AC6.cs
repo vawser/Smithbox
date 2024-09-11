@@ -9,6 +9,10 @@ namespace SoulsFormats
     /// </summary>
     public partial class MSB_AC6 : SoulsFile<MSB_AC6>, IMsb
     {
+        public static bool EnableDisambiguation = true;
+
+        public static int CurrentVersion = -1;
+
         /// <summary>
         /// Model files that are available for parts to use.
         /// </summary>
@@ -98,19 +102,22 @@ namespace SoulsFormats
             // This fixes an issue where the Reference Map wouldn't find the right
             // map object since Event and Region would share the same disambugated name (e.g. {1}).
 
-            //MSB.DisambiguateNames(entries.Models, "Model");
-            //MSB.DisambiguateNames(entries.Events, "Event");
-            //MSB.DisambiguateNames(entries.Regions, "Region");
-            //MSB.DisambiguateNames(entries.Parts, "Part");
+            if (EnableDisambiguation)
+            {
+                MSB.DisambiguateNames(entries.Models, "Model");
+                MSB.DisambiguateNames(entries.Events, "Event");
+                MSB.DisambiguateNames(entries.Regions, "Region");
+                MSB.DisambiguateNames(entries.Parts, "Part");
 
-            foreach (Event evt in entries.Events)
-                evt.GetNames(this, entries);
+                foreach (Event evt in entries.Events)
+                    evt.GetNames(this, entries);
 
-            foreach (Region region in entries.Regions)
-                region.GetNames(entries);
+                foreach (Region region in entries.Regions)
+                    region.GetNames(entries);
 
-            foreach (Part part in entries.Parts)
-                part.GetNames(this, entries);
+                foreach (Part part in entries.Parts)
+                    part.GetNames(this, entries);
+            }
         }
 
         /// <summary>
@@ -126,17 +133,20 @@ namespace SoulsFormats
             entries.Layers = Layers.GetEntries();
             entries.Parts = Parts.GetEntries();
 
+            if (EnableDisambiguation)
+            {
             foreach (Model model in entries.Models)
                 model.CountInstances(entries.Parts);
 
-            foreach (Event evt in entries.Events)
-                evt.GetIndices(this, entries);
+                foreach (Event evt in entries.Events)
+                    evt.GetIndices(this, entries);
 
-            foreach (Region region in entries.Regions)
-                region.GetIndices(entries);
+                foreach (Region region in entries.Regions)
+                    region.GetIndices(entries);
 
-            foreach (Part part in entries.Parts)
-                part.GetIndices(this, entries);
+                foreach (Part part in entries.Parts)
+                    part.GetIndices(this, entries);
+            }
 
             bw.BigEndian = false;
             MSB.WriteHeader(bw);
@@ -186,6 +196,9 @@ namespace SoulsFormats
             internal List<T> Read(BinaryReaderEx br)
             {
                 Version = br.ReadInt32();
+
+                CurrentVersion = Version;
+
                 int offsetCount = br.ReadInt32();
                 long nameOffset = br.ReadInt64();
                 long[] entryOffsets = br.ReadInt64s(offsetCount - 1);

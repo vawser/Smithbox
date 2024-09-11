@@ -18,7 +18,7 @@ public static class MapLocator
     /// <param name="mapid"></param>
     /// <param name="writemode"></param>
     /// <returns></returns>
-    public static ResourceDescriptor GetMapMSB(string mapid, bool writemode = false)
+    public static ResourceDescriptor GetMapMSB(string mapid, bool writemode = false, bool gameRootOnly = false)
     {
         ResourceDescriptor ad = new();
         ad.AssetPath = null;
@@ -53,11 +53,11 @@ public static class MapLocator
             backupPath = $@"\map\MapStudio\{mapid}.msb";
         }
 
-        if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{preferredPath}") || writemode && Smithbox.ProjectRoot != null)
+        if (!gameRootOnly && Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{preferredPath}") || writemode && Smithbox.ProjectRoot != null)
         {
             ad.AssetPath = $@"{Smithbox.ProjectRoot}\{preferredPath}";
         }
-        else if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{backupPath}") || writemode && Smithbox.ProjectRoot != null)
+        else if (!gameRootOnly && Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{backupPath}") || writemode && Smithbox.ProjectRoot != null)
         {
             ad.AssetPath = $@"{Smithbox.ProjectRoot}\{backupPath}";
         }

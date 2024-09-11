@@ -60,9 +60,9 @@ public class DebugWindow
         [Display(Name = "FLVER Layout Helper")] FlverLayoutHelper,
 
         // Tests
-        [Display(Name = "MSBE Read/Write")] Test_MSBE_ReadWrite,
-        [Display(Name = "MSB_AC6 Read/Write")] Test_MSB_AC6_ReadWrite,
-        [Display(Name = "BTL Read/Write")] Test_BTL_ReadWrite,
+        [Display(Name = "MSBE - Byte Perfect Test")] Test_MSBE_BytePerfect,
+        [Display(Name = "MSB_AC6 - Byte Perfect Test")] Test_MSB_AC6_BytePerfect,
+        [Display(Name = "BTL - Byte Perfect Test")] Test_BTL_BytePerfect,
         [Display(Name = "Unique Param Row ID Insert")] Test_UniqueParamRowIDs
     }
 
@@ -118,7 +118,7 @@ public class DebugWindow
                     ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Helpers");
                     ImGui.Separator();
                 }
-                if (tab == SelectedDebugTab.Test_MSBE_ReadWrite)
+                if (tab == SelectedDebugTab.Test_MSBE_BytePerfect)
                 {
                     ImGui.Separator();
                     ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Tests");
@@ -177,13 +177,13 @@ public class DebugWindow
                     break;
 
                 // Tests
-                case SelectedDebugTab.Test_MSBE_ReadWrite:
+                case SelectedDebugTab.Test_MSBE_BytePerfect:
                     DisplayTest_MSBE();
                     break;
-                case SelectedDebugTab.Test_MSB_AC6_ReadWrite:
+                case SelectedDebugTab.Test_MSB_AC6_BytePerfect:
                     DisplayTest_MSB_AC6();
                     break;
-                case SelectedDebugTab.Test_BTL_ReadWrite:
+                case SelectedDebugTab.Test_BTL_BytePerfect:
                     DisplayTest_BTL();
                     break;
                 case SelectedDebugTab.Test_UniqueParamRowIDs:
@@ -362,10 +362,14 @@ public class DebugWindow
     {
         var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
 
-        if (ImGui.Button("MSB_AC6 Read/Write Test", buttonSize))
+        if (ImGui.Button("Check all Maps for Byte-Perfect Match", buttonSize))
         {
             Test_MSB_AC6_BytePerfect.Run();
         }
+
+        ImGui.Checkbox("Verify based on Length", ref Test_MSB_AC6_BytePerfect.VerifyBasedOnLength);
+
+        ImGui.Separator();
 
         if (Test_MSB_AC6_BytePerfect.mismatches.Count > 0)
         {

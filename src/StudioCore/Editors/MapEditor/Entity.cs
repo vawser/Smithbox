@@ -1367,8 +1367,7 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSB3.Event.ObjAct ||
             WrappedObject is MSBB.Event.ObjAct ||
             WrappedObject is MSBE.Event.ObjAct ||
-            WrappedObject is MSBS.Event.ObjAct ||
-            WrappedObject is MSB_AC6.Event.ObjAct ? true : false;
+            WrappedObject is MSBS.Event.ObjAct ? true : false;
     }
 
     /// <summary>
@@ -1379,8 +1378,7 @@ public class Entity : ISelectable, IDisposable
         return WrappedObject is MSB3.Event.PatrolInfo ||
             WrappedObject is MSBB.Event.PatrolInfo ||
             WrappedObject is MSBE.Event.PatrolInfo ||
-            WrappedObject is MSBS.Event.PatrolInfo ||
-            WrappedObject is MSB_AC6.Event.PatrolInfo ? true : false;
+            WrappedObject is MSBS.Event.PatrolInfo  ? true : false;
     }
 
     /// <summary>

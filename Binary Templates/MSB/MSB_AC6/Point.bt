@@ -163,7 +163,7 @@ typedef struct (int version) {
         case PointTypeNavmeshCostControl: PointNavmeshCostControl navmeshCostControl; break;
         case PointTypeArenaControl: PointArenaControl arenaControl; break;
         case PointTypeArenaAppearance: PointArenaAppearance arenaAppearance; break;
-        case PointTypeGarageCamera: PointGarageCamera garageCamera; break;
+        case PointTypeGarageCamera: PointGarageCamera garageCamera(version); break;
         case PointTypeCutscenePlayback: PointCutscenePlayback cutscenePlayback; break;
         case PointTypeFallPreventionWallRemoval: PointFallPreventionWallRemoval fallPreventionWallRemoval; break;
         case PointTypeBigJump: PointBigJump bigJump; break;
@@ -406,7 +406,7 @@ typedef struct {
     int unk00 <hidden=true>; Assert(!unk00);
 } PointArenaAppearance;
 
-typedef struct {
+typedef struct(int version) {
     float unk00; // -1
     float unk04;
     int unk08 <hidden=true>; Assert(!unk08);

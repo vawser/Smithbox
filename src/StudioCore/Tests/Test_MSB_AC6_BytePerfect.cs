@@ -13,6 +13,8 @@ public static class Test_MSB_AC6_BytePerfect
 
     public static List<RegionType> regionTypes = new List<RegionType>();
 
+    public static bool VerifyBasedOnLength = false;
+
     public static bool Run()
     {
         mismatches = new List<MismatchData>();
@@ -20,9 +22,11 @@ public static class Test_MSB_AC6_BytePerfect
 
         List<string> msbs = MapLocator.GetFullMapList();
 
+        MSB_AC6.EnableDisambiguation = false;
+
         foreach (var msb in msbs)
         {
-            ResourceDescriptor path = MapLocator.GetMapMSB(msb);
+            ResourceDescriptor path = MapLocator.GetMapMSB(msb, false, true);
             var basepath = Path.GetDirectoryName(path.AssetPath);
 
             var bytes = File.ReadAllBytes(path.AssetPath);
@@ -44,7 +48,24 @@ public static class Test_MSB_AC6_BytePerfect
             File.WriteAllBytes($@"{basepath}\mismatches\{Path.GetFileNameWithoutExtension(path.AssetPath)}",
                 written);
 
-            if (decompressed.Length != written.Length)
+            var isMismatch = false;
+
+            if(!VerifyBasedOnLength)
+            {
+                if (!decompressed.Span.SequenceEqual(written))
+                {
+                    isMismatch = true;
+                }
+            }
+            else
+            {
+                if(decompressed.Length != written.Length)
+                {
+                    isMismatch = true;
+                }
+            }
+
+            if (isMismatch)
             {
                 if (!Directory.Exists($@"{basepath}\mismatches"))
                 {
@@ -55,6 +76,8 @@ public static class Test_MSB_AC6_BytePerfect
                 mismatches.Add(mismatch);
             }
         }
+
+        MSB_AC6.EnableDisambiguation = true;
 
         return true;
     }

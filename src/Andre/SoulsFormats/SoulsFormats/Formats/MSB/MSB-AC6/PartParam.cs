@@ -610,7 +610,13 @@ namespace SoulsFormats
 
                 // Name
                 bw.FillInt64("NameOffset", bw.Position - start);
-                bw.WriteUTF16(MSB.ReambiguateName(Name), true);
+
+                string UsedName = Name;
+                if(MSB_AC6.EnableDisambiguation)
+                {
+                    UsedName = MSB.ReambiguateName(Name);
+                }
+                bw.WriteUTF16(UsedName, true);
 
                 // Layout
                 bw.FillInt64("SourceOffset", bw.Position - start);
@@ -3179,7 +3185,7 @@ namespace SoulsFormats
                     UnkAssetOffset70 = br.ReadInt64();
                     UnkAssetOffset78 = br.ReadInt64();
 
-                    if (version >= 52)
+                    if (MSB_AC6.CurrentVersion >= 52)
                     {
                         br.AssertInt32(new int[1]);
                         br.AssertInt32(new int[1]);
@@ -3261,7 +3267,7 @@ namespace SoulsFormats
                     bw.ReserveInt64("UnkAssetOffset70");
                     bw.ReserveInt64("UnkAssetOffset78");
 
-                    if (version >= 52)
+                    if (MSB_AC6.CurrentVersion >= 52)
                     {
                         bw.WriteInt32(0);
                         bw.WriteInt32(0);

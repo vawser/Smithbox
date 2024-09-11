@@ -43,7 +43,7 @@ namespace SoulsFormats
         /// </summary>
         public class PointParam : Param<Region>, IMsbParam<IMsbRegion>
         {
-            private int ParamVersion;
+            public int ParamVersion;
 
             /// <summary>
             /// Unknown
@@ -398,7 +398,7 @@ namespace SoulsFormats
 
                     // 2
                     case RegionType.EnvMapPoint:
-                        return EnvMapPoints.EchoAdd(new Region.EnvMapPoint(br, ParamVersion));
+                        return EnvMapPoints.EchoAdd(new Region.EnvMapPoint(br));
 
                     // 4
                     case RegionType.Sound:
@@ -840,7 +840,14 @@ namespace SoulsFormats
 
                 if (HasTypeDataPadding())
                 {
-                    bw.Pad(8);
+                    if (MSB_AC6.CurrentVersion >= 52 && Type == RegionType.GarageCamera)
+                    {
+                        bw.Pad(4);
+                    }
+                    else
+                    {
+                        bw.Pad(8);
+                    }
                 }
 
                 bw.FillInt64("Struct98Offset", bw.Position - start);
@@ -942,9 +949,9 @@ namespace SoulsFormats
                     case RegionType.NavmeshCostControl:
                     case RegionType.ArenaControl:
                     case RegionType.ArenaAppearance:
+                    case RegionType.GarageCamera:
                         return false;
 
-                    case RegionType.GarageCamera:
                     case RegionType.JumpEdgeRestriction:
                     case RegionType.CutscenePlayback:
                     case RegionType.FallPreventionWallRemoval:
@@ -1024,7 +1031,6 @@ namespace SoulsFormats
             /// </summary>
             public class EnvMapPoint : Region
             {
-                private int version;
                 private protected override RegionType Type => RegionType.EnvMapPoint;
                 private protected override bool HasTypeData => true;
 
@@ -1076,25 +1082,9 @@ namespace SoulsFormats
                 /// <summary>
                 /// Creates an EnvMapPoint with default values.
                 /// </summary>
-                public EnvMapPoint() : base($"{nameof(Region)}: {nameof(EnvMapPoint)}")
-                {
-                    UnkT00 = 1000f;
-                    UnkT04 = 4;
-                    UnkT0C = (byte)1;
-                    UnkT0D = (byte)1;
-                    UnkT0F = (byte)1;
-                    UnkT10 = 1f;
-                }
+                public EnvMapPoint() : base($"{nameof(Region)}: {nameof(EnvMapPoint)}") { }
 
-                internal EnvMapPoint(BinaryReaderEx br, int _version) : base(br) 
-                {
-                    version = _version;
-                }
-
-                private protected override void DeepCopyTo(Region region)
-                {
-                    var point = (EnvMapPoint)region;
-                }
+                internal EnvMapPoint(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -1110,11 +1100,11 @@ namespace SoulsFormats
                     UnkT18 = br.ReadInt32();
                     UnkT1C = br.ReadInt32();
 
-                    if (version < 52)
-                        return;
-
-                    UnkT20 = br.ReadInt32();
-                    br.AssertInt32(new int[1]);
+                    if(MSB_AC6.CurrentVersion >= 52)
+                    {
+                        UnkT20 = br.ReadInt32();
+                        br.AssertInt32(new int[1]);
+                    }
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -1131,11 +1121,11 @@ namespace SoulsFormats
                     bw.WriteInt32(UnkT18);
                     bw.WriteInt32(UnkT1C);
 
-                    if (version < 52)
-                        return;
-
-                    bw.WriteInt32(UnkT20);
-                    bw.WriteInt32(0);
+                    if (MSB_AC6.CurrentVersion >= 52)
+                    {
+                        bw.WriteInt32(UnkT20);
+                        bw.WriteInt32(0);
+                    }
                 }
             }
 
@@ -1167,10 +1157,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Creates a Sound with default values.
                 /// </summary>
-                public Sound() : base($"{nameof(Region)}: {nameof(Sound)}")
-                {
-                    ChildRegionNames = new string[16];
-                }
+                public Sound() : base($"{nameof(Region)}: {nameof(Sound)}") { }
 
                 private protected override void DeepCopyTo(Region region)
                 {
@@ -1199,12 +1186,14 @@ namespace SoulsFormats
                 internal override void GetNames(Entries entries)
                 {
                     base.GetNames(entries);
+
                     ChildRegionNames = MSB.FindNames(entries.Regions, ChildRegionIndices);
                 }
 
                 internal override void GetIndices(Entries entries)
                 {
                     base.GetIndices(entries);
+
                     ChildRegionIndices = MSB.FindIndices(this, entries.Regions, ChildRegionNames);
                 }
             }
@@ -1376,14 +1365,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Creates an EnvMapEffectBox with default values.
                 /// </summary>
-                public EnvMapEffectBox() : base($"{nameof(Region)}: {nameof(EnvMapEffectBox)}") 
-                {
-                    SpecularLightMult = 1f;
-                    PointLightMult = 1f;
-                    IsModifyLight = (byte)1;
-                    UnkT30 = (short)-1;
-                    UnkT32 = (short)-1;
-                }
+                public EnvMapEffectBox() : base($"{nameof(Region)}: {nameof(EnvMapEffectBox)}") { }
 
                 internal EnvMapEffectBox(BinaryReaderEx br) : base(br) { }
 
@@ -1446,27 +1428,16 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.WindPlacement;
                 private protected override bool HasTypeData => true;
 
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
+                public WindPlacement() : base($"{nameof(Region)}: {nameof(WindPlacement)}") { }
 
-                public WindPlacement() : base($"{nameof(Region)}: {nameof(WindPlacement)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal WindPlacement(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
+                internal WindPlacement(BinaryReaderEx br, long _length) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Bytes = br.ReadBytes((int)Length);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteBytes(Bytes);
                 }
             }
 
@@ -1852,27 +1823,16 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.AiInformationSharing;
                 private protected override bool HasTypeData => true;
 
-                private byte[] Bytes { get; set; }
+                public AiInformationSharing() : base($"{nameof(Region)}: {nameof(AiInformationSharing)}") { }
 
-                private long Length { get; set; }
-                public AiInformationSharing() : base($"{nameof(Region)}: {nameof(AiInformationSharing)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal AiInformationSharing(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
+                internal AiInformationSharing(BinaryReaderEx br, long _length) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Bytes = br.ReadBytes((int)Length);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteBytes(Bytes);
                 }
             }
 
@@ -1971,27 +1931,16 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.NaviGeneration;
                 private protected override bool HasTypeData => true;
 
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
+                public NaviGeneration() : base($"{nameof(Region)}: {nameof(NaviGeneration)}") { }
 
-                public NaviGeneration() : base($"{nameof(Region)}: {nameof(NaviGeneration)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal NaviGeneration(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
+                internal NaviGeneration(BinaryReaderEx br, long _length) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Bytes = br.ReadBytes((int)Length);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteBytes(Bytes);
                 }
             }
 
@@ -2003,27 +1952,16 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.TopdownView;
                 private protected override bool HasTypeData => true;
 
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
+                public TopdownView() : base($"{nameof(Region)}: {nameof(TopdownView)}") { }
 
-                public TopdownView() : base($"{nameof(Region)}: {nameof(TopdownView)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal TopdownView(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
+                internal TopdownView(BinaryReaderEx br, long _length) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Bytes = br.ReadBytes((int)Length);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteBytes(Bytes);
                 }
             }
 
@@ -2211,10 +2149,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Creates an GarageCamera with default values.
                 /// </summary>
-                public GarageCamera() : base($"{nameof(Region)}: {nameof(GarageCamera)}") 
-                {
-                    UnkT00 = -1f;
-                }
+                public GarageCamera() : base($"{nameof(Region)}: {nameof(GarageCamera)}") { }
 
                 internal GarageCamera(BinaryReaderEx br) : base(br) { }
 
@@ -2241,27 +2176,16 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.JumpEdgeRestriction;
                 private protected override bool HasTypeData => true;
 
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
+                public JumpEdgeRestriction() : base($"{nameof(Region)}: {nameof(JumpEdgeRestriction)}") { }
 
-                public JumpEdgeRestriction() : base($"{nameof(Region)}: {nameof(JumpEdgeRestriction)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal JumpEdgeRestriction(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
+                internal JumpEdgeRestriction(BinaryReaderEx br, long _length) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Bytes = br.ReadBytes((int)Length);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteBytes(Bytes);
                 }
             }
 
