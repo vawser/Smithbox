@@ -106,6 +106,3 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #--------------------------------------
-
-Add byte-to-byte comparison to AC6 MSB test (run one specific map at a time), this will allow for 100% byte-perfectness
- - Might reveal reason for light bug

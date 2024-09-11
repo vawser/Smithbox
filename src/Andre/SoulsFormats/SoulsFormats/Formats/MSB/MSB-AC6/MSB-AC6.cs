@@ -9,8 +9,15 @@ namespace SoulsFormats
     /// </summary>
     public partial class MSB_AC6 : SoulsFile<MSB_AC6>, IMsb
     {
+        /// <summary>
+        /// This toggles the name disambiguation that Smithbox uses. 
+        /// Disabled when conducting byte-perfect test since Names are mostly empty in raw MSB, and saving automatically adds Names if this is enabled.
+        /// </summary>
         public static bool EnableDisambiguation = true;
 
+        /// <summary>
+        /// Holds the current header version so it can be checked against.
+        /// </summary>
         public static int CurrentVersion = -1;
 
         /// <summary>
