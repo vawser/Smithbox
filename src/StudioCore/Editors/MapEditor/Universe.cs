@@ -1174,7 +1174,7 @@ public class Universe
 
         if (Smithbox.ProjectType == ProjectType.AC6)
         {
-            return DCX.Type.DCX_DFLT_10000_44_9;
+            return DCX.Type.DCX_KRAK_MAX;
         }
         else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {

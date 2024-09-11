@@ -2,6 +2,7 @@
 using System;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using HKLib.hk2018.hkReflect;
 
 namespace StudioCore.Banks.FormatBank;
 
@@ -82,6 +83,9 @@ public class FormatBank
     {
         var name = "";
 
+        if (Information == null)
+            return name;
+
         if (Information.list == null)
             return name;
 
@@ -101,6 +105,9 @@ public class FormatBank
     {
         var desc = "";
 
+        if (Information == null)
+            return desc;
+
         if (Information.list == null)
             return desc;
 
@@ -118,6 +125,9 @@ public class FormatBank
 
     public string GetReferenceName(string classKey, string name, string sharedTypeName = "")
     {
+        if (Information == null)
+            return name;
+
         if (Information.list == null)
             return name;
 
@@ -143,6 +153,9 @@ public class FormatBank
     public string GetReferenceDescription(string classKey, string key, string sharedTypeName = "")
     {
         var desc = "";
+
+        if (Information == null)
+            return desc;
 
         if (Information.list == null)
             return desc;
@@ -170,6 +183,9 @@ public class FormatBank
     {
         string typeName = "";
 
+        if (Information == null)
+            return typeName;
+
         foreach (var entry in Information.list)
         {
             foreach (var subentry in entry.members)
@@ -189,7 +205,10 @@ public class FormatBank
         FormatEnumEntry formatEnum = null;
         string enumName = "";
 
-        foreach(var entry in Information.list)
+        if (Information == null)
+            return formatEnum;
+
+        foreach (var entry in Information.list)
         {
             foreach(var subentry in entry.members)
             {
@@ -243,6 +262,9 @@ public class FormatBank
 
     public bool IsSpecifiedProperty(string key, string attribute)
     {
+        if (Information == null)
+            return false;
+
         if (Information.list == null)
             return false;
 

@@ -89,6 +89,9 @@ public static class PropFinderUtil
     /// <returns>PropertyInfo if found, otherwise null.</returns>
     public static PropertyInfo? FindProperty(string prop, object obj, int classIndex = -1)
     {
+        if(obj == null) 
+            return null;
+
         var proppy = obj.GetType().GetProperty(prop, BindingFlags.IgnoreCase | BindingFlags.Instance | BindingFlags.Public);
         if (proppy != null)
             return proppy;

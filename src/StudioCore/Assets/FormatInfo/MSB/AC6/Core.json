@@ -411,7 +411,7 @@
                     "attributes": ""
                 },
                 {
-                    "id": "SceneGparamConfig-GparamSubID_Override1",
+                    "id": "GparamSubID_Override1",
                     "name": "Graphics Param Override: [2]",
                     "description": "Value of the hundredths place of a Gparam to override [1] with.",
                     "attributes": ""
@@ -433,6 +433,12 @@
                     "name": "Map ID",
                     "description": "The four ID parts of the map that this map object belongs to. Used in overworld map tiles to link the map object to a specific overworld tile. Order is reverse of map ID string.",
                     "attributes": ""
+                },
+                {
+                    "id": "Struct58_ActionButtonParamID",
+                    "name": "Action Button ID",
+                    "description": "An ID in ActionButtonParam. Used for interaction prompts.",
+                    "attributes": ""
                 }
             ]
         },
@@ -442,6 +448,12 @@
             "description": "",
             "attributes": "",
             "members": [
+                {
+                    "id": "Enemy_ActionButtonParamID",
+                    "name": "Action Button ID",
+                    "description": "An ID in ActionButtonParam. Used for interaction prompts.",
+                    "attributes": ""
+                },
                 {
                     "id": "ThinkParamID",
                     "name": "Think Param ID",
