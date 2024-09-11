@@ -896,7 +896,7 @@ namespace SoulsFormats
                 {
                     base.GetIndices(msb, entries);
 
-                    PointIndexT04 = (short)MSB.FindIndex(this, entries.Parts, PointNameT04);
+                    PointIndexT04 = (short)MSB.FindIndex(this, entries.Regions, PointNameT04);
                     PartIndexT08 = (short)MSB.FindIndex(this, entries.Parts, PartNameT08);
 
                     PartIndicesT0C = new short[PartNamesT0C.Length];
