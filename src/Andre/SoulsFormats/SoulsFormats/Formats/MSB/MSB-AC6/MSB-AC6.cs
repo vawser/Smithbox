@@ -97,10 +97,11 @@ namespace SoulsFormats
             // do not contain names for non-Part entries.
             // This fixes an issue where the Reference Map wouldn't find the right
             // map object since Event and Region would share the same disambugated name (e.g. {1}).
-            MSB.DisambiguateNames(entries.Models, "Model");
-            MSB.DisambiguateNames(entries.Events, "Event");
-            MSB.DisambiguateNames(entries.Regions, "Region");
-            MSB.DisambiguateNames(entries.Parts, "Part");
+
+            //MSB.DisambiguateNames(entries.Models, "Model");
+            //MSB.DisambiguateNames(entries.Events, "Event");
+            //MSB.DisambiguateNames(entries.Regions, "Region");
+            //MSB.DisambiguateNames(entries.Parts, "Part");
 
             foreach (Event evt in entries.Events)
                 evt.GetNames(this, entries);

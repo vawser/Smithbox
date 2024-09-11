@@ -5,13 +5,13 @@
 //   Authors: TKGP
 //   Version: 
 //   Purpose: 
-//  Category: Coremats
+//  Category: MSB_AC6
 // File Mask: *.msb
 //  ID Bytes: 4D 53 42 20 01 00 00 00 10 00 00 00 00 00 01 FF
 //   History: 
 //------------------------------------------------
 
-#include "../Common.bt"
+#include "Common.bt"
 #include "Model.bt"
 #include "Event.bt"
 #include "Point.bt"

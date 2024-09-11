@@ -1396,8 +1396,7 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     public bool IsRegionConnection()
     {
-        return WrappedObject is MSBE.Region.Connection ||
-            WrappedObject is MSB_AC6.Region.Connection ? true : false;
+        return WrappedObject is MSBE.Region.Connection ? true : false;
     }
 
     /// <summary>

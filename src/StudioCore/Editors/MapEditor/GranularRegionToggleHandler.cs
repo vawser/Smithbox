@@ -191,7 +191,6 @@ public class GranularRegionToggleHandler
     {
         DisplayCommonToggles();
 
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.None), "None", 0);
         DisplayIndividualToggle(typeof(MSB_AC6.Region.EntryPoint), "Entry Point", 1);
         DisplayIndividualToggle(typeof(MSB_AC6.Region.EnvMapPoint), "Environment Map Point", 2);
         DisplayIndividualToggle(typeof(MSB_AC6.Region.Sound), "Sound", 3);
@@ -211,7 +210,6 @@ public class GranularRegionToggleHandler
         DisplayIndividualToggle(typeof(MSB_AC6.Region.NaviGeneration), "Navi Generation", 17);
         DisplayIndividualToggle(typeof(MSB_AC6.Region.TopdownView), "Topdown View", 18);
         DisplayIndividualToggle(typeof(MSB_AC6.Region.CharacterFollowing), "Character Following", 19);
-        DisplayIndividualToggle(typeof(MSB_AC6.Region.NaviCvCancel), "Navi Cv Cancel", 20);
         DisplayIndividualToggle(typeof(MSB_AC6.Region.NavmeshCostControl), "Navmesh Cost Control", 21);
         DisplayIndividualToggle(typeof(MSB_AC6.Region.ArenaAppearance), "Arena Appearance", 22);
         DisplayIndividualToggle(typeof(MSB_AC6.Region.GarageCamera), "Garage Camera", 23);

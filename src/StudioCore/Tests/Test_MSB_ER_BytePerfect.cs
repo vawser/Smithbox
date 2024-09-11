@@ -7,7 +7,7 @@ using System.IO;
 
 namespace StudioCore.Tests;
 
-public static class MSBReadWrite
+public static class Test_MSB_ER_BytePerfect
 {
     public static bool Run()
     {

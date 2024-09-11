@@ -13,6 +13,7 @@ using System.Numerics;
 using System.Threading.Tasks;
 using static StudioCore.Configuration.Settings.SettingsWindow;
 using System;
+using static SoulsFormats.MSB_AC6;
 
 namespace StudioCore.Tools.Development;
 
@@ -353,7 +354,7 @@ public class DebugWindow
 
         if (ImGui.Button("MSBE read/write test", buttonSize))
         {
-            MSBReadWrite.Run();
+            Test_MSB_ER_BytePerfect.Run();
         }
     }
 
@@ -363,7 +364,17 @@ public class DebugWindow
 
         if (ImGui.Button("MSB_AC6 Read/Write Test", buttonSize))
         {
-            MSB_AC6_Read_Write.Run();
+            Test_MSB_AC6_BytePerfect.Run();
+        }
+
+        if (Test_MSB_AC6_BytePerfect.mismatches.Count > 0)
+        {
+            ImGui.Text("Mismatches:");
+
+            foreach (var entry in Test_MSB_AC6_BytePerfect.mismatches)
+            {
+                ImGui.Text($" {entry.MSB} - {entry.OriginalBytes} - {entry.WrittenBytes}");
+            }
         }
     }
     private void DisplayTest_BTL()
@@ -372,7 +383,7 @@ public class DebugWindow
 
         if (ImGui.Button("BTL read/write test", buttonSize))
         {
-            BTLReadWrite.Run();
+            Test_BTL_BytePerfect.Run();
         }
     }
 

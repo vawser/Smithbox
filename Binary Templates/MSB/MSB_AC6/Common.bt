@@ -1,0 +1,84 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: Common.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: Common types and functions for Coremats templates.
+//  Category: MSB_AC6
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#ifndef COREMATS_COMMON_H
+#define COREMATS_COMMON_H
+
+int IsBool(int value) {
+    return value == 0 || value == 1;
+}
+
+
+typedef struct {
+    float x;
+    float y;
+} Vector2 <read=ReadVector2>;
+
+string ReadVector2(Vector2 &v) {
+    return Str("<%f, %f>", v.x, v.y);
+}
+
+
+typedef struct {
+    float x;
+    float y;
+    float z;
+} Vector3 <read=ReadVector3>;
+
+string ReadVector3(Vector3 &v) {
+    return Str("<%f, %f, %f>", v.x, v.y, v.z);
+}
+
+
+typedef struct {
+    float x;
+    float y;
+    float z;
+    float w;
+} Vector4 <read=ReadVector4>;
+
+string ReadVector4(Vector4 &v) {
+    return Str("<%f, %f, %f, %f>", v.x, v.y, v.z, v.w);
+}
+
+
+typedef struct {
+    ubyte r;
+    ubyte g;
+    ubyte b;
+    ubyte a;    
+} RGBA <read=ReadRGBA>;
+    
+string ReadRGBA(RGBA &color) {
+    string str;
+    return SPrintf(str, "#%02X%02X%02X%02X", color.r, color.g, color.b, color.a);
+}
+
+
+typedef struct {
+    quad year : 12;
+    quad milliseconds : 10;
+    quad month : 4;
+    quad dayOfWeek : 3;
+    quad day : 5;
+    quad hour : 5;
+    quad minute : 6;
+    quad second : 6;
+} PackedSystemTime <read=ReadPackedSystemTime>;
+
+string ReadPackedSystemTime(PackedSystemTime &time) {
+    return Str("%04d-%02d-%02d %02d:%02d:%02d",
+        time.year, time.month, time.day, time.hour, time.minute, time.second);
+}
+
+#endif // COREMATS_COMMON_H

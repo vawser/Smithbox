@@ -1,14 +1,6 @@
-﻿using Org.BouncyCastle.Asn1.X509;
-using Org.BouncyCastle.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using static SoulsFormats.MSBE.Region.HorseRideOverride;
 
 namespace SoulsFormats
 {
@@ -16,55 +8,25 @@ namespace SoulsFormats
     {
         public enum RegionType : int
         {
-            None = 0,
             EntryPoint = 1,
             EnvMapPoint = 2,
-            Unknown_3 = 3, // NOT IMPLEMENTED
             Sound = 4,
             SFX = 5,
             WindSFX = 6,
-            Unknown_7 = 7, // NOT IMPLEMENTED
-            ReturnPoint = 8, // NOT IMPLEMENTED
-            Message = 9, // NOT IMPLEMENTED
-            Unknown_10 = 10, // NOT IMPLEMENTED
-            Unknown_11 = 11, // NOT IMPLEMENTED
-            Unknown_12 = 12, // NOT IMPLEMENTED
-            FallReturnPoint = 13, // NOT IMPLEMENTED
-            Unknown_14 = 14, // NOT IMPLEMENTED
-            Unknown_15 = 15, // NOT IMPLEMENTED
-            Unknown_16 = 16, // NOT IMPLEMENTED
             EnvMapEffectBox = 17,
             WindPlacement = 18,
-            Unknown_19 = 19, // NOT IMPLEMENTED
-            Unknown_20 = 20, // NOT IMPLEMENTED
-            Connection = 21, // NOT IMPLEMENTED
-            SourceWaypoint = 22, // NOT IMPLEMENTED
-            StaticWaypoint = 23, // NOT IMPLEMENTED
-            MapGridLayerConnection = 24, // NOT IMPLEMENTED
-            EnemySpawnPoint = 25, // NOT IMPLEMENTED
-            BuddySummonPoint = 26, // NOT IMPLEMENTED
-            RollingAssetGeneration = 27, // NOT IMPLEMENTED
             MufflingBox = 28,
             MufflingPortal = 29,
             SoundOverride = 30,
-            MufflingPlane = 31, // NOT IMPLEMENTED
             Patrol = 32,
             FeMapDisplay = 33,
-            ElectroMagneticStorm = 34, // NOT IMPLEMENTED
             OperationalArea = 35,
             AiInformationSharing = 36,
             AiTarget = 37,
-            WaveSimulation = 38, // NOT IMPLEMENTED
             WwiseEnvironmentSound = 39,
-            Cover = 40, // NOT IMPLEMENTED
-            MissionPlacement = 41, // NOT IMPLEMENTED
-            NaviVolumeResolution = 42, // NOT IMPLEMENTED
-            MiniArea = 43, // NOT IMPLEMENTED
-            ConnectionBorder = 44, // NOT IMPLEMENTED
             NaviGeneration = 45,
             TopdownView = 46,
             CharacterFollowing = 47,
-            NaviCvCancel = 48, // NOT IMPLEMENTED
             NavmeshCostControl = 49,
             ArenaControl = 50,
             ArenaAppearance = 51,
@@ -114,6 +76,11 @@ namespace SoulsFormats
             public List<Region.EnvMapEffectBox> EnvMapEffectBoxes { get; set; }
 
             /// <summary>
+            /// Unknown.
+            /// </summary>
+            public List<Region.WindPlacement> WindPlacements { get; set; }
+
+            /// <summary>
             /// Areas where sound is muffled.
             /// </summary>
             public List<Region.MufflingBox> MufflingBoxes { get; set; }
@@ -143,6 +110,10 @@ namespace SoulsFormats
             /// </summary>
             public List<Region.OperationalArea> OperationalAreas { get; set; }
 
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public List<Region.AiInformationSharing> AiInformationSharings { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -153,6 +124,16 @@ namespace SoulsFormats
             /// Unknown.
             /// </summary>
             public List<Region.WwiseEnvironmentSound> WwiseEnvironmentSounds { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public List<Region.NaviGeneration> NaviGenerations { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public List<Region.TopdownView> TopdownViews { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -182,6 +163,11 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
+            public List<Region.JumpEdgeRestriction> JumpEdgeRestrictions { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
             public List<Region.CutscenePlayback> CutscenePlaybacks { get; set; }
 
             /// <summary>
@@ -200,247 +186,40 @@ namespace SoulsFormats
             public List<Region.Other> Others { get; set; }
 
             /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.None> Nones { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Unknown_3> Unknown_3s { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Unknown_7> Unknown_7s { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.ReturnPoint> ReturnPoints { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Message> Messages { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Unknown_10> Unknown_10s { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Unknown_11> Unknown_11s { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Unknown_12> Unknown_12s { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.FallReturnPoint> FallReturnPoints { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Unknown_14> Unknown_14s { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Unknown_15> Unknown_15s { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Unknown_16> Unknown_16s { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.WindPlacement> WindPlacements { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Unknown_19> Unknown_19s { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Unknown_20> Unknown_20s { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Connection> Connections { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.SourceWaypoint> SourceWaypoints { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.StaticWaypoint> StaticWaypoints { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.MapGridLayerConnection> MapGridLayerConnections { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.EnemySpawnPoint> EnemySpawnPoints { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.BuddySummonPoint> BuddySummonPoints { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.RollingAssetGeneration> RollingAssetGenerations { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.MufflingPlane> MufflingPlanes { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.ElectroMagneticStorm> ElectroMagneticStorms { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.AiInformationSharing> AiInformationSharings { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.WaveSimulation> WaveSimulations { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.Cover> Covers { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.MissionPlacement> MissionPlacements { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.NaviVolumeResolution> NaviVolumeResolutions { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.MiniArea> MiniAreas { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.ConnectionBorder> ConnectionBorders { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.NaviGeneration> NaviGenerations { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.TopdownView> TopdownViews { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.NaviCvCancel> NaviCvCancels { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Region.JumpEdgeRestriction> JumpEdgeRestrictions { get; set; }
-
-            /// <summary>
             /// Creates an empty PointParam with the default version.
             /// </summary>
             public PointParam() : base(52, "POINT_PARAM_ST")
             {
                 ParamVersion = base.Version;
 
-                EntryPoints = new List<Region.EntryPoint>();
-                EnvMapPoints = new List<Region.EnvMapPoint>();
-                Sounds = new List<Region.Sound>();
-                SFX = new List<Region.SFX>();
-                WindSFX = new List<Region.WindSFX>();
-                EnvMapEffectBoxes = new List<Region.EnvMapEffectBox>();
-                MufflingBoxes = new List<Region.MufflingBox>();
-                MufflingPortals = new List<Region.MufflingPortal>();
-                SoundOverrides = new List<Region.SoundOverride>();
-                Patrols = new List<Region.Patrol>();
-                FeMapDisplays = new List<Region.FeMapDisplay>();
-                OperationalAreas = new List<Region.OperationalArea>();
-                AiTargets = new List<Region.AiTarget>();
-                WwiseEnvironmentSounds = new List<Region.WwiseEnvironmentSound>();
-                CharacterFollowings = new List<Region.CharacterFollowing>();
-                NavmeshCostControls = new List<Region.NavmeshCostControl>();
-                ArenaControls = new List<Region.ArenaControl>();
-                ArenaAppearances = new List<Region.ArenaAppearance>();
-                GarageCameras = new List<Region.GarageCamera>();
-                CutscenePlaybacks = new List<Region.CutscenePlayback>();
-                FallPreventionWallRemovals = new List<Region.FallPreventionWallRemoval>();
-                BigJumps = new List<Region.BigJump>();
-
-                Unknown_3s = new List<Region.Unknown_3>();
-                Unknown_7s = new List<Region.Unknown_7>();
-                ReturnPoints = new List<Region.ReturnPoint>();
-                Messages = new List<Region.Message>();
-                Unknown_10s = new List<Region.Unknown_10>();
-                Unknown_11s = new List<Region.Unknown_11>();
-                Unknown_12s = new List<Region.Unknown_12>();
-                FallReturnPoints = new List<Region.FallReturnPoint>();
-                Unknown_14s = new List<Region.Unknown_14>();
-                Unknown_15s = new List<Region.Unknown_15>();
-                Unknown_16s = new List<Region.Unknown_16>();
-                WindPlacements = new List<Region.WindPlacement>();
-                Unknown_19s = new List<Region.Unknown_19>();
-                Unknown_20s = new List<Region.Unknown_20>();
-                Connections = new List<Region.Connection>();
-                SourceWaypoints = new List<Region.SourceWaypoint>();
-                StaticWaypoints = new List<Region.StaticWaypoint>();
-                MapGridLayerConnections = new List<Region.MapGridLayerConnection>();
-                EnemySpawnPoints = new List<Region.EnemySpawnPoint>();
-                BuddySummonPoints = new List<Region.BuddySummonPoint>();
-                RollingAssetGenerations = new List<Region.RollingAssetGeneration>();
-                MufflingPlanes = new List<Region.MufflingPlane>();
-                ElectroMagneticStorms = new List<Region.ElectroMagneticStorm>();
-                AiInformationSharings = new List<Region.AiInformationSharing>();
-                WaveSimulations = new List<Region.WaveSimulation>();
-                Covers = new List<Region.Cover>();
-                MissionPlacements = new List<Region.MissionPlacement>();
-                NaviVolumeResolutions = new List<Region.NaviVolumeResolution>();
-                MiniAreas = new List<Region.MiniArea>();
-                ConnectionBorders = new List<Region.ConnectionBorder>();
-                NaviGenerations = new List<Region.NaviGeneration>();
-                TopdownViews = new List<Region.TopdownView>();
-                NaviCvCancels = new List<Region.NaviCvCancel>();
-                JumpEdgeRestrictions = new List<Region.JumpEdgeRestriction>();
-
-                Others = new List<Region.Other>();
-                Nones = new List<Region.None>();
+                EntryPoints = new List<Region.EntryPoint>(); // 1
+                EnvMapPoints = new List<Region.EnvMapPoint>(); // 2
+                Sounds = new List<Region.Sound>(); // 4
+                SFX = new List<Region.SFX>(); // 5
+                WindSFX = new List<Region.WindSFX>(); // 6
+                EnvMapEffectBoxes = new List<Region.EnvMapEffectBox>(); // 17
+                WindPlacements = new List<Region.WindPlacement>(); // 18
+                MufflingBoxes = new List<Region.MufflingBox>(); // 28
+                MufflingPortals = new List<Region.MufflingPortal>(); // 29
+                SoundOverrides = new List<Region.SoundOverride>(); // 30
+                Patrols = new List<Region.Patrol>(); // 32
+                FeMapDisplays = new List<Region.FeMapDisplay>(); // 33
+                OperationalAreas = new List<Region.OperationalArea>(); // 35
+                AiInformationSharings = new List<Region.AiInformationSharing>(); // 36
+                AiTargets = new List<Region.AiTarget>(); // 37
+                WwiseEnvironmentSounds = new List<Region.WwiseEnvironmentSound>(); // 39
+                NaviGenerations = new List<Region.NaviGeneration>();  // 45
+                TopdownViews = new List<Region.TopdownView>(); // 46
+                CharacterFollowings = new List<Region.CharacterFollowing>(); // 47
+                NavmeshCostControls = new List<Region.NavmeshCostControl>(); // 49
+                ArenaControls = new List<Region.ArenaControl>(); // 50
+                ArenaAppearances = new List<Region.ArenaAppearance>(); // 51
+                GarageCameras = new List<Region.GarageCamera>(); // 52
+                JumpEdgeRestrictions = new List<Region.JumpEdgeRestriction>(); // 53
+                CutscenePlaybacks = new List<Region.CutscenePlayback>(); // 54
+                FallPreventionWallRemovals = new List<Region.FallPreventionWallRemoval>(); // 55
+                BigJumps = new List<Region.BigJump>(); // 56
+                Others = new List<Region.Other>(); // -1
             }
 
             /// <summary>
@@ -450,179 +229,117 @@ namespace SoulsFormats
             {
                 switch (region)
                 {
+                    // 1
                     case Region.EntryPoint r:
                         EntryPoints.Add(r);
                         break;
+                    // 2
                     case Region.EnvMapPoint r:
                         EnvMapPoints.Add(r);
                         break;
+                    // 4
                     case Region.Sound r:
                         Sounds.Add(r);
                         break;
+                    // 5
                     case Region.SFX r:
                         SFX.Add(r);
                         break;
+                    // 6
                     case Region.WindSFX r:
                         WindSFX.Add(r);
                         break;
+                    // 17
                     case Region.EnvMapEffectBox r:
                         EnvMapEffectBoxes.Add(r);
                         break;
-                    case Region.MufflingBox r:
-                        MufflingBoxes.Add(r);
-                        break;
-                    case Region.MufflingPortal r:
-                        MufflingPortals.Add(r);
-                        break;
-                    case Region.SoundOverride r:
-                        SoundOverrides.Add(r);
-                        break;
-                    case Region.Patrol r:
-                        Patrols.Add(r);
-                        break;
-                    case Region.FeMapDisplay r:
-                        FeMapDisplays.Add(r);
-                        break;
-                    case Region.OperationalArea r:
-                        OperationalAreas.Add(r);
-                        break;
-                    case Region.AiTarget r:
-                        AiTargets.Add(r);
-                        break;
-                    case Region.WwiseEnvironmentSound r:
-                        WwiseEnvironmentSounds.Add(r);
-                        break;
-                    case Region.CharacterFollowing r:
-                        CharacterFollowings.Add(r);
-                        break;
-                    case Region.NavmeshCostControl r:
-                        NavmeshCostControls.Add(r);
-                        break;
-                    case Region.ArenaControl r:
-                        ArenaControls.Add(r);
-                        break;
-                    case Region.ArenaAppearance r:
-                        ArenaAppearances.Add(r);
-                        break;
-                    case Region.GarageCamera r:
-                        GarageCameras.Add(r);
-                        break;
-                    case Region.CutscenePlayback r:
-                        CutscenePlaybacks.Add(r);
-                        break;
-                    case Region.FallPreventionWallRemoval r:
-                        FallPreventionWallRemovals.Add(r);
-                        break;
-                    case Region.BigJump r:
-                        BigJumps.Add(r);
-                        break;
-                    case Region.Unknown_3 r:
-                        Unknown_3s.Add(r);
-                        break;
-                    case Region.Unknown_7 r:
-                        Unknown_7s.Add(r);
-                        break;
-                    case Region.ReturnPoint r:
-                        ReturnPoints.Add(r);
-                        break;
-                    case Region.Message r:
-                        Messages.Add(r);
-                        break;
-                    case Region.Unknown_10 r:
-                        Unknown_10s.Add(r);
-                        break;
-                    case Region.Unknown_11 r:
-                        Unknown_11s.Add(r);
-                        break;
-                    case Region.Unknown_12 r:
-                        Unknown_12s.Add(r);
-                        break;
-                    case Region.FallReturnPoint r:
-                        FallReturnPoints.Add(r);
-                        break;
-                    case Region.Unknown_14 r:
-                        Unknown_14s.Add(r);
-                        break;
-                    case Region.Unknown_15 r:
-                        Unknown_15s.Add(r);
-                        break;
-                    case Region.Unknown_16 r:
-                        Unknown_16s.Add(r);
-                        break;
+                    // 18
                     case Region.WindPlacement r:
                         WindPlacements.Add(r);
                         break;
-                    case Region.Unknown_19 r:
-                        Unknown_19s.Add(r);
+                    // 28
+                    case Region.MufflingBox r:
+                        MufflingBoxes.Add(r);
                         break;
-                    case Region.Unknown_20 r:
-                        Unknown_20s.Add(r);
+                    // 29
+                    case Region.MufflingPortal r:
+                        MufflingPortals.Add(r);
                         break;
-                    case Region.Connection r:
-                        Connections.Add(r);
+                    // 30
+                    case Region.SoundOverride r:
+                        SoundOverrides.Add(r);
                         break;
-                    case Region.SourceWaypoint r:
-                        SourceWaypoints.Add(r);
+                    // 32
+                    case Region.Patrol r:
+                        Patrols.Add(r);
                         break;
-                    case Region.StaticWaypoint r:
-                        StaticWaypoints.Add(r);
+                    // 33
+                    case Region.FeMapDisplay r:
+                        FeMapDisplays.Add(r);
                         break;
-                    case Region.MapGridLayerConnection r:
-                        MapGridLayerConnections.Add(r);
+                    // 35
+                    case Region.OperationalArea r:
+                        OperationalAreas.Add(r);
                         break;
-                    case Region.EnemySpawnPoint r:
-                        EnemySpawnPoints.Add(r);
-                        break;
-                    case Region.BuddySummonPoint r:
-                        BuddySummonPoints.Add(r);
-                        break;
-                    case Region.RollingAssetGeneration r:
-                        RollingAssetGenerations.Add(r);
-                        break;
-                    case Region.MufflingPlane r:
-                        MufflingPlanes.Add(r);
-                        break;
-                    case Region.ElectroMagneticStorm r:
-                        ElectroMagneticStorms.Add(r);
-                        break;
+                    // 36
                     case Region.AiInformationSharing r:
                         AiInformationSharings.Add(r);
                         break;
-                    case Region.WaveSimulation r:
-                        WaveSimulations.Add(r);
+                    // 37
+                    case Region.AiTarget r:
+                        AiTargets.Add(r);
                         break;
-                    case Region.Cover r:
-                        Covers.Add(r);
+                    // 39
+                    case Region.WwiseEnvironmentSound r:
+                        WwiseEnvironmentSounds.Add(r);
                         break;
-                    case Region.MissionPlacement r:
-                        MissionPlacements.Add(r);
-                        break;
-                    case Region.NaviVolumeResolution r:
-                        NaviVolumeResolutions.Add(r);
-                        break;
-                    case Region.MiniArea r:
-                        MiniAreas.Add(r);
-                        break;
-                    case Region.ConnectionBorder r:
-                        ConnectionBorders.Add(r);
-                        break;
+                    // 45
                     case Region.NaviGeneration r:
                         NaviGenerations.Add(r);
                         break;
+                    // 46
                     case Region.TopdownView r:
                         TopdownViews.Add(r);
                         break;
-                    case Region.NaviCvCancel r:
-                        NaviCvCancels.Add(r);
+                    // 47
+                    case Region.CharacterFollowing r:
+                        CharacterFollowings.Add(r);
                         break;
+                    // 49
+                    case Region.NavmeshCostControl r:
+                        NavmeshCostControls.Add(r);
+                        break;
+                    // 50
+                    case Region.ArenaControl r:
+                        ArenaControls.Add(r);
+                        break;
+                    // 51
+                    case Region.ArenaAppearance r:
+                        ArenaAppearances.Add(r);
+                        break;
+                    // 52
+                    case Region.GarageCamera r:
+                        GarageCameras.Add(r);
+                        break;
+                    // 53
                     case Region.JumpEdgeRestriction r:
                         JumpEdgeRestrictions.Add(r);
                         break;
+                    // 54
+                    case Region.CutscenePlayback r:
+                        CutscenePlaybacks.Add(r);
+                        break;
+                    // 55
+                    case Region.FallPreventionWallRemoval r:
+                        FallPreventionWallRemovals.Add(r);
+                        break;
+                    // 56
+                    case Region.BigJump r:
+                        BigJumps.Add(r);
+                        break;
+                    // -1
                     case Region.Other r:
                         Others.Add(r);
-                        break;
-                    case Region.None r:
-                        Nones.Add(r);
                         break;
 
                     default:
@@ -638,20 +355,34 @@ namespace SoulsFormats
             public override List<Region> GetEntries()
             {
                 return SFUtil.ConcatAll<Region>(
-                    EntryPoints, EnvMapPoints, Sounds, SFX, WindSFX,
-                    EnvMapEffectBoxes, MufflingBoxes,
-                    MufflingPortals, SoundOverrides, Patrols,
-                    FeMapDisplays, OperationalAreas, AiTargets, WwiseEnvironmentSounds,
-                    CharacterFollowings, NavmeshCostControls, ArenaControls,
-                    ArenaAppearances, GarageCameras, CutscenePlaybacks, FallPreventionWallRemovals, BigJumps,
-
-                    Unknown_3s, Unknown_7s, ReturnPoints, Messages, Unknown_10s, Unknown_11s, Unknown_12s, FallReturnPoints,
-                    Unknown_14s, Unknown_15s, Unknown_16s, WindPlacements, Unknown_19s, Unknown_20s, Connections,
-                    SourceWaypoints, StaticWaypoints, MapGridLayerConnections, EnemySpawnPoints, BuddySummonPoints, RollingAssetGenerations,
-                    MufflingPlanes, ElectroMagneticStorms, AiInformationSharings, WaveSimulations, Covers, MissionPlacements,
-                    NaviVolumeResolutions, MiniAreas, ConnectionBorders, NaviGenerations, TopdownViews, NaviCvCancels, JumpEdgeRestrictions,
-
-                    Others, Nones
+                    EntryPoints, 
+                    EnvMapPoints, 
+                    Sounds, 
+                    SFX, 
+                    WindSFX,
+                    EnvMapEffectBoxes,
+                    WindPlacements,
+                    MufflingBoxes,
+                    MufflingPortals, 
+                    SoundOverrides, 
+                    Patrols,
+                    FeMapDisplays, 
+                    OperationalAreas,
+                    AiInformationSharings,
+                    AiTargets, 
+                    WwiseEnvironmentSounds,
+                    NaviGenerations, 
+                    TopdownViews, 
+                    CharacterFollowings, 
+                    NavmeshCostControls, 
+                    ArenaControls,
+                    ArenaAppearances, 
+                    GarageCameras, 
+                    JumpEdgeRestrictions, 
+                    CutscenePlaybacks, 
+                    FallPreventionWallRemovals, 
+                    BigJumps,
+                    Others
                 );
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
@@ -661,179 +392,117 @@ namespace SoulsFormats
                 RegionType type = br.GetEnum32<RegionType>(br.Position + 8);
                 switch (type)
                 {
+                    // 1
                     case RegionType.EntryPoint:
                         return EntryPoints.EchoAdd(new Region.EntryPoint(br));
 
+                    // 2
                     case RegionType.EnvMapPoint:
                         return EnvMapPoints.EchoAdd(new Region.EnvMapPoint(br, ParamVersion));
 
+                    // 4
                     case RegionType.Sound:
                         return Sounds.EchoAdd(new Region.Sound(br));
 
+                    // 5
                     case RegionType.SFX:
                         return SFX.EchoAdd(new Region.SFX(br));
 
+                    // 6
                     case RegionType.WindSFX:
                         return WindSFX.EchoAdd(new Region.WindSFX(br));
 
+                    // 17
                     case RegionType.EnvMapEffectBox:
                         return EnvMapEffectBoxes.EchoAdd(new Region.EnvMapEffectBox(br));
 
-                    case RegionType.MufflingBox:
-                        return MufflingBoxes.EchoAdd(new Region.MufflingBox(br));
-
-                    case RegionType.MufflingPortal:
-                        return MufflingPortals.EchoAdd(new Region.MufflingPortal(br));
-
-                    case RegionType.SoundOverride:
-                        return SoundOverrides.EchoAdd(new Region.SoundOverride(br));
-
-                    case RegionType.Patrol:
-                        return Patrols.EchoAdd(new Region.Patrol(br));
-
-                    case RegionType.FeMapDisplay:
-                        return FeMapDisplays.EchoAdd(new Region.FeMapDisplay(br));
-
-                    case RegionType.OperationalArea:
-                        return OperationalAreas.EchoAdd(new Region.OperationalArea(br));
-
-                    case RegionType.AiTarget:
-                        return AiTargets.EchoAdd(new Region.AiTarget(br));
-
-                    case RegionType.WwiseEnvironmentSound:
-                        return WwiseEnvironmentSounds.EchoAdd(new Region.WwiseEnvironmentSound(br));
-
-                    case RegionType.CharacterFollowing:
-                        return CharacterFollowings.EchoAdd(new Region.CharacterFollowing(br));
-
-                    case RegionType.NavmeshCostControl:
-                        return NavmeshCostControls.EchoAdd(new Region.NavmeshCostControl(br));
-
-                    case RegionType.ArenaControl:
-                        return ArenaControls.EchoAdd(new Region.ArenaControl(br));
-
-                    case RegionType.ArenaAppearance:
-                        return ArenaAppearances.EchoAdd(new Region.ArenaAppearance(br));
-
-                    case RegionType.GarageCamera:
-                        return GarageCameras.EchoAdd(new Region.GarageCamera(br));
-
-                    case RegionType.CutscenePlayback:
-                        return CutscenePlaybacks.EchoAdd(new Region.CutscenePlayback(br));
-
-                    case RegionType.FallPreventionWallRemoval:
-                        return FallPreventionWallRemovals.EchoAdd(new Region.FallPreventionWallRemoval(br));
-
-                    case RegionType.BigJump:
-                        return BigJumps.EchoAdd(new Region.BigJump(br));
-
-                    case RegionType.Unknown_3:
-                        return Unknown_3s.EchoAdd(new Region.Unknown_3(br, offsetLength));
-
-                    case RegionType.Unknown_7:
-                        return Unknown_7s.EchoAdd(new Region.Unknown_7(br, offsetLength));
-
-                    case RegionType.ReturnPoint:
-                        return ReturnPoints.EchoAdd(new Region.ReturnPoint(br, offsetLength));
-
-                    case RegionType.Message:
-                        return Messages.EchoAdd(new Region.Message(br, offsetLength));
-
-                    case RegionType.Unknown_10:
-                        return Unknown_10s.EchoAdd(new Region.Unknown_10(br, offsetLength));
-
-                    case RegionType.Unknown_11:
-                        return Unknown_11s.EchoAdd(new Region.Unknown_11(br, offsetLength));
-
-                    case RegionType.Unknown_12:
-                        return Unknown_12s.EchoAdd(new Region.Unknown_12(br, offsetLength));
-
-                    case RegionType.FallReturnPoint:
-                        return FallReturnPoints.EchoAdd(new Region.FallReturnPoint(br, offsetLength));
-
-                    case RegionType.Unknown_14:
-                        return Unknown_14s.EchoAdd(new Region.Unknown_14(br, offsetLength));
-
-                    case RegionType.Unknown_15:
-                        return Unknown_15s.EchoAdd(new Region.Unknown_15(br, offsetLength));
-
-                    case RegionType.Unknown_16:
-                        return Unknown_16s.EchoAdd(new Region.Unknown_16(br, offsetLength));
-
+                    // 18
                     case RegionType.WindPlacement:
                         return WindPlacements.EchoAdd(new Region.WindPlacement(br, offsetLength));
 
-                    case RegionType.Unknown_19:
-                        return Unknown_19s.EchoAdd(new Region.Unknown_19(br, offsetLength));
+                    // 28
+                    case RegionType.MufflingBox:
+                        return MufflingBoxes.EchoAdd(new Region.MufflingBox(br));
 
-                    case RegionType.Unknown_20:
-                        return Unknown_20s.EchoAdd(new Region.Unknown_20(br, offsetLength));
+                    // 29
+                    case RegionType.MufflingPortal:
+                        return MufflingPortals.EchoAdd(new Region.MufflingPortal(br));
 
-                    case RegionType.Connection:
-                        return Connections.EchoAdd(new Region.Connection(br, offsetLength));
+                    // 30
+                    case RegionType.SoundOverride:
+                        return SoundOverrides.EchoAdd(new Region.SoundOverride(br));
 
-                    case RegionType.SourceWaypoint:
-                        return SourceWaypoints.EchoAdd(new Region.SourceWaypoint(br, offsetLength));
+                    // 32
+                    case RegionType.Patrol:
+                        return Patrols.EchoAdd(new Region.Patrol(br));
 
-                    case RegionType.StaticWaypoint:
-                        return StaticWaypoints.EchoAdd(new Region.StaticWaypoint(br, offsetLength));
+                    // 33
+                    case RegionType.FeMapDisplay:
+                        return FeMapDisplays.EchoAdd(new Region.FeMapDisplay(br));
 
-                    case RegionType.MapGridLayerConnection:
-                        return MapGridLayerConnections.EchoAdd(new Region.MapGridLayerConnection(br, offsetLength));
+                    // 35
+                    case RegionType.OperationalArea:
+                        return OperationalAreas.EchoAdd(new Region.OperationalArea(br));
 
-                    case RegionType.EnemySpawnPoint:
-                        return EnemySpawnPoints.EchoAdd(new Region.EnemySpawnPoint(br, offsetLength));
-
-                    case RegionType.BuddySummonPoint:
-                        return BuddySummonPoints.EchoAdd(new Region.BuddySummonPoint(br, offsetLength));
-
-                    case RegionType.RollingAssetGeneration:
-                        return RollingAssetGenerations.EchoAdd(new Region.RollingAssetGeneration(br, offsetLength));
-
-                    case RegionType.MufflingPlane:
-                        return MufflingPlanes.EchoAdd(new Region.MufflingPlane(br, offsetLength));
-
-                    case RegionType.ElectroMagneticStorm:
-                        return ElectroMagneticStorms.EchoAdd(new Region.ElectroMagneticStorm(br, offsetLength));
-
+                    // 36
                     case RegionType.AiInformationSharing:
                         return AiInformationSharings.EchoAdd(new Region.AiInformationSharing(br, offsetLength));
 
-                    case RegionType.WaveSimulation:
-                        return WaveSimulations.EchoAdd(new Region.WaveSimulation(br, offsetLength));
+                    // 37
+                    case RegionType.AiTarget:
+                        return AiTargets.EchoAdd(new Region.AiTarget(br));
 
-                    case RegionType.Cover:
-                        return Covers.EchoAdd(new Region.Cover(br, offsetLength));
+                    // 39
+                    case RegionType.WwiseEnvironmentSound:
+                        return WwiseEnvironmentSounds.EchoAdd(new Region.WwiseEnvironmentSound(br));
 
-                    case RegionType.MissionPlacement:
-                        return MissionPlacements.EchoAdd(new Region.MissionPlacement(br, offsetLength));
-
-                    case RegionType.NaviVolumeResolution:
-                        return NaviVolumeResolutions.EchoAdd(new Region.NaviVolumeResolution(br, offsetLength));
-
-                    case RegionType.MiniArea:
-                        return MiniAreas.EchoAdd(new Region.MiniArea(br, offsetLength));
-
-                    case RegionType.ConnectionBorder:
-                        return ConnectionBorders.EchoAdd(new Region.ConnectionBorder(br, offsetLength));
-
+                    // 45
                     case RegionType.NaviGeneration:
                         return NaviGenerations.EchoAdd(new Region.NaviGeneration(br, offsetLength));
 
+                    // 46
                     case RegionType.TopdownView:
                         return TopdownViews.EchoAdd(new Region.TopdownView(br, offsetLength));
 
-                    case RegionType.NaviCvCancel:
-                        return NaviCvCancels.EchoAdd(new Region.NaviCvCancel(br, offsetLength));
+                    // 47
+                    case RegionType.CharacterFollowing:
+                        return CharacterFollowings.EchoAdd(new Region.CharacterFollowing(br));
 
+                    // 49
+                    case RegionType.NavmeshCostControl:
+                        return NavmeshCostControls.EchoAdd(new Region.NavmeshCostControl(br));
+
+                    // 50
+                    case RegionType.ArenaControl:
+                        return ArenaControls.EchoAdd(new Region.ArenaControl(br));
+
+                    // 51
+                    case RegionType.ArenaAppearance:
+                        return ArenaAppearances.EchoAdd(new Region.ArenaAppearance(br));
+
+                    // 52
+                    case RegionType.GarageCamera:
+                        return GarageCameras.EchoAdd(new Region.GarageCamera(br));
+
+                    // 53
                     case RegionType.JumpEdgeRestriction:
                         return JumpEdgeRestrictions.EchoAdd(new Region.JumpEdgeRestriction(br, offsetLength));
 
+                    // 54
+                    case RegionType.CutscenePlayback:
+                        return CutscenePlaybacks.EchoAdd(new Region.CutscenePlayback(br));
+
+                    // 55
+                    case RegionType.FallPreventionWallRemoval:
+                        return FallPreventionWallRemovals.EchoAdd(new Region.FallPreventionWallRemoval(br));
+
+                    // 56
+                    case RegionType.BigJump:
+                        return BigJumps.EchoAdd(new Region.BigJump(br));
+
+                    // -1
                     case RegionType.Other:
                         return Others.EchoAdd(new Region.Other(br, offsetLength));
-
-                    case RegionType.None:
-                        return Nones.EchoAdd(new Region.None(br, offsetLength));
 
                     default:
                         throw new NotImplementedException($"Unimplemented region type: {type}");
@@ -1060,8 +729,15 @@ namespace SoulsFormats
 
                 if(Type == RegionType.Other)
                 {
-                    long otherSize = Struct98Offset - TypeOffset;
-                    otherStuff = br.ReadBytes((int)otherSize);
+                    OtherTypeData = null;
+
+                    if (TypeOffset > 0)
+                    {
+                        long otherSize = Struct98Offset - TypeOffset;
+
+                        if (otherSize > 0)
+                            OtherTypeData = br.ReadBytes((int)otherSize);
+                    }
                 }
 
                 // Struct98 Offset
@@ -1071,7 +747,7 @@ namespace SoulsFormats
                 br.AssertInt32(-1);
             }
 
-            private byte[] otherStuff;
+            private byte[] OtherTypeData;
 
             private protected virtual void ReadTypeData(BinaryReaderEx br)
                 => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadTypeData)}.");
@@ -1154,12 +830,15 @@ namespace SoulsFormats
                     bw.FillInt64("TypeOffset", 0L);
                 }
 
-                if (Type == RegionType.Other)
+                if(Type == RegionType.Other)
                 {
-                    bw.WriteBytes(otherStuff);
+                    if(OtherTypeData != null)
+                    {
+                        bw.WriteBytes(OtherTypeData);
+                    }
                 }
 
-                if (Type <= RegionType.MufflingBox && Type != RegionType.Other)
+                if (HasTypeDataPadding())
                 {
                     bw.Pad(8);
                 }
@@ -1168,6 +847,114 @@ namespace SoulsFormats
                 bw.WriteInt32(-1);
                 bw.WriteInt32(0);
                 bw.WriteInt32(-1);
+
+                if (HasStruct98Padding())
+                {
+                    bw.WriteInt32(0);
+                }
+            }
+
+            private bool HasTypeDataPadding()
+            {
+                switch (Type)
+                {
+                    case RegionType.EntryPoint:
+                    case RegionType.EnvMapPoint:
+                    case RegionType.Sound:
+                    case RegionType.SFX:
+                    case RegionType.WindSFX:
+                    case RegionType.EnvMapEffectBox:
+                    case RegionType.WindPlacement:
+                    case RegionType.MufflingBox:
+                    case RegionType.MufflingPortal:
+                    case RegionType.SoundOverride:
+                    case RegionType.Patrol:
+                    case RegionType.FeMapDisplay:
+                        return true;
+
+                    case RegionType.OperationalArea:
+                        return false;
+
+                    case RegionType.AiInformationSharing:
+                    case RegionType.AiTarget:
+                        return true;
+
+                    case RegionType.WwiseEnvironmentSound:
+                        return false;
+
+                    case RegionType.NaviGeneration:
+                    case RegionType.TopdownView:
+                    case RegionType.CharacterFollowing:
+                        return true;
+
+                    case RegionType.NavmeshCostControl:
+                    case RegionType.ArenaControl:
+                    case RegionType.ArenaAppearance:
+                        return false;
+
+                    case RegionType.GarageCamera:
+                    case RegionType.JumpEdgeRestriction:
+                    case RegionType.CutscenePlayback:
+                    case RegionType.FallPreventionWallRemoval:
+                    case RegionType.BigJump:
+                    case RegionType.Other:
+                        return true;
+
+                    default:
+                        return false;
+                }
+            }
+
+            // Which types have 4 bytes of padding at the end
+            private bool HasStruct98Padding()
+            {
+                switch(Type)
+                {
+                    case RegionType.EntryPoint:
+                    case RegionType.EnvMapPoint:
+                    case RegionType.Sound:
+                    case RegionType.SFX:
+                    case RegionType.WindSFX:
+                    case RegionType.EnvMapEffectBox:
+                    case RegionType.WindPlacement:
+                    case RegionType.MufflingBox:
+                    case RegionType.MufflingPortal:
+                    case RegionType.SoundOverride:
+                    case RegionType.Patrol:
+                    case RegionType.FeMapDisplay:
+                        return true;
+
+                    case RegionType.OperationalArea:
+                        return false;
+
+                    case RegionType.AiInformationSharing:
+                    case RegionType.AiTarget:
+                        return true;
+
+                    case RegionType.WwiseEnvironmentSound:
+                        return false;
+
+                    case RegionType.NaviGeneration:
+                    case RegionType.TopdownView:
+                    case RegionType.CharacterFollowing:
+                        return true;
+
+                    case RegionType.NavmeshCostControl:
+                    case RegionType.ArenaControl:
+                    case RegionType.ArenaAppearance:
+                        return false;
+
+                    case RegionType.GarageCamera:
+                    case RegionType.JumpEdgeRestriction:
+                    case RegionType.CutscenePlayback:
+                    case RegionType.FallPreventionWallRemoval:
+                    case RegionType.BigJump:
+                    case RegionType.Other:
+                        return true;
+
+                    default: 
+                        return false;
+                }
             }
 
             private protected virtual void WriteTypeData(BinaryWriterEx bw)
@@ -1185,6 +972,11 @@ namespace SoulsFormats
                 ActivationPartIndex = MSB.FindIndex(this, entries.Parts, ActivationPartName);
                 if (Shape is MSB.Shape.Composite composite)
                     composite.GetIndices(entries.Regions);
+            }
+
+            public RegionType GetRegionType()
+            {
+                return Type;
             }
 
             /// <summary>
@@ -1647,6 +1439,38 @@ namespace SoulsFormats
             }
 
             /// <summary>
+            /// Unknown.
+            /// </summary>
+            public class WindPlacement : Region
+            {
+                private protected override RegionType Type => RegionType.WindPlacement;
+                private protected override bool HasTypeData => true;
+
+                private long Length { get; set; }
+                private byte[] Bytes { get; set; }
+
+                public WindPlacement() : base($"{nameof(Region)}: {nameof(WindPlacement)}")
+                {
+                    Bytes = Array.Empty<byte>();
+                }
+
+                internal WindPlacement(BinaryReaderEx br, long _length) : base(br)
+                {
+                    Length = _length;
+                }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    Bytes = br.ReadBytes((int)Length);
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteBytes(Bytes);
+                }
+            }
+
+            /// <summary>
             /// An area where sound is muffled.
             /// </summary>
             public class MufflingBox : Region
@@ -2023,6 +1847,38 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
+            public class AiInformationSharing : Region
+            {
+                private protected override RegionType Type => RegionType.AiInformationSharing;
+                private protected override bool HasTypeData => true;
+
+                private byte[] Bytes { get; set; }
+
+                private long Length { get; set; }
+                public AiInformationSharing() : base($"{nameof(Region)}: {nameof(AiInformationSharing)}")
+                {
+                    Bytes = Array.Empty<byte>();
+                }
+
+                internal AiInformationSharing(BinaryReaderEx br, long _length) : base(br)
+                {
+                    Length = _length;
+                }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    Bytes = br.ReadBytes((int)Length);
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteBytes(Bytes);
+                }
+            }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
             public class AiTarget : Region
             {
                 private protected override RegionType Type => RegionType.AiTarget;
@@ -2104,6 +1960,70 @@ namespace SoulsFormats
                     bw.WriteByte(UnkT00);
                     bw.WriteByte(UnkT01);
                     bw.WriteInt16((short)0);
+                }
+            }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public class NaviGeneration : Region
+            {
+                private protected override RegionType Type => RegionType.NaviGeneration;
+                private protected override bool HasTypeData => true;
+
+                private long Length { get; set; }
+                private byte[] Bytes { get; set; }
+
+                public NaviGeneration() : base($"{nameof(Region)}: {nameof(NaviGeneration)}")
+                {
+                    Bytes = Array.Empty<byte>();
+                }
+
+                internal NaviGeneration(BinaryReaderEx br, long _length) : base(br)
+                {
+                    Length = _length;
+                }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    Bytes = br.ReadBytes((int)Length);
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteBytes(Bytes);
+                }
+            }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public class TopdownView : Region
+            {
+                private protected override RegionType Type => RegionType.TopdownView;
+                private protected override bool HasTypeData => true;
+
+                private long Length { get; set; }
+                private byte[] Bytes { get; set; }
+
+                public TopdownView() : base($"{nameof(Region)}: {nameof(TopdownView)}")
+                {
+                    Bytes = Array.Empty<byte>();
+                }
+
+                internal TopdownView(BinaryReaderEx br, long _length) : base(br)
+                {
+                    Length = _length;
+                }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    Bytes = br.ReadBytes((int)Length);
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteBytes(Bytes);
                 }
             }
 
@@ -2316,6 +2236,38 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
+            public class JumpEdgeRestriction : Region
+            {
+                private protected override RegionType Type => RegionType.JumpEdgeRestriction;
+                private protected override bool HasTypeData => true;
+
+                private long Length { get; set; }
+                private byte[] Bytes { get; set; }
+
+                public JumpEdgeRestriction() : base($"{nameof(Region)}: {nameof(JumpEdgeRestriction)}")
+                {
+                    Bytes = Array.Empty<byte>();
+                }
+
+                internal JumpEdgeRestriction(BinaryReaderEx br, long _length) : base(br)
+                {
+                    Length = _length;
+                }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    Bytes = br.ReadBytes((int)Length);
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteBytes(Bytes);
+                }
+            }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
             public class CutscenePlayback : Region
             {
                 private protected override RegionType Type => RegionType.CutscenePlayback;
@@ -2409,1092 +2361,6 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Unknown_3 : Region
-            {
-                private protected override RegionType Type => RegionType.Unknown_3;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Unknown_3() : base($"{nameof(Region)}: {nameof(Unknown_3)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Unknown_3(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Unknown_7 : Region
-            {
-                private protected override RegionType Type => RegionType.Unknown_7;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Unknown_7() : base($"{nameof(Region)}: {nameof(Unknown_7)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Unknown_7(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class ReturnPoint : Region
-            {
-                private protected override RegionType Type => RegionType.ReturnPoint;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public ReturnPoint() : base($"{nameof(Region)}: {nameof(ReturnPoint)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal ReturnPoint(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Message : Region
-            {
-                private protected override RegionType Type => RegionType.Message;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Message() : base($"{nameof(Region)}: {nameof(Message)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Message(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Unknown_10 : Region
-            {
-                private protected override RegionType Type => RegionType.Unknown_10;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Unknown_10() : base($"{nameof(Region)}: {nameof(Unknown_10)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Unknown_10(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Unknown_11 : Region
-            {
-                private protected override RegionType Type => RegionType.Unknown_11;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Unknown_11() : base($"{nameof(Region)}: {nameof(Unknown_11)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Unknown_11(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Unknown_12 : Region
-            {
-                private protected override RegionType Type => RegionType.Unknown_12;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Unknown_12() : base($"{nameof(Region)}: {nameof(Unknown_12)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Unknown_12(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class FallReturnPoint : Region
-            {
-                private protected override RegionType Type => RegionType.FallReturnPoint;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public FallReturnPoint() : base($"{nameof(Region)}: {nameof(FallReturnPoint)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal FallReturnPoint(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Unknown_14 : Region
-            {
-                private protected override RegionType Type => RegionType.Unknown_14;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Unknown_14() : base($"{nameof(Region)}: {nameof(Unknown_14)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Unknown_14(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Unknown_15 : Region
-            {
-                private protected override RegionType Type => RegionType.Unknown_15;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Unknown_15() : base($"{nameof(Region)}: {nameof(Unknown_15)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Unknown_15(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Unknown_16 : Region
-            {
-                private protected override RegionType Type => RegionType.Unknown_16;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Unknown_16() : base($"{nameof(Region)}: {nameof(Unknown_16)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Unknown_16(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class WindPlacement : Region
-            {
-                private protected override RegionType Type => RegionType.WindPlacement;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public WindPlacement() : base($"{nameof(Region)}: {nameof(WindPlacement)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal WindPlacement(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Unknown_19 : Region
-            {
-                private protected override RegionType Type => RegionType.Unknown_19;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Unknown_19() : base($"{nameof(Region)}: {nameof(Unknown_19)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Unknown_19(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Unknown_20 : Region
-            {
-                private protected override RegionType Type => RegionType.Unknown_20;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Unknown_20() : base($"{nameof(Region)}: {nameof(Unknown_20)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Unknown_20(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Connection : Region
-            {
-                private protected override RegionType Type => RegionType.Connection;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Connection() : base($"{nameof(Region)}: {nameof(Connection)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Connection(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class SourceWaypoint : Region
-            {
-                private protected override RegionType Type => RegionType.SourceWaypoint;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public SourceWaypoint() : base($"{nameof(Region)}: {nameof(SourceWaypoint)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal SourceWaypoint(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class StaticWaypoint : Region
-            {
-                private protected override RegionType Type => RegionType.StaticWaypoint;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public StaticWaypoint() : base($"{nameof(Region)}: {nameof(StaticWaypoint)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal StaticWaypoint(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class MapGridLayerConnection : Region
-            {
-                private protected override RegionType Type => RegionType.MapGridLayerConnection;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public MapGridLayerConnection() : base($"{nameof(Region)}: {nameof(MapGridLayerConnection)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal MapGridLayerConnection(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class EnemySpawnPoint : Region
-            {
-                private protected override RegionType Type => RegionType.EnemySpawnPoint;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                public byte[] Bytes { get; set; }
-
-                public EnemySpawnPoint() : base($"{nameof(Region)}: {nameof(EnemySpawnPoint)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal EnemySpawnPoint(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class BuddySummonPoint : Region
-            {
-                private protected override RegionType Type => RegionType.BuddySummonPoint;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public BuddySummonPoint() : base($"{nameof(Region)}: {nameof(BuddySummonPoint)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal BuddySummonPoint(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class RollingAssetGeneration : Region
-            {
-                private protected override RegionType Type => RegionType.RollingAssetGeneration;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public RollingAssetGeneration() : base($"{nameof(Region)}: {nameof(RollingAssetGeneration)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal RollingAssetGeneration(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class MufflingPlane : Region
-            {
-                private protected override RegionType Type => RegionType.MufflingPlane;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public MufflingPlane() : base($"{nameof(Region)}: {nameof(MufflingPlane)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal MufflingPlane(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class ElectroMagneticStorm : Region
-            {
-                private protected override RegionType Type => RegionType.ElectroMagneticStorm;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public ElectroMagneticStorm() : base($"{nameof(Region)}: {nameof(ElectroMagneticStorm)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal ElectroMagneticStorm(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class AiInformationSharing : Region
-            {
-                private protected override RegionType Type => RegionType.AiInformationSharing;
-                private protected override bool HasTypeData => true;
-
-                private byte[] Bytes { get; set; }
-
-                private long Length { get; set; }
-                public AiInformationSharing() : base($"{nameof(Region)}: {nameof(AiInformationSharing)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal AiInformationSharing(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class WaveSimulation : Region
-            {
-                private protected override RegionType Type => RegionType.WaveSimulation;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public WaveSimulation() : base($"{nameof(Region)}: {nameof(WaveSimulation)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal WaveSimulation(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Cover : Region
-            {
-                private protected override RegionType Type => RegionType.Cover;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public Cover() : base($"{nameof(Region)}: {nameof(Cover)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal Cover(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class MissionPlacement : Region
-            {
-                private protected override RegionType Type => RegionType.MissionPlacement;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public MissionPlacement() : base($"{nameof(Region)}: {nameof(MissionPlacement)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal MissionPlacement(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class NaviVolumeResolution : Region
-            {
-                private protected override RegionType Type => RegionType.NaviVolumeResolution;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public NaviVolumeResolution() : base($"{nameof(Region)}: {nameof(NaviVolumeResolution)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal NaviVolumeResolution(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class MiniArea : Region
-            {
-                private protected override RegionType Type => RegionType.MiniArea;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public MiniArea() : base($"{nameof(Region)}: {nameof(MiniArea)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal MiniArea(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class ConnectionBorder : Region
-            {
-                private protected override RegionType Type => RegionType.ConnectionBorder;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public ConnectionBorder() : base($"{nameof(Region)}: {nameof(ConnectionBorder)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal ConnectionBorder(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class NaviGeneration : Region
-            {
-                private protected override RegionType Type => RegionType.NaviGeneration;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public NaviGeneration() : base($"{nameof(Region)}: {nameof(NaviGeneration)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal NaviGeneration(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class TopdownView : Region
-            {
-                private protected override RegionType Type => RegionType.TopdownView;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public TopdownView() : base($"{nameof(Region)}: {nameof(TopdownView)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal TopdownView(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class NaviCvCancel : Region
-            {
-                private protected override RegionType Type => RegionType.NaviCvCancel;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public NaviCvCancel() : base($"{nameof(Region)}: {nameof(NaviCvCancel)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-                internal NaviCvCancel(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class JumpEdgeRestriction : Region
-            {
-                private protected override RegionType Type => RegionType.JumpEdgeRestriction;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                public JumpEdgeRestriction() : base($"{nameof(Region)}: {nameof(JumpEdgeRestriction)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal JumpEdgeRestriction(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
             /// Other.
             /// </summary>
             public class Other : Region
@@ -3514,41 +2380,6 @@ namespace SoulsFormats
                 }
 
                 internal Other(BinaryReaderEx br, long _length) : base(br) 
-                {
-                    Length = _length;
-                }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    Bytes = br.ReadBytes((int)Length);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteBytes(Bytes);
-                }
-            }
-
-            /// <summary>
-            /// Unknown
-            /// </summary>
-            public class None : Region
-            {
-                private protected override RegionType Type => RegionType.None;
-                private protected override bool HasTypeData => true;
-
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
-                /// <summary>
-                /// Creates an None with default values.
-                /// </summary>
-                public None() : base($"{nameof(Region)}: {nameof(None)}")
-                {
-                    Bytes = Array.Empty<byte>();
-                }
-
-                internal None(BinaryReaderEx br, long _length) : base(br)
                 {
                     Length = _length;
                 }

@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace StudioCore.Tests;
 
-public static class BTLReadWrite
+public static class Test_BTL_BytePerfect
 {
     public static bool Run()
     {
