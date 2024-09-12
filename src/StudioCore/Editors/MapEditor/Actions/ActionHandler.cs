@@ -300,7 +300,7 @@ public class ActionHandler
     }
 
     /// <summary>
-    /// FRame in Viewport
+    /// Frame in Viewport
     /// </summary>
     public void ApplyFrameInViewport()
     {

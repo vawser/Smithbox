@@ -23,13 +23,6 @@ Behavior Editor:
  - ADD: skeleton HKX editor
  - ADD: collision HKX editor
  
-EMEVD Editor:
- - ADD: Display EMEVD file as function list -> function commands -> command properties. 
- - ADD: Add ability to insert/delete/order commands. 
- - ADD: Add ability to adjust function arguments.
- - ADD: support for DS2 emevd (direct usefulness over DarkScript, plus simple enough for framework impl)
- - ADD: quicklink to EMEVD from param field
- 
 Map Editor: 
  - ADD: .BTAB support
  - ADD: .GRASS support
@@ -106,3 +99,9 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #--------------------------------------
+EMEVD Editor:
+ - ADD: quicklink to EMEVD from param field
+ - ADD: Add ability to insert/delete/order commands.
+ - ADD: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
+ - ADD: ability to edit properties
+ 

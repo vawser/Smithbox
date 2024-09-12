@@ -443,7 +443,6 @@ public class SelectionGroupEditor
 
         if (CFG.Current.MapEditor_SelectionGroup_FrameSelection)
         {
-            ViewportSelection firstSel = (ViewportSelection)_selection.GetSelection().First();
             _msbEditor.ActionHandler.ApplyFrameInViewport();
             _msbEditor.ActionHandler.ApplyGoToInObjectList();
         }
