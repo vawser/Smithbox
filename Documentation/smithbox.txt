@@ -106,3 +106,4 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #--------------------------------------
+TODO: fix the Create for AC6 MSB class objects with array props

@@ -10,12 +10,6 @@ namespace SoulsFormats
     public partial class MSB_AC6 : SoulsFile<MSB_AC6>, IMsb
     {
         /// <summary>
-        /// This toggles the name disambiguation that Smithbox uses. 
-        /// Disabled when conducting byte-perfect test since Names are mostly empty in raw MSB, and saving automatically adds Names if this is enabled.
-        /// </summary>
-        public static bool EnableDisambiguation = true;
-
-        /// <summary>
         /// Holds the current header version so it can be checked against.
         /// </summary>
         public static int CurrentVersion = -1;
@@ -109,21 +103,24 @@ namespace SoulsFormats
             // This fixes an issue where the Reference Map wouldn't find the right
             // map object since Event and Region would share the same disambugated name (e.g. {1}).
 
-            if (EnableDisambiguation)
+            MSB.DisambiguateNames(entries.Models, "Model");
+            MSB.DisambiguateNames(entries.Events, "Event");
+            MSB.DisambiguateNames(entries.Regions, "Region");
+            MSB.DisambiguateNames(entries.Parts, "Part");
+
+            foreach (Event evt in entries.Events)
             {
-                MSB.DisambiguateNames(entries.Models, "Model");
-                MSB.DisambiguateNames(entries.Events, "Event");
-                MSB.DisambiguateNames(entries.Regions, "Region");
-                MSB.DisambiguateNames(entries.Parts, "Part");
+                evt.GetNames(this, entries);
+            }
 
-                foreach (Event evt in entries.Events)
-                    evt.GetNames(this, entries);
+            foreach (Region region in entries.Regions)
+            {
+                region.GetNames(entries);
+            }
 
-                foreach (Region region in entries.Regions)
-                    region.GetNames(entries);
-
-                foreach (Part part in entries.Parts)
-                    part.GetNames(this, entries);
+            foreach (Part part in entries.Parts)
+            {
+                part.GetNames(this, entries);
             }
         }
 
@@ -140,19 +137,24 @@ namespace SoulsFormats
             entries.Layers = Layers.GetEntries();
             entries.Parts = Parts.GetEntries();
 
-            if (EnableDisambiguation)
-            {
             foreach (Model model in entries.Models)
+            {
                 model.CountInstances(entries.Parts);
+            }
 
-                foreach (Event evt in entries.Events)
-                    evt.GetIndices(this, entries);
+            foreach (Event evt in entries.Events)
+            {
+                evt.GetIndices(this, entries);
+            }
 
-                foreach (Region region in entries.Regions)
-                    region.GetIndices(entries);
+            foreach (Region region in entries.Regions)
+            {
+                region.GetIndices(entries);
+            }
 
-                foreach (Part part in entries.Parts)
-                    part.GetIndices(this, entries);
+            foreach (Part part in entries.Parts)
+            {
+                part.GetIndices(this, entries);
             }
 
             bw.BigEndian = false;

@@ -86,27 +86,13 @@ namespace SoulsFormats
             {
                 switch (evnt)
                 {
-                    case Event.Treasure e:
-                        Treasures.Add(e);
-                        break;
-                    case Event.Generator e:
-                        Generators.Add(e);
-                        break;
-                    case Event.MapOffset e:
-                        MapOffsets.Add(e);
-                        break;
-                    case Event.PlatoonInfo e:
-                        PlatoonInfo.Add(e);
-                        break;
-                    case Event.PatrolRoute e:
-                        PatrolRoutes.Add(e);
-                        break;
-                    case Event.MapGimmick e:
-                        MapGimmicks.Add(e);
-                        break;
-                    case Event.Other e:
-                        Others.Add(e);
-                        break;
+                    case Event.Treasure e: Treasures.Add(e); break;
+                    case Event.Generator e: Generators.Add(e); break;
+                    case Event.MapOffset e: MapOffsets.Add(e); break;
+                    case Event.PlatoonInfo e: PlatoonInfo.Add(e); break;
+                    case Event.PatrolRoute e: PatrolRoutes.Add(e); break;
+                    case Event.MapGimmick e: MapGimmicks.Add(e); break;
+                    case Event.Other e: Others.Add(e); break;
 
                     default:
                         throw new ArgumentException($"Unrecognized type {evnt.GetType()}.", nameof(evnt));
@@ -167,42 +153,34 @@ namespace SoulsFormats
         /// </summary>
         public abstract class Event : Entry, IMsbEvent
         {
-            /// Event: Main
+            private protected abstract EventType Type { get; }
+            private protected abstract bool HasTypeData { get; }
+
+            private long NameOffset { get; set; }
+            private long CommonOffset { get; set; }
+            private long TypeOffset { get; set; }
+
             public string Name { get; set; }
 
             public int EventID { get; set; }
 
-            private protected abstract EventType Type { get; }
-            private protected abstract bool HasTypeData { get; }
-
-            // Index among events of the same type
             public int TypeIndex { get; set; }
 
-            /// Event: EventCommon
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            public int PartIndex;
+
+            [IndexProperty]
+            [XmlIgnore]
+            private int PartIndex { get; set; }
 
             [MSBReference(ReferenceType = typeof(Region))]
             public string RegionName { get; set; }
-            public int RegionIndex;
+
+            [IndexProperty]
+            [XmlIgnore]
+            private int RegionIndex { get; set; }
 
             public int EntityID { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            private long NameOffset { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            private long CommonOffset { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            private long TypeOffset { get; set; }
 
             private protected Event(string name)
             {
@@ -233,7 +211,7 @@ namespace SoulsFormats
                 EventID = br.ReadInt32();
                 br.AssertInt32((int)Type);
                 TypeIndex = br.ReadInt32();
-                br.AssertInt32(new int[1]);
+                br.AssertInt32(0);
 
                 CommonOffset = br.ReadInt64();
                 TypeOffset = br.ReadInt64();
@@ -245,10 +223,10 @@ namespace SoulsFormats
                 PartIndex = br.ReadInt32();
                 RegionIndex = br.ReadInt32();
                 EntityID = br.ReadInt32();
-                br.AssertSByte((sbyte)-1);
-                br.AssertByte(new byte[1]);
-                br.AssertByte(new byte[1]);
-                br.AssertByte(new byte[1]);
+                br.AssertSByte(-1);
+                br.AssertByte(0);
+                br.AssertByte(0);
+                br.AssertByte(0);
 
                 // TypeData
                 if (HasTypeData && TypeOffset != 0L)
@@ -276,7 +254,7 @@ namespace SoulsFormats
                 bw.ReserveInt64("TypeDataOffset");
 
                 bw.FillInt64("NameOffset", bw.Position - start);
-                bw.WriteUTF16(Name, true);
+                bw.WriteUTF16(MSB.ReambiguateName(Name), true);
                 bw.Pad(8);
 
                 // Common
@@ -284,13 +262,13 @@ namespace SoulsFormats
                 bw.WriteInt32(PartIndex);
                 bw.WriteInt32(RegionIndex);
                 bw.WriteInt32(EntityID);
-                bw.WriteSByte((sbyte)-1);
-                bw.WriteByte((byte)0);
-                bw.WriteByte((byte)0);
-                bw.WriteByte((byte)0);
+                bw.WriteSByte(-1);
+                bw.WriteByte(0);
+                bw.WriteByte(0);
+                bw.WriteByte(0);
 
                 // TypeData
-                if (HasTypeData && TypeOffset != 0L)
+                if (HasTypeData && Type != EventType.Other)
                 {
                     bw.FillInt64("TypeDataOffset", bw.Position - start);
                     WriteTypeData(bw);
@@ -337,7 +315,10 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                public int TreasurePartIndex;
+
+                [IndexProperty]
+                [XmlIgnore]
+                private int TreasurePartIndex { get; set; }
 
                 /// <summary>
                 /// Itemlot given by the treasure.
@@ -369,37 +350,39 @@ namespace SoulsFormats
                 /// <summary>
                 /// Creates a Treasure with default values.
                 /// </summary>
-                public Treasure() : base($"{nameof(Event)}: {nameof(Treasure)}") 
+                public Treasure() : base($"{nameof(Event)}: {nameof(Treasure)}")
                 {
-
+                    ItemLotID = -1;
+                    ActionButtonID = -1;
+                    PickupAnimID = -1;
                 }
 
                 internal Treasure(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
                     TreasurePartIndex = br.ReadInt32();
-                    br.AssertInt32(new int[1]);
+                    br.AssertInt32(0);
                     ItemLotID = br.ReadInt32();
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
                     ActionButtonID = br.ReadInt32();
                     PickupAnimID = br.ReadInt32();
                     InChest = br.ReadBoolean();
                     StartDisabled = br.ReadBoolean();
-                    br.AssertInt16(new short[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
+                    br.AssertInt16(0);
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -422,7 +405,7 @@ namespace SoulsFormats
                     bw.WriteInt32(PickupAnimID);
                     bw.WriteBoolean(InChest);
                     bw.WriteBoolean(StartDisabled);
-                    bw.WriteInt16((short) 0);
+                    bw.WriteInt16(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -548,30 +531,16 @@ namespace SoulsFormats
                     MinInterval = br.ReadSingle();
                     MaxInterval = br.ReadSingle();
                     InitialSpawnCount = br.ReadByte();
-                    br.AssertByte(new byte[1]);
-                    br.AssertByte(new byte[1]);
-                    br.AssertByte(new byte[1]);
+                    br.AssertByte(0);
+                    br.AssertByte(0);
+                    br.AssertByte(0);
                     UnkT14 = br.ReadSingle();
                     UnkT18 = br.ReadSingle();
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
+                    br.AssertPattern(0x14, 0x00);
                     SpawnRegionIndices = br.ReadInt32s(8);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
+                    br.AssertPattern(0x10, 0x00);
                     SpawnPartIndices = br.ReadInt32s(32);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
-                    br.AssertInt32(new int[1]);
+                    br.AssertPattern(0x20, 0x00);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -584,30 +553,16 @@ namespace SoulsFormats
                     bw.WriteSingle(MinInterval);
                     bw.WriteSingle(MaxInterval);
                     bw.WriteByte(InitialSpawnCount);
-                    bw.WriteByte((byte) 0);
-                    bw.WriteByte((byte) 0);
-                    bw.WriteByte((byte) 0);
+                    bw.WriteByte(0);
+                    bw.WriteByte(0);
+                    bw.WriteByte(0);
                     bw.WriteSingle(UnkT14);
                     bw.WriteSingle(UnkT18);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
+                    bw.WritePattern(0x14, 0x00);
                     bw.WriteInt32s(SpawnRegionIndices);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
+                    bw.WritePattern(0x10, 0x00);
                     bw.WriteInt32s(SpawnPartIndices);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
+                    bw.WritePattern(0x20, 0x00);
                 }
 
                 internal override void GetNames(MSB_AC6 msb, Entries entries)

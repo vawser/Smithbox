@@ -610,13 +610,7 @@ namespace SoulsFormats
 
                 // Name
                 bw.FillInt64("NameOffset", bw.Position - start);
-
-                string UsedName = Name;
-                if(MSB_AC6.EnableDisambiguation)
-                {
-                    UsedName = MSB.ReambiguateName(Name);
-                }
-                bw.WriteUTF16(UsedName, true);
+                bw.WriteUTF16(MSB.ReambiguateName(Name), true);
 
                 // Layout
                 bw.FillInt64("SourceOffset", bw.Position - start);

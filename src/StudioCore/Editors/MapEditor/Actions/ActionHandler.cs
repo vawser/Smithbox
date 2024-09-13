@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Veldrid.Utilities;
 using static SoulsFormats.MSBE.Part;
@@ -1476,5 +1477,222 @@ public class ActionHandler
 
             map.Write(filepath);
         }
+    }
+
+    /// <summary>
+    /// Map Object Namer
+    /// </summary>
+    public void ApplyMapObjectNames()
+    {
+        if (Screen.Universe.LoadedObjectContainers == null)
+            return;
+
+        if (!Screen.Universe.LoadedObjectContainers.Any())
+            return;
+
+        if (_targetMap != (null, null))
+        {
+            var loadedMap = (MapContainer)_targetMap.Item2;
+
+            var actionList = new List<ViewportAction>();
+
+            // Entity ID
+            foreach (var e in loadedMap?.Objects)
+            {
+                var changeName = false;
+                var newName = "";
+
+                if(e.IsEvent() || e.IsRegion())
+                {
+                    var name = e.GetPropertyValue("Name").ToString();
+                    // Only apply to those with empty names (post deambiguation)
+                    if (Regex.IsMatch(name, @" \{\d+\}"))
+                    {
+                        changeName = true;
+
+                        // Events
+                        if (e.WrappedObject is MSB_AC6.Event.Treasure)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.Treasure), "Treasure");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Event.Generator)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.Generator), "Generator");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Event.MapOffset)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.MapOffset), "Map Offset");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Event.PatrolRoute)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.PatrolRoute), "Patrol Route");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Event.PlatoonInfo)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.PlatoonInfo), "Platoon Info");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Event.MapGimmick)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.MapGimmick), "Map Gimmick");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Event.Other)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Event.Other), "Event");
+                        }
+
+                        // Regions
+                        if (e.WrappedObject is MSB_AC6.Region.EntryPoint)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.EntryPoint), "Entry Point");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.EnvMapPoint)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.EnvMapPoint), "Env Map Point");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.Sound)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.Sound), "Sound");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.SFX)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.SFX), "SFX");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.WindSFX)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.WindSFX), "Wind SFX");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.EnvMapEffectBox)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.EnvMapEffectBox), "Env Map Effect Box");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.WindPlacement)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.WindPlacement), "Wind Placement");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.MufflingBox)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.MufflingBox), "Muffling Box");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.MufflingPortal)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.MufflingPortal), "Muffling Portal");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.SoundOverride)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.SoundOverride), "Sound Override");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.Patrol)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.Patrol), "Patrol");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.FeMapDisplay)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.FeMapDisplay), "Map Display");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.OperationalArea)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.OperationalArea), "Operational Area");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.AiInformationSharing)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.AiInformationSharing), "AI Information Sharing");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.AiTarget)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.AiTarget), "AI Target");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.WwiseEnvironmentSound)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.WwiseEnvironmentSound), "Wwise Environment Sound");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.NaviGeneration)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.NaviGeneration), "Navigation Generation");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.TopdownView)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.TopdownView), "Topdown View");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.CharacterFollowing)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.CharacterFollowing), "Character Following");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.NavmeshCostControl)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.NavmeshCostControl), "Navmesh Cost Control");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.ArenaControl)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.ArenaControl), "Arena Control");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.ArenaAppearance)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.ArenaAppearance), "Arena Appearance");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.GarageCamera)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.GarageCamera), "Garage Camera");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.JumpEdgeRestriction)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.JumpEdgeRestriction), "Jump Edge Restriction");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.CutscenePlayback)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.CutscenePlayback), "Cutscene Playback");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.FallPreventionWallRemoval)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.FallPreventionWallRemoval), "Fall Prevention Wall Removal");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.BigJump)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.BigJump), "Big Jump");
+                        }
+                        if (e.WrappedObject is MSB_AC6.Region.Other)
+                        {
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.EntryPoint), "Region");
+                        }
+                    }
+                }
+
+                if(changeName)
+                {
+                    actionList.Add(new RenameObjectsAction(
+                        new List<MsbEntity> { e as MsbEntity },
+                        new List<string> { newName },
+                        true
+                    ));
+                }
+            }
+
+            var compoundAction = new CompoundAction(actionList);
+            Screen.EditorActionManager.ExecuteAction(compoundAction);
+        }
+    }
+
+    private Dictionary<Type, int> TrackedObjectUsage = new Dictionary<Type, int>();
+
+    private string ApplyMapObjectRename(Entity ent, Type targetType, string namePart)
+    {
+        var newName = ent.Name;
+        var trackedId = 0;
+
+        if (ent.WrappedObject.GetType() == targetType)
+        {
+            if (!TrackedObjectUsage.ContainsKey(targetType))
+            {
+                TrackedObjectUsage.Add(targetType, 0);
+            }
+            else
+            {
+                TrackedObjectUsage[targetType] = TrackedObjectUsage[targetType] + 1;
+                trackedId = TrackedObjectUsage[targetType];
+            }
+
+            newName = $"{namePart} {{{trackedId}}}";
+        }
+
+        return newName;
     }
 }

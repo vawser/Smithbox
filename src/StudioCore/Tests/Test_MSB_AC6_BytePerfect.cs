@@ -28,8 +28,6 @@ public static class Test_MSB_AC6_BytePerfect
             Run();
         }
 
-        ImGui.Checkbox("Include Disambiguation", ref IncludeDisambiguation);
-
         ImGui.Separator();
 
         if (mismatches.Count > 0)
@@ -56,15 +54,6 @@ public static class Test_MSB_AC6_BytePerfect
         regionTypes = new List<RegionType>();
 
         List<string> msbs = MapLocator.GetFullMapList();
-
-        if (!IncludeDisambiguation)
-        {
-            MSB_AC6.EnableDisambiguation = false;
-        }
-        else
-        {
-            MSB_AC6.EnableDisambiguation = true;
-        }
 
         foreach (var msb in msbs)
         {
@@ -107,11 +96,6 @@ public static class Test_MSB_AC6_BytePerfect
                 var mismatch = new MismatchData(msb, decompressed.Length, written.Length);
                 mismatches.Add(mismatch);
             }
-        }
-
-        if (!IncludeDisambiguation)
-        {
-            MSB_AC6.EnableDisambiguation = true;
         }
 
         RunOnce = true;

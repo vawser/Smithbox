@@ -170,6 +170,44 @@ public class ToolSubMenu
                 }
             }
 
+            ///--------------------
+            /// Name Map Objects
+            ///--------------------
+            // Tool for AC6 since its maps come with unnamed Regions and Events
+            if (Smithbox.ProjectType is ProjectType.AC6)
+            {
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                if (ImGui.BeginMenu("Rename Map Objects"))
+                {
+                    if (Screen.Universe.LoadedObjectContainers != null && Screen.Universe.LoadedObjectContainers.Any())
+                    {
+                        if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
+                        {
+                            foreach (var obj in Screen.Universe.LoadedObjectContainers)
+                            {
+                                if (obj.Value != null)
+                                {
+                                    if (ImGui.Selectable(obj.Key))
+                                    {
+                                        Handler._targetMap = (obj.Key, obj.Value);
+                                        break;
+                                    }
+                                }
+                            }
+                            ImGui.EndCombo();
+                        }
+
+                        if (ImGui.MenuItem("Apply Names"))
+                        {
+                            Handler.ApplyMapObjectNames();
+                        }
+                    }
+
+                    ImGui.EndMenu();
+                }
+                ImguiUtils.ShowHoverTooltip("Applies descriptive name (based on the map object class) to map objects with blank names by default.");
+            }
+
             ImGui.EndMenu();
         }
     }

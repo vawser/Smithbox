@@ -63,11 +63,12 @@ namespace SoulsFormats
                     {
                         nameCounts[name] = 1;
                     }
-                    else if(name == "")
+                    else
                     {
                         ambiguous = true;
                         nameCounts[name]++;
-                        entry.Name = $"{className}{name} {{{nameCounts[name]}}}";
+
+                        entry.Name = $"{name} {{{nameCounts[name]}}}";
                     }
                 }
             }
