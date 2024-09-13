@@ -3,6 +3,7 @@ using Silk.NET.SDL;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
@@ -490,13 +491,13 @@ public class ActionHandler
 
             if (axis.X != 0)
             {
-                radianRotateAmount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment;
+                radianRotateAmount = RotationIncrement.GetRadianRotateAmount();
                 rot_x = objT.EulerRotation.X + radianRotateAmount;
             }
 
             if (axis.Y != 0)
             {
-                radianRotateAmount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment;
+                radianRotateAmount = RotationIncrement.GetRadianRotateAmount();
                 rot_y = objT.EulerRotation.Y + radianRotateAmount;
             }
 

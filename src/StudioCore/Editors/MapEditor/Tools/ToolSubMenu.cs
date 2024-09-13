@@ -47,6 +47,8 @@ public class ToolSubMenu
             }
         }
 
+        RotationIncrement.RotateIncrementShortcuts();
+
         //Selection Groups
         Screen.SelectionGroupEditor.SelectionGroupShortcuts();
     }

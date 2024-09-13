@@ -395,6 +395,11 @@ public class CFG
 
     public Vector3 Viewport_DefaultRender_SelectColor = new(1.0f, 0.5f, 0.0f);
 
+    public bool Viewport_Enable_ViewportInfoPanel = true;
+    public bool Viewport_ViewportInfoPanel_Display_DegreeIncrement = true;
+
+    public bool Viewport_Enable_ViewportFlatGizmo = true;
+
     //****************************
     // Settings: Map Editor
     //****************************
@@ -731,7 +736,13 @@ public class CFG
     public float Toolbar_Move_to_Camera_Offset = 3.0f;
 
     public bool Toolbar_Rotate_Specific_Input = false;
-    public float Toolbar_Rotate_Increment { get; set; } = 90.0f;
+
+    public int Toolbar_Rotate_IncrementType = 0;
+    public float Toolbar_Rotate_Increment_0 { get; set; } = 90.0f;
+    public float Toolbar_Rotate_Increment_1 { get; set; } = 45.0f;
+    public float Toolbar_Rotate_Increment_2 { get; set; } = 30.0f;
+    public float Toolbar_Rotate_Increment_3 { get; set; } = 15.0f;
+    public float Toolbar_Rotate_Increment_4 { get; set; } = 5.0f;
 
     public bool Toolbar_Move_to_Grid_X = false;
     public bool Toolbar_Move_to_Grid_Y = true;

@@ -385,8 +385,6 @@ public class ToolWindow
                 ImguiUtils.WrappedText("Rotate the current selection by the following parameters.");
                 ImguiUtils.WrappedText("");
 
-                var rot = CFG.Current.Toolbar_Rotate_Increment;
-
                 ImguiUtils.WrappedText("Rotation Type:");
                 if (ImGui.Checkbox("X", ref CFG.Current.Toolbar_Rotate_X))
                 {
@@ -423,11 +421,66 @@ public class ToolWindow
 
                 if (!CFG.Current.Toolbar_Fixed_Rotate)
                 {
-                    ImguiUtils.WrappedText("Degree Increment:");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
-                    if(ImGui.SliderFloat("##Degree Increment", ref rot, -180.0f, 180.0f))
+                    ImguiUtils.WrappedText("Current Degree Increment:");
+                    ImGui.SameLine();
+                    RotationIncrement.DisplayCurrentRotateIncrement();
+
+                    ImguiUtils.WrappedText("");
+
+                    if (ImGui.Button("Cycle Increment", thinButtonSize))
                     {
-                        CFG.Current.Toolbar_Rotate_Increment = Math.Clamp(rot, -180.0f, 180.0f);
+                        RotationIncrement.CycleIncrementType();
+                    }
+                    ImguiUtils.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
+                    ImguiUtils.WrappedText("");
+
+                    ImguiUtils.WrappedText("Degree Increment [0]:");
+                    ImGui.PushItemWidth(defaultButtonSize.X);
+
+                    var rot0 = CFG.Current.Toolbar_Rotate_Increment_0;
+                    if (ImGui.SliderFloat("##degreeIncrement0", ref rot0, -360.0f, 360.0f))
+                    {
+                        CFG.Current.Toolbar_Rotate_Increment_0 = Math.Clamp(rot0, -360.0f, 360.0f);
+                    }
+                    ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+                    ImguiUtils.WrappedText("Degree Increment [1]:");
+                    ImGui.PushItemWidth(defaultButtonSize.X);
+
+                    var rot1 = CFG.Current.Toolbar_Rotate_Increment_1;
+                    if (ImGui.SliderFloat("##degreeIncrement1", ref rot1, -360.0f, 360.0f))
+                    {
+                        CFG.Current.Toolbar_Rotate_Increment_1 = Math.Clamp(rot1, -360.0f, 360.0f);
+                    }
+                    ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+                    ImguiUtils.WrappedText("Degree Increment [2]:");
+                    ImGui.PushItemWidth(defaultButtonSize.X);
+
+                    var rot2 = CFG.Current.Toolbar_Rotate_Increment_2;
+                    if (ImGui.SliderFloat("##degreeIncrement2", ref rot2, -360.0f, 360.0f))
+                    {
+                        CFG.Current.Toolbar_Rotate_Increment_2 = Math.Clamp(rot2, -360.0f, 360.0f);
+                    }
+                    ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+                    ImguiUtils.WrappedText("Degree Increment [3]:");
+                    ImGui.PushItemWidth(defaultButtonSize.X);
+
+                    var rot3 = CFG.Current.Toolbar_Rotate_Increment_3;
+                    if (ImGui.SliderFloat("##degreeIncrement3", ref rot3, -360.0f, 360.0f))
+                    {
+                        CFG.Current.Toolbar_Rotate_Increment_3 = Math.Clamp(rot3, -360.0f, 360.0f);
+                    }
+                    ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+
+                    ImguiUtils.WrappedText("Degree Increment [4]:");
+                    ImGui.PushItemWidth(defaultButtonSize.X);
+
+                    var rot4 = CFG.Current.Toolbar_Rotate_Increment_4;
+                    if (ImGui.SliderFloat("##degreeIncrement4", ref rot4, -360.0f, 360.0f))
+                    {
+                        CFG.Current.Toolbar_Rotate_Increment_4 = Math.Clamp(rot4, -360.0f, 360.0f);
                     }
                     ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 

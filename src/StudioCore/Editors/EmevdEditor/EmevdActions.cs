@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
+using static SoulsFormats.EMEVD;
 
 namespace StudioCore.Editors.EmevdEditor;
 

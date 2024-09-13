@@ -62,6 +62,13 @@ public class ViewportTab
             ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
         }
 
+        // Information Panel
+        if (ImGui.CollapsingHeader("Information Panel"))
+        {
+            ImGui.Checkbox("Display degree increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement);
+            ImguiUtils.ShowHoverTooltip("Display the current degree increment type you are using.");
+        }
+
         if (ImGui.CollapsingHeader("Camera"))
         {
             if (ImGui.Button("Reset##ViewportCamera"))

@@ -106,3 +106,52 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #--------------------------------------
+
+    public void PackArguments(Instruction instruction, List<ArgDataObject> arguments, bool bigEndian = false)
+    {
+        using (var ms = new MemoryStream(instruction.ArgData))
+        {
+            byte[] bytes = ms.ToArray();
+
+            var bw = new BinaryWriterEx(bigEndian);
+            foreach (var entry in arguments)
+            {
+                var argType = (ArgType)entry.ArgDoc.Type;
+
+                switch (argType)
+                {
+                    case ArgType.Byte:
+                        bw.WriteByte((byte)entry.ArgObject);
+                        break;
+                    case ArgType.UInt16:
+                        WriteZeroPad(bw, 2);
+                        bw.WriteUInt16((ushort)entry.ArgObject);
+                        break;
+                    case ArgType.UInt32:
+                        WriteZeroPad(bw, 4);
+                        bw.WriteUInt32((uint)entry.ArgObject);
+                        break;
+                    case ArgType.SByte:
+                        bw.WriteSByte((sbyte)entry.ArgObject);
+                        break;
+                    case ArgType.Int16:
+                        WriteZeroPad(bw, 2);
+                        bw.WriteInt16((short)entry.ArgObject);
+                        break;
+                    case ArgType.Int32:
+                        WriteZeroPad(bw, 4);
+                        bw.WriteInt32((int)entry.ArgObject);
+                        break;
+                    case ArgType.Single:
+                        WriteZeroPad(bw, 4);
+                        bw.WriteSingle((float)entry.ArgObject);
+                        break;
+
+                    default:
+                        throw new NotImplementedException($"Unimplemented argument type: {argType}");
+                }
+            }
+
+            WriteZeroPad(bw, 4);
+        }
+    }

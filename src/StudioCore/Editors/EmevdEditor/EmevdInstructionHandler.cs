@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using static SoulsFormats.EMEVD;
 using static SoulsFormats.EMEVD.Instruction;
 using static StudioCore.Editors.EmevdEditor.EMEDF;
@@ -101,6 +102,11 @@ public class EmevdInstructionHandler
 
                 PropEditor.UpdateProperty(arg, arg.ArgObject, newValue, changed, committed);
 
+                if(committed)
+                {
+                    TaskLogs.AddLog("committed change");
+                }
+
                 //ImGui.Text($"{arg.ArgObject}");
 
                 // Enum Reference
@@ -133,7 +139,6 @@ public class EmevdInstructionHandler
                     Decorator.DetermineEntityReference(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
                 }
             }
-
 
             ImGui.Columns(1);
         }
@@ -220,6 +225,13 @@ public class EmevdInstructionHandler
         if (br.Position % align > 0)
         {
             br.AssertPattern(align - (int)(br.Position % align), 0);
+        }
+    }
+    private void WriteZeroPad(BinaryWriterEx bw, int align)
+    {
+        if (bw.Position % align > 0)
+        {
+            bw.WritePattern(align - (int)(bw.Position % align), 0);
         }
     }
 

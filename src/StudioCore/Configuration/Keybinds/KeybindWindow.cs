@@ -245,6 +245,13 @@ public class ViewportKeybindTab
                 KeyBindings.Default.VIEWPORT_CameraReset);
         }
 
+        if (ImGui.CollapsingHeader("Information", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.VIEWPORT_DisplayInformationPanel = InputTracker.KeybindLine(20,
+                KeyBindings.Current.VIEWPORT_DisplayInformationPanel,
+                KeyBindings.Default.VIEWPORT_DisplayInformationPanel);
+        }
+
         if (ImGui.CollapsingHeader("Gizmos", ImGuiTreeNodeFlags.DefaultOpen))
         {
             KeyBindings.Current.VIEWPORT_GizmoRotationMode = InputTracker.KeybindLine(7,
@@ -335,6 +342,10 @@ public class MapEditorKeybindTab
             KeyBindings.Current.MAP_RotateFixedAngle = InputTracker.KeybindLine(50,
                 KeyBindings.Current.MAP_RotateFixedAngle,
                 KeyBindings.Default.MAP_RotateFixedAngle);
+
+            KeyBindings.Current.MAP_SwitchDegreeIncrementType = InputTracker.KeybindLine(60,
+                KeyBindings.Current.MAP_SwitchDegreeIncrementType,
+                KeyBindings.Default.MAP_SwitchDegreeIncrementType);
 
             KeyBindings.Current.MAP_ResetRotation = InputTracker.KeybindLine(8,
                 KeyBindings.Current.MAP_ResetRotation,

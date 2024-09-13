@@ -198,6 +198,13 @@ public class KeyBindings
             "Resets the camera's position to (0,0,0)", 
             Key.R);
 
+        // Information
+        public KeyBind VIEWPORT_DisplayInformationPanel = new(
+            "Toggle Information Panel",
+            "Toggles the appearance of the transparent information panel, which displays the status of various tools.",
+            Key.BracketLeft,
+            true);
+
         // Gizmos
         public KeyBind VIEWPORT_GizmoRotationMode = new(
             "Cycle Gizmo Rotation Mode", 
@@ -287,11 +294,17 @@ public class KeyBindings
             "Increment the rotation of the current selection to the fixed angle defined in the tool window.",
             Key.Unknown);
 
+        public KeyBind MAP_SwitchDegreeIncrementType = new(
+            "Cycle Degree Increment Type",
+            "Changes the degree increment used by Rotate Selection on X/Y-axis. Up to 5 increments can be stored.",
+            Key.C,
+            true);
+
         public KeyBind MAP_ResetRotation = new(
             "Reset Rotation for Selection",
             "Resets the rotation of the current selection to (0,0,0).",
             Key.R,
-            false,
+            true,
             true);
 
         public KeyBind MAP_FlipSelectionVisibility = new(

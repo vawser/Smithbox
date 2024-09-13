@@ -3,6 +3,7 @@ using StudioCore.Configuration;
 using StudioCore.DebugPrimitives;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.MsbEditor;
 using StudioCore.Editors.TimeActEditor;
@@ -148,8 +149,18 @@ public class Viewport : IViewport
 
     public bool ViewportSelected { get; private set; }
 
+    public void Shortcuts()
+    {
+        if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_DisplayInformationPanel))
+        {
+            CFG.Current.Viewport_Enable_ViewportInfoPanel = !CFG.Current.Viewport_Enable_ViewportInfoPanel;
+        }
+    }
+
     public void OnGui()
     {
+        Shortcuts();
+
         if (CFG.Current.Interface_Editor_Viewport)
         {
             if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
@@ -174,6 +185,9 @@ public class Viewport : IViewport
                 Matrix4x4 proj = Matrix4x4.Transpose(_projectionMat);
                 Matrix4x4 view = Matrix4x4.Transpose(WorldView.CameraTransform.CameraViewMatrixLH);
                 Matrix4x4 identity = Matrix4x4.Identity;
+
+                ViewportInformationPanel();
+
                 //ImGui.DrawGrid(ref view.M11, ref proj.M11, ref identity.M11, 100.0f);
             }
 
@@ -196,6 +210,42 @@ public class Viewport : IViewport
             }
 
             ImGui.End();
+        }
+    }
+
+    public void ViewportFlatGizmoPanel()
+    {
+        /*
+        if (CFG.Current.Viewport_Enable_ViewportFlatGizmo)
+        {
+            if (ImGui.Button("Up"))
+            {
+
+            }
+            if (ImGui.Button("Left"))
+            {
+
+            }
+            if (ImGui.Button("Right"))
+            {
+
+            }
+            if (ImGui.Button("Down"))
+            {
+
+            }
+        }
+        */
+    }
+
+    public void ViewportInformationPanel()
+    {
+        if (CFG.Current.Viewport_Enable_ViewportInfoPanel)
+        {
+            if (CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement)
+            {
+                RotationIncrement.DisplayViewportRotateIncrement();
+            }
         }
     }
 
