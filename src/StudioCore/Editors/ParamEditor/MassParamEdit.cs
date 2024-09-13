@@ -127,14 +127,17 @@ public class MassParamEditRegex
             {
                 currentLine++;
                 var command = cmd;
+
+                // Ignore comments
                 if (command.StartsWith("##") || string.IsNullOrWhiteSpace(command))
                 {
                     continue;
                 }
 
-                if (command.EndsWith(';'))
+                // VAWSER: changed from EndsWith to this so space after the ; character is ignored
+                if (command.Contains(';'))
                 {
-                    command = command.Substring(0, command.Length - 1);
+                    command = command.Split(";")[0];
                 }
 
                 (MassEditResult result, List<EditorAction> actions) = (null, null);
