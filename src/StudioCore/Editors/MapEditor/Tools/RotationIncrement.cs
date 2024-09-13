@@ -10,7 +10,7 @@ namespace StudioCore.Editors.MapEditor.Tools;
 
 public static class RotationIncrement
 {
-    public static void RotateIncrementShortcuts()
+    public static void Shortcuts()
     {
         // Only apply in Map Editor screen
         if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)

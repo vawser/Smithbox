@@ -417,6 +417,51 @@ public class KeyBindings
             false, 
             true);
 
+        // Selection
+        public KeyBind MAP_KeyboardMove_PositiveX = new(
+            "Keyboard Move: Positive X",
+            "Moves the selection on the x-axis.",
+            Key.Right,
+            true);
+
+        public KeyBind MAP_KeyboardMove_NegativeX = new(
+            "Keyboard Move: Positive X",
+            "Moves the selection on the x-axis.",
+            Key.Left,
+            true);
+
+        public KeyBind MAP_KeyboardMove_PositiveY = new(
+            "Keyboard Move: Positive Y",
+            "Moves the selection on the y-axis.",
+            Key.Up,
+            true);
+
+        public KeyBind MAP_KeyboardMove_NegativeY = new(
+            "Keyboard Move: Positive Y",
+            "Moves the selection on the y-axis.",
+            Key.Down,
+            true);
+
+        public KeyBind MAP_KeyboardMove_PositiveZ = new(
+            "Keyboard Move: Positive Z",
+            "Moves the selection on the z-axis.",
+            Key.Up,
+            true,
+            true);
+
+        public KeyBind MAP_KeyboardMove_NegativeZ = new(
+            "Keyboard Move: Negative Z",
+            "Moves the selection on the z-axis.",
+            Key.Down,
+            true,
+            true);
+
+        public KeyBind MAP_KeyboardMove_CycleIncrement = new(
+            "Keyboard Move: Cycle Increment",
+            "Cycles the increment used when moving via Keyboard Move.",
+            Key.V,
+            true);
+
         // Render Groups
         public KeyBind MAP_GetDisplayGroup = new(
             "View Display Group", 

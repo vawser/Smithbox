@@ -17,6 +17,8 @@ public class ViewportTab
 
     public void Display()
     {
+        var defaultButtonSize = new Vector2(ImGui.GetWindowWidth(), 24);
+
         // General
         if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
         {
@@ -50,7 +52,7 @@ public class ViewportTab
             ImGui.Checkbox("Draw LOD facesets", ref CFG.Current.Viewport_Enable_LOD_Facesets);
             ImguiUtils.ShowHoverTooltip("Render all facesets for all FLVER meshes, including LOD ones.");
 
-            if (ImGui.Button("Reset##ResetRenderProperties"))
+            if (ImGui.Button("Reset##ResetRenderProperties", defaultButtonSize))
             {
                 CFG.Current.Viewport_DefaultRender_Brightness = CFG.Default.Viewport_DefaultRender_Brightness;
                 CFG.Current.Viewport_DefaultRender_Saturation = CFG.Default.Viewport_DefaultRender_Saturation;
@@ -71,24 +73,6 @@ public class ViewportTab
 
         if (ImGui.CollapsingHeader("Camera"))
         {
-            if (ImGui.Button("Reset##ViewportCamera"))
-            {
-                CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
-
-                CFG.Current.Viewport_RenderDistance_Max = CFG.Default.Viewport_RenderDistance_Max;
-
-                Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
-                CFG.Current.Viewport_Camera_MoveSpeed_Slow = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
-                CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
-
-                Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
-                CFG.Current.Viewport_Camera_MoveSpeed_Normal = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
-
-                Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
-                CFG.Current.Viewport_Camera_MoveSpeed_Fast = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
-            }
-            ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
-
             var cam_fov = CFG.Current.Viewport_Camera_FOV;
 
             if (ImGui.SliderFloat("Camera FOV", ref cam_fov, 40.0f, 140.0f))
@@ -121,19 +105,30 @@ public class ViewportTab
                     ref Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast, 0.1f, 9999.0f))
                 CFG.Current.Viewport_Camera_MoveSpeed_Fast = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
             ImguiUtils.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
+
+            if (ImGui.Button("Reset##ViewportCamera", defaultButtonSize))
+            {
+                CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
+
+                CFG.Current.Viewport_RenderDistance_Max = CFG.Default.Viewport_RenderDistance_Max;
+
+                Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
+                CFG.Current.Viewport_Camera_MoveSpeed_Slow = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
+                CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
+
+                Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
+                CFG.Current.Viewport_Camera_MoveSpeed_Normal = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
+
+                Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
+                CFG.Current.Viewport_Camera_MoveSpeed_Fast = Smithbox.EditorHandler.MapEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
+            }
+            ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
+
         }
 
         // Limits
         if (ImGui.CollapsingHeader("Limits"))
         {
-            if (ImGui.Button("Reset##MapLimits"))
-            {
-                CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
-                CFG.Current.Viewport_Limit_Buffer_Indirect_Draw = CFG.Default.Viewport_Limit_Buffer_Indirect_Draw;
-                CFG.Current.Viewport_Limit_Buffer_Flver_Bone = CFG.Default.Viewport_Limit_Buffer_Flver_Bone;
-            }
-            ImguiUtils.ShowHoverTooltip("Reset the values within this section to their default values.");
-
             ImGui.Text("Please restart the program for changes to take effect.");
 
             ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f),
@@ -149,12 +144,72 @@ public class ViewportTab
 
             Utils.ImGui_InputUint("FLVER Bone buffer", ref CFG.Current.Viewport_Limit_Buffer_Flver_Bone);
             ImguiUtils.ShowHoverTooltip("This value constrains the size of the FLVER bone buffer. Exceeding this value will throw an exception.");
+
+            if (ImGui.Button("Reset##MapLimits", defaultButtonSize))
+            {
+                CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
+                CFG.Current.Viewport_Limit_Buffer_Indirect_Draw = CFG.Default.Viewport_Limit_Buffer_Indirect_Draw;
+                CFG.Current.Viewport_Limit_Buffer_Flver_Bone = CFG.Default.Viewport_Limit_Buffer_Flver_Bone;
+            }
+            ImguiUtils.ShowHoverTooltip("Reset the values within this section to their default values.");
         }
 
         // Wireframes
         if (ImGui.CollapsingHeader("Wireframes"))
         {
-            if (ImGui.Button("Reset"))
+            ImGui.SliderFloat("Wireframe color variance", ref CFG.Current.GFX_Wireframe_Color_Variance, 0.0f, 1.0f);
+
+            // Proxies
+            ImGui.ColorEdit3("Box region - base color", ref CFG.Current.GFX_Renderable_Box_BaseColor);
+            ImGui.ColorEdit3("Box region - highlight color", ref CFG.Current.GFX_Renderable_Box_HighlightColor);
+
+            ImGui.ColorEdit3("Cylinder region - base color", ref CFG.Current.GFX_Renderable_Cylinder_BaseColor);
+            ImGui.ColorEdit3("Cylinder region - highlight color", ref CFG.Current.GFX_Renderable_Cylinder_HighlightColor);
+
+            ImGui.ColorEdit3("Sphere region - base color", ref CFG.Current.GFX_Renderable_Sphere_BaseColor);
+            ImGui.ColorEdit3("Sphere region - highlight color", ref CFG.Current.GFX_Renderable_Sphere_HighlightColor);
+
+            ImGui.ColorEdit3("Point region - base color", ref CFG.Current.GFX_Renderable_Point_BaseColor);
+            ImGui.ColorEdit3("Point region - highlight color", ref CFG.Current.GFX_Renderable_Point_HighlightColor);
+
+            ImGui.ColorEdit3("Dummy poly - base color", ref CFG.Current.GFX_Renderable_DummyPoly_BaseColor);
+            ImGui.ColorEdit3("Dummy poly - highlight color", ref CFG.Current.GFX_Renderable_DummyPoly_HighlightColor);
+
+            ImGui.ColorEdit3("Bone point - base color", ref CFG.Current.GFX_Renderable_BonePoint_BaseColor);
+            ImGui.ColorEdit3("Bone point - highlight color", ref CFG.Current.GFX_Renderable_BonePoint_HighlightColor);
+
+            ImGui.ColorEdit3("Chr marker - base color", ref CFG.Current.GFX_Renderable_ModelMarker_Chr_BaseColor);
+            ImGui.ColorEdit3("Chr marker - highlight color", ref CFG.Current.GFX_Renderable_ModelMarker_Chr_HighlightColor);
+
+            ImGui.ColorEdit3("Object marker - base color", ref CFG.Current.GFX_Renderable_ModelMarker_Object_BaseColor);
+            ImGui.ColorEdit3("Object marker - highlight color", ref CFG.Current.GFX_Renderable_ModelMarker_Object_HighlightColor);
+
+            ImGui.ColorEdit3("Player marker - base color", ref CFG.Current.GFX_Renderable_ModelMarker_Player_BaseColor);
+            ImGui.ColorEdit3("Player marker - highlight color", ref CFG.Current.GFX_Renderable_ModelMarker_Player_HighlightColor);
+
+            ImGui.ColorEdit3("Other marker - base color", ref CFG.Current.GFX_Renderable_ModelMarker_Other_BaseColor);
+            ImGui.ColorEdit3("Other marker - highlight color", ref CFG.Current.GFX_Renderable_ModelMarker_Other_HighlightColor);
+
+            ImGui.ColorEdit3("Point light - base color", ref CFG.Current.GFX_Renderable_PointLight_BaseColor);
+            ImGui.ColorEdit3("Point light - highlight color", ref CFG.Current.GFX_Renderable_PointLight_HighlightColor);
+
+            ImGui.ColorEdit3("Spot light - base color", ref CFG.Current.GFX_Renderable_SpotLight_BaseColor);
+            ImGui.ColorEdit3("Spot light - highlight color", ref CFG.Current.GFX_Renderable_SpotLight_HighlightColor);
+
+            ImGui.ColorEdit3("Directional light - base color", ref CFG.Current.GFX_Renderable_DirectionalLight_BaseColor);
+            ImGui.ColorEdit3("Directional light - highlight color", ref CFG.Current.GFX_Renderable_DirectionalLight_HighlightColor);
+
+            ImGui.ColorEdit3("Gizmo: X Axis - base color", ref CFG.Current.GFX_Gizmo_X_BaseColor);
+            ImGui.ColorEdit3("Gizmo: X Axis - highlight color", ref CFG.Current.GFX_Gizmo_X_HighlightColor);
+
+            ImGui.ColorEdit3("Gizmo: Y Axis - base color", ref CFG.Current.GFX_Gizmo_Y_BaseColor);
+            ImGui.ColorEdit3("Gizmo: Y Axis - highlight color", ref CFG.Current.GFX_Gizmo_Y_HighlightColor);
+
+            ImGui.ColorEdit3("Gizmo: Z Axis - base color", ref CFG.Current.GFX_Gizmo_Z_BaseColor);
+            ImGui.ColorEdit3("Gizmo: Z Axis - highlight color", ref CFG.Current.GFX_Gizmo_Z_HighlightColor);
+
+
+            if (ImGui.Button("Reset", defaultButtonSize))
             {
                 // Proxies
                 CFG.Current.GFX_Renderable_Box_BaseColor = Utils.GetDecimalColor(Color.Blue);
@@ -209,56 +264,6 @@ public class ViewportTab
             }
             ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
 
-            ImGui.SliderFloat("Wireframe color variance", ref CFG.Current.GFX_Wireframe_Color_Variance, 0.0f, 1.0f);
-
-            // Proxies
-            ImGui.ColorEdit3("Box region - base color", ref CFG.Current.GFX_Renderable_Box_BaseColor);
-            ImGui.ColorEdit3("Box region - highlight color", ref CFG.Current.GFX_Renderable_Box_HighlightColor);
-
-            ImGui.ColorEdit3("Cylinder region - base color", ref CFG.Current.GFX_Renderable_Cylinder_BaseColor);
-            ImGui.ColorEdit3("Cylinder region - highlight color", ref CFG.Current.GFX_Renderable_Cylinder_HighlightColor);
-
-            ImGui.ColorEdit3("Sphere region - base color", ref CFG.Current.GFX_Renderable_Sphere_BaseColor);
-            ImGui.ColorEdit3("Sphere region - highlight color", ref CFG.Current.GFX_Renderable_Sphere_HighlightColor);
-
-            ImGui.ColorEdit3("Point region - base color", ref CFG.Current.GFX_Renderable_Point_BaseColor);
-            ImGui.ColorEdit3("Point region - highlight color", ref CFG.Current.GFX_Renderable_Point_HighlightColor);
-
-            ImGui.ColorEdit3("Dummy poly - base color", ref CFG.Current.GFX_Renderable_DummyPoly_BaseColor);
-            ImGui.ColorEdit3("Dummy poly - highlight color", ref CFG.Current.GFX_Renderable_DummyPoly_HighlightColor);
-
-            ImGui.ColorEdit3("Bone point - base color", ref CFG.Current.GFX_Renderable_BonePoint_BaseColor);
-            ImGui.ColorEdit3("Bone point - highlight color", ref CFG.Current.GFX_Renderable_BonePoint_HighlightColor);
-
-            ImGui.ColorEdit3("Chr marker - base color", ref CFG.Current.GFX_Renderable_ModelMarker_Chr_BaseColor);
-            ImGui.ColorEdit3("Chr marker - highlight color", ref CFG.Current.GFX_Renderable_ModelMarker_Chr_HighlightColor);
-
-            ImGui.ColorEdit3("Object marker - base color", ref CFG.Current.GFX_Renderable_ModelMarker_Object_BaseColor);
-            ImGui.ColorEdit3("Object marker - highlight color", ref CFG.Current.GFX_Renderable_ModelMarker_Object_HighlightColor);
-
-            ImGui.ColorEdit3("Player marker - base color", ref CFG.Current.GFX_Renderable_ModelMarker_Player_BaseColor);
-            ImGui.ColorEdit3("Player marker - highlight color", ref CFG.Current.GFX_Renderable_ModelMarker_Player_HighlightColor);
-
-            ImGui.ColorEdit3("Other marker - base color", ref CFG.Current.GFX_Renderable_ModelMarker_Other_BaseColor);
-            ImGui.ColorEdit3("Other marker - highlight color", ref CFG.Current.GFX_Renderable_ModelMarker_Other_HighlightColor);
-
-            ImGui.ColorEdit3("Point light - base color", ref CFG.Current.GFX_Renderable_PointLight_BaseColor);
-            ImGui.ColorEdit3("Point light - highlight color", ref CFG.Current.GFX_Renderable_PointLight_HighlightColor);
-
-            ImGui.ColorEdit3("Spot light - base color", ref CFG.Current.GFX_Renderable_SpotLight_BaseColor);
-            ImGui.ColorEdit3("Spot light - highlight color", ref CFG.Current.GFX_Renderable_SpotLight_HighlightColor);
-
-            ImGui.ColorEdit3("Directional light - base color", ref CFG.Current.GFX_Renderable_DirectionalLight_BaseColor);
-            ImGui.ColorEdit3("Directional light - highlight color", ref CFG.Current.GFX_Renderable_DirectionalLight_HighlightColor);
-
-            ImGui.ColorEdit3("Gizmo - X Axis - base color", ref CFG.Current.GFX_Gizmo_X_BaseColor);
-            ImGui.ColorEdit3("Gizmo - X Axis - highlight color", ref CFG.Current.GFX_Gizmo_X_HighlightColor);
-
-            ImGui.ColorEdit3("Gizmo - Y Axis - base color", ref CFG.Current.GFX_Gizmo_Y_BaseColor);
-            ImGui.ColorEdit3("Gizmo - Y Axis - highlight color", ref CFG.Current.GFX_Gizmo_Y_HighlightColor);
-
-            ImGui.ColorEdit3("Gizmo - Z Axis - base color", ref CFG.Current.GFX_Gizmo_Z_BaseColor);
-            ImGui.ColorEdit3("Gizmo - Z Axis - highlight color", ref CFG.Current.GFX_Gizmo_Z_HighlightColor);
         }
 
 
@@ -267,7 +272,14 @@ public class ViewportTab
         {
             ImGui.Text("Configure each of the six display presets available.");
 
-            if (ImGui.Button("Reset##DisplayPresets"))
+            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_01);
+            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_02);
+            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_03);
+            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_04);
+            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_05);
+            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_06);
+
+            if (ImGui.Button("Reset##DisplayPresets", defaultButtonSize))
             {
                 CFG.Current.SceneFilter_Preset_01.Name = CFG.Default.SceneFilter_Preset_01.Name;
                 CFG.Current.SceneFilter_Preset_01.Filters = CFG.Default.SceneFilter_Preset_01.Filters;
@@ -284,12 +296,6 @@ public class ViewportTab
             }
             ImguiUtils.ShowHoverTooltip("Reset the values within this section to their default values.");
 
-            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_01);
-            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_02);
-            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_03);
-            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_04);
-            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_05);
-            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_06);
         }
     }
 

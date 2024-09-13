@@ -1,10 +1,12 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
+using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -175,6 +177,66 @@ public class MapEditorTab
                 CFG.Current.MapEditor_Viewport_Grid_Height = 0;
             }
             ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
+        }
+
+        // Selection
+        if (ImGui.CollapsingHeader("Selection"))
+        {
+            var thinButtonSize = new Vector2(ImGui.GetWindowWidth(), 24);
+
+            ImguiUtils.WrappedText("Current Movement Increment:");
+            ImGui.SameLine();
+            KeyboardMovement.DisplayCurrentMovementIncrement();
+
+            ImguiUtils.WrappedText("");
+
+            if (ImGui.Button("Cycle Increment", thinButtonSize))
+            {
+                KeyboardMovement.CycleIncrementType();
+            }
+            ImguiUtils.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText} to cycle the movement increment used when moving a selection via Keyboard Move.");
+            ImguiUtils.WrappedText("");
+
+            // 0
+            ImguiUtils.WrappedText("Movement Increment [0]:");
+            ImGui.PushItemWidth(thinButtonSize.X);
+
+            var unit0 = CFG.Current.MapEditor_Selection_Movement_Increment_0;
+            ImGui.SliderFloat("##movementIncrement0", ref unit0, 0.0f, 999.0f);
+            ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
+
+            // 1
+            ImguiUtils.WrappedText("Movement Increment [1]:");
+            ImGui.PushItemWidth(thinButtonSize.X);
+
+            var unit1 = CFG.Current.MapEditor_Selection_Movement_Increment_1;
+            ImGui.SliderFloat("##movementIncrement1", ref unit1, 0.0f, 999.0f);
+            ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
+
+            // 2
+            ImguiUtils.WrappedText("Movement Increment [2]:");
+            ImGui.PushItemWidth(thinButtonSize.X);
+
+            var unit2 = CFG.Current.MapEditor_Selection_Movement_Increment_2;
+            ImGui.SliderFloat("##movementIncrement2", ref unit2, 0.0f, 999.0f);
+            ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
+
+            // 3
+            ImguiUtils.WrappedText("Movement Increment [3]:");
+            ImGui.PushItemWidth(thinButtonSize.X);
+
+            var unit3 = CFG.Current.MapEditor_Selection_Movement_Increment_3;
+            ImGui.SliderFloat("##movementIncrement3", ref unit3, 0.0f, 999.0f);
+            ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
+
+            // 4
+            ImguiUtils.WrappedText("Movement Increment [4]:");
+            ImGui.PushItemWidth(thinButtonSize.X);
+
+            var unit4 = CFG.Current.MapEditor_Selection_Movement_Increment_4;
+            ImGui.SliderFloat("##movementIncrement4", ref unit4, 0.0f, 999.0f);
+            ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
+
         }
 
         // Selection Groups

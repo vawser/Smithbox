@@ -266,6 +266,7 @@ public class ViewportKeybindTab
                 KeyBindings.Current.VIEWPORT_GizmoSpaceMode,
                 KeyBindings.Default.VIEWPORT_GizmoSpaceMode);
 
+
             KeyBindings.Current.VIEWPORT_GizmoTranslationMode = InputTracker.KeybindLine(10,
                 KeyBindings.Current.VIEWPORT_GizmoTranslationMode,
                 KeyBindings.Default.VIEWPORT_GizmoTranslationMode);
@@ -402,6 +403,38 @@ public class MapEditorKeybindTab
             KeyBindings.Current.MAP_SetSelectionToGrid = InputTracker.KeybindLine(19,
                 KeyBindings.Current.MAP_SetSelectionToGrid,
                 KeyBindings.Default.MAP_SetSelectionToGrid);
+        }
+
+
+        if (ImGui.CollapsingHeader("Selection", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.MAP_KeyboardMove_PositiveX = InputTracker.KeybindLine(70,
+                KeyBindings.Current.MAP_KeyboardMove_PositiveX,
+                KeyBindings.Default.MAP_KeyboardMove_PositiveX);
+
+            KeyBindings.Current.MAP_KeyboardMove_NegativeX = InputTracker.KeybindLine(71,
+                KeyBindings.Current.MAP_KeyboardMove_NegativeX,
+                KeyBindings.Default.MAP_KeyboardMove_NegativeX);
+
+            KeyBindings.Current.MAP_KeyboardMove_PositiveY = InputTracker.KeybindLine(72,
+                KeyBindings.Current.MAP_KeyboardMove_PositiveY,
+                KeyBindings.Default.MAP_KeyboardMove_PositiveY);
+
+            KeyBindings.Current.MAP_KeyboardMove_NegativeY = InputTracker.KeybindLine(73,
+                KeyBindings.Current.MAP_KeyboardMove_NegativeY,
+                KeyBindings.Default.MAP_KeyboardMove_NegativeY);
+
+            KeyBindings.Current.MAP_KeyboardMove_PositiveZ = InputTracker.KeybindLine(74,
+                KeyBindings.Current.MAP_KeyboardMove_PositiveZ,
+                KeyBindings.Default.MAP_KeyboardMove_PositiveZ);
+
+            KeyBindings.Current.MAP_KeyboardMove_NegativeZ = InputTracker.KeybindLine(75,
+                KeyBindings.Current.MAP_KeyboardMove_NegativeZ,
+                KeyBindings.Default.MAP_KeyboardMove_NegativeZ);
+
+            KeyBindings.Current.MAP_KeyboardMove_CycleIncrement = InputTracker.KeybindLine(76,
+                KeyBindings.Current.MAP_KeyboardMove_CycleIncrement,
+                KeyBindings.Default.MAP_KeyboardMove_CycleIncrement);
         }
 
         if (ImGui.CollapsingHeader("Order", ImGuiTreeNodeFlags.DefaultOpen))

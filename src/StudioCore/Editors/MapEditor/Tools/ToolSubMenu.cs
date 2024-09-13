@@ -47,7 +47,8 @@ public class ToolSubMenu
             }
         }
 
-        RotationIncrement.RotateIncrementShortcuts();
+        RotationIncrement.Shortcuts();
+        KeyboardMovement.Shortcuts();
 
         //Selection Groups
         Screen.SelectionGroupEditor.SelectionGroupShortcuts();

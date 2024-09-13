@@ -213,31 +213,6 @@ public class Viewport : IViewport
         }
     }
 
-    public void ViewportFlatGizmoPanel()
-    {
-        /*
-        if (CFG.Current.Viewport_Enable_ViewportFlatGizmo)
-        {
-            if (ImGui.Button("Up"))
-            {
-
-            }
-            if (ImGui.Button("Left"))
-            {
-
-            }
-            if (ImGui.Button("Right"))
-            {
-
-            }
-            if (ImGui.Button("Down"))
-            {
-
-            }
-        }
-        */
-    }
-
     public void ViewportInformationPanel()
     {
         if (CFG.Current.Viewport_Enable_ViewportInfoPanel)
@@ -245,6 +220,10 @@ public class Viewport : IViewport
             if (CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement)
             {
                 RotationIncrement.DisplayViewportRotateIncrement();
+            }
+            if (CFG.Current.Viewport_ViewportInfoPanel_Display_MovementIncrement)
+            {
+                KeyboardMovement.DisplayViewportMovementIncrement();
             }
         }
     }

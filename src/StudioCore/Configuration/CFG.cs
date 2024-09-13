@@ -397,8 +397,7 @@ public class CFG
 
     public bool Viewport_Enable_ViewportInfoPanel = true;
     public bool Viewport_ViewportInfoPanel_Display_DegreeIncrement = true;
-
-    public bool Viewport_Enable_ViewportFlatGizmo = true;
+    public bool Viewport_ViewportInfoPanel_Display_MovementIncrement = true;
 
     //****************************
     // Settings: Map Editor
@@ -449,6 +448,14 @@ public class CFG
     public bool MapEditor_SelectionGroup_ConfirmDelete = true;
     public bool MapEditor_SelectionGroup_ShowKeybind = true;
     public bool MapEditor_SelectionGroup_ShowTags = false;
+
+    public int MapEditor_Selection_Movement_IncrementType = 0;
+    public float MapEditor_Selection_Movement_Increment_0 { get; set; } = 0.05f;
+    public float MapEditor_Selection_Movement_Increment_1 { get; set; } = 0.1f;
+    public float MapEditor_Selection_Movement_Increment_2 { get; set; } = 0.25f;
+    public float MapEditor_Selection_Movement_Increment_3 { get; set; } = 0.5f;
+    public float MapEditor_Selection_Movement_Increment_4 { get; set; } = 1.0f;
+
 
     // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;
