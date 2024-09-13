@@ -1028,12 +1028,13 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Not sure what this does.
+                /// Unknown.
+                /// Always 0.
                 /// </summary>
                 public int Priority { get; set; }
 
                 /// <summary>
-                /// Creates an InvasionPoint with default values.
+                /// Creates an EntryPoint with default values.
                 /// </summary>
                 public EntryPoint() : base($"{nameof(Region)}: {nameof(EntryPoint)}") { }
 

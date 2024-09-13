@@ -1651,7 +1651,7 @@ public class ActionHandler
                         }
                         if (e.WrappedObject is MSB_AC6.Region.Other)
                         {
-                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.EntryPoint), "Region");
+                            newName = ApplyMapObjectRename(e, typeof(MSB_AC6.Region.Other), "Region");
                         }
                     }
                 }

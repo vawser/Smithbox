@@ -1277,6 +1277,17 @@ public class ParamEditorScreen : EditorScreen
 
             UICache.ClearCaches();
             ParamBank.RefreshAllParamDiffCaches(false);
+
+            DialogResult msgRes = PlatformUtils.Instance.MessageBox(
+                @"Do you wish to save the params?",
+                "Save Params",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information);
+
+            if (msgRes == DialogResult.Yes)
+            {
+                Smithbox.EditorHandler.ParamEditor.Save();
+            }
         }
 
         EditorActionManager.Clear();
