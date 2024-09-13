@@ -55,10 +55,17 @@ Model Editor:
 Material Editor
  - ADD: Implement Material/MATBIN editor
 
+EMEVD Editor:
+ - ADD: quicklink to EMEVD from param field
+ - ADD: Add ability to insert/delete/order commands.
+ - ADD: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
+ - ADD: ability to edit properties
+ 
 Param Editor:
  - ADD: stayparam support for DS3 (requires 'blob' editor with manual definitions)
  - ADD: make "Use project meta" merge in new entries instead of wholesale replacing (https://github.com/ividyon/WitchyBND/blob/main/WitchyBND/Configuration.cs)
  - ADD: automatic naming tool: for current param, look for reference fields, name the linked param row with the base name if empty (e.g. Item -> Bullet-> AtkParam)
+ - ADD: Copy to NPC AtkParam/BehaviorParam from PC AtkParam/BehaviorParam and vice versa
 
 Text Editor:
  - REWORK: remove the in-built categorization of the FMGs, add as an optional bundling, but internally they should reflect the actual FMG binder structure
@@ -99,9 +106,3 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #--------------------------------------
-EMEVD Editor:
- - ADD: quicklink to EMEVD from param field
- - ADD: Add ability to insert/delete/order commands.
- - ADD: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
- - ADD: ability to edit properties
- 

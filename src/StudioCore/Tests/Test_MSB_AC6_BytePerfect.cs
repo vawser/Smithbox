@@ -1,9 +1,11 @@
-﻿using SoulsFormats;
+﻿using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Locators;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Numerics;
 using static SoulsFormats.MSB_AC6;
 
 namespace StudioCore.Tests;
@@ -13,7 +15,40 @@ public static class Test_MSB_AC6_BytePerfect
 
     public static List<RegionType> regionTypes = new List<RegionType>();
 
-    public static bool VerifyBasedOnLength = false;
+    public static bool IncludeDisambiguation = false;
+
+    public static bool RunOnce = false;
+
+    public static void Display()
+    {
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        if (ImGui.Button("Check all Maps for Byte-Perfect Match", buttonSize))
+        {
+            Run();
+        }
+
+        ImGui.Checkbox("Include Disambiguation", ref IncludeDisambiguation);
+
+        ImGui.Separator();
+
+        if (mismatches.Count > 0)
+        {
+            ImGui.Text("Mismatches:");
+
+            foreach (var entry in Test_MSB_AC6_BytePerfect.mismatches)
+            {
+                ImGui.Text($" {entry.MSB} - {entry.OriginalBytes} - {entry.WrittenBytes}");
+            }
+        }
+        else
+        {
+            if(RunOnce)
+            {
+                ImGui.Text("No mismatches!");
+            }
+        }
+    }
 
     public static bool Run()
     {
@@ -22,7 +57,14 @@ public static class Test_MSB_AC6_BytePerfect
 
         List<string> msbs = MapLocator.GetFullMapList();
 
-        MSB_AC6.EnableDisambiguation = false;
+        if (!IncludeDisambiguation)
+        {
+            MSB_AC6.EnableDisambiguation = false;
+        }
+        else
+        {
+            MSB_AC6.EnableDisambiguation = true;
+        }
 
         foreach (var msb in msbs)
         {
@@ -50,19 +92,9 @@ public static class Test_MSB_AC6_BytePerfect
 
             var isMismatch = false;
 
-            if(!VerifyBasedOnLength)
+            if (!decompressed.Span.SequenceEqual(written))
             {
-                if (!decompressed.Span.SequenceEqual(written))
-                {
-                    isMismatch = true;
-                }
-            }
-            else
-            {
-                if(decompressed.Length != written.Length)
-                {
-                    isMismatch = true;
-                }
+                isMismatch = true;
             }
 
             if (isMismatch)
@@ -77,7 +109,12 @@ public static class Test_MSB_AC6_BytePerfect
             }
         }
 
-        MSB_AC6.EnableDisambiguation = true;
+        if (!IncludeDisambiguation)
+        {
+            MSB_AC6.EnableDisambiguation = true;
+        }
+
+        RunOnce = true;
 
         return true;
     }

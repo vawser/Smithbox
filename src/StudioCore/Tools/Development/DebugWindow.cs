@@ -360,26 +360,7 @@ public class DebugWindow
 
     private void DisplayTest_MSB_AC6()
     {
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
-
-        if (ImGui.Button("Check all Maps for Byte-Perfect Match", buttonSize))
-        {
-            Test_MSB_AC6_BytePerfect.Run();
-        }
-
-        ImGui.Checkbox("Verify based on Length", ref Test_MSB_AC6_BytePerfect.VerifyBasedOnLength);
-
-        ImGui.Separator();
-
-        if (Test_MSB_AC6_BytePerfect.mismatches.Count > 0)
-        {
-            ImGui.Text("Mismatches:");
-
-            foreach (var entry in Test_MSB_AC6_BytePerfect.mismatches)
-            {
-                ImGui.Text($" {entry.MSB} - {entry.OriginalBytes} - {entry.WrittenBytes}");
-            }
-        }
+        Test_MSB_AC6_BytePerfect.Display();
     }
     private void DisplayTest_BTL()
     {

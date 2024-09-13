@@ -63,7 +63,7 @@ namespace SoulsFormats
                     {
                         nameCounts[name] = 1;
                     }
-                    else
+                    else if(name == "")
                     {
                         ambiguous = true;
                         nameCounts[name]++;

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using System.Xml.Serialization;
 using static SoulsFormats.GPARAM;
 
 namespace SoulsFormats
@@ -154,7 +155,7 @@ namespace SoulsFormats
                         return MapGimmicks.EchoAdd(new Event.MapGimmick(br));
 
                     case EventType.Other:
-                        return Others.EchoAdd(new Event.Other(br, offsetLength));
+                        return Others.EchoAdd(new Event.Other(br));
 
                     default:
                         throw new NotImplementedException($"Unimplemented event type: {type}");
@@ -342,18 +343,18 @@ namespace SoulsFormats
                 /// Itemlot given by the treasure.
                 /// </summary>
                 [MSBParamReference(ParamName = "ItemLotParam")]
-                public int ItemLotParamId { get; set; }
+                public int ItemLotID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
                 [MSBParamReference(ParamName = "ActionButtonParam")]
-                public int ActionButtonParamId { get; set; }
+                public int ActionButtonID { get; set; }
 
                 /// <summary>
                 /// Unknown; possible the pickup anim.
                 /// </summary>
-                public int PickupAnim { get; set; }
+                public int PickupAnimID { get; set; }
 
                 /// <summary>
                 /// Changes the text of the pickup prompt.
@@ -368,7 +369,10 @@ namespace SoulsFormats
                 /// <summary>
                 /// Creates a Treasure with default values.
                 /// </summary>
-                public Treasure() : base($"{nameof(Event)}: {nameof(Treasure)}") { }
+                public Treasure() : base($"{nameof(Event)}: {nameof(Treasure)}") 
+                {
+
+                }
 
                 internal Treasure(BinaryReaderEx br) : base(br) { }
 
@@ -378,7 +382,7 @@ namespace SoulsFormats
                     br.AssertInt32(new int[1]);
                     TreasurePartIndex = br.ReadInt32();
                     br.AssertInt32(new int[1]);
-                    ItemLotParamId = br.ReadInt32();
+                    ItemLotID = br.ReadInt32();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
@@ -388,8 +392,8 @@ namespace SoulsFormats
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
-                    ActionButtonParamId = br.ReadInt32();
-                    PickupAnim = br.ReadInt32();
+                    ActionButtonID = br.ReadInt32();
+                    PickupAnimID = br.ReadInt32();
                     InChest = br.ReadBoolean();
                     StartDisabled = br.ReadBoolean();
                     br.AssertInt16(new short[1]);
@@ -404,7 +408,7 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteInt32(TreasurePartIndex);
                     bw.WriteInt32(0);
-                    bw.WriteInt32(ItemLotParamId);
+                    bw.WriteInt32(ItemLotID);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -414,8 +418,8 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
-                    bw.WriteInt32(ActionButtonParamId);
-                    bw.WriteInt32(PickupAnim);
+                    bw.WriteInt32(ActionButtonID);
+                    bw.WriteInt32(PickupAnimID);
                     bw.WriteBoolean(InChest);
                     bw.WriteBoolean(StartDisabled);
                     bw.WriteInt16((short) 0);
@@ -501,19 +505,29 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] SpawnRegionNames { get; private set; }
-                public int[] SpawnRegionIndices;
+
+                [IndexProperty]
+                [XmlIgnore]
+                private int[] SpawnRegionIndices { get; set; }
 
                 /// <summary>
                 /// Enemies to be respawned.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] SpawnPartNames { get; private set; }
-                public int[] SpawnPartIndices;
+
+                [IndexProperty]
+                [XmlIgnore]
+                private int[] SpawnPartIndices { get; set; }
 
                 /// <summary>
                 /// Creates a Generator with default values.
                 /// </summary>
-                public Generator() : base($"{nameof(Event)}: {nameof(Generator)}") { }
+                public Generator() : base($"{nameof(Event)}: {nameof(Generator)}")
+                {
+                    SpawnRegionNames = new string[8];
+                    SpawnPartNames = new string[32];
+                }
 
                 private protected override void DeepCopyTo(Event evnt)
                 {
@@ -668,24 +682,31 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public bool UnkT04 { get; set; }
+                public bool PlatoonInfo_UnkT04 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. 
+                /// Only true in m01_05_30_00.
                 /// </summary>
-                public bool UnkT05 { get; set; }
+                public bool PlatoonInfo_UnkT05 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] GroupPartsNames { get; set; }
-                public int[] GroupPartsIndices;
+
+                [IndexProperty]
+                [XmlIgnore]
+                private int[] GroupPartsIndices { get; set; }
 
                 /// <summary>
                 /// Creates a GroupTour with default values.
                 /// </summary>
-                public PlatoonInfo() : base($"{nameof(Event)}: {nameof(PlatoonInfo)}") { }
+                public PlatoonInfo() : base($"{nameof(Event)}: {nameof(PlatoonInfo)}")
+                {
+                    GroupPartsNames = new string[32];
+                }
 
                 private protected override void DeepCopyTo(Event evnt)
                 {
@@ -698,8 +719,8 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     PlatoonScriptID = br.ReadInt32();
-                    UnkT04 = br.ReadBoolean();
-                    UnkT05 = br.ReadBoolean();
+                    PlatoonInfo_UnkT04 = br.ReadBoolean();
+                    PlatoonInfo_UnkT05 = br.ReadBoolean();
                     br.AssertInt16(new short[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
@@ -709,8 +730,8 @@ namespace SoulsFormats
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(PlatoonScriptID);
-                    bw.WriteBoolean(UnkT04);
-                    bw.WriteBoolean(UnkT05);
+                    bw.WriteBoolean(PlatoonInfo_UnkT04);
+                    bw.WriteBoolean(PlatoonInfo_UnkT05);
                     bw.WriteInt16((short)0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -743,20 +764,36 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBEnum(EnumType = "PATROL_TYPE")]
                 public int PatrolType { get; set; }
-                private int Unk08 { get; set; }
-                private int Unk0C { get; set; }
+
+                /// <summary>
+                /// Unknown.
+                /// Always 0.
+                /// </summary>
+                public int PatrolRoute_Unk08 { get; set; }
+                
+                /// <summary>
+                /// Unknown.
+                /// Always 0.
+                /// </summary>
+                public int PatrolRoute_Unk0C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
-                public string[] WalkRegionNames { get; private set; }
-                private short[] WalkRegionIndices;
+                public string[] WalkRegionNames { get; set; }
+
+                [IndexProperty]
+                [XmlIgnore]
+                private short[] WalkRegionIndices { get; set; }
 
                 /// <summary>
                 /// Creates a PatrolRoute with default values.
                 /// </summary>
-                public PatrolRoute() : base($"{nameof(Event)}: {nameof(PatrolRoute)}") { }
+                public PatrolRoute() : base($"{nameof(Event)}: {nameof(PatrolRoute)}")
+                {
+                    WalkRegionNames = new string[64];
+                }
 
                 private protected override void DeepCopyTo(Event evnt)
                 {
@@ -770,8 +807,8 @@ namespace SoulsFormats
                 {
                     PatrolType = br.ReadInt32();
                     br.AssertInt32(-1);
-                    Unk08 = br.ReadInt32();
-                    Unk0C = br.ReadInt32();
+                    PatrolRoute_Unk08 = br.ReadInt32();
+                    PatrolRoute_Unk0C = br.ReadInt32();
                     WalkRegionIndices = br.ReadInt16s(24);
                 }
 
@@ -779,8 +816,8 @@ namespace SoulsFormats
                 {
                     bw.WriteInt32(PatrolType);
                     bw.WriteInt32(-1);
-                    bw.WriteInt32(Unk08);
-                    bw.WriteInt32(Unk0C);
+                    bw.WriteInt32(PatrolRoute_Unk08);
+                    bw.WriteInt32(PatrolRoute_Unk0C);
                     bw.WriteInt16s(WalkRegionIndices);
                 }
 
@@ -810,28 +847,38 @@ namespace SoulsFormats
 
                 /// <summary>
                 /// Unknown.
+                /// 0: 
+                /// 6: m03_60_00_00
+                /// 8: The launcher in Illegal Entry (m10_00_00_00)
                 /// </summary>
-                public int UnkT00 { get; set; }
+                public int MapGimmick_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
 
                 [MSBReference(ReferenceType = typeof(Region))]
-                public string PointNameT04 { get; set; }
-                public short PointIndexT04 { get; set; }
+                public string RegionNameT04 { get; set; }
+
+                [IndexProperty]
+                [XmlIgnore]
+                private short RegionIndexT04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
+                /// Always 0.
                 /// </summary>
-                public short UnkT06 { get; set; }
+                public short MapGimmick_UnkT06 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string PartNameT08 { get; set; }
-                public int PartIndexT08 { get; set; }
+
+                [IndexProperty]
+                [XmlIgnore]
+                private int PartIndexT08 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -839,73 +886,83 @@ namespace SoulsFormats
                 
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] PartNamesT0C { get; set; }
-                public short[] PartIndicesT0C;
+
+                [IndexProperty]
+                [XmlIgnore]
+                private short[] PartIndicesT0C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
                 
                 [MSBReference(ReferenceType = typeof(Region))]
-                public string[] PointNamesT28 { get; set; }
-                public short[] PointIndicesT28;
+                public string[] RegionNamesT28 { get; set; }
+
+                [IndexProperty]
+                [XmlIgnore]
+                private short[] RegionIndicesT28 { get; set; }
 
                 /// <summary>
                 /// Creates a MultiSummon with default values.
                 /// </summary>
-                public MapGimmick() : base($"{nameof(Event)}: {nameof(MapGimmick)}") { }
+                public MapGimmick() : base($"{nameof(Event)}: {nameof(MapGimmick)}")
+                {
+                    PartNamesT0C = new string[14];
+                    RegionNamesT28 = new string[16];
+                }
 
                 internal MapGimmick(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
-                    PointIndexT04 = br.ReadInt16();
-                    UnkT06 = br.ReadInt16();
+                    MapGimmick_UnkT00 = br.ReadInt32();
+                    RegionIndexT04 = br.ReadInt16();
+                    MapGimmick_UnkT06 = br.ReadInt16();
                     PartIndexT08 = br.ReadInt32();
                     PartIndicesT0C = br.ReadInt16s(14);
-                    PointIndicesT28 = br.ReadInt16s(16);
+                    RegionIndicesT28 = br.ReadInt16s(16);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
-                    bw.WriteInt16(PointIndexT04);
-                    bw.WriteInt16(UnkT06);
+                    bw.WriteInt32(MapGimmick_UnkT00);
+                    bw.WriteInt16(RegionIndexT04);
+                    bw.WriteInt16(MapGimmick_UnkT06);
                     bw.WriteInt32(PartIndexT08);
                     bw.WriteInt16s(PartIndicesT0C);
-                    bw.WriteInt16s(PointIndicesT28);
+                    bw.WriteInt16s(RegionIndicesT28);
                 }
 
                 internal override void GetNames(MSB_AC6 msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
 
-                    PointNameT04 = MSB.FindName(entries.Regions, PointIndexT04);
+                    RegionNameT04 = MSB.FindName(entries.Regions, RegionIndexT04);
                     PartNameT08 = MSB.FindName(entries.Parts, PartIndexT08);
 
                     PartNamesT0C = new string[PartIndicesT0C.Length];
                     for (int i = 0; i < PartIndicesT0C.Length; i++)
                         PartNamesT0C[i] = MSB.FindName(entries.Parts, PartIndicesT0C[i]);
 
-                    PointNamesT28 = new string[PointIndicesT28.Length];
-                    for (int i = 0; i < PointIndicesT28.Length; i++)
-                        PointNamesT28[i] = MSB.FindName(entries.Regions, PointIndicesT28[i]);
+                    RegionNamesT28 = new string[RegionIndicesT28.Length];
+                    for (int i = 0; i < RegionIndicesT28.Length; i++)
+                        RegionNamesT28[i] = MSB.FindName(entries.Regions, RegionIndicesT28[i]);
                 }
 
                 internal override void GetIndices(MSB_AC6 msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
 
-                    PointIndexT04 = (short)MSB.FindIndex(this, entries.Regions, PointNameT04);
+                    RegionIndexT04 = (short)MSB.FindIndex(this, entries.Regions, RegionNameT04);
                     PartIndexT08 = (short)MSB.FindIndex(this, entries.Parts, PartNameT08);
 
                     PartIndicesT0C = new short[PartNamesT0C.Length];
                     for (int i = 0; i < PartNamesT0C.Length; i++)
                         PartIndicesT0C[i] = (short)MSB.FindIndex(this, entries.Parts, PartNamesT0C[i]);
 
-                    PointIndicesT28 = new short[PointNamesT28.Length];
-                    for (int i = 0; i < PointNamesT28.Length; i++)
-                        PointIndicesT28[i] = (short)MSB.FindIndex(this, entries.Regions, PointNamesT28[i]);
+                    RegionIndicesT28 = new short[RegionNamesT28.Length];
+                    for (int i = 0; i < RegionNamesT28.Length; i++)
+                        RegionIndicesT28[i] = (short)MSB.FindIndex(this, entries.Regions, RegionNamesT28[i]);
                 }
             }
             /// <summary>
@@ -916,30 +973,20 @@ namespace SoulsFormats
                 private protected override EventType Type => EventType.Other;
                 private protected override bool HasTypeData => true;
 
-                private long Length { get; set; }
-                public byte[] Bytes { get; set; }
 
                 /// <summary>
                 /// Creates an Other with default values.
                 /// </summary>
-                public Other() : base($"{nameof(Event)}: {nameof(Other)}") 
-                {
-                    Bytes = Array.Empty<byte>();
-                }
+                public Other() : base($"{nameof(Event)}: {nameof(Other)}") { }
 
-                internal Other(BinaryReaderEx br, long _length) : base(br)
-                {
-                    Length = _length;
-                }
+                internal Other(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Bytes = br.ReadBytes((int)Length);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteBytes(Bytes);
                 }
             }
         }

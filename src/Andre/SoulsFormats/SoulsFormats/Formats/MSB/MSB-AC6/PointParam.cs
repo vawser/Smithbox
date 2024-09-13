@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Numerics;
+using System.Xml.Serialization;
 
 namespace SoulsFormats
 {
@@ -418,7 +419,7 @@ namespace SoulsFormats
 
                     // 18
                     case RegionType.WindPlacement:
-                        return WindPlacements.EchoAdd(new Region.WindPlacement(br, offsetLength));
+                        return WindPlacements.EchoAdd(new Region.WindPlacement(br));
 
                     // 28
                     case RegionType.MufflingBox:
@@ -446,7 +447,7 @@ namespace SoulsFormats
 
                     // 36
                     case RegionType.AiInformationSharing:
-                        return AiInformationSharings.EchoAdd(new Region.AiInformationSharing(br, offsetLength));
+                        return AiInformationSharings.EchoAdd(new Region.AiInformationSharing(br));
 
                     // 37
                     case RegionType.AiTarget:
@@ -458,11 +459,11 @@ namespace SoulsFormats
 
                     // 45
                     case RegionType.NaviGeneration:
-                        return NaviGenerations.EchoAdd(new Region.NaviGeneration(br, offsetLength));
+                        return NaviGenerations.EchoAdd(new Region.NaviGeneration(br));
 
                     // 46
                     case RegionType.TopdownView:
-                        return TopdownViews.EchoAdd(new Region.TopdownView(br, offsetLength));
+                        return TopdownViews.EchoAdd(new Region.TopdownView(br));
 
                     // 47
                     case RegionType.CharacterFollowing:
@@ -486,7 +487,7 @@ namespace SoulsFormats
 
                     // 53
                     case RegionType.JumpEdgeRestriction:
-                        return JumpEdgeRestrictions.EchoAdd(new Region.JumpEdgeRestriction(br, offsetLength));
+                        return JumpEdgeRestrictions.EchoAdd(new Region.JumpEdgeRestriction(br));
 
                     // 54
                     case RegionType.CutscenePlayback:
@@ -502,7 +503,7 @@ namespace SoulsFormats
 
                     // -1
                     case RegionType.Other:
-                        return Others.EchoAdd(new Region.Other(br, offsetLength));
+                        return Others.EchoAdd(new Region.Other(br));
 
                     default:
                         throw new NotImplementedException($"Unimplemented region type: {type}");
@@ -566,12 +567,22 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<short> ParentListIndices { get; set; }
+            [MSBReference(ReferenceType = typeof(Region))]
+            public string[] ParentRegionNames { get; set; }
+
+            [IndexProperty]
+            [XmlIgnore]
+            private short[] ParentListIndices { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<short> ChildListIndices { get; set; }
+            [MSBReference(ReferenceType = typeof(Region))]
+            public string[] ChildRegionNames { get; set; }
+
+            [IndexProperty]
+            [XmlIgnore]
+            private short[] ChildListIndices { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -639,8 +650,13 @@ namespace SoulsFormats
                 Name = name;
                 Shape = new MSB.Shape.Point();
                 Unk2C = -1;
-                ParentListIndices = new List<short>();
-                ChildListIndices = new List<short>();
+
+                ParentRegionNames = new string[0];
+                ChildRegionNames = new string[0];
+
+                ParentListIndices = new short[0];
+                ChildListIndices = new short[0];
+
                 Unk78 = -1;
                 Unk7C = -1;
             }
@@ -688,12 +704,12 @@ namespace SoulsFormats
                 // Point Indices 30
                 br.Position = start + parentListOffset;
                 short countA = br.ReadInt16();
-                ParentListIndices = new List<short>(br.ReadInt16s(countA));
+                ParentListIndices = br.ReadInt16s(countA);
 
                 // Point Indices 38
                 br.Position = start + childListOffset;
                 short countB = br.ReadInt16();
-                ChildListIndices = new List<short>(br.ReadInt16s(countB));
+                ChildListIndices = br.ReadInt16s(countB);
 
                 // Shape
                 if (Shape.HasShapeData && FormOffset != 0L)
@@ -780,12 +796,12 @@ namespace SoulsFormats
                 bw.Pad(4);
 
                 bw.FillInt64("IndexListOffset30", bw.Position - start);
-                bw.WriteInt16((short)ParentListIndices.Count);
+                bw.WriteInt16((short)ParentListIndices.Length);
                 bw.WriteInt16s(ParentListIndices);
                 bw.Pad(4);
 
                 bw.FillInt64("IndexListOffset38", bw.Position - start);
-                bw.WriteInt16((short)ChildListIndices.Count);
+                bw.WriteInt16((short)ChildListIndices.Length);
                 bw.WriteInt16s(ChildListIndices);
                 bw.Pad(8);
 
@@ -969,14 +985,22 @@ namespace SoulsFormats
 
             internal virtual void GetNames(Entries entries)
             {
+                ParentRegionNames = MSB.FindNames(entries.Regions, ParentListIndices);
+                ChildRegionNames = MSB.FindNames(entries.Regions, ChildListIndices);
+
                 ActivationPartName = MSB.FindName(entries.Parts, ActivationPartIndex);
+
                 if (Shape is MSB.Shape.Composite composite)
                     composite.GetNames(entries.Regions);
             }
 
             internal virtual void GetIndices(Entries entries)
             {
+                ParentListIndices = MSB.FindShortIndices(this, entries.Regions, ParentRegionNames);
+                ChildListIndices = MSB.FindShortIndices(this, entries.Regions, ChildRegionNames);
+
                 ActivationPartIndex = MSB.FindIndex(this, entries.Parts, ActivationPartName);
+
                 if (Shape is MSB.Shape.Composite composite)
                     composite.GetIndices(entries.Regions);
             }
@@ -1037,47 +1061,47 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT00 { get; set; }
+                public float EnvMapPoint_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT04 { get; set; }
+                public int EnvMapPoint_UnkT04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT0C { get; set; }
+                public byte EnvMapPoint_UnkT0C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT0D { get; set; }
+                public byte EnvMapPoint_UnkT0D { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT0F { get; set; }
+                public byte EnvMapPoint_UnkT0F { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT10 { get; set; }
+                public float EnvMapPoint_UnkT10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT18 { get; set; }
+                public int EnvMapPoint_UnkT18 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT1C { get; set; }
+                public int EnvMapPoint_UnkT1C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT20 { get; set; }
+                public int EnvMapPoint_UnkT20 { get; set; }
 
                 /// <summary>
                 /// Creates an EnvMapPoint with default values.
@@ -1088,42 +1112,42 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadSingle();
-                    UnkT04 = br.ReadInt32();
+                    EnvMapPoint_UnkT00 = br.ReadSingle();
+                    EnvMapPoint_UnkT04 = br.ReadInt32();
                     br.AssertInt32(-1);
-                    UnkT0C = br.ReadByte();
-                    UnkT0D = br.ReadByte();
+                    EnvMapPoint_UnkT0C = br.ReadByte();
+                    EnvMapPoint_UnkT0D = br.ReadByte();
                     br.AssertByte((byte)1);
-                    UnkT0F = br.ReadByte();
-                    UnkT10 = br.ReadSingle();
+                    EnvMapPoint_UnkT0F = br.ReadByte();
+                    EnvMapPoint_UnkT10 = br.ReadSingle();
                     br.AssertSingle(1f);
-                    UnkT18 = br.ReadInt32();
-                    UnkT1C = br.ReadInt32();
+                    EnvMapPoint_UnkT18 = br.ReadInt32();
+                    EnvMapPoint_UnkT1C = br.ReadInt32();
 
                     if(MSB_AC6.CurrentVersion >= 52)
                     {
-                        UnkT20 = br.ReadInt32();
+                        EnvMapPoint_UnkT20 = br.ReadInt32();
                         br.AssertInt32(new int[1]);
                     }
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteSingle(UnkT00);
-                    bw.WriteInt32(UnkT04);
+                    bw.WriteSingle(EnvMapPoint_UnkT00);
+                    bw.WriteInt32(EnvMapPoint_UnkT04);
                     bw.WriteInt32(-1);
-                    bw.WriteByte(UnkT0C);
-                    bw.WriteByte(UnkT0D);
+                    bw.WriteByte(EnvMapPoint_UnkT0C);
+                    bw.WriteByte(EnvMapPoint_UnkT0D);
                     bw.WriteByte((byte)1);
-                    bw.WriteByte(UnkT0F);
-                    bw.WriteSingle(UnkT10);
+                    bw.WriteByte(EnvMapPoint_UnkT0F);
+                    bw.WriteSingle(EnvMapPoint_UnkT10);
                     bw.WriteSingle(1f);
-                    bw.WriteInt32(UnkT18);
-                    bw.WriteInt32(UnkT1C);
+                    bw.WriteInt32(EnvMapPoint_UnkT18);
+                    bw.WriteInt32(EnvMapPoint_UnkT1C);
 
                     if (MSB_AC6.CurrentVersion >= 52)
                     {
-                        bw.WriteInt32(UnkT20);
+                        bw.WriteInt32(EnvMapPoint_UnkT20);
                         bw.WriteInt32(0);
                     }
                 }
@@ -1151,13 +1175,19 @@ namespace SoulsFormats
                 /// References to other regions used to build a composite shape.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
-                public string[] ChildRegionNames { get; private set; }
-                public int[] ChildRegionIndices;
+                public string[] ChildRegionNames { get; set; }
+
+                [IndexProperty]
+                [XmlIgnore]
+                private int[] ChildRegionIndices { get; set; }
 
                 /// <summary>
                 /// Creates a Sound with default values.
                 /// </summary>
-                public Sound() : base($"{nameof(Region)}: {nameof(Sound)}") { }
+                public Sound() : base($"{nameof(Region)}: {nameof(Sound)}") 
+                {
+                    ChildRegionNames = new string[16];
+                }
 
                 private protected override void DeepCopyTo(Region region)
                 {
@@ -1315,17 +1345,17 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT09 { get; set; }
+                public byte EnvMapEffectBox_UnkT09 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT0A { get; set; }
+                public byte EnvMapEffectBox_UnkT0A { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT0B { get; set; }
+                public byte EnvMapEffectBox_UnkT0B { get; set; }
 
                 /// <summary>
                 /// Strength of specular light in region.
@@ -1340,7 +1370,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public short UnkT2C { get; set; }
+                public short EnvMapEffectBox_UnkT2C { get; set; }
 
                 /// <summary>
                 /// Affects lighting with other fields when true. Possibly normalizes light when false.
@@ -1350,17 +1380,17 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT2F { get; set; }
+                public byte EnvMapEffectBox_UnkT2F { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public short UnkT30 { get; set; }
+                public short EnvMapEffectBox_UnkT30 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public short UnkT32 { get; set; }
+                public short EnvMapEffectBox_UnkT32 { get; set; }
 
                 /// <summary>
                 /// Creates an EnvMapEffectBox with default values.
@@ -1374,9 +1404,9 @@ namespace SoulsFormats
                     EnableDist = br.ReadSingle();
                     TransitionDist = br.ReadSingle();
                     br.AssertByte(new byte[1]);
-                    UnkT09 = br.ReadByte();
-                    UnkT0A = br.ReadByte();
-                    UnkT0B = br.ReadByte();
+                    EnvMapEffectBox_UnkT09 = br.ReadByte();
+                    EnvMapEffectBox_UnkT0A = br.ReadByte();
+                    EnvMapEffectBox_UnkT0B = br.ReadByte();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
@@ -1385,11 +1415,11 @@ namespace SoulsFormats
                     br.AssertInt32(new int[1]);
                     SpecularLightMult = br.ReadSingle();
                     PointLightMult = br.ReadSingle();
-                    UnkT2C = br.ReadInt16();
+                    EnvMapEffectBox_UnkT2C = br.ReadInt16();
                     IsModifyLight = br.ReadByte();
-                    UnkT2F = br.ReadByte();
-                    UnkT30 = br.ReadInt16();
-                    UnkT32 = br.ReadInt16();
+                    EnvMapEffectBox_UnkT2F = br.ReadByte();
+                    EnvMapEffectBox_UnkT30 = br.ReadInt16();
+                    EnvMapEffectBox_UnkT32 = br.ReadInt16();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                 }
@@ -1399,9 +1429,9 @@ namespace SoulsFormats
                     bw.WriteSingle(EnableDist);
                     bw.WriteSingle(TransitionDist);
                     bw.WriteByte((byte)0);
-                    bw.WriteByte(UnkT09);
-                    bw.WriteByte(UnkT0A);
-                    bw.WriteByte(UnkT0B);
+                    bw.WriteByte(EnvMapEffectBox_UnkT09);
+                    bw.WriteByte(EnvMapEffectBox_UnkT0A);
+                    bw.WriteByte(EnvMapEffectBox_UnkT0B);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -1410,11 +1440,11 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteSingle(SpecularLightMult);
                     bw.WriteSingle(PointLightMult);
-                    bw.WriteInt16(UnkT2C);
+                    bw.WriteInt16(EnvMapEffectBox_UnkT2C);
                     bw.WriteByte(IsModifyLight);
-                    bw.WriteByte(UnkT2F);
-                    bw.WriteInt16(UnkT30);
-                    bw.WriteInt16(UnkT32);
+                    bw.WriteByte(EnvMapEffectBox_UnkT2F);
+                    bw.WriteInt16(EnvMapEffectBox_UnkT30);
+                    bw.WriteInt16(EnvMapEffectBox_UnkT32);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                 }
@@ -1430,7 +1460,7 @@ namespace SoulsFormats
 
                 public WindPlacement() : base($"{nameof(Region)}: {nameof(WindPlacement)}") { }
 
-                internal WindPlacement(BinaryReaderEx br, long _length) : base(br) { }
+                internal WindPlacement(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -1452,32 +1482,32 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT00 { get; set; }
+                public int MufflingBox_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT20 { get; set; }
+                public int MufflingBox_UnkT20 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT24 { get; set; }
+                public float MufflingBox_UnkT24 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT28 { get; set; }
+                public float MufflingBox_UnkT28 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT2C { get; set; }
+                public int MufflingBox_UnkT2C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT34 { get; set; }
+                public float MufflingBox_UnkT34 { get; set; }
 
                 /// <summary>
                 /// Creates a MufflingBox with default values.
@@ -1488,19 +1518,19 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
+                    MufflingBox_UnkT00 = br.ReadInt32();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt64(32L);
-                    UnkT20 = br.ReadInt32();
-                    UnkT24 = br.ReadSingle();
-                    UnkT28 = br.ReadSingle();
-                    UnkT2C = br.ReadInt32();
+                    MufflingBox_UnkT20 = br.ReadInt32();
+                    MufflingBox_UnkT24 = br.ReadSingle();
+                    MufflingBox_UnkT28 = br.ReadSingle();
+                    MufflingBox_UnkT2C = br.ReadInt32();
                     br.AssertInt32(new int[1]);
-                    UnkT34 = br.ReadSingle();
+                    MufflingBox_UnkT34 = br.ReadSingle();
                     br.AssertInt32(new int[1]);
                     br.AssertSingle(-1f);
                     br.AssertSingle(-1f);
@@ -1509,19 +1539,19 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
+                    bw.WriteInt32(MufflingBox_UnkT00);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt64(32L);
-                    bw.WriteInt32(UnkT20);
-                    bw.WriteSingle(UnkT24);
-                    bw.WriteSingle(UnkT28);
-                    bw.WriteInt32(UnkT2C);
+                    bw.WriteInt32(MufflingBox_UnkT20);
+                    bw.WriteSingle(MufflingBox_UnkT24);
+                    bw.WriteSingle(MufflingBox_UnkT28);
+                    bw.WriteInt32(MufflingBox_UnkT2C);
                     bw.WriteInt32(0);
-                    bw.WriteSingle(UnkT34);
+                    bw.WriteSingle(MufflingBox_UnkT34);
                     bw.WriteInt32(0);
                     bw.WriteSingle(-1f);
                     bw.WriteSingle(-1f);
@@ -1590,12 +1620,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public sbyte UnkT00 { get; set; }
+                public sbyte SoundOverride_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public sbyte UnkT03 { get; set; }
+                public sbyte SoundOverride_UnkT03 { get; set; }
 
                 /// <summary>
                 /// Creates a SoundOverride with default values.
@@ -1606,10 +1636,10 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadSByte();
+                    SoundOverride_UnkT00 = br.ReadSByte();
                     br.AssertByte(new byte[1]);
                     br.AssertByte(new byte[1]);
-                    UnkT03 = br.ReadSByte();
+                    SoundOverride_UnkT03 = br.ReadSByte();
                     br.AssertInt32(-1);
                     br.AssertInt32(-1);
                     br.AssertInt32(new int[1]);
@@ -1621,10 +1651,10 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteSByte(UnkT00);
+                    bw.WriteSByte(SoundOverride_UnkT00);
                     bw.WriteByte((byte)0);
                     bw.WriteByte((byte)0);
-                    bw.WriteSByte(UnkT03);
+                    bw.WriteSByte(SoundOverride_UnkT03);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(0);
@@ -1646,12 +1676,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT00 { get; set; }
+                public int Patrol_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public sbyte UnkT04 { get; set; }
+                public sbyte Patrol_UnkT04 { get; set; }
 
                 /// <summary>
                 /// Creates a Patrol with default values.
@@ -1662,8 +1692,8 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
-                    UnkT04 = br.ReadSByte();
+                    Patrol_UnkT00 = br.ReadInt32();
+                    Patrol_UnkT04 = br.ReadSByte();
                     br.AssertByte(new byte[1]);
                     br.AssertByte(new byte[1]);
                     br.AssertByte(new byte[1]);
@@ -1671,8 +1701,8 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
-                    bw.WriteSByte(UnkT04);
+                    bw.WriteInt32(Patrol_UnkT00);
+                    bw.WriteSByte(Patrol_UnkT04);
                     bw.WriteByte((byte)0);
                     bw.WriteByte((byte)0);
                     bw.WriteByte((byte)0);
@@ -1690,27 +1720,27 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown
                 /// </summary>
-                public byte UnkT00 { get; set; }
+                public byte FeMapDisplay_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown
                 /// </summary>
-                public byte UnkT01 { get; set; }
+                public byte FeMapDisplay_UnkT01 { get; set; }
 
                 /// <summary>
                 /// Unknown
                 /// </summary>
-                public byte UnkT02 { get; set; }
+                public byte FeMapDisplay_UnkT02 { get; set; }
 
                 /// <summary>
                 /// Unknown
                 /// </summary>
-                public byte UnkT03 { get; set; }
+                public byte FeMapDisplay_UnkT03 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT04 { get; set; }
+                public int FeMapDisplay_UnkT04 { get; set; }
 
                 /// <summary>
                 /// Creates a MapPoint with default values.
@@ -1721,22 +1751,22 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadByte();
-                    UnkT01 = br.ReadByte();
-                    UnkT02 = br.ReadByte();
-                    UnkT03 = br.ReadByte();
-                    UnkT04 = br.ReadInt32();
+                    FeMapDisplay_UnkT00 = br.ReadByte();
+                    FeMapDisplay_UnkT01 = br.ReadByte();
+                    FeMapDisplay_UnkT02 = br.ReadByte();
+                    FeMapDisplay_UnkT03 = br.ReadByte();
+                    FeMapDisplay_UnkT04 = br.ReadInt32();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteByte(UnkT00);
-                    bw.WriteByte(UnkT01);
-                    bw.WriteByte(UnkT02);
-                    bw.WriteByte(UnkT03);
-                    bw.WriteInt32(UnkT04);
+                    bw.WriteByte(FeMapDisplay_UnkT00);
+                    bw.WriteByte(FeMapDisplay_UnkT01);
+                    bw.WriteByte(FeMapDisplay_UnkT02);
+                    bw.WriteByte(FeMapDisplay_UnkT03);
+                    bw.WriteInt32(FeMapDisplay_UnkT04);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                 }
@@ -1753,37 +1783,37 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT00 { get; set; }
+                public float OperationalArea_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT04 { get; set; }
+                public float OperationalArea_UnkT04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT08 { get; set; }
+                public float OperationalArea_UnkT08 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT0C { get; set; }
+                public float OperationalArea_UnkT0C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT10 { get; set; }
+                public float OperationalArea_UnkT10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT14 { get; set; }
+                public float OperationalArea_UnkT14 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT18 { get; set; }
+                public int OperationalArea_UnkT18 { get; set; }
 
                 /// <summary>
                 /// Creates a OperationalArea with default values.
@@ -1794,24 +1824,24 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadSingle();
-                    UnkT04 = br.ReadSingle();
-                    UnkT08 = br.ReadSingle();
-                    UnkT0C = br.ReadSingle();
-                    UnkT10 = br.ReadSingle();
-                    UnkT14 = br.ReadSingle();
-                    UnkT18 = br.ReadInt32();
+                    OperationalArea_UnkT00 = br.ReadSingle();
+                    OperationalArea_UnkT04 = br.ReadSingle();
+                    OperationalArea_UnkT08 = br.ReadSingle();
+                    OperationalArea_UnkT0C = br.ReadSingle();
+                    OperationalArea_UnkT10 = br.ReadSingle();
+                    OperationalArea_UnkT14 = br.ReadSingle();
+                    OperationalArea_UnkT18 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteSingle(UnkT00);
-                    bw.WriteSingle(UnkT04);
-                    bw.WriteSingle(UnkT08);
-                    bw.WriteSingle(UnkT0C);
-                    bw.WriteSingle(UnkT10);
-                    bw.WriteSingle(UnkT14);
-                    bw.WriteInt32(UnkT18);
+                    bw.WriteSingle(OperationalArea_UnkT00);
+                    bw.WriteSingle(OperationalArea_UnkT04);
+                    bw.WriteSingle(OperationalArea_UnkT08);
+                    bw.WriteSingle(OperationalArea_UnkT0C);
+                    bw.WriteSingle(OperationalArea_UnkT10);
+                    bw.WriteSingle(OperationalArea_UnkT14);
+                    bw.WriteInt32(OperationalArea_UnkT18);
                 }
             }
 
@@ -1825,7 +1855,7 @@ namespace SoulsFormats
 
                 public AiInformationSharing() : base($"{nameof(Region)}: {nameof(AiInformationSharing)}") { }
 
-                internal AiInformationSharing(BinaryReaderEx br, long _length) : base(br) { }
+                internal AiInformationSharing(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -1847,17 +1877,17 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT00 { get; set; }
+                public byte AiTarget_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT01 { get; set; }
+                public byte AiTarget_UnkT01 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT04 { get; set; }
+                public int AiTarget_UnkT04 { get; set; }
 
                 /// <summary>
                 /// Creates a AiTarget with default values.
@@ -1868,18 +1898,18 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadByte();
-                    UnkT01 = br.ReadByte();
+                    AiTarget_UnkT00 = br.ReadByte();
+                    AiTarget_UnkT01 = br.ReadByte();
                     br.AssertInt16(new short[1]);
-                    UnkT04 = br.ReadInt32();
+                    AiTarget_UnkT04 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteByte(UnkT00);
-                    bw.WriteByte(UnkT01);
+                    bw.WriteByte(AiTarget_UnkT00);
+                    bw.WriteByte(AiTarget_UnkT01);
                     bw.WriteInt16((short)0);
-                    bw.WriteInt32(UnkT04);
+                    bw.WriteInt32(AiTarget_UnkT04);
                 }
             }
 
@@ -1894,12 +1924,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public byte UnkT00 { get; set; }
+                public byte WwiseEnvironmentSound_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown. May be: WwiseValuetoStrParam_RuntimeReflectTextType or WwiseValuetoStrParam_Material
                 /// </summary>
-                public byte UnkT01 { get; set; }
+                public byte WwiseEnvironmentSound_UnkT01 { get; set; }
 
                 /// <summary>
                 /// Creates an WwiseEnvironmentSound with default values.
@@ -1910,15 +1940,15 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadByte();
-                    UnkT01 = br.ReadByte();
+                    WwiseEnvironmentSound_UnkT00 = br.ReadByte();
+                    WwiseEnvironmentSound_UnkT01 = br.ReadByte();
                     br.AssertInt16(new short[1]);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteByte(UnkT00);
-                    bw.WriteByte(UnkT01);
+                    bw.WriteByte(WwiseEnvironmentSound_UnkT00);
+                    bw.WriteByte(WwiseEnvironmentSound_UnkT01);
                     bw.WriteInt16((short)0);
                 }
             }
@@ -1933,7 +1963,7 @@ namespace SoulsFormats
 
                 public NaviGeneration() : base($"{nameof(Region)}: {nameof(NaviGeneration)}") { }
 
-                internal NaviGeneration(BinaryReaderEx br, long _length) : base(br) { }
+                internal NaviGeneration(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -1954,7 +1984,7 @@ namespace SoulsFormats
 
                 public TopdownView() : base($"{nameof(Region)}: {nameof(TopdownView)}") { }
 
-                internal TopdownView(BinaryReaderEx br, long _length) : base(br) { }
+                internal TopdownView(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -1976,42 +2006,42 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT00 { get; set; }
+                public int CharacterFollowing_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT04 { get; set; }
+                public int CharacterFollowing_UnkT04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT08 { get; set; }
+                public float CharacterFollowing_UnkT08 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT0C { get; set; }
+                public float CharacterFollowing_UnkT0C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT10 { get; set; }
+                public float CharacterFollowing_UnkT10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT14 { get; set; }
+                public float CharacterFollowing_UnkT14 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT18 { get; set; }
+                public float CharacterFollowing_UnkT18 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT1C { get; set; }
+                public float CharacterFollowing_UnkT1C { get; set; }
 
                 /// <summary>
                 /// Creates an CharacterFollowing with default values.
@@ -2022,26 +2052,26 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
-                    UnkT04 = br.ReadInt32();
-                    UnkT08 = br.ReadSingle();
-                    UnkT0C = br.ReadSingle();
-                    UnkT10 = br.ReadSingle();
-                    UnkT14 = br.ReadSingle();
-                    UnkT18 = br.ReadSingle();
-                    UnkT1C = br.ReadSingle();
+                    CharacterFollowing_UnkT00 = br.ReadInt32();
+                    CharacterFollowing_UnkT04 = br.ReadInt32();
+                    CharacterFollowing_UnkT08 = br.ReadSingle();
+                    CharacterFollowing_UnkT0C = br.ReadSingle();
+                    CharacterFollowing_UnkT10 = br.ReadSingle();
+                    CharacterFollowing_UnkT14 = br.ReadSingle();
+                    CharacterFollowing_UnkT18 = br.ReadSingle();
+                    CharacterFollowing_UnkT1C = br.ReadSingle();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
-                    bw.WriteInt32(UnkT04);
-                    bw.WriteSingle(UnkT08);
-                    bw.WriteSingle(UnkT0C);
-                    bw.WriteSingle(UnkT10);
-                    bw.WriteSingle(UnkT14);
-                    bw.WriteSingle(UnkT18);
-                    bw.WriteSingle(UnkT1C);
+                    bw.WriteInt32(CharacterFollowing_UnkT00);
+                    bw.WriteInt32(CharacterFollowing_UnkT04);
+                    bw.WriteSingle(CharacterFollowing_UnkT08);
+                    bw.WriteSingle(CharacterFollowing_UnkT0C);
+                    bw.WriteSingle(CharacterFollowing_UnkT10);
+                    bw.WriteSingle(CharacterFollowing_UnkT14);
+                    bw.WriteSingle(CharacterFollowing_UnkT18);
+                    bw.WriteSingle(CharacterFollowing_UnkT1C);
                 }
             }
 
@@ -2056,7 +2086,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown. Probably Navigation Weighting?
                 /// </summary>
-                public int UnkT00 { get; set; }
+                public int NavmeshCostControl_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Creates an NavmeshCostControl with default values.
@@ -2067,12 +2097,12 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
+                    NavmeshCostControl_UnkT00 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
+                    bw.WriteInt32(NavmeshCostControl_UnkT00);
                 }
             }
 
@@ -2139,12 +2169,12 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT00 { get; set; }
+                public float GarageCamera_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public float UnkT04 { get; set; }
+                public float GarageCamera_UnkT04 { get; set; }
 
                 /// <summary>
                 /// Creates an GarageCamera with default values.
@@ -2155,15 +2185,15 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadSingle();
-                    UnkT04 = br.ReadSingle();
+                    GarageCamera_UnkT00 = br.ReadSingle();
+                    GarageCamera_UnkT04 = br.ReadSingle();
                     br.AssertInt32(new int[1]);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteSingle(UnkT00);
-                    bw.WriteSingle(UnkT04);
+                    bw.WriteSingle(GarageCamera_UnkT00);
+                    bw.WriteSingle(GarageCamera_UnkT04);
                     bw.WriteInt32(0);
                 }
             }
@@ -2178,7 +2208,7 @@ namespace SoulsFormats
 
                 public JumpEdgeRestriction() : base($"{nameof(Region)}: {nameof(JumpEdgeRestriction)}") { }
 
-                internal JumpEdgeRestriction(BinaryReaderEx br, long _length) : base(br) { }
+                internal JumpEdgeRestriction(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -2200,7 +2230,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT00 { get; set; }
+                public int CutscenePlayback_UnkT00 { get; set; }
 
                 /// <summary>
                 /// Creates an CutscenePlayback with default values.
@@ -2211,13 +2241,13 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    UnkT00 = br.ReadInt32();
+                    CutscenePlayback_UnkT00 = br.ReadInt32();
                     br.AssertInt32(new int[1]);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(UnkT00);
+                    bw.WriteInt32(CutscenePlayback_UnkT00);
                     bw.WriteInt32(0);
                 }
             }
@@ -2292,30 +2322,19 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.Other;
                 private protected override bool HasTypeData => true;
 
-                private long Length { get; set; }
-                private byte[] Bytes { get; set; }
-
                 /// <summary>
                 /// Creates an Other with default values.
                 /// </summary>
-                public Other() : base($"{nameof(Region)}: {nameof(Other)}") 
-                {
-                    Bytes = Array.Empty<byte>();
-                }
+                public Other() : base($"{nameof(Region)}: {nameof(Other)}") { }
 
-                internal Other(BinaryReaderEx br, long _length) : base(br) 
-                {
-                    Length = _length;
-                }
+                internal Other(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Bytes = br.ReadBytes((int)Length);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteBytes(Bytes);
                 }
             }
         }

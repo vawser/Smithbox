@@ -1163,7 +1163,7 @@ public static class ParamReferenceUtils
 
                 foreach (var entry in CurrentPeekMap_AC6.Events.Treasures)
                 {
-                    if (entry.ItemLotParamId == row.ID)
+                    if (entry.ItemLotID == row.ID)
                     {
                         AssetName = entry.TreasurePartName;
                         break;
