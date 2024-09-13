@@ -126,10 +126,24 @@ public class KeyBindings
             Key.Y, 
             true);
 
+        public KeyBind CORE_RedoContinuousAction = new(
+            "Redo (Continuous)",
+            "Re-executes previously un-done actions whilst held.",
+            Key.Y,
+            true,
+            true);
+
         public KeyBind CORE_UndoAction = new(
             "Undo",
             "Undoes a previously executed action.",
             Key.Z,
+            true);
+
+        public KeyBind CORE_UndoContinuousAction = new(
+            "Undo (Continuous)",
+            "Undo previously executed actions whilst held.",
+            Key.Z,
+            true,
             true);
 
         public KeyBind CORE_SaveAll = new(

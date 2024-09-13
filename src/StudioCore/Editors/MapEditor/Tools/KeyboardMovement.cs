@@ -73,53 +73,94 @@ public static class KeyboardMovement
 
         foreach (Entity sel in sels)
         {
-            // X
+            bool xMovement_Positive = false;
+            bool xMovement_Negative = false;
+            bool yMovement_Positive = false;
+            bool yMovement_Negative = false;
+            bool zMovement_Positive = false;
+            bool zMovement_Negative = false;
+
+            // TODO: Determine 'direction' based on camera position, e.g. if to the side of element, switch x and y
             if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_PositiveX))
             {
-                var position = (Vector3)sel.GetPropertyValue("Position");
-                var newPosition = new Vector3(position.X + x_increment, position.Y, position.Z);
-                sel.SetPropertyValue("Position", newPosition);
-                sel.UpdateRenderModel();
+                xMovement_Positive = true;
             }
             if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_NegativeX))
             {
-                var position = (Vector3)sel.GetPropertyValue("Position");
-                var newPosition = new Vector3(position.X - x_increment, position.Y, position.Z);
-                sel.SetPropertyValue("Position", newPosition);
-                sel.UpdateRenderModel();
+                xMovement_Negative = true;
             }
-
-            // Y
             if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_PositiveY))
             {
-                var position = (Vector3)sel.GetPropertyValue("Position");
-                var newPosition = new Vector3(position.X, position.Y + y_increment, position.Z);
-                sel.SetPropertyValue("Position", newPosition);
-                sel.UpdateRenderModel();
+                yMovement_Positive = true;
             }
             if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_NegativeY))
             {
-                var position = (Vector3)sel.GetPropertyValue("Position");
-                var newPosition = new Vector3(position.X, position.Y - y_increment, position.Z);
-                sel.SetPropertyValue("Position", newPosition);
-                sel.UpdateRenderModel();
+                yMovement_Negative = true;
             }
-
-            // Z
             if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_PositiveZ))
             {
-                var position = (Vector3)sel.GetPropertyValue("Position");
-                var newPosition = new Vector3(position.X, position.Y, position.Z + z_increment);
-                sel.SetPropertyValue("Position", newPosition);
-                sel.UpdateRenderModel();
+                zMovement_Positive = true;
             }
             if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_NegativeZ))
             {
+                zMovement_Negative = true;
+            }
+
+            Transform localT = sel.GetLocalTransform();
+
+            // X
+            if (xMovement_Positive)
+            {
+                var position = (Vector3)sel.GetPropertyValue("Position");
+                var newPosition = new Vector3(position.X + x_increment, position.Y, position.Z);
+                Transform newT = new(newPosition, localT.EulerRotation);
+                actlist.Add(sel.GetUpdateTransformAction(newT));
+            }
+            if (xMovement_Negative)
+            {
+                var position = (Vector3)sel.GetPropertyValue("Position");
+                var newPosition = new Vector3(position.X - x_increment, position.Y, position.Z);
+                Transform newT = new(newPosition, localT.EulerRotation);
+                actlist.Add(sel.GetUpdateTransformAction(newT));
+            }
+
+            // Y
+            if (yMovement_Positive)
+            {
+                var position = (Vector3)sel.GetPropertyValue("Position");
+                var newPosition = new Vector3(position.X, position.Y + y_increment, position.Z);
+                Transform newT = new(newPosition, localT.EulerRotation);
+                actlist.Add(sel.GetUpdateTransformAction(newT));
+            }
+            if (yMovement_Negative)
+            {
+                var position = (Vector3)sel.GetPropertyValue("Position");
+                var newPosition = new Vector3(position.X, position.Y - y_increment, position.Z);
+                Transform newT = new(newPosition, localT.EulerRotation);
+                actlist.Add(sel.GetUpdateTransformAction(newT));
+            }
+
+            // Z
+            if (zMovement_Positive)
+            {
+                var position = (Vector3)sel.GetPropertyValue("Position");
+                var newPosition = new Vector3(position.X, position.Y, position.Z + z_increment);
+                Transform newT = new(newPosition, localT.EulerRotation);
+                actlist.Add(sel.GetUpdateTransformAction(newT));
+            }
+            if (zMovement_Negative)
+            {
                 var position = (Vector3)sel.GetPropertyValue("Position");
                 var newPosition = new Vector3(position.X, position.Y, position.Z - z_increment);
-                sel.SetPropertyValue("Position", newPosition);
-                sel.UpdateRenderModel();
+                Transform newT = new(newPosition, localT.EulerRotation);
+                actlist.Add(sel.GetUpdateTransformAction(newT));
             }
+        }
+
+        if (actlist.Any())
+        {
+            CompoundAction action = new(actlist);
+            Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(action);
         }
     }
 

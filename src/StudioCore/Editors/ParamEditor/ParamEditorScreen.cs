@@ -209,7 +209,7 @@ public class ParamEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo", KeyBindings.Current.CORE_UndoAction.HintText, false, EditorActionManager.CanUndo()))
+            if (ImGui.MenuItem("Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false, EditorActionManager.CanUndo()))
             {
                 ParamUndo();
             }
@@ -221,7 +221,7 @@ public class ParamEditorScreen : EditorScreen
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.CORE_RedoAction.HintText, false, EditorActionManager.CanRedo()))
+            if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false, EditorActionManager.CanRedo()))
             {
                 ParamRedo();
             }
@@ -615,17 +615,20 @@ public class ParamEditorScreen : EditorScreen
                 ParamUndo();
             }
 
+            if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+            {
+                ParamUndo();
+            }
+
             if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
             {
                 ParamRedo();
             }
 
-            /*
-            if (_activeView._selection.HasHistory() && InputTracker.GetKeyDown(KeyBindings.Current.Param_GotoBack))
+            if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
             {
-                EditorCommandQueue.AddCommand(@"param/back");
+                ParamRedo();
             }
-            */
 
             if (!ImGui.IsAnyItemActive() && _activeView._selection.ActiveParamExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SelectAll))
             {

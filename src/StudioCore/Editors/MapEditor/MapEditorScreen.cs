@@ -201,7 +201,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         if (ImGui.BeginMenu("Edit"))
         {
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem($"Undo", KeyBindings.Current.CORE_UndoAction.HintText, false,
+            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
@@ -215,7 +215,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", KeyBindings.Current.CORE_RedoAction.HintText, false,
+            if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false,
                     EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
@@ -812,7 +812,17 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 EditorActionManager.UndoAction();
             }
 
+            if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+            {
+                EditorActionManager.UndoAction();
+            }
+
             if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
+            {
+                EditorActionManager.RedoAction();
+            }
+
+            if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
             {
                 EditorActionManager.RedoAction();
             }

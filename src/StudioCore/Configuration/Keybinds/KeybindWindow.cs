@@ -174,9 +174,17 @@ public class CommonKeybindTab
                 KeyBindings.Current.CORE_RedoAction,
                 KeyBindings.Default.CORE_RedoAction);
 
+            KeyBindings.Current.CORE_RedoContinuousAction = InputTracker.KeybindLine(11,
+                KeyBindings.Current.CORE_RedoContinuousAction,
+                KeyBindings.Default.CORE_RedoContinuousAction);
+
             KeyBindings.Current.CORE_UndoAction = InputTracker.KeybindLine(4,
                 KeyBindings.Current.CORE_UndoAction,
                 KeyBindings.Default.CORE_UndoAction);
+
+            KeyBindings.Current.CORE_UndoContinuousAction = InputTracker.KeybindLine(10,
+                KeyBindings.Current.CORE_UndoContinuousAction,
+                KeyBindings.Default.CORE_UndoContinuousAction);
 
             KeyBindings.Current.CORE_SaveAll = InputTracker.KeybindLine(5,
                 KeyBindings.Current.CORE_SaveAll,
