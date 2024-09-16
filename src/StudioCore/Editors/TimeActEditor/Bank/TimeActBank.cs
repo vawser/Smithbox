@@ -1,26 +1,21 @@
-﻿using HKLib.hk2018.hkAsyncThreadPool;
-using ImGuiNET;
+﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.Locators;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Xml;
-using System.Xml.Linq;
-using static SoulsFormats.MSB_AC6.Part;
 using static SoulsFormats.TAE;
-using static StudioCore.Editors.TimeActEditor.AnimationBank;
 using static StudioCore.Configuration.Settings.TimeActEditorTab;
-using StudioCore.Core.Project;
-using StudioCore.Utilities;
 
-namespace StudioCore.Editors.TimeActEditor;
-public static class AnimationBank
+namespace StudioCore.Editors.TimeActEditor.Bank;
+public static class TimeActBank
 {
     public static bool IsSaving { get; set; }
     public static bool IsLoaded { get; set; }
@@ -30,16 +25,19 @@ public static class AnimationBank
     public static bool IsVanillaCharacterTimeActsLoaded { get; set; }
     public static bool IsVanillaObjectTimeActsLoaded { get; set; }
 
-    public static Dictionary<ContainerFileInfo, BinderInfo> FileChrBank { get; set; } = new();
-    public static Dictionary<ContainerFileInfo, BinderInfo> FileObjBank { get; set; } = new();
-    public static Dictionary<ContainerFileInfo, BinderInfo> VanillaChrFileBank { get; set; } = new();
-    public static Dictionary<ContainerFileInfo, BinderInfo> VanillaObjFileBank { get; set; } = new();
+    public static Dictionary<TimeActContainerWrapper, TimeActBinderWrapper> FileChrBank { get; set; } = new();
+    public static Dictionary<TimeActContainerWrapper, TimeActBinderWrapper> FileObjBank { get; set; } = new();
+    public static Dictionary<TimeActContainerWrapper, TimeActBinderWrapper> VanillaChrFileBank { get; set; } = new();
+    public static Dictionary<TimeActContainerWrapper, TimeActBinderWrapper> VanillaObjFileBank { get; set; } = new();
 
     public static Dictionary<string, Template> TimeActTemplates = new Dictionary<string, Template>();
 
+    /// <summary>
+    /// Loads all relevant files into the banks for the Time Act Editor
+    /// </summary>
     public static void Load()
     {
-        var title = $"{AnimationBank.GetObjectTitle()}s";
+        string title = $"{TimeActUtils.GetObjectTitle()}s";
 
         if (!IsLoaded)
         {
@@ -124,17 +122,20 @@ public static class AnimationBank
                 IsVanillaObjectTimeActsLoaded = true;
             }
 
-            if (IsTemplatesLoaded && IsCharacterTimeActsLoaded && IsObjectTimeActsLoaded && IsVanillaCharacterTimeActsLoaded  && IsVanillaObjectTimeActsLoaded)
+            if (IsTemplatesLoaded && IsCharacterTimeActsLoaded && IsObjectTimeActsLoaded && IsVanillaCharacterTimeActsLoaded && IsVanillaObjectTimeActsLoaded)
             {
                 IsLoaded = true;
             }
         }
     }
 
+    /// <summary>
+    /// Displays the current load state for the Time Act Editor
+    /// </summary>
     public static void DisplayLoadState()
     {
-        ImGui.Text($"This editor is still loading:");
-        if (AnimationBank.IsTemplatesLoaded)
+        ImguiUtils.WrappedText($"This editor is still loading:");
+        if (IsTemplatesLoaded)
         {
             ImGui.Text($"Templates:");
             ImGui.SameLine();
@@ -147,7 +148,7 @@ public static class AnimationBank
             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Warning_Text_Color, "LOADING");
         }
 
-        if (AnimationBank.IsCharacterTimeActsLoaded)
+        if (IsCharacterTimeActsLoaded)
         {
             ImGui.Text($"Character Time Acts:");
             ImGui.SameLine();
@@ -160,9 +161,9 @@ public static class AnimationBank
             ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Warning_Text_Color, "LOADING");
         }
 
-        var title = $"{AnimationBank.GetObjectTitle()}";
+        var title = $"{TimeActUtils.GetObjectTitle()}";
 
-        if (AnimationBank.IsObjectTimeActsLoaded)
+        if (IsObjectTimeActsLoaded)
         {
             ImGui.Text($"{title} Time Acts:");
             ImGui.SameLine();
@@ -176,6 +177,9 @@ public static class AnimationBank
         }
     }
 
+    /// <summary>
+    /// Loads the TAE Template files for the Time Act Editor
+    /// </summary>
     public static void LoadTimeActTemplates()
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -186,11 +190,11 @@ public static class AnimationBank
         TimeActTemplates = new();
 
         // Load templates
-        var templateDir = $"{AppContext.BaseDirectory}Assets\\TAE\\";
-        foreach (var file in Directory.EnumerateFiles(templateDir, "*.xml"))
+        string templateDir = $"{AppContext.BaseDirectory}Assets\\TAE\\";
+        foreach (string file in Directory.EnumerateFiles(templateDir, "*.xml"))
         {
-            var name = Path.GetFileNameWithoutExtension(file);
-            var template = TAE.Template.ReadXMLFile(file);
+            string name = Path.GetFileNameWithoutExtension(file);
+            Template template = Template.ReadXMLFile(file);
 
             TimeActTemplates.Add(name, template);
         }
@@ -199,6 +203,9 @@ public static class AnimationBank
 
     }
 
+    /// <summary>
+    /// Loads the ChrBND files from the Project folder for the Time Act Editor
+    /// </summary>
     public static void LoadProjectCharacterTimeActs()
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -212,6 +219,9 @@ public static class AnimationBank
         IsCharacterTimeActsLoaded = true;
     }
 
+    /// <summary>
+    /// Loads the ObjBND files from the Project folder for the Time Act Editor
+    /// </summary>
     public static void LoadProjectObjectTimeActs()
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -225,6 +235,9 @@ public static class AnimationBank
         IsObjectTimeActsLoaded = true;
     }
 
+    /// <summary>
+    /// Loads the ChrBND files from the Game folder for the Time Act Editor
+    /// </summary>
     public static void LoadVanillaCharacterTimeActs()
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -238,6 +251,9 @@ public static class AnimationBank
         IsVanillaCharacterTimeActsLoaded = true;
     }
 
+    /// <summary>
+    /// Loads the ObjBND files from the Game folder for the Time Act Editor
+    /// </summary>
     public static void LoadVanillaObjectTimeActs()
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)
@@ -251,11 +267,13 @@ public static class AnimationBank
         IsVanillaObjectTimeActsLoaded = true;
     }
 
-
-    public static void LoadChrTimeActs(Dictionary<ContainerFileInfo, BinderInfo> targetBank, bool rootOnly = false)
+    /// <summary>
+    /// Loads all of the Character TAE
+    /// </summary>
+    public static void LoadChrTimeActs(Dictionary<TimeActContainerWrapper, TimeActBinderWrapper> targetBank, bool rootOnly = false)
     {
-        var fileDir = @"\chr";
-        var fileExt = @".anibnd.dcx";
+        string fileDir = @"\chr";
+        string fileExt = @".anibnd.dcx";
 
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
@@ -265,9 +283,9 @@ public static class AnimationBank
 
         List<string> fileNames = MiscLocator.GetCharacterTimeActBinders();
 
-        foreach (var name in fileNames)
+        foreach (string name in fileNames)
         {
-            var filePath = $"{fileDir}\\{name}{fileExt}";
+            string filePath = $"{fileDir}\\{name}{fileExt}";
 
             if (rootOnly)
             {
@@ -288,10 +306,13 @@ public static class AnimationBank
     }
 
 
-    public static void LoadObjTimeActs(Dictionary<ContainerFileInfo, BinderInfo> targetBank, bool rootOnly = false)
+    /// <summary>
+    /// Loads all of the Object TAE
+    /// </summary>
+    public static void LoadObjTimeActs(Dictionary<TimeActContainerWrapper, TimeActBinderWrapper> targetBank, bool rootOnly = false)
     {
-        var fileDir = @"\obj";
-        var fileExt = @".objbnd.dcx";
+        string fileDir = @"\obj";
+        string fileExt = @".objbnd.dcx";
 
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
@@ -319,12 +340,12 @@ public static class AnimationBank
 
             foreach (var entry in assetDict)
             {
-                var folder = entry.Key;
-                var files = entry.Value;
+                string folder = entry.Key;
+                List<string> files = entry.Value;
 
-                foreach (var name in files)
+                foreach (string name in files)
                 {
-                    var filePath = $"{fileDir}\\{folder}\\{name}{fileExt}";
+                    string filePath = $"{fileDir}\\{folder}\\{name}{fileExt}";
 
                     if (rootOnly)
                     {
@@ -353,9 +374,9 @@ public static class AnimationBank
                 fileNames = MiscLocator.GetAssetTimeActBinders_AC6();
             }
 
-            foreach (var name in fileNames)
+            foreach (string name in fileNames)
             {
-                var filePath = $"{fileDir}\\{name}{fileExt}";
+                string filePath = $"{fileDir}\\{name}{fileExt}";
 
                 if (rootOnly)
                 {
@@ -376,7 +397,10 @@ public static class AnimationBank
         }
     }
 
-    public static void LoadChrTimeAct(string path, Dictionary<ContainerFileInfo, BinderInfo> targetBank)
+    /// <summary>
+    /// Loads passed Character TAE file (via path string)
+    /// </summary>
+    public static void LoadChrTimeAct(string path, Dictionary<TimeActContainerWrapper, TimeActBinderWrapper> targetBank)
     {
         if (path == null)
         {
@@ -391,8 +415,8 @@ public static class AnimationBank
             return;
         }
 
-        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        ContainerFileInfo fileStruct = new ContainerFileInfo(name, path);
+        string name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
+        TimeActContainerWrapper fileStruct = new TimeActContainerWrapper(name, path);
         bool validFile = false;
 
         IBinder binder = null;
@@ -404,9 +428,9 @@ public static class AnimationBank
 
             try
             {
-                var fileBytes = File.ReadAllBytes(path);
+                byte[] fileBytes = File.ReadAllBytes(path);
                 TAE taeFile = TAE.Read(fileBytes);
-                InternalFileInfo tInfo = new(path, taeFile);
+                InternalTimeActWrapper tInfo = new(path, taeFile);
                 fileStruct.InternalFiles.Add(tInfo);
                 validFile = true;
             }
@@ -422,20 +446,20 @@ public static class AnimationBank
 
             if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
-                var bytes = DCX.Decompress(path);
-                if(bytes.Length > 0)
+                Memory<byte> bytes = DCX.Decompress(path);
+                if (bytes.Length > 0)
                     binder = BND3.Read(bytes);
             }
             else
             {
-                var bytes = DCX.Decompress(path);
+                Memory<byte> bytes = DCX.Decompress(path);
                 if (bytes.Length > 0)
                     binder = BND4.Read(bytes);
             }
 
             if (binder != null)
             {
-                foreach (var file in binder.Files)
+                foreach (BinderFile file in binder.Files)
                 {
                     if (file.Name.Contains(".tae"))
                     {
@@ -444,7 +468,7 @@ public static class AnimationBank
                             try
                             {
                                 TAE taeFile = TAE.Read(file.Bytes);
-                                InternalFileInfo tInfo = new(file.Name, taeFile);
+                                InternalTimeActWrapper tInfo = new(file.Name, taeFile);
                                 fileStruct.InternalFiles.Add(tInfo);
                                 validFile = true;
                             }
@@ -462,12 +486,15 @@ public static class AnimationBank
         if (validFile)
         {
             fileStruct.InternalFiles.Sort();
-            var binderInfo = new BinderInfo(binder, null, "");
+            var binderInfo = new TimeActBinderWrapper(binder, null, "");
             targetBank.Add(fileStruct, binderInfo);
         }
     }
 
-    public static void LoadObjTimeAct(string path, Dictionary<ContainerFileInfo, BinderInfo> targetBank, string aegFolder="")
+    /// <summary>
+    /// Loads passed Object TAE file (via path string)
+    /// </summary>
+    public static void LoadObjTimeAct(string path, Dictionary<TimeActContainerWrapper, TimeActBinderWrapper> targetBank, string aegFolder = "")
     {
         if (path == null)
         {
@@ -482,15 +509,15 @@ public static class AnimationBank
             return;
         }
 
-        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        ContainerFileInfo fileStruct = new ContainerFileInfo(name, path);
+        string name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
+        TimeActContainerWrapper fileStruct = new TimeActContainerWrapper(name, path);
         bool validFile = false;
 
         IBinder binder = null;
         IBinder aniBinder = null;
         string aniBinderName = "";
 
-        if(aegFolder != "")
+        if (aegFolder != "")
         {
             fileStruct.AegFolder = aegFolder;
         }
@@ -502,9 +529,9 @@ public static class AnimationBank
 
             try
             {
-                var fileBytes = File.ReadAllBytes(path);
+                byte[] fileBytes = File.ReadAllBytes(path);
                 TAE taeFile = TAE.Read(fileBytes);
-                InternalFileInfo tInfo = new(path, taeFile);
+                InternalTimeActWrapper tInfo = new(path, taeFile);
                 fileStruct.InternalFiles.Add(tInfo);
                 validFile = true;
             }
@@ -520,20 +547,20 @@ public static class AnimationBank
 
             if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
-                var bytes = DCX.Decompress(path);
+                Memory<byte> bytes = DCX.Decompress(path);
                 if (bytes.Length > 0)
                     binder = BND3.Read(bytes);
             }
             else
             {
-                var bytes = DCX.Decompress(path);
+                Memory<byte> bytes = DCX.Decompress(path);
                 if (bytes.Length > 0)
                     binder = BND4.Read(bytes);
             }
 
             if (binder != null)
             {
-                foreach (var file in binder.Files)
+                foreach (BinderFile file in binder.Files)
                 {
                     if (file.Name.Contains(".anibnd"))
                     {
@@ -550,7 +577,7 @@ public static class AnimationBank
 
                         if (aniBinder != null)
                         {
-                            foreach (var aniFile in aniBinder.Files)
+                            foreach (BinderFile aniFile in aniBinder.Files)
                             {
                                 if (aniFile.Name.Contains(".tae"))
                                 {
@@ -559,7 +586,7 @@ public static class AnimationBank
                                         try
                                         {
                                             TAE taeFile = TAE.Read(aniFile.Bytes);
-                                            InternalFileInfo tInfo = new(aniFile.Name, taeFile);
+                                            InternalTimeActWrapper tInfo = new(aniFile.Name, taeFile);
                                             fileStruct.InternalFiles.Add(tInfo);
                                             validFile = true;
 
@@ -582,11 +609,14 @@ public static class AnimationBank
         if (validFile)
         {
             fileStruct.InternalFiles.Sort();
-            var binderInfo = new BinderInfo(binder, aniBinder, aniBinderName);
+            TimeActBinderWrapper binderInfo = new TimeActBinderWrapper(binder, aniBinder, aniBinderName);
             targetBank.Add(fileStruct, binderInfo);
         }
     }
 
+    /// <summary>
+    /// Async task for saving all modified TAE files in Time Act Editor
+    /// </summary>
     public static async void SaveTimeActsTask()
     {
         IsSaving = true;
@@ -598,6 +628,9 @@ public static class AnimationBank
         IsSaving = result;
     }
 
+    /// <summary>
+    /// Save modified TAE files (e.g. ChrBND/ObjBND containers with TAE files within).
+    /// </summary>
     public static async Task<bool> SaveTimeActs()
     {
         foreach (var (info, binder) in FileChrBank)
@@ -611,10 +644,13 @@ public static class AnimationBank
         return false;
     }
 
-    public static void HandleDS2TimeActSave(ContainerFileInfo info, BinderInfo binderInfo)
+    /// <summary>
+    /// Save DS2 TAE files (e.g. loose compared to containered)
+    /// </summary>
+    public static void HandleDS2TimeActSave(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo)
     {
-        var fileDir = @"\timeact\chr";
-        var fileExt = @".tae";
+        string fileDir = @"\timeact\chr";
+        string fileExt = @".tae";
 
         if (info.Path.Contains("obj"))
         {
@@ -622,11 +658,11 @@ public static class AnimationBank
         }
 
         // Direct file with DS2
-        var fileBytes = info.InternalFiles.First().TAE.Write();
+        byte[] fileBytes = info.InternalFiles.First().TAE.Write();
 
-        var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
-        var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
-        var assetModDir = $@"{Smithbox.ProjectRoot}\{fileDir}\";
+        string assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
+        string assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
+        string assetModDir = $@"{Smithbox.ProjectRoot}\{fileDir}\";
 
         if (!Directory.Exists(assetModDir))
         {
@@ -650,10 +686,13 @@ public static class AnimationBank
         }
     }
 
-    public static void HandleBinderContents(ContainerFileInfo info, BinderInfo binderInfo, IBinder binder)
+    /// <summary>
+    /// Save containered TAE files
+    /// </summary>
+    public static void HandleBinderContents(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo, IBinder binder)
     {
         // Write existing TAE, and discover files that need to be added
-        foreach (InternalFileInfo tInfo in info.InternalFiles)
+        foreach (InternalTimeActWrapper tInfo in info.InternalFiles)
         {
             foreach (BinderFile file in binder.Files)
             {
@@ -665,7 +704,7 @@ public static class AnimationBank
         }
 
         // TAE files within anibnd.dcx container
-        var internalFilepath = "";
+        string internalFilepath = "";
 
         // Grab correct path for a TAE binderFile
         foreach (BinderFile file in binder.Files)
@@ -675,16 +714,16 @@ public static class AnimationBank
         }
 
         // Get internal path without the tae file part
-        var filename = Path.GetFileName(internalFilepath);
-        var internalPath = internalFilepath.Replace(filename, "");
+        string filename = Path.GetFileName(internalFilepath);
+        string internalPath = internalFilepath.Replace(filename, "");
 
         // Create new binder files for the newly added internal files
-        foreach (InternalFileInfo tInfo in info.InternalFiles)
+        foreach (InternalTimeActWrapper tInfo in info.InternalFiles)
         {
             if (tInfo.MarkForAddition)
             {
-                var newBinderfile = new BinderFile();
-                var id = int.Parse(tInfo.Name.Substring(1));
+                BinderFile newBinderfile = new BinderFile();
+                int id = int.Parse(tInfo.Name.Substring(1));
 
                 newBinderfile.ID = id;
                 newBinderfile.Name = $"{internalPath}\\{tInfo.Name}.tae";
@@ -695,7 +734,7 @@ public static class AnimationBank
         }
 
         // Remove internal files marked for removal
-        foreach (InternalFileInfo tInfo in info.InternalFiles)
+        foreach (InternalTimeActWrapper tInfo in info.InternalFiles)
         {
             if (tInfo.MarkForRemoval)
             {
@@ -709,7 +748,7 @@ public static class AnimationBank
                     }
                 }
 
-                if(fileToRemove != null)
+                if (fileToRemove != null)
                 {
                     binder.Files.Remove(fileToRemove);
                 }
@@ -717,7 +756,10 @@ public static class AnimationBank
         }
     }
 
-    public static async void SaveTimeActTask(ContainerFileInfo info, BinderInfo binderInfo)
+    /// <summary>
+    /// Async task for saving single modified TAE file in Time Act Editor
+    /// </summary>
+    public static async void SaveTimeActTask(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo)
     {
         IsSaving = true;
 
@@ -729,7 +771,10 @@ public static class AnimationBank
         IsSaving = result;
     }
 
-    public static async Task<bool> SaveTimeAct(ContainerFileInfo info, BinderInfo binderInfo)
+    /// <summary>
+    /// Save modified TAE file (e.g. ChrBND/ObjBND containers with TAE files within).
+    /// </summary>
+    public static async Task<bool> SaveTimeAct(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo)
     {
         await Task.Delay(1000);
 
@@ -746,7 +791,7 @@ public static class AnimationBank
             var fileExt = @".anibnd.dcx";
 
             // Dealing with objbnd
-            if(binderInfo.InternalBinder != null)
+            if (binderInfo.InternalBinder != null)
             {
                 fileDir = @"\obj";
                 fileExt = @".objbnd.dcx";
@@ -784,8 +829,8 @@ public static class AnimationBank
 
             byte[] fileBytes = GetBinderBytes(binderInfo.ContainerBinder);
 
-            var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
-            var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
+            string assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
+            string assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
 
             if (fileBytes != null)
             {
@@ -800,7 +845,7 @@ public static class AnimationBank
                 {
                     File.Copy(assetRoot, $@"{assetRoot}.bak", true);
                 }
-                else if(File.Exists(assetMod))
+                else if (File.Exists(assetMod))
                 {
                     File.Copy(assetMod, $@"{assetMod}.bak", true);
                 }
@@ -817,13 +862,16 @@ public static class AnimationBank
         return false;
     }
 
+    /// <summary>
+    /// Return the byte array for the passed binder.
+    /// </summary>
     public static byte[] GetBinderBytes(IBinder targetBinder)
     {
         // Allow older compression types for these two since KRAK is slow
         if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             BND4 writeBinder = targetBinder as BND4;
-            var currentCompressionType = CFG.Current.CurrentTimeActCompressionType;
+            TimeactCompressionType currentCompressionType = CFG.Current.CurrentTimeActCompressionType;
 
             if (currentCompressionType != TimeactCompressionType.Default)
             {
@@ -874,84 +922,4 @@ public static class AnimationBank
         return null;
     }
 
-    public static string GetObjectTitle()
-    {
-        var title = "Object";
-
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
-        {
-            title = "Asset";
-        }
-
-        return title;
-    }
-
-    public class ContainerFileInfo
-    {
-        public ContainerFileInfo(string name, string path)
-        {
-            Name = name;
-            Path = path;
-            InternalFiles = new List<InternalFileInfo>();
-        }
-
-        public string Name { get; set; }
-        public string Path { get; set; }
-
-        public string AegFolder { get; set; }
-
-        public bool IsContainerFile { get; set; }
-
-        public bool IsModified { get; set; }
-
-        public List<InternalFileInfo> InternalFiles { get; set; }
-    }
-
-    public class InternalFileInfo : IComparable<InternalFileInfo>
-    {
-        public string Name { get; set; }
-        public string Filepath { get; set; }
-        public TAE TAE { get; set; }
-
-        public bool MarkForAddition { get; set; }
-        public bool MarkForRemoval { get; set; }
-
-        public InternalFileInfo(string path, TAE taeData)
-        {
-            Filepath = path;
-            TAE = taeData;
-            Name = Path.GetFileNameWithoutExtension(path);
-        }
-
-        public int CompareTo(InternalFileInfo other)
-        {
-            var thisID = int.Parse(Name.Substring(1));
-            var otherID = int.Parse(other.Name.Substring(1));
-
-            if(thisID > otherID) 
-                return 1;
-
-            if(otherID > thisID) 
-                return -1;
-
-            if(thisID == otherID) 
-                return 0;
-
-            return 0;
-        }
-    }
-
-    public class BinderInfo
-    {
-        public IBinder ContainerBinder { get; set; }
-        public IBinder InternalBinder { get; set; }
-        public string InternalBinderName { get; set; }
-
-        public BinderInfo(IBinder containerBinder, IBinder internalBinder, string internalBinderName)
-        {
-            ContainerBinder = containerBinder;
-            InternalBinder = internalBinder;
-            InternalBinderName = internalBinderName;
-        }
-    }
 }

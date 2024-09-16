@@ -4,7 +4,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Editors.TimeActEditor;
+using StudioCore.Editors.TimeActEditor.Bank;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace StudioCore.Tools.Generation;
 
 public static class NameGenerationTool
 {
-    private static AnimationBank.ContainerFileInfo PlayerTAEContainer;
+    private static TimeActContainerWrapper PlayerTAEContainer;
 
     private static Param EquipWeaponParam;
     private static Param SwordArtsParam;
@@ -26,7 +26,7 @@ public static class NameGenerationTool
 
     public static void GenerateRowNames()
     {
-        if (!AnimationBank.IsLoaded)
+        if (!TimeActBank.IsLoaded)
         {
             return;
         }
@@ -35,7 +35,7 @@ public static class NameGenerationTool
             HavokFileBank.LoadAllHavokFiles();
         }
 
-        PlayerTAEContainer = AnimationBank.FileChrBank.Where(e => e.Key.Name == "c0000").FirstOrDefault().Key;
+        PlayerTAEContainer = TimeActBank.FileChrBank.Where(e => e.Key.Name == "c0000").FirstOrDefault().Key;
         var playerContainer = HavokFileBank.BehaviorContainerBank.Where(e => e.Filename == "c0000.behbnd.dcx").FirstOrDefault();
 
         // Read TAE: get animations (behavior judge -> animation ID)
@@ -119,26 +119,26 @@ public static class NameGenerationTool
         switch (Smithbox.ProjectType)
         {
             case ProjectType.DS1:
-                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS1"]);
+                baseTAE.ApplyTemplate(TimeActBank.TimeActTemplates["TAE.Template.DS1"]);
                 break;
             case ProjectType.DS2:
             case ProjectType.DS2S:
-                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.SOTFS"]);
+                baseTAE.ApplyTemplate(TimeActBank.TimeActTemplates["TAE.Template.SOTFS"]);
                 break;
             case ProjectType.DS3:
-                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS3"]);
+                baseTAE.ApplyTemplate(TimeActBank.TimeActTemplates["TAE.Template.DS3"]);
                 break;
             case ProjectType.BB:
-                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.BB"]);
+                baseTAE.ApplyTemplate(TimeActBank.TimeActTemplates["TAE.Template.BB"]);
                 break;
             case ProjectType.SDT:
-                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.SDT"]);
+                baseTAE.ApplyTemplate(TimeActBank.TimeActTemplates["TAE.Template.SDT"]);
                 break;
             case ProjectType.ER:
-                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.ER"]);
+                baseTAE.ApplyTemplate(TimeActBank.TimeActTemplates["TAE.Template.ER"]);
                 break;
             case ProjectType.AC6:
-                baseTAE.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.AC6"]);
+                baseTAE.ApplyTemplate(TimeActBank.TimeActTemplates["TAE.Template.AC6"]);
                 break;
         }
 

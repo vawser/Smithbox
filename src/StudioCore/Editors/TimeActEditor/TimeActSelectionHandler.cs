@@ -3,6 +3,8 @@ using HKLib.hk2018.hkHashMapDetail;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.HavokEditor;
+using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Editors.TimeActEditor.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +12,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using static SoulsFormats.DRB;
-using static StudioCore.Editors.TimeActEditor.AnimationBank;
-using static StudioCore.Editors.TimeActEditor.TimeActUtils;
+using static StudioCore.Editors.TimeActEditor.Bank.TimeActBank;
+using static StudioCore.Editors.TimeActEditor.Utils.TimeActUtils;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -22,8 +24,8 @@ public class TimeActSelectionHandler
 
     public HavokContainerInfo LoadedHavokContainer;
 
-    public ContainerFileInfo ContainerInfo;
-    public BinderInfo ContainerBinder;
+    public TimeActContainerWrapper ContainerInfo;
+    public TimeActBinderWrapper ContainerBinder;
     public string ContainerKey;
     public int ContainerIndex = -1;
 
@@ -31,7 +33,7 @@ public class TimeActSelectionHandler
     public int CurrentTimeActKey;
 
     public TAE.Animation CurrentTimeActAnimation;
-    public TemporaryAnimHeader CurrentTemporaryAnimHeader;
+    public TransientAnimHeader CurrentTemporaryAnimHeader;
     public int CurrentTimeActAnimationIndex = -1;
 
     public TAE.Event CurrentTimeActEvent;
@@ -104,7 +106,7 @@ public class TimeActSelectionHandler
         TimeActMultiselect.Reset(false, false, true);
     }
 
-    public void FileContainerChange(ContainerFileInfo info, BinderInfo binderInfo, int index, FileContainerType containerType, bool changeContext = true)
+    public void FileContainerChange(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo, int index, FileContainerType containerType, bool changeContext = true)
     {
         CurrentFileContainerType = containerType;
 

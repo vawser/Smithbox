@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Editors.TimeActEditor.AnimationBank;
+using static StudioCore.Editors.TimeActEditor.Bank.TimeActBank;
 
 namespace StudioCore.Editors.CutsceneEditor;
 public static class CutsceneBank

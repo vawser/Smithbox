@@ -7,6 +7,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editors.HavokEditor;
+using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -16,23 +17,31 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using static SoulsFormats.DRB;
-using static StudioCore.Editors.TimeActEditor.AnimationBank;
+using static StudioCore.Editors.TimeActEditor.Bank.TimeActBank;
 
-namespace StudioCore.Editors.TimeActEditor;
+namespace StudioCore.Editors.TimeActEditor.Utils;
 
 public static class TimeActUtils
 {
-    public enum AliasType
+    /// <summary>
+    /// Get title string for Object/Asset differentiation based on project type. 
+    /// </summary>
+    public static string GetObjectTitle()
     {
-        Character,
-        Asset
-    }
+        string title = "Object";
 
+        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        {
+            title = "Asset";
+        }
+
+        return title;
+    }
     public static void DisplayTimeActFileAlias(string name, AliasType type)
     {
         var referenceDict = Smithbox.AliasCacheHandler.AliasCache.Characters;
 
-        if(type == AliasType.Asset)
+        if (type == AliasType.Asset)
         {
             referenceDict = Smithbox.AliasCacheHandler.AliasCache.Assets;
         }
@@ -47,7 +56,7 @@ public static class TimeActUtils
         }
     }
 
-    public static void DisplayTimeActAlias(ContainerFileInfo info, int id)
+    public static void DisplayTimeActAlias(TimeActContainerWrapper info, int id)
     {
         if (Smithbox.BankHandler.TimeActAliases.Aliases != null)
         {
@@ -78,9 +87,9 @@ public static class TimeActUtils
         if (Smithbox.BankHandler.HavokGeneratorAliases != null)
         {
             List<string> aliasList = new();
-            foreach(var entry in Smithbox.BankHandler.HavokGeneratorAliases.HavokAliases.List)
+            foreach (var entry in Smithbox.BankHandler.HavokGeneratorAliases.HavokAliases.List)
             {
-                if(entry.ID == id.ToString())
+                if (entry.ID == id.ToString())
                 {
                     aliasList = entry.Generators;
                     break;
@@ -101,7 +110,7 @@ public static class TimeActUtils
         }
     }
 
-    public static HavokContainerInfo LoadHavokObjects(ContainerFileInfo info)
+    public static HavokContainerInfo LoadHavokObjects(TimeActContainerWrapper info)
     {
         HavokContainerInfo newInfo = null;
 
@@ -139,47 +148,40 @@ public static class TimeActUtils
         return displayName;
     }
 
-    public enum TemplateType
-    {
-        Character,
-        Object,
-        Cutscene
-    }
-
     public static TAE.Template GetRelevantTemplate(TemplateType type)
     {
         switch (Smithbox.ProjectType)
         {
             case ProjectType.DES:
-                return AnimationBank.TimeActTemplates["TAE.Template.DES"];
+                return TimeActTemplates["TAE.Template.DES"];
             case ProjectType.DS1:
             case ProjectType.DS1R:
                 if (type is TemplateType.Character)
                 {
-                    return AnimationBank.TimeActTemplates["TAE.Template.DS1"];
+                    return TimeActTemplates["TAE.Template.DS1"];
                 }
                 else if (type is TemplateType.Object)
                 {
-                    return AnimationBank.TimeActTemplates["TAE.Template.DS1.OBJ"];
+                    return TimeActTemplates["TAE.Template.DS1.OBJ"];
                 }
                 else if (type is TemplateType.Cutscene)
                 {
-                    return AnimationBank.TimeActTemplates["TAE.Template.DS1.REMO"];
+                    return TimeActTemplates["TAE.Template.DS1.REMO"];
                 }
                 break;
             case ProjectType.DS2:
             case ProjectType.DS2S:
-                return AnimationBank.TimeActTemplates["TAE.Template.SOTFS"];
+                return TimeActTemplates["TAE.Template.SOTFS"];
             case ProjectType.DS3:
-                return AnimationBank.TimeActTemplates["TAE.Template.DS3"];
+                return TimeActTemplates["TAE.Template.DS3"];
             case ProjectType.BB:
-                return AnimationBank.TimeActTemplates["TAE.Template.BB"];
+                return TimeActTemplates["TAE.Template.BB"];
             case ProjectType.SDT:
-                return AnimationBank.TimeActTemplates["TAE.Template.SDT"];
+                return TimeActTemplates["TAE.Template.SDT"];
             case ProjectType.ER:
-                return AnimationBank.TimeActTemplates["TAE.Template.ER"];
+                return TimeActTemplates["TAE.Template.ER"];
             case ProjectType.AC6:
-                return AnimationBank.TimeActTemplates["TAE.Template.AC6"];
+                return TimeActTemplates["TAE.Template.AC6"];
         }
 
         return null;
@@ -190,41 +192,41 @@ public static class TimeActUtils
         switch (Smithbox.ProjectType)
         {
             case ProjectType.DES:
-                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DES"]);
+                entry.ApplyTemplate(TimeActTemplates["TAE.Template.DES"]);
                 break;
             case ProjectType.DS1:
             case ProjectType.DS1R:
                 if (type is TemplateType.Character)
                 {
-                    entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS1"]);
+                    entry.ApplyTemplate(TimeActTemplates["TAE.Template.DS1"]);
                 }
                 else if (type is TemplateType.Object)
                 {
-                    entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS1.OBJ"]);
+                    entry.ApplyTemplate(TimeActTemplates["TAE.Template.DS1.OBJ"]);
                 }
                 else if (type is TemplateType.Cutscene)
                 {
-                    entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS1.REMO"]);
+                    entry.ApplyTemplate(TimeActTemplates["TAE.Template.DS1.REMO"]);
                 }
                 break;
             case ProjectType.DS2:
             case ProjectType.DS2S:
-                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.SOTFS"]);
+                entry.ApplyTemplate(TimeActTemplates["TAE.Template.SOTFS"]);
                 break;
             case ProjectType.DS3:
-                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.DS3"]);
+                entry.ApplyTemplate(TimeActTemplates["TAE.Template.DS3"]);
                 break;
             case ProjectType.BB:
-                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.BB"]);
+                entry.ApplyTemplate(TimeActTemplates["TAE.Template.BB"]);
                 break;
             case ProjectType.SDT:
-                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.SDT"]);
+                entry.ApplyTemplate(TimeActTemplates["TAE.Template.SDT"]);
                 break;
             case ProjectType.ER:
-                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.ER"]);
+                entry.ApplyTemplate(TimeActTemplates["TAE.Template.ER"]);
                 break;
             case ProjectType.AC6:
-                entry.ApplyTemplate(AnimationBank.TimeActTemplates["TAE.Template.AC6"]);
+                entry.ApplyTemplate(TimeActTemplates["TAE.Template.AC6"]);
                 break;
         }
     }
@@ -305,5 +307,17 @@ public static class TimeActUtils
                 break;
             }
         }
+    }
+    public enum TemplateType
+    {
+        Character,
+        Object,
+        Cutscene
+    }
+
+    public enum AliasType
+    {
+        Character,
+        Asset
     }
 }

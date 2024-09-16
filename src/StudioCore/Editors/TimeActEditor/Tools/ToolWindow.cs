@@ -2,6 +2,7 @@
 using ImGuiNET;
 using StudioCore.Core.Project;
 using StudioCore.Editors.TimeActEditor.Actions;
+using StudioCore.Editors.TimeActEditor.Utils;
 
 namespace StudioCore.Editors.TimeActEditor.Tools;
 

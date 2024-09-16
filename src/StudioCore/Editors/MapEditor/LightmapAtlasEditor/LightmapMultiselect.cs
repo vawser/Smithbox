@@ -34,13 +34,13 @@ public class LightmapMultiselect
 
     public void LightMapSelect(int currentSelectionIndex, int currentIndex)
     {
-        var lightmap = Screen._selectedEntry;
+        BTAB.Entry lightmap = Screen._selectedEntry;
 
         // Multi-Select: Range Select
         if (InputTracker.GetKey(Veldrid.Key.LShift))
         {
-            var start = currentSelectionIndex;
-            var end = currentIndex;
+            int start = currentSelectionIndex;
+            int end = currentIndex;
 
             if (end < start)
             {

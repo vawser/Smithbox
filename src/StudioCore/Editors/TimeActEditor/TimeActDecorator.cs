@@ -357,7 +357,7 @@ public class TimeActDecorator
                         {
                             if (ImGui.Selectable($"{entry}: {result}"))
                             {
-                                var action = new EventPropertyChange(paramValues, propertyName, propertyValue, entry, propertyValue.GetType());
+                                var action = new TaeEventParametersChange(paramValues, propertyName, propertyValue, entry, propertyValue.GetType());
                                 EditorActionManager.ExecuteAction(action);
                             }
                         }
@@ -417,7 +417,7 @@ public class TimeActDecorator
                             {
                                 if (ImGui.Selectable($"{entry.id}: {entry.name}"))
                                 {
-                                    var action = new EventPropertyChange(paramValues, propertyName, propertyValue, entry.id, propertyValue.GetType());
+                                    var action = new TaeEventParametersChange(paramValues, propertyName, propertyValue, entry.id, propertyValue.GetType());
                                     EditorActionManager.ExecuteAction(action);
                                 }
                             }
@@ -466,7 +466,7 @@ public class TimeActDecorator
                             {
                                 if (ImGui.Selectable($"{entry.ID}: {entry.Name}"))
                                 {
-                                    var action = new EventPropertyChange(paramValues, propertyName, propertyValue, entry.ID, propertyValue.GetType());
+                                    var action = new TaeEventParametersChange(paramValues, propertyName, propertyValue, entry.ID, propertyValue.GetType());
                                     EditorActionManager.ExecuteAction(action);
                                 }
                             }

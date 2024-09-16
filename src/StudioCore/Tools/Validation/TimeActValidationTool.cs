@@ -1,12 +1,12 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Editors.TimeActEditor;
+using StudioCore.Editors.TimeActEditor.Bank;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Editors.TimeActEditor.TimeActUtils;
+using static StudioCore.Editors.TimeActEditor.Utils.TimeActUtils;
 
 namespace StudioCore.Tools.Validation;
 
@@ -21,10 +21,10 @@ public static class TimeActValidationTool
     {
         SortedDictionary<int, string> errors = new();
 
-        for (int i = 0; i < AnimationBank.FileChrBank.Count; i++)
+        for (int i = 0; i < TimeActBank.FileChrBank.Count; i++)
         {
-            var info = AnimationBank.FileChrBank.ElementAt(i).Key;
-            var binder = AnimationBank.FileChrBank.ElementAt(i).Value;
+            var info = TimeActBank.FileChrBank.ElementAt(i).Key;
+            var binder = TimeActBank.FileChrBank.ElementAt(i).Value;
 
             for (int k = 0; k < info.InternalFiles.Count; k++)
             {
@@ -53,10 +53,10 @@ public static class TimeActValidationTool
             }
         }
 
-        for (int i = 0; i < AnimationBank.FileObjBank.Count; i++)
+        for (int i = 0; i < TimeActBank.FileObjBank.Count; i++)
         {
-            var info = AnimationBank.FileObjBank.ElementAt(i).Key;
-            var binder = AnimationBank.FileObjBank.ElementAt(i).Value;
+            var info = TimeActBank.FileObjBank.ElementAt(i).Key;
+            var binder = TimeActBank.FileObjBank.ElementAt(i).Value;
 
             for (int k = 0; k < info.InternalFiles.Count; k++)
             {

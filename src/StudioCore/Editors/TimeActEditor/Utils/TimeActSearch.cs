@@ -11,9 +11,9 @@ using System.Numerics;
 using StudioCore.Editor;
 using SoulsFormats;
 using HKLib.hk2018.hkAsyncThreadPool;
-using static StudioCore.Editors.TimeActEditor.TimeActUtils;
+using static StudioCore.Editors.TimeActEditor.Utils.TimeActUtils;
 
-namespace StudioCore.Editors.TimeActEditor.Tools;
+namespace StudioCore.Editors.TimeActEditor.Utils;
 
 public class TimeActSearch
 {
@@ -22,7 +22,7 @@ public class TimeActSearch
 
     public enum SearchType
     {
-        [Display(Name ="Animation ID")] AnimationID,
+        [Display(Name = "Animation ID")] AnimationID,
         [Display(Name = "Event ID")] EventID,
         [Display(Name = "Event Name")] EventName,
         [Display(Name = "Event Value")] EventValue,
@@ -55,7 +55,7 @@ public class TimeActSearch
         ImguiUtils.WrappedText("Search Type:");
         if (ImGui.BeginCombo("##Search Type", CurrentSearchType.GetDisplayName()))
         {
-            foreach(var entry in Enum.GetValues(typeof(SearchType)))
+            foreach (var entry in Enum.GetValues(typeof(SearchType)))
             {
                 var serType = (SearchType)entry;
 
@@ -283,24 +283,3 @@ public class TimeActSearch
 }
 
 
-public class TimeActSearchResult
-{
-    public string TimeActName;
-    public TAE ResultTAE;
-    public TAE.Animation ResultAnim;
-    public TAE.Event ResultEvent;
-
-    public int ContainerIndex = -1;
-    public int TimeActIndex = -1;
-    public int AnimationIndex = -1;
-    public int EventIndex = -1;
-    public string EventPropertyValue = "";
-
-    public TimeActSearchResult(string taeName, TAE tae, TAE.Animation anim, TAE.Event evt = null) 
-    {
-        TimeActName = taeName;
-        ResultTAE = tae;
-        ResultAnim = anim;
-        ResultEvent = evt;
-    }
-}

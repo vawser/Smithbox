@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
-using StudioCore.Editors.TimeActEditor;
+using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.MsbEditor;
 using StudioCore.Utilities;
 using System;
@@ -32,7 +33,7 @@ public class TimeActEditorTab
         // Files
         if (ImGui.CollapsingHeader("Files", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            var objTitle = AnimationBank.GetObjectTitle().ToLower();
+            var objTitle = TimeActUtils.GetObjectTitle().ToLower();
 
             ImGui.Text("Each set of Time Acts will increase the setup time of the Time Act Editor, so only enable what you need.");
 

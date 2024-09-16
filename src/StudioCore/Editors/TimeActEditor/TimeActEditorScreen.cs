@@ -17,12 +17,14 @@ using static Silk.NET.Core.Native.WinString;
 using static SoulsFormats.TAE.Animation;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Tools;
-using static StudioCore.Editors.TimeActEditor.TimeActUtils;
+using static StudioCore.Editors.TimeActEditor.Utils.TimeActUtils;
 using HKLib.hk2018.hkAsyncThreadPool;
 using static SoulsFormats.TAE.Animation.AnimMiniHeader;
 using static StudioCore.Editors.TimeActEditor.TimeActSelectionHandler;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
+using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Editors.TimeActEditor.Utils;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -159,9 +161,9 @@ public class TimeActEditorScreen : EditorScreen
         }
         else
         {
-            AnimationBank.Load();
+            TimeActBank.Load();
 
-            if (!TaskManager.AnyActiveTasks() && AnimationBank.IsLoaded)
+            if (!TaskManager.AnyActiveTasks() && TimeActBank.IsLoaded)
             {
                 //Viewport.OnGui();
                 TimeActCommandLine(initcmd);
@@ -204,7 +206,7 @@ public class TimeActEditorScreen : EditorScreen
             {
                 ImGui.Begin("Editor##LoadingTaeEditor");
 
-                AnimationBank.DisplayLoadState();
+                TimeActBank.DisplayLoadState();
 
                 ImGui.End();
             }
@@ -243,9 +245,9 @@ public class TimeActEditorScreen : EditorScreen
 
                 if (containerType == "chr")
                 {
-                    for (int i = 0; i < AnimationBank.FileChrBank.Count; i++)
+                    for (int i = 0; i < TimeActBank.FileChrBank.Count; i++)
                     {
-                        var container = AnimationBank.FileChrBank.ElementAt(i);
+                        var container = TimeActBank.FileChrBank.ElementAt(i);
                         var index = int.Parse(containerIndex);
 
                         if (i == index)
@@ -261,9 +263,9 @@ public class TimeActEditorScreen : EditorScreen
 
                 if (containerType == "obj")
                 {
-                    for (int i = 0; i < AnimationBank.FileObjBank.Count; i++)
+                    for (int i = 0; i < TimeActBank.FileObjBank.Count; i++)
                     {
-                        var container = AnimationBank.FileObjBank.ElementAt(i);
+                        var container = TimeActBank.FileObjBank.ElementAt(i);
                         var index = int.Parse(containerIndex);
 
                         if (i == index)
@@ -405,10 +407,10 @@ public class TimeActEditorScreen : EditorScreen
 
         if (ImGui.CollapsingHeader("Characters", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            for (int i = 0; i < AnimationBank.FileChrBank.Count; i++)
+            for (int i = 0; i < TimeActBank.FileChrBank.Count; i++)
             {
-                var info = AnimationBank.FileChrBank.ElementAt(i).Key;
-                var binder = AnimationBank.FileChrBank.ElementAt(i).Value;
+                var info = TimeActBank.FileChrBank.ElementAt(i).Key;
+                var binder = TimeActBank.FileChrBank.ElementAt(i).Value;
 
                 if (TimeActFilters.FileContainerFilter(info))
                 {
@@ -452,14 +454,14 @@ public class TimeActEditorScreen : EditorScreen
             }
         }
 
-        var title = $"{AnimationBank.GetObjectTitle()}s";
+        var title = $"{TimeActUtils.GetObjectTitle()}s";
 
         if (ImGui.CollapsingHeader(title))
         {
-            for (int i = 0; i < AnimationBank.FileObjBank.Count; i++)
+            for (int i = 0; i < TimeActBank.FileObjBank.Count; i++)
             {
-                var info = AnimationBank.FileObjBank.ElementAt(i).Key;
-                var binder = AnimationBank.FileObjBank.ElementAt(i).Value;
+                var info = TimeActBank.FileObjBank.ElementAt(i).Key;
+                var binder = TimeActBank.FileObjBank.ElementAt(i).Value;
 
                 if (TimeActFilters.FileContainerFilter(info))
                 {
@@ -525,7 +527,7 @@ public class TimeActEditorScreen : EditorScreen
 
         for (int i = 0; i < SelectionHandler.ContainerInfo.InternalFiles.Count; i++)
         {
-            AnimationBank.InternalFileInfo info = SelectionHandler.ContainerInfo.InternalFiles[i];
+            InternalTimeActWrapper info = SelectionHandler.ContainerInfo.InternalFiles[i];
             TAE entry = SelectionHandler.ContainerInfo.InternalFiles[i].TAE;
 
             if (TimeActFilters.TimeActFilter(SelectionHandler.ContainerInfo, entry))
@@ -672,7 +674,7 @@ public class TimeActEditorScreen : EditorScreen
 
         if (SelectionHandler.CurrentTemporaryAnimHeader == null)
         {
-            SelectionHandler.CurrentTemporaryAnimHeader = new TemporaryAnimHeader();
+            SelectionHandler.CurrentTemporaryAnimHeader = new TransientAnimHeader();
             SelectionHandler.CurrentTemporaryAnimHeader.CurrentType = anim.MiniHeader.Type;
 
             if(anim.MiniHeader.Type is MiniHeaderType.Standard)
@@ -1121,12 +1123,12 @@ public class TimeActEditorScreen : EditorScreen
             ActionSubMenu.OnProjectChanged();
         }
 
-        AnimationBank.IsLoaded = false;
-        AnimationBank.IsTemplatesLoaded = false;
-        AnimationBank.IsCharacterTimeActsLoaded = false;
-        AnimationBank.IsObjectTimeActsLoaded = false;
+        TimeActBank.IsLoaded = false;
+        TimeActBank.IsTemplatesLoaded = false;
+        TimeActBank.IsCharacterTimeActsLoaded = false;
+        TimeActBank.IsObjectTimeActsLoaded = false;
 
-        AnimationBank.Load();
+        TimeActBank.Load();
 
         ResetActionManager();
         //_universe.UnloadAll(true);
@@ -1137,12 +1139,12 @@ public class TimeActEditorScreen : EditorScreen
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        if (AnimationBank.IsLoaded && !AnimationBank.IsSaving)
+        if (TimeActBank.IsLoaded && !TimeActBank.IsSaving)
         {
             TaskLogs.AddLog("File will now be saved.");
-            AnimationBank.SaveTimeActTask(SelectionHandler.ContainerInfo, SelectionHandler.ContainerBinder);
+            TimeActBank.SaveTimeActTask(SelectionHandler.ContainerInfo, SelectionHandler.ContainerBinder);
         }
-        else if (AnimationBank.IsSaving)
+        else if (TimeActBank.IsSaving)
         {
             TaskLogs.AddLog("File is already in the process of being saved.");
         }
@@ -1153,12 +1155,12 @@ public class TimeActEditorScreen : EditorScreen
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        if (AnimationBank.IsLoaded && !AnimationBank.IsSaving)
+        if (TimeActBank.IsLoaded && !TimeActBank.IsSaving)
         {
             TaskLogs.AddLog("Modified files will now be saved.");
-            AnimationBank.SaveTimeActsTask();
+            TimeActBank.SaveTimeActsTask();
         }
-        else if (AnimationBank.IsSaving)
+        else if (TimeActBank.IsSaving)
         {
             TaskLogs.AddLog("Modified files are already in the process of being saved.");
         }

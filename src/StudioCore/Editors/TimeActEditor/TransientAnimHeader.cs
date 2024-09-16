@@ -8,11 +8,10 @@ using static SoulsFormats.TAE.Animation;
 namespace StudioCore.Editors.TimeActEditor;
 
 /// <summary>
-/// Temporary class use to hold the AnimMiniHeader properties, 
-/// which are then applied directly to a new AnimMiniHeader and added to the actually Animation object.
-/// Needed due to the structure of AnimMiniHeader
+/// Wrapper class that holds AnimMiniHeader properties for committing.
+/// This is done so the user can switch between the anim header types without losing data.
 /// </summary>
-public class TemporaryAnimHeader
+public class TransientAnimHeader
 {
     public MiniHeaderType CurrentType { get; set; }
 
@@ -28,10 +27,10 @@ public class TemporaryAnimHeader
 
     public int Unknown { get; set; }
 
-    public TemporaryAnimHeader() { }
+    public TransientAnimHeader() { }
 
-    public TemporaryAnimHeader Clone()
+    public TransientAnimHeader Clone()
     {
-        return MemberwiseClone() as TemporaryAnimHeader;
+        return MemberwiseClone() as TransientAnimHeader;
     }
 }

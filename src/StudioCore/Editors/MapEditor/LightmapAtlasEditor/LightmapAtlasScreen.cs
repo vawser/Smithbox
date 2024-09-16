@@ -1,18 +1,11 @@
-﻿using HKLib.hk2018.hk;
-using ImGuiNET;
+﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Configuration;
 using StudioCore.Editor;
-using StudioCore.Editors.ModelEditor;
-using StudioCore.MsbEditor;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 
@@ -126,8 +119,6 @@ public class LightmapAtlasScreen
     }
     private void DisplaySelectionList(MapContainer map, KeyValuePair<string, List<LightmapAtlasInfo>> lightMapAtlases)
     {
-        var index = 0;
-
         foreach (var entry in lightMapAtlases.Value)
         {
             for (int i = 0; i < entry.LightmapAtlas.Entries.Count; i++)
@@ -142,22 +133,27 @@ public class LightmapAtlasScreen
                         isSelected = true;
                     }
 
-                    if (ImGui.Selectable($"{lightmapEntry.PartName}##{index}_Select", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                    // Row Select
+                    if (ImGui.Selectable($"{lightmapEntry.PartName}##{i}_Select", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
                     {
+                        LightmapMultiselect.LightMapSelect(_selectedEntryKey, i);
+
                         _selectedParentEntry = entry;
+                        _selectedEntryKey = i;
                         _selectedEntry = lightmapEntry;
 
                         if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                         {
                             EditorCommandQueue.AddCommand($"map/select/{map.Name}/{lightmapEntry.PartName}");
                         }
-
-                        LightmapMultiselect.LightMapSelect(_selectedEntryKey, i);
                     }
 
                     // Arrow Selection
                     if (ImGui.IsItemHovered() && SelectEntry)
                     {
+                        LightmapMultiselect.LightMapSelect(_selectedEntryKey, i);
+
+                        _selectedParentEntry = entry;
                         _selectedEntryKey = i;
                         _selectedEntry = lightmapEntry;
                     }
@@ -171,8 +167,6 @@ public class LightmapAtlasScreen
                         DisplaySelectableAlias(lightmapEntry.PartName, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
                     }
                 }
-
-                index++;
             }
             ImGui.Separator();
         }
@@ -201,7 +195,12 @@ public class LightmapAtlasScreen
 
             if (ImGui.Button("Delete Entry", new Vector2(widthUnit * 100, 32)))
             {
+                foreach(var entry in LightmapMultiselect.StoredLightmapEntries)
+                {
+                    _selectedParentEntry.LightmapAtlas.Entries.RemoveAt(entry.Key);
+                }
 
+                LightmapMultiselect.Reset();
             }
         }
     }
@@ -212,7 +211,7 @@ public class LightmapAtlasScreen
 
         if (ImGui.Button("Add New Entry", new Vector2(widthUnit * 100, 32)))
         {
-
+            // TODO: add
         }
     }
     private void DisplaySelectableAlias(string name, Dictionary<string, AliasReference> referenceDict)

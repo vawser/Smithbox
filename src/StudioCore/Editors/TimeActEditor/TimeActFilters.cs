@@ -1,6 +1,7 @@
 ﻿using HKLib.hk2018.hk;
 using HKLib.hk2018.hkAsyncThreadPool;
 using SoulsFormats;
+using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Formats.Tar;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Editors.TimeActEditor.AnimationBank;
+using static StudioCore.Editors.TimeActEditor.Bank.TimeActBank;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -20,7 +21,7 @@ public static class TimeActFilters
     public static string _timeActEventFilterString = "";
     public static string _timeActEventPropertyFilterString = "";
 
-    public static bool FileContainerFilter(ContainerFileInfo info)
+    public static bool FileContainerFilter(TimeActContainerWrapper info)
     {
         bool isValid = true;
         var input = _fileContainerFilterString.ToLower();
@@ -78,7 +79,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActFilter(ContainerFileInfo info, TAE taeEntry)
+    public static bool TimeActFilter(TimeActContainerWrapper info, TAE taeEntry)
     {
         bool isValid = true;
         var input = _timeActFilterString.ToLower();
@@ -144,7 +145,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActAnimationFilter(ContainerFileInfo info, TAE.Animation animEntry)
+    public static bool TimeActAnimationFilter(TimeActContainerWrapper info, TAE.Animation animEntry)
     {
         bool isValid = true;
         var input = _timeActAnimationFilterString.ToLower();
@@ -198,7 +199,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActEventFilter(ContainerFileInfo info, TAE.Event evtEntry)
+    public static bool TimeActEventFilter(TimeActContainerWrapper info, TAE.Event evtEntry)
     {
         bool isValid = true;
         var input = _timeActEventFilterString.ToLower();
@@ -248,7 +249,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActEventPropertyFilter(ContainerFileInfo info, string propertyName)
+    public static bool TimeActEventPropertyFilter(TimeActContainerWrapper info, string propertyName)
     {
         bool isValid = true;
         var input = _timeActEventPropertyFilterString.ToLower();

@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,12 @@ public class TimeActContextMenu
         Handler = handler;
     }
 
+    /// <summary>
+    /// Context menu for the Files list
+    /// </summary>
     public void ContainerMenu(bool isSelected, string key)
     {
-        if (AnimationBank.IsSaving)
+        if (TimeActBank.IsSaving)
             return;
 
         if (!isSelected)
@@ -35,9 +39,12 @@ public class TimeActContextMenu
         }
     }
 
+    /// <summary>
+    /// Context menu for the Time Act list
+    /// </summary>
     public void TimeActMenu(bool isSelected, string key)
     {
-        if (AnimationBank.IsSaving)
+        if (TimeActBank.IsSaving)
             return;
 
         if (!isSelected)
@@ -60,9 +67,12 @@ public class TimeActContextMenu
         }
     }
 
+    /// <summary>
+    /// Context menu for the Animations list
+    /// </summary>
     public void TimeActAnimationMenu(bool isSelected, string key)
     {
-        if (AnimationBank.IsSaving)
+        if (TimeActBank.IsSaving)
             return;
 
         if (!isSelected)
@@ -84,10 +94,12 @@ public class TimeActContextMenu
             ImGui.EndPopup();
         }
     }
-
+    /// <summary>
+    /// Context menu for the Events list
+    /// </summary>
     public void TimeActEventMenu(bool isSelected, string key)
     {
-        if (AnimationBank.IsSaving)
+        if (TimeActBank.IsSaving)
             return;
 
         if (!isSelected)
@@ -114,10 +126,12 @@ public class TimeActContextMenu
             ImGui.EndPopup();
         }
     }
-
+    /// <summary>
+    /// Context menu for the Event Properties list
+    /// </summary>
     public void TimeActEventPropertiesMenu(bool isSelected, string key)
     {
-        if (AnimationBank.IsSaving)
+        if (TimeActBank.IsSaving)
             return;
 
         if (!isSelected)

@@ -2,6 +2,7 @@
 using HKLib.hk2018.hkHashMapDetail;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.GraphicsEditor;
 using System;
 using System.Collections.Generic;
@@ -10,21 +11,21 @@ using System.Text;
 using System.Threading.Tasks;
 using Veldrid;
 using static SoulsFormats.GPARAM;
-using static StudioCore.Editors.TimeActEditor.AnimationBank;
+using static StudioCore.Editors.TimeActEditor.Bank.TimeActBank;
 
 namespace StudioCore.Editors.TimeActEditor;
 
 /// <summary>
-/// Event - Property Change (Generic)
+/// Action: TAE.Event.Parameters change
 /// </summary>
-public class EventPropertyChange : EditorAction
+public class TaeEventParametersChange : EditorAction
 {
     private Dictionary<string, object> Parameters;
     private string ParamName;
     private object OldValue;
     private object NewValue;
 
-    public EventPropertyChange(Dictionary<string, object> parameters, string paramName, object oldValue, object newValue, Type propertyType)
+    public TaeEventParametersChange(Dictionary<string, object> parameters, string paramName, object oldValue, object newValue, Type propertyType)
     {
         Parameters = parameters;
         ParamName = paramName;
@@ -222,15 +223,15 @@ public class EventPropertyChange : EditorAction
 }
 
 /// <summary>
-/// Event - Property Change (StartTime)
+/// Action: TAE.Event.StartTime property change
 /// </summary>
-public class TimeActStartTimePropertyChange : EditorAction
+public class TaeEventStartTimeChange : EditorAction
 {
     private TAE.Event Event;
     private object OldValue;
     private object NewValue;
 
-    public TimeActStartTimePropertyChange(TAE.Event entry, object oldValue, object newValue)
+    public TaeEventStartTimeChange(TAE.Event entry, object oldValue, object newValue)
     {
         Event = entry;
         OldValue = oldValue;
@@ -253,15 +254,15 @@ public class TimeActStartTimePropertyChange : EditorAction
 }
 
 /// <summary>
-/// Event - Property Change (EndTime)
+/// Action: TAE.Event.EndTime property change
 /// </summary>
-public class TimeActEndTimePropertyChange : EditorAction
+public class TaeEventEndTimeChange : EditorAction
 {
     private TAE.Event Event;
     private object OldValue;
     private object NewValue;
 
-    public TimeActEndTimePropertyChange(TAE.Event entry, object oldValue, object newValue)
+    public TaeEventEndTimeChange(TAE.Event entry, object oldValue, object newValue)
     {
         Event = entry;
         OldValue = oldValue;
@@ -284,16 +285,16 @@ public class TimeActEndTimePropertyChange : EditorAction
 }
 
 /// <summary>
-/// Animation - Property Change (Generic)
+/// Action: TAE.Animation.EndTime property change
 /// </summary>
-public class TimeActEndAnimHeaderPropertyChange : EditorAction
+public class TaeAnimEndTimeChange : EditorAction
 {
     private TAE.Animation Animation;
     private object OldValue;
     private object NewValue;
-    private TemporaryAnimHeader OldTempHeader;
+    private TransientAnimHeader OldTempHeader;
 
-    public TimeActEndAnimHeaderPropertyChange(TAE.Animation entry, object oldValue, object newValue, TemporaryAnimHeader tempHeader)
+    public TaeAnimEndTimeChange(TAE.Animation entry, object oldValue, object newValue, TransientAnimHeader tempHeader)
     {
         Animation = entry;
         OldValue = oldValue;
@@ -318,15 +319,15 @@ public class TimeActEndAnimHeaderPropertyChange : EditorAction
 }
 
 /// <summary>
-/// Animation - Property Change (ID)
+/// Action: TAE.Animation.ID property change
 /// </summary>
-public class TimeActEndAnimIDPropertyChange : EditorAction
+public class TaeAnimIdChange : EditorAction
 {
     private TAE.Animation Animation;
     private object OldValue;
     private object NewValue;
 
-    public TimeActEndAnimIDPropertyChange(TAE.Animation entry, object oldValue, object newValue)
+    public TaeAnimIdChange(TAE.Animation entry, object oldValue, object newValue)
     {
         Animation = entry;
         OldValue = oldValue;
@@ -349,15 +350,15 @@ public class TimeActEndAnimIDPropertyChange : EditorAction
 }
 
 /// <summary>
-/// Animation - Property Change (AnimFileName)
+/// Action: TAE.Animation.AnimFileName property change
 /// </summary>
-public class TimeActEndAnimNamePropertyChange : EditorAction
+public class TaeAnimFileNameChange : EditorAction
 {
     private TAE.Animation Animation;
     private object OldValue;
     private object NewValue;
 
-    public TimeActEndAnimNamePropertyChange(TAE.Animation entry, object oldValue, object newValue)
+    public TaeAnimFileNameChange(TAE.Animation entry, object oldValue, object newValue)
     {
         Animation = entry;
         OldValue = oldValue;
@@ -380,15 +381,15 @@ public class TimeActEndAnimNamePropertyChange : EditorAction
 }
 
 /// <summary>
-/// Animation - Duplicate (Single)
+/// Action: TAE.Animation duplicate
 /// </summary>
-public class TimeActDuplicateAnimation : EditorAction
+public class TaeAnimDuplicate : EditorAction
 {
     private TAE.Animation NewAnim;
     private List<TAE.Animation> AnimationList;
     private int InsertionIndex;
 
-    public TimeActDuplicateAnimation(TAE.Animation newAnimation, List<TAE.Animation> animList, int index)
+    public TaeAnimDuplicate(TAE.Animation newAnimation, List<TAE.Animation> animList, int index)
     {
         InsertionIndex = index;
         NewAnim = newAnimation;
@@ -411,15 +412,15 @@ public class TimeActDuplicateAnimation : EditorAction
 }
 
 /// <summary>
-/// Animation - Duplicate (Multiple)
+/// Action: TAE.Animation duplicate (multiple)
 /// </summary>
-public class TimeActMultiDuplicateAnim : EditorAction
+public class TaeAnimMultiDuplicate : EditorAction
 {
     private List<TAE.Animation> NewAnims;
     private List<TAE.Animation> AnimationList;
     private List<int> InsertionIndexes;
 
-    public TimeActMultiDuplicateAnim(List<TAE.Animation> newAnims, List<TAE.Animation> animList, List<int> indexList)
+    public TaeAnimMultiDuplicate(List<TAE.Animation> newAnims, List<TAE.Animation> animList, List<int> indexList)
     {
         InsertionIndexes = indexList;
         NewAnims = newAnims;
@@ -430,8 +431,8 @@ public class TimeActMultiDuplicateAnim : EditorAction
     {
         for (int i = 0; i < InsertionIndexes.Count; i++)
         {
-            var curNewAnim = NewAnims[i];
-            var curIndex = InsertionIndexes[i];
+            TAE.Animation curNewAnim = NewAnims[i];
+            int curIndex = InsertionIndexes[i];
 
             AnimationList.Insert(curIndex, curNewAnim);
         }
@@ -441,7 +442,7 @@ public class TimeActMultiDuplicateAnim : EditorAction
 
     public override ActionEvent Undo()
     {
-        foreach (var entry in NewAnims)
+        foreach (TAE.Animation entry in NewAnims)
         {
             AnimationList.Remove(entry);
         }
@@ -451,15 +452,15 @@ public class TimeActMultiDuplicateAnim : EditorAction
 }
 
 /// <summary>
-/// Animation - Delete (Single)
+/// Action: TAE.Animation delete
 /// </summary>
-public class TimeActDeleteAnim : EditorAction
+public class TaeAnimDelete : EditorAction
 {
     private TAE.Animation StoredAnim;
     private List<TAE.Animation> AnimationList;
     private int RemovalIndex;
 
-    public TimeActDeleteAnim(TAE.Animation storedAnim, List<TAE.Animation> animList, int index)
+    public TaeAnimDelete(TAE.Animation storedAnim, List<TAE.Animation> animList, int index)
     {
         StoredAnim = storedAnim;
         AnimationList = animList;
@@ -482,15 +483,15 @@ public class TimeActDeleteAnim : EditorAction
 }
 
 /// <summary>
-/// Animation - Delete (Multiple)
+/// Action: TAE.Animation delete (multiple)
 /// </summary>
-public class TimeActMultiDeleteAnim : EditorAction
+public class TaeAnimMultiDelete : EditorAction
 {
     private List<TAE.Animation> StoredAnims;
     private List<TAE.Animation> AnimationList;
     private List<int> RemovedIndices;
 
-    public TimeActMultiDeleteAnim(List<TAE.Animation> storedAnims, List<TAE.Animation> animList, List<int> indices)
+    public TaeAnimMultiDelete(List<TAE.Animation> storedAnims, List<TAE.Animation> animList, List<int> indices)
     {
         StoredAnims = storedAnims;
         AnimationList = animList;
@@ -501,7 +502,7 @@ public class TimeActMultiDeleteAnim : EditorAction
     {
         for (int i = RemovedIndices.Count - 1; i >= 0; i--)
         {
-            var curIndex = RemovedIndices[i];
+            int curIndex = RemovedIndices[i];
             AnimationList.RemoveAt(curIndex);
         }
 
@@ -512,8 +513,8 @@ public class TimeActMultiDeleteAnim : EditorAction
     {
         for (int i = 0; i < RemovedIndices.Count; i++)
         {
-            var storedAnim = StoredAnims[i];
-            var curIndex = RemovedIndices[i];
+            TAE.Animation storedAnim = StoredAnims[i];
+            int curIndex = RemovedIndices[i];
 
             AnimationList.Insert(curIndex, storedAnim);
         }
@@ -523,15 +524,15 @@ public class TimeActMultiDeleteAnim : EditorAction
 }
 
 /// <summary>
-/// Event - Create
+/// Action: TAE.Event create
 /// </summary>
-public class TimeActCreateNewEvent : EditorAction
+public class TaeEventCreate : EditorAction
 {
     private TAE.Event NewEvent;
     private List<TAE.Event> EventList;
     private int InsertionIndex;
 
-    public TimeActCreateNewEvent(TAE.Event entryNewEvent, List<TAE.Event> eventList, int index)
+    public TaeEventCreate(TAE.Event entryNewEvent, List<TAE.Event> eventList, int index)
     {
         InsertionIndex = index;
         NewEvent = entryNewEvent;
@@ -554,15 +555,15 @@ public class TimeActCreateNewEvent : EditorAction
 }
 
 /// <summary>
-/// Event - Duplicate (Single)
+/// Action: TAE.Event duplicate
 /// </summary>
-public class TimeActDuplicateEvent : EditorAction
+public class TaeEventDuplicate : EditorAction
 {
     private TAE.Event NewEvent;
     private List<TAE.Event> EventList;
     private int InsertionIndex;
 
-    public TimeActDuplicateEvent(TAE.Event entryNewEvent, List<TAE.Event> eventList, int index)
+    public TaeEventDuplicate(TAE.Event entryNewEvent, List<TAE.Event> eventList, int index)
     {
         InsertionIndex = index;
         NewEvent = entryNewEvent;
@@ -585,15 +586,15 @@ public class TimeActDuplicateEvent : EditorAction
 }
 
 /// <summary>
-/// Event - Duplicate (Multiple)
+/// Action: TAE.Event duplicate (multiple)
 /// </summary>
-public class TimeActMultiDuplicateEvent : EditorAction
+public class TaeEventMultiDuplicate : EditorAction
 {
     private List<TAE.Event> NewEvents;
     private List<TAE.Event> EventList;
     private List<int> InsertionIndexes;
 
-    public TimeActMultiDuplicateEvent(List<TAE.Event> newEvents, List<TAE.Event> eventList, List<int> indexList)
+    public TaeEventMultiDuplicate(List<TAE.Event> newEvents, List<TAE.Event> eventList, List<int> indexList)
     {
         InsertionIndexes = indexList;
         NewEvents = newEvents;
@@ -604,8 +605,8 @@ public class TimeActMultiDuplicateEvent : EditorAction
     {
         for(int i = 0; i < InsertionIndexes.Count; i++)
         {
-            var curNewEvent = NewEvents[i];
-            var curIndex = InsertionIndexes[i];
+            TAE.Event curNewEvent = NewEvents[i];
+            int curIndex = InsertionIndexes[i];
 
             EventList.Insert(curIndex, curNewEvent);
         }
@@ -615,7 +616,7 @@ public class TimeActMultiDuplicateEvent : EditorAction
 
     public override ActionEvent Undo()
     {
-        foreach(var entry in NewEvents)
+        foreach(TAE.Event entry in NewEvents)
         {
             EventList.Remove(entry);
         }
@@ -625,15 +626,15 @@ public class TimeActMultiDuplicateEvent : EditorAction
 }
 
 /// <summary>
-/// Event - Delete (Single)
+/// Action: TAE.Event delete
 /// </summary>
-public class TimeActDeleteEvent : EditorAction
+public class TaeEventDelete : EditorAction
 {
     private TAE.Event StoredEvent;
     private List<TAE.Event> EventList;
     private int RemovalIndex;
 
-    public TimeActDeleteEvent(TAE.Event entryOldEvent, List<TAE.Event> eventList, int index)
+    public TaeEventDelete(TAE.Event entryOldEvent, List<TAE.Event> eventList, int index)
     {
         RemovalIndex = index;
         StoredEvent = entryOldEvent;
@@ -656,16 +657,16 @@ public class TimeActDeleteEvent : EditorAction
 }
 
 /// <summary>
-/// Event - Delete (Multiple)
+/// Action: TAE.Event delete (multiple)
 /// </summary>
-public class TimeActMultiDeleteEvent : EditorAction
+public class TaeEventMultiDelete : EditorAction
 {
     private List<TAE.Event> StoredEvents;
     private List<TAE.Event> EventList;
     private List<int> RemovalIndices;
     private List<int> InsertIndices;
 
-    public TimeActMultiDeleteEvent(List<TAE.Event> storedEvents, List<TAE.Event> eventList, List<int> removalIndices)
+    public TaeEventMultiDelete(List<TAE.Event> storedEvents, List<TAE.Event> eventList, List<int> removalIndices)
     {
         RemovalIndices = removalIndices;
         StoredEvents = storedEvents;
@@ -676,7 +677,7 @@ public class TimeActMultiDeleteEvent : EditorAction
     {
         for (int i = RemovalIndices.Count - 1; i >= 0; i--)
         {
-            var curIndex = RemovalIndices[i];
+            int curIndex = RemovalIndices[i];
             EventList.RemoveAt(curIndex);
         }
 
@@ -687,8 +688,8 @@ public class TimeActMultiDeleteEvent : EditorAction
     {
         for (int i = 0; i < RemovalIndices.Count; i++)
         {
-            var storedEvent = StoredEvents[i];
-            var curIndex = RemovalIndices[i];
+            TAE.Event storedEvent = StoredEvents[i];
+            int curIndex = RemovalIndices[i];
 
             EventList.Insert(curIndex, storedEvent);
         }
@@ -697,17 +698,16 @@ public class TimeActMultiDeleteEvent : EditorAction
     }
 }
 
-
 /// <summary>
-/// Event - Duplicate (Single)
+/// Action: TAE duplicate
 /// </summary>
 public class TimeActDuplicate : EditorAction
 {
-    private InternalFileInfo TargetTimeAct;
-    private List<InternalFileInfo> FileList;
+    private InternalTimeActWrapper TargetTimeAct;
+    private List<InternalTimeActWrapper> FileList;
     private int InsertionIndex;
 
-    public TimeActDuplicate(InternalFileInfo newInfo, List<InternalFileInfo> fileList, int index)
+    public TimeActDuplicate(InternalTimeActWrapper newInfo, List<InternalTimeActWrapper> fileList, int index)
     {
         InsertionIndex = index;
         FileList = fileList;
@@ -730,13 +730,13 @@ public class TimeActDuplicate : EditorAction
 }
 
 /// <summary>
-/// Event - Delete (Single)
+/// Action: TAE delete
 /// </summary>
 public class TimeActDelete : EditorAction
 {
-    private InternalFileInfo TargetTimeAct;
+    private InternalTimeActWrapper TargetTimeAct;
 
-    public TimeActDelete(InternalFileInfo info)
+    public TimeActDelete(InternalTimeActWrapper info)
     {
         TargetTimeAct = info;
     }
