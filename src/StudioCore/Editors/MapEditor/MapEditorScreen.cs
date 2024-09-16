@@ -124,6 +124,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         PropEditor = new MapPropertyEditor(this, EditorActionManager, _propCache, Viewport);
 
+        LightmapAtlasEditor = new LightmapAtlasScreen(this);
         SelectionGroupEditor = new SelectionGroupEditor(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
         PrefabEditor = new() { universe = Universe, scene = RenderScene, actionManager = EditorActionManager };
 
@@ -318,6 +319,16 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 CFG.Current.MapEditor_Viewport_RegenerateMapGrid = true;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Viewport_Grid);
+
+            if (Smithbox.ProjectType is ProjectType.DS3)
+            {
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+                if (ImGui.MenuItem("Lightmap Atlas Editor"))
+                {
+                    CFG.Current.Interface_MapEditor_Viewport_LightmapAtlas = !CFG.Current.Interface_MapEditor_Viewport_LightmapAtlas;
+                }
+                ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Viewport_LightmapAtlas);
+            }
 
             ImGui.EndMenu();
         }

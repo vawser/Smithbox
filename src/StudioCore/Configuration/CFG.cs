@@ -84,6 +84,7 @@ public class CFG
     public bool Interface_MapEditor_ResourceList = true;
     public bool Interface_MapEditor_Selection_Groups = true;
     public bool Interface_MapEditor_Viewport_Grid = true;
+    public bool Interface_MapEditor_Viewport_LightmapAtlas = true;
 
     // Model Editor
     public bool Interface_ModelEditor_ModelHierarchy = true;

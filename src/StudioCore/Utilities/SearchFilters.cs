@@ -11,6 +11,47 @@ public static class SearchFilters
     /// <summary>
     /// Returns true is the input string (whole or part) matches a filename, reference name or tag.
     /// </summary>
+    public static bool IsBasicMatch(string rawInput, string rawStr)
+    {
+        bool match = false;
+
+        string input = rawInput.Trim().ToLower();
+        string rawString = rawStr.ToLower();
+
+        if (input.Equals(""))
+        {
+            match = true; // If input is empty, show all
+            return match;
+        }
+
+        string[] inputParts = input.Split("+");
+        bool[] partTruth = new bool[inputParts.Length];
+
+        for (int i = 0; i < partTruth.Length; i++)
+        {
+            string entry = inputParts[i];
+
+            if (entry == rawString)
+                partTruth[i] = true;
+
+            if (rawString.Contains(entry))
+                partTruth[i] = true;
+        }
+
+        match = true;
+
+        foreach (bool entry in partTruth)
+        {
+            if (!entry)
+                match = false;
+        }
+
+        return match;
+    }
+
+    /// <summary>
+    /// Returns true is the input string (whole or part) matches a filename, reference name or tag.
+    /// </summary>
     public static bool IsSearchMatch(string rawInput, string rawRefId, string rawRefName, List<string> rawRefTags, 
         bool matchAssetCategory = false, // Match AEG categories passed in input
         bool stripParticlePrefix = false, // Remove f and preceding zeroes from checked string against input
