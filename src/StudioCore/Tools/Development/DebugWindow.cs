@@ -49,6 +49,7 @@ public class DebugWindow
         [Display(Name = "ImGui Metrics")] ImGuiMetrics,
         [Display(Name = "ImGui Debug Log")] ImGuiLog,
         [Display(Name = "ImGui Stack Tool")] ImGuiStackTool,
+        [Display(Name = "ImGui Test Panel")] ImGuiTestPanel,
 
         // Validation
         [Display(Name = "Paramdef Validation")] ValidateParamdef,
@@ -156,6 +157,9 @@ public class DebugWindow
                 case SelectedDebugTab.ImGuiStackTool:
                     DisplayImGuiStackTool();
                     break;
+                case SelectedDebugTab.ImGuiTestPanel:
+                    DisplayImGuiTestPanel();
+                    break;
 
                 // Validation
                 case SelectedDebugTab.ValidateParamdef:
@@ -252,6 +256,13 @@ public class DebugWindow
         {
             _showImGuiStackToolWindow = !_showImGuiStackToolWindow;
         }
+    }
+    private void DisplayImGuiTestPanel()
+    {
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
+
+        // For testing ImGui elements
+
     }
 
     // Validation
