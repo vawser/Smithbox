@@ -31,6 +31,8 @@ Map Editor:
  - ADD: "Data Export" action for MSB data: output the MSB information as JSON
  - ADD: Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
  - ADD: global prop edit
+ - ADD: quicklink to Model Editor (based on Model Name)
+ - ADD: disable Scale field if invalid for map object type
  
  - FIX: asset browser entity change not properly changing Instance ID and Self Parts
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
@@ -45,6 +47,7 @@ Model Editor:
  - ADD: proper handling for the flag fields in the FLVER
  - ADD: GX Item mapping so the byte arrays are more comprehesible (https://github.com/JKAnderson/SoulsFormats/issues/14)
  - ADD: render bone connections (use patrol route method)
+ - ADD: Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
  
  - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
  - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value

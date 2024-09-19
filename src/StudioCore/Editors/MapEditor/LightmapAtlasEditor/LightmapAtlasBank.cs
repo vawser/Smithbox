@@ -14,6 +14,8 @@ public class LightmapAtlasBank
 {
     public Dictionary<string, List<LightmapAtlasInfo>> LightmapAtlases = new Dictionary<string, List<LightmapAtlasInfo>>();
 
+    public bool IsSaving = false;
+
     public bool UsesLightmapAtlases()
     {
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.DS3)

@@ -1,10 +1,12 @@
-﻿using ImGuiNET;
+﻿using HKLib.hk2018.hkAsyncThreadPool;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Utilities;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Editors.MapEditor.LightmapAtlasEditor;
@@ -19,6 +21,7 @@ public class LightmapAtlasScreen
     public BTAB.Entry _selectedEntry;
 
     public LightmapMultiselect LightmapMultiselect;
+    public LightmapAtlasContextMenu ContextMenu;
 
     private string _searchInput = "";
     private bool SelectEntry = false;
@@ -26,8 +29,9 @@ public class LightmapAtlasScreen
     public LightmapAtlasScreen(MapEditorScreen screen)
     {
         Screen = screen;
-        PropertyEditor = new LightmapAtlasPropertyEditor(this);
+        PropertyEditor = new LightmapAtlasPropertyEditor(Screen, this);
         LightmapMultiselect = new LightmapMultiselect(this);
+        ContextMenu = new LightmapAtlasContextMenu(Screen, this);
     }
 
     public void OnGui()
@@ -166,6 +170,8 @@ public class LightmapAtlasScreen
                     {
                         DisplaySelectableAlias(lightmapEntry.PartName, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
                     }
+
+                    ContextMenu.EntryListMenu(isSelected, $"{_selectedEntryKey}");
                 }
             }
             ImGui.Separator();
@@ -195,8 +201,10 @@ public class LightmapAtlasScreen
 
             if (ImGui.Button("Delete Entry", new Vector2(widthUnit * 100, 32)))
             {
-                foreach(var entry in LightmapMultiselect.StoredLightmapEntries)
+                // Do this in reverse so a removal doesn't affect the next removal
+                foreach(var entry in LightmapMultiselect.StoredLightmapEntries.Reverse())
                 {
+                    TaskLogs.AddLog($"{entry.Key}");
                     _selectedParentEntry.LightmapAtlas.Entries.RemoveAt(entry.Key);
                 }
 

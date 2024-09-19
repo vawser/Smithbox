@@ -7,8 +7,6 @@ namespace StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 
 public class LightmapAtlasPropertyEditor
 {
-    private ViewportActionManager EditorActionManager = new();
-
     private static object _editedValueCache;
 
     // Value has been changed via input
@@ -21,9 +19,11 @@ public class LightmapAtlasPropertyEditor
     private static bool _uncommittedCache;
 
     private LightmapAtlasScreen AtlasScreen;
+    private MapEditorScreen Screen;
 
-    public LightmapAtlasPropertyEditor(LightmapAtlasScreen atlasScreen)
+    public LightmapAtlasPropertyEditor(MapEditorScreen screen, LightmapAtlasScreen atlasScreen)
     {
+        Screen = screen;
         AtlasScreen = atlasScreen;
     }
 
@@ -57,7 +57,7 @@ public class LightmapAtlasPropertyEditor
             {
                 if (newValue != -1)
                 {
-                    EditorActionManager.ExecuteAction(new LightmapAtlasChangeAtlasID(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
+                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangeAtlasID(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
                 }
             }
         }
@@ -92,7 +92,7 @@ public class LightmapAtlasPropertyEditor
             {
                 if (newValue != null)
                 {
-                    EditorActionManager.ExecuteAction(new LightmapAtlasChangePartName(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
+                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangePartName(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
                 }
             }
         }
@@ -128,7 +128,7 @@ public class LightmapAtlasPropertyEditor
             {
                 if (newValue != null)
                 {
-                    EditorActionManager.ExecuteAction(new LightmapAtlasChangeMaterialName(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
+                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangeMaterialName(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
                 }
             }
         }
@@ -163,7 +163,7 @@ public class LightmapAtlasPropertyEditor
             {
                 if (newValue.X != -1 && newValue.Y != -1)
                 {
-                    EditorActionManager.ExecuteAction(new LightmapAtlasChangeUVOffset(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
+                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangeUVOffset(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
                 }
             }
         }
@@ -198,7 +198,7 @@ public class LightmapAtlasPropertyEditor
             {
                 if (newValue.X != -1 && newValue.Y != -1)
                 {
-                    EditorActionManager.ExecuteAction(new LightmapAtlasChangeUVScale(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
+                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangeUVScale(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
                 }
             }
         }
