@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using static StudioCore.Configuration.Settings.SettingsWindow;
 using System;
 using static SoulsFormats.MSB_AC6;
+using StudioCore.Editors.ParamEditor;
 
 namespace StudioCore.Tools.Development;
 
@@ -262,7 +263,10 @@ public class DebugWindow
         var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
 
         // For testing ImGui elements
-
+        foreach(var entry in ParamBank.AuxBanks)
+        {
+            ImGui.Text($"{entry.Key}");
+        }
     }
 
     // Validation

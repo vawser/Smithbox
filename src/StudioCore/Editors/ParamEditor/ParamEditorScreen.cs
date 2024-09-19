@@ -489,8 +489,15 @@ public class ParamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Comparison"))
         {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Book}");
+            if (ImGui.MenuItem("View comparison report", null, false))
+            {
+                ParamComparisonReport.GenerateReport();
+            }
+            ImguiUtils.ShowHoverTooltip("View a text report that details the differences between the current project params and the vanilla params.");
+
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
-            if (ImGui.MenuItem("Show Vanilla Params", null, CFG.Current.Param_ShowVanillaParams))
+            if (ImGui.MenuItem("Show vanilla params", null, CFG.Current.Param_ShowVanillaParams))
             {
                 CFG.Current.Param_ShowVanillaParams = !CFG.Current.Param_ShowVanillaParams;
             }
@@ -512,7 +519,7 @@ public class ParamEditorScreen : EditorScreen
             ImGui.Separator();
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Load Params for comparison...", null, false))
+            if (ImGui.MenuItem("Load params for comparison...", null, false))
             {
                 string[] allParamTypes =
                 {
@@ -856,6 +863,8 @@ public class ParamEditorScreen : EditorScreen
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing,
                 style.ItemSpacing * scale - new Vector2(3.5f, 0f) * scale);
         }
+
+        ParamComparisonReport.HandleReportModal();
 
         // Views
         var dsid = ImGui.GetID("DockSpace_ParamView");

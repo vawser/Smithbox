@@ -70,6 +70,7 @@
     <bulletEmit_InitialEmitHeight AltName="Bullet Emit: Initial Height" Wiki="The initial height the bullet will go to after being emitted. Negative goes below, positive above." />
     <bulletEmit_BulletAccuracy AltName="Bullet Emit: Accuracy" Wiki="Assuming 0 is the target's location, positive values will land ahead of target, negative values will land behind." />
     <postChargeFireDelay AltName="Delay after Charge Attack Fire" />
+    <orbitActiveHeatBuildup AltName="Active Orbit Continuous Heat Build-up" Wik="Rate at which an active Orbit weapon gradually builds up heat." />
   </Field>
   <Self Row0Dummy="" />
 </PARAMMETA>

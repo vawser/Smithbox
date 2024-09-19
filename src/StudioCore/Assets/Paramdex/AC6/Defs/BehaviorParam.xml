@@ -89,7 +89,7 @@
       <Description>Heat buildup when attacking. Used by parts that 'channel'.</Description>
     </Field>
     <Field Def="s32 UnkInt0xA0"></Field>
-    <Field Def="f32 UnkFloat0xA4"></Field>
+    <Field Def="f32 orbitActiveHeatBuildup"></Field>
     <Field Def="s32 heatBuildup"></Field>
     <Field Def="f32 UnkFloat0xAC"></Field>
     <Field Def="s32 Unk0xB0"></Field>
