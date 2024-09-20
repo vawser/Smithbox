@@ -19,7 +19,7 @@ public static class PropInfo_ParamJumps
 {
     public static void Display(Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         var width = (ImGui.GetWindowWidth() / 100);
 
         if (firstEnt.References.Count == 0)

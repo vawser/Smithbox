@@ -145,7 +145,7 @@ public class ProjectEnumTab
 
     public void DisplayProjectEnumAction()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         var width = ImGui.GetWindowWidth();
         var inputSize = new Vector2(width, 20 * scale);
         var buttonSize = new Vector2(width, 24 * scale);

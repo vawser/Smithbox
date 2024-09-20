@@ -19,7 +19,7 @@ public static class PropInfo_ReferencedBy
         if (firstEnt.GetReferencingObjects().Count == 0)
             return;
 
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         ImGui.Separator();
         ImGui.Text("Referenced By:");

@@ -157,7 +157,7 @@ public class EmevdEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         // Docking setup
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

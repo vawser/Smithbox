@@ -369,7 +369,7 @@ public class ModelEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         // Docking setup
         //var vp = ImGui.GetMainViewport();
         Vector2 wins = ImGui.GetWindowSize();

@@ -56,7 +56,7 @@ public class ToolWindow
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * Smithbox.GetUIScale(), ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_ParamEditor"))
         {
@@ -358,7 +358,7 @@ public class ToolWindow
                 UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Input:");
 
                 ImGui.InputTextMultiline("##MEditRegexInput", ref MassEditHandler._currentMEditRegexInput, 65536,
-                new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
+                new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
 
                 if (ImGui.Button("Apply##action_Selection_MassEdit_Execute", halfButtonSize))
                 {
@@ -382,7 +382,7 @@ public class ToolWindow
                 UIHelper.WrappedText($"{MassEditHandler._mEditRegexResult}");
 
                 ImGui.InputTextMultiline("##MEditRegexOutput", ref MassEditHandler._lastMEditRegexInput, 65536,
-                    new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()), ImGuiInputTextFlags.ReadOnly);
+                    new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()), ImGuiInputTextFlags.ReadOnly);
                 UIHelper.WrappedText("");
             }
 
@@ -448,7 +448,7 @@ public class ToolWindow
 
                 UIHelper.WrappedText("Script:");
                 UIHelper.ShowHoverTooltip("The mass edit script.");
-                ImGui.InputTextMultiline("##newMassEditScript", ref MassEditHandler._newScriptBody, 65536, new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
+                ImGui.InputTextMultiline("##newMassEditScript", ref MassEditHandler._newScriptBody, 65536, new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
                 UIHelper.WrappedText("");
 
                 if (ImGui.Button("Save", halfButtonSize))

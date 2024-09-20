@@ -613,7 +613,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         if (!_isShortcutPopupOpen && !_isMEditPopupOpen && !_isStatisticPopupOpen && !_isSearchBarActive)
         {
@@ -1579,7 +1579,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void MassEditPopups()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         // Popup size relies on magic numbers. Multiline maxlength is also arbitrary.
         if (ImGui.BeginPopup("massEditMenuRegex"))

@@ -20,7 +20,7 @@ public class ParticleToolbar_Configuration
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * Smithbox.GetUIScale(), ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Toolbar: Configuration##Toolbar_ParticleEditor_Configuration"))
         {

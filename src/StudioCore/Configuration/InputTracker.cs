@@ -220,7 +220,7 @@ public static class InputTracker
 
     public static KeyBind KeybindEntry(int index, KeyBind bindVal)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         var columnWidth = ImGui.GetColumnWidth();
 
         var newKeyBind = bindVal;
@@ -274,7 +274,7 @@ public static class InputTracker
 
     public static KeyBind KeybindLine(int index, KeyBind currentKeyBind, KeyBind defaultKeyBind)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         ImGui.Columns(3);
 

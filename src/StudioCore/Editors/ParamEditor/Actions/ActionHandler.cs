@@ -427,7 +427,7 @@ public class ActionHandler
             float EditX = (Size.X / 100) * 95;
             float EditY = (Size.Y / 100) * 25;
 
-            ImGui.BeginChild("##resultSection", new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
+            ImGui.BeginChild("##resultSection", new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
             UIHelper.WrappedText($"ID {_idRowInstanceFinder_CachedSearchID}: {_idRowInstanceFinder_Results.Count} matches");
 
             foreach (var paramName in _idRowInstanceFinder_Results)
@@ -473,7 +473,7 @@ public class ActionHandler
         if (ParamResults.Count > 0)
         {
             UIHelper.WrappedText("Params:");
-            ImGui.BeginChild("##paramResultSection", new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
+            ImGui.BeginChild("##paramResultSection", new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
 
             // Param Results
             UIHelper.WrappedText($"Value {_cachedSearchValue}: {ParamResults.Count} matches");
@@ -493,7 +493,7 @@ public class ActionHandler
         {
             UIHelper.WrappedText("");
             UIHelper.WrappedText("Aliases:");
-            ImGui.BeginChild("##aliasResultSection", new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
+            ImGui.BeginChild("##aliasResultSection", new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
 
             UIHelper.WrappedText($"Value {_cachedSearchValue}: {AliasResults.Count} matches");
 

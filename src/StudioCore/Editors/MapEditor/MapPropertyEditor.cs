@@ -1107,7 +1107,7 @@ public class MapPropertyEditor
         int classIndex = -1
     )
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         Entity firstEnt = entSelection.First();
         Type type = obj.GetType();
 
@@ -1486,7 +1486,7 @@ public class MapPropertyEditor
 
     public void OnGui(ViewportSelection selection, string id, float w, float h)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();
 
         if (!UI.Current.Interface_MapEditor_Properties)

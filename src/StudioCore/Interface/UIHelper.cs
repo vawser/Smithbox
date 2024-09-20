@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,66 @@ using System.Threading.Tasks;
 namespace StudioCore.Interface;
 public static class UIHelper
 {
+    public static void ApplyBaseStyle()
+    {
+        var scale = DPI.GetUIScale();
+        ImGuiStylePtr style = ImGui.GetStyle();
+
+        // Colors
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.ImGui_MainBg);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.ImGui_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.PopupBg, UI.Current.ImGui_PopupBg);
+        ImGui.PushStyleColor(ImGuiCol.Border, UI.Current.ImGui_Border);
+        ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_Background);
+        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, UI.Current.ImGui_Input_Background_Hover);
+        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, UI.Current.ImGui_Input_Background_Active);
+        ImGui.PushStyleColor(ImGuiCol.TitleBg, UI.Current.ImGui_TitleBarBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.ImGui_TitleBarBg_Active);
+        ImGui.PushStyleColor(ImGuiCol.MenuBarBg, UI.Current.ImGui_MenuBarBg);
+        ImGui.PushStyleColor(ImGuiCol.ScrollbarBg, UI.Current.ImGui_ScrollbarBg);
+        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrab, UI.Current.ImGui_ScrollbarGrab);
+        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrabHovered, UI.Current.ImGui_ScrollbarGrab_Hover);
+        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrabActive, UI.Current.ImGui_ScrollbarGrab_Active);
+        ImGui.PushStyleColor(ImGuiCol.CheckMark, UI.Current.ImGui_Input_CheckMark);
+        ImGui.PushStyleColor(ImGuiCol.SliderGrab, UI.Current.ImGui_SliderGrab);
+        ImGui.PushStyleColor(ImGuiCol.SliderGrabActive, UI.Current.ImGui_SliderGrab_Active);
+        ImGui.PushStyleColor(ImGuiCol.Button, UI.Current.ImGui_Button);
+        ImGui.PushStyleColor(ImGuiCol.ButtonHovered, UI.Current.ImGui_Button_Hovered);
+        ImGui.PushStyleColor(ImGuiCol.ButtonActive, UI.Current.ImGui_ButtonActive);
+        ImGui.PushStyleColor(ImGuiCol.Header, UI.Current.ImGui_Selection);
+        ImGui.PushStyleColor(ImGuiCol.HeaderHovered, UI.Current.ImGui_Selection_Hover);
+        ImGui.PushStyleColor(ImGuiCol.HeaderActive, UI.Current.ImGui_Selection_Active);
+        ImGui.PushStyleColor(ImGuiCol.Tab, UI.Current.ImGui_Tab);
+        ImGui.PushStyleColor(ImGuiCol.TabHovered, UI.Current.ImGui_Tab_Hover);
+        ImGui.PushStyleColor(ImGuiCol.TabActive, UI.Current.ImGui_Tab_Active);
+        ImGui.PushStyleColor(ImGuiCol.TabUnfocused, UI.Current.ImGui_UnfocusedTab);
+        ImGui.PushStyleColor(ImGuiCol.TabUnfocusedActive, UI.Current.ImGui_UnfocusedTab_Active);
+
+        // Sizes
+        ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 1.0f);
+        ImGui.PushStyleVar(ImGuiStyleVar.TabRounding, 0.0f);
+        ImGui.PushStyleVar(ImGuiStyleVar.ScrollbarRounding, 0.0f);
+
+        ImGui.PushStyleVar(ImGuiStyleVar.ScrollbarSize, 16.0f * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowMinSize, new Vector2(100f, 100f) * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, style.FramePadding * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, style.CellPadding * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, style.IndentSpacing * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, style.ItemSpacing * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemInnerSpacing, style.ItemInnerSpacing * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 1);
+        ImGui.PushStyleVar(ImGuiStyleVar.ChildBorderSize, 1);
+        ImGui.PushStyleVar(ImGuiStyleVar.PopupBorderSize, 1);
+        ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 1);
+    }
+
+    public static void UnapplyBaseStyle()
+    {
+        ImGui.PopStyleColor(29);
+        ImGui.PopStyleVar(14);
+    }
+
     public static void RestoreImguiIfMissing()
     {
         var curImgui = $@"{AppContext.BaseDirectory}\imgui.ini";
@@ -49,35 +110,6 @@ public static class UIHelper
         }
     }
 
-    public static void ShowHelpButton(string title, string desc, string id)
-    {
-        if (ImGui.Button($"{title}"))
-            ImGui.OpenPopup($"##{id}HelpPopup");
-
-        if (ImGui.BeginPopup($"##{id}HelpPopup"))
-        {
-            ImGui.Text($"{desc}");
-            ImGui.EndPopup();
-        }
-    }
-
-    public static void ShowHelpMarker(string desc)
-    {
-        if (UI.Current.System_Show_UI_Tooltips)
-        {
-            ImGui.SameLine();
-            ImGui.TextDisabled("(?)");
-            if (ImGui.IsItemHovered())
-            {
-                ImGui.BeginTooltip();
-                ImGui.PushTextWrapPos(450.0f);
-                ImGui.TextUnformatted(desc);
-                ImGui.PopTextWrapPos();
-                ImGui.EndTooltip();
-            }
-        }
-    }
-
     public static void ShowHoverTooltip(string desc)
     {
         if (UI.Current.System_Show_UI_Tooltips)
@@ -100,13 +132,6 @@ public static class UIHelper
         ImGui.PushTextWrapPos(size.X);
         ImGui.TextUnformatted(text);
         ImGui.PopTextWrapPos();
-    }
-
-    public static void HelpTextColored(Vector4 color, string text)
-    {
-        ImGui.PushStyleColor(ImGuiCol.Text, color);
-        ImGui.TextUnformatted(text);
-        ImGui.PopStyleColor();
     }
 
     public static void WrappedTextColored(Vector4 color, string text)
@@ -134,6 +159,7 @@ public static class UIHelper
             }
         }
     }
+
     public static string GetKeybindHint(string hint)
     {
         if (hint == "")
@@ -176,5 +202,10 @@ public static class UIHelper
                 ImGui.TextColored(color, @$"{aliasName}");
             }
         }
+    }
+
+    public static void CopyToClipboard(string text)
+    {
+        PlatformUtils.Instance.SetClipboardText(text);
     }
 }

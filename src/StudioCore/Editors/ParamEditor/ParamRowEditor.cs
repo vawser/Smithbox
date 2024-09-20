@@ -181,7 +181,7 @@ public class ParamRowEditor
 
                     if (ImGui.BeginPopup($"SeparatorContextMenu##{index}"))
                     {
-                        var scale = Smithbox.GetUIScale();
+                        var scale = DPI.GetUIScale();
                         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0f, 10f) * scale);
                         EditorDecorations.ListReorderOptions(meta.AlternateOrder, field, index);
                         ImGui.PopStyleVar();
@@ -982,7 +982,7 @@ public class ParamRowEditor
         ParamMetaData? meta, string activeParam, bool showPinOptions, bool isPinned, Param.Column col,
         ParamEditorSelectionState selection, Type propType, string Wiki, dynamic oldval, bool isNameMenu)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         var altName = cellMeta?.AltName;
 
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0f, 10f) * scale);

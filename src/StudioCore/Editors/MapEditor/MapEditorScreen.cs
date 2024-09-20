@@ -590,7 +590,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void OnGUI(string[] initcmd)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         // Docking setup
         //var vp = ImGui.GetMainViewport();

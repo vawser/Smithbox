@@ -124,7 +124,7 @@ public class MapSceneTree : IActionEventHandler
 
     public void OnGui()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         _worldMapScreen.Shortcuts();
 
@@ -181,7 +181,7 @@ public class MapSceneTree : IActionEventHandler
                 ImGui.InputText("##treeSearch", ref _mapObjectListSearchInput, 99);
                 UIHelper.ShowHoverTooltip("Filters the map list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
                 ImGui.SameLine();
-                if (ImGui.Button($"Clear##ClearMapFilter", new Vector2(widthUnit * 16, 20 * Smithbox.GetUIScale())))
+                if (ImGui.Button($"Clear##ClearMapFilter", new Vector2(widthUnit * 16, 20 * DPI.GetUIScale())))
                 {
                     _mapObjectListSearchInput = "";
                     _worldMapScreen.MapSelectionActive = false;
@@ -206,7 +206,7 @@ public class MapSceneTree : IActionEventHandler
 
     private void DisplayMapObjectList()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         ImGui.BeginChild("listtree");
 
@@ -510,7 +510,7 @@ public class MapSceneTree : IActionEventHandler
 
     private unsafe void MapObjectSelectable(Entity e, bool visicon, bool hierarchial = false)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         // Main selectable
         if (e is MsbEntity me)
@@ -642,7 +642,7 @@ public class MapSceneTree : IActionEventHandler
             ImGui.SetItemAllowOverlap();
             var visible = e.EditorVisible;
             ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * Smithbox.GetUIScale());
+            ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * DPI.GetUIScale());
             ImGui.PushStyleColor(ImGuiCol.Text, visible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -734,7 +734,7 @@ public class MapSceneTree : IActionEventHandler
                                         var visible = parent.EditorVisible;
                                         ImGui.SameLine();
                                         ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X -
-                                                            18.0f * Smithbox.GetUIScale());
+                                                            18.0f * DPI.GetUIScale());
                                         ImGui.PushStyleColor(ImGuiCol.Text, visible
                                             ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                                             : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -759,7 +759,7 @@ public class MapSceneTree : IActionEventHandler
                                         var visible = parent.EditorVisible;
                                         ImGui.SameLine();
                                         ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X -
-                                                            18.0f * Smithbox.GetUIScale());
+                                                            18.0f * DPI.GetUIScale());
                                         ImGui.PushStyleColor(ImGuiCol.Text, visible
                                             ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                                             : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));

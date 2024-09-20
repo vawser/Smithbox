@@ -51,7 +51,7 @@ public class WorldMapScreen : IResourceEventListener
         WorldMapOpen = false;
         LoadedWorldMapTexture = false;
         zoomFactor = GetDefaultZoomLevel();
-        Smithbox.UIScaleChanged += (_, _) =>
+        DPI.UIScaleChanged += (_, _) =>
         {
             zoomFactor = GetDefaultZoomLevel();
         };
@@ -115,7 +115,7 @@ public class WorldMapScreen : IResourceEventListener
         if (Smithbox.ProjectType != ProjectType.ER)
             return;
 
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         var windowHeight = ImGui.GetWindowHeight();
         var windowWidth = ImGui.GetWindowWidth();
@@ -428,7 +428,7 @@ public class WorldMapScreen : IResourceEventListener
 
     private Vector2 GetRelativePositionWindowOnly(Vector2 windowPos)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         Vector2 relativePos = new Vector2(0, 0);
 
@@ -547,13 +547,13 @@ public class WorldMapScreen : IResourceEventListener
     }
     private Vector2 GetDefaultZoomLevel()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         return new Vector2(float.Round(0.2f * scale, 1), float.Round(0.2f * scale, 1));
     }
 
     private Vector2 GetRelativePosition(Vector2 windowPos, Vector2 scrollPos)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         Vector2 relativePos = new Vector2(0, 0);
 

@@ -97,7 +97,7 @@ public class ProjectModal
 
     public void DisplayProjectLoadOptions()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         var width = ImGui.GetWindowWidth() / 100;
 
         if (CFG.Current.RecentProjects.Count > 0)
@@ -252,7 +252,7 @@ public class ProjectModal
         ImGui.Separator();
 
         // Create
-        if (ImGui.Button("Create", new Vector2(120, 0) * Smithbox.GetUIScale()))
+        if (ImGui.Button("Create", new Vector2(120, 0) * DPI.GetUIScale()))
         {
             newProject.ProjectJsonPath = $@"{newProjectDirectory}\project.json";
 

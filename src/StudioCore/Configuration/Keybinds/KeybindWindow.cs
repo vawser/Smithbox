@@ -55,7 +55,7 @@ public class KeybindWindow
 
     public void Display()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         if (!MenuOpenState)
             return;
 

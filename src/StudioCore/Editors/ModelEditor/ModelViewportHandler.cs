@@ -300,7 +300,7 @@ namespace StudioCore.Editors.ModelEditor
                 ImGui.SetItemAllowOverlap();
                 var isVisible = curEntity.EditorVisible;
                 ImGui.SameLine();
-                ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * Smithbox.GetUIScale());
+                ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * DPI.GetUIScale());
                 ImGui.PushStyleColor(ImGuiCol.Text, isVisible
                     ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                     : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -362,7 +362,7 @@ namespace StudioCore.Editors.ModelEditor
                 ImGui.SetItemAllowOverlap();
                 var isVisible = curEntity.EditorVisible;
                 ImGui.SameLine();
-                ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * Smithbox.GetUIScale());
+                ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * DPI.GetUIScale());
                 ImGui.PushStyleColor(ImGuiCol.Text, isVisible
                     ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                     : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -423,7 +423,7 @@ namespace StudioCore.Editors.ModelEditor
                 ImGui.SetItemAllowOverlap();
                 var isVisible = curEntity.EditorVisible;
                 ImGui.SameLine();
-                ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * Smithbox.GetUIScale());
+                ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * DPI.GetUIScale());
                 ImGui.PushStyleColor(ImGuiCol.Text, isVisible
                     ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                     : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));

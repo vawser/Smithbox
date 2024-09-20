@@ -43,7 +43,7 @@ namespace StudioCore.Editors.MapEditor
 
         public void OnGui()
         {
-            var scale = Smithbox.GetUIScale();
+            var scale = DPI.GetUIScale();
 
             if (Smithbox.ProjectType == ProjectType.Undefined)
                 return;

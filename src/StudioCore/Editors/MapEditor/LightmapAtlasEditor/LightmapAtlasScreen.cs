@@ -37,7 +37,7 @@ public class LightmapAtlasScreen
 
     public void OnGui()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         if (Smithbox.BankHandler == null)
             return;

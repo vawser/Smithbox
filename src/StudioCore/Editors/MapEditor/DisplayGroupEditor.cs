@@ -26,7 +26,7 @@ public class DisplayGroupEditor
 
     public void OnGui(int dispCount)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         if (!UI.Current.Interface_MapEditor_RenderGroups)
             return;

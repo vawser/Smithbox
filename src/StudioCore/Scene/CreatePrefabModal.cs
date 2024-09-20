@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using System.Numerics;
 
@@ -31,7 +32,7 @@ internal class CreatePrefabModal : IModal
 
     public void OnGui()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         ImGui.PushStyleVar(ImGuiStyleVar.WindowRounding, 7.0f * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 1.0f);

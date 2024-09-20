@@ -21,7 +21,7 @@ public static class PropInfo_ReferencesTo
         if (firstEnt.References.Count == 0)
             return;
 
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         ImGui.Separator();
         ImGui.Text("References:");

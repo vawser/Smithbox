@@ -9,6 +9,7 @@ using System.Text.Json.Serialization;
 using System.Drawing;
 using static StudioCore.Configuration.Settings.TimeActEditorTab;
 using StudioCore.Core.Project;
+using StudioCore.Interface;
 
 namespace StudioCore;
 
@@ -729,7 +730,7 @@ public class CFG
                 SaveConfig();
             }
         }
-        Smithbox.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+        DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
     }
 
     private static void LoadKeybinds()

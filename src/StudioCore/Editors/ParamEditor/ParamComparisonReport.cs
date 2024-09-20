@@ -38,7 +38,7 @@ public static class ParamComparisonReport
 
     public static void Display()
     {
-        var buttonSize = new Vector2(UI.Current.Interface_ModalWidth / 2, 32);
+        var buttonSize = new Vector2(UI.Current.Interface_ModalWidth / 2, UI.Current.Interface_ButtonHeight);
         var textPaneSize = new Vector2(UI.Current.Interface_ModalWidth, UI.Current.Interface_ModalHeight);
 
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Comparison Report");
@@ -50,7 +50,7 @@ public static class ParamComparisonReport
 
         if(ImGui.Button("Copy", buttonSize))
         {
-            PlatformUtils.Instance.SetClipboardText(ReportText);
+            UIHelper.CopyToClipboard(ReportText);
         }
         ImGui.SameLine();
         if (ImGui.Button("Close", buttonSize))

@@ -16,6 +16,7 @@ using System.Threading.Tasks.Dataflow;
 using StudioCore.Locators;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Interface;
 
 namespace StudioCore.Resource;
 
@@ -445,7 +446,7 @@ public static class ResourceManager
 
     public static void OnGuiDrawTasks(float w, float h)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         if (ActiveJobProgress.Count() > 0)
         {

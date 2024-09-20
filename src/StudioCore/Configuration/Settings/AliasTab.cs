@@ -175,7 +175,7 @@ public class AliasTab
 
     private void DisplayActionsWindow()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         var width = ImGui.GetWindowWidth();
         var inputSize = new Vector2(width, 20 * scale);
         var buttonSize = new Vector2(width, 24 * scale);
@@ -215,7 +215,7 @@ public class AliasTab
 
     private void DisplayEditWindow()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         var width = ImGui.GetWindowWidth();
         var inputSize = new Vector2(width, 20 * scale);
         var buttonSize = new Vector2(width, 24 * scale);
@@ -266,7 +266,7 @@ public class AliasTab
     }
     public void DisplayNameAddSection()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         var width = ImGui.GetWindowWidth();
         var inputSize = new Vector2(width, 20 * scale);
         var buttonSize = new Vector2(width, 24 * scale);

@@ -65,7 +65,7 @@ public class HelpWindow
 
     public void Display()
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
 
         if (!MenuOpenState)
             return;

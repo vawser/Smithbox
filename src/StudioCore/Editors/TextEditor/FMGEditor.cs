@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
@@ -243,7 +244,7 @@ public class PropertyEditor
             val = "";
         }
 
-        var height = (baseHeight + ImGui.CalcTextSize(val).Y) * Smithbox.GetUIScale();
+        var height = (baseHeight + ImGui.CalcTextSize(val).Y) * DPI.GetUIScale();
 
         if (ImGui.InputTextMultiline("##value", ref val, 2000, new Vector2(-1, height)))
         {

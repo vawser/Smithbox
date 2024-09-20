@@ -1,5 +1,6 @@
 using ImGuiNET;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using System.Numerics;
 
 namespace StudioCore.Editor;
@@ -124,7 +125,7 @@ Some common tools for mapstudio include:
 
     public static bool AddImGuiHintButton(string id, ref string hint, bool canEdit = false, bool isRowHint = false)
     {
-        var scale = Smithbox.GetUIScale();
+        var scale = DPI.GetUIScale();
         var ret = false;
         /*
         ImGui.TextColored(new Vector4(0.6f, 0.6f, 1.0f, 1.0f), "Help");

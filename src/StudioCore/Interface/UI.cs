@@ -9,6 +9,8 @@ using System.Text.Json.Serialization;
 using System.Drawing;
 using static StudioCore.Configuration.Settings.TimeActEditorTab;
 using StudioCore.Core.Project;
+using Silk.NET.SDL;
+using StudioCore.Graphics;
 
 namespace StudioCore.Interface;
 
@@ -57,8 +59,11 @@ public class UI
     //**************
     public float Interface_FontSize = 14.0f;
 
-    public float Interface_ModalHeight = 800.0f;
-    public float Interface_ModalWidth = 600.0f;
+    public float Interface_ButtonHeight = 32.0f;
+    public float Interface_ThinButtonHeight = 24.0f;
+
+    public float Interface_ModalHeight = 600.0f;
+    public float Interface_ModalWidth = 800.0f;
 
     //**************
     // View Toggles
@@ -251,7 +256,6 @@ public class UI
     public Vector4 DisplayGroupEditor_CombinedActive_Frame = new Vector4(0.4f, 0.4f, 0.06f, 1.0f);
     public Vector4 DisplayGroupEditor_CombinedActive_Checkbox = new Vector4(1f, 1f, 0.02f, 1.0f);
 
-
     //**************
     // Functions
     //**************
@@ -298,7 +302,7 @@ public class UI
                 SaveConfig();
             }
         }
-        Smithbox.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+        DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
     }
 
     private static void SaveConfig()

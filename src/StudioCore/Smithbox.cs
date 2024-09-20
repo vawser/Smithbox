@@ -70,8 +70,6 @@ public class Smithbox
     private bool _showImGuiMetricsWindow;
     private bool _showImGuiStackToolWindow;
 
-    public static EventHandler UIScaleChanged;
-
     public unsafe Smithbox(IGraphicsContext context, string version)
     {
         _version = version;
@@ -79,7 +77,7 @@ public class Smithbox
 
         UIHelper.RestoreImguiIfMissing();
 
-        UIScaleChanged += (_, _) =>
+        DPI.UIScaleChanged += (_, _) =>
         {
             FontRebuildRequest = true;
         };
@@ -148,7 +146,6 @@ public class Smithbox
         AliasCacheHandler.UpdateCaches();
     }
 
-
     public static void SetProgramTitle(string projectName)
     {
         _context.Window.Title = $"{projectName} - {_programTitle}";
@@ -182,7 +179,7 @@ public class Smithbox
 
         fonts.Clear();
 
-        var scale = GetUIScale();
+        var scale = DPI.GetUIScale();
 
         // English fonts
         {
@@ -380,65 +377,6 @@ public class Smithbox
         UI.Save();
     }
 
-    public void ApplyStyle()
-    {
-        var scale = GetUIScale();
-        ImGuiStylePtr style = ImGui.GetStyle();
-
-        // Colors
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.ImGui_MainBg);
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.ImGui_ChildBg);
-        ImGui.PushStyleColor(ImGuiCol.PopupBg, UI.Current.ImGui_PopupBg);
-        ImGui.PushStyleColor(ImGuiCol.Border, UI.Current.ImGui_Border);
-        ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_Background);
-        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, UI.Current.ImGui_Input_Background_Hover);
-        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, UI.Current.ImGui_Input_Background_Active);
-        ImGui.PushStyleColor(ImGuiCol.TitleBg, UI.Current.ImGui_TitleBarBg);
-        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.ImGui_TitleBarBg_Active);
-        ImGui.PushStyleColor(ImGuiCol.MenuBarBg, UI.Current.ImGui_MenuBarBg);
-        ImGui.PushStyleColor(ImGuiCol.ScrollbarBg, UI.Current.ImGui_ScrollbarBg);
-        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrab, UI.Current.ImGui_ScrollbarGrab);
-        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrabHovered, UI.Current.ImGui_ScrollbarGrab_Hover);
-        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrabActive, UI.Current.ImGui_ScrollbarGrab_Active);
-        ImGui.PushStyleColor(ImGuiCol.CheckMark, UI.Current.ImGui_Input_CheckMark);
-        ImGui.PushStyleColor(ImGuiCol.SliderGrab, UI.Current.ImGui_SliderGrab);
-        ImGui.PushStyleColor(ImGuiCol.SliderGrabActive, UI.Current.ImGui_SliderGrab_Active);
-        ImGui.PushStyleColor(ImGuiCol.Button, UI.Current.ImGui_Button);
-        ImGui.PushStyleColor(ImGuiCol.ButtonHovered, UI.Current.ImGui_Button_Hovered);
-        ImGui.PushStyleColor(ImGuiCol.ButtonActive, UI.Current.ImGui_ButtonActive);
-        ImGui.PushStyleColor(ImGuiCol.Header, UI.Current.ImGui_Selection);
-        ImGui.PushStyleColor(ImGuiCol.HeaderHovered, UI.Current.ImGui_Selection_Hover);
-        ImGui.PushStyleColor(ImGuiCol.HeaderActive, UI.Current.ImGui_Selection_Active);
-        ImGui.PushStyleColor(ImGuiCol.Tab, UI.Current.ImGui_Tab);
-        ImGui.PushStyleColor(ImGuiCol.TabHovered, UI.Current.ImGui_Tab_Hover);
-        ImGui.PushStyleColor(ImGuiCol.TabActive, UI.Current.ImGui_Tab_Active);
-        ImGui.PushStyleColor(ImGuiCol.TabUnfocused, UI.Current.ImGui_UnfocusedTab);
-        ImGui.PushStyleColor(ImGuiCol.TabUnfocusedActive, UI.Current.ImGui_UnfocusedTab_Active);
-
-        // Sizes
-        ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 1.0f);
-        ImGui.PushStyleVar(ImGuiStyleVar.TabRounding, 0.0f);
-        ImGui.PushStyleVar(ImGuiStyleVar.ScrollbarRounding, 0.0f);
-
-        ImGui.PushStyleVar(ImGuiStyleVar.ScrollbarSize, 16.0f * scale);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowMinSize, new Vector2(100f, 100f) * scale);
-        ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, style.FramePadding * scale);
-        ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, style.CellPadding * scale);
-        ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, style.IndentSpacing * scale);
-        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, style.ItemSpacing * scale);
-        ImGui.PushStyleVar(ImGuiStyleVar.ItemInnerSpacing, style.ItemInnerSpacing * scale);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 1);
-        ImGui.PushStyleVar(ImGuiStyleVar.ChildBorderSize, 1);
-        ImGui.PushStyleVar(ImGuiStyleVar.PopupBorderSize, 1);
-        ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 1);
-    }
-
-    public void UnapplyStyle()
-    {
-        ImGui.PopStyleColor(29);
-        ImGui.PopStyleVar(14);
-    }
 
     //Unhappy with this being here
     [DllImport("user32.dll", EntryPoint = "ShowWindow")]
@@ -503,8 +441,8 @@ public class Smithbox
     {
         Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1, "Imgui");
 
-        UpdateDpi();
-        var scale = GetUIScale();
+        DPI.UpdateDpi(_context);
+        var scale = DPI.GetUIScale();
 
         if (FontRebuildRequest)
         {
@@ -528,7 +466,7 @@ public class Smithbox
         }
 
         ctx = Tracy.TracyCZoneN(1, "Style");
-        ApplyStyle();
+        UIHelper.ApplyBaseStyle();
         ImGuiViewportPtr vp = ImGui.GetMainViewport();
         ImGui.SetNextWindowPos(vp.Pos);
         ImGui.SetNextWindowSize(vp.Size);
@@ -680,7 +618,9 @@ public class Smithbox
         ColorPicker.DisplayColorPicker();
 
         ImGui.PopStyleVar(2);
-        UnapplyStyle();
+
+        UIHelper.UnapplyBaseStyle();
+
         Tracy.TracyCZoneEnd(ctx);
 
         ctx = Tracy.TracyCZoneN(1, "Resource");
@@ -701,44 +641,6 @@ public class Smithbox
         }
 
         _firstframe = false;
-    }
-
-    private const float DefaultDpi = 96f;
-    private static float _dpi = DefaultDpi;
-
-    public static float Dpi
-    {
-        get => _dpi;
-        set
-        {
-            if (Math.Abs(_dpi - value) < 0.0001f) return; // Skip doing anything if no difference
-
-            _dpi = value;
-            if (UI.Current.System_ScaleByDPI)
-                UIScaleChanged?.Invoke(null, EventArgs.Empty);
-        }
-    }
-
-    private static unsafe void UpdateDpi()
-    {
-        if (SdlProvider.SDL.IsValueCreated && _context?.Window != null)
-        {
-            var window = _context.Window.SdlWindowHandle;
-            int index = SdlProvider.SDL.Value.GetWindowDisplayIndex(window);
-            float ddpi = 96f;
-            float _ = 0f;
-            SdlProvider.SDL.Value.GetDisplayDPI(index, ref ddpi, ref _, ref _);
-
-            Dpi = ddpi;
-        }
-    }
-
-    public static float GetUIScale()
-    {
-        var scale = UI.Current.System_UI_Scale;
-        if (UI.Current.System_ScaleByDPI)
-            scale = scale / DefaultDpi * Dpi;
-        return scale;
     }
 }
 

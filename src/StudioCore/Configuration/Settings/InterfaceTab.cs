@@ -37,7 +37,7 @@ public class InterfaceTab
                 // Round to 0.05
                 UI.Current.System_UI_Scale = (float)Math.Round(_tempScale * 20) / 20;
                 _tempScale = UI.Current.System_UI_Scale;
-                Smithbox.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+                DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
             }
             UIHelper.ShowHoverTooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
 
@@ -46,13 +46,13 @@ public class InterfaceTab
             {
                 UI.Current.System_UI_Scale = UI.Default.System_UI_Scale;
                 _tempScale = UI.Current.System_UI_Scale;
-                Smithbox.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+                DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
             }
 
-            ImGui.Checkbox($"Multiply UI scale by DPI ({(Smithbox.Dpi / 96).ToString("P0", new NumberFormatInfo { PercentPositivePattern = 1, PercentNegativePattern = 1 })})", ref UI.Current.System_ScaleByDPI);
+            ImGui.Checkbox($"Multiply UI scale by DPI ({(DPI.Dpi / 96).ToString("P0", new NumberFormatInfo { PercentPositivePattern = 1, PercentNegativePattern = 1 })})", ref UI.Current.System_ScaleByDPI);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
-                Smithbox.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+                DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
             }
             UIHelper.ShowHoverTooltip("Multiplies the user interface scale by your monitor's DPI setting.");
 
@@ -60,7 +60,7 @@ public class InterfaceTab
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 UI.Current.Interface_FontSize = (float)Math.Round(UI.Current.Interface_FontSize);
-                Smithbox.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+                DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
             }
             UIHelper.ShowHoverTooltip("Adjusts the size of the font in Smithbox.");
         }
