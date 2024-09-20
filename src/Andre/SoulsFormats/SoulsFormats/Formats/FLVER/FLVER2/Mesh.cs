@@ -94,7 +94,7 @@ namespace SoulsFormats
                 int boneOffset = br.ReadInt32();
                 int faceSetCount = br.ReadInt32();
                 int faceSetOffset = br.ReadInt32();
-                int vertexBufferCount = br.AssertInt32([1, 2, 3]);
+                int vertexBufferCount = br.ReadInt32();
                 int vertexBufferOffset = br.ReadInt32();
 
                 if (boundingBoxOffset != 0)

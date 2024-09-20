@@ -107,6 +107,9 @@ Texture Viewer:
 #--------------------------------------
 # Notes
 #--------------------------------------
+# PRIORITY
 Finish the BTAB Editor: include edit, removal and add.
 
-aeg027_022
+Add collision view to the Model Editor
+
+aeg270_301 

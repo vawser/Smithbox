@@ -174,28 +174,31 @@ public class GlobalModelSearch
         foreach (var entry in map.Parts.GetEntries())
         {
             var modelName = entry.ModelName;
-            if(modelName != null)
+
+            if (modelName != null)
+            {
                 modelName = modelName.ToLower();
 
-            if (_looseModelNameMatch)
-            {
-                if (modelName.Contains(searchInput))
+                if (_looseModelNameMatch)
                 {
-                    if(!Matches.Any(e => e.MapName == mapName))
+                    if (modelName.Contains(searchInput))
                     {
-                        var match = new MapModelMatch(mapName, modelName, entry.Name);
-                        Matches.Add(match);
+                        if (!Matches.Any(e => e.MapName == mapName))
+                        {
+                            var match = new MapModelMatch(mapName, modelName, entry.Name);
+                            Matches.Add(match);
+                        }
                     }
                 }
-            }
-            else
-            {
-                if (modelName == searchInput)
+                else
                 {
-                    if (!Matches.Any(e => e.MapName == mapName))
+                    if (modelName == searchInput)
                     {
-                        var match = new MapModelMatch(mapName, modelName, entry.Name);
-                        Matches.Add(match);
+                        if (!Matches.Any(e => e.MapName == mapName))
+                        {
+                            var match = new MapModelMatch(mapName, modelName, entry.Name);
+                            Matches.Add(match);
+                        }
                     }
                 }
             }
