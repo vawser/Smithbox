@@ -201,6 +201,7 @@ namespace SoulsFormats
             /// <summary>
             /// The model of the Part, corresponding to an entry in the ModelParam.
             /// </summary>
+            [ModelNameLink]
             public string ModelName { get; set; }
             private int ModelIndex;
 

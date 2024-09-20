@@ -215,15 +215,19 @@ public class Viewport : IViewport
 
     public void ViewportInformationPanel()
     {
-        if (CFG.Current.Viewport_Enable_ViewportInfoPanel)
+        // Only display in Map Editor
+        if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
         {
-            if (CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement)
+            if (CFG.Current.Viewport_Enable_ViewportInfoPanel)
             {
-                RotationIncrement.DisplayViewportRotateIncrement();
-            }
-            if (CFG.Current.Viewport_ViewportInfoPanel_Display_MovementIncrement)
-            {
-                KeyboardMovement.DisplayViewportMovementIncrement();
+                if (CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement)
+                {
+                    RotationIncrement.DisplayViewportRotateIncrement();
+                }
+                if (CFG.Current.Viewport_ViewportInfoPanel_Display_MovementIncrement)
+                {
+                    KeyboardMovement.DisplayViewportMovementIncrement();
+                }
             }
         }
     }

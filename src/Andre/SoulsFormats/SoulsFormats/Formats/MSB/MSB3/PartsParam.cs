@@ -178,6 +178,7 @@ namespace SoulsFormats
             /// <summary>
             /// The name of this part's model.
             /// </summary>
+            [ModelNameLink]
             public string ModelName { get; set; }
             [IndexProperty]
             public int ModelIndex { get; set; }

@@ -44,7 +44,6 @@ namespace StudioCore.Editors.ModelEditor
         /// <param name="name"></param>
         public void LoadLooseFLVER(string name, string loosePath)
         {
-
             CurrentFLVERInfo = new FlverModelInfo(name, loosePath);
 
             LoadEditableModel(name, ModelEditorModelType.Loose);
@@ -455,7 +454,7 @@ namespace StudioCore.Editors.ModelEditor
         }
 
         /// <summary>
-        /// Save the PureFLVER model
+        /// Save the Pure FLVER model
         /// </summary>
         public void SaveModel()
         {
@@ -465,6 +464,8 @@ namespace StudioCore.Editors.ModelEditor
                 return;
             }
 
+            // This is confusing to the user currently, disabled for now.
+            /*
             bool success = true;
             List<string> issues = new List<string>();
             (success, issues) = VerifyDataIntegrity();
@@ -485,6 +486,7 @@ namespace StudioCore.Editors.ModelEditor
                     return;
                 }
             }
+            */
 
             if (CurrentFLVERInfo != null)
             {

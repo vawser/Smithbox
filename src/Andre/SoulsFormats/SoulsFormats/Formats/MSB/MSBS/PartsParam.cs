@@ -163,6 +163,7 @@ namespace SoulsFormats
             /// <summary>
             /// The model used by this part; requires an entry in ModelParam.
             /// </summary>
+            [ModelNameLink]
             public string ModelName { get; set; }
             [IndexProperty]
             public int ModelIndex { get; set; }

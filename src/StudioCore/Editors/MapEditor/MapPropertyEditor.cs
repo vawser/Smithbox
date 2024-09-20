@@ -45,7 +45,7 @@ public class MapPropertyEditor
         _viewport = viewport;
     }
 
-    private (bool, bool) PropertyRow(Type typ, object oldval, out object newval, PropertyInfo prop)
+    private (bool, bool) PropertyRow(Type typ, object oldval, out object newval, PropertyInfo prop, IEnumerable<Entity> entSelection)
     {
         ImGui.SetNextItemWidth(-1);
 
@@ -312,10 +312,38 @@ public class MapPropertyEditor
         else if (typ == typeof(Vector3))
         {
             var val = (Vector3)oldval;
-            if (ImGui.DragFloat3("##value", ref val, 0.1f))
+
+            bool showNormalInput = true;
+
+            if (entSelection != null && prop.GetCustomAttribute<ScaleProperty>() != null)
             {
-                newval = val;
-                isChanged = true;
+                var ent = entSelection.FirstOrDefault();
+                if (ent != null)
+                {
+                    if (ent.IsPartEnemy() || ent.IsPartDummyEnemy())
+                    {
+                        showNormalInput = false;
+                    }
+                }
+            }
+
+            if(showNormalInput)
+            {
+                if (ImGui.DragFloat3("##value", ref val, 0.1f))
+                {
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+            else
+            {
+                ImGui.BeginDisabled();
+                if (ImGui.DragFloat3("##value", ref val, 0.1f))
+                {
+                    newval = val;
+                    isChanged = true;
+                }
+                ImGui.EndDisabled();
             }
         }
         else if (typ.BaseType == typeof(Enum))
@@ -684,7 +712,7 @@ public class MapPropertyEditor
 
         object newval;
         // Property Editor UI
-        (bool, bool) propEditResults = PropertyRow(propType, oldval, out newval, proprow);
+        (bool, bool) propEditResults = PropertyRow(propType, oldval, out newval, proprow, null);
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
         UpdateProperty(proprow, nullableSelection, paramRowOrCell, newval, changed, committed);
@@ -888,7 +916,7 @@ public class MapPropertyEditor
         object newval;
 
         // Property Editor UI
-        (bool, bool) propEditResults = PropertyRow(type, oldval, out newval, prop);
+        (bool, bool) propEditResults = PropertyRow(type, oldval, out newval, prop, entSelection);
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
         DisplayPropContextMenu(selection, prop, obj, arrayIndex);
@@ -897,6 +925,10 @@ public class MapPropertyEditor
             ImGui.SetItemDefaultFocus();
         }
 
+        // Links
+        MapEditorDecorations.ModelNameRow(entSelection, prop, oldval);
+            
+        // Lists
         if (ParamRefRow(prop, oldval, ref newval))
         {
             changed = true;

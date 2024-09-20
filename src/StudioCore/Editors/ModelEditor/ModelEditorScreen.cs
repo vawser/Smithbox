@@ -507,8 +507,9 @@ public class ModelEditorScreen : EditorScreen
 
                     if (assetType == "MapPiece")
                     {
-                        ModelSelectionView._searchInput = modelName;
-                        ResourceHandler.LoadMapPiece(mapId, modelName);
+                        var mapPieceName = modelName.Replace(mapId, "m");
+                        ModelSelectionView._searchInput = mapPieceName;
+                        ResourceHandler.LoadMapPiece(modelName, mapId);
                     }
                 }
             }

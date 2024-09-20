@@ -195,6 +195,7 @@ namespace SoulsFormats
             // Index among parts of the same type
             public int TypeIndex { get; set; }
 
+            [ModelNameLink]
             public string ModelName { get; set; }
             private int ModelIndex;
 

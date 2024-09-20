@@ -31,6 +31,11 @@ namespace SoulsFormats
     }
 
     [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class ModelNameLink : Attribute
+    {
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class MSBAliasEnum : Attribute
     {
         public string AliasEnumType;

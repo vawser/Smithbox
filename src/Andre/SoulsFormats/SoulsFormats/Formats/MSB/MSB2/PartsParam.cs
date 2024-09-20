@@ -127,6 +127,7 @@ namespace SoulsFormats
             /// <summary>
             /// The name of the part's model, referencing ModelParam.
             /// </summary>
+            [ModelNameLink]
             public string ModelName { get; set; }
             [IndexProperty]
             public short ModelIndex { get; set; }
