@@ -618,8 +618,6 @@ namespace StudioCore.Editors.ModelEditor
                         {
                             try
                             {
-                                TaskLogs.AddLog($"Saved {curName}");
-
                                 file.Bytes = internalFlver.CurrentFLVER.Write();
                             }
                             catch (Exception ex)
