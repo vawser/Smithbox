@@ -69,7 +69,7 @@ public class ModelHierarchyView
             ImGui.Checkbox("##exactSearch", ref CFG.Current.ModelEditor_ExactSearch);
             UIHelper.ShowHoverTooltip("Enable exact search.");
 
-            if (Screen.ResourceHandler.CurrentFLVER != null && !SuspendView)
+            if (Screen.ResourceHandler.GetCurrentFLVER() != null && !SuspendView)
             {
                 DisplaySection_Header();
                 DisplaySection_Dummies();
@@ -185,11 +185,11 @@ public class ModelHierarchyView
         // List
         if (ImGui.CollapsingHeader("Dummies"))
         {
-            for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.Dummies.Count; i++)
+            for (int i = 0; i < Screen.ResourceHandler.GetCurrentFLVER().Dummies.Count; i++)
             {
-                var curDummy = Screen.ResourceHandler.CurrentFLVER.Dummies[i];
+                var curDummy = Screen.ResourceHandler.GetCurrentFLVER().Dummies[i];
 
-                if (ModelEditorSearch.IsModelEditorSearchMatch_Dummy(_searchInput, curDummy, Screen.ResourceHandler.CurrentFLVER, i))
+                if (ModelEditorSearch.IsModelEditorSearchMatch_Dummy(_searchInput, curDummy, Screen.ResourceHandler.GetCurrentFLVER(), i))
                 {
                     // Dummy Row
                     if (ImGui.Selectable($"Dummy {i} - [{curDummy.ReferenceID}]", (DummyMultiselect.IsMultiselected(i) || _selectedDummy == i), ImGuiSelectableFlags.AllowDoubleClick))
@@ -232,7 +232,7 @@ public class ModelHierarchyView
         }
 
         // Only display this one if the dummy list is empty
-        if (Screen.ResourceHandler.CurrentFLVER.Dummies.Count < 1)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Dummies.Count < 1)
         {
             ContextMenu.DummyHeaderContextMenu();
         }
@@ -265,12 +265,12 @@ public class ModelHierarchyView
 
         if (ImGui.CollapsingHeader("Materials"))
         {
-            for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.Materials.Count; i++)
+            for (int i = 0; i < Screen.ResourceHandler.GetCurrentFLVER().Materials.Count; i++)
             {
-                var curMaterial = Screen.ResourceHandler.CurrentFLVER.Materials[i];
+                var curMaterial = Screen.ResourceHandler.GetCurrentFLVER().Materials[i];
                 var materialName = curMaterial.Name;
 
-                if (ModelEditorSearch.IsModelEditorSearchMatch_Material(_searchInput, curMaterial, Screen.ResourceHandler.CurrentFLVER, i))
+                if (ModelEditorSearch.IsModelEditorSearchMatch_Material(_searchInput, curMaterial, Screen.ResourceHandler.GetCurrentFLVER(), i))
                 {
                     // Material Row
                     if (ImGui.Selectable($"{materialName}##material{i}", (MaterialMultiselect.IsMultiselected(i) || _selectedMaterial == i)))
@@ -311,7 +311,7 @@ public class ModelHierarchyView
         }
 
         // Only display this one if the list is empty
-        if (Screen.ResourceHandler.CurrentFLVER.Materials.Count < 1)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Materials.Count < 1)
         {
             ContextMenu.MaterialHeaderContextMenu();
         }
@@ -344,11 +344,11 @@ public class ModelHierarchyView
 
         if (ImGui.CollapsingHeader("GX List"))
         {
-            for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.GXLists.Count; i++)
+            for (int i = 0; i < Screen.ResourceHandler.GetCurrentFLVER().GXLists.Count; i++)
             {
-                var curGXList = Screen.ResourceHandler.CurrentFLVER.GXLists[i];
+                var curGXList = Screen.ResourceHandler.GetCurrentFLVER().GXLists[i];
 
-                if (ModelEditorSearch.IsModelEditorSearchMatch_GXList(_searchInput, curGXList, Screen.ResourceHandler.CurrentFLVER, i))
+                if (ModelEditorSearch.IsModelEditorSearchMatch_GXList(_searchInput, curGXList, Screen.ResourceHandler.GetCurrentFLVER(), i))
                 {
                     // GX List Row
                     if (ImGui.Selectable($"GX List {i}", (GxListMultiselect.IsMultiselected(i) ||  _selectedGXList == i)))
@@ -389,7 +389,7 @@ public class ModelHierarchyView
         }
 
         // Only display this one if the list is empty
-        if (Screen.ResourceHandler.CurrentFLVER.GXLists.Count < 1)
+        if (Screen.ResourceHandler.GetCurrentFLVER().GXLists.Count < 1)
         {
             ContextMenu.GXListHeaderContextMenu();
         }
@@ -421,11 +421,11 @@ public class ModelHierarchyView
 
         if (ImGui.CollapsingHeader("Nodes"))
         {
-            for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.Nodes.Count; i++)
+            for (int i = 0; i < Screen.ResourceHandler.GetCurrentFLVER().Nodes.Count; i++)
             {
-                var curNode = Screen.ResourceHandler.CurrentFLVER.Nodes[i];
+                var curNode = Screen.ResourceHandler.GetCurrentFLVER().Nodes[i];
 
-                if (ModelEditorSearch.IsModelEditorSearchMatch_Node(_searchInput, curNode, Screen.ResourceHandler.CurrentFLVER, i))
+                if (ModelEditorSearch.IsModelEditorSearchMatch_Node(_searchInput, curNode, Screen.ResourceHandler.GetCurrentFLVER(), i))
                 {
                     // Node row
                     if (ImGui.Selectable($"Node {i} - {curNode.Name}", (NodeMultiselect.IsMultiselected(i) || _selectedNode == i), ImGuiSelectableFlags.AllowDoubleClick))
@@ -468,7 +468,7 @@ public class ModelHierarchyView
         }
 
         // Only display this one if the list is empty
-        if (Screen.ResourceHandler.CurrentFLVER.Nodes.Count < 1)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Nodes.Count < 1)
         {
             ContextMenu.NodeHeaderContextMenu();
         }
@@ -500,22 +500,22 @@ public class ModelHierarchyView
 
         if (ImGui.CollapsingHeader("Meshes"))
         {
-            for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.Meshes.Count; i++)
+            for (int i = 0; i < Screen.ResourceHandler.GetCurrentFLVER().Meshes.Count; i++)
             {
-                var curMesh = Screen.ResourceHandler.CurrentFLVER.Meshes[i];
+                var curMesh = Screen.ResourceHandler.GetCurrentFLVER().Meshes[i];
 
-                var materialIndex = Screen.ResourceHandler.CurrentFLVER.Meshes[i].MaterialIndex;
-                var nodeIndex = Screen.ResourceHandler.CurrentFLVER.Meshes[i].NodeIndex;
+                var materialIndex = Screen.ResourceHandler.GetCurrentFLVER().Meshes[i].MaterialIndex;
+                var nodeIndex = Screen.ResourceHandler.GetCurrentFLVER().Meshes[i].NodeIndex;
 
                 var material = "";
-                if (materialIndex < Screen.ResourceHandler.CurrentFLVER.Materials.Count)
-                    material = Screen.ResourceHandler.CurrentFLVER.Materials[materialIndex].Name;
+                if (materialIndex < Screen.ResourceHandler.GetCurrentFLVER().Materials.Count)
+                    material = Screen.ResourceHandler.GetCurrentFLVER().Materials[materialIndex].Name;
 
                 var node = "";
-                if (nodeIndex < Screen.ResourceHandler.CurrentFLVER.Nodes.Count && nodeIndex > -1)
-                    node = Screen.ResourceHandler.CurrentFLVER.Nodes[nodeIndex].Name;
+                if (nodeIndex < Screen.ResourceHandler.GetCurrentFLVER().Nodes.Count && nodeIndex > -1)
+                    node = Screen.ResourceHandler.GetCurrentFLVER().Nodes[nodeIndex].Name;
 
-                if (ModelEditorSearch.IsModelEditorSearchMatch_Mesh(_searchInput, curMesh, Screen.ResourceHandler.CurrentFLVER, i))
+                if (ModelEditorSearch.IsModelEditorSearchMatch_Mesh(_searchInput, curMesh, Screen.ResourceHandler.GetCurrentFLVER(), i))
                 {
                     // Mesh row
                     if (ImGui.Selectable($"Mesh {i} - {material} : {node}", (MeshMultiselect.IsMultiselected(i) || _selectedMesh == i), ImGuiSelectableFlags.AllowDoubleClick))
@@ -558,7 +558,7 @@ public class ModelHierarchyView
         }
 
         // Only display this one if the list is empty
-        if (Screen.ResourceHandler.CurrentFLVER.Meshes.Count < 1)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Meshes.Count < 1)
         {
             ContextMenu.MeshHeaderContextMenu();
         }
@@ -591,11 +591,11 @@ public class ModelHierarchyView
 
         if (ImGui.CollapsingHeader("Buffer Layout"))
         {
-            for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.BufferLayouts.Count; i++)
+            for (int i = 0; i < Screen.ResourceHandler.GetCurrentFLVER().BufferLayouts.Count; i++)
             {
-                var curLayout = Screen.ResourceHandler.CurrentFLVER.BufferLayouts[i];
+                var curLayout = Screen.ResourceHandler.GetCurrentFLVER().BufferLayouts[i];
 
-                if (ModelEditorSearch.IsModelEditorSearchMatch_BufferLayout(_searchInput, curLayout, Screen.ResourceHandler.CurrentFLVER, i))
+                if (ModelEditorSearch.IsModelEditorSearchMatch_BufferLayout(_searchInput, curLayout, Screen.ResourceHandler.GetCurrentFLVER(), i))
                 {
                     // Buffer Layout row
                     if (ImGui.Selectable($"Buffer Layout {i}", (BufferLayoutMultiselect.IsMultiselected(i) || _selectedBufferLayout == i)))
@@ -636,7 +636,7 @@ public class ModelHierarchyView
         }
 
         // Only display this one if the list is empty
-        if (Screen.ResourceHandler.CurrentFLVER.BufferLayouts.Count < 1)
+        if (Screen.ResourceHandler.GetCurrentFLVER().BufferLayouts.Count < 1)
         {
             ContextMenu.BufferLayoutHeaderContextMenu();
         }
@@ -662,22 +662,22 @@ public class ModelHierarchyView
             _lastSelectedEntry = ModelEntrySelectionType.AllSkeleton;
         }
 
-        if (Screen.ResourceHandler.CurrentFLVER.Skeletons == null)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Skeletons == null)
             return;
 
         if (ImGui.CollapsingHeader("Base Skeleton"))
         {
-            for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton.Count; i++)
+            for (int i = 0; i < Screen.ResourceHandler.GetCurrentFLVER().Skeletons.BaseSkeleton.Count; i++)
             {
-                var curBaseSkeleton = Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton[i];
+                var curBaseSkeleton = Screen.ResourceHandler.GetCurrentFLVER().Skeletons.BaseSkeleton[i];
 
-                var nodeIndex = Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton[i].NodeIndex;
+                var nodeIndex = Screen.ResourceHandler.GetCurrentFLVER().Skeletons.BaseSkeleton[i].NodeIndex;
 
                 var node = "";
-                if (nodeIndex < Screen.ResourceHandler.CurrentFLVER.Nodes.Count && nodeIndex > -1)
-                    node = Screen.ResourceHandler.CurrentFLVER.Nodes[nodeIndex].Name;
+                if (nodeIndex < Screen.ResourceHandler.GetCurrentFLVER().Nodes.Count && nodeIndex > -1)
+                    node = Screen.ResourceHandler.GetCurrentFLVER().Nodes[nodeIndex].Name;
 
-                if (ModelEditorSearch.IsModelEditorSearchMatch_SkeletonBone(_searchInput, curBaseSkeleton, Screen.ResourceHandler.CurrentFLVER, i))
+                if (ModelEditorSearch.IsModelEditorSearchMatch_SkeletonBone(_searchInput, curBaseSkeleton, Screen.ResourceHandler.GetCurrentFLVER(), i))
                 {
                     // Base Skeleton Bone row
                     if (ImGui.Selectable($"Bone {i} - {node}##baseSkeletonBone{i}", (BaseSkeletonMultiselect.IsMultiselected(i) || _selectedBaseSkeletonBone == i)))
@@ -718,24 +718,24 @@ public class ModelHierarchyView
         }
 
         // Only display this one if the list is empty
-        if (Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton.Count < 1)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Skeletons.BaseSkeleton.Count < 1)
         {
             ContextMenu.BaseSkeletonHeaderContextMenu();
         }
 
         if (ImGui.CollapsingHeader("All Skeleton"))
         {
-            for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons.Count; i++)
+            for (int i = 0; i < Screen.ResourceHandler.GetCurrentFLVER().Skeletons.AllSkeletons.Count; i++)
             {
-                var curAllSkeleton = Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons[i];
+                var curAllSkeleton = Screen.ResourceHandler.GetCurrentFLVER().Skeletons.AllSkeletons[i];
 
-                var nodeIndex = Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons[i].NodeIndex;
+                var nodeIndex = Screen.ResourceHandler.GetCurrentFLVER().Skeletons.AllSkeletons[i].NodeIndex;
 
                 var node = "";
-                if (nodeIndex < Screen.ResourceHandler.CurrentFLVER.Nodes.Count && nodeIndex > -1)
-                    node = Screen.ResourceHandler.CurrentFLVER.Nodes[nodeIndex].Name;
+                if (nodeIndex < Screen.ResourceHandler.GetCurrentFLVER().Nodes.Count && nodeIndex > -1)
+                    node = Screen.ResourceHandler.GetCurrentFLVER().Nodes[nodeIndex].Name;
 
-                if (ModelEditorSearch.IsModelEditorSearchMatch_SkeletonBone(_searchInput, curAllSkeleton, Screen.ResourceHandler.CurrentFLVER, i))
+                if (ModelEditorSearch.IsModelEditorSearchMatch_SkeletonBone(_searchInput, curAllSkeleton, Screen.ResourceHandler.GetCurrentFLVER(), i))
                 {
                     // All Skeleton Bone row
                     if (ImGui.Selectable($"Bone {i} - {node}##allSkeletonBone{i}", (AllSkeletonMultiselect.IsMultiselected(i) || _selectedAllSkeletonBone == i)))
@@ -776,7 +776,7 @@ public class ModelHierarchyView
         }
 
         // Only display this one if the list is empty
-        if (Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons.Count < 1)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Skeletons.AllSkeletons.Count < 1)
         {
             ContextMenu.AllSkeletonHeaderContextMenu();
         }
@@ -786,11 +786,11 @@ public class ModelHierarchyView
     {
         var index = 0;
 
-        if (Screen.ResourceHandler.ER_CollisionLow != null || Screen.ResourceHandler.ER_CollisionHigh != null)
+        if (Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionLow != null || Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionHigh != null)
         {
             if (ImGui.CollapsingHeader("Collision"))
             {
-                if (Screen.ResourceHandler.ER_CollisionLow != null)
+                if (Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionLow != null)
                 {
                     if (ImGui.Selectable($"Low Collision {index}", _selectedLowCollision == index))
                     {
@@ -800,7 +800,7 @@ public class ModelHierarchyView
                     }
                 }
 
-                if (Screen.ResourceHandler.ER_CollisionHigh != null)
+                if (Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionHigh != null)
                 {
                     if (ImGui.Selectable($"High Collision {index}", _selectedHighCollision == index))
                     {

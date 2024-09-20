@@ -77,6 +77,14 @@ namespace StudioCore.Editors.ModelEditor
             AssetCopyHandler.PartCopyMenu();
 
             ImGui.End();
+
+            if (ImGui.Begin($@"Internal Files##InternalFileList"))
+            {
+                DisplayInternalFileList();
+            }
+
+            ImGui.End();
+
             ImGui.PopStyleColor(1);
         }
 
@@ -148,6 +156,28 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelSelectionType.MapPiece:
                     Screen.ResourceHandler.LoadMapPiece(_selectedEntry, _selectedMapId);
                     break;
+            }
+        }
+
+        private void DisplayInternalFileList()
+        {
+            if (Screen.ResourceHandler.LoadedFlverContainer != null)
+            {
+                foreach (var entry in Screen.ResourceHandler.LoadedFlverContainer.InternalFlvers)
+                {
+                    var currentFlver = Screen.ResourceHandler.LoadedFlverContainer.CurrentInternalFlver;
+
+                    if (ImGui.Selectable($"{entry.Name}", entry == currentFlver))
+                    {
+                        Screen.ResourceHandler.LoadedFlverContainer.CurrentInternalFlver = entry;
+
+                        var name = Screen.ResourceHandler.LoadedFlverContainer.ContainerName;
+                        var type = Screen.ResourceHandler.LoadedFlverContainer.Type;
+                        var mapId = Screen.ResourceHandler.LoadedFlverContainer.MapID;
+
+                        Screen.ResourceHandler.LoadRepresentativeModel(name, entry.Name, type, mapId);
+                    }
+                }
             }
         }
 

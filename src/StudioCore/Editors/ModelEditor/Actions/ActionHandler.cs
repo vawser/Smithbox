@@ -17,7 +17,10 @@ public class ActionHandler
 
     public void CreateHandler()
     {
-        var currentFlver = Screen.ResourceHandler.CurrentFLVER;
+        if (!Screen.ResourceHandler.HasCurrentFLVER())
+            return;
+
+        var currentFlver = Screen.ResourceHandler.GetCurrentFLVER();
         ViewportAction action = null;
 
         switch (Screen.ModelHierarchy._lastSelectedEntry)
@@ -65,7 +68,7 @@ public class ActionHandler
 
     public void DuplicateHandler()
     {
-        var currentFlver = Screen.ResourceHandler.CurrentFLVER;
+        var currentFlver = Screen.ResourceHandler.GetCurrentFLVER();
         ViewportAction action = null;
 
         switch (Screen.ModelHierarchy._lastSelectedEntry)
@@ -145,7 +148,7 @@ public class ActionHandler
 
     public void DeleteHandler()
     {
-        var currentFlver = Screen.ResourceHandler.CurrentFLVER;
+        var currentFlver = Screen.ResourceHandler.GetCurrentFLVER();
         ViewportAction action = null;
 
         switch (Screen.ModelHierarchy._lastSelectedEntry)

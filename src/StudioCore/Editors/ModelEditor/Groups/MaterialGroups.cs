@@ -205,11 +205,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void CreateMaterialGroup(ModelEditorScreen screen, string filename)
         {
+            if (!screen.ResourceHandler.HasCurrentFLVER())
+                return;
+
             MaterialList newMaterialList = new MaterialList();
 
-            for (int i = 0; i < screen.ResourceHandler.CurrentFLVER.Materials.Count; i++)
+            for (int i = 0; i < screen.ResourceHandler.GetCurrentFLVER().Materials.Count; i++)
             {
-                var curMaterial = screen.ResourceHandler.CurrentFLVER.Materials[i];
+                var curMaterial = screen.ResourceHandler.GetCurrentFLVER().Materials[i];
 
                 if (screen.ModelHierarchy.MaterialMultiselect.StoredIndices.Count > 0)
                 {

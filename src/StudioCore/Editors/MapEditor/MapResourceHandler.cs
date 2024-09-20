@@ -93,7 +93,7 @@ namespace StudioCore.Editors.MapEditor
         {
             var chrId = CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID;
 
-            var modelAsset = ModelLocator.GetChrModel(chrId);
+            var modelAsset = ModelLocator.GetChrModel(chrId, chrId);
             var textureAsset = TextureLocator.GetChrTextures(chrId);
 
             if (modelAsset.IsValid())
@@ -110,7 +110,8 @@ namespace StudioCore.Editors.MapEditor
                 // MapPiece
                 if (model.Name.StartsWith("m"))
                 {
-                    var modelAsset = ModelLocator.GetMapModel(AdjustedMapID, ModelLocator.MapModelNameToAssetName(AdjustedMapID, model.Name));
+                    var name = ModelLocator.MapModelNameToAssetName(AdjustedMapID, model.Name);
+                    var modelAsset = ModelLocator.GetMapModel(AdjustedMapID, name, name);
 
                     if (modelAsset.IsValid())
                         LoadList_MapPiece_Model.Add(modelAsset);
@@ -119,7 +120,7 @@ namespace StudioCore.Editors.MapEditor
                 // Character
                 if (model.Name.StartsWith("c"))
                 {
-                    var modelAsset = ModelLocator.GetChrModel(model.Name);
+                    var modelAsset = ModelLocator.GetChrModel(model.Name, model.Name);
 
                     if (modelAsset.IsValid())
                         LoadList_Character_Model.Add(modelAsset);
@@ -128,7 +129,7 @@ namespace StudioCore.Editors.MapEditor
                 // Object / Asset
                 if (model.Name.StartsWith("o") || model.Name.StartsWith("AEG"))
                 {
-                    var modelAsset = ModelLocator.GetObjModel(model.Name);
+                    var modelAsset = ModelLocator.GetObjModel(model.Name, model.Name);
 
                     if (modelAsset.IsValid())
                         LoadList_Asset_Model.Add(modelAsset);

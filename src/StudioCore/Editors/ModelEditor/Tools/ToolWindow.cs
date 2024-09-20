@@ -75,7 +75,10 @@ public class ToolWindow
 
                 if (ImGui.Button("Solve", defaultButtonSize))
                 {
-                    FlverTools.SolveBoundingBoxes(Screen.ResourceHandler.CurrentFLVER);
+                    if (Screen.ResourceHandler.HasCurrentFLVER())
+                    {
+                        FlverTools.SolveBoundingBoxes(Screen.ResourceHandler.GetCurrentFLVER());
+                    }
                 }
             }
 

@@ -1,4 +1,6 @@
-﻿using StudioCore.Core.Project;
+﻿using HKLib.hk2018;
+using SoulsFormats;
+using StudioCore.Core.Project;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,9 +10,37 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor
 {
-    public class FlverModelInfo
+    /// <summary>
+    /// This represents the internal FLVER file, attached to a FLVER Container.
+    /// </summary>
+    public class InternalFlver
     {
-        public string ModelName { get; set; }
+        public string Name;
+        public string ModelID;
+        public FLVER2 CurrentFLVER;
+        public string VirtualResourcePath = "";
+
+        // Associated collisions
+        public hkRootLevelContainer ER_CollisionLow;
+        public hkRootLevelContainer ER_CollisionHigh;
+    }
+
+    /// <summary>
+    /// This represents the loaded container, which may contain multiple FLVEr files.
+    /// </summary>
+    public class FlverContainer
+    {
+        /// <summary>
+        /// This is the current internal FLVER being viewed in the Model Editor
+        /// </summary>
+        public InternalFlver CurrentInternalFlver { get; set; }
+
+        /// <summary>
+        /// This is a list of all the internal FLVERs for the current loaded model container
+        /// </summary>
+        public List<InternalFlver> InternalFlvers { get; set; }
+
+        public string ContainerName { get; set; }
         public ModelEditorModelType Type { get; set; }
         public string MapID { get; set; }
 
@@ -27,40 +57,44 @@ namespace StudioCore.Editors.ModelEditor
 
         public string LoosePath { get; set; }
 
-        public FlverModelInfo(string name, string loosePath)
+        public FlverContainer(string name, string loosePath)
         {
-            ModelName = name;
+            InternalFlvers = new List<InternalFlver>();
+
+            ContainerName = name;
             Type = ModelEditorModelType.Loose;
             MapID = "";
 
             BinderDirectory = GetBinderDirectory();
             BinderExtension = GetBinderExtension();
-            BinderPath = $"{BinderDirectory}{ModelName}{BinderExtension}";
+            BinderPath = $"{BinderDirectory}{ContainerName}{BinderExtension}";
             RootBinderPath = $"{Smithbox.GameRoot}{BinderPath}";
             ModBinderPath = $"{Smithbox.ProjectRoot}{BinderPath}";
             ModBinderDirectory = $"{Smithbox.ProjectRoot}{BinderDirectory}";
 
             FlverFileExtension = GetFlverExtension();
-            FlverFileName = $"{ModelName}{FlverFileExtension}";
+            FlverFileName = $"{ContainerName}{FlverFileExtension}";
 
             LoosePath = loosePath;
         }
 
-        public FlverModelInfo(string modelName, ModelEditorModelType modelType, string mapId)
+        public FlverContainer(string modelName, ModelEditorModelType modelType, string mapId)
         {
-            ModelName = modelName;
+            InternalFlvers = new List<InternalFlver>();
+
+            ContainerName = modelName;
             Type = modelType;
             MapID = mapId;
 
             BinderDirectory = GetBinderDirectory();
             BinderExtension = GetBinderExtension();
-            BinderPath = $"{BinderDirectory}{ModelName}{BinderExtension}";
+            BinderPath = $"{BinderDirectory}{ContainerName}{BinderExtension}";
             RootBinderPath = $"{Smithbox.GameRoot}{BinderPath}";
             ModBinderPath = $"{Smithbox.ProjectRoot}{BinderPath}";
             ModBinderDirectory = $"{Smithbox.ProjectRoot}{BinderDirectory}";
 
             FlverFileExtension = GetFlverExtension();
-            FlverFileName = $"{ModelName}{FlverFileExtension}";
+            FlverFileName = $"{ContainerName}{FlverFileExtension}";
         }
 
         public bool CopyBinderToMod()
@@ -125,7 +159,7 @@ namespace StudioCore.Editors.ModelEditor
                     }
                     else if (Smithbox.ProjectType == ProjectType.ER)
                     {
-                        var category = ModelName.Split("_")[0];
+                        var category = ContainerName.Split("_")[0];
                         objDir = $@"\asset\aeg\{category}\";
                     }
                     else if (Smithbox.ProjectType == ProjectType.AC6)

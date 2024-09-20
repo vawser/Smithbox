@@ -205,11 +205,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void CreateNodeGroup(ModelEditorScreen screen, string filename)
         {
+            if (!screen.ResourceHandler.HasCurrentFLVER())
+                return;
+
             NodeList newNodeList = new NodeList();
 
-            for (int i = 0; i < screen.ResourceHandler.CurrentFLVER.Nodes.Count; i++)
+            for (int i = 0; i < screen.ResourceHandler.GetCurrentFLVER().Nodes.Count; i++)
             {
-                var curNode = screen.ResourceHandler.CurrentFLVER.Nodes[i];
+                var curNode = screen.ResourceHandler.GetCurrentFLVER().Nodes[i];
 
                 if (screen.ModelHierarchy.NodeMultiselect.StoredIndices.Count > 0)
                 {

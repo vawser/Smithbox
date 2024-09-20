@@ -162,8 +162,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     {
                         var nodeIndex = SelectedBaseSkeletonList.List[i].NodeIndex;
                         var alias = "";
-                        if (nodeIndex < screen.ResourceHandler.CurrentFLVER.Nodes.Count && nodeIndex > -1)
-                            alias = screen.ResourceHandler.CurrentFLVER.Nodes[nodeIndex].Name;
+
+                        if (screen.ResourceHandler.HasCurrentFLVER())
+                        {
+                            if (nodeIndex < screen.ResourceHandler.GetCurrentFLVER().Nodes.Count && nodeIndex > -1)
+                                alias = screen.ResourceHandler.GetCurrentFLVER().Nodes[nodeIndex].Name;
+                        }
 
                         if (ImGui.Selectable($"Base Skeleton Bone {i} - {alias}"))
                         {
@@ -211,11 +215,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void CreateBaseSkeletonGroup(ModelEditorScreen screen, string filename)
         {
+            if (!screen.ResourceHandler.HasCurrentFLVER())
+                return;
+
             BaseSkeletonList newBaseSkeletonList = new BaseSkeletonList();
 
-            for (int i = 0; i < screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton.Count; i++)
+            for (int i = 0; i < screen.ResourceHandler.GetCurrentFLVER().Skeletons.BaseSkeleton.Count; i++)
             {
-                var curBaseSkeleton = screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton[i];
+                var curBaseSkeleton = screen.ResourceHandler.GetCurrentFLVER().Skeletons.BaseSkeleton[i];
 
                 if (screen.ModelHierarchy.BaseSkeletonMultiselect.StoredIndices.Count > 0)
                 {

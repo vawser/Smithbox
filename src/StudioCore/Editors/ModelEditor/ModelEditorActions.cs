@@ -378,7 +378,7 @@ public class ReplaceDummyList : ViewportAction
     public ReplaceDummyList(ModelEditorScreen screen, List<FLVER.Dummy> dummies)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldDummies = [.. CurrentFLVER.Dummies];
         NewDummies = dummies;
     }
@@ -410,7 +410,7 @@ public class AppendDummyList : ViewportAction
     public AppendDummyList(ModelEditorScreen screen, List<FLVER.Dummy> dummies)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldDummies = [.. CurrentFLVER.Dummies];
         NewDummies = dummies;
     }
@@ -648,7 +648,7 @@ public class ReplaceMaterialList : ViewportAction
     public ReplaceMaterialList(ModelEditorScreen screen, List<FLVER2.Material> materials)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldMaterials = [.. CurrentFLVER.Materials];
         NewMaterials = materials;
     }
@@ -678,7 +678,7 @@ public class AppendMaterialList : ViewportAction
     public AppendMaterialList(ModelEditorScreen screen, List<FLVER2.Material> materials)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldMaterials = [.. CurrentFLVER.Materials];
         NewMaterials = materials;
     }
@@ -915,7 +915,7 @@ public class ReplaceGXListList : ViewportAction
     public ReplaceGXListList(ModelEditorScreen screen, List<FLVER2.GXList> GXLists)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldGXLists = [.. CurrentFLVER.GXLists];
         NewGXLists = GXLists;
     }
@@ -945,7 +945,7 @@ public class AppendGXListList : ViewportAction
     public AppendGXListList(ModelEditorScreen screen, List<FLVER2.GXList> GXLists)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldGXLists = [.. CurrentFLVER.GXLists];
         NewGXLists = GXLists;
     }
@@ -1200,7 +1200,7 @@ public class ReplaceNodeList : ViewportAction
     public ReplaceNodeList(ModelEditorScreen screen, List<FLVER.Node> nodes)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldNodes = [.. CurrentFLVER.Nodes];
         NewNodes = nodes;
     }
@@ -1230,7 +1230,7 @@ public class AppendNodeList : ViewportAction
     public AppendNodeList(ModelEditorScreen screen, List<FLVER.Node> nodes)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldNodes = [.. CurrentFLVER.Nodes];
         NewNodes = nodes;
     }
@@ -1493,7 +1493,7 @@ public class ReplaceMeshList : ViewportAction
     public ReplaceMeshList(ModelEditorScreen screen, List<FLVER2.Mesh> meshes)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldMeshes = [.. CurrentFLVER.Meshes];
         NewMeshes = meshes;
     }
@@ -1523,7 +1523,7 @@ public class AppendMeshList : ViewportAction
     public AppendMeshList(ModelEditorScreen screen, List<FLVER2.Mesh> meshes)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldMeshs = [.. CurrentFLVER.Meshes];
         NewMeshs = meshes;
     }
@@ -1760,7 +1760,7 @@ public class ReplaceBufferLayoutList : ViewportAction
     public ReplaceBufferLayoutList(ModelEditorScreen screen, List<FLVER2.BufferLayout> BufferLayouts)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldBufferLayouts = [.. CurrentFLVER.BufferLayouts];
         NewBufferLayouts = BufferLayouts;
     }
@@ -1790,7 +1790,7 @@ public class AppendBufferLayoutList : ViewportAction
     public AppendBufferLayoutList(ModelEditorScreen screen, List<FLVER2.BufferLayout> BufferLayouts)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldBufferLayouts = [.. CurrentFLVER.BufferLayouts];
         NewBufferLayouts = BufferLayouts;
     }
@@ -2025,7 +2025,7 @@ public class ReplaceBaseSkeletonBoneList : ViewportAction
     public ReplaceBaseSkeletonBoneList(ModelEditorScreen screen, List<FLVER2.SkeletonSet.Bone> BaseSkeletonBones)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldBaseSkeletonBones = [.. CurrentFLVER.Skeletons.BaseSkeleton];
         NewBaseSkeletonBones = BaseSkeletonBones;
     }
@@ -2055,7 +2055,7 @@ public class AppendBaseSkeletonBoneList : ViewportAction
     public AppendBaseSkeletonBoneList(ModelEditorScreen screen, List<FLVER2.SkeletonSet.Bone> BaseSkeletonBones)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldBaseSkeletonBones = [.. CurrentFLVER.Skeletons.BaseSkeleton];
         NewBaseSkeletonBones = BaseSkeletonBones;
     }
@@ -2290,7 +2290,7 @@ public class ReplaceAllSkeletonBoneList : ViewportAction
     public ReplaceAllSkeletonBoneList(ModelEditorScreen screen, List<FLVER2.SkeletonSet.Bone> AllSkeletonBones)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldAllSkeletonBones = [.. CurrentFLVER.Skeletons.AllSkeletons];
         NewAllSkeletonBones = AllSkeletonBones;
     }
@@ -2320,7 +2320,7 @@ public class AppendAllSkeletonBoneList : ViewportAction
     public AppendAllSkeletonBoneList(ModelEditorScreen screen, List<FLVER2.SkeletonSet.Bone> AllSkeletonBones)
     {
         Screen = screen;
-        CurrentFLVER = screen.ResourceHandler.CurrentFLVER;
+        CurrentFLVER = screen.ResourceHandler.GetCurrentFLVER();
         OldAllSkeletonBones = [.. CurrentFLVER.Skeletons.AllSkeletons];
         NewAllSkeletonBones = AllSkeletonBones;
     }
@@ -4528,7 +4528,7 @@ public class ReplaceFLVERList : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        Screen.ResourceHandler.CurrentFLVER = NewFlvers[0];
+        Screen.ResourceHandler.LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER = NewFlvers[0];
 
         // TODO: should really update the viewport representation
 
@@ -4537,7 +4537,7 @@ public class ReplaceFLVERList : ViewportAction
 
     public override ActionEvent Undo()
     {
-        Screen.ResourceHandler.CurrentFLVER = OldFlvers[0];
+        Screen.ResourceHandler.LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER = OldFlvers[0];
 
         return ActionEvent.NoEvent;
     }

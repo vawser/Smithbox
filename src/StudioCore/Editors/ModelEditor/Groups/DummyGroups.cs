@@ -204,11 +204,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void CreateDummyGroup(ModelEditorScreen screen, string filename)
         {
+            if (!screen.ResourceHandler.HasCurrentFLVER())
+                return;
+
             DummyList newDummyList = new DummyList();
 
-            for (int i = 0; i < screen.ResourceHandler.CurrentFLVER.Dummies.Count; i++)
+            for (int i = 0; i < screen.ResourceHandler.GetCurrentFLVER().Dummies.Count; i++)
             {
-                var curDummy = screen.ResourceHandler.CurrentFLVER.Dummies[i];
+                var curDummy = screen.ResourceHandler.GetCurrentFLVER().Dummies[i];
 
                 if (screen.ModelHierarchy.DummyMultiselect.StoredIndices.Count > 0)
                 {

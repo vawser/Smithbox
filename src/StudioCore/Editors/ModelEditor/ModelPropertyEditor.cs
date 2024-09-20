@@ -51,7 +51,7 @@ public class ModelPropertyEditor
 
         if (ImGui.Begin($@"Properties##ModelEditorProperties"))
         {
-            if (Screen.ResourceHandler.CurrentFLVER != null && !SuspendView)
+            if (Screen.ResourceHandler.GetCurrentFLVER() != null && !SuspendView)
             {
                 var entryType = Screen.ModelHierarchy._lastSelectedEntry;
 
@@ -93,14 +93,14 @@ public class ModelPropertyEditor
                 }
                 if (entryType == ModelEntrySelectionType.CollisionLow)
                 {
-                    if (Screen.ResourceHandler.ER_CollisionLow != null)
+                    if (Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionLow != null)
                     {
                         CollisionPropertyEditor.DisplayProperties_CollisionLow();
                     }
                 }
                 if (entryType == ModelEntrySelectionType.CollisionHigh)
                 {
-                    if (Screen.ResourceHandler.ER_CollisionHigh != null)
+                    if (Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionHigh != null)
                     {
                         CollisionPropertyEditor.DisplayProperties_CollisionHigh();
                     }
@@ -114,7 +114,7 @@ public class ModelPropertyEditor
 
     private void DisplayProperties_Header()
     {
-        var entry = Screen.ResourceHandler.CurrentFLVER.Header;
+        var entry = Screen.ResourceHandler.GetCurrentFLVER().Header;
 
         ImGui.Separator();
         ImGui.Text("Header");
@@ -216,7 +216,7 @@ public class ModelPropertyEditor
         if (index == -1)
             return;
 
-        if (Screen.ResourceHandler.CurrentFLVER.Dummies.Count < index)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Dummies.Count < index)
             return;
 
         if(Screen.ModelHierarchy.DummyMultiselect.StoredIndices.Count > 1)
@@ -231,7 +231,7 @@ public class ModelPropertyEditor
         ImGui.Text("Dummy");
         ImGui.Separator();
 
-        var entry = Screen.ResourceHandler.CurrentFLVER.Dummies[index];
+        var entry = Screen.ResourceHandler.GetCurrentFLVER().Dummies[index];
 
         // Variables
         var position = entry.Position;
@@ -415,7 +415,7 @@ public class ModelPropertyEditor
         if (index == -1)
             return;
 
-        if (Screen.ResourceHandler.CurrentFLVER.Materials.Count < index)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Materials.Count < index)
             return;
 
         if (Screen.ModelHierarchy.MaterialMultiselect.StoredIndices.Count > 1)
@@ -430,7 +430,7 @@ public class ModelPropertyEditor
         ImGui.Text("Material");
         ImGui.Separator();
 
-        var entry = Screen.ResourceHandler.CurrentFLVER.Materials[index];
+        var entry = Screen.ResourceHandler.GetCurrentFLVER().Materials[index];
 
         var name = entry.Name;
         var mtd = entry.MTD;
@@ -613,14 +613,14 @@ public class ModelPropertyEditor
         if (index == -1)
             return;
 
-        if (Screen.ResourceHandler.CurrentFLVER.GXLists.Count < index)
+        if (Screen.ResourceHandler.GetCurrentFLVER().GXLists.Count < index)
             return;
 
         ImGui.Separator();
         ImGui.Text("GX List");
         ImGui.Separator();
 
-        var entry = Screen.ResourceHandler.CurrentFLVER.GXLists[index];
+        var entry = Screen.ResourceHandler.GetCurrentFLVER().GXLists[index];
 
         for (int i = 0; i < entry.Count; i++)
         {
@@ -714,7 +714,7 @@ public class ModelPropertyEditor
         if (index == -1)
             return;
 
-        if (Screen.ResourceHandler.CurrentFLVER.Nodes.Count < index)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Nodes.Count < index)
             return;
 
         if (Screen.ModelHierarchy.NodeMultiselect.StoredIndices.Count > 1)
@@ -729,7 +729,7 @@ public class ModelPropertyEditor
         ImGui.Text("Node");
         ImGui.Separator();
 
-        var entry = Screen.ResourceHandler.CurrentFLVER.Nodes[index];
+        var entry = Screen.ResourceHandler.GetCurrentFLVER().Nodes[index];
 
         var name = entry.Name;
         int parentIndex = entry.ParentIndex;
@@ -932,7 +932,7 @@ public class ModelPropertyEditor
         if (index == -1)
             return;
 
-        if (Screen.ResourceHandler.CurrentFLVER.Meshes.Count < index)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Meshes.Count < index)
             return;
 
         if (Screen.ModelHierarchy.MeshMultiselect.StoredIndices.Count > 1)
@@ -947,7 +947,7 @@ public class ModelPropertyEditor
         ImGui.Text("Mesh");
         ImGui.Separator();
 
-        var entry = Screen.ResourceHandler.CurrentFLVER.Meshes[index];
+        var entry = Screen.ResourceHandler.GetCurrentFLVER().Meshes[index];
 
         var useBoneWeights = entry.UseBoneWeights;
         int dynamic = entry.Dynamic;
@@ -1238,7 +1238,7 @@ public class ModelPropertyEditor
         if (index == -1)
             return;
 
-        if (Screen.ResourceHandler.CurrentFLVER.BufferLayouts.Count < index)
+        if (Screen.ResourceHandler.GetCurrentFLVER().BufferLayouts.Count < index)
             return;
 
         if (Screen.ModelHierarchy.BufferLayoutMultiselect.StoredIndices.Count > 1)
@@ -1249,7 +1249,7 @@ public class ModelPropertyEditor
             return;
         }
 
-        var entry = Screen.ResourceHandler.CurrentFLVER.BufferLayouts[index];
+        var entry = Screen.ResourceHandler.GetCurrentFLVER().BufferLayouts[index];
 
         for(int i = 0; i < entry.Count; i++)
         {
@@ -1354,10 +1354,10 @@ public class ModelPropertyEditor
         if (index == -1)
             return;
 
-        if (Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton.Count < index)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Skeletons.BaseSkeleton.Count < index)
             return;
 
-        if (Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton == null)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Skeletons.BaseSkeleton == null)
             return;
 
         if (Screen.ModelHierarchy.BaseSkeletonMultiselect.StoredIndices.Count > 1)
@@ -1373,7 +1373,7 @@ public class ModelPropertyEditor
         ImGui.Separator();
         UIHelper.ShowHoverTooltip("Contains the standard skeleton hierarchy, which corresponds to the node hierarchy.");
 
-        var entry = Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton[index];
+        var entry = Screen.ResourceHandler.GetCurrentFLVER().Skeletons.BaseSkeleton[index];
 
         int parentIndex = entry.ParentIndex;
         int firstChildIndex = entry.FirstChildIndex;
@@ -1486,10 +1486,10 @@ public class ModelPropertyEditor
         if (index == -1)
             return;
 
-        if (Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons.Count < index)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Skeletons.AllSkeletons.Count < index)
             return;
 
-        if (Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons == null)
+        if (Screen.ResourceHandler.GetCurrentFLVER().Skeletons.AllSkeletons == null)
             return;
 
         if (Screen.ModelHierarchy.BaseSkeletonMultiselect.StoredIndices.Count > 1)
@@ -1505,7 +1505,7 @@ public class ModelPropertyEditor
         ImGui.Separator();
         UIHelper.ShowHoverTooltip("Contains all skeleton hierarchies including that of the control rig and the ragdoll bones.");
 
-        var entry = Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons[index];
+        var entry = Screen.ResourceHandler.GetCurrentFLVER().Skeletons.AllSkeletons[index];
 
         int parentIndex = entry.ParentIndex;
         int firstChildIndex = entry.FirstChildIndex;

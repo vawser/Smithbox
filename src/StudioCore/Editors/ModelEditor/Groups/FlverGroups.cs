@@ -86,7 +86,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             if (ImGui.Button("Create Stored FLVER", defaultButtonSize))
             {
-                if (screen.ResourceHandler.CurrentFLVER != null)
+                if (screen.ResourceHandler.GetCurrentFLVER() != null)
                 {
                     ImGui.OpenPopup($"##FLVERGroupCreation");
                 }
@@ -167,9 +167,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void CreateFLVERGroup(ModelEditorScreen screen, string filename)
         {
+            if (!screen.ResourceHandler.HasCurrentFLVER())
+                return;
+
             FLVERList newFLVERList = new FLVERList();
 
-            newFLVERList.List.Add(screen.ResourceHandler.CurrentFLVER);
+            newFLVERList.List.Add(screen.ResourceHandler.GetCurrentFLVER());
 
             var jsonString = JsonSerializer.Serialize(newFLVERList, StoredFLVERListContext.Default.FLVERList);
 

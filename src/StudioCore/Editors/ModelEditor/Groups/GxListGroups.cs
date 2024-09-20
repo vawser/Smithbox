@@ -205,11 +205,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void CreateGXListGroup(ModelEditorScreen screen, string filename)
         {
+            if (!screen.ResourceHandler.HasCurrentFLVER())
+                return;
+
             GXListList newGXListList = new GXListList();
 
-            for (int i = 0; i < screen.ResourceHandler.CurrentFLVER.GXLists.Count; i++)
+            for (int i = 0; i < screen.ResourceHandler.GetCurrentFLVER().GXLists.Count; i++)
             {
-                var curGXList = screen.ResourceHandler.CurrentFLVER.GXLists[i];
+                var curGXList = screen.ResourceHandler.GetCurrentFLVER().GXLists[i];
 
                 if (screen.ModelHierarchy.GxListMultiselect.StoredIndices.Count > 0)
                 {

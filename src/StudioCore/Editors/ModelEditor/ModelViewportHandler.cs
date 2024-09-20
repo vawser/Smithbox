@@ -89,11 +89,11 @@ namespace StudioCore.Editors.ModelEditor
 
             if (_flverhandle.IsLoaded && _flverhandle.Get() != null)
             {
-                var currentFlverClone = Screen.ResourceHandler.CurrentFLVER.Clone();
-                var currentInfo = Screen.ResourceHandler.CurrentFLVERInfo;
+                var currentFlverClone = Screen.ResourceHandler.GetCurrentFLVER().Clone();
+                var currentInfo = Screen.ResourceHandler.LoadedFlverContainer;
 
                 Screen._universe.UnloadTransformableEntities(true);
-                Screen._universe.LoadFlverInModelEditor(currentFlverClone,  _renderMesh, currentInfo.ModelName);
+                Screen._universe.LoadFlverInModelEditor(currentFlverClone,  _renderMesh, currentInfo.ContainerName);
             }
         }
 
@@ -126,19 +126,19 @@ namespace StudioCore.Editors.ModelEditor
 
             if (_flverhandle.IsLoaded && _flverhandle.Get() != null)
             {
-                var currentFlverClone = Screen.ResourceHandler.CurrentFLVER.Clone();
-                var currentInfo = Screen.ResourceHandler.CurrentFLVERInfo;
+                var currentFlverClone = Screen.ResourceHandler.GetCurrentFLVER().Clone();
+                var currentInfo = Screen.ResourceHandler.LoadedFlverContainer;
 
                 FlverResource r = _flverhandle.Get();
                 if (r.Flver != null)
                 {
                     Screen._universe.UnloadModels(true);
 
-                    Screen._universe.LoadFlverInModelEditor(currentFlverClone, _renderMesh, currentInfo.ModelName);
+                    Screen._universe.LoadFlverInModelEditor(currentFlverClone, _renderMesh, currentInfo.ContainerName);
 
                     //Screen._universe.LoadFlverInModelEditor(r.Flver, _renderMesh, Screen.ResourceHandler.CurrentFLVERInfo.ModelName);
 
-                    ContainerID = Screen.ResourceHandler.CurrentFLVERInfo.ModelName;
+                    ContainerID = Screen.ResourceHandler.LoadedFlverContainer.ContainerName;
                 }
             }
 
@@ -190,7 +190,7 @@ namespace StudioCore.Editors.ModelEditor
 
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
-            if (container.DummyPoly_RootNode.Children.Count < index)
+            if (index > container.DummyPoly_RootNode.Children.Count - 1)
                 return;
 
             var curNode = container.DummyPoly_RootNode.Children[index];
@@ -206,7 +206,7 @@ namespace StudioCore.Editors.ModelEditor
 
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
-            if (container.Bone_RootNode.Children.Count < index)
+            if (index > container.Bone_RootNode.Children.Count - 1)
                 return;
 
             var curNode = container.Bone_RootNode.Children[index];
@@ -222,7 +222,7 @@ namespace StudioCore.Editors.ModelEditor
 
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
-            if (container.DummyPoly_RootNode.Children.Count < index)
+            if (index > container.DummyPoly_RootNode.Children.Count - 1)
                 return;
 
             if (multiSelect.HasValidMultiselection())
@@ -254,7 +254,7 @@ namespace StudioCore.Editors.ModelEditor
 
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
-            if (container.Bone_RootNode.Children.Count < index)
+            if (index > container.Bone_RootNode.Children.Count - 1)
                 return;
 
             var curNode = container.Bone_RootNode.Children[index];
@@ -270,7 +270,7 @@ namespace StudioCore.Editors.ModelEditor
 
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
-            if (container.Mesh_RootNode.Children.Count < index)
+            if (index > container.Mesh_RootNode.Children.Count - 1)
                 return;
 
             var curNode = container.Mesh_RootNode.Children[index];
@@ -287,7 +287,7 @@ namespace StudioCore.Editors.ModelEditor
 
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
-            if (container.DummyPoly_RootNode.Children.Count < index)
+            if (index > container.DummyPoly_RootNode.Children.Count - 1)
                 return;
 
             Entity curEntity = null;
@@ -334,7 +334,7 @@ namespace StudioCore.Editors.ModelEditor
 
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
-            if (container.DummyPoly_RootNode.Children.Count < index)
+            if (index > container.DummyPoly_RootNode.Children.Count - 1)
                 return;
 
             var curNode = container.DummyPoly_RootNode.Children[index];
@@ -349,7 +349,7 @@ namespace StudioCore.Editors.ModelEditor
 
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
-            if (container.Bone_RootNode.Children.Count < index)
+            if (index > container.Bone_RootNode.Children.Count - 1)
                 return;
 
             Entity curEntity = null;
@@ -396,7 +396,7 @@ namespace StudioCore.Editors.ModelEditor
 
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
-            if (container.Bone_RootNode.Children.Count < index)
+            if (index > container.Bone_RootNode.Children.Count - 1)
                 return;
 
             var curNode = container.Bone_RootNode.Children[index];
@@ -410,7 +410,7 @@ namespace StudioCore.Editors.ModelEditor
 
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
-            if (container.Mesh_RootNode.Children.Count < index)
+            if (index > container.Mesh_RootNode.Children.Count - 1)
                 return;
 
             Entity curEntity = null;
@@ -457,7 +457,7 @@ namespace StudioCore.Editors.ModelEditor
 
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
-            if (container.Mesh_RootNode.Children.Count < index)
+            if (index > container.Mesh_RootNode.Children.Count - 1)
                 return;
 
             var curNode = container.Mesh_RootNode.Children[index];
@@ -576,7 +576,7 @@ namespace StudioCore.Editors.ModelEditor
             if (Screen.ModelHierarchy._selectedDummy == -1)
                 return;
             
-            var dummy = Screen.ResourceHandler.CurrentFLVER.Dummies[Screen.ModelHierarchy._selectedDummy];
+            var dummy = Screen.ResourceHandler.GetCurrentFLVER().Dummies[Screen.ModelHierarchy._selectedDummy];
             var entDummy = (FLVER.Dummy)transformEnt.WrappedObject;
 
             if(dummy.Position != entDummy.Position)
@@ -590,7 +590,7 @@ namespace StudioCore.Editors.ModelEditor
             if (Screen.ModelHierarchy._selectedNode == -1)
                 return;
 
-            var bone = Screen.ResourceHandler.CurrentFLVER.Nodes[Screen.ModelHierarchy._selectedNode];
+            var bone = Screen.ResourceHandler.GetCurrentFLVER().Nodes[Screen.ModelHierarchy._selectedNode];
             var entBone = (FLVER.Node)transformEnt.WrappedObject;
 
             if (bone.Position != entBone.Position)

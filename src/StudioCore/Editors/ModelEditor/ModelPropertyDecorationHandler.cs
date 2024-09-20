@@ -24,7 +24,7 @@ namespace StudioCore.Editors.ModelEditor
 
             if (index != -1)
             {
-                for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.GXLists.Count; i++)
+                for (int i = 0; i < Screen.ResourceHandler.GetCurrentFLVER().GXLists.Count; i++)
                 {
                     if (i == index)
                     {
@@ -66,11 +66,11 @@ namespace StudioCore.Editors.ModelEditor
 
             if (index != -1)
             {
-                for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.Materials.Count; i++)
+                for (int i = 0; i < Screen.ResourceHandler.GetCurrentFLVER().Materials.Count; i++)
                 {
                     if (i == index)
                     {
-                        alias = Screen.ResourceHandler.CurrentFLVER.Materials[i].Name;
+                        alias = Screen.ResourceHandler.GetCurrentFLVER().Materials[i].Name;
                     }
                 }
 
@@ -108,11 +108,11 @@ namespace StudioCore.Editors.ModelEditor
 
             if (index != -1)
             {
-                for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.Nodes.Count; i++)
+                for (int i = 0; i < Screen.ResourceHandler.GetCurrentFLVER().Nodes.Count; i++)
                 {
                     if (i == index)
                     {
-                        alias = Screen.ResourceHandler.CurrentFLVER.Nodes[i].Name;
+                        alias = Screen.ResourceHandler.GetCurrentFLVER().Nodes[i].Name;
                     }
                 }
 
@@ -150,7 +150,7 @@ namespace StudioCore.Editors.ModelEditor
 
             if (index != -1)
             {
-                for (int i = 0; i < Screen.ResourceHandler.CurrentFLVER.BufferLayouts.Count; i++)
+                for (int i = 0; i < Screen.ResourceHandler.GetCurrentFLVER().BufferLayouts.Count; i++)
                 {
                     if (i == index)
                     {

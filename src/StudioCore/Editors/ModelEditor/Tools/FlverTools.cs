@@ -14,7 +14,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
     {
         public static void ReverseNormals(ModelEditorScreen screen)
         {
-            var model = screen.ResourceHandler.CurrentFLVER;
+            var model = screen.ResourceHandler.GetCurrentFLVER();
             var selectedMesh = screen.ModelHierarchy._selectedMesh;
 
             foreach (FLVER.Vertex v in model.Meshes[selectedMesh].Vertices)
@@ -41,7 +41,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void ReverseFaceSet(ModelEditorScreen screen)
         {
-            var model = screen.ResourceHandler.CurrentFLVER;
+            var model = screen.ResourceHandler.GetCurrentFLVER();
             var selectedMesh = screen.ModelHierarchy._selectedMesh;
             var selectedFaceSet = screen.ModelHierarchy._subSelectedFaceSetRow;
 

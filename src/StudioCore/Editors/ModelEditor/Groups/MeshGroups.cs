@@ -205,11 +205,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void CreateMeshGroup(ModelEditorScreen screen, string filename)
         {
+            if (!screen.ResourceHandler.HasCurrentFLVER())
+                return;
+
             MeshList newMeshList = new MeshList();
 
-            for (int i = 0; i < screen.ResourceHandler.CurrentFLVER.Meshes.Count; i++)
+            for (int i = 0; i < screen.ResourceHandler.GetCurrentFLVER().Meshes.Count; i++)
             {
-                var curMesh = screen.ResourceHandler.CurrentFLVER.Meshes[i];
+                var curMesh = screen.ResourceHandler.GetCurrentFLVER().Meshes[i];
 
                 if (screen.ModelHierarchy.MeshMultiselect.StoredIndices.Count > 0)
                 {

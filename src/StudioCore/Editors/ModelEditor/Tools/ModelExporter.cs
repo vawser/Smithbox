@@ -15,8 +15,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void ExportModel(ModelEditorScreen screen)
         {
-            var path = $"{ModelExporter.ExportPath}\\{screen.ResourceHandler.CurrentFLVERInfo.ModelName}.dae";
-            var success = ModelExporter.AssimpExport(screen.ResourceHandler.CurrentFLVER, path, "collada");
+            var path = $"{ModelExporter.ExportPath}\\{screen.ResourceHandler.GetCurrentInternalFile().Name}.dae";
+            var success = ModelExporter.AssimpExport(screen.ResourceHandler.GetCurrentFLVER(), path, "collada");
             if (success)
             {
                 TaskLogs.AddLog($"Model exported successfully: {path}");

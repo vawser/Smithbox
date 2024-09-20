@@ -13,18 +13,15 @@ using StudioCore.Resource;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor
 {
+
     public class ModelResourceHandler : IResourceEventListener
     {
-        public FLVER2 CurrentFLVER;
-        public FlverModelInfo CurrentFLVERInfo;
-        public string VirtualResourcePath = "";
-
-        public hkRootLevelContainer ER_CollisionLow;
-        public hkRootLevelContainer ER_CollisionHigh;
+        public FlverContainer LoadedFlverContainer { get; set; }
 
         public ModelEditorScreen Screen;
 
@@ -36,6 +33,56 @@ namespace StudioCore.Editors.ModelEditor
         {
             Screen = screen;
             Viewport = viewport;
+            LoadedFlverContainer = null;
+        }
+
+        public InternalFlver GetCurrentInternalFile()
+        {
+            if (LoadedFlverContainer == null)
+                return null;
+
+            if (LoadedFlverContainer.CurrentInternalFlver == null)
+                return null;
+
+            return LoadedFlverContainer.CurrentInternalFlver;
+        }
+
+        public bool HasCurrentFLVER()
+        {
+            if (LoadedFlverContainer == null)
+                return false;
+
+            if (LoadedFlverContainer.CurrentInternalFlver == null)
+                return false;
+
+            if(LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER == null)
+                return false;
+
+            return true;
+        }
+
+        public FLVER2 GetCurrentFLVER()
+        {
+            if (LoadedFlverContainer == null)
+                return null;
+
+            if (LoadedFlverContainer.CurrentInternalFlver == null)
+                return null;
+
+            if (LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER == null)
+                return null;
+
+            return LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER;
+        }
+
+        public void SetLoadedState(string name)
+        {
+            Screen.EditorActionManager.Clear();
+            Screen.ModelHierarchy.ResetSelection();
+            Screen.ModelHierarchy.ResetMultiSelection();
+            Screen._selection.ClearSelection();
+
+            Screen.ToolWindow.ModelUsageSearch._searchInput = name;
         }
 
         /// <summary>
@@ -44,14 +91,16 @@ namespace StudioCore.Editors.ModelEditor
         /// <param name="name"></param>
         public void LoadLooseFLVER(string name, string loosePath)
         {
-            CurrentFLVERInfo = new FlverModelInfo(name, loosePath);
+            SetLoadedState(name);
 
-            LoadEditableModel(name, ModelEditorModelType.Loose);
-            LoadRepresentativeModel(name, ModelEditorModelType.Loose);
+            LoadedFlverContainer = new FlverContainer(name, loosePath);
 
-            Screen.SkeletonHandler.GenerateSkeleton();
+            LoadEditableModel(name, name, ModelEditorModelType.Loose);
 
-            Screen.ToolWindow.ModelUsageSearch._searchInput = name;
+            // Set loaded FLVER to first file.
+            LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
+
+            LoadRepresentativeModel(name, name, ModelEditorModelType.Loose);
         }
 
         /// <summary>
@@ -60,19 +109,16 @@ namespace StudioCore.Editors.ModelEditor
         /// <param name="name"></param>
         public void LoadCharacter(string name)
         {
-            Screen.EditorActionManager.Clear();
-            Screen.ModelHierarchy.ResetSelection();
-            Screen.ModelHierarchy.ResetMultiSelection();
-            Screen._selection.ClearSelection();
+            SetLoadedState(name);
 
-            LoadEditableModel(name, ModelEditorModelType.Character);
-            LoadRepresentativeModel(name, ModelEditorModelType.Character);
+            LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Character, "");
 
-            CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Character, "");
+            LoadEditableModel(name, name, ModelEditorModelType.Character);
 
-            Screen.SkeletonHandler.GenerateSkeleton();
+            // Set loaded FLVER to first file.
+            LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
 
-            Screen.ToolWindow.ModelUsageSearch._searchInput = name;
+            LoadRepresentativeModel(name, name, ModelEditorModelType.Character);
         }
 
         /// <summary>
@@ -80,21 +126,19 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadAsset(string name)
         {
-            Screen.EditorActionManager.Clear();
-            Screen.ModelHierarchy.ResetSelection();
-            Screen.ModelHierarchy.ResetMultiSelection();
-            Screen._selection.ClearSelection();
+            SetLoadedState(name);
 
-            LoadEditableModel(name, ModelEditorModelType.Object);
-            LoadEditableCollisionLow(name, ModelEditorModelType.Object);
-            LoadEditableCollisionHigh(name, ModelEditorModelType.Object);
-            LoadRepresentativeModel(name, ModelEditorModelType.Object);
+            LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Object, "");
 
-            CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Object, "");
+            LoadEditableModel(name, name, ModelEditorModelType.Object);
 
-            Screen.SkeletonHandler.GenerateSkeleton();
+            // Set loaded FLVER to first file.
+            LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
 
-            Screen.ToolWindow.ModelUsageSearch._searchInput = name;
+            LoadRepresentativeModel(name, name, ModelEditorModelType.Object);
+
+            LoadEditableCollisionLow(name, name, ModelEditorModelType.Object);
+            LoadEditableCollisionHigh(name, name, ModelEditorModelType.Object);
         }
 
         /// <summary>
@@ -102,19 +146,16 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadPart(string name)
         {
-            Screen.EditorActionManager.Clear();
-            Screen.ModelHierarchy.ResetSelection();
-            Screen.ModelHierarchy.ResetMultiSelection();
-            Screen._selection.ClearSelection();
+            SetLoadedState(name);
 
-            LoadEditableModel(name, ModelEditorModelType.Parts);
-            LoadRepresentativeModel(name, ModelEditorModelType.Parts);
+            LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Parts, "");
 
-            CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.Parts, "");
+            LoadEditableModel(name, name, ModelEditorModelType.Parts);
 
-            Screen.SkeletonHandler.GenerateSkeleton();
+            // Set loaded FLVER to first file.
+            LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
 
-            Screen.ToolWindow.ModelUsageSearch._searchInput = name;
+            LoadRepresentativeModel(name, name, ModelEditorModelType.Parts);
         }
 
         /// <summary>
@@ -122,33 +163,38 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadMapPiece(string name, string mapId)
         {
-            Screen.EditorActionManager.Clear();
-            Screen.ModelHierarchy.ResetSelection();
-            Screen.ModelHierarchy.ResetMultiSelection();
-            Screen._selection.ClearSelection();
+            SetLoadedState(name);
 
-            LoadEditableModel(name, ModelEditorModelType.MapPiece, mapId);
-            LoadRepresentativeModel(name, ModelEditorModelType.MapPiece, mapId);
+            LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.MapPiece, mapId);
 
-            CurrentFLVERInfo = new FlverModelInfo(name, ModelEditorModelType.MapPiece, mapId);
+            LoadEditableModel(name, name, ModelEditorModelType.MapPiece, mapId);
 
-            Screen.SkeletonHandler.GenerateSkeleton();
+            // Set loaded FLVER to first file.
+            LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
 
-            Screen.ToolWindow.ModelUsageSearch._searchInput = name;
+            LoadRepresentativeModel(name, name, ModelEditorModelType.MapPiece, mapId);
         }
 
         /// <summary>
         /// Loads the editable FLVER model, this is the model that the editor actually uses
         /// </summary>
-        private void LoadEditableModel(string modelid, ModelEditorModelType modelType, string mapid = null)
+        private void LoadEditableModel(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
         {
-            ResourceDescriptor modelAsset = GetModelAssetDescriptor(modelid, modelType, mapid);
+            ResourceDescriptor modelAsset = GetModelAssetDescriptor(containerId, modelid, modelType, mapid);
 
             //TaskLogs.AddLog(modelAsset.AssetPath);
 
             if (modelType == ModelEditorModelType.Loose)
             {
-                CurrentFLVER = FLVER2.Read(CurrentFLVERInfo.LoosePath);
+                var internalFlver = new InternalFlver();
+
+                internalFlver.Name = modelid;
+                internalFlver.ModelID = modelid;
+                internalFlver.CurrentFLVER = FLVER2.Read(LoadedFlverContainer.LoosePath);
+                internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+
+                LoadedFlverContainer.InternalFlvers.Add(internalFlver);
+                LoadedFlverContainer.CurrentInternalFlver = internalFlver;
             }
             else
             {
@@ -158,7 +204,15 @@ namespace StudioCore.Editors.ModelEditor
                     {
                         if (modelType == ModelEditorModelType.MapPiece)
                         {
-                            CurrentFLVER = FLVER2.Read(modelAsset.AssetPath);
+                            var internalFlver = new InternalFlver();
+
+                            internalFlver.Name = modelid;
+                            internalFlver.ModelID = modelid;
+                            internalFlver.CurrentFLVER = FLVER2.Read(modelAsset.AssetPath);
+                            internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+
+                            LoadedFlverContainer.InternalFlvers.Add(internalFlver);
+                            LoadedFlverContainer.CurrentInternalFlver = internalFlver;
                         }
                         else
                         {
@@ -171,8 +225,15 @@ namespace StudioCore.Editors.ModelEditor
 
                                 if (fileName.Contains(modelName) && (fileName.EndsWith(".flver") || fileName.EndsWith(".flv")))
                                 {
-                                    CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
-                                    break;
+                                    var internalFlver = new InternalFlver();
+
+                                    internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                                    internalFlver.ModelID = modelid;
+                                    internalFlver.CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
+                                    internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+
+                                    LoadedFlverContainer.InternalFlvers.Add(internalFlver);
+                                    LoadedFlverContainer.CurrentInternalFlver = internalFlver;
                                 }
                             }
                             reader.Dispose();
@@ -192,12 +253,19 @@ namespace StudioCore.Editors.ModelEditor
                                 var fileName = file.Name.ToLower();
                                 var modelName = modelid.ToLower();
 
-
                                 if (fileName.Contains(modelName))
                                 {
                                     if (fileName.Contains(".flv.dcx"))
                                     {
-                                        CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
+                                        var internalFlver = new InternalFlver();
+
+                                        internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                                        internalFlver.ModelID = modelid;
+                                        internalFlver.CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
+                                        internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+
+                                        LoadedFlverContainer.InternalFlvers.Add(internalFlver);
+                                        LoadedFlverContainer.CurrentInternalFlver = internalFlver;
                                     }
                                 }
                             }
@@ -234,9 +302,15 @@ namespace StudioCore.Editors.ModelEditor
 
                                         if (proceed)
                                         {
-                                            //TaskLogs.AddLog("New CurrentFLVER");
-                                            CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
-                                            break;
+                                            var internalFlver = new InternalFlver();
+
+                                            internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                                            internalFlver.ModelID = modelid;
+                                            internalFlver.CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
+                                            internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+
+                                            LoadedFlverContainer.InternalFlvers.Add(internalFlver);
+                                            LoadedFlverContainer.CurrentInternalFlver = internalFlver;
                                         }
                                     }
                                 }
@@ -251,7 +325,7 @@ namespace StudioCore.Editors.ModelEditor
         /// <summary>
         /// Loads the editable collision
         /// </summary>
-        private void LoadEditableCollisionLow(string modelid, ModelEditorModelType modelType, string mapid = null)
+        private void LoadEditableCollisionLow(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
         {
             if (Smithbox.ProjectType is ProjectType.ER)
             {
@@ -272,12 +346,18 @@ namespace StudioCore.Editors.ModelEditor
 
                             if (fileName.Contains(modelName) && fileName.Contains(".hkx"))
                             {
-                                HavokBinarySerializer serializer = new HavokBinarySerializer();
-                                using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray()))
+                                foreach(var internalFlver in LoadedFlverContainer.InternalFlvers)
                                 {
-                                    ER_CollisionLow = (hkRootLevelContainer)serializer.Read(memoryStream);
+                                    if(internalFlver.ModelID == modelid)
+                                    {
+                                        HavokBinarySerializer serializer = new HavokBinarySerializer();
+                                        using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray()))
+                                        {
+                                            var hkContainer = (hkRootLevelContainer)serializer.Read(memoryStream);
+                                            internalFlver.ER_CollisionLow = hkContainer;
+                                        }
+                                    }
                                 }
-                                break;
                             }
                         }
                         reader.Dispose();
@@ -289,7 +369,7 @@ namespace StudioCore.Editors.ModelEditor
         /// <summary>
         /// Loads the editable collision
         /// </summary>
-        private void LoadEditableCollisionHigh(string modelid, ModelEditorModelType modelType, string mapid = null)
+        private void LoadEditableCollisionHigh(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
         {
             if (Smithbox.ProjectType is ProjectType.ER)
             {
@@ -310,12 +390,18 @@ namespace StudioCore.Editors.ModelEditor
 
                             if (fileName.Contains(modelName) && fileName.Contains(".hkx"))
                             {
-                                HavokBinarySerializer serializer = new HavokBinarySerializer();
-                                using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray()))
+                                foreach (var internalFlver in LoadedFlverContainer.InternalFlvers)
                                 {
-                                    ER_CollisionHigh = (hkRootLevelContainer)serializer.Read(memoryStream);
+                                    if (internalFlver.ModelID == modelid)
+                                    {
+                                        HavokBinarySerializer serializer = new HavokBinarySerializer();
+                                        using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray()))
+                                        {
+                                            var hkContainer = (hkRootLevelContainer)serializer.Read(memoryStream);
+                                            internalFlver.ER_CollisionHigh = hkContainer;
+                                        }
+                                    }
                                 }
-                                break;
                             }
                         }
                         reader.Dispose();
@@ -327,16 +413,16 @@ namespace StudioCore.Editors.ModelEditor
         /// <summary>
         /// Loads the viewport FLVER model, this is the model displayed in the viewport
         /// </summary>
-        private void LoadRepresentativeModel(string modelid, ModelEditorModelType modelType, string mapid = null)
+        public void LoadRepresentativeModel(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
         {
-            LoadModelInternal(modelid, modelType, mapid);
+            LoadModelInternal(containerId, modelid, modelType, mapid);
 
             // If model ID has additional textures associated with it, load them
             if (Smithbox.BankHandler.AdditionalTextureInfo.HasAdditionalTextures(modelid))
             {
                 foreach (var entry in Smithbox.BankHandler.AdditionalTextureInfo.GetAdditionalTextures(modelid))
                 {
-                    LoadModelInternal(entry, modelType, mapid, true);
+                    LoadModelInternal(containerId, entry, modelType, mapid, true);
                 }
             }
         }
@@ -344,19 +430,17 @@ namespace StudioCore.Editors.ModelEditor
         /// <summary>
         /// Send the viewport FLVER model request to the Resource Manager
         /// </summary>
-        private void LoadModelInternal(string modelid, ModelEditorModelType modelType, string mapid = null, bool skipModel = false)
+        private void LoadModelInternal(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null, bool skipModel = false)
         {
             ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
 
-            ResourceDescriptor modelAsset = GetModelAssetDescriptor(modelid, modelType, mapid);
+            ResourceDescriptor modelAsset = GetModelAssetDescriptor(containerId, modelid, modelType, mapid);
             ResourceDescriptor textureAsset = GetTextureAssetDescriptor(modelid, modelType, mapid);
-
-            VirtualResourcePath = modelAsset.AssetVirtualPath;
 
             if (modelType == ModelEditorModelType.Loose)
             {
                 modelAsset = new ResourceDescriptor();
-                modelAsset.AssetVirtualPath = $"loose/flver/{CurrentFLVERInfo.LoosePath}";
+                modelAsset.AssetVirtualPath = $"loose/flver/{LoadedFlverContainer.LoosePath}";
             }
 
             Screen.ViewportHandler.UpdateRenderMesh(modelAsset, skipModel);
@@ -401,23 +485,23 @@ namespace StudioCore.Editors.ModelEditor
         }
 
 
-        public ResourceDescriptor GetModelAssetDescriptor(string modelid, ModelEditorModelType modelType, string mapid = null)
+        public ResourceDescriptor GetModelAssetDescriptor(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
         {
             ResourceDescriptor asset;
 
             switch (modelType)
             {
                 case ModelEditorModelType.Character:
-                    asset = ModelLocator.GetChrModel(modelid);
+                    asset = ModelLocator.GetChrModel(containerId, modelid);
                     break;
                 case ModelEditorModelType.Object:
-                    asset = ModelLocator.GetObjModel(modelid);
+                    asset = ModelLocator.GetObjModel(containerId, modelid);
                     break;
                 case ModelEditorModelType.Parts:
-                    asset = ModelLocator.GetPartsModel(modelid);
+                    asset = ModelLocator.GetPartsModel(containerId, modelid);
                     break;
                 case ModelEditorModelType.MapPiece:
-                    asset = ModelLocator.GetMapModel(mapid, modelid);
+                    asset = ModelLocator.GetMapModel(mapid, containerId, modelid);
                     break;
                 default:
                     asset = ModelLocator.GetNullAsset();
@@ -458,59 +542,29 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void SaveModel()
         {
-            if (CurrentFLVER == null)
+            if (LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER == null)
             {
                 TaskLogs.AddLog("Failed to save FLVER as current FLVER is null.");
                 return;
             }
 
-            // This is confusing to the user currently, disabled for now.
-            /*
-            bool success = true;
-            List<string> issues = new List<string>();
-            (success, issues) = VerifyDataIntegrity();
-
-            // Verift Data Integrity
-            if (!success)
-            {
-                string issuesStr = "";
-                foreach(var entry in issues)
-                {
-                    issuesStr = $"{issuesStr}\n{entry}";
-                }
-
-                var result = PlatformUtils.Instance.MessageBox($"This model currently has invalid index values:\n{issuesStr}\n\nDo you wish to proceed?", "Warning", MessageBoxButtons.OKCancel);
-
-                if(result == DialogResult.Cancel)
-                {
-                    return;
-                }
-            }
-            */
-
-            if (CurrentFLVERInfo != null)
+            if (LoadedFlverContainer != null)
             {
                 // For loose files, save directly
-                if (CurrentFLVERInfo.Type == ModelEditorModelType.Loose)
+                if (LoadedFlverContainer.Type == ModelEditorModelType.Loose)
                 {
-                    // Backup loose file
-                    File.Copy(CurrentFLVERInfo.LoosePath, $@"{CurrentFLVERInfo.LoosePath}.bak", true);
-
-                    byte[] flverBytes = CurrentFLVER.Write();
-                    File.WriteAllBytes(CurrentFLVERInfo.LoosePath, flverBytes);
-                    TaskLogs.AddLog($"Saved model at: {CurrentFLVERInfo.LoosePath}");
+                    WriteLooseFlver();
                 }
                 // Copy the binder to the mod directory if it does not already exist.
                 else
                 {
-                    var exists = CurrentFLVERInfo.CopyBinderToMod();
+                    var exists = LoadedFlverContainer.CopyBinderToMod();
 
                     if (exists)
                     {
-
                         if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
                         {
-                            if (CurrentFLVERInfo.Type == ModelEditorModelType.MapPiece)
+                            if (LoadedFlverContainer.Type == ModelEditorModelType.MapPiece)
                             {
                                 // TODO
                                 //WriteModelFlver(); // DS1 doesn't wrap the mappiece flver within a container
@@ -529,95 +583,22 @@ namespace StudioCore.Editors.ModelEditor
             }
         }
 
-        // This checks index properties to see if they point to existing entries.
-        // If not, they are added to the issues list
-        public (bool, List<string>) VerifyDataIntegrity()
+        private void WriteLooseFlver()
         {
-            bool success = true;
-            List<string> issues = new List<string>();
+            // Backup loose file
+            File.Copy(LoadedFlverContainer.LoosePath, $@"{LoadedFlverContainer.LoosePath}.bak", true);
 
-            // Dummies
-            for (int i = 0; i < CurrentFLVER.Dummies.Count; i++)
-            {
-                var dummy = CurrentFLVER.Dummies[i];
-
-                if(dummy.ParentBoneIndex >= CurrentFLVER.Nodes.Count || dummy.ParentBoneIndex < -1)
-                {
-                    issues.Add($"Dummy {i} has invalid ParentBoneIndex value: {dummy.ParentBoneIndex}");
-                    success = false;
-                }
-                if (dummy.AttachBoneIndex >= CurrentFLVER.Nodes.Count || dummy.AttachBoneIndex < -1)
-                {
-                    issues.Add($"Dummy {i} has invalid AttachBoneIndex value: {dummy.AttachBoneIndex}");
-                    success = false;
-                }
-            }
-
-            // Materials
-            for (int i = 0; i < CurrentFLVER.Materials.Count; i++)
-            {
-                var material = CurrentFLVER.Materials[i];
-
-                if (material.GXIndex >= CurrentFLVER.GXLists.Count || material.GXIndex < -1)
-                {
-                    issues.Add($"Material {i} has invalid GXIndex value: {material.GXIndex}");
-                    success = false;
-                }
-            }
-
-            // Nodes
-            for (int i = 0; i < CurrentFLVER.Nodes.Count; i++)
-            {
-                var node = CurrentFLVER.Nodes[i];
-
-                if (node.ParentIndex >= CurrentFLVER.Nodes.Count || node.ParentIndex < -1)
-                {
-                    issues.Add($"Node {i} has invalid ParentIndex value: {node.ParentIndex}");
-                    success = false;
-                }
-                if (node.FirstChildIndex >= CurrentFLVER.Nodes.Count || node.FirstChildIndex < -1)
-                {
-                    issues.Add($"Node {i} has invalid FirstChildIndex value: {node.FirstChildIndex}");
-                    success = false;
-                }
-                if (node.NextSiblingIndex >= CurrentFLVER.Nodes.Count || node.NextSiblingIndex < -1)
-                {
-                    issues.Add($"Node {i} has invalid NextSiblingIndex value: {node.NextSiblingIndex}");
-                    success = false;
-                }
-                if (node.PreviousSiblingIndex >= CurrentFLVER.Nodes.Count || node.PreviousSiblingIndex < -1)
-                {
-                    issues.Add($"Node {i} has invalid PreviousSiblingIndex value: {node.PreviousSiblingIndex}");
-                    success = false;
-                }
-            }
-
-            // Meshes
-            for (int i = 0; i < CurrentFLVER.Meshes.Count; i++)
-            {
-                var mesh = CurrentFLVER.Meshes[i];
-
-                if (mesh.MaterialIndex >= CurrentFLVER.Materials.Count || mesh.MaterialIndex < -1)
-                {
-                    issues.Add($"Mesh {i} has invalid MaterialIndex value: {mesh.MaterialIndex}");
-                    success = false;
-                }
-                if (mesh.NodeIndex >= CurrentFLVER.Nodes.Count || mesh.NodeIndex < -1)
-                {
-                    issues.Add($"Mesh {i} has invalid NodeIndex value: {mesh.NodeIndex}");
-                    success = false;
-                }
-            }
-
-            return (success, issues);
+            byte[] flverBytes = LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER.Write();
+            File.WriteAllBytes(LoadedFlverContainer.LoosePath, flverBytes);
+            TaskLogs.AddLog($"Saved model at: {LoadedFlverContainer.LoosePath}");
         }
 
         /// <summary>
-        /// Save the PureFLVER model within BND4 container
+        /// Save the FLVER model within BND4 container
         /// </summary>
         private void WriteModelBinderBND4()
         {
-            FlverModelInfo info = CurrentFLVERInfo;
+            FlverContainer info = LoadedFlverContainer;
 
             byte[] fileBytes = null;
 
@@ -628,17 +609,23 @@ namespace StudioCore.Editors.ModelEditor
             {
                 foreach (var file in binder.Files)
                 {
+                    var curName = Path.GetFileNameWithoutExtension(file.Name);
                     var curFileName = $"{Path.GetFileName(file.Name)}";
 
-                    if (curFileName.ToLower() == info.FlverFileName.ToLower())
+                    foreach(var internalFlver in LoadedFlverContainer.InternalFlvers)
                     {
-                        try
+                        if (curName.ToLower() == internalFlver.Name.ToLower() && curFileName.Contains(".flv"))
                         {
-                            file.Bytes = CurrentFLVER.Write();
-                        }
-                        catch (Exception ex)
-                        {
-                            TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
+                            try
+                            {
+                                TaskLogs.AddLog($"Saved {curName}");
+
+                                file.Bytes = internalFlver.CurrentFLVER.Write();
+                            }
+                            catch (Exception ex)
+                            {
+                                TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
+                            }
                         }
                     }
                 }
@@ -682,11 +669,11 @@ namespace StudioCore.Editors.ModelEditor
         }
 
         /// <summary>
-        /// Save the PureFLVER model within BND3 container
+        /// Save the FLVER model within BND3 container
         /// </summary>
         public void WriteModelBinderBND3()
         {
-            FlverModelInfo info = CurrentFLVERInfo;
+            FlverContainer info = LoadedFlverContainer;
             byte[] fileBytes = null;
 
             // Backup container file
@@ -696,17 +683,21 @@ namespace StudioCore.Editors.ModelEditor
             {
                 foreach (var file in binder.Files)
                 {
+                    var curName = Path.GetFileNameWithoutExtension(file.Name);
                     var curFileName = $"{Path.GetFileName(file.Name)}";
 
-                    if (curFileName.ToLower() == info.FlverFileName.ToLower())
+                    foreach (var internalFlver in LoadedFlverContainer.InternalFlvers)
                     {
-                        try
+                        if (curName.ToLower() == internalFlver.Name.ToLower() && curFileName.Contains(".flv"))
                         {
-                            file.Bytes = CurrentFLVER.Write();
-                        }
-                        catch (Exception ex)
-                        {
-                            TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
+                            try
+                            {
+                                file.Bytes = internalFlver.CurrentFLVER.Write();
+                            }
+                            catch (Exception ex)
+                            {
+                                TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
+                            }
                         }
                     }
                 }
@@ -764,11 +755,8 @@ namespace StudioCore.Editors.ModelEditor
                     "ModelResourceHandler loadingTask was not null during project switch. This may cause unexpected behavior.",
                     LogLevel.Warning);
             }
-            CurrentFLVERInfo = null;
-            CurrentFLVER = null;
-            ER_CollisionLow = null;
-            ER_CollisionHigh = null;
-            VirtualResourcePath = "";
+
+            LoadedFlverContainer = null;
         }
     }
 }

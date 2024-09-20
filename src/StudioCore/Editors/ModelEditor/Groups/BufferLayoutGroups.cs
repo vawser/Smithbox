@@ -205,11 +205,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void CreateBufferLayoutGroup(ModelEditorScreen screen, string filename)
         {
+            if (!screen.ResourceHandler.HasCurrentFLVER())
+                return;
+
             BufferLayoutList newBufferLayoutList = new BufferLayoutList();
 
-            for (int i = 0; i < screen.ResourceHandler.CurrentFLVER.BufferLayouts.Count; i++)
+            for (int i = 0; i < screen.ResourceHandler.GetCurrentFLVER().BufferLayouts.Count; i++)
             {
-                var curBufferLayout = screen.ResourceHandler.CurrentFLVER.BufferLayouts[i];
+                var curBufferLayout = screen.ResourceHandler.GetCurrentFLVER().BufferLayouts[i];
 
                 if (screen.ModelHierarchy.BufferLayoutMultiselect.StoredIndices.Count > 0)
                 {

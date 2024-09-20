@@ -51,7 +51,10 @@ public class ToolSubMenu
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Solve Bounding Boxes"))
             {
-                FlverTools.SolveBoundingBoxes(Screen.ResourceHandler.CurrentFLVER);
+                if (Screen.ResourceHandler.HasCurrentFLVER())
+                {
+                    FlverTools.SolveBoundingBoxes(Screen.ResourceHandler.GetCurrentFLVER());
+                }
             }
             // Reverse Face Set
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");

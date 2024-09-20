@@ -356,19 +356,20 @@ public class Universe
         if (modelname.ToLower().StartsWith("m"))
         {
             loadflver = true;
-            asset = ModelLocator.GetMapModel(amapid, ModelLocator.MapModelNameToAssetName(amapid, modelname));
+            var name = ModelLocator.MapModelNameToAssetName(amapid, modelname);
+            asset = ModelLocator.GetMapModel(amapid, name, name);
             filt = RenderFilter.MapPiece;
         }
         else if (modelname.ToLower().StartsWith("c"))
         {
             loadflver = true;
-            asset = ModelLocator.GetChrModel(modelname);
+            asset = ModelLocator.GetChrModel(modelname, modelname);
             filt = RenderFilter.Character;
         }
         else if (modelname.ToLower().StartsWith("o") || modelname.StartsWith("AEG"))
         {
             loadflver = true;
-            asset = ModelLocator.GetObjModel(modelname);
+            asset = ModelLocator.GetObjModel(modelname, modelname);
             filt = RenderFilter.Object;
         }
         else if (modelname.ToLower().StartsWith("h"))
@@ -469,7 +470,7 @@ public class Universe
         {
             if (asset.AssetName == "c0000")
             {
-                asset = ModelLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
+                asset = ModelLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID, CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
             }
         }
 
@@ -575,7 +576,7 @@ public class Universe
                     (int)regist.GetCellHandleOrThrow("EnemyParamID").Value);
                 if (chrid != null)
                 {
-                    ResourceDescriptor asset = ModelLocator.GetChrModel($@"c{chrid}");
+                    ResourceDescriptor asset = ModelLocator.GetChrModel($@"c{chrid}", $@"c{chrid}");
                     MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(
                         _renderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy, null);
                     model.DrawFilter = RenderFilter.Character;

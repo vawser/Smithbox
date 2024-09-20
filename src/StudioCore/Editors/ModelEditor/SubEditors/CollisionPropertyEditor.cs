@@ -25,7 +25,7 @@ namespace StudioCore.Editors.ModelEditor.SubEditors
             ImGui.Separator();
             UIHelper.ShowHoverTooltip("");
 
-            var entry = Screen.ResourceHandler.ER_CollisionLow;
+            var entry = Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionLow;
             DisplayProperties_Collision(entry);
         }
 
@@ -36,7 +36,7 @@ namespace StudioCore.Editors.ModelEditor.SubEditors
             ImGui.Separator();
             UIHelper.ShowHoverTooltip("");
 
-            var entry = Screen.ResourceHandler.ER_CollisionHigh;
+            var entry = Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionHigh;
             DisplayProperties_Collision(entry);
         }
 
