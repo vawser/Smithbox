@@ -493,7 +493,7 @@ public class ParamEditorScreen : EditorScreen
             UIHelper.ShowMenuIcon($"{ForkAwesome.Book}");
             if (ImGui.MenuItem("View comparison report", null, false))
             {
-                ParamComparisonReport.GenerateReport();
+                ParamComparisonReport.ViewReport();
             }
             UIHelper.ShowHoverTooltip("View a text report that details the differences between the current project params and the vanilla params.");
 

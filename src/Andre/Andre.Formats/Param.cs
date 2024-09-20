@@ -971,6 +971,14 @@ public class Param : SoulsFile<Param>
             _column.SetValue(_row, value);
         }
 
+        public bool IsNull()
+        {
+            if (_column == null)
+                return true;
+
+            return false;
+        }
+
         /// <summary>
         ///     The paramdef field definition for this cell
         /// </summary>
