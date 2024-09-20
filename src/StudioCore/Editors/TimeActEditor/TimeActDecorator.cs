@@ -7,6 +7,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -66,7 +67,7 @@ public class TimeActDecorator
         if (entry.Parameters == null)
             return;
 
-        Vector4 displayColor = CFG.Current.ImGui_TimeAct_InfoText_1_Color;
+        Vector4 displayColor = UI.Current.ImGui_TimeAct_InfoText_1_Color;
         bool foundAlias = false;
         var alias = "";
 
@@ -103,7 +104,7 @@ public class TimeActDecorator
         if (entry.Parameters == null)
             return;
 
-        Vector4 displayColor = CFG.Current.ImGui_TimeAct_InfoText_2_Color;
+        Vector4 displayColor = UI.Current.ImGui_TimeAct_InfoText_2_Color;
         bool foundAlias = false;
         var alias = "";
 
@@ -140,7 +141,7 @@ public class TimeActDecorator
         if (entry.Parameters == null)
             return;
 
-        Vector4 displayColor = CFG.Current.ImGui_TimeAct_InfoText_3_Color;
+        Vector4 displayColor = UI.Current.ImGui_TimeAct_InfoText_3_Color;
         bool foundAlias = false;
         var alias = "";
 
@@ -218,7 +219,7 @@ public class TimeActDecorator
         if (bank.Enums.List.Count == 0)
             return;
 
-        Vector4 displayColor = CFG.Current.ImGui_TimeAct_InfoText_4_Color;
+        Vector4 displayColor = UI.Current.ImGui_TimeAct_InfoText_4_Color;
         bool foundAlias = false;
         var alias = "";
 
@@ -303,7 +304,7 @@ public class TimeActDecorator
             (string, Param.Row, string) match = ResolveParamRef(primaryBank, template.ParamRef, propertyValue);
             if (match != (null, null, null))
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRef_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
                 ImGui.Text(match.Item3);
                 ImGui.PopStyleColor();
                 if (ImGui.BeginPopupContextItem($"valueParamRefContextMenu{propertyName}"))
@@ -318,7 +319,7 @@ public class TimeActDecorator
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRefMissing_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefMissing_Text);
                 ImGui.Text("___");
                 ImGui.PopStyleColor();
             }
@@ -327,7 +328,7 @@ public class TimeActDecorator
         // Enum List
         if (template.EnumEntries != null)
         {
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
             if (template.EnumEntries.ContainsKey(propertyValue))
             {
                 var result = template.EnumEntries[propertyValue];
@@ -389,7 +390,7 @@ public class TimeActDecorator
             if (aliases.Count > 0)
             {
 
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
                 if (aliases.Contains(propertyValue))
                 {
                     var result = aliases.Where(e => e.id == propertyValue.ToString()).FirstOrDefault();
@@ -439,7 +440,7 @@ public class TimeActDecorator
 
             if (enumEntries != null)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
                 if (targetOption != null)
                 {
                     ImGui.Text($"{targetOption.Name}");

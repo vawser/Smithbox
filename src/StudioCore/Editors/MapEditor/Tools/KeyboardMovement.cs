@@ -1,6 +1,6 @@
 ﻿using Silk.NET.OpenGL;
 using StudioCore.Configuration;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -169,22 +169,22 @@ public static class KeyboardMovement
         switch (CFG.Current.MapEditor_Selection_Movement_IncrementType)
         {
             case 0:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Movement Increment: {CFG.Current.MapEditor_Selection_Movement_Increment_0}");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Movement Increment: {CFG.Current.MapEditor_Selection_Movement_Increment_0}");
                 break;
             case 1:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Movement Increment: {CFG.Current.MapEditor_Selection_Movement_Increment_1}");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Movement Increment: {CFG.Current.MapEditor_Selection_Movement_Increment_1}");
                 break;
             case 2:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Movement Increment: {CFG.Current.MapEditor_Selection_Movement_Increment_2}");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Movement Increment: {CFG.Current.MapEditor_Selection_Movement_Increment_2}");
                 break;
             case 3:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Movement Increment: {CFG.Current.MapEditor_Selection_Movement_Increment_3}");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Movement Increment: {CFG.Current.MapEditor_Selection_Movement_Increment_3}");
                 break;
             case 4:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Movement Increment: {CFG.Current.MapEditor_Selection_Movement_Increment_4}");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Movement Increment: {CFG.Current.MapEditor_Selection_Movement_Increment_4}");
                 break;
         }
-        ImguiUtils.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText} to cycle the movement increment used when moving a selection via Keyboard Move.");
+        UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText} to cycle the movement increment used when moving a selection via Keyboard Move.");
     }
 
     public static void DisplayCurrentMovementIncrement()
@@ -192,21 +192,21 @@ public static class KeyboardMovement
         switch (CFG.Current.MapEditor_Selection_Movement_IncrementType)
         {
             case 0:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Movement Increment [0]: {CFG.Current.MapEditor_Selection_Movement_Increment_0}");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Movement Increment [0]: {CFG.Current.MapEditor_Selection_Movement_Increment_0}");
                 break;
             case 1:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Movement Increment [1]: {CFG.Current.MapEditor_Selection_Movement_Increment_1}");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Movement Increment [1]: {CFG.Current.MapEditor_Selection_Movement_Increment_1}");
                 break;
             case 2:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Movement Increment [2]: {CFG.Current.MapEditor_Selection_Movement_Increment_2}");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Movement Increment [2]: {CFG.Current.MapEditor_Selection_Movement_Increment_2}");
                 break;
             case 3:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Movement Increment [3]: {CFG.Current.MapEditor_Selection_Movement_Increment_3}");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Movement Increment [3]: {CFG.Current.MapEditor_Selection_Movement_Increment_3}");
                 break;
             case 4:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Movement Increment [4]: {CFG.Current.MapEditor_Selection_Movement_Increment_4}");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Movement Increment [4]: {CFG.Current.MapEditor_Selection_Movement_Increment_4}");
                 break;
         }
-        ImguiUtils.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText} to cycle the movement increment used when moving a selection via Keyboard Move.");
+        UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText} to cycle the movement increment used when moving a selection via Keyboard Move.");
     }
 }

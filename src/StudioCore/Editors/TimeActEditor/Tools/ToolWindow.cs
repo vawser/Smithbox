@@ -3,6 +3,7 @@ using ImGuiNET;
 using StudioCore.Core.Project;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Utils;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.TimeActEditor.Tools;
 
@@ -29,7 +30,7 @@ public class ToolWindow
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * Smithbox.GetUIScale(), ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TimeActEditor"))

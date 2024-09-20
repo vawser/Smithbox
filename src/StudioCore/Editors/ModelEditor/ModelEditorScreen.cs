@@ -142,21 +142,21 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Edit"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo All", "", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
             if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false,
                     EditorActionManager.CanRedo()))
             {
@@ -178,62 +178,62 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("View"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Viewport"))
             {
-                CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
+                UI.Current.Interface_Editor_Viewport = !UI.Current.Interface_Editor_Viewport;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_Editor_Viewport);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Viewport);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Model Hierarchy"))
             {
-                CFG.Current.Interface_ModelEditor_ModelHierarchy = !CFG.Current.Interface_ModelEditor_ModelHierarchy;
+                UI.Current.Interface_ModelEditor_ModelHierarchy = !UI.Current.Interface_ModelEditor_ModelHierarchy;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ModelHierarchy);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_ModelHierarchy);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Properties"))
             {
-                CFG.Current.Interface_ModelEditor_Properties = !CFG.Current.Interface_ModelEditor_Properties;
+                UI.Current.Interface_ModelEditor_Properties = !UI.Current.Interface_ModelEditor_Properties;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Properties);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_Properties);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Asset Browser"))
             {
-                CFG.Current.Interface_ModelEditor_AssetBrowser = !CFG.Current.Interface_ModelEditor_AssetBrowser;
+                UI.Current.Interface_ModelEditor_AssetBrowser = !UI.Current.Interface_ModelEditor_AssetBrowser;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_AssetBrowser);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_AssetBrowser);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Tool Window"))
             {
-                CFG.Current.Interface_ModelEditor_ToolConfigurationWindow = !CFG.Current.Interface_ModelEditor_ToolConfigurationWindow;
+                UI.Current.Interface_ModelEditor_ToolConfigurationWindow = !UI.Current.Interface_ModelEditor_ToolConfigurationWindow;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ToolConfigurationWindow);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_ToolConfigurationWindow);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Profiling"))
             {
-                CFG.Current.Interface_Editor_Profiling = !CFG.Current.Interface_Editor_Profiling;
+                UI.Current.Interface_Editor_Profiling = !UI.Current.Interface_Editor_Profiling;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_Editor_Profiling);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Profiling);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Resource List"))
             {
-                CFG.Current.Interface_ModelEditor_ResourceList = !CFG.Current.Interface_ModelEditor_ResourceList;
+                UI.Current.Interface_ModelEditor_ResourceList = !UI.Current.Interface_ModelEditor_ResourceList;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ResourceList);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_ResourceList);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Viewport Grid"))
             {
-                CFG.Current.Interface_ModelEditor_Viewport_Grid = !CFG.Current.Interface_ModelEditor_Viewport_Grid;
+                UI.Current.Interface_ModelEditor_Viewport_Grid = !UI.Current.Interface_ModelEditor_Viewport_Grid;
                 CFG.Current.ModelEditor_Viewport_RegenerateMapGrid = true;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Viewport_Grid);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_Viewport_Grid);
 
             ImGui.EndMenu();
         }
@@ -242,7 +242,7 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
             if (ImGui.MenuItem("Meshes"))
             {
                 CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
@@ -252,9 +252,9 @@ public class ModelEditorScreen : EditorScreen
                     entry.EditorVisible = CFG.Current.ModelEditor_ViewMeshes;
                 }
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
             if (ImGui.MenuItem("Dummy Polygons"))
             {
                 CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
@@ -265,9 +265,9 @@ public class ModelEditorScreen : EditorScreen
                     entry.EditorVisible = CFG.Current.ModelEditor_ViewDummyPolys;
                 }
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewDummyPolys);
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewDummyPolys);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
             if (ImGui.MenuItem("Bones"))
             {
                 CFG.Current.ModelEditor_ViewBones = !CFG.Current.ModelEditor_ViewBones;
@@ -277,7 +277,7 @@ public class ModelEditorScreen : EditorScreen
                     entry.EditorVisible = CFG.Current.ModelEditor_ViewBones;
                 }
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
 
             /*
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
@@ -295,7 +295,7 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Viewport"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.LightbulbO}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.LightbulbO}");
             if (ImGui.BeginMenu("Scene Lighting"))
             {
                 Viewport.SceneParamsGui();
@@ -309,7 +309,7 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Gizmos"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Compass}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Compass}");
             if (ImGui.BeginMenu("Mode"))
             {
                 if (ImGui.MenuItem("Translate", KeyBindings.Current.VIEWPORT_GizmoTranslationMode.HintText,
@@ -327,7 +327,7 @@ public class ModelEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Cube}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Cube}");
             if (ImGui.BeginMenu("Space"))
             {
                 if (ImGui.MenuItem("Local", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText,
@@ -345,7 +345,7 @@ public class ModelEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Cubes}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Cubes}");
             if (ImGui.BeginMenu("Origin"))
             {
                 if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText,
@@ -514,7 +514,7 @@ public class ModelEditorScreen : EditorScreen
             }
         }
 
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300, 500) * scale, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowPos(new Vector2(20, 20) * scale, ImGuiCond.FirstUseEver);
 
@@ -528,14 +528,14 @@ public class ModelEditorScreen : EditorScreen
         ModelPropertyEditor.OnGui();
         SkeletonHandler.OnGui();
 
-        if (CFG.Current.Interface_ModelEditor_ToolConfigurationWindow)
+        if (UI.Current.Interface_ModelEditor_ToolConfigurationWindow)
         {
             ToolWindow.OnGui();
         }
 
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);
 
-        if (CFG.Current.Interface_ModelEditor_ResourceList)
+        if (UI.Current.Interface_ModelEditor_ResourceList)
         {
             ResourceManager.OnGuiDrawResourceList("modelResourceList");
         }

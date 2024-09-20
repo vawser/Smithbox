@@ -6,10 +6,10 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Prefabs;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Scene;
-using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -88,7 +88,7 @@ public class PrefabEditor
         {
             CreateFromSelection(editName);
         }
-        ImguiUtils.ShowHoverTooltip("Create a new prefab from the selected entities.");
+        UIHelper.ShowHoverTooltip("Create a new prefab from the selected entities.");
 
         ImGui.EndDisabled();
     }
@@ -104,7 +104,7 @@ public class PrefabEditor
             editName = "";
             editFlags = "";
         };
-        ImguiUtils.ShowHoverTooltip("Delete the selected prefab.");
+        UIHelper.ShowHoverTooltip("Delete the selected prefab.");
 
         ImGui.EndDisabled();
     }
@@ -124,7 +124,7 @@ public class PrefabEditor
             if (loadedPrefab != null)
                 loadedPrefab.ImportToMap(comboMap.map as MapContainer, universe, scene, actionManager, prefixName);
         }
-        ImguiUtils.ShowHoverTooltip("Import the selected prefab into a loaded map.");
+        UIHelper.ShowHoverTooltip("Import the selected prefab into a loaded map.");
 
         ImGui.EndDisabled();
     }
@@ -141,7 +141,7 @@ public class PrefabEditor
             Delete(selectedPrefab.PrefabName);
             CreateFromSelection(editName);
         }
-        ImguiUtils.ShowHoverTooltip("Replace the selected prefab with the selected entities.");
+        UIHelper.ShowHoverTooltip("Replace the selected prefab with the selected entities.");
 
         ImGui.EndDisabled();
     }
@@ -149,16 +149,16 @@ public class PrefabEditor
     void ExportConfig()
     {
         ImGui.Checkbox("Retain Entity ID", ref CFG.Current.Prefab_IncludeEntityID);
-        ImguiUtils.ShowHoverTooltip("Saved objects within a prefab will retain their Entity ID. If false, their Entity ID is set to 0.");
+        UIHelper.ShowHoverTooltip("Saved objects within a prefab will retain their Entity ID. If false, their Entity ID is set to 0.");
 
         ImGui.Checkbox("Retain Entity Group IDs", ref CFG.Current.Prefab_IncludeEntityGroupIDs);
-        ImguiUtils.ShowHoverTooltip("Saved objects within a prefab will retain their Entity Group IDs. If false, their Entity Group IDs will be set to 0.");
+        UIHelper.ShowHoverTooltip("Saved objects within a prefab will retain their Entity Group IDs. If false, their Entity Group IDs will be set to 0.");
     }
 
     void ImportConfig()
     {
         ImGui.Checkbox("Override import name", ref CFG.Current.Prefab_ApplyOverrideName);
-        ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be prepended with this instead of the prefab name");
+        UIHelper.ShowHoverTooltip("Spawned prefab objects will be prepended with this instead of the prefab name");
 
         if (!CFG.Current.Prefab_ApplyOverrideName)
             CFG.Current.Prefab_OverrideName = "";
@@ -171,12 +171,12 @@ public class PrefabEditor
         ImGui.EndDisabled();
 
         ImGui.Checkbox("Apply Unique Entity ID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
-        ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given unique Entity IDs.");
+        UIHelper.ShowHoverTooltip("Spawned prefab objects will be given unique Entity IDs.");
 
         if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
         {
             ImGui.Checkbox("Apply Unique Instance ID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
-            ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given unique Instance IDs.");
+            UIHelper.ShowHoverTooltip("Spawned prefab objects will be given unique Instance IDs.");
         }
 
         if (Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.SDT || Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
@@ -186,7 +186,7 @@ public class PrefabEditor
             if (!CFG.Current.Prefab_ApplySpecificEntityGroupID)
                 CFG.Current.Prefab_SpecificEntityGroupID = 0;
 
-            ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
+            UIHelper.ShowHoverTooltip("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
 
             ImGui.BeginDisabled(!CFG.Current.Prefab_ApplySpecificEntityGroupID);
             ImGui.SameLine();

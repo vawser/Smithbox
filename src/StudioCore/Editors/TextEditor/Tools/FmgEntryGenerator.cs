@@ -5,7 +5,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Actions;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -56,8 +56,8 @@ public static class FmgEntryGenerator
         var sectionHeight = ImGui.GetWindowHeight();
         var defaultButtonSize = new Vector2(sectionWidth, 32);
 
-        ImguiUtils.WrappedText("Select a FMG entry generator configuration to apply.");
-        ImguiUtils.WrappedText("");
+        UIHelper.WrappedText("Select a FMG entry generator configuration to apply.");
+        UIHelper.WrappedText("");
 
         UpdateGeneratorBaseList();
 
@@ -75,7 +75,7 @@ public static class FmgEntryGenerator
                 {
                     SelectedGenerateBase = entry;
                 }
-                ImguiUtils.ShowHoverTooltip($"{entry.Description}");
+                UIHelper.ShowHoverTooltip($"{entry.Description}");
             }
         }
 
@@ -90,14 +90,14 @@ public static class FmgEntryGenerator
 
         if (SelectedGenerateBase != null)
         {
-            ImguiUtils.WrappedText($"{SelectedGenerateBase.Description}");
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText($"{SelectedGenerateBase.Description}");
+            UIHelper.WrappedText("");
 
             if (ImGui.Button("Generate", new Vector2(buttonWidth, 32)))
             {
                 GenerateEntries(SelectedGenerateBase);
             }
-            ImguiUtils.ShowHoverTooltip("Generate new FMG entries based on this Entry Generator script.");
+            UIHelper.ShowHoverTooltip("Generate new FMG entries based on this Entry Generator script.");
         }
 
         ImGui.EndChild();

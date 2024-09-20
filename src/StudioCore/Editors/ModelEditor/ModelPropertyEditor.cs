@@ -11,6 +11,7 @@ using SoulsFormats;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.SubEditors;
 using StudioCore.Core.Project;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -42,10 +43,10 @@ public class ModelPropertyEditor
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        if (!CFG.Current.Interface_ModelEditor_Properties)
+        if (!UI.Current.Interface_ModelEditor_Properties)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin($@"Properties##ModelEditorProperties"))
@@ -131,19 +132,19 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Big Endian");
-        ImguiUtils.ShowHoverTooltip("If true FLVER will be written big-endian, if false little-endian.");
+        UIHelper.ShowHoverTooltip("If true FLVER will be written big-endian, if false little-endian.");
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Version");
-        ImguiUtils.ShowHoverTooltip("Version of the format indicating presence of various features.");
+        UIHelper.ShowHoverTooltip("Version of the format indicating presence of various features.");
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Bounding Box: Minimum");
-        ImguiUtils.ShowHoverTooltip("Minimum extent of the entire model.");
+        UIHelper.ShowHoverTooltip("Minimum extent of the entire model.");
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Bounding Box: Maximum");
-        ImguiUtils.ShowHoverTooltip("Maximum extent of the entire model.");
+        UIHelper.ShowHoverTooltip("Maximum extent of the entire model.");
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Unicode");
-        ImguiUtils.ShowHoverTooltip("If true strings are UTF-16, if false Shift-JIS.");
+        UIHelper.ShowHoverTooltip("If true strings are UTF-16, if false Shift-JIS.");
 
         ImGui.NextColumn();
 
@@ -221,7 +222,7 @@ public class ModelPropertyEditor
         if(Screen.ModelHierarchy.DummyMultiselect.StoredIndices.Count > 1)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedText("Multiple Dummies are selected.\nProperties cannot be edited whilst in this state.");
+            UIHelper.WrappedText("Multiple Dummies are selected.\nProperties cannot be edited whilst in this state.");
             ImGui.Separator();
             return;
         }
@@ -249,49 +250,49 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Position");
-        ImguiUtils.ShowHoverTooltip("Location of the dummy point.");
+        UIHelper.ShowHoverTooltip("Location of the dummy point.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Forward");
-        ImguiUtils.ShowHoverTooltip("Vector indicating the dummy point's forward direction.");
+        UIHelper.ShowHoverTooltip("Vector indicating the dummy point's forward direction.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Upward");
-        ImguiUtils.ShowHoverTooltip("Vector indicating the dummy point's upward direction.");
+        UIHelper.ShowHoverTooltip("Vector indicating the dummy point's upward direction.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Reference ID");
-        ImguiUtils.ShowHoverTooltip("Indicates the type of dummy point this is (hitbox, sfx, etc).");
+        UIHelper.ShowHoverTooltip("Indicates the type of dummy point this is (hitbox, sfx, etc).");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Parent Bone Index");
-        ImguiUtils.ShowHoverTooltip("Index of a bone that the dummy point is initially transformed to before binding to the attach bone.");
+        UIHelper.ShowHoverTooltip("Index of a bone that the dummy point is initially transformed to before binding to the attach bone.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Attach Bone Index");
-        ImguiUtils.ShowHoverTooltip("Index of the bone that the dummy point follows physically.");
+        UIHelper.ShowHoverTooltip("Index of the bone that the dummy point follows physically.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Flag1");
-        ImguiUtils.ShowHoverTooltip("");
+        UIHelper.ShowHoverTooltip("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Use Upward Vector");
-        ImguiUtils.ShowHoverTooltip("If false, the upward vector is not read.");
+        UIHelper.ShowHoverTooltip("If false, the upward vector is not read.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Unk30");
-        ImguiUtils.ShowHoverTooltip("Unknown; only used in Sekiro.");
+        UIHelper.ShowHoverTooltip("Unknown; only used in Sekiro.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Unk34");
-        ImguiUtils.ShowHoverTooltip("Unknown; only used in Sekiro.");
+        UIHelper.ShowHoverTooltip("Unknown; only used in Sekiro.");
 
         ImGui.NextColumn();
 
@@ -420,7 +421,7 @@ public class ModelPropertyEditor
         if (Screen.ModelHierarchy.MaterialMultiselect.StoredIndices.Count > 1)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedText("Multiple Materials are selected.\nProperties cannot be edited whilst in this state.");
+            UIHelper.WrappedText("Multiple Materials are selected.\nProperties cannot be edited whilst in this state.");
             ImGui.Separator();
             return;
         }
@@ -441,22 +442,22 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Name");
-        ImguiUtils.ShowHoverTooltip("Identifies the mesh that uses this material, may include keywords that determine hideable parts.");
+        UIHelper.ShowHoverTooltip("Identifies the mesh that uses this material, may include keywords that determine hideable parts.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("MTD");
-        ImguiUtils.ShowHoverTooltip("Virtual path to an MTD file or a Matxml file in games since ER.");
+        UIHelper.ShowHoverTooltip("Virtual path to an MTD file or a Matxml file in games since ER.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("GXIndex");
-        ImguiUtils.ShowHoverTooltip("Index to the flver's list of GX lists.");
+        UIHelper.ShowHoverTooltip("Index to the flver's list of GX lists.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Index");
-        ImguiUtils.ShowHoverTooltip("Index of the material in the material list. Used since Sekiro during cutscenes.");
+        UIHelper.ShowHoverTooltip("Index of the material in the material list. Used since Sekiro during cutscenes.");
 
         ImGui.NextColumn();
 
@@ -548,15 +549,15 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Type");
-        ImguiUtils.ShowHoverTooltip("The type of texture this is, corresponding to the entries in the MTD.");
+        UIHelper.ShowHoverTooltip("The type of texture this is, corresponding to the entries in the MTD.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Path");
-        ImguiUtils.ShowHoverTooltip("Network path to the texture file to use.\n\nThe only important aspect of the path is the filename, as all textures are grouped into a texture pool in-game.\n\nSetting a texture filepath here will override the path used within the MATBIN.\n\nIt is recommended you include your texture within the model's texbnd.dcx, as that will be loaded into the texture pool automatically when the character is loaded (like wise for other asset types).");
+        UIHelper.ShowHoverTooltip("Network path to the texture file to use.\n\nThe only important aspect of the path is the filename, as all textures are grouped into a texture pool in-game.\n\nSetting a texture filepath here will override the path used within the MATBIN.\n\nIt is recommended you include your texture within the model's texbnd.dcx, as that will be loaded into the texture pool automatically when the character is loaded (like wise for other asset types).");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Scale");
-        ImguiUtils.ShowHoverTooltip("");
+        UIHelper.ShowHoverTooltip("");
 
         ImGui.NextColumn();
 
@@ -583,7 +584,7 @@ public class ModelPropertyEditor
                 path = $"{filename}.tif"; // Purely for consistency with vanilla
             }
         }
-        ImguiUtils.ShowHoverTooltip("Select the texture you wish to assign to this entry.");
+        UIHelper.ShowHoverTooltip("Select the texture you wish to assign to this entry.");
 
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
@@ -656,11 +657,11 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("ID");
-        ImguiUtils.ShowHoverTooltip("In DS2, ID is just a number; in other games, it's 4 ASCII characters.");
+        UIHelper.ShowHoverTooltip("In DS2, ID is just a number; in other games, it's 4 ASCII characters.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Unk04");
-        ImguiUtils.ShowHoverTooltip("Unknown; typically 100.");
+        UIHelper.ShowHoverTooltip("Unknown; typically 100.");
 
         ImGui.NextColumn();
 
@@ -698,7 +699,7 @@ public class ModelPropertyEditor
             {
                 item.Data = new byte[byteArraySize];
             }
-            ImguiUtils.ShowHoverTooltip("Creates a byte array to the specified size. Note this is not checked for validity, that is up to the user to determine.");
+            UIHelper.ShowHoverTooltip("Creates a byte array to the specified size. Note this is not checked for validity, that is up to the user to determine.");
         }
 
         GXDataEditor.DisplayProperties_GXItem_HandleData(item);
@@ -719,7 +720,7 @@ public class ModelPropertyEditor
         if (Screen.ModelHierarchy.NodeMultiselect.StoredIndices.Count > 1)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedText("Multiple Nodes are selected.\nProperties cannot be edited whilst in this state.");
+            UIHelper.WrappedText("Multiple Nodes are selected.\nProperties cannot be edited whilst in this state.");
             ImGui.Separator();
             return;
         }
@@ -747,59 +748,59 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Name");
-        ImguiUtils.ShowHoverTooltip("The name of this node");
+        UIHelper.ShowHoverTooltip("The name of this node");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Parent Index");
-        ImguiUtils.ShowHoverTooltip("Index of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("First Child Index");
-        ImguiUtils.ShowHoverTooltip("Index of this node's first child, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of this node's first child, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Next Sibling Index");
-        ImguiUtils.ShowHoverTooltip("Index of the next child of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of the next child of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Previous Sibling Index");
-        ImguiUtils.ShowHoverTooltip("Index of the previous child of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of the previous child of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Translation");
-        ImguiUtils.ShowHoverTooltip("Translation of this bone.");
+        UIHelper.ShowHoverTooltip("Translation of this bone.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Rotation");
-        ImguiUtils.ShowHoverTooltip("Rotation of this bone; euler radians in XZY order.");
+        UIHelper.ShowHoverTooltip("Rotation of this bone; euler radians in XZY order.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Scale");
-        ImguiUtils.ShowHoverTooltip("Scale of this bone.");
+        UIHelper.ShowHoverTooltip("Scale of this bone.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Bounding Box: Minimum");
-        ImguiUtils.ShowHoverTooltip("Minimum extent of the vertices weighted to this bone.");
+        UIHelper.ShowHoverTooltip("Minimum extent of the vertices weighted to this bone.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Bounding Box: Maximum");
-        ImguiUtils.ShowHoverTooltip("Maximum extent of the vertices weighted to this bone.");
+        UIHelper.ShowHoverTooltip("Maximum extent of the vertices weighted to this bone.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Flags");
-        ImguiUtils.ShowHoverTooltip("A set of flags denoting the properties of a node");
+        UIHelper.ShowHoverTooltip("A set of flags denoting the properties of a node");
 
         ImGui.NextColumn();
 
@@ -937,7 +938,7 @@ public class ModelPropertyEditor
         if (Screen.ModelHierarchy.MeshMultiselect.StoredIndices.Count > 1)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedText("Multiple Meshes are selected.\nProperties cannot be edited whilst in this state.");
+            UIHelper.WrappedText("Multiple Meshes are selected.\nProperties cannot be edited whilst in this state.");
             ImGui.Separator();
             return;
         }
@@ -958,18 +959,18 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Use Bone Weights");
-        ImguiUtils.ShowHoverTooltip("Determines how the mesh is skinned.\nIf it is true the mesh is assumed to be in bind pose and is skinned using the Bone Indices and Bone Weights of the vertices.\n\nIf it is false each vertex specifies a single node to bind to using its NormalW\n\nThe mesh is assumed to not be in bind pose and the transform of the bound node is applied to each vertex.");
+        UIHelper.ShowHoverTooltip("Determines how the mesh is skinned.\nIf it is true the mesh is assumed to be in bind pose and is skinned using the Bone Indices and Bone Weights of the vertices.\n\nIf it is false each vertex specifies a single node to bind to using its NormalW\n\nThe mesh is assumed to not be in bind pose and the transform of the bound node is applied to each vertex.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Material Index");
-        ImguiUtils.ShowHoverTooltip("Index of the material used by all triangles in this mesh.");
+        UIHelper.ShowHoverTooltip("Index of the material used by all triangles in this mesh.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Node Index");
-        ImguiUtils.ShowHoverTooltip("Index of the node representing this mesh in the Node list.");
+        UIHelper.ShowHoverTooltip("Index of the node representing this mesh in the Node list.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
@@ -1065,19 +1066,19 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Flags");
-        ImguiUtils.ShowHoverTooltip("Flags on a faceset, mostly just used to determine lod level.");
+        UIHelper.ShowHoverTooltip("Flags on a faceset, mostly just used to determine lod level.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Triangle Strip");
-        ImguiUtils.ShowHoverTooltip("Whether vertices are defined as a triangle strip or individual triangles.");
+        UIHelper.ShowHoverTooltip("Whether vertices are defined as a triangle strip or individual triangles.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Cull Backfaces");
-        ImguiUtils.ShowHoverTooltip("Whether triangles can be seen through from behind.");
+        UIHelper.ShowHoverTooltip("Whether triangles can be seen through from behind.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Unk06");
-        ImguiUtils.ShowHoverTooltip("");
+        UIHelper.ShowHoverTooltip("");
 
         ImGui.NextColumn();
 
@@ -1152,7 +1153,7 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Layout Index");
-        ImguiUtils.ShowHoverTooltip("");
+        UIHelper.ShowHoverTooltip("");
 
         ImGui.NextColumn();
 
@@ -1183,15 +1184,15 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Mesh Bounding Box: Minimum");
-        ImguiUtils.ShowHoverTooltip("Minimum extent of the mesh.");
+        UIHelper.ShowHoverTooltip("Minimum extent of the mesh.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Mesh Bounding Box: Maximum");
-        ImguiUtils.ShowHoverTooltip("Maximum extent of the mesh.");
+        UIHelper.ShowHoverTooltip("Maximum extent of the mesh.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Mesh Bounding Box: Unknown");
-        ImguiUtils.ShowHoverTooltip("Unknown; only present in Sekiro.");
+        UIHelper.ShowHoverTooltip("Unknown; only present in Sekiro.");
 
         ImGui.NextColumn();
 
@@ -1243,7 +1244,7 @@ public class ModelPropertyEditor
         if (Screen.ModelHierarchy.BufferLayoutMultiselect.StoredIndices.Count > 1)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedText("Multiple Buffer Layouts are selected.\nProperties cannot be edited whilst in this state.");
+            UIHelper.WrappedText("Multiple Buffer Layouts are selected.\nProperties cannot be edited whilst in this state.");
             ImGui.Separator();
             return;
         }
@@ -1279,21 +1280,21 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text($"Unk00:");
-        ImguiUtils.ShowHoverTooltip("Unknown; 0, 1, or 2.");
+        UIHelper.ShowHoverTooltip("Unknown; 0, 1, or 2.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text($"Layout Type:");
-        ImguiUtils.ShowHoverTooltip("Format used to store this member.");
+        UIHelper.ShowHoverTooltip("Format used to store this member.");
         ImGui.Text($"");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text($"Layout Semantic:");
-        ImguiUtils.ShowHoverTooltip("Vertex property being stored.");
+        UIHelper.ShowHoverTooltip("Vertex property being stored.");
         ImGui.Text($"");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text($"Index:");
-        ImguiUtils.ShowHoverTooltip("For semantics that may appear more than once such as UVs, which one this member is.");
+        UIHelper.ShowHoverTooltip("For semantics that may appear more than once such as UVs, which one this member is.");
 
         ImGui.NextColumn();
 
@@ -1339,7 +1340,7 @@ public class ModelPropertyEditor
 
         if(layout.Size == -1)
         {
-            ImguiUtils.WrappedTextColored(CFG.Default.ImGui_Warning_Text_Color, "Invalid Layout Type. Size cannot be determined.");
+            UIHelper.WrappedTextColored(UI.Default.ImGui_Warning_Text_Color, "Invalid Layout Type. Size cannot be determined.");
         }
 
         ImGui.Columns(1);
@@ -1362,7 +1363,7 @@ public class ModelPropertyEditor
         if (Screen.ModelHierarchy.BaseSkeletonMultiselect.StoredIndices.Count > 1)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedText("Multiple Skeleton Bones are selected.\nProperties cannot be edited whilst in this state.");
+            UIHelper.WrappedText("Multiple Skeleton Bones are selected.\nProperties cannot be edited whilst in this state.");
             ImGui.Separator();
             return;
         }
@@ -1370,7 +1371,7 @@ public class ModelPropertyEditor
         ImGui.Separator();
         ImGui.Text("Standard Skeleton Hierarchy");
         ImGui.Separator();
-        ImguiUtils.ShowHoverTooltip("Contains the standard skeleton hierarchy, which corresponds to the node hierarchy.");
+        UIHelper.ShowHoverTooltip("Contains the standard skeleton hierarchy, which corresponds to the node hierarchy.");
 
         var entry = Screen.ResourceHandler.CurrentFLVER.Skeletons.BaseSkeleton[index];
 
@@ -1385,35 +1386,35 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Parent Index");
-        ImguiUtils.ShowHoverTooltip("Index of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("First Child Index");
-        ImguiUtils.ShowHoverTooltip("Index of this node's first child, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of this node's first child, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Next Sibling Index");
-        ImguiUtils.ShowHoverTooltip("Index of the next child of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of the next child of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Previous Sibling Index");
-        ImguiUtils.ShowHoverTooltip("Index of the previous child of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of the previous child of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Node Index");
-        ImguiUtils.ShowHoverTooltip("Index of the node in the Node list.");
+        UIHelper.ShowHoverTooltip("Index of the node in the Node list.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
@@ -1494,7 +1495,7 @@ public class ModelPropertyEditor
         if (Screen.ModelHierarchy.BaseSkeletonMultiselect.StoredIndices.Count > 1)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedText("Multiple Skeleton Bones are selected.\nProperties cannot be edited whilst in this state.");
+            UIHelper.WrappedText("Multiple Skeleton Bones are selected.\nProperties cannot be edited whilst in this state.");
             ImGui.Separator();
             return;
         }
@@ -1502,7 +1503,7 @@ public class ModelPropertyEditor
         ImGui.Separator();
         ImGui.Text("Full Skeleton Hierarchy");
         ImGui.Separator();
-        ImguiUtils.ShowHoverTooltip("Contains all skeleton hierarchies including that of the control rig and the ragdoll bones.");
+        UIHelper.ShowHoverTooltip("Contains all skeleton hierarchies including that of the control rig and the ragdoll bones.");
 
         var entry = Screen.ResourceHandler.CurrentFLVER.Skeletons.AllSkeletons[index];
 
@@ -1517,35 +1518,35 @@ public class ModelPropertyEditor
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Parent Index");
-        ImguiUtils.ShowHoverTooltip("Index of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("First Child Index");
-        ImguiUtils.ShowHoverTooltip("Index of this node's first child, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of this node's first child, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Next Sibling Index");
-        ImguiUtils.ShowHoverTooltip("Index of the next child of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of the next child of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Previous Sibling Index");
-        ImguiUtils.ShowHoverTooltip("Index of the previous child of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of the previous child of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Node Index");
-        ImguiUtils.ShowHoverTooltip("Index of the node in the Node list.");
+        UIHelper.ShowHoverTooltip("Index of the node in the Node list.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");

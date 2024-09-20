@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Interface;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;
@@ -47,26 +48,26 @@ public class ActionSubMenu
     {
         if (ImGui.BeginMenu("Actions"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Duplicate Entries", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
                 Handler.DuplicateHandler();
             }
-            ImguiUtils.ShowHoverTooltip("Duplicates current selection.");
+            UIHelper.ShowHoverTooltip("Duplicates current selection.");
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Delete Entries", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 Handler.DeleteHandler();
             }
-            ImguiUtils.ShowHoverTooltip("Deletes current selection.");
+            UIHelper.ShowHoverTooltip("Deletes current selection.");
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Sync Description Entries", KeyBindings.Current.TEXT_SyncDescriptions.HintText))
             {
                 Handler.SyncDescriptionHandler();
             }
-            ImguiUtils.ShowHoverTooltip("Sync the description of all selected entries to the description of the first member of the selection.");
+            UIHelper.ShowHoverTooltip("Sync the description of all selected entries to the description of the first member of the selection.");
 
 
             ImGui.EndMenu();

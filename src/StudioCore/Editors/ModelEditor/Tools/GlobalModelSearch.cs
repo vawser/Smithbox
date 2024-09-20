@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using StudioCore.Editor;
 using StudioCore.Core.Project;
 using StudioCore.Utilities;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.ModelEditor.Tools;
 
@@ -206,7 +207,7 @@ public class GlobalModelSearch
         if(Matches.Count > 0)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedText($"Instances of {_searchInput}:");
+            UIHelper.WrappedText($"Instances of {_searchInput}:");
             ImGui.Separator();
             foreach (var entry in Matches)
             {
@@ -216,7 +217,7 @@ public class GlobalModelSearch
                     EditorCommandQueue.AddCommand($"map/select/{entry.MapName}/{entry.EntityName}/Part");
                 }
                 var aliasName = AliasUtils.GetMapNameAlias(entry.MapName);
-                AliasUtils.DisplayAlias(aliasName);
+                UIHelper.DisplayAlias(aliasName);
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +18,8 @@ public class TreasureRandomiser
 
         if (SupportsRandomiser())
         {
-            ImguiUtils.WrappedText("This randomiser allows you to randomise the placement of treasures throughout the world.");
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText("This randomiser allows you to randomise the placement of treasures throughout the world.");
+            UIHelper.WrappedText("");
 
             switch (Smithbox.ProjectType)
             {
@@ -80,7 +80,7 @@ public class TreasureRandomiser
         }
         else
         {
-            ImguiUtils.WrappedText($"This randomiser is not available.");
+            UIHelper.WrappedText($"This randomiser is not available.");
         }
     }
 
@@ -169,34 +169,34 @@ public class TreasureRandomiser
         if(ImGui.CollapsingHeader("World"))
         {
             ImGui.Checkbox("Include World Treasures", ref RandomiserCFG.Current.ER_IncludeWorldTreasures);
-            ImguiUtils.ShowHoverTooltip("Include treasures considered 'world' treasures, for example those found in the open-world, in legacy dungeons and in catacombs.");
+            UIHelper.ShowHoverTooltip("Include treasures considered 'world' treasures, for example those found in the open-world, in legacy dungeons and in catacombs.");
 
             ImGui.InputText("World Treasures", ref RandomiserCFG.Current.ER_WorldTreasures, 255);
-            ImguiUtils.ShowHoverTooltip("Refers to ItemLotParam row IDs.\n\nRanges are defined within [ ] braces: first value is start of range, second value is end of range. Single values in [ ] braces are treated as a single ID.\n\nEach range is split by the : character.");
+            UIHelper.ShowHoverTooltip("Refers to ItemLotParam row IDs.\n\nRanges are defined within [ ] braces: first value is start of range, second value is end of range. Single values in [ ] braces are treated as a single ID.\n\nEach range is split by the : character.");
 
             ImGui.Separator();
 
             ImGui.Checkbox("Include World Treasures (DLC)", ref RandomiserCFG.Current.ER_IncludeWorldTreasures_DLC);
-            ImguiUtils.ShowHoverTooltip("Include treasures considered 'world' treasures in the DLC, for example those found in the open-world, in legacy dungeons and in catacombs.");
+            UIHelper.ShowHoverTooltip("Include treasures considered 'world' treasures in the DLC, for example those found in the open-world, in legacy dungeons and in catacombs.");
 
             ImGui.InputText("World Treasures (DLC)", ref RandomiserCFG.Current.ER_WorldTreasures_DLC, 255);
-            ImguiUtils.ShowHoverTooltip("Refers to ItemLotParam row IDs.\n\nRanges are defined within [ ] braces: first value is start of range, second value is end of range. Single values in [ ] braces are treated as a single ID.\n\nEach range is split by the : character.");
+            UIHelper.ShowHoverTooltip("Refers to ItemLotParam row IDs.\n\nRanges are defined within [ ] braces: first value is start of range, second value is end of range. Single values in [ ] braces are treated as a single ID.\n\nEach range is split by the : character.");
         }
 
         // Items
         if (ImGui.CollapsingHeader("Items"))
         {
             ImGui.Checkbox("Ignore Key Items", ref RandomiserCFG.Current.ER_IgnoreKeyItems);
-            ImguiUtils.ShowHoverTooltip("Ignore key items (such as Keys) when randomising treasures.");
+            UIHelper.ShowHoverTooltip("Ignore key items (such as Keys) when randomising treasures.");
 
             ImGui.InputText("Key Items", ref RandomiserCFG.Current.ER_KeyItems, 255);
-            ImguiUtils.ShowHoverTooltip("Refers to EquipParamGoods row IDs.\n\nEach entry is split by the , character.");
+            UIHelper.ShowHoverTooltip("Refers to EquipParamGoods row IDs.\n\nEach entry is split by the , character.");
 
             ImGui.Checkbox("Ignore Progression Items", ref RandomiserCFG.Current.ER_IgnoreProgressionItems);
-            ImguiUtils.ShowHoverTooltip("Ignore progression items (suuch as Bell Bearings, Golden Seeds, etc) when randomising treasures.");
+            UIHelper.ShowHoverTooltip("Ignore progression items (suuch as Bell Bearings, Golden Seeds, etc) when randomising treasures.");
 
             ImGui.InputText("Progression Items", ref RandomiserCFG.Current.ER_ProgressionItems, 255);
-            ImguiUtils.ShowHoverTooltip("Refers to EquipParamGoods row IDs.\n\nEach entry is split by the , character.");
+            UIHelper.ShowHoverTooltip("Refers to EquipParamGoods row IDs.\n\nEach entry is split by the , character.");
         }
     }
 

@@ -1,5 +1,5 @@
 ﻿using ImGuiNET;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +29,7 @@ public static class PropInfo_MapObjectType
 
             if (desc != "")
             {
-                ImguiUtils.WrappedText($"{desc}");
+                UIHelper.WrappedText($"{desc}");
                 ImGui.Text("");
             }
         }

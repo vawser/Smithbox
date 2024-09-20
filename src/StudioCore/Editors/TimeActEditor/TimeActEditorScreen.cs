@@ -139,7 +139,7 @@ public class TimeActEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -169,22 +169,22 @@ public class TimeActEditorScreen : EditorScreen
                 TimeActCommandLine(initcmd);
                 TimeActEditorShortcuts();
 
-                if (CFG.Current.Interface_TimeActEditor_ContainerFileList)
+                if (UI.Current.Interface_TimeActEditor_ContainerFileList)
                 {
                     TimeActContainerFileView();
                 }
 
-                if (CFG.Current.Interface_TimeActEditor_TimeActList)
+                if (UI.Current.Interface_TimeActEditor_TimeActList)
                 {
                     TimeActInternalFileView();
                 }
 
-                if (CFG.Current.Interface_TimeActEditor_AnimationList)
+                if (UI.Current.Interface_TimeActEditor_AnimationList)
                 {
                     TimeActAnimationView();
                 }
 
-                if (CFG.Current.Interface_TimeActEditor_AnimationProperties)
+                if (UI.Current.Interface_TimeActEditor_AnimationProperties)
                 {
                     TimeActAnimationPropertyView();
                 }
@@ -192,12 +192,12 @@ public class TimeActEditorScreen : EditorScreen
                 // TODO: find method to create event graph
                 //TimeActAnimEventGraphView();
 
-                if (CFG.Current.Interface_TimeActEditor_EventList)
+                if (UI.Current.Interface_TimeActEditor_EventList)
                 {
                     TimeActAnimEventView();
                 }
 
-                if (CFG.Current.Interface_TimeActEditor_EventProperties)
+                if (UI.Current.Interface_TimeActEditor_EventProperties)
                 {
                     TimeActEventPropertiesView();
                 }
@@ -215,7 +215,7 @@ public class TimeActEditorScreen : EditorScreen
         ActionSubMenu.Shortcuts();
         ToolSubMenu.Shortcuts();
 
-        if (CFG.Current.Interface_TimeActEditor_ToolConfiguration)
+        if (UI.Current.Interface_TimeActEditor_ToolConfiguration)
         {
             ToolWindow.OnGui();
         }
@@ -401,7 +401,7 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.Begin("Files##TimeActFileList");
 
         ImGui.InputText($"Search##fileContainerFilter", ref TimeActFilters._fileContainerFilterString, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("ContainerList");
 
@@ -521,7 +521,7 @@ public class TimeActEditorScreen : EditorScreen
         }
 
         ImGui.InputText($"Search##timeActFilter", ref TimeActFilters._timeActFilterString, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("TimeActList");
 
@@ -596,7 +596,7 @@ public class TimeActEditorScreen : EditorScreen
         }
 
         ImGui.InputText($"Search##timeActAnimationFilter", ref TimeActFilters._timeActAnimationFilterString, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("AnimationList");
 
@@ -711,11 +711,11 @@ public class TimeActEditorScreen : EditorScreen
         // Property Column
         ImGui.AlignTextToFramePadding();
         ImGui.Text("ID");
-        ImguiUtils.ShowHoverTooltip("ID number of this animation.");
+        UIHelper.ShowHoverTooltip("ID number of this animation.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Name");
-        ImguiUtils.ShowHoverTooltip("The name of this animation entry.");
+        UIHelper.ShowHoverTooltip("The name of this animation entry.");
 
         if (SelectionHandler.CurrentTemporaryAnimHeader != null)
         {
@@ -723,26 +723,26 @@ public class TimeActEditorScreen : EditorScreen
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Loop by Default");
-                ImguiUtils.ShowHoverTooltip("Makes the animation loop by default. Only relevant for animations not controlled byESD or HKS such as ObjAct animations.");
+                UIHelper.ShowHoverTooltip("Makes the animation loop by default. Only relevant for animations not controlled byESD or HKS such as ObjAct animations.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Allow Delay Load");
-                ImguiUtils.ShowHoverTooltip("Whether to allow this animation to be loaded from delayload anibnds such as the c0000_cXXXX.anibnd player throw anibnds.");
+                UIHelper.ShowHoverTooltip("Whether to allow this animation to be loaded from delayload anibnds such as the c0000_cXXXX.anibnd player throw anibnds.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Imports HKX");
-                ImguiUtils.ShowHoverTooltip("Whether to import the HKX (actual motion data) of the animation with the ID of referenced in Import HKX Source Anim ID.");
+                UIHelper.ShowHoverTooltip("Whether to import the HKX (actual motion data) of the animation with the ID of referenced in Import HKX Source Anim ID.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Import HKX Source Anim ID");
-                ImguiUtils.ShowHoverTooltip("Anim ID to import HKX from.");
+                UIHelper.ShowHoverTooltip("Anim ID to import HKX from.");
             }
 
             if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Import Anim ID");
-                ImguiUtils.ShowHoverTooltip("ID of animation from which to import motion dat and all events.");
+                UIHelper.ShowHoverTooltip("ID of animation from which to import motion dat and all events.");
             }
         }
 
@@ -823,7 +823,7 @@ public class TimeActEditorScreen : EditorScreen
         }
 
         ImGui.InputText($"Search##timeActEventFilter", ref TimeActFilters._timeActEventFilterString, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("EventList");
 
@@ -915,7 +915,7 @@ public class TimeActEditorScreen : EditorScreen
         }
 
         ImGui.InputText($"Search##timeActEventPropertyFilter", ref TimeActFilters._timeActEventPropertyFilterString, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("EventPropertyList");
 
@@ -1005,21 +1005,21 @@ public class TimeActEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Edit"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo All", "", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
             if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false,
                     EditorActionManager.CanRedo()))
             {
@@ -1041,70 +1041,70 @@ public class TimeActEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("View"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("TAE Files"))
             {
-                CFG.Current.Interface_TimeActEditor_ContainerFileList = !CFG.Current.Interface_TimeActEditor_ContainerFileList;
+                UI.Current.Interface_TimeActEditor_ContainerFileList = !UI.Current.Interface_TimeActEditor_ContainerFileList;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_ContainerFileList);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_ContainerFileList);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Time Acts"))
             {
-                CFG.Current.Interface_TimeActEditor_TimeActList = !CFG.Current.Interface_TimeActEditor_TimeActList;
+                UI.Current.Interface_TimeActEditor_TimeActList = !UI.Current.Interface_TimeActEditor_TimeActList;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_TimeActList);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_TimeActList);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Animations"))
             {
-                CFG.Current.Interface_TimeActEditor_AnimationList = !CFG.Current.Interface_TimeActEditor_AnimationList;
+                UI.Current.Interface_TimeActEditor_AnimationList = !UI.Current.Interface_TimeActEditor_AnimationList;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_AnimationList);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_AnimationList);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Animation Properties"))
             {
-                CFG.Current.Interface_TimeActEditor_AnimationProperties = !CFG.Current.Interface_TimeActEditor_AnimationProperties;
+                UI.Current.Interface_TimeActEditor_AnimationProperties = !UI.Current.Interface_TimeActEditor_AnimationProperties;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_AnimationProperties);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_AnimationProperties);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Events"))
             {
-                CFG.Current.Interface_TimeActEditor_EventList = !CFG.Current.Interface_TimeActEditor_EventList;
+                UI.Current.Interface_TimeActEditor_EventList = !UI.Current.Interface_TimeActEditor_EventList;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_EventList);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_EventList);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Event Properties"))
             {
-                CFG.Current.Interface_TimeActEditor_EventProperties = !CFG.Current.Interface_TimeActEditor_EventProperties;
+                UI.Current.Interface_TimeActEditor_EventProperties = !UI.Current.Interface_TimeActEditor_EventProperties;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_EventProperties);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_EventProperties);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Tool Window"))
             {
-                CFG.Current.Interface_TimeActEditor_ToolConfiguration = !CFG.Current.Interface_TimeActEditor_ToolConfiguration;
+                UI.Current.Interface_TimeActEditor_ToolConfiguration = !UI.Current.Interface_TimeActEditor_ToolConfiguration;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_ToolConfiguration);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_ToolConfiguration);
 
             /*
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Viewport"))
             {
-                CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
+                UI.Current.Interface_Editor_Viewport = !UI.Current.Interface_Editor_Viewport;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_Editor_Viewport);
+            ImguiUtils.ShowActiveStatus(UI.Current.Interface_Editor_Viewport);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Viewport Grid"))
             {
-                CFG.Current.Interface_TimeActEditor_Viewport_Grid = !CFG.Current.Interface_TimeActEditor_Viewport_Grid;
+                UI.Current.Interface_TimeActEditor_Viewport_Grid = !UI.Current.Interface_TimeActEditor_Viewport_Grid;
                 CFG.Current.TimeActEditor_Viewport_RegenerateMapGrid = true;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Viewport_Grid);
+            ImguiUtils.ShowActiveStatus(UI.Current.Interface_TimeActEditor_Viewport_Grid);
             */
 
             ImGui.EndMenu();

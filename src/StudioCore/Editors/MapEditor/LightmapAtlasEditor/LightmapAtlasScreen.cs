@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,10 +48,10 @@ public class LightmapAtlasScreen
         if (!Smithbox.BankHandler.LightmapAtlasBank.UsesLightmapAtlases())
             return;
 
-        if (!CFG.Current.Interface_MapEditor_Viewport_LightmapAtlas)
+        if (!UI.Current.Interface_MapEditor_Viewport_LightmapAtlas)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin($@"Lightmap Atlas Editor##MapEditor_LightmapAtlasEditor"))
@@ -232,7 +233,7 @@ public class LightmapAtlasScreen
             {
                 var aliasName = referenceDict[lowerName].name;
 
-                AliasUtils.DisplayAlias(aliasName);
+                UIHelper.DisplayAlias(aliasName);
             }
 
             // Tags

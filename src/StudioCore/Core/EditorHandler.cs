@@ -12,6 +12,7 @@ using StudioCore.EmevdEditor;
 using StudioCore.Graphics;
 using StudioCore.GraphicsEditor;
 using StudioCore.HavokEditor;
+using StudioCore.Interface;
 using StudioCore.MaterialEditor;
 using StudioCore.ParticleEditor;
 using StudioCore.Settings;
@@ -176,7 +177,7 @@ public class EditorHandler
 
         if (status != "")
         {
-            ImguiUtils.ShowHoverTooltip(status);
+            UIHelper.ShowHoverTooltip(status);
         }
     }
 
@@ -188,7 +189,7 @@ public class EditorHandler
         if (ImGui.BeginMenu("File"))
         {
             // New Project
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.File}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.File}");
             DisplayTaskStatus();
             if (ImGui.MenuItem("New Project", "", false, MayChangeProject()))
             {
@@ -197,7 +198,7 @@ public class EditorHandler
             }
 
             // Open Project
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Folder}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Folder}");
             DisplayTaskStatus();
             if (ImGui.MenuItem("Open Project", "", false, MayChangeProject()))
             {
@@ -205,7 +206,7 @@ public class EditorHandler
             }
 
             // Recent Projects
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.FolderOpen}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.FolderOpen}");
             DisplayTaskStatus();
             if (ImGui.BeginMenu("Recent Projects", MayChangeProject() && CFG.Current.RecentProjects.Count > 0))
             {
@@ -215,7 +216,7 @@ public class EditorHandler
             }
 
             // Open in Explorer
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Archive}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Archive}");
             if (ImGui.BeginMenu("Open in Explorer",
                     !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
             {
@@ -243,7 +244,7 @@ public class EditorHandler
             // Save
             if (FocusedEditor.ShowSaveOption)
             {
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
+                UIHelper.ShowMenuIcon($"{ForkAwesome.FloppyO}");
                 if (ImGui.MenuItem($"Save Selected {FocusedEditor.SaveType}",
                         KeyBindings.Current.CORE_Save.HintText))
                 {
@@ -252,7 +253,7 @@ public class EditorHandler
                 }
 
                 // Save All
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
+                UIHelper.ShowMenuIcon($"{ForkAwesome.FloppyO}");
                 if (ImGui.MenuItem($"Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.CORE_SaveAll.HintText))
                 {
                     Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);

@@ -1,9 +1,9 @@
 ﻿using ImGuiNET;
 using SoapstoneLib;
 using SoulsFormats;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Settings;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,10 +23,10 @@ public class SystemTab
         {
             ImGui.Checkbox("Check for new versions of Smithbox during startup",
                 ref CFG.Current.System_Check_Program_Update);
-            ImguiUtils.ShowHoverTooltip("When enabled Smithbox will automatically check for new versions upon program start.");
+            UIHelper.ShowHoverTooltip("When enabled Smithbox will automatically check for new versions upon program start.");
 
             ImGui.SliderFloat("Frame Rate", ref CFG.Current.System_Frame_Rate, 20.0f, 240.0f);
-            ImguiUtils.ShowHoverTooltip("Adjusts the frame rate of the viewport.");
+            UIHelper.ShowHoverTooltip("Adjusts the frame rate of the viewport.");
 
             // Round FPS to the nearest whole number
             CFG.Current.System_Frame_Rate = (float)Math.Round(CFG.Current.System_Frame_Rate);
@@ -34,20 +34,21 @@ public class SystemTab
             if (ImGui.Button("Reset"))
             {
                 CFG.Current.System_Frame_Rate = CFG.Default.System_Frame_Rate;
-                CFG.Current.System_UI_Scale = CFG.Default.System_UI_Scale;
+                UI.Current.System_UI_Scale = UI.Default.System_UI_Scale;
                 Smithbox.FontRebuildRequest = true;
             }
             ImGui.SameLine();
-            if (ImGui.Button("Reset AppData"))
+            if (ImGui.Button("Reset Configuration"))
             {
                 DialogResult result = PlatformUtils.Instance.MessageBox(
-                $"Do you want to delete your AppData files?",
+                $"Do you want to delete your Smithbox configuration files?",
                 $"Warning", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
                 {
                     var configFolder = CFG.GetConfigFilePath();
                     var keybindsFolder = CFG.GetBindingsFilePath();
+                    var interfaceFolder = UI.GetConfigFilePath();
 
                     if (File.Exists(configFolder))
                     {
@@ -57,29 +58,34 @@ public class SystemTab
                     {
                         File.Delete(keybindsFolder);
                     }
+                    if (File.Exists(interfaceFolder))
+                    {
+                        File.Delete(interfaceFolder);
+                    }
 
                     CFG.Save();
+                    UI.Save();
                 }
             }
-            ImguiUtils.ShowHoverTooltip("This will delete your Smithbox folder in %appdata%/Local/, allowing it to be re-generated.");
+            UIHelper.ShowHoverTooltip("This will delete your Smithbox folder and the configuration files within.");
         }
 
         if (ImGui.CollapsingHeader("Formats"))
         {
-            ImguiUtils.WrappedText("By default, files are read by Smithbox in a strict manner. Data that is present in locations that it should not be will throw an exception.");
+            UIHelper.WrappedText("By default, files are read by Smithbox in a strict manner. Data that is present in locations that it should not be will throw an exception.");
 
-            ImguiUtils.WrappedText("This option will remove that strictness, and will cause Smithbox to ignore the invalid data when reading a file.");
+            UIHelper.WrappedText("This option will remove that strictness, and will cause Smithbox to ignore the invalid data when reading a file.");
 
             ImGui.Checkbox("Ignore asserts", ref CFG.Current.System_IgnoreAsserts);
-            ImguiUtils.ShowHoverTooltip("If enabled, when attempting to read files, asserts will be ignored.");
+            UIHelper.ShowHoverTooltip("If enabled, when attempting to read files, asserts will be ignored.");
 
             Smithbox.UpdateSoulsFormatsToggles();
         }
 
         if (ImGui.CollapsingHeader("Loggers"))
         {
-            ImGui.Checkbox("Display Information Logger", ref CFG.Current.Interface_DisplayInfoLogger);
-            ImguiUtils.ShowHoverTooltip("If enabled, the information logger will be visible in the menubar.");
+            ImGui.Checkbox("Display Information Logger", ref UI.Current.Interface_DisplayInfoLogger);
+            UIHelper.ShowHoverTooltip("If enabled, the information logger will be visible in the menubar.");
 
             Smithbox.UpdateSoulsFormatsToggles();
         }
@@ -97,24 +103,24 @@ public class SystemTab
         if (ImGui.CollapsingHeader("Resources"))
         {
             ImGui.Checkbox("Alias Banks - Commit to Base", ref CFG.Current.AliasBank_EditorMode);
-            ImguiUtils.ShowHoverTooltip("If enabled, editing the name and tags for alias banks will commit the changes to the Smithbox base version instead of the mod-specific version.");
+            UIHelper.ShowHoverTooltip("If enabled, editing the name and tags for alias banks will commit the changes to the Smithbox base version instead of the mod-specific version.");
 
             if (FeatureFlags.EnableEditor_Cutscene)
             {
                 ImGui.Checkbox("Cutscene Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Cutscene);
-                ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                UIHelper.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
             }
 
             if (FeatureFlags.EnableEditor_Material)
             {
                 ImGui.Checkbox("Material Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Material);
-                ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                UIHelper.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
             }
 
             if (FeatureFlags.EnableEditor_Particle)
             {
                 ImGui.Checkbox("Particle Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Particle);
-                ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                UIHelper.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
             }
         }
 
@@ -124,7 +130,7 @@ public class SystemTab
             //ImguiUtils.ShowHoverTooltip("If enabled, the randomiser tools will be available via the icon bar.");
 
             ImGui.Checkbox("Display Debug Toosl", ref CFG.Current.DisplayDebugTools);
-            ImguiUtils.ShowHoverTooltip("If enabled, the debug tools will be available via the icon bar.");
+            UIHelper.ShowHoverTooltip("If enabled, the debug tools will be available via the icon bar.");
         }
     }
 }

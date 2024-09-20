@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Utilities;
+namespace StudioCore.Interface;
 public static class FilterStrings
 {
     // These patterns are meant to be passed directly into PlatformUtils.

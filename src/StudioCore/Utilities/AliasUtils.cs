@@ -4,6 +4,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -18,46 +19,10 @@ namespace StudioCore.Utilities;
 /// </summary>
 public static class AliasUtils
 {
-    public static void DisplayAlias(string aliasName)
-    {
-        if (aliasName != "")
-        {
-            ImGui.SameLine();
-            if (CFG.Current.System_WrapAliasDisplay)
-            {
-                ImGui.PushTextWrapPos();
-                ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName}");
-                ImGui.PopTextWrapPos();
-            }
-            else
-            {
-                ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{aliasName}");
-            }
-        }
-    }
-
-    public static void DisplayColoredAlias(string aliasName, Vector4 color)
-    {
-        if (aliasName != "")
-        {
-            ImGui.SameLine();
-            if (CFG.Current.System_WrapAliasDisplay)
-            {
-                ImGui.PushTextWrapPos();
-                ImGui.TextColored(color, @$"{aliasName}");
-                ImGui.PopTextWrapPos();
-            }
-            else
-            {
-                ImGui.TextColored(color, @$"{aliasName}");
-            }
-        }
-    }
-
     public static void AliasTooltip(List<string> aliases, string title)
     {
         var lines = string.Join("\n- ", aliases);
-        ImguiUtils.ShowHoverTooltip($"{title}\n- {lines}");
+        UIHelper.ShowHoverTooltip($"{title}\n- {lines}");
     }
 
     public static void DisplayTagAlias(string aliasName)
@@ -66,15 +31,15 @@ public static class AliasUtils
         {
             ImGui.SameLine();
 
-            if (CFG.Current.System_WrapAliasDisplay)
+            if (UI.Current.System_WrapAliasDisplay)
             {
                 ImGui.PushTextWrapPos();
-                ImGui.TextColored(CFG.Current.ImGui_Benefit_Text_Color, @$"[{aliasName}]");
+                ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, @$"[{aliasName}]");
                 ImGui.PopTextWrapPos();
             }
             else
             {
-                ImGui.TextColored(CFG.Current.ImGui_Benefit_Text_Color, @$"[{aliasName}]");
+                ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, @$"[{aliasName}]");
             }
         }
     }

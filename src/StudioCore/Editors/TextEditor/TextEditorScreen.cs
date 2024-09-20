@@ -18,6 +18,7 @@ using StudioCore.Scene;
 using StudioCore.Editors.TextEditor.Actions;
 using StudioCore.Editors.TextEditor.Tools;
 using StudioCore.Core.Project;
+using StudioCore.Interface;
 
 namespace StudioCore.TextEditor;
 
@@ -81,21 +82,21 @@ public class TextEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Edit", currentFmgBank.IsLoaded))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo All", "", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
             if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false,
                     EditorActionManager.CanRedo()))
             {
@@ -117,10 +118,10 @@ public class TextEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Data", Smithbox.BankHandler.FMGBank.IsLoaded))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Database}");
             if (ImGui.BeginMenu("Import Text Entries"))
             {
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
+                UIHelper.ShowMenuIcon($"{ForkAwesome.Database}");
                 if (ImGui.MenuItem("Merge Entries"))
                 {
                     if (FmgExporter.ImportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], true))
@@ -129,9 +130,9 @@ public class TextEditorScreen : EditorScreen
                         ResetActionManager();
                     }
                 }
-                ImguiUtils.ShowHoverTooltip("Import: text will be merged with currently loaded text");
+                UIHelper.ShowHoverTooltip("Import: text will be merged with currently loaded text");
 
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
+                UIHelper.ShowMenuIcon($"{ForkAwesome.Database}");
                 if (ImGui.MenuItem("Replace Entries"))
                 {
                     if (FmgExporter.ImportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], false))
@@ -140,26 +141,26 @@ public class TextEditorScreen : EditorScreen
                         ResetActionManager();
                     }
                 }
-                ImguiUtils.ShowHoverTooltip("Import: text replaces currently loaded text entirely");
+                UIHelper.ShowHoverTooltip("Import: text replaces currently loaded text entirely");
 
                 ImGui.EndMenu();
             }
 
             // Export
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Database}");
             if (ImGui.BeginMenu("Export Text Entries"))
             {
                 if (ImGui.MenuItem("Export Modded Entries"))
                 {
                     FmgExporter.ExportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], true);
                 }
-                ImguiUtils.ShowHoverTooltip("Export: only modded text (different than vanilla) will be exported");
+                UIHelper.ShowHoverTooltip("Export: only modded text (different than vanilla) will be exported");
 
                 if (ImGui.MenuItem("Export All Entries"))
                 {
                     FmgExporter.ExportFmgTxt(currentFmgBank.fmgLangs[currentFmgBank.LanguageFolder], false);
                 }
-                ImguiUtils.ShowHoverTooltip("Export: all text will be exported");
+                UIHelper.ShowHoverTooltip("Export: all text will be exported");
 
                 ImGui.EndMenu();
             }
@@ -172,26 +173,26 @@ public class TextEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("View"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Text Categories"))
             {
-                CFG.Current.Interface_TextEditor_TextCategories = !CFG.Current.Interface_TextEditor_TextCategories;
+                UI.Current.Interface_TextEditor_TextCategories = !UI.Current.Interface_TextEditor_TextCategories;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextCategories);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_TextCategories);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Text Entry"))
             {
-                CFG.Current.Interface_TextEditor_TextEntry = !CFG.Current.Interface_TextEditor_TextEntry;
+                UI.Current.Interface_TextEditor_TextEntry = !UI.Current.Interface_TextEditor_TextEntry;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextEntry);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_TextEntry);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Tool Window"))
             {
-                CFG.Current.Interface_TextEditor_ToolConfigurationWindow = !CFG.Current.Interface_TextEditor_ToolConfigurationWindow;
+                UI.Current.Interface_TextEditor_ToolConfigurationWindow = !UI.Current.Interface_TextEditor_ToolConfigurationWindow;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_ToolConfigurationWindow);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_ToolConfigurationWindow);
             ImGui.EndMenu();
         }
 
@@ -235,30 +236,30 @@ public class TextEditorScreen : EditorScreen
 
             if (ImGui.BeginMenu("Text Output"))
             {
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+                UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
                 if (ImGui.MenuItem("Vanilla"))
                 {
                     CurrentTargetOutputMode = TargetOutputMode.Vanilla;
                 }
-                ImguiUtils.ShowActiveStatus(CurrentTargetOutputMode == TargetOutputMode.Vanilla);
+                UIHelper.ShowActiveStatus(CurrentTargetOutputMode == TargetOutputMode.Vanilla);
 
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+                UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
                 if (ImGui.MenuItem("DLC1"))
                 {
                     CurrentTargetOutputMode = TargetOutputMode.DLC1;
                 }
-                ImguiUtils.ShowActiveStatus(CurrentTargetOutputMode == TargetOutputMode.DLC1);
+                UIHelper.ShowActiveStatus(CurrentTargetOutputMode == TargetOutputMode.DLC1);
 
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+                UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
                 if (ImGui.MenuItem("DLC2"))
                 {
                     CurrentTargetOutputMode = TargetOutputMode.DLC2;
                 }
-                ImguiUtils.ShowActiveStatus(CurrentTargetOutputMode == TargetOutputMode.DLC2);
+                UIHelper.ShowActiveStatus(CurrentTargetOutputMode == TargetOutputMode.DLC2);
 
                 ImGui.EndMenu();
             }
-            ImguiUtils.ShowHoverTooltip("Allows you to switch the target FMG output on save. By default for DS3 dlc2 and ER this is dlc02.");
+            UIHelper.ShowHoverTooltip("Allows you to switch the target FMG output on save. By default for DS3 dlc2 and ER this is dlc02.");
         }
     }
 
@@ -276,7 +277,7 @@ public class TextEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -667,7 +668,7 @@ public class TextEditorScreen : EditorScreen
             return;
         }
 
-        if (CFG.Current.Interface_TextEditor_TextCategories)
+        if (UI.Current.Interface_TextEditor_TextCategories)
         {
             ImGui.Begin("Text Categories");
             ImGui.Indent();
@@ -864,7 +865,7 @@ public class TextEditorScreen : EditorScreen
             ImGui.End();
         }
 
-        if(CFG.Current.Interface_TextEditor_TextEntry)
+        if(UI.Current.Interface_TextEditor_TextEntry)
         {
             ImGui.Begin("Text");
             if (_activeEntryGroup == null)
@@ -915,7 +916,7 @@ public class TextEditorScreen : EditorScreen
             ImGui.End();
         }
 
-        if (CFG.Current.Interface_ModelEditor_ToolConfigurationWindow)
+        if (UI.Current.Interface_ModelEditor_ToolConfigurationWindow)
         {
             ToolWindow.OnGui();
         }

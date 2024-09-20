@@ -4,8 +4,8 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Utils;
+using StudioCore.Interface;
 using StudioCore.Locators;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -134,31 +134,31 @@ public static class TimeActBank
     /// </summary>
     public static void DisplayLoadState()
     {
-        ImguiUtils.WrappedText($"This editor is still loading:");
+        UIHelper.WrappedText($"This editor is still loading:");
         if (IsTemplatesLoaded)
         {
             ImGui.Text($"Templates:");
             ImGui.SameLine();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "LOADED");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
         }
         else
         {
             ImGui.Text($"Templates:");
             ImGui.SameLine();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Warning_Text_Color, "LOADING");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, "LOADING");
         }
 
         if (IsCharacterTimeActsLoaded)
         {
             ImGui.Text($"Character Time Acts:");
             ImGui.SameLine();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "LOADED");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
         }
         else
         {
             ImGui.Text($"Character Time Acts:");
             ImGui.SameLine();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Warning_Text_Color, "LOADING");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, "LOADING");
         }
 
         var title = $"{TimeActUtils.GetObjectTitle()}";
@@ -167,13 +167,13 @@ public static class TimeActBank
         {
             ImGui.Text($"{title} Time Acts:");
             ImGui.SameLine();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "LOADED");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
         }
         else
         {
             ImGui.Text($"{title} Time Acts:");
             ImGui.SameLine();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Warning_Text_Color, "LOADING");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, "LOADING");
         }
     }
 

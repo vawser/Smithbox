@@ -2,7 +2,7 @@
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor.Actions;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.ModelEditor.SubEditors
 {
@@ -87,7 +87,7 @@ namespace StudioCore.Editors.ModelEditor.SubEditors
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text("Byte");
-            ImguiUtils.ShowHoverTooltip("");
+            UIHelper.ShowHoverTooltip("");
 
             ImGui.NextColumn();
 

@@ -6,7 +6,6 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -644,7 +643,7 @@ public class MapPropertyEditor
         var id = 0;
 
         // This should be rewritten somehow it's super ugly
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRow_Text);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRow_Text);
         PropertyInfo nameProp = row.GetType().GetProperty("Name");
         PropertyInfo idProp = row.GetType().GetProperty("ID");
         PropEditorPropInfoRow(row, nameProp, "Name", ref id, null);
@@ -1075,7 +1074,7 @@ public class MapPropertyEditor
 
                 ImGui.EndCombo();
             }
-            ImguiUtils.ShowHoverTooltip("Filter the property view, narrowing down what is visible.");
+            UIHelper.ShowHoverTooltip("Filter the property view, narrowing down what is visible.");
             ImGui.NextColumn();
         }
 
@@ -1480,7 +1479,7 @@ public class MapPropertyEditor
 
             if (desc != "")
             {
-                ImguiUtils.ShowHoverTooltip(desc);
+                UIHelper.ShowHoverTooltip(desc);
             }
         }
     }
@@ -1490,11 +1489,11 @@ public class MapPropertyEditor
         var scale = Smithbox.GetUIScale();
         HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();
 
-        if (!CFG.Current.Interface_MapEditor_Properties)
+        if (!UI.Current.Interface_MapEditor_Properties)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.ImGui_ChildBg);
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.ImGui_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(350, h - 80) * scale, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowPos(new Vector2(w - 370, 20) * scale, ImGuiCond.FirstUseEver);
         ImGui.Begin($@"Properties##{id}");
@@ -1515,7 +1514,7 @@ public class MapPropertyEditor
             ImGui.TextColored(new Vector4(0.5f, 1.0f, 0.0f, 1.0f),
                 " Editing Multiple Objects.\n Changes will be applied to all selected objects.");
             ImGui.Separator();
-            ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_MultipleInput_Background);
+            ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_MultipleInput_Background);
             ImGui.BeginChild("MSB_EditingMultipleObjsChild");
             PropEditorSelectedEntities(selection);
             ImGui.PopStyleColor();

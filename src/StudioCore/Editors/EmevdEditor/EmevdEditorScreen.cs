@@ -8,6 +8,7 @@ using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.EmevdEditor.Actions;
 using StudioCore.Editors.EmevdEditor.Tools;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -72,21 +73,21 @@ public class EmevdEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Edit"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo All", "", false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
             if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false,
                     EditorActionManager.CanRedo()))
             {
@@ -108,47 +109,47 @@ public class EmevdEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("View"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Files"))
             {
-                CFG.Current.Interface_EmevdEditor_Files = !CFG.Current.Interface_EmevdEditor_Files;
+                UI.Current.Interface_EmevdEditor_Files = !UI.Current.Interface_EmevdEditor_Files;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Files);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_Files);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Events"))
             {
-                CFG.Current.Interface_EmevdEditor_Events = !CFG.Current.Interface_EmevdEditor_Events;
+                UI.Current.Interface_EmevdEditor_Events = !UI.Current.Interface_EmevdEditor_Events;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Events);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_Events);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Instructions"))
             {
-                CFG.Current.Interface_EmevdEditor_Instructions = !CFG.Current.Interface_EmevdEditor_Instructions;
+                UI.Current.Interface_EmevdEditor_Instructions = !UI.Current.Interface_EmevdEditor_Instructions;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Instructions);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_Instructions);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Event Properties"))
             {
-                CFG.Current.Interface_EmevdEditor_EventProperties = !CFG.Current.Interface_EmevdEditor_EventProperties;
+                UI.Current.Interface_EmevdEditor_EventProperties = !UI.Current.Interface_EmevdEditor_EventProperties;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_EventProperties);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_EventProperties);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Instruction Properties"))
             {
-                CFG.Current.Interface_EmevdEditor_InstructionProperties = !CFG.Current.Interface_EmevdEditor_InstructionProperties;
+                UI.Current.Interface_EmevdEditor_InstructionProperties = !UI.Current.Interface_EmevdEditor_InstructionProperties;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_InstructionProperties);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_InstructionProperties);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Tool Window"))
             {
-                CFG.Current.Interface_EmevdEditor_ToolConfigurationWindow = !CFG.Current.Interface_EmevdEditor_ToolConfigurationWindow;
+                UI.Current.Interface_EmevdEditor_ToolConfigurationWindow = !UI.Current.Interface_EmevdEditor_ToolConfigurationWindow;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_ToolConfigurationWindow);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_ToolConfigurationWindow);
 
             ImGui.EndMenu();
         }
@@ -159,7 +160,7 @@ public class EmevdEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -189,23 +190,23 @@ public class EmevdEditorScreen : EditorScreen
 
             if (EmevdBank.IsLoaded && EmevdBank.IsSupported)
             {
-                if (CFG.Current.Interface_EmevdEditor_Files)
+                if (UI.Current.Interface_EmevdEditor_Files)
                 {
                     EventScriptFileView();
                 }
-                if (CFG.Current.Interface_EmevdEditor_Events)
+                if (UI.Current.Interface_EmevdEditor_Events)
                 {
                     EventScriptEventListView();
                 }
-                if (CFG.Current.Interface_EmevdEditor_Instructions)
+                if (UI.Current.Interface_EmevdEditor_Instructions)
                 {
                     EventScriptEventInstructionView();
                 }
-                if (CFG.Current.Interface_EmevdEditor_EventProperties)
+                if (UI.Current.Interface_EmevdEditor_EventProperties)
                 {
                     EventScriptEventParameterView();
                 }
-                if (CFG.Current.Interface_EmevdEditor_InstructionProperties)
+                if (UI.Current.Interface_EmevdEditor_InstructionProperties)
                 {
                     EventScriptInstructionParameterView();
                 }
@@ -216,7 +217,7 @@ public class EmevdEditorScreen : EditorScreen
         ToolSubMenu.Shortcuts();
         ActionSubMenu.Shortcuts();
 
-        if (CFG.Current.Interface_EmevdEditor_ToolConfigurationWindow)
+        if (UI.Current.Interface_EmevdEditor_ToolConfigurationWindow)
         {
             ToolWindow.OnGui();
         }
@@ -272,7 +273,7 @@ public class EmevdEditorScreen : EditorScreen
             }
 
             var aliasName = AliasUtils.GetMapNameAlias(info.Name);
-            AliasUtils.DisplayAlias(aliasName);
+            UIHelper.DisplayAlias(aliasName);
         }
 
         ImGui.End();
@@ -317,7 +318,7 @@ public class EmevdEditorScreen : EditorScreen
                     SelectEvent = true;
                 }
 
-                AliasUtils.DisplayColoredAlias(eventName, CFG.Current.ImGui_AliasName_Text);
+                UIHelper.DisplayColoredAlias(eventName, UI.Current.ImGui_AliasName_Text);
             }
         }
 

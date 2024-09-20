@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using Octokit;
 using StudioCore.Configuration;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -59,11 +60,11 @@ public class KeybindWindow
             return;
 
         ImGui.SetNextWindowSize(new Vector2(900.0f, 800.0f) * scale, ImGuiCond.FirstUseEver);
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Imgui_Moveable_MainBg);
-        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Imgui_Moveable_TitleBg);
-        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Imgui_Moveable_TitleBg_Active);
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBg);
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.Imgui_Moveable_MainBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBg, UI.Current.Imgui_Moveable_TitleBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.Imgui_Moveable_TitleBg_Active);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(10.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(5.0f, 5.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
@@ -153,7 +154,7 @@ public class CommonKeybindTab
     public void Display()
     {
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
         ImGui.Separator();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
@@ -219,7 +220,7 @@ public class ViewportKeybindTab
     public void Display()
     {
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
         ImGui.Separator();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
@@ -311,7 +312,7 @@ public class MapEditorKeybindTab
     public void Display()
     {
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
         ImGui.Separator();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
@@ -577,7 +578,7 @@ public class ModelEditorKeybindTab
     public void Display()
     {
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
         ImGui.Separator();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
@@ -608,7 +609,7 @@ public class ParamEditorKeybindTab
     public void Display()
     {
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
         ImGui.Separator();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
@@ -738,7 +739,7 @@ public class TextEditorKeybindTab
     public void Display()
     {
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
         ImGui.Separator();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
@@ -772,7 +773,7 @@ public class GparamEditorKeybindTab
     public void Display()
     {
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
         ImGui.Separator();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
@@ -799,7 +800,7 @@ public class TimeActEditorKeybindTab
     public void Display()
     {
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
         ImGui.Separator();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
@@ -822,7 +823,7 @@ public class TextureViewerKeybindTab
     public void Display()
     {
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Keybinds");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Keybinds");
         ImGui.Separator();
 
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))

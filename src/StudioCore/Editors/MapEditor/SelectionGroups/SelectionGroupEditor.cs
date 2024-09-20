@@ -153,7 +153,7 @@ public class SelectionGroupEditor
         {
             CreateSelectionGroup("Internal");
         }
-        ImguiUtils.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.MAP_CreateSelectionGroup.HintText}\nBring up the selection group creation menu to assign your current selection to a selection group.");
+        UIHelper.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.MAP_CreateSelectionGroup.HintText}\nBring up the selection group creation menu to assign your current selection to a selection group.");
 
         if (ImGui.BeginPopup("##selectionGroupModalInternal"))
         {
@@ -167,7 +167,7 @@ public class SelectionGroupEditor
         ImGui.BeginChild("##selectionGroupList");
 
         ImGui.InputText($"Search", ref _searchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         foreach (var entry in Bank.Groups.Resources)
         {
@@ -230,13 +230,13 @@ public class SelectionGroupEditor
             {
                 SelectSelectionGroup();
             }
-            ImguiUtils.ShowHoverTooltip("Select the map objects listed by your currently selected group.");
+            UIHelper.ShowHoverTooltip("Select the map objects listed by your currently selected group.");
 
             if (ImGui.Button("Edit Group", new Vector2(buttonWidth, 32)))
             {
                 ImGui.OpenPopup($"##selectionGroupModalEdit");
             }
-            ImguiUtils.ShowHoverTooltip("Edit the name, tags and keybind for the selected group.");
+            UIHelper.ShowHoverTooltip("Edit the name, tags and keybind for the selected group.");
 
             if (ImGui.BeginPopup("##selectionGroupModalEdit"))
             {
@@ -249,21 +249,21 @@ public class SelectionGroupEditor
             {
                 DeleteSelectionGroup();
             }
-            ImguiUtils.ShowHoverTooltip("Delete this selected group.");
+            UIHelper.ShowHoverTooltip("Delete this selected group.");
 
             if (selectedResourceTags.Count > 0)
             {
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedText("Tags:");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedText("Tags:");
                 var tagString = string.Join(" ", selectedResourceTags);
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Default_Text_Color, tagString);
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Default_Text_Color, tagString);
             }
 
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedText("Contents:");
+            UIHelper.WrappedText("");
+            UIHelper.WrappedText("Contents:");
             foreach (var entry in selectedResourceContents)
             {
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, entry);
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, entry);
             }
         }
         ImGui.EndChild();
@@ -278,9 +278,9 @@ public class SelectionGroupEditor
         var buttonWidth = width / 100 * 95;
 
         ImGui.InputText("Group Name##selectionGroup_GroupName", ref createPromptGroupName, 255);
-        ImguiUtils.ShowHoverTooltip("The name of the selection group.");
+        UIHelper.ShowHoverTooltip("The name of the selection group.");
         ImGui.InputText("Tags##selectionGroup_Tags", ref createPromptTags, 255);
-        ImguiUtils.ShowHoverTooltip("Separate each tag with the , character as a delimiter.");
+        UIHelper.ShowHoverTooltip("Separate each tag with the , character as a delimiter.");
 
         var keyBind = GetSelectionGroupKeyBind(currentKeyBindOption);
         var previewString = "None";
@@ -314,7 +314,7 @@ public class SelectionGroupEditor
 
             ImGui.EndCombo();
         }
-        ImguiUtils.ShowHoverTooltip("The keybind to quickly select the contents of this selection group.");
+        UIHelper.ShowHoverTooltip("The keybind to quickly select the contents of this selection group.");
 
         if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
         {
@@ -329,9 +329,9 @@ public class SelectionGroupEditor
         var buttonWidth = width / 100 * 95;
 
         ImGui.InputText("Group Name##selectionGroup_GroupName", ref editPromptGroupName, 255);
-        ImguiUtils.ShowHoverTooltip("The name of the selection group.");
+        UIHelper.ShowHoverTooltip("The name of the selection group.");
         ImGui.InputText("Tags##selectionGroup_Tags", ref editPromptTags, 255);
-        ImguiUtils.ShowHoverTooltip("Separate each tag with the , character as a delimiter.");
+        UIHelper.ShowHoverTooltip("Separate each tag with the , character as a delimiter.");
 
         var keyBind = GetSelectionGroupKeyBind(editPromptKeybind);
         var previewString = "None";
@@ -365,7 +365,7 @@ public class SelectionGroupEditor
 
             ImGui.EndCombo();
         }
-        ImguiUtils.ShowHoverTooltip("The keybind to quickly select the contents of this selection group.");
+        UIHelper.ShowHoverTooltip("The keybind to quickly select the contents of this selection group.");
 
         if (ImGui.Button("Edit Group", new Vector2(buttonWidth, 32)))
         {

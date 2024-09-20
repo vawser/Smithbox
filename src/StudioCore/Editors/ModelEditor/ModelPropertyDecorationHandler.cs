@@ -1,6 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System;
 using System.Linq;
 
@@ -54,7 +54,7 @@ namespace StudioCore.Editors.ModelEditor
 
             ImGui.SameLine();
             ImGui.AlignTextToFramePadding();
-            ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{alias}");
+            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"{alias}");
         }
 
         public void MaterialIndexDecorator(int index)
@@ -96,7 +96,7 @@ namespace StudioCore.Editors.ModelEditor
 
             ImGui.SameLine();
             ImGui.AlignTextToFramePadding();
-            ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{alias}");
+            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"{alias}");
         }
 
         public void NodeIndexDecorator(int index)
@@ -138,7 +138,7 @@ namespace StudioCore.Editors.ModelEditor
 
             ImGui.SameLine();
             ImGui.AlignTextToFramePadding();
-            ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{alias}");
+            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"{alias}");
         }
 
         public void LayoutIndexDecorator(int index)
@@ -180,7 +180,7 @@ namespace StudioCore.Editors.ModelEditor
 
             ImGui.SameLine();
             ImGui.AlignTextToFramePadding();
-            ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{alias}");
+            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"{alias}");
         }
 
         public void LayoutTypeDecorator(int value)
@@ -191,7 +191,7 @@ namespace StudioCore.Editors.ModelEditor
             alias = layoutType.ToString();
 
             ImGui.AlignTextToFramePadding();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, @$"{alias}");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, @$"{alias}");
         }
 
         public void LayoutSemanticDecorator(int value)
@@ -202,7 +202,7 @@ namespace StudioCore.Editors.ModelEditor
             alias = layoutType.ToString();
 
             ImGui.AlignTextToFramePadding();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, @$"{alias}");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, @$"{alias}");
         }
     }
 }

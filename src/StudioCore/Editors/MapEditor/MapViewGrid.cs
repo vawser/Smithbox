@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.DebugPrimitives;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Interface;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
@@ -56,7 +57,7 @@ public class MapViewGrid
             Regenerate();
         }
 
-        if (CFG.Current.Interface_MapEditor_Viewport_Grid && Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
+        if (UI.Current.Interface_MapEditor_Viewport_Grid && Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
         {
             ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.MapEditor_Viewport_Grid_Color);
             ViewportGrid.Visible = true;

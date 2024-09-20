@@ -7,6 +7,7 @@ using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.Utilities;
@@ -53,16 +54,16 @@ namespace StudioCore.Editors.ModelEditor
             if (!Smithbox.AliasCacheHandler.AliasCache.UpdateCacheComplete)
                 return;
 
-            if (!CFG.Current.Interface_ModelEditor_AssetBrowser)
+            if (!UI.Current.Interface_ModelEditor_AssetBrowser)
                 return;
 
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
             if (ImGui.Begin($@"Asset Browser##ModelAssetBrower"))
             {
                 ImGui.InputText($"Search", ref _searchInput, 255);
-                ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+                UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
                 DisplayLooseSection();
                 DisplayCharacterList();
@@ -119,7 +120,7 @@ namespace StudioCore.Editors.ModelEditor
                 {
                     var aliasName = referenceDict[lowerName].name;
 
-                    AliasUtils.DisplayAlias(aliasName);
+                    UIHelper.DisplayAlias(aliasName);
                 }
 
                 // Tags

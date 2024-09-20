@@ -2,7 +2,6 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Scene;
-using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -11,6 +10,7 @@ using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editor;
 using StudioCore.Core.Project;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -55,19 +55,19 @@ public class ModelHierarchyView
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        if (!CFG.Current.Interface_ModelEditor_ModelHierarchy)
+        if (!UI.Current.Interface_ModelEditor_ModelHierarchy)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin($@"Model Hierarchy##ModelEditorModelHierarchy"))
         {
             ImGui.InputText($"Search", ref _searchInput, 255);
-            ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+            UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
             ImGui.SameLine();
             ImGui.Checkbox("##exactSearch", ref CFG.Current.ModelEditor_ExactSearch);
-            ImguiUtils.ShowHoverTooltip("Enable exact search.");
+            UIHelper.ShowHoverTooltip("Enable exact search.");
 
             if (Screen.ResourceHandler.CurrentFLVER != null && !SuspendView)
             {

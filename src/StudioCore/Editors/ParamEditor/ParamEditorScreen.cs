@@ -26,6 +26,7 @@ using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Core.Project;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -69,7 +70,7 @@ public class FMGItemParamDecorator : IParamDecorator
         if (entry != null)
         {
             ImGui.SameLine();
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_FmgLink_Text);
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgLink_Text);
             ImGui.TextUnformatted($@" <{entry.Text}>");
             ImGui.PopStyleColor();
         }
@@ -208,19 +209,19 @@ public class ParamEditorScreen : EditorScreen
         // Menu Options
         if (ImGui.BeginMenu("Edit"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false, EditorActionManager.CanUndo()))
             {
                 ParamUndo();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo All", "", false, EditorActionManager.CanUndo()))
             {
                 ParamUndoAll();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
             if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false, EditorActionManager.CanRedo()))
             {
                 ParamRedo();
@@ -241,19 +242,19 @@ public class ParamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("View"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Editor"))
             {
-                CFG.Current.Interface_ParamEditor_Table = !CFG.Current.Interface_ParamEditor_Table;
+                UI.Current.Interface_ParamEditor_Table = !UI.Current.Interface_ParamEditor_Table;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Table);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_ParamEditor_Table);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Tool Window"))
             {
-                CFG.Current.Interface_ParamEditor_ToolConfiguration = !CFG.Current.Interface_ParamEditor_ToolConfiguration;
+                UI.Current.Interface_ParamEditor_ToolConfiguration = !UI.Current.Interface_ParamEditor_ToolConfiguration;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParamEditor_ToolConfiguration);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_ParamEditor_ToolConfiguration);
 
             ImGui.EndMenu();
         }
@@ -263,7 +264,7 @@ public class ParamEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Data"))
         {
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Download}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Download}");
             if (ImGui.BeginMenu("Export CSV", _activeView._selection.ActiveParamExists()))
             {
                 DelimiterInputText();
@@ -336,7 +337,7 @@ public class ParamEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Upload}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Upload}");
             if (ImGui.BeginMenu("Import CSV", _activeView._selection.ActiveParamExists()))
             {
                 DelimiterInputText();
@@ -462,13 +463,13 @@ public class ParamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Overviews"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.List}");
             if (ImGui.MenuItem("New Overview"))
             {
                 AddView();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.ChainBroken}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.ChainBroken}");
             if (ImGui.MenuItem("Close Overview", null, false, CountViews() > 1))
             {
                 RemoveView(_activeView);
@@ -489,14 +490,14 @@ public class ParamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Comparison"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Book}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Book}");
             if (ImGui.MenuItem("View comparison report", null, false))
             {
                 ParamComparisonReport.GenerateReport();
             }
-            ImguiUtils.ShowHoverTooltip("View a text report that details the differences between the current project params and the vanilla params.");
+            UIHelper.ShowHoverTooltip("View a text report that details the differences between the current project params and the vanilla params.");
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Database}");
             if (ImGui.MenuItem("Show vanilla params", null, CFG.Current.Param_ShowVanillaParams))
             {
                 CFG.Current.Param_ShowVanillaParams = !CFG.Current.Param_ShowVanillaParams;
@@ -504,13 +505,13 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.ChainBroken}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.ChainBroken}");
             if (ImGui.MenuItem("Clear current row comparison", null, false, _activeView != null && _activeView._selection.GetCompareRow() != null))
             {
                 _activeView._selection.SetCompareRow(null);
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.ChainBroken}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.ChainBroken}");
             if (ImGui.MenuItem("Clear current field comparison", null, false, _activeView != null && _activeView._selection.GetCompareCol() != null))
             {
                 _activeView._selection.SetCompareCol(null);
@@ -518,7 +519,7 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.FilesO}");
             if (ImGui.MenuItem("Load params for comparison...", null, false))
             {
                 string[] allParamTypes =
@@ -582,7 +583,7 @@ public class ParamEditorScreen : EditorScreen
                 }
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.WindowClose}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.WindowClose}");
             if (ImGui.BeginMenu("Clear param comparison...", ParamBank.AuxBanks.Count > 0))
             {
                 for (var i = 0; i < ParamBank.AuxBanks.Count; i++)
@@ -598,7 +599,7 @@ public class ParamEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.WindowClose}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.WindowClose}");
             if (ImGui.MenuItem("Clear all param comparisons", null, false, ParamBank.AuxBanks.Count > 0))
             {
                 ParamBank.AuxBanks = new Dictionary<string, ParamBank>();
@@ -877,7 +878,7 @@ public class ParamEditorScreen : EditorScreen
                 continue;
             }
 
-            if(!CFG.Current.Interface_ParamEditor_Table)
+            if(!UI.Current.Interface_ParamEditor_Table)
             {
                 continue;
             }
@@ -888,7 +889,7 @@ public class ParamEditorScreen : EditorScreen
                                 ? "Param Editor View"
                                 : Utils.ImGuiEscape(name, "null")) + (view == _activeView ? "**" : "");
 
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
             if(CountViews() == 1)
@@ -929,7 +930,7 @@ public class ParamEditorScreen : EditorScreen
         }
 
         // Toolbar
-        if (CFG.Current.Interface_ParamEditor_ToolConfiguration)
+        if (UI.Current.Interface_ParamEditor_ToolConfiguration)
         {
             ToolWindow.OnGui();
         }
@@ -1079,7 +1080,7 @@ public class ParamEditorScreen : EditorScreen
 
             if (!_paramUpgraderLoaded)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Benefit_Text_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
 
                 if (ImGui.BeginMenu("Upgrade Params"))
                 {
@@ -1094,7 +1095,7 @@ public class ParamEditorScreen : EditorScreen
             }
             else if (ParamBank.VanillaBank.ParamVersion <= ParamUpgradeVersionSoftWhitelist)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Warning_Text_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
 
                 var newVersionString = Utils.ParseRegulationVersion(ParamBank.VanillaBank.ParamVersion);
                 var oldVersionString = Utils.ParseRegulationVersion(ParamBank.PrimaryBank.ParamVersion);
@@ -1109,7 +1110,7 @@ public class ParamEditorScreen : EditorScreen
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Invalid_Text_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Invalid_Text_Color);
 
                 if (ImGui.BeginMenu("Upgrade Params"))
                 {

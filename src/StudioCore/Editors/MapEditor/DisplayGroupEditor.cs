@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Interface;
 using StudioCore.Scene;
 using StudioCore.Settings;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ public class DisplayGroupEditor
     {
         var scale = Smithbox.GetUIScale();
 
-        if (!CFG.Current.Interface_MapEditor_RenderGroups)
+        if (!UI.Current.Interface_MapEditor_RenderGroups)
             return;
 
         ImGui.SetNextWindowSize(new Vector2(100, 100) * scale);
@@ -254,26 +255,26 @@ public class DisplayGroupEditor
                     {
                         // Selection dispgroup and drawgroup is ticked
                         // Yellow
-                        ImGui.PushStyleColor(ImGuiCol.FrameBg,  CFG.Current.DisplayGroupEditor_CombinedActive_Frame);
-                        ImGui.PushStyleColor(ImGuiCol.CheckMark, CFG.Current.DisplayGroupEditor_CombinedActive_Checkbox);
+                        ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.DisplayGroupEditor_CombinedActive_Frame);
+                        ImGui.PushStyleColor(ImGuiCol.CheckMark, UI.Current.DisplayGroupEditor_CombinedActive_Checkbox);
                     }
                     else if (drawActive)
                     {
                         // Selection drawgroup is ticked
                         // Green
-                        ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.DisplayGroupEditor_DrawActive_Frame);
-                        ImGui.PushStyleColor(ImGuiCol.CheckMark, CFG.Current.DisplayGroupEditor_DrawActive_Checkbox);
+                        ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.DisplayGroupEditor_DrawActive_Frame);
+                        ImGui.PushStyleColor(ImGuiCol.CheckMark, UI.Current.DisplayGroupEditor_DrawActive_Checkbox);
                     }
                     else if (dispActive)
                     {
                         // Selection dispGroup is ticked
                         // Red
-                        ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.DisplayGroupEditor_DisplayActive_Frame);
-                        ImGui.PushStyleColor(ImGuiCol.CheckMark, CFG.Current.DisplayGroupEditor_DisplayActive_Checkbox);
+                        ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.DisplayGroupEditor_DisplayActive_Frame);
+                        ImGui.PushStyleColor(ImGuiCol.CheckMark, UI.Current.DisplayGroupEditor_DisplayActive_Checkbox);
                     }
                     if (HighlightedGroups.Contains(cellKey))
                     {
-                        ImGui.PushStyleColor(ImGuiCol.Border, CFG.Current.DisplayGroupEditor_Border_Highlight);
+                        ImGui.PushStyleColor(ImGuiCol.Border, UI.Current.DisplayGroupEditor_Border_Highlight);
                     }
 
                     if (ImGui.Checkbox($@"##cell_{cellKey}", ref check))

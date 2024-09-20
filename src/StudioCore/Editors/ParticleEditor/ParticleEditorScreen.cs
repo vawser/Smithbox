@@ -7,6 +7,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.ParticleEditor;
 using StudioCore.Editors.ParticleEditor.Toolbar;
 using StudioCore.Editors.TalkEditor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.IO;
@@ -75,19 +76,19 @@ public class ParticleEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Edit"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo All", "", false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
             if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false, EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
@@ -100,33 +101,33 @@ public class ParticleEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("View"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Files"))
             {
-                CFG.Current.Interface_ParticleEditor_Files = !CFG.Current.Interface_ParticleEditor_Files;
+                UI.Current.Interface_ParticleEditor_Files = !UI.Current.Interface_ParticleEditor_Files;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParticleEditor_Files);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_ParticleEditor_Files);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Particles"))
             {
-                CFG.Current.Interface_ParticleEditor_Particles = !CFG.Current.Interface_ParticleEditor_Particles;
+                UI.Current.Interface_ParticleEditor_Particles = !UI.Current.Interface_ParticleEditor_Particles;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParticleEditor_Particles);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_ParticleEditor_Particles);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Data"))
             {
-                CFG.Current.Interface_ParticleEditor_Data = !CFG.Current.Interface_ParticleEditor_Data;
+                UI.Current.Interface_ParticleEditor_Data = !UI.Current.Interface_ParticleEditor_Data;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParticleEditor_Data);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_ParticleEditor_Data);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Toolbar"))
             {
-                CFG.Current.Interface_ParticleEditor_Toolbar = !CFG.Current.Interface_ParticleEditor_Toolbar;
+                UI.Current.Interface_ParticleEditor_Toolbar = !UI.Current.Interface_ParticleEditor_Toolbar;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParticleEditor_Toolbar);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_ParticleEditor_Toolbar);
 
             ImGui.EndMenu();
         }
@@ -137,7 +138,7 @@ public class ParticleEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -175,21 +176,21 @@ public class ParticleEditorScreen : EditorScreen
 
             if (ParticleBank.IsLoaded)
             {
-                if (CFG.Current.Interface_ParticleEditor_Files)
+                if (UI.Current.Interface_ParticleEditor_Files)
                 {
                     ParticleFileView();
                 }
-                if (CFG.Current.Interface_ParticleEditor_Particles)
+                if (UI.Current.Interface_ParticleEditor_Particles)
                 {
                     ParticleListView();
                 }
-                if (CFG.Current.Interface_ParticleEditor_Data)
+                if (UI.Current.Interface_ParticleEditor_Data)
                 {
                     ParticleDataView();
                 }
             }
 
-            if(CFG.Current.Interface_ParticleEditor_Toolbar)
+            if(UI.Current.Interface_ParticleEditor_Toolbar)
             {
                 _particleToolbar_ActionList.OnGui();
                 _particleToolbar_Configuration.OnGui();
@@ -239,7 +240,7 @@ public class ParticleEditorScreen : EditorScreen
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _fileSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -282,7 +283,7 @@ public class ParticleEditorScreen : EditorScreen
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _particleSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -336,7 +337,7 @@ public class ParticleEditorScreen : EditorScreen
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _particleDataSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -445,7 +446,7 @@ public class ParticleEditorScreen : EditorScreen
                     ImGui.SameLine();
                     ImGui.PushTextWrapPos();
 
-                    ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"<{prettyName}>");
+                    ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"<{prettyName}>");
 
                     ImGui.PopTextWrapPos();
                 }

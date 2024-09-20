@@ -5,6 +5,7 @@ using StudioCore.Configuration.Keybinds;
 using StudioCore.Configuration.Settings;
 using StudioCore.Editor;
 using StudioCore.Graphics;
+using StudioCore.Interface;
 using StudioCore.Settings;
 using StudioCore.Tools.Development;
 using StudioCore.Tools.Randomiser;
@@ -73,19 +74,19 @@ public class WindowHandler
         {
             SettingsWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"Configuration\n{KeyBindings.Current.CORE_ConfigurationWindow.HintText}");
+        UIHelper.ShowHoverTooltip($"Configuration\n{KeyBindings.Current.CORE_ConfigurationWindow.HintText}");
 
         if (ImGui.Button($"{ForkAwesome.Book}##HelpWindow"))
         {
             HelpWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"Help\n{KeyBindings.Current.CORE_HelpWindow.HintText}");
+        UIHelper.ShowHoverTooltip($"Help\n{KeyBindings.Current.CORE_HelpWindow.HintText}");
 
         if (ImGui.Button($"{ForkAwesome.KeyboardO}##KeybindWindow"))
         {
             KeybindWindow.ToggleMenuVisibility();
         }
-        ImguiUtils.ShowHoverTooltip($"Keybinds\n{KeyBindings.Current.CORE_KeybindConfigWindow.HintText}");
+        UIHelper.ShowHoverTooltip($"Keybinds\n{KeyBindings.Current.CORE_KeybindConfigWindow.HintText}");
 
 
         if (CFG.Current.DisplayRandomiserTools)
@@ -94,7 +95,7 @@ public class WindowHandler
             {
                 RandomiserWindow.ToggleMenuVisibility();
             }
-            ImguiUtils.ShowHoverTooltip($"Randomiser Tools");
+            UIHelper.ShowHoverTooltip($"Randomiser Tools");
         }
 
         if (CFG.Current.DisplayDebugTools)
@@ -103,7 +104,7 @@ public class WindowHandler
             {
                 DebugWindow.ToggleMenuVisibility();
             }
-            ImguiUtils.ShowHoverTooltip($"Debug Tools");
+            UIHelper.ShowHoverTooltip($"Debug Tools");
         }
     }
 }

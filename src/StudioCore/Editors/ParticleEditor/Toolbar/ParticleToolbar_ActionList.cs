@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
@@ -20,7 +21,7 @@ public class ParticleToolbar_ActionList
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * Smithbox.GetUIScale(), ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Toolbar: Actions##Toolbar_ParticleEditor_Actions"))
@@ -37,30 +38,30 @@ public class ParticleToolbar_ActionList
         ImGui.Separator();
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Actions");
-        ImguiUtils.ShowHoverTooltip("Click to select a toolbar action.");
+        UIHelper.ShowHoverTooltip("Click to select a toolbar action.");
         ImGui.SameLine();
 
         if (ImGui.Button($"{ForkAwesome.Refresh}##SwitchOrientation"))
         {
-            CFG.Current.Interface_ParticleEditor_Toolbar_ActionList_TopToBottom = !CFG.Current.Interface_ParticleEditor_Toolbar_ActionList_TopToBottom;
+            UI.Current.Interface_ParticleEditor_Toolbar_ActionList_TopToBottom = !UI.Current.Interface_ParticleEditor_Toolbar_ActionList_TopToBottom;
         }
-        ImguiUtils.ShowHoverTooltip("Toggle the orientation of the action list.");
+        UIHelper.ShowHoverTooltip("Toggle the orientation of the action list.");
         ImGui.SameLine();
 
         if (ImGui.Button($"{ForkAwesome.ExclamationTriangle}##PromptUser"))
         {
-            if (CFG.Current.Interface_ParticleEditor_PromptUser)
+            if (UI.Current.Interface_ParticleEditor_PromptUser)
             {
-                CFG.Current.Interface_ParticleEditor_PromptUser = false;
+                UI.Current.Interface_ParticleEditor_PromptUser = false;
                 PlatformUtils.Instance.MessageBox("Particle Editor Toolbar will no longer prompt the user.", "Smithbox", MessageBoxButtons.OK);
             }
             else
             {
-                CFG.Current.Interface_ParticleEditor_PromptUser = true;
+                UI.Current.Interface_ParticleEditor_PromptUser = true;
                 PlatformUtils.Instance.MessageBox("Particle Editor Toolbar will prompt user before applying certain toolbar actions.", "Smithbox", MessageBoxButtons.OK);
             }
         }
-        ImguiUtils.ShowHoverTooltip("Toggle whether certain toolbar actions prompt the user before applying.");
+        UIHelper.ShowHoverTooltip("Toggle whether certain toolbar actions prompt the user before applying.");
         ImGui.Separator();
 
         //ParamAction_DuplicateRow.Select();

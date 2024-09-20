@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
@@ -32,12 +33,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             UpdateGXListGroupList();
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Replace"))
             {
                 foreach (var entry in GXListGroupFiles)
                 {
-                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                     if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedGXListGroup = entry;
@@ -51,12 +52,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
                 ImGui.EndMenu();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Append"))
             {
                 foreach (var entry in GXListGroupFiles)
                 {
-                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                     if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedGXListGroup = entry;
@@ -96,9 +97,9 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var sectionHeight = ImGui.GetWindowHeight();
             var defaultButtonSize = new Vector2(sectionWidth, 32);
 
-            ImguiUtils.WrappedText("Create a stored GX List Group from your current selection with the GX List list.");
-            ImguiUtils.WrappedText("A stored group can then be used to replace the existing GX List list, or appended to the end.");
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText("Create a stored GX List Group from your current selection with the GX List list.");
+            UIHelper.WrappedText("A stored group can then be used to replace the existing GX List list, or appended to the end.");
+            UIHelper.WrappedText("");
 
             UpdateGXListGroupList();
 
@@ -136,7 +137,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteGXListGroup(entry);
                         }
-                        ImguiUtils.ShowHoverTooltip("Delete this GX List group.");
+                        UIHelper.ShowHoverTooltip("Delete this GX List group.");
 
                         ImGui.EndPopup();
                     }
@@ -170,14 +171,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceGXListList(screen, SelectedGXListList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                ImguiUtils.ShowHoverTooltip("Replace the existing GX Lists with the GX Lists within this GX List group.");
+                UIHelper.ShowHoverTooltip("Replace the existing GX Lists with the GX Lists within this GX List group.");
                 ImGui.SameLine();
                 if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
                 {
                     var action = new AppendGXListList(screen, SelectedGXListList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                ImguiUtils.ShowHoverTooltip("Append to GX Lists within this GX List group to the existing GX Lists.");
+                UIHelper.ShowHoverTooltip("Append to GX Lists within this GX List group to the existing GX Lists.");
             }
 
             ImGui.EndChild();
@@ -193,7 +194,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##GXListGroupName", ref _createGXListGroupName, 255);
-            ImguiUtils.ShowHoverTooltip("The name of the GX List group.");
+            UIHelper.ShowHoverTooltip("The name of the GX List group.");
 
             if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
             {

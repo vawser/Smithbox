@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -42,19 +43,19 @@ public class ActionSubMenu
     {
         if (ImGui.BeginMenu("Actions"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
                 Handler.DetermineDuplicateTarget();
             }
-            ImguiUtils.ShowHoverTooltip("Duplicates the current selection.");
+            UIHelper.ShowHoverTooltip("Duplicates the current selection.");
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 Handler.DetermineDeleteTarget();
             }
-            ImguiUtils.ShowHoverTooltip("Deletes the current selection.");
+            UIHelper.ShowHoverTooltip("Deletes the current selection.");
 
             ImGui.EndMenu();
         }

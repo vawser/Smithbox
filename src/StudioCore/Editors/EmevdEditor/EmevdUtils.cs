@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -56,11 +57,11 @@ public static class EmevdUtils
             alias = $"{classStr} [{insStr}]";
         }
 
-        AliasUtils.DisplayAlias(alias);
+        UIHelper.DisplayAlias(alias);
 
         if (CFG.Current.EmevdEditor_DisplayInstructionParameterNames)
         {
-            AliasUtils.DisplayColoredAlias($"({argsStr})", CFG.Current.ImGui_Benefit_Text_Color);
+            UIHelper.DisplayColoredAlias($"({argsStr})", UI.Current.ImGui_Benefit_Text_Color);
         }
     }
 

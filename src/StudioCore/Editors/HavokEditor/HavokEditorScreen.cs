@@ -21,6 +21,7 @@ using StudioCore.Utilities;
 using System.IO;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
+using StudioCore.Interface;
 
 namespace StudioCore.HavokEditor;
 
@@ -85,7 +86,7 @@ public class HavokEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -277,7 +278,7 @@ public class HavokEditorScreen : EditorScreen
         {
             var aliasName = referenceDict[lowerName].name;
 
-            AliasUtils.DisplayAlias(aliasName);
+            UIHelper.DisplayAlias(aliasName);
         }
     }
 

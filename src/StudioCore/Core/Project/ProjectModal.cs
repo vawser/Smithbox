@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.UserProject;
@@ -87,6 +88,7 @@ public class ProjectModal
             {
                 CFG.RemoveRecentProject(p);
                 CFG.Save();
+                UI.Save();
             }
 
             ImGui.EndPopup();
@@ -101,7 +103,7 @@ public class ProjectModal
         if (CFG.Current.RecentProjects.Count > 0)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedText("Recent Projects");
+            UIHelper.WrappedText("Recent Projects");
             ImGui.Separator();
 
             Smithbox.ProjectHandler.DisplayRecentProjects();

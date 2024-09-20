@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.Utilities;
@@ -59,7 +60,7 @@ public class ParamEditorView
             if (ParamBank.PrimaryBank.ParamVersion < ParamBank.VanillaBank.ParamVersion)
             {
                 ImGui.SameLine();
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Warning_Text_Color, "(out of date)");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, "(out of date)");
             }
         }
 
@@ -279,11 +280,11 @@ public class ParamEditorView
 
             if (primary != null ? primary.Any() : false)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_PrimaryChanged_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             }
 
             if (ImGui.Selectable($"{paramKey}", paramKey == _selection.GetActiveParam()))
@@ -360,7 +361,7 @@ public class ParamEditorView
                     }
                 }
 
-                AliasUtils.DisplayAlias(alias);
+                UIHelper.DisplayAlias(alias);
             }
         }
     }
@@ -754,22 +755,22 @@ public class ParamEditorView
 
             if (auxDiffVanilla && auxDiffPrimaryAndVanilla)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_AuxConflict_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AuxConflict_Text);
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_PrimaryChanged_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
             }
         }
         else
         {
             if (auxDiffVanilla)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_AuxAdded_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AuxAdded_Text);
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             }
         }
 

@@ -1,5 +1,5 @@
 ﻿using StudioCore.Configuration;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,22 +36,22 @@ public static class RotationIncrement
         switch (CFG.Current.Toolbar_Rotate_IncrementType)
         {
             case 0:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Degree Increment [0]: {CFG.Current.Toolbar_Rotate_Increment_0}°");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment [0]: {CFG.Current.Toolbar_Rotate_Increment_0}°");
                 break;
             case 1:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Degree Increment [1]: {CFG.Current.Toolbar_Rotate_Increment_1}°");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment [1]: {CFG.Current.Toolbar_Rotate_Increment_1}°");
                 break;
             case 2:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Degree Increment [2]: {CFG.Current.Toolbar_Rotate_Increment_2}°");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment [2]: {CFG.Current.Toolbar_Rotate_Increment_2}°");
                 break;
             case 3:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Degree Increment [3]: {CFG.Current.Toolbar_Rotate_Increment_3}°");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment [3]: {CFG.Current.Toolbar_Rotate_Increment_3}°");
                 break;
             case 4:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Degree Increment [4]: {CFG.Current.Toolbar_Rotate_Increment_4}°");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment [4]: {CFG.Current.Toolbar_Rotate_Increment_4}°");
                 break;
         }
-        ImguiUtils.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
+        UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
     }
 
     public static void DisplayViewportRotateIncrement()
@@ -59,22 +59,22 @@ public static class RotationIncrement
         switch (CFG.Current.Toolbar_Rotate_IncrementType)
         {
             case 0:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_0}°");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_0}°");
                 break;
             case 1:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_1}°");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_1}°");
                 break;
             case 2:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_2}°");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_2}°");
                 break;
             case 3:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_3}°");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_3}°");
                 break;
             case 4:
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_4}°");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_4}°");
                 break;
         }
-        ImguiUtils.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
+        UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
     }
 
     public static float GetRadianRotateAmount()

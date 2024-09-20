@@ -21,7 +21,7 @@
 // SOFTWARE.
 
 using ImGuiNET;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -263,7 +263,7 @@ public static class InputTracker
             if (ImGui.Button($"{keyText}##disabledbutton{index}", new Vector2(columnWidth, 20 * scale)))
             {
             }
-            ImguiUtils.ShowHoverTooltip("You cannot change this shortcut.");
+            UIHelper.ShowHoverTooltip("You cannot change this shortcut.");
             ImGui.EndDisabled();
         }
 
@@ -279,10 +279,10 @@ public static class InputTracker
         ImGui.Columns(3);
 
         ImGui.AlignTextToFramePadding();
-        ImguiUtils.WrappedText(currentKeyBind.PresentationName);
+        UIHelper.WrappedText(currentKeyBind.PresentationName);
         if (currentKeyBind.Description != "")
         {
-            ImguiUtils.ShowHoverTooltip(currentKeyBind.Description);
+            UIHelper.ShowHoverTooltip(currentKeyBind.Description);
         }
 
         ImGui.NextColumn();

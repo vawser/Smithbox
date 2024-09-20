@@ -2,6 +2,7 @@
 using SoulsFormats;
 using SoulsFormats.Util;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Utilities;
 using System;
@@ -61,8 +62,8 @@ public class MapSearchProperties
 
     public void Display()
     {
-        ImguiUtils.WrappedText("Search loaded map for specific property values.");
-        ImguiUtils.WrappedText("");
+        UIHelper.WrappedText("Search loaded map for specific property values.");
+        UIHelper.WrappedText("");
 
         // propcache
         var selection = Universe.Selection.GetSingleFilteredSelection<Entity>();

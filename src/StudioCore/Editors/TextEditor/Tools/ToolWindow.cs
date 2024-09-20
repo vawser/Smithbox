@@ -2,9 +2,9 @@
 using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TextEditor.Actions;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextEditor;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +35,7 @@ public class ToolWindow
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * Smithbox.GetUIScale(), ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextEditor"))
@@ -46,8 +46,8 @@ public class ToolWindow
             // Generate Entries
             if (ImGui.CollapsingHeader("Generate Entries"))
             {
-                ImguiUtils.WrappedText("Generate entries based on the selected entry (or first member of a multi-selection), with a template applied.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Generate entries based on the selected entry (or first member of a multi-selection), with a template applied.");
+                UIHelper.WrappedText("");
 
                 FmgEntryGenerator.SetupTemplates();
                 FmgEntryGenerator.DisplayConfiguration();
@@ -55,23 +55,23 @@ public class ToolWindow
             // Duplicate Entries
             if (ImGui.CollapsingHeader("Duplicate Entries"))
             {
-                ImguiUtils.WrappedText("Duplicate the selected entries in the Text Entries list.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Duplicate the selected entries in the Text Entries list.");
+                UIHelper.WrappedText("");
 
-                ImguiUtils.WrappedText("Amount:");
+                UIHelper.WrappedText("Amount:");
                 ImGui.SetNextItemWidth(defaultButtonSize.X);
                 ImGui.InputInt("##dupeamount", ref CFG.Current.FMG_DuplicateAmount);
-                ImguiUtils.ShowHoverTooltip("The number of times to duplicate this entry.");
-                ImguiUtils.WrappedText("");
+                UIHelper.ShowHoverTooltip("The number of times to duplicate this entry.");
+                UIHelper.WrappedText("");
 
                 if (CFG.Current.FMG_DuplicateAmount < 1)
                     CFG.Current.FMG_DuplicateAmount = 1;
 
-                ImguiUtils.WrappedText("Increment:");
+                UIHelper.WrappedText("Increment:");
                 ImGui.SetNextItemWidth(defaultButtonSize.X);
                 ImGui.InputInt("##dupeIncrement", ref CFG.Current.FMG_DuplicateIncrement);
-                ImguiUtils.ShowHoverTooltip("The increment to apply to the text id when duplicating.");
-                ImguiUtils.WrappedText("");
+                UIHelper.ShowHoverTooltip("The increment to apply to the text id when duplicating.");
+                UIHelper.WrappedText("");
 
                 if (CFG.Current.FMG_DuplicateIncrement < 1)
                     CFG.Current.FMG_DuplicateIncrement = 1;
@@ -84,8 +84,8 @@ public class ToolWindow
             // Delete Entries
             if (ImGui.CollapsingHeader("Delete Entries"))
             {
-                ImguiUtils.WrappedText("Delete the selected entries in the Text Entries list.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Delete the selected entries in the Text Entries list.");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Apply##action_Delete", defaultButtonSize))
                 {
@@ -95,8 +95,8 @@ public class ToolWindow
             // Sync Entries
             if (ImGui.CollapsingHeader("Sync Description"))
             {
-                ImguiUtils.WrappedText("Sync the descriptions of the selected entries in the Text Entries list with the first member's description.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Sync the descriptions of the selected entries in the Text Entries list with the first member's description.");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Apply##action_Sync", defaultButtonSize))
                 {
@@ -114,8 +114,8 @@ public class ToolWindow
                 // Upgrade FMG Files
                 if (ImGui.CollapsingHeader("Upgrade Text Files"))
                 {
-                    ImguiUtils.WrappedText("Ports all unique entries from item.msgbnd.dcx and menu.msgbnd.dcx to the DLC version: item_dlc02.msgbnd.dcx and menu_dlc02.msgbnd.dcx");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("Ports all unique entries from item.msgbnd.dcx and menu.msgbnd.dcx to the DLC version: item_dlc02.msgbnd.dcx and menu_dlc02.msgbnd.dcx");
+                    UIHelper.WrappedText("");
 
                     if (ImGui.Button("Apply##action_UpdateFmgFiles", defaultButtonSize))
                     {

@@ -10,6 +10,7 @@ using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TextureViewer.Actions;
 using StudioCore.Editors.TextureViewer.Tools;
 using StudioCore.Formats;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Resource;
 using StudioCore.Utilities;
@@ -157,47 +158,47 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         if (ImGui.BeginMenu("View"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Files"))
             {
-                CFG.Current.Interface_TextureViewer_Files = !CFG.Current.Interface_TextureViewer_Files;
+                UI.Current.Interface_TextureViewer_Files = !UI.Current.Interface_TextureViewer_Files;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Files);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Files);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Textures"))
             {
-                CFG.Current.Interface_TextureViewer_Textures = !CFG.Current.Interface_TextureViewer_Textures;
+                UI.Current.Interface_TextureViewer_Textures = !UI.Current.Interface_TextureViewer_Textures;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Textures);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Textures);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Viewer"))
             {
-                CFG.Current.Interface_TextureViewer_Viewer = !CFG.Current.Interface_TextureViewer_Viewer;
+                UI.Current.Interface_TextureViewer_Viewer = !UI.Current.Interface_TextureViewer_Viewer;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Viewer);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Viewer);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Properties"))
             {
-                CFG.Current.Interface_TextureViewer_Properties = !CFG.Current.Interface_TextureViewer_Properties;
+                UI.Current.Interface_TextureViewer_Properties = !UI.Current.Interface_TextureViewer_Properties;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Properties);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Properties);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Tool Window"))
             {
-                CFG.Current.Interface_TextureViewer_ToolConfiguration = !CFG.Current.Interface_TextureViewer_ToolConfiguration;
+                UI.Current.Interface_TextureViewer_ToolConfiguration = !UI.Current.Interface_TextureViewer_ToolConfiguration;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ToolConfiguration);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_ToolConfiguration);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Resource List"))
             {
-                CFG.Current.Interface_TextureViewer_ResourceList = !CFG.Current.Interface_TextureViewer_ResourceList;
+                UI.Current.Interface_TextureViewer_ResourceList = !UI.Current.Interface_TextureViewer_ResourceList;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ResourceList);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_ResourceList);
 
             ImGui.EndMenu();
         }
@@ -208,7 +209,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -271,30 +272,30 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         if (TextureFolderBank.IsLoaded)
         {
-            if (CFG.Current.Interface_TextureViewer_Files)
+            if (UI.Current.Interface_TextureViewer_Files)
             {
                 TextureContainerList();
             }
-            if (CFG.Current.Interface_TextureViewer_Textures)
+            if (UI.Current.Interface_TextureViewer_Textures)
             {
                 TextureList();
             }
-            if (CFG.Current.Interface_TextureViewer_Viewer)
+            if (UI.Current.Interface_TextureViewer_Viewer)
             {
                 TextureViewer();
             }
-            if (CFG.Current.Interface_TextureViewer_Properties)
+            if (UI.Current.Interface_TextureViewer_Properties)
             {
                 TextureProperties();
             }
         }
 
-        if(CFG.Current.Interface_TextureViewer_ToolConfiguration)
+        if(UI.Current.Interface_TextureViewer_ToolConfiguration)
         {
             ToolWindow.OnGui();
         }
 
-        if (CFG.Current.Interface_TextureViewer_ResourceList)
+        if (UI.Current.Interface_TextureViewer_ResourceList)
         {
             ResourceManager.OnGuiDrawResourceList("textureViewerResourceList");
         }
@@ -326,7 +327,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _fileSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -440,7 +441,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                         if (ImGui.IsItemVisible())
                         {
                             var alias = AliasUtils.GetTextureContainerAliasName(info);
-                            AliasUtils.DisplayAlias(alias);
+                            UIHelper.DisplayAlias(alias);
                         }
 
                         ImGui.EndGroup();
@@ -605,7 +606,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _textureSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -713,11 +714,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     {
         ImGui.Begin("Properties##PropertiesView");
 
-        ImguiUtils.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
-        ImguiUtils.WrappedText($"Press {KeyBindings.Current.TEXTURE_ResetZoomLevel.HintText} to reset zoom level to 100%.");
+        UIHelper.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
+        UIHelper.WrappedText($"Press {KeyBindings.Current.TEXTURE_ResetZoomLevel.HintText} to reset zoom level to 100%.");
 
-        ImguiUtils.WrappedText($"");
-        ImguiUtils.WrappedText($"Properties of {CurrentTextureName}:");
+        UIHelper.WrappedText($"");
+        UIHelper.WrappedText($"Properties of {CurrentTextureName}:");
 
         if (_selectedTexture != null)
         {

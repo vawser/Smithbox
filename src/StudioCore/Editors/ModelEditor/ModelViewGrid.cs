@@ -1,5 +1,6 @@
 ﻿using StudioCore.DebugPrimitives;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Interface;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
@@ -55,7 +56,7 @@ public class ModelViewGrid
             Regenerate();
         }
 
-        if (CFG.Current.Interface_ModelEditor_Viewport_Grid && Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
+        if (UI.Current.Interface_ModelEditor_Viewport_Grid && Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
         {
             ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.ModelEditor_Viewport_Grid_Color);
             ViewportGrid.Visible = true;

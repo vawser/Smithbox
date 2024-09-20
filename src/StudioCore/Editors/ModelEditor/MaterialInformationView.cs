@@ -3,7 +3,7 @@ using Org.BouncyCastle.Utilities;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -44,7 +44,7 @@ namespace StudioCore.Editors.ModelEditor
                     {
                         DisplayMatbin();
                     }
-                    ImguiUtils.ShowHoverTooltip("Read-only. Displays MATBIN information for the MATBIN this material references.");
+                    UIHelper.ShowHoverTooltip("Read-only. Displays MATBIN information for the MATBIN this material references.");
                 }
             }
         }
@@ -60,11 +60,11 @@ namespace StudioCore.Editors.ModelEditor
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text("Shader Path");
-            ImguiUtils.ShowHoverTooltip("Network path to the shader source file.");
+            UIHelper.ShowHoverTooltip("Network path to the shader source file.");
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text("Source Path");
-            ImguiUtils.ShowHoverTooltip("Network path to the material source file, either a matxml or an mtd.");
+            UIHelper.ShowHoverTooltip("Network path to the material source file, either a matxml or an mtd.");
 
             //ImGui.AlignTextToFramePadding();
             //ImGui.Text("Key");
@@ -123,7 +123,7 @@ namespace StudioCore.Editors.ModelEditor
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text("Name");
-            ImguiUtils.ShowHoverTooltip("The name of the parameter.");
+            UIHelper.ShowHoverTooltip("The name of the parameter.");
 
             //ImGui.AlignTextToFramePadding();
             //ImGui.Text("Key");
@@ -133,94 +133,94 @@ namespace StudioCore.Editors.ModelEditor
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Boolean");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
             }
             if (param.Type == MATBIN.ParamType.Int)
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Integer");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
 
             }
             if (param.Type == MATBIN.ParamType.Int2)
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Integer [1]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Integer [2]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
             }
             if (param.Type == MATBIN.ParamType.Float)
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
             }
             if (param.Type == MATBIN.ParamType.Float2)
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [1]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [2]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
             }
             if (param.Type == MATBIN.ParamType.Float3)
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [1]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [2]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [3]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
             }
             if (param.Type == MATBIN.ParamType.Float4)
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [1]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [2]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [3]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [4]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
             }
             if (param.Type == MATBIN.ParamType.Float5)
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [1]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [2]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [3]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [4]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Float [5]");
-                ImguiUtils.ShowHoverTooltip("The value to be used.");
+                UIHelper.ShowHoverTooltip("The value to be used.");
             }
 
             ImGui.NextColumn();
@@ -373,11 +373,11 @@ namespace StudioCore.Editors.ModelEditor
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text("Path");
-            ImguiUtils.ShowHoverTooltip("An optional network path to the texture, if not specified in the FLVER.");
+            UIHelper.ShowHoverTooltip("An optional network path to the texture, if not specified in the FLVER.");
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text("Type");
-            ImguiUtils.ShowHoverTooltip(" The type of the sampler.");
+            UIHelper.ShowHoverTooltip(" The type of the sampler.");
 
             //ImGui.AlignTextToFramePadding();
             //ImGui.Text("Key");

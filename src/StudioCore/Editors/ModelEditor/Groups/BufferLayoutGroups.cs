@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
@@ -32,12 +33,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             UpdateBufferLayoutGroupList();
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Replace"))
             {
                 foreach (var entry in BufferLayoutGroupFiles)
                 {
-                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                     if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedBufferLayoutGroup = entry;
@@ -51,12 +52,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
                 ImGui.EndMenu();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Append"))
             {
                 foreach (var entry in BufferLayoutGroupFiles)
                 {
-                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                     if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedBufferLayoutGroup = entry;
@@ -96,9 +97,9 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var sectionHeight = ImGui.GetWindowHeight();
             var defaultButtonSize = new Vector2(sectionWidth, 32);
 
-            ImguiUtils.WrappedText("Create a stored Buffer Layout Group from your current selection with the Buffer Layout list.");
-            ImguiUtils.WrappedText("A stored group can then be used to replace the existing Buffer Layout list, or appended to the end.");
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText("Create a stored Buffer Layout Group from your current selection with the Buffer Layout list.");
+            UIHelper.WrappedText("A stored group can then be used to replace the existing Buffer Layout list, or appended to the end.");
+            UIHelper.WrappedText("");
 
             UpdateBufferLayoutGroupList();
 
@@ -136,7 +137,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteBufferLayoutGroup(entry);
                         }
-                        ImguiUtils.ShowHoverTooltip("Delete this Buffer Layout group.");
+                        UIHelper.ShowHoverTooltip("Delete this Buffer Layout group.");
 
                         ImGui.EndPopup();
                     }
@@ -170,14 +171,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceBufferLayoutList(screen, SelectedBufferLayoutList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                ImguiUtils.ShowHoverTooltip("Replace the existing Buffer Layouts with the Buffer Layouts within this Buffer Layout group.");
+                UIHelper.ShowHoverTooltip("Replace the existing Buffer Layouts with the Buffer Layouts within this Buffer Layout group.");
                 ImGui.SameLine();
                 if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
                 {
                     var action = new AppendBufferLayoutList(screen, SelectedBufferLayoutList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                ImguiUtils.ShowHoverTooltip("Append to Buffer Layouts within this Buffer Layout group to the existing Buffer Layouts.");
+                UIHelper.ShowHoverTooltip("Append to Buffer Layouts within this Buffer Layout group to the existing Buffer Layouts.");
             }
 
             ImGui.EndChild();
@@ -193,7 +194,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##BufferLayoutGroupName", ref _createBufferLayoutGroupName, 255);
-            ImguiUtils.ShowHoverTooltip("The name of the Buffer Layout group.");
+            UIHelper.ShowHoverTooltip("The name of the Buffer Layout group.");
 
             if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
             {

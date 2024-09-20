@@ -2,6 +2,7 @@
 using StudioCore.Configuration;
 using StudioCore.Editors.TextEditor.Tools;
 using StudioCore.Editors.TextureViewer.Actions;
+using StudioCore.Interface;
 using StudioCore.TextureViewer;
 using StudioCore.Utilities;
 using System;
@@ -40,7 +41,7 @@ public class ToolSubMenu
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Export Texture", KeyBindings.Current.TEXTURE_ExportTexture.HintText))
             {
                 Handler.ExportTextureHandler();

@@ -77,7 +77,7 @@ public class Smithbox
         _version = version;
         _programTitle = $"Version {_version}";
 
-        ImguiUtils.RestoreImguiIfMissing();
+        UIHelper.RestoreImguiIfMissing();
 
         UIScaleChanged += (_, _) =>
         {
@@ -86,10 +86,14 @@ public class Smithbox
 
         // Hack to make sure dialogs work before the main window is created
         PlatformUtils.InitializeWindows(null);
+
         CFG.AttemptLoadOrDefault();
+
+        UI.AttemptLoadOrDefault();
+        InterfaceTheme.SetupThemes();
+        InterfaceTheme.SetTheme(true);
+
         RandomiserCFG.AttemptLoadOrDefault();
-        UI.SetupThemes();
-        UI.SetTheme(true);
 
         Environment.SetEnvironmentVariable("PATH",
             Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
@@ -155,10 +159,10 @@ public class Smithbox
         string engFont = @"Assets\Fonts\RobotoMono-Light.ttf";
         string otherFont = @"Assets\Fonts\NotoSansCJKtc-Light.otf";
 
-        if (!string.IsNullOrWhiteSpace(CFG.Current.System_English_Font) && File.Exists(CFG.Current.System_English_Font))
-            engFont = CFG.Current.System_English_Font;
-        if (!string.IsNullOrWhiteSpace(CFG.Current.System_Other_Font) && File.Exists(CFG.Current.System_Other_Font))
-            otherFont = CFG.Current.System_Other_Font;
+        if (!string.IsNullOrWhiteSpace(UI.Current.System_English_Font) && File.Exists(UI.Current.System_English_Font))
+            engFont = UI.Current.System_English_Font;
+        if (!string.IsNullOrWhiteSpace(UI.Current.System_Other_Font) && File.Exists(UI.Current.System_Other_Font))
+            otherFont = UI.Current.System_Other_Font;
 
         ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
         var fileEn = Path.Combine(AppContext.BaseDirectory, engFont);
@@ -187,7 +191,7 @@ public class Smithbox
             cfg.GlyphMinAdvanceX = 5.0f;
             cfg.OversampleH = 5;
             cfg.OversampleV = 5;
-            fonts.AddFontFromMemoryTTF(fontEnNative, fontIcon.Length, (float)Math.Round(CFG.Current.Interface_FontSize * scale), cfg,
+            fonts.AddFontFromMemoryTTF(fontEnNative, fontIcon.Length, (float)Math.Round(UI.Current.Interface_FontSize * scale), cfg,
                 fonts.GetGlyphRangesDefault());
         }
 
@@ -203,35 +207,35 @@ public class Smithbox
             ImFontGlyphRangesBuilderPtr glyphRanges =
                 new(ImGuiNative.ImFontGlyphRangesBuilder_ImFontGlyphRangesBuilder());
             glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
-            Array.ForEach(FontUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
+            Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
 
-            if (CFG.Current.System_Font_Chinese)
+            if (UI.Current.System_Font_Chinese)
             {
                 glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
             }
 
-            if (CFG.Current.System_Font_Korean)
+            if (UI.Current.System_Font_Korean)
             {
                 glyphRanges.AddRanges(fonts.GetGlyphRangesKorean());
             }
 
-            if (CFG.Current.System_Font_Thai)
+            if (UI.Current.System_Font_Thai)
             {
                 glyphRanges.AddRanges(fonts.GetGlyphRangesThai());
             }
 
-            if (CFG.Current.System_Font_Vietnamese)
+            if (UI.Current.System_Font_Vietnamese)
             {
                 glyphRanges.AddRanges(fonts.GetGlyphRangesVietnamese());
             }
 
-            if (CFG.Current.System_Font_Cyrillic)
+            if (UI.Current.System_Font_Cyrillic)
             {
                 glyphRanges.AddRanges(fonts.GetGlyphRangesCyrillic());
             }
 
             glyphRanges.BuildRanges(out ImVector glyphRange);
-            fonts.AddFontFromMemoryTTF(fontOtherNative, fontOther.Length, (float)Math.Round((CFG.Current.Interface_FontSize + 2) * scale), cfg, glyphRange.Data);
+            fonts.AddFontFromMemoryTTF(fontOtherNative, fontOther.Length, (float)Math.Round((UI.Current.Interface_FontSize + 2) * scale), cfg, glyphRange.Data);
             glyphRanges.Destroy();
         }
 
@@ -248,7 +252,7 @@ public class Smithbox
 
             fixed (ushort* r = ranges)
             {
-                ImFontPtr f = fonts.AddFontFromMemoryTTF(fontIconNative, fontIcon.Length, (float)Math.Round((CFG.Current.Interface_FontSize + 2) * scale), cfg,
+                ImFontPtr f = fonts.AddFontFromMemoryTTF(fontIconNative, fontIcon.Length, (float)Math.Round((UI.Current.Interface_FontSize + 2) * scale), cfg,
                     (IntPtr)r);
             }
         }
@@ -373,6 +377,7 @@ public class Smithbox
         ResourceManager.Shutdown();
         _context.Dispose();
         CFG.Save();
+        UI.Save();
     }
 
     public void ApplyStyle()
@@ -381,35 +386,35 @@ public class Smithbox
         ImGuiStylePtr style = ImGui.GetStyle();
 
         // Colors
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.ImGui_MainBg);
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.ImGui_ChildBg);
-        ImGui.PushStyleColor(ImGuiCol.PopupBg, CFG.Current.ImGui_PopupBg);
-        ImGui.PushStyleColor(ImGuiCol.Border, CFG.Current.ImGui_Border);
-        ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_Input_Background);
-        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, CFG.Current.ImGui_Input_Background_Hover);
-        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, CFG.Current.ImGui_Input_Background_Active);
-        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.ImGui_TitleBarBg);
-        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.ImGui_TitleBarBg_Active);
-        ImGui.PushStyleColor(ImGuiCol.MenuBarBg, CFG.Current.ImGui_MenuBarBg);
-        ImGui.PushStyleColor(ImGuiCol.ScrollbarBg, CFG.Current.ImGui_ScrollbarBg);
-        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrab, CFG.Current.ImGui_ScrollbarGrab);
-        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrabHovered, CFG.Current.ImGui_ScrollbarGrab_Hover);
-        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrabActive, CFG.Current.ImGui_ScrollbarGrab_Active);
-        ImGui.PushStyleColor(ImGuiCol.CheckMark, CFG.Current.ImGui_Input_CheckMark);
-        ImGui.PushStyleColor(ImGuiCol.SliderGrab, CFG.Current.ImGui_SliderGrab);
-        ImGui.PushStyleColor(ImGuiCol.SliderGrabActive, CFG.Current.ImGui_SliderGrab_Active);
-        ImGui.PushStyleColor(ImGuiCol.Button, CFG.Current.ImGui_Button);
-        ImGui.PushStyleColor(ImGuiCol.ButtonHovered, CFG.Current.ImGui_Button_Hovered);
-        ImGui.PushStyleColor(ImGuiCol.ButtonActive, CFG.Current.ImGui_ButtonActive);
-        ImGui.PushStyleColor(ImGuiCol.Header, CFG.Current.ImGui_Selection);
-        ImGui.PushStyleColor(ImGuiCol.HeaderHovered, CFG.Current.ImGui_Selection_Hover);
-        ImGui.PushStyleColor(ImGuiCol.HeaderActive, CFG.Current.ImGui_Selection_Active);
-        ImGui.PushStyleColor(ImGuiCol.Tab, CFG.Current.ImGui_Tab);
-        ImGui.PushStyleColor(ImGuiCol.TabHovered, CFG.Current.ImGui_Tab_Hover);
-        ImGui.PushStyleColor(ImGuiCol.TabActive, CFG.Current.ImGui_Tab_Active);
-        ImGui.PushStyleColor(ImGuiCol.TabUnfocused, CFG.Current.ImGui_UnfocusedTab);
-        ImGui.PushStyleColor(ImGuiCol.TabUnfocusedActive, CFG.Current.ImGui_UnfocusedTab_Active);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.ImGui_MainBg);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.ImGui_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.PopupBg, UI.Current.ImGui_PopupBg);
+        ImGui.PushStyleColor(ImGuiCol.Border, UI.Current.ImGui_Border);
+        ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_Background);
+        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, UI.Current.ImGui_Input_Background_Hover);
+        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, UI.Current.ImGui_Input_Background_Active);
+        ImGui.PushStyleColor(ImGuiCol.TitleBg, UI.Current.ImGui_TitleBarBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.ImGui_TitleBarBg_Active);
+        ImGui.PushStyleColor(ImGuiCol.MenuBarBg, UI.Current.ImGui_MenuBarBg);
+        ImGui.PushStyleColor(ImGuiCol.ScrollbarBg, UI.Current.ImGui_ScrollbarBg);
+        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrab, UI.Current.ImGui_ScrollbarGrab);
+        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrabHovered, UI.Current.ImGui_ScrollbarGrab_Hover);
+        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrabActive, UI.Current.ImGui_ScrollbarGrab_Active);
+        ImGui.PushStyleColor(ImGuiCol.CheckMark, UI.Current.ImGui_Input_CheckMark);
+        ImGui.PushStyleColor(ImGuiCol.SliderGrab, UI.Current.ImGui_SliderGrab);
+        ImGui.PushStyleColor(ImGuiCol.SliderGrabActive, UI.Current.ImGui_SliderGrab_Active);
+        ImGui.PushStyleColor(ImGuiCol.Button, UI.Current.ImGui_Button);
+        ImGui.PushStyleColor(ImGuiCol.ButtonHovered, UI.Current.ImGui_Button_Hovered);
+        ImGui.PushStyleColor(ImGuiCol.ButtonActive, UI.Current.ImGui_ButtonActive);
+        ImGui.PushStyleColor(ImGuiCol.Header, UI.Current.ImGui_Selection);
+        ImGui.PushStyleColor(ImGuiCol.HeaderHovered, UI.Current.ImGui_Selection_Hover);
+        ImGui.PushStyleColor(ImGuiCol.HeaderActive, UI.Current.ImGui_Selection_Active);
+        ImGui.PushStyleColor(ImGuiCol.Tab, UI.Current.ImGui_Tab);
+        ImGui.PushStyleColor(ImGuiCol.TabHovered, UI.Current.ImGui_Tab_Hover);
+        ImGui.PushStyleColor(ImGuiCol.TabActive, UI.Current.ImGui_Tab_Active);
+        ImGui.PushStyleColor(ImGuiCol.TabUnfocused, UI.Current.ImGui_UnfocusedTab);
+        ImGui.PushStyleColor(ImGuiCol.TabUnfocusedActive, UI.Current.ImGui_UnfocusedTab_Active);
 
         // Sizes
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 1.0f);
@@ -462,6 +467,7 @@ public class Smithbox
             {
                 CFG.Current.LastProjectFile = "";
                 CFG.Save();
+                UI.Save();
             }
             catch (Exception e)
             {
@@ -561,7 +567,7 @@ public class Smithbox
             {
                 ImGui.Separator();
 
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Benefit_Text_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
                 if (ImGui.Button("Update Available"))
                 {
                     Process myProcess = new();
@@ -708,7 +714,7 @@ public class Smithbox
             if (Math.Abs(_dpi - value) < 0.0001f) return; // Skip doing anything if no difference
 
             _dpi = value;
-            if (CFG.Current.System_ScaleByDPI)
+            if (UI.Current.System_ScaleByDPI)
                 UIScaleChanged?.Invoke(null, EventArgs.Empty);
         }
     }
@@ -729,8 +735,8 @@ public class Smithbox
 
     public static float GetUIScale()
     {
-        var scale = CFG.Current.System_UI_Scale;
-        if (CFG.Current.System_ScaleByDPI)
+        var scale = UI.Current.System_UI_Scale;
+        if (UI.Current.System_ScaleByDPI)
             scale = scale / DefaultDpi * Dpi;
         return scale;
     }

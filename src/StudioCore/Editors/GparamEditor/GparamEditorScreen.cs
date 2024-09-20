@@ -10,6 +10,7 @@ using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.Editors.GparamEditor.Tools;
 using StudioCore.Editors.GraphicsEditor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
@@ -94,19 +95,19 @@ public class GparamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Edit"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo All", "", false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
             if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false, EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
@@ -127,40 +128,40 @@ public class GparamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("View"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Files"))
             {
-                CFG.Current.Interface_GparamEditor_Files = !CFG.Current.Interface_GparamEditor_Files;
+                UI.Current.Interface_GparamEditor_Files = !UI.Current.Interface_GparamEditor_Files;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Files);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Files);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Groups"))
             {
-                CFG.Current.Interface_GparamEditor_Groups = !CFG.Current.Interface_GparamEditor_Groups;
+                UI.Current.Interface_GparamEditor_Groups = !UI.Current.Interface_GparamEditor_Groups;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Groups);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Groups);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Fields"))
             {
-                CFG.Current.Interface_GparamEditor_Fields = !CFG.Current.Interface_GparamEditor_Fields;
+                UI.Current.Interface_GparamEditor_Fields = !UI.Current.Interface_GparamEditor_Fields;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Fields);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Fields);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Values"))
             {
-                CFG.Current.Interface_GparamEditor_Values = !CFG.Current.Interface_GparamEditor_Values;
+                UI.Current.Interface_GparamEditor_Values = !UI.Current.Interface_GparamEditor_Values;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Values);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Values);
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Tool Window"))
             {
-                CFG.Current.Interface_GparamEditor_ToolConfiguration = !CFG.Current.Interface_GparamEditor_ToolConfiguration;
+                UI.Current.Interface_GparamEditor_ToolConfiguration = !UI.Current.Interface_GparamEditor_ToolConfiguration;
             }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_ToolConfiguration);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_ToolConfiguration);
 
             ImGui.EndMenu();
         }
@@ -171,7 +172,7 @@ public class GparamEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -296,25 +297,25 @@ public class GparamEditorScreen : EditorScreen
 
             if (GparamParamBank.IsLoaded)
             {
-                if (CFG.Current.Interface_GparamEditor_Files)
+                if (UI.Current.Interface_GparamEditor_Files)
                 {
                     GparamListView();
                 }
-                if (CFG.Current.Interface_GparamEditor_Groups)
+                if (UI.Current.Interface_GparamEditor_Groups)
                 {
                     GparamGroupList();
                 }
-                if (CFG.Current.Interface_GparamEditor_Fields)
+                if (UI.Current.Interface_GparamEditor_Fields)
                 {
                     GparamFieldList();
                 }
-                if (CFG.Current.Interface_GparamEditor_Values)
+                if (UI.Current.Interface_GparamEditor_Values)
                 {
                     GparamValueProperties();
                 }
             }
 
-            if (CFG.Current.Interface_GparamEditor_ToolConfiguration)
+            if (UI.Current.Interface_GparamEditor_ToolConfiguration)
             {
                 ToolWindow.OnGui(QuickEditHandler);
             }
@@ -389,7 +390,7 @@ public class GparamEditorScreen : EditorScreen
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _fileSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -424,7 +425,7 @@ public class GparamEditorScreen : EditorScreen
                 if (CFG.Current.Interface_Display_Alias_for_Gparam)
                 {
                     var aliasName = AliasUtils.GetGparamAliasName(info.Name);
-                    AliasUtils.DisplayAlias(aliasName);
+                    UIHelper.DisplayAlias(aliasName);
                 }
 
                 ImGui.EndGroup();
@@ -458,7 +459,7 @@ public class GparamEditorScreen : EditorScreen
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _paramGroupSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -599,7 +600,7 @@ public class GparamEditorScreen : EditorScreen
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _paramFieldSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -717,7 +718,7 @@ public class GparamEditorScreen : EditorScreen
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _fieldIdSearchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -914,13 +915,13 @@ public class GparamEditorScreen : EditorScreen
 
         string desc = Smithbox.BankHandler.GPARAM_Info.GetReferenceDescription(_selectedParamGroup.Key, _selectedParamField.Key);
 
-        ImguiUtils.WrappedText($"Type: {GetHumanTypeName(field)}");
-        ImguiUtils.WrappedText($"");
+        UIHelper.WrappedText($"Type: {GetHumanTypeName(field)}");
+        UIHelper.WrappedText($"");
 
         // Skip if empty
         if (desc != "")
         {
-            ImguiUtils.WrappedText($"{desc}");
+            UIHelper.WrappedText($"{desc}");
         }
 
         // Show enum list if they exist
@@ -929,7 +930,7 @@ public class GparamEditorScreen : EditorScreen
         {
             foreach (var entry in propertyEnum.members)
             {
-                ImguiUtils.WrappedText($"{entry.id} - {entry.name}");
+                UIHelper.WrappedText($"{entry.id} - {entry.name}");
             }
         }
     }
@@ -1003,7 +1004,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Add this file to the File Filter in the Quick Edit window.");
+                UIHelper.ShowHoverTooltip("Add this file to the File Filter in the Quick Edit window.");
 
                 // Only show if the file exists in the project directory
                 if (info.Path.Contains(Smithbox.ProjectRoot))
@@ -1014,7 +1015,7 @@ public class GparamEditorScreen : EditorScreen
 
                         ImGui.CloseCurrentPopup();
                     }
-                    ImguiUtils.ShowHoverTooltip("Delete the selected file from your project.");
+                    UIHelper.ShowHoverTooltip("Delete the selected file from your project.");
                 }
 
                 if (ImGui.Selectable("Duplicate"))
@@ -1023,7 +1024,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
+                UIHelper.ShowHoverTooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
 
                 if (ImGui.Selectable("Copy"))
                 {
@@ -1031,7 +1032,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Copy the selected file and rename it to the name specified below");
+                UIHelper.ShowHoverTooltip("Copy the selected file and rename it to the name specified below");
 
                 ImGui.Separator();
 
@@ -1063,7 +1064,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Add this group to the Group Filter in the Quick Edit window.");
+                UIHelper.ShowHoverTooltip("Add this group to the Group Filter in the Quick Edit window.");
 
                 if (ImGui.Selectable("Remove"))
                 {
@@ -1072,7 +1073,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Delete the selected group.");
+                UIHelper.ShowHoverTooltip("Delete the selected group.");
 
                 ImGui.EndPopup();
             }
@@ -1095,7 +1096,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Add this field to the Field Filter in the Quick Edit window.");
+                UIHelper.ShowHoverTooltip("Add this field to the Field Filter in the Quick Edit window.");
 
                 if (ImGui.Selectable("Remove"))
                 {
@@ -1104,7 +1105,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Delete the selected row.");
+                UIHelper.ShowHoverTooltip("Delete the selected row.");
 
                 ImGui.EndPopup();
             }
@@ -1140,7 +1141,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Add this field to the Field Filter in the Quick Edit window.");
+                UIHelper.ShowHoverTooltip("Add this field to the Field Filter in the Quick Edit window.");
 
                 if (ImGui.Selectable("Remove"))
                 {
@@ -1148,7 +1149,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Delete the value row.");
+                UIHelper.ShowHoverTooltip("Delete the value row.");
 
                 if (ImGui.Selectable("Duplicate"))
                 {
@@ -1156,7 +1157,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowHoverTooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
+                UIHelper.ShowHoverTooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
 
                 ImGui.InputInt("##valueIdInput", ref _duplicateValueRowId);
 

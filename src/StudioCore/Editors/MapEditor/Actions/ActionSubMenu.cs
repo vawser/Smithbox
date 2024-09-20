@@ -2,6 +2,7 @@
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Linq;
@@ -201,7 +202,7 @@ public class ActionSubMenu
             ///--------------------
             // Create
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Create New Object"))
             {
                 if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
@@ -241,7 +242,7 @@ public class ActionSubMenu
 
                         ImGui.EndMenu();
                     }
-                    ImguiUtils.ShowHoverTooltip("Create a Part object.");
+                    UIHelper.ShowHoverTooltip("Create a Part object.");
 
                     if (Handler._regionClasses.Count == 1)
                     {
@@ -274,7 +275,7 @@ public class ActionSubMenu
 
                             ImGui.EndMenu();
                         }
-                        ImguiUtils.ShowHoverTooltip("Create a Region object.");
+                        UIHelper.ShowHoverTooltip("Create a Region object.");
                     }
 
                     if (ImGui.BeginMenu("Events"))
@@ -294,7 +295,7 @@ public class ActionSubMenu
 
                         ImGui.EndMenu();
                     }
-                    ImguiUtils.ShowHoverTooltip("Create an Event object.");
+                    UIHelper.ShowHoverTooltip("Create an Event object.");
 
                     if (ImGui.MenuItem("Light"))
                     {
@@ -307,7 +308,7 @@ public class ActionSubMenu
                             Handler.ApplyObjectCreation();
                         }
                     }
-                    ImguiUtils.ShowHoverTooltip("Create a BTL Light object.");
+                    UIHelper.ShowHoverTooltip("Create a BTL Light object.");
                 }
 
                 ImGui.EndMenu();
@@ -316,7 +317,7 @@ public class ActionSubMenu
             ///--------------------
             // Duplicate
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Duplicate Selected", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
                 Handler.ApplyDuplicate();
@@ -325,7 +326,7 @@ public class ActionSubMenu
             ///--------------------
             // Duplicate to Map
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Duplicate Selected to Map"))
             {
                 Handler.DisplayDuplicateToMapMenu(false, true);
@@ -335,7 +336,7 @@ public class ActionSubMenu
             ///--------------------
             // Delete
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Delete Selected", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 Handler.ApplyDelete();
@@ -344,7 +345,7 @@ public class ActionSubMenu
             ///--------------------
             // Scramble
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Scramble Selected", KeyBindings.Current.MAP_ScrambleSelection.HintText))
             {
                 Handler.ApplyScramble();
@@ -353,7 +354,7 @@ public class ActionSubMenu
             ///--------------------
             // Replicate
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Replicate Selected", KeyBindings.Current.MAP_ReplicateSelection.HintText))
             {
                 Handler.ApplyReplicate();
@@ -364,7 +365,7 @@ public class ActionSubMenu
             ///--------------------
             // Frame in Viewport
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Frame Selected in Viewport", KeyBindings.Current.MAP_FrameSelection.HintText))
             {
                 Handler.ApplyFrameInViewport();
@@ -373,7 +374,7 @@ public class ActionSubMenu
             ///--------------------
             // Go to in List
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Go to in List", KeyBindings.Current.MAP_GoToInList.HintText))
             {
                 Handler.ApplyGoToInObjectList();
@@ -382,7 +383,7 @@ public class ActionSubMenu
             ///--------------------
             // Move to Grid
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Move Selected to Grid", KeyBindings.Current.MAP_ReplicateSelection.HintText))
             {
                 Handler.ApplyMovetoGrid();
@@ -391,7 +392,7 @@ public class ActionSubMenu
             ///--------------------
             // Move to Camera
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Move Selected to Camera", KeyBindings.Current.MAP_MoveToCamera.HintText))
             {
                 Handler.ApplyMoveToCamera();
@@ -402,7 +403,7 @@ public class ActionSubMenu
             ///--------------------
             // Rotate (X-axis)
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Rotate Selected (X-axis)", KeyBindings.Current.MAP_RotateSelectionXAxis.HintText))
             {
                 Handler.ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
@@ -411,7 +412,7 @@ public class ActionSubMenu
             ///--------------------
             // Rotate (Y-axis)
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Rotate Selected (Y-axis)", KeyBindings.Current.MAP_RotateSelectionYAxis.HintText))
             {
                 Handler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
@@ -420,7 +421,7 @@ public class ActionSubMenu
             ///--------------------
             // Rotate Pivot (Y-axis)
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Rotate Selected with Pivot (Y-axis)", KeyBindings.Current.MAP_PivotSelectionYAxis.HintText))
             {
                 Handler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
@@ -429,7 +430,7 @@ public class ActionSubMenu
             ///--------------------
             // Rotate Fixed Increment
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Rotate Selected to Fixed Angle", KeyBindings.Current.MAP_RotateFixedAngle.HintText))
             {
                 Handler.SetSelectionToFixedRotation(CFG.Current.Toolbar_Rotate_FixedAngle);
@@ -438,7 +439,7 @@ public class ActionSubMenu
             ///--------------------
             // Reset Rotation
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Reset Selected Rotation", KeyBindings.Current.MAP_ResetRotation.HintText))
             {
                 Handler.SetSelectionToFixedRotation(new Vector3(0, 0, 0));
@@ -449,7 +450,7 @@ public class ActionSubMenu
             ///--------------------
             // Order (Up)
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Move Selected Up in List", KeyBindings.Current.MAP_MoveObjectUp.HintText))
             {
                 Handler.ApplyMapObjectOrderChange(OrderMoveDir.Up);
@@ -458,7 +459,7 @@ public class ActionSubMenu
             ///--------------------
             // Order (Down)
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Move Selected Down in List", KeyBindings.Current.MAP_MoveObjectBottom.HintText))
             {
                 Handler.ApplyMapObjectOrderChange(OrderMoveDir.Down);
@@ -467,7 +468,7 @@ public class ActionSubMenu
             ///--------------------
             // Order (Top)
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Move Selected to the List Top", KeyBindings.Current.MAP_MoveObjectTop.HintText))
             {
                 Handler.ApplyMapObjectOrderChange(OrderMoveDir.Top);
@@ -476,7 +477,7 @@ public class ActionSubMenu
             ///--------------------
             // Order (Bottom)
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Move Selected to the List Bottom", KeyBindings.Current.MAP_MoveObjectBottom.HintText))
             {
                 Handler.ApplyMapObjectOrderChange(OrderMoveDir.Bottom);
@@ -487,7 +488,7 @@ public class ActionSubMenu
             ///--------------------
             // Toggle Editor Visibility
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Toggle Editor Visibility"))
             {
                 if (ImGui.MenuItem("Flip Visibility for Selected", KeyBindings.Current.MAP_FlipSelectionVisibility.HintText))
@@ -522,7 +523,7 @@ public class ActionSubMenu
             ///--------------------
             // Toggle In-game Visibility
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Toggle In-Game Visibility"))
             {
                 if (ImGui.MenuItem("Make Selected Normal Object into Dummy Object", KeyBindings.Current.MAP_MakeDummyObject.HintText))

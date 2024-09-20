@@ -2,8 +2,8 @@
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor.Tools;
+using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +34,7 @@ public class ToolWindow
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * Smithbox.GetUIScale(), ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_ModelEditor"))
@@ -45,14 +45,14 @@ public class ToolWindow
             // Export Model
             if (ImGui.CollapsingHeader("Export Model"))
             {
-                ImguiUtils.WrappedText("Export the currently loaded model to a directory as a Collada .DAE file.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Export the currently loaded model to a directory as a Collada .DAE file.");
+                UIHelper.WrappedText("");
 
                 ImGui.Separator();
-                ImguiUtils.WrappedText("Export Directory");
+                UIHelper.WrappedText("Export Directory");
                 ImGui.Separator();
-                ImguiUtils.WrappedText($"{ModelExporter.ExportPath}");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText($"{ModelExporter.ExportPath}");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Set Export Directory##modelExportDirectoryButton", defaultButtonSize))
                 {
@@ -70,8 +70,8 @@ public class ToolWindow
             // Solve Bounding Boxes
             if (ImGui.CollapsingHeader("Solve Bounding Boxes"))
             {
-                ImguiUtils.WrappedText("Solve all of the bounding boxes for the currently loaded model.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Solve all of the bounding boxes for the currently loaded model.");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Solve", defaultButtonSize))
                 {
@@ -82,8 +82,8 @@ public class ToolWindow
             // Reverse Face Set
             if (ImGui.CollapsingHeader("Reverse Mesh Face Set"))
             {
-                ImguiUtils.WrappedText("Reverse the currently selected face set for our selected mesh.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Reverse the currently selected face set for our selected mesh.");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Reverse", defaultButtonSize))
                 {
@@ -94,8 +94,8 @@ public class ToolWindow
             // Reverse Normals
             if (ImGui.CollapsingHeader("Reverse Mesh Normals"))
             {
-                ImguiUtils.WrappedText("Reverse the normals for the currently selected mesh.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Reverse the normals for the currently selected mesh.");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Reverse", defaultButtonSize))
                 {
@@ -152,27 +152,27 @@ public class ToolWindow
             // Search for Usage
             if (ImGui.CollapsingHeader("Global Model Search"))
             {
-                ImguiUtils.WrappedText("Search through all maps for usage of the specificed model name.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Search through all maps for usage of the specificed model name.");
+                UIHelper.WrappedText("");
 
-                ImguiUtils.WrappedText("Model Name:");
+                UIHelper.WrappedText("Model Name:");
                 ImGui.InputText("##modelNameInput", ref ModelUsageSearch._searchInput, 255);
 
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("");
                 ImGui.Checkbox("Target Project Files", ref ModelUsageSearch._targetProjectFiles);
-                ImguiUtils.ShowHoverTooltip("Uses the project map files instead of game root.");
+                UIHelper.ShowHoverTooltip("Uses the project map files instead of game root.");
                 ImGui.Checkbox("Loose Name Match", ref ModelUsageSearch._looseModelNameMatch);
-                ImguiUtils.ShowHoverTooltip("Only require the Model Name field to contain the search string, instead of requiring an exact match.");
+                UIHelper.ShowHoverTooltip("Only require the Model Name field to contain the search string, instead of requiring an exact match.");
 
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Search", defaultButtonSize))
                 {
                     ModelUsageSearch.SearchMaps();
                 }
-                ImguiUtils.ShowHoverTooltip("Initial usage will be slow as all maps have to be loaded. Subsequent usage will be instant.");
+                UIHelper.ShowHoverTooltip("Initial usage will be slow as all maps have to be loaded. Subsequent usage will be instant.");
 
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("");
 
                 ModelUsageSearch.DisplayInstances();
             }

@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -54,7 +55,7 @@ public static class PropInfo_Part_ConnectCollision
             ImGui.Separator();
 
             ImGui.Text(mapString);
-            AliasUtils.DisplayAlias(AliasUtils.GetMapNameAlias(mapString));
+            UIHelper.DisplayAlias(AliasUtils.GetMapNameAlias(mapString));
             ImGui.Text("");
         }
     }

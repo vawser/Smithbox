@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
@@ -33,12 +34,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             UpdateAllSkeletonGroupList();
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Replace"))
             {
                 foreach (var entry in AllSkeletonGroupFiles)
                 {
-                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                     if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedAllSkeletonGroup = entry;
@@ -52,12 +53,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
                 ImGui.EndMenu();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Append"))
             {
                 foreach (var entry in AllSkeletonGroupFiles)
                 {
-                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                     if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedAllSkeletonGroup = entry;
@@ -97,9 +98,9 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var sectionHeight = ImGui.GetWindowHeight();
             var defaultButtonSize = new Vector2(sectionWidth, 32);
 
-            ImguiUtils.WrappedText("Create a stored All Skeleton Bone Group from your current selection with the All Skeleton Bone list.");
-            ImguiUtils.WrappedText("A stored group can then be used to replace the existing All Skeleton Bone list, or appended to the end.");
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText("Create a stored All Skeleton Bone Group from your current selection with the All Skeleton Bone list.");
+            UIHelper.WrappedText("A stored group can then be used to replace the existing All Skeleton Bone list, or appended to the end.");
+            UIHelper.WrappedText("");
 
             UpdateAllSkeletonGroupList();
 
@@ -137,7 +138,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteAllSkeletonGroup(entry);
                         }
-                        ImguiUtils.ShowHoverTooltip("Delete this All Skeleton Bone group.");
+                        UIHelper.ShowHoverTooltip("Delete this All Skeleton Bone group.");
 
                         ImGui.EndPopup();
                     }
@@ -176,14 +177,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceAllSkeletonBoneList(screen, SelectedAllSkeletonList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                ImguiUtils.ShowHoverTooltip("Replace the existing All Skeleton Bones with the All Skeleton Bones within this All Skeleton group.");
+                UIHelper.ShowHoverTooltip("Replace the existing All Skeleton Bones with the All Skeleton Bones within this All Skeleton group.");
                 ImGui.SameLine();
                 if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
                 {
                     var action = new AppendAllSkeletonBoneList(screen, SelectedAllSkeletonList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                ImguiUtils.ShowHoverTooltip("Append All Skeleton Bones within this All Skeleton Bone group to the existing All Skeletons Bones list.");
+                UIHelper.ShowHoverTooltip("Append All Skeleton Bones within this All Skeleton Bone group to the existing All Skeletons Bones list.");
             }
 
             ImGui.EndChild();
@@ -199,7 +200,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##AllSkeletonGroupName", ref _createAllSkeletonGroupName, 255);
-            ImguiUtils.ShowHoverTooltip("The name of the All Skeleton group.");
+            UIHelper.ShowHoverTooltip("The name of the All Skeleton group.");
 
             if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
             {

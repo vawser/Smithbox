@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
+using StudioCore.Interface;
 using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
@@ -86,7 +87,7 @@ public class CutsceneEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();

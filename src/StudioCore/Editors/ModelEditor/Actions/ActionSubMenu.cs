@@ -2,6 +2,7 @@
 using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -53,26 +54,26 @@ public class ActionSubMenu
     {
         if (ImGui.BeginMenu("Actions"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Create", KeyBindings.Current.CORE_CreateNewEntry.HintText))
             {
                 Handler.CreateHandler();
             }
-            ImguiUtils.ShowHoverTooltip("Adds new entry based on current selection in Model Hierarchy.");
+            UIHelper.ShowHoverTooltip("Adds new entry based on current selection in Model Hierarchy.");
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
                 Handler.DuplicateHandler();
             }
-            ImguiUtils.ShowHoverTooltip("Duplicates current selection in Model Hierarchy.");
+            UIHelper.ShowHoverTooltip("Duplicates current selection in Model Hierarchy.");
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 Handler.DeleteHandler();
             }
-            ImguiUtils.ShowHoverTooltip("Deletes current selection in Model Hierarchy.");
+            UIHelper.ShowHoverTooltip("Deletes current selection in Model Hierarchy.");
 
             ImGui.EndMenu();
         }

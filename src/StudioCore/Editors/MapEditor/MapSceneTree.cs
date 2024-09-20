@@ -128,10 +128,10 @@ public class MapSceneTree : IActionEventHandler
 
         _worldMapScreen.Shortcuts();
 
-        if (!CFG.Current.Interface_MapEditor_MapObjectList)
+        if (!UI.Current.Interface_MapEditor_MapObjectList)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.ImGui_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.ImGui_ChildBg);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
         if (ImGui.Begin($@"Map Object List##{_id}"))
@@ -179,7 +179,7 @@ public class MapSceneTree : IActionEventHandler
 
                 ImGui.SetNextItemWidth(widthUnit * 80);
                 ImGui.InputText("##treeSearch", ref _mapObjectListSearchInput, 99);
-                ImguiUtils.ShowHoverTooltip("Filters the map list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
+                UIHelper.ShowHoverTooltip("Filters the map list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
                 ImGui.SameLine();
                 if (ImGui.Button($"Clear##ClearMapFilter", new Vector2(widthUnit * 16, 20 * Smithbox.GetUIScale())))
                 {
@@ -187,7 +187,7 @@ public class MapSceneTree : IActionEventHandler
                     _worldMapScreen.MapSelectionActive = false;
                     Smithbox.EditorHandler.MapEditor.WorldMap_ClickedMapZone = null;
                 }
-                ImguiUtils.ShowHoverTooltip("Clear the map search filter.");
+                UIHelper.ShowHoverTooltip("Clear the map search filter.");
             }
 
             ImGui.Unindent(5 * scale);
@@ -317,7 +317,7 @@ public class MapSceneTree : IActionEventHandler
 
             if (CFG.Current.MapEditor_MapObjectList_ShowMapNames)
             {
-                AliasUtils.DisplayAlias(AliasUtils.GetMapNameAlias(CurrentMapID));
+                UIHelper.DisplayAlias(AliasUtils.GetMapNameAlias(CurrentMapID));
             }
 
             ImGui.EndGroup();
@@ -583,7 +583,7 @@ public class MapSceneTree : IActionEventHandler
             if (ImGui.IsItemVisible())
             {
                 var alias = AliasUtils.GetEntityAliasName(e);
-                AliasUtils.DisplayAlias(alias);
+                UIHelper.DisplayAlias(alias);
             }
         }
 
@@ -881,7 +881,7 @@ public class MapSceneTree : IActionEventHandler
 
             if (_chaliceLoadError)
             {
-                ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_ErrorInput_Background);
+                ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_ErrorInput_Background);
             }
 
             ImGui.SetNextItemWidth(width);

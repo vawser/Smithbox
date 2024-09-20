@@ -2,7 +2,7 @@
 using ImGuiNET;
 using StudioCore.Editors.MapEditor;
 using StudioCore.HavokEditor;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -93,9 +93,9 @@ public class HavokInfoGraphView
         ImGui.Columns(2);
         
         ImGui.AlignTextToFramePadding();
-        ImguiUtils.WrappedText($"worldUpWS");
+        UIHelper.WrappedText($"worldUpWS");
         ImGui.AlignTextToFramePadding();
-        ImguiUtils.WrappedText($"defaultEventMode");
+        UIHelper.WrappedText($"defaultEventMode");
 
         ImGui.NextColumn();
 
@@ -112,42 +112,42 @@ public class HavokInfoGraphView
         ImGui.Columns(2);
 
         ImGui.AlignTextToFramePadding();
-        ImguiUtils.WrappedText($"animationPath");
+        UIHelper.WrappedText($"animationPath");
 
         ImGui.AlignTextToFramePadding();
-        ImguiUtils.WrappedText($"behaviorPath");
+        UIHelper.WrappedText($"behaviorPath");
 
         ImGui.AlignTextToFramePadding();
-        ImguiUtils.WrappedText($"characterPath");
+        UIHelper.WrappedText($"characterPath");
 
         ImGui.AlignTextToFramePadding();
-        ImguiUtils.WrappedText($"scriptsPath");
+        UIHelper.WrappedText($"scriptsPath");
 
         ImGui.AlignTextToFramePadding();
-        ImguiUtils.WrappedText($"fullPathToSource");
+        UIHelper.WrappedText($"fullPathToSource");
         
         ImGui.AlignTextToFramePadding();
-        ImguiUtils.WrappedText($"behaviorFilenames");
+        UIHelper.WrappedText($"behaviorFilenames");
         foreach (var count in entry.m_behaviorFilenames)
         {
             ImGui.AlignTextToFramePadding();
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText("");
         }
 
         ImGui.AlignTextToFramePadding();
-        ImguiUtils.WrappedText($"characterFilenames");
+        UIHelper.WrappedText($"characterFilenames");
         foreach (var count in entry.m_characterFilenames)
         {
             ImGui.AlignTextToFramePadding();
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText("");
         }
 
         ImGui.AlignTextToFramePadding();
-        ImguiUtils.WrappedText($"eventNames");
+        UIHelper.WrappedText($"eventNames");
         foreach (var count in entry.m_eventNames)
         {
             ImGui.AlignTextToFramePadding();
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText("");
         }
 
         ImGui.NextColumn();

@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Tools;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
@@ -188,8 +189,8 @@ public class ActionHandler
 
         if (isToolWindow)
         {
-            ImguiUtils.WrappedText("Duplicate selection to specific map.");
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText("Duplicate selection to specific map.");
+            UIHelper.WrappedText("");
         }
         else
         {

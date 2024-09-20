@@ -1,6 +1,6 @@
 ﻿using HKLib.hk2018;
 using ImGuiNET;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace StudioCore.Editors.ModelEditor.SubEditors
             ImGui.Separator();
             ImGui.Text("Collision");
             ImGui.Separator();
-            ImguiUtils.ShowHoverTooltip("");
+            UIHelper.ShowHoverTooltip("");
 
             var entry = Screen.ResourceHandler.ER_CollisionLow;
             DisplayProperties_Collision(entry);
@@ -34,7 +34,7 @@ namespace StudioCore.Editors.ModelEditor.SubEditors
             ImGui.Separator();
             ImGui.Text("Collision");
             ImGui.Separator();
-            ImguiUtils.ShowHoverTooltip("");
+            UIHelper.ShowHoverTooltip("");
 
             var entry = Screen.ResourceHandler.ER_CollisionHigh;
             DisplayProperties_Collision(entry);

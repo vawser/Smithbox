@@ -5,6 +5,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
@@ -50,16 +51,16 @@ namespace StudioCore.Editors.MapEditor
             if (!Smithbox.AliasCacheHandler.AliasCache.UpdateCacheComplete)
                 return;
 
-            if (!CFG.Current.Interface_MapEditor_AssetBrowser)
+            if (!UI.Current.Interface_MapEditor_AssetBrowser)
                 return;
 
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
             if (ImGui.Begin($@"Asset Browser##MapAssetBrowser"))
             {
                 ImGui.InputText($"Search", ref _searchInput, 255);
-                ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+                UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
                 DisplayCharacterList();
                 DisplayAssetList();
@@ -110,7 +111,7 @@ namespace StudioCore.Editors.MapEditor
                 {
                     var aliasName = referenceDict[lowerName].name;
 
-                    AliasUtils.DisplayAlias(aliasName);
+                    UIHelper.DisplayAlias(aliasName);
                 }
 
                 // Tags

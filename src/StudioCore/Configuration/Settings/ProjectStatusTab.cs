@@ -2,6 +2,7 @@
 using ImGuiNET;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
@@ -29,12 +30,12 @@ public class ProjectStatusTab
         if (Smithbox.ProjectHandler.CurrentProject == null)
         {
             ImGui.Text("No project loaded");
-            ImguiUtils.ShowHoverTooltip("No project has been loaded yet.");
+            UIHelper.ShowHoverTooltip("No project has been loaded yet.");
         }
         else if (TaskManager.AnyActiveTasks())
         {
             ImGui.Text("Waiting for program tasks to finish...");
-            ImguiUtils.ShowHoverTooltip("Smithbox must finished all program tasks before it can load a project.");
+            UIHelper.ShowHoverTooltip("Smithbox must finished all program tasks before it can load a project.");
         }
         else
         {
@@ -56,11 +57,11 @@ public class ProjectStatusTab
                         CFG.Save();
                     }
                 }
-                ImguiUtils.ShowHoverTooltip("When set this will allow collisions to be visible whilst editing Dark Souls: Remastered maps, assuming you have unpacked Dark Souls: Prepare the Die Edition.");
+                UIHelper.ShowHoverTooltip("When set this will allow collisions to be visible whilst editing Dark Souls: Remastered maps, assuming you have unpacked Dark Souls: Prepare the Die Edition.");
                 var warning = CFG.Current.PTDE_Collision_Root_Warning;
                 if (ImGui.Checkbox("Warning for Missing Collision Directory", ref warning))
                     CFG.Current.PTDE_Collision_Root_Warning = warning;
-                ImguiUtils.ShowHoverTooltip("When set to true, a warning will be displayed when loading Dark Souls: Remastered projects if the DS1 collision directory is not set.");
+                UIHelper.ShowHoverTooltip("When set to true, a warning will be displayed when loading Dark Souls: Remastered projects if the DS1 collision directory is not set.");
 
             }
 
@@ -85,7 +86,7 @@ public class ProjectStatusTab
             {
                 if (ImGui.Checkbox("Use loose params", ref useLoose))
                     Smithbox.ProjectHandler.CurrentProject.Config.UseLooseParams = useLoose;
-                ImguiUtils.ShowHoverTooltip("Loose params means the .PARAM files will be saved outside of the regulation.bin file.\n\nFor Dark Souls II: Scholar of the First Sin, it is recommended that you enable this if add any additional rows.");
+                UIHelper.ShowHoverTooltip("Loose params means the .PARAM files will be saved outside of the regulation.bin file.\n\nFor Dark Souls II: Scholar of the First Sin, it is recommended that you enable this if add any additional rows.");
             }
         }
     }

@@ -3,7 +3,7 @@ using StudioCore.Banks.HelpBank;
 using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Help;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -71,11 +71,11 @@ public class HelpWindow
             return;
 
         ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * scale, ImGuiCond.FirstUseEver);
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Imgui_Moveable_MainBg);
-        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Imgui_Moveable_TitleBg);
-        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Imgui_Moveable_TitleBg_Active);
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBg);
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.Imgui_Moveable_MainBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBg, UI.Current.Imgui_Moveable_TitleBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.Imgui_Moveable_TitleBg_Active);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(10.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(5.0f, 5.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
@@ -83,7 +83,7 @@ public class HelpWindow
         if (ImGui.Begin("Help##Popup", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
             ImGui.BeginTabBar("#HelpMenuTabBar");
-            ImGui.PushStyleColor(ImGuiCol.Header, CFG.Current.Imgui_Moveable_Header);
+            ImGui.PushStyleColor(ImGuiCol.Header, UI.Current.Imgui_Moveable_Header);
             ImGui.PushItemWidth(300f);
 
             DisplayHelpSection(_helpBank.GetArticles(), "Article", "Articles", "article", HelpSectionType.Article, _inputStr_Article, _inputStrCache_Article);
@@ -302,9 +302,9 @@ public class HelpWindow
                     // No selection
                     if (entry == null)
                     {
-                        ImguiUtils.WrappedText($"No {descName} selected");
+                        UIHelper.WrappedText($"No {descName} selected");
                         ImGui.Separator();
-                        ImguiUtils.WrappedText("");
+                        UIHelper.WrappedText("");
                     }
                     // Selection
                     else
@@ -343,11 +343,11 @@ public class HelpWindow
             if (entry.HeaderColor != null)
             {
                 Vector4 color = new Vector4(entry.HeaderColor[0], entry.HeaderColor[1], entry.HeaderColor[2], entry.HeaderColor[3]);
-                ImguiUtils.WrappedTextColored(color, outputLine);
+                UIHelper.WrappedTextColored(color, outputLine);
             }
             else
             {
-                ImguiUtils.WrappedText(outputLine);
+                UIHelper.WrappedText(outputLine);
             }
 
             ImGui.Separator();
@@ -366,17 +366,17 @@ public class HelpWindow
                 if (entry.HighlightColor != null)
                 {
                     Vector4 color = new Vector4(entry.HighlightColor[0], entry.HighlightColor[1], entry.HighlightColor[2], entry.HighlightColor[3]);
-                    ImguiUtils.WrappedTextColored(color, highlightText);
+                    UIHelper.WrappedTextColored(color, highlightText);
 
                     var offset = highlightText.Length * 8.0f;
                     ImGui.SameLine(offset);
-                    ImguiUtils.WrappedText(otherText);
+                    UIHelper.WrappedText(otherText);
                 }
                 else
                 {
-                    ImguiUtils.WrappedText(highlightText);
+                    UIHelper.WrappedText(highlightText);
                     ImGui.SameLine();
-                    ImguiUtils.WrappedText(otherText);
+                    UIHelper.WrappedText(otherText);
                 }
             }
         }
@@ -401,7 +401,7 @@ public class HelpWindow
         // Default
         else
         {
-            ImguiUtils.WrappedText(textLine);
+            UIHelper.WrappedText(textLine);
         }
     }
 }

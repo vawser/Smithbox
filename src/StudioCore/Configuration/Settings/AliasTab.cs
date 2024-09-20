@@ -2,6 +2,7 @@
 using ImGuiNET;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -54,7 +55,7 @@ public class AliasTab
     public void DisplayNameGroupList()
     {
         ImGui.InputText($"Search", ref _searchInput, 255);
-        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
         ImGui.SameLine();
         ImGui.Checkbox("Show tags in alias list", ref TagBool);
 
@@ -64,7 +65,7 @@ public class AliasTab
 
         ImGui.Columns(2);
 
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBgSecondary);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBgSecondary);
         ImGui.BeginChild($"AliasSelectionList_{EntryName}");
 
         if (Bank.Aliases != null)
@@ -77,23 +78,23 @@ public class AliasTab
 
         ImGui.NextColumn();
 
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBgSecondary);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBgSecondary);
         ImGui.BeginChild($"EditAliasWindow_{EntryName}");
 
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Alias Actions");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Alias Actions");
         ImGui.Separator();
 
         DisplayActionsWindow();
 
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Edit Selected Alias");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Edit Selected Alias");
         ImGui.Separator();
 
         DisplayEditWindow();
 
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Add New Alias");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Add New Alias");
         ImGui.Separator();
 
         DisplayNameAddSection();
@@ -159,7 +160,7 @@ public class AliasTab
                 // Display name alias
                 if (entry.name != "")
                 {
-                    AliasUtils.DisplayAlias(entry.name);
+                    UIHelper.DisplayAlias(entry.name);
                 }
 
                 // Display tags
@@ -183,13 +184,13 @@ public class AliasTab
         {
             PlatformUtils.Instance.SetClipboardText(_selectedEntry.name);
         }
-        ImguiUtils.ShowHoverTooltip("Copy the currently selected alias name directly to your clipboard.");
+        UIHelper.ShowHoverTooltip("Copy the currently selected alias name directly to your clipboard.");
 
         if (ImGui.Button("Copy Selected Alias ID", buttonSize))
         {
             PlatformUtils.Instance.SetClipboardText(_selectedEntry.id);
         }
-        ImguiUtils.ShowHoverTooltip("Copy the currently selected alias id directly to your clipboard.");
+        UIHelper.ShowHoverTooltip("Copy the currently selected alias id directly to your clipboard.");
 
         if (ImGui.Button("Copy Alias List", buttonSize))
         {
@@ -209,7 +210,7 @@ public class AliasTab
 
             PlatformUtils.Instance.SetClipboardText(aliasList);
         }
-        ImguiUtils.ShowHoverTooltip("Copy the aliases into a list: <ID> <Name>, saving to your clipboard.");
+        UIHelper.ShowHoverTooltip("Copy the aliases into a list: <ID> <Name>, saving to your clipboard.");
     }
 
     private void DisplayEditWindow()
@@ -273,17 +274,17 @@ public class AliasTab
         ImGui.Text("ID");
         ImGui.SetNextItemWidth(width);
         ImGui.InputText($"##AddID_{EntryName}", ref _newRefId, 255);
-        ImguiUtils.ShowHoverTooltip("The map ID of the map name to add.");
+        UIHelper.ShowHoverTooltip("The map ID of the map name to add.");
 
         ImGui.Text("Name");
         ImGui.SetNextItemWidth(width);
         ImGui.InputText($"##AddName_{EntryName}", ref _newRefName, 255);
-        ImguiUtils.ShowHoverTooltip("The alias name to give to the added map name.");
+        UIHelper.ShowHoverTooltip("The alias name to give to the added map name.");
 
         ImGui.Text("Tags");
         ImGui.SetNextItemWidth(width);
         ImGui.InputText($"##AddTags_{EntryName}", ref _newRefTags, 255);
-        ImguiUtils.ShowHoverTooltip("The tags to associate with this map name.");
+        UIHelper.ShowHoverTooltip("The tags to associate with this map name.");
 
         if (ImGui.Button("Add New Alias", buttonSize))
         {

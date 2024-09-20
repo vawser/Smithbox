@@ -1,7 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Editors.ModelEditor.Tools;
+using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -61,48 +61,48 @@ public class PinGroups
 
         UpdateGroupList();
 
-        ImguiUtils.WrappedText("Create a pin group from your current pinned params, rows or fields, or select an existing pin group to replace your current pinned params, rows or fields.");
-        ImguiUtils.WrappedText("");
+        UIHelper.WrappedText("Create a pin group from your current pinned params, rows or fields, or select an existing pin group to replace your current pinned params, rows or fields.");
+        UIHelper.WrappedText("");
 
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Configuration");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Configuration");
         ImGui.Separator();
 
         ImGui.Checkbox("Show only pinned params exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedParams);
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedParams.HintText}\nWhen enabled, only pinned params will appear in the param list.");
+        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedParams.HintText}\nWhen enabled, only pinned params will appear in the param list.");
 
         ImGui.Checkbox("Show only pinned rows exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedRows);
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedRows.HintText}\nWhen enabled, only pinned rows will appear in the rows list.");
+        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedRows.HintText}\nWhen enabled, only pinned rows will appear in the rows list.");
 
         ImGui.Checkbox("Show only pinned fields exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedFields);
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedFields.HintText}\nWhen enabled, only pinned fields will appear in the param list.");
+        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedFields.HintText}\nWhen enabled, only pinned fields will appear in the param list.");
 
         if (ImGui.Button("Clear Param Pins", thirdButtonSize))
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams = new();
         }
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedParams.HintText}\nClear current pinned params.");
+        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedParams.HintText}\nClear current pinned params.");
 
         ImGui.SameLine();
         if (ImGui.Button("Clear Row Pins", thirdButtonSize))
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows = new();
         }
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedRows.HintText}\nClear current pinned rows.");
+        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedRows.HintText}\nClear current pinned rows.");
 
         ImGui.SameLine();
         if (ImGui.Button("Clear Field Pins", thirdButtonSize))
         {
             Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields = new();
         }
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedFields.HintText}\nClear current pinned fields.");
+        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedFields.HintText}\nClear current pinned fields.");
 
 
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Group Creation");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Group Creation");
         ImGui.Separator();
 
-        ImguiUtils.WrappedText("Name");
+        UIHelper.WrappedText("Name");
         ImGui.SetNextItemWidth(defaultButtonSize.X);
         ImGui.InputText("##newGroupName", ref _newGroupName, 255);
 
@@ -110,24 +110,24 @@ public class PinGroups
         {
             CreateParamGroup();
         }
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateParamPinGroup.HintText}\nCreate a new pin group from the current pinned params.");
+        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateParamPinGroup.HintText}\nCreate a new pin group from the current pinned params.");
 
         ImGui.SameLine();
         if (ImGui.Button("Create Row Group", thirdButtonSize))
         {
             CreateRowGroup();
         }
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateRowPinGroup.HintText}\nCreate a new pin group from the current pinned rows.");
+        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateRowPinGroup.HintText}\nCreate a new pin group from the current pinned rows.");
 
         ImGui.SameLine();
         if (ImGui.Button("Create Field Group", thirdButtonSize))
         {
             CreateFieldGroup();
         }
-        ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateFieldPinGroup.HintText}\nCreate a new pin group from the current pinned fields.");
+        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateFieldPinGroup.HintText}\nCreate a new pin group from the current pinned fields.");
 
         ImGui.Separator();
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Group Lists");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Group Lists");
         ImGui.Separator();
 
         if (ImGui.Button("View Param Groups", thirdButtonSize))
@@ -148,19 +148,19 @@ public class PinGroups
         if (CurrentDisplayState == PinGroupDisplayState.Param)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Param Groups:");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Param Groups:");
             ImGui.Separator();
         }
         if (CurrentDisplayState == PinGroupDisplayState.Row)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Row Groups:");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Row Groups:");
             ImGui.Separator();
         }
         if (CurrentDisplayState == PinGroupDisplayState.Field)
         {
             ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Field Groups:");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Field Groups:");
             ImGui.Separator();
         }
 
@@ -253,7 +253,7 @@ public class PinGroups
                 _selectedParamGroup = entry;
                 LoadParamPinGroup(entry);
             }
-            ImguiUtils.ShowHoverTooltip("Double-click to set current param pins to this group.");
+            UIHelper.ShowHoverTooltip("Double-click to set current param pins to this group.");
 
             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
             {
@@ -271,7 +271,7 @@ public class PinGroups
                     {
                         DeletePinGroup(entry, ParamGroupPath);
                     }
-                    ImguiUtils.ShowHoverTooltip("Delete this group.");
+                    UIHelper.ShowHoverTooltip("Delete this group.");
 
                     ImGui.EndPopup();
                 }
@@ -287,7 +287,7 @@ public class PinGroups
                 _selectedRowGroup = entry;
                 LoadRowPinGroup(entry);
             }
-            ImguiUtils.ShowHoverTooltip("Double-click to set current row pins to this group.");
+            UIHelper.ShowHoverTooltip("Double-click to set current row pins to this group.");
 
             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
             {
@@ -305,7 +305,7 @@ public class PinGroups
                     {
                         DeletePinGroup(entry, RowGroupPath);
                     }
-                    ImguiUtils.ShowHoverTooltip("Delete this group.");
+                    UIHelper.ShowHoverTooltip("Delete this group.");
 
                     ImGui.EndPopup();
                 }
@@ -322,7 +322,7 @@ public class PinGroups
                 _selectedFieldGroup = entry;
                 LoadFieldPinGroup(entry);
             }
-            ImguiUtils.ShowHoverTooltip("Double-click to set current field pins to this group.");
+            UIHelper.ShowHoverTooltip("Double-click to set current field pins to this group.");
 
             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
             {
@@ -340,7 +340,7 @@ public class PinGroups
                     {
                         DeletePinGroup(entry, FieldGroupPath);
                     }
-                    ImguiUtils.ShowHoverTooltip("Delete this group.");
+                    UIHelper.ShowHoverTooltip("Delete this group.");
 
                     ImGui.EndPopup();
                 }
@@ -352,11 +352,11 @@ public class PinGroups
     {
         if(_selectedParamPinGroup != null)
         {
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Params:");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Params:");
 
             foreach (var entry in _selectedParamPinGroup.Pins)
             {
-                ImguiUtils.WrappedText($"{entry}");
+                UIHelper.WrappedText($"{entry}");
             }
         }
     }
@@ -365,14 +365,14 @@ public class PinGroups
     {
         if (_selectedRowPinGroup != null)
         {
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Rows:");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Rows:");
 
             foreach (var entry in _selectedRowPinGroup.Pins)
             {
-                ImguiUtils.WrappedText($"{entry.Key}:");
+                UIHelper.WrappedText($"{entry.Key}:");
                 foreach (var listEntry in entry.Value)
                 {
-                    ImguiUtils.WrappedText($" {listEntry}");
+                    UIHelper.WrappedText($" {listEntry}");
                 }
             }
         }
@@ -382,14 +382,14 @@ public class PinGroups
     {
         if (_selectedFieldPinGroup != null)
         {
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"Fields:");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Fields:");
 
             foreach (var entry in _selectedFieldPinGroup.Pins)
             {
-                ImguiUtils.WrappedText($"{entry.Key}:");
+                UIHelper.WrappedText($"{entry.Key}:");
                 foreach (var listEntry in entry.Value)
                 {
-                    ImguiUtils.WrappedText($" {listEntry}");
+                    UIHelper.WrappedText($" {listEntry}");
                 }
             }
         }

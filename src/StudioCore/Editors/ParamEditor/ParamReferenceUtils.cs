@@ -3,6 +3,7 @@ using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -118,7 +119,7 @@ public static class ParamReferenceUtils
                         EditorCommandQueue.AddCommand($"map/idselect/enemy/{mapId}/{entityID}");
                     }
                 }
-                ImguiUtils.ShowHoverTooltip("Loads the map this bonfire is located in and selects the bonfire Enemy map object automatically, allowing you to frame it immediately.");
+                UIHelper.ShowHoverTooltip("Loads the map this bonfire is located in and selects the bonfire Enemy map object automatically, allowing you to frame it immediately.");
             }
         }
     }
@@ -188,7 +189,7 @@ public static class ParamReferenceUtils
                         EditorCommandQueue.AddCommand($"map/idselect/enemy/{mapId}/{entityID}");
                     }
                 }
-                ImguiUtils.ShowHoverTooltip("Loads the map this lamp is located in and selects the bonfire Enemy map object automatically, allowing you to frame it immediately.");
+                UIHelper.ShowHoverTooltip("Loads the map this lamp is located in and selects the bonfire Enemy map object automatically, allowing you to frame it immediately.");
             }
         }
     }
@@ -277,7 +278,7 @@ public static class ParamReferenceUtils
                         EditorCommandQueue.AddCommand($"map/idselect/enemy/{mapId}/{entityID}");
                     }
                 }
-                ImguiUtils.ShowHoverTooltip("Loads the map this boss is located in and selects the boss Enemy map object automatically, allowing you to frame it immediately.");
+                UIHelper.ShowHoverTooltip("Loads the map this boss is located in and selects the boss Enemy map object automatically, allowing you to frame it immediately.");
             }
         }
     }
@@ -322,7 +323,7 @@ public static class ParamReferenceUtils
                 {
                     EditorCommandQueue.AddCommand($"model/load/{modelId1}/Asset");
                 }
-                ImguiUtils.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
+                UIHelper.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
             }
 
             if ((currentField == "model1Name" || currentField == "simpleModelName") && modelId2 != "")
@@ -331,7 +332,7 @@ public static class ParamReferenceUtils
                 {
                     EditorCommandQueue.AddCommand($"model/load/{modelId2}/Asset");
                 }
-                ImguiUtils.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
+                UIHelper.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
             }
         }
     }
@@ -370,7 +371,7 @@ public static class ParamReferenceUtils
                 {
                     EditorCommandQueue.AddCommand($"model/load/{assetID}/Asset");
                 }
-                ImguiUtils.ShowWideHoverTooltip($"{assetID}: {aliasName}");
+                UIHelper.ShowWideHoverTooltip($"{assetID}: {aliasName}");
             }
         }
     }
@@ -497,7 +498,7 @@ public static class ParamReferenceUtils
                         EditorCommandQueue.AddCommand($"map/idselect/enemy/{mapId}/{entityID}");
                     }
                 }
-                ImguiUtils.ShowHoverTooltip("Loads the map and select the buddy stone Enemy map object.");
+                UIHelper.ShowHoverTooltip("Loads the map and select the buddy stone Enemy map object.");
             }
         }
     }
@@ -631,7 +632,7 @@ public static class ParamReferenceUtils
                     {
                         EditorCommandQueue.AddCommand($"model/load/{modelString}/Asset");
                     }
-                    ImguiUtils.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
+                    UIHelper.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
                 }
             }
         }
@@ -689,7 +690,7 @@ public static class ParamReferenceUtils
                 EditorCommandQueue.AddCommand($"map/select/{mapId}/{AssetName}");
             }
         }
-        ImguiUtils.ShowHoverTooltip("Loads the map and selects the asset that holds this treasure.");
+        UIHelper.ShowHoverTooltip("Loads the map and selects the asset that holds this treasure.");
     }
 
     public static void ItemLotParam_DS1(string activeParam, Param.Row row, string currentField)

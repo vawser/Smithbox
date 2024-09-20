@@ -1,6 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +18,8 @@ public class MobRandomiser
 
         if (SupportsRandomiser())
         {
-            ImguiUtils.WrappedText("This randomiser allows you to randomise the types of enemies throughout the world.");
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText("This randomiser allows you to randomise the types of enemies throughout the world.");
+            UIHelper.WrappedText("");
 
             switch (Smithbox.ProjectType)
             {
@@ -80,7 +80,7 @@ public class MobRandomiser
         }
         else
         {
-            ImguiUtils.WrappedText($"This randomiser is not available.");
+            UIHelper.WrappedText($"This randomiser is not available.");
         }
     }
 

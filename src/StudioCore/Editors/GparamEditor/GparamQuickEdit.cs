@@ -4,6 +4,7 @@ using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.GraphicsEditor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,7 +78,7 @@ namespace StudioCore.Editors.GparamEditor
         public void DisplayCheatSheet()
         {
             ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "File Filters:");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "File Filters:");
             ImGui.SameLine();
             if(ImGui.Button($"{ForkAwesome.Bars}##fileFilterToggle"))
             {
@@ -86,21 +87,21 @@ namespace StudioCore.Editors.GparamEditor
             ImGui.Separator();
             if (displayFileFilterSection)
             {
-                ImguiUtils.WrappedText($"File arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"*");
-                ImguiUtils.WrappedText("Targets all files.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"selection");
-                ImguiUtils.WrappedText("Targets current file selection.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"file:[<name>]");
-                ImguiUtils.WrappedText("Targets the file with the specified name.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText($"File arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
+                UIHelper.WrappedText("Targets all files.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
+                UIHelper.WrappedText("Targets current file selection.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"file:[<name>]");
+                UIHelper.WrappedText("Targets the file with the specified name.");
+                UIHelper.WrappedText("");
             }
 
             ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Group Filters:");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Group Filters:");
             ImGui.SameLine();
             if (ImGui.Button($"{ForkAwesome.Bars}##groupFilterToggle"))
             {
@@ -109,21 +110,21 @@ namespace StudioCore.Editors.GparamEditor
             ImGui.Separator();
             if (displayGroupFilterSection)
             {
-                ImguiUtils.WrappedText($"Group arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"*");
-                ImguiUtils.WrappedText("Targets all groups.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"selection");
-                ImguiUtils.WrappedText("Targets current group selection.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"group:[<name>]");
-                ImguiUtils.WrappedText("Targets the groups with the specified name.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText($"Group arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
+                UIHelper.WrappedText("Targets all groups.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
+                UIHelper.WrappedText("Targets current group selection.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"group:[<name>]");
+                UIHelper.WrappedText("Targets the groups with the specified name.");
+                UIHelper.WrappedText("");
             }
 
             ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Field Filters:");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Field Filters:");
             ImGui.SameLine();
             if (ImGui.Button($"{ForkAwesome.Bars}##fieldFilterToggle"))
             {
@@ -132,21 +133,21 @@ namespace StudioCore.Editors.GparamEditor
             ImGui.Separator();
             if (displayFieldFilterSection)
             {
-                ImguiUtils.WrappedText($"Field arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"*");
-                ImguiUtils.WrappedText("Targets all fields.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"selection");
-                ImguiUtils.WrappedText("Targets current field selection.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"field:[<name>]");
-                ImguiUtils.WrappedText("Targets the fields with the specified name.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText($"Field arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
+                UIHelper.WrappedText("Targets all fields.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
+                UIHelper.WrappedText("Targets current field selection.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"field:[<name>]");
+                UIHelper.WrappedText("Targets the fields with the specified name.");
+                UIHelper.WrappedText("");
             }
 
             ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Value Filters:");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Value Filters:");
             ImGui.SameLine();
             if (ImGui.Button($"{ForkAwesome.Bars}##valueFilterToggle"))
             {
@@ -155,30 +156,30 @@ namespace StudioCore.Editors.GparamEditor
             ImGui.Separator();
             if (displayValueFilterSection)
             {
-                ImguiUtils.WrappedText($"Filter arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"*");
-                ImguiUtils.WrappedText("Targets all rows.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"selection");
-                ImguiUtils.WrappedText("Targets current value row selection.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_ID}:[<x>]");
-                ImguiUtils.WrappedText("Targets all rows with <x> ID.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Index}:[<x>]");
-                ImguiUtils.WrappedText("Targets all rows with <x> row index.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_TimeOfDay}:[<x>]");
-                ImguiUtils.WrappedText("Targets all rows with <x> Time of Day.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Value}:[<x>]");
-                ImguiUtils.WrappedText("Targets all rows with <x> Value. For multi-values split them like so: [<x>,<x>]");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText($"Filter arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"*");
+                UIHelper.WrappedText("Targets all rows.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"selection");
+                UIHelper.WrappedText("Targets current value row selection.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_ID}:[<x>]");
+                UIHelper.WrappedText("Targets all rows with <x> ID.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Index}:[<x>]");
+                UIHelper.WrappedText("Targets all rows with <x> row index.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_TimeOfDay}:[<x>]");
+                UIHelper.WrappedText("Targets all rows with <x> Time of Day.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Value}:[<x>]");
+                UIHelper.WrappedText("Targets all rows with <x> Value. For multi-values split them like so: [<x>,<x>]");
+                UIHelper.WrappedText("");
             }
 
             ImGui.Separator();
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Value Commands:");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Value Commands:");
             ImGui.SameLine();
             if (ImGui.Button($"{ForkAwesome.Bars}##valueCommandToggle"))
             {
@@ -187,29 +188,29 @@ namespace StudioCore.Editors.GparamEditor
             ImGui.Separator();
             if (displayValueCommandSection)
             {
-                ImguiUtils.WrappedText($"Command arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Set}:[<x>]");
-                ImguiUtils.WrappedText("Sets target rows to <x> Value.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Add}:[<x>]");
-                ImguiUtils.WrappedText("Adds <x> to the Value of the target rows.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Subtract}:[<x>]");
-                ImguiUtils.WrappedText("Subtracts <x> from the Value of the target rows.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Multiply}:[<x>]");
-                ImguiUtils.WrappedText("Multiplies the Value of the target rows by <x>.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_SetByRow}:[<x>]");
-                ImguiUtils.WrappedText("Sets target rows to the Value of row ID <x>.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Restore}");
-                ImguiUtils.WrappedText("Sets target rows to their vanilla Value.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Random}:[<x>][<y>]");
-                ImguiUtils.WrappedText("Sets target rows to a random value between <x> and <y>. First is the minimum, second is the maximum.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText($"Command arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Set}:[<x>]");
+                UIHelper.WrappedText("Sets target rows to <x> Value.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Add}:[<x>]");
+                UIHelper.WrappedText("Adds <x> to the Value of the target rows.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Subtract}:[<x>]");
+                UIHelper.WrappedText("Subtracts <x> from the Value of the target rows.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Multiply}:[<x>]");
+                UIHelper.WrappedText("Multiplies the Value of the target rows by <x>.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_SetByRow}:[<x>]");
+                UIHelper.WrappedText("Sets target rows to the Value of row ID <x>.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Restore}");
+                UIHelper.WrappedText("Sets target rows to their vanilla Value.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{CFG.Current.Gparam_QuickEdit_Random}:[<x>][<y>]");
+                UIHelper.WrappedText("Sets target rows to a random value between <x> and <y>. First is the minimum, second is the maximum.");
+                UIHelper.WrappedText("");
             }
         }
 
@@ -222,27 +223,27 @@ namespace StudioCore.Editors.GparamEditor
             ImGui.Text("File Filter:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText("##targetParamString", ref _targetFileString, 255);
-            ImguiUtils.ShowHoverTooltip("Enter target file arguments here.");
+            UIHelper.ShowHoverTooltip("Enter target file arguments here.");
 
             ImGui.Text("Group Filter:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText("##targetGroupString", ref _targetGroupString, 255);
-            ImguiUtils.ShowHoverTooltip("Enter target group arguments here.");
+            UIHelper.ShowHoverTooltip("Enter target group arguments here.");
 
             ImGui.Text("Field Filter:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText("##targetFieldString", ref _targetFieldString, 255);
-            ImguiUtils.ShowHoverTooltip("Enter target field arguments here.");
+            UIHelper.ShowHoverTooltip("Enter target field arguments here.");
 
             ImGui.Text("Value Filter:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText("##filterString", ref _valueFilterString, 255);
-            ImguiUtils.ShowHoverTooltip("Enter value filter arguments here.");
+            UIHelper.ShowHoverTooltip("Enter value filter arguments here.");
 
             ImGui.Text("Value Command:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText("##commandString", ref _valueCommandString, 255);
-            ImguiUtils.ShowHoverTooltip("Enter value command arguments here.");
+            UIHelper.ShowHoverTooltip("Enter value command arguments here.");
 
             if (ImGui.Button("Execute", thirdButtonSize))
             {
@@ -254,7 +255,7 @@ namespace StudioCore.Editors.GparamEditor
             {
                 GenerateQuickEditCommands();
             }
-            ImguiUtils.ShowHoverTooltip("Automatically fill the filter input based on current selection.");
+            UIHelper.ShowHoverTooltip("Automatically fill the filter input based on current selection.");
 
             ImGui.SameLine();
             if (ImGui.Button("Clear", thirdButtonSize))

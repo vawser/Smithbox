@@ -2,6 +2,7 @@
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor.Actions;
+using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Tools;
 using StudioCore.Utilities;
@@ -66,7 +67,7 @@ public class ToolSubMenu
             ///--------------------
             /// Color Picker
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Color Picker", KeyBindings.Current.TEXTURE_ExportTexture.HintText))
             {
                 ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
@@ -75,11 +76,11 @@ public class ToolSubMenu
             ///--------------------
             /// Toggle Editor Visibility by Tag
             ///--------------------
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Toggle Editor Visibility by Tag"))
             {
                 ImGui.InputText("##targetTag", ref CFG.Current.Toolbar_Tag_Visibility_Target, 255);
-                ImguiUtils.ShowHoverTooltip("Specific which tag the map objects will be filtered by.");
+                UIHelper.ShowHoverTooltip("Specific which tag the map objects will be filtered by.");
 
                 if (ImGui.MenuItem("Enable Visibility"))
                 {
@@ -104,7 +105,7 @@ public class ToolSubMenu
             ///--------------------
             if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
             {
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                 if (ImGui.BeginMenu("Patrol Route Visualisation"))
                 {
                     if (ImGui.MenuItem("Display"))
@@ -125,7 +126,7 @@ public class ToolSubMenu
             ///--------------------
             if (Smithbox.ProjectType is ProjectType.DES || Smithbox.ProjectType is ProjectType.DS1 || Smithbox.ProjectType is ProjectType.DS1R)
             {
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                 if (ImGui.BeginMenu("Navigation Data"))
                 {
                     if (ImGui.MenuItem("Generate"))
@@ -142,7 +143,7 @@ public class ToolSubMenu
             ///--------------------
             if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
             {
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                 if (ImGui.BeginMenu("Entity ID Checker"))
                 {
                     if (Screen.Universe.LoadedObjectContainers != null && Screen.Universe.LoadedObjectContainers.Any())
@@ -179,7 +180,7 @@ public class ToolSubMenu
             // Tool for AC6 since its maps come with unnamed Regions and Events
             if (Smithbox.ProjectType is ProjectType.AC6)
             {
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                 if (ImGui.BeginMenu("Rename Map Objects"))
                 {
                     if (Screen.Universe.LoadedObjectContainers != null && Screen.Universe.LoadedObjectContainers.Any())
@@ -208,7 +209,7 @@ public class ToolSubMenu
 
                     ImGui.EndMenu();
                 }
-                ImguiUtils.ShowHoverTooltip("Applies descriptive name (based on the map object class) to map objects with blank names by default.");
+                UIHelper.ShowHoverTooltip("Applies descriptive name (based on the map object class) to map objects with blank names by default.");
             }
 
             ImGui.EndMenu();

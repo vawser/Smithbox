@@ -15,6 +15,7 @@ using static StudioCore.Configuration.Settings.SettingsWindow;
 using System;
 using static SoulsFormats.MSB_AC6;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 
 namespace StudioCore.Tools.Development;
 
@@ -76,11 +77,11 @@ public class DebugWindow
             return;
 
         ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * scale, ImGuiCond.FirstUseEver);
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Imgui_Moveable_MainBg);
-        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Imgui_Moveable_TitleBg);
-        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Imgui_Moveable_TitleBg_Active);
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBg);
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.Imgui_Moveable_MainBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBg, UI.Current.Imgui_Moveable_TitleBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.Imgui_Moveable_TitleBg_Active);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(10.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(5.0f, 5.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
@@ -99,31 +100,31 @@ public class DebugWindow
                 if (tab == SelectedDebugTab.DisplayTaskStatus)
                 {
                     ImGui.Separator();
-                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Information");
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Information");
                     ImGui.Separator();
                 }
                 if (tab == SelectedDebugTab.ImGuiDemo)
                 {
                     ImGui.Separator();
-                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "ImGui");
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "ImGui");
                     ImGui.Separator();
                 }
                 if (tab == SelectedDebugTab.ValidateParamdef)
                 {
                     ImGui.Separator();
-                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Validation");
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Validation");
                     ImGui.Separator();
                 }
                 if (tab == SelectedDebugTab.FmgNameHelper)
                 {
                     ImGui.Separator();
-                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Helpers");
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Helpers");
                     ImGui.Separator();
                 }
                 if (tab == SelectedDebugTab.Test_MSBE_BytePerfect)
                 {
                     ImGui.Separator();
-                    ImguiUtils.WrappedTextColored(CFG.Current.ImGui_Benefit_Text_Color, "Tests");
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Tests");
                     ImGui.Separator();
                 }
 
@@ -281,19 +282,19 @@ public class DebugWindow
         {
             ParamValidationTool.ValidateParamdef();
         }
-        ImguiUtils.ShowHoverTooltip("Validate that the current PARAMDEF works with the old-style SF PARAM class.");
+        UIHelper.ShowHoverTooltip("Validate that the current PARAMDEF works with the old-style SF PARAM class.");
 
         if (ImGui.Button("Validate Padding (for selected param)", buttonSize))
         {
             ParamValidationTool.ValidatePadding();
         }
-        ImguiUtils.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
+        UIHelper.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
 
         if (ImGui.Button("Validate Padding (for all params)", buttonSize))
         {
             ParamValidationTool.ValidatePadding(true);
         }
-        ImguiUtils.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
+        UIHelper.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
 
     }
 
@@ -316,7 +317,7 @@ public class DebugWindow
         }
 
         ImGui.Checkbox("Check project files", ref MapValidationTool.TargetProject);
-        ImguiUtils.ShowHoverTooltip("The check will use the game root files by default, if you want to use your project's specific files, tick this.");
+        UIHelper.ShowHoverTooltip("The check will use the game root files by default, if you want to use your project's specific files, tick this.");
     }
 
     private void DisplayTool_TimeActValidation()

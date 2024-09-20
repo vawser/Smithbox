@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.EmevdEditor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ public class ToolSubMenu
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Test"))
             {
 

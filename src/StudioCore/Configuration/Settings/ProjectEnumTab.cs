@@ -1,8 +1,8 @@
 ﻿using ImGuiNET;
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Core.Project;
+using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +42,7 @@ public class ProjectEnumTab
 
         ImGui.Columns(3);
 
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBgSecondary);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBgSecondary);
         ImGui.BeginChild($"ProjectEnumSelectionList");
 
         DisplayProjectEnumSelectionList();
@@ -52,7 +52,7 @@ public class ProjectEnumTab
 
         ImGui.NextColumn();
 
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBgSecondary);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBgSecondary);
         ImGui.BeginChild($"ProjectEnumOptionSelectionList");
 
         DisplayProjectEnumOptionList();
@@ -62,7 +62,7 @@ public class ProjectEnumTab
 
         ImGui.NextColumn();
 
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBgSecondary);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBgSecondary);
         ImGui.BeginChild($"ProjectEnumActions");
 
         DisplayProjectEnumAction();
@@ -157,10 +157,10 @@ public class ProjectEnumTab
             if (ImGui.CollapsingHeader("Selected Enum"))
             {
                 ImGui.Text($"Display Name");
-                ImguiUtils.ShowHoverTooltip("Defines the display name of this enum list.");
+                UIHelper.ShowHoverTooltip("Defines the display name of this enum list.");
                 ImGui.InputTextMultiline($"##SelectedEntry_EditDisplayName", ref _refUpdateDisplayName, 255, inputSize);
                 ImGui.Text($"Description");
-                ImguiUtils.ShowHoverTooltip("A description of what this enum list is for.");
+                UIHelper.ShowHoverTooltip("A description of what this enum list is for.");
                 ImGui.InputTextMultiline($"##SelectedEntry_EditDescription", ref _refUpdateDescription, 255, inputSize);
 
                 if (ImGui.Button("Update Entry", buttonSize))
@@ -192,7 +192,7 @@ public class ProjectEnumTab
                         {
                             ImGui.Text($"Name");
                             ImGui.InputTextMultiline($"##UpdateOptionName", ref _refUpdateOptionName, 255, inputSize);
-                            ImguiUtils.ShowHoverTooltip("The display name of the enum option.");
+                            UIHelper.ShowHoverTooltip("The display name of the enum option.");
                             //ImGui.Text($"Description");
                             //ImGui.InputTextMultiline($"##UpdateOptionDescription", ref _refUpdateOptionDescription, 255, inputSize);
                             //ImguiUtils.ShowHoverTooltip("A description of what this enum option is.");
@@ -222,10 +222,10 @@ public class ProjectEnumTab
                 {
                     ImGui.Text($"ID");
                     ImGui.InputTextMultiline($"##NewOptionID", ref _refNewOptionID, 255, inputSize);
-                    ImguiUtils.ShowHoverTooltip("The numeric ID of the enum option.");
+                    UIHelper.ShowHoverTooltip("The numeric ID of the enum option.");
                     ImGui.Text($"Name");
                     ImGui.InputTextMultiline($"##NewOptionName", ref _refNewOptionName, 255, inputSize);
-                    ImguiUtils.ShowHoverTooltip("The display name of the enum option.");
+                    UIHelper.ShowHoverTooltip("The display name of the enum option.");
                     //ImGui.Text($"Description");
                     //ImGui.InputTextMultiline($"##NewOptionDescription", ref _refNewOptionDescription, 255, inputSize);
                     //ImguiUtils.ShowHoverTooltip("A description of what this enum option is.");

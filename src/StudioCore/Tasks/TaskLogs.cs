@@ -1,8 +1,8 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Settings;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -148,7 +148,7 @@ public static class TaskLogs
 
     public static void Display()
     {
-        if (!CFG.Current.Interface_DisplayInfoLogger)
+        if (!UI.Current.Interface_DisplayInfoLogger)
             return;
 
         ImGui.Spacing();
@@ -158,10 +158,10 @@ public static class TaskLogs
         // Warning List
         if (_warningList.Count > 0)
         {
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Warning_Text_Color);
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
             if (ImGui.BeginMenu("!! WARNINGS!! "))
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Warning_Text_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
                 ImGui.Text("Click warnings to remove them from list");
                 if (ImGui.Button("Remove All Warnings"))
                 {
@@ -196,15 +196,15 @@ public static class TaskLogs
         {
             _loggerWindowOpen = !_loggerWindowOpen;
         }
-        ImguiUtils.ShowHoverTooltip("Show the Logger window.");
+        UIHelper.ShowHoverTooltip("Show the Logger window.");
 
         if (_loggerWindowOpen)
         {
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Imgui_Moveable_MainBg);
-            ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Imgui_Moveable_TitleBg);
-            ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Imgui_Moveable_TitleBg_Active);
-            ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBg);
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.Imgui_Moveable_MainBg);
+            ImGui.PushStyleColor(ImGuiCol.TitleBg, UI.Current.Imgui_Moveable_TitleBg);
+            ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.Imgui_Moveable_TitleBg_Active);
+            ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBg);
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             if (ImGui.Begin("Logger##TaskLogger", ref _loggerWindowOpen, ImGuiWindowFlags.NoDocking))
             {
                 if (ImGui.Button("Clear##TaskLogger"))
@@ -272,34 +272,34 @@ public static class TaskLogs
         if (level is LogLevel.Information)
         {
             return new Vector4(
-                CFG.Current.ImGui_Benefit_Text_Color.X + (0.1f * mult),
-                CFG.Current.ImGui_Benefit_Text_Color.Y - (0.1f * mult),
-                CFG.Current.ImGui_Benefit_Text_Color.Z + (0.5f * mult),
+                UI.Current.ImGui_Benefit_Text_Color.X + (0.1f * mult),
+                UI.Current.ImGui_Benefit_Text_Color.Y - (0.1f * mult),
+                UI.Current.ImGui_Benefit_Text_Color.Z + (0.5f * mult),
                 alpha);
         }
 
         if (level is LogLevel.Warning)
         {
             return new Vector4(
-                CFG.Current.ImGui_Warning_Text_Color.X - (0.1f * mult),
-                CFG.Current.ImGui_Warning_Text_Color.Y - (0.1f * mult),
-                CFG.Current.ImGui_Warning_Text_Color.Z + (0.6f * mult),
+                UI.Current.ImGui_Warning_Text_Color.X - (0.1f * mult),
+                UI.Current.ImGui_Warning_Text_Color.Y - (0.1f * mult),
+                UI.Current.ImGui_Warning_Text_Color.Z + (0.6f * mult),
                 alpha);
         }
 
         if (level is LogLevel.Error or LogLevel.Critical)
         {
             return new Vector4(
-                CFG.Current.ImGui_Warning_Text_Color.X - (0.1f * mult),
-                CFG.Current.ImGui_Warning_Text_Color.Y + (0.6f * mult),
-                CFG.Current.ImGui_Warning_Text_Color.Z + (0.6f * mult),
+                UI.Current.ImGui_Warning_Text_Color.X - (0.1f * mult),
+                UI.Current.ImGui_Warning_Text_Color.Y + (0.6f * mult),
+                UI.Current.ImGui_Warning_Text_Color.Z + (0.6f * mult),
                 alpha);
         }
 
         return new Vector4(
-            CFG.Current.ImGui_Default_Text_Color.X - (0.1f * mult),
-            CFG.Current.ImGui_Default_Text_Color.Y - (0.1f * mult),
-            CFG.Current.ImGui_Default_Text_Color.Z - (0.1f * mult),
+            UI.Current.ImGui_Default_Text_Color.X - (0.1f * mult),
+            UI.Current.ImGui_Default_Text_Color.Y - (0.1f * mult),
+            UI.Current.ImGui_Default_Text_Color.Z - (0.1f * mult),
             alpha);
     }
 

@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,8 +8,8 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Utilities;
-public static class ImguiUtils
+namespace StudioCore.Interface;
+public static class UIHelper
 {
     public static void RestoreImguiIfMissing()
     {
@@ -62,7 +63,7 @@ public static class ImguiUtils
 
     public static void ShowHelpMarker(string desc)
     {
-        if (CFG.Current.System_Show_UI_Tooltips)
+        if (UI.Current.System_Show_UI_Tooltips)
         {
             ImGui.SameLine();
             ImGui.TextDisabled("(?)");
@@ -79,7 +80,7 @@ public static class ImguiUtils
 
     public static void ShowHoverTooltip(string desc)
     {
-        if (CFG.Current.System_Show_UI_Tooltips)
+        if (UI.Current.System_Show_UI_Tooltips)
         {
             if (ImGui.IsItemHovered())
             {
@@ -121,7 +122,7 @@ public static class ImguiUtils
 
     public static void ShowWideHoverTooltip(string desc)
     {
-        if (CFG.Current.System_Show_UI_Tooltips)
+        if (UI.Current.System_Show_UI_Tooltips)
         {
             if (ImGui.IsItemHovered())
             {
@@ -133,12 +134,47 @@ public static class ImguiUtils
             }
         }
     }
-
     public static string GetKeybindHint(string hint)
     {
         if (hint == "")
             return "None";
         else
             return hint;
+    }
+
+    public static void DisplayAlias(string aliasName)
+    {
+        if (aliasName != "")
+        {
+            ImGui.SameLine();
+            if (UI.Current.System_WrapAliasDisplay)
+            {
+                ImGui.PushTextWrapPos();
+                ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"{aliasName}");
+                ImGui.PopTextWrapPos();
+            }
+            else
+            {
+                ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"{aliasName}");
+            }
+        }
+    }
+
+    public static void DisplayColoredAlias(string aliasName, Vector4 color)
+    {
+        if (aliasName != "")
+        {
+            ImGui.SameLine();
+            if (UI.Current.System_WrapAliasDisplay)
+            {
+                ImGui.PushTextWrapPos();
+                ImGui.TextColored(color, @$"{aliasName}");
+                ImGui.PopTextWrapPos();
+            }
+            else
+            {
+                ImGui.TextColored(color, @$"{aliasName}");
+            }
+        }
     }
 }

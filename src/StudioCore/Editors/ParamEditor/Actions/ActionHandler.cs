@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.TextEditor;
@@ -260,7 +261,7 @@ public class ActionHandler
 
     public void ParamTargetElement(ref TargetType currentTarget, string tooltip, Vector2 size)
     {
-        ImguiUtils.WrappedText("Target Category:");
+        UIHelper.WrappedText("Target Category:");
         ImGui.SetNextItemWidth(size.X);
         if (ImGui.BeginCombo("##Target", currentTarget.GetDisplayName()))
         {
@@ -275,13 +276,13 @@ public class ActionHandler
             }
             ImGui.EndCombo();
         }
-        ImguiUtils.ShowHoverTooltip(tooltip);
-        ImguiUtils.WrappedText("");
+        UIHelper.ShowHoverTooltip(tooltip);
+        UIHelper.WrappedText("");
     }
 
     public void ParamSourceElement(ref SourceType currentSource, string tooltip, Vector2 size)
     {
-        ImguiUtils.WrappedText("Source Category:");
+        UIHelper.WrappedText("Source Category:");
         ImGui.SetNextItemWidth(size.X);
         if (ImGui.BeginCombo("##Source", currentSource.GetDisplayName()))
         {
@@ -427,7 +428,7 @@ public class ActionHandler
             float EditY = (Size.Y / 100) * 25;
 
             ImGui.BeginChild("##resultSection", new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
-            ImguiUtils.WrappedText($"ID {_idRowInstanceFinder_CachedSearchID}: {_idRowInstanceFinder_Results.Count} matches");
+            UIHelper.WrappedText($"ID {_idRowInstanceFinder_CachedSearchID}: {_idRowInstanceFinder_Results.Count} matches");
 
             foreach (var paramName in _idRowInstanceFinder_Results)
             {
@@ -471,11 +472,11 @@ public class ActionHandler
 
         if (ParamResults.Count > 0)
         {
-            ImguiUtils.WrappedText("Params:");
+            UIHelper.WrappedText("Params:");
             ImGui.BeginChild("##paramResultSection", new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
 
             // Param Results
-            ImguiUtils.WrappedText($"Value {_cachedSearchValue}: {ParamResults.Count} matches");
+            UIHelper.WrappedText($"Value {_cachedSearchValue}: {ParamResults.Count} matches");
 
             foreach (var result in ParamResults)
             {
@@ -490,11 +491,11 @@ public class ActionHandler
         // Alias Results
         if (AliasResults.Count > 0)
         {
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedText("Aliases:");
+            UIHelper.WrappedText("");
+            UIHelper.WrappedText("Aliases:");
             ImGui.BeginChild("##aliasResultSection", new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
 
-            ImguiUtils.WrappedText($"Value {_cachedSearchValue}: {AliasResults.Count} matches");
+            UIHelper.WrappedText($"Value {_cachedSearchValue}: {AliasResults.Count} matches");
 
             foreach (var result in AliasResults)
             {
@@ -506,7 +507,7 @@ public class ActionHandler
             ImGui.EndChild();
         }
 
-        ImguiUtils.WrappedText("");
+        UIHelper.WrappedText("");
     }
 
 

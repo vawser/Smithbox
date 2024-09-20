@@ -5,11 +5,11 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions;
 using StudioCore.Editors.MapEditor.MapQuery;
 using StudioCore.Editors.ModelEditor.Tools;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Scene;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +43,7 @@ public class ToolWindow
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * Smithbox.GetUIScale(), ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_MapEditor"))
@@ -136,23 +136,23 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Create"))
             {
-                ImguiUtils.WrappedText("Create a new object within the target map.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Create a new object within the target map.");
+                UIHelper.WrappedText("");
 
                 if (Screen.Universe.LoadedObjectContainers == null)
                 {
-                    ImguiUtils.WrappedText("No maps have been loaded yet.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("No maps have been loaded yet.");
+                    UIHelper.WrappedText("");
                 }
                 else if (Screen.Universe.LoadedObjectContainers != null &&
                     !Screen.Universe.LoadedObjectContainers.Any())
                 {
-                    ImguiUtils.WrappedText("No maps have been loaded yet.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("No maps have been loaded yet.");
+                    UIHelper.WrappedText("");
                 }
                 else
                 {
-                    ImguiUtils.WrappedText("Target Map:");
+                    UIHelper.WrappedText("Target Map:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
                     if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
                     {
@@ -169,13 +169,13 @@ public class ToolWindow
                         }
                         ImGui.EndCombo();
                     }
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("");
 
                     if (Handler._targetMap != (null, null))
                     {
                         var map = (MapContainer)Handler._targetMap.Item2;
 
-                        ImguiUtils.WrappedText("Target Type:");
+                        UIHelper.WrappedText("Target Type:");
                         if (map.BTLParents.Any())
                         {
                             if (ImGui.Checkbox("BTL Light", ref CFG.Current.Toolbar_Create_Light))
@@ -184,7 +184,7 @@ public class ToolWindow
                                 CFG.Current.Toolbar_Create_Region = false;
                                 CFG.Current.Toolbar_Create_Event = false;
                             }
-                            ImguiUtils.ShowHoverTooltip("Create a BTL Light object.");
+                            UIHelper.ShowHoverTooltip("Create a BTL Light object.");
                         }
 
                         if (ImGui.Checkbox("Part", ref CFG.Current.Toolbar_Create_Part))
@@ -193,7 +193,7 @@ public class ToolWindow
                             CFG.Current.Toolbar_Create_Region = false;
                             CFG.Current.Toolbar_Create_Event = false;
                         }
-                        ImguiUtils.ShowHoverTooltip("Create a Part object.");
+                        UIHelper.ShowHoverTooltip("Create a Part object.");
 
                         if (ImGui.Checkbox("Region", ref CFG.Current.Toolbar_Create_Region))
                         {
@@ -201,7 +201,7 @@ public class ToolWindow
                             CFG.Current.Toolbar_Create_Part = false;
                             CFG.Current.Toolbar_Create_Event = false;
                         }
-                        ImguiUtils.ShowHoverTooltip("Create a Region object.");
+                        UIHelper.ShowHoverTooltip("Create a Region object.");
 
                         if (ImGui.Checkbox("Event", ref CFG.Current.Toolbar_Create_Event))
                         {
@@ -209,8 +209,8 @@ public class ToolWindow
                             CFG.Current.Toolbar_Create_Region = false;
                             CFG.Current.Toolbar_Create_Part = false;
                         }
-                        ImguiUtils.ShowHoverTooltip("Create an Event object.");
-                        ImguiUtils.WrappedText("");
+                        UIHelper.ShowHoverTooltip("Create an Event object.");
+                        UIHelper.WrappedText("");
 
 
                         if (ImGui.Button("Create Object", defaultButtonSize))
@@ -218,7 +218,7 @@ public class ToolWindow
                             Handler.ApplyObjectCreation();
                         }
 
-                        ImguiUtils.WrappedText("");
+                        UIHelper.WrappedText("");
 
                         if (CFG.Current.Toolbar_Create_Light)
                         {
@@ -227,7 +227,7 @@ public class ToolWindow
 
                         if (CFG.Current.Toolbar_Create_Part)
                         {
-                            ImguiUtils.WrappedText("Part Type:");
+                            UIHelper.WrappedText("Part Type:");
                             ImGui.BeginChild("msb_part_selection", new Vector2((windowWidth - 10), (windowHeight / 4)));
 
                             foreach ((string, Type) p in Handler._partsClasses)
@@ -250,7 +250,7 @@ public class ToolWindow
                             }
                             else
                             {
-                                ImguiUtils.WrappedText("Region Type:");
+                                UIHelper.WrappedText("Region Type:");
 
                                 ImGui.BeginChild("msb_region_selection", new Vector2((windowWidth - 10), (windowHeight / 4)));
 
@@ -268,7 +268,7 @@ public class ToolWindow
 
                         if (CFG.Current.Toolbar_Create_Event)
                         {
-                            ImguiUtils.WrappedText("Event Type:");
+                            UIHelper.WrappedText("Event Type:");
                             ImGui.BeginChild("msb_event_selection", new Vector2((windowWidth - 10), (windowHeight / 4)));
 
                             foreach ((string, Type) p in Handler._eventClasses)
@@ -290,8 +290,8 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Duplicate"))
             {
-                ImguiUtils.WrappedText("Duplicate the current selection.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Duplicate the current selection.");
+                UIHelper.WrappedText("");
 
                 if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
                 {
@@ -302,19 +302,19 @@ public class ToolWindow
                             CFG.Current.Toolbar_Duplicate_Clear_Entity_ID = false;
                         }
                     }
-                    ImguiUtils.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Entity ID.");
+                    UIHelper.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Entity ID.");
                 }
 
                 if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Toolbar_Duplicate_Increment_InstanceID);
-                    ImguiUtils.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
+                    UIHelper.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
                 }
 
                 if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Increment UnkPartNames for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames);
-                    ImguiUtils.ShowHoverTooltip("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
+                    UIHelper.ShowHoverTooltip("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
                 }
 
                 if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
@@ -326,13 +326,13 @@ public class ToolWindow
                             CFG.Current.Toolbar_Duplicate_Increment_Entity_ID = false;
                         }
                     }
-                    ImguiUtils.ShowHoverTooltip("When enabled, the Entity ID assigned to the duplicated entities will be set to 0");
+                    UIHelper.ShowHoverTooltip("When enabled, the Entity ID assigned to the duplicated entities will be set to 0");
 
                     ImGui.Checkbox("Clear Entity Group IDs", ref CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs);
-                    ImguiUtils.ShowHoverTooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
+                    UIHelper.ShowHoverTooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
                 }
 
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Duplicate Selection", defaultButtonSize))
                 {
@@ -353,10 +353,10 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Move to Camera"))
             {
-                ImguiUtils.WrappedText("Move the current selection to the camera position.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Move the current selection to the camera position.");
+                UIHelper.WrappedText("");
 
-                ImguiUtils.WrappedText("Camera Offset Distance:");
+                UIHelper.WrappedText("Camera Offset Distance:");
 
                 ImGui.PushItemWidth(defaultButtonSize.X);
                 if(ImGui.SliderFloat("##Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100))
@@ -367,9 +367,9 @@ public class ToolWindow
                     if (CFG.Current.Toolbar_Move_to_Camera_Offset > 100)
                         CFG.Current.Toolbar_Move_to_Camera_Offset = 100;
                 }
-                ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the distance at which the current selection is offset from the camera when this action is used.");
+                UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the distance at which the current selection is offset from the camera when this action is used.");
 
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Move Selection to Camera", defaultButtonSize))
                 {
@@ -382,17 +382,17 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Rotate"))
             {
-                ImguiUtils.WrappedText("Rotate the current selection by the following parameters.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Rotate the current selection by the following parameters.");
+                UIHelper.WrappedText("");
 
-                ImguiUtils.WrappedText("Rotation Type:");
+                UIHelper.WrappedText("Rotation Type:");
                 if (ImGui.Checkbox("X", ref CFG.Current.Toolbar_Rotate_X))
                 {
                     CFG.Current.Toolbar_Rotate_Y = false;
                     CFG.Current.Toolbar_Rotate_Y_Pivot = false;
                     CFG.Current.Toolbar_Fixed_Rotate = false;
                 }
-                ImguiUtils.ShowHoverTooltip("Set the rotation axis to X.");
+                UIHelper.ShowHoverTooltip("Set the rotation axis to X.");
 
                 if (ImGui.Checkbox("Y", ref CFG.Current.Toolbar_Rotate_Y))
                 {
@@ -400,7 +400,7 @@ public class ToolWindow
                     CFG.Current.Toolbar_Rotate_Y_Pivot = false;
                     CFG.Current.Toolbar_Fixed_Rotate = false;
                 }
-                ImguiUtils.ShowHoverTooltip("Set the rotation axis to Y.");
+                UIHelper.ShowHoverTooltip("Set the rotation axis to Y.");
 
                 if (ImGui.Checkbox("Y Pivot", ref CFG.Current.Toolbar_Rotate_Y_Pivot))
                 {
@@ -408,7 +408,7 @@ public class ToolWindow
                     CFG.Current.Toolbar_Rotate_X = false;
                     CFG.Current.Toolbar_Fixed_Rotate = false;
                 }
-                ImguiUtils.ShowHoverTooltip("Set the rotation axis to Y and pivot with respect to others within the selection.");
+                UIHelper.ShowHoverTooltip("Set the rotation axis to Y and pivot with respect to others within the selection.");
 
                 if (ImGui.Checkbox("Fixed Rotation", ref CFG.Current.Toolbar_Fixed_Rotate))
                 {
@@ -416,25 +416,25 @@ public class ToolWindow
                     CFG.Current.Toolbar_Rotate_X = false;
                     CFG.Current.Toolbar_Rotate_Y_Pivot = false;
                 }
-                ImguiUtils.ShowHoverTooltip("Set the rotation axis to specified values below.");
-                ImguiUtils.WrappedText("");
+                UIHelper.ShowHoverTooltip("Set the rotation axis to specified values below.");
+                UIHelper.WrappedText("");
 
                 if (!CFG.Current.Toolbar_Fixed_Rotate)
                 {
-                    ImguiUtils.WrappedText("Current Degree Increment:");
+                    UIHelper.WrappedText("Current Degree Increment:");
                     ImGui.SameLine();
                     RotationIncrement.DisplayCurrentRotateIncrement();
 
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("");
 
                     if (ImGui.Button("Cycle Increment", thinButtonSize))
                     {
                         RotationIncrement.CycleIncrementType();
                     }
-                    ImguiUtils.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
+                    UIHelper.WrappedText("");
 
-                    ImguiUtils.WrappedText("Degree Increment [0]:");
+                    UIHelper.WrappedText("Degree Increment [0]:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
 
                     var rot0 = CFG.Current.Toolbar_Rotate_Increment_0;
@@ -442,9 +442,9 @@ public class ToolWindow
                     {
                         CFG.Current.Toolbar_Rotate_Increment_0 = Math.Clamp(rot0, -360.0f, 360.0f);
                     }
-                    ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+                    UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
-                    ImguiUtils.WrappedText("Degree Increment [1]:");
+                    UIHelper.WrappedText("Degree Increment [1]:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
 
                     var rot1 = CFG.Current.Toolbar_Rotate_Increment_1;
@@ -452,9 +452,9 @@ public class ToolWindow
                     {
                         CFG.Current.Toolbar_Rotate_Increment_1 = Math.Clamp(rot1, -360.0f, 360.0f);
                     }
-                    ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+                    UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
-                    ImguiUtils.WrappedText("Degree Increment [2]:");
+                    UIHelper.WrappedText("Degree Increment [2]:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
 
                     var rot2 = CFG.Current.Toolbar_Rotate_Increment_2;
@@ -462,9 +462,9 @@ public class ToolWindow
                     {
                         CFG.Current.Toolbar_Rotate_Increment_2 = Math.Clamp(rot2, -360.0f, 360.0f);
                     }
-                    ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+                    UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
-                    ImguiUtils.WrappedText("Degree Increment [3]:");
+                    UIHelper.WrappedText("Degree Increment [3]:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
 
                     var rot3 = CFG.Current.Toolbar_Rotate_Increment_3;
@@ -472,9 +472,9 @@ public class ToolWindow
                     {
                         CFG.Current.Toolbar_Rotate_Increment_3 = Math.Clamp(rot3, -360.0f, 360.0f);
                     }
-                    ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+                    UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
-                    ImguiUtils.WrappedText("Degree Increment [4]:");
+                    UIHelper.WrappedText("Degree Increment [4]:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
 
                     var rot4 = CFG.Current.Toolbar_Rotate_Increment_4;
@@ -482,9 +482,9 @@ public class ToolWindow
                     {
                         CFG.Current.Toolbar_Rotate_Increment_4 = Math.Clamp(rot4, -360.0f, 360.0f);
                     }
-                    ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
+                    UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("");
                 }
                 else
                 {
@@ -492,28 +492,28 @@ public class ToolWindow
                     var y = CFG.Current.Toolbar_Rotate_FixedAngle[1];
                     var z = CFG.Current.Toolbar_Rotate_FixedAngle[2];
 
-                    ImguiUtils.WrappedText("Fixed Rotation");
+                    UIHelper.WrappedText("Fixed Rotation");
                     ImGui.PushItemWidth(100);
                     if (ImGui.InputFloat("X##fixedRotationX", ref x))
                     {
                         x = Math.Clamp(x, -360f, 360f);
                     }
-                    ImguiUtils.ShowHoverTooltip("Set the X component of the fixed rotation action.");
+                    UIHelper.ShowHoverTooltip("Set the X component of the fixed rotation action.");
 
                     ImGui.PushItemWidth(100);
                     if (ImGui.InputFloat("Y##fixedRotationX", ref y))
                     {
                         y = Math.Clamp(y, -360f, 360f);
                     }
-                    ImguiUtils.ShowHoverTooltip("Set the Y component of the fixed rotation action.");
+                    UIHelper.ShowHoverTooltip("Set the Y component of the fixed rotation action.");
 
                     ImGui.PushItemWidth(100);
                     if (ImGui.InputFloat("Z##fixedRotationZ", ref z))
                     {
                         z = Math.Clamp(z, -360f, 360f);
                     }
-                    ImguiUtils.ShowHoverTooltip("Set the Z component of the fixed rotation action.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.ShowHoverTooltip("Set the Z component of the fixed rotation action.");
+                    UIHelper.WrappedText("");
 
                     CFG.Current.Toolbar_Rotate_FixedAngle = new Vector3(x, y, z);
                 }
@@ -529,8 +529,8 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Scramble"))
             {
-                ImguiUtils.WrappedText("Scramble the current selection's position, rotation and scale by the following parameters.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Scramble the current selection's position, rotation and scale by the following parameters.");
+                UIHelper.WrappedText("");
 
                 var randomOffsetMin_Pos_X = CFG.Current.Scrambler_OffsetMin_Position_X;
                 var randomOffsetMin_Pos_Y = CFG.Current.Scrambler_OffsetMin_Position_Y;
@@ -557,134 +557,134 @@ public class ToolWindow
                 var randomOffsetMax_Scale_Z = CFG.Current.Scrambler_OffsetMax_Scale_Z;
 
                 // Position
-                ImguiUtils.WrappedText("Position");
+                UIHelper.WrappedText("Position");
                 ImGui.Checkbox("X##scramblePosX", ref CFG.Current.Scrambler_RandomisePosition_X);
-                ImguiUtils.ShowHoverTooltip("Include the X co-ordinate of the selection's Position in the scramble.");
+                UIHelper.ShowHoverTooltip("Include the X co-ordinate of the selection's Position in the scramble.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMinPosX", ref randomOffsetMin_Pos_X);
-                ImguiUtils.ShowHoverTooltip("Minimum amount to add to the position X co-ordinate.");
+                UIHelper.ShowHoverTooltip("Minimum amount to add to the position X co-ordinate.");
 
                 ImGui.SameLine();
 
                 ImGui.InputFloat("##offsetMaxPosX", ref randomOffsetMax_Pos_X);
-                ImguiUtils.ShowHoverTooltip("Maximum amount to add to the position X co-ordinate.");
+                UIHelper.ShowHoverTooltip("Maximum amount to add to the position X co-ordinate.");
 
                 ImGui.Checkbox("Y##scramblePosY", ref CFG.Current.Scrambler_RandomisePosition_Y);
-                ImguiUtils.ShowHoverTooltip("Include the Y co-ordinate of the selection's Position in the scramble.");
+                UIHelper.ShowHoverTooltip("Include the Y co-ordinate of the selection's Position in the scramble.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMinPosY", ref randomOffsetMin_Pos_Y);
-                ImguiUtils.ShowHoverTooltip("Minimum amount to add to the position Y co-ordinate.");
+                UIHelper.ShowHoverTooltip("Minimum amount to add to the position Y co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMaxPosY", ref randomOffsetMax_Pos_Y);
-                ImguiUtils.ShowHoverTooltip("Maximum amount to add to the position Y co-ordinate.");
+                UIHelper.ShowHoverTooltip("Maximum amount to add to the position Y co-ordinate.");
 
                 ImGui.Checkbox("Z##scramblePosZ", ref CFG.Current.Scrambler_RandomisePosition_Z);
-                ImguiUtils.ShowHoverTooltip("Include the Z co-ordinate of the selection's Position in the scramble.");
+                UIHelper.ShowHoverTooltip("Include the Z co-ordinate of the selection's Position in the scramble.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMinPosZ", ref randomOffsetMin_Pos_Z);
-                ImguiUtils.ShowHoverTooltip("Minimum amount to add to the position Z co-ordinate.");
+                UIHelper.ShowHoverTooltip("Minimum amount to add to the position Z co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMaxPosZ", ref randomOffsetMax_Pos_Z);
-                ImguiUtils.ShowHoverTooltip("Maximum amount to add to the position Z co-ordinate.");
+                UIHelper.ShowHoverTooltip("Maximum amount to add to the position Z co-ordinate.");
                 ImGui.Text("");
 
                 // Rotation
-                ImguiUtils.WrappedText("Rotation");
+                UIHelper.WrappedText("Rotation");
                 ImGui.Checkbox("X##scrambleRotX", ref CFG.Current.Scrambler_RandomiseRotation_X);
-                ImguiUtils.ShowHoverTooltip("Include the X co-ordinate of the selection's Rotation in the scramble.");
+                UIHelper.ShowHoverTooltip("Include the X co-ordinate of the selection's Rotation in the scramble.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMinRotX", ref randomOffsetMin_Rot_X);
-                ImguiUtils.ShowHoverTooltip("Minimum amount to add to the rotation X co-ordinate.");
+                UIHelper.ShowHoverTooltip("Minimum amount to add to the rotation X co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMaxRotX", ref randomOffsetMax_Rot_X);
-                ImguiUtils.ShowHoverTooltip("Maximum amount to add to the rotation X co-ordinate.");
+                UIHelper.ShowHoverTooltip("Maximum amount to add to the rotation X co-ordinate.");
 
                 ImGui.Checkbox("Y##scrambleRotY", ref CFG.Current.Scrambler_RandomiseRotation_Y);
-                ImguiUtils.ShowHoverTooltip("Include the Y co-ordinate of the selection's Rotation in the scramble.");
+                UIHelper.ShowHoverTooltip("Include the Y co-ordinate of the selection's Rotation in the scramble.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMinRotY", ref randomOffsetMin_Rot_Y);
-                ImguiUtils.ShowHoverTooltip("Minimum amount to add to the rotation Y co-ordinate.");
+                UIHelper.ShowHoverTooltip("Minimum amount to add to the rotation Y co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMaxRotY", ref randomOffsetMax_Rot_Y);
-                ImguiUtils.ShowHoverTooltip("Maximum amount to add to the rotation Y co-ordinate.");
+                UIHelper.ShowHoverTooltip("Maximum amount to add to the rotation Y co-ordinate.");
 
                 ImGui.Checkbox("Z##scrambleRotZ", ref CFG.Current.Scrambler_RandomiseRotation_Z);
-                ImguiUtils.ShowHoverTooltip("Include the Z co-ordinate of the selection's Rotation in the scramble.");
+                UIHelper.ShowHoverTooltip("Include the Z co-ordinate of the selection's Rotation in the scramble.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMinRotZ", ref randomOffsetMin_Rot_Z);
-                ImguiUtils.ShowHoverTooltip("Minimum amount to add to the rotation Z co-ordinate.");
+                UIHelper.ShowHoverTooltip("Minimum amount to add to the rotation Z co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMaxRotZ", ref randomOffsetMax_Rot_Z);
-                ImguiUtils.ShowHoverTooltip("Maximum amount to add to the rotation Z co-ordinate.");
+                UIHelper.ShowHoverTooltip("Maximum amount to add to the rotation Z co-ordinate.");
                 ImGui.Text("");
 
                 // Scale
-                ImguiUtils.WrappedText("Scale");
+                UIHelper.WrappedText("Scale");
                 ImGui.Checkbox("X##scrambleScaleX", ref CFG.Current.Scrambler_RandomiseScale_X);
-                ImguiUtils.ShowHoverTooltip("Include the X co-ordinate of the selection's Scale in the scramble.");
+                UIHelper.ShowHoverTooltip("Include the X co-ordinate of the selection's Scale in the scramble.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMinScaleX", ref randomOffsetMin_Scale_X);
-                ImguiUtils.ShowHoverTooltip("Minimum amount to add to the scale X co-ordinate.");
+                UIHelper.ShowHoverTooltip("Minimum amount to add to the scale X co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMaxScaleX", ref randomOffsetMax_Scale_X);
-                ImguiUtils.ShowHoverTooltip("Maximum amount to add to the scale X co-ordinate.");
+                UIHelper.ShowHoverTooltip("Maximum amount to add to the scale X co-ordinate.");
 
                 ImGui.Checkbox("Y##scrambleScaleY", ref CFG.Current.Scrambler_RandomiseScale_Y);
-                ImguiUtils.ShowHoverTooltip("Include the Y co-ordinate of the selection's Scale in the scramble.");
+                UIHelper.ShowHoverTooltip("Include the Y co-ordinate of the selection's Scale in the scramble.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMinScaleY", ref randomOffsetMin_Scale_Y);
-                ImguiUtils.ShowHoverTooltip("Minimum amount to add to the scale Y co-ordinate.");
+                UIHelper.ShowHoverTooltip("Minimum amount to add to the scale Y co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMaxScaleY", ref randomOffsetMax_Scale_Y);
-                ImguiUtils.ShowHoverTooltip("Maximum amount to add to the scale Y co-ordinate.");
+                UIHelper.ShowHoverTooltip("Maximum amount to add to the scale Y co-ordinate.");
 
                 ImGui.Checkbox("Z##scrambleScaleZ", ref CFG.Current.Scrambler_RandomiseScale_Z);
-                ImguiUtils.ShowHoverTooltip("Include the Z co-ordinate of the selection's Scale in the scramble.");
+                UIHelper.ShowHoverTooltip("Include the Z co-ordinate of the selection's Scale in the scramble.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMinScaleZ", ref randomOffsetMin_Scale_Z);
-                ImguiUtils.ShowHoverTooltip("Minimum amount to add to the scale Z co-ordinate.");
+                UIHelper.ShowHoverTooltip("Minimum amount to add to the scale Z co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMaxScaleZ", ref randomOffsetMax_Scale_Y);
-                ImguiUtils.ShowHoverTooltip("Maximum amount to add to the scale Z co-ordinate.");
-                ImguiUtils.WrappedText("");
+                UIHelper.ShowHoverTooltip("Maximum amount to add to the scale Z co-ordinate.");
+                UIHelper.WrappedText("");
 
                 ImGui.Checkbox("Scale Proportionally##scrambleSharedScale", ref CFG.Current.Scrambler_RandomiseScale_SharedScale);
-                ImguiUtils.ShowHoverTooltip("When scrambling the scale, the Y and Z values will follow the X value, making the scaling proportional.");
-                ImguiUtils.WrappedText("");
+                UIHelper.ShowHoverTooltip("When scrambling the scale, the Y and Z values will follow the X value, making the scaling proportional.");
+                UIHelper.WrappedText("");
 
                 // Clamp floats
                 randomOffsetMin_Pos_X = Math.Clamp(randomOffsetMin_Pos_X, -10000f, 10000f);
@@ -746,10 +746,10 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Replicate"))
             {
-                ImguiUtils.WrappedText("Replicate the current selection by the following parameters.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Replicate the current selection by the following parameters.");
+                UIHelper.WrappedText("");
 
-                ImguiUtils.WrappedText("Replicate Style:");
+                UIHelper.WrappedText("Replicate Style:");
                 if (ImGui.Checkbox("Line", ref CFG.Current.Replicator_Mode_Line))
                 {
                     CFG.Current.Replicator_Mode_Circle = false;
@@ -757,7 +757,7 @@ public class ToolWindow
                     CFG.Current.Replicator_Mode_Sphere = false;
                     CFG.Current.Replicator_Mode_Box = false;
                 }
-                ImguiUtils.ShowHoverTooltip("Replicate the first selection in the Line shape.");
+                UIHelper.ShowHoverTooltip("Replicate the first selection in the Line shape.");
 
                 if (ImGui.Checkbox("Circle", ref CFG.Current.Replicator_Mode_Circle))
                 {
@@ -766,7 +766,7 @@ public class ToolWindow
                     CFG.Current.Replicator_Mode_Sphere = false;
                     CFG.Current.Replicator_Mode_Box = false;
                 }
-                ImguiUtils.ShowHoverTooltip("Replicate the first selection in the Circle shape.");
+                UIHelper.ShowHoverTooltip("Replicate the first selection in the Circle shape.");
 
                 if (ImGui.Checkbox("Square", ref CFG.Current.Replicator_Mode_Square))
                 {
@@ -775,66 +775,66 @@ public class ToolWindow
                     CFG.Current.Replicator_Mode_Sphere = false;
                     CFG.Current.Replicator_Mode_Box = false;
                 }
-                ImguiUtils.ShowHoverTooltip("Replicate the first selection in the Square shape.");
-                ImguiUtils.WrappedText("");
+                UIHelper.ShowHoverTooltip("Replicate the first selection in the Square shape.");
+                UIHelper.WrappedText("");
 
                 // Line
                 if (CFG.Current.Replicator_Mode_Line)
                 {
-                    ImguiUtils.WrappedText("Amount to Replicate:");
+                    UIHelper.WrappedText("Amount to Replicate:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
                     ImGui.InputInt("##Amount", ref CFG.Current.Replicator_Line_Clone_Amount);
-                    ImguiUtils.ShowHoverTooltip("The amount of new entities to create (from the first selection).");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.ShowHoverTooltip("The amount of new entities to create (from the first selection).");
+                    UIHelper.WrappedText("");
 
-                    ImguiUtils.WrappedText("Offset per Replicate:");
+                    UIHelper.WrappedText("Offset per Replicate:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
                     ImGui.InputInt("##Offset", ref CFG.Current.Replicator_Line_Position_Offset);
-                    ImguiUtils.ShowHoverTooltip("The distance between each newly created entity.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.ShowHoverTooltip("The distance between each newly created entity.");
+                    UIHelper.WrappedText("");
 
-                    ImguiUtils.WrappedText("Replicate Direction:");
+                    UIHelper.WrappedText("Replicate Direction:");
                     if (ImGui.Checkbox("X", ref CFG.Current.Replicator_Line_Position_Offset_Axis_X))
                     {
                         CFG.Current.Replicator_Line_Position_Offset_Axis_Y = false;
                         CFG.Current.Replicator_Line_Position_Offset_Axis_Z = false;
                     }
-                    ImguiUtils.ShowHoverTooltip("Replicate on the X-axis.");
+                    UIHelper.ShowHoverTooltip("Replicate on the X-axis.");
 
                     if (ImGui.Checkbox("Y", ref CFG.Current.Replicator_Line_Position_Offset_Axis_Y))
                     {
                         CFG.Current.Replicator_Line_Position_Offset_Axis_X = false;
                         CFG.Current.Replicator_Line_Position_Offset_Axis_Z = false;
                     }
-                    ImguiUtils.ShowHoverTooltip("Replicate on the Y-axis.");
+                    UIHelper.ShowHoverTooltip("Replicate on the Y-axis.");
 
                     if (ImGui.Checkbox("Z", ref CFG.Current.Replicator_Line_Position_Offset_Axis_Z))
                     {
                         CFG.Current.Replicator_Line_Position_Offset_Axis_X = false;
                         CFG.Current.Replicator_Line_Position_Offset_Axis_Y = false;
                     }
-                    ImguiUtils.ShowHoverTooltip("Replicate on the Z-axis.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.ShowHoverTooltip("Replicate on the Z-axis.");
+                    UIHelper.WrappedText("");
 
                     ImGui.Checkbox("Flip Offset Direction", ref CFG.Current.Replicator_Line_Offset_Direction_Flipped);
-                    ImguiUtils.ShowHoverTooltip("When enabled, the position offset will be applied in the opposite direction.");
+                    UIHelper.ShowHoverTooltip("When enabled, the position offset will be applied in the opposite direction.");
                 }
 
                 // Circle
                 if (CFG.Current.Replicator_Mode_Circle)
                 {
-                    ImguiUtils.WrappedText("Amount to Replicate:");
+                    UIHelper.WrappedText("Amount to Replicate:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
                     ImGui.InputInt("##Size", ref CFG.Current.Replicator_Circle_Size);
-                    ImguiUtils.ShowHoverTooltip("The number of points within the circle on which the entities are placed.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.ShowHoverTooltip("The number of points within the circle on which the entities are placed.");
+                    UIHelper.WrappedText("");
 
-                    ImguiUtils.WrappedText("Circle Radius:");
+                    UIHelper.WrappedText("Circle Radius:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
                     ImGui.SliderFloat("##Radius", ref CFG.Current.Replicator_Circle_Radius, 0.1f, 100);
-                    ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nThe radius of the circle on which to place the entities.");
+                    UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nThe radius of the circle on which to place the entities.");
 
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("");
 
                     if (CFG.Current.Replicator_Circle_Size < 1)
                         CFG.Current.Replicator_Circle_Size = 1;
@@ -844,23 +844,23 @@ public class ToolWindow
                 // Square
                 if (CFG.Current.Replicator_Mode_Square)
                 {
-                    ImguiUtils.WrappedText("Amount to Replicate:");
+                    UIHelper.WrappedText("Amount to Replicate:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
                     ImGui.InputInt("##Size", ref CFG.Current.Replicator_Square_Size);
-                    ImguiUtils.ShowHoverTooltip("The number of points on one side of the square on which the entities are placed.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.ShowHoverTooltip("The number of points on one side of the square on which the entities are placed.");
+                    UIHelper.WrappedText("");
 
-                    ImguiUtils.WrappedText("Square Width:");
+                    UIHelper.WrappedText("Square Width:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
                     ImGui.InputFloat("##Width", ref CFG.Current.Replicator_Square_Width);
-                    ImguiUtils.ShowHoverTooltip("The width of the square on which to place the entities.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.ShowHoverTooltip("The width of the square on which to place the entities.");
+                    UIHelper.WrappedText("");
 
-                    ImguiUtils.WrappedText("Square Height:");
+                    UIHelper.WrappedText("Square Height:");
                     ImGui.PushItemWidth(defaultButtonSize.X);
                     ImGui.InputFloat("##Depth", ref CFG.Current.Replicator_Square_Depth);
-                    ImguiUtils.ShowHoverTooltip("The depth of the square on which to place the entities.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.ShowHoverTooltip("The depth of the square on which to place the entities.");
+                    UIHelper.WrappedText("");
 
                     if (CFG.Current.Replicator_Square_Width < 1)
                         CFG.Current.Replicator_Square_Width = 1;
@@ -873,7 +873,7 @@ public class ToolWindow
                 }
 
                 ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
-                ImguiUtils.ShowHoverTooltip("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
+                UIHelper.ShowHoverTooltip("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
 
                 if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2 && Smithbox.ProjectType != ProjectType.AC6)
                 {
@@ -884,19 +884,19 @@ public class ToolWindow
                             CFG.Current.Replicator_Clear_Entity_ID = false;
                         }
                     }
-                    ImguiUtils.ShowHoverTooltip("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
+                    UIHelper.ShowHoverTooltip("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
                 }
 
                 if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Replicator_Increment_InstanceID);
-                    ImguiUtils.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
+                    UIHelper.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
                 }
 
                 if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Replicator_Increment_UnkPartNames);
-                    ImguiUtils.ShowHoverTooltip("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
+                    UIHelper.ShowHoverTooltip("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
                 }
 
                 if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
@@ -908,13 +908,13 @@ public class ToolWindow
                             CFG.Current.Replicator_Increment_Entity_ID = false;
                         }
                     }
-                    ImguiUtils.ShowHoverTooltip("When enabled, the Entity ID assigned to the duplicated entities will be set to 0");
+                    UIHelper.ShowHoverTooltip("When enabled, the Entity ID assigned to the duplicated entities will be set to 0");
 
                     ImGui.Checkbox("Clear Entity Group IDs", ref CFG.Current.Replicator_Clear_Entity_Group_IDs);
-                    ImguiUtils.ShowHoverTooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
+                    UIHelper.ShowHoverTooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
                 }
 
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Replicate Selection", defaultButtonSize))
                 {
@@ -927,21 +927,21 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Move to Grid"))
             {
-                ImguiUtils.WrappedText("Set the current selection to the closest grid position.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Set the current selection to the closest grid position.");
+                UIHelper.WrappedText("");
 
                 ImGui.Checkbox("X", ref CFG.Current.Toolbar_Move_to_Grid_X);
-                ImguiUtils.ShowHoverTooltip("Move the current selection to the closest X co-ordinate within the map grid.");
+                UIHelper.ShowHoverTooltip("Move the current selection to the closest X co-ordinate within the map grid.");
 
                 ImGui.Checkbox("Y", ref CFG.Current.Toolbar_Move_to_Grid_Y);
-                ImguiUtils.ShowHoverTooltip("Move the current selection to the closest Y co-ordinate within the map grid.");
+                UIHelper.ShowHoverTooltip("Move the current selection to the closest Y co-ordinate within the map grid.");
 
                 ImGui.Checkbox("Z", ref CFG.Current.Toolbar_Move_to_Grid_Z);
-                ImguiUtils.ShowHoverTooltip("Move the current selection to the closest Z co-ordinate within the map grid.");
+                UIHelper.ShowHoverTooltip("Move the current selection to the closest Z co-ordinate within the map grid.");
 
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("");
 
-                ImguiUtils.WrappedText("Grid Height");
+                UIHelper.WrappedText("Grid Height");
                 ImGui.PushItemWidth(defaultButtonSize.X);
                 if (ImGui.SliderFloat("Grid height", ref CFG.Current.MapEditor_Viewport_Grid_Height, -10000, 10000))
                 {
@@ -951,9 +951,9 @@ public class ToolWindow
                     if (CFG.Current.MapEditor_Viewport_Grid_Height > 10000)
                         CFG.Current.MapEditor_Viewport_Grid_Height = 10000;
                 }
-                ImguiUtils.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the current height of the map grid.");
+                UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the current height of the map grid.");
 
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Move Selection to Grid", defaultButtonSize))
                 {

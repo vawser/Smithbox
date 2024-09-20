@@ -2,7 +2,7 @@
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,22 +37,22 @@ public static class SearchAndReplace
 
     public static void DisplayConfiguration(Vector2 defaultButtonSize)
     {
-        ImguiUtils.WrappedText("Perform a search and replace throughout the Text Entries.");
-        ImguiUtils.WrappedText("");
+        UIHelper.WrappedText("Perform a search and replace throughout the Text Entries.");
+        UIHelper.WrappedText("");
 
-        ImguiUtils.WrappedText("Search Text:");
+        UIHelper.WrappedText("Search Text:");
         ImGui.SetNextItemWidth(defaultButtonSize.X);
         ImGui.InputText("##searchText", ref CFG.Current.FMG_SearchAndReplace_SearchText, 255);
-        ImguiUtils.ShowHoverTooltip("Text to search for. Supports regular expressions.");
-        ImguiUtils.WrappedText("");
+        UIHelper.ShowHoverTooltip("Text to search for. Supports regular expressions.");
+        UIHelper.WrappedText("");
 
-        ImguiUtils.WrappedText("Replace Text:");
+        UIHelper.WrappedText("Replace Text:");
         ImGui.SetNextItemWidth(defaultButtonSize.X);
         ImGui.InputText("##replaceText", ref CFG.Current.FMG_SearchAndReplace_ReplaceText, 255);
-        ImguiUtils.ShowHoverTooltip("Text to replace the search text with. Supports regular expressions.");
-        ImguiUtils.WrappedText("");
+        UIHelper.ShowHoverTooltip("Text to replace the search text with. Supports regular expressions.");
+        UIHelper.WrappedText("");
 
-        ImguiUtils.WrappedText("Text Category:");
+        UIHelper.WrappedText("Text Category:");
         ImGui.SetNextItemWidth(defaultButtonSize.X);
         if (ImGui.BeginCombo("##Text Category", CurrentTextCategory))
         {
@@ -66,10 +66,10 @@ public static class SearchAndReplace
             }
             ImGui.EndCombo();
         }
-        ImguiUtils.ShowHoverTooltip("Text category to search in.");
-        ImguiUtils.WrappedText("");
+        UIHelper.ShowHoverTooltip("Text category to search in.");
+        UIHelper.WrappedText("");
 
-        ImguiUtils.WrappedText("Text Context:");
+        UIHelper.WrappedText("Text Context:");
         ImGui.SetNextItemWidth(defaultButtonSize.X);
         if (ImGui.BeginCombo("##Target Type", CurrentTargetType))
         {
@@ -83,21 +83,21 @@ public static class SearchAndReplace
             }
             ImGui.EndCombo();
         }
-        ImguiUtils.ShowHoverTooltip("The target text context for the search and replace.");
-        ImguiUtils.WrappedText("");
+        UIHelper.ShowHoverTooltip("The target text context for the search and replace.");
+        UIHelper.WrappedText("");
 
         ImGui.Checkbox("Ignore Case", ref CFG.Current.FMG_SearchAndReplace_Regex_IgnoreCase);
-        ImguiUtils.ShowHoverTooltip("Specifies case-insensitive matching for regex.");
+        UIHelper.ShowHoverTooltip("Specifies case-insensitive matching for regex.");
 
         ImGui.Checkbox("Multi-line", ref CFG.Current.FMG_SearchAndReplace_Regex_Multiline);
-        ImguiUtils.ShowHoverTooltip("Multiline mode for regex. Changes the meaning of ^ and $ so they match at the beginning and end, respectively, of any line, and not just the beginning and end of the entire string.");
+        UIHelper.ShowHoverTooltip("Multiline mode for regex. Changes the meaning of ^ and $ so they match at the beginning and end, respectively, of any line, and not just the beginning and end of the entire string.");
 
         ImGui.Checkbox("Single-line", ref CFG.Current.FMG_SearchAndReplace_Regex_Singleline);
-        ImguiUtils.ShowHoverTooltip("Specifies single-line mode for regex. Changes the meaning of the dot (.) so it matches every character (instead of every character except \\n).");
+        UIHelper.ShowHoverTooltip("Specifies single-line mode for regex. Changes the meaning of the dot (.) so it matches every character (instead of every character except \\n).");
 
         ImGui.Checkbox("Ignore Pattern Whitespace", ref CFG.Current.FMG_SearchAndReplace_Regex_IgnorePatternWhitespace);
-        ImguiUtils.ShowHoverTooltip("Eliminates unescaped white space from the pattern and enables comments marked with #. However, this value does not affect or eliminate white space in character classes, numeric quantifiers, or tokens that mark the beginning of individual regular expression language elements.");
-        ImguiUtils.WrappedText("");
+        UIHelper.ShowHoverTooltip("Eliminates unescaped white space from the pattern and enables comments marked with #. However, this value does not affect or eliminate white space in character classes, numeric quantifiers, or tokens that mark the beginning of individual regular expression language elements.");
+        UIHelper.WrappedText("");
 
         if (ImGui.Button("Apply##action_Selection_SearchAndReplace", defaultButtonSize))
         {

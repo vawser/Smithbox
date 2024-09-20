@@ -3,6 +3,7 @@ using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,7 +74,7 @@ public class ParamRowEditor
         List<(string, Param.Row)> auxRows, Param.Row crow, ref int imguiId, ParamEditorSelectionState selection, 
         string activeParam)
     {
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         PropertyInfo nameProp = row.GetType().GetProperty("Name");
         PropertyInfo idProp = row.GetType().GetProperty("ID");
         PropEditorPropInfoRow(bank, row, meta, vrow, auxRows, crow, nameProp, "Name", ref imguiId, selection,
@@ -568,20 +569,20 @@ public class ParamRowEditor
         {
             if (conflict)
             {
-                ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_Input_Conflict_Background);
+                ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_Conflict_Background);
             }
             else if (diffVanilla)
             {
-                ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_Input_Vanilla_Background);
+                ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_Vanilla_Background);
             }
 
             if (isRef)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_IsRef_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_IsRef_Text);
             }
             else if (matchDefault)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             }
 
             // Property Editor UI
@@ -722,12 +723,12 @@ public class ParamRowEditor
             }
         }
 
-        ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_Input_Default_Background);
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_Default_Background);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
 
         if (conflict)
         {
-            ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_Input_Conflict_Background);
+            ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_Conflict_Background);
         }
 
         if (CFG.Current.Param_ShowVanillaParams && ImGui.TableNextColumn())
@@ -740,7 +741,7 @@ public class ParamRowEditor
             if (ImGui.TableNextColumn())
             {
                 if (!conflict && diffAuxVanilla[i])
-                    ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_Input_AuxVanilla_Background);
+                    ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_AuxVanilla_Background);
 
                 AdditionalColumnValue(auxVals[i], propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, i.ToString(), cellMeta);
                 if (!conflict && diffAuxVanilla[i])
@@ -757,7 +758,7 @@ public class ParamRowEditor
         {
             if (diffCompare)
             {
-                ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_Input_DiffCompare_Background);
+                ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_DiffCompare_Background);
             }
 
             AdditionalColumnValue(compareval, propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, "compRow", cellMeta);
@@ -1199,7 +1200,7 @@ public class ParamRowEditor
             if (RefTypes != null || FmgRef != null || TextureRef != null || Enum != null || cellMeta != null)
             {
                 ImGui.Separator();
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Ref_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Ref_Text);
 
                 if (EditorDecorations.ParamRefEnumContextMenuItems(bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, TextureRef, Enum, ContextActionManager))
                 {
@@ -1215,7 +1216,7 @@ public class ParamRowEditor
             if (VirtualRef != null || ExtRefs != null)
             {
                 ImGui.Separator();
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_VirtualRef_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_VirtualRef_Text);
                 EditorDecorations.VirtualParamRefSelectables(bank, VirtualRef, oldval, row, internalName, ExtRefs,
                     _paramEditor);
                 ImGui.PopStyleColor();

@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.GraphicsEditor;
+using StudioCore.Interface;
 using StudioCore.TextureViewer;
 using StudioCore.Utilities;
 using System;
@@ -44,19 +45,19 @@ public class ActionSubMenu
     {
         if (ImGui.BeginMenu("Actions"))
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Duplicate Value Row", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
                 Screen.DuplicateValueRow();
             }
-            ImguiUtils.ShowHoverTooltip("Duplicates the current value row selection.");
+            UIHelper.ShowHoverTooltip("Duplicates the current value row selection.");
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Delete Value Row", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 Screen.DeleteValueRow();
             }
-            ImguiUtils.ShowHoverTooltip("Deletes the current value row selection.");
+            UIHelper.ShowHoverTooltip("Deletes the current value row selection.");
 
             ImGui.EndMenu();
         }

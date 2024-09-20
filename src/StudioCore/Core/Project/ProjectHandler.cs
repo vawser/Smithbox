@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.UserProject;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -125,7 +125,8 @@ public class ProjectHandler
         Smithbox.EditorHandler.UpdateEditors();
 
         Current.LastProjectFile = path;
-        Save();
+        CFG.Save();
+        UI.Save();
 
         AddProjectToRecentList(CurrentProject);
 
@@ -684,7 +685,8 @@ public class ProjectHandler
             if (ImGui.Selectable("Remove from list"))
             {
                 RemoveRecentProject(p);
-                Save();
+                CFG.Save();
+                UI.Save();
             }
 
             ImGui.EndPopup();

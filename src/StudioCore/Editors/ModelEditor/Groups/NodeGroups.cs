@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
@@ -32,12 +33,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             UpdateNodeGroupList();
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Replace"))
             {
                 foreach (var entry in NodeGroupFiles)
                 {
-                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                     if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedNodeGroup = entry;
@@ -51,12 +52,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
                 ImGui.EndMenu();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Append"))
             {
                 foreach (var entry in NodeGroupFiles)
                 {
-                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                     if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedNodeGroup = entry;
@@ -98,9 +99,9 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             UpdateNodeGroupList();
 
-            ImguiUtils.WrappedText("Create a stored Node Group from your current selection with the Node list.");
-            ImguiUtils.WrappedText("A stored group can then be used to replace the existing Node list, or appended to the end.");
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText("Create a stored Node Group from your current selection with the Node list.");
+            UIHelper.WrappedText("A stored group can then be used to replace the existing Node list, or appended to the end.");
+            UIHelper.WrappedText("");
 
             if (ImGui.Button("Create Node Group", defaultButtonSize))
             {
@@ -136,7 +137,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteNodeGroup(entry);
                         }
-                        ImguiUtils.ShowHoverTooltip("Delete this Node group.");
+                        UIHelper.ShowHoverTooltip("Delete this Node group.");
 
                         ImGui.EndPopup();
                     }
@@ -170,14 +171,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceNodeList(screen, SelectedNodeList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                ImguiUtils.ShowHoverTooltip("Replace the existing Nodes with the Nodes within this Node group.");
+                UIHelper.ShowHoverTooltip("Replace the existing Nodes with the Nodes within this Node group.");
                 ImGui.SameLine();
                 if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
                 {
                     var action = new AppendNodeList(screen, SelectedNodeList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                ImguiUtils.ShowHoverTooltip("Append to Nodes within this Node group to the existing Nodes.");
+                UIHelper.ShowHoverTooltip("Append to Nodes within this Node group to the existing Nodes.");
             }
 
             ImGui.EndChild();
@@ -193,7 +194,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##NodeGroupName", ref _createNodeGroupName, 255);
-            ImguiUtils.ShowHoverTooltip("The name of the Node group.");
+            UIHelper.ShowHoverTooltip("The name of the Node group.");
 
             if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
             {

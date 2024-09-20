@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
@@ -32,12 +33,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             UpdateFLVERGroupList();
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Replace"))
             {
                 foreach (var entry in FLVERGroupFiles)
                 {
-                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                     if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedFLVERGroup = entry;
@@ -77,9 +78,9 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var sectionHeight = ImGui.GetWindowHeight();
             var defaultButtonSize = new Vector2(sectionWidth, 32);
 
-            ImguiUtils.WrappedText("Create a stored FLVER from your current model FLVER.");
-            ImguiUtils.WrappedText("A stored group can then be used to replace an existing model's FLVER entirely.");
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText("Create a stored FLVER from your current model FLVER.");
+            UIHelper.WrappedText("A stored group can then be used to replace an existing model's FLVER entirely.");
+            UIHelper.WrappedText("");
 
             UpdateFLVERGroupList();
 
@@ -116,7 +117,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteFLVERGroup(entry);
                         }
-                        ImguiUtils.ShowHoverTooltip("Delete this stored FLVER.");
+                        UIHelper.ShowHoverTooltip("Delete this stored FLVER.");
 
                         ImGui.EndPopup();
                     }
@@ -139,7 +140,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceFLVERList(screen, SelectedFLVERList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                ImguiUtils.ShowHoverTooltip("Replace the currently loaded FLVER with this stored FLVER.");
+                UIHelper.ShowHoverTooltip("Replace the currently loaded FLVER with this stored FLVER.");
             }
 
             ImGui.EndChild();
@@ -155,7 +156,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##FLVERGroupName", ref _createFLVERGroupName, 255);
-            ImguiUtils.ShowHoverTooltip("The name of the stored FLVER.");
+            UIHelper.ShowHoverTooltip("The name of the stored FLVER.");
 
             if (ImGui.Button("Create Stored FLVEr", new Vector2(buttonWidth, 32)))
             {

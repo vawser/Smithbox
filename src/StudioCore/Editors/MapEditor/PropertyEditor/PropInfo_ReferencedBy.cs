@@ -24,7 +24,7 @@ public static class PropInfo_ReferencedBy
         ImGui.Separator();
         ImGui.Text("Referenced By:");
         ImGui.Separator();
-        ImguiUtils.ShowHoverTooltip("The current selection is referenced by these map objects.");
+        UIHelper.ShowHoverTooltip("The current selection is referenced by these map objects.");
 
         var width = (ImGui.GetWindowWidth() / 100);
 

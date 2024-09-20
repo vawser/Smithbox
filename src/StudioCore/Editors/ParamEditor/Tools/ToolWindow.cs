@@ -3,6 +3,7 @@ using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Actions;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.Utilities;
@@ -54,7 +55,7 @@ public class ToolWindow
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * Smithbox.GetUIScale(), ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_ParamEditor"))
@@ -69,22 +70,22 @@ public class ToolWindow
             // Duplicate Row
             if (ImGui.CollapsingHeader("Duplicate Row"))
             {
-                ImguiUtils.WrappedText("Duplicate the selected rows.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Duplicate the selected rows.");
+                UIHelper.WrappedText("");
 
                 if (!Screen._activeView._selection.RowSelectionExists())
                 {
-                    ImguiUtils.WrappedText("You must select a row before you can use this action.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("You must select a row before you can use this action.");
+                    UIHelper.WrappedText("");
                 }
                 else
                 {
-                    ImguiUtils.WrappedText("Amount to Duplicate:");
+                    UIHelper.WrappedText("Amount to Duplicate:");
 
                     ImGui.SetNextItemWidth(defaultButtonSize.X);
                     ImGui.InputInt("##Amount", ref CFG.Current.Param_Toolbar_Duplicate_Amount);
-                    ImguiUtils.ShowHoverTooltip("The number of times the current selection will be duplicated.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.ShowHoverTooltip("The number of times the current selection will be duplicated.");
+                    UIHelper.WrappedText("");
 
                     if (ImGui.Button("Duplicate##duplicateRow", defaultButtonSize))
                     {
@@ -96,13 +97,13 @@ public class ToolWindow
             // Import Row Names
             if (ImGui.CollapsingHeader("Import Row Names"))
             {
-                ImguiUtils.WrappedText("Import row names for the currently selected param, or for all params.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Import row names for the currently selected param, or for all params.");
+                UIHelper.WrappedText("");
 
                 if (!Screen._activeView._selection.ActiveParamExists())
                 {
-                    ImguiUtils.WrappedText("You must select a param before you can use this action.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("You must select a param before you can use this action.");
+                    UIHelper.WrappedText("");
                 }
                 else
                 {
@@ -110,11 +111,11 @@ public class ToolWindow
                     Handler.ParamSourceElement(ref Handler.CurrentSourceCategory, "The source of the names used in by the Row Name import.", defaultButtonSize);
 
                     ImGui.Checkbox("Only replace unmodified row names", ref Handler._rowNameImporter_VanillaOnly);
-                    ImguiUtils.ShowHoverTooltip("Row name import will only replace the name of unmodified rows.");
+                    UIHelper.ShowHoverTooltip("Row name import will only replace the name of unmodified rows.");
 
                     ImGui.Checkbox("Only replace empty row names", ref Handler._rowNameImporter_EmptyOnly);
-                    ImguiUtils.ShowHoverTooltip("Row name import will only replace the name of un-named rows.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.ShowHoverTooltip("Row name import will only replace the name of un-named rows.");
+                    UIHelper.WrappedText("");
 
                     if (ImGui.Button("Import##action_ImportRowNames", halfButtonSize))
                     {
@@ -129,20 +130,20 @@ public class ToolWindow
                             Process.Start("explorer.exe", dir);
                         }
                     }
-                    ImguiUtils.ShowHoverTooltip("Opens the project-specific Names folder that contains the Names to be imported.");
+                    UIHelper.ShowHoverTooltip("Opens the project-specific Names folder that contains the Names to be imported.");
                 }
             }
 
             // Export Row Names
             if (ImGui.CollapsingHeader("Export Row Names"))
             {
-                ImguiUtils.WrappedText("Export row names for the currently selected param, or for all params.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Export row names for the currently selected param, or for all params.");
+                UIHelper.WrappedText("");
 
                 if (!Screen._activeView._selection.ActiveParamExists())
                 {
-                    ImguiUtils.WrappedText("You must select a param before you can use this action.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("You must select a param before you can use this action.");
+                    UIHelper.WrappedText("");
                 }
                 else
                 {
@@ -162,20 +163,20 @@ public class ToolWindow
                             Process.Start("explorer.exe", dir);
                         }
                     }
-                    ImguiUtils.ShowHoverTooltip("Opens the project-specific Names folder that contains the exported Names.");
+                    UIHelper.ShowHoverTooltip("Opens the project-specific Names folder that contains the exported Names.");
                 }
             }
 
             // Trim Row Names
             if (ImGui.CollapsingHeader("Trim Row Names"))
             {
-                ImguiUtils.WrappedText("Trim Carriage Return (\\r) characters from row names\nfor the currently selected param, or for all params.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Trim Carriage Return (\\r) characters from row names\nfor the currently selected param, or for all params.");
+                UIHelper.WrappedText("");
 
                 if (!Screen._activeView._selection.ActiveParamExists())
                 {
-                    ImguiUtils.WrappedText("You must select a param before you can use this action.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("You must select a param before you can use this action.");
+                    UIHelper.WrappedText("");
                 }
                 else
                 {
@@ -191,8 +192,8 @@ public class ToolWindow
             // Sort Rows
             if (ImGui.CollapsingHeader("Sort Rows"))
             {
-                ImguiUtils.WrappedText("Sort the rows for the currently selected param by their ID.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Sort the rows for the currently selected param by their ID.");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Sort##action_SortRows", defaultButtonSize))
                 {
@@ -203,15 +204,15 @@ public class ToolWindow
             // Merge Params
             if (ImGui.CollapsingHeader("Merge Params"))
             {
-                ImguiUtils.WrappedText("Use this to merge a target regulation.bin into your current project.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedText("Merging will bring all unique param rows from the target regulation into your project.");
-                ImguiUtils.WrappedText("");
-                ImguiUtils.WrappedText("This process is 'simple', and thus may produce a broken mod if you attempt to merge complex mods.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Use this to merge a target regulation.bin into your current project.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedText("Merging will bring all unique param rows from the target regulation into your project.");
+                UIHelper.WrappedText("");
+                UIHelper.WrappedText("This process is 'simple', and thus may produce a broken mod if you attempt to merge complex mods.");
+                UIHelper.WrappedText("");
 
-                ImguiUtils.WrappedText("Target Regulation");
-                ImguiUtils.ShowHoverTooltip("This is the target regulation.bin you wish to merge.");
+                UIHelper.WrappedText("Target Regulation");
+                UIHelper.ShowHoverTooltip("This is the target regulation.bin you wish to merge.");
 
                 ImGui.SetNextItemWidth(inputBoxSize.X);
                 ImGui.InputText("##targetRegulationPath", ref Handler.targetRegulationPath, 255);
@@ -223,12 +224,12 @@ public class ToolWindow
                         Handler.targetRegulationPath = path;
                     }
                 }
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("");
 
                 if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
-                    ImguiUtils.WrappedText("Target Loose Params");
-                    ImguiUtils.ShowHoverTooltip("This is the target loose param folder you wish to merge.");
+                    UIHelper.WrappedText("Target Loose Params");
+                    UIHelper.ShowHoverTooltip("This is the target loose param folder you wish to merge.");
 
                     ImGui.SetNextItemWidth(inputBoxSize.X);
                     ImGui.InputText("##targetLooseParamPath", ref Handler.targetLooseParamPath, 255);
@@ -240,10 +241,10 @@ public class ToolWindow
                             Handler.targetLooseParamPath = path;
                         }
                     }
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("");
 
-                    ImguiUtils.WrappedText("Target Regulation");
-                    ImguiUtils.ShowHoverTooltip("This is the target enemy param you wish to merge.");
+                    UIHelper.WrappedText("Target Regulation");
+                    UIHelper.ShowHoverTooltip("This is the target enemy param you wish to merge.");
 
                     ImGui.SetNextItemWidth(inputBoxSize.X);
                     ImGui.InputText("##targetEnemyParamPath", ref Handler.targetEnemyParamPath, 255);
@@ -255,7 +256,7 @@ public class ToolWindow
                             Handler.targetEnemyParamPath = path;
                         }
                     }
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("");
                 }
 
                 if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
@@ -267,31 +268,31 @@ public class ToolWindow
             // Find Row ID Instances
             if (ImGui.CollapsingHeader("Find Row ID Instances"))
             {
-                ImguiUtils.WrappedText("Display all instances of a specificed row ID.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Display all instances of a specificed row ID.");
+                UIHelper.WrappedText("");
 
                 if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
                 {
-                    ImguiUtils.WrappedText("You must select a param before you can use this action.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("You must select a param before you can use this action.");
+                    UIHelper.WrappedText("");
                 }
                 else
                 {
-                    ImguiUtils.WrappedText("Row ID:");
+                    UIHelper.WrappedText("Row ID:");
                     ImGui.SetNextItemWidth(defaultButtonSize.X);
                     ImGui.InputInt("##searchRowId", ref Handler._idRowInstanceFinder_SearchID);
-                    ImguiUtils.ShowHoverTooltip("The row ID to search for.");
+                    UIHelper.ShowHoverTooltip("The row ID to search for.");
 
-                    ImguiUtils.WrappedText("Row Index:");
+                    UIHelper.WrappedText("Row Index:");
                     ImGui.SetNextItemWidth(defaultButtonSize.X);
                     ImGui.InputInt("##searchRowIndex", ref Handler._idRowInstanceFinder_SearchIndex);
-                    ImguiUtils.ShowHoverTooltip("The row index to search for. -1 for any");
+                    UIHelper.ShowHoverTooltip("The row index to search for. -1 for any");
 
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("");
 
                     Handler.DisplayRowIDInstances();
 
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("");
                 }
 
                 if (ImGui.Button("Search##action_SearchForRowIDs", defaultButtonSize))
@@ -303,24 +304,24 @@ public class ToolWindow
             // Find Row Value Instances
             if (ImGui.CollapsingHeader("Find Row Value Instances"))
             {
-                ImguiUtils.WrappedText("Display all instances of a specificed value.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Display all instances of a specificed value.");
+                UIHelper.WrappedText("");
 
                 if (!Smithbox.EditorHandler.ParamEditor._activeView._selection.ActiveParamExists())
                 {
-                    ImguiUtils.WrappedText("You must select a param before you can use this action.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("You must select a param before you can use this action.");
+                    UIHelper.WrappedText("");
                 }
                 else
                 {
-                    ImguiUtils.WrappedText("Value:");
+                    UIHelper.WrappedText("Value:");
                     ImGui.SetNextItemWidth(defaultButtonSize.X);
                     ImGui.InputText("##searchValue", ref Handler._searchValue, 255);
-                    ImguiUtils.ShowHoverTooltip("The value to search for.");
+                    UIHelper.ShowHoverTooltip("The value to search for.");
 
                     ImGui.Checkbox("Initial Match Only", ref CFG.Current.Param_Toolbar_FindValueInstances_InitialMatchOnly);
-                    ImguiUtils.ShowHoverTooltip("Only display the first match within a param, instead of all matches.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.ShowHoverTooltip("Only display the first match within a param, instead of all matches.");
+                    UIHelper.WrappedText("");
 
                     Handler.DisplayRowValueInstances();
 
@@ -338,13 +339,13 @@ public class ToolWindow
                 float EditX = (Size.X * 0.975f);
                 float EditY = (Size.Y * 0.1f);
 
-                ImguiUtils.WrappedText("Write and execute mass edit commands here.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Write and execute mass edit commands here.");
+                UIHelper.WrappedText("");
 
                 // Options
                 ImGui.Checkbox("Retain Input", ref MassEditHandler.retainMassEditCommand);
-                ImguiUtils.ShowWideHoverTooltip("Retain the mass edit command in the input text area after execution.");
-                ImguiUtils.WrappedText("");
+                UIHelper.ShowWideHoverTooltip("Retain the mass edit command in the input text area after execution.");
+                UIHelper.WrappedText("");
 
                 // AutoFill
                 var res = AutoFill.MassEditCompleteAutoFill();
@@ -354,7 +355,7 @@ public class ToolWindow
                 }
 
                 // Input
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Input:");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Input:");
 
                 ImGui.InputTextMultiline("##MEditRegexInput", ref MassEditHandler._currentMEditRegexInput, 65536,
                 new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
@@ -363,7 +364,7 @@ public class ToolWindow
                 {
                     MassEditHandler.ExecuteMassEdit();
                 }
-                ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExecuteMassEdit.HintText}");
+                UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExecuteMassEdit.HintText}");
 
 
                 ImGui.SameLine();
@@ -375,14 +376,14 @@ public class ToolWindow
                 ImGui.Text("");
 
                 // Output
-                ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Output:");
-                ImguiUtils.ShowWideHoverTooltip("Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command");
+                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Output:");
+                UIHelper.ShowWideHoverTooltip("Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command");
                 ImGui.SameLine();
-                ImguiUtils.WrappedText($"{MassEditHandler._mEditRegexResult}");
+                UIHelper.WrappedText($"{MassEditHandler._mEditRegexResult}");
 
                 ImGui.InputTextMultiline("##MEditRegexOutput", ref MassEditHandler._lastMEditRegexInput, 65536,
                     new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()), ImGuiInputTextFlags.ReadOnly);
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("");
             }
 
             // Mass Edit Scripts
@@ -390,13 +391,13 @@ public class ToolWindow
             {
                 MassEditHandler.MassEditScriptSetup();
 
-                ImguiUtils.WrappedText("Load and edit mass edit scripts here.");
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("Load and edit mass edit scripts here.");
+                UIHelper.WrappedText("");
 
                 // Ignore the combo box if no files exist
                 if (MassEditScript.scriptList.Count > 0)
                 {
-                    ImguiUtils.WrappedText("Existing Scripts:");
+                    UIHelper.WrappedText("Existing Scripts:");
 
                     // Scripts
                     ImGui.SetNextItemWidth(defaultButtonSize.X);
@@ -433,22 +434,22 @@ public class ToolWindow
                     }
                 }
 
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("");
 
                 ImGui.SetNextItemWidth(defaultButtonSize.X);
-                ImguiUtils.WrappedText("New Script:");
+                UIHelper.WrappedText("New Script:");
                 ImGui.InputText("##scriptName", ref MassEditHandler._newScriptName, 255);
-                ImguiUtils.ShowHoverTooltip("The file name used for this script.");
-                ImguiUtils.WrappedText("");
+                UIHelper.ShowHoverTooltip("The file name used for this script.");
+                UIHelper.WrappedText("");
 
                 var Size = ImGui.GetWindowSize();
                 float EditX = (Size.X / 100) * 975;
                 float EditY = (Size.Y / 100) * 10;
 
-                ImguiUtils.WrappedText("Script:");
-                ImguiUtils.ShowHoverTooltip("The mass edit script.");
+                UIHelper.WrappedText("Script:");
+                UIHelper.ShowHoverTooltip("The mass edit script.");
                 ImGui.InputTextMultiline("##newMassEditScript", ref MassEditHandler._newScriptBody, 65536, new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
-                ImguiUtils.WrappedText("");
+                UIHelper.WrappedText("");
 
                 if (ImGui.Button("Save", halfButtonSize))
                 {
@@ -474,20 +475,20 @@ public class ToolWindow
             {
                 if (ImGui.CollapsingHeader("Param Reloader"))
                 {
-                    ImguiUtils.WrappedText("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
+                    UIHelper.WrappedText("");
 
                     if (ImGui.Button("Reload Current Param", defaultButtonSize))
                     {
                         ParamMemoryTools.ReloadCurrentParam();
                     }
-                    ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
+                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
 
                     if (ImGui.Button("Reload All Params", defaultButtonSize))
                     {
                         ParamMemoryTools.ReloadAllParams();
                     }
-                    ImguiUtils.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
+                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
                 }
             }
 
@@ -496,19 +497,19 @@ public class ToolWindow
             {
                 if (ImGui.CollapsingHeader("Item Gib"))
                 {
-                    ImguiUtils.WrappedText("Use this tool to spawn an item in-game. First, select an EquipParam row within the Param Editor.");
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("Use this tool to spawn an item in-game. First, select an EquipParam row within the Param Editor.");
+                    UIHelper.WrappedText("");
 
                     var activeParam = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
 
                     if (activeParam == "EquipParamGoods")
                     {
-                        ImguiUtils.WrappedText("Number of Spawned Items");
+                        UIHelper.WrappedText("Number of Spawned Items");
                         ImGui.InputInt("##spawnItemCount", ref ParamMemoryTools.SpawnedItemAmount);
                     }
                     if (activeParam == "EquipParamWeapon")
                     {
-                        ImguiUtils.WrappedText("Reinforcement of Spawned Weapon");
+                        UIHelper.WrappedText("Reinforcement of Spawned Weapon");
                         ImGui.InputInt("##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
                         if(ParamMemoryTools.SpawnWeaponLevel > 10)
                         {
@@ -516,7 +517,7 @@ public class ToolWindow
                         }
                     }
 
-                    ImguiUtils.WrappedText("");
+                    UIHelper.WrappedText("");
                     if (ImGui.Button("Give Item", defaultButtonSize))
                     {
                         ParamMemoryTools.GiveItem();

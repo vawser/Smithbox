@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Utilities;
 using System;
@@ -222,7 +223,7 @@ public class GranularRegionToggleHandler
 
     public void DisplayCommonToggles()
     {
-        ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+        UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
         if (ImGui.MenuItem("Toggle Region Visibility: OFF"))
         {
             foreach (var entry in Universe.LoadedObjectContainers.Values)
@@ -240,9 +241,9 @@ public class GranularRegionToggleHandler
                 }
             }
         }
-        ImguiUtils.ShowHoverTooltip("Toggle the visibility of regions of all types to invisible.");
+        UIHelper.ShowHoverTooltip("Toggle the visibility of regions of all types to invisible.");
 
-        ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+        UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
         if (ImGui.MenuItem("Toggle Region Visibility: ON"))
         {
             foreach (var entry in Universe.LoadedObjectContainers.Values)
@@ -260,7 +261,7 @@ public class GranularRegionToggleHandler
                 }
             }
         }
-        ImguiUtils.ShowHoverTooltip("Toggle the visibility of regions of all types to visible.");
+        UIHelper.ShowHoverTooltip("Toggle the visibility of regions of all types to visible.");
 
         ImGui.Separator();
     }
@@ -287,7 +288,7 @@ public class GranularRegionToggleHandler
 
         if (show)
         {
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
             if (ImGui.MenuItem($"Toggle: {name}"))
             {
                 foreach (var entry in Universe.LoadedObjectContainers.Values)
@@ -305,8 +306,8 @@ public class GranularRegionToggleHandler
                     }
                 }
             }
-            ImguiUtils.ShowHoverTooltip($"Toggle the visibility of regions of the {name} type.");
-            ImguiUtils.ShowActiveStatus(RegionVisibilityTruth[truthIndex]);
+            UIHelper.ShowHoverTooltip($"Toggle the visibility of regions of the {name} type.");
+            UIHelper.ShowActiveStatus(RegionVisibilityTruth[truthIndex]);
         }
     }
 }

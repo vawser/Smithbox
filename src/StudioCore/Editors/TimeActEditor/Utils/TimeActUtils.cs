@@ -8,6 +8,7 @@ using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -52,7 +53,7 @@ public static class TimeActUtils
         {
             var aliasName = referenceDict[lowerName].name;
 
-            AliasUtils.DisplayAlias(aliasName);
+            UIHelper.DisplayAlias(aliasName);
         }
     }
 
@@ -72,11 +73,11 @@ public static class TimeActUtils
                 if (alias != null)
                 {
                     var aliasStr = alias.name;
-                    AliasUtils.DisplayAlias(aliasStr);
+                    UIHelper.DisplayAlias(aliasStr);
                 }
                 else
                 {
-                    AliasUtils.DisplayAlias("");
+                    UIHelper.DisplayAlias("");
                 }
             }
         }
@@ -99,11 +100,11 @@ public static class TimeActUtils
             {
                 if (CFG.Current.TimeActEditor_DisplayAllGenerators)
                 {
-                    AliasUtils.DisplayAlias(string.Join(", ", aliasList));
+                    UIHelper.DisplayAlias(string.Join(", ", aliasList));
                 }
                 else
                 {
-                    AliasUtils.DisplayAlias(aliasList[0]);
+                    UIHelper.DisplayAlias(aliasList[0]);
                 }
                 AliasUtils.AliasTooltip(aliasList, "Generators that use this animation:");
             }

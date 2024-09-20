@@ -1,7 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
+using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -38,14 +38,13 @@ public static class ParamComparisonReport
 
     public static void Display()
     {
-        var width = 800;
-        var buttonSize = new Vector2(width / 2, 32);
-        var textPaneSize = new Vector2(width, 600);
+        var buttonSize = new Vector2(UI.Current.Interface_ModalWidth / 2, 32);
+        var textPaneSize = new Vector2(UI.Current.Interface_ModalWidth, UI.Current.Interface_ModalHeight);
 
-        ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, "Comparison Report");
+        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Comparison Report");
         ImGui.Separator();
-        ImguiUtils.WrappedText($"Project: Param Version: {ParamBank.PrimaryBank.ParamVersion}");
-        ImguiUtils.WrappedText($"Game Root: Param Version: {ParamBank.VanillaBank.ParamVersion}");
+        UIHelper.WrappedText($"Project: Param Version: {ParamBank.PrimaryBank.ParamVersion}");
+        UIHelper.WrappedText($"Game Root: Param Version: {ParamBank.VanillaBank.ParamVersion}");
 
         ImGui.InputTextMultiline("##reportText", ref ReportText, 65025, textPaneSize, ImGuiInputTextFlags.ReadOnly);
 

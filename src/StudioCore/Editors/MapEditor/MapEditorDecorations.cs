@@ -6,6 +6,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ namespace StudioCore.Editors.MapEditor
                 ImGui.NextColumn();
 
                 ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
                 ImGui.TextUnformatted(@$"   <{enumName}>");
                 ImGui.PopStyleColor();
                 ImGui.PopStyleVar();
@@ -64,13 +65,13 @@ namespace StudioCore.Editors.MapEditor
                 if (match != null)
                 {
                     currentEntry = match.name;
-                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRef_Text);
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
                     ImGui.TextUnformatted(currentEntry);
                     ImGui.PopStyleColor();
                 }
                 else
                 {
-                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRefMissing_Text);
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefMissing_Text);
                     ImGui.TextUnformatted(currentEntry);
                     ImGui.PopStyleColor();
                 }
@@ -135,7 +136,7 @@ namespace StudioCore.Editors.MapEditor
 
             ImGui.NextColumn();
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             ImGui.TextUnformatted(@$"   <{refName}>");
             ImGui.PopStyleColor();
             ImGui.PopStyleVar();
@@ -156,18 +157,18 @@ namespace StudioCore.Editors.MapEditor
             var entity = map.GetObjectByName((string)val);
             if (entity == null)
             {
-                ImGui.TextColored(CFG.Current.ImGui_Invalid_Text_Color, "No object by that name");
+                ImGui.TextColored(UI.Current.ImGui_Invalid_Text_Color, "No object by that name");
             }
             else
             {
                 var alias = AliasUtils.GetEntityAliasName(entity);
                 if (alias is null or "")
                 {
-                    ImGui.TextColored(CFG.Current.ImGui_ParamRef_Text, $"{entity.PrettyName}");
+                    ImGui.TextColored(UI.Current.ImGui_ParamRef_Text, $"{entity.PrettyName}");
                 }
                 else
                 {
-                    ImGui.TextColored(CFG.Current.ImGui_ParamRef_Text, $"{entity.PrettyName} - {alias}");
+                    ImGui.TextColored(UI.Current.ImGui_ParamRef_Text, $"{entity.PrettyName} - {alias}");
                 }
             }
 
@@ -284,7 +285,7 @@ namespace StudioCore.Editors.MapEditor
                 ImGui.NextColumn();
 
                 ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
                 ImGui.TextUnformatted(@$"   <{enumName}>");
                 ImGui.PopStyleColor();
                 ImGui.PopStyleVar();
@@ -305,13 +306,13 @@ namespace StudioCore.Editors.MapEditor
                     if(currentEntry == "")
                         currentEntry = "___";
 
-                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRef_Text);
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
                     ImGui.TextUnformatted(currentEntry);
                     ImGui.PopStyleColor();
                 }
                 else
                 {
-                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRefMissing_Text);
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefMissing_Text);
                     ImGui.TextUnformatted(currentEntry);
                     ImGui.PopStyleColor();
                 }
@@ -435,7 +436,7 @@ namespace StudioCore.Editors.MapEditor
 
                     // Text
                     ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
-                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
 
                     ImGui.TextUnformatted($"<Form>");
                     ImGui.TextUnformatted($"<Equipment>");
@@ -455,7 +456,7 @@ namespace StudioCore.Editors.MapEditor
                         sectionOneName = curSectionOne.name;
                     }
 
-                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
                     ImGui.TextUnformatted($"{sectionOneName}");
                     ImGui.PopStyleColor();
 
@@ -502,7 +503,7 @@ namespace StudioCore.Editors.MapEditor
                         sectionTwoName = curSectionTwo.name;
                     }
 
-                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
                     ImGui.TextUnformatted($"{sectionTwoName}");
                     ImGui.PopStyleColor();
 
@@ -548,7 +549,7 @@ namespace StudioCore.Editors.MapEditor
                         sectionThreeName = curSectionThree.name;
                     }
 
-                    ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
                     ImGui.TextUnformatted($"{sectionThreeName}");
                     ImGui.PopStyleColor();
 

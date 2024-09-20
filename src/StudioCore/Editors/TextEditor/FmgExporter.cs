@@ -16,7 +16,7 @@ using static StudioCore.TextEditor.FMGBank;
 using StudioCore.Locators;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.TextEditor;
 

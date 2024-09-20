@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Formats;
+using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
@@ -134,7 +135,7 @@ public class WorldMapScreen : IResourceEventListener
                     WorldMapOpen = true;
                 };
             }
-            ImguiUtils.ShowHoverTooltip($"Open the Lands Between world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapVanilla.HintText}");
+            UIHelper.ShowHoverTooltip($"Open the Lands Between world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapVanilla.HintText}");
 
             ImGui.SameLine();
             if (ImGui.Button("Shadow of the Erdtree", new Vector2(widthUnit * 48, 20 * scale)))
@@ -149,7 +150,7 @@ public class WorldMapScreen : IResourceEventListener
                     WorldMapOpen = true;
                 };
             }
-            ImguiUtils.ShowHoverTooltip($"Open the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapSOTE.HintText}");
+            UIHelper.ShowHoverTooltip($"Open the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapSOTE.HintText}");
         }
     }
 
@@ -226,11 +227,11 @@ public class WorldMapScreen : IResourceEventListener
         // Properties
         ImGui.Begin("Properties##WorldMapProperties");
 
-        ImguiUtils.WrappedText($"Press Left Mouse button to select an area of the map to filter the map object list by.");
-        ImguiUtils.WrappedText($"");
-        ImguiUtils.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
-        ImguiUtils.WrappedText($"Press {KeyBindings.Current.TEXTURE_ResetZoomLevel.HintText} to reset zoom level to 100%.");
-        ImguiUtils.WrappedText($"");
+        UIHelper.WrappedText($"Press Left Mouse button to select an area of the map to filter the map object list by.");
+        UIHelper.WrappedText($"");
+        UIHelper.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
+        UIHelper.WrappedText($"Press {KeyBindings.Current.TEXTURE_ResetZoomLevel.HintText} to reset zoom level to 100%.");
+        UIHelper.WrappedText($"");
 
         //ImGui.Text($"Relative Position: {relativePos}");
         //ImGui.Text($"Relative (Sans Scroll) Position: {relativePosWindowPosition}");
@@ -257,7 +258,7 @@ public class WorldMapScreen : IResourceEventListener
 
         ImGui.Separator();
         ImGui.Text($"Selection:");
-        ImguiUtils.ShowHoverTooltip("These are the maps that the map object list will be filtered to.");
+        UIHelper.ShowHoverTooltip("These are the maps that the map object list will be filtered to.");
         ImGui.Separator();
 
         // Stored Click Maps
@@ -270,14 +271,14 @@ public class WorldMapScreen : IResourceEventListener
                     Smithbox.EditorHandler.MapEditor.Universe.LoadMap(match, false);
                 }
                 ImGui.SameLine();
-                ImguiUtils.WrappedText($"{match}");
-                AliasUtils.DisplayAlias(AliasUtils.GetMapNameAlias(match));
+                UIHelper.WrappedText($"{match}");
+                UIHelper.DisplayAlias(AliasUtils.GetMapNameAlias(match));
             }
         }
 
         ImGui.Separator();
         ImGui.Text($"Maps in Tile:");
-        ImguiUtils.ShowHoverTooltip("These are the maps that are within the tile you are currently hovering over within the world map.");
+        UIHelper.ShowHoverTooltip("These are the maps that are within the tile you are currently hovering over within the world map.");
         ImGui.Separator();
 
         // Hover Maps
@@ -285,8 +286,8 @@ public class WorldMapScreen : IResourceEventListener
         {
             foreach (var match in currentHoverMaps)
             {
-                ImguiUtils.WrappedText($"{match}");
-                AliasUtils.DisplayAlias(AliasUtils.GetMapNameAlias(match));
+                UIHelper.WrappedText($"{match}");
+                UIHelper.DisplayAlias(AliasUtils.GetMapNameAlias(match));
             }
         }
 

@@ -12,6 +12,7 @@ using StudioCore.Editor;
 using SoulsFormats;
 using HKLib.hk2018.hkAsyncThreadPool;
 using static StudioCore.Editors.TimeActEditor.Utils.TimeActUtils;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.TimeActEditor.Utils;
 
@@ -43,7 +44,7 @@ public class TimeActSearch
     {
         if (Screen.SelectionHandler.ContainerInfo == null)
         {
-            ImguiUtils.WrappedText("You must select a File first.");
+            UIHelper.WrappedText("You must select a File first.");
             return;
         }
 
@@ -52,7 +53,7 @@ public class TimeActSearch
 
         ImGui.PushItemWidth(windowWidth);
 
-        ImguiUtils.WrappedText("Search Type:");
+        UIHelper.WrappedText("Search Type:");
         if (ImGui.BeginCombo("##Search Type", CurrentSearchType.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(SearchType)))
@@ -69,17 +70,17 @@ public class TimeActSearch
         }
         if (CurrentSearchType is SearchType.EventValue)
         {
-            ImguiUtils.WrappedText("");
-            ImguiUtils.WrappedText($"Event Value will only match within the currently selected Time Act container:");
-            ImguiUtils.WrappedTextColored(CFG.Current.ImGui_AliasName_Text, $"{Screen.SelectionHandler.ContainerInfo.Name}");
+            UIHelper.WrappedText("");
+            UIHelper.WrappedText($"Event Value will only match within the currently selected Time Act container:");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{Screen.SelectionHandler.ContainerInfo.Name}");
         }
-        ImguiUtils.WrappedText("");
+        UIHelper.WrappedText("");
 
-        ImguiUtils.WrappedText("Search Input:");
+        UIHelper.WrappedText("Search Input:");
         ImGui.InputText("##searchInput", ref SearchInput, 255);
 
         ImGui.Checkbox("Allow Partial Matches", ref AllowPartialMatch);
-        ImguiUtils.WrappedText("");
+        UIHelper.WrappedText("");
 
         if (ImGui.Button("Search##searchButton", defaultButtonSize))
         {
@@ -95,7 +96,7 @@ public class TimeActSearch
 
         ImGui.Separator();
 
-        ImguiUtils.WrappedText("Results:");
+        UIHelper.WrappedText("Results:");
 
         if (searchResults.Count > 0)
         {
@@ -151,7 +152,7 @@ public class TimeActSearch
         }
         else
         {
-            ImguiUtils.WrappedText("No results.");
+            UIHelper.WrappedText("No results.");
         }
     }
 

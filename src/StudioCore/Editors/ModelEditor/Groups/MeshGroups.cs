@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
@@ -32,12 +33,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             UpdateMeshGroupList();
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Replace"))
             {
                 foreach (var entry in MeshGroupFiles)
                 {
-                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                     if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedMeshGroup = entry;
@@ -51,12 +52,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
                 ImGui.EndMenu();
             }
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Append"))
             {
                 foreach (var entry in MeshGroupFiles)
                 {
-                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
+                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                     if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedMeshGroup = entry;
@@ -96,9 +97,9 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var sectionHeight = ImGui.GetWindowHeight();
             var defaultButtonSize = new Vector2(sectionWidth, 32);
 
-            ImguiUtils.WrappedText("Create a stored Mesh Group from your current selection with the Meshes list.");
-            ImguiUtils.WrappedText("A stored group can then be used to replace the existing Meshes list, or appended to the end.");
-            ImguiUtils.WrappedText("");
+            UIHelper.WrappedText("Create a stored Mesh Group from your current selection with the Meshes list.");
+            UIHelper.WrappedText("A stored group can then be used to replace the existing Meshes list, or appended to the end.");
+            UIHelper.WrappedText("");
 
             UpdateMeshGroupList();
 
@@ -136,7 +137,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteMeshGroup(entry);
                         }
-                        ImguiUtils.ShowHoverTooltip("Delete this Mesh group.");
+                        UIHelper.ShowHoverTooltip("Delete this Mesh group.");
 
                         ImGui.EndPopup();
                     }
@@ -170,14 +171,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceMeshList(screen, SelectedMeshList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                ImguiUtils.ShowHoverTooltip("Replace the existing Meshes with the Meshes within this Mesh group.");
+                UIHelper.ShowHoverTooltip("Replace the existing Meshes with the Meshes within this Mesh group.");
                 ImGui.SameLine();
                 if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
                 {
                     var action = new AppendMeshList(screen, SelectedMeshList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                ImguiUtils.ShowHoverTooltip("Append to Meshs within this Mesh group to the existing Meshes.");
+                UIHelper.ShowHoverTooltip("Append to Meshs within this Mesh group to the existing Meshes.");
             }
 
             ImGui.EndChild();
@@ -193,7 +194,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##MeshGroupName", ref _createMeshGroupName, 255);
-            ImguiUtils.ShowHoverTooltip("The name of the Mesh group.");
+            UIHelper.ShowHoverTooltip("The name of the Mesh group.");
 
             if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
             {
