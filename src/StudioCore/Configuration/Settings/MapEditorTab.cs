@@ -202,7 +202,10 @@ public class MapEditorTab
             ImGui.PushItemWidth(thinButtonSize.X);
 
             var unit0 = CFG.Current.MapEditor_Selection_Movement_Increment_0;
-            ImGui.SliderFloat("##movementIncrement0", ref unit0, 0.0f, 999.0f);
+            if(ImGui.SliderFloat("##movementIncrement0", ref unit0, 0.0f, 999.0f))
+            {
+                CFG.Current.MapEditor_Selection_Movement_Increment_0 = unit0;
+            }
             UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
 
             // 1
@@ -210,7 +213,10 @@ public class MapEditorTab
             ImGui.PushItemWidth(thinButtonSize.X);
 
             var unit1 = CFG.Current.MapEditor_Selection_Movement_Increment_1;
-            ImGui.SliderFloat("##movementIncrement1", ref unit1, 0.0f, 999.0f);
+            if(ImGui.SliderFloat("##movementIncrement1", ref unit1, 0.0f, 999.0f))
+            {
+                CFG.Current.MapEditor_Selection_Movement_Increment_1 = unit1;
+            }
             UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
 
             // 2
@@ -218,7 +224,10 @@ public class MapEditorTab
             ImGui.PushItemWidth(thinButtonSize.X);
 
             var unit2 = CFG.Current.MapEditor_Selection_Movement_Increment_2;
-            ImGui.SliderFloat("##movementIncrement2", ref unit2, 0.0f, 999.0f);
+            if(ImGui.SliderFloat("##movementIncrement2", ref unit2, 0.0f, 999.0f))
+            {
+                CFG.Current.MapEditor_Selection_Movement_Increment_2 = unit2;
+            }
             UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
 
             // 3
@@ -226,7 +235,10 @@ public class MapEditorTab
             ImGui.PushItemWidth(thinButtonSize.X);
 
             var unit3 = CFG.Current.MapEditor_Selection_Movement_Increment_3;
-            ImGui.SliderFloat("##movementIncrement3", ref unit3, 0.0f, 999.0f);
+            if(ImGui.SliderFloat("##movementIncrement3", ref unit3, 0.0f, 999.0f))
+            {
+                CFG.Current.MapEditor_Selection_Movement_Increment_3 = unit3;
+            }
             UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
 
             // 4
@@ -234,7 +246,10 @@ public class MapEditorTab
             ImGui.PushItemWidth(thinButtonSize.X);
 
             var unit4 = CFG.Current.MapEditor_Selection_Movement_Increment_4;
-            ImGui.SliderFloat("##movementIncrement4", ref unit4, 0.0f, 999.0f);
+            if(ImGui.SliderFloat("##movementIncrement4", ref unit4, 0.0f, 999.0f))
+            {
+                CFG.Current.MapEditor_Selection_Movement_Increment_4 = unit4;
+            }
             UIHelper.ShowHoverTooltip("Press Ctrl+Left Click to input directly.\nSet the movement increment amount used by keyboard move.");
 
         }

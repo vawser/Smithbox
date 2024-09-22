@@ -34,6 +34,7 @@ Map Editor:
  
  - FIX: asset browser entity change not properly changing Instance ID and Self Parts
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
+ - FIX: misc texture loads during map load can hang, causing the load window to never disppear. (e.g. Leyndell)
  
 Model Editor:  
  - ADD: FBX Import into loose FLVER
@@ -46,6 +47,7 @@ Model Editor:
  - ADD: GX Item mapping so the byte arrays are more comprehesible (https://github.com/JKAnderson/SoulsFormats/issues/14)
  - ADD: render bone connections (use patrol route method)
  - ADD: Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
+ - ADD: Texture Export action: export used textures for loaded model
  
  - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
  - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
@@ -108,8 +110,7 @@ Texture Viewer:
 # Notes
 #--------------------------------------
 # PRIORITY
-Finish the BTAB Editor: include edit, removal and add.
+- ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
+- ADD: Add collision view to the Model Editor
+- ADD: Finish the BTAB Editor: include edit, removal and add.
 
-Add collision view to the Model Editor
-
-aeg270_301 
