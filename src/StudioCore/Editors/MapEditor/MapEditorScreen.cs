@@ -61,7 +61,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public MapAssetSelectionView MapAssetSelectionView;
     public SelectionGroupEditor SelectionGroupEditor;
     public PrefabEditor PrefabEditor;
-    private LightmapAtlasScreen LightmapAtlasEditor;
+    public LightmapAtlasScreen LightmapAtlasEditor;
 
     public GranularRegionToggleHandler GranularRegionHandler;
 
@@ -987,6 +987,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         try
         {
             Universe.SaveAllMaps();
+            LightmapAtlasEditor.Save();
         }
         catch (SavingFailedException e)
         {

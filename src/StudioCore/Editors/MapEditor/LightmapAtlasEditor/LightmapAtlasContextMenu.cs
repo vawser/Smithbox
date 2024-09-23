@@ -1,6 +1,9 @@
-﻿using ImGuiNET;
+﻿using DotNext.Collections.Generic;
+using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Editors.TimeActEditor.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +26,7 @@ public class LightmapAtlasContextMenu
     /// <summary>
     /// Context menu for the Entry List
     /// </summary>
-    public void EntryListMenu(bool isSelected, string key)
+    public void DisplayRowContextMenu(bool isSelected, string key)
     {
         if (Smithbox.BankHandler.LightmapAtlasBank.IsSaving)
             return;
@@ -31,13 +34,25 @@ public class LightmapAtlasContextMenu
         if (!isSelected)
             return;
 
-        if (ImGui.BeginPopupContextItem($"EntryContextMenu##EntryContextMenu{key}"))
+        if (ImGui.BeginPopupContextItem($"RowContextMenu##RowContextMenu{key}"))
         {
             // Create
+            if(ImGui.Selectable("Create"))
+            {
+                AtlasScreen.CreateEntryModal.Display();
+            }
 
             // Duplicate
+            if (ImGui.Selectable("Duplicate"))
+            {
+                LightmapAtlasUtils.DuplicateEntries(Screen, AtlasScreen);
+            }
 
             // Delete
+            if (ImGui.Selectable("Delete"))
+            {
+                LightmapAtlasUtils.DeleteEntries(Screen, AtlasScreen);
+            }
 
             ImGui.EndPopup();
         }

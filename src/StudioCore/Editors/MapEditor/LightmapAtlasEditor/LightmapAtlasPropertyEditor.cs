@@ -57,7 +57,7 @@ public class LightmapAtlasPropertyEditor
             {
                 if (newValue != -1)
                 {
-                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangeAtlasID(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
+                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangeAtlasID(AtlasScreen.CurrentParent, AtlasScreen.CurrentEntry, newValue, oldValue));
                 }
             }
         }
@@ -92,7 +92,7 @@ public class LightmapAtlasPropertyEditor
             {
                 if (newValue != null)
                 {
-                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangePartName(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
+                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangePartName(AtlasScreen.CurrentParent, AtlasScreen.CurrentEntry, newValue, oldValue));
                 }
             }
         }
@@ -128,7 +128,7 @@ public class LightmapAtlasPropertyEditor
             {
                 if (newValue != null)
                 {
-                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangeMaterialName(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
+                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangeMaterialName(AtlasScreen.CurrentParent, AtlasScreen.CurrentEntry, newValue, oldValue));
                 }
             }
         }
@@ -163,7 +163,7 @@ public class LightmapAtlasPropertyEditor
             {
                 if (newValue.X != -1 && newValue.Y != -1)
                 {
-                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangeUVOffset(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
+                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangeUVOffset(AtlasScreen.CurrentParent, AtlasScreen.CurrentEntry, newValue, oldValue));
                 }
             }
         }
@@ -198,7 +198,7 @@ public class LightmapAtlasPropertyEditor
             {
                 if (newValue.X != -1 && newValue.Y != -1)
                 {
-                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangeUVScale(AtlasScreen._selectedParentEntry, AtlasScreen._selectedEntry, newValue, oldValue));
+                    Screen.EditorActionManager.ExecuteAction(new LightmapAtlasChangeUVScale(AtlasScreen.CurrentParent, AtlasScreen.CurrentEntry, newValue, oldValue));
                 }
             }
         }

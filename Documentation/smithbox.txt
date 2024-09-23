@@ -24,7 +24,6 @@ Behavior Editor:
  - ADD: collision HKX editor
  
 Map Editor: 
- - ADD: .BTAB support
  - ADD: .GRASS support
  - ADD: .ENTRYFILELIST support
  - ADD: enum support for the DS3 corpse poses

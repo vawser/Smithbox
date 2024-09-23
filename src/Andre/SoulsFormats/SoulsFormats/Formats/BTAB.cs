@@ -127,6 +127,11 @@ namespace SoulsFormats
                 UVScale = Vector2.One;
             }
 
+            public Entry GetClone()
+            {
+                return (Entry)MemberwiseClone();
+            }
+
             internal Entry(BinaryReaderEx br, long nameStart)
             {
                 long msbNameOffset = br.ReadVarint();

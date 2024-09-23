@@ -4,11 +4,13 @@ using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.TimeActEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 
@@ -17,12 +19,14 @@ public class LightmapAtlasScreen
     private MapEditorScreen Screen;
     private LightmapAtlasPropertyEditor PropertyEditor;
 
-    public LightmapAtlasInfo _selectedParentEntry;
-    public int _selectedEntryKey;
-    public BTAB.Entry _selectedEntry;
+    public AtlasContainerInfo CurrentParent;
+    public int CurrentEntryKey;
+    public BTAB.Entry CurrentEntry;
 
     public LightmapMultiselect LightmapMultiselect;
     public LightmapAtlasContextMenu ContextMenu;
+
+    public LightmapAtlasEntryModal CreateEntryModal;
 
     private string _searchInput = "";
     private bool SelectEntry = false;
@@ -33,6 +37,15 @@ public class LightmapAtlasScreen
         PropertyEditor = new LightmapAtlasPropertyEditor(Screen, this);
         LightmapMultiselect = new LightmapMultiselect(this);
         ContextMenu = new LightmapAtlasContextMenu(Screen, this);
+        CreateEntryModal = new LightmapAtlasEntryModal(Screen, this);
+    }
+
+    public void Save()
+    {
+        foreach (KeyValuePair<string, ObjectContainer> m in Screen.Universe.LoadedObjectContainers)
+        {
+            Smithbox.BankHandler.LightmapAtlasBank.SaveBank(m.Key);
+        }
     }
 
     public void OnGui()
@@ -50,6 +63,8 @@ public class LightmapAtlasScreen
 
         if (!UI.Current.Interface_MapEditor_Viewport_LightmapAtlas)
             return;
+
+        CreateEntryModal.OnGui();
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
@@ -83,27 +98,8 @@ public class LightmapAtlasScreen
         ImGui.PopStyleColor(1);
     }
 
-    public void DisplayLightmapAtlasForMap(MapContainer map, KeyValuePair<string, List<LightmapAtlasInfo>> lightMapAtlases)
+    public void DisplayLightmapAtlasForMap(MapContainer map, KeyValuePair<string, List<AtlasContainerInfo>> lightMapAtlases)
     {
-        // Tab by opened maps
-
-        // In each tab, columns:
-        // First column: list of the PartNames (with internal index for order)
-        // Second column: properties to edit for selected Part (watch out for PartName change)
-        // Search bar to filter 1st column
-        // Add New Entry button to side
-
-        // Assistance:
-        // Alias support for PartName and Map Name
-        // Quick-link to frame/view Part (if it exists)
-
-        // Content side:
-        // Property editor for the properties
-        // Delete Selected Entry button
-        // Duplicate Selected entry button
-
-        DisplayActionSection(map, lightMapAtlases);
-
         ImGui.Columns(2);
 
         ImGui.BeginChild("SelectionCol");
@@ -122,107 +118,140 @@ public class LightmapAtlasScreen
 
         ImGui.Columns(1);
     }
-    private void DisplaySelectionList(MapContainer map, KeyValuePair<string, List<LightmapAtlasInfo>> lightMapAtlases)
-    {
-        foreach (var entry in lightMapAtlases.Value)
-        {
-            for (int i = 0; i < entry.LightmapAtlas.Entries.Count; i++)
-            {
-                var lightmapEntry = entry.LightmapAtlas.Entries[i];
 
-                if (SearchFilters.IsBasicMatch(_searchInput, lightmapEntry.PartName))
+    private int _selectedConfigTab = -1;
+
+    private void DisplaySelectionList(MapContainer map, KeyValuePair<string, List<AtlasContainerInfo>> lightMapAtlases)
+    {
+        ImGui.BeginTabBar("##lightmapAtlasMaterialConfigs");
+
+        for(int k = 0; k < lightMapAtlases.Value.Count; k++)
+        {
+            var entry = lightMapAtlases.Value[k];
+
+            if (CurrentParent == null)
+                CurrentParent = entry;
+
+            if (ImGui.BeginTabItem($"Material Config {k}"))
+            {
+                if (ImGui.IsMouseClicked(ImGuiMouseButton.Left))
                 {
-                    var isSelected = false;
-                    if (i == _selectedEntryKey || LightmapMultiselect.IsLightmapSelected(i))
+                    if (_selectedConfigTab != k)
                     {
-                        isSelected = true;
+                        _selectedConfigTab = k;
+                        LightmapMultiselect.Reset();
+                    }
+                }
+
+                var width = ImGui.GetWindowWidth();
+                var buttonSize = new Vector2(width / 2, 24);
+
+                if(ImGui.Button("Add Entry", buttonSize))
+                {
+                    CreateEntryModal.Display();
+                }
+                UIHelper.ShowHoverTooltip("Add new entry with default values.");
+                ImGui.SameLine();
+                if (ImGui.Button("Clear Entries", buttonSize))
+                {
+                    CurrentParent = entry;
+                    LightmapMultiselect.StoredEntries.Clear();
+
+                    for (int i = 0; i < entry.LightmapAtlas.Entries.Count; i++)
+                    {
+                        var atlasEntry = entry.LightmapAtlas.Entries[i];
+
+                        LightmapMultiselect.StoredEntries.Add(i, atlasEntry);
                     }
 
-                    // Row Select
-                    if (ImGui.Selectable($"{lightmapEntry.PartName}##{i}_Select", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                    LightmapAtlasUtils.DeleteEntries(Screen, this);
+                }
+                UIHelper.ShowHoverTooltip("Remove all entries.");
+
+                ImGui.InputText($"Search##entryFilter", ref _searchInput, 255);
+                UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
+
+                for (int i = 0; i < entry.LightmapAtlas.Entries.Count; i++)
+                {
+                    var lightmapEntry = entry.LightmapAtlas.Entries[i];
+
+                    if (SearchFilters.IsBasicMatch(_searchInput, lightmapEntry.PartName))
                     {
-                        LightmapMultiselect.LightMapSelect(_selectedEntryKey, i);
-
-                        _selectedParentEntry = entry;
-                        _selectedEntryKey = i;
-                        _selectedEntry = lightmapEntry;
-
-                        if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                        var isSelected = false;
+                        if (i == CurrentEntryKey || LightmapMultiselect.IsSelected(i))
                         {
-                            EditorCommandQueue.AddCommand($"map/select/{map.Name}/{lightmapEntry.PartName}");
+                            isSelected = true;
+                        }
+
+                        // Row Select
+                        if (ImGui.Selectable($"{lightmapEntry.PartName}##{i}_Select", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                        {
+                            LightmapMultiselect.HandleSelection(CurrentEntryKey, i, lightmapEntry);
+
+                            CurrentParent = entry;
+                            CurrentEntryKey = i;
+                            CurrentEntry = lightmapEntry;
+
+                            if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                            {
+                                EditorCommandQueue.AddCommand($"map/select/{map.Name}/{lightmapEntry.PartName}");
+                            }
+                        }
+
+                        // Arrow Selection
+                        if (ImGui.IsItemHovered() && SelectEntry)
+                        {
+                            LightmapMultiselect.HandleSelection(CurrentEntryKey, i, lightmapEntry);
+
+                            CurrentParent = entry;
+                            CurrentEntryKey = i;
+                            CurrentEntry = lightmapEntry;
+                        }
+                        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                        {
+                            SelectEntry = true;
+                        }
+
+                        if (ImGui.IsItemVisible())
+                        {
+                            DisplaySelectableAlias(lightmapEntry.PartName, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
+                        }
+
+                        if (CurrentParent == entry && LightmapMultiselect.IsCurrentSelection(i))
+                        {
+                            ContextMenu.DisplayRowContextMenu(isSelected, $"{CurrentEntryKey}");
                         }
                     }
-
-                    // Arrow Selection
-                    if (ImGui.IsItemHovered() && SelectEntry)
-                    {
-                        LightmapMultiselect.LightMapSelect(_selectedEntryKey, i);
-
-                        _selectedParentEntry = entry;
-                        _selectedEntryKey = i;
-                        _selectedEntry = lightmapEntry;
-                    }
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
-                    {
-                        SelectEntry = true;
-                    }
-
-                    if (ImGui.IsItemVisible())
-                    {
-                        DisplaySelectableAlias(lightmapEntry.PartName, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
-                    }
-
-                    ContextMenu.EntryListMenu(isSelected, $"{_selectedEntryKey}");
                 }
+
+                ImGui.EndTabItem();
             }
-            ImGui.Separator();
         }
+
+        ImGui.EndTabBar();
     }
 
-    private void DisplayPropertyPanel(MapContainer map, KeyValuePair<string, List<LightmapAtlasInfo>> lightMapAtlases)
+    private void DisplayPropertyPanel(MapContainer map, KeyValuePair<string, List<AtlasContainerInfo>> lightMapAtlases)
     {
         var widthUnit = ImGui.GetWindowWidth() / 100;
 
-        if (_selectedEntry != null)
+        if (CurrentEntry != null)
         {
             ImGui.AlignTextToFramePadding();
 
             ImGui.Text("Atlas ID");
-            PropertyEditor.AtlasID(_selectedEntry, 1);
+            PropertyEditor.AtlasID(CurrentEntry, 1);
             ImGui.Text("Part Name");
-            PropertyEditor.PartName(_selectedEntry, 2);
+            PropertyEditor.PartName(CurrentEntry, 2);
             ImGui.Text("Material Name");
-            PropertyEditor.MaterialName(_selectedEntry, 3);
+            PropertyEditor.MaterialName(CurrentEntry, 3);
             ImGui.Text("UV Offset");
-            PropertyEditor.UVOffset(_selectedEntry, 4);
+            PropertyEditor.UVOffset(CurrentEntry, 4);
             ImGui.Text("UV Scale");
-            PropertyEditor.UVScale(_selectedEntry, 5);
-
-            ImGui.Separator();
-
-            if (ImGui.Button("Delete Entry", new Vector2(widthUnit * 100, 32)))
-            {
-                // Do this in reverse so a removal doesn't affect the next removal
-                foreach(var entry in LightmapMultiselect.StoredLightmapEntries.Reverse())
-                {
-                    TaskLogs.AddLog($"{entry.Key}");
-                    _selectedParentEntry.LightmapAtlas.Entries.RemoveAt(entry.Key);
-                }
-
-                LightmapMultiselect.Reset();
-            }
+            PropertyEditor.UVScale(CurrentEntry, 5);
         }
     }
 
-    private void DisplayActionSection(MapContainer map, KeyValuePair<string, List<LightmapAtlasInfo>> lightMapAtlases)
-    {
-        var widthUnit = ImGui.GetWindowWidth() / 100;
-
-        if (ImGui.Button("Add New Entry", new Vector2(widthUnit * 100, 32)))
-        {
-            // TODO: add
-        }
-    }
     private void DisplaySelectableAlias(string name, Dictionary<string, AliasReference> referenceDict)
     {
         var lowerName = name.ToLower();

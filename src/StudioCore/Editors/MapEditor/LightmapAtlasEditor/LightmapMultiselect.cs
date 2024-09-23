@@ -11,7 +11,7 @@ namespace StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 
 public class LightmapMultiselect
 {
-    public SortedDictionary<int, BTAB.Entry> StoredLightmapEntries = new();
+    public SortedDictionary<int, BTAB.Entry> StoredEntries = new();
 
     private LightmapAtlasScreen Screen;
     public LightmapMultiselect(LightmapAtlasScreen screen)
@@ -21,21 +21,29 @@ public class LightmapMultiselect
 
     public void Reset()
     {
-        StoredLightmapEntries.Clear();
+        Screen.CurrentEntry = null;
+        Screen.CurrentEntryKey = -1;
+        StoredEntries.Clear();
     }
 
-    public bool IsLightmapSelected(int index)
+    public bool IsSelected(int index)
     {
-        if (StoredLightmapEntries.ContainsKey(index))
+        if (StoredEntries.ContainsKey(index))
             return true;
 
         return false;
     }
 
-    public void LightMapSelect(int currentSelectionIndex, int currentIndex)
+    public bool IsCurrentSelection(int index)
     {
-        BTAB.Entry lightmap = Screen._selectedEntry;
+        if (Screen.CurrentEntryKey == index)
+            return true;
 
+        return false;
+    }
+
+    public void HandleSelection(int currentSelectionIndex, int currentIndex, BTAB.Entry currentEntry)
+    {
         // Multi-Select: Range Select
         if (InputTracker.GetKey(Veldrid.Key.LShift))
         {
@@ -50,28 +58,28 @@ public class LightmapMultiselect
 
             for (int k = start; k <= end; k++)
             {
-                if (!StoredLightmapEntries.ContainsKey(k))
-                    StoredLightmapEntries.Add(k, lightmap);
+                if (!StoredEntries.ContainsKey(k))
+                    StoredEntries.Add(k, currentEntry);
             }
         }
         // Multi-Select Mode
         else if (InputTracker.GetKey(KeyBindings.Current.MAP_LightmapAtlas_Multiselect))
         {
-            if (StoredLightmapEntries.ContainsKey(currentIndex) && StoredLightmapEntries.Count > 1)
+            if (StoredEntries.ContainsKey(currentIndex) && StoredEntries.Count > 1)
             {
-                StoredLightmapEntries.Remove(currentIndex);
+                StoredEntries.Remove(currentIndex);
             }
             else
             {
-                if (!StoredLightmapEntries.ContainsKey(currentIndex))
-                    StoredLightmapEntries.Add(currentIndex, lightmap);
+                if (!StoredEntries.ContainsKey(currentIndex))
+                    StoredEntries.Add(currentIndex, currentEntry);
             }
         }
         // Reset Multi-Selection if normal selection occurs
         else
         {
-            StoredLightmapEntries.Clear();
-            StoredLightmapEntries.Add(currentIndex, lightmap);
+            StoredEntries.Clear();
+            StoredEntries.Add(currentIndex, currentEntry);
         }
     }
 }

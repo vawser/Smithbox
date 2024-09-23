@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using HKLib.hk2018.hkAsyncThreadPool;
+using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Locators;
 using System;
@@ -12,7 +13,7 @@ namespace StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 
 public class LightmapAtlasBank
 {
-    public Dictionary<string, List<LightmapAtlasInfo>> LightmapAtlases = new Dictionary<string, List<LightmapAtlasInfo>>();
+    public Dictionary<string, List<AtlasContainerInfo>> LightmapAtlases = new Dictionary<string, List<AtlasContainerInfo>>();
 
     public bool IsSaving = false;
 
@@ -34,12 +35,12 @@ public class LightmapAtlasBank
 
         foreach (var map in mapList)
         {
-            List<LightmapAtlasInfo> mapBTABs = new List<LightmapAtlasInfo>();
+            List<AtlasContainerInfo> mapBTABs = new List<AtlasContainerInfo>();
 
             List<ResourceDescriptor> resources = MapLocator.GetMapBTABs(map);
             foreach(var entry in resources)
             {
-                var info = new LightmapAtlasInfo(entry.AssetPath);
+                var info = new AtlasContainerInfo(entry.AssetPath);
 
                 try
                 {
@@ -60,24 +61,35 @@ public class LightmapAtlasBank
     // Need to implement this (apply on map save, target specific mapid)
     public void SaveBank(string mapid)
     {
+        foreach(var entry in LightmapAtlases[mapid])
+        {
+            if(entry.IsModified)
+            {
+                var filePath = entry.AssetPath;
+                var projectFilePath = entry.AssetPath.Replace(Smithbox.GameRoot, Smithbox.ProjectRoot);
+                var fileName = Path.GetFileName(entry.AssetPath);
+                var rootPath = Path.GetDirectoryName(entry.AssetPath);
+                var projectPath = rootPath.Replace(Smithbox.GameRoot, Smithbox.ProjectRoot);
 
+                var fileBytes = entry.LightmapAtlas.Write();
+
+                if (fileBytes != null)
+                {
+                    // Add folder if it does not exist in GameModDirectory
+                    if (!Directory.Exists(projectPath))
+                    {
+                        Directory.CreateDirectory(projectPath);
+                    }
+
+                    File.WriteAllBytes(projectFilePath, fileBytes);
+                    TaskLogs.AddLog($"Saved {mapid} Lightmap Atlas file: {projectFilePath}");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"Failed to save {mapid} Lightmap Atlas file: {projectFilePath}");
+                }
+            }
+        }
     }
 }
 
-public class LightmapAtlasInfo
-{
-    public string Filename { get; set; }
-    public BTAB LightmapAtlas { get; set; }
-
-    public bool IsModified { get; set; }
-
-    public LightmapAtlasInfo()
-    {
-        IsModified = false;
-    }
-
-    public LightmapAtlasInfo(string path)
-    {
-        Filename = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-    }
-}
