@@ -47,6 +47,8 @@ public class UI
     public string System_English_Font = "Assets\\Fonts\\RobotoMono-Light.ttf";
     public string System_Other_Font = "Assets\\Fonts\\NotoSansCJKtc-Light.otf";
 
+    public bool System_DisplayResourceLoadingWindow = true;
+
     //**************
     // Theme
     //**************

@@ -297,7 +297,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         if (UI.Current.Interface_TextureViewer_ResourceList)
         {
-            ResourceManager.OnGuiDrawResourceList("textureViewerResourceList");
+            ResourceListWindow.DisplayWindow("textureViewerResourceList");
         }
 
         ImGui.PopStyleVar();

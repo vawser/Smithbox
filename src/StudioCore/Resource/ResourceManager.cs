@@ -59,11 +59,14 @@ public static class ResourceManager
     private static bool _scheduleUDSFMLoad;
     private static bool _scheduleUnloadedTexturesLoad;
 
-    private static bool TaskWindowOpen = true;
-
     public static Dictionary<string, IResourceHandle> GetResourceDatabase()
     {
         return ResourceDatabase;
+    }
+
+    public static ConcurrentDictionary<ResourceJob, int> GetActiveJobProgress()
+    {
+        return ActiveJobProgress;
     }
 
     private static IResourceHandle InstantiateResource(ResourceType type, string path)
@@ -442,97 +445,6 @@ public static class ResourceManager
         }
 
         _prevCount = ActiveJobProgress.Count;
-    }
-
-    public static void OnGuiDrawTasks(float w, float h)
-    {
-        var scale = DPI.GetUIScale();
-
-        if (ActiveJobProgress.Count() > 0)
-        {
-            ImGui.SetNextWindowSize(new Vector2(400, 310) * scale);
-            ImGui.SetNextWindowPos(new Vector2(w - (100 * scale), h - (300 * scale)));
-            if (!ImGui.Begin("Resource Loading Tasks", ref TaskWindowOpen, ImGuiWindowFlags.NoDecoration))
-            {
-                ImGui.End();
-                return;
-            }
-
-            foreach (KeyValuePair<ResourceJob, int> job in ActiveJobProgress)
-            {
-                if (!job.Key.Finished)
-                {
-                    var completed = job.Key.Progress;
-                    var size = job.Key.GetEstimateTaskSize();
-                    ImGui.Text(job.Key.Name);
-                    if (size == 0)
-                    {
-                        ImGui.ProgressBar(0.0f);
-                    }
-                    else
-                    {
-                        ImGui.ProgressBar(completed / (float)size, new Vector2(386.0f, 20.0f) * scale);
-                    }
-                }
-            }
-
-            ImGui.End();
-        }
-    }
-
-    public static void OnGuiDrawResourceList(string menuId)
-    {
-        if (!ImGui.Begin($"Resource List##{menuId}"))
-        {
-            ImGui.End();
-            return;
-        }
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("List of Resources Loaded & Unloaded");
-
-        if (ImGui.Button("Unload All"))
-        {
-            foreach (KeyValuePair<string, IResourceHandle> item in ResourceDatabase)
-            {
-                item.Value.Release(true);
-            }
-        }
-
-        ImGui.Columns(5);
-        ImGui.Separator();
-        var id = 0;
-
-        foreach (KeyValuePair<string, IResourceHandle> item in ResourceDatabase)
-        {
-            if (item.Key == "")
-                continue;
-
-            ImGui.PushID(id);
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text(item.Key);
-            ImGui.NextColumn();
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text(item.Value.IsLoaded() ? "Loaded" : "Unloaded");
-            ImGui.NextColumn();
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text(item.Value.AccessLevel.ToString());
-            ImGui.NextColumn();
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text(item.Value.GetReferenceCounts().ToString());
-            ImGui.NextColumn();
-            if(ImGui.Button("Unload"))
-            {
-                item.Value.Release(true);
-            }
-            ImGui.NextColumn();
-            ImGui.PopID();
-            id++;
-        }
-
-        ImGui.Columns(1);
-        ImGui.Separator();
-        ImGui.End();
     }
 
     public static void Shutdown()

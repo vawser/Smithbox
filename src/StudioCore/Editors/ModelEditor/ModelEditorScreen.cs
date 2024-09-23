@@ -534,11 +534,11 @@ public class ModelEditorScreen : EditorScreen
             ToolWindow.OnGui();
         }
 
-        ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);
+        ResourceLoadWindow.DisplayWindow(Viewport.Width, Viewport.Height);
 
         if (UI.Current.Interface_ModelEditor_ResourceList)
         {
-            ResourceManager.OnGuiDrawResourceList("modelResourceList");
+            ResourceListWindow.DisplayWindow("modelResourceList");
         }
         ImGui.PopStyleColor(1);
 

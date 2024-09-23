@@ -655,10 +655,10 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             LightmapAtlasEditor.OnGui();
         }
 
-        ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);
+        ResourceLoadWindow.DisplayWindow(Viewport.Width, Viewport.Height);
         if (UI.Current.Interface_MapEditor_ResourceList)
         {
-            ResourceManager.OnGuiDrawResourceList("mapResourceList");
+            ResourceListWindow.DisplayWindow("mapResourceList");
         }
 
         DispGroupEditor.OnGui(Universe._dispGroupCount);
