@@ -18,7 +18,7 @@ LittleEndian();
 
 typedef struct {
     char magic[4]; Assert(magic == "ONAV");
-    char version[4]; Assert(version == "0120");
+    char version[4];
     int unk08; Assert(unk08 == 0);
     short count0C;
     short count0E;

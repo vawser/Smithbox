@@ -169,6 +169,7 @@ namespace StudioCore.Editors.ModelEditor
 
                     if (ImGui.Selectable($"{entry.Name}", entry == currentFlver))
                     {
+                        Screen.ModelHierarchy._lastSelectedEntry = ModelEntrySelectionType.InternalFile;
                         Screen.ResourceHandler.LoadedFlverContainer.CurrentInternalFlver = entry;
 
                         var name = Screen.ResourceHandler.LoadedFlverContainer.ContainerName;

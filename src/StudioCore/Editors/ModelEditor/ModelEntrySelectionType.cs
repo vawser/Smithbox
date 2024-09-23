@@ -19,6 +19,7 @@ namespace StudioCore.Editors.ModelEditor
         BaseSkeleton,
         AllSkeleton,
         CollisionLow,
-        CollisionHigh
+        CollisionHigh,
+        InternalFile
     }
 }

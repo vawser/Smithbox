@@ -408,6 +408,9 @@ namespace StudioCore.Editors.ModelEditor
             if (Smithbox.LowRequirementsMode)
                 return;
 
+            if (Screen._universe.LoadedModelContainers.Count <= 0)
+                return;
+
             var container = Screen._universe.LoadedModelContainers[ContainerID];
 
             if (index > container.Mesh_RootNode.Children.Count - 1)

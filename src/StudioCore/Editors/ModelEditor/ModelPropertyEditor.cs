@@ -12,6 +12,7 @@ using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.SubEditors;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
+using System.Linq;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -59,57 +60,89 @@ public class ModelPropertyEditor
                 {
                     DisplayProperties_Header();
                 }
-                if (entryType == ModelEntrySelectionType.Dummy)
+                else if (entryType == ModelEntrySelectionType.Dummy)
                 {
                     DisplayProperties_Dummies();
                 }
-                if (entryType == ModelEntrySelectionType.Material)
+                else if (entryType == ModelEntrySelectionType.Material)
                 {
                     DisplayProperties_Materials();
                 }
-                if (entryType == ModelEntrySelectionType.GXList)
+                else if (entryType == ModelEntrySelectionType.GXList)
                 {
                     DisplayProperties_GXLists();
                 }
-                if (entryType == ModelEntrySelectionType.Node)
+                else if (entryType == ModelEntrySelectionType.Node)
                 {
                     DisplayProperties_Nodes();
                 }
-                if (entryType == ModelEntrySelectionType.Mesh)
+                else if (entryType == ModelEntrySelectionType.Mesh)
                 {
                     DisplayProperties_Meshes();
                 }
-                if (entryType == ModelEntrySelectionType.BufferLayout)
+                else if (entryType == ModelEntrySelectionType.BufferLayout)
                 {
                     DisplayProperties_BufferLayouts();
                 }
-                if (entryType == ModelEntrySelectionType.BaseSkeleton)
+                else if (entryType == ModelEntrySelectionType.BaseSkeleton)
                 {
                     DisplayProperties_BaseSkeletons();
                 }
-                if (entryType == ModelEntrySelectionType.AllSkeleton)
+                else if (entryType == ModelEntrySelectionType.AllSkeleton)
                 {
                     DisplayProperties_AllSkeletons();
                 }
-                if (entryType == ModelEntrySelectionType.CollisionLow)
+                else if (entryType == ModelEntrySelectionType.CollisionLow)
                 {
                     if (Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionLow != null)
                     {
                         CollisionPropertyEditor.DisplayProperties_CollisionLow();
                     }
                 }
-                if (entryType == ModelEntrySelectionType.CollisionHigh)
+                else if (entryType == ModelEntrySelectionType.CollisionHigh)
                 {
                     if (Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionHigh != null)
                     {
                         CollisionPropertyEditor.DisplayProperties_CollisionHigh();
                     }
                 }
+                else
+                {
+                    DisplayPropertes_InternalFile();
+                }
             }
         }
 
         ImGui.End();
         ImGui.PopStyleColor(1);
+    }
+
+    private void DisplayPropertes_InternalFile()
+    {
+        var buttonSize = new Vector2(20, 20);
+        var container = Screen.ResourceHandler.LoadedFlverContainer;
+        var name = container.InternalFlvers.First().Name; // 
+
+        ImGui.Separator();
+        ImGui.Text($"Filename: {container.FlverFileName}");
+        ImGui.Separator();
+
+        ImGui.Text($"Internal Files:");
+        foreach (var entry in container.InternalFlvers)
+        {
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button($"{ForkAwesome.Bars}", buttonSize))
+            {
+                UIHelper.CopyToClipboard(entry.Name);
+            }
+            UIHelper.ShowHoverTooltip("Copy name to clipboard.");
+            ImGui.SameLine();
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text($"{entry.Name}");
+        }
+
+        ImGui.Separator();
+
     }
 
     private void DisplayProperties_Header()
