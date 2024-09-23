@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static SoulsFormats.MSB_AC6;
 
-namespace StudioCore.Locators;
+namespace StudioCore.Resource.Locators;
 
 public static class VirtualPathLocator
 {
@@ -320,6 +320,35 @@ public static class VirtualPathLocator
 
                 return LocatorUtils.GetOverridenFilePath($@"obj\{objid}.objbnd.dcx");
             }
+            if (pathElements[i].Equals("collision"))
+            {
+                i++;
+                var colName = Path.GetFileNameWithoutExtension(pathElements[i]);
+                i++;
+
+                bndpath = "";
+
+                if (Smithbox.ProjectType == ProjectType.ER)
+                {
+                    // Derive subfolder path from model name (all vanilla AEG are within subfolders)
+                    if (objid.Length >= 6)
+                    {
+                        var path = LocatorUtils.GetOverridenFilePath($@"asset\aeg\{objid.Substring(0, 6)}\{colName}.geomhkxbnd.dcx");
+                        return path;
+                    }
+                    return null;
+                }
+
+                if (Smithbox.ProjectType == ProjectType.AC6)
+                {
+                    if (objid.Length >= 6)
+                        return LocatorUtils.GetOverridenFilePath($@"asset\environment\geometry\{colName}.geomhkxbnd.dcx");
+
+                    return null;
+                }
+
+                return LocatorUtils.GetOverridenFilePath($@"obj\{objid}.objbnd.dcx");
+            }
         }
         // PARTS
         else if (pathElements[i].Equals("parts"))
@@ -383,7 +412,7 @@ public static class VirtualPathLocator
                         }
                     }
 
-                    if(partsId == "common_body")
+                    if (partsId == "common_body")
                     {
                         return LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.tpf.dcx");
                     }

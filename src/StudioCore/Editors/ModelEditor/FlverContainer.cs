@@ -19,10 +19,6 @@ namespace StudioCore.Editors.ModelEditor
         public string ModelID;
         public FLVER2 CurrentFLVER;
         public string VirtualResourcePath = "";
-
-        // Associated collisions
-        public hkRootLevelContainer ER_CollisionLow;
-        public hkRootLevelContainer ER_CollisionHigh;
     }
 
     /// <summary>
@@ -56,6 +52,9 @@ namespace StudioCore.Editors.ModelEditor
         public string BinderExtension { get; set; }
 
         public string LoosePath { get; set; }
+
+        public hkRootLevelContainer ER_LowCollision { get; set; }
+        public hkRootLevelContainer ER_HighCollision { get; set; }
 
         public FlverContainer(string name, string loosePath)
         {

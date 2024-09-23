@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using static SoulsFormats.MSBB.Event;
 
-namespace StudioCore.Locators;
+namespace StudioCore.Resource.Locators;
 public static class MiscLocator
 {
     public static string GetGameIDForDir()
@@ -169,9 +169,9 @@ public static class MiscLocator
                     {
                         if (Directory.Exists(subFolder))
                         {
-                            foreach(var file in Directory.GetFiles(subFolder))
+                            foreach (var file in Directory.GetFiles(subFolder))
                             {
-                                if(file.Contains(targetExt))
+                                if (file.Contains(targetExt))
                                 {
                                     combinedList.Add(file);
                                 }

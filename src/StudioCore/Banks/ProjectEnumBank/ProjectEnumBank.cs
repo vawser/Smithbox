@@ -1,7 +1,7 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
-using StudioCore.Locators;
 using StudioCore.Platform;
+using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;

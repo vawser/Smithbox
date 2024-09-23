@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Locators;
+namespace StudioCore.Resource.Locators;
 
 // Locators for assets used with direct operations (e.g. not in the Resource Manager)
 public static class AssetLocator
@@ -14,7 +14,7 @@ public static class AssetLocator
     public static ResourceDescriptor GetCharacterBinder(string chrId, string postfix = "")
     {
         ResourceDescriptor ret = new();
-       
+
         if (Smithbox.ProjectType == ProjectType.DS1)
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"chr\{chrId}{postfix}.chrbnd");
         else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
@@ -78,7 +78,7 @@ public static class AssetLocator
     public static ResourceDescriptor GetAssetGeomBinder(string asset)
     {
         ResourceDescriptor ret = new();
-       
+
         if (Smithbox.ProjectType == ProjectType.ER)
         {
             if (asset.Length >= 6)
@@ -99,17 +99,19 @@ public static class AssetLocator
     {
         ResourceDescriptor ret = new();
 
+        ret.AssetVirtualPath = $"obj/{asset}/collision/{asset}_{postfix}.hkx";
+
         if (Smithbox.ProjectType == ProjectType.ER)
         {
             if (asset.Length >= 6)
             {
-                ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"asset\aeg\{asset.Substring(0, 6)}\{asset}{postfix}.geomhkxbnd.dcx");
+                ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"asset\aeg\{asset.Substring(0, 6)}\{asset}_{postfix}.geomhkxbnd.dcx");
             }
         }
         else if (Smithbox.ProjectType == ProjectType.AC6)
         {
             if (asset.Length >= 6)
-                ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"asset\environment\geometry\{asset}{postfix}.geomhkxbnd.dcx");
+                ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"asset\environment\geometry\{asset}_{postfix}.geomhkxbnd.dcx");
         }
 
         return ret;

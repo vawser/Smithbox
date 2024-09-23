@@ -14,11 +14,11 @@ using Veldrid;
 using Veldrid.Utilities;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.MsbEditor;
-using StudioCore.Locators;
 using System.Text.RegularExpressions;
 using StudioCore.Core.Project;
+using StudioCore.Resource.Locators;
 
-namespace StudioCore.Resource;
+namespace StudioCore.Resource.Types;
 
 public class FlverResource : IResource, IDisposable
 {
@@ -457,7 +457,7 @@ public class FlverResource : IResource, IDisposable
         dest.MaterialName = Path.GetFileNameWithoutExtension(mtd);
         if (!string.IsNullOrWhiteSpace(matName) && matName.Length >= 3 && matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
         {
-            dest.MaterialMask =  int.Parse(matName.Substring(1, 2));
+            dest.MaterialMask = int.Parse(matName.Substring(1, 2));
         }
         dest.MaterialBuffer = Renderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
         dest.MaterialData = new Material();
@@ -838,7 +838,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesNormalOnly(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, IntPtr vertBuffer)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer)
     {
         Span<FlverLayoutSky> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
@@ -883,7 +883,7 @@ public class FlverResource : IResource, IDisposable
         br.StepOut();
     }
 
-    private unsafe void FillVerticesNormalOnly(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, IntPtr vertBuffer)
+    private unsafe void FillVerticesNormalOnly(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
     {
         Span<FlverLayoutSky> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         for (var i = 0; i < mesh.Vertices.Count; i++)
@@ -900,7 +900,7 @@ public class FlverResource : IResource, IDisposable
         }
     }
 
-    private unsafe void FillVerticesNormalOnly(FLVER0.Mesh mesh, Span<Vector3> pickingVerts, IntPtr vertBuffer)
+    private unsafe void FillVerticesNormalOnly(FLVER0.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
     {
         Span<FlverLayoutSky> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         for (var i = 0; i < mesh.Vertices.Count; i++)
@@ -918,7 +918,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesStandard(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, IntPtr vertBuffer, float uvFactor)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, float uvFactor)
     {
         br.StepIn(buffer.bufferOffset);
         var pverts = (FlverLayout*)vertBuffer;
@@ -973,7 +973,7 @@ public class FlverResource : IResource, IDisposable
         br.StepOut();
     }
 
-    private unsafe void FillVerticesStandard(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, IntPtr vertBuffer)
+    private unsafe void FillVerticesStandard(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
     {
         Span<FlverLayout> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         fixed (FlverLayout* pverts = verts)
@@ -1008,7 +1008,7 @@ public class FlverResource : IResource, IDisposable
         }
     }
 
-    private unsafe void FillVerticesStandard(FLVER0.Mesh mesh, Span<Vector3> pickingVerts, IntPtr vertBuffer)
+    private unsafe void FillVerticesStandard(FLVER0.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
     {
         Span<FlverLayout> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         fixed (FlverLayout* pverts = verts)
@@ -1044,7 +1044,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesUV2(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, IntPtr vertBuffer, float uvFactor)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, float uvFactor)
     {
         Span<FlverLayoutUV2> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
@@ -1095,7 +1095,7 @@ public class FlverResource : IResource, IDisposable
         br.StepOut();
     }
 
-    private unsafe void FillVerticesUV2(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, IntPtr vertBuffer)
+    private unsafe void FillVerticesUV2(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
     {
         Span<FlverLayoutUV2> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         fixed (FlverLayoutUV2* pverts = verts)
@@ -1123,7 +1123,7 @@ public class FlverResource : IResource, IDisposable
         }
     }
 
-    private unsafe void FillVerticesUV2(FLVER0.Mesh mesh, Span<Vector3> pickingVerts, IntPtr vertBuffer)
+    private unsafe void FillVerticesUV2(FLVER0.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
     {
         Span<FlverLayoutUV2> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         fixed (FlverLayoutUV2* pverts = verts)
@@ -1787,8 +1787,18 @@ public class FlverResource : IResource, IDisposable
         br.BigEndian = false;
         br.AssertASCII("FLVER\0");
         br.BigEndian = br.AssertASCII(["L\0", "B\0"]) == "B\0";
-        var version = br.AssertInt32([0x20005, 0x20009, 0x2000C, 0x2000D, 0x2000E, 0x2000F, 0x20010, 0x20013,
-            0x20014, 0x20016, 0x2001A, 0x2001B]);
+        var version = br.AssertInt32([0x20005,
+            0x20009,
+            0x2000C,
+            0x2000D,
+            0x2000E,
+            0x2000F,
+            0x20010,
+            0x20013,
+            0x20014,
+            0x20016,
+            0x2001A,
+            0x2001B]);
         var dataOffset = br.ReadUInt32();
         br.ReadInt32(); // Data length
         var dummyCount = br.ReadInt32();
@@ -2093,7 +2103,7 @@ public class FlverResource : IResource, IDisposable
         public Matrix4x4 LocalTransform = Matrix4x4.Identity;
 
         // This is native because using managed arrays causes a weird memory leak
-        public IntPtr PickingVertices = IntPtr.Zero;
+        public nint PickingVertices = nint.Zero;
 
         public List<FlverSubmeshFaceSet> MeshFacesets { get; set; } = new();
 
@@ -2350,7 +2360,7 @@ public class FlverResource : IResource, IDisposable
                 {
                     if (m != null)
                     {
-                        if(m.GeomBuffer != null)
+                        if (m.GeomBuffer != null)
                             m.GeomBuffer.Dispose();
 
                         //Marshal.FreeHGlobal(m.PickingVertices);

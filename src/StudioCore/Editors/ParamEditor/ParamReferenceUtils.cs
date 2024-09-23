@@ -4,7 +4,7 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Interface;
-using StudioCore.Locators;
+using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;

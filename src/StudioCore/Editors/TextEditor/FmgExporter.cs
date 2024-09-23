@@ -13,10 +13,10 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using static SoulsFormats.HKXPWV;
 using static StudioCore.TextEditor.FMGBank;
-using StudioCore.Locators;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
+using StudioCore.Resource.Locators;
 
 namespace StudioCore.Editors.TextEditor;
 

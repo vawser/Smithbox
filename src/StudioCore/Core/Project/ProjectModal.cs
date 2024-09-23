@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using StudioCore.Interface;
-using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Utilities;

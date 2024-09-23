@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Resource.Types;
 using StudioCore.UserProject;
 using System;
 using System.IO;

@@ -12,7 +12,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Veldrid.Utilities;
-using static StudioCore.Resource.HavokCollisionResource;
+using static StudioCore.Resource.Types.HavokCollisionResource;
 
 namespace StudioCore.Tools.Development;
 
@@ -101,14 +101,14 @@ public static class HavokTool
 
                 if (bodyInfo.m_shape is HKLib.hk2018.fsnpCustomParamCompressedMeshShape shape2)
                 {
-                    (mesh, vertices, indices) = HKXProcessor.ProcessColData(
+                    (mesh, vertices, indices) = HavokCollisionManager.ProcessColData(
                         (HKLib.hk2018.hknpCompressedMeshShapeData)shape2.m_data, bodyInfo, mesh);
                     //RenderHKX2018(mesh, vertices, indices);
                     TaskLogs.AddLog($"vertices: {vertices.Count}");
                 }
                 else if (bodyInfo.m_shape is HKLib.hk2018.hknpCompressedMeshShape shape1)
                 {
-                    (mesh, vertices, indices) = HKXProcessor.ProcessColData(
+                    (mesh, vertices, indices) = HavokCollisionManager.ProcessColData(
                         (HKLib.hk2018.hknpCompressedMeshShapeData)shape1.m_data, bodyInfo, mesh);
                     //RenderHKX2018(mesh, vertices, indices);
                     TaskLogs.AddLog($"indices: {indices.Count}");

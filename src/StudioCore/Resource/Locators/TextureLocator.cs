@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace StudioCore.Locators;
+namespace StudioCore.Resource.Locators;
 public static class TextureLocator
 {
     public static List<ResourceDescriptor> GetMapTextures(string mapid)
@@ -142,7 +142,7 @@ public static class TextureLocator
         {
             overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_h.texbnd.dcx");
 
-            if(isLowDetail)
+            if (isLowDetail)
             {
                 overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_l.texbnd.dcx");
             }
@@ -238,7 +238,7 @@ public static class TextureLocator
                 ad.AssetPath = path;
                 ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
 
-                if(isLowDetail)
+                if (isLowDetail)
                 {
                     ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex/low";
                 }
@@ -415,7 +415,7 @@ public static class TextureLocator
                 ad.AssetPath = path;
                 ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
 
-                if(isLowDetail)
+                if (isLowDetail)
                 {
                     ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex/low";
                 }

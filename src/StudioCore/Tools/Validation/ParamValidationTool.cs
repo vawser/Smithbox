@@ -7,7 +7,6 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Formats;
-using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.Resource;
 using System;

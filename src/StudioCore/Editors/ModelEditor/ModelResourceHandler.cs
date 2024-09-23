@@ -6,10 +6,11 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
-using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
+using StudioCore.Resource.Locators;
+using StudioCore.Resource.Types;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -126,9 +127,20 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadAsset(string name)
         {
+            HavokCollisionManager.OnLoadModel(name, ModelEditorModelType.Object);
+
             SetLoadedState(name);
 
             LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Object, "");
+
+            if (HavokCollisionManager.HavokContainers.ContainsKey($"{name}_h".ToLower()))
+            {
+                LoadedFlverContainer.ER_HighCollision = HavokCollisionManager.HavokContainers[$"{name}_h".ToLower()];
+            }
+            if (HavokCollisionManager.HavokContainers.ContainsKey($"{name}_l".ToLower()))
+            {
+                LoadedFlverContainer.ER_LowCollision = HavokCollisionManager.HavokContainers[$"{name}_l".ToLower()];
+            }
 
             LoadEditableModel(name, name, ModelEditorModelType.Object);
 
@@ -136,9 +148,6 @@ namespace StudioCore.Editors.ModelEditor
             LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
 
             LoadRepresentativeModel(name, name, ModelEditorModelType.Object);
-
-            LoadEditableCollisionLow(name, name, ModelEditorModelType.Object);
-            LoadEditableCollisionHigh(name, name, ModelEditorModelType.Object);
         }
 
         /// <summary>
@@ -323,98 +332,16 @@ namespace StudioCore.Editors.ModelEditor
         }
 
         /// <summary>
-        /// Loads the editable collision
-        /// </summary>
-        private void LoadEditableCollisionLow(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
-        {
-            if (Smithbox.ProjectType is ProjectType.ER)
-            {
-                ResourceDescriptor collisionAsset = AssetLocator.GetAssetGeomHKXBinder(modelid, "_l");
-
-                if (collisionAsset.AssetPath != null)
-                {
-                    if (Smithbox.ProjectType is ProjectType.ER)
-                    {
-                        BND4Reader reader = new BND4Reader(collisionAsset.AssetPath);
-
-                        foreach (var file in reader.Files)
-                        {
-                            var fileName = file.Name.ToLower();
-                            var modelName = modelid.ToLower();
-
-                            var fileBytes = reader.ReadFile(file);
-
-                            if (fileName.Contains(modelName) && fileName.Contains(".hkx"))
-                            {
-                                foreach(var internalFlver in LoadedFlverContainer.InternalFlvers)
-                                {
-                                    if(internalFlver.ModelID == modelid)
-                                    {
-                                        HavokBinarySerializer serializer = new HavokBinarySerializer();
-                                        using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray()))
-                                        {
-                                            var hkContainer = (hkRootLevelContainer)serializer.Read(memoryStream);
-                                            internalFlver.ER_CollisionLow = hkContainer;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        reader.Dispose();
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Loads the editable collision
-        /// </summary>
-        private void LoadEditableCollisionHigh(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
-        {
-            if (Smithbox.ProjectType is ProjectType.ER)
-            {
-                ResourceDescriptor collisionAsset = AssetLocator.GetAssetGeomHKXBinder(modelid, "_h");
-
-                if (collisionAsset.AssetPath != null)
-                {
-                    if (Smithbox.ProjectType is ProjectType.ER)
-                    {
-                        BND4Reader reader = new BND4Reader(collisionAsset.AssetPath);
-
-                        foreach (var file in reader.Files)
-                        {
-                            var fileName = file.Name.ToLower();
-                            var modelName = modelid.ToLower();
-
-                            var fileBytes = reader.ReadFile(file);
-
-                            if (fileName.Contains(modelName) && fileName.Contains(".hkx"))
-                            {
-                                foreach (var internalFlver in LoadedFlverContainer.InternalFlvers)
-                                {
-                                    if (internalFlver.ModelID == modelid)
-                                    {
-                                        HavokBinarySerializer serializer = new HavokBinarySerializer();
-                                        using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray()))
-                                        {
-                                            var hkContainer = (hkRootLevelContainer)serializer.Read(memoryStream);
-                                            internalFlver.ER_CollisionHigh = hkContainer;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        reader.Dispose();
-                    }
-                }
-            }
-        }
-
-        /// <summary>
         /// Loads the viewport FLVER model, this is the model displayed in the viewport
         /// </summary>
         public void LoadRepresentativeModel(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
         {
+            if (modelType is ModelEditorModelType.Object)
+            {
+                LoadCollisionInternal(modelid, "h");
+                LoadCollisionInternal(modelid, "l");
+            }
+
             LoadModelInternal(containerId, modelid, modelType, mapid);
 
             // If model ID has additional textures associated with it, load them
@@ -484,6 +411,44 @@ namespace StudioCore.Editors.ModelEditor
             ResourceManager.AddResourceListener<FlverResource>(modelAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
         }
 
+        private void LoadCollisionInternal(string modelid, string postfix)
+        {
+            ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading collision");
+
+            ResourceDescriptor colAsset = AssetLocator.GetAssetGeomHKXBinder(modelid, postfix);
+
+            // Ignore if the col type doesn't exist
+            if (!File.Exists(colAsset.AssetPath))
+            {
+                return;
+            }
+            else
+            {
+                TaskLogs.AddLog($"colAsset.AssetPath: {colAsset.AssetPath}");
+                TaskLogs.AddLog($"colAsset.AssetVirtualPath: {colAsset.AssetVirtualPath}");
+            }
+
+            Screen.ViewportHandler.UpdateRenderMeshCollision(colAsset);
+
+            // PIPELINE: resource has not already been loaded
+            if (!ResourceManager.IsResourceLoadedOrInFlight(colAsset.AssetVirtualPath, AccessLevel.AccessFull))
+            {
+                // PIPELINE: resource path is a archive path (MAPBND.DCX or MAPBHD/MAPBDT)
+                if (colAsset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.CollisionHKX);
+                }
+                // PIPELINE: resource path is a direct path (FLVER.DCX)
+                else if (colAsset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(colAsset.AssetVirtualPath, AccessLevel.AccessFull);
+                }
+
+                _loadingTask = job.Complete();
+            }
+
+            ResourceManager.AddResourceListener<HavokCollisionResource>(colAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
+        }
 
         public ResourceDescriptor GetModelAssetDescriptor(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
         {

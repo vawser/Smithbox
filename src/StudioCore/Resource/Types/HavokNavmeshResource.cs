@@ -12,7 +12,7 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
 
-namespace StudioCore.Resource;
+namespace StudioCore.Resource.Types;
 
 public class HavokNavmeshResource : IResource, IDisposable
 {

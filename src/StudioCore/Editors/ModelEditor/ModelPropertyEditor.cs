@@ -92,20 +92,6 @@ public class ModelPropertyEditor
                 {
                     DisplayProperties_AllSkeletons();
                 }
-                else if (entryType == ModelEntrySelectionType.CollisionLow)
-                {
-                    if (Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionLow != null)
-                    {
-                        CollisionPropertyEditor.DisplayProperties_CollisionLow();
-                    }
-                }
-                else if (entryType == ModelEntrySelectionType.CollisionHigh)
-                {
-                    if (Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionHigh != null)
-                    {
-                        CollisionPropertyEditor.DisplayProperties_CollisionHigh();
-                    }
-                }
                 else
                 {
                     DisplayPropertes_InternalFile();

@@ -5,7 +5,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.Interface;
-using StudioCore.Locators;
+using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;

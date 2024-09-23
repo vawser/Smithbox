@@ -3,7 +3,7 @@ using Silk.NET.Core;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Locators;
+using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;

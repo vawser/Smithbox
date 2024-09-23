@@ -1,7 +1,7 @@
 ﻿using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Platform;
-using StudioCore.Resource;
+using StudioCore.Resource.Types;
 using StudioCore.TextureViewer;
 using System;
 using System.Collections.Generic;

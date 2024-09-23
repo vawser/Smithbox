@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace StudioCore.Locators;
+namespace StudioCore.Resource.Locators;
 public static class MapLocator
 {
     public static List<string> FullMapList;
@@ -382,13 +382,13 @@ public static class MapLocator
         var paths = new List<string>();
 
         // Get the resource descriptors
-        foreach(var name in names)
+        foreach (var name in names)
         {
             var path = LocatorUtils.GetAssetPath($"\\map\\{mapid}\\{name}.btab.dcx");
             paths.Add(path);
         }
 
-        foreach(var path in paths)
+        foreach (var path in paths)
         {
             ResourceDescriptor resource = new ResourceDescriptor();
 

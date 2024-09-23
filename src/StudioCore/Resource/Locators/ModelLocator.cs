@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Locators;
+namespace StudioCore.Resource.Locators;
 public static class ModelLocator
 {
     public static ResourceDescriptor GetNullAsset()
@@ -94,9 +94,9 @@ public static class ModelLocator
         }
         else if (Smithbox.ProjectType is ProjectType.DS1R)
         {
-            if(CFG.Current.PTDE_Collision_Root != "")
+            if (CFG.Current.PTDE_Collision_Root != "")
             {
-                if(Directory.Exists(CFG.Current.PTDE_Collision_Root))
+                if (Directory.Exists(CFG.Current.PTDE_Collision_Root))
                 {
                     if (hi)
                     {
@@ -148,7 +148,7 @@ public static class ModelLocator
             }
             else
             {
-                ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid.Substring(0,3)}\{mapid}\l{mapid.Substring(1)}.hkxbhd");
+                ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\l{mapid.Substring(1)}.hkxbhd");
                 ret.AssetName = model;
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx.dcx";
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/lo";
@@ -213,7 +213,7 @@ public static class ModelLocator
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"chr\{chrId}.chrbnd");
         else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\chr\{chrId}.bnd");
-        else if(Smithbox.ProjectType == ProjectType.DES)
+        else if (Smithbox.ProjectType == ProjectType.DES)
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"chr\{chrContainerId}\{chrId}.chrbnd.dcx");
         else
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"chr\{chrId}.chrbnd.dcx");
@@ -239,7 +239,7 @@ public static class ModelLocator
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"obj\{objId}.objbnd");
         else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\obj\{objId}.bnd");
-        else if(Smithbox.ProjectType == ProjectType.ER)
+        else if (Smithbox.ProjectType == ProjectType.ER)
         {
             // Derive subfolder path from model name (all vanilla AEG are within subfolders)
             if (objContainerId.Length >= 6)
@@ -247,7 +247,7 @@ public static class ModelLocator
                 ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"asset\aeg\{objContainerId.Substring(0, 6)}\{objId}.geombnd.dcx");
             }
         }
-        else if(Smithbox.ProjectType == ProjectType.AC6)
+        else if (Smithbox.ProjectType == ProjectType.AC6)
         {
             if (objContainerId.Length >= 6)
                 ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"asset\environment\geometry\{objId}.geombnd.dcx");

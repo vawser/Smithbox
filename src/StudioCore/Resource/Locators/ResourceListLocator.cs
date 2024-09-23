@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Locators;
+namespace StudioCore.Resource.Locators;
 
 public static class ResourceListLocator
 {
@@ -234,7 +234,7 @@ public static class ResourceListLocator
         var rootDir = Smithbox.GameRoot + modelDir;
         var modDir = Smithbox.ProjectRoot + modelDir;
 
-        if(!Directory.Exists(rootDir))
+        if (!Directory.Exists(rootDir))
         {
             return ret;
         }

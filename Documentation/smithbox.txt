@@ -111,4 +111,4 @@ Texture Viewer:
 # PRIORITY
 - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
 - ADD: Add collision view to the Model Editor
-
+ - Need to make the collision appear

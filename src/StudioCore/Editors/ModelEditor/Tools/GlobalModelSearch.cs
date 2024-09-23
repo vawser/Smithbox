@@ -1,5 +1,4 @@
 ﻿using SoulsFormats;
-using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +11,7 @@ using StudioCore.Editor;
 using StudioCore.Core.Project;
 using StudioCore.Utilities;
 using StudioCore.Interface;
+using StudioCore.Resource.Locators;
 
 namespace StudioCore.Editors.ModelEditor.Tools;
 

@@ -8,8 +8,8 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
-using StudioCore.Locators;
 using StudioCore.Platform;
+using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -78,7 +78,7 @@ namespace StudioCore.Editors.ModelEditor
 
             ImGui.End();
 
-            if (ImGui.Begin($@"Internal Files##InternalFileList"))
+            if (ImGui.Begin($@"Associated Files##InternalFileList"))
             {
                 DisplayInternalFileList();
             }
@@ -163,6 +163,7 @@ namespace StudioCore.Editors.ModelEditor
         {
             if (Screen.ResourceHandler.LoadedFlverContainer != null)
             {
+                // Internal Files
                 foreach (var entry in Screen.ResourceHandler.LoadedFlverContainer.InternalFlvers)
                 {
                     var currentFlver = Screen.ResourceHandler.LoadedFlverContainer.CurrentInternalFlver;

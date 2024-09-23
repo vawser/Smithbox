@@ -6,9 +6,10 @@ using StudioCore.Configuration;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Interface;
-using StudioCore.Locators;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
+using StudioCore.Resource.Locators;
+using StudioCore.Resource.Types;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
@@ -30,7 +31,9 @@ namespace StudioCore.Editors.ModelEditor
         public IViewport Viewport;
 
         public MeshRenderableProxy _renderMesh;
+        public MeshRenderableProxy _collisionRenderMesh;
         public ResourceHandle<FlverResource> _flverhandle;
+        public ResourceHandle<HavokCollisionResource> _collisionHandle;
 
         public string ContainerID;
 
@@ -103,48 +106,77 @@ namespace StudioCore.Editors.ModelEditor
             if (Smithbox.LowRequirementsMode)
                 return;
 
-            _flverhandle = (ResourceHandle<FlverResource>)handle;
-            _flverhandle.Acquire();
-
-            if (_renderMesh != null)
+            // FLVER
+            if (handle is ResourceHandle<FlverResource>)
             {
-                BoundingBox box = _renderMesh.GetBounds();
-                Viewport.FrameBox(box);
+                _flverhandle = (ResourceHandle<FlverResource>)handle;
+                _flverhandle.Acquire();
 
-                Vector3 dim = box.GetDimensions();
-                var mindim = Math.Min(dim.X, Math.Min(dim.Y, dim.Z));
-                var maxdim = Math.Max(dim.X, Math.Max(dim.Y, dim.Z));
-
-                var minSpeed = 1.0f;
-                var basespeed = Math.Max(minSpeed, (float)Math.Sqrt(mindim / 3.0f));
-                Viewport.WorldView.CameraMoveSpeed_Normal = basespeed;
-                Viewport.WorldView.CameraMoveSpeed_Slow = basespeed / 10.0f;
-                Viewport.WorldView.CameraMoveSpeed_Fast = basespeed * 10.0f;
-
-                Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
-            }
-
-            if (_flverhandle.IsLoaded && _flverhandle.Get() != null)
-            {
-                var currentFlverClone = Screen.ResourceHandler.GetCurrentFLVER().Clone();
-                var currentInfo = Screen.ResourceHandler.LoadedFlverContainer;
-
-                FlverResource r = _flverhandle.Get();
-                if (r.Flver != null)
+                if (_renderMesh != null)
                 {
-                    Screen._universe.UnloadModels(true);
+                    BoundingBox box = _renderMesh.GetBounds();
+                    Viewport.FrameBox(box);
 
-                    Screen._universe.LoadFlverInModelEditor(currentFlverClone, _renderMesh, currentInfo.ContainerName);
+                    Vector3 dim = box.GetDimensions();
+                    var mindim = Math.Min(dim.X, Math.Min(dim.Y, dim.Z));
+                    var maxdim = Math.Max(dim.X, Math.Max(dim.Y, dim.Z));
 
-                    //Screen._universe.LoadFlverInModelEditor(r.Flver, _renderMesh, Screen.ResourceHandler.CurrentFLVERInfo.ModelName);
+                    var minSpeed = 1.0f;
+                    var basespeed = Math.Max(minSpeed, (float)Math.Sqrt(mindim / 3.0f));
+                    Viewport.WorldView.CameraMoveSpeed_Normal = basespeed;
+                    Viewport.WorldView.CameraMoveSpeed_Slow = basespeed / 10.0f;
+                    Viewport.WorldView.CameraMoveSpeed_Fast = basespeed * 10.0f;
 
-                    ContainerID = Screen.ResourceHandler.LoadedFlverContainer.ContainerName;
+                    Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
+                }
+
+                if (_flverhandle.IsLoaded && _flverhandle.Get() != null)
+                {
+                    var currentFlverClone = Screen.ResourceHandler.GetCurrentFLVER().Clone();
+                    var currentInfo = Screen.ResourceHandler.LoadedFlverContainer;
+
+                    FlverResource r = _flverhandle.Get();
+                    if (r.Flver != null)
+                    {
+                        Screen._universe.UnloadModels(true);
+
+                        Screen._universe.LoadFlverInModelEditor(currentFlverClone, _renderMesh, currentInfo.ContainerName);
+
+                        //Screen._universe.LoadFlverInModelEditor(r.Flver, _renderMesh, Screen.ResourceHandler.CurrentFLVERInfo.ModelName);
+
+                        ContainerID = Screen.ResourceHandler.LoadedFlverContainer.ContainerName;
+                    }
+                }
+
+                if (CFG.Current.Viewport_Enable_Texturing)
+                {
+                    Screen._universe.ScheduleTextureRefresh();
                 }
             }
 
-            if (CFG.Current.Viewport_Enable_Texturing)
+            // Collision
+            if (handle is ResourceHandle<HavokCollisionResource>)
             {
-                Screen._universe.ScheduleTextureRefresh();
+                _collisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
+                _collisionHandle.Acquire();
+
+                if (_collisionRenderMesh != null)
+                {
+                    BoundingBox box = _collisionRenderMesh.GetBounds();
+                    Viewport.FrameBox(box);
+
+                    Vector3 dim = box.GetDimensions();
+                    var mindim = Math.Min(dim.X, Math.Min(dim.Y, dim.Z));
+                    var maxdim = Math.Max(dim.X, Math.Max(dim.Y, dim.Z));
+
+                    var minSpeed = 1.0f;
+                    var basespeed = Math.Max(minSpeed, (float)Math.Sqrt(mindim / 3.0f));
+                    Viewport.WorldView.CameraMoveSpeed_Normal = basespeed;
+                    Viewport.WorldView.CameraMoveSpeed_Slow = basespeed / 10.0f;
+                    Viewport.WorldView.CameraMoveSpeed_Fast = basespeed * 10.0f;
+
+                    Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
+                }
             }
         }
 
@@ -154,7 +186,17 @@ namespace StudioCore.Editors.ModelEditor
             if (Smithbox.LowRequirementsMode)
                 return;
 
-            _flverhandle = null;
+            // FLVER
+            if (handle is ResourceHandle<FlverResource>)
+            {
+                _flverhandle = null;
+            }
+
+            // Collision
+            if (handle is ResourceHandle<HavokCollisionResource>)
+            {
+                _collisionHandle = null;
+            }
         }
 
         /// <summary>
@@ -179,6 +221,22 @@ namespace StudioCore.Editors.ModelEditor
                     _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(Screen.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
                     _renderMesh.World = Matrix4x4.Identity;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Updated the viewport FLVER model render collision mesh
+        /// </summary>
+        public void UpdateRenderMeshCollision(ResourceDescriptor collisionAsset)
+        {
+            // Required to stop the LowRequirements build from failing
+            if (Smithbox.LowRequirementsMode)
+                return;
+
+            if (Universe.IsRendering)
+            {
+                _collisionRenderMesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(Screen.RenderScene, collisionAsset.AssetVirtualPath, ModelMarkerType.None);
+                _collisionRenderMesh.World = Matrix4x4.Identity;
             }
         }
 

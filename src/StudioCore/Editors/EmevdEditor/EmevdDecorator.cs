@@ -10,7 +10,6 @@ using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
-using StudioCore.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

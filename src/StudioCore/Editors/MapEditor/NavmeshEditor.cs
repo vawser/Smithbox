@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using StudioCore.Core.Project;
+using StudioCore.Resource.Types;
 
 namespace StudioCore.Editors.MapEditor;
 

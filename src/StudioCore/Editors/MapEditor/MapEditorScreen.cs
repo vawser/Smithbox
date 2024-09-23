@@ -8,7 +8,6 @@ using StudioCore.Editors.MapEditor.Actions;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Editors.MapEditor.MapQuery;
 using StudioCore.Editors.MapEditor.Tools;
-using StudioCore.Havok;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
@@ -505,18 +504,18 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                     UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
                     if (ImGui.MenuItem("Low"))
                     {
-                        HavokUtils.VisibleCollisionType = HavokCollisionType.Low;
+                        HavokCollisionManager.VisibleCollisionType = HavokCollisionType.Low;
                     }
                     UIHelper.ShowHoverTooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.\nMap must be reloaded after change to see difference.");
-                    UIHelper.ShowActiveStatus(HavokUtils.VisibleCollisionType == HavokCollisionType.Low);
+                    UIHelper.ShowActiveStatus(HavokCollisionManager.VisibleCollisionType == HavokCollisionType.Low);
 
                     UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
                     if (ImGui.MenuItem("High"))
                     {
-                        HavokUtils.VisibleCollisionType = HavokCollisionType.High;
+                        HavokCollisionManager.VisibleCollisionType = HavokCollisionType.High;
                     }
                     UIHelper.ShowHoverTooltip("Visible collision will use the high-detail mesh.\nUsed for IK.\nMap must be reloaded after change to see difference.");
-                    UIHelper.ShowActiveStatus(HavokUtils.VisibleCollisionType == HavokCollisionType.High);
+                    UIHelper.ShowActiveStatus(HavokCollisionManager.VisibleCollisionType == HavokCollisionType.High);
 
                     ImGui.EndMenu();
                 }

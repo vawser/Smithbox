@@ -11,8 +11,8 @@ using System.Xml.Serialization;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Locators;
 using StudioCore.Core.Project;
+using StudioCore.Resource.Locators;
 
 namespace StudioCore.Editor;
 

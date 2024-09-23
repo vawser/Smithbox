@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Locators;
+namespace StudioCore.Resource.Locators;
 public static class TextLocator
 {
     /// <summary>

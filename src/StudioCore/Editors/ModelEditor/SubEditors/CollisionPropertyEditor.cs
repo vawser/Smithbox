@@ -18,29 +18,6 @@ namespace StudioCore.Editors.ModelEditor.SubEditors
             Screen = screen;
         }
 
-        public void DisplayProperties_CollisionLow()
-        {
-            ImGui.Separator();
-            ImGui.Text("Collision");
-            ImGui.Separator();
-            UIHelper.ShowHoverTooltip("");
-
-            var entry = Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionLow;
-            DisplayProperties_Collision(entry);
-        }
-
-        public void DisplayProperties_CollisionHigh()
-        {
-            ImGui.Separator();
-            ImGui.Text("Collision");
-            ImGui.Separator();
-            UIHelper.ShowHoverTooltip("");
-
-            var entry = Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionHigh;
-            DisplayProperties_Collision(entry);
-        }
-
-
         // TODO: do this via reflection
         public void DisplayProperties_Collision(hkRootLevelContainer container)
         {

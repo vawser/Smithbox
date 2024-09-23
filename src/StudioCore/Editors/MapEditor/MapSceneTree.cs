@@ -11,10 +11,10 @@ using Veldrid;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.MsbEditor;
 using StudioCore.Editor;
-using StudioCore.Locators;
 using StudioCore.Editors.MapEditor.WorldMap;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
+using StudioCore.Resource.Locators;
 
 namespace StudioCore.Editors.MapEditor;
 

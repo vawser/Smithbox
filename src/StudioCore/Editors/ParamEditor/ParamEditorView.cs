@@ -5,7 +5,6 @@ using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Interface;
-using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;

@@ -9,7 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace StudioCore.Locators;
+namespace StudioCore.Resource.Locators;
 
 public static class LocatorUtils
 {
@@ -195,7 +195,7 @@ public static class LocatorUtils
         return null;
     }
 
-    
 
-    
+
+
 }

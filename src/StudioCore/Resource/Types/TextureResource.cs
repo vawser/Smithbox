@@ -3,7 +3,7 @@ using StudioCore.Scene;
 using StudioCore.Settings;
 using System;
 
-namespace StudioCore.Resource;
+namespace StudioCore.Resource.Types;
 
 public class TextureResource : IResource, IDisposable
 {

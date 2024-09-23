@@ -9,7 +9,6 @@ using ImGuiNET;
 using StudioCore.Utilities;
 using System.Numerics;
 using System.Timers;
-using StudioCore.Locators;
 using StudioCore.UserProject;
 
 namespace StudioCore.Core.Project;

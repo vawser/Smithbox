@@ -18,14 +18,13 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors;
 using StudioCore.Editor;
-using StudioCore.Locators;
 using HKLib.Serialization.hk2018.Binary;
 using Google.Protobuf.Reflection;
 using Silk.NET.SDL;
 using Silk.NET.OpenGL;
-using StudioCore.Havok;
 using System.ComponentModel;
 using StudioCore.Core.Project;
+using StudioCore.Resource.Locators;
 
 namespace StudioCore.MsbEditor;
 
@@ -777,7 +776,7 @@ public class Universe
             return;
         }
 
-        HavokUtils.OnLoadMap(mapid);
+        HavokCollisionManager.OnLoadMap(mapid);
 
         try
         {
@@ -952,6 +951,20 @@ public class Universe
         ModelContainer container = new(this, name);
 
         container.LoadFlver(flver, proxy);
+
+        if (!LoadedModelContainers.ContainsKey(name))
+        {
+            LoadedModelContainers.Add(name, container);
+        }
+        else
+        {
+            LoadedModelContainers[name] = container;
+        }
+    }
+
+    public void LoadCollisionInModelEditor(FLVER2 flver, MeshRenderableProxy proxy, string name)
+    {
+        ModelContainer container = new(this, name);
 
         if (!LoadedModelContainers.ContainsKey(name))
         {
@@ -1468,7 +1481,7 @@ public class Universe
 
     public void UnloadContainer(ObjectContainer container, bool clearFromList = false)
     {
-        HavokUtils.OnUnloadMap(container.Name);
+        HavokCollisionManager.OnUnloadMap(container.Name);
 
         if (LoadedObjectContainers.ContainsKey(container.Name))
         {

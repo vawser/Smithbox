@@ -1,4 +1,5 @@
 ﻿using StudioCore.Resource;
+using StudioCore.Resource.Types;
 using System;
 using System.Collections.Generic;
 using System.IO;

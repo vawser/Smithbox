@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Locators;
+using StudioCore.Resource.Locators;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;

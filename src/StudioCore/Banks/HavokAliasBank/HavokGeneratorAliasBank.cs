@@ -1,6 +1,5 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
-using StudioCore.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;

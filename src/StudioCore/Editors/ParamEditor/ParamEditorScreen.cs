@@ -21,12 +21,12 @@ using DeleteParamsAction = StudioCore.Editor.DeleteParamsAction;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Utilities;
 using StudioCore.Memory;
-using StudioCore.Locators;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
+using StudioCore.Resource.Locators;
 
 namespace StudioCore.Editors.ParamEditor;
 

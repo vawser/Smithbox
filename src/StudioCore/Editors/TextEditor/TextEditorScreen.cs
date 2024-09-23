@@ -10,7 +10,6 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
 using StudioCore.Utilities;
-using StudioCore.Locators;
 using StudioCore.Editors.TextEditor;
 using System.IO;
 using StudioCore.MsbEditor;
@@ -19,6 +18,7 @@ using StudioCore.Editors.TextEditor.Actions;
 using StudioCore.Editors.TextEditor.Tools;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
+using StudioCore.Resource.Locators;
 
 namespace StudioCore.TextEditor;
 

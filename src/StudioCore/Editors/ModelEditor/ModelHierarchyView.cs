@@ -79,7 +79,6 @@ public class ModelHierarchyView
                 DisplaySection_Meshes();
                 DisplaySection_BufferLayouts();
                 DisplaySection_Skeletons();
-                DisplaySection_Collision();
             }
         }
 
@@ -782,34 +781,4 @@ public class ModelHierarchyView
         }
     }
 
-    private void DisplaySection_Collision()
-    {
-        var index = 0;
-
-        if (Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionLow != null || Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionHigh != null)
-        {
-            if (ImGui.CollapsingHeader("Collision"))
-            {
-                if (Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionLow != null)
-                {
-                    if (ImGui.Selectable($"Low Collision {index}", _selectedLowCollision == index))
-                    {
-                        ResetSelection();
-                        _selectedLowCollision = index;
-                        _lastSelectedEntry = ModelEntrySelectionType.CollisionLow;
-                    }
-                }
-
-                if (Screen.ResourceHandler.GetCurrentInternalFile().ER_CollisionHigh != null)
-                {
-                    if (ImGui.Selectable($"High Collision {index}", _selectedHighCollision == index))
-                    {
-                        ResetSelection();
-                        _selectedHighCollision = index;
-                        _lastSelectedEntry = ModelEntrySelectionType.CollisionHigh;
-                    }
-                }
-            }
-        }
-    }
 }
