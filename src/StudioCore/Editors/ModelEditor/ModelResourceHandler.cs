@@ -422,11 +422,6 @@ namespace StudioCore.Editors.ModelEditor
             {
                 return;
             }
-            else
-            {
-                TaskLogs.AddLog($"colAsset.AssetPath: {colAsset.AssetPath}");
-                TaskLogs.AddLog($"colAsset.AssetVirtualPath: {colAsset.AssetVirtualPath}");
-            }
 
             Screen.ViewportHandler.UpdateRenderMeshCollision(colAsset);
 
