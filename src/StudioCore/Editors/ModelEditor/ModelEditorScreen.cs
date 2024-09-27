@@ -279,6 +279,18 @@ public class ModelEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
 
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
+            if (ImGui.MenuItem("Collision"))
+            {
+                CFG.Current.ModelEditor_ViewCollision = !CFG.Current.ModelEditor_ViewCollision;
+                var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
+                foreach (var entry in container.Collision_RootNode.Children)
+                {
+                    entry.EditorVisible = CFG.Current.ModelEditor_ViewCollision;
+                }
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewCollision);
+
             /*
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
             if (ImGui.MenuItem("Skeleton"))

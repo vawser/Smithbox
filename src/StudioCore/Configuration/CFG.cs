@@ -285,6 +285,7 @@ public class CFG
     public bool ModelEditor_ViewDummyPolys = true;
     public bool ModelEditor_ViewBones = true;
     public bool ModelEditor_ViewSkeleton = true;
+    public bool ModelEditor_ViewCollision = true;
 
     public bool ModelEditor_ExactSearch = false;
 

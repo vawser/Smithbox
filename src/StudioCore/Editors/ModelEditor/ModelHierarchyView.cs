@@ -507,7 +507,7 @@ public class ModelHierarchyView
                 var nodeIndex = Screen.ResourceHandler.GetCurrentFLVER().Meshes[i].NodeIndex;
 
                 var material = "";
-                if (materialIndex < Screen.ResourceHandler.GetCurrentFLVER().Materials.Count)
+                if (materialIndex < Screen.ResourceHandler.GetCurrentFLVER().Materials.Count && materialIndex > -1)
                     material = Screen.ResourceHandler.GetCurrentFLVER().Materials[materialIndex].Name;
 
                 var node = "";

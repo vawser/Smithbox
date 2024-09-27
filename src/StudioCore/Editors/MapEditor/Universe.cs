@@ -25,6 +25,7 @@ using Silk.NET.OpenGL;
 using System.ComponentModel;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
+using HKLib.hk2018;
 
 namespace StudioCore.MsbEditor;
 
@@ -962,17 +963,11 @@ public class Universe
         }
     }
 
-    public void LoadCollisionInModelEditor(FLVER2 flver, MeshRenderableProxy proxy, string name)
+    public void LoadCollisionInModelEditor(hkRootLevelContainer hkx, MeshRenderableProxy proxy, string name)
     {
-        ModelContainer container = new(this, name);
-
-        if (!LoadedModelContainers.ContainsKey(name))
+        if (LoadedModelContainers.ContainsKey(name))
         {
-            LoadedModelContainers.Add(name, container);
-        }
-        else
-        {
-            LoadedModelContainers[name] = container;
+            LoadedModelContainers[name].LoadCollision(hkx, proxy);
         }
     }
 

@@ -106,6 +106,8 @@ namespace StudioCore.Editors.ModelEditor
             if (Smithbox.LowRequirementsMode)
                 return;
 
+            TaskLogs.AddLog($"OnResourceLoaded: {handle.AssetVirtualPath}");
+
             // FLVER
             if (handle is ResourceHandle<FlverResource>)
             {
@@ -177,6 +179,19 @@ namespace StudioCore.Editors.ModelEditor
 
                     Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
                 }
+
+                if (_collisionHandle.IsLoaded && _collisionHandle.Get() != null)
+                {
+                    var currentInfo = Screen.ResourceHandler.LoadedFlverContainer;
+
+                    HavokCollisionResource r = _collisionHandle.Get();
+
+                    if (r.ER_HKX != null)
+                    {
+                        TaskLogs.AddLog($"LoadCollisionInModelEditor");
+                        Screen._universe.LoadCollisionInModelEditor(r.ER_HKX, _collisionRenderMesh, currentInfo.ContainerName);
+                    }
+                }
             }
         }
 
@@ -235,6 +250,11 @@ namespace StudioCore.Editors.ModelEditor
 
             if (Universe.IsRendering)
             {
+                if (_collisionRenderMesh != null)
+                {
+                    _collisionRenderMesh.Dispose();
+                }
+
                 _collisionRenderMesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(Screen.RenderScene, collisionAsset.AssetVirtualPath, ModelMarkerType.None);
                 _collisionRenderMesh.World = Matrix4x4.Identity;
             }

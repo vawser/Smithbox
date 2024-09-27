@@ -1,4 +1,6 @@
-﻿using SoulsFormats;
+﻿using HKLib.hk2018;
+using HKLib.hk2018.hkaiCollisionAvoidance;
+using SoulsFormats;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TextureViewer;
@@ -16,6 +18,8 @@ public class ModelContainer : ObjectContainer
     public Entity Bone_RootNode { get; set; }
     public Entity DummyPoly_RootNode { get; set; }
 
+    public Entity Collision_RootNode { get; set; }
+
     public ModelContainer(Universe u, string name)
     {
         Name = name;
@@ -25,10 +29,33 @@ public class ModelContainer : ObjectContainer
         Mesh_RootNode = new Entity(this, new ModelRootNode("Meshes"));
         Bone_RootNode = new Entity(this, new ModelRootNode("Bones"));
         DummyPoly_RootNode = new Entity(this, new ModelRootNode("Dummy Polygons"));
+        Collision_RootNode = new Entity(this, new ModelRootNode("Collision"));
 
         RootObject.AddChild(Mesh_RootNode);
         RootObject.AddChild(Bone_RootNode);
         RootObject.AddChild(DummyPoly_RootNode);
+        RootObject.AddChild(Collision_RootNode);
+    }
+
+    public void LoadCollision(hkRootLevelContainer hkx, MeshRenderableProxy proxy)
+    {
+        if (Universe.IsRendering)
+        {
+            for (int i = 0; i < proxy.Submeshes.Count; i++)
+            {
+                var collisionNode = new NamedEntity(this, hkx, $@"Collision {i}", i);
+                collisionNode.RenderSceneMesh = proxy.Submeshes[i];
+                proxy.Submeshes[i].SetSelectable(collisionNode);
+
+                if (!CFG.Current.ModelEditor_ViewCollision)
+                {
+                    collisionNode.EditorVisible = false;
+                }
+
+                Objects.Add(collisionNode);
+                Collision_RootNode.AddChild(collisionNode);
+            }
+        }
     }
 
     public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy)
