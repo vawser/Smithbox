@@ -37,19 +37,40 @@ public class ModelContainer : ObjectContainer
         RootObject.AddChild(Collision_RootNode);
     }
 
-    public void LoadCollision(hkRootLevelContainer hkx, MeshRenderableProxy proxy)
+    public void LoadCollision(hkRootLevelContainer hkx, MeshRenderableProxy proxy, string name)
     {
         if (Universe.IsRendering)
         {
+            TaskLogs.AddLog(name);
+
             for (int i = 0; i < proxy.Submeshes.Count; i++)
             {
-                var collisionNode = new NamedEntity(this, hkx, $@"Collision {i}", i);
+                var colType = HavokCollisionType.Low;
+                if(name.Contains("_h"))
+                {
+                    colType = HavokCollisionType.High;
+                }
+
+                var collisionNode = new CollisionEntity(this, hkx, $@"Collision {i}", i, colType);
                 collisionNode.RenderSceneMesh = proxy.Submeshes[i];
                 proxy.Submeshes[i].SetSelectable(collisionNode);
 
-                if (!CFG.Current.ModelEditor_ViewCollision)
+                collisionNode.EditorVisible = false;
+
+                if (colType is HavokCollisionType.High)
                 {
-                    collisionNode.EditorVisible = false;
+                    if (CFG.Current.ModelEditor_ViewHighCollision)
+                    {
+                        collisionNode.EditorVisible = true;
+                    }
+                }
+
+                if (colType is HavokCollisionType.Low)
+                {
+                    if (CFG.Current.ModelEditor_ViewLowCollision)
+                    {
+                        collisionNode.EditorVisible = true;
+                    }
                 }
 
                 Objects.Add(collisionNode);

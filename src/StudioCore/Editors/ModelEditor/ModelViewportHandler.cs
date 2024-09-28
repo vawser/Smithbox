@@ -106,8 +106,6 @@ namespace StudioCore.Editors.ModelEditor
             if (Smithbox.LowRequirementsMode)
                 return;
 
-            TaskLogs.AddLog($"OnResourceLoaded: {handle.AssetVirtualPath}");
-
             // FLVER
             if (handle is ResourceHandle<FlverResource>)
             {
@@ -188,7 +186,6 @@ namespace StudioCore.Editors.ModelEditor
 
                     if (r.ER_HKX != null)
                     {
-                        TaskLogs.AddLog($"LoadCollisionInModelEditor");
                         Screen._universe.LoadCollisionInModelEditor(r.ER_HKX, _collisionRenderMesh, currentInfo.ContainerName);
                     }
                 }

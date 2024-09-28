@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Resource.Locators;
+using StudioCore.Resource.Types;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,8 @@ public static class HavokCollisionManager
     public static Dictionary<string, hkRootLevelContainer> HavokContainers = new Dictionary<string, hkRootLevelContainer>();
 
     public static HavokCollisionType VisibleCollisionType = HavokCollisionType.Low;
+
+    public static ModelEditorScreen Screen;
 
     public static void OnLoadMap(string mapId)
     {
@@ -221,8 +224,11 @@ public static class HavokCollisionManager
         var res = AssetLocator.GetAssetGeomHKXBinder(modelName, colType);
         var job = ResourceManager.CreateNewJob($@"Collisions");
         job.AddLoadFileTask(res.AssetVirtualPath, AccessLevel.AccessFull);
-    }
 
+        Task _loadingTask = job.Complete();
+
+        ResourceManager.AddResourceListener<HavokCollisionResource>(res.AssetVirtualPath, Screen.ResourceHandler, AccessLevel.AccessFull);
+    }
 
     #region Utils
     public static (CollisionSubmesh, List<Vector3>, List<int>) ProcessColData(

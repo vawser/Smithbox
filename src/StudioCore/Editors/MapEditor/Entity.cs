@@ -5,6 +5,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.MsbEditor;
+using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
@@ -1439,6 +1440,24 @@ public class NamedEntity : Entity
 
     public override string Name { get; set; }
     public int Index { get; set; }
+}
+
+/// <summary>
+/// Entity with a specific name.
+/// </summary>
+public class CollisionEntity : Entity
+{
+    public CollisionEntity(ObjectContainer map, object msbo, string name, int idx, HavokCollisionType type) : base(map, msbo)
+    {
+        Name = name;
+        Index = idx;
+        HavokCollisionType = type;
+    }
+
+    public override string Name { get; set; }
+    public int Index { get; set; }
+
+    public HavokCollisionType HavokCollisionType { get; set; }
 }
 
 /// <summary>

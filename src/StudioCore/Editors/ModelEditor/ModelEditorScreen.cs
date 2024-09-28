@@ -242,11 +242,12 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
         {
+            var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
+
             UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
             if (ImGui.MenuItem("Meshes"))
             {
                 CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
-                var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
                 foreach (var entry in container.Mesh_RootNode.Children)
                 {
                     entry.EditorVisible = CFG.Current.ModelEditor_ViewMeshes;
@@ -259,7 +260,6 @@ public class ModelEditorScreen : EditorScreen
             {
                 CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
 
-                var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
                 foreach(var entry in container.DummyPoly_RootNode.Children)
                 {
                     entry.EditorVisible = CFG.Current.ModelEditor_ViewDummyPolys;
@@ -271,7 +271,6 @@ public class ModelEditorScreen : EditorScreen
             if (ImGui.MenuItem("Bones"))
             {
                 CFG.Current.ModelEditor_ViewBones = !CFG.Current.ModelEditor_ViewBones;
-                var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
                 foreach (var entry in container.Bone_RootNode.Children)
                 {
                     entry.EditorVisible = CFG.Current.ModelEditor_ViewBones;
@@ -279,17 +278,40 @@ public class ModelEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Collision"))
+            if (Smithbox.ProjectType is ProjectType.ER)
             {
-                CFG.Current.ModelEditor_ViewCollision = !CFG.Current.ModelEditor_ViewCollision;
-                var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
-                foreach (var entry in container.Collision_RootNode.Children)
+                UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
+                if (ImGui.MenuItem("Collision (High)"))
                 {
-                    entry.EditorVisible = CFG.Current.ModelEditor_ViewCollision;
+                    CFG.Current.ModelEditor_ViewHighCollision = !CFG.Current.ModelEditor_ViewHighCollision;
+
+                    foreach (var entry in container.Collision_RootNode.Children)
+                    {
+                        var colEntity = (CollisionEntity)entry;
+                        if (colEntity.HavokCollisionType is HavokCollisionType.High)
+                        {
+                            colEntity.EditorVisible = CFG.Current.ModelEditor_ViewHighCollision;
+                        }
+                    }
                 }
+                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewHighCollision);
+
+                UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
+                if (ImGui.MenuItem("Collision (Low)"))
+                {
+                    CFG.Current.ModelEditor_ViewLowCollision = !CFG.Current.ModelEditor_ViewLowCollision;
+
+                    foreach (var entry in container.Collision_RootNode.Children)
+                    {
+                        var colEntity = (CollisionEntity)entry;
+                        if (colEntity.HavokCollisionType is HavokCollisionType.Low)
+                        {
+                            colEntity.EditorVisible = CFG.Current.ModelEditor_ViewLowCollision;
+                        }
+                    }
+                }
+                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewLowCollision);
             }
-            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewCollision);
 
             /*
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");

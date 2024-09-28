@@ -967,7 +967,7 @@ public class Universe
     {
         if (LoadedModelContainers.ContainsKey(name))
         {
-            LoadedModelContainers[name].LoadCollision(hkx, proxy);
+            LoadedModelContainers[name].LoadCollision(hkx, proxy, name);
         }
     }
 

@@ -104,11 +104,10 @@ Texture Viewer:
  - ADD: support for tpfbdt files 
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
 
- 
 #--------------------------------------
 # Notes
 #--------------------------------------
 # PRIORITY
 - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
-- ADD: Add collision view to the Model Editor
- - Collision resource is not loading
+
+Collision disposal lags a bit on model change

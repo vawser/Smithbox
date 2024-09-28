@@ -127,19 +127,23 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadAsset(string name)
         {
+            HavokCollisionManager.Screen = Screen;
             HavokCollisionManager.OnLoadModel(name, ModelEditorModelType.Object);
 
             SetLoadedState(name);
 
             LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Object, "");
 
-            if (HavokCollisionManager.HavokContainers.ContainsKey($"{name}_h".ToLower()))
+            if (Smithbox.ProjectType is ProjectType.ER)
             {
-                LoadedFlverContainer.ER_HighCollision = HavokCollisionManager.HavokContainers[$"{name}_h".ToLower()];
-            }
-            if (HavokCollisionManager.HavokContainers.ContainsKey($"{name}_l".ToLower()))
-            {
-                LoadedFlverContainer.ER_LowCollision = HavokCollisionManager.HavokContainers[$"{name}_l".ToLower()];
+                if (HavokCollisionManager.HavokContainers.ContainsKey($"{name}_h".ToLower()))
+                {
+                    LoadedFlverContainer.ER_HighCollision = HavokCollisionManager.HavokContainers[$"{name}_h".ToLower()];
+                }
+                if (HavokCollisionManager.HavokContainers.ContainsKey($"{name}_l".ToLower()))
+                {
+                    LoadedFlverContainer.ER_LowCollision = HavokCollisionManager.HavokContainers[$"{name}_l".ToLower()];
+                }
             }
 
             LoadEditableModel(name, name, ModelEditorModelType.Object);
