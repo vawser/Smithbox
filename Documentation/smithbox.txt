@@ -110,4 +110,7 @@ Texture Viewer:
 # PRIORITY
 - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
 
+Add Collision section in hierarchy
+
 Collision disposal lags a bit on model change
+Collision visiblity flip is not working correctly

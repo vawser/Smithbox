@@ -290,6 +290,7 @@ public class ModelEditorScreen : EditorScreen
                         var colEntity = (CollisionEntity)entry;
                         if (colEntity.HavokCollisionType is HavokCollisionType.High)
                         {
+                            TaskLogs.AddLog($"colEntity High: {colEntity}");
                             colEntity.EditorVisible = CFG.Current.ModelEditor_ViewHighCollision;
                         }
                     }
@@ -306,6 +307,7 @@ public class ModelEditorScreen : EditorScreen
                         var colEntity = (CollisionEntity)entry;
                         if (colEntity.HavokCollisionType is HavokCollisionType.Low)
                         {
+                            TaskLogs.AddLog($"colEntity Low: {colEntity}");
                             colEntity.EditorVisible = CFG.Current.ModelEditor_ViewLowCollision;
                         }
                     }
