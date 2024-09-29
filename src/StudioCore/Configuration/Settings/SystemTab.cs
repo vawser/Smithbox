@@ -129,7 +129,7 @@ public class SystemTab
             //ImGui.Checkbox("Display Randomiser Toosl", ref CFG.Current.DisplayRandomiserTools);
             //ImguiUtils.ShowHoverTooltip("If enabled, the randomiser tools will be available via the icon bar.");
 
-            ImGui.Checkbox("Display Debug Toosl", ref CFG.Current.DisplayDebugTools);
+            ImGui.Checkbox("Display Debug Tools", ref CFG.Current.DisplayDebugTools);
             UIHelper.ShowHoverTooltip("If enabled, the debug tools will be available via the icon bar.");
         }
     }
