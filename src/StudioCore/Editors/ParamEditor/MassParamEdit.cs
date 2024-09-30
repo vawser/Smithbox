@@ -134,10 +134,10 @@ public class MassParamEditRegex
                     continue;
                 }
 
-                // VAWSER: changed from EndsWith to this so space after the ; character is ignored
+                // VAWSER: ignore ; usage
                 if (command.Contains(';'))
                 {
-                    command = command.Split(";")[0];
+                    command = command.Replace(";", "");
                 }
 
                 (MassEditResult result, List<EditorAction> actions) = (null, null);
