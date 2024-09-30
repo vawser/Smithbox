@@ -459,6 +459,46 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
                 });
             }));
+        filterList.Add("positive", newCmd(
+            new[] { "field internalName" },
+            "Selects rows where the specified field has a value that is a positive, non-zero number",
+            (args, lenient) =>
+            {
+                var field = args[0];
+
+                var ceil = float.PositiveInfinity;
+
+                return noContext(row =>
+                {
+                    Param.Cell? c = row[field];
+                    if (c == null)
+                    {
+                        throw new Exception();
+                    }
+
+                    return Convert.ToDouble(c.Value.Value) > 0 && Convert.ToDouble(c.Value.Value) <= ceil;
+                });
+            }));
+        filterList.Add("negative", newCmd(
+            new[] { "field internalName" },
+            "Selects rows where the specified field has a value that is a negative, non-zero number",
+            (args, lenient) =>
+            {
+                var field = args[0];
+
+                var floor = float.NegativeInfinity;
+
+                return noContext(row =>
+                {
+                    Param.Cell? c = row[field];
+                    if (c == null)
+                    {
+                        throw new Exception();
+                    }
+
+                    return Convert.ToDouble(c.Value.Value) < 0 && Convert.ToDouble(c.Value.Value) >= floor;
+                });
+            }));
         filterList.Add("propref", newCmd(new[] { "field internalName", "referenced row name (regex)" },
             "Selects rows where the specified field that references another param has a value referencing a row whose name matches the given regex",
             (args, lenient) =>
