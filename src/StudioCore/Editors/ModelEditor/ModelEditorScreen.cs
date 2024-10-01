@@ -15,6 +15,7 @@ using StudioCore.Utilities;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
+using System.Xml;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -250,10 +251,6 @@ public class ModelEditorScreen : EditorScreen
                 if (ImGui.MenuItem("Meshes"))
                 {
                     CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
-                    foreach (var entry in container.Mesh_RootNode.Children)
-                    {
-                        entry.EditorVisible = CFG.Current.ModelEditor_ViewMeshes;
-                    }
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
 
@@ -261,11 +258,6 @@ public class ModelEditorScreen : EditorScreen
                 if (ImGui.MenuItem("Dummy Polygons"))
                 {
                     CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
-
-                    foreach (var entry in container.DummyPoly_RootNode.Children)
-                    {
-                        entry.EditorVisible = CFG.Current.ModelEditor_ViewDummyPolys;
-                    }
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewDummyPolys);
 
@@ -273,60 +265,28 @@ public class ModelEditorScreen : EditorScreen
                 if (ImGui.MenuItem("Bones"))
                 {
                     CFG.Current.ModelEditor_ViewBones = !CFG.Current.ModelEditor_ViewBones;
-                    foreach (var entry in container.Bone_RootNode.Children)
-                    {
-                        entry.EditorVisible = CFG.Current.ModelEditor_ViewBones;
-                    }
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
 
+                // Collision
                 if (Smithbox.ProjectType is ProjectType.ER)
                 {
+                    // High
                     UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
                     if (ImGui.MenuItem("Collision (High)"))
                     {
                         CFG.Current.ModelEditor_ViewHighCollision = !CFG.Current.ModelEditor_ViewHighCollision;
-
-                        foreach (var entry in container.Collision_RootNode.Children)
-                        {
-                            var colEntity = (CollisionEntity)entry;
-                            if (colEntity.HavokCollisionType is HavokCollisionType.High)
-                            {
-                                TaskLogs.AddLog($"colEntity High: {colEntity}");
-                                colEntity.EditorVisible = CFG.Current.ModelEditor_ViewHighCollision;
-                            }
-                        }
                     }
                     UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewHighCollision);
 
+                    // Low
                     UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
                     if (ImGui.MenuItem("Collision (Low)"))
                     {
                         CFG.Current.ModelEditor_ViewLowCollision = !CFG.Current.ModelEditor_ViewLowCollision;
-
-                        TaskLogs.AddLog($"Collision_RootNode.Children.Count: {container.Collision_RootNode.Children.Count}");
-
-                        foreach (var entry in container.Collision_RootNode.Children)
-                        {
-                            var colEntity = (CollisionEntity)entry;
-                            if (colEntity.HavokCollisionType is HavokCollisionType.Low)
-                            {
-                                TaskLogs.AddLog($"colEntity Low: {colEntity}");
-                                colEntity.EditorVisible = CFG.Current.ModelEditor_ViewLowCollision;
-                            }
-                        }
                     }
                     UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewLowCollision);
                 }
-
-                /*
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
-                if (ImGui.MenuItem("Skeleton"))
-                {
-                    CFG.Current.ModelEditor_ViewSkeleton = !CFG.Current.ModelEditor_ViewSkeleton;
-                }
-                ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewSkeleton);
-                */
             }
 
             ImGui.EndMenu();
@@ -569,6 +529,13 @@ public class ModelEditorScreen : EditorScreen
         ModelHierarchy.OnGui();
         ModelPropertyEditor.OnGui();
         SkeletonHandler.OnGui();
+
+        // Update model container elements
+        if (_universe.LoadedModelContainers.ContainsKey(ViewportHandler.ContainerID))
+        {
+            var container = _universe.LoadedModelContainers[ViewportHandler.ContainerID];
+            container.OnGui();
+        }
 
         if (UI.Current.Interface_ModelEditor_ToolConfigurationWindow)
         {

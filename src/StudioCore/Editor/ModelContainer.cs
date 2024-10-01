@@ -1,5 +1,7 @@
 ﻿using HKLib.hk2018;
 using HKLib.hk2018.hkaiCollisionAvoidance;
+using HKLib.hk2018.TypeRegistryTest;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
@@ -7,18 +9,24 @@ using StudioCore.Editors.TextureViewer;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Numerics;
+using static SoulsFormats.BTPB;
 
 namespace StudioCore.Editor;
 
 public class ModelContainer : ObjectContainer
 {
+    public string Name;
+
     public Entity Mesh_RootNode { get; set; }
     public Entity Bone_RootNode { get; set; }
     public Entity DummyPoly_RootNode { get; set; }
 
-    public Entity Collision_RootNode { get; set; }
+    public Entity HighCollision_RootNode { get; set; }
+    public Entity LowCollision_RootNode { get; set; }
 
     public ModelContainer(Universe u, string name)
     {
@@ -29,77 +37,72 @@ public class ModelContainer : ObjectContainer
         Mesh_RootNode = new Entity(this, new ModelRootNode("Meshes"));
         Bone_RootNode = new Entity(this, new ModelRootNode("Bones"));
         DummyPoly_RootNode = new Entity(this, new ModelRootNode("Dummy Polygons"));
-        Collision_RootNode = new Entity(this, new ModelRootNode("Collision"));
+
+        HighCollision_RootNode = new Entity(this, new ModelRootNode("High Collision"));
+        LowCollision_RootNode = new Entity(this, new ModelRootNode("Low Collision"));
 
         RootObject.AddChild(Mesh_RootNode);
         RootObject.AddChild(Bone_RootNode);
         RootObject.AddChild(DummyPoly_RootNode);
-        RootObject.AddChild(Collision_RootNode);
+
+        RootObject.AddChild(HighCollision_RootNode);
+        RootObject.AddChild(LowCollision_RootNode);
     }
 
-    public void LoadCollision(hkRootLevelContainer hkx, MeshRenderableProxy proxy, string name)
+    public void OnGui()
     {
-        // Re-build the root node on reach load
-        Collision_RootNode = new Entity(this, new ModelRootNode("Collision"));
+        if (!Universe.IsRendering)
+            return;
 
-        if (Universe.IsRendering)
+        // Meshes
+        foreach (var entry in Mesh_RootNode.Children)
         {
-            TaskLogs.AddLog(name);
+            entry.EditorVisible = CFG.Current.ModelEditor_ViewMeshes;
+        }
 
-            for (int i = 0; i < proxy.Submeshes.Count; i++)
-            {
-                var colType = HavokCollisionType.Low;
-                if(name.Contains("_h"))
-                {
-                    colType = HavokCollisionType.High;
-                }
+        // Dummy Polygons
+        foreach (var entry in DummyPoly_RootNode.Children)
+        {
+            entry.EditorVisible = CFG.Current.ModelEditor_ViewDummyPolys;
+        }
 
-                var collisionNode = new CollisionEntity(this, hkx, $@"Collision {i}", i, colType);
-                collisionNode.RenderSceneMesh = proxy.Submeshes[i];
-                proxy.Submeshes[i].SetSelectable(collisionNode);
+        // Bones
+        foreach (var entry in Bone_RootNode.Children)
+        {
+            entry.EditorVisible = CFG.Current.ModelEditor_ViewBones;
+        }
 
-                collisionNode.EditorVisible = false;
+        // High Collision
+        foreach (CollisionEntity entry in HighCollision_RootNode.Children)
+        {
+            entry.EditorVisible = CFG.Current.ModelEditor_ViewHighCollision;
+        }
 
-                if (colType is HavokCollisionType.High)
-                {
-                    if (CFG.Current.ModelEditor_ViewHighCollision)
-                    {
-                        collisionNode.EditorVisible = true;
-                    }
-                }
-
-                if (colType is HavokCollisionType.Low)
-                {
-                    if (CFG.Current.ModelEditor_ViewLowCollision)
-                    {
-                        collisionNode.EditorVisible = true;
-                    }
-                }
-
-                Objects.Add(collisionNode);
-                Collision_RootNode.AddChild(collisionNode);
-            }
+        // Low Collision
+        foreach (CollisionEntity entry in LowCollision_RootNode.Children)
+        {
+            entry.EditorVisible = CFG.Current.ModelEditor_ViewLowCollision;
         }
     }
 
-    public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy)
+    public void LoadFlver(string name, FLVER2 flver, MeshRenderableProxy flverProxy, MeshRenderableProxy lowCollisionProxy, MeshRenderableProxy highCollisionProxy)
     {
+        if (!Universe.IsRendering)
+            return;
+
+        Name = name;
+
         // Meshes
         for (var i = 0; i < flver.Meshes.Count; i++)
         {
             var meshNode = new NamedEntity(this, flver.Meshes[i], $@"Mesh {i}", i);
             if (Universe.IsRendering)
             {
-                if (proxy.Submeshes.Count > 0 && i < proxy.Submeshes.Count)
+                if (flverProxy.Submeshes.Count > 0 && i < flverProxy.Submeshes.Count)
                 {
-                    meshNode.RenderSceneMesh = proxy.Submeshes[i];
-                    proxy.Submeshes[i].SetSelectable(meshNode);
+                    meshNode.RenderSceneMesh = flverProxy.Submeshes[i];
+                    flverProxy.Submeshes[i].SetSelectable(meshNode);
                 }
-            }
-
-            if (!CFG.Current.ModelEditor_ViewMeshes)
-            {
-                meshNode.EditorVisible = false;
             }
 
             Objects.Add(meshNode);
@@ -113,11 +116,6 @@ public class ModelContainer : ObjectContainer
 
             boneNode.RenderSceneMesh = Universe.GetBoneDrawable(this, boneNode);
 
-            if (!CFG.Current.ModelEditor_ViewBones)
-            {
-                boneNode.EditorVisible = false;
-            }
-
             Objects.Add(boneNode);
             Bone_RootNode.AddChild(boneNode);
         }
@@ -129,15 +127,42 @@ public class ModelContainer : ObjectContainer
 
             dummyPolyNode.RenderSceneMesh = Universe.GetDummyPolyDrawable(this, dummyPolyNode);
 
-            if (!CFG.Current.ModelEditor_ViewDummyPolys)
-            {
-                dummyPolyNode.EditorVisible = false;
-            }
-
             Objects.Add(dummyPolyNode);
             DummyPoly_RootNode.AddChild(dummyPolyNode);
 
             //ApplyDummyOffsetting(dummyPolyNode, flver.Dummies[i], flver, i);
+        }
+
+        // High Collision
+        for (int i = 0; i < highCollisionProxy.Submeshes.Count; i++)
+        {
+            if (highCollisionProxy.VirtPath.Contains("_h.hkx"))
+            {
+                var collisionNode = new CollisionEntity(this, null, $@"Collision {i}", i, HavokCollisionType.High);
+                collisionNode.RenderSceneMesh = highCollisionProxy.Submeshes[i];
+                highCollisionProxy.Submeshes[i].SetSelectable(collisionNode);
+
+                Objects.Add(collisionNode);
+                HighCollision_RootNode.AddChild(collisionNode);
+            }
+        }
+
+        TaskLogs.AddLog($"{DateTime.Now} lowCollisionProxy.Submeshes.Count: {lowCollisionProxy.Submeshes.Count}");
+
+        // Low Collision
+        for (int i = 0; i < lowCollisionProxy.Submeshes.Count; i++)
+        {
+            if (lowCollisionProxy.VirtPath.Contains("_l.hkx"))
+            {
+                var collisionNode = new CollisionEntity(this, null, $@"Collision {i}", i, HavokCollisionType.Low);
+                collisionNode.RenderSceneMesh = lowCollisionProxy.Submeshes[i];
+                lowCollisionProxy.Submeshes[i].SetSelectable(collisionNode);
+
+                TaskLogs.AddLog($"{DateTime.Now} {collisionNode.Name} is selectable");
+
+                Objects.Add(collisionNode);
+                LowCollision_RootNode.AddChild(collisionNode);
+            }
         }
     }
 

@@ -32,6 +32,14 @@ public static class TimeActBank
 
     public static Dictionary<string, Template> TimeActTemplates = new Dictionary<string, Template>();
 
+    public static bool IsSupportedProjectType()
+    {
+        if (Smithbox.ProjectType is ProjectType.Undefined or ProjectType.DS2)
+            return false;
+
+        return true;
+    }
+
     /// <summary>
     /// Loads all relevant files into the banks for the Time Act Editor
     /// </summary>
@@ -208,7 +216,7 @@ public static class TimeActBank
     /// </summary>
     public static void LoadProjectCharacterTimeActs()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (!IsSupportedProjectType())
             return;
 
         IsCharacterTimeActsLoaded = false;
@@ -224,7 +232,7 @@ public static class TimeActBank
     /// </summary>
     public static void LoadProjectObjectTimeActs()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (!IsSupportedProjectType())
             return;
 
         IsObjectTimeActsLoaded = false;
@@ -240,7 +248,7 @@ public static class TimeActBank
     /// </summary>
     public static void LoadVanillaCharacterTimeActs()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (!IsSupportedProjectType())
             return;
 
         IsVanillaCharacterTimeActsLoaded = false;
@@ -256,7 +264,7 @@ public static class TimeActBank
     /// </summary>
     public static void LoadVanillaObjectTimeActs()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (!IsSupportedProjectType())
             return;
 
         IsVanillaObjectTimeActsLoaded = false;

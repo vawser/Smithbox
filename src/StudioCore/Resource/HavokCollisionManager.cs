@@ -12,6 +12,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using static StudioCore.Resource.Types.HavokCollisionResource;
@@ -165,6 +166,13 @@ public static class HavokCollisionManager
 
     private static void LoadModelCollision(string modelName, string colType, ModelEditorModelType modelType)
     {
+        var checkedName = $"{modelName}_{colType}".ToLower();
+
+        if (HavokContainers.ContainsKey(checkedName))
+        {
+            return;
+        }
+
         // Mark as invalid by default
         bool isValid = false;
 
@@ -219,15 +227,6 @@ public static class HavokCollisionManager
                 }
             }
         }
-
-        // Load collision through Resource Manager
-        var res = AssetLocator.GetAssetGeomHKXBinder(modelName, colType);
-        var job = ResourceManager.CreateNewJob($@"Collisions");
-        job.AddLoadFileTask(res.AssetVirtualPath, AccessLevel.AccessFull);
-
-        Task _loadingTask = job.Complete();
-
-        ResourceManager.AddResourceListener<HavokCollisionResource>(res.AssetVirtualPath, Screen.ResourceHandler, AccessLevel.AccessFull);
     }
 
     #region Utils

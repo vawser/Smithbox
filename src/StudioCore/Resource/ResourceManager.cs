@@ -65,6 +65,17 @@ public static class ResourceManager
         return ResourceDatabase;
     }
 
+    public static bool IsResourceLoaded(string resourceName)
+    {
+        if (ResourceDatabase.Keys.Contains(resourceName))
+        {
+            TaskLogs.AddLog($"Already loaded: {resourceName}");
+            return true;
+        }
+
+        return false;
+    }
+
     public static ConcurrentDictionary<ResourceJob, int> GetActiveJobProgress()
     {
         return ActiveJobProgress;

@@ -168,6 +168,8 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         "AEG816"
     };
 
+    public string VirtPath;
+
     private readonly MeshProvider _meshProvider;
 
     private readonly ModelMarkerType _placeholderType;
@@ -198,8 +200,9 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     private Matrix4x4 _world = Matrix4x4.Identity;
     protected GPUBufferAllocator.GPUBufferHandle? _worldBuffer;
 
-    public MeshRenderableProxy(MeshRenderables renderables, MeshProvider provider, ModelMarkerType placeholderType = ModelMarkerType.None, bool autoregister = true)
+    public MeshRenderableProxy(MeshRenderables renderables, MeshProvider provider, ModelMarkerType placeholderType = ModelMarkerType.None, bool autoregister = true, string virtPath = "")
     {
+        VirtPath = virtPath;
         AutoRegister = autoregister;
         _registered = AutoRegister;
         _renderablesSet = renderables;
@@ -211,6 +214,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         {
             ScheduleRenderableConstruction();
         }
+
     }
 
     public MeshRenderableProxy(MeshRenderableProxy clone) :
@@ -861,11 +865,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         return renderable;
     }
 
-    public static MeshRenderableProxy MeshRenderableFromCollisionResource(RenderScene scene, string virtualPath, ModelMarkerType modelType)
+    public static MeshRenderableProxy MeshRenderableFromCollisionResource(RenderScene scene, string virtualPath, ModelMarkerType modelType, string virtPath = "")
     {
         var meshProvider = MeshProviderCache.GetCollisionMeshProvider(virtualPath);
 
-        MeshRenderableProxy renderable = new(scene.OpaqueRenderables, meshProvider, modelType);
+        MeshRenderableProxy renderable = new(scene.OpaqueRenderables, meshProvider, modelType, true, virtPath);
 
         return renderable;
     }

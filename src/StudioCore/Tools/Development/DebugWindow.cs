@@ -45,6 +45,7 @@ public class DebugWindow
     {
         // Information
         [Display(Name = "Task Status")] DisplayTaskStatus,
+        [Display(Name = "Resource Manager")] ResourceManager,
 
         // ImGui
         [Display(Name = "ImGui Demo")] ImGuiDemo,
@@ -146,6 +147,9 @@ public class DebugWindow
                 case SelectedDebugTab.DisplayTaskStatus:
                     DisplayTasks();
                     break;
+                case SelectedDebugTab.ResourceManager:
+                    DisplayResourceManager();
+                    break;
 
                 // ImGui
                 case SelectedDebugTab.ImGuiDemo:
@@ -224,6 +228,10 @@ public class DebugWindow
                 ImGui.Text(task);
             }
         }
+    }
+    private void DisplayResourceManager()
+    {
+        ResourceManagerWindow.Display();
     }
 
     // ImGui

@@ -127,6 +127,7 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadAsset(string name)
         {
+            // Load HKX for collision
             HavokCollisionManager.Screen = Screen;
             HavokCollisionManager.OnLoadModel(name, ModelEditorModelType.Object);
 

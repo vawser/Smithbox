@@ -947,29 +947,19 @@ public class Universe
         }
     }
 
-    public void LoadFlverInModelEditor(FLVER2 flver, MeshRenderableProxy proxy, string name)
+    public void LoadFlverInModelEditor(FLVER2 flver, string name, MeshRenderableProxy flverProxy, MeshRenderableProxy lowCollisionProxy, MeshRenderableProxy highCollisionProxy)
     {
-        ModelContainer container = new(this, name);
-
-        container.LoadFlver(flver, proxy);
-
         if (!LoadedModelContainers.ContainsKey(name))
         {
+            ModelContainer container = new(this, name);
+
+            container.LoadFlver(name, flver, flverProxy, lowCollisionProxy, highCollisionProxy);
+
             LoadedModelContainers.Add(name, container);
         }
         else
         {
-            LoadedModelContainers[name] = container;
-        }
-    }
-
-    public void LoadCollisionInModelEditor(hkRootLevelContainer hkx, MeshRenderableProxy proxy, string name)
-    {
-        TaskLogs.AddLog($"LoadCollisionInModelEditor");
-
-        if (LoadedModelContainers.ContainsKey(name))
-        {
-            LoadedModelContainers[name].LoadCollision(hkx, proxy, name);
+            LoadedModelContainers[name].LoadFlver(name, flver, flverProxy, lowCollisionProxy, highCollisionProxy);
         }
     }
 
@@ -1401,81 +1391,6 @@ public class Universe
         }
     }
 
-    public void UnloadModels(bool clearFromList = false)
-    {
-        List<ModelContainer> toUnload = new();
-        foreach (var key in LoadedModelContainers.Keys)
-        {
-            if (LoadedModelContainers[key] != null)
-            {
-                toUnload.Add(LoadedModelContainers[key]);
-            }
-        }
-
-        foreach (ModelContainer un in toUnload)
-        {
-            UnloadModelContainer(un, clearFromList);
-        }
-    }
-
-    // This unloads only the Dummy and Node selectables
-    public void UnloadTransformableEntities(bool clearFromList = false)
-    {
-        List<ModelContainer> toUnload = new();
-        foreach (var key in LoadedModelContainers.Keys)
-        {
-            if (LoadedModelContainers[key] != null)
-            {
-                toUnload.Add(LoadedModelContainers[key]);
-            }
-        }
-
-        foreach (ModelContainer container in toUnload)
-        {
-            if (LoadedModelContainers.ContainsKey(container.Name))
-            {
-                foreach (Entity obj in container.Objects)
-                {
-                    if (obj is TransformableNamedEntity)
-                    {
-                        if (obj != null)
-                        {
-                            obj.Dispose();
-                        }
-                    }
-                }
-
-                container.Clear();
-                LoadedModelContainers[container.Name] = null;
-                if (clearFromList)
-                {
-                    LoadedModelContainers.Remove(container.Name);
-                }
-            }
-        }
-    }
-
-    public void UnloadModelContainer(ObjectContainer container, bool clearFromList = false)
-    {
-        if (LoadedModelContainers.ContainsKey(container.Name))
-        {
-            foreach (Entity obj in container.Objects)
-            {
-                if (obj != null)
-                {
-                    obj.Dispose();
-                }
-            }
-
-            container.Clear();
-            LoadedModelContainers[container.Name] = null;
-            if (clearFromList)
-            {
-                LoadedModelContainers.Remove(container.Name);
-            }
-        }
-    }
-
     public void UnloadContainer(ObjectContainer container, bool clearFromList = false)
     {
         HavokCollisionManager.OnUnloadMap(container.Name);
@@ -1544,5 +1459,66 @@ public class Universe
         }
 
         ResourceManager.ScheduleUnloadedTexturesRefresh();
+    }
+
+    /// <summary>
+    /// Model Editor: Unload
+    /// </summary>
+    public void UnloadModels()
+    {
+        List<ModelContainer> toUnload = new();
+        foreach (var key in LoadedModelContainers.Keys)
+        {
+            if (LoadedModelContainers[key] != null)
+            {
+                toUnload.Add(LoadedModelContainers[key]);
+            }
+        }
+
+        foreach (ModelContainer un in toUnload)
+        {
+            if (LoadedModelContainers.ContainsKey(un.Name))
+            {
+                foreach (Entity obj in un.Objects)
+                {
+                    if (obj != null)
+                    {
+                        obj.Dispose();
+                    }
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Model Editor: Unload Dummies/Bones
+    /// </summary>
+    public void UnloadTransformableEntities(bool clearFromList = false)
+    {
+        List<ModelContainer> toUnload = new();
+        foreach (var key in LoadedModelContainers.Keys)
+        {
+            if (LoadedModelContainers[key] != null)
+            {
+                toUnload.Add(LoadedModelContainers[key]);
+            }
+        }
+
+        foreach (ModelContainer container in toUnload)
+        {
+            if (LoadedModelContainers.ContainsKey(container.Name))
+            {
+                foreach (Entity obj in container.Objects)
+                {
+                    if (obj is TransformableNamedEntity)
+                    {
+                        if (obj != null)
+                        {
+                            obj.Dispose();
+                        }
+                    }
+                }
+            }
+        }
     }
 }

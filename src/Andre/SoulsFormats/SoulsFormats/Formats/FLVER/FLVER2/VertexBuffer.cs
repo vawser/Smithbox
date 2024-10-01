@@ -55,6 +55,10 @@ namespace SoulsFormats
 
                 br.StepIn(dataOffset + BufferOffset);
                 {
+                    // TODO:
+                    // Issue with multi-blend meshes where the vertices write the UV values out differently, breaking the textures.
+                    // Likely the issue is that the uvFactor is wrong.
+
                     float uvFactor = 1024;
                     if (header.Version >= 0x2000F)
                         uvFactor = 2048;

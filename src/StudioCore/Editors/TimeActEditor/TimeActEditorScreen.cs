@@ -151,7 +151,7 @@ public class TimeActEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TimeActEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Smithbox.ProjectType is ProjectType.Undefined)
+        if (!TimeActBank.IsSupportedProjectType())
         {
             ImGui.Begin("Editor##InvalidTaeEditor");
 

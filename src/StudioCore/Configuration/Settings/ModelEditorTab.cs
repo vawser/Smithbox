@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
