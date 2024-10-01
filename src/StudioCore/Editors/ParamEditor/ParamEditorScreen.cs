@@ -953,6 +953,8 @@ public class ParamEditorScreen : EditorScreen
 
         foreach (ParamEditorView view in _views)
         {
+            view.OnProjectChanged();
+
             if (view != null)
             {
                 view._selection.CleanAllSelectionState();

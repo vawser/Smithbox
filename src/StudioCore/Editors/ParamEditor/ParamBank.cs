@@ -342,8 +342,12 @@ public class ParamBank
         return child;
     }
 
+    public static List<string> GraphicsConfigParams = new List<string>();
+    public static List<string> EventParams = new List<string>();
+    public static List<string> SystemParams = new List<string>();
+
     private void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version,
-        bool checkVersion = false)
+        bool checkVersion = false, string parambndFileName = "")
     {
         var success = ulong.TryParse(parambnd.Version, out version);
         if (checkVersion && !success)
@@ -364,6 +368,20 @@ public class ParamBank
             if (paramBank.ContainsKey(paramName))
             {
                 continue;
+            }
+
+            // Populate the side parambnd lists so we can filter them out easily
+            if(parambndFileName == "graphicsconfig")
+            {
+                GraphicsConfigParams.Add(paramName);
+            }
+            if (parambndFileName == "eventparam")
+            {
+                EventParams.Add(paramName);
+            }
+            if (parambndFileName == "systemparam")
+            {
+                SystemParams.Add(paramName);
             }
 
             Param p;
@@ -472,6 +490,21 @@ public class ParamBank
             }
 
             PARAMDEF def = _paramdefs[p.ParamType];
+
+            // Sekiro:
+            // The GraphicsConfig.param within the graphicsconfig.parambnd uses a different layout to the main one
+            // So intercept the used def here and force it to use the alternative one.
+            if (Smithbox.ProjectType is ProjectType.SDT)
+            {
+                if (parambndFileName == "graphicsconfig")
+                {
+                    if (paramName == "GraphicsConfig")
+                    {
+                        def = _paramdefs["CS_GRAPHICS_CONFIG_PARAM_ST_ALT"];
+                    }
+                }
+            }
+
             try
             {
                 p.ApplyParamdef(def, version);
@@ -739,6 +772,8 @@ public class ParamBank
         var dir = Smithbox.GameRoot;
         var mod = Smithbox.ProjectRoot;
 
+        GraphicsConfigParams = new List<string>();
+
         if (!File.Exists($@"{dir}\\param\gameparam\gameparam.parambnd.dcx"))
         {
             throw CreateParamMissingException(Smithbox.ProjectType);
@@ -753,6 +788,19 @@ public class ParamBank
         }
 
         LoadParamsBBSekiroFromFile(param);
+
+        if (Smithbox.ProjectType is ProjectType.SDT)
+        {
+            var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
+            if (File.Exists(graphicsConfigParam))
+            {
+                LoadParamsBBSekiroFromFile(graphicsConfigParam, "graphicsconfig");
+            }
+            else
+            {
+                TaskLogs.AddLog("Graphicsconfig could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+            }
+        }
     }
 
     private void LoadVParamsBBSekiro()
@@ -760,12 +808,12 @@ public class ParamBank
         LoadParamsBBSekiroFromFile($@"{Smithbox.GameRoot}\param\gameparam\gameparam.parambnd.dcx");
     }
 
-    private void LoadParamsBBSekiroFromFile(string path)
+    private void LoadParamsBBSekiroFromFile(string path, string parambndFileName = "")
     {
         try
         {
             using var bnd = BND4.Read(path);
-            LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+            LoadParamFromBinder(bnd, ref _params, out _paramVersion, false, parambndFileName);
         }
         catch(Exception e)
         {
@@ -1008,6 +1056,9 @@ public class ParamBank
         var dir = Smithbox.GameRoot;
         var mod = Smithbox.ProjectRoot;
 
+        SystemParams = new List<string>();
+        EventParams = new List<string>();
+
         if (!File.Exists($@"{dir}\\regulation.bin"))
         {
             throw CreateParamMissingException(Smithbox.ProjectType);
@@ -1028,7 +1079,7 @@ public class ParamBank
         var sysParam = LocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
         if (File.Exists(sysParam))
         {
-            LoadParamsERFromFile(sysParam, false);
+            LoadParamsERFromFile(sysParam, false, "systemparam");
         }
         else
         {
@@ -1038,7 +1089,7 @@ public class ParamBank
         var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
         if (File.Exists(eventParam))
         {
-            LoadParamsERFromFile(eventParam, false);
+            LoadParamsERFromFile(eventParam, false, "eventparam");
         }
         else
         {
@@ -1063,14 +1114,14 @@ public class ParamBank
         }
     }
 
-    private void LoadParamsERFromFile(string path, bool encrypted = true)
+    private void LoadParamsERFromFile(string path, bool encrypted = true, string parambndFileName = "")
     {
         if (encrypted)
         {
             try
             {
                 using BND4 bnd = SFUtil.DecryptERRegulation(path);
-                LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion, true, parambndFileName);
             }
             catch(Exception e)
             {
@@ -1082,7 +1133,7 @@ public class ParamBank
             try
             {
                 using var bnd = BND4.Read(path);
-                LoadParamFromBinder(bnd, ref _params, out _, false);
+                LoadParamFromBinder(bnd, ref _params, out _, false, parambndFileName);
             }
             catch (Exception e)
             {
@@ -1095,6 +1146,10 @@ public class ParamBank
     {
         var dir = Smithbox.GameRoot;
         var mod = Smithbox.ProjectRoot;
+
+        GraphicsConfigParams = new List<string>();
+        SystemParams = new List<string>();
+        EventParams = new List<string>();
 
         if (!File.Exists($@"{dir}\\regulation.bin"))
         {
@@ -1113,7 +1168,7 @@ public class ParamBank
         var sysParam = LocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
         if (File.Exists(sysParam))
         {
-            LoadParamsAC6FromFile(sysParam, false);
+            LoadParamsAC6FromFile(sysParam, false, "systemparam");
         }
         else
         {
@@ -1123,7 +1178,7 @@ public class ParamBank
         var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
         if (File.Exists(graphicsConfigParam))
         {
-            LoadParamsAC6FromFile(graphicsConfigParam, false);
+            LoadParamsAC6FromFile(graphicsConfigParam, false, "graphicsconfig");
         }
         else
         {
@@ -1133,7 +1188,7 @@ public class ParamBank
         var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
         if (File.Exists(eventParam))
         {
-            LoadParamsAC6FromFile(eventParam, false);
+            LoadParamsAC6FromFile(eventParam, false, "eventparam");
         }
         else
         {
@@ -1164,14 +1219,14 @@ public class ParamBank
         }
     }
 
-    private void LoadParamsAC6FromFile(string path, bool encrypted = true)
+    private void LoadParamsAC6FromFile(string path, bool encrypted = true, string parambndFileName = "")
     {
         if (encrypted)
         {
             try
             {
                 using BND4 bnd = SFUtil.DecryptAC6Regulation(path);
-                LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion, true, parambndFileName);
             }
             catch (Exception e)
             {
@@ -1183,7 +1238,7 @@ public class ParamBank
             try
             {
                 using var bnd = BND4.Read(path);
-                LoadParamFromBinder(bnd, ref _params, out _, false);
+                LoadParamFromBinder(bnd, ref _params, out _, false, parambndFileName);
             }
             catch (Exception e)
             {
@@ -1872,6 +1927,22 @@ public class ParamBank
 
     private void SaveParamsBBSekiro()
     {
+        void OverwriteParamsBBSekiro(BND4 paramBnd)
+        {
+            // Replace params with edited ones
+            foreach (BinderFile p in paramBnd.Files)
+            {
+                if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                {
+                    Param paramFile = _params[Path.GetFileNameWithoutExtension(p.Name)];
+                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
+
+                    p.Bytes = paramFile.Write();
+                    paramFile.Rows = backup;
+                }
+            }
+        }
+
         var dir = Smithbox.GameRoot;
         var mod = Smithbox.ProjectRoot;
 
@@ -1889,18 +1960,22 @@ public class ParamBank
             param = $@"{dir}\param\gameparam\gameparam.parambnd.dcx";
         }
 
+        // Params
         var paramBnd = BND4.Read(param);
+        OverwriteParamsBBSekiro(paramBnd);
+        Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
 
-        // Replace params with edited ones
-        foreach (BinderFile p in paramBnd.Files)
+        // Graphics Config
+        if (Smithbox.ProjectType is ProjectType.SDT)
         {
-            if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+            var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
+            if (File.Exists(graphicsConfigParam))
             {
-                p.Bytes = _params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+                using var graphicsConfigParams = BND4.Read(graphicsConfigParam);
+                OverwriteParamsBBSekiro(graphicsConfigParams);
+                Utils.WriteWithBackup(dir, mod, @"param\graphicsconfig\graphicsconfig.parambnd.dcx", graphicsConfigParams);
             }
         }
-
-        Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
     }
 
     private void SaveParamsDES()

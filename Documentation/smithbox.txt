@@ -53,6 +53,7 @@ Model Editor:
  - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
  - FIX: account for scale when displaying dummies/bones
  - FIX: FLVER save validation: report of radahn appearing broken on re-save, black hair occurs.
+ - FIX: DS2 Flvers don't load
 
 Material Editor
  - ADD: Implement Material/MATBIN editor
@@ -112,4 +113,4 @@ Texture Viewer:
 
 Add Collision section in hierarchy
 
-Collision view toggle is not consistently working, collision handles not correct when it fails?
+FIX: collision isn't being handled correctly internally within the Model Editor, the refcount inflates + collision doesn't always dispose on model load + visibility toggles rarely work

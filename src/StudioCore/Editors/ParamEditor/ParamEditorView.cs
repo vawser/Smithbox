@@ -26,8 +26,10 @@ public class ParamEditorView
     private bool _focusRows;
     private int _gotoParamRow = -1;
     private bool _mapParamView;
-    private bool _eventParamView;
-    private bool _gConfigParamView;
+
+    private bool _systemParamView = false;
+    private bool _eventParamView = false;
+    private bool _gConfigParamView = false;
 
     internal ParamEditorScreen _paramEditor;
 
@@ -42,6 +44,17 @@ public class ParamEditorView
         _viewIndex = index;
         _propEditor = new ParamRowEditor(parent.EditorActionManager, _paramEditor);
         _selection = new ParamEditorSelectionState(_paramEditor);
+    }
+
+    public void OnProjectChanged()
+    {
+        ParamBank.GraphicsConfigParams = new List<string>();
+        ParamBank.EventParams = new List<string>();
+        ParamBank.SystemParams = new List<string>();
+
+        _systemParamView = false;
+        _eventParamView = false;
+        _gConfigParamView = false;
     }
 
     //------------------------------------
@@ -99,21 +112,31 @@ public class ParamEditorView
                 UICache.ClearCaches();
             }
         }
-        else if (Smithbox.ProjectType is ProjectType.ER || Smithbox.ProjectType is ProjectType.AC6)
-        {
-            // Only show if the user actually has the eventparam file
-            if (Path.Exists($"{Smithbox.GameRoot}\\param\\eventparam\\eventparam.parambnd.dcx"))
-            {
-                if (ImGui.Checkbox("Edit Event Params", ref _eventParamView))
-                {
-                    _gConfigParamView = false;
-                    UICache.ClearCaches();
-                }
-            }
 
+        // Graphics Config
+        if (ParamBank.GraphicsConfigParams.Count > 0)
+        {
             if (ImGui.Checkbox("Edit Graphics Config Params", ref _gConfigParamView))
             {
                 _eventParamView = false;
+                UICache.ClearCaches();
+            }
+        }
+        // System Params
+        if (ParamBank.SystemParams.Count > 0)
+        {
+            if (ImGui.Checkbox("Edit System Params", ref _systemParamView))
+            {
+                _gConfigParamView = false;
+                UICache.ClearCaches();
+            }
+        }
+        // Event Params
+        if (ParamBank.EventParams.Count > 0)
+        {
+            if (ImGui.Checkbox("Edit Event Params", ref _eventParamView))
+            {
+                _gConfigParamView = false;
                 UICache.ClearCaches();
             }
         }
@@ -214,41 +237,30 @@ public class ParamEditorView
                     keyList = keyList.FindAll(p => !ParamBank.DS2MapParamlist.Contains(p.Split('_')[0]));
                 }
             }
-            else if (Smithbox.ProjectType is ProjectType.ER || Smithbox.ProjectType is ProjectType.AC6)
+
+            // Graphics Config (AC6/SDT)
+            if (ParamBank.GraphicsConfigParams.Count > 0 && _gConfigParamView)
             {
-                if (_eventParamView)
-                {
-                    keyList = keyList.FindAll(p => p.StartsWith("EFID"));
-                }
-                else
-                {
-                    keyList = keyList.FindAll(p => !p.StartsWith("EFID"));
-                }
-
-                if (_gConfigParamView)
-                {
-                    if(Smithbox.ProjectType == ProjectType.AC6)
-                    {
-                        keyList = keyList.FindAll(p => p.StartsWith("GraphicsConfig"));
-                    }
-                    else
-                    {
-                        keyList = keyList.FindAll(p => p.StartsWith("Gconfig"));
-                    }
-                }
-                else
-                {
-                    if (Smithbox.ProjectType == ProjectType.AC6)
-                    {
-                        keyList = keyList.FindAll(p => !p.StartsWith("GraphicsConfig"));
-                    }
-                    else
-                    {
-                        keyList = keyList.FindAll(p => !p.StartsWith("Gconfig"));
-                    }
-                }
+                keyList = keyList.FindAll(p => ParamBank.GraphicsConfigParams.Contains(p));
             }
-
+            // System Params (AC6/ER)
+            else if (ParamBank.SystemParams.Count > 0 && _systemParamView)
+            {
+                keyList = keyList.FindAll(p => ParamBank.SystemParams.Contains(p));
+            }
+            // Event Params (AC6/ER)
+            else if (ParamBank.EventParams.Count > 0 && _eventParamView)
+            {
+                keyList = keyList.FindAll(p => ParamBank.EventParams.Contains(p));
+            }
+            else
+            {
+                keyList = keyList.FindAll(p =>
+                !ParamBank.EventParams.Contains(p) &&
+                !ParamBank.GraphicsConfigParams.Contains(p) &&
+                !ParamBank.SystemParams.Contains(p));
+            }
+           
             if (CFG.Current.Param_AlphabeticalParams)
             {
                 keyList.Sort();
