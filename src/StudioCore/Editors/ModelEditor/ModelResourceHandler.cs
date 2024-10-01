@@ -435,12 +435,12 @@ namespace StudioCore.Editors.ModelEditor
                 // PIPELINE: resource path is a archive path (MAPBND.DCX or MAPBHD/MAPBDT)
                 if (colAsset.AssetArchiveVirtualPath != null)
                 {
-                    job.AddLoadArchiveTask(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.CollisionHKX);
+                    job.AddLoadArchiveTask(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.CollisionHKX);
                 }
                 // PIPELINE: resource path is a direct path (FLVER.DCX)
                 else if (colAsset.AssetVirtualPath != null)
                 {
-                    job.AddLoadFileTask(colAsset.AssetVirtualPath, AccessLevel.AccessFull);
+                    job.AddLoadFileTask(colAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                 }
 
                 _loadingTask = job.Complete();

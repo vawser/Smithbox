@@ -173,13 +173,16 @@ namespace SoulsFormats
                 int tanCap = layoutMembers.Count(m => m.Semantic == FLVER.LayoutSemantic.Tangent);
                 int colorCap = layoutMembers.Count(m => m.Semantic == FLVER.LayoutSemantic.VertexColor);
 
-                int vertexCount = VertexBuffers[0].VertexCount;
-                Vertices = new List<FLVER.Vertex>(vertexCount);
-                for (int i = 0; i < vertexCount; i++)
-                    Vertices.Add(new FLVER.Vertex(uvCap, tanCap, colorCap));
+                if (VertexBuffers.Count > 0)
+                {
+                    int vertexCount = VertexBuffers[0].VertexCount;
+                    Vertices = new List<FLVER.Vertex>(vertexCount);
+                    for (int i = 0; i < vertexCount; i++)
+                        Vertices.Add(new FLVER.Vertex(uvCap, tanCap, colorCap));
 
-                foreach (VertexBuffer buffer in VertexBuffers)
-                    buffer.ReadBuffer(br, layouts, Vertices, dataOffset, header);
+                    foreach (VertexBuffer buffer in VertexBuffers)
+                        buffer.ReadBuffer(br, layouts, Vertices, dataOffset, header);
+                }
             }
 
             internal void Write(BinaryWriterEx bw, int index)

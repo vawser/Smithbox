@@ -302,6 +302,8 @@ public class ModelEditorScreen : EditorScreen
                 {
                     CFG.Current.ModelEditor_ViewLowCollision = !CFG.Current.ModelEditor_ViewLowCollision;
 
+                    TaskLogs.AddLog($"Collision_RootNode.Children.Count: {container.Collision_RootNode.Children.Count}");
+
                     foreach (var entry in container.Collision_RootNode.Children)
                     {
                         var colEntity = (CollisionEntity)entry;

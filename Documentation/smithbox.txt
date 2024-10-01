@@ -112,5 +112,4 @@ Texture Viewer:
 
 Add Collision section in hierarchy
 
-Collision disposal lags a bit on model change
-Collision visiblity flip is not working correctly
+Collision view toggle is not consistently working, collision handles not correct when it fails?

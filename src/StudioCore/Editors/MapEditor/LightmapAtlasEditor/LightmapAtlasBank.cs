@@ -61,7 +61,10 @@ public class LightmapAtlasBank
     // Need to implement this (apply on map save, target specific mapid)
     public void SaveBank(string mapid)
     {
-        foreach(var entry in LightmapAtlases[mapid])
+        if (!UsesLightmapAtlases())
+            return;
+
+        foreach (var entry in LightmapAtlases[mapid])
         {
             if(entry.IsModified)
             {

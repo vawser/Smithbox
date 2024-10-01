@@ -210,7 +210,6 @@ namespace StudioCore.Editors.ModelEditor
             {
                 if (_collisionHandle != null)
                 {
-                    _collisionHandle.Unload();
                     _collisionHandle = null;
                 }
             }

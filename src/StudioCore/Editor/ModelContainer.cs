@@ -39,6 +39,9 @@ public class ModelContainer : ObjectContainer
 
     public void LoadCollision(hkRootLevelContainer hkx, MeshRenderableProxy proxy, string name)
     {
+        // Re-build the root node on reach load
+        Collision_RootNode = new Entity(this, new ModelRootNode("Collision"));
+
         if (Universe.IsRendering)
         {
             TaskLogs.AddLog(name);

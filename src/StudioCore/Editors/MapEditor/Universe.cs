@@ -965,6 +965,8 @@ public class Universe
 
     public void LoadCollisionInModelEditor(hkRootLevelContainer hkx, MeshRenderableProxy proxy, string name)
     {
+        TaskLogs.AddLog($"LoadCollisionInModelEditor");
+
         if (LoadedModelContainers.ContainsKey(name))
         {
             LoadedModelContainers[name].LoadCollision(hkx, proxy, name);
