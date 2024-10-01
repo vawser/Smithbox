@@ -133,35 +133,39 @@ public class ModelContainer : ObjectContainer
             //ApplyDummyOffsetting(dummyPolyNode, flver.Dummies[i], flver, i);
         }
 
-        // High Collision
-        for (int i = 0; i < highCollisionProxy.Submeshes.Count; i++)
+        if (highCollisionProxy != null)
         {
-            if (highCollisionProxy.VirtPath.Contains("_h.hkx"))
+            // High Collision
+            for (int i = 0; i < highCollisionProxy.Submeshes.Count; i++)
             {
-                var collisionNode = new CollisionEntity(this, null, $@"Collision {i}", i, HavokCollisionType.High);
-                collisionNode.RenderSceneMesh = highCollisionProxy.Submeshes[i];
-                highCollisionProxy.Submeshes[i].SetSelectable(collisionNode);
+                if (highCollisionProxy.VirtPath.Contains("_h.hkx"))
+                {
+                    var collisionNode = new CollisionEntity(this, null, $@"Collision {i}", i, HavokCollisionType.High);
+                    collisionNode.RenderSceneMesh = highCollisionProxy.Submeshes[i];
+                    highCollisionProxy.Submeshes[i].SetSelectable(collisionNode);
 
-                Objects.Add(collisionNode);
-                HighCollision_RootNode.AddChild(collisionNode);
+                    Objects.Add(collisionNode);
+                    HighCollision_RootNode.AddChild(collisionNode);
+                }
             }
         }
 
-        TaskLogs.AddLog($"{DateTime.Now} lowCollisionProxy.Submeshes.Count: {lowCollisionProxy.Submeshes.Count}");
-
-        // Low Collision
-        for (int i = 0; i < lowCollisionProxy.Submeshes.Count; i++)
+        if (lowCollisionProxy != null)
         {
-            if (lowCollisionProxy.VirtPath.Contains("_l.hkx"))
+            // Low Collision
+            for (int i = 0; i < lowCollisionProxy.Submeshes.Count; i++)
             {
-                var collisionNode = new CollisionEntity(this, null, $@"Collision {i}", i, HavokCollisionType.Low);
-                collisionNode.RenderSceneMesh = lowCollisionProxy.Submeshes[i];
-                lowCollisionProxy.Submeshes[i].SetSelectable(collisionNode);
+                if (lowCollisionProxy.VirtPath.Contains("_l.hkx"))
+                {
+                    var collisionNode = new CollisionEntity(this, null, $@"Collision {i}", i, HavokCollisionType.Low);
+                    collisionNode.RenderSceneMesh = lowCollisionProxy.Submeshes[i];
+                    lowCollisionProxy.Submeshes[i].SetSelectable(collisionNode);
 
-                TaskLogs.AddLog($"{DateTime.Now} {collisionNode.Name} is selectable");
+                    TaskLogs.AddLog($"{DateTime.Now} {collisionNode.Name} is selectable");
 
-                Objects.Add(collisionNode);
-                LowCollision_RootNode.AddChild(collisionNode);
+                    Objects.Add(collisionNode);
+                    LowCollision_RootNode.AddChild(collisionNode);
+                }
             }
         }
     }
