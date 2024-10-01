@@ -201,17 +201,13 @@ namespace StudioCore.Editors.ModelEditor
             // FLVER
             if (handle is ResourceHandle<FlverResource>)
             {
-                _flverhandle.Unload();
                 _flverhandle = null;
             }
 
             // Collision
             if (handle is ResourceHandle<HavokCollisionResource>)
             {
-                if (_collisionHandle != null)
-                {
-                    _collisionHandle = null;
-                }
+                _collisionHandle = null;
             }
         }
 
