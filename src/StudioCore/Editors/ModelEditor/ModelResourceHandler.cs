@@ -204,6 +204,7 @@ namespace StudioCore.Editors.ModelEditor
                 internalFlver.Name = modelid;
                 internalFlver.ModelID = modelid;
                 internalFlver.CurrentFLVER = FLVER2.Read(LoadedFlverContainer.LoosePath);
+                internalFlver.InitialFlverBytes = File.ReadAllBytes(modelAsset.AssetPath);
                 internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
 
                 LoadedFlverContainer.InternalFlvers.Add(internalFlver);
@@ -222,6 +223,7 @@ namespace StudioCore.Editors.ModelEditor
                             internalFlver.Name = modelid;
                             internalFlver.ModelID = modelid;
                             internalFlver.CurrentFLVER = FLVER2.Read(modelAsset.AssetPath);
+                            internalFlver.InitialFlverBytes = File.ReadAllBytes(modelAsset.AssetPath);
                             internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
 
                             LoadedFlverContainer.InternalFlvers.Add(internalFlver);
@@ -243,6 +245,7 @@ namespace StudioCore.Editors.ModelEditor
                                     internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
                                     internalFlver.ModelID = modelid;
                                     internalFlver.CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
+                                    internalFlver.InitialFlverBytes = reader.ReadFile(file).ToArray();
                                     internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
 
                                     LoadedFlverContainer.InternalFlvers.Add(internalFlver);
@@ -275,6 +278,7 @@ namespace StudioCore.Editors.ModelEditor
                                         internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
                                         internalFlver.ModelID = modelid;
                                         internalFlver.CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
+                                        internalFlver.InitialFlverBytes = reader.ReadFile(file).ToArray();
                                         internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
 
                                         LoadedFlverContainer.InternalFlvers.Add(internalFlver);
@@ -320,6 +324,7 @@ namespace StudioCore.Editors.ModelEditor
                                             internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
                                             internalFlver.ModelID = modelid;
                                             internalFlver.CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
+                                            internalFlver.InitialFlverBytes = reader.ReadFile(file).ToArray();
                                             internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
 
                                             LoadedFlverContainer.InternalFlvers.Add(internalFlver);
@@ -517,7 +522,7 @@ namespace StudioCore.Editors.ModelEditor
                 // For loose files, save directly
                 if (LoadedFlverContainer.Type == ModelEditorModelType.Loose)
                 {
-                    WriteLooseFlver();
+                    WriteLooseFlver(LoadedFlverContainer.LoosePath, false);
                 }
                 // Copy the binder to the mod directory if it does not already exist.
                 else
@@ -526,35 +531,89 @@ namespace StudioCore.Editors.ModelEditor
 
                     if (exists)
                     {
-                        if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
+                        if (LoadedFlverContainer.Type == ModelEditorModelType.MapPiece)
                         {
-                            if (LoadedFlverContainer.Type == ModelEditorModelType.MapPiece)
+                            // .flver
+                            if (Smithbox.ProjectType == ProjectType.DS1)
                             {
-                                // TODO
-                                //WriteModelFlver(); // DS1 doesn't wrap the mappiece flver within a container
+                                var directory = $"map\\{LoadedFlverContainer.MapID}\\";
+                                var path = $"map\\{LoadedFlverContainer.MapID}\\{LoadedFlverContainer.ContainerName}.flver";
+
+                                var projectDirectory = $"{Smithbox.ProjectRoot}\\{directory}";
+                                var savePath = $"{Smithbox.ProjectRoot}\\{path}";
+
+                                if (!Directory.Exists(projectDirectory))
+                                {
+                                    Directory.CreateDirectory(projectDirectory);
+                                }
+
+                                WriteLooseFlver(savePath, false);
                             }
+                            // .flver.dcx
+                            else if(Smithbox.ProjectType == ProjectType.DS1R)
+                            {
+                                var compressionType = DCX.Type.DCX_DFLT_10000_24_9;
+
+                                var directory = $"map\\{LoadedFlverContainer.MapID}\\";
+                                var path = $"map\\{LoadedFlverContainer.MapID}\\{LoadedFlverContainer.ContainerName}.flver.dcx";
+
+                                var projectDirectory = $"{Smithbox.ProjectRoot}\\{directory}";
+                                var savePath = $"{Smithbox.ProjectRoot}\\{path}";
+
+                                if (!Directory.Exists(projectDirectory))
+                                {
+                                    Directory.CreateDirectory(projectDirectory);
+                                }
+
+                                WriteLooseFlver(savePath, true, compressionType);
+                            }
+                            // .mapbnd
                             else
                             {
-                                WriteModelBinderBND3();
+                                WriteModelBinderBND4();
                             }
                         }
                         else
                         {
-                            WriteModelBinderBND4();
+                            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+                            {
+                                WriteModelBinderBND3();
+                            }
+                            else
+                            {
+                                WriteModelBinderBND4();
+                            }
                         }
                     }
                 }
             }
         }
 
-        private void WriteLooseFlver()
+        /// <summary>
+        /// Used for loose .FLVER and DS1/DS1R saving
+        /// </summary>
+        private void WriteLooseFlver(string path, bool compress, DCX.Type compressionType = DCX.Type.None)
         {
             // Backup loose file
-            File.Copy(LoadedFlverContainer.LoosePath, $@"{LoadedFlverContainer.LoosePath}.bak", true);
+            File.Copy(path, $@"{path}.bak", true);
 
-            byte[] flverBytes = LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER.Write();
-            File.WriteAllBytes(LoadedFlverContainer.LoosePath, flverBytes);
-            TaskLogs.AddLog($"Saved model at: {LoadedFlverContainer.LoosePath}");
+            byte[] flverBytes = null;
+
+            if(compress)
+            {
+                flverBytes = LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER.Write(compressionType);
+            }
+            else
+            {
+                flverBytes = LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER.Write();
+            }
+
+            if (flverBytes != null)
+            {
+                File.WriteAllBytes(path, flverBytes);
+
+                TaskLogs.AddLog($"Saved model at: {path}");
+            }
         }
 
         /// <summary>

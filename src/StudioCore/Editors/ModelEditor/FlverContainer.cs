@@ -19,6 +19,9 @@ namespace StudioCore.Editors.ModelEditor
         public string ModelID;
         public FLVER2 CurrentFLVER;
         public string VirtualResourcePath = "";
+
+        // Hold the bytes of the FLVER before saving (for byte perfect test)
+        public byte[] InitialFlverBytes { get; set; }
     }
 
     /// <summary>
@@ -55,6 +58,7 @@ namespace StudioCore.Editors.ModelEditor
 
         public hkRootLevelContainer ER_LowCollision { get; set; }
         public hkRootLevelContainer ER_HighCollision { get; set; }
+
 
         public FlverContainer(string name, string loosePath)
         {

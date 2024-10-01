@@ -66,7 +66,8 @@ public class DebugWindow
         [Display(Name = "MSBE - Byte Perfect Test")] Test_MSBE_BytePerfect,
         [Display(Name = "MSB_AC6 - Byte Perfect Test")] Test_MSB_AC6_BytePerfect,
         [Display(Name = "BTL - Byte Perfect Test")] Test_BTL_BytePerfect,
-        [Display(Name = "Unique Param Row ID Insert")] Test_UniqueParamRowIDs
+        [Display(Name = "Unique Param Row ID Insert")] Test_UniqueParamRowIDs,
+        [Display(Name = "FLVER2 - Byte Perfect Test")] Test_FLVER2_BytePerfect,
     }
 
     public void Display()
@@ -194,6 +195,9 @@ public class DebugWindow
                     break;
                 case SelectedDebugTab.Test_UniqueParamRowIDs:
                     DisplayTest_UniqueParamRows();
+                    break;
+                case SelectedDebugTab.Test_FLVER2_BytePerfect:
+                    DisplayTest_FLVER2();
                     break;
             }
             ImGui.EndChild();
@@ -396,5 +400,9 @@ public class DebugWindow
         {
             ParamUniqueRowFinder.Run();
         }
+    }
+    private void DisplayTest_FLVER2()
+    {
+        Test_FLVER2_BytePerfect.Display();
     }
 }
