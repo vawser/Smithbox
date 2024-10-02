@@ -15,6 +15,8 @@ public static class ParamComparisonReport
 {
     public static bool ShowReportModal = false;
 
+    public static string CurrentParamProcessing = "";
+
     public static string ReportText = "";
 
     public static bool IsReportGenerated = false;
@@ -22,6 +24,17 @@ public static class ParamComparisonReport
 
     public static bool ImportNamesOnGeneration_Primary = false;
     public static bool ImportNamesOnGeneration_Compare = false;
+
+    public static bool ExcludeRowIndexedParams = true;
+    private static List<string> ExcludedParams = new List<string>()
+    {
+         // ER
+        "RandomAppearParam",
+
+        // AC6
+        "ThrustersParam_NPC",
+        "ThrustersParam_PC"
+    };
 
     public static void ViewReport()
     {
@@ -70,6 +83,16 @@ public static class ParamComparisonReport
 
         foreach (var param in primaryBank.Params)
         {
+            CurrentParamProcessing = param.Key;
+
+            if (ExcludeRowIndexedParams)
+            {
+                if (ExcludedParams.Contains(param.Key))
+                {
+                    continue;  
+                }
+            }
+            
             var primaryParam = param.Value;
             if (compareBank.Params.ContainsKey(param.Key))
             {
@@ -209,6 +232,9 @@ public static class ParamComparisonReport
         }
         ImGui.Checkbox("Import Row Names on Report Generation for Primary Bank", ref ImportNamesOnGeneration_Primary);
         ImGui.Checkbox("Import Row Names on Report Generation for Comparison Bank", ref ImportNamesOnGeneration_Compare);
+        ImGui.Checkbox("Ignore Row Indexed Params", ref ExcludeRowIndexedParams);
+        UIHelper.ShowHoverTooltip("Ignores params that have multiple rows of the same ID (e.g. use row index rather than ID for identity), as this isn't handled currently and will erroneously show differences.");
+
         ImGui.Separator();
 
         if (IsReportGenerated)
@@ -242,6 +268,7 @@ public static class ParamComparisonReport
             var buttonSize = new Vector2(UI.Current.Interface_ModalWidth, UI.Current.Interface_ButtonHeight);
 
             ImGui.Text("Report is being generated...");
+            ImGui.Text($"Current Param: {CurrentParamProcessing}");
 
             if (ImGui.Button("Close", buttonSize))
             {

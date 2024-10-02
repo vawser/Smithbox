@@ -76,7 +76,7 @@ namespace StudioCore.Editors.ModelEditor
             return LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER;
         }
 
-        public void SetLoadedState(string name)
+        public void ResetState(string name)
         {
             Screen.EditorActionManager.Clear();
             Screen.ModelHierarchy.ResetSelection();
@@ -90,12 +90,7 @@ namespace StudioCore.Editors.ModelEditor
                 Screen.ViewportHandler._flverhandle.CompleteRelease();
             }
 
-            ClearCollisions();
-        }
-
-        public void ClearCollisions()
-        {
-            // HACK: clear all collisions on loads
+            // HACK: clear all viewport collisions on load
             foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())
             {
                 if (item.Key.Contains("collision"))
@@ -111,7 +106,7 @@ namespace StudioCore.Editors.ModelEditor
         /// <param name="name"></param>
         public void LoadLooseFLVER(string name, string loosePath)
         {
-            SetLoadedState(name);
+            ResetState(name);
 
             LoadedFlverContainer = new FlverContainer(name, loosePath);
 
@@ -129,7 +124,7 @@ namespace StudioCore.Editors.ModelEditor
         /// <param name="name"></param>
         public void LoadCharacter(string name)
         {
-            SetLoadedState(name);
+            ResetState(name);
 
             LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Character, "");
 
@@ -150,7 +145,7 @@ namespace StudioCore.Editors.ModelEditor
             HavokCollisionManager.Screen = Screen;
             HavokCollisionManager.OnLoadModel(name, ModelEditorModelType.Object);
 
-            SetLoadedState(name);
+            ResetState(name);
 
             LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Object, "");
 
@@ -179,7 +174,7 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadPart(string name)
         {
-            SetLoadedState(name);
+            ResetState(name);
 
             LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Parts, "");
 
@@ -196,7 +191,7 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadMapPiece(string name, string mapId)
         {
-            SetLoadedState(name);
+            ResetState(name);
 
             LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.MapPiece, mapId);
 
