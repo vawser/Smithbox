@@ -557,8 +557,9 @@
     <vsPlayerDmgCorrectRate_Disease AltName="Vs. Player - Scarlet Rot Damage %" Wiki="Only attacks on the player will correct the damage done." />
     <vsPlayerDmgCorrectRate_Curse AltName="Vs. Player - Blight Damage %" Wiki="Only attacks on the player will correct the damage done." />
     <pad AltName="" IsHidden=""/>
-    <restrictSpecialSwordArt AltName="Restrict Special Ashes of War" Wiki="If set to true, then ashes of war in EquipParamGem with isSpecialSwordArt set to 1 cannot be applied to this weapon." /> 
-    <allowMagicCast AltName="Allow Magic Casting" IsBool="" />
+    <restrictSpecialSwordArt AltName="Restrict Special Ashes of War" Wiki="If set to true, then ashes of war in EquipParamGem with isSpecialSwordArt set to 1 cannot be applied to this weapon." IsBool="" />
+    <isArrow AltName="Is Arrow" Wiki="[DLC] Is on by default for arrows." IsBool=""/>
+    <isWeaponCatalyst AltName="Is Weapon Catalyst" Wiki="[DLC] Is on by default for Carian Sorcery Sword." IsBool="" />
   </Field>
   <Self Wiki="Defines weapon types and each affinity.\nIncludes arrows and bolts. Responsible for scaling shown on certain consumables.\nIDs not ending in a multiple of 100 are ignored.\nPermitting affinities on a weapon without affinity rows at the correct IDs will result in the nearest 10000 being used.\nSpEffects specified here can be modified by upgrades in ReinforceParamWeapon." OffsetSize="100" AlternativeOrder="sortId,trophySGradeId,-,
 behaviorVariationId,swordArtsParamId,wepmotionCategory,guardmotionCategory,wepmotionOneHandId,wepmotionBothHandId,-,
@@ -583,10 +584,10 @@ overStrength,-,
 guardBaseRepel,attackBaseRepel,guardCutCancelRate,guardLevel,-,
 rightHandEquipable,leftHandEquipable,bothHandEquipable,arrowSlotEquipable,boltSlotEquipable,-,
 enableGuard,enableParry,enableMagic,enableMiracle,enableSorcery,enableVowMagic,-,
-isDualBlade,isEnhance,-,
+isDualBlade,isEnhance,isArrow,isWeaponCatalyst,-,
 disableBaseChangeReset,disableRepair,isDarkHand,simpleModelForDlc,lanternWep,isVersusGhostWep,baseChangeCategory,isDragonSlayer,-,
 isDeposit,disableMultiDropShare,isDiscard,isDrop,isAutoEquip,-,
-showLogCondType,enableThrow,showDialogCondType,disableGemAttr,defSfxMaterial1,wepCollidableType0,wepCollidableType1,postureControlId_Right,postureControlId_Left,-,
+showLogCondType,enableThrow,showDialogCondType,disableGemAttr,restrictSpecialSwordArt,defSfxMaterial1,wepCollidableType0,wepCollidableType1,postureControlId_Right,postureControlId_Left,-,
 traceSfxId0,traceDmyIdHead0,traceDmyIdTail0,traceSfxId1,traceDmyIdHead1,traceDmyIdTail1,traceSfxId2,traceDmyIdHead2,traceDmyIdTail2,traceSfxId3,traceDmyIdHead3,traceDmyIdTail3,traceSfxId4,traceDmyIdHead4,traceDmyIdTail4,traceSfxId5,traceDmyIdHead5,traceDmyIdTail5,traceSfxId6,traceDmyIdHead6,traceDmyIdTail6,traceSfxId7,traceDmyIdHead7,traceDmyIdTail7,-,
 defSfxMaterial2,defSeMaterial2,absorpParamId,toughnessCorrectRate,isValidTough_ProtSADmg,isEnableEmergencyStep,invisibleOnRemo,pad2,sortGroupId,atkAttribute2,autoReplenishType,arrowBoltEquipId,DerivationLevelType,enchantSfxSize,-,
 residentSfxId_1,residentSfxId_2,residentSfxId_3,residentSfxId_4,residentSfx_DmyId_1,residentSfx_DmyId_2,residentSfx_DmyId_3,residentSfx_DmyId_4,-,
