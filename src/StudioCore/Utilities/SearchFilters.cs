@@ -9,7 +9,7 @@ namespace StudioCore.Utilities;
 public static class SearchFilters
 {
     /// <summary>
-    /// Returns true is the input string (whole or part) matches a filename, reference name or tag.
+    /// Returns true is the input string (whole or part) matches the passed string.
     /// </summary>
     public static bool IsBasicMatch(string rawInput, string rawStr)
     {

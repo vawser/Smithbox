@@ -308,6 +308,44 @@ public static class MapLocator
     }
 
     /// <summary>
+    /// Get list of maps for target project path
+    /// </summary>
+    /// <returns></returns>
+    public static List<string> GetMapList(string projectPath)
+    {
+        HashSet<string> mapSet = new();
+
+        // DS2 has its own structure for msbs, where they are all inside individual folders
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        {
+            var maps = Directory.GetFileSystemEntries(projectPath + @"\map", @"m*").ToList();
+
+            foreach (var map in maps)
+                mapSet.Add(Path.GetFileNameWithoutExtension($@"{map}.blah"));
+        }
+        else
+        {
+            var msbFiles = Directory
+                .GetFileSystemEntries(projectPath + @"\map\MapStudio\", @"*.msb")
+                .Select(Path.GetFileNameWithoutExtension).ToList();
+
+            msbFiles.AddRange(Directory
+                .GetFileSystemEntries(projectPath + @"\map\MapStudio\", @"*.msb.dcx")
+                .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension).ToList());
+
+            foreach (var msb in msbFiles)
+                mapSet.Add(msb);
+        }
+
+        Regex mapRegex = new(@"^m\d{2}_\d{2}_\d{2}_\d{2}$");
+        var mapList = mapSet.Where(x => mapRegex.IsMatch(x)).ToList();
+
+        mapList.Sort();
+
+        return mapList;
+    }
+
+    /// <summary>
     /// Gets the adjusted map ID that contains all the map assets
     /// </summary>
     /// <param name="mapid">The msb map ID to adjust</param>

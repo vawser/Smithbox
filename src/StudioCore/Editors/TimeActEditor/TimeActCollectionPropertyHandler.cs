@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Utils;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -52,6 +53,8 @@ public class TimeActCollectionPropertyHandler
         CreateEventModal();
     }
 
+    private string _eventTypeCreateSearchStr = "";
+
     /// <summary>
     /// Display TAE.Event creation modal.
     /// </summary>
@@ -70,15 +73,23 @@ public class TimeActCollectionPropertyHandler
             if (curEvent != null && curTemplate != null)
             {
                 ImGui.Text("Event Types:");
+
+                ImGui.SetNextItemWidth(listboxSize.X);
+                ImGui.InputText("##eventTypeSearch", ref _eventTypeCreateSearchStr, 255);
+
                 if (ImGui.BeginListBox("##eventTypes", listboxSize))
                 {
                     foreach (var entry in curTemplate.Events)
                     {
                         TAE.Template.EventTemplate eventType = entry.Value;
 
-                        if (ImGui.Selectable($"[{eventType.ID}] {eventType.Name}##eventEntry{eventType.ID}", eventType == CurrentEvent))
+                        if (SearchFilters.IsBasicMatch(_eventTypeCreateSearchStr, eventType.Name) ||
+                           SearchFilters.IsBasicMatch(_eventTypeCreateSearchStr, $"{eventType.ID}"))
                         {
-                            CurrentEvent = eventType;
+                            if (ImGui.Selectable($"[{eventType.ID}] {eventType.Name}##eventEntry{eventType.ID}", eventType == CurrentEvent))
+                            {
+                                CurrentEvent = eventType;
+                            }
                         }
                     }
 

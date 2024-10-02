@@ -524,6 +524,9 @@ public class EditorDecorations
         if (Smithbox.LowRequirementsMode)
             return;
 
+        if (Smithbox.EditorHandler.TextureViewer.ImagePreview == null)
+            return;
+
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRef_Text);
 
         ImGui.TextUnformatted("View Source Image");
