@@ -35,6 +35,8 @@ namespace StudioCore.Editors.ModelEditor
         public MeshRenderableProxy _HighCollision_RenderMesh;
 
         public ResourceHandle<FlverResource> _flverhandle;
+        public ResourceHandle<HavokCollisionResource> _lowCollisionHandle;
+        public ResourceHandle<HavokCollisionResource> _highCollisionHandle;
 
         public string ContainerID;
 
@@ -53,6 +55,22 @@ namespace StudioCore.Editors.ModelEditor
             // Required to stop the LowRequirements build from failing
             if (Smithbox.LowRequirementsMode)
                 return;
+
+            if (handle is ResourceHandle<HavokCollisionResource>)
+            {
+                var colHandle = (ResourceHandle<HavokCollisionResource>)handle;
+
+                if (colHandle.AssetVirtualPath.Contains("_h"))
+                {
+                    _highCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
+                    _highCollisionHandle.Acquire();
+                }
+                if (colHandle.AssetVirtualPath.Contains("_l"))
+                {
+                    _lowCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
+                    _lowCollisionHandle.Acquire();
+                }
+            }
 
             // FLVER
             if (handle is ResourceHandle<FlverResource>)
@@ -87,6 +105,7 @@ namespace StudioCore.Editors.ModelEditor
                     if (r.Flver != null)
                     {
                         Screen._universe.UnloadModels();
+
                         Screen._universe.LoadFlverInModelEditor(currentFlverClone, currentInfo.ContainerName, _Flver_RenderMesh, _LowCollision_RenderMesh, _HighCollision_RenderMesh);
 
                         ContainerID = Screen.ResourceHandler.LoadedFlverContainer.ContainerName;
@@ -109,6 +128,22 @@ namespace StudioCore.Editors.ModelEditor
             if (handle is ResourceHandle<FlverResource>)
             {
                 _flverhandle = null;
+            }
+
+            if (handle is ResourceHandle<HavokCollisionResource>)
+            {
+                var colHandle = (ResourceHandle<HavokCollisionResource>)handle;
+
+                if (colHandle.AssetVirtualPath.Contains("_h"))
+                {
+                    _highCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
+                    _highCollisionHandle.Acquire();
+                }
+                if (colHandle.AssetVirtualPath.Contains("_l"))
+                {
+                    _lowCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
+                    _lowCollisionHandle.Acquire();
+                }
             }
         }
 

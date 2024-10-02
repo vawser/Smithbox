@@ -212,6 +212,12 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
         ReferenceCount++;
     }
 
+    public void CompleteRelease()
+    {
+        ResourceManager.UnloadResource(this, true);
+        ReferenceCount = 0;
+    }
+
     public void Release(bool force = false)
     {
         var unload = false;

@@ -38,15 +38,9 @@ public class ModelContainer : ObjectContainer
         Bone_RootNode = new Entity(this, new ModelRootNode("Bones"));
         DummyPoly_RootNode = new Entity(this, new ModelRootNode("Dummy Polygons"));
 
-        HighCollision_RootNode = new Entity(this, new ModelRootNode("High Collision"));
-        LowCollision_RootNode = new Entity(this, new ModelRootNode("Low Collision"));
-
         RootObject.AddChild(Mesh_RootNode);
         RootObject.AddChild(Bone_RootNode);
         RootObject.AddChild(DummyPoly_RootNode);
-
-        RootObject.AddChild(HighCollision_RootNode);
-        RootObject.AddChild(LowCollision_RootNode);
     }
 
     public void OnGui()
@@ -70,18 +64,6 @@ public class ModelContainer : ObjectContainer
         foreach (var entry in Bone_RootNode.Children)
         {
             entry.EditorVisible = CFG.Current.ModelEditor_ViewBones;
-        }
-
-        // High Collision
-        foreach (CollisionEntity entry in HighCollision_RootNode.Children)
-        {
-            entry.EditorVisible = CFG.Current.ModelEditor_ViewHighCollision;
-        }
-
-        // Low Collision
-        foreach (CollisionEntity entry in LowCollision_RootNode.Children)
-        {
-            entry.EditorVisible = CFG.Current.ModelEditor_ViewLowCollision;
         }
     }
 
@@ -131,42 +113,6 @@ public class ModelContainer : ObjectContainer
             DummyPoly_RootNode.AddChild(dummyPolyNode);
 
             //ApplyDummyOffsetting(dummyPolyNode, flver.Dummies[i], flver, i);
-        }
-
-        if (highCollisionProxy != null)
-        {
-            // High Collision
-            for (int i = 0; i < highCollisionProxy.Submeshes.Count; i++)
-            {
-                if (highCollisionProxy.VirtPath.Contains("_h.hkx"))
-                {
-                    var collisionNode = new CollisionEntity(this, null, $@"Collision {i}", i, HavokCollisionType.High);
-                    collisionNode.RenderSceneMesh = highCollisionProxy.Submeshes[i];
-                    highCollisionProxy.Submeshes[i].SetSelectable(collisionNode);
-
-                    Objects.Add(collisionNode);
-                    HighCollision_RootNode.AddChild(collisionNode);
-                }
-            }
-        }
-
-        if (lowCollisionProxy != null)
-        {
-            // Low Collision
-            for (int i = 0; i < lowCollisionProxy.Submeshes.Count; i++)
-            {
-                if (lowCollisionProxy.VirtPath.Contains("_l.hkx"))
-                {
-                    var collisionNode = new CollisionEntity(this, null, $@"Collision {i}", i, HavokCollisionType.Low);
-                    collisionNode.RenderSceneMesh = lowCollisionProxy.Submeshes[i];
-                    lowCollisionProxy.Submeshes[i].SetSelectable(collisionNode);
-
-                    TaskLogs.AddLog($"{DateTime.Now} {collisionNode.Name} is selectable");
-
-                    Objects.Add(collisionNode);
-                    LowCollision_RootNode.AddChild(collisionNode);
-                }
-            }
         }
     }
 

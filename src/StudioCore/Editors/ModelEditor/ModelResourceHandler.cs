@@ -84,6 +84,19 @@ namespace StudioCore.Editors.ModelEditor
             Screen._selection.ClearSelection();
 
             Screen.ToolWindow.ModelUsageSearch._searchInput = name;
+
+            if (Screen.ViewportHandler._flverhandle != null)
+            {
+                Screen.ViewportHandler._flverhandle.CompleteRelease();
+            }
+            if (Screen.ViewportHandler._highCollisionHandle != null)
+            {
+                Screen.ViewportHandler._highCollisionHandle.CompleteRelease();
+            }
+            if (Screen.ViewportHandler._lowCollisionHandle != null)
+            {
+                Screen.ViewportHandler._lowCollisionHandle.CompleteRelease();
+            }
         }
 
         /// <summary>

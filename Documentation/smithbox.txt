@@ -53,6 +53,7 @@ Model Editor:
  - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
  - FIX: account for scale when displaying dummies/bones
  - FIX: DS2 Flvers don't load
+- FIX: initial model load works correctly (wrt filters) but subsequent loads lose the connection to the ModelContainer
 
 Material Editor
  - ADD: Implement Material/MATBIN editor
@@ -110,6 +111,4 @@ Texture Viewer:
 # PRIORITY
 - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
 - ADD: Add Collision section in hierarchy
-- FIX: initial model load works correctly (wrt filters) but subsequent loads lose the connection to the ModelContainer
 
-1_15_0_1000L
