@@ -404,40 +404,43 @@ namespace StudioCore.Editors.ModelEditor
                             displayedName = displayedName.Replace($"A{map.Substring(1, 2)}", "");
                         }
 
-                        foreach (var entry in Smithbox.AliasCacheHandler.AliasCache.MapPieceDict[map])
+                        if (Smithbox.AliasCacheHandler.AliasCache.MapPieceDict.ContainsKey(map))
                         {
-                            var mapPieceName = $"{entry.Replace(map, "m")}";
-
-                            if (ImGui.Selectable(mapPieceName, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
+                            foreach (var entry in Smithbox.AliasCacheHandler.AliasCache.MapPieceDict[map])
                             {
-                                _selectedEntry = entry;
-                                _selectedEntryType = ModelSelectionType.MapPiece;
+                                var mapPieceName = $"{entry.Replace(map, "m")}";
 
-                                if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                                if (ImGui.Selectable(mapPieceName, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                                 {
-                                    _selectedMapId = map;
-                                    Screen.ResourceHandler.LoadMapPiece(_selectedEntry, map);
-                                }
-                            }
-                            if (ImGui.IsItemVisible())
-                            {
-                                DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
-                            }
+                                    _selectedEntry = entry;
+                                    _selectedEntryType = ModelSelectionType.MapPiece;
 
-                            if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{entry}"))
-                            {
-                                if (ImGui.Selectable("Go to Alias"))
-                                {
-                                    if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
+                                    if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                                     {
-                                        Smithbox.WindowHandler.SettingsWindow.ToggleMenuVisibility();
+                                        _selectedMapId = map;
+                                        Screen.ResourceHandler.LoadMapPiece(_selectedEntry, map);
+                                    }
+                                }
+                                if (ImGui.IsItemVisible())
+                                {
+                                    DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
+                                }
+
+                                if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{entry}"))
+                                {
+                                    if (ImGui.Selectable("Go to Alias"))
+                                    {
+                                        if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
+                                        {
+                                            Smithbox.WindowHandler.SettingsWindow.ToggleMenuVisibility();
+                                        }
+
+                                        Smithbox.WindowHandler.SettingsWindow.DisplayMapPieceTab = true;
+                                        Smithbox.WindowHandler.SettingsWindow.TargetMapPieceID = entry;
                                     }
 
-                                    Smithbox.WindowHandler.SettingsWindow.DisplayMapPieceTab = true;
-                                    Smithbox.WindowHandler.SettingsWindow.TargetMapPieceID = entry;
+                                    ImGui.EndPopup();
                                 }
-
-                                ImGui.EndPopup();
                             }
                         }
                     }
