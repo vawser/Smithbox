@@ -56,6 +56,7 @@ namespace StudioCore.Editors.ModelEditor
             if (Smithbox.LowRequirementsMode)
                 return;
 
+            // Collision
             if (handle is ResourceHandle<HavokCollisionResource>)
             {
                 var colHandle = (ResourceHandle<HavokCollisionResource>)handle;
@@ -237,7 +238,7 @@ namespace StudioCore.Editors.ModelEditor
             if (Universe.IsRendering)
             {
                 // High Collision
-                if(collisionAsset.AssetVirtualPath.Contains("_h"))
+                if (collisionAsset.AssetVirtualPath.Contains("_h"))
                 {
                     if (_HighCollision_RenderMesh != null)
                     {

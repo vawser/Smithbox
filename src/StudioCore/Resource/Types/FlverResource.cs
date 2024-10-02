@@ -1283,6 +1283,9 @@ public class FlverResource : IResource, IDisposable
 
     private unsafe void ProcessMesh(FLVER2.Mesh mesh, FlverSubmesh dest)
     {
+        if (mesh.Vertices == null)
+            return;
+
         dest.Material = GPUMaterials[mesh.MaterialIndex];
 
         var vSize = dest.Material.VertexSize;

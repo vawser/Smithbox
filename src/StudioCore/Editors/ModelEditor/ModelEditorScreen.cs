@@ -253,6 +253,7 @@ public class ModelEditorScreen : EditorScreen
                     CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
+                UIHelper.ShowHoverTooltip("Only applies on model reload.");
 
                 UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
                 if (ImGui.MenuItem("Dummy Polygons"))
@@ -278,6 +279,7 @@ public class ModelEditorScreen : EditorScreen
                         CFG.Current.ModelEditor_ViewHighCollision = !CFG.Current.ModelEditor_ViewHighCollision;
                     }
                     UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewHighCollision);
+                    UIHelper.ShowHoverTooltip("Only applies on model reload.");
 
                     // Low
                     UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
@@ -286,6 +288,7 @@ public class ModelEditorScreen : EditorScreen
                         CFG.Current.ModelEditor_ViewLowCollision = !CFG.Current.ModelEditor_ViewLowCollision;
                     }
                     UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewLowCollision);
+                    UIHelper.ShowHoverTooltip("Only applies on model reload.");
                 }
             }
 

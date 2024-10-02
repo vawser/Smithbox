@@ -89,13 +89,19 @@ namespace StudioCore.Editors.ModelEditor
             {
                 Screen.ViewportHandler._flverhandle.CompleteRelease();
             }
-            if (Screen.ViewportHandler._highCollisionHandle != null)
+
+            ClearCollisions();
+        }
+
+        public void ClearCollisions()
+        {
+            // HACK: clear all collisions on loads
+            foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())
             {
-                Screen.ViewportHandler._highCollisionHandle.CompleteRelease();
-            }
-            if (Screen.ViewportHandler._lowCollisionHandle != null)
-            {
-                Screen.ViewportHandler._lowCollisionHandle.CompleteRelease();
+                if (item.Key.Contains("collision"))
+                {
+                    item.Value.Release(true);
+                }
             }
         }
 
@@ -393,45 +399,48 @@ namespace StudioCore.Editors.ModelEditor
                 modelAsset.AssetVirtualPath = $"loose/flver/{LoadedFlverContainer.LoosePath}";
             }
 
-            Screen.ViewportHandler.UpdateRenderMesh(modelAsset, skipModel);
-
-            // PIPELINE: resource has not already been loaded
-            if (!ResourceManager.IsResourceLoadedOrInFlight(modelAsset.AssetVirtualPath, AccessLevel.AccessFull))
+            if (CFG.Current.ModelEditor_ViewMeshes)
             {
-                // Ignore this if we are only loading textures
-                if (!skipModel)
-                {
-                    // PIPELINE: resource path is a archive path (MAPBND.DCX or MAPBHD/MAPBDT)
-                    if (modelAsset.AssetArchiveVirtualPath != null)
-                    {
-                        job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
-                    }
-                    // PIPELINE: resource path is a direct path (FLVER.DCX)
-                    else if (modelAsset.AssetVirtualPath != null)
-                    {
-                        job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessFull);
-                    }
-                }
+                Screen.ViewportHandler.UpdateRenderMesh(modelAsset, skipModel);
 
-                if (Universe.IsRendering)
+                // PIPELINE: resource has not already been loaded
+                if (!ResourceManager.IsResourceLoadedOrInFlight(modelAsset.AssetVirtualPath, AccessLevel.AccessFull))
                 {
-                    if (CFG.Current.Viewport_Enable_Texturing)
+                    // Ignore this if we are only loading textures
+                    if (!skipModel)
                     {
-                        if (textureAsset.AssetArchiveVirtualPath != null)
+                        // PIPELINE: resource path is a archive path (MAPBND.DCX or MAPBHD/MAPBDT)
+                        if (modelAsset.AssetArchiveVirtualPath != null)
                         {
-                            job.AddLoadArchiveTask(textureAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
+                            job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
                         }
-                        else if (textureAsset.AssetVirtualPath != null)
+                        // PIPELINE: resource path is a direct path (FLVER.DCX)
+                        else if (modelAsset.AssetVirtualPath != null)
                         {
-                            job.AddLoadFileTask(textureAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                            job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessFull);
                         }
                     }
+
+                    if (Universe.IsRendering)
+                    {
+                        if (CFG.Current.Viewport_Enable_Texturing)
+                        {
+                            if (textureAsset.AssetArchiveVirtualPath != null)
+                            {
+                                job.AddLoadArchiveTask(textureAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
+                            }
+                            else if (textureAsset.AssetVirtualPath != null)
+                            {
+                                job.AddLoadFileTask(textureAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                            }
+                        }
+                    }
+
+                    _loadingTask = job.Complete();
                 }
 
-                _loadingTask = job.Complete();
+                ResourceManager.AddResourceListener<FlverResource>(modelAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
             }
-
-            ResourceManager.AddResourceListener<FlverResource>(modelAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
         }
 
         private void LoadCollisionInternal(string modelid, string postfix)
@@ -446,26 +455,30 @@ namespace StudioCore.Editors.ModelEditor
                 return;
             }
 
-            Screen.ViewportHandler.UpdateRenderMeshCollision(colAsset);
-
-            // PIPELINE: resource has not already been loaded
-            if (!ResourceManager.IsResourceLoadedOrInFlight(colAsset.AssetVirtualPath, AccessLevel.AccessFull))
+            if (CFG.Current.ModelEditor_ViewHighCollision && postfix == "h" || CFG.Current.ModelEditor_ViewLowCollision && postfix == "l")
             {
-                // PIPELINE: resource path is a archive path (MAPBND.DCX or MAPBHD/MAPBDT)
-                if (colAsset.AssetArchiveVirtualPath != null)
+                Screen.ViewportHandler.UpdateRenderMeshCollision(colAsset);
+
+                // PIPELINE: resource has not already been loaded
+                if (!ResourceManager.IsResourceLoadedOrInFlight(colAsset.AssetVirtualPath, AccessLevel.AccessFull))
                 {
-                    job.AddLoadArchiveTask(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.CollisionHKX);
-                }
-                // PIPELINE: resource path is a direct path (FLVER.DCX)
-                else if (colAsset.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(colAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                    // PIPELINE: resource path is a archive path (MAPBND.DCX or MAPBHD/MAPBDT)
+                    if (colAsset.AssetArchiveVirtualPath != null)
+                    {
+                        job.AddLoadArchiveTask(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.CollisionHKX);
+                    }
+                    // PIPELINE: resource path is a direct path (FLVER.DCX)
+                    else if (colAsset.AssetVirtualPath != null)
+                    {
+                        job.AddLoadFileTask(colAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                    }
+
+                    _loadingTask = job.Complete();
+
                 }
 
-                _loadingTask = job.Complete();
+                ResourceManager.AddResourceListener<HavokCollisionResource>(colAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
             }
-
-            ResourceManager.AddResourceListener<HavokCollisionResource>(colAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
         }
 
         public ResourceDescriptor GetModelAssetDescriptor(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
