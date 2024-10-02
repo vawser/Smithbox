@@ -977,6 +977,37 @@
                 { "ID": "89", "Name": "Catacomb", "Description": "" },
                 { "ID": "90", "Name": "Catacomb", "Description": "" }
             ]
+        },
+        {
+            "DisplayName": "GEM_WEP_ATTR",
+            "Name": "GEM_WEP_ATTR",
+            "Description": "Affinity IDs for Gems (Ashes of War).",
+            "Options": [
+                { "ID": "0", "Name": "Standard", "Description": ""},
+                { "ID": "1", "Name": "Heavy", "Description": ""},
+                { "ID": "2", "Name": "Keen", "Description": ""},
+                { "ID": "3", "Name": "Quality", "Description": ""},
+                { "ID": "4", "Name": "Fire", "Description": ""},
+                { "ID": "5", "Name": "Flame Art", "Description": ""},
+                { "ID": "6", "Name": "Lightning", "Description": ""},
+                { "ID": "7", "Name": "Sacred", "Description": ""},
+                { "ID": "8", "Name": "Magic", "Description": ""},
+                { "ID": "9", "Name": "Cold", "Description": ""},
+                { "ID": "10", "Name": "Poison", "Description": ""},
+                { "ID": "11", "Name": "Blood", "Description": ""},
+                { "ID": "12", "Name": "Occult", "Description": ""},
+                { "ID": "13", "Name": "Unused", "Description": ""},
+                { "ID": "14", "Name": "Unused", "Description": ""},
+                { "ID": "15", "Name": "Unused", "Description": ""},
+                { "ID": "16", "Name": "Unused", "Description": ""},
+                { "ID": "17", "Name": "Unused", "Description": ""},
+                { "ID": "18", "Name": "Unused", "Description": ""},
+                { "ID": "19", "Name": "Unused", "Description": ""},
+                { "ID": "20", "Name": "Unused", "Description": ""},
+                { "ID": "21", "Name": "Unused", "Description": ""},
+                { "ID": "22", "Name": "Unused", "Description": ""},
+                { "ID": "23", "Name": "Unused", "Description": ""}
+            ]
         }
     ]
 }
