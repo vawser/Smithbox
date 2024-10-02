@@ -417,6 +417,8 @@ public class ParamRowEditor
         var MovieAliasEnum_ConditionalField = cellMeta?.MovieAliasEnum_ConditionalField;
         var MovieAliasEnum_ConditionalValue = cellMeta?.MovieAliasEnum_ConditionalValue;
 
+        bool showParamFieldOffset = false;
+
         if (cellMeta != null)
         {
             showParticleEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowParticleEnumList;
@@ -425,6 +427,8 @@ public class ParamRowEditor
             showCutsceneEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowCutsceneEnumList;
             showMovieEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowMovieEnumList;
             showProjectEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowProjectEnumList;
+
+            showParamFieldOffset = cellMeta.ShowParamFieldOffset;
         }
 
         object newval = null;
@@ -472,7 +476,7 @@ public class ParamRowEditor
 
             PropertyRowName(fieldOffset, ref internalName, cellMeta);
 
-            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum)
+            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum || showParamFieldOffset)
             {
                 ImGui.BeginGroup();
 
@@ -533,6 +537,12 @@ public class ParamRowEditor
                 if (showProjectEnum)
                 {
                     EditorDecorations.ProjectEnumNameText(cellMeta.ProjectEnumType);
+                }
+
+                // Param Field Offset
+                if(showParamFieldOffset)
+                {
+                    EditorDecorations.ParamFieldOffsetText(activeParam, row);
                 }
 
                 ImGui.EndGroup();
@@ -605,7 +615,7 @@ public class ParamRowEditor
                 }
             }
 
-            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum)
+            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum || showParamFieldOffset)
             {
                 ImGui.BeginGroup();
 
@@ -667,6 +677,12 @@ public class ParamRowEditor
                 if (showProjectEnum)
                 {
                     EditorDecorations.ProjectEnumValueText(cellMeta.ProjectEnumType, oldval.ToString());
+                }
+
+                // Param Field Offset
+                if (showParamFieldOffset)
+                {
+                    EditorDecorations.ParamFieldOffsetValueText(activeParam, row);
                 }
 
                 ImGui.EndGroup();
@@ -733,7 +749,7 @@ public class ParamRowEditor
 
         if (CFG.Current.Param_ShowVanillaParams && ImGui.TableNextColumn())
         {
-            AdditionalColumnValue(vanillaval, propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, "vanilla", cellMeta);
+            AdditionalColumnValue(activeParam, vanillaval, propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, "vanilla", cellMeta);
         }
 
         for (var i = 0; i < auxVals.Count; i++)
@@ -743,7 +759,7 @@ public class ParamRowEditor
                 if (!conflict && diffAuxVanilla[i])
                     ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_AuxVanilla_Background);
 
-                AdditionalColumnValue(auxVals[i], propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, i.ToString(), cellMeta);
+                AdditionalColumnValue(activeParam, auxVals[i], propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, i.ToString(), cellMeta);
                 if (!conflict && diffAuxVanilla[i])
                     ImGui.PopStyleColor();
             }
@@ -761,7 +777,7 @@ public class ParamRowEditor
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_DiffCompare_Background);
             }
 
-            AdditionalColumnValue(compareval, propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, "compRow", cellMeta);
+            AdditionalColumnValue(activeParam, compareval, propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, "compRow", cellMeta);
 
             if (diffCompare)
             {
@@ -808,7 +824,7 @@ public class ParamRowEditor
         imguiId++;
     }
 
-    private void AdditionalColumnValue(object colVal, Type propType, ParamBank bank, List<ParamRef> RefTypes,
+    private void AdditionalColumnValue(string activeParam, object colVal, Type propType, ParamBank bank, List<ParamRef> RefTypes,
         List<FMGRef> FmgRef, Param.Row context, ParamEnum Enum, List<TexRef> TextureRef, string imguiSuffix, FieldMetaData cellMeta)
     {
         if (colVal == null)
@@ -832,6 +848,8 @@ public class ParamRowEditor
             var MovieAliasEnum_ConditionalField = cellMeta?.MovieAliasEnum_ConditionalField;
             var MovieAliasEnum_ConditionalValue = cellMeta?.MovieAliasEnum_ConditionalValue;
 
+            var showParamFieldOffset = false;
+
             if (cellMeta != null)
             {
                 showParticleEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowParticleEnumList;
@@ -840,6 +858,8 @@ public class ParamRowEditor
                 showCutsceneEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowCutsceneEnumList;
                 showMovieEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowMovieEnumList;
                 showProjectEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowProjectEnumList;
+
+                showParamFieldOffset = cellMeta.ShowParamFieldOffset;
             }
 
             if (propType == typeof(byte[]))
@@ -907,6 +927,12 @@ public class ParamRowEditor
             if (showProjectEnum)
             {
                 EditorDecorations.ProjectEnumValueText(cellMeta.ProjectEnumType, colVal.ToString());
+            }
+
+            // Param Field Offset
+            if (showParamFieldOffset)
+            {
+                EditorDecorations.ParamFieldOffsetValueText(activeParam, context);
             }
         }
     }

@@ -13,7 +13,7 @@
       <Option Value="3" Name="Signed Short" />
       <Option Value="4" Name="Unsigned Short" />
       <Option Value="5" Name="Signed Integer" />
-      <Option Value="6" Name="Signed Integer" />
+      <Option Value="6" Name="Unsigned Integer" />
       <Option Value="7" Name="Floating Point" />
     </Enum>
     <Enum Name="MENU_PROPERTY_EXTRACT_OPERATION_TYPE" type="s8">
@@ -51,7 +51,7 @@
     <menuPropertyExtractPrimitiveType AltName="Primitive Type" Enum="MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE" />
     <menuPropertyExtractOperationType AltName="Operation Type" Enum="MENU_PROPERTY_EXTRACT_OPERATION_TYPE" />
     
-    <paramFieldOffset AltName="Target Parameter" Wiki="This points to the specific field within the target param pointed to by MENU_PROPERTY_EXTRACT_TARGET_TYPE.\n Convert the field value to hexidecimal, then minus the size of MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE to get the offset." />
+    <paramFieldOffset AltName="Target Parameter" Wiki="This points to the specific field within the target param pointed to by MENU_PROPERTY_EXTRACT_TARGET_TYPE.\n Convert the field value to hexidecimal, then minus the size of MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE to get the offset." ParamFieldOffset="" />
     
     <constantValue0 AltName="Constant 0" Wiki="This is the Constant 0 used when multiplying the passed parameter value." />
     <constantValue1 AltName="Constant 1" Wiki="This is the Constant 1 used when adding to the passed parameter value." />

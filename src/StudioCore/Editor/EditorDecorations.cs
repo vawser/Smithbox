@@ -35,6 +35,135 @@ public class EditorDecorations
         return UIHints.AddImGuiHintButton(id, ref hint, canEdit, true); //presently a hack, move code here
     }
 
+    public static void ParamFieldOffsetText(string activeParam, Param.Row context)
+    {
+        // This feature is purely for AC6 MenuPropertySpecParam.
+        if (activeParam == "MenuPropertySpecParam")
+        {
+            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+            ImGui.TextUnformatted(@"   <PARAM>");
+            ImGui.TextUnformatted(@"   <FIELD>");
+            if (CFG.Current.Param_MakeMetaNamesPrimary)
+            {
+                ImGui.TextUnformatted(@"   <NAME>");
+            }
+            ImGui.PopStyleColor();
+            ImGui.PopStyleVar();
+        }
+    }
+
+    public static void ParamFieldOffsetValueText(string activeParam, Param.Row context)
+    {
+        // This feature is purely for AC6 MenuPropertySpecParam.
+        if (activeParam == "MenuPropertySpecParam")
+        {
+            var paramTarget = context["menuPropertyExtractTargetType"].Value.Value.ToString();
+            var primitiveType = context["menuPropertyExtractPrimitiveType"].Value.Value.ToString();
+            var fieldOffset = context["paramFieldOffset"].Value.Value.ToString();
+
+            var decimalOffset = int.Parse($"{fieldOffset}");
+
+            switch (primitiveType)
+            {
+                case "0": return;
+
+                case "1": // s8
+                case "2": // u8
+                    decimalOffset = decimalOffset - 1;
+                    break;
+
+                case "3": // s16
+                case "4": // u16
+                    decimalOffset = decimalOffset - 2;
+                    break;
+
+
+                case "5": // s32
+                case "6": // u32
+                case "7": // f
+                    decimalOffset = decimalOffset - 4;
+                    break;
+            }
+            
+            var paramString = "";
+
+            switch(paramTarget)
+            {
+                case "0": return;
+
+                case "1": // Weapon
+                    paramString = "EquipParamWeapon";
+                    break;
+                case "2": // Armor
+                    paramString = "EquipParamProtector";
+                    break;
+                case "3": // Booster
+                    paramString = "EquipParamBooster";
+                    break;
+                case "4": // FCS
+                    paramString = "EquipParamFcs";
+                    break;
+                case "5": // Generator
+                    paramString = "EquipParamGenerator";
+                    break;
+                case "6": // Behavior Paramter
+                    paramString = "BehaviorParam_PC";
+                    break;
+                case "7": // Attack Parameter
+                    paramString = "AtkParam_Pc";
+                    break;
+                case "8": // Bullet Parameter
+                    paramString = "Bullet";
+                    break;
+                case "100": // Child Bullet Parameter
+                    paramString = "Bullet";
+                    break;
+                case "101": // Child Bullet Attack Parameter
+                    paramString = "AtkParam_Pc";
+                    break;
+                case "110": // Parent Bullet Parameter
+                    paramString = "Bullet";
+                    break;
+                case "111": // Parent Bullet Attack Parameter
+                    paramString = "AtkParam_Pc";
+                    break;
+            }
+
+            var firstRow = ParamBank.PrimaryBank.Params[paramString].Rows.First();
+            var internalName = "";
+            var displayName = "";
+
+            foreach (var col in firstRow.Columns)
+            {
+                var offset = (int)col.GetByteOffset();
+
+                if (offset == decimalOffset)
+                {
+                    internalName = col.Def.InternalName;
+
+                    var cellmeta = FieldMetaData.Get(col.Def);
+                    displayName = cellmeta.AltName;
+                }
+            }
+
+            ImGui.BeginGroup();
+
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
+
+            ImGui.TextUnformatted($"{paramString}:");
+            ImGui.TextUnformatted($"{internalName}");
+            if (CFG.Current.Param_MakeMetaNamesPrimary)
+            {
+                ImGui.TextUnformatted($"{displayName}");
+            }
+
+            ImGui.PopStyleColor();
+
+            ImGui.EndGroup();
+        }
+    }
+
     public static void ParamRefText(List<ParamRef> paramRefs, Param.Row context)
     {
         if (paramRefs == null || paramRefs.Count == 0)

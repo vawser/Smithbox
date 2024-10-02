@@ -621,6 +621,12 @@ public class FieldMetaData
                 MovieAliasEnum_ConditionalValue = MovieAlias.InnerText.Split("=")[1];
             }
         }
+
+        XmlAttribute ParamFieldOffset = fieldMeta.Attributes["ParamFieldOffset"];
+        if (ParamFieldOffset != null)
+        {
+            ShowParamFieldOffset = true;
+        }
     }
 
     /// <summary>
@@ -704,6 +710,8 @@ public class FieldMetaData
 
     public bool ShowProjectEnumList { get; set; }
     public string ProjectEnumType { get; set; }
+
+    public bool ShowParamFieldOffset { get; set; }
 
     /// <summary>
     ///     Path (and subpath) filters for files linked by this field.
