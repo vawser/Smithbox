@@ -613,10 +613,10 @@ namespace StudioCore.Editors.ModelEditor
 
                 if (exists)
                 {
-                    if (LoadedFlverContainer.Type == ModelEditorModelType.MapPiece)
+                    if (LoadedFlverContainer.Type is ModelEditorModelType.MapPiece)
                     {
                         // .flver
-                        if (Smithbox.ProjectType == ProjectType.DS1)
+                        if (Smithbox.ProjectType is ProjectType.DS1)
                         {
                             var directory = $"map\\{LoadedFlverContainer.MapID}\\";
                             var path = $"map\\{LoadedFlverContainer.MapID}\\{LoadedFlverContainer.ContainerName}.flver";
@@ -632,9 +632,14 @@ namespace StudioCore.Editors.ModelEditor
                             WriteLooseFlver(savePath, false);
                         }
                         // .flver.dcx
-                        else if(Smithbox.ProjectType == ProjectType.DS1R)
+                        else if(Smithbox.ProjectType is ProjectType.DS1R or ProjectType.BB)
                         {
                             var compressionType = DCX.Type.DCX_DFLT_10000_24_9;
+
+                            if (Smithbox.ProjectType is ProjectType.BB)
+                            {
+                                compressionType = DCX.Type.DCX_DFLT_10000_44_9;
+                            }
 
                             var directory = $"map\\{LoadedFlverContainer.MapID}\\";
                             var path = $"map\\{LoadedFlverContainer.MapID}\\{LoadedFlverContainer.ContainerName}.flver.dcx";
