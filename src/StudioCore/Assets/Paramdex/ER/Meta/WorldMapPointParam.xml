@@ -177,6 +177,7 @@
     <dispMinZoomStep AltName="Display - Min Zoom Step" Wiki="Zoom step to display map points (0 when zoomed out most, +1 for each zoom). Displayed when Display zoom step  Current zoom step. Default is 0 (always displayed)" />
     <selectMinZoomStep AltName="Selection - Min Zoom Step" Wiki="Zoom step where map points can be selected (0 when zoomed out most, +1 for each zoom). Selectable when Selectable zoom step  Current enlargement stage. Default is 0 (always selectable)" />
     <entryFEType AltName="Entry FE Type" Wiki="Admission display format. Map points to be displayed at the time of admission Types of admission FE" Enum="WORLD_MAP_ENTRY_FE_TYPE" />
+    <altIconId AltName="Alternate Icon ID" Wiki="Icon ID that applies when a Text Enable Flag ID is true and it's corrosponding Text Type is set to 1" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
     <pad4 AltName="" IsHidden=""/>
     <textEnableFlag2Id1 AltName="Text Enable Flag ID 2 [1]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
     <textEnableFlag2Id2 AltName="Text Enable Flag ID 2 [2]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
