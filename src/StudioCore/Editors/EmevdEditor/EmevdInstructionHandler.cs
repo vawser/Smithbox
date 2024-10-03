@@ -100,7 +100,7 @@ public class EmevdInstructionHandler
                     var argDoc = ArgumentDocs[i];
 
                     object newValue;
-                    (bool, bool) propEditResults = PropEditor.PropertyRow(argDoc, Arguments[i], out newValue);
+                    (bool, bool) propEditResults = PropEditor.InstructionArgumentPropertyRow(argDoc, Arguments[i], out newValue);
 
                     var changed = propEditResults.Item1;
                     var committed = propEditResults.Item2;

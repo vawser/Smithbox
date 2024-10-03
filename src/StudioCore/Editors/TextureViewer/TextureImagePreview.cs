@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using Assimp;
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Core.Project;
@@ -38,7 +39,7 @@ public class TextureImagePreview : IResourceEventListener
     private static string _selectedTextureKey = "";
     private static TPF.Texture _selectedTexture;
 
-    public SubTexture _cachedPreviewSubtexture;
+    public SubTexture _currentPreviewTexture;
 
     private ShoeboxLayoutContainer shoeboxContainer = null;
 
@@ -51,6 +52,10 @@ public class TextureImagePreview : IResourceEventListener
     {
         if(CurrentTextureInView != null)
             CurrentTextureInView.Dispose();
+
+        CurrentTextureContainerName = null;
+        CurrentTextureName = null;
+        _currentPreviewTexture = null;
 
         if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
@@ -82,11 +87,6 @@ public class TextureImagePreview : IResourceEventListener
         ResetTextureViewer();
     }
 
-    public void InvalidatePreviewImage()
-    {
-        _cachedPreviewSubtexture = null;
-    }
-
     public bool ShowImagePreview(Param.Row context, TexRef textureRef, bool displayImage = true)
     {
         // Display the texture
@@ -94,65 +94,61 @@ public class TextureImagePreview : IResourceEventListener
         LoadTextureFile(textureRef.TextureFile);
         ResourceHandle<TextureResource> resHandle = GetImageTextureHandle(_selectedTextureKey, _selectedTexture, _selectedAssetDescription);
 
-        // Display Image
-        if (resHandle != null)
+        if (resHandle == null)
+            return false;
+
+        TextureResource texRes = resHandle.Get();
+
+        if (texRes == null)
+            return false;
+
+        if (texRes.GPUTexture == null)
+            return false;
+
+        CurrentTextureInView = texRes;
+        CurrentTextureName = _selectedTextureKey;
+
+        _currentPreviewTexture = GetPreviewSubTexture(context, textureRef);
+
+        if (_currentPreviewTexture == null)
+            return false;
+
+        IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
+
+        // Get scaled image size vector
+        var scale = CFG.Current.Param_FieldContextMenu_ImagePreviewScale;
+
+        // Get crop bounds
+        float Xmin = float.Parse(_currentPreviewTexture.X);
+        float Xmax = Xmin + float.Parse(_currentPreviewTexture.Width);
+        float Ymin = float.Parse(_currentPreviewTexture.Y);
+        float Ymax = Ymin + float.Parse(_currentPreviewTexture.Height);
+
+        // Image size should be based on cropped image
+        Vector2 size = new Vector2(Xmax - Xmin, Ymax - Ymin) * scale;
+
+        // Get UV coordinates based on full image
+        float left = (Xmin) / texRes.GPUTexture.Width;
+        float top = (Ymin) / texRes.GPUTexture.Height;
+        float right = (Xmax) / texRes.GPUTexture.Width;
+        float bottom = (Ymax) / texRes.GPUTexture.Height;
+
+        // Build UV coordinates
+        var UV0 = new Vector2(left, top);
+        var UV1 = new Vector2(right, bottom);
+
+        if (CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu)
         {
-            TextureResource texRes = resHandle.Get();
-
-            if (texRes != null)
-            {
-                CurrentTextureInView = texRes;
-                CurrentTextureName = _selectedTextureKey;
-
-                // Get the SubTexture that matches the current field value
-                if (_cachedPreviewSubtexture == null)
-                {
-                    _cachedPreviewSubtexture = GetPreviewSubTexture(context, textureRef);
-                }
-
-                if (_cachedPreviewSubtexture != null)
-                {
-                    IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
-
-                    // Get scaled image size vector
-                    var scale = CFG.Current.Param_FieldContextMenu_ImagePreviewScale;
-
-                    // Get crop bounds
-                    float Xmin = float.Parse(_cachedPreviewSubtexture.X);
-                    float Xmax = Xmin + float.Parse(_cachedPreviewSubtexture.Width);
-                    float Ymin = float.Parse(_cachedPreviewSubtexture.Y);
-                    float Ymax = Ymin + float.Parse(_cachedPreviewSubtexture.Height);
-
-                    // Image size should be based on cropped image
-                    Vector2 size = new Vector2(Xmax - Xmin, Ymax - Ymin) * scale;
-
-                    // Get UV coordinates based on full image
-                    float left = (Xmin) / texRes.GPUTexture.Width;
-                    float top = (Ymin) / texRes.GPUTexture.Height;
-                    float right = (Xmax) / texRes.GPUTexture.Width;
-                    float bottom = (Ymax) / texRes.GPUTexture.Height;
-
-                    // Build UV coordinates
-                    var UV0 = new Vector2(left, top);
-                    var UV1 = new Vector2(right, bottom);
-
-                    if (CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu)
-                    {
-                        displayImage = true;
-                    }
-
-                    // Display image
-                    if (displayImage)
-                    {
-                        ImGui.Image(handle, size, UV0, UV1);
-                    }
-
-                    return true;
-                }
-            }
+            displayImage = true;
         }
 
-        return false;
+        // Display image
+        if (displayImage)
+        {
+            ImGui.Image(handle, size, UV0, UV1);
+        }
+
+        return true;
     }
 
     private SubTexture GetPreviewSubTexture(Param.Row context, TexRef textureRef)
@@ -226,12 +222,6 @@ public class TextureImagePreview : IResourceEventListener
                 // Check for match
                 subTex = GetMatchingSubTexture(CurrentTextureName, imageIdx, prefix);
             }
-        }
-
-        // Hardcoded logic for ER
-        if (Smithbox.ProjectType == ProjectType.ER)
-        {
-
         }
 
         return subTex;
@@ -427,9 +417,6 @@ public class TextureImagePreview : IResourceEventListener
                         {
                             _selectedTextureKey = tex.Name;
                             _selectedTexture = tex;
-
-                            // Clear this when a new texture is loaded
-                            _cachedPreviewSubtexture = null;
                         }
                     }
                 }

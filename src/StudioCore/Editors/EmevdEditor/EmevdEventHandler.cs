@@ -30,6 +30,8 @@ public class EmevdEventHandler
 
             ImGui.Text($"{evt.RestBehavior}");
 
+            ImGui.Separator();
+
             foreach (var para in Screen._selectedEvent.Parameters)
             {
                 ImGui.Text($"InstructionIndex: {para.InstructionIndex}");
@@ -37,6 +39,8 @@ public class EmevdEventHandler
                 ImGui.Text($"SourceStartByte: {para.SourceStartByte}");
                 ImGui.Text($"ByteCount: {para.ByteCount}");
                 ImGui.Text($"UnkID: {para.UnkID}");
+
+                ImGui.Separator();
             }
         }
     }

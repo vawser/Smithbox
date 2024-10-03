@@ -780,11 +780,14 @@ public static class ResourceManager
         {
             return JobTaskFactory.StartNew(() =>
             {
+                // HINT:
+                // Add timeout duration to Wait() if hang issues occur to allow exception to filter up
+
                 // PIPELINE: complete all Load Binder Resources actions within the ActionBlock
                 _loadBinderResources.Complete();
 
                 // PIPELINE: wait for compleition
-                _loadBinderResources.Completion.Wait(15000);
+                _loadBinderResources.Completion.Wait(); 
 
                 // FLVER
                 FlverLoadPipeline.LoadByteResourceBlock.Complete();
@@ -800,23 +803,23 @@ public static class ResourceManager
 
                 // TPF
                 _loadTPFResources.Complete();
-                _loadTPFResources.Completion.Wait(15000);
+                _loadTPFResources.Completion.Wait();
                 TPFTextureLoadPipeline.LoadTPFTextureResourceRequest.Complete();
 
                 // FLVER
-                FlverLoadPipeline.LoadByteResourceBlock.Completion.Wait(15000);
-                FlverLoadPipeline.LoadFileResourceRequest.Completion.Wait(15000);
+                FlverLoadPipeline.LoadByteResourceBlock.Completion.Wait();
+                FlverLoadPipeline.LoadFileResourceRequest.Completion.Wait();
 
                 // HAVOK COLLISION
-                HavokCollisionLoadPipeline.LoadByteResourceBlock.Completion.Wait(15000);
-                HavokCollisionLoadPipeline.LoadFileResourceRequest.Completion.Wait(15000);
+                HavokCollisionLoadPipeline.LoadByteResourceBlock.Completion.Wait();
+                HavokCollisionLoadPipeline.LoadFileResourceRequest.Completion.Wait();
 
                 // HAVOK NAVMESH
-                HavokNavmeshLoadPipeline.LoadByteResourceBlock.Completion.Wait(15000);
-                HavokNavmeshLoadPipeline.LoadFileResourceRequest.Completion.Wait(15000);
+                HavokNavmeshLoadPipeline.LoadByteResourceBlock.Completion.Wait();
+                HavokNavmeshLoadPipeline.LoadFileResourceRequest.Completion.Wait();
 
                 // TPF
-                TPFTextureLoadPipeline.LoadTPFTextureResourceRequest.Completion.Wait(15000);
+                TPFTextureLoadPipeline.LoadTPFTextureResourceRequest.Completion.Wait();
 
                 ResourceLog.AddLog($"Job: {Name} - Finished");
                 Finished = true;
