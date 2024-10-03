@@ -6,7 +6,7 @@
 /// </summary>
 public static class FeatureFlags
 {
-    public static bool StrictResourceChecking = true;
+    public static bool EnableResourceLogs = false;
 
     // Feature Toggles
     public static bool EnableNavmeshBuilder = false;

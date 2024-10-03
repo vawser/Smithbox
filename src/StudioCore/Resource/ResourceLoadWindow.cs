@@ -35,6 +35,7 @@ public static class ResourceLoadWindow
                     var completed = job.Key.Progress;
                     var size = job.Key.GetEstimateTaskSize();
                     ImGui.Text(job.Key.Name);
+
                     if (size == 0)
                     {
                         ImGui.ProgressBar(0.0f);

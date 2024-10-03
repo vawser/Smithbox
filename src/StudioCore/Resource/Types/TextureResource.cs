@@ -37,11 +37,7 @@ public class TextureResource : IResource, IDisposable
 
         if (GPUTexture == null)
         {
-            if (FeatureFlags.StrictResourceChecking)
-            {
-                throw new Exception("Unable to allocate texture descriptor");
-            }
-
+            ResourceLog.AddLog("Unable to allocate texture descriptor");
             return false;
         }
 

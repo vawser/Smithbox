@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Pfim;
+using SoulsFormats;
 using StudioCore.Memory;
 using System;
 using System.Collections.Generic;
@@ -131,6 +132,8 @@ public class TexturePool
                 return VkFormat.Bc7UnormBlock;
             case DDS.DXGI_FORMAT.BC7_UNORM_SRGB:
                 return VkFormat.Bc7SrgbBlock;
+            case DDS.DXGI_FORMAT.R16G16B16A16_FLOAT:
+                return VkFormat.R16G16B16A16Sfloat;
             default:
                 throw new Exception($"Unimplemented DXGI Type: {fmt.ToString()}");
         }
@@ -408,6 +411,13 @@ public class TexturePool
             {
                 if (dds.header10 != null)
                 {
+                    // BB HACK: Ignore this texture
+                    // Reason: DeswizzleDDSBytesPS4RGBA throws index error when processing this DDS format
+                    if (dds.header10.dxgiFormat == DDS.DXGI_FORMAT.R16G16B16A16_FLOAT)
+                    {
+                        return;
+                    }
+
                     format = GetPixelFormatFromDXGI(dds.header10.dxgiFormat);
 
                     //TaskLogs.AddLog($"header10 - {name}: {format}");
@@ -714,6 +724,13 @@ public class TexturePool
             uint mipCount = tex.Mipmaps;
             VkFormat format;
             format = GetPixelFormatFromDXGI((DDS.DXGI_FORMAT)tex.Header.DXGIFormat);
+
+            // BB HACK: Ignore this texture
+            // Reason: DeswizzleDDSBytesPS4RGBA throws index error when processing this DDS format
+            if ((DDS.DXGI_FORMAT)tex.Header.DXGIFormat == DDS.DXGI_FORMAT.R16G16B16A16_FLOAT)
+            {
+                return;
+            }
 
             width = (uint)(Math.Ceiling(width / 4f) * 4f);
             height = (uint)(Math.Ceiling(height / 4f) * 4f);

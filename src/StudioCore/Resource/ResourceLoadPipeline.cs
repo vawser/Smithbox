@@ -56,19 +56,26 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
         // PIPELINE: Byte Requests
         _loadByteResourcesTransform = new ActionBlock<LoadByteResourceRequest>(r =>
         {
-            var res = new T();
-
-            // PIPELINE: Load the byte resource (as the <T> type)
-            var success = res._Load(r.Data.Value, r.AccessLevel, r.VirtualPath);
-
-            // PIPELINE: If resource is loaded successful, add reply to Loaded Resource block
-            if (success)
+            try
             {
-                var request = new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res);
+                var res = new T();
 
-                _loadedResources.Post(request);
+                // PIPELINE: Load the byte resource (as the <T> type)
+                var success = res._Load(r.Data.Value, r.AccessLevel, r.VirtualPath);
+
+                // PIPELINE: If resource is loaded successful, add reply to Loaded Resource block
+                if (success)
+                {
+                    var request = new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res);
+
+                    _loadedResources.Post(request);
+                }
             }
-            
+            catch(Exception ex)
+            {
+                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, ex);
+            }
+
             r.Data.Dispose();
         }, options);
 

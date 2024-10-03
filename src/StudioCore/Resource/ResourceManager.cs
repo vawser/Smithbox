@@ -18,6 +18,7 @@ using StudioCore.Editors.ModelEditor;
 using StudioCore.Interface;
 using StudioCore.Resource.Types;
 using StudioCore.Resource.Locators;
+using StudioCore.Settings;
 
 namespace StudioCore.Resource;
 
@@ -569,6 +570,11 @@ public static class ResourceManager
 
                 var absoluteBinderPath = VirtualPathLocator.VirtualToRealPath(BinderVirtualPath, out o);
 
+                if(!File.Exists(absoluteBinderPath))
+                {
+                    return;
+                }
+
                 Binder = new(InstantiateBinderReaderForFile(absoluteBinderPath, Smithbox.ProjectType));
                 if (Binder == null)
                 {
@@ -628,6 +634,7 @@ public static class ResourceManager
                     }
 
                     PendingTPFs.Add((bndvirt, (RefCount<BinderFileHeader>)f, PersistentTPF).ToTuple());
+                    ResourceLog.AddLog($"ProcessBinder - PendingTPFs: {curFileBinderPath}");
                 }
                 else
                 {
@@ -638,6 +645,7 @@ public static class ResourceManager
                         {
                             //handle = new ResourceHandle<FlverResource>();
                             pipeline = _job.FlverLoadPipeline;
+                            ResourceLog.AddLog($"ProcessBinder - FlverLoadPipeline: {curFileBinderPath}");
                         }
                     }
 
@@ -647,6 +655,7 @@ public static class ResourceManager
                         if (LocatorUtils.IsNavmesh(curFileBinderPath))
                         {
                             pipeline = _job.NVMNavmeshLoadPipeline;
+                            ResourceLog.AddLog($"ProcessBinder - NVMNavmeshLoadPipeline: {curFileBinderPath}");
                         }
                     }
 
@@ -656,6 +665,7 @@ public static class ResourceManager
                         if (LocatorUtils.IsHavokNavmesh(curFileBinderPath))
                         {
                             pipeline = _job.HavokNavmeshLoadPipeline;
+                            ResourceLog.AddLog($"ProcessBinder - HavokNavmeshLoadPipeline: {curFileBinderPath}");
                         }
                     }
 
@@ -665,6 +675,7 @@ public static class ResourceManager
                         if (LocatorUtils.IsHavokCollision(curFileBinderPath))
                         {
                             pipeline = _job.HavokCollisionLoadPipeline;
+                            ResourceLog.AddLog($"ProcessBinder - HavokCollisionLoadPipeline: {curFileBinderPath}");
                         }
                     }
 
@@ -673,6 +684,7 @@ public static class ResourceManager
                     {
 
                         PendingResources.Add((pipeline, curFileBinderPath, (RefCount<BinderFileHeader>)f).ToTuple());
+                        ResourceLog.AddLog($"ProcessBinder - PendingResources: {curFileBinderPath}");
                     }
                 }
             }
@@ -698,17 +710,14 @@ public static class ResourceManager
 
         public ResourceJob(string name)
         {
+            Name = name;
             IsPersistent = false;
 
             ExecutionDataflowBlockOptions options = new() { MaxDegreeOfParallelism = DataflowBlockOptions.Unbounded };
-            Name = name;
-            _loadTPFResources =
-                new TransformManyBlock<LoadTPFResourcesAction, LoadTPFTextureResourceRequest>(LoadTPFResources,
-                    options);
 
-            //options.MaxDegreeOfParallelism = 4;
+            _loadTPFResources = new TransformManyBlock<LoadTPFResourcesAction, LoadTPFTextureResourceRequest>(
+                LoadTPFResources, options);
 
-            // PIPELINE: fill the action block with actions via the LoadBinderResources func
             _loadBinderResources = new ActionBlock<LoadBinderResourcesAction>(LoadBinderResources, options);
             _processedResources = new BufferBlock<ResourceLoadedReply>();
 
@@ -760,6 +769,8 @@ public static class ResourceManager
         // PIPELINE: fill Binder Resources ActionBlock with the passed Load Binder Resources action
         internal void AddLoadBinderResources(LoadBinderResourcesAction action, bool isPersistent = false)
         {
+            ResourceLog.AddLog($"AddLoadBinderResources: {action._job.Name}");
+
             IsPersistent = isPersistent;
             _courseSize++;
             _loadBinderResources.Post(action);
@@ -771,8 +782,9 @@ public static class ResourceManager
             {
                 // PIPELINE: complete all Load Binder Resources actions within the ActionBlock
                 _loadBinderResources.Complete();
+
                 // PIPELINE: wait for compleition
-                _loadBinderResources.Completion.Wait();
+                _loadBinderResources.Completion.Wait(15000);
 
                 // FLVER
                 FlverLoadPipeline.LoadByteResourceBlock.Complete();
@@ -788,24 +800,25 @@ public static class ResourceManager
 
                 // TPF
                 _loadTPFResources.Complete();
-                _loadTPFResources.Completion.Wait();
+                _loadTPFResources.Completion.Wait(15000);
                 TPFTextureLoadPipeline.LoadTPFTextureResourceRequest.Complete();
 
                 // FLVER
-                FlverLoadPipeline.LoadByteResourceBlock.Completion.Wait();
-                FlverLoadPipeline.LoadFileResourceRequest.Completion.Wait();
+                FlverLoadPipeline.LoadByteResourceBlock.Completion.Wait(15000);
+                FlverLoadPipeline.LoadFileResourceRequest.Completion.Wait(15000);
 
                 // HAVOK COLLISION
-                HavokCollisionLoadPipeline.LoadByteResourceBlock.Completion.Wait();
-                HavokCollisionLoadPipeline.LoadFileResourceRequest.Completion.Wait();
+                HavokCollisionLoadPipeline.LoadByteResourceBlock.Completion.Wait(15000);
+                HavokCollisionLoadPipeline.LoadFileResourceRequest.Completion.Wait(15000);
 
                 // HAVOK NAVMESH
-                HavokNavmeshLoadPipeline.LoadByteResourceBlock.Completion.Wait();
-                HavokNavmeshLoadPipeline.LoadFileResourceRequest.Completion.Wait();
+                HavokNavmeshLoadPipeline.LoadByteResourceBlock.Completion.Wait(15000);
+                HavokNavmeshLoadPipeline.LoadFileResourceRequest.Completion.Wait(15000);
 
                 // TPF
-                TPFTextureLoadPipeline.LoadTPFTextureResourceRequest.Completion.Wait();
+                TPFTextureLoadPipeline.LoadTPFTextureResourceRequest.Completion.Wait(15000);
 
+                ResourceLog.AddLog($"Job: {Name} - Finished");
                 Finished = true;
             });
         }
@@ -864,8 +877,6 @@ public static class ResourceManager
                 return;
             }
 
-            TaskLogs.AddLog($"AddLoadArchiveTask: {virtualPath}");
-
             // PIPELINE: add Load Binder Resources job to Resource Job
             if (!archivesToLoad.Contains(virtualPath))
             {
@@ -889,8 +900,6 @@ public static class ResourceManager
             {
                 return;
             }
-
-            TaskLogs.AddLog($"AddLoadArchiveTask: {virtualPath}");
 
             // PIPELINE: add Load Binder Resources job to Resource Job
             if (!archivesToLoad.Contains(virtualPath))
@@ -927,7 +936,11 @@ public static class ResourceManager
                 return;
             }
 
-            TaskLogs.AddLog($"AddLoadFileTask: {virtualPath}");
+            // If file doesn't exist, return so we don't hang the resource loader.
+            if (!File.Exists(path))
+            {
+                return;
+            }
 
             if (virtualPath.EndsWith(".hkx"))
             {
@@ -973,8 +986,6 @@ public static class ResourceManager
                 {
                     var texpath = r.Key;
 
-                    TaskLogs.AddLog($"AddLoadUDSFMTexturesTask: {texpath}");
-
                     string path = null;
                     if (texpath.StartsWith("map/tex"))
                     {
@@ -1002,8 +1013,6 @@ public static class ResourceManager
                 if (!r.Value.IsLoaded())
                 {
                     var texpath = r.Key;
-
-                    TaskLogs.AddLog($"AddLoadUnloadedTextures: {texpath}");
 
                     string path = null;
                     if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
@@ -1047,7 +1056,7 @@ public static class ResourceManager
                         }
                     }
 
-                    if (Smithbox.ProjectType == ProjectType.AC6 || Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.SDT || Smithbox.ProjectType == ProjectType.DS3)
+                    if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB)
                     {
                         // Systex
                         if (texpath.Contains("systex"))
@@ -1107,4 +1116,19 @@ public static class ResourceManager
     private readonly record struct UnloadResourceRequest(
         IResourceHandle Resource,
         bool UnloadOnlyIfUnused);
+}
+
+/// <summary>
+/// Separate handling for logging here so we can keep the log statements in situ and just toggle the appearance in the Logger.
+/// </summary>
+public static class ResourceLog
+{
+
+    public static void AddLog(string text)
+    {
+        if(FeatureFlags.EnableResourceLogs)
+        {
+            TaskLogs.AddLog(text);
+        }
+    }
 }

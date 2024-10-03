@@ -410,13 +410,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Debug);
             UIHelper.ShowActiveStatus(ticked);
 
-            ImGui.EndMenu();
-        }
+            ImGui.Separator();
 
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Region Filters", RenderScene != null && Viewport != null))
-        {
             GranularRegionHandler.DisplayOptions();
 
             ImGui.EndMenu();

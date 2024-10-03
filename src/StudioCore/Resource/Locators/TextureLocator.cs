@@ -359,7 +359,7 @@ public static class TextureLocator
         ad.AssetArchiveVirtualPath = null;
         string path;
 
-        if (Smithbox.ProjectType == ProjectType.AC6 || Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.SDT || Smithbox.ProjectType == ProjectType.DS3)
+        if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB)
         {
             path = LocatorUtils.GetOverridenFilePath($@"other\systex.tpf.dcx");
         }
