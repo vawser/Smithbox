@@ -204,7 +204,7 @@ namespace StudioCore.Editors.ModelEditor
         /// <summary>
         /// Updated the viewport FLVER model render mesh
         /// </summary>
-        public void UpdateRenderMesh(ResourceDescriptor modelAsset, bool skipModel = false)
+        public void UpdateRenderMesh(ResourceDescriptor modelAsset)
         {
             // Required to stop the LowRequirements build from failing
             if (Smithbox.LowRequirementsMode)
@@ -212,17 +212,13 @@ namespace StudioCore.Editors.ModelEditor
 
             if (Universe.IsRendering)
             {
-                // Ignore this if we are only loading textures
-                if (!skipModel)
+                if (_Flver_RenderMesh != null)
                 {
-                    if (_Flver_RenderMesh != null)
-                    {
-                        _Flver_RenderMesh.Dispose();
-                    }
-
-                    _Flver_RenderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(Screen.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
-                    _Flver_RenderMesh.World = Matrix4x4.Identity;
+                    _Flver_RenderMesh.Dispose();
                 }
+
+                _Flver_RenderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(Screen.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
+                _Flver_RenderMesh.World = Matrix4x4.Identity;
             }
         }
 

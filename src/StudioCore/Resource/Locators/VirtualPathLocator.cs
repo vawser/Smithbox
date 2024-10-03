@@ -124,7 +124,9 @@ public static class VirtualPathLocator
                 {
                     var mid = pathElements[i];
                     i++;
+                    var id = pathElements[i];
                     bndpath = "";
+
                     if (pathElements[i] == "env")
                     {
                         if (Smithbox.ProjectType == ProjectType.DS1R)
@@ -133,7 +135,7 @@ public static class VirtualPathLocator
                         return LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_envmap.tpf.dcx");
                     }
 
-                    return LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_{pathElements[i]}.tpfbhd");
+                    return LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_{id}.tpfbhd");
                 }
             }
             else if (mapRegex.IsMatch(pathElements[i]))

@@ -73,10 +73,6 @@ public static class TextureLocator
                 env.AssetVirtualPath = $@"map/tex/{mid}/env";
                 ads.Add(env);
             }
-            else if (Smithbox.ProjectType == ProjectType.SDT)
-            {
-                //TODO SDT
-            }
         }
 
         return ads;
@@ -125,12 +121,12 @@ public static class TextureLocator
         if (Smithbox.ProjectType is ProjectType.DS1R)
         {
             // TODO: Some textures require getting chrtpfbhd from chrbnd, then using it with chrtpfbdt in chr folder.
-            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd.dcx");
         }
 
         if (Smithbox.ProjectType is ProjectType.BB)
         {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_2.tpf.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd.dcx");
         }
 
         if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT)
@@ -197,7 +193,11 @@ public static class TextureLocator
             {
                 ad = new ResourceDescriptor();
                 ad.AssetPath = path;
-                ad.AssetVirtualPath = $@"chr/{chrid}/tex";
+
+                if (path.EndsWith(".chrbnd.dcx"))
+                    ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
+                else
+                    ad.AssetVirtualPath = $@"chr/{chrid}/tex";
             }
         }
         else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
@@ -217,7 +217,11 @@ public static class TextureLocator
             if (path != null)
             {
                 ad.AssetPath = path;
-                ad.AssetVirtualPath = $@"chr/{chrid}/tex";
+
+                if (path.EndsWith(".chrbnd.dcx"))
+                    ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
+                else
+                    ad.AssetVirtualPath = $@"chr/{chrid}/tex";
             }
         }
         else if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT)
@@ -440,6 +444,11 @@ public static class TextureLocator
             {
                 ad.AssetPath = path;
                 ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
+
+                if (isLowDetail)
+                {
+                    ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex/low";
+                }
             }
         }
         else if (Smithbox.ProjectType == ProjectType.BB)
@@ -448,7 +457,13 @@ public static class TextureLocator
             if (path != null)
             {
                 ad.AssetPath = path;
-                ad.AssetVirtualPath = $@"parts/{partsId}/tex";
+
+                ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
+
+                if (isLowDetail)
+                {
+                    ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex/low";
+                }
             }
         }
         else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
@@ -499,6 +514,11 @@ public static class TextureLocator
             {
                 ad.AssetPath = path;
                 ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
+
+                if (isLowDetail)
+                {
+                    ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex/low";
+                }
             }
         }
         else if (Smithbox.ProjectType == ProjectType.DS1)

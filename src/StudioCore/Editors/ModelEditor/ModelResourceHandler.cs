@@ -382,26 +382,17 @@ namespace StudioCore.Editors.ModelEditor
             }
 
             LoadModelInternal(containerId, modelid, modelType, mapid);
-
-            // If model ID has additional textures associated with it, load them
-            if (Smithbox.BankHandler.AdditionalTextureInfo.HasAdditionalTextures(modelid))
-            {
-                foreach (var entry in Smithbox.BankHandler.AdditionalTextureInfo.GetAdditionalTextures(modelid))
-                {
-                    LoadModelInternal(containerId, entry, modelType, mapid, true);
-                }
-            }
+            LoadTexturesInternal(modelid, modelType, mapid);
         }
 
         /// <summary>
-        /// Send the viewport FLVER model request to the Resource Manager
+        /// Load model into the resource system
         /// </summary>
-        private void LoadModelInternal(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null, bool skipModel = false)
+        private void LoadModelInternal(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
         {
             ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
 
             ResourceDescriptor modelAsset = GetModelAssetDescriptor(containerId, modelid, modelType, mapid);
-            ResourceDescriptor textureAsset = GetTextureAssetDescriptor(modelid, modelType, mapid);
 
             if (modelType == ModelEditorModelType.Loose)
             {
@@ -411,48 +402,77 @@ namespace StudioCore.Editors.ModelEditor
 
             if (CFG.Current.ModelEditor_ViewMeshes)
             {
-                Screen.ViewportHandler.UpdateRenderMesh(modelAsset, skipModel);
+                Screen.ViewportHandler.UpdateRenderMesh(modelAsset);
 
-                // PIPELINE: resource has not already been loaded
-                if (!ResourceManager.IsResourceLoadedOrInFlight(modelAsset.AssetVirtualPath, AccessLevel.AccessFull))
+                if (modelAsset.AssetArchiveVirtualPath != null)
                 {
-                    // Ignore this if we are only loading textures
-                    if (!skipModel)
+                    if (!ResourceManager.IsResourceLoadedOrInFlight(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull))
                     {
-                        // PIPELINE: resource path is a archive path (MAPBND.DCX or MAPBHD/MAPBDT)
-                        if (modelAsset.AssetArchiveVirtualPath != null)
-                        {
-                            job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
-                        }
-                        // PIPELINE: resource path is a direct path (FLVER.DCX)
-                        else if (modelAsset.AssetVirtualPath != null)
-                        {
-                            job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessFull);
-                        }
+                        job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
                     }
-
-                    if (Universe.IsRendering)
-                    {
-                        if (CFG.Current.Viewport_Enable_Texturing)
-                        {
-                            if (textureAsset.AssetArchiveVirtualPath != null)
-                            {
-                                job.AddLoadArchiveTask(textureAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
-                            }
-                            else if (textureAsset.AssetVirtualPath != null)
-                            {
-                                job.AddLoadFileTask(textureAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                            }
-                        }
-                    }
-
-                    _loadingTask = job.Complete();
                 }
+                else if (modelAsset.AssetVirtualPath != null)
+                {
+                    if (!ResourceManager.IsResourceLoadedOrInFlight(modelAsset.AssetVirtualPath, AccessLevel.AccessFull))
+                    {
+                        job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessFull);
+                    }
+                }
+
+                _loadingTask = job.Complete();
 
                 ResourceManager.AddResourceListener<FlverResource>(modelAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
             }
         }
 
+        /// <summary>
+        /// Load textures into the resource system
+        /// </summary>
+        private void LoadTexturesInternal(string modelid, ModelEditorModelType modelType, string mapid = null)
+        {
+            ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading textures");
+
+            List<ResourceDescriptor> textureAssets = GetTextureAssetDescriptorList(modelid, modelType, mapid);
+
+            foreach(var entry in textureAssets)
+            {
+                if (Universe.IsRendering)
+                {
+                    if (CFG.Current.Viewport_Enable_Texturing)
+                    {
+                        if (entry.AssetArchiveVirtualPath != null)
+                        {
+                            if (!ResourceManager.IsResourceLoadedOrInFlight(entry.AssetArchiveVirtualPath, AccessLevel.AccessFull))
+                            {
+                                job.AddLoadArchiveTask(entry.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
+                            }
+                        }
+                        else if (entry.AssetVirtualPath != null)
+                        {
+                            if (!ResourceManager.IsResourceLoadedOrInFlight(entry.AssetVirtualPath, AccessLevel.AccessFull))
+                            {
+                                job.AddLoadFileTask(entry.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                            }
+                        }
+                    }
+                }
+
+                _loadingTask = job.Complete();
+            }
+
+            // If model ID has additional textures associated with it, load them
+            if (Smithbox.BankHandler.AdditionalTextureInfo.HasAdditionalTextures(modelid))
+            {
+                foreach (var entry in Smithbox.BankHandler.AdditionalTextureInfo.GetAdditionalTextures(modelid))
+                {
+                    LoadTexturesInternal(modelid, modelType, mapid);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Load collision into the resource system
+        /// </summary>
         private void LoadCollisionInternal(string modelid, string postfix)
         {
             ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading collision");
@@ -465,32 +485,35 @@ namespace StudioCore.Editors.ModelEditor
                 return;
             }
 
-            if (CFG.Current.ModelEditor_ViewHighCollision && postfix == "h" || CFG.Current.ModelEditor_ViewLowCollision && postfix == "l")
+            if (CFG.Current.ModelEditor_ViewHighCollision && postfix == "h" || 
+                CFG.Current.ModelEditor_ViewLowCollision && postfix == "l")
             {
                 Screen.ViewportHandler.UpdateRenderMeshCollision(colAsset);
 
-                // PIPELINE: resource has not already been loaded
-                if (!ResourceManager.IsResourceLoadedOrInFlight(colAsset.AssetVirtualPath, AccessLevel.AccessFull))
+                if (colAsset.AssetArchiveVirtualPath != null)
                 {
-                    // PIPELINE: resource path is a archive path (MAPBND.DCX or MAPBHD/MAPBDT)
-                    if (colAsset.AssetArchiveVirtualPath != null)
+                    if (!ResourceManager.IsResourceLoadedOrInFlight(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull))
                     {
                         job.AddLoadArchiveTask(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.CollisionHKX);
                     }
-                    // PIPELINE: resource path is a direct path (FLVER.DCX)
-                    else if (colAsset.AssetVirtualPath != null)
+                }
+                else if (colAsset.AssetVirtualPath != null)
+                {
+                    if (!ResourceManager.IsResourceLoadedOrInFlight(colAsset.AssetVirtualPath, AccessLevel.AccessFull))
                     {
                         job.AddLoadFileTask(colAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                     }
-
-                    _loadingTask = job.Complete();
-
                 }
+
+                _loadingTask = job.Complete();
 
                 ResourceManager.AddResourceListener<HavokCollisionResource>(colAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
             }
         }
 
+        /// <summary>
+        /// Get model resource descriptor
+        /// </summary>
         public ResourceDescriptor GetModelAssetDescriptor(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
         {
             ResourceDescriptor asset;
@@ -517,30 +540,33 @@ namespace StudioCore.Editors.ModelEditor
             return asset;
         }
 
-        public ResourceDescriptor GetTextureAssetDescriptor(string modelid, ModelEditorModelType modelType, string mapid = null)
+        /// <summary>
+        /// Get texture resource descriptors
+        /// </summary>
+        public List<ResourceDescriptor> GetTextureAssetDescriptorList(string modelid, ModelEditorModelType modelType, string mapid = null)
         {
-            ResourceDescriptor asset;
+            List<ResourceDescriptor> assets = new();
 
             switch (modelType)
             {
                 case ModelEditorModelType.Character:
-                    asset = TextureLocator.GetChrTextures(modelid);
+                    assets.Add(TextureLocator.GetChrTextures(modelid));
                     break;
                 case ModelEditorModelType.Object:
-                    asset = TextureLocator.GetObjTextureContainer(modelid);
+                    assets.Add(TextureLocator.GetObjTextureContainer(modelid));
                     break;
                 case ModelEditorModelType.Parts:
-                    asset = TextureLocator.GetPartTextureContainer(modelid);
+                    assets.Add(TextureLocator.GetPartTextureContainer(modelid));
                     break;
                 case ModelEditorModelType.MapPiece:
-                    asset = ModelLocator.GetNullAsset();
+                    assets = TextureLocator.GetMapTextures(mapid);
                     break;
                 default:
-                    asset = ModelLocator.GetNullAsset();
+                    assets.Add(ModelLocator.GetNullAsset());
                     break;
             }
 
-            return asset;
+            return assets;
         }
 
         /// <summary>
