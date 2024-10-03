@@ -391,9 +391,12 @@ namespace StudioCore.Editors.ModelEditor
             {
                 foreach (var map in maps)
                 {
-                    if (Smithbox.AliasCacheHandler.AliasCache.MapPieceDict[map].Count > 0)
+                    if (Smithbox.AliasCacheHandler.AliasCache.MapPieceDict.ContainsKey(map))
                     {
-                        MapPieceCollapsibleSection(map);
+                        if (Smithbox.AliasCacheHandler.AliasCache.MapPieceDict[map].Count > 0)
+                        {
+                            MapPieceCollapsibleSection(map);
+                        }
                     }
                 }
             }

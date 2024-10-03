@@ -100,14 +100,17 @@ Texture Viewer:
  - ADD: support for tpfbdt files 
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
 
-EMEVD Editor:
- - ADD: quicklink to EMEVD from param field
- - ADD: Add ability to insert/delete/order commands.
- - ADD: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
- - ADD: ability to edit properties
- 
 ESD Editor:
  - ADD: 
+ 
+EMEVD Editor:
+ - DEV: instruction test: find missing instructions / missing or invalid arguments
+ 
+ - ADD: save functionality
+ - ADD: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
+ - ADD: enum selection changes value
+ - ADD: Add ability to insert/delete/order events.
+ - ADD: Add ability to insert/delete/order instructions.
  
 #--------------------------------------
 # Notes
