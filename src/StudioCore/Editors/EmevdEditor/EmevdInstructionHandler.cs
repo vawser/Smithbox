@@ -43,9 +43,9 @@ public class EmevdInstructionHandler
         {
             var instruction = Screen._selectedInstruction;
 
-            if (HasArgDoc(instruction))
+            if (EmevdUtils.HasArgDoc(instruction))
             {
-                (ArgumentDocs, Arguments) = BuildArgumentList(instruction);
+                (ArgumentDocs, Arguments) = EmevdUtils.BuildArgumentList(instruction);
                 Decorator.StoreInstructionInfo(instruction, ArgumentDocs, Arguments);
 
                 ImGui.Columns(2);
@@ -155,106 +155,9 @@ public class EmevdInstructionHandler
             }
             else
             {
-                // Display the byte contents as blocks of 4 bytes
-                // Also show the potential int and float values
-                byte[] blockArr = new byte[4];
-                int blockIndex = 0;
-
-                for(int i = 0; i < instruction.ArgData.Length; i++)
-                {
-                    var block = instruction.ArgData[i];
-
-                    blockArr[blockIndex] = block;
-
-                    blockIndex++;
-
-                    if (i % 4 == 0)
-                    {
-                        int iValue = BitConverter.ToInt32(blockArr, 0);
-                        float fValue = BitConverter.ToSingle(blockArr, 0);
-                        short sValue_1 = BitConverter.ToInt16(blockArr[..2], 0);
-                        short sValue_2 = BitConverter.ToInt16(blockArr[2..], 0);
-
-                        var arrStr = "";
-                        foreach(var item in blockArr)
-                        {
-                            if(item < 10)
-                            {
-                                arrStr += $"00{item} ";
-                            }
-                            else if (item < 100)
-                            {
-                                arrStr += $"0{item} ";
-                            }
-                            else
-                            {
-                                arrStr += $"{item} ";
-                            }
-                        }
-
-                        UIHelper.WrappedText($"{arrStr} | Int: {iValue} | Float: {fValue} | Shorts: {sValue_1}, {sValue_2}");
-                        blockIndex = 0;
-                        blockArr = new byte[4];
-                    }
-                }
+                EmevdUtils.DetermineUnknownParameters(instruction);
             }
         }
-    }
-
-    private bool HasArgDoc(Instruction ins)
-    {
-        var classDoc = EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
-
-        if (classDoc == null)
-        {
-            return false;
-        }
-
-        var instructionDoc = classDoc[ins.ID];
-
-        if (instructionDoc == null)
-        {
-            return false;
-        }
-
-        return true;
-    }
-
-    private (List<ArgDoc>, List<object>) BuildArgumentList(Instruction ins)
-    {
-        var argList = new List<object>();
-        var argDocList = new List<ArgDoc>();
-
-        var classDoc = EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
-
-        if(classDoc == null)
-        {
-            return (argDocList, argList);
-        }
-
-        var instructionDoc = classDoc[ins.ID];
-
-        if(instructionDoc == null)
-        {
-            return (argDocList, argList);
-        }
-
-        var data = ins.ArgData;
-
-        List<ArgType> argTypes = instructionDoc.Arguments.Select(arg => arg.Type == 8 ? ArgType.UInt32 : (ArgType)arg.Type).ToList();
-
-        var argObjects = ins.UnpackArgs(argTypes);
-
-        for (int i = 0; i < instructionDoc.Arguments.Length; i++)
-        {
-            var entry = instructionDoc.Arguments[i];
-            var obj = argObjects[i];
-
-            argDocList.Add(entry);
-            argList.Add(obj);
-        }
-
-        return (argDocList, argList);
     }
 }
 

@@ -386,6 +386,15 @@ namespace StudioCore.Editors.ModelEditor
 
             LoadModelInternal(containerId, modelid, modelType, mapid);
             LoadTexturesInternal(modelid, modelType, mapid);
+
+            // If model ID has additional textures associated with it, load them
+            if (Smithbox.BankHandler.AdditionalTextureInfo.HasAdditionalTextures(modelid))
+            {
+                foreach (var entry in Smithbox.BankHandler.AdditionalTextureInfo.GetAdditionalTextures(modelid))
+                {
+                    LoadTexturesInternal(modelid, modelType, mapid);
+                }
+            }
         }
 
         /// <summary>
@@ -467,15 +476,6 @@ namespace StudioCore.Editors.ModelEditor
                 }
 
                 _loadingTask = job.Complete();
-            }
-
-            // If model ID has additional textures associated with it, load them
-            if (Smithbox.BankHandler.AdditionalTextureInfo.HasAdditionalTextures(modelid))
-            {
-                foreach (var entry in Smithbox.BankHandler.AdditionalTextureInfo.GetAdditionalTextures(modelid))
-                {
-                    LoadTexturesInternal(modelid, modelType, mapid);
-                }
             }
         }
 
