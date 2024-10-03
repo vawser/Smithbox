@@ -197,15 +197,19 @@ public static class ResourceManager
                 LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
         }
 
-        // We always want to dispose when using the Model Editor (so we can save the container), so we ignore the refcount logic
-        if(Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
+        if (action.Binder != null)
         {
-            action.Binder.Dispose(true);
+            // We always want to dispose when using the Model Editor (so we can save the container), so we ignore the refcount logic
+            if (Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
+            {
+                action.Binder.Dispose(true);
+            }
+            else
+            {
+                action.Binder.Dispose();
+            }
         }
-        else
-        {
-            action.Binder.Dispose();
-        }
+
         action.PendingResources.Clear();
         action.Binder = null;
     }

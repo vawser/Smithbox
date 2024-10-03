@@ -3,6 +3,7 @@ using StudioCore.Core.Project;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace StudioCore.Resource.Locators;
 public static class TextureLocator
@@ -147,6 +148,11 @@ public static class TextureLocator
         if (Smithbox.ProjectType is ProjectType.AC6)
         {
             overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.texbnd.dcx");
+
+            if (isLowDetail)
+            {
+                overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_l.texbnd.dcx");
+            }
         }
 
         if (overrideFilePath != null)
@@ -256,6 +262,11 @@ public static class TextureLocator
             {
                 ad.AssetPath = path;
                 ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
+
+                if (isLowDetail)
+                {
+                    ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex/low";
+                }
             }
         }
 
@@ -374,40 +385,17 @@ public static class TextureLocator
 
         if (Smithbox.ProjectType == ProjectType.AC6)
         {
-            /*
-            string path;
-            if (partsId.Substring(0, 2) == "wp")
-            {
-                string id;
-                if (partsId.EndsWith("_l"))
-                {
-                    id = partsId[..^2].Split("_").Last();
-                    path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\wp_{id}_l.tpf.dcx");
-                }
-                else
-                {
-                    id = partsId.Split("_").Last();
-                    path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\wp_{id}.tpf.dcx");
-                }
-            }
-            else
-            {
-                path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}_u.tpf.dcx");
-            }
-
-            if (path != null)
-            {
-                ad.AssetPath = path;
-                ad.AssetVirtualPath = $@"parts/{partsId}/tex";
-            }
-            */
-
             var path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
 
             if (path != null)
             {
                 ad.AssetPath = path;
                 ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
+
+                if (isLowDetail)
+                {
+                    ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex/low";
+                }
             }
         }
         else if (Smithbox.ProjectType == ProjectType.ER)
@@ -543,6 +531,44 @@ public static class TextureLocator
         return ad;
     }
 
+    // Special case for AC6 where the parts use both the partsbnd and a loose tpf for textures
+    public static ResourceDescriptor GetPartTpf_Ac6(string partsId)
+    {
+        ResourceDescriptor ad = new();
+        ad.AssetArchiveVirtualPath = null;
+        ad.AssetPath = null;
+
+        if (Smithbox.ProjectType == ProjectType.AC6)
+        {
+            string path;
+            if (partsId.Substring(0, 2) == "wp")
+            {
+                string id;
+                if (partsId.EndsWith("_l"))
+                {
+                    id = partsId[..^2].Split("_").Last();
+                    path = LocatorUtils.GetOverridenFilePath($@"parts\wp_{id}_l.tpf.dcx");
+                }
+                else
+                {
+                    id = partsId.Split("_").Last();
+                    path = LocatorUtils.GetOverridenFilePath($@"parts\wp_{id}.tpf.dcx");
+                }
+            }
+            else
+            {
+                path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}_u.tpf.dcx");
+            }
+
+            if (path != null)
+            {
+                ad.AssetPath = path;
+                ad.AssetVirtualPath = $@"parts/{partsId}/tex/tpf";
+            }
+        }
+
+        return ad;
+    }
 
     public static ResourceDescriptor GetAssetTextureContainer(string resourceName)
     {

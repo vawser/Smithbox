@@ -391,60 +391,65 @@ namespace StudioCore.Editors.ModelEditor
             {
                 foreach (var map in maps)
                 {
-                    var displayedMapName = $"{map} - {AliasUtils.GetMapNameAlias(map)}";
-
                     if (Smithbox.AliasCacheHandler.AliasCache.MapPieceDict[map].Count > 0)
                     {
-                        if (ImGui.CollapsingHeader($"{displayedMapName}"))
+                        MapPieceCollapsibleSection(map);
+                    }
+                }
+            }
+        }
+
+        private void MapPieceCollapsibleSection(string map)
+        {
+            var displayedMapName = $"{map} - {AliasUtils.GetMapNameAlias(map)}";
+
+            if (ImGui.CollapsingHeader($"{displayedMapName}"))
+            {
+                var displayedName = $"{map}";
+                var modelName = map.Replace($"{map}_", "m");
+                displayedName = $"{modelName}";
+
+                if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
+                {
+                    displayedName = displayedName.Replace($"A{map.Substring(1, 2)}", "");
+                }
+
+                if (Smithbox.AliasCacheHandler.AliasCache.MapPieceDict.ContainsKey(map))
+                {
+                    foreach (var entry in Smithbox.AliasCacheHandler.AliasCache.MapPieceDict[map])
+                    {
+                        var mapPieceName = $"{entry.Replace(map, "m")}";
+
+                        if (ImGui.Selectable(mapPieceName, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
-                            var displayedName = $"{map}";
-                            var modelName = map.Replace($"{map}_", "m");
-                            displayedName = $"{modelName}";
+                            _selectedEntry = entry;
+                            _selectedEntryType = ModelSelectionType.MapPiece;
 
-                            if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
+                            if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
-                                displayedName = displayedName.Replace($"A{map.Substring(1, 2)}", "");
+                                _selectedMapId = map;
+                                Screen.ResourceHandler.LoadMapPiece(_selectedEntry, map);
                             }
+                        }
+                        if (ImGui.IsItemVisible())
+                        {
+                            DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
+                        }
 
-                            if (Smithbox.AliasCacheHandler.AliasCache.MapPieceDict.ContainsKey(map))
+                        if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{entry}"))
+                        {
+                            if (ImGui.Selectable("Go to Alias"))
                             {
-                                foreach (var entry in Smithbox.AliasCacheHandler.AliasCache.MapPieceDict[map])
+                                if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
                                 {
-                                    var mapPieceName = $"{entry.Replace(map, "m")}";
-
-                                    if (ImGui.Selectable(mapPieceName, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
-                                    {
-                                        _selectedEntry = entry;
-                                        _selectedEntryType = ModelSelectionType.MapPiece;
-
-                                        if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                                        {
-                                            _selectedMapId = map;
-                                            Screen.ResourceHandler.LoadMapPiece(_selectedEntry, map);
-                                        }
-                                    }
-                                    if (ImGui.IsItemVisible())
-                                    {
-                                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
-                                    }
-
-                                    if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{entry}"))
-                                    {
-                                        if (ImGui.Selectable("Go to Alias"))
-                                        {
-                                            if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
-                                            {
-                                                Smithbox.WindowHandler.SettingsWindow.ToggleMenuVisibility();
-                                            }
-
-                                            Smithbox.WindowHandler.SettingsWindow.DisplayMapPieceTab = true;
-                                            Smithbox.WindowHandler.SettingsWindow.TargetMapPieceID = entry;
-                                        }
-
-                                        ImGui.EndPopup();
-                                    }
+                                    Smithbox.WindowHandler.SettingsWindow.ToggleMenuVisibility();
                                 }
+
+                                Smithbox.WindowHandler.SettingsWindow.DisplayMapPieceTab = true;
+                                Smithbox.WindowHandler.SettingsWindow.TargetMapPieceID = entry;
                             }
+
+                            ImGui.EndPopup();
                         }
                     }
                 }

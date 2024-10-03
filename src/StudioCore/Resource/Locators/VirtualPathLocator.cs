@@ -404,7 +404,6 @@ public static class VirtualPathLocator
 
                 if (Smithbox.ProjectType is ProjectType.ER)
                 {
-                    // This is so the ER parts _l will display in the Texture Viewer
                     if (pathElements.Length == 4)
                     {
                         i++;
@@ -422,25 +421,37 @@ public static class VirtualPathLocator
 
                 if (Smithbox.ProjectType == ProjectType.AC6 && pathElements[i].Equals("tex"))
                 {
-                    string path;
-                    if (partsId.Substring(0, 2) == "wp")
+                    if (pathElements.Length == 4)
                     {
-                        string id;
-                        if (partsId.EndsWith("_l"))
+                        i++;
+                        if (pathElements[i].Equals("low"))
                         {
-                            id = partsId[..^2].Split("_").Last();
-                            path = LocatorUtils.GetOverridenFilePath($@"parts\wp_{id}_l.tpf.dcx");
+                            return LocatorUtils.GetOverridenFilePath($@"parts\{partsId}_l.partsbnd.dcx");
                         }
-                        else
+                        else if (pathElements[i].Equals("tpf"))
                         {
-                            id = partsId.Split("_").Last();
-                            path = LocatorUtils.GetOverridenFilePath($@"parts\wp_{id}.tpf.dcx");
+                            var path = "";
+
+                            if (partsId.Substring(0, 2) == "wp")
+                            {
+                                string id;
+                                if (partsId.EndsWith("_l"))
+                                {
+                                    id = partsId[..^2].Split("_").Last();
+                                    path = LocatorUtils.GetOverridenFilePath($@"parts\wp_{id}_l.tpf.dcx");
+                                }
+                                else
+                                {
+                                    id = partsId.Split("_").Last();
+                                    path = LocatorUtils.GetOverridenFilePath($@"parts\wp_{id}.tpf.dcx");
+                                }
+                            }
+                            else
+                                path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}_u.tpf.dcx");
+
+                            return path;
                         }
                     }
-                    else
-                        path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}_u.tpf.dcx");
-
-                    return path;
                 }
 
                 return LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");

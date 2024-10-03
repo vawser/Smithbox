@@ -375,10 +375,13 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadRepresentativeModel(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
         {
-            if (modelType is ModelEditorModelType.Object)
+            if (Smithbox.ProjectType is ProjectType.ER)
             {
-                LoadCollisionInternal(modelid, "h");
-                LoadCollisionInternal(modelid, "l");
+                if (modelType is ModelEditorModelType.Object)
+                {
+                    LoadCollisionInternal(modelid, "h");
+                    LoadCollisionInternal(modelid, "l");
+                }
             }
 
             LoadModelInternal(containerId, modelid, modelType, mapid);
@@ -433,6 +436,12 @@ namespace StudioCore.Editors.ModelEditor
             ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading textures");
 
             List<ResourceDescriptor> textureAssets = GetTextureAssetDescriptorList(modelid, modelType, mapid);
+
+            // Add the loose tpfs parts have in AC6
+            if(Smithbox.ProjectType is ProjectType.AC6)
+            {
+                textureAssets.Add(TextureLocator.GetPartTpf_Ac6(modelid));
+            }
 
             foreach(var entry in textureAssets)
             {
