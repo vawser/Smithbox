@@ -459,11 +459,11 @@
 1655 [Weapon] Endure - Poise Buff
 1656 [Weapon] Endure - Poise Buff - No FP
 1660 
-1661 
+1661 Determination Removal - Right (Cycle)
 1662 
-1665 
-1666 
-1667 
+1665 Determination Removal - Right
+1666 Determination Removal - Left (Cycle)
+1667 Determination Removal - Left
 1670 [Weapon] Thunderbolt - VFX
 1671 [Weapon] Thunderbolt - VFX
 1675 [Weapon] Lightning Slash
@@ -939,8 +939,8 @@
 4085 
 4090 
 4091 
-4100 Sanguine Noble - Bullet - Slow
-4101 Sanguine Noble - Bullet - Slow
+4100 Forced Slow Walk/Jump (Excl. Dodge)
+4101 Forced Slow Walk/Jump
 4150 
 4170 
 4171 
@@ -1538,16 +1538,16 @@
 6860 Destined Death - (Max HP Debuff)
 6861 
 6865 Destined Death - (Max HP Debuff)
-6900 
-6901 
-6902 
-6903 
-6904 
-6905 
-6906 
-6907 
-6908 
-6909 
+6900 Accumulator Increase +2
+6901 Accumulator Increase +4
+6902 Accumulator Increase +6
+6903 Accumulator Increase +8
+6904 Accumulator Increase +10
+6905 Accumulator Increase +12
+6906 Accumulator Increase +14
+6907 Accumulator Increase +16
+6908 Accumulator Increase +18
+6909 Accumulator Increase +20
 6910 Enemy - Crystal Dart Confusion
 6915 Enemy - Crystal Dart Confusion - Visual
 6920 Enemy - Crystal Dart Confusion - Border A
@@ -1822,7 +1822,7 @@
 9618 
 9619 
 9620 
-9621 
+9621 Disallow Hostile Actions
 9622 
 9623 
 9624 
