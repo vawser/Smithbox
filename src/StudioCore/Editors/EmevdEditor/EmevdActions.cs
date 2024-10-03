@@ -12,37 +12,6 @@ namespace StudioCore.Editors.EmevdEditor;
 /// <summary>
 /// Instruction - Property Change (Generic)
 /// </summary>
-public class InstructionPropertyChange : EditorAction
-{
-    private object Argument;
-    private object OldValue;
-    private object NewValue;
-
-    public InstructionPropertyChange(object arg, object newValue)
-    {
-        Argument = arg;
-        OldValue = arg;
-        NewValue = newValue;
-    }
-
-    public override ActionEvent Execute()
-    {
-        Argument = NewValue;
-
-        return ActionEvent.NoEvent;
-    }
-
-    public override ActionEvent Undo()
-    {
-        Argument = OldValue;
-
-        return ActionEvent.NoEvent;
-    }
-}
-
-/// <summary>
-/// Instruction - Property Change (Generic)
-/// </summary>
 public class InstructionArgumentChange : EditorAction
 {
     private Instruction Instruction;
