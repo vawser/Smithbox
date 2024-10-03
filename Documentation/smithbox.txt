@@ -107,7 +107,7 @@ EMEVD Editor:
  - ADD: ability to edit properties
  
 ESD Editor:
- - ADD: exists
+ - ADD: 
  
 #--------------------------------------
 # Notes

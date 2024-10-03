@@ -1,9 +1,12 @@
-﻿using ImGuiNET;
+﻿using DotNext.Collections.Generic;
+using ImGuiNET;
 using Octokit;
 using SoulsFormats;
 using StudioCore.EmevdEditor;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -23,7 +26,7 @@ public class EmevdInstructionHandler
     {
         Screen = screen;
         Decorator = screen.Decorator;
-        PropEditor = new EmevdPropertyEditor(screen);
+        PropEditor = new EmevdPropertyEditor(screen, this);
     }
 
     public void OnProjectChanged()
@@ -31,7 +34,8 @@ public class EmevdInstructionHandler
 
     }
 
-    public List<ArgDataObject> Arguments { get; set; }
+    public List<ArgDoc> ArgumentDocs { get; set; }
+    public List<object> Arguments { get; set; }
 
     public void Display()
     {
@@ -39,213 +43,218 @@ public class EmevdInstructionHandler
         {
             var instruction = Screen._selectedInstruction;
 
-            Arguments = BuildArgumentList(instruction);
-            Decorator.StoreInstructionInfo(instruction, Arguments);
-
-            ImGui.Columns(2);
-
-            // Names
-            for(int i = 0; i < Arguments.Count; i++)
+            if (HasArgDoc(instruction))
             {
-                var arg = Arguments[i];
+                (ArgumentDocs, Arguments) = BuildArgumentList(instruction);
+                Decorator.StoreInstructionInfo(instruction, ArgumentDocs, Arguments);
 
-                // Property Name
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text($"{arg.ArgDoc.Name}");
+                ImGui.Columns(2);
 
-                // Enum Reference
-                if(arg.ArgDoc.EnumName != null)
+                // Names
+                for (int i = 0; i < Arguments.Count; i++)
                 {
+                    var arg = Arguments[i];
+                    var argDoc = ArgumentDocs[i];
+
+                    // Property Name
                     ImGui.AlignTextToFramePadding();
-                    ImGui.Text("");
+                    ImGui.Text($"{argDoc.Name}");
+
+                    // Enum Reference
+                    if (argDoc.EnumName != null)
+                    {
+                        ImGui.AlignTextToFramePadding();
+                        ImGui.Text("");
+                    }
+
+                    // Param Reference
+                    if (Decorator.HasParamReference(argDoc.Name))
+                    {
+                        Decorator.DetermineParamReferenceSpacing(argDoc.Name, $"{arg}", i);
+                    }
+
+                    // Text Reference
+                    if (Decorator.HasTextReference(argDoc.Name))
+                    {
+                        Decorator.DetermineTextReferenceSpacing(argDoc.Name, $"{arg}", i);
+                    }
+
+                    // Alias Reference
+                    if (Decorator.HasAliasReference(argDoc.Name))
+                    {
+                        Decorator.DetermineAliasReferenceSpacing(argDoc.Name, $"{arg}", i);
+                    }
+
+                    // Entity Reference
+                    if (Decorator.HasEntityReference(argDoc.Name))
+                    {
+                        Decorator.DetermineEntityReferenceSpacing(argDoc.Name, $"{arg}", i);
+                    }
                 }
 
-                // Param Reference
-                if (Decorator.HasParamReference(arg.ArgDoc.Name))
+                ImGui.NextColumn();
+
+                // Properties
+                for (int i = 0; i < Arguments.Count; i++)
                 {
-                    Decorator.DetermineParamReferenceSpacing(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
+                    var argDoc = ArgumentDocs[i];
+
+                    object newValue;
+                    (bool, bool) propEditResults = PropEditor.PropertyRow(argDoc, Arguments[i], out newValue);
+
+                    var changed = propEditResults.Item1;
+                    var committed = propEditResults.Item2;
+
+                    if (changed && committed)
+                    {
+                        // Update the argument value
+                        Arguments[i] = newValue;
+
+                        // Then prepare action that updates all arguments
+                        var oldArguments = (byte[])instruction.ArgData.Clone();
+                        var newArguments = instruction.UpdateArgs(Arguments);
+
+                        var action = new InstructionArgumentChange(instruction, oldArguments, newArguments);
+                        Screen.EditorActionManager.ExecuteAction(action);
+                    }
+
+                    //ImGui.Text($"{arg.ArgObject}");
+
+                    // Enum Reference
+                    if (argDoc.EnumName != null)
+                    {
+                        Decorator.DisplayEnumReference(argDoc, Arguments[i], i);
+                    }
+
+                    // Param Reference
+                    if (Decorator.HasParamReference(argDoc.Name))
+                    {
+                        Decorator.DetermineParamReference(argDoc.Name, $"{Arguments[i]}", i);
+                    }
+
+                    // Text Reference
+                    if (Decorator.HasTextReference(argDoc.Name))
+                    {
+                        Decorator.DetermineTextReference(argDoc.Name, $"{Arguments[i]}", i);
+                    }
+
+                    // Alias Reference
+                    if (Decorator.HasAliasReference(argDoc.Name))
+                    {
+                        Decorator.DetermineAliasReference(argDoc.Name, $"{Arguments[i]}", i);
+                    }
+
+                    // Entity Reference
+                    if (Decorator.HasEntityReference(argDoc.Name))
+                    {
+                        Decorator.DetermineEntityReference(argDoc.Name, $"{Arguments[i]}", i);
+                    }
                 }
 
-                // Text Reference
-                if (Decorator.HasTextReference(arg.ArgDoc.Name))
-                {
-                    Decorator.DetermineTextReferenceSpacing(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
-                }
-
-                // Alias Reference
-                if (Decorator.HasAliasReference(arg.ArgDoc.Name))
-                {
-                    Decorator.DetermineAliasReferenceSpacing(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
-                }
-
-                // Entity Reference
-                if (Decorator.HasEntityReference(arg.ArgDoc.Name))
-                {
-                    Decorator.DetermineEntityReferenceSpacing(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
-                }
+                ImGui.Columns(1);
             }
-
-            ImGui.NextColumn();
-
-            // Properties
-            for (int i = 0; i < Arguments.Count; i++)
+            else
             {
-                var arg = Arguments[i];
+                // Display the byte contents as blocks of 4 bytes
+                // Also show the potential int and float values
+                byte[] blockArr = new byte[4];
+                int blockIndex = 0;
 
-                // Property Value
-                // TODO: add property edit
-                object newValue;
-                (bool, bool) propEditResults = PropEditor.PropertyRow(arg, arg.ArgObject, out newValue);
-
-                var changed = propEditResults.Item1;
-                var committed = propEditResults.Item2;
-
-                PropEditor.UpdateProperty(arg, arg.ArgObject, newValue, changed, committed);
-
-                if(committed)
+                for(int i = 0; i < instruction.ArgData.Length; i++)
                 {
-                    TaskLogs.AddLog("committed change");
-                }
+                    var block = instruction.ArgData[i];
 
-                //ImGui.Text($"{arg.ArgObject}");
+                    blockArr[blockIndex] = block;
 
-                // Enum Reference
-                if (arg.ArgDoc.EnumName != null)
-                {
-                    Decorator.DisplayEnumReference(arg, i);
-                }
+                    blockIndex++;
 
-                // Param Reference
-                if (Decorator.HasParamReference(arg.ArgDoc.Name))
-                {
-                    Decorator.DetermineParamReference(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
-                }
+                    if (i % 4 == 0)
+                    {
+                        int iValue = BitConverter.ToInt32(blockArr, 0);
+                        float fValue = BitConverter.ToSingle(blockArr, 0);
+                        short sValue_1 = BitConverter.ToInt16(blockArr[..2], 0);
+                        short sValue_2 = BitConverter.ToInt16(blockArr[2..], 0);
 
-                // Text Reference
-                if (Decorator.HasTextReference(arg.ArgDoc.Name))
-                {
-                    Decorator.DetermineTextReference(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
-                }
+                        var arrStr = "";
+                        foreach(var item in blockArr)
+                        {
+                            if(item < 10)
+                            {
+                                arrStr += $"00{item} ";
+                            }
+                            else if (item < 100)
+                            {
+                                arrStr += $"0{item} ";
+                            }
+                            else
+                            {
+                                arrStr += $"{item} ";
+                            }
+                        }
 
-                // Alias Reference
-                if (Decorator.HasAliasReference(arg.ArgDoc.Name))
-                {
-                    Decorator.DetermineAliasReference(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
-                }
-
-                // Entity Reference
-                if (Decorator.HasEntityReference(arg.ArgDoc.Name))
-                {
-                    Decorator.DetermineEntityReference(arg.ArgDoc.Name, $"{arg.ArgObject}", i);
+                        UIHelper.WrappedText($"{arrStr} | Int: {iValue} | Float: {fValue} | Shorts: {sValue_1}, {sValue_2}");
+                        blockIndex = 0;
+                        blockArr = new byte[4];
+                    }
                 }
             }
-
-            ImGui.Columns(1);
         }
     }
 
-    private List<ArgDataObject> BuildArgumentList(Instruction ins)
+    private bool HasArgDoc(Instruction ins)
     {
-        var argList = new List<ArgDataObject>();
+        var classDoc = EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
+
+        if (classDoc == null)
+        {
+            return false;
+        }
+
+        var instructionDoc = classDoc[ins.ID];
+
+        if (instructionDoc == null)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    private (List<ArgDoc>, List<object>) BuildArgumentList(Instruction ins)
+    {
+        var argList = new List<object>();
+        var argDocList = new List<ArgDoc>();
 
         var classDoc = EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
 
         if(classDoc == null)
         {
-            return argList;
+            return (argDocList, argList);
         }
 
         var instructionDoc = classDoc[ins.ID];
 
         if(instructionDoc == null)
         {
-            return argList;
+            return (argDocList, argList);
         }
 
         var data = ins.ArgData;
 
         List<ArgType> argTypes = instructionDoc.Arguments.Select(arg => arg.Type == 8 ? ArgType.UInt32 : (ArgType)arg.Type).ToList();
 
-        var argObjects = UnpackArguments(ins, argTypes);
+        var argObjects = ins.UnpackArgs(argTypes);
 
         for (int i = 0; i < instructionDoc.Arguments.Length; i++)
         {
             var entry = instructionDoc.Arguments[i];
             var obj = argObjects[i];
 
-            argList.Add(new ArgDataObject(entry, obj));
+            argDocList.Add(entry);
+            argList.Add(obj);
         }
 
-        return argList;
+        return (argDocList, argList);
     }
-
-    private List<object> UnpackArguments(Instruction ins, IEnumerable<ArgType> argStruct, bool bigEndian = false)
-    {
-        var result = new List<object>();
-        using (var ms = new MemoryStream(ins.ArgData))
-        {
-            byte[] bytes = ms.ToArray();
-
-            var br = new BinaryReaderEx(bigEndian, bytes);
-            foreach (ArgType arg in argStruct)
-            {
-                switch (arg)
-                {
-                    case ArgType.Byte:
-                        result.Add(br.ReadByte()); break;
-                    case ArgType.UInt16:
-                        AssertZeroPad(br, 2);
-                        result.Add(br.ReadUInt16()); break;
-                    case ArgType.UInt32:
-                        AssertZeroPad(br, 4);
-                        result.Add(br.ReadUInt32()); break;
-                    case ArgType.SByte:
-                        result.Add(br.ReadSByte()); break;
-                    case ArgType.Int16:
-                        AssertZeroPad(br, 2);
-                        result.Add(br.ReadInt16()); break;
-                    case ArgType.Int32:
-                        AssertZeroPad(br, 4);
-                        result.Add(br.ReadInt32()); break;
-                    case ArgType.Single:
-                        AssertZeroPad(br, 4);
-                        result.Add(br.ReadSingle()); break;
-
-                    default:
-                        throw new NotImplementedException($"Unimplemented argument type: {arg}");
-                }
-            }
-            AssertZeroPad(br, 4);
-        }
-        return result;
-    }
-
-    private void AssertZeroPad(BinaryReaderEx br, int align)
-    {
-        if (br.Position % align > 0)
-        {
-            br.AssertPattern(align - (int)(br.Position % align), 0);
-        }
-    }
-    private void WriteZeroPad(BinaryWriterEx bw, int align)
-    {
-        if (bw.Position % align > 0)
-        {
-            bw.WritePattern(align - (int)(bw.Position % align), 0);
-        }
-    }
-
 }
 
-public class ArgDataObject
-{
-    public ArgDoc ArgDoc { get; set; }
-
-    public object ArgObject { get; set; }
-
-    public ArgDataObject(ArgDoc argDoc, object argObj)
-    {
-        ArgDoc = argDoc;
-        ArgObject = argObj;
-    }
-}

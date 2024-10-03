@@ -19,6 +19,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using static SoulsFormats.EMEVD;
+using static StudioCore.Editors.EmevdEditor.EMEDF;
 
 namespace StudioCore.Editors.EmevdEditor
 {
@@ -27,7 +28,9 @@ namespace StudioCore.Editors.EmevdEditor
         private EmevdEditorScreen Screen;
 
         private Instruction Instruction;
-        private List<ArgDataObject> Arguments;
+
+        private List<ArgDoc> ArgumentDocs;
+        private List<object> Arguments;
 
         public EmevdDecorator(EmevdEditorScreen screen)
         {
@@ -40,9 +43,10 @@ namespace StudioCore.Editors.EmevdEditor
         }
 
         // Store this for the current instruction loop so we can determine stuff such as Item Type
-        public void StoreInstructionInfo(Instruction instruction, List<ArgDataObject> arguments)
+        public void StoreInstructionInfo(Instruction instruction, List<ArgDoc> argDocs, List<object> arguments)
         {
             Instruction = instruction;
+            ArgumentDocs = argDocs;
             Arguments = arguments;
         }
 
@@ -280,12 +284,15 @@ namespace StudioCore.Editors.EmevdEditor
 
                 if (parameterName == "Item ID")
                 {
-                    foreach(var entry in Arguments)
+                    for(int k = 0; k < Arguments.Count; k++)
                     {
-                        if(entry.ArgDoc.DisplayName == "Item Type")
+                        var arg = Arguments[k];
+                        var argDoc = ArgumentDocs[k];
+
+                        if (argDoc.DisplayName == "Item Type")
                         {
-                            string typeValue = entry.ArgObject as string;
-                            switch(typeValue)
+                            string typeValue = arg as string;
+                            switch (typeValue)
                             {
                                 case "0": ConstructParamReference("EquipParamWeapon", value, i); break;
                                 case "1": ConstructParamReference("EquipParamProtector", value, i); break;
@@ -626,10 +633,10 @@ namespace StudioCore.Editors.EmevdEditor
         #region Enum Reference
         public string enumSearchStr = "";
 
-        public void DisplayEnumReference(ArgDataObject arg, int i)
+        public void DisplayEnumReference(ArgDoc argDoc, object arg, int i)
         {
-            var enumDoc = EmevdBank.InfoBank.Enums.Where(e => e.Name == arg.ArgDoc.EnumName).FirstOrDefault();
-            var alias = enumDoc.Values.Where(e => e.Key == $"{arg.ArgObject}").FirstOrDefault();
+            var enumDoc = EmevdBank.InfoBank.Enums.Where(e => e.Name == argDoc.EnumName).FirstOrDefault();
+            var alias = enumDoc.Values.Where(e => e.Key == $"{arg}").FirstOrDefault();
 
             ImGui.AlignTextToFramePadding();
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{alias.Value}");
@@ -651,7 +658,7 @@ namespace StudioCore.Editors.EmevdEditor
                             {
                                 if (ImGui.Selectable($"{option.Key}: {option.Value}"))
                                 {
-                                    var newval = Convert.ChangeType(option.Key, arg.ArgObject.GetType());
+                                    var newval = Convert.ChangeType(option.Key, arg.GetType());
                                 }
                             }
                         }

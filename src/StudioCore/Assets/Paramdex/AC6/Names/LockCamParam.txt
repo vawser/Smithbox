@@ -5,4 +5,4 @@
 200000 Tank legs
 200001 Tank legs (Locked on)
 300000 Tetrapod legs
-300001 etrapod  legs (Locked on)
+300001 Tetrapod legs (Locked on)

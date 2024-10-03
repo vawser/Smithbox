@@ -533,78 +533,87 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void SaveModel()
         {
-            if (LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER == null)
+            if(LoadedFlverContainer == null)
             {
-                TaskLogs.AddLog("Failed to save FLVER as current FLVER is null.");
+                TaskLogs.AddLog("Failed to save FLVER as LoadedFlverContainer is null.");
                 return;
             }
 
-            if (LoadedFlverContainer != null)
+            if (LoadedFlverContainer.CurrentInternalFlver == null)
             {
-                // For loose files, save directly
-                if (LoadedFlverContainer.Type == ModelEditorModelType.Loose)
-                {
-                    WriteLooseFlver(LoadedFlverContainer.LoosePath, false);
-                }
-                // Copy the binder to the mod directory if it does not already exist.
-                else
-                {
-                    var exists = LoadedFlverContainer.CopyBinderToMod();
+                TaskLogs.AddLog("Failed to save FLVER as CurrentInternalFlver is null.");
+                return;
+            }
 
-                    if (exists)
+            if (LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER == null)
+            {
+                TaskLogs.AddLog("Failed to save FLVER as CurrentFLVER is null.");
+                return;
+            }
+
+            // For loose files, save directly
+            if (LoadedFlverContainer.Type == ModelEditorModelType.Loose)
+            {
+                WriteLooseFlver(LoadedFlverContainer.LoosePath, false);
+            }
+            // Copy the binder to the mod directory if it does not already exist.
+            else
+            {
+                var exists = LoadedFlverContainer.CopyBinderToMod();
+
+                if (exists)
+                {
+                    if (LoadedFlverContainer.Type == ModelEditorModelType.MapPiece)
                     {
-                        if (LoadedFlverContainer.Type == ModelEditorModelType.MapPiece)
+                        // .flver
+                        if (Smithbox.ProjectType == ProjectType.DS1)
                         {
-                            // .flver
-                            if (Smithbox.ProjectType == ProjectType.DS1)
+                            var directory = $"map\\{LoadedFlverContainer.MapID}\\";
+                            var path = $"map\\{LoadedFlverContainer.MapID}\\{LoadedFlverContainer.ContainerName}.flver";
+
+                            var projectDirectory = $"{Smithbox.ProjectRoot}\\{directory}";
+                            var savePath = $"{Smithbox.ProjectRoot}\\{path}";
+
+                            if (!Directory.Exists(projectDirectory))
                             {
-                                var directory = $"map\\{LoadedFlverContainer.MapID}\\";
-                                var path = $"map\\{LoadedFlverContainer.MapID}\\{LoadedFlverContainer.ContainerName}.flver";
-
-                                var projectDirectory = $"{Smithbox.ProjectRoot}\\{directory}";
-                                var savePath = $"{Smithbox.ProjectRoot}\\{path}";
-
-                                if (!Directory.Exists(projectDirectory))
-                                {
-                                    Directory.CreateDirectory(projectDirectory);
-                                }
-
-                                WriteLooseFlver(savePath, false);
+                                Directory.CreateDirectory(projectDirectory);
                             }
-                            // .flver.dcx
-                            else if(Smithbox.ProjectType == ProjectType.DS1R)
+
+                            WriteLooseFlver(savePath, false);
+                        }
+                        // .flver.dcx
+                        else if(Smithbox.ProjectType == ProjectType.DS1R)
+                        {
+                            var compressionType = DCX.Type.DCX_DFLT_10000_24_9;
+
+                            var directory = $"map\\{LoadedFlverContainer.MapID}\\";
+                            var path = $"map\\{LoadedFlverContainer.MapID}\\{LoadedFlverContainer.ContainerName}.flver.dcx";
+
+                            var projectDirectory = $"{Smithbox.ProjectRoot}\\{directory}";
+                            var savePath = $"{Smithbox.ProjectRoot}\\{path}";
+
+                            if (!Directory.Exists(projectDirectory))
                             {
-                                var compressionType = DCX.Type.DCX_DFLT_10000_24_9;
-
-                                var directory = $"map\\{LoadedFlverContainer.MapID}\\";
-                                var path = $"map\\{LoadedFlverContainer.MapID}\\{LoadedFlverContainer.ContainerName}.flver.dcx";
-
-                                var projectDirectory = $"{Smithbox.ProjectRoot}\\{directory}";
-                                var savePath = $"{Smithbox.ProjectRoot}\\{path}";
-
-                                if (!Directory.Exists(projectDirectory))
-                                {
-                                    Directory.CreateDirectory(projectDirectory);
-                                }
-
-                                WriteLooseFlver(savePath, true, compressionType);
+                                Directory.CreateDirectory(projectDirectory);
                             }
-                            // .mapbnd
-                            else
-                            {
-                                WriteModelBinderBND4();
-                            }
+
+                            WriteLooseFlver(savePath, true, compressionType);
+                        }
+                        // .mapbnd
+                        else
+                        {
+                            WriteModelBinderBND4();
+                        }
+                    }
+                    else
+                    {
+                        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+                        {
+                            WriteModelBinderBND3();
                         }
                         else
                         {
-                            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-                            {
-                                WriteModelBinderBND3();
-                            }
-                            else
-                            {
-                                WriteModelBinderBND4();
-                            }
+                            WriteModelBinderBND4();
                         }
                     }
                 }

@@ -155,6 +155,29 @@ public class EmevdEditorScreen : EditorScreen
         }
     }
 
+    private void Shortcuts()
+    {
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
+        {
+            EditorActionManager.RedoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
+        {
+            EditorActionManager.RedoAction();
+        }
+    }
+
     public void OnGUI(string[] initcmd)
     {
         var scale = DPI.GetUIScale();
@@ -187,6 +210,8 @@ public class EmevdEditorScreen : EditorScreen
                 EmevdBank.LoadEventScripts();
                 EmevdBank.LoadEMEDF();
             }
+
+            Shortcuts();
 
             if (EmevdBank.IsLoaded && EmevdBank.IsSupported)
             {
@@ -228,14 +253,11 @@ public class EmevdEditorScreen : EditorScreen
 
     private bool SupportsEditor()
     {
-        return true;
-
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Smithbox.ProjectType is ProjectType.AC6)
             return true;
 
         return false;
     }
-
 
     private bool SelectScript = false;
 

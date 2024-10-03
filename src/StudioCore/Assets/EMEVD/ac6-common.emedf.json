@@ -8955,20 +8955,6 @@
               "unk2": 0,
               "unk3": 0,
               "unk4": 0
-            },
-            {
-              "name": "Unknown14",
-              "type": 5,
-              "enum_name": null,
-              "default": 0,
-              "min": 0,
-              "max": 100000000,
-              "increment": 1,
-              "format_string": "%08d",
-              "unk1": 0,
-              "unk2": 0,
-              "unk3": 0,
-              "unk4": 0
             }
           ]
         },

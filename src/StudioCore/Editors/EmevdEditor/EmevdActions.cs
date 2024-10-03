@@ -14,27 +14,58 @@ namespace StudioCore.Editors.EmevdEditor;
 /// </summary>
 public class InstructionPropertyChange : EditorAction
 {
-    private ArgDataObject DataObject;
+    private object Argument;
     private object OldValue;
     private object NewValue;
 
-    public InstructionPropertyChange(ArgDataObject dataObject, object oldValue, object newValue)
+    public InstructionPropertyChange(object arg, object newValue)
     {
-        DataObject = dataObject;
-        OldValue = oldValue;
+        Argument = arg;
+        OldValue = arg;
         NewValue = newValue;
     }
 
     public override ActionEvent Execute()
     {
-        DataObject.ArgObject = NewValue;
+        Argument = NewValue;
 
         return ActionEvent.NoEvent;
     }
 
     public override ActionEvent Undo()
     {
-        DataObject.ArgObject = OldValue;
+        Argument = OldValue;
+
+        return ActionEvent.NoEvent;
+    }
+}
+
+/// <summary>
+/// Instruction - Property Change (Generic)
+/// </summary>
+public class InstructionArgumentChange : EditorAction
+{
+    private Instruction Instruction;
+    private byte[] OldArgData;
+    private byte[] NewArgData;
+
+    public InstructionArgumentChange(Instruction ins, byte[] oldData, byte[] newData)
+    {
+        Instruction = ins;
+        OldArgData = oldData;
+        NewArgData = newData;
+    }
+
+    public override ActionEvent Execute()
+    {
+        Instruction.ArgData = NewArgData;
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Instruction.ArgData = OldArgData;
 
         return ActionEvent.NoEvent;
     }

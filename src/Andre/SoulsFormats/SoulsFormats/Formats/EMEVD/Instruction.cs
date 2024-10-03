@@ -283,6 +283,44 @@ namespace SoulsFormats
                 }
             }
 
+            public byte[] UpdateArgs(IEnumerable<object> args, bool bigEndian = false)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    var bw = new BinaryWriterEx(bigEndian, ms);
+                    foreach (object arg in args)
+                    {
+                        switch (arg)
+                        {
+                            case byte ub:
+                                bw.WriteByte(ub); break;
+                            case ushort us:
+                                bw.Pad(2);
+                                bw.WriteUInt16(us); break;
+                            case uint ui:
+                                bw.Pad(4);
+                                bw.WriteUInt32(ui); break;
+                            case sbyte sb:
+                                bw.WriteSByte(sb); break;
+                            case short ss:
+                                bw.Pad(2);
+                                bw.WriteInt16(ss); break;
+                            case int si:
+                                bw.Pad(4);
+                                bw.WriteInt32(si); break;
+                            case float f:
+                                bw.Pad(4);
+                                bw.WriteSingle(f); break;
+
+                            default:
+                                throw new NotSupportedException($"Unsupported argument type: {arg.GetType()}");
+                        }
+                    }
+                    bw.Pad(4);
+                    return bw.FinishBytes();
+                }
+            }
+
             /// <summary>
             /// Unpacks an args byte array according to the structure definition provided.
             /// </summary>

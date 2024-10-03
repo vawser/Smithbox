@@ -10,36 +10,42 @@ using System.Numerics;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static StudioCore.Editors.EmevdEditor.EMEDF;
 
 namespace StudioCore.Editors.EmevdEditor;
 
 public class EmevdPropertyEditor
 {
     private EmevdEditorScreen Screen;
+    private EmevdInstructionHandler InstructionHandler;
 
     private object _changingProperty;
     private EditorAction _lastUncommittedAction;
 
-    public EmevdPropertyEditor(EmevdEditorScreen screen)
+
+
+    public EmevdPropertyEditor(EmevdEditorScreen screen, EmevdInstructionHandler insHandler)
     {
         Screen = screen;
+        InstructionHandler = insHandler;
     }
 
-    public (bool, bool) PropertyRow(ArgDataObject dataObject, object oldValue, out object newValue)
+    public (bool, bool) PropertyRow(ArgDoc argDoc, object arg, out object newValue)
     {
         ImGui.SetNextItemWidth(-1);
 
-        var typ = dataObject.ArgObject.GetType();
+        var typ = arg.GetType();
 
         newValue = null;
         var isChanged = false;
+
         if (typ == typeof(long))
         {
-            var val = (long)oldValue;
+            var val = (long)arg;
             var strval = $@"{val}";
 
             ImGui.AlignTextToFramePadding();
-            if (ImGui.InputText($"##value{dataObject.ArgDoc.Name}", ref strval, 99))
+            if (ImGui.InputText($"##value{argDoc.Name}", ref strval, 99))
             {
                 var res = long.TryParse(strval, out val);
                 if (res)
@@ -51,9 +57,9 @@ public class EmevdPropertyEditor
         }
         else if (typ == typeof(int))
         {
-            var val = (int)oldValue;
+            var val = (int)arg;
 
-            if (dataObject.ArgDoc.EnumName == "BOOL")
+            if (argDoc.EnumName == "BOOL")
             {
                 bool bVar = false;
 
@@ -61,7 +67,7 @@ public class EmevdPropertyEditor
                     bVar = true;
 
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Checkbox($"##value{dataObject.ArgDoc.Name}", ref bVar))
+                if (ImGui.Checkbox($"##value{argDoc.Name}", ref bVar))
                 {
                     if (bVar == true)
                         val = 1;
@@ -75,7 +81,7 @@ public class EmevdPropertyEditor
             else
             {
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.InputInt($"##value{dataObject.ArgDoc.Name}", ref val))
+                if (ImGui.InputInt($"##value{argDoc.Name}", ref val))
                 {
                     newValue = val;
                     isChanged = true;
@@ -84,10 +90,10 @@ public class EmevdPropertyEditor
         }
         else if (typ == typeof(uint))
         {
-            var val = (uint)oldValue;
+            var val = (uint)arg;
             var strval = $@"{val}";
 
-            if (dataObject.ArgDoc.EnumName == "BOOL")
+            if (argDoc.EnumName == "BOOL")
             {
                 bool bVar = false;
 
@@ -95,7 +101,7 @@ public class EmevdPropertyEditor
                     bVar = true;
 
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Checkbox($"##value{dataObject.ArgDoc.Name}", ref bVar))
+                if (ImGui.Checkbox($"##value{argDoc.Name}", ref bVar))
                 {
                     if (bVar == true)
                         val = 1;
@@ -109,7 +115,7 @@ public class EmevdPropertyEditor
             else
             {
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.InputText($"##value{dataObject.ArgDoc.Name}", ref strval, 16))
+                if (ImGui.InputText($"##value{argDoc.Name}", ref strval, 16))
                 {
                     var res = uint.TryParse(strval, out val);
                     if (res)
@@ -122,9 +128,9 @@ public class EmevdPropertyEditor
         }
         else if (typ == typeof(short))
         {
-            int val = (short)oldValue;
+            int val = (short)arg;
 
-            if (dataObject.ArgDoc.EnumName == "BOOL")
+            if (argDoc.EnumName == "BOOL")
             {
                 bool bVar = false;
 
@@ -132,7 +138,7 @@ public class EmevdPropertyEditor
                     bVar = true;
 
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Checkbox($"##value{dataObject.ArgDoc.Name}", ref bVar))
+                if (ImGui.Checkbox($"##value{argDoc.Name}", ref bVar))
                 {
                     if (bVar == true)
                         val = 1;
@@ -146,7 +152,7 @@ public class EmevdPropertyEditor
             else
             {
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.InputInt($"##value{dataObject.ArgDoc.Name}", ref val))
+                if (ImGui.InputInt($"##value{argDoc.Name}", ref val))
                 {
                     newValue = (short)val;
                     isChanged = true;
@@ -155,10 +161,10 @@ public class EmevdPropertyEditor
         }
         else if (typ == typeof(ushort))
         {
-            var val = (ushort)oldValue;
+            var val = (ushort)arg;
             var strval = $@"{val}";
 
-            if (dataObject.ArgDoc.EnumName == "BOOL")
+            if (argDoc.EnumName == "BOOL")
             {
                 bool bVar = false;
 
@@ -166,7 +172,7 @@ public class EmevdPropertyEditor
                     bVar = true;
 
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Checkbox($"##value{dataObject.ArgDoc.Name}", ref bVar))
+                if (ImGui.Checkbox($"##value{argDoc.Name}", ref bVar))
                 {
                     if (bVar == true)
                         val = 1;
@@ -180,7 +186,7 @@ public class EmevdPropertyEditor
             else
             {
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.InputText($"##value{dataObject.ArgDoc.Name}", ref strval, 5))
+                if (ImGui.InputText($"##value{argDoc.Name}", ref strval, 5))
                 {
                     var res = ushort.TryParse(strval, out val);
                     if (res)
@@ -193,9 +199,9 @@ public class EmevdPropertyEditor
         }
         else if (typ == typeof(sbyte))
         {
-            int val = (sbyte)oldValue;
+            int val = (sbyte)arg;
 
-            if (dataObject.ArgDoc.EnumName == "BOOL")
+            if (argDoc.EnumName == "BOOL")
             {
                 bool bVar = false;
 
@@ -203,7 +209,7 @@ public class EmevdPropertyEditor
                     bVar = true;
 
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Checkbox($"##value{dataObject.ArgDoc.Name}", ref bVar))
+                if (ImGui.Checkbox($"##value{argDoc.Name}", ref bVar))
                 {
                     if (bVar == true)
                         val = 1;
@@ -217,7 +223,7 @@ public class EmevdPropertyEditor
             else
             {
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.InputInt($"##value{dataObject.ArgDoc.Name}", ref val))
+                if (ImGui.InputInt($"##value{argDoc.Name}", ref val))
                 {
                     newValue = (sbyte)val;
                     isChanged = true;
@@ -226,10 +232,10 @@ public class EmevdPropertyEditor
         }
         else if (typ == typeof(byte))
         {
-            var val = (byte)oldValue;
+            var val = (byte)arg;
             var strval = $@"{val}";
 
-            if (dataObject.ArgDoc.EnumName == "BOOL")
+            if (argDoc.EnumName == "BOOL")
             {
                 bool bVar = false;
 
@@ -237,7 +243,7 @@ public class EmevdPropertyEditor
                     bVar = true;
 
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Checkbox($"##value{dataObject.ArgDoc.Name}", ref bVar))
+                if (ImGui.Checkbox($"##value{argDoc.Name}", ref bVar))
                 {
                     if (bVar == true)
                         val = 1;
@@ -251,7 +257,7 @@ public class EmevdPropertyEditor
             else
             {
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.InputText($"##value{dataObject.ArgDoc.Name}", ref strval, 3))
+                if (ImGui.InputText($"##value{argDoc.Name}", ref strval, 3))
                 {
                     var res = byte.TryParse(strval, out val);
                     if (res)
@@ -264,10 +270,10 @@ public class EmevdPropertyEditor
         }
         else if (typ == typeof(bool))
         {
-            var val = (bool)oldValue;
+            var val = (bool)arg;
 
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Checkbox($"##value{dataObject.ArgDoc.Name}", ref val))
+            if (ImGui.Checkbox($"##value{argDoc.Name}", ref val))
             {
                 newValue = val;
                 isChanged = true;
@@ -275,10 +281,10 @@ public class EmevdPropertyEditor
         }
         else if (typ == typeof(float))
         {
-            var val = (float)oldValue;
+            var val = (float)arg;
 
             ImGui.AlignTextToFramePadding();
-            if (ImGui.InputFloat($"##value{dataObject.ArgDoc.Name}", ref val))
+            if (ImGui.InputFloat($"##value{argDoc.Name}", ref val))
             {
                 newValue = val;
                 isChanged = true;
@@ -286,14 +292,14 @@ public class EmevdPropertyEditor
         }
         else if (typ == typeof(string))
         {
-            var val = (string)oldValue;
+            var val = (string)arg;
             if (val == null)
             {
                 val = "";
             }
 
             ImGui.AlignTextToFramePadding();
-            if (ImGui.InputText($"##value{dataObject.ArgDoc.Name}", ref val, 99))
+            if (ImGui.InputText($"##value{argDoc.Name}", ref val, 99))
             {
                 newValue = val;
                 isChanged = true;
@@ -307,47 +313,5 @@ public class EmevdPropertyEditor
         var isDeactivatedAfterEdit = ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive();
 
         return (isChanged, isDeactivatedAfterEdit);
-    }
-
-    public void UpdateProperty(ArgDataObject dataObject, object oldValue, object newValue, bool changed, bool committed)
-    {
-        if (changed)
-        {
-            ChangeProperty(dataObject, oldValue, newValue, ref committed);
-        }
-
-        if (committed)
-        {
-            if (_lastUncommittedAction != null && Screen.EditorActionManager.PeekUndoAction() == _lastUncommittedAction)
-            {
-                if (_lastUncommittedAction is InstructionPropertyChange a)
-                {
-                    Screen.EditorActionManager.UndoAction();
-                    Screen.EditorActionManager.ExecuteAction(a);
-                }
-
-                _lastUncommittedAction = null;
-            }
-        }
-    }
-
-    private void ChangeProperty(ArgDataObject dataObject, object oldValue, object newValue, ref bool committed)
-    {
-        if (_lastUncommittedAction != null &&
-            Screen.EditorActionManager.PeekUndoAction() == _lastUncommittedAction)
-        {
-            Screen.EditorActionManager.UndoAction();
-        }
-        else
-        {
-            _lastUncommittedAction = null;
-        }
-
-        // This needs to change ins.ArgData instead of just the data object
-
-        var action = new InstructionPropertyChange(dataObject, oldValue, newValue);
-        Screen.EditorActionManager.ExecuteAction(action);
-
-        _lastUncommittedAction = action;
     }
 }
