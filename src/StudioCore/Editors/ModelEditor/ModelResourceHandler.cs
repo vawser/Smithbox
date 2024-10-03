@@ -100,6 +100,15 @@ namespace StudioCore.Editors.ModelEditor
             }
         }
 
+        public void SetDefaultAssociatedModel()
+        {
+            // Set loaded FLVER to first file.
+            if (LoadedFlverContainer.InternalFlvers.Count > 0)
+            {
+                LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
+            }
+        }
+
         /// <summary>
         /// Loads a loose FLVER
         /// </summary>
@@ -129,10 +138,7 @@ namespace StudioCore.Editors.ModelEditor
             LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Character, "");
 
             LoadEditableModel(name, name, ModelEditorModelType.Character);
-
-            // Set loaded FLVER to first file.
-            LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
-
+            SetDefaultAssociatedModel();
             LoadRepresentativeModel(name, name, ModelEditorModelType.Character);
         }
 
@@ -162,10 +168,7 @@ namespace StudioCore.Editors.ModelEditor
             }
 
             LoadEditableModel(name, name, ModelEditorModelType.Object);
-
-            // Set loaded FLVER to first file.
-            LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
-
+            SetDefaultAssociatedModel();
             LoadRepresentativeModel(name, name, ModelEditorModelType.Object);
         }
 
@@ -179,10 +182,7 @@ namespace StudioCore.Editors.ModelEditor
             LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Parts, "");
 
             LoadEditableModel(name, name, ModelEditorModelType.Parts);
-
-            // Set loaded FLVER to first file.
-            LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
-
+            SetDefaultAssociatedModel();
             LoadRepresentativeModel(name, name, ModelEditorModelType.Parts);
         }
 
@@ -196,10 +196,7 @@ namespace StudioCore.Editors.ModelEditor
             LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.MapPiece, mapId);
 
             LoadEditableModel(name, name, ModelEditorModelType.MapPiece, mapId);
-
-            // Set loaded FLVER to first file.
-            LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
-
+            SetDefaultAssociatedModel();
             LoadRepresentativeModel(name, name, ModelEditorModelType.MapPiece, mapId);
         }
 
@@ -211,6 +208,9 @@ namespace StudioCore.Editors.ModelEditor
             ResourceDescriptor modelAsset = GetModelAssetDescriptor(containerId, modelid, modelType, mapid);
 
             //TaskLogs.AddLog(modelAsset.AssetPath);
+
+            if (!File.Exists(modelAsset.AssetPath))
+                return;
 
             if (modelType == ModelEditorModelType.Loose)
             {
@@ -229,7 +229,8 @@ namespace StudioCore.Editors.ModelEditor
             {
                 if (modelAsset.AssetPath != null)
                 {
-                    if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
+                    // DS1, DES
+                    if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
                     {
                         if (modelType == ModelEditorModelType.MapPiece)
                         {
@@ -270,7 +271,7 @@ namespace StudioCore.Editors.ModelEditor
                             reader.Dispose();
                         }
                     }
-                    // DS2, DS3, SDT, ER, AC6
+                    // DS2, BB, DS3, SDT, ER, AC6
                     else
                     {
                         // DS2 Map Pieces
@@ -302,7 +303,21 @@ namespace StudioCore.Editors.ModelEditor
                                 }
                             }
                         }
-                        // DS2, DS3, SDT, ER, AC6
+                        // BB Map Pieces
+                        else if(Smithbox.ProjectType is ProjectType.BB && modelType == ModelEditorModelType.MapPiece)
+                        {
+                            var internalFlver = new InternalFlver();
+
+                            internalFlver.Name = modelid;
+                            internalFlver.ModelID = modelid;
+                            internalFlver.CurrentFLVER = FLVER2.Read(modelAsset.AssetPath);
+                            internalFlver.InitialFlverBytes = File.ReadAllBytes(modelAsset.AssetPath);
+                            internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+
+                            LoadedFlverContainer.InternalFlvers.Add(internalFlver);
+                            LoadedFlverContainer.CurrentInternalFlver = internalFlver;
+                        }
+                        // BB, DS2, DS3, SDT, ER, AC6
                         else
                         {
                             // BND4

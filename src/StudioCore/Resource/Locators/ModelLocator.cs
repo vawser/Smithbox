@@ -41,21 +41,21 @@ public static class ModelLocator
     public static ResourceDescriptor GetMapModel(string mapid, string mapContainerId, string modelId)
     {
         ResourceDescriptor ret = new();
-        if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.BB || Smithbox.ProjectType == ProjectType.DES)
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DES)
             ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{modelId}.flver");
-        else if (Smithbox.ProjectType == ProjectType.DS1R)
+        else if (Smithbox.ProjectType is ProjectType.DS1R or ProjectType.BB)
             ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{modelId}.flver.dcx");
-        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             ret.AssetPath = LocatorUtils.GetAssetPath($@"model\map\{mapid}.mapbhd");
-        else if (Smithbox.ProjectType == ProjectType.ER)
+        else if (Smithbox.ProjectType is ProjectType.ER)
             ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{modelId}.mapbnd.dcx");
-        else if (Smithbox.ProjectType == ProjectType.AC6)
+        else if (Smithbox.ProjectType is ProjectType.AC6)
             ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{modelId}.mapbnd.dcx");
         else
             ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{modelId}.mapbnd.dcx");
 
         ret.AssetName = modelId;
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/model";
             ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}.flv.dcx";
