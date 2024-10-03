@@ -25,17 +25,6 @@ public static class ParamComparisonReport
     public static bool ImportNamesOnGeneration_Primary = false;
     public static bool ImportNamesOnGeneration_Compare = false;
 
-    public static bool ExcludeRowIndexedParams = true;
-    private static List<string> ExcludedParams = new List<string>()
-    {
-         // ER
-        "RandomAppearParam",
-
-        // AC6
-        "ThrustersParam_NPC",
-        "ThrustersParam_PC"
-    };
-
     public static void ViewReport()
     {
         ShowReportModal = true;
@@ -85,14 +74,6 @@ public static class ParamComparisonReport
         {
             CurrentParamProcessing = param.Key;
 
-            if (ExcludeRowIndexedParams)
-            {
-                if (ExcludedParams.Contains(param.Key))
-                {
-                    continue;  
-                }
-            }
-            
             var primaryParam = param.Value;
             if (compareBank.Params.ContainsKey(param.Key))
             {
@@ -118,10 +99,10 @@ public static class ParamComparisonReport
 
         foreach (var primaryRow in primaryParam.Rows)
         {
-            // TODO: Need to account for row index
-            var compareRow = compareParam.Rows.Where(e => e.ID == primaryRow.ID).FirstOrDefault();
+            Param.Row indexedPrimaryRow = primaryParam?[primaryRow.ID];
+            Param.Row indexedCompareRow = compareParam?[primaryRow.ID];
 
-            if(compareRow == null)
+            if(indexedCompareRow == null)
             {
                 if (!HadParamDifference)
                 {
@@ -129,13 +110,13 @@ public static class ParamComparisonReport
                     AddLog($"[-- {paramKey} --]");
                 }
 
-                if (primaryRow.Name != "")
+                if (indexedPrimaryRow.Name != "")
                 {
-                    AddLog($"  {primaryRow.ID} ({primaryRow.Name}) does not exist in comparison.");
+                    AddLog($"  {indexedPrimaryRow.ID} ({indexedPrimaryRow.Name}) does not exist in comparison.");
                 }
                 else
                 {
-                    AddLog($"  {primaryRow.ID} does not exist in comparison.");
+                    AddLog($"  {indexedPrimaryRow.ID} does not exist in comparison.");
                 }
             }
             else
@@ -143,9 +124,9 @@ public static class ParamComparisonReport
                 HadRowDifference = false;
                 HadCellDifference = false;
 
-                foreach (var primaryCell in primaryRow.Cells)
+                foreach (var primaryCell in indexedPrimaryRow.Cells)
                 {
-                    var compareCell = compareRow.Cells.Where(e => e.Def == primaryCell.Def).FirstOrDefault();
+                    var compareCell = indexedCompareRow.Cells.Where(e => e.Def == primaryCell.Def).FirstOrDefault();
 
                     if (!compareCell.IsNull())
                     {
@@ -163,13 +144,13 @@ public static class ParamComparisonReport
                             if (!HadRowDifference)
                             {
                                 HadRowDifference = true;
-                                if (primaryRow.Name != "")
+                                if (indexedPrimaryRow.Name != "")
                                 {
-                                    AddLog($"  {primaryRow.ID} {primaryRow.Name}:");
+                                    AddLog($"  {indexedPrimaryRow.ID} {indexedPrimaryRow.Name}:");
                                 }
                                 else
                                 {
-                                    AddLog($"  {primaryRow.ID}:");
+                                    AddLog($"  {indexedPrimaryRow.ID}:");
                                 }
                             }
 
@@ -232,8 +213,6 @@ public static class ParamComparisonReport
         }
         ImGui.Checkbox("Import Row Names on Report Generation for Primary Bank", ref ImportNamesOnGeneration_Primary);
         ImGui.Checkbox("Import Row Names on Report Generation for Comparison Bank", ref ImportNamesOnGeneration_Compare);
-        ImGui.Checkbox("Ignore Row Indexed Params", ref ExcludeRowIndexedParams);
-        UIHelper.ShowHoverTooltip("Ignores params that have multiple rows of the same ID (e.g. use row index rather than ID for identity), as this isn't handled currently and will erroneously show differences.");
 
         ImGui.Separator();
 

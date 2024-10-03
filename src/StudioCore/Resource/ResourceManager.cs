@@ -864,6 +864,8 @@ public static class ResourceManager
                 return;
             }
 
+            TaskLogs.AddLog($"AddLoadArchiveTask: {virtualPath}");
+
             // PIPELINE: add Load Binder Resources job to Resource Job
             if (!archivesToLoad.Contains(virtualPath))
             {
@@ -887,6 +889,8 @@ public static class ResourceManager
             {
                 return;
             }
+
+            TaskLogs.AddLog($"AddLoadArchiveTask: {virtualPath}");
 
             // PIPELINE: add Load Binder Resources job to Resource Job
             if (!archivesToLoad.Contains(virtualPath))
@@ -922,6 +926,8 @@ public static class ResourceManager
             {
                 return;
             }
+
+            TaskLogs.AddLog($"AddLoadFileTask: {virtualPath}");
 
             if (virtualPath.EndsWith(".hkx"))
             {
@@ -966,6 +972,9 @@ public static class ResourceManager
                 if (!r.Value.IsLoaded())
                 {
                     var texpath = r.Key;
+
+                    TaskLogs.AddLog($"AddLoadUDSFMTexturesTask: {texpath}");
+
                     string path = null;
                     if (texpath.StartsWith("map/tex"))
                     {
@@ -993,6 +1002,9 @@ public static class ResourceManager
                 if (!r.Value.IsLoaded())
                 {
                     var texpath = r.Key;
+
+                    TaskLogs.AddLog($"AddLoadUnloadedTextures: {texpath}");
+
                     string path = null;
                     if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
                     {
