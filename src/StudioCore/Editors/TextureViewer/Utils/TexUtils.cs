@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace StudioCore.Editors.TextureViewer;
+namespace StudioCore.Editors.TextureViewer.Utils;
 
 public static class TexUtils
 {

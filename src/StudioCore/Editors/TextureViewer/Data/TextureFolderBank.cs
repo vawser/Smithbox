@@ -29,6 +29,11 @@ public static class TextureFolderBank
 
     public static SortedDictionary<string, TextureViewInfo> FolderBank { get; set; }
 
+    public static void OnProjectChanged()
+    {
+        LoadTextureFolders();
+    }
+
     public static void LoadTextureFolders()
     {
         IsLoaded = false;

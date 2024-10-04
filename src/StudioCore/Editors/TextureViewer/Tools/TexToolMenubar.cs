@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Editors.TextEditor.Tools;
-using StudioCore.Editors.TextureViewer.Actions;
 using StudioCore.Interface;
 using StudioCore.TextureViewer;
 using StudioCore.Utilities;
@@ -13,38 +12,30 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextureViewer.Tools;
 
-public class ToolSubMenu
+public class TexToolMenubar
 {
     private TextureViewerScreen Screen;
-    public ActionHandler Handler;
+    public TexTools Tools;
 
-    public ToolSubMenu(TextureViewerScreen screen)
+    public TexToolMenubar(TextureViewerScreen screen)
     {
         Screen = screen;
-        Handler = new ActionHandler(screen);
+        Tools = screen.Tools;
     }
 
     public void Shortcuts()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ExportTexture))
-        {
-            Handler.ExportTextureHandler();
-        }
+        
     }
 
-    public void OnProjectChanged()
-    {
-
-    }
-
-    public void DisplayMenu()
+    public void Display()
     {
         if (ImGui.BeginMenu("Tools"))
         {
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Export Texture", KeyBindings.Current.TEXTURE_ExportTexture.HintText))
             {
-                Handler.ExportTextureHandler();
+                Tools.ExportTextureHandler();
             }
 
             ImGui.EndMenu();

@@ -4,8 +4,8 @@ using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
-using StudioCore.Formats;
 using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
@@ -77,11 +77,13 @@ namespace StudioCore.Tools
                 TaskLogs.AddLog($"{ex}");
             }
         }
+
         public static void ReadShoeboxFile()
         {
             string sourcePath = $@"F:\\SteamLibrary\\steamapps\\common\\ELDEN RING\\Game\\menu\\hi\01_common.sblytbnd.dcx";
 
-            ShoeboxLayoutContainer container = new ShoeboxLayoutContainer(sourcePath);
+            ShoeboxLayoutContainer container = new ShoeboxLayoutContainer(Smithbox.EditorHandler.TextureViewer);
+            container.LoadLayouts(sourcePath);
             foreach (var layout in container.Layouts)
             {
                 foreach (var texAtlas in layout.Value.TextureAtlases)

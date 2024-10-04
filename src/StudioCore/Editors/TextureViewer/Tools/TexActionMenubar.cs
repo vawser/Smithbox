@@ -9,35 +9,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.TextureViewer.Actions;
+namespace StudioCore.Editors.TextureViewer.Tools;
 
-
-public class ActionSubMenu
+public class TexActionMenubar
 {
     private TextureViewerScreen Screen;
-    public ActionHandler Handler;
+    public TexTools Handler;
 
-    public ActionSubMenu(TextureViewerScreen screen)
+    public TexActionMenubar(TextureViewerScreen screen)
     {
         Screen = screen;
-        Handler = new ActionHandler(screen);
-    }
-
-    public void Shortcuts()
-    {
-        
-    }
-
-    public void OnProjectChanged()
-    {
-
+        Handler = new TexTools(screen);
     }
 
     public void DisplayMenu()
     {
         if (ImGui.BeginMenu("Actions"))
         {
-            
+
             ImGui.EndMenu();
         }
     }

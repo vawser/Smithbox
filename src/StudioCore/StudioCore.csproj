@@ -326,6 +326,7 @@
 
   <ItemGroup>
     <Folder Include="Assets\Regulations\ER\1.13.1 (11310027)\" />
+    <Folder Include="Editors\TextureViewer\Actions\" />
   </ItemGroup>
 
 </Project>

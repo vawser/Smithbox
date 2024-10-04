@@ -34,7 +34,7 @@ public class AliasCache
         UpdateCacheComplete = false;
         if (Smithbox.EditorHandler != null)
         {
-            Smithbox.EditorHandler.TextureViewer.InvalidateCachedName = true;
+            Smithbox.EditorHandler.TextureViewer.Selection.InvalidateCachedName = true;
         }
 
         AliasUtils.MapNameAliasCache = new Dictionary<string, string>();

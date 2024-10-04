@@ -1,5 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.TextureViewer.Utils;
 using StudioCore.Platform;
 using StudioCore.Resource.Types;
 using StudioCore.TextureViewer;
@@ -10,23 +11,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.TextureViewer.Actions;
+namespace StudioCore.Editors.TextureViewer.Tools;
 
-public class ActionHandler
+public class TexTools
 {
     private TextureViewerScreen Screen;
+    private TexViewSelection Selection;
 
     public string[] exportTypes = new[] { "DDS", "PNG", "BMP", "TGA", "TIFF", "JPEG", "WEBP" };
 
-    public ActionHandler(TextureViewerScreen screen)
+    public TexTools(TextureViewerScreen screen)
     {
         Screen = screen;
+        Selection = screen.Selection;
     }
 
     public void ExportTextureHandler()
     {
-        var currentTexture = TextureViewerScreen.CurrentTextureInView;
-        var currentTextureName = TextureViewerScreen.CurrentTextureName;
+        var currentTexture = Selection.CurrentTextureInView;
+        var currentTextureName = Selection.CurrentTextureName;
 
         if (currentTexture != null)
         {

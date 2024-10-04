@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
 using StudioCore.Editors.TextEditor.Tools;
-using StudioCore.Editors.TextureViewer.Actions;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextureViewer;
@@ -15,23 +14,18 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextureViewer.Tools;
 
-public class ToolWindow
+public class TexToolView
 {
     private TextureViewerScreen Screen;
-    public ActionHandler Handler;
+    public TexTools Tools;
 
-    public ToolWindow(TextureViewerScreen screen)
+    public TexToolView(TextureViewerScreen screen)
     {
         Screen = screen;
-        Handler = new ActionHandler(screen);
+        Tools = screen.Tools;
     }
 
-    public void OnProjectChanged()
-    {
-
-    }
-
-    public void OnGui()
+    public void Display()
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
@@ -55,7 +49,7 @@ public class ToolWindow
 
                 UIHelper.WrappedText("Export File Type:");
                 ImGui.SetNextItemWidth(defaultButtonSize.X);
-                if (ImGui.Combo("##ExportType", ref index, Handler.exportTypes, Handler.exportTypes.Length))
+                if (ImGui.Combo("##ExportType", ref index, Tools.exportTypes, Tools.exportTypes.Length))
                 {
                     CFG.Current.TextureViewerToolbar_ExportTextureType = index;
                 }
@@ -91,7 +85,7 @@ public class ToolWindow
 
                 if (ImGui.Button("Export##action_Selection_ExportTexture", defaultButtonSize))
                 {
-                    Handler.ExportTextureHandler();
+                    Tools.ExportTextureHandler();
                 }
             }
         }

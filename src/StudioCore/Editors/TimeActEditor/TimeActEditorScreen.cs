@@ -41,9 +41,9 @@ public class TimeActEditorScreen : EditorScreen
 
     public TimeActContainerFileView ContainerFileView;
     public TimeActInternalFileView InternalFileView;
+    public TimeActEventGraphView EventGraphView;
     public TimeActAnimationView AnimationView;
     public TimeActAnimationPropertyView AnimationPropertyView;
-    public TimeActEventGraphView EventGraphView;
     public TimeActEventView EventView;
     public TimeActEventPropertyView EventPropertyView;
 
