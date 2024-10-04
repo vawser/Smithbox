@@ -1,6 +1,6 @@
 ﻿using ImGuiNET;
-using StudioCore.EmevdEditor;
 using StudioCore.Interface;
+using StudioCore.TalkEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -8,16 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.Editors.EsdEditor;
 
 /// <summary>
-/// Handles the tool menubar entries for this editor
+/// Handles the action menubar entries for this editor
 /// </summary>
-public class EmevdToolMenubar
+public class EsdActionMenubar
 {
-    private EmevdEditorScreen Screen;
+    private EsdEditorScreen Screen;
 
-    public EmevdToolMenubar(EmevdEditorScreen screen)
+    public EsdActionMenubar(EsdEditorScreen screen)
     {
         Screen = screen;
     }
@@ -29,7 +29,7 @@ public class EmevdToolMenubar
 
     public void Display()
     {
-        if (ImGui.BeginMenu("Tools"))
+        if (ImGui.BeginMenu("Actions"))
         {
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Test"))

@@ -2,15 +2,13 @@
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Editors.EsdEditor;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
-using StudioCore.UserProject;
 using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
-using static SoulsFormats.ESD;
-using static StudioCore.Editors.TalkEditor.EsdBank;
 
 namespace StudioCore.TalkEditor;
 
@@ -18,30 +16,58 @@ public class EsdEditorScreen : EditorScreen
 {
     public ActionManager EditorActionManager = new();
 
-    private EsdScriptInfo _selectedFileInfo;
-    private IBinder _selectedBinder;
-    private string _selectedBinderKey;
+    public EsdSelectionManager Selection;
+    public EsdPropertyDecorator Decorator;
+    public EsdShortcuts EditorShortcuts;
+    public EsdContextMenu ContextMenu;
+    public EsdTools Tools;
+    public EsdFilters Filters;
 
-    private ESD _selectedEsdScript;
-    private int _selectedEsdScriptKey;
-    private long _selectedStateGroupKey;
-    private long _selectedStateGroupSubKey;
-    private Dictionary<long, State> _selectedStateGroups;
-    private State _selectedStateNode;
+    public EsdToolView ToolView;
+    public EsdToolMenubar ToolMenubar;
+    public EsdActionMenubar ActionMenubar;
+
+    public EsdFileView FileView;
+    public EsdScriptView ScriptView;
+    public EsdStateGroupView StateGroupView;
+    public EsdStateNodeView StateNodeView;
+    public EsdStateNodePropertyView StateNodePropertyView;
 
     public EsdEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
+        EditorShortcuts = new EsdShortcuts(this);
+        Selection = new EsdSelectionManager(this);
+        Decorator = new EsdPropertyDecorator(this);
+        ContextMenu = new EsdContextMenu(this);
+        Tools = new EsdTools(this);
+        Filters = new EsdFilters(this);
+
+        ToolView = new EsdToolView(this);
+        ToolMenubar = new EsdToolMenubar(this);
+        ActionMenubar = new EsdActionMenubar(this);
+
+        FileView = new EsdFileView(this);
+        ScriptView = new EsdScriptView(this);
+        StateGroupView = new EsdStateGroupView(this);
+        StateNodeView = new EsdStateNodeView(this);
+        StateNodePropertyView = new EsdStateNodePropertyView(this);
     }
 
     public string EditorName => "ESD Editor##TalkScriptEditor";
     public string CommandEndpoint => "esd";
     public string SaveType => "ESD";
 
+    /// <summary>
+    /// The editor menubar
+    /// </summary>
     public void DrawEditorMenu()
     {
         ImGui.Separator();
     }
 
+    /// <summary>
+    /// The editor loop
+    /// </summary>
     public void OnGUI(string[] initcmd)
     {
         var scale = DPI.GetUIScale();
@@ -59,7 +85,7 @@ public class EsdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TalkScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (!IsProjectTypeSupported())
+        if (Smithbox.ProjectType is not ProjectType.AC6)
         {
             ImGui.Begin("Editor##InvalidEsdEditor");
 
@@ -76,10 +102,11 @@ public class EsdEditorScreen : EditorScreen
 
             if (EsdBank.IsLoaded)
             {
-                EsdFileView();
-                EsdStateGroupSelectView();
-                EsdStateNodeSelectView();
-                EsdStateNodeView();
+                FileView.Display();
+                ScriptView.Display();
+                StateGroupView.Display();
+                StateNodeView.Display();
+                StateNodePropertyView.Display();
             }
         }
 
@@ -87,117 +114,14 @@ public class EsdEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
     }
 
-    private bool IsProjectTypeSupported()
-    {
-        return true;
-    }
-
-    public void EsdFileView()
-    {
-        // File List
-        ImGui.Begin("Files##TalkFileList");
-
-        ImGui.Text($"File");
-        ImGui.Separator();
-
-        foreach (var (info, binder) in EsdBank.TalkBank)
-        {
-            if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedBinderKey))
-            {
-                _selectedEsdScriptKey = -1; // Clear talk key if file is changed
-
-                _selectedBinderKey = info.Name;
-                _selectedFileInfo = info;
-                _selectedBinder = binder;
-            }
-        }
-
-        ImGui.End();
-
-        ImGui.Begin("Scripts##EsdScriptList");
-
-        if (_selectedFileInfo != null)
-        {
-            ImGui.Text($"Scripts");
-            ImGui.Separator();
-
-            for (int i = 0; i < _selectedFileInfo.EsdFiles.Count; i++)
-            {
-                ESD entry = _selectedFileInfo.EsdFiles[i];
-
-                if (ImGui.Selectable($@" {entry.Name}", i == _selectedEsdScriptKey))
-                {
-                    _selectedEsdScriptKey = i;
-                    _selectedEsdScript = entry;
-                }
-            }
-        }
-
-        ImGui.End();
-    }
-
-    public void EsdStateGroupSelectView()
-    {
-        ImGui.Begin("State Group Selection##EsdStateGroupSelectView");
-
-        if (_selectedEsdScript != null)
-        {
-            foreach (var entry in _selectedEsdScript.StateGroups)
-            {
-                var stateId = entry.Key;
-                var stateGroups = entry.Value;
-
-                if (ImGui.Selectable($@" {stateId}", _selectedStateGroupKey == stateId))
-                {
-                    _selectedStateGroupKey = stateId;
-                    _selectedStateGroups = stateGroups;
-                }
-            }
-        }
-
-        ImGui.End();
-    }
-
-    public void EsdStateNodeSelectView()
-    {
-        // File List
-        ImGui.Begin("State Node Selection##EsdStateNodeSelectView");
-
-        if (_selectedStateGroups != null)
-        {
-            foreach(var (key, entry) in _selectedStateGroups)
-            {
-                if (ImGui.Selectable($@" {key}", key == _selectedStateGroupSubKey))
-                {
-                    _selectedStateGroupSubKey = key;
-                    _selectedStateNode = entry;
-                }
-            }
-        }
-
-        ImGui.End();
-    }
-
-    // TODO: add ESD node stuff
-    public void EsdStateNodeView()
-    {
-        // File List
-        ImGui.Begin("State Node##EsdStateNodeView");
-
-        if (_selectedStateNode != null)
-        {
-            ImGui.Columns(2);
-
-            ImGui.NextColumn();
-
-            ImGui.Columns(1);
-        }
-
-        ImGui.End();
-    }
-
     public void OnProjectChanged()
     {
+        FileView.OnProjectChanged();
+        ScriptView.OnProjectChanged();
+        StateGroupView.OnProjectChanged();
+        StateNodeView.OnProjectChanged();
+        StateNodePropertyView.OnProjectChanged();
+
         EsdBank.LoadEsdScripts();
 
         ResetActionManager();
@@ -209,7 +133,7 @@ public class EsdEditorScreen : EditorScreen
             return;
 
         if (EsdBank.IsLoaded)
-            EsdBank.SaveEsdScript(_selectedFileInfo, _selectedBinder);
+            EsdBank.SaveEsdScript(Selection._selectedFileInfo, Selection._selectedBinder);
     }
 
     public void SaveAll()

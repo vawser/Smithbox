@@ -2,8 +2,6 @@
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
-using StudioCore.Editors.EmevdEditor.Actions;
-using StudioCore.Editors.EmevdEditor.Tools;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Numerics;

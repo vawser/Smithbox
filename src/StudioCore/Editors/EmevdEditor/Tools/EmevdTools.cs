@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static SoulsFormats.EMEVD;
 
-namespace StudioCore.Editors.EmevdEditor.Actions;
+namespace StudioCore.Editors.EmevdEditor;
 
 /// <summary>
 /// Holds the tool functions used by this editor.

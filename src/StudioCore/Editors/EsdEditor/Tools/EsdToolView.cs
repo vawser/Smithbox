@@ -1,21 +1,25 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
-using StudioCore.EmevdEditor;
 using StudioCore.Interface;
+using StudioCore.TalkEditor;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.Editors.EsdEditor;
 
 /// <summary>
 /// Handles the tool view for this editor.
 /// </summary>
-public class EmevdToolView
+public class EsdToolView
 {
-    private EmevdEditorScreen Screen;
-    private EmevdTools Tools;
+    private EsdEditorScreen Screen;
+    private EsdTools Tools;
 
-    public EmevdToolView(EmevdEditorScreen screen)
+    public EsdToolView(EsdEditorScreen screen)
     {
         Screen = screen;
         Tools = screen.Tools;
@@ -35,20 +39,11 @@ public class EmevdToolView
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 
-        if (ImGui.Begin("Tool Window##ToolConfigureWindow_EmevdEditor"))
+        if (ImGui.Begin("Tool Window##ToolConfigureWindow_EsdEditor"))
         {
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth, 32);
 
-            List<string> loggedInstructions = new List<string>();
-
-            if (ImGui.CollapsingHeader("Debug Tool"))
-            {
-                if (ImGui.Button("Log Unknown Instructions", defaultButtonSize))
-                {
-                    Tools.LogUnknownInstructions();
-                }
-            }
         }
 
         ImGui.End();

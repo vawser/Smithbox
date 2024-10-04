@@ -29,7 +29,7 @@ namespace StudioCore.Editors.EmevdEditor;
 public class EmevdPropertyDecorator
 {
     private EmevdEditorScreen Screen;
-    public EmevdSelectionManager ViewSelection;
+    public EmevdSelectionManager Selection;
 
     private Instruction Instruction;
     private List<ArgDoc> ArgumentDocs;
@@ -38,7 +38,7 @@ public class EmevdPropertyDecorator
     public EmevdPropertyDecorator(EmevdEditorScreen screen)
     {
         Screen = screen;
-        ViewSelection = screen.Selection;
+        Selection = screen.Selection;
     }
 
     public void OnProjectChanged()
@@ -215,7 +215,7 @@ public class EmevdPropertyDecorator
     public void DetermineParamReference(string parameterName, string value, int i)
     {
         // For cross-ESD SpEffect stuff that AC6 does, which aligns with EventID
-        var currentEventID = ViewSelection.SelectedEvent.ID.ToString(); 
+        var currentEventID = Selection.SelectedEvent.ID.ToString(); 
 
         // DS1
         if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
@@ -600,7 +600,7 @@ public class EmevdPropertyDecorator
     /// </summary>
     public void DetermineMapEntityReference(string parameterName, string value, int i)
     {
-        var mapID = ViewSelection.SelectedFileInfo.Name; // To determine map ID
+        var mapID = Selection.SelectedFileInfo.Name; // To determine map ID
 
         if (Smithbox.ProjectType is ProjectType.AC6)
         {

@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.EmevdEditor;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.EmevdEditor.Actions;
+namespace StudioCore.Editors.EmevdEditor;
 
 /// <summary>
 /// Handles the action menubar entries for this editor
@@ -33,6 +34,11 @@ public class EmevdActionMenubar
     {
         if (ImGui.BeginMenu("Actions"))
         {
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
+            if (ImGui.MenuItem("Test"))
+            {
+
+            }
 
             ImGui.EndMenu();
         }

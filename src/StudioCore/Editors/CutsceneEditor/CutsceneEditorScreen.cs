@@ -169,14 +169,35 @@ public class CutsceneEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
     }
 
-
-    public void ResourceListView()
-    {
-        
-    }
     public void OnProjectChanged()
     {
-        if(CFG.Current.AutoLoadBank_Cutscene)
+        CutsceneFileList.OnProjectChanged();
+        CutsceneList.OnProjectChanged();
+        CutsceneProperties.OnProjectChanged();
+
+        CutList.OnProjectChanged();
+        CutProperties.OnProjectChanged();
+
+        Timelines.OnProjectChanged();
+        TimelineCustomDataList.OnProjectChanged();
+        TimelineCustomDataProperties.OnProjectChanged();
+        TimelineSequenceList.OnProjectChanged();
+        TimelineSequenceProperties.OnProjectChanged();
+        TimelineSequencePointList.OnProjectChanged();
+        TimelineSequencePointProperties.OnProjectChanged();
+
+        DispositionList.OnProjectChanged();
+        DispositionProperties.OnProjectChanged();
+        DispositionTransformList.OnProjectChanged();
+        DispositionTransformProperties.OnProjectChanged();
+        DispositionSequenceList.OnProjectChanged();
+        DispositionSequenceProperties.OnProjectChanged();
+        DispositionSequencePointList.OnProjectChanged();
+        DispositionSequencePointProperties.OnProjectChanged();
+
+        ResourceList.OnProjectChanged();
+
+        if (CFG.Current.AutoLoadBank_Cutscene)
             CutsceneBank.LoadCutscenes();
 
         ResetActionManager();
