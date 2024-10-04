@@ -126,7 +126,7 @@ public class WorldMapScreen : IResourceEventListener
         {
             if (ImGui.Button("Lands Between", new Vector2(widthUnit * 48, 20 * scale)))
             {
-                if (!ResourceManager.IsResourceLoadedOrInFlight("smithbox/worldmap/world_map_vanilla", AccessLevel.AccessGPUOptimizedOnly))
+                if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_vanilla", AccessLevel.AccessGPUOptimizedOnly))
                     LoadWorldMapTexture();
 
                 WorldMapOpen = !WorldMapOpen;
@@ -141,7 +141,7 @@ public class WorldMapScreen : IResourceEventListener
             ImGui.SameLine();
             if (ImGui.Button("Shadow of the Erdtree", new Vector2(widthUnit * 48, 20 * scale)))
             {
-                if (!ResourceManager.IsResourceLoadedOrInFlight("smithbox/worldmap/world_map_sote", AccessLevel.AccessGPUOptimizedOnly))
+                if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_sote", AccessLevel.AccessGPUOptimizedOnly))
                     LoadWorldMapTexture();
 
                 WorldMapOpen = !WorldMapOpen;
@@ -343,7 +343,7 @@ public class WorldMapScreen : IResourceEventListener
         ResourceDescriptor ad = new ResourceDescriptor();
         ad.AssetVirtualPath = "smithbox/worldmap";
 
-        if (!ResourceManager.IsResourceLoadedOrInFlight(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+        if (!ResourceManager.IsResourceLoaded(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
         {
             if (ad.AssetVirtualPath != null)
             {

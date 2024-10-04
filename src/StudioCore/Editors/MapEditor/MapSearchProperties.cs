@@ -237,7 +237,6 @@ public class MapSearchProperties
                         {
                             if (selectFirstResult)
                             {
-                                // TODO: We may also want to frame this result when requested via selectFirstResult.
                                 Universe.Selection.ClearSelection();
                                 Universe.Selection.AddSelection(obj);
                                 selectFirstResult = false;

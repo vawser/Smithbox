@@ -10,19 +10,18 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EmevdEditor.Actions;
 
-public class ActionSubMenu
+/// <summary>
+/// Handles the action menubar entries for this editor
+/// </summary>
+public class EmevdActionMenubar
 {
     private EmevdEditorScreen Screen;
-    private ActionHandler Handler;
+    private EmevdTools Handler;
 
-    public ActionSubMenu(EmevdEditorScreen screen)
+    public EmevdActionMenubar(EmevdEditorScreen screen)
     {
         Screen = screen;
-        Handler = new ActionHandler(screen);
-    }
-    public void Shortcuts()
-    {
-
+        Handler = new EmevdTools(screen);
     }
 
     public void OnProjectChanged()
@@ -30,7 +29,7 @@ public class ActionSubMenu
 
     }
 
-    public void DisplayMenu()
+    public void Display()
     {
         if (ImGui.BeginMenu("Actions"))
         {

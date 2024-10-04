@@ -495,7 +495,6 @@ namespace StudioCore.Editors.MapEditor
                     var nva = NVA.Read(nvaasset.AssetPath);
                     foreach (NVA.Navmesh currentNav in nva.Navmeshes)
                     {
-                        // TODO2: set parent to MapOffset
                         MsbEntity n = new(map, currentNav, MsbEntity.MsbEntityType.Editor);
                         map.AddObject(n);
                         var navid = $@"n{currentNav.ModelID:D6}";

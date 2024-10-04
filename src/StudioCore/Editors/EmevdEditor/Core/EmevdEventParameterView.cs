@@ -8,31 +8,46 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EmevdEditor;
 
-public class EmevdEventHandler
+/// <summary>
+/// Handles the EMEVD event parameter viewing and editing.
+/// </summary>
+public class EmevdEventParameterView
 {
     private EmevdEditorScreen Screen;
+    private EmevdPropertyDecorator Decorator;
+    private EmevdViewSelection Selection;
 
-    public EmevdEventHandler(EmevdEditorScreen screen)
+    public EmevdEventParameterView(EmevdEditorScreen screen)
     {
         Screen = screen;
+        Decorator = screen.Decorator;
+        Selection = screen.ViewSelection;
     }
 
+    /// <summary>
+    /// Reset view state on project change
+    /// </summary>
     public void OnProjectChanged()
     {
 
     }
 
+    /// <summary>
+    /// The main UI for the event parameter view
+    /// </summary>
     public void Display()
     {
-        if (Screen._selectedEvent != null)
+        ImGui.Begin("Event Properties##EventParameterView");
+
+        if (Selection.SelectedEvent != null)
         {
-            var evt = Screen._selectedEvent;
+            var evt = Selection.SelectedEvent;
 
             ImGui.Text($"{evt.RestBehavior}");
 
             ImGui.Separator();
 
-            foreach (var para in Screen._selectedEvent.Parameters)
+            foreach (var para in Selection.SelectedEvent.Parameters)
             {
                 ImGui.Text($"InstructionIndex: {para.InstructionIndex}");
                 ImGui.Text($"TargetStartByte: {para.TargetStartByte}");
@@ -43,5 +58,7 @@ public class EmevdEventHandler
                 ImGui.Separator();
             }
         }
+
+        ImGui.End();
     }
 }

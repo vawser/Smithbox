@@ -418,14 +418,14 @@ namespace StudioCore.Editors.ModelEditor
 
                 if (modelAsset.AssetArchiveVirtualPath != null)
                 {
-                    if (!ResourceManager.IsResourceLoadedOrInFlight(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull))
+                    if (!ResourceManager.IsResourceLoaded(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull))
                     {
                         job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
                     }
                 }
                 else if (modelAsset.AssetVirtualPath != null)
                 {
-                    if (!ResourceManager.IsResourceLoadedOrInFlight(modelAsset.AssetVirtualPath, AccessLevel.AccessFull))
+                    if (!ResourceManager.IsResourceLoaded(modelAsset.AssetVirtualPath, AccessLevel.AccessFull))
                     {
                         job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessFull);
                     }
@@ -460,14 +460,14 @@ namespace StudioCore.Editors.ModelEditor
                     {
                         if (entry.AssetArchiveVirtualPath != null)
                         {
-                            if (!ResourceManager.IsResourceLoadedOrInFlight(entry.AssetArchiveVirtualPath, AccessLevel.AccessFull))
+                            if (!ResourceManager.IsResourceLoaded(entry.AssetArchiveVirtualPath, AccessLevel.AccessFull))
                             {
                                 job.AddLoadArchiveTask(entry.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
                             }
                         }
                         else if (entry.AssetVirtualPath != null)
                         {
-                            if (!ResourceManager.IsResourceLoadedOrInFlight(entry.AssetVirtualPath, AccessLevel.AccessFull))
+                            if (!ResourceManager.IsResourceLoaded(entry.AssetVirtualPath, AccessLevel.AccessFull))
                             {
                                 job.AddLoadFileTask(entry.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                             }
@@ -501,14 +501,14 @@ namespace StudioCore.Editors.ModelEditor
 
                 if (colAsset.AssetArchiveVirtualPath != null)
                 {
-                    if (!ResourceManager.IsResourceLoadedOrInFlight(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull))
+                    if (!ResourceManager.IsResourceLoaded(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull))
                     {
                         job.AddLoadArchiveTask(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.CollisionHKX);
                     }
                 }
                 else if (colAsset.AssetVirtualPath != null)
                 {
-                    if (!ResourceManager.IsResourceLoadedOrInFlight(colAsset.AssetVirtualPath, AccessLevel.AccessFull))
+                    if (!ResourceManager.IsResourceLoaded(colAsset.AssetVirtualPath, AccessLevel.AccessFull))
                     {
                         job.AddLoadFileTask(colAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                     }

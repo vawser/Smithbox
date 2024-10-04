@@ -17,21 +17,18 @@ using static SoulsFormats.EMEVD;
 
 namespace StudioCore.Editors.EmevdEditor.Tools;
 
-public class ToolWindow
+/// <summary>
+/// Handles the tool view for this editor.
+/// </summary>
+public class EmevdToolView
 {
     private EmevdEditorScreen Screen;
-    private ActionHandler Handler;
+    private EmevdTools Tools;
 
-    public ToolWindow(EmevdEditorScreen screen)
+    public EmevdToolView(EmevdEditorScreen screen)
     {
         Screen = screen;
-        Handler = new ActionHandler(screen);
-    }
-
-
-    public void Shortcuts()
-    {
-
+        Tools = screen.Tools;
     }
 
     public void OnProjectChanged()
@@ -40,7 +37,7 @@ public class ToolWindow
     }
 
 
-    public void OnGui()
+    public void Display()
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
@@ -57,30 +54,9 @@ public class ToolWindow
 
             if (ImGui.CollapsingHeader("Debug Tool"))
             {
-                if (ImGui.Button("Log Unknowns", defaultButtonSize))
+                if (ImGui.Button("Log Unknown Instructions", defaultButtonSize))
                 {
-                    foreach (var (info, binder) in EmevdBank.ScriptBank)
-                    {
-                        foreach (var evt in binder.Events)
-                        {
-                            var eventName = evt.Name;
-
-                            foreach (var ins in evt.Instructions)
-                            {
-                                var insName = $"{ins.Bank}[{ins.ID}]";
-
-                                if (!EmevdUtils.HasArgDoc(ins))
-                                {
-                                    if (!loggedInstructions.Contains(insName))
-                                    {
-                                        loggedInstructions.Add(insName);
-                                        var output = EmevdUtils.DetermineUnknownParameters(ins, false);
-                                        TaskLogs.AddLog($"{insName}{output}\n");
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    Tools.LogUnknownInstructions();
                 }
             }
         }

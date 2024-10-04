@@ -20,6 +20,13 @@ public class EmevdEditorTab
 
     public void Display()
     {
+        // Search Filters
+        if (ImGui.CollapsingHeader("Search Filters"))
+        {
+            ImGui.Checkbox("Propagate Event Filter with prop usage", ref CFG.Current.EmevdEditor_PropagateEventFilter);
+            UIHelper.ShowHoverTooltip("Apply the event filter to the instruction filter as well if the prop: filter is used.");
+        }
+
         // Instructions
         if (ImGui.CollapsingHeader("Instructions"))
         {

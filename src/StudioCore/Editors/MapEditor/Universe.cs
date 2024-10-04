@@ -405,7 +405,7 @@ public class Universe
             mesh.DrawFilter = RenderFilter.Collision;
             obj.RenderSceneMesh = mesh;
 
-            if (load && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath,
+            if (load && !ResourceManager.IsResourceLoaded(asset.AssetVirtualPath,
                     AccessLevel.AccessGPUOptimizedOnly))
             {
                 if (asset.AssetArchiveVirtualPath != null)
@@ -418,7 +418,6 @@ public class Universe
                     job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                 }
 
-                ResourceManager.MarkResourceInFlight(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                 Task task = job.Complete();
                 if (obj.Universe.postLoad)
                 {
@@ -437,7 +436,7 @@ public class Universe
             obj.RenderSceneMesh = mesh;
             mesh.SetSelectable(obj);
             mesh.DrawFilter = RenderFilter.Navmesh;
-            if (load && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath,
+            if (load && !ResourceManager.IsResourceLoaded(asset.AssetVirtualPath,
                     AccessLevel.AccessGPUOptimizedOnly))
             {
                 if (asset.AssetArchiveVirtualPath != null)
@@ -450,7 +449,6 @@ public class Universe
                     job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                 }
 
-                ResourceManager.MarkResourceInFlight(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                 Task task = job.Complete();
                 if (obj.Universe.postLoad)
                 {
@@ -480,7 +478,7 @@ public class Universe
         obj.RenderSceneMesh = model;
         model.SetSelectable(obj);
 
-        if (load && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+        if (load && !ResourceManager.IsResourceLoaded(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
         {
             if (asset.AssetArchiveVirtualPath != null)
             {
@@ -492,7 +490,6 @@ public class Universe
                 job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
             }
 
-            ResourceManager.MarkResourceInFlight(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
             Task task = job.Complete();
             if (obj.Universe.postLoad)
             {

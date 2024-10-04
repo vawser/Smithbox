@@ -470,6 +470,8 @@ public class CFG
     //****************************
     // Settings: EMEVD Editor
     //****************************
+    public bool EmevdEditor_PropagateEventFilter = true;
+
     public bool EmevdEditor_DisplayInstructionCategory = false;
     public bool EmevdEditor_DisplayInstructionParameterNames = false;
 

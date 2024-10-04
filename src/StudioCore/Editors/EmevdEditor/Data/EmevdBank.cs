@@ -13,6 +13,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EmevdEditor;
+
+/// <summary>
+/// Handles the load and save processes for the EMEVD files and their containers, 
+/// as well as applying the EMEDF templates to the EMEVD Files.
+/// </summary>
 public static class EmevdBank
 {
     public static bool IsLoaded { get; private set; }

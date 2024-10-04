@@ -111,7 +111,7 @@ public static class HavokFileBank
                     {
                         HavokBinarySerializer deserializer = new HavokBinarySerializer();
 
-                        // TODO: we need to work out the extra capacity need beforehand, rather than using a fixed +1024
+                        // TODO: we should work out the extra capacity need beforehand, rather than using a fixed +1024
                         using (MemoryStream memoryStream = new MemoryStream(fileBytes.ToArray().Length + 1024))
                         {
                             deserializer.Write(entry.Value, memoryStream);

@@ -10,7 +10,7 @@ using static SoulsFormats.EMEVD;
 namespace StudioCore.Editors.EmevdEditor;
 
 /// <summary>
-/// Instruction - Property Change (Generic)
+/// Updates the instruction's ArgData on property change
 /// </summary>
 public class InstructionArgumentChange : EditorAction
 {

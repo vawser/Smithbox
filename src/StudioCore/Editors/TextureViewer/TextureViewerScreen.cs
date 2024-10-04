@@ -532,7 +532,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             // Load direct file
             if (ad.AssetVirtualPath != null)
             {
-                if (!ResourceManager.IsResourceLoadedOrInFlight(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+                if (!ResourceManager.IsResourceLoaded(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
                 {
                     if (ad.AssetVirtualPath != null)
                     {
@@ -550,7 +550,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             // Load bnd archive
             if (ad.AssetArchiveVirtualPath != null)
             {
-                if (!ResourceManager.IsResourceLoadedOrInFlight(ad.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+                if (!ResourceManager.IsResourceLoaded(ad.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
                 {
                     if (ad.AssetArchiveVirtualPath != null)
                     {

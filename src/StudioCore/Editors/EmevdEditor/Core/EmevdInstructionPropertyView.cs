@@ -16,32 +16,44 @@ using static StudioCore.Editors.EmevdEditor.EMEDF;
 
 namespace StudioCore.Editors.EmevdEditor;
 
-public class EmevdInstructionHandler
+/// <summary>
+/// Handles the EMEVD event instruction parameter viewing and editing.
+/// </summary>
+public class EmevdInstructionPropertyView
 {
     private EmevdEditorScreen Screen;
-    private EmevdDecorator Decorator;
+    private EmevdPropertyDecorator Decorator;
+    private EmevdViewSelection Selection;
     private EmevdPropertyEditor PropEditor;
+    public List<ArgDoc> ArgumentDocs { get; set; }
+    public List<object> Arguments { get; set; }
 
-    public EmevdInstructionHandler(EmevdEditorScreen screen)
+    public EmevdInstructionPropertyView(EmevdEditorScreen screen)
     {
         Screen = screen;
         Decorator = screen.Decorator;
+        Selection = screen.ViewSelection;
         PropEditor = new EmevdPropertyEditor(screen, this);
     }
 
+    /// <summary>
+    /// Reset view state on project change
+    /// </summary>
     public void OnProjectChanged()
     {
 
     }
 
-    public List<ArgDoc> ArgumentDocs { get; set; }
-    public List<object> Arguments { get; set; }
-
+    /// <summary>
+    /// The main UI for the instruction argument view
+    /// </summary>
     public void Display()
     {
-        if (Screen._selectedEvent != null && Screen._selectedInstruction != null)
+        ImGui.Begin("Instruction Properties##InstructionParameterView");
+
+        if (Selection.SelectedEvent != null && Selection.SelectedInstruction != null)
         {
-            var instruction = Screen._selectedInstruction;
+            var instruction = Selection.SelectedInstruction;
 
             if (EmevdUtils.HasArgDoc(instruction))
             {
@@ -86,9 +98,9 @@ public class EmevdInstructionHandler
                     }
 
                     // Entity Reference
-                    if (Decorator.HasEntityReference(argDoc.Name))
+                    if (Decorator.HasMapEntityReference(argDoc.Name))
                     {
-                        Decorator.DetermineEntityReferenceSpacing(argDoc.Name, $"{arg}", i);
+                        Decorator.DetermineMapEntityReferenceSpacing(argDoc.Name, $"{arg}", i);
                     }
                 }
 
@@ -145,19 +157,19 @@ public class EmevdInstructionHandler
                     }
 
                     // Entity Reference
-                    if (Decorator.HasEntityReference(argDoc.Name))
+                    if (Decorator.HasMapEntityReference(argDoc.Name))
                     {
-                        Decorator.DetermineEntityReference(argDoc.Name, $"{Arguments[i]}", i);
+                        Decorator.DetermineMapEntityReference(argDoc.Name, $"{Arguments[i]}", i);
                     }
                 }
 
                 ImGui.Columns(1);
             }
-            else
-            {
-                EmevdUtils.DetermineUnknownParameters(instruction);
-            }
         }
+
+        ImGui.End();
     }
+
+   
 }
 

@@ -676,12 +676,6 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         }
     }
 
-    public static float GetUIScale()
-    {
-        // TODO: Multiply by monitor DPI when available.
-        return UI.Current.System_UI_Scale;
-    }
-
     private struct ResourceSetInfo
     {
         public readonly IntPtr ImGuiBinding;

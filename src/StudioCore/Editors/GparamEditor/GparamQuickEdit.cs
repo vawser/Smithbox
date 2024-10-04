@@ -367,7 +367,6 @@ namespace StudioCore.Editors.GparamEditor
                                     targetParamField = fEntry;
                                     resolvedList.Add($"{curParamName}:{curGroupName}:{curFieldName}");
 
-                                    // TODO: Return bundle of actions so we can execute them as one clean compound action
                                     var actions = ResolveQuickEdit(curParamName, curGroupName, targetParamField);
                                     actionList.Add(actions);
                                 }

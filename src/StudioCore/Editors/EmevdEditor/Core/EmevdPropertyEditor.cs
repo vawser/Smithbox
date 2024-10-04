@@ -15,24 +15,25 @@ using static StudioCore.Editors.EmevdEditor.EMEDF;
 
 namespace StudioCore.Editors.EmevdEditor;
 
+/// <summary>
+/// Handles the editing process for properties
+/// </summary>
 public class EmevdPropertyEditor
 {
     private EmevdEditorScreen Screen;
-    private EmevdInstructionHandler InstructionHandler;
+    private EmevdInstructionPropertyView InstructionHandler;
 
     private object _changingProperty;
     private EditorAction _lastUncommittedAction;
 
-
-
-    public EmevdPropertyEditor(EmevdEditorScreen screen, EmevdInstructionHandler insHandler)
+    public EmevdPropertyEditor(EmevdEditorScreen screen, EmevdInstructionPropertyView insHandler)
     {
         Screen = screen;
         InstructionHandler = insHandler;
     }
 
     /// <summary>
-    /// Used for Instruction arguments
+    /// Handles the display and processing of instruction argument edits
     /// </summary>
     public (bool, bool) InstructionArgumentPropertyRow(ArgDoc argDoc, object arg, out object newValue)
     {
@@ -320,7 +321,7 @@ public class EmevdPropertyEditor
     }
 
     /// <summary>
-    /// Used for Event parameters properties
+    /// Handles the display and processing of event parameter edits
     /// </summary>
     public (bool, bool) EventParameterPropertyRow(string name, object arg, out object newValue, bool isBool = false, bool isEnum = false)
     {

@@ -10,19 +10,16 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EmevdEditor.Tools;
 
-public class ToolSubMenu
+/// <summary>
+/// Handles the tool menubar entries for this editor
+/// </summary>
+public class EmevdToolMenubar
 {
     private EmevdEditorScreen Screen;
 
-    public ToolSubMenu(EmevdEditorScreen screen)
+    public EmevdToolMenubar(EmevdEditorScreen screen)
     {
         Screen = screen;
-    }
-
-
-    public void Shortcuts()
-    {
-
     }
 
     public void OnProjectChanged()
@@ -30,7 +27,7 @@ public class ToolSubMenu
 
     }
 
-    public void DisplayMenu()
+    public void Display()
     {
         if (ImGui.BeginMenu("Tools"))
         {

@@ -66,17 +66,6 @@ public static class ResourceManager
         return ResourceDatabase;
     }
 
-    public static bool IsResourceLoaded(string resourceName)
-    {
-        if (ResourceDatabase.Keys.Contains(resourceName))
-        {
-            TaskLogs.AddLog($"Already loaded: {resourceName}");
-            return true;
-        }
-
-        return false;
-    }
-
     public static ConcurrentDictionary<ResourceJob, int> GetActiveJobProgress()
     {
         return ActiveJobProgress;
@@ -327,16 +316,7 @@ public static class ResourceManager
             new AddResourceLoadNotificationRequest(resourceName.ToLower(), typeof(T), listener, al, tag));
     }
 
-    public static void MarkResourceInFlight(string resourceName, AccessLevel al)
-    {
-        // TODO is this needed?
-        /*var lResourceName = resourceName.ToLower();
-        if (!ResourceDatabase.ContainsKey(lResourceName))
-            ResourceDatabase.Add(lResourceName, new ResourceRegistration(al));
-        ResourceDatabase[lResourceName].AccessLevel = al;*/
-    }
-
-    public static bool IsResourceLoadedOrInFlight(string resourceName, AccessLevel al)
+    public static bool IsResourceLoaded(string resourceName, AccessLevel al)
     {
         var lResourceName = resourceName.ToLower();
         return ResourceDatabase.ContainsKey(lResourceName) &&
