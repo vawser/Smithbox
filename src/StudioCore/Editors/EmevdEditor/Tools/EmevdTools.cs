@@ -16,7 +16,7 @@ public class EmevdTools
 {
     private EmevdEditorScreen Screen;
     private EmevdPropertyDecorator Decorator;
-    private EmevdViewSelection Selection;
+    private EmevdSelectionManager Selection;
 
     public EmevdTools(EmevdEditorScreen screen)
     {

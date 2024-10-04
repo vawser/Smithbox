@@ -18,7 +18,7 @@ using static StudioCore.Editors.TimeActEditor.Utils.TimeActUtils;
 
 namespace StudioCore.Editors.TimeActEditor;
 
-public class TimeActViewSelection
+public class TimeActSelectionManager
 {
     private TimeActEditorScreen Screen;
 
@@ -65,7 +65,7 @@ public class TimeActViewSelection
     public bool SelectEvent = false;
     public bool SelectFirstEvent = false;
 
-    public TimeActViewSelection(TimeActEditorScreen screen)
+    public TimeActSelectionManager(TimeActEditorScreen screen)
     {
         Screen = screen;
 

@@ -29,7 +29,7 @@ namespace StudioCore.Editors.EmevdEditor;
 public class EmevdPropertyDecorator
 {
     private EmevdEditorScreen Screen;
-    public EmevdViewSelection ViewSelection;
+    public EmevdSelectionManager ViewSelection;
 
     private Instruction Instruction;
     private List<ArgDoc> ArgumentDocs;

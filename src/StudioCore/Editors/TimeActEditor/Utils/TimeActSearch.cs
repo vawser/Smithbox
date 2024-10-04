@@ -127,11 +127,11 @@ public class TimeActSearch
 
                     var command = $"timeact/select/none/{res.ContainerIndex}/{res.TimeActIndex}";
 
-                    if (containerType is TimeActViewSelection.FileContainerType.Character)
+                    if (containerType is TimeActSelectionManager.FileContainerType.Character)
                     {
                         command = $"timeact/select/chr/{res.ContainerIndex}/{res.TimeActIndex}";
                     }
-                    if (containerType is TimeActViewSelection.FileContainerType.Object)
+                    if (containerType is TimeActSelectionManager.FileContainerType.Object)
                     {
                         command = $"timeact/select/obj/{res.ContainerIndex}/{res.TimeActIndex}";
                     }

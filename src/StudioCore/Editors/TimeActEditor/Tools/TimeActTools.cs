@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Editors.TimeActEditor.TimeActViewSelection;
+using static StudioCore.Editors.TimeActEditor.TimeActSelectionManager;
 
 namespace StudioCore.Editors.TimeActEditor.Actions;
 

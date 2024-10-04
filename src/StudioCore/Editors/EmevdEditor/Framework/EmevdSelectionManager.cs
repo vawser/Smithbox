@@ -12,7 +12,7 @@ namespace StudioCore.Editors.EmevdEditor;
 /// <summary>
 /// Holds the current selection state for the editor
 /// </summary>
-public class EmevdViewSelection
+public class EmevdSelectionManager
 {
     private EmevdEditorScreen Screen;
 
@@ -28,7 +28,7 @@ public class EmevdViewSelection
     public bool SelectNextEvent { get; set; }
     public bool SelectNextInstruction { get; set; }
 
-    public EmevdViewSelection(EmevdEditorScreen screen)
+    public EmevdSelectionManager(EmevdEditorScreen screen)
     {
         Screen = screen;
     }

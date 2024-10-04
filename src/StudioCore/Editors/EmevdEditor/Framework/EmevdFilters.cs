@@ -23,7 +23,7 @@ public class EmevdFilters
 {
     private EmevdEditorScreen Screen;
     private EmevdPropertyDecorator Decorator;
-    private EmevdViewSelection Selection;
+    private EmevdSelectionManager Selection;
 
     public EmevdFilters(EmevdEditorScreen screen)
     {
@@ -275,16 +275,3 @@ public class EmevdFilters
 }
 
 
-/// <summary>
-/// Does the current property row have an param reference?
-/// </summary>
-/// 
-
-
-/// <summary>
-/// Add spacing in the UI so elements line up if param reference is present
-/// </summary>
-
-/// <summary>
-/// Find param reference value and display it
-/// </summary>

@@ -24,7 +24,7 @@ public class TimeActEditorScreen : EditorScreen
 
     public ActionManager EditorActionManager = new();
 
-    public TimeActViewSelection Selection;
+    public TimeActSelectionManager Selection;
     public TimeActCommandQueue CommandQueue;
     public TimeActActionHandler ActionHandler;
     public TimeActPropertyEditor PropertyEditor;
@@ -49,7 +49,7 @@ public class TimeActEditorScreen : EditorScreen
     {
         Tools = new TimeActTools(this);
 
-        Selection = new TimeActViewSelection(this);
+        Selection = new TimeActSelectionManager(this);
         Decorator = new TimeActDecorator(this);
         PropertyEditor = new TimeActPropertyEditor(this);
         EditorShortcuts = new TimeActShortcuts(this);

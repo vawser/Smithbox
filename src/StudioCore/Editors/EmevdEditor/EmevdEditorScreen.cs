@@ -16,7 +16,7 @@ public class EmevdEditorScreen : EditorScreen
 {
     public ActionManager EditorActionManager = new();
 
-    public EmevdViewSelection Selection;
+    public EmevdSelectionManager Selection;
     public EmevdPropertyDecorator Decorator;
     public EmevdShortcuts EditorShortcuts;
     public EmevdContextMenu ContextMenu;
@@ -36,7 +36,7 @@ public class EmevdEditorScreen : EditorScreen
     public EmevdEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         EditorShortcuts = new EmevdShortcuts(this);
-        Selection = new EmevdViewSelection(this);
+        Selection = new EmevdSelectionManager(this);
         Decorator = new EmevdPropertyDecorator(this);
         ContextMenu = new EmevdContextMenu(this);
         Filters = new EmevdFilters(this);

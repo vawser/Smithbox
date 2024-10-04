@@ -13,7 +13,7 @@ public class TimeActEventGraphView
 {
     private TimeActEditorScreen Screen;
     private ActionManager EditorActionManager;
-    private TimeActViewSelection Selection;
+    private TimeActSelectionManager Selection;
 
     public TimeActEventGraphView(TimeActEditorScreen screen)
     {

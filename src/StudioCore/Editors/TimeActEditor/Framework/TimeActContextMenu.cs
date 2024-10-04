@@ -7,16 +7,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Editors.TimeActEditor.TimeActViewSelection;
+using static StudioCore.Editors.TimeActEditor.TimeActSelectionManager;
 
 namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActContextMenu
 {
     private TimeActEditorScreen Screen;
-    private TimeActViewSelection Handler;
+    private TimeActSelectionManager Handler;
 
-    public TimeActContextMenu(TimeActEditorScreen screen, TimeActViewSelection handler)
+    public TimeActContextMenu(TimeActEditorScreen screen, TimeActSelectionManager handler)
     {
         Screen = screen;
         Handler = handler;

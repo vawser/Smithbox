@@ -18,7 +18,7 @@ public class EmevdFileView
 {
     private EmevdEditorScreen Screen;
     private EmevdPropertyDecorator Decorator;
-    private EmevdViewSelection Selection;
+    private EmevdSelectionManager Selection;
 
     public EmevdFileView(EmevdEditorScreen screen)
     {

@@ -15,7 +15,7 @@ public class TimeActEventView
 {
     private TimeActEditorScreen Screen;
     private ActionManager EditorActionManager;
-    private TimeActViewSelection Selection;
+    private TimeActSelectionManager Selection;
     private TimeActDecorator Decorator;
 
     public TimeActEventView(TimeActEditorScreen screen)

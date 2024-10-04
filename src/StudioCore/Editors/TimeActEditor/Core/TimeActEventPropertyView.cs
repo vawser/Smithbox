@@ -13,7 +13,7 @@ public class TimeActEventPropertyView
 {
     private TimeActEditorScreen Screen;
     private ActionManager EditorActionManager;
-    private TimeActViewSelection Selection;
+    private TimeActSelectionManager Selection;
     private TimeActDecorator Decorator;
     private TimeActPropertyEditor PropertyEditor;
 

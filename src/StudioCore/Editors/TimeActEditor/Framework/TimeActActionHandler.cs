@@ -27,7 +27,7 @@ public class TimeActActionHandler
     private ActionManager EditorActionManager;
     private TimeActEditorScreen Screen;
     private TimeActDecorator Decorator;
-    private TimeActViewSelection Selection;
+    private TimeActSelectionManager Selection;
 
     public bool ShowCreateEventModal = false;
     private TAE.Template.EventTemplate CurrentEvent;

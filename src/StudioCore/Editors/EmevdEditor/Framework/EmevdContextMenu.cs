@@ -15,7 +15,7 @@ public class EmevdContextMenu
 {
     private EmevdEditorScreen Screen;
     private EmevdPropertyDecorator Decorator;
-    private EmevdViewSelection Selection;
+    private EmevdSelectionManager Selection;
 
     public EmevdContextMenu(EmevdEditorScreen screen)
     {

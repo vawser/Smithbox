@@ -15,7 +15,7 @@ namespace StudioCore.Editors.TimeActEditor;
 public class TimeActInternalFileView
 {
     private TimeActEditorScreen Screen;
-    private TimeActViewSelection Selection;
+    private TimeActSelectionManager Selection;
     private TimeActDecorator Decorator;
 
     public TimeActInternalFileView(TimeActEditorScreen screen)

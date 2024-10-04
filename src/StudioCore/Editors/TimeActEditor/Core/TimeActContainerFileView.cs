@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Editors.TimeActEditor.TimeActViewSelection;
+using static StudioCore.Editors.TimeActEditor.TimeActSelectionManager;
 using static StudioCore.Editors.TimeActEditor.Utils.TimeActUtils;
 
 namespace StudioCore.Editors.TimeActEditor;
@@ -17,7 +17,7 @@ namespace StudioCore.Editors.TimeActEditor;
 public class TimeActContainerFileView
 {
     private TimeActEditorScreen Screen;
-    private TimeActViewSelection Selection;
+    private TimeActSelectionManager Selection;
     private TimeActDecorator Decorator;
 
     public TimeActContainerFileView(TimeActEditorScreen screen)

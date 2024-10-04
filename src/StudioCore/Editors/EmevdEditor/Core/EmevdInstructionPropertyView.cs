@@ -23,7 +23,7 @@ public class EmevdInstructionPropertyView
 {
     private EmevdEditorScreen Screen;
     private EmevdPropertyDecorator Decorator;
-    private EmevdViewSelection Selection;
+    private EmevdSelectionManager Selection;
     private EmevdPropertyEditor PropEditor;
     public List<ArgDoc> ArgumentDocs { get; set; }
     public List<object> Arguments { get; set; }

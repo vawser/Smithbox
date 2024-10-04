@@ -16,7 +16,7 @@ public class EmevdShortcuts
 {
     private EmevdEditorScreen Screen;
     private EmevdPropertyDecorator Decorator;
-    private EmevdViewSelection Selection;
+    private EmevdSelectionManager Selection;
     private ActionManager EditorActionManager;
 
     public EmevdShortcuts(EmevdEditorScreen screen)

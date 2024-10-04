@@ -19,7 +19,7 @@ public class EmevdEventView
 {
     private EmevdEditorScreen Screen;
     private EmevdPropertyDecorator Decorator;
-    private EmevdViewSelection Selection;
+    private EmevdSelectionManager Selection;
     private EmevdFilters Filters;
 
     public EmevdEventView(EmevdEditorScreen screen)

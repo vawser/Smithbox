@@ -15,7 +15,7 @@ namespace StudioCore.Editors.TimeActEditor;
 public class TimeActAnimationView
 {
     private TimeActEditorScreen Screen;
-    private TimeActViewSelection Selection;
+    private TimeActSelectionManager Selection;
     private TimeActDecorator Decorator;
     private TimeActEventGraphView EventGraphView;
 

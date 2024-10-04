@@ -37,7 +37,7 @@ public class TimeActPropertyEditor
         Decorator = screen.Decorator;
     }
 
-    public void AnimationHeaderSection(TimeActViewSelection handler)
+    public void AnimationHeaderSection(TimeActSelectionManager handler)
     {
         if (TimeActBank.IsSaving)
             ImGui.BeginDisabled();
@@ -84,7 +84,7 @@ public class TimeActPropertyEditor
             ImGui.EndDisabled();
     }
 
-    public void AnimationValueSection(TimeActViewSelection handler)
+    public void AnimationValueSection(TimeActSelectionManager handler)
     {
         if (TimeActBank.IsSaving)
             ImGui.BeginDisabled();
@@ -235,7 +235,7 @@ public class TimeActPropertyEditor
             ImGui.EndDisabled();
     }
 
-    public void ValueSection(TimeActViewSelection handler)
+    public void ValueSection(TimeActSelectionManager handler)
     {
         if (TimeActBank.IsSaving)
             ImGui.BeginDisabled();

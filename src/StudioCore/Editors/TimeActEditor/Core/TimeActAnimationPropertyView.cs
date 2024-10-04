@@ -12,7 +12,7 @@ namespace StudioCore.Editors.TimeActEditor;
 public class TimeActAnimationPropertyView
 {
     private TimeActEditorScreen Screen;
-    private TimeActViewSelection Selection;
+    private TimeActSelectionManager Selection;
     private TimeActDecorator Decorator;
     private TimeActPropertyEditor PropertyEditor;
 

@@ -15,7 +15,7 @@ public class EmevdEventParameterView
 {
     private EmevdEditorScreen Screen;
     private EmevdPropertyDecorator Decorator;
-    private EmevdViewSelection Selection;
+    private EmevdSelectionManager Selection;
 
     public EmevdEventParameterView(EmevdEditorScreen screen)
     {
