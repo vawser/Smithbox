@@ -19,12 +19,14 @@ public class EmevdFileView
     private EmevdEditorScreen Screen;
     private EmevdPropertyDecorator Decorator;
     private EmevdSelectionManager Selection;
+    private EmevdFilters Filters;
 
     public EmevdFileView(EmevdEditorScreen screen)
     {
         Screen = screen;
         Decorator = screen.Decorator;
         Selection = screen.Selection;
+        Filters = screen.Filters;
     }
 
     /// <summary>
@@ -43,36 +45,40 @@ public class EmevdFileView
         // File List
         ImGui.Begin("Files##EventScriptFileList");
 
-        ImGui.Text($"Files");
+        Filters.DisplayFileFilterSearch();
+
         ImGui.Separator();
 
         foreach (var (info, binder) in EmevdBank.ScriptBank)
         {
             var displayName = $"{info.Name}";
-
-            // Script row
-            if (ImGui.Selectable(displayName, info.Name == Selection.SelectedScriptKey))
-            {
-                Selection.SelectedScriptKey = info.Name;
-                Selection.SelectedFileInfo = info;
-                Selection.SelectedScript = binder;
-            }
-
-            // Arrow Selection
-            if (ImGui.IsItemHovered() && Selection.SelectNextScript)
-            {
-                Selection.SelectNextScript = false;
-                Selection.SelectedScriptKey = info.Name;
-                Selection.SelectedFileInfo = info;
-                Selection.SelectedScript = binder;
-            }
-            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
-            {
-                Selection.SelectNextScript = true;
-            }
-
             var aliasName = AliasUtils.GetMapNameAlias(info.Name);
-            UIHelper.DisplayAlias(aliasName);
+
+            if (Filters.IsFileFilterMatch(displayName, aliasName))
+            {
+                // Script row
+                if (ImGui.Selectable(displayName, info.Name == Selection.SelectedScriptKey))
+                {
+                    Selection.SelectedScriptKey = info.Name;
+                    Selection.SelectedFileInfo = info;
+                    Selection.SelectedScript = binder;
+                }
+
+                // Arrow Selection
+                if (ImGui.IsItemHovered() && Selection.SelectNextScript)
+                {
+                    Selection.SelectNextScript = false;
+                    Selection.SelectedScriptKey = info.Name;
+                    Selection.SelectedFileInfo = info;
+                    Selection.SelectedScript = binder;
+                }
+                if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                {
+                    Selection.SelectNextScript = true;
+                }
+
+                UIHelper.DisplayAlias(aliasName);
+            }
         }
 
         ImGui.End();

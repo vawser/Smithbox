@@ -32,11 +32,85 @@ public class EmevdFilters
         Selection = screen.Selection;
     }
 
+    public string FileFilterInput = "";
     public string EventFilterInput = "";
     public string InstructionFilterInput = "";
 
+    private bool FileFilterExactMatch = false;
     private bool EventFilterExactMatch = false;
     private bool InstructionFilterExactMatch = false;
+
+    private string FilterCommands_Event = "" +
+        "The following commands can be used for special functionality:\n" +
+        "ins: <input> - This will match your input against the instructions within the event.\n" +
+        "prop: <input> - This will match your input against the properties within the instructions within the event.";
+
+    private string FilterCommands_Instruction = "" +
+        "The following commands can be used for special functionality:\n" +
+        "prop: <input> - This will match your input against the properties within the instructions within the event.";
+
+    /// <summary>
+    /// Display the event filter UI
+    /// </summary>
+    public void DisplayFileFilterSearch()
+    {
+        ImGui.InputText($"Search##fileFilterSearch", ref FileFilterInput, 255);
+
+        ImGui.SameLine();
+        ImGui.Checkbox($"##fileFilterExactMatch", ref FileFilterExactMatch);
+        UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
+    }
+
+    /// <summary>
+    /// Is the search input an match for the passed text?
+    /// </summary>
+    public bool IsFileFilterMatch(string text, string alias)
+    {
+        bool isValid = true;
+
+        var input = FileFilterInput.ToLower();
+
+        if (input != "" && text != null)
+        {
+            string[] inputParts = input.Split("+");
+            bool[] partTruth = new bool[inputParts.Length];
+
+            var rawText = text.ToLower();
+            var rawAlias = alias.ToLower();
+
+            for (int i = 0; i < partTruth.Length; i++)
+            {
+                string entry = inputParts[i];
+
+                if (entry == rawText)
+                    partTruth[i] = true;
+
+                if (!FileFilterExactMatch)
+                {
+                    if (rawText.Contains(entry))
+                        partTruth[i] = true;
+                }
+
+                if (entry == rawAlias)
+                    partTruth[i] = true;
+
+                if (!FileFilterExactMatch)
+                {
+                    if (rawAlias.Contains(entry))
+                        partTruth[i] = true;
+                }
+            }
+
+            // Only evaluate as true if all parts are true
+            foreach (bool entry in partTruth)
+            {
+                if (!entry)
+                    isValid = false;
+            }
+        }
+
+        return isValid;
+    }
 
     /// <summary>
     /// Display the event filter UI
@@ -44,10 +118,7 @@ public class EmevdFilters
     public void DisplayEventFilterSearch()
     {
         ImGui.InputText($"Search##eventFilterSearch", ref EventFilterInput, 255);
-        UIHelper.ShowHoverTooltip(
-            "The following commands can be used for special functionality:\n" +
-            "ins: <input> - This will match your input against the instructions within the event.\n" +
-            "prop: <input> - This will match your input against the properties within the instructions within the event.");
+        UIHelper.ShowHoverTooltip(FilterCommands_Event);
 
         ImGui.SameLine();
         ImGui.Checkbox($"##eventFilterExactMatch", ref EventFilterExactMatch);
@@ -81,7 +152,7 @@ public class EmevdFilters
                     overrideInput = input;
 
                     // Copy the input to this so the instruction list is filtered too
-                    if (CFG.Current.EmevdEditor_PropagateEventFilter)
+                    if (CFG.Current.EmevdEditor_PropagateFilterCommands)
                     {
                         InstructionFilterInput = overrideInput;
                     }
@@ -136,6 +207,8 @@ public class EmevdFilters
     public void DisplayInstructionFilterSearch()
     {
         ImGui.InputText($"Search##instructionFilterSearch", ref InstructionFilterInput, 255);
+        UIHelper.ShowHoverTooltip(FilterCommands_Instruction);
+
         ImGui.SameLine();
         ImGui.Checkbox($"##instructionFilterExactMatch", ref InstructionFilterExactMatch);
         UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");

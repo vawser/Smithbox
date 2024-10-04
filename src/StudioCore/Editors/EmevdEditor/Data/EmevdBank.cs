@@ -85,7 +85,11 @@ public static class EmevdBank
         {
             foreach (var (info, script) in ScriptBank)
             {
-                SaveEventScript(info, script);
+                // Only save all modified files
+                if (info.IsModified)
+                {
+                    SaveEventScript(info, script);
+                }
             }
         }
     }
@@ -94,13 +98,6 @@ public static class EmevdBank
     {
         if (script == null)
             return;
-
-        // Ignore loaded scripts that have not been modified
-        // This is to prevent mass-transfer to project folder on Save-All
-        if(!info.IsModified)
-            return;
-
-        //TaskLogs.AddLog($"SaveEventScript: {info.Path}");
 
         byte[] fileBytes = null;
 
@@ -151,7 +148,7 @@ public static class EmevdBank
         {
             // Write to GameModDirectory
             File.WriteAllBytes(assetMod, fileBytes);
-            //TaskLogs.AddLog($"Saved at: {assetMod}");
+            TaskLogs.AddLog($"Saved at: {assetMod}");
         }
     }
 

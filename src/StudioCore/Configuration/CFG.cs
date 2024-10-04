@@ -470,10 +470,15 @@ public class CFG
     //****************************
     // Settings: EMEVD Editor
     //****************************
-    public bool EmevdEditor_PropagateEventFilter = true;
+    public bool EmevdEditor_PropagateFilterCommands = true;
 
     public bool EmevdEditor_DisplayInstructionCategory = false;
     public bool EmevdEditor_DisplayInstructionParameterNames = false;
+
+    //****************************
+    // Settings: ESD Editor
+    //****************************
+    public bool EsdEditor_PropagateFilterCommands = true;
 
     //****************************
     // Settings: Texture Viewer

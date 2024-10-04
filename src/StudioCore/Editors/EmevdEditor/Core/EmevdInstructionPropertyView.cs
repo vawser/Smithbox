@@ -126,7 +126,9 @@ public class EmevdInstructionPropertyView
                         var oldArguments = (byte[])instruction.ArgData.Clone();
                         var newArguments = instruction.UpdateArgs(Arguments);
 
-                        var action = new InstructionArgumentChange(instruction, oldArguments, newArguments);
+                        var currentInfo = Selection.SelectedFileInfo;
+
+                        var action = new InstructionArgumentChange(currentInfo, instruction, oldArguments, newArguments);
                         Screen.EditorActionManager.ExecuteAction(action);
                     }
 
