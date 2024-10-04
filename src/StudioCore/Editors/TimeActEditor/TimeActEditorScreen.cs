@@ -24,8 +24,6 @@ public class TimeActEditorScreen : EditorScreen
 
     public ActionManager EditorActionManager = new();
 
-    public TimeActViewport Viewport;
-
     public TimeActViewSelection Selection;
     public TimeActCommandQueue CommandQueue;
     public TimeActActionHandler ActionHandler;
@@ -49,8 +47,6 @@ public class TimeActEditorScreen : EditorScreen
 
     public TimeActEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        Viewport = new TimeActViewport(this, window, device);
-
         Tools = new TimeActTools(this);
 
         Selection = new TimeActViewSelection(this);
@@ -78,37 +74,9 @@ public class TimeActEditorScreen : EditorScreen
     public string CommandEndpoint => "timeact";
     public string SaveType => "TAE";
 
-    public void Init()
-    {
-        ShowSaveOption = true;
-
-        // TAE implementation needs to be updated for AC6 (need to decompile AC6 DSAS to work out differences)
-        if(Smithbox.ProjectType is ProjectType.AC6)
-        {
-            ShowSaveOption = false;
-        }
-    }
-
-    public void Update(float dt)
-    {
-        Viewport.Update(dt);
-    }
-
-    public void EditorResized(Sdl2Window window, GraphicsDevice device)
-    {
-        Viewport.EditorResized(window, device);
-    }
-
-    public void Draw(GraphicsDevice device, CommandList cl)
-    {
-        Viewport.Draw(device, cl);
-    }
-
     public void OnGUI(string[] initcmd)
     {
         var scale = DPI.GetUIScale();
-
-        Viewport.Display();
 
         // Docking setup
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
@@ -138,8 +106,6 @@ public class TimeActEditorScreen : EditorScreen
             if (!TaskManager.AnyActiveTasks() && TimeActBank.IsLoaded)
             {
                 CommandQueue.Parse(initcmd);
-
-                //Viewport.OnGui();
 
                 EditorShortcuts.Monitor();
 
@@ -289,26 +255,6 @@ public class TimeActEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_ToolConfiguration);
 
-            /*
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Viewport"))
-            {
-                UI.Current.Interface_Editor_Viewport = !UI.Current.Interface_Editor_Viewport;
-            }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Viewport);
-
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Viewport Grid"))
-            {
-                CFG.Current.TimeActEditor_Viewport_Grid = !CFG.Current.TimeActEditor_Viewport_Grid;
-                CFG.Current.TimeActEditor_Viewport_RegenerateMapGrid = true;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.TimeActEditor_Viewport_Grid);
-            */
-
-            // Disabled for now
-            UI.Current.Interface_Editor_Viewport = false;
-
             ImGui.EndMenu();
         }
 
@@ -319,8 +265,6 @@ public class TimeActEditorScreen : EditorScreen
     /// </summary>
     public void OnProjectChanged()
     {
-        Viewport.OnProjectChanged();
-
         Selection.OnProjectChanged();
 
         TimeActBank.IsLoaded = false;
@@ -338,6 +282,12 @@ public class TimeActEditorScreen : EditorScreen
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
+        if (Smithbox.ProjectType is ProjectType.AC6)
+        {
+            TaskLogs.AddLog("Saving is not supported for AC6 projects currently.");
+            return;
+        }
+
         if (TimeActBank.IsLoaded && !TimeActBank.IsSaving)
         {
             TaskLogs.AddLog("File will now be saved.");
@@ -354,6 +304,12 @@ public class TimeActEditorScreen : EditorScreen
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
+        if(Smithbox.ProjectType is ProjectType.AC6)
+        {
+            TaskLogs.AddLog("Saving is not supported for AC6 projects currently.");
+            return;
+        }
+
         if (TimeActBank.IsLoaded && !TimeActBank.IsSaving)
         {
             TaskLogs.AddLog("Modified files will now be saved.");
@@ -368,10 +324,5 @@ public class TimeActEditorScreen : EditorScreen
     private void ResetActionManager()
     {
         EditorActionManager.Clear();
-    }
-
-    public bool InputCaptured()
-    {
-        return Viewport.Viewport.ViewportSelected;
     }
 }

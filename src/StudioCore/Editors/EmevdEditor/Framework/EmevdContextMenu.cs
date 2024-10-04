@@ -21,6 +21,6 @@ public class EmevdContextMenu
     {
         Screen = screen;
         Decorator = screen.Decorator;
-        Selection = screen.ViewSelection;
+        Selection = screen.Selection;
     }
 }

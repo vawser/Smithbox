@@ -35,10 +35,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     /// Lock variable used to handle pauses to the Update() function.
     /// </summary>
     private static readonly object _lock_PauseUpdate = new();
-    public bool FirstFrame { get; set; }
-
-    public bool ShowSaveOption { get; set; }
-
+    
     /// <summary>
     /// Current entity selection within the viewport.
     /// </summary>
@@ -95,6 +92,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public MapQuerySearchEngine MapQueryHandler;
 
+    public EditorFocusManager FocusManager;
 
     public MapEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -134,6 +132,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         MapQueryHandler = new MapQuerySearchEngine(this);
 
+        FocusManager = new EditorFocusManager(this);
+        FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
+
         EditorActionManager.AddEventHandler(SceneTree);
     }
 
@@ -159,9 +160,9 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public string CommandEndpoint => "map";
     public string SaveType => "Maps";
 
-    public void Init()
+    public void OnDefocus()
     {
-        ShowSaveOption = true;
+        FocusManager.ResetFocus();
     }
 
     public void Update(float dt)
@@ -680,13 +681,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         ImGui.PopStyleColor(1);
 
-        // Focus on Properties by default when this editor is made focused
-        if (FirstFrame)
-        {
-            ImGui.SetWindowFocus("Properties##mapeditprop");
-
-            FirstFrame = false;
-        }
+        FocusManager.OnFocus();
     }
 
     private string[] propSearchCmd = null;

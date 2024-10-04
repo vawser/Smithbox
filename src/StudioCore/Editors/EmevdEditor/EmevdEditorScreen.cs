@@ -1,15 +1,11 @@
 ﻿using ImGuiNET;
-using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.EmevdEditor.Actions;
 using StudioCore.Editors.EmevdEditor.Tools;
-using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
-using System;
-using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -18,13 +14,9 @@ namespace StudioCore.EmevdEditor;
 
 public class EmevdEditorScreen : EditorScreen
 {
-    public bool FirstFrame { get; set; }
-
-    public bool ShowSaveOption { get; set; }
-
     public ActionManager EditorActionManager = new();
 
-    public EmevdViewSelection ViewSelection;
+    public EmevdViewSelection Selection;
     public EmevdPropertyDecorator Decorator;
     public EmevdShortcuts EditorShortcuts;
     public EmevdContextMenu ContextMenu;
@@ -44,7 +36,7 @@ public class EmevdEditorScreen : EditorScreen
     public EmevdEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         EditorShortcuts = new EmevdShortcuts(this);
-        ViewSelection = new EmevdViewSelection(this);
+        Selection = new EmevdViewSelection(this);
         Decorator = new EmevdPropertyDecorator(this);
         ContextMenu = new EmevdContextMenu(this);
         Filters = new EmevdFilters(this);
@@ -64,11 +56,6 @@ public class EmevdEditorScreen : EditorScreen
     public string EditorName => "EMEVD Editor##EventScriptEditor";
     public string CommandEndpoint => "emevd";
     public string SaveType => "EMEVD";
-
-    public void Init()
-    {
-        ShowSaveOption = true;
-    }
 
     /// <summary>
     /// The editor menubar
@@ -240,7 +227,7 @@ public class EmevdEditorScreen : EditorScreen
     {
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
-            ViewSelection.OnProjectChanged();
+            Selection.OnProjectChanged();
             Decorator.OnProjectChanged();
 
             EventParameterView.OnProjectChanged();
@@ -265,7 +252,7 @@ public class EmevdEditorScreen : EditorScreen
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        EmevdBank.SaveEventScript(ViewSelection.SelectedFileInfo, ViewSelection.SelectedScript);
+        EmevdBank.SaveEventScript(Selection.SelectedFileInfo, Selection.SelectedScript);
     }
 
     /// <summary>

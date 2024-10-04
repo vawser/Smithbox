@@ -29,10 +29,6 @@ namespace StudioCore.Editors.ModelEditor;
 // Default method is to add to actual model, force actual model save and then re-load.
 public class ModelEditorScreen : EditorScreen
 {
-    public bool FirstFrame { get; set; }
-
-    public bool ShowSaveOption { get; set; }
-
     public MapEditor.ViewportActionManager EditorActionManager = new();
 
     public ModelSelectionView ModelSelectionView;
@@ -61,6 +57,8 @@ public class ModelEditorScreen : EditorScreen
 
     public ActionSubMenu ActionSubMenu;
 
+    public EditorFocusManager FocusManager;
+
     public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         Rect = window.Bounds;
@@ -88,11 +86,14 @@ public class ModelEditorScreen : EditorScreen
         ToolWindow = new ToolWindow(this);
         ToolSubMenu = new ToolSubMenu(this);
         ActionSubMenu = new ActionSubMenu(this);
+
+        FocusManager = new EditorFocusManager(this);
+        FocusManager.SetDefaultFocusElement("Properties##ModelEditorProperties");
     }
 
-    public void Init()
+    public void OnDefocus()
     {
-        ShowSaveOption = true;
+        FocusManager.ResetFocus();
     }
 
     public string EditorName => "Model Editor";
@@ -553,13 +554,7 @@ public class ModelEditorScreen : EditorScreen
         }
         ImGui.PopStyleColor(1);
 
-        // Focus on Properties by default when this editor is made focused
-        if (FirstFrame)
-        {
-            ImGui.SetWindowFocus("Properties##ModelEditorProperties");
-
-            FirstFrame = false;
-        }
+        FocusManager.OnFocus();
     }
 
     public bool InputCaptured()

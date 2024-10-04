@@ -24,7 +24,7 @@ public class EmevdFileView
     {
         Screen = screen;
         Decorator = screen.Decorator;
-        Selection = screen.ViewSelection;
+        Selection = screen.Selection;
     }
 
     /// <summary>

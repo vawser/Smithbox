@@ -21,15 +21,6 @@ public interface EditorScreen
     /// </summary>
     public string SaveType { get; }
 
-    public bool FirstFrame { get; set; }
-
-    public bool ShowSaveOption { get; set; }
-
-    /// <summary>
-    ///     Init function for setting up the editor
-    /// </summary>
-    public void Init();
-
     /// <summary>
     ///     Called when a new project has been opened
     /// </summary>
@@ -39,17 +30,26 @@ public interface EditorScreen
     /// <summary>
     ///     Draw the ImGui menu specific to this editor
     /// </summary>
-    public void DrawEditorMenu();
+    public void DrawEditorMenu()
+    {
+        // Default
+    }
 
     /// <summary>
     ///     Save specific data in this editor
     /// </summary>
-    public void Save();
+    public void Save()
+    {
+        // Default
+    }
 
     /// <summary>
     ///     Save all data in this editor
     /// </summary>
-    public void SaveAll();
+    public void SaveAll()
+    {
+        // Default
+    }
 
     /// <summary>
     ///     Draw the main GUI using ImGUI
@@ -72,6 +72,7 @@ public interface EditorScreen
     /// <param name="deltaTime">Time elapsed since the last frame</param>
     public void Update(float deltaTime)
     {
+        // Default
     }
 
     /// <summary>
@@ -81,6 +82,7 @@ public interface EditorScreen
     /// <param name="device">Vulkan device</param>
     public void EditorResized(Sdl2Window window, GraphicsDevice device)
     {
+        // Default
     }
 
     /// <summary>
@@ -90,5 +92,11 @@ public interface EditorScreen
     /// <param name="cl">Command list to record into</param>
     public void Draw(GraphicsDevice device, CommandList cl)
     {
+        // Default
+    }
+
+    public void OnDefocus()
+    {
+        // Default
     }
 }

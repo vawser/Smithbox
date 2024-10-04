@@ -26,7 +26,7 @@ public class EmevdEventView
     {
         Screen = screen;
         Decorator = screen.Decorator;
-        Selection = screen.ViewSelection;
+        Selection = screen.Selection;
         Filters = screen.Filters;
     }
 

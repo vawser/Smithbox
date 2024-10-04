@@ -20,10 +20,6 @@ namespace StudioCore.ParticleEditor;
 
 public class ParticleEditorScreen : EditorScreen
 {
-    public bool FirstFrame { get; set; }
-
-    public bool ShowSaveOption { get; set; }
-
     public PropertyEditor _propEditor;
 
     public ActionManager EditorActionManager = new();
@@ -64,11 +60,6 @@ public class ParticleEditorScreen : EditorScreen
     public string EditorName => "Particle Editor##ParticleEditor";
     public string CommandEndpoint => "particle";
     public string SaveType => "Particle";
-
-    public void Init()
-    {
-        ShowSaveOption = false;
-    }
 
     public void DrawEditorMenu()
     {

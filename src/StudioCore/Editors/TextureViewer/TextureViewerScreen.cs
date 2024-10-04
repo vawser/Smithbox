@@ -13,10 +13,6 @@ namespace StudioCore.TextureViewer;
 
 public class TextureViewerScreen : EditorScreen, IResourceEventListener
 {
-    public bool FirstFrame { get; set; }
-
-    public bool ShowSaveOption { get; set; }
-
     public ActionManager EditorActionManager = new();
 
     public TexViewSelection Selection;
@@ -65,11 +61,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public string EditorName => "Texture Viewer##TextureViewerEditor";
     public string CommandEndpoint => "texture";
     public string SaveType => "Texture";
-
-    public void Init()
-    {
-        ShowSaveOption = false;
-    }
 
     /// <summary>
     /// The editor menubar

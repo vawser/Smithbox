@@ -96,11 +96,6 @@ public class EditorHandler
             EditorList.Add(EsdEditor);
 
         FocusedEditor = MapEditor;
-
-        foreach (EditorScreen editor in EditorList)
-        {
-            editor.Init();
-        }
     }
 
     public void UpdateEditors()
@@ -113,35 +108,26 @@ public class EditorHandler
 
     public void SaveAllFocusedEditor()
     {
-        if (FocusedEditor.ShowSaveOption)
-        {
-            FocusedEditor.SaveAll();
-        }
+        FocusedEditor.SaveAll();
     }
 
     public void SaveFocusedEditor()
     {
-        if (FocusedEditor.ShowSaveOption)
-        {
-            FocusedEditor.Save();
-        }
+        FocusedEditor.Save();
     }
 
     public void HandleEditorShortcuts()
     {
-        if (FocusedEditor.ShowSaveOption)
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
         {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
-            {
-                Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
-                SaveFocusedEditor();
-            }
+            Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
+            SaveFocusedEditor();
+        }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_SaveAll))
-            {
-                Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
-                SaveAllFocusedEditor();
-            }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_SaveAll))
+        {
+            Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
+            SaveAllFocusedEditor();
         }
     }
 
@@ -242,23 +228,20 @@ public class EditorHandler
             }
 
             // Save
-            if (FocusedEditor.ShowSaveOption)
+            UIHelper.ShowMenuIcon($"{ForkAwesome.FloppyO}");
+            if (ImGui.MenuItem($"Save Selected {FocusedEditor.SaveType}",
+                    KeyBindings.Current.CORE_Save.HintText))
             {
-                UIHelper.ShowMenuIcon($"{ForkAwesome.FloppyO}");
-                if (ImGui.MenuItem($"Save Selected {FocusedEditor.SaveType}",
-                        KeyBindings.Current.CORE_Save.HintText))
-                {
-                    Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
-                    SaveFocusedEditor();
-                }
+                Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
+                SaveFocusedEditor();
+            }
 
-                // Save All
-                UIHelper.ShowMenuIcon($"{ForkAwesome.FloppyO}");
-                if (ImGui.MenuItem($"Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.CORE_SaveAll.HintText))
-                {
-                    Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
-                    SaveAllFocusedEditor();
-                }
+            // Save All
+            UIHelper.ShowMenuIcon($"{ForkAwesome.FloppyO}");
+            if (ImGui.MenuItem($"Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.CORE_SaveAll.HintText))
+            {
+                Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
+                SaveAllFocusedEditor();
             }
 
             ImGui.EndMenu();

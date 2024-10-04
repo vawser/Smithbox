@@ -41,10 +41,6 @@ public class HavokEditorScreen : EditorScreen
         [Display(Name = "Compendium")] Compendium
     }
 
-    public bool FirstFrame { get; set; }
-
-    public bool ShowSaveOption { get; set; }
-
     public ActionManager EditorActionManager = new();
 
     public HavokContainerInfo SelectedContainerInfo;
@@ -69,11 +65,6 @@ public class HavokEditorScreen : EditorScreen
     public string EditorName => "Havok Editor##HavokEditor";
     public string CommandEndpoint => "Havok";
     public string SaveType => "Havok";
-
-    public void Init()
-    {
-        ShowSaveOption = true;
-    }
 
     public void DrawEditorMenu()
     {

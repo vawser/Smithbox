@@ -591,7 +591,7 @@ public class Smithbox
             else
             {
                 // Reset this so on Focus the first frame focusing happens
-                editor.FirstFrame = true;
+                editor.OnDefocus();
                 ImGui.PopStyleColor(1);
                 ImGui.PopStyleVar(1);
                 ImGui.End();

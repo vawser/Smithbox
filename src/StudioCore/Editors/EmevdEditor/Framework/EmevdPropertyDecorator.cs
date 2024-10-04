@@ -38,7 +38,7 @@ public class EmevdPropertyDecorator
     public EmevdPropertyDecorator(EmevdEditorScreen screen)
     {
         Screen = screen;
-        ViewSelection = screen.ViewSelection;
+        ViewSelection = screen.Selection;
     }
 
     public void OnProjectChanged()

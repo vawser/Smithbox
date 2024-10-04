@@ -106,10 +106,6 @@ public class FMGItemParamDecorator : IParamDecorator
 
 public class ParamEditorScreen : EditorScreen
 {
-    public bool FirstFrame { get; set; }
-
-    public bool ShowSaveOption { get; set; }
-
     public static bool EditorMode;
 
     /// <summary>
@@ -198,10 +194,6 @@ public class ParamEditorScreen : EditorScreen
     public string CommandEndpoint => "param";
     public string SaveType => "Params";
 
-    public void Init()
-    {
-        ShowSaveOption = true;
-    }
     public void DrawEditorMenu()
     {
         ImGui.Separator();

@@ -16,10 +16,6 @@ namespace StudioCore.TalkEditor;
 
 public class EsdEditorScreen : EditorScreen
 {
-    public bool FirstFrame { get; set; }
-
-    public bool ShowSaveOption { get; set; }
-
     public ActionManager EditorActionManager = new();
 
     private EsdScriptInfo _selectedFileInfo;
@@ -41,15 +37,9 @@ public class EsdEditorScreen : EditorScreen
     public string CommandEndpoint => "esd";
     public string SaveType => "ESD";
 
-    public void Init()
-    {
-        ShowSaveOption = false;
-    }
-
     public void DrawEditorMenu()
     {
         ImGui.Separator();
-
     }
 
     public void OnGUI(string[] initcmd)
@@ -69,7 +59,7 @@ public class EsdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TalkScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (!SupportsEditor())
+        if (!IsProjectTypeSupported())
         {
             ImGui.Begin("Editor##InvalidEsdEditor");
 
@@ -97,7 +87,7 @@ public class EsdEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
     }
 
-    private bool SupportsEditor()
+    private bool IsProjectTypeSupported()
     {
         return true;
     }

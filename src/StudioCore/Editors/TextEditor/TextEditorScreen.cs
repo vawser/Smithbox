@@ -24,10 +24,6 @@ namespace StudioCore.TextEditor;
 
 public class TextEditorScreen : EditorScreen
 {
-    public bool FirstFrame { get; set; }
-
-    public bool ShowSaveOption { get; set; }
-
     private readonly PropertyEditor _propEditor;
 
     public FMGEntryGroup _activeEntryGroup;
@@ -68,11 +64,6 @@ public class TextEditorScreen : EditorScreen
     public string EditorName => "Text Editor";
     public string CommandEndpoint => "text";
     public string SaveType => "Text";
-
-    public void Init()
-    {
-        ShowSaveOption = true;
-    }
 
     public void DrawEditorMenu()
     {

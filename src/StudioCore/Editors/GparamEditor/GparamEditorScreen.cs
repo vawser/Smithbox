@@ -27,10 +27,6 @@ namespace StudioCore.GraphicsEditor;
 
 public class GparamEditorScreen : EditorScreen
 {
-    public bool FirstFrame { get; set; }
-
-    public bool ShowSaveOption { get; set; }
-
     public ActionManager EditorActionManager = new();
     public GparamEditor PropertyEditor;
 
@@ -83,11 +79,6 @@ public class GparamEditorScreen : EditorScreen
     public string EditorName => "Gparam Editor##GparamEditor";
     public string CommandEndpoint => "gparam";
     public string SaveType => "Gparam";
-
-    public void Init()
-    {
-        ShowSaveOption = true;
-    }
 
     public void DrawEditorMenu()
     {

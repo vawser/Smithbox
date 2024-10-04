@@ -29,7 +29,7 @@ public class EmevdFilters
     {
         Screen = screen;
         Decorator = screen.Decorator;
-        Selection = screen.ViewSelection;
+        Selection = screen.Selection;
     }
 
     public string EventFilterInput = "";

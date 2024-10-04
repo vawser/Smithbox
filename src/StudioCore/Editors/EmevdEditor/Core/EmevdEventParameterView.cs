@@ -21,7 +21,7 @@ public class EmevdEventParameterView
     {
         Screen = screen;
         Decorator = screen.Decorator;
-        Selection = screen.ViewSelection;
+        Selection = screen.Selection;
     }
 
     /// <summary>

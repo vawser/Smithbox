@@ -22,7 +22,7 @@ public class EmevdTools
     {
         Screen = screen;
         Decorator = screen.Decorator;
-        Selection = screen.ViewSelection;
+        Selection = screen.Selection;
     }
 
     public void LogUnknownInstructions()

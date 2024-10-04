@@ -21,10 +21,6 @@ namespace StudioCore.MaterialEditor;
 
 public class MaterialEditorScreen : EditorScreen
 {
-    public bool FirstFrame { get; set; }
-
-    public bool ShowSaveOption { get; set; }
-
     private readonly PropertyEditor _propEditor;
 
     public ActionManager EditorActionManager = new();
@@ -44,11 +40,6 @@ public class MaterialEditorScreen : EditorScreen
     public string EditorName => "Material Editor##MaterialEditor";
     public string CommandEndpoint => "material";
     public string SaveType => "Material";
-
-    public void Init()
-    {
-        ShowSaveOption = false;
-    }
 
     public void DrawEditorMenu()
     {

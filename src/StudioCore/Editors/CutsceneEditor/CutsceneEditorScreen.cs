@@ -15,10 +15,6 @@ namespace StudioCore.CutsceneEditor;
 
 public class CutsceneEditorScreen : EditorScreen
 {
-    public bool FirstFrame { get; set; }
-    
-    public bool ShowSaveOption { get; set; }
-
     private readonly PropertyEditor _propEditor;
 
     public ActionManager EditorActionManager = new();
@@ -72,10 +68,6 @@ public class CutsceneEditorScreen : EditorScreen
     public string CommandEndpoint => "cutscene";
     public string SaveType => "Cutscene";
 
-    public void Init()
-    {
-        ShowSaveOption = true;
-    }
     public void DrawEditorMenu()
     {
         ImGui.Separator();
