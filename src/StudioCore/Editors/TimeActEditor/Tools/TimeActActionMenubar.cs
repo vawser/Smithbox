@@ -10,33 +10,15 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor.Actions;
 
-public class ActionSubMenu
+public class TimeActActionMenubar
 {
     private TimeActEditorScreen Screen;
-    public ActionHandler Handler;
+    public TimeActTools Tools;
 
-    public ActionSubMenu(TimeActEditorScreen screen, ActionHandler handler)
+    public TimeActActionMenubar(TimeActEditorScreen screen)
     {
         Screen = screen;
-        Handler = handler;
-    }
-
-    public void Shortcuts()
-    {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
-        {
-            Handler.DetermineDeleteTarget();
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
-        {
-            Handler.DetermineDuplicateTarget();
-        }
-    }
-
-    public void OnProjectChanged()
-    {
-
+        Tools = screen.Tools;
     }
 
     public void DisplayMenu()
@@ -46,14 +28,14 @@ public class ActionSubMenu
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
-                Handler.DetermineDuplicateTarget();
+                Tools.DetermineDuplicateTarget();
             }
             UIHelper.ShowHoverTooltip("Duplicates the current selection.");
 
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
-                Handler.DetermineDeleteTarget();
+                Tools.DetermineDeleteTarget();
             }
             UIHelper.ShowHoverTooltip("Deletes the current selection.");
 

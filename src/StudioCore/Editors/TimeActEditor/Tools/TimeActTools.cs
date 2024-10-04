@@ -4,25 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Editors.TimeActEditor.TimeActSelectionHandler;
+using static StudioCore.Editors.TimeActEditor.TimeActViewSelection;
 
 namespace StudioCore.Editors.TimeActEditor.Actions;
 
-public class ActionHandler
+public class TimeActTools
 {
     private TimeActEditorScreen Screen;
-    private ActionManager EditorActionManager;
 
-    public ActionHandler(TimeActEditorScreen screen, ActionManager manager)
+    public TimeActTools(TimeActEditorScreen screen)
     {
         Screen = screen;
-        EditorActionManager = manager;
     }
 
     public void DetermineCreateTarget()
     {
-        var handler = Screen.CollectionPropertyHandler;
-        var context = Screen.SelectionHandler.CurrentSelectionContext;
+        var handler = Screen.ActionHandler;
+        var context = Screen.Selection.CurrentSelectionContext;
 
         switch (context)
         {
@@ -32,7 +30,7 @@ public class ActionHandler
             case SelectionContext.Animation:
                 break;
             case SelectionContext.Event:
-                Screen.CollectionPropertyHandler.CreateEvent();
+                Screen.ActionHandler.CreateEvent();
                 break;
             case SelectionContext.Property: break;
         }
@@ -40,40 +38,40 @@ public class ActionHandler
 
     public void DetermineDuplicateTarget()
     {
-        var handler = Screen.CollectionPropertyHandler;
-        var context = Screen.SelectionHandler.CurrentSelectionContext;
+        var handler = Screen.ActionHandler;
+        var context = Screen.Selection.CurrentSelectionContext;
 
         switch(context)
         {
             case SelectionContext.File: break;
             case SelectionContext.TimeAct:
-                Screen.CollectionPropertyHandler.DuplicateTimeAct();
+                Screen.ActionHandler.DuplicateTimeAct();
                 break;
             case SelectionContext.Animation:
-                Screen.CollectionPropertyHandler.DuplicateAnimation(); 
+                Screen.ActionHandler.DuplicateAnimation(); 
                 break;
             case SelectionContext.Event:
-                Screen.CollectionPropertyHandler.DuplicateEvent(); 
+                Screen.ActionHandler.DuplicateEvent(); 
                 break;
             case SelectionContext.Property: break;
         }
     }
     public void DetermineDeleteTarget()
     {
-        var handler = Screen.CollectionPropertyHandler;
-        var context = Screen.SelectionHandler.CurrentSelectionContext;
+        var handler = Screen.ActionHandler;
+        var context = Screen.Selection.CurrentSelectionContext;
 
         switch (context)
         {
             case SelectionContext.File: break;
             case SelectionContext.TimeAct:
-                Screen.CollectionPropertyHandler.DeleteTimeAct();
+                Screen.ActionHandler.DeleteTimeAct();
                 break;
             case SelectionContext.Animation:
-                Screen.CollectionPropertyHandler.DeleteAnimation(); 
+                Screen.ActionHandler.DeleteAnimation(); 
                 break;
             case SelectionContext.Event:
-                Screen.CollectionPropertyHandler.DeleteEvent(); 
+                Screen.ActionHandler.DeleteEvent(); 
                 break;
             case SelectionContext.Property: break;
         }

@@ -7,6 +7,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
@@ -26,15 +27,15 @@ public class TimeActDecorator
 
     private string _enumSearchInput = "";
 
-    public TimeActDecorator(ActionManager editorActionManager, TimeActEditorScreen screen)
+    public TimeActDecorator(TimeActEditorScreen screen)
     {
-        EditorActionManager = editorActionManager;
         Screen = screen;
+        EditorActionManager = screen.EditorActionManager;
     }
 
     public void HandleTypeColumn(string propertyName)
     {
-        var parameters = Screen.SelectionHandler.CurrentTimeActEvent.Parameters;
+        var parameters = Screen.Selection.CurrentTimeActEvent.Parameters;
         var template = parameters.GetParamTemplate(propertyName);
 
         // Param Reference
@@ -261,7 +262,7 @@ public class TimeActDecorator
 
     public void HandleNameColumn(string propertyName)
     {
-        var parameters = Screen.SelectionHandler.CurrentTimeActEvent.Parameters;
+        var parameters = Screen.Selection.CurrentTimeActEvent.Parameters;
         var template = parameters.GetParamTemplate(propertyName);
 
         // Param Reference
@@ -291,8 +292,8 @@ public class TimeActDecorator
 
     public void HandleValueColumn(Dictionary<string, object> propertyParameters, int index)
     {
-        var paramValues = Screen.SelectionHandler.CurrentTimeActEvent.Parameters.ParameterValues;
-        var parameters = Screen.SelectionHandler.CurrentTimeActEvent.Parameters;
+        var paramValues = Screen.Selection.CurrentTimeActEvent.Parameters.ParameterValues;
+        var parameters = Screen.Selection.CurrentTimeActEvent.Parameters;
         var propertyName = propertyParameters.ElementAt(index).Key;
         var propertyValue = propertyParameters[propertyName];
         var template = parameters.GetParamTemplate(propertyName);

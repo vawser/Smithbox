@@ -2,6 +2,7 @@
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.Utilities;
@@ -21,22 +22,22 @@ namespace StudioCore.Editors.TimeActEditor;
 /// <summary>
 /// Handles property edits for collection fields
 /// </summary>
-public class TimeActCollectionPropertyHandler
+public class TimeActActionHandler
 {
     private ActionManager EditorActionManager;
     private TimeActEditorScreen Screen;
     private TimeActDecorator Decorator;
-    private TimeActSelectionHandler SelectionHandler;
+    private TimeActViewSelection Selection;
 
     public bool ShowCreateEventModal = false;
     private TAE.Template.EventTemplate CurrentEvent;
 
-    public TimeActCollectionPropertyHandler(ActionManager editorActionManager, TimeActEditorScreen screen, TimeActDecorator decorator)
+    public TimeActActionHandler(TimeActEditorScreen screen)
     {
-        EditorActionManager = editorActionManager;
         Screen = screen;
-        Decorator = decorator;
-        SelectionHandler = screen.SelectionHandler;
+        EditorActionManager = screen.EditorActionManager;
+        Decorator = screen.Decorator;
+        Selection = screen.Selection;
 
     }
 
@@ -67,7 +68,7 @@ public class TimeActCollectionPropertyHandler
             Vector2 listboxSize = new Vector2(520, 400);
             Vector2 buttonSize = new Vector2(520 * 0.5f, 24);
 
-            TAE.Event curEvent = Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTimeActEvent;
+            TAE.Event curEvent = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeActEvent;
             TAE.Template curTemplate = TimeActUtils.GetRelevantTemplate(TimeActUtils.TemplateType.Character);
 
             if (curEvent != null && curTemplate != null)
@@ -101,7 +102,7 @@ public class TimeActCollectionPropertyHandler
                     TAE.Event newEvent = new TAE.Event(curEvent.StartTime, curEvent.EndTime, CurrentEvent.ID, curEvent.Unk04, false, CurrentEvent);
                     newEvent.Group = curEvent.Group;
 
-                    TAE.Animation animation = Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTimeActAnimation;
+                    TAE.Animation animation = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeActAnimation;
                     int insertIdx = animation.Events.IndexOf(curEvent) + 1;
 
                     EditorActionManager.ExecuteAction(new TaeEventCreate(newEvent, animation.Events, insertIdx));
@@ -124,15 +125,15 @@ public class TimeActCollectionPropertyHandler
     /// </summary>
     public void DuplicateTimeAct()
     {
-        if (SelectionHandler.CurrentTimeAct == null)
+        if (Selection.CurrentTimeAct == null)
             return;
 
-        if (SelectionHandler.CurrentTimeActKey == -1)
+        if (Selection.CurrentTimeActKey == -1)
             return;
 
-        SelectionHandler.ContainerInfo.IsModified = true;
+        Selection.ContainerInfo.IsModified = true;
 
-        InternalTimeActWrapper curInternalFile = SelectionHandler.ContainerInfo.InternalFiles[SelectionHandler.CurrentTimeActKey];
+        InternalTimeActWrapper curInternalFile = Selection.ContainerInfo.InternalFiles[Selection.CurrentTimeActKey];
         InternalTimeActWrapper newInternalFile = new InternalTimeActWrapper(curInternalFile.Filepath, curInternalFile.TAE.Clone());
 
         int id = int.Parse(newInternalFile.Name.Substring(1));
@@ -149,21 +150,21 @@ public class TimeActCollectionPropertyHandler
         newInternalFile.MarkForAddition = true;
 
         // Inserts the new internal file at the right position in the list
-        for (int i = 0; i < SelectionHandler.ContainerInfo.InternalFiles.Count; i++)
+        for (int i = 0; i < Selection.ContainerInfo.InternalFiles.Count; i++)
         {
-            InternalTimeActWrapper curFile = SelectionHandler.ContainerInfo.InternalFiles[i];
+            InternalTimeActWrapper curFile = Selection.ContainerInfo.InternalFiles[i];
             int curId = int.Parse(curFile.Name.Substring(1));
 
             if (curId == (newId-1))
             {
-                EditorActionManager.ExecuteAction(new TimeActDuplicate(newInternalFile, SelectionHandler.ContainerInfo.InternalFiles, i + 1));
+                EditorActionManager.ExecuteAction(new TimeActDuplicate(newInternalFile, Selection.ContainerInfo.InternalFiles, i + 1));
                 break;
             }
         }
 
-        SelectionHandler.ContainerInfo.InternalFiles.Sort();
+        Selection.ContainerInfo.InternalFiles.Sort();
 
-        SelectionHandler.ResetOnTimeActChange();
+        Selection.ResetOnTimeActChange();
     }
 
     /// <summary>
@@ -171,19 +172,19 @@ public class TimeActCollectionPropertyHandler
     /// </summary>
     public void DeleteTimeAct()
     {
-        if (SelectionHandler.CurrentTimeAct == null)
+        if (Selection.CurrentTimeAct == null)
             return;
 
-        if (SelectionHandler.CurrentTimeActKey == -1)
+        if (Selection.CurrentTimeActKey == -1)
             return;
 
-        SelectionHandler.ContainerInfo.IsModified = true;
+        Selection.ContainerInfo.IsModified = true;
 
-        InternalTimeActWrapper curInternalFile = SelectionHandler.ContainerInfo.InternalFiles[SelectionHandler.CurrentTimeActKey];
+        InternalTimeActWrapper curInternalFile = Selection.ContainerInfo.InternalFiles[Selection.CurrentTimeActKey];
 
         EditorActionManager.ExecuteAction(new TimeActDelete(curInternalFile));
 
-        SelectionHandler.ResetOnTimeActChange();
+        Selection.ResetOnTimeActChange();
     }
 
     /// <summary>
@@ -191,16 +192,16 @@ public class TimeActCollectionPropertyHandler
     /// </summary>
     public void DuplicateAnimation()
     {
-        if (SelectionHandler.CurrentTimeActAnimation == null)
+        if (Selection.CurrentTimeActAnimation == null)
             return;
 
-        if (SelectionHandler.CurrentTimeActAnimationIndex == -1)
+        if (Selection.CurrentTimeActAnimationIndex == -1)
             return;
 
-        SelectionHandler.ContainerInfo.IsModified = true;
+        Selection.ContainerInfo.IsModified = true;
 
-        TAE timeact = Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTimeAct;
-        SortedDictionary<int, TAE.Animation> storedAnims = Screen.SelectionHandler.TimeActMultiselect.StoredAnimations;
+        TAE timeact = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeAct;
+        SortedDictionary<int, TAE.Animation> storedAnims = Screen.Selection.StoredAnimations;
         int lastAnimIdx = -1;
 
         if (storedAnims.Count <= 1)
@@ -254,16 +255,16 @@ public class TimeActCollectionPropertyHandler
     /// </summary>
     public void DeleteAnimation()
     {
-        if (SelectionHandler.CurrentTimeActAnimation == null)
+        if (Selection.CurrentTimeActAnimation == null)
             return;
 
-        if (SelectionHandler.CurrentTimeActAnimationIndex == -1)
+        if (Selection.CurrentTimeActAnimationIndex == -1)
             return;
 
-        SelectionHandler.ContainerInfo.IsModified = true;
+        Selection.ContainerInfo.IsModified = true;
 
-        SortedDictionary<int, TAE.Animation> storedAnims = Screen.SelectionHandler.TimeActMultiselect.StoredAnimations;
-        TAE timeact = Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTimeAct;
+        SortedDictionary<int, TAE.Animation> storedAnims = Screen.Selection.StoredAnimations;
+        TAE timeact = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeAct;
 
         // Single
         if (storedAnims.Count <= 1)
@@ -296,7 +297,7 @@ public class TimeActCollectionPropertyHandler
             EditorActionManager.ExecuteAction(new TaeAnimMultiDelete(removedAnims, timeact.Animations, removeIndices));
         }
 
-        Screen.SelectionHandler.TimeActMultiselect.Reset(false, true, true);
+        Screen.Selection.Reset(false, true, true);
     }
 
     /// <summary>
@@ -304,13 +305,13 @@ public class TimeActCollectionPropertyHandler
     /// </summary>
     public void CreateEvent()
     {
-        if (SelectionHandler.CurrentTimeActEvent == null)
+        if (Selection.CurrentTimeActEvent == null)
             return;
 
-        if (SelectionHandler.CurrentTimeActEventIndex == -1)
+        if (Selection.CurrentTimeActEventIndex == -1)
             return;
 
-        SelectionHandler.ContainerInfo.IsModified = true;
+        Selection.ContainerInfo.IsModified = true;
 
         ShowCreateEventModal = true;
 
@@ -322,16 +323,16 @@ public class TimeActCollectionPropertyHandler
     /// </summary>
     public void DuplicateEvent()
     {
-        if (SelectionHandler.CurrentTimeActEvent == null)
+        if (Selection.CurrentTimeActEvent == null)
             return;
 
-        if (SelectionHandler.CurrentTimeActEventIndex == -1)
+        if (Selection.CurrentTimeActEventIndex == -1)
             return;
 
-        SelectionHandler.ContainerInfo.IsModified = true;
+        Selection.ContainerInfo.IsModified = true;
 
-        SortedDictionary<int, TAE.Event> storedEvents = Screen.SelectionHandler.TimeActMultiselect.StoredEvents;
-        TAE.Animation animations = Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTimeActAnimation;
+        SortedDictionary<int, TAE.Event> storedEvents = Screen.Selection.StoredEvents;
+        TAE.Animation animations = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeActAnimation;
 
         int lastEventIdx = -1;
 
@@ -379,16 +380,16 @@ public class TimeActCollectionPropertyHandler
     /// </summary>
     public void DeleteEvent()
     {
-        if (SelectionHandler.CurrentTimeActEvent == null)
+        if (Selection.CurrentTimeActEvent == null)
             return;
 
-        if (SelectionHandler.CurrentTimeActEventIndex == -1)
+        if (Selection.CurrentTimeActEventIndex == -1)
             return;
 
-        SelectionHandler.ContainerInfo.IsModified = true;
+        Selection.ContainerInfo.IsModified = true;
 
-        SortedDictionary<int, TAE.Event> storedEvents = Screen.SelectionHandler.TimeActMultiselect.StoredEvents;
-        TAE.Animation animations = Smithbox.EditorHandler.TimeActEditor.SelectionHandler.CurrentTimeActAnimation;
+        SortedDictionary<int, TAE.Event> storedEvents = Screen.Selection.StoredEvents;
+        TAE.Animation animations = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeActAnimation;
 
         // Single
         if (storedEvents.Count <= 1)
@@ -422,7 +423,7 @@ public class TimeActCollectionPropertyHandler
             EditorActionManager.ExecuteAction(new TaeEventMultiDelete(removedEvents, animations.Events, removeIndices));
         }
 
-        Screen.SelectionHandler.TimeActMultiselect.Reset(false, false, true);
+        Screen.Selection.Reset(false, false, true);
     }
 
     /// <summary>
@@ -430,13 +431,13 @@ public class TimeActCollectionPropertyHandler
     /// </summary>
     public void OrderAnimation()
     {
-        if (SelectionHandler.CurrentTimeActAnimation == null)
+        if (Selection.CurrentTimeActAnimation == null)
             return;
 
-        if (SelectionHandler.CurrentTimeActAnimationIndex == -1)
+        if (Selection.CurrentTimeActAnimationIndex == -1)
             return;
 
-        SelectionHandler.ContainerInfo.IsModified = true;
+        Selection.ContainerInfo.IsModified = true;
     }
 
     /// <summary>
@@ -444,13 +445,13 @@ public class TimeActCollectionPropertyHandler
     /// </summary>
     public void OrderEvent()
     {
-        if (SelectionHandler.CurrentTimeActEvent == null)
+        if (Selection.CurrentTimeActEvent == null)
             return;
 
-        if (SelectionHandler.CurrentTimeActEventIndex == -1)
+        if (Selection.CurrentTimeActEventIndex == -1)
             return;
 
-        SelectionHandler.ContainerInfo.IsModified = true;
+        Selection.ContainerInfo.IsModified = true;
     }
 
     /// <summary>
@@ -462,7 +463,7 @@ public class TimeActCollectionPropertyHandler
         string newName = $"a{PadFileName(trackedId)}";
 
         // If there are matches, keep incrementing
-        foreach (var file in SelectionHandler.ContainerInfo.InternalFiles)
+        foreach (var file in Selection.ContainerInfo.InternalFiles)
         {
             if (file.Name == newName)
             {
@@ -497,7 +498,7 @@ public class TimeActCollectionPropertyHandler
         int newID = id + 1;
 
         // If there are matches, keep incrementing
-        foreach (InternalTimeActWrapper file in SelectionHandler.ContainerInfo.InternalFiles)
+        foreach (InternalTimeActWrapper file in Selection.ContainerInfo.InternalFiles)
         {
             if (file.TAE.ID == newID)
             {
@@ -517,9 +518,9 @@ public class TimeActCollectionPropertyHandler
         int insertIdx = 0;
 
         // If there are matches, keep incrementing
-        for (int i = 0; i < SelectionHandler.CurrentTimeAct.Animations.Count; i++)
+        for (int i = 0; i < Selection.CurrentTimeAct.Animations.Count; i++)
         {
-            TAE.Animation anim = SelectionHandler.CurrentTimeAct.Animations[i];
+            TAE.Animation anim = Selection.CurrentTimeAct.Animations[i];
 
             if (anim.ID == newID)
             {

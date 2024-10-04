@@ -8,25 +8,15 @@ using StudioCore.Editors.TimeActEditor.Actions;
 
 namespace StudioCore.Editors.TimeActEditor.Tools;
 
-public class ToolSubMenu
+public class TimeActToolMenubar
 {
     private TimeActEditorScreen Screen;
-    public ActionHandler Handler;
+    public TimeActTools Tools;
 
-    public ToolSubMenu(TimeActEditorScreen screen, ActionHandler handler)
+    public TimeActToolMenubar(TimeActEditorScreen screen)
     {
         Screen = screen;
-        Handler = handler;
-    }
-
-    public void Shortcuts()
-    {
-
-    }
-
-    public void OnProjectChanged()
-    {
-
+        Tools = screen.Tools;
     }
 
     public void DisplayMenu()

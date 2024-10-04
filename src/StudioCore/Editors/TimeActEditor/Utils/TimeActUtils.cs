@@ -83,7 +83,7 @@ public static class TimeActUtils
         }
     }
 
-    public static void DisplayAnimationAlias(TimeActSelectionHandler SelectionHandler, long id)
+    public static void DisplayAnimationAlias(TimeActViewSelection SelectionHandler, long id)
     {
         if (Smithbox.BankHandler.HavokGeneratorAliases != null)
         {
@@ -255,18 +255,18 @@ public static class TimeActUtils
 
     public static void SelectAdjustedAnimation(TAE.Animation targetAnim)
     {
-        var handler = Smithbox.EditorHandler.TimeActEditor.SelectionHandler;
-        handler.TimeActMultiselect.StoredAnimations.Clear();
+        var Selection = Smithbox.EditorHandler.TimeActEditor.Selection;
+        Selection.StoredAnimations.Clear();
 
-        handler.CurrentTimeAct.Animations.Sort();
-        for (int i = 0; i < handler.CurrentTimeAct.Animations.Count; i++)
+        Selection.CurrentTimeAct.Animations.Sort();
+        for (int i = 0; i < Selection.CurrentTimeAct.Animations.Count; i++)
         {
-            var serAnim = handler.CurrentTimeAct.Animations[i];
+            var serAnim = Selection.CurrentTimeAct.Animations[i];
             if (serAnim.ID == targetAnim.ID)
             {
-                handler.CurrentTimeActAnimation = serAnim;
-                handler.CurrentTimeActAnimationIndex = i;
-                handler.TimeActMultiselect.StoredAnimations.Add(i, handler.CurrentTimeActAnimation);
+                Selection.CurrentTimeActAnimation = serAnim;
+                Selection.CurrentTimeActAnimationIndex = i;
+                Selection.StoredAnimations.Add(i, Selection.CurrentTimeActAnimation);
                 break;
             }
         }
@@ -274,18 +274,18 @@ public static class TimeActUtils
 
     public static void SelectNewAnimation(int targetIndex)
     {
-        var handler = Smithbox.EditorHandler.TimeActEditor.SelectionHandler;
-        handler.TimeActMultiselect.StoredAnimations.Clear();
+        var Selection = Smithbox.EditorHandler.TimeActEditor.Selection;
+        Selection.StoredAnimations.Clear();
 
-        for (int i = 0; i < handler.CurrentTimeAct.Animations.Count; i++)
+        for (int i = 0; i < Selection.CurrentTimeAct.Animations.Count; i++)
         {
-            var curAnim = handler.CurrentTimeAct.Animations[i];
+            var curAnim = Selection.CurrentTimeAct.Animations[i];
 
             if (i == targetIndex)
             {
-                handler.CurrentTimeActAnimation = curAnim;
-                handler.CurrentTimeActAnimationIndex = i;
-                handler.TimeActMultiselect.StoredAnimations.Add(i, handler.CurrentTimeActAnimation);
+                Selection.CurrentTimeActAnimation = curAnim;
+                Selection.CurrentTimeActAnimationIndex = i;
+                Selection.StoredAnimations.Add(i, Selection.CurrentTimeActAnimation);
                 break;
             }
         }
@@ -293,18 +293,18 @@ public static class TimeActUtils
 
     public static void SelectNewEvent(int targetIndex)
     {
-        var handler = Smithbox.EditorHandler.TimeActEditor.SelectionHandler;
-        handler.TimeActMultiselect.StoredEvents.Clear();
+        var Selection = Smithbox.EditorHandler.TimeActEditor.Selection;
+        Selection.StoredEvents.Clear();
 
-        for (int i = 0; i < handler.CurrentTimeActAnimation.Events.Count; i++)
+        for (int i = 0; i < Selection.CurrentTimeActAnimation.Events.Count; i++)
         {
-            var curEvent = handler.CurrentTimeActAnimation.Events[i];
+            var curEvent = Selection.CurrentTimeActAnimation.Events[i];
 
             if (i == targetIndex)
             {
-                handler.CurrentTimeActEvent = curEvent;
-                handler.CurrentTimeActEventIndex = i;
-                handler.TimeActMultiselect.StoredEvents.Add(i, handler.CurrentTimeActEvent);
+                Selection.CurrentTimeActEvent = curEvent;
+                Selection.CurrentTimeActEventIndex = i;
+                Selection.StoredEvents.Add(i, Selection.CurrentTimeActEvent);
                 break;
             }
         }

@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor;
 
-public class TimeActEventGraph
+public class TimeActEventGraphView
 {
-    private ActionManager EditorActionManager;
     private TimeActEditorScreen Screen;
-    private TimeActSelectionHandler Handler;
+    private ActionManager EditorActionManager;
+    private TimeActViewSelection Selection;
 
-    public TimeActEventGraph(ActionManager editorActionManager, TimeActEditorScreen screen, TimeActSelectionHandler handler)
+    public TimeActEventGraphView(TimeActEditorScreen screen)
     {
-        EditorActionManager = editorActionManager;
         Screen = screen;
-        Handler = handler;
+        EditorActionManager = screen.EditorActionManager;
+        Selection = screen.Selection;
     }
 
     private Dictionary<TAE.EventGroup, List<TAE.Event>> eventDict = null;
@@ -31,7 +31,14 @@ public class TimeActEventGraph
 
     public void Display()
     {
-        var events = Handler.CurrentTimeActAnimation.Events;
+        ImGui.Begin("Event Graph##TimeActAnimEventGraph");
+
+        if (!Selection.HasSelectedTimeActAnimation())
+        {
+            ImGui.End();
+            return;
+        }
+        var events = Selection.CurrentTimeActAnimation.Events;
         var height = ImGui.GetWindowHeight();
         var width = ImGui.GetWindowWidth();
 
@@ -67,5 +74,7 @@ public class TimeActEventGraph
 
             }
         }
+
+        ImGui.End();
     }
 }

@@ -7,22 +7,17 @@ using StudioCore.Interface;
 
 namespace StudioCore.Editors.TimeActEditor.Tools;
 
-public class ToolWindow
+public class TimeActToolView
 {
     private TimeActEditorScreen Screen;
-    public ActionHandler Handler;
+    public TimeActTools Tools;
     public TimeActSearch TimeActSearch;
 
-    public ToolWindow(TimeActEditorScreen screen, ActionHandler handler)
+    public TimeActToolView(TimeActEditorScreen screen)
     {
         Screen = screen;
-        Handler = handler;
-        TimeActSearch = new TimeActSearch(Screen, Handler);
-    }
-
-    public void OnProjectChanged()
-    {
-
+        Tools = screen.Tools;
+        TimeActSearch = new TimeActSearch(Screen, Tools);
     }
 
     public void OnGui()

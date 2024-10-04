@@ -24,7 +24,7 @@ namespace StudioCore.Tools
     /// </summary>
     internal class CodeStore
     {
-        private static void GenerateHavokGeneratorAliases(TimeActSelectionHandler SelectionHandler, long id)
+        private static void GenerateHavokGeneratorAliases(TimeActViewSelection SelectionHandler, long id)
         {
             //HavokFileBank.LoadAllHavokFiles();
 

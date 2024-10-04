@@ -1,6 +1,7 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using HKLib.hk2018.hkHashMapDetail;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.TimeActEditor.Bank;
@@ -17,9 +18,8 @@ using static StudioCore.Editors.TimeActEditor.Utils.TimeActUtils;
 
 namespace StudioCore.Editors.TimeActEditor;
 
-public class TimeActSelectionHandler
+public class TimeActViewSelection
 {
-    private ActionManager EditorActionManager;
     private TimeActEditorScreen Screen;
 
     public HavokContainerInfo LoadedHavokContainer;
@@ -42,8 +42,6 @@ public class TimeActSelectionHandler
     public string CurrentTimeActEventProperty;
     public int CurrentTimeActEventPropertyIndex = -1;
 
-    public TimeActMultiselect TimeActMultiselect;
-
     public TimeActContextMenu ContextMenu;
 
     public TemplateType CurrentTimeActType = TemplateType.Character;
@@ -51,29 +49,25 @@ public class TimeActSelectionHandler
     public SelectionContext CurrentSelectionContext = SelectionContext.None;
     public FileContainerType CurrentFileContainerType = FileContainerType.None;
 
-    public enum SelectionContext
-    {
-        None,
-        File,
-        TimeAct,
-        Animation,
-        Event,
-        Property
-    }
+    public bool FocusContainer = false;
+    public bool FocusTimeAct = false;
+    public bool FocusAnimation = false;
+    public bool FocusEvent = false;
 
-    public enum FileContainerType
-    {
-        None,
-        Character,
-        Object
-    }
+    public SortedDictionary<int, TAE> StoredTimeActs = new();
+    public SortedDictionary<int, TAE.Animation> StoredAnimations = new();
+    public SortedDictionary<int, TAE.Event> StoredEvents = new();
 
-    public TimeActSelectionHandler(ActionManager editorActionManager, TimeActEditorScreen screen)
+    public bool SelectChrContainer = false;
+    public bool SelectObjContainer = false;
+    public bool SelectTimeAct = false;
+    public bool SelectAnimation = false;
+    public bool SelectEvent = false;
+    public bool SelectFirstEvent = false;
+
+    public TimeActViewSelection(TimeActEditorScreen screen)
     {
-        EditorActionManager = editorActionManager;
         Screen = screen;
-
-        TimeActMultiselect = new(Screen);
 
         ContextMenu = new(screen, this);
     }
@@ -103,7 +97,25 @@ public class TimeActSelectionHandler
         CurrentTimeActEventProperty = null;
         CurrentTimeActEventPropertyIndex = -1;
 
-        TimeActMultiselect.Reset(false, false, true);
+        Reset(false, false, true);
+    }
+
+    public void Reset(bool resetTimeAct = false, bool resetAnimation = false, bool resetEvent = false)
+    {
+        if (resetTimeAct)
+        {
+            StoredTimeActs.Clear();
+        }
+
+        if (resetAnimation)
+        {
+            StoredAnimations.Clear();
+        }
+
+        if (resetEvent)
+        {
+            StoredEvents.Clear();
+        }
     }
 
     public void FileContainerChange(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo, int index, FileContainerType containerType, bool changeContext = true)
@@ -131,7 +143,7 @@ public class TimeActSelectionHandler
         CurrentTimeActEventProperty = null;
         CurrentTimeActEventPropertyIndex = -1;
 
-        TimeActMultiselect.Reset(true, true, true);
+        Reset(true, true, true);
 
         // Auto-Select first TimeAct if not empty
         if(ContainerInfo.InternalFiles.Count > 0)
@@ -160,7 +172,7 @@ public class TimeActSelectionHandler
         CurrentTimeActEventProperty = null;
         CurrentTimeActEventPropertyIndex = -1;
 
-        TimeActMultiselect.Reset(true, true, true);
+        Reset(true, true, true);
     }
 
     public void TimeActChange(TAE entry, int index, bool changeContext = true)
@@ -168,7 +180,7 @@ public class TimeActSelectionHandler
         if(changeContext)
             CurrentSelectionContext = SelectionContext.TimeAct;
 
-        TimeActMultiselect.TimeActSelection(CurrentTimeActKey, index);
+        TimeActSelection(CurrentTimeActKey, index);
 
         CurrentTimeActKey = index;
         CurrentTimeAct = entry;
@@ -183,7 +195,7 @@ public class TimeActSelectionHandler
         CurrentTimeActEventProperty = null;
         CurrentTimeActEventPropertyIndex = -1;
 
-        TimeActMultiselect.Reset(false, true, true);
+        Reset(false, true, true);
 
         TimeActUtils.ApplyTemplate(CurrentTimeAct, CurrentTimeActType);
 
@@ -211,7 +223,7 @@ public class TimeActSelectionHandler
         CurrentTimeActEventProperty = null;
         CurrentTimeActEventPropertyIndex = -1;
 
-        TimeActMultiselect.Reset(false, true, true);
+        Reset(false, true, true);
     }
 
     public void TimeActAnimationChange(TAE.Animation entry, int index, bool changeContext = true)
@@ -219,7 +231,7 @@ public class TimeActSelectionHandler
         if (changeContext)
             CurrentSelectionContext = SelectionContext.Animation;
 
-        TimeActMultiselect.AnimationSelection(CurrentTimeActAnimationIndex, index);
+        AnimationSelection(CurrentTimeActAnimationIndex, index);
 
         CurrentTimeActAnimation = entry;
         CurrentTimeActAnimationIndex = index;
@@ -234,10 +246,10 @@ public class TimeActSelectionHandler
         // If a filter is active, auto-select first result (if any), since this is more user-friendly
         if(TimeActFilters._timeActEventFilterString != "")
         {
-            Screen.SelectFirstEvent = true;
+            SelectFirstEvent = true;
         }
 
-        TimeActMultiselect.Reset(false, false, true);
+        Reset(false, false, true);
 
         // Auto-Select first Event if not empty
         if (CurrentTimeActAnimation.Events.Count > 0)
@@ -259,7 +271,7 @@ public class TimeActSelectionHandler
         CurrentTimeActEventProperty = null;
         CurrentTimeActEventPropertyIndex = -1;
 
-        TimeActMultiselect.Reset(false, false, true);
+        Reset(false, false, true);
     }
 
     public void TimeActEventChange(TAE.Event entry, int index, bool changeContext = true)
@@ -267,7 +279,7 @@ public class TimeActSelectionHandler
         if (changeContext)
             CurrentSelectionContext = SelectionContext.Event;
 
-        TimeActMultiselect.EventSelection(CurrentTimeActEventIndex, index);
+        EventSelection(CurrentTimeActEventIndex, index);
 
         CurrentTimeActEvent = entry;
         CurrentTimeActEventIndex = index;
@@ -303,4 +315,175 @@ public class TimeActSelectionHandler
     {
         return CurrentTimeActEvent != null;
     }
+
+    public bool IsTimeActSelected(int index)
+    {
+        if (StoredTimeActs.ContainsKey(index))
+            return true;
+
+        return false;
+    }
+    public bool IsAnimationSelected(int index)
+    {
+        if (StoredAnimations.ContainsKey(index))
+            return true;
+
+        return false;
+    }
+    public bool IsEventSelected(int index)
+    {
+        if (StoredEvents.ContainsKey(index))
+            return true;
+
+        return false;
+    }
+
+    public void TimeActSelection(int currentSelectionIndex, int currentIndex)
+    {
+        var timeAct = Screen.Selection.ContainerInfo.InternalFiles[currentIndex].TAE;
+
+        // Multi-Select: Range Select
+        if (InputTracker.GetKey(Veldrid.Key.LShift))
+        {
+            var start = currentSelectionIndex;
+            var end = currentIndex;
+
+            if (end < start)
+            {
+                start = currentIndex;
+                end = currentSelectionIndex;
+            }
+
+            for (int k = start; k <= end; k++)
+            {
+                if (!StoredTimeActs.ContainsKey(k))
+                    StoredTimeActs.Add(k, timeAct);
+            }
+        }
+        // Multi-Select Mode
+        else if (InputTracker.GetKey(KeyBindings.Current.TIMEACT_Multiselect))
+        {
+            if (StoredTimeActs.ContainsKey(currentIndex) && StoredTimeActs.Count > 1)
+            {
+                StoredTimeActs.Remove(currentIndex);
+            }
+            else
+            {
+                if (!StoredTimeActs.ContainsKey(currentIndex))
+                    StoredTimeActs.Add(currentIndex, timeAct);
+            }
+        }
+        // Reset Multi-Selection if normal selection occurs
+        else
+        {
+            StoredTimeActs.Clear();
+            StoredTimeActs.Add(currentIndex, timeAct);
+        }
+    }
+
+    public void AnimationSelection(int currentSelectionIndex, int currentIndex)
+    {
+        var animation = Screen.Selection.CurrentTimeAct.Animations[currentIndex];
+
+        // Multi-Select: Range Select
+        if (InputTracker.GetKey(Veldrid.Key.LShift))
+        {
+            var start = currentSelectionIndex;
+            var end = currentIndex;
+
+            if (end < start)
+            {
+                start = currentIndex;
+                end = currentSelectionIndex;
+            }
+
+            for (int k = start; k <= end; k++)
+            {
+                if (!StoredAnimations.ContainsKey(k))
+                    StoredAnimations.Add(k, animation);
+            }
+        }
+        // Multi-Select Mode
+        else if (InputTracker.GetKey(KeyBindings.Current.TIMEACT_Multiselect))
+        {
+            if (StoredAnimations.ContainsKey(currentIndex) && StoredAnimations.Count > 1)
+            {
+                StoredAnimations.Remove(currentIndex);
+            }
+            else
+            {
+                if (!StoredAnimations.ContainsKey(currentIndex))
+                    StoredAnimations.Add(currentIndex, animation);
+            }
+        }
+        // Reset Multi-Selection if normal selection occurs
+        else
+        {
+            StoredAnimations.Clear();
+            StoredAnimations.Add(currentIndex, animation);
+        }
+    }
+
+    public void EventSelection(int currentSelectionIndex, int currentIndex)
+    {
+        var animEvent = Screen.Selection.CurrentTimeActAnimation.Events[currentIndex];
+
+        // Multi-Select: Range Select
+        if (InputTracker.GetKey(Veldrid.Key.LShift))
+        {
+            var start = currentSelectionIndex;
+            var end = currentIndex;
+
+            if (end < start)
+            {
+                start = currentIndex;
+                end = currentSelectionIndex;
+            }
+
+            for (int k = start; k <= end; k++)
+            {
+                if (!StoredEvents.ContainsKey(k))
+                {
+                    StoredEvents.Add(k, animEvent);
+                }
+            }
+        }
+        // Multi-Select Mode
+        else if (InputTracker.GetKey(KeyBindings.Current.TIMEACT_Multiselect))
+        {
+            if (StoredEvents.ContainsKey(currentIndex) && StoredEvents.Count > 1)
+            {
+                StoredEvents.Remove(currentIndex);
+            }
+            else
+            {
+                if (!StoredEvents.ContainsKey(currentIndex))
+                    StoredEvents.Add(currentIndex, animEvent);
+            }
+        }
+        // Reset Multi-Selection if normal selection occurs
+        else
+        {
+            StoredEvents.Clear();
+            StoredEvents.Add(currentIndex, animEvent);
+        }
+    }
+
+    public enum SelectionContext
+    {
+        None,
+        File,
+        TimeAct,
+        Animation,
+        Event,
+        Property
+    }
+
+    public enum FileContainerType
+    {
+        None,
+        Character,
+        Object
+    }
+
 }

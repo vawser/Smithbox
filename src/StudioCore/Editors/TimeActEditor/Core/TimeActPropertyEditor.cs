@@ -5,6 +5,7 @@ using Newtonsoft.Json.Linq;
 using SoapstoneLib.Proto.Internal;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.Interface;
@@ -23,20 +24,20 @@ namespace StudioCore.Editors.TimeActEditor;
 /// <summary>
 /// Handles property edits for direct fields
 /// </summary>
-public class TimeActFieldPropertyHandler
+public class TimeActPropertyEditor
 {
     private ActionManager EditorActionManager;
     private TimeActEditorScreen Screen;
     private TimeActDecorator Decorator;
 
-    public TimeActFieldPropertyHandler(ActionManager editorActionManager, TimeActEditorScreen screen, TimeActDecorator decorator)
+    public TimeActPropertyEditor(TimeActEditorScreen screen)
     {
-        EditorActionManager = editorActionManager;
         Screen = screen;
-        Decorator = decorator;
+        EditorActionManager = screen.EditorActionManager;
+        Decorator = screen.Decorator;
     }
 
-    public void AnimationHeaderSection(TimeActSelectionHandler handler)
+    public void AnimationHeaderSection(TimeActViewSelection handler)
     {
         if (TimeActBank.IsSaving)
             ImGui.BeginDisabled();
@@ -58,7 +59,7 @@ public class TimeActFieldPropertyHandler
 
                 var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                 EditorActionManager.ExecuteAction(action);
-                Screen.SelectionHandler.ContainerInfo.IsModified = true;
+                Screen.Selection.ContainerInfo.IsModified = true;
             }
         }
         if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
@@ -75,7 +76,7 @@ public class TimeActFieldPropertyHandler
 
                 var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                 EditorActionManager.ExecuteAction(action);
-                Screen.SelectionHandler.ContainerInfo.IsModified = true;
+                Screen.Selection.ContainerInfo.IsModified = true;
             }
         }
 
@@ -83,7 +84,7 @@ public class TimeActFieldPropertyHandler
             ImGui.EndDisabled();
     }
 
-    public void AnimationValueSection(TimeActSelectionHandler handler)
+    public void AnimationValueSection(TimeActViewSelection handler)
     {
         if (TimeActBank.IsSaving)
             ImGui.BeginDisabled();
@@ -100,7 +101,7 @@ public class TimeActFieldPropertyHandler
         {
             var action = new TaeAnimIdChange(anim, anim.ID, newValue);
             EditorActionManager.ExecuteAction(action);
-            Screen.SelectionHandler.ContainerInfo.IsModified = true;
+            Screen.Selection.ContainerInfo.IsModified = true;
 
             // Re-select row at new index
             TimeActUtils.SelectAdjustedAnimation(anim);
@@ -113,7 +114,7 @@ public class TimeActFieldPropertyHandler
         {
             var action = new TaeAnimFileNameChange(anim, anim.AnimFileName, newValue);
             EditorActionManager.ExecuteAction(action);
-            Screen.SelectionHandler.ContainerInfo.IsModified = true;
+            Screen.Selection.ContainerInfo.IsModified = true;
         }
 
         changed = false;
@@ -140,7 +141,7 @@ public class TimeActFieldPropertyHandler
 
                     var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
-                    Screen.SelectionHandler.ContainerInfo.IsModified = true;
+                    Screen.Selection.ContainerInfo.IsModified = true;
                 }
 
                 changed = false;
@@ -161,7 +162,7 @@ public class TimeActFieldPropertyHandler
 
                     var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
-                    Screen.SelectionHandler.ContainerInfo.IsModified = true;
+                    Screen.Selection.ContainerInfo.IsModified = true;
 
                 }
 
@@ -183,7 +184,7 @@ public class TimeActFieldPropertyHandler
 
                     var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
-                    Screen.SelectionHandler.ContainerInfo.IsModified = true;
+                    Screen.Selection.ContainerInfo.IsModified = true;
                 }
 
                 changed = false;
@@ -204,7 +205,7 @@ public class TimeActFieldPropertyHandler
 
                     var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
-                    Screen.SelectionHandler.ContainerInfo.IsModified = true;
+                    Screen.Selection.ContainerInfo.IsModified = true;
                 }
             }
 
@@ -225,7 +226,7 @@ public class TimeActFieldPropertyHandler
 
                     var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
-                    Screen.SelectionHandler.ContainerInfo.IsModified = true;
+                    Screen.Selection.ContainerInfo.IsModified = true;
                 }
             }
         }
@@ -234,7 +235,7 @@ public class TimeActFieldPropertyHandler
             ImGui.EndDisabled();
     }
 
-    public void ValueSection(TimeActSelectionHandler handler)
+    public void ValueSection(TimeActViewSelection handler)
     {
         if (TimeActBank.IsSaving)
             ImGui.BeginDisabled();
@@ -250,7 +251,7 @@ public class TimeActFieldPropertyHandler
         {
             var action = new TaeEventStartTimeChange(handler.CurrentTimeActEvent, handler.CurrentTimeActEvent.StartTime, newValue);
             EditorActionManager.ExecuteAction(action);
-            Screen.SelectionHandler.ContainerInfo.IsModified = true;
+            Screen.Selection.ContainerInfo.IsModified = true;
         }
 
         changed = false;
@@ -261,7 +262,7 @@ public class TimeActFieldPropertyHandler
         {
             var action = new TaeEventEndTimeChange(handler.CurrentTimeActEvent, handler.CurrentTimeActEvent.EndTime, newValue);
             EditorActionManager.ExecuteAction(action);
-            Screen.SelectionHandler.ContainerInfo.IsModified = true;
+            Screen.Selection.ContainerInfo.IsModified = true;
         }
 
         for (int i = 0; i < paramValues.Count; i++)
@@ -278,7 +279,7 @@ public class TimeActFieldPropertyHandler
             {
                 var action = new TaeEventParametersChange(paramValues, propertyName, propertyValue, newValue, propertyValue.GetType());
                 EditorActionManager.ExecuteAction(action);
-                Screen.SelectionHandler.ContainerInfo.IsModified = true;
+                Screen.Selection.ContainerInfo.IsModified = true;
             }
 
             Decorator.HandleValueColumn(paramValues, i);
