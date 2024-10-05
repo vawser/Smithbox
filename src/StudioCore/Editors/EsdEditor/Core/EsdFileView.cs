@@ -1,6 +1,9 @@
 ﻿using ImGuiNET;
+using StudioCore.Configuration;
 using StudioCore.Editors.TalkEditor;
+using StudioCore.Interface;
 using StudioCore.TalkEditor;
+using StudioCore.Utilities;
 
 namespace StudioCore.Editors.EsdEditor;
 
@@ -12,12 +15,16 @@ public class EsdFileView
     private EsdEditorScreen Screen;
     private EsdPropertyDecorator Decorator;
     private EsdSelectionManager Selection;
+    private EsdFilters Filters;
+    private EsdContextMenu ContextMenu;
 
     public EsdFileView(EsdEditorScreen screen)
     {
         Screen = screen;
         Decorator = screen.Decorator;
         Selection = screen.Selection;
+        Filters = screen.Filters;
+        ContextMenu = screen.ContextMenu;
     }
 
     /// <summary>
@@ -41,7 +48,11 @@ public class EsdFileView
 
         foreach (var (info, binder) in EsdBank.TalkBank)
         {
-            if (ImGui.Selectable($@" {info.Name}", info.Name == Selection._selectedBinderKey))
+            var displayName = $"{info.Name}";
+            var aliasName = AliasUtils.GetMapNameAlias(info.Name);
+
+            // File row
+            if (ImGui.Selectable($@" {displayName}", displayName == Selection._selectedBinderKey))
             {
                 Selection.ResetScript();
                 Selection.ResetStateGroup();
@@ -49,6 +60,19 @@ public class EsdFileView
 
                 Selection.SetFile(info, binder);
             }
+
+            // Arrow Selection
+            if (ImGui.IsItemHovered() && Selection.SelectNextFile)
+            {
+                Selection.SelectNextFile = false;
+                Selection.SetFile(info, binder);
+            }
+            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+            {
+                Selection.SelectNextFile = true;
+            }
+
+            UIHelper.DisplayAlias(aliasName);
         }
 
         ImGui.End();

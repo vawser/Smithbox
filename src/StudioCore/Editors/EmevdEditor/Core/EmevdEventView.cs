@@ -21,6 +21,7 @@ public class EmevdEventView
     private EmevdPropertyDecorator Decorator;
     private EmevdSelectionManager Selection;
     private EmevdFilters Filters;
+    private EmevdContextMenu ContextMenu;
 
     public EmevdEventView(EmevdEditorScreen screen)
     {
@@ -28,6 +29,7 @@ public class EmevdEventView
         Decorator = screen.Decorator;
         Selection = screen.Selection;
         Filters = screen.Filters;
+        ContextMenu = screen.ContextMenu;
     }
 
     /// <summary>
@@ -70,6 +72,7 @@ public class EmevdEventView
                     if (ImGui.Selectable($@" {evt.ID}##eventRow{i}", evt == Selection.SelectedEvent))
                     {
                         Selection.SelectedEvent = evt;
+                        Selection.SelectedEventIndex = i;
                     }
 
                     // Arrow Selection
@@ -77,10 +80,20 @@ public class EmevdEventView
                     {
                         Selection.SelectNextEvent = false;
                         Selection.SelectedEvent = evt;
+                        Selection.SelectedEventIndex = i;
                     }
                     if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                     {
                         Selection.SelectNextEvent = true;
+                    }
+
+                    // Only apply to selection
+                    if (Selection.SelectedEventIndex != -1)
+                    {
+                        if (Selection.SelectedEventIndex == i)
+                        {
+                            ContextMenu.EventContextMenu(evt);
+                        }
                     }
 
                     UIHelper.DisplayColoredAlias(eventName, UI.Current.ImGui_AliasName_Text);

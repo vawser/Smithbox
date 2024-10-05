@@ -14,6 +14,8 @@ public class EmevdEditorScreen : EditorScreen
 {
     public ActionManager EditorActionManager = new();
 
+    public EmevdAnnotation AnnotationManager;
+
     public EmevdSelectionManager Selection;
     public EmevdPropertyDecorator Decorator;
     public EmevdShortcuts EditorShortcuts;
@@ -31,8 +33,13 @@ public class EmevdEditorScreen : EditorScreen
     public EmevdToolMenubar ToolMenubar;
     public EmevdActionMenubar ActionMenubar;
 
+    public EmevdEventCreationModal EventCreationModal;
+    public EmevdInstructionCreationModal InstructionCreationModal;
+
     public EmevdEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
+        AnnotationManager = new EmevdAnnotation(this);
+
         EditorShortcuts = new EmevdShortcuts(this);
         Selection = new EmevdSelectionManager(this);
         Decorator = new EmevdPropertyDecorator(this);
@@ -49,6 +56,9 @@ public class EmevdEditorScreen : EditorScreen
         ToolView = new EmevdToolView(this);
         ToolMenubar = new EmevdToolMenubar(this);
         ActionMenubar = new EmevdActionMenubar(this);
+
+        EventCreationModal = new EmevdEventCreationModal(this);
+        InstructionCreationModal = new EmevdInstructionCreationModal(this);
     }
 
     public string EditorName => "EMEVD Editor##EventScriptEditor";
@@ -208,6 +218,8 @@ public class EmevdEditorScreen : EditorScreen
         }
 
         EditorShortcuts.Monitor();
+        EventCreationModal.Display();
+        InstructionCreationModal.Display();
 
         if (UI.Current.Interface_EmevdEditor_ToolConfigurationWindow)
         {

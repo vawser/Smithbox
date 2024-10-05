@@ -104,7 +104,6 @@ ESD Editor:
 EMEVD Editor:
  - DEV: instruction test: find missing instructions / missing or invalid arguments
  
- - ADD: save functionality
  - ADD: support for property parameters (e.g. X0_4, etc), including assignment to property value (e.g. passed value)
  - ADD: enum selection changes value
  - ADD: Add ability to insert/delete/order events.

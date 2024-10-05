@@ -23,7 +23,7 @@ public static class EmevdBank
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
 
-    public static Dictionary<EventScriptInfo, EMEVD> ScriptBank { get; private set; } = new();
+    public static SortedDictionary<EventScriptInfo, EMEVD> ScriptBank { get; private set; } = new();
     public static EMEDF InfoBank { get; private set; } = new();
 
     public static bool IsSupported = false;
@@ -264,6 +264,8 @@ public static class EmevdBank
             IsLoaded = true;
             IsLoading = false;
 
+
+
             TaskLogs.AddLog($"Event Script Bank - Load Complete");
         }
     }
@@ -376,7 +378,7 @@ public static class EmevdBank
         TaskLogs.AddLog($"Event Script Bank - Load Complete");
     }
 
-    public class EventScriptInfo
+    public class EventScriptInfo : IComparable<EventScriptInfo>
     {
         public EventScriptInfo(string name, string path)
         {
@@ -389,5 +391,9 @@ public static class EmevdBank
         public string Path { get; set; }
         public bool IsModified { get; set; }
 
+        public int CompareTo(EventScriptInfo other)
+        {
+            return string.Compare(Name, other.Name);
+        }
     }
 }

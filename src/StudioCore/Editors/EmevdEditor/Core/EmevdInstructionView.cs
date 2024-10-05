@@ -21,6 +21,7 @@ public class EmevdInstructionView
     private EmevdPropertyDecorator Decorator;
     private EmevdSelectionManager Selection;
     private EmevdFilters Filters;
+    private EmevdContextMenu ContextMenu;
 
     public EmevdInstructionView(EmevdEditorScreen screen)
     {
@@ -28,6 +29,7 @@ public class EmevdInstructionView
         Decorator = screen.Decorator;
         Selection = screen.Selection;
         Filters = screen.Filters;
+        ContextMenu = screen.ContextMenu;
     }
 
     /// <summary>
@@ -73,6 +75,15 @@ public class EmevdInstructionView
                     if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                     {
                         Selection.SelectNextInstruction = true;
+                    }
+
+                    // Only apply to selection
+                    if (Selection.SelectedInstructionIndex != -1)
+                    {
+                        if (Selection.SelectedInstructionIndex == i)
+                        {
+                            ContextMenu.InstructionContextMenu(ins);
+                        }
                     }
 
                     DisplayInstructionAlias(ins);

@@ -20,6 +20,7 @@ public class EmevdFileView
     private EmevdPropertyDecorator Decorator;
     private EmevdSelectionManager Selection;
     private EmevdFilters Filters;
+    private EmevdContextMenu ContextMenu;
 
     public EmevdFileView(EmevdEditorScreen screen)
     {
@@ -27,6 +28,7 @@ public class EmevdFileView
         Decorator = screen.Decorator;
         Selection = screen.Selection;
         Filters = screen.Filters;
+        ContextMenu = screen.ContextMenu;
     }
 
     /// <summary>
@@ -75,6 +77,15 @@ public class EmevdFileView
                 if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                 {
                     Selection.SelectNextScript = true;
+                }
+
+                // Only apply to selection
+                if (Selection.SelectedScriptKey != "")
+                {
+                    if (Selection.SelectedScriptKey == displayName)
+                    {
+                        ContextMenu.FileContextMenu(info);
+                    }
                 }
 
                 UIHelper.DisplayAlias(aliasName);

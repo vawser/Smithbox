@@ -21,6 +21,7 @@ public class EmevdSelectionManager
     public string SelectedScriptKey { get; set; }
 
     public EMEVD.Event SelectedEvent { get; set; }
+    public int SelectedEventIndex { get; set; }
     public EMEVD.Instruction SelectedInstruction { get; set; }
     public int SelectedInstructionIndex { get; set; }
 
@@ -40,6 +41,7 @@ public class EmevdSelectionManager
         SelectedScriptKey = null;
 
         SelectedEvent = null;
+        SelectedEventIndex = -1;
         SelectedInstruction = null;
         SelectedInstructionIndex = -1;
 

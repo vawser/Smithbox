@@ -26,6 +26,11 @@ public class EsdSelectionManager
     public long _selectedStateGroupNodeKey;
     public State _selectedStateGroupNode;
 
+    public bool SelectNextFile = false;
+    public bool SelectNextScript = false;
+    public bool SelectNextStateGroup = false;
+    public bool SelectNextStateNode = false;
+
     public EsdSelectionManager(EsdEditorScreen screen)
     {
         Screen = screen;
