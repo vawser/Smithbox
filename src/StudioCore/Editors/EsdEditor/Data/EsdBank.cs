@@ -48,29 +48,55 @@ public static class EsdBank
             }
         }
 
-        BND4 writeBinder = binder as BND4;
         byte[] fileBytes = null;
-
         var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
         var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
 
-        switch (Smithbox.ProjectType)
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
-            case ProjectType.DS3:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                break;
-            case ProjectType.SDT:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                break;
-            case ProjectType.ER:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                break;
-            case ProjectType.AC6:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
-                break;
-            default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveESDScript");
-                return;
+            BND3 writeBinder = binder as BND3;
+
+            switch (Smithbox.ProjectType)
+            {
+                case ProjectType.DS3:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                    break;
+                case ProjectType.SDT:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                    break;
+                case ProjectType.ER:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                    break;
+                case ProjectType.AC6:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                    break;
+                default:
+                    TaskLogs.AddLog($"Invalid ProjectType during SaveESDScript");
+                    return;
+            }
+        }
+        else
+        {
+            BND4 writeBinder = binder as BND4;
+
+            switch (Smithbox.ProjectType)
+            {
+                case ProjectType.DS3:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                    break;
+                case ProjectType.SDT:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                    break;
+                case ProjectType.ER:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                    break;
+                case ProjectType.AC6:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                    break;
+                default:
+                    TaskLogs.AddLog($"Invalid ProjectType during SaveESDScript");
+                    return;
+            }
         }
 
         // Add folder if it does not exist in GameModDirectory
@@ -149,8 +175,16 @@ public static class EsdBank
         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
         EsdScriptInfo talkInfo = new EsdScriptInfo(name, path);
 
-        IBinder binder = BND4.Read(DCX.Decompress(path));
+        IBinder binder = null;
 
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        {
+            binder = BND3.Read(DCX.Decompress(path));
+        }
+        else
+        {
+            binder = BND4.Read(DCX.Decompress(path));
+        }
         foreach (var file in binder.Files)
         {
             if (file.Name.Contains(".esd"))
