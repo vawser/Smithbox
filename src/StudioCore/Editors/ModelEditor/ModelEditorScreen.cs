@@ -375,6 +375,7 @@ public class ModelEditorScreen : EditorScreen
     public void OnGUI(string[] initcmd)
     {
         var scale = DPI.GetUIScale();
+
         // Docking setup
         //var vp = ImGui.GetMainViewport();
         Vector2 wins = ImGui.GetWindowSize();
@@ -583,6 +584,12 @@ public class ModelEditorScreen : EditorScreen
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
+        if (Smithbox.ProjectType == ProjectType.DES)
+        {
+            TaskLogs.AddLog("Model Editor is not supported for DES.");
+            return;
+        }
+
         ResourceHandler.SaveModel();
     }
 
@@ -590,6 +597,12 @@ public class ModelEditorScreen : EditorScreen
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
+
+        if (Smithbox.ProjectType == ProjectType.DES)
+        {
+            TaskLogs.AddLog("Model Editor is not supported for DES.");
+            return;
+        }
 
         Save(); // Just call save.
     }

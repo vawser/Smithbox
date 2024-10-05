@@ -115,6 +115,12 @@ namespace StudioCore.Editors.ModelEditor
         /// <param name="name"></param>
         public void LoadLooseFLVER(string name, string loosePath)
         {
+            if (Smithbox.ProjectType == ProjectType.DES)
+            {
+                TaskLogs.AddLog("Model Editor is not supported for DES.");
+                return;
+            }
+
             ResetState(name);
 
             LoadedFlverContainer = new FlverContainer(name, loosePath);
@@ -133,6 +139,12 @@ namespace StudioCore.Editors.ModelEditor
         /// <param name="name"></param>
         public void LoadCharacter(string name)
         {
+            if (Smithbox.ProjectType == ProjectType.DES)
+            {
+                TaskLogs.AddLog("Model Editor is not supported for DES.");
+                return;
+            }
+
             ResetState(name);
 
             LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Character, "");
@@ -147,6 +159,12 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadAsset(string name)
         {
+            if (Smithbox.ProjectType == ProjectType.DES)
+            {
+                TaskLogs.AddLog("Model Editor is not supported for DES.");
+                return;
+            }
+
             // Load HKX for collision
             HavokCollisionManager.Screen = Screen;
             HavokCollisionManager.OnLoadModel(name, ModelEditorModelType.Object);
@@ -177,6 +195,12 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadPart(string name)
         {
+            if (Smithbox.ProjectType == ProjectType.DES)
+            {
+                TaskLogs.AddLog("Model Editor is not supported for DES.");
+                return;
+            }
+
             ResetState(name);
 
             LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Parts, "");
@@ -191,6 +215,12 @@ namespace StudioCore.Editors.ModelEditor
         /// </summary>
         public void LoadMapPiece(string name, string mapId)
         {
+            if (Smithbox.ProjectType == ProjectType.DES)
+            {
+                TaskLogs.AddLog("Model Editor is not supported for DES.");
+                return;
+            }
+
             ResetState(name);
 
             LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.MapPiece, mapId);
