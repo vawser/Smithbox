@@ -4,6 +4,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using System;

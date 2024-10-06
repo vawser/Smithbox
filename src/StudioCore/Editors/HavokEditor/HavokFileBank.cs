@@ -6,6 +6,7 @@ using HKLib.Serialization.hk2018.Binary.Util;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core.Project;
+using StudioCore.Editors.HavokEditor.Enums;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;

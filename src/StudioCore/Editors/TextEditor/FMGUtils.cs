@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudioCore.Editors.TextEditor.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -4,6 +4,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
 using System;

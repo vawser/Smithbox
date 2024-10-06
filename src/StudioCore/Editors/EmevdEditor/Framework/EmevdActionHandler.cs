@@ -7,18 +7,18 @@ using System.Text;
 using System.Threading.Tasks;
 using static SoulsFormats.EMEVD;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.Editors.EmevdEditor.Framework;
 
 /// <summary>
 /// Holds the tool functions used by this editor.
 /// </summary>
-public class EmevdTools
+public class EmevdActionHandler
 {
     private EmevdEditorScreen Screen;
     private EmevdPropertyDecorator Decorator;
     private EmevdSelectionManager Selection;
 
-    public EmevdTools(EmevdEditorScreen screen)
+    public EmevdActionHandler(EmevdEditorScreen screen)
     {
         Screen = screen;
         Decorator = screen.Decorator;
@@ -27,7 +27,7 @@ public class EmevdTools
 
     public void LogUnknownInstructions()
     {
-        List<string> loggedInstructions = new List<string>(); 
+        List<string> loggedInstructions = new List<string>();
 
         foreach (var (info, binder) in EmevdBank.ScriptBank)
         {

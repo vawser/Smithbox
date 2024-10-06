@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.Utilities;
 using System;
@@ -16,6 +17,7 @@ using System.Threading.Tasks;
 using static SoulsFormats.DRB;
 using static SoulsFormats.FFXDLSE;
 using static StudioCore.Editors.TimeActEditor.Bank.TimeActBank;
+using static StudioCore.Editors.TimeActEditor.TimeActSelectionManager;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -53,6 +55,65 @@ public class TimeActActionHandler
 
         CreateEventModal();
     }
+    public void DetermineCreateTarget()
+    {
+        var handler = Screen.ActionHandler;
+        var context = Screen.Selection.CurrentSelectionContext;
+
+        switch (context)
+        {
+            case TimeActSelectionContext.File: break;
+            case TimeActSelectionContext.TimeAct:
+                break;
+            case TimeActSelectionContext.Animation:
+                break;
+            case TimeActSelectionContext.Event:
+                Screen.ActionHandler.CreateEvent();
+                break;
+            case TimeActSelectionContext.Property: break;
+        }
+    }
+
+    public void DetermineDuplicateTarget()
+    {
+        var handler = Screen.ActionHandler;
+        var context = Screen.Selection.CurrentSelectionContext;
+
+        switch (context)
+        {
+            case TimeActSelectionContext.File: break;
+            case TimeActSelectionContext.TimeAct:
+                Screen.ActionHandler.DuplicateTimeAct();
+                break;
+            case TimeActSelectionContext.Animation:
+                Screen.ActionHandler.DuplicateAnimation();
+                break;
+            case TimeActSelectionContext.Event:
+                Screen.ActionHandler.DuplicateEvent();
+                break;
+            case TimeActSelectionContext.Property: break;
+        }
+    }
+    public void DetermineDeleteTarget()
+    {
+        var handler = Screen.ActionHandler;
+        var context = Screen.Selection.CurrentSelectionContext;
+
+        switch (context)
+        {
+            case TimeActSelectionContext.File: break;
+            case TimeActSelectionContext.TimeAct:
+                Screen.ActionHandler.DeleteTimeAct();
+                break;
+            case TimeActSelectionContext.Animation:
+                Screen.ActionHandler.DeleteAnimation();
+                break;
+            case TimeActSelectionContext.Event:
+                Screen.ActionHandler.DeleteEvent();
+                break;
+            case TimeActSelectionContext.Property: break;
+        }
+    }
 
     private string _eventTypeCreateSearchStr = "";
 
@@ -69,7 +130,7 @@ public class TimeActActionHandler
             Vector2 buttonSize = new Vector2(520 * 0.5f, 24);
 
             TAE.Event curEvent = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeActEvent;
-            TAE.Template curTemplate = TimeActUtils.GetRelevantTemplate(TimeActUtils.TemplateType.Character);
+            TAE.Template curTemplate = TimeActUtils.GetRelevantTemplate(TemplateType.Character);
 
             if (curEvent != null && curTemplate != null)
             {
@@ -530,15 +591,6 @@ public class TimeActActionHandler
         }
 
         return (newID, insertIdx);
-    }
-
-    public enum OrderType
-    {
-        Up,
-        Down,
-        Top,
-        Bottom,
-        Sort
     }
 }
 

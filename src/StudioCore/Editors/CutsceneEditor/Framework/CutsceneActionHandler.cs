@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.CutsceneEditor;
+namespace StudioCore.Editors.CutsceneEditor.Framework;
 
-public class CutsceneTools
+public class CutsceneActionHandler
 {
     private CutsceneEditorScreen Screen;
 
-    public CutsceneTools(CutsceneEditorScreen screen)
+    public CutsceneActionHandler(CutsceneEditorScreen screen)
     {
         Screen = screen;
     }

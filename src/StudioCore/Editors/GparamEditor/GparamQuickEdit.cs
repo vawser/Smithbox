@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
@@ -18,17 +19,6 @@ namespace StudioCore.Editors.GparamEditor
 {
     public class GparamQuickEdit
     {
-        public enum EditEffectType
-        {
-            Set,
-            Add,
-            Subtract,
-            Multiply,
-            SetByRow,
-            Restore,
-            Random
-        }
-
         private string _targetFileString = "";
         private string _targetGroupString = "";
         private string _targetFieldString = "";

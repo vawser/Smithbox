@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.GraphicsEditor;
 using System.Collections.Generic;
 using System.Drawing;
@@ -439,7 +440,7 @@ public class GparamEditor
                 {
                     _selectedGparamInfo.WasModified = true;
                     GparamValueChangeAction action = null;
-                    action = new GparamValueChangeAction(Screen._selectedGparamKey, Screen._selectedParamGroup.Name, field, value, newValue, idx, GparamValueChangeAction.ValueChangeType.Set);
+                    action = new GparamValueChangeAction(Screen._selectedGparamKey, Screen._selectedParamGroup.Name, field, value, newValue, idx, ValueChangeType.Set);
 
                     Screen.EditorActionManager.ExecuteAction(action);
                 }

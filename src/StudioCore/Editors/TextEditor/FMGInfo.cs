@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;

@@ -11,12 +11,12 @@ namespace StudioCore.Editors.TimeActEditor.Tools;
 public class TimeActToolMenubar
 {
     private TimeActEditorScreen Screen;
-    public TimeActTools Tools;
+    private TimeActActionHandler ActionHandler;
 
     public TimeActToolMenubar(TimeActEditorScreen screen)
     {
         Screen = screen;
-        Tools = screen.Tools;
+        ActionHandler = screen.ActionHandler;
     }
 
     public void DisplayMenu()

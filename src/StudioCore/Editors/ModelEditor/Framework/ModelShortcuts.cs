@@ -20,14 +20,14 @@ public class ModelShortcuts
     private ModelEditorScreen Screen;
     private FileSelectionView Selection;
     private ModelResourceManager ResourceManager;
-    private ModelActionHandler Tools;
+    private ModelActionHandler ActionHandler;
 
     public ModelShortcuts(ModelEditorScreen screen)
     {
         Screen = screen;
         Selection = screen.FileSelection;
         EditorActionManager = screen.EditorActionManager;
-        Tools = screen.ActionHandler;
+        ActionHandler = screen.ActionHandler;
     }
 
     public void Monitor()
@@ -55,19 +55,19 @@ public class ModelShortcuts
         // Create
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_CreateNewEntry))
         {
-            Tools.CreateHandler();
+            ActionHandler.CreateHandler();
         }
 
         // Duplicate
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
         {
-            Tools.DuplicateHandler();
+            ActionHandler.DuplicateHandler();
         }
 
         // Delete
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
         {
-            Tools.DeleteHandler();
+            ActionHandler.DeleteHandler();
         }
 
         // Toggle Selection Outline

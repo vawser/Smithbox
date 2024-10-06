@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.CutsceneEditor;
+using StudioCore.Editors.CutsceneEditor.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,12 @@ namespace StudioCore.Editors.CutsceneEditor;
 public class CutsceneActionMenubar
 {
     private CutsceneEditorScreen Screen;
-    private CutsceneTools Tools;
+    private CutsceneActionHandler ActionHandler;
 
     public CutsceneActionMenubar(CutsceneEditorScreen screen)
     {
         Screen = screen;
-        Tools = screen.Tools;
+        ActionHandler = screen.ActionHandler;
     }
 
     public void OnProjectChanged()

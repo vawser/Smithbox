@@ -3,6 +3,7 @@ using Silk.NET.Core;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -158,15 +159,15 @@ public class FMGLanguage
         {
             switch(Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
             {
-                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.Vanilla:
+                case TargetOutputMode.Vanilla:
                     itemMsgPath = TextLocator.GetItemMsgbnd(LanguageFolder, false, "");
                     menuMsgPath = TextLocator.GetMenuMsgbnd(LanguageFolder, false, "");
                     break;
-                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC1:
+                case TargetOutputMode.DLC1:
                     itemMsgPath = TextLocator.GetItemMsgbnd(LanguageFolder, false, "_dlc01");
                     menuMsgPath = TextLocator.GetMenuMsgbnd(LanguageFolder, false, "_dlc01");
                     break;
-                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC2:
+                case TargetOutputMode.DLC2:
                     itemMsgPath = TextLocator.GetItemMsgbnd(LanguageFolder, false, "_dlc02");
                     menuMsgPath = TextLocator.GetMenuMsgbnd(LanguageFolder, false, "_dlc02");
                     break;
@@ -178,15 +179,15 @@ public class FMGLanguage
         {
             switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
             {
-                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.Vanilla:
+                case TargetOutputMode.Vanilla:
                     itemMsgPath = TextLocator.GetItemMsgbnd(LanguageFolder, false, "");
                     menuMsgPath = TextLocator.GetMenuMsgbnd(LanguageFolder, false, "");
                     break;
-                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC1:
+                case TargetOutputMode.DLC1:
                     itemMsgPath = TextLocator.GetItemMsgbnd(LanguageFolder, false, "_dlc1");
                     menuMsgPath = TextLocator.GetMenuMsgbnd(LanguageFolder, false, "_dlc1");
                     break;
-                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC2:
+                case TargetOutputMode.DLC2:
                     itemMsgPath = TextLocator.GetItemMsgbnd(LanguageFolder, false, "_dlc2");
                     menuMsgPath = TextLocator.GetMenuMsgbnd(LanguageFolder, false, "_dlc2");
                     break;
@@ -233,15 +234,15 @@ public class FMGLanguage
         {
             switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
             {
-                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.Vanilla:
+                case TargetOutputMode.Vanilla:
                     itemMsgPathDest = TextLocator.GetItemMsgbnd(LanguageFolder, true, "");
                     menuMsgPathDest = TextLocator.GetMenuMsgbnd(LanguageFolder, true, "");
                     break;
-                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC1:
+                case TargetOutputMode.DLC1:
                     itemMsgPathDest = TextLocator.GetItemMsgbnd(LanguageFolder, true, "_dlc01");
                     menuMsgPathDest = TextLocator.GetMenuMsgbnd(LanguageFolder, true, "_dlc01");
                     break;
-                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC2:
+                case TargetOutputMode.DLC2:
                     itemMsgPathDest = TextLocator.GetItemMsgbnd(LanguageFolder, true, "_dlc02");
                     menuMsgPathDest = TextLocator.GetMenuMsgbnd(LanguageFolder, true, "_dlc02");
                     break;
@@ -253,15 +254,15 @@ public class FMGLanguage
         {
             switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
             {
-                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.Vanilla:
+                case TargetOutputMode.Vanilla:
                     itemMsgPathDest = TextLocator.GetItemMsgbnd(LanguageFolder, true, "");
                     menuMsgPathDest = TextLocator.GetMenuMsgbnd(LanguageFolder, true, "");
                     break;
-                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC1:
+                case TargetOutputMode.DLC1:
                     itemMsgPathDest = TextLocator.GetItemMsgbnd(LanguageFolder, true, "_dlc1");
                     menuMsgPathDest = TextLocator.GetMenuMsgbnd(LanguageFolder, true, "_dlc1");
                     break;
-                case StudioCore.TextEditor.TextEditorScreen.TargetOutputMode.DLC2:
+                case TargetOutputMode.DLC2:
                     itemMsgPathDest = TextLocator.GetItemMsgbnd(LanguageFolder, true, "_dlc2");
                     menuMsgPathDest = TextLocator.GetMenuMsgbnd(LanguageFolder, true, "_dlc2");
                     break;

@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Editors.EmevdEditor.Framework;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -17,12 +18,12 @@ namespace StudioCore.Editors.EmevdEditor;
 public class EmevdActionMenubar
 {
     private EmevdEditorScreen Screen;
-    private EmevdTools Handler;
+    private EmevdActionHandler ActionHandler;
 
     public EmevdActionMenubar(EmevdEditorScreen screen)
     {
         Screen = screen;
-        Handler = new EmevdTools(screen);
+        ActionHandler = new EmevdActionHandler(screen);
     }
 
     public void OnProjectChanged()

@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
+using StudioCore.Editors.EsdEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
 using System;
@@ -17,12 +18,12 @@ namespace StudioCore.Editors.EsdEditor;
 public class EsdToolView
 {
     private EsdEditorScreen Screen;
-    private EsdTools Tools;
+    private EsdActionHandler ActionHandler;
 
     public EsdToolView(EsdEditorScreen screen)
     {
         Screen = screen;
-        Tools = screen.Tools;
+        ActionHandler = screen.ActionHandler;
     }
 
     public void OnProjectChanged()

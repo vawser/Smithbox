@@ -16,12 +16,12 @@ namespace StudioCore.Editors.ModelEditor.Tools;
 public class ModelActionMenubar
 {
     private ModelEditorScreen Screen;
-    private ModelActionHandler Tools;
+    private ModelActionHandler ActionHandler;
 
     public ModelActionMenubar(ModelEditorScreen screen)
     {
         Screen = screen;
-        Tools = screen.ActionHandler;
+        ActionHandler = screen.ActionHandler;
     }
 
     public void OnProjectChanged()
@@ -36,21 +36,21 @@ public class ModelActionMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Create", KeyBindings.Current.CORE_CreateNewEntry.HintText))
             {
-                Tools.CreateHandler();
+                ActionHandler.CreateHandler();
             }
             UIHelper.ShowHoverTooltip("Adds new entry based on current selection in Model Hierarchy.");
 
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
-                Tools.DuplicateHandler();
+                ActionHandler.DuplicateHandler();
             }
             UIHelper.ShowHoverTooltip("Duplicates current selection in Model Hierarchy.");
 
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
-                Tools.DeleteHandler();
+                ActionHandler.DeleteHandler();
             }
             UIHelper.ShowHoverTooltip("Deletes current selection in Model Hierarchy.");
 

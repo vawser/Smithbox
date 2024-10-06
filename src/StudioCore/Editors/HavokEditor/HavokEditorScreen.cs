@@ -22,24 +22,12 @@ using System.IO;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
+using StudioCore.Editors.HavokEditor.Enums;
 
 namespace StudioCore.HavokEditor;
 
 public class HavokEditorScreen : EditorScreen
 {
-    /// <summary>
-    /// Represents the 'types' of havok files so we can differentiate them within the editor.
-    /// </summary>
-    public enum HavokInternalType
-    {
-        [Display(Name = "None")] None,
-        [Display(Name = "Behavior")] Behavior,
-        [Display(Name = "Character")] Character,
-        [Display(Name = "Info")] Info,
-        [Display(Name = "Collision")] Collision,
-        [Display(Name = "Animation")] Animation,
-        [Display(Name = "Compendium")] Compendium
-    }
 
     public ActionManager EditorActionManager = new();
 

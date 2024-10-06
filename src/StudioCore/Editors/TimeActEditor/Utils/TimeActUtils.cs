@@ -8,6 +8,7 @@ using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
@@ -308,17 +309,5 @@ public static class TimeActUtils
                 break;
             }
         }
-    }
-    public enum TemplateType
-    {
-        Character,
-        Object,
-        Cutscene
-    }
-
-    public enum AliasType
-    {
-        Character,
-        Asset
     }
 }

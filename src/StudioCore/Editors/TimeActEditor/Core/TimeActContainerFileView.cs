@@ -2,6 +2,7 @@
 using StudioCore.Configuration;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.Interface;
 using System;

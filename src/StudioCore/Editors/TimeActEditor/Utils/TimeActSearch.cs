@@ -13,26 +13,20 @@ using SoulsFormats;
 using HKLib.hk2018.hkAsyncThreadPool;
 using static StudioCore.Editors.TimeActEditor.Utils.TimeActUtils;
 using StudioCore.Interface;
+using StudioCore.Editors.TimeActEditor.Enums;
 
 namespace StudioCore.Editors.TimeActEditor.Utils;
 
 public class TimeActSearch
 {
     private TimeActEditorScreen Screen;
-    public TimeActTools Handler;
+    public TimeActActionHandler ActionHandler;
 
-    public enum SearchType
-    {
-        [Display(Name = "Animation ID")] AnimationID,
-        [Display(Name = "Event ID")] EventID,
-        [Display(Name = "Event Name")] EventName,
-        [Display(Name = "Event Value")] EventValue,
-    }
 
-    public TimeActSearch(TimeActEditorScreen screen, TimeActTools handler)
+    public TimeActSearch(TimeActEditorScreen screen)
     {
         Screen = screen;
-        Handler = handler;
+        ActionHandler = screen.ActionHandler;
     }
 
     private SearchType CurrentSearchType = SearchType.AnimationID;
@@ -127,11 +121,11 @@ public class TimeActSearch
 
                     var command = $"timeact/select/none/{res.ContainerIndex}/{res.TimeActIndex}";
 
-                    if (containerType is TimeActSelectionManager.FileContainerType.Character)
+                    if (containerType is FileContainerType.Character)
                     {
                         command = $"timeact/select/chr/{res.ContainerIndex}/{res.TimeActIndex}";
                     }
-                    if (containerType is TimeActSelectionManager.FileContainerType.Object)
+                    if (containerType is FileContainerType.Object)
                     {
                         command = $"timeact/select/obj/{res.ContainerIndex}/{res.TimeActIndex}";
                     }

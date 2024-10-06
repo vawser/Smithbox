@@ -12,6 +12,7 @@ using StudioCore.Editors.TextEditor;
 using System.ComponentModel.DataAnnotations;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
+using StudioCore.Editors.TextEditor.Enums;
 
 namespace StudioCore.Editors.ParamEditor;
 

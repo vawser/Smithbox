@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
 using StudioCore.CutsceneEditor;
+using StudioCore.Editors.CutsceneEditor.Framework;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,12 @@ namespace StudioCore.Editors.CutsceneEditor;
 public class CutsceneToolView
 {
     private CutsceneEditorScreen Screen;
-    private CutsceneTools Tools;
+    private CutsceneActionHandler ActionHandler;
 
     public CutsceneToolView(CutsceneEditorScreen screen)
     {
         Screen = screen;
-        Tools = screen.Tools;
+        ActionHandler = screen.ActionHandler;
     }
 
     public void OnProjectChanged()

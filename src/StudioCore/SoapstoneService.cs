@@ -16,6 +16,7 @@ using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Core.Project;
+using StudioCore.Editors.TextEditor.Enums;
 
 #pragma warning disable CS1998 // Async method lacks 'await'. Return without Task is convenient, though
 

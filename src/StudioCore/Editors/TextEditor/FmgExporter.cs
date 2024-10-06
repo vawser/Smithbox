@@ -17,6 +17,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Resource.Locators;
+using StudioCore.Editors.TextEditor.Enums;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -75,13 +76,13 @@ public static class FmgExporter
         {
             switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
             {
-                case TextEditorScreen.TargetOutputMode.Vanilla:
+                case TargetOutputMode.Vanilla:
                     break;
-                case TextEditorScreen.TargetOutputMode.DLC1:
+                case TargetOutputMode.DLC1:
                     itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "_dlc01");
                     menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "_dlc01");
                     break;
-                case TextEditorScreen.TargetOutputMode.DLC2:
+                case TargetOutputMode.DLC2:
                     itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "_dlc02");
                     menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "_dlc02");
                     break;
@@ -91,13 +92,13 @@ public static class FmgExporter
         {
             switch (Smithbox.EditorHandler.TextEditor.CurrentTargetOutputMode)
             {
-                case TextEditorScreen.TargetOutputMode.Vanilla:
+                case TargetOutputMode.Vanilla:
                     break;
-                case TextEditorScreen.TargetOutputMode.DLC1:
+                case TargetOutputMode.DLC1:
                     itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "_dlc1");
                     menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "_dlc1");
                     break;
-                case TextEditorScreen.TargetOutputMode.DLC2:
+                case TargetOutputMode.DLC2:
                     itemMsgPath = TextLocator.GetItemMsgbnd(lang.LanguageFolder, false, "_dlc2");
                     menuMsgPath = TextLocator.GetMenuMsgbnd(lang.LanguageFolder, false, "_dlc2");
                     break;

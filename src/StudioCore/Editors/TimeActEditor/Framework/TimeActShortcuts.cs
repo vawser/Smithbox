@@ -14,13 +14,13 @@ public class TimeActShortcuts
 {
     private ActionManager ActionManager;
     private TimeActEditorScreen Screen;
-    private TimeActTools Tools;
+    private TimeActActionHandler ActionHandler;
 
     public TimeActShortcuts(TimeActEditorScreen screen)
     {
         Screen = screen;
         ActionManager = screen.EditorActionManager;
-        Tools = screen.Tools;
+        ActionHandler = screen.ActionHandler;
     }
 
     public void Monitor()
@@ -80,12 +80,12 @@ public class TimeActShortcuts
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
         {
-            Tools.DetermineDeleteTarget();
+            ActionHandler.DetermineDeleteTarget();
         }
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
         {
-            Tools.DetermineDuplicateTarget();
+            ActionHandler.DetermineDuplicateTarget();
         }
     }
 }

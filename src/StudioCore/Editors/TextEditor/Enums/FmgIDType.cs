@@ -4,95 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.TextEditor;
-
-public static class FMGDictionaries
-{
-    public static Dictionary<string, string> Languages = new Dictionary<string, string>()
-    {
-        { "araae", "Arabic" },
-        { "deude", "German" },
-        { "engus", "English" },
-        { "frafr", "French" },
-        { "itait", "Italian" },
-        { "jpnjp", "Japanese" },
-        { "korkr", "Korean" },
-        { "polpl", "Polish" },
-        { "porbr", "Portuguese - Brazil" },
-        { "rusru", "Russian" },
-        { "spaar", "Spanish - Latin America" },
-        { "spaes", "Spanish - Spain" },
-        { "thath", "Thai" },
-        { "zhocn", "Simplified Chinese" },
-        { "zhotw", "Traditional Chinese " }
-    };
-}
-
+namespace StudioCore.Editors.TextEditor.Enums;
 
 /// <summary>
-///     FMG sections in UI
-/// </summary>
-public enum FmgFileCategory
-{
-    Loose = 0,
-    Item = 1,
-    Menu = 2
-}
-
-/// <summary>
-///     FMG sections in UI
-/// </summary>
-public enum FmgUICategory
-{
-    Text = 0,
-    Item = 1,
-    Menu = 2
-}
-
-/// <summary>
-///     Entry type for Title, Summary, Description, or other.
-/// </summary>
-public enum FmgEntryTextType
-{
-    TextBody = 0,
-    Title = 1,
-    Summary = 2,
-    Description = 3,
-    ExtraText = 4
-}
-
-/// <summary>
-///     Text categories used for grouping multiple FMGs or broad identification
-/// </summary>
-public enum FmgEntryCategory
-{
-    None = -1,
-    Goods,
-    Weapons,
-    Armor,
-    Rings,
-    Spells,
-    Characters,
-    Locations,
-    Gem,
-    Message,
-    SwordArts,
-    Effect,
-    ActionButtonText,
-    Tutorial,
-    LoadingScreen,
-    Generator,
-    Booster,
-    FCS,
-    Mission,
-    Archive,
-
-    ItemFmgDummy = 200 // Anything with this will be sorted into the item section of the editor.
-}
-
-
-/// <summary>
-///     BND IDs for FMG files used for identification
+/// BND IDs for FMG files used for identification
 /// </summary>
 public enum FmgIDType
 {

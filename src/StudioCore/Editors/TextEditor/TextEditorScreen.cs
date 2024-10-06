@@ -19,6 +19,7 @@ using StudioCore.Editors.TextEditor.Tools;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Resource.Locators;
+using StudioCore.Editors.TextEditor.Enums;
 
 namespace StudioCore.TextEditor;
 
@@ -256,12 +257,6 @@ public class TextEditorScreen : EditorScreen
 
     public TargetOutputMode CurrentTargetOutputMode = TargetOutputMode.DLC2;
 
-    public enum TargetOutputMode
-    {
-        Vanilla,
-        DLC1,
-        DLC2
-    }
 
     public void OnGUI(string[] initcmd)
     {

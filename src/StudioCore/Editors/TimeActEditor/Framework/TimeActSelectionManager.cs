@@ -5,6 +5,7 @@ using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Editors.TimeActEditor.Utils;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ public class TimeActSelectionManager
 
     public TemplateType CurrentTimeActType = TemplateType.Character;
 
-    public SelectionContext CurrentSelectionContext = SelectionContext.None;
+    public TimeActSelectionContext CurrentSelectionContext = TimeActSelectionContext.None;
     public FileContainerType CurrentFileContainerType = FileContainerType.None;
 
     public bool FocusContainer = false;
@@ -123,7 +124,7 @@ public class TimeActSelectionManager
         CurrentFileContainerType = containerType;
 
         if (changeContext)
-            CurrentSelectionContext = SelectionContext.File;
+            CurrentSelectionContext = TimeActSelectionContext.File;
 
         ContainerIndex = index;
         ContainerKey = info.Name;
@@ -178,7 +179,7 @@ public class TimeActSelectionManager
     public void TimeActChange(TAE entry, int index, bool changeContext = true)
     {
         if(changeContext)
-            CurrentSelectionContext = SelectionContext.TimeAct;
+            CurrentSelectionContext = TimeActSelectionContext.TimeAct;
 
         TimeActSelection(CurrentTimeActKey, index);
 
@@ -229,7 +230,7 @@ public class TimeActSelectionManager
     public void TimeActAnimationChange(TAE.Animation entry, int index, bool changeContext = true)
     {
         if (changeContext)
-            CurrentSelectionContext = SelectionContext.Animation;
+            CurrentSelectionContext = TimeActSelectionContext.Animation;
 
         AnimationSelection(CurrentTimeActAnimationIndex, index);
 
@@ -277,7 +278,7 @@ public class TimeActSelectionManager
     public void TimeActEventChange(TAE.Event entry, int index, bool changeContext = true)
     {
         if (changeContext)
-            CurrentSelectionContext = SelectionContext.Event;
+            CurrentSelectionContext = TimeActSelectionContext.Event;
 
         EventSelection(CurrentTimeActEventIndex, index);
 
@@ -290,7 +291,7 @@ public class TimeActSelectionManager
 
     public void TimeActEventPropertyChange(string entry, int index)
     {
-        CurrentSelectionContext = SelectionContext.Property;
+        CurrentSelectionContext = TimeActSelectionContext.Property;
 
         CurrentTimeActEventProperty = entry;
         CurrentTimeActEventPropertyIndex = index;
@@ -468,22 +469,4 @@ public class TimeActSelectionManager
             StoredEvents.Add(currentIndex, animEvent);
         }
     }
-
-    public enum SelectionContext
-    {
-        None,
-        File,
-        TimeAct,
-        Animation,
-        Event,
-        Property
-    }
-
-    public enum FileContainerType
-    {
-        None,
-        Character,
-        Object
-    }
-
 }

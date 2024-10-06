@@ -2,6 +2,7 @@
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
+using StudioCore.Editors.EmevdEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Numerics;
@@ -20,7 +21,7 @@ public class EmevdEditorScreen : EditorScreen
     public EmevdPropertyDecorator Decorator;
     public EmevdShortcuts EditorShortcuts;
     public EmevdContextMenu ContextMenu;
-    public EmevdTools Tools;
+    public EmevdActionHandler ActionHandler;
     public EmevdFilters Filters;
 
     public EmevdFileView FileView;
@@ -52,7 +53,7 @@ public class EmevdEditorScreen : EditorScreen
         EventParameterView = new EmevdEventParameterView(this);
         InstructionParameterView = new EmevdInstructionPropertyView(this);
 
-        Tools = new EmevdTools(this);
+        ActionHandler = new EmevdActionHandler(this);
         ToolView = new EmevdToolView(this);
         ToolMenubar = new EmevdToolMenubar(this);
         ActionMenubar = new EmevdActionMenubar(this);

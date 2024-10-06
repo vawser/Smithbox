@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
+using StudioCore.Editors.EmevdEditor.Framework;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
 using System.Collections.Generic;
@@ -13,12 +14,12 @@ namespace StudioCore.Editors.EmevdEditor;
 public class EmevdToolView
 {
     private EmevdEditorScreen Screen;
-    private EmevdTools Tools;
+    private EmevdActionHandler ActionHandler;
 
     public EmevdToolView(EmevdEditorScreen screen)
     {
         Screen = screen;
-        Tools = screen.Tools;
+        ActionHandler = screen.ActionHandler;
     }
 
     public void OnProjectChanged()
@@ -46,7 +47,7 @@ public class EmevdToolView
             {
                 if (ImGui.Button("Log Unknown Instructions", defaultButtonSize))
                 {
-                    Tools.LogUnknownInstructions();
+                    ActionHandler.LogUnknownInstructions();
                 }
             }
         }

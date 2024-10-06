@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core.Project;
+using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Platform;
 using System;
 using System.Collections.Generic;

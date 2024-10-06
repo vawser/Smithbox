@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core.Project;
+using StudioCore.Editors.TextureViewer.Enums;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,17 +13,6 @@ namespace StudioCore.Editors.TextureViewer;
 
 public static class TextureFolderBank
 {
-    public enum TextureViewCategory
-    {
-        None = 0,
-        Menu = 1,
-        Asset = 2,
-        Character = 3,
-        Object = 4,
-        Other = 5,
-        Part = 6,
-        Particle = 7
-    }
 
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }

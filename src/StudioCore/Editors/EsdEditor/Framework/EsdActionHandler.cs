@@ -9,18 +9,18 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.EsdEditor;
+namespace StudioCore.Editors.EsdEditor.Framework;
 
 /// <summary>
 /// Handles the tool view for this editor.
 /// </summary>
-public class EsdTools
+public class EsdActionHandler
 {
     private EsdEditorScreen Screen;
     private EsdPropertyDecorator Decorator;
     private EsdSelectionManager Selection;
 
-    public EsdTools(EsdEditorScreen screen)
+    public EsdActionHandler(EsdEditorScreen screen)
     {
         Screen = screen;
         Decorator = screen.Decorator;

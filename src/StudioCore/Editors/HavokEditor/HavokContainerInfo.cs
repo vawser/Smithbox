@@ -4,6 +4,7 @@ using HKLib.Serialization.hk2018.Binary;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Editors.HavokEditor.Enums;
 using StudioCore.Editors.ModelEditor;
 using System;
 using System.Collections.Generic;
@@ -16,15 +17,6 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.HavokEditor;
 
-/// <summary>
-/// Represents the 'types' of containers so we can differentiate them within the editor.
-/// </summary>
-public enum HavokContainerType
-{
-    [Display(Name = "Behavior")] Behavior,
-    [Display(Name = "Collision")] Collision,
-    [Display(Name = "Animation")] Animation
-}
 
 public class HavokContainerInfo
 {

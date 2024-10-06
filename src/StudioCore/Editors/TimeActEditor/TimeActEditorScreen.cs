@@ -29,8 +29,6 @@ public class TimeActEditorScreen : EditorScreen
     public TimeActActionHandler ActionHandler;
     public TimeActPropertyEditor PropertyEditor;
     public TimeActDecorator Decorator;
-
-    public TimeActTools Tools;
     public TimeActShortcuts EditorShortcuts;
 
     public TimeActToolView ToolView;
@@ -47,7 +45,7 @@ public class TimeActEditorScreen : EditorScreen
 
     public TimeActEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        Tools = new TimeActTools(this);
+        ActionHandler = new TimeActActionHandler(this);
 
         Selection = new TimeActSelectionManager(this);
         Decorator = new TimeActDecorator(this);
@@ -66,8 +64,6 @@ public class TimeActEditorScreen : EditorScreen
         ActionMenubar = new TimeActActionMenubar(this);
         ToolView = new TimeActToolView(this);
         ToolMenubar = new TimeActToolMenubar(this);
-
-        ActionHandler = new TimeActActionHandler(this);
     }
 
     public string EditorName => "Time Act Editor##TimeActEditor";

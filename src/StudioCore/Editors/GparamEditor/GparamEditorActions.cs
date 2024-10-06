@@ -1,6 +1,7 @@
 ﻿using Google.Protobuf.Reflection;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.GraphicsEditor;
 using StudioCore.Tasks;
 using System;
@@ -22,13 +23,6 @@ public class GparamEditorActions
     /// 
     public class GparamValueChangeAction : EditorAction
     {
-        public enum ValueChangeType
-        {
-            Set,
-            Addition,
-            Subtraction,
-            Multiplication
-        }
 
         private readonly List<GparamValueChange> Changes = new();
 

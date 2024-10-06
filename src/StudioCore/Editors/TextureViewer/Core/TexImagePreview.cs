@@ -4,6 +4,7 @@ using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;

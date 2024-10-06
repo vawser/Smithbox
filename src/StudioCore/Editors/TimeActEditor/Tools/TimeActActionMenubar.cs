@@ -13,12 +13,12 @@ namespace StudioCore.Editors.TimeActEditor.Actions;
 public class TimeActActionMenubar
 {
     private TimeActEditorScreen Screen;
-    public TimeActTools Tools;
+    public TimeActActionHandler ActionHandler;
 
     public TimeActActionMenubar(TimeActEditorScreen screen)
     {
         Screen = screen;
-        Tools = screen.Tools;
+        ActionHandler = screen.ActionHandler;
     }
 
     public void DisplayMenu()
@@ -28,14 +28,14 @@ public class TimeActActionMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
-                Tools.DetermineDuplicateTarget();
+                ActionHandler.DetermineDuplicateTarget();
             }
             UIHelper.ShowHoverTooltip("Duplicates the current selection.");
 
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
-                Tools.DetermineDeleteTarget();
+                ActionHandler.DetermineDeleteTarget();
             }
             UIHelper.ShowHoverTooltip("Deletes the current selection.");
 

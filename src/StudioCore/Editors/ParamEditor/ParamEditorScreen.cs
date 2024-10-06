@@ -27,6 +27,7 @@ using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Resource.Locators;
+using StudioCore.Editors.TextEditor.Enums;
 
 namespace StudioCore.Editors.ParamEditor;
 

@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Editors.TimeActEditor.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
+using StudioCore.Editors.CutsceneEditor.Framework;
 using StudioCore.Interface;
 using System.Numerics;
 using Veldrid;
@@ -19,7 +20,7 @@ public class CutsceneEditorScreen : EditorScreen
 
     public CutsceneFilters Filters;
 
-    public CutsceneTools Tools;
+    public CutsceneActionHandler ActionHandler;
     public CutsceneActionMenubar ActionMenubar;
     public CutsceneToolMenubar ToolMenubar;
     public CutsceneToolView ToolView;
@@ -56,7 +57,7 @@ public class CutsceneEditorScreen : EditorScreen
         Decorator = new CutscenePropertyDecorator(this);
         Filters = new CutsceneFilters(this);
 
-        Tools = new CutsceneTools(this);
+        ActionHandler = new CutsceneActionHandler(this);
         ActionMenubar = new CutsceneActionMenubar(this);
         ToolMenubar = new CutsceneToolMenubar(this);
         ToolView = new CutsceneToolView(this);

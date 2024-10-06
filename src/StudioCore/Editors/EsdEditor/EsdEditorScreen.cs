@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.EsdEditor;
+using StudioCore.Editors.EsdEditor.Framework;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ public class EsdEditorScreen : EditorScreen
     public EsdPropertyDecorator Decorator;
     public EsdShortcuts EditorShortcuts;
     public EsdContextMenu ContextMenu;
-    public EsdTools Tools;
+    public EsdActionHandler ActionHandler;
     public EsdFilters Filters;
 
     public EsdToolView ToolView;
@@ -39,7 +40,7 @@ public class EsdEditorScreen : EditorScreen
         Selection = new EsdSelectionManager(this);
         Decorator = new EsdPropertyDecorator(this);
         ContextMenu = new EsdContextMenu(this);
-        Tools = new EsdTools(this);
+        ActionHandler = new EsdActionHandler(this);
         Filters = new EsdFilters(this);
 
         ToolView = new EsdToolView(this);

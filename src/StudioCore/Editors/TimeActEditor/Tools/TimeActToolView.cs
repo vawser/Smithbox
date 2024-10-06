@@ -10,14 +10,14 @@ namespace StudioCore.Editors.TimeActEditor.Tools;
 public class TimeActToolView
 {
     private TimeActEditorScreen Screen;
-    public TimeActTools Tools;
-    public TimeActSearch TimeActSearch;
+    private TimeActActionHandler ActionHandler;
+    private TimeActSearch TimeActSearch;
 
     public TimeActToolView(TimeActEditorScreen screen)
     {
         Screen = screen;
-        Tools = screen.Tools;
-        TimeActSearch = new TimeActSearch(Screen, Tools);
+        ActionHandler = screen.ActionHandler;
+        TimeActSearch = new TimeActSearch(screen);
     }
 
     public void OnGui()
