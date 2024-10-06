@@ -74,6 +74,9 @@ public class TimeActEditorScreen : EditorScreen
     public string CommandEndpoint => "timeact";
     public string SaveType => "TAE";
 
+    /// <summary>
+    /// The editor main loop
+    /// </summary>
     public void OnGUI(string[] initcmd)
     {
         var scale = DPI.GetUIScale();

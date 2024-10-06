@@ -101,6 +101,10 @@ Texture Viewer:
 ESD Editor:
  - ADD: 
  
+#--------------------------------------
+# Notes
+#--------------------------------------
+# PRIORITY
 EMEVD Editor:
  - DEV: instruction test: find missing instructions / missing or invalid arguments
  
@@ -109,8 +113,3 @@ EMEVD Editor:
  - ADD: Add ability to insert/delete/order events.
  - ADD: Add ability to insert/delete/order instructions.
  
-#--------------------------------------
-# Notes
-#--------------------------------------
-# PRIORITY
-

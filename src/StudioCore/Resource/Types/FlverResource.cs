@@ -89,7 +89,8 @@ public class FlverResource : IResource, IDisposable
         }
         else
         {
-            if (al == AccessLevel.AccessGPUOptimizedOnly && Smithbox.ProjectType != ProjectType.DS1R &&
+            if (al == AccessLevel.AccessGPUOptimizedOnly && 
+                Smithbox.ProjectType != ProjectType.DS1R &&
                 Smithbox.ProjectType != ProjectType.DS1)
             {
                 BinaryReaderEx br = new(false, bytes);

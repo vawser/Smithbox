@@ -38,7 +38,7 @@ public static class Test_FLVER2_BytePerfect
     {
         Output = new List<string>();
 
-        var currentFlver = Smithbox.EditorHandler.ModelEditor.ResourceHandler.GetCurrentInternalFile();
+        var currentFlver = Smithbox.EditorHandler.ModelEditor.ResManager.GetCurrentInternalFile();
 
         if(currentFlver == null)
         {

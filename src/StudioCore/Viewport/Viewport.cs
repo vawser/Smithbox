@@ -4,7 +4,7 @@ using StudioCore.DebugPrimitives;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Tools;
-using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.MsbEditor;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Resource;

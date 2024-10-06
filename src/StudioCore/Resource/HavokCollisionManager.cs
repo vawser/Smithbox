@@ -4,6 +4,7 @@ using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Resource.Locators;
 using StudioCore.Resource.Types;
 using System;

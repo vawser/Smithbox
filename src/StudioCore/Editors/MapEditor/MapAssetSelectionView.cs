@@ -4,7 +4,7 @@ using SoulsFormats.KF4;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
-using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
