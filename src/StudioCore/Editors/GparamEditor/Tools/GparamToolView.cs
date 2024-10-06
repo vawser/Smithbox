@@ -1,6 +1,8 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
 using StudioCore.Editors.GparamEditor.Framework;
+using StudioCore.Editors.GparamEditor.Utils;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using System;
@@ -57,6 +59,23 @@ public class GparamToolView
             {
                 Screen.QuickEditHandler.DisplayCheatSheet();
             }
+
+            // Gparam Reloader
+            /*
+            if (GparamMemoryTools.IsGparamReloaderSupported())
+            {
+                if (ImGui.CollapsingHeader("Gparam Reloader"))
+                {
+                    UIHelper.WrappedText("");
+
+                    if (ImGui.Button("Reload Current Gparam", defaultButtonSize))
+                    {
+                        GparamMemoryTools.ReloadCurrentGparam(Screen.Selection._selectedGparamInfo);
+                    }
+                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
+                }
+            }
+            */
         }
 
         ImGui.End();

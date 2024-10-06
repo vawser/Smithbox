@@ -98,13 +98,6 @@ Texture Viewer:
  - ADD: support for tpfbdt files 
  - FIX: Support AC6 Parts (need to change how ResourceManager holds the virtual paths since the AC6 uses the same filename but with different extensions)
 
-ESD Editor:
- - ADD: 
- 
-#--------------------------------------
-# Notes
-#--------------------------------------
-# PRIORITY
 EMEVD Editor:
  - DEV: instruction test: find missing instructions / missing or invalid arguments
  
@@ -113,3 +106,14 @@ EMEVD Editor:
  - ADD: Add ability to insert/delete/order events.
  - ADD: Add ability to insert/delete/order instructions.
  
+ESD Editor:
+ - ADD: 
+ 
+#--------------------------------------
+# Notes
+#--------------------------------------
+# PRIORITY
+Model Editor:
+ - FIX: DS2 models causing CTD in Model Editor (representative model load)
+ 
+1543.643

@@ -789,6 +789,10 @@ public class GparamEditorKeybindTab
             KeyBindings.Current.GPARAM_ClearQuickEdit = InputTracker.KeybindLine(2,
                 KeyBindings.Current.GPARAM_ClearQuickEdit,
                 KeyBindings.Default.GPARAM_ClearQuickEdit);
+
+            KeyBindings.Current.GPARAM_ReloadParam = InputTracker.KeybindLine(3,
+                KeyBindings.Current.GPARAM_ReloadParam,
+                KeyBindings.Default.GPARAM_ReloadParam);
         }
     }
 }

@@ -20,8 +20,8 @@ public class SoulsMemoryHandler
     // Outer dict: key = process ID. Inner dict: key = arbitrary id, value = memory offset.
     internal static Dictionary<long, Dictionary<string, int>> ProcessOffsetBank = new();
 
-    private readonly Process gameProcess;
-    private readonly Dictionary<string, int> _processOffsets;
+    public readonly Process gameProcess;
+    public readonly Dictionary<string, int> _processOffsets;
     public nint memoryHandle;
 
     public SoulsMemoryHandler(Process gameProcess)
@@ -311,69 +311,81 @@ public class SoulsMemoryHandler
     internal void PlayerItemGive(GameOffsetsEntry offsets, List<Param.Row> rows, string paramDefParamType,
         int itemQuantityReceived = 1, int itemDurabilityReceived = -1, int upgradeLevelItemToGive = 0)
     {
-        //Thanks Church Guard for providing the foundation of this.
-        //Only supports ds3 as of now
-        if (offsets.itemGibOffsets.ContainsKey(paramDefParamType) && rows.Any())
+        // ItemGib - DS3
+        if (Smithbox.ProjectType is ProjectType.DS3)
         {
-            var paramOffset = offsets.itemGibOffsets[paramDefParamType];
-
-            List<int> intListProcessing = new();
-
-            //Padding? Supposedly?
-            intListProcessing.Add(0);
-            intListProcessing.Add(0);
-            intListProcessing.Add(0);
-            intListProcessing.Add(0);
-            //Items to give amount
-            intListProcessing.Add(rows.Count());
-
-            foreach (Param.Row row in rows)
+            //Thanks Church Guard for providing the foundation of this.
+            //Only supports ds3 as of now
+            if (offsets.itemGibOffsets.ContainsKey(paramDefParamType) && rows.Any())
             {
-                intListProcessing.Add(row.ID + paramOffset + upgradeLevelItemToGive);
-                intListProcessing.Add(itemQuantityReceived);
-                intListProcessing.Add(itemDurabilityReceived);
-            }
+                var paramOffset = offsets.itemGibOffsets[paramDefParamType];
 
-            //ItemGib ASM in byte format
-            byte[] itemGibByteFunctionDS3 =
-            {
+                List<int> intListProcessing = new();
+
+                //Padding? Supposedly?
+                intListProcessing.Add(0);
+                intListProcessing.Add(0);
+                intListProcessing.Add(0);
+                intListProcessing.Add(0);
+                //Items to give amount
+                intListProcessing.Add(rows.Count());
+
+                foreach (Param.Row row in rows)
+                {
+                    intListProcessing.Add(row.ID + paramOffset + upgradeLevelItemToGive);
+                    intListProcessing.Add(itemQuantityReceived);
+                    intListProcessing.Add(itemDurabilityReceived);
+                }
+
+                //ItemGib ASM in byte format
+                byte[] itemGibByteFunctionDS3 =
+                {
                 0x48, 0x83, 0xEC, 0x48, 0x4C, 0x8D, 0x01, 0x48, 0x8D, 0x51, 0x10, 0x48, 0xA1, 0x00, 0x23, 0x75,
                 0x44, 0x01, 0x00, 0x00, 0x00, 0x48, 0x8B, 0xC8, 0xFF, 0x15, 0x02, 0x00, 0x00, 0x00, 0xEB, 0x08,
                 0x70, 0xBA, 0x7B, 0x40, 0x01, 0x00, 0x00, 0x00, 0x48, 0x83, 0xC4, 0x48, 0xC3
             };
 
-            //ItemGib Arguments Int Array
-            var itemGibArgumentsIntArray = new int[intListProcessing.Count()];
-            intListProcessing.CopyTo(itemGibArgumentsIntArray);
+                //ItemGib Arguments Int Array
+                var itemGibArgumentsIntArray = new int[intListProcessing.Count()];
+                intListProcessing.CopyTo(itemGibArgumentsIntArray);
 
-            //Copy itemGibArgumentsIntArray's Bytes into a byte array
-            var itemGibArgumentsByteArray = new byte[Buffer.ByteLength(itemGibArgumentsIntArray)];
-            Buffer.BlockCopy(itemGibArgumentsIntArray, 0, itemGibArgumentsByteArray, 0,
-                itemGibArgumentsByteArray.Length);
+                //Copy itemGibArgumentsIntArray's Bytes into a byte array
+                var itemGibArgumentsByteArray = new byte[Buffer.ByteLength(itemGibArgumentsIntArray)];
+                Buffer.BlockCopy(itemGibArgumentsIntArray, 0, itemGibArgumentsByteArray, 0,
+                    itemGibArgumentsByteArray.Length);
 
-            //Allocate Memory for ItemGib and Arguments
-            var itemGibByteFunctionPtr = NativeWrapper.VirtualAllocEx(memoryHandle, 0,
-                Buffer.ByteLength(itemGibByteFunctionDS3), AllocationType.Commit | AllocationType.Reserve,
-                MemoryProtectionFlags.ExecuteReadWrite);
-            var itemGibArgumentsPtr = NativeWrapper.VirtualAllocEx(memoryHandle, 0,
-                Buffer.ByteLength(itemGibArgumentsIntArray), AllocationType.Commit | AllocationType.Reserve,
-                MemoryProtectionFlags.ExecuteReadWrite);
+                //Allocate Memory for ItemGib and Arguments
+                var itemGibByteFunctionPtr = NativeWrapper.VirtualAllocEx(memoryHandle, 0,
+                    Buffer.ByteLength(itemGibByteFunctionDS3), AllocationType.Commit | AllocationType.Reserve,
+                    MemoryProtectionFlags.ExecuteReadWrite);
+                var itemGibArgumentsPtr = NativeWrapper.VirtualAllocEx(memoryHandle, 0,
+                    Buffer.ByteLength(itemGibArgumentsIntArray), AllocationType.Commit | AllocationType.Reserve,
+                    MemoryProtectionFlags.ExecuteReadWrite);
 
-            //Write ItemGib Function and Arguments into the previously allocated memory
-            NativeWrapper.WriteProcessMemoryArray(memoryHandle, itemGibByteFunctionPtr, itemGibByteFunctionDS3);
-            NativeWrapper.WriteProcessMemoryArray(memoryHandle, itemGibArgumentsPtr, itemGibArgumentsByteArray);
+                //Write ItemGib Function and Arguments into the previously allocated memory
+                NativeWrapper.WriteProcessMemoryArray(memoryHandle, itemGibByteFunctionPtr, itemGibByteFunctionDS3);
+                NativeWrapper.WriteProcessMemoryArray(memoryHandle, itemGibArgumentsPtr, itemGibArgumentsByteArray);
 
-            //Create a new thread at the copied ItemGib function in memory
+                //Create a new thread at the copied ItemGib function in memory
 
-            NativeWrapper.WaitForSingleObject(
-                NativeWrapper.CreateRemoteThread(memoryHandle, itemGibByteFunctionPtr, itemGibArgumentsPtr), 30000);
+                NativeWrapper.WaitForSingleObject(
+                    NativeWrapper.CreateRemoteThread(memoryHandle, itemGibByteFunctionPtr, itemGibArgumentsPtr), 30000);
 
 
-            //Frees memory used by the ItemGib function and it's arguments
-            NativeWrapper.VirtualFreeEx(memoryHandle, itemGibByteFunctionPtr,
-                Buffer.ByteLength(itemGibByteFunctionDS3), FreeType.PreservePlaceholder);
-            NativeWrapper.VirtualFreeEx(memoryHandle, itemGibArgumentsPtr,
-                Buffer.ByteLength(itemGibArgumentsIntArray), FreeType.PreservePlaceholder);
+                //Frees memory used by the ItemGib function and it's arguments
+                NativeWrapper.VirtualFreeEx(memoryHandle, itemGibByteFunctionPtr,
+                    Buffer.ByteLength(itemGibByteFunctionDS3), FreeType.PreservePlaceholder);
+                NativeWrapper.VirtualFreeEx(memoryHandle, itemGibArgumentsPtr,
+                    Buffer.ByteLength(itemGibArgumentsIntArray), FreeType.PreservePlaceholder);
+            }
+        }
+
+        // ItemGib - ER
+        if (Smithbox.ProjectType is ProjectType.ER)
+        {
+            var MapItemMan = "48 8B 0D ?? ?? ?? ?? C7 44 24 50 FF FF FF FF";
+
+            var addr = "41 0F B6 F9 41 8B E8"; // Find offset, then minus 0x31
         }
     }
 }

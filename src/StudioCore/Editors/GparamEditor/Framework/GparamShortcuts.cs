@@ -1,5 +1,6 @@
 ﻿using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.GparamEditor.Utils;
 using StudioCore.GraphicsEditor;
 using System;
 using System.Collections.Generic;
@@ -63,6 +64,11 @@ public class GparamShortcuts
         if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_ClearQuickEdit))
         {
             Screen.QuickEditHandler.ClearQuickEditCommands();
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_ReloadParam))
+        {
+            GparamMemoryTools.ReloadCurrentGparam(Screen.Selection._selectedGparamInfo);
         }
     }
 }

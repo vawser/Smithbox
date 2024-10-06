@@ -907,6 +907,12 @@ public class KeyBindings
             Key.L,
             true);
 
+        // Param Reloader
+        public KeyBind GPARAM_ReloadParam = new(
+            "Reload Current Gparam",
+            "Reloads the conents of the current Gparam selection in-game.",
+            Key.F5);
+
         //-----------------------------
         // Time Act Editor
         //-----------------------------

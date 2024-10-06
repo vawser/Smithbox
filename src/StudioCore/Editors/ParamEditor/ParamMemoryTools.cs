@@ -63,13 +63,13 @@ public static class ParamMemoryTools
             var rowsToGib = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetSelectedRows();
             var param = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
 
-            if (activeParam == "EquipParamGoods")
+            if (activeParam is "EquipParamGoods" or "EquipParamProtector" or "EquipParamAccessory")
             {
                 ParamReloader.GiveItem(offsets, rowsToGib, param, SpawnedItemAmount);
             }
             if (activeParam == "EquipParamWeapon")
             {
-                ParamReloader.GiveItem(offsets, rowsToGib, param, SpawnWeaponLevel);
+                ParamReloader.GiveItem(offsets, rowsToGib, param, SpawnedItemAmount, SpawnWeaponLevel);
             }
         }
         else

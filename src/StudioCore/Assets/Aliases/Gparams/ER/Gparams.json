@@ -1,6 +1,13 @@
 {
     "list": [
         {
+            "id": "m00_00",
+            "name": "Open World",
+            "tags": [
+                ""
+            ]
+        },
+        {
             "id": "m10_00",
             "name": "Stormveil Castle",
             "tags": [
@@ -141,337 +148,64 @@
             ]
         },
         {
+            "id": "m20_00",
+            "name": "Belurat, Tower Settlement (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_01",
+            "name": "Enir-Ilim (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m21_00",
+            "name": "Shadow Keep (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m21_01",
+            "name": "Specimen Storehouse (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m21_02",
+            "name": "Specimen Storehouse (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m22_00",
+            "name": "Stone Coffin Fissure (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m25_00",
+            "name": "Finger Birthing Grounds (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m28_00",
+            "name": "Midra's Manse (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
             "id": "m30_00",
-            "name": "Tombsward Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_01",
-            "name": "Impaler's Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_02",
-            "name": "Stormfoot Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_03",
-            "name": "Road's End Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_04",
-            "name": "Murkwater Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_05",
-            "name": "Black Knife Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_06",
-            "name": "Cliffbottom Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_07",
-            "name": "Wyndham Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_08",
-            "name": "Sainted Hero's Grave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_09",
-            "name": "Gelmir Hero's Grave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_10",
-            "name": "Auriza Hero's Grave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_11",
-            "name": "Deathtouched Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_12",
-            "name": "Unsightly Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_13",
-            "name": "Auriza Side Tomb",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_14",
-            "name": "Minor Erdtree Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_15",
-            "name": "Caelid Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_16",
-            "name": "War-Dead Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_17",
-            "name": "Giant-Conquering Hero's Grave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_18",
-            "name": "Giants' Mountaintop Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_19",
-            "name": "Consecrated Snowfield Catacombs",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m30_20",
-            "name": "Hidden Path to the Haligtree",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_00",
-            "name": "Murkwater Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_01",
-            "name": "Earthbore Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_02",
-            "name": "Tombsward Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_03",
-            "name": "Groveside Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_04",
-            "name": "Stillwater Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_05",
-            "name": "Lakeside Crystal Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_06",
-            "name": "Academy Crystal Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_07",
-            "name": "Seethewater Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_09",
-            "name": "Volcano Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_10",
-            "name": "Dragonbarrow Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_11",
-            "name": "Sellia Hideaway",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_12",
-            "name": "Cave of the Forlorn",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_15",
-            "name": "Coastal Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_17",
-            "name": "Highroad Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_18",
-            "name": "Perfumer's Grotto",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_19",
-            "name": "Sage's Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_20",
-            "name": "Abandoned Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_21",
-            "name": "Gaol Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m31_22",
-            "name": "Spiritcaller Cave",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m32_00",
-            "name": "Morne Tunnel",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m32_01",
-            "name": "Limgrave Tunnels",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m32_02",
-            "name": "Raya Lucaria Crystal Tunnel",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m32_04",
-            "name": "Old Altus Tunnel",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m32_05",
-            "name": "Altus Tunnel",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m32_07",
-            "name": "Gael Tunnel",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m32_08",
-            "name": "Sellia Crystal Tunnel",
-            "tags": [
-                ""
-            ]
-        },
-        {
-            "id": "m32_11",
-            "name": "Yelough Anix Tunnel",
+            "name": "Catacombs",
             "tags": [
                 ""
             ]
@@ -533,6 +267,34 @@
             ]
         },
         {
+            "id": "m40_00",
+            "name": "Catacombs (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m41_00",
+            "name": "Gaols (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m42_00",
+            "name": "Ruined Forge (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m43_00",
+            "name": "Cave (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
             "id": "m45_00",
             "name": "Royal Colosseum",
             "tags": [
@@ -555,7 +317,14 @@
         },
         {
             "id": "m60_00",
-            "name": "Overworld",
+            "name": "Open World",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m61_00",
+            "name": "Open World (DLC)",
             "tags": [
                 ""
             ]

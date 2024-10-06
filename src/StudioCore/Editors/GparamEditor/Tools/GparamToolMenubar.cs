@@ -1,5 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Editors.GparamEditor.Utils;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.Tools;
@@ -32,10 +34,27 @@ public class GparamToolMenubar
     {
         if (ImGui.BeginMenu("Tools"))
         {
+            // Color Picker
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Color Picker"))
             {
                 ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
+            }
+
+            // Gparam Reloader
+            if (GparamMemoryTools.IsGparamReloaderSupported())
+            {
+                UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
+                if (ImGui.BeginMenu("Gparam Reloader"))
+                {
+                    if (ImGui.MenuItem("Current Gparam", KeyBindings.Current.GPARAM_ReloadParam.HintText))
+                    {
+                        GparamMemoryTools.ReloadCurrentGparam(Screen.Selection._selectedGparamInfo);
+                    }
+                    UIHelper.ShowHoverTooltip("");
+
+                    ImGui.EndMenu();
+                }
             }
 
             ImGui.EndMenu();

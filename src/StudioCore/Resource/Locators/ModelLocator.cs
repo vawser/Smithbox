@@ -203,17 +203,18 @@ public static class ModelLocator
         ResourceDescriptor ret = new();
         ret.AssetName = chrId;
         ret.AssetArchiveVirtualPath = $@"chr/{chrContainerId}/model";
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+
+        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             ret.AssetVirtualPath = $@"chr/{chrContainerId}/model/{chrId}.flv";
         else
             ret.AssetVirtualPath = $@"chr/{chrContainerId}/model/{chrId}.flver";
 
         // Direct paths
-        if (Smithbox.ProjectType == ProjectType.DS1)
+        if (Smithbox.ProjectType is ProjectType.DS1)
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"chr\{chrId}.chrbnd");
-        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\chr\{chrId}.bnd");
-        else if (Smithbox.ProjectType == ProjectType.DES)
+        else if (Smithbox.ProjectType is ProjectType.DES)
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"chr\{chrContainerId}\{chrId}.chrbnd.dcx");
         else
             ret.AssetPath = LocatorUtils.GetOverridenFilePath($@"chr\{chrId}.chrbnd.dcx");

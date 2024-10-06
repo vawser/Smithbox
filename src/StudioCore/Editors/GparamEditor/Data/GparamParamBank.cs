@@ -169,17 +169,11 @@ public static class GparamParamBank
 
             var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
             GparamInfo gStruct = new GparamInfo(name, path);
+
             gStruct.Gparam = new GPARAM();
             gStruct.IsModFile = isModFile;
-
-            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-            {
-                gStruct.Gparam = GPARAM.Read(path);
-            }
-            else
-            {
-                gStruct.Gparam = GPARAM.Read(DCX.Decompress(path));
-            }
+            gStruct.Gparam = GPARAM.Read(path);
+            gStruct.Bytes = File.ReadAllBytes(path);
 
             ParamBank.Add(name, gStruct);
         }
@@ -284,6 +278,8 @@ public static class GparamParamBank
         }
 
         public GPARAM Gparam { get; set; }
+        public byte[] Bytes { get; set; }
+
         public string Name { get; set; }
         public string Path { get; set; }
 

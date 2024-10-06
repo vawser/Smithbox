@@ -139,7 +139,9 @@ internal class ParamReloader
     {
         if (rowsToGib.Any())
         {
-            Process[] processArray = Process.GetProcessesByName("DarkSoulsIII");
+            var name = offsets.exeName.Replace(".exe", "");
+
+            Process[] processArray = Process.GetProcessesByName(name);
             if (processArray.Any())
             {
                 SoulsMemoryHandler memoryHandler = new(processArray.First());

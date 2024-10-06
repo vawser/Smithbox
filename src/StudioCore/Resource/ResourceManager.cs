@@ -518,6 +518,7 @@ public static class ResourceManager
         public RefCount<BinderReader> Binder;
         public HashSet<int> BinderLoadMask = null;
         public string BinderVirtualPath;
+        public string BinderAbsolutePath;
         public List<Task> LoadingTasks = new();
 
         public List<Tuple<IResourceLoadPipeline, string, RefCount<BinderFileHeader>>> PendingResources = new();
@@ -548,14 +549,14 @@ public static class ResourceManager
             {
                 string o;
 
-                var absoluteBinderPath = VirtualPathLocator.VirtualToRealPath(BinderVirtualPath, out o);
+                BinderAbsolutePath = VirtualPathLocator.VirtualToRealPath(BinderVirtualPath, out o);
 
-                if(!File.Exists(absoluteBinderPath))
+                if(!File.Exists(BinderAbsolutePath))
                 {
                     return;
                 }
 
-                Binder = new(InstantiateBinderReaderForFile(absoluteBinderPath, Smithbox.ProjectType));
+                Binder = new(InstantiateBinderReaderForFile(BinderAbsolutePath, Smithbox.ProjectType));
                 if (Binder == null)
                 {
                     return;

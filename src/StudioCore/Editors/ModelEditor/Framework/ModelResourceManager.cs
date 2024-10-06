@@ -476,22 +476,22 @@ public class ModelResourceManager : IResourceEventListener
 
             if (modelAsset.AssetArchiveVirtualPath != null)
             {
-                if (!ResourceManager.IsResourceLoaded(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull))
+                if (!ResourceManager.IsResourceLoaded(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
                 {
-                    job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
+                    job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Flver);
                 }
             }
             else if (modelAsset.AssetVirtualPath != null)
             {
-                if (!ResourceManager.IsResourceLoaded(modelAsset.AssetVirtualPath, AccessLevel.AccessFull))
+                if (!ResourceManager.IsResourceLoaded(modelAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
                 {
-                    job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessFull);
+                    job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                 }
             }
 
             _loadingTask = job.Complete();
 
-            ResourceManager.AddResourceListener<FlverResource>(modelAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
+            ResourceManager.AddResourceListener<FlverResource>(modelAsset.AssetVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
         }
     }
 
@@ -518,14 +518,14 @@ public class ModelResourceManager : IResourceEventListener
                 {
                     if (entry.AssetArchiveVirtualPath != null)
                     {
-                        if (!ResourceManager.IsResourceLoaded(entry.AssetArchiveVirtualPath, AccessLevel.AccessFull))
+                        if (!ResourceManager.IsResourceLoaded(entry.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
                         {
                             job.AddLoadArchiveTask(entry.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
                         }
                     }
                     else if (entry.AssetVirtualPath != null)
                     {
-                        if (!ResourceManager.IsResourceLoaded(entry.AssetVirtualPath, AccessLevel.AccessFull))
+                        if (!ResourceManager.IsResourceLoaded(entry.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
                         {
                             job.AddLoadFileTask(entry.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                         }
@@ -559,14 +559,14 @@ public class ModelResourceManager : IResourceEventListener
 
             if (colAsset.AssetArchiveVirtualPath != null)
             {
-                if (!ResourceManager.IsResourceLoaded(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull))
+                if (!ResourceManager.IsResourceLoaded(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
                 {
                     job.AddLoadArchiveTask(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.CollisionHKX);
                 }
             }
             else if (colAsset.AssetVirtualPath != null)
             {
-                if (!ResourceManager.IsResourceLoaded(colAsset.AssetVirtualPath, AccessLevel.AccessFull))
+                if (!ResourceManager.IsResourceLoaded(colAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
                 {
                     job.AddLoadFileTask(colAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                 }
@@ -574,7 +574,7 @@ public class ModelResourceManager : IResourceEventListener
 
             _loadingTask = job.Complete();
 
-            ResourceManager.AddResourceListener<HavokCollisionResource>(colAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
+            ResourceManager.AddResourceListener<HavokCollisionResource>(colAsset.AssetVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
         }
     }
 

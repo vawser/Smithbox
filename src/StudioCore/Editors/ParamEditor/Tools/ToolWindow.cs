@@ -493,7 +493,7 @@ public class ToolWindow
             }
 
             // Item Gib
-            if (Smithbox.ProjectType == ProjectType.DS3)
+            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
             {
                 if (ImGui.CollapsingHeader("Item Gib"))
                 {
@@ -511,9 +511,13 @@ public class ToolWindow
                     {
                         UIHelper.WrappedText("Reinforcement of Spawned Weapon");
                         ImGui.InputInt("##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
-                        if(ParamMemoryTools.SpawnWeaponLevel > 10)
+
+                        if (Smithbox.ProjectType is ProjectType.DS3)
                         {
-                            ParamMemoryTools.SpawnWeaponLevel = 10;
+                            if (ParamMemoryTools.SpawnWeaponLevel > 10)
+                            {
+                                ParamMemoryTools.SpawnWeaponLevel = 10;
+                            }
                         }
                     }
 

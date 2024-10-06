@@ -106,6 +106,7 @@ public class GparamSelectionManager
         _selectedGparamKey = info.Name;
         _selectedGparamInfo = info;
         _selectedGparam = info.Gparam;
+
     }
 
     /// <summary>
