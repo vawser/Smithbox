@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.GraphicsEditor;
 using System.Collections.Generic;
@@ -10,7 +11,6 @@ using System.Drawing;
 using System.Numerics;
 using System.Reflection;
 using static SoulsFormats.GPARAM;
-using static StudioCore.Editors.GparamEditor.Actions.GparamEditorActions;
 using static StudioCore.Editors.GparamEditor.Data.GparamParamBank;
 
 namespace StudioCore.Editors.GparamEditor.Core;

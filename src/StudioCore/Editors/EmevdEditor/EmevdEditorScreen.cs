@@ -24,6 +24,8 @@ public class EmevdEditorScreen : EditorScreen
     public EmevdActionHandler ActionHandler;
     public EmevdFilters Filters;
 
+    public EmevdParameterManager ParameterManager;
+
     public EmevdFileView FileView;
     public EmevdEventView EventView;
     public EmevdInstructionView InstructionView;
@@ -46,6 +48,8 @@ public class EmevdEditorScreen : EditorScreen
         Decorator = new EmevdPropertyDecorator(this);
         ContextMenu = new EmevdContextMenu(this);
         Filters = new EmevdFilters(this);
+
+        ParameterManager = new EmevdParameterManager(this);
 
         FileView = new EmevdFileView(this);
         EventView = new EmevdEventView(this);

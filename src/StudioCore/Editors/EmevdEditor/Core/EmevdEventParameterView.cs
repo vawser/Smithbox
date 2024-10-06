@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Editors.EmevdEditor.Framework;
 using StudioCore.EmevdEditor;
 using System;
 using System.Collections.Generic;
@@ -16,12 +17,14 @@ public class EmevdEventParameterView
     private EmevdEditorScreen Screen;
     private EmevdPropertyDecorator Decorator;
     private EmevdSelectionManager Selection;
+    private EmevdParameterManager ParameterManager;
 
     public EmevdEventParameterView(EmevdEditorScreen screen)
     {
         Screen = screen;
         Decorator = screen.Decorator;
         Selection = screen.Selection;
+        ParameterManager = screen.ParameterManager;
     }
 
     /// <summary>

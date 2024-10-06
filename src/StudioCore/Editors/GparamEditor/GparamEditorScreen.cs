@@ -1,9 +1,4 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using HKLib.hk2018.hkAsyncThreadPool;
-using ImGuiNET;
-using SoulsFormats;
-using StudioCore.Banks.FormatBank;
-using StudioCore.Configuration;
+﻿using ImGuiNET;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
@@ -13,35 +8,15 @@ using StudioCore.Editors.GparamEditor.Framework;
 using StudioCore.Editors.GparamEditor.Tools;
 using StudioCore.Interface;
 using StudioCore.Utilities;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Text.RegularExpressions;
 using Veldrid;
 using Veldrid.Sdl2;
-using static SoulsFormats.GPARAM;
-using static StudioCore.Editors.GparamEditor.Actions.GparamEditorActions;
-using static StudioCore.Editors.GparamEditor.Data.GparamParamBank;
 
 namespace StudioCore.GraphicsEditor;
 
 public class GparamEditorScreen : EditorScreen
 {
     public ActionManager EditorActionManager = new();
-
-    private string _fileSearchInput = "";
-    private string _fileSearchInputCache = "";
-
-    private string _paramGroupSearchInput = "";
-    private string _paramGroupSearchInputCache = "";
-
-    private string _paramFieldSearchInput = "";
-    private string _paramFieldSearchInputCache = "";
-
-    private string _fieldIdSearchInput = "";
-    private string _fieldIdSearchInputCache = "";
-
 
     public GparamSelectionManager Selection;
 

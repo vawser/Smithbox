@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Editor;
+using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.GparamEditor.Utils;
 using StudioCore.Editors.TextureViewer;
@@ -13,7 +14,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Editors.GparamEditor.Actions.GparamEditorActions;
 
 namespace StudioCore.Editors.GparamEditor;
 

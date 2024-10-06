@@ -2,6 +2,7 @@
 using ImGuiNET;
 using Octokit;
 using SoulsFormats;
+using StudioCore.Editors.EmevdEditor.Framework;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
 using System;
@@ -25,6 +26,8 @@ public class EmevdInstructionPropertyView
     private EmevdPropertyDecorator Decorator;
     private EmevdSelectionManager Selection;
     private EmevdPropertyEditor PropEditor;
+    private EmevdParameterManager ParameterManager;
+
     public List<ArgDoc> ArgumentDocs { get; set; }
     public List<object> Arguments { get; set; }
 
@@ -33,6 +36,7 @@ public class EmevdInstructionPropertyView
         Screen = screen;
         Decorator = screen.Decorator;
         Selection = screen.Selection;
+        ParameterManager = screen.ParameterManager;
         PropEditor = new EmevdPropertyEditor(screen, this);
     }
 

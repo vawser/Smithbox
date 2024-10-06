@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.GraphicsEditor;
@@ -12,8 +13,6 @@ using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
-using static StudioCore.Editors.GparamEditor.Actions.GparamEditorActions;
-using static StudioCore.Editors.GparamEditor.Actions.GparamEditorActions.GparamValueChangeAction;
 
 namespace StudioCore.Editors.GparamEditor.Framework
 {
