@@ -4,7 +4,6 @@ using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
-using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ParticleEditor;
 using StudioCore.Interface;

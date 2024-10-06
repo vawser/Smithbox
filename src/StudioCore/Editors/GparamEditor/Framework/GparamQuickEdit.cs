@@ -2,8 +2,8 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.GparamEditor.Enums;
-using StudioCore.Editors.GraphicsEditor;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -12,10 +12,10 @@ using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
-using static StudioCore.Editors.GparamEditor.GparamEditorActions;
-using static StudioCore.Editors.GparamEditor.GparamEditorActions.GparamValueChangeAction;
+using static StudioCore.Editors.GparamEditor.Actions.GparamEditorActions;
+using static StudioCore.Editors.GparamEditor.Actions.GparamEditorActions.GparamValueChangeAction;
 
-namespace StudioCore.Editors.GparamEditor
+namespace StudioCore.Editors.GparamEditor.Framework
 {
     public class GparamQuickEdit
     {
@@ -43,22 +43,6 @@ namespace StudioCore.Editors.GparamEditor
             RandomSource = RandomNumberGenerator.Create();
         }
 
-        public void Shortcuts()
-        {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_ExecuteQuickEdit))
-            {
-                ExecuteQuickEdit();
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_GenerateQuickEdit))
-            {
-                GenerateQuickEditCommands();
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_ClearQuickEdit))
-            {
-                ClearQuickEditCommands();
-            }
-        }
-
         private bool displayFileFilterSection = true;
         private bool displayGroupFilterSection = true;
         private bool displayFieldFilterSection = true;
@@ -70,7 +54,7 @@ namespace StudioCore.Editors.GparamEditor
             ImGui.Separator();
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "File Filters:");
             ImGui.SameLine();
-            if(ImGui.Button($"{ForkAwesome.Bars}##fileFilterToggle"))
+            if (ImGui.Button($"{ForkAwesome.Bars}##fileFilterToggle"))
             {
                 displayFileFilterSection = !displayFileFilterSection;
             }
@@ -270,39 +254,39 @@ namespace StudioCore.Editors.GparamEditor
             _targetFieldString = "";
             _valueFilterString = "";
 
-            if (Screen._selectedGparamKey != null)
+            if (Screen.Selection._selectedGparamKey != null)
             {
-                UpdateFileFilter(Screen._selectedGparamKey);
+                UpdateFileFilter(Screen.Selection._selectedGparamKey);
             }
             else
             {
                 _valueFilterString = "*";
             }
 
-            if (Screen._selectedParamGroup != null)
+            if (Screen.Selection._selectedParamGroup != null)
             {
-                UpdateGroupFilter(Screen._selectedParamGroup.Key);
+                UpdateGroupFilter(Screen.Selection._selectedParamGroup.Key);
             }
             else
             {
                 _valueFilterString = "*";
             }
 
-            if (Screen._selectedParamField != null)
+            if (Screen.Selection._selectedParamField != null)
             {
-                UpdateFieldFilter(Screen._selectedParamField.Key);
+                UpdateFieldFilter(Screen.Selection._selectedParamField.Key);
             }
             else
             {
                 _valueFilterString = "*";
             }
 
-            if (Screen._selectedParamField != null)
+            if (Screen.Selection._selectedParamField != null)
             {
                 var fieldIndex = -1;
-                for (int i = 0; i < Screen._selectedParamField.Values.Count; i++)
+                for (int i = 0; i < Screen.Selection._selectedParamField.Values.Count; i++)
                 {
-                    if (Screen._selectedParamField.Values[i] == Screen._selectedFieldValue)
+                    if (Screen.Selection._selectedParamField.Values[i] == Screen.Selection._selectedFieldValue)
                     {
                         fieldIndex = i;
                         break;
@@ -320,7 +304,7 @@ namespace StudioCore.Editors.GparamEditor
             }
         }
 
-        private void ExecuteQuickEdit()
+        public void ExecuteQuickEdit()
         {
             List<string> resolvedList = new();
             string curParamName = "";
@@ -366,14 +350,14 @@ namespace StudioCore.Editors.GparamEditor
                 }
             }
 
-            if(resolvedList.Count > 0)
+            if (resolvedList.Count > 0)
             {
-                foreach(var entry in resolvedList)
+                foreach (var entry in resolvedList)
                 {
                     //TaskLogs.AddLog($"Applied Quick Edit to: {entry}");
                 }
 
-                if(actionList.Count > 0)
+                if (actionList.Count > 0)
                 {
                     var compoundAction = new CompoundAction(actionList);
                     Screen.EditorActionManager.ExecuteAction(compoundAction);
@@ -398,9 +382,9 @@ namespace StudioCore.Editors.GparamEditor
                     continue;
                 }
 
-                if(command == "selection")
+                if (command == "selection")
                 {
-                    if(Screen._selectedGparamKey == name)
+                    if (Screen.Selection._selectedGparamKey == name)
                     {
                         match = true;
                         continue;
@@ -438,7 +422,7 @@ namespace StudioCore.Editors.GparamEditor
 
                 if (command == "selection")
                 {
-                    if (Screen._selectedParamGroup.Key == entry.Key || Screen._selectedParamGroup.Name == entry.Name)
+                    if (Screen.Selection._selectedParamGroup.Key == entry.Key || Screen.Selection._selectedParamGroup.Name == entry.Name)
                     {
                         match = true;
                         continue;
@@ -468,7 +452,7 @@ namespace StudioCore.Editors.GparamEditor
             var commands = _targetFieldString.Split($"{CFG.Current.Gparam_QuickEdit_Chain}");
             foreach (var command in commands)
             {
-                if(command == "*")
+                if (command == "*")
                 {
                     match = true;
                     continue;
@@ -476,7 +460,7 @@ namespace StudioCore.Editors.GparamEditor
 
                 if (command == "selection")
                 {
-                    if (Screen._selectedParamField.Key == entry.Key)
+                    if (Screen.Selection._selectedParamField.Key == entry.Key)
                     {
                         match = true;
                         continue;
@@ -502,7 +486,7 @@ namespace StudioCore.Editors.GparamEditor
 
         public void UpdateFileFilter(string name)
         {
-            if(_targetFileString != "")
+            if (_targetFileString != "")
             {
                 _targetFileString = $"{_targetFileString}+{CFG.Current.Gparam_QuickEdit_File}:[{name}]";
             }
@@ -597,15 +581,15 @@ namespace StudioCore.Editors.GparamEditor
             // Find vanilla value
             foreach (var (name, info) in GparamParamBank.VanillaParamBank)
             {
-                if (name == Screen._selectedGparamKey)
+                if (name == Screen.Selection._selectedGparamKey)
                 {
                     foreach (var paramGroup in info.Gparam.Params)
                     {
-                        if (paramGroup.Key == Screen._selectedParamGroup.Key)
+                        if (paramGroup.Key == Screen.Selection._selectedParamGroup.Key)
                         {
                             foreach (var paramField in paramGroup.Fields)
                             {
-                                if (paramField.Key == Screen._selectedParamField.Key)
+                                if (paramField.Key == Screen.Selection._selectedParamField.Key)
                                 {
                                     if (paramField.Values.Count > index)
                                     {
@@ -633,7 +617,7 @@ namespace StudioCore.Editors.GparamEditor
 
             Match valueCommandMatch = null;
 
-            if(effectType == EditEffectType.Set)
+            if (effectType == EditEffectType.Set)
             {
                 valueCommandMatch = Regex.Match(commandArg, $@"{CFG.Current.Gparam_QuickEdit_Set}:\[(.*)\]");
             }
@@ -670,9 +654,9 @@ namespace StudioCore.Editors.GparamEditor
             // Ignore commands that are not set for bools
             if (targetField is GPARAM.BoolField)
             {
-                if (effectType == EditEffectType.Add || 
-                    effectType == EditEffectType.Subtract || 
-                    effectType == EditEffectType.Multiply || 
+                if (effectType == EditEffectType.Add ||
+                    effectType == EditEffectType.Subtract ||
+                    effectType == EditEffectType.Multiply ||
                     effectType == EditEffectType.SetByRow)
                 {
                     return;
@@ -681,22 +665,22 @@ namespace StudioCore.Editors.GparamEditor
 
             var proceed = false;
 
-            if(effectType is EditEffectType.Set or EditEffectType.Add or EditEffectType.Subtract or EditEffectType.Multiply or EditEffectType.SetByRow)
+            if (effectType is EditEffectType.Set or EditEffectType.Add or EditEffectType.Subtract or EditEffectType.Multiply or EditEffectType.SetByRow)
             {
-                if(valueCommandMatch.Success && valueCommandMatch.Groups.Count >= 2)
+                if (valueCommandMatch.Success && valueCommandMatch.Groups.Count >= 2)
                 {
                     proceed = true;
                 }
             }
             // Separate since Restore doesn't have pass a parameter
-            else if(effectType is EditEffectType.Restore)
+            else if (effectType is EditEffectType.Restore)
             {
-                if(valueCommandMatch.Success)
+                if (valueCommandMatch.Success)
                 {
                     proceed = true;
                 }
             }
-            else if(effectType is EditEffectType.Random)
+            else if (effectType is EditEffectType.Random)
             {
                 if (valueCommandMatch.Success && valueCommandMatch.Groups.Count >= 3)
                 {
@@ -765,7 +749,7 @@ namespace StudioCore.Editors.GparamEditor
                                     GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Multiplication);
                                     actions.Add(action);
                                 }
-                                if(effectType == EditEffectType.SetByRow)
+                                if (effectType == EditEffectType.SetByRow)
                                 {
                                     if (intField.Values.Any(x => x.Id == rowsetId))
                                     {
@@ -794,7 +778,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (valid_secondary)
                                     {
-                                        int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
+                                        int newValue = StudioCore.Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
                                         GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, newValue, i, ValueChangeType.Set);
                                         actions.Add(action);
                                     }
@@ -816,7 +800,7 @@ namespace StudioCore.Editors.GparamEditor
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName,  targetField, entry, commandValue, i, ValueChangeType.Addition);
+                                    GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, commandValue, i, ValueChangeType.Addition);
                                     actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
@@ -858,7 +842,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (valid_secondary)
                                     {
-                                        int newValue = Utils.GenerateRandomInt(RandomSource, (int)commandValue, commandValue_secondary);
+                                        int newValue = StudioCore.Utils.GenerateRandomInt(RandomSource, (int)commandValue, commandValue_secondary);
 
                                         GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, (uint)newValue, i, ValueChangeType.Set);
                                         actions.Add(action);
@@ -923,7 +907,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (valid_secondary)
                                     {
-                                        int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
+                                        int newValue = StudioCore.Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
 
                                         if (newValue > short.MaxValue)
                                             newValue = short.MaxValue;
@@ -991,7 +975,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (valid_secondary)
                                     {
-                                        int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
+                                        int newValue = StudioCore.Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
 
                                         if (newValue > sbyte.MaxValue)
                                             newValue = sbyte.MaxValue;
@@ -1059,7 +1043,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (valid_secondary)
                                     {
-                                        int newValue = Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
+                                        int newValue = StudioCore.Utils.GenerateRandomInt(RandomSource, commandValue, commandValue_secondary);
 
                                         if (newValue > byte.MaxValue)
                                             newValue = byte.MaxValue;
@@ -1101,7 +1085,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (valid_secondary)
                                     {
-                                        double newValue = Utils.GenerateRandomDouble(RandomSource, 0, 1);
+                                        double newValue = StudioCore.Utils.GenerateRandomDouble(RandomSource, 0, 1);
 
                                         bool newBool = false;
 
@@ -1177,7 +1161,7 @@ namespace StudioCore.Editors.GparamEditor
 
                                     if (valid_secondary)
                                     {
-                                        double newValue = Utils.GenerateRandomDouble(RandomSource, (double)commandValue, (double)commandValue_secondary);
+                                        double newValue = StudioCore.Utils.GenerateRandomDouble(RandomSource, (double)commandValue, (double)commandValue_secondary);
 
                                         GparamValueChangeAction action = new GparamValueChangeAction(gparamName, groupName, targetField, entry, (float)newValue, i, ValueChangeType.Set);
                                         actions.Add(action);
@@ -1228,7 +1212,7 @@ namespace StudioCore.Editors.GparamEditor
                                 float commandValue2 = 0.0f;
                                 var valid2 = float.TryParse(parts[1], out commandValue2);
 
-                                if(valid1 && valid2)
+                                if (valid1 && valid2)
                                 {
                                     commandValue = new Vector2(commandValue1, commandValue2);
 
@@ -1266,9 +1250,9 @@ namespace StudioCore.Editors.GparamEditor
 
                                             if (valid_secondary1 && valid_secondary2)
                                             {
-                                                double newValue1 = Utils.GenerateRandomDouble(
+                                                double newValue1 = StudioCore.Utils.GenerateRandomDouble(
                                                     RandomSource, (double)commandValue1, (double)commandValue_secondary1);
-                                                double newValue2 = Utils.GenerateRandomDouble(
+                                                double newValue2 = StudioCore.Utils.GenerateRandomDouble(
                                                     RandomSource, (double)commandValue2, (double)commandValue_secondary2);
 
                                                 Vector2 newValue = new Vector2((float)newValue1, (float)newValue2);
@@ -1368,11 +1352,11 @@ namespace StudioCore.Editors.GparamEditor
 
                                             if (valid_secondary1 && valid_secondary2 && valid_secondary3)
                                             {
-                                                double newValue1 = Utils.GenerateRandomDouble(
+                                                double newValue1 = StudioCore.Utils.GenerateRandomDouble(
                                                     RandomSource, (double)commandValue1, (double)commandValue_secondary1);
-                                                double newValue2 = Utils.GenerateRandomDouble(
+                                                double newValue2 = StudioCore.Utils.GenerateRandomDouble(
                                                     RandomSource, (double)commandValue2, (double)commandValue_secondary2);
-                                                double newValue3 = Utils.GenerateRandomDouble(
+                                                double newValue3 = StudioCore.Utils.GenerateRandomDouble(
                                                     RandomSource, (double)commandValue3, (double)commandValue_secondary3);
 
                                                 Vector3 newValue = new Vector3((float)newValue1, (float)newValue2, (float)newValue3);
@@ -1478,13 +1462,13 @@ namespace StudioCore.Editors.GparamEditor
 
                                             if (valid_secondary1 && valid_secondary2 && valid_secondary3 && valid_secondary4)
                                             {
-                                                double newValue1 = Utils.GenerateRandomDouble(
+                                                double newValue1 = StudioCore.Utils.GenerateRandomDouble(
                                                     RandomSource, (double)commandValue1, (double)commandValue_secondary1);
-                                                double newValue2 = Utils.GenerateRandomDouble(
+                                                double newValue2 = StudioCore.Utils.GenerateRandomDouble(
                                                     RandomSource, (double)commandValue2, (double)commandValue_secondary2);
-                                                double newValue3 = Utils.GenerateRandomDouble(
+                                                double newValue3 = StudioCore.Utils.GenerateRandomDouble(
                                                     RandomSource, (double)commandValue3, (double)commandValue_secondary3);
-                                                double newValue4 = Utils.GenerateRandomDouble(
+                                                double newValue4 = StudioCore.Utils.GenerateRandomDouble(
                                                     RandomSource, (double)commandValue4, (double)commandValue_secondary4);
 
                                                 Vector4 newValue = new Vector4((float)newValue1, (float)newValue2, (float)newValue3, (float)newValue4);
@@ -1522,7 +1506,7 @@ namespace StudioCore.Editors.GparamEditor
             {
                 for (int i = 0; i < targetField.Values.Count; i++)
                 {
-                    if(Screen._selectedFieldValueKey == i)
+                    if (Screen.Selection._selectedFieldValueKey == i)
                     {
                         filterTruth[i] = true;
                     }

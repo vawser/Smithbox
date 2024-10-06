@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
-using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.Tools;
@@ -13,20 +12,15 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor.Tools;
 
-public class ToolSubMenu
+public class GparamToolMenubar
 {
     private GparamEditorScreen Screen;
-    public ActionHandler Handler;
+    public GparamActionHandler Handler;
 
-    public ToolSubMenu(GparamEditorScreen screen)
+    public GparamToolMenubar(GparamEditorScreen screen)
     {
         Screen = screen;
-        Handler = new ActionHandler(screen);
-    }
-
-    public void Shortcuts()
-    {
-
+        Handler = new GparamActionHandler(screen);
     }
 
     public void OnProjectChanged()

@@ -10,11 +10,11 @@ using System.Drawing;
 using System.Numerics;
 using System.Reflection;
 using static SoulsFormats.GPARAM;
-using static StudioCore.Editors.GparamEditor.GparamEditorActions;
-using static StudioCore.Editors.GraphicsEditor.GparamParamBank;
+using static StudioCore.Editors.GparamEditor.Actions.GparamEditorActions;
+using static StudioCore.Editors.GparamEditor.Data.GparamParamBank;
 
-namespace StudioCore.Editors.GparamEditor;
-public class GparamEditor
+namespace StudioCore.Editors.GparamEditor.Core;
+public class GparamPropertyEditor
 {
     private GparamEditorScreen Screen;
 
@@ -32,7 +32,7 @@ public class GparamEditor
     private bool _isHoldingColor;
     private Vector4 _heldColor;
 
-    public GparamEditor(GparamEditorScreen screen)
+    public GparamPropertyEditor(GparamEditorScreen screen)
     {
         Screen = screen;
     }
@@ -49,7 +49,7 @@ public class GparamEditor
         object newValue = null;
 
         // INT
-        if (field is GPARAM.IntField intField)
+        if (field is IntField intField)
         {
             int fieldValue = intField.Values[idx].Value;
             int intInput = fieldValue;
@@ -91,7 +91,7 @@ public class GparamEditor
             }
         }
         // UINT
-        else if (field is GPARAM.UintField uintField)
+        else if (field is UintField uintField)
         {
             uint fieldValue = uintField.Values[idx].Value;
             uint uintInput = fieldValue;
@@ -137,7 +137,7 @@ public class GparamEditor
             }
         }
         // SHORT
-        else if (field is GPARAM.ShortField shortField)
+        else if (field is ShortField shortField)
         {
             short fieldValue = shortField.Values[idx].Value;
             int shortInput = fieldValue;
@@ -168,7 +168,7 @@ public class GparamEditor
             {
                 if (ImGui.InputInt($"##value{idx}", ref shortInput))
                 {
-                     newValue = shortInput;
+                    newValue = shortInput;
                     _editedValueCache = newValue;
                     _changedCache = true;
                 }
@@ -176,7 +176,7 @@ public class GparamEditor
             }
         }
         // SBYTE
-        else if (field is GPARAM.SbyteField sbyteField)
+        else if (field is SbyteField sbyteField)
         {
             sbyte fieldValue = sbyteField.Values[idx].Value;
             int sbyteInput = fieldValue;
@@ -215,7 +215,7 @@ public class GparamEditor
             }
         }
         // BYTE
-        else if (field is GPARAM.ByteField byteField)
+        else if (field is ByteField byteField)
         {
             byte fieldValue = byteField.Values[idx].Value;
             byte byteInput = fieldValue;
@@ -261,7 +261,7 @@ public class GparamEditor
             }
         }
         // BOOL
-        else if (field is GPARAM.BoolField boolField)
+        else if (field is BoolField boolField)
         {
             bool fieldValue = boolField.Values[idx].Value;
             bool boolInput = fieldValue;
@@ -276,14 +276,13 @@ public class GparamEditor
             _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
         // FLOAT
-        else if (field is GPARAM.FloatField floatField)
+        else if (field is FloatField floatField)
         {
             float fieldValue = floatField.Values[idx].Value;
             float floatInput = fieldValue;
             oldValue = fieldValue;
 
-            if (ImGui.InputFloat($"##value{idx}", ref floatInput, 0.1f, 1.0f, 
-                Utils.ImGui_InputFloatFormat(floatInput)))
+            if (ImGui.InputFloat($"##value{idx}", ref floatInput, 0.1f, 1.0f, StudioCore.Utils.ImGui_InputFloatFormat(floatInput)))
             {
                 newValue = floatInput;
                 _editedValueCache = newValue;
@@ -292,7 +291,7 @@ public class GparamEditor
             _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
         // VECTOR2
-        else if (field is GPARAM.Vector2Field vector2Field)
+        else if (field is Vector2Field vector2Field)
         {
             Vector2 fieldValue = vector2Field.Values[idx].Value;
             Vector2 vector2Input = fieldValue;
@@ -307,7 +306,7 @@ public class GparamEditor
             _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
         // VECTOR3
-        else if (field is GPARAM.Vector3Field vector3Field)
+        else if (field is Vector3Field vector3Field)
         {
             Vector3 fieldValue = vector3Field.Values[idx].Value;
             Vector3 vector3Input = fieldValue;
@@ -322,7 +321,7 @@ public class GparamEditor
             _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
         // VECTOR4
-        else if (field is GPARAM.Vector4Field vector4Field &&
+        else if (field is Vector4Field vector4Field &&
             !CFG.Current.Gparam_DisplayColorEditForVector4Fields)
         {
             Vector4 fieldValue = vector4Field.Values[idx].Value;
@@ -338,7 +337,7 @@ public class GparamEditor
             _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
         // VECTOR4 (COLOR EDIT)
-        else if (field is GPARAM.Vector4Field vectorColorField && 
+        else if (field is Vector4Field vectorColorField &&
             CFG.Current.Gparam_DisplayColorEditForVector4Fields)
         {
             Vector4 fieldValue = vectorColorField.Values[idx].Value;
@@ -353,7 +352,7 @@ public class GparamEditor
 
             var flags = ImGuiColorEditFlags.None;
 
-            if(CFG.Current.Gparam_ColorEdit_RGB)
+            if (CFG.Current.Gparam_ColorEdit_RGB)
             {
                 flags = ImGuiColorEditFlags.DisplayRGB;
             }
@@ -383,7 +382,7 @@ public class GparamEditor
             }
         }
         // COLOR
-        else if (field is GPARAM.ColorField colorField)
+        else if (field is ColorField colorField)
         {
             Color raw = colorField.Values[idx].Value;
             Vector4 fieldValue = new(raw.R / 255.0f, raw.G / 255.0f, raw.B / 255.0f, raw.A / 255.0f);
@@ -420,13 +419,13 @@ public class GparamEditor
         {
             if (_committedCache)
             {
-                if(_isHoldingColor)
+                if (_isHoldingColor)
                 {
                     _isHoldingColor = false;
 
                     // Reset color to original color befor edit
                     // so undo reverts in the expected fashion
-                    if (field is GPARAM.Vector4Field vector4Field)
+                    if (field is Vector4Field vector4Field)
                     {
                         vector4Field.Values[idx].Value = _heldColor;
                     }
@@ -440,13 +439,13 @@ public class GparamEditor
                 {
                     _selectedGparamInfo.WasModified = true;
                     GparamValueChangeAction action = null;
-                    action = new GparamValueChangeAction(Screen._selectedGparamKey, Screen._selectedParamGroup.Name, field, value, newValue, idx, ValueChangeType.Set);
+                    action = new GparamValueChangeAction(Screen.Selection._selectedGparamKey, Screen.Selection._selectedParamGroup.Name, field, value, newValue, idx, ValueChangeType.Set);
 
                     Screen.EditorActionManager.ExecuteAction(action);
                 }
             }
             // Only used for Vec4 color
-            else if(_uncommittedCache)
+            else if (_uncommittedCache)
             {
                 if (newValue == null)
                 {
@@ -454,7 +453,7 @@ public class GparamEditor
                 }
                 else
                 {
-                    if (field is GPARAM.Vector4Field vector4Field)
+                    if (field is Vector4Field vector4Field)
                     {
                         var assignedValue = (Vector4)newValue;
                         var result = assignedValue;
@@ -506,7 +505,7 @@ public class GparamEditor
                 {
                     _selectedGparamInfo.WasModified = true;
                     GparamTimeOfDayChangeAction action = null;
-                    action = new GparamTimeOfDayChangeAction(Screen._selectedGparamKey, Screen._selectedParamGroup.Name, field, value, newValue, idx);
+                    action = new GparamTimeOfDayChangeAction(Screen.Selection._selectedGparamKey, Screen.Selection._selectedParamGroup.Name, field, value, newValue, idx);
 
                     Screen.EditorActionManager.ExecuteAction(action);
                 }
@@ -533,7 +532,7 @@ public class GparamEditor
             {
                 var values = field.Values;
 
-                foreach(var val in values)
+                foreach (var val in values)
                 {
                     if (!newGroupIndexList.Ids.Contains(val.Id))
                     {
@@ -560,9 +559,9 @@ public class GparamEditor
     {
         if (targetField is SbyteField sbyteField)
         {
-            GPARAM.SbyteField castField = (SbyteField)targetField;
+            SbyteField castField = (SbyteField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<sbyte>();
+            var dupeVal = new FieldValue<sbyte>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (sbyte)targetValue.Value;
@@ -571,9 +570,9 @@ public class GparamEditor
         }
         if (targetField is ByteField byteField)
         {
-            GPARAM.ByteField castField = (ByteField)targetField;
+            ByteField castField = (ByteField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<byte>();
+            var dupeVal = new FieldValue<byte>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (byte)targetValue.Value;
@@ -582,9 +581,9 @@ public class GparamEditor
         }
         if (targetField is ShortField shortField)
         {
-            GPARAM.ShortField castField = (ShortField)targetField;
+            ShortField castField = (ShortField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<short>();
+            var dupeVal = new FieldValue<short>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (short)targetValue.Value;
@@ -593,9 +592,9 @@ public class GparamEditor
         }
         if (targetField is IntField intField)
         {
-            GPARAM.IntField castField = (IntField)targetField;
+            IntField castField = (IntField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<int>();
+            var dupeVal = new FieldValue<int>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (int)targetValue.Value;
@@ -604,9 +603,9 @@ public class GparamEditor
         }
         if (targetField is UintField uintField)
         {
-            GPARAM.UintField castField = (UintField)targetField;
+            UintField castField = (UintField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<uint>();
+            var dupeVal = new FieldValue<uint>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (uint)targetValue.Value;
@@ -615,9 +614,9 @@ public class GparamEditor
         }
         if (targetField is FloatField floatField)
         {
-            GPARAM.FloatField castField = (FloatField)targetField;
+            FloatField castField = (FloatField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<float>();
+            var dupeVal = new FieldValue<float>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (float)targetValue.Value;
@@ -626,9 +625,9 @@ public class GparamEditor
         }
         if (targetField is BoolField boolField)
         {
-            GPARAM.BoolField castField = (BoolField)targetField;
+            BoolField castField = (BoolField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<bool>();
+            var dupeVal = new FieldValue<bool>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (bool)targetValue.Value;
@@ -637,9 +636,9 @@ public class GparamEditor
         }
         if (targetField is Vector2Field vector2Field)
         {
-            GPARAM.Vector2Field castField = (Vector2Field)targetField;
+            Vector2Field castField = (Vector2Field)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<Vector2>();
+            var dupeVal = new FieldValue<Vector2>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (Vector2)targetValue.Value;
@@ -648,9 +647,9 @@ public class GparamEditor
         }
         if (targetField is Vector3Field vector3Field)
         {
-            GPARAM.Vector3Field castField = (Vector3Field)targetField;
+            Vector3Field castField = (Vector3Field)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<Vector3>();
+            var dupeVal = new FieldValue<Vector3>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (Vector3)targetValue.Value;
@@ -659,9 +658,9 @@ public class GparamEditor
         }
         if (targetField is Vector4Field vector4Field)
         {
-            GPARAM.Vector4Field castField = (Vector4Field)targetField;
+            Vector4Field castField = (Vector4Field)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<Vector4>();
+            var dupeVal = new FieldValue<Vector4>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (Vector4)targetValue.Value;
@@ -670,9 +669,9 @@ public class GparamEditor
         }
         if (targetField is ColorField colorField)
         {
-            GPARAM.ColorField castField = (ColorField)targetField;
+            ColorField castField = (ColorField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<Color>();
+            var dupeVal = new FieldValue<Color>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (Color)targetValue.Value;
@@ -691,9 +690,9 @@ public class GparamEditor
     {
         if (targetField is SbyteField sbyteField)
         {
-            GPARAM.SbyteField castField = (SbyteField)targetField;
+            SbyteField castField = (SbyteField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<sbyte>();
+            var dupeVal = new FieldValue<sbyte>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (sbyte)targetValue.Value;
@@ -702,9 +701,9 @@ public class GparamEditor
         }
         if (targetField is ByteField byteField)
         {
-            GPARAM.ByteField castField = (ByteField)targetField;
+            ByteField castField = (ByteField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<byte>();
+            var dupeVal = new FieldValue<byte>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (byte)targetValue.Value;
@@ -713,9 +712,9 @@ public class GparamEditor
         }
         if (targetField is ShortField shortField)
         {
-            GPARAM.ShortField castField = (ShortField)targetField;
+            ShortField castField = (ShortField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<short>();
+            var dupeVal = new FieldValue<short>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (short)targetValue.Value;
@@ -724,9 +723,9 @@ public class GparamEditor
         }
         if (targetField is IntField intField)
         {
-            GPARAM.IntField castField = (IntField)targetField;
+            IntField castField = (IntField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<int>();
+            var dupeVal = new FieldValue<int>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (int)targetValue.Value;
@@ -735,9 +734,9 @@ public class GparamEditor
         }
         if (targetField is UintField uintField)
         {
-            GPARAM.UintField castField = (UintField)targetField;
+            UintField castField = (UintField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<uint>();
+            var dupeVal = new FieldValue<uint>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (uint)targetValue.Value;
@@ -746,9 +745,9 @@ public class GparamEditor
         }
         if (targetField is FloatField floatField)
         {
-            GPARAM.FloatField castField = (FloatField)targetField;
+            FloatField castField = (FloatField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<float>();
+            var dupeVal = new FieldValue<float>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (float)targetValue.Value;
@@ -757,9 +756,9 @@ public class GparamEditor
         }
         if (targetField is BoolField boolField)
         {
-            GPARAM.BoolField castField = (BoolField)targetField;
+            BoolField castField = (BoolField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<bool>();
+            var dupeVal = new FieldValue<bool>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (bool)targetValue.Value;
@@ -768,9 +767,9 @@ public class GparamEditor
         }
         if (targetField is Vector2Field vector2Field)
         {
-            GPARAM.Vector2Field castField = (Vector2Field)targetField;
+            Vector2Field castField = (Vector2Field)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<Vector2>();
+            var dupeVal = new FieldValue<Vector2>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (Vector2)targetValue.Value;
@@ -779,9 +778,9 @@ public class GparamEditor
         }
         if (targetField is Vector3Field vector3Field)
         {
-            GPARAM.Vector3Field castField = (Vector3Field)targetField;
+            Vector3Field castField = (Vector3Field)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<Vector3>();
+            var dupeVal = new FieldValue<Vector3>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (Vector3)targetValue.Value;
@@ -790,9 +789,9 @@ public class GparamEditor
         }
         if (targetField is Vector4Field vector4Field)
         {
-            GPARAM.Vector4Field castField = (Vector4Field)targetField;
+            Vector4Field castField = (Vector4Field)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<Vector4>();
+            var dupeVal = new FieldValue<Vector4>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (Vector4)targetValue.Value;
@@ -801,9 +800,9 @@ public class GparamEditor
         }
         if (targetField is ColorField colorField)
         {
-            GPARAM.ColorField castField = (ColorField)targetField;
+            ColorField castField = (ColorField)targetField;
 
-            var dupeVal = new GPARAM.FieldValue<Color>();
+            var dupeVal = new FieldValue<Color>();
             dupeVal.Id = newRowId;
             dupeVal.Unk04 = targetValue.Unk04;
             dupeVal.Value = (Color)targetValue.Value;
@@ -821,57 +820,57 @@ public class GparamEditor
     {
         if (targetField is SbyteField sbyteField)
         {
-            GPARAM.SbyteField castField = (SbyteField)targetField;
+            SbyteField castField = (SbyteField)targetField;
             castField.Values.Remove((FieldValue<sbyte>)targetValue);
         }
         if (targetField is ByteField byteField)
         {
-            GPARAM.ByteField castField = (ByteField)targetField;
+            ByteField castField = (ByteField)targetField;
             castField.Values.Remove((FieldValue<byte>)targetValue);
         }
         if (targetField is ShortField shortField)
         {
-            GPARAM.ShortField castField = (ShortField)targetField;
+            ShortField castField = (ShortField)targetField;
             castField.Values.Remove((FieldValue<short>)targetValue);
         }
         if (targetField is IntField intField)
         {
-            GPARAM.IntField castField = (IntField)targetField;
+            IntField castField = (IntField)targetField;
             castField.Values.Remove((FieldValue<int>)targetValue);
         }
         if (targetField is UintField uintField)
         {
-            GPARAM.UintField castField = (UintField)targetField;
+            UintField castField = (UintField)targetField;
             castField.Values.Remove((FieldValue<uint>)targetValue);
         }
         if (targetField is FloatField floatField)
         {
-            GPARAM.FloatField castField = (FloatField)targetField;
+            FloatField castField = (FloatField)targetField;
             castField.Values.Remove((FieldValue<float>)targetValue);
         }
         if (targetField is BoolField boolField)
         {
-            GPARAM.BoolField castField = (BoolField)targetField;
+            BoolField castField = (BoolField)targetField;
             castField.Values.Remove((FieldValue<bool>)targetValue);
         }
         if (targetField is Vector2Field vector2Field)
         {
-            GPARAM.Vector2Field castField = (Vector2Field)targetField;
+            Vector2Field castField = (Vector2Field)targetField;
             castField.Values.Remove((FieldValue<Vector2>)targetValue);
         }
         if (targetField is Vector3Field vector3Field)
         {
-            GPARAM.Vector3Field castField = (Vector3Field)targetField;
+            Vector3Field castField = (Vector3Field)targetField;
             castField.Values.Remove((FieldValue<Vector3>)targetValue);
         }
         if (targetField is Vector4Field vector4Field)
         {
-            GPARAM.Vector4Field castField = (Vector4Field)targetField;
+            Vector4Field castField = (Vector4Field)targetField;
             castField.Values.Remove((FieldValue<Vector4>)targetValue);
         }
         if (targetField is ColorField colorField)
         {
-            GPARAM.ColorField castField = (ColorField)targetField;
+            ColorField castField = (ColorField)targetField;
             castField.Values.Remove((FieldValue<Color>)targetValue);
         }
     }
@@ -887,20 +886,20 @@ public class GparamEditor
 
         if (targetField is SbyteField sbyteField)
         {
-            GPARAM.SbyteField castField = (SbyteField)targetField;
-            for(int i = 0; i < castField.Values.Count; i++)
+            SbyteField castField = (SbyteField)targetField;
+            for (int i = 0; i < castField.Values.Count; i++)
             {
                 if (castField.Values[i].Id == rowId)
                 {
                     targetIndex = i;
                 }
             }
-            if(targetIndex != -1)
+            if (targetIndex != -1)
                 castField.Values.RemoveAt(targetIndex);
         }
         if (targetField is ByteField byteField)
         {
-            GPARAM.ByteField castField = (ByteField)targetField;
+            ByteField castField = (ByteField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
                 if (castField.Values[i].Id == rowId)
@@ -913,7 +912,7 @@ public class GparamEditor
         }
         if (targetField is ShortField shortField)
         {
-            GPARAM.ShortField castField = (ShortField)targetField;
+            ShortField castField = (ShortField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
                 if (castField.Values[i].Id == rowId)
@@ -926,7 +925,7 @@ public class GparamEditor
         }
         if (targetField is IntField intField)
         {
-            GPARAM.IntField castField = (IntField)targetField;
+            IntField castField = (IntField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
                 if (castField.Values[i].Id == rowId)
@@ -939,7 +938,7 @@ public class GparamEditor
         }
         if (targetField is UintField uintField)
         {
-            GPARAM.UintField castField = (UintField)targetField;
+            UintField castField = (UintField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
                 if (castField.Values[i].Id == rowId)
@@ -952,7 +951,7 @@ public class GparamEditor
         }
         if (targetField is FloatField floatField)
         {
-            GPARAM.FloatField castField = (FloatField)targetField;
+            FloatField castField = (FloatField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
                 if (castField.Values[i].Id == rowId)
@@ -965,7 +964,7 @@ public class GparamEditor
         }
         if (targetField is BoolField boolField)
         {
-            GPARAM.BoolField castField = (BoolField)targetField;
+            BoolField castField = (BoolField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
                 if (castField.Values[i].Id == rowId)
@@ -978,7 +977,7 @@ public class GparamEditor
         }
         if (targetField is Vector2Field vector2Field)
         {
-            GPARAM.Vector2Field castField = (Vector2Field)targetField;
+            Vector2Field castField = (Vector2Field)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
                 if (castField.Values[i].Id == rowId)
@@ -991,7 +990,7 @@ public class GparamEditor
         }
         if (targetField is Vector3Field vector3Field)
         {
-            GPARAM.Vector3Field castField = (Vector3Field)targetField;
+            Vector3Field castField = (Vector3Field)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
                 if (castField.Values[i].Id == rowId)
@@ -1004,7 +1003,7 @@ public class GparamEditor
         }
         if (targetField is Vector4Field vector4Field)
         {
-            GPARAM.Vector4Field castField = (Vector4Field)targetField;
+            Vector4Field castField = (Vector4Field)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
                 if (castField.Values[i].Id == rowId)
@@ -1017,7 +1016,7 @@ public class GparamEditor
         }
         if (targetField is ColorField colorField)
         {
-            GPARAM.ColorField castField = (ColorField)targetField;
+            ColorField castField = (ColorField)targetField;
             for (int i = 0; i < castField.Values.Count; i++)
             {
                 if (castField.Values[i].Id == rowId)
@@ -1035,7 +1034,7 @@ public class GparamEditor
     public unsafe void AddValueField(IField field)
     {
         // INT
-        if (field is GPARAM.IntField intField)
+        if (field is IntField intField)
         {
             FieldValue<int> fieldValueRow = new FieldValue<int>();
             fieldValueRow.Id = 0;
@@ -1044,7 +1043,7 @@ public class GparamEditor
             intField.Values.Add(fieldValueRow);
         }
         // UINT
-        else if (field is GPARAM.UintField uintField)
+        else if (field is UintField uintField)
         {
             FieldValue<uint> fieldValueRow = new FieldValue<uint>();
             fieldValueRow.Id = 0;
@@ -1053,7 +1052,7 @@ public class GparamEditor
             uintField.Values.Add(fieldValueRow);
         }
         // SHORT
-        else if (field is GPARAM.ShortField shortField)
+        else if (field is ShortField shortField)
         {
             FieldValue<short> fieldValueRow = new FieldValue<short>();
             fieldValueRow.Id = 0;
@@ -1062,7 +1061,7 @@ public class GparamEditor
             shortField.Values.Add(fieldValueRow);
         }
         // SBYTE
-        else if (field is GPARAM.SbyteField sbyteField)
+        else if (field is SbyteField sbyteField)
         {
             FieldValue<sbyte> fieldValueRow = new FieldValue<sbyte>();
             fieldValueRow.Id = 0;
@@ -1071,7 +1070,7 @@ public class GparamEditor
             sbyteField.Values.Add(fieldValueRow);
         }
         // BYTE
-        else if (field is GPARAM.ByteField byteField)
+        else if (field is ByteField byteField)
         {
             FieldValue<byte> fieldValueRow = new FieldValue<byte>();
             fieldValueRow.Id = 0;
@@ -1080,7 +1079,7 @@ public class GparamEditor
             byteField.Values.Add(fieldValueRow);
         }
         // BOOL
-        else if (field is GPARAM.BoolField boolField)
+        else if (field is BoolField boolField)
         {
             FieldValue<bool> fieldValueRow = new FieldValue<bool>();
             fieldValueRow.Id = 0;
@@ -1089,7 +1088,7 @@ public class GparamEditor
             boolField.Values.Add(fieldValueRow);
         }
         // FLOAT
-        else if (field is GPARAM.FloatField floatField)
+        else if (field is FloatField floatField)
         {
             FieldValue<float> fieldValueRow = new FieldValue<float>();
             fieldValueRow.Id = 0;
@@ -1098,7 +1097,7 @@ public class GparamEditor
             floatField.Values.Add(fieldValueRow);
         }
         // VECTOR2
-        else if (field is GPARAM.Vector2Field vector2Field)
+        else if (field is Vector2Field vector2Field)
         {
             FieldValue<Vector2> fieldValueRow = new FieldValue<Vector2>();
             fieldValueRow.Id = 0;
@@ -1107,7 +1106,7 @@ public class GparamEditor
             vector2Field.Values.Add(fieldValueRow);
         }
         // VECTOR3
-        else if (field is GPARAM.Vector3Field vector3Field)
+        else if (field is Vector3Field vector3Field)
         {
             FieldValue<Vector3> fieldValueRow = new FieldValue<Vector3>();
             fieldValueRow.Id = 0;
@@ -1116,7 +1115,7 @@ public class GparamEditor
             vector3Field.Values.Add(fieldValueRow);
         }
         // VECTOR4
-        else if (field is GPARAM.Vector4Field vector4Field)
+        else if (field is Vector4Field vector4Field)
         {
             FieldValue<Vector4> fieldValueRow = new FieldValue<Vector4>();
             fieldValueRow.Id = 0;
@@ -1125,7 +1124,7 @@ public class GparamEditor
             vector4Field.Values.Add(fieldValueRow);
         }
         // COLOR
-        else if (field is GPARAM.ColorField colorField)
+        else if (field is ColorField colorField)
         {
             FieldValue<Color> fieldValueRow = new FieldValue<Color>();
             fieldValueRow.Id = 0;

@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.GraphicsEditor;
+namespace StudioCore.Editors.GparamEditor.Data;
 public static class GparamParamBank
 {
     public static bool IsLoaded { get; private set; }
@@ -114,14 +114,14 @@ public static class GparamParamBank
         var paramDir = @"\param\drawparam";
         var paramExt = @".gparam.dcx";
 
-        if(Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             paramDir = @"\filter";
             paramExt = @".fltparam";
         }
 
         // TODO: add support for DS2
-        if(Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             return;
         }
@@ -130,7 +130,7 @@ public static class GparamParamBank
         {
             var filePath = $"{paramDir}\\{name}{paramExt}";
 
-            if(File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
+            if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
             {
                 LoadGraphicsParam($"{Smithbox.ProjectRoot}\\{filePath}", true);
                 //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
@@ -183,7 +183,7 @@ public static class GparamParamBank
 
             ParamBank.Add(name, gStruct);
         }
-        catch(Exception e) 
+        catch (Exception e)
         {
             TaskLogs.AddLog($"Failed to load {path}: {e.Message}");
         }

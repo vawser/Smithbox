@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static SoulsFormats.GPARAM;
 
-namespace StudioCore.Editors.GparamEditor;
+namespace StudioCore.Editors.GparamEditor.Actions;
 
 public class GparamEditorActions
 {
@@ -41,7 +41,7 @@ public class GparamEditorActions
         {
             foreach (GparamValueChange change in Changes)
             {
-                if (change.Field is GPARAM.IntField intField)
+                if (change.Field is IntField intField)
                 {
                     var assignedValue = (int)change.NewValue;
                     var result = assignedValue;
@@ -74,7 +74,7 @@ public class GparamEditorActions
 
                     intField.Values[change.Index].Value = result;
                 }
-                if (change.Field is GPARAM.UintField uintField)
+                if (change.Field is UintField uintField)
                 {
                     var assignedValue = (uint)change.NewValue;
                     var result = assignedValue;
@@ -107,7 +107,7 @@ public class GparamEditorActions
 
                     uintField.Values[change.Index].Value = result;
                 }
-                if (change.Field is GPARAM.ShortField shortField)
+                if (change.Field is ShortField shortField)
                 {
                     var assignedValue = (short)change.NewValue;
                     var result = assignedValue;
@@ -140,7 +140,7 @@ public class GparamEditorActions
 
                     shortField.Values[change.Index].Value = result;
                 }
-                if (change.Field is GPARAM.SbyteField sbyteField)
+                if (change.Field is SbyteField sbyteField)
                 {
                     var assignedValue = (sbyte)change.NewValue;
                     var result = assignedValue;
@@ -173,7 +173,7 @@ public class GparamEditorActions
 
                     sbyteField.Values[change.Index].Value = result;
                 }
-                if (change.Field is GPARAM.ByteField byteField)
+                if (change.Field is ByteField byteField)
                 {
                     var assignedValue = (byte)change.NewValue;
                     var result = assignedValue;
@@ -206,7 +206,7 @@ public class GparamEditorActions
 
                     byteField.Values[change.Index].Value = result;
                 }
-                if (change.Field is GPARAM.BoolField boolField)
+                if (change.Field is BoolField boolField)
                 {
                     var result = boolField.Values[change.Index].Value;
                     if (bool.TryParse(change.NewValue.ToString(), out result))
@@ -214,7 +214,7 @@ public class GparamEditorActions
                         boolField.Values[change.Index].Value = result;
                     }
                 }
-                if (change.Field is GPARAM.FloatField floatField)
+                if (change.Field is FloatField floatField)
                 {
                     var assignedValue = (float)change.NewValue;
                     var result = assignedValue;
@@ -247,7 +247,7 @@ public class GparamEditorActions
 
                     floatField.Values[change.Index].Value = result;
                 }
-                if (change.Field is GPARAM.Vector2Field vector2Field)
+                if (change.Field is Vector2Field vector2Field)
                 {
                     var assignedValue = (Vector2)change.NewValue;
                     var result = assignedValue;
@@ -292,7 +292,7 @@ public class GparamEditorActions
 
                     vector2Field.Values[change.Index].Value = result;
                 }
-                if (change.Field is GPARAM.Vector3Field vector3Field)
+                if (change.Field is Vector3Field vector3Field)
                 {
                     var assignedValue = (Vector3)change.NewValue;
                     var result = assignedValue;
@@ -346,7 +346,7 @@ public class GparamEditorActions
 
                     vector3Field.Values[change.Index].Value = result;
                 }
-                if (change.Field is GPARAM.Vector4Field vector4Field)
+                if (change.Field is Vector4Field vector4Field)
                 {
                     var assignedValue = (Vector4)change.NewValue;
                     var result = assignedValue;
@@ -409,7 +409,7 @@ public class GparamEditorActions
 
                     vector4Field.Values[change.Index].Value = result;
                 }
-                if (change.Field is GPARAM.ColorField colorField)
+                if (change.Field is ColorField colorField)
                 {
                     var assignedValue = (Color)change.NewValue;
 
@@ -424,47 +424,47 @@ public class GparamEditorActions
         {
             foreach (GparamValueChange change in Changes)
             {
-                if (change.Field is GPARAM.IntField intField)
+                if (change.Field is IntField intField)
                 {
                     intField.Values[change.Index].Value = (int)change.OldValue;
                 }
-                if (change.Field is GPARAM.UintField uintField)
+                if (change.Field is UintField uintField)
                 {
                     uintField.Values[change.Index].Value = (uint)change.OldValue;
                 }
-                if (change.Field is GPARAM.ShortField shortField)
+                if (change.Field is ShortField shortField)
                 {
                     shortField.Values[change.Index].Value = (short)change.OldValue;
                 }
-                if (change.Field is GPARAM.SbyteField sbyteField)
+                if (change.Field is SbyteField sbyteField)
                 {
                     sbyteField.Values[change.Index].Value = (sbyte)change.OldValue;
                 }
-                if (change.Field is GPARAM.ByteField byteField)
+                if (change.Field is ByteField byteField)
                 {
                     byteField.Values[change.Index].Value = (byte)change.OldValue;
                 }
-                if (change.Field is GPARAM.BoolField boolField)
+                if (change.Field is BoolField boolField)
                 {
                     boolField.Values[change.Index].Value = (bool)change.OldValue;
                 }
-                if (change.Field is GPARAM.FloatField floatField)
+                if (change.Field is FloatField floatField)
                 {
                     floatField.Values[change.Index].Value = (float)change.OldValue;
                 }
-                if (change.Field is GPARAM.Vector2Field vector2Field)
+                if (change.Field is Vector2Field vector2Field)
                 {
                     vector2Field.Values[change.Index].Value = (Vector2)change.OldValue;
                 }
-                if (change.Field is GPARAM.Vector3Field vector3Field)
+                if (change.Field is Vector3Field vector3Field)
                 {
                     vector3Field.Values[change.Index].Value = (Vector3)change.OldValue;
                 }
-                if (change.Field is GPARAM.Vector4Field vector4Field)
+                if (change.Field is Vector4Field vector4Field)
                 {
                     vector4Field.Values[change.Index].Value = (Vector4)change.OldValue;
                 }
-                if (change.Field is GPARAM.ColorField colorField)
+                if (change.Field is ColorField colorField)
                 {
                     colorField.Values[change.Index].Value = (Color)change.OldValue;
                 }
@@ -479,7 +479,7 @@ public class GparamEditorActions
             public object NewValue;
             public object OldValue;
             public ValueChangeType ValueChangeType;
-            public SoulsFormats.GPARAM.IField Field;
+            public IField Field;
         }
     }
 
@@ -489,7 +489,7 @@ public class GparamEditorActions
 
         private string ProvenanceString;
 
-        public GparamTimeOfDayChangeAction(string fileName, string groupName, GPARAM.IField field, GPARAM.IFieldValue fieldValue, object newValue, int index)
+        public GparamTimeOfDayChangeAction(string fileName, string groupName, IField field, IFieldValue fieldValue, object newValue, int index)
         {
             var change = new GparamValueChange();
             change.Index = index;
@@ -505,47 +505,47 @@ public class GparamEditorActions
         {
             foreach (GparamValueChange change in Changes)
             {
-                if (change.Field is GPARAM.IntField intField)
+                if (change.Field is IntField intField)
                 {
                     intField.Values[change.Index].Unk04 = (float)change.NewValue;
                 }
-                if (change.Field is GPARAM.UintField uintField)
+                if (change.Field is UintField uintField)
                 {
                     uintField.Values[change.Index].Unk04 = (float)change.NewValue;
                 }
-                if (change.Field is GPARAM.ShortField shortField)
+                if (change.Field is ShortField shortField)
                 {
                     shortField.Values[change.Index].Unk04 = (float)change.NewValue;
                 }
-                if (change.Field is GPARAM.SbyteField sbyteField)
+                if (change.Field is SbyteField sbyteField)
                 {
                     sbyteField.Values[change.Index].Unk04 = (float)change.NewValue;
                 }
-                if (change.Field is GPARAM.ByteField byteField)
+                if (change.Field is ByteField byteField)
                 {
                     byteField.Values[change.Index].Unk04 = (float)change.NewValue;
                 }
-                if (change.Field is GPARAM.BoolField boolField)
+                if (change.Field is BoolField boolField)
                 {
                     boolField.Values[change.Index].Unk04 = (float)change.NewValue;
                 }
-                if (change.Field is GPARAM.FloatField floatField)
+                if (change.Field is FloatField floatField)
                 {
                     floatField.Values[change.Index].Unk04 = (float)change.NewValue;
                 }
-                if (change.Field is GPARAM.Vector2Field vector2Field)
+                if (change.Field is Vector2Field vector2Field)
                 {
                     vector2Field.Values[change.Index].Unk04 = (float)change.NewValue;
                 }
-                if (change.Field is GPARAM.Vector3Field vector3Field)
+                if (change.Field is Vector3Field vector3Field)
                 {
                     vector3Field.Values[change.Index].Unk04 = (float)change.NewValue;
                 }
-                if (change.Field is GPARAM.Vector4Field vector4Field)
+                if (change.Field is Vector4Field vector4Field)
                 {
                     vector4Field.Values[change.Index].Unk04 = (float)change.NewValue;
                 }
-                if (change.Field is GPARAM.ColorField colorField)
+                if (change.Field is ColorField colorField)
                 {
                     colorField.Values[change.Index].Unk04 = (float)change.NewValue;
                 }
@@ -558,47 +558,47 @@ public class GparamEditorActions
         {
             foreach (GparamValueChange change in Changes)
             {
-                if (change.Field is GPARAM.IntField intField)
+                if (change.Field is IntField intField)
                 {
                     intField.Values[change.Index].Unk04 = (float)change.OldValue;
                 }
-                if (change.Field is GPARAM.UintField uintField)
+                if (change.Field is UintField uintField)
                 {
                     uintField.Values[change.Index].Unk04 = (float)change.OldValue;
                 }
-                if (change.Field is GPARAM.ShortField shortField)
+                if (change.Field is ShortField shortField)
                 {
                     shortField.Values[change.Index].Unk04 = (float)change.OldValue;
                 }
-                if (change.Field is GPARAM.SbyteField sbyteField)
+                if (change.Field is SbyteField sbyteField)
                 {
                     sbyteField.Values[change.Index].Unk04 = (float)change.OldValue;
                 }
-                if (change.Field is GPARAM.ByteField byteField)
+                if (change.Field is ByteField byteField)
                 {
                     byteField.Values[change.Index].Unk04 = (float)change.OldValue;
                 }
-                if (change.Field is GPARAM.BoolField boolField)
+                if (change.Field is BoolField boolField)
                 {
                     boolField.Values[change.Index].Unk04 = (float)change.OldValue;
                 }
-                if (change.Field is GPARAM.FloatField floatField)
+                if (change.Field is FloatField floatField)
                 {
                     floatField.Values[change.Index].Unk04 = (float)change.OldValue;
                 }
-                if (change.Field is GPARAM.Vector2Field vector2Field)
+                if (change.Field is Vector2Field vector2Field)
                 {
                     vector2Field.Values[change.Index].Unk04 = (float)change.OldValue;
                 }
-                if (change.Field is GPARAM.Vector3Field vector3Field)
+                if (change.Field is Vector3Field vector3Field)
                 {
                     vector3Field.Values[change.Index].Unk04 = (float)change.OldValue;
                 }
-                if (change.Field is GPARAM.Vector4Field vector4Field)
+                if (change.Field is Vector4Field vector4Field)
                 {
                     vector4Field.Values[change.Index].Unk04 = (float)change.OldValue;
                 }
-                if (change.Field is GPARAM.ColorField colorField)
+                if (change.Field is ColorField colorField)
                 {
                     colorField.Values[change.Index].Unk04 = (float)change.OldValue;
                 }
@@ -612,7 +612,7 @@ public class GparamEditorActions
             public int Index;
             public object NewValue;
             public object OldValue;
-            public SoulsFormats.GPARAM.IField Field;
+            public IField Field;
         }
     }
 
@@ -654,23 +654,23 @@ public class GparamEditorActions
         private IFieldValue SelectedFieldValue;
         private int NewRowID;
 
-        public GparamDuplicateValueRow(GparamEditorScreen screen, GPARAM selectedGparam, IField selectedField, IFieldValue fieldValue, int dupeRowId)
+        public GparamDuplicateValueRow(GparamEditorScreen screen)
         {
-            SelectedGPARAM = selectedGparam;
             Screen = screen;
-            SelectedField = selectedField;
-            SelectedFieldValue = fieldValue;
-            NewRowID = dupeRowId;
+            SelectedGPARAM = screen.Selection._selectedGparam;
+            SelectedField = screen.Selection._selectedParamField;
+            SelectedFieldValue = screen.Selection._selectedFieldValue;
+            NewRowID = screen.Selection._duplicateValueRowId;
         }
 
         public override ActionEvent Execute()
         {
-            Screen.ExtendDisplayTruth(SelectedField);
+            Screen.FieldValueList.ExtendDisplayTruth(SelectedField);
 
             Screen.PropertyEditor.AddPropertyValueRow(SelectedField, SelectedFieldValue, NewRowID);
 
             // Update the group index lists to account for the new ID.
-            Screen._selectedGparamInfo.WasModified = true;
+            Screen.Selection.ToggleSelectedFileModifiedState(true);
             Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 
             return ActionEvent.NoEvent;
@@ -678,11 +678,11 @@ public class GparamEditorActions
 
         public override ActionEvent Undo()
         {
-            Screen.ReduceDisplayTruth(SelectedField);
+            Screen.FieldValueList.ReduceDisplayTruth(SelectedField);
 
             Screen.PropertyEditor.RemovePropertyValueRowById(SelectedField, SelectedFieldValue, NewRowID);
 
-            Screen._selectedGparamInfo.WasModified = false;
+            Screen.Selection.ToggleSelectedFileModifiedState(false);
             Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 
             return ActionEvent.NoEvent;
@@ -698,22 +698,22 @@ public class GparamEditorActions
         private int RemovedRowID;
         private int RemovedRowIndex;
 
-        public GparamRemoveValueRow(GparamEditorScreen screen, GPARAM selectedGparam, IField selectedField, IFieldValue fieldValue)
+        public GparamRemoveValueRow(GparamEditorScreen screen)
         {
-            SelectedGPARAM = selectedGparam;
             Screen = screen;
-            SelectedField = selectedField;
-            SelectedFieldValue = fieldValue;
-            RemovedRowID = fieldValue.Id;
+            SelectedGPARAM = screen.Selection._selectedGparam;
+            SelectedField = screen.Selection._selectedParamField;
+            SelectedFieldValue = screen.Selection._selectedFieldValue;
+            RemovedRowID = screen.Selection._selectedFieldValue.Id;
         }
 
         public override ActionEvent Execute()
         {
-            Screen.ReduceDisplayTruth(SelectedField);
+            Screen.FieldValueList.ReduceDisplayTruth(SelectedField);
 
             RemovedRowIndex = Screen.PropertyEditor.RemovePropertyValueRowById(SelectedField, SelectedFieldValue, SelectedFieldValue.Id);
 
-            Screen._selectedGparamInfo.WasModified = true;
+            Screen.Selection.ToggleSelectedFileModifiedState(true);
             Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 
             return ActionEvent.NoEvent;
@@ -721,11 +721,11 @@ public class GparamEditorActions
 
         public override ActionEvent Undo()
         {
-            Screen.ExtendDisplayTruth(SelectedField);
+            Screen.FieldValueList.ExtendDisplayTruth(SelectedField);
 
             Screen.PropertyEditor.AddPropertyValueRowAtIndex(SelectedField, SelectedFieldValue, RemovedRowID, RemovedRowIndex);
 
-            Screen._selectedGparamInfo.WasModified = true;
+            Screen.Selection.ToggleSelectedFileModifiedState(false);
             Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 
             return ActionEvent.NoEvent;

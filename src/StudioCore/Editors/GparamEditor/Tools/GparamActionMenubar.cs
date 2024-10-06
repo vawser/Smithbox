@@ -10,30 +10,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.GparamEditor.Actions;
+namespace StudioCore.Editors.GparamEditor.Tools;
 
-public class ActionSubMenu
+public class GparamActionMenubar
 {
     private GparamEditorScreen Screen;
-    public ActionHandler Handler;
+    public GparamActionHandler Handler;
 
-    public ActionSubMenu(GparamEditorScreen screen)
+    public GparamActionMenubar(GparamEditorScreen screen)
     {
         Screen = screen;
-        Handler = new ActionHandler(screen);
-    }
-
-    public void Shortcuts()
-    {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
-        {
-            Screen.DeleteValueRow();
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
-        {
-            Screen.DuplicateValueRow();
-        }
+        Handler = new GparamActionHandler(screen);
     }
 
     public void OnProjectChanged()
@@ -48,14 +35,14 @@ public class ActionSubMenu
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Duplicate Value Row", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
-                Screen.DuplicateValueRow();
+                Screen.ActionHandler.DuplicateValueRow();
             }
             UIHelper.ShowHoverTooltip("Duplicates the current value row selection.");
 
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Delete Value Row", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
-                Screen.DeleteValueRow();
+                Screen.ActionHandler.DeleteValueRow();
             }
             UIHelper.ShowHoverTooltip("Deletes the current value row selection.");
 

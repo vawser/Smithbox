@@ -1,6 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
-using StudioCore.Editors.GparamEditor.Actions;
+using StudioCore.Editors.GparamEditor.Framework;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using System;
@@ -13,23 +13,29 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.GparamEditor.Tools;
 
 
-public class ToolWindow
+public class GparamToolView
 {
     private GparamEditorScreen Screen;
-    public ActionHandler Handler;
+    public GparamActionHandler ActionHandler;
 
-    public ToolWindow(GparamEditorScreen screen)
+    public GparamToolView(GparamEditorScreen screen)
     {
         Screen = screen;
-        Handler = new ActionHandler(screen);
+        ActionHandler = new GparamActionHandler(screen);
     }
 
+    /// <summary>
+    /// Reset view state on project change
+    /// </summary>
     public void OnProjectChanged()
     {
 
     }
 
-    public void OnGui(GparamQuickEdit handler)
+    /// <summary>
+    /// The main UI for this view
+    /// </summary>
+    public void Display()
     {
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
@@ -45,11 +51,11 @@ public class ToolWindow
 
             if (ImGui.CollapsingHeader("Quick Edit"))
             {
-                handler.DisplayInputWindow();
+                Screen.QuickEditHandler.DisplayInputWindow();
             }
             if (ImGui.CollapsingHeader("Quick Edit Commands"))
             {
-                handler.DisplayCheatSheet();
+                Screen.QuickEditHandler.DisplayCheatSheet();
             }
         }
 
