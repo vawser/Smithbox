@@ -468,16 +468,6 @@ public class ModelResourceManager : IResourceEventListener
     {
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
 
-        /*
-        ResourceDescriptor modelAsset = GetModelAssetDescriptor(containerId, modelid, modelType, mapid);
-
-        if (modelType == ModelEditorModelType.Loose)
-        {
-            modelAsset = new ResourceDescriptor();
-            modelAsset.AssetVirtualPath = $"loose/flver/{LoadedFlverContainer.LoosePath}";
-        }
-        */
-
         var modelAsset = new ResourceDescriptor();
         modelAsset.AssetVirtualPath = $"direct/flver/{modelid}";
 

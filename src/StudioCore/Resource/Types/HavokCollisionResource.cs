@@ -178,6 +178,7 @@ public class HavokCollisionResource : IResource, IDisposable
         return LoadInternal_HKX(al);
     }
 
+
     private unsafe void ProcessMesh(HKX.HKPStorageExtendedMeshShapeMeshSubpartStorage mesh, CollisionSubmesh dest)
     {
         List<HKX.HKVector4> verts = mesh.Vertices.GetArrayData().Elements;

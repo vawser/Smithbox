@@ -19,18 +19,12 @@ namespace StudioCore.Editor;
 
 public class ModelContainer : ObjectContainer
 {
-    public string Name;
-
     public Entity Mesh_RootNode { get; set; }
     public Entity Bone_RootNode { get; set; }
     public Entity DummyPoly_RootNode { get; set; }
 
-    public Entity HighCollision_RootNode { get; set; }
-    public Entity LowCollision_RootNode { get; set; }
-
-    public ModelContainer(Universe u, string name)
+    public ModelContainer(Universe u, FLVER2 flver, MeshRenderableProxy flverProxy)
     {
-        Name = name;
         Universe = u;
 
         RootObject = new Entity(this, new ModelRootNode("Root"));
@@ -41,14 +35,9 @@ public class ModelContainer : ObjectContainer
         RootObject.AddChild(Mesh_RootNode);
         RootObject.AddChild(Bone_RootNode);
         RootObject.AddChild(DummyPoly_RootNode);
-    }
 
-    public void LoadFlver(string name, FLVER2 flver, MeshRenderableProxy flverProxy)
-    {
         if (!Universe.IsRendering)
             return;
-
-        Name = name;
 
         // Meshes
         for (var i = 0; i < flver.Meshes.Count; i++)

@@ -64,7 +64,7 @@ public class Universe
     }
 
     public Dictionary<string, ObjectContainer> LoadedObjectContainers { get; } = new();
-    public Dictionary<string, ModelContainer> LoadedModelContainers { get; } = new();
+    public ModelContainer LoadedModelContainer { get; set; }
     public ViewportSelection Selection { get; }
 
     public List<string> EnvMapTextures { get; private set; } = new();
@@ -1443,29 +1443,17 @@ public class Universe
     }
 
     /// <summary>
-    /// Model Editor: Unload
+    /// Model Editor: Unload All
     /// </summary>
     public void UnloadModels()
     {
-        List<ModelContainer> toUnload = new();
-        foreach (var key in LoadedModelContainers.Keys)
+        if (LoadedModelContainer != null)
         {
-            if (LoadedModelContainers[key] != null)
+            foreach (Entity obj in LoadedModelContainer.Objects)
             {
-                toUnload.Add(LoadedModelContainers[key]);
-            }
-        }
-
-        foreach (ModelContainer un in toUnload)
-        {
-            if (LoadedModelContainers.ContainsKey(un.Name))
-            {
-                foreach (Entity obj in un.Objects)
+                if (obj != null)
                 {
-                    if (obj != null)
-                    {
-                        obj.Dispose();
-                    }
+                    obj.Dispose();
                 }
             }
         }
@@ -1476,9 +1464,9 @@ public class Universe
     /// </summary>
     public void UnloadTransformableEntities()
     {
-        foreach(var entry in LoadedModelContainers)
+        if (LoadedModelContainer != null)
         {
-            foreach (Entity obj in entry.Value.Objects)
+            foreach (Entity obj in LoadedModelContainer.Objects)
             {
                 if (obj is TransformableNamedEntity)
                 {

@@ -96,7 +96,6 @@ Model Editor:
  - ADD: FBX Import into loose FLVER
  - ADD: FBX Export of Loaded Model
  - ADD: skeleton and skinning support for playing animations
- - ADD: easier toggling of model masks based on associated NpcParam (for characters)
  - ADD: floating text for dummy poly ref IDs
  - ADD: floating text for co-ordinate direction (X, Y, Z)
  - ADD: render bone connections (use patrol route method)
@@ -112,5 +111,3 @@ Model Editor:
 # PRIORITY
  - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
  - ADD: GX Item mapping so the byte arrays are more comprehesible (https://github.com/JKAnderson/SoulsFormats/issues/14)
-
- - FIX: secondary load of model causes the entity changes to be lost, e.g. visibility

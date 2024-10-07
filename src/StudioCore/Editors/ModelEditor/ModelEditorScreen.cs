@@ -221,14 +221,7 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
         {
-            var containerId = ViewportManager.ContainerID;
-            var containerList = _universe.LoadedModelContainers;
-            ModelContainer container = null;
-
-            if (containerList.ContainsKey(containerId))
-            {
-                container = containerList[containerId];
-            }
+            ModelContainer container = _universe.LoadedModelContainer;
 
             UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
             if (ImGui.MenuItem("Meshes"))

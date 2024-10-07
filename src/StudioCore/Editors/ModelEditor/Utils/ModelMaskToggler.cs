@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
@@ -12,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Veldrid;
 
 namespace StudioCore.Editors.ModelEditor.Utils;
 
@@ -26,6 +28,9 @@ public static class ModelMaskToggler
 
         return true;
     }
+
+    private static bool SelectEntry = false;
+    private static int SelectedID = -1;
 
     // NPC Param List
     public static void Display()
@@ -45,10 +50,26 @@ public static class ModelMaskToggler
         {
             if(IsAssociatedParam($"{entry.ID}", filename))
             {
-                if(ImGui.Selectable($"[{entry.ID}]##row{entry.ID}"))
+                if(ImGui.Selectable($"[{entry.ID}]##row{entry.ID}", entry.ID == SelectedID, ImGuiSelectableFlags.AllowDoubleClick))
                 {
                     ToggleMeshes(entry);
+                    SelectedID = entry.ID;
                 }
+
+                // Arrow Selection
+                if (ImGui.IsItemHovered() && SelectEntry)
+                {
+                    SelectEntry = false;
+                    SelectedID = entry.ID;
+                    ToggleMeshes(entry);
+                }
+
+                if (ImGui.IsItemFocused() && 
+                    (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
+                {
+                    SelectEntry = true;
+                }
+
                 UIHelper.DisplayAlias($"{entry.Name}");
             }
         }
@@ -95,8 +116,6 @@ public static class ModelMaskToggler
         }
 
         var editor = Smithbox.EditorHandler.ModelEditor;
-        var containerId = editor.ViewportManager.ContainerID;
-        var containerList = editor._universe.LoadedModelContainers;
 
         var flver = editor.ResManager.GetCurrentFLVER();
 
@@ -109,41 +128,38 @@ public static class ModelMaskToggler
             materialDict.Add(i, material);
         }
 
-        if(containerList.ContainsKey(containerId))
-        { 
-            var container = containerList[containerId];
+        var container = editor._universe.LoadedModelContainer;
 
-            foreach(var entry in container.Mesh_RootNode.Children)
+        foreach(var entry in container.Mesh_RootNode.Children)
+        {
+            entry.EditorVisible = false;
+
+            FLVER2.Mesh mesh = (FLVER2.Mesh)entry.WrappedObject;
+
+            if(materialDict.ContainsKey(mesh.MaterialIndex))
             {
-                entry.EditorVisible = false;
+                var material = materialDict[mesh.MaterialIndex];
 
-                FLVER2.Mesh mesh = (FLVER2.Mesh)entry.WrappedObject;
+                var regex = @"\#[0-9]*\#";
+                var maskIdStr = Regex.Match(material.Name, regex).Value;
+                maskIdStr = maskIdStr.Replace("#", ""); // Remove the #s
 
-                if(materialDict.ContainsKey(mesh.MaterialIndex))
+                // If is a mask entry, default to false.
+                if(maskIdStr != "")
                 {
-                    var material = materialDict[mesh.MaterialIndex];
-
-                    var regex = @"\#[0-9]*\#";
-                    var maskIdStr = Regex.Match(material.Name, regex).Value;
-                    maskIdStr = maskIdStr.Replace("#", ""); // Remove the #s
-
-                    // If is a mask entry, default to false.
-                    if(maskIdStr != "")
+                    try
                     {
-                        try
-                        {
-                            int maskId = int.Parse(maskIdStr);
-                            entry.EditorVisible = maskList[maskId];
-                        }
-                        catch (Exception e)
-                        {
-                            TaskLogs.AddLog($"Failed to parse Mask ID: {e.Message}");
-                        }
+                        int maskId = int.Parse(maskIdStr);
+                        entry.EditorVisible = maskList[maskId];
                     }
-                    else
+                    catch (Exception e)
                     {
-                        entry.EditorVisible = true;
+                        TaskLogs.AddLog($"Failed to parse Mask ID: {e.Message}");
                     }
+                }
+                else
+                {
+                    entry.EditorVisible = true;
                 }
             }
         }

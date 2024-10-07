@@ -43,8 +43,6 @@ public class ModelViewportManager
     public ResourceHandle<HavokCollisionResource> _lowCollisionHandle;
     public ResourceHandle<HavokCollisionResource> _highCollisionHandle;
 
-    public string ContainerID;
-
     public bool IsUpdatingViewportModel = false;
     public bool IgnoreHierarchyFocus = false;
 
@@ -53,8 +51,6 @@ public class ModelViewportManager
         Screen = screen;
         Universe = screen._universe;
         Viewport = viewport;
-
-        ContainerID = "";
     }
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)
@@ -62,8 +58,6 @@ public class ModelViewportManager
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
             return;
-
-        ContainerID = Screen.ResManager.LoadedFlverContainer.ContainerName;
 
         // Collision
         if (handle is ResourceHandle<HavokCollisionResource>)
@@ -73,18 +67,18 @@ public class ModelViewportManager
             if (colHandle.AssetVirtualPath.Contains("_h"))
             {
                 _highCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
-                _highCollisionHandle.Acquire();
             }
             if (colHandle.AssetVirtualPath.Contains("_l"))
             {
                 _lowCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
-                _lowCollisionHandle.Acquire();
             }
         }
 
         // FLVER
         if (handle is ResourceHandle<FlverResource>)
         {
+            var curFlver = Screen.ResManager.GetCurrentFLVER();
+
             _flverhandle = (ResourceHandle<FlverResource>)handle;
             _flverhandle.Acquire();
 
@@ -107,27 +101,11 @@ public class ModelViewportManager
             }
 
             // Update Model Container
-            var curFlver = Screen.ResManager.GetCurrentFLVER();
             if (curFlver != null)
             {
                 var currentFlverClone = curFlver.Clone();
 
-                ModelContainer container = new(Screen._universe, ContainerID);
-
-                var containers = Screen._universe.LoadedModelContainers;
-
-                if (containers.ContainsKey(ContainerID))
-                {
-                    Screen._universe.LoadedModelContainers.Remove(ContainerID);
-
-                    Screen._universe.LoadedModelContainers.Add(ContainerID, container);
-                    container.LoadFlver(ContainerID, currentFlverClone, _Flver_RenderMesh);
-                }
-                else
-                {
-                    Screen._universe.LoadedModelContainers.Add(ContainerID, container);
-                    container.LoadFlver(ContainerID, currentFlverClone, _Flver_RenderMesh);
-                }
+                Screen._universe.LoadedModelContainer = new(Screen._universe, currentFlverClone, _Flver_RenderMesh);
             }
 
             if (CFG.Current.Viewport_Enable_Texturing)
@@ -167,10 +145,7 @@ public class ModelViewportManager
 
     public bool HasValidLoadedContainer()
     {
-        if (Universe.LoadedModelContainers.Count <= 0)
-            return false;
-
-        if (!Universe.LoadedModelContainers.ContainsKey(ContainerID))
+        if (Universe.LoadedModelContainer == null)
             return false;
 
         return true;
@@ -186,15 +161,15 @@ public class ModelViewportManager
 
         if (Screen.Selection._selectedFlverGroupType == GroupSelectionType.Dummy)
         {
-            SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainers[ContainerID].DummyPoly_RootNode);
+            SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainer.DummyPoly_RootNode);
         }
         if (Screen.Selection._selectedFlverGroupType == GroupSelectionType.Node)
         {
-            SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainers[ContainerID].Bone_RootNode);
+            SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainer.Bone_RootNode);
         }
         if (Screen.Selection._selectedFlverGroupType == GroupSelectionType.Mesh)
         {
-            SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainers[ContainerID].Mesh_RootNode);
+            SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainer.Mesh_RootNode);
         }
 
         IsUpdatingViewportModel = false;
@@ -228,6 +203,8 @@ public class ModelViewportManager
         Screen.ResManager.LoadRepresentativeModel(containerId, modelId, modelType, mapId);
     }
 
+    private Dictionary<string, MeshRenderableProxy> meshRenderableDict = new();
+
     /// <summary>
     /// Updated the viewport FLVER model render mesh
     /// </summary>
@@ -237,15 +214,25 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
+        if(_Flver_RenderMesh != null)
+            _Flver_RenderMesh.Visible = false;
+
         if (Universe.IsRendering)
         {
-            if (_Flver_RenderMesh != null)
-            {
-                _Flver_RenderMesh.Dispose();
-            }
+            var meshRenderableProxy = MeshRenderableProxy.MeshRenderableFromFlverResource(Screen.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
+            meshRenderableProxy.World = Matrix4x4.Identity;
 
-            _Flver_RenderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(Screen.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
-            _Flver_RenderMesh.World = Matrix4x4.Identity;
+            if(meshRenderableDict.ContainsKey(modelAsset.AssetVirtualPath))
+            {
+                _Flver_RenderMesh = meshRenderableDict[modelAsset.AssetVirtualPath];
+                _Flver_RenderMesh.Visible = true;
+            }
+            else
+            {
+                meshRenderableDict.Add(modelAsset.AssetVirtualPath, meshRenderableProxy);
+                _Flver_RenderMesh = meshRenderableProxy;
+                _Flver_RenderMesh.Visible = true;
+            }
         }
     }
 
@@ -295,7 +282,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainers[ContainerID];
+        var container = Screen._universe.LoadedModelContainer;
 
         if (index > container.DummyPoly_RootNode.Children.Count - 1)
             return;
@@ -314,7 +301,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainers[ContainerID];
+        var container = Screen._universe.LoadedModelContainer;
 
         if (index > container.Bone_RootNode.Children.Count - 1)
             return;
@@ -333,7 +320,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainers[ContainerID];
+        var container = Screen._universe.LoadedModelContainer;
 
         if (index > container.DummyPoly_RootNode.Children.Count - 1)
             return;
@@ -368,7 +355,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainers[ContainerID];
+        var container = Screen._universe.LoadedModelContainer;
 
         if (index > container.Bone_RootNode.Children.Count - 1)
             return;
@@ -387,7 +374,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainers[ContainerID];
+        var container = Screen._universe.LoadedModelContainer;
 
         if (index > container.Mesh_RootNode.Children.Count - 1)
             return;
@@ -407,7 +394,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainers[ContainerID];
+        var container = Screen._universe.LoadedModelContainer;
 
         if (index > container.DummyPoly_RootNode.Children.Count - 1)
             return;
@@ -457,7 +444,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainers[ContainerID];
+        var container = Screen._universe.LoadedModelContainer;
 
         if (index > container.DummyPoly_RootNode.Children.Count - 1)
             return;
@@ -475,7 +462,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainers[ContainerID];
+        var container = Screen._universe.LoadedModelContainer;
 
         if (index > container.Bone_RootNode.Children.Count - 1)
             return;
@@ -525,7 +512,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainers[ContainerID];
+        var container = Screen._universe.LoadedModelContainer;
 
         if (index > container.Bone_RootNode.Children.Count - 1)
             return;
@@ -542,7 +529,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainers[ContainerID];
+        var container = Screen._universe.LoadedModelContainer;
 
         if (index > container.Mesh_RootNode.Children.Count - 1)
             return;
@@ -592,7 +579,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainers[ContainerID];
+        var container = Screen._universe.LoadedModelContainer;
 
         if (index > container.Mesh_RootNode.Children.Count - 1)
             return;
@@ -763,7 +750,6 @@ public class ModelViewportManager
 
     public void OnProjectChanged()
     {
-        ContainerID = "";
         Screen._universe.UnloadModels();
         _flverhandle?.Unload();
         _flverhandle = null;

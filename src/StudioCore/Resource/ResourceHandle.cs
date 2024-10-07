@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using static SoulsFormats.MQB;
 
 namespace StudioCore.Resource;
 
@@ -62,6 +63,11 @@ public interface IResourceHandle
     public bool IsPersistent();
 
     public void UnloadPersistent();
+
+    public void Refresh()
+    {
+
+    }
 }
 
 /// <summary>
