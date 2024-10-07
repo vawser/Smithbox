@@ -55,22 +55,19 @@ public class ModelToolMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Solve Bounding Boxes"))
             {
-                if (Screen.ResManager.HasCurrentFLVER())
-                {
-                    FlverTools.SolveBoundingBoxes(Screen.ResManager.GetCurrentFLVER());
-                }
+                Screen.ActionHandler.SolveBoundingBoxes();
             }
             // Reverse Face Set
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Reverse Mesh Face Set"))
             {
-                FlverTools.ReverseFaceSet(Screen);
+                Screen.ActionHandler.ReverseMeshFaceSet();
             }
             // Reverse Normals
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Reverse Mesh Normals"))
             {
-                FlverTools.ReverseNormals(Screen);
+                Screen.ActionHandler.ReverseMeshNormals();
             }
             // DFLVERummy Groups
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");

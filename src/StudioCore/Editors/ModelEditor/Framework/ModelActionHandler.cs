@@ -1,4 +1,5 @@
-﻿using StudioCore.Editors.MapEditor;
+﻿using SoulsFormats;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Actions.AllSkeleton;
 using StudioCore.Editors.ModelEditor.Actions.BaseSkeleton;
@@ -9,9 +10,11 @@ using StudioCore.Editors.ModelEditor.Actions.Material;
 using StudioCore.Editors.ModelEditor.Actions.Mesh;
 using StudioCore.Editors.ModelEditor.Actions.Node;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Editors.ModelEditor.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -238,4 +241,137 @@ public class ModelActionHandler
         if (action != null)
             Screen.EditorActionManager.ExecuteAction(action);
     }
+
+    /// <summary>
+    /// Reverse Mesh Normals
+    /// </summary>
+    public void ReverseMeshNormals()
+    {
+        var model = Screen.ResManager.GetCurrentFLVER();
+        var selectedMesh = Screen.Selection._selectedMesh;
+
+        if (model == null)
+        {
+            TaskLogs.AddLog("No FLVER loaded.");
+            return;
+        }
+
+        if (selectedMesh == -1)
+        {
+            TaskLogs.AddLog("No mesh selected.");
+            return;
+        }
+
+        foreach (FLVER.Vertex v in model.Meshes[selectedMesh].Vertices)
+        {
+            v.Normal = new Vector3(
+                -v.Normal.X,
+                -v.Normal.Y,
+                -v.Normal.Z);
+
+            for (int j = 0; j < v.Tangents.Count; ++j)
+            {
+                v.Tangents[j] = new Vector4(
+                    -v.Tangents[j].X,
+                    -v.Tangents[j].Y,
+                    -v.Tangents[j].Z,
+                    v.Tangents[j].W);
+            }
+        }
+
+        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel();
+
+        TaskLogs.AddLog("Mesh normals have been reversed.");
+    }
+
+    /// <summary>
+    /// Reverse Mesh Faceset
+    /// </summary>
+    public void ReverseMeshFaceSet()
+    {
+        var model = Screen.ResManager.GetCurrentFLVER();
+        var selectedMesh = Screen.Selection._selectedMesh;
+        var selectedFaceSet = Screen.Selection._subSelectedFaceSetRow;
+
+        if (model == null)
+        {
+            TaskLogs.AddLog("No FLVER loaded.");
+            return;
+        }
+
+        if (selectedMesh == -1)
+        {
+            TaskLogs.AddLog("No mesh selected.");
+            return;
+        }
+
+        if (selectedFaceSet == -1)
+        {
+            TaskLogs.AddLog("No face set selected.");
+            return;
+        }
+
+        var faceSet = model.Meshes[selectedMesh].FaceSets[selectedFaceSet];
+
+        for (int j = 0; j < faceSet.Indices.Count; j += 3)
+        {
+            if (j > faceSet.Indices.Count - 2)
+                continue;
+
+            (faceSet.Indices[j + 1], faceSet.Indices[j + 2]) = (faceSet.Indices[j + 2], faceSet.Indices[j + 1]);
+        }
+
+        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel();
+
+        TaskLogs.AddLog("Face Set reversed.");
+    }
+
+    /// <summary>
+    /// Solve Bounding Boxes
+    /// </summary>
+    public void SolveBoundingBoxes()
+    {
+        var model = Screen.ResManager.GetCurrentFLVER();
+
+        if(model == null)
+        {
+            TaskLogs.AddLog("No FLVER loaded.");
+            return;
+        }
+
+        model.Header.BoundingBoxMin = new Vector3();
+        model.Header.BoundingBoxMax = new Vector3();
+        foreach (FLVER.Node node in model.Nodes)
+        {
+            node.BoundingBoxMin = new Vector3();
+            node.BoundingBoxMax = new Vector3();
+        }
+        foreach (FLVER2.Mesh mesh in model.Meshes)
+        {
+            foreach (FLVER.Vertex vertex in mesh.Vertices)
+            {
+                FlverTools.UpdateHeaderBoundingBox(model.Header, vertex.Position);
+                FlverTools.UpdateMeshBoundingBox(mesh, vertex.Position);
+
+                if (FlverTools.BoneIndicesToIntArray(vertex.BoneIndices) == null)
+                    continue;
+
+                foreach (int nodeIndex in FlverTools.BoneIndicesToIntArray(vertex.BoneIndices))
+                {
+                    bool boneDoesNotExist = false;
+
+                    if (nodeIndex >= 0 && nodeIndex < model.Nodes.Count)
+                        model.Nodes[nodeIndex].Flags = 0;
+                    else
+                        boneDoesNotExist = true;
+
+                    if (!boneDoesNotExist)
+                        FlverTools.UpdateBonesBoundingBox(model.Nodes[nodeIndex], model.Nodes, vertex.Position);
+                }
+            }
+        }
+
+        TaskLogs.AddLog("Bounding Boxes solved.");
+    }
+
 }

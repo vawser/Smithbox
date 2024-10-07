@@ -126,10 +126,7 @@ public class ModelToolView
 
                 if (ImGui.Button("Solve", defaultButtonSize))
                 {
-                    if (Screen.ResManager.HasCurrentFLVER())
-                    {
-                        FlverTools.SolveBoundingBoxes(Screen.ResManager.GetCurrentFLVER());
-                    }
+                    Screen.ActionHandler.SolveBoundingBoxes();
                 }
             }
 
@@ -141,7 +138,7 @@ public class ModelToolView
 
                 if (ImGui.Button("Reverse", defaultButtonSize))
                 {
-                    FlverTools.ReverseFaceSet(Screen);
+                    Screen.ActionHandler.ReverseMeshFaceSet();
                 }
             }
 
@@ -153,7 +150,7 @@ public class ModelToolView
 
                 if (ImGui.Button("Reverse", defaultButtonSize))
                 {
-                    FlverTools.ReverseNormals(Screen);
+                    Screen.ActionHandler.ReverseMeshNormals();
                 }
             }
 
