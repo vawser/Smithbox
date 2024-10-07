@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
@@ -267,49 +268,118 @@ public class ModelResourceManager : IResourceEventListener
     {
         ResourceDescriptor modelAsset = GetModelAssetDescriptor(containerId, modelid, modelType, mapid);
 
-        //TaskLogs.AddLog(modelAsset.AssetPath);
-
         if (!File.Exists(modelAsset.AssetPath))
             return;
 
-        if (modelType == FlverContainerType.Loose)
+        var binderType = LoadedFlverContainer.BinderType;
+
+        var fileBytes = File.ReadAllBytes(modelAsset.AssetPath);
+
+        // Get the DCX Type for the container
+        DCX.Type dcxType;
+        var reader = new BinaryReaderEx(false, fileBytes);
+        SFUtil.GetDecompressedBR(reader, out dcxType);
+
+        LoadedFlverContainer.CompressionType = dcxType;
+
+        // Loose
+        if (modelType is FlverContainerType.Loose)
         {
             var internalFlver = new InternalFlver();
-
             internalFlver.Name = modelid;
             internalFlver.ModelID = modelid;
-            internalFlver.CurrentFLVER = FLVER2.Read(LoadedFlverContainer.LoosePath);
-            internalFlver.InitialFlverBytes = File.ReadAllBytes(modelAsset.AssetPath);
             internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+            internalFlver.CurrentFLVER = FLVER2.Read(LoadedFlverContainer.LoosePath);
+            internalFlver.InitialFlverBytes = fileBytes;
 
-            LoadedFlverContainer.InternalFlvers.Add(internalFlver);
-            LoadedFlverContainer.CurrentInternalFlver = internalFlver;
         }
-        else
+        else if (modelType is FlverContainerType.MapPiece)
         {
-            if (modelAsset.AssetPath != null)
+            // DES, DS1, BB
+            if (binderType is FlverBinderType.None)
             {
-                // DS1, DES
+                var internalFlver = new InternalFlver();
+                internalFlver.Name = modelid;
+                internalFlver.ModelID = modelid;
+                internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+                internalFlver.CurrentFLVER = FLVER2.Read(modelAsset.AssetPath);
+                internalFlver.InitialFlverBytes = fileBytes;
+
+                AddInternalFlver(internalFlver);
+            }
+
+            // DS2
+            if (binderType is FlverBinderType.BXF)
+            {
+                var bhdPath = modelAsset.AssetPath;
+                var bdtPath = modelAsset.AssetPath.Replace("bhd", "bdt");
+
+                using (BXF4Reader bxfReader = new BXF4Reader(bhdPath, bdtPath))
+                {
+                    foreach (var file in bxfReader.Files)
+                    {
+                        var fileName = file.Name.ToLower();
+                        var modelName = modelid.ToLower();
+
+                        if (fileName.Contains(modelName))
+                        {
+                            if (fileName.Contains(".flv.dcx"))
+                            {
+                                var internalFlver = new InternalFlver();
+
+                                internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                                internalFlver.ModelID = modelid;
+                                internalFlver.CurrentFLVER = FLVER2.Read(bxfReader.ReadFile(file));
+                                internalFlver.InitialFlverBytes = bxfReader.ReadFile(file).ToArray();
+                                internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+
+                                AddInternalFlver(internalFlver);
+                            }
+                        }
+                    }
+                }
+            }
+
+            // DS3, SDT, ER, AC6
+            if (binderType is FlverBinderType.BND)
+            {
+                using (BND4Reader bndReader = new BND4Reader(modelAsset.AssetPath))
+                {
+
+                    foreach (var file in bndReader.Files)
+                    {
+                        var fileName = file.Name.ToLower();
+                        var modelName = modelid.ToLower();
+
+                        if (fileName.Contains(modelName))
+                        {
+                            if (fileName.EndsWith(".flver") || fileName.EndsWith(".flv"))
+                            {
+                                var internalFlver = new InternalFlver();
+
+                                internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                                internalFlver.ModelID = modelid;
+                                internalFlver.CurrentFLVER = FLVER2.Read(bndReader.ReadFile(file));
+                                internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
+                                internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+
+                                AddInternalFlver(internalFlver);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else if (modelType is FlverContainerType.Character or FlverContainerType.Parts or FlverContainerType.Object)
+        {
+            if (binderType is FlverBinderType.BND)
+            {
+                // BND3: DES, DS1
                 if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
                 {
-                    if (modelType == FlverContainerType.MapPiece)
+                    using (BND3Reader bndReader = new BND3Reader(modelAsset.AssetPath))
                     {
-                        var internalFlver = new InternalFlver();
-
-                        internalFlver.Name = modelid;
-                        internalFlver.ModelID = modelid;
-                        internalFlver.CurrentFLVER = FLVER2.Read(modelAsset.AssetPath);
-                        internalFlver.InitialFlverBytes = File.ReadAllBytes(modelAsset.AssetPath);
-                        internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
-
-                        LoadedFlverContainer.InternalFlvers.Add(internalFlver);
-                        LoadedFlverContainer.CurrentInternalFlver = internalFlver;
-                    }
-                    else
-                    {
-                        // BND3
-                        BND3Reader reader = new BND3Reader(modelAsset.AssetPath);
-                        foreach (var file in reader.Files)
+                        foreach (var file in bndReader.Files)
                         {
                             var fileName = file.Name.ToLower();
                             var modelName = modelid.ToLower();
@@ -317,78 +387,26 @@ public class ModelResourceManager : IResourceEventListener
                             if (fileName.Contains(modelName) && (fileName.EndsWith(".flver") || fileName.EndsWith(".flv")))
                             {
                                 var internalFlver = new InternalFlver();
-
                                 internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
                                 internalFlver.ModelID = modelid;
-                                internalFlver.CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
-                                internalFlver.InitialFlverBytes = reader.ReadFile(file).ToArray();
                                 internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+                                internalFlver.CurrentFLVER = FLVER2.Read(bndReader.ReadFile(file));
+                                internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
 
-                                LoadedFlverContainer.InternalFlvers.Add(internalFlver);
-                                LoadedFlverContainer.CurrentInternalFlver = internalFlver;
+                                AddInternalFlver(internalFlver);
                             }
                         }
-                        reader.Dispose();
                     }
                 }
-                // DS2, BB, DS3, SDT, ER, AC6
+                // BND4: DS2, DS3, SDT, ER, AC6
                 else
                 {
-                    // DS2 Map Pieces
-                    if (modelAsset.AssetPath.Contains("mapbhd"))
+                    using (BND4Reader bndReader = new BND4Reader(modelAsset.AssetPath))
                     {
-                        var bhdPath = modelAsset.AssetPath;
-                        var bdtPath = modelAsset.AssetPath.Replace("bhd", "bdt");
-                        BXF4Reader reader = new BXF4Reader(bhdPath, bdtPath);
-                        foreach (var file in reader.Files)
+                        foreach (var file in bndReader.Files)
                         {
                             var fileName = file.Name.ToLower();
                             var modelName = modelid.ToLower();
-
-                            if (fileName.Contains(modelName))
-                            {
-                                if (fileName.Contains(".flv.dcx"))
-                                {
-                                    var internalFlver = new InternalFlver();
-
-                                    internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
-                                    internalFlver.ModelID = modelid;
-                                    internalFlver.CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
-                                    internalFlver.InitialFlverBytes = reader.ReadFile(file).ToArray();
-                                    internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
-
-                                    LoadedFlverContainer.InternalFlvers.Add(internalFlver);
-                                    LoadedFlverContainer.CurrentInternalFlver = internalFlver;
-                                }
-                            }
-                        }
-                    }
-                    // BB Map Pieces
-                    else if (Smithbox.ProjectType is ProjectType.BB && modelType == FlverContainerType.MapPiece)
-                    {
-                        var internalFlver = new InternalFlver();
-
-                        internalFlver.Name = modelid;
-                        internalFlver.ModelID = modelid;
-                        internalFlver.CurrentFLVER = FLVER2.Read(modelAsset.AssetPath);
-                        internalFlver.InitialFlverBytes = File.ReadAllBytes(modelAsset.AssetPath);
-                        internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
-
-                        LoadedFlverContainer.InternalFlvers.Add(internalFlver);
-                        LoadedFlverContainer.CurrentInternalFlver = internalFlver;
-                    }
-                    // BB, DS2, DS3, SDT, ER, AC6
-                    else
-                    {
-                        // BND4
-                        BND4Reader reader = new BND4Reader(modelAsset.AssetPath);
-                        foreach (var file in reader.Files)
-                        {
-                            var fileName = file.Name.ToLower();
-                            var modelName = modelid.ToLower();
-
-                            //TaskLogs.AddLog(fileName);
-                            //TaskLogs.AddLog(modelName);
 
                             if (fileName.Contains(modelName))
                             {
@@ -413,8 +431,8 @@ public class ModelResourceManager : IResourceEventListener
 
                                         internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
                                         internalFlver.ModelID = modelid;
-                                        internalFlver.CurrentFLVER = FLVER2.Read(reader.ReadFile(file));
-                                        internalFlver.InitialFlverBytes = reader.ReadFile(file).ToArray();
+                                        internalFlver.CurrentFLVER = FLVER2.Read(bndReader.ReadFile(file));
+                                        internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
                                         internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
 
                                         LoadedFlverContainer.InternalFlvers.Add(internalFlver);
@@ -423,11 +441,16 @@ public class ModelResourceManager : IResourceEventListener
                                 }
                             }
                         }
-                        reader.Dispose();
                     }
                 }
             }
         }
+    }
+
+    public void AddInternalFlver(InternalFlver internalFlver)
+    {
+        LoadedFlverContainer.InternalFlvers.Add(internalFlver);
+        LoadedFlverContainer.CurrentInternalFlver = internalFlver;
     }
 
     /// <summary>
@@ -638,7 +661,7 @@ public class ModelResourceManager : IResourceEventListener
     }
 
     /// <summary>
-    /// Save the Pure FLVER model
+    /// Save the FLVER model
     /// </summary>
     public void SaveModel()
     {
@@ -660,66 +683,60 @@ public class ModelResourceManager : IResourceEventListener
             return;
         }
 
+        var container = LoadedFlverContainer;
+        var containerType = LoadedFlverContainer.Type;
+        var binderType = LoadedFlverContainer.BinderType;
+
         // For loose files, save directly
-        if (LoadedFlverContainer.Type == FlverContainerType.Loose)
+        if (containerType is FlverContainerType.Loose)
         {
-            WriteLooseFlver(LoadedFlverContainer.LoosePath, false);
+            WriteLooseFlver(container.LoosePath);
         }
         // Copy the binder to the mod directory if it does not already exist.
         else
         {
-            var exists = LoadedFlverContainer.CopyBinderToMod();
+            var exists = false;
+
+            // DS2 Map Pieces
+            if (binderType is FlverBinderType.BXF)
+            {
+                var containerName = $"{LoadedFlverContainer.MapID}";
+
+                exists = container.CopyBXFtoMod($"{containerName}.mapbhd");
+                exists = container.CopyBXFtoMod($"{containerName}.mapbdt");
+            }
+            else
+            {
+                exists = container.CopyBinderToMod();
+            }
 
             if (exists)
             {
-                if (LoadedFlverContainer.Type is FlverContainerType.MapPiece)
+                // DS1 / DS1R Map Pieces
+                if(binderType is FlverBinderType.None)
                 {
-                    // .flver
-                    if (Smithbox.ProjectType is ProjectType.DS1)
+                    var directory = $"map\\{container.MapID}\\";
+                    var path = $"map\\{container.MapID}\\{container.ContainerName}.flver";
+
+                    var projectDirectory = $"{Smithbox.ProjectRoot}\\{directory}";
+                    var savePath = $"{Smithbox.ProjectRoot}\\{path}";
+
+                    if (!Directory.Exists(projectDirectory))
                     {
-                        var directory = $"map\\{LoadedFlverContainer.MapID}\\";
-                        var path = $"map\\{LoadedFlverContainer.MapID}\\{LoadedFlverContainer.ContainerName}.flver";
-
-                        var projectDirectory = $"{Smithbox.ProjectRoot}\\{directory}";
-                        var savePath = $"{Smithbox.ProjectRoot}\\{path}";
-
-                        if (!Directory.Exists(projectDirectory))
-                        {
-                            Directory.CreateDirectory(projectDirectory);
-                        }
-
-                        WriteLooseFlver(savePath, false);
+                        Directory.CreateDirectory(projectDirectory);
                     }
-                    // .flver.dcx
-                    else if (Smithbox.ProjectType is ProjectType.DS1R or ProjectType.BB)
-                    {
-                        var compressionType = DCX.Type.DCX_DFLT_10000_24_9;
 
-                        if (Smithbox.ProjectType is ProjectType.BB)
-                        {
-                            compressionType = DCX.Type.DCX_DFLT_10000_44_9;
-                        }
-
-                        var directory = $"map\\{LoadedFlverContainer.MapID}\\";
-                        var path = $"map\\{LoadedFlverContainer.MapID}\\{LoadedFlverContainer.ContainerName}.flver.dcx";
-
-                        var projectDirectory = $"{Smithbox.ProjectRoot}\\{directory}";
-                        var savePath = $"{Smithbox.ProjectRoot}\\{path}";
-
-                        if (!Directory.Exists(projectDirectory))
-                        {
-                            Directory.CreateDirectory(projectDirectory);
-                        }
-
-                        WriteLooseFlver(savePath, true, compressionType);
-                    }
-                    // .mapbnd
-                    else
-                    {
-                        WriteModelBinderBND4();
-                    }
+                    WriteLooseFlver(savePath);
                 }
-                else
+
+                // DS2 Map Pieces
+                if (binderType is FlverBinderType.BXF)
+                {
+                    WriteModelBinderBXF();
+                }
+
+                // The rest
+                if (binderType is FlverBinderType.BND)
                 {
                     if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
                     {
@@ -737,28 +754,83 @@ public class ModelResourceManager : IResourceEventListener
     /// <summary>
     /// Used for loose .FLVER and DS1/DS1R saving
     /// </summary>
-    private void WriteLooseFlver(string path, bool compress, DCX.Type compressionType = DCX.Type.None)
+    private void WriteLooseFlver(string path)
     {
+        var compressionType = LoadedFlverContainer.CompressionType;
+
         // Backup loose file
         File.Copy(path, $@"{path}.bak", true);
 
         byte[] flverBytes = null;
 
-        if (compress)
+        flverBytes = LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER.Write(compressionType);
+
+        WriteFile(flverBytes, path);
+    }
+
+    /// <summary>
+    /// Save the FLVER model within BXF containers
+    /// </summary>
+    private void WriteModelBinderBXF()
+    {
+        var compressionType = LoadedFlverContainer.CompressionType;
+
+        FlverContainer info = LoadedFlverContainer;
+
+        byte[] bhdBytes = null;
+        byte[] bdtBytes = null;
+
+        var bhdPath = info.ModBinderPath;
+        var bdtPath = info.ModBinderPath.Replace("bhd", "bdt");
+
+        // Change the name to the map ID for DS2 map pieces
+        if(Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            flverBytes = LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER.Write(compressionType);
-        }
-        else
-        {
-            flverBytes = LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER.Write();
+            var containerName = LoadedFlverContainer.ContainerName;
+            bhdPath = bhdPath.Replace(containerName, info.MapID);
+            bdtPath = bdtPath.Replace(containerName, info.MapID);
         }
 
-        if (flverBytes != null)
-        {
-            File.WriteAllBytes(path, flverBytes);
+        // Backup container files
+        File.Copy(bhdPath, $@"{bhdPath}.bak", true);
+        File.Copy(bdtPath, $@"{bdtPath}.bak", true);
 
-            TaskLogs.AddLog($"Saved model at: {path}");
+        using (IBinder binder = BXF4.Read(bhdPath, bdtPath))
+        {
+            foreach (var file in binder.Files)
+            {
+                var curName = Path.GetFileNameWithoutExtension(file.Name);
+                var curFileName = $"{Path.GetFileName(file.Name)}";
+
+                foreach (var internalFlver in LoadedFlverContainer.InternalFlvers)
+                {
+                    if (curName.ToLower() == internalFlver.Name.ToLower() && curFileName.Contains(".flv"))
+                    {
+                        try
+                        {
+                            file.Bytes = internalFlver.CurrentFLVER.Write();
+                        }
+                        catch (Exception ex)
+                        {
+                            TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
+                        }
+                    }
+                }
+            }
+
+            using (BXF4 writeBinder = binder as BXF4)
+            {
+                writeBinder.Write(out bhdBytes, out bdtBytes);
+            }
         }
+
+        TaskLogs.AddLog($"Saved model container BHD file at: {bhdPath}");
+        TaskLogs.AddLog($"Saved model container BDT file at: {bdtPath}");
+
+        // NOTE: memory-mapped files write directly to the passed paths when .Write is invoked,
+        // so no need to handle the write process manually.
+        //WriteFile(bhdBytes, $"{bhdPath}");
+        //WriteFile(bdtBytes, $"{bdtPath}");
     }
 
     /// <summary>
@@ -766,6 +838,8 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     private void WriteModelBinderBND4()
     {
+        var compressionType = LoadedFlverContainer.CompressionType;
+
         FlverContainer info = LoadedFlverContainer;
 
         byte[] fileBytes = null;
@@ -773,7 +847,7 @@ public class ModelResourceManager : IResourceEventListener
         // Backup container file
         File.Copy(info.ModBinderPath, $@"{info.ModBinderPath}.bak", true);
 
-        using (IBinder binder = BND4.Read(DCX.Decompress(info.ModBinderPath)))
+        using (IBinder binder = BND4.Read(info.ModBinderPath))
         {
             foreach (var file in binder.Files)
             {
@@ -796,42 +870,17 @@ public class ModelResourceManager : IResourceEventListener
                 }
             }
 
-            // Then write those bytes to file
-            BND4 writeBinder = binder as BND4;
-
-            switch (Smithbox.ProjectType)
+            using (BND4 writeBinder = binder as BND4)
             {
-                case ProjectType.BB:
-                case ProjectType.DS3:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                    break;
-                case ProjectType.SDT:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                    break;
-                case ProjectType.ER:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                    break;
-                case ProjectType.AC6:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
-                    break;
-                default:
-                    TaskLogs.AddLog($"Invalid ProjectType during Model Editor Save");
-                    return;
+                fileBytes = writeBinder.Write(compressionType);
             }
         }
 
-        if (fileBytes != null)
-        {
-            try
-            {
-                File.WriteAllBytes(info.ModBinderPath, fileBytes);
-                TaskLogs.AddLog($"Saved model at: {info.ModBinderPath}");
-            }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"Failed to save model: {info.ModBinderPath}\n{ex.ToString()}");
-            }
-        }
+        TaskLogs.AddLog($"Saved model container BND file at: {info.ModBinderPath}");
+
+        // NOTE: memory-mapped files write directly to the passed paths when .Write is invoked,
+        // so no need to handle the write process manually.
+        //WriteFile(fileBytes, info.ModBinderPath);
     }
 
     /// <summary>
@@ -839,13 +888,15 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     public void WriteModelBinderBND3()
     {
+        var compressionType = LoadedFlverContainer.CompressionType;
+
         FlverContainer info = LoadedFlverContainer;
         byte[] fileBytes = null;
 
         // Backup container file
         File.Copy(info.ModBinderPath, $@"{info.ModBinderPath}.bak", true);
 
-        using (IBinder binder = BND3.Read(DCX.Decompress(info.ModBinderPath)))
+        using (IBinder binder = BND3.Read(info.ModBinderPath))
         {
             foreach (var file in binder.Files)
             {
@@ -869,30 +920,34 @@ public class ModelResourceManager : IResourceEventListener
             }
 
             // Then write those bytes to file
-            BND3 writeBinder = binder as BND3;
-
-            switch (Smithbox.ProjectType)
+            using (BND3 writeBinder = binder as BND3)
             {
-                case ProjectType.DS1:
-                case ProjectType.DS1R:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
-                    break;
-                default:
-                    TaskLogs.AddLog($"Invalid ProjectType during Model Editor Save");
-                    return;
+                fileBytes = writeBinder.Write(compressionType);
             }
         }
 
-        if (fileBytes != null)
+        TaskLogs.AddLog($"Saved model container BND file at: {info.ModBinderPath}");
+
+        // NOTE: memory-mapped files write directly to the passed paths when .Write is invoked,
+        // so no need to handle the write process manually.
+        //WriteFile(fileBytes, info.ModBinderPath);
+    }
+
+    /// <summary>
+    /// Write out a non-container file.
+    /// </summary>
+    public void WriteFile(byte[] data, string path)
+    {
+        if (data != null)
         {
             try
             {
-                File.WriteAllBytes(info.ModBinderPath, fileBytes);
-                TaskLogs.AddLog($"Saved model at: {info.ModBinderPath}");
+                File.WriteAllBytes(path, data);
+                TaskLogs.AddLog($"Saved model at: {path}");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Failed to save model: {info.ModBinderPath}\n{ex.ToString()}");
+                TaskLogs.AddLog($"Failed to save model: {path}\n{ex.ToString()}");
             }
         }
     }

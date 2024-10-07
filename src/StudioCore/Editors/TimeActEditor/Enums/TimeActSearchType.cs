@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor.Enums;
 
-public enum SearchType
+public enum TimeActSearchType
 {
     [Display(Name = "Animation ID")] AnimationID,
     [Display(Name = "Event ID")] EventID,

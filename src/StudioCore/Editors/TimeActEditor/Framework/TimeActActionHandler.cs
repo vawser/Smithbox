@@ -130,7 +130,7 @@ public class TimeActActionHandler
             Vector2 buttonSize = new Vector2(520 * 0.5f, 24);
 
             TAE.Event curEvent = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeActEvent;
-            TAE.Template curTemplate = TimeActUtils.GetRelevantTemplate(TemplateType.Character);
+            TAE.Template curTemplate = TimeActUtils.GetRelevantTemplate(TimeActTemplateType.Character);
 
             if (curEvent != null && curTemplate != null)
             {

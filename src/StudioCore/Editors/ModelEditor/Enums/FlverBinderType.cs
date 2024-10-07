@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor.Enums;
 
-public enum FileSelectionType
+public enum FlverBinderType
 {
     [Display(Name = "None")] None,
-    [Display(Name = "Character")] Character,
-    [Display(Name = "Asset")] Asset,
-    [Display(Name = "Part")] Part,
-    [Display(Name = "Map Piece")] MapPiece,
-    [Display(Name = "Loose")] Loose
+    [Display(Name = "BND")] BND,
+    [Display(Name = "BXF")] BXF
 }

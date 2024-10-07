@@ -1,11 +1,13 @@
-﻿namespace StudioCore.Editors.ModelEditor.Enums;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace StudioCore.Editors.ModelEditor.Enums;
 
 public enum FlverContainerType
 {
-    None = 0,
-    Character = 1,
-    Object = 2,
-    MapPiece = 3,
-    Parts = 4,
-    Loose = 5
+    [Display(Name = "None")] None,
+    [Display(Name = "Character")] Character,
+    [Display(Name = "Object")] Object,
+    [Display(Name = "MapPiece")] MapPiece,
+    [Display(Name = "Parts")] Parts,
+    [Display(Name = "Loose")] Loose
 }

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor.Enums;
 
-public enum FileContainerType
+public enum TimeActTemplateType
 {
-    [Display(Name = "None")] None,
     [Display(Name = "Character")] Character,
-    [Display(Name = "Object")] Object
+    [Display(Name = "Object")] Object,
+    [Display(Name = "Cutscene")] Cutscene
 }

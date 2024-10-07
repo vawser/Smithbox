@@ -31,7 +31,7 @@ public static class TimeActValidationTool
             {
                 TAE entry = info.InternalFiles[k].TAE;
 
-                ApplyTemplate(entry, TemplateType.Character);
+                ApplyTemplate(entry, TimeActTemplateType.Character);
 
                 for (int j = 0; j < entry.Animations.Count; j++)
                 {
@@ -63,7 +63,7 @@ public static class TimeActValidationTool
             {
                 TAE entry = info.InternalFiles[k].TAE;
 
-                ApplyTemplate(entry, TemplateType.Character);
+                ApplyTemplate(entry, TimeActTemplateType.Character);
 
                 for (int j = 0; j < entry.Animations.Count; j++)
                 {

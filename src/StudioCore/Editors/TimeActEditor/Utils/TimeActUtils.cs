@@ -39,11 +39,11 @@ public static class TimeActUtils
 
         return title;
     }
-    public static void DisplayTimeActFileAlias(string name, AliasType type)
+    public static void DisplayTimeActFileAlias(string name, TimeActAliasType type)
     {
         var referenceDict = Smithbox.AliasCacheHandler.AliasCache.Characters;
 
-        if (type == AliasType.Asset)
+        if (type == TimeActAliasType.Asset)
         {
             referenceDict = Smithbox.AliasCacheHandler.AliasCache.Assets;
         }
@@ -150,7 +150,7 @@ public static class TimeActUtils
         return displayName;
     }
 
-    public static TAE.Template GetRelevantTemplate(TemplateType type)
+    public static TAE.Template GetRelevantTemplate(TimeActTemplateType type)
     {
         switch (Smithbox.ProjectType)
         {
@@ -158,15 +158,15 @@ public static class TimeActUtils
                 return TimeActTemplates["TAE.Template.DES"];
             case ProjectType.DS1:
             case ProjectType.DS1R:
-                if (type is TemplateType.Character)
+                if (type is TimeActTemplateType.Character)
                 {
                     return TimeActTemplates["TAE.Template.DS1"];
                 }
-                else if (type is TemplateType.Object)
+                else if (type is TimeActTemplateType.Object)
                 {
                     return TimeActTemplates["TAE.Template.DS1.OBJ"];
                 }
-                else if (type is TemplateType.Cutscene)
+                else if (type is TimeActTemplateType.Cutscene)
                 {
                     return TimeActTemplates["TAE.Template.DS1.REMO"];
                 }
@@ -189,7 +189,7 @@ public static class TimeActUtils
         return null;
     }
 
-    public static void ApplyTemplate(TAE entry, TemplateType type)
+    public static void ApplyTemplate(TAE entry, TimeActTemplateType type)
     {
         switch (Smithbox.ProjectType)
         {
@@ -198,15 +198,15 @@ public static class TimeActUtils
                 break;
             case ProjectType.DS1:
             case ProjectType.DS1R:
-                if (type is TemplateType.Character)
+                if (type is TimeActTemplateType.Character)
                 {
                     entry.ApplyTemplate(TimeActTemplates["TAE.Template.DS1"]);
                 }
-                else if (type is TemplateType.Object)
+                else if (type is TimeActTemplateType.Object)
                 {
                     entry.ApplyTemplate(TimeActTemplates["TAE.Template.DS1.OBJ"]);
                 }
-                else if (type is TemplateType.Cutscene)
+                else if (type is TimeActTemplateType.Cutscene)
                 {
                     entry.ApplyTemplate(TimeActTemplates["TAE.Template.DS1.REMO"]);
                 }

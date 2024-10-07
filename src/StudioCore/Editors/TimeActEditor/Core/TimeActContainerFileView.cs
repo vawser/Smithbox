@@ -72,7 +72,7 @@ public class TimeActContainerFileView
 
                     if (ImGui.IsItemVisible())
                     {
-                        TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Character);
+                        TimeActUtils.DisplayTimeActFileAlias(info.Name, TimeActAliasType.Character);
                     }
 
                     Selection.ContextMenu.ContainerMenu(isSelected, info.Name);
@@ -123,7 +123,7 @@ public class TimeActContainerFileView
 
                     if (ImGui.IsItemVisible())
                     {
-                        TimeActUtils.DisplayTimeActFileAlias(info.Name, AliasType.Asset);
+                        TimeActUtils.DisplayTimeActFileAlias(info.Name, TimeActAliasType.Asset);
                     }
 
                     Selection.ContextMenu.ContainerMenu(isSelected, info.Name);

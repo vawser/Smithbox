@@ -34,26 +34,6 @@ Map Editor:
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
  - FIX: misc texture loads during map load can hang, causing the load window to never disppear. (e.g. Leyndell)
  
-Model Editor:  
- - ADD: FBX Import into loose FLVER
- - ADD: FBX Export of Loaded Model
- - ADD: skeleton and skinning support for playing animations
- - ADD: easier toggling of model masks based on associated NpcParam (for characters)
- - ADD: floating text for dummy poly ref IDs
- - ADD: floating text for co-ordinate direction (X, Y, Z)
- - ADD: proper handling for the flag fields in the FLVER
- - ADD: GX Item mapping so the byte arrays are more comprehesible (https://github.com/JKAnderson/SoulsFormats/issues/14)
- - ADD: render bone connections (use patrol route method)
- - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
- - ADD: Add Collision section in hierarchy
- 
- - FIX: viewport meshes should reflect changes to FLVER meshes (currently initial load meshes are always used)
- - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
- - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
- - FIX: account for scale when displaying dummies/bones
- - FIX: DS2 Flvers don't load
- - FIX: Add DES Flver support for loading
-
 Material Editor
  - ADD: Implement Material/MATBIN editor
 
@@ -111,10 +91,25 @@ EMEVD Editor:
 ESD Editor:
  - ADD: 
  
+Model Editor:  
+ - ADD: Add DES Flver support for loading
+ - ADD: FBX Import into loose FLVER
+ - ADD: FBX Export of Loaded Model
+ - ADD: skeleton and skinning support for playing animations
+ - ADD: easier toggling of model masks based on associated NpcParam (for characters)
+ - ADD: floating text for dummy poly ref IDs
+ - ADD: floating text for co-ordinate direction (X, Y, Z)
+ - ADD: proper handling for the flag fields in the FLVER
+ - ADD: GX Item mapping so the byte arrays are more comprehesible (https://github.com/JKAnderson/SoulsFormats/issues/14)
+ - ADD: render bone connections (use patrol route method)
+ - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
+ - ADD: Add Collision section in hierarchy
+ 
+ - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
+ - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
+ - FIX: account for scale when displaying dummies/bones
+
 #--------------------------------------
 # Notes
 #--------------------------------------
 # PRIORITY
-Model Editor:
- - FIX: DS2 models causing CTD in Model Editor (representative model load)
- - FIX: map pieces not loading (current FLVER is null)

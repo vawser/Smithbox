@@ -29,7 +29,7 @@ public class TimeActSearch
         ActionHandler = screen.ActionHandler;
     }
 
-    private SearchType CurrentSearchType = SearchType.AnimationID;
+    private TimeActSearchType CurrentSearchType = TimeActSearchType.AnimationID;
     private string SearchInput = "";
     private List<TimeActSearchResult> searchResults = new List<TimeActSearchResult>();
     private bool AllowPartialMatch = false;
@@ -50,9 +50,9 @@ public class TimeActSearch
         UIHelper.WrappedText("Search Type:");
         if (ImGui.BeginCombo("##Search Type", CurrentSearchType.GetDisplayName()))
         {
-            foreach (var entry in Enum.GetValues(typeof(SearchType)))
+            foreach (var entry in Enum.GetValues(typeof(TimeActSearchType)))
             {
-                var serType = (SearchType)entry;
+                var serType = (TimeActSearchType)entry;
 
                 if (ImGui.Selectable($"{serType.GetDisplayName()}"))
                 {
@@ -62,7 +62,7 @@ public class TimeActSearch
 
             ImGui.EndCombo();
         }
-        if (CurrentSearchType is SearchType.EventValue)
+        if (CurrentSearchType is TimeActSearchType.EventValue)
         {
             UIHelper.WrappedText("");
             UIHelper.WrappedText($"Event Value will only match within the currently selected Time Act container:");
@@ -165,7 +165,7 @@ public class TimeActSearch
             {
                 var anim = timeActFile.Animations[i];
 
-                if (CurrentSearchType is SearchType.AnimationID)
+                if (CurrentSearchType is TimeActSearchType.AnimationID)
                 {
                     if (AllowPartialMatch)
                     {
@@ -196,7 +196,7 @@ public class TimeActSearch
                     {
                         var evt = anim.Events[k];
 
-                        if (CurrentSearchType is SearchType.EventID)
+                        if (CurrentSearchType is TimeActSearchType.EventID)
                         {
                             if (AllowPartialMatch)
                             {
@@ -228,7 +228,7 @@ public class TimeActSearch
                             }
                         }
 
-                        if (CurrentSearchType is SearchType.EventValue)
+                        if (CurrentSearchType is TimeActSearchType.EventValue)
                         {
                             if (evt.Parameters != null)
                             {

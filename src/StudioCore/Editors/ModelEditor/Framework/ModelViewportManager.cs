@@ -275,6 +275,9 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
+        if (Screen._universe.LoadedModelContainers.Count <= 0)
+            return;
+
         var container = Screen._universe.LoadedModelContainers[ContainerID];
 
         if (index > container.DummyPoly_RootNode.Children.Count - 1)
@@ -291,6 +294,9 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
+        if (Screen._universe.LoadedModelContainers.Count <= 0)
+            return;
+
         var container = Screen._universe.LoadedModelContainers[ContainerID];
 
         if (index > container.Bone_RootNode.Children.Count - 1)
@@ -305,6 +311,9 @@ public class ModelViewportManager
     {
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
+            return;
+
+        if (Screen._universe.LoadedModelContainers.Count <= 0)
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -339,6 +348,9 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
+        if (Screen._universe.LoadedModelContainers.Count <= 0)
+            return;
+
         var container = Screen._universe.LoadedModelContainers[ContainerID];
 
         if (index > container.Bone_RootNode.Children.Count - 1)
@@ -353,6 +365,9 @@ public class ModelViewportManager
     {
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
+            return;
+
+        if (Screen._universe.LoadedModelContainers.Count <= 0)
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -370,6 +385,9 @@ public class ModelViewportManager
     {
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
+            return;
+
+        if (Screen._universe.LoadedModelContainers.Count <= 0)
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -419,6 +437,9 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
+        if (Screen._universe.LoadedModelContainers.Count <= 0)
+            return;
+
         var container = Screen._universe.LoadedModelContainers[ContainerID];
 
         if (index > container.DummyPoly_RootNode.Children.Count - 1)
@@ -432,6 +453,9 @@ public class ModelViewportManager
     {
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
+            return;
+
+        if (Screen._universe.LoadedModelContainers.Count <= 0)
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -479,6 +503,9 @@ public class ModelViewportManager
     {
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
+            return;
+
+        if (Screen._universe.LoadedModelContainers.Count <= 0)
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -543,6 +570,9 @@ public class ModelViewportManager
     {
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
+            return;
+
+        if (Screen._universe.LoadedModelContainers.Count <= 0)
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];

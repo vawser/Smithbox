@@ -45,7 +45,7 @@ public class TimeActSelectionManager
 
     public TimeActContextMenu ContextMenu;
 
-    public TemplateType CurrentTimeActType = TemplateType.Character;
+    public TimeActTemplateType CurrentTimeActType = TimeActTemplateType.Character;
 
     public TimeActSelectionContext CurrentSelectionContext = TimeActSelectionContext.None;
     public FileContainerType CurrentFileContainerType = FileContainerType.None;

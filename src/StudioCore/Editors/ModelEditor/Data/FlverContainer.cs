@@ -27,8 +27,11 @@ public class FlverContainer
     public List<InternalFlver> InternalFlvers { get; set; }
 
     public string ContainerName { get; set; }
-    public FlverContainerType Type { get; set; }
     public string MapID { get; set; }
+    public FlverContainerType Type { get; set; }
+    public FlverBinderType BinderType { get; set; }
+
+    public DCX.Type CompressionType { get; set; }
 
     public string RootBinderPath { get; set; }
     public string ModBinderPath { get; set; }
@@ -52,8 +55,10 @@ public class FlverContainer
         InternalFlvers = new List<InternalFlver>();
 
         ContainerName = name;
-        Type = FlverContainerType.Loose;
         MapID = "";
+        Type = FlverContainerType.Loose;
+        BinderType = FlverBinderType.None;
+        CompressionType = DCX.Type.None;
 
         BinderDirectory = GetBinderDirectory();
         BinderExtension = GetBinderExtension();
@@ -73,8 +78,10 @@ public class FlverContainer
         InternalFlvers = new List<InternalFlver>();
 
         ContainerName = modelName;
-        Type = modelType;
         MapID = mapId;
+        Type = modelType;
+        BinderType = FlverBinderType.None;
+        CompressionType = DCX.Type.None;
 
         BinderDirectory = GetBinderDirectory();
         BinderExtension = GetBinderExtension();
@@ -94,21 +101,55 @@ public class FlverContainer
             Directory.CreateDirectory(ModBinderDirectory);
         }
 
-        if (File.Exists(RootBinderPath))
+        var rootPath = RootBinderPath;
+        var modPath = ModBinderPath;
+
+        if (File.Exists(rootPath))
         {
-            if (!File.Exists(ModBinderPath))
+            if (!File.Exists(modPath))
             {
-                File.Copy(RootBinderPath, ModBinderPath);
+                File.Copy(rootPath, modPath);
             }
         }
         // Mod-only model, no need to copy to mod
-        else if (File.Exists(ModBinderPath))
+        else if (File.Exists(modPath))
         {
             return true;
         }
         else
         {
-            TaskLogs.AddLog($"Container path does not exist: {RootBinderPath}");
+            TaskLogs.AddLog($"Container path does not exist:\nRoot: {rootPath}\nProject: {modPath}");
+            return false;
+        }
+
+        return true;
+    }
+
+    public bool CopyBXFtoMod(string name)
+    {
+        if (!Directory.Exists(ModBinderDirectory))
+        {
+            Directory.CreateDirectory(ModBinderDirectory);
+        }
+
+        var rootPath = $"{Smithbox.GameRoot}\\{BinderDirectory}\\{name}";
+        var modPath = $"{Smithbox.ProjectRoot}\\{BinderDirectory}\\{name}";
+
+        if (File.Exists(rootPath))
+        {
+            if (!File.Exists(modPath))
+            {
+                File.Copy(rootPath, modPath);
+            }
+        }
+        // Mod-only model, no need to copy to mod
+        else if (File.Exists(modPath))
+        {
+            return true;
+        }
+        else
+        {
+            TaskLogs.AddLog($"Container path does not exist:\nRoot: {rootPath}\nProject: {modPath}");
             return false;
         }
 
@@ -164,6 +205,39 @@ public class FlverContainer
                 if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     partDir = @"\model\parts\";
+
+                    var partType = "";
+                    switch (ContainerName.Substring(0, 2))
+                    {
+                        case "as":
+                            partType = "accessories";
+                            break;
+                        case "am":
+                            partType = "arm";
+                            break;
+                        case "bd":
+                            partType = "body";
+                            break;
+                        case "fa":
+                        case "fc":
+                        case "fg":
+                            partType = "face";
+                            break;
+                        case "hd":
+                            partType = "head";
+                            break;
+                        case "leg":
+                            partType = "leg";
+                            break;
+                        case "sd":
+                            partType = "shield";
+                            break;
+                        case "wp":
+                            partType = "weapon";
+                            break;
+                    }
+
+                    partDir = $"{partDir}\\{partType}\\";
                 }
 
                 return partDir;
@@ -194,65 +268,80 @@ public class FlverContainer
         {
             case FlverContainerType.Character:
                 string chrExt = @".chrbnd.dcx";
+                BinderType = FlverBinderType.BND;
 
                 if (Smithbox.ProjectType is ProjectType.DS1)
                 {
                     chrExt = ".chrbnd";
+                    BinderType = FlverBinderType.BND;
                 }
                 if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     chrExt = ".bnd";
+                    BinderType = FlverBinderType.BND;
                 }
 
                 return chrExt;
             case FlverContainerType.Object:
                 string objExt = @".objbnd.dcx";
+                BinderType = FlverBinderType.BND;
 
                 if (Smithbox.ProjectType is ProjectType.DS1)
                 {
                     objExt = ".objbnd";
+                    BinderType = FlverBinderType.BND;
                 }
                 else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     objExt = ".bnd";
+                    BinderType = FlverBinderType.BND;
                 }
                 else if (Smithbox.ProjectType is ProjectType.ER)
                 {
                     objExt = ".geombnd.dcx";
+                    BinderType = FlverBinderType.BND;
                 }
                 else if (Smithbox.ProjectType is ProjectType.AC6)
                 {
                     objExt = ".geombnd.dcx";
+                    BinderType = FlverBinderType.BND;
                 }
 
                 return objExt;
             case FlverContainerType.Parts:
                 string partExt = @".partsbnd.dcx";
+                BinderType = FlverBinderType.BND;
 
                 if (Smithbox.ProjectType is ProjectType.DS1)
                 {
                     partExt = ".partsbnd";
+                    BinderType = FlverBinderType.BND;
                 }
                 else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     partExt = ".bnd";
+                    BinderType = FlverBinderType.BND;
                 }
 
                 return partExt;
             case FlverContainerType.MapPiece:
                 string mapPieceExt = ".mapbnd.dcx";
+                BinderType = FlverBinderType.BND;
 
                 if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
-                    mapPieceExt = ".mapbdt";
+                    mapPieceExt = ".mapbhd";
+                    BinderType = FlverBinderType.BXF;
                 }
                 else if (Smithbox.ProjectType is ProjectType.DS1R or ProjectType.BB)
                 {
                     mapPieceExt = ".flver.dcx";
+                    BinderType = FlverBinderType.None;
                 }
                 else if (Smithbox.ProjectType is ProjectType.DS1)
                 {
                     mapPieceExt = ".flver";
+                    BinderType = FlverBinderType.None;
                 }
 
                 return mapPieceExt;
