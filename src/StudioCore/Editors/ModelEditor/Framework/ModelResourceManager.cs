@@ -759,7 +759,10 @@ public class ModelResourceManager : IResourceEventListener
         var compressionType = LoadedFlverContainer.CompressionType;
 
         // Backup loose file
-        File.Copy(path, $@"{path}.bak", true);
+        if (File.Exists(path))
+        {
+            File.Copy(path, $@"{path}.bak", true);
+        }
 
         byte[] flverBytes = null;
 

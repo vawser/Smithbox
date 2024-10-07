@@ -244,7 +244,7 @@ public class FlverContainer
             case FlverContainerType.MapPiece:
                 string mapPieceDir = $@"\map\{MapID}\";
 
-                if (Smithbox.ProjectType is ProjectType.ER)
+                if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
                 {
                     string shortMapId = MapID.Split("_")[0];
                     mapPieceDir = $@"\map\{shortMapId}\{MapID}\";

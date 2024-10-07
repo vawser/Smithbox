@@ -272,6 +272,12 @@ public class ProjectModal
                     Smithbox.ProjectHandler.IsInitialLoad = false;
             }
         }
+        ImGui.SameLine();
+        // Create
+        if (ImGui.Button("Cancel", new Vector2(120, 0) * DPI.GetUIScale()))
+        {
+            Smithbox.ProjectHandler.IsInitialLoad = false;
+        }
     }
 
     public bool CanCreateNewProject()

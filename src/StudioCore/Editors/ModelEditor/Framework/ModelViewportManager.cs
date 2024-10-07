@@ -31,6 +31,7 @@ namespace StudioCore.Editors.ModelEditor;
 public class ModelViewportManager
 {
     public ModelEditorScreen Screen;
+    public Universe Universe;
 
     public IViewport Viewport;
 
@@ -44,16 +45,17 @@ public class ModelViewportManager
 
     public string ContainerID;
 
+    public bool IsUpdatingViewportModel = false;
+    public bool IgnoreHierarchyFocus = false;
+
     public ModelViewportManager(ModelEditorScreen screen, IViewport viewport)
     {
         Screen = screen;
-
+        Universe = screen._universe;
         Viewport = viewport;
+
         ContainerID = "";
     }
-
-    public bool IsUpdatingViewportModel = false;
-    public bool IgnoreHierarchyFocus = false;
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)
     {
@@ -157,6 +159,17 @@ public class ModelViewportManager
                 _lowCollisionHandle.Acquire();
             }
         }
+    }
+
+    public bool HasValidLoadedContainer()
+    {
+        if (Universe.LoadedModelContainers.Count <= 0)
+            return false;
+
+        if (!Universe.LoadedModelContainers.ContainsKey(ContainerID))
+            return false;
+
+        return true;
     }
 
     public void UpdateRepresentativeModel(int selectionIndex)
@@ -275,7 +288,7 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Screen._universe.LoadedModelContainers.Count <= 0)
+        if (!HasValidLoadedContainer())
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -294,7 +307,7 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Screen._universe.LoadedModelContainers.Count <= 0)
+        if (!HasValidLoadedContainer())
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -313,7 +326,7 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Screen._universe.LoadedModelContainers.Count <= 0)
+        if (!HasValidLoadedContainer())
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -348,7 +361,7 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Screen._universe.LoadedModelContainers.Count <= 0)
+        if (!HasValidLoadedContainer())
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -367,7 +380,7 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Screen._universe.LoadedModelContainers.Count <= 0)
+        if (!HasValidLoadedContainer())
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -387,7 +400,7 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Screen._universe.LoadedModelContainers.Count <= 0)
+        if (!HasValidLoadedContainer())
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -437,7 +450,7 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Screen._universe.LoadedModelContainers.Count <= 0)
+        if (!HasValidLoadedContainer())
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -455,7 +468,7 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Screen._universe.LoadedModelContainers.Count <= 0)
+        if (!HasValidLoadedContainer())
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -505,7 +518,7 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Screen._universe.LoadedModelContainers.Count <= 0)
+        if (!HasValidLoadedContainer())
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -522,7 +535,7 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Screen._universe.LoadedModelContainers.Count <= 0)
+        if (!HasValidLoadedContainer())
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -572,7 +585,7 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Screen._universe.LoadedModelContainers.Count <= 0)
+        if (!HasValidLoadedContainer())
             return;
 
         var container = Screen._universe.LoadedModelContainers[ContainerID];
@@ -588,6 +601,9 @@ public class ModelViewportManager
     {
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
+            return;
+
+        if (!HasValidLoadedContainer())
             return;
 
         if (!IsSelectableNode(ent))
@@ -655,6 +671,9 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
+        if (!HasValidLoadedContainer())
+            return;
+
         if (!IsSelectableNode(ent))
             return;
 
@@ -666,6 +685,9 @@ public class ModelViewportManager
     {
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
+            return;
+
+        if (!HasValidLoadedContainer())
             return;
 
         if (!IsSelectableNode(ent))
@@ -693,6 +715,9 @@ public class ModelViewportManager
 
     private void UpdateStoredDummyPosition(TransformableNamedEntity transformEnt)
     {
+        if (!HasValidLoadedContainer())
+            return;
+
         if (Screen.Selection._selectedDummy == -1)
             return;
 
@@ -707,6 +732,9 @@ public class ModelViewportManager
 
     private void UpdateStoredNodeTransform(TransformableNamedEntity transformEnt)
     {
+        if (!HasValidLoadedContainer())
+            return;
+
         if (Screen.Selection._selectedNode == -1)
             return;
 
