@@ -49,7 +49,7 @@ namespace StudioCore.Editors.ModelEditor
                         Selection.ForceOpenGXListSection = true;
                         Selection.ResetSelection();
                         Selection._selectedGXList = index;
-                        Selection._lastSelectedEntry = ModelEntrySelectionType.GXList;
+                        Selection._selectedFlverGroupType = GroupSelectionType.GXList;
                         Selection.FocusSelection = true;
                     }
 
@@ -91,7 +91,7 @@ namespace StudioCore.Editors.ModelEditor
                         Selection.ForceOpenMaterialSection = true;
                         Selection.ResetSelection();
                         Selection._selectedMaterial = index;
-                        Selection._lastSelectedEntry = ModelEntrySelectionType.Material;
+                        Selection._selectedFlverGroupType = GroupSelectionType.Material;
                         Selection.FocusSelection = true;
                     }
 
@@ -133,7 +133,7 @@ namespace StudioCore.Editors.ModelEditor
                         Selection.ForceOpenNodeSection = true;
                         Selection.ResetSelection();
                         Selection._selectedNode = index;
-                        Selection._lastSelectedEntry = ModelEntrySelectionType.Node;
+                        Selection._selectedFlverGroupType = GroupSelectionType.Node;
                         Selection.FocusSelection = true;
                     }
 
@@ -175,7 +175,7 @@ namespace StudioCore.Editors.ModelEditor
                         Selection.ForceOpenBufferLayoutSection = true;
                         Selection.ResetSelection();
                         Selection._selectedBufferLayout = index;
-                        Selection._lastSelectedEntry = ModelEntrySelectionType.BufferLayout;
+                        Selection._selectedFlverGroupType = GroupSelectionType.BufferLayout;
                         Selection.FocusSelection = true;
                     }
 

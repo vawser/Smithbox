@@ -42,6 +42,7 @@ public class GparamToolMenubar
             }
 
             // Gparam Reloader
+            /*
             if (GparamMemoryTools.IsGparamReloaderSupported())
             {
                 UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
@@ -56,6 +57,7 @@ public class GparamToolMenubar
                     ImGui.EndMenu();
                 }
             }
+            */
 
             ImGui.EndMenu();
         }

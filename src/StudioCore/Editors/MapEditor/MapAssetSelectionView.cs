@@ -23,7 +23,7 @@ namespace StudioCore.Editors.MapEditor
     {
         private string _searchInput = "";
         private string _selectedEntry = "";
-        private ModelSelectionType _selectedEntryType = ModelSelectionType.None;
+        private FileSelectionType _selectedEntryType = FileSelectionType.None;
 
         private MapEditorScreen Screen;
 
@@ -37,7 +37,7 @@ namespace StudioCore.Editors.MapEditor
             if (Smithbox.ProjectType != ProjectType.Undefined)
             {
                 _selectedEntry = "";
-                _selectedEntryType = ModelSelectionType.None;
+                _selectedEntryType = FileSelectionType.None;
             }
         }
 
@@ -137,11 +137,11 @@ namespace StudioCore.Editors.MapEditor
                         if (ImGui.Selectable(entry, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             _selectedEntry = entry;
-                            _selectedEntryType = ModelSelectionType.Character;
+                            _selectedEntryType = FileSelectionType.Character;
 
                             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
-                                ApplyMapAssetSelection(_selectedEntry, ModelSelectionType.Character);
+                                ApplyMapAssetSelection(_selectedEntry, FileSelectionType.Character);
                             }
                         }
                         DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Characters);
@@ -150,7 +150,7 @@ namespace StudioCore.Editors.MapEditor
                         {
                             if (ImGui.Selectable("Change Selection to This"))
                             {
-                                ApplyMapAssetSelection(entry, ModelSelectionType.Character);
+                                ApplyMapAssetSelection(entry, FileSelectionType.Character);
                             }
 
                             if (ImGui.Selectable("Go to Alias"))
@@ -192,11 +192,11 @@ namespace StudioCore.Editors.MapEditor
                         if (ImGui.Selectable(entry, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             _selectedEntry = entry;
-                            _selectedEntryType = ModelSelectionType.Asset;
+                            _selectedEntryType = FileSelectionType.Asset;
 
                             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
-                                ApplyMapAssetSelection(_selectedEntry, ModelSelectionType.Asset);
+                                ApplyMapAssetSelection(_selectedEntry, FileSelectionType.Asset);
                             }
                         }
                         DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Assets);
@@ -205,7 +205,7 @@ namespace StudioCore.Editors.MapEditor
                         {
                             if (ImGui.Selectable("Change Selection to This"))
                             {
-                                ApplyMapAssetSelection(entry, ModelSelectionType.Asset);
+                                ApplyMapAssetSelection(entry, FileSelectionType.Asset);
                             }
 
                             if (ImGui.Selectable("Go to Alias"))
@@ -240,11 +240,11 @@ namespace StudioCore.Editors.MapEditor
                         if (ImGui.Selectable(entry, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             _selectedEntry = entry;
-                            _selectedEntryType = ModelSelectionType.Part;
+                            _selectedEntryType = FileSelectionType.Part;
 
                             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
-                                ApplyMapAssetSelection(_selectedEntry, ModelSelectionType.Part);
+                                ApplyMapAssetSelection(_selectedEntry, FileSelectionType.Part);
                             }
                         }
                         DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Parts);
@@ -253,7 +253,7 @@ namespace StudioCore.Editors.MapEditor
                         {
                             if (ImGui.Selectable("Change Selection to This"))
                             {
-                                ApplyMapAssetSelection(entry, ModelSelectionType.Part);
+                                ApplyMapAssetSelection(entry, FileSelectionType.Part);
                             }
 
                             if (ImGui.Selectable("Go to Alias"))
@@ -305,11 +305,11 @@ namespace StudioCore.Editors.MapEditor
                             if (ImGui.Selectable(mapPieceName, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                             {
                                 _selectedEntry = entry;
-                                _selectedEntryType = ModelSelectionType.MapPiece;
+                                _selectedEntryType = FileSelectionType.MapPiece;
 
                                 if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                                 {
-                                    ApplyMapAssetSelection(_selectedEntry, ModelSelectionType.MapPiece, map);
+                                    ApplyMapAssetSelection(_selectedEntry, FileSelectionType.MapPiece, map);
                                 }
                             }
                             DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
@@ -318,7 +318,7 @@ namespace StudioCore.Editors.MapEditor
                             {
                                 if (ImGui.Selectable("Change Selection to This"))
                                 {
-                                    ApplyMapAssetSelection(_selectedEntry, ModelSelectionType.MapPiece, map);
+                                    ApplyMapAssetSelection(_selectedEntry, FileSelectionType.MapPiece, map);
                                 }
 
                                 if (ImGui.Selectable("Go to Alias"))
@@ -339,7 +339,7 @@ namespace StudioCore.Editors.MapEditor
                 }
             }
         }
-        private void ApplyMapAssetSelection(string _selectedName, ModelSelectionType type, string mapId = "")
+        private void ApplyMapAssetSelection(string _selectedName, FileSelectionType type, string mapId = "")
         {
             var modelName = _selectedName;
 
@@ -348,7 +348,7 @@ namespace StudioCore.Editors.MapEditor
                 modelName = modelName.Replace("aeg", "AEG");
             }
 
-            if (type == ModelSelectionType.MapPiece)
+            if (type == FileSelectionType.MapPiece)
             {
                 SetObjectModelForSelection(modelName, type, mapId);
             }
@@ -358,7 +358,7 @@ namespace StudioCore.Editors.MapEditor
             }
         }
 
-        private void SetObjectModelForSelection(string modelName, ModelSelectionType assetType, string assetMapId)
+        private void SetObjectModelForSelection(string modelName, FileSelectionType assetType, string assetMapId)
         {
             var actlist = new List<ViewportAction>();
 
@@ -368,7 +368,7 @@ namespace StudioCore.Editors.MapEditor
             {
                 var isValidObjectType = false;
 
-                if (assetType == ModelSelectionType.Character)
+                if (assetType == FileSelectionType.Character)
                 {
                     switch (Smithbox.ProjectType)
                     {
@@ -408,7 +408,7 @@ namespace StudioCore.Editors.MapEditor
                             throw new ArgumentException("Selected entity type must be Enemy");
                     }
                 }
-                if (assetType == ModelSelectionType.Asset)
+                if (assetType == FileSelectionType.Asset)
                 {
                     switch (Smithbox.ProjectType)
                     {
@@ -450,7 +450,7 @@ namespace StudioCore.Editors.MapEditor
                             throw new ArgumentException("Selected entity type must be Object/Asset");
                     }
                 }
-                if (assetType == ModelSelectionType.MapPiece)
+                if (assetType == FileSelectionType.MapPiece)
                 {
                     switch (Smithbox.ProjectType)
                     {
@@ -493,7 +493,7 @@ namespace StudioCore.Editors.MapEditor
                     }
                 }
 
-                if (assetType == ModelSelectionType.MapPiece)
+                if (assetType == FileSelectionType.MapPiece)
                 {
                     if (s.Parent != null)
                     {
@@ -513,7 +513,7 @@ namespace StudioCore.Editors.MapEditor
 
                 if (isValidObjectType)
                 {
-                    if (assetType == ModelSelectionType.MapPiece)
+                    if (assetType == FileSelectionType.MapPiece)
                     {
                         // Adjust modelName for mappieces, since by default they are mXX_YY_ZZ_AA_<id>
                         string newName = modelName.Replace($"{assetMapId}_", "m");

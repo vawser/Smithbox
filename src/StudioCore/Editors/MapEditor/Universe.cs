@@ -950,9 +950,9 @@ public class Universe
         {
             ModelContainer container = new(this, name);
 
-            container.LoadFlver(name, flver, flverProxy, lowCollisionProxy, highCollisionProxy);
-
             LoadedModelContainers.Add(name, container);
+
+            container.LoadFlver(name, flver, flverProxy, lowCollisionProxy, highCollisionProxy);
         }
         else
         {
@@ -1490,29 +1490,17 @@ public class Universe
     /// <summary>
     /// Model Editor: Unload Dummies/Bones
     /// </summary>
-    public void UnloadTransformableEntities(bool clearFromList = false)
+    public void UnloadTransformableEntities()
     {
-        List<ModelContainer> toUnload = new();
-        foreach (var key in LoadedModelContainers.Keys)
+        foreach(var entry in LoadedModelContainers)
         {
-            if (LoadedModelContainers[key] != null)
+            foreach (Entity obj in entry.Value.Objects)
             {
-                toUnload.Add(LoadedModelContainers[key]);
-            }
-        }
-
-        foreach (ModelContainer container in toUnload)
-        {
-            if (LoadedModelContainers.ContainsKey(container.Name))
-            {
-                foreach (Entity obj in container.Objects)
+                if (obj is TransformableNamedEntity)
                 {
-                    if (obj is TransformableNamedEntity)
+                    if (obj != null)
                     {
-                        if (obj != null)
-                        {
-                            obj.Dispose();
-                        }
+                        obj.Dispose();
                     }
                 }
             }

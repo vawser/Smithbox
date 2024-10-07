@@ -10,6 +10,7 @@ using System.Drawing;
 using static StudioCore.Configuration.Settings.TimeActEditorTab;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
+using StudioCore.Editors.ModelEditor.Enums;
 
 namespace StudioCore;
 
@@ -300,6 +301,8 @@ public class CFG
     public int ModelEditor_Toolbar_DuplicateProperty_Amount = 1;
 
     public bool ModelEditor_Toolbar_DeleteProperty_FaceSetsOnly = true;
+
+    public ModelExportType ModelEditor_ExportType = ModelExportType.OBJ;
 
     //****************************
     // Settings: Param Editor

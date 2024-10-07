@@ -698,7 +698,7 @@ public class KeyBindings
 
         public KeyBind MODEL_ExportModel = new(
             "Export Model", 
-            "Export the currently loaded model as a .DAE file.", 
+            "Export the currently loaded model.", 
             Key.K, 
             true);
 

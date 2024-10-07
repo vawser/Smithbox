@@ -1,6 +1,6 @@
 ﻿namespace StudioCore.Editors.ModelEditor.Enums;
 
-public enum ModelEditorModelType
+public enum FlverContainerType
 {
     None = 0,
     Character = 1,

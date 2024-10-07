@@ -41,8 +41,16 @@ public class ModelToolMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Export Model", KeyBindings.Current.MODEL_ExportModel.HintText))
             {
-                ModelExporter.ExportModel(Screen);
+                if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.DAE)
+                {
+                    ModelColladaExporter.ExportModel(Screen);
+                }
+                if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.OBJ)
+                {
+                    ModelObjectExporter.ExportModel(Screen);
+                }
             }
+
             // Solve Bounding Boxes
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.MenuItem("Solve Bounding Boxes"))
@@ -114,7 +122,7 @@ public class ModelToolMenubar
             }
             // Buffer Layout Groups
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("Material Groups"))
+            if (ImGui.BeginMenu("Buffer Layout Groups"))
             {
                 BufferLayoutGroups.DisplaySubMenu(Screen);
 

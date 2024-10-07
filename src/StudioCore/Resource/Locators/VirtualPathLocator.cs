@@ -563,6 +563,15 @@ public static class VirtualPathLocator
                 return TextureLocator.GetOtherTextureContainerPath(containerName);
             }
         }
+        // DIRECT
+        else if (pathElements[i].Equals("direct"))
+        {
+            i++;
+            var type = pathElements[i];
+
+            bndpath = "";
+            return $"direct/{type}";
+        }
 
         bndpath = virtualPath;
         return null;

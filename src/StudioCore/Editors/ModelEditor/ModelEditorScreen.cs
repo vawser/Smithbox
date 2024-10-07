@@ -217,53 +217,48 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
         {
-            if (_universe.LoadedModelContainers.ContainsKey(ViewportManager.ContainerID))
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
+            if (ImGui.MenuItem("Meshes"))
             {
-                var container = _universe.LoadedModelContainers[ViewportManager.ContainerID];
+                CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
+            UIHelper.ShowHoverTooltip("Only applies on model reload.");
 
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
+            if (ImGui.MenuItem("Dummy Polygons"))
+            {
+                CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewDummyPolys);
+
+            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
+            if (ImGui.MenuItem("Bones"))
+            {
+                CFG.Current.ModelEditor_ViewBones = !CFG.Current.ModelEditor_ViewBones;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
+
+            // Collision
+            if (Smithbox.ProjectType is ProjectType.ER)
+            {
+                // High
                 UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-                if (ImGui.MenuItem("Meshes"))
+                if (ImGui.MenuItem("Collision (High)"))
                 {
-                    CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
+                    CFG.Current.ModelEditor_ViewHighCollision = !CFG.Current.ModelEditor_ViewHighCollision;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
+                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewHighCollision);
                 UIHelper.ShowHoverTooltip("Only applies on model reload.");
 
+                // Low
                 UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-                if (ImGui.MenuItem("Dummy Polygons"))
+                if (ImGui.MenuItem("Collision (Low)"))
                 {
-                    CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
+                    CFG.Current.ModelEditor_ViewLowCollision = !CFG.Current.ModelEditor_ViewLowCollision;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewDummyPolys);
-
-                UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-                if (ImGui.MenuItem("Bones"))
-                {
-                    CFG.Current.ModelEditor_ViewBones = !CFG.Current.ModelEditor_ViewBones;
-                }
-                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
-
-                // Collision
-                if (Smithbox.ProjectType is ProjectType.ER)
-                {
-                    // High
-                    UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-                    if (ImGui.MenuItem("Collision (High)"))
-                    {
-                        CFG.Current.ModelEditor_ViewHighCollision = !CFG.Current.ModelEditor_ViewHighCollision;
-                    }
-                    UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewHighCollision);
-                    UIHelper.ShowHoverTooltip("Only applies on model reload.");
-
-                    // Low
-                    UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-                    if (ImGui.MenuItem("Collision (Low)"))
-                    {
-                        CFG.Current.ModelEditor_ViewLowCollision = !CFG.Current.ModelEditor_ViewLowCollision;
-                    }
-                    UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewLowCollision);
-                    UIHelper.ShowHoverTooltip("Only applies on model reload.");
-                }
+                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewLowCollision);
+                UIHelper.ShowHoverTooltip("Only applies on model reload.");
             }
 
             ImGui.EndMenu();

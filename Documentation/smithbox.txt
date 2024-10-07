@@ -24,7 +24,6 @@ Behavior Editor:
  - ADD: collision HKX editor
  
 Map Editor: 
- - ADD: .GRASS support
  - ADD: .ENTRYFILELIST support
  - ADD: enum support for the DS3 corpse poses
  - ADD: "Data Export" action for MSB data: output the MSB information as JSON
@@ -53,6 +52,7 @@ Model Editor:
  - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
  - FIX: account for scale when displaying dummies/bones
  - FIX: DS2 Flvers don't load
+ - FIX: Add DES Flver support for loading
 
 Material Editor
  - ADD: Implement Material/MATBIN editor
@@ -62,7 +62,8 @@ Param Editor:
  - ADD: make "Use project meta" merge in new entries instead of wholesale replacing (https://github.com/ividyon/WitchyBND/blob/main/WitchyBND/Configuration.cs)
  - ADD: automatic naming tool: for current param, look for reference fields, name the linked param row with the base name if empty (e.g. Item -> Bullet-> AtkParam)
  - ADD: Copy to NPC AtkParam/BehaviorParam from PC AtkParam/BehaviorParam and vice versa
-
+ - ADD: ItemGib for ER
+ 
 Text Editor:
  - REWORK: remove the in-built categorization of the FMGs, add as an optional bundling, but internally they should reflect the actual FMG binder structure
  
@@ -74,8 +75,9 @@ Text Editor:
  - FIX: internal vanilla entry should be preferred over internal dlc01/dlc02 entry due to FMG read preference (vanilla entry overrides dlc1 entry, dlc1 entry overrides dlc2 entry)
  
 Gparam Editor:
+ - ADD: GPARAM reloader
  - ADD: json export/import of GPARAM (plus sub-classes?)
- - ADD: gparam reference support (e.g. jump to map param, and if it is offset, that value entry offset)
+ - ADD: GPARAM reference support (e.g. jump to map param, and if it is offset, that value entry offset)
  - ADD: sticky selection: don't automatically clear selection, rather only clear it if it becomes invalid
 
 Time Act Editor
@@ -115,5 +117,5 @@ ESD Editor:
 # PRIORITY
 Model Editor:
  - FIX: DS2 models causing CTD in Model Editor (representative model load)
- 
-1543.643
+ - FIX: map pieces not loading (current FLVER is null)
+ - FIX: dummy/bone meshes not unloading properly

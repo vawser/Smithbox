@@ -1,16 +1,20 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
+using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using static StudioCore.Configuration.Settings.TimeActEditorTab;
 
 namespace StudioCore.Editors.ModelEditor.Actions;
 
@@ -18,6 +22,8 @@ public class ModelToolView
 {
     private ModelEditorScreen Screen;
     public GlobalModelSearch ModelUsageSearch;
+
+    private bool ObjIncludeTextures = true;
 
     public ModelToolView(ModelEditorScreen screen)
     {
@@ -46,25 +52,69 @@ public class ModelToolView
             // Export Model
             if (ImGui.CollapsingHeader("Export Model"))
             {
-                UIHelper.WrappedText("Export the currently loaded model to a directory as a Collada .DAE file.");
+                UIHelper.WrappedText("Export the currently loaded model to a directory");
                 UIHelper.WrappedText("");
+
+                if (ImGui.BeginCombo("Export Type", CFG.Current.ModelEditor_ExportType.ToString()))
+                {
+                    foreach (var entry in Enum.GetValues(typeof(ModelExportType)))
+                    {
+                        var type = (ModelExportType)entry;
+
+                        if (ImGui.Selectable(type.GetDisplayName()))
+                        {
+                            CFG.Current.ModelEditor_ExportType = (ModelExportType)entry;
+                        }
+                    }
+                    ImGui.EndCombo();
+                }
+                UIHelper.ShowHoverTooltip("Change the type of model export to use.");
+
+                if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.OBJ)
+                {
+                    // TODO
+                    //ImGui.Checkbox("Include Textures", ref ObjIncludeTextures);
+                    //UIHelper.ShowHoverTooltip("The diffuse textures will be exported alongside the model.");
+                }
 
                 ImGui.Separator();
                 UIHelper.WrappedText("Export Directory");
                 ImGui.Separator();
-                UIHelper.WrappedText($"{ModelExporter.ExportPath}");
+
+                if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.DAE)
+                {
+                    UIHelper.WrappedText($"{ModelColladaExporter.ExportPath}");
+                }
+                if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.OBJ)
+                {
+                    UIHelper.WrappedText($"{ModelObjectExporter.ExportPath}");
+                }
                 UIHelper.WrappedText("");
 
                 if (ImGui.Button("Set Export Directory##modelExportDirectoryButton", defaultButtonSize))
                 {
                     if (PlatformUtils.Instance.OpenFolderDialog("Select export directory...", out var path))
                     {
-                        ModelExporter.ExportPath = path;
+                        if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.DAE)
+                        {
+                            ModelColladaExporter.ExportPath = path;
+                        }
+                        if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.OBJ)
+                        {
+                            ModelObjectExporter.ExportPath = path;
+                        }
                     }
                 }
                 if(ImGui.Button("Export##modelExportApplyButton", defaultButtonSize))
                 {
-                    ModelExporter.ExportModel(Screen);
+                    if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.DAE)
+                    {
+                        ModelColladaExporter.ExportModel(Screen);
+                    }
+                    if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.OBJ)
+                    {
+                        ModelObjectExporter.ExportModel(Screen);
+                    }
                 }
             }
 

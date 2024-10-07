@@ -153,12 +153,12 @@ public class ModelResourceManager : IResourceEventListener
 
         LoadedFlverContainer = new FlverContainer(name, loosePath);
 
-        LoadEditableModel(name, name, ModelEditorModelType.Loose);
+        LoadEditableModel(name, name, FlverContainerType.Loose);
 
         // Set loaded FLVER to first file.
         LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
 
-        LoadRepresentativeModel(name, name, ModelEditorModelType.Loose);
+        LoadRepresentativeModel(name, name, FlverContainerType.Loose);
     }
 
     /// <summary>
@@ -175,11 +175,11 @@ public class ModelResourceManager : IResourceEventListener
 
         ResetState(name);
 
-        LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Character, "");
+        LoadedFlverContainer = new FlverContainer(name, FlverContainerType.Character, "");
 
-        LoadEditableModel(name, name, ModelEditorModelType.Character);
+        LoadEditableModel(name, name, FlverContainerType.Character);
         SetDefaultAssociatedModel();
-        LoadRepresentativeModel(name, name, ModelEditorModelType.Character);
+        LoadRepresentativeModel(name, name, FlverContainerType.Character);
     }
 
     /// <summary>
@@ -195,11 +195,11 @@ public class ModelResourceManager : IResourceEventListener
 
         // Load HKX for collision
         HavokCollisionManager.Screen = Screen;
-        HavokCollisionManager.OnLoadModel(name, ModelEditorModelType.Object);
+        HavokCollisionManager.OnLoadModel(name, FlverContainerType.Object);
 
         ResetState(name);
 
-        LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Object, "");
+        LoadedFlverContainer = new FlverContainer(name, FlverContainerType.Object, "");
 
         if (Smithbox.ProjectType is ProjectType.ER)
         {
@@ -213,9 +213,9 @@ public class ModelResourceManager : IResourceEventListener
             }
         }
 
-        LoadEditableModel(name, name, ModelEditorModelType.Object);
+        LoadEditableModel(name, name, FlverContainerType.Object);
         SetDefaultAssociatedModel();
-        LoadRepresentativeModel(name, name, ModelEditorModelType.Object);
+        LoadRepresentativeModel(name, name, FlverContainerType.Object);
     }
 
     /// <summary>
@@ -231,11 +231,11 @@ public class ModelResourceManager : IResourceEventListener
 
         ResetState(name);
 
-        LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.Parts, "");
+        LoadedFlverContainer = new FlverContainer(name, FlverContainerType.Parts, "");
 
-        LoadEditableModel(name, name, ModelEditorModelType.Parts);
+        LoadEditableModel(name, name, FlverContainerType.Parts);
         SetDefaultAssociatedModel();
-        LoadRepresentativeModel(name, name, ModelEditorModelType.Parts);
+        LoadRepresentativeModel(name, name, FlverContainerType.Parts);
     }
 
     /// <summary>
@@ -251,17 +251,17 @@ public class ModelResourceManager : IResourceEventListener
 
         ResetState(name);
 
-        LoadedFlverContainer = new FlverContainer(name, ModelEditorModelType.MapPiece, mapId);
+        LoadedFlverContainer = new FlverContainer(name, FlverContainerType.MapPiece, mapId);
 
-        LoadEditableModel(name, name, ModelEditorModelType.MapPiece, mapId);
+        LoadEditableModel(name, name, FlverContainerType.MapPiece, mapId);
         SetDefaultAssociatedModel();
-        LoadRepresentativeModel(name, name, ModelEditorModelType.MapPiece, mapId);
+        LoadRepresentativeModel(name, name, FlverContainerType.MapPiece, mapId);
     }
 
     /// <summary>
     /// Loads the editable FLVER model, this is the model that the editor actually uses
     /// </summary>
-    private void LoadEditableModel(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
+    private void LoadEditableModel(string containerId, string modelid, FlverContainerType modelType, string mapid = null)
     {
         ResourceDescriptor modelAsset = GetModelAssetDescriptor(containerId, modelid, modelType, mapid);
 
@@ -270,7 +270,7 @@ public class ModelResourceManager : IResourceEventListener
         if (!File.Exists(modelAsset.AssetPath))
             return;
 
-        if (modelType == ModelEditorModelType.Loose)
+        if (modelType == FlverContainerType.Loose)
         {
             var internalFlver = new InternalFlver();
 
@@ -290,7 +290,7 @@ public class ModelResourceManager : IResourceEventListener
                 // DS1, DES
                 if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
                 {
-                    if (modelType == ModelEditorModelType.MapPiece)
+                    if (modelType == FlverContainerType.MapPiece)
                     {
                         var internalFlver = new InternalFlver();
 
@@ -362,7 +362,7 @@ public class ModelResourceManager : IResourceEventListener
                         }
                     }
                     // BB Map Pieces
-                    else if (Smithbox.ProjectType is ProjectType.BB && modelType == ModelEditorModelType.MapPiece)
+                    else if (Smithbox.ProjectType is ProjectType.BB && modelType == FlverContainerType.MapPiece)
                     {
                         var internalFlver = new InternalFlver();
 
@@ -431,11 +431,11 @@ public class ModelResourceManager : IResourceEventListener
     /// <summary>
     /// Loads the viewport FLVER model, this is the model displayed in the viewport
     /// </summary>
-    public void LoadRepresentativeModel(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
+    public void LoadRepresentativeModel(string containerId, string modelid, FlverContainerType modelType, string mapid = null)
     {
         if (Smithbox.ProjectType is ProjectType.ER)
         {
-            if (modelType is ModelEditorModelType.Object)
+            if (modelType is FlverContainerType.Object)
             {
                 LoadCollisionInternal(modelid, "h");
                 LoadCollisionInternal(modelid, "l");
@@ -458,10 +458,11 @@ public class ModelResourceManager : IResourceEventListener
     /// <summary>
     /// Load model into the resource system
     /// </summary>
-    private void LoadModelInternal(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
+    private void LoadModelInternal(string containerId, string modelid, FlverContainerType modelType, string mapid = null)
     {
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
 
+        /*
         ResourceDescriptor modelAsset = GetModelAssetDescriptor(containerId, modelid, modelType, mapid);
 
         if (modelType == ModelEditorModelType.Loose)
@@ -469,6 +470,10 @@ public class ModelResourceManager : IResourceEventListener
             modelAsset = new ResourceDescriptor();
             modelAsset.AssetVirtualPath = $"loose/flver/{LoadedFlverContainer.LoosePath}";
         }
+        */
+
+        var modelAsset = new ResourceDescriptor();
+        modelAsset.AssetVirtualPath = "direct/flver";
 
         if (CFG.Current.ModelEditor_ViewMeshes)
         {
@@ -476,17 +481,11 @@ public class ModelResourceManager : IResourceEventListener
 
             if (modelAsset.AssetArchiveVirtualPath != null)
             {
-                if (!ResourceManager.IsResourceLoaded(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
-                {
-                    job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Flver);
-                }
+                job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Flver);
             }
             else if (modelAsset.AssetVirtualPath != null)
             {
-                if (!ResourceManager.IsResourceLoaded(modelAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
-                {
-                    job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                }
+                job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
             }
 
             _loadingTask = job.Complete();
@@ -498,7 +497,7 @@ public class ModelResourceManager : IResourceEventListener
     /// <summary>
     /// Load textures into the resource system
     /// </summary>
-    private void LoadTexturesInternal(string modelid, ModelEditorModelType modelType, string mapid = null)
+    private void LoadTexturesInternal(string modelid, FlverContainerType modelType, string mapid = null)
     {
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading textures");
 
@@ -581,22 +580,22 @@ public class ModelResourceManager : IResourceEventListener
     /// <summary>
     /// Get model resource descriptor
     /// </summary>
-    public ResourceDescriptor GetModelAssetDescriptor(string containerId, string modelid, ModelEditorModelType modelType, string mapid = null)
+    public ResourceDescriptor GetModelAssetDescriptor(string containerId, string modelid, FlverContainerType modelType, string mapid = null)
     {
         ResourceDescriptor asset;
 
         switch (modelType)
         {
-            case ModelEditorModelType.Character:
+            case FlverContainerType.Character:
                 asset = ModelLocator.GetChrModel(containerId, modelid);
                 break;
-            case ModelEditorModelType.Object:
+            case FlverContainerType.Object:
                 asset = ModelLocator.GetObjModel(containerId, modelid);
                 break;
-            case ModelEditorModelType.Parts:
+            case FlverContainerType.Parts:
                 asset = ModelLocator.GetPartsModel(containerId, modelid);
                 break;
-            case ModelEditorModelType.MapPiece:
+            case FlverContainerType.MapPiece:
                 asset = ModelLocator.GetMapModel(mapid, containerId, modelid);
                 break;
             default:
@@ -610,22 +609,22 @@ public class ModelResourceManager : IResourceEventListener
     /// <summary>
     /// Get texture resource descriptors
     /// </summary>
-    public List<ResourceDescriptor> GetTextureAssetDescriptorList(string modelid, ModelEditorModelType modelType, string mapid = null)
+    public List<ResourceDescriptor> GetTextureAssetDescriptorList(string modelid, FlverContainerType modelType, string mapid = null)
     {
         List<ResourceDescriptor> assets = new();
 
         switch (modelType)
         {
-            case ModelEditorModelType.Character:
+            case FlverContainerType.Character:
                 assets.Add(TextureLocator.GetChrTextures(modelid));
                 break;
-            case ModelEditorModelType.Object:
+            case FlverContainerType.Object:
                 assets.Add(TextureLocator.GetObjTextureContainer(modelid));
                 break;
-            case ModelEditorModelType.Parts:
+            case FlverContainerType.Parts:
                 assets.Add(TextureLocator.GetPartTextureContainer(modelid));
                 break;
-            case ModelEditorModelType.MapPiece:
+            case FlverContainerType.MapPiece:
                 assets = TextureLocator.GetMapTextures(mapid);
                 break;
             default:
@@ -660,7 +659,7 @@ public class ModelResourceManager : IResourceEventListener
         }
 
         // For loose files, save directly
-        if (LoadedFlverContainer.Type == ModelEditorModelType.Loose)
+        if (LoadedFlverContainer.Type == FlverContainerType.Loose)
         {
             WriteLooseFlver(LoadedFlverContainer.LoosePath, false);
         }
@@ -671,7 +670,7 @@ public class ModelResourceManager : IResourceEventListener
 
             if (exists)
             {
-                if (LoadedFlverContainer.Type is ModelEditorModelType.MapPiece)
+                if (LoadedFlverContainer.Type is FlverContainerType.MapPiece)
                 {
                     // .flver
                     if (Smithbox.ProjectType is ProjectType.DS1)

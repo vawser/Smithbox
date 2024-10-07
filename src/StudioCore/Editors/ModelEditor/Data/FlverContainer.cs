@@ -27,7 +27,7 @@ public class FlverContainer
     public List<InternalFlver> InternalFlvers { get; set; }
 
     public string ContainerName { get; set; }
-    public ModelEditorModelType Type { get; set; }
+    public FlverContainerType Type { get; set; }
     public string MapID { get; set; }
 
     public string RootBinderPath { get; set; }
@@ -52,7 +52,7 @@ public class FlverContainer
         InternalFlvers = new List<InternalFlver>();
 
         ContainerName = name;
-        Type = ModelEditorModelType.Loose;
+        Type = FlverContainerType.Loose;
         MapID = "";
 
         BinderDirectory = GetBinderDirectory();
@@ -68,7 +68,7 @@ public class FlverContainer
         LoosePath = loosePath;
     }
 
-    public FlverContainer(string modelName, ModelEditorModelType modelType, string mapId)
+    public FlverContainer(string modelName, FlverContainerType modelType, string mapId)
     {
         InternalFlvers = new List<InternalFlver>();
 
@@ -131,7 +131,7 @@ public class FlverContainer
     {
         switch (Type)
         {
-            case ModelEditorModelType.Character:
+            case FlverContainerType.Character:
                 string chrDir = @"\chr\";
 
                 if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
@@ -140,7 +140,7 @@ public class FlverContainer
                 }
 
                 return chrDir;
-            case ModelEditorModelType.Object:
+            case FlverContainerType.Object:
                 string objDir = @"\obj\";
 
                 if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
@@ -158,7 +158,7 @@ public class FlverContainer
                 }
 
                 return objDir;
-            case ModelEditorModelType.Parts:
+            case FlverContainerType.Parts:
                 string partDir = @"\parts\";
 
                 if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
@@ -167,7 +167,7 @@ public class FlverContainer
                 }
 
                 return partDir;
-            case ModelEditorModelType.MapPiece:
+            case FlverContainerType.MapPiece:
                 string mapPieceDir = $@"\map\{MapID}\";
 
                 if (Smithbox.ProjectType is ProjectType.ER)
@@ -192,7 +192,7 @@ public class FlverContainer
     {
         switch (Type)
         {
-            case ModelEditorModelType.Character:
+            case FlverContainerType.Character:
                 string chrExt = @".chrbnd.dcx";
 
                 if (Smithbox.ProjectType is ProjectType.DS1)
@@ -205,7 +205,7 @@ public class FlverContainer
                 }
 
                 return chrExt;
-            case ModelEditorModelType.Object:
+            case FlverContainerType.Object:
                 string objExt = @".objbnd.dcx";
 
                 if (Smithbox.ProjectType is ProjectType.DS1)
@@ -226,7 +226,7 @@ public class FlverContainer
                 }
 
                 return objExt;
-            case ModelEditorModelType.Parts:
+            case FlverContainerType.Parts:
                 string partExt = @".partsbnd.dcx";
 
                 if (Smithbox.ProjectType is ProjectType.DS1)
@@ -239,7 +239,7 @@ public class FlverContainer
                 }
 
                 return partExt;
-            case ModelEditorModelType.MapPiece:
+            case FlverContainerType.MapPiece:
                 string mapPieceExt = ".mapbnd.dcx";
 
                 if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)

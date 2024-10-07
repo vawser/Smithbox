@@ -18,7 +18,11 @@ public class ModelSelectionManager
     private ModelEditorScreen Screen;
     private ModelViewportManager ViewportManager;
 
-    public ModelEntrySelectionType _lastSelectedEntry = ModelEntrySelectionType.None;
+    public string _selectedFileName = "";
+    public string _selectedAssociatedMapID = "";
+    public FileSelectionType _selectedFileModelType = FileSelectionType.None;
+
+    public GroupSelectionType _selectedFlverGroupType = GroupSelectionType.None;
     public string _selectedEntry = "";
     public int _selectedDummy = -1;
     public int _selectedMaterial = -1;
@@ -96,7 +100,7 @@ public class ModelSelectionManager
     public void ResetSelection()
     {
         _selectedEntry = "";
-        _lastSelectedEntry = ModelEntrySelectionType.None;
+        _selectedFlverGroupType = GroupSelectionType.None;
         _selectedDummy = -1;
         _selectedMaterial = -1;
         _selectedGXList = -1;
@@ -135,7 +139,7 @@ public class ModelSelectionManager
     public void SetHeaderSelection()
     {
         _selectedEntry = "Header";
-        _lastSelectedEntry = ModelEntrySelectionType.Header;
+        _selectedFlverGroupType = GroupSelectionType.Header;
     }
 
     /// <summary>
@@ -160,7 +164,7 @@ public class ModelSelectionManager
 
         ResetSelection();
         _selectedDummy = index;
-        _lastSelectedEntry = ModelEntrySelectionType.Dummy;
+        _selectedFlverGroupType = GroupSelectionType.Dummy;
 
         _trackedDummyPosition = new Vector3();
         ViewportManager.SelectRepresentativeDummy(_selectedDummy, DummyMultiselect);
@@ -188,7 +192,7 @@ public class ModelSelectionManager
 
         ResetSelection();
         _selectedMaterial = index;
-        _lastSelectedEntry = ModelEntrySelectionType.Material;
+        _selectedFlverGroupType = GroupSelectionType.Material;
 
         if (curMaterial.Textures.Count > 0)
         {
@@ -218,7 +222,7 @@ public class ModelSelectionManager
 
         ResetSelection();
         _selectedGXList = index;
-        _lastSelectedEntry = ModelEntrySelectionType.GXList;
+        _selectedFlverGroupType = GroupSelectionType.GXList;
 
         if (curGXList.Count > 0)
         {
@@ -248,7 +252,7 @@ public class ModelSelectionManager
 
         ResetSelection();
         _selectedNode = index;
-        _lastSelectedEntry = ModelEntrySelectionType.Node;
+        _selectedFlverGroupType = GroupSelectionType.Node;
 
         _trackedNodePosition = new Vector3();
         ViewportManager.SelectRepresentativeNode(_selectedNode);
@@ -276,7 +280,7 @@ public class ModelSelectionManager
 
         ResetSelection();
         _selectedMesh = index;
-        _lastSelectedEntry = ModelEntrySelectionType.Mesh;
+        _selectedFlverGroupType = GroupSelectionType.Mesh;
 
         if (curMesh.FaceSets.Count > 0)
         {
@@ -313,7 +317,7 @@ public class ModelSelectionManager
 
         ResetSelection();
         _selectedBufferLayout = index;
-        _lastSelectedEntry = ModelEntrySelectionType.BufferLayout;
+        _selectedFlverGroupType = GroupSelectionType.BufferLayout;
 
         if (curLayout.Count > 0)
         {
@@ -343,7 +347,7 @@ public class ModelSelectionManager
 
         ResetSelection();
         _selectedBaseSkeletonBone = index;
-        _lastSelectedEntry = ModelEntrySelectionType.BaseSkeleton;
+        _selectedFlverGroupType = GroupSelectionType.BaseSkeleton;
     }
 
     /// <summary>
@@ -368,7 +372,7 @@ public class ModelSelectionManager
 
         ResetSelection();
         _selectedAllSkeletonBone = index;
-        _lastSelectedEntry = ModelEntrySelectionType.AllSkeleton;
+        _selectedFlverGroupType = GroupSelectionType.AllSkeleton;
     }
 
     /// <summary>
@@ -391,7 +395,7 @@ public class ModelSelectionManager
     {
         ResetSelection();
         _selectedLowCollision = index;
-        _lastSelectedEntry = ModelEntrySelectionType.CollisionLow;
+        _selectedFlverGroupType = GroupSelectionType.CollisionLow;
     }
 
     /// <summary>
@@ -414,6 +418,6 @@ public class ModelSelectionManager
     {
         ResetSelection();
         _selectedHighCollision = index;
-        _lastSelectedEntry = ModelEntrySelectionType.CollisionHigh;
+        _selectedFlverGroupType = GroupSelectionType.CollisionHigh;
     }
 }

@@ -17,6 +17,7 @@ using StudioCore.MsbEditor;
 using System.Text.RegularExpressions;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
+using Org.BouncyCastle.Utilities;
 
 namespace StudioCore.Resource.Types;
 
@@ -81,6 +82,13 @@ public class FlverResource : IResource, IDisposable
 
     public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
+        // HACK: circumvent resource manager, grab updated FLVER data directly for representing the model
+        if(virtPath.Contains("direct/flver"))
+        {
+            var data = Smithbox.EditorHandler.ModelEditor.ResManager.GetCurrentFLVER().Clone();
+            bytes = data.Write();
+        }
+
         bool ret;
         if (Smithbox.ProjectType is ProjectType.DES)
         {
@@ -121,28 +129,50 @@ public class FlverResource : IResource, IDisposable
 
     public bool _Load(string path, AccessLevel al, string virtPath)
     {
-        bool ret;
-        if (Smithbox.ProjectType is ProjectType.DES)
+        byte[] fileBytes = Array.Empty<byte>();
+
+        // HACK: circumvent resource manager, grab updated FLVER data directly for representing the model
+        if (virtPath.Contains("direct/flver"))
         {
-            FlverDeS = FLVER0.Read(path);
-            ret = LoadInternalDeS(al);
+            var curFlver = Smithbox.EditorHandler.ModelEditor.ResManager.GetCurrentFLVER();
+
+            if (curFlver != null)
+            {
+                var data = curFlver.Clone();
+                fileBytes = data.Write();
+            }
         }
         else
         {
-            if (al == AccessLevel.AccessGPUOptimizedOnly && Smithbox.ProjectType != ProjectType.DS1R &&
-                Smithbox.ProjectType != ProjectType.DS1)
-            {
-                var fileBytes = File.ReadAllBytes(path);
+            fileBytes = File.ReadAllBytes(path);
+        }
 
-                BinaryReaderEx br = new(false, fileBytes);
-                DCX.Type ctype;
-                br = SFUtil.GetDecompressedBR(br, out ctype);
-                ret = LoadInternalFast(br);
+        bool ret = false;
+
+        if (fileBytes.Length > 1)
+        {
+            if (Smithbox.ProjectType is ProjectType.DES)
+            {
+                FlverDeS = FLVER0.Read(fileBytes);
+                ret = LoadInternalDeS(al);
             }
             else
             {
-                Flver = FLVER2.Read(path);
-                ret = LoadInternal(al);
+
+                if (al == AccessLevel.AccessGPUOptimizedOnly &&
+                    Smithbox.ProjectType != ProjectType.DS1R &&
+                    Smithbox.ProjectType != ProjectType.DS1)
+                {
+                    BinaryReaderEx br = new(false, fileBytes);
+                    DCX.Type ctype;
+                    br = SFUtil.GetDecompressedBR(br, out ctype);
+                    ret = LoadInternalFast(br);
+                }
+                else
+                {
+                    Flver = FLVER2.Read(fileBytes);
+                    ret = LoadInternal(al);
+                }
             }
         }
 

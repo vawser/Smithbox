@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor.Enums;
 
-public enum ModelSelectionType
+public enum FileSelectionType
 {
     None,
     Character,

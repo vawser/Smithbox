@@ -34,6 +34,7 @@ public class ResourceDescriptor : IComparable<ResourceDescriptor>
     /// </summary>
     public string AssetVirtualPath;
 
+
     public override int GetHashCode()
     {
         if (AssetVirtualPath != null)

@@ -78,50 +78,50 @@ public class ModelPropertyView
         {
             if (Screen.ResManager.GetCurrentFLVER() != null && !SuspendView)
             {
-                var entryType = Selection._lastSelectedEntry;
+                var entryType = Selection._selectedFlverGroupType;
 
-                if (entryType == ModelEntrySelectionType.Header)
+                if (entryType == GroupSelectionType.Header)
                 {
                     FlverHeaderEditor.Display();
                 }
-                else if (entryType == ModelEntrySelectionType.Dummy)
+                else if (entryType == GroupSelectionType.Dummy)
                 {
                     FlverDummyEditor.Display();
                 }
-                else if (entryType == ModelEntrySelectionType.Material)
+                else if (entryType == GroupSelectionType.Material)
                 {
                     FlverMaterialEditor.Display();
                 }
-                else if (entryType == ModelEntrySelectionType.GXList)
+                else if (entryType == GroupSelectionType.GXList)
                 {
                     FlverGxListEditor.Display();
                 }
-                else if (entryType == ModelEntrySelectionType.Node)
+                else if (entryType == GroupSelectionType.Node)
                 {
                     FlverNodeEditor.Display();
                 }
-                else if (entryType == ModelEntrySelectionType.Mesh)
+                else if (entryType == GroupSelectionType.Mesh)
                 {
                     FlverMeshEditor.Display();
                 }
-                else if (entryType == ModelEntrySelectionType.BufferLayout)
+                else if (entryType == GroupSelectionType.BufferLayout)
                 {
                     FlverBufferLayoutEditor.Display();
                 }
-                else if (entryType == ModelEntrySelectionType.BaseSkeleton)
+                else if (entryType == GroupSelectionType.BaseSkeleton)
                 {
                     FlverBaseSkeletonEditor.Display();
                 }
-                else if (entryType == ModelEntrySelectionType.AllSkeleton)
+                else if (entryType == GroupSelectionType.AllSkeleton)
                 {
                     FlverAllSkeletonEditor.Display();
                 }
-                else if (entryType == ModelEntrySelectionType.CollisionLow)
+                else if (entryType == GroupSelectionType.CollisionLow)
                 {
                     var lowCol = Screen.ResManager.LoadedFlverContainer.ER_LowCollision;
                     HavokCollisionEditor.Display(lowCol);
                 }
-                else if (entryType == ModelEntrySelectionType.CollisionHigh)
+                else if (entryType == GroupSelectionType.CollisionHigh)
                 {
                     var highCol = Screen.ResManager.LoadedFlverContainer.ER_HighCollision;
                     HavokCollisionEditor.Display(highCol);

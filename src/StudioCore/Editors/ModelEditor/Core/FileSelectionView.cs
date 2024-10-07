@@ -24,17 +24,17 @@ namespace StudioCore.Editors.ModelEditor;
 public class FileSelectionView
 {
     private ModelEditorScreen Screen;
+    private ModelSelectionManager Selection;
     private ModelResourceManager ResManager;
     private ModelAssetCopyManager AssetCopyManager;
 
     public string _searchInput = "";
-    public string _selectedEntry = "";
     private string _selectedMapId = "";
-    private ModelSelectionType _selectedEntryType = ModelSelectionType.None;
 
     public FileSelectionView(ModelEditorScreen screen)
     {
         Screen = screen;
+        Selection = screen.Selection;
         ResManager = screen.ResManager;
         AssetCopyManager = screen.AssetCopyManager;
     }
@@ -43,8 +43,9 @@ public class FileSelectionView
     {
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
-            _selectedEntry = "";
-            _selectedEntryType = ModelSelectionType.None;
+            Selection._selectedFileName = "";
+            Selection._selectedAssociatedMapID = "";
+            Selection._selectedFileModelType = FileSelectionType.None;
         }
     }
 
@@ -139,19 +140,22 @@ public class FileSelectionView
 
     public void ReloadModel()
     {
-        switch (_selectedEntryType)
+        var name = Selection._selectedFileName;
+        var mapId = Selection._selectedAssociatedMapID;
+
+        switch (Selection._selectedFileModelType)
         {
-            case ModelSelectionType.Character:
-                ResManager.LoadCharacter(_selectedEntry);
+            case FileSelectionType.Character:
+                ResManager.LoadCharacter(name);
                 break;
-            case ModelSelectionType.Asset:
-                ResManager.LoadAsset(_selectedEntry);
+            case FileSelectionType.Asset:
+                ResManager.LoadAsset(name);
                 break;
-            case ModelSelectionType.Part:
-                ResManager.LoadPart(_selectedEntry);
+            case FileSelectionType.Part:
+                ResManager.LoadPart(name);
                 break;
-            case ModelSelectionType.MapPiece:
-                ResManager.LoadMapPiece(_selectedEntry, _selectedMapId);
+            case FileSelectionType.MapPiece:
+                ResManager.LoadMapPiece(name, mapId);
                 break;
         }
     }
@@ -175,9 +179,11 @@ public class FileSelectionView
                 if (result)
                 {
                     var name = Path.GetFileNameWithoutExtension(loosePath);
-                    _selectedEntry = name;
-                    _selectedEntryType = ModelSelectionType.Loose;
-                    ResManager.LoadLooseFLVER(_selectedEntry, loosePath);
+
+                    Selection._selectedFileName = name;
+                    Selection._selectedFileModelType = FileSelectionType.Loose;
+
+                    ResManager.LoadLooseFLVER(Selection._selectedFileName, loosePath);
                 }
             }
         }
@@ -194,14 +200,14 @@ public class FileSelectionView
             {
                 if (FilterSelectionList(entry, Smithbox.AliasCacheHandler.AliasCache.Characters))
                 {
-                    if (ImGui.Selectable(entry, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable(entry, entry == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        _selectedEntry = entry;
-                        _selectedEntryType = ModelSelectionType.Character;
+                        Selection._selectedFileName = entry;
+                        Selection._selectedFileModelType = FileSelectionType.Character;
 
                         if (ImGui.IsItemHovered() && ImGui.IsMouseClicked(ImGuiMouseButton.Left))
                         {
-                            ResManager.LoadCharacter(_selectedEntry);
+                            ResManager.LoadCharacter(Selection._selectedFileName);
                         }
                     }
 
@@ -256,14 +262,14 @@ public class FileSelectionView
             {
                 if (FilterSelectionList(entry, Smithbox.AliasCacheHandler.AliasCache.Assets))
                 {
-                    if (ImGui.Selectable(entry, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable(entry, entry == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        _selectedEntry = entry;
-                        _selectedEntryType = ModelSelectionType.Asset;
+                        Selection._selectedFileName = entry;
+                        Selection._selectedFileModelType = FileSelectionType.Asset;
 
                         if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                         {
-                            ResManager.LoadAsset(_selectedEntry);
+                            ResManager.LoadAsset(Selection._selectedFileName);
                         }
                     }
                     if (ImGui.IsItemVisible())
@@ -310,14 +316,14 @@ public class FileSelectionView
             {
                 if (FilterSelectionList(entry, Smithbox.AliasCacheHandler.AliasCache.Parts))
                 {
-                    if (ImGui.Selectable(entry, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable(entry, entry == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        _selectedEntry = entry;
-                        _selectedEntryType = ModelSelectionType.Part;
+                        Selection._selectedFileName = entry;
+                        Selection._selectedFileModelType = FileSelectionType.Part;
 
                         if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                         {
-                            ResManager.LoadPart(_selectedEntry);
+                            ResManager.LoadPart(Selection._selectedFileName);
                         }
                     }
                     if (ImGui.IsItemVisible())
@@ -396,15 +402,15 @@ public class FileSelectionView
                 {
                     var mapPieceName = $"{entry.Replace(map, "m")}";
 
-                    if (ImGui.Selectable(mapPieceName, entry == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable(mapPieceName, entry == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        _selectedEntry = entry;
-                        _selectedEntryType = ModelSelectionType.MapPiece;
+                        Selection._selectedFileName = entry;
+                        Selection._selectedFileModelType = FileSelectionType.MapPiece;
 
                         if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                         {
-                            _selectedMapId = map;
-                            ResManager.LoadMapPiece(_selectedEntry, map);
+                            Selection._selectedAssociatedMapID = map;
+                            ResManager.LoadMapPiece(Selection._selectedEntry, map);
                         }
                     }
                     if (ImGui.IsItemVisible())

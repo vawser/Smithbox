@@ -87,6 +87,15 @@ public class ModelContainer : ObjectContainer
                 }
             }
 
+            if (CFG.Current.ModelEditor_ViewMeshes)
+            {
+                meshNode.EditorVisible = true;
+            }
+            else
+            {
+                meshNode.EditorVisible = false;
+            }
+
             Objects.Add(meshNode);
             Mesh_RootNode.AddChild(meshNode);
         }
@@ -97,6 +106,14 @@ public class ModelContainer : ObjectContainer
             var boneNode = new TransformableNamedEntity(this, flver.Nodes[i], $"Bone {i} {{ {flver.Nodes[i].Name} }}", i);
 
             boneNode.RenderSceneMesh = Universe.GetBoneDrawable(this, boneNode);
+            if(CFG.Current.ModelEditor_ViewDummyPolys)
+            {
+                boneNode.EditorVisible = true;
+            }
+            else
+            {
+                boneNode.EditorVisible = false;
+            }
 
             Objects.Add(boneNode);
             Bone_RootNode.AddChild(boneNode);
@@ -108,6 +125,15 @@ public class ModelContainer : ObjectContainer
             var dummyPolyNode = new TransformableNamedEntity(this, flver.Dummies[i], $@"Dummy {i}", i);
 
             dummyPolyNode.RenderSceneMesh = Universe.GetDummyPolyDrawable(this, dummyPolyNode);
+
+            if (CFG.Current.ModelEditor_ViewDummyPolys)
+            {
+                dummyPolyNode.EditorVisible = true;
+            }
+            else
+            {
+                dummyPolyNode.EditorVisible = false;
+            }
 
             Objects.Add(dummyPolyNode);
             DummyPoly_RootNode.AddChild(dummyPolyNode);

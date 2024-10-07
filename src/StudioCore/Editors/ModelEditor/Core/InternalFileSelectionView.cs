@@ -66,7 +66,7 @@ public class InternalFileSelectionView
 
                 if (ImGui.Selectable($"{entry.Name}", entry == currentFlver))
                 {
-                    Selection._lastSelectedEntry = ModelEntrySelectionType.InternalFile;
+                    Selection._selectedFlverGroupType = GroupSelectionType.InternalFile;
                     ResManager.LoadedFlverContainer.CurrentInternalFlver = entry;
 
                     var name = ResManager.LoadedFlverContainer.ContainerName;

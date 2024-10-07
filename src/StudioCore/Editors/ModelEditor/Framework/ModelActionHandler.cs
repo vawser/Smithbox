@@ -36,41 +36,41 @@ public class ModelActionHandler
         var currentFlver = Screen.ResManager.GetCurrentFLVER();
         ViewportAction action = null;
 
-        switch (Screen.Selection._lastSelectedEntry)
+        switch (Screen.Selection._selectedFlverGroupType)
         {
-            case ModelEntrySelectionType.None:
-            case ModelEntrySelectionType.Header:
+            case GroupSelectionType.None:
+            case GroupSelectionType.Header:
                 break;
 
-            case ModelEntrySelectionType.Dummy:
+            case GroupSelectionType.Dummy:
                 action = new AddDummy(Screen, currentFlver);
                 break;
 
-            case ModelEntrySelectionType.Material:
+            case GroupSelectionType.Material:
                 action = new AddMaterial(Screen, currentFlver);
                 break;
 
-            case ModelEntrySelectionType.GXList:
+            case GroupSelectionType.GXList:
                 action = new AddGxList(Screen, currentFlver);
                 break;
 
-            case ModelEntrySelectionType.Node:
+            case GroupSelectionType.Node:
                 action = new AddNode(Screen, currentFlver);
                 break;
 
-            case ModelEntrySelectionType.Mesh:
+            case GroupSelectionType.Mesh:
                 action = new AddMesh(Screen, currentFlver);
                 break;
 
-            case ModelEntrySelectionType.BufferLayout:
+            case GroupSelectionType.BufferLayout:
                 action = new AddBufferLayout(Screen, currentFlver);
                 break;
 
-            case ModelEntrySelectionType.BaseSkeleton:
+            case GroupSelectionType.BaseSkeleton:
                 action = new AddBaseSkeletonBone(Screen, currentFlver);
                 break;
 
-            case ModelEntrySelectionType.AllSkeleton:
+            case GroupSelectionType.AllSkeleton:
                 action = new AddAllSkeletonBone(Screen, currentFlver);
                 break;
         }
@@ -84,13 +84,13 @@ public class ModelActionHandler
         var currentFlver = Screen.ResManager.GetCurrentFLVER();
         ViewportAction action = null;
 
-        switch (Selection._lastSelectedEntry)
+        switch (Selection._selectedFlverGroupType)
         {
-            case ModelEntrySelectionType.None:
-            case ModelEntrySelectionType.Header:
+            case GroupSelectionType.None:
+            case GroupSelectionType.Header:
                 break;
 
-            case ModelEntrySelectionType.Dummy:
+            case GroupSelectionType.Dummy:
                 if (Selection.DummyMultiselect.HasValidMultiselection())
                     action = new DuplicateMultipleDummies(Screen, currentFlver, Selection.DummyMultiselect);
                 else
@@ -98,7 +98,7 @@ public class ModelActionHandler
                     action = new DuplicateDummy(Screen, currentFlver, Selection._selectedDummy);
                 break;
 
-            case ModelEntrySelectionType.Material:
+            case GroupSelectionType.Material:
                 if (Selection.MaterialMultiselect.HasValidMultiselection())
                     action = new DuplicateMultipleMaterials(Screen, currentFlver, Selection.MaterialMultiselect);
                 else
@@ -106,7 +106,7 @@ public class ModelActionHandler
                     action = new DuplicateMaterial(Screen, currentFlver, Selection._selectedMaterial);
                 break;
 
-            case ModelEntrySelectionType.GXList:
+            case GroupSelectionType.GXList:
                 if (Selection.GxListMultiselect.HasValidMultiselection())
                     action = new DuplicateMultipleGxLists(Screen, currentFlver, Selection.GxListMultiselect);
                 else
@@ -114,7 +114,7 @@ public class ModelActionHandler
                     action = new DuplicateGxList(Screen, currentFlver, Selection._selectedGXList);
                 break;
 
-            case ModelEntrySelectionType.Node:
+            case GroupSelectionType.Node:
                 if (Selection.NodeMultiselect.HasValidMultiselection())
                     action = new DuplicateMultipleNodes(Screen, currentFlver, Selection.NodeMultiselect);
                 else
@@ -122,7 +122,7 @@ public class ModelActionHandler
                     action = new DuplicateNode(Screen, currentFlver, Selection._selectedNode);
                 break;
 
-            case ModelEntrySelectionType.Mesh:
+            case GroupSelectionType.Mesh:
                 if (Selection.MeshMultiselect.HasValidMultiselection())
                     action = new DuplicateMultipleMeshes(Screen, currentFlver, Selection.MeshMultiselect);
                 else
@@ -130,7 +130,7 @@ public class ModelActionHandler
                     action = new DuplicateMesh(Screen, currentFlver, Selection._selectedMesh);
                 break;
 
-            case ModelEntrySelectionType.BufferLayout:
+            case GroupSelectionType.BufferLayout:
                 if (Selection.BufferLayoutMultiselect.HasValidMultiselection())
                     action = new DuplicateMultipleBufferLayouts(Screen, currentFlver, Selection.BufferLayoutMultiselect);
                 else
@@ -138,7 +138,7 @@ public class ModelActionHandler
                     action = new DuplicateBufferLayout(Screen, currentFlver, Selection._selectedBufferLayout);
                 break;
 
-            case ModelEntrySelectionType.BaseSkeleton:
+            case GroupSelectionType.BaseSkeleton:
                 if (Selection.BaseSkeletonMultiselect.HasValidMultiselection())
                     action = new DuplicateMultipleBaseSkeletonBones(Screen, currentFlver, Selection.BaseSkeletonMultiselect);
                 else
@@ -146,7 +146,7 @@ public class ModelActionHandler
                     action = new DuplicateBaseSkeletonBone(Screen, currentFlver, Selection._selectedBaseSkeletonBone);
                 break;
 
-            case ModelEntrySelectionType.AllSkeleton:
+            case GroupSelectionType.AllSkeleton:
                 if (Selection.AllSkeletonMultiselect.HasValidMultiselection())
                     action = new DuplicateMultipleAllSkeletonBones(Screen, currentFlver, Selection.AllSkeletonMultiselect);
                 else
@@ -164,13 +164,13 @@ public class ModelActionHandler
         var currentFlver = Screen.ResManager.GetCurrentFLVER();
         ViewportAction action = null;
 
-        switch (Selection._lastSelectedEntry)
+        switch (Selection._selectedFlverGroupType)
         {
-            case ModelEntrySelectionType.None:
-            case ModelEntrySelectionType.Header:
+            case GroupSelectionType.None:
+            case GroupSelectionType.Header:
                 break;
 
-            case ModelEntrySelectionType.Dummy:
+            case GroupSelectionType.Dummy:
                 if (Selection.DummyMultiselect.HasValidMultiselection())
                     action = new RemoveMultipleDummies(Screen, currentFlver, Selection.DummyMultiselect);
                 else
@@ -178,7 +178,7 @@ public class ModelActionHandler
                     action = new RemoveDummy(Screen, currentFlver, Selection._selectedDummy);
                 break;
 
-            case ModelEntrySelectionType.Material:
+            case GroupSelectionType.Material:
                 if (Selection.MaterialMultiselect.HasValidMultiselection())
                     action = new RemoveMultipleMaterials(Screen, currentFlver, Selection.MaterialMultiselect);
                 else
@@ -186,7 +186,7 @@ public class ModelActionHandler
                     action = new RemoveMaterial(Screen, currentFlver, Selection._selectedMaterial);
                 break;
 
-            case ModelEntrySelectionType.GXList:
+            case GroupSelectionType.GXList:
                 if (Selection.GxListMultiselect.HasValidMultiselection())
                     action = new RemoveMultipleGxLists(Screen, currentFlver, Selection.GxListMultiselect);
                 else
@@ -194,7 +194,7 @@ public class ModelActionHandler
                     action = new RemoveGxList(Screen, currentFlver, Selection._selectedGXList);
                 break;
 
-            case ModelEntrySelectionType.Node:
+            case GroupSelectionType.Node:
                 if (Selection.NodeMultiselect.HasValidMultiselection())
                     action = new RemoveMultipleNodes(Screen, currentFlver, Selection.NodeMultiselect);
                 else
@@ -202,7 +202,7 @@ public class ModelActionHandler
                     action = new RemoveNode(Screen, currentFlver, Selection._selectedNode);
                 break;
 
-            case ModelEntrySelectionType.Mesh:
+            case GroupSelectionType.Mesh:
                 if (Selection.MeshMultiselect.HasValidMultiselection())
                     action = new RemoveMultipleMeshes(Screen, currentFlver, Selection.MeshMultiselect);
                 else
@@ -210,7 +210,7 @@ public class ModelActionHandler
                     action = new RemoveMesh(Screen, currentFlver, Selection._selectedMesh);
                 break;
 
-            case ModelEntrySelectionType.BufferLayout:
+            case GroupSelectionType.BufferLayout:
                 if (Selection.BufferLayoutMultiselect.HasValidMultiselection())
                     action = new RemoveMultipleBufferLayouts(Screen, currentFlver, Selection.BufferLayoutMultiselect);
                 else
@@ -218,7 +218,7 @@ public class ModelActionHandler
                     action = new RemoveBufferLayout(Screen, currentFlver, Selection._selectedBufferLayout);
                 break;
 
-            case ModelEntrySelectionType.BaseSkeleton:
+            case GroupSelectionType.BaseSkeleton:
                 if (Selection.BaseSkeletonMultiselect.HasValidMultiselection())
                     action = new RemoveMultipleBaseSkeletonBones(Screen, currentFlver, Selection.BaseSkeletonMultiselect);
                 else
@@ -226,7 +226,7 @@ public class ModelActionHandler
                     action = new RemoveBaseSkeletonBone(Screen, currentFlver, Selection._selectedBaseSkeletonBone);
                 break;
 
-            case ModelEntrySelectionType.AllSkeleton:
+            case GroupSelectionType.AllSkeleton:
                 if (Selection.AllSkeletonMultiselect.HasValidMultiselection())
                     action = new RemoveMultipleAllSkeletonBones(Screen, currentFlver, Selection.AllSkeletonMultiselect);
                 else

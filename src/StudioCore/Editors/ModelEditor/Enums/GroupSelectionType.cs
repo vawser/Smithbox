@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor.Enums
 {
-    public enum ModelEntrySelectionType
+    public enum GroupSelectionType
     {
         None,
         Header,

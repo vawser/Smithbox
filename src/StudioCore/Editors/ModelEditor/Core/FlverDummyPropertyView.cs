@@ -121,7 +121,8 @@ public class FlverDummyPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Position != position)
-                vpAction = new UpdateProperty_FLVERDummy_Position(entry, entry.Position, position);
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_Position(entry, entry.Position, position));
         }
 
         ImGui.AlignTextToFramePadding();
@@ -130,7 +131,8 @@ public class FlverDummyPropertyView
         {
             if (entry.Forward != forward)
             {
-                vpAction = new UpdateProperty_FLVERDummy_Forward(entry, entry.Forward, forward);
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_Forward(entry, entry.Forward, forward));
 
             }
         }
@@ -140,7 +142,8 @@ public class FlverDummyPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Upward != upward)
-                vpAction = new UpdateProperty_FLVERDummy_Upward(entry, entry.Upward, upward);
+                Screen.EditorActionManager.ExecuteAction(
+                    new UpdateProperty_FLVERDummy_Upward(entry, entry.Upward, upward));
         }
 
         ImGui.AlignTextToFramePadding();
@@ -212,29 +215,11 @@ public class FlverDummyPropertyView
 
         ImGui.Columns(1);
 
-        if (vpAction != null)
-        {
-            var a = new CompoundAction([vpAction]);
-            a.SetPostExecutionAction(_ => UpdateDummy(index));
-            Screen.EditorActionManager.ExecuteAction(a);
-        }
-
         // Update representative selectable
         if (Selection._trackedDummyPosition != entry.Position)
         {
             Selection._trackedDummyPosition = entry.Position;
             Screen.ViewportManager.UpdateRepresentativeDummy(index, entry.Position);
         }
-    }
-
-    private void UpdateDummy(int index)
-    {
-        var container = Screen._universe.LoadedModelContainers[Screen.ViewportManager.ContainerID];
-        if (container.DummyPoly_RootNode.Children.Count <= index)
-        {
-            TaskLogs.AddLog($"Index {index} is past size of dummy poly array, count {container.DummyPoly_RootNode.Children.Count}", LogLevel.Warning);
-            return;
-        }
-        container.DummyPoly_RootNode.Children[index].UpdateRenderModel();
     }
 }

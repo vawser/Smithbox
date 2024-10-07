@@ -141,7 +141,7 @@ public static class HavokCollisionManager
         }
     }
 
-    public static void OnLoadModel(string modelName, ModelEditorModelType modelType)
+    public static void OnLoadModel(string modelName, FlverContainerType modelType)
     {
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
@@ -165,7 +165,7 @@ public static class HavokCollisionManager
         }
     }
 
-    private static void LoadModelCollision(string modelName, string colType, ModelEditorModelType modelType)
+    private static void LoadModelCollision(string modelName, string colType, FlverContainerType modelType)
     {
         var checkedName = $"{modelName}_{colType}".ToLower();
 

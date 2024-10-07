@@ -3,6 +3,7 @@ using ImGuiNET;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Actions.Viewport;
 using StudioCore.Editors.ModelEditor.Enums;
@@ -60,6 +61,8 @@ public class ModelViewportManager
         if (Smithbox.LowRequirementsMode)
             return;
 
+        ContainerID = Screen.ResManager.LoadedFlverContainer.ContainerName;
+
         // Collision
         if (handle is ResourceHandle<HavokCollisionResource>)
         {
@@ -101,20 +104,24 @@ public class ModelViewportManager
                 Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
             }
 
-            if (_flverhandle.IsLoaded && _flverhandle.Get() != null)
+            // Update Model Container
+            var curFlver = Screen.ResManager.GetCurrentFLVER();
+            if (curFlver != null)
             {
-                var currentFlverClone = Screen.ResManager.GetCurrentFLVER().Clone();
-                var currentInfo = Screen.ResManager.LoadedFlverContainer;
+                var currentFlverClone = curFlver.Clone();
 
-                FlverResource r = _flverhandle.Get();
-                if (r.Flver != null)
+                ModelContainer container = new(Screen._universe, ContainerID);
+
+                if (Screen._universe.LoadedModelContainers.ContainsKey(ContainerID))
                 {
-                    Screen._universe.UnloadModels();
-
-                    Screen._universe.LoadFlverInModelEditor(currentFlverClone, currentInfo.ContainerName, _Flver_RenderMesh, _LowCollision_RenderMesh, _HighCollision_RenderMesh);
-
-                    ContainerID = Screen.ResManager.LoadedFlverContainer.ContainerName;
+                    Screen._universe.LoadedModelContainers[ContainerID] = container;
                 }
+                else
+                {
+                    Screen._universe.LoadedModelContainers.Add(ContainerID, container);
+                }
+
+                container.LoadFlver(ContainerID, currentFlverClone, _Flver_RenderMesh, _LowCollision_RenderMesh, _HighCollision_RenderMesh);
             }
 
             if (CFG.Current.Viewport_Enable_Texturing)
@@ -160,15 +167,15 @@ public class ModelViewportManager
 
         UpdateRepresentativeModel();
 
-        if (Screen.Selection._lastSelectedEntry == ModelEntrySelectionType.Dummy)
+        if (Screen.Selection._selectedFlverGroupType == GroupSelectionType.Dummy)
         {
             SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainers[ContainerID].DummyPoly_RootNode);
         }
-        if (Screen.Selection._lastSelectedEntry == ModelEntrySelectionType.Node)
+        if (Screen.Selection._selectedFlverGroupType == GroupSelectionType.Node)
         {
             SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainers[ContainerID].Bone_RootNode);
         }
-        if (Screen.Selection._lastSelectedEntry == ModelEntrySelectionType.Mesh)
+        if (Screen.Selection._selectedFlverGroupType == GroupSelectionType.Mesh)
         {
             SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainers[ContainerID].Mesh_RootNode);
         }
@@ -191,18 +198,19 @@ public class ModelViewportManager
             }
         }
     }
+
     public void UpdateRepresentativeModel()
     {
-        _flverhandle.Acquire();
+        Screen._universe.UnloadTransformableEntities();
 
-        if (_flverhandle.IsLoaded && _flverhandle.Get() != null)
-        {
-            var currentFlverClone = Screen.ResManager.GetCurrentFLVER().Clone();
-            var currentInfo = Screen.ResManager.LoadedFlverContainer;
+        var currentInfo = Screen.ResManager.LoadedFlverContainer;
 
-            Screen._universe.UnloadTransformableEntities(true);
-            Screen._universe.LoadFlverInModelEditor(currentFlverClone, currentInfo.ContainerName, _Flver_RenderMesh, _LowCollision_RenderMesh, _HighCollision_RenderMesh);
-        }
+        var containerId = currentInfo.ContainerName;
+        var modelId = currentInfo.ContainerName;
+        var modelType = currentInfo.Type;
+        var mapId = currentInfo.MapID;
+
+        Screen.ResManager.LoadRepresentativeModel(containerId, modelId, modelType, mapId);
     }
 
     /// <summary>
@@ -565,7 +573,7 @@ public class ModelViewportManager
         {
             TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
 
-            Screen.Selection._lastSelectedEntry = ModelEntrySelectionType.Dummy;
+            Screen.Selection._selectedFlverGroupType = GroupSelectionType.Dummy;
             Screen.Selection._selectedDummy = transformEnt.Index;
 
             if (IgnoreHierarchyFocus)
@@ -582,7 +590,7 @@ public class ModelViewportManager
         {
             TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
 
-            Screen.Selection._lastSelectedEntry = ModelEntrySelectionType.Node;
+            Screen.Selection._selectedFlverGroupType = GroupSelectionType.Node;
             Screen.Selection._selectedNode = transformEnt.Index;
 
             if (IgnoreHierarchyFocus)
@@ -599,7 +607,7 @@ public class ModelViewportManager
         {
             NamedEntity namedEnt = (NamedEntity)ent;
 
-            Screen.Selection._lastSelectedEntry = ModelEntrySelectionType.Mesh;
+            Screen.Selection._selectedFlverGroupType = GroupSelectionType.Mesh;
             Screen.Selection._selectedMesh = namedEnt.Index;
 
             if (IgnoreHierarchyFocus)

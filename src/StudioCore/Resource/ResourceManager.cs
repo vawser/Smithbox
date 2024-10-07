@@ -921,7 +921,8 @@ public static class ResourceManager
             }
 
             // If file doesn't exist, return so we don't hang the resource loader.
-            if (!File.Exists(path))
+            // Ignore if we are loading direct data
+            if (!File.Exists(path) && !virtualPath.Contains("direct"))
             {
                 return;
             }

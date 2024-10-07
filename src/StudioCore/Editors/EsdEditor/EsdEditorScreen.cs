@@ -64,6 +64,12 @@ public class EsdEditorScreen : EditorScreen
     public void DrawEditorMenu()
     {
         ImGui.Separator();
+
+        ActionMenubar.Display();
+
+        ImGui.Separator();
+
+        ToolMenubar.Display();
     }
 
     /// <summary>
@@ -122,6 +128,9 @@ public class EsdEditorScreen : EditorScreen
         StateGroupView.OnProjectChanged();
         StateNodeView.OnProjectChanged();
         StateNodePropertyView.OnProjectChanged();
+
+        ActionMenubar.OnProjectChanged();
+        ToolMenubar.OnProjectChanged();
 
         EsdBank.LoadEsdScripts();
 

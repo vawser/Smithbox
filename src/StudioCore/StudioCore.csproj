@@ -332,6 +332,11 @@
     <Folder Include="Editors\EmevdEditor\Enums\" />
     <Folder Include="Editors\EsdEditor\Actions\" />
     <Folder Include="Editors\EsdEditor\Enums\" />
+    <Folder Include="Editors\HavokEditor\Actions\" />
+    <Folder Include="Editors\HavokEditor\Core\" />
+    <Folder Include="Editors\HavokEditor\Framework\" />
+    <Folder Include="Editors\HavokEditor\Utils\" />
+    <Folder Include="Editors\HavokEditor\Tools\" />
     <Folder Include="Editors\TextureViewer\Actions\" />
   </ItemGroup>
 
