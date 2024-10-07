@@ -5767,20 +5767,20 @@
 58727000 Imp (Dragon Head)
 58727090 Imp (Dragon Head)
 58727091 Imp (Dragon Head)
-58800000 Putrescence Sorcerer
-58800001 Putrescence Sorcerer
-58800090 Putrescence Sorcerer
-58800091 Putrescence Sorcerer
-58800095 Putrescence Sorcerer
-58800100 Putrescence Sorcerer
-58800101 Putrescence Sorcerer
-58800181 Putrescence Sorcerer
-58800190 Putrescence Sorcerer
-58800191 Putrescence Sorcerer
-58800200 Putrescence Sorcerer
-58800201 Putrescence Sorcerer
-58800281 Putrescence Sorcerer
-58800290 Putrescence Sorcerer
+58800000 Catacombs Sorcerer
+58800001 Catacombs Sorcerer
+58800090 Catacombs Sorcerer
+58800091 Catacombs Sorcerer
+58800095 Catacombs Sorcerer
+58800100 Catacombs Sorcerer
+58800101 Catacombs Sorcerer
+58800181 Catacombs Sorcerer
+58800190 Catacombs Sorcerer
+58800191 Catacombs Sorcerer
+58800200 Catacombs Sorcerer
+58800201 Catacombs Sorcerer
+58800281 Catacombs Sorcerer
+58800290 Catacombs Sorcerer
 58900000 Black Knight Horse
 58900001 Black Knight Horse
 58900090 Black Knight Horse

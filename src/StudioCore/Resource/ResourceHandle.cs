@@ -64,10 +64,6 @@ public interface IResourceHandle
 
     public void UnloadPersistent();
 
-    public void Refresh()
-    {
-
-    }
 }
 
 /// <summary>
