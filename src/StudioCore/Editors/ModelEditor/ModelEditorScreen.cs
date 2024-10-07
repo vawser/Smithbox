@@ -62,6 +62,8 @@ public class ModelEditorScreen : EditorScreen
     public FlverDataSelectionView FlverDataSelection;
     public ModelPropertyView ModelPropertyEditor;
 
+    public GxDescriptorBank GxItemDescriptors;
+
     public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         Rect = window.Bounds;
@@ -87,6 +89,7 @@ public class ModelEditorScreen : EditorScreen
         ContextMenu = new ModelContextMenu(this);
         Decorator = new ModelPropertyDecorator(this);
         CommandQueue = new ModelCommandQueue(this);
+        GxItemDescriptors = new GxDescriptorBank(this);
 
         ActionHandler = new ModelActionHandler(this);
         Filters = new ModelFilters(this);

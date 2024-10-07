@@ -9,10 +9,12 @@ namespace StudioCore.Editors.ModelEditor.Core.Properties
     public class GxDataPropertyView
     {
         private ModelEditorScreen Screen;
+        private GxDescriptorBank GxItemDescriptors;
 
-        public GxDataPropertyView(ModelEditorScreen editor)
+        public GxDataPropertyView(ModelEditorScreen screen)
         {
-            Screen = editor;
+            Screen = screen;
+            GxItemDescriptors = screen.GxItemDescriptors;
         }
 
         public void Display(FLVER2.GXItem item)
