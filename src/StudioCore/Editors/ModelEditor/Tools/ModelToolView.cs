@@ -200,7 +200,7 @@ public class ModelToolView
                 AllSkeletonBoneGroups.DisplayConfiguration(Screen);
             }
 
-            // Search for Usage
+            // Global Model Search
             if (ImGui.CollapsingHeader("Global Model Search"))
             {
                 UIHelper.WrappedText("Search through all maps for usage of the specificed model name.");
@@ -228,6 +228,22 @@ public class ModelToolView
                 ModelUsageSearch.DisplayInstances();
             }
 
+            // Model Mask Toggler
+            if (Screen.Selection._selectedFileModelType is FileSelectionType.Character)
+            {
+                if (ModelMaskToggler.IsSupportedProjectType())
+                {
+                    if (ImGui.CollapsingHeader("Model Mask Toggler"))
+                    {
+                        UIHelper.WrappedText("Quickly toggle between model mask combinations by selecting a NPC Param entry.");
+                        UIHelper.WrappedText("");
+
+                        ImGui.Separator();
+
+                        ModelMaskToggler.Display();
+                    }
+                }
+            }
         }
 
         ImGui.End();

@@ -20,6 +20,7 @@ using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.ModelEditor.Core;
 using StudioCore.Editors.ModelEditor.Core.Properties;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -220,10 +221,27 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
         {
+            var containerId = ViewportManager.ContainerID;
+            var containerList = _universe.LoadedModelContainers;
+            ModelContainer container = null;
+
+            if (containerList.ContainsKey(containerId))
+            {
+                container = containerList[containerId];
+            }
+
             UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
             if (ImGui.MenuItem("Meshes"))
             {
                 CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
+
+                if (container != null)
+                {
+                    foreach (var entry in container.Mesh_RootNode.Children)
+                    {
+                        entry.EditorVisible = CFG.Current.ModelEditor_ViewMeshes;
+                    }
+                }
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
             UIHelper.ShowHoverTooltip("Only applies on model reload.");
@@ -232,6 +250,14 @@ public class ModelEditorScreen : EditorScreen
             if (ImGui.MenuItem("Dummy Polygons"))
             {
                 CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
+
+                if (container != null)
+                {
+                    foreach (var entry in container.DummyPoly_RootNode.Children)
+                    {
+                        entry.EditorVisible = CFG.Current.ModelEditor_ViewDummyPolys;
+                    }
+                }
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewDummyPolys);
 
@@ -239,6 +265,14 @@ public class ModelEditorScreen : EditorScreen
             if (ImGui.MenuItem("Bones"))
             {
                 CFG.Current.ModelEditor_ViewBones = !CFG.Current.ModelEditor_ViewBones;
+
+                if (container != null)
+                {
+                    foreach (var entry in container.Bone_RootNode.Children)
+                    {
+                        entry.EditorVisible = CFG.Current.ModelEditor_ViewBones;
+                    }
+                }
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
 
@@ -374,7 +408,10 @@ public class ModelEditorScreen : EditorScreen
         FlverDataSelection.Display();
         ModelPropertyEditor.Display();
 
-        ResManager.UpdateModelContainer();
+        if (UI.Current.Interface_ModelEditor_ToolConfigurationWindow)
+        {
+            ToolView.OnGui();
+        }
 
         ResourceLoadWindow.DisplayWindow(Viewport.Width, Viewport.Height);
 

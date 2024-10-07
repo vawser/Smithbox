@@ -85,25 +85,6 @@ public class ModelResourceManager : IResourceEventListener
         return LoadedFlverContainer.CurrentInternalFlver.CurrentFLVER;
     }
 
-
-    /// <summary>
-    /// Update the current model container and call its own OnGui
-    /// </summary>
-    public void UpdateModelContainer()
-    {
-        // Update model container elements
-        if (Universe.LoadedModelContainers.ContainsKey(ViewportManager.ContainerID))
-        {
-            var container = Universe.LoadedModelContainers[ViewportManager.ContainerID];
-            container.OnGui();
-        }
-
-        if (UI.Current.Interface_ModelEditor_ToolConfigurationWindow)
-        {
-            ToolView.OnGui();
-        }
-    }
-
     public void ResetState(string name)
     {
         EditorActionManager.Clear();
@@ -498,7 +479,9 @@ public class ModelResourceManager : IResourceEventListener
         */
 
         var modelAsset = new ResourceDescriptor();
-        modelAsset.AssetVirtualPath = "direct/flver";
+        modelAsset.AssetVirtualPath = $"direct/flver/{modelid}";
+
+        LoadedFlverContainer.ModelAssetDescriptor = modelAsset;
 
         if (CFG.Current.ModelEditor_ViewMeshes)
         {

@@ -43,31 +43,7 @@ public class ModelContainer : ObjectContainer
         RootObject.AddChild(DummyPoly_RootNode);
     }
 
-    public void OnGui()
-    {
-        if (!Universe.IsRendering)
-            return;
-
-        // Meshes
-        foreach (var entry in Mesh_RootNode.Children)
-        {
-            entry.EditorVisible = CFG.Current.ModelEditor_ViewMeshes;
-        }
-
-        // Dummy Polygons
-        foreach (var entry in DummyPoly_RootNode.Children)
-        {
-            entry.EditorVisible = CFG.Current.ModelEditor_ViewDummyPolys;
-        }
-
-        // Bones
-        foreach (var entry in Bone_RootNode.Children)
-        {
-            entry.EditorVisible = CFG.Current.ModelEditor_ViewBones;
-        }
-    }
-
-    public void LoadFlver(string name, FLVER2 flver, MeshRenderableProxy flverProxy, MeshRenderableProxy lowCollisionProxy, MeshRenderableProxy highCollisionProxy)
+    public void LoadFlver(string name, FLVER2 flver, MeshRenderableProxy flverProxy)
     {
         if (!Universe.IsRendering)
             return;

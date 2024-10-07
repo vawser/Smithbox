@@ -944,22 +944,6 @@ public class Universe
         }
     }
 
-    public void LoadFlverInModelEditor(FLVER2 flver, string name, MeshRenderableProxy flverProxy, MeshRenderableProxy lowCollisionProxy, MeshRenderableProxy highCollisionProxy)
-    {
-        if (!LoadedModelContainers.ContainsKey(name))
-        {
-            ModelContainer container = new(this, name);
-
-            LoadedModelContainers.Add(name, container);
-
-            container.LoadFlver(name, flver, flverProxy, lowCollisionProxy, highCollisionProxy);
-        }
-        else
-        {
-            LoadedModelContainers[name].LoadFlver(name, flver, flverProxy, lowCollisionProxy, highCollisionProxy);
-        }
-    }
-
     private void SaveDS2Generators(MapContainer map)
     {
         // Load all the params

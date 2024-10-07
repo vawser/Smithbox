@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -45,6 +46,8 @@ public class FlverContainer
     public string BinderExtension { get; set; }
 
     public string LoosePath { get; set; }
+
+    public ResourceDescriptor ModelAssetDescriptor { get; set; }
 
     public hkRootLevelContainer ER_LowCollision { get; set; }
     public hkRootLevelContainer ER_HighCollision { get; set; }

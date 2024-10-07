@@ -112,3 +112,5 @@ Model Editor:
 # PRIORITY
  - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
  - ADD: GX Item mapping so the byte arrays are more comprehesible (https://github.com/JKAnderson/SoulsFormats/issues/14)
+
+ - FIX: secondary load of model causes the entity changes to be lost, e.g. visibility

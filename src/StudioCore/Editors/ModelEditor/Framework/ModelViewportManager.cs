@@ -114,16 +114,20 @@ public class ModelViewportManager
 
                 ModelContainer container = new(Screen._universe, ContainerID);
 
-                if (Screen._universe.LoadedModelContainers.ContainsKey(ContainerID))
+                var containers = Screen._universe.LoadedModelContainers;
+
+                if (containers.ContainsKey(ContainerID))
                 {
-                    Screen._universe.LoadedModelContainers[ContainerID] = container;
+                    Screen._universe.LoadedModelContainers.Remove(ContainerID);
+
+                    Screen._universe.LoadedModelContainers.Add(ContainerID, container);
+                    container.LoadFlver(ContainerID, currentFlverClone, _Flver_RenderMesh);
                 }
                 else
                 {
                     Screen._universe.LoadedModelContainers.Add(ContainerID, container);
+                    container.LoadFlver(ContainerID, currentFlverClone, _Flver_RenderMesh);
                 }
-
-                container.LoadFlver(ContainerID, currentFlverClone, _Flver_RenderMesh, _LowCollision_RenderMesh, _HighCollision_RenderMesh);
             }
 
             if (CFG.Current.Viewport_Enable_Texturing)
@@ -388,10 +392,10 @@ public class ModelViewportManager
         if (index > container.Mesh_RootNode.Children.Count - 1)
             return;
 
-        var curNode = container.Mesh_RootNode.Children[index];
+        var curMesh = container.Mesh_RootNode.Children[index];
         IgnoreHierarchyFocus = true;
         Screen._selection.ClearSelection();
-        Screen._selection.AddSelection(curNode);
+        Screen._selection.AddSelection(curMesh);
     }
 
     public void DisplayRepresentativeDummyState(int index)
@@ -545,8 +549,8 @@ public class ModelViewportManager
 
         Entity curEntity = null;
 
-        var curNode = container.Mesh_RootNode.Children[index];
-        curEntity = curNode;
+        var curMesh = container.Mesh_RootNode.Children[index];
+        curEntity = curMesh;
 
         if (curEntity != null)
         {
@@ -593,8 +597,8 @@ public class ModelViewportManager
         if (index > container.Mesh_RootNode.Children.Count - 1)
             return;
 
-        var curNode = container.Mesh_RootNode.Children[index];
-        curNode.EditorVisible = !curNode.EditorVisible;
+        var curMesh = container.Mesh_RootNode.Children[index];
+        curMesh.EditorVisible = !curMesh.EditorVisible;
     }
 
     public void OnRepresentativeEntitySelected(Entity ent)
