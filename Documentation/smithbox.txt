@@ -118,4 +118,3 @@ ESD Editor:
 Model Editor:
  - FIX: DS2 models causing CTD in Model Editor (representative model load)
  - FIX: map pieces not loading (current FLVER is null)
- - FIX: dummy/bone meshes not unloading properly

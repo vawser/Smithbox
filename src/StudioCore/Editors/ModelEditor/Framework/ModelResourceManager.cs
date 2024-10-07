@@ -113,6 +113,8 @@ public class ModelResourceManager : IResourceEventListener
 
         Screen.ToolView.ModelUsageSearch._searchInput = name;
 
+        Screen._universe.UnloadTransformableEntities();
+
         if (ViewportManager._flverhandle != null)
         {
             ViewportManager._flverhandle.CompleteRelease();

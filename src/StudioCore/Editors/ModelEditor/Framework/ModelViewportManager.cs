@@ -201,8 +201,6 @@ public class ModelViewportManager
 
     public void UpdateRepresentativeModel()
     {
-        Screen._universe.UnloadTransformableEntities();
-
         var currentInfo = Screen.ResManager.LoadedFlverContainer;
 
         var containerId = currentInfo.ContainerName;

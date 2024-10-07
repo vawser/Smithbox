@@ -410,7 +410,7 @@ public class FileSelectionView
                         if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                         {
                             Selection._selectedAssociatedMapID = map;
-                            ResManager.LoadMapPiece(Selection._selectedEntry, map);
+                            ResManager.LoadMapPiece(Selection._selectedFileName, map);
                         }
                     }
                     if (ImGui.IsItemVisible())
