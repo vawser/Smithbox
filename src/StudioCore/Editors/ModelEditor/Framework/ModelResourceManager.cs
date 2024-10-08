@@ -854,9 +854,7 @@ public class ModelResourceManager : IResourceEventListener
 
         TaskLogs.AddLog($"Saved model container BND file at: {info.ModBinderPath}");
 
-        // NOTE: memory-mapped files write directly to the passed paths when .Write is invoked,
-        // so no need to handle the write process manually.
-        //WriteFile(fileBytes, info.ModBinderPath);
+        WriteFile(fileBytes, info.ModBinderPath);
     }
 
     /// <summary>
@@ -904,9 +902,7 @@ public class ModelResourceManager : IResourceEventListener
 
         TaskLogs.AddLog($"Saved model container BND file at: {info.ModBinderPath}");
 
-        // NOTE: memory-mapped files write directly to the passed paths when .Write is invoked,
-        // so no need to handle the write process manually.
-        //WriteFile(fileBytes, info.ModBinderPath);
+        WriteFile(fileBytes, info.ModBinderPath);
     }
 
     /// <summary>

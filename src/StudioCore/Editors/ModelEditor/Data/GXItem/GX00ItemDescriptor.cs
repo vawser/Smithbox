@@ -1,8 +1,11 @@
 ﻿using SoulsFormats;
+using StudioCore.Banks.AliasBank;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
@@ -10,6 +13,25 @@ namespace StudioCore.Editors.ModelEditor;
 /// <summary>
 /// Credit to RunDevelopment for this code
 /// </summary>
+/// 
+[JsonSourceGenerationOptions(
+    WriteIndented = true,
+    GenerationMode = JsonSourceGenerationMode.Metadata,
+    IncludeFields = true,
+    ReadCommentHandling = JsonCommentHandling.Skip)
+]
+[JsonSerializable(typeof(GXDescriptorList))]
+[JsonSerializable(typeof(GX00ItemDescriptor))]
+[JsonSerializable(typeof(GX00ItemValueDescriptor))]
+public partial class GXDescriptorListContext
+    : JsonSerializerContext
+{ }
+
+public class GXDescriptorList
+{
+    public List<GX00ItemDescriptor> List { get; set; }
+}
+
 public class GX00ItemDescriptor
 {
     // E.g. "GX00", "GX80"
