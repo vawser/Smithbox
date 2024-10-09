@@ -35,14 +35,6 @@ public class ModelViewportManager
 
     public IViewport Viewport;
 
-    public MeshRenderableProxy _Flver_RenderMesh;
-    public MeshRenderableProxy _LowCollision_RenderMesh;
-    public MeshRenderableProxy _HighCollision_RenderMesh;
-
-    public ResourceHandle<FlverResource> _flverhandle;
-    public ResourceHandle<HavokCollisionResource> _lowCollisionHandle;
-    public ResourceHandle<HavokCollisionResource> _highCollisionHandle;
-
     public bool IsUpdatingViewportModel = false;
     public bool IgnoreHierarchyFocus = false;
 
@@ -51,96 +43,6 @@ public class ModelViewportManager
         Screen = screen;
         Universe = screen._universe;
         Viewport = viewport;
-    }
-
-    public void OnResourceLoaded(IResourceHandle handle, int tag)
-    {
-        // Required to stop the LowRequirements build from failing
-        if (Smithbox.LowRequirementsMode)
-            return;
-
-        // Collision
-        if (handle is ResourceHandle<HavokCollisionResource>)
-        {
-            var colHandle = (ResourceHandle<HavokCollisionResource>)handle;
-
-            if (colHandle.AssetVirtualPath.Contains("_h"))
-            {
-                _highCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
-            }
-            if (colHandle.AssetVirtualPath.Contains("_l"))
-            {
-                _lowCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
-            }
-        }
-
-        // FLVER
-        if (handle is ResourceHandle<FlverResource>)
-        {
-            var curFlver = Screen.ResManager.GetCurrentFLVER();
-
-            _flverhandle = (ResourceHandle<FlverResource>)handle;
-            _flverhandle.Acquire();
-
-            if (_Flver_RenderMesh != null)
-            {
-                BoundingBox box = _Flver_RenderMesh.GetBounds();
-                Viewport.FrameBox(box);
-
-                Vector3 dim = box.GetDimensions();
-                var mindim = Math.Min(dim.X, Math.Min(dim.Y, dim.Z));
-                var maxdim = Math.Max(dim.X, Math.Max(dim.Y, dim.Z));
-
-                var minSpeed = 1.0f;
-                var basespeed = Math.Max(minSpeed, (float)Math.Sqrt(mindim / 3.0f));
-                Viewport.WorldView.CameraMoveSpeed_Normal = basespeed;
-                Viewport.WorldView.CameraMoveSpeed_Slow = basespeed / 10.0f;
-                Viewport.WorldView.CameraMoveSpeed_Fast = basespeed * 10.0f;
-
-                Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
-            }
-
-            // Update Model Container
-            if (curFlver != null)
-            {
-                var currentFlverClone = curFlver.Clone();
-
-                Screen._universe.LoadedModelContainer = new(Screen._universe, currentFlverClone, _Flver_RenderMesh);
-            }
-
-            if (CFG.Current.Viewport_Enable_Texturing)
-            {
-                Screen._universe.ScheduleTextureRefresh();
-            }
-        }
-    }
-
-    public void OnResourceUnloaded(IResourceHandle handle, int tag)
-    {
-        // Required to stop the LowRequirements build from failing
-        if (Smithbox.LowRequirementsMode)
-            return;
-
-        if (handle is ResourceHandle<FlverResource>)
-        {
-            _flverhandle = null;
-        }
-
-        if (handle is ResourceHandle<HavokCollisionResource>)
-        {
-            var colHandle = (ResourceHandle<HavokCollisionResource>)handle;
-
-            if (colHandle.AssetVirtualPath.Contains("_h"))
-            {
-                _highCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
-                _highCollisionHandle.Acquire();
-            }
-            if (colHandle.AssetVirtualPath.Contains("_l"))
-            {
-                _lowCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
-                _lowCollisionHandle.Acquire();
-            }
-        }
     }
 
     public bool HasValidLoadedContainer()
@@ -201,76 +103,6 @@ public class ModelViewportManager
         var mapId = currentInfo.MapID;
 
         Screen.ResManager.LoadRepresentativeModel(containerId, modelId, modelType, mapId);
-    }
-
-    private Dictionary<string, MeshRenderableProxy> meshRenderableDict = new();
-
-    /// <summary>
-    /// Updated the viewport FLVER model render mesh
-    /// </summary>
-    public void UpdateRenderMesh(ResourceDescriptor modelAsset)
-    {
-        // Required to stop the LowRequirements build from failing
-        if (Smithbox.LowRequirementsMode)
-            return;
-
-        if(_Flver_RenderMesh != null)
-            _Flver_RenderMesh.Visible = false;
-
-        if (Universe.IsRendering)
-        {
-            var meshRenderableProxy = MeshRenderableProxy.MeshRenderableFromFlverResource(Screen.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
-            meshRenderableProxy.World = Matrix4x4.Identity;
-
-            if(meshRenderableDict.ContainsKey(modelAsset.AssetVirtualPath))
-            {
-                _Flver_RenderMesh = meshRenderableDict[modelAsset.AssetVirtualPath];
-                _Flver_RenderMesh.Visible = true;
-            }
-            else
-            {
-                meshRenderableDict.Add(modelAsset.AssetVirtualPath, meshRenderableProxy);
-                _Flver_RenderMesh = meshRenderableProxy;
-                _Flver_RenderMesh.Visible = true;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Updated the viewport FLVER model render collision mesh
-    /// </summary>
-    public void UpdateRenderMeshCollision(ResourceDescriptor collisionAsset)
-    {
-        // Required to stop the LowRequirements build from failing
-        if (Smithbox.LowRequirementsMode)
-            return;
-
-        if (Universe.IsRendering)
-        {
-            // High Collision
-            if (collisionAsset.AssetVirtualPath.Contains("_h"))
-            {
-                if (_HighCollision_RenderMesh != null)
-                {
-                    _HighCollision_RenderMesh.Dispose();
-                }
-
-                _HighCollision_RenderMesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(Screen.RenderScene, collisionAsset.AssetVirtualPath, ModelMarkerType.None, collisionAsset.AssetVirtualPath);
-                _HighCollision_RenderMesh.World = Matrix4x4.Identity;
-            }
-
-            // Low Collision
-            if (collisionAsset.AssetVirtualPath.Contains("_l"))
-            {
-                if (_LowCollision_RenderMesh != null)
-                {
-                    _LowCollision_RenderMesh.Dispose();
-                }
-
-                _LowCollision_RenderMesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(Screen.RenderScene, collisionAsset.AssetVirtualPath, ModelMarkerType.None, collisionAsset.AssetVirtualPath);
-                _LowCollision_RenderMesh.World = Matrix4x4.Identity;
-            }
-        }
     }
 
     public void UpdateRepresentativeDummy(int index, Vector3 position)
@@ -746,15 +578,5 @@ public class ModelViewportManager
         }
 
         return false;
-    }
-
-    public void OnProjectChanged()
-    {
-        Screen._universe.UnloadModels();
-        _flverhandle?.Unload();
-        _flverhandle = null;
-        _Flver_RenderMesh?.Dispose();
-        _Flver_RenderMesh = null;
-
     }
 }

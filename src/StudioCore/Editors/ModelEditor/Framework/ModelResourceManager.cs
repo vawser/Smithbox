@@ -9,12 +9,15 @@ using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Resource.Types;
+using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Reflection;
 using System.Threading.Tasks;
+using Veldrid.Utilities;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -33,6 +36,14 @@ public class ModelResourceManager : IResourceEventListener
 
     public IViewport Viewport;
 
+    public MeshRenderableProxy _Flver_RenderMesh;
+    public MeshRenderableProxy _LowCollision_RenderMesh;
+    public MeshRenderableProxy _HighCollision_RenderMesh;
+
+    public ResourceHandle<FlverResource> _flverhandle;
+    public ResourceHandle<HavokCollisionResource> _lowCollisionHandle;
+    public ResourceHandle<HavokCollisionResource> _highCollisionHandle;
+
     public ModelResourceManager(ModelEditorScreen screen, IViewport viewport)
     {
         Screen = screen;
@@ -44,6 +55,24 @@ public class ModelResourceManager : IResourceEventListener
         Selection = screen.Selection;
 
         LoadedFlverContainer = null;
+    }
+
+    public void OnProjectChanged()
+    {
+        Universe.UnloadAll(true);
+
+        if (_loadingTask != null)
+        {
+            TaskLogs.AddLog(
+                "ModelResourceHandler loadingTask was not null during project switch. This may cause unexpected behavior.",
+                LogLevel.Warning);
+        }
+
+        LoadedFlverContainer = null;
+        _flverhandle?.Unload();
+        _flverhandle = null;
+        _Flver_RenderMesh?.Dispose();
+        _Flver_RenderMesh = null;
     }
 
     public InternalFlver GetCurrentInternalFile()
@@ -97,9 +126,9 @@ public class ModelResourceManager : IResourceEventListener
 
         Screen._universe.UnloadTransformableEntities();
 
-        if (ViewportManager._flverhandle != null)
+        if (_flverhandle != null)
         {
-            ViewportManager._flverhandle.CompleteRelease();
+            //_flverhandle.CompleteRelease();
         }
 
         // HACK: clear all viewport collisions on load
@@ -475,20 +504,20 @@ public class ModelResourceManager : IResourceEventListener
 
         if (CFG.Current.ModelEditor_ViewMeshes)
         {
-            Screen.ViewportManager.UpdateRenderMesh(modelAsset);
+            UpdateRenderMesh(modelAsset);
 
             if (modelAsset.AssetArchiveVirtualPath != null)
             {
-                job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Flver);
+                job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
             }
             else if (modelAsset.AssetVirtualPath != null)
             {
-                job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessFull);
             }
 
             _loadingTask = job.Complete();
 
-            ResourceManager.AddResourceListener<FlverResource>(modelAsset.AssetVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
+            ResourceManager.AddResourceListener<FlverResource>(modelAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
         }
     }
 
@@ -552,7 +581,7 @@ public class ModelResourceManager : IResourceEventListener
         if (CFG.Current.ModelEditor_ViewHighCollision && postfix == "h" ||
             CFG.Current.ModelEditor_ViewLowCollision && postfix == "l")
         {
-            Screen.ViewportManager.UpdateRenderMeshCollision(colAsset);
+            UpdateRenderMeshCollision(colAsset);
 
             if (colAsset.AssetArchiveVirtualPath != null)
             {
@@ -673,10 +702,10 @@ public class ModelResourceManager : IResourceEventListener
             // DS2 Map Pieces
             if (binderType is FlverBinderType.BXF)
             {
-                var containerName = $"{LoadedFlverContainer.MapID}";
+                var containerTitle = $"{LoadedFlverContainer.MapID}";
 
-                exists = container.CopyBXFtoMod($"{containerName}.mapbhd");
-                exists = container.CopyBXFtoMod($"{containerName}.mapbdt");
+                exists = container.CopyBXFtoMod($"{containerTitle}.mapbhd");
+                exists = container.CopyBXFtoMod($"{containerTitle}.mapbdt");
             }
             else
             {
@@ -852,8 +881,6 @@ public class ModelResourceManager : IResourceEventListener
             }
         }
 
-        TaskLogs.AddLog($"Saved model container BND file at: {info.ModBinderPath}");
-
         WriteFile(fileBytes, info.ModBinderPath);
     }
 
@@ -900,8 +927,6 @@ public class ModelResourceManager : IResourceEventListener
             }
         }
 
-        TaskLogs.AddLog($"Saved model container BND file at: {info.ModBinderPath}");
-
         WriteFile(fileBytes, info.ModBinderPath);
     }
 
@@ -924,12 +949,129 @@ public class ModelResourceManager : IResourceEventListener
         }
     }
 
+
+    /// <summary>
+    /// Updated the viewport FLVER model render mesh
+    /// </summary>
+    public void UpdateRenderMesh(ResourceDescriptor modelAsset)
+    {
+        // Required to stop the LowRequirements build from failing
+        if (Smithbox.LowRequirementsMode)
+            return;
+
+        if (_Flver_RenderMesh != null)
+            _Flver_RenderMesh.Visible = false;
+
+        if (Universe.IsRendering)
+        {
+            var meshRenderableProxy = MeshRenderableProxy.MeshRenderableFromFlverResource(Screen.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
+            meshRenderableProxy.World = Matrix4x4.Identity;
+
+            _Flver_RenderMesh = meshRenderableProxy;
+            _Flver_RenderMesh.Visible = true;
+        }
+    }
+
+    /// <summary>
+    /// Updated the viewport FLVER model render collision mesh
+    /// </summary>
+    public void UpdateRenderMeshCollision(ResourceDescriptor collisionAsset)
+    {
+        // Required to stop the LowRequirements build from failing
+        if (Smithbox.LowRequirementsMode)
+            return;
+
+        if (Universe.IsRendering)
+        {
+            // High Collision
+            if (collisionAsset.AssetVirtualPath.Contains("_h"))
+            {
+                if (_HighCollision_RenderMesh != null)
+                {
+                    _HighCollision_RenderMesh.Dispose();
+                }
+
+                _HighCollision_RenderMesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(Screen.RenderScene, collisionAsset.AssetVirtualPath, ModelMarkerType.None, collisionAsset.AssetVirtualPath);
+                _HighCollision_RenderMesh.World = Matrix4x4.Identity;
+            }
+
+            // Low Collision
+            if (collisionAsset.AssetVirtualPath.Contains("_l"))
+            {
+                if (_LowCollision_RenderMesh != null)
+                {
+                    _LowCollision_RenderMesh.Dispose();
+                }
+
+                _LowCollision_RenderMesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(Screen.RenderScene, collisionAsset.AssetVirtualPath, ModelMarkerType.None, collisionAsset.AssetVirtualPath);
+                _LowCollision_RenderMesh.World = Matrix4x4.Identity;
+            }
+        }
+    }
+
     /// <summary>
     /// Viewport setup upon viewport FLVER model is loaded
     /// </summary>
     public void OnResourceLoaded(IResourceHandle handle, int tag)
     {
-        Screen.ViewportManager.OnResourceLoaded(handle, tag);
+        // Required to stop the LowRequirements build from failing
+        if (Smithbox.LowRequirementsMode)
+            return;
+
+        // Collision
+        if (handle is ResourceHandle<HavokCollisionResource>)
+        {
+            var colHandle = (ResourceHandle<HavokCollisionResource>)handle;
+
+            if (colHandle.AssetVirtualPath.Contains("_h"))
+            {
+                _highCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
+            }
+            if (colHandle.AssetVirtualPath.Contains("_l"))
+            {
+                _lowCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
+            }
+        }
+
+        // FLVER
+        if (handle is ResourceHandle<FlverResource>)
+        {
+            var curFlver = Screen.ResManager.GetCurrentFLVER();
+
+            _flverhandle = (ResourceHandle<FlverResource>)handle;
+            _flverhandle.Acquire();
+
+            if (_Flver_RenderMesh != null)
+            {
+                BoundingBox box = _Flver_RenderMesh.GetBounds();
+                Viewport.FrameBox(box);
+
+                Vector3 dim = box.GetDimensions();
+                var mindim = Math.Min(dim.X, Math.Min(dim.Y, dim.Z));
+                var maxdim = Math.Max(dim.X, Math.Max(dim.Y, dim.Z));
+
+                var minSpeed = 1.0f;
+                var basespeed = Math.Max(minSpeed, (float)Math.Sqrt(mindim / 3.0f));
+                Viewport.WorldView.CameraMoveSpeed_Normal = basespeed;
+                Viewport.WorldView.CameraMoveSpeed_Slow = basespeed / 10.0f;
+                Viewport.WorldView.CameraMoveSpeed_Fast = basespeed * 10.0f;
+
+                Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
+            }
+
+            // Update Model Container
+            if (curFlver != null)
+            {
+                var currentFlverClone = curFlver.Clone();
+
+                Screen._universe.LoadedModelContainer = new(Screen._universe, currentFlverClone, _Flver_RenderMesh);
+            }
+
+            if (CFG.Current.Viewport_Enable_Texturing)
+            {
+                Screen._universe.ScheduleTextureRefresh();
+            }
+        }
     }
 
     /// <summary>
@@ -937,18 +1079,29 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
     {
-        Screen.ViewportManager.OnResourceUnloaded(handle, tag);
-    }
+        // Required to stop the LowRequirements build from failing
+        if (Smithbox.LowRequirementsMode)
+            return;
 
-    public void OnProjectChange()
-    {
-        if (_loadingTask != null)
+        if (handle is ResourceHandle<FlverResource>)
         {
-            TaskLogs.AddLog(
-                "ModelResourceHandler loadingTask was not null during project switch. This may cause unexpected behavior.",
-                LogLevel.Warning);
+            _flverhandle = null;
         }
 
-        LoadedFlverContainer = null;
+        if (handle is ResourceHandle<HavokCollisionResource>)
+        {
+            var colHandle = (ResourceHandle<HavokCollisionResource>)handle;
+
+            if (colHandle.AssetVirtualPath.Contains("_h"))
+            {
+                _highCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
+                _highCollisionHandle.Acquire();
+            }
+            if (colHandle.AssetVirtualPath.Contains("_l"))
+            {
+                _lowCollisionHandle = (ResourceHandle<HavokCollisionResource>)handle;
+                _lowCollisionHandle.Acquire();
+            }
+        }
     }
 }

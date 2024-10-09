@@ -29,7 +29,9 @@ public static class MeshProviderCache
 
     public static FlverMeshProvider GetFlverMeshProvider(string virtualResourcePath, IEnumerable<int>? masks)
     {
-        if (masks == null || !CFG.Current.Viewport_Enable_Model_Masks) return GetFlverMeshProvider(virtualResourcePath);
+        if (masks == null || !CFG.Current.Viewport_Enable_Model_Masks) 
+            return GetFlverMeshProvider(virtualResourcePath);
+
         var provider = GetFlverMeshProvider(virtualResourcePath, $"masks{string.Join("", masks)}");
         provider.ModelMasks = masks.ToList();
         return provider;

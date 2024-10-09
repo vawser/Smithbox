@@ -29,6 +29,7 @@ Map Editor:
  - ADD: "Data Export" action for MSB data: output the MSB information as JSON
  - ADD: Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
  - ADD: global prop edit
+ - ADD: MSB xml export
  
  - FIX: asset browser entity change not properly changing Instance ID and Self Parts
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
@@ -53,6 +54,7 @@ Text Editor:
  - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
  
  - FIX: internal vanilla entry should be preferred over internal dlc01/dlc02 entry due to FMG read preference (vanilla entry overrides dlc1 entry, dlc1 entry overrides dlc2 entry)
+ - FIX: Editor is not reading project FMGs (writes them out correctly though)
  
 Gparam Editor:
  - ADD: GPARAM reloader

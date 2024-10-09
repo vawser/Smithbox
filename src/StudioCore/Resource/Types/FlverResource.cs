@@ -18,6 +18,8 @@ using System.Text.RegularExpressions;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
 using Org.BouncyCastle.Utilities;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor;
 
 namespace StudioCore.Resource.Types;
 
@@ -158,7 +160,6 @@ public class FlverResource : IResource, IDisposable
             }
             else
             {
-
                 if (al == AccessLevel.AccessGPUOptimizedOnly &&
                     Smithbox.ProjectType != ProjectType.DS1R &&
                     Smithbox.ProjectType != ProjectType.DS1)

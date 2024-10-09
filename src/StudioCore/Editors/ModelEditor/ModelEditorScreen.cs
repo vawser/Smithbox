@@ -426,6 +426,7 @@ public class ModelEditorScreen : EditorScreen
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             Selection.OnProjectChanged();
+            ResManager.OnProjectChanged();
 
             FileSelection.OnProjectChanged();
             InternalFileSelection.OnProjectChanged();
@@ -434,11 +435,8 @@ public class ModelEditorScreen : EditorScreen
             ToolView.OnProjectChanged();
             ToolMenubar.OnProjectChanged();
             ActionMenubar.OnProjectChanged();
-            ViewportManager.OnProjectChanged();
         }
 
-        ResManager.OnProjectChange();
-        _universe.UnloadAll(true);
     }
 
     /// <summary>

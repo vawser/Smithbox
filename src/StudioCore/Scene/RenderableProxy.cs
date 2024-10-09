@@ -1289,9 +1289,12 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         _renderablesSet.cSelectables[_renderable] = _selectable;
 
         // Visible
-        _renderablesSet.cVisible[_renderable]._visible = _visible;
-        _renderablesSet.cSceneVis[_renderable]._renderFilter = _drawfilter;
-        _renderablesSet.cSceneVis[_renderable]._drawGroup = _drawgroups;
+        if (_renderable != -1)
+        {
+            _renderablesSet.cVisible[_renderable]._visible = _visible;
+            _renderablesSet.cSceneVis[_renderable]._renderFilter = _drawfilter;
+            _renderablesSet.cSceneVis[_renderable]._drawGroup = _drawgroups;
+        }
     }
 
     public override unsafe void UpdateRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline sp)
