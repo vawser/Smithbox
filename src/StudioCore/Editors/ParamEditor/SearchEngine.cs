@@ -1,7 +1,7 @@
 using Andre.Formats;
 using SoulsFormats;
 using StudioCore.Editors.TextEditor;
-using StudioCore.Editors.TextEditor.Enums;
+using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -559,24 +559,8 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return context =>
                 {
-                    var category = FmgEntryCategory.None;
                     var paramName = context.Item1.GetKeyForParam(context.Item2);
-                    foreach ((var param, FmgEntryCategory cat) in ParamBank.ParamToFmgCategoryList)
-                    {
-                        if (paramName != param)
-                        {
-                            continue;
-                        }
-
-                        category = cat;
-                    }
-
-                    if (category == FmgEntryCategory.None)
-                    {
-                        throw new Exception();
-                    }
-
-                    List<FMG.Entry> fmgEntries = Smithbox.BankHandler.FMGBank.GetFmgEntriesByCategory(category, false);
+                    List<FMG.Entry> fmgEntries = TextParamUtils.GetFmgEntriesByAssociatedParam(paramName);
                     Dictionary<int, FMG.Entry> _cache = new();
                     foreach (FMG.Entry fmgEntry in fmgEntries)
                     {
@@ -795,24 +779,16 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 Regex rx = new(args[0], RegexOptions.IgnoreCase);
                 return paramContext =>
                 {
-                    var category = FmgEntryCategory.None;
                     var paramName = paramContext.Item1.GetKeyForParam(paramContext.Item2);
-                    foreach ((var param, FmgEntryCategory cat) in ParamBank.ParamToFmgCategoryList)
-                    {
-                        if (paramName != param)
-                        {
-                            continue;
-                        }
 
-                        category = cat;
-                    }
 
-                    if (category == FmgEntryCategory.None || !Smithbox.BankHandler.FMGBank.IsLoaded)
+                    List<FMG.Entry> fmgEntries = TextParamUtils.GetFmgEntriesByAssociatedParam(paramName);
+
+                    if (!TextBank.PrimaryBankLoaded || fmgEntries.Count == 0)
                     {
                         return row => rx.IsMatch(row.Name ?? "") || rx.IsMatch(row.ID.ToString());
                     }
 
-                    List<FMG.Entry> fmgEntries = Smithbox.BankHandler.FMGBank.GetFmgEntriesByCategory(category, false);
                     Dictionary<int, FMG.Entry> _cache = new();
                     foreach (FMG.Entry fmgEntry in fmgEntries)
                     {

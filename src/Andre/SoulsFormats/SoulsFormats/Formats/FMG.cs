@@ -235,6 +235,11 @@ namespace SoulsFormats
             {
                 return $"{ID}: {Text ?? "<null>"}";
             }
+
+            public FMG.Entry Clone()
+            {
+                return new FMG.Entry(ID, Text);
+            }
         }
 
         /// <summary>

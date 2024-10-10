@@ -535,9 +535,9 @@
     <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" Enum="RARITY" />
     <gemMountType AltName="Ash of War Type" Wiki="Is it possible to attach magic stones?" Enum="GEM_MOUNT_TYPE" />
     <wepRegainHp AltName="Weapon Regain HP Amount" Wiki="Weapon regain amount" />
-    <spEffectMsgId0 AltName="SpEffect Message ID [0]" Wiki="Effect text ID 00 (Weapon_Effect). Weapon-specific effect text to display in status" FmgRef="WeaponEffect" />
-    <spEffectMsgId1 AltName="SpEffect Message ID [1]" Wiki="Effect text ID 01 (Weapon_Effect). Weapon-specific effect text to display in status" FmgRef="WeaponEffect" />
-    <spEffectMsgId2 AltName="SpEffect Message ID [2]" Wiki="Effect text ID 02 (Weapon_Effect). Weapon-specific effect text to display in status" FmgRef="WeaponEffect" />
+    <spEffectMsgId0 AltName="SpEffect Message ID [0]" Wiki="Effect text ID 00 (Weapon_Effect). Weapon-specific effect text to display in status" FmgRef="Effect_Weapons" />
+    <spEffectMsgId1 AltName="SpEffect Message ID [1]" Wiki="Effect text ID 01 (Weapon_Effect). Weapon-specific effect text to display in status" FmgRef="Effect_Weapons" />
+    <spEffectMsgId2 AltName="SpEffect Message ID [2]" Wiki="Effect text ID 02 (Weapon_Effect). Weapon-specific effect text to display in status" FmgRef="Effect_Weapons" />
     <originEquipWep16 AltName="Origin Weapon +16" Wiki="This weapon's enhancement source weapon ID 16" Refs="EquipParamWeapon"/>
     <originEquipWep17 AltName="Origin Weapon +17" Wiki="This weapon's enhancement source weapon ID 17" Refs="EquipParamWeapon"/>
     <originEquipWep18 AltName="Origin Weapon +18" Wiki="This weapon's enhancement source weapon ID18" Refs="EquipParamWeapon"/>

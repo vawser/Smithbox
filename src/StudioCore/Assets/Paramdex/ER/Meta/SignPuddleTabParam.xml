@@ -4,7 +4,7 @@
   </Enums>
   <Field>
     <isDlcTab AltName="Is DLC Sign Tab" IsBool="" />
-    <tabTextId AltName="Tab Text ID" FmgRef="Modern_MenuText" />
+    <tabTextId AltName="Tab Text ID" FmgRef="Modern_Menu_Text" />
   </Field>
   <Self />
 </PARAMMETA>

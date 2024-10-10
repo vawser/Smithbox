@@ -7,6 +7,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
@@ -836,25 +837,25 @@ public class EmevdPropertyDecorator
     /// </summary>
     private void ConstructTextReference(string fmgName, string value, int i)
     {
-        if (!Smithbox.BankHandler.FMGBank.IsLoaded)
+        if (!TextBank.PrimaryBankLoaded)
         {
             return;
         }
 
         var refValue = int.Parse(value);
 
-        (string, FMGEntryGroup) match = resolveFMGRef(fmgName, refValue);
+        TextResult result = TextFinder.GetTextResult(fmgName, refValue);
 
-        if(match.Item2 != null)
+        if(result != null)
         {
             ImGui.AlignTextToFramePadding();
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{match.Item2.Title.Text}");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{result.Entry.Text}");
 
             if (ImGui.BeginPopupContextItem($"TextContextMenu_{fmgName}_{i}"))
             {
-                if (ImGui.Selectable($"Go to {match.Item2.ID} ({match.Item2.Title})"))
+                if (ImGui.Selectable($"Go to {result.Entry.ID} ({result.Entry.Text})"))
                 {
-                    EditorCommandQueue.AddCommand($@"text/select/{fmgName}/{match.Item2.ID}");
+                    EditorCommandQueue.AddCommand($@"text/select/{result.Info.Name}/{fmgName}/{result.Entry.ID}");
                 }
 
                 ImGui.EndPopup();
@@ -921,30 +922,6 @@ public class EmevdPropertyDecorator
         }
 
         return row;
-    }
-
-    /// <summary>
-    /// Return FMG/Text reference based on passed value.
-    /// </summary>
-    private static (string, FMGEntryGroup) resolveFMGRef(string fmgName, int value, int offset = 0)
-    {
-        if (!Smithbox.BankHandler.FMGBank.IsLoaded)
-        {
-            return ("", null);
-        }
-
-        var matchingFmgInfo = Smithbox.BankHandler.FMGBank.FmgInfoBank.ToList().Find(x => x.Name == fmgName);
-
-        if (matchingFmgInfo != null)
-        {
-            var entryGroupId = Math.Abs(value) + offset;
-
-            var newFmgInfo = (matchingFmgInfo.Name, Smithbox.BankHandler.FMGBank.GenerateEntryGroup(entryGroupId, matchingFmgInfo));
-
-            return newFmgInfo;
-        }
-
-        return ("", null);
     }
 
     #endregion

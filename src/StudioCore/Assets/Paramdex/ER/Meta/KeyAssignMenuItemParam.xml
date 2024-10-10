@@ -11,7 +11,7 @@
     <enablePadConfig AltName="Allow Pad Config" Wiki="Is it possible to change the pad operation assignment (default possible)?" IsBool="" />
     <enableMouseConfig AltName="Allow Mouse Config" Wiki="Is it possible to change the mouse operation assignment (default possible)?" IsBool="" />
     <group AltName="Group" Wiki="Group for determining duplicate assignments. Cannot be duplicated in the same group" Enum="CS_KEY_ASSIGN_GROUP" />
-    <mappingTextID AltName="Mapping Text ID" Wiki="Item name to be displayed in the operation list. 0  Do not display in the list" FmgRef="Modern_MenuText" />
+    <mappingTextID AltName="Mapping Text ID" Wiki="Item name to be displayed in the operation list. 0  Do not display in the list" FmgRef="Modern_Menu_Text" />
     <viewPad AltName="View Pad" Wiki="Whether to display with key config (pad) (default display)" IsBool="" />
     <viewKeyboardMouse AltName="View Keyboard/Mouse" Wiki="Whether to display with key config (mouse / keyboard) (default display)" IsBool="" />
     <padding AltName="" IsHidden=""/>

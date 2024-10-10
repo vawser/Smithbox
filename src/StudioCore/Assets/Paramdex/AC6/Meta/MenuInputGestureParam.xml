@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <UnkInt0x08 AltName="Key Guide Text ID" FmgRef="Modern_KeyGuide" />
+    <UnkInt0x08 AltName="Key Guide Text ID" FmgRef="Modern_Menu_Key_Guide" />
   </Field>
   <Self />
 </PARAMMETA>

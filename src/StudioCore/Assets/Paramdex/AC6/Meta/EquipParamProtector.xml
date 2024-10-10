@@ -195,7 +195,7 @@
     <lockCamParamId AltName="Lock Camera Param ID" />
     <energyLoad AltName="Energy Load" />
     <armorPoints AltName="Armor Points" />
-    <menuTextId AltName="Menu Text ID" FmgRef="Modern_MenuText" />
+    <menuTextId AltName="Menu Text ID" FmgRef="Modern_Menu_Text" />
     <legsAnimOffset AltName="Legs Animation Offset" Wiki="TAE ID used for overriding animations.\nValue of 1 utilizes TAE a010, 3 uses a030, etc.\nUsed with Lammergeier for hovering and assault boost animations." />
     <energyCapacity AltName="Energy Capacity" />
     <energyOutput AltName="Energy Output" />

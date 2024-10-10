@@ -24,7 +24,7 @@
     </Enum>
   </Enums>
   <Field>
-    <CaptionTextID AltName="Caption Text ID" Wiki="" FmgRef="Modern_MenuText" />
+    <CaptionTextID AltName="Caption Text ID" Wiki="" FmgRef="Modern_Menu_Text" />
     <IconID AltName="Icon ID" Wiki="" />
     <RequiredPropertyID AltName="Required Property ID" Wiki="" />
     <CompareType AltName="Compare Type" Wiki="" Enum="MENU_PROPERTY_CMP_TYPE" />

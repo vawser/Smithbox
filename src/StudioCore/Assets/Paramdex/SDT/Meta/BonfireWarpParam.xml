@@ -3,7 +3,7 @@
   <Field>
     <eventflagId Wiki="Event flag for unlocking this Idol" />
     <bonfireEntityId Wiki="EntityId of the Idol object, defined in the map" />
-    <msgId Wiki="Display message ID" FmgRef="MenuText" />
+    <msgId Wiki="Display message ID" FmgRef="Modern_Menu_Text" />
     <menuTextId Wiki="Warp menu description text ID" />
     <menuImageId Wiki="Warp menu thumbnail image ID" />
     <menuPageNo Wiki="Which map menu will this Idol warp appear in?" />

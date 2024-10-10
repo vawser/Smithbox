@@ -39,13 +39,13 @@
   </Enums>
   
   <Field>
-    <TitleTextID AltName="Title Text ID" FmgRef="Modern_MenuText" />
+    <TitleTextID AltName="Title Text ID" FmgRef="Modern_Menu_Text" />
     
     <compareType AltName="Compare Type" Enum="MENU_PROPERTY_CMP_TYPE" Wiki="Determines if a lower or higher value is considered beneficial when two values in UI are compared.\nExample: When comparing weapon stats (beneficial comparisons is blue, non-beneficial is red)." />
     
     <developerComment AltName="Comment" />
     
-    <DescriptionTextID AltName="Description Text ID" FmgRef="LineHelp" />
+    <DescriptionTextID AltName="Description Text ID" FmgRef="Modern_Menu_Line_Help" />
     
     <menuPropertyExtractTargetType AltName="Target Type" Enum="MENU_PROPERTY_EXTRACT_TARGET_TYPE" />
     <menuPropertyExtractPrimitiveType AltName="Primitive Type" Enum="MENU_PROPERTY_EXTRACT_PRIMITIVE_TYPE" />

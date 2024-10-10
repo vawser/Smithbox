@@ -76,7 +76,7 @@
     <voiceChatGroup AltName="Voice Chat Group" Wiki="Voice chat group" Enum="VOICE_CHAT_GROUP_Type" />
     <roleNameColor AltName="Role Name Color" Wiki="The color of the role name text displayed on the FE of the network PC" Enum="ROLE_NAME_COLOR_TYPE" />
     <pad1 AltName="" IsHidden=""/>
-    <roleNameId AltName="Role Name - Text ID" Wiki="Text ID of the role name to be displayed on the FE of the network PC" FmgRef="Modern_MenuText" />
+    <roleNameId AltName="Role Name - Text ID" Wiki="Text ID of the role name to be displayed on the FE of the network PC" FmgRef="Modern_Menu_Text" />
     <threatLv AltName="Threat Level" Wiki="Threat level" />
     <phantomParamId_vowRank1 AltName="Phantom Param ID - Vow Rank [1]" Wiki="Phantom parameter ID when pledge rank is 1" Refs="PhantomParam"/>
     <phantomParamId_vowRank2 AltName="Phantom Param ID - Vow Rank [2]" Wiki="Phantom parameter ID when pledge rank is 2" Refs="PhantomParam"/>

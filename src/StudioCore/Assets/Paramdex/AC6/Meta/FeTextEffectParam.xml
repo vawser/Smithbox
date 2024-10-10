@@ -2,10 +2,10 @@
 <PARAMMETA XmlVersion="0">
   <Field>
     <resId AltName="Resource ID" />
-    <textId1 AltName="Text ID [1]" FmgRef="Event" />
+    <textId1 AltName="Text ID [1]" FmgRef="Event_Text" />
     <seId AltName="Sound ID" SoundAlias=""/>
-    <textId2 AltName="Text ID [2]" FmgRef="Event" />
-    <textId3 AltName="Text ID [3]" FmgRef="Event" />
+    <textId2 AltName="Text ID [2]" FmgRef="Event_Text" />
+    <textId3 AltName="Text ID [3]" FmgRef="Event_Text" />
     <slot AltName="Slot" />
     <movieId AltName="Movie ID" MovieAlias="" />
   </Field>

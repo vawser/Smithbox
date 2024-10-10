@@ -9,7 +9,6 @@ using StudioCore.Banks.TextureCorrectionBank;
 using StudioCore.Editors.MapEditor.LightmapAtlasEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Editors.TextEditor;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -57,7 +56,6 @@ public class BankHandler
 
     public ProjectEnumBank ProjectEnums;
 
-    public FMGBank FMGBank;
     public LightmapAtlasBank LightmapAtlasBank;
     public MaterialResourceBank MaterialBank;
 
@@ -95,7 +93,6 @@ public class BankHandler
 
         ProjectEnums = new ProjectEnumBank("Project Enums");
 
-        FMGBank = new FMGBank();
         LightmapAtlasBank = new LightmapAtlasBank();
         MaterialBank = new MaterialResourceBank();
     }
@@ -130,11 +127,6 @@ public class BankHandler
         GameOffsets.LoadBank();
 
         ProjectEnums.LoadBank();
-
-        FMGBank.SetDefaultLanguagePath();
-
-        FMGBank.LanguageFolder = Smithbox.ProjectHandler.CurrentProject.Config.LastFmgLanguageUsed;
-        FMGBank.LoadFMGs();
 
         LightmapAtlasBank.LoadBank();
         MaterialBank.LoadBank();

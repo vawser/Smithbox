@@ -37,7 +37,7 @@
     <eventKickTiming AltName="Event Execution Timing" Wiki="Event execution timing" Enum="OBJACT_EVENT_KICK_TIMING" />
     <pad1 AltName="" IsHidden=""/>
     <actionButtonParamId AltName="Action Button Param ID" Wiki="Action button parameter ID" Refs="ActionButtonParam" />
-    <actionSuccessMsgId AltName="Action Success Text ID" FmgRef="Event" />
+    <actionSuccessMsgId AltName="Action Success Text ID" FmgRef="Event_Text" />
   </Field>
   <Self Wiki="Object Actions"/>
 </PARAMMETA>

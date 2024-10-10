@@ -36,7 +36,7 @@
     
     <padding3 IsHidden="" />
     
-    <textId AltName="Text ID" Wiki="Text ID to display" FmgRef="Event"/>
+    <textId AltName="Text ID" Wiki="Text ID to display" FmgRef="Event_Text"/>
     <invalidFlag AltName="Invalid Flag" Wiki="If this flag is ON, the action button will not appear and no judgment will be made." />
     <grayoutFlag AltName="Grayout Flag" Wiki="If this flag is ON, the action button will be grayed out and no judgment will be made." />
     <priority AltName="Priority" />

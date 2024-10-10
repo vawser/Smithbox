@@ -84,7 +84,7 @@
     <tutorialCheckRideJumpRegionExpandRange AltName="Tutorial Check Spiritspring Jump Region Range" Wiki="For tutorial judgment The riding large jump point is expanded by  [m] to judge inside and outside.  Set the value of [m] here." />
     <retryPointActivatedPcAnimId AltName="Activated Marika Stake Player Animation ID" Wiki="PC animation ID when retry point is started. If it is -1, it will not be played." />
     <retryPointActivatedDialogDelayTime AltName="Activated Marika Stake Dialog Display Delay" Wiki="Delay time of dialog display when retry point is started [seconds]" />
-    <retryPointActivatedDialogTextId AltName="Activated Marika Stake Dialog Text ID" Wiki="The text ID of the dialog when the retry point is started. Set the text in EventText_ForMap.xlsm. If it is -1, the dialog is not displayed." FmgRef="Modern_MenuText" />
+    <retryPointActivatedDialogTextId AltName="Activated Marika Stake Dialog Text ID" Wiki="The text ID of the dialog when the retry point is started. Set the text in EventText_ForMap.xlsm. If it is -1, the dialog is not displayed." FmgRef="Modern_Menu_Text" />
     <signPuddleOpenPcAnimId AltName="Opened Summoning Pool Player Animation ID" Wiki="PC animation ID at the time of sign accumulation startup. If it is -1, it will not be played." />
     <signPuddleOpenDialogDelayTime AltName="Opened Summoning Pool Dialog Display Delay" Wiki="Delay time of dialog display at startup of sign accumulation [seconds]" />
     <activityOfDeadSpEffect_BulletId AltName="Corpse Explosion - Bullet ID" Wiki="Bullet ID fired when the Activity of the Dead special effect is activated" Refs="Bullet" />

@@ -24,8 +24,8 @@
     <viewType Wiki="Determines what part of the menu the tutorial appears in" Enum="MENU_TUTORIAL_PARAM_TYPE" />
 	<beginEventFlagId Wiki="Event Flag to fire" />
 	<endEventFlagId Wiki="Event Flag to end" />
-	<titleMessageId Wiki="Text for the tutorial title" FmgRef="Event" />
-	<descMessageId Wiki="Text for the tutorial description" FmgRef="Event" />
+	<titleMessageId Wiki="Text for the tutorial title" FmgRef="Event_Text" />
+	<descMessageId Wiki="Text for the tutorial description" FmgRef="Event_Text" />
 	<textureId />
 	<pad Wiki="Never gonna give you up, never gonna let you down, never gonna run around and desert you" />
   </Field>

@@ -19,7 +19,7 @@
     <posZ AltName="Coordinate: Z" Wiki="Z coordinate" />
     
     <signSubCategoryId AltName="Sign Sub Category ID" Refs="SignPuddleSubCategoryParam" />
-    <locationTextId AltName="Location Text ID" FmgRef="TitleLocations" />
+    <locationTextId AltName="Location Text ID" FmgRef="Title_Locations" />
     <sortId AltName="Sort ID" />
   </Field>
   <Self />

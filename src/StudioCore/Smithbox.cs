@@ -27,6 +27,7 @@ using StudioCore.Tasks;
 using StudioCore.Tools;
 using StudioCore.Core.Project;
 using StudioCore.Tools.Randomiser;
+using StudioCore.Editors.TextEditor;
 
 namespace StudioCore;
 
@@ -58,7 +59,6 @@ public class Smithbox
 
     public static string _programTitle;
 
-    private readonly SoapstoneService _soapstoneService;
     private readonly string _version;
 
     private bool _programUpdateAvailable;
@@ -110,8 +110,7 @@ public class Smithbox
         EditorHandler = new EditorHandler(_context);
         WindowHandler = new WindowHandler(_context);
 
-        // Soapstone Service
-        _soapstoneService = new SoapstoneService(_version);
+        TextBank.LoadTextFiles();
 
         ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
         SetupFonts();
@@ -292,13 +291,6 @@ public class Smithbox
     public void Run()
     {
         SetupCSharpDefaults();
-
-        if (CFG.Current.System_Enable_Soapstone_Server)
-        {
-            TaskManager.RunPassiveTask(new TaskManager.LiveTask("Soapstone Server",
-                TaskManager.RequeueType.None, true,
-                () => SoapstoneServer.RunAsync(KnownServer.Smithbox, _soapstoneService).Wait()));
-        }
 
         if (CFG.Current.System_Check_Program_Update)
         {

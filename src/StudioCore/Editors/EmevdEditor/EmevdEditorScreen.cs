@@ -15,14 +15,13 @@ public class EmevdEditorScreen : EditorScreen
 {
     public ActionManager EditorActionManager = new();
 
-    public EmevdAnnotation AnnotationManager;
-
     public EmevdSelectionManager Selection;
     public EmevdPropertyDecorator Decorator;
     public EmevdShortcuts EditorShortcuts;
     public EmevdContextMenu ContextMenu;
     public EmevdActionHandler ActionHandler;
     public EmevdFilters Filters;
+    public EmevdAnnotation AnnotationManager;
 
     public EmevdParameterManager ParameterManager;
 
@@ -41,13 +40,12 @@ public class EmevdEditorScreen : EditorScreen
 
     public EmevdEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        AnnotationManager = new EmevdAnnotation(this);
-
-        EditorShortcuts = new EmevdShortcuts(this);
         Selection = new EmevdSelectionManager(this);
         Decorator = new EmevdPropertyDecorator(this);
         ContextMenu = new EmevdContextMenu(this);
         Filters = new EmevdFilters(this);
+        EditorShortcuts = new EmevdShortcuts(this);
+        AnnotationManager = new EmevdAnnotation(this);
 
         ParameterManager = new EmevdParameterManager(this);
 

@@ -23,7 +23,7 @@ public class EmevdActionMenubar
     public EmevdActionMenubar(EmevdEditorScreen screen)
     {
         Screen = screen;
-        ActionHandler = new EmevdActionHandler(screen);
+        ActionHandler = screen.ActionHandler;
     }
 
     public void OnProjectChanged()

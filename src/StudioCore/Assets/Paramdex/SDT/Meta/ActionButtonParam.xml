@@ -28,7 +28,7 @@
     <allowAngle AltName="Allowable Angle Difference" Wiki="Allowable angle difference (cylinder / prism)" />
     <textBoxType AltName="Textbox Type" Wiki="Text box type" Enum="ACTION_BUTTON_TEXT_BOX_TYPE" />
     <raycastType AltName="Raycast Type" Wiki="Shielding judgment type" Enum="ACTION_BUTTON_RAYCAST_TYPE" />
-    <textId AltName="Text ID" Wiki="Text ID to display" FmgRef="Event" />
+    <textId AltName="Text ID" Wiki="Text ID to display" FmgRef="Event_Text" />
     <invalidFlag AltName="Invalid Flag" Wiki="If this flag is ON, the action button will not appear and no judgment will be made." FlagAlias="" />
     <grayoutFlag AltName="Grayout Flag" Wiki="If this flag is ON, the action button will be grayed out and no judgment will be made." />
     <priority AltName="Priority" Wiki="Priority when multiple action buttons overlap (0 to 99, closer to 0 has priority)" />

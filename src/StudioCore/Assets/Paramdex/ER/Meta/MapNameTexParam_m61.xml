@@ -13,11 +13,11 @@
     <srcG AltName="Pre-conversion - Map Image - G" Wiki="Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter" />
     <srcB AltName="Pre-conversion - Map Image - B" Wiki="Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter" />
     <pad1 AltName="" IsHidden=""/>
-    <mapNameId AltName="Map Name ID" Wiki="Map name ID for displaying place names [PlaceName] (0 - invalid value)" FmgRef="TitleLocations" />
+    <mapNameId AltName="Map Name ID" Wiki="Map name ID for displaying place names [PlaceName] (0 - invalid value)" FmgRef="Title_Locations" />
     <pad2 AltName="" IsHidden=""/>
     
-    <unknownTextID_1 AltName="Location Text ID [1]" FmgRef="TitleLocations" />
-    <unknownTextID_2 AltName="Location Text ID [2]" FmgRef="TitleLocations" />
+    <unknownTextID_1 AltName="Location Text ID [1]" FmgRef="Title_Locations" />
+    <unknownTextID_2 AltName="Location Text ID [2]" FmgRef="Title_Locations" />
   </Field>
   <Self />
 </PARAMMETA>

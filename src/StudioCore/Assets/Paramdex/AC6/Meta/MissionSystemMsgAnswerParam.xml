@@ -2,7 +2,7 @@
 <PARAMMETA XmlVersion="0">
   <Field>
     <startPad IsHidden="" />
-    <textId AltName="Message Text ID" FmgRef="TalkMsg" />
+    <textId AltName="Message Text ID" FmgRef="Talk_Messages" />
     
     <endPad IsHidden="" />
   </Field>

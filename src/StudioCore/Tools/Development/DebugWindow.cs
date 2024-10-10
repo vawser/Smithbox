@@ -180,9 +180,6 @@ public class DebugWindow
                     break;
 
                 // Helpers
-                case SelectedDebugTab.FmgNameHelper:
-                    DisplayHelper_FMGNames();
-                    break;
                 case SelectedDebugTab.FlverLayoutHelper:
                     DisplayHelper_FLVERDumpy();
                     break;
@@ -352,18 +349,6 @@ public class DebugWindow
     }
 
     // Helpers
-    private void DisplayHelper_FMGNames()
-    {
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
-
-        ImGui.Text("This tool will export the FMG Names usable in the Param Meta to the clipboard.");
-        ImGui.Text("");
-
-        if (ImGui.Button("Export", buttonSize))
-        {
-            FmgMetaTool.GetNames();
-        }
-    }
 
     private void DisplayHelper_FLVERDumpy()
     {

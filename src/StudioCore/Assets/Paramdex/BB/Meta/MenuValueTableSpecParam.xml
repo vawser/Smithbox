@@ -9,7 +9,7 @@
   </Enums>
   <Field>
     <value AltName="Value" Wiki="Value to compare" />
-    <textId AltName="Text ID" Wiki="Converted text ID" FmgRef="Modern_MenuText"/>
+    <textId AltName="Text ID" Wiki="Converted text ID" FmgRef="Modern_Menu_Text"/>
     <compareType AltName="Compare Type" Wiki="Comparison type" Enum="MENU_VALUE_TABLE_CMP_TYPE" />
     <pad1 AltName="" IsHidden=""/>
   </Field>

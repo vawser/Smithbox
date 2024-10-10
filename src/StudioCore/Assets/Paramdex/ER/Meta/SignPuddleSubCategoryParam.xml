@@ -4,7 +4,7 @@
   </Enums>
   <Field>
     <startPad IsHidden="" />
-    <signPuddleCategoryText AltName="Sign Puddle Category Text ID" FmgRef="Modern_MenuText" />
+    <signPuddleCategoryText AltName="Sign Puddle Category Text ID" FmgRef="Modern_Menu_Text" />
     <signPuddleTabId AltName="Tab ID" Refs="SignPuddleTabParam" />
     <endPad IsHidden="" />
   </Field>

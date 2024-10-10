@@ -16,7 +16,7 @@
     <startPad IsHidden="" />
     
     <overlayMapId AltName="Overlay Map ID" Wiki="The overlay map that contains this mission's specific MSB configuration. Represents the YY_ZZ parts in the following MSB template: mXX_YY_ZZ_AA" />
-    <missionObjectiveTextId AltName="Objective Text ID" FmgRef="MissionLocation" Wiki="The mission objective to display for this mission." />
+    <missionObjectiveTextId AltName="Objective Text ID" FmgRef="Mission_Objective" Wiki="The mission objective to display for this mission." />
     <baseMapId AltName="Base Map ID" Wiki="The base map that this mission takes place on." />
     <pad1 IsHidden="" />
     <unkSkyLighting AltName="Sky Lighting" Wiki ="Determines basic lighting used in map. Possibly refers to gparam by index." />
@@ -34,16 +34,16 @@
     <damageCostMultiplier AltName="Repair Cost Multiplier" Wiki="Multiplier to the cost of repair taken after mission completion." />
     <damageCostMax AltName="Repair Cost Maximum" Wiki="Cap to the cost of repair taken after mission completion." />
     
-    <eventObjectiveMsgId0 AltName="Event Objective Text ID [1]" FmgRef="Event" Wiki="The objective text to display for event objective 1." />
-    <eventObjectiveMsgId1 AltName="Event Objective Text ID [2]" FmgRef="Event" Wiki="The objective text to display for event objective 2." />
-    <eventObjectiveMsgId2 AltName="Event Objective Text ID [3]" FmgRef="Event" Wiki="The objective text to display for event objective 3." />
-    <eventObjectiveMsgId3 AltName="Event Objective Text ID [4]" FmgRef="Event" Wiki="The objective text to display for event objective 4." />
-    <eventObjectiveMsgId4 AltName="Event Objective Text ID [5]" FmgRef="Event" Wiki="The objective text to display for event objective 5." />
-    <eventObjectiveMsgId5 AltName="Event Objective Text ID [6]" FmgRef="Event" Wiki="The objective text to display for event objective 6." />
-    <eventObjectiveMsgId6 AltName="Event Objective Text ID [7]" FmgRef="Event" Wiki="The objective text to display for event objective 7." />
-    <eventObjectiveMsgId7 AltName="Event Objective Text ID [8]" FmgRef="Event" Wiki="The objective text to display for event objective 8." />
-    <eventObjectiveMsgId8 AltName="Event Objective Text ID [9]" FmgRef="Event" Wiki="The objective text to display for event objective 9." />
-    <eventObjectiveMsgId9 AltName="Event Objective Text ID [10]" FmgRef="Event" Wiki="The objective text to display for event objective 10." />
+    <eventObjectiveMsgId0 AltName="Event Objective Text ID [1]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 1." />
+    <eventObjectiveMsgId1 AltName="Event Objective Text ID [2]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 2." />
+    <eventObjectiveMsgId2 AltName="Event Objective Text ID [3]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 3." />
+    <eventObjectiveMsgId3 AltName="Event Objective Text ID [4]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 4." />
+    <eventObjectiveMsgId4 AltName="Event Objective Text ID [5]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 5." />
+    <eventObjectiveMsgId5 AltName="Event Objective Text ID [6]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 6." />
+    <eventObjectiveMsgId6 AltName="Event Objective Text ID [7]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 7." />
+    <eventObjectiveMsgId7 AltName="Event Objective Text ID [8]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 8." />
+    <eventObjectiveMsgId8 AltName="Event Objective Text ID [9]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 9." />
+    <eventObjectiveMsgId9 AltName="Event Objective Text ID [10]" FmgRef="Event_Text" Wiki="The objective text to display for event objective 10." />
     
     <eventObjectiveReward0 AltName="Event Objective Reward [1]" Wiki="Determines the amount of score given upon objective completion." />
     <eventObjectiveReward1 AltName="Event Objective Reward [2]" Wiki="Determines the amount of score given upon objective completion." />
@@ -70,14 +70,14 @@
     <bRankMaxScore AltName="Score for B Rank" />
     <cRankMaxScore AltName="Score for C Rank" />
     
-    <enemyObjectiveMsgId0 AltName="Enemy Objective Text ID [1]" FmgRef="Event" Wiki="The objective text to display for enemy objective 1." />
-    <enemyObjectiveMsgId1 AltName="Enemy Objective Text ID [2]" FmgRef="Event" Wiki="The objective text to display for enemy objective 2." />
-    <enemyObjectiveMsgId2 AltName="Enemy Objective Text ID [3]" FmgRef="Event" Wiki="The objective text to display for enemy objective 3." />
-    <enemyObjectiveMsgId3 AltName="Enemy Objective Text ID [4]" FmgRef="Event" Wiki="The objective text to display for enemy objective 4." />
-    <enemyObjectiveMsgId4 AltName="Enemy Objective Text ID [5]" FmgRef="Event" Wiki="The objective text to display for enemy objective 5." />
-    <enemyObjectiveMsgId5 AltName="Enemy Objective Text ID [6]" FmgRef="Event" Wiki="The objective text to display for enemy objective 6." />
-    <enemyObjectiveMsgId6 AltName="Enemy Objective Text ID [7]" FmgRef="Event" Wiki="The objective text to display for enemy objective 7." />
-    <enemyObjectiveMsgId7 AltName="Enemy Objective Text ID [8]" FmgRef="Event" Wiki="The objective text to display for enemy objective 8." />
+    <enemyObjectiveMsgId0 AltName="Enemy Objective Text ID [1]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 1." />
+    <enemyObjectiveMsgId1 AltName="Enemy Objective Text ID [2]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 2." />
+    <enemyObjectiveMsgId2 AltName="Enemy Objective Text ID [3]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 3." />
+    <enemyObjectiveMsgId3 AltName="Enemy Objective Text ID [4]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 4." />
+    <enemyObjectiveMsgId4 AltName="Enemy Objective Text ID [5]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 5." />
+    <enemyObjectiveMsgId5 AltName="Enemy Objective Text ID [6]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 6." />
+    <enemyObjectiveMsgId6 AltName="Enemy Objective Text ID [7]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 7." />
+    <enemyObjectiveMsgId7 AltName="Enemy Objective Text ID [8]" FmgRef="Event_Text" Wiki="The objective text to display for enemy objective 8." />
     
     <enemyObjectiveReward0 AltName="Enemy Objective Reward [1]" Wiki="Determines the amount of score given upon objective completion." />
     <enemyObjectiveReward1 AltName="Enemy Objective Reward [2]" Wiki="Determines the amount of score given upon objective completion." />

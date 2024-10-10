@@ -10,7 +10,7 @@
   </Enums>
   <Field>
     <value AltName="Value"/>
-    <textId AltName="Text ID" FmgRef="Modern_MenuText" />
+    <textId AltName="Text ID" FmgRef="Modern_Menu_Text" />
     <compareType AltName="Compare Type" Enum="MENU_VALUE_TABLE_CMP_TYPE" Wiki="Determines if a lower or higher value is considered beneficial when two values in UI are compared.\nExample: When comparing weapon stats (beneficial comparisons is blue, non-beneficial is red)." />
     <padding IsHidden="" />
   </Field>

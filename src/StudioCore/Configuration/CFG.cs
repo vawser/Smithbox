@@ -11,6 +11,7 @@ using static StudioCore.Configuration.Settings.TimeActEditorTab;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Editors.TextEditor;
 
 namespace StudioCore;
 
@@ -372,6 +373,18 @@ public class CFG
     //****************************
     // Settings: Text Editor
     //****************************
+    public TextContainerCategory TextEditor_PrimaryCategory = TextContainerCategory.English;
+
+    public bool TextEditor_DisplayPrimaryLanguageOnly = false;
+    public bool TextEditor_DisplayPrettyContainerName = true;
+
+    public bool TextEditor_DisplayFmgID = true;
+    public bool TextEditor_DisplayFmgPrettyName = true;
+    public bool TextEditor_DisplaySourcePath = true;
+
+    public bool TextEditor_DisplayNullEntries = true;
+
+    // OLD
     public bool FMG_NoFmgPatching = false;
     public bool FMG_NoGroupedFmgEntries = false;
     public bool FMG_ShowOriginalNames = false;

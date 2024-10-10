@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-	<msgId AltName="Male - Message ID" Wiki="PC Gender is Male: Specify Message-> Menu" FmgRef="TalkMsg" />
+	<msgId AltName="Male - Message ID" Wiki="PC Gender is Male: Specify Message-> Menu" FmgRef="Talk_Messages" />
     <voiceId AltName="Male - Voice ID" Wiki="PC Gender is Male: Specify Voice-> Sound" SoundAlias="" />
     <spEffectId0 AltName="Motion Trigger - SpEffect ID [0]" Wiki="Specify special effects-> Character" Refs="SpEffectParam"/>
     <motionId0 AltName="Motion ID [0]" Wiki="Specify motion-> Character" />

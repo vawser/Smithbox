@@ -54,7 +54,7 @@
     <isInvalidForCrouching AltName="Invalid for Crouching" Wiki="If this item is YES, the action button will not appear when crouching, and no judgment will be made." IsBool="" />
     <isGrayoutForCrouching AltName="Greyout for Crouching" Wiki="If this item is YES, the action button will be grayed out when crouching and no judgment will be made." IsBool="" />
     <padding4 AltName="" IsHidden=""/>
-    <textId AltName="Text ID" Wiki="Text ID to display" FmgRef="ActionButtonText" />
+    <textId AltName="Text ID" Wiki="Text ID to display" FmgRef="Action_Button_Text" />
     <invalidFlag AltName="Invalid Flag" Wiki="If this flag is ON, the action button will not appear and no judgment will be made." FlagAlias="" />
     <grayoutFlag AltName="Grayout Flag" Wiki="If this flag is ON, the action button will be grayed out and no judgment will be made." FlagAlias="" />
     <overrideActionButtonIdForRide AltName="Override Button ID for Ride" Wiki="Replace with this action button ID parameter while riding (-1: No replacement)" Refs="ActionButtonParam" />

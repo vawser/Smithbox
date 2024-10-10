@@ -736,19 +736,19 @@
                 {
                     "id": "AntiAlias - DlaaThreshold",
                     "name": "DLAA: Threshold",
-                    "description": "DLAA is Deep Learning Anti-Aliasing.",
+                    "description": "DLAA is Directionally Localized Anti-Aliasing.",
                     "attributes": "IsType[Float]"
                 },
                 {
                     "id": "AntiAlias - DlaaRamda",
                     "name": "DLAA: Ramda",
-                    "description": "DLAA is Deep Learning Anti-Aliasing.",
+                    "description": "DLAA is Directionally Localized Anti-Aliasing.",
                     "attributes": "IsType[Float]"
                 },
                 {
                     "id": "AntiAlias - DlaaEpsilon",
                     "name": "DLAA: Epsilon",
-                    "description": "DLAA is Deep Learning Anti-Aliasing.",
+                    "description": "DLAA is Directionally Localized Anti-Aliasing.",
                     "attributes": "IsType[Float]"
                 },
                 {

@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using StudioCore.Core.Project;
-using StudioCore.Editors.TextEditor.Tools;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextureViewer;

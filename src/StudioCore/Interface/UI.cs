@@ -100,8 +100,10 @@ public class UI
     public bool Interface_ParamEditor_ToolConfiguration = true;
 
     // Text Editor
-    public bool Interface_TextEditor_TextCategories = true;
-    public bool Interface_TextEditor_TextEntry = true;
+    public bool Interface_TextEditor_FileContainerList = true;
+    public bool Interface_TextEditor_FmgList = true;
+    public bool Interface_TextEditor_FmgEntryList = true;
+    public bool Interface_TextEditor_FmgEntryProperties = true;
     public bool Interface_TextEditor_ToolConfigurationWindow = true;
 
     // GPARM EDitor

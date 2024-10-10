@@ -16,7 +16,7 @@
   </Enums>
   <Field>
     <CommandID AltName="Command ID" Enum="CHARMAKEMENU_CMD_TYPE" />
-	<CaptionID AltName="Caption ID" FmgRef="Modern_MenuText" />
+	<CaptionID AltName="Caption ID" FmgRef="Modern_Menu_Text" />
 	<FaceParamID AltName="Face Param ID" Refs="FaceParam" />
     <TableID AltName="Table ID" Wiki="When the type is grid, the ID of the first list item; when the type is color, the ID of the first color palette"/>
 	<ViewCondition AltName="View Condition" Enum="CHARMAKEMENU_VIEW_CONDITION" />

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-	<actionEnableMsgId Wiki="MsgID of the menu displayed when the action is enabled" FmgRef="Event" />
-	<actionFailedMsgId Wiki="MsgID of the menu to display when the action fails" FmgRef="Event" />
+	<actionEnableMsgId Wiki="MsgID of the menu displayed when the action is enabled" FmgRef="Event_Text" />
+	<actionFailedMsgId Wiki="MsgID of the menu to display when the action fails" FmgRef="Event_Text" />
 	<spQualifiedPassEventFlag Wiki="Event flag for unconditionally passing special conditions" />
 	<playerAnimId Wiki="This is the animation ID of the player character during action" />
 	<chrAnimId Wiki="Anime ID for enemy actions etc." />

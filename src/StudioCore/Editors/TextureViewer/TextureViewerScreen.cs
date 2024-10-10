@@ -22,8 +22,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public TexCommandQueue CommandQueue;
 
     public TexToolView ToolWindow;
-    public TexToolMenubar ToolSubMenu;
-    public TexActionMenubar ActionSubMenu;
+    public TexToolMenubar ToolMenubar;
+    public TexActionMenubar ActionMenubar;
 
     public TexTools Tools;
 
@@ -49,8 +49,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         EditorShortcuts = new TexShortcuts(this);
 
         ToolWindow = new TexToolView(this);
-        ToolSubMenu = new TexToolMenubar(this);
-        ActionSubMenu = new TexActionMenubar(this);
+        ToolMenubar = new TexToolMenubar(this);
+        ActionMenubar = new TexActionMenubar(this);
 
         FileContainerView = new TexFileContainerView(this);
         TextureListView = new TexTextureListView(this);
@@ -69,11 +69,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     {
         ImGui.Separator();
 
-        ActionSubMenu.DisplayMenu();
+        ActionMenubar.DisplayMenu();
 
         ImGui.Separator();
 
-        ToolSubMenu.Display();
+        ToolMenubar.Display();
 
         ImGui.Separator();
 

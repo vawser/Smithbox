@@ -12,7 +12,6 @@ using StudioCore.Editors.TextEditor;
 using System.ComponentModel.DataAnnotations;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
-using StudioCore.Editors.TextEditor.Enums;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -77,25 +76,6 @@ public class ParamBank
         "maptargetdirparam",
         "npctalkparam",
         "treasureboxparam"
-    };
-
-    /// <summary>
-    ///     Param name - FMGCategory map
-    /// </summary>
-    public static readonly List<(string, FmgEntryCategory)> ParamToFmgCategoryList = new()
-    {
-        ("EquipParamAccessory", FmgEntryCategory.Rings),
-        ("EquipParamGoods", FmgEntryCategory.Goods),
-        ("EquipParamWeapon", FmgEntryCategory.Weapons),
-        ("Magic", FmgEntryCategory.Spells),
-        ("EquipParamProtector", FmgEntryCategory.Armor),
-        ("EquipParamGem", FmgEntryCategory.Gem),
-        ("SwordArtsParam", FmgEntryCategory.SwordArts),
-        ("EquipParamGenerator", FmgEntryCategory.Generator),
-        ("EquipParamFcs", FmgEntryCategory.FCS),
-        ("EquipParamBooster", FmgEntryCategory.Booster),
-        ("ArchiveParam", FmgEntryCategory.Archive),
-        ("MissionParam", FmgEntryCategory.Mission)
     };
 
     private static readonly HashSet<int> EMPTYSET = new();

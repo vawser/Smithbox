@@ -4,6 +4,8 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TextEditor;
+using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
@@ -445,7 +447,7 @@ public static class AliasUtils
 
                 if (row != null)
                 {
-                    bool nameSucces = false;
+                    bool nameSuccess = false;
 
                     // Try Name ID first
                     Param.Cell? cq = row["nameId"];
@@ -455,21 +457,15 @@ public static class AliasUtils
                         var term = c.Value.ToParamEditorString();
                         var result = term;
 
-                        if (Smithbox.BankHandler.FMGBank.IsLoaded)
+                        if (TextBank.PrimaryBankLoaded)
                         {
-                            var matchingFmgInfo = Smithbox.BankHandler.FMGBank.FmgInfoBank.ToList().Find(x => x.Name.Contains("Character"));
+                            var searchValue = int.Parse(term);
+                            var textResult = TextFinder.GetTextResult("Title_Characters", searchValue);
 
-                            if (matchingFmgInfo != null)
+                            if (textResult != null)
                             {
-                                foreach (var entry in matchingFmgInfo.Fmg.Entries)
-                                {
-                                    if (entry.ID == int.Parse(term))
-                                    {
-                                        result = entry.Text;
-                                        nameSucces = true;
-                                        break;
-                                    }
-                                }
+                                result = textResult.Entry.Text;
+                                nameSuccess = true;
                             }
                         }
 
@@ -477,7 +473,7 @@ public static class AliasUtils
                     }
 
                     // Try Row Name instead if Name ID is not used
-                    if (!nameSucces)
+                    if (!nameSuccess)
                     {
                         aliasName = $"{row.Name}";
                     }

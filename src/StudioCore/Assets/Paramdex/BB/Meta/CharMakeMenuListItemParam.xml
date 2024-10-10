@@ -2,7 +2,7 @@
 <PARAMMETA XmlVersion="0">
   <Field>
     <Value AltName="Value" />
-    <CaptionID AltName="Caption ID" FmgRef="Modern_MenuText"/>
+    <CaptionID AltName="Caption ID" FmgRef="Modern_Menu_Text"/>
     <IconID AltName="Icon ID" />
     <reserved IsHidden=""/>
   </Field>

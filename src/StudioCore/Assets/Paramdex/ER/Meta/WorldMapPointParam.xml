@@ -135,28 +135,28 @@
     <posX AltName="Map Coordinate: X" Wiki="X coordinate" />
     <posY AltName="Map Coordinate: Y" Wiki="Y coordinate (not used)" />
     <posZ AltName="Map Coordinate: Z" Wiki="Z coordinate" />
-    <textId1 FmgRef="TitleLocations(textType1=0),TitleCharacters(textType1=1)" AltName="Text ID [1]" Wiki="The text ID to display. If the value is invalid (-1), nothing is displayed." />
+    <textId1 FmgRef="Title_Locations(textType1=0),Title_Characters(textType1=1)" AltName="Text ID [1]" Wiki="The text ID to display. If the value is invalid (-1), nothing is displayed." />
     <textEnableFlagId1 AltName="Text Enable Flag [1]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
     <textDisableFlagId1 AltName="Text Disable Flag [1]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
-    <textId2 FmgRef="TitleLocations(textType2=0),TitleCharacters(textType2=1)" AltName="Text ID [2]" Wiki="The text ID to display. If it is an invalid value (-2), nothing is displayed." />
+    <textId2 FmgRef="Title_Locations(textType2=0),Title_Characters(textType2=1)" AltName="Text ID [2]" Wiki="The text ID to display. If it is an invalid value (-2), nothing is displayed." />
     <textEnableFlagId2 AltName="Text Enable Flag [2]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (1) is invalid, it will be treated as On." FlagAlias="" />
     <textDisableFlagId2 AltName="Text Disable Flag [2]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (1) is invalid, it will be treated as Off." FlagAlias="" />
-    <textId3 FmgRef="TitleLocations(textType3=0),TitleCharacters(textType3=1)" AltName="Text ID [3]" Wiki="The text ID to display. If it is an invalid value (-3), nothing is displayed." />
+    <textId3 FmgRef="Title_Locations(textType3=0),Title_Characters(textType3=1)" AltName="Text ID [3]" Wiki="The text ID to display. If it is an invalid value (-3), nothing is displayed." />
     <textEnableFlagId3 AltName="Text Enable Flag [3]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (2) is invalid, it will be treated as On." FlagAlias="" />
     <textDisableFlagId3 AltName="Text Disable Flag [3]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (2) is invalid, it will be treated as Off." FlagAlias="" />
-    <textId4 FmgRef="TitleLocations(textType4=0),TitleCharacters(textType4=1)" AltName="Text ID [4]" Wiki="The text ID to display. If it is an invalid value (-4), nothing is displayed." />
+    <textId4 FmgRef="Title_Locations(textType4=0),Title_Characters(textType4=1)" AltName="Text ID [4]" Wiki="The text ID to display. If it is an invalid value (-4), nothing is displayed." />
     <textEnableFlagId4 AltName="Text Enable Flag [4]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (3) is invalid, it will be treated as On." FlagAlias="" />
     <textDisableFlagId4 AltName="Text Disable Flag [4]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (3) is invalid, it will be treated as Off." FlagAlias="" />
-    <textId5 FmgRef="TitleLocations(textType5=0),TitleCharacters(textType5=1)" AltName="Text ID [5]" Wiki="The text ID to display. If it is an invalid value (-5), nothing is displayed." />
+    <textId5 FmgRef="Title_Locations(textType5=0),Title_Characters(textType5=1)" AltName="Text ID [5]" Wiki="The text ID to display. If it is an invalid value (-5), nothing is displayed." />
     <textEnableFlagId5 AltName="Text Enable Flag [5]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (4) is invalid, it will be treated as On." FlagAlias="" />
     <textDisableFlagId5 AltName="Text Disable Flag [5]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (4) is invalid, it will be treated as Off." FlagAlias="" />
-    <textId6 FmgRef="TitleLocations(textType6=0),TitleCharacters(textType6=1)" AltName="Text ID [6]" Wiki="The text ID to display. If it is an invalid value (-6), nothing is displayed." />
+    <textId6 FmgRef="Title_Locations(textType6=0),Title_Characters(textType6=1)" AltName="Text ID [6]" Wiki="The text ID to display. If it is an invalid value (-6), nothing is displayed." />
     <textEnableFlagId6 AltName="Text Enable Flag [6]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (5) is invalid, it will be treated as On." FlagAlias="" />
     <textDisableFlagId6 AltName="Text Disable Flag [6]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (5) is invalid, it will be treated as Off." FlagAlias="" />
-    <textId7 FmgRef="TitleLocations(textType7=0),TitleCharacters(textType7=1)" AltName="Text ID [7]" Wiki="The text ID to display. If it is an invalid value (-7), nothing is displayed." />
+    <textId7 FmgRef="Title_Locations(textType7=0),Title_Characters(textType7=1)" AltName="Text ID [7]" Wiki="The text ID to display. If it is an invalid value (-7), nothing is displayed." />
     <textEnableFlagId7 AltName="Text Enable Flag [7]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (6) is invalid, it will be treated as On." FlagAlias="" />
     <textDisableFlagId7 AltName="Text Disable Flag [7]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (6) is invalid, it will be treated as Off." FlagAlias="" />
-    <textId8 FmgRef="TitleLocations(textType8=0),TitleCharacters(textType8=1)" AltName="Text ID [8]" Wiki="The text ID to display. If it is an invalid value (-8), nothing is displayed." />
+    <textId8 FmgRef="Title_Locations(textType8=0),Title_Characters(textType8=1)" AltName="Text ID [8]" Wiki="The text ID to display. If it is an invalid value (-8), nothing is displayed." />
     <textEnableFlagId8 AltName="Text Enable Flag [8]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (7) is invalid, it will be treated as On." FlagAlias="" />
     <textDisableFlagId8 AltName="Text Disable Flag [8]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (7) is invalid, it will be treated as Off." FlagAlias="" />
     <textType1 AltName="Text Type [1]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />

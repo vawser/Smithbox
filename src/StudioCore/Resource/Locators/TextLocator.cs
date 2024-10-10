@@ -8,149 +8,85 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Resource.Locators;
+
 public static class TextLocator
 {
+    public static List<string> FileList = new();
+
     /// <summary>
-    /// Get folders with msgbnds used in-game
+    /// Get all msgbnd paths
     /// </summary>
-    /// <returns>Dictionary with language name and path</returns>
-    public static Dictionary<string, string> GetMsgLanguages()
+    public static List<string> GetFmgContainers(bool rootOnly = false)
     {
-        Dictionary<string, string> dict = new();
-        List<string> folders = new();
-        try
+        FileList = new();
+
+        var rootPath = $"{Smithbox.GameRoot}\\msg\\";
+        var filePattern = $".msgbnd";
+
+        SearchFolder(rootPath, filePattern, rootOnly);
+
+        return FileList;
+    }
+
+    /// <summary>
+    /// Get all fmg paths (for DS2)
+    /// </summary>
+    public static List<string> GetFmgs(bool rootOnly = false)
+    {
+        FileList = new();
+
+        var rootPath = $"{Smithbox.GameRoot}\\menu\\text\\";
+        var filePattern = $".fmg";
+
+        SearchFolder(rootPath, filePattern, rootOnly);
+
+        return FileList;
+    }
+
+    private static void SearchFolder(string rootPath, string filePattern, bool rootOnly)
+    {
+        var entries = Directory.GetFileSystemEntries(rootPath);
+
+        foreach (var entry in entries)
         {
-            if (Smithbox.ProjectType == ProjectType.DES)
+            if (IsDirectory(entry))
             {
-                folders = Directory.GetDirectories(Smithbox.GameRoot + @"\msg").ToList();
-                // Japanese uses root directory
-                if (File.Exists(Smithbox.GameRoot + @"\msg\menu.msgbnd.dcx") ||
-                    File.Exists(Smithbox.GameRoot + @"\msg\item.msgbnd.dcx"))
-                    dict.Add("Japanese", "");
+                SearchFolder(entry, filePattern, rootOnly);
             }
-            else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-                folders = Directory.GetDirectories(Smithbox.GameRoot + @"\menu\text").ToList();
             else
             {
-                // Exclude folders that don't have typical msgbnds
-                folders = Directory.GetDirectories(Smithbox.GameRoot + @"\msg")
-                    .Where(x => !"common,as,eu,jp,na,uk,japanese".Contains(x.Split("\\").Last())).ToList();
+                if (entry.EndsWith(filePattern) || entry.EndsWith($"{filePattern}.dcx"))
+                {
+                    AddFile(entry, rootOnly);
+                }
             }
+        }
+    }
 
-            foreach (var path in folders)
+    private static void AddFile(string rootPath, bool rootOnly)
+    {
+        var path = rootPath;
+
+        if (!rootOnly)
+        {
+            var projectPath = rootPath.Replace(Smithbox.GameRoot, Smithbox.ProjectRoot);
+
+            if (File.Exists(projectPath))
             {
-                dict.Add(path.Split("\\").Last(), path);
+                path = projectPath;
             }
         }
-        catch (Exception e) when (e is DirectoryNotFoundException or FileNotFoundException)
-        {
-        }
 
-        return dict;
+        FileList.Add(path);
     }
 
-    /// <summary>
-    /// Get path of item.msgbnd (english by default)
-    /// </summary>
-    public static ResourceDescriptor GetItemMsgbnd(string langFolder, bool writemode = false, string outputType = "")
+    public static bool IsDirectory(string path)
     {
-        return GetMsgbnd("item", langFolder, writemode, outputType);
-    }
+        FileAttributes attr = File.GetAttributes(path);
 
-    /// <summary>
-    /// Get path of menu.msgbnd (english by default)
-    /// </summary>
-    public static ResourceDescriptor GetMenuMsgbnd(string langFolder, bool writemode = false, string outputType = "")
-    {
-        return GetMsgbnd("menu", langFolder, writemode, outputType);
-    }
+        if (attr.HasFlag(FileAttributes.Directory))
+            return true;
 
-    public static ResourceDescriptor GetMsgbnd(string msgBndType, string langFolder, bool writemode = false, string outputType = "")
-    {
-        ResourceDescriptor ad = new();
-        var path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
-
-        if (Smithbox.ProjectType == ProjectType.DES)
-        {
-            path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
-            // Demon's Souls has msgbnds directly in the msg folder
-            if (!File.Exists($@"{Smithbox.GameRoot}\{path}"))
-                path = $@"msg\{msgBndType}.msgbnd.dcx";
-        }
-        else if (Smithbox.ProjectType == ProjectType.DS1)
-        {
-            path = $@"msg\{langFolder}\{msgBndType}.msgbnd";
-        }
-        else if (Smithbox.ProjectType == ProjectType.DS1R)
-        {
-            path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
-        }
-        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-        {
-            // DS2 does not have an msgbnd but loose fmg files instead
-            path = $@"menu\text\{langFolder}";
-            ResourceDescriptor ad2 = new();
-            ad2.AssetPath = writemode ? path : $@"{Smithbox.GameRoot}\{path}";
-            //TODO: doesn't support project files
-            return ad2;
-        }
-        else if (Smithbox.ProjectType == ProjectType.DS3)
-        {
-            path = $@"msg\{langFolder}\{msgBndType}{outputType}.msgbnd.dcx";
-        }
-        else if (Smithbox.ProjectType == ProjectType.ER)
-        {
-            path = $@"msg\{langFolder}\{msgBndType}{outputType}.msgbnd.dcx";
-        }
-
-        if (writemode)
-        {
-            ad.AssetPath = path;
-            return ad;
-        }
-
-        if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}") ||
-            writemode && Smithbox.ProjectRoot != null)
-            ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}";
-        else if (File.Exists($@"{Smithbox.GameRoot}\{path}"))
-            ad.AssetPath = $@"{Smithbox.GameRoot}\{path}";
-
-        return ad;
-    }
-
-    public static ResourceDescriptor GetMsgbnd_Vanilla_Upgrader(string msgBndType, string release, string langFolder, bool writemode = false)
-    {
-        ResourceDescriptor ad = new();
-        var path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
-
-        if (Smithbox.ProjectType == ProjectType.DS3)
-        {
-            path = $@"msg\{langFolder}\{msgBndType}{release}.msgbnd.dcx";
-        }
-        else if (Smithbox.ProjectType == ProjectType.ER)
-        {
-            path = $@"msg\{langFolder}\{msgBndType}{release}.msgbnd.dcx";
-        }
-
-        ad.AssetPath = $@"{Smithbox.GameRoot}\{path}";
-        return ad;
-    }
-
-    public static ResourceDescriptor GetMsgbnd_Project_Upgrader(string msgBndType, string release, string langFolder, bool writemode = false)
-    {
-        ResourceDescriptor ad = new();
-        var path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
-
-        if (Smithbox.ProjectType == ProjectType.DS3)
-        {
-            path = $@"msg\{langFolder}\{msgBndType}{release}.msgbnd.dcx";
-        }
-        else if (Smithbox.ProjectType == ProjectType.ER)
-        {
-            path = $@"msg\{langFolder}\{msgBndType}{release}.msgbnd.dcx";
-        }
-
-        ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}";
-        return ad;
+        return false;
     }
 }

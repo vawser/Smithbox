@@ -3,9 +3,18 @@ using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ParamEditor.Actions;
+using StudioCore.Editors.ParamEditor.Tools;
+using StudioCore.Editors.TextEditor;
+using StudioCore.Editors.TextEditor.Utils;
+using StudioCore.Interface;
+using StudioCore.Memory;
 using StudioCore.Platform;
-using StudioCore.TextEditor;
+using StudioCore.Resource.Locators;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,16 +27,6 @@ using ActionManager = StudioCore.Editor.ActionManager;
 using AddParamsAction = StudioCore.Editor.AddParamsAction;
 using CompoundAction = StudioCore.Editor.CompoundAction;
 using DeleteParamsAction = StudioCore.Editor.DeleteParamsAction;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Utilities;
-using StudioCore.Memory;
-using StudioCore.Editors.TextEditor;
-using StudioCore.Editors.ParamEditor.Tools;
-using StudioCore.Editors.ParamEditor.Actions;
-using StudioCore.Core.Project;
-using StudioCore.Interface;
-using StudioCore.Resource.Locators;
-using StudioCore.Editors.TextEditor.Enums;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -46,13 +45,13 @@ public interface IParamDecorator
 
 public class FMGItemParamDecorator : IParamDecorator
 {
-    private readonly FmgEntryCategory _category = FmgEntryCategory.None;
-
     private readonly Dictionary<int, FMG.Entry> _entryCache = new();
 
-    public FMGItemParamDecorator(FmgEntryCategory cat)
+    private string ParamName;
+
+    public FMGItemParamDecorator(string paramName)
     {
-        _category = cat;
+        ParamName = paramName;
     }
 
     public void ClearDecoratorCache()
@@ -85,18 +84,21 @@ public class FMGItemParamDecorator : IParamDecorator
             return;
         }
 
+        // TODO: restore this
+        /*
         if (ImGui.Selectable($@"Goto {_category.ToString()} Text"))
         {
             EditorCommandQueue.AddCommand($@"text/select/{_category.ToString()}/{row.ID}");
         }
+        */
     }
 
     private void PopulateDecorator()
     {
         // FMG Name decoration on row 
-        if (_entryCache.Count == 0 && Smithbox.BankHandler.FMGBank.IsLoaded)
+        if (_entryCache.Count == 0 && TextBank.PrimaryBankLoaded)
         {
-            List<FMG.Entry> fmgEntries = Smithbox.BankHandler.FMGBank.GetFmgEntriesByCategory(_category, false);
+            List<FMG.Entry> fmgEntries = TextParamUtils.GetFmgEntriesByAssociatedParam(ParamName);
             foreach (FMG.Entry fmgEntry in fmgEntries)
             {
                 _entryCache[fmgEntry.ID] = fmgEntry;
@@ -188,7 +190,6 @@ public class ParamEditorScreen : EditorScreen
         _views = new List<ParamEditorView>();
         _views.Add(new ParamEditorView(this, 0));
         _activeView = _views[0];
-        ResetFMGDecorators();
     }
 
     public string EditorName => "Param Editor";
@@ -1012,11 +1013,16 @@ public class ParamEditorScreen : EditorScreen
     public void ResetFMGDecorators()
     {
         _decorators.Clear();
-        foreach ((var paramName, FmgEntryCategory category) in ParamBank.ParamToFmgCategoryList)
+        foreach(var entry in ParamBank.PrimaryBank.Params)
         {
-            _decorators.Add(paramName, new FMGItemParamDecorator(category));
+            var paramName = entry.Key;
+            var entries = TextParamUtils.GetFmgEntriesByAssociatedParam(paramName);
+
+            if(entries.Count != 0)
+            {
+                _decorators.Add(paramName, new FMGItemParamDecorator(paramName));
+            }
         }
-        //_decorators.Add("CharacterText", new FMGItemParamDecorator(FmgEntryCategory.Characters)); // TODO: Decorators need to be updated to support text references.
     }
 
     private void LoadUpgraderData()

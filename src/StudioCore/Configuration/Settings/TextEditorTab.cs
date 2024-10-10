@@ -1,5 +1,7 @@
 ﻿using ImGuiNET;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,18 +16,50 @@ public class TextEditorTab
 
     public void Display()
     {
-        if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+        if (ImGui.CollapsingHeader("Primary Category", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Show original FMG names", ref CFG.Current.FMG_ShowOriginalNames);
-            UIHelper.ShowHoverTooltip("Show the original FMG file names within the Text Editor file list.");
+            if (ImGui.BeginCombo("Primary Category##primaryCategoryCombo", CFG.Current.TextEditor_PrimaryCategory.GetDisplayName()))
+            {
+                foreach (var entry in Enum.GetValues(typeof(TextContainerCategory)))
+                {
+                    var type = (TextContainerCategory)entry;
 
-            if (ImGui.Checkbox("Separate related FMGs and entries", ref CFG.Current.FMG_NoGroupedFmgEntries))
-                Smithbox.EditorHandler.TextEditor.OnProjectChanged();
-            UIHelper.ShowHoverTooltip("If enabled then FMG entries will not be grouped automatically.");
+                    if (ImGui.Selectable(type.GetDisplayName()))
+                    {
+                        CFG.Current.TextEditor_PrimaryCategory = (TextContainerCategory)entry;
+                    }
+                }
+                ImGui.EndCombo();
+            }
+            UIHelper.ShowHoverTooltip("Change the primary category, this determines which text files are used for FMG references and other stuff.");
+        }
 
-            if (ImGui.Checkbox("Separate patch FMGs", ref CFG.Current.FMG_NoFmgPatching))
-                Smithbox.EditorHandler.TextEditor.OnProjectChanged();
-            UIHelper.ShowHoverTooltip("If enabled then FMG files added from DLCs will not be grouped with vanilla FMG files.");
+        if (ImGui.CollapsingHeader("File List", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Checkbox("Hide non-Primary Languages in List", ref CFG.Current.TextEditor_DisplayPrimaryLanguageOnly);
+            UIHelper.ShowHoverTooltip("Hide the non-Primary Language groups in the File List.");
+
+            ImGui.Checkbox("Display Community File Name", ref CFG.Current.TextEditor_DisplayPrettyContainerName);
+            UIHelper.ShowHoverTooltip("If enabled, the names in the File List will be given a community name.");
+
+            ImGui.Checkbox("Display Source Path", ref CFG.Current.TextEditor_DisplaySourcePath);
+            UIHelper.ShowHoverTooltip("If enabled, the path of the source file will be displayed in the hover tooltip.");
+
+        }
+
+        if (ImGui.CollapsingHeader("Text File List", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Checkbox("Display FMG ID", ref CFG.Current.TextEditor_DisplayFmgID);
+            UIHelper.ShowHoverTooltip("Display the FMG ID in the Text File List by the name.");
+
+            ImGui.Checkbox("Display Community FMG Name", ref CFG.Current.TextEditor_DisplayFmgPrettyName);
+            UIHelper.ShowHoverTooltip("Display the FMG community name instead of the internal form.");
+        }
+
+        if (ImGui.CollapsingHeader("Text Entries List", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Checkbox("Display Empty Rows", ref CFG.Current.TextEditor_DisplayNullEntries);
+            UIHelper.ShowHoverTooltip("Display FMG entries with empty text.");
         }
     }
 }

@@ -31,8 +31,8 @@
     <value_Add AltName="Price Addition" Wiki="Correction (addition) to the selling price of equipment. Equipment para selling price x magnification + addition" />
     <value_Magnification AltName="Price Multiplier" Wiki="Correction (magnification) to the selling price of equipment. Equipment para selling price x magnification + addition" />
     <iconId AltName="Icon ID" Wiki="Menu icon ID" TextureRef="Direct/01_common/SB_Icon_00/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_01/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_02/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_02_A/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_02_B/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_03/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_03_A/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_04/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_05/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_06/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_07_dlc/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_07_dlc_A/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_08_dlc/iconId/MENU_ItemIcon_" />
-    <nameMsgId AltName="Name - Text ID" Wiki="Menu display_text ID (-1: do not overwrite)" FmgRef="TitleGoods" />
-    <menuTitleMsgId AltName="Menu Title - Text ID" Wiki="Text ID of the shop menu title (-1: Do not overwrite). This value of the first para found in the para ID range passed when launching the shop is referenced" FmgRef="Modern_MenuText" />
+    <nameMsgId AltName="Name - Text ID" Wiki="Menu display_text ID (-1: do not overwrite)" FmgRef="Title_Goods" />
+    <menuTitleMsgId AltName="Menu Title - Text ID" Wiki="Text ID of the shop menu title (-1: Do not overwrite). This value of the first para found in the para ID range passed when launching the shop is referenced" FmgRef="Modern_Menu_Text" />
     <menuIconId AltName="Menu Icon ID" Wiki="Shop menu icon ID (-1: Do not overwrite). This value of the first para found in the para ID range passed when launching the shop is referenced" />
     <pad2 AltName="" IsHidden=""/>
   </Field>

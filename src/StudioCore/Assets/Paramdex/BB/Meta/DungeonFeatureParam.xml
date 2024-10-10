@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <featureNameId AltName="Feature Name ID" Wiki="" FmgRef="Modern_MenuText" />
+    <featureNameId AltName="Feature Name ID" Wiki="" FmgRef="Modern_Menu_Text" />
     <subFeatureGroupId AltName="Sub-Feature Group ID" Wiki="" />
     <eventflagId AltName="Event Flag ID Segment" Wiki="Only last 2 digits" />
     <dungeonNamePriority AltName="Dungeon Name Priority" Wiki="" />
@@ -12,7 +12,7 @@
     <gemDropCorrectParamId AltName="Gem Drop Correction Param ID" Refs="GemDropModifyParam" Wiki="" />
     <gemGenParamIdOffset AltName="Gem Generation ID Offset" Wiki="" />
     <dungeonNameModifierId AltName="Dungeon Name Modifier ID" Wiki="" />
-    <dungeonShortNameId AltName="Dungeon Short Name ID" Wiki="" FmgRef="Modern_MenuText" />
+    <dungeonShortNameId AltName="Dungeon Short Name ID" Wiki="" FmgRef="Modern_Menu_Text" />
   </Field>
   <Self Wiki="Chalice dungeon parameters."/>
 </PARAMMETA>

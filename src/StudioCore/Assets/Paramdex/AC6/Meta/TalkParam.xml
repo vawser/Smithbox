@@ -139,7 +139,7 @@
   <Field>
     <pad1 IsHidden="" />
     
-    <msgId AltName="Message ID" Wiki="FMG ID for the talk message." FmgRef="TalkMsg" />
+    <msgId AltName="Message ID" Wiki="FMG ID for the talk message." FmgRef="Talk_Messages" />
     <voiceId AltName="Voice ID" Wiki="Soundbank ID for the talk message." SoundAlias="" />
     <spEffectId0 AltName="SpEffect ID [0]" Wiki="Specify special effects-> Character" Refs="SpEffectParam"/>
     <motionId0 AltName="Motion ID [0]" Wiki="Specify motion-> Character" />

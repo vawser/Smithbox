@@ -73,7 +73,7 @@
   <Field>
     <behaviorVariationId AltName="Behavior Variation ID" Wiki="Variation ID used when calculating the action ID." />
     <aiThinkId AltName="AI Think ID" />
-    <nameId AltName="Name ID" Wiki="NPC Name Message Parameter ID" FmgRef="Characters" />
+    <nameId AltName="Name ID" Wiki="NPC Name Message Parameter ID" FmgRef="Title_Characters" />
     <turnVellocity AltName="Turn Velocity" Wiki="Rotational speed [degrees / second] that can turn in 1 second." />
     <hitHeight AltName="Capsule Height" Wiki="The height of the capsule per character." />
     <hitRadius AltName="Capsule Radius" Wiki="Radius of capsule per character." />

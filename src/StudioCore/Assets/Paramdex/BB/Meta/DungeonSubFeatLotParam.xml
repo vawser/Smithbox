@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <subFeatureNameId AltName="Sub-feature Candidate Name ID" Wiki="" FmgRef="Modern_MenuText" />
+    <subFeatureNameId AltName="Sub-feature Candidate Name ID" Wiki="" FmgRef="Modern_Menu_Text" />
     <requiredMaterialId AltName="Required Material ID" Wiki="" Refs="RitualRequiredMatParam" />
     <subFeatureId_1 AltName="Sub-feature ID [1]" Wiki="" Refs="DungeonFeatureParam" />
     <subFeatureId_2 AltName="Sub-feature ID [2]" Wiki="" Refs="DungeonFeatureParam" />

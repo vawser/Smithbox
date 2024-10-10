@@ -42,7 +42,7 @@
   <Field>
     <behaviorVariationId Wiki="Used to determine what Behavior is used for this Npc" />
     <deadMoveForceRate />
-    <nameId FmgRef="Characters" />
+    <nameId FmgRef="Title_Characters" />
     <turnVellocity />
     <hitHeight />
     <hitRadius />

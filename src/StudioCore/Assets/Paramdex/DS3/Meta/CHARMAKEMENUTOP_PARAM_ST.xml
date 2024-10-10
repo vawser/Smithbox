@@ -16,7 +16,7 @@
   </Enums>
   <Field>
     <CommandID AltName="Command ID" />
-	<FaceParamID AltName="Caption ID" FmgRef="Modern_MenuText" />
+	<FaceParamID AltName="Caption ID" FmgRef="Modern_Menu_Text" />
 	<TableID AltName="Face Param ID" />
 	<ViewCondition AltName="Slider Caption/Parts Group ID" Wiki="Slider Caption ID if a slider\nParts Group ID from CharMakeMenuListItemParam if something like hair"/>
 	<PreviewMode AltName="View Condition" Enum="ViewCondition" />

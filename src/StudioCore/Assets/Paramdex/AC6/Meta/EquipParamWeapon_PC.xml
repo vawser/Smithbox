@@ -317,7 +317,7 @@
     <homingRequiredDist AltName="Homing: Required Distance" Wiki="Maximum distance to target when firing for homing to function." />
     <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."/>
     <energyLoad AltName="Energy Load" Wiki="EN Load of the part." />
-    <menuTextID AltName="Menu Text ID" FmgRef="Modern_MenuText" />
+    <menuTextID AltName="Menu Text ID" FmgRef="Modern_Menu_Text" />
     <ammunitionCost AltName="Ammunition Cost" Wiki="Cost per round fired. At the end of each mission, the total number of rounds fired is used to calculate ammunition expenses." />
     <unkAttackAnimation AltName="Unknown Attack Animation" />
     <pulseArmorDamageReductionRate_Kinetic AltName="Pulse Armor Damage Mitigation: Kinetic" />

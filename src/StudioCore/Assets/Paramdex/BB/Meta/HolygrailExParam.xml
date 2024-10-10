@@ -10,7 +10,7 @@
    
    <pad_0 IsHidden="" />
    
-   <dungeonNameBaseId AltName="Dungeon Name Base ID" Wiki="" FmgRef="TitleLocations" />
+   <dungeonNameBaseId AltName="Dungeon Name Base ID" Wiki="" FmgRef="Title_Locations" />
    <uniqueBaseFlagId AltName="Unique Base Flag ID" Wiki="" />
    
    <directMapUid AltName="Direct Map UID" Wiki="" />

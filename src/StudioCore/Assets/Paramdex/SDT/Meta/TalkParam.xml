@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-	<textId Wiki="Subtitle Text" FmgRef="TalkMsg" />
-	<textId_female Wiki="Subtitle Text but for women" FmgRef="TalkMsg" />
+	<textId Wiki="Subtitle Text" FmgRef="Talk_Messages" />
+	<textId_female Wiki="Subtitle Text but for women" FmgRef="Talk_Messages" />
 	<timeout Wiki="Voice playback timeout time" />
 	<pad />
 	<soundId_pc Wiki="Sound ID for male player characters" />

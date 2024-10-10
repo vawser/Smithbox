@@ -9,23 +9,23 @@
     
     <osInstall_DisplayText_Effect AltName="OS Install - Effect Value" Wiki="The effectiveness string to display for the OS upgrade text in UI." />
     <osInstall_DisplayText_OstChipCost AltName="OS Install - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
-    <osInstall_DisplayText_Description AltName="OS Install - Effect Description" FmgRef="Modern_MenuText" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
+    <osInstall_DisplayText_Description AltName="OS Install - Effect Description" FmgRef="Modern_Menu_Text" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
     
     <osUpgrade1_DisplayText_Effect AltName="OS Upgrade 1 - Effect Value" Wiki="The effectiveness string to display for the OS upgrade text in UI." />
     <osUpgrade1_DisplayText_OstChipCost AltName="OS Upgrade 1 - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
-    <osUpgrade1_DisplayText_Description AltName="OS Upgrade 1 - Effect Description" FmgRef="Modern_MenuText" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
+    <osUpgrade1_DisplayText_Description AltName="OS Upgrade 1 - Effect Description" FmgRef="Modern_Menu_Text" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
     
     <osUpgrade2_DisplayText_Effect AltName="OS Upgrade 2 - Effect Value" Wiki="The effectiveness string to display for the OS upgrade text in UI." />
     <osUpgrade2_DisplayText_OstChipCost AltName="OS Upgrade 2 - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
-    <osUpgrade2_DisplayText_Description AltName="OS Upgrade 2 - Effect Description" FmgRef="Modern_MenuText" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
+    <osUpgrade2_DisplayText_Description AltName="OS Upgrade 2 - Effect Description" FmgRef="Modern_Menu_Text" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
     
     <osUpgrade3_DisplayText_Effect AltName="OS Upgrade 3 - Effect Value" Wiki="The effectiveness string to display for the OS upgrade text in UI." />
     <osUpgrade3_DisplayText_OstChipCost AltName="OS Upgrade 3 - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
-    <osUpgrade3_DisplayText_Description AltName="OS Upgrade 3 - Effect Description" FmgRef="Modern_MenuText" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
+    <osUpgrade3_DisplayText_Description AltName="OS Upgrade 3 - Effect Description" FmgRef="Modern_Menu_Text" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
     
     <osUpgrade4_DisplayText_Effect AltName="OS Upgrade 4 - Effect Value" Wiki="The effectiveness string to display for the OS upgrade text in UI." />
     <osUpgrade4_DisplayText_OstChipCost AltName="OS Upgrade 4 - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
-    <osUpgrade4_DisplayText_Description AltName="OS Upgrade 4 - Effect Description" FmgRef="Modern_MenuText" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
+    <osUpgrade4_DisplayText_Description AltName="OS Upgrade 4 - Effect Description" FmgRef="Modern_Menu_Text" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
     
     <Unk0x06 IsHidden="" />
     <Unk0x20 IsHidden="" />

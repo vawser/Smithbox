@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <padKeyId AltName="Pad Key ID" FmgRef="Modern_MenuText" />
-    <mouseModifyKey AltName="Mouse Modify Key" FmgRef="Modern_MenuText" />
+    <padKeyId AltName="Pad Key ID" FmgRef="Modern_Menu_Text" />
+    <mouseModifyKey AltName="Mouse Modify Key" FmgRef="Modern_Menu_Text" />
   </Field>
   <Self />
 </PARAMMETA>

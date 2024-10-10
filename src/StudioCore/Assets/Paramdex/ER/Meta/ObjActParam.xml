@@ -16,8 +16,8 @@
     </Enum>
   </Enums>
   <Field>
-    <actionEnableMsgId AltName="Action Enabled - Message ID" Wiki="The MsgID of the menu displayed when the action is enabled." FmgRef="ActionButtonText" />
-    <actionFailedMsgId AltName="Action Failed - Message ID" Wiki="The MsgID of the menu to display when the action fails." FmgRef="ActionButtonText" />
+    <actionEnableMsgId AltName="Action Enabled - Message ID" Wiki="The MsgID of the menu displayed when the action is enabled." FmgRef="Action_Button_Text" />
+    <actionFailedMsgId AltName="Action Failed - Message ID" Wiki="The MsgID of the menu to display when the action fails." FmgRef="Action_Button_Text" />
     <spQualifiedPassEventFlag AltName="Unconditional Qualified Event Flag ID" Wiki="Event flags for unconditionally passing special conditions." FlagAlias="" />
     <playerAnimId AltName="Player Animation ID" Wiki="This is the animation ID for the action of the player character." />
     <chrAnimId AltName="Character Animation ID" Wiki="Anime ID at the time of action such as enemy" />

@@ -45,17 +45,6 @@ Param Editor:
  - ADD: Copy to NPC AtkParam/BehaviorParam from PC AtkParam/BehaviorParam and vice versa
  - ADD: ItemGib for ER
  
-Text Editor:
- - REWORK: remove the in-built categorization of the FMGs, add as an optional bundling, but internally they should reflect the actual FMG binder structure
- 
- - ADD: FMG Generator script creation modal
- - ADD: FMG Generator open script folder (for project)
- - ADD: add modified filter
- - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
- 
- - FIX: internal vanilla entry should be preferred over internal dlc01/dlc02 entry due to FMG read preference (vanilla entry overrides dlc1 entry, dlc1 entry overrides dlc2 entry)
- - FIX: Editor is not reading project FMGs (writes them out correctly though)
- 
 Gparam Editor:
  - ADD: GPARAM reloader
  - ADD: json export/import of GPARAM (plus sub-classes?)
@@ -102,7 +91,9 @@ Model Editor:
  - ADD: floating text for co-ordinate direction (X, Y, Z)
  - ADD: render bone connections (use patrol route method)
  - ADD: Add Collision section in hierarchy
- 
+ - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
+ - ADD: GX Item mapping so the byte arrays are more comprehesible
+
  - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
  - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
  - FIX: account for scale when displaying dummies/bones
@@ -111,5 +102,12 @@ Model Editor:
 # Notes
 #--------------------------------------
 # PRIORITY
- - ADD: Texture Export action: export used textures for loaded model - Place in folder with mesh name
- - ADD: GX Item mapping so the byte arrays are more comprehesible (https://github.com/JKAnderson/SoulsFormats/issues/14)
+Text Editor:
+ - ADD: FMG Generator script creation modal
+ - ADD: FMG Generator open script folder (for project)
+ - ADD: add modified filter
+ - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
+ 
+ - Re-write Text Editor
+  - Handle entry view: Simple mode will 'patch' the dlc1 and dlc2 entries into the same list as the vanilla entries
+  - Fix param FMG refs so they work

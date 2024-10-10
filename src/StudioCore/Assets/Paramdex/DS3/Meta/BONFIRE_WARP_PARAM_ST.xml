@@ -21,8 +21,8 @@
   <Field>
 	<eventflagId AltName="Event Flag ID" Wiki="Used in RegisterBonfire command in EMEVD." />
 	<bonfireEntityId AltName="Bonfire Entity ID" Wiki="Used in RegisterBonfire command in EMEVD." />
-	<BonfireNameId AltName="Bonfire Name ID" Wiki="Stored in Modern_MenuText." FmgRef="Modern_MenuText" />
-	<DescriptionTextId AltName="Description ID" Wiki="Unused.\nPresumably stored in Modern_MenuText." FmgRef="Modern_MenuText"/>
+	<BonfireNameId AltName="Bonfire Name ID" Wiki="Stored in Modern_MenuText." FmgRef="Modern_Menu_Text" />
+	<DescriptionTextId AltName="Description ID" Wiki="Unused.\nPresumably stored in Modern_MenuText." FmgRef="Modern_Menu_Text"/>
 	<PictureId AltName="Picture ID" Wiki="Stored in menu/mapimage." />
 	<ListId AltName="List ID" Enum="List" Wiki="Determines which warp group bonfire appears in." />
 	<IsDisableQuickwarp AltName="Is Home Bonfire" IsBool="" Wiki="Seems to enable bonfire level display at menu."/>

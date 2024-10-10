@@ -18,6 +18,9 @@ using StudioCore.Core;
 using Google.Protobuf.WellKnownTypes;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
+using StudioCore.Editors.TextEditor.Utils;
+using Silk.NET.OpenGL;
+using SoapstoneLib.Proto.Internal;
 
 namespace StudioCore.Editor;
 
@@ -417,15 +420,15 @@ public class EditorDecorations
         return rows;
     }
 
-    private static List<(string, FMGEntryGroup)> resolveFMGRefs(List<FMGRef> fmgRefs, Param.Row context,
+    private static List<TextResult> resolveFMGRefs(List<FMGRef> fmgRefs, Param.Row context,
         dynamic oldval)
     {
-        if (!Smithbox.BankHandler.FMGBank.IsLoaded)
+        if (!TextBank.PrimaryBankLoaded)
         {
-            return new List<(string, FMGEntryGroup)>();
+            return new List<TextResult>();
         }
 
-        List<(string, FMGEntryGroup)> newFmgRefs = new();
+        List<TextResult> newTextResults = new();
 
         foreach(var entry in fmgRefs)
         {
@@ -443,20 +446,16 @@ public class EditorDecorations
 
             if(cont)
             {
-                var matchingFmgInfo = Smithbox.BankHandler.FMGBank.FmgInfoBank.ToList().Find(x => x.Name == entry.fmg);
-                if (matchingFmgInfo != null)
+                TextResult result = TextFinder.GetTextResult(entry.fmg, oldval);
+
+                if (result != null)
                 {
-                    // Apply Abs here since some weird fields use -ID but should still resolve as normal ID
-                    var entryGroupId = Math.Abs((int)oldval) + entry.offset;
-
-                    var newFmgInfo = (matchingFmgInfo.Name, Smithbox.BankHandler.FMGBank.GenerateEntryGroup(entryGroupId, matchingFmgInfo));
-
-                    newFmgRefs.Add(newFmgInfo);
+                    newTextResults.Add(result);
                 }
             }
         }
 
-        return newFmgRefs;
+        return newTextResults;
     }
 
     public static void FmgRefSelectable(EditorScreen ownerScreen, List<FMGRef> fmgNames, Param.Row context,
@@ -466,38 +465,11 @@ public class EditorDecorations
 
         textsToPrint = UICache.GetCached(ownerScreen, (int)oldval, "PARAM META FMGREF", () =>
         {
-            List<(string, FMGEntryGroup)> refs = resolveFMGRefs(fmgNames, context, oldval);
-            return refs.Where(x => x.Item2 != null)
+            List<TextResult> refs = resolveFMGRefs(fmgNames, context, oldval);
+            return refs.Where(x => x.Entry != null)
                 .Select(x =>
                 {
-                    FMGEntryGroup group = x.Item2;
-                    var toPrint = "";
-                    if (!string.IsNullOrWhiteSpace(group.Title?.Text))
-                    {
-                        toPrint += '\n' + group.Title.Text;
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(group.Summary?.Text))
-                    {
-                        toPrint += '\n' + group.Summary.Text;
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(group.Description?.Text))
-                    {
-                        toPrint += '\n' + group.Description.Text;
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(group.TextBody?.Text))
-                    {
-                        toPrint += '\n' + group.TextBody.Text;
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(group.ExtraText?.Text))
-                    {
-                        toPrint += '\n' + group.ExtraText.Text;
-                    }
-
-                    return toPrint.TrimStart();
+                    return $"{x.Entry.Text}".TrimStart();
                 }).ToList();
         });
 
@@ -832,11 +804,10 @@ public class EditorDecorations
             }
             else if (fmgRefs != null)
             {
-                (string, FMGEntryGroup)? primaryRef =
-                    resolveFMGRefs(fmgRefs, context, oldval)?.FirstOrDefault();
-                if (primaryRef?.Item2 != null)
+                TextResult? primaryRef = resolveFMGRefs(fmgRefs, context, oldval)?.FirstOrDefault();
+                if (primaryRef != null)
                 {
-                    EditorCommandQueue.AddCommand($@"text/select/{primaryRef?.Item1}/{primaryRef?.Item2.ID}");
+                    EditorCommandQueue.AddCommand($@"text/select/{primaryRef.Info.Name}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
                 }
             }
             else if (textureRefs != null)
@@ -1012,39 +983,47 @@ public class EditorDecorations
         ActionManager executor)
     {
         // Add Goto statements
-        List<(string, FMGEntryGroup)> refs = resolveFMGRefs(reftypes, context, oldval);
+        List<TextResult> refs = resolveFMGRefs(reftypes, context, oldval);
+
         var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
-        foreach ((var name, FMGEntryGroup group) in refs)
+
+        foreach (var result in refs)
         {
-            if (ImGui.Selectable($@"Goto {name} Text"))
+            if (result != null)
             {
-                EditorCommandQueue.AddCommand($@"text/select/{name}/{group.ID}");
-            }
-
-            if (context == null || executor == null)
-            {
-                continue;
-            }
-
-            foreach (FieldInfo field in group.GetType().GetFields()
-                         .Where(propinfo => propinfo.FieldType == typeof(FMG.Entry)))
-            {
-                var entry = (FMG.Entry)field.GetValue(group);
-                if (!string.IsNullOrWhiteSpace(entry?.Text) &&
-                    (ctrlDown || string.IsNullOrWhiteSpace(context.Name)) &&
-                    ImGui.Selectable($@"Inherit referenced fmg {field.Name} ({entry?.Text})"))
+                if (ImGui.Selectable($@"Goto {result.FmgName} Text"))
                 {
-                    executor.ExecuteAction(new PropertiesChangedAction(context.GetType().GetProperty("Name"),
-                        context, entry?.Text));
+                    EditorCommandQueue.AddCommand($@"text/select/{result.Info.Name}/{result.FmgName}/{result.Entry.ID}");
                 }
 
-                if (entry != null && (ctrlDown || string.IsNullOrWhiteSpace(entry?.Text)) &&
-                    !string.IsNullOrWhiteSpace(context.Name) &&
-                    ImGui.Selectable($@"Proliferate name to referenced fmg {field.Name} ({name})"))
+                if (context == null || executor == null)
                 {
-                    executor.ExecuteAction(new PropertiesChangedAction(entry.GetType().GetProperty("Text"), entry,
-                        context.Name));
+                    continue;
                 }
+
+                // TODO: restore this
+                /*
+                foreach (FieldInfo field in group.GetType().GetFields()
+                             .Where(propinfo => propinfo.FieldType == typeof(FMG.Entry)))
+                {
+                    var entry = (FMG.Entry)field.GetValue(group);
+                    if (!string.IsNullOrWhiteSpace(entry?.Text) &&
+                        (ctrlDown || string.IsNullOrWhiteSpace(context.Name)) &&
+                        ImGui.Selectable($@"Inherit referenced fmg {field.Name} ({entry?.Text})"))
+                    {
+                        executor.ExecuteAction(new PropertiesChangedAction(context.GetType().GetProperty("Name"),
+                            context, entry?.Text));
+                    }
+
+                    if (entry != null && (ctrlDown || string.IsNullOrWhiteSpace(entry?.Text)) &&
+                        !string.IsNullOrWhiteSpace(context.Name) &&
+                        ImGui.Selectable($@"Proliferate name to referenced fmg {field.Name} ({name})"))
+                    {
+                        executor.ExecuteAction(new PropertiesChangedAction(entry.GetType().GetProperty("Text"), entry,
+                            context.Name));
+                    }
+                }
+                */
             }
         }
     }
