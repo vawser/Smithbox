@@ -13,6 +13,7 @@ public class TextContainerInfo : IComparable<TextContainerInfo>
     public string AbsolutePath { get; private set; }
 
     public bool IsModified { get; private set; }
+    public bool HasUnsavedChanges { get; private set; }
 
     public DCX.Type CompressionType { get; private set; }
 
@@ -31,6 +32,7 @@ public class TextContainerInfo : IComparable<TextContainerInfo>
         ContainerType = containerType;
         Category = category;
         FmgInfos = fmgInfos;
+        HasUnsavedChanges = false;
     }
 
     public int CompareTo(TextContainerInfo other)

@@ -13,6 +13,7 @@ using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using static StudioCore.Editors.GparamEditor.Data.GparamParamBank;
 
 namespace StudioCore.Editors.GparamEditor.Framework
 {
@@ -30,6 +31,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
 
         public GparamEditorScreen Screen;
 
+        public GparamInfo TargetGparamInfo;
         public GPARAM targetGparam;
         public GPARAM.Param targetParamGroup;
         public GPARAM.IField targetParamField;
@@ -316,6 +318,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
             {
                 if (IsTargetFile(name, info))
                 {
+                    TargetGparamInfo = info;
                     targetGparam = info.Gparam;
                     GPARAM data = info.Gparam;
                     curParamName = name;
@@ -340,6 +343,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
                                     targetParamField = fEntry;
                                     resolvedList.Add($"{curParamName}:{curGroupName}:{curFieldName}");
 
+                                    TargetGparamInfo.WasModified = true;
                                     var actions = ResolveQuickEdit(curParamName, curGroupName, targetParamField);
                                     actionList.Add(actions);
                                 }
@@ -358,6 +362,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
 
                 if (actionList.Count > 0)
                 {
+
                     var compoundAction = new CompoundAction(actionList);
                     Screen.EditorActionManager.ExecuteAction(compoundAction);
                 }

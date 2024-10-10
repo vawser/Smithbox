@@ -10,6 +10,6 @@ namespace StudioCore.Editors.TextEditor;
 public enum TextInputMode
 {
     [Display(Name = "Simple")] Simple,
-    [Display(Name = "Association")] Association,
+    [Display(Name = "Group")] Group,
     [Display(Name = "Programmatic")] Programmatic,
 }

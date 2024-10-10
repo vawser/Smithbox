@@ -331,7 +331,7 @@ public enum SellRegion_MsgBndID_SDT
 /// <summary>
 /// FMG IDs for ER
 /// </summary>
-public enum Item_MsgBndID_ER
+public enum Item_MsgBndID_ER 
 {
     [Display(Name = "Title: Goods")] Title_Goods = 10,
     [Display(Name = "Title: Weapons")] Title_Weapons = 11,

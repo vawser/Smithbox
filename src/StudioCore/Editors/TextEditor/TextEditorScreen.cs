@@ -21,6 +21,7 @@ public class TextEditorScreen : EditorScreen
     public TextShortcuts EditorShortcuts;
     public TextActionHandler ActionHandler;
     public TextFilters Filters;
+    public TextFmgEntryGroupManager EntryGroupManager;
 
     public TextCommandQueue CommandQueue;
 
@@ -42,6 +43,7 @@ public class TextEditorScreen : EditorScreen
         EditorShortcuts = new TextShortcuts(this);
         CommandQueue = new TextCommandQueue(this);
         Filters = new TextFilters(this);
+        EntryGroupManager = new TextFmgEntryGroupManager(this);
 
         ToolView = new TextToolView(this);
         ToolMenubar = new TextToolMenubar(this);

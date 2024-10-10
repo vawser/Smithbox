@@ -50,6 +50,7 @@ Gparam Editor:
  - ADD: json export/import of GPARAM (plus sub-classes?)
  - ADD: GPARAM reference support (e.g. jump to map param, and if it is offset, that value entry offset)
  - ADD: sticky selection: don't automatically clear selection, rather only clear it if it becomes invalid
+ - ADD: support for BB .gparambnd.dcx
 
 Time Act Editor
  - ADD: TAE Mass Edit tool
@@ -110,7 +111,10 @@ Text Editor:
 # PRIORITY
 - RESTORE: Generate Rows action
 - RESTORE: Duplicate Rows action
+- RESTORE: FMG Import/Export
+
 - FIX: param FMG refs so they work
+
 - ADD: modified search filter
 - ADD: Simple text input
 - ADD: Association text input

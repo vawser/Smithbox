@@ -74,6 +74,9 @@ public class TextSelectionManager
 
         // Refresh the param editor FMG decorators when the file changes.
         Smithbox.EditorHandler.ParamEditor.ResetFMGDecorators();
+
+        // Clear the grouping cache when the file changes
+        FmgEntryGroupCache.ClearCache();
     }
 
     /// <summary>

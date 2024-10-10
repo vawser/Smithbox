@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
@@ -21,6 +22,7 @@ public class TextFmgEntryPropertyEditor
     public TextSelectionManager Selection;
     public TextFilters Filters;
     public TextContextMenu ContextMenu;
+    public TextFmgEntryGroupManager EntryGroupManager;
 
     public TextFmgEntryPropertyEditor(TextEditorScreen screen)
     {
@@ -29,6 +31,7 @@ public class TextFmgEntryPropertyEditor
         Selection = screen.Selection;
         Filters = screen.Filters;
         ContextMenu = screen.ContextMenu;
+        EntryGroupManager = screen.EntryGroupManager;
     }
 
     /// <summary>
@@ -52,7 +55,7 @@ public class TextFmgEntryPropertyEditor
                 ImGui.EndCombo();
             }
             UIHelper.ShowWideHoverTooltip("Change the text input mode:" +
-                "\nSimple: edit the ID and text for the selected row.\nAssociated: see the associated entries for the selected row, such as Title, Description, etc.\nProgrammatic: configure a regex conditional input, and a regex replacement string to apply to all selected rows.");
+                "\nSimple: edit the ID and text for the selected row.\nGroup: see the grouped entries for the selected row, such as Title, Description, etc.\nProgrammatic: configure a regex conditional input, and a regex replacement string to apply to all selected rows.");
 
             ImGui.BeginChild("FmgEntryContents");
 
@@ -62,9 +65,9 @@ public class TextFmgEntryPropertyEditor
                 {
                     DisplaySimpleEditor();
                 }
-                if (CFG.Current.TextEditor_TextInputMode == TextInputMode.Association)
+                if (CFG.Current.TextEditor_TextInputMode == TextInputMode.Group)
                 {
-                    DisplayAssociationEditor();
+                    DisplayGroupEditor();
                 }
                 if (CFG.Current.TextEditor_TextInputMode == TextInputMode.Programmatic)
                 {
@@ -84,15 +87,46 @@ public class TextFmgEntryPropertyEditor
     public void DisplaySimpleEditor()
     {
         var id = Selection._selectedFmgEntry.ID;
-        var contents = Selection._selectedFmgEntry.Text;
+        var text = Selection._selectedFmgEntry.Text;
+
+        ImGui.Text($"{id}");
+        ImGui.Text($"{text}");
     }
 
     /// <summary>
-    /// Association Editor: ID and Text edit inputs for all associated entries + the main one
+    /// Group Editor: ID and Text edit inputs for all associated entries + the main one
     /// </summary>
-    public void DisplayAssociationEditor()
+    public void DisplayGroupEditor()
     {
+        var fmgEntryGroup = EntryGroupManager.GetEntryGroup(Selection._selectedFmgEntry);
 
+        // Fallback to Simple Editor if chosen entry doesn't support grouping
+        if(!fmgEntryGroup.SupportsGrouping)
+        {
+            DisplaySimpleEditor();
+            return;
+        }
+
+        if(fmgEntryGroup.Title != null)
+        {
+            ImGui.Text($"{fmgEntryGroup.Title.ID}");
+            ImGui.Text($"{fmgEntryGroup.Title.Text}");
+        }
+        if (fmgEntryGroup.Summary != null)
+        {
+            ImGui.Text($"{fmgEntryGroup.Summary.ID}");
+            ImGui.Text($"{fmgEntryGroup.Summary.Text}");
+        }
+        if (fmgEntryGroup.Description != null)
+        {
+            ImGui.Text($"{fmgEntryGroup.Description.ID}");
+            ImGui.Text($"{fmgEntryGroup.Description.Text}");
+        }
+        if (fmgEntryGroup.Effect != null)
+        {
+            ImGui.Text($"{fmgEntryGroup.Effect.ID}");
+            ImGui.Text($"{fmgEntryGroup.Effect.Text}");
+        }
     }
 
     /// <summary>
@@ -103,3 +137,4 @@ public class TextFmgEntryPropertyEditor
 
     }
 }
+
