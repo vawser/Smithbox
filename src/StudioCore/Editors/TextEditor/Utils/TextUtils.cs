@@ -161,6 +161,274 @@ public static class TextUtils
     }
 
     /// <summary>
+    /// Get the internal name for a FMG based on the BND ID
+    /// </summary>
+    public static string GetFmgInternalName(TextContainerInfo info, int id)
+    {
+        var name = $"";
+
+        switch (Smithbox.ProjectType)
+        {
+            case ProjectType.DES:
+                break;
+            case ProjectType.DS1:
+            case ProjectType.DS1R:
+                if (IsItemContainer(info))
+                {
+                    var enumObj = (Item_MsgBndID_DS1)id;
+                    name = $"{enumObj}";
+                }
+                else if (IsMenuContainer(info))
+                {
+                    var enumObj = (Menu_MsgBndID_DS1)id;
+                    name = $"{enumObj}";
+                }
+                break;
+            case ProjectType.DS2:
+            case ProjectType.DS2S:
+                if (IsTalkFmg(info))
+                {
+                    var enumObj = (TalkFmgName_DS2)id;
+                    name = $"{enumObj}";
+                }
+                else if (IsBloodMessageFmg(info))
+                {
+                    var enumObj = (BloodMessageFmgName_DS2)id;
+                    name = $"{enumObj}";
+                }
+                else
+                {
+                    var enumObj = (CommonFmgName_DS2)id;
+                    name = $"{enumObj}";
+                }
+                break;
+            case ProjectType.BB:
+                if (IsItemContainer(info))
+                {
+                    var enumObj = (Item_MsgBndID_BB)id;
+                    name = $"{enumObj}";
+                }
+                else if (IsMenuContainer(info))
+                {
+                    var enumObj = (Menu_MsgBndID_BB)id;
+                    name = $"{enumObj}";
+                }
+                break;
+            case ProjectType.DS3:
+                if (IsItemContainer(info))
+                {
+                    var enumObj = (Item_MsgBndID_DS3)id;
+                    name = $"{enumObj}";
+                }
+                else if (IsMenuContainer(info))
+                {
+                    var enumObj = (Menu_MsgBndID_DS3)id;
+                    name = $"{enumObj}";
+                }
+                else if (IsNgWordContainer(info))
+                {
+                    var enumObj = (NgWord_MsgBndID_DS3)id;
+                    name = $"{enumObj}";
+                }
+                break;
+            case ProjectType.SDT:
+                if (IsItemContainer(info))
+                {
+                    var enumObj = (Item_MsgBndID_SDT)id;
+                    name = $"{enumObj}";
+                }
+                else if (IsMenuContainer(info))
+                {
+                    var enumObj = (Menu_MsgBndID_SDT)id;
+                    name = $"{enumObj}";
+                }
+                else if (IsSellRegionContainer(info))
+                {
+                    var enumObj = (SellRegion_MsgBndID_SDT)id;
+                    name = $"{enumObj}";
+                }
+                break;
+            case ProjectType.ER:
+                if (IsItemContainer(info))
+                {
+                    var enumObj = (Item_MsgBndID_ER)id;
+                    name = $"{enumObj}";
+                }
+                else if (IsMenuContainer(info))
+                {
+                    var enumObj = (Menu_MsgBndID_ER)id;
+                    name = $"{enumObj}";
+                }
+                else if (IsNgWordContainer(info))
+                {
+                    var enumObj = (NgWord_MsgBndID_ER)id;
+                    name = $"{enumObj}";
+                }
+                else if (IsSellRegionContainer(info))
+                {
+                    var enumObj = (SellRegion_MsgBndID_ER)id;
+                    name = $"{enumObj}";
+                }
+                break;
+            case ProjectType.AC6:
+                if (IsItemContainer(info))
+                {
+                    var enumObj = (Item_MsgBndID_AC6)id;
+                    name = $"{enumObj}";
+                }
+                else if (IsMenuContainer(info))
+                {
+                    var enumObj = (Menu_MsgBndID_AC6)id;
+                    name = $"{enumObj}";
+                }
+                else if (IsNgWordContainer(info))
+                {
+                    var enumObj = (NgWord_MsgBndID_AC6)id;
+                    name = $"{enumObj}";
+                }
+                break;
+
+            default: break;
+        }
+
+        return name;
+    }
+
+    /// <summary>
+    /// Get the internal name for a FMG based on the BND ID
+    /// </summary>
+    public static int GetFmgInternalId(TextContainerInfo info, int id)
+    {
+        int retId = -1;
+
+        switch (Smithbox.ProjectType)
+        {
+            case ProjectType.DES:
+                break;
+            case ProjectType.DS1:
+            case ProjectType.DS1R:
+                if (IsItemContainer(info))
+                {
+                    var enumObj = (Item_MsgBndID_DS1)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else if (IsMenuContainer(info))
+                {
+                    var enumObj = (Menu_MsgBndID_DS1)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                break;
+            case ProjectType.DS2:
+            case ProjectType.DS2S:
+                if (IsTalkFmg(info))
+                {
+                    var enumObj = (TalkFmgName_DS2)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else if (IsBloodMessageFmg(info))
+                {
+                    var enumObj = (BloodMessageFmgName_DS2)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else
+                {
+                    var enumObj = (CommonFmgName_DS2)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                break;
+            case ProjectType.BB:
+                if (IsItemContainer(info))
+                {
+                    var enumObj = (Item_MsgBndID_BB)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else if (IsMenuContainer(info))
+                {
+                    var enumObj = (Menu_MsgBndID_BB)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                break;
+            case ProjectType.DS3:
+                if (IsItemContainer(info))
+                {
+                    var enumObj = (Item_MsgBndID_DS3)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else if (IsMenuContainer(info))
+                {
+                    var enumObj = (Menu_MsgBndID_DS3)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else if (IsNgWordContainer(info))
+                {
+                    var enumObj = (NgWord_MsgBndID_DS3)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                break;
+            case ProjectType.SDT:
+                if (IsItemContainer(info))
+                {
+                    var enumObj = (Item_MsgBndID_SDT)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else if (IsMenuContainer(info))
+                {
+                    var enumObj = (Menu_MsgBndID_SDT)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else if (IsSellRegionContainer(info))
+                {
+                    var enumObj = (SellRegion_MsgBndID_SDT)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                break;
+            case ProjectType.ER:
+                if (IsItemContainer(info))
+                {
+                    var enumObj = (Item_MsgBndID_ER)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else if (IsMenuContainer(info))
+                {
+                    var enumObj = (Menu_MsgBndID_ER)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else if (IsNgWordContainer(info))
+                {
+                    var enumObj = (NgWord_MsgBndID_ER)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else if (IsSellRegionContainer(info))
+                {
+                    var enumObj = (SellRegion_MsgBndID_ER)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                break;
+            case ProjectType.AC6:
+                if (IsItemContainer(info))
+                {
+                    var enumObj = (Item_MsgBndID_AC6)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else if (IsMenuContainer(info))
+                {
+                    var enumObj = (Menu_MsgBndID_AC6)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                else if (IsNgWordContainer(info))
+                {
+                    var enumObj = (NgWord_MsgBndID_AC6)id;
+                    retId = Convert.ToInt32($"{enumObj}");
+                }
+                break;
+
+            default: break;
+        }
+
+        return retId;
+    }
+
+    /// <summary>
     /// Check if the current project type uses FMG patching
     /// </summary>
     public static bool UsesFmgPatching()
