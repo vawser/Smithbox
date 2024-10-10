@@ -45,7 +45,7 @@ public class TextContextMenu
     /// <summary>
     /// Context menu for the selection in the FMG list
     /// </summary>
-    public void FmgEntryContextMenu(int index, FMG.Entry entry)
+    public void FmgEntryContextMenu(int index, FMG.Entry entry, bool isMultiselecting)
     {
         if (ImGui.BeginPopupContextItem($"FmgEntryContext##FmgEntryContext{index}"))
         {

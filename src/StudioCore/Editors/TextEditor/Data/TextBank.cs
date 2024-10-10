@@ -71,7 +71,7 @@ public static class TextBank
     }
 
     /// <summary>
-    /// Load all FMG containers
+    /// Load all vanilla FMG containers
     /// </summary>
     public static void LoadVanillaTextFiles()
     {

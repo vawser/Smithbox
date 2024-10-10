@@ -748,21 +748,25 @@ public class TextEditorKeybindTab
                 KeyBindings.Current.TEXT_SelectAll,
                 KeyBindings.Default.TEXT_SelectAll);
 
-            KeyBindings.Current.TEXT_Multiselect = InputTracker.KeybindLine(0,
+            KeyBindings.Current.TEXT_Multiselect = InputTracker.KeybindLine(1,
                 KeyBindings.Current.TEXT_Multiselect,
                 KeyBindings.Default.TEXT_Multiselect);
 
-            KeyBindings.Current.TEXT_MultiselectRange = InputTracker.KeybindLine(0,
+            KeyBindings.Current.TEXT_MultiselectRange = InputTracker.KeybindLine(2,
                 KeyBindings.Current.TEXT_MultiselectRange,
                 KeyBindings.Default.TEXT_MultiselectRange);
 
-            KeyBindings.Current.TEXT_FocusSearch = InputTracker.KeybindLine(0,
-                KeyBindings.Current.TEXT_FocusSearch,
-                KeyBindings.Default.TEXT_FocusSearch);
+            KeyBindings.Current.TEXT_CopyEntrySelection = InputTracker.KeybindLine(3,
+                KeyBindings.Current.TEXT_CopyEntrySelection,
+                KeyBindings.Default.TEXT_CopyEntrySelection);
 
-            KeyBindings.Current.TEXT_SyncDescriptions = InputTracker.KeybindLine(1,
-                KeyBindings.Current.TEXT_SyncDescriptions,
-                KeyBindings.Default.TEXT_SyncDescriptions);
+            KeyBindings.Current.TEXT_PasteEntrySelection = InputTracker.KeybindLine(4,
+                KeyBindings.Current.TEXT_PasteEntrySelection,
+                KeyBindings.Default.TEXT_PasteEntrySelection);
+
+            KeyBindings.Current.TEXT_CopyEntryContents = InputTracker.KeybindLine(5,
+                KeyBindings.Current.TEXT_CopyEntryContents,
+                KeyBindings.Default.TEXT_CopyEntryContents);
         }
     }
 }

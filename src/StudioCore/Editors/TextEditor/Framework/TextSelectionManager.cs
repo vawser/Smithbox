@@ -1,5 +1,5 @@
 ﻿using StudioCore.Configuration;
-using StudioCore.Editor;
+using StudioCore.Editor.Multiselection;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -24,13 +24,21 @@ public class TextSelectionManager
     public int _selectedFmgEntryIndex;
     public FMG.Entry _selectedFmgEntry;
 
+    public Multiselection FmgEntryMultiselect;
+
     public bool SelectNextFileContainer;
     public bool SelectNextFmg;
     public bool SelectNextFmgEntry;
 
+    public bool FocusSelection;
+
+    private KeyBind MultiSelectKey = KeyBindings.Current.TEXT_Multiselect;
+
     public TextSelectionManager(TextEditorScreen screen)
     {
         Screen = screen;
+
+        FmgEntryMultiselect = new Multiselection(MultiSelectKey);
     }
 
     public void OnProjectChanged()
@@ -48,6 +56,9 @@ public class TextSelectionManager
         SelectNextFileContainer = false;
         SelectNextFmg = false;
         SelectNextFmgEntry = false;
+        FocusSelection = false;
+
+        FmgEntryMultiselect = new Multiselection(MultiSelectKey);
     }
 
     /// <summary>
@@ -57,6 +68,9 @@ public class TextSelectionManager
     {
         SelectedContainerKey = index;
         SelectedContainer = info;
+
+        _selectedFmgEntryIndex = -1;
+        _selectedFmgEntry = null;
 
         // Refresh the param editor FMG decorators when the file changes.
         Smithbox.EditorHandler.ParamEditor.ResetFMGDecorators();
@@ -70,6 +84,11 @@ public class TextSelectionManager
         SelectedFmgInfo = fmgInfo;
         SelectedFmgKey = fmgInfo.ID;
         SelectedFmg = fmgInfo.File;
+
+        FmgEntryMultiselect = new Multiselection(MultiSelectKey);
+
+        _selectedFmgEntryIndex = -1;
+        _selectedFmgEntry = null;
     }
 
     /// <summary>
@@ -77,7 +96,22 @@ public class TextSelectionManager
     /// </summary>>
     public void SelectFmgEntry(int index, FMG.Entry entry)
     {
+        FmgEntryMultiselect.HandleMultiselect(_selectedFmgEntryIndex, index);
+
         _selectedFmgEntryIndex = index;
         _selectedFmgEntry = entry;
+    }
+
+    /// <summary>
+    /// Check if a dummy poly entry is selected
+    /// </summary>
+    public bool IsFmgEntrySelected(int index)
+    {
+        if (FmgEntryMultiselect.IsMultiselected(index) || _selectedFmgEntryIndex == index)
+        {
+            return true;
+        }
+
+        return false;
     }
 }

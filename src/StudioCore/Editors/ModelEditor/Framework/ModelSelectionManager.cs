@@ -1,7 +1,8 @@
 ﻿using SoulsFormats;
+using StudioCore.Editor;
+using StudioCore.Editor.Multiselection;
 using StudioCore.Editors.ModelEditor.Core;
 using StudioCore.Editors.ModelEditor.Enums;
-using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using System;
@@ -70,19 +71,21 @@ public class ModelSelectionManager
     public Multiselection BaseSkeletonMultiselect;
     public Multiselection AllSkeletonMultiselect;
 
+    private KeyBind MultiSelectKey = KeyBindings.Current.MODEL_Multiselect;
+
     public ModelSelectionManager(ModelEditorScreen screen)
     {
         Screen = screen;
         ViewportManager = screen.ViewportManager;
 
-        DummyMultiselect = new Multiselection();
-        MaterialMultiselect = new Multiselection();
-        GxListMultiselect = new Multiselection();
-        NodeMultiselect = new Multiselection();
-        MeshMultiselect = new Multiselection();
-        BufferLayoutMultiselect = new Multiselection();
-        BaseSkeletonMultiselect = new Multiselection();
-        AllSkeletonMultiselect = new Multiselection();
+        DummyMultiselect = new Multiselection(MultiSelectKey);
+        MaterialMultiselect = new Multiselection(MultiSelectKey);
+        GxListMultiselect = new Multiselection(MultiSelectKey);
+        NodeMultiselect = new Multiselection(MultiSelectKey);
+        MeshMultiselect = new Multiselection(MultiSelectKey);
+        BufferLayoutMultiselect = new Multiselection(MultiSelectKey);
+        BaseSkeletonMultiselect = new Multiselection(MultiSelectKey);
+        AllSkeletonMultiselect = new Multiselection(MultiSelectKey);
     }
 
     /// <summary>
@@ -123,14 +126,14 @@ public class ModelSelectionManager
     /// </summary>
     public void ResetMultiSelection()
     {
-        DummyMultiselect = new Multiselection();
-        MaterialMultiselect = new Multiselection();
-        GxListMultiselect = new Multiselection();
-        NodeMultiselect = new Multiselection();
-        MeshMultiselect = new Multiselection();
-        BufferLayoutMultiselect = new Multiselection();
-        BaseSkeletonMultiselect = new Multiselection();
-        AllSkeletonMultiselect = new Multiselection();
+        DummyMultiselect = new Multiselection(MultiSelectKey);
+        MaterialMultiselect = new Multiselection(MultiSelectKey);
+        GxListMultiselect = new Multiselection(MultiSelectKey);
+        NodeMultiselect = new Multiselection(MultiSelectKey);
+        MeshMultiselect = new Multiselection(MultiSelectKey);
+        BufferLayoutMultiselect = new Multiselection(MultiSelectKey);
+        BaseSkeletonMultiselect = new Multiselection(MultiSelectKey);
+        AllSkeletonMultiselect = new Multiselection(MultiSelectKey);
     }
 
     /// <summary>

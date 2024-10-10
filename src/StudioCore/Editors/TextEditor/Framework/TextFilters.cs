@@ -1,5 +1,6 @@
 ﻿
 using ImGuiNET;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
 using System;
@@ -232,7 +233,11 @@ public class TextFilters
                     isValid = false;
             }
         }
-        else if(!CFG.Current.TextEditor_DisplayNullEntries && text == null)
+        else if(!CFG.Current.TextEditor_DisplayNullEntries && input == "" && text == null)
+        {
+            isValid = false;
+        }
+        else if (CFG.Current.TextEditor_DisplayNullEntries && input != "" && text == null)
         {
             isValid = false;
         }

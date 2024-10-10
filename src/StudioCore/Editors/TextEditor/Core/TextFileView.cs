@@ -39,44 +39,49 @@ public class TextFileView
     /// </summary>
     public void Display()
     {
-        ImGui.Begin("Files##FmgContainerFileList");
-
-        if (TextBank.PrimaryBankLoaded)
+        if (ImGui.Begin("Files##FmgContainerFileList"))
         {
-            Filters.DisplayFileFilterSearch();
-
-            int index = 0;
-
-            // Categories
-            foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))
+            if (TextBank.PrimaryBankLoaded)
             {
-                ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags.None;
+                Filters.DisplayFileFilterSearch();
 
-                if(category == TextBank.PrimaryCategory)
-                {
-                    flags = ImGuiTreeNodeFlags.DefaultOpen;
-                }
+                int index = 0;
 
-                // Only display if the category contains something
-                if (TextBank.FmgBank.Any(e => e.Value.Category == category) && AllowedCategory(category))
+                ImGui.BeginChild("CategoryList");
+
+                // Categories
+                foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))
                 {
-                    if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
+                    ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags.None;
+
+                    if (category == TextBank.PrimaryCategory)
                     {
-                        // Get relevant containers for each category
-                        foreach (var (path, info) in TextBank.FmgBank)
+                        flags = ImGuiTreeNodeFlags.DefaultOpen;
+                    }
+
+                    // Only display if the category contains something
+                    if (TextBank.FmgBank.Any(e => e.Value.Category == category) && AllowedCategory(category))
+                    {
+                        if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
                         {
-                            if (info.Category == category)
+                            // Get relevant containers for each category
+                            foreach (var (path, info) in TextBank.FmgBank)
                             {
-                                DisplayCategory(info, index);
+                                if (info.Category == category)
+                                {
+                                    DisplayCategory(info, index);
+                                }
+                                index++;
                             }
-                            index++;
                         }
                     }
                 }
-            }
-        }
 
-        ImGui.End();
+                ImGui.EndChild();
+            }
+
+            ImGui.End();
+        }
     }
 
     /// <summary>
@@ -117,6 +122,12 @@ public class TextFileView
                 {
                     ContextMenu.FileContextMenu(info);
                 }
+
+                if (Selection.FocusSelection && Selection.SelectedContainerKey == index)
+                {
+                    Selection.FocusSelection = false;
+                    ImGui.SetScrollHereY();
+                }
             }
 
             if (CFG.Current.TextEditor_DisplaySourcePath)
@@ -128,7 +139,7 @@ public class TextFileView
 
     private bool AllowedCategory(TextContainerCategory category)
     {
-        if (CFG.Current.TextEditor_DisplayPrimaryLanguageOnly)
+        if (CFG.Current.TextEditor_DisplayPrimaryCategoryOnly)
         {
             if (category == TextBank.PrimaryCategory)
             {

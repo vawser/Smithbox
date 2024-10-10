@@ -16,6 +16,7 @@ public class TextEditorTab
 
     public void Display()
     {
+        // Primary Category
         if (ImGui.CollapsingHeader("Primary Category", ImGuiTreeNodeFlags.DefaultOpen))
         {
             if (ImGui.BeginCombo("Primary Category##primaryCategoryCombo", CFG.Current.TextEditor_PrimaryCategory.GetDisplayName()))
@@ -32,13 +33,15 @@ public class TextEditorTab
                 ImGui.EndCombo();
             }
             UIHelper.ShowHoverTooltip("Change the primary category, this determines which text files are used for FMG references and other stuff.");
+
+            ImGui.Checkbox("Hide non-primary categories in list", ref CFG.Current.TextEditor_DisplayPrimaryCategoryOnly);
+            UIHelper.ShowHoverTooltip("Hide the non-primary categories in the File List.");
+
         }
 
+        // File List
         if (ImGui.CollapsingHeader("File List", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Hide non-Primary Languages in List", ref CFG.Current.TextEditor_DisplayPrimaryLanguageOnly);
-            UIHelper.ShowHoverTooltip("Hide the non-Primary Language groups in the File List.");
-
             ImGui.Checkbox("Display Community File Name", ref CFG.Current.TextEditor_DisplayPrettyContainerName);
             UIHelper.ShowHoverTooltip("If enabled, the names in the File List will be given a community name.");
 
@@ -47,6 +50,7 @@ public class TextEditorTab
 
         }
 
+        // Text File List
         if (ImGui.CollapsingHeader("Text File List", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display FMG ID", ref CFG.Current.TextEditor_DisplayFmgID);
@@ -56,10 +60,33 @@ public class TextEditorTab
             UIHelper.ShowHoverTooltip("Display the FMG community name instead of the internal form.");
         }
 
+        // Text Entries List
         if (ImGui.CollapsingHeader("Text Entries List", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.Checkbox("Display Empty Text Placeholder", ref CFG.Current.TextEditor_DisplayNullPlaceholder);
+            UIHelper.ShowHoverTooltip("Display placeholder text for rows that have no text.");
+
             ImGui.Checkbox("Display Empty Rows", ref CFG.Current.TextEditor_DisplayNullEntries);
             UIHelper.ShowHoverTooltip("Display FMG entries with empty text.");
+
+            ImGui.Checkbox("Trucate Displayed Text", ref CFG.Current.TextEditor_TruncateTextDisplay);
+            UIHelper.ShowHoverTooltip("Truncate the displayed text so it is always one line (does not affect the contents of the entry).");
+        }
+
+        // Entry Properties
+        if (ImGui.CollapsingHeader("Text Entry Properties", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+
+        }
+
+        // Text Entry Copy
+        if (ImGui.CollapsingHeader("Clipboard Action", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Checkbox("Include ID", ref CFG.Current.TextEditor_TextCopy_IncludeID);
+            UIHelper.ShowHoverTooltip("Include the row ID when copying a Text Entry to the clipboard.");
+
+            ImGui.Checkbox("Escape New Lines", ref CFG.Current.TextEditor_TextCopy_EscapeNewLines);
+            UIHelper.ShowHoverTooltip("Escape the new lines characters when copying a Text Entry to the clipboard.");
         }
     }
 }

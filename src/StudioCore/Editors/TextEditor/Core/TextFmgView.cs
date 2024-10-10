@@ -36,62 +36,73 @@ public class TextFmgView
     /// </summary>
     public void Display()
     {
-        ImGui.Begin("Text Files##fmgList");
-
-        Filters.DisplayFmgFilterSearch();
-
-        if (Selection.SelectedContainer != null && Selection.SelectedContainer.FmgInfos != null)
+        if (ImGui.Begin("Text Files##fmgList"))
         {
-            // Categories
-            foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+            Filters.DisplayFmgFilterSearch();
+
+            ImGui.BeginChild("FmgFileList");
+
+            if (Selection.SelectedContainer != null && Selection.SelectedContainer.FmgInfos != null)
             {
-                var id = fmgInfo.ID;
-                var fmgName = fmgInfo.Name;
-                var displayName = TextUtils.GetFmgDisplayName(Selection.SelectedContainer, id);
-
-                if (Filters.IsFmgFilterMatch(fmgName, displayName, id))
+                // Categories
+                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
                 {
-                    var selectableName = $"{displayName}";
+                    var id = fmgInfo.ID;
+                    var fmgName = fmgInfo.Name;
+                    var displayName = TextUtils.GetFmgDisplayName(Selection.SelectedContainer, id);
 
-                    if (!CFG.Current.TextEditor_DisplayFmgPrettyName)
+                    if (Filters.IsFmgFilterMatch(fmgName, displayName, id))
                     {
-                        selectableName = $"{fmgName}";
-                    }
+                        var selectableName = $"{displayName}";
 
-                    if (CFG.Current.TextEditor_DisplayFmgID)
-                    {
-                        selectableName = $"[{id}] {selectableName}";
-                    }
-
-                    // Script row
-                    if (ImGui.Selectable(selectableName, id == Selection.SelectedFmgKey))
-                    {
-                        Selection.SelectFmg(fmgInfo);
-                    }
-
-                    // Arrow Selection
-                    if (ImGui.IsItemHovered() && Selection.SelectNextFmg)
-                    {
-                        Selection.SelectNextFmg = false;
-                        Selection.SelectFmg(fmgInfo);
-                    }
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
-                    {
-                        Selection.SelectNextFmg = true;
-                    }
-
-                    // Only apply to selection
-                    if (Selection.SelectedFmgKey != -1)
-                    {
-                        if (Selection.SelectedFmgKey == id)
+                        if (!CFG.Current.TextEditor_DisplayFmgPrettyName)
                         {
-                            ContextMenu.FmgContextMenu(fmgInfo);
+                            selectableName = $"{fmgName}";
+                        }
+
+                        if (CFG.Current.TextEditor_DisplayFmgID)
+                        {
+                            selectableName = $"[{id}] {selectableName}";
+                        }
+
+                        // Script row
+                        if (ImGui.Selectable(selectableName, id == Selection.SelectedFmgKey))
+                        {
+                            Selection.SelectFmg(fmgInfo);
+                        }
+
+                        // Arrow Selection
+                        if (ImGui.IsItemHovered() && Selection.SelectNextFmg)
+                        {
+                            Selection.SelectNextFmg = false;
+                            Selection.SelectFmg(fmgInfo);
+                        }
+                        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                        {
+                            Selection.SelectNextFmg = true;
+                        }
+
+                        // Only apply to selection
+                        if (Selection.SelectedFmgKey != -1)
+                        {
+                            if (Selection.SelectedFmgKey == id)
+                            {
+                                ContextMenu.FmgContextMenu(fmgInfo);
+                            }
+
+                            if (Selection.FocusSelection && Selection.SelectedFmgKey == id)
+                            {
+                                Selection.FocusSelection = false;
+                                ImGui.SetScrollHereY();
+                            }
                         }
                     }
                 }
             }
-        }
 
-        ImGui.End();
+            ImGui.EndChild();
+
+            ImGui.End();
+        }
     }
 }

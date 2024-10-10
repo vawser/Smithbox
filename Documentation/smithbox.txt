@@ -101,13 +101,17 @@ Model Editor:
 #--------------------------------------
 # Notes
 #--------------------------------------
-# PRIORITY
 Text Editor:
  - ADD: FMG Generator script creation modal
  - ADD: FMG Generator open script folder (for project)
  - ADD: add modified filter
  - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
  
- - Re-write Text Editor
-  - Handle entry view: Simple mode will 'patch' the dlc1 and dlc2 entries into the same list as the vanilla entries
-  - Fix param FMG refs so they work
+# PRIORITY
+- RESTORE: Generate Rows action
+- RESTORE: Duplicate Rows action
+- FIX: param FMG refs so they work
+- ADD: modified search filter
+- ADD: Simple text input
+- ADD: Association text input
+- ADD: Programmatic text input

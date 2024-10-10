@@ -873,17 +873,25 @@ public class KeyBindings
             false,
             true);
 
-        public KeyBind TEXT_FocusSearch = new(
-            "Focus Text Search",
-            "Moves focus to the Text search input.",
-            Key.F,
+        public KeyBind TEXT_CopyEntrySelection = new(
+            "Copy Selection",
+            "Copy the selected Text Entries to the clipboard.",
+            Key.C,
             true);
 
-        public KeyBind TEXT_SyncDescriptions = new(
-            "Sync Descriptions", 
-            "Sync the descriptions of the selected text entries.", 
-            Key.K, 
+        public KeyBind TEXT_PasteEntrySelection = new(
+            "Paste Selection",
+            "Paste the saved Text Entries from the clipboard at the currently selected Text Entry.",
+            Key.P,
             true);
+
+        public KeyBind TEXT_CopyEntryContents = new(
+            "Copy Entry Contents",
+            "Copy the selected Text Entries contents to the clipboard.",
+            Key.C,
+            false,
+            true);
+
 
         //-----------------------------
         // GPARAM Editor

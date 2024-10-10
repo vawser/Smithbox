@@ -375,7 +375,7 @@ public class CFG
     //****************************
     public TextContainerCategory TextEditor_PrimaryCategory = TextContainerCategory.English;
 
-    public bool TextEditor_DisplayPrimaryLanguageOnly = false;
+    public bool TextEditor_DisplayPrimaryCategoryOnly = false;
     public bool TextEditor_DisplayPrettyContainerName = true;
 
     public bool TextEditor_DisplayFmgID = true;
@@ -383,6 +383,13 @@ public class CFG
     public bool TextEditor_DisplaySourcePath = true;
 
     public bool TextEditor_DisplayNullEntries = true;
+    public bool TextEditor_DisplayNullPlaceholder = true;
+    public bool TextEditor_TruncateTextDisplay = true;
+
+    public TextInputMode TextEditor_TextInputMode = TextInputMode.Simple;
+
+    public bool TextEditor_TextCopy_EscapeNewLines = true;
+    public bool TextEditor_TextCopy_IncludeID = true;
 
     // OLD
     public bool FMG_NoFmgPatching = false;
