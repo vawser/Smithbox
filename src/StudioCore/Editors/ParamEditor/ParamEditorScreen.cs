@@ -30,82 +30,6 @@ using DeleteParamsAction = StudioCore.Editor.DeleteParamsAction;
 
 namespace StudioCore.Editors.ParamEditor;
 
-/// <summary>
-///     Interface for decorating param rows with additional information (such as english
-///     strings sourced from FMG files)
-/// </summary>
-public interface IParamDecorator
-{
-    public void DecorateParam(Param.Row row);
-
-    public void DecorateContextMenuItems(Param.Row row);
-
-    public void ClearDecoratorCache();
-}
-
-public class FMGItemParamDecorator : IParamDecorator
-{
-    private readonly Dictionary<int, FMG.Entry> _entryCache = new();
-
-    private string ParamName;
-
-    public FMGItemParamDecorator(string paramName)
-    {
-        ParamName = paramName;
-    }
-
-    public void ClearDecoratorCache()
-    {
-        _entryCache.Clear();
-    }
-
-
-    public void DecorateParam(Param.Row row)
-    {
-        PopulateDecorator();
-        FMG.Entry entry = null;
-        _entryCache.TryGetValue(row.ID, out entry);
-
-
-        if (entry != null)
-        {
-            ImGui.SameLine();
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgLink_Text);
-            ImGui.TextUnformatted($@" <{entry.Text}>");
-            ImGui.PopStyleColor();
-        }
-    }
-
-    public void DecorateContextMenuItems(Param.Row row)
-    {
-        PopulateDecorator();
-        if (!_entryCache.ContainsKey(row.ID))
-        {
-            return;
-        }
-
-        // TODO: restore this
-        /*
-        if (ImGui.Selectable($@"Goto {_category.ToString()} Text"))
-        {
-            EditorCommandQueue.AddCommand($@"text/select/{_category.ToString()}/{row.ID}");
-        }
-        */
-    }
-
-    private void PopulateDecorator()
-    {
-        // FMG Name decoration on row 
-        if (_entryCache.Count == 0 && TextBank.PrimaryBankLoaded)
-        {
-            List<FMG.Entry> fmgEntries = TextParamUtils.GetFmgEntriesByAssociatedParam(ParamName);
-            foreach (FMG.Entry fmgEntry in fmgEntries)
-            {
-                _entryCache[fmgEntry.ID] = fmgEntry;
-            }
-        }
-    }
-}
 
 public class ParamEditorScreen : EditorScreen
 {
@@ -180,6 +104,8 @@ public class ParamEditorScreen : EditorScreen
     public ToolWindow ToolWindow;
     public ToolSubMenu ToolSubMenu;
     public ActionSubMenu ActionSubMenu;
+
+    private bool HasSetupFmgDecorators = false;
 
     public ParamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -698,6 +624,16 @@ public class ParamEditorScreen : EditorScreen
             return;
         }
 
+        if (TextBank.PrimaryBankLoaded)
+        {
+            if (!HasSetupFmgDecorators)
+            {
+                HasSetupFmgDecorators = true;
+
+                SetupFmgDecorators();
+            }
+        }
+
         //Hot Reload shortcut keys
         if (ParamReloader.CanReloadMemoryParams(ParamBank.PrimaryBank))
         {
@@ -955,10 +891,7 @@ public class ParamEditorScreen : EditorScreen
             }
         }
 
-        foreach (KeyValuePair<string, IParamDecorator> dec in _decorators)
-        {
-            dec.Value.ClearDecoratorCache();
-        }
+        ClearFmgDecorators();
 
         TaskManager.Run(new TaskManager.LiveTask("Param - Load MassEdit Scripts", TaskManager.RequeueType.Repeat,
             true, () => MassEditScript.ReloadScripts()));
@@ -1010,7 +943,7 @@ public class ParamEditorScreen : EditorScreen
         }
     }
 
-    public void ResetFMGDecorators()
+    public void SetupFmgDecorators()
     {
         _decorators.Clear();
         foreach(var entry in ParamBank.PrimaryBank.Params)
@@ -1023,6 +956,15 @@ public class ParamEditorScreen : EditorScreen
                 _decorators.Add(paramName, new FMGItemParamDecorator(paramName));
             }
         }
+    }
+
+    public void ClearFmgDecorators()
+    {
+        foreach (KeyValuePair<string, IParamDecorator> dec in _decorators)
+        {
+            dec.Value.ClearDecoratorCache();
+        }
+        HasSetupFmgDecorators = false;
     }
 
     private void LoadUpgraderData()

@@ -8,6 +8,7 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
 using Vortice.Vulkan;
+using static SoulsFormats.DRB.Shape;
 
 namespace StudioCore.Scene;
 
@@ -311,10 +312,18 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
             _activeSubmeshes = _allSubmeshes;
             return;
         }
+
         _activeSubmeshes = _allSubmeshes.Where((p, i) =>
         {
-            var mask = _resource.Get().GPUMeshes[i].Material.MaterialMask;
-            return mask == -1 || ModelMasks[mask] == 1;
+            if (_resource.Get().GPUMeshes.Length < i)
+            {
+                var mask = _resource.Get().GPUMeshes[i].Material.MaterialMask;
+                return mask == -1 || ModelMasks[mask] == 1;
+            }
+            else
+            {
+                return true;
+            }
         }).ToList();
     }
 

@@ -26,7 +26,6 @@ public enum TextContainerCategory
     [Display(Name = "Traditional Chinese")] TraditionalChinese,
 
     [Display(Name = "Spanish - Neutral")] SpanishNeutral,
-
     [Display(Name = "Portuguese")] Portuguese,
 
     [Display(Name = "Spanish - Latin America")] SpanishLatin, // Introduced in BB
@@ -40,9 +39,11 @@ public enum TextContainerCategory
     [Display(Name = "Swedish")] Swedish, // Introduced in BB
     [Display(Name = "Turkish")] Turkish, // Introduced in BB
 
-    [Display(Name = "Thai")] Thai, // Introduced in ER
+    [Display(Name = "Thai")] Thai, // Introduced in SDT
+
     [Display(Name = "Arabic")] Arabic, // Intorduced in ER
 
     // Sell Regions, BB onwards
     [Display(Name = "Sell Region")] SellRegion,
 }
+

@@ -113,8 +113,6 @@ Text Editor:
 - RESTORE: Duplicate Rows action
 - RESTORE: FMG Import/Export
 
-- FIX: param FMG refs so they work
-
 - ADD: modified search filter
 - ADD: Simple text input
 - ADD: Group text input

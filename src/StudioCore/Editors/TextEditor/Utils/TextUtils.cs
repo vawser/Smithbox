@@ -1,5 +1,6 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using StudioCore.Core.Project;
+using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,6 @@ public static class TextUtils
     /// <summary>
     /// Whether the current project type supports the Text Editor
     /// </summary>
-    /// <returns></returns>
     public static bool IsSupportedProjectType()
     {
         if(Smithbox.ProjectType is ProjectType.DES)
@@ -24,6 +24,66 @@ public static class TextUtils
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// Whether the current project supports the passed category
+    /// </summary>
+    public static bool IsSupportedLanguage(TextContainerCategory category)
+    {
+        switch (Smithbox.ProjectType)
+        {
+            case ProjectType.DES:
+                break;
+            case ProjectType.DS1:
+            case ProjectType.DS1R:
+                if(CategoryGroupings.DS1_Languages.Contains(category))
+                {
+                    return true;
+                }
+                break;
+            case ProjectType.DS2:
+            case ProjectType.DS2S:
+                if (CategoryGroupings.DS2_Languages.Contains(category))
+                {
+                    return true;
+                }
+                break;
+            case ProjectType.BB:
+                if (CategoryGroupings.BB_Languages.Contains(category))
+                {
+                    return true;
+                }
+                break;
+            case ProjectType.DS3:
+                if (CategoryGroupings.DS3_Languages.Contains(category))
+                {
+                    return true;
+                }
+                break;
+            case ProjectType.SDT:
+                if (CategoryGroupings.SDT_Languages.Contains(category))
+                {
+                    return true;
+                }
+                break;
+            case ProjectType.ER:
+                if (CategoryGroupings.ER_Languages.Contains(category))
+                {
+                    return true;
+                }
+                break;
+            case ProjectType.AC6:
+                if (CategoryGroupings.AC6_Languages.Contains(category))
+                {
+                    return true;
+                }
+                break;
+
+            default: break;
+        }
+
+        return false;
     }
 
     /// <summary>
@@ -176,12 +236,12 @@ public static class TextUtils
                 if (IsItemContainer(info))
                 {
                     var enumObj = (Item_MsgBndID_DS1)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 else if (IsMenuContainer(info))
                 {
                     var enumObj = (Menu_MsgBndID_DS1)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 break;
             case ProjectType.DS2:
@@ -189,29 +249,29 @@ public static class TextUtils
                 if (IsTalkFmg(info))
                 {
                     var enumObj = (TalkFmgName_DS2)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 else if (IsBloodMessageFmg(info))
                 {
                     var enumObj = (BloodMessageFmgName_DS2)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 else
                 {
                     var enumObj = (CommonFmgName_DS2)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 break;
             case ProjectType.BB:
                 if (IsItemContainer(info))
                 {
                     var enumObj = (Item_MsgBndID_BB)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 else if (IsMenuContainer(info))
                 {
                     var enumObj = (Menu_MsgBndID_BB)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 break;
             case ProjectType.DS3:
@@ -223,72 +283,79 @@ public static class TextUtils
                 else if (IsMenuContainer(info))
                 {
                     var enumObj = (Menu_MsgBndID_DS3)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 else if (IsNgWordContainer(info))
                 {
                     var enumObj = (NgWord_MsgBndID_DS3)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 break;
             case ProjectType.SDT:
                 if (IsItemContainer(info))
                 {
                     var enumObj = (Item_MsgBndID_SDT)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 else if (IsMenuContainer(info))
                 {
                     var enumObj = (Menu_MsgBndID_SDT)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 else if (IsSellRegionContainer(info))
                 {
                     var enumObj = (SellRegion_MsgBndID_SDT)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 break;
             case ProjectType.ER:
                 if (IsItemContainer(info))
                 {
                     var enumObj = (Item_MsgBndID_ER)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 else if (IsMenuContainer(info))
                 {
                     var enumObj = (Menu_MsgBndID_ER)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 else if (IsNgWordContainer(info))
                 {
                     var enumObj = (NgWord_MsgBndID_ER)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 else if (IsSellRegionContainer(info))
                 {
                     var enumObj = (SellRegion_MsgBndID_ER)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 break;
             case ProjectType.AC6:
                 if (IsItemContainer(info))
                 {
                     var enumObj = (Item_MsgBndID_AC6)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 else if (IsMenuContainer(info))
                 {
                     var enumObj = (Menu_MsgBndID_AC6)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 else if (IsNgWordContainer(info))
                 {
                     var enumObj = (NgWord_MsgBndID_AC6)id;
-                    name = $"{enumObj}";
+                    name = Enum.GetName(enumObj);
                 }
                 break;
 
             default: break;
+        }
+
+        // Correct if the Enum.GetName fails and produces a null result
+        if (name == null)
+        {
+            //TaskLogs.AddLog($"Failure to get Enum Name: {id}");
+            name = "";
         }
 
         return name;

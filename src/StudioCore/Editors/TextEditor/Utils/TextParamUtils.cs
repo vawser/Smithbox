@@ -22,11 +22,14 @@ public static class TextParamUtils
                 {
                     foreach (var fmgInfo in entry.FmgInfos)
                     {
-                        var enumName = TextUtils.GetFmgDisplayName(entry, fmgInfo.ID);
+                        var enumName = TextUtils.GetFmgInternalName(entry, fmgInfo.ID);
 
                         if (enumName.Contains(searchStr))
                         {
-                            entries.Concat(fmgInfo.File.Entries);
+                            foreach(var fmgEntry in fmgInfo.File.Entries)
+                            {
+                                entries.Add(fmgEntry);
+                            }
                         }
                     }
                 }
@@ -36,9 +39,8 @@ public static class TextParamUtils
         return entries;
     }
 
-
     /// <summary>
-    /// Aligned with TextCategorizations, if they change this needs to change
+    /// Aligned with Text Categorizations, if they change this needs to change
     /// </summary>
     public static string GetAssociatedEnumString(string paramName)
     {

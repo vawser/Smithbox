@@ -73,7 +73,7 @@ public class TextSelectionManager
         _selectedFmgEntry = null;
 
         // Refresh the param editor FMG decorators when the file changes.
-        Smithbox.EditorHandler.ParamEditor.ResetFMGDecorators();
+        Smithbox.EditorHandler.ParamEditor.SetupFmgDecorators();
 
         // Clear the grouping cache when the file changes
         FmgEntryGroupCache.ClearCache();

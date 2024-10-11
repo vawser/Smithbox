@@ -25,9 +25,16 @@ public class TextEditorTab
                 {
                     var type = (TextContainerCategory)entry;
 
-                    if (ImGui.Selectable(type.GetDisplayName()))
+                    if (TextUtils.IsSupportedLanguage((TextContainerCategory)entry))
                     {
-                        CFG.Current.TextEditor_PrimaryCategory = (TextContainerCategory)entry;
+                        if (ImGui.Selectable(type.GetDisplayName()))
+                        {
+                            CFG.Current.TextEditor_PrimaryCategory = (TextContainerCategory)entry;
+                            TextBank.PrimaryCategory = (TextContainerCategory)entry;
+
+                            // Refresh the param editor FMG decorators when the category changes.
+                            Smithbox.EditorHandler.ParamEditor.ClearFmgDecorators();
+                        }
                     }
                 }
                 ImGui.EndCombo();
