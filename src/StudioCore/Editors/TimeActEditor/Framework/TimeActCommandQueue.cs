@@ -29,7 +29,7 @@ public class TimeActCommandQueue
     public void Parse(string[] initcmd)
     {
         if (initcmd != null && initcmd.Length > 2)
-        {
+        {       
             if (initcmd[0] == "select")
             {
                 Selection.ResetSelection();
@@ -85,7 +85,14 @@ public class TimeActCommandQueue
                             Selection.CurrentTimeActKey = i;
                             Selection.CurrentTimeAct = Selection.ContainerInfo.InternalFiles[i].TAE;
 
-                            Selection.StoredTimeActs.Add(i, Selection.ContainerInfo.InternalFiles[i].TAE);
+                            if (!Selection.StoredTimeActs.ContainsKey(i))
+                            {
+                                Selection.StoredTimeActs.Add(i, Selection.ContainerInfo.InternalFiles[i].TAE);
+                            }
+                            else
+                            {
+                                Selection.StoredTimeActs[i] = Selection.ContainerInfo.InternalFiles[i].TAE;
+                            }
 
                             Selection.FocusTimeAct = true;
                         }
@@ -104,7 +111,14 @@ public class TimeActCommandQueue
                             Selection.CurrentTimeActAnimationIndex = i;
                             Selection.CurrentTimeActAnimation = Selection.CurrentTimeAct.Animations[i];
 
-                            Selection.StoredAnimations.Add(i, Selection.CurrentTimeAct.Animations[i]);
+                            if (!Selection.StoredAnimations.ContainsKey(i))
+                            {
+                                Selection.StoredAnimations.Add(i, Selection.CurrentTimeAct.Animations[i]);
+                            }
+                            else
+                            {
+                                Selection.StoredAnimations[i] = Selection.CurrentTimeAct.Animations[i];
+                            }
 
                             Selection.FocusAnimation = true;
                         }
@@ -123,7 +137,14 @@ public class TimeActCommandQueue
                             Selection.CurrentTimeActEventIndex = i;
                             Selection.CurrentTimeActEvent = Selection.CurrentTimeActAnimation.Events[i];
 
-                            Selection.StoredEvents.Add(i, Selection.CurrentTimeActAnimation.Events[i]);
+                            if (!Selection.StoredEvents.ContainsKey(i))
+                            {
+                                Selection.StoredEvents.Add(i, Selection.CurrentTimeActAnimation.Events[i]);
+                            }
+                            else
+                            {
+                                Selection.StoredEvents[i] = Selection.CurrentTimeActAnimation.Events[i];
+                            }
 
                             Selection.FocusEvent = true;
                         }

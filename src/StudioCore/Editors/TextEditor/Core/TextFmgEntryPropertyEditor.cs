@@ -7,6 +7,7 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -86,11 +87,7 @@ public class TextFmgEntryPropertyEditor
     /// </summary>
     public void DisplaySimpleEditor()
     {
-        var id = Selection._selectedFmgEntry.ID;
-        var text = Selection._selectedFmgEntry.Text;
-
-        ImGui.Text($"{id}");
-        ImGui.Text($"{text}");
+        DisplayEditor(Selection._selectedFmgEntry);
     }
 
     /// <summary>
@@ -109,23 +106,19 @@ public class TextFmgEntryPropertyEditor
 
         if(fmgEntryGroup.Title != null)
         {
-            ImGui.Text($"{fmgEntryGroup.Title.ID}");
-            ImGui.Text($"{fmgEntryGroup.Title.Text}");
+            DisplayEditor(fmgEntryGroup.Title);
         }
         if (fmgEntryGroup.Summary != null)
         {
-            ImGui.Text($"{fmgEntryGroup.Summary.ID}");
-            ImGui.Text($"{fmgEntryGroup.Summary.Text}");
+            DisplayEditor(fmgEntryGroup.Summary);
         }
         if (fmgEntryGroup.Description != null)
         {
-            ImGui.Text($"{fmgEntryGroup.Description.ID}");
-            ImGui.Text($"{fmgEntryGroup.Description.Text}");
+            DisplayEditor(fmgEntryGroup.Description);
         }
         if (fmgEntryGroup.Effect != null)
         {
-            ImGui.Text($"{fmgEntryGroup.Effect.ID}");
-            ImGui.Text($"{fmgEntryGroup.Effect.Text}");
+            DisplayEditor(fmgEntryGroup.Effect);
         }
     }
 
@@ -134,7 +127,68 @@ public class TextFmgEntryPropertyEditor
     /// </summary>
     public void DisplayProgrammaticEditor()
     {
+        // Find
 
+        // Replace
+    }
+
+    public void DisplayEditor(FMG.Entry entry)
+    {
+        var textboxHeight = 100;
+        var textboxWidth = ImGui.GetWindowWidth();
+
+        var id = entry.ID;
+        var contents = entry.Text;
+
+        // Correct contents if the entry.Text is null
+        if (contents == null)
+            contents = "";
+
+        var height = (textboxHeight + ImGui.CalcTextSize(contents).Y) * DPI.GetUIScale();
+        var changed = false;
+        var commit = false;
+
+        if (ImGui.BeginTable("fmgEditTable", 2, ImGuiTableFlags.SizingFixedFit))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
+            //ImGui.TableHeadersRow();
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.Text("ID");
+
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.SetNextItemWidth(textboxWidth);
+            if(ImGui.InputInt("##fmgEntryIdInput", ref id))
+            {
+                changed = true;
+            }
+
+            ImGui.TableNextRow();
+
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.Text("Text");
+
+            ImGui.TableSetColumnIndex(1);
+
+            if (ImGui.InputTextMultiline("##fmgTextInput", ref contents, 2000, new Vector2(-1, height)))
+            {
+                changed = true;
+            }
+            commit = ImGui.IsItemDeactivatedAfterEdit();
+
+            ImGui.EndTable();
+        }
+
+        // Update the entry if it was changed and the text input was exited
+        if(changed && commit)
+        {
+
+        }
     }
 }
 
