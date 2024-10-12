@@ -248,6 +248,9 @@ public class InterfaceTab
                 ImGui.ColorEdit4("Primary Changed Text", ref UI.Current.ImGui_PrimaryChanged_Text);
                 ImGui.ColorEdit4("Param Row Text", ref UI.Current.ImGui_ParamRow_Text);
                 ImGui.ColorEdit4("Aliased Name Text", ref UI.Current.ImGui_AliasName_Text);
+
+                ImGui.ColorEdit4("Text Editor: Modified Row", ref UI.Current.ImGui_TextEditor_ModifiedRow_Text);
+                ImGui.ColorEdit4("Text Editor: Unique Row", ref UI.Current.ImGui_TextEditor_UniqueRow_Text);
             }
 
             if (ImGui.CollapsingHeader("Miscellaneous", ImGuiTreeNodeFlags.DefaultOpen))

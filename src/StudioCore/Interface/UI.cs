@@ -249,6 +249,9 @@ public class UI
     public Vector4 ImGui_ParamRow_Text = new Vector4(0.8f, 0.8f, 0.8f, 1.0f);
     public Vector4 ImGui_AliasName_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
 
+    public Vector4 ImGui_TextEditor_ModifiedRow_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
+    public Vector4 ImGui_TextEditor_UniqueRow_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
+
     //**************
     // Interface Styles
     //**************

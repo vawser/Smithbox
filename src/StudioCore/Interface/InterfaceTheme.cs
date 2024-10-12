@@ -103,6 +103,8 @@ namespace StudioCore.Interface
             UI.Current.ImGui_PrimaryChanged_Text = UI.Default.ImGui_PrimaryChanged_Text;
             UI.Current.ImGui_ParamRow_Text = UI.Default.ImGui_ParamRow_Text;
             UI.Current.ImGui_AliasName_Text = UI.Default.ImGui_AliasName_Text;
+            UI.Current.ImGui_TextEditor_ModifiedRow_Text = UI.Default.ImGui_TextEditor_ModifiedRow_Text;
+            UI.Current.ImGui_TextEditor_UniqueRow_Text = UI.Default.ImGui_TextEditor_UniqueRow_Text;
 
             // Misc
             UI.Current.DisplayGroupEditor_Border_Highlight = UI.Default.DisplayGroupEditor_Border_Highlight;
@@ -264,6 +266,8 @@ namespace StudioCore.Interface
             theme.ImGui_PrimaryChanged_Text = InterfaceUtils.GetFloatList(UI.Current.ImGui_PrimaryChanged_Text);
             theme.ImGui_ParamRow_Text = InterfaceUtils.GetFloatList(UI.Current.ImGui_ParamRow_Text);
             theme.ImGui_AliasName_Text = InterfaceUtils.GetFloatList(UI.Current.ImGui_AliasName_Text);
+            theme.ImGui_TextEditor_ModifiedRow_Text = InterfaceUtils.GetFloatList(UI.Current.ImGui_TextEditor_ModifiedRow_Text);
+            theme.ImGui_TextEditor_UniqueRow_Text = InterfaceUtils.GetFloatList(UI.Current.ImGui_TextEditor_UniqueRow_Text);
 
             theme.DisplayGroupEditor_Border_Highlight = InterfaceUtils.GetFloatList(UI.Current.DisplayGroupEditor_Border_Highlight);
             theme.DisplayGroupEditor_DisplayActive_Frame = InterfaceUtils.GetFloatList(UI.Current.DisplayGroupEditor_DisplayActive_Frame);
@@ -408,6 +412,8 @@ namespace StudioCore.Interface
             UI.Current.ImGui_PrimaryChanged_Text = InterfaceUtils.GetVectorValue(theme.ImGui_PrimaryChanged_Text);
             UI.Current.ImGui_ParamRow_Text = InterfaceUtils.GetVectorValue(theme.ImGui_ParamRow_Text);
             UI.Current.ImGui_AliasName_Text = InterfaceUtils.GetVectorValue(theme.ImGui_AliasName_Text);
+            UI.Current.ImGui_TextEditor_ModifiedRow_Text = InterfaceUtils.GetVectorValue(theme.ImGui_TextEditor_ModifiedRow_Text);
+            UI.Current.ImGui_TextEditor_UniqueRow_Text = InterfaceUtils.GetVectorValue(theme.ImGui_TextEditor_UniqueRow_Text);
 
             // Misc
             UI.Current.DisplayGroupEditor_Border_Highlight = InterfaceUtils.GetVectorValue(theme.DisplayGroupEditor_Border_Highlight);

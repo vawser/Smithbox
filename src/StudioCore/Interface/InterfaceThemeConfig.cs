@@ -93,6 +93,9 @@ public class InterfaceThemeConfig
     public List<float> ImGui_PrimaryChanged_Text { get; set; }
     public List<float> ImGui_ParamRow_Text { get; set; }
     public List<float> ImGui_AliasName_Text { get; set; }
+    public List<float> ImGui_TextEditor_ModifiedRow_Text { get; set; }
+    public List<float> ImGui_TextEditor_UniqueRow_Text { get; set; }
+
     public List<float> DisplayGroupEditor_Border_Highlight { get; set; }
     public List<float> DisplayGroupEditor_DisplayActive_Frame { get; set; }
     public List<float> DisplayGroupEditor_DisplayActive_Checkbox { get; set; }

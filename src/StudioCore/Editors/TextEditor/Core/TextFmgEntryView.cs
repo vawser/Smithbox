@@ -81,6 +81,15 @@ public class TextFmgEntryView
                             }
                         }
 
+                        if (DifferenceManager.IsDifferentToVanilla(entry))
+                        {
+                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedRow_Text);
+                        }
+                        if (DifferenceManager.IsUniqueToProject(entry))
+                        {
+                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_UniqueRow_Text);
+                        }
+
                         // Script row
                         if (ImGui.Selectable($"{id} {displayedText}##fmgEntry{id}{i}", Selection.IsFmgEntrySelected(i)))
                         {
@@ -89,7 +98,11 @@ public class TextFmgEntryView
 
                         if(DifferenceManager.IsDifferentToVanilla(entry))
                         {
-                            UIHelper.DisplayAlias("<modified>");
+                            ImGui.PopStyleColor(1);
+                        }
+                        if (DifferenceManager.IsUniqueToProject(entry))
+                        {
+                            ImGui.PopStyleColor(1);
                         }
 
                         // Arrow Selection
