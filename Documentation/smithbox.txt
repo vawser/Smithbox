@@ -114,6 +114,4 @@ Text Editor:
 - RESTORE: FMG Import/Export
 
 - ADD: modified search filter
-- ADD: Simple text input
-- ADD: Group text input
-- ADD: Programmatic text input
+

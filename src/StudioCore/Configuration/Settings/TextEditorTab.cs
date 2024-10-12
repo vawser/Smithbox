@@ -83,7 +83,8 @@ public class TextEditorTab
         // Entry Properties
         if (ImGui.CollapsingHeader("Text Entry Properties", ImGuiTreeNodeFlags.DefaultOpen))
         {
-
+            ImGui.Checkbox("Display Grouped Entries", ref CFG.Current.TextEditor_Entry_DisplayGroupedEntries);
+            UIHelper.ShowHoverTooltip("Include related entries in the Contents window, e.g. Title, Summary, Description, Effect entries that share the same ID.");
         }
 
         // Text Entry Copy

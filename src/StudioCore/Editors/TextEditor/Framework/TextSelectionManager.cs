@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SoulsFormats;
+using HKLib.hk2018.hkaiCollisionAvoidance;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -33,6 +34,8 @@ public class TextSelectionManager
     public bool FocusSelection;
 
     private KeyBind MultiSelectKey = KeyBindings.Current.TEXT_Multiselect;
+
+    public TextSelectionContext CurrentSelectionContext;
 
     public TextSelectionManager(TextEditorScreen screen)
     {
@@ -66,6 +69,8 @@ public class TextSelectionManager
     /// </summary>>
     public void SelectFileContainer(TextContainerInfo info, int index)
     {
+        CurrentSelectionContext = TextSelectionContext.File;
+
         SelectedContainerKey = index;
         SelectedContainer = info;
 
@@ -75,15 +80,18 @@ public class TextSelectionManager
         // Refresh the param editor FMG decorators when the file changes.
         Smithbox.EditorHandler.ParamEditor.SetupFmgDecorators();
 
-        // Clear the grouping cache when the file changes
-        FmgEntryGroupCache.ClearCache();
+        // Auto-select first FMG
+        AutoSelectFirstValidFmg();
     }
 
     /// <summary>
     /// Set current FMG selection
-    /// </summary>>
-    public void SelectFmg(FmgInfo fmgInfo)
+    /// </summary>
+    public void SelectFmg(FmgInfo fmgInfo, bool changeContext = true)
     {
+        if(changeContext)
+            CurrentSelectionContext = TextSelectionContext.Fmg;
+
         SelectedFmgInfo = fmgInfo;
         SelectedFmgKey = fmgInfo.ID;
         SelectedFmg = fmgInfo.File;
@@ -92,17 +100,61 @@ public class TextSelectionManager
 
         _selectedFmgEntryIndex = -1;
         _selectedFmgEntry = null;
+
+        Screen.DifferenceManager.TrackFmgDifferences();
+
+        // Auto-select first FMG Entry
+        AutoSelectFmgEntry();
+    }
+
+    /// <summary>
+    /// Auto-select first relevant FMG (triggered on File change)
+    /// </summary>
+    private void AutoSelectFirstValidFmg()
+    {
+        foreach (var fmgInfo in SelectedContainer.FmgInfos)
+        {
+            var id = fmgInfo.ID;
+            var fmgName = fmgInfo.Name;
+            var displayName = TextUtils.GetFmgDisplayName(SelectedContainer, id);
+
+            if (Screen.Filters.IsFmgFilterMatch(fmgName, displayName, id))
+            {
+                SelectFmg(fmgInfo, false);
+                break;
+            }
+        }
     }
 
     /// <summary>
     /// Set current FMG Entry selection
-    /// </summary>>
-    public void SelectFmgEntry(int index, FMG.Entry entry)
+    /// </summary>
+    public void SelectFmgEntry(int index, FMG.Entry entry, bool changeContext = true)
     {
+        if(changeContext)
+            CurrentSelectionContext = TextSelectionContext.FmgEntry;
+
         FmgEntryMultiselect.HandleMultiselect(_selectedFmgEntryIndex, index);
 
         _selectedFmgEntryIndex = index;
         _selectedFmgEntry = entry;
+    }
+
+    /// <summary>
+    /// Auto-select first relevant FMG Entry (triggered on FMG change)
+    /// </summary>
+    public void AutoSelectFmgEntry()
+    {
+        for (int i = 0; i < SelectedFmg.Entries.Count; i++)
+        {
+            var entry = SelectedFmg.Entries[i];
+
+            if (Screen.Filters.IsFmgEntryFilterMatch(entry))
+            {
+                SelectFmgEntry(i, entry, false);
+                break;
+            }
+        }
     }
 
     /// <summary>

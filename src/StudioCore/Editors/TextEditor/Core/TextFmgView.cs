@@ -21,6 +21,7 @@ public class TextFmgView
     public TextSelectionManager Selection;
     public TextFilters Filters;
     public TextContextMenu ContextMenu;
+    public TextDifferenceManager DifferenceManager;
 
     public TextFmgView(TextEditorScreen screen)
     {

@@ -1,6 +1,7 @@
 ﻿
 using ImGuiNET;
 using Microsoft.AspNetCore.Components.Forms;
+using SoulsFormats;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
 using System;
@@ -38,6 +39,7 @@ public class TextFilters
     public void DisplayFileFilterSearch()
     {
         ImGui.InputText($"Search##fileFilterSearch", ref FileFilterInput, 255);
+        UIHelper.ShowWideHoverTooltip("Chain commands by using the + symbol between them.");
 
         ImGui.SameLine();
         ImGui.Checkbox($"##fileFilterExactMatch", ref FileFilterExactMatch);
@@ -105,6 +107,7 @@ public class TextFilters
     public void DisplayFmgFilterSearch()
     {
         ImGui.InputText($"Search##fmgFilterSearch", ref FmgFilterInput, 255);
+        UIHelper.ShowWideHoverTooltip("Chain commands by using the + symbol between them.");
 
         ImGui.SameLine();
         ImGui.Checkbox($"##fmgFilterExactMatch", ref FmgFilterExactMatch);
@@ -181,6 +184,7 @@ public class TextFilters
     public void DisplayFmgEntryFilterSearch()
     {
         ImGui.InputText($"Search##fmgEntryFilterSearch", ref FmgEntryFilterInput, 255);
+        UIHelper.ShowWideHoverTooltip("Chain commands by using the + symbol between them.\n\nSpecial commands:\nmodified - Displays rows where the text is different to vanilla.\nunique - Displays rows that are unique to your project.");
 
         ImGui.SameLine();
         ImGui.Checkbox($"##fmgEntryFilterExactMatch", ref FmgEntryFilterExactMatch);
@@ -190,13 +194,34 @@ public class TextFilters
     /// <summary>
     /// Is the search input an match for the passed text?
     /// </summary>
-    public bool IsFmgEntryFilterMatch(string text, int id)
+    public bool IsFmgEntryFilterMatch(FMG.Entry curEntry)
     {
         bool isValid = true;
 
+        var id = curEntry.ID;
+        var text = curEntry.Text;
+
         var input = FmgEntryFilterInput.ToLower();
 
-        if (input != "" && text != null)
+        if (input == "modified")
+        {
+            if(Screen.DifferenceManager.IsDifferentToVanilla(curEntry))
+            {
+                return true;
+            }
+
+            return false;
+        }
+        else if (input == "unique")
+        {
+            if (Screen.DifferenceManager.IsUniqueToProject(curEntry))
+            {
+                return true;
+            }
+
+            return false;
+        }
+        else if (input != "" && text != null)
         {
             string[] inputParts = input.Split("+");
             bool[] partTruth = new bool[inputParts.Length];

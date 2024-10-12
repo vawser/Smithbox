@@ -2,6 +2,7 @@
 using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextEditor;
 using System;
@@ -22,6 +23,7 @@ public class TextFmgEntryView
     public TextSelectionManager Selection;
     public TextFilters Filters;
     public TextContextMenu ContextMenu;
+    public TextDifferenceManager DifferenceManager;
 
     private bool IsCurrentlyCopyingContents = false;
 
@@ -32,6 +34,7 @@ public class TextFmgEntryView
         Selection = screen.Selection;
         Filters = screen.Filters;
         ContextMenu = screen.ContextMenu;
+        DifferenceManager = screen.DifferenceManager;
     }
 
     /// <summary>
@@ -54,7 +57,7 @@ public class TextFmgEntryView
                     var id = entry.ID;
                     var contents = entry.Text;
 
-                    if (Filters.IsFmgEntryFilterMatch(contents, id))
+                    if (Filters.IsFmgEntryFilterMatch(entry))
                     {
                         var displayedText = contents;
 
@@ -84,6 +87,11 @@ public class TextFmgEntryView
                             Selection.SelectFmgEntry(i, entry);
                         }
 
+                        if(DifferenceManager.IsDifferentToVanilla(entry))
+                        {
+                            UIHelper.DisplayAlias("<modified>");
+                        }
+
                         // Arrow Selection
                         if (ImGui.IsItemHovered() && Selection.SelectNextFmgEntry)
                         {
@@ -100,18 +108,22 @@ public class TextFmgEntryView
                         {
                             ContextMenu.FmgEntryContextMenu(i, entry, Selection.IsFmgEntrySelected(i));
 
-                            // Copy Entry Contents
-                            if (InputTracker.GetKey(KeyBindings.Current.TEXT_CopyEntryContents))
+                            // Ignore if not currently in the FMG Entry context
+                            if (Selection.CurrentSelectionContext is TextSelectionContext.FmgEntry)
                             {
-                                CopyEntryTextToClipboard(CFG.Current.TextEditor_TextCopy_IncludeID);
-                            }
-                            // Select All
-                            if (InputTracker.GetKey(KeyBindings.Current.TEXT_SelectAll))
-                            {
-                                Selection.FmgEntryMultiselect.StoredIndices.Clear();
-                                for (int j = 0; j < Selection.SelectedFmg.Entries.Count; j++)
+                                // Copy Entry Contents
+                                if (InputTracker.GetKey(KeyBindings.Current.TEXT_CopyEntryContents))
                                 {
-                                    Selection.FmgEntryMultiselect.StoredIndices.Add(j);
+                                    CopyEntryTextToClipboard(CFG.Current.TextEditor_TextCopy_IncludeID);
+                                }
+                                // Select All
+                                if (InputTracker.GetKey(KeyBindings.Current.TEXT_SelectAll))
+                                {
+                                    Selection.FmgEntryMultiselect.StoredIndices.Clear();
+                                    for (int j = 0; j < Selection.SelectedFmg.Entries.Count; j++)
+                                    {
+                                        Selection.FmgEntryMultiselect.StoredIndices.Add(j);
+                                    }
                                 }
                             }
                         }
@@ -152,7 +164,7 @@ public class TextFmgEntryView
                 {
                     var entry = Selection.SelectedFmg.Entries[i];
 
-                    if (Filters.IsFmgEntryFilterMatch(entry.Text, entry.ID))
+                    if (Filters.IsFmgEntryFilterMatch(entry))
                     {
                         if (Selection.FmgEntryMultiselect.IsMultiselected(i))
                         {

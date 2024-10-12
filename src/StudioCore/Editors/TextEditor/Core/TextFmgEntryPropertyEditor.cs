@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
@@ -23,7 +24,7 @@ public class TextFmgEntryPropertyEditor
     public TextSelectionManager Selection;
     public TextFilters Filters;
     public TextContextMenu ContextMenu;
-    public TextFmgEntryGroupManager EntryGroupManager;
+    public TextEntryGroupManager EntryGroupManager;
 
     public TextFmgEntryPropertyEditor(TextEditorScreen screen)
     {
@@ -42,38 +43,11 @@ public class TextFmgEntryPropertyEditor
     {
         if (ImGui.Begin("Contents##fmgEntryContents"))
         {
-            if (ImGui.BeginCombo("Input Mode##textInputMode", CFG.Current.TextEditor_TextInputMode.GetDisplayName()))
-            {
-                foreach (var entry in Enum.GetValues(typeof(TextInputMode)))
-                {
-                    var type = (TextInputMode)entry;
-
-                    if (ImGui.Selectable(type.GetDisplayName()))
-                    {
-                        CFG.Current.TextEditor_TextInputMode = (TextInputMode)entry;
-                    }
-                }
-                ImGui.EndCombo();
-            }
-            UIHelper.ShowWideHoverTooltip("Change the text input mode:" +
-                "\nSimple: edit the ID and text for the selected row.\nGroup: see the grouped entries for the selected row, such as Title, Description, etc.\nProgrammatic: configure a regex conditional input, and a regex replacement string to apply to all selected rows.");
-
             ImGui.BeginChild("FmgEntryContents");
 
             if (Selection._selectedFmgEntry != null)
             {
-                if (CFG.Current.TextEditor_TextInputMode == TextInputMode.Simple)
-                {
-                    DisplaySimpleEditor();
-                }
-                if (CFG.Current.TextEditor_TextInputMode == TextInputMode.Group)
-                {
-                    DisplayGroupEditor();
-                }
-                if (CFG.Current.TextEditor_TextInputMode == TextInputMode.Programmatic)
-                {
-                    DisplayProgrammaticEditor();
-                }
+                DisplayEditor();
             }
 
             ImGui.EndChild();
@@ -83,59 +57,57 @@ public class TextFmgEntryPropertyEditor
     }
 
     /// <summary>
-    /// Simple Editor: ID and Text edit inputs
-    /// </summary>
-    public void DisplaySimpleEditor()
-    {
-        DisplayEditor(Selection._selectedFmgEntry);
-    }
-
-    /// <summary>
     /// Group Editor: ID and Text edit inputs for all associated entries + the main one
     /// </summary>
-    public void DisplayGroupEditor()
+    public void DisplayEditor()
     {
-        var fmgEntryGroup = EntryGroupManager.GetEntryGroup(Selection._selectedFmgEntry);
+        var fmgEntryGroup = EntryGroupManager.GetEntryGroup();
 
-        // Fallback to Simple Editor if chosen entry doesn't support grouping
-        if(!fmgEntryGroup.SupportsGrouping)
+        // Display normally if entry has no groups, or it has been disabled
+        if(!fmgEntryGroup.SupportsGrouping || !CFG.Current.TextEditor_Entry_DisplayGroupedEntries)
         {
-            DisplaySimpleEditor();
+            DisplayTextInput(0, Selection._selectedFmgEntry);
             return;
         }
 
         if(fmgEntryGroup.Title != null)
         {
-            DisplayEditor(fmgEntryGroup.Title);
+            ImGui.Separator();
+            UIHelper.WrappedText("Title");
+            ImGui.Separator();
+
+            DisplayTextInput(1, fmgEntryGroup.Title);
         }
         if (fmgEntryGroup.Summary != null)
         {
-            DisplayEditor(fmgEntryGroup.Summary);
+            ImGui.Separator();
+            UIHelper.WrappedText("Summary");
+            ImGui.Separator();
+
+            DisplayTextInput(2, fmgEntryGroup.Summary);
         }
         if (fmgEntryGroup.Description != null)
         {
-            DisplayEditor(fmgEntryGroup.Description);
+            ImGui.Separator();
+            UIHelper.WrappedText("Description");
+            ImGui.Separator();
+
+            DisplayTextInput(3, fmgEntryGroup.Description);
         }
         if (fmgEntryGroup.Effect != null)
         {
-            DisplayEditor(fmgEntryGroup.Effect);
+            ImGui.Separator();
+            UIHelper.WrappedText("Effect");
+            ImGui.Separator();
+
+            DisplayTextInput(4, fmgEntryGroup.Effect);
         }
     }
 
-    /// <summary>
-    /// Programmatic Editor: search and replace for selected rows
-    /// </summary>
-    public void DisplayProgrammaticEditor()
-    {
-        // Find
-
-        // Replace
-    }
-
-    public void DisplayEditor(FMG.Entry entry)
+    public void DisplayTextInput(int index, FMG.Entry entry)
     {
         var textboxHeight = 100;
-        var textboxWidth = ImGui.GetWindowWidth();
+        var textboxWidth = ImGui.GetWindowWidth() * 0.9f;
 
         var id = entry.ID;
         var contents = entry.Text;
@@ -145,10 +117,14 @@ public class TextFmgEntryPropertyEditor
             contents = "";
 
         var height = (textboxHeight + ImGui.CalcTextSize(contents).Y) * DPI.GetUIScale();
-        var changed = false;
-        var commit = false;
 
-        if (ImGui.BeginTable("fmgEditTable", 2, ImGuiTableFlags.SizingFixedFit))
+        var idChanged = false;
+        var idCommit = false;
+
+        var textChanged = false;
+        var textCommit = false;
+
+        if (ImGui.BeginTable($"fmgEditTable{index}", 2, ImGuiTableFlags.SizingFixedFit))
         {
             ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
             ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
@@ -162,9 +138,15 @@ public class TextFmgEntryPropertyEditor
             ImGui.TableSetColumnIndex(1);
 
             ImGui.SetNextItemWidth(textboxWidth);
-            if(ImGui.InputInt("##fmgEntryIdInput", ref id))
+            if(ImGui.InputInt($"##fmgEntryIdInput{index}", ref id))
             {
-                changed = true;
+                idChanged = true;
+            }
+
+            idCommit = ImGui.IsItemDeactivatedAfterEdit();
+            if (ImGui.IsItemActivated())
+            {
+                Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
             }
 
             ImGui.TableNextRow();
@@ -175,19 +157,31 @@ public class TextFmgEntryPropertyEditor
 
             ImGui.TableSetColumnIndex(1);
 
-            if (ImGui.InputTextMultiline("##fmgTextInput", ref contents, 2000, new Vector2(-1, height)))
+            if (ImGui.InputTextMultiline($"##fmgTextInput{index}", ref contents, 2000, new Vector2(-1, height)))
             {
-                changed = true;
+                textChanged = true;
             }
-            commit = ImGui.IsItemDeactivatedAfterEdit();
+            textCommit = ImGui.IsItemDeactivatedAfterEdit();
+            if (ImGui.IsItemActivated())
+            {
+                Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
+            }
 
             ImGui.EndTable();
         }
 
-        // Update the entry if it was changed and the text input was exited
-        if(changed && commit)
+        // Update the ID if it was changed and the id input was exited
+        if(idChanged && idCommit)
         {
+            var action = new ChangeFmgEntryID(entry, id);
+            Screen.EditorActionManager.ExecuteAction(action);
+        }
 
+        // Update the Text if it was changed and the text input was exited
+        if (textChanged && textCommit)
+        {
+            var action = new ChangeFmgEntryText(entry, contents);
+            Screen.EditorActionManager.ExecuteAction(action);
         }
     }
 }

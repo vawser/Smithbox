@@ -386,7 +386,7 @@ public class CFG
     public bool TextEditor_DisplayNullPlaceholder = true;
     public bool TextEditor_TruncateTextDisplay = true;
 
-    public TextInputMode TextEditor_TextInputMode = TextInputMode.Simple;
+    public bool TextEditor_Entry_DisplayGroupedEntries = true;
 
     public bool TextEditor_TextCopy_EscapeNewLines = true;
     public bool TextEditor_TextCopy_IncludeID = true;
