@@ -25,9 +25,9 @@ public class TextEntryGroupManager
         Selection = screen.Selection;
     }
 
-    public FmgEntryGroup GetEntryGroup()
+    public FmgEntryGroup GetEntryGroup(FMG.Entry entry)
     {
-        return new FmgEntryGroup(this, Selection.SelectedContainer, Selection.SelectedFmgInfo, Selection._selectedFmgEntry);
+        return new FmgEntryGroup(this, Selection.SelectedContainer, Selection.SelectedFmgInfo, entry);
     }
 
     /// <summary>
@@ -41,6 +41,27 @@ public class TextEntryGroupManager
 
         switch (Smithbox.ProjectType)
         {
+
+            case ProjectType.DES:
+                break;
+
+            case ProjectType.DS1:
+            case ProjectType.DS1R:
+                break;
+
+            case ProjectType.DS2:
+            case ProjectType.DS2S:
+                break;
+
+            case ProjectType.BB:
+                break;
+
+            case ProjectType.DS3:
+                break;
+
+            case ProjectType.SDT:
+                break;
+
             case ProjectType.ER:
                 // Vanilla
                 groupings.Add(new EntryGroupAssociation(
@@ -171,6 +192,9 @@ public class TextEntryGroupManager
                     Item_MsgBndID_ER.Description_Skill_DLC2,
                     null));
 
+                break;
+
+            case ProjectType.AC6:
                 break;
         }
 

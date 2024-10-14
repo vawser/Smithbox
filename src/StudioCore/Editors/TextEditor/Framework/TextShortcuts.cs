@@ -48,5 +48,23 @@ public class TextShortcuts
         {
             EditorActionManager.RedoAction();
         }
+
+        // Create
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_CreateNewEntry))
+        {
+            Screen.EntryCreationModal.ShowModal = true;
+        }
+
+        // Duplicate
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
+        {
+            Screen.ActionHandler.DuplicateEntries();
+        }
+
+        // Delete
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
+        {
+            Screen.ActionHandler.DeleteEntries();
+        }
     }
 }

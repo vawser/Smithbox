@@ -34,6 +34,7 @@ public class TextEditorScreen : EditorScreen
     public TextFmgView FmgView;
     public TextFmgEntryView FmgEntryView;
     public TextFmgEntryPropertyEditor FmgEntryPropertyEditor;
+    public TextNewEntryCreationModal EntryCreationModal;
 
     public TextEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -55,6 +56,8 @@ public class TextEditorScreen : EditorScreen
         FmgView = new TextFmgView(this);
         FmgEntryView = new TextFmgEntryView(this);
         FmgEntryPropertyEditor = new TextFmgEntryPropertyEditor(this);
+
+        EntryCreationModal = new TextNewEntryCreationModal(this);
     }
 
     public string EditorName => "Text Editor";
@@ -185,7 +188,7 @@ public class TextEditorScreen : EditorScreen
             }
 
             CommandQueue.Parse(initcmd);
-            
+            EntryCreationModal.Display();
         }
 
         ImGui.PopStyleVar();

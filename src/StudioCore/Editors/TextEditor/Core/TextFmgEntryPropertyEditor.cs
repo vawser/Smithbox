@@ -61,7 +61,7 @@ public class TextFmgEntryPropertyEditor
     /// </summary>
     public void DisplayEditor()
     {
-        var fmgEntryGroup = EntryGroupManager.GetEntryGroup();
+        var fmgEntryGroup = EntryGroupManager.GetEntryGroup(Selection._selectedFmgEntry);
 
         // Display normally if entry has no groups, or it has been disabled
         if(!fmgEntryGroup.SupportsGrouping || !CFG.Current.TextEditor_Entry_DisplayGroupedEntries)

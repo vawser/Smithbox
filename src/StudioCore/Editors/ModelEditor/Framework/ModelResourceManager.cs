@@ -166,11 +166,8 @@ public class ModelResourceManager : IResourceEventListener
 
         LoadedFlverContainer = new FlverContainer(name, loosePath);
 
-        LoadEditableModel(name, name, FlverContainerType.Loose);
-
-        // Set loaded FLVER to first file.
-        LoadedFlverContainer.CurrentInternalFlver = LoadedFlverContainer.InternalFlvers.First();
-
+        LoadEditableModel(name, name, FlverContainerType.Loose, null, loosePath);
+        SetDefaultAssociatedModel();
         LoadRepresentativeModel(name, name, FlverContainerType.Loose);
     }
 
@@ -274,16 +271,23 @@ public class ModelResourceManager : IResourceEventListener
     /// <summary>
     /// Loads the editable FLVER model, this is the model that the editor actually uses
     /// </summary>
-    private void LoadEditableModel(string containerId, string modelid, FlverContainerType modelType, string mapid = null)
+    private void LoadEditableModel(string containerId, string modelid, FlverContainerType modelType, string mapid = null, string loosePath = "")
     {
         ResourceDescriptor modelAsset = GetModelAssetDescriptor(containerId, modelid, modelType, mapid);
 
-        if (!File.Exists(modelAsset.AssetPath))
+        var loadPath = modelAsset.AssetPath;
+
+        if (modelType is FlverContainerType.Loose)
+        {
+            loadPath = loosePath;
+        }
+
+        if (!File.Exists(loadPath))
             return;
 
         var binderType = LoadedFlverContainer.BinderType;
 
-        var fileBytes = File.ReadAllBytes(modelAsset.AssetPath);
+        var fileBytes = File.ReadAllBytes(loadPath);
 
         // Get the DCX Type for the container
         DCX.Type dcxType;
@@ -302,6 +306,7 @@ public class ModelResourceManager : IResourceEventListener
             internalFlver.CurrentFLVER = FLVER2.Read(LoadedFlverContainer.LoosePath);
             internalFlver.InitialFlverBytes = fileBytes;
 
+            AddInternalFlver(internalFlver);
         }
         else if (modelType is FlverContainerType.MapPiece)
         {
@@ -445,8 +450,7 @@ public class ModelResourceManager : IResourceEventListener
                                         internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
                                         internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
 
-                                        LoadedFlverContainer.InternalFlvers.Add(internalFlver);
-                                        LoadedFlverContainer.CurrentInternalFlver = internalFlver;
+                                        AddInternalFlver(internalFlver);
                                     }
                                 }
                             }

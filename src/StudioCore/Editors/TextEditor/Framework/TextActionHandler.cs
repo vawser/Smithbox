@@ -20,4 +20,20 @@ public class TextActionHandler
     {
 
     }
+
+    /// <summary>
+    /// Duplicate current selection of FMG.Entries
+    /// </summary>
+    public void DuplicateEntries()
+    {
+
+    }
+
+    /// <summary>
+    /// Delete current selection of FMG.Entries
+    /// </summary>
+    public void DeleteEntries()
+    {
+
+    }
 }

@@ -101,7 +101,7 @@ namespace SoulsFormats
 
                         int id = firstID + j;
                         string text = stringOffset != 0 ? br.GetUTF16(stringOffset) : null;
-                        Entries.Add(new Entry(id, text));
+                        Entries.Add(new Entry(this, id, text));
                     }
                 }
                 br.StepOut();
@@ -200,7 +200,7 @@ namespace SoulsFormats
                 if (Entries.Any(entry => entry.ID == id))
                     Entries.Find(entry => entry.ID == id).Text = value;
                 else
-                    Entries.Add(new Entry(id, value));
+                    Entries.Add(new Entry(this, id, value));
             }
         }
 
@@ -219,11 +219,14 @@ namespace SoulsFormats
             /// </summary>
             public string Text { get; set; }
 
+            public FMG Parent { get; set; }
+
             /// <summary>
             /// Creates a new entry with the specified ID and text.
             /// </summary>
-            public Entry(int id, string text)
+            public Entry(FMG parent, int id, string text)
             {
+                Parent = parent;
                 ID = id;
                 Text = text;
             }
@@ -238,7 +241,7 @@ namespace SoulsFormats
 
             public FMG.Entry Clone()
             {
-                return new FMG.Entry(ID, Text);
+                return new FMG.Entry(Parent, ID, Text);
             }
         }
 

@@ -13,10 +13,12 @@ namespace StudioCore.Editors.TextEditor;
 public class TextContextMenu
 {
     private TextEditorScreen Screen;
+    public TextEntryGroupManager EntryGroupManager;
 
     public TextContextMenu(TextEditorScreen screen)
     {
         Screen = screen;
+        EntryGroupManager = screen.EntryGroupManager;
     }
 
     /// <summary>
@@ -50,10 +52,22 @@ public class TextContextMenu
         if (ImGui.BeginPopupContextItem($"FmgEntryContext##FmgEntryContext{index}"))
         {
             // Create
+            if(ImGui.Selectable("Create"))
+            {
+                Screen.EntryCreationModal.ShowModal = true;
+            }
 
             // Duplicate
+            if (ImGui.Selectable("Duplicate"))
+            {
+                Screen.ActionHandler.DuplicateEntries();
+            }
 
             // Delete
+            if (ImGui.Selectable("Delete"))
+            {
+                Screen.ActionHandler.DeleteEntries();
+            }
 
             ImGui.EndPopup();
         }

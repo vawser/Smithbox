@@ -44,6 +44,7 @@ Param Editor:
  - ADD: automatic naming tool: for current param, look for reference fields, name the linked param row with the base name if empty (e.g. Item -> Bullet-> AtkParam)
  - ADD: Copy to NPC AtkParam/BehaviorParam from PC AtkParam/BehaviorParam and vice versa
  - ADD: ItemGib for ER
+ - FIX: color picker throwing CTD on second param view
  
 Gparam Editor:
  - ADD: GPARAM reloader
@@ -105,13 +106,15 @@ Model Editor:
 Text Editor:
  - ADD: FMG Generator script creation modal
  - ADD: FMG Generator open script folder (for project)
- - ADD: add modified filter
  - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
  
 # PRIORITY
-- RESTORE: Generate Rows action
-- RESTORE: Duplicate Rows action
+- ADD: sync with X Language
 - RESTORE: FMG Import/Export
+- RESTORE: global text search
+- RESTORE: global text search and replace
 
-- ADD: modified search filter
-
+- ADD: Create Rows
+- RESTORE: Generate Rows action
+- RESTORE: Duplicate Rows
+- RESTORE: Delete Rows

@@ -38,7 +38,6 @@ public class TimelineCustomDataPropertyView
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text($"Type");
-            ImGui.Text($"Unk44");
             ImGui.Text($"Value");
 
             ImGui.NextColumn();
@@ -46,7 +45,6 @@ public class TimelineCustomDataPropertyView
             // TODO: add editing
             ImGui.AlignTextToFramePadding();
             ImGui.Text($"{customData.Type}");
-            ImGui.Text($"{customData.Unk44}");
             ImGui.Text($"{customData.Value}");
 
             ImGui.Columns(1);
