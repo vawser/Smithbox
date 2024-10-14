@@ -2157,8 +2157,22 @@
             ]
         },
         {
+            "id": "m60_44_36_10",
+            "name": "Limgrave - Waypoint Ruins (Post-Radahn: Meteor Impact)",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
             "id": "m60_44_37_00",
             "name": "Limgrave - Mistwood Outskirts",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
+            "id": "m60_44_37_10",
+            "name": "Limgrave - Mistwood Outskirts (Post-Radahn: Meteor Impact)",
             "tags": [
                 "vanilla"
             ]
@@ -2172,7 +2186,7 @@
         },
         {
             "id": "m60_45_36_10",
-            "name": "Limgrave - Fort Haight West (Meteored)",
+            "name": "Limgrave - Fort Haight West (Post-Radahn: Meteor Impact)",
             "tags": [
                 "vanilla"
             ]
@@ -2180,6 +2194,13 @@
         {
             "id": "m60_45_37_00",
             "name": "Limgrave - Siofra River Well, Mistwood Ruins, Minor Erdtree, Nokron Entrance",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
+            "id": "m60_45_37_10",
+            "name": "Limgrave - Siofra River Well, Mistwood Ruins, Minor Erdtree, Nokron Entrance (Post-Radahn: Meteor Impact)",
             "tags": [
                 "vanilla"
             ]
@@ -2199,8 +2220,22 @@
             ]
         },
         {
+            "id": "m60_44_38_10",
+            "name": "Limgrave - Artist's Shack (Post-Radahn: Meteor Impact)",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
             "id": "m60_44_39_00",
             "name": "Limgrave - Summonwater Village Outskirts",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
+            "id": "m60_44_39_10",
+            "name": "Limgrave - Summonwater Village Outskirts (Post-Radahn: Meteor Impact)",
             "tags": [
                 "vanilla"
             ]
@@ -2213,8 +2248,22 @@
             ]
         },
         {
+            "id": "m60_45_38_10",
+            "name": "Limgrave - South of Summonwater Village (Post-Radahn: Meteor Impact)",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
             "id": "m60_45_39_00",
             "name": "Limgrave - Summonwater Village",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
+            "id": "m60_45_39_10",
+            "name": "Limgrave - Summonwater Village (Post-Radahn: Meteor Impact)",
             "tags": [
                 "vanilla"
             ]
@@ -2234,6 +2283,13 @@
             ]
         },
         {
+            "id": "m60_46_36_10",
+            "name": "Limgrave - Fort Haight (Post-Radahn: Meteor Impact)",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
             "id": "m60_46_37_00",
             "name": "Limgrave - East of Siofra River Well",
             "tags": [
@@ -2241,8 +2297,22 @@
             ]
         },
         {
+            "id": "m60_46_37_10",
+            "name": "Limgrave - East of Siofra River Well (Post-Radahn: Meteor Impact)",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
             "id": "m60_47_37_00",
             "name": "Caelid - West of Caelid Highway South",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
+            "id": "m60_47_37_10",
+            "name": "Caelid - West of Caelid Highway South (Post-Radahn: Meteor Impact)",
             "tags": [
                 "vanilla"
             ]
@@ -2262,8 +2332,22 @@
             ]
         },
         {
+            "id": "m60_46_38_10",
+            "name": "Limgrave - Third Church of Marika, Gaol Cave Exit (Post-Radahn: Meteor Impact)",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
             "id": "m60_46_39_00",
             "name": "Limgrave - Rear Gael Tunnel Entrance; Caelid - Gael Tunnel Entrance",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
+            "id": "m60_46_39_10",
+            "name": "Limgrave - Rear Gael Tunnel Entrance; Caelid - Gael Tunnel Entrance (Post-Radahn: Meteor Impact)",
             "tags": [
                 "vanilla"
             ]
@@ -2276,8 +2360,22 @@
             ]
         },
         {
+            "id": "m60_47_38_10",
+            "name": "Caelid - Fort Gael, Caelid Waypoint Ruins, Gaol Cave Entrance (Post-Radahn: Meteor Impact)",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
             "id": "m60_47_39_00",
             "name": "Caelid - Fort Gael North",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
+            "id": "m60_47_39_10",
+            "name": "Caelid - Fort Gael North (Post-Radahn: Meteor Impact)",
             "tags": [
                 "vanilla"
             ]
@@ -2416,8 +2514,22 @@
             ]
         },
         {
+            "id": "m60_44_52_10",
+            "name": "Capital Outskirts - South of Minor Erdtree (Ashen)",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
             "id": "m60_44_53_00",
             "name": "Capital Outskirts - Minor Erdtree",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
+            "id": "m60_44_53_10",
+            "name": "Capital Outskirts - Minor Erdtree (Ashen)",
             "tags": [
                 "vanilla"
             ]
@@ -2444,6 +2556,13 @@
             ]
         },
         {
+            "id": "m60_45_53_10",
+            "name": "Capital Outskirts - Capital Rampart North Cliffside (Ashen)",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
             "id": "m60_23_27_01",
             "name": "Consecrated Snowfield Southwest Cliffside",
             "tags": [
@@ -2460,6 +2579,13 @@
         {
             "id": "m60_47_55_00",
             "name": "Consecrated Snowfield - Yelough Anix Ruins, Yelough Anix Tunnel Entrance",
+            "tags": [
+                "vanilla"
+            ]
+        },
+        {
+            "id": "m60_47_55_10",
+            "name": "Consecrated Snowfield - Yelough Anix Ruins, Yelough Anix Tunnel Entrance (Alt)",
             "tags": [
                 "vanilla"
             ]
@@ -4419,7 +4545,7 @@
 		},
 		{
 			"id": "m61_44_44_10",
-			"name": "Enir-Ilim - ?",
+			"name": "Enir-Ilim - First Rise, Divine Gatefront Staircase (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4447,7 +4573,7 @@
 		},
 		{
 			"id": "m61_44_46_10",
-			"name": "",
+			"name": "Rauh Base - Scorpion River Catacombs Entrance; Ancient Ruins of Rauh - Spirit Spring Courtyard, Rot Ruins, North Church of the Bud (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4461,7 +4587,7 @@
 		},
 		{
 			"id": "m61_44_47_10",
-			"name": "",
+			"name": "Rauh Base - West Scorpion River; Ancient Ruins of Rauh - West Ruins Northwest Cliffside (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4566,7 +4692,7 @@
 		},
 		{
 			"id": "m61_45_44_10",
-			"name": "",
+			"name": "Gravesite Plain - Dragon Lake, Belurat Gaol Entrance (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4580,7 +4706,7 @@
 		},
 		{
 			"id": "m61_45_45_10",
-			"name": "",
+			"name": "Rauh Base - West of Temple Town Ruins; Ancient Ruins of Rauh - West Ruins Cave Entrance and Grace (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4594,7 +4720,7 @@
 		},
 		{
 			"id": "m61_45_46_10",
-			"name": "",
+			"name": "Rauh Base - Rot Area; Ancient Ruins of Rauh - Furnace Golem Area (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4608,7 +4734,7 @@
 		},
 		{
 			"id": "m61_45_47_10",
-			"name": "",
+			"name": "Rauh Base - Ravine North, East Scorpion River; Ancient Ruins of Rauh - West Ruins Northeast Cliffside, East Ruins Cave Exit (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4741,7 +4867,7 @@
 		},
 		{
 			"id": "m61_46_44_10",
-			"name": "",
+			"name": "Gravesite Plain - Greatbridge North, Abandoned Ailing Village, Rivermouth Cave Entrance (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4755,7 +4881,7 @@
 		},
 		{
 			"id": "m61_46_45_10",
-			"name": "",
+			"name": "Rauh Base - Temple Town Ruins; Gravesite Plain - Northern Nameless Mausoleum (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4769,7 +4895,7 @@
 		},
 		{
 			"id": "m61_46_46_10",
-			"name": "",
+			"name": "Rauh Base - North Temple Town Ruin (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4783,7 +4909,7 @@
 		},
 		{
 			"id": "m61_46_47_10",
-			"name": "",
+			"name": "Rauh Base - Fire Spritestone Cave; Ancient Ruins of Rauh - East Ruins Grace and Cave Entrance, Scorpion Cave (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4916,7 +5042,7 @@
 		},
 		{
 			"id": "m61_47_44_10",
-			"name": "",
+			"name": "Gravesite Plain - West Castle Ensis, South Fog Rift Fort (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4930,7 +5056,7 @@
 		},
 		{
 			"id": "m61_47_45_10",
-			"name": "",
+			"name": "Gravesite Plain - North Fog Rift Fort, Northern Nameless Mausoleum East Cliffside; Scadu Altus - Scadu Altus West (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4944,7 +5070,7 @@
 		},
 		{
 			"id": "m61_47_46_10",
-			"name": "",
+			"name": "Scadu Altus - Church of the Crusade; Gravesite Plain - Fog Rift Catacombs Entrance; Rauh Base - Above Fog Rift; Ancient Ruins of Rauh - Bloodfiend Ruins Southeast Cliffside (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]
@@ -4958,7 +5084,7 @@
 		},
 		{
 			"id": "m61_47_47_10",
-			"name": "",
+			"name": "Rauh Base - Bloodfiend Cave; Ancient Ruins of Rauh - Shadow Keep Exit, Viaduct Minor Tower, Bloodfiend Ruins (Unsealed)",
 			"tags": [
 				"shadow of the erdtree", "sote", "dlc"
 			]

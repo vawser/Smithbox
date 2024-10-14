@@ -108,9 +108,9 @@ Text Editor:
  - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
  
 # PRIORITY
-- ADD: sync with X Language
-- RESTORE: FMG Import/Export
-- RESTORE: global text search and replace
+- ADD: FMG Import/Export
 
-- RESTORE: Duplicate Rows
-- RESTORE: Delete Rows
+- ADD: sync with X Language
+- ADD: global text search and replace
+- ADD: Duplicate Rows
+- ADD: Delete Rows

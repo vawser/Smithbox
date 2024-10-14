@@ -258,7 +258,12 @@ public class MapSearchProperties
             }
 
             ImGui.EndChild();
-        } 
+        }
+        else
+        {
+
+            ImGui.Text($"No map objects found.");
+        }
     }
 
     public bool newSearch = false;
