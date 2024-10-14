@@ -42,6 +42,8 @@ public class DeleteFmgEntry : EditorAction
         Fmg.Entries.RemoveAt(InsertionIndex);
         Info.IsModified = true;
 
+        Smithbox.EditorHandler.TextEditor.DifferenceManager.TrackFmgDifferences();
+
         return ActionEvent.NoEvent;
     }
 
@@ -49,6 +51,8 @@ public class DeleteFmgEntry : EditorAction
     {
         Fmg.Entries.Insert(InsertionIndex, OldEntry);
         Info.IsModified = false;
+
+        Smithbox.EditorHandler.TextEditor.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }

@@ -28,8 +28,6 @@ public class TimeActActionHandler
 {
     private ActionManager EditorActionManager;
     private TimeActEditorScreen Screen;
-    private TimeActDecorator Decorator;
-    private TimeActSelectionManager Selection;
 
     public bool ShowCreateEventModal = false;
     private TAE.Template.EventTemplate CurrentEvent;
@@ -38,9 +36,6 @@ public class TimeActActionHandler
     {
         Screen = screen;
         EditorActionManager = screen.EditorActionManager;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
-
     }
 
     /// <summary>
@@ -122,14 +117,13 @@ public class TimeActActionHandler
     /// </summary>
     private void CreateEventModal()
     {
-
         // Create Event Popup
         if (ImGui.BeginPopupModal("Create Event", ref ShowCreateEventModal, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize))
         {
             Vector2 listboxSize = new Vector2(520, 400);
             Vector2 buttonSize = new Vector2(520 * 0.5f, 24);
 
-            TAE.Event curEvent = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeActEvent;
+            TAE.Event curEvent = Screen.Selection.CurrentTimeActEvent;
             TAE.Template curTemplate = TimeActUtils.GetRelevantTemplate(TimeActTemplateType.Character);
 
             if (curEvent != null && curTemplate != null)
@@ -163,7 +157,7 @@ public class TimeActActionHandler
                     TAE.Event newEvent = new TAE.Event(curEvent.StartTime, curEvent.EndTime, CurrentEvent.ID, curEvent.Unk04, false, CurrentEvent);
                     newEvent.Group = curEvent.Group;
 
-                    TAE.Animation animation = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeActAnimation;
+                    TAE.Animation animation = Screen.Selection.CurrentTimeActAnimation;
                     int insertIdx = animation.Events.IndexOf(curEvent) + 1;
 
                     EditorActionManager.ExecuteAction(new TaeEventCreate(newEvent, animation.Events, insertIdx));
@@ -186,15 +180,18 @@ public class TimeActActionHandler
     /// </summary>
     public void DuplicateTimeAct()
     {
-        if (Selection.CurrentTimeAct == null)
+        if (Screen.Selection == null)
             return;
 
-        if (Selection.CurrentTimeActKey == -1)
+        if (Screen.Selection.CurrentTimeAct == null)
             return;
 
-        Selection.ContainerInfo.IsModified = true;
+        if (Screen.Selection.CurrentTimeActKey == -1)
+            return;
 
-        InternalTimeActWrapper curInternalFile = Selection.ContainerInfo.InternalFiles[Selection.CurrentTimeActKey];
+        Screen.Selection.ContainerInfo.IsModified = true;
+
+        InternalTimeActWrapper curInternalFile = Screen.Selection.ContainerInfo.InternalFiles[Screen.Selection.CurrentTimeActKey];
         InternalTimeActWrapper newInternalFile = new InternalTimeActWrapper(curInternalFile.Filepath, curInternalFile.TAE.Clone());
 
         int id = int.Parse(newInternalFile.Name.Substring(1));
@@ -211,21 +208,21 @@ public class TimeActActionHandler
         newInternalFile.MarkForAddition = true;
 
         // Inserts the new internal file at the right position in the list
-        for (int i = 0; i < Selection.ContainerInfo.InternalFiles.Count; i++)
+        for (int i = 0; i < Screen.Selection.ContainerInfo.InternalFiles.Count; i++)
         {
-            InternalTimeActWrapper curFile = Selection.ContainerInfo.InternalFiles[i];
+            InternalTimeActWrapper curFile = Screen.Selection.ContainerInfo.InternalFiles[i];
             int curId = int.Parse(curFile.Name.Substring(1));
 
-            if (curId == (newId-1))
+            if (curId == newId)
             {
-                EditorActionManager.ExecuteAction(new TimeActDuplicate(newInternalFile, Selection.ContainerInfo.InternalFiles, i + 1));
+                EditorActionManager.ExecuteAction(new TimeActDuplicate(newInternalFile, Screen.Selection.ContainerInfo.InternalFiles, i + 1));
                 break;
             }
         }
 
-        Selection.ContainerInfo.InternalFiles.Sort();
+        Screen.Selection.ContainerInfo.InternalFiles.Sort();
 
-        Selection.ResetOnTimeActChange();
+        Screen.Selection.ResetOnTimeActChange();
     }
 
     /// <summary>
@@ -233,19 +230,22 @@ public class TimeActActionHandler
     /// </summary>
     public void DeleteTimeAct()
     {
-        if (Selection.CurrentTimeAct == null)
+        if (Screen.Selection == null)
             return;
 
-        if (Selection.CurrentTimeActKey == -1)
+        if (Screen.Selection.CurrentTimeAct == null)
             return;
 
-        Selection.ContainerInfo.IsModified = true;
+        if (Screen.Selection.CurrentTimeActKey == -1)
+            return;
 
-        InternalTimeActWrapper curInternalFile = Selection.ContainerInfo.InternalFiles[Selection.CurrentTimeActKey];
+        Screen.Selection.ContainerInfo.IsModified = true;
+
+        InternalTimeActWrapper curInternalFile = Screen.Selection.ContainerInfo.InternalFiles[Screen.Selection.CurrentTimeActKey];
 
         EditorActionManager.ExecuteAction(new TimeActDelete(curInternalFile));
 
-        Selection.ResetOnTimeActChange();
+        Screen.Selection.ResetOnTimeActChange();
     }
 
     /// <summary>
@@ -253,15 +253,18 @@ public class TimeActActionHandler
     /// </summary>
     public void DuplicateAnimation()
     {
-        if (Selection.CurrentTimeActAnimation == null)
+        if (Screen.Selection == null)
             return;
 
-        if (Selection.CurrentTimeActAnimationIndex == -1)
+        if (Screen.Selection.CurrentTimeActAnimation == null)
             return;
 
-        Selection.ContainerInfo.IsModified = true;
+        if (Screen.Selection.CurrentTimeActAnimationIndex == -1)
+            return;
 
-        TAE timeact = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeAct;
+        Screen.Selection.ContainerInfo.IsModified = true;
+
+        TAE timeact = Screen.Selection.CurrentTimeAct;
         SortedDictionary<int, TAE.Animation> storedAnims = Screen.Selection.StoredAnimations;
         int lastAnimIdx = -1;
 
@@ -316,16 +319,19 @@ public class TimeActActionHandler
     /// </summary>
     public void DeleteAnimation()
     {
-        if (Selection.CurrentTimeActAnimation == null)
+        if (Screen.Selection == null)
             return;
 
-        if (Selection.CurrentTimeActAnimationIndex == -1)
+        if (Screen.Selection.CurrentTimeActAnimation == null)
             return;
 
-        Selection.ContainerInfo.IsModified = true;
+        if (Screen.Selection.CurrentTimeActAnimationIndex == -1)
+            return;
+
+        Screen.Selection.ContainerInfo.IsModified = true;
 
         SortedDictionary<int, TAE.Animation> storedAnims = Screen.Selection.StoredAnimations;
-        TAE timeact = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeAct;
+        TAE timeact = Screen.Selection.CurrentTimeAct;
 
         // Single
         if (storedAnims.Count <= 1)
@@ -366,13 +372,16 @@ public class TimeActActionHandler
     /// </summary>
     public void CreateEvent()
     {
-        if (Selection.CurrentTimeActEvent == null)
+        if (Screen.Selection == null)
             return;
 
-        if (Selection.CurrentTimeActEventIndex == -1)
+        if (Screen.Selection.CurrentTimeActEvent == null)
             return;
 
-        Selection.ContainerInfo.IsModified = true;
+        if (Screen.Selection.CurrentTimeActEventIndex == -1)
+            return;
+
+        Screen.Selection.ContainerInfo.IsModified = true;
 
         ShowCreateEventModal = true;
 
@@ -384,16 +393,19 @@ public class TimeActActionHandler
     /// </summary>
     public void DuplicateEvent()
     {
-        if (Selection.CurrentTimeActEvent == null)
+        if (Screen.Selection == null)
             return;
 
-        if (Selection.CurrentTimeActEventIndex == -1)
+        if (Screen.Selection.CurrentTimeActEvent == null)
             return;
 
-        Selection.ContainerInfo.IsModified = true;
+        if (Screen.Selection.CurrentTimeActEventIndex == -1)
+            return;
+
+        Screen.Selection.ContainerInfo.IsModified = true;
 
         SortedDictionary<int, TAE.Event> storedEvents = Screen.Selection.StoredEvents;
-        TAE.Animation animations = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeActAnimation;
+        TAE.Animation animations = Screen.Selection.CurrentTimeActAnimation;
 
         int lastEventIdx = -1;
 
@@ -441,16 +453,19 @@ public class TimeActActionHandler
     /// </summary>
     public void DeleteEvent()
     {
-        if (Selection.CurrentTimeActEvent == null)
+        if (Screen.Selection == null)
             return;
 
-        if (Selection.CurrentTimeActEventIndex == -1)
+        if (Screen.Selection.CurrentTimeActEvent == null)
             return;
 
-        Selection.ContainerInfo.IsModified = true;
+        if (Screen.Selection.CurrentTimeActEventIndex == -1)
+            return;
+
+        Screen.Selection.ContainerInfo.IsModified = true;
 
         SortedDictionary<int, TAE.Event> storedEvents = Screen.Selection.StoredEvents;
-        TAE.Animation animations = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTimeActAnimation;
+        TAE.Animation animations = Screen.Selection.CurrentTimeActAnimation;
 
         // Single
         if (storedEvents.Count <= 1)
@@ -492,13 +507,13 @@ public class TimeActActionHandler
     /// </summary>
     public void OrderAnimation()
     {
-        if (Selection.CurrentTimeActAnimation == null)
+        if (Screen.Selection.CurrentTimeActAnimation == null)
             return;
 
-        if (Selection.CurrentTimeActAnimationIndex == -1)
+        if (Screen.Selection.CurrentTimeActAnimationIndex == -1)
             return;
 
-        Selection.ContainerInfo.IsModified = true;
+        Screen.Selection.ContainerInfo.IsModified = true;
     }
 
     /// <summary>
@@ -506,13 +521,13 @@ public class TimeActActionHandler
     /// </summary>
     public void OrderEvent()
     {
-        if (Selection.CurrentTimeActEvent == null)
+        if (Screen.Selection.CurrentTimeActEvent == null)
             return;
 
-        if (Selection.CurrentTimeActEventIndex == -1)
+        if (Screen.Selection.CurrentTimeActEventIndex == -1)
             return;
 
-        Selection.ContainerInfo.IsModified = true;
+        Screen.Selection.ContainerInfo.IsModified = true;
     }
 
     /// <summary>
@@ -524,7 +539,7 @@ public class TimeActActionHandler
         string newName = $"a{PadFileName(trackedId)}";
 
         // If there are matches, keep incrementing
-        foreach (var file in Selection.ContainerInfo.InternalFiles)
+        foreach (var file in Screen.Selection.ContainerInfo.InternalFiles)
         {
             if (file.Name == newName)
             {
@@ -559,7 +574,7 @@ public class TimeActActionHandler
         int newID = id + 1;
 
         // If there are matches, keep incrementing
-        foreach (InternalTimeActWrapper file in Selection.ContainerInfo.InternalFiles)
+        foreach (InternalTimeActWrapper file in Screen.Selection.ContainerInfo.InternalFiles)
         {
             if (file.TAE.ID == newID)
             {
@@ -579,9 +594,9 @@ public class TimeActActionHandler
         int insertIdx = 0;
 
         // If there are matches, keep incrementing
-        for (int i = 0; i < Selection.CurrentTimeAct.Animations.Count; i++)
+        for (int i = 0; i < Screen.Selection.CurrentTimeAct.Animations.Count; i++)
         {
-            TAE.Animation anim = Selection.CurrentTimeAct.Animations[i];
+            TAE.Animation anim = Screen.Selection.CurrentTimeAct.Animations[i];
 
             if (anim.ID == newID)
             {
