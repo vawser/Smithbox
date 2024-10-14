@@ -14,8 +14,11 @@ public class AddFmgEntry : EditorAction
     private FMG.Entry NewEntry;
     private int InsertionIndex;
 
-    public AddFmgEntry(FMG.Entry sourceEntry, FMG.Entry newEntry, int newID)
+    private TextContainerInfo Info;
+
+    public AddFmgEntry(TextContainerInfo info, FMG.Entry sourceEntry, FMG.Entry newEntry, int newID)
     {
+        Info = info;
         Fmg = sourceEntry.Parent;
         NewEntry = newEntry;
         NewEntry.ID = newID;
@@ -37,6 +40,7 @@ public class AddFmgEntry : EditorAction
     public override ActionEvent Execute()
     {
         Fmg.Entries.Insert(InsertionIndex, NewEntry);
+        Info.IsModified = true;
 
         return ActionEvent.NoEvent;
     }
@@ -44,6 +48,7 @@ public class AddFmgEntry : EditorAction
     public override ActionEvent Undo()
     {
         Fmg.Entries.RemoveAt(InsertionIndex);
+        Info.IsModified = false;
 
         return ActionEvent.NoEvent;
     }

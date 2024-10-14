@@ -25,13 +25,15 @@ public class TextSelectionManager
     public int _selectedFmgEntryIndex;
     public FMG.Entry _selectedFmgEntry;
 
-    public Multiselection FmgEntryMultiselect;
+    public TextMultiselection FmgEntryMultiselect;
 
     public bool SelectNextFileContainer;
     public bool SelectNextFmg;
     public bool SelectNextFmgEntry;
 
-    public bool FocusSelection;
+    public bool FocusFileSelection;
+    public bool FocusFmgSelection;
+    public bool FocusFmgEntrySelection;
 
     private KeyBind MultiSelectKey = KeyBindings.Current.TEXT_Multiselect;
 
@@ -41,7 +43,7 @@ public class TextSelectionManager
     {
         Screen = screen;
 
-        FmgEntryMultiselect = new Multiselection(MultiSelectKey);
+        FmgEntryMultiselect = new TextMultiselection(MultiSelectKey);
     }
 
     public void OnProjectChanged()
@@ -59,9 +61,12 @@ public class TextSelectionManager
         SelectNextFileContainer = false;
         SelectNextFmg = false;
         SelectNextFmgEntry = false;
-        FocusSelection = false;
 
-        FmgEntryMultiselect = new Multiselection(MultiSelectKey);
+        FocusFileSelection = false;
+        FocusFmgSelection = false;
+        FocusFmgEntrySelection = false;
+
+        FmgEntryMultiselect = new TextMultiselection(MultiSelectKey);
     }
 
     /// <summary>
@@ -96,7 +101,7 @@ public class TextSelectionManager
         SelectedFmgKey = fmgInfo.ID;
         SelectedFmg = fmgInfo.File;
 
-        FmgEntryMultiselect = new Multiselection(MultiSelectKey);
+        FmgEntryMultiselect = new TextMultiselection(MultiSelectKey);
 
         _selectedFmgEntryIndex = -1;
         _selectedFmgEntry = null;
@@ -134,7 +139,7 @@ public class TextSelectionManager
         if(changeContext)
             CurrentSelectionContext = TextSelectionContext.FmgEntry;
 
-        FmgEntryMultiselect.HandleMultiselect(_selectedFmgEntryIndex, index);
+        FmgEntryMultiselect.HandleMultiselect(_selectedFmgEntryIndex, index, entry);
 
         _selectedFmgEntryIndex = index;
         _selectedFmgEntry = entry;

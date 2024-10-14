@@ -173,14 +173,14 @@ public class TextFmgEntryPropertyEditor
         // Update the ID if it was changed and the id input was exited
         if(idChanged && idCommit)
         {
-            var action = new ChangeFmgEntryID(entry, id);
+            var action = new ChangeFmgEntryID(Selection.SelectedContainer, entry, id);
             Screen.EditorActionManager.ExecuteAction(action);
         }
 
         // Update the Text if it was changed and the text input was exited
         if (textChanged && textCommit)
         {
-            var action = new ChangeFmgEntryText(entry, contents);
+            var action = new ChangeFmgEntryText(Selection.SelectedContainer, entry, contents);
             Screen.EditorActionManager.ExecuteAction(action);
         }
     }

@@ -91,9 +91,9 @@ public class TextFmgView
                                 ContextMenu.FmgContextMenu(fmgInfo);
                             }
 
-                            if (Selection.FocusSelection && Selection.SelectedFmgKey == id)
+                            if (Selection.FocusFmgSelection && Selection.SelectedFmgKey == id)
                             {
-                                Selection.FocusSelection = false;
+                                Selection.FocusFmgSelection = false;
                                 ImGui.SetScrollHereY();
                             }
                         }

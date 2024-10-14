@@ -11,14 +11,15 @@ namespace StudioCore.Editors.TextEditor;
 public class DuplicateFmgEntry : EditorAction
 {
     private FMG Fmg;
-    private FMG.Entry Entry;
     private FMG.Entry NewEntry;
     private int InsertionIndex;
 
-    public DuplicateFmgEntry(FMG currentFmg, FMG.Entry entry, int newID)
+    private TextContainerInfo Info;
+
+    public DuplicateFmgEntry(TextContainerInfo info, FMG currentFmg, FMG.Entry entry, int newID)
     {
+        Info = info;
         Fmg = currentFmg;
-        Entry = entry;
         NewEntry = entry.Clone();
         NewEntry.ID = newID;
         InsertionIndex = -1;
@@ -27,9 +28,10 @@ public class DuplicateFmgEntry : EditorAction
         {
             var curEntry = Fmg.Entries[i];
 
-            if(curEntry.ID == entry.ID)
+            if(curEntry.ID > NewEntry.ID)
             {
                 InsertionIndex = i;
+                break;
             }
         }
     }
@@ -37,6 +39,7 @@ public class DuplicateFmgEntry : EditorAction
     public override ActionEvent Execute()
     {
         Fmg.Entries.Insert(InsertionIndex, NewEntry);
+        Info.IsModified = true;
 
         return ActionEvent.NoEvent;
     }
@@ -44,6 +47,7 @@ public class DuplicateFmgEntry : EditorAction
     public override ActionEvent Undo()
     {
         Fmg.Entries.RemoveAt(InsertionIndex);
+        Info.IsModified = false;
 
         return ActionEvent.NoEvent;
     }

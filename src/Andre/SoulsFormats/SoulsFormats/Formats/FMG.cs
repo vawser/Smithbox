@@ -9,6 +9,8 @@ namespace SoulsFormats
     /// </summary>
     public class FMG : SoulsFile<FMG>
     {
+        public string Name { get; set; }
+
         /// <summary>
         /// The strings contained in this FMG.
         /// </summary>

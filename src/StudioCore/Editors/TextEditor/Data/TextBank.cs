@@ -18,11 +18,6 @@ public static class TextBank
     public static bool VanillaBankLoaded = false;
     public static bool VanillaBankLoading = false;
 
-    /// <summary>
-    /// This is the primary category to search in for FMG references and the like.
-    /// </summary>
-    public static TextContainerCategory PrimaryCategory = TextContainerCategory.English;
-
     public static SortedDictionary<string, TextContainerInfo> FmgBank { get; private set; } = new();
 
     public static SortedDictionary<string, TextContainerInfo> VanillaFmgBank { get; private set; } = new();
@@ -37,8 +32,6 @@ public static class TextBank
 
         FmgBank = new();
         VanillaFmgBank = new();
-
-        PrimaryCategory = CFG.Current.TextEditor_PrimaryCategory;
 
         TaskManager.Run(
             new TaskManager.LiveTask($"Setup Text Editor - Primary Bank", TaskManager.RequeueType.None, false,
@@ -129,6 +122,7 @@ public static class TextBank
 
         var id = -1;
         var fmg = FMG.Read(path);
+        fmg.Name = name; // Assign this to make it easier to grab FMGs
 
         FmgInfo fmgInfo = new(id, name, fmg);
         fmgInfos.Add(fmgInfo);
@@ -168,6 +162,7 @@ public static class TextBank
                         var fmgName = Path.GetFileName(file.Name);
                         var id = file.ID;
                         var fmg = FMG.Read(file.Bytes);
+                        fmg.Name = fmgName;
 
                         FmgInfo fmgInfo = new(id, fmgName, fmg);
                         fmgInfos.Add(fmgInfo);
@@ -186,6 +181,7 @@ public static class TextBank
                         var fmgName = Path.GetFileName(file.Name);
                         var id = file.ID;
                         var fmg = FMG.Read(file.Bytes);
+                        fmg.Name = fmgName;
 
                         FmgInfo fmgInfo = new(id, fmgName, fmg);
                         fmgInfos.Add(fmgInfo);

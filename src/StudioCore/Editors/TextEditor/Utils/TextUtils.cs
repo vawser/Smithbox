@@ -378,7 +378,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(Item_MsgBndID_DS1), id))
                     {
                         var enumObj = (Item_MsgBndID_DS1)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -390,7 +390,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(Menu_MsgBndID_DS1), id))
                     {
                         var enumObj = (Menu_MsgBndID_DS1)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -405,7 +405,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(TalkFmgName_DS2), id))
                     {
                         var enumObj = (TalkFmgName_DS2)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -417,7 +417,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(BloodMessageFmgName_DS2), id))
                     {
                         var enumObj = (BloodMessageFmgName_DS2)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -429,7 +429,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(CommonFmgName_DS2), id))
                     {
                         var enumObj = (CommonFmgName_DS2)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -443,7 +443,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(Item_MsgBndID_BB), id))
                     {
                         var enumObj = (Item_MsgBndID_BB)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -455,7 +455,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(Menu_MsgBndID_BB), id))
                     {
                         var enumObj = (Menu_MsgBndID_BB)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -469,7 +469,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(Item_MsgBndID_DS3), id))
                     {
                         var enumObj = (Item_MsgBndID_DS3)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -481,7 +481,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(Menu_MsgBndID_DS3), id))
                     {
                         var enumObj = (Menu_MsgBndID_DS3)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -493,7 +493,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(NgWord_MsgBndID_DS3), id))
                     {
                         var enumObj = (NgWord_MsgBndID_DS3)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -507,7 +507,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(Item_MsgBndID_SDT), id))
                     {
                         var enumObj = (Item_MsgBndID_SDT)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -519,7 +519,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(Menu_MsgBndID_SDT), id))
                     {
                         var enumObj = (Menu_MsgBndID_SDT)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -531,7 +531,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(SellRegion_MsgBndID_SDT), id))
                     {
                         var enumObj = (SellRegion_MsgBndID_SDT)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -545,7 +545,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(Item_MsgBndID_ER), id))
                     {
                         var enumObj = (Item_MsgBndID_ER)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -557,7 +557,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(Menu_MsgBndID_ER), id))
                     {
                         var enumObj = (Menu_MsgBndID_ER)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -569,7 +569,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(NgWord_MsgBndID_ER), id))
                     {
                         var enumObj = (NgWord_MsgBndID_ER)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -581,7 +581,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(SellRegion_MsgBndID_ER), id))
                     {
                         var enumObj = (SellRegion_MsgBndID_ER)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -595,7 +595,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(Item_MsgBndID_AC6), id))
                     {
                         var enumObj = (Item_MsgBndID_AC6)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -607,7 +607,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(Menu_MsgBndID_AC6), id))
                     {
                         var enumObj = (Menu_MsgBndID_AC6)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {
@@ -619,7 +619,7 @@ public static class TextUtils
                     if (Enum.IsDefined(typeof(NgWord_MsgBndID_AC6), id))
                     {
                         var enumObj = (NgWord_MsgBndID_AC6)id;
-                        name = enumObj.GetDisplayName();
+                        name = enumObj.ToString();
                     }
                     else
                     {

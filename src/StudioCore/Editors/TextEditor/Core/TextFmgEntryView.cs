@@ -81,13 +81,15 @@ public class TextFmgEntryView
                             }
                         }
 
-                        if (DifferenceManager.IsDifferentToVanilla(entry))
-                        {
-                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedRow_Text);
-                        }
+                        // Unique rows
                         if (DifferenceManager.IsUniqueToProject(entry))
                         {
                             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_UniqueRow_Text);
+                        }
+                        // Modified rows
+                        else if (DifferenceManager.IsDifferentToVanilla(entry))
+                        {
+                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedRow_Text);
                         }
 
                         // Script row
@@ -96,11 +98,8 @@ public class TextFmgEntryView
                             Selection.SelectFmgEntry(i, entry);
                         }
 
-                        if(DifferenceManager.IsDifferentToVanilla(entry))
-                        {
-                            ImGui.PopStyleColor(1);
-                        }
-                        if (DifferenceManager.IsUniqueToProject(entry))
+                        if (DifferenceManager.IsUniqueToProject(entry) || 
+                            DifferenceManager.IsDifferentToVanilla(entry))
                         {
                             ImGui.PopStyleColor(1);
                         }
@@ -132,19 +131,20 @@ public class TextFmgEntryView
                                 // Select All
                                 if (InputTracker.GetKey(KeyBindings.Current.TEXT_SelectAll))
                                 {
-                                    Selection.FmgEntryMultiselect.StoredIndices.Clear();
+                                    Selection.FmgEntryMultiselect.StoredEntries.Clear();
                                     for (int j = 0; j < Selection.SelectedFmg.Entries.Count; j++)
                                     {
-                                        Selection.FmgEntryMultiselect.StoredIndices.Add(j);
+                                        var tEntry = Selection.SelectedFmg.Entries[j];
+                                        Selection.FmgEntryMultiselect.StoredEntries.Add(j, tEntry);
                                     }
                                 }
                             }
                         }
 
                         // Focus Selection
-                        if (Selection.FocusSelection && Selection.IsFmgEntrySelected(i))
+                        if (Selection.FocusFmgEntrySelection && Selection.IsFmgEntrySelected(i))
                         {
-                            Selection.FocusSelection = false;
+                            Selection.FocusFmgEntrySelection = false;
                             ImGui.SetScrollHereY();
                         }
 

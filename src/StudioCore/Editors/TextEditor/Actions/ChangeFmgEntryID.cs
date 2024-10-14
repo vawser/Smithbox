@@ -14,8 +14,11 @@ public class ChangeFmgEntryID : EditorAction
     private int NewID;
     private int OldID;
 
-    public ChangeFmgEntryID(FMG.Entry entry, int newId)
+    private TextContainerInfo Info;
+
+    public ChangeFmgEntryID(TextContainerInfo info, FMG.Entry entry, int newId)
     {
+        Info = info;
         Entry = entry;
         NewID = newId;
         OldID = entry.ID;
@@ -24,6 +27,7 @@ public class ChangeFmgEntryID : EditorAction
     public override ActionEvent Execute()
     {
         Entry.ID = NewID;
+        Info.IsModified = true;
 
         Smithbox.EditorHandler.TextEditor.DifferenceManager.TrackFmgDifferences();
 
@@ -33,6 +37,7 @@ public class ChangeFmgEntryID : EditorAction
     public override ActionEvent Undo()
     {
         Entry.ID = OldID;
+        Info.IsModified = false;
 
         Smithbox.EditorHandler.TextEditor.DifferenceManager.TrackFmgDifferences();
 

@@ -19,74 +19,53 @@ public class TextCommandQueue
 
     public void Parse(string[] initcmd)
     {
-        var doFocus = false;
-
-        // text / select / container name / fmg name / fmg entry id
+        // text / select / category / container name / fmg name / fmg entry id
         if (initcmd != null && initcmd[0] == "select")
         {
-            if (initcmd.Length > 1)
+            if (initcmd.Length > 4)
             {
+                var category = initcmd[1];
+                var containerName = initcmd[2];
+                var fmgName = initcmd[3];
+                var fmgEntryId = initcmd[4];
 
-                /*
-                // Select FMG
-                doFocus = true;
-                // Use three possible keys: entry category is for param references,
-                // binder id and FMG name are for soapstone references.
-                // This can be revisited as more high-level categories get added.
-                int? searchId = null;
-                FmgEntryCategory? searchCategory = null;
-                string searchName = null;
-                if (int.TryParse(initcmd[1], out var intId) && intId >= 0)
-                {
-                    searchId = intId;
-                }
-                // Enum.TryParse allows arbitrary ints (thanks C#), so checking definition is required
-                else if (Enum.TryParse(initcmd[1], out FmgEntryCategory cat)
-                         && Enum.IsDefined(typeof(FmgEntryCategory), cat))
-                {
-                    searchCategory = cat;
-                }
-                else
-                {
-                    searchName = initcmd[1];
-                }
+                var index = 0;
 
-                foreach (FMGInfo info in currentFmgBank.FmgInfoBank)
+                foreach (var (path, info) in TextBank.FmgBank)
                 {
-                    var match = false;
-                    // This matches top-level item FMGs
-                    if (info.EntryCategory.Equals(searchCategory) && info.PatchParent == null
-                                                                  && info.EntryType is FmgEntryTextType.Title
-                                                                      or FmgEntryTextType.TextBody)
+                    if(info.Category.ToString() == category)
                     {
-                        match = true;
-                    }
-                    else if (searchId is int binderId && binderId == (int)info.FmgID)
-                    {
-                        match = true;
-                    }
-                    else if (info.Name == searchName)
-                    {
-                        match = true;
+                        if(info.Name == containerName)
+                        {
+                            Screen.Selection.FocusFileSelection = true;
+                            Screen.Selection.SelectFileContainer(info, index);
+
+                            foreach (var fmg in info.FmgInfos)
+                            {
+                                if(fmg.Name == fmgName)
+                                {
+                                    Screen.Selection.FocusFmgSelection = true;
+                                    Screen.Selection.SelectFmg(fmg, false);
+
+                                    var entryIndex = 0;
+
+                                    foreach (var entry in fmg.File.Entries)
+                                    {
+                                        if($"{entry.ID}" == fmgEntryId)
+                                        {
+                                            Screen.Selection.FocusFmgEntrySelection = true;
+                                            Screen.Selection.SelectFmgEntry(entryIndex, entry, false);
+                                        }
+
+                                        entryIndex++;
+                                    }
+                                }
+                            }
+                        }
                     }
 
-                    if (match)
-                    {
-                        _activeFmgInfo = info;
-                        break;
-                    }
+                    index++;
                 }
-
-                if (initcmd.Length > 2 && _activeFmgInfo != null)
-                {
-                    // Select Entry
-                    var parsed = int.TryParse(initcmd[2], out var id);
-                    if (parsed)
-                    {
-                        _activeEntryGroup = currentFmgBank.GenerateEntryGroup(id, _activeFmgInfo);
-                    }
-                }
-                */
             }
         }
     }

@@ -12,8 +12,8 @@ public class TextContainerInfo : IComparable<TextContainerInfo>
     public string Name { get; private set; }
     public string AbsolutePath { get; private set; }
 
-    public bool IsModified { get; private set; }
-    public bool HasUnsavedChanges { get; private set; }
+    public bool IsModified { get; set; }
+    public bool HasUnsavedChanges { get; set; }
 
     public DCX.Type CompressionType { get; private set; }
 

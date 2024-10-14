@@ -454,7 +454,7 @@ public class EmevdPropertyDecorator
         {
             if (parameterName == "Name ID")
             {
-                ConstructTextReference("TitleCharacters", value, i);
+                ConstructTextReference("Title_Characters", value, i);
             }
         }
     }
@@ -855,7 +855,7 @@ public class EmevdPropertyDecorator
             {
                 if (ImGui.Selectable($"Go to {result.Entry.ID} ({result.Entry.Text})"))
                 {
-                    EditorCommandQueue.AddCommand($@"text/select/{result.Info.Name}/{fmgName}/{result.Entry.ID}");
+                    EditorCommandQueue.AddCommand($@"text/select/{result.Info.Category}/{result.Info.Name}/{result.FmgName}/{result.Entry.ID}");
                 }
 
                 ImGui.EndPopup();

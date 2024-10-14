@@ -104,14 +104,12 @@ Model Editor:
 # Notes
 #--------------------------------------
 Text Editor:
- - ADD: FMG Generator script creation modal
- - ADD: FMG Generator open script folder (for project)
+ - ADD: Name Template create tool
  - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
  
 # PRIORITY
 - ADD: sync with X Language
 - RESTORE: FMG Import/Export
-- RESTORE: global text search
 - RESTORE: global text search and replace
 
 - RESTORE: Duplicate Rows

@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Andre.Formats;
+using StudioCore.Editor;
+using HKLib.hk2018.hkWeakPtrTest;
+using Silk.NET.OpenGL;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -30,10 +33,12 @@ public class FMGItemParamDecorator : IParamDecorator
     private readonly Dictionary<int, FMG.Entry> _entryCache = new();
 
     private string ParamName;
+    private string CommandLine;
 
     public FMGItemParamDecorator(string paramName)
     {
         ParamName = paramName;
+        CommandLine = "";
     }
 
     public void ClearDecoratorCache()
@@ -65,13 +70,44 @@ public class FMGItemParamDecorator : IParamDecorator
             return;
         }
 
-        // TODO: restore this
-        /*
-        if (ImGui.Selectable($@"Goto {_category.ToString()} Text"))
+        if (CommandLine == "")
         {
-            EditorCommandQueue.AddCommand($@"text/select/{_category.ToString()}/{row.ID}");
+            var category = CFG.Current.TextEditor_PrimaryCategory.ToString();
+            if (_entryCache.Values.Count > 0)
+            {
+                var cachedEntry = _entryCache.Values.Where(e => e.ID == row.ID).FirstOrDefault();
+
+                var containerName = "";
+                var fmg = cachedEntry.Parent;
+                var fmgName = fmg.Name;
+
+                foreach (var (path, entry) in TextBank.FmgBank)
+                {
+                    if (entry.Category == CFG.Current.TextEditor_PrimaryCategory)
+                    {
+                        foreach(var fmgInfo in entry.FmgInfos)
+                        {
+                            if(fmgInfo.Name == fmgName)
+                            {
+                                containerName = entry.Name;
+                            }
+                        }
+                    }
+                }
+
+                CommandLine = $@"text/select/{category}/{containerName}/{fmgName}/{row.ID}";
+            }
         }
-        */
+        else
+        {
+            if (CommandLine != "")
+            {
+                if (ImGui.Selectable($@"Go to Text"))
+                {
+                    EditorCommandQueue.AddCommand(CommandLine);
+                }
+            }
+        }
     }
 
     private void PopulateDecorator()

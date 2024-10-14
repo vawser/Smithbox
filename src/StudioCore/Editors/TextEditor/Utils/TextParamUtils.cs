@@ -18,7 +18,7 @@ public static class TextParamUtils
         {
             foreach(var (path, entry) in TextBank.FmgBank)
             {
-                if (entry.Category == TextBank.PrimaryCategory)
+                if (entry.Category == CFG.Current.TextEditor_PrimaryCategory)
                 {
                     foreach (var fmgInfo in entry.FmgInfos)
                     {

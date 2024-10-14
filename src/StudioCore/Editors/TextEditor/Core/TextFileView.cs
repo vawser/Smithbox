@@ -54,7 +54,7 @@ public class TextFileView
                 {
                     ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags.None;
 
-                    if (category == TextBank.PrimaryCategory)
+                    if (category == CFG.Current.TextEditor_PrimaryCategory)
                     {
                         flags = ImGuiTreeNodeFlags.DefaultOpen;
                     }
@@ -123,9 +123,9 @@ public class TextFileView
                     ContextMenu.FileContextMenu(info);
                 }
 
-                if (Selection.FocusSelection && Selection.SelectedContainerKey == index)
+                if (Selection.FocusFileSelection && Selection.SelectedContainerKey == index)
                 {
-                    Selection.FocusSelection = false;
+                    Selection.FocusFileSelection = false;
                     ImGui.SetScrollHereY();
                 }
             }
@@ -141,7 +141,7 @@ public class TextFileView
     {
         if (CFG.Current.TextEditor_DisplayPrimaryCategoryOnly)
         {
-            if (category == TextBank.PrimaryCategory)
+            if (category == CFG.Current.TextEditor_PrimaryCategory)
             {
                 return true;
             }

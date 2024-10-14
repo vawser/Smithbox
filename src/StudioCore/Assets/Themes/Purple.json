@@ -391,6 +391,10 @@
         0,
         1
     ],
+    
+    "ImGui_TextEditor_ModifiedRow_Text": [ 1.0, 1.0, 0.0, 1 ],
+    "ImGui_TextEditor_UniqueRow_Text": [ 0.409, 0.967, 0.693, 1.0 ],
+    
     "DisplayGroupEditor_Border_Highlight": [
         1,
         0.2,

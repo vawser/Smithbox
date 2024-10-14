@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using HKLib.hk2018.hkAsyncThreadPool;
+using SoulsFormats;
 using StudioCore.Editor;
 using System;
 using System.Collections.Generic;
@@ -15,8 +16,11 @@ public class DeleteFmgEntry : EditorAction
     private FMG.Entry OldEntry;
     private int InsertionIndex;
 
-    public DeleteFmgEntry(FMG currentFmg, FMG.Entry entry)
+    private TextContainerInfo Info;
+
+    public DeleteFmgEntry(TextContainerInfo info, FMG currentFmg, FMG.Entry entry)
     {
+        Info = info;
         Fmg = currentFmg;
         Entry = entry;
         OldEntry = entry.Clone();
@@ -36,6 +40,7 @@ public class DeleteFmgEntry : EditorAction
     public override ActionEvent Execute()
     {
         Fmg.Entries.RemoveAt(InsertionIndex);
+        Info.IsModified = true;
 
         return ActionEvent.NoEvent;
     }
@@ -43,6 +48,7 @@ public class DeleteFmgEntry : EditorAction
     public override ActionEvent Undo()
     {
         Fmg.Entries.Insert(InsertionIndex, OldEntry);
+        Info.IsModified = false;
 
         return ActionEvent.NoEvent;
     }

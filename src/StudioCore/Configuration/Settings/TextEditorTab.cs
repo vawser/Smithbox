@@ -30,7 +30,6 @@ public class TextEditorTab
                         if (ImGui.Selectable(type.GetDisplayName()))
                         {
                             CFG.Current.TextEditor_PrimaryCategory = (TextContainerCategory)entry;
-                            TextBank.PrimaryCategory = (TextContainerCategory)entry;
 
                             // Refresh the param editor FMG decorators when the category changes.
                             Smithbox.EditorHandler.ParamEditor.ClearFmgDecorators();
