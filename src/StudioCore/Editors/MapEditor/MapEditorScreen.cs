@@ -618,10 +618,22 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         Viewport.OnGui();
 
         SceneTree.OnGui();
-        PropSearch.OnGui(propSearchCmd);
+
+        if (UpdatePropSearch)
+        {
+            UpdatePropSearch = false;
+
+            PropSearch.OnGui(propSearchCmd);
+        }
 
         if (Smithbox.FirstFrame)
         {
+            ImGui.SetNextWindowFocus();
+        }
+
+        if(PropEditor.Focus)
+        {
+            PropEditor.Focus = false;
             ImGui.SetNextWindowFocus();
         }
 
@@ -673,6 +685,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     }
 
     private string[] propSearchCmd = null;
+    private bool UpdatePropSearch = false;
 
     public void MapEditorCommandLine(string[] initcmd)
     {
@@ -684,6 +697,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 propSearchCmd = initcmd.Skip(1).ToArray();
                 PropSearch.Property = PropEditor.RequestedSearchProperty;
                 PropEditor.RequestedSearchProperty = null;
+                UpdatePropSearch = true;
             }
 
             // Support loading maps through commands.

@@ -37,6 +37,8 @@ public class MapPropertyEditor
 
     private MapEditorScreen Screen;
 
+    public bool Focus = false;
+
     public MapPropertyEditor(MapEditorScreen screen, ViewportActionManager manager, MapPropertyCache propCache, IViewport viewport)
     {
         Screen = screen;
