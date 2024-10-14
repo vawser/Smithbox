@@ -75,26 +75,34 @@ public class TextEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Edit"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false,
-                    EditorActionManager.CanUndo()))
+            // Undo
+            if (ImGui.Button($"Undo", UI.MenuButtonSize))
             {
-                EditorActionManager.UndoAction();
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAction();
+                }
+            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
+
+            // Undo All
+            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            {
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAllAction();
+                }
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false,
-                    EditorActionManager.CanUndo()))
+            // Redo
+            if (ImGui.Button($"Undo", UI.MenuButtonSize))
             {
-                EditorActionManager.UndoAllAction();
+                if (EditorActionManager.CanRedo())
+                {
+                    EditorActionManager.RedoAction();
+                }
             }
-
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false,
-                    EditorActionManager.CanRedo()))
-            {
-                EditorActionManager.RedoAction();
-            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
 
             ImGui.EndMenu();
         }
@@ -103,18 +111,44 @@ public class TextEditorScreen : EditorScreen
 
         ActionMenubar.Display();
 
-        ImGui.Separator();
+        //ImGui.Separator();
 
-        ToolMenubar.Display();
+        //ToolMenubar.Display();
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("View"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Files"))
+            if (ImGui.Button("Files", UI.MenuButtonSize))
             {
-                UI.Current.Interface_EmevdEditor_Files = !UI.Current.Interface_EmevdEditor_Files;
+                UI.Current.Interface_TextEditor_FileContainerList = !UI.Current.Interface_TextEditor_FileContainerList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_Files);
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_FileContainerList);
+
+            if (ImGui.Button("Text Files", UI.MenuButtonSize))
+            {
+                UI.Current.Interface_TextEditor_FmgList = !UI.Current.Interface_TextEditor_FmgList;
+            }
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_FmgList);
+
+            if (ImGui.Button("Text Entries", UI.MenuButtonSize))
+            {
+                UI.Current.Interface_TextEditor_FmgEntryList = !UI.Current.Interface_TextEditor_FmgEntryList;
+            }
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_FmgEntryList);
+
+            if (ImGui.Button("Contents", UI.MenuButtonSize))
+            {
+                UI.Current.Interface_TextEditor_FmgEntryProperties = !UI.Current.Interface_TextEditor_FmgEntryProperties;
+            }
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_FmgEntryProperties);
+
+            if (ImGui.Button("Tool Window", UI.MenuButtonSize))
+            {
+                UI.Current.Interface_TextEditor_ToolConfigurationWindow = !UI.Current.Interface_TextEditor_ToolConfigurationWindow;
+            }
+            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_ToolConfigurationWindow);
+
 
             ImGui.EndMenu();
         }

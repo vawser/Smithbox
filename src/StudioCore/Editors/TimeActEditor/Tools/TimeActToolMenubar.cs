@@ -21,9 +21,9 @@ public class TimeActToolMenubar
 
     public void DisplayMenu()
     {
+        /*
         if (ImGui.BeginMenu("Tools"))
         {
-            /*
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bars}");
 
             if (ImGui.MenuItem("TODO", KeyBindings.Current.TextureViewer_ExportTexture.HintText))
@@ -31,9 +31,10 @@ public class TimeActToolMenubar
 
             }
 
-            */
-
             ImGui.EndMenu();
+            }
         }
+
+        */
     }
 }

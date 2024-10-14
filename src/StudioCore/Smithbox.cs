@@ -434,6 +434,7 @@ public class Smithbox
         Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1, "Imgui");
 
         DPI.UpdateDpi(_context);
+        UI.OnGui();
         var scale = DPI.GetUIScale();
 
         if (FontRebuildRequest)

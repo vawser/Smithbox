@@ -169,26 +169,34 @@ public class TimeActEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Edit"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false,
-                    EditorActionManager.CanUndo()))
+            // Undo
+            if (ImGui.Button($"Undo", UI.MenuButtonSize))
             {
-                EditorActionManager.UndoAction();
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAction();
+                }
+            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
+
+            // Undo All
+            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            {
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAllAction();
+                }
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false,
-                    EditorActionManager.CanUndo()))
+            // Redo
+            if (ImGui.Button($"Undo", UI.MenuButtonSize))
             {
-                EditorActionManager.UndoAllAction();
+                if (EditorActionManager.CanRedo())
+                {
+                    EditorActionManager.RedoAction();
+                }
             }
-
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false,
-                    EditorActionManager.CanRedo()))
-            {
-                EditorActionManager.RedoAction();
-            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
 
             ImGui.EndMenu();
         }
@@ -197,58 +205,51 @@ public class TimeActEditorScreen : EditorScreen
 
         ActionMenubar.DisplayMenu();
 
-        ImGui.Separator();
+        // ImGui.Separator();
 
-        ToolMenubar.DisplayMenu();
+        // ToolMenubar.DisplayMenu();
 
         ImGui.Separator();
 
         if (ImGui.BeginMenu("View"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("TAE Files"))
+            if (ImGui.Button("TAE Files", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TimeActEditor_ContainerFileList = !UI.Current.Interface_TimeActEditor_ContainerFileList;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_ContainerFileList);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Time Acts"))
+            if (ImGui.Button("Time Acts", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TimeActEditor_TimeActList = !UI.Current.Interface_TimeActEditor_TimeActList;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_TimeActList);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Animations"))
+            if (ImGui.Button("Animations", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TimeActEditor_AnimationList = !UI.Current.Interface_TimeActEditor_AnimationList;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_AnimationList);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Animation Properties"))
+            if (ImGui.Button("Animation Properties", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TimeActEditor_AnimationProperties = !UI.Current.Interface_TimeActEditor_AnimationProperties;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_AnimationProperties);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Events"))
+            if (ImGui.Button("Events", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TimeActEditor_EventList = !UI.Current.Interface_TimeActEditor_EventList;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_EventList);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Event Properties"))
+            if (ImGui.Button("Event Properties", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TimeActEditor_EventProperties = !UI.Current.Interface_TimeActEditor_EventProperties;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_EventProperties);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Tool Window"))
+            if (ImGui.Button("Tool Window", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TimeActEditor_ToolConfiguration = !UI.Current.Interface_TimeActEditor_ToolConfiguration;
             }

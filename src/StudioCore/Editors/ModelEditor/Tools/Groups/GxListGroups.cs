@@ -34,13 +34,11 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             UpdateGXListGroupList();
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Replace"))
             {
                 foreach (var entry in GXListGroupFiles)
                 {
-                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
+                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
                     {
                         _selectedGXListGroup = entry;
                         SelectedGXListList = ReadGXListGroup(entry);
@@ -53,13 +51,11 @@ namespace StudioCore.Editors.ModelEditor.Tools
                 ImGui.EndMenu();
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Append"))
             {
                 foreach (var entry in GXListGroupFiles)
                 {
-                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
+                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
                     {
                         _selectedGXListGroup = entry;
                         SelectedGXListList = ReadGXListGroup(entry);

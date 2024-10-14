@@ -201,43 +201,58 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         // Dropdown: Edit
         if (ImGui.BeginMenu("Edit"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false,
-                    EditorActionManager.CanUndo()))
+            // Undo
+            if (ImGui.Button($"Undo", UI.MenuButtonSize))
             {
-                EditorActionManager.UndoAction();
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAction();
+                }
+            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
+
+            // Undo All
+            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            {
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAllAction();
+                }
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false,
-                    EditorActionManager.CanUndo()))
+            // Redo
+            if (ImGui.Button($"Undo", UI.MenuButtonSize))
             {
-                EditorActionManager.UndoAllAction();
+                if (EditorActionManager.CanRedo())
+                {
+                    EditorActionManager.RedoAction();
+                }
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false,
-                    EditorActionManager.CanRedo()))
+            // Duplicate
+            if (ImGui.Button($"Duplicate", UI.MenuButtonSize))
             {
-                EditorActionManager.RedoAction();
-            }
-
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Scissors}");
-            if (ImGui.MenuItem("Remove", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText, false, _selection.IsSelection()))
-            {
-                DeleteMapObjectsAction action = new(Universe, RenderScene,
+                if (_selection.IsSelection())
+                {
+                    CloneMapObjectsAction action = new(Universe, RenderScene,
                     _selection.GetFilteredSelection<MsbEntity>().ToList(), true);
-                EditorActionManager.ExecuteAction(action);
+                    EditorActionManager.ExecuteAction(action);
+                }
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText, false,
-                    _selection.IsSelection()))
+            // Delete
+            if (ImGui.Button($"Delete", UI.MenuButtonSize))
             {
-                CloneMapObjectsAction action = new(Universe, RenderScene,
-                    _selection.GetFilteredSelection<MsbEntity>().ToList(), true);
-                EditorActionManager.ExecuteAction(action);
+                if (_selection.IsSelection())
+                {
+                    DeleteMapObjectsAction action = new(Universe, RenderScene,
+                        _selection.GetFilteredSelection<MsbEntity>().ToList(), true);
+                    EditorActionManager.ExecuteAction(action);
+                }
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
 
             ImGui.EndMenu();
         }
@@ -256,64 +271,55 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         // Dropdown: View
         if (ImGui.BeginMenu("View"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Viewport"))
+            if (ImGui.Button("Viewport", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_Editor_Viewport = !UI.Current.Interface_Editor_Viewport;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Viewport);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Map Object List"))
+            if (ImGui.Button("Map Object List", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_MapEditor_MapObjectList = !UI.Current.Interface_MapEditor_MapObjectList;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_MapObjectList);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Tool Window"))
+            if (ImGui.Button("Tool Window", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_MapEditor_ToolWindow = !UI.Current.Interface_MapEditor_ToolWindow;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_ToolWindow);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Properties"))
+            if (ImGui.Button("Properties", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_MapEditor_Properties = !UI.Current.Interface_MapEditor_Properties;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Properties);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Asset Browser"))
+            if (ImGui.Button("Asset Browser", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_MapEditor_AssetBrowser = !UI.Current.Interface_MapEditor_AssetBrowser;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_AssetBrowser);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Render Groups"))
+            if (ImGui.Button("Render Groups", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_MapEditor_RenderGroups = !UI.Current.Interface_MapEditor_RenderGroups;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_RenderGroups);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Profiling"))
+            if (ImGui.Button("Profiling", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_Editor_Profiling = !UI.Current.Interface_Editor_Profiling;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Profiling);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Resource List"))
+            if (ImGui.Button("Resource List", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_MapEditor_ResourceList = !UI.Current.Interface_MapEditor_ResourceList;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_ResourceList);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Viewport Grid"))
+            if (ImGui.Button("Viewport Grid", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_MapEditor_Viewport_Grid = !UI.Current.Interface_MapEditor_Viewport_Grid;
                 CFG.Current.MapEditor_Viewport_RegenerateMapGrid = true;
@@ -322,8 +328,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             if (Smithbox.ProjectType is ProjectType.DS3)
             {
-                UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-                if (ImGui.MenuItem("Lightmap Atlas Editor"))
+                if (ImGui.Button("Lightmap Atlas Editor", UI.MenuButtonWideSize))
                 {
                     UI.Current.Interface_MapEditor_Viewport_LightmapAtlas = !UI.Current.Interface_MapEditor_Viewport_LightmapAtlas;
                 }
@@ -340,8 +345,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             bool ticked;
 
             // Map Piece
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Map Piece"))
+            if (ImGui.Button("Map Piece", UI.MenuButtonWideSize))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.MapPiece);
             }
@@ -349,8 +353,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             UIHelper.ShowActiveStatus(ticked);
 
             // Collision
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Collision"))
+            if (ImGui.Button("Collision", UI.MenuButtonWideSize))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Collision);
             }
@@ -358,8 +361,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             UIHelper.ShowActiveStatus(ticked);
 
             // Object
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Object"))
+            if (ImGui.Button("Object", UI.MenuButtonWideSize))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Object);
             }
@@ -367,8 +369,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             UIHelper.ShowActiveStatus(ticked);
 
             // Character
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Character"))
+            if (ImGui.Button("Character", UI.MenuButtonWideSize))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Character);
             }
@@ -376,8 +377,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             UIHelper.ShowActiveStatus(ticked);
 
             // Navmesh
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Navmesh"))
+            if (ImGui.Button("Navmesh", UI.MenuButtonWideSize))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
             }
@@ -385,8 +385,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             UIHelper.ShowActiveStatus(ticked);
 
             // Region
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Region"))
+            if (ImGui.Button("Region", UI.MenuButtonWideSize))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Region);
             }
@@ -394,8 +393,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             UIHelper.ShowActiveStatus(ticked);
 
             // Light
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Light"))
+            if (ImGui.Button("Light", UI.MenuButtonWideSize))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Light);
             }
@@ -403,8 +401,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             UIHelper.ShowActiveStatus(ticked);
 
             // Debug
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Debug"))
+            if (ImGui.Button("Debug", UI.MenuButtonWideSize))
             {
                 RenderScene.ToggleDrawFilter(RenderFilter.Debug);
             }
@@ -422,35 +419,34 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (ImGui.BeginMenu("Viewport", RenderScene != null && Viewport != null))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Filter}");
             if (ImGui.BeginMenu("Filter Presets"))
             {
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_01.Name, "Ctrl+1"))
+                if (ImGui.Button(CFG.Current.SceneFilter_Preset_01.Name, UI.MenuButtonWideSize))
                 {
                     RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_01.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_02.Name, "Ctrl+2"))
+                if (ImGui.Button(CFG.Current.SceneFilter_Preset_02.Name, UI.MenuButtonWideSize))
                 {
                     RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_02.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_03.Name, "Ctrl+3"))
+                if (ImGui.Button(CFG.Current.SceneFilter_Preset_03.Name, UI.MenuButtonWideSize))
                 {
                     RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_03.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_04.Name, "Ctrl+4"))
+                if (ImGui.Button(CFG.Current.SceneFilter_Preset_04.Name, UI.MenuButtonWideSize))
                 {
                     RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_04.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_05.Name, "Ctrl+5"))
+                if (ImGui.Button(CFG.Current.SceneFilter_Preset_05.Name, UI.MenuButtonWideSize))
                 {
                     RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_05.Filters;
                 }
 
-                if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_06.Name, "Ctrl+6"))
+                if (ImGui.Button(CFG.Current.SceneFilter_Preset_06.Name, UI.MenuButtonWideSize))
                 {
                     RenderScene.DrawFilter = CFG.Current.SceneFilter_Preset_06.Filters;
                 }
@@ -458,17 +454,16 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 ImGui.EndMenu();
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Cloud}");
             if (ImGui.BeginMenu("Environment Map"))
             {
-                if (ImGui.MenuItem("Default"))
+                if (ImGui.Button("Default", UI.MenuButtonSize))
                 {
                     Viewport.SetEnvMap(0);
                 }
 
                 foreach (var map in Universe.EnvMapTextures)
                 {
-                    if (ImGui.MenuItem(map))
+                    if (ImGui.Button(map, UI.MenuButtonSize))
                     {
                         /*var tex = ResourceManager.GetTextureResource($@"tex/{map}".ToLower());
                         if (tex.IsLoaded && tex.Get() != null && tex.TryLock())
@@ -485,7 +480,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 ImGui.EndMenu();
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.LightbulbO}");
             if (ImGui.BeginMenu("Scene Lighting"))
             {
                 Viewport.SceneParamsGui();
@@ -494,19 +488,16 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             if (Smithbox.ProjectType is ProjectType.ER)
             {
-                UIHelper.ShowMenuIcon($"{ForkAwesome.Cube}");
                 if (ImGui.BeginMenu("Collision Type"))
                 {
-                    UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-                    if (ImGui.MenuItem("Low"))
+                    if (ImGui.Button("Low", UI.MenuButtonSize))
                     {
                         HavokCollisionManager.VisibleCollisionType = HavokCollisionType.Low;
                     }
                     UIHelper.ShowHoverTooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.\nMap must be reloaded after change to see difference.");
                     UIHelper.ShowActiveStatus(HavokCollisionManager.VisibleCollisionType == HavokCollisionType.Low);
 
-                    UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-                    if (ImGui.MenuItem("High"))
+                    if (ImGui.Button("High", UI.MenuButtonSize))
                     {
                         HavokCollisionManager.VisibleCollisionType = HavokCollisionType.High;
                     }
@@ -525,56 +516,53 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (ImGui.BeginMenu("Gizmos"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Compass}");
             if (ImGui.BeginMenu("Mode"))
             {
-                if (ImGui.MenuItem("Translate", KeyBindings.Current.VIEWPORT_GizmoTranslationMode.HintText,
-                        Gizmos.Mode == Gizmos.GizmosMode.Translate))
+                if (ImGui.Button("Translate", UI.MenuButtonSize))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Translate;
                 }
+                UIHelper.ShowHoverTooltip($"Set the gizmo to Translation mode.\n{KeyBindings.Current.VIEWPORT_GizmoTranslationMode.HintText}");
 
-                if (ImGui.MenuItem("Rotate", KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText,
-                        Gizmos.Mode == Gizmos.GizmosMode.Rotate))
+                if (ImGui.Button("Rotate", UI.MenuButtonSize))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Rotate;
                 }
+                UIHelper.ShowHoverTooltip($"Set the gizmo to Rotation mode.\n{KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText}");
 
                 ImGui.EndMenu();
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Cube}");
             if (ImGui.BeginMenu("Space"))
             {
-                if (ImGui.MenuItem("Local", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText,
-                        Gizmos.Space == Gizmos.GizmosSpace.Local))
+                if (ImGui.Button("Local", UI.MenuButtonSize))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.Local;
                 }
+                UIHelper.ShowHoverTooltip($"Place the gizmo origin based on the selection's local position.\n{KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText}");
 
-                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText,
-                        Gizmos.Space == Gizmos.GizmosSpace.World))
+                if (ImGui.Button("World", UI.MenuButtonSize))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.World;
                 }
+                UIHelper.ShowHoverTooltip($"Place the gizmo origin based on the selection's world position.\n{KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText}");
 
                 ImGui.EndMenu();
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Cubes}");
             if (ImGui.BeginMenu("Origin"))
             {
-                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText,
-                        Gizmos.Origin == Gizmos.GizmosOrigin.World))
+                if (ImGui.Button("World", UI.MenuButtonSize))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.World;
                 }
+                UIHelper.ShowHoverTooltip($"Orient the gizmo origin based on the world position.\n{KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText}");
 
-                if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText,
-                        Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox))
+                if (ImGui.Button("Bounding Box", UI.MenuButtonSize))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
                 }
+                UIHelper.ShowHoverTooltip($"Orient the gizmo origin based on the bounding box.\n{KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText}");
 
                 ImGui.EndMenu();
             }

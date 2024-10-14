@@ -32,19 +32,17 @@ public class GparamActionMenubar
     {
         if (ImGui.BeginMenu("Actions"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Duplicate Value Row", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+            if (ImGui.Button("Duplicate Value Row", UI.MenuButtonSize))
             {
                 Screen.ActionHandler.DuplicateValueRow();
             }
-            UIHelper.ShowHoverTooltip("Duplicates the current value row selection.");
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Delete Value Row", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
+            if (ImGui.Button("Delete Value Row", UI.MenuButtonSize))
             {
                 Screen.ActionHandler.DeleteValueRow();
             }
-            UIHelper.ShowHoverTooltip("Deletes the current value row selection.");
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
 
             ImGui.EndMenu();
         }

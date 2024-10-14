@@ -25,19 +25,17 @@ public class TimeActActionMenubar
     {
         if (ImGui.BeginMenu("Actions"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+            if (ImGui.Button("Duplicate", UI.MenuButtonSize))
             {
                 ActionHandler.DetermineDuplicateTarget();
             }
-            UIHelper.ShowHoverTooltip("Duplicates the current selection.");
+            UIHelper.ShowHoverTooltip($"Duplicates the current selection.\n{KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
+            if (ImGui.Button("Delete", UI.MenuButtonSize))
             {
                 ActionHandler.DetermineDeleteTarget();
             }
-            UIHelper.ShowHoverTooltip("Deletes the current selection.");
+            UIHelper.ShowHoverTooltip($"Deletes the current selection.\n{KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
 
             ImGui.EndMenu();
         }

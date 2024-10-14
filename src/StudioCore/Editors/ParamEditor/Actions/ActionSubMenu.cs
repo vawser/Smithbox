@@ -37,37 +37,44 @@ public class ActionSubMenu
     {
         if (ImGui.BeginMenu("Actions"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Duplicate Row", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+            if (ImGui.Button("Duplicate Row", UI.MenuButtonSize))
             {
                 Handler.DuplicateHandler();
             }
-            UIHelper.ShowHoverTooltip("Duplicates current selection.");
+            UIHelper.ShowHoverTooltip($"Duplicates current selection.\n{KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Remove Row", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
+            if (ImGui.Button("Remove Row", UI.MenuButtonSize))
             {
                 Screen.DeleteSelection();
             }
-            UIHelper.ShowHoverTooltip("Deletes current selection.");
+            UIHelper.ShowHoverTooltip($"Deletes current selection.\n{KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.FilesO}");
-            if (ImGui.MenuItem("Copy", KeyBindings.Current.PARAM_CopyToClipboard.HintText, false, Screen._activeView._selection.RowSelectionExists()))
+            if (ImGui.Button("Copy", UI.MenuButtonSize))
             {
-                Screen.CopySelectionToClipboard();
+                if (Screen._activeView._selection.RowSelectionExists())
+                {
+                    Screen.CopySelectionToClipboard();
+                }
             }
+            UIHelper.ShowHoverTooltip($"Copy current selection to clipboard.\n{KeyBindings.Current.PARAM_CopyToClipboard.HintText}");
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Clipboard}");
-            if (ImGui.MenuItem("Paste", KeyBindings.Current.PARAM_PasteClipboard.HintText, false, ParamBank.ClipboardRows.Any()))
+            if (ImGui.Button("Paste", UI.MenuButtonSize))
             {
-                EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
+                if (ParamBank.ClipboardRows.Any())
+                {
+                    EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
+                }
             }
+            UIHelper.ShowHoverTooltip($"Paste current selection into current param.\n{KeyBindings.Current.PARAM_PasteClipboard.HintText}");
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.ArrowRight}");
-            if (ImGui.MenuItem("Go to selected row", KeyBindings.Current.PARAM_GoToSelectedRow.HintText, false, Screen._activeView._selection.RowSelectionExists()))
+            if (ImGui.Button("Go to selected row", UI.MenuButtonSize))
             {
-                Screen.GotoSelectedRow = true;
+                if (Screen._activeView._selection.RowSelectionExists())
+                {
+                    Screen.GotoSelectedRow = true;
+                }
             }
+            UIHelper.ShowHoverTooltip($"Go to currently selected row.\n{KeyBindings.Current.PARAM_GoToSelectedRow.HintText}");
 
             ImGui.EndMenu();
         }

@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Configuration;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
@@ -25,11 +26,33 @@ public class TextActionMenubar
     {
         if (ImGui.BeginMenu("Actions"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Test"))
+            ///--------------------
+            // Create
+            ///--------------------
+            if (ImGui.Button("Create", UI.MenuButtonWideSize))
             {
-
+                Screen.EntryCreationModal.ShowModal = true;
             }
+            UIHelper.ShowHoverTooltip($"Create new text entries.\n{KeyBindings.Current.CORE_CreateNewEntry.HintText}");
+
+            ///--------------------
+            // Duplicate
+            ///--------------------
+            if (ImGui.Button("Duplicate", UI.MenuButtonWideSize))
+            {
+                Screen.ActionHandler.DuplicateEntries();
+            }
+            UIHelper.ShowHoverTooltip($"Duplicate the currently selected text entries\n{KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
+
+            ///--------------------
+            // Delete
+            ///--------------------
+            if (ImGui.Button("Delete", UI.MenuButtonWideSize))
+            {
+                Screen.ActionHandler.DeleteEntries();
+            }
+            UIHelper.ShowHoverTooltip($"Delete the currently selected text entries.\n{KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
+
 
             ImGui.EndMenu();
         }

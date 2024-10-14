@@ -33,13 +33,11 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             UpdateFLVERGroupList();
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Replace"))
             {
                 foreach (var entry in FLVERGroupFiles)
                 {
-                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
+                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
                     {
                         _selectedFLVERGroup = entry;
                         SelectedFLVERList = ReadFLVERGroup(entry);

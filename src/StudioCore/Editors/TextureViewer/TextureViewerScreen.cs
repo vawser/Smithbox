@@ -67,9 +67,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     /// </summary>
     public void DrawEditorMenu()
     {
-        ImGui.Separator();
+        // ImGui.Separator();
 
-        ActionMenubar.DisplayMenu();
+        // ActionMenubar.DisplayMenu();
 
         ImGui.Separator();
 
@@ -79,43 +79,37 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         if (ImGui.BeginMenu("View"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Files"))
+            if (ImGui.Button("Files", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TextureViewer_Files = !UI.Current.Interface_TextureViewer_Files;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Files);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Textures"))
+            if (ImGui.Button("Textures", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TextureViewer_Textures = !UI.Current.Interface_TextureViewer_Textures;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Textures);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Viewer"))
+            if (ImGui.Button("Viewer", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TextureViewer_Viewer = !UI.Current.Interface_TextureViewer_Viewer;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Viewer);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Properties"))
+            if (ImGui.Button("Properties", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TextureViewer_Properties = !UI.Current.Interface_TextureViewer_Properties;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Properties);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Tool Window"))
+            if (ImGui.Button("Tool Window", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TextureViewer_ToolConfiguration = !UI.Current.Interface_TextureViewer_ToolConfiguration;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_ToolConfiguration);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Resource List"))
+            if (ImGui.Button("Resource List", UI.MenuButtonSize))
             {
                 UI.Current.Interface_TextureViewer_ResourceList = !UI.Current.Interface_TextureViewer_ResourceList;
             }

@@ -258,7 +258,7 @@ public class ActionHandler
         }
         else if(isActionSubMenu)
         {
-            if(ImGui.MenuItem("Duplicate##duplicateToMapMenuButton"))
+            if(ImGui.Button("Duplicate##duplicateToMapMenuButton", UI.MenuButtonWideSize))
             {
                 Entity? targetParent = _dupeSelectionTargetedParent.Item2;
 
@@ -270,7 +270,7 @@ public class ActionHandler
         }
         else
         {
-            if (ImGui.Selectable("Duplicate##duplicateToMapSelectable"))
+            if (ImGui.Button("Duplicate##duplicateToMapMenuButtonPopup", UI.MenuButtonWideSize))
             {
                 Entity? targetParent = _dupeSelectionTargetedParent.Item2;
 

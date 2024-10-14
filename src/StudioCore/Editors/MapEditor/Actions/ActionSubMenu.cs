@@ -198,11 +198,58 @@ public class ActionSubMenu
     {
         if (ImGui.BeginMenu("Actions"))
         {
+            ///--------------------
+            // Duplicate
+            ///--------------------
+            if (ImGui.Button("Duplicate", UI.MenuButtonWideSize))
+            {
+                Handler.ApplyDuplicate();
+            }
+            UIHelper.ShowHoverTooltip($"Duplicate the currently selected map objects.\n{KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
+
+            ///--------------------
+            // Delete
+            ///--------------------
+            if (ImGui.Button("Delete", UI.MenuButtonWideSize))
+            {
+                Handler.ApplyDelete();
+            }
+            UIHelper.ShowHoverTooltip($"Delete the currently selected map objects.\n{KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
+
+            ///--------------------
+            // Scramble
+            ///--------------------
+            if (ImGui.Button("Scramble", UI.MenuButtonWideSize))
+            {
+                Handler.ApplyScramble();
+            }
+            UIHelper.ShowHoverTooltip($"Apply the scramble configuration to the currently selected map objects.\n{KeyBindings.Current.MAP_ScrambleSelection.HintText}");
+
+            ///--------------------
+            // Replicate
+            ///--------------------
+            if (ImGui.Button("Replicate", UI.MenuButtonWideSize))
+            {
+                Handler.ApplyReplicate();
+            }
+            UIHelper.ShowHoverTooltip($"Apply the replicate configuration to the currently selected map objects.\n{KeyBindings.Current.MAP_ReplicateSelection.HintText}");
+
+            ImGui.Separator();
+
+            ///--------------------
+            // Duplicate to Map
+            ///--------------------
+            if (ImGui.BeginMenu("Duplicate Selected to Map"))
+            {
+                Handler.DisplayDuplicateToMapMenu(false, true);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.ShowHoverTooltip($"Duplicate the selected map objects into another map.");
 
             ///--------------------
             // Create
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Create New Object"))
             {
                 if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
@@ -229,7 +276,7 @@ public class ActionSubMenu
                     {
                         foreach ((string, Type) p in Handler._partsClasses)
                         {
-                            if (ImGui.MenuItem($"{p.Item1}"))
+                            if (ImGui.Button($"{p.Item1}", UI.MenuButtonWideSize))
                             {
                                 CFG.Current.Toolbar_Create_Part = true;
                                 CFG.Current.Toolbar_Create_Region = false;
@@ -246,7 +293,7 @@ public class ActionSubMenu
 
                     if (Handler._regionClasses.Count == 1)
                     {
-                        if (ImGui.MenuItem("Region"))
+                        if (ImGui.Button("Region", UI.MenuButtonWideSize))
                         {
                             CFG.Current.Toolbar_Create_Part = false;
                             CFG.Current.Toolbar_Create_Region = true;
@@ -262,7 +309,7 @@ public class ActionSubMenu
                         {
                             foreach ((string, Type) p in Handler._regionClasses)
                             {
-                                if (ImGui.MenuItem($"{p.Item1}"))
+                                if (ImGui.Button($"{p.Item1}", UI.MenuButtonWideSize))
                                 {
                                     CFG.Current.Toolbar_Create_Part = false;
                                     CFG.Current.Toolbar_Create_Region = true;
@@ -282,7 +329,7 @@ public class ActionSubMenu
                     {
                         foreach ((string, Type) p in Handler._eventClasses)
                         {
-                            if (ImGui.MenuItem($"{p.Item1}"))
+                            if (ImGui.Button($"{p.Item1}", UI.MenuButtonWideSize))
                             {
                                 CFG.Current.Toolbar_Create_Part = false;
                                 CFG.Current.Toolbar_Create_Region = false;
@@ -297,7 +344,7 @@ public class ActionSubMenu
                     }
                     UIHelper.ShowHoverTooltip("Create an Event object.");
 
-                    if (ImGui.MenuItem("Light"))
+                    if (ImGui.Button("Light", UI.MenuButtonWideSize))
                     {
                         CFG.Current.Toolbar_Create_Part = false;
                         CFG.Current.Toolbar_Create_Region = false;
@@ -313,209 +360,173 @@ public class ActionSubMenu
 
                 ImGui.EndMenu();
             }
-
-            ///--------------------
-            // Duplicate
-            ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Duplicate Selected", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
-            {
-                Handler.ApplyDuplicate();
-            }
-
-            ///--------------------
-            // Duplicate to Map
-            ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("Duplicate Selected to Map"))
-            {
-                Handler.DisplayDuplicateToMapMenu(false, true);
-                ImGui.EndMenu();
-            }
-
-            ///--------------------
-            // Delete
-            ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Delete Selected", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
-            {
-                Handler.ApplyDelete();
-            }
-
-            ///--------------------
-            // Scramble
-            ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Scramble Selected", KeyBindings.Current.MAP_ScrambleSelection.HintText))
-            {
-                Handler.ApplyScramble();
-            }
-
-            ///--------------------
-            // Replicate
-            ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Replicate Selected", KeyBindings.Current.MAP_ReplicateSelection.HintText))
-            {
-                Handler.ApplyReplicate();
-            }
+            UIHelper.ShowHoverTooltip($"Create a new map object.");
 
             ImGui.Separator();
 
             ///--------------------
             // Frame in Viewport
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Frame Selected in Viewport", KeyBindings.Current.MAP_FrameSelection.HintText))
+            if (ImGui.Button("Frame Selected in Viewport", UI.MenuButtonWideSize))
             {
                 Handler.ApplyFrameInViewport();
             }
-
-            ///--------------------
-            // Go to in List
-            ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Go to in List", KeyBindings.Current.MAP_GoToInList.HintText))
-            {
-                Handler.ApplyGoToInObjectList();
-            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_FrameSelection.HintText}");
 
             ///--------------------
             // Move to Grid
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Move Selected to Grid", KeyBindings.Current.MAP_ReplicateSelection.HintText))
+            if (ImGui.Button("Move Selected to Grid", UI.MenuButtonWideSize))
             {
                 Handler.ApplyMovetoGrid();
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_ReplicateSelection.HintText}");
 
             ///--------------------
             // Move to Camera
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Move Selected to Camera", KeyBindings.Current.MAP_MoveToCamera.HintText))
+            if (ImGui.Button("Move Selected to Camera", UI.MenuButtonWideSize))
             {
                 Handler.ApplyMoveToCamera();
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_MoveToCamera.HintText}");
 
             ImGui.Separator();
 
             ///--------------------
             // Rotate (X-axis)
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Rotate Selected (X-axis)", KeyBindings.Current.MAP_RotateSelectionXAxis.HintText))
+            if (ImGui.Button("Rotate Selected (X-axis)", UI.MenuButtonWideSize))
             {
                 Handler.ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_RotateSelectionXAxis.HintText}");
 
             ///--------------------
             // Rotate (Y-axis)
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Rotate Selected (Y-axis)", KeyBindings.Current.MAP_RotateSelectionYAxis.HintText))
+            if (ImGui.Button("Rotate Selected (Y-axis)", UI.MenuButtonWideSize))
             {
                 Handler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_RotateSelectionYAxis.HintText}");
 
             ///--------------------
             // Rotate Pivot (Y-axis)
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Rotate Selected with Pivot (Y-axis)", KeyBindings.Current.MAP_PivotSelectionYAxis.HintText))
+            if (ImGui.Button("Rotate Selected with Pivot (Y-axis)", UI.MenuButtonWideSize))
             {
                 Handler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_PivotSelectionYAxis.HintText}");
 
             ///--------------------
             // Rotate Fixed Increment
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Rotate Selected to Fixed Angle", KeyBindings.Current.MAP_RotateFixedAngle.HintText))
+            if (ImGui.Button("Rotate Selected to Fixed Angle", UI.MenuButtonWideSize))
             {
                 Handler.SetSelectionToFixedRotation(CFG.Current.Toolbar_Rotate_FixedAngle);
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_RotateFixedAngle.HintText}");
 
             ///--------------------
             // Reset Rotation
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Reset Selected Rotation", KeyBindings.Current.MAP_ResetRotation.HintText))
+            if (ImGui.Button("Reset Selected Rotation", UI.MenuButtonWideSize))
             {
                 Handler.SetSelectionToFixedRotation(new Vector3(0, 0, 0));
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_ResetRotation.HintText}");
 
             ImGui.Separator();
 
             ///--------------------
+            // Go to in List
+            ///--------------------
+            if (ImGui.Button("Go to in List", UI.MenuButtonWideSize))
+            {
+                Handler.ApplyGoToInObjectList();
+            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_GoToInList.HintText}");
+
+            ///--------------------
             // Order (Up)
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Move Selected Up in List", KeyBindings.Current.MAP_MoveObjectUp.HintText))
+            if (ImGui.Button("Move Selected Up in List", UI.MenuButtonWideSize))
             {
                 Handler.ApplyMapObjectOrderChange(OrderMoveDir.Up);
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_MoveObjectUp.HintText}");
 
             ///--------------------
             // Order (Down)
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Move Selected Down in List", KeyBindings.Current.MAP_MoveObjectBottom.HintText))
+            if (ImGui.Button("Move Selected Down in List", UI.MenuButtonWideSize))
             {
                 Handler.ApplyMapObjectOrderChange(OrderMoveDir.Down);
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_MoveObjectDown.HintText}");
 
             ///--------------------
             // Order (Top)
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Move Selected to the List Top", KeyBindings.Current.MAP_MoveObjectTop.HintText))
+            if (ImGui.Button("Move Selected to the List Top", UI.MenuButtonWideSize))
             {
                 Handler.ApplyMapObjectOrderChange(OrderMoveDir.Top);
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_MoveObjectTop.HintText}");
 
             ///--------------------
             // Order (Bottom)
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Move Selected to the List Bottom", KeyBindings.Current.MAP_MoveObjectBottom.HintText))
+            if (ImGui.Button("Move Selected to the List Bottom", UI.MenuButtonWideSize))
             {
                 Handler.ApplyMapObjectOrderChange(OrderMoveDir.Bottom);
             }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_MoveObjectBottom.HintText}");
 
             ImGui.Separator();
 
             ///--------------------
             // Toggle Editor Visibility
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Toggle Editor Visibility"))
             {
-                if (ImGui.MenuItem("Flip Visibility for Selected", KeyBindings.Current.MAP_FlipSelectionVisibility.HintText))
+                if (ImGui.Button("Flip Visibility for Selected", UI.MenuButtonWideSize))
                 {
                     Handler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Flip);
                 }
-                if (ImGui.MenuItem("Enable Visibility for Selected", KeyBindings.Current.MAP_EnableSelectionVisibility.HintText))
+                UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_FlipSelectionVisibility.HintText}");
+
+                if (ImGui.Button("Enable Visibility for Selected", UI.MenuButtonWideSize))
                 {
                     Handler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Enable);
                 }
-                if (ImGui.MenuItem("Disable Visibility for Selected", KeyBindings.Current.MAP_DisableSelectionVisibility.HintText))
+                UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_EnableSelectionVisibility.HintText}");
+
+                if (ImGui.Button("Disable Visibility for Selected", UI.MenuButtonWideSize))
                 {
                     Handler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Disable);
                 }
+                UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_DisableSelectionVisibility.HintText}");
 
-                if (ImGui.MenuItem("Flip Visibility for All", KeyBindings.Current.MAP_FlipAllVisibility.HintText))
+                if (ImGui.Button("Flip Visibility for All", UI.MenuButtonWideSize))
                 {
                     Handler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
                 }
-                if (ImGui.MenuItem("Enable Visibility for All", KeyBindings.Current.MAP_EnableAllVisibility.HintText))
+                UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_FlipAllVisibility.HintText}");
+
+                if (ImGui.Button("Enable Visibility for All", UI.MenuButtonWideSize))
                 {
                     Handler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
                 }
-                if (ImGui.MenuItem("Disable Visibility for All", KeyBindings.Current.MAP_DisableAllVisibility.HintText))
+                UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_EnableAllVisibility.HintText}");
+
+                if (ImGui.Button("Disable Visibility for All", UI.MenuButtonWideSize))
                 {
                     Handler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
                 }
+                UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_DisableAllVisibility.HintText}");
 
                 ImGui.EndMenu();
             }
@@ -523,28 +534,33 @@ public class ActionSubMenu
             ///--------------------
             // Toggle In-game Visibility
             ///--------------------
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Toggle In-Game Visibility"))
             {
-                if (ImGui.MenuItem("Make Selected Normal Object into Dummy Object", KeyBindings.Current.MAP_MakeDummyObject.HintText))
+                if (ImGui.Button("Make Selected Normal Object into Dummy Object", UI.MenuButtonWideSize))
                 {
                     Handler.ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Disable);
                 }
-                if (ImGui.MenuItem("Make Selected Dummy Object into Normal Object", KeyBindings.Current.MAP_MakeNormalObject.HintText))
+                UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_MakeDummyObject.HintText}");
+
+                if (ImGui.Button("Make Selected Dummy Object into Normal Object", UI.MenuButtonWideSize))
                 {
                     Handler.ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Enable);
                 }
+                UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_MakeNormalObject.HintText}");
 
                 if (Smithbox.ProjectType is ProjectType.ER)
                 {
-                    if (ImGui.MenuItem("Disable Game Presence of Selected", KeyBindings.Current.MAP_DisableGamePresence.HintText))
+                    if (ImGui.Button("Disable Game Presence of Selected", UI.MenuButtonWideSize))
                     {
                         Handler.ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Disable);
                     }
-                    if (ImGui.MenuItem("Enable Game Presence of Selected", KeyBindings.Current.MAP_EnableGamePresence.HintText))
+                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_DisableGamePresence.HintText}");
+
+                    if (ImGui.Button("Enable Game Presence of Selected", UI.MenuButtonWideSize))
                     {
                         Handler.ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Enable);
                     }
+                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.MAP_EnableGamePresence.HintText}");
                 }
 
                 ImGui.EndMenu();

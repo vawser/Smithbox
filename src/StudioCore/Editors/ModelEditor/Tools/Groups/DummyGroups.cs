@@ -33,13 +33,11 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             UpdateDummyGroupList();
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Replace"))
             {
                 foreach (var entry in DummyGroupFiles)
                 {
-                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
+                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
                     {
                         _selectedDummyGroup = entry;
                         SelectedDummyList = ReadDummyGroup(entry);
@@ -52,13 +50,11 @@ namespace StudioCore.Editors.ModelEditor.Tools
                 ImGui.EndMenu();
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Append"))
             {
                 foreach (var entry in DummyGroupFiles)
                 {
-                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
+                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
                     {
                         _selectedDummyGroup = entry;
                         SelectedDummyList = ReadDummyGroup(entry);

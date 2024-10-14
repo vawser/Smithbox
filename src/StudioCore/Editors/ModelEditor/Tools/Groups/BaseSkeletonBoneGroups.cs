@@ -35,13 +35,11 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             UpdateBaseSkeletonGroupList();
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Replace"))
             {
                 foreach (var entry in BaseSkeletonGroupFiles)
                 {
-                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
+                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
                     {
                         _selectedBaseSkeletonGroup = entry;
                         SelectedBaseSkeletonList = ReadBaseSkeletonGroup(entry);
@@ -54,13 +52,11 @@ namespace StudioCore.Editors.ModelEditor.Tools
                 ImGui.EndMenu();
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Append"))
             {
                 foreach (var entry in BaseSkeletonGroupFiles)
                 {
-                    UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
+                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
                     {
                         _selectedBaseSkeletonGroup = entry;
                         SelectedBaseSkeletonList = ReadBaseSkeletonGroup(entry);

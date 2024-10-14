@@ -33,26 +33,23 @@ public class ModelActionMenubar
     {
         if (ImGui.BeginMenu("Actions"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Create", KeyBindings.Current.CORE_CreateNewEntry.HintText))
+            if (ImGui.Button("Create", UI.MenuButtonSize))
             {
                 ActionHandler.CreateHandler();
             }
-            UIHelper.ShowHoverTooltip("Adds new entry based on current selection in Model Hierarchy.");
+            UIHelper.ShowHoverTooltip($"Adds new entry based on current selection in Model Hierarchy.\n{KeyBindings.Current.CORE_CreateNewEntry.HintText}");
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+            if (ImGui.Button("Duplicate", UI.MenuButtonSize))
             {
                 ActionHandler.DuplicateHandler();
             }
-            UIHelper.ShowHoverTooltip("Duplicates current selection in Model Hierarchy.");
+            UIHelper.ShowHoverTooltip($"Duplicates current selection in Model Hierarchy.\n{KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
+            if (ImGui.Button("Delete", UI.MenuButtonSize))
             {
                 ActionHandler.DeleteHandler();
             }
-            UIHelper.ShowHoverTooltip("Deletes current selection in Model Hierarchy.");
+            UIHelper.ShowHoverTooltip($"Deletes current selection in Model Hierarchy.\n{KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
 
             ImGui.EndMenu();
         }

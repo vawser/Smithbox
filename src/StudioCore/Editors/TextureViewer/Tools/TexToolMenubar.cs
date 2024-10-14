@@ -31,11 +31,11 @@ public class TexToolMenubar
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Export Texture", KeyBindings.Current.TEXTURE_ExportTexture.HintText))
+            if (ImGui.Button("Export Texture", UI.MenuButtonSize))
             {
                 Tools.ExportTextureHandler();
             }
+            UIHelper.ShowHoverTooltip($"Export currently selected texture.\n{KeyBindings.Current.TEXTURE_ExportTexture.HintText}");
 
             ImGui.EndMenu();
         }

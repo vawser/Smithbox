@@ -32,6 +32,9 @@ public class UI
     public static UI Current { get; private set; }
     public static UI Default { get; } = new();
 
+    public static Vector2 MenuButtonSize = new Vector2(200, 24);
+    public static Vector2 MenuButtonWideSize = new Vector2(350, 24);
+
     //**************
     // System
     //**************
@@ -350,5 +353,11 @@ public class UI
                 LoadConfig();
             }
         }
+    }
+
+    public static void OnGui()
+    {
+        MenuButtonSize = new Vector2(200, 24 * DPI.GetUIScale());
+        MenuButtonWideSize = new Vector2(350, 24 * DPI.GetUIScale());
     }
 }

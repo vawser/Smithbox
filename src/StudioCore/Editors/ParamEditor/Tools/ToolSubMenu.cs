@@ -82,98 +82,35 @@ public class ToolSubMenu
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            if (ParamMemoryTools.IsParamReloaderSupported())
-            {
-                UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-                if (ImGui.BeginMenu("Param Reloader"))
-                {
-                    if (ImGui.MenuItem("Current Param", KeyBindings.Current.PARAM_ReloadParam.HintText))
-                    {
-                        ParamMemoryTools.ReloadCurrentParam();
-                    }
-                    UIHelper.ShowHoverTooltip("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
-
-                    if (ImGui.MenuItem("All Params", KeyBindings.Current.PARAM_ReloadAllParams.HintText))
-                    {
-                        ParamMemoryTools.ReloadAllParams();
-                    }
-                    UIHelper.ShowHoverTooltip("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
-
-                    ImGui.EndMenu();
-                }
-            }
-
-            if (Smithbox.ProjectType == ProjectType.DS3)
-            {
-                UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-                if (ImGui.BeginMenu("Item Gib"))
-                {
-                    var activeParam = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
-
-                    if (activeParam == "EquipParamGoods")
-                    {
-                        ImGui.InputInt("Number of Spawned Items##spawnItemCount", ref ParamMemoryTools.SpawnedItemAmount);
-                    }
-                    if (activeParam == "EquipParamWeapon")
-                    {
-                        ImGui.InputInt("Reinforcement of Spawned Weapon##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
-                        if (ParamMemoryTools.SpawnWeaponLevel > 10)
-                        {
-                            ParamMemoryTools.SpawnWeaponLevel = 10;
-                        }
-                    }
-
-                    if (ImGui.MenuItem("Give Selected Item"))
-                    {
-                        ParamMemoryTools.GiveItem();
-                    }
-                    UIHelper.ShowHoverTooltip("Spawns selected item in-game.");
-
-                    ImGui.EndMenu();
-                }
-            }
-
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Color Picker"))
+            if (ImGui.Button("Color Picker", UI.MenuButtonSize))
             {
                 ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.BeginMenu("Editor Mode"))
+            if (ImGui.Button("Trim Row Names", UI.MenuButtonSize))
             {
-                if (ImGui.MenuItem("Toggle"))
+                if (Screen._activeView._selection.ActiveParamExists())
                 {
-                    ParamEditorScreen.EditorMode = !ParamEditorScreen.EditorMode;
+                    Handler.RowNameTrimHandler();
                 }
-                UIHelper.ShowHoverTooltip("Toggle Editor Mode, allowing you to edit the Param Meta within Smithbox.");
-                UIHelper.ShowActiveStatus(ParamEditorScreen.EditorMode);
+            }
 
-                if (ImGui.MenuItem("Save Changes"))
+            if (ImGui.Button("Sort Rows", UI.MenuButtonSize))
+            {
+                if (Screen._activeView._selection.ActiveParamExists())
                 {
-                    ParamMetaData.SaveAll();
-                    ParamEditorScreen.EditorMode = false;
+                    Handler.SortRowsHandler();
                 }
-                UIHelper.ShowHoverTooltip("Save current Param Meta changes.");
-
-                if (ImGui.MenuItem("Discard Changes"))
-                {
-
-                    ParamEditorScreen.EditorMode = false;
-                }
-                UIHelper.ShowHoverTooltip("Discard current Param Meta changes.");
-
-                ImGui.EndMenu();
             }
 
             ImGui.Separator();
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
+            // Import
             if (ImGui.BeginMenu("Import Row Names"))
             {
                 if (ImGui.BeginMenu("Smithbox"))
                 {
-                    if (ImGui.MenuItem("Selected Rows"))
+                    if (ImGui.Button("Selected Rows", UI.MenuButtonSize))
                     {
                         if (Screen._activeView._selection.RowSelectionExists())
                         {
@@ -184,7 +121,7 @@ public class ToolSubMenu
                     }
                     UIHelper.ShowHoverTooltip("Import names for the specific rows currently selected.");
 
-                    if (ImGui.MenuItem("Selected Param"))
+                    if (ImGui.Button("Selected Param", UI.MenuButtonSize))
                     {
                         if (Screen._activeView._selection.RowSelectionExists())
                         {
@@ -195,7 +132,7 @@ public class ToolSubMenu
                     }
                     UIHelper.ShowHoverTooltip("Import names for the specific param currently selected.");
 
-                    if (ImGui.MenuItem("All Params"))
+                    if (ImGui.Button("All Params", UI.MenuButtonSize))
                     {
                         if (Screen._activeView._selection.RowSelectionExists())
                         {
@@ -212,7 +149,7 @@ public class ToolSubMenu
 
                 if (ImGui.BeginMenu("Project"))
                 {
-                    if (ImGui.MenuItem("Selected Rows"))
+                    if (ImGui.Button("Selected Rows", UI.MenuButtonSize))
                     {
                         if (Screen._activeView._selection.RowSelectionExists())
                         {
@@ -223,7 +160,7 @@ public class ToolSubMenu
                     }
                     UIHelper.ShowHoverTooltip("Import names for the specific rows currently selected.");
 
-                    if (ImGui.MenuItem("Selected Param"))
+                    if (ImGui.Button("Selected Param", UI.MenuButtonSize))
                     {
                         if (Screen._activeView._selection.RowSelectionExists())
                         {
@@ -234,7 +171,7 @@ public class ToolSubMenu
                     }
                     UIHelper.ShowHoverTooltip("Import names for the specific param currently selected.");
 
-                    if (ImGui.MenuItem("All Params"))
+                    if (ImGui.Button("All Params", UI.MenuButtonSize))
                     {
                         if (Screen._activeView._selection.RowSelectionExists())
                         {
@@ -252,10 +189,10 @@ public class ToolSubMenu
                 ImGui.EndMenu();
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
+            // Export
             if (ImGui.BeginMenu("Export Row Names"))
             {
-                if (ImGui.MenuItem("Export Selected Rows"))
+                if (ImGui.Button("Export Selected Rows", UI.MenuButtonSize))
                 {
                     Handler.CurrentTargetCategory = TargetType.SelectedRows;
                     if (Screen._activeView._selection.RowSelectionExists())
@@ -265,7 +202,7 @@ public class ToolSubMenu
                 }
                 UIHelper.ShowHoverTooltip("Export the row names for the currently selected rows.");
 
-                if (ImGui.MenuItem("Export Selected Param"))
+                if (ImGui.Button("Export Selected Param", UI.MenuButtonSize))
                 {
                     Handler.CurrentTargetCategory = TargetType.SelectedParam;
                     if (Screen._activeView._selection.RowSelectionExists())
@@ -275,7 +212,7 @@ public class ToolSubMenu
                 }
                 UIHelper.ShowHoverTooltip("Export the row names for the currently selected param.");
 
-                if (ImGui.MenuItem("Export All"))
+                if (ImGui.Button("Export All", UI.MenuButtonSize))
                 {
                     Handler.CurrentTargetCategory = TargetType.AllParams;
                     if (Screen._activeView._selection.RowSelectionExists())
@@ -288,49 +225,83 @@ public class ToolSubMenu
                 ImGui.EndMenu();
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Trim Row Names"))
+            // Param Reloader
+            if (ParamMemoryTools.IsParamReloaderSupported())
             {
-                if (Screen._activeView._selection.ActiveParamExists())
+                if (ImGui.BeginMenu("Param Reloader"))
                 {
-                    Handler.RowNameTrimHandler();
+                    if (ImGui.Button("Current Param", UI.MenuButtonSize))
+                    {
+                        ParamMemoryTools.ReloadCurrentParam();
+                    }
+                    UIHelper.ShowHoverTooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadParam.HintText}");
+
+                    if (ImGui.Button("All Params", UI.MenuButtonSize))
+                    {
+                        ParamMemoryTools.ReloadAllParams();
+                    }
+                    UIHelper.ShowHoverTooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
+
+                    ImGui.EndMenu();
                 }
             }
 
-            ImGui.Separator();
-
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Sort Rows"))
+            // Item Gib
+            if (Smithbox.ProjectType == ProjectType.DS3)
             {
-                if (Screen._activeView._selection.ActiveParamExists())
+                if (ImGui.BeginMenu("Item Gib"))
                 {
-                    Handler.SortRowsHandler();
+                    var activeParam = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
+
+                    if (activeParam == "EquipParamGoods")
+                    {
+                        ImGui.InputInt("Number of Spawned Items##spawnItemCount", ref ParamMemoryTools.SpawnedItemAmount);
+                    }
+                    if (activeParam == "EquipParamWeapon")
+                    {
+                        ImGui.InputInt("Reinforcement of Spawned Weapon##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
+                        if (ParamMemoryTools.SpawnWeaponLevel > 10)
+                        {
+                            ParamMemoryTools.SpawnWeaponLevel = 10;
+                        }
+                    }
+
+                    if (ImGui.Button("Give Selected Item", UI.MenuButtonSize))
+                    {
+                        ParamMemoryTools.GiveItem();
+                    }
+                    UIHelper.ShowHoverTooltip("Spawns selected item in-game.");
+
+                    ImGui.EndMenu();
                 }
             }
 
-            ImGui.Separator();
-
-
-            // Developer-only actions
-#if DEBUG
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Weapon - Deep Row Namer"))
+            // Editor Mode
+            if (ImGui.BeginMenu("Editor Mode"))
             {
-                if (Screen._activeView._selection.ActiveParamExists())
+                if (ImGui.Button("Toggle", UI.MenuButtonSize))
                 {
-                    RowNamer.ApplyWeaponDeepRowNamer();
+                    ParamEditorScreen.EditorMode = !ParamEditorScreen.EditorMode;
                 }
+                UIHelper.ShowHoverTooltip("Toggle Editor Mode, allowing you to edit the Param Meta within Smithbox.");
+                UIHelper.ShowActiveStatus(ParamEditorScreen.EditorMode);
+
+                if (ImGui.Button("Save Changes", UI.MenuButtonSize))
+                {
+                    ParamMetaData.SaveAll();
+                    ParamEditorScreen.EditorMode = false;
+                }
+                UIHelper.ShowHoverTooltip("Save current Param Meta changes.");
+
+                if (ImGui.Button("Discard Changes", UI.MenuButtonSize))
+                {
+                    ParamEditorScreen.EditorMode = false;
+                }
+                UIHelper.ShowHoverTooltip("Discard current Param Meta changes.");
+
+                ImGui.EndMenu();
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Enemy - Deep Row Namer"))
-            {
-                if (Screen._activeView._selection.ActiveParamExists())
-                {
-                    RowNamer.ApplyEnemyDeepRowNamer();
-                }
-            }
-#endif
 
             ImGui.EndMenu();
         }

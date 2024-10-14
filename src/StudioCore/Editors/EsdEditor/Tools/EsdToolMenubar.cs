@@ -32,7 +32,7 @@ public class EsdToolMenubar
         if (ImGui.BeginMenu("Tools"))
         {
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Test"))
+            if (ImGui.Button("Test", UI.MenuButtonSize))
             {
 
             }

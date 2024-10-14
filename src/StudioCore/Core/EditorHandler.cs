@@ -147,26 +147,6 @@ public class EditorHandler
         return true;
     }
 
-    private void DisplayTaskStatus()
-    {
-        var status = "";
-
-        if (TaskManager.AnyActiveTasks())
-        {
-            status = status + "Active tasks still on going.\n";
-        }
-
-        if (MapEditor.MapQueryHandler.UserLoadedData && !MapEditor.MapQueryHandler.Bank.MapBankInitialized)
-        {
-            status = status + "Map Query Search still initializing.\n";
-        }
-
-        if (status != "")
-        {
-            UIHelper.ShowHoverTooltip(status);
-        }
-    }
-
     public void HandleEditorSharedBar()
     {
         ImGui.Separator();
@@ -175,25 +155,43 @@ public class EditorHandler
         if (ImGui.BeginMenu("File"))
         {
             // New Project
-            UIHelper.ShowMenuIcon($"{ForkAwesome.File}");
-            DisplayTaskStatus();
-            if (ImGui.MenuItem("New Project", "", false, MayChangeProject()))
+            if (ImGui.Button("New Project", UI.MenuButtonSize))
             {
-                Smithbox.ProjectHandler.ClearProject();
-                Smithbox.ProjectHandler.IsInitialLoad = true;
+                if (MayChangeProject())
+                {
+                    Smithbox.ProjectHandler.ClearProject();
+                    Smithbox.ProjectHandler.IsInitialLoad = true;
+                }
             }
 
             // Open Project
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Folder}");
-            DisplayTaskStatus();
-            if (ImGui.MenuItem("Open Project", "", false, MayChangeProject()))
+            if (ImGui.Button("Open Project", UI.MenuButtonSize))
             {
-                Smithbox.ProjectHandler.OpenProjectDialog();
+                if (MayChangeProject())
+                {
+                    Smithbox.ProjectHandler.OpenProjectDialog();
+                }
             }
 
+            // Save
+            if (ImGui.Button($"Save Selected {FocusedEditor.SaveType}", UI.MenuButtonSize))
+            {
+                Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
+                SaveFocusedEditor();
+            }
+            UIHelper.ShowHoverTooltip(KeyBindings.Current.CORE_Save.HintText);
+
+            // Save All
+            if (ImGui.Button($"Save All Modified {FocusedEditor.SaveType}", UI.MenuButtonSize))
+            {
+                Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
+                SaveAllFocusedEditor();
+            }
+            UIHelper.ShowHoverTooltip(KeyBindings.Current.CORE_SaveAll.HintText);
+
+            ImGui.Separator();
+
             // Recent Projects
-            UIHelper.ShowMenuIcon($"{ForkAwesome.FolderOpen}");
-            DisplayTaskStatus();
             if (ImGui.BeginMenu("Recent Projects", MayChangeProject() && CFG.Current.RecentProjects.Count > 0))
             {
                 Smithbox.ProjectHandler.DisplayRecentProjects();
@@ -202,46 +200,27 @@ public class EditorHandler
             }
 
             // Open in Explorer
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Archive}");
-            if (ImGui.BeginMenu("Open in Explorer",
-                    !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
+            if (ImGui.BeginMenu("Open in Explorer", !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
             {
-                if (ImGui.MenuItem("Project Folder", "", false))
+                if (ImGui.Button("Project Folder", UI.MenuButtonSize))
                 {
                     var projectPath = Smithbox.ProjectRoot;
                     Process.Start("explorer.exe", projectPath);
                 }
 
-                if (ImGui.MenuItem("Game Folder", "", false))
+                if (ImGui.Button("Game Folder", UI.MenuButtonSize))
                 {
                     var gamePath = Smithbox.GameRoot;
                     Process.Start("explorer.exe", gamePath);
                 }
 
-                if (ImGui.MenuItem("Config Folder", "", false))
+                if (ImGui.Button("Config Folder", UI.MenuButtonSize))
                 {
                     var configPath = CFG.GetConfigFolderPath();
                     Process.Start("explorer.exe", configPath);
                 }
 
                 ImGui.EndMenu();
-            }
-
-            // Save
-            UIHelper.ShowMenuIcon($"{ForkAwesome.FloppyO}");
-            if (ImGui.MenuItem($"Save Selected {FocusedEditor.SaveType}",
-                    KeyBindings.Current.CORE_Save.HintText))
-            {
-                Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
-                SaveFocusedEditor();
-            }
-
-            // Save All
-            UIHelper.ShowMenuIcon($"{ForkAwesome.FloppyO}");
-            if (ImGui.MenuItem($"Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.CORE_SaveAll.HintText))
-            {
-                Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
-                SaveAllFocusedEditor();
             }
 
             ImGui.EndMenu();

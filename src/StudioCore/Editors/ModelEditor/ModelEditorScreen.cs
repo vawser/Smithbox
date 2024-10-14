@@ -121,26 +121,34 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Edit"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false,
-                    EditorActionManager.CanUndo()))
+            // Undo
+            if (ImGui.Button($"Undo", UI.MenuButtonSize))
             {
-                EditorActionManager.UndoAction();
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAction();
+                }
+            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
+
+            // Undo All
+            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            {
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAllAction();
+                }
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false,
-                    EditorActionManager.CanUndo()))
+            // Redo
+            if (ImGui.Button($"Undo", UI.MenuButtonSize))
             {
-                EditorActionManager.UndoAllAction();
+                if (EditorActionManager.CanRedo())
+                {
+                    EditorActionManager.RedoAction();
+                }
             }
-
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false,
-                    EditorActionManager.CanRedo()))
-            {
-                EditorActionManager.RedoAction();
-            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
 
             ImGui.EndMenu();
         }
@@ -157,57 +165,49 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("View"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Viewport"))
+            if (ImGui.Button("Viewport", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_Editor_Viewport = !UI.Current.Interface_Editor_Viewport;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Viewport);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Model Hierarchy"))
+            if (ImGui.Button("Model Hierarchy", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_ModelEditor_ModelHierarchy = !UI.Current.Interface_ModelEditor_ModelHierarchy;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_ModelHierarchy);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Properties"))
+            if (ImGui.Button("Properties", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_ModelEditor_Properties = !UI.Current.Interface_ModelEditor_Properties;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_Properties);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Asset Browser"))
+            if (ImGui.Button("Asset Browser", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_ModelEditor_AssetBrowser = !UI.Current.Interface_ModelEditor_AssetBrowser;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_AssetBrowser);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Tool Window"))
+            if (ImGui.Button("Tool Window", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_ModelEditor_ToolConfigurationWindow = !UI.Current.Interface_ModelEditor_ToolConfigurationWindow;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_ToolConfigurationWindow);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Profiling"))
+            if (ImGui.Button("Profiling", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_Editor_Profiling = !UI.Current.Interface_Editor_Profiling;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Profiling);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Resource List"))
+            if (ImGui.Button("Resource List", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_ModelEditor_ResourceList = !UI.Current.Interface_ModelEditor_ResourceList;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_ResourceList);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Viewport Grid"))
+            if (ImGui.Button("Viewport Grid", UI.MenuButtonWideSize))
             {
                 UI.Current.Interface_ModelEditor_Viewport_Grid = !UI.Current.Interface_ModelEditor_Viewport_Grid;
                 CFG.Current.ModelEditor_Viewport_RegenerateMapGrid = true;
@@ -223,8 +223,7 @@ public class ModelEditorScreen : EditorScreen
         {
             ModelContainer container = _universe.LoadedModelContainer;
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Meshes"))
+            if (ImGui.Button("Meshes", UI.MenuButtonWideSize))
             {
                 CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
 
@@ -239,8 +238,7 @@ public class ModelEditorScreen : EditorScreen
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
             UIHelper.ShowHoverTooltip("Only applies on model reload.");
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Dummy Polygons"))
+            if (ImGui.Button("Dummy Polygons", UI.MenuButtonWideSize))
             {
                 CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
 
@@ -254,8 +252,7 @@ public class ModelEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewDummyPolys);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-            if (ImGui.MenuItem("Bones"))
+            if (ImGui.Button("Bones", UI.MenuButtonWideSize))
             {
                 CFG.Current.ModelEditor_ViewBones = !CFG.Current.ModelEditor_ViewBones;
 
@@ -273,8 +270,7 @@ public class ModelEditorScreen : EditorScreen
             if (Smithbox.ProjectType is ProjectType.ER)
             {
                 // High
-                UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-                if (ImGui.MenuItem("Collision (High)"))
+                if (ImGui.Button("Collision (High)", UI.MenuButtonWideSize))
                 {
                     CFG.Current.ModelEditor_ViewHighCollision = !CFG.Current.ModelEditor_ViewHighCollision;
                 }
@@ -282,8 +278,7 @@ public class ModelEditorScreen : EditorScreen
                 UIHelper.ShowHoverTooltip("Only applies on model reload.");
 
                 // Low
-                UIHelper.ShowMenuIcon($"{ForkAwesome.Eye}");
-                if (ImGui.MenuItem("Collision (Low)"))
+                if (ImGui.Button("Collision (Low)", UI.MenuButtonWideSize))
                 {
                     CFG.Current.ModelEditor_ViewLowCollision = !CFG.Current.ModelEditor_ViewLowCollision;
                 }
@@ -298,7 +293,6 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Viewport"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.LightbulbO}");
             if (ImGui.BeginMenu("Scene Lighting"))
             {
                 Viewport.SceneParamsGui();
@@ -312,56 +306,53 @@ public class ModelEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Gizmos"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Compass}");
             if (ImGui.BeginMenu("Mode"))
             {
-                if (ImGui.MenuItem("Translate", KeyBindings.Current.VIEWPORT_GizmoTranslationMode.HintText,
-                        Gizmos.Mode == Gizmos.GizmosMode.Translate))
+                if (ImGui.Button("Translate", UI.MenuButtonSize))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Translate;
                 }
+                UIHelper.ShowHoverTooltip($"Set the gizmo to Translation mode.\n{KeyBindings.Current.VIEWPORT_GizmoTranslationMode.HintText}");
 
-                if (ImGui.MenuItem("Rotate", KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText,
-                        Gizmos.Mode == Gizmos.GizmosMode.Rotate))
+                if (ImGui.Button("Rotate", UI.MenuButtonSize))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Rotate;
                 }
+                UIHelper.ShowHoverTooltip($"Set the gizmo to Rotation mode.\n{KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText}");
 
                 ImGui.EndMenu();
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Cube}");
             if (ImGui.BeginMenu("Space"))
             {
-                if (ImGui.MenuItem("Local", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText,
-                        Gizmos.Space == Gizmos.GizmosSpace.Local))
+                if (ImGui.Button("Local", UI.MenuButtonSize))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.Local;
                 }
+                UIHelper.ShowHoverTooltip($"Place the gizmo origin based on the selection's local position.\n{KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText}");
 
-                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText,
-                        Gizmos.Space == Gizmos.GizmosSpace.World))
+                if (ImGui.Button("World", UI.MenuButtonSize))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.World;
                 }
+                UIHelper.ShowHoverTooltip($"Place the gizmo origin based on the selection's world position.\n{KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText}");
 
                 ImGui.EndMenu();
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Cubes}");
             if (ImGui.BeginMenu("Origin"))
             {
-                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText,
-                        Gizmos.Origin == Gizmos.GizmosOrigin.World))
+                if (ImGui.Button("World", UI.MenuButtonSize))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.World;
                 }
+                UIHelper.ShowHoverTooltip($"Orient the gizmo origin based on the world position.\n{KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText}");
 
-                if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText,
-                        Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox))
+                if (ImGui.Button("Bounding Box", UI.MenuButtonSize))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
                 }
+                UIHelper.ShowHoverTooltip($"Orient the gizmo origin based on the bounding box.\n{KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText}");
 
                 ImGui.EndMenu();
             }

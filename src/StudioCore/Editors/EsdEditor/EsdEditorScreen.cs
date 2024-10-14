@@ -65,6 +65,42 @@ public class EsdEditorScreen : EditorScreen
     {
         ImGui.Separator();
 
+        if (ImGui.BeginMenu("Edit"))
+        {
+            // Undo
+            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            {
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAction();
+                }
+            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
+
+            // Undo All
+            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            {
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAllAction();
+                }
+            }
+
+            // Redo
+            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            {
+                if (EditorActionManager.CanRedo())
+                {
+                    EditorActionManager.RedoAction();
+                }
+            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.Separator();
+
         ActionMenubar.Display();
 
         ImGui.Separator();

@@ -31,15 +31,14 @@ public class ModelToolMenubar
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Color Picker"))
+            if (ImGui.Button("Color Picker", UI.MenuButtonWideSize))
             {
                 ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
             }
+            UIHelper.ShowHoverTooltip($"Display the color picker.");
 
             // Export Model
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Export Model", KeyBindings.Current.MODEL_ExportModel.HintText))
+            if (ImGui.Button("Export Model", UI.MenuButtonWideSize))
             {
                 if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.DAE)
                 {
@@ -50,25 +49,26 @@ public class ModelToolMenubar
                     ModelObjectExporter.ExportModel(Screen);
                 }
             }
+            UIHelper.ShowHoverTooltip($"Export currently loaded model.\n{KeyBindings.Current.MODEL_ExportModel.HintText}");
 
             // Solve Bounding Boxes
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Solve Bounding Boxes"))
+            if (ImGui.Button("Solve Bounding Boxes", UI.MenuButtonWideSize))
             {
                 Screen.ActionHandler.SolveBoundingBoxes();
             }
             // Reverse Face Set
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Reverse Mesh Face Set"))
+            if (ImGui.Button("Reverse Mesh Face Set", UI.MenuButtonWideSize))
             {
                 Screen.ActionHandler.ReverseMeshFaceSet();
             }
             // Reverse Normals
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.MenuItem("Reverse Mesh Normals"))
+            if (ImGui.Button("Reverse Mesh Normals", UI.MenuButtonWideSize))
             {
                 Screen.ActionHandler.ReverseMeshNormals();
             }
+
+            ImGui.Separator();
+
             // DFLVERummy Groups
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("FLVER Groups"))

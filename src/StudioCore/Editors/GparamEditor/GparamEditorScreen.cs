@@ -72,23 +72,34 @@ public class GparamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Edit"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false, EditorActionManager.CanUndo()))
+            // Undo
+            if (ImGui.Button($"Undo", UI.MenuButtonSize))
             {
-                EditorActionManager.UndoAction();
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAction();
+                }
+            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
+
+            // Undo All
+            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            {
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAllAction();
+                }
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false, EditorActionManager.CanUndo()))
+            // Redo
+            if (ImGui.Button($"Undo", UI.MenuButtonSize))
             {
-                EditorActionManager.UndoAllAction();
+                if (EditorActionManager.CanRedo())
+                {
+                    EditorActionManager.RedoAction();
+                }
             }
-
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false, EditorActionManager.CanRedo()))
-            {
-                EditorActionManager.RedoAction();
-            }
+            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
 
             ImGui.EndMenu();
         }
@@ -105,36 +116,31 @@ public class GparamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("View"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Files"))
+            if (ImGui.Button("Files", UI.MenuButtonSize))
             {
                 UI.Current.Interface_GparamEditor_Files = !UI.Current.Interface_GparamEditor_Files;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Files);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Groups"))
+            if (ImGui.Button("Groups", UI.MenuButtonSize))
             {
                 UI.Current.Interface_GparamEditor_Groups = !UI.Current.Interface_GparamEditor_Groups;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Groups);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Fields"))
+            if (ImGui.Button("Fields", UI.MenuButtonSize))
             {
                 UI.Current.Interface_GparamEditor_Fields = !UI.Current.Interface_GparamEditor_Fields;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Fields);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Values"))
+            if (ImGui.Button("Values", UI.MenuButtonSize))
             {
                 UI.Current.Interface_GparamEditor_Values = !UI.Current.Interface_GparamEditor_Values;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Values);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Tool Window"))
+            if (ImGui.Button("Tool Window", UI.MenuButtonSize))
             {
                 UI.Current.Interface_GparamEditor_ToolConfiguration = !UI.Current.Interface_GparamEditor_ToolConfiguration;
             }

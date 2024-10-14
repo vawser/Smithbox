@@ -650,7 +650,7 @@ public class ProjectHandler
             RemoveRecentProject(p);
         }
 
-        if (ImGui.MenuItem($@"{p.GameType}: {p.Name}##{id}"))
+        if (ImGui.Button($@"{p.GameType}: {p.Name}##{id}", UI.MenuButtonSize))
         {
             if (File.Exists(p.ProjectFile))
             {

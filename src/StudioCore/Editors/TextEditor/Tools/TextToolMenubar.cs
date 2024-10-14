@@ -23,6 +23,7 @@ public class TextToolMenubar
 
     public void Display()
     {
+        /*
         if (ImGui.BeginMenu("Tools"))
         {
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
@@ -32,6 +33,8 @@ public class TextToolMenubar
             }
 
             ImGui.EndMenu();
+            }
         }
+        */
     }
 }
