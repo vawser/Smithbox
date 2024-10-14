@@ -1,0 +1,80 @@
+{
+    "ProjectType": 8, 
+    "Name": "Weapon Affinities",
+    "Description": "Generate the 12 affinity entries from a base entry.",
+    "Count": 12,
+    "DefinitionList": [
+        {
+            "PossessiveAdjust": true,
+            "Offset": 100,
+            "PrependText": "Heavy",
+            "AppendText": ""
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 200,
+            "PrependText": "Keen",
+            "AppendText": ""
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 300,
+            "PrependText": "Quality",
+            "AppendText": ""
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 400,
+            "PrependText": "Fire",
+            "AppendText": ""
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 500,
+            "PrependText": "Flame Art",
+            "AppendText": ""
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 600,
+            "PrependText": "Lightning",
+            "AppendText": ""
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 700,
+            "PrependText": "Sacred",
+            "AppendText": ""
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 800,
+            "PrependText": "Magic",
+            "AppendText": ""
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 900,
+            "PrependText": "Cold",
+            "AppendText": ""
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 1000,
+            "PrependText": "Poison",
+            "AppendText": ""
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 1100,
+            "PrependText": "Blood",
+            "AppendText": ""
+        },
+        {
+            "PossessiveAdjust": true,
+            "Offset": 1200,
+            "PrependText": "Occult",
+            "AppendText": ""
+        }
+    ]
+}

@@ -391,6 +391,15 @@ public class CFG
     public bool TextEditor_TextCopy_EscapeNewLines = true;
     public bool TextEditor_TextCopy_IncludeID = true;
 
+    public int TextEditor_CreationModal_CreationCount = 1;
+    public int TextEditor_CreationModal_IncrementCount = 1;
+    public bool TextEditor_CreationModal_UseIncrementalTitling = false;
+    public string TextEditor_CreationModal_IncrementalTitling_Prefix = "+";
+    public string TextEditor_CreationModal_IncrementalTitling_Postfix = "";
+
+    public bool TextEditor_CreationModal_UseIncrementalNaming = false;
+    public string TextEditor_CreationModal_IncrementalNaming_Template = "";
+
     // OLD
     public bool FMG_NoFmgPatching = false;
     public bool FMG_NoGroupedFmgEntries = false;

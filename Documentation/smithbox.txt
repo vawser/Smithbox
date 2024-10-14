@@ -114,7 +114,5 @@ Text Editor:
 - RESTORE: global text search
 - RESTORE: global text search and replace
 
-- ADD: Create Rows
-- RESTORE: Generate Rows action
 - RESTORE: Duplicate Rows
 - RESTORE: Delete Rows

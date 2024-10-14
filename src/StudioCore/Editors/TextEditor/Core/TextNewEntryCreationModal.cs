@@ -2,7 +2,9 @@
 using ImGuiNET;
 using Octokit;
 using SoulsFormats;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Prefabs;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextEditor;
@@ -20,6 +22,7 @@ public class TextNewEntryCreationModal
     private TextEditorScreen Screen;
     private TextSelectionManager Selection;
     private TextEntryGroupManager EntryGroupManager;
+    private TextNamingTemplateManager NamingTemplateManager;
 
     public bool ShowModal = false;
 
@@ -31,18 +34,12 @@ public class TextNewEntryCreationModal
     private string _newDescriptionText = "";
     private string _newEffectText = "";
 
-    private int CreationCount = 1;
-    private int IncrementAmount = 1;
-
-    private bool UseIncrementalTitling = false;
-    private string IncrementTitling_Prefix = "+";
-    private string IncrementTitling_Postfix = "";
-
     public TextNewEntryCreationModal(TextEditorScreen screen)
     {
         Screen = screen;
         Selection = screen.Selection;
         EntryGroupManager = screen.EntryGroupManager;
+        NamingTemplateManager = screen.NamingTemplateManager;
     }
 
     public void Display()
@@ -57,7 +54,7 @@ public class TextNewEntryCreationModal
 
     public void EntryCreationMenu()
     {
-        if (ImGui.BeginPopupModal("Create FMG Entry", ref ShowModal, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize))
+        if (ImGui.BeginPopupModal("Create FMG Entry", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
         {
             var entry = Selection._selectedFmgEntry;
             var fmgEntryGroup = EntryGroupManager.GetEntryGroup(entry);
@@ -66,11 +63,142 @@ public class TextNewEntryCreationModal
 
             if(ImGui.CollapsingHeader("Configuration", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                // Creation Count (e.g. 5 times)
-                // Increment Amount (e.g. +10 to base ID)
-                // Checkbox: Incremental Titles (add +X to the title text for each loop, X being the loop count, ignoring the first loop
-                // Incremental Prefix
-                // Increment Postfix
+                if (ImGui.BeginTable($"createConfigurationTable", 2, ImGuiTableFlags.SizingFixedFit))
+                {
+                    ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+                    ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
+                    //ImGui.TableHeadersRow();
+
+                    // Row 1
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.Text("Creation Count");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    if (ImGui.InputInt("##creationCount", ref CFG.Current.TextEditor_CreationModal_CreationCount))
+                    {
+                        if (CFG.Current.TextEditor_CreationModal_CreationCount < 1)
+                        {
+                            CFG.Current.TextEditor_CreationModal_CreationCount = 1;
+                        }
+                    }
+                    UIHelper.ShowHoverTooltip("The number of entries to create.");
+
+                    // Row 2
+                    ImGui.TableNextRow();
+
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.Text("Increment Count");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    if (ImGui.InputInt("##incrementCount", ref CFG.Current.TextEditor_CreationModal_IncrementCount))
+                    {
+                        if (CFG.Current.TextEditor_CreationModal_IncrementCount < 1)
+                        {
+                            CFG.Current.TextEditor_CreationModal_IncrementCount = 1;
+                        }
+                    }
+                    UIHelper.ShowHoverTooltip("The amount to increment the ID by for each created entry after the first.");
+
+                    // Row 3
+                    ImGui.TableNextRow();
+
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.Text("Use Incremental Titling");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    if(ImGui.Checkbox("##useIncrementalTitling", ref CFG.Current.TextEditor_CreationModal_UseIncrementalTitling))
+                    {
+                        if(CFG.Current.TextEditor_CreationModal_UseIncrementalTitling)
+                        {
+                            CFG.Current.TextEditor_CreationModal_UseIncrementalNaming = false;
+                        }
+                    }
+                    UIHelper.ShowHoverTooltip("Whether to use incremental titling, which applies the current creation count number to the end of the text for a Title entry.");
+
+                    if (CFG.Current.TextEditor_CreationModal_UseIncrementalTitling)
+                    {
+                        // Row 4
+                        ImGui.TableNextRow();
+
+                        ImGui.TableSetColumnIndex(0);
+
+                        ImGui.Text("Incremental Prefix");
+
+                        ImGui.TableSetColumnIndex(1);
+
+                        ImGui.InputText("##incrementalTitlingPrefix", ref CFG.Current.TextEditor_CreationModal_IncrementalTitling_Prefix, 255);
+                        UIHelper.ShowHoverTooltip("Characters to apply before the current creation number in the title when using Incremental Titling.");
+
+                        // Row 5
+                        ImGui.TableNextRow();
+
+                        ImGui.TableSetColumnIndex(0);
+
+                        ImGui.Text("Incremental Postfix");
+
+                        ImGui.TableSetColumnIndex(1);
+
+
+                        ImGui.InputText("##incrementalTitlingPostfix", ref CFG.Current.TextEditor_CreationModal_IncrementalTitling_Postfix, 255);
+                        UIHelper.ShowHoverTooltip("Characters to apply after the current creation number in the title when using Incremental Titling.");
+                    }
+
+                    // Row 6
+                    ImGui.TableNextRow();
+
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.Text("Use Incremental Naming");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    if(ImGui.Checkbox("##useIncrementalNaming", ref CFG.Current.TextEditor_CreationModal_UseIncrementalNaming))
+                    {
+                        if (CFG.Current.TextEditor_CreationModal_UseIncrementalNaming)
+                        {
+                            CFG.Current.TextEditor_CreationModal_UseIncrementalTitling = false;
+                        }
+                    }
+                    UIHelper.ShowHoverTooltip("Whether to use incremental naming, which applies a template to the Title entry text.");
+
+                    if (CFG.Current.TextEditor_CreationModal_UseIncrementalNaming)
+                    {
+                        // Row 7
+                        ImGui.TableNextRow();
+
+                        ImGui.TableSetColumnIndex(0);
+
+                        ImGui.Text("Naming Template");
+
+                        ImGui.TableSetColumnIndex(1);
+
+                        if(ImGui.BeginCombo("##incrementalNamingGeneratorList", CFG.Current.TextEditor_CreationModal_IncrementalNaming_Template))
+                        {
+                            foreach(var (name, generator) in NamingTemplateManager.GeneratorDictionary)
+                            {
+                                if ((ProjectType)generator.ProjectType == Smithbox.ProjectType)
+                                {
+                                    if (ImGui.Selectable(name))
+                                    {
+                                        CFG.Current.TextEditor_CreationModal_IncrementalNaming_Template = name;
+                                    }
+                                }
+                            }
+
+                            ImGui.EndCombo();
+                        }
+                        UIHelper.ShowHoverTooltip("The naming template to use.");
+                    }
+
+                    ImGui.EndTable();
+                }
             }
 
             // Simple
@@ -119,12 +247,42 @@ public class TextNewEntryCreationModal
 
             if (ImGui.Button("Create", buttonSize))
             {
+                var creationCount = CFG.Current.TextEditor_CreationModal_CreationCount;
+                var incrementCount = CFG.Current.TextEditor_CreationModal_IncrementCount;
                 var baseId = _newId;
 
-                for (int i = 0; i < CreationCount; i++)
+                FmgEntryGeneratorBase generator = null;
+
+                if (CFG.Current.TextEditor_CreationModal_UseIncrementalNaming)
                 {
-                    CreateNewEntries(entry, fmgEntryGroup, baseId, i);
+                    generator = NamingTemplateManager.GetGenerator(CFG.Current.TextEditor_CreationModal_IncrementalNaming_Template);
                 }
+
+                List<EditorAction> groupedActions = new();
+
+                for (int i = 0; i < creationCount; i++)
+                {
+                    var offset = 0;
+                    if (i > 0)
+                        offset = incrementCount * i;
+
+                    var newActionList = CreateNewEntries(entry, fmgEntryGroup, baseId, i, generator, offset);
+                    baseId = baseId + incrementCount;
+
+                    if(newActionList != null)
+                    {
+                        foreach(var newEntry in newActionList)
+                        {
+                            groupedActions.Add(newEntry);
+                        }
+                    }
+                }
+
+                // Reverse add order so they are added to the entry list in the expected order (0, 100, 200, etc)
+                groupedActions.Reverse();
+
+                Screen.EditorActionManager.ExecuteAction(new FmgGroupedAction(groupedActions));
+                ShowModal = false;
             }
             ImGui.SameLine();
             if (ImGui.Button("Close", buttonSize))
@@ -136,7 +294,11 @@ public class TextNewEntryCreationModal
         }
     }
 
-    public void CreateNewEntries(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, int creationCount)
+    /// <summary>
+    /// Create new entries based on passed parameters.
+    /// </summary>
+    public List<EditorAction> CreateNewEntries(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, int creationCount, 
+        FmgEntryGeneratorBase generator, int offset)
     {
         var displayIdError = false;
 
@@ -158,11 +320,35 @@ public class TextNewEntryCreationModal
                     {
                         var newTitleText = _newTitleText;
 
-                        if (UseIncrementalTitling)
+                        if (CFG.Current.TextEditor_CreationModal_UseIncrementalTitling)
                         {
-                            if(creationCount != 00)
+                            var prefix = CFG.Current.TextEditor_CreationModal_IncrementalTitling_Prefix;
+                            var postfix = CFG.Current.TextEditor_CreationModal_IncrementalTitling_Postfix;
+
+                            if (creationCount != 0)
                             {
-                                newTitleText = $"{newTitleText} {IncrementTitling_Prefix}{creationCount}{IncrementTitling_Postfix}";
+                                newTitleText = $"{newTitleText} {prefix}{creationCount}{postfix}";
+                            }
+                        }
+
+                        if (CFG.Current.TextEditor_CreationModal_UseIncrementalNaming && generator != null)
+                        {
+                            foreach(var row in generator.DefinitionList)
+                            {
+                                if(row.Offset == offset)
+                                {
+                                    if (row.PossessiveAdjust && newTitleText.Contains("'s"))
+                                    {
+                                        var owner = newTitleText.Split("'s")[0];
+                                        var part = newTitleText.Split("'s")[1];
+
+                                        newTitleText = $"{owner}'s {row.PrependText.Trim()}{part}{row.AppendText}";
+                                    }
+                                    else
+                                    {
+                                        newTitleText = $"{row.PrependText} {newTitleText}{row.AppendText}";
+                                    }
+                                }
                             }
                         }
 
@@ -222,11 +408,8 @@ public class TextNewEntryCreationModal
 
             if (actions.Count > 0)
             {
-                var groupedAction = new FmgGroupedAction(actions);
-                Screen.EditorActionManager.ExecuteAction(groupedAction);
+                return actions;
             }
-
-            ShowModal = false;
         }
         else
         {
@@ -242,8 +425,13 @@ public class TextNewEntryCreationModal
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
         }
+
+        return null;
     }
 
+    /// <summary>
+    /// Display the input tables for the passed input variables
+    /// </summary>
     public void DisplayEditTable(int index, ref int newId, ref string newText)
     {
         int tableWidth = 520;

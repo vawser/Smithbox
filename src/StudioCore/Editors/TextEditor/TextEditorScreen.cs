@@ -23,6 +23,7 @@ public class TextEditorScreen : EditorScreen
     public TextFilters Filters;
     public TextEntryGroupManager EntryGroupManager;
     public TextDifferenceManager DifferenceManager;
+    public TextNamingTemplateManager NamingTemplateManager;
 
     public TextCommandQueue CommandQueue;
 
@@ -47,6 +48,7 @@ public class TextEditorScreen : EditorScreen
         Filters = new TextFilters(this);
         EntryGroupManager = new TextEntryGroupManager(this);
         DifferenceManager = new TextDifferenceManager(this);
+        NamingTemplateManager = new TextNamingTemplateManager(this);
 
         ToolView = new TextToolView(this);
         ToolMenubar = new TextToolMenubar(this);
@@ -206,6 +208,7 @@ public class TextEditorScreen : EditorScreen
             Decorator.OnProjectChanged();
 
             ActionHandler.OnProjectChanged();
+            NamingTemplateManager.OnProjectChanged();
         }
 
         TextBank.LoadTextFiles();
