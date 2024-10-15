@@ -401,26 +401,12 @@ public class CFG
     public string TextEditor_CreationModal_IncrementalNaming_Template = "";
 
     // OLD
-    public bool FMG_NoFmgPatching = false;
-    public bool FMG_NoGroupedFmgEntries = false;
-    public bool FMG_ShowOriginalNames = false;
-
-    public int FMG_DuplicateAmount = 1;
-    public int FMG_DuplicateIncrement = 1;
-
-    public int FMG_SyncEntries_Modulus = 10000;
-
     public string FMG_SearchAndReplace_SearchText = "";
     public string FMG_SearchAndReplace_ReplaceText = "";
     public bool FMG_SearchAndReplace_Regex_IgnoreCase = false;
     public bool FMG_SearchAndReplace_Regex_Multiline = false;
     public bool FMG_SearchAndReplace_Regex_Singleline = false;
     public bool FMG_SearchAndReplace_Regex_IgnorePatternWhitespace = false;
-
-    public bool FMG_StandardDelete = true;
-    public bool FMG_BlockDelete = false;
-    public int FMG_BlockDelete_StartID = 100;
-    public int FMG_BlockDelete_EndID = 1000;
 
     //****************************
     // Settings: Gparam Editor

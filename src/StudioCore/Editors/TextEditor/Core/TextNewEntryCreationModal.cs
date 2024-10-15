@@ -59,9 +59,7 @@ public class TextNewEntryCreationModal
             var entry = Selection._selectedFmgEntry;
             var fmgEntryGroup = EntryGroupManager.GetEntryGroup(entry);
 
-            Vector2 buttonSize = new Vector2(520 * 0.5f, 24);
-
-            if(ImGui.CollapsingHeader("Configuration", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("Configuration", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 if (ImGui.BeginTable($"createConfigurationTable", 2, ImGuiTableFlags.SizingFixedFit))
                 {
@@ -199,6 +197,38 @@ public class TextNewEntryCreationModal
 
                     ImGui.EndTable();
                 }
+
+                if (ImGui.Button("Inherit Text from Selection", UI.ModalButtonSize))
+                {
+                    _newId = Selection._selectedFmgEntry.ID;
+                    if (fmgEntryGroup == null)
+                    {
+                        _newBasicText = Selection._selectedFmgEntry.Text;
+                    }
+                    else
+                    {
+                        if (fmgEntryGroup.Title != null)
+                        {
+                            _newTitleText = fmgEntryGroup.Title.Text;
+                        }
+
+                        if (fmgEntryGroup.Summary != null)
+                        {
+                            _newSummaryText = fmgEntryGroup.Summary.Text;
+                        }
+
+                        if (fmgEntryGroup.Description != null)
+                        {
+                            _newDescriptionText = fmgEntryGroup.Description.Text;
+                        }
+
+                        if (fmgEntryGroup.Effect != null)
+                        {
+                            _newEffectText = fmgEntryGroup.Effect.Text;
+                        }
+                    }
+                }
+                UIHelper.ShowHoverTooltip("Fill creation text input with contents of current selection.");
             }
 
             // Simple
@@ -245,7 +275,7 @@ public class TextNewEntryCreationModal
                 }
             }
 
-            if (ImGui.Button("Create", buttonSize))
+            if (ImGui.Button("Create", UI.ModalButtonHalfSize))
             {
                 var creationCount = CFG.Current.TextEditor_CreationModal_CreationCount;
                 var incrementCount = CFG.Current.TextEditor_CreationModal_IncrementCount;
@@ -285,7 +315,7 @@ public class TextNewEntryCreationModal
                 ShowModal = false;
             }
             ImGui.SameLine();
-            if (ImGui.Button("Close", buttonSize))
+            if (ImGui.Button("Close", UI.ModalButtonHalfSize))
             {
                 ShowModal = false;
             }
@@ -434,9 +464,13 @@ public class TextNewEntryCreationModal
     /// </summary>
     public void DisplayEditTable(int index, ref int newId, ref string newText)
     {
-        int tableWidth = 520;
+        // Fill null entries
+        if(newText == null)
+        {
+            newText = "";
+        }
 
-        Vector2 buttonSize = new Vector2(520 * 0.5f, 24);
+        int tableWidth = 520;
 
         var textboxHeight = 100;
         var height = (textboxHeight + ImGui.CalcTextSize(newText).Y) * DPI.GetUIScale();

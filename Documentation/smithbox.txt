@@ -30,6 +30,7 @@ Map Editor:
  - ADD: Add collision display for Assets: add secondary mesh alongside main Asset mesh, that holds the collision model.
  - ADD: global prop edit
  - ADD: MSB xml export
+ - ADD: local prop search should focus tool window + prop search collapsible
  
  - FIX: asset browser entity change not properly changing Instance ID and Self Parts
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
@@ -108,9 +109,8 @@ Text Editor:
  - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
  
 # PRIORITY
-- ADD: FMG Import/Export
-
-- ADD: sync with X Language
-- ADD: global text search and replace
-- ADD: Duplicate Rows
-- ADD: Delete Rows
+- ADD: FMG Import/Export: container level, fmg leve, fmg entry level - Export to project/Workflow/Text/, generate import list from this folder
+- ADD: sync with X Language (Container level -> apply modified rows + add unique rows into non-primary container (add option to apply prepend string, e.g. TRANSLATE:, so you can tag rows for translation)
+- ADD: global text search and replace: search term: show affected; apply button
+- ADD: Duplicate Rows (add multi-duplicate)
+- ADD: Delete Rows (copy duplicate stuff, but reverse)

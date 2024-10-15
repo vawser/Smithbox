@@ -35,6 +35,10 @@ public class UI
     public static Vector2 MenuButtonSize = new Vector2(200, 24);
     public static Vector2 MenuButtonWideSize = new Vector2(350, 24);
 
+    public static Vector2 ModalButtonThirdSize = new Vector2(172, 24);
+    public static Vector2 ModalButtonHalfSize = new Vector2(260, 24);
+    public static Vector2 ModalButtonSize = new Vector2(520, 24);
+
     //**************
     // System
     //**************
@@ -357,7 +361,13 @@ public class UI
 
     public static void OnGui()
     {
+        // Menubar
         MenuButtonSize = new Vector2(200, 24 * DPI.GetUIScale());
         MenuButtonWideSize = new Vector2(350, 24 * DPI.GetUIScale());
+
+        // Modal
+        ModalButtonThirdSize = new Vector2(172, 24 * DPI.GetUIScale());
+        ModalButtonHalfSize = new Vector2(260, 24 * DPI.GetUIScale());
+        ModalButtonSize = new Vector2(520, 24 * DPI.GetUIScale());
     }
 }
