@@ -16,6 +16,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using static StudioCore.Configuration.SettingsWindow;
 
 namespace StudioCore.Editors.MapEditor
 {
@@ -157,7 +158,7 @@ namespace StudioCore.Editors.MapEditor
                             {
                                 if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
                                 {
-                                    Smithbox.WindowHandler.SettingsWindow.ToggleMenuVisibility();
+                                    Smithbox.WindowHandler.SettingsWindow.ToggleWindow(SelectedSettingTab.ProjectAliases_Characters);
                                 }
 
                                 Smithbox.WindowHandler.SettingsWindow.DisplayCharacterTab = true;
@@ -212,7 +213,7 @@ namespace StudioCore.Editors.MapEditor
                             {
                                 if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
                                 {
-                                    Smithbox.WindowHandler.SettingsWindow.ToggleMenuVisibility();
+                                    Smithbox.WindowHandler.SettingsWindow.ToggleWindow(SelectedSettingTab.ProjectAliases_Assets);
                                 }
 
                                 Smithbox.WindowHandler.SettingsWindow.DisplayAssetTab = true;
@@ -260,7 +261,7 @@ namespace StudioCore.Editors.MapEditor
                             {
                                 if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
                                 {
-                                    Smithbox.WindowHandler.SettingsWindow.ToggleMenuVisibility();
+                                    Smithbox.WindowHandler.SettingsWindow.ToggleWindow(SelectedSettingTab.ProjectAliases_Parts);
                                 }
 
                                 Smithbox.WindowHandler.SettingsWindow.DisplayPartTab = true;
@@ -325,7 +326,7 @@ namespace StudioCore.Editors.MapEditor
                                 {
                                     if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
                                     {
-                                        Smithbox.WindowHandler.SettingsWindow.ToggleMenuVisibility();
+                                        Smithbox.WindowHandler.SettingsWindow.ToggleWindow(SelectedSettingTab.ProjectAliases_MapPieces);
                                     }
 
                                     Smithbox.WindowHandler.SettingsWindow.DisplayMapPieceTab = true;

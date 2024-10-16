@@ -20,8 +20,9 @@ using StudioCore.Core;
 using System.ComponentModel.DataAnnotations;
 using StudioCore.Utilities;
 using StudioCore.Interface;
+using StudioCore.Configuration.Settings;
 
-namespace StudioCore.Configuration.Settings;
+namespace StudioCore.Configuration;
 
 public class SettingsWindow
 {
@@ -40,9 +41,7 @@ public class SettingsWindow
     private EmevdEditorTab EmevdEditorSettings;
     private EsdEditorTab EsdEditorSettings;
 
-    private ProjectStatusTab ProjectStatusTab;
     private ProjectSettingsTab ProjectSettingsTab;
-    private ProjectEnumTab ProjectEnumTab;
 
     private AliasTab CharacterAliasTab;
     private AliasTab AssetAliasTab;
@@ -74,9 +73,7 @@ public class SettingsWindow
         EsdEditorSettings = new EsdEditorTab();
         InterfaceSettings = new InterfaceTab();
 
-        ProjectStatusTab = new ProjectStatusTab();
         ProjectSettingsTab = new ProjectSettingsTab();
-        ProjectEnumTab = new ProjectEnumTab();
     }
 
     public void SaveSettings()
@@ -84,9 +81,23 @@ public class SettingsWindow
         CFG.Save();
         UI.Save();
     }
-    public void ToggleMenuVisibility()
+
+    private SelectedSettingTab CurrentTab;
+
+    public void ToggleWindow(SelectedSettingTab focusedTab, bool ignoreIfOpen = true)
     {
-        MenuOpenState = !MenuOpenState;
+        CurrentTab = focusedTab;
+
+        if (!ignoreIfOpen)
+        {
+            MenuOpenState = !MenuOpenState;
+        }
+        
+        if(!MenuOpenState)
+        {
+            MenuOpenState = true;
+        }
+
         SetupAliasTabs();
     }
 
@@ -117,6 +128,7 @@ public class SettingsWindow
     public void Display()
     {
         var scale = DPI.GetUIScale();
+
         if (!MenuOpenState)
             return;
 
@@ -130,65 +142,10 @@ public class SettingsWindow
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(5.0f, 5.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
 
-        if (ImGui.Begin("Configuration##configurationWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
+        if (ImGui.Begin("Settings##SettingsWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            ImGui.Columns(2);
-
-            ImGui.BeginChild("configurationTabList");
-
-            var arr = Enum.GetValues(typeof(SelectedSettingTab));
-            for (int i = 0; i < arr.Length; i++)
-            {
-                var tab = (SelectedSettingTab)arr.GetValue(i);
-
-                if (tab == SelectedSettingTab.ProjectStatus)
-                {
-                    ImGui.Separator();
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Project");
-                    ImGui.Separator();
-                }
-                if (tab == SelectedSettingTab.System)
-                {
-                    ImGui.Separator();
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Settings");
-                    ImGui.Separator();
-                }
-                if (tab == SelectedSettingTab.ProjectAliases_Characters)
-                {
-                    ImGui.Separator();
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Aliases");
-                    ImGui.Separator();
-                }
-
-
-                if (ImGui.Selectable(tab.GetDisplayName(), tab == SelectedTab))
-                {
-                    SelectedTab = tab;
-                }
-            }
-            ImGui.EndChild();
-
-            ImGui.NextColumn();
-
-            if (DisplayCharacterTab)
-            {
-                SelectedTab = SelectedSettingTab.ProjectAliases_Characters;
-            }
-            if (DisplayAssetTab)
-            {
-                SelectedTab = SelectedSettingTab.ProjectAliases_Assets;
-            }
-            if (DisplayPartTab)
-            {
-                SelectedTab = SelectedSettingTab.ProjectAliases_Parts;
-            }
-            if (DisplayMapPieceTab)
-            {
-                SelectedTab = SelectedSettingTab.ProjectAliases_MapPieces;
-            }
-
             ImGui.BeginChild("configurationTab");
-            switch (SelectedTab)
+            switch (CurrentTab)
             {
                 case SelectedSettingTab.System:
                     SystemSettings.Display();
@@ -229,12 +186,6 @@ public class SettingsWindow
                 case SelectedSettingTab.Project:
                     ProjectSettingsTab.Display();
                     break;
-                case SelectedSettingTab.ProjectStatus:
-                    ProjectStatusTab.Display();
-                    break;
-                case SelectedSettingTab.ProjectEnums:
-                    ProjectEnumTab.Display();
-                    break;
                 case SelectedSettingTab.ProjectAliases_Characters:
                     DisplayAliasTab(CharacterAliasTab, "Characters");
                     break;
@@ -273,8 +224,6 @@ public class SettingsWindow
                     break;
             }
             ImGui.EndChild();
-
-            ImGui.Columns(1);
         }
 
         ImGui.End();

@@ -1,78 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ATK_PARAM_HIT_TYPE" type="u8">
+        <Option Value="0" Name="Normal (tip)" />
+        <Option Value="1" Name="Middle" />
+        <Option Value="2" Name="Root" />
+    </Enum>
+    <Enum Name="ATK_PARAM_MAP_HIT" type="u8">
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Precision" />
+        <Option Value="2" Name="Not on the map" />
+    </Enum>
+    <Enum Name="ATK_PARAM_HIT_SOURCE" type="u8">
+        <Option Value="0" Name="Weapon" />
+        <Option Value="1" Name="Body" />
+    </Enum>
+  </Enums>
   <Field>
-    <pad12 AltName="pad12" />
-    <dmgLevel AltName="dmgLevel" />
-    <parryEnableFrame AltName="parryEnableFrame" />
-    <mapHitType AltName="mapHitType" />
-    <enableFlyingDamage AltName="enableFlyingDamage" />
-    <atkPhys AltName="atkPhys" />
-    <atkMag AltName="atkMag" />
-    <atkFire AltName="atkFire" />
-    <atkStam AltName="atkStam" />
-    <atkParry AltName="atkParry" />
-    <defParry AltName="defParry" />
-    <guardAtkRate AltName="guardAtkRate" />
-    <guardBreakRate AltName="guardBreakRate" />
-    <guardCutCancelRate AltName="guardCutCancelRate" />
-    <ignoreAtkType AltName="ignoreAtkType" />
-    <atkSuperArmor AltName="atkSuperArmor" />
-    <atkObj AltName="atkObj" />
-    <pad2 AltName="pad2" />
-    <atkPhysCorrection AltName="atkPhysCorrection" />
-    <atkMagCorrection AltName="atkMagCorrection" />
-    <atkFireCorrection AltName="atkFireCorrection" />
-    <atkStamCorrection AltName="atkStamCorrection" />
-    <atkParryCorrection AltName="atkParryCorrection" />
-    <defParryCorrection AltName="defParryCorrection" />
-    <guardAtkRateCorrection AltName="guardAtkRateCorrection" />
-    <guardBreakCorrection AltName="guardBreakCorrection" />
-    <pad10 AltName="pad10" />
-    <atkSuperArmorCorrection AltName="atkSuperArmorCorrection" />
-    <guardStaminaCutRate AltName="guardStaminaCutRate" />
-    <pad3 AltName="pad3" />
-    <disableGuard AltName="disableGuard" />
-    <disableStaminaAttack AltName="disableStaminaAttack" />
-    <pad4 AltName="pad4" />
-    <guardRate AltName="guardRate" />
-    <disableHitSpEffect AltName="disableHitSpEffect" />
-    <hitSourceType AltName="hitSourceType" />
-    <hit0_DmyPoly1 AltName="hit0_DmyPoly1" />
-    <hit0_DmyPoly2 AltName="hit0_DmyPoly2" />
-    <hit0_Radius AltName="hit0_Radius" />
-    <hit0_hitType AltName="hit0_hitType" />
-    <hti0_Priority AltName="hti0_Priority" />
-    <hit0_pad AltName="hit0_pad" />
-    <hit1_DmyPoly1 AltName="hit1_DmyPoly1" />
-    <hit1_DmyPoly2 AltName="hit1_DmyPoly2" />
-    <hit1_Radius AltName="hit1_Radius" />
-    <hit1_hitType AltName="hit1_hitType" />
-    <hti1_Priority AltName="hti1_Priority" />
-    <hit1_pad AltName="hit1_pad" />
-    <hit2_DmyPoly1 AltName="hit2_DmyPoly1" />
-    <hit2_DmyPoly2 AltName="hit2_DmyPoly2" />
-    <hit2_Radius AltName="hit2_Radius" />
-    <hit2_hitType AltName="hit2_hitType" />
-    <hti2_Priority AltName="hti2_Priority" />
-    <hit2_pad AltName="hit2_pad" />
-    <hit3_DmyPoly1 AltName="hit3_DmyPoly1" />
-    <hit3_DmyPoly2 AltName="hit3_DmyPoly2" />
-    <hit3_Radius AltName="hit3_Radius" />
-    <hit3_hitType AltName="hit3_hitType" />
-    <hti3_Priority AltName="hti3_Priority" />
-    <hit3_pad AltName="hit3_pad" />
-    <knockbackVellocity AltName="knockbackVellocity" />
-    <knocbackContTime AltName="knocbackContTime" />
-    <knockbackDecTime AltName="knockbackDecTime" />
-    <disableKnockbackCut AltName="disableKnockbackCut" />
-    <pad11 AltName="pad11" />
-    <IgnoreNotifyMissSwingForAI AltName="IgnoreNotifyMissSwingForAI" />
-    <spEffectId0 AltName="spEffectId0" />
-    <spEffectId1 AltName="spEffectId1" />
-    <spEffectId2 AltName="spEffectId2" />
-    <spEffectId3 AltName="spEffectId3" />
-    <spEffectId4 AltName="spEffectId4" />
-    <pad8 AltName="pad8" />
+    <pad12 AltName="pad12" IsHidden="" />
+    
+    <dmgLevel AltName="Damage Level" Wiki="Impact level of attack, which determines how the target reacts to it (e.g. knocked backward, launched into the air, etc.)." ProjectEnum="ATKPARAM_DMGTYPE_NEW" />
+    <parryEnableFrame AltName="Enable Parry Frame" Wiki="" IsBool="" />
+    <mapHitType AltName="Map Hit Type" Wiki="Which map do you see around the attack? The set" Enum="ATK_PARAM_MAP_HIT" />
+    <enableFlyingDamage AltName="Enable Flying Damage" IsBool="" Wiki="" />
+    <atkPhys AltName="Attack Damage: Physical" Wiki="" />
+    <atkMag AltName="Attack Damage: Magic" Wiki="" />
+    <atkFire AltName="Attack Damage: Fire" Wiki="" />
+    <atkStam AltName="Attack Damage: Stamina" Wiki="" />
+    <atkParry AltName="Parry Damage" Wiki="" />
+    <defParry AltName="Parry Defence" Wiki="" />
+    <guardAtkRate AltName="Guard Attack Rate" Wiki="" />
+    <guardBreakRate AltName="Guard Break Rate" Wiki="" />
+    <guardCutCancelRate AltName="Guard Absorption Bypass Rate" Wiki="Guard cut rate invalidation ratio (-100 to 100)  Normal at 0 / Completely invalidated at -100 / Doubles the defense effect of the opponent at 100  -50, 100% cut shield becomes 50% cut" />
+    <ignoreAtkType AltName="Ignore Attack Type" IsBool="" Wiki="" />
+    <atkSuperArmor AltName="Attack Damage: Poise" Wiki="" />
+    <atkObj AltName="Attack Damage: Object HP" Wiki="" />
+    
+    <pad2 AltName="pad2" IsHidden="" />
+    
+    <atkPhysCorrection AltName="Attack Correction: Physical" Wiki="" />
+    <atkMagCorrection AltName="Attack Correction: Magic" Wiki="" />
+    <atkFireCorrection AltName="Attack Correction: Fire" Wiki="" />
+    <atkStamCorrection AltName="Attack Correction: Stamina" Wiki="" />
+    <atkParryCorrection AltName="Parry Damage Correction" Wiki="" />
+    <defParryCorrection AltName="Parry Defence Correction" Wiki="" />
+    <guardAtkRateCorrection AltName="Guard Attack Rate Correction" Wiki="" />
+    <guardBreakCorrection AltName="Guard Break Rate Correction" Wiki="" />
+    
+    <pad10 AltName="pad10" IsHidden="" />
+    
+    <atkSuperArmorCorrection AltName="Attack Correction: Poise" Wiki="" />
+    <guardStaminaCutRate AltName="Guard Stamina Absorption Correction" Wiki="" />
+    
+    <pad3 AltName="pad3" IsHidden="" />
+    
+    <disableGuard AltName="Disable Guard" IsBool="" Wiki="" />
+    <disableStaminaAttack AltName="Disable Stamina Attack" IsBool="" Wiki="Destruction judgment is performed by stamina attack power, but stamina is not actually reduced." />
+    <pad4 AltName="pad4" IsHidden="" />
+    <guardRate AltName="Guard Rate" Wiki="NPC, the guard performance set in the weapon parameter is uniformly corrected. 0, 1x / 100, 2x / -100, guard multiplier = (guard multiplier / 100) to increase / decrease the parameter to 0. + 1)" />
+    <disableHitSpEffect AltName="Disable SpEffect on Hit" Wiki="Disables special effects when an attack hits." IsBool="" />
+    <hitSourceType AltName="Hit Source Type" Wiki="Where do you get the Damipoli ID per attack? To specify" Enum="ATK_PARAM_HIT_SOURCE" />
+    
+    <hit0_DmyPoly1 AltName="Hit 0: Dummy Poly [1]" Wiki="Dummy polygon in sphere, capsule position" />
+    <hit0_DmyPoly2 AltName="Hit 0: Dummy Poly [2]" Wiki="Dummy polygon in sphere, capsule position" />
+    <hit0_Radius AltName="Hit 0: Radius" Wiki="Sphere, capsule radius" />
+    <hit0_hitType AltName="Hit 0: Hit Type" Wiki="Hit part" Enum="ATK_PARAM_HIT_TYPE" />
+    <hti0_Priority AltName="Hit 0: Priority" Wiki="priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    <hit0_pad AltName="hit0_pad" IsHidden="" />
+    
+    <hit1_DmyPoly1 AltName="Hit 1: Dummy Poly [1]" Wiki="Dummy polygon in sphere, capsule position" />
+    <hit1_DmyPoly2 AltName="Hit 1: Dummy Poly [2]" Wiki="Dummy polygon in sphere, capsule position" />
+    <hit1_Radius AltName="Hit 1: Radius" Wiki="Sphere, capsule radius" />
+    <hit1_hitType AltName="Hit 1: Hit Type" Wiki="Hit part" Enum="ATK_PARAM_HIT_TYPE" />
+    <hti1_Priority AltName="Hit 1: Priority" Wiki="priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    <hit1_pad AltName="hit1_pad" IsHidden="" />
+    
+    <hit2_DmyPoly1 AltName="Hit 2: Dummy Poly [1]" Wiki="Dummy polygon in sphere, capsule position" />
+    <hit2_DmyPoly2 AltName="Hit 2: Dummy Poly [2]" Wiki="Dummy polygon in sphere, capsule position" />
+    <hit2_Radius AltName="Hit 2: Radius" Wiki="Sphere, capsule radius" />
+    <hit2_hitType AltName="Hit 2: Hit Type" Wiki="Hit part" Enum="ATK_PARAM_HIT_TYPE" />
+    <hti2_Priority AltName="Hit 2: Priority" Wiki="priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    <hit2_pad AltName="hit2_pad" IsHidden="" />
+    
+    <hit3_DmyPoly1 AltName="Hit 3: Dummy Poly [1]" Wiki="Dummy polygon in sphere, capsule position" />
+    <hit3_DmyPoly2 AltName="Hit 3: Dummy Poly [2]" Wiki="Dummy polygon in sphere, capsule position" />
+    <hit3_Radius AltName="Hit 3: Radius" Wiki="Sphere, capsule radius" />
+    <hit3_hitType AltName="Hit 3: Hit Type" Wiki="Hit part" Enum="ATK_PARAM_HIT_TYPE" />
+    <hti3_Priority AltName="Hit 3: Priority" Wiki="priority. If there are two or more hits at the same time, the one with the higher priority will be adopted." />
+    <hit3_pad AltName="hit3_pad" IsHidden="" />
+    
+    <knockbackVellocity AltName="Knockback Velocity" />
+    <knocbackContTime AltName="Knockback: Maintenance Time" />
+    <knockbackDecTime AltName="Knockback: Deceleration Time" />
+    <disableKnockbackCut AltName="Disable Knockback Absorption" IsBool="" />
+    
+    <pad11 AltName="pad11" IsHidden="" />
+    
+    <IgnoreNotifyMissSwingForAI AltName="Disable Missed Attack Notification For AI" Wiki="Do not notify AI of missed swing" IsBool="" />
+    <spEffectId0 AltName="Target SpEffect [0]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" />
+    <spEffectId1 AltName="Target SpEffect [1]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" />
+    <spEffectId2 AltName="Target SpEffect [2]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" />
+    <spEffectId3 AltName="Target SpEffect [3]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" />
+    <spEffectId4 AltName="Target SpEffect [4]" Wiki="Enter the ID created with the special effects parameter" Refs="SpEffectParam" />
+    <pad8 AltName="pad8" IsHidden="" />
   </Field>
   <Self Row0Dummy="" />
 </PARAMMETA>

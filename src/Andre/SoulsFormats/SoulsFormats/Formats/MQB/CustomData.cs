@@ -420,8 +420,9 @@ namespace SoulsFormats
                     br.AssertInt32(0x1C); // Sequence size
                     int pointCount = br.ReadInt32();
                     ValueType = br.ReadEnum32<DataType>();
-                    PointType = br.AssertInt32([1, 2]);
-                    br.AssertInt32(PointType == 1 ? 0x10 : 0x18); // Point size
+                    // PointType 0 is only ever used once in ER s35_00_0000.mqb, but otherwise seems identical to PointType 1
+                    PointType = br.AssertInt32([0, 1, 2]);
+                    br.AssertInt32((PointType == 0 || PointType == 1) ? 0x10 : 0x18); // Point size
                     int pointsOffset = br.ReadInt32();
                     int valueOffset = br.ReadInt32();
 
@@ -451,7 +452,7 @@ namespace SoulsFormats
                     bw.WriteInt32(Points.Count);
                     bw.WriteUInt32((uint)ValueType);
                     bw.WriteInt32(PointType);
-                    bw.WriteInt32(PointType == 1 ? 0x10 : 0x18);
+                    bw.WriteInt32((PointType == 0 || PointType == 1) ? 0x10 : 0x18);
                     bw.ReserveInt32($"PointsOffset[{customDataIndex}:{sequenceIndex}]");
                     if (ValueType == DataType.Byte || ValueType == DataType.Float || ValueType == DataType.UInt)
                         bw.WriteInt32((int)parentValueOffset + ValueIndex);

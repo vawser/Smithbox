@@ -80,8 +80,15 @@ public class TextDifferenceManager
                 // Is a mod-unique row, there it is a difference
                 else
                 {
-                    AdditionCache.Add(entry.ID, true);
-                    DifferenceCache.Add(entry.ID, true);
+                    if (!AdditionCache.ContainsKey(entry.ID))
+                    {
+                        AdditionCache.Add(entry.ID, true);
+                    }
+
+                    if (!DifferenceCache.ContainsKey(entry.ID))
+                    {
+                        DifferenceCache.Add(entry.ID, true);
+                    }
                 }
             }
         }

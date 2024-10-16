@@ -82,10 +82,10 @@ public class SystemTab
             Smithbox.UpdateSoulsFormatsToggles();
         }
 
-        if (ImGui.CollapsingHeader("Loggers"))
+        if (ImGui.CollapsingHeader("Status Bar"))
         {
-            ImGui.Checkbox("Display Information Logger", ref UI.Current.Interface_DisplayInfoLogger);
-            UIHelper.ShowHoverTooltip("If enabled, the information logger will be visible in the menubar.");
+            ImGui.Checkbox("Display Status Bar", ref UI.Current.Interface_DisplayStatusBar);
+            UIHelper.ShowHoverTooltip("If enabled, the status bar will be visible at the bottom.");
 
             Smithbox.UpdateSoulsFormatsToggles();
         }

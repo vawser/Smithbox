@@ -151,7 +151,7 @@ public static class TextBank
 
         List<FmgInfo> fmgInfos = new List<FmgInfo>();
 
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
         {
             using (IBinder binder = BND3.Read(path))
             {
@@ -238,7 +238,7 @@ public static class TextBank
 
         byte[] fileBytes = null;
 
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
         {
             using (IBinder binder = BND3.Read(projectContainerPath))
             {

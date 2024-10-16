@@ -43,23 +43,234 @@ public class TextEntryGroupManager
         {
 
             case ProjectType.DES:
+                // Vanilla
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DES.Title_Goods,
+                    Item_MsgBndID_DES.Summary_Goods,
+                    Item_MsgBndID_DES.Description_Goods,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DES.Title_Weapons,
+                    Item_MsgBndID_DES.Summary_Weapons,
+                    Item_MsgBndID_DES.Description_Weapons,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DES.Title_Armor,
+                    Item_MsgBndID_DES.Summary_Armor,
+                    Item_MsgBndID_DES.Description_Armor,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DES.Title_Accessories,
+                    Item_MsgBndID_DES.Summary_Accessories,
+                    Item_MsgBndID_DES.Description_Accessories,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DES.Title_Magic,
+                    Item_MsgBndID_DES.Summary_Magic,
+                    Item_MsgBndID_DES.Description_Magic,
+                    null));
                 break;
 
             case ProjectType.DS1:
             case ProjectType.DS1R:
+                // Vanilla
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS1.Title_Goods,
+                    Item_MsgBndID_DS1.Summary_Goods,
+                    Item_MsgBndID_DS1.Description_Goods,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS1.Title_Weapons,
+                    Item_MsgBndID_DS1.Summary_Weapons,
+                    Item_MsgBndID_DS1.Description_Weapons,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS1.Title_Armor,
+                    Item_MsgBndID_DS1.Summary_Armor,
+                    Item_MsgBndID_DS1.Description_Armor,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS1.Title_Accessories,
+                    Item_MsgBndID_DS1.Summary_Accessories,
+                    Item_MsgBndID_DS1.Description_Accessories,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS1.Title_Magic,
+                    Item_MsgBndID_DS1.Summary_Magic,
+                    Item_MsgBndID_DS1.Description_Magic,
+                    null));
                 break;
 
             case ProjectType.DS2:
             case ProjectType.DS2S:
+                groupings.Add(new EntryGroupAssociation(
+                    CommonFmgName_DS2.itemname,
+                    CommonFmgName_DS2.simpleexplanation,
+                    CommonFmgName_DS2.detailedexplanation,
+                    null));
                 break;
 
             case ProjectType.BB:
+                // Vanilla
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_BB.Title_Goods,
+                    Item_MsgBndID_BB.Summary_Goods,
+                    Item_MsgBndID_BB.Description_Goods,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_BB.Title_Weapons,
+                    Item_MsgBndID_BB.Summary_Weapons,
+                    Item_MsgBndID_BB.Description_Weapons,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_BB.Title_Armor,
+                    Item_MsgBndID_BB.Summary_Armor,
+                    Item_MsgBndID_BB.Description_Armor,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_BB.Title_Accessories,
+                    Item_MsgBndID_BB.Summary_Accessories,
+                    Item_MsgBndID_BB.Description_Accessories,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_BB.Title_Magic,
+                    Item_MsgBndID_BB.Summary_Magic,
+                    Item_MsgBndID_BB.Description_Magic,
+                    null));
                 break;
 
             case ProjectType.DS3:
+                // Vanilla
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Goods,
+                    Item_MsgBndID_DS3.Summary_Goods,
+                    Item_MsgBndID_DS3.Description_Goods,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Weapons,
+                    Item_MsgBndID_DS3.Summary_Weapons,
+                    Item_MsgBndID_DS3.Description_Weapons,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Armor,
+                    Item_MsgBndID_DS3.Summary_Armor,
+                    Item_MsgBndID_DS3.Description_Armor,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Accessories,
+                    Item_MsgBndID_DS3.Summary_Accessories,
+                    Item_MsgBndID_DS3.Description_Accessories,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Magic,
+                    Item_MsgBndID_DS3.Summary_Magic,
+                    Item_MsgBndID_DS3.Description_Magic,
+                    null));
+
+                // DLC1
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Goods_DLC1,
+                    Item_MsgBndID_DS3.Summary_Goods_DLC1,
+                    Item_MsgBndID_DS3.Description_Goods_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Weapons_DLC1,
+                    null,
+                    Item_MsgBndID_DS3.Description_Weapons_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Armor_DLC1,
+                    null,
+                    Item_MsgBndID_DS3.Description_Armor_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Accessories_DLC1,
+                    Item_MsgBndID_DS3.Summary_Accessories_DLC1,
+                    Item_MsgBndID_DS3.Description_Accessories_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Magic_DLC1,
+                    Item_MsgBndID_DS3.Summary_Magic_DLC1,
+                    Item_MsgBndID_DS3.Description_Magic_DLC1,
+                    null));
+
+                // DLC2
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Goods_DLC2,
+                    Item_MsgBndID_DS3.Summary_Goods_DLC2,
+                    Item_MsgBndID_DS3.Description_Goods_DLC2,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Weapons_DLC2,
+                    null,
+                    Item_MsgBndID_DS3.Description_Weapons_DLC2,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Armor_DLC2,
+                    null,
+                    Item_MsgBndID_DS3.Description_Armor_DLC2,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Accessories_DLC2,
+                    Item_MsgBndID_DS3.Summary_Accessories_DLC2,
+                    Item_MsgBndID_DS3.Description_Accessories_DLC2,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS3.Title_Magic_DLC2,
+                    Item_MsgBndID_DS3.Summary_Magic_DLC2,
+                    Item_MsgBndID_DS3.Description_Magic_DLC2,
+                    null));
                 break;
 
             case ProjectType.SDT:
+                // Vanilla
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_SDT.Title_Goods,
+                    Item_MsgBndID_SDT.Summary_Goods,
+                    Item_MsgBndID_SDT.Description_Goods,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_SDT.Title_Weapons,
+                    Item_MsgBndID_SDT.Summary_Weapons,
+                    Item_MsgBndID_SDT.Description_Weapons,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_SDT.Title_Armor,
+                    Item_MsgBndID_SDT.Summary_Armor,
+                    Item_MsgBndID_SDT.Description_Armor,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_SDT.Title_Accessories,
+                    Item_MsgBndID_SDT.Summary_Accessories,
+                    Item_MsgBndID_SDT.Description_Accessories,
+                    null));
                 break;
 
             case ProjectType.ER:
@@ -195,6 +406,48 @@ public class TextEntryGroupManager
                 break;
 
             case ProjectType.AC6:
+                // Vanilla
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_AC6.Title_Weapons,
+                    null,
+                    Item_MsgBndID_AC6.Description_Weapons,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_AC6.Title_Armor,
+                    null,
+                    Item_MsgBndID_AC6.Description_Armor,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_AC6.Title_Generator,
+                    null,
+                    Item_MsgBndID_AC6.Description_Generator,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_AC6.Title_Booster,
+                    null,
+                    Item_MsgBndID_AC6.Description_Booster,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_AC6.Title_FCS,
+                    null,
+                    Item_MsgBndID_AC6.Description_FCS,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_AC6.Archive_Name,
+                    null,
+                    Menu_MsgBndID_AC6.Archive_Content,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_AC6.Mission_Name,
+                    null,
+                    Menu_MsgBndID_AC6.Mission_Overview,
+                    null));
                 break;
         }
 

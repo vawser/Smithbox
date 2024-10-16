@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
+using static StudioCore.Configuration.SettingsWindow;
 
 namespace StudioCore.Configuration.Help;
 
@@ -63,6 +64,34 @@ public class HelpWindow
         MenuOpenState = !MenuOpenState;
     }
 
+    private SelectedHelpTab CurrentTab;
+
+    public enum SelectedHelpTab
+    {
+        Articles = 0,
+        Tutorials = 1,
+        Glossary = 2,
+        MassEdit = 3,
+        Regex = 4,
+        Links = 5,
+        Credits = 6
+    }
+
+    public void ToggleWindow(SelectedHelpTab focusedTab, bool ignoreIfOpen = true)
+    {
+        CurrentTab = focusedTab;
+
+        if (!ignoreIfOpen)
+        {
+            MenuOpenState = !MenuOpenState;
+        }
+
+        if (!MenuOpenState)
+        {
+            MenuOpenState = true;
+        }
+    }
+
     public void Display()
     {
         var scale = DPI.GetUIScale();
@@ -82,21 +111,40 @@ public class HelpWindow
 
         if (ImGui.Begin("Help##Popup", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            ImGui.BeginTabBar("#HelpMenuTabBar");
-            ImGui.PushStyleColor(ImGuiCol.Header, UI.Current.Imgui_Moveable_Header);
-            ImGui.PushItemWidth(300f);
+            if(CurrentTab is SelectedHelpTab.Articles)
+            {
+                DisplayHelpSection(_helpBank.GetArticles(), "Article", "Articles", "article", HelpSectionType.Article, _inputStr_Article, _inputStrCache_Article);
+            }
 
-            DisplayHelpSection(_helpBank.GetArticles(), "Article", "Articles", "article", HelpSectionType.Article, _inputStr_Article, _inputStrCache_Article);
-            DisplayHelpSection(_helpBank.GetTutorials(), "Tutorial", "Tutorials", "tutorial", HelpSectionType.Tutorial, _inputStr_Tutorial, _inputStrCache_Tutorial);
-            DisplayHelpSection(_helpBank.GetGlossaryEntries(), "Glossary", "Glossary", "glossary", HelpSectionType.Glossary, _inputStr_Glossary, _inputStrCache_Glossary);
-            DisplayHelpSection(_helpBank.GetMassEditHelp(), "Mass Edit", "Mass Edit", "mass edit", HelpSectionType.MassEdit, _inputStr_MassEdit, _inputStrCache_MassEdit);
-            DisplayHelpSection(_helpBank.GetRegexHelp(), "Regex", "Regexes", "regex", HelpSectionType.Regex, _inputStr_Regex, _inputStrCache_Regex);
-            DisplayHelpSection(_helpBank.GetLinks(), "Link", "Links", "link", HelpSectionType.Link, _inputStr_Link, _inputStrCache_Link);
-            DisplayHelpSection(_helpBank.GetCredits(), "Credit", "Credits", "credit", HelpSectionType.Credit, _inputStr_Credit, _inputStrCache_Credit);
+            if (CurrentTab is SelectedHelpTab.Tutorials)
+            {
+                DisplayHelpSection(_helpBank.GetTutorials(), "Tutorial", "Tutorials", "tutorial", HelpSectionType.Tutorial, _inputStr_Tutorial, _inputStrCache_Tutorial);
+            }
 
-            ImGui.PopItemWidth();
-            ImGui.PopStyleColor();
-            ImGui.EndTabBar();
+            if (CurrentTab is SelectedHelpTab.Glossary)
+            {
+                DisplayHelpSection(_helpBank.GetGlossaryEntries(), "Glossary", "Glossary", "glossary", HelpSectionType.Glossary, _inputStr_Glossary, _inputStrCache_Glossary);
+            }
+
+            if (CurrentTab is SelectedHelpTab.MassEdit)
+            {
+                DisplayHelpSection(_helpBank.GetMassEditHelp(), "Mass Edit", "Mass Edit", "mass edit", HelpSectionType.MassEdit, _inputStr_MassEdit, _inputStrCache_MassEdit);
+            }
+
+            if (CurrentTab is SelectedHelpTab.Regex)
+            {
+                DisplayHelpSection(_helpBank.GetRegexHelp(), "Regex", "Regexes", "regex", HelpSectionType.Regex, _inputStr_Regex, _inputStrCache_Regex);
+            }
+
+            if (CurrentTab is SelectedHelpTab.Links)
+            {
+                DisplayHelpSection(_helpBank.GetLinks(), "Link", "Links", "link", HelpSectionType.Link, _inputStr_Link, _inputStrCache_Link);
+            }
+
+            if (CurrentTab is SelectedHelpTab.Credits)
+            {
+                DisplayHelpSection(_helpBank.GetCredits(), "Credit", "Credits", "credit", HelpSectionType.Credit, _inputStr_Credit, _inputStrCache_Credit);
+            }
         }
 
         ImGui.End();
@@ -171,163 +219,158 @@ public class HelpWindow
         if (entries.Count < 1)
             return;
 
-        if (ImGui.BeginTabItem($"{tabTitle}"))
+        ImGui.Columns(2);
+
+        // Search Area
+        ImGui.InputText("Search", ref checkedInput, 255);
+
+        // Selection Area
+        ImGui.BeginChild($"{name}SectionList");
+
+        if (checkedInput.ToLower() != checkedInputCache.ToLower())
+            checkedInputCache = checkedInput.ToLower();
+
+        foreach (HelpEntry entry in entries)
         {
-            ImGui.Columns(2);
+            var sectionName = entry.Title;
 
-            // Search Area
-            ImGui.InputText("Search", ref checkedInput, 255);
-
-            // Selection Area
-            ImGui.BeginChild($"{name}SectionList");
-
-            if (checkedInput.ToLower() != checkedInputCache.ToLower())
-                checkedInputCache = checkedInput.ToLower();
-
-            foreach (HelpEntry entry in entries)
+            if (entry.ProjectType == (int)Smithbox.ProjectType || entry.ProjectType == 0)
             {
-                var sectionName = entry.Title;
-
-                if (entry.ProjectType == (int)Smithbox.ProjectType || entry.ProjectType == 0)
+                if (MatchEntry(entry, checkedInput))
                 {
-                    if (MatchEntry(entry, checkedInput))
+                    switch (sectionType)
                     {
-                        switch (sectionType)
-                        {
-                            case HelpSectionType.Article:
-                                if (ImGui.Selectable(sectionName, _selectedEntry_Article == entry))
-                                {
-                                    _selectedEntry_Article = entry;
-                                }
-                                break;
-                            case HelpSectionType.Tutorial:
-                                if (ImGui.Selectable(sectionName, _selectedEntry_Tutorial == entry))
-                                {
-                                    _selectedEntry_Tutorial = entry;
-                                }
-                                break;
-                            case HelpSectionType.Glossary:
-                                if (ImGui.Selectable(sectionName, _selectedEntry_Glossary == entry))
-                                {
-                                    _selectedEntry_Glossary = entry;
-                                }
-                                break;
-                            case HelpSectionType.MassEdit:
-                                if (ImGui.Selectable(sectionName, _selectedEntry_MassEdit == entry))
-                                {
-                                    _selectedEntry_MassEdit = entry;
-                                }
-                                break;
-                            case HelpSectionType.Regex:
-                                if (ImGui.Selectable(sectionName, _selectedEntry_Regex == entry))
-                                {
-                                    _selectedEntry_Regex = entry;
-                                }
-                                break;
-                            case HelpSectionType.Link:
-                                if (ImGui.Selectable(sectionName, _selectedEntry_Link == entry))
-                                {
-                                    _selectedEntry_Link = entry;
-                                }
-                                break;
-                            case HelpSectionType.Credit:
-                                if (ImGui.Selectable(sectionName, _selectedEntry_Credit == entry))
-                                {
-                                    _selectedEntry_Credit = entry;
-                                }
-                                break;
-                        }
+                        case HelpSectionType.Article:
+                            if (ImGui.Selectable(sectionName, _selectedEntry_Article == entry))
+                            {
+                                _selectedEntry_Article = entry;
+                            }
+                            break;
+                        case HelpSectionType.Tutorial:
+                            if (ImGui.Selectable(sectionName, _selectedEntry_Tutorial == entry))
+                            {
+                                _selectedEntry_Tutorial = entry;
+                            }
+                            break;
+                        case HelpSectionType.Glossary:
+                            if (ImGui.Selectable(sectionName, _selectedEntry_Glossary == entry))
+                            {
+                                _selectedEntry_Glossary = entry;
+                            }
+                            break;
+                        case HelpSectionType.MassEdit:
+                            if (ImGui.Selectable(sectionName, _selectedEntry_MassEdit == entry))
+                            {
+                                _selectedEntry_MassEdit = entry;
+                            }
+                            break;
+                        case HelpSectionType.Regex:
+                            if (ImGui.Selectable(sectionName, _selectedEntry_Regex == entry))
+                            {
+                                _selectedEntry_Regex = entry;
+                            }
+                            break;
+                        case HelpSectionType.Link:
+                            if (ImGui.Selectable(sectionName, _selectedEntry_Link == entry))
+                            {
+                                _selectedEntry_Link = entry;
+                            }
+                            break;
+                        case HelpSectionType.Credit:
+                            if (ImGui.Selectable(sectionName, _selectedEntry_Credit == entry))
+                            {
+                                _selectedEntry_Credit = entry;
+                            }
+                            break;
                     }
                 }
             }
-
-            ImGui.EndChild();
-
-            ImGui.NextColumn();
-
-            ImGui.BeginChild($"{name}SectionView");
-
-            foreach (HelpEntry entry in entries)
-            {
-                bool show = false;
-
-                switch (sectionType)
-                {
-                    case HelpSectionType.Article:
-                        if (_selectedEntry_Article == entry)
-                        {
-                            show = true;
-                        }
-                        break;
-                    case HelpSectionType.Tutorial:
-                        if (_selectedEntry_Tutorial == entry)
-                        {
-                            show = true;
-                        }
-                        break;
-                    case HelpSectionType.Glossary:
-                        if (_selectedEntry_Glossary == entry)
-                        {
-                            show = true;
-                        }
-                        break;
-                    case HelpSectionType.MassEdit:
-                        if (_selectedEntry_MassEdit == entry)
-                        {
-                            show = true;
-                        }
-                        break;
-                    case HelpSectionType.Regex:
-                        if (_selectedEntry_Regex == entry)
-                        {
-                            show = true;
-                        }
-                        break;
-                    case HelpSectionType.Link:
-                        if (_selectedEntry_Link == entry)
-                        {
-                            show = true;
-                        }
-                        break;
-                    case HelpSectionType.Credit:
-                        if (_selectedEntry_Credit == entry)
-                        {
-                            show = true;
-                        }
-                        break;
-                }
-
-                if (show)
-                {
-                    // No selection
-                    if (entry == null)
-                    {
-                        UIHelper.WrappedText($"No {descName} selected");
-                        ImGui.Separator();
-                        UIHelper.WrappedText("");
-                    }
-                    // Selection
-                    else
-                    {
-                        if (entry.Author != null)
-                        {
-                            ProcessText(entry, entry.Author);
-                        }
-
-                        foreach (var textSection in entry.Contents)
-                        {
-                            ProcessText(entry, textSection);
-                        }
-                    }
-                }
-            }
-
-            ImGui.EndChild();
-
-            ImGui.Columns(1);
-
-            ImGui.EndTabItem();
         }
+
+        ImGui.EndChild();
+
+        ImGui.NextColumn();
+
+        ImGui.BeginChild($"{name}SectionView");
+
+        foreach (HelpEntry entry in entries)
+        {
+            bool show = false;
+
+            switch (sectionType)
+            {
+                case HelpSectionType.Article:
+                    if (_selectedEntry_Article == entry)
+                    {
+                        show = true;
+                    }
+                    break;
+                case HelpSectionType.Tutorial:
+                    if (_selectedEntry_Tutorial == entry)
+                    {
+                        show = true;
+                    }
+                    break;
+                case HelpSectionType.Glossary:
+                    if (_selectedEntry_Glossary == entry)
+                    {
+                        show = true;
+                    }
+                    break;
+                case HelpSectionType.MassEdit:
+                    if (_selectedEntry_MassEdit == entry)
+                    {
+                        show = true;
+                    }
+                    break;
+                case HelpSectionType.Regex:
+                    if (_selectedEntry_Regex == entry)
+                    {
+                        show = true;
+                    }
+                    break;
+                case HelpSectionType.Link:
+                    if (_selectedEntry_Link == entry)
+                    {
+                        show = true;
+                    }
+                    break;
+                case HelpSectionType.Credit:
+                    if (_selectedEntry_Credit == entry)
+                    {
+                        show = true;
+                    }
+                    break;
+            }
+
+            if (show)
+            {
+                // No selection
+                if (entry == null)
+                {
+                    UIHelper.WrappedText($"No {descName} selected");
+                    ImGui.Separator();
+                    UIHelper.WrappedText("");
+                }
+                // Selection
+                else
+                {
+                    if (entry.Author != null)
+                    {
+                        ProcessText(entry, entry.Author);
+                    }
+
+                    foreach (var textSection in entry.Contents)
+                    {
+                        ProcessText(entry, textSection);
+                    }
+                }
+            }
+        }
+
+        ImGui.EndChild();
+
+        ImGui.Columns(1);
     }
 
     private void ProcessText(HelpEntry entry, string textLine)

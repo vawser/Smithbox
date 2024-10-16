@@ -58,6 +58,11 @@ public static class TaskLogs
     private static bool _scrollToEnd;
     private static SpinLock _spinlock = new(false);
 
+    public static void ToggleLoggerVisibility()
+    {
+        _loggerWindowOpen = !_loggerWindowOpen;
+    }
+
     /// <summary>
     ///     Adds a new entry to task logger.
     /// </summary>
@@ -146,58 +151,52 @@ public static class TaskLogs
         });
     }
 
-    public static void Display()
+    /// <summary>
+    /// Status Bar
+    /// </summary>
+    public static void DisplayStatusBar()
     {
-        if (!UI.Current.Interface_DisplayInfoLogger)
+        if (!UI.Current.Interface_DisplayStatusBar)
             return;
 
-        ImGui.Spacing();
-        ImGui.Separator();
-        ImGui.Spacing();
+        var viewport = ImGui.GetWindowViewport();
 
-        // Warning List
-        if (_warningList.Count > 0)
+        ImGui.SetNextWindowPos(new Vector2(
+                viewport.Pos.X,
+                viewport.Pos.Y + viewport.Size.Y - ImGui.GetFrameHeight()));
+
+        ImGui.SetNextWindowSize(new Vector2(
+            viewport.Size.X,
+            ImGui.GetFrameHeight()));
+
+        ImGuiWindowFlags flags =
+            ImGuiWindowFlags.NoDecoration | ImGuiWindowFlags.NoInputs |
+            ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoScrollWithMouse |
+            ImGuiWindowFlags.NoSavedSettings |
+            ImGuiWindowFlags.NoBringToFrontOnFocus | ImGuiWindowFlags.NoBackground |
+            ImGuiWindowFlags.MenuBar;
+
+        if (ImGui.Begin("StatusBar", flags))
         {
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
-            if (ImGui.BeginMenu("!! WARNINGS!! "))
+            if (ImGui.BeginMenuBar())
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
-                ImGui.Text("Click warnings to remove them from list");
-                if (ImGui.Button("Remove All Warnings"))
+                if (_lastLogEntry != null)
                 {
-                    _warningList.Clear();
+                    Vector4 color = PickColor(null);
+                    ImGui.TextColored(color, _lastLogEntry.FormattedMessage);
                 }
 
-                ImGui.Separator();
-                foreach (var text in _warningList)
-                {
-                    if (ImGui.Selectable(text, false, ImGuiSelectableFlags.DontClosePopups))
-                    {
-                        _warningList.Remove(text);
-                        break;
-                    }
-                }
-
-                ImGui.PopStyleColor();
-                ImGui.EndMenu();
+                ImGui.EndMenuBar();
             }
-
-            ImGui.PopStyleColor();
+            ImGui.End();
         }
+    }
 
-        // Logger
-        var dir = ImGuiDir.Right;
-        if (_loggerWindowOpen)
-        {
-            dir = ImGuiDir.Down;
-        }
-
-        if (ImGui.ArrowButton("##ShowLogsBtn", dir))
-        {
-            _loggerWindowOpen = !_loggerWindowOpen;
-        }
-        UIHelper.ShowHoverTooltip("Show the Logger window.");
-
+    /// <summary>
+    /// Status Bar
+    /// </summary>
+    public static void DisplayWindow()
+    {
         if (_loggerWindowOpen)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.Imgui_Moveable_MainBg);
@@ -218,7 +217,7 @@ public static class TaskLogs
                 if (ImGui.Button("Copy to Clipboard##TaskLogger"))
                 {
                     string contents = "";
-                    foreach(var entry in _log)
+                    foreach (var entry in _log)
                     {
                         contents = contents + $"{entry.FormattedMessage}\n";
                     }
@@ -250,12 +249,6 @@ public static class TaskLogs
 
             ImGui.End();
             ImGui.PopStyleColor(5);
-        }
-
-        if (_lastLogEntry != null)
-        {
-            Vector4 color = PickColor(null);
-            ImGui.TextColored(color, _lastLogEntry.FormattedMessage);
         }
     }
 

@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Core.Project;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,22 @@ namespace StudioCore.Editors.GparamEditor.Utils;
 
 public static class GparamUtils
 {
-     /// <summary>
-     /// Search for valid duplicate name for a GPARAM file
-     /// </summary>
+    /// <summary>
+    /// Whether the current project type supports the GPARAM Editor
+    /// </summary>
+    public static bool IsSupportedProjectType()
+    {
+        if(Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2 or ProjectType.DES)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Search for valid duplicate name for a GPARAM file
+    /// </summary>
     public static string CreateDuplicateFileName(string fileName)
     {
         Match mapMatch = Regex.Match(fileName, @"[0-9]{4}");

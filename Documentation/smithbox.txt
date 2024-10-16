@@ -12,6 +12,7 @@ General:
 Viewport:
  - ADD: support for transparent shapes, so regions can be better visualized
  - ADD: support for billboard sprites, e.g. images that are rendered towards the camera but placed at a fixed point in the viewport space
+ - FIX: viewport resources aren't being fully purged, memory is held, meaning RAM usage goes up if lots of resources are loaded in and doesn't decrease after unload
  
 World Map:
  - ADD: the dungeon icons, add icon radius for the non-open world maps
@@ -109,8 +110,9 @@ Text Editor:
  - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
  
 # PRIORITY
-- ADD: FMG Import/Export: container level, fmg leve, fmg entry level - Export to project/Workflow/Text/, generate import list from this folder
+- ADD: FMG Import/Export: container level, fmg level, fmg entry level - Export to .smithbox/Workflow/Text/, generate import list from this folder
 - ADD: sync with X Language (Container level -> apply modified rows + add unique rows into non-primary container (add option to apply prepend string, e.g. TRANSLATE:, so you can tag rows for translation)
 - ADD: global text search and replace: search term: show affected; apply button
 - ADD: Duplicate Rows (add multi-duplicate)
 - ADD: Delete Rows (copy duplicate stuff, but reverse)
+

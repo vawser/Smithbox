@@ -519,6 +519,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Five ItemLotParam IDs.
                 /// </summary>
+                [MSBParamReference(ParamName = "ItemLotParam")]
                 public int[] ItemLots { get; private set; }
 
                 /// <summary>

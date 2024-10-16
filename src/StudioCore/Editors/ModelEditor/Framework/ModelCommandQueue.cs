@@ -12,13 +12,10 @@ namespace StudioCore.Editors.ModelEditor;
 public class ModelCommandQueue
 {
     private ModelEditorScreen Screen;
-    private FileSelectionView Selection;
-    private ModelResourceManager ResourceManager;
 
     public ModelCommandQueue(ModelEditorScreen screen)
     {
         Screen = screen;
-        Selection = screen.FileSelection;
     }
 
     public void Parse(string[] initcmd)
@@ -32,20 +29,20 @@ public class ModelCommandQueue
 
                 if (assetType == "Character")
                 {
-                    Selection._searchInput = modelName;
-                    ResourceManager.LoadCharacter(modelName);
+                    Screen.FileSelection._searchInput = modelName;
+                    Screen.ResManager.LoadCharacter(modelName);
                 }
 
                 if (assetType == "Asset")
                 {
-                    Selection._searchInput = modelName;
-                    ResourceManager.LoadAsset(modelName);
+                    Screen.FileSelection._searchInput = modelName;
+                    Screen.ResManager.LoadAsset(modelName);
                 }
 
                 if (assetType == "Part")
                 {
-                    Selection._searchInput = modelName;
-                    ResourceManager.LoadPart(modelName);
+                    Screen.FileSelection._searchInput = modelName;
+                    Screen.ResManager.LoadPart(modelName);
                 }
 
                 if (initcmd.Length > 3)
@@ -55,8 +52,8 @@ public class ModelCommandQueue
                     if (assetType == "MapPiece")
                     {
                         var mapPieceName = modelName.Replace(mapId, "m");
-                        Selection._searchInput = mapPieceName;
-                        ResourceManager.LoadMapPiece(modelName, mapId);
+                        Screen.FileSelection._searchInput = mapPieceName;
+                        Screen.ResManager.LoadMapPiece(modelName, mapId);
                     }
                 }
             }

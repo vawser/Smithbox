@@ -8,6 +8,12 @@ namespace StudioCore.Editors.TextEditor.Enums;
 
 public static class CategoryGroupings
 {
+    public static List<TextContainerCategory> DES_Languages = new()
+    {
+        TextContainerCategory.Japanese,
+        TextContainerCategory.English
+    };
+
     public static List<TextContainerCategory> DS1_Languages = new()
     {
         TextContainerCategory.English,

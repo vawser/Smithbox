@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Configuration.Settings;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Tests;
@@ -11,11 +10,12 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Numerics;
 using System.Threading.Tasks;
-using static StudioCore.Configuration.Settings.SettingsWindow;
+using static StudioCore.Configuration.SettingsWindow;
 using System;
 using static SoulsFormats.MSB_AC6;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
+using static StudioCore.Configuration.Help.HelpWindow;
 
 namespace StudioCore.Tools.Development;
 
@@ -41,6 +41,21 @@ public class DebugWindow
 
     private SelectedDebugTab SelectedTab = SelectedDebugTab.DisplayTaskStatus;
 
+    public void ToggleWindow(SelectedDebugTab focusedTab, bool ignoreIfOpen = true)
+    {
+        SelectedTab = focusedTab;
+
+        if (!ignoreIfOpen)
+        {
+            MenuOpenState = !MenuOpenState;
+        }
+
+        if (!MenuOpenState)
+        {
+            MenuOpenState = true;
+        }
+    }
+
     public enum SelectedDebugTab
     {
         // Information
@@ -60,7 +75,6 @@ public class DebugWindow
         [Display(Name = "TAE Validation")] ValidateTAE,
 
         // Helpers
-        [Display(Name = "FMG Name Helper")] FmgNameHelper,
         [Display(Name = "FLVER Layout Helper")] FlverLayoutHelper,
 
         // Tests
@@ -90,57 +104,6 @@ public class DebugWindow
 
         if (ImGui.Begin("Debug##TestWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            ImGui.Columns(2);
-
-            ImGui.BeginChild("debugToolList");
-
-            var arr = Enum.GetValues(typeof(SelectedDebugTab));
-            for (int i = 0; i < arr.Length; i++)
-            {
-                var tab = (SelectedDebugTab)arr.GetValue(i);
-
-                if (tab == SelectedDebugTab.DisplayTaskStatus)
-                {
-                    ImGui.Separator();
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Information");
-                    ImGui.Separator();
-                }
-                if (tab == SelectedDebugTab.ImGuiDemo)
-                {
-                    ImGui.Separator();
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "ImGui");
-                    ImGui.Separator();
-                }
-                if (tab == SelectedDebugTab.ValidateParamdef)
-                {
-                    ImGui.Separator();
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Validation");
-                    ImGui.Separator();
-                }
-                if (tab == SelectedDebugTab.FmgNameHelper)
-                {
-                    ImGui.Separator();
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Helpers");
-                    ImGui.Separator();
-                }
-                if (tab == SelectedDebugTab.Test_MSBE_BytePerfect)
-                {
-                    ImGui.Separator();
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "Tests");
-                    ImGui.Separator();
-                }
-
-                if (ImGui.Selectable(tab.GetDisplayName(), tab == SelectedTab))
-                {
-                    SelectedTab = tab;
-                }
-            }
-
-            ImGui.EndChild();
-
-            ImGui.NextColumn();
-
-            ImGui.BeginChild("configurationTab");
             switch (SelectedTab)
             {
                 // Information
@@ -201,9 +164,6 @@ public class DebugWindow
                     DisplayTest_FLVER2();
                     break;
             }
-            ImGui.EndChild();
-
-            ImGui.Columns(1);
         }
 
         ImGui.End();

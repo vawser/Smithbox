@@ -131,48 +131,16 @@ public class EditorHandler
         }
     }
 
-    private bool MayChangeProject()
-    {
-        if(TaskManager.AnyActiveTasks())
-        {
-            return false;
-        }
-
-        // Add async stuff here that doesn't directly use the TaskManager system
-        if(MapEditor.MapQueryHandler.UserLoadedData && !MapEditor.MapQueryHandler.Bank.MapBankInitialized)
-        {
-            return false;
-        }
-
-        return true;
-    }
-
     public void HandleEditorSharedBar()
     {
         ImGui.Separator();
 
-        // Dropdown: File
+        ImGui.Text($"{ForkAwesome.Cog}");
+
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("File"))
         {
-            // New Project
-            if (ImGui.Button("New Project", UI.MenuButtonSize))
-            {
-                if (MayChangeProject())
-                {
-                    Smithbox.ProjectHandler.ClearProject();
-                    Smithbox.ProjectHandler.IsInitialLoad = true;
-                }
-            }
-
-            // Open Project
-            if (ImGui.Button("Open Project", UI.MenuButtonSize))
-            {
-                if (MayChangeProject())
-                {
-                    Smithbox.ProjectHandler.OpenProjectDialog();
-                }
-            }
-
             // Save
             if (ImGui.Button($"Save Selected {FocusedEditor.SaveType}", UI.MenuButtonSize))
             {
@@ -188,40 +156,6 @@ public class EditorHandler
                 SaveAllFocusedEditor();
             }
             UIHelper.ShowHoverTooltip(KeyBindings.Current.CORE_SaveAll.HintText);
-
-            ImGui.Separator();
-
-            // Recent Projects
-            if (ImGui.BeginMenu("Recent Projects", MayChangeProject() && CFG.Current.RecentProjects.Count > 0))
-            {
-                Smithbox.ProjectHandler.DisplayRecentProjects();
-
-                ImGui.EndMenu();
-            }
-
-            // Open in Explorer
-            if (ImGui.BeginMenu("Open in Explorer", !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
-            {
-                if (ImGui.Button("Project Folder", UI.MenuButtonSize))
-                {
-                    var projectPath = Smithbox.ProjectRoot;
-                    Process.Start("explorer.exe", projectPath);
-                }
-
-                if (ImGui.Button("Game Folder", UI.MenuButtonSize))
-                {
-                    var gamePath = Smithbox.GameRoot;
-                    Process.Start("explorer.exe", gamePath);
-                }
-
-                if (ImGui.Button("Config Folder", UI.MenuButtonSize))
-                {
-                    var configPath = CFG.GetConfigFolderPath();
-                    Process.Start("explorer.exe", configPath);
-                }
-
-                ImGui.EndMenu();
-            }
 
             ImGui.EndMenu();
         }

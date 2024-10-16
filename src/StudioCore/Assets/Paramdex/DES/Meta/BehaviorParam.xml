@@ -6,29 +6,59 @@
       <Option Value="1" Name="Bullet" />
       <Option Value="2" Name="SpEffect" />
     </Enum>
+    <Enum Name="STATE_BEHAVIOR_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Player" />
+      <Option Value="2" Name="NPC" />
+      <Option Value="3" Name="NPC" />
+    </Enum>
+    <Enum Name="BEHAVIOR_CATEGORY" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Normal Attack" />
+      <Option Value="2" Name="Left-hand Attack" />
+      <Option Value="3" Name="Magic" />
+      <Option Value="4" Name="Miracle" />
+      <Option Value="5" Name="Body" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
+      <Option Value="0" Name="Slash" />
+      <Option Value="1" Name="Strike" />
+      <Option Value="2" Name="Thrust" />
+      <Option Value="3" Name="Push" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_SIZE" type="u8">
+      <Option Value="0" Name="Small" />
+      <Option Value="1" Name="Large" />
+    </Enum>
   </Enums>
   <Field>
-    <variationId AltName="variationId" VRef="BehaviorVariation" />
-    <behaviorJudgeId AltName="behaviorJudgeId" />
-    <ezStateBehaviorType_old AltName="ezStateBehaviorType_old" />
-    <refType AltName="refType" Enum="BEHAVIOR_REF_TYPE" />
-    <refType AltName="refType" />
-    <pad0 AltName="pad0" />
-    <atkParamId AltName="atkParamId" Refs="AtkParam_Npc(refType=0),AtkParam_Pc(refType=0)"/>
-    <bulletParamId AltName="bulletParamId" Refs="Bullet(refType=1)" />
-    <spEffectId AltName="spEffectId" Refs="SpEffectParam(refType=2)" />
-    <sfxVariationId AltName="sfxVariationId" />
-    <category AltName="category" />
-    <pad1 AltName="pad1" />
-    <stamina AltName="stamina" />
-    <mp AltName="mp" />
-    <pad3 AltName="pad3" />
-    <atkType AltName="atkType" />
-    <atkMaterial AltName="atkMaterial" />
-    <defMaterial AltName="defMaterial" />
-    <atkSize AltName="atkSize" />
-    <defSfxMaterial AltName="defSfxMaterial" />
-    <pad2 AltName="pad2" />
+    <variationId AltName="Behavior Variation ID" Wiki="Used when calculating the ID for attack parameters. It is not used directly on the actual machine." VRef="behaviorVariation" />
+    <behaviorJudgeId AltName="Behavior Judge ID" Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TimeActEditor. It is not used directly on the actual machine."  />
+    <ezStateBehaviorType_old AltName="State Behavior Type" Wiki="For ID calculation rules" Enum="STATE_BEHAVIOR_TYPE" />
+    <refType AltName="Reference Type" Wiki="Specify the reference ID so that it is correct." Enum="BEHAVIOR_REF_TYPE" />
+    
+    <pad0 AltName="pad0" IsHidden="" />
+    
+    <atkParamId AltName="Attack Param ID" Refs="AtkParam_Npc(refType=0),AtkParam_Pc(refType=0)"/>
+    <bulletParamId AltName="Bullet Param ID" Refs="Bullet(refType=1)" />
+    <spEffectId AltName="SpEffect Param ID" Refs="SpEffectParam(refType=2)" />
+    
+    <sfxVariationId AltName="SFX Variation ID" />
+    <category AltName="Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="BEHAVIOR_CATEGORY" />
+    
+    <pad1 AltName="pad1" IsHidden="" />
+    <stamina AltName="Stamina" Wiki="Set the amount of stamina consumed during action." />
+    <mp AltName="MP" Wiki="Set the amount of MP consumed during action." />
+    
+    <pad3 AltName="pad3" IsHidden="" />
+    
+    <atkType AltName="Attack Type" Enum="BEHAVIOR_ATK_TYPE" />
+    <atkMaterial AltName="Attack Material" />
+    <defMaterial AltName="Defence Material" />
+    <atkSize AltName="Attack Size" Enum="BEHAVIOR_ATK_SIZE" />
+    <defSfxMaterial AltName="Defence SFX Material" />
+    
+    <pad2 AltName="pad2" IsHidden="" />
   </Field>
   <Self Row0Dummy="" />
 </PARAMMETA>

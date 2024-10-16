@@ -1,6 +1,7 @@
 ﻿using global::StudioCore.Configuration;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,12 @@ public class TextMultiselection
 {
     public SortedDictionary<int, FMG.Entry> StoredEntries = new();
 
+    private TextEditorScreen Screen;
     private KeyBind AssociatedKeybind;
 
-    public TextMultiselection(KeyBind associatedKeyBind)
+    public TextMultiselection(TextEditorScreen screen, KeyBind associatedKeyBind)
     {
+        Screen = screen;
         AssociatedKeybind = associatedKeyBind;
     }
 
@@ -36,7 +39,7 @@ public class TextMultiselection
         return StoredEntries.ContainsKey(index);
     }
 
-    public void HandleMultiselect(int currentSelectionIndex, int currentIndex, FMG.Entry entry)
+    public void HandleMultiselect(int currentSelectionIndex, int currentIndex)
     {
         // Multi-Select: Range Select
         if (InputTracker.GetKey(Veldrid.Key.LShift))
@@ -54,7 +57,11 @@ public class TextMultiselection
             {
                 if (!StoredEntries.ContainsKey(k))
                 {
-                    StoredEntries.Add(k, entry);
+                    if(k < Screen.Selection.SelectedFmg.Entries.Count)
+                    {
+                        var curEntry = Screen.Selection.SelectedFmg.Entries[k];
+                        StoredEntries.Add(k, curEntry);
+                    }
                 }
             }
         }
@@ -68,14 +75,24 @@ public class TextMultiselection
             else
             {
                 if (!StoredEntries.ContainsKey(currentIndex))
-                    StoredEntries.Add(currentIndex, entry);
+                {
+                    if (currentIndex < Screen.Selection.SelectedFmg.Entries.Count)
+                    {
+                        var curEntry = Screen.Selection.SelectedFmg.Entries[currentIndex];
+                        StoredEntries.Add(currentIndex, curEntry);
+                    }
+                }
             }
         }
         // Reset Multi-Selection if normal selection occurs
         else
         {
             StoredEntries.Clear();
-            StoredEntries.Add(currentIndex, entry);
+            if (currentIndex < Screen.Selection.SelectedFmg.Entries.Count)
+            {
+                var curEntry = Screen.Selection.SelectedFmg.Entries[currentIndex];
+                StoredEntries.Add(currentIndex, curEntry);
+            }
         }
     }
 }

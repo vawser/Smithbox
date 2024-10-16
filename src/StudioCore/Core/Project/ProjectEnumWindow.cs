@@ -1,77 +1,107 @@
 ﻿using ImGuiNET;
 using StudioCore.Banks.ProjectEnumBank;
-using StudioCore.Core.Project;
+using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Configuration.Settings;
+namespace StudioCore.Core.Project;
 
-public class ProjectEnumTab
+public static class ProjectEnumWindow
 {
+    public static bool DisplayProjectEnumWindow = false;
 
-    private ProjectEnumEntry _selectedEntry;
-    private string _selectedEntryName;
-    private ProjectEnumOption _selectedEntryOption;
+    private static ProjectEnumEntry _selectedEntry;
+    private static string _selectedEntryName;
+    private static ProjectEnumOption _selectedEntryOption;
 
-    private string _refUpdateName = "";
-    private string _refUpdateDisplayName = "";
-    private string _refUpdateDescription = "";
+    private static string _refUpdateName = "";
+    private static string _refUpdateDisplayName = "";
+    private static string _refUpdateDescription = "";
 
-    private string _refUpdateOptionID = "";
-    private string _refUpdateOptionName = "";
-    private string _refUpdateOptionDescription = "";
+    private static string _refUpdateOptionID = "";
+    private static string _refUpdateOptionName = "";
+    private static string _refUpdateOptionDescription = "";
 
-    private string _refNewOptionID = "";
-    private string _refNewOptionName = "";
-    private string _refNewOptionDescription = "";
+    private static string _refNewOptionID = "";
+    private static string _refNewOptionName = "";
+    private static string _refNewOptionDescription = "";
 
-    private bool ReselectEntry = false;
+    private static bool ReselectEntry = false;
 
-    public ProjectEnumTab() { }
-
-    public void Display()
+    public static void ToggleWindow()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        ImGui.Columns(3);
-
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBgSecondary);
-        ImGui.BeginChild($"ProjectEnumSelectionList");
-
-        DisplayProjectEnumSelectionList();
-
-        ImGui.EndChild();
-        ImGui.PopStyleColor(1);
-
-        ImGui.NextColumn();
-
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBgSecondary);
-        ImGui.BeginChild($"ProjectEnumOptionSelectionList");
-
-        DisplayProjectEnumOptionList();
-
-        ImGui.EndChild();
-        ImGui.PopStyleColor(1);
-
-        ImGui.NextColumn();
-
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBgSecondary);
-        ImGui.BeginChild($"ProjectEnumActions");
-
-        DisplayProjectEnumAction();
-
-        ImGui.EndChild();
-        ImGui.PopStyleColor(1);
+        DisplayProjectEnumWindow = !DisplayProjectEnumWindow;
     }
 
-    public void DisplayProjectEnumSelectionList()
+    public static void Display()
+    {
+        if (!DisplayProjectEnumWindow)
+            return;
+
+        var scale = DPI.GetUIScale();
+
+        ImGui.SetNextWindowSize(new Vector2(1200.0f, 1000.0f) * scale, ImGuiCond.FirstUseEver);
+        ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.Imgui_Moveable_MainBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBg, UI.Current.Imgui_Moveable_TitleBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.Imgui_Moveable_TitleBg_Active);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(10.0f, 10.0f) * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(5.0f, 5.0f) * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
+
+        if (ImGui.Begin($"Project Enums", ref DisplayProjectEnumWindow, ImGuiWindowFlags.NoDocking))
+        {
+            ImGui.Columns(3);
+
+            ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBgSecondary);
+            ImGui.BeginChild($"ProjectEnumSelectionList");
+
+            DisplayProjectEnumSelectionList();
+
+            ImGui.EndChild();
+            ImGui.PopStyleColor(1);
+
+            ImGui.NextColumn();
+
+            ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBgSecondary);
+            ImGui.BeginChild($"ProjectEnumOptionSelectionList");
+
+            DisplayProjectEnumOptionList();
+
+            ImGui.EndChild();
+            ImGui.PopStyleColor(1);
+
+            ImGui.NextColumn();
+
+            ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBgSecondary);
+            ImGui.BeginChild($"ProjectEnumActions");
+
+            DisplayProjectEnumAction();
+
+            ImGui.EndChild();
+
+            ImGui.Columns(1);
+
+            ImGui.PopStyleColor(1);
+        }
+
+        ImGui.End();
+
+        ImGui.PopStyleVar(3);
+        ImGui.PopStyleColor(5);
+    }
+
+    public static void DisplayProjectEnumSelectionList()
     {
         ImGui.Separator();
         ImGui.Text("Enums");
@@ -120,7 +150,7 @@ public class ProjectEnumTab
         }
     }
 
-    public void DisplayProjectEnumOptionList()
+    public static void DisplayProjectEnumOptionList()
     {
         ImGui.Separator();
         ImGui.Text("Options");
@@ -143,7 +173,7 @@ public class ProjectEnumTab
         }
     }
 
-    public void DisplayProjectEnumAction()
+    public static void DisplayProjectEnumAction()
     {
         var scale = DPI.GetUIScale();
         var width = ImGui.GetWindowWidth();

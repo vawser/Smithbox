@@ -32,6 +32,9 @@ public class UI
     public static UI Current { get; private set; }
     public static UI Default { get; } = new();
 
+    //**************
+    // Common Size Definitions
+    //**************
     public static Vector2 MenuButtonSize = new Vector2(200, 24);
     public static Vector2 MenuButtonWideSize = new Vector2(350, 24);
 
@@ -77,7 +80,7 @@ public class UI
     //**************
     // View Toggles
     //**************
-    public bool Interface_DisplayInfoLogger = true;
+    public bool Interface_DisplayStatusBar = true;
     public bool Interface_Editor_Viewport = true;
     public bool Interface_Editor_Profiling = true;
 
@@ -359,6 +362,9 @@ public class UI
         }
     }
 
+    /// <summary>
+    /// Updates the common size definitions to account for current UI scale
+    /// </summary>
     public static void OnGui()
     {
         // Menubar

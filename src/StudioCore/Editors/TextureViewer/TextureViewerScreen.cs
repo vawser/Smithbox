@@ -2,6 +2,7 @@
 using StudioCore.Editor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TextureViewer.Tools;
+using StudioCore.Editors.TextureViewer.Utils;
 using StudioCore.Interface;
 using StudioCore.Resource;
 using StudioCore.Utilities;
@@ -139,11 +140,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         var dsid = ImGui.GetID("DockSpace_TextureViewer");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
         
-        if (Smithbox.ProjectHandler.CurrentProject == null)
+        if(!TexUtils.IsSupportedProjectType() || Smithbox.ProjectHandler.CurrentProject == null)
         {
             ImGui.Begin("Viewer##InvalidTextureViewer");
 
-            ImGui.Text("No project loaded. File -> New Project");
+            ImGui.Text("Texture Viewer does not support this project type.");
 
             ImGui.End();
 

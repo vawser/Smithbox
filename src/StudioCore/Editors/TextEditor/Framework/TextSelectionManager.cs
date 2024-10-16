@@ -43,7 +43,7 @@ public class TextSelectionManager
     {
         Screen = screen;
 
-        FmgEntryMultiselect = new TextMultiselection(MultiSelectKey);
+        FmgEntryMultiselect = new TextMultiselection(Screen, MultiSelectKey);
     }
 
     public void OnProjectChanged()
@@ -66,7 +66,7 @@ public class TextSelectionManager
         FocusFmgSelection = false;
         FocusFmgEntrySelection = false;
 
-        FmgEntryMultiselect = new TextMultiselection(MultiSelectKey);
+        FmgEntryMultiselect = new TextMultiselection(Screen, MultiSelectKey);
     }
 
     /// <summary>
@@ -101,7 +101,7 @@ public class TextSelectionManager
         SelectedFmgKey = fmgInfo.ID;
         SelectedFmg = fmgInfo.File;
 
-        FmgEntryMultiselect = new TextMultiselection(MultiSelectKey);
+        FmgEntryMultiselect = new TextMultiselection(Screen, MultiSelectKey);
 
         _selectedFmgEntryIndex = -1;
         _selectedFmgEntry = null;
@@ -139,7 +139,7 @@ public class TextSelectionManager
         if(changeContext)
             CurrentSelectionContext = TextSelectionContext.FmgEntry;
 
-        FmgEntryMultiselect.HandleMultiselect(_selectedFmgEntryIndex, index, entry);
+        FmgEntryMultiselect.HandleMultiselect(_selectedFmgEntryIndex, index);
 
         _selectedFmgEntryIndex = index;
         _selectedFmgEntry = entry;

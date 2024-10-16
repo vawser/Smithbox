@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using Octokit;
-using StudioCore.Configuration;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
@@ -12,7 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Veldrid;
-using static StudioCore.Configuration.Settings.SettingsWindow;
+using static StudioCore.Configuration.SettingsWindow;
 
 namespace StudioCore.Configuration.Keybinds;
 public class KeybindWindow
@@ -48,6 +47,22 @@ public class KeybindWindow
         CFG.Save();
     }
 
+    public void ToggleWindow(SelectedKeybindTab focusedTab, bool ignoreIfOpen = true)
+    {
+        SelectedTab = focusedTab;
+
+        if (!ignoreIfOpen)
+        {
+            MenuOpenState = !MenuOpenState;
+        }
+
+        if (!MenuOpenState)
+        {
+            MenuOpenState = true;
+        }
+    }
+
+
     public void ToggleMenuVisibility()
     {
         MenuOpenState = !MenuOpenState;
@@ -71,25 +86,6 @@ public class KeybindWindow
 
         if (ImGui.Begin("Keybinds##KeybindWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            ImGui.Columns(2);
-
-            ImGui.BeginChild("keybindTabList");
-
-            var arr = Enum.GetValues(typeof(SelectedKeybindTab));
-            for (int i = 0; i < arr.Length; i++)
-            {
-                var tab = (SelectedKeybindTab)arr.GetValue(i);
-
-                if (ImGui.Selectable(tab.GetDisplayName(), tab == SelectedTab))
-                {
-                    SelectedTab = tab;
-                }
-            }
-            ImGui.EndChild();
-
-            ImGui.NextColumn();
-
-            ImGui.BeginChild("keybindTab");
             switch (SelectedTab)
             {
                 case SelectedKeybindTab.Common:
@@ -120,9 +116,6 @@ public class KeybindWindow
                     TextureViewerKeybinds.Display();
                     break;
             }
-            ImGui.EndChild();
-
-            ImGui.Columns(1);
         }
 
         ImGui.End();

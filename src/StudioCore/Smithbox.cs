@@ -34,7 +34,7 @@ namespace StudioCore;
 public class Smithbox
 {
     public static EditorHandler EditorHandler;
-    public static WindowHandler WindowHandler;
+    public static CommonMenubarHandler WindowHandler;
     public static BankHandler BankHandler;
     public static AliasCacheHandler AliasCacheHandler;
     public static ProjectHandler ProjectHandler;
@@ -108,7 +108,7 @@ public class Smithbox
         // Handlers
         ProjectHandler = new ProjectHandler();
         EditorHandler = new EditorHandler(_context);
-        WindowHandler = new WindowHandler(_context);
+        WindowHandler = new CommonMenubarHandler(_context);
 
         TextBank.LoadTextFiles();
 
@@ -458,6 +458,8 @@ public class Smithbox
             _user32_ShowWindow(_context.Window.Handle, 9);
         }
 
+        TaskLogs.DisplayStatusBar();
+
         ctx = Tracy.TracyCZoneN(1, "Style");
         UIHelper.ApplyBaseStyle();
         ImGuiViewportPtr vp = ImGui.GetMainViewport();
@@ -475,6 +477,7 @@ public class Smithbox
         ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.0f, 0.0f, 0.0f, 0.0f));
         if (ImGui.Begin("DockSpace_W", flags))
         {
+
         }
 
         var dsid = ImGui.GetID("DockSpace");
@@ -489,9 +492,11 @@ public class Smithbox
 
         if (ImGui.BeginMainMenuBar())
         {
-            WindowHandler.HandleWindowIconBar();
+            WindowHandler.HandleWindowBar();
             EditorHandler.HandleEditorSharedBar();
             EditorHandler.FocusedEditor.DrawEditorMenu();
+
+            TaskLogs.DisplayWindow();
 
             // Program Update
             if (_programUpdateAvailable)
@@ -509,8 +514,6 @@ public class Smithbox
 
                 ImGui.PopStyleColor();
             }
-
-            TaskLogs.Display();
 
             ImGui.EndMainMenuBar();
         }

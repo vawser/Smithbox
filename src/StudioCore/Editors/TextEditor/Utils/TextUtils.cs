@@ -18,11 +18,6 @@ public static class TextUtils
     /// </summary>
     public static bool IsSupportedProjectType()
     {
-        if(Smithbox.ProjectType is ProjectType.DES)
-        {
-            return false;
-        }
-
         return true;
     }
 
@@ -34,6 +29,10 @@ public static class TextUtils
         switch (Smithbox.ProjectType)
         {
             case ProjectType.DES:
+                if (CategoryGroupings.DES_Languages.Contains(category))
+                {
+                    return true;
+                }
                 break;
             case ProjectType.DS1:
             case ProjectType.DS1R:
@@ -96,6 +95,30 @@ public static class TextUtils
         switch(Smithbox.ProjectType)
         {
             case ProjectType.DES:
+                if (IsItemContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Item_MsgBndID_DES), id))
+                    {
+                        var enumObj = (Item_MsgBndID_DES)id;
+                        name = enumObj.GetDisplayName();
+                    }
+                    else
+                    {
+                        TaskLogs.AddLog($"Item_MsgBndID_DES: {id} not defined");
+                    }
+                }
+                else if (IsMenuContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DES), id))
+                    {
+                        var enumObj = (Menu_MsgBndID_DES    )id;
+                        name = enumObj.GetDisplayName();
+                    }
+                    else
+                    {
+                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined");
+                    }
+                }
                 break;
             case ProjectType.DS1: 
             case ProjectType.DS1R: 
@@ -370,6 +393,30 @@ public static class TextUtils
         switch (Smithbox.ProjectType)
         {
             case ProjectType.DES:
+                if (IsItemContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Item_MsgBndID_DES), id))
+                    {
+                        var enumObj = (Item_MsgBndID_DES)id;
+                        name = enumObj.ToString();
+                    }
+                    else
+                    {
+                        TaskLogs.AddLog($"Item_MsgBndID_DES: {id} not defined");
+                    }
+                }
+                else if (IsMenuContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DES), id))
+                    {
+                        var enumObj = (Menu_MsgBndID_DES)id;
+                        name = enumObj.ToString();
+                    }
+                    else
+                    {
+                        TaskLogs.AddLog($"Menu_MsgBndID_DES: {id} not defined");
+                    }
+                }
                 break;
             case ProjectType.DS1:
             case ProjectType.DS1R:
@@ -644,6 +691,30 @@ public static class TextUtils
         switch (Smithbox.ProjectType)
         {
             case ProjectType.DES:
+                if (IsItemContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Item_MsgBndID_DES), id))
+                    {
+                        var enumObj = (Item_MsgBndID_DES)id;
+                        retId = Convert.ToInt32($"{enumObj}");
+                    }
+                    else
+                    {
+                        TaskLogs.AddLog($"Item_MsgBndID_DS1: {id} not defined");
+                    }
+                }
+                else if (IsMenuContainer(info))
+                {
+                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DES), id))
+                    {
+                        var enumObj = (Menu_MsgBndID_DES)id;
+                        retId = Convert.ToInt32($"{enumObj}");
+                    }
+                    else
+                    {
+                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined");
+                    }
+                }
                 break;
             case ProjectType.DS1:
             case ProjectType.DS1R:
@@ -651,7 +722,7 @@ public static class TextUtils
                 {
                     if (Enum.IsDefined(typeof(Item_MsgBndID_DS1), id))
                     {
-                        var enumObj = (NgWord_MsgBndID_AC6)id;
+                        var enumObj = (Item_MsgBndID_DS1)id;
                         retId = Convert.ToInt32($"{enumObj}");
                     }
                     else
@@ -1011,6 +1082,12 @@ public static class TextUtils
     {
         var group = TextContainerCategory.None;
 
+        // Special-case: DES the msg folder has Japanese, so default to Japanese.
+        if(Smithbox.ProjectType is ProjectType.DES)
+        {
+            group = TextContainerCategory.Japanese;
+        }
+
         // Common
         if (path.Contains("common"))
         {
@@ -1215,6 +1292,18 @@ public static class TextUtils
 
         if (name.Contains("dlc02") || name.Contains("dlc2"))
             prettyName = $"{prettyName} - DLC 2";
+
+        if(Smithbox.ProjectType is ProjectType.DES)
+        {
+            if (name.Contains("sample"))
+                prettyName = "Sample";
+
+            // DES has compressed and uncompressed versions, so add some extra text so it is more obvious which is which
+            if (name.Contains(".dcx"))
+            {
+                prettyName = $"{prettyName} [Compressed]";
+            }
+        }
 
         return prettyName;
     }

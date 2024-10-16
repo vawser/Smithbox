@@ -15,6 +15,52 @@ namespace StudioCore.Editors.TextEditor;
 /// <summary>
 /// FMG IDs for DS1
 /// </summary>
+public enum Item_MsgBndID_DES
+{
+    [Display(Name = "Title: Goods")] Title_Goods = 10,
+    [Display(Name = "Title: Weapons")] Title_Weapons = 11,
+    [Display(Name = "Title: Armor")] Title_Armor = 12,
+    [Display(Name = "Title: Accessories")] Title_Accessories = 13,
+    [Display(Name = "Title: Magic")] Title_Magic = 14,
+    [Display(Name = "Title: Effect")] Title_Effect = 15,
+    [Display(Name = "Description: Effect")] Description_Effect = 16,
+    [Display(Name = "Description: Effect (2)")] Description_Effect_2 = 17,
+    [Display(Name = "Title: Characters")] Title_Characters = 18,
+    [Display(Name = "Title: Locations")] Title_Locations = 19,
+
+    [Display(Name = "Summary: Goods")] Summary_Goods = 20,
+    [Display(Name = "Summary: Weapons")] Summary_Weapons = 21,
+    [Display(Name = "Summary: Armor")] Summary_Armor = 22,
+    [Display(Name = "Summary: Accessories")] Summary_Accessories = 23,
+    [Display(Name = "Summary: Magic")] Summary_Magic = 28,
+
+    [Display(Name = "Description: Goods")] Description_Goods = 24,
+    [Display(Name = "Description: Weapons")] Description_Weapons = 25,
+    [Display(Name = "Description: Armor")] Description_Armor = 26,
+    [Display(Name = "Description: Accessories")] Description_Accessories = 27,
+    [Display(Name = "Description: Magic")] Description_Magic = 29
+}
+
+public enum Menu_MsgBndID_DES
+{
+    [Display(Name = "Talk Messages")] Talk_Messages = 1,
+    [Display(Name = "Blood Messages")] Blood_Messages = 2,
+    [Display(Name = "Movie Subtitles")] Movie_Subtitles = 3,
+    [Display(Name = "Event Text")] Event_Text = 30,
+
+    [Display(Name = "Menu: In-game")] Menu_Ingame = 70,
+    [Display(Name = "Menu: Common")] Menu_Common = 76,
+    [Display(Name = "Menu: Other")] Menu_Other = 77,
+    [Display(Name = "Menu: Dialog")] Menu_Dialog = 78,
+    [Display(Name = "Menu: Key Guide")] Menu_Key_Guide = 79,
+    [Display(Name = "Menu: Line Help")] Menu_Line_Help = 80,
+    [Display(Name = "Menu: Context")] Menu_Context = 81,
+    [Display(Name = "Menu: Tags")] Menu_Tags = 90
+}
+
+/// <summary>
+/// FMG IDs for DS1
+/// </summary>
 public enum Item_MsgBndID_DS1
 {
     [Display(Name= "Title: Goods")] Title_Goods = 10,

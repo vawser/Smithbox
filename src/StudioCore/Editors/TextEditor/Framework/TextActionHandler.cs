@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.TextEditor;
@@ -37,63 +38,89 @@ public class TextActionHandler
 
         SortedDictionary<int, FMG.Entry> storedEntries = Screen.Selection.FmgEntryMultiselect.StoredEntries;
 
-        var selectedContainer = Screen.Selection.SelectedContainer;
-        var selectedFmg = Screen.Selection.SelectedFmg;
+        List<EditorAction> actions = new List<EditorAction>();
 
-        int lastEntryIdx = -1;
+        var newId = -1;
 
-        // Single
-        if (storedEntries.Count <= 1)
+        foreach (var entry in storedEntries)
         {
-            FMG.Entry curEntry = selectedFmg.Entries[storedEntries.First().Key];
+            var curFmg = entry.Value.Parent;
+            var curEntry = entry.Value;
 
             // Get next valid ID
-            var validID = false;
-            var newID = curEntry.ID;
-
-            while (!validID)
+            if (newId == -1)
             {
-                newID++;
-
-                if (!selectedFmg.Entries.Any(e => e.ID == newID))
-                {
-                    validID = true;
-                }
+                newId = GetNextValidId(curFmg, curEntry);
+            }
+            else
+            {
+                newId = GetNextValidId(curFmg, curEntry, newId);
             }
 
-            Screen.EditorActionManager.ExecuteAction(
-                new DuplicateFmgEntry(selectedContainer, selectedFmg, curEntry, newID));
+            var actionList = ProcessDuplicate(curEntry, newId);
+            foreach(var action in actionList)
+            {
+                actions.Add(action);
+            }
         }
-        // Multi-Select
-        else
+
+        var groupAction = new FmgGroupedAction(actions);
+        Screen.EditorActionManager.ExecuteAction(groupAction);
+    }
+
+    private List<EditorAction> ProcessDuplicate(FMG.Entry curEntry, int newId)
+    {
+        List<EditorAction> actions = new List<EditorAction>();
+
+        var selectedContainer = Screen.Selection.SelectedContainer;
+        var selectedFmg = curEntry.Parent;
+        var fmgEntryGroup = Screen.EntryGroupManager.GetEntryGroup(curEntry);
+
+        if (newId != -1)
         {
-            /*
-            List<int> insertIndices = new List<int>();
-            List<TAE.Event> newEvents = new List<TAE.Event>();
-
-            for (int i = 0; i < animations.Events.Count; i++)
+            // Duplicate all related entries together based on selection
+            if (fmgEntryGroup != null)
             {
-                if (storedEvents.ContainsKey(i))
+                if (fmgEntryGroup.Title != null)
                 {
-                    TAE.Event curEvent = animations.Events[i];
-                    int insertIdx = animations.Events.IndexOf(curEvent);
-                    insertIndices.Add(insertIdx);
-                    TAE.Event dupeEvent = curEvent.GetClone(false);
-                    newEvents.Add(dupeEvent);
+                    var titleEntry = fmgEntryGroup.Title;
+                    var titleFmg = titleEntry.Parent;
 
-                    lastEventIdx = insertIdx;
+                    actions.Add(new DuplicateFmgEntry(selectedContainer, titleFmg, titleEntry, newId));
+                }
+
+                if (fmgEntryGroup.Summary != null)
+                {
+                    var summaryEntry = fmgEntryGroup.Summary;
+                    var summaryFmg = summaryEntry.Parent;
+
+                    actions.Add(new DuplicateFmgEntry(selectedContainer, summaryFmg, summaryEntry, newId));
+                }
+
+                if (fmgEntryGroup.Description != null)
+                {
+                    var descriptionEntry = fmgEntryGroup.Description;
+                    var descriptionFmg = descriptionEntry.Parent;
+
+                    actions.Add(new DuplicateFmgEntry(selectedContainer, descriptionFmg, descriptionEntry, newId));
+                }
+
+                if (fmgEntryGroup.Effect != null)
+                {
+                    var effectEntry = fmgEntryGroup.Effect;
+                    var effectFmg = effectEntry.Parent;
+
+                    actions.Add(new DuplicateFmgEntry(selectedContainer, effectFmg, effectEntry, newId));
                 }
             }
-
-            EditorActionManager.ExecuteAction(new TaeEventMultiDuplicate(newEvents, animations.Events, insertIndices));
-
-            // Select last newly duplicated event
-            if (lastEventIdx != -1)
+            // Otherwise just duplicate selection
+            else
             {
-                TimeActUtils.SelectNewEvent(lastEventIdx);
+                actions.Add(new DuplicateFmgEntry(selectedContainer, selectedFmg, curEntry, newId));
             }
-            */
         }
+
+        return actions;
     }
 
     /// <summary>
@@ -102,5 +129,27 @@ public class TextActionHandler
     public void DeleteEntries()
     {
 
+    }
+
+    public int GetNextValidId(FMG selectedFmg, FMG.Entry curEntry, int newId = -1)
+    {
+        var validID = false;
+
+        var newID = newId;
+
+        if (newId == -1)
+            newID = curEntry.ID;
+
+        while (!validID)
+        {
+            newID++;
+
+            if (!selectedFmg.Entries.Any(e => e.ID == newID))
+            {
+                validID = true;
+            }
+        }
+
+        return newID;
     }
 }

@@ -99,7 +99,7 @@ public class ParamEditorView
         if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
         {
             // This game has DrawParams, add UI element to toggle viewing DrawParam and GameParams.
-            if (ImGui.Checkbox("Edit Drawparams", ref _mapParamView))
+            if (ImGui.Checkbox("Edit Draw Params", ref _mapParamView))
             {
                 UICache.ClearCaches();
             }
