@@ -21,6 +21,8 @@ public class TextContainerInfo : IComparable<TextContainerInfo>
 
     public TextContainerCategory Category { get; private set; }
 
+    public DS2_SubCategory SubCategory { get; set; }
+
     public List<FmgInfo> FmgInfos { get; private set; }
 
     public TextContainerInfo(string name, string path, DCX.Type compressionType, TextContainerType containerType, TextContainerCategory category, List<FmgInfo> fmgInfos)
@@ -33,6 +35,8 @@ public class TextContainerInfo : IComparable<TextContainerInfo>
         Category = category;
         FmgInfos = fmgInfos;
         HasUnsavedChanges = false;
+
+        SubCategory = DS2_SubCategory.None;
     }
 
     public int CompareTo(TextContainerInfo other)

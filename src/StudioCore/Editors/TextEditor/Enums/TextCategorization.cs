@@ -700,3 +700,11 @@ public enum TalkFmgName_DS2
     [Display(Name = "Talk: Frozen Eleum Loyce")] m50_37_00_00,
     [Display(Name = "Talk: Memory of the King")] m50_38_00_00
 }
+
+public enum DS2_SubCategory
+{
+    [Display(Name = "None")] None, // Used by all non-DS2 files
+    [Display(Name = "Common")] common,
+    [Display(Name = "Blood Message")] bloodmes,
+    [Display(Name = "Talk")] talk,
+}

@@ -1,4 +1,5 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
+using Silk.NET.OpenGL;
 using StudioCore.Core.Project;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Utilities;
@@ -88,7 +89,7 @@ public static class TextUtils
     /// <summary>
     /// Get the display name for a FMG based on the BND ID
     /// </summary>
-    public static string GetFmgDisplayName(TextContainerInfo info, int id)
+    public static string GetFmgDisplayName(TextContainerInfo info, int id, string fmgName)
     {
         var name = $"Unknown";
 
@@ -151,38 +152,41 @@ public static class TextUtils
             case ProjectType.DS2S:
                 if (IsTalkFmg(info))
                 {
-                    if (Enum.IsDefined(typeof(TalkFmgName_DS2), id))
+                    foreach(var entry in Enum.GetValues(typeof(TalkFmgName_DS2)))
                     {
-                        var enumObj = (TalkFmgName_DS2)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"TalkFmgName_DS2: {id} not defined");
+                        var enumVal = (TalkFmgName_DS2)Enum.Parse(typeof(TalkFmgName_DS2), entry.ToString());
+                        var internalName = enumVal.ToString();
+
+                        if(internalName == Path.GetFileNameWithoutExtension(fmgName))
+                        {
+                            name = enumVal.GetDisplayName();
+                        }
                     }
                 }
                 else if (IsBloodMessageFmg(info))
                 {
-                    if (Enum.IsDefined(typeof(BloodMessageFmgName_DS2), id))
+                    foreach (var entry in Enum.GetValues(typeof(BloodMessageFmgName_DS2)))
                     {
-                        var enumObj = (BloodMessageFmgName_DS2)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"BloodMessageFmgName_DS2: {id} not defined");
+                        var enumVal = (BloodMessageFmgName_DS2)Enum.Parse(typeof(BloodMessageFmgName_DS2), entry.ToString());
+                        var internalName = enumVal.ToString();
+
+                        if (internalName == Path.GetFileNameWithoutExtension(fmgName))
+                        {
+                            name = enumVal.GetDisplayName();
+                        }
                     }
                 }
                 else
                 {
-                    if (Enum.IsDefined(typeof(CommonFmgName_DS2), id))
+                    foreach (var entry in Enum.GetValues(typeof(CommonFmgName_DS2)))
                     {
-                        var enumObj = (CommonFmgName_DS2)id;
-                        name = enumObj.GetDisplayName();
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"CommonFmgName_DS2: {id} not defined");
+                        var enumVal = (CommonFmgName_DS2)Enum.Parse(typeof(CommonFmgName_DS2), entry.ToString());
+                        var internalName = enumVal.ToString();
+
+                        if (internalName == Path.GetFileNameWithoutExtension(fmgName))
+                        {
+                            name = enumVal.GetDisplayName();
+                        }
                     }
                 }
                 break;
@@ -386,7 +390,7 @@ public static class TextUtils
     /// <summary>
     /// Get the internal name for a FMG based on the BND ID
     /// </summary>
-    public static string GetFmgInternalName(TextContainerInfo info, int id)
+    public static string GetFmgInternalName(TextContainerInfo info, int id, string fmgName)
     {
         var name = $"";
 
@@ -449,38 +453,26 @@ public static class TextUtils
             case ProjectType.DS2S:
                 if (IsTalkFmg(info))
                 {
-                    if (Enum.IsDefined(typeof(TalkFmgName_DS2), id))
+                    foreach (var entry in Enum.GetValues(typeof(TalkFmgName_DS2)))
                     {
-                        var enumObj = (TalkFmgName_DS2)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"TalkFmgName_DS2: {id} not defined");
+                        var enumVal = (TalkFmgName_DS2)entry;
+                        name = enumVal.ToString();
                     }
                 }
                 else if (IsBloodMessageFmg(info))
                 {
-                    if (Enum.IsDefined(typeof(BloodMessageFmgName_DS2), id))
+                    foreach (var entry in Enum.GetValues(typeof(BloodMessageFmgName_DS2)))
                     {
-                        var enumObj = (BloodMessageFmgName_DS2)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"BloodMessageFmgName_DS2: {id} not defined");
+                        var enumVal = (BloodMessageFmgName_DS2)entry;
+                        name = enumVal.ToString();
                     }
                 }
                 else
                 {
-                    if (Enum.IsDefined(typeof(CommonFmgName_DS2), id))
+                    foreach (var entry in Enum.GetValues(typeof(CommonFmgName_DS2)))
                     {
-                        var enumObj = (CommonFmgName_DS2)id;
-                        name = enumObj.ToString();
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"CommonFmgName_DS2: {id} not defined");
+                        var enumVal = (CommonFmgName_DS2)entry;
+                        name = enumVal.ToString();
                     }
                 }
                 break;
@@ -679,321 +671,6 @@ public static class TextUtils
         }
 
         return name;
-    }
-
-    /// <summary>
-    /// Get the internal name for a FMG based on the BND ID
-    /// </summary>
-    public static int GetFmgInternalId(TextContainerInfo info, int id)
-    {
-        int retId = -1;
-
-        switch (Smithbox.ProjectType)
-        {
-            case ProjectType.DES:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DES)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Item_MsgBndID_DS1: {id} not defined");
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DES), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DES)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined");
-                    }
-                }
-                break;
-            case ProjectType.DS1:
-            case ProjectType.DS1R:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DS1), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DS1)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Item_MsgBndID_DS1: {id} not defined");
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DS1), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DS1)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS1: {id} not defined");
-                    }
-                }
-                break;
-            case ProjectType.DS2:
-            case ProjectType.DS2S:
-                if (IsTalkFmg(info))
-                {
-                    if (Enum.IsDefined(typeof(TalkFmgName_DS2), id))
-                    {
-                        var enumObj = (TalkFmgName_DS2)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"TalkFmgName_DS2: {id} not defined");
-                    }
-                }
-                else if (IsBloodMessageFmg(info))
-                {
-                    if (Enum.IsDefined(typeof(BloodMessageFmgName_DS2), id))
-                    {
-                        var enumObj = (BloodMessageFmgName_DS2)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"BloodMessageFmgName_DS2: {id} not defined");
-                    }
-                }
-                else
-                {
-                    if (Enum.IsDefined(typeof(CommonFmgName_DS2), id))
-                    {
-                        var enumObj = (CommonFmgName_DS2)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"CommonFmgName_DS2: {id} not defined");
-                    }
-                }
-                break;
-            case ProjectType.BB:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_BB), id))
-                    {
-                        var enumObj = (Item_MsgBndID_BB)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Item_MsgBndID_BB: {id} not defined");
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_BB), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_BB)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Menu_MsgBndID_BB: {id} not defined");
-                    }
-                }
-                break;
-            case ProjectType.DS3:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (Item_MsgBndID_DS3)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Item_MsgBndID_DS3: {id} not defined");
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_DS3)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Menu_MsgBndID_DS3: {id} not defined");
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_DS3), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_DS3)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_DS3: {id} not defined");
-                    }
-                }
-                break;
-            case ProjectType.SDT:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (Item_MsgBndID_SDT)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Item_MsgBndID_SDT: {id} not defined");
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_SDT)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Menu_MsgBndID_SDT: {id} not defined");
-                    }
-                }
-                else if (IsSellRegionContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(SellRegion_MsgBndID_SDT), id))
-                    {
-                        var enumObj = (SellRegion_MsgBndID_SDT)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"SellRegion_MsgBndID_SDT: {id} not defined");
-                    }
-                }
-                break;
-            case ProjectType.ER:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_ER), id))
-                    {
-                        var enumObj = (Item_MsgBndID_ER)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Item_MsgBndID_ER: {id} not defined");
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_ER), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_ER)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Menu_MsgBndID_ER: {id} not defined");
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_ER), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_ER)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_ER: {id} not defined");
-                    }
-                }
-                else if (IsSellRegionContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(SellRegion_MsgBndID_ER), id))
-                    {
-                        var enumObj = (SellRegion_MsgBndID_ER)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"SellRegion_MsgBndID_ER: {id} not defined");
-                    }
-                }
-                break;
-            case ProjectType.AC6:
-                if (IsItemContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (Item_MsgBndID_AC6)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Item_MsgBndID_AC6: {id} not defined");
-                    }
-                }
-                else if (IsMenuContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (Menu_MsgBndID_AC6)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"Menu_MsgBndID_AC6: {id} not defined");
-                    }
-                }
-                else if (IsNgWordContainer(info))
-                {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_AC6), id))
-                    {
-                        var enumObj = (NgWord_MsgBndID_AC6)id;
-                        retId = Convert.ToInt32($"{enumObj}");
-                    }
-                    else
-                    {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_AC6: {id} not defined");
-                    }
-                }
-                break;
-
-            default: break;
-        }
-
-        return retId;
-    }
-
-    /// <summary>
-    /// Check if the current project type uses FMG patching
-    /// </summary>
-    public static bool UsesFmgPatching()
-    {
-        if(Smithbox.ProjectType 
-            is ProjectType.DS1 
-            or ProjectType.DS1R 
-            or ProjectType.DS3 
-            or ProjectType.ER)
-        {
-            return true;
-        }
-
-        return false;
     }
 
     /// <summary>
@@ -1306,5 +983,23 @@ public static class TextUtils
         }
 
         return prettyName;
+    }
+
+    /// <summary>
+    /// Get the sub category for DS2 fgms
+    /// </summary>
+    public static DS2_SubCategory GetSubCategory(string path)
+    {
+        if(path.Contains("bloodmes"))
+        {
+            return DS2_SubCategory.bloodmes;
+        }
+
+        if (path.Contains("talk"))
+        {
+            return DS2_SubCategory.talk;
+        }
+
+        return DS2_SubCategory.common;
     }
 }

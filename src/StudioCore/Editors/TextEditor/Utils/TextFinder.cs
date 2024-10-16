@@ -39,7 +39,7 @@ public static class TextFinder
             {
                 foreach (var fmg in entry.FmgInfos)
                 {
-                    var enumName = TextUtils.GetFmgInternalName(entry, fmg.ID);
+                    var enumName = TextUtils.GetFmgInternalName(entry, fmg.ID, fmg.Name);
 
                     // Contains here to capture the _DLC, _DLC1 and _DLC2 fmgs
                     if (enumName.Contains(fmgName))

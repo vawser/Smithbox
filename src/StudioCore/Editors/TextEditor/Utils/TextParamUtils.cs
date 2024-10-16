@@ -22,7 +22,7 @@ public static class TextParamUtils
                 {
                     foreach (var fmgInfo in entry.FmgInfos)
                     {
-                        var enumName = TextUtils.GetFmgInternalName(entry, fmgInfo.ID);
+                        var enumName = TextUtils.GetFmgInternalName(entry, fmgInfo.ID, fmgInfo.Name);
 
                         if (enumName.Contains(searchStr))
                         {

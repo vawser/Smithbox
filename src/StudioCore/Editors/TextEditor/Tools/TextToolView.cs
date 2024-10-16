@@ -142,7 +142,7 @@ public class TextToolView
                         var fmgName = result.FmgName;
                         if (CFG.Current.TextEditor_DisplayFmgPrettyName)
                         {
-                            fmgName = TextUtils.GetFmgDisplayName(result.Info, result.FmgID);
+                            fmgName = TextUtils.GetFmgDisplayName(result.Info, result.FmgID, result.FmgName);
                         }
 
                         var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";

@@ -57,6 +57,12 @@ public class TextActionHandler
                 newId = GetNextValidId(curFmg, curEntry, newId);
             }
 
+            // If this is enabled, just use the current entry ID
+            if(CFG.Current.TextEditor_IgnoreIdOnDuplicate)
+            {
+                newId = curEntry.ID;
+            }
+
             var actionList = ProcessDuplicate(curEntry, newId);
             foreach(var action in actionList)
             {
@@ -82,7 +88,7 @@ public class TextActionHandler
         if (newId != -1)
         {
             // Duplicate all related entries together based on selection
-            if (fmgEntryGroup != null)
+            if (fmgEntryGroup.SupportsGrouping)
             {
                 if (fmgEntryGroup.Title != null)
                 {
@@ -169,7 +175,7 @@ public class TextActionHandler
         var fmgEntryGroup = Screen.EntryGroupManager.GetEntryGroup(curEntry);
 
         // Delete all related entries together based on selection
-        if (fmgEntryGroup != null)
+        if (fmgEntryGroup.SupportsGrouping)
         {
             if (fmgEntryGroup.Title != null)
             {

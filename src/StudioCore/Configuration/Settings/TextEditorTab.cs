@@ -77,6 +77,9 @@ public class TextEditorTab
 
             ImGui.Checkbox("Trucate Displayed Text", ref CFG.Current.TextEditor_TruncateTextDisplay);
             UIHelper.ShowHoverTooltip("Truncate the displayed text so it is always one line (does not affect the contents of the entry).");
+
+            ImGui.Checkbox("Ignore ID on Duplication", ref CFG.Current.TextEditor_IgnoreIdOnDuplicate);
+            UIHelper.ShowHoverTooltip("Keep the Entry ID the same on duplication. Useful if you want to manually edit the IDs afterwards.");
         }
 
         // Entry Properties

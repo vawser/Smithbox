@@ -22,7 +22,7 @@ public class DuplicateFmgEntry : EditorAction
         Fmg = currentFmg;
         NewEntry = entry.Clone();
         NewEntry.ID = newID;
-        InsertionIndex = -1;
+        InsertionIndex = Fmg.Entries.Count;
 
         for (int i = 0; i < Fmg.Entries.Count; i++)
         {

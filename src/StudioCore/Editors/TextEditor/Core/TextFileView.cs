@@ -2,6 +2,7 @@
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core.Project;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
@@ -62,16 +63,69 @@ public class TextFileView
                     // Only display if the category contains something
                     if (TextBank.FmgBank.Any(e => e.Value.Category == category) && AllowedCategory(category))
                     {
-                        if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
+                        // DS2 
+                        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                         {
-                            // Get relevant containers for each category
-                            foreach (var (path, info) in TextBank.FmgBank)
+                            if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
                             {
-                                if (info.Category == category)
+                                // Common
+                                foreach (var (path, info) in TextBank.FmgBank)
                                 {
-                                    DisplayCategory(info, index);
+                                    if (info.SubCategory is DS2_SubCategory.common)
+                                    {
+                                        if (info.Category == category)
+                                        {
+                                            DisplayCategory(info, index);
+                                        }
+                                        index++;
+                                    }
                                 }
-                                index++;
+
+                                ImGui.Separator();
+
+                                // Blood Message
+                                foreach (var (path, info) in TextBank.FmgBank)
+                                {
+                                    if (info.SubCategory is DS2_SubCategory.bloodmes)
+                                    {
+                                        if (info.Category == category)
+                                        {
+                                            DisplayCategory(info, index);
+                                        }
+                                        index++;
+                                    }
+                                }
+
+                                ImGui.Separator();
+
+                                // Talk
+                                foreach (var (path, info) in TextBank.FmgBank)
+                                {
+                                    if (info.SubCategory is DS2_SubCategory.talk)
+                                    {
+                                        if (info.Category == category)
+                                        {
+                                            DisplayCategory(info, index);
+                                        }
+                                        index++;
+                                    }
+                                }
+                            }
+                        }
+                        // Normal
+                        else
+                        {
+                            if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
+                            {
+                                // Get relevant containers for each category
+                                foreach (var (path, info) in TextBank.FmgBank)
+                                {
+                                    if (info.Category == category)
+                                    {
+                                        DisplayCategory(info, index);
+                                    }
+                                    index++;
+                                }
                             }
                         }
                     }
@@ -93,7 +147,15 @@ public class TextFileView
 
         if(CFG.Current.TextEditor_DisplayPrettyContainerName)
         {
-            displayName = TextUtils.GetPrettyContainerName(info.Name);
+            // To get nice DS2 names, apply the FMG display name stuff on the container level
+            if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                displayName = TextUtils.GetFmgDisplayName(info, -1, info.Name);
+            }
+            else
+            {
+                displayName = TextUtils.GetPrettyContainerName(info.Name);
+            }
         }
 
         if (Filters.IsFileFilterMatch(displayName, ""))

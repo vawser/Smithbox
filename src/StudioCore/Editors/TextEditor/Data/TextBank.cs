@@ -129,6 +129,11 @@ public static class TextBank
 
         TextContainerInfo containerInfo = new(name, path, compressionType, containerType, containerCategory, fmgInfos);
 
+        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            containerInfo.SubCategory = TextUtils.GetSubCategory(path);
+        }
+
         bank.Add(path, containerInfo);
     }
 

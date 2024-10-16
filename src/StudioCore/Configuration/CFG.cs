@@ -400,6 +400,8 @@ public class CFG
     public bool TextEditor_CreationModal_UseIncrementalNaming = false;
     public string TextEditor_CreationModal_IncrementalNaming_Template = "";
 
+    public bool TextEditor_IgnoreIdOnDuplicate = false;
+
     // OLD
     public string FMG_SearchAndReplace_SearchText = "";
     public string FMG_SearchAndReplace_ReplaceText = "";

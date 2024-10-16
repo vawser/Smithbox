@@ -50,7 +50,7 @@ public class TextFmgView
                 {
                     var id = fmgInfo.ID;
                     var fmgName = fmgInfo.Name;
-                    var displayName = TextUtils.GetFmgDisplayName(Selection.SelectedContainer, id);
+                    var displayName = TextUtils.GetFmgDisplayName(Selection.SelectedContainer, id, fmgName);
 
                     if (Filters.IsFmgFilterMatch(fmgName, displayName, id))
                     {

@@ -258,7 +258,14 @@ public class TextEditorScreen : EditorScreen
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
-        TextBank.SaveFmgContainer(Selection.SelectedContainer);
+        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            TextBank.SaveLooseFmgs(Selection.SelectedContainer);
+        }
+        else
+        {
+            TextBank.SaveFmgContainer(Selection.SelectedContainer);
+        }
     }
 
     /// <summary>

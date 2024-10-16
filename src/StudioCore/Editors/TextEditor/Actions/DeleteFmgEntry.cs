@@ -24,7 +24,7 @@ public class DeleteFmgEntry : EditorAction
         Fmg = currentFmg;
         Entry = entry;
         OldEntry = entry.Clone();
-        InsertionIndex = -1;
+        InsertionIndex = Fmg.Entries.Count;
 
         for (int i = 0; i < Fmg.Entries.Count; i++)
         {

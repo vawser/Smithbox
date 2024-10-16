@@ -201,11 +201,8 @@ public class TextNewEntryCreationModal
                 if (ImGui.Button("Inherit Text from Selection", UI.ModalButtonSize))
                 {
                     _newId = Selection._selectedFmgEntry.ID;
-                    if (fmgEntryGroup == null)
-                    {
-                        _newBasicText = Selection._selectedFmgEntry.Text;
-                    }
-                    else
+
+                    if(fmgEntryGroup.SupportsGrouping)
                     {
                         if (fmgEntryGroup.Title != null)
                         {
@@ -227,17 +224,16 @@ public class TextNewEntryCreationModal
                             _newEffectText = fmgEntryGroup.Effect.Text;
                         }
                     }
+                    else
+                    {
+                        _newBasicText = Selection._selectedFmgEntry.Text;
+                    }
                 }
                 UIHelper.ShowHoverTooltip("Fill creation text input with contents of current selection.");
             }
 
-            // Simple
-            if (fmgEntryGroup == null)
-            {
-                DisplayEditTable(0, ref _newId, ref _newBasicText);
-            }
             // Grouped
-            else
+            if(fmgEntryGroup.SupportsGrouping)
             {
                 if (fmgEntryGroup.Title != null)
                 {
@@ -273,6 +269,11 @@ public class TextNewEntryCreationModal
                     ImGui.Separator();
                     DisplayEditTable(4, ref _newId, ref _newEffectText);
                 }
+            }
+            // Simple
+            else
+            {
+                DisplayEditTable(0, ref _newId, ref _newBasicText);
             }
 
             if (ImGui.Button("Create", UI.ModalButtonHalfSize))
@@ -339,7 +340,7 @@ public class TextNewEntryCreationModal
             // Check if entry type is considered 'grouped', if so create relevant entries in relevant FMGs
             // TODO: this means un-grouped rows won't automatically create grouped entries,
             // even if they perhaps should.
-            if (fmgEntryGroup != null)
+            if (fmgEntryGroup.SupportsGrouping)
             {
                 // Check to see if the entry group has a filled entry,
                 // if it is null then we can ignore that 'type' when making the new entries

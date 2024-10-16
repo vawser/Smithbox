@@ -121,7 +121,7 @@ public class TextSelectionManager
         {
             var id = fmgInfo.ID;
             var fmgName = fmgInfo.Name;
-            var displayName = TextUtils.GetFmgDisplayName(SelectedContainer, id);
+            var displayName = TextUtils.GetFmgDisplayName(SelectedContainer, id, fmgName);
 
             if (Screen.Filters.IsFmgFilterMatch(fmgName, displayName, id))
             {
