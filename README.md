@@ -69,6 +69,8 @@ Smithbox is a fork of the [DSMapStudio repository](https://github.com/soulsmods/
 * gixxpunk (Contributor)
 * Strackeror (Contributor)
 * FireWolf700 (Contributor)
+* GoogleBen (Contributor)
+* Lord Exelot (Contributor)
 
 
   
