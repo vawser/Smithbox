@@ -269,7 +269,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         ImGui.Separator();
 
         // Dropdown: View
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("Windows"))
         {
             if (ImGui.Button("Viewport", UI.MenuButtonWideSize))
             {
@@ -340,7 +340,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         ImGui.Separator();
 
-        if (ImGui.BeginMenu("General Filters", RenderScene != null && Viewport != null))
+        if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
         {
             bool ticked;
 

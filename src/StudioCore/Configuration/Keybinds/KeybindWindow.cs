@@ -86,6 +86,8 @@ public class KeybindWindow
 
         if (ImGui.Begin("Keybinds##KeybindWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
+            ImGui.BeginChild($"KeybindSectionList");
+
             switch (SelectedTab)
             {
                 case SelectedKeybindTab.Common:
@@ -116,6 +118,8 @@ public class KeybindWindow
                     TextureViewerKeybinds.Display();
                     break;
             }
+
+            ImGui.EndChild();
         }
 
         ImGui.End();
@@ -187,21 +191,6 @@ public class CommonKeybindTab
             KeyBindings.Current.CORE_Save = InputTracker.KeybindLine(6,
                 KeyBindings.Current.CORE_Save,
                 KeyBindings.Default.CORE_Save);
-        }
-
-        if (ImGui.CollapsingHeader("Windows", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            KeyBindings.Current.CORE_ConfigurationWindow = InputTracker.KeybindLine(7,
-                KeyBindings.Current.CORE_ConfigurationWindow,
-                KeyBindings.Default.CORE_ConfigurationWindow);
-
-            KeyBindings.Current.CORE_HelpWindow = InputTracker.KeybindLine(8,
-                KeyBindings.Current.CORE_HelpWindow,
-                KeyBindings.Default.CORE_HelpWindow);
-
-            KeyBindings.Current.CORE_KeybindConfigWindow = InputTracker.KeybindLine(9,
-                KeyBindings.Current.CORE_KeybindConfigWindow,
-                KeyBindings.Default.CORE_KeybindConfigWindow);
         }
     }
 }

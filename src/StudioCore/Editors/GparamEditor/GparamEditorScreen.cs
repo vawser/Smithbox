@@ -115,7 +115,7 @@ public class GparamEditorScreen : EditorScreen
 
         ImGui.Separator();
 
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("Windows"))
         {
             if (ImGui.Button("Files", UI.MenuButtonSize))
             {

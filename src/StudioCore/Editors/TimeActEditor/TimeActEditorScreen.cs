@@ -211,7 +211,7 @@ public class TimeActEditorScreen : EditorScreen
 
         ImGui.Separator();
 
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("Windows"))
         {
             if (ImGui.Button("TAE Files", UI.MenuButtonSize))
             {

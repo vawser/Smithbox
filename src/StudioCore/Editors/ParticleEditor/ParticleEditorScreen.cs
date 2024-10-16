@@ -90,7 +90,7 @@ public class ParticleEditorScreen : EditorScreen
 
         ImGui.Separator();
 
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("Windows"))
         {
             UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Files"))

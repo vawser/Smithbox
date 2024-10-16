@@ -135,11 +135,7 @@ public class EditorHandler
     {
         ImGui.Separator();
 
-        ImGui.Text($"{ForkAwesome.Cog}");
-
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("File"))
+        if (ImGui.BeginMenu("Data"))
         {
             // Save
             if (ImGui.Button($"Save Selected {FocusedEditor.SaveType}", UI.MenuButtonSize))

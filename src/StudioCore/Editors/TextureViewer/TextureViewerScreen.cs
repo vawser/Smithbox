@@ -78,7 +78,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         ImGui.Separator();
 
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("Windows"))
         {
             if (ImGui.Button("Files", UI.MenuButtonSize))
             {

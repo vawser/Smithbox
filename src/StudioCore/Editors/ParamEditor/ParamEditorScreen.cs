@@ -171,7 +171,7 @@ public class ParamEditorScreen : EditorScreen
 
         ImGui.Separator();
 
-        if (ImGui.BeginMenu("View"))
+        if (ImGui.BeginMenu("Windows"))
         {
             if (ImGui.Button("Editor", UI.MenuButtonSize))
             {
@@ -190,7 +190,7 @@ public class ParamEditorScreen : EditorScreen
 
         ImGui.Separator();
 
-        if (ImGui.BeginMenu("Data"))
+        if (ImGui.BeginMenu("CSV"))
         {
             if (ImGui.BeginMenu("Export CSV", _activeView._selection.ActiveParamExists()))
             {

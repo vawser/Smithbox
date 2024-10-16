@@ -157,22 +157,6 @@ public class KeyBindings
             Key.S, 
             true);
 
-        // Windows
-        public KeyBind CORE_ConfigurationWindow = new(
-            "Configuration Window", 
-            "Toggles the visibility of the Configuration window.",
-            Key.F2);
-
-        public KeyBind CORE_HelpWindow = new(
-            "Help Window",
-            "Toggles the visibility of the Help window.",
-            Key.F3);
-
-        public KeyBind CORE_KeybindConfigWindow = new(
-            "Keybinds Window",
-            "Toggles the visibility of the Keybinds window.",
-            Key.F6);
-
         //-----------------------------
         // Viewport
         //-----------------------------
