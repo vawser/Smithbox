@@ -69,6 +69,9 @@ public class TextEditorTab
         // Text File List
         if (ImGui.CollapsingHeader("Text File List", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.Checkbox("Simple FMG View", ref CFG.Current.TextEditor_SimpleFmgView);
+            UIHelper.ShowHoverTooltip("Display the FMG list is the old style.");
+
             ImGui.Checkbox("Display FMG ID", ref CFG.Current.TextEditor_DisplayFmgID);
             UIHelper.ShowHoverTooltip("Display the FMG ID in the Text File List by the name.");
 

@@ -30,4 +30,12 @@ public static class StructExtensions
     {
         return enumValue.GetAttribute<DisplayAttribute>().Name;
     }
+    public static string GetShortName(this Enum enumValue)
+    {
+        return enumValue.GetAttribute<DisplayAttribute>().ShortName;
+    }
+    public static string GetDescription(this Enum enumValue)
+    {
+        return enumValue.GetAttribute<DisplayAttribute>().Description;
+    }
 }

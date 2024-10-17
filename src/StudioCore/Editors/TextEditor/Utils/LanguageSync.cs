@@ -31,26 +31,29 @@ public static class LanguageSync
                     .Where(e => e.Value.Category != currentCategory)
                     .FirstOrDefault();
 
-                var targetInfo = targetContainer.Value;
-
-                var displayName = targetInfo.Name;
-
-                if (CFG.Current.TextEditor_DisplayPrettyContainerName)
+                if (targetContainer.Value != null)
                 {
-                    // To get nice DS2 names, apply the FMG display name stuff on the container level
-                    if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-                    {
-                        displayName = TextUtils.GetFmgDisplayName(targetInfo, -1, targetInfo.Name);
-                    }
-                    else
-                    {
-                        displayName = TextUtils.GetPrettyContainerName(targetInfo.Name);
-                    }
-                }
+                    var targetInfo = targetContainer.Value;
 
-                if (ImGui.Selectable($"{category.GetDisplayName()}: {displayName}##{targetInfo.Name}"))
-                {
-                    SyncLanguage(currentInfo, targetInfo);
+                    var displayName = targetInfo.Name;
+
+                    if (CFG.Current.TextEditor_DisplayPrettyContainerName)
+                    {
+                        // To get nice DS2 names, apply the FMG display name stuff on the container level
+                        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                        {
+                            displayName = TextUtils.GetFmgDisplayName(targetInfo, -1, targetInfo.Name);
+                        }
+                        else
+                        {
+                            displayName = TextUtils.GetPrettyContainerName(targetInfo.Name);
+                        }
+                    }
+
+                    if (ImGui.Selectable($"{category.GetDisplayName()}: {displayName}##{targetInfo.Name}"))
+                    {
+                        SyncLanguage(currentInfo, targetInfo);
+                    }
                 }
             }
         }

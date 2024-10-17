@@ -1,5 +1,8 @@
-﻿using ImGuiNET;
+﻿using HKLib.hk2018.hkAsyncThreadPool;
+using ImGuiNET;
+using Silk.NET.OpenGL;
 using StudioCore.Configuration;
+using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
@@ -8,6 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SoulsFormats.MSBS.Event;
+using static StudioCore.Editors.ParticleEditor.ParticleBank;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -47,56 +52,214 @@ public class TextFmgView
 
             if (Selection.SelectedContainer != null && Selection.SelectedContainer.FmgInfos != null)
             {
-                // Categories
-                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                // Ignore the grouping stuff for DS2 as it happens on the FMG Container level
+                if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
-                    var id = fmgInfo.ID;
-                    var fmgName = fmgInfo.Name;
-                    var displayName = TextUtils.GetFmgDisplayName(Selection.SelectedContainer, id, fmgName);
-
-                    if (Filters.IsFmgFilterMatch(fmgName, displayName, id))
+                    foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
                     {
-                        var selectableName = $"{displayName}";
+                        HandleFmgView(fmgInfo);
+                    }
+                }
+                else
+                {
+                    // Old style of FMG list
+                    if (CFG.Current.TextEditor_SimpleFmgView)
+                    {
+                        var info = Selection.SelectedContainer;
 
-                        if (!CFG.Current.TextEditor_DisplayFmgPrettyName)
+                        // Vanilla
+                        if (TextUtils.HasDLCEntries(info, ""))
                         {
-                            selectableName = $"{fmgName}";
-                        }
-
-                        if (CFG.Current.TextEditor_DisplayFmgID)
-                        {
-                            selectableName = $"[{id}] {selectableName}";
-                        }
-
-                        // Script row
-                        if (ImGui.Selectable(selectableName, id == Selection.SelectedFmgKey))
-                        {
-                            Selection.SelectFmg(fmgInfo);
-                        }
-
-                        // Arrow Selection
-                        if (ImGui.IsItemHovered() && Selection.SelectNextFmg)
-                        {
-                            Selection.SelectNextFmg = false;
-                            Selection.SelectFmg(fmgInfo);
-                        }
-                        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
-                        {
-                            Selection.SelectNextFmg = true;
-                        }
-
-                        // Only apply to selection
-                        if (Selection.SelectedFmgKey != -1)
-                        {
-                            if (Selection.SelectedFmgKey == id)
+                            if (ImGui.CollapsingHeader("Vanilla", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                ContextMenu.FmgContextMenu(fmgInfo);
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
                             }
-
-                            if (Selection.FocusFmgSelection && Selection.SelectedFmgKey == id)
+                        }
+                        // DLC 1
+                        if (TextUtils.HasDLCEntries(info, "DLC 1"))
+                        {
+                            if (ImGui.CollapsingHeader("DLC 1", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                Selection.FocusFmgSelection = false;
-                                ImGui.SetScrollHereY();
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 1")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
+                            }
+                        }
+                        // DLC 2
+                        if (TextUtils.HasDLCEntries(info, "DLC 2"))
+                        {
+                            if (ImGui.CollapsingHeader("DLC 2", ImGuiTreeNodeFlags.DefaultOpen))
+                            {
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 2")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // Otherwise display them as collapsible sections
+                    else
+                    {
+                        var info = Selection.SelectedContainer;
+
+                        // Common
+                        if (TextUtils.HasGroupEntries(info, "Common"))
+                        {
+                            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+                            {
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (displayGroup == "Common")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
+                            }
+                        }
+
+                        // Menu
+                        if (TextUtils.HasGroupEntries(info, "Menu"))
+                        {
+                            if (ImGui.CollapsingHeader("Menu", ImGuiTreeNodeFlags.DefaultOpen))
+                            {
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (displayGroup == "Menu")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
+                            }
+                        }
+
+                        // Title
+                        if (TextUtils.HasGroupEntries(info, "Title"))
+                        {
+                            if (ImGui.CollapsingHeader("Titles", ImGuiTreeNodeFlags.DefaultOpen))
+                            {
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (displayGroup == "Title")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
+                            }
+                        }
+
+                        // Summary
+                        if (TextUtils.HasGroupEntries(info, "Summary"))
+                        {
+                            if (ImGui.CollapsingHeader("Summaries", ImGuiTreeNodeFlags.DefaultOpen))
+                            {
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (displayGroup == "Summary")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
+                            }
+                        }
+
+                        // Description
+                        if (TextUtils.HasGroupEntries(info, "Description"))
+                        {
+                            if (ImGui.CollapsingHeader("Descriptions", ImGuiTreeNodeFlags.DefaultOpen))
+                            {
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (displayGroup == "Description")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
+                            }
+                        }
+
+                        // Effect
+                        if (TextUtils.HasGroupEntries(info, "Effect"))
+                        {
+                            if (ImGui.CollapsingHeader("Effects", ImGuiTreeNodeFlags.DefaultOpen))
+                            {
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (displayGroup == "Effect")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
+                            }
+                        }
+
+                        // Unknown - Fallback group
+                        if (TextUtils.HasGroupEntries(info, "Unknown"))
+                        {
+                            if (ImGui.CollapsingHeader("Unknown", ImGuiTreeNodeFlags.DefaultOpen))
+                            {
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (displayGroup == "Unknown")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
                             }
                         }
                     }
@@ -104,8 +267,67 @@ public class TextFmgView
             }
 
             ImGui.EndChild();
-
             ImGui.End();
+        }
+    }
+
+    private void HandleFmgView(FmgInfo info)
+    {
+        var id = info.ID;
+        var fmgName = info.Name;
+        var displayName = TextUtils.GetFmgDisplayName(Selection.SelectedContainer, id, fmgName);
+        var dlcGroupingName = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
+
+        if (Filters.IsFmgFilterMatch(fmgName, displayName, id))
+        {
+            var selectableName = $"{displayName}";
+
+            if (!CFG.Current.TextEditor_DisplayFmgPrettyName)
+            {
+                selectableName = $"{fmgName}";
+            }
+
+            if (CFG.Current.TextEditor_DisplayFmgID)
+            {
+                selectableName = $"[{id}] {selectableName}";
+            }
+
+            if(!CFG.Current.TextEditor_SimpleFmgView && dlcGroupingName != "")
+            {
+                selectableName = $"{selectableName} [{dlcGroupingName}]";
+            }
+
+            // Script row
+            if (ImGui.Selectable($"{selectableName}##{id}{selectableName}", id == Selection.SelectedFmgKey))
+            {
+                Selection.SelectFmg(info);
+            }
+
+            // Arrow Selection
+            if (ImGui.IsItemHovered() && Selection.SelectNextFmg)
+            {
+                Selection.SelectNextFmg = false;
+                Selection.SelectFmg(info);
+            }
+            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+            {
+                Selection.SelectNextFmg = true;
+            }
+
+            // Only apply to selection
+            if (Selection.SelectedFmgKey != -1)
+            {
+                if (Selection.SelectedFmgKey == id)
+                {
+                    ContextMenu.FmgContextMenu(info);
+                }
+
+                if (Selection.FocusFmgSelection && Selection.SelectedFmgKey == id)
+                {
+                    Selection.FocusFmgSelection = false;
+                    ImGui.SetScrollHereY();
+                }
+            }
         }
     }
 }

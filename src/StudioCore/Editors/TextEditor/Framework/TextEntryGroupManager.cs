@@ -106,15 +106,41 @@ public class TextEntryGroupManager
                     Item_MsgBndID_DS1.Summary_Magic,
                     Item_MsgBndID_DS1.Description_Magic,
                     null));
+
+                // DLC 1
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS1.Title_Goods_DLC,
+                    Item_MsgBndID_DS1.Summary_Goods_DLC,
+                    Item_MsgBndID_DS1.Description_Goods_DLC,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS1.Title_Weapons_DLC,
+                    Item_MsgBndID_DS1.Summary_Weapons_DLC,
+                    Item_MsgBndID_DS1.Description_Weapons_DLC,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS1.Title_Armor_DLC,
+                    Item_MsgBndID_DS1.Summary_Armor_DLC,
+                    Item_MsgBndID_DS1.Description_Armor_DLC,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS1.Title_Accessories_DLC,
+                    Item_MsgBndID_DS1.Summary_Accessories_DLC,
+                    Item_MsgBndID_DS1.Description_Accessories_DLC,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_DS1.Title_Magic_DLC,
+                    null,
+                    Item_MsgBndID_DS1.Description_Magic_DLC,
+                    null));
                 break;
 
             case ProjectType.DS2:
             case ProjectType.DS2S:
-                groupings.Add(new EntryGroupAssociation(
-                    CommonFmgName_DS2.itemname,
-                    CommonFmgName_DS2.simpleexplanation,
-                    CommonFmgName_DS2.detailedexplanation,
-                    null));
                 break;
 
             case ProjectType.BB:
@@ -148,6 +174,13 @@ public class TextEntryGroupManager
                     Item_MsgBndID_BB.Summary_Magic,
                     Item_MsgBndID_BB.Description_Magic,
                     null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_BB.Title_Blood_Gem,
+                    Menu_MsgBndID_BB.Summary_Blood_Gem,
+                    Menu_MsgBndID_BB.Description_Blood_Gem,
+                    Menu_MsgBndID_BB.Effect_Blood_Gem));
+
                 break;
 
             case ProjectType.DS3:
@@ -402,6 +435,42 @@ public class TextEntryGroupManager
                     Item_MsgBndID_ER.Description_Skill_DLC2,
                     null));
 
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_ER.Loading_Title,
+                    null,
+                    Menu_MsgBndID_ER.Loading_Text,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_ER.Tutorial_Title,
+                    null,
+                    Menu_MsgBndID_ER.Tutorial_Text,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_ER.Loading_Title_DLC1,
+                    null,
+                    Menu_MsgBndID_ER.Loading_Text_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_ER.Tutorial_Title_DLC1,
+                    null,
+                    Menu_MsgBndID_ER.Tutorial_Text_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_ER.Loading_Title_DLC2,
+                    null,
+                    Menu_MsgBndID_ER.Loading_Text_DLC2,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_ER.Tutorial_Title_DLC2,
+                    null,
+                    Menu_MsgBndID_ER.Tutorial_Text_DLC2,
+                    null));
+
                 break;
 
             case ProjectType.AC6:
@@ -444,8 +513,14 @@ public class TextEntryGroupManager
 
                 groupings.Add(new EntryGroupAssociation(
                     Menu_MsgBndID_AC6.Mission_Name,
-                    null,
+                    Menu_MsgBndID_AC6.Mission_Objective,
                     Menu_MsgBndID_AC6.Mission_Overview,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_AC6.Loading_Title,
+                    null,
+                    Menu_MsgBndID_AC6.Loading_Text,
                     null));
 
                 groupings.Add(new EntryGroupAssociation(

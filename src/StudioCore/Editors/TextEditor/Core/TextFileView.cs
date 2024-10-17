@@ -68,46 +68,63 @@ public class TextFileView
                         {
                             if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
                             {
-                                // Common
-                                foreach (var (path, info) in TextBank.FmgBank)
+                                if (ImGui.CollapsingHeader($"Common", flags))
                                 {
-                                    if (info.SubCategory is DS2_SubCategory.common)
+                                    foreach (var (path, info) in TextBank.FmgBank)
                                     {
-                                        if (info.Category == category)
+                                        var fmgInfo = info.FmgInfos.First();
+                                        var id = fmgInfo.ID;
+                                        var fmgName = fmgInfo.Name;
+                                        var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
+
+                                        if (displayGroup == "Common")
                                         {
-                                            DisplayCategory(info, index);
+                                            if (info.Category == category)
+                                            {
+                                                DisplayCategory(info, index);
+                                            }
+                                            index++;
                                         }
-                                        index++;
                                     }
                                 }
 
-                                ImGui.Separator();
-
-                                // Blood Message
-                                foreach (var (path, info) in TextBank.FmgBank)
+                                if (ImGui.CollapsingHeader($"Blood Message", flags))
                                 {
-                                    if (info.SubCategory is DS2_SubCategory.bloodmes)
+                                    foreach (var (path, info) in TextBank.FmgBank)
                                     {
-                                        if (info.Category == category)
+                                        var fmgInfo = info.FmgInfos.First();
+                                        var id = fmgInfo.ID;
+                                        var fmgName = fmgInfo.Name;
+                                        var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
+
+                                        if (displayGroup == "Blood Message")
                                         {
-                                            DisplayCategory(info, index);
+                                            if (info.Category == category)
+                                            {
+                                                DisplayCategory(info, index);
+                                            }
+                                            index++;
                                         }
-                                        index++;
                                     }
                                 }
 
-                                ImGui.Separator();
-
-                                // Talk
-                                foreach (var (path, info) in TextBank.FmgBank)
+                                if (ImGui.CollapsingHeader($"Talk", flags))
                                 {
-                                    if (info.SubCategory is DS2_SubCategory.talk)
+                                    foreach (var (path, info) in TextBank.FmgBank)
                                     {
-                                        if (info.Category == category)
+                                        var fmgInfo = info.FmgInfos.First();
+                                        var id = fmgInfo.ID;
+                                        var fmgName = fmgInfo.Name;
+                                        var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
+
+                                        if (displayGroup == "Talk")
                                         {
-                                            DisplayCategory(info, index);
+                                            if (info.Category == category)
+                                            {
+                                                DisplayCategory(info, index);
+                                            }
+                                            index++;
                                         }
-                                        index++;
                                     }
                                 }
                             }
