@@ -105,6 +105,10 @@ Model Editor:
 #--------------------------------------
 # Notes
 #--------------------------------------
+Param Editor
+- ADD: DES Meta
+- ADD: DS1 Meta
+
 Text Editor:
  - ADD: Name Template create tool
  - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
@@ -112,5 +116,7 @@ Text Editor:
 # PRIORITY
 - ADD: FMG Import/Export: container level, fmg level, fmg entry level - Export to .smithbox/Workflow/Text/, generate import list from this folder
 - ADD: sync with X Language (Container level -> apply modified rows + add unique rows into non-primary container (add option to apply prepend string, e.g. TRANSLATE:, so you can tag rows for translation)
+
 - ADD: global text search and replace: search term: show affected; apply button
 
+11601000

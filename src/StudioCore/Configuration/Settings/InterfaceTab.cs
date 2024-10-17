@@ -65,6 +65,17 @@ public class InterfaceTab
             UIHelper.ShowHoverTooltip("Adjusts the size of the font in Smithbox.");
         }
 
+        if (ImGui.CollapsingHeader("Status Bar"))
+        {
+            ImGui.Checkbox("Display Status Bar", ref UI.Current.Interface_DisplayStatusBar);
+            UIHelper.ShowHoverTooltip("If enabled, the status bar will be visible at the bottom.");
+
+            ImGui.Checkbox("Place Status Bar in Top Menubar", ref UI.Current.Interface_DisplayStatusBarAtTop);
+            UIHelper.ShowHoverTooltip("If enabled, the status bar will be in the top menu bar.");
+
+            Smithbox.UpdateSoulsFormatsToggles();
+        }
+
         // Fonts
         if (ImGui.CollapsingHeader("Fonts"))
         {

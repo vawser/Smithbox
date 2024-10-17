@@ -24,6 +24,8 @@ public static class GlobalTextReplacement
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth, 32);
 
+        // TODO: add replace term, search results are preview, add apply button
+
         if (ImGui.BeginTable($"globalReplacementTable", 2, ImGuiTableFlags.SizingFixedFit))
         {
             ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);

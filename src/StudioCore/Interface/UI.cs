@@ -81,6 +81,7 @@ public class UI
     // View Toggles
     //**************
     public bool Interface_DisplayStatusBar = true;
+    public bool Interface_DisplayStatusBarAtTop = false;
     public bool Interface_Editor_Viewport = true;
     public bool Interface_Editor_Profiling = true;
 

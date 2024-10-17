@@ -195,6 +195,23 @@ public static class TaskLogs
     /// <summary>
     /// Status Bar
     /// </summary>
+    public static void DisplayInLineStatusBar()
+    {
+        if (!UI.Current.Interface_DisplayStatusBar)
+            return;
+
+        ImGui.Separator();
+
+        if (_lastLogEntry != null)
+        {
+            Vector4 color = PickColor(null);
+            ImGui.TextColored(color, _lastLogEntry.FormattedMessage);
+        }
+    }
+
+    /// <summary>
+    /// Status Bar
+    /// </summary>
     public static void DisplayWindow()
     {
         if (_loggerWindowOpen)

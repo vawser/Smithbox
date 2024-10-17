@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,8 @@ public class TextContextMenu
     {
         if (ImGui.BeginPopupContextItem($"FileContext##FileContext{info.Name}"))
         {
+            // TODO: add sync to X language
+            LanguageSync.DisplaySyncOptions();
 
             ImGui.EndPopup();
         }
@@ -40,6 +43,9 @@ public class TextContextMenu
     {
         if (ImGui.BeginPopupContextItem($"FmgContext##FmgContext{fmgInfo.ID}"))
         {
+            // TODO: add import FMG
+
+            // TODO: add export FMG
 
             ImGui.EndPopup();
         }
@@ -68,6 +74,10 @@ public class TextContextMenu
             {
                 Screen.ActionHandler.DeleteEntries();
             }
+
+            // TODO: add import FMG.Entries
+
+            // TODO: add export FMG.Entries
 
             ImGui.EndPopup();
         }

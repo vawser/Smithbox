@@ -82,14 +82,7 @@ public class SystemTab
             Smithbox.UpdateSoulsFormatsToggles();
         }
 
-        if (ImGui.CollapsingHeader("Status Bar"))
-        {
-            ImGui.Checkbox("Display Status Bar", ref UI.Current.Interface_DisplayStatusBar);
-            UIHelper.ShowHoverTooltip("If enabled, the status bar will be visible at the bottom.");
-
-            Smithbox.UpdateSoulsFormatsToggles();
-        }
-
+        /*
         if (ImGui.CollapsingHeader("Soapstone Server"))
         {
             var running = SoapstoneServer.GetRunningPort() is int port
@@ -99,6 +92,7 @@ public class SystemTab
                 $"The server is {running}.\nIt is not accessible over the network, only to other programs on this computer.\nPlease restart the program for changes to take effect.");
             ImGui.Checkbox("Enable cross-editor features", ref CFG.Current.System_Enable_Soapstone_Server);
         }
+        */
 
         if (ImGui.CollapsingHeader("Resources"))
         {

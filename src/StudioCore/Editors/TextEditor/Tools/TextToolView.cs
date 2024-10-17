@@ -40,13 +40,13 @@ public class TextToolView
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextEditor"))
         {
             // Global Text Search
-            if (ImGui.CollapsingHeader("Global Text Search"))
+            if (ImGui.CollapsingHeader("Text Search"))
             {
                 GlobalTextSearch.Display();
             }
 
             // Global Text Replacement
-            if (ImGui.CollapsingHeader("Global Text Replacement"))
+            if (ImGui.CollapsingHeader("Text Replacement"))
             {
                 GlobalTextReplacement.Display();
             }

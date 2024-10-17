@@ -458,7 +458,10 @@ public class Smithbox
             _user32_ShowWindow(_context.Window.Handle, 9);
         }
 
-        TaskLogs.DisplayStatusBar();
+        if(!UI.Current.Interface_DisplayStatusBarAtTop)
+        {
+            TaskLogs.DisplayStatusBar();
+        }
 
         ctx = Tracy.TracyCZoneN(1, "Style");
         UIHelper.ApplyBaseStyle();
@@ -495,6 +498,11 @@ public class Smithbox
             WindowHandler.HandleWindowBar();
             EditorHandler.HandleEditorSharedBar();
             EditorHandler.FocusedEditor.DrawEditorMenu();
+
+            if (UI.Current.Interface_DisplayStatusBarAtTop)
+            {
+                TaskLogs.DisplayInLineStatusBar();
+            }
 
             TaskLogs.DisplayWindow();
 

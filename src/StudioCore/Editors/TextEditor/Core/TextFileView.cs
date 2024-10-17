@@ -199,7 +199,7 @@ public class TextFileView
         }
     }
 
-    private bool AllowedCategory(TextContainerCategory category)
+    public bool AllowedCategory(TextContainerCategory category)
     {
         if (CFG.Current.TextEditor_DisplayPrimaryCategoryOnly)
         {
