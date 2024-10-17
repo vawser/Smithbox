@@ -11,7 +11,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Veldrid;
-using static StudioCore.Configuration.SettingsWindow;
 
 namespace StudioCore.Configuration.Keybinds;
 public class KeybindWindow

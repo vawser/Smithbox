@@ -364,9 +364,6 @@ public class SettingsWindow
 
     public enum SelectedSettingTab
     {
-        [Display(Name = "Status")] ProjectStatus,
-        [Display(Name = "Enums")] ProjectEnums,
-
         [Display(Name = "System")] System,
         [Display(Name = "Project")] Project,
         [Display(Name = "Viewport")] Viewport,

@@ -10,12 +10,10 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Numerics;
 using System.Threading.Tasks;
-using static StudioCore.Configuration.SettingsWindow;
 using System;
 using static SoulsFormats.MSB_AC6;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
-using static StudioCore.Configuration.Help.HelpWindow;
 
 namespace StudioCore.Tools.Development;
 

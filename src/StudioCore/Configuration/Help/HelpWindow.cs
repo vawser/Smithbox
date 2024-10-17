@@ -9,7 +9,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
-using static StudioCore.Configuration.SettingsWindow;
 
 namespace StudioCore.Configuration.Help;
 

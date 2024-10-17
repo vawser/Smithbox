@@ -12,7 +12,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Configuration.SettingsWindow;
 
 namespace StudioCore.Configuration.Settings;
 

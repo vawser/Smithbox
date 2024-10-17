@@ -3,7 +3,6 @@ using ImGuiNET;
 using Microsoft.Extensions.FileSystemGlobbing;
 using SoulsFormats.KF4;
 using StudioCore.Banks.AliasBank;
-using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ModelEditor.Enums;

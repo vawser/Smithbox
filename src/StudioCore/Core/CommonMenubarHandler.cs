@@ -2,6 +2,7 @@
 using StudioCore.Configuration;
 using StudioCore.Configuration.Help;
 using StudioCore.Configuration.Keybinds;
+using StudioCore.Configuration.Settings;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Graphics;
@@ -100,6 +101,14 @@ public class CommonMenubarHandler
             }
             UIHelper.ShowHoverTooltip("View the enums associated with your currently loaded project.");
 
+            // Project Settings
+            if (ImGui.Button("Project Settings", UI.MenuButtonSize))
+            {
+                SettingsWindow.ToggleWindow(SelectedSettingTab.Project);
+            }
+            UIHelper.ShowHoverTooltip("Open the settings related to the Project.");
+
+
             ImGui.Separator();
 
             // Recent Projects
@@ -157,6 +166,12 @@ public class CommonMenubarHandler
             }
             UIHelper.ShowHoverTooltip("Open the settings related to Viewport in Smithbox.");
 
+            if (ImGui.Button("Interface", UI.MenuButtonSize))
+            {
+                SettingsWindow.ToggleWindow(SelectedSettingTab.Interface);
+            }
+            UIHelper.ShowHoverTooltip("Open the settings related to interface of Smithbox.");
+
             if (ImGui.Button("Map Editor", UI.MenuButtonSize))
             {
                 SettingsWindow.ToggleWindow(SelectedSettingTab.MapEditor);
@@ -193,29 +208,29 @@ public class CommonMenubarHandler
             }
             UIHelper.ShowHoverTooltip("Open the settings related to Time Act Editor in Smithbox.");
 
-            if (ImGui.Button("EMEVD Editor", UI.MenuButtonSize))
+            if (FeatureFlags.EnableEditor_Evemd)
             {
-                SettingsWindow.ToggleWindow(SelectedSettingTab.EmevdEditor);
+                if (ImGui.Button("EMEVD Editor", UI.MenuButtonSize))
+                {
+                    SettingsWindow.ToggleWindow(SelectedSettingTab.EmevdEditor);
+                }
+                UIHelper.ShowHoverTooltip("Open the settings related to Emevd Editor in Smithbox.");
             }
-            UIHelper.ShowHoverTooltip("Open the settings related to Emevd Editor in Smithbox.");
 
-            if (ImGui.Button("ESD Editor", UI.MenuButtonSize))
+            if (FeatureFlags.EnableEditor_Esd)
             {
-                SettingsWindow.ToggleWindow(SelectedSettingTab.EsdEditor);
+                if (ImGui.Button("ESD Editor", UI.MenuButtonSize))
+                {
+                    SettingsWindow.ToggleWindow(SelectedSettingTab.EsdEditor);
+                }
+                UIHelper.ShowHoverTooltip("Open the settings related to Esd Editor in Smithbox.");
             }
-            UIHelper.ShowHoverTooltip("Open the settings related to Esd Editor in Smithbox.");
 
             if (ImGui.Button("Texture Viewer", UI.MenuButtonSize))
             {
                 SettingsWindow.ToggleWindow(SelectedSettingTab.TextureViewer);
             }
             UIHelper.ShowHoverTooltip("Open the settings related to Texture Viewer in Smithbox.");
-
-            if (ImGui.Button("Interface", UI.MenuButtonSize))
-            {
-                SettingsWindow.ToggleWindow(SelectedSettingTab.Interface);
-            }
-            UIHelper.ShowHoverTooltip("Open the settings related to interface of Smithbox.");
 
             ImGui.EndMenu();
         }
