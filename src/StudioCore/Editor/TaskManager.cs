@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -88,7 +89,7 @@ public class TaskManager
 
     public class LiveTask
     {
-        public readonly TaskLogs.LogPriority LogPriority;
+        public readonly LogPriority LogPriority;
 
         /// <summary>
         ///     Behavior of a LiveTask when the same task ID is already running.
@@ -125,11 +126,11 @@ public class TaskManager
             TaskId = taskId;
             RequeueBehavior = requeueType;
             SilentFail = silentFail;
-            LogPriority = TaskLogs.LogPriority.Normal;
+            LogPriority = LogPriority.Normal;
             TaskAction = act;
         }
 
-        public LiveTask(string taskId, RequeueType requeueType, bool silentFail, TaskLogs.LogPriority logPriority,
+        public LiveTask(string taskId, RequeueType requeueType, bool silentFail, LogPriority logPriority,
             Action act)
         {
             TaskId = taskId;

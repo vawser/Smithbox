@@ -99,7 +99,7 @@ public static class ResourceManager
             catch (Exception e)
             {
                 TaskLogs.AddLog($"Failed to load TPF \"{action._filePath}\": {e.Message}",
-                    LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                    LogLevel.Warning, LogPriority.Normal, e);
                 return new LoadTPFTextureResourceRequest[] { };
             }
         }
@@ -174,7 +174,7 @@ public static class ResourceManager
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"Failed to load TPF \"{tpfName}\"", LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                        TaskLogs.AddLog($"Failed to load TPF \"{tpfName}\"", LogLevel.Warning, LogPriority.Normal, e);
                         i--;
                     }
 
@@ -184,7 +184,7 @@ public static class ResourceManager
         catch (Exception e)
         {
             TaskLogs.AddLog($"Failed to load binder \"{action.BinderVirtualPath}\"",
-                LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                LogLevel.Warning, LogPriority.Normal, e);
         }
 
         if (action.Binder != null)

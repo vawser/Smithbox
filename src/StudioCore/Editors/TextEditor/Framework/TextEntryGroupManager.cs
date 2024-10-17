@@ -41,7 +41,6 @@ public class TextEntryGroupManager
 
         switch (Smithbox.ProjectType)
         {
-
             case ProjectType.DES:
                 // Vanilla
                 groupings.Add(new EntryGroupAssociation(
@@ -447,6 +446,12 @@ public class TextEntryGroupManager
                     Menu_MsgBndID_AC6.Mission_Name,
                     null,
                     Menu_MsgBndID_AC6.Mission_Overview,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_AC6.Tutorial_Title,
+                    null,
+                    Menu_MsgBndID_AC6.Tutorial_Text,
                     null));
                 break;
         }

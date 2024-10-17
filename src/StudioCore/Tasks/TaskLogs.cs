@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Settings;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,27 +18,6 @@ namespace StudioCore;
 /// </summary>
 public static class TaskLogs
 {
-    /// <summary>
-    ///     Priority of log message. Affects how log is conveyed to the user.
-    /// </summary>
-    public enum LogPriority
-    {
-        /// <summary>
-        ///     Log will be present in Logger window.
-        /// </summary>
-        Low,
-
-        /// <summary>
-        ///     Log will be present in Menu bar + warning list, logger window.
-        /// </summary>
-        Normal,
-
-        /// <summary>
-        ///     Log will be present in message box, menu bar + warning list, logger window.
-        /// </summary>
-        High
-    }
-
     private static volatile List<LogEntry> _log = new();
     private static volatile HashSet<string> _warningList = new();
 
@@ -151,57 +131,13 @@ public static class TaskLogs
         });
     }
 
-    /// <summary>
-    /// Status Bar (Bottom of viewport)
-    /// </summary>
-    public static void DisplayStatusBar()
-    {
-        if (!UI.Current.Interface_DisplayStatusBar)
-            return;
-
-        var viewport = ImGui.GetWindowViewport();
-
-        ImGui.SetNextWindowPos(new Vector2(
-                viewport.Pos.X,
-                viewport.Pos.Y + viewport.Size.Y - ImGui.GetFrameHeight()));
-
-        ImGui.SetNextWindowSize(new Vector2(
-            viewport.Size.X,
-            ImGui.GetFrameHeight()));
-
-        ImGuiWindowFlags flags =
-            ImGuiWindowFlags.NoDecoration | ImGuiWindowFlags.NoInputs |
-            ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoScrollWithMouse |
-            ImGuiWindowFlags.NoSavedSettings |
-            ImGuiWindowFlags.NoBringToFrontOnFocus | ImGuiWindowFlags.NoBackground |
-            ImGuiWindowFlags.MenuBar;
-
-        if (ImGui.Begin("StatusBar", flags))
-        {
-            if (ImGui.BeginMenuBar())
-            {
-                if (_lastLogEntry != null)
-                {
-                    Vector4 color = PickColor(null);
-                    ImGui.TextColored(color, _lastLogEntry.FormattedMessage);
-                }
-
-                ImGui.EndMenuBar();
-            }
-            ImGui.End();
-        }
-    }
-
     private static ImGuiDir CurrentDir = ImGuiDir.Right;
 
     /// <summary>
     /// Status Bar (Top bar)
     /// </summary>
-    public static void DisplayInLineStatusBar()
+    public static void DisplayLoggerBar()
     {
-        if (!UI.Current.Interface_DisplayStatusBar)
-            return;
-
         ImGui.Separator();
 
         if (ImGui.ArrowButton("##loggerToggle", CurrentDir))
@@ -226,7 +162,7 @@ public static class TaskLogs
     }
 
     /// <summary>
-    /// Status Bar
+    /// Logger Window
     /// </summary>
     public static void DisplayWindow()
     {

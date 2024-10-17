@@ -687,7 +687,7 @@ public class Universe
             {
                 // ParamBank must be loaded for DS2 maps
                 TaskLogs.AddLog("Cannot load DS2 maps when params are not loaded.",
-                    LogLevel.Warning, TaskLogs.LogPriority.High);
+                    LogLevel.Warning, StudioCore.Tasks.LogPriority.High);
                 return false;
             }
         }
@@ -731,7 +731,7 @@ public class Universe
         catch (InvalidDataException e)
         {
             TaskLogs.AddLog($"Failed to load {ad.AssetName}",
-                LogLevel.Error, TaskLogs.LogPriority.Normal, e);
+                LogLevel.Error, StudioCore.Tasks.LogPriority.Normal, e);
             return null;
         }
     }
@@ -770,7 +770,7 @@ public class Universe
         if (LoadedObjectContainers.TryGetValue(mapid, out var m) && m != null)
         {
             TaskLogs.AddLog($"Map \"{mapid}\" is already loaded",
-                LogLevel.Information, TaskLogs.LogPriority.Normal);
+                LogLevel.Information, StudioCore.Tasks.LogPriority.Normal);
             return;
         }
 
@@ -881,7 +881,7 @@ public class Universe
         {
 #if DEBUG
             TaskLogs.AddLog("Map Load Failed (debug build)",
-                LogLevel.Error, TaskLogs.LogPriority.High, e);
+                LogLevel.Error, StudioCore.Tasks.LogPriority.High, e);
             throw;
 #else
                 // Store async exception so it can be caught by crash handler.

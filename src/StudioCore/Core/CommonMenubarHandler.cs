@@ -424,23 +424,6 @@ public class CommonMenubarHandler
             ImGui.EndMenu();
         }
 
-        // Only display if status bar is at bottom
-        if (!UI.Current.Interface_DisplayStatusBarAtTop)
-        {
-            ImGui.Separator();
-
-            if (ImGui.BeginMenu("Logger"))
-            {
-                if (ImGui.Button($"Display", UI.MenuButtonSize))
-                {
-                    TaskLogs.ToggleLoggerVisibility();
-                }
-                UIHelper.ShowHoverTooltip("Display the logger.");
-
-                ImGui.EndMenu();
-            }
-        }
-
         if (CFG.Current.DisplayDebugTools)
         {
             ImGui.Separator();

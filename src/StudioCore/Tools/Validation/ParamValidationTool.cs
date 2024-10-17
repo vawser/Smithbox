@@ -9,6 +9,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Formats;
 using StudioCore.Platform;
 using StudioCore.Resource;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -231,7 +232,7 @@ namespace StudioCore.Tools.Validation
                     var message = $"Could not apply ParamDef for {name}";
 
                     TaskLogs.AddLog(message,
-                            LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                            LogLevel.Warning, LogPriority.Normal, e);
                 }
 
                 TaskLogs.AddLog($"{paramName} validated");

@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,6 +24,6 @@ public static class ParamUniqueRowFinder
             p.AddRow(row);
         }
         TaskLogs.AddLog($"Added rows to all params with IDs {baseID}-{i - 1} ",
-            Microsoft.Extensions.Logging.LogLevel.Debug, TaskLogs.LogPriority.High);
+            Microsoft.Extensions.Logging.LogLevel.Debug, LogPriority.High);
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Resource.Locators;
+using StudioCore.Tasks;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -96,7 +97,7 @@ public class MassEditScript
                     catch (Exception e)
                     {
                         TaskLogs.AddLog($"Error loading mass edit script {name}",
-                            LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                            LogLevel.Warning, LogPriority.Normal, e);
                         return null;
                     }
                 }));
@@ -105,7 +106,7 @@ public class MassEditScript
         catch (Exception e)
         {
             TaskLogs.AddLog($"Error loading mass edit scripts in {dir}",
-                LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                LogLevel.Warning, LogPriority.Normal, e);
         }
     }
 

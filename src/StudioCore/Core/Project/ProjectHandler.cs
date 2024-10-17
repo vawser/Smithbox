@@ -6,6 +6,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
+using StudioCore.Tasks;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -291,7 +292,7 @@ public class ProjectHandler
             {
                 TaskLogs.AddLog(
                     $"The files for {targetProject.Config.GameType} do not appear to be unpacked. Please use UDSFM for DS1:PTDE and UXM for DS2 to unpack game files",
-                    LogLevel.Error, TaskLogs.LogPriority.High);
+                    LogLevel.Error, LogPriority.High);
             }
 
             TaskLogs.AddLog(
@@ -313,7 +314,7 @@ public class ProjectHandler
         if (Current.PTDE_Collision_Root == "" && Current.PTDE_Collision_Root_Warning)
         {
             TaskLogs.AddLog("No directory is set for Dark Souls 1 collision files. No collision functionality will be available. You can set the directory or disable this warning under Project Status in settings.",
-                LogLevel.Warning, TaskLogs.LogPriority.High);
+                LogLevel.Warning, LogPriority.High);
         }
         else if (!Directory.Exists(Current.PTDE_Collision_Root))
         {

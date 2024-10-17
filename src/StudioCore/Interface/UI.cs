@@ -80,8 +80,6 @@ public class UI
     //**************
     // View Toggles
     //**************
-    public bool Interface_DisplayStatusBar = true;
-    public bool Interface_DisplayStatusBarAtTop = false;
     public bool Interface_Editor_Viewport = true;
     public bool Interface_Editor_Profiling = true;
 
@@ -369,12 +367,12 @@ public class UI
     public static void OnGui()
     {
         // Menubar
-        MenuButtonSize = new Vector2(200, 24 * DPI.GetUIScale());
-        MenuButtonWideSize = new Vector2(350, 24 * DPI.GetUIScale());
+        MenuButtonSize = new Vector2(200 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
+        MenuButtonWideSize = new Vector2(350 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
 
         // Modal
-        ModalButtonThirdSize = new Vector2(172, 24 * DPI.GetUIScale());
-        ModalButtonHalfSize = new Vector2(260, 24 * DPI.GetUIScale());
-        ModalButtonSize = new Vector2(520, 24 * DPI.GetUIScale());
+        ModalButtonThirdSize = new Vector2(172 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
+        ModalButtonHalfSize = new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
+        ModalButtonSize = new Vector2(520 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
     }
 }

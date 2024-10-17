@@ -1,5 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Resource.Types;
+using StudioCore.Tasks;
 using StudioCore.UserProject;
 using System;
 using System.IO;
@@ -73,7 +74,7 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             }
             catch(Exception ex)
             {
-                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, ex);
+                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low, ex);
             }
 
             r.Data.Dispose();
@@ -99,14 +100,14 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             }
             catch (FileNotFoundException e1) 
             { 
-                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, e1); 
+                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low, e1); 
             }
             catch (DirectoryNotFoundException e2) { 
-                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, e2); 
+                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low, e2); 
             }
             // Some DSR FLVERS can't be read due to mismatching layout and vertex sizes
             catch (InvalidDataException e3) { 
-                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, e3); 
+                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low, e3); 
             }
         }, options);
     }

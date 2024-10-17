@@ -97,6 +97,9 @@ public class TextEditorTab
         {
             ImGui.Checkbox("Display Grouped Entries", ref CFG.Current.TextEditor_Entry_DisplayGroupedEntries);
             UIHelper.ShowHoverTooltip("Include related entries in the Contents window, e.g. Title, Summary, Description, Effect entries that share the same ID.");
+
+            ImGui.Checkbox("Allow Duplicate IDs", ref CFG.Current.TextEditor_Entry_AllowDuplicateIds);
+            UIHelper.ShowHoverTooltip("Allow Entry ID input to apply change even if the ID is a duplicate of an existing entry row.");
         }
 
         // Text Entry Copy

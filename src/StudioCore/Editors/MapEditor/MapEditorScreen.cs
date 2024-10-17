@@ -14,6 +14,7 @@ using StudioCore.Platform;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.Settings;
+using StudioCore.Tasks;
 using StudioCore.Tools;
 using StudioCore.Utilities;
 using System;
@@ -1030,7 +1031,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         if (e.Wrapped is MSB.MissingReferenceException eRef)
         {
             TaskLogs.AddLog(e.Message,
-                LogLevel.Error, TaskLogs.LogPriority.Normal, e.Wrapped);
+                LogLevel.Error, LogPriority.Normal, e.Wrapped);
 
             DialogResult result = PlatformUtils.Instance.MessageBox($"{eRef.Message}\nSelect referring map entity?",
                 "Failed to save map",
@@ -1054,13 +1055,13 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 }
 
                 TaskLogs.AddLog($"Unable to find map entity \"{eRef.Referrer.Name}\"",
-                    LogLevel.Error, TaskLogs.LogPriority.High);
+                    LogLevel.Error, LogPriority.High);
             }
         }
         else
         {
             TaskLogs.AddLog(e.Message,
-                LogLevel.Error, TaskLogs.LogPriority.High, e.Wrapped);
+                LogLevel.Error, LogPriority.High, e.Wrapped);
         }
     }
 }

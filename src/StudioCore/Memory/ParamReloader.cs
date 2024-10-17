@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -106,7 +107,7 @@ internal class ParamReloader
         {
             if (!offsets.paramOffsets.TryGetValue(param, out var pOffset) || param == null)
             {
-                TaskLogs.AddLog($"Hot reload: Cannot find param offset for {param}", LogLevel.Warning, TaskLogs.LogPriority.Normal);
+                TaskLogs.AddLog($"Hot reload: Cannot find param offset for {param}", LogLevel.Warning, LogPriority.Normal);
                 continue;
             }
 
@@ -169,7 +170,7 @@ internal class ParamReloader
 
         if (RowCount <= 0)
         {
-            TaskLogs.AddLog($"Hot reload: ParamType {param.ParamType} has invalid offset or no rows", LogLevel.Warning, TaskLogs.LogPriority.Low);
+            TaskLogs.AddLog($"Hot reload: ParamType {param.ParamType} has invalid offset or no rows", LogLevel.Warning, LogPriority.Low);
             return;
         }
 
@@ -201,7 +202,7 @@ internal class ParamReloader
             }
             else
             {
-                TaskLogs.AddLog($"Hot reload: ParamType {param.ParamType}: row {RowId} index {i} is in memory but not in editor. Try saving params and restarting game.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
+                TaskLogs.AddLog($"Hot reload: ParamType {param.ParamType}: row {RowId} index {i} is in memory but not in editor. Try saving params and restarting game.", LogLevel.Warning, LogPriority.Normal);
                 return;
             }
         }
@@ -474,7 +475,7 @@ internal class ParamReloader
             catch (Exception e)
             {
                 TaskLogs.AddLog("Unable to create GameOffsets for param hot reloader.", LogLevel.Error,
-                    TaskLogs.LogPriority.High, e);
+                    LogPriority.High, e);
                 return null;
             }
         }

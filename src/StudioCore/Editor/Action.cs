@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -232,7 +233,7 @@ public class AddParamsAction : EditorAction
         // Refresh diff cache
         TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
             TaskManager.RequeueType.Repeat, true,
-            TaskLogs.LogPriority.Low,
+            LogPriority.Low,
             () => ParamBank.RefreshAllParamDiffCaches(false)));
         return ActionEvent.NoEvent;
     }
@@ -303,7 +304,7 @@ public class DeleteParamsAction : EditorAction
         // Refresh diff cache
         TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
             TaskManager.RequeueType.Repeat, true,
-            TaskLogs.LogPriority.Low,
+            LogPriority.Low,
             () => ParamBank.RefreshAllParamDiffCaches(false)));
         return ActionEvent.NoEvent;
     }

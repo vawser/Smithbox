@@ -7,6 +7,7 @@ using StudioCore.Editor;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -278,7 +279,7 @@ namespace StudioCore.Editors.MapEditor
             catch (InvalidDataException e)
             {
                 TaskLogs.AddLog($"Failed to load {ad.AssetName}",
-                    LogLevel.Error, TaskLogs.LogPriority.Normal, e);
+                    LogLevel.Error, LogPriority.Normal, e);
                 return null;
             }
         }

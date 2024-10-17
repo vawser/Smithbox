@@ -8,6 +8,7 @@ using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
+using StudioCore.Tasks;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;
@@ -361,7 +362,7 @@ public class ActionHandler
         {
             TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
                 TaskManager.RequeueType.Repeat,
-                true, TaskLogs.LogPriority.Low,
+                true, LogPriority.Low,
                 () => ParamBank.RefreshAllParamDiffCaches(false)));
         }
     }
@@ -389,12 +390,12 @@ public class ActionHandler
                     foreach (var line in _idRowInstanceFinder_Results)
                         message += $"  {line}\n";
                     TaskLogs.AddLog(message,
-                        LogLevel.Information, TaskLogs.LogPriority.Low);
+                        LogLevel.Information, LogPriority.Low);
                 }
                 else
                 {
                     TaskLogs.AddLog($"No params found with row ID {_idRowInstanceFinder_SearchID}",
-                        LogLevel.Information, TaskLogs.LogPriority.High);
+                        LogLevel.Information, LogPriority.High);
                 }
             }
         }
@@ -627,13 +628,13 @@ public class ActionHandler
                     {
                         message += $"  {result.Param}\n";
                         TaskLogs.AddLog(message,
-                            LogLevel.Information, TaskLogs.LogPriority.Low);
+                            LogLevel.Information, LogPriority.Low);
                     }
                 }
                 else
                 {
                     TaskLogs.AddLog($"No params found with value {_searchValue}",
-                        LogLevel.Information, TaskLogs.LogPriority.High);
+                        LogLevel.Information, LogPriority.High);
                 }
             }
         }

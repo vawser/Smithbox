@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -431,7 +432,7 @@ public class ParamMetaData
         catch (Exception e)
         {
             TaskLogs.AddLog("Unable to save editor mode changes to file",
-                LogLevel.Warning, TaskLogs.LogPriority.High, e);
+                LogLevel.Warning, LogPriority.High, e);
         }
     }
 

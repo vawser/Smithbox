@@ -12,6 +12,7 @@ using StudioCore.Editors.TextEditor;
 using System.ComponentModel.DataAnnotations;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
+using StudioCore.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -388,7 +389,7 @@ public class ParamBank
                         {
                             TaskLogs.AddLog(
                                 $"Couldn't find ParamDef for param {paramName} and no tentative ParamType exists.",
-                                LogLevel.Error, TaskLogs.LogPriority.High);
+                                LogLevel.Error, LogPriority.High);
                             continue;
                         }
                     }
@@ -407,7 +408,7 @@ public class ParamBank
                     {
                         TaskLogs.AddLog(
                             $"Couldn't read ParamType for {paramName} and no tentative ParamType exists.",
-                            LogLevel.Error, TaskLogs.LogPriority.High);
+                            LogLevel.Error, LogPriority.High);
                         continue;
                     }
                 }
@@ -496,7 +497,7 @@ public class ParamBank
                 var name = f.Name.Split("\\").Last();
                 var message = $"Could not apply ParamDef for {name}";
 
-                TaskLogs.AddLog(message, LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                TaskLogs.AddLog(message, LogLevel.Warning, LogPriority.Normal, e);
             }
         }
     }
@@ -779,7 +780,7 @@ public class ParamBank
             }
             else
             {
-                TaskLogs.AddLog("Graphicsconfig could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+                TaskLogs.AddLog("Graphicsconfig could not be found. These require an unpacked game to modify.", LogLevel.Information, LogPriority.Normal);
             }
         }
     }
@@ -930,7 +931,7 @@ public class ParamBank
             catch (Exception e)
             {
                 TaskLogs.AddLog($"Could not apply ParamDef for {EnemyParam.ParamType}",
-                    LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                    LogLevel.Warning, LogPriority.Normal, e);
             }
         }
 
@@ -972,7 +973,7 @@ public class ParamBank
             catch (Exception e)
             {
                 var message = $"Could not apply ParamDef for {fname}";
-                TaskLogs.AddLog(message, LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                TaskLogs.AddLog(message, LogLevel.Warning, LogPriority.Normal, e);
             }
         }
 
@@ -1064,7 +1065,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Systemparam could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+            TaskLogs.AddLog("Systemparam could not be found. These require an unpacked game to modify.", LogLevel.Information, LogPriority.Normal);
         }
 
         var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
@@ -1074,7 +1075,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Eventparam could not be found.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+            TaskLogs.AddLog("Eventparam could not be found.", LogLevel.Information, LogPriority.Normal);
         }
     }
 
@@ -1153,7 +1154,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Systemparam could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+            TaskLogs.AddLog("Systemparam could not be found. These require an unpacked game to modify.", LogLevel.Information, LogPriority.Normal);
         }
 
         var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
@@ -1163,7 +1164,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Graphicsconfig could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+            TaskLogs.AddLog("Graphicsconfig could not be found. These require an unpacked game to modify.", LogLevel.Information, LogPriority.Normal);
         }
 
         var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
@@ -1173,7 +1174,7 @@ public class ParamBank
         }
         else
         {
-            TaskLogs.AddLog("Eventparam could not be found.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+            TaskLogs.AddLog("Eventparam could not be found.", LogLevel.Information, LogPriority.Normal);
         }
     }
 
@@ -1597,7 +1598,7 @@ public class ParamBank
         if (!File.Exists($@"{dir}\\param\GameParam\GameParam.parambnd"))
         {
             TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, TaskLogs.LogPriority.High);
+                LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -1649,7 +1650,7 @@ public class ParamBank
         if (!File.Exists($@"{dir}\\param\GameParam\GameParam.parambnd.dcx"))
         {
             TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, TaskLogs.LogPriority.High);
+                LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -1701,7 +1702,7 @@ public class ParamBank
         if (!File.Exists($@"{dir}\enc_regulation.bnd.dcx"))
         {
             TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, TaskLogs.LogPriority.High);
+                LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -1846,7 +1847,7 @@ public class ParamBank
         if (!File.Exists($@"{dir}\Data0.bdt"))
         {
             TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, TaskLogs.LogPriority.High);
+                LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -1930,7 +1931,7 @@ public class ParamBank
         if (!File.Exists($@"{dir}\\param\gameparam\gameparam.parambnd.dcx"))
         {
             TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, TaskLogs.LogPriority.High);
+                LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -1978,7 +1979,7 @@ public class ParamBank
         if (!File.Exists(param))
         {
             TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, TaskLogs.LogPriority.High);
+                LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -2070,7 +2071,7 @@ public class ParamBank
         if (!File.Exists($@"{dir}\\regulation.bin"))
         {
             TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, TaskLogs.LogPriority.High);
+                LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -2145,7 +2146,7 @@ public class ParamBank
         if (!File.Exists($@"{dir}\\regulation.bin"))
         {
             TaskLogs.AddLog("Cannot locate param files. Save failed.",
-                LogLevel.Error, TaskLogs.LogPriority.High);
+                LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -2676,7 +2677,7 @@ public class ParamBank
                 if (names.Length != p.Value.Rows.Count)
                 {
                     TaskLogs.AddLog($"External row names could not be applied to {p.Key}, row count does not match",
-                        LogLevel.Warning, TaskLogs.LogPriority.Low);
+                        LogLevel.Warning, LogPriority.Low);
                     failCount++;
                     continue;
                 }

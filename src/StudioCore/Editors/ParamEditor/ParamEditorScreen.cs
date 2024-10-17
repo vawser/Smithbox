@@ -14,6 +14,7 @@ using StudioCore.Interface;
 using StudioCore.Memory;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
+using StudioCore.Tasks;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -313,7 +314,7 @@ public class ParamEditorScreen : EditorScreen
 
                                 TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
                                     TaskManager.RequeueType.Repeat, true,
-                                    TaskLogs.LogPriority.Low,
+                                    LogPriority.Low,
                                     () => ParamBank.RefreshAllParamDiffCaches(false)));
                             }
                             else
@@ -341,7 +342,7 @@ public class ParamEditorScreen : EditorScreen
 
                             TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
                                 TaskManager.RequeueType.Repeat,
-                                true, TaskLogs.LogPriority.Low,
+                                true, LogPriority.Low,
                                 () => ParamBank.RefreshAllParamDiffCaches(false)));
                         }
                     }
@@ -370,7 +371,7 @@ public class ParamEditorScreen : EditorScreen
 
                                     TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
                                         TaskManager.RequeueType.Repeat,
-                                        true, TaskLogs.LogPriority.Low,
+                                        true, LogPriority.Low,
                                         () => ParamBank.RefreshAllParamDiffCaches(false)));
                                 }
                             }
@@ -922,12 +923,12 @@ public class ParamEditorScreen : EditorScreen
         catch (SavingFailedException e)
         {
             TaskLogs.AddLog(e.Message,
-                LogLevel.Error, TaskLogs.LogPriority.High, e.Wrapped);
+                LogLevel.Error, LogPriority.High, e.Wrapped);
         }
         catch (Exception e)
         {
             TaskLogs.AddLog(e.Message,
-                LogLevel.Error, TaskLogs.LogPriority.High, e);
+                LogLevel.Error, LogPriority.High, e);
         }
     }
 
@@ -944,12 +945,12 @@ public class ParamEditorScreen : EditorScreen
         catch (SavingFailedException e)
         {
             TaskLogs.AddLog($"{e.Message}",
-                LogLevel.Error, TaskLogs.LogPriority.High, e.Wrapped);
+                LogLevel.Error, LogPriority.High, e.Wrapped);
         }
         catch (Exception e)
         {
             TaskLogs.AddLog($"{e.Message}",
-                LogLevel.Error, TaskLogs.LogPriority.High, e);
+                LogLevel.Error, LogPriority.High, e);
         }
     }
 
@@ -1015,7 +1016,7 @@ public class ParamEditorScreen : EditorScreen
         catch (Exception e)
         {
             TaskLogs.AddLog("Error loading upgrader data.",
-                LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                LogLevel.Warning, LogPriority.Normal, e);
         }
     }
 
@@ -1317,7 +1318,7 @@ public class ParamEditorScreen : EditorScreen
         EditorActionManager.UndoAction();
         TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
             TaskManager.RequeueType.Repeat, true,
-            TaskLogs.LogPriority.Low,
+            LogPriority.Low,
             () => ParamBank.RefreshAllParamDiffCaches(false)));
     }
 
@@ -1326,7 +1327,7 @@ public class ParamEditorScreen : EditorScreen
         EditorActionManager.UndoAllAction();
         TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
             TaskManager.RequeueType.Repeat, true,
-            TaskLogs.LogPriority.Low,
+            LogPriority.Low,
             () => ParamBank.RefreshAllParamDiffCaches(false)));
     }
 
@@ -1335,7 +1336,7 @@ public class ParamEditorScreen : EditorScreen
         EditorActionManager.RedoAction();
         TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
             TaskManager.RequeueType.Repeat, true,
-            TaskLogs.LogPriority.Low,
+            LogPriority.Low,
             () => ParamBank.RefreshAllParamDiffCaches(false)));
     }
 
@@ -1562,7 +1563,7 @@ public class ParamEditorScreen : EditorScreen
                     _currentMEditRegexInput = "";
                     TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
                         TaskManager.RequeueType.Repeat,
-                        true, TaskLogs.LogPriority.Low,
+                        true, LogPriority.Low,
                         () => ParamBank.RefreshAllParamDiffCaches(false)));
                 }
 
@@ -1632,7 +1633,7 @@ public class ParamEditorScreen : EditorScreen
 
                     TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
                         TaskManager.RequeueType.Repeat, true,
-                        TaskLogs.LogPriority.Low,
+                        LogPriority.Low,
                         () => ParamBank.RefreshAllParamDiffCaches(false)));
                 }
 

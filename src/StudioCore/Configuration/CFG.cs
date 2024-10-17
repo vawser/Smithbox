@@ -380,16 +380,17 @@ public class CFG
 
     public bool TextEditor_DisplayPrimaryCategoryOnly = false;
     public bool TextEditor_DisplayPrettyContainerName = true;
+    public bool TextEditor_DisplaySourcePath = true;
 
     public bool TextEditor_DisplayFmgID = true;
     public bool TextEditor_DisplayFmgPrettyName = true;
-    public bool TextEditor_DisplaySourcePath = true;
 
     public bool TextEditor_DisplayNullEntries = true;
     public bool TextEditor_DisplayNullPlaceholder = true;
     public bool TextEditor_TruncateTextDisplay = true;
 
     public bool TextEditor_Entry_DisplayGroupedEntries = true;
+    public bool TextEditor_Entry_AllowDuplicateIds = false;
 
     public bool TextEditor_TextCopy_EscapeNewLines = true;
     public bool TextEditor_TextCopy_IncludeID = true;

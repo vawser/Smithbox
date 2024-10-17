@@ -21,6 +21,7 @@ using StudioCore.Interface;
 using StudioCore.Editors.TextEditor.Utils;
 using Silk.NET.OpenGL;
 using SoapstoneLib.Proto.Internal;
+using StudioCore.Tasks;
 
 namespace StudioCore.Editor;
 
@@ -967,7 +968,7 @@ public class EditorDecorations
                         catch (Exception e)
                         {
                             TaskLogs.AddLog("Unable to convert value into param field's type'", LogLevel.Warning,
-                                TaskLogs.LogPriority.Normal, e);
+                                LogPriority.Normal, e);
                         }
                     }
 

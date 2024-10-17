@@ -23,6 +23,8 @@ public class TextFmgView
     public TextContextMenu ContextMenu;
     public TextDifferenceManager DifferenceManager;
 
+    private List<EntryGroupAssociation> Groupings;
+
     public TextFmgView(TextEditorScreen screen)
     {
         Screen = screen;

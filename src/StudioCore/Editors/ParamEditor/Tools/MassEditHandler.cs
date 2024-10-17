@@ -2,6 +2,7 @@
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Platform;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -57,7 +58,7 @@ public class MassEditHandler
             _currentMEditRegexInput = "";
             TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
                 TaskManager.RequeueType.Repeat,
-                true, TaskLogs.LogPriority.Low,
+                true, LogPriority.Low,
                 () => ParamBank.RefreshAllParamDiffCaches(false)));
         }
 

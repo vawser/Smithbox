@@ -5,6 +5,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -160,7 +161,7 @@ public static class EmevdBank
 
         if (!File.Exists($@"{dir}\enc_regulation.bnd.dcx"))
         {
-            TaskLogs.AddLog("Cannot locate regulation. Save failed.", LogLevel.Error, TaskLogs.LogPriority.High);
+            TaskLogs.AddLog("Cannot locate regulation. Save failed.", LogLevel.Error, LogPriority.High);
             return;
         }
 
@@ -368,7 +369,7 @@ public static class EmevdBank
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"Failed to load {scriptName}", LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                TaskLogs.AddLog($"Failed to load {scriptName}", LogLevel.Warning, LogPriority.Normal, e);
             }
         }
 
