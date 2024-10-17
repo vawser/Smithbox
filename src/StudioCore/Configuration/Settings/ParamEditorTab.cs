@@ -53,7 +53,7 @@ public class ParamEditorTab
         }
 
         // Params
-        if (ImGui.CollapsingHeader("Params"))
+        if (ImGui.CollapsingHeader("Params", ImGuiTreeNodeFlags.DefaultOpen))
         {
             if (ImGui.Checkbox("Sort params alphabetically", ref CFG.Current.Param_AlphabeticalParams))
                 UICache.ClearCaches();
@@ -61,7 +61,7 @@ public class ParamEditorTab
         }
 
         // Rows
-        if (ImGui.CollapsingHeader("Rows"))
+        if (ImGui.CollapsingHeader("Rows", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Disable line wrapping", ref CFG.Current.Param_DisableLineWrapping);
             UIHelper.ShowHoverTooltip("Disable the row names from wrapping within the Row View list.");
@@ -74,7 +74,7 @@ public class ParamEditorTab
         }
 
         // Fields
-        if (ImGui.CollapsingHeader("Fields"))
+        if (ImGui.CollapsingHeader("Fields", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Show community field names first", ref CFG.Current.Param_MakeMetaNamesPrimary);
             UIHelper.ShowHoverTooltip("Crowd-sourced names will appear before the canonical name in the Field View list.");
@@ -111,14 +111,14 @@ public class ParamEditorTab
         }
 
         // Values
-        if (ImGui.CollapsingHeader("Values"))
+        if (ImGui.CollapsingHeader("Values", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Show inverted percentages as traditional percentages", ref CFG.Current.Param_ShowTraditionalPercentages);
             UIHelper.ShowHoverTooltip("Displays field values that utilise the (1 - x) pattern as traditional percentages (e.g. -20 instead of 1.2).");
         }
 
         // Context Menu
-        if (ImGui.CollapsingHeader("Row Context Menu"))
+        if (ImGui.CollapsingHeader("Row Context Menu", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display row name input", ref CFG.Current.Param_RowContextMenu_NameInput);
             UIHelper.ShowHoverTooltip("Display a row name input within the right-click context menu.");
@@ -140,7 +140,7 @@ public class ParamEditorTab
         }
 
         // Context Menu
-        if (ImGui.CollapsingHeader("Field Context Menu"))
+        if (ImGui.CollapsingHeader("Field Context Menu", ImGuiTreeNodeFlags.DefaultOpen))
         {
 
             ImGui.Checkbox("Split context menu", ref CFG.Current.Param_FieldContextMenu_Split);
@@ -181,7 +181,7 @@ public class ParamEditorTab
         }
 
         // Context Menu
-        if (ImGui.CollapsingHeader("Image Preview"))
+        if (ImGui.CollapsingHeader("Image Preview", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Text("Image Preview Scale:");
             ImGui.DragFloat("##imagePreviewScale", ref CFG.Current.Param_FieldContextMenu_ImagePreviewScale, 0.1f, 0.1f, 10.0f);
@@ -199,7 +199,7 @@ public class ParamEditorTab
             // Ignore if no game offsets exist for the project type
             if (Smithbox.BankHandler.GameOffsets.Offsets.list != null)
             {
-                if (ImGui.CollapsingHeader("Param Reloader"))
+                if (ImGui.CollapsingHeader("Param Reloader", ImGuiTreeNodeFlags.DefaultOpen))
                 {
                     ImGui.Text("Param Reloader Version");
                     UIHelper.ShowHoverTooltip("This should match the executable version you wish to target, otherwise the memory offsets will be incorrect.");

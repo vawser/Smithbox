@@ -38,7 +38,7 @@ public class ModelEditorTab
         }
 
         // Asset Browser
-        if (ImGui.CollapsingHeader("Asset Browser"))
+        if (ImGui.CollapsingHeader("Asset Browser", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display aliases in list", ref CFG.Current.ModelEditor_AssetBrowser_ShowAliases);
             UIHelper.ShowHoverTooltip("Show the aliases for each entry within the browser list as part of their displayed name.");
@@ -51,7 +51,7 @@ public class ModelEditorTab
         }
 
         // Grid
-        if (ImGui.CollapsingHeader("Viewport Grid"))
+        if (ImGui.CollapsingHeader("Viewport Grid", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.SliderInt("Grid size", ref CFG.Current.ModelEditor_Viewport_Grid_Size, 100, 1000);
             UIHelper.ShowHoverTooltip("The overall maximum size of the grid.\nThe grid will only update upon restarting Smithbox after changing this value.");

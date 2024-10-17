@@ -20,14 +20,14 @@ public class EmevdEditorTab
     public void Display()
     {
         // Search Filters
-        if (ImGui.CollapsingHeader("Search Filters"))
+        if (ImGui.CollapsingHeader("Search Filters", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Propagate filter commands to all search bars", ref CFG.Current.EmevdEditor_PropagateFilterCommands);
             UIHelper.ShowHoverTooltip("Apply the special filter commands to all three of the search bars when used.");
         }
 
         // Instructions
-        if (ImGui.CollapsingHeader("Instructions"))
+        if (ImGui.CollapsingHeader("Instructions", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display instruction category", ref CFG.Current.EmevdEditor_DisplayInstructionCategory);
             UIHelper.ShowHoverTooltip("Display the instruction category within the Instruction row.");

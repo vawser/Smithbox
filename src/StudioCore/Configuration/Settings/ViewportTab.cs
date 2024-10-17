@@ -65,13 +65,13 @@ public class ViewportTab
         }
 
         // Information Panel
-        if (ImGui.CollapsingHeader("Information Panel"))
+        if (ImGui.CollapsingHeader("Information Panel", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display degree increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement);
             UIHelper.ShowHoverTooltip("Display the current degree increment type you are using.");
         }
 
-        if (ImGui.CollapsingHeader("Camera"))
+        if (ImGui.CollapsingHeader("Camera", ImGuiTreeNodeFlags.DefaultOpen))
         {
             var cam_fov = CFG.Current.Viewport_Camera_FOV;
 
@@ -127,7 +127,7 @@ public class ViewportTab
         }
 
         // Limits
-        if (ImGui.CollapsingHeader("Limits"))
+        if (ImGui.CollapsingHeader("Limits", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Text("Please restart the program for changes to take effect.");
 
@@ -155,7 +155,7 @@ public class ViewportTab
         }
 
         // Wireframes
-        if (ImGui.CollapsingHeader("Wireframes"))
+        if (ImGui.CollapsingHeader("Wireframes", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.SliderFloat("Wireframe color variance", ref CFG.Current.GFX_Wireframe_Color_Variance, 0.0f, 1.0f);
 
@@ -268,7 +268,7 @@ public class ViewportTab
 
 
         // Map Object Display Presets
-        if (ImGui.CollapsingHeader("Display Presets"))
+        if (ImGui.CollapsingHeader("Display Presets", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Text("Configure each of the six display presets available.");
 

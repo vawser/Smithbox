@@ -69,14 +69,14 @@ public class TimeActEditorTab
         }
 
         // Time Acts
-        if (ImGui.CollapsingHeader("Time Acts"))
+        if (ImGui.CollapsingHeader("Time Acts", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display time act aliases", ref CFG.Current.TimeActEditor_DisplayTimeActRow_AliasInfo);
             UIHelper.ShowHoverTooltip("Display aliases for each of the Time Act rows");
         }
 
         // Animations
-        if (ImGui.CollapsingHeader("Animations"))
+        if (ImGui.CollapsingHeader("Animations", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display animation file name", ref CFG.Current.TimeActEditor_DisplayAnimFileName);
             UIHelper.ShowHoverTooltip("Display the stored filename for each animation.");
@@ -89,7 +89,7 @@ public class TimeActEditorTab
         }
 
         // Events
-        if (ImGui.CollapsingHeader("Events"))
+        if (ImGui.CollapsingHeader("Events", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display event bank", ref CFG.Current.TimeActEditor_DisplayEventBank);
             UIHelper.ShowHoverTooltip("Display the event bank ID.");
@@ -114,7 +114,7 @@ public class TimeActEditorTab
         }
 
         // Properties List
-        if (ImGui.CollapsingHeader("Properties"))
+        if (ImGui.CollapsingHeader("Properties", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display property type column", ref CFG.Current.TimeActEditor_DisplayPropertyType);
             UIHelper.ShowHoverTooltip("Display the property type as an additional column in the Properties view.");

@@ -46,7 +46,7 @@ public class MapEditorTab
         }
 
         // Scene View
-        if (ImGui.CollapsingHeader("Map Object List"))
+        if (ImGui.CollapsingHeader("Map Object List", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display list sorting type", ref CFG.Current.MapEditor_MapObjectList_ShowListSortingType);
             UIHelper.ShowHoverTooltip("Display the list sorting type combo box.");
@@ -79,7 +79,7 @@ public class MapEditorTab
         }
 
         // Property View
-        if (ImGui.CollapsingHeader("Properties"))
+        if (ImGui.CollapsingHeader("Properties", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Enable complex rename", ref CFG.Current.MapEditor_Enable_Referenced_Rename);
             UIHelper.ShowHoverTooltip("This option will allow renaming an object to also rename every reference to it, but will require a confirmation to apply a rename");
@@ -98,7 +98,7 @@ public class MapEditorTab
         }
 
         // Asset Browser
-        if (ImGui.CollapsingHeader("Asset Browser"))
+        if (ImGui.CollapsingHeader("Asset Browser", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display aliases in list", ref CFG.Current.MapEditor_AssetBrowser_ShowAliases);
             UIHelper.ShowHoverTooltip("Show the aliases for each entry within the browser list as part of their displayed name.");
@@ -111,7 +111,7 @@ public class MapEditorTab
         }
 
         // Additional Property Information
-        if (ImGui.CollapsingHeader("Additional Property Information"))
+        if (ImGui.CollapsingHeader("Additional Property Information", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display additional property information at the top", ref CFG.Current.MapEditor_Enable_Property_Property_TopDecoration);
             UIHelper.ShowHoverTooltip("The additional property information will be displayed at the top of the properties window. By default they will appear at the bottom.");
@@ -133,7 +133,7 @@ public class MapEditorTab
         }
 
         // Substitutions
-        if (ImGui.CollapsingHeader("Substitutions"))
+        if (ImGui.CollapsingHeader("Substitutions", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Substitute c0000 entity", ref CFG.Current.MapEditor_Substitute_PseudoPlayer_Model);
             UIHelper.ShowHoverTooltip("The c0000 enemy that represents the player-like enemies will be given a visual model substitution so it is visible.");
@@ -180,7 +180,7 @@ public class MapEditorTab
         }
 
         // Selection
-        if (ImGui.CollapsingHeader("Selection"))
+        if (ImGui.CollapsingHeader("Selection", ImGuiTreeNodeFlags.DefaultOpen))
         {
             var thinButtonSize = new Vector2(ImGui.GetWindowWidth(), 24);
 
@@ -274,7 +274,7 @@ public class MapEditorTab
         }
 
         // World Map
-        if (ImGui.CollapsingHeader("World Map"))
+        if (ImGui.CollapsingHeader("World Map", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Enable automatic map filtering on click", ref CFG.Current.WorldMap_EnableFilterOnClick);
             UIHelper.ShowHoverTooltip("Left-clicking on the world map will automatically filter the map list to the specific tiles you clicked.");

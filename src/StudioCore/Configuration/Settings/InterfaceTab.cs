@@ -65,7 +65,7 @@ public class InterfaceTab
             UIHelper.ShowHoverTooltip("Adjusts the size of the font in Smithbox.");
         }
 
-        if (ImGui.CollapsingHeader("Status Bar"))
+        if (ImGui.CollapsingHeader("Status Bar", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display Status Bar", ref UI.Current.Interface_DisplayStatusBar);
             UIHelper.ShowHoverTooltip("If enabled, the status bar will be visible at the bottom.");
@@ -77,7 +77,7 @@ public class InterfaceTab
         }
 
         // Fonts
-        if (ImGui.CollapsingHeader("Fonts"))
+        if (ImGui.CollapsingHeader("Fonts", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Text("Current English Font:");
             ImGui.SameLine();
@@ -118,7 +118,7 @@ public class InterfaceTab
         }
 
         // Additional Language Fonts
-        if (ImGui.CollapsingHeader("Additional Language Fonts"))
+        if (ImGui.CollapsingHeader("Additional Language Fonts", ImGuiTreeNodeFlags.DefaultOpen))
         {
             if (ImGui.Checkbox("Chinese", ref UI.Current.System_Font_Chinese))
                 Smithbox.FontRebuildRequest = true;

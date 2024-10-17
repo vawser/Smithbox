@@ -152,7 +152,7 @@ public static class TaskLogs
     }
 
     /// <summary>
-    /// Status Bar
+    /// Status Bar (Bottom of viewport)
     /// </summary>
     public static void DisplayStatusBar()
     {
@@ -192,8 +192,10 @@ public static class TaskLogs
         }
     }
 
+    private static ImGuiDir CurrentDir = ImGuiDir.Right;
+
     /// <summary>
-    /// Status Bar
+    /// Status Bar (Top bar)
     /// </summary>
     public static void DisplayInLineStatusBar()
     {
@@ -201,6 +203,20 @@ public static class TaskLogs
             return;
 
         ImGui.Separator();
+
+        if (ImGui.ArrowButton("##loggerToggle", CurrentDir))
+        {
+            if(CurrentDir == ImGuiDir.Right) 
+            {
+                CurrentDir = ImGuiDir.Down;
+                _loggerWindowOpen = true;
+            }
+            else
+            {
+                CurrentDir = ImGuiDir.Right;
+                _loggerWindowOpen = false;
+            }
+        }
 
         if (_lastLogEntry != null)
         {

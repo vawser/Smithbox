@@ -71,7 +71,7 @@ public class GparamEditorTab
             UIHelper.ShowHoverTooltip("Show the color data as Hue, Saturation, Value color (0.0 to 1.0)");
         }
 
-        if (ImGui.CollapsingHeader("Quick Edit - General"))
+        if (ImGui.CollapsingHeader("Quick Edit - General", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.InputText("Delimiter", ref CFG.Current.Gparam_QuickEdit_Chain, 255);
             UIHelper.ShowHoverTooltip("The text string to split filter and commands.");
@@ -82,7 +82,7 @@ public class GparamEditorTab
             }
         }
 
-        if (ImGui.CollapsingHeader("Quick Edit - File Filter"))
+        if (ImGui.CollapsingHeader("Quick Edit - File Filter", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.InputText("File Filter: Match File", ref CFG.Current.Gparam_QuickEdit_File, 255);
             UIHelper.ShowHoverTooltip("The text string to detect for the 'File' filter argument.");
@@ -93,7 +93,7 @@ public class GparamEditorTab
             }
         }
 
-        if (ImGui.CollapsingHeader("Quick Edit - Group Filter"))
+        if (ImGui.CollapsingHeader("Quick Edit - Group Filter", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.InputText("Group Filter: Match Group", ref CFG.Current.Gparam_QuickEdit_Group, 255);
             UIHelper.ShowHoverTooltip("The text string to detect for the 'Group' filter argument.");
@@ -104,7 +104,7 @@ public class GparamEditorTab
             }
         }
 
-        if (ImGui.CollapsingHeader("Quick Edit - Field Filter"))
+        if (ImGui.CollapsingHeader("Quick Edit - Field Filter", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.InputText("Field Filter: Match Field", ref CFG.Current.Gparam_QuickEdit_Field, 255);
             UIHelper.ShowHoverTooltip("The text string to detect for the 'Field' filter argument.");
@@ -115,7 +115,7 @@ public class GparamEditorTab
             }
         }
 
-        if (ImGui.CollapsingHeader("Quick Edit - Value Filters"))
+        if (ImGui.CollapsingHeader("Quick Edit - Value Filters", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.InputText("Value Filter: Match ID", ref CFG.Current.Gparam_QuickEdit_ID, 255);
             UIHelper.ShowHoverTooltip("The text string to detect for the 'ID' filter argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
@@ -138,7 +138,7 @@ public class GparamEditorTab
             }
         }
 
-        if (ImGui.CollapsingHeader("Quick Edit - Value Commands"))
+        if (ImGui.CollapsingHeader("Quick Edit - Value Commands", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.InputText("Value Command: Set", ref CFG.Current.Gparam_QuickEdit_Set, 255);
             UIHelper.ShowHoverTooltip("The text string to detect for the 'Set' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");

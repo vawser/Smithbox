@@ -70,7 +70,7 @@ public class SystemTab
             UIHelper.ShowHoverTooltip("This will delete your Smithbox folder and the configuration files within.");
         }
 
-        if (ImGui.CollapsingHeader("Formats"))
+        if (ImGui.CollapsingHeader("Formats", ImGuiTreeNodeFlags.DefaultOpen))
         {
             UIHelper.WrappedText("By default, files are read by Smithbox in a strict manner. Data that is present in locations that it should not be will throw an exception.");
 
@@ -94,7 +94,7 @@ public class SystemTab
         }
         */
 
-        if (ImGui.CollapsingHeader("Resources"))
+        if (ImGui.CollapsingHeader("Resources", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Alias Banks - Commit to Base", ref CFG.Current.AliasBank_EditorMode);
             UIHelper.ShowHoverTooltip("If enabled, editing the name and tags for alias banks will commit the changes to the Smithbox base version instead of the mod-specific version.");
@@ -118,7 +118,7 @@ public class SystemTab
             }
         }
 
-        if (ImGui.CollapsingHeader("Secret Tools"))
+        if (ImGui.CollapsingHeader("Secret Tools", ImGuiTreeNodeFlags.DefaultOpen))
         {
             //ImGui.Checkbox("Display Randomiser Toosl", ref CFG.Current.DisplayRandomiserTools);
             //ImguiUtils.ShowHoverTooltip("If enabled, the randomiser tools will be available via the icon bar.");
