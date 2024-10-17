@@ -66,5 +66,11 @@ public class TextShortcuts
         {
             Screen.ActionHandler.DeleteEntries();
         }
+
+        // Focus Selected Entry
+        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXT_FocusSelectedEntry))
+        {
+            Screen.Selection.FocusFmgEntrySelection = true;
+        }
     }
 }

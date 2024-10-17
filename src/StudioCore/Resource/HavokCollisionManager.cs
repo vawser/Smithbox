@@ -53,8 +53,14 @@ public static class HavokCollisionManager
 
         if (Smithbox.ProjectType == ProjectType.ER)
         {
-            //UnloadMapCollision(mapId, "h");
-            //UnloadMapCollision(mapId, "l");
+            // HACK: clear all viewport collisions on load
+            foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())
+            {
+                if (item.Key.Contains("collision"))
+                {
+                    item.Value.Release(true);
+                }
+            }
         }
     }
 

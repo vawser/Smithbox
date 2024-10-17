@@ -375,6 +375,9 @@ public class CFG
     //****************************
     public TextContainerCategory TextEditor_PrimaryCategory = TextContainerCategory.English;
 
+    public bool TextEditor_IncludeNonPrimaryContainers = true;
+    public bool TextEditor_IncludeVanillaCache = true;
+
     public bool TextEditor_DisplayPrimaryCategoryOnly = false;
     public bool TextEditor_DisplayPrettyContainerName = true;
 

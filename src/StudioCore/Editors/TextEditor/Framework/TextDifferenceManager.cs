@@ -40,6 +40,12 @@ public class TextDifferenceManager
         AdditionCache = new();
         DifferenceCache = new();
 
+        // Leave empty if disabled
+        if(!CFG.Current.TextEditor_IncludeVanillaCache)
+        {
+            return;
+        }
+
         var containerCategory = Selection.SelectedContainer.Category;
         var containerSubCategory = Selection.SelectedContainer.SubCategory;
         var containerName = Selection.SelectedContainer.Name;

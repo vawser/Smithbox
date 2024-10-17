@@ -32,7 +32,7 @@ public class TimeActEditorTab
     public void Display()
     {
         // Files
-        if (ImGui.CollapsingHeader("Files", ImGuiTreeNodeFlags.DefaultOpen))
+        if (ImGui.CollapsingHeader("Data", ImGuiTreeNodeFlags.DefaultOpen))
         {
             var objTitle = TimeActUtils.GetObjectTitle().ToLower();
 

@@ -70,6 +70,15 @@ public static class TextBank
     {
         VanillaBankLoading = true;
 
+        // Skip if disabled
+        if (!CFG.Current.TextEditor_IncludeVanillaCache)
+        {
+            VanillaBankLoaded = true;
+            VanillaBankLoading = false;
+
+            return;
+        }
+
         TaskManager.Run(
             new TaskManager.LiveTask($"Setup Text Editor - Vanilla Bank", TaskManager.RequeueType.None, false,
         () =>
@@ -111,6 +120,15 @@ public static class TextBank
         var containerType = TextContainerType.Loose;
         var containerCategory = TextUtils.GetLanguageCategory(path);
 
+        // Skip non-English if this is disabled
+        if(!CFG.Current.TextEditor_IncludeNonPrimaryContainers)
+        {
+            if(containerCategory != CFG.Current.TextEditor_PrimaryCategory)
+            {
+                return;
+            }
+        }
+
         // Get compression type
         var fileBytes = File.ReadAllBytes(path);
 
@@ -146,6 +164,15 @@ public static class TextBank
         var relPath = path.Replace(Smithbox.GameRoot, "").Replace(Smithbox.ProjectRoot, "");
         var containerType = TextContainerType.BND;
         var containerCategory = TextUtils.GetLanguageCategory(path);
+
+        // Skip non-English if this is disabled
+        if (!CFG.Current.TextEditor_IncludeNonPrimaryContainers)
+        {
+            if (containerCategory is not TextContainerCategory.English)
+            {
+                return;
+            }
+        }
 
         // Get compression type
         var fileBytes = File.ReadAllBytes(path);

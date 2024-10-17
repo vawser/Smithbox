@@ -82,6 +82,9 @@ public class FlverResource : IResource, IDisposable
 
     public GPUBufferAllocator.GPUBufferHandle StaticBoneBuffer { get; private set; }
 
+    /// <summary>
+    /// Bytes
+    /// </summary>
     public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
         // HACK: circumvent resource manager, grab updated FLVER data directly for representing the model
@@ -118,6 +121,9 @@ public class FlverResource : IResource, IDisposable
         return ret;
     }
 
+    /// <summary>
+    /// Bytes
+    /// </summary>
     public bool _Load(Memory<byte> bytes)
     {
         bool ret;
@@ -129,6 +135,9 @@ public class FlverResource : IResource, IDisposable
         return ret;
     }
 
+    /// <summary>
+    /// Path
+    /// </summary>
     public bool _Load(string path, AccessLevel al, string virtPath)
     {
         byte[] fileBytes = Array.Empty<byte>();

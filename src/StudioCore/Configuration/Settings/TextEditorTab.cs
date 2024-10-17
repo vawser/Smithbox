@@ -16,6 +16,16 @@ public class TextEditorTab
 
     public void Display()
     {
+        // Data
+        if (ImGui.CollapsingHeader("Data", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Checkbox("Include Non-Primary Containers", ref CFG.Current.TextEditor_IncludeNonPrimaryContainers);
+            UIHelper.ShowHoverTooltip("If enabled, non-primary FMG containers are loaded.");
+
+            ImGui.Checkbox("Include Vanilla Cache", ref CFG.Current.TextEditor_IncludeVanillaCache);
+            UIHelper.ShowHoverTooltip("If enabled, the vanilla cache is loaded, which enables the modified and unique difference features.");
+        }
+
         // Primary Category
         if (ImGui.CollapsingHeader("Primary Category", ImGuiTreeNodeFlags.DefaultOpen))
         {

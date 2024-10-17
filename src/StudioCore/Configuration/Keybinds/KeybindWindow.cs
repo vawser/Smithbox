@@ -749,6 +749,10 @@ public class TextEditorKeybindTab
             KeyBindings.Current.TEXT_CopyEntryContents = InputTracker.KeybindLine(5,
                 KeyBindings.Current.TEXT_CopyEntryContents,
                 KeyBindings.Default.TEXT_CopyEntryContents);
+
+            KeyBindings.Current.TEXT_FocusSelectedEntry = InputTracker.KeybindLine(6,
+                KeyBindings.Current.TEXT_FocusSelectedEntry,
+                KeyBindings.Default.TEXT_FocusSelectedEntry);
         }
     }
 }

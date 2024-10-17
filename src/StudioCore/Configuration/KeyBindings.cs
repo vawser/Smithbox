@@ -877,6 +877,13 @@ public class KeyBindings
             true);
 
 
+        public KeyBind TEXT_FocusSelectedEntry = new(
+            "Focus Selected Entry",
+            "Focus the selected entry in the FMG entry list.",
+            Key.F,
+            false,
+            true);
+
         //-----------------------------
         // GPARAM Editor
         //-----------------------------
