@@ -25,6 +25,8 @@ public class FmgWrapper
 
     public FMG Fmg { get; set; }
 
+    public bool Partial { get; set; }
+
     public FmgWrapper()
     {
 

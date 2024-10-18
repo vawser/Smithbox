@@ -23,7 +23,10 @@ public static class TextLocator
         var rootPath = $"{Smithbox.GameRoot}\\msg\\";
         var filePattern = $".msgbnd";
 
-        SearchFolder(rootPath, filePattern, rootOnly);
+        if (Path.Exists(rootPath))
+        {
+            SearchFolder(rootPath, filePattern, rootOnly);
+        }
 
         return FileList;
     }
@@ -38,8 +41,10 @@ public static class TextLocator
         var rootPath = $"{Smithbox.GameRoot}\\menu\\text\\";
         var filePattern = $".fmg";
 
-        SearchFolder(rootPath, filePattern, rootOnly);
-
+        if (Path.Exists(rootPath))
+        {
+            SearchFolder(rootPath, filePattern, rootOnly);
+        }
         return FileList;
     }
 
