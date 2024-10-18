@@ -112,9 +112,8 @@ Param Editor
 Text Editor:
  - ADD: Name Template create tool
  - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
- 
-# PRIORITY
+
+# TODO
 - ADD: sync with X Language (Container level -> apply modified rows + add unique rows into non-primary container (add option to apply prepend string, e.g. TRANSLATE:, so you can tag rows for translation)
-- ADD: import should create associated entries if relevant (currently it does not)
-- ADD: global text search and replace: search term: show affected; apply button
 - ADD: text merge: tool that will attempt to add unique/modified rows from X source into current project
+- ADD: import should create associated entries if relevant (currently it does not) - Bit of a pain currently since we don't know if an entry is 'grouped' by default, we check for the associated entries, therefore we need to add a new method of checking to do this

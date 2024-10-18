@@ -50,6 +50,14 @@ public class TextToolView
             {
                 GlobalTextReplacement.Display();
             }
+
+            // Text Merge
+            /*
+            if (ImGui.CollapsingHeader("Text Merge"))
+            {
+                TextMerge.Display();
+            }
+            */
         }
 
         ImGui.End();

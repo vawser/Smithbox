@@ -22,6 +22,8 @@ public static class TextBank
 
     public static SortedDictionary<string, TextContainerInfo> VanillaFmgBank { get; private set; } = new();
 
+    public static SortedDictionary<string, TextContainerInfo> TargetFmgBank { get; private set; } = new();
+
     /// <summary>
     /// Load all FMG containers
     /// </summary>
@@ -61,6 +63,36 @@ public static class TextBank
 
             PrimaryBankLoaded = true;
         }));
+    }
+
+    /// <summary>
+    /// Load text files for target project
+    /// </summary>
+    public static void LoadTargetTextFiles(string targetDir)
+    {
+        TargetFmgBank = new();
+
+        if (Smithbox.ProjectType is not ProjectType.Undefined)
+        {
+            if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                var fmgList = TextLocator.GetFmgs(false, targetDir);
+
+                foreach (var path in fmgList)
+                {
+                    LoadFmg(path, TargetFmgBank);
+                }
+            }
+            else
+            {
+                var fmgContainerList = TextLocator.GetFmgContainers(false, targetDir);
+
+                foreach (var path in fmgContainerList)
+                {
+                    LoadFmgContainer(path, TargetFmgBank);
+                }
+            }
+        }
     }
 
     /// <summary>

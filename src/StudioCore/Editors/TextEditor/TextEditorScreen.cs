@@ -3,8 +3,12 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
+using StudioCore.Platform;
+using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
+using System.Diagnostics;
+using System.IO;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -163,7 +167,7 @@ public class TextEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        // ImGui.Separator();
+        ImGui.Separator();
     }
 
     /// <summary>
@@ -171,7 +175,71 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void EditorUniqueDropdowns()
     {
-        // Data
+        if (ImGui.BeginMenu("Data"))
+        {
+            if (ImGui.BeginMenu("FMG", Selection.SelectedFmg != null))
+            {
+                if (ImGui.BeginMenu("Export Entries"))
+                {
+                    FmgExporter.DisplayExportList(true);
+
+                    ImGui.EndMenu();
+                }
+
+                if (ImGui.BeginMenu("Import Entries"))
+                {
+                    FmgImporter.DisplayImportList();
+
+                    ImGui.EndMenu();
+                }
+
+                ImGui.EndMenu();
+            }
+
+            if (ImGui.BeginMenu("FMG Entries", Selection.SelectedFmg != null && Selection._selectedFmgEntry != null))
+            {
+                if (ImGui.BeginMenu("Export Entries"))
+                {
+                    FmgExporter.DisplayExportList();
+
+                    ImGui.EndMenu();
+                }
+
+                if (ImGui.BeginMenu("Import Entries"))
+                {
+                    FmgImporter.DisplayImportList();
+
+                    ImGui.EndMenu();
+                }
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.Separator();
+
+            if (ImGui.MenuItem("Clear FMG Wrappers"))
+            {
+                DialogResult result = PlatformUtils.Instance.MessageBox(
+                    $"All stored FMG wrappers will be deleted. Do you proceed?",
+                    "Warning",
+                    MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    var wrapperPathList = TextLocator.GetFmgWrappers();
+
+                    foreach (var path in wrapperPathList)
+                    {
+                        if (File.Exists(path))
+                        {
+                            File.Delete(path);
+                        }
+                    }
+                }
+            }
+
+            ImGui.EndMenu();
+        }
 
         // ImGui.Separator();
 

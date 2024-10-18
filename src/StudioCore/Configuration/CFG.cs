@@ -392,7 +392,7 @@ public class CFG
     public bool TextEditor_DisplayPrettyContainerName = true;
     public bool TextEditor_DisplaySourcePath = true;
 
-    public bool TextEditor_SimpleFmgView = true;
+    public bool TextEditor_SimpleFmgView = false;
     public bool TextEditor_DisplayFmgID = true;
     public bool TextEditor_DisplayFmgPrettyName = true;
 

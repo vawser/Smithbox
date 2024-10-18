@@ -16,11 +16,16 @@ public static class TextLocator
     /// <summary>
     /// Get all msgbnd paths
     /// </summary>
-    public static List<string> GetFmgContainers(bool rootOnly = false)
+    public static List<string> GetFmgContainers(bool rootOnly = false, string targetDir = "")
     {
         FileList = new();
 
-        var rootPath = $"{Smithbox.GameRoot}\\msg\\";
+        if(targetDir == "")
+        {
+            targetDir = Smithbox.GameRoot;
+        }
+
+        var rootPath = $"{targetDir}\\msg\\";
         var filePattern = $".msgbnd";
 
         if (Directory.Exists(rootPath))
@@ -34,11 +39,16 @@ public static class TextLocator
     /// <summary>
     /// Get all fmg paths (for DS2)
     /// </summary>
-    public static List<string> GetFmgs(bool rootOnly = false)
+    public static List<string> GetFmgs(bool rootOnly = false, string targetDir = "")
     {
         FileList = new();
 
-        var rootPath = $"{Smithbox.GameRoot}\\menu\\text\\";
+        if (targetDir == "")
+        {
+            targetDir = Smithbox.GameRoot;
+        }
+
+        var rootPath = $"{targetDir}\\menu\\text\\";
         var filePattern = $".fmg";
 
         if (Directory.Exists(rootPath))
@@ -48,7 +58,7 @@ public static class TextLocator
         return FileList;
     }
 
-    private static void SearchFolder(string rootPath, string filePattern, bool rootOnly)
+    public static void SearchFolder(string rootPath, string filePattern, bool rootOnly)
     {
         var entries = Directory.GetFileSystemEntries(rootPath);
 
