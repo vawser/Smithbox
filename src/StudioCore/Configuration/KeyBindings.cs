@@ -841,6 +841,7 @@ public class KeyBindings
             "Select All",
             "Select all rows.",
             Key.A,
+            true,
             true);
 
         public KeyBind TEXT_Multiselect = new(

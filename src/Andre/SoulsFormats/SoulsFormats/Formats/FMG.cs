@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace SoulsFormats
 {
@@ -44,6 +45,24 @@ namespace SoulsFormats
             Entries = new List<Entry>();
             Version = version;
             BigEndian = Version == FMGVersion.DemonsSouls;
+        }
+
+        public FMG Clone()
+        {
+            var newFmg = new FMG();
+            newFmg.Name = Name;
+            newFmg.BigEndian = BigEndian;
+            newFmg.Version = Version;
+
+            var newEntries = new List<Entry>();
+            foreach(var entry in Entries)
+            {
+                newEntries.Add(entry.Clone());
+            }
+
+            newFmg.Entries = newEntries;
+
+            return newFmg;
         }
 
         /// <summary>
@@ -209,7 +228,7 @@ namespace SoulsFormats
         /// <summary>
         /// A string in an FMG identified with an ID number.
         /// </summary>
-        public class Entry
+        public class Entry : IComparable<Entry>
         {
             /// <summary>
             /// The ID of this entry.
@@ -221,6 +240,7 @@ namespace SoulsFormats
             /// </summary>
             public string Text { get; set; }
 
+            [JsonIgnore]
             public FMG Parent { get; set; }
 
             /// <summary>
@@ -244,6 +264,17 @@ namespace SoulsFormats
             public FMG.Entry Clone()
             {
                 return new FMG.Entry(Parent, ID, Text);
+            }
+
+            public int CompareTo(Entry other)
+            {
+                if(ID > other.ID) 
+                    return 1;
+
+                if (ID < other.ID)
+                    return -1;
+
+                return 0;
             }
         }
 

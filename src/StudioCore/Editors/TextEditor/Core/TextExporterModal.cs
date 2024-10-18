@@ -38,9 +38,12 @@ public class TextExporterModal
 
     public void ExportMenu()
     {
-        if (ImGui.BeginPopupModal("Create FMG Entry", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
+        if (ImGui.BeginPopupModal("Export Text Modal", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
         {
+            var width = UI.ModalButtonSize;
+
             ImGui.Text("Name");
+            ImGui.SetNextItemWidth(width.X);
             ImGui.InputText("##wrapperName", ref WrapperName, 255);
 
             if (ImGui.Button("Export", UI.ModalButtonHalfSize))

@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
+﻿using ImGuiNET;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using System;
@@ -20,6 +22,24 @@ public static class FmgExporter
         var editor = Smithbox.EditorHandler.TextEditor;
 
         editor.TextExportModal.Display();
+    }
+
+    public static void DisplayExportList(bool ignoreSelected = false)
+    {
+        if (ImGui.Selectable("All"))
+        {
+            FmgExporter.DisplayExportModal(ExportType.All);
+        }
+        UIHelper.ShowHoverTooltip("All entries from the currently selected FMG will be exported.");
+
+        if (!ignoreSelected)
+        {
+            if (ImGui.Selectable("Selected"))
+            {
+                FmgExporter.DisplayExportModal(ExportType.Selected);
+            }
+            UIHelper.ShowHoverTooltip("Only selected entries from the currently selected FMG will be exported.");
+        }
     }
 
     public static void DisplayExportModal(ExportType exportType)
@@ -79,6 +99,11 @@ public static class FmgExporter
         var writeDir = TextLocator.GetFmgWrapperDirectory();
         var writePath = $"{writeDir}\\{wrapper.Name}.json";
 
+        if(!Directory.Exists(writeDir))
+        {
+            Directory.CreateDirectory(writeDir);
+        }
+
         var proceed = false;
 
         if (File.Exists(writePath))
@@ -109,6 +134,8 @@ public static class FmgExporter
                 fs.Write(data, 0, data.Length);
                 fs.Flush();
                 fs.Dispose();
+
+                TaskLogs.AddLog($"Exported FMG Wrapper as {wrapper.Name} at: {writePath}");
             }
             catch (Exception ex)
             {

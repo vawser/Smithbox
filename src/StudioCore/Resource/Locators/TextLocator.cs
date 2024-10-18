@@ -104,9 +104,14 @@ public static class TextLocator
     {
         List<string> results = new();
 
-        foreach (var entry in Directory.GetFiles(GetFmgWrapperDirectory()))
+        var wrapperDir = GetFmgWrapperDirectory();
+
+        if (Directory.Exists(wrapperDir))
         {
-            results.Add(entry);
+            foreach (var entry in Directory.GetFiles(wrapperDir))
+            {
+                results.Add(entry);
+            }
         }
 
         return results;

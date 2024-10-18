@@ -43,16 +43,18 @@ public class TextContextMenu
     {
         if (ImGui.BeginPopupContextItem($"FmgContext##FmgContext{fmgInfo.ID}"))
         {
-            if (ImGui.BeginMenu("Import FMG"))
+            if (ImGui.BeginMenu("Export Entries"))
             {
-                FmgImporter.DisplayImportList();
+                FmgExporter.DisplayExportList(true);
 
                 ImGui.EndMenu();
             }
 
-            if (ImGui.Selectable("Export FMG"))
+            if (ImGui.BeginMenu("Import Entries"))
             {
-                FmgExporter.DisplayExportModal(ExportType.All);
+                FmgImporter.DisplayImportList();
+
+                ImGui.EndMenu();
             }
 
             ImGui.EndPopup();
@@ -85,16 +87,18 @@ public class TextContextMenu
 
             ImGui.Separator();
 
+            if (ImGui.BeginMenu("Export Entries"))
+            {
+                FmgExporter.DisplayExportList();
+
+                ImGui.EndMenu();
+            }
+
             if (ImGui.BeginMenu("Import Entries"))
             {
                 FmgImporter.DisplayImportList();
 
                 ImGui.EndMenu();
-            }
-
-            if (ImGui.Selectable("Export Selected Entries"))
-            {
-                FmgExporter.DisplayExportModal(ExportType.Selected);
             }
 
             ImGui.EndPopup();
