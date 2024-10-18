@@ -27,10 +27,15 @@ public class ReplaceFmgEntries : EditorAction
 
         foreach (var entry in Wrapper.Fmg.Entries)
         {
+            // Assign parent
+            entry.Parent = TargetFmgInfo.File;
+
             TargetFmgInfo.File.Entries.Add(entry);
         }
 
         TargetFmgInfo.File.Entries.Sort();
+
+        Smithbox.EditorHandler.TextEditor.Selection.SelectFmg(TargetFmgInfo, true);
 
         return ActionEvent.NoEvent;
     }
@@ -39,6 +44,8 @@ public class ReplaceFmgEntries : EditorAction
     {
         TargetFmgInfo.File.Entries = OriginalFmg.Entries;
         TargetFmgInfo.File.Entries.Sort();
+
+        Smithbox.EditorHandler.TextEditor.Selection.SelectFmg(TargetFmgInfo, true);
 
         return ActionEvent.NoEvent;
     }

@@ -25,6 +25,9 @@ public class InsertUniqueFmgEntries : EditorAction
     {
         foreach (var entry in Wrapper.Fmg.Entries)
         {
+            // Assign parent
+            entry.Parent = TargetFmgInfo.File;
+
             if (!TargetFmgInfo.File.Entries.Where(e => e.ID == entry.ID).Any())
             {
                 TargetFmgInfo.File.Entries.Add(entry);
@@ -33,6 +36,8 @@ public class InsertUniqueFmgEntries : EditorAction
 
         TargetFmgInfo.File.Entries.Sort();
 
+        Smithbox.EditorHandler.TextEditor.Selection.SelectFmg(TargetFmgInfo, true);
+
         return ActionEvent.NoEvent;
     }
 
@@ -40,6 +45,8 @@ public class InsertUniqueFmgEntries : EditorAction
     {
         TargetFmgInfo.File.Entries = OriginalFmg.Entries;
         TargetFmgInfo.File.Entries.Sort();
+
+        Smithbox.EditorHandler.TextEditor.Selection.SelectFmg(TargetFmgInfo, true);
 
         return ActionEvent.NoEvent;
     }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor.Utils;
@@ -134,6 +135,70 @@ public static class TextFinder
 
         return results;
     }
+
+
+    /// <summary>
+    /// Get text result for global replacement.
+    /// </summary>
+    public static List<ReplacementResult> GetReplacementResult(string searchPattern, SearchFilterType searchFilterType, bool ignoreCase)
+    {
+        var results = new List<ReplacementResult>();
+
+        if (!TextBank.PrimaryBankLoaded)
+        {
+            return results;
+        }
+
+        foreach (var (path, entry) in TextBank.FmgBank)
+        {
+            var containerName = Path.GetFileName(path);
+
+            if (searchFilterType is SearchFilterType.PrimaryCategory)
+            {
+                if (entry.Category != CFG.Current.TextEditor_PrimaryCategory)
+                {
+                    continue;
+                }
+            }
+
+            foreach (var fmg in entry.FmgInfos)
+            {
+                foreach (var fmgEntry in fmg.File.Entries)
+                {
+                    var entryText = fmgEntry.Text;
+                    var searchText = searchPattern;
+
+                    if (entryText == null)
+                        continue;
+
+                    if (ignoreCase)
+                    {
+                        entryText = entryText.ToLower();
+                        searchText = searchText.ToLower();
+                    }
+
+                    var match = Regex.Match(entryText, searchText);
+
+                    if(match.Success)
+                    {
+                        ReplacementResult result = new();
+                        result.Match = match;
+                        result.ContainerName = containerName;
+                        result.Info = entry;
+                        result.FmgID = fmg.ID;
+                        result.FmgName = fmg.Name;
+                        result.Fmg = fmg.File;
+                        result.FmgEntryID = fmgEntry.ID;
+                        result.Entry = fmgEntry;
+
+                        results.Add(result);
+                    }
+                }
+            }
+        }
+
+        return results;
+    }
 }
 
 public class TextResult
@@ -147,4 +212,18 @@ public class TextResult
     public FMG.Entry Entry { get; set; }
 
     public TextResult() { }
+}
+
+public class ReplacementResult
+{
+    public string ContainerName { get; set; }
+    public Match Match { get; set; }
+    public TextContainerInfo Info { get; set; }
+    public int FmgID { get; set; }
+    public string FmgName { get; set; }
+    public FMG Fmg { get; set; }
+    public int FmgEntryID { get; set; }
+    public FMG.Entry Entry { get; set; }
+
+    public ReplacementResult() { }
 }

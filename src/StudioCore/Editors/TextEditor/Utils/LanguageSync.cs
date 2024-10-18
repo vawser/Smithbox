@@ -22,6 +22,8 @@ public static class LanguageSync
         var currentInfo = editor.Selection.SelectedContainer;
         var currentCategory = currentInfo.Category;
 
+        // <language X> -> Add Unique Entries from Primary
+
         foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))
         {
             if (TextBank.FmgBank.Any(e => e.Value.Category == category) && editor.FileView.AllowedCategory(category))

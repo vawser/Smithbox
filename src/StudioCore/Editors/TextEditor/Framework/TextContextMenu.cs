@@ -30,7 +30,7 @@ public class TextContextMenu
         if (ImGui.BeginPopupContextItem($"FileContext##FileContext{info.Name}"))
         {
             // TODO: add sync to X language
-            LanguageSync.DisplaySyncOptions();
+            // LanguageSync.DisplaySyncOptions();
 
             ImGui.EndPopup();
         }
