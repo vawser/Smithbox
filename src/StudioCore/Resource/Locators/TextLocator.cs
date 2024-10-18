@@ -23,7 +23,7 @@ public static class TextLocator
         var rootPath = $"{Smithbox.GameRoot}\\msg\\";
         var filePattern = $".msgbnd";
 
-        if (Path.Exists(rootPath))
+        if (Directory.Exists(rootPath))
         {
             SearchFolder(rootPath, filePattern, rootOnly);
         }
@@ -41,7 +41,7 @@ public static class TextLocator
         var rootPath = $"{Smithbox.GameRoot}\\menu\\text\\";
         var filePattern = $".fmg";
 
-        if (Path.Exists(rootPath))
+        if (Directory.Exists(rootPath))
         {
             SearchFolder(rootPath, filePattern, rootOnly);
         }
@@ -106,7 +106,7 @@ public static class TextLocator
 
         foreach (var entry in Directory.GetFiles(GetFmgWrapperDirectory()))
         {
-
+            results.Add(entry);
         }
 
         return results;

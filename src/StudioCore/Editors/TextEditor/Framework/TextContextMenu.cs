@@ -43,9 +43,17 @@ public class TextContextMenu
     {
         if (ImGui.BeginPopupContextItem($"FmgContext##FmgContext{fmgInfo.ID}"))
         {
-            // TODO: add import FMG
+            if (ImGui.BeginMenu("Import FMG"))
+            {
+                FmgImporter.DisplayImportList();
 
-            // TODO: add export FMG
+                ImGui.EndMenu();
+            }
+
+            if (ImGui.Selectable("Export FMG"))
+            {
+                FmgExporter.DisplayExportModal(ExportType.All);
+            }
 
             ImGui.EndPopup();
         }
@@ -53,7 +61,7 @@ public class TextContextMenu
     /// <summary>
     /// Context menu for the selection in the FMG entry list
     /// </summary>
-    public void FmgEntryContextMenu(int index, FMG.Entry entry, bool isMultiselecting)
+    public void FmgEntryContextMenu(int index, FmgInfo fmgInfo, FMG.Entry entry, bool isMultiselecting)
     {
         if (ImGui.BeginPopupContextItem($"FmgEntryContext##FmgEntryContext{index}"))
         {
@@ -75,9 +83,19 @@ public class TextContextMenu
                 Screen.ActionHandler.DeleteEntries();
             }
 
-            // TODO: add import FMG.Entries
+            ImGui.Separator();
 
-            // TODO: add export FMG.Entries
+            if (ImGui.BeginMenu("Import Entries"))
+            {
+                FmgImporter.DisplayImportList();
+
+                ImGui.EndMenu();
+            }
+
+            if (ImGui.Selectable("Export Selected Entries"))
+            {
+                FmgExporter.DisplayExportModal(ExportType.Selected);
+            }
 
             ImGui.EndPopup();
         }

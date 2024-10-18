@@ -35,6 +35,7 @@ public class TextEditorScreen : EditorScreen
     public TextFmgEntryView FmgEntryView;
     public TextFmgEntryPropertyEditor FmgEntryPropertyEditor;
     public TextNewEntryCreationModal EntryCreationModal;
+    public TextExporterModal TextExportModal;
 
     public TextEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -58,6 +59,7 @@ public class TextEditorScreen : EditorScreen
         FmgEntryPropertyEditor = new TextFmgEntryPropertyEditor(this);
 
         EntryCreationModal = new TextNewEntryCreationModal(this);
+        TextExportModal = new TextExporterModal(this);
     }
 
     public string EditorName => "Text Editor";
@@ -252,6 +254,8 @@ public class TextEditorScreen : EditorScreen
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
+
+        FmgExporter.OnGui();
     }
 
     /// <summary>
@@ -266,6 +270,8 @@ public class TextEditorScreen : EditorScreen
 
             ActionHandler.OnProjectChanged();
             NamingTemplateManager.OnProjectChanged();
+
+            FmgImporter.OnProjectChanged();
         }
 
         TextBank.LoadTextFiles();

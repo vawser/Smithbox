@@ -90,7 +90,7 @@ public class ParamEditorTab
             if (Smithbox.ProjectType is ProjectType.ER && ParamBank.PrimaryBank.ParamVersion >= 11210015L)
             {
                 ImGui.Checkbox("Save regulation.bin as DCX.DFLT", ref CFG.Current.Param_SaveERAsDFLT);
-                UIHelper.ShowHoverTooltip("If enabled, the regulation will be saved with the DCX.DFLT compression instead of the ZSTD compression that Elden Ring uses post patch 1.12.1. Enable if you want to load the regulation in an older tool that doesn't support ZSTD compression.");
+                UIHelper.ShowHoverTooltip("If enabled, the regulation will be saved with the DCX.DFLT compression instead of the ZSTD compression that Elden Ring uses post patch 1.12.1.\n\nEnable if you want to load the regulation in an older tool that doesn't support ZSTD compression.");
             }
         }
 

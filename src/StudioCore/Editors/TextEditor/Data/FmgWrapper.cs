@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.TextEditor.Data;
+namespace StudioCore.Editors.TextEditor;
 
 [JsonSourceGenerationOptions(
     WriteIndented = true,
@@ -19,13 +19,15 @@ namespace StudioCore.Editors.TextEditor.Data;
 [JsonSerializable(typeof(FMG))]
 [JsonSerializable(typeof(FMG.Entry))]
 
+public partial class FmgWrapperSerializationContext
+    : JsonSerializerContext
+{ }
+
 public class FmgWrapper
 {
     public string Name { get; set; }
 
     public FMG Fmg { get; set; }
-
-    public bool Partial { get; set; }
 
     public FmgWrapper()
     {

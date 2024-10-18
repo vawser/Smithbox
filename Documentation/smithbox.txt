@@ -114,8 +114,12 @@ Text Editor:
  - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
  
 # PRIORITY
+- ADD: text merge: tool that will attempt to add unique/modified rows from X source into current project
 - ADD: global text search and replace: search term: show affected; apply button
 - ADD: sync with X Language (Container level -> apply modified rows + add unique rows into non-primary container (add option to apply prepend string, e.g. TRANSLATE:, so you can tag rows for translation)
-- ADD: FMG Import/Export: container level, fmg level, fmg entry level - Export to .smithbox/Workflow/Text/, generate import list from this folder
+- ADD: FMG Import/Export: fmg level, fmg entry level - Export to .smithbox/Workflow/Text/, generate import list from this folder
 
 
+- Added functionality for import/exporting FMG.Entries.
+ - Exported entries are saved in Workflow/FMG Wrappers/, with a unique name that identifies them in the import list
+ - Importing a FMG wrapper will either append or replace (user choice) the entries to the currently selected FMG in the editor

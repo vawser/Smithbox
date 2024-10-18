@@ -118,7 +118,7 @@ public class TextFmgEntryView
                         // Context Menu / Shortcuts
                         if (Selection.IsFmgEntrySelected(i))
                         {
-                            ContextMenu.FmgEntryContextMenu(i, entry, Selection.IsFmgEntrySelected(i));
+                            ContextMenu.FmgEntryContextMenu(i, Selection.SelectedFmgInfo, entry, Selection.IsFmgEntrySelected(i));
 
                             // Ignore if not currently in the FMG Entry context
                             if (Selection.CurrentSelectionContext is TextSelectionContext.FmgEntry)
