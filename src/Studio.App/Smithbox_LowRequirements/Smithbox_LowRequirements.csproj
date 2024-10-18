@@ -3,10 +3,10 @@
         <OutputType>WinExe</OutputType>
         <TargetFramework>net8.0-windows</TargetFramework>
         <Authors>Katalash, Vawser</Authors>
-        <Version>1.0.22</Version>
+        <Version>1.0.23</Version>
         <ApplicationIcon>icon.ico</ApplicationIcon>
-        <PackageVersion>1.0.22</PackageVersion>
-        <AssemblyVersion>1.0.22</AssemblyVersion>
+        <PackageVersion>1.0.23</PackageVersion>
+        <AssemblyVersion>1.0.23</AssemblyVersion>
         <ApplicationManifest>app.manifest</ApplicationManifest>
         <LangVersion>12</LangVersion>
         <IsPackable>false</IsPackable>
