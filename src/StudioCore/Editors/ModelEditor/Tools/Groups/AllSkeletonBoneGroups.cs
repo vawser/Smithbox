@@ -39,7 +39,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in AllSkeletonGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedAllSkeletonGroup = entry;
                         SelectedAllSkeletonList = ReadAllSkeletonGroup(entry);
@@ -56,7 +56,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in AllSkeletonGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedAllSkeletonGroup = entry;
                         SelectedAllSkeletonList = ReadAllSkeletonGroup(entry);

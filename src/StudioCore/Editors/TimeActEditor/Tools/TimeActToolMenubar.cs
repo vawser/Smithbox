@@ -34,7 +34,6 @@ public class TimeActToolMenubar
             ImGui.EndMenu();
             }
         }
-
         */
     }
 }

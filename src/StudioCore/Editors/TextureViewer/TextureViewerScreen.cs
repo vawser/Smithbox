@@ -24,7 +24,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public TexToolView ToolWindow;
     public TexToolMenubar ToolMenubar;
-    public TexActionMenubar ActionMenubar;
 
     public TexTools Tools;
 
@@ -51,7 +50,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         ToolWindow = new TexToolView(this);
         ToolMenubar = new TexToolMenubar(this);
-        ActionMenubar = new TexActionMenubar(this);
 
         FileContainerView = new TexFileContainerView(this);
         TextureListView = new TexTextureListView(this);
@@ -63,54 +61,78 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public string CommandEndpoint => "texture";
     public string SaveType => "Texture";
 
-    /// <summary>
-    /// The editor menubar
-    /// </summary>
-    public void DrawEditorMenu()
+    public void EditDropdown()
     {
-        // ImGui.Separator();
-
-        // ActionMenubar.DisplayMenu();
-
-        ImGui.Separator();
-
-        ToolMenubar.Display();
-
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Windows"))
+        if (ImGui.BeginMenu("Edit"))
         {
-            if (ImGui.Button("Files", UI.MenuButtonSize))
+            // Undo
+            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            {
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAction();
+                }
+            }
+
+            // Undo All
+            if (ImGui.MenuItem($"Undo All"))
+            {
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAllAction();
+                }
+            }
+
+            // Redo
+            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            {
+                if (EditorActionManager.CanRedo())
+                {
+                    EditorActionManager.RedoAction();
+                }
+            }
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.Separator();
+    }
+
+    public void ViewDropdown()
+    {
+        if (ImGui.BeginMenu("View"))
+        {
+            if (ImGui.MenuItem("Files"))
             {
                 UI.Current.Interface_TextureViewer_Files = !UI.Current.Interface_TextureViewer_Files;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Files);
 
-            if (ImGui.Button("Textures", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Textures"))
             {
                 UI.Current.Interface_TextureViewer_Textures = !UI.Current.Interface_TextureViewer_Textures;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Textures);
 
-            if (ImGui.Button("Viewer", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Viewer"))
             {
                 UI.Current.Interface_TextureViewer_Viewer = !UI.Current.Interface_TextureViewer_Viewer;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Viewer);
 
-            if (ImGui.Button("Properties", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Properties"))
             {
                 UI.Current.Interface_TextureViewer_Properties = !UI.Current.Interface_TextureViewer_Properties;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Properties);
 
-            if (ImGui.Button("Tool Window", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Tool Window"))
             {
                 UI.Current.Interface_TextureViewer_ToolConfiguration = !UI.Current.Interface_TextureViewer_ToolConfiguration;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_ToolConfiguration);
 
-            if (ImGui.Button("Resource List", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Resource List"))
             {
                 UI.Current.Interface_TextureViewer_ResourceList = !UI.Current.Interface_TextureViewer_ResourceList;
             }
@@ -118,6 +140,16 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
             ImGui.EndMenu();
         }
+
+        ImGui.Separator();
+    }
+
+    /// <summary>
+    /// The editor menubar
+    /// </summary>
+    public void EditorUniqueDropdowns()
+    {
+        ToolMenubar.Display();
     }
 
     /// <summary>

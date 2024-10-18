@@ -38,7 +38,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in NodeGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedNodeGroup = entry;
                         SelectedNodeList = ReadNodeGroup(entry);
@@ -55,7 +55,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in NodeGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedNodeGroup = entry;
                         SelectedNodeList = ReadNodeGroup(entry);

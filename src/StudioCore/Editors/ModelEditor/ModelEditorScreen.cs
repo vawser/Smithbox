@@ -51,7 +51,6 @@ public class ModelEditorScreen : EditorScreen
 
     public ModelToolView ToolView;
     public ModelToolMenubar ToolMenubar;
-    public ModelActionMenubar ActionMenubar;
 
     public ModelShortcuts EditorShortcuts;
     public ModelCommandQueue CommandQueue;
@@ -95,7 +94,6 @@ public class ModelEditorScreen : EditorScreen
         ActionHandler = new ModelActionHandler(this);
         Filters = new ModelFilters(this);
         ToolMenubar = new ModelToolMenubar(this);
-        ActionMenubar = new ModelActionMenubar(this);
 
         EditorShortcuts = new ModelShortcuts(this);
         AssetCopyManager = new ModelAssetCopyManager(this);
@@ -112,27 +110,21 @@ public class ModelEditorScreen : EditorScreen
     public string CommandEndpoint => "model";
     public string SaveType => "Models";
 
-    /// <summary>
-    /// Handle the editor menubar
-    /// </summary>
-    public void DrawEditorMenu()
+    public void EditDropdown()
     {
-        ImGui.Separator();
-
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
                     EditorActionManager.UndoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
 
             // Undo All
-            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo All"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -141,73 +133,87 @@ public class ModelEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
                     EditorActionManager.RedoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
+
+            ImGui.Separator();
+
+            if (ImGui.MenuItem("Create", KeyBindings.Current.CORE_CreateNewEntry.HintText))
+            {
+                ActionHandler.CreateHandler();
+            }
+            UIHelper.ShowHoverTooltip($"Adds new entry based on current selection in Model Hierarchy.");
+
+            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+            {
+                ActionHandler.DuplicateHandler();
+            }
+            UIHelper.ShowHoverTooltip($"Duplicates current selection in Model Hierarchy.");
+
+            if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
+            {
+                ActionHandler.DeleteHandler();
+            }
+            UIHelper.ShowHoverTooltip($"Deletes current selection in Model Hierarchy.");
 
             ImGui.EndMenu();
         }
 
         ImGui.Separator();
+    }
 
-        ActionMenubar.DisplayMenu();
-
-        ImGui.Separator();
-
-        ToolMenubar.DisplayMenu();
-
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Windows"))
+    public void ViewDropdown()
+    {
+        if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.Button("Viewport", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Viewport"))
             {
                 UI.Current.Interface_Editor_Viewport = !UI.Current.Interface_Editor_Viewport;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Viewport);
 
-            if (ImGui.Button("Model Hierarchy", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Model Hierarchy"))
             {
                 UI.Current.Interface_ModelEditor_ModelHierarchy = !UI.Current.Interface_ModelEditor_ModelHierarchy;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_ModelHierarchy);
 
-            if (ImGui.Button("Properties", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Properties"))
             {
                 UI.Current.Interface_ModelEditor_Properties = !UI.Current.Interface_ModelEditor_Properties;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_Properties);
 
-            if (ImGui.Button("Asset Browser", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Asset Browser"))
             {
                 UI.Current.Interface_ModelEditor_AssetBrowser = !UI.Current.Interface_ModelEditor_AssetBrowser;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_AssetBrowser);
 
-            if (ImGui.Button("Tool Window", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Tool Window"))
             {
                 UI.Current.Interface_ModelEditor_ToolConfigurationWindow = !UI.Current.Interface_ModelEditor_ToolConfigurationWindow;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_ToolConfigurationWindow);
 
-            if (ImGui.Button("Profiling", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Profiling"))
             {
                 UI.Current.Interface_Editor_Profiling = !UI.Current.Interface_Editor_Profiling;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Profiling);
 
-            if (ImGui.Button("Resource List", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Resource List"))
             {
                 UI.Current.Interface_ModelEditor_ResourceList = !UI.Current.Interface_ModelEditor_ResourceList;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_ResourceList);
 
-            if (ImGui.Button("Viewport Grid", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Viewport Grid"))
             {
                 UI.Current.Interface_ModelEditor_Viewport_Grid = !UI.Current.Interface_ModelEditor_Viewport_Grid;
                 CFG.Current.ModelEditor_Viewport_RegenerateMapGrid = true;
@@ -218,12 +224,21 @@ public class ModelEditorScreen : EditorScreen
         }
 
         ImGui.Separator();
+    }
+    /// <summary>
+    /// Handle the editor menubar
+    /// </summary>
+    public void EditorUniqueDropdowns()
+    {
+        ToolMenubar.DisplayMenu();
+
+        ImGui.Separator();
 
         if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
         {
             ModelContainer container = _universe.LoadedModelContainer;
 
-            if (ImGui.Button("Meshes", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Meshes"))
             {
                 CFG.Current.ModelEditor_ViewMeshes = !CFG.Current.ModelEditor_ViewMeshes;
 
@@ -238,7 +253,7 @@ public class ModelEditorScreen : EditorScreen
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
             UIHelper.ShowHoverTooltip("Only applies on model reload.");
 
-            if (ImGui.Button("Dummy Polygons", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Dummy Polygons"))
             {
                 CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
 
@@ -252,7 +267,7 @@ public class ModelEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewDummyPolys);
 
-            if (ImGui.Button("Bones", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Bones"))
             {
                 CFG.Current.ModelEditor_ViewBones = !CFG.Current.ModelEditor_ViewBones;
 
@@ -270,7 +285,7 @@ public class ModelEditorScreen : EditorScreen
             if (Smithbox.ProjectType is ProjectType.ER)
             {
                 // High
-                if (ImGui.Button("Collision (High)", UI.MenuButtonWideSize))
+                if (ImGui.MenuItem("Collision (High)"))
                 {
                     CFG.Current.ModelEditor_ViewHighCollision = !CFG.Current.ModelEditor_ViewHighCollision;
                 }
@@ -278,7 +293,7 @@ public class ModelEditorScreen : EditorScreen
                 UIHelper.ShowHoverTooltip("Only applies on model reload.");
 
                 // Low
-                if (ImGui.Button("Collision (Low)", UI.MenuButtonWideSize))
+                if (ImGui.MenuItem("Collision (Low)"))
                 {
                     CFG.Current.ModelEditor_ViewLowCollision = !CFG.Current.ModelEditor_ViewLowCollision;
                 }
@@ -308,51 +323,51 @@ public class ModelEditorScreen : EditorScreen
         {
             if (ImGui.BeginMenu("Mode"))
             {
-                if (ImGui.Button("Translate", UI.MenuButtonSize))
+                if (ImGui.MenuItem("Translate", KeyBindings.Current.VIEWPORT_GizmoTranslationMode.HintText))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Translate;
                 }
-                UIHelper.ShowHoverTooltip($"Set the gizmo to Translation mode.\n{KeyBindings.Current.VIEWPORT_GizmoTranslationMode.HintText}");
+                UIHelper.ShowHoverTooltip($"Set the gizmo to Translation mode.");
 
-                if (ImGui.Button("Rotate", UI.MenuButtonSize))
+                if (ImGui.MenuItem("Rotate", KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Rotate;
                 }
-                UIHelper.ShowHoverTooltip($"Set the gizmo to Rotation mode.\n{KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText}");
+                UIHelper.ShowHoverTooltip($"Set the gizmo to Rotation mode.");
 
                 ImGui.EndMenu();
             }
 
             if (ImGui.BeginMenu("Space"))
             {
-                if (ImGui.Button("Local", UI.MenuButtonSize))
+                if (ImGui.MenuItem("Local", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.Local;
                 }
-                UIHelper.ShowHoverTooltip($"Place the gizmo origin based on the selection's local position.\n{KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText}");
+                UIHelper.ShowHoverTooltip($"Place the gizmo origin based on the selection's local position.");
 
-                if (ImGui.Button("World", UI.MenuButtonSize))
+                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.World;
                 }
-                UIHelper.ShowHoverTooltip($"Place the gizmo origin based on the selection's world position.\n{KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText}");
+                UIHelper.ShowHoverTooltip($"Place the gizmo origin based on the selection's world position.");
 
                 ImGui.EndMenu();
             }
 
             if (ImGui.BeginMenu("Origin"))
             {
-                if (ImGui.Button("World", UI.MenuButtonSize))
+                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.World;
                 }
-                UIHelper.ShowHoverTooltip($"Orient the gizmo origin based on the world position.\n{KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText}");
+                UIHelper.ShowHoverTooltip($"Orient the gizmo origin based on the world position.");
 
-                if (ImGui.Button("Bounding Box", UI.MenuButtonSize))
+                if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
                 }
-                UIHelper.ShowHoverTooltip($"Orient the gizmo origin based on the bounding box.\n{KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText}");
+                UIHelper.ShowHoverTooltip($"Orient the gizmo origin based on the bounding box.");
 
                 ImGui.EndMenu();
             }
@@ -425,7 +440,6 @@ public class ModelEditorScreen : EditorScreen
 
             ToolView.OnProjectChanged();
             ToolMenubar.OnProjectChanged();
-            ActionMenubar.OnProjectChanged();
         }
 
     }

@@ -36,7 +36,7 @@ public class EmevdActionMenubar
         if (ImGui.BeginMenu("Actions"))
         {
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.Button("Test", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Test"))
             {
 
             }

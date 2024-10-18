@@ -38,7 +38,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in MaterialGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedMaterialGroup = entry;
                         SelectedMaterialList = ReadMaterialGroup(entry);
@@ -55,7 +55,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in MaterialGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedMaterialGroup = entry;
                         SelectedMaterialList = ReadMaterialGroup(entry);

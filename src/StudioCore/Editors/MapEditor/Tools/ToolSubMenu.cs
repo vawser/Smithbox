@@ -67,11 +67,10 @@ public class ToolSubMenu
             ///--------------------
             /// Color Picker
             ///--------------------
-            if (ImGui.Button("Color Picker", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Color Picker"))
             {
                 ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.TEXTURE_ExportTexture.HintText}");
 
             ImGui.Separator();
 
@@ -83,14 +82,14 @@ public class ToolSubMenu
                 ImGui.InputText("##targetTag", ref CFG.Current.Toolbar_Tag_Visibility_Target, 255);
                 UIHelper.ShowHoverTooltip("Specific which tag the map objects will be filtered by.");
 
-                if (ImGui.Button("Enable Visibility", UI.MenuButtonWideSize))
+                if (ImGui.MenuItem("Enable Visibility"))
                 {
                     CFG.Current.Toolbar_Tag_Visibility_State_Enabled = true;
                     CFG.Current.Toolbar_Tag_Visibility_State_Disabled = false;
 
                     Handler.ApplyEditorVisibilityChangeByTag();
                 }
-                if (ImGui.Button("Disable Visibility", UI.MenuButtonWideSize))
+                if (ImGui.MenuItem("Disable Visibility"))
                 {
                     CFG.Current.Toolbar_Tag_Visibility_State_Enabled = false;
                     CFG.Current.Toolbar_Tag_Visibility_State_Disabled = true;
@@ -108,11 +107,11 @@ public class ToolSubMenu
             {
                 if (ImGui.BeginMenu("Patrol Route Visualisation"))
                 {
-                    if (ImGui.Button("Display", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem("Display"))
                     {
                         PatrolDrawManager.Generate(Screen.Universe);
                     }
-                    if (ImGui.Button("Clear", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem("Clear"))
                     {
                         PatrolDrawManager.Clear();
                     }
@@ -128,7 +127,7 @@ public class ToolSubMenu
             {
                 if (ImGui.BeginMenu("Navigation Data"))
                 {
-                    if (ImGui.Button("Generate", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem("Generate"))
                     {
                         Handler.GenerateNavigationData();
                     }
@@ -162,7 +161,7 @@ public class ToolSubMenu
                             ImGui.EndCombo();
                         }
 
-                        if (ImGui.Button("Check", UI.MenuButtonWideSize))
+                        if (ImGui.MenuItem("Check"))
                         {
                             Handler.ApplyEntityChecker();
                         }
@@ -198,7 +197,7 @@ public class ToolSubMenu
                             ImGui.EndCombo();
                         }
 
-                        if (ImGui.Button("Apply Names", UI.MenuButtonWideSize))
+                        if (ImGui.MenuItem("Apply Names"))
                         {
                             Handler.ApplyMapObjectNames();
                         }

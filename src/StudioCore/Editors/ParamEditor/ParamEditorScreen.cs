@@ -104,7 +104,7 @@ public class ParamEditorScreen : EditorScreen
 
     public ToolWindow ToolWindow;
     public ToolSubMenu ToolSubMenu;
-    public ActionSubMenu ActionSubMenu;
+    public ActionHandler Handler;
 
     private bool HasSetupFmgDecorators = false;
 
@@ -112,7 +112,7 @@ public class ParamEditorScreen : EditorScreen
     {
         ToolWindow = new ToolWindow(this);
         ToolSubMenu = new ToolSubMenu(this);
-        ActionSubMenu = new ActionSubMenu(this);
+        Handler = new ActionHandler(this);
 
         _views = new List<ParamEditorView>();
         _views.Add(new ParamEditorView(this, 0));
@@ -123,25 +123,21 @@ public class ParamEditorScreen : EditorScreen
     public string CommandEndpoint => "param";
     public string SaveType => "Params";
 
-    public void DrawEditorMenu()
+    public void EditDropdown()
     {
-        ImGui.Separator();
-
-        // Menu Options
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
                     EditorActionManager.UndoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
 
             // Undo All
-            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo All"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -150,37 +146,72 @@ public class ParamEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
                     EditorActionManager.RedoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
+
+            ImGui.Separator();
+
+            if (ImGui.MenuItem("Duplicate Row", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+            {
+                Handler.DuplicateHandler();
+            }
+            UIHelper.ShowHoverTooltip($"Duplicates current selection.");
+
+            if (ImGui.MenuItem("Remove Row", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
+            {
+                DeleteSelection();
+            }
+            UIHelper.ShowHoverTooltip($"Deletes current selection.");
+
+            if (ImGui.MenuItem("Copy", KeyBindings.Current.PARAM_CopyToClipboard.HintText))
+            {
+                if (_activeView._selection.RowSelectionExists())
+                {
+                    CopySelectionToClipboard();
+                }
+            }
+            UIHelper.ShowHoverTooltip($"Copy current selection to clipboard.");
+
+            if (ImGui.MenuItem("Paste", KeyBindings.Current.PARAM_PasteClipboard.HintText))
+            {
+                if (ParamBank.ClipboardRows.Any())
+                {
+                    EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
+                }
+            }
+            UIHelper.ShowHoverTooltip($"Paste current selection into current param.");
+
+            if (ImGui.MenuItem("Go to selected row", KeyBindings.Current.PARAM_GoToSelectedRow.HintText))
+            {
+                if (_activeView._selection.RowSelectionExists())
+                {
+                    GotoSelectedRow = true;
+                }
+            }
+            UIHelper.ShowHoverTooltip($"Go to currently selected row.");
 
             ImGui.EndMenu();
         }
 
         ImGui.Separator();
+    }
 
-        ActionSubMenu.DisplayMenu();
-
-        ImGui.Separator();
-
-        ToolSubMenu.DisplayMenu();
-
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Windows"))
+    public void ViewDropdown()
+    {
+        if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.Button("Editor", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Editor"))
             {
                 UI.Current.Interface_ParamEditor_Table = !UI.Current.Interface_ParamEditor_Table;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ParamEditor_Table);
 
-            if (ImGui.Button("Tool Window", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Tool Window"))
             {
                 UI.Current.Interface_ParamEditor_ToolConfiguration = !UI.Current.Interface_ParamEditor_ToolConfiguration;
             }
@@ -190,14 +221,21 @@ public class ParamEditorScreen : EditorScreen
         }
 
         ImGui.Separator();
+    }
 
-        if (ImGui.BeginMenu("CSV"))
+    public void EditorUniqueDropdowns()
+    {
+        ToolSubMenu.DisplayMenu();
+
+        ImGui.Separator();
+
+        if (ImGui.BeginMenu("Data"))
         {
             if (ImGui.BeginMenu("Export CSV", _activeView._selection.ActiveParamExists()))
             {
                 DelimiterInputText();
 
-                if (ImGui.Button("All rows", UI.MenuButtonWideSize))
+                if (ImGui.MenuItem("All rows"))
                 {
                     CsvExportDisplay(ParamBank.RowGetType.AllRows);
                     ImGui.EndMenu();
@@ -207,19 +245,19 @@ public class ParamEditorScreen : EditorScreen
 
                 if (ImGui.BeginMenu("Quick action"))
                 {
-                    if (ImGui.Button("Export selected Names to window", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem("Export selected Names to window"))
                     {
                         EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/2");
                     }
                     UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExportCSV.HintText}");
 
-                    if (ImGui.Button("Export entire param to window", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem("Export entire param to window"))
                     {
                         EditorCommandQueue.AddCommand(@"param/menu/massEditCSVExport/0");
                     }
                     UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExportCSV.HintText}");
 
-                    if (ImGui.Button("Export entire param to file", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem("Export entire param to file"))
                     {
                         if (SaveCsvDialog(out var path))
                         {
@@ -247,7 +285,7 @@ public class ParamEditorScreen : EditorScreen
 
                 if (ImGui.BeginMenu("All params"))
                 {
-                    if (ImGui.Button("Export all params to file", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem("Export all params to file"))
                     {
                         if (PlatformUtils.Instance.OpenFolderDialog("Choose CSV directory", out var path))
                         {
@@ -271,13 +309,12 @@ public class ParamEditorScreen : EditorScreen
             {
                 DelimiterInputText();
 
-                if (ImGui.Button("All fields", UI.MenuButtonWideSize))
+                if (ImGui.MenuItem("All fields", KeyBindings.Current.PARAM_ImportCSV.HintText))
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/massEditCSVImport");
                 }
-                UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ImportCSV.HintText}");
 
-                if (ImGui.Button("Row Name", UI.MenuButtonWideSize))
+                if (ImGui.MenuItem("Row Name"))
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/massEditSingleCSVImport/Name");
                 }
@@ -286,7 +323,7 @@ public class ParamEditorScreen : EditorScreen
                 {
                     foreach (PARAMDEF.Field field in ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()].AppliedParamdef.Fields)
                     {
-                        if (ImGui.Button(field.InternalName, UI.MenuButtonWideSize))
+                        if (ImGui.MenuItem(field.InternalName))
                         {
                             EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVImport/{field.InternalName}");
                         }
@@ -297,7 +334,7 @@ public class ParamEditorScreen : EditorScreen
 
                 if (ImGui.BeginMenu("From file...", _activeView._selection.ActiveParamExists()))
                 {
-                    if (ImGui.Button("All fields", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem("All fields"))
                     {
                         if (ReadCsvDialog(out var csv))
                         {
@@ -323,7 +360,7 @@ public class ParamEditorScreen : EditorScreen
                             }
                         }
                     }
-                    if (ImGui.Button("Row Name", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem("Row Name"))
                     {
                         if (ReadCsvDialog(out var csv))
                         {
@@ -351,7 +388,7 @@ public class ParamEditorScreen : EditorScreen
                     {
                         foreach (PARAMDEF.Field field in ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()].AppliedParamdef.Fields)
                         {
-                            if (ImGui.Button(field.InternalName, UI.MenuButtonWideSize))
+                            if (ImGui.MenuItem(field.InternalName))
                             {
                                 if (ReadCsvDialog(out var csv))
                                 {
@@ -393,12 +430,12 @@ public class ParamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Overviews"))
         {
-            if (ImGui.Button("New Overview", UI.MenuButtonSize))
+            if (ImGui.MenuItem("New Overview"))
             {
                 AddView();
             }
 
-            if (ImGui.Button("Close Overview", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Close Overview"))
             {
                 if (CountViews() > 1)
                 {
@@ -421,18 +458,18 @@ public class ParamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Comparison"))
         {
-            if (ImGui.Button("View comparison report", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("View comparison report"))
             {
                 ParamComparisonReport.ViewReport();
             }
             UIHelper.ShowHoverTooltip("View a text report that details the differences between the current project params and the vanilla params.");
 
-            if (ImGui.Button("Toggle vanilla param column", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Toggle vanilla param column"))
             {
                 CFG.Current.Param_ShowVanillaParams = !CFG.Current.Param_ShowVanillaParams;
             }
 
-            if (ImGui.Button("Clear current row comparison", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Clear current row comparison"))
             {
                 if (_activeView != null && _activeView._selection.GetCompareRow() != null)
                 {
@@ -440,7 +477,7 @@ public class ParamEditorScreen : EditorScreen
                 }
             }
 
-            if (ImGui.Button("Clear current field comparison", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Clear current field comparison"))
             {
                 if (_activeView != null && _activeView._selection.GetCompareCol() != null)
                 {
@@ -448,7 +485,7 @@ public class ParamEditorScreen : EditorScreen
                 }
             }
 
-            if (ImGui.Button("Clear all param comparisons", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Clear all param comparisons"))
             {
                 if (ParamBank.AuxBanks.Count > 0)
                 {
@@ -456,7 +493,7 @@ public class ParamEditorScreen : EditorScreen
                 }
             }
 
-            if (ImGui.Button("Load params for comparison...", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Load params for comparison..."))
             {
                 string[] allParamTypes =
                 {
@@ -526,7 +563,7 @@ public class ParamEditorScreen : EditorScreen
                 for (var i = 0; i < ParamBank.AuxBanks.Count; i++)
                 {
                     KeyValuePair<string, ParamBank> pb = ParamBank.AuxBanks.ElementAt(i);
-                    if (ImGui.Button(pb.Key, UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem(pb.Key))
                     {
                         ParamBank.AuxBanks.Remove(pb.Key);
                         break;
@@ -593,7 +630,7 @@ public class ParamEditorScreen : EditorScreen
 
             if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
             {
-                ActionSubMenu.Handler.DuplicateHandler();
+                Handler.DuplicateHandler();
             }
 
             if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
@@ -607,7 +644,6 @@ public class ParamEditorScreen : EditorScreen
             }
         }
 
-        ActionSubMenu.Shortcuts();
         ToolSubMenu.Shortcuts();
         ToolWindow.Shortcuts();
 
@@ -890,7 +926,6 @@ public class ParamEditorScreen : EditorScreen
     {
         ToolWindow.OnProjectChanged();
         ToolSubMenu.OnProjectChanged();
-        ActionSubMenu.OnProjectChanged();
 
         foreach (ParamEditorView view in _views)
         {
@@ -1378,22 +1413,21 @@ public class ParamEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("Export to window..."))
         {
-            if (ImGui.Button("Export all fields", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Export all fields", KeyBindings.Current.PARAM_ExportCSV.HintText))
             {
                 EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/{rowType}");
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExportCSV.HintText}");
 
             if (ImGui.BeginMenu("Export specific field"))
             {
-                if (ImGui.Button("Row name", UI.MenuButtonWideSize))
+                if (ImGui.MenuItem("Row name"))
                 {
                     EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/{rowType}");
                 }
 
                 foreach (PARAMDEF.Field field in ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()].AppliedParamdef.Fields)
                 {
-                    if (ImGui.Button(field.InternalName, UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem(field.InternalName))
                     {
                         EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/{field.InternalName}/{rowType}");
                     }
@@ -1407,7 +1441,7 @@ public class ParamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Export to file..."))
         {
-            if (ImGui.Button("Export all fields", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Export all fields"))
             {
                 if (SaveCsvDialog(out var path))
                 {
@@ -1422,7 +1456,7 @@ public class ParamEditorScreen : EditorScreen
 
             if (ImGui.BeginMenu("Export specific field"))
             {
-                if (ImGui.Button("Row name", UI.MenuButtonWideSize))
+                if (ImGui.MenuItem("Row name"))
                 {
                     if (SaveCsvDialog(out var path))
                     {
@@ -1438,7 +1472,7 @@ public class ParamEditorScreen : EditorScreen
 
                 foreach (PARAMDEF.Field field in ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()].AppliedParamdef.Fields)
                 {
-                    if (ImGui.Button(field.InternalName, UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem(field.InternalName))
                     {
                         if (SaveCsvDialog(out var path))
                         {

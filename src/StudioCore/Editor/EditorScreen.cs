@@ -28,9 +28,25 @@ public interface EditorScreen
     public void OnProjectChanged();
 
     /// <summary>
-    ///     Draw the ImGui menu specific to this editor
+    /// Draw the ImGui menu specific to this editor
     /// </summary>
-    public void DrawEditorMenu()
+    public void EditDropdown()
+    {
+
+    }
+
+    /// <summary>
+    /// Draw the ImGui menu specific to this editor
+    /// </summary>
+    public void ViewDropdown()
+    {
+
+    }
+
+    /// <summary>
+    /// Draw the ImGui menu specific to this editor
+    /// </summary>
+    public void EditorUniqueDropdowns()
     {
         // Default
     }

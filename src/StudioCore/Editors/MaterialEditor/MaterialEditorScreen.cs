@@ -40,9 +40,50 @@ public class MaterialEditorScreen : EditorScreen
     public string CommandEndpoint => "material";
     public string SaveType => "Material";
 
-    public void DrawEditorMenu()
+    public void EditDropdown()
     {
+        if (ImGui.BeginMenu("Edit"))
+        {
+            // Undo
+            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
+            {
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAction();
+                }
+            }
+
+            // Undo All
+            if (ImGui.MenuItem($"Undo All"))
+            {
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAllAction();
+                }
+            }
+
+            // Redo
+            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
+            {
+                if (EditorActionManager.CanRedo())
+                {
+                    EditorActionManager.RedoAction();
+                }
+            }
+
+            ImGui.EndMenu();
+        }
+
         ImGui.Separator();
+    }
+
+    public void ViewDropdown()
+    {
+
+    }
+
+    public void EditorUniqueDropdowns()
+    {
 
     }
 

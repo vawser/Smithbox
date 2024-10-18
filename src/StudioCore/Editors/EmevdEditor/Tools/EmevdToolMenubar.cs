@@ -32,7 +32,7 @@ public class EmevdToolMenubar
         if (ImGui.BeginMenu("Tools"))
         {
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
-            if (ImGui.Button("Test", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Test"))
             {
 
             }

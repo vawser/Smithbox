@@ -54,24 +54,21 @@ public class HavokEditorScreen : EditorScreen
     public string CommandEndpoint => "Havok";
     public string SaveType => "Havok";
 
-    public void DrawEditorMenu()
+    public void EditDropdown()
     {
-        ImGui.Separator();
-
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
                     EditorActionManager.UndoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
 
             // Undo All
-            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo All"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -80,40 +77,34 @@ public class HavokEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
                     EditorActionManager.RedoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
 
             ImGui.EndMenu();
         }
 
         ImGui.Separator();
+    }
 
+    public void ViewDropdown()
+    {
+
+    }
+
+    public void EditorUniqueDropdowns()
+    {
         //ActionMenubar.Display();
 
-        ImGui.Separator();
+        //ImGui.Separator();
 
         //ToolMenubar.Display();
 
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Windows"))
-        {
-            /*
-            if (ImGui.Button("Files", UI.MenuButtonSize))
-            {
-                UI.Current.Interface_EmevdEditor_Files = !UI.Current.Interface_EmevdEditor_Files;
-            }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_Files);
-            */
-
-            ImGui.EndMenu();
-        }
+        //ImGui.Separator();
     }
 
     public void OnGUI(string[] initcmd)

@@ -61,15 +61,6 @@ public class CutsceneEditorScreen : EditorScreen
         ActionMenubar = new CutsceneActionMenubar(this);
         ToolMenubar = new CutsceneToolMenubar(this);
         ToolView = new CutsceneToolView(this);
-    }
-
-    public string EditorName => "Cutscene Editor##CutsceneEditor";
-    public string CommandEndpoint => "cutscene";
-    public string SaveType => "Cutscene";
-
-    public void DrawEditorMenu()
-    {
-        ImGui.Separator();
 
         CutsceneFileList = new CutsceneFileView(this);
         CutsceneList = new CutsceneListView(this);
@@ -96,6 +87,25 @@ public class CutsceneEditorScreen : EditorScreen
         DispositionSequencePointProperties = new DispositionSequencePointPropertyView(this);
 
         ResourceList = new ResourceListView(this);
+    }
+
+    public string EditorName => "Cutscene Editor##CutsceneEditor";
+    public string CommandEndpoint => "cutscene";
+    public string SaveType => "Cutscene";
+
+    public void EditDropdown()
+    {
+
+    }
+
+    public void ViewDropdown()
+    {
+
+    }
+
+    public void EditorUniqueDropdowns()
+    {
+
     }
 
     public void OnGUI(string[] initcmd)

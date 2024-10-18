@@ -61,59 +61,65 @@ public class ParticleEditorScreen : EditorScreen
     public string CommandEndpoint => "particle";
     public string SaveType => "Particle";
 
-    public void DrawEditorMenu()
+    public void EditDropdown()
     {
-        ImGui.Separator();
-
         if (ImGui.BeginMenu("Edit"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}", false, EditorActionManager.CanUndo()))
+            // Undo
+            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
             {
-                EditorActionManager.UndoAction();
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAction();
+                }
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Undo}");
-            if (ImGui.MenuItem("Undo All", "", false, EditorActionManager.CanUndo()))
+            // Undo All
+            if (ImGui.MenuItem($"Undo All"))
             {
-                EditorActionManager.UndoAllAction();
+                if (EditorActionManager.CanUndo())
+                {
+                    EditorActionManager.UndoAllAction();
+                }
             }
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Repeat}");
-            if (ImGui.MenuItem("Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}", false, EditorActionManager.CanRedo()))
+            // Redo
+            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
             {
-                EditorActionManager.RedoAction();
+                if (EditorActionManager.CanRedo())
+                {
+                    EditorActionManager.RedoAction();
+                }
             }
 
             ImGui.EndMenu();
         }
 
         ImGui.Separator();
+    }
 
-        if (ImGui.BeginMenu("Windows"))
+    public void ViewDropdown()
+    {
+        if (ImGui.BeginMenu("View"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Files"))
             {
                 UI.Current.Interface_ParticleEditor_Files = !UI.Current.Interface_ParticleEditor_Files;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ParticleEditor_Files);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Particles"))
             {
                 UI.Current.Interface_ParticleEditor_Particles = !UI.Current.Interface_ParticleEditor_Particles;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ParticleEditor_Particles);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Data"))
             {
                 UI.Current.Interface_ParticleEditor_Data = !UI.Current.Interface_ParticleEditor_Data;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_ParticleEditor_Data);
 
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Toolbar"))
             {
                 UI.Current.Interface_ParticleEditor_Toolbar = !UI.Current.Interface_ParticleEditor_Toolbar;
@@ -122,6 +128,13 @@ public class ParticleEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+
+        ImGui.Separator();
+    }
+
+    public void EditorUniqueDropdowns()
+    {
+
     }
 
     public void OnGUI(string[] initcmd)

@@ -37,7 +37,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in FLVERGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedFLVERGroup = entry;
                         SelectedFLVERList = ReadFLVERGroup(entry);

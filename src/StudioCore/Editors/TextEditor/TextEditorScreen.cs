@@ -29,7 +29,6 @@ public class TextEditorScreen : EditorScreen
 
     public TextToolView ToolView;
     public TextToolMenubar ToolMenubar;
-    public TextActionMenubar ActionMenubar;
 
     public TextFileView FileView;
     public TextFmgView FmgView;
@@ -52,7 +51,6 @@ public class TextEditorScreen : EditorScreen
 
         ToolView = new TextToolView(this);
         ToolMenubar = new TextToolMenubar(this);
-        ActionMenubar = new TextActionMenubar(this);
 
         FileView = new TextFileView(this);
         FmgView = new TextFmgView(this);
@@ -66,27 +64,21 @@ public class TextEditorScreen : EditorScreen
     public string CommandEndpoint => "text";
     public string SaveType => "Text";
 
-    /// <summary>
-    /// The editor menubar
-    /// </summary>
-    public void DrawEditorMenu()
+    public void EditDropdown()
     {
-        ImGui.Separator();
-
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
                     EditorActionManager.UndoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
 
             // Undo All
-            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo All"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -95,63 +87,94 @@ public class TextEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
                     EditorActionManager.RedoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
+
+            ImGui.Separator();
+
+            // Create
+            if (ImGui.MenuItem("Create", KeyBindings.Current.CORE_CreateNewEntry.HintText))
+            {
+                EntryCreationModal.ShowModal = true;
+            }
+            UIHelper.ShowHoverTooltip($"Create new text entries.");
+
+            // Duplicate
+            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+            {
+                ActionHandler.DuplicateEntries();
+            }
+            UIHelper.ShowHoverTooltip($"Duplicate the currently selected text entries.");
+
+            // Delete
+            if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
+            {
+                ActionHandler.DeleteEntries();
+            }
+            UIHelper.ShowHoverTooltip($"Delete the currently selected text entries.");
 
             ImGui.EndMenu();
         }
 
         ImGui.Separator();
+    }
 
-        ActionMenubar.Display();
-
-        //ImGui.Separator();
-
-        //ToolMenubar.Display();
-
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Windows"))
+    public void ViewDropdown()
+    {
+        if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.Button("Files", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Files"))
             {
                 UI.Current.Interface_TextEditor_FileContainerList = !UI.Current.Interface_TextEditor_FileContainerList;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_FileContainerList);
 
-            if (ImGui.Button("Text Files", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Text Files"))
             {
                 UI.Current.Interface_TextEditor_FmgList = !UI.Current.Interface_TextEditor_FmgList;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_FmgList);
 
-            if (ImGui.Button("Text Entries", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Text Entries"))
             {
                 UI.Current.Interface_TextEditor_FmgEntryList = !UI.Current.Interface_TextEditor_FmgEntryList;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_FmgEntryList);
 
-            if (ImGui.Button("Contents", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Contents"))
             {
                 UI.Current.Interface_TextEditor_FmgEntryProperties = !UI.Current.Interface_TextEditor_FmgEntryProperties;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_FmgEntryProperties);
 
-            if (ImGui.Button("Tool Window", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Tool Window"))
             {
                 UI.Current.Interface_TextEditor_ToolConfigurationWindow = !UI.Current.Interface_TextEditor_ToolConfigurationWindow;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_ToolConfigurationWindow);
 
-
             ImGui.EndMenu();
         }
+
+        // ImGui.Separator();
+    }
+
+    /// <summary>
+    /// The editor menubar
+    /// </summary>
+    public void EditorUniqueDropdowns()
+    {
+        // Data
+
+        // ImGui.Separator();
+
+        // Tools
+        // ToolMenubar.Display();
     }
 
     /// <summary>

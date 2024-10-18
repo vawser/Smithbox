@@ -37,7 +37,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in DummyGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedDummyGroup = entry;
                         SelectedDummyList = ReadDummyGroup(entry);
@@ -54,7 +54,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in DummyGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedDummyGroup = entry;
                         SelectedDummyList = ReadDummyGroup(entry);

@@ -35,7 +35,7 @@ public class GparamToolMenubar
         if (ImGui.BeginMenu("Tools"))
         {
             // Color Picker
-            if (ImGui.Button("Color Picker", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Color Picker"))
             {
                 ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
             }
@@ -50,11 +50,10 @@ public class GparamToolMenubar
                 UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
                 if (ImGui.BeginMenu("Gparam Reloader"))
                 {
-                    if (ImGui.Button("Current Gparam", UI.MenuButtonSize))
+                    if (ImGui.MenuItem("Current Gparam", KeyBindings.Current.GPARAM_ReloadParam.HintText))
                     {
                         GparamMemoryTools.ReloadCurrentGparam(Screen.Selection._selectedGparamInfo);
                     }
-                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.GPARAM_ReloadParam.HintText}");
 
                     ImGui.EndMenu();
                 }

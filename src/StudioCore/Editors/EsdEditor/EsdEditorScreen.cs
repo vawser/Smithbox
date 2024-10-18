@@ -58,27 +58,21 @@ public class EsdEditorScreen : EditorScreen
     public string CommandEndpoint => "esd";
     public string SaveType => "ESD";
 
-    /// <summary>
-    /// The editor menubar
-    /// </summary>
-    public void DrawEditorMenu()
+    public void EditDropdown()
     {
-        ImGui.Separator();
-
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
                     EditorActionManager.UndoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
 
             // Undo All
-            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo All"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -87,25 +81,37 @@ public class EsdEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
                     EditorActionManager.RedoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
 
             ImGui.EndMenu();
         }
 
         ImGui.Separator();
+    }
 
+    public void ViewDropdown()
+    {
+
+    }
+
+    /// <summary>
+    /// The editor menubar
+    /// </summary>
+    public void EditorUniqueDropdowns()
+    {
         ActionMenubar.Display();
 
         ImGui.Separator();
 
         ToolMenubar.Display();
+
+        ImGui.Separator();
     }
 
     /// <summary>

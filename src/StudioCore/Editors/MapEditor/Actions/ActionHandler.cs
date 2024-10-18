@@ -246,7 +246,7 @@ public class ActionHandler
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth, 32);
 
-            if (ImGui.Button("Duplicate##duplicateToMapButton", defaultButtonSize))
+            if (ImGui.MenuItem("Duplicate##duplicateToMapButton"))
             {
                 Entity? targetParent = _dupeSelectionTargetedParent.Item2;
 
@@ -258,7 +258,7 @@ public class ActionHandler
         }
         else if(isActionSubMenu)
         {
-            if(ImGui.Button("Duplicate##duplicateToMapMenuButton", UI.MenuButtonWideSize))
+            if(ImGui.MenuItem("Duplicate##duplicateToMapMenuButton"))
             {
                 Entity? targetParent = _dupeSelectionTargetedParent.Item2;
 
@@ -270,7 +270,7 @@ public class ActionHandler
         }
         else
         {
-            if (ImGui.Button("Duplicate##duplicateToMapMenuButtonPopup", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Duplicate##duplicateToMapMenuButtonPopup"))
             {
                 Entity? targetParent = _dupeSelectionTargetedParent.Item2;
 

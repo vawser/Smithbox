@@ -38,7 +38,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in BufferLayoutGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedBufferLayoutGroup = entry;
                         SelectedBufferLayoutList = ReadBufferLayoutGroup(entry);
@@ -55,7 +55,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in BufferLayoutGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedBufferLayoutGroup = entry;
                         SelectedBufferLayoutList = ReadBufferLayoutGroup(entry);

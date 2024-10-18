@@ -61,8 +61,9 @@ public class Smithbox
 
     private readonly string _version;
 
-    private bool _programUpdateAvailable;
-    private string _releaseUrl = "";
+    public static bool _programUpdateAvailable;
+    public static string _releaseUrl = "";
+
     private bool _showImGuiDebugLogWindow;
 
     // ImGui Debug windows
@@ -490,29 +491,23 @@ public class Smithbox
 
         if (ImGui.BeginMainMenuBar())
         {
-            WindowHandler.HandleWindowBar();
-            EditorHandler.HandleEditorSharedBar();
-            EditorHandler.FocusedEditor.DrawEditorMenu();
+            WindowHandler.ProjectDropdown();
+            EditorHandler.FileDropdown();
+            EditorHandler.FocusedEditor.EditDropdown();
+            EditorHandler.FocusedEditor.ViewDropdown();
+            EditorHandler.FocusedEditor.EditorUniqueDropdowns();
 
             TaskLogs.DisplayLoggerBar();
+            ImGui.Separator();
             TaskLogs.DisplayWindow();
 
-            // Program Update
-            if (_programUpdateAvailable)
-            {
-                ImGui.Separator();
+            WindowHandler.HelpDropdown();
+            WindowHandler.SettingsDropdown();
+            WindowHandler.AliasDropdown();
+            WindowHandler.KeybindsDropdown();
+            WindowHandler.DebugDropdown();
 
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
-                if (ImGui.Button("Update Available"))
-                {
-                    Process myProcess = new();
-                    myProcess.StartInfo.UseShellExecute = true;
-                    myProcess.StartInfo.FileName = _releaseUrl;
-                    myProcess.Start();
-                }
-
-                ImGui.PopStyleColor();
-            }
+            WindowHandler.SmithboxUpdateButton();
 
             ImGui.EndMainMenuBar();
         }
@@ -597,7 +592,6 @@ public class Smithbox
         if (!EditorHandler.FocusedEditor.InputCaptured())
         {
             EditorHandler.HandleEditorShortcuts();
-            WindowHandler.HandleWindowShortcuts();
         }
 
         ProjectHandler.OnGui();

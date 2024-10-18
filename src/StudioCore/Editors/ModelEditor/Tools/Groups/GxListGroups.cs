@@ -38,7 +38,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in GXListGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedGXListGroup = entry;
                         SelectedGXListList = ReadGXListGroup(entry);
@@ -55,7 +55,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             {
                 foreach (var entry in GXListGroupFiles)
                 {
-                    if (ImGui.Button($"{entry}##menuItem{entry}", UI.MenuButtonWideSize))
+                    if (ImGui.MenuItem($"{entry}##menuItem{entry}"))
                     {
                         _selectedGXListGroup = entry;
                         SelectedGXListList = ReadGXListGroup(entry);

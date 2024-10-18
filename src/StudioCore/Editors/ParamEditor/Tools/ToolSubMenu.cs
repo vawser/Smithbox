@@ -82,12 +82,12 @@ public class ToolSubMenu
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            if (ImGui.Button("Color Picker", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Color Picker"))
             {
                 ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
             }
 
-            if (ImGui.Button("Trim Row Names", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Trim Row Names"))
             {
                 if (Screen._activeView._selection.ActiveParamExists())
                 {
@@ -95,7 +95,7 @@ public class ToolSubMenu
                 }
             }
 
-            if (ImGui.Button("Sort Rows", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Sort Rows"))
             {
                 if (Screen._activeView._selection.ActiveParamExists())
                 {
@@ -110,7 +110,7 @@ public class ToolSubMenu
             {
                 if (ImGui.BeginMenu("Smithbox"))
                 {
-                    if (ImGui.Button("Selected Rows", UI.MenuButtonSize))
+                    if (ImGui.MenuItem("Selected Rows"))
                     {
                         if (Screen._activeView._selection.RowSelectionExists())
                         {
@@ -121,7 +121,7 @@ public class ToolSubMenu
                     }
                     UIHelper.ShowHoverTooltip("Import names for the specific rows currently selected.");
 
-                    if (ImGui.Button("Selected Param", UI.MenuButtonSize))
+                    if (ImGui.MenuItem("Selected Param"))
                     {
                         if (Screen._activeView._selection.RowSelectionExists())
                         {
@@ -132,7 +132,7 @@ public class ToolSubMenu
                     }
                     UIHelper.ShowHoverTooltip("Import names for the specific param currently selected.");
 
-                    if (ImGui.Button("All Params", UI.MenuButtonSize))
+                    if (ImGui.MenuItem("All Params"))
                     {
                         if (Screen._activeView._selection.RowSelectionExists())
                         {
@@ -149,7 +149,7 @@ public class ToolSubMenu
 
                 if (ImGui.BeginMenu("Project"))
                 {
-                    if (ImGui.Button("Selected Rows", UI.MenuButtonSize))
+                    if (ImGui.MenuItem("Selected Rows"))
                     {
                         if (Screen._activeView._selection.RowSelectionExists())
                         {
@@ -160,7 +160,7 @@ public class ToolSubMenu
                     }
                     UIHelper.ShowHoverTooltip("Import names for the specific rows currently selected.");
 
-                    if (ImGui.Button("Selected Param", UI.MenuButtonSize))
+                    if (ImGui.MenuItem("Selected Param"))
                     {
                         if (Screen._activeView._selection.RowSelectionExists())
                         {
@@ -171,7 +171,7 @@ public class ToolSubMenu
                     }
                     UIHelper.ShowHoverTooltip("Import names for the specific param currently selected.");
 
-                    if (ImGui.Button("All Params", UI.MenuButtonSize))
+                    if (ImGui.MenuItem("All Params"))
                     {
                         if (Screen._activeView._selection.RowSelectionExists())
                         {
@@ -192,7 +192,7 @@ public class ToolSubMenu
             // Export
             if (ImGui.BeginMenu("Export Row Names"))
             {
-                if (ImGui.Button("Export Selected Rows", UI.MenuButtonSize))
+                if (ImGui.MenuItem("Export Selected Rows"))
                 {
                     Handler.CurrentTargetCategory = TargetType.SelectedRows;
                     if (Screen._activeView._selection.RowSelectionExists())
@@ -202,7 +202,7 @@ public class ToolSubMenu
                 }
                 UIHelper.ShowHoverTooltip("Export the row names for the currently selected rows.");
 
-                if (ImGui.Button("Export Selected Param", UI.MenuButtonSize))
+                if (ImGui.MenuItem("Export Selected Param"))
                 {
                     Handler.CurrentTargetCategory = TargetType.SelectedParam;
                     if (Screen._activeView._selection.RowSelectionExists())
@@ -212,7 +212,7 @@ public class ToolSubMenu
                 }
                 UIHelper.ShowHoverTooltip("Export the row names for the currently selected param.");
 
-                if (ImGui.Button("Export All", UI.MenuButtonSize))
+                if (ImGui.MenuItem("Export All"))
                 {
                     Handler.CurrentTargetCategory = TargetType.AllParams;
                     if (Screen._activeView._selection.RowSelectionExists())
@@ -230,13 +230,13 @@ public class ToolSubMenu
             {
                 if (ImGui.BeginMenu("Param Reloader"))
                 {
-                    if (ImGui.Button("Current Param", UI.MenuButtonSize))
+                    if (ImGui.MenuItem("Current Param"))
                     {
                         ParamMemoryTools.ReloadCurrentParam();
                     }
                     UIHelper.ShowHoverTooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadParam.HintText}");
 
-                    if (ImGui.Button("All Params", UI.MenuButtonSize))
+                    if (ImGui.MenuItem("All Params"))
                     {
                         ParamMemoryTools.ReloadAllParams();
                     }
@@ -266,7 +266,7 @@ public class ToolSubMenu
                         }
                     }
 
-                    if (ImGui.Button("Give Selected Item", UI.MenuButtonSize))
+                    if (ImGui.MenuItem("Give Selected Item"))
                     {
                         ParamMemoryTools.GiveItem();
                     }
@@ -279,21 +279,21 @@ public class ToolSubMenu
             // Editor Mode
             if (ImGui.BeginMenu("Editor Mode"))
             {
-                if (ImGui.Button("Toggle", UI.MenuButtonSize))
+                if (ImGui.MenuItem("Toggle"))
                 {
                     ParamEditorScreen.EditorMode = !ParamEditorScreen.EditorMode;
                 }
                 UIHelper.ShowHoverTooltip("Toggle Editor Mode, allowing you to edit the Param Meta within Smithbox.");
                 UIHelper.ShowActiveStatus(ParamEditorScreen.EditorMode);
 
-                if (ImGui.Button("Save Changes", UI.MenuButtonSize))
+                if (ImGui.MenuItem("Save Changes"))
                 {
                     ParamMetaData.SaveAll();
                     ParamEditorScreen.EditorMode = false;
                 }
                 UIHelper.ShowHoverTooltip("Save current Param Meta changes.");
 
-                if (ImGui.Button("Discard Changes", UI.MenuButtonSize))
+                if (ImGui.MenuItem("Discard Changes"))
                 {
                     ParamEditorScreen.EditorMode = false;
                 }

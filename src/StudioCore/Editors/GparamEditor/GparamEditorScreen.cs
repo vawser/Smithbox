@@ -28,7 +28,6 @@ public class GparamEditorScreen : EditorScreen
 
     public GparamToolView ToolView;
     public GparamToolMenubar ToolMenubar;
-    public GparamActionMenubar ActionMenubar;
 
     public GparamQuickEdit QuickEditHandler;
     public GparamCommandQueue CommandQueue;
@@ -51,7 +50,6 @@ public class GparamEditorScreen : EditorScreen
         PropertyEditor = new GparamPropertyEditor(this);
         ToolView = new GparamToolView(this);
         ToolMenubar = new GparamToolMenubar(this);
-        ActionMenubar = new GparamActionMenubar(this);
         QuickEditHandler = new GparamQuickEdit(this);
 
         FileList = new GparamFileListView(this);
@@ -64,27 +62,21 @@ public class GparamEditorScreen : EditorScreen
     public string CommandEndpoint => "gparam";
     public string SaveType => "Gparam";
 
-    /// <summary>
-    /// The menubar for the editor 
-    /// </summary>
-    public void DrawEditorMenu()
+    public void EditDropdown()
     {
-        ImGui.Separator();
-
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
                     EditorActionManager.UndoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
 
             // Undo All
-            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo All"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -93,55 +85,62 @@ public class GparamEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
                     EditorActionManager.RedoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
+
+            ImGui.Separator();
+
+            if (ImGui.MenuItem("Duplicate Value Row", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
+            {
+                ActionHandler.DuplicateValueRow();
+            }
+
+            if (ImGui.MenuItem("Delete Value Row", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
+            {
+                ActionHandler.DeleteValueRow();
+            }
+
 
             ImGui.EndMenu();
         }
 
         ImGui.Separator();
+    }
 
-        ActionMenubar.DisplayMenu();
-
-        ImGui.Separator();
-
-        ToolMenubar.DisplayMenu();
-
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Windows"))
+    public void ViewDropdown()
+    {
+        if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.Button("Files", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Files"))
             {
                 UI.Current.Interface_GparamEditor_Files = !UI.Current.Interface_GparamEditor_Files;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Files);
 
-            if (ImGui.Button("Groups", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Groups"))
             {
                 UI.Current.Interface_GparamEditor_Groups = !UI.Current.Interface_GparamEditor_Groups;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Groups);
 
-            if (ImGui.Button("Fields", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Fields"))
             {
                 UI.Current.Interface_GparamEditor_Fields = !UI.Current.Interface_GparamEditor_Fields;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Fields);
 
-            if (ImGui.Button("Values", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Values"))
             {
                 UI.Current.Interface_GparamEditor_Values = !UI.Current.Interface_GparamEditor_Values;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Values);
 
-            if (ImGui.Button("Tool Window", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Tool Window"))
             {
                 UI.Current.Interface_GparamEditor_ToolConfiguration = !UI.Current.Interface_GparamEditor_ToolConfiguration;
             }
@@ -149,6 +148,16 @@ public class GparamEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+
+        ImGui.Separator();
+    }
+
+    /// <summary>
+    /// The menubar for the editor 
+    /// </summary>
+    public void EditorUniqueDropdowns()
+    {
+        ToolMenubar.DisplayMenu();
     }
 
     /// <summary>
@@ -233,7 +242,6 @@ public class GparamEditorScreen : EditorScreen
         {
             ToolView.OnProjectChanged();
             ToolMenubar.OnProjectChanged();
-            ActionMenubar.OnProjectChanged();
         }
 
         GparamParamBank.LoadGraphicsParams();

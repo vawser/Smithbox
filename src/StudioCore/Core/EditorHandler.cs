@@ -131,29 +131,27 @@ public class EditorHandler
         }
     }
 
-    public void HandleEditorSharedBar()
+    public void FileDropdown()
     {
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Data"))
+        if (ImGui.BeginMenu("File"))
         {
             // Save
-            if (ImGui.Button($"Save Selected {FocusedEditor.SaveType}", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Save Selected {FocusedEditor.SaveType}", KeyBindings.Current.CORE_Save.HintText))
             {
                 Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                 SaveFocusedEditor();
             }
-            UIHelper.ShowHoverTooltip(KeyBindings.Current.CORE_Save.HintText);
 
             // Save All
-            if (ImGui.Button($"Save All Modified {FocusedEditor.SaveType}", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.CORE_SaveAll.HintText))
             {
                 Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                 SaveAllFocusedEditor();
             }
-            UIHelper.ShowHoverTooltip(KeyBindings.Current.CORE_SaveAll.HintText);
 
             ImGui.EndMenu();
         }
+
+        ImGui.Separator();
     }
 }

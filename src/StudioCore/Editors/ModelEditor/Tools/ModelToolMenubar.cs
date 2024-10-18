@@ -31,14 +31,14 @@ public class ModelToolMenubar
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            if (ImGui.Button("Color Picker", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Color Picker"))
             {
                 ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
             }
             UIHelper.ShowHoverTooltip($"Display the color picker.");
 
             // Export Model
-            if (ImGui.Button("Export Model", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Export Model", KeyBindings.Current.MODEL_ExportModel.HintText))
             {
                 if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.DAE)
                 {
@@ -49,20 +49,20 @@ public class ModelToolMenubar
                     ModelObjectExporter.ExportModel(Screen);
                 }
             }
-            UIHelper.ShowHoverTooltip($"Export currently loaded model.\n{KeyBindings.Current.MODEL_ExportModel.HintText}");
+            UIHelper.ShowHoverTooltip($"Export currently loaded model.");
 
             // Solve Bounding Boxes
-            if (ImGui.Button("Solve Bounding Boxes", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Solve Bounding Boxes"))
             {
                 Screen.ActionHandler.SolveBoundingBoxes();
             }
             // Reverse Face Set
-            if (ImGui.Button("Reverse Mesh Face Set", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Reverse Mesh Face Set"))
             {
                 Screen.ActionHandler.ReverseMeshFaceSet();
             }
             // Reverse Normals
-            if (ImGui.Button("Reverse Mesh Normals", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem("Reverse Mesh Normals"))
             {
                 Screen.ActionHandler.ReverseMeshNormals();
             }

@@ -223,7 +223,7 @@ public class GranularRegionToggleHandler
 
     public void DisplayCommonToggles()
     {
-        if (ImGui.Button("Toggle Region Visibility: OFF", UI.MenuButtonWideSize))
+        if (ImGui.MenuItem("Toggle Region Visibility: OFF"))
         {
             foreach (var entry in Universe.LoadedObjectContainers.Values)
             {
@@ -242,7 +242,7 @@ public class GranularRegionToggleHandler
         }
         UIHelper.ShowHoverTooltip("Toggle the visibility of regions of all types to invisible.");
 
-        if (ImGui.Button("Toggle Region Visibility: ON", UI.MenuButtonWideSize))
+        if (ImGui.MenuItem("Toggle Region Visibility: ON"))
         {
             foreach (var entry in Universe.LoadedObjectContainers.Values)
             {
@@ -286,7 +286,7 @@ public class GranularRegionToggleHandler
 
         if (show)
         {
-            if (ImGui.Button($"Toggle: {name}", UI.MenuButtonWideSize))
+            if (ImGui.MenuItem($"Toggle: {name}"))
             {
                 foreach (var entry in Universe.LoadedObjectContainers.Values)
                 {

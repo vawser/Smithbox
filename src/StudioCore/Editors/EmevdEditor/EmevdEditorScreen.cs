@@ -68,27 +68,21 @@ public class EmevdEditorScreen : EditorScreen
     public string CommandEndpoint => "emevd";
     public string SaveType => "EMEVD";
 
-    /// <summary>
-    /// The editor menubar
-    /// </summary>
-    public void DrawEditorMenu()
+    public void EditDropdown()
     {
-        ImGui.Separator();
-
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo", $"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanUndo())
                 {
                     EditorActionManager.UndoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_UndoAction.HintText} / {KeyBindings.Current.CORE_UndoContinuousAction.HintText}");
 
             // Undo All
-            if (ImGui.Button($"Undo All", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Undo All"))
             {
                 if (EditorActionManager.CanUndo())
                 {
@@ -97,61 +91,55 @@ public class EmevdEditorScreen : EditorScreen
             }
 
             // Redo
-            if (ImGui.Button($"Undo", UI.MenuButtonSize))
+            if (ImGui.MenuItem($"Redo", $"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}"))
             {
                 if (EditorActionManager.CanRedo())
                 {
                     EditorActionManager.RedoAction();
                 }
             }
-            UIHelper.ShowHoverTooltip($"{KeyBindings.Current.CORE_RedoAction.HintText} / {KeyBindings.Current.CORE_RedoContinuousAction.HintText}");
 
             ImGui.EndMenu();
         }
 
         ImGui.Separator();
+    }
 
-        ActionMenubar.Display();
-
-        ImGui.Separator();
-
-        ToolMenubar.Display();
-
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Windows"))
+    public void ViewDropdown()
+    {
+        if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.Button("Files", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Files"))
             {
                 UI.Current.Interface_EmevdEditor_Files = !UI.Current.Interface_EmevdEditor_Files;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_Files);
 
-            if (ImGui.Button("Events", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Events"))
             {
                 UI.Current.Interface_EmevdEditor_Events = !UI.Current.Interface_EmevdEditor_Events;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_Events);
 
-            if (ImGui.Button("Instructions", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Instructions"))
             {
                 UI.Current.Interface_EmevdEditor_Instructions = !UI.Current.Interface_EmevdEditor_Instructions;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_Instructions);
 
-            if (ImGui.Button("Event Properties", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Event Properties"))
             {
                 UI.Current.Interface_EmevdEditor_EventProperties = !UI.Current.Interface_EmevdEditor_EventProperties;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_EventProperties);
 
-            if (ImGui.Button("Instruction Properties", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Instruction Properties"))
             {
                 UI.Current.Interface_EmevdEditor_InstructionProperties = !UI.Current.Interface_EmevdEditor_InstructionProperties;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_InstructionProperties);
 
-            if (ImGui.Button("Tool Window", UI.MenuButtonSize))
+            if (ImGui.MenuItem("Tool Window"))
             {
                 UI.Current.Interface_EmevdEditor_ToolConfigurationWindow = !UI.Current.Interface_EmevdEditor_ToolConfigurationWindow;
             }
@@ -159,6 +147,22 @@ public class EmevdEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+
+        ImGui.Separator();
+    }
+
+    /// <summary>
+    /// The editor menubar
+    /// </summary>
+    public void EditorUniqueDropdowns()
+    {
+        ActionMenubar.Display();
+
+        ImGui.Separator();
+
+        ToolMenubar.Display();
+
+        ImGui.Separator();
     }
 
     /// <summary>

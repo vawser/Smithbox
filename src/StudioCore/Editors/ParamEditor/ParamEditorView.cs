@@ -919,7 +919,7 @@ public class ParamEditorView
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                 {
-                    _paramEditor.ActionSubMenu.Handler.DuplicateHandler();
+                    _paramEditor.Handler.DuplicateHandler();
                 }
 
                 ImGui.Separator();
