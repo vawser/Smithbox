@@ -582,6 +582,8 @@ public class ParamBank
         {
             LoadParamsDESFromFile(drawparam.Value);
         }
+
+        LoadExternalRowNames();
     }
 
     private void LoadVParamsDES()
@@ -653,6 +655,8 @@ public class ParamBank
         {
             LoadParamsDS1FromFile(drawparam.Value);
         }
+
+        LoadExternalRowNames();
     }
 
     private void LoadVParamsDS1()
@@ -721,6 +725,8 @@ public class ParamBank
         {
             LoadParamsDS1RFromFile(drawparam.Value);
         }
+
+        LoadExternalRowNames();
     }
 
     private void LoadVParamsDS1R()
@@ -783,6 +789,8 @@ public class ParamBank
                 TaskLogs.AddLog("Graphicsconfig could not be found. These require an unpacked game to modify.", LogLevel.Information, LogPriority.Normal);
             }
         }
+
+        LoadExternalRowNames();
     }
 
     private void LoadVParamsBBSekiro()
@@ -1007,6 +1015,8 @@ public class ParamBank
 
             LoadParamsDS3FromFile(param);
         }
+
+        LoadExternalRowNames();
     }
 
     private void LoadVParamsDS3()
@@ -1077,6 +1087,8 @@ public class ParamBank
         {
             TaskLogs.AddLog("Eventparam could not be found.", LogLevel.Information, LogPriority.Normal);
         }
+
+        LoadExternalRowNames();
     }
 
     private void LoadVParamsER()
@@ -1176,6 +1188,8 @@ public class ParamBank
         {
             TaskLogs.AddLog("Eventparam could not be found.", LogLevel.Information, LogPriority.Normal);
         }
+
+        LoadExternalRowNames();
     }
 
     private void LoadVParamsAC6()
@@ -1612,6 +1626,11 @@ public class ParamBank
 
         using var paramBnd = BND3.Read(param);
 
+        if(CFG.Current.Param_StripRowNamesOnSave_DS1)
+        {
+            StripRowNames();
+        }
+
         // Replace params with edited ones
         foreach (BinderFile p in paramBnd.Files)
         {
@@ -1623,7 +1642,12 @@ public class ParamBank
 
         Utils.WriteWithBackup(dir, mod, @"param\GameParam\GameParam.parambnd", paramBnd);
 
-        // Drawparam
+        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
+        {
+            RestoreStrippedRowNames();
+        }
+
+        // Draw Params
         if (Directory.Exists($@"{Smithbox.GameRoot}\param\DrawParam"))
         {
             foreach (var bnd in Directory.GetFiles($@"{Smithbox.GameRoot}\param\DrawParam", "*.parambnd"))
@@ -1663,6 +1687,11 @@ public class ParamBank
 
         using var paramBnd = BND3.Read(param);
 
+        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
+        {
+            StripRowNames();
+        }
+
         // Replace params with edited ones
         foreach (BinderFile p in paramBnd.Files)
         {
@@ -1673,6 +1702,11 @@ public class ParamBank
         }
 
         Utils.WriteWithBackup(dir, mod, @"param\GameParam\GameParam.parambnd.dcx", paramBnd);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
+        {
+            RestoreStrippedRowNames();
+        }
 
         // Drawparam
         if (Directory.Exists($@"{Smithbox.GameRoot}\param\DrawParam"))
@@ -1773,7 +1807,10 @@ public class ParamBank
             try
             {
                 // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                StripRowNames();
+                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
+                {
+                    StripRowNames();
+                }
 
                 foreach (KeyValuePair<string, Param> p in _params)
                 {
@@ -1793,11 +1830,17 @@ public class ParamBank
             }
             catch
             {
-                RestoreStrippedRowNames();
+                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
+                {
+                    RestoreStrippedRowNames();
+                }
                 throw;
             }
 
-            RestoreStrippedRowNames();
+            if (CFG.Current.Param_StripRowNamesOnSave_DS2)
+            {
+                RestoreStrippedRowNames();
+            }
         }
         else
         {
@@ -1818,7 +1861,10 @@ public class ParamBank
             try
             {
                 // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                StripRowNames();
+                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
+                {
+                    StripRowNames();
+                }
 
                 // Write params to loose files.
                 foreach (KeyValuePair<string, Param> p in _params)
@@ -1828,11 +1874,17 @@ public class ParamBank
             }
             catch
             {
-                RestoreStrippedRowNames();
+                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
+                {
+                    RestoreStrippedRowNames();
+                }
                 throw;
             }
 
-            RestoreStrippedRowNames();
+            if (CFG.Current.Param_StripRowNamesOnSave_DS2)
+            {
+                RestoreStrippedRowNames();
+            }
         }
 
         Utils.WriteWithBackup(dir, mod, @"enc_regulation.bnd.dcx", paramBnd);
@@ -1859,6 +1911,11 @@ public class ParamBank
         }
 
         BND4 paramBnd = SFUtil.DecryptDS3Regulation(param);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_DS3)
+        {
+            StripRowNames();
+        }
 
         // Replace params with edited ones
         foreach (BinderFile p in paramBnd.Files)
@@ -1890,26 +1947,22 @@ public class ParamBank
                 Files = paramBnd.Files.Where(f => f.Name.EndsWith(".param")).ToList()
             };
 
-            /*BND4 stayBND = new BND4
-            {
-                BigEndian = false,
-                Compression = DCX.Type.DCX_DFLT_10000_44_9,
-                Extended = 0x04,
-                Unk04 = false,
-                Unk05 = false,
-                Format = Binder.Format.Compression | Binder.Format.Flag6 | Binder.Format.LongOffsets | Binder.Format.Names1,
-                Unicode = true,
-                Files = paramBnd.Files.Where(f => f.Name.EndsWith(".stayparam")).ToList()
-            };*/
-
             Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam_dlc2.parambnd.dcx", paramBND);
             //Utils.WriteWithBackup(dir, mod, @"param\stayparam\stayparam.parambnd.dcx", stayBND);
         }
+
+        if (CFG.Current.Param_StripRowNamesOnSave_DS3)
+        {
+            RestoreStrippedRowNames();
+        }
     }
 
-    private void SaveParamsBBSekiro()
+    /// <summary>
+    /// Param Save: Bloodborne
+    /// </summary>
+    private void SaveParamsBB()
     {
-        void OverwriteParamsBBSekiro(BND4 paramBnd)
+        void OverwriteParamsBB(BND4 paramBnd)
         {
             // Replace params with edited ones
             foreach (BinderFile p in paramBnd.Files)
@@ -1944,19 +1997,82 @@ public class ParamBank
 
         // Params
         var paramBnd = BND4.Read(param);
-        OverwriteParamsBBSekiro(paramBnd);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_BB)
+        {
+            StripRowNames();
+        }
+
+        OverwriteParamsBB(paramBnd);
         Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
 
-        // Graphics Config
-        if (Smithbox.ProjectType is ProjectType.SDT)
+        if (CFG.Current.Param_StripRowNamesOnSave_BB)
         {
-            var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
-            if (File.Exists(graphicsConfigParam))
+            RestoreStrippedRowNames();
+        }
+    }
+
+    /// <summary>
+    /// Param Save: Sekiro
+    /// </summary>
+    private void SaveParamsSDT()
+    {
+        void OverwriteParamsSDT(BND4 paramBnd)
+        {
+            // Replace params with edited ones
+            foreach (BinderFile p in paramBnd.Files)
             {
-                using var graphicsConfigParams = BND4.Read(graphicsConfigParam);
-                OverwriteParamsBBSekiro(graphicsConfigParams);
-                Utils.WriteWithBackup(dir, mod, @"param\graphicsconfig\graphicsconfig.parambnd.dcx", graphicsConfigParams);
+                if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                {
+                    Param paramFile = _params[Path.GetFileNameWithoutExtension(p.Name)];
+                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
+
+                    p.Bytes = paramFile.Write();
+                    paramFile.Rows = backup;
+                }
             }
+        }
+
+        var dir = Smithbox.GameRoot;
+        var mod = Smithbox.ProjectRoot;
+
+        if (!File.Exists($@"{dir}\\param\gameparam\gameparam.parambnd.dcx"))
+        {
+            TaskLogs.AddLog("Cannot locate param files. Save failed.",
+                LogLevel.Error, LogPriority.High);
+            return;
+        }
+
+        // Load params
+        var param = $@"{mod}\param\gameparam\gameparam.parambnd.dcx";
+        if (!File.Exists(param))
+        {
+            param = $@"{dir}\param\gameparam\gameparam.parambnd.dcx";
+        }
+
+        // Params
+        var paramBnd = BND4.Read(param);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_SDT)
+        {
+            StripRowNames();
+        }
+
+        OverwriteParamsSDT(paramBnd);
+        Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_SDT)
+        {
+            RestoreStrippedRowNames();
+        }
+
+        // Graphics Config
+        var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
+        if (File.Exists(graphicsConfigParam))
+        {
+            using var graphicsConfigParams = BND4.Read(graphicsConfigParam);
+            OverwriteParamsSDT(graphicsConfigParams);
+            Utils.WriteWithBackup(dir, mod, @"param\graphicsconfig\graphicsconfig.parambnd.dcx", graphicsConfigParams);
         }
     }
 
@@ -1984,6 +2100,11 @@ public class ParamBank
         }
 
         using var paramBnd = BND3.Read(param);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_DES)
+        {
+            StripRowNames();
+        }
 
         // Replace params with edited ones
         foreach (BinderFile p in paramBnd.Files)
@@ -2014,6 +2135,11 @@ public class ParamBank
         }
 
         Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd", paramBnd);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_DES)
+        {
+            RestoreStrippedRowNames();
+        }
 
         // Drawparam
         List<string> drawParambndPaths = new();
@@ -2084,9 +2210,19 @@ public class ParamBank
 
         BND4 regParams = SFUtil.DecryptERRegulation(param);
 
+        if (CFG.Current.Param_StripRowNamesOnSave_ER)
+        {
+            StripRowNames();
+        }
+
         OverwriteParamsER(regParams);
 
         Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.ER);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_ER)
+        {
+            RestoreStrippedRowNames();
+        }
 
         var sysParam = LocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
         var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
@@ -2158,8 +2294,19 @@ public class ParamBank
         }
 
         BND4 regParams = SFUtil.DecryptAC6Regulation(param);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_AC6)
+        {
+            StripRowNames();
+        }
+
         OverwriteParamsAC6(regParams);
         Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.AC6);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_AC6)
+        {
+            RestoreStrippedRowNames();
+        }
 
         var sysParam = LocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
         if (File.Exists(sysParam))
@@ -2219,8 +2366,11 @@ public class ParamBank
                 break;
 
             case ProjectType.BB:
+                SaveParamsBB(); 
+                break;
+
             case ProjectType.SDT:
-                SaveParamsBBSekiro(); 
+                SaveParamsSDT();
                 break;
 
             case ProjectType.ER: 

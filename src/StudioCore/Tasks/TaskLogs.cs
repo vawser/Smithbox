@@ -138,8 +138,6 @@ public static class TaskLogs
     /// </summary>
     public static void DisplayLoggerBar()
     {
-        ImGui.Separator();
-
         if (ImGui.ArrowButton("##loggerToggle", CurrentDir))
         {
             if(CurrentDir == ImGuiDir.Right) 

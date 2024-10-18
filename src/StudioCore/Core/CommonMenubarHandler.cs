@@ -319,6 +319,8 @@ public class CommonMenubarHandler
 
     public void HelpDropdown()
     {
+        ImGui.Separator();
+
         if (ImGui.BeginMenu("Help"))
         {
             if (ImGui.MenuItem("Articles"))
@@ -429,14 +431,14 @@ public class CommonMenubarHandler
 
             ImGui.EndMenu();
         }
+
+        ImGui.Separator();
     }
 
     public void DebugDropdown()
     {
         if (CFG.Current.DisplayDebugTools)
         {
-            ImGui.Separator();
-
             if (ImGui.BeginMenu("Debugging"))
             {
                 if (ImGui.MenuItem($"Tasks"))
@@ -539,6 +541,8 @@ public class CommonMenubarHandler
 
                 ImGui.EndMenu();
             }
+
+            ImGui.Separator();
         }
     }
 

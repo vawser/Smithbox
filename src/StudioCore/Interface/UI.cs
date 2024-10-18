@@ -11,6 +11,7 @@ using static StudioCore.Configuration.Settings.TimeActEditorTab;
 using StudioCore.Core.Project;
 using Silk.NET.SDL;
 using StudioCore.Graphics;
+using ImGuiNET;
 
 namespace StudioCore.Interface;
 
@@ -374,5 +375,16 @@ public class UI
         ModalButtonThirdSize = new Vector2(172 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
         ModalButtonHalfSize = new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
         ModalButtonSize = new Vector2(520 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
+    }
+
+    public static Vector2 GetStandardButtonSize()
+    {
+        var windowWidth = ImGui.GetWindowWidth() * 0.95f;
+        return new Vector2(windowWidth, 32 * DPI.GetUIScale());
+    }
+    public static Vector2 GetStandardHalfButtonSize()
+    {
+        var windowWidth = ImGui.GetWindowWidth() * 0.95f;
+        return new Vector2(windowWidth / 2, 32 * DPI.GetUIScale());
     }
 }

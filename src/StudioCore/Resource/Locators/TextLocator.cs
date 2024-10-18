@@ -89,4 +89,21 @@ public static class TextLocator
 
         return false;
     }
+
+    public static string GetFmgWrapperDirectory()
+    {
+        return $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\FMG Wrappers";
+    }
+
+    public static List<string> GetFmgWrappers()
+    {
+        List<string> results = new();
+
+        foreach (var entry in Directory.GetFiles(GetFmgWrapperDirectory()))
+        {
+
+        }
+
+        return results;
+    }
 }

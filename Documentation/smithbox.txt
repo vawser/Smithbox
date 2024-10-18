@@ -116,6 +116,6 @@ Text Editor:
 # PRIORITY
 - ADD: FMG Import/Export: container level, fmg level, fmg entry level - Export to .smithbox/Workflow/Text/, generate import list from this folder
 - ADD: sync with X Language (Container level -> apply modified rows + add unique rows into non-primary container (add option to apply prepend string, e.g. TRANSLATE:, so you can tag rows for translation)
-
 - ADD: global text search and replace: search term: show affected; apply button
+
 

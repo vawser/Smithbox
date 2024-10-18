@@ -26,11 +26,6 @@ public class ParamEditorTab
         // General
         if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            if (Smithbox.ProjectType is ProjectType.ER && ParamBank.PrimaryBank.ParamVersion >= 11210015L)
-            {
-                ImGui.Checkbox("Save regulation.bin as DCX.DFLT", ref CFG.Current.Param_SaveERAsDFLT);
-            }
-
             if (ImGui.Checkbox("Use project meta", ref CFG.Current.Param_UseProjectMeta))
             {
                 if (CFG.Current.Param_UseProjectMeta)
@@ -50,6 +45,53 @@ public class ParamEditorTab
 
             ImGui.Checkbox("Pinned rows stay visible", ref CFG.Current.Param_PinnedRowsStayVisible);
             UIHelper.ShowHoverTooltip("Pinned rows will stay visible when you scroll instead of only being pinned to the top of the list.");
+        }
+
+        if (ImGui.CollapsingHeader("Regulation Data", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            switch(Smithbox.ProjectType)
+            {
+                case ProjectType.DES:
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DES);
+                    break;
+
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DS1);
+                    break;
+
+                case ProjectType.DS2:
+                case ProjectType.DS2S:
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DS2);
+                    break;
+
+                case ProjectType.BB:
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_BB);
+                    break;
+
+                case ProjectType.DS3:
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DS3);
+                    break;
+
+                case ProjectType.SDT:
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_SDT);
+                    break;
+
+                case ProjectType.ER:
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_ER);
+                    break;
+
+                case ProjectType.AC6:
+                    ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_AC6);
+                    break;
+            }
+            UIHelper.ShowHoverTooltip("If enabled, row names are stripped upon save, meaning no row names will be stored in the regulation.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.\n\nIf this folder is present when a project is loaded, the row names will be restored automatically.");
+
+            if (Smithbox.ProjectType is ProjectType.ER && ParamBank.PrimaryBank.ParamVersion >= 11210015L)
+            {
+                ImGui.Checkbox("Save regulation.bin as DCX.DFLT", ref CFG.Current.Param_SaveERAsDFLT);
+                UIHelper.ShowHoverTooltip("If enabled, the regulation will be saved with the DCX.DFLT compression instead of the ZSTD compression that Elden Ring uses post patch 1.12.1. Enable if you want to load the regulation in an older tool that doesn't support ZSTD compression.");
+            }
         }
 
         // Params

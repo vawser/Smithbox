@@ -308,6 +308,16 @@ public class CFG
     //****************************
     // Settings: Param Editor
     //****************************
+    // Done per project so we can default ON for DS2 and ER without forcing stripping for the others
+    public bool Param_StripRowNamesOnSave_DES = false;
+    public bool Param_StripRowNamesOnSave_DS1 = false;
+    public bool Param_StripRowNamesOnSave_DS2 = true;
+    public bool Param_StripRowNamesOnSave_BB = false;
+    public bool Param_StripRowNamesOnSave_DS3 = false;
+    public bool Param_StripRowNamesOnSave_SDT = false;
+    public bool Param_StripRowNamesOnSave_ER = true;
+    public bool Param_StripRowNamesOnSave_AC6 = false;
+
     public bool Param_SaveERAsDFLT = false;
 
     public bool UI_CompactParams = false;

@@ -80,9 +80,14 @@ public static class GlobalTextSearch
             ImGui.EndTable();
         }
 
-        if (ImGui.Button("Search##executeSearch", defaultButtonSize))
+        if (ImGui.Button("Search##executeSearch", UI.GetStandardHalfButtonSize()))
         {
             SearchResults = TextFinder.GetGlobalTextResult(_globalSearchInput, FilterType, IgnoreCase);
+        }
+        ImGui.SameLine();
+        if (ImGui.Button("Clear##clearSearchResults", UI.GetStandardHalfButtonSize()))
+        {
+            SearchResults.Clear();
         }
 
         ImGui.Separator();

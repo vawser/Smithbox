@@ -497,17 +497,17 @@ public class Smithbox
             EditorHandler.FocusedEditor.ViewDropdown();
             EditorHandler.FocusedEditor.EditorUniqueDropdowns();
 
-            TaskLogs.DisplayLoggerBar();
-            ImGui.Separator();
-            TaskLogs.DisplayWindow();
-
             WindowHandler.HelpDropdown();
-            WindowHandler.SettingsDropdown();
             WindowHandler.AliasDropdown();
             WindowHandler.KeybindsDropdown();
+            WindowHandler.SettingsDropdown();
             WindowHandler.DebugDropdown();
 
             WindowHandler.SmithboxUpdateButton();
+
+            TaskLogs.DisplayLoggerBar();
+            ImGui.Separator();
+            TaskLogs.DisplayWindow();
 
             ImGui.EndMainMenuBar();
         }

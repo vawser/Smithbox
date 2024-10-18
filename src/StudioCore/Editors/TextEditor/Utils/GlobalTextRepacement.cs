@@ -14,6 +14,7 @@ namespace StudioCore.Editors.TextEditor.Utils;
 public static class GlobalTextReplacement
 {
     private static string _globalSearchInput = "";
+    private static string _globalSearchReplace = "";
     private static bool IgnoreCase = false;
     private static SearchFilterType FilterType = SearchFilterType.PrimaryCategory;
 
@@ -36,7 +37,8 @@ public static class GlobalTextReplacement
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
-            ImGui.Text("Search Filter");
+            ImGui.Text("Conditional Input");
+            UIHelper.ShowHoverTooltip("The regex you want to match with.");
 
             ImGui.TableSetColumnIndex(1);
 
@@ -44,6 +46,18 @@ public static class GlobalTextReplacement
             ImGui.InputText("##globalSearchInput", ref _globalSearchInput, 255);
 
             // Row 2
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.Text("Replacement Input");
+            UIHelper.ShowHoverTooltip("The regex you want to replace with.");
+
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            ImGui.InputText("##globalSearchInput", ref _globalSearchInput, 255);
+
+            // Row 3
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
@@ -82,15 +96,24 @@ public static class GlobalTextReplacement
             ImGui.EndTable();
         }
 
-        if (ImGui.Button("Search##executeSearch", defaultButtonSize))
+        if (ImGui.Button("Search##executeSearch", UI.GetStandardHalfButtonSize()))
         {
             SearchResults = TextFinder.GetGlobalTextResult(_globalSearchInput, FilterType, IgnoreCase);
         }
+        ImGui.SameLine();
+        if (ImGui.Button("Clear##clearSearchResults", UI.GetStandardHalfButtonSize()))
+        {
+            SearchResults.Clear();
+        }
+
+        ImGui.Separator();
 
         ImGui.Separator();
 
         if (SearchResults.Count > 0)
         {
+            UIHelper.WrappedText("Entries that will be affected:");
+
             var index = 0;
 
             foreach (var result in SearchResults)
@@ -124,6 +147,13 @@ public static class GlobalTextReplacement
                 {
                     EditorCommandQueue.AddCommand($"text/select/{category}/{result.ContainerName}/{result.FmgName}/{result.Entry.ID}");
                 }
+            }
+
+            ImGui.Separator();
+
+            if(ImGui.Button("Replace"))
+            {
+
             }
         }
     }
