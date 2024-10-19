@@ -25,6 +25,20 @@ public class TextEntryGroupManager
         Selection = screen.Selection;
     }
 
+
+    /// <summary>
+    /// Get the potnetial associated entries for the passed entry (assuming it is not associated yet)
+    /// </summary>
+    /// <param name="entry"></param>
+    public List<int> GetPotentialAssociatedEntryGroup(FMG.Entry entry)
+    {
+        // These are the IDs of the potential associated groups
+        List<int> associatedIds = new();
+
+
+        return associatedIds;
+    }
+
     public FmgEntryGroup GetEntryGroup(FMG.Entry entry)
     {
         return new FmgEntryGroup(this, Selection.SelectedContainer, Selection.SelectedFmgInfo, entry);

@@ -37,8 +37,13 @@ public static class TextUtils
                 }
                 break;
             case ProjectType.DS1:
+                if (CategoryGroupings.DS1_Languages.Contains(category))
+                {
+                    return true;
+                }
+                break;
             case ProjectType.DS1R:
-                if(CategoryGroupings.DS1_Languages.Contains(category))
+                if (CategoryGroupings.DS1R_Languages.Contains(category))
                 {
                     return true;
                 }
@@ -1564,7 +1569,8 @@ public static class TextUtils
         }
 
         // Spanish (Latin)
-        if (path.Contains("spaar"))
+        if (path.Contains("NSPANISH") ||
+            path.Contains("spaar"))
         {
             group = TextContainerCategory.SpanishLatin;
         }
@@ -1578,7 +1584,8 @@ public static class TextUtils
         }
 
         // Simplified Chinese
-        if (path.Contains("zhocn"))
+        if (path.Contains("SCHINESE") || 
+            path.Contains("zhocn"))
         {
             group = TextContainerCategory.SimplifiedChinese;
         }
@@ -1620,7 +1627,8 @@ public static class TextUtils
         }
 
         // Portuguese (Latin)
-        if (path.Contains("portuguese") ||
+        if (path.Contains("PORTUGUESE") || 
+            path.Contains("portuguese") ||
             path.Contains("porbr"))
         {
             group = TextContainerCategory.PortugueseLatin;
@@ -1710,5 +1718,4 @@ public static class TextUtils
 
         return DS2_SubCategory.common;
     }
-
 }

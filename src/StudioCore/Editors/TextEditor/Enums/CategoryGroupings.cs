@@ -29,6 +29,24 @@ public static class CategoryGroupings
         TextContainerCategory.TraditionalChinese
     };
 
+    public static List<TextContainerCategory> DS1R_Languages = new()
+    {
+        TextContainerCategory.English,
+        TextContainerCategory.French,
+        TextContainerCategory.German,
+        TextContainerCategory.Italian,
+        TextContainerCategory.Japanese,
+        TextContainerCategory.Korean,
+        TextContainerCategory.Polish,
+        TextContainerCategory.Russian,
+        TextContainerCategory.English,
+        TextContainerCategory.Portuguese,
+        TextContainerCategory.Spanish,
+        TextContainerCategory.SpanishLatin,
+        TextContainerCategory.TraditionalChinese,
+        TextContainerCategory.SimplifiedChinese
+    };
+
     public static List<TextContainerCategory> DS2_Languages = new()
     {
         TextContainerCategory.English,

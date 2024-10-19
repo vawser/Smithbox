@@ -37,10 +37,20 @@ Map Editor:
  - FIX: duping assets to new map and then pressing X to bring to camera results in incorrect placement
  - FIX: misc texture loads during map load can hang, causing the load window to never disppear. (e.g. Leyndell)
  
+Text Editor:
+ - ADD: Name Template create tool
+ - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
+
+
+Model Editor:
+ - ADD: param jump from Model Mask list
+ 
 Material Editor
  - ADD: Implement Material/MATBIN editor
 
-Param Editor:
+Param Editor
+ - ADD: DES Meta
+ - ADD: DS1 Meta
  - ADD: stayparam support for DS3 (requires 'blob' editor with manual definitions)
  - ADD: make "Use project meta" merge in new entries instead of wholesale replacing (https://github.com/ividyon/WitchyBND/blob/main/WitchyBND/Configuration.cs)
  - ADD: automatic naming tool: for current param, look for reference fields, name the linked param row with the base name if empty (e.g. Item -> Bullet-> AtkParam)
@@ -101,18 +111,12 @@ Model Editor:
  - FIX: property flag fields: they should be a set of checkboxes that resolve into the correct int value
  - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
  - FIX: account for scale when displaying dummies/bones
+ 
+
 
 #--------------------------------------
 # Notes
 #--------------------------------------
-Param Editor
-- ADD: DES Meta
-- ADD: DS1 Meta
-
-Text Editor:
- - ADD: Name Template create tool
- - ADD: context menu in text input: add color (<font color="#31994d">Text</font>) that wraps selected text with the html tag (include detection/removal of tag when selecting existing one too)
-
 # TODO
 - ADD: sync with X Language (Container level -> apply modified rows + add unique rows into non-primary container (add option to apply prepend string, e.g. TRANSLATE:, so you can tag rows for translation)
 - ADD: text merge: tool that will attempt to add unique/modified rows from X source into current project

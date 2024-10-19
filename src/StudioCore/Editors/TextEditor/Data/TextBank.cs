@@ -161,30 +161,37 @@ public static class TextBank
             }
         }
 
-        // Get compression type
-        var fileBytes = File.ReadAllBytes(path);
-
-        DCX.Type compressionType;
-        var reader = new BinaryReaderEx(false, fileBytes);
-        SFUtil.GetDecompressedBR(reader, out compressionType);
-
-        List<FmgInfo> fmgInfos = new List<FmgInfo>();
-
-        var id = -1;
-        var fmg = FMG.Read(path);
-        fmg.Name = name; // Assign this to make it easier to grab FMGs
-
-        FmgInfo fmgInfo = new(id, name, fmg);
-        fmgInfos.Add(fmgInfo);
-
-        TextContainerInfo containerInfo = new(name, path, compressionType, containerType, containerCategory, fmgInfos);
-
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        try
         {
-            containerInfo.SubCategory = TextUtils.GetSubCategory(path);
-        }
+            // Get compression type
+            var fileBytes = File.ReadAllBytes(path);
 
-        bank.Add(path, containerInfo);
+            DCX.Type compressionType;
+            var reader = new BinaryReaderEx(false, fileBytes);
+            SFUtil.GetDecompressedBR(reader, out compressionType);
+
+            List<FmgInfo> fmgInfos = new List<FmgInfo>();
+
+            var id = -1;
+            var fmg = FMG.Read(path);
+            fmg.Name = name; // Assign this to make it easier to grab FMGs
+
+            FmgInfo fmgInfo = new(id, name, fmg);
+            fmgInfos.Add(fmgInfo);
+
+            TextContainerInfo containerInfo = new(name, path, compressionType, containerType, containerCategory, fmgInfos);
+
+            if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                containerInfo.SubCategory = TextUtils.GetSubCategory(path);
+            }
+
+            bank.Add(path, containerInfo);
+        }
+        catch (Exception ex)
+        {
+            TaskLogs.AddLog($"Failed to load FMG: {ex}");
+        }
     }
 
     /// <summary>
@@ -206,57 +213,64 @@ public static class TextBank
             }
         }
 
-        // Get compression type
-        var fileBytes = File.ReadAllBytes(path);
-
-        DCX.Type compressionType;
-        var reader = new BinaryReaderEx(false, fileBytes);
-        SFUtil.GetDecompressedBR(reader, out compressionType);
-
-        List<FmgInfo> fmgInfos = new List<FmgInfo>();
-
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+        try
         {
-            using (IBinder binder = BND3.Read(path))
-            {
-                foreach (var file in binder.Files)
-                {
-                    if (file.Name.Contains(".fmg"))
-                    {
-                        var fmgName = Path.GetFileName(file.Name);
-                        var id = file.ID;
-                        var fmg = FMG.Read(file.Bytes);
-                        fmg.Name = fmgName;
+            // Get compression type
+            var fileBytes = File.ReadAllBytes(path);
 
-                        FmgInfo fmgInfo = new(id, fmgName, fmg);
-                        fmgInfos.Add(fmgInfo);
+            DCX.Type compressionType;
+            var reader = new BinaryReaderEx(false, fileBytes);
+            SFUtil.GetDecompressedBR(reader, out compressionType);
+
+            List<FmgInfo> fmgInfos = new List<FmgInfo>();
+
+            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            {
+                using (IBinder binder = BND3.Read(path))
+                {
+                    foreach (var file in binder.Files)
+                    {
+                        if (file.Name.Contains(".fmg"))
+                        {
+                            var fmgName = Path.GetFileName(file.Name);
+                            var id = file.ID;
+                            var fmg = FMG.Read(file.Bytes);
+                            fmg.Name = fmgName;
+
+                            FmgInfo fmgInfo = new(id, fmgName, fmg);
+                            fmgInfos.Add(fmgInfo);
+                        }
                     }
                 }
             }
-        }
-        else
-        {
-            using (IBinder binder = BND4.Read(path))
+            else
             {
-                foreach (var file in binder.Files)
+                using (IBinder binder = BND4.Read(path))
                 {
-                    if (file.Name.Contains(".fmg"))
+                    foreach (var file in binder.Files)
                     {
-                        var fmgName = Path.GetFileName(file.Name);
-                        var id = file.ID;
-                        var fmg = FMG.Read(file.Bytes);
-                        fmg.Name = fmgName;
+                        if (file.Name.Contains(".fmg"))
+                        {
+                            var fmgName = Path.GetFileName(file.Name);
+                            var id = file.ID;
+                            var fmg = FMG.Read(file.Bytes);
+                            fmg.Name = fmgName;
 
-                        FmgInfo fmgInfo = new(id, fmgName, fmg);
-                        fmgInfos.Add(fmgInfo);
+                            FmgInfo fmgInfo = new(id, fmgName, fmg);
+                            fmgInfos.Add(fmgInfo);
+                        }
                     }
                 }
             }
+
+            TextContainerInfo containerInfo = new(name, path, compressionType, containerType, containerCategory, fmgInfos);
+
+            bank.Add(path, containerInfo);
         }
-
-        TextContainerInfo containerInfo = new(name, path, compressionType, containerType, containerCategory, fmgInfos);
-
-        bank.Add(path, containerInfo);
+        catch (Exception ex)
+        {
+            TaskLogs.AddLog($"Failed to load FMG container: {ex}");
+        }
     }
 
     /// <summary>
