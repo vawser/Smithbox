@@ -1680,11 +1680,15 @@ public static class TextUtils
         if (name.Contains("ngword"))
             prettyName = "Blocked Words";
 
-        if (name.Contains("dlc01") || name.Contains("dlc1"))
-            prettyName = $"{prettyName} - DLC 1";
+        // Ignore this in Simple mode since the user doesn't need to know it
+        if (CFG.Current.TextEditor_AdvancedPresentationMode)
+        {
+            if (name.Contains("dlc01") || name.Contains("dlc1"))
+                prettyName = $"{prettyName} - DLC 1";
 
-        if (name.Contains("dlc02") || name.Contains("dlc2"))
-            prettyName = $"{prettyName} - DLC 2";
+            if (name.Contains("dlc02") || name.Contains("dlc2"))
+                prettyName = $"{prettyName} - DLC 2";
+        }
 
         if(Smithbox.ProjectType is ProjectType.DES)
         {

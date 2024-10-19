@@ -62,71 +62,8 @@ public class TextFmgView
                 }
                 else
                 {
-                    // Old style of FMG list
-                    if (CFG.Current.TextEditor_SimpleFmgView)
-                    {
-                        var info = Selection.SelectedContainer;
-
-                        // Vanilla
-                        if (TextUtils.HasDLCEntries(info, ""))
-                        {
-                            if (ImGui.CollapsingHeader("Vanilla", ImGuiTreeNodeFlags.DefaultOpen))
-                            {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
-                                {
-                                    var id = fmgInfo.ID;
-                                    var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
-                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
-
-                                    if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "")
-                                    {
-                                        HandleFmgView(fmgInfo);
-                                    }
-                                }
-                            }
-                        }
-                        // DLC 1
-                        if (TextUtils.HasDLCEntries(info, "DLC 1"))
-                        {
-                            if (ImGui.CollapsingHeader("DLC 1", ImGuiTreeNodeFlags.DefaultOpen))
-                            {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
-                                {
-                                    var id = fmgInfo.ID;
-                                    var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
-                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
-
-                                    if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 1")
-                                    {
-                                        HandleFmgView(fmgInfo);
-                                    }
-                                }
-                            }
-                        }
-                        // DLC 2
-                        if (TextUtils.HasDLCEntries(info, "DLC 2"))
-                        {
-                            if (ImGui.CollapsingHeader("DLC 2", ImGuiTreeNodeFlags.DefaultOpen))
-                            {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
-                                {
-                                    var id = fmgInfo.ID;
-                                    var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
-                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
-
-                                    if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 2")
-                                    {
-                                        HandleFmgView(fmgInfo);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    // Otherwise display them as collapsible sections
-                    else
+                    // Advanced Presentation
+                    if (CFG.Current.TextEditor_AdvancedPresentationMode)
                     {
                         var info = Selection.SelectedContainer;
 
@@ -263,6 +200,69 @@ public class TextFmgView
                             }
                         }
                     }
+                    // Simple Presentation
+                    else
+                    {
+                        var info = Selection.SelectedContainer;
+
+                        // Base
+                        if (TextUtils.HasDLCEntries(info, ""))
+                        {
+                            if (ImGui.CollapsingHeader("Base", ImGuiTreeNodeFlags.DefaultOpen))
+                            {
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
+                            }
+                        }
+                        // DLC 1
+                        if (TextUtils.HasDLCEntries(info, "DLC 1"))
+                        {
+                            if (ImGui.CollapsingHeader("DLC 1", ImGuiTreeNodeFlags.DefaultOpen))
+                            {
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 1")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
+                            }
+                        }
+                        // DLC 2
+                        if (TextUtils.HasDLCEntries(info, "DLC 2"))
+                        {
+                            if (ImGui.CollapsingHeader("DLC 2", ImGuiTreeNodeFlags.DefaultOpen))
+                            {
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                {
+                                    var id = fmgInfo.ID;
+                                    var fmgName = fmgInfo.Name;
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
+
+                                    if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 2")
+                                    {
+                                        HandleFmgView(fmgInfo);
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
@@ -292,7 +292,8 @@ public class TextFmgView
                 selectableName = $"[{id}] {selectableName}";
             }
 
-            if(!CFG.Current.TextEditor_SimpleFmgView && dlcGroupingName != "")
+            // Only show DLC markers in Advanced Mode
+            if(CFG.Current.TextEditor_AdvancedPresentationMode && dlcGroupingName != "")
             {
                 selectableName = $"{selectableName} [{dlcGroupingName}]";
             }

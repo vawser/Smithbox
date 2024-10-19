@@ -175,6 +175,28 @@ public class TextFileView
             }
         }
 
+        // Only show unused containers in Advanced mode
+        if(!CFG.Current.TextEditor_AdvancedPresentationMode)
+        {
+            // Hide Base and DLC1 containers as they are not used
+            if(Smithbox.ProjectType is ProjectType.ER)
+            {
+                if(info.Name == "item.msgbnd.dcx" || info.Name == "menu.msgbnd.dcx" ||
+                   info.Name == "item_dlc01.msgbnd.dcx" || info.Name == "menu_dlc01.msgbnd.dcx")
+                {
+                    return;
+                }
+            }
+            // Hide Base and DLC1 containers as they are not used
+            if (Smithbox.ProjectType is ProjectType.DS3)
+            {
+                if (info.Name == "item_dlc1.msgbnd.dcx" || info.Name == "menu_dlc1.msgbnd.dcx")
+                {
+                    return;
+                }
+            }
+        }
+
         if (Filters.IsFileFilterMatch(displayName, ""))
         {
             // Script row
