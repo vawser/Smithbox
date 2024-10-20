@@ -33,12 +33,6 @@ public class AppendFmgEntries : EditorAction
             {
                 TargetFmgInfo.File.Entries.Add(entry);
             }
-            else
-            {
-                // Replace existing entry if it matches wrapper entry
-                var existingEntry = TargetFmgInfo.File.Entries.Where(e => e.ID == entry.ID).FirstOrDefault();
-                existingEntry = entry;
-            }
         }
 
         TargetFmgInfo.File.Entries.Sort();

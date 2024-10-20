@@ -41,6 +41,8 @@ public class TextMultiselection
 
     public void HandleMultiselect(int currentSelectionIndex, int currentIndex)
     {
+        var editor = Smithbox.EditorHandler.TextEditor;
+
         // Multi-Select: Range Select
         if (InputTracker.GetKey(Veldrid.Key.LShift))
         {
@@ -60,7 +62,10 @@ public class TextMultiselection
                     if(k < Screen.Selection.SelectedFmg.Entries.Count)
                     {
                         var curEntry = Screen.Selection.SelectedFmg.Entries[k];
-                        StoredEntries.Add(k, curEntry);
+                        if (editor.Filters.IsFmgEntryFilterMatch(curEntry))
+                        {
+                            StoredEntries.Add(k, curEntry);
+                        }
                     }
                 }
             }

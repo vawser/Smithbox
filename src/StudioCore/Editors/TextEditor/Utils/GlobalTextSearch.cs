@@ -20,6 +20,8 @@ public static class GlobalTextSearch
 
     private static List<TextResult> SearchResults = new();
 
+    private static bool HasSearched = false;
+
     public static void Display()
     {
         var windowWidth = ImGui.GetWindowWidth();
@@ -83,11 +85,13 @@ public static class GlobalTextSearch
 
         if (ImGui.Button("Search##executeSearch", UI.GetStandardHalfButtonSize()))
         {
+            HasSearched = true;
             SearchResults = TextFinder.GetGlobalTextResult(_globalSearchInput, FilterType, IgnoreCase);
         }
         ImGui.SameLine();
         if (ImGui.Button("Clear##clearSearchResults", UI.GetStandardHalfButtonSize()))
         {
+            HasSearched = false;
             SearchResults.Clear();
         }
 
@@ -138,6 +142,10 @@ public static class GlobalTextSearch
                     EditorCommandQueue.AddCommand($"text/select/{category}/{result.ContainerName}/{result.FmgName}/{result.Entry.ID}");
                 }
             }
+        }
+        else if(HasSearched)
+        {
+            UIHelper.WrappedText("No text entries found matching the filter.");
         }
     }
 }

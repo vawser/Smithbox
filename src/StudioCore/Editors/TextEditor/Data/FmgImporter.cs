@@ -73,45 +73,66 @@ public static class FmgImporter
 
         if(ImGui.BeginMenu("Append"))
         {
-            foreach(var (key, entry) in ImportSources)
+            if (ImportSources.Count > 0)
             {
-                if(ImGui.Selectable($"{entry.Name}"))
+                foreach (var (key, entry) in ImportSources)
                 {
-                    AppendEntries(entry);
+                    if (ImGui.Selectable($"{entry.Name}"))
+                    {
+                        AppendEntries(entry);
+                    }
                 }
+            }
+            else
+            {
+                ImGui.Text("No exported FMG wrappers exist yet.");
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Append the selected FMG Wrapper contents to the currently selected FMG entries. Existing entries that match Wrapper entries will be overwritten.");
+        UIHelper.ShowHoverTooltip("Append the selected wrapper contents to the currently selected FMG entries.\n\nExisting entries will NOT be modified.");
 
         if (ImGui.BeginMenu("Replace"))
         {
-            foreach (var (key, entry) in ImportSources)
+            if (ImportSources.Count > 0)
             {
-                if (ImGui.Selectable($"{entry.Name}"))
+                foreach (var (key, entry) in ImportSources)
                 {
-                    ReplaceEntries(entry);
+                    if (ImGui.Selectable($"{entry.Name}"))
+                    {
+                        ReplaceEntries(entry);
+                    }
                 }
+            }
+            else
+            {
+                ImGui.Text("No exported FMG wrappers exist yet.");
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Replace the currently selected FMG entries with the contents of the selected FMG Wrapper entirely.");
+        UIHelper.ShowHoverTooltip("Replace the selected wrapper contents to the currently selected FMG entries.\n\nExisting entries will be modified by the contents of the wrapper.");
 
-        if (ImGui.BeginMenu("Unique Insert"))
+        if (ImGui.BeginMenu("Overwrite"))
         {
-            foreach (var (key, entry) in ImportSources)
+            if (ImportSources.Count > 0)
             {
-                if (ImGui.Selectable($"{entry.Name}"))
+                foreach (var (key, entry) in ImportSources)
                 {
-                    InsertUniqueEntries(entry);
+                    if (ImGui.Selectable($"{entry.Name}"))
+                    {
+                        OverwriteEntries(entry);
+                    }
                 }
+            }
+            else
+            {
+                ImGui.Text("No exported FMG wrappers exist yet.");
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Insert the selected FMG Wrapper contents into the currently selected FMG entires, but only if they are unique rows. Non-unique rows are ignored.");
+        UIHelper.ShowHoverTooltip("Overwrite the entire FMG entry list with the selected wrapper contents.");
     }
 
     /// <summary>
@@ -130,7 +151,8 @@ public static class FmgImporter
     }
 
     /// <summary>
-    /// Replace the contents of the currently selected FMG with the contents of the selected source
+    /// Replace the contents of the currently selected FMG with the contents of the selected source if they match, 
+    /// or append otherwise
     /// </summary>
     public static void ReplaceEntries(StoredFmgWrapper wrapper)
     {
@@ -145,19 +167,19 @@ public static class FmgImporter
     }
 
     /// <summary>
-    /// Insert contents of the selected source if they are not present in 
-    /// the contents of the currently selected FMG (respecting ID order) 
+    /// Overwrite the contents of the currently selected FMG with the contents of the selected source if they match, 
+    /// or append otherwise.
     /// </summary>
-    public static void InsertUniqueEntries(StoredFmgWrapper wrapper)
+    public static void OverwriteEntries(StoredFmgWrapper wrapper)
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
         var selectedFmgInfo = editor.Selection.SelectedFmgInfo;
 
-        var action = new InsertUniqueFmgEntries(selectedFmgInfo, wrapper);
+        var action = new OverwriteFmgEntries(selectedFmgInfo, wrapper);
         editor.EditorActionManager.ExecuteAction(action);
 
-        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}, inserting only unique entries from the wrapper.");
+        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}, replacing current entries.");
     }
 }
 

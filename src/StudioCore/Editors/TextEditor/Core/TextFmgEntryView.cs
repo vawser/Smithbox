@@ -25,8 +25,6 @@ public class TextFmgEntryView
     public TextContextMenu ContextMenu;
     public TextDifferenceManager DifferenceManager;
 
-    private bool IsCurrentlyCopyingContents = false;
-
     public TextFmgEntryView(TextEditorScreen screen)
     {
         Screen = screen;
@@ -120,25 +118,8 @@ public class TextFmgEntryView
                         {
                             ContextMenu.FmgEntryContextMenu(i, Selection.SelectedFmgInfo, entry, Selection.IsFmgEntrySelected(i));
 
-                            // Ignore if not currently in the FMG Entry context
-                            if (Selection.CurrentSelectionContext is TextSelectionContext.FmgEntry)
-                            {
-                                // Copy Entry Contents
-                                if (InputTracker.GetKey(KeyBindings.Current.TEXT_CopyEntryContents))
-                                {
-                                    CopyEntryTextToClipboard(CFG.Current.TextEditor_TextCopy_IncludeID);
-                                }
-                                // Select All
-                                if (InputTracker.GetKey(KeyBindings.Current.TEXT_SelectAll))
-                                {
-                                    Selection.FmgEntryMultiselect.StoredEntries.Clear();
-                                    for (int j = 0; j < Selection.SelectedFmg.Entries.Count; j++)
-                                    {
-                                        var tEntry = Selection.SelectedFmg.Entries[j];
-                                        Selection.FmgEntryMultiselect.StoredEntries.Add(j, tEntry);
-                                    }
-                                }
-                            }
+                            Screen.EditorShortcuts.HandleSelectAll();
+                            Screen.EditorShortcuts.HandleCopyEntryText();
                         }
 
                         // Focus Selection
@@ -155,71 +136,6 @@ public class TextFmgEntryView
             ImGui.EndChild();
 
             ImGui.End();
-        }
-    }
-
-    /// <summary>
-    /// Copy the currently selected Text Entries to the clipboard
-    /// </summary>
-    private void CopyEntryTextToClipboard(bool includeID)
-    {
-        if (!IsCurrentlyCopyingContents)
-        {
-            IsCurrentlyCopyingContents = true;
-            TaskManager.Run(
-                new TaskManager.LiveTask($"Copy Text Entry Text to Clipboard", TaskManager.RequeueType.None, false,
-            () =>
-            {
-                var AlterCopyTextAssignment = false;
-                var copyText = "";
-
-                for (int i = 0; i < Selection.SelectedFmg.Entries.Count; i++)
-                {
-                    var entry = Selection.SelectedFmg.Entries[i];
-
-                    if (Filters.IsFmgEntryFilterMatch(entry))
-                    {
-                        if (Selection.FmgEntryMultiselect.IsMultiselected(i))
-                        {
-                            var newText = $"{entry.Text}";
-
-                            if (CFG.Current.TextEditor_TextCopy_EscapeNewLines)
-                            {
-                                newText = $"{entry.Text}".Replace("\n", "\\n");
-                            }
-
-                            if (AlterCopyTextAssignment)
-                            {
-                                if (includeID)
-                                {
-                                    copyText = $"{copyText}\n{entry.ID} {newText}";
-                                }
-                                else
-                                {
-                                    copyText = $"{copyText}\n{newText}";
-                                }
-                            }
-                            else
-                            {
-                                AlterCopyTextAssignment = true;
-
-                                if (includeID)
-                                {
-                                    copyText = $"{entry.ID} {newText}";
-                                }
-                                else
-                                {
-                                    copyText = $"{newText}";
-                                }
-                            }
-                        }
-                    }
-                }
-
-                PlatformUtils.Instance.SetClipboardText(copyText);
-                PlatformUtils.Instance.MessageBox("Text Entry Contents copied to clipboard", "Clipboard", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                IsCurrentlyCopyingContents = false;
-            }));
         }
     }
 }

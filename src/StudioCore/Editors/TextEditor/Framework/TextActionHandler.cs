@@ -1,7 +1,9 @@
-﻿using SoulsFormats;
+﻿using HKLib.hk2018.hkaiCollisionAvoidance;
+using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Utils;
+using StudioCore.Platform;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -244,5 +246,74 @@ public class TextActionHandler
         }
 
         return newID;
+    }
+
+    private bool IsCurrentlyCopyingContents = false;
+
+    /// <summary>
+    /// Copy the currently selected Text Entries to the clipboard
+    /// </summary>
+    public void CopyEntryTextToClipboard(bool includeID)
+    {
+        var editor = Smithbox.EditorHandler.TextEditor;
+
+        if (!IsCurrentlyCopyingContents)
+        {
+            IsCurrentlyCopyingContents = true;
+            TaskManager.Run(
+                new TaskManager.LiveTask($"Copy Text Entry Text to Clipboard", TaskManager.RequeueType.None, false,
+            () =>
+            {
+                var AlterCopyTextAssignment = false;
+                var copyText = "";
+
+                for (int i = 0; i < editor.Selection.SelectedFmg.Entries.Count; i++)
+                {
+                    var entry = editor.Selection.SelectedFmg.Entries[i];
+
+                    if (editor.Filters.IsFmgEntryFilterMatch(entry))
+                    {
+                        if (editor.Selection.FmgEntryMultiselect.IsMultiselected(i))
+                        {
+                            var newText = $"{entry.Text}";
+
+                            if (CFG.Current.TextEditor_TextCopy_EscapeNewLines)
+                            {
+                                newText = $"{entry.Text}".Replace("\n", "\\n");
+                            }
+
+                            if (AlterCopyTextAssignment)
+                            {
+                                if (includeID)
+                                {
+                                    copyText = $"{copyText}\n{entry.ID} {newText}";
+                                }
+                                else
+                                {
+                                    copyText = $"{copyText}\n{newText}";
+                                }
+                            }
+                            else
+                            {
+                                AlterCopyTextAssignment = true;
+
+                                if (includeID)
+                                {
+                                    copyText = $"{entry.ID} {newText}";
+                                }
+                                else
+                                {
+                                    copyText = $"{newText}";
+                                }
+                            }
+                        }
+                    }
+                }
+
+                PlatformUtils.Instance.SetClipboardText(copyText);
+                PlatformUtils.Instance.MessageBox("Text Entry Contents copied to clipboard", "Clipboard", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                IsCurrentlyCopyingContents = false;
+            }));
+        }
     }
 }

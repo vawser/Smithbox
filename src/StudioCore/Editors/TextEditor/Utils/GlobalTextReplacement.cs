@@ -25,6 +25,7 @@ public static class GlobalTextReplacement
     private static bool SinglelineRegex = false;
     private static bool IgnorePatternWhitespace = false;
 
+    private static bool HasSearched = false;
     public static void Display()
     {
         var windowWidth = ImGui.GetWindowWidth();
@@ -134,12 +135,14 @@ public static class GlobalTextReplacement
 
         if (ImGui.Button("Preview Edit##executeSearch", UI.GetStandardHalfButtonSize()))
         {
+            HasSearched = true;
             ReplacementResults = TextFinder.GetReplacementResult(_globalSearchInput, FilterType, IgnoreCase);
         }
         UIHelper.ShowHoverTooltip("Populate the edit preview list.");
         ImGui.SameLine();
         if (ImGui.Button("Clear Preview##clearSearchResults", UI.GetStandardHalfButtonSize()))
         {
+            HasSearched = false;
             ReplacementResults.Clear();
         }
         UIHelper.ShowHoverTooltip("Clear the edit preview list.");
@@ -228,6 +231,10 @@ public static class GlobalTextReplacement
                     EditorCommandQueue.AddCommand($"text/select/{category}/{result.ContainerName}/{result.FmgName}/{result.Entry.ID}");
                 }
             }
+        }
+        else if (HasSearched)
+        {
+            UIHelper.WrappedText("No text entries found matching the filter.");
         }
     }
 }

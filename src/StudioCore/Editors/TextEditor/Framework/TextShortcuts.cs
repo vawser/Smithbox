@@ -1,4 +1,5 @@
-﻿using StudioCore.Configuration;
+﻿using Microsoft.AspNetCore.Components.Forms;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.TextEditor;
 using System;
@@ -71,6 +72,47 @@ public class TextShortcuts
         if (InputTracker.GetKeyDown(KeyBindings.Current.TEXT_FocusSelectedEntry))
         {
             Screen.Selection.FocusFmgEntrySelection = true;
+        }
+    }
+
+    /// <summary>
+    /// Select All in the FMG Entry list
+    /// </summary>
+    public void HandleSelectAll()
+    {
+        var editor = Smithbox.EditorHandler.TextEditor;
+
+        // Select All
+        if (Selection.CurrentSelectionContext is TextSelectionContext.FmgEntry)
+        {
+            if (InputTracker.GetKey(KeyBindings.Current.TEXT_SelectAll))
+            {
+                Selection.FmgEntryMultiselect.StoredEntries.Clear();
+                for (int j = 0; j < Selection.SelectedFmg.Entries.Count; j++)
+                {
+                    var tEntry = Selection.SelectedFmg.Entries[j];
+
+                    if (editor.Filters.IsFmgEntryFilterMatch(tEntry))
+                    {
+                        Selection.FmgEntryMultiselect.StoredEntries.Add(j, tEntry);
+                    }
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Copy Entry Text in the FMG Entry list
+    /// </summary>
+    public void HandleCopyEntryText()
+    {
+        // Copy Entry Contents
+        if (Selection.CurrentSelectionContext is TextSelectionContext.FmgEntry)
+        {
+            if (InputTracker.GetKey(KeyBindings.Current.TEXT_CopyEntryContents))
+            {
+                Screen.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_TextCopy_IncludeID);
+            }
         }
     }
 }

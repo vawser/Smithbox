@@ -123,7 +123,3 @@ Model Editor:
 
 - FIX: import should create associated entries if relevant (currently it does not) - Bit of a pain currently since we don't know if an entry is 'grouped' by default, we check for the associated entries, therefore we need to add a new method of checking to do this
 
-- FIX: move vanilla cache load to main instead of waiting for Text Editor entry first
-- FIX: diff cache is not mark null vanilla entries as modified if they are not null in project
-
-

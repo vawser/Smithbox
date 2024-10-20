@@ -10,6 +10,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Numerics;
+using System.Timers;
 using Veldrid;
 using Veldrid.Sdl2;
 
@@ -331,6 +332,8 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void OnProjectChanged()
     {
+        SetupDifferenceTimer();
+
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             Selection.OnProjectChanged();
@@ -382,5 +385,32 @@ public class TextEditorScreen : EditorScreen
     private void ResetActionManager()
     {
         EditorActionManager.Clear();
+    }
+
+    public Timer AutomaticDiffTimer;
+
+    private void SetupDifferenceTimer()
+    {
+        if (AutomaticDiffTimer != null)
+        {
+            AutomaticDiffTimer.Close();
+        }
+
+        var interval = 10 * 1000;
+        if (interval < 10000)
+            interval = 10000;
+
+        AutomaticDiffTimer = new Timer(interval);
+        AutomaticDiffTimer.Elapsed += OnAutomaticDiff;
+        AutomaticDiffTimer.AutoReset = true;
+        AutomaticDiffTimer.Enabled = true;
+    }
+
+    public void OnAutomaticDiff(object source, ElapsedEventArgs e)
+    {
+        if(TextBank.VanillaBankLoaded)
+        {
+            DifferenceManager.TrackFmgDifferences();
+        }
     }
 }

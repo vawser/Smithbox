@@ -23,14 +23,26 @@ public class ReplaceFmgEntries : EditorAction
 
     public override ActionEvent Execute()
     {
-        TargetFmgInfo.File.Entries.Clear();
-
         foreach (var entry in Wrapper.Fmg.Entries)
         {
             // Assign parent
             entry.Parent = TargetFmgInfo.File;
 
-            TargetFmgInfo.File.Entries.Add(entry);
+            var uniqueId = true;
+
+            foreach(var tEntry in TargetFmgInfo.File.Entries)
+            {
+                if(tEntry.ID == entry.ID)
+                {
+                    uniqueId = false;
+                    tEntry.Text = entry.Text;
+                }
+            }
+
+            if(uniqueId)
+            {
+                TargetFmgInfo.File.Entries.Add(entry);
+            }
         }
 
         TargetFmgInfo.File.Entries.Sort();
