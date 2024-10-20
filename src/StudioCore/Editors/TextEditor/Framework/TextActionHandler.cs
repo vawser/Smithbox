@@ -30,6 +30,9 @@ public class TextActionHandler
     /// </summary>
     public void DuplicateEntries()
     {
+        if (Screen.Selection.CurrentSelectionContext is not TextSelectionContext.FmgEntry)
+            return;
+
         if (Screen.Selection._selectedFmgEntry == null)
             return;
 
@@ -137,6 +140,9 @@ public class TextActionHandler
     /// </summary>
     public void DeleteEntries()
     {
+        if(Screen.Selection.CurrentSelectionContext is not TextSelectionContext.FmgEntry)
+            return;
+
         if (Screen.Selection._selectedFmgEntry == null)
             return;
 

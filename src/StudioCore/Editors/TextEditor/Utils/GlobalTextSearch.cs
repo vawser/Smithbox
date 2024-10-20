@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Org.BouncyCastle.Crypto;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -98,6 +99,15 @@ public static class GlobalTextSearch
 
             foreach (var result in SearchResults)
             {
+                // Ignore results from unused containers if not in Advanced Presentation mode
+                if (!CFG.Current.TextEditor_AdvancedPresentationMode)
+                {
+                    if (result.ContainerWrapper.IsContainerUnused())
+                    {
+                        continue;
+                    }
+                }
+
                 var foundText = result.Entry.Text;
                 if (foundText.Contains("\n"))
                 {
@@ -105,20 +115,20 @@ public static class GlobalTextSearch
                     foundText = $"{firstSection} <...>";
                 }
 
-                var category = result.Info.ContainerDisplayCategory.ToString();
+                var category = result.ContainerWrapper.ContainerDisplayCategory.ToString();
 
                 // Container
                 var containerName = result.ContainerName;
                 if (CFG.Current.TextEditor_DisplayCommunityContainerName)
                 {
-                    containerName = result.Info.GetContainerDisplayName();
+                    containerName = result.ContainerWrapper.GetContainerDisplayName();
                 }
 
                 // FMG
                 var fmgName = result.FmgName;
                 if (CFG.Current.TextEditor_DisplayFmgPrettyName)
                 {
-                    fmgName = TextUtils.GetFmgDisplayName(result.Info, result.FmgID, result.FmgName);
+                    fmgName = TextUtils.GetFmgDisplayName(result.ContainerWrapper, result.FmgID, result.FmgName);
                 }
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";

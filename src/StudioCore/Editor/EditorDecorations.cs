@@ -808,7 +808,7 @@ public class EditorDecorations
                 TextResult? primaryRef = resolveFMGRefs(fmgRefs, context, oldval)?.FirstOrDefault();
                 if (primaryRef != null)
                 {
-                    EditorCommandQueue.AddCommand($@"text/select/{primaryRef.Info.Filename}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
+                    EditorCommandQueue.AddCommand($@"text/select/{primaryRef.ContainerWrapper.Filename}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
                 }
             }
             else if (textureRefs != null)
@@ -994,7 +994,7 @@ public class EditorDecorations
             {
                 if (ImGui.Selectable($@"Goto {result.FmgName} Text"))
                 {
-                    EditorCommandQueue.AddCommand($@"text/select/{result.Info.Filename}/{result.FmgName}/{result.Entry.ID}");
+                    EditorCommandQueue.AddCommand($@"text/select/{result.ContainerWrapper.Filename}/{result.FmgName}/{result.Entry.ID}");
                 }
 
                 if (context == null || executor == null)

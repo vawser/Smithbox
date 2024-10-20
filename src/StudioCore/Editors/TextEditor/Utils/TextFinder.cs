@@ -53,7 +53,7 @@ public static class TextFinder
                             {
                                 TextResult result = new();
                                 result.ContainerName = containerName;
-                                result.Info = entry;
+                                result.ContainerWrapper = entry;
                                 result.FmgID = fmg.ID;
                                 result.FmgName = fmg.Name;
                                 result.Fmg = fmg.File;
@@ -120,7 +120,7 @@ public static class TextFinder
                     {
                         TextResult result = new();
                         result.ContainerName = containerName;
-                        result.Info = entry;
+                        result.ContainerWrapper = entry;
                         result.FmgID = fmg.ID;
                         result.FmgName = fmg.Name;
                         result.Fmg = fmg.File;
@@ -184,7 +184,7 @@ public static class TextFinder
                         ReplacementResult result = new();
                         result.Match = match;
                         result.ContainerName = containerName;
-                        result.Info = entry;
+                        result.ContainerWrapper = entry;
                         result.FmgID = fmg.ID;
                         result.FmgName = fmg.Name;
                         result.Fmg = fmg.File;
@@ -204,7 +204,7 @@ public static class TextFinder
 public class TextResult
 {
     public string ContainerName { get; set; }
-    public TextContainerWrapper Info { get; set; }
+    public TextContainerWrapper ContainerWrapper { get; set; }
     public int FmgID { get; set; }
     public string FmgName { get; set; }
     public FMG Fmg { get; set; }
@@ -218,7 +218,7 @@ public class ReplacementResult
 {
     public string ContainerName { get; set; }
     public Match Match { get; set; }
-    public TextContainerWrapper Info { get; set; }
+    public TextContainerWrapper ContainerWrapper { get; set; }
     public int FmgID { get; set; }
     public string FmgName { get; set; }
     public FMG Fmg { get; set; }

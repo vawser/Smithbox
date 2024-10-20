@@ -177,7 +177,7 @@ public static class GlobalTextReplacement
                 foreach (var result in ReplacementResults)
                 {
                     var newText = Regex.Replace(result.Entry.Text, searchText, replaceText, options);
-                    actions.Add(new ChangeFmgEntryText(result.Info, result.Entry, newText));
+                    actions.Add(new ChangeFmgEntryText(result.ContainerWrapper, result.Entry, newText));
                 }
 
                 var groupedAction = new FmgGroupedAction(actions);
@@ -189,6 +189,15 @@ public static class GlobalTextReplacement
 
             foreach (var result in ReplacementResults)
             {
+                // Ignore results from unused containers if not in Advanced Presentation mode
+                if (!CFG.Current.TextEditor_AdvancedPresentationMode)
+                {
+                    if (result.ContainerWrapper.IsContainerUnused())
+                    {
+                        continue;
+                    }
+                }
+
                 var foundText = result.Entry.Text;
                 if (foundText.Contains("\n"))
                 {
@@ -196,20 +205,20 @@ public static class GlobalTextReplacement
                     foundText = $"{firstSection} <...>";
                 }
 
-                var category = result.Info.ContainerDisplayCategory.ToString();
+                var category = result.ContainerWrapper.ContainerDisplayCategory.ToString();
 
                 // Container
                 var containerName = result.ContainerName;
                 if (CFG.Current.TextEditor_DisplayCommunityContainerName)
                 {
-                    containerName = result.Info.GetContainerDisplayName();
+                    containerName = result.ContainerWrapper.GetContainerDisplayName();
                 }
 
                 // FMG
                 var fmgName = result.FmgName;
                 if (CFG.Current.TextEditor_DisplayFmgPrettyName)
                 {
-                    fmgName = TextUtils.GetFmgDisplayName(result.Info, result.FmgID, result.FmgName);
+                    fmgName = TextUtils.GetFmgDisplayName(result.ContainerWrapper, result.FmgID, result.FmgName);
                 }
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";

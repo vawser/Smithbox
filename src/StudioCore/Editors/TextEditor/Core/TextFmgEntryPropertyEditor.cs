@@ -111,13 +111,10 @@ public class TextFmgEntryPropertyEditor
                 if (ImGui.InputInt($"##fmgEntryIdInputGrouped", ref curId))
                 {
                     _idCache = curId;
+                    Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
                 }
 
                 var idCommit = ImGui.IsItemDeactivatedAfterEdit();
-                if (ImGui.IsItemActivated())
-                {
-                    Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
-                }
 
                 // Update the ID if it was changed and the id input was exited
                 if (idCommit)
@@ -185,14 +182,10 @@ public class TextFmgEntryPropertyEditor
                 if (ImGui.InputTextMultiline($"##fmgTextInput_Title", ref curText, 2000, new Vector2(-1, height)))
                 {
                     _textCache = curText;
+                    Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
                 }
 
                 var titleTextCommit = ImGui.IsItemDeactivatedAfterEdit();
-
-                if (ImGui.IsItemActivated())
-                {
-                    Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
-                }
 
                 // Title Text
                 if (fmgEntryGroup.Title != null && titleTextCommit)
@@ -222,14 +215,10 @@ public class TextFmgEntryPropertyEditor
                 if (ImGui.InputTextMultiline($"##fmgTextInput_Summary", ref curText, 2000, new Vector2(-1, height)))
                 {
                     _textCache = curText;
+                    Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
                 }
 
                 var summaryTextCommit = ImGui.IsItemDeactivatedAfterEdit();
-
-                if (ImGui.IsItemActivated())
-                {
-                    Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
-                }
 
                 if (fmgEntryGroup.Summary != null && summaryTextCommit)
                 {
@@ -258,14 +247,10 @@ public class TextFmgEntryPropertyEditor
                 if (ImGui.InputTextMultiline($"##fmgTextInput_Description", ref curText, 2000, new Vector2(-1, height)))
                 {
                     _textCache = curText;
+                    Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
                 }
 
                 var descriptionTextCommit = ImGui.IsItemDeactivatedAfterEdit();
-
-                if (ImGui.IsItemActivated())
-                {
-                    Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
-                }
 
                 if (fmgEntryGroup.Description != null && descriptionTextCommit)
                 {
@@ -294,14 +279,10 @@ public class TextFmgEntryPropertyEditor
                 if (ImGui.InputTextMultiline($"##fmgTextInput_Effect", ref curText, 2000, new Vector2(-1, height)))
                 {
                     _textCache = curText;
+                    Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
                 }
 
                 var effectTextCommit = ImGui.IsItemDeactivatedAfterEdit();
-
-                if (ImGui.IsItemActivated())
-                {
-                    Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
-                }
 
                 if (fmgEntryGroup.Effect != null && effectTextCommit)
                 {
@@ -322,26 +303,14 @@ public class TextFmgEntryPropertyEditor
         var textboxHeight = 100;
         var textboxWidth = ImGui.GetWindowWidth() * 0.9f;
 
-        var id = entry.ID;
-        var contents = entry.Text;
-
-        // Correct contents if the entry.Text is null
-        if (contents == null)
-            contents = "";
-
-        var height = (textboxHeight + ImGui.CalcTextSize(contents).Y) * DPI.GetUIScale();
-
-        var idChanged = false;
-        var idCommit = false;
-
-        var textChanged = false;
-        var textCommit = false;
-
         if (ImGui.BeginTable($"fmgEditTableBasic", 2, ImGuiTableFlags.SizingFixedFit))
         {
             ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
             ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
             //ImGui.TableHeadersRow();
+
+            // ID
+            var curId = entry.ID;
 
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
@@ -351,16 +320,28 @@ public class TextFmgEntryPropertyEditor
             ImGui.TableSetColumnIndex(1);
 
             ImGui.SetNextItemWidth(textboxWidth);
-            if(ImGui.InputInt($"##fmgEntryIdInputBasic", ref id))
+            if(ImGui.InputInt($"##fmgEntryIdInputBasic", ref curId))
             {
-                idChanged = true;
-            }
-
-            idCommit = ImGui.IsItemDeactivatedAfterEdit();
-            if (ImGui.IsItemActivated())
-            {
+                _idCache = curId;
                 Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
             }
+
+            var idCommit = ImGui.IsItemDeactivatedAfterEdit();
+
+            if (idCommit)
+            {
+                var action = new ChangeFmgEntryID(Selection.SelectedContainer, entry, _idCache);
+                Screen.EditorActionManager.ExecuteAction(action);
+            }
+
+            // Text
+            var curText = entry.Text;
+
+            // Correct contents if the entry.Text is null
+            if (curText == null)
+                curText = "";
+
+            var height = (textboxHeight + ImGui.CalcTextSize(curText).Y) * DPI.GetUIScale();
 
             ImGui.TableNextRow();
 
@@ -370,31 +351,21 @@ public class TextFmgEntryPropertyEditor
 
             ImGui.TableSetColumnIndex(1);
 
-            if (ImGui.InputTextMultiline($"##fmgTextInputBasic", ref contents, 2000, new Vector2(-1, height)))
+            if (ImGui.InputTextMultiline($"##fmgTextInputBasic", ref curText, 2000, new Vector2(-1, height)))
             {
-                textChanged = true;
-            }
-            textCommit = ImGui.IsItemDeactivatedAfterEdit();
-            if (ImGui.IsItemActivated())
-            {
+                _textCache = curText;
                 Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
             }
 
+            var textCommit = ImGui.IsItemDeactivatedAfterEdit();
+
+            if (textCommit)
+            {
+                var action = new ChangeFmgEntryText(Selection.SelectedContainer, entry, _textCache);
+                Screen.EditorActionManager.ExecuteAction(action);
+            }
+
             ImGui.EndTable();
-        }
-
-        // Update the ID if it was changed and the id input was exited
-        if(idChanged && idCommit)
-        {
-            var action = new ChangeFmgEntryID(Selection.SelectedContainer, entry, id);
-            Screen.EditorActionManager.ExecuteAction(action);
-        }
-
-        // Update the Text if it was changed and the text input was exited
-        if (textChanged && textCommit)
-        {
-            var action = new ChangeFmgEntryText(Selection.SelectedContainer, entry, contents);
-            Screen.EditorActionManager.ExecuteAction(action);
         }
     }
 }

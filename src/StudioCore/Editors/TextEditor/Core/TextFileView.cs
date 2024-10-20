@@ -186,8 +186,8 @@ public class TextFileView
             }
         }
 
-        // Ignore unused containers in Simple mode
-        if(!CFG.Current.TextEditor_AdvancedPresentationMode)
+        // Ignore unused containers if not in Advanced Presentation mode
+        if (!CFG.Current.TextEditor_AdvancedPresentationMode)
         {
             if(wrapper.IsContainerUnused())
             {
