@@ -46,12 +46,12 @@ public class TextFmgEntryView
 
             ImGui.BeginChild("FmgEntriesList");
 
-            if (Selection.SelectedFmg != null)
+            if (Selection.SelectedFmgWrapper != null && Selection.SelectedFmgWrapper.File != null)
             {
                 // Categories
-                for (int i = 0; i < Selection.SelectedFmg.Entries.Count; i++)
+                for (int i = 0; i < Selection.SelectedFmgWrapper.File.Entries.Count; i++)
                 {
-                    var entry = Selection.SelectedFmg.Entries[i];
+                    var entry = Selection.SelectedFmgWrapper.File.Entries[i];
                     var id = entry.ID;
                     var contents = entry.Text;
 
@@ -116,7 +116,7 @@ public class TextFmgEntryView
                         // Context Menu / Shortcuts
                         if (Selection.IsFmgEntrySelected(i))
                         {
-                            ContextMenu.FmgEntryContextMenu(i, Selection.SelectedFmgInfo, entry, Selection.IsFmgEntrySelected(i));
+                            ContextMenu.FmgEntryContextMenu(i, Selection.SelectedFmgWrapper, entry, Selection.IsFmgEntrySelected(i));
 
                             Screen.EditorShortcuts.HandleSelectAll();
                             Screen.EditorShortcuts.HandleCopyEntryText();

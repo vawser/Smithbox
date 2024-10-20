@@ -57,7 +57,7 @@ public static class FmgExporter
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        var selectedFmgInfo = editor.Selection.SelectedFmgInfo;
+        var selectedFmgInfo = editor.Selection.SelectedFmgWrapper;
         var selectedFmgEntries = editor.Selection.FmgEntryMultiselect.StoredEntries;
 
         var fmgWrapper = new StoredFmgWrapper();

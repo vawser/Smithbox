@@ -19,7 +19,7 @@ public static class LanguageSync
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        var currentInfo = editor.Selection.SelectedContainer;
+        var currentInfo = editor.Selection.SelectedContainerWrapper;
         var currentCategory = currentInfo.ContainerDisplayCategory;
 
         // <language X> -> Add Unique Entries from Primary
@@ -29,7 +29,7 @@ public static class LanguageSync
             if (TextBank.FmgBank.Any(e => e.Value.ContainerDisplayCategory == category) && editor.FileView.AllowedCategory(category))
             {
                 var targetContainer = TextBank.FmgBank
-                    .Where(e => e.Value.ContainerDisplayCategory == editor.Selection.SelectedContainer.ContainerDisplayCategory)
+                    .Where(e => e.Value.ContainerDisplayCategory == editor.Selection.SelectedContainerWrapper.ContainerDisplayCategory)
                     .Where(e => e.Value.ContainerDisplayCategory != currentCategory)
                     .FirstOrDefault();
 

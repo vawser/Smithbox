@@ -541,6 +541,6 @@ public class TextNewEntryCreationModal
         var currentFmg = entry.Parent;
         var newEntry = new FMG.Entry(currentFmg, id, contents);
 
-        return new AddFmgEntry(Selection.SelectedContainer, entry, newEntry, id);
+        return new AddFmgEntry(Selection.SelectedContainerWrapper, entry, newEntry, id);
     }
 }

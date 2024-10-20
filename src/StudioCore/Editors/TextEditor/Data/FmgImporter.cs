@@ -142,12 +142,12 @@ public static class FmgImporter
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        var selectedFmgInfo = editor.Selection.SelectedFmgInfo;
+        var selectedFmgInfo = editor.Selection.SelectedFmgWrapper;
 
         var action = new AppendFmgEntries(selectedFmgInfo, wrapper);
         editor.EditorActionManager.ExecuteAction(action);
 
-        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}, appending current entries.");
+        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}.");
     }
 
     /// <summary>
@@ -158,12 +158,12 @@ public static class FmgImporter
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        var selectedFmgInfo = editor.Selection.SelectedFmgInfo;
+        var selectedFmgInfo = editor.Selection.SelectedFmgWrapper;
 
         var action = new ReplaceFmgEntries(selectedFmgInfo, wrapper);
         editor.EditorActionManager.ExecuteAction(action);
 
-        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}, replacing current entries.");
+        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}.");
     }
 
     /// <summary>
@@ -174,12 +174,12 @@ public static class FmgImporter
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        var selectedFmgInfo = editor.Selection.SelectedFmgInfo;
+        var selectedFmgInfo = editor.Selection.SelectedFmgWrapper;
 
         var action = new OverwriteFmgEntries(selectedFmgInfo, wrapper);
         editor.EditorActionManager.ExecuteAction(action);
 
-        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}, replacing current entries.");
+        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}.");
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Org.BouncyCastle.Asn1.X9;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
@@ -71,6 +72,51 @@ public class TextFmgEntryPropertyEditor
         else
         {
             DisplayGroupedTextInput(Selection._selectedFmgEntry, fmgEntryGroup);
+
+            DisplayGroupedAddSection(fmgEntryGroup);
+        }
+    }
+
+    private void DisplayGroupedAddSection(FmgEntryGroup fmgEntryGroup)
+    {
+        ImGui.Separator();
+
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 24 * DPI.GetUIScale());
+
+        var selectedFmgWrapper = Selection.SelectedFmgWrapper;
+        var selectedEntry = Selection._selectedFmgEntry;
+
+        // Add Summary entry if missing but supported
+        if (fmgEntryGroup.Title == null && fmgEntryGroup.SupportsTitle)
+        {
+            if (ImGui.Button("Add Title Entry", buttonSize))
+            {
+                Screen.ActionHandler.AddTitleEntry(selectedFmgWrapper, selectedEntry);
+            }
+        }
+        // Add Summary entry if missing but supported
+        if (fmgEntryGroup.Summary == null && fmgEntryGroup.SupportsSummary)
+        {
+            if (ImGui.Button("Add Summary Entry", buttonSize))
+            {
+                Screen.ActionHandler.AddSummaryEntry(selectedFmgWrapper, selectedEntry);
+            }
+        }
+        // Add Description entry if missing but supported
+        if (fmgEntryGroup.Description == null && fmgEntryGroup.SupportsDescription)
+        {
+            if (ImGui.Button("Add Description Entry", buttonSize))
+            {
+                Screen.ActionHandler.AddDescriptionEntry(selectedFmgWrapper, selectedEntry);
+            }
+        }
+        // Add Effect entry if missing but supported
+        if (fmgEntryGroup.Effect == null && fmgEntryGroup.SupportsEffect)
+        {
+            if (ImGui.Button("Add Effect Entry", buttonSize))
+            {
+                Screen.ActionHandler.AddEffectEntry(selectedFmgWrapper, selectedEntry);
+            }
         }
     }
 
@@ -140,19 +186,19 @@ public class TextFmgEntryPropertyEditor
 
                         if (fmgEntryGroup.Title != null)
                         {
-                            actions.Add(new ChangeFmgEntryID(Selection.SelectedContainer, fmgEntryGroup.Title, _idCache));
+                            actions.Add(new ChangeFmgEntryID(Selection.SelectedContainerWrapper, fmgEntryGroup.Title, _idCache));
                         }
                         if (fmgEntryGroup.Summary != null)
                         {
-                            actions.Add(new ChangeFmgEntryID(Selection.SelectedContainer, fmgEntryGroup.Summary, _idCache));
+                            actions.Add(new ChangeFmgEntryID(Selection.SelectedContainerWrapper, fmgEntryGroup.Summary, _idCache));
                         }
                         if (fmgEntryGroup.Description != null)
                         {
-                            actions.Add(new ChangeFmgEntryID(Selection.SelectedContainer, fmgEntryGroup.Description, _idCache));
+                            actions.Add(new ChangeFmgEntryID(Selection.SelectedContainerWrapper, fmgEntryGroup.Description, _idCache));
                         }
                         if (fmgEntryGroup.Effect != null)
                         {
-                            actions.Add(new ChangeFmgEntryID(Selection.SelectedContainer, fmgEntryGroup.Effect, _idCache));
+                            actions.Add(new ChangeFmgEntryID(Selection.SelectedContainerWrapper, fmgEntryGroup.Effect, _idCache));
                         }
 
                         var groupAction = new FmgGroupedAction(actions);
@@ -190,7 +236,7 @@ public class TextFmgEntryPropertyEditor
                 // Title Text
                 if (fmgEntryGroup.Title != null && titleTextCommit)
                 {
-                    var action = new ChangeFmgEntryText(Selection.SelectedContainer, fmgEntryGroup.Title, _textCache);
+                    var action = new ChangeFmgEntryText(Selection.SelectedContainerWrapper, fmgEntryGroup.Title, _textCache);
                     Screen.EditorActionManager.ExecuteAction(action);
                 }
             }
@@ -222,7 +268,7 @@ public class TextFmgEntryPropertyEditor
 
                 if (fmgEntryGroup.Summary != null && summaryTextCommit)
                 {
-                    var action = new ChangeFmgEntryText(Selection.SelectedContainer, fmgEntryGroup.Summary, _textCache);
+                    var action = new ChangeFmgEntryText(Selection.SelectedContainerWrapper, fmgEntryGroup.Summary, _textCache);
                     Screen.EditorActionManager.ExecuteAction(action);
                 }
             }
@@ -254,7 +300,7 @@ public class TextFmgEntryPropertyEditor
 
                 if (fmgEntryGroup.Description != null && descriptionTextCommit)
                 {
-                    var action = new ChangeFmgEntryText(Selection.SelectedContainer, fmgEntryGroup.Description, _textCache);
+                    var action = new ChangeFmgEntryText(Selection.SelectedContainerWrapper, fmgEntryGroup.Description, _textCache);
                     Screen.EditorActionManager.ExecuteAction(action);
                 }
             }
@@ -286,7 +332,7 @@ public class TextFmgEntryPropertyEditor
 
                 if (fmgEntryGroup.Effect != null && effectTextCommit)
                 {
-                    var action = new ChangeFmgEntryText(Selection.SelectedContainer, fmgEntryGroup.Effect, _textCache);
+                    var action = new ChangeFmgEntryText(Selection.SelectedContainerWrapper, fmgEntryGroup.Effect, _textCache);
                     Screen.EditorActionManager.ExecuteAction(action);
                 }
             }
@@ -330,7 +376,7 @@ public class TextFmgEntryPropertyEditor
 
             if (idCommit)
             {
-                var action = new ChangeFmgEntryID(Selection.SelectedContainer, entry, _idCache);
+                var action = new ChangeFmgEntryID(Selection.SelectedContainerWrapper, entry, _idCache);
                 Screen.EditorActionManager.ExecuteAction(action);
             }
 
@@ -361,7 +407,7 @@ public class TextFmgEntryPropertyEditor
 
             if (textCommit)
             {
-                var action = new ChangeFmgEntryText(Selection.SelectedContainer, entry, _textCache);
+                var action = new ChangeFmgEntryText(Selection.SelectedContainerWrapper, entry, _textCache);
                 Screen.EditorActionManager.ExecuteAction(action);
             }
 

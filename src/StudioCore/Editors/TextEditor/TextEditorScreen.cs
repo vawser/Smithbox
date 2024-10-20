@@ -178,7 +178,7 @@ public class TextEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("Data"))
         {
-            if (ImGui.BeginMenu("FMG", Selection.SelectedFmg != null))
+            if (ImGui.BeginMenu("FMG", Selection.SelectedFmgWrapper.File != null))
             {
                 if (ImGui.BeginMenu("Export Entries"))
                 {
@@ -197,7 +197,7 @@ public class TextEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            if (ImGui.BeginMenu("FMG Entries", Selection.SelectedFmg != null && Selection._selectedFmgEntry != null))
+            if (ImGui.BeginMenu("FMG Entries", Selection.SelectedFmgWrapper.File != null && Selection._selectedFmgEntry != null))
             {
                 if (ImGui.BeginMenu("Export Entries"))
                 {
@@ -360,11 +360,11 @@ public class TextEditorScreen : EditorScreen
 
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            TextBank.SaveLooseFmgs(Selection.SelectedContainer);
+            TextBank.SaveLooseFmgs(Selection.SelectedContainerWrapper);
         }
         else
         {
-            TextBank.SaveFmgContainer(Selection.SelectedContainer);
+            TextBank.SaveFmgContainer(Selection.SelectedContainerWrapper);
         }
     }
 

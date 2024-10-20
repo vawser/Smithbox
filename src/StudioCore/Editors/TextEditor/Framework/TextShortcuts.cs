@@ -81,20 +81,23 @@ public class TextShortcuts
     public void HandleSelectAll()
     {
         var editor = Smithbox.EditorHandler.TextEditor;
+        var selectionContext = Selection.CurrentSelectionContext;
+        var multiselect = Selection.FmgEntryMultiselect;
+        var fmg = Selection.SelectedFmgWrapper.File;
 
         // Select All
-        if (Selection.CurrentSelectionContext is TextSelectionContext.FmgEntry)
+        if (selectionContext is TextSelectionContext.FmgEntry)
         {
             if (InputTracker.GetKey(KeyBindings.Current.TEXT_SelectAll))
             {
-                Selection.FmgEntryMultiselect.StoredEntries.Clear();
-                for (int j = 0; j < Selection.SelectedFmg.Entries.Count; j++)
+                multiselect.StoredEntries.Clear();
+                for (int j = 0; j < fmg.Entries.Count; j++)
                 {
-                    var tEntry = Selection.SelectedFmg.Entries[j];
+                    var tEntry = fmg.Entries[j];
 
                     if (editor.Filters.IsFmgEntryFilterMatch(tEntry))
                     {
-                        Selection.FmgEntryMultiselect.StoredEntries.Add(j, tEntry);
+                        multiselect.StoredEntries.Add(j, tEntry);
                     }
                 }
             }
@@ -106,8 +109,10 @@ public class TextShortcuts
     /// </summary>
     public void HandleCopyEntryText()
     {
+        var selectionContext = Selection.CurrentSelectionContext;
+
         // Copy Entry Contents
-        if (Selection.CurrentSelectionContext is TextSelectionContext.FmgEntry)
+        if (selectionContext is TextSelectionContext.FmgEntry)
         {
             if (InputTracker.GetKey(KeyBindings.Current.TEXT_CopyEntryContents))
             {

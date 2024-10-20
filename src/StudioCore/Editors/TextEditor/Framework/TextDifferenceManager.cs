@@ -40,7 +40,7 @@ public class TextDifferenceManager
         AdditionCache = new();
         DifferenceCache = new();
 
-        if (Selection.SelectedContainer == null)
+        if (Selection.SelectedContainerWrapper == null)
             return;
 
         // Leave empty if disabled
@@ -49,10 +49,10 @@ public class TextDifferenceManager
             return;
         }
 
-        var containerCategory = Selection.SelectedContainer.ContainerDisplayCategory;
-        var containerSubCategory = Selection.SelectedContainer.ContainerDisplaySubCategory;
-        var containerName = Selection.SelectedContainer.Filename;
-        var fmgID = Selection.SelectedFmgInfo.ID;
+        var containerCategory = Selection.SelectedContainerWrapper.ContainerDisplayCategory;
+        var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
+        var containerName = Selection.SelectedContainerWrapper.Filename;
+        var fmgID = Selection.SelectedFmgWrapper.ID;
 
         if (TextBank.VanillaBankLoaded)
         {
@@ -89,7 +89,7 @@ public class TextDifferenceManager
                 }
             }
 
-            foreach(var entry in Selection.SelectedFmgInfo.File.Entries)
+            foreach(var entry in Selection.SelectedFmgWrapper.File.Entries)
             {
                 string entryId = $"{entry.ID}";
 
@@ -188,7 +188,7 @@ public class TextDifferenceManager
     public bool IsDifferentToVanilla(FMG.Entry entry)
     {
         var entryId = $"{entry.ID}";
-        var containerSubCategory = Selection.SelectedContainer.ContainerDisplaySubCategory;
+        var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
 
         // DS2
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -215,7 +215,7 @@ public class TextDifferenceManager
     public bool IsUniqueToProject(FMG.Entry entry)
     {
         var entryId = $"{entry.ID}";
-        var containerSubCategory = Selection.SelectedContainer.ContainerDisplaySubCategory;
+        var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
 
         // DS2
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
