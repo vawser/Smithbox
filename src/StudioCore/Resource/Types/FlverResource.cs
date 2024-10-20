@@ -1229,7 +1229,7 @@ public class FlverResource : IResource, IDisposable
         Span<ushort> fs16 = null;
         Span<int> fs32 = null;
 
-        var indices = mesh.Triangulate(FlverDeS.Version).ToArray();
+        var indices = mesh.Triangulate(FlverDeS.Header.Version).ToArray();
         var indicesTotal = indices.Length;
 
         dest.GeomBuffer = Renderer.GeometryBufferAllocator.Allocate(vbuffersize,
