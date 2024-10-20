@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
+using SoulsFormats.Other.PlayStation3;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
@@ -376,48 +377,126 @@ public class ProjectHandler
     {
         var type = ProjectType.Undefined;
 
-        if (exePath.ToLower().Contains("darksouls.exe"))
+        if (exePath.Contains("darksouls.exe", StringComparison.InvariantCultureIgnoreCase))
         {
             type = ProjectType.DS1;
         }
-        else if (exePath.ToLower().Contains("darksoulsremastered.exe"))
+        else if (exePath.Contains("darksoulsremastered.exe", StringComparison.InvariantCultureIgnoreCase))
         {
             type = ProjectType.DS1R;
         }
-        else if (exePath.ToLower().Contains("darksoulsii.exe"))
+        else if (exePath.Contains("darksoulsii.exe", StringComparison.InvariantCultureIgnoreCase))
         {
             type = ProjectType.DS2S; // Default to SOTFS
         }
-        else if (exePath.ToLower().Contains("darksoulsiii.exe"))
+        else if (exePath.Contains("darksoulsiii.exe", StringComparison.InvariantCultureIgnoreCase))
         {
             type = ProjectType.DS3;
         }
-        else if (exePath.ToLower().Contains("eboot.bin"))
+        else if (exePath.Contains("eboot.bin", StringComparison.InvariantCultureIgnoreCase))
         {
-            var path = Path.GetDirectoryName(exePath);
-            if (Directory.Exists($@"{path}\dvdroot_ps4"))
+            var usrDir = Path.GetDirectoryName(exePath);
+            var gameDir = Path.GetDirectoryName(usrDir);
+            var sfoPath = $@"{gameDir}\PARAM.SFO";
+            if (Directory.Exists($@"{usrDir}\dvdroot_ps4"))
             {
                 type = ProjectType.BB;
+            }
+            else if (File.Exists(sfoPath))
+            {
+                PARAMSFO sfo = PARAMSFO.Read(sfoPath);
+                type = GetProjectTypeFromPARAMSFO(sfo);
             }
             else
             {
                 type = ProjectType.DES;
             }
         }
-        else if (exePath.ToLower().Contains("sekiro.exe"))
+        else if (exePath.Contains("sekiro.exe", StringComparison.InvariantCultureIgnoreCase))
         {
             type = ProjectType.SDT;
         }
-        else if (exePath.ToLower().Contains("eldenring.exe"))
+        else if (exePath.Contains("eldenring.exe", StringComparison.InvariantCultureIgnoreCase))
         {
             type = ProjectType.ER;
         }
-        else if (exePath.ToLower().Contains("armoredcore6.exe"))
+        else if (exePath.Contains("armoredcore6.exe", StringComparison.InvariantCultureIgnoreCase))
         {
             type = ProjectType.AC6;
         }
 
         return type;
+    }
+
+    public ProjectType GetProjectTypeFromPARAMSFO(PARAMSFO sfo)
+    {
+        // Try to find the title name
+        if (sfo.Parameters.TryGetValue("TITLE", out PARAMSFO.Parameter parameter))
+        {
+            switch (parameter.Data)
+            {
+                case "Armored Core 4":
+                    return ProjectType.AC4;
+                case "ARMORED CORE for Answer":
+                    return ProjectType.ACFA;
+                case "ARMORED CORE V":
+                    return ProjectType.ACV;
+                case "Armored Core Verdict Day":
+                    return ProjectType.ACVD;
+                case "Demon's Souls":
+                    return ProjectType.DES;
+            }
+        }
+
+        // Try to find the title ID
+        if (sfo.Parameters.TryGetValue("TITLE_ID", out parameter))
+        {
+            switch (parameter.Data)
+            {
+                case "BLKS20001":
+                case "BLJM60012":
+                case "BLJM60062":
+                case "BLUS30027":
+                case "BLES00039":
+                    return ProjectType.AC4;
+                case "BLKS20066":
+                case "BLJM55005":
+                case "BLJM60066":
+                case "BLUS30187":
+                case "BLES00370":
+                    return ProjectType.ACFA;
+                case "BLKS20356":
+                case "BLAS50448":
+                case "BLJM60378":
+                case "BLUS30516":
+                case "BLES01440":
+                    return ProjectType.ACV;
+                case "BLKS20441":
+                case "BLAS50618":
+                case "BLJM61014":
+                case "BLJM61020":
+                case "BLUS31194":
+                case "BLES01898":
+                case "NPUB31245":
+                case "NPEB01428":
+                    return ProjectType.ACVD;
+                case "BCKS10071":
+                case "BCJS30022":
+                case "BCJS70013":
+                case "BCAS20071":
+                case "BCAS20115":
+                case "BLUS30443":
+                case "BLUS30443CE":
+                case "BLES00932":
+                case "NPJA00102":
+                case "NPUB30910":
+                case "NPEB01202":
+                    return ProjectType.DES;
+            }
+        }
+
+        // Just return Demon's Souls
+        return ProjectType.DES;
     }
 
     public void UpdateTimer()

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ENEMY_GRAPHICS_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="f32 CollisionRadius = 3">
+      <DisplayName>あたり球半径</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="s16 SfxParamID = 0">
+      <DisplayName>ＳＦＸパラメータID</DisplayName>
+      <Minimum>0</Minimum>
+    </Field>
+    <Field Def="s16 SoundParamID = 0">
+      <DisplayName>サウンドパラメータID</DisplayName>
+      <Minimum>0</Minimum>
+    </Field>
+    <Field Def="u16 AnimUpdateDist = 200">
+      <DisplayName>アニメーションを毎フレーム更新する距離</DisplayName>
+      <Description>この距離までは、アニメーションを毎フレーム更新</Description>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u16 AnimStopDist = 800">
+      <DisplayName>アニメーションを停止させる距離</DisplayName>
+      <Description>この距離からは、アニメーションが停止する</Description>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u8 AnimMaxUpdateInterval = 120">
+      <DisplayName>アニメーション最大更新間隔(フレーム)</DisplayName>
+      <Description>毎フレーム距離から徐々に更新間隔をあけていき、最後の直前では、この更新感覚になる。</Description>
+    </Field>
+    <Field Def="dummy8 reserved0[3]">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>Wrap</EditFlags>
+    </Field>
+    <Field Def="f32 Hit_UpperHitSphereRadius = 5">
+      <DisplayName>上半身当たり球半径（ｍ）</DisplayName>
+      <Description>上半身当たり球半径</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 Hit_UpperHitSphereHeightOffset = 8">
+      <DisplayName>上半身当たり球オフセット（ｍ）</DisplayName>
+      <Minimum>-999</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="u16 AnimInterpolateInfoID = 0">
+      <DisplayName>アニメーション補間データID</DisplayName>
+      <Description>アニメーション補間データID</Description>
+    </Field>
+    <Field Def="u8 Movement_MasterAnimeUpdateRate = 0">
+      <DisplayName>マスター移動アニメの再生レート</DisplayName>
+      <Description>マスターアニメの再生レート</Description>
+      <Maximum>200</Maximum>
+    </Field>
+    <Field Def="u8 Performance_DisableAnimeLOD = 0">
+      <DisplayName>アニメーションのＬＯＤ処理を行わない</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 UseScaleAnime = 0">
+      <DisplayName>スケールアニメを使用する</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 reserved1[3]">
+      <DisplayName>予約</DisplayName>
+    </Field>
+    <Field Def="f32 OneColSphereOffset = -1">
+      <DisplayName>当たり球１つのオフセット[m]</DisplayName>
+      <Description>マイナスの場合、当たり球半径がオフセット値（08/2/3以前の動作）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="dummy8 reserved2[24]">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>Wrap</EditFlags>
+    </Field>
+  </Fields>
+</PARAMDEF>

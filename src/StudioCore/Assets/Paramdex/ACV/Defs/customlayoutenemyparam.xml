@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CUSTOMLAYOUT_ENEMY_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 ModelID = 3030">
+      <DisplayName>モデルID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 SizeType = 1">
+      <DisplayName>サイズ</DisplayName>
+      <Enum>CUSTOMLAYOUT_SIZE_TYPE</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>2</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 Category = 1">
+      <DisplayName>カテゴリー</DisplayName>
+      <Enum>CUSTOMLAYOUT_CANNON_TYPE</Enum>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u16 Cost = 1000">
+      <DisplayName>消費電力</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>999900</Maximum>
+      <Increment>100</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u16 ThumbnailID = 1000">
+      <DisplayName>サムネイルID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>999900</Maximum>
+      <Increment>100</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="fixstr BehaviorName[16]">
+      <DisplayName>挙動名</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="fixstr LogicName[32]">
+      <DisplayName>AI名</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 CameraDist">
+      <DisplayName>カメラ距離</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 CameraHeight">
+      <DisplayName>カメラ高さ</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 CameraSlantX">
+      <DisplayName>カメラ傾き(X軸)</DisplayName>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 SubCategoryNameIndex">
+      <DisplayName>カテゴリ名Index</DisplayName>
+      <Enum>CUSTOMLAYOUT_SUB_CATEGORYNAME</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1000</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[59]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>13</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

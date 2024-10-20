@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MOTION_COLLATE_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u8 CoreMotionID = 0">
+      <DisplayName>コアモーションID</DisplayName>
+      <EditFlags>None</EditFlags>
+    </Field>
+    <Field Def="u8 ArmsMotionID = 0">
+      <DisplayName>腕部モーションID</DisplayName>
+      <EditFlags>None</EditFlags>
+    </Field>
+    <Field Def="u8 LegsMotionID = 0">
+      <DisplayName>脚部モーションID</DisplayName>
+      <EditFlags>None</EditFlags>
+    </Field>
+    <Field Def="fixstr MotionFileName[17]">
+      <DisplayName>モーションファイル名</DisplayName>
+      <EditFlags>None</EditFlags>
+    </Field>
+    <Field Def="u32 HokanParamID = 0">
+      <DisplayName>補間データID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u32 SoundParamID = 0">
+      <DisplayName>サウンドパラメータID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

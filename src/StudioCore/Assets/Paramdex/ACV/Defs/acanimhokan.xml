@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ACANIM_HOKANPARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="s16 GeneralFrame">
+      <DisplayName>全体</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 center_Frame">
+      <DisplayName>center</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 c_center_Frame">
+      <DisplayName>c_center</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 k_center_Frame">
+      <DisplayName>k_center</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 core_Frame">
+      <DisplayName>コア</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 kosi_Frame">
+      <DisplayName>腰</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 momo_Frame">
+      <DisplayName>もも</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 sune_Frame">
+      <DisplayName>すね</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Booster_Frame">
+      <DisplayName>ﾌﾞｰｽﾀｰ</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="fixstr Reserved[14]">
+      <DisplayName>--予約--</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

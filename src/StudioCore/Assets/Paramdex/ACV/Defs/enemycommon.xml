@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ENEMY_COMMON_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="fixstr BehaviorName[32]">
+      <DisplayName>挙動名</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u32 FcsID">
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u32 GraphicsParamId">
+      <DisplayName>グラフィッカー用パラメータID</DisplayName>
+      <Description>グラフィッカー用パラメータID</Description>
+      <Maximum>10000</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u32 BasicParamId">
+      <DisplayName>基本パラメータID</DisplayName>
+      <Description>基本パラメータID</Description>
+      <Maximum>10000</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u16 PerformanceId">
+      <DisplayName>パフォーマンスID</DisplayName>
+      <Description>パフォーマンスID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_00">
+      <DisplayName>武器ID_00</DisplayName>
+      <Description>武器ID_00</Description>
+      <Maximum>9999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_01">
+      <DisplayName>武器ID_01</DisplayName>
+      <Description>武器ID_01</Description>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_02">
+      <DisplayName>武器ID_02</DisplayName>
+      <Description>武器ID_02</Description>
+      <Maximum>9999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_03">
+      <DisplayName>武器ID_03</DisplayName>
+      <Description>武器ID_03</Description>
+      <Maximum>9999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_04">
+      <DisplayName>武器ID_04</DisplayName>
+      <Description>武器ID_04</Description>
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_05">
+      <DisplayName>武器ID_05</DisplayName>
+      <Description>武器ID_05</Description>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_06">
+      <DisplayName>武器ID_06</DisplayName>
+      <Description>武器ID_06</Description>
+      <Maximum>9999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_07">
+      <DisplayName>武器ID_07</DisplayName>
+      <Description>武器ID_07</Description>
+      <Maximum>9999</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_08">
+      <DisplayName>武器ID_08</DisplayName>
+      <Description>武器ID_08</Description>
+      <Maximum>9999</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_09">
+      <DisplayName>武器ID_09</DisplayName>
+      <Description>武器ID_09</Description>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_10">
+      <DisplayName>武器ID_10</DisplayName>
+      <Description>武器ID_10</Description>
+      <Maximum>9999</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_11">
+      <DisplayName>武器ID_11</DisplayName>
+      <Description>武器ID_11</Description>
+      <Maximum>9999</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_12">
+      <DisplayName>武器ID_12</DisplayName>
+      <Description>武器ID_12</Description>
+      <Maximum>9999</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_13">
+      <DisplayName>武器ID_13</DisplayName>
+      <Description>武器ID_13</Description>
+      <Maximum>9999</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_14">
+      <DisplayName>武器ID_14</DisplayName>
+      <Description>武器ID_14</Description>
+      <Maximum>9999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_15">
+      <DisplayName>武器ID_15</DisplayName>
+      <Description>武器ID_15</Description>
+      <Maximum>9999</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_16">
+      <DisplayName>武器ID_16</DisplayName>
+      <Description>武器ID_16</Description>
+      <Maximum>9999</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_17">
+      <DisplayName>武器ID_17</DisplayName>
+      <Description>武器ID_17</Description>
+      <Maximum>9999</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_18">
+      <DisplayName>武器ID_18</DisplayName>
+      <Description>武器ID_18</Description>
+      <Maximum>9999</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_19">
+      <DisplayName>武器ID_19</DisplayName>
+      <Description>武器ID_19</Description>
+      <Maximum>9999</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_20">
+      <DisplayName>武器ID_20</DisplayName>
+      <Description>武器ID_20</Description>
+      <Maximum>9999</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_21">
+      <DisplayName>武器ID_21</DisplayName>
+      <Description>武器ID_21</Description>
+      <Maximum>9999</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_22">
+      <DisplayName>武器ID_22</DisplayName>
+      <Description>武器ID_22</Description>
+      <Maximum>9999</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_23">
+      <DisplayName>武器ID_23</DisplayName>
+      <Description>武器ID_23</Description>
+      <Maximum>9999</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_24">
+      <DisplayName>武器ID_24</DisplayName>
+      <Description>武器ID_24</Description>
+      <Maximum>9999</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_25">
+      <DisplayName>武器ID_25</DisplayName>
+      <Description>武器ID_25</Description>
+      <Maximum>9999</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_26">
+      <DisplayName>武器ID_26</DisplayName>
+      <Description>武器ID_26</Description>
+      <Maximum>9999</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_27">
+      <DisplayName>武器ID_27</DisplayName>
+      <Description>武器ID_27</Description>
+      <Maximum>9999</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_28">
+      <DisplayName>武器ID_28</DisplayName>
+      <Description>武器ID_28</Description>
+      <Maximum>9999</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_29">
+      <DisplayName>武器ID_29</DisplayName>
+      <Description>武器ID_29</Description>
+      <Maximum>9999</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_30">
+      <DisplayName>武器ID_30</DisplayName>
+      <Description>武器ID_30</Description>
+      <Maximum>9999</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="u16 WeaponId_31">
+      <DisplayName>武器ID_31</DisplayName>
+      <Description>武器ID_31</Description>
+      <Maximum>9999</Maximum>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="u8 ACV_ch4ConstMan_IniAnimID">
+      <DisplayName>ACV建設兵器の初期アニメID</DisplayName>
+      <Description>ACV建設兵器の初期アニメID</Description>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="fixstr Reserve6[17]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>39</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

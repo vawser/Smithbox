@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>HARDCORE_MODE_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 NameID">
+      <DisplayName>タイトルID</DisplayName>
+      <Description>タイトルID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s16 Stock">
+      <DisplayName>残機数</DisplayName>
+      <Description>残機数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 DamageRicochetRate">
+      <DisplayName>ダメージ(跳弾)</DisplayName>
+      <Description>ダメージ(跳弾)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 DamageRate">
+      <DisplayName>ダメージ(非跳弾)</DisplayName>
+      <Description>ダメージ(非跳弾)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 AttackRicochetRate">
+      <DisplayName>攻撃(跳弾)</DisplayName>
+      <Description>攻撃(跳弾)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 AttackRate">
+      <DisplayName>攻撃(非跳弾)</DisplayName>
+      <Description>攻撃(非跳弾)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s16 RewardRate">
+      <DisplayName>報酬</DisplayName>
+      <Description>報酬</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s16 RepairRate">
+      <DisplayName>修理費</DisplayName>
+      <Description>修理費</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s16 AmmoCostRate">
+      <DisplayName>弾薬費</DisplayName>
+      <Description>弾薬費</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 Estimation">
+      <DisplayName>評価</DisplayName>
+      <Description>評価</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[2]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s32 ShortNameID">
+      <DisplayName>短縮名ID</DisplayName>
+      <Description>短縮時のタイトルID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 reserved2[4]">
+      <DisplayName>予約領域</DisplayName>
+      <Description>予約領域</Description>
+      <SortID>15</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

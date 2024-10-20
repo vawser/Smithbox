@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FILTER_SHAKED_NOIZE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="f32 fPersistence">
+      <DisplayName>固執性(変化の激しさ)</DisplayName>
+      <DisplayFormat>%0.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="f32 fLacnarity = 1">
+      <DisplayName>空隙性(高周波が目立つ)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>128</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="f32 fPeriod = 1">
+      <DisplayName>滑らかさ</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>128</Maximum>
+      <Increment>0.2</Increment>
+    </Field>
+    <Field Def="f32 fAmplitude">
+      <DisplayName>振幅</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>64</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 fNoiseScroll">
+      <DisplayName>ノイズスクロール</DisplayName>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0.5</Maximum>
+      <Increment>0.001</Increment>
+    </Field>
+  </Fields>
+</PARAMDEF>

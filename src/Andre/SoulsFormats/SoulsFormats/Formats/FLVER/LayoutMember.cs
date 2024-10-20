@@ -167,6 +167,11 @@ namespace SoulsFormats
             Byte4C = 0x13,
 
             /// <summary>
+            /// Four bytes.
+            /// </summary>
+            Byte4D = 0x14,
+
+            /// <summary>
             /// Two shorts.
             /// </summary>
             UV = 0x15,

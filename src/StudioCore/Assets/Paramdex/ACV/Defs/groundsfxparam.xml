@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GROUND_SFXPARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="s16 Sand">
+      <DisplayName>砂</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Clay">
+      <DisplayName>土</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Stone">
+      <DisplayName>石</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Snow">
+      <DisplayName>雪</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Ice">
+      <DisplayName>氷</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Concrete">
+      <DisplayName>ｺﾝｸﾘ</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Iron">
+      <DisplayName>鉄</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Water">
+      <DisplayName>水</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Bog">
+      <DisplayName>沼</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 BottomWater">
+      <DisplayName>水底</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Glass">
+      <DisplayName>ガラス</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Default">
+      <DisplayName>その他</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

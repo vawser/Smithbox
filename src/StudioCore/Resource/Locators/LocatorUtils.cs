@@ -158,9 +158,18 @@ public static class LocatorUtils
                 return false;
         }
 
-        if (game == ProjectType.DS2S || game == ProjectType.DS2)
+        if (game is ProjectType.DS2S or ProjectType.DS2)
         {
             if (!Directory.Exists($@"{gamepath}\map"))
+                return false;
+
+            if (!Directory.Exists($@"{gamepath}\model\obj"))
+                return false;
+        }
+
+        if (game is ProjectType.ACV or ProjectType.ACVD)
+        {
+            if (!Directory.Exists($@"{gamepath}\model\map"))
                 return false;
 
             if (!Directory.Exists($@"{gamepath}\model\obj"))

@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_AI_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="fixstr Name[32]">
+      <DisplayName>名前</DisplayName>
+      <Description>AIの名前・説明（AC用AIパラメータは、この名前と同じ名前の共通パラメータとセット）</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="fixstr Reserve0[1]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 StaggerQbUsePercent">
+      <DisplayName>硬直回避QB使用確率</DisplayName>
+      <Description>硬直回避QBを使う確率</Description>
+      <Maximum>100</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u16 StaggerQbNoUseFrame">
+      <DisplayName>硬直回避QB使用後使用しないフレーム</DisplayName>
+      <Description>硬直回避QBを使ったらこのフレームの間は使わない</Description>
+      <Maximum>9999</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="u8 MissileAvoidanceDirAngle">
+      <DisplayName>ミサイル回避：ミサイルの移動方向による無視角度[deg]</DisplayName>
+      <Description>ミサイルの移動方向が自分の方向に対してこの角度以上ずれていたら無視する</Description>
+      <Maximum>180</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="u8 MissileAvoidancePercent">
+      <DisplayName>ミサイル回避：回避する確率[%]</DisplayName>
+      <Description>ミサイルの回避行動をする確率</Description>
+      <Maximum>100</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="u16 MissileAvoidanceReactionFrame">
+      <DisplayName>ミサイル回避：あとこのフレーム以内に当たるなら反応</DisplayName>
+      <Description>ミサイルがこのフレーム以内に当たるなら反応する</Description>
+      <Maximum>9999</Maximum>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="u16 JammerQbMinUseFrame">
+      <DisplayName>ジャマー回避QB：最小反応フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="u16 JammerQbMaxUseFrame">
+      <DisplayName>ジャマー回避QB：最大反応フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>90</SortID>
+    </Field>
+    <Field Def="u8 JammerQbUsEnRate">
+      <DisplayName>ジャマー回避QB：残りENがこの%以上なら使用</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 ReconeFirstShootTime = 30">
+      <DisplayName>リコンを最初にまく開始してからの時間[秒]</DisplayName>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="u8 ReconeShootIntervalTime = 10">
+      <DisplayName>リコンをまく間隔[秒]</DisplayName>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve1[1]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="u16 HardStanQbMinUseFrame">
+      <DisplayName>スタン回避QB：最小反応フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>140</SortID>
+    </Field>
+    <Field Def="u16 HardStanQbMaxUseFrame">
+      <DisplayName>スタン回避QB：最大反応フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>150</SortID>
+    </Field>
+    <Field Def="u8 HardStanQbUsEnRate">
+      <DisplayName>スタン回避QB：残りENがこの%以上なら使用</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>160</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve2[3]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <SortID>170</SortID>
+    </Field>
+    <Field Def="u16 DamageQbMinUseFrame">
+      <DisplayName>連続ダメージ回避QB：最小反応フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>180</SortID>
+    </Field>
+    <Field Def="u16 DamageQbMaxUseFrame">
+      <DisplayName>連続ダメージ回避QB：最大反応フレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>190</SortID>
+    </Field>
+    <Field Def="u8 DamageQbUsEnRate">
+      <DisplayName>連続ダメージ回避QB：残りENがこの%以上なら使用</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve3[3]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="u8 LockAvoidQbUse">
+      <DisplayName>超反応QB：使う?</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Maximum>100</Maximum>
+      <SortID>220</SortID>
+    </Field>
+    <Field Def="u8 LockAvoidQbUsEnRate">
+      <DisplayName>超反応QB：残りENがこの%以上なら使用</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>230</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve4[2]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <SortID>240</SortID>
+    </Field>
+    <Field Def="u16 UseQbIntervalFrame">
+      <DisplayName>QBを使ってから次のQBを使うまでの休みフレーム</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve5[2]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <SortID>260</SortID>
+    </Field>
+    <Field Def="u16 MapScanUseTargetDist">
+      <DisplayName>この距離だけターゲットと離れていたらマップスキャンON</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>270</SortID>
+    </Field>
+    <Field Def="u8 MapScanOnEnRate">
+      <DisplayName>マップスキャンOFFでこのEN%以下になったらON</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>280</SortID>
+    </Field>
+    <Field Def="u8 MapScanOffEnRate">
+      <DisplayName>マップスキャンONでこのEN%以上になったらOFF</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>290</SortID>
+    </Field>
+    <Field Def="u16 KickUseRange">
+      <DisplayName>キック：この距離以内なら使用</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 KickUseAngle">
+      <DisplayName>キック：この角度以内なら使用</DisplayName>
+      <Maximum>89</Maximum>
+      <SortID>310</SortID>
+    </Field>
+    <Field Def="u8 KickUseEnRate">
+      <DisplayName>キック：このEN%以上なら使用</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>320</SortID>
+    </Field>
+    <Field Def="u8 WepCtrl_FlsErr_Angle">
+      <DisplayName>武器制御：フラッシュ：ターゲットがこの角度[度]以内なら射撃</DisplayName>
+      <Maximum>90</Maximum>
+      <SortID>330</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve6[1]">
+      <DisplayName>予約</DisplayName>
+      <SortID>340</SortID>
+    </Field>
+    <Field Def="u16 WepCtrlLv_Rifle">
+      <DisplayName>武器使用レベル：ライフル</DisplayName>
+      <Description>武器チップＩＤを決定するための数値。カテゴリ*100 + 個の数値で、ＩＤが決まる。</Description>
+      <Maximum>9999</Maximum>
+      <SortID>350</SortID>
+    </Field>
+    <Field Def="u16 WepCtrlLv_Charge">
+      <DisplayName>武器使用レベル：ため武器</DisplayName>
+      <Description>武器チップＩＤを決定するための数値。カテゴリ*101 + 個の数値で、ＩＤが決まる。</Description>
+      <Maximum>9999</Maximum>
+      <SortID>360</SortID>
+    </Field>
+    <Field Def="u16 WepCtrlLv_Missle">
+      <DisplayName>武器使用レベル：ミサイル</DisplayName>
+      <Description>武器チップＩＤを決定するための数値。カテゴリ*102 + 個の数値で、ＩＤが決まる。</Description>
+      <Maximum>9999</Maximum>
+      <SortID>370</SortID>
+    </Field>
+    <Field Def="u16 WepCtrlLv_RigidBlade">
+      <DisplayName>武器使用レベル：実ブレード。</DisplayName>
+      <Description>武器チップＩＤを決定するための数値。カテゴリ*103 + 個の数値で、ＩＤが決まる。</Description>
+      <Maximum>9999</Maximum>
+      <SortID>380</SortID>
+    </Field>
+    <Field Def="u16 WepCtrlLv_ENBlade">
+      <DisplayName>武器使用レベル：ＥＮブレード。</DisplayName>
+      <Description>武器チップＩＤを決定するための数値。カテゴリ*104 + 個の数値で、ＩＤが決まる。</Description>
+      <Maximum>9999</Maximum>
+      <SortID>390</SortID>
+    </Field>
+    <Field Def="u16 WepCtrlLv_LockableSnipe">
+      <DisplayName>武器使用レベル：ロック可能構え武器</DisplayName>
+      <Description>武器チップＩＤを決定するための数値。カテゴリ*105 + 個の数値で、ＩＤが決まる。</Description>
+      <Maximum>9999</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u16 WepCtrlLv_NolockSnipe">
+      <DisplayName>武器使用レベル：ロック不可構え武器</DisplayName>
+      <Description>武器チップＩＤを決定するための数値。カテゴリ*106 + 個の数値で、ＩＤが決まる。</Description>
+      <Maximum>9999</Maximum>
+      <SortID>410</SortID>
+    </Field>
+    <Field Def="dummy8 WepCtrlLv_Reserve[18]">
+      <DisplayName>武器使用レベル予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>99</Maximum>
+      <Increment>1</Increment>
+      <SortID>420</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve7[70]">
+      <DisplayName>予約</DisplayName>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="f32 Acv2RouteMoveWjExecTime">
+      <DisplayName>特殊移動壁蹴り：発動してからの実行時間[秒]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="f32 Acv2RouteMoveWjIntervalTime">
+      <DisplayName>特殊移動壁蹴り：終了してから次に実行するまでの時間[秒]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="u16 Acv2RouteMoveWjGapDist">
+      <DisplayName>特殊移動壁蹴り：目標位置からこの距離離れていたら発動</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="u8 Acv2RouteMoveWjEnRate">
+      <DisplayName>特殊移動壁蹴り：発動するためのEN率[％]</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve11[1]">
+      <DisplayName>予約</DisplayName>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="f32 Acv2RouteMoveQbExecTime">
+      <DisplayName>特殊移動QB：発動してからの実行時間[秒]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="f32 Acv2RouteMoveQbIntervalTime">
+      <DisplayName>特殊移動QB：終了してから次に実行するまでの時間[秒]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="u16 Acv2RouteMoveQbGapDist">
+      <DisplayName>特殊移動QB：目標位置からこの距離離れていたら発動</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="u8 Acv2RouteMoveQbEnRate">
+      <DisplayName>特殊移動QB：発動するためのEN率[％]</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve10[1]">
+      <DisplayName>予約</DisplayName>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="f32 Acv2GlideExecTime">
+      <DisplayName>グライド：発動してからの実行時間[秒]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="f32 Acv2GlideIntervalTime">
+      <DisplayName>グライド：終了してから次に実行するまでの時間[秒]</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="u16 Acv2GlideGapDist">
+      <DisplayName>グライド：目標位置からこの距離離れていたら発動</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="u8 Acv2GlideEnRate">
+      <DisplayName>グライド：発動するためのEN率[％]</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve9[3]">
+      <DisplayName>予約</DisplayName>
+      <SortID>430</SortID>
+    </Field>
+    <Field Def="u16 ACV2LockQB_Frame">
+      <DisplayName>ロック回避QB：ロック継続フレーム[frame]</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>231</SortID>
+    </Field>
+    <Field Def="u8 ACV2LockQB_EnRate">
+      <DisplayName>ロック回避QB：必要EN%[0-100]</DisplayName>
+      <Maximum>100</Maximum>
+      <SortID>232</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve8[1]">
+      <DisplayName>予約</DisplayName>
+      <SortID>460</SortID>
+    </Field>
+    <Field Def="u16 DamageQbDamageThr">
+      <DisplayName>連続ダメージ回避QB：ダメージしきい値</DisplayName>
+      <Maximum>60000</Maximum>
+      <SortID>201</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve9999[28]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <SortID>480</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

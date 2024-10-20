@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AI_WEAPON_GROW_CALC_POINT_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u8 UseRate">
+      <DisplayName>使用率</DisplayName>
+      <Description>使用頻度</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 AccuracyRate">
+      <DisplayName>命中率</DisplayName>
+      <Description>命中率</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 Point">
+      <DisplayName>ポイント</DisplayName>
+      <Description>ポイント</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 MissionUseRate">
+      <DisplayName>ミッション使用率</DisplayName>
+      <Description>オンラインミッション用使用頻度</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 MissionAccuracyRate">
+      <DisplayName>ミッション命中率</DisplayName>
+      <Description>オンラインミッション用命中率</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u16 MissionPoint">
+      <DisplayName>ミッションポイント</DisplayName>
+      <Description>オンラインミッション用ポイント</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>6</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>PA_SFXPARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="s16 Spark = 0">
+      <DisplayName>消滅前 (ループ)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Vanish = 0">
+      <DisplayName>消滅</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 Recover = 0">
+      <DisplayName>復活</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 RigidHitS = 0">
+      <DisplayName>実弾(小) 着弾</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 RigidHitM = 0">
+      <DisplayName>実弾(中) 着弾</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 RigidHitL = 0">
+      <DisplayName>実弾（大） 着弾</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 EnHitS = 0">
+      <DisplayName>EN弾(小) 着弾</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 EnHitM = 0">
+      <DisplayName>EN弾(中) 着弾</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 EnHitL = 0">
+      <DisplayName>EN弾（大） 着弾</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 AACharge = 0">
+      <DisplayName>アサルトアーマー タメ</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 AALaunch = 0">
+      <DisplayName>アサルトアーマー 発動</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 AAStagnant = 0">
+      <DisplayName>アサルトアーマー 停滞</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

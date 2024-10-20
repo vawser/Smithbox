@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ACV_MISSION_INFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 GarageCost01">
+      <DisplayName>基地コスト1回目</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u32 GarageCost02">
+      <DisplayName>基地コスト2回目</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u32 GarageCost03">
+      <DisplayName>基地コスト3回目</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u32 GarageCost04">
+      <DisplayName>基地コスト4回目</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u32 GarageCost05">
+      <DisplayName>基地コスト5回目</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u32 GarageCost06">
+      <DisplayName>基地コスト6回目</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u32 GarageCost07">
+      <DisplayName>基地コスト7回目</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="u32 GarageCost08">
+      <DisplayName>基地コスト8回目</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u32 GarageCost09">
+      <DisplayName>基地コスト9回目</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u32 GarageCost10">
+      <DisplayName>基地コスト10回目</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u32 BeginStoryID">
+      <DisplayName>最初のストーリー目的ID</DisplayName>
+      <Maximum>1E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[20]">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>13</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

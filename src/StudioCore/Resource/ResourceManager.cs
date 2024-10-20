@@ -111,7 +111,9 @@ public static class ResourceManager
         for (var i = 0; i < tpf.Textures.Count; i++)
         {
             TPF.Texture tex = tpf.Textures[i];
-            ret[i] = new LoadTPFTextureResourceRequest($@"{action._virtpathbase}/{tex.Name}", tpf, i,
+
+            // HACK: Only include texture name and not full virtual path
+            ret[i] = new LoadTPFTextureResourceRequest(tex.Name, tpf, i,
                 action._accessLevel);
         }
 
@@ -258,7 +260,7 @@ public static class ResourceManager
             return null;
         }
 
-        if (type == ProjectType.DES || type == ProjectType.DS1 || type == ProjectType.DS1R)
+        if (type == ProjectType.DES || type == ProjectType.DS1 || type == ProjectType.DS1R || type == ProjectType.ACFA || type == ProjectType.ACV || type == ProjectType.ACVD)
         {
             if (filePath.ToUpper().EndsWith("BHD"))
             {
@@ -547,9 +549,7 @@ public static class ResourceManager
             // Read binder
             if (Binder == null)
             {
-                string o;
-
-                BinderAbsolutePath = VirtualPathLocator.VirtualToRealPath(BinderVirtualPath, out o);
+                BinderAbsolutePath = VirtualPathLocator.VirtualToRealPath(BinderVirtualPath, out string bndout);
 
                 if(!File.Exists(BinderAbsolutePath))
                 {
@@ -907,10 +907,8 @@ public static class ResourceManager
 
             InFlightFiles.Add(virtualPath);
 
-            string bndout;
-
             // PIPELINE: convert resource path to absolute path
-            var path = VirtualPathLocator.VirtualToRealPath(virtualPath, out bndout);
+            var path = VirtualPathLocator.VirtualToRealPath(virtualPath, out string bndout);
 
             IResourceLoadPipeline pipeline;
 

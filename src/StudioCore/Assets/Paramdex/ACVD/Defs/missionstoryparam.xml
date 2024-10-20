@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MISSION_STORY_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 GoalTextID">
+      <DisplayName>目的文字列ID</DisplayName>
+      <Maximum>9.999E+07</Maximum>
+      <Increment>100</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[28]">
+      <DisplayName>予約領域</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>3</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -32,6 +32,34 @@ public static class TextureLocator
                 ads.Add(ad);
             }
         }
+        else if (Smithbox.ProjectType == ProjectType.ACFA)
+        {
+            ResourceDescriptor ad = new();
+
+            ad.AssetPath = LocatorUtils.GetAssetPath($@"model\map\{mapid}\{mapid}_t.bnd");
+            ad.AssetArchiveVirtualPath = $@"map/tex/{mapid}/tex";
+            ads.Add(ad);
+        }
+        else if (Smithbox.ProjectType == ProjectType.ACV)
+        {
+            var paths = Directory.EnumerateFiles($@"{Smithbox.GameRoot}\model\map\{mapid}\", "*.tpf.dcx");
+            foreach (var path in paths)
+            {
+                ResourceDescriptor ad = new();
+                ad.AssetPath = path;
+                var tid = Path.GetFileNameWithoutExtension(path);
+                ad.AssetVirtualPath = $@"map/tex/{mapid}/{tid}";
+                ads.Add(ad);
+            }
+        }
+        else if (Smithbox.ProjectType == ProjectType.ACVD)
+        {
+            ResourceDescriptor ad = new();
+
+            ad.AssetPath = LocatorUtils.GetAssetPath($@"model\map\{mapid}\{mapid}_htdcx.bnd");
+            ad.AssetArchiveVirtualPath = $@"map/tex/{mapid}/tex";
+            ads.Add(ad);
+        }
         else
         {
             // Clean this up. Even if it's common code having something like "!=Sekiro" can lead to future issues
@@ -85,9 +113,10 @@ public static class TextureLocator
         if (Smithbox.ProjectType == ProjectType.DS3)
         {
             var mid = mapid.Substring(0, 3);
-            if (File.Exists(LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_envmap.tpf.dcx")))
+            var path = LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_envmap.tpf.dcx");
+            if (File.Exists(path))
             {
-                var t = TPF.Read(LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_envmap.tpf.dcx"));
+                var t = TPF.Read(path);
                 foreach (TPF.Texture tex in t.Textures)
                     l.Add(tex.Name);
             }
@@ -273,6 +302,33 @@ public static class TextureLocator
         return ad;
     }
 
+    public static ResourceDescriptor GetEneTextureContainer(string ene)
+    {
+        ResourceDescriptor ad = new();
+        ad.AssetPath = null;
+        ad.AssetArchiveVirtualPath = null;
+        string path = null;
+
+        if (Smithbox.ProjectType == ProjectType.ACFA)
+        {
+            path = LocatorUtils.GetOverridenFilePath($@"model\ene\{ene}\{ene}_t.bnd");
+        }
+        else if (Smithbox.ProjectType == ProjectType.ACV || Smithbox.ProjectType == ProjectType.ACVD)
+        {
+            ad.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\ene\{ene}\{ene}.tpf.dcx");
+            ad.AssetVirtualPath = $@"ene/{ene}/tex";
+            return ad;
+        }
+
+        if (path != null)
+        {
+            ad.AssetPath = path;
+            ad.AssetArchiveVirtualPath = $@"ene/{ene}/tex";
+        }
+
+        return ad;
+    }
+
     public static ResourceDescriptor GetObjTextureContainer(string obj)
     {
         ResourceDescriptor ad = new();
@@ -291,6 +347,16 @@ public static class TextureLocator
         else if (Smithbox.ProjectType is ProjectType.DES or ProjectType.DS1R or ProjectType.BB or ProjectType.DS3 or ProjectType.SDT)
         {
             path = LocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd.dcx");
+        }
+        else if (Smithbox.ProjectType is ProjectType.ACFA)
+        {
+            path = LocatorUtils.GetOverridenFilePath($@"model\obj\{obj}\{obj}_t.bnd");
+        }
+        else if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+        {
+            ad.AssetPath = LocatorUtils.GetOverridenFilePath($@"model\obj\{obj}\{obj}.tpf.dcx");
+            ad.AssetVirtualPath = $@"obj/{obj}/tex";
+            return ad;
         }
 
         if (path != null)

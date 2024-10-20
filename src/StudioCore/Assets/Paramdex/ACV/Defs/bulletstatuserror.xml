@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BULLET_STATUS_ERROR_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 BehaviorID">
+      <DisplayName>プログラム</DisplayName>
+      <Enum>BULLET_BEHAVIOR_ID</Enum>
+      <EditFlags>Wrap, Lock</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 bShootable">
+      <DisplayName>撃墜可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>この弾が「迎撃可」の弾によって撃ち落されることができる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 bCanGoWater">
+      <DisplayName>水中可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 bWireThrough = 1">
+      <DisplayName>金網貫通</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 bInterceptable = 1">
+      <DisplayName>迎撃可</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>この弾が「撃墜可」の弾を撃ち落すことができる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 HitRadius">
+      <DisplayName>当たり長さ</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 ProximityFuseRange">
+      <DisplayName>近接信管距離</DisplayName>
+      <DisplayFormat>%.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 DecayPower">
+      <DisplayName>減衰：威力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 DecayRecoil">
+      <DisplayName>減衰：反動</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 DecayDiffsibility">
+      <DisplayName>減衰：拡散力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 DecayPenetrability">
+      <DisplayName>減衰：貫通力</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.05</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u16 AppearDelayFrame">
+      <DisplayName>発生遅延フレーム</DisplayName>
+      <Description>着弾後発生開始するまでの遅延フレーム</Description>
+      <Maximum>9999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u16 EffectiveFrame = -1">
+      <DisplayName>状態異常効果フレーム</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s32 ErrorParamID">
+      <DisplayName>状態異常パラメータID</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s16 LifeTimeFrame = 180">
+      <DisplayName>寿命( フレーム )</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 LegMovePerformance = 100">
+      <DisplayName>脚部：移動制御係数(%)</DisplayName>
+      <Description>ACが食らったときにこの係数分、最高速度などが変化する</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s16 LegStabilityPerformance = 100">
+      <DisplayName>脚部：姿勢制御係数(%)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s16 GeneEnOutputPerformance = 100">
+      <DisplayName>ジェネレータ：EN出力係数(%)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="s16 GeneOwEnOutputPerformance = 100">
+      <DisplayName>ジェネレータ：OWEN出力係数(%)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="s16 FcsLockPerformance = 100">
+      <DisplayName>FCS：ロック性能係数(%)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s16 FcsMissileLockPerformance = 100">
+      <DisplayName>FCS：ミサイルロック性能係数(%)</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u8 ErrorType">
+      <DisplayName>状態異常タイプ</DisplayName>
+      <Enum>ERROR_STATUS_TYPE</Enum>
+      <Maximum>9999</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved3[29]">
+      <DisplayName>--予約--</DisplayName>
+      <SortID>24</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>DESTROY_AP_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u32 AP">
+      <DisplayName>ＡＰ</DisplayName>
+      <Maximum>999999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u32 CutoffDamage">
+      <DisplayName>最低有効ダメージ</DisplayName>
+      <Description>このダメージ以下では、APは減らない。</Description>
+      <Maximum>999999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 CollisionDefensibility">
+      <DisplayName>衝突防御力</DisplayName>
+      <Description>0で、元の衝突ダメージを受ける。100で、衝突ダメージを受けない</Description>
+      <Maximum>100</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u8 bObjBreakBulletEnable">
+      <DisplayName>オブジェ破壊弾が有効か</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>EnemyParts.xlsのArmUnitシートやParts.xlsの武器関連シート、ダメージ：タイプが、「OBJ破壊」タイプのダメージが着弾した時に、強制的に壊れるフラグ。</Description>
+      <Maximum>1</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="dummy8 reserve00[2]">
+      <DisplayName>予約</DisplayName>
+      <SortID>990</SortID>
+    </Field>
+    <Field Def="f32 CollisionDamageCoef = 1">
+      <DisplayName>衝突ダメージ係数</DisplayName>
+      <Description>衝突ダメージのオリジナルダメージにかける係数。</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>1</Increment>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="fixstr reserve0[16]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>991</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

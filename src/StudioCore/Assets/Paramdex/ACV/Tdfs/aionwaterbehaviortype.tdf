@@ -1,0 +1,6 @@
+"AI_ON_WATER_BEHAVIOR_TYPE"
+"u8"
+"なにもしない（通常通りスクリプト呼び出し）","0"
+"ザコATK","1"
+"AC（FollowRoute）","2"
+"AC（KeepDist）","3"

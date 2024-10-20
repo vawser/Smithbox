@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>WORLD_NEWS_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s32 TitleID">
+      <DisplayName>タイトルID</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 BodyTextID1">
+      <DisplayName>本文ID1</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 BodyTextID2">
+      <DisplayName>本文ID2</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 AuthorTextID">
+      <DisplayName>著者ID</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="u8 ThumbnailID">
+      <DisplayName>サムネイルID</DisplayName>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 ViewType">
+      <DisplayName>表示タイプ</DisplayName>
+      <Enum>WORLD_NEWS_VIEW_TYPE</Enum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 MovieID">
+      <DisplayName>ムービーID</DisplayName>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="u8 DlgType">
+      <DisplayName>表示ダイアログタイプ</DisplayName>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="u8 bStartSeason">
+      <DisplayName>シーズン開始ニュースか</DisplayName>
+      <Enum>YES_NO</Enum>
+      <Maximum>1</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u8 bEndSeason">
+      <DisplayName>シーズン終了ニュースか</DisplayName>
+      <Enum>YES_NO</Enum>
+      <Maximum>1</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="u8 bDefaultNews">
+      <DisplayName>初めから表示するニュースか</DisplayName>
+      <Enum>YES_NO</Enum>
+      <Maximum>1</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="dummy8 padding[1]">
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="s32 BodyTextID3">
+      <DisplayName>本文ID3</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 BodyTextID4">
+      <DisplayName>本文ID4</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s32 BodyTextID5">
+      <DisplayName>本文ID5</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[12]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>34</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

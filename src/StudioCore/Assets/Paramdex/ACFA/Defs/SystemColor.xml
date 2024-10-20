@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SYSTEM_COLOR_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u8 R = 128">
+      <DisplayName>R</DisplayName>
+    </Field>
+    <Field Def="u8 G = 128">
+      <DisplayName>G</DisplayName>
+    </Field>
+    <Field Def="u8 B = 128">
+      <DisplayName>B</DisplayName>
+    </Field>
+    <Field Def="u8 A = 128">
+      <DisplayName>A</DisplayName>
+    </Field>
+  </Fields>
+</PARAMDEF>

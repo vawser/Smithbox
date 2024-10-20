@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_DATA_INFO</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>101</FormatVersion>
+  <Fields>
+    <Field Def="u8 ID">
+      <DisplayName>ID</DisplayName>
+    </Field>
+    <Field Def="u8 ACテキストID">
+      <DisplayName>ACテキストID</DisplayName>
+    </Field>
+    <Field Def="fixstr ダミー[2]">
+      <DisplayName>ダミー</DisplayName>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="u32 機体構成ID">
+      <DisplayName>機体構成ID</DisplayName>
+      <Maximum>99999</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

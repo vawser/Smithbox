@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_ASSEMBLY_DESIGN_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="fixstrW AcName[24]">
+      <DisplayName>機体名</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="fixstrW TunerName[23]">
+      <DisplayName>設計者名</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u16 DECAL_ID">
+      <DisplayName>デカールID</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>76</SortID>
+    </Field>
+    <Field Def="s16 HEAD">
+      <DisplayName>Head</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s16 CORE">
+      <DisplayName>Core</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 ARMS">
+      <DisplayName>Arms</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 LEGS">
+      <DisplayName>Legs</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 FCS">
+      <DisplayName>Fcs</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s16 GENE">
+      <DisplayName>Gene</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="s16 BOOSTER">
+      <DisplayName>Booster</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s16 BB">
+      <DisplayName>BackBoost</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s16 SB">
+      <DisplayName>SideBoost</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s16 RECON">
+      <DisplayName>Recon</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="s16 ARMWEP_R">
+      <DisplayName>ArmUnitR</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s16 ARMWEP_L">
+      <DisplayName>ArmUnitL</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="s16 BACK_R">
+      <DisplayName>OW</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s16 BACK_L">
+      <DisplayName>BackUnitL</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="s16 SHOULDER">
+      <DisplayName>Shoulder</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s16 HANGER_R">
+      <DisplayName>HangerR</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="s16 HANGER_L">
+      <DisplayName>HangerL</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="s16 HEAD_T">
+      <DisplayName>HeadT</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s16 HEAD_S_R">
+      <DisplayName>HeadS_R</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="s16 HEAD_S_L">
+      <DisplayName>HeadS_L</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="s16 CORE_U_R">
+      <DisplayName>CoreU_R</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="s16 CORE_U_L">
+      <DisplayName>CoreU_L</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="s16 CORE_L_R">
+      <DisplayName>CoreL_R</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="s16 CORE_L_L">
+      <DisplayName>CoreL_L</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="s16 ARMS_R">
+      <DisplayName>ArmsR</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="s16 ARMS_L">
+      <DisplayName>ArmsL</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="s16 LEGS_B">
+      <DisplayName>LegsB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="s16 LEGS_U_R">
+      <DisplayName>LegsU_R</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s16 LEGS_U_L">
+      <DisplayName>LegsU_L</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="s16 LEGS_U_RB">
+      <DisplayName>LegsU_RB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="s16 LEGS_U_LB">
+      <DisplayName>LegsU_LB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="s16 LEGS_M_R">
+      <DisplayName>LegsM_R</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="s16 LEGS_M_L">
+      <DisplayName>LegsM_L</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s16 LEGS_M_RB">
+      <DisplayName>LegsM_RB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="s16 LEGS_M_LB">
+      <DisplayName>LegsM_LB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="s16 LEGS_L_R">
+      <DisplayName>LegsL_R</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="s16 LEGS_L_L">
+      <DisplayName>LegsL_L</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="s16 LEGS_L_RB">
+      <DisplayName>LegsL_RB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="s16 LEGS_L_LB">
+      <DisplayName>LegsL_LB</DisplayName>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="u8 CAP_EN_SUPPLY">
+      <DisplayName>EN出力</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="u8 CAP_CONDENSER">
+      <DisplayName>コンデンサ容量</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="u8 CAP_PA_SUPPLY">
+      <DisplayName>PA出力</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="u8 CAP_LOADAGE">
+      <DisplayName>脚部：積載能力</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="u8 ARM_EN_SUPPLY">
+      <DisplayName>腕部：EN供給能力</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="u8 ARM_MANIP">
+      <DisplayName>腕部：運動性能　</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="u8 ARM_SHOOT_STAB">
+      <DisplayName>腕部：射撃安定</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="u8 ARM_AIMING">
+      <DisplayName>腕部：照準制度</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>49</SortID>
+    </Field>
+    <Field Def="u8 FCS_LOCK_SPEED">
+      <DisplayName>FCS：ロック速度</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="u8 FCS_MIS_LOCK_SPEED">
+      <DisplayName>FCS：MISロック速度</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="u8 FCS_RADAR">
+      <DisplayName>FCS：レーダー</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="u8 FCS_ECCM">
+      <DisplayName>FCS：対ECM性能　</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>53</SortID>
+    </Field>
+    <Field Def="u8 PA_HEAD">
+      <DisplayName>頭部：整波性能　</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>54</SortID>
+    </Field>
+    <Field Def="u8 PA_CORE">
+      <DisplayName>コア：整波性能　</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>55</SortID>
+    </Field>
+    <Field Def="u8 PA_ARMS">
+      <DisplayName>腕部：整波性能　</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>56</SortID>
+    </Field>
+    <Field Def="u8 PA_LEGS">
+      <DisplayName>脚部：整波性能　</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>57</SortID>
+    </Field>
+    <Field Def="u8 BOOST_MAIN">
+      <DisplayName>メイン：水平推力</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>58</SortID>
+    </Field>
+    <Field Def="u8 BOOST_UP">
+      <DisplayName>メイン：垂直推力</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>59</SortID>
+    </Field>
+    <Field Def="u8 BOOST_SIDE">
+      <DisplayName>サイド：推力</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="u8 BOOST_BACK">
+      <DisplayName>バック：推力</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>61</SortID>
+    </Field>
+    <Field Def="u8 SPB_QB_MAIN">
+      <DisplayName>メイン：クイック推力</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>62</SortID>
+    </Field>
+    <Field Def="u8 SPB_QB_SIDE">
+      <DisplayName>サイド：クイック推力</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>63</SortID>
+    </Field>
+    <Field Def="u8 SPB_QB_BACK">
+      <DisplayName>バック：クイック推力</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>64</SortID>
+    </Field>
+    <Field Def="u8 SPB_OB_POWER">
+      <DisplayName>オーバード推力</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>65</SortID>
+    </Field>
+    <Field Def="u8 LEG_MOVE">
+      <DisplayName>脚部：移動性能　</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>66</SortID>
+    </Field>
+    <Field Def="u8 LEG_BRAKE">
+      <DisplayName>脚部：制動性能　</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>67</SortID>
+    </Field>
+    <Field Def="u8 LEG_TURN">
+      <DisplayName>脚部：旋回性能　</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>68</SortID>
+    </Field>
+    <Field Def="u8 LEG_JUMP">
+      <DisplayName>脚部：ジャンプ</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>69</SortID>
+    </Field>
+    <Field Def="u8 STAB_BALANCE">
+      <DisplayName>頭部：機体安定</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="u8 STAB_HIT">
+      <DisplayName>脚部：被弾安定</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>71</SortID>
+    </Field>
+    <Field Def="u8 STAB_LAND">
+      <DisplayName>脚部：着地安定</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>72</SortID>
+    </Field>
+    <Field Def="u8 STAB_SHOOT">
+      <DisplayName>脚部：射撃安定</DisplayName>
+      <Maximum>50</Maximum>
+      <SortID>73</SortID>
+    </Field>
+    <Field Def="u16 COLORING_ID">
+      <DisplayName>カラーリングID</DisplayName>
+      <Maximum>9999</Maximum>
+      <SortID>74</SortID>
+    </Field>
+    <Field Def="u8 EMBLEM_ID">
+      <DisplayName>エンブレムID</DisplayName>
+      <SortID>75</SortID>
+    </Field>
+    <Field Def="u8 SQUAD_NUMBER = -1">
+      <DisplayName>背番号</DisplayName>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>77</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

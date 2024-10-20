@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GARAGE_LIGHTING_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="f32 SpotLightPosX">
+      <DisplayName>スポットライト位置(X)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 SpotLightPosY">
+      <DisplayName>スポットライト位置(Y)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 SpotLightPosZ">
+      <DisplayName>スポットライト位置(Z)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 SpotLightLookAtX">
+      <DisplayName>スポットライト注視点(X)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 SpotLightLookAtY">
+      <DisplayName>スポットライト注視点(Y)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 SpotLightLookAtZ">
+      <DisplayName>スポットライト注視点(Z)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 PointLight0PosX">
+      <DisplayName>ポイントライト0位置(X)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 PointLight0PosY">
+      <DisplayName>ポイントライト0位置(Y)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 PointLight0PosZ">
+      <DisplayName>ポイントライト0位置(Z)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 PointLight0Renge">
+      <DisplayName>ポイントライト0半径</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 PointLight0ColorR">
+      <DisplayName>ポイントライト0色R</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="f32 PointLight0ColorG">
+      <DisplayName>ポイントライト0色G</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="f32 PointLight0ColorB">
+      <DisplayName>ポイントライト0色B</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 PointLight0ColorA">
+      <DisplayName>ポイントライト0色A</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 PointLight1PosX">
+      <DisplayName>ポイントライト1位置(X)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 PointLight1PosY">
+      <DisplayName>ポイントライト1位置(Y)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="f32 PointLight1PosZ">
+      <DisplayName>ポイントライト1位置(Z)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="f32 PointLight1Renge">
+      <DisplayName>ポイントライト1半径</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="f32 PointLight1ColorR">
+      <DisplayName>ポイントライト1色R</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="f32 PointLight1ColorG">
+      <DisplayName>ポイントライト1色G</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="f32 PointLight1ColorB">
+      <DisplayName>ポイントライト1色B</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="f32 PointLight1ColorA">
+      <DisplayName>ポイントライト1色A</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="f32 PointLight2PosX">
+      <DisplayName>ポイントライト2位置(X)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="f32 PointLight2PosY">
+      <DisplayName>ポイントライト2位置(Y)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="f32 PointLight2PosZ">
+      <DisplayName>ポイントライト2位置(Z)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="f32 PointLight2Renge">
+      <DisplayName>ポイントライト2半径</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="f32 PointLight2ColorR">
+      <DisplayName>ポイントライト2色R</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="f32 PointLight2ColorG">
+      <DisplayName>ポイントライト2色G</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="f32 PointLight2ColorB">
+      <DisplayName>ポイントライト2色B</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="f32 PointLight2ColorA">
+      <DisplayName>ポイントライト2色A</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="f32 PointLight3PosX">
+      <DisplayName>ポイントライト3位置(X)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="f32 PointLight3PosY">
+      <DisplayName>ポイントライト3位置(Y)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="f32 PointLight3PosZ">
+      <DisplayName>ポイントライト3位置(Z)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="f32 PointLight3Renge">
+      <DisplayName>ポイントライト3半径</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="f32 PointLight3ColorR">
+      <DisplayName>ポイントライト3色R</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="f32 PointLight3ColorG">
+      <DisplayName>ポイントライト3色G</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="f32 PointLight3ColorB">
+      <DisplayName>ポイントライト3色B</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="f32 PointLight3ColorA">
+      <DisplayName>ポイントライト3色A</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="f32 PointLight4PosX">
+      <DisplayName>ポイントライト4位置(X)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="f32 PointLight4PosY">
+      <DisplayName>ポイントライト4位置(Y)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="f32 PointLight4PosZ">
+      <DisplayName>ポイントライト4位置(Z)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="f32 PointLight4Renge">
+      <DisplayName>ポイントライト4半径</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="f32 PointLight4ColorR">
+      <DisplayName>ポイントライト4色R</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="f32 PointLight4ColorG">
+      <DisplayName>ポイントライト4色G</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="f32 PointLight4ColorB">
+      <DisplayName>ポイントライト4色B</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="f32 PointLight4ColorA">
+      <DisplayName>ポイントライト4色A</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="f32 PointLight5PosX">
+      <DisplayName>ポイントライト5位置(X)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="f32 PointLight5PosY">
+      <DisplayName>ポイントライト5位置(Y)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="f32 PointLight5PosZ">
+      <DisplayName>ポイントライト5位置(Z)</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>49</SortID>
+    </Field>
+    <Field Def="f32 PointLight5Renge">
+      <DisplayName>ポイントライト5半径</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="f32 PointLight5ColorR">
+      <DisplayName>ポイントライト5色R</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="f32 PointLight5ColorG">
+      <DisplayName>ポイントライト5色G</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="f32 PointLight5ColorB">
+      <DisplayName>ポイントライト5色B</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>53</SortID>
+    </Field>
+    <Field Def="f32 PointLight5ColorA">
+      <DisplayName>ポイントライト5色A</DisplayName>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>54</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

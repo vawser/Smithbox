@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>PARTS_SHOP_LINEUP</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 levelMin">
+      <DisplayName>最低レベル</DisplayName>
+      <Description>ラインナップが変化する最低レベル</Description>
+      <Maximum>1000</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s8 partsCategory">
+      <DisplayName>パーツカテゴリ</DisplayName>
+      <Description>パーツカテゴリ</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 reserve1[1]">
+      <DisplayName>予約</DisplayName>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u16 partsID = 100">
+      <DisplayName>パーツID</DisplayName>
+      <Description>パーツID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="dummy8 reserve2[2]">
+      <DisplayName>予約</DisplayName>
+      <SortID>7</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

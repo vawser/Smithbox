@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AC_ACT_RESTRICTION_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>103</FormatVersion>
+  <Fields>
+    <Field Def="u8 bLockOn">
+      <DisplayName>ロック</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bShoot">
+      <DisplayName>射撃</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bArmControl">
+      <DisplayName>腕制御</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bCoreControl">
+      <DisplayName>コア制御</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bWeaponChange">
+      <DisplayName>武器切替 パージ</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bBlade">
+      <DisplayName>ブレード</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 bInterpolatePos = 1">
+      <DisplayName>位置補正</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 reserved[1]">
+      <DisplayName>--予約--</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

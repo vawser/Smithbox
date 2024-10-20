@@ -70,7 +70,7 @@ namespace SoulsFormats
             br.BigEndian = BigEndian;
 
             // 10002, 10003 - Another Century's Episode R
-            Version = br.AssertInt32([0x0E, 0x0F, 0x10, 0x12, 0x13, 0x14, 0x15,
+            Version = br.AssertInt32([0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15,
                 0x10002, 0x10003]);
             int dataOffset = br.ReadInt32();
             br.ReadInt32(); // Data length

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SFX_SE_SET_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="u16 SfxID">
+      <DisplayName>SFX ID</DisplayName>
+      <Description>SFXのID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 SoundCategory = 1">
+      <DisplayName>サウンドカテゴリ</DisplayName>
+      <Enum>SE_CATEGORY</Enum>
+      <Description>サウンドID cXXXXXXXX の先頭の文字です。 1：c  2：a  3：b  4：w  5：m  6：d</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>6</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved[1]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <Maximum>1E+08</Maximum>
+      <Increment>1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u32 SoundID">
+      <DisplayName>サウンドID</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Maximum>1E+08</Maximum>
+      <SortID>3</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

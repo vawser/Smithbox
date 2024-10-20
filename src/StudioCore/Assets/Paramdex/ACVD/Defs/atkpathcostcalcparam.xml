@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ATK_PATH_COST_CALC_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="f32 HorizontalCostRate = 1">
+      <DisplayName>水平方向のコスト倍率</DisplayName>
+      <Description>水平方向の距離 x この倍率がコストに加算</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 VerticalCostRate = 100">
+      <DisplayName>垂直方向のコスト倍率</DisplayName>
+      <Description>垂直方向の距離 x この倍率がコストに加算</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 OnWaterCostScale = 99999">
+      <DisplayName>水上ノードのコスト倍率</DisplayName>
+      <Description>この倍率がコストに乗算</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 SkyCost = 2">
+      <DisplayName>空中ノードのコスト倍率</DisplayName>
+      <Description>この倍率がコストに乗算</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 GroundCost = 1">
+      <DisplayName>地上ノードのコスト倍率</DisplayName>
+      <Description>この倍率がコストに乗算</Description>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <Minimum>1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved1[12] = 2">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%.3f</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1000</Maximum>
+      <Increment>0.01</Increment>
+      <SortID>7</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

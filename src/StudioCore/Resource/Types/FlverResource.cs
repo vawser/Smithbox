@@ -95,7 +95,7 @@ public class FlverResource : IResource, IDisposable
         }
 
         bool ret;
-        if (Smithbox.ProjectType is ProjectType.DES)
+        if (Smithbox.ProjectType is ProjectType.DES or ProjectType.ACFA)
         {
             FlverDeS = FLVER0.Read(bytes);
             ret = LoadInternalDeS(al);
@@ -162,7 +162,7 @@ public class FlverResource : IResource, IDisposable
 
         if (fileBytes.Length > 1)
         {
-            if (Smithbox.ProjectType is ProjectType.DES)
+            if (Smithbox.ProjectType is ProjectType.DES or ProjectType.ACFA)
             {
                 FlverDeS = FLVER0.Read(fileBytes);
                 ret = LoadInternalDeS(al);
