@@ -46,28 +46,28 @@ public class TextDifferenceManager
             return;
         }
 
-        var containerCategory = Selection.SelectedContainer.Category;
-        var containerSubCategory = Selection.SelectedContainer.SubCategory;
-        var containerName = Selection.SelectedContainer.Name;
+        var containerCategory = Selection.SelectedContainer.ContainerDisplayCategory;
+        var containerSubCategory = Selection.SelectedContainer.ContainerDisplaySubCategory;
+        var containerName = Selection.SelectedContainer.Filename;
         var fmgID = Selection.SelectedFmgInfo.ID;
 
         if (TextBank.VanillaBankLoaded)
         {
             var vanillaContainer = TextBank.VanillaFmgBank
-                .Where(e => e.Value.Category == containerCategory)
-                .Where(e => e.Value.Name == containerName)
+                .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
+                .Where(e => e.Value.Filename == containerName)
                 .FirstOrDefault();
 
             if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 vanillaContainer = TextBank.VanillaFmgBank
-                .Where(e => e.Value.Category == containerCategory)
-                .Where(e => e.Value.SubCategory == containerSubCategory)
-                .Where(e => e.Value.Name == containerName)
+                .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
+                .Where(e => e.Value.ContainerDisplaySubCategory == containerSubCategory)
+                .Where(e => e.Value.Filename == containerName)
                 .FirstOrDefault();
             }
 
-            var vanillaFmg = vanillaContainer.Value.FmgInfos
+            var vanillaFmg = vanillaContainer.Value.FmgWrappers
             .Where(e => e.ID == fmgID).FirstOrDefault();
 
             Dictionary<string, string> vanillaEntries = new();
@@ -163,7 +163,7 @@ public class TextDifferenceManager
     public bool IsDifferentToVanilla(FMG.Entry entry)
     {
         var entryId = $"{entry.ID}";
-        var containerSubCategory = Selection.SelectedContainer.SubCategory;
+        var containerSubCategory = Selection.SelectedContainer.ContainerDisplaySubCategory;
 
         // DS2
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -190,7 +190,7 @@ public class TextDifferenceManager
     public bool IsUniqueToProject(FMG.Entry entry)
     {
         var entryId = $"{entry.ID}";
-        var containerSubCategory = Selection.SelectedContainer.SubCategory;
+        var containerSubCategory = Selection.SelectedContainer.ContainerDisplaySubCategory;
 
         // DS2
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)

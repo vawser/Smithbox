@@ -50,12 +50,12 @@ public class TextFmgView
 
             ImGui.BeginChild("FmgFileList");
 
-            if (Selection.SelectedContainer != null && Selection.SelectedContainer.FmgInfos != null)
+            if (Selection.SelectedContainer != null && Selection.SelectedContainer.FmgWrappers != null)
             {
                 // Ignore the grouping stuff for DS2 as it happens on the FMG Container level
                 if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
-                    foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                    foreach (var fmgInfo in Selection.SelectedContainer.FmgWrappers)
                     {
                         HandleFmgView(fmgInfo);
                     }
@@ -72,7 +72,7 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
@@ -91,7 +91,7 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Menu", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
@@ -110,7 +110,7 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Titles", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
@@ -129,7 +129,7 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Summaries", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
@@ -148,7 +148,7 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Descriptions", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
@@ -167,7 +167,7 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Effects", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
@@ -186,7 +186,7 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Unknown", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
@@ -210,7 +210,7 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Base", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
@@ -229,7 +229,7 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("DLC 1", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
@@ -248,7 +248,7 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("DLC 2", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainer.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
@@ -271,7 +271,7 @@ public class TextFmgView
         }
     }
 
-    private void HandleFmgView(FmgInfo info)
+    private void HandleFmgView(TextFmgWrapper info)
     {
         var id = info.ID;
         var fmgName = info.Name;

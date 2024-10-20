@@ -36,9 +36,9 @@ public static class TextFinder
         {
             var containerName = Path.GetFileName(path);
 
-            if (entry.Category == CFG.Current.TextEditor_PrimaryCategory)
+            if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
             {
-                foreach (var fmg in entry.FmgInfos)
+                foreach (var fmg in entry.FmgWrappers)
                 {
                     var enumName = TextUtils.GetFmgInternalName(entry, fmg.ID, fmg.Name);
 
@@ -94,13 +94,13 @@ public static class TextFinder
 
             if (searchFilterType is SearchFilterType.PrimaryCategory)
             {
-                if (entry.Category != CFG.Current.TextEditor_PrimaryCategory)
+                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_PrimaryCategory)
                 {
                     continue;
                 }
             }
 
-            foreach (var fmg in entry.FmgInfos)
+            foreach (var fmg in entry.FmgWrappers)
             {
                 foreach (var fmgEntry in fmg.File.Entries)
                 {
@@ -155,13 +155,13 @@ public static class TextFinder
 
             if (searchFilterType is SearchFilterType.PrimaryCategory)
             {
-                if (entry.Category != CFG.Current.TextEditor_PrimaryCategory)
+                if (entry.ContainerDisplayCategory != CFG.Current.TextEditor_PrimaryCategory)
                 {
                     continue;
                 }
             }
 
-            foreach (var fmg in entry.FmgInfos)
+            foreach (var fmg in entry.FmgWrappers)
             {
                 foreach (var fmgEntry in fmg.File.Entries)
                 {
@@ -204,7 +204,7 @@ public static class TextFinder
 public class TextResult
 {
     public string ContainerName { get; set; }
-    public TextContainerInfo Info { get; set; }
+    public TextContainerWrapper Info { get; set; }
     public int FmgID { get; set; }
     public string FmgName { get; set; }
     public FMG Fmg { get; set; }
@@ -218,7 +218,7 @@ public class ReplacementResult
 {
     public string ContainerName { get; set; }
     public Match Match { get; set; }
-    public TextContainerInfo Info { get; set; }
+    public TextContainerWrapper Info { get; set; }
     public int FmgID { get; set; }
     public string FmgName { get; set; }
     public FMG Fmg { get; set; }

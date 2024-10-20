@@ -95,7 +95,7 @@ public static class TextUtils
     /// <summary>
     /// Get the display name for a FMG based on the BND ID
     /// </summary>
-    public static string GetFmgDisplayName(TextContainerInfo info, int id, string fmgName)
+    public static string GetFmgDisplayName(TextContainerWrapper info, int id, string fmgName)
     {
         var name = $"Unknown";
 
@@ -408,7 +408,7 @@ public static class TextUtils
     /// <summary>
     /// Get the internal name for a FMG based on the BND ID
     /// </summary>
-    public static string GetFmgInternalName(TextContainerInfo info, int id, string fmgName)
+    public static string GetFmgInternalName(TextContainerWrapper info, int id, string fmgName)
     {
         var name = $"";
 
@@ -694,7 +694,7 @@ public static class TextUtils
     /// <summary>
     /// Get the grouping string for a FMG based on the BND ID
     /// </summary>
-    public static string GetFmgGrouping(TextContainerInfo info, int id, string fmgName)
+    public static string GetFmgGrouping(TextContainerWrapper info, int id, string fmgName)
     {
         var name = $"Unknown";
 
@@ -1007,7 +1007,7 @@ public static class TextUtils
     /// <summary>
     /// Get the grouping string for a FMG based on the BND ID
     /// </summary>
-    public static string GetFmgDlcGrouping(TextContainerInfo info, int id, string fmgName)
+    public static string GetFmgDlcGrouping(TextContainerWrapper info, int id, string fmgName)
     {
         var name = $"Unknown";
 
@@ -1320,9 +1320,9 @@ public static class TextUtils
     /// <summary>
     /// Returns true if there are any FMG entries for the target group string
     /// </summary>
-    public static bool HasGroupEntries(TextContainerInfo info, string target)
+    public static bool HasGroupEntries(TextContainerWrapper info, string target)
     {
-        foreach (var fmgInfo in info.FmgInfos)
+        foreach (var fmgInfo in info.FmgWrappers)
         {
             var id = fmgInfo.ID;
             var fmgName = fmgInfo.Name;
@@ -1339,9 +1339,9 @@ public static class TextUtils
 
     /// Returns true if there are any DLC FMG entries for the target DLC string
     /// </summary>
-    public static bool HasDLCEntries(TextContainerInfo info, string target)
+    public static bool HasDLCEntries(TextContainerWrapper info, string target)
     {
-        foreach (var fmgInfo in info.FmgInfos)
+        foreach (var fmgInfo in info.FmgWrappers)
         {
             var id = fmgInfo.ID;
             var fmgName = fmgInfo.Name;
@@ -1375,9 +1375,9 @@ public static class TextUtils
     /// <summary>
     /// Check if FMG container is an item FMG container
     /// </summary>
-    public static bool IsItemContainer(TextContainerInfo info)
+    public static bool IsItemContainer(TextContainerWrapper info)
     {
-        if (info.AbsolutePath.Contains("item"))
+        if (info.ReadPath.Contains("item"))
         {
             return true;
         }
@@ -1388,9 +1388,9 @@ public static class TextUtils
     /// <summary>
     /// Check if FMG container is an menu FMG container
     /// </summary>
-    public static bool IsMenuContainer(TextContainerInfo info)
+    public static bool IsMenuContainer(TextContainerWrapper info)
     {
-        if (info.AbsolutePath.Contains("menu"))
+        if (info.ReadPath.Contains("menu"))
         {
             return true;
         }
@@ -1401,9 +1401,9 @@ public static class TextUtils
     /// <summary>
     /// Check if FMG container is an menu FMG container
     /// </summary>
-    public static bool IsSampleContainer(TextContainerInfo info)
+    public static bool IsSampleContainer(TextContainerWrapper info)
     {
-        if (info.AbsolutePath.Contains("sample"))
+        if (info.ReadPath.Contains("sample"))
         {
             return true;
         }
@@ -1414,9 +1414,9 @@ public static class TextUtils
     /// <summary>
     /// Check if FMG container is an ngword FMG container
     /// </summary>
-    public static bool IsNgWordContainer(TextContainerInfo info)
+    public static bool IsNgWordContainer(TextContainerWrapper info)
     {
-        if (info.AbsolutePath.Contains("ngword"))
+        if (info.ReadPath.Contains("ngword"))
         {
             return true;
         }
@@ -1427,9 +1427,9 @@ public static class TextUtils
     /// <summary>
     /// BB onwards: check if FMG container is a sellregion 
     /// </summary>
-    public static bool IsSellRegionContainer(TextContainerInfo info)
+    public static bool IsSellRegionContainer(TextContainerWrapper info)
     {
-        if (info.AbsolutePath.Contains("sellregion"))
+        if (info.ReadPath.Contains("sellregion"))
         {
             return true;
         }
@@ -1440,10 +1440,10 @@ public static class TextUtils
     /// <summary>
     /// DS2 only: check if FMG is part of the bloodmes folder
     /// </summary>
-    public static bool IsBloodMessageFolderFmg(TextContainerInfo info)
+    public static bool IsBloodMessageFolderFmg(TextContainerWrapper info)
     {
         // Second part is so we ignore the bloodmessage fmgs
-        if (info.AbsolutePath.Contains("bloodmes") && !info.AbsolutePath.Contains("bloodmessage"))
+        if (info.ReadPath.Contains("bloodmes") && !info.ReadPath.Contains("bloodmessage"))
         {
             return true;
         }
@@ -1454,9 +1454,9 @@ public static class TextUtils
     /// <summary>
     /// DS2 only: check if FMG is part of the ta;l folder
     /// </summary>
-    public static bool IsTalkFolderFmg(TextContainerInfo info)
+    public static bool IsTalkFolderFmg(TextContainerWrapper info)
     {
-        if (info.AbsolutePath.Contains("talk"))
+        if (info.ReadPath.Contains("talk"))
         {
             return true;
         }
@@ -1662,64 +1662,20 @@ public static class TextUtils
     }
 
     /// <summary>
-    /// Get a pretty name for the container row name
-    /// </summary>
-    public static string GetPrettyContainerName(string name)
-    {
-        var prettyName = name;
-
-        if (name.Contains("item"))
-            prettyName = "Item";
-
-        if (name.Contains("menu"))
-            prettyName = "Menu";
-
-        if (name.Contains("sellregion"))
-            prettyName = "Sell Region";
-
-        if (name.Contains("ngword"))
-            prettyName = "Blocked Words";
-
-        // Ignore this in Simple mode since the user doesn't need to know it
-        if (CFG.Current.TextEditor_AdvancedPresentationMode)
-        {
-            if (name.Contains("dlc01") || name.Contains("dlc1"))
-                prettyName = $"{prettyName} - DLC 1";
-
-            if (name.Contains("dlc02") || name.Contains("dlc2"))
-                prettyName = $"{prettyName} - DLC 2";
-        }
-
-        if(Smithbox.ProjectType is ProjectType.DES)
-        {
-            if (name.Contains("sample"))
-                prettyName = "Sample";
-
-            // DES has compressed and uncompressed versions, so add some extra text so it is more obvious which is which
-            if (name.Contains(".dcx"))
-            {
-                prettyName = $"{prettyName} [Compressed]";
-            }
-        }
-
-        return prettyName;
-    }
-
-    /// <summary>
     /// Get the sub category for DS2 fgms
     /// </summary>
-    public static DS2_SubCategory GetSubCategory(string path)
+    public static ContainerSubCategory GetSubCategory(string path)
     {
         if(path.Contains("bloodmes"))
         {
-            return DS2_SubCategory.bloodmes;
+            return ContainerSubCategory.bloodmes;
         }
 
         if (path.Contains("talk"))
         {
-            return DS2_SubCategory.talk;
+            return ContainerSubCategory.talk;
         }
 
-        return DS2_SubCategory.common;
+        return ContainerSubCategory.common;
     }
 }

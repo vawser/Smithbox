@@ -25,9 +25,9 @@ public class TextContextMenu
     /// <summary>
     /// Context menu for the selection in the File list
     /// </summary>
-    public void FileContextMenu(TextContainerInfo info)
+    public void FileContextMenu(TextContainerWrapper info)
     {
-        if (ImGui.BeginPopupContextItem($"FileContext##FileContext{info.Name}"))
+        if (ImGui.BeginPopupContextItem($"FileContext##FileContext{info.Filename}"))
         {
             // TODO: add sync to X language
             // LanguageSync.DisplaySyncOptions();
@@ -39,7 +39,7 @@ public class TextContextMenu
     /// <summary>
     /// Context menu for the selection in the FMG list
     /// </summary>
-    public void FmgContextMenu(FmgInfo fmgInfo)
+    public void FmgContextMenu(TextFmgWrapper fmgInfo)
     {
         if (ImGui.BeginPopupContextItem($"FmgContext##FmgContext{fmgInfo.ID}"))
         {
@@ -63,7 +63,7 @@ public class TextContextMenu
     /// <summary>
     /// Context menu for the selection in the FMG entry list
     /// </summary>
-    public void FmgEntryContextMenu(int index, FmgInfo fmgInfo, FMG.Entry entry, bool isMultiselecting)
+    public void FmgEntryContextMenu(int index, TextFmgWrapper fmgInfo, FMG.Entry entry, bool isMultiselecting)
     {
         if (ImGui.BeginPopupContextItem($"FmgEntryContext##FmgEntryContext{index}"))
         {

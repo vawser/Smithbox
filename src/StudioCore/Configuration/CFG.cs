@@ -391,7 +391,7 @@ public class CFG
     public bool TextEditor_IncludeVanillaCache = true;
 
     public bool TextEditor_DisplayPrimaryCategoryOnly = false;
-    public bool TextEditor_DisplayPrettyContainerName = true;
+    public bool TextEditor_DisplayCommunityContainerName = true;
     public bool TextEditor_DisplaySourcePath = true;
 
     public bool TextEditor_DisplayFmgID = true;

@@ -15,9 +15,9 @@ public class ChangeFmgEntryText : EditorAction
     private string NewText;
     private string OldText;
 
-    private TextContainerInfo Info;
+    private TextContainerWrapper Info;
 
-    public ChangeFmgEntryText(TextContainerInfo info, FMG.Entry entry, string newText)
+    public ChangeFmgEntryText(TextContainerWrapper info, FMG.Entry entry, string newText)
     {
         Info = info;
         Entry = entry;

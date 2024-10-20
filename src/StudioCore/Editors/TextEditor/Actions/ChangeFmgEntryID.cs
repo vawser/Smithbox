@@ -14,9 +14,9 @@ public class ChangeFmgEntryID : EditorAction
     private int NewID;
     private int OldID;
 
-    private TextContainerInfo Info;
+    private TextContainerWrapper Info;
 
-    public ChangeFmgEntryID(TextContainerInfo info, FMG.Entry entry, int newId)
+    public ChangeFmgEntryID(TextContainerWrapper info, FMG.Entry entry, int newId)
     {
         Info = info;
         Entry = entry;

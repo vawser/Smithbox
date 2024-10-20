@@ -14,9 +14,9 @@ public class DuplicateFmgEntry : EditorAction
     private FMG.Entry NewEntry;
     private int InsertionIndex;
 
-    private TextContainerInfo Info;
+    private TextContainerWrapper Info;
 
-    public DuplicateFmgEntry(TextContainerInfo info, FMG currentFmg, FMG.Entry entry, int newID)
+    public DuplicateFmgEntry(TextContainerWrapper info, FMG currentFmg, FMG.Entry entry, int newID)
     {
         Info = info;
         Fmg = currentFmg;

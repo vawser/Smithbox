@@ -18,7 +18,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public static class FmgImporter
 {
-    public static Dictionary<string, FmgWrapper> ImportSources = new();
+    public static Dictionary<string, StoredFmgWrapper> ImportSources = new();
 
     /// <summary>
     /// Get the FMG Wrapper sources on project load
@@ -42,13 +42,13 @@ public static class FmgImporter
             foreach (var path in wrapperPathList)
             {
                 var filename = Path.GetFileName(path);
-                var wrapper = new FmgWrapper();
+                var wrapper = new StoredFmgWrapper();
 
                 if (File.Exists(path))
                 {
                     using (var stream = File.OpenRead(path))
                     {
-                        wrapper = JsonSerializer.Deserialize(stream, FmgWrapperSerializationContext.Default.FmgWrapper);
+                        wrapper = JsonSerializer.Deserialize(stream, StoredFmgWrapperSerializationContext.Default.StoredFmgWrapper);
                     }
                 }
 
@@ -117,7 +117,7 @@ public static class FmgImporter
     /// <summary>
     /// Append contents of the selected source to the contents of the currently selected FMG (respecting ID order)
     /// </summary>
-    public static void AppendEntries(FmgWrapper wrapper)
+    public static void AppendEntries(StoredFmgWrapper wrapper)
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
@@ -132,7 +132,7 @@ public static class FmgImporter
     /// <summary>
     /// Replace the contents of the currently selected FMG with the contents of the selected source
     /// </summary>
-    public static void ReplaceEntries(FmgWrapper wrapper)
+    public static void ReplaceEntries(StoredFmgWrapper wrapper)
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
@@ -148,7 +148,7 @@ public static class FmgImporter
     /// Insert contents of the selected source if they are not present in 
     /// the contents of the currently selected FMG (respecting ID order) 
     /// </summary>
-    public static void InsertUniqueEntries(FmgWrapper wrapper)
+    public static void InsertUniqueEntries(StoredFmgWrapper wrapper)
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 

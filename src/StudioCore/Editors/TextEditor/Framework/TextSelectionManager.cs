@@ -16,10 +16,10 @@ public class TextSelectionManager
     private TextEditorScreen Screen;
 
     public int SelectedContainerKey;
-    public TextContainerInfo SelectedContainer;
+    public TextContainerWrapper SelectedContainer;
 
     public int SelectedFmgKey;
-    public FmgInfo SelectedFmgInfo;
+    public TextFmgWrapper SelectedFmgInfo;
     public FMG SelectedFmg;
 
     public int _selectedFmgEntryIndex;
@@ -72,7 +72,7 @@ public class TextSelectionManager
     /// <summary>
     /// Set current File Container selection
     /// </summary>>
-    public void SelectFileContainer(TextContainerInfo info, int index)
+    public void SelectFileContainer(TextContainerWrapper info, int index)
     {
         CurrentSelectionContext = TextSelectionContext.File;
 
@@ -92,7 +92,7 @@ public class TextSelectionManager
     /// <summary>
     /// Set current FMG selection
     /// </summary>
-    public void SelectFmg(FmgInfo fmgInfo, bool changeContext = true)
+    public void SelectFmg(TextFmgWrapper fmgInfo, bool changeContext = true)
     {
         if(changeContext)
             CurrentSelectionContext = TextSelectionContext.Fmg;
@@ -117,7 +117,7 @@ public class TextSelectionManager
     /// </summary>
     private void AutoSelectFirstValidFmg()
     {
-        foreach (var fmgInfo in SelectedContainer.FmgInfos)
+        foreach (var fmgInfo in SelectedContainer.FmgWrappers)
         {
             var id = fmgInfo.ID;
             var fmgName = fmgInfo.Name;

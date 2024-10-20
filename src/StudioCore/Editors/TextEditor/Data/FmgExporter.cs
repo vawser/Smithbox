@@ -60,7 +60,7 @@ public static class FmgExporter
         var selectedFmgInfo = editor.Selection.SelectedFmgInfo;
         var selectedFmgEntries = editor.Selection.FmgEntryMultiselect.StoredEntries;
 
-        var fmgWrapper = new FmgWrapper();
+        var fmgWrapper = new StoredFmgWrapper();
         fmgWrapper.Name = wrapperName;
 
         // Create new FMG for the wrapper
@@ -94,7 +94,7 @@ public static class FmgExporter
         WriteWrapper(fmgWrapper);
     }
 
-    public static void WriteWrapper(FmgWrapper wrapper)
+    public static void WriteWrapper(StoredFmgWrapper wrapper)
     {
         var writeDir = TextLocator.GetFmgWrapperDirectory();
         var writePath = $"{writeDir}\\{wrapper.Name}.json";
@@ -125,7 +125,7 @@ public static class FmgExporter
 
         if(proceed)
         {
-            string jsonString = JsonSerializer.Serialize(wrapper, typeof(FmgWrapper), FmgWrapperSerializationContext.Default);
+            string jsonString = JsonSerializer.Serialize(wrapper, typeof(StoredFmgWrapper), StoredFmgWrapperSerializationContext.Default);
 
             try
             {

@@ -11,11 +11,11 @@ namespace StudioCore.Editors.TextEditor.Actions;
 
 public class AppendFmgEntries : EditorAction
 {
-    private FmgInfo TargetFmgInfo;
+    private TextFmgWrapper TargetFmgInfo;
     private FMG OriginalFmg;
-    private FmgWrapper Wrapper;
+    private StoredFmgWrapper Wrapper;
 
-    public AppendFmgEntries(FmgInfo targetFmgInfo, FmgWrapper wrapper)
+    public AppendFmgEntries(TextFmgWrapper targetFmgInfo, StoredFmgWrapper wrapper)
     {
         TargetFmgInfo = targetFmgInfo;
         OriginalFmg = targetFmgInfo.File.Clone();

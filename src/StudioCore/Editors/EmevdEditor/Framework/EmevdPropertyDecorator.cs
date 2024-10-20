@@ -855,7 +855,7 @@ public class EmevdPropertyDecorator
             {
                 if (ImGui.Selectable($"Go to {result.Entry.ID} ({result.Entry.Text})"))
                 {
-                    EditorCommandQueue.AddCommand($@"text/select/{result.Info.Category}/{result.Info.Name}/{result.FmgName}/{result.Entry.ID}");
+                    EditorCommandQueue.AddCommand($@"text/select/{result.Info.ContainerDisplayCategory}/{result.Info.Filename}/{result.FmgName}/{result.Entry.ID}");
                 }
 
                 ImGui.EndPopup();

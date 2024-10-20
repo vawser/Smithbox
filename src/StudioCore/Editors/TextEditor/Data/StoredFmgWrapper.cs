@@ -15,21 +15,21 @@ namespace StudioCore.Editors.TextEditor;
     IncludeFields = true,
     ReadCommentHandling = JsonCommentHandling.Skip)
 ]
-[JsonSerializable(typeof(FmgWrapper))]
+[JsonSerializable(typeof(StoredFmgWrapper))]
 [JsonSerializable(typeof(FMG))]
 [JsonSerializable(typeof(FMG.Entry))]
 
-public partial class FmgWrapperSerializationContext
+public partial class StoredFmgWrapperSerializationContext
     : JsonSerializerContext
 { }
 
-public class FmgWrapper
+public class StoredFmgWrapper
 {
     public string Name { get; set; }
 
     public FMG Fmg { get; set; }
 
-    public FmgWrapper()
+    public StoredFmgWrapper()
     {
 
     }

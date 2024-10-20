@@ -622,8 +622,8 @@ public class FmgEntryGroup
     public bool SupportsGrouping = false;
 
     public FmgEntryGroup(TextEntryGroupManager entryManager, 
-        TextContainerInfo containerInfo,
-        FmgInfo selectedFmgInfo,
+        TextContainerWrapper containerInfo,
+        TextFmgWrapper selectedFmgInfo,
         FMG.Entry baseEntry)
     {
         var targetBinderID = selectedFmgInfo.ID;
@@ -658,9 +658,9 @@ public class FmgEntryGroup
         }
     }
 
-    public FMG.Entry SetGroupEntry(TextContainerInfo containerInfo, int targetBndId, FMG.Entry baseEntry)
+    public FMG.Entry SetGroupEntry(TextContainerWrapper containerInfo, int targetBndId, FMG.Entry baseEntry)
     {
-        foreach (var fmg in containerInfo.FmgInfos)
+        foreach (var fmg in containerInfo.FmgWrappers)
         {
             if (fmg.ID == targetBndId)
             {

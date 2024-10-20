@@ -105,13 +105,13 @@ public static class GlobalTextSearch
                     foundText = $"{firstSection} <...>";
                 }
 
-                var category = result.Info.Category.ToString();
+                var category = result.Info.ContainerDisplayCategory.ToString();
 
                 // Container
                 var containerName = result.ContainerName;
-                if (CFG.Current.TextEditor_DisplayPrettyContainerName)
+                if (CFG.Current.TextEditor_DisplayCommunityContainerName)
                 {
-                    containerName = TextUtils.GetPrettyContainerName(result.ContainerName);
+                    containerName = result.Info.GetContainerDisplayName();
                 }
 
                 // FMG

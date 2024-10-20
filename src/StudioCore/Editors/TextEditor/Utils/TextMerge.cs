@@ -105,9 +105,9 @@ public static class TextMerge
                 {
                     var targetEntry = TextBank.TargetFmgBank[entry.Key];
 
-                    foreach (var fmgInfo in entry.Value.FmgInfos)
+                    foreach (var fmgInfo in entry.Value.FmgWrappers)
                     {
-                        foreach (var targetInfo in targetEntry.FmgInfos)
+                        foreach (var targetInfo in targetEntry.FmgWrappers)
                         {
                             if (fmgInfo.ID == targetInfo.ID)
                             {
@@ -122,7 +122,7 @@ public static class TextMerge
         TaskLogs.AddLog($"Applied FMG Merge.");
     }
 
-    private static void ProcessFmg(FmgInfo sourceInfo, FmgInfo targetInfo)
+    private static void ProcessFmg(TextFmgWrapper sourceInfo, TextFmgWrapper targetInfo)
     {
         List<FMG.Entry> missingEntries = new();
         List<FMG.Entry> modifiedEntries = new();
