@@ -79,11 +79,6 @@ public static class VirtualPathLocator
 
     public static string VirtualToRealPath(string virtualPath, out string bndpath)
     {
-        if (virtualPath.Contains("model") && virtualPath.Contains("obj"))
-        {
-            Console.WriteLine();
-        }
-
         var pathElements = virtualPath.Split('/');
 
         // Parse the virtual path with a DFA and convert it to a game path
@@ -189,8 +184,11 @@ public static class VirtualPathLocator
                     if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
                         return LocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\{pathElements[i]}.mapbnd.dcx");
 
-                    if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                    if (Smithbox.ProjectType is ProjectType.ACFA)
                         return LocatorUtils.GetAssetPath($@"model\map\{mapid}\{mapid}_m.bnd");
+
+                    if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                        return LocatorUtils.GetAssetPath($@"model\map\{mapid}\{mapid}_m.dcx.bnd");
 
                     return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}.mapbnd.dcx");
                 }

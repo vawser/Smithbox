@@ -51,9 +51,7 @@ public static class ModelLocator
             ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{modelId}.mapbnd.dcx");
         else if (Smithbox.ProjectType is ProjectType.ACFA)
             ret.AssetPath = LocatorUtils.GetAssetPath($@"model\map\{mapid}\{mapid}_m.bnd");
-        else if (Smithbox.ProjectType is ProjectType.ACV)
-            ret.AssetPath = LocatorUtils.GetAssetPath($@"model\map\{mapid}\{modelId}.flv");
-        else if (Smithbox.ProjectType is ProjectType.ACVD)
+        else if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
             ret.AssetPath = LocatorUtils.GetAssetPath($@"model\map\{mapid}\{mapid}_m.dcx.bnd");
         else
             ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{modelId}.mapbnd.dcx");
@@ -64,11 +62,7 @@ public static class ModelLocator
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/model";
             ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}.flv.dcx";
         }
-        else if (Smithbox.ProjectType is ProjectType.ACV)
-        {
-            ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}.flv";
-        }
-        else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACVD)
+        else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
         {
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/model";
             ret.AssetVirtualPath = $@"map/{mapid}/model/{modelId}.flv";
