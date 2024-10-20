@@ -80,6 +80,11 @@ namespace SoulsFormats
             public List<int> Indices { get; set; }
 
             /// <summary>
+            /// Edge compression information useful for edge compressed vertex buffers.
+            /// </summary>
+            internal EdgeMemberInfoGroup EdgeMembers { get; private set; }
+
+            /// <summary>
             /// Creates a new FaceSet with default values and no indices.
             /// </summary>
             public FaceSet()
@@ -128,9 +133,14 @@ namespace SoulsFormats
 
                 if (indexSize == 8)
                 {
+                    if ((Flags & ~FSFlags.EdgeCompressed) == Flags)
+                        throw new NotSupportedException($"Index size of {indexSize} is only supported when {nameof(FSFlags.EdgeCompressed)} is set.");
+
                     br.StepIn(dataOffset + indicesOffset);
                     {
-                        Indices = EdgeIndexCompression.ReadEdgeIndexGroup(br, indexCount);
+                        List<int> indices = [];
+                        EdgeMembers = new EdgeMemberInfoGroup(br, indices);
+                        Indices = [.. indices];
                     }
                     br.StepOut();
                 }
@@ -171,7 +181,11 @@ namespace SoulsFormats
             internal void WriteVertices(BinaryWriterEx bw, int indexSize, int index, int dataStart)
             {
                 bw.FillInt32($"FaceSetVertices{index}", (int)bw.Position - dataStart);
-                if (indexSize == 16)
+                if (indexSize == 8 && (Flags & FSFlags.EdgeCompressed) != 0)
+                {
+                    throw new NotImplementedException($"Edge index compression is not yet supported.");
+                }
+                else if (indexSize == 16)
                 {
                     foreach (int i in Indices)
                         bw.WriteUInt16((ushort)i);
