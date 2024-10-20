@@ -12,7 +12,7 @@ namespace SoulsFormats
     public partial class FLVER0 : SoulsFile<FLVER0>, IFlver
     {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-        public FLVER0Header Header { get; set; }
+        public FLVERHeader Header { get; set; }
 
         public List<FLVER.Dummy> Dummies { get; set; }
         IReadOnlyList<FLVER.Dummy> IFlver.Dummies => Dummies;
@@ -61,7 +61,7 @@ namespace SoulsFormats
 
         protected override void Read(BinaryReaderEx br)
         {
-            Header = new FLVER0Header();
+            Header = new FLVERHeader();
 
             br.AssertASCII("FLVER\0");
             Header.BigEndian = br.AssertASCII(["L\0", "B\0"]) == "B\0";
@@ -212,6 +212,41 @@ namespace SoulsFormats
 
             int leValue = BinaryPrimitives.ReverseEndianness(value);
             return (int)Math.Min((uint)value, (uint)leValue);
+        }
+
+        public class FLVERHeader
+        {
+            public bool BigEndian { get; set; }
+
+            public int Version { get; set; }
+
+            public Vector3 BoundingBoxMin { get; set; }
+
+            public Vector3 BoundingBoxMax { get; set; }
+
+            public byte VertexIndexSize { get; set; }
+
+            public bool Unicode { get; set; }
+
+            public byte Unk4A { get; set; }
+
+            public byte Unk4B { get; set; }
+
+            public int Unk4C { get; set; }
+
+            public int Unk5C { get; set; }
+
+            public FLVERHeader()
+            {
+                BigEndian = true;
+                Version = 0x14;
+                Unicode = false;
+            }
+
+            public FLVERHeader Clone()
+            {
+                return (FLVERHeader)MemberwiseClone();
+            }
         }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }
