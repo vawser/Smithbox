@@ -987,6 +987,12 @@ public class FlverResource : IResource, IDisposable
 
                 if (l.semantic == FLVER.LayoutSemantic.Position)
                 {
+                    // Edge compression is not supported here
+                    if (l.type == LayoutType.EdgeCompressed)
+                    {
+                        continue;
+                    }
+
                     FillVertex(&(*v).Position, br, l.type);
                     posfilled = true;
                 }
@@ -1113,6 +1119,12 @@ public class FlverResource : IResource, IDisposable
 
                     if (l.semantic == FLVER.LayoutSemantic.Position)
                     {
+                        // Edge compression is not supported here
+                        if (l.type == LayoutType.EdgeCompressed)
+                        {
+                            continue;
+                        }
+
                         FillVertex(&(*v).Position, br, l.type);
                     }
                     else if (l.semantic == FLVER.LayoutSemantic.Normal)
@@ -1955,6 +1967,7 @@ public class FlverResource : IResource, IDisposable
         br.AssertASCII("FLVER\0");
         br.BigEndian = br.AssertASCII(["L\0", "B\0"]) == "B\0";
         var version = br.AssertInt32([0x20005,
+            0x20007,
             0x20009,
             0x2000C,
             0x2000D,
@@ -1980,10 +1993,10 @@ public class FlverResource : IResource, IDisposable
 
         br.ReadInt32(); // Face count not including motion blur meshes or degenerate faces
         br.ReadInt32(); // Total face count
-        int vertexIndicesSize = br.AssertByte([0, 16, 32]);
+        int vertexIndicesSize = br.AssertByte([0, 8, 16, 32]);
         var unicode = br.ReadBoolean();
         br.ReadBoolean(); // unknown
-        br.AssertByte(0);
+        br.ReadBoolean(); // unknown
         br.ReadInt32(); // unknown
         var faceSetCount = br.ReadInt32();
         var bufferLayoutCount = br.ReadInt32();

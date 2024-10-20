@@ -353,26 +353,26 @@ public class Universe
         var amapid = MapLocator.GetAssetMapID(map.Name);
 
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
-        if (modelname.ToLower().StartsWith("m"))
+        if (modelname.StartsWith("m", StringComparison.CurrentCultureIgnoreCase))
         {
             loadflver = true;
             var name = ModelLocator.MapModelNameToAssetName(amapid, modelname);
             asset = ModelLocator.GetMapModel(amapid, name, name);
             filt = RenderFilter.MapPiece;
         }
-        else if (modelname.ToLower().StartsWith("c"))
+        else if (modelname.StartsWith("c", StringComparison.CurrentCultureIgnoreCase))
         {
             loadflver = true;
             asset = ModelLocator.GetChrModel(modelname, modelname);
             filt = RenderFilter.Character;
         }
-        else if (modelname.ToLower().StartsWith("o") || modelname.StartsWith("AEG"))
+        else if (modelname.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || modelname.StartsWith("AEG"))
         {
             loadflver = true;
             asset = ModelLocator.GetObjModel(modelname, modelname);
             filt = RenderFilter.Object;
         }
-        else if (modelname.ToLower().StartsWith("h"))
+        else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase))
         {
             loadcol = true;
             asset = ModelLocator.GetMapCollisionModel(amapid,
@@ -382,7 +382,7 @@ public class Universe
 
             filt = RenderFilter.Collision;
         }
-        else if (modelname.ToLower().StartsWith("n"))
+        else if (modelname.StartsWith("n", StringComparison.CurrentCultureIgnoreCase))
         {
             loadnav = true;
             asset = ModelLocator.GetMapNVMModel(amapid, ModelLocator.MapModelNameToAssetName(amapid, modelname));

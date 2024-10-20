@@ -720,6 +720,36 @@ public class ProjectHandler
                 id++;
             }
         }
+        foreach (RecentProject p in Current.RecentProjects.ToArray())
+        {
+            // ACFA
+            if (p.GameType == ProjectType.ACFA)
+            {
+                RecentProjectEntry(p, id);
+
+                id++;
+            }
+        }
+        foreach (RecentProject p in Current.RecentProjects.ToArray())
+        {
+            // ACV
+            if (p.GameType == ProjectType.ACV)
+            {
+                RecentProjectEntry(p, id);
+
+                id++;
+            }
+        }
+        foreach (RecentProject p in Current.RecentProjects.ToArray())
+        {
+            // ACVD
+            if (p.GameType == ProjectType.ACVD)
+            {
+                RecentProjectEntry(p, id);
+
+                id++;
+            }
+        }
     }
 
     public void RecentProjectEntry(RecentProject p, int id)
