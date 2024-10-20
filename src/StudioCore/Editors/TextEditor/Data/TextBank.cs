@@ -2,6 +2,7 @@
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Resource.Locators;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -428,13 +429,14 @@ public static class TextBank
         {
             try
             {
-                TextUtils.IsSupportedProjectType
+                PathUtils.BackupPrevFile(path);
+                PathUtils.BackupFile(path);
                 File.WriteAllBytes(path, data);
                 TaskLogs.AddLog($"Saved text at: {path}");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Failed to save text: {path}\n{ex.ToString()}");
+                TaskLogs.AddLog($"Failed to save text: {path}\n{ex}");
             }
         }
     }
