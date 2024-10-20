@@ -57,8 +57,10 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
         // PIPELINE: Byte Requests
         _loadByteResourcesTransform = new ActionBlock<LoadByteResourceRequest>(r =>
         {
+#if !DEBUG
             try
             {
+#endif
                 var res = new T();
 
                 // PIPELINE: Load the byte resource (as the <T> type)
@@ -71,12 +73,13 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
 
                     _loadedResources.Post(request);
                 }
+#if !DEBUG
             }
             catch(Exception ex)
             {
                 TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low, ex);
             }
-
+#endif
             r.Data.Dispose();
         }, options);
 
