@@ -8,6 +8,7 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Reflection;
 
 namespace StudioCore.Editors.MapEditor;
@@ -111,6 +112,13 @@ public class MapSearchProperties
         }
 
         if (ImGui.InputText("Property Name", ref _propertyNameSearchString, 255))
+        {
+            
+        }
+
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 24 * DPI.GetUIScale());
+
+        if (ImGui.Button("Search", buttonSize))
         {
             Property = null;
             PropertyType = null;

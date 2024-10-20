@@ -112,8 +112,6 @@ Model Editor:
  - FIX: dummy position needs to be offset by parent bone (currently this is ignored)
  - FIX: account for scale when displaying dummies/bones
  
-
-
 #--------------------------------------
 # Notes
 #--------------------------------------
@@ -121,5 +119,5 @@ Model Editor:
 - ADD: sync with X Language (Container level -> apply modified rows + add unique rows into non-primary container (add option to apply prepend string, e.g. TRANSLATE:, so you can tag rows for translation)
 - ADD: text merge: tool that will attempt to add unique/modified rows from X source into current project
 
-- FIX: import should create associated entries if relevant (currently it does not) - Bit of a pain currently since we don't know if an entry is 'grouped' by default, we check for the associated entries, therefore we need to add a new method of checking to do this
+- FIX: import needs to represent multiple FMGs, and then account for adding grouped entries
 
