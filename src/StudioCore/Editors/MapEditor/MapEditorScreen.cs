@@ -268,7 +268,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ///--------------------
             // Duplicate to Map
             ///--------------------
-            if (ImGui.MenuItem("Duplicate Selected to Map"))
+            if (ImGui.BeginMenu("Duplicate Selected to Map", _selection.IsSelection()))
             {
                 ActionHandler.DisplayDuplicateToMapMenu(false, true);
 
