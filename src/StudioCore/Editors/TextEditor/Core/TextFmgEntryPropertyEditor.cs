@@ -74,40 +74,20 @@ public class TextFmgEntryPropertyEditor
         }
     }
 
+    private int _idCache = -1;
+    private string _textCache = "";
+
     public void DisplayGroupedTextInput(FMG.Entry entry, FmgEntryGroup fmgEntryGroup)
     {
         var textboxHeight = 32f;
         var textboxWidth = ImGui.GetWindowWidth() * 0.9f;
         var height = textboxHeight;
 
-        var idChanged = false;
-        var idCommit = false;
-
-        var titleTextChanged = false;
-        var titleTextCommit = false;
-
-        var summaryTextChanged = false;
-        var summaryTextCommit = false;
-
-        var descriptionTextChanged = false;
-        var descriptionTextCommit = false;
-
-        var effectTextChanged = false;
-        var effectTextCommit = false;
-
         // We assume Title always exists
         if (fmgEntryGroup.Title == null)
         {
             return;
         }
-
-        var id = fmgEntryGroup.Title.ID;
-
-
-        var titleText = "";
-        var summaryText = "";
-        var descriptionText = "";
-        var effectText = "";
 
         if (ImGui.BeginTable($"fmgEditTableGrouped", 2, ImGuiTableFlags.SizingFixedFit))
         {
@@ -116,32 +96,81 @@ public class TextFmgEntryPropertyEditor
             //ImGui.TableHeadersRow();
 
             // ID
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.Text("ID");
-
-            ImGui.TableSetColumnIndex(1);
-
-            ImGui.SetNextItemWidth(textboxWidth);
-            if (ImGui.InputInt($"##fmgEntryIdInputGrouped", ref id))
+            if (fmgEntryGroup.Title != null)
             {
-                idChanged = true;
-            }
+                var curId = fmgEntryGroup.Title.ID;
 
-            idCommit = ImGui.IsItemDeactivatedAfterEdit();
-            if (ImGui.IsItemActivated())
-            {
-                Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
+                ImGui.TableNextRow();
+                ImGui.TableSetColumnIndex(0);
+
+                ImGui.Text("ID");
+
+                ImGui.TableSetColumnIndex(1);
+
+                ImGui.SetNextItemWidth(textboxWidth);
+                if (ImGui.InputInt($"##fmgEntryIdInputGrouped", ref curId))
+                {
+                    _idCache = curId;
+                }
+
+                var idCommit = ImGui.IsItemDeactivatedAfterEdit();
+                if (ImGui.IsItemActivated())
+                {
+                    Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
+                }
+
+                // Update the ID if it was changed and the id input was exited
+                if (idCommit)
+                {
+                    var proceed = true;
+
+                    // If duplicate IDs are disallowed, then don't apply the ID action changes if there is a match
+                    if (!CFG.Current.TextEditor_Entry_AllowDuplicateIds)
+                    {
+                        var parentFmg = fmgEntryGroup.Title.Parent;
+                        foreach (var fmgEntry in parentFmg.Entries)
+                        {
+                            if (fmgEntry.ID == _idCache)
+                            {
+                                proceed = false;
+                            }
+                        }
+                    }
+
+                    if (proceed)
+                    {
+                        List<EditorAction> actions = new List<EditorAction>();
+
+                        if (fmgEntryGroup.Title != null)
+                        {
+                            actions.Add(new ChangeFmgEntryID(Selection.SelectedContainer, fmgEntryGroup.Title, _idCache));
+                        }
+                        if (fmgEntryGroup.Summary != null)
+                        {
+                            actions.Add(new ChangeFmgEntryID(Selection.SelectedContainer, fmgEntryGroup.Summary, _idCache));
+                        }
+                        if (fmgEntryGroup.Description != null)
+                        {
+                            actions.Add(new ChangeFmgEntryID(Selection.SelectedContainer, fmgEntryGroup.Description, _idCache));
+                        }
+                        if (fmgEntryGroup.Effect != null)
+                        {
+                            actions.Add(new ChangeFmgEntryID(Selection.SelectedContainer, fmgEntryGroup.Effect, _idCache));
+                        }
+
+                        var groupAction = new FmgGroupedAction(actions);
+                        Screen.EditorActionManager.ExecuteAction(groupAction);
+                    }
+                }
             }
 
             // Title
             if (fmgEntryGroup.Title != null)
             {
-                titleText = fmgEntryGroup.Title.Text;
+                var curText = fmgEntryGroup.Title.Text;
 
-                if (titleText == null)
-                    titleText = "";
+                if (curText == null)
+                    curText = "";
 
                 height = 32 * DPI.GetUIScale();
 
@@ -153,25 +182,34 @@ public class TextFmgEntryPropertyEditor
 
                 ImGui.TableSetColumnIndex(1);
 
-                if (ImGui.InputTextMultiline($"##fmgTextInput_Title", ref titleText, 2000, new Vector2(-1, height)))
+                if (ImGui.InputTextMultiline($"##fmgTextInput_Title", ref curText, 2000, new Vector2(-1, height)))
                 {
-                    titleTextChanged = true;
+                    _textCache = curText;
                 }
-                titleTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+
+                var titleTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+
                 if (ImGui.IsItemActivated())
                 {
                     Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
+                }
+
+                // Title Text
+                if (fmgEntryGroup.Title != null && titleTextCommit)
+                {
+                    var action = new ChangeFmgEntryText(Selection.SelectedContainer, fmgEntryGroup.Title, _textCache);
+                    Screen.EditorActionManager.ExecuteAction(action);
                 }
             }
             // Summary
             if (fmgEntryGroup.Summary != null)
             {
-                summaryText = fmgEntryGroup.Summary.Text;
+                var curText = fmgEntryGroup.Summary.Text;
 
-                if (summaryText == null)
-                    summaryText = "";
+                if (curText == null)
+                    curText = "";
 
-                height = (100 + ImGui.CalcTextSize(summaryText).Y) * DPI.GetUIScale();
+                height = (100 + ImGui.CalcTextSize(curText).Y) * DPI.GetUIScale();
 
                 ImGui.TableNextRow();
 
@@ -181,25 +219,33 @@ public class TextFmgEntryPropertyEditor
 
                 ImGui.TableSetColumnIndex(1);
 
-                if (ImGui.InputTextMultiline($"##fmgTextInput_Summary", ref summaryText, 2000, new Vector2(-1, height)))
+                if (ImGui.InputTextMultiline($"##fmgTextInput_Summary", ref curText, 2000, new Vector2(-1, height)))
                 {
-                    summaryTextChanged = true;
+                    _textCache = curText;
                 }
-                summaryTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+
+                var summaryTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+
                 if (ImGui.IsItemActivated())
                 {
                     Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
+                }
+
+                if (fmgEntryGroup.Summary != null && summaryTextCommit)
+                {
+                    var action = new ChangeFmgEntryText(Selection.SelectedContainer, fmgEntryGroup.Summary, _textCache);
+                    Screen.EditorActionManager.ExecuteAction(action);
                 }
             }
             // Description
             if (fmgEntryGroup.Description != null)
             {
-                descriptionText = fmgEntryGroup.Description.Text;
+                var curText = fmgEntryGroup.Description.Text;
 
-                if (descriptionText == null)
-                    descriptionText = "";
+                if (curText == null)
+                    curText = "";
 
-                height = (100 + ImGui.CalcTextSize(descriptionText).Y) * DPI.GetUIScale();
+                height = (100 + ImGui.CalcTextSize(curText).Y) * DPI.GetUIScale();
 
                 ImGui.TableNextRow();
 
@@ -209,25 +255,33 @@ public class TextFmgEntryPropertyEditor
 
                 ImGui.TableSetColumnIndex(1);
 
-                if (ImGui.InputTextMultiline($"##fmgTextInput_Description", ref descriptionText, 2000, new Vector2(-1, height)))
+                if (ImGui.InputTextMultiline($"##fmgTextInput_Description", ref curText, 2000, new Vector2(-1, height)))
                 {
-                    descriptionTextChanged = true;
+                    _textCache = curText;
                 }
-                descriptionTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+
+                var descriptionTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+
                 if (ImGui.IsItemActivated())
                 {
                     Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
+                }
+
+                if (fmgEntryGroup.Description != null && descriptionTextCommit)
+                {
+                    var action = new ChangeFmgEntryText(Selection.SelectedContainer, fmgEntryGroup.Description, _textCache);
+                    Screen.EditorActionManager.ExecuteAction(action);
                 }
             }
             // Effect
             if (fmgEntryGroup.Effect != null)
             {
-                effectText = fmgEntryGroup.Effect.Text;
+                var curText = fmgEntryGroup.Effect.Text;
 
-                if (effectText == null)
-                    effectText = "";
+                if (curText == null)
+                    curText = "";
 
-                height = (100 + ImGui.CalcTextSize(effectText).Y) * DPI.GetUIScale();
+                height = (100 + ImGui.CalcTextSize(curText).Y) * DPI.GetUIScale();
 
                 ImGui.TableNextRow();
 
@@ -237,87 +291,26 @@ public class TextFmgEntryPropertyEditor
 
                 ImGui.TableSetColumnIndex(1);
 
-                if (ImGui.InputTextMultiline($"##fmgTextInput_Effect", ref effectText, 2000, new Vector2(-1, height)))
+                if (ImGui.InputTextMultiline($"##fmgTextInput_Effect", ref curText, 2000, new Vector2(-1, height)))
                 {
-                    effectTextChanged = true;
+                    _textCache = curText;
                 }
-                effectTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+
+                var effectTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+
                 if (ImGui.IsItemActivated())
                 {
                     Selection.CurrentSelectionContext = TextSelectionContext.FmgEntryContents;
                 }
+
+                if (fmgEntryGroup.Effect != null && effectTextCommit)
+                {
+                    var action = new ChangeFmgEntryText(Selection.SelectedContainer, fmgEntryGroup.Effect, _textCache);
+                    Screen.EditorActionManager.ExecuteAction(action);
+                }
             }
 
             ImGui.EndTable();
-        }
-
-        // Update the ID if it was changed and the id input was exited
-        if (idChanged && idCommit)
-        {
-            var proceed = true;
-
-            // If duplicate IDs are disallowed, then don't apply the ID action changes if there is a match
-            if(!CFG.Current.TextEditor_Entry_AllowDuplicateIds)
-            {
-                var parentFmg = fmgEntryGroup.Title.Parent;
-                foreach(var fmgEntry in parentFmg.Entries)
-                {
-                    if(fmgEntry.ID == id)
-                    {
-                        proceed = false;
-                    }
-                }
-            }
-
-            if (proceed)
-            {
-                List<EditorAction> actions = new List<EditorAction>();
-
-                if (fmgEntryGroup.Title != null)
-                {
-                    actions.Add(new ChangeFmgEntryID(Selection.SelectedContainer, fmgEntryGroup.Title, id));
-                }
-                if (fmgEntryGroup.Summary != null)
-                {
-                    actions.Add(new ChangeFmgEntryID(Selection.SelectedContainer, fmgEntryGroup.Summary, id));
-                }
-                if (fmgEntryGroup.Description != null)
-                {
-                    actions.Add(new ChangeFmgEntryID(Selection.SelectedContainer, fmgEntryGroup.Description, id));
-                }
-                if (fmgEntryGroup.Effect != null)
-                {
-                    actions.Add(new ChangeFmgEntryID(Selection.SelectedContainer, fmgEntryGroup.Effect, id));
-                }
-
-                var groupAction = new FmgGroupedAction(actions);
-                Screen.EditorActionManager.ExecuteAction(groupAction);
-            }
-        }
-
-        // Title Text
-        if (fmgEntryGroup.Title != null && titleTextChanged && titleTextCommit)
-        {
-            var action = new ChangeFmgEntryText(Selection.SelectedContainer, fmgEntryGroup.Title, titleText);
-            Screen.EditorActionManager.ExecuteAction(action);
-        }
-        // Summary Text
-        if (fmgEntryGroup.Summary != null && summaryTextChanged && summaryTextCommit)
-        {
-            var action = new ChangeFmgEntryText(Selection.SelectedContainer, fmgEntryGroup.Summary, summaryText);
-            Screen.EditorActionManager.ExecuteAction(action);
-        }
-        // Description Text
-        if (fmgEntryGroup.Description != null && descriptionTextChanged && descriptionTextCommit)
-        {
-            var action = new ChangeFmgEntryText(Selection.SelectedContainer, fmgEntryGroup.Description, descriptionText);
-            Screen.EditorActionManager.ExecuteAction(action);
-        }
-        // Effect Text
-        if (fmgEntryGroup.Effect != null && effectTextChanged && effectTextCommit)
-        {
-            var action = new ChangeFmgEntryText(Selection.SelectedContainer, fmgEntryGroup.Effect, effectText);
-            Screen.EditorActionManager.ExecuteAction(action);
         }
     }
 

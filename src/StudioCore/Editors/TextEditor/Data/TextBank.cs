@@ -466,11 +466,11 @@ public static class TextBank
             try
             {
                 File.WriteAllBytes(path, data);
-                TaskLogs.AddLog($"Saved text at: {path}");
+                TaskLogs.AddLog($"Saved file at: {Path.GetFileName(path)}");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Failed to save text: {path}\n{ex.ToString()}");
+                TaskLogs.AddLog($"Failed to save file at: {Path.GetFileName(path)}\n{ex.ToString()}");
             }
         }
     }

@@ -118,8 +118,6 @@ Model Editor:
 # Notes
 #--------------------------------------
 # TODO
-- ADD: 'fake' combined view: emulate the old editor by creating 'fake' groups that are in reality multiple FMGs and FMG Entry list
-
 - ADD: sync with X Language (Container level -> apply modified rows + add unique rows into non-primary container (add option to apply prepend string, e.g. TRANSLATE:, so you can tag rows for translation)
 - ADD: text merge: tool that will attempt to add unique/modified rows from X source into current project
 
@@ -130,4 +128,3 @@ Model Editor:
 - FIX: make selecting the other windows in any way change the TextSelectionContext (to fix accidental delete/dupes)
 - FIX: see if input detection for edit can be less strict on requiring the user to click off the input below, so clicking on a new input/entry doesn't wipe the pre-comitted changes
 
-- FIX: path handling for FMG container write since the method of getting the project path is brittle (issue with DS2 causing dupe folder)
