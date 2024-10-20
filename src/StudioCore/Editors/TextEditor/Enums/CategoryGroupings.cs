@@ -24,7 +24,6 @@ public static class CategoryGroupings
         TextContainerCategory.Korean,
         TextContainerCategory.Polish,
         TextContainerCategory.Russian,
-        TextContainerCategory.English,
         TextContainerCategory.Spanish,
         TextContainerCategory.TraditionalChinese
     };
@@ -39,7 +38,6 @@ public static class CategoryGroupings
         TextContainerCategory.Korean,
         TextContainerCategory.Polish,
         TextContainerCategory.Russian,
-        TextContainerCategory.English,
         TextContainerCategory.Portuguese,
         TextContainerCategory.Spanish,
         TextContainerCategory.SpanishLatin,
@@ -57,7 +55,6 @@ public static class CategoryGroupings
         TextContainerCategory.Korean,
         TextContainerCategory.Polish,
         TextContainerCategory.Russian,
-        TextContainerCategory.English,
         TextContainerCategory.Spanish,
         TextContainerCategory.TraditionalChinese,
         TextContainerCategory.SpanishNeutral,
@@ -74,7 +71,6 @@ public static class CategoryGroupings
         TextContainerCategory.Korean,
         TextContainerCategory.Polish,
         TextContainerCategory.Russian,
-        TextContainerCategory.English,
         TextContainerCategory.Spanish,
         TextContainerCategory.TraditionalChinese,
         TextContainerCategory.Portuguese,
@@ -100,7 +96,6 @@ public static class CategoryGroupings
         TextContainerCategory.Korean,
         TextContainerCategory.Polish,
         TextContainerCategory.Russian,
-        TextContainerCategory.English,
         TextContainerCategory.Spanish,
         TextContainerCategory.SpanishLatin,
         TextContainerCategory.TraditionalChinese,
@@ -119,7 +114,6 @@ public static class CategoryGroupings
         TextContainerCategory.Korean,
         TextContainerCategory.Polish,
         TextContainerCategory.Russian,
-        TextContainerCategory.English,
         TextContainerCategory.Spanish,
         TextContainerCategory.SpanishLatin,
         TextContainerCategory.TraditionalChinese,
@@ -138,7 +132,6 @@ public static class CategoryGroupings
         TextContainerCategory.Korean,
         TextContainerCategory.Polish,
         TextContainerCategory.Russian,
-        TextContainerCategory.English,
         TextContainerCategory.Spanish,
         TextContainerCategory.SpanishLatin,
         TextContainerCategory.TraditionalChinese,
@@ -158,7 +151,6 @@ public static class CategoryGroupings
         TextContainerCategory.Korean,
         TextContainerCategory.Polish,
         TextContainerCategory.Russian,
-        TextContainerCategory.English,
         TextContainerCategory.Spanish,
         TextContainerCategory.SpanishLatin,
         TextContainerCategory.TraditionalChinese,
@@ -166,6 +158,48 @@ public static class CategoryGroupings
         TextContainerCategory.Thai,
         TextContainerCategory.Portuguese,
         TextContainerCategory.Arabic,
+    };
+
+    public static List<TextContainerCategory> AC4_Languages = new()
+    {
+        TextContainerCategory.English,
+        TextContainerCategory.EnglishUK, // I remember seeing a UK lang in an old AC4 regulation, but I forget where...
+        TextContainerCategory.French,
+        TextContainerCategory.Japanese,
+        TextContainerCategory.Spanish
+    };
+
+    public static List<TextContainerCategory> ACFA_Languages = new()
+    {
+        TextContainerCategory.English,
+        TextContainerCategory.EnglishUK, // I remember seeing a UK lang in an old AC4 regulation, but I forget where...
+        TextContainerCategory.French,
+        TextContainerCategory.Japanese,
+        TextContainerCategory.Spanish
+    };
+
+    public static List<TextContainerCategory> ACV_Languages = new()
+    {
+        TextContainerCategory.English,
+        TextContainerCategory.French,
+        TextContainerCategory.German,
+        TextContainerCategory.Italian,
+        TextContainerCategory.Japanese,
+        TextContainerCategory.Korean,
+        TextContainerCategory.Spanish,
+        TextContainerCategory.TraditionalChinese
+    };
+
+    public static List<TextContainerCategory> ACVD_Languages = new()
+    {
+        TextContainerCategory.English,
+        TextContainerCategory.French,
+        TextContainerCategory.German,
+        TextContainerCategory.Italian,
+        TextContainerCategory.Japanese,
+        TextContainerCategory.Korean,
+        TextContainerCategory.Spanish,
+        TextContainerCategory.TraditionalChinese
     };
 
     public static List<TextContainerCategory> NonLanguages = new()

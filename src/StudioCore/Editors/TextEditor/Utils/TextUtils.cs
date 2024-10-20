@@ -31,61 +31,32 @@ public static class TextUtils
         switch (Smithbox.ProjectType)
         {
             case ProjectType.DES:
-                if (CategoryGroupings.DES_Languages.Contains(category))
-                {
-                    return true;
-                }
-                break;
+                return CategoryGroupings.DES_Languages.Contains(category);
             case ProjectType.DS1:
-                if (CategoryGroupings.DS1_Languages.Contains(category))
-                {
-                    return true;
-                }
-                break;
+                return CategoryGroupings.DS1_Languages.Contains(category);
             case ProjectType.DS1R:
-                if (CategoryGroupings.DS1R_Languages.Contains(category))
-                {
-                    return true;
-                }
-                break;
+                return CategoryGroupings.DS1R_Languages.Contains(category);
             case ProjectType.DS2:
             case ProjectType.DS2S:
-                if (CategoryGroupings.DS2_Languages.Contains(category))
-                {
-                    return true;
-                }
-                break;
+                return CategoryGroupings.DS2_Languages.Contains(category);
             case ProjectType.BB:
-                if (CategoryGroupings.BB_Languages.Contains(category))
-                {
-                    return true;
-                }
-                break;
+                return CategoryGroupings.BB_Languages.Contains(category);
             case ProjectType.DS3:
-                if (CategoryGroupings.DS3_Languages.Contains(category))
-                {
-                    return true;
-                }
-                break;
+                return CategoryGroupings.DS3_Languages.Contains(category);
             case ProjectType.SDT:
-                if (CategoryGroupings.SDT_Languages.Contains(category))
-                {
-                    return true;
-                }
-                break;
+                return CategoryGroupings.SDT_Languages.Contains(category);
             case ProjectType.ER:
-                if (CategoryGroupings.ER_Languages.Contains(category))
-                {
-                    return true;
-                }
-                break;
+                return CategoryGroupings.ER_Languages.Contains(category);
             case ProjectType.AC6:
-                if (CategoryGroupings.AC6_Languages.Contains(category))
-                {
-                    return true;
-                }
-                break;
-
+                return CategoryGroupings.AC6_Languages.Contains(category);
+            case ProjectType.AC4:
+                return CategoryGroupings.AC4_Languages.Contains(category);
+            case ProjectType.ACFA:
+                return CategoryGroupings.ACFA_Languages.Contains(category);
+            case ProjectType.ACV:
+                return CategoryGroupings.ACV_Languages.Contains(category);
+            case ProjectType.ACVD:
+                return CategoryGroupings.ACVD_Languages.Contains(category);
             default: break;
         }
 
@@ -1452,7 +1423,7 @@ public static class TextUtils
     }
 
     /// <summary>
-    /// DS2 only: check if FMG is part of the ta;l folder
+    /// DS2 only: check if FMG is part of the talk folder
     /// </summary>
     public static bool IsTalkFolderFmg(TextContainerInfo info)
     {
@@ -1472,6 +1443,12 @@ public static class TextUtils
     {
         var group = TextContainerCategory.None;
 
+        // Normalize the directory separators for folder checking
+        path = path.Replace('\\', '/').Replace(Path.DirectorySeparatorChar, '/').Replace(Path.AltDirectorySeparatorChar, '/');
+
+        // Get a lowercase version for easier checking in some games
+        string pathLower = path.ToLowerInvariant();
+
         // Special-case: DES the msg folder has Japanese, so default to Japanese.
         if(Smithbox.ProjectType is ProjectType.DES)
         {
@@ -1487,13 +1464,16 @@ public static class TextUtils
         // English (US)
         if (path.Contains("ENGLISH") ||
             path.Contains("english") ||
-            path.Contains("engus"))
+            path.Contains("engus") ||
+            pathLower.Contains("lang/en") ||
+            pathLower.Contains("lang/us"))
         {
             group = TextContainerCategory.English;
         }
 
         // English (UK)
-        if (path.Contains("enggb"))
+        if (path.Contains("enggb") ||
+            pathLower.Contains("lang/uk"))
         {
             group = TextContainerCategory.EnglishUK;
         }
@@ -1501,7 +1481,8 @@ public static class TextUtils
         // French
         if (path.Contains("FRENCH") ||
             path.Contains("french") ||
-            path.Contains("frafr"))
+            path.Contains("frafr") ||
+            pathLower.Contains("lang/fr"))
         {
             group = TextContainerCategory.French;
         }
@@ -1509,7 +1490,8 @@ public static class TextUtils
         // German
         if (path.Contains("GERMAN") ||
             path.Contains("germany") ||
-            path.Contains("deude"))
+            path.Contains("deude") ||
+            pathLower.Contains("lang/ge"))
         {
             group = TextContainerCategory.German;
         }
@@ -1517,7 +1499,8 @@ public static class TextUtils
         // Italian
         if (path.Contains("ITALIAN") ||
             path.Contains("italian") ||
-            path.Contains("itait"))
+            path.Contains("itait") ||
+            pathLower.Contains("lang/it"))
         {
             group = TextContainerCategory.Italian;
         }
@@ -1525,7 +1508,8 @@ public static class TextUtils
         // Japanese
         if (path.Contains("JAPANESE") ||
             path.Contains("japanese") ||
-            path.Contains("jpnjp"))
+            path.Contains("jpnjp") ||
+            pathLower.Contains("lang/jp"))
         {
             group = TextContainerCategory.Japanese;
         }
@@ -1533,7 +1517,8 @@ public static class TextUtils
         // Korean
         if (path.Contains("KOREAN") ||
             path.Contains("korean") ||
-            path.Contains("korkr"))
+            path.Contains("korkr") ||
+            pathLower.Contains("lang/kr"))
         {
             group = TextContainerCategory.Korean;
         }
@@ -1557,7 +1542,9 @@ public static class TextUtils
         // Spanish
         if (path.Contains("SPANISH") ||
             path.Contains("spanish") ||
-            path.Contains("spaes"))
+            path.Contains("spaes") ||
+            pathLower.Contains("lang/es") ||
+            pathLower.Contains("lang/sp"))
         {
             group = TextContainerCategory.Spanish;
         }
@@ -1578,7 +1565,8 @@ public static class TextUtils
         // Traditional Chinese
         if (path.Contains("TCHINESE") ||
             path.Contains("chinese") ||
-            path.Contains("zhotw"))
+            path.Contains("zhotw") ||
+            pathLower.Contains("lang/cn"))
         {
             group = TextContainerCategory.TraditionalChinese;
         }

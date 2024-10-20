@@ -43,7 +43,16 @@ public static class TextBank
             {
                 if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
-                    var fmgList = TextLocator.GetFmgs();
+                    var fmgList = TextLocator.GetFmgs("menu\\text\\");
+
+                    foreach (var path in fmgList)
+                    {
+                        LoadFmg(path, FmgBank);
+                    }
+                }
+                else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                {
+                    var fmgList = TextLocator.GetFmgs("lang\\");
 
                     foreach (var path in fmgList)
                     {
@@ -76,7 +85,16 @@ public static class TextBank
         {
             if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                var fmgList = TextLocator.GetFmgs(false, targetDir);
+                var fmgList = TextLocator.GetFmgs("menu\\text\\", false, targetDir);
+
+                foreach (var path in fmgList)
+                {
+                    LoadFmg(path, TargetFmgBank);
+                }
+            }
+            else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+            {
+                var fmgList = TextLocator.GetFmgs("lang\\", false, targetDir);
 
                 foreach (var path in fmgList)
                 {
@@ -115,25 +133,31 @@ public static class TextBank
             new TaskManager.LiveTask($"Setup Text Editor - Vanilla Bank", TaskManager.RequeueType.None, false,
         () =>
         {
-            if (Smithbox.ProjectType is not ProjectType.Undefined)
+            if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-                {
-                    var fmgList = TextLocator.GetFmgs(true);
+                var fmgList = TextLocator.GetFmgs("menu\\text\\", true);
 
-                    foreach (var path in fmgList)
-                    {
-                        LoadFmg(path, VanillaFmgBank);
-                    }
+                foreach (var path in fmgList)
+                {
+                    LoadFmg(path, VanillaFmgBank);
                 }
-                else
-                {
-                    var fmgContainerList = TextLocator.GetFmgContainers(true);
+            }
+            else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+            {
+                var fmgList = TextLocator.GetFmgs("lang\\", true);
 
-                    foreach (var path in fmgContainerList)
-                    {
-                        LoadFmgContainer(path, VanillaFmgBank);
-                    }
+                foreach (var path in fmgList)
+                {
+                    LoadFmg(path, VanillaFmgBank);
+                }
+            }
+            else if (Smithbox.ProjectType is not ProjectType.Undefined)
+            {
+                var fmgContainerList = TextLocator.GetFmgContainers(true);
+
+                foreach (var path in fmgContainerList)
+                {
+                    LoadFmgContainer(path, VanillaFmgBank);
                 }
             }
 
@@ -150,7 +174,7 @@ public static class TextBank
         var name = Path.GetFileName(path);
         var relPath = path.Replace(Smithbox.GameRoot, "").Replace(Smithbox.ProjectRoot, "");
         var containerType = TextContainerType.Loose;
-        var containerCategory = TextUtils.GetLanguageCategory(path);
+        var containerCategory = TextUtils.GetLanguageCategory(relPath);
 
         // Skip non-English if this is disabled
         if(!CFG.Current.TextEditor_IncludeNonPrimaryContainers)
@@ -202,7 +226,7 @@ public static class TextBank
         var name = Path.GetFileName(path);
         var relPath = path.Replace(Smithbox.GameRoot, "").Replace(Smithbox.ProjectRoot, "");
         var containerType = TextContainerType.BND;
-        var containerCategory = TextUtils.GetLanguageCategory(path);
+        var containerCategory = TextUtils.GetLanguageCategory(relPath);
 
         // Skip non-English if this is disabled
         if (!CFG.Current.TextEditor_IncludeNonPrimaryContainers)
@@ -316,7 +340,7 @@ public static class TextBank
 
         byte[] fileBytes = null;
 
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES or ProjectType.ACFA)
         {
             using (IBinder binder = BND3.Read(projectContainerPath))
             {
@@ -404,6 +428,7 @@ public static class TextBank
         {
             try
             {
+                TextUtils.IsSupportedProjectType
                 File.WriteAllBytes(path, data);
                 TaskLogs.AddLog($"Saved text at: {path}");
             }
