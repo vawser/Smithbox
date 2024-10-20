@@ -79,6 +79,11 @@ public static class VirtualPathLocator
 
     public static string VirtualToRealPath(string virtualPath, out string bndpath)
     {
+        if (virtualPath.Contains("model") && virtualPath.Contains("obj"))
+        {
+            Console.WriteLine();
+        }
+
         var pathElements = virtualPath.Split('/');
 
         // Parse the virtual path with a DFA and convert it to a game path
@@ -330,9 +335,9 @@ public static class VirtualPathLocator
 
                 if (Smithbox.ProjectType is ProjectType.ACFA)
                     if (pathElements[i].Equals("model"))
-                        return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}_m.bnd");
+                        return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}\{objid}_m.bnd");
                     else if (pathElements[i].Equals("tex"))
-                        return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}_t.bnd");
+                        return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}\{objid}_t.bnd");
 
                 if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
                     if (pathElements[i].Equals("model"))
