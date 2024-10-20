@@ -1,13 +1,7 @@
-﻿using SoulsFormats;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
-// FLVER implementation for Model Editor usage
-// Credit to The12thAvenger
 namespace SoulsFormats
 {
     public partial class FLVER0
@@ -20,9 +14,9 @@ namespace SoulsFormats
             public byte MaterialIndex { get; set; }
             int IFlverMesh.MaterialIndex => MaterialIndex;
 
-            public bool Unk02 { get; set; }
+            public bool BackfaceCulling { get; set; }
 
-            public byte Unk03 { get; set; }
+            public bool UseTristrips { get; set; }
 
             public short DefaultBoneIndex { get; set; }
 
@@ -37,12 +31,12 @@ namespace SoulsFormats
 
             public int LayoutIndex { get; set; }
 
-            internal Mesh(BinaryReaderEx br, FLVER0 flv, int dataOffset)
+            internal Mesh(BinaryReaderEx br, FLVER0 flv, int dataOffset, int version)
             {
                 Dynamic = br.ReadByte();
                 MaterialIndex = br.ReadByte();
-                Unk02 = br.ReadBoolean();
-                Unk03 = br.ReadByte();
+                BackfaceCulling = br.ReadBoolean();
+                UseTristrips = br.ReadBoolean();
 
                 int vertexIndexCount = br.ReadInt32();
                 int vertexCount = br.ReadInt32();
@@ -51,19 +45,19 @@ namespace SoulsFormats
                 Unk46 = br.ReadInt16();
                 br.ReadInt32(); // Vertex indices length
                 int vertexIndicesOffset = br.ReadInt32();
-                int bufferDataLength = br.ReadInt32();
-                int bufferDataOffset = br.ReadInt32();
-                int vertexBuffersOffset1 = br.ReadInt32();
-                int vertexBuffersOffset2 = br.ReadInt32();
+                int bufferDataLength = ReadVarEndianInt32(br, version);
+                int bufferDataOffset = ReadVarEndianInt32(br, version);
+                int vertexBuffersOffset1 = ReadVarEndianInt32(br, version);
+                int vertexBuffersOffset2 = ReadVarEndianInt32(br, version);
                 br.AssertInt32(0);
 
-                if (flv.VertexIndexSize == 16)
+                if (flv.Header.VertexIndexSize == 16)
                 {
                     VertexIndices = new List<int>(vertexCount);
                     foreach (ushort index in br.GetUInt16s(dataOffset + vertexIndicesOffset, vertexIndexCount))
                         VertexIndices.Add(index);
                 }
-                else if (flv.VertexIndexSize == 32)
+                else if (flv.Header.VertexIndexSize == 32)
                 {
                     VertexIndices = new List<int>(br.GetInt32s(dataOffset + vertexIndicesOffset, vertexIndexCount));
                 }
@@ -83,7 +77,7 @@ namespace SoulsFormats
                 {
                     br.StepIn(vertexBuffersOffset1);
                     {
-                        List<VertexBuffer> vertexBuffers1 = VertexBuffer.ReadVertexBuffers(br);
+                        List<VertexBuffer> vertexBuffers1 = VertexBuffer.ReadVertexBuffers(br, version);
                         if (vertexBuffers1.Count == 0)
                             throw new NotSupportedException("First vertex buffer list is expected to contain at least 1 buffer.");
                         for (int i = 1; i < vertexBuffers1.Count; i++)
@@ -98,7 +92,7 @@ namespace SoulsFormats
                 {
                     br.StepIn(vertexBuffersOffset2);
                     {
-                        List<VertexBuffer> vertexBuffers2 = VertexBuffer.ReadVertexBuffers(br);
+                        List<VertexBuffer> vertexBuffers2 = VertexBuffer.ReadVertexBuffers(br, version);
                         if (vertexBuffers2.Count != 0)
                             throw new NotSupportedException("Second vertex buffer list is expected to contain exactly 0 buffers.");
                     }
@@ -145,7 +139,7 @@ namespace SoulsFormats
             public List<int> Triangulate(int version)
             {
                 var triangles = new List<int>();
-                if (version >= 0x15 && Unk03 == 0)
+                if (version >= 0x15 && UseTristrips == false)
                 {
                     triangles = new List<int>(VertexIndices);
                 }
@@ -206,6 +200,93 @@ namespace SoulsFormats
                     }
                 }
                 return triangles;
+            }
+
+            public int GetVertexIndexSize()
+            {
+                foreach (int index in VertexIndices)
+                    if (index > ushort.MaxValue + 1)
+                        return 32;
+                return 16;
+            }
+
+            public void Write(BinaryWriterEx bw, FLVER0 flv, int index)
+            {
+                Material material = flv.Materials[MaterialIndex];
+                bw.WriteByte(Dynamic);
+                bw.WriteByte(MaterialIndex);
+                bw.WriteBoolean(BackfaceCulling);
+                bw.WriteBoolean(UseTristrips);
+
+                bw.WriteInt32(VertexIndices.Count);
+                bw.WriteInt32(Vertices.Count);
+                bw.WriteInt16(DefaultBoneIndex);
+                bw.WriteInt16s(BoneIndices);
+                bw.WriteInt16(Unk46);
+                bw.WriteInt32(VertexIndices.Count * 2);
+                bw.ReserveInt32($"VertexIndicesOffset{index}");
+                bw.WriteInt32(material.Layouts[LayoutIndex].Size * Vertices.Count);
+                bw.ReserveInt32($"VertexBufferOffset{index}");
+                bw.ReserveInt32($"VertexBufferListOffset{index}");
+                bw.WriteInt32(0); //We don't intend to fill vertexBuffersOffset2 so we'll just write it 0 now.
+                bw.WriteInt32(0);
+            }
+
+            public void WriteVertexIndices(BinaryWriterEx bw, byte VertexIndexSize, int dataOffset, int index)
+            {
+                bw.FillInt32($"VertexIndicesOffset{index}", (int)bw.Position - dataOffset);
+                if (VertexIndexSize == 16)
+                {
+                    for (int i = 0; i < VertexIndices.Count; i++)
+                    {
+                        bw.WriteUInt16((ushort)VertexIndices[i]);
+                    }
+                }
+                else if (VertexIndexSize == 32)
+                {
+                    for (int i = 0; i < VertexIndices.Count; i++)
+                    {
+                        bw.WriteInt32(VertexIndices[i]);
+                    }
+                }
+            }
+
+            public void WriteVertexBufferHeader(BinaryWriterEx bw, FLVER0 flv, int index)
+            {
+                bw.FillInt32($"VertexBufferListOffset{index}", (int)bw.Position);
+
+                bw.WriteInt32(1); //bufferCount
+                bw.ReserveInt32($"VertexBufferInfoOffset{index}");
+                bw.WriteInt32(0);
+                bw.WriteInt32(0);
+
+                bw.FillInt32($"VertexBufferInfoOffset{index}", (int)bw.Position);
+
+                //Since only the first VertexBuffer data is kept no matter what, we'll only write the first
+                bw.WriteInt32(LayoutIndex);
+                bw.WriteInt32(flv.Materials[MaterialIndex].Layouts[LayoutIndex].Size * Vertices.Count);
+                bw.ReserveInt32($"VertexBufferOffset{index}_{0}");
+                bw.WriteInt32(0);
+
+            }
+
+            public void WriteVertexBufferData(BinaryWriterEx bw, FLVER0 flv, int dataOffset, int index)
+            {
+                bw.FillInt32($"VertexBufferOffset{index}", (int)bw.Position - dataOffset);
+                bw.FillInt32($"VertexBufferOffset{index}_{0}", (int)bw.Position - dataOffset);
+
+                foreach (FLVER.Vertex vertex in Vertices)
+                    vertex.PrepareWrite();
+
+                float uvFactor = 1024;
+                if (!bw.BigEndian)
+                    uvFactor = 2048;
+
+                foreach (FLVER.Vertex vertex in Vertices)
+                    vertex.Write(bw, flv.Materials[MaterialIndex].Layouts[LayoutIndex], uvFactor);
+
+                foreach (FLVER.Vertex vertex in Vertices)
+                    vertex.FinishWrite();
             }
         }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

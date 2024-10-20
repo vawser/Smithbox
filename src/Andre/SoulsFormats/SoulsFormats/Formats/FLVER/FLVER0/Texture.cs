@@ -1,13 +1,4 @@
-﻿using SoulsFormats;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-// FLVER implementation for Model Editor usage
-// Credit to The12thAvenger
-namespace SoulsFormats
+﻿namespace SoulsFormats
 {
     public partial class FLVER0
     {
@@ -18,18 +9,40 @@ namespace SoulsFormats
 
             public string Path { get; set; }
 
-            internal Texture(BinaryReaderEx br, FLVER0 flv)
+            internal Texture(BinaryReaderEx br, bool useUnicode)
             {
                 int pathOffset = br.ReadInt32();
                 int typeOffset = br.ReadInt32();
                 br.AssertInt32(0);
                 br.AssertInt32(0);
 
-                Path = flv.Unicode ? br.GetUTF16(pathOffset) : br.GetShiftJIS(pathOffset);
+                Path = useUnicode ? br.GetUTF16(pathOffset) : br.GetShiftJIS(pathOffset);
                 if (typeOffset > 0)
-                    Type = flv.Unicode ? br.GetUTF16(typeOffset) : br.GetShiftJIS(typeOffset);
+                    Type = useUnicode ? br.GetUTF16(typeOffset) : br.GetShiftJIS(typeOffset);
                 else
                     Type = null;
+            }
+
+            internal void Write(BinaryWriterEx bw, int materialIndex, int textureIndex)
+            {
+                bw.ReserveInt32($"Path_Offset{materialIndex}_{textureIndex}");
+                bw.ReserveInt32($"Type_Offset{materialIndex}_{textureIndex}");
+                bw.WriteInt32(0);
+                bw.WriteInt32(0);
+            }
+
+            internal void WriteStrings(BinaryWriterEx bw, int materialIndex, int textureIndex, bool useUnicode)
+            {
+                bw.FillInt32($"Path_Offset{materialIndex}_{textureIndex}", (int)bw.Position);
+                if (useUnicode)
+                    bw.WriteUTF16(Path, true);
+                else
+                    bw.WriteShiftJIS(Path, true);
+                bw.FillInt32($"Type_Offset{materialIndex}_{textureIndex}", (int)bw.Position);
+                if (useUnicode)
+                    bw.WriteUTF16(Type, true);
+                else
+                    bw.WriteShiftJIS(Type, true);
             }
         }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

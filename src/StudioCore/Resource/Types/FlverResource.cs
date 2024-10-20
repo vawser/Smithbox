@@ -1725,7 +1725,7 @@ public class FlverResource : IResource, IDisposable
             GPUMeshes = new FlverSubmesh[FlverDeS.Meshes.Count()];
             GPUMaterials = new FlverMaterial[FlverDeS.Materials.Count()];
             Bounds = new BoundingBox();
-            Bones = FlverDeS.Bones;
+            Bones = FlverDeS.Nodes;
             BoneTransforms = new List<Matrix4x4>();
             for (var i = 0; i < Bones.Count; i++)
             {
