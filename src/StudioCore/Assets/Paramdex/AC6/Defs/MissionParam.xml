@@ -84,7 +84,7 @@
     <Field Def="u16 sortId"></Field>
     <Field Def="s32 forcedLoadoutCharaInitParamID"></Field>
     <Field Def="s32 unkMapBoundryEntityId"></Field>
-    <Field Def="s32 Unk0x124"></Field>
+    <Field Def="s32 missionDebriefingTalk"></Field>
     <Field Def="s32 Unk0x128"></Field>
     <Field Def="s32 Unk0x12C"></Field>
     <Field Def="s32 Unk0x130"></Field>
