@@ -40,6 +40,9 @@ public class TextDifferenceManager
         AdditionCache = new();
         DifferenceCache = new();
 
+        if (Selection.SelectedContainer == null)
+            return;
+
         // Leave empty if disabled
         if(!CFG.Current.TextEditor_IncludeVanillaCache)
         {
@@ -109,6 +112,17 @@ public class TextDifferenceManager
                                 }
                             }
                         }
+                        else
+                        {
+                            // If project entry is not null, we can assume that it is different
+                            if(entry.Text != null)
+                            {
+                                if (!DifferenceCache.ContainsKey($"{entryId}"))
+                                {
+                                    DifferenceCache.Add($"{entryId}", true);
+                                }
+                            }
+                        }
                     }
                     // Is a mod-unique row, there it is a difference
                     else
@@ -134,6 +148,17 @@ public class TextDifferenceManager
                         if (vanillaText != null)
                         {
                             if (!vanillaText.Equals(entry.Text))
+                            {
+                                if (!DifferenceCache.ContainsKey($"{entryId}"))
+                                {
+                                    DifferenceCache.Add($"{entryId}", true);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // If project entry is not null, we can assume that it is different
+                            if (entry.Text != null)
                             {
                                 if (!DifferenceCache.ContainsKey($"{entryId}"))
                                 {
