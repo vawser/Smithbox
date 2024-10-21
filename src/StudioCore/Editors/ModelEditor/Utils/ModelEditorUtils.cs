@@ -9,7 +9,7 @@ namespace StudioCore.Editors.ModelEditor.Utils
         /// </summary>
         /// <param name="projectType">The project type to check.</param>
         /// <returns>Whether or not the <see cref="ProjectType"/> is supported.</returns>
-        public static bool IsSupported(ProjectType projectType)
+        public static bool IsSupportedProjectType(ProjectType projectType)
         {
             return !(projectType is ProjectType.DES or ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD);
         }

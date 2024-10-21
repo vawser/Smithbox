@@ -17,7 +17,7 @@ public static class GparamUtils
     /// </summary>
     public static bool IsSupportedProjectType()
     {
-        if(Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2 or ProjectType.DES)
+        if(Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2 or ProjectType.DES or ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
         {
             return false;
         }

@@ -157,7 +157,7 @@ public class ModelResourceManager : IResourceEventListener
     /// <param name="name"></param>
     public void LoadLooseFLVER(string name, string loosePath)
     {
-        if (!ModelEditorUtils.IsSupported(Smithbox.ProjectType))
+        if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
         {
             TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
             return;
@@ -178,7 +178,7 @@ public class ModelResourceManager : IResourceEventListener
     /// <param name="name"></param>
     public void LoadCharacter(string name)
     {
-        if (!ModelEditorUtils.IsSupported(Smithbox.ProjectType))
+        if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
         {
             TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
             return;
@@ -199,7 +199,7 @@ public class ModelResourceManager : IResourceEventListener
     /// <param name="name">The name of the flver.</param>
     public void LoadEnemy(string name)
     {
-        if (!ModelEditorUtils.IsSupported(Smithbox.ProjectType))
+        if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
         {
             TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
             return;
@@ -219,7 +219,7 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     public void LoadAsset(string name)
     {
-        if (!ModelEditorUtils.IsSupported(Smithbox.ProjectType))
+        if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
         {
             TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
             return;
@@ -255,7 +255,7 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     public void LoadPart(string name)
     {
-        if (!ModelEditorUtils.IsSupported(Smithbox.ProjectType))
+        if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
         {
             TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
             return;
@@ -275,7 +275,7 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     public void LoadMapPiece(string name, string mapId)
     {
-        if (!ModelEditorUtils.IsSupported(Smithbox.ProjectType))
+        if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
         {
             TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
             return;
