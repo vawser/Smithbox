@@ -990,7 +990,7 @@ public class EditorDecorations
 
         foreach (var result in refs)
         {
-            if (result != null)
+            if (result != null && result.Entry != null)
             {
                 if (ImGui.Selectable($@"Go to FMG entry text"))
                 {
@@ -1016,7 +1016,7 @@ public class EditorDecorations
                 }
 
                 // Apply Row Name to X
-                if (result.Entry != null && !string.IsNullOrWhiteSpace(context.Name))
+                if (!string.IsNullOrWhiteSpace(context.Name))
                 {
                     if (ImGui.Selectable($@"Replace FMG entry text with current row name"))
                     {

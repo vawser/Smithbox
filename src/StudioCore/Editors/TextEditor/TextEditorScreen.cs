@@ -218,10 +218,10 @@ public class TextEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Clear FMG Wrappers"))
+            if (ImGui.MenuItem("Clear Stored Text"))
             {
                 DialogResult result = PlatformUtils.Instance.MessageBox(
-                    $"All stored FMG wrappers will be deleted. Do you proceed?",
+                    $"All stored text will be deleted. Do you proceed?",
                     "Warning",
                     MessageBoxButtons.YesNo);
 
