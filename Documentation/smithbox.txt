@@ -124,4 +124,3 @@ Model Editor:
 - ADD: text merge: tool that will attempt to add unique/modified rows from X source into current project
 
 - FIX: Data Import needs to represent multiple FMGs, and then account for adding grouped entries
-- FIX: add support for creating grouped entries even if source entry isn't grouped (but supports them) to Create Entries menu

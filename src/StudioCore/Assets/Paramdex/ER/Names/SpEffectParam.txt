@@ -679,15 +679,15 @@
 1938 [Weapon] Serpent Bow
 1939 [Weapon] Serpent Bow (On Attack)
 1940 [Weapon] Arrow - Anti-Undead Effect
-1950 
+1950 Twinsage Crown Glow
 1951 
-1952 
+1952 Olivinius Crown Glow
 1953 
-1954 
+1954 Lazuli Crown Glow
 1955 
-1956 
+1956 Karolos Crown Glow
 1957 
-1958 
+1958 Witch's Crown Glow
 1959 
 3000 [Item] Full Heal
 3039 
