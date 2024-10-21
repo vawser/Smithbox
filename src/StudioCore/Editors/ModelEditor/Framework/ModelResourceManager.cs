@@ -4,6 +4,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
@@ -156,9 +157,9 @@ public class ModelResourceManager : IResourceEventListener
     /// <param name="name"></param>
     public void LoadLooseFLVER(string name, string loosePath)
     {
-        if (Smithbox.ProjectType == ProjectType.DES)
+        if (!ModelEditorUtils.IsSupported(Smithbox.ProjectType))
         {
-            TaskLogs.AddLog("Model Editor is not supported for DES.");
+            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
             return;
         }
 
@@ -177,9 +178,9 @@ public class ModelResourceManager : IResourceEventListener
     /// <param name="name"></param>
     public void LoadCharacter(string name)
     {
-        if (Smithbox.ProjectType == ProjectType.DES)
+        if (!ModelEditorUtils.IsSupported(Smithbox.ProjectType))
         {
-            TaskLogs.AddLog("Model Editor is not supported for DES.");
+            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
             return;
         }
 
@@ -193,13 +194,34 @@ public class ModelResourceManager : IResourceEventListener
     }
 
     /// <summary>
+    /// Loads a Enemy FLVER
+    /// </summary>
+    /// <param name="name">The name of the flver.</param>
+    public void LoadEnemy(string name)
+    {
+        if (!ModelEditorUtils.IsSupported(Smithbox.ProjectType))
+        {
+            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
+            return;
+        }
+
+        ResetState(name);
+
+        LoadedFlverContainer = new FlverContainer(name, FlverContainerType.Enemy, "");
+
+        LoadEditableModel(name, name, FlverContainerType.Enemy);
+        SetDefaultAssociatedModel();
+        LoadRepresentativeModel(name, name, FlverContainerType.Enemy);
+    }
+
+    /// <summary>
     /// Loads a Asset FLVER
     /// </summary>
     public void LoadAsset(string name)
     {
-        if (Smithbox.ProjectType == ProjectType.DES)
+        if (!ModelEditorUtils.IsSupported(Smithbox.ProjectType))
         {
-            TaskLogs.AddLog("Model Editor is not supported for DES.");
+            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
             return;
         }
 
@@ -233,9 +255,9 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     public void LoadPart(string name)
     {
-        if (Smithbox.ProjectType == ProjectType.DES)
+        if (!ModelEditorUtils.IsSupported(Smithbox.ProjectType))
         {
-            TaskLogs.AddLog("Model Editor is not supported for DES.");
+            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
             return;
         }
 
@@ -253,9 +275,9 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     public void LoadMapPiece(string name, string mapId)
     {
-        if (Smithbox.ProjectType == ProjectType.DES)
+        if (!ModelEditorUtils.IsSupported(Smithbox.ProjectType))
         {
-            TaskLogs.AddLog("Model Editor is not supported for DES.");
+            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.");
             return;
         }
 
@@ -274,7 +296,6 @@ public class ModelResourceManager : IResourceEventListener
     private void LoadEditableModel(string containerId, string modelid, FlverContainerType modelType, string mapid = null, string loosePath = "")
     {
         ResourceDescriptor modelAsset = GetModelAssetDescriptor(containerId, modelid, modelType, mapid);
-
         var loadPath = modelAsset.AssetPath;
 
         if (modelType is FlverContainerType.Loose)
@@ -286,13 +307,11 @@ public class ModelResourceManager : IResourceEventListener
             return;
 
         var binderType = LoadedFlverContainer.BinderType;
-
         var fileBytes = File.ReadAllBytes(loadPath);
 
         // Get the DCX Type for the container
-        DCX.Type dcxType;
         var reader = new BinaryReaderEx(false, fileBytes);
-        SFUtil.GetDecompressedBR(reader, out dcxType);
+        SFUtil.GetDecompressedBR(reader, out DCX.Type dcxType);
 
         LoadedFlverContainer.CompressionType = dcxType;
 
@@ -329,134 +348,108 @@ public class ModelResourceManager : IResourceEventListener
                 var bhdPath = modelAsset.AssetPath;
                 var bdtPath = modelAsset.AssetPath.Replace("bhd", "bdt");
 
-                using (BXF4Reader bxfReader = new BXF4Reader(bhdPath, bdtPath))
+                using BXF4Reader bxfReader = new BXF4Reader(bhdPath, bdtPath);
+                foreach (var file in bxfReader.Files)
                 {
-                    foreach (var file in bxfReader.Files)
+                    var fileName = file.Name.ToLower();
+                    var modelName = modelid.ToLower();
+
+                    if (fileName.Contains(modelName))
                     {
-                        var fileName = file.Name.ToLower();
-                        var modelName = modelid.ToLower();
-
-                        if (fileName.Contains(modelName))
+                        if (fileName.Contains(".flv.dcx"))
                         {
-                            if (fileName.Contains(".flv.dcx"))
-                            {
-                                var internalFlver = new InternalFlver();
+                            var internalFlver = new InternalFlver();
 
-                                internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
-                                internalFlver.ModelID = modelid;
-                                internalFlver.CurrentFLVER = FLVER2.Read(bxfReader.ReadFile(file));
-                                internalFlver.InitialFlverBytes = bxfReader.ReadFile(file).ToArray();
-                                internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+                            internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                            internalFlver.ModelID = modelid;
+                            internalFlver.CurrentFLVER = FLVER2.Read(bxfReader.ReadFile(file));
+                            internalFlver.InitialFlverBytes = bxfReader.ReadFile(file).ToArray();
+                            internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
 
-                                AddInternalFlver(internalFlver);
-                            }
+                            AddInternalFlver(internalFlver);
                         }
                     }
                 }
             }
 
-            // DS3, SDT, ER, AC6
+            // ACFA, ACV, ACVD, DS3, SDT, ER, AC6
             if (binderType is FlverBinderType.BND)
             {
-                using (BND4Reader bndReader = new BND4Reader(modelAsset.AssetPath))
+                BinderReader bndReader;
+                if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                    bndReader = new BND3Reader(modelAsset.AssetPath);
+                else
+                    bndReader = new BND4Reader(modelAsset.AssetPath);
+
+                foreach (var file in bndReader.Files)
                 {
+                    var fileName = file.Name.ToLower();
+                    var modelName = modelid.ToLower();
 
-                    foreach (var file in bndReader.Files)
+                    if (fileName.Contains(modelName) && (fileName.EndsWith(".flver") || fileName.EndsWith(".flv")))
                     {
-                        var fileName = file.Name.ToLower();
-                        var modelName = modelid.ToLower();
+                        var internalFlver = new InternalFlver();
+                        internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                        internalFlver.ModelID = modelid;
+                        internalFlver.CurrentFLVER = FLVER2.Read(bndReader.ReadFile(file));
+                        internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
+                        internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
 
-                        if (fileName.Contains(modelName))
-                        {
-                            if (fileName.EndsWith(".flver") || fileName.EndsWith(".flv"))
-                            {
-                                var internalFlver = new InternalFlver();
-
-                                internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
-                                internalFlver.ModelID = modelid;
-                                internalFlver.CurrentFLVER = FLVER2.Read(bndReader.ReadFile(file));
-                                internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
-                                internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
-
-                                AddInternalFlver(internalFlver);
-                            }
-                        }
+                        AddInternalFlver(internalFlver);
                     }
                 }
+
+                bndReader.Dispose();
             }
         }
-        else if (modelType is FlverContainerType.Character or FlverContainerType.Parts or FlverContainerType.Object)
+        else if (modelType is FlverContainerType.Character or FlverContainerType.Enemy or FlverContainerType.Parts or FlverContainerType.Object)
         {
             if (binderType is FlverBinderType.BND)
             {
-                // BND3: DES, DS1
-                if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
-                {
-                    using (BND3Reader bndReader = new BND3Reader(modelAsset.AssetPath))
-                    {
-                        foreach (var file in bndReader.Files)
-                        {
-                            var fileName = file.Name.ToLower();
-                            var modelName = modelid.ToLower();
-
-                            if (fileName.Contains(modelName) && (fileName.EndsWith(".flver") || fileName.EndsWith(".flv")))
-                            {
-                                var internalFlver = new InternalFlver();
-                                internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
-                                internalFlver.ModelID = modelid;
-                                internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
-                                internalFlver.CurrentFLVER = FLVER2.Read(bndReader.ReadFile(file));
-                                internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
-
-                                AddInternalFlver(internalFlver);
-                            }
-                        }
-                    }
-                }
-                // BND4: DS2, DS3, SDT, ER, AC6
+                BinderReader bndReader;
+                if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.ACV or ProjectType.ACVD)
+                    // BND3: DES, DS1
+                    bndReader = new BND3Reader(modelAsset.AssetPath);
                 else
+                    // BND4: DS2, DS3, SDT, ER, AC6
+                    bndReader = new BND4Reader(modelAsset.AssetPath);
+
+                foreach (var file in bndReader.Files)
                 {
-                    using (BND4Reader bndReader = new BND4Reader(modelAsset.AssetPath))
+                    var fileName = file.Name.ToLower();
+                    var modelName = modelid.ToLower();
+
+                    if (fileName.Contains(modelName) && (fileName.EndsWith(".flver") || fileName.EndsWith(".flv")))
                     {
-                        foreach (var file in bndReader.Files)
+                        var proceed = true;
+
+                        // DS2
+                        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                         {
-                            var fileName = file.Name.ToLower();
-                            var modelName = modelid.ToLower();
+                            proceed = false;
 
-                            if (fileName.Contains(modelName))
+                            if (fileName.Length > 4 && fileName.Substring(fileName.Length - 3) == "flv")
                             {
-                                if (fileName.EndsWith(".flver") || fileName.EndsWith(".flv"))
-                                {
-                                    var proceed = true;
-
-                                    // DS2
-                                    if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-                                    {
-                                        proceed = false;
-
-                                        if (fileName.Length > 4 && fileName.Substring(fileName.Length - 3) == "flv")
-                                        {
-                                            proceed = true;
-                                        }
-                                    }
-
-                                    if (proceed)
-                                    {
-                                        var internalFlver = new InternalFlver();
-
-                                        internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
-                                        internalFlver.ModelID = modelid;
-                                        internalFlver.CurrentFLVER = FLVER2.Read(bndReader.ReadFile(file));
-                                        internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
-                                        internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
-
-                                        AddInternalFlver(internalFlver);
-                                    }
-                                }
+                                proceed = true;
                             }
+                        }
+
+                        if (proceed)
+                        {
+                            var internalFlver = new InternalFlver();
+
+                            internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                            internalFlver.ModelID = modelid;
+                            internalFlver.CurrentFLVER = FLVER2.Read(bndReader.ReadFile(file));
+                            internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
+                            internalFlver.VirtualResourcePath = modelAsset.AssetVirtualPath;
+
+                            AddInternalFlver(internalFlver);
                         }
                     }
                 }
+
+                bndReader.Dispose();
             }
         }
     }
@@ -620,6 +613,9 @@ public class ModelResourceManager : IResourceEventListener
             case FlverContainerType.Character:
                 asset = ModelLocator.GetChrModel(containerId, modelid);
                 break;
+            case FlverContainerType.Enemy:
+                asset = ModelLocator.GetEneModel(modelid);
+                break;
             case FlverContainerType.Object:
                 asset = ModelLocator.GetObjModel(containerId, modelid);
                 break;
@@ -648,6 +644,9 @@ public class ModelResourceManager : IResourceEventListener
         {
             case FlverContainerType.Character:
                 assets.Add(TextureLocator.GetChrTextures(modelid));
+                break;
+            case FlverContainerType.Enemy:
+                assets.Add(TextureLocator.GetObjTextureContainer(modelid));
                 break;
             case FlverContainerType.Object:
                 assets.Add(TextureLocator.GetObjTextureContainer(modelid));

@@ -148,6 +148,9 @@ public class FileSelectionView
             case FileSelectionType.Character:
                 ResManager.LoadCharacter(name);
                 break;
+            case FileSelectionType.Enemy:
+                ResManager.LoadEnemy(name);
+                break;
             case FileSelectionType.Asset:
                 ResManager.LoadAsset(name);
                 break;
