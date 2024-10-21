@@ -25,6 +25,10 @@ public class TextFmgEntryPropertyEditor
     public TextFilters Filters;
     public TextContextMenu ContextMenu;
     public TextEntryGroupManager EntryGroupManager;
+    private bool _idChanged;
+    private bool _textChanged;
+    private int _idCache;
+    private string _textCache;
 
     public TextFmgEntryPropertyEditor(TextEditorScreen screen)
     {
@@ -329,19 +333,18 @@ public class TextFmgEntryPropertyEditor
         var textboxHeight = 100;
         var textboxWidth = ImGui.GetWindowWidth() * 0.9f;
 
+        var oldID = entry.ID;
+        var oldContents = entry.Text;
         var id = entry.ID;
         var contents = entry.Text;
 
         // Correct contents if the entry.Text is null
-        if (contents == null)
-            contents = "";
+        oldContents ??= "";
+        contents ??= "";
 
         var height = (textboxHeight + ImGui.CalcTextSize(contents).Y) * DPI.GetUIScale();
 
-        var idChanged = false;
         var idCommit = false;
-
-        var textChanged = false;
         var textCommit = false;
 
         if (ImGui.BeginTable($"fmgEditTableBasic", 2, ImGuiTableFlags.SizingFixedFit))
@@ -360,7 +363,8 @@ public class TextFmgEntryPropertyEditor
             ImGui.SetNextItemWidth(textboxWidth);
             if(ImGui.InputInt($"##fmgEntryIdInputBasic", ref id))
             {
-                idChanged = true;
+                _idChanged = true;
+                _idCache = id;
             }
 
             idCommit = ImGui.IsItemDeactivatedAfterEdit();
@@ -379,8 +383,10 @@ public class TextFmgEntryPropertyEditor
 
             if (ImGui.InputTextMultiline($"##fmgTextInputBasic", ref contents, 2000, new Vector2(-1, height)))
             {
-                textChanged = true;
+                _textChanged = true;
+                _textCache = contents;
             }
+
             textCommit = ImGui.IsItemDeactivatedAfterEdit();
             if (ImGui.IsItemActivated())
             {
@@ -391,17 +397,28 @@ public class TextFmgEntryPropertyEditor
         }
 
         // Update the ID if it was changed and the id input was exited
-        if(idChanged && idCommit)
+        if(_idChanged && idCommit)
         {
-            var action = new ChangeFmgEntryID(Selection.SelectedContainer, entry, id);
-            Screen.EditorActionManager.ExecuteAction(action);
+            if (_idCache != oldID)
+            {
+                var action = new ChangeFmgEntryID(Selection.SelectedContainer, entry, _idCache);
+                Screen.EditorActionManager.ExecuteAction(action);
+            }
+
+            _idChanged = false;
         }
 
         // Update the Text if it was changed and the text input was exited
-        if (textChanged && textCommit)
+        if (_textChanged && textCommit)
         {
-            var action = new ChangeFmgEntryText(Selection.SelectedContainer, entry, contents);
-            Screen.EditorActionManager.ExecuteAction(action);
+            if (_textCache != oldContents)
+            {
+                var action = new ChangeFmgEntryText(Selection.SelectedContainer, entry, _textCache);
+                Screen.EditorActionManager.ExecuteAction(action);
+                _textCache = null;
+            }
+
+            _textChanged = false;
         }
     }
 }

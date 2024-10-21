@@ -52,13 +52,16 @@ namespace StudioCore.Utilities
             if (File.Exists(path))
             {
                 string newPath = path + extension;
-                if (copy)
+                if (!File.Exists(newPath) || overwrite)
                 {
-                    File.Copy(path, newPath, overwrite);
-                }
-                else
-                {
-                    File.Move(path, newPath, overwrite);
+                    if (copy)
+                    {
+                        File.Copy(path, newPath, true);
+                    }
+                    else
+                    {
+                        File.Move(path, newPath, true);
+                    }
                 }
             }
         }
