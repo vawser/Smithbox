@@ -92,7 +92,7 @@
     
     <unkMapBoundryEntityId AltName="Map Boundry Entity ID" />
     
-    <missionDebriefingTalk AltName="Mission Debriefing Talk ID" Wiki="The ID of a post-mission debriefing talk sequence to play. This ID, where present, maps to a 80XXXX000 TalkParam ID." />
+    <missionDebriefingMovieId AltName="Mission Debriefing Movie ID" Wiki="ID of .bk2 video file to play for mission debriefing." />
     
     <unkEntityId AltName="Entity ID" />
     
