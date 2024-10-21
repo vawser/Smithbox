@@ -174,6 +174,7 @@ public static class TextBank
     public static void LoadFmg(string path, SortedDictionary<string, TextContainerWrapper> bank)
     {
         var name = Path.GetFileName(path);
+        var relPath = path.Replace(Smithbox.GameRoot, string.Empty).Replace(Smithbox.ProjectRoot, string.Empty);
         var containerType = TextContainerType.Loose;
         var containerCategory = TextUtils.GetLanguageCategory(relPath);
 
@@ -252,6 +253,7 @@ public static class TextBank
     public static void LoadFmgContainer(string path, SortedDictionary<string, TextContainerWrapper> bank)
     {
         var name = Path.GetFileName(path);
+        var relPath = path.Replace(Smithbox.GameRoot, string.Empty).Replace(Smithbox.ProjectRoot, string.Empty);
         var containerType = TextContainerType.BND;
         var containerCategory = TextUtils.GetLanguageCategory(relPath);
 
