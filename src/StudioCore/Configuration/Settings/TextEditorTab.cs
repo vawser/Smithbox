@@ -20,7 +20,7 @@ public class TextEditorTab
         if (ImGui.CollapsingHeader("Presentation", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Advanced Presentation Mode", ref CFG.Current.TextEditor_AdvancedPresentationMode);
-            UIHelper.ShowHoverTooltip("Display the FMG and FMG container list in an structurally accurate fashion.");
+            UIHelper.ShowHoverTooltip("Toggles the display of containers and FMG to mirror the actual structure.");
 
         }
 
@@ -66,7 +66,7 @@ public class TextEditorTab
         // File List
         if (ImGui.CollapsingHeader("File List", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Display Community File Name", ref CFG.Current.TextEditor_DisplayPrettyContainerName);
+            ImGui.Checkbox("Display Community File Name", ref CFG.Current.TextEditor_DisplayCommunityContainerName);
             UIHelper.ShowHoverTooltip("If enabled, the names in the File List will be given a community name.");
 
             ImGui.Checkbox("Display Source Path", ref CFG.Current.TextEditor_DisplaySourcePath);

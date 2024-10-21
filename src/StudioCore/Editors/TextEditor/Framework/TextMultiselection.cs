@@ -1,5 +1,4 @@
-﻿using global::StudioCore.Configuration;
-using SoulsFormats;
+﻿using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.TextEditor;
 using System;
@@ -41,6 +40,8 @@ public class TextMultiselection
 
     public void HandleMultiselect(int currentSelectionIndex, int currentIndex)
     {
+        var editor = Smithbox.EditorHandler.TextEditor;
+
         // Multi-Select: Range Select
         if (InputTracker.GetKey(Veldrid.Key.LShift))
         {
@@ -57,10 +58,13 @@ public class TextMultiselection
             {
                 if (!StoredEntries.ContainsKey(k))
                 {
-                    if(k < Screen.Selection.SelectedFmg.Entries.Count)
+                    if(k < Screen.Selection.SelectedFmgWrapper.File.Entries.Count)
                     {
-                        var curEntry = Screen.Selection.SelectedFmg.Entries[k];
-                        StoredEntries.Add(k, curEntry);
+                        var curEntry = Screen.Selection.SelectedFmgWrapper.File.Entries[k];
+                        if (editor.Filters.IsFmgEntryFilterMatch(curEntry))
+                        {
+                            StoredEntries.Add(k, curEntry);
+                        }
                     }
                 }
             }
@@ -76,9 +80,9 @@ public class TextMultiselection
             {
                 if (!StoredEntries.ContainsKey(currentIndex))
                 {
-                    if (currentIndex < Screen.Selection.SelectedFmg.Entries.Count)
+                    if (currentIndex < Screen.Selection.SelectedFmgWrapper.File.Entries.Count)
                     {
-                        var curEntry = Screen.Selection.SelectedFmg.Entries[currentIndex];
+                        var curEntry = Screen.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
                         StoredEntries.Add(currentIndex, curEntry);
                     }
                 }
@@ -88,9 +92,9 @@ public class TextMultiselection
         else
         {
             StoredEntries.Clear();
-            if (currentIndex < Screen.Selection.SelectedFmg.Entries.Count)
+            if (currentIndex < Screen.Selection.SelectedFmgWrapper.File.Entries.Count)
             {
-                var curEntry = Screen.Selection.SelectedFmg.Entries[currentIndex];
+                var curEntry = Screen.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
                 StoredEntries.Add(currentIndex, curEntry);
             }
         }

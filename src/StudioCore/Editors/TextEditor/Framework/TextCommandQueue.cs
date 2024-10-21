@@ -33,14 +33,14 @@ public class TextCommandQueue
 
                 foreach (var (path, info) in TextBank.FmgBank)
                 {
-                    if(info.Category.ToString() == category)
+                    if(info.ContainerDisplayCategory.ToString() == category)
                     {
-                        if(info.Name == containerName)
+                        if(info.Filename == containerName)
                         {
                             Screen.Selection.FocusFileSelection = true;
                             Screen.Selection.SelectFileContainer(info, index);
 
-                            foreach (var fmg in info.FmgInfos)
+                            foreach (var fmg in info.FmgWrappers)
                             {
                                 if(fmg.Name == fmgName)
                                 {

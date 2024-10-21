@@ -337,9 +337,7 @@ public class TextNewEntryCreationModal
         {
             List<EditorAction> actions = new List<EditorAction>();
 
-            // Check if entry type is considered 'grouped', if so create relevant entries in relevant FMGs
-            // TODO: this means un-grouped rows won't automatically create grouped entries,
-            // even if they perhaps should.
+            // TODO: add support for creating grouped entries even if source entry isn't grouped (but supports them)
             if (fmgEntryGroup.SupportsGrouping)
             {
                 // Check to see if the entry group has a filled entry,
@@ -541,6 +539,6 @@ public class TextNewEntryCreationModal
         var currentFmg = entry.Parent;
         var newEntry = new FMG.Entry(currentFmg, id, contents);
 
-        return new AddFmgEntry(Selection.SelectedContainer, entry, newEntry, id);
+        return new AddFmgEntry(Selection.SelectedContainerWrapper, entry, newEntry, id);
     }
 }

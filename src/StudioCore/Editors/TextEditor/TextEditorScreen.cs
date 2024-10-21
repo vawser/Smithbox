@@ -10,6 +10,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Numerics;
+using System.Timers;
 using Veldrid;
 using Veldrid.Sdl2;
 
@@ -177,7 +178,7 @@ public class TextEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("Data"))
         {
-            if (ImGui.BeginMenu("FMG", Selection.SelectedFmg != null))
+            if (ImGui.BeginMenu("FMG", Selection.SelectedFmgWrapper.File != null))
             {
                 if (ImGui.BeginMenu("Export Entries"))
                 {
@@ -196,7 +197,7 @@ public class TextEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            if (ImGui.BeginMenu("FMG Entries", Selection.SelectedFmg != null && Selection._selectedFmgEntry != null))
+            if (ImGui.BeginMenu("FMG Entries", Selection.SelectedFmgWrapper.File != null && Selection._selectedFmgEntry != null))
             {
                 if (ImGui.BeginMenu("Export Entries"))
                 {
@@ -217,10 +218,10 @@ public class TextEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Clear FMG Wrappers"))
+            if (ImGui.MenuItem("Clear Stored Text"))
             {
                 DialogResult result = PlatformUtils.Instance.MessageBox(
-                    $"All stored FMG wrappers will be deleted. Do you proceed?",
+                    $"All stored text will be deleted. Do you proceed?",
                     "Warning",
                     MessageBoxButtons.YesNo);
 
@@ -331,6 +332,8 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void OnProjectChanged()
     {
+        SetupDifferenceTimer();
+
         if (Smithbox.ProjectType != ProjectType.Undefined)
         {
             Selection.OnProjectChanged();
@@ -357,11 +360,11 @@ public class TextEditorScreen : EditorScreen
 
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
         {
-            TextBank.SaveLooseFmgs(Selection.SelectedContainer);
+            TextBank.SaveLooseFmgs(Selection.SelectedContainerWrapper);
         }
         else
         {
-            TextBank.SaveFmgContainer(Selection.SelectedContainer);
+            TextBank.SaveFmgContainer(Selection.SelectedContainerWrapper);
         }
     }
 
@@ -382,5 +385,32 @@ public class TextEditorScreen : EditorScreen
     private void ResetActionManager()
     {
         EditorActionManager.Clear();
+    }
+
+    public Timer AutomaticDiffTimer;
+
+    private void SetupDifferenceTimer()
+    {
+        if (AutomaticDiffTimer != null)
+        {
+            AutomaticDiffTimer.Close();
+        }
+
+        var interval = 10 * 1000;
+        if (interval < 10000)
+            interval = 10000;
+
+        AutomaticDiffTimer = new Timer(interval);
+        AutomaticDiffTimer.Elapsed += OnAutomaticDiff;
+        AutomaticDiffTimer.AutoReset = true;
+        AutomaticDiffTimer.Enabled = true;
+    }
+
+    public void OnAutomaticDiff(object source, ElapsedEventArgs e)
+    {
+        if(TextBank.VanillaBankLoaded)
+        {
+            DifferenceManager.TrackFmgDifferences();
+        }
     }
 }

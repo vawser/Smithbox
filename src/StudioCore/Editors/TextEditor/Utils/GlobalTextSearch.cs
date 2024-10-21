@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Org.BouncyCastle.Crypto;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -18,6 +19,8 @@ public static class GlobalTextSearch
     private static SearchFilterType FilterType = SearchFilterType.PrimaryCategory;
 
     private static List<TextResult> SearchResults = new();
+
+    private static bool HasSearched = false;
 
     public static void Display()
     {
@@ -82,11 +85,13 @@ public static class GlobalTextSearch
 
         if (ImGui.Button("Search##executeSearch", UI.GetStandardHalfButtonSize()))
         {
+            HasSearched = true;
             SearchResults = TextFinder.GetGlobalTextResult(_globalSearchInput, FilterType, IgnoreCase);
         }
         ImGui.SameLine();
         if (ImGui.Button("Clear##clearSearchResults", UI.GetStandardHalfButtonSize()))
         {
+            HasSearched = false;
             SearchResults.Clear();
         }
 
@@ -98,6 +103,15 @@ public static class GlobalTextSearch
 
             foreach (var result in SearchResults)
             {
+                // Ignore results from unused containers if not in Advanced Presentation mode
+                if (!CFG.Current.TextEditor_AdvancedPresentationMode)
+                {
+                    if (result.ContainerWrapper.IsContainerUnused())
+                    {
+                        continue;
+                    }
+                }
+
                 var foundText = result.Entry.Text;
                 if (foundText.Contains("\n"))
                 {
@@ -105,20 +119,20 @@ public static class GlobalTextSearch
                     foundText = $"{firstSection} <...>";
                 }
 
-                var category = result.Info.Category.ToString();
+                var category = result.ContainerWrapper.ContainerDisplayCategory.ToString();
 
                 // Container
                 var containerName = result.ContainerName;
-                if (CFG.Current.TextEditor_DisplayPrettyContainerName)
+                if (CFG.Current.TextEditor_DisplayCommunityContainerName)
                 {
-                    containerName = TextUtils.GetPrettyContainerName(result.ContainerName);
+                    containerName = result.ContainerWrapper.GetContainerDisplayName();
                 }
 
                 // FMG
                 var fmgName = result.FmgName;
                 if (CFG.Current.TextEditor_DisplayFmgPrettyName)
                 {
-                    fmgName = TextUtils.GetFmgDisplayName(result.Info, result.FmgID, result.FmgName);
+                    fmgName = TextUtils.GetFmgDisplayName(result.ContainerWrapper, result.FmgID, result.FmgName);
                 }
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";
@@ -128,6 +142,10 @@ public static class GlobalTextSearch
                     EditorCommandQueue.AddCommand($"text/select/{category}/{result.ContainerName}/{result.FmgName}/{result.Entry.ID}");
                 }
             }
+        }
+        else if(HasSearched)
+        {
+            UIHelper.WrappedText("No text entries found matching the filter.");
         }
     }
 }

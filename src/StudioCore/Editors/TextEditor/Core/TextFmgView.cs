@@ -50,12 +50,12 @@ public class TextFmgView
 
             ImGui.BeginChild("FmgFileList");
 
-            if (Selection.SelectedContainer != null && Selection.SelectedContainer.FmgInfos != null)
+            if (Selection.SelectedContainerWrapper != null && Selection.SelectedContainerWrapper.FmgWrappers != null)
             {
                 // Ignore the grouping stuff for DS2 as it happens on the FMG Container level
                 if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
-                    foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                    foreach (var fmgInfo in Selection.SelectedContainerWrapper.FmgWrappers)
                     {
                         HandleFmgView(fmgInfo);
                     }
@@ -65,18 +65,18 @@ public class TextFmgView
                     // Advanced Presentation
                     if (CFG.Current.TextEditor_AdvancedPresentationMode)
                     {
-                        var info = Selection.SelectedContainer;
+                        var info = Selection.SelectedContainerWrapper;
 
                         // Common
                         if (TextUtils.HasGroupEntries(info, "Common"))
                         {
                             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainerWrapper.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Common")
                                     {
@@ -91,11 +91,11 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Menu", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainerWrapper.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Menu")
                                     {
@@ -110,11 +110,11 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Titles", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainerWrapper.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Title")
                                     {
@@ -129,11 +129,11 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Summaries", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainerWrapper.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Summary")
                                     {
@@ -148,11 +148,11 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Descriptions", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainerWrapper.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Description")
                                     {
@@ -167,11 +167,11 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Effects", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainerWrapper.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Effect")
                                     {
@@ -186,11 +186,11 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("Unknown", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainerWrapper.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Unknown")
                                     {
@@ -203,19 +203,19 @@ public class TextFmgView
                     // Simple Presentation
                     else
                     {
-                        var info = Selection.SelectedContainer;
+                        var info = Selection.SelectedContainerWrapper;
 
                         // Base
                         if (TextUtils.HasDLCEntries(info, ""))
                         {
                             if (ImGui.CollapsingHeader("Base", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainerWrapper.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
-                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "")
                                     {
@@ -229,12 +229,12 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("DLC 1", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainerWrapper.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
-                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 1")
                                     {
@@ -248,12 +248,12 @@ public class TextFmgView
                         {
                             if (ImGui.CollapsingHeader("DLC 2", ImGuiTreeNodeFlags.DefaultOpen))
                             {
-                                foreach (var fmgInfo in Selection.SelectedContainer.FmgInfos)
+                                foreach (var fmgInfo in Selection.SelectedContainerWrapper.FmgWrappers)
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainer, id, fmgName);
-                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 2")
                                     {
@@ -271,12 +271,12 @@ public class TextFmgView
         }
     }
 
-    private void HandleFmgView(FmgInfo info)
+    private void HandleFmgView(TextFmgWrapper info)
     {
         var id = info.ID;
         var fmgName = info.Name;
-        var displayName = TextUtils.GetFmgDisplayName(Selection.SelectedContainer, id, fmgName);
-        var dlcGroupingName = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainer, id, fmgName);
+        var displayName = TextUtils.GetFmgDisplayName(Selection.SelectedContainerWrapper, id, fmgName);
+        var dlcGroupingName = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainerWrapper, id, fmgName);
 
         if (Filters.IsFmgFilterMatch(fmgName, displayName, id))
         {

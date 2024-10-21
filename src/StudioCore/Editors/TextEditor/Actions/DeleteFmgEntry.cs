@@ -16,9 +16,9 @@ public class DeleteFmgEntry : EditorAction
     private FMG.Entry OldEntry;
     private int InsertionIndex;
 
-    private TextContainerInfo Info;
+    private TextContainerWrapper Info;
 
-    public DeleteFmgEntry(TextContainerInfo info, FMG currentFmg, FMG.Entry entry)
+    public DeleteFmgEntry(TextContainerWrapper info, FMG currentFmg, FMG.Entry entry)
     {
         Info = info;
         Fmg = currentFmg;

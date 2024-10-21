@@ -18,7 +18,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public static class FmgImporter
 {
-    public static Dictionary<string, FmgWrapper> ImportSources = new();
+    public static Dictionary<string, StoredFmgWrapper> ImportSources = new();
 
     /// <summary>
     /// Get the FMG Wrapper sources on project load
@@ -42,13 +42,13 @@ public static class FmgImporter
             foreach (var path in wrapperPathList)
             {
                 var filename = Path.GetFileName(path);
-                var wrapper = new FmgWrapper();
+                var wrapper = new StoredFmgWrapper();
 
                 if (File.Exists(path))
                 {
                     using (var stream = File.OpenRead(path))
                     {
-                        wrapper = JsonSerializer.Deserialize(stream, FmgWrapperSerializationContext.Default.FmgWrapper);
+                        wrapper = JsonSerializer.Deserialize(stream, StoredFmgWrapperSerializationContext.Default.StoredFmgWrapper);
                     }
                 }
 
@@ -58,7 +58,7 @@ public static class FmgImporter
                 }
                 else
                 {
-                    TaskLogs.AddLog($"Attempted to add FmgWrapper with existing key!: {filename}");
+                    TaskLogs.AddLog($"Attempted to add stored text with existing key: {filename}");
                 }
             }
         }
@@ -73,91 +73,113 @@ public static class FmgImporter
 
         if(ImGui.BeginMenu("Append"))
         {
-            foreach(var (key, entry) in ImportSources)
+            if (ImportSources.Count > 0)
             {
-                if(ImGui.Selectable($"{entry.Name}"))
+                foreach (var (key, entry) in ImportSources)
                 {
-                    AppendEntries(entry);
+                    if (ImGui.Selectable($"{entry.Name}"))
+                    {
+                        AppendEntries(entry);
+                    }
                 }
+            }
+            else
+            {
+                ImGui.Text("No exported text exists yet.");
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Append the selected FMG Wrapper contents to the currently selected FMG entries. Existing entries that match Wrapper entries will be overwritten.");
+        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current FMG.\n\nExisting entries will be not modified by the contents of the stored text.");
 
         if (ImGui.BeginMenu("Replace"))
         {
-            foreach (var (key, entry) in ImportSources)
+            if (ImportSources.Count > 0)
             {
-                if (ImGui.Selectable($"{entry.Name}"))
+                foreach (var (key, entry) in ImportSources)
                 {
-                    ReplaceEntries(entry);
+                    if (ImGui.Selectable($"{entry.Name}"))
+                    {
+                        ReplaceEntries(entry);
+                    }
                 }
+            }
+            else
+            {
+                ImGui.Text("No exported text exists yet.");
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Replace the currently selected FMG entries with the contents of the selected FMG Wrapper entirely.");
+        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current FMG.\n\nExisting entries will be modified by the contents of the stored text.");
 
-        if (ImGui.BeginMenu("Unique Insert"))
+        if (ImGui.BeginMenu("Overwrite"))
         {
-            foreach (var (key, entry) in ImportSources)
+            if (ImportSources.Count > 0)
             {
-                if (ImGui.Selectable($"{entry.Name}"))
+                foreach (var (key, entry) in ImportSources)
                 {
-                    InsertUniqueEntries(entry);
+                    if (ImGui.Selectable($"{entry.Name}"))
+                    {
+                        OverwriteEntries(entry);
+                    }
                 }
+            }
+            else
+            {
+                ImGui.Text("No exported text exists yet.");
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Insert the selected FMG Wrapper contents into the currently selected FMG entires, but only if they are unique rows. Non-unique rows are ignored.");
+        UIHelper.ShowHoverTooltip("The selected stored text will replace to the current FMG entry list.\n\nExisting entries will be removed completely.");
     }
 
     /// <summary>
     /// Append contents of the selected source to the contents of the currently selected FMG (respecting ID order)
     /// </summary>
-    public static void AppendEntries(FmgWrapper wrapper)
+    public static void AppendEntries(StoredFmgWrapper wrapper)
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        var selectedFmgInfo = editor.Selection.SelectedFmgInfo;
+        var selectedFmgInfo = editor.Selection.SelectedFmgWrapper;
 
         var action = new AppendFmgEntries(selectedFmgInfo, wrapper);
         editor.EditorActionManager.ExecuteAction(action);
 
-        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}, appending current entries.");
+        TaskLogs.AddLog($"Imported stored text: {wrapper.Name}.");
     }
 
     /// <summary>
-    /// Replace the contents of the currently selected FMG with the contents of the selected source
+    /// Replace the contents of the currently selected FMG with the contents of the selected source if they match, 
+    /// or append otherwise
     /// </summary>
-    public static void ReplaceEntries(FmgWrapper wrapper)
+    public static void ReplaceEntries(StoredFmgWrapper wrapper)
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        var selectedFmgInfo = editor.Selection.SelectedFmgInfo;
+        var selectedFmgInfo = editor.Selection.SelectedFmgWrapper;
 
         var action = new ReplaceFmgEntries(selectedFmgInfo, wrapper);
         editor.EditorActionManager.ExecuteAction(action);
 
-        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}, replacing current entries.");
+        TaskLogs.AddLog($"Imported stored text: {wrapper.Name}.");
     }
 
     /// <summary>
-    /// Insert contents of the selected source if they are not present in 
-    /// the contents of the currently selected FMG (respecting ID order) 
+    /// Overwrite the contents of the currently selected FMG with the contents of the selected source if they match, 
+    /// or append otherwise.
     /// </summary>
-    public static void InsertUniqueEntries(FmgWrapper wrapper)
+    public static void OverwriteEntries(StoredFmgWrapper wrapper)
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        var selectedFmgInfo = editor.Selection.SelectedFmgInfo;
+        var selectedFmgInfo = editor.Selection.SelectedFmgWrapper;
 
-        var action = new InsertUniqueFmgEntries(selectedFmgInfo, wrapper);
+        var action = new OverwriteFmgEntries(selectedFmgInfo, wrapper);
         editor.EditorActionManager.ExecuteAction(action);
 
-        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}, inserting only unique entries from the wrapper.");
+        TaskLogs.AddLog($"Imported stored text: {wrapper.Name}.");
     }
 }
 

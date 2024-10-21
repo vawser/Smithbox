@@ -83,13 +83,13 @@ public class FMGItemParamDecorator : IParamDecorator
 
                 foreach (var (path, entry) in TextBank.FmgBank)
                 {
-                    if (entry.Category == CFG.Current.TextEditor_PrimaryCategory)
+                    if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
                     {
-                        foreach(var fmgInfo in entry.FmgInfos)
+                        foreach(var fmgInfo in entry.FmgWrappers)
                         {
                             if(fmgInfo.Name == fmgName)
                             {
-                                containerName = entry.Name;
+                                containerName = entry.Filename;
                             }
                         }
                     }

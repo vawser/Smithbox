@@ -1620,7 +1620,7 @@ public enum TalkFmgName_DS2
     m50_38_00_00
 }
 
-public enum DS2_SubCategory
+public enum ContainerSubCategory
 {
     [Display(Name = "None")] None, // Used by all non-DS2 files
     [Display(Name = "Common")] common,

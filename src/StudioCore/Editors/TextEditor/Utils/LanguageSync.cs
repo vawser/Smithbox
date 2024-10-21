@@ -19,40 +19,40 @@ public static class LanguageSync
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        var currentInfo = editor.Selection.SelectedContainer;
-        var currentCategory = currentInfo.Category;
+        var currentInfo = editor.Selection.SelectedContainerWrapper;
+        var currentCategory = currentInfo.ContainerDisplayCategory;
 
         // <language X> -> Add Unique Entries from Primary
 
         foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))
         {
-            if (TextBank.FmgBank.Any(e => e.Value.Category == category) && editor.FileView.AllowedCategory(category))
+            if (TextBank.FmgBank.Any(e => e.Value.ContainerDisplayCategory == category) && editor.FileView.AllowedCategory(category))
             {
                 var targetContainer = TextBank.FmgBank
-                    .Where(e => e.Value.Category == editor.Selection.SelectedContainer.Category)
-                    .Where(e => e.Value.Category != currentCategory)
+                    .Where(e => e.Value.ContainerDisplayCategory == editor.Selection.SelectedContainerWrapper.ContainerDisplayCategory)
+                    .Where(e => e.Value.ContainerDisplayCategory != currentCategory)
                     .FirstOrDefault();
 
                 if (targetContainer.Value != null)
                 {
                     var targetInfo = targetContainer.Value;
 
-                    var displayName = targetInfo.Name;
+                    var displayName = targetInfo.Filename;
 
-                    if (CFG.Current.TextEditor_DisplayPrettyContainerName)
+                    if (CFG.Current.TextEditor_DisplayCommunityContainerName)
                     {
                         // To get nice DS2 names, apply the FMG display name stuff on the container level
                         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                         {
-                            displayName = TextUtils.GetFmgDisplayName(targetInfo, -1, targetInfo.Name);
+                            displayName = TextUtils.GetFmgDisplayName(targetInfo, -1, targetInfo.Filename);
                         }
                         else
                         {
-                            displayName = TextUtils.GetPrettyContainerName(targetInfo.Name);
+                            displayName = targetInfo.GetContainerDisplayName();
                         }
                     }
 
-                    if (ImGui.Selectable($"{category.GetDisplayName()}: {displayName}##{targetInfo.Name}"))
+                    if (ImGui.Selectable($"{category.GetDisplayName()}: {displayName}##{targetInfo.Filename}"))
                     {
                         SyncLanguage(currentInfo, targetInfo);
                     }
@@ -64,7 +64,7 @@ public static class LanguageSync
     /// <summary>
     /// Sync currently selected category into chosen category
     /// </summary>
-    public static void SyncLanguage(TextContainerInfo sourceContainer, TextContainerInfo targetContainer)
+    public static void SyncLanguage(TextContainerWrapper sourceContainer, TextContainerWrapper targetContainer)
     {
 
     }

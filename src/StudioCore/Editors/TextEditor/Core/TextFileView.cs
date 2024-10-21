@@ -1,17 +1,11 @@
-﻿using HKLib.hk2018.hkaiCollisionAvoidance;
-using ImGuiNET;
-using SoulsFormats;
+﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
-using StudioCore.Editors.EmevdEditor;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -61,89 +55,11 @@ public class TextFileView
                     }
 
                     // Only display if the category contains something
-                    if (TextBank.FmgBank.Any(e => e.Value.Category == category) && AllowedCategory(category))
+                    if (TextBank.FmgBank.Any(e => e.Value.ContainerDisplayCategory == category))
                     {
-                        // DS2 
-                        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                        if (AllowedCategory(category))
                         {
-                            if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
-                            {
-                                if (ImGui.CollapsingHeader($"Common", flags))
-                                {
-                                    foreach (var (path, info) in TextBank.FmgBank)
-                                    {
-                                        var fmgInfo = info.FmgInfos.First();
-                                        var id = fmgInfo.ID;
-                                        var fmgName = fmgInfo.Name;
-                                        var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
-
-                                        if (displayGroup == "Common")
-                                        {
-                                            if (info.Category == category)
-                                            {
-                                                DisplayCategory(info, index);
-                                            }
-                                            index++;
-                                        }
-                                    }
-                                }
-
-                                if (ImGui.CollapsingHeader($"Blood Message", flags))
-                                {
-                                    foreach (var (path, info) in TextBank.FmgBank)
-                                    {
-                                        var fmgInfo = info.FmgInfos.First();
-                                        var id = fmgInfo.ID;
-                                        var fmgName = fmgInfo.Name;
-                                        var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
-
-                                        if (displayGroup == "Blood Message")
-                                        {
-                                            if (info.Category == category)
-                                            {
-                                                DisplayCategory(info, index);
-                                            }
-                                            index++;
-                                        }
-                                    }
-                                }
-
-                                if (ImGui.CollapsingHeader($"Talk", flags))
-                                {
-                                    foreach (var (path, info) in TextBank.FmgBank)
-                                    {
-                                        var fmgInfo = info.FmgInfos.First();
-                                        var id = fmgInfo.ID;
-                                        var fmgName = fmgInfo.Name;
-                                        var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
-
-                                        if (displayGroup == "Talk")
-                                        {
-                                            if (info.Category == category)
-                                            {
-                                                DisplayCategory(info, index);
-                                            }
-                                            index++;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        // Normal
-                        else
-                        {
-                            if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
-                            {
-                                // Get relevant containers for each category
-                                foreach (var (path, info) in TextBank.FmgBank)
-                                {
-                                    if (info.Category == category)
-                                    {
-                                        DisplayCategory(info, index);
-                                    }
-                                    index++;
-                                }
-                            }
+                            DisplaySubCategories(category, flags, index);
                         }
                     }
                 }
@@ -156,60 +72,142 @@ public class TextFileView
     }
 
     /// <summary>
-    /// Each discrete category: English, German, etc
+    /// Display the sub-categories if applicable (DS2 only)
     /// </summary>
-    private void DisplayCategory(TextContainerInfo info, int index)
+    private void DisplaySubCategories(TextContainerCategory category, ImGuiTreeNodeFlags flags, int index)
     {
-        var displayName = info.Name;
+        // DS2 
+        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            // Category Header
+            if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
+            {
+                // Common Sub-Header
+                if (ImGui.CollapsingHeader($"Common", flags))
+                {
+                    foreach (var (path, info) in TextBank.FmgBank)
+                    {
+                        var fmgWrapper = info.FmgWrappers.First();
+                        var id = fmgWrapper.ID;
+                        var fmgName = fmgWrapper.Name;
+                        var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
 
-        if(CFG.Current.TextEditor_DisplayPrettyContainerName)
+                        if (displayGroup == "Common")
+                        {
+                            if (info.ContainerDisplayCategory == category)
+                            {
+                                DisplayFileEntry(info, index);
+                            }
+                            index++;
+                        }
+                    }
+                }
+
+                // Blood Message Sub-Header
+                if (ImGui.CollapsingHeader($"Blood Message", flags))
+                {
+                    foreach (var (path, info) in TextBank.FmgBank)
+                    {
+                        var fmgWrapper = info.FmgWrappers.First();
+                        var id = fmgWrapper.ID;
+                        var fmgName = fmgWrapper.Name;
+                        var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
+
+                        if (displayGroup == "Blood Message")
+                        {
+                            if (info.ContainerDisplayCategory == category)
+                            {
+                                DisplayFileEntry(info, index);
+                            }
+                            index++;
+                        }
+                    }
+                }
+
+                // Talk Sub-Header
+                if (ImGui.CollapsingHeader($"Talk", flags))
+                {
+                    foreach (var (path, info) in TextBank.FmgBank)
+                    {
+                        var fmgWrapper = info.FmgWrappers.First();
+                        var id = fmgWrapper.ID;
+                        var fmgName = fmgWrapper.Name;
+                        var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
+
+                        if (displayGroup == "Talk")
+                        {
+                            if (info.ContainerDisplayCategory == category)
+                            {
+                                DisplayFileEntry(info, index);
+                            }
+                            index++;
+                        }
+                    }
+                }
+            }
+        }
+        // Normal
+        else
+        {
+            // Category Header
+            if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
+            {
+                // Get relevant containers for each category
+                foreach (var (path, info) in TextBank.FmgBank)
+                {
+                    if (info.ContainerDisplayCategory == category)
+                    {
+                        DisplayFileEntry(info, index);
+                    }
+                    index++;
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Each file entry within a category
+    /// </summary>
+    private void DisplayFileEntry(TextContainerWrapper wrapper, int index)
+    {
+        var displayName = wrapper.Filename;
+
+        // Display community name instead of raw container filename
+        if(CFG.Current.TextEditor_DisplayCommunityContainerName)
         {
             // To get nice DS2 names, apply the FMG display name stuff on the container level
             if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                displayName = TextUtils.GetFmgDisplayName(info, -1, info.Name);
+                displayName = TextUtils.GetFmgDisplayName(wrapper, -1, wrapper.Filename);
             }
             else
             {
-                displayName = TextUtils.GetPrettyContainerName(info.Name);
+                displayName = wrapper.GetContainerDisplayName();
             }
         }
 
-        // Only show unused containers in Advanced mode
-        if(!CFG.Current.TextEditor_AdvancedPresentationMode)
+        // Ignore unused containers if not in Advanced Presentation mode
+        if (!CFG.Current.TextEditor_AdvancedPresentationMode)
         {
-            // Hide Base and DLC1 containers as they are not used
-            if(Smithbox.ProjectType is ProjectType.ER)
+            if(wrapper.IsContainerUnused())
             {
-                if(info.Name == "item.msgbnd.dcx" || info.Name == "menu.msgbnd.dcx" ||
-                   info.Name == "item_dlc01.msgbnd.dcx" || info.Name == "menu_dlc01.msgbnd.dcx")
-                {
-                    return;
-                }
-            }
-            // Hide Base and DLC1 containers as they are not used
-            if (Smithbox.ProjectType is ProjectType.DS3)
-            {
-                if (info.Name == "item_dlc1.msgbnd.dcx" || info.Name == "menu_dlc1.msgbnd.dcx")
-                {
-                    return;
-                }
+                return;
             }
         }
 
         if (Filters.IsFileFilterMatch(displayName, ""))
         {
             // Script row
-            if (ImGui.Selectable($"{displayName}##{info.Name}{index}", index == Selection.SelectedContainerKey))
+            if (ImGui.Selectable($"{displayName}##{wrapper.Filename}{index}", index == Selection.SelectedContainerKey))
             {
-                Selection.SelectFileContainer(info, index);
+                Selection.SelectFileContainer(wrapper, index);
             }
 
             // Arrow Selection
             if (ImGui.IsItemHovered() && Selection.SelectNextFileContainer)
             {
                 Selection.SelectNextFileContainer = false;
-                Selection.SelectFileContainer(info, index);
+                Selection.SelectFileContainer(wrapper, index);
             }
             if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
             {
@@ -221,7 +219,7 @@ public class TextFileView
             {
                 if (Selection.SelectedContainerKey == index)
                 {
-                    ContextMenu.FileContextMenu(info);
+                    ContextMenu.FileContextMenu(wrapper);
                 }
 
                 if (Selection.FocusFileSelection && Selection.SelectedContainerKey == index)
@@ -233,7 +231,7 @@ public class TextFileView
 
             if (CFG.Current.TextEditor_DisplaySourcePath)
             {
-                UIHelper.ShowHoverTooltip($"Source File: {info.AbsolutePath}");
+                UIHelper.ShowHoverTooltip($"Source File: {wrapper.ReadPath}");
             }
         }
     }

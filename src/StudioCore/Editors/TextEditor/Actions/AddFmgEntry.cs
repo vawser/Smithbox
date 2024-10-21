@@ -14,9 +14,9 @@ public class AddFmgEntry : EditorAction
     private FMG.Entry NewEntry;
     private int InsertionIndex;
 
-    private TextContainerInfo Info;
+    private TextContainerWrapper Info;
 
-    public AddFmgEntry(TextContainerInfo info, FMG.Entry sourceEntry, FMG.Entry newEntry, int newID)
+    public AddFmgEntry(TextContainerWrapper info, FMG.Entry sourceEntry, FMG.Entry newEntry, int newID)
     {
         Info = info;
         Fmg = sourceEntry.Parent;

@@ -808,7 +808,7 @@ public class EditorDecorations
                 TextResult? primaryRef = resolveFMGRefs(fmgRefs, context, oldval)?.FirstOrDefault();
                 if (primaryRef != null)
                 {
-                    EditorCommandQueue.AddCommand($@"text/select/{primaryRef.Info.Name}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
+                    EditorCommandQueue.AddCommand($@"text/select/{primaryRef.ContainerWrapper.Filename}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
                 }
             }
             else if (textureRefs != null)
@@ -990,11 +990,11 @@ public class EditorDecorations
 
         foreach (var result in refs)
         {
-            if (result != null)
+            if (result != null && result.Entry != null)
             {
-                if (ImGui.Selectable($@"Goto {result.FmgName} Text"))
+                if (ImGui.Selectable($@"Go to FMG entry text"))
                 {
-                    EditorCommandQueue.AddCommand($@"text/select/{result.Info.Name}/{result.FmgName}/{result.Entry.ID}");
+                    EditorCommandQueue.AddCommand($@"text/select/{result.ContainerWrapper.ContainerDisplayCategory}/{result.ContainerWrapper.Filename}/{result.FmgName}/{result.Entry.ID}");
                 }
 
                 if (context == null || executor == null)
@@ -1002,29 +1002,31 @@ public class EditorDecorations
                     continue;
                 }
 
-                // TODO: restore this
-                /*
-                foreach (FieldInfo field in group.GetType().GetFields()
-                             .Where(propinfo => propinfo.FieldType == typeof(FMG.Entry)))
+                // Set Row Name to X
+                if (!string.IsNullOrWhiteSpace(result.Entry.Text))
                 {
-                    var entry = (FMG.Entry)field.GetValue(group);
-                    if (!string.IsNullOrWhiteSpace(entry?.Text) &&
-                        (ctrlDown || string.IsNullOrWhiteSpace(context.Name)) &&
-                        ImGui.Selectable($@"Inherit referenced fmg {field.Name} ({entry?.Text})"))
+                    if(ImGui.Selectable($@"Replace row name with referenced FMG entry text"))
                     {
-                        executor.ExecuteAction(new PropertiesChangedAction(context.GetType().GetProperty("Name"),
-                            context, entry?.Text));
-                    }
-
-                    if (entry != null && (ctrlDown || string.IsNullOrWhiteSpace(entry?.Text)) &&
-                        !string.IsNullOrWhiteSpace(context.Name) &&
-                        ImGui.Selectable($@"Proliferate name to referenced fmg {field.Name} ({name})"))
-                    {
-                        executor.ExecuteAction(new PropertiesChangedAction(entry.GetType().GetProperty("Text"), entry,
-                            context.Name));
+                        executor.ExecuteAction(
+                            new PropertiesChangedAction(
+                                context.GetType().GetProperty("Name"),
+                                context, 
+                                result.Entry.Text));
                     }
                 }
-                */
+
+                // Apply Row Name to X
+                if (!string.IsNullOrWhiteSpace(context.Name))
+                {
+                    if (ImGui.Selectable($@"Replace FMG entry text with current row name"))
+                    {
+                        executor.ExecuteAction(
+                            new PropertiesChangedAction(
+                                result.Entry.GetType().GetProperty("Text"), 
+                                result.Entry,
+                                context.Name));
+                    }
+                }
             }
         }
     }

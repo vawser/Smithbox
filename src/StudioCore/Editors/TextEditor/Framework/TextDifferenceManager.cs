@@ -40,34 +40,37 @@ public class TextDifferenceManager
         AdditionCache = new();
         DifferenceCache = new();
 
+        if (Selection.SelectedContainerWrapper == null)
+            return;
+
         // Leave empty if disabled
         if(!CFG.Current.TextEditor_IncludeVanillaCache)
         {
             return;
         }
 
-        var containerCategory = Selection.SelectedContainer.Category;
-        var containerSubCategory = Selection.SelectedContainer.SubCategory;
-        var containerName = Selection.SelectedContainer.Name;
-        var fmgID = Selection.SelectedFmgInfo.ID;
+        var containerCategory = Selection.SelectedContainerWrapper.ContainerDisplayCategory;
+        var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
+        var containerName = Selection.SelectedContainerWrapper.Filename;
+        var fmgID = Selection.SelectedFmgWrapper.ID;
 
         if (TextBank.VanillaBankLoaded)
         {
             var vanillaContainer = TextBank.VanillaFmgBank
-                .Where(e => e.Value.Category == containerCategory)
-                .Where(e => e.Value.Name == containerName)
+                .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
+                .Where(e => e.Value.Filename == containerName)
                 .FirstOrDefault();
 
             if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 vanillaContainer = TextBank.VanillaFmgBank
-                .Where(e => e.Value.Category == containerCategory)
-                .Where(e => e.Value.SubCategory == containerSubCategory)
-                .Where(e => e.Value.Name == containerName)
+                .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
+                .Where(e => e.Value.ContainerDisplaySubCategory == containerSubCategory)
+                .Where(e => e.Value.Filename == containerName)
                 .FirstOrDefault();
             }
 
-            var vanillaFmg = vanillaContainer.Value.FmgInfos
+            var vanillaFmg = vanillaContainer.Value.FmgWrappers
             .Where(e => e.ID == fmgID).FirstOrDefault();
 
             Dictionary<string, string> vanillaEntries = new();
@@ -86,7 +89,7 @@ public class TextDifferenceManager
                 }
             }
 
-            foreach(var entry in Selection.SelectedFmgInfo.File.Entries)
+            foreach(var entry in Selection.SelectedFmgWrapper.File.Entries)
             {
                 string entryId = $"{entry.ID}";
 
@@ -102,6 +105,17 @@ public class TextDifferenceManager
                         if (vanillaText != null)
                         {
                             if (!vanillaText.Equals(entry.Text))
+                            {
+                                if (!DifferenceCache.ContainsKey($"{entryId}"))
+                                {
+                                    DifferenceCache.Add($"{entryId}", true);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // If project entry is not null, we can assume that it is different
+                            if(entry.Text != null)
                             {
                                 if (!DifferenceCache.ContainsKey($"{entryId}"))
                                 {
@@ -141,6 +155,17 @@ public class TextDifferenceManager
                                 }
                             }
                         }
+                        else
+                        {
+                            // If project entry is not null, we can assume that it is different
+                            if (entry.Text != null)
+                            {
+                                if (!DifferenceCache.ContainsKey($"{entryId}"))
+                                {
+                                    DifferenceCache.Add($"{entryId}", true);
+                                }
+                            }
+                        }
                     }
                     // Is a mod-unique row, there it is a difference
                     else
@@ -163,7 +188,7 @@ public class TextDifferenceManager
     public bool IsDifferentToVanilla(FMG.Entry entry)
     {
         var entryId = $"{entry.ID}";
-        var containerSubCategory = Selection.SelectedContainer.SubCategory;
+        var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
 
         // DS2
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -190,7 +215,7 @@ public class TextDifferenceManager
     public bool IsUniqueToProject(FMG.Entry entry)
     {
         var entryId = $"{entry.ID}";
-        var containerSubCategory = Selection.SelectedContainer.SubCategory;
+        var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
 
         // DS2
         if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)

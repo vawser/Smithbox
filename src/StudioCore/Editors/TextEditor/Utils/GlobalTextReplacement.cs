@@ -25,6 +25,7 @@ public static class GlobalTextReplacement
     private static bool SinglelineRegex = false;
     private static bool IgnorePatternWhitespace = false;
 
+    private static bool HasSearched = false;
     public static void Display()
     {
         var windowWidth = ImGui.GetWindowWidth();
@@ -134,12 +135,14 @@ public static class GlobalTextReplacement
 
         if (ImGui.Button("Preview Edit##executeSearch", UI.GetStandardHalfButtonSize()))
         {
+            HasSearched = true;
             ReplacementResults = TextFinder.GetReplacementResult(_globalSearchInput, FilterType, IgnoreCase);
         }
         UIHelper.ShowHoverTooltip("Populate the edit preview list.");
         ImGui.SameLine();
         if (ImGui.Button("Clear Preview##clearSearchResults", UI.GetStandardHalfButtonSize()))
         {
+            HasSearched = false;
             ReplacementResults.Clear();
         }
         UIHelper.ShowHoverTooltip("Clear the edit preview list.");
@@ -177,7 +180,7 @@ public static class GlobalTextReplacement
                 foreach (var result in ReplacementResults)
                 {
                     var newText = Regex.Replace(result.Entry.Text, searchText, replaceText, options);
-                    actions.Add(new ChangeFmgEntryText(result.Info, result.Entry, newText));
+                    actions.Add(new ChangeFmgEntryText(result.ContainerWrapper, result.Entry, newText));
                 }
 
                 var groupedAction = new FmgGroupedAction(actions);
@@ -189,6 +192,15 @@ public static class GlobalTextReplacement
 
             foreach (var result in ReplacementResults)
             {
+                // Ignore results from unused containers if not in Advanced Presentation mode
+                if (!CFG.Current.TextEditor_AdvancedPresentationMode)
+                {
+                    if (result.ContainerWrapper.IsContainerUnused())
+                    {
+                        continue;
+                    }
+                }
+
                 var foundText = result.Entry.Text;
                 if (foundText.Contains("\n"))
                 {
@@ -196,20 +208,20 @@ public static class GlobalTextReplacement
                     foundText = $"{firstSection} <...>";
                 }
 
-                var category = result.Info.Category.ToString();
+                var category = result.ContainerWrapper.ContainerDisplayCategory.ToString();
 
                 // Container
                 var containerName = result.ContainerName;
-                if (CFG.Current.TextEditor_DisplayPrettyContainerName)
+                if (CFG.Current.TextEditor_DisplayCommunityContainerName)
                 {
-                    containerName = TextUtils.GetPrettyContainerName(result.ContainerName);
+                    containerName = result.ContainerWrapper.GetContainerDisplayName();
                 }
 
                 // FMG
                 var fmgName = result.FmgName;
                 if (CFG.Current.TextEditor_DisplayFmgPrettyName)
                 {
-                    fmgName = TextUtils.GetFmgDisplayName(result.Info, result.FmgID, result.FmgName);
+                    fmgName = TextUtils.GetFmgDisplayName(result.ContainerWrapper, result.FmgID, result.FmgName);
                 }
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";
@@ -219,6 +231,10 @@ public static class GlobalTextReplacement
                     EditorCommandQueue.AddCommand($"text/select/{category}/{result.ContainerName}/{result.FmgName}/{result.Entry.ID}");
                 }
             }
+        }
+        else if (HasSearched)
+        {
+            UIHelper.WrappedText("No text entries found matching the filter.");
         }
     }
 }

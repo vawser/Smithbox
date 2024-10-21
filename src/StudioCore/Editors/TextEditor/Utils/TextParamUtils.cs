@@ -18,9 +18,9 @@ public static class TextParamUtils
         {
             foreach(var (path, entry) in TextBank.FmgBank)
             {
-                if (entry.Category == CFG.Current.TextEditor_PrimaryCategory)
+                if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
                 {
-                    foreach (var fmgInfo in entry.FmgInfos)
+                    foreach (var fmgInfo in entry.FmgWrappers)
                     {
                         var enumName = TextUtils.GetFmgInternalName(entry, fmgInfo.ID, fmgInfo.Name);
 

@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Silk.NET.OpenGL;
+using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Resource.Locators;
@@ -19,11 +20,11 @@ public static class TextBank
     public static bool VanillaBankLoaded = false;
     public static bool VanillaBankLoading = false;
 
-    public static SortedDictionary<string, TextContainerInfo> FmgBank { get; private set; } = new();
+    public static SortedDictionary<string, TextContainerWrapper> FmgBank { get; private set; } = new();
 
-    public static SortedDictionary<string, TextContainerInfo> VanillaFmgBank { get; private set; } = new();
+    public static SortedDictionary<string, TextContainerWrapper> VanillaFmgBank { get; private set; } = new();
 
-    public static SortedDictionary<string, TextContainerInfo> TargetFmgBank { get; private set; } = new();
+    public static SortedDictionary<string, TextContainerWrapper> TargetFmgBank { get; private set; } = new();
 
     /// <summary>
     /// Load all FMG containers
@@ -170,10 +171,9 @@ public static class TextBank
     /// <summary>
     /// Load FMG file
     /// </summary>
-    public static void LoadFmg(string path, SortedDictionary<string, TextContainerInfo> bank)
+    public static void LoadFmg(string path, SortedDictionary<string, TextContainerWrapper> bank)
     {
         var name = Path.GetFileName(path);
-        var relPath = path.Replace(Smithbox.GameRoot, "").Replace(Smithbox.ProjectRoot, "");
         var containerType = TextContainerType.Loose;
         var containerCategory = TextUtils.GetLanguageCategory(relPath);
 
@@ -195,23 +195,50 @@ public static class TextBank
             var reader = new BinaryReaderEx(false, fileBytes);
             SFUtil.GetDecompressedBR(reader, out compressionType);
 
-            List<FmgInfo> fmgInfos = new List<FmgInfo>();
+            List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
 
             var id = -1;
             var fmg = FMG.Read(path);
             fmg.Name = name; // Assign this to make it easier to grab FMGs
 
-            FmgInfo fmgInfo = new(id, name, fmg);
-            fmgInfos.Add(fmgInfo);
+            TextContainerWrapper containerWrapper = new();
+            containerWrapper.Filename = name;
+            containerWrapper.ReadPath = path;
 
-            TextContainerInfo containerInfo = new(name, path, compressionType, containerType, containerCategory, fmgInfos);
+            containerWrapper.RelativePath = path;
+            if (path.Contains(Smithbox.ProjectRoot))
+            {
+                containerWrapper.RelativePath = containerWrapper.RelativePath.Replace(Smithbox.ProjectRoot, "");
+            }
+            if (path.Contains(Smithbox.GameRoot))
+            {
+                containerWrapper.RelativePath = containerWrapper.RelativePath.Replace(Smithbox.GameRoot, "");
+            }
+            if (path.Contains(name))
+            {
+                containerWrapper.RelativePath = containerWrapper.RelativePath.Replace(name, "");
+            }
+
+            containerWrapper.CompressionType = compressionType;
+            containerWrapper.ContainerType = containerType;
+            containerWrapper.ContainerDisplayCategory = containerCategory;
+
+            TextFmgWrapper fmgInfo = new();
+            fmgInfo.ID = id;
+            fmgInfo.Name = name;
+            fmgInfo.File = fmg;
+            fmgInfo.Parent = containerWrapper;
+
+            fmgWrappers.Add(fmgInfo);
+
+            containerWrapper.FmgWrappers = fmgWrappers;
 
             if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                containerInfo.SubCategory = TextUtils.GetSubCategory(path);
+                containerWrapper.ContainerDisplaySubCategory = TextUtils.GetSubCategory(path);
             }
 
-            bank.Add(path, containerInfo);
+            bank.Add(path, containerWrapper);
         }
         catch (Exception ex)
         {
@@ -222,10 +249,9 @@ public static class TextBank
     /// <summary>
     /// Load FMG container
     /// </summary>
-    public static void LoadFmgContainer(string path, SortedDictionary<string, TextContainerInfo> bank)
+    public static void LoadFmgContainer(string path, SortedDictionary<string, TextContainerWrapper> bank)
     {
         var name = Path.GetFileName(path);
-        var relPath = path.Replace(Smithbox.GameRoot, "").Replace(Smithbox.ProjectRoot, "");
         var containerType = TextContainerType.BND;
         var containerCategory = TextUtils.GetLanguageCategory(relPath);
 
@@ -240,14 +266,38 @@ public static class TextBank
 
         try
         {
-            // Get compression type
+            // Detect the compression type used by the container
             var fileBytes = File.ReadAllBytes(path);
 
             DCX.Type compressionType;
             var reader = new BinaryReaderEx(false, fileBytes);
             SFUtil.GetDecompressedBR(reader, out compressionType);
 
-            List<FmgInfo> fmgInfos = new List<FmgInfo>();
+            // Create the Text Container wrapper and and add it to the bank
+            TextContainerWrapper containerWrapper = new();
+            containerWrapper.Filename = name;
+            containerWrapper.ReadPath = path;
+
+            containerWrapper.RelativePath = path;
+            if (path.Contains(Smithbox.ProjectRoot))
+            {
+                containerWrapper.RelativePath = containerWrapper.RelativePath.Replace(Smithbox.ProjectRoot, "");
+            }
+            if (path.Contains(Smithbox.GameRoot))
+            {
+                containerWrapper.RelativePath = containerWrapper.RelativePath.Replace(Smithbox.GameRoot, "");
+            }
+            if (path.Contains(name))
+            {
+                containerWrapper.RelativePath = containerWrapper.RelativePath.Replace(name, "");
+            }
+
+            containerWrapper.CompressionType = compressionType;
+            containerWrapper.ContainerType = containerType;
+            containerWrapper.ContainerDisplayCategory = containerCategory;
+
+            // Populate the Text Fmg wrappers with their contents
+            List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
 
             if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
@@ -262,8 +312,13 @@ public static class TextBank
                             var fmg = FMG.Read(file.Bytes);
                             fmg.Name = fmgName;
 
-                            FmgInfo fmgInfo = new(id, fmgName, fmg);
-                            fmgInfos.Add(fmgInfo);
+                            TextFmgWrapper fmgInfo = new();
+                            fmgInfo.ID = id;
+                            fmgInfo.Name = fmgName;
+                            fmgInfo.File = fmg;
+                            fmgInfo.Parent = containerWrapper;
+
+                            fmgWrappers.Add(fmgInfo);
                         }
                     }
                 }
@@ -281,16 +336,22 @@ public static class TextBank
                             var fmg = FMG.Read(file.Bytes);
                             fmg.Name = fmgName;
 
-                            FmgInfo fmgInfo = new(id, fmgName, fmg);
-                            fmgInfos.Add(fmgInfo);
+                            TextFmgWrapper fmgInfo = new();
+                            fmgInfo.ID = id;
+                            fmgInfo.Name = fmgName;
+                            fmgInfo.File = fmg;
+                            fmgInfo.Parent = containerWrapper;
+
+                            fmgWrappers.Add(fmgInfo);
                         }
                     }
                 }
             }
+            
+            // Add the fmg wrappers to the container wrapper
+            containerWrapper.FmgWrappers = fmgWrappers;
 
-            TextContainerInfo containerInfo = new(name, path, compressionType, containerType, containerCategory, fmgInfos);
-
-            bank.Add(path, containerInfo);
+            bank.Add(path, containerWrapper);
         }
         catch (Exception ex)
         {
@@ -323,10 +384,10 @@ public static class TextBank
     /// <summary>
     /// Save passed FMG container
     /// </summary>
-    public static void SaveFmgContainer(TextContainerInfo containerInfo)
+    public static void SaveFmgContainer(TextContainerWrapper containerWrapper)
     {
-        var rootContainerPath = containerInfo.AbsolutePath;
-        var projectContainerPath = containerInfo.AbsolutePath.Replace(Smithbox.GameRoot, Smithbox.ProjectRoot);
+        var rootContainerPath = containerWrapper.ReadPath;
+        var projectContainerPath = containerWrapper.GetWritePath();
 
         var directory = Path.GetDirectoryName(projectContainerPath);
 
@@ -347,12 +408,12 @@ public static class TextBank
             {
                 foreach (var file in binder.Files)
                 {
-                    WriteFmgContents(file, containerInfo.FmgInfos);
+                    WriteFmgContents(file, containerWrapper.FmgWrappers);
                 }
 
                 using (BND3 writeBinder = binder as BND3)
                 {
-                    fileBytes = writeBinder.Write(containerInfo.CompressionType);
+                    fileBytes = writeBinder.Write(containerWrapper.CompressionType);
                 }
             }
         }
@@ -362,12 +423,12 @@ public static class TextBank
             {
                 foreach (var file in binder.Files)
                 {
-                    WriteFmgContents(file, containerInfo.FmgInfos);
+                    WriteFmgContents(file, containerWrapper.FmgWrappers);
                 }
 
                 using (BND4 writeBinder = binder as BND4)
                 {
-                    fileBytes = writeBinder.Write(containerInfo.CompressionType);
+                    fileBytes = writeBinder.Write(containerWrapper.CompressionType);
                 }
             }
         }
@@ -375,7 +436,7 @@ public static class TextBank
         WriteFile(fileBytes, projectContainerPath);
     }
 
-    private static void WriteFmgContents(BinderFile file, List<FmgInfo> fmgList)
+    private static void WriteFmgContents(BinderFile file, List<TextFmgWrapper> fmgList)
     {
         if (file.Name.Contains(".fmg"))
         {
@@ -399,10 +460,10 @@ public static class TextBank
     /// <summary>
     /// Saved passed loose FMG file
     /// </summary>
-    public static void SaveLooseFmgs(TextContainerInfo containerInfo)
+    public static void SaveLooseFmgs(TextContainerWrapper containerWrapper)
     {
-        var rootContainerPath = containerInfo.AbsolutePath;
-        var projectContainerPath = containerInfo.AbsolutePath.Replace(Smithbox.GameRoot, Smithbox.ProjectRoot);
+        var rootContainerPath = containerWrapper.ReadPath;
+        var projectContainerPath = containerWrapper.GetWritePath();
 
         var directory = Path.GetDirectoryName(projectContainerPath);
 
@@ -415,7 +476,7 @@ public static class TextBank
             File.Copy(rootContainerPath, projectContainerPath, true);
         }
 
-        var newFmgBytes = containerInfo.FmgInfos.First().File.Write();
+        var newFmgBytes = containerWrapper.FmgWrappers.First().File.Write();
 
         WriteFile(newFmgBytes, projectContainerPath);
     }
@@ -432,11 +493,11 @@ public static class TextBank
                 PathUtils.BackupPrevFile(path);
                 PathUtils.BackupFile(path);
                 File.WriteAllBytes(path, data);
-                TaskLogs.AddLog($"Saved text at: {path}");
+                TaskLogs.AddLog($"Saved file at: {Path.GetFileName(path)}");
             }
             catch (Exception ex)
             {
-                TaskLogs.AddLog($"Failed to save text: {path}\n{ex}");
+                TaskLogs.AddLog($"Failed to save file at: {Path.GetFileName(path)}\n{ex}");
             }
         }
     }

@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.TextEditor;
+namespace StudioCore.Editors.TextEditor.Actions;
 
-public class DuplicateFmgEntry : EditorAction
+public class AddAssociatedEntry : EditorAction
 {
     private FMG Fmg;
     private FMG.Entry NewEntry;
@@ -16,19 +16,19 @@ public class DuplicateFmgEntry : EditorAction
 
     private TextContainerWrapper Info;
 
-    public DuplicateFmgEntry(TextContainerWrapper info, FMG currentFmg, FMG.Entry entry, int newID)
+    public AddAssociatedEntry(TextContainerWrapper info, FMG targetFmg, FMG.Entry newEntry)
     {
         Info = info;
-        Fmg = currentFmg;
-        NewEntry = entry.Clone();
-        NewEntry.ID = newID;
-        InsertionIndex = Fmg.Entries.Count;
+        Fmg = targetFmg;
+        NewEntry = newEntry;
+        InsertionIndex = 0;
 
         for (int i = 0; i < Fmg.Entries.Count; i++)
         {
             var curEntry = Fmg.Entries[i];
 
-            if(curEntry.ID > NewEntry.ID)
+            // Insert below this entry
+            if (curEntry.ID > NewEntry.ID)
             {
                 InsertionIndex = i;
                 break;

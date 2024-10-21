@@ -92,6 +92,8 @@
     
     <unkMapBoundryEntityId AltName="Map Boundry Entity ID" />
     
+    <missionDebriefingMovieId AltName="Mission Debriefing Movie ID" Wiki="ID of .bk2 video file to play for mission debriefing." />
+    
     <unkEntityId AltName="Entity ID" />
     
     <mapBoundryBottom AltName="Map Boundry Bottom" />

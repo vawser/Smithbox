@@ -57,10 +57,10 @@ public static class FmgExporter
     {
         var editor = Smithbox.EditorHandler.TextEditor;
 
-        var selectedFmgInfo = editor.Selection.SelectedFmgInfo;
+        var selectedFmgInfo = editor.Selection.SelectedFmgWrapper;
         var selectedFmgEntries = editor.Selection.FmgEntryMultiselect.StoredEntries;
 
-        var fmgWrapper = new FmgWrapper();
+        var fmgWrapper = new StoredFmgWrapper();
         fmgWrapper.Name = wrapperName;
 
         // Create new FMG for the wrapper
@@ -94,7 +94,7 @@ public static class FmgExporter
         WriteWrapper(fmgWrapper);
     }
 
-    public static void WriteWrapper(FmgWrapper wrapper)
+    public static void WriteWrapper(StoredFmgWrapper wrapper)
     {
         var writeDir = TextLocator.GetFmgWrapperDirectory();
         var writePath = $"{writeDir}\\{wrapper.Name}.json";
@@ -109,7 +109,7 @@ public static class FmgExporter
         if (File.Exists(writePath))
         {
             DialogResult result = PlatformUtils.Instance.MessageBox(
-                    $"Wrapper already exists under this name. Overwrite?", 
+                    $"Stored text already exists under this name. Overwrite?", 
                     "Warning", 
                     MessageBoxButtons.YesNo);
 
@@ -125,7 +125,7 @@ public static class FmgExporter
 
         if(proceed)
         {
-            string jsonString = JsonSerializer.Serialize(wrapper, typeof(FmgWrapper), FmgWrapperSerializationContext.Default);
+            string jsonString = JsonSerializer.Serialize(wrapper, typeof(StoredFmgWrapper), StoredFmgWrapperSerializationContext.Default);
 
             try
             {
@@ -135,7 +135,7 @@ public static class FmgExporter
                 fs.Flush();
                 fs.Dispose();
 
-                TaskLogs.AddLog($"Exported FMG Wrapper as {wrapper.Name} at: {writePath}");
+                TaskLogs.AddLog($"Exported stored text as {wrapper.Name} at: {writePath}");
             }
             catch (Exception ex)
             {

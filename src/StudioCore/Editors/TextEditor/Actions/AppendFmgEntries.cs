@@ -11,11 +11,11 @@ namespace StudioCore.Editors.TextEditor.Actions;
 
 public class AppendFmgEntries : EditorAction
 {
-    private FmgInfo TargetFmgInfo;
+    private TextFmgWrapper TargetFmgInfo;
     private FMG OriginalFmg;
-    private FmgWrapper Wrapper;
+    private StoredFmgWrapper Wrapper;
 
-    public AppendFmgEntries(FmgInfo targetFmgInfo, FmgWrapper wrapper)
+    public AppendFmgEntries(TextFmgWrapper targetFmgInfo, StoredFmgWrapper wrapper)
     {
         TargetFmgInfo = targetFmgInfo;
         OriginalFmg = targetFmgInfo.File.Clone();
@@ -32,12 +32,6 @@ public class AppendFmgEntries : EditorAction
             if (!TargetFmgInfo.File.Entries.Where(e => e.ID == entry.ID).Any())
             {
                 TargetFmgInfo.File.Entries.Add(entry);
-            }
-            else
-            {
-                // Replace existing entry if it matches wrapper entry
-                var existingEntry = TargetFmgInfo.File.Entries.Where(e => e.ID == entry.ID).FirstOrDefault();
-                existingEntry = entry;
             }
         }
 

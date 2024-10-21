@@ -1,7 +1,10 @@
-﻿using SoulsFormats;
+﻿using HKLib.hk2018.hkaiCollisionAvoidance;
+using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.TextEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Utils;
+using StudioCore.Platform;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -26,10 +29,93 @@ public class TextActionHandler
     }
 
     /// <summary>
+    /// Add title entry (used for associated entries)
+    /// </summary>
+    public void AddTitleEntry(TextFmgWrapper curFmgWrapper, FMG.Entry curEntry)
+    {
+        var selectedContainer = Screen.Selection.SelectedContainerWrapper;
+
+        var wrapper = Screen.EntryGroupManager.GetAssociatedTitleWrapper(curFmgWrapper.ID);
+
+        if (wrapper != null)
+        {
+            var newEntry = new FMG.Entry(wrapper.File, curEntry.ID, "");
+
+            newEntry.ID = curEntry.ID;
+
+            var action = new AddAssociatedEntry(selectedContainer, wrapper.File, newEntry);
+            Screen.EditorActionManager.ExecuteAction(action);
+        }
+    }
+
+    /// <summary>
+    /// Add summary entry (used for associated entries)
+    /// </summary>
+    public void AddSummaryEntry(TextFmgWrapper curFmgWrapper, FMG.Entry curEntry)
+    {
+        var selectedContainer = Screen.Selection.SelectedContainerWrapper;
+
+        var wrapper = Screen.EntryGroupManager.GetAssociatedSummaryWrapper(curFmgWrapper.ID);
+
+        if (wrapper != null)
+        {
+            var newEntry = new FMG.Entry(wrapper.File, curEntry.ID, "");
+
+            newEntry.ID = curEntry.ID;
+
+            var action = new AddAssociatedEntry(selectedContainer, wrapper.File, newEntry);
+            Screen.EditorActionManager.ExecuteAction(action);
+        }
+    }
+
+    /// <summary>
+    /// Add description entry (used for associated entries)
+    /// </summary>
+    public void AddDescriptionEntry(TextFmgWrapper curFmgWrapper, FMG.Entry curEntry)
+    {
+        var selectedContainer = Screen.Selection.SelectedContainerWrapper;
+
+        var wrapper = Screen.EntryGroupManager.GetAssociatedDescriptionWrapper(curFmgWrapper.ID);
+
+        if (wrapper != null)
+        {
+            var newEntry = new FMG.Entry(wrapper.File, curEntry.ID, "");
+
+            newEntry.ID = curEntry.ID;
+
+            var action = new AddAssociatedEntry(selectedContainer, wrapper.File, newEntry);
+            Screen.EditorActionManager.ExecuteAction(action);
+        }
+    }
+
+    /// <summary>
+    /// Add effect entry (used for associated entries)
+    /// </summary>
+    public void AddEffectEntry(TextFmgWrapper curFmgWrapper, FMG.Entry curEntry)
+    {
+        var selectedContainer = Screen.Selection.SelectedContainerWrapper;
+
+        var wrapper = Screen.EntryGroupManager.GetAssociatedEffectWrapper(curFmgWrapper.ID);
+
+        if (wrapper != null)
+        {
+            var newEntry = new FMG.Entry(wrapper.File, curEntry.ID, "");
+
+            newEntry.ID = curEntry.ID;
+
+            var action = new AddAssociatedEntry(selectedContainer, wrapper.File, newEntry);
+            Screen.EditorActionManager.ExecuteAction(action);
+        }
+    }
+
+    /// <summary>
     /// Duplicate current selection of FMG.Entries
     /// </summary>
     public void DuplicateEntries()
     {
+        if (Screen.Selection.CurrentSelectionContext is not TextSelectionContext.FmgEntry)
+            return;
+
         if (Screen.Selection._selectedFmgEntry == null)
             return;
 
@@ -81,7 +167,7 @@ public class TextActionHandler
     {
         List<EditorAction> actions = new List<EditorAction>();
 
-        var selectedContainer = Screen.Selection.SelectedContainer;
+        var selectedContainer = Screen.Selection.SelectedContainerWrapper;
         var selectedFmg = curEntry.Parent;
         var fmgEntryGroup = Screen.EntryGroupManager.GetEntryGroup(curEntry);
 
@@ -137,6 +223,9 @@ public class TextActionHandler
     /// </summary>
     public void DeleteEntries()
     {
+        if(Screen.Selection.CurrentSelectionContext is not TextSelectionContext.FmgEntry)
+            return;
+
         if (Screen.Selection._selectedFmgEntry == null)
             return;
 
@@ -170,7 +259,7 @@ public class TextActionHandler
     {
         List<EditorAction> actions = new List<EditorAction>();
 
-        var selectedContainer = Screen.Selection.SelectedContainer;
+        var selectedContainer = Screen.Selection.SelectedContainerWrapper;
         var selectedFmg = curEntry.Parent;
         var fmgEntryGroup = Screen.EntryGroupManager.GetEntryGroup(curEntry);
 
@@ -238,5 +327,74 @@ public class TextActionHandler
         }
 
         return newID;
+    }
+
+    private bool IsCurrentlyCopyingContents = false;
+
+    /// <summary>
+    /// Copy the currently selected Text Entries to the clipboard
+    /// </summary>
+    public void CopyEntryTextToClipboard(bool includeID)
+    {
+        var editor = Smithbox.EditorHandler.TextEditor;
+
+        if (!IsCurrentlyCopyingContents)
+        {
+            IsCurrentlyCopyingContents = true;
+            TaskManager.Run(
+                new TaskManager.LiveTask($"Copy Text Entry Text to Clipboard", TaskManager.RequeueType.None, false,
+            () =>
+            {
+                var AlterCopyTextAssignment = false;
+                var copyText = "";
+
+                for (int i = 0; i < editor.Selection.SelectedFmgWrapper.File.Entries.Count; i++)
+                {
+                    var entry = editor.Selection.SelectedFmgWrapper.File.Entries[i];
+
+                    if (editor.Filters.IsFmgEntryFilterMatch(entry))
+                    {
+                        if (editor.Selection.FmgEntryMultiselect.IsMultiselected(i))
+                        {
+                            var newText = $"{entry.Text}";
+
+                            if (CFG.Current.TextEditor_TextCopy_EscapeNewLines)
+                            {
+                                newText = $"{entry.Text}".Replace("\n", "\\n");
+                            }
+
+                            if (AlterCopyTextAssignment)
+                            {
+                                if (includeID)
+                                {
+                                    copyText = $"{copyText}\n{entry.ID} {newText}";
+                                }
+                                else
+                                {
+                                    copyText = $"{copyText}\n{newText}";
+                                }
+                            }
+                            else
+                            {
+                                AlterCopyTextAssignment = true;
+
+                                if (includeID)
+                                {
+                                    copyText = $"{entry.ID} {newText}";
+                                }
+                                else
+                                {
+                                    copyText = $"{newText}";
+                                }
+                            }
+                        }
+                    }
+                }
+
+                PlatformUtils.Instance.SetClipboardText(copyText);
+                PlatformUtils.Instance.MessageBox("Text Entry Contents copied to clipboard", "Clipboard", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                IsCurrentlyCopyingContents = false;
+            }));
+        }
     }
 }

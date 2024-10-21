@@ -25,23 +25,105 @@ public class TextEntryGroupManager
         Selection = screen.Selection;
     }
 
+    /// <summary>
+    /// Get the associated title FMG wrapper based on the passed binder ID
+    /// </summary>
+    public TextFmgWrapper GetAssociatedTitleWrapper(int parentFmgID)
+    {
+        var fmgWrappers = Selection.SelectedContainerWrapper.FmgWrappers;
+        var groupings = GetGroupings();
+
+        foreach (var group in groupings)
+        {
+            if (group.GetSummaryEnumID() == parentFmgID ||
+                group.GetDescriptionEnumID() == parentFmgID ||
+                group.GetEffectEnumID() == parentFmgID)
+            {
+                if (group.SupportsTitle)
+                {
+                    return fmgWrappers.Where(e => e.ID == group.GetTitleEnumID()).FirstOrDefault();
+                }
+            }
+        }
+
+        return null;
+    }
 
     /// <summary>
-    /// Get the potnetial associated entries for the passed entry (assuming it is not associated yet)
+    /// Get the associated summary FMG wrapper based on the passed binder ID
     /// </summary>
-    /// <param name="entry"></param>
-    public List<int> GetPotentialAssociatedEntryGroup(FMG.Entry entry)
+    public TextFmgWrapper GetAssociatedSummaryWrapper(int parentFmgID)
     {
-        // These are the IDs of the potential associated groups
-        List<int> associatedIds = new();
+        var fmgWrappers = Selection.SelectedContainerWrapper.FmgWrappers;
+        var groupings = GetGroupings();
 
+        foreach(var group in groupings)
+        {
+            if(group.GetTitleEnumID() == parentFmgID || 
+                group.GetDescriptionEnumID() == parentFmgID ||
+                group.GetEffectEnumID() == parentFmgID)
+            {
+                if (group.SupportsSummary)
+                {
+                    return fmgWrappers.Where(e => e.ID == group.GetSummaryEnumID()).FirstOrDefault();
+                }
+            }
+        }
 
-        return associatedIds;
+        return null;
+    }
+
+    /// <summary>
+    /// Get the associated description FMG wrapper based on the passed binder ID
+    /// </summary>
+    public TextFmgWrapper GetAssociatedDescriptionWrapper(int parentFmgID)
+    {
+        var fmgWrappers = Selection.SelectedContainerWrapper.FmgWrappers;
+        var groupings = GetGroupings();
+
+        foreach (var group in groupings)
+        {
+            if (group.GetTitleEnumID() == parentFmgID ||
+                group.GetSummaryEnumID() == parentFmgID ||
+                group.GetEffectEnumID() == parentFmgID)
+            {
+                if (group.SupportsDescription)
+                {
+                    return fmgWrappers.Where(e => e.ID == group.GetDescriptionEnumID()).FirstOrDefault();
+                }
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Get the associated effect FMG wrapper based on the passed binder ID
+    /// </summary>
+    public TextFmgWrapper GetAssociatedEffectWrapper(int parentFmgID)
+    {
+        var fmgWrappers = Selection.SelectedContainerWrapper.FmgWrappers;
+        var groupings = GetGroupings();
+
+        foreach (var group in groupings)
+        {
+            if (group.GetTitleEnumID() == parentFmgID ||
+                group.GetDescriptionEnumID() == parentFmgID ||
+                group.GetSummaryEnumID() == parentFmgID)
+            {
+                if (group.SupportsEffect)
+                {
+                    return fmgWrappers.Where(e => e.ID == group.GetEffectEnumID()).FirstOrDefault();
+                }
+            }
+        }
+
+        return null;
     }
 
     public FmgEntryGroup GetEntryGroup(FMG.Entry entry)
     {
-        return new FmgEntryGroup(this, Selection.SelectedContainer, Selection.SelectedFmgInfo, entry);
+        return new FmgEntryGroup(this, Selection.SelectedContainerWrapper, Selection.SelectedFmgWrapper, entry);
     }
 
     /// <summary>
@@ -355,7 +437,7 @@ public class TextEntryGroupManager
                     Item_MsgBndID_ER.Title_Ash_of_War,
                     Item_MsgBndID_ER.Summary_Ash_of_War,
                     Item_MsgBndID_ER.Description_Ash_of_War,
-                    Item_MsgBndID_ER.Effect_Ash_of_War));
+                    null));
 
                 groupings.Add(new EntryGroupAssociation(
                     Item_MsgBndID_ER.Title_Skill,
@@ -398,7 +480,7 @@ public class TextEntryGroupManager
                     Item_MsgBndID_ER.Title_Ash_of_War_DLC1,
                     Item_MsgBndID_ER.Summary_Ash_of_War_DLC1,
                     Item_MsgBndID_ER.Description_Ash_of_War_DLC1,
-                    Item_MsgBndID_ER.Effect_Ash_of_War_DLC1));
+                    null));
 
                 groupings.Add(new EntryGroupAssociation(
                     Item_MsgBndID_ER.Title_Skill_DLC1,
@@ -441,7 +523,7 @@ public class TextEntryGroupManager
                     Item_MsgBndID_ER.Title_Ash_of_War_DLC2,
                     Item_MsgBndID_ER.Summary_Ash_of_War_DLC2,
                     Item_MsgBndID_ER.Description_Ash_of_War_DLC2,
-                    Item_MsgBndID_ER.Effect_Ash_of_War_DLC2));
+                    null));
 
                 groupings.Add(new EntryGroupAssociation(
                     Item_MsgBndID_ER.Title_Skill_DLC2,
@@ -556,9 +638,16 @@ public class TextEntryGroupManager
 public class EntryGroupAssociation
 {
     public Enum Title { get; set; }
+    public bool SupportsTitle { get; set; }
+
     public Enum Summary { get; set; }
+    public bool SupportsSummary { get; set; }
+
     public Enum Description { get; set; }
+    public bool SupportsDescription { get; set; }
+
     public Enum Effect { get; set; }
+    public bool SupportsEffect { get; set; }
 
     public EntryGroupAssociation(Enum titleEnum, Enum summaryEnum, Enum descriptionEnum, Enum effectEnum)
     {
@@ -566,6 +655,23 @@ public class EntryGroupAssociation
         Summary = summaryEnum;
         Description = descriptionEnum;
         Effect = effectEnum;
+
+        if (titleEnum != null)
+        {
+            SupportsTitle = true;
+        }
+        if (summaryEnum != null)
+        {
+            SupportsSummary = true;
+        }
+        if (descriptionEnum != null)
+        {
+            SupportsDescription = true;
+        }
+        if (effectEnum != null)
+        {
+            SupportsEffect = true;
+        }
     }
 
     public string GetTitleEnumName()
@@ -612,9 +718,16 @@ public class EntryGroupAssociation
 public class FmgEntryGroup
 {
     public FMG.Entry Title { get; set; }
+    public bool SupportsTitle { get; set; }
+
     public FMG.Entry Summary { get; set; }
+    public bool SupportsSummary { get; set; }
+
     public FMG.Entry Description { get; set; }
+    public bool SupportsDescription { get; set; }
+
     public FMG.Entry Effect { get; set; }
+    public bool SupportsEffect { get; set; }
 
     /// <summary>
     /// If this is false, fallback to Simple Editor in Group Editor mode
@@ -622,8 +735,8 @@ public class FmgEntryGroup
     public bool SupportsGrouping = false;
 
     public FmgEntryGroup(TextEntryGroupManager entryManager, 
-        TextContainerInfo containerInfo,
-        FmgInfo selectedFmgInfo,
+        TextContainerWrapper containerInfo,
+        TextFmgWrapper selectedFmgInfo,
         FMG.Entry baseEntry)
     {
         var targetBinderID = selectedFmgInfo.ID;
@@ -639,6 +752,18 @@ public class FmgEntryGroup
         if(associationGroup != null)
         {
             SupportsGrouping = true;
+
+            if (associationGroup.SupportsTitle)
+                SupportsTitle = true;
+
+            if (associationGroup.SupportsSummary)
+                SupportsSummary = true;
+
+            if (associationGroup.SupportsDescription)
+                SupportsDescription = true;
+
+            if (associationGroup.SupportsEffect)
+                SupportsEffect = true;
 
             Title = SetGroupEntry(containerInfo, 
                 associationGroup.GetTitleEnumID(), 
@@ -658,9 +783,9 @@ public class FmgEntryGroup
         }
     }
 
-    public FMG.Entry SetGroupEntry(TextContainerInfo containerInfo, int targetBndId, FMG.Entry baseEntry)
+    public FMG.Entry SetGroupEntry(TextContainerWrapper containerInfo, int targetBndId, FMG.Entry baseEntry)
     {
-        foreach (var fmg in containerInfo.FmgInfos)
+        foreach (var fmg in containerInfo.FmgWrappers)
         {
             if (fmg.ID == targetBndId)
             {
