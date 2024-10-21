@@ -58,7 +58,7 @@ public static class FmgImporter
                 }
                 else
                 {
-                    TaskLogs.AddLog($"Attempted to add FmgWrapper with existing key!: {filename}");
+                    TaskLogs.AddLog($"Attempted to add stored text with existing key: {filename}");
                 }
             }
         }
@@ -85,12 +85,12 @@ public static class FmgImporter
             }
             else
             {
-                ImGui.Text("No exported FMG wrappers exist yet.");
+                ImGui.Text("No exported text exists yet.");
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Append the selected wrapper contents to the currently selected FMG entries.\n\nExisting entries will NOT be modified.");
+        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current FMG.\n\nExisting entries will be not modified by the contents of the stored text.");
 
         if (ImGui.BeginMenu("Replace"))
         {
@@ -106,12 +106,12 @@ public static class FmgImporter
             }
             else
             {
-                ImGui.Text("No exported FMG wrappers exist yet.");
+                ImGui.Text("No exported text exists yet.");
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Replace the selected wrapper contents to the currently selected FMG entries.\n\nExisting entries will be modified by the contents of the wrapper.");
+        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current FMG.\n\nExisting entries will be modified by the contents of the stored text.");
 
         if (ImGui.BeginMenu("Overwrite"))
         {
@@ -127,12 +127,12 @@ public static class FmgImporter
             }
             else
             {
-                ImGui.Text("No exported FMG wrappers exist yet.");
+                ImGui.Text("No exported text exists yet.");
             }
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Overwrite the entire FMG entry list with the selected wrapper contents.");
+        UIHelper.ShowHoverTooltip("The selected stored text will replace to the current FMG entry list.\n\nExisting entries will be removed completely.");
     }
 
     /// <summary>
@@ -147,7 +147,7 @@ public static class FmgImporter
         var action = new AppendFmgEntries(selectedFmgInfo, wrapper);
         editor.EditorActionManager.ExecuteAction(action);
 
-        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}.");
+        TaskLogs.AddLog($"Imported stored text: {wrapper.Name}.");
     }
 
     /// <summary>
@@ -163,7 +163,7 @@ public static class FmgImporter
         var action = new ReplaceFmgEntries(selectedFmgInfo, wrapper);
         editor.EditorActionManager.ExecuteAction(action);
 
-        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}.");
+        TaskLogs.AddLog($"Imported stored text: {wrapper.Name}.");
     }
 
     /// <summary>
@@ -179,7 +179,7 @@ public static class FmgImporter
         var action = new OverwriteFmgEntries(selectedFmgInfo, wrapper);
         editor.EditorActionManager.ExecuteAction(action);
 
-        TaskLogs.AddLog($"Imported FMG Wrapper {wrapper.Name}.");
+        TaskLogs.AddLog($"Imported stored text: {wrapper.Name}.");
     }
 }
 

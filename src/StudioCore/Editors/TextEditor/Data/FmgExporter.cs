@@ -109,7 +109,7 @@ public static class FmgExporter
         if (File.Exists(writePath))
         {
             DialogResult result = PlatformUtils.Instance.MessageBox(
-                    $"Wrapper already exists under this name. Overwrite?", 
+                    $"Stored text already exists under this name. Overwrite?", 
                     "Warning", 
                     MessageBoxButtons.YesNo);
 
@@ -135,7 +135,7 @@ public static class FmgExporter
                 fs.Flush();
                 fs.Dispose();
 
-                TaskLogs.AddLog($"Exported FMG Wrapper as {wrapper.Name} at: {writePath}");
+                TaskLogs.AddLog($"Exported stored text as {wrapper.Name} at: {writePath}");
             }
             catch (Exception ex)
             {

@@ -119,5 +119,6 @@ Model Editor:
 - ADD: sync with X Language (Container level -> apply modified rows + add unique rows into non-primary container (add option to apply prepend string, e.g. TRANSLATE:, so you can tag rows for translation)
 - ADD: text merge: tool that will attempt to add unique/modified rows from X source into current project
 
-- FIX: import needs to represent multiple FMGs, and then account for adding grouped entries
+- FIX: Data Import needs to represent multiple FMGs, and then account for adding grouped entries
+- FIX: add support for creating grouped entries even if source entry isn't grouped (but supports them) to Create Entries menu
 
